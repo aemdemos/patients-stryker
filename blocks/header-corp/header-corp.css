@@ -677,11 +677,12 @@ body.hcp-banner .header-corp .hcp-band {
   outline-color: var(--color-secondary);
 }
 
-/* the globe link is a zero-width box around its floated icon: its focus ring goes on the icon */
-.header-corp .locale-icon:focus-visible {
+/* the globe link is a zero-width box around its floated icon, and the logo link the 24px icon
+   box its wider image overflows: their focus ring goes on the image */
+.header-corp :is(.locale-icon, .logo a):focus-visible {
   outline: 0;
 }
 
-.header-corp .locale-icon:focus-visible img {
+.header-corp :is(.locale-icon, .logo a):focus-visible img {
   outline: var(--corp-focus-ring) solid currentcolor;
 }

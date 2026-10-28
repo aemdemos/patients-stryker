@@ -49,6 +49,34 @@ function contentOf(section) {
   return section.querySelector(':scope > .default-content-wrapper') || section;
 }
 
+/**
+ * The logo is a link to the home page, as on www.stryker.com (and the first Tab stop): the
+ * authored link when the nav has one, else a link to `/` around the authored logo (the nav
+ * authors the `:header-logo:` icon alone). Page metadata `Logo Link` overrides where it goes
+ * (the nav is shared): a URL replaces the target, `none` renders the logo without a link,
+ * as in the patients header. EDS icons get an empty alt: the link's name is "Stryker".
+ */
+function decorateLogo(logo) {
+  let link = logo.querySelector('a');
+  const override = (getMetadata('logo-link') || '').trim();
+  if (override.toLowerCase() === 'none') {
+    if (link) link.replaceWith(...link.childNodes);
+  } else {
+    if (!link) {
+      const holder = logo.querySelector(':scope > p') || logo;
+      link = moveChildren(holder, el('a', '', { href: '/' }));
+      holder.append(link);
+    }
+    // EDS may decorate a link alone in its paragraph as a button
+    link.classList.remove('button');
+    const container = link.closest('.button-container');
+    if (container) container.classList.remove('button-container');
+    if (override) link.setAttribute('href', override);
+  }
+  const img = logo.querySelector('img');
+  if (img && !img.getAttribute('alt')) img.setAttribute('alt', 'Stryker');
+}
+
 /** the real search form (not authored): action + placeholder come from the authored link */
 function buildSearchBar(source) {
   const link = source && source.querySelector('a[href]');
@@ -330,6 +358,7 @@ export default async function decorate(block) {
   const container = el('div', 'container');
   global.append(container);
   const logo = moveChildren(brand, el('div', 'logo'));
+  decorateLogo(logo);
   const utilityNav = moveChildren(utility, el('nav', 'utility-links', { 'aria-label': 'Utility' }));
   utilityNav.querySelectorAll('li > a, li > p > a').forEach((a) => wrapLinkText(a));
   const localeDiv = moveChildren(locale, el('div', 'language-country-select'));
