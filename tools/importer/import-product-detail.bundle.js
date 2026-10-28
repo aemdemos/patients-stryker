@@ -159,8 +159,8 @@ var CustomImportScript = (() => {
         });
         if (kids.length !== 1) return;
         const only = kids[0];
-        const isLabel = only.nodeType === 1 && (only.tagName === "B" || only.tagName === "STRONG" || only.classList && only.classList.contains("futura-bold"));
-        if (!isLabel) return;
+        const isLabel2 = only.nodeType === 1 && (only.tagName === "B" || only.tagName === "STRONG" || only.classList && only.classList.contains("futura-bold"));
+        if (!isLabel2) return;
         const nextP = p.nextElementSibling;
         if (!nextP || nextP.tagName !== "P") return;
         nextP.insertBefore(element.ownerDocument.createElement("br"), nextP.firstChild);
@@ -589,9 +589,19 @@ var CustomImportScript = (() => {
       return squash(bold.map((b) => b.textContent).join("")) === all;
     }));
   }
+  var plainText = (el) => {
+    const walker = el.ownerDocument.createTreeWalker(el, 4);
+    let out = "";
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (!n.parentElement.closest(".futura-bold, b, strong")) out += n.textContent;
+    }
+    return squash(out);
+  };
   function serifHeadings(root) {
     return new Set([...root.querySelectorAll("h2, h3, h4, h5, h6")].filter((h) => {
-      if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
+      if (!text(h)) return false;
+      if (/^H[23]$/.test(h.tagName)) return !!plainText(h);
+      if (h.querySelector(".futura-bold, b, strong")) return false;
       return coveredBy(h, "urw-egyptienne");
     }));
   }
@@ -3410,9 +3420,20 @@ var CustomImportScript = (() => {
       return [];
     });
   }
-  function sharedCopyStyle(cells) {
-    const styles = new Set(cells.flat().filter((n) => n.copyStyle !== void 0).map((n) => n.copyStyle || ""));
-    return styles.size === 1 ? [...styles][0] : "";
+  var isLabel = (node) => node.tagName === "P" && node.querySelector("strong") && text(node.querySelector("strong")) === text(node) && !node.querySelector("a, picture, img");
+  var sizeOf = (style) => (style || "").split(", ").find((s) => /^p-\d/.test(s)) || "";
+  var LABEL_STYLES = { "p-1-5": "label-1-5" };
+  function sharedCopyStyle(cells, ctx) {
+    const nodes = cells.flat().filter((n) => n.copyStyle !== void 0);
+    const styles = new Set(nodes.filter((n) => !isLabel(n)).map((n) => n.copyStyle || ""));
+    if (styles.size !== 1) return "";
+    const [copy] = [...styles];
+    const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+    const [labelSize] = [...labelSizes];
+    if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
+    if (LABEL_STYLES[labelSize]) return [copy, LABEL_STYLES[labelSize]].filter(Boolean).join(", ");
+    ctx.report.notes.push(`Columns: label size ${labelSize} has no label style, labels take the copy size`);
+    return copy;
   }
   function columnItems(columns, split, ctx) {
     const { doc } = ctx;
@@ -3433,10 +3454,10 @@ var CustomImportScript = (() => {
         nodes: [statistics(all, ctx, filled.length)]
       }];
     }
-    const flex = (styles, items) => ({
+    const flex = (styles2, items) => ({
       type: "own",
       kind: "flex",
-      styles: ["flex", ...styles],
+      styles: ["flex", ...styles2],
       nodes: inlineNodes(items, ctx)
     });
     const formCol = filled.findIndex((items) => items.some((it) => it.type === "form"));
@@ -3485,11 +3506,15 @@ var CustomImportScript = (() => {
     });
     const variants = [split.variant, ...modifiers].filter(Boolean);
     const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
-    const copy = sharedCopyStyle(cells);
+    const copy = sharedCopyStyle(cells, ctx);
+    const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
+    const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+    if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("Columns: serif and Futura h2 / h3 in one block, kept in Futura");
+    const styles = [...copy ? copy.split(", ") : [], serif ? "h-serif" : ""].filter(Boolean);
     return [...anchors, {
       type: "own",
       kind: "columns",
-      styles: copy ? copy.split(", ") : [],
+      styles,
       nodes: [block(doc, name, [cells])]
     }];
   }

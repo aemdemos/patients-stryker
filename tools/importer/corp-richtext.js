@@ -430,13 +430,27 @@ export function plainBoldParagraphs(root) {
   }));
 }
 
+// text of an element outside span.futura-bold / bold (the source's h1–h3 default font)
+const plainText = (el) => {
+  const walker = el.ownerDocument.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT
+  let out = '';
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    if (!n.parentElement.closest('.futura-bold, b, strong')) out += n.textContent;
+  }
+  return squash(out);
+};
+
 /**
- * Headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
- * bold): corp headings are Futura bold, so their section gets the `h-serif` style.
+ * Headings set in Egyptienne on the source: corp headings are Futura bold, so their section
+ * gets the `h-serif` style. stryker.com sets h1–h3 in Egyptienne Light (`h1, h2, h3`), so an
+ * h2 / h3 is serif unless span.futura-bold / bold covers all of it (a Futura part of a mixed
+ * heading stays <strong>, styles-corp.css h-serif); h4–h6 only in span.urw-egyptienne.
  */
 export function serifHeadings(root) {
   return new Set([...root.querySelectorAll('h2, h3, h4, h5, h6')].filter((h) => {
-    if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+    if (!text(h)) return false;
+    if (/^H[23]$/.test(h.tagName)) return !!plainText(h);
+    if (h.querySelector('.futura-bold, b, strong')) return false;
     return coveredBy(h, 'urw-egyptienne');
   }));
 }

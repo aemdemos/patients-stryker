@@ -203,11 +203,29 @@ function cellNodes(items, ctx) {
   });
 }
 
-/** The copy style shared by every text node of the cells, or ''. */
-function sharedCopyStyle(cells) {
-  const styles = new Set(cells.flat().filter((n) => n.copyStyle !== undefined)
-    .map((n) => n.copyStyle || ''));
-  return styles.size === 1 ? [...styles][0] : '';
+// a label: a paragraph that is one bold run (Futura <strong><em> or plain <strong>)
+const isLabel = (node) => node.tagName === 'P' && node.querySelector('strong')
+  && text(node.querySelector('strong')) === text(node) && !node.querySelector('a, picture, img');
+const sizeOf = (style) => (style || '').split(', ').find((s) => /^p-\d/.test(s)) || '';
+// label sizes with a section style (styles/styles-corp.css label-*)
+const LABEL_STYLES = { 'p-1-5': 'label-1-5' };
+
+/**
+ * The section styles of a Columns block: the copy style shared by every text node of the
+ * cells but the labels (labels are often set larger than the copy beside them), plus the
+ * labels' size when they share one that differs from the copy.
+ */
+function sharedCopyStyle(cells, ctx) {
+  const nodes = cells.flat().filter((n) => n.copyStyle !== undefined);
+  const styles = new Set(nodes.filter((n) => !isLabel(n)).map((n) => n.copyStyle || ''));
+  if (styles.size !== 1) return '';
+  const [copy] = [...styles];
+  const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+  const [labelSize] = [...labelSizes];
+  if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
+  if (LABEL_STYLES[labelSize]) return [copy, LABEL_STYLES[labelSize]].filter(Boolean).join(', ');
+  ctx.report.notes.push(`Columns: label size ${labelSize} has no label style, labels take the copy size`);
+  return copy;
 }
 
 /**
@@ -284,9 +302,14 @@ export function columnItems(columns, split, ctx) {
   });
   const variants = [split.variant, ...modifiers].filter(Boolean);
   const name = variants.length ? `Columns (${variants.join(', ')})` : 'Columns';
-  const copy = sharedCopyStyle(cells);
+  const copy = sharedCopyStyle(cells, ctx);
+  // Egyptienne h2 / h3 in the cells: the section's h-serif (one font for all of them)
+  const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
+  const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+  if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('Columns: serif and Futura h2 / h3 in one block, kept in Futura');
+  const styles = [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : ''].filter(Boolean);
   return [...anchors, {
-    type: 'own', kind: 'columns', styles: copy ? copy.split(', ') : [], nodes: [block(doc, name, [cells])],
+    type: 'own', kind: 'columns', styles, nodes: [block(doc, name, [cells])],
   }];
 }
 
