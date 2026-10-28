@@ -380,13 +380,15 @@ function plainBoldParagraphs(root) {
 }
 
 /**
- * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
- * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
+ * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, or
+ * a plain h3 with no bold and no styled span, the live h3 face): the template's h3 is
+ * Futura bold, so their section gets the `h-serif` style.
  */
 function serifHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   return new Set([...root.querySelectorAll('h3')].filter((h) => {
     if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+    if (!h.querySelector('[class]')) return true;
     const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
     return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
   }));
