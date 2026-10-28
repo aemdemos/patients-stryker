@@ -140,12 +140,14 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 700;
 }
 
+/* --corp-h2-size / --corp-h3-size: a template's plain heading sizes (templates/product-detail);
+   the h-1-25 / h-1-5 section styles scale them */
 :where(body.corp) h2 {
-  font-size: var(--heading-font-size-l);
+  font-size: var(--corp-h2-size, var(--heading-font-size-l));
 }
 
 :where(body.corp) h3 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--corp-h3-size, var(--heading-font-size-m));
 }
 
 /* bold: <strong> is Futura bold, <b> keeps the running font */
@@ -583,6 +585,26 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
 :where(body.corp) .fragment > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
   line-height: var(--paragraph-line-height-serif-l);
+}
+
+/* h-1-25 / h-1-5: the section's h2 / h3 authored 1.25x / 1.5x the plain heading (stryker.com
+   .fontsize-1-25em / -1-5em headings: product-detail h2 30.625px / 36.75px from 600px) */
+:where(body.corp) .section.h-1-25 {
+  --corp-heading-scale: 1.25;
+}
+
+:where(body.corp) .section.h-1-5 {
+  --corp-heading-scale: 1.5;
+}
+
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div h2 {
+  font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div h3 {
+  font-size: calc(var(--corp-heading-scale) * var(--corp-h3-size, var(--heading-font-size-m)));
+  line-height: var(--heading-line-height-h4);
 }
 
 /* label-1-5 / label-1-75 / label-2: labels (a paragraph that is one bold run, <strong> or the

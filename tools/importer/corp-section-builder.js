@@ -185,15 +185,26 @@ export function createBuilder({
     item.nodes.forEach((node) => {
       const styles = nodeStyles(node, item);
       const key = `flow:${styles.join(',')}`;
-      // an Egyptienne h2 / h3 adds h-serif to its section; a Futura one after it starts a new one
+      // an Egyptienne h2 / h3 adds h-serif to its section; a Futura one after it starts a new
+      // one. Likewise an h2 / h3 authored larger adds its size style (h-1-25 / h-1-5); one of
+      // another size after it starts a new section
       let font = null;
-      if (/^H[23]$/.test(node.tagName)) font = node.serifHeading ? 'serif' : 'futura';
-      if (!current || current.key !== key || (font && current.font && current.font !== font)) {
+      let size = null;
+      if (/^H[23]$/.test(node.tagName)) {
+        font = node.serifHeading ? 'serif' : 'futura';
+        size = node.headingSize || 'plain';
+      }
+      if (!current || current.key !== key || (font && current.font && current.font !== font)
+        || (size && current.headingSize && current.headingSize !== size)) {
         start('flow', styles).key = key;
       }
       if (font) {
         if (font === 'serif' && current.font !== 'serif') current.styles.push('h-serif');
         current.font = font;
+      }
+      if (size) {
+        if (size !== 'plain' && current.headingSize !== size) current.styles.push(size);
+        current.headingSize = size;
       }
       current.nodes.push(node);
     });

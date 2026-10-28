@@ -430,6 +430,17 @@ export function plainBoldParagraphs(root) {
   }));
 }
 
+/**
+ * The heading size style of an h2 / h3 authored larger than the template's heading, read
+ * before cleaning: the whole heading in .fontsize-1-25em → h-1-25, .fontsize-1-5em → h-1-5
+ * (product-detail: 92 + 188 and 217 + 5 headings); other sizes keep the plain heading.
+ */
+export function headingSizeStyle(heading) {
+  if (!/^H[23]$/.test(heading.tagName)) return '';
+  const size = effectiveSize(heading);
+  return ({ 1.25: 'h-1-25', 1.5: 'h-1-5' })[size] || '';
+}
+
 // text of an element outside span.futura-bold / bold (the source's h1–h3 default font)
 const plainText = (el) => {
   const walker = el.ownerDocument.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT

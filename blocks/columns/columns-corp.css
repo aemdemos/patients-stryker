@@ -31,6 +31,13 @@ body.corp .columns > div > div h2 {
   font-weight: var(--font-weight-bold);
 }
 
+/* h-serif section style (styles-corp.css): the cells' h2 / h3 in Egyptienne Light, as the
+   source's plain h2 / h3 (inspace "Shorter operative time"); bold parts stay Futura */
+body.corp .section.h-serif .columns > div > div :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
 body.corp .columns h4 {
   font-size: var(--heading-font-size-m);
   line-height: var(--heading-line-height-h4);
@@ -189,8 +196,10 @@ body.corp .columns h2 :is(em strong, strong em) {
 }
 
 /* bold display heading: a fully Bold Heading 2 (columns.js .columns-bold) is 35px black
-   Futura bold at every width (stryker.com .fontsize-2-5em .futura-bold paragraph) */
-body.corp .columns:not(.large-headline) > div > div h2.columns-bold {
+   Futura bold at every width (stryker.com .fontsize-2-5em .futura-bold paragraph). In an
+   h-serif section the bold only marks a Futura heading among serif ones (clarifix), so the
+   heading keeps its size. */
+body.corp .section:not(.h-serif) .columns:not(.large-headline) > div > div h2.columns-bold {
   margin-bottom: var(--space-inset-m);
   font-size: var(--columns-corp-display-size-s);
   line-height: var(--heading-line-height);

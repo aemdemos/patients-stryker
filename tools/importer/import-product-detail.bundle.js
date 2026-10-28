@@ -589,6 +589,11 @@ var CustomImportScript = (() => {
       return squash(bold.map((b) => b.textContent).join("")) === all;
     }));
   }
+  function headingSizeStyle(heading) {
+    if (!/^H[23]$/.test(heading.tagName)) return "";
+    const size = effectiveSize(heading);
+    return { 1.25: "h-1-25", 1.5: "h-1-5" }[size] || "";
+  }
   var plainText = (el) => {
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     let out = "";
@@ -733,13 +738,21 @@ var CustomImportScript = (() => {
         const styles = nodeStyles(node, item);
         const key = `flow:${styles.join(",")}`;
         let font = null;
-        if (/^H[23]$/.test(node.tagName)) font = node.serifHeading ? "serif" : "futura";
-        if (!current || current.key !== key || font && current.font && current.font !== font) {
+        let size = null;
+        if (/^H[23]$/.test(node.tagName)) {
+          font = node.serifHeading ? "serif" : "futura";
+          size = node.headingSize || "plain";
+        }
+        if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
           start("flow", styles).key = key;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");
           current.font = font;
+        }
+        if (size) {
+          if (size !== "plain" && current.headingSize !== size) current.styles.push(size);
+          current.headingSize = size;
         }
         current.nodes.push(node);
       });
@@ -3351,6 +3364,7 @@ var CustomImportScript = (() => {
     const serifHeads = serifHeadings(box);
     const plainB = (b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold");
     const inlineBold = new Set([...box.querySelectorAll("p, li, ul, ol")].filter((el) => [...el.querySelectorAll("b")].some(plainB)));
+    const headingSizes = new Map([...box.querySelectorAll("h2, h3")].map((h) => [h, headingSizeStyle(h)]).filter(([, s]) => s));
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = [];
@@ -3365,6 +3379,7 @@ var CustomImportScript = (() => {
       if (plainBold.has(node)) node.boldBody = true;
       if (inlineBold.has(node)) node.inlineBold = true;
       if (serifHeads.has(node)) node.serifHeading = true;
+      if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
     });
     let last = null;
     nodes.forEach((node) => {
@@ -3449,10 +3464,16 @@ var CustomImportScript = (() => {
   function cellStyles(cells, ctx) {
     const copy = sharedCopyStyle(cells, ctx);
     const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-    const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+    const allBold = (h) => h.children.length === 1 && h.firstElementChild.tagName === "STRONG" && text(h.firstElementChild) === text(h) && !h.querySelector("em");
+    const serif = heads.some((n) => n.serifHeading) && heads.every((n) => n.serifHeading || allBold(n));
     if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("serif and Futura h2 / h3 in one block, kept in Futura");
+    if (!serif) {
+      heads.filter((h) => h.tagName === "H2" && allBold(h)).forEach((h) => unwrap(h.firstElementChild));
+    }
     const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
-    return [...copy ? copy.split(", ") : [], serif ? "h-serif" : "", boldBody ? "bold-body" : ""].filter(Boolean);
+    const sizes = new Set(heads.map((n) => n.headingSize || ""));
+    const headingSize = sizes.size === 1 ? [...sizes][0] : "";
+    return [...copy ? copy.split(", ") : [], serif ? "h-serif" : "", headingSize, boldBody ? "bold-body" : ""].filter(Boolean);
   }
   function columnItems(columns, split, ctx) {
     const { doc } = ctx;

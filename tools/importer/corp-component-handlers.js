@@ -10,7 +10,7 @@
  */
 import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
-  plainBoldParagraphs, serifHeadings, contentCopy, colourClass,
+  plainBoldParagraphs, serifHeadings, headingSizeStyle, contentCopy, colourClass,
 } from './corp-richtext.js';
 import { standaloneImageNodes } from './corp-components.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
@@ -120,6 +120,9 @@ export function richTextNodes(source, doc) {
   const plainB = (b) => !b.closest('.futura-bold') && !b.querySelector('.futura-bold');
   const inlineBold = new Set([...box.querySelectorAll('p, li, ul, ol')]
     .filter((el) => [...el.querySelectorAll('b')].some(plainB)));
+  // h2 / h3 authored 1.25x / 1.5x (their size class goes with the cleaning)
+  const headingSizes = new Map([...box.querySelectorAll('h2, h3')]
+    .map((h) => [h, headingSizeStyle(h)]).filter(([, s]) => s));
   // copy styles per top-level element: one serif lead paragraph keeps its own font
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
   const { centred, size } = cleanRichText(box);
@@ -135,6 +138,7 @@ export function richTextNodes(source, doc) {
     if (plainBold.has(node)) node.boldBody = true;
     if (inlineBold.has(node)) node.inlineBold = true;
     if (serifHeads.has(node)) node.serifHeading = true;
+    if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
@@ -251,11 +255,24 @@ function sharedCopyStyle(cells, ctx) {
 function cellStyles(cells, ctx) {
   const copy = sharedCopyStyle(cells, ctx);
   const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-  const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+  // a heading that is bold throughout (span.futura-bold): Futura whatever the section font
+  const allBold = (h) => h.children.length === 1 && h.firstElementChild.tagName === 'STRONG'
+    && text(h.firstElementChild) === text(h) && !h.querySelector('em');
+  const serif = heads.some((n) => n.serifHeading)
+    && heads.every((n) => n.serifHeading || allBold(n));
   if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('serif and Futura h2 / h3 in one block, kept in Futura');
+  // without h-serif a bold-throughout h2 is a plain corp h2 (Futura bold by default,
+  // typography-map futura-heading), not the Columns bold display heading; a corp h3 is
+  // Egyptienne by default, so its bold stays
+  if (!serif) {
+    heads.filter((h) => h.tagName === 'H2' && allBold(h)).forEach((h) => unwrap(h.firstElementChild));
+  }
   // plain bold in the cells (Humanist bold, e.g. "Reorder #7502"): bold-body
   const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
-  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : '', boldBody ? 'bold-body' : ''].filter(Boolean);
+  // the h2 / h3 size when every one of them is authored at the same larger size
+  const sizes = new Set(heads.map((n) => n.headingSize || ''));
+  const headingSize = sizes.size === 1 ? [...sizes][0] : '';
+  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : '', headingSize, boldBody ? 'bold-body' : ''].filter(Boolean);
 }
 
 /**
