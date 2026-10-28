@@ -423,10 +423,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "jumpbarnav.deactiveNav": {
-      "handling": "to verify",
-      "how": "deactivated jump bar (172)",
-      "proposal": "verify on the example pages; likely not rendered = skip",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "verified: pages with deactiveNav=true render no jump bar (about/contact, corporate-responsibility, global-quality); the importer only imports a rendered jump bar",
+      "proposal": "keep",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "pagehero.headColor": {
       "handling": "to verify",
@@ -600,10 +601,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "fullWidthImage.dimensionBox": {
-      "handling": "to verify",
-      "how": "text box style on the banner image (FDB / ND)",
-      "proposal": "verify on the example pages",
-      "status": "proposed"
+      "handling": "no effect",
+      "how": "verified: FDB and ND banners render the same text box (no background, shadow or padding of its own) on s3, ORManagers, guaranteeprograms, suppliers, unity-recliner; a box colour comes from the Large Headline backgroundColor",
+      "proposal": "drop",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "fullWidthImage.layoutOptions": {
       "handling": "mapped",
@@ -613,10 +615,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "fullWidthImageHero.location": {
-      "handling": "to verify",
-      "how": "1 / 2: hero text position",
-      "proposal": "verify on the example pages",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "verified: 1 = a title line (hero-space h1) above the banner, 2 = no title line, the title is the banner Large Headline; the handler follows the rendered markup. But 31 heroes (26 location 1, 5 location 2) set the title line transparent (rgba(255,255,255,0)): invisible on live, imported as a visible Bold title",
+      "proposal": "keep location; new rule: a transparent hero title line is not imported (the banner headline becomes the page h1 when the page has none)",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "fullWidthImageHero.hideBottomLine": {
       "handling": "to verify",
@@ -682,16 +685,18 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "resourcesanddownload.jumpbarHidden": {
-      "handling": "to verify",
-      "how": "resources list not in the jump bar",
-      "proposal": "verify; likely no visible effect",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "verified: hides the resources component's own jump-bar entry; the jump bar keeps the links it renders (ibed-wireless, isoair: Overview / Features / Contact / Resources), which is what the importer takes",
+      "proposal": "keep",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "sectionseparator.sectionColor": {
       "handling": "partly",
-      "how": "every separator becomes the divider style (grey rule); white-hr (69) is a white rule",
-      "proposal": "white-hr: verify if it is visible (white on white); if not, a section gap only",
-      "status": "proposed"
+      "how": "verified: white-hr (69) is a 1px white line on a white page, invisible, only the 50px gap shows (acute-care); grey-hr (13) and unset are a visible grey rule (maternity-solutions). The importer makes every separator the visible divider",
+      "proposal": "map: white-hr = a plain section break (no rule, no new name); grey-hr / unset = divider (as today)",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "numbercounter.startNumber": {
       "handling": "mapped",
@@ -775,16 +780,18 @@
       "status": "proposed"
     },
     "localpagenavigation.childrenNumber": {
-      "handling": "to verify",
-      "how": "how many child pages the local nav lists",
-      "proposal": "verify against the Sticky Nav (local) output",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "verified: the number of child pages listed (asc 6 → 7 links with the parent, 1788-platform 3 → 4, 0 / -1 → none); Sticky Nav (local) has the same links (1788-platform: 4 / 4). Small fix: the link cell text still shows the source URL (…/general-surgery.html) though the href is rewritten",
+      "proposal": "keep; importer fix: the link text = the rewritten path",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "localpagenavigation.hideTopLine": {
-      "handling": "to verify",
-      "how": "no rule above the local nav",
-      "proposal": "verify",
-      "status": "proposed"
+      "handling": "not mapped",
+      "how": "verified: without the flag a 1px grey rule (rgb(178,180,174)) sits above the local nav (1788-platform); with it there is none (corporate-responsibility). Sticky Nav (local) draws no rule, so the 21 local navs with the rule lose it",
+      "proposal": "map: Sticky Nav (local) shows the grey rule by default; hideTopLine = an option without it (name to approve, e.g. no-rule)",
+      "status": "proposed",
+      "verified": "2026-10-28 on the example pages (1440px)"
     },
     "eventdetail.eventBU": {
       "handling": "later",
