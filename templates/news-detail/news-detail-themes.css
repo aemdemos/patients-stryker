@@ -9,6 +9,18 @@
    disclaimer-like "Products may not be available…" text, e.g. on the Rosales page). The
    importer opens these pages with a `spacer` section after the title (46px to the video
    row, as on the source) */
+
+/* the `separator` rule runs across the whole page, edge to edge (source .c-section-separator:
+   1440px at 1440px, "When Stryker employees…"), not across the container: it sits on the
+   section, which spans the page, instead of its content box */
+body.news-detail.full-width main > .section.separator {
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail.full-width main > .section.separator > div:first-child {
+  border-top: 0;
+}
+
    @media (width >= 600px) {
    body.news-detail.full-width .columns > div {
    flex-direction: column;
