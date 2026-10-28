@@ -557,8 +557,9 @@
    ],
    "example": "/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-",
    "selector": "div.publishdate (AEM wrapper class; confirm on the example page)",
-   "status": "established",
-   "outcome": "metadata (publish date)"
+   "status": "approved",
+   "outcome": "Heading 5 under the title (as live) + published metadata",
+   "approved": "2026-10-28 (news-detail styling table item 1)"
   },
   {
    "component": "localpagenavigation",

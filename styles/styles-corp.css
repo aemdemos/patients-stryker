@@ -603,9 +603,14 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height-serif-l);
 }
 
-/* h-1-25 / h-1-5: the section's h2 / h3 authored 1.25x / 1.5x the plain heading (stryker.com
+/* h-0-8 / h-1-25 / h-1-5: the section's h2 / h3 authored 0.8x / 1.25x / 1.5x the plain heading
+   (news EP: h3 16.8px at 1440px, 14px on phones; stryker.com
    .fontsize-1-25em / -1-5em headings: product-detail h2 30.625px / 36.75px from 600px). Card
    titles keep their own size (emergency-medical-services featured articles: h2 1.5x, card h3 21px) */
+:where(body.corp) .section.h-0-8 {
+  --corp-heading-scale: 0.8;
+}
+
 :where(body.corp) .section.h-1-25 {
   --corp-heading-scale: 1.25;
 }
@@ -614,12 +619,12 @@ body:where(.corp):has(main .hero-carousel) header {
   --corp-heading-scale: 1.5;
 }
 
-:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
   line-height: var(--heading-line-height);
 }
 
-:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h3 {
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h3 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h3-size, var(--heading-font-size-m)));
   line-height: var(--heading-line-height-h4);
 }

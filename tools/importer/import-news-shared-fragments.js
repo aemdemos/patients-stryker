@@ -33,9 +33,8 @@ export const FRAGMENTS = {
   '/content/experience-fragments/stryker/sage/en/footer/footer/master': {
     type: 'resources', style: 'bu-resources, p-1-25',
   },
-  '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master': {
-    type: 'connect', style: 'connect-band',
-  },
+  // (sustainability-solutions contact_information/header: built by the corp section builder,
+  // as the same "Connect with us" XF of the other business units: bg-gold, h-1-5)
   '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master': {
     type: 'contact', style: 'contact-aside',
   },

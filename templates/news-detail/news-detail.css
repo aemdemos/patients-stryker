@@ -1,0 +1,39 @@
+/* News Detail template (www.stryker.com news articles, e.g.
+   /us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance), built by the corp
+   engine like the other corp templates. Measured at 1440 / 900 / 600 / 375px:
+   - the title (h1) and the publish date (h5) run the full container width; the article copy
+     sits in the left two thirds from 600px (source col-sm-8 from 841px: 910px at 1440px,
+     570px at 900px), full width below
+   - the title is Egyptienne Light 28px on phones and Futura bold from 600px (source 841px);
+     the publish date is Futura bold 14px, 15px under it (the section gap below it matches the
+     source's 131-150px to the article)
+   - plain h2 / h3 21px / 24.5px and 17.5px / 21px below / from 600px, as on product pages
+     (h-0-8 / h-1-25 / h-1-5 scale them: EP 0.8em h3 16.8px); h4 14px on phones (easyfuse
+     subtitle), the corp 17.5px from 600px */
+body.news-detail main .default-content-wrapper > h5 {
+  font-size: var(--body-font-size-m);
+}
+
+body.news-detail main > .section > .default-content-wrapper > h4 {
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  body.news-detail {
+    --corp-h2-size: var(--heading-font-size-xl);
+    --corp-h3-size: var(--heading-font-size-l);
+  }
+
+  body.news-detail main > .section > .default-content-wrapper > :not(h1, h5) {
+    max-width: calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  body.news-detail main > .section > .default-content-wrapper > h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  body.news-detail main > .section > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
+  }
+}

@@ -991,7 +991,7 @@ function tabs(el, ctx) {
     }
     return [];
   });
-  const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
+  const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-\d-)/.test(s);
   const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
   const shared = sets.length ? sets[0].filter(inAll) : [];
   const panels = collected.map((items) => inlineNodes(items, ctx));
@@ -1178,6 +1178,19 @@ function promoTile(el, ctx) {
 const skip = () => [];
 
 /**
+ * Publish date (news-detail template slot, component-map publishdate, approved 2026-10-28):
+ * the date under the title as a Heading 5, as live (Futura bold 14px); it is also the
+ * `published` metadata (corp-import.js).
+ */
+function publishDate(el, ctx) {
+  const line = el.querySelector('h5') || el;
+  if (!text(line)) return [];
+  const h5 = ctx.doc.createElement('h5');
+  h5.textContent = text(line);
+  return [{ type: 'flow', role: 'text', nodes: [h5] }];
+}
+
+/**
  * Event location (news-detail template slot, component-map eventlocationproperties: default
  * content): the location line under the date as a Heading 5, as live; empty on most pages.
  */
@@ -1228,11 +1241,11 @@ export const COMPONENTS = {
   'c-navigation-bar': jumpBar,
   'c-tiles': promoTile,
   // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
-  // publish date (the `published` metadata, component-map publishdate), the event location
-  // and the template's "back" link (navigation, not authored)
+  // publish date and the event location under the title, and the template's "back" link
+  // (navigation, not authored)
   'c-standalone-image': standaloneImage,
   'c-rich-text-editor': textComponent,
-  'c-publish-date': skip,
+  'c-publish-date': publishDate,
   'c-event-location-properties': eventLocation,
   'c-back-button': skip,
 };

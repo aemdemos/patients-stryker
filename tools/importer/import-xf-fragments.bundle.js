@@ -481,9 +481,11 @@ var CustomImportScript = (() => {
       if (node.nodeType !== 1 || own.get(node)) return "";
       return [...node.childNodes].map(freeText).join("");
     };
+    const linkOnly = (el) => !!el.closest("a[href]") || [...el.querySelectorAll("a[href]")].some((a) => squash(a.textContent) === squash(el.textContent));
     coloured.forEach((el) => {
       const cls = colourClass(own.get(el));
       if (!cls) return;
+      if (cls === "color-teal" && linkOnly(el)) return;
       let run = [];
       const flush = () => {
         if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
@@ -526,12 +528,48 @@ var CustomImportScript = (() => {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
-    tagPlainBoldLabels(root, wholeParagraphs);
     const doc = root.ownerDocument;
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
+    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) {
+          const next = el.nextSibling;
+          if (/[\s\u00a0]/.test(last.textContent) && !(next && /^[\s\u00a0]/.test(next.textContent))) {
+            el.after(doc.createTextNode(" "));
+          }
+          last.remove();
+        } else el.after(last);
+        last = el.lastChild;
+      }
+      if (last && last.nodeType === 3 && /[\s\u00a0]$/.test(last.textContent)) {
+        last.textContent = last.textContent.replace(/[\s\u00a0]+$/, "");
+        el.after(doc.createTextNode(" "));
+      }
+    });
+    tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
       if (a) standalone.add(a);
+    });
+    const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
+    root.querySelectorAll("a[href]").forEach((a) => {
+      if (!triangle.test(a.textContent)) return;
+      if (!(a.closest(".futura-bold") || a.querySelector(".futura-bold"))) return;
+      const walker = doc.createTreeWalker(a, 4);
+      let lastText = null;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) lastText = n;
+      }
+      if (lastText) lastText.textContent = lastText.textContent.replace(triangle, "");
+      let span = a.parentElement;
+      while (span && span.tagName === "SPAN" && squash(span.textContent) === squash(a.textContent)) {
+        unwrap(span);
+        span = a.parentElement;
+      }
+      a.querySelectorAll("span").forEach(unwrap);
+      standalone.add(a);
     });
     standalone.forEach((a) => {
       const u = doc.createElement("u");
@@ -542,19 +580,6 @@ var CustomImportScript = (() => {
       strong.append(a);
     });
     mapColours(root);
-    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
-      let last = el.lastChild;
-      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
-        if (emptyElement(last)) last.remove();
-        else el.after(last);
-        last = el.lastChild;
-      }
-      if (last && last.nodeType === 3 && /[\s ]$/.test(last.textContent)) {
-        last.textContent = last.textContent.replace(/[\s ]+$/, "");
-        el.after(doc.createTextNode(" "));
-      }
-    });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
       if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
         rename(el, "strong");
@@ -600,7 +625,7 @@ var CustomImportScript = (() => {
   function headingSizeStyle(heading) {
     if (!/^H[23]$/.test(heading.tagName)) return "";
     const size = effectiveSize(heading);
-    return { 1.25: "h-1-25", 1.5: "h-1-5" }[size] || "";
+    return { 0.8: "h-0-8", 1.25: "h-1-25", 1.5: "h-1-5" }[size] || "";
   }
   var plainText = (el) => {
     const walker = el.ownerDocument.createTreeWalker(el, 4);
@@ -4186,7 +4211,7 @@ var CustomImportScript = (() => {
       }
       return [];
     });
-    const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
+    const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-\d-)/.test(s);
     const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
     const shared = sets.length ? sets[0].filter(inAll) : [];
     const panels = collected.map((items) => inlineNodes(items, ctx));
@@ -4353,6 +4378,13 @@ var CustomImportScript = (() => {
     return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
   }
   var skip = () => [];
+  function publishDate(el, ctx) {
+    const line = el.querySelector("h5") || el;
+    if (!text(line)) return [];
+    const h5 = ctx.doc.createElement("h5");
+    h5.textContent = text(line);
+    return [{ type: "flow", role: "text", nodes: [h5] }];
+  }
   function eventLocation(el, ctx) {
     const line = el.querySelector("h5") || el;
     if (!text(line)) return [];
@@ -4398,11 +4430,11 @@ var CustomImportScript = (() => {
     "c-navigation-bar": jumpBar,
     "c-tiles": promoTile,
     // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
-    // publish date (the `published` metadata, component-map publishdate), the event location
-    // and the template's "back" link (navigation, not authored)
+    // publish date and the event location under the title, and the template's "back" link
+    // (navigation, not authored)
     "c-standalone-image": standaloneImage,
     "c-rich-text-editor": textComponent,
-    "c-publish-date": skip,
+    "c-publish-date": publishDate,
     "c-event-location-properties": eventLocation,
     "c-back-button": skip
   };
@@ -4478,10 +4510,8 @@ var CustomImportScript = (() => {
       type: "resources",
       style: "bu-resources, p-1-25"
     },
-    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
-      type: "connect",
-      style: "connect-band"
-    },
+    // (sustainability-solutions contact_information/header: built by the corp section builder,
+    // as the same "Connect with us" XF of the other business units: bg-gold, h-1-5)
     "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
       type: "contact",
       style: "contact-aside"

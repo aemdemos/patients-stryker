@@ -75,8 +75,93 @@ Removing these would mean rewriting the core of the engine:
 Heights after these: 0.6–1.08 of live; the low ones (StrykerTalks, video stories, podcast) come
 from 2 and 3 (column width and title spacing).
 
-## Next (after approval)
-Apply the table, re-run the 15 pilots, and run the regression check on the product-detail,
-long-page-detail and tier2 pilots. Then re-import the 95 local news pages into a scratch folder
-and diff them against local content and DA. Report the differences, including the probable
-author edits in DA.
+## Applied (2026-10-28, table approved as proposed)
+- **Preview measurement:** the local dev server loaded the old `templates/news-detail` CSS / JS
+  from the remote branch while the template had no files of its own. The first comparison above
+  includes that CSS; the results below don't.
+- **Item 1:** the publish date is a Heading 5 under the title, Futura bold 14px (template CSS).
+  `published` metadata is kept, and component-map row `publishdate` is now approved.
+- **Items 2 and 3:** new `templates/news-detail/news-detail.css`.
+  - Title and date run the full container width. From 600px the article sits in the left two
+    thirds (910px at 1440, 570px at 900, as live). Full width below 600.
+  - The section gap after the date already matches live (135 vs 131px at 1440, 161 vs 150 at 900),
+    so no extra margin is needed.
+  - Found while measuring, same layer:
+    - the title is Egyptienne on phones and Futura bold from 600px (as long-page-detail);
+    - plain h2 / h3 24.5 / 21px from 600px (as product-detail and tier2);
+    - h4 14px on phones.
+- **Item 4:** `h-0-8` in `corp-richtext.js` headingSizeStyle and `styles-corp.css` (scale 0.8).
+  The EP h3s are 16.8px / 14px, as live.
+- **Item 5: not applied.** The source authors the statement as a Heading 2 at 1.5vw. In this
+  Columns block (no large-headline modifier) a paragraph renders 14px, further from live (21px)
+  than the heading's 24.5px. Left as a one-off.
+- **Item 6:** a Futura bold link ending in ► becomes the Bold + Underline link (link-strong). The
+  triangle, font and colour spans are dropped (vocera: as live).
+- **Item 7:** normalised (approved rule).
+- **Item 8:** the sustainability "Connect with us" XF now goes through the corp section builder,
+  like its endoscopy / sports-medicine twins (bg-gold, h-1-5: Futura 36.75px, as live), and is
+  out of `import-news-shared-fragments.js`.
+
+**Result on the 15 pilots:**
+- 4 text-style differences at 1440 and 4 at 375, all from items 5 and 7. Before: 16 / 16.
+- No missing texts.
+- Heights 0.79–1.19 of live. Highest: a-safe-space 1.19, surgical-icu 1.18. Lowest: EP 0.79.
+  The rest is spacing.
+
+## Re-import of the 95 local news pages (2026-10-28, scratch folder; nothing uploaded)
+- 95/95 imported with 4 XFs. Coverage 99/99 ok, no `.html` / `/index` links.
+- Every component handled. One note on 3 StrykerTalks pages: a Large Headline next to rich
+  text, so the large-headline modifier is left off.
+- Regression on the product-detail, long-page-detail and tier2 pilots: only anchor IDs changed
+  (the source generates them on every load).
+
+### Fixed while comparing (shared rich-text rules)
+- **Plain-bold labels on their own line** ("About Stryker", "For investor inquiries please
+  contact:") now get `[[body-font]…]` again. The line break inside `<b>About Stryker<br></b>`
+  now moves out before the label check runs. Live shows Humanist bold; before the fix the
+  preview showed Futura.
+- **A space held only by an empty element** is kept: "software<sup>&nbsp;</sup></b>continues"
+  (autonomous-guidance).
+- **No `[[color-teal]]` tag on a link**: teal is the link colour (pangea, triathlon).
+
+### Compared with DA (corp preview; DA reads return 401, the preview matched DA where checked)
+Section styles, H5 dates, spacer sections and section splits ignored, 34 of 95 pages still
+differ. By cause:
+- **Our rules (expected):**
+  - XF content in Fragment blocks; hero slides as Hero Corp fragments (surgical-icu,
+    a-message-to-our-customers).
+  - "About Stryker" in span.futura-bold → Bold + Italic (Futura), 12 pages; DA has Bold, which
+    the old template JS made Futura (same look).
+  - Labels authored as Heading 3 stay Heading 3, 7 pages (#451 turned them into paragraphs).
+  - StrykerTalks statements keep their authored level: Heading 3 on marucci / pierce / stiles
+    (DA: Heading 2).
+  - The source's blank line inside a paragraph stays a `<br><br>` (q-guidance-system; #457 split
+    the paragraph).
+  - `http://www.stryker.com` links become `https://`.
+  - The fixes above.
+- **Probably author edits in DA (a re-import would undo them):**
+  - endoscopys-rosales-shares: video poster StrykerTalks23_8.30.23_1200x675_Vs1 (source:
+    ST-Endo-Final-TS_1-AVS)
+  - stryker-s-heath-shares: video poster AnnieHeathStrykerTalks_thumbnail (source:
+    AnnieHeathStrykerTalks-AVS)
+  - kevin-on-insideout-podcast: Columns with `gray-lead`
+  - `[[text-1-25]]` on the References / About Stryker labels (national-direct-to-patient,
+    over-2400-surgical-cases)
+- **Needs a decision: images in a narrow source column.** An image in a col-sm-4 / col-sm-6
+  column with the other column empty is narrower on live, e.g. the cerus-endovascular logo at
+  440px at 1440. Ours renders at the article width (910px). DA has #457's `image-1-3` /
+  `image-1-2` section styles on 13 sections. Matching it needs a section style: propose
+  `image-1-3` / `image-1-2` (name to approve).
+
+### Measured in the preview after the fixes (1440 / 375)
+- **Lead image** (stryker-unveils-niagara): 910 x 504px, 15px under the date; 345px and 15px at
+  375. As live.
+- **Narrow-column image** (cerus-endovascular logo): 740px wide (its own size, within the
+  910px article) and 29px lower, against live 440px. This is the narrow-column item above.
+- **Fixes confirmed:**
+  - "software</strong> continues" (space kept);
+  - no [[color-teal]] around links on pangea / triathlon;
+  - [[body-font]] on the vocera labels.
+- **Regression** (product-detail, long-page-detail and tier2 pilots, after the last fixes): two
+  pages changed, both with a teal tag dropped inside a link (tier2
+  business-association-agreement, news pangea). Everything else changed only in anchor IDs.

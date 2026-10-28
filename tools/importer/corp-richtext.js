@@ -271,9 +271,14 @@ export function mapColours(root) {
     if (node.nodeType !== 1 || own.get(node)) return '';
     return [...node.childNodes].map(freeText).join('');
   };
+  // teal on a link (inside it, or around the link alone) is the link colour already: no tag
+  // (news pangea "www.stryker.com", triathlon)
+  const linkOnly = (el) => !!el.closest('a[href]')
+    || [...el.querySelectorAll('a[href]')].some((a) => squash(a.textContent) === squash(el.textContent));
   coloured.forEach((el) => {
     const cls = colourClass(own.get(el));
     if (!cls) return;
+    if (cls === 'color-teal' && linkOnly(el)) return;
     let run = [];
     const flush = () => {
       if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
@@ -344,16 +349,68 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
+  const doc = root.ownerDocument;
+
+  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
+  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
+  // lost on import, merging the label into the next line. Innermost formatting first, so a
+  // break in nested formatting (<b><span class=futura-bold>About Stryker<br></span></b>, news
+  // national-direct-to-patient-marketing-campaign) moves out of every level. Done before the
+  // plain-bold labels are found: "<b>About Stryker<br></b>" is a label on its own line.
+  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
+    && !node.textContent.trim() && !node.querySelector('img, br');
+  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+    let last = el.lastChild;
+    while (last && (last.nodeName === 'BR' || emptyElement(last)
+      || (last.nodeType === 3 && !last.textContent.trim()))) {
+      if (emptyElement(last)) {
+        // an empty element that only held a space ("software<sup>&nbsp;</sup></b>continues")
+        // leaves the space between the words
+        const next = el.nextSibling;
+        if (/[\s\u00a0]/.test(last.textContent) && !(next && /^[\s\u00a0]/.test(next.textContent))) {
+          el.after(doc.createTextNode(' '));
+        }
+        last.remove();
+      } else el.after(last);
+      last = el.lastChild;
+    }
+    // a space typed at the end of the formatting ("The solution&nbsp;</span>you've", inspace)
+    // stays between the words, outside the bold
+    if (last && last.nodeType === 3 && /[\s\u00a0]$/.test(last.textContent)) {
+      last.textContent = last.textContent.replace(/[\s\u00a0]+$/, '');
+      el.after(doc.createTextNode(' '));
+    }
+  });
   tagPlainBoldLabels(root, wholeParagraphs);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
-  const doc = root.ownerDocument;
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
     const a = span.closest('a') || span.querySelector('a');
     if (a) standalone.add(a);
+  });
+  // the same CTA typed by hand: a Futura bold link ending in a triangle ("READ MORE ON OUR
+  // INVESTOR RELATIONS SITE HERE \u25ba", news press releases); the triangle comes from the CSS,
+  // and the font and colour spans around the link alone are the CTA's own look (dropped)
+  const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
+  root.querySelectorAll('a[href]').forEach((a) => {
+    if (!triangle.test(a.textContent)) return;
+    if (!(a.closest('.futura-bold') || a.querySelector('.futura-bold'))) return;
+    const walker = doc.createTreeWalker(a, 4); // NodeFilter.SHOW_TEXT
+    let lastText = null;
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (squash(n.textContent)) lastText = n;
+    }
+    if (lastText) lastText.textContent = lastText.textContent.replace(triangle, '');
+    let span = a.parentElement;
+    while (span && span.tagName === 'SPAN' && squash(span.textContent) === squash(a.textContent)) {
+      unwrap(span);
+      span = a.parentElement;
+    }
+    a.querySelectorAll('span').forEach(unwrap);
+    standalone.add(a);
   });
   standalone.forEach((a) => {
     const u = doc.createElement('u');
@@ -367,28 +424,6 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   // colours, before the formatting spans that may carry them are renamed or unwrapped
   mapColours(root);
 
-  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
-  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
-  // lost on import, merging the label into the next line. Innermost formatting first, so a
-  // break in nested formatting (<b><span class=futura-bold>About Stryker<br></span></b>, news
-  // national-direct-to-patient-marketing-campaign) moves out of every level.
-  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
-    && !node.textContent.trim() && !node.querySelector('img, br');
-  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
-    let last = el.lastChild;
-    while (last && (last.nodeName === 'BR' || emptyElement(last)
-      || (last.nodeType === 3 && !last.textContent.trim()))) {
-      if (emptyElement(last)) last.remove();
-      else el.after(last);
-      last = el.lastChild;
-    }
-    // a space typed at the end of the formatting ("The solution&nbsp;</span>you've", inspace)
-    // stays between the words, outside the bold
-    if (last && last.nodeType === 3 && /[\s\u00a0]$/.test(last.textContent)) {
-      last.textContent = last.textContent.replace(/[\s\u00a0]+$/, '');
-      el.after(doc.createTextNode(' '));
-    }
-  });
   // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
   // colour); <b> → <strong> (bold in the body font). Headings keep a plain <strong>.
   root.querySelectorAll('span.futura-bold').forEach((el) => {
@@ -454,7 +489,7 @@ export function plainBoldParagraphs(root) {
 export function headingSizeStyle(heading) {
   if (!/^H[23]$/.test(heading.tagName)) return '';
   const size = effectiveSize(heading);
-  return ({ 1.25: 'h-1-25', 1.5: 'h-1-5' })[size] || '';
+  return ({ 0.8: 'h-0-8', 1.25: 'h-1-25', 1.5: 'h-1-5' })[size] || '';
 }
 
 // text of an element outside span.futura-bold / bold (the source's h1–h3 default font)
