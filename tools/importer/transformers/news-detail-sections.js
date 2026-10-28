@@ -56,6 +56,9 @@ const COMPONENTS = [
   '.c-rich-text-editor',
   '.c-standalone-video',
   '.c-curatedcta',
+  // a Button Set (.buttonset > .button-group > a.btn, e.g. the gold "Read the full
+  // statement" / "DONATE" buttons on Sage news) imports like a Curated CTA
+  '.buttonset',
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
@@ -618,6 +621,14 @@ function imageNodes(component, doc) {
       h4.textContent = text(title);
       nodes.push(h4);
     });
+    // a caption line under the image (p.u-white-space-pre, body text on the source, e.g.
+    // "Working together to clear the brush") follows it as a paragraph
+    component.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre').forEach((caption) => {
+      if (!text(caption)) return;
+      const p = doc.createElement('p');
+      p.textContent = text(caption);
+      nodes.push(p);
+    });
   }
   return nodes;
 }
@@ -1044,14 +1055,18 @@ export default function transform(hookName, element, payload) {
     }
     // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
     // date (e.g. OptaBlate, ProStep): that headline is the page H1, in its own section with
-    // the `headline-2vw` style (the source size)
-    if (isFirst && !hasTitle && component.matches('.c-largeheadline')
-      && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+    // the `headline-2vw` style (the source size); a 1.5vw one (e.g. the Neuroform Atlas
+    // expanded-indication release) gets `headline-1-5vw`
+    const headlineStyle = component.matches('.c-largeheadline') && [
+      ['[class*="fontsize-2vw"]', 'headline-2vw'],
+      ['[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]', 'headline-1-5vw'],
+    ].find(([selector]) => component.querySelector(selector));
+    if (isFirst && !hasTitle && headlineStyle && text(component)) {
       const lines = headlineNodes(component, doc);
       if (lines.length) {
         const heading = rename(lines[0], 'h1');
         heading.querySelectorAll('strong, em').forEach(unwrap);
-        startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
+        startSection('headline', headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
         current = null;
         return;
       }
@@ -1066,7 +1081,7 @@ export default function transform(hookName, element, payload) {
         current = null;
       }
     }
-    if (component.matches('.c-curatedcta')) {
+    if (component.matches('.c-curatedcta, .buttonset')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
       // a button is centred when the source centres it (an offset grid column, e.g. the

@@ -210,6 +210,9 @@ var CustomImportScript = (() => {
     ".c-rich-text-editor",
     ".c-standalone-video",
     ".c-curatedcta",
+    // a Button Set (.buttonset > .button-group > a.btn, e.g. the gold "Read the full
+    // statement" / "DONATE" buttons on Sage news) imports like a Curated CTA
+    ".buttonset",
     ".c-largeheadline",
     ".c-section-title",
     ".c-customizeable",
@@ -609,6 +612,12 @@ var CustomImportScript = (() => {
         h4.textContent = text(title);
         nodes.push(h4);
       });
+      component.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre").forEach((caption) => {
+        if (!text(caption)) return;
+        const p = doc.createElement("p");
+        p.textContent = text(caption);
+        nodes.push(p);
+      });
     }
     return nodes;
   }
@@ -938,12 +947,16 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+      const headlineStyle = component.matches(".c-largeheadline") && [
+        ['[class*="fontsize-2vw"]', "headline-2vw"],
+        ['[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]', "headline-1-5vw"]
+      ].find(([selector]) => component.querySelector(selector));
+      if (isFirst && !hasTitle && headlineStyle && text(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
           const heading = rename(lines[0], "h1");
           heading.querySelectorAll("strong, em").forEach(unwrap);
-          startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
+          startSection("headline", headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
           current = null;
           return;
         }
@@ -955,7 +968,7 @@ var CustomImportScript = (() => {
           current = null;
         }
       }
-      if (component.matches(".c-curatedcta")) {
+      if (component.matches(".c-curatedcta, .buttonset")) {
         const nodes2 = buttonNodes(component, doc);
         if (!nodes2.length) return;
         const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');

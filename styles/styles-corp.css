@@ -419,6 +419,36 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* headline-1-5vw: the same Large Headline title at 1.5vw (stryker.com span.fontsize-1-5-vw,
+   e.g. the Neuroform Atlas expanded-indication release): 3vw, from 600px (source 841px)
+   1.5vw capped at 21px; lines 1.35. The source keeps 5px (15px from 600px) more below it
+   than the section gap (20px / 30px to the separator) */
+:where(body.corp) main > .section.headline-1-5vw {
+  --corp-headline-vw: 1.5vw;
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+  padding-bottom: var(--space-block-xs);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-1-5vw {
+    --corp-headline-vw: 0.75vw;
+  }
+
+  :where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+    padding-bottom: var(--space-block);
+  }
+}
+
 /* h1-21: a page title the source sets as a 1.5em Futura bold line opening the first rich
    text, with no page title (e.g. the Emergency Relief Bed release): the page H1 at 21px,
    lines 1.2 (25.2px; source 25.3px) */
