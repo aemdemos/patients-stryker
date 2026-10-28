@@ -7,29 +7,47 @@
     content="script-src 'nonce-aem' 'strict-dynamic' 'unsafe-inline' http: https:; base-uri 'self'; object-src 'none';"
     move-to-http-header="true"
   >
-  <title>Page not found</title>
+  <title>404 | Stryker</title>
   <script nonce="aem" type="text/javascript">
     window.isErrorPage = true;
     window.errorCode = '404';
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
-  <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
+  <meta property="og:title" content="404 | Stryker">
   <script nonce="aem" type="module">
-    window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
-        }
-      }
-    });
+    // the backend serves 404.html without bulk metadata: apply the /metadata.json rules for
+    // the requested path first, so the section's header, footer and `site` are used
+    import applyBulkMetadata from '/scripts/bulk-metadata.js';
+
+    // only the chrome keys: a 404 must not pick up e.g. the `template` of the real pages
+    // under the same path (stryker-com: /us/en/about/news/** → news-detail)
+    const KEYS = ['nav', 'footer', 'logo-link', 'site'];
+
+    // 404-only exceptions, set before the sheet so they win: IVS 404s use the logo-only
+    // header linking to the IVS home. This overrides the `nav` of the /us/en/ivs and
+    // /us/en/ivs/** rows in /metadata.json (nav-ivs), which real IVS pages keep.
+    const OVERRIDES = { '/us/en/ivs/': { nav: '/nav-legal', 'logo-link': '/us/en/ivs/' } };
+
+    // HOME target per site (`site` metadata): stryker.com's 404 links to /us/en/
+    const HOME = { corp: '/us/en/' };
+    Object.entries(OVERRIDES)
+      .filter(([prefix]) => window.location.pathname.startsWith(prefix))
+      .forEach(([, values]) => Object.entries(values).forEach(([name, content]) => {
+        const meta = document.createElement('meta');
+        meta.name = name;
+        meta.content = content;
+        document.head.append(meta);
+      }));
+
+    await applyBulkMetadata(KEYS);
+
+    const site = (document.querySelector('meta[name="site"]')?.content || '').trim().toLowerCase();
+    const home = document.querySelector('main.error a[href="/"]');
+    if (home && HOME[site]) home.href = HOME[site];
+
+    // loaded with import() rather than a <script src>, so aem.js can't derive
+    // window.hlx.codeBasePath from the tag and it falls back to '' (code at the site root)
+    await import('/scripts/scripts.js');
   </script>
   <script nonce="aem" type="module">
     import { sampleRUM } from '/scripts/aem.js';
@@ -37,18 +55,30 @@
   </script>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
+    /* source 404 (patients.stryker.com): 10px below the header, smaller headings below
+       480px (mapped to the 600px breakpoint), 30px from the text to the HOME button */
+    main.error .default-content-wrapper {
+      padding-top: var(--space-block-s);
     }
 
-    main.error .error-number {
-      width: 100%;
+    main.error h2 {
+      font-size: var(--heading-font-size-l);
     }
 
-    main.error .error-number text {
-      font-family: monospace;
+    main.error h3 {
+      margin-bottom: var(--space-block-l);
+      font-size: var(--heading-font-size-m);
+    }
+
+    @media (width >= 600px) {
+      main.error h2 {
+        font-size: var(--heading-font-size-xl);
+      }
+
+      main.error h3 {
+        margin-bottom: var(--space-section);
+        font-size: var(--heading-font-size-l);
+      }
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -57,14 +87,10 @@
 <body>
   <header></header>
   <main class="error">
-    <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-      </p>
+    <div>
+      <h2><u>We couldn't find the page you're looking for.</u></h2>
+      <h3>Please try again later or review other pages on our site for the information you're seeking.</h3>
+      <p><strong><a href="/">Home</a></strong></p>
     </div>
   </main>
   <footer></footer>
