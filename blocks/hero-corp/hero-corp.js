@@ -1,4 +1,7 @@
-import decorateDMAssets from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
+
+// a slide's media: its picture, or its background video (a video slide)
+const MEDIA = 'picture, .dm-video-background';
 
 /**
  * A row cell that only links to a fragment document (a slide image kept as its own
@@ -16,38 +19,49 @@ function fragmentLinkOf(cell) {
  * Slide image rows that link to fragment documents: the cell is replaced by the first image
  * of its fragment (fetched as .plain.html, its Dynamic Media links decorated), so the rows read
  * like authored image rows (the whole cell: the page's button decoration may already have
- * wrapped the lone link in a paragraph). All fragments are fetched in parallel; a fragment
+ * wrapped the lone link in a paragraph). A fragment that holds a video instead (a video
+ * slide, e.g. its Video block) gives a muted, looping background video, as live; the same
+ * video for desktop and mobile plays once. All fragments are fetched in parallel; a fragment
  * that cannot be loaded leaves its row empty.
  * @param {Element} block The hero-corp block
  */
 async function resolveFragmentImages(block) {
   const cells = [...block.querySelectorAll(':scope > div > div')].filter(fragmentLinkOf);
-  await Promise.all(cells.map(async (cell) => {
+  const found = await Promise.all(cells.map(async (cell) => {
     const link = fragmentLinkOf(cell);
     const path = new URL(link.getAttribute('href'), window.location.href).pathname.replace(/\/$/, '');
-    let media = null;
     try {
       // started early by scripts/corp.js (prefetchHeroFragments) for the first heroes
       const pending = window.hlx && window.hlx.heroFragments && window.hlx.heroFragments.get(path);
       const html = pending ? await pending
         : await fetch(`${path}.plain.html`).then((resp) => (resp.ok ? resp.text() : null));
-      if (html) {
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        decorateDMAssets(doc.body);
-        const found = doc.body.querySelector('picture') || doc.body.querySelector('img');
-        if (found) media = document.importNode(found, true);
-      }
+      if (!html) return {};
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const video = [...doc.body.querySelectorAll('a[href]')]
+        .find((a) => isDMVideoSrc(a.getAttribute('href')));
+      decorateDMAssets(doc.body);
+      const image = doc.body.querySelector('picture') || doc.body.querySelector('img');
+      if (image) return { image: document.importNode(image, true) };
+      return video ? { video: video.getAttribute('href'), label: video.textContent.trim() } : {};
     } catch {
-      media = null;
+      return {};
     }
+  }));
+  const videos = new Set();
+  cells.forEach((cell, i) => {
+    const { image, video, label } = found[i];
+    let media = image || null;
     if (media && media.tagName === 'IMG') {
-      const picture = document.createElement('picture');
-      picture.append(media);
-      media = picture;
+      media = document.createElement('picture');
+      media.append(image);
+    }
+    if (video && !videos.has(video)) {
+      videos.add(video);
+      media = renderVideo(video, label, { background: true });
     }
     if (media) cell.replaceChildren(media);
     else cell.replaceChildren();
-  }));
+  });
 }
 
 /**
@@ -63,12 +77,12 @@ function setupHero(block) {
     const cells = [...row.children];
     if (cells.length >= 2) {
       const label = cells[0].textContent.trim().toLowerCase();
-      const pic = cells[1].querySelector('picture');
+      const pic = cells[1].querySelector(MEDIA);
       if (label === 'mobile') mobilePic = pic || mobilePic;
       else desktopPic = pic || desktopPic;
     } else if (cells.length === 1) {
       const cell = cells[0];
-      const pic = cell.querySelector('picture');
+      const pic = cell.querySelector(MEDIA);
       if (pic && !cell.querySelector('h1, h2, h3, p')) {
         if (!desktopPic) desktopPic = pic;
         else if (!mobilePic) mobilePic = pic;
@@ -94,7 +108,7 @@ function setupHero(block) {
   }
 
   if (!desktopPic && !mobilePic) {
-    const pics = [...block.querySelectorAll('picture')];
+    const pics = [...block.querySelectorAll(MEDIA)];
     [desktopPic, mobilePic] = pics;
   }
 
@@ -149,8 +163,10 @@ function readSlideOptions(block) {
     const [, option, whole, fraction] = match;
     const value = Number(fraction ? `${whole}.${fraction}` : whole);
     options.add(option);
-    if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
-    else if (option === 'copy-size') {
+    if (option === 'size') {
+      block.style.setProperty('--hero-slide-text-size', value);
+      block.dataset.textSize = value;
+    } else if (option === 'copy-size') {
       block.style.setProperty('--hero-slide-copy-size', value);
       block.dataset.copySize = value;
     } else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
@@ -166,7 +182,7 @@ export default async function decorate(block) {
   await resolveFragmentImages(block);
   setupHero(block);
 
-  if (!block.querySelector(':scope > div:first-child picture')) {
+  if (!block.querySelector(':scope > div:first-child :is(picture, .dm-video-background)')) {
     block.classList.add('no-image');
   }
 }

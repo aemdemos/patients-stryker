@@ -37,8 +37,20 @@
   height: auto;
 }
 
-.hero-corp.image-slide picture.hero-image-desktop {
+.hero-corp.image-slide .hero-image-desktop {
   display: none;
+}
+
+/* video slide (its fragment holds a video): a muted, looping background video in the live
+   3:1 crop (stryker.com inspace / 1788-platform hero: 1464 x 488 at 1440px, cover) */
+.hero-corp.image-slide .dm-video-background {
+  display: block;
+}
+
+.hero-corp.image-slide .dm-video-background .dm-video {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  border: 0;
 }
 
 .hero-corp.image-slide > div:last-child {
@@ -57,9 +69,14 @@
   max-width: none;
   margin: 0;
   color: var(--text-color);
+  text-align: left;
+}
+
+/* the headline's vw size (size-<n>, default 2) — not in an image-right hero without
+   size-<n>, whose copy keeps the page type (below) */
+.hero-corp.image-slide:where(:not(.image-right:not([data-text-size]))) > div:last-child > * {
   font-size: calc(var(--hero-slide-text-size) * 2vw);
   line-height: var(--heading-line-height-hero);
-  text-align: left;
 }
 
 /* text-above: the source fullWidthImageHero 'col-sm-N pull-left' text box. It comes before
@@ -103,12 +120,34 @@
   font-size: calc(var(--hero-slide-copy-size) * 2vw);
 }
 
+/* image-right: the product hero (stryker.com slide image at grid offset 6 / width 6). Below
+   600px a slide without a mobile image shows its text only, as live; from 600px the image
+   fills the right half and the text box sits over the left half (below) */
+.hero-corp.image-slide.image-right > div:first-child:not(:has(.hero-image-mobile)) {
+  display: none;
+}
+
+/* image-right copy without size-<n> (stryker.com product hero rich text): h1 and h2 at the
+   corp heading sizes (h2 21px / 24.5px from 600px, sage-barrier-cream-cloths), the copy at
+   the section's copy style (p-*, serif) */
+.hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > :is(h1, h2) {
+  line-height: var(--heading-line-height);
+}
+
+.hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
+  font-size: var(--heading-font-size-l);
+}
+
+.section.serif .hero-corp.image-slide.image-right > div:last-child > p {
+  font-family: var(--heading-font-family);
+}
+
 @media (width >= 600px) {
-  .hero-corp.image-slide picture.hero-image-desktop {
+  .hero-corp.image-slide .hero-image-desktop {
     display: block;
   }
 
-  .hero-corp.image-slide picture.hero-image-mobile {
+  .hero-corp.image-slide .hero-image-mobile {
     display: none;
   }
 
@@ -129,7 +168,7 @@
     padding-bottom: calc(2 * var(--space-block-l) + var(--space-block));
   }
 
-  .hero-corp.image-slide > div:last-child > * {
+  .hero-corp.image-slide:where(:not(.image-right:not([data-text-size]))) > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 
@@ -139,5 +178,18 @@
 
   .hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
     font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide.image-right > div:first-child {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-corp.image-slide.image-right > div:first-child:not(:has(.hero-image-mobile)) {
+    display: block;
+  }
+
+  .hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
+    font-size: var(--heading-font-size-xl);
   }
 }

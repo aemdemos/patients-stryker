@@ -434,9 +434,13 @@ function hlsDuration(src) {
  * <video poster> and stripped from the media source.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label (from link title)
+ * @param {object} [options]
+ * @param {boolean} [options.background] a decorative background video (corp hero slides):
+ *   muted, looping, playing on its own without controls; the poster only when the user
+ *   prefers reduced motion
  * @returns {HTMLElement} a wrapper div containing the <video> and the play overlay
  */
-export function renderVideo(src, label) {
+export function renderVideo(src, label, { background = false } = {}) {
   const url = new URL(src, window.location.href);
   let poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
@@ -480,6 +484,17 @@ export function renderVideo(src, label) {
 
   // the HLS source is attached lazily, so make sure it is there before playing
   const playVideo = () => startMedia().then(() => video.play().catch(() => {}));
+
+  if (background) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'dm-video-wrapper dm-video-background';
+    video.muted = true;
+    video.loop = true;
+    video.setAttribute('aria-hidden', 'true');
+    wrapper.append(video);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) playVideo();
+    return wrapper;
+  }
 
   // wrap the video with a centered play-icon overlay (with or without a poster):
   // it sits over the frame before playback and fades out/in as the video is
