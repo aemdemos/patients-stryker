@@ -115,6 +115,11 @@ export function richTextNodes(source, doc) {
   wrapInlineRuns(box, doc);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
+  // text with a plain <b> run (Humanist bold on the source, not span.futura-bold): read before
+  // the cleaner turns every bold into <strong>
+  const plainB = (b) => !b.closest('.futura-bold') && !b.querySelector('.futura-bold');
+  const inlineBold = new Set([...box.querySelectorAll('p, li, ul, ol')]
+    .filter((el) => [...el.querySelectorAll('b')].some(plainB)));
   // copy styles per top-level element: one serif lead paragraph keeps its own font
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
   const { centred, size } = cleanRichText(box);
@@ -128,6 +133,7 @@ export function richTextNodes(source, doc) {
   });
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
+    if (inlineBold.has(node)) node.inlineBold = true;
     if (serifHeads.has(node)) node.serifHeading = true;
   });
   // elements without copy of their own (headings, images) follow the copy around them
@@ -217,9 +223,19 @@ const LABEL_STYLES = { 'p-1-5': 'label-1-5', 'p-1-75': 'label-1-75', 'p-2': 'lab
  */
 function sharedCopyStyle(cells, ctx) {
   const nodes = cells.flat().filter((n) => n.copyStyle !== undefined);
-  const styles = new Set(nodes.filter((n) => !isLabel(n)).map((n) => n.copyStyle || ''));
-  if (styles.size !== 1) return '';
-  const [copy] = [...styles];
+  // the copy style of most of the text (a block has one set of section styles): e.g. a
+  // short serif title over the body copy keeps the body's style; the others are reported
+  const weights = new Map();
+  nodes.filter((n) => !isLabel(n)).forEach((n) => {
+    const style = n.copyStyle || '';
+    weights.set(style, (weights.get(style) || 0) + text(n).length);
+  });
+  if (!weights.size) return '';
+  const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
+  if (weights.size > 1) {
+    const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || 'default');
+    ctx.report.notes.push(`Columns: mixed copy styles, kept ${copy || 'default'} (also ${others.join(' / ')})`);
+  }
   const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
   const [labelSize] = [...labelSizes];
   if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
@@ -237,7 +253,9 @@ function cellStyles(cells, ctx) {
   const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
   const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
   if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('serif and Futura h2 / h3 in one block, kept in Futura');
-  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : ''].filter(Boolean);
+  // plain bold in the cells (Humanist bold, e.g. "Reorder #7502"): bold-body
+  const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
+  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : '', boldBody ? 'bold-body' : ''].filter(Boolean);
 }
 
 /**
@@ -408,6 +426,8 @@ function largeHeadline(el, ctx) {
   (lines.length ? lines : [root]).forEach((line) => {
     const box = contentCopy(line, doc);
     const futuraVw = !!line.querySelector('.futura-bold') && vwSize(line) > 0;
+    // Egyptienne h2 / h3 (the source default without span.futura-bold), read before cleaning
+    const serifHeads = serifHeadings(box);
     // a line set in a centred block (often a <div style="text-align: center">, which the
     // rich-text cleaner renames without its style)
     const squashed = (e) => text(e).replace(/\s+/g, '');
@@ -436,6 +456,7 @@ function largeHeadline(el, ctx) {
         node = rename(n, 'h1');
         ctx.h1 = true;
       }
+      if (node === n && serifHeads.has(n)) node.serifHeading = true;
       nodes.push(node);
     });
   });

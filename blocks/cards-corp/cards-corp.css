@@ -236,6 +236,19 @@
   margin-bottom: 0;
 }
 
+.cards-corp.resources {
+  --cards-corp-resource-cover-height: 238px;
+}
+
+/* resources: the document cover in a 238px-high box at its own proportions, never stretched
+   to the card (stryker.com resources and downloads: 184 x 238 at every width, clarifix /
+   lifepak-15 / isolibrium) */
+.cards-corp.resources .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--cards-corp-resource-cover-height);
+}
+
 .cards-corp.border > ul > li {
   display: flex;
   flex-direction: column;

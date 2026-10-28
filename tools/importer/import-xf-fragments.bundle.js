@@ -3705,6 +3705,8 @@ var CustomImportScript = (() => {
     wrapInlineRuns(box, doc);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
+    const plainB = (b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold");
+    const inlineBold = new Set([...box.querySelectorAll("p, li, ul, ol")].filter((el) => [...el.querySelectorAll("b")].some(plainB)));
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = [];
@@ -3717,6 +3719,7 @@ var CustomImportScript = (() => {
     });
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
+      if (inlineBold.has(node)) node.inlineBold = true;
       if (serifHeads.has(node)) node.serifHeading = true;
     });
     let last = null;
@@ -3781,9 +3784,17 @@ var CustomImportScript = (() => {
   var LABEL_STYLES = { "p-1-5": "label-1-5", "p-1-75": "label-1-75", "p-2": "label-2" };
   function sharedCopyStyle(cells, ctx) {
     const nodes = cells.flat().filter((n) => n.copyStyle !== void 0);
-    const styles = new Set(nodes.filter((n) => !isLabel(n)).map((n) => n.copyStyle || ""));
-    if (styles.size !== 1) return "";
-    const [copy] = [...styles];
+    const weights = /* @__PURE__ */ new Map();
+    nodes.filter((n) => !isLabel(n)).forEach((n) => {
+      const style = n.copyStyle || "";
+      weights.set(style, (weights.get(style) || 0) + text(n).length);
+    });
+    if (!weights.size) return "";
+    const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
+    if (weights.size > 1) {
+      const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || "default");
+      ctx.report.notes.push(`Columns: mixed copy styles, kept ${copy || "default"} (also ${others.join(" / ")})`);
+    }
     const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
     const [labelSize] = [...labelSizes];
     if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
@@ -3796,7 +3807,8 @@ var CustomImportScript = (() => {
     const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
     const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
     if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("serif and Futura h2 / h3 in one block, kept in Futura");
-    return [...copy ? copy.split(", ") : [], serif ? "h-serif" : ""].filter(Boolean);
+    const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
+    return [...copy ? copy.split(", ") : [], serif ? "h-serif" : "", boldBody ? "bold-body" : ""].filter(Boolean);
   }
   function columnItems(columns, split, ctx) {
     const { doc } = ctx;
@@ -3955,6 +3967,7 @@ var CustomImportScript = (() => {
     (lines.length ? lines : [root]).forEach((line) => {
       const box2 = contentCopy(line, doc);
       const futuraVw = !!line.querySelector(".futura-bold") && vwSize(line) > 0;
+      const serifHeads = serifHeadings(box2);
       const squashed = (e) => text(e).replace(/\s+/g, "");
       const centredText = [...line.querySelectorAll('[style*="text-align"]')].filter((e) => /text-align:\s*center/i.test(e.getAttribute("style"))).map(squashed).join("");
       if (squashed(line) && centredText === squashed(line)) centred = true;
@@ -3978,6 +3991,7 @@ var CustomImportScript = (() => {
           node = rename(n, "h1");
           ctx.h1 = true;
         }
+        if (node === n && serifHeads.has(n)) node.serifHeading = true;
         nodes.push(node);
       });
     });

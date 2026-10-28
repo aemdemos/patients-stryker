@@ -478,17 +478,20 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5, label-1-75, label-2) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
-   panels (with-nested-blocks) hold their section in .accordion-item-body. */
+   panels (with-nested-blocks) hold their section in .accordion-item-body; a fragment that
+   shares its section (a contact aside next to a form) keeps its sections in .fragment. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1 > div :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
 :where(body.corp) main > .section.p-1-25 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-25 > div :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
@@ -496,7 +499,8 @@ body:where(.corp):has(main .hero-carousel) header {
 /* p-1-5: 21px copy (stryker.com .fontsize-1-5em, e.g. a serif news intro) */
 :where(body.corp) main > .section.p-1-5 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-5 > div :is(p, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -504,7 +508,8 @@ body:where(.corp):has(main .hero-carousel) header {
 /* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
 :where(body.corp) main > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -513,7 +518,8 @@ body:where(.corp):has(main .hero-carousel) header {
    data notes); the source keeps the 14px paragraph's 19.25px lines */
 :where(body.corp) main > .section.p-0-8 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-0-8 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-0-8 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-0-8 > div :is(p, li) {
   font-size: var(--footnote-font-size);
   line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
 }
@@ -522,14 +528,16 @@ body:where(.corp):has(main .hero-carousel) header {
    text, lines 1.06) */
 :where(body.corp) main > .section.p-2 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-2 > div :is(p, li) {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
 }
 
 :where(body.corp) main > .section.p-2-5 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-2-5 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-2-5 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-2-5 > div :is(p, li) {
   font-size: var(--panel-heading-size);
   line-height: var(--heading-line-height);
 }
@@ -539,7 +547,8 @@ body:where(.corp):has(main .hero-carousel) header {
    serif sections, blocks/columns) */
 :where(body.corp) main > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif > .default-content-wrapper :is(p, li) {
   font-family: var(--heading-font-family);
 }
 
@@ -551,23 +560,28 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
-   bold news subtitle) instead of the corp Futura bold */
-:where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
-:where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
-:where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
+   bold news subtitle, or "Reorder #7502" in a Columns cell on sage-barrier-cream-cloths)
+   instead of the corp Futura bold, in default content and blocks; Futura bold (bold + italic)
+   and buttons stay Futura */
+:where(body.corp) main > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
+:where(body.corp) .tabs-panel > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
+:where(body.corp) .accordion-item-body > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
+:where(body.corp) .fragment > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)) {
   font-family: inherit;
 }
 
 :where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
 
 /* serif with p-1-5: 21px Egyptienne renders 26.25px lines on the source */
 :where(body.corp) main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
   line-height: var(--paragraph-line-height-serif-l);
 }
 
@@ -588,7 +602,8 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
 :where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }
@@ -673,6 +688,20 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon-facebook {
   border-radius: 50%;
   background-color: var(--corp-color-facebook);
+}
+
+/* a social icon authored as a linked image, one per line (stryker.com lead-gen-social /
+   social-icons XFs): side by side at the icon size, 30px apart, as live */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper p:has(> a:only-child > picture:only-child) {
+  display: inline-block;
+  margin-inline-end: var(--space-inset-l);
+  vertical-align: top;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper :where(p > a:any-link:only-child > picture) img {
+  display: block;
+  width: var(--corp-social-icon-size);
+  height: auto;
 }
 
 /* talent-banner: full-width image (mobile image below 600px) with a blue button on it */
@@ -842,6 +871,10 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon {
     width: var(--corp-social-icon-size-l);
     height: var(--corp-social-icon-size-l);
+  }
+
+  :where(body.corp) main .section.contact-aside > .default-content-wrapper :where(p > a:any-link:only-child > picture) img {
+    width: var(--corp-social-icon-size-l);
   }
 
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
