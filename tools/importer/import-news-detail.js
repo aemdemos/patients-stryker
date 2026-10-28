@@ -135,6 +135,19 @@ export default {
       if (m.originallyPublished) meta['originally-published'] = m.originallyPublished.slice(0, 10);
       if (m.imageAlt) meta['image-alt'] = m.imageAlt;
     }
+    // the share image (og:image) is the original /content/dam file, which can exceed the
+    // 20MB preview limit (e.g. a 27MB PNG on the OR of the Future page). When the article
+    // shows the same picture from Dynamic Media, the share image uses that rendition.
+    const shareImage = meta.Image && (meta.Image.querySelector ? meta.Image.querySelector('img') || meta.Image : meta.Image);
+    const shareSrc = shareImage && shareImage.getAttribute && shareImage.getAttribute('src');
+    if (shareSrc && /\/content\/dam\//.test(shareSrc)) {
+      const fileName = (u) => decodeURIComponent(u.split('?')[0].split('/').pop()).replace(/\.[a-z0-9]+$/i, '').toLowerCase();
+      const name = fileName(shareSrc);
+      const dm = [...main.querySelectorAll('a[href*="media-assets.stryker.com/is/image/"], img[src*="media-assets.stryker.com/is/image/"]')]
+        .map((el) => el.getAttribute('href') || el.getAttribute('src'))
+        .find((u) => fileName(u) === name);
+      if (dm) shareImage.setAttribute('src', dm);
+    }
     // pages the sections transformer marks (a video + Large Headline row) run the title
     // and small print full width: the news-detail `full-width` theme
     const theme = main.getAttribute('data-news-theme');
