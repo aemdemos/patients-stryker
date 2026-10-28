@@ -307,20 +307,17 @@
   --container-narrow: 575px;
   --container-gutter: 15px;
 
-  /* nav logo + brand clear space: 1.5x on every side, where x is the wordmark's
-     x-height (the "s"/"r" body) — 16.11% of the logo width (header-logo.svg
-     and the nav PNG are both cropped to the wordmark). The logo row is
-     1.5x + x + 1.5x = 4x tall. */
-  --nav-logo-width: 100px;
-  --nav-logo-x-ratio: 0.1611;
-
-  /* nav height — white utility bar: the logo row plus, on mobile, the
-     hamburger/magnifier row (30px button + 7px). The gold primary-nav bar adds
-     --nav-bar-height. */
-  --nav-toggle-row-height: 37px;
-  --nav-height: calc(4 * var(--nav-logo-x-ratio) * var(--nav-logo-width) + var(--nav-toggle-row-height));
+  /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
+  --nav-height: 90px;
   --nav-bar-height: 60px;
   --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
+
+  /* nav logo brand clear space: 1.5x on every side, where x is the wordmark's
+     x-height (the "s"/"r" body) — 16.11% of the logo width (header-logo.svg and
+     the nav PNG are both cropped to the wordmark). The logo is sized so its
+     clear zone (1.5x + x + 1.5x = 4x) fills the white bar's logo row. */
+  --nav-logo-x-ratio: 0.1611;
+  --nav-toggle-row-height: 36.5px; /* mobile hamburger/magnifier row below the logo: 30px button + 6.5px */
 }
 
 body {
@@ -1160,12 +1157,6 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
 
 
 @media (width >= 900px) {
-  /* desktop: larger logo, and the toggle row is gone (single-row white bar) */
-  :root {
-    --nav-logo-width: 188px;
-    --nav-toggle-row-height: 0px;
-  }
-
     header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
