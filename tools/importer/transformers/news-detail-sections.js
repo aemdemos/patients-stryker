@@ -106,6 +106,7 @@ const SIZE_STYLES = [
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
+  ['fontsize-2em', 'p-2'],
 ];
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
@@ -478,7 +479,10 @@ function splitStyledLeads(root) {
  * The title line a rich text opens with when the page has no title: the run before the
  * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
  * bold 21px on the source). Taken out of the component (with the breaks after it) and
- * returned as an <h1>; null when the text does not open that way.
+ * returned as an <h1>; null when the text does not open that way. The h1's `titleStyle`
+ * is its section style: `h1-42` when the line is also in a 2em span (Futura bold 42px,
+ * e.g. the "Trees, landfills and the environment" feature), else `h1-21`; a title that
+ * is gold as a whole is in the `[[color-gold]…]` tag.
  */
 function richTextTitle(component, doc) {
   const p = component.querySelector('p');
@@ -495,11 +499,17 @@ function richTextTitle(component, doc) {
     .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
     .map((span) => span.textContent).join(''));
   if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
+  const huge = squash([...box.querySelectorAll('.fontsize-2em')]
+    .filter((span) => !span.parentElement.closest('.fontsize-2em'))
+    .map((span) => span.textContent).join(''));
+  const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el))
+    && !hasOtherColour(el) && squash(el.textContent) === leadText);
   lead.forEach((node) => node.remove());
   while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
   if (!text(p)) p.remove();
   const h1 = doc.createElement('h1');
-  h1.textContent = leadText;
+  h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
+  h1.titleStyle = huge === leadText ? 'h1-42' : 'h1-21';
   return h1;
 }
 
@@ -1052,7 +1062,7 @@ export default function transform(hookName, element, payload) {
     if (isFirst && !hasTitle && component.matches('.c-rich-text-editor')) {
       const heading = richTextTitle(component, doc);
       if (heading) {
-        startSection('headline', 'h1-21').nodes.push(heading);
+        startSection('headline', heading.titleStyle).nodes.push(heading);
         current = null;
       }
     }

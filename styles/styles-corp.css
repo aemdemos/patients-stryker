@@ -365,6 +365,15 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
+/* p-2: 28px copy (stryker.com .fontsize-2em, lines 1.06), e.g. the Egyptienne subtitle of
+   the "Trees, landfills and the environment" feature */
+:where(body.corp) main > .section.p-2 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
 /* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
    e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
    token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
@@ -419,6 +428,21 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-l);
   font-weight: var(--font-weight-bold);
   line-height: var(--corp-heading-line-height-s);
+}
+
+/* h1-42: the same opening title line set in a 2em and a 1.5em size span (3em, Futura bold
+   42px, lines 1.06; e.g. the "Trees, landfills and the environment" feature). The title
+   flows into the text below it: one paragraph gap (15px on the source), not a section gap */
+:where(body.corp) main > .section.h1-42 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-42 > .default-content-wrapper h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
 }
 
 /* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:

@@ -245,7 +245,8 @@ var CustomImportScript = (() => {
     ["fontsize-8em", "disclaimer"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
-    ["fontsize-1-75em", "p-1-75"]
+    ["fontsize-1-75em", "p-1-75"],
+    ["fontsize-2em", "p-2"]
   ];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
@@ -510,11 +511,14 @@ var CustomImportScript = (() => {
     lead.forEach((node) => box.append(node.cloneNode(true)));
     const large = squash([...box.querySelectorAll(".fontsize-1-5em")].filter((span) => !span.parentElement.closest(".fontsize-1-5em")).map((span) => span.textContent).join(""));
     if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
+    const huge = squash([...box.querySelectorAll(".fontsize-2em")].filter((span) => !span.parentElement.closest(".fontsize-2em")).map((span) => span.textContent).join(""));
+    const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el)) && !hasOtherColour(el) && squash(el.textContent) === leadText);
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
     if (!text(p)) p.remove();
     const h1 = doc.createElement("h1");
-    h1.textContent = leadText;
+    h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
+    h1.titleStyle = huge === leadText ? "h1-42" : "h1-21";
     return h1;
   }
   function blockNodes(container, doc) {
@@ -947,7 +951,7 @@ var CustomImportScript = (() => {
       if (isFirst && !hasTitle && component.matches(".c-rich-text-editor")) {
         const heading = richTextTitle(component, doc);
         if (heading) {
-          startSection("headline", "h1-21").nodes.push(heading);
+          startSection("headline", heading.titleStyle).nodes.push(heading);
           current = null;
         }
       }
