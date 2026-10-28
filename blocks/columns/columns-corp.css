@@ -300,7 +300,16 @@ body.corp .columns .columns-img-col + p:has(> strong:only-child) {
   text-align: center;
 }
 
-body.corp .columns .columns-img-col img,
+/* images fill the cell but are never enlarged past their own size: stryker.com shows a
+   100px icon at 100px, centred (lifepak-15 product highlights); videos fill the cell.
+   DM images carry no width / height: the 1px box lets a lazy image load (0 x 0 never does) */
+body.corp .columns .columns-img-col img {
+  width: auto;
+  min-width: 1px;
+  min-height: 1px;
+  max-width: 100%;
+}
+
 body.corp .columns .columns-img-col video {
   width: 100%;
 }

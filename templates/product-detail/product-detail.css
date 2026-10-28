@@ -1,0 +1,22 @@
+/* Product Detail template (www.stryker.com product pages, e.g.
+   /us/en/acute-care/products/isolibrium). Section headings are authored 1.5x (h2) and 1.25x (h3)
+   on the source: h2 31.5px / 36.75px and h3 21.875px / 26.25px below / from 600px (source 841px). */
+body.product-detail main h2 {
+  font-size: var(--corp-heading-font-size-band);
+  line-height: var(--heading-line-height);
+}
+
+body.product-detail main h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.product-detail main h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  body.product-detail main h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+}

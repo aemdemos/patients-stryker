@@ -159,6 +159,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* bold + italic copy (stryker.com span.futura-bold labels) keeps the text colour: styles.css
+   makes it gold, which corp copy marks with a colour tag instead ([[color-gold]…]) */
+:where(body.corp) main :is(p, li) :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
+  color: inherit;
+}
+
 /* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
    underlines every link, which suits patients pages only. */
 :where(body.corp) a:any-link {
