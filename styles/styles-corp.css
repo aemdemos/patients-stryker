@@ -476,7 +476,7 @@ body:where(.corp):has(main .hero-carousel) header {
   letter-spacing: normal;
 }
 
-/* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+/* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5, label-1-75, label-2) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
    panels (with-nested-blocks) hold their section in .accordion-item-body. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
@@ -571,10 +571,25 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height-serif-l);
 }
 
-:where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
-  font-size: var(--body-font-size-xl);
+/* label-1-5 / label-1-75 / label-2: labels (a paragraph that is one bold run, <strong> or the
+   Futura <em><strong>) at 21px / 24.5px / 28px, when they are set larger than the copy beside
+   them (stryker.com .fontsize-1-5em / -1-75em / -2em labels: lifepak-15, isolibrium) */
+:where(body.corp) .section.label-1-5 {
+  --corp-label-size: var(--body-font-size-xl);
+}
+
+:where(body.corp) .section.label-1-75 {
+  --corp-label-size: var(--heading-font-size-xl);
+}
+
+:where(body.corp) .section.label-2 {
+  --corp-label-size: var(--heading-font-size-xxl);
+}
+
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+  font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }
 

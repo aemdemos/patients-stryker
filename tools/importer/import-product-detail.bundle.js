@@ -3422,7 +3422,7 @@ var CustomImportScript = (() => {
   }
   var isLabel = (node) => node.tagName === "P" && node.querySelector("strong") && text(node.querySelector("strong")) === text(node) && !node.querySelector("a, picture, img");
   var sizeOf = (style) => (style || "").split(", ").find((s) => /^p-\d/.test(s)) || "";
-  var LABEL_STYLES = { "p-1-5": "label-1-5" };
+  var LABEL_STYLES = { "p-1-5": "label-1-5", "p-1-75": "label-1-75", "p-2": "label-2" };
   function sharedCopyStyle(cells, ctx) {
     const nodes = cells.flat().filter((n) => n.copyStyle !== void 0);
     const styles = new Set(nodes.filter((n) => !isLabel(n)).map((n) => n.copyStyle || ""));

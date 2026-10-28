@@ -208,7 +208,7 @@ const isLabel = (node) => node.tagName === 'P' && node.querySelector('strong')
   && text(node.querySelector('strong')) === text(node) && !node.querySelector('a, picture, img');
 const sizeOf = (style) => (style || '').split(', ').find((s) => /^p-\d/.test(s)) || '';
 // label sizes with a section style (styles/styles-corp.css label-*)
-const LABEL_STYLES = { 'p-1-5': 'label-1-5' };
+const LABEL_STYLES = { 'p-1-5': 'label-1-5', 'p-1-75': 'label-1-75', 'p-2': 'label-2' };
 
 /**
  * The section styles of a Columns block: the copy style shared by every text node of the
