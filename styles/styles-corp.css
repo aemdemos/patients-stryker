@@ -479,6 +479,34 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* section style `standalone-url`: a bold + underline link that shows its own URL keeps the
+   standalone link look (stryker.com span.standalone-link around a URL: Futura bold, uppercase,
+   teal, trailing arrow — e.g. the "Urgent 11" bulletin). scripts.js does not turn links whose
+   text is their URL into a.link-strong, so the section carries the look instead */
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) u {
+  text-decoration: none;
+  text-transform: inherit;
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u)::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
 :where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
