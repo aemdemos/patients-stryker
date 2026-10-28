@@ -123,9 +123,13 @@ function sizeStyle(factor) {
 /**
  * The effective size of an element's copy: the product of the nested .fontsize-*em classes
  * over all of its text, when every text node has the same one; null when sizes are mixed.
+ * A bold label at its own size in front of the copy (a "References" heading line in 0.8em
+ * small print, news national-direct-to-patient-marketing-campaign) does not count: the
+ * copy's size is the paragraph's.
  */
 function effectiveSize(el) {
   const sizes = new Set();
+  const copySizes = new Set();
   const walker = el.ownerDocument.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     if (squash(n.textContent)) {
@@ -133,10 +137,14 @@ function effectiveSize(el) {
       for (let e = n.parentElement; e && e !== el.parentElement; e = e.parentElement) {
         factor = [...e.classList].reduce((f, c) => f * sizeFactor(c), factor);
       }
-      sizes.add(Math.round(factor * 100) / 100);
+      const size = Math.round(factor * 100) / 100;
+      sizes.add(size);
+      const label = n.parentElement.closest('.futura-bold, b, strong');
+      if (!label || !el.contains(label) || label === el) copySizes.add(size);
     }
   }
-  return sizes.size === 1 ? [...sizes][0] : null;
+  const counted = copySizes.size ? copySizes : sizes;
+  return counted.size === 1 ? [...counted][0] : null;
 }
 
 /** True when the outermost `.cls` spans of `el` hold all of its text. */
