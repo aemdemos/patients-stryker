@@ -8,134 +8,849 @@
     "later": "belongs to a template or dynamic component not built yet"
   },
   "properties": {
-    "standaloneimage.preset": { "handling": "mapped", "how": "the DM preset stays in the image URL (?$max_width_1440$)", "proposal": "keep", "status": "proposed" },
-    "standaloneimage.enableBorder": { "handling": "not mapped", "how": "the 1px image border is lost (496 images have it on)", "proposal": "map: a section style for bordered images (name to approve, e.g. image-border); colour from borderColor", "status": "proposed" },
-    "standaloneimage.borderColor": { "handling": "not mapped", "how": "only visible when enableBorder is true", "proposal": "map with enableBorder: one border colour per corp colour (teal default, grey, black); other values rounded", "status": "proposed" },
-    "text.gradientDirection": { "handling": "no effect", "how": "direction of a background gradient; without a gradient background it renders nothing", "proposal": "drop (the rare gradient boxes: see backgroundColor)", "status": "proposed" },
-    "text.hideComponent": { "handling": "mapped", "how": "hidden components are not imported (live page decides)", "proposal": "keep", "status": "proposed" },
-    "text.topPadding": { "handling": "not mapped", "how": "% padding of the text box; template spacing instead", "proposal": "normalise (spacing validator to find the cases that matter, then a spacing section style)", "status": "proposed" },
-    "text.bottomPadding": { "handling": "not mapped", "how": "as topPadding", "proposal": "normalise", "status": "proposed" },
-    "text.leftPadding": { "handling": "not mapped", "how": "% inset of the text box; matters inside coloured boxes", "proposal": "normalise; inside a coloured box use the box's own padding", "status": "proposed" },
-    "text.rightPadding": { "handling": "not mapped", "how": "as leftPadding", "proposal": "normalise", "status": "proposed" },
-    "text.topMargin": { "handling": "not mapped", "how": "% margin above the text box (negative values pull it up)", "proposal": "normalise", "status": "proposed" },
-    "text.bottomMargin": { "handling": "not mapped", "how": "% margin below the text box", "proposal": "normalise", "status": "proposed" },
-    "text.leftMargin": { "handling": "not mapped", "how": "% margin left (20% = an indented narrow box)", "proposal": "normalise; the 20% indent (57 uses) to review as a layout option", "status": "proposed" },
-    "text.rightMargin": { "handling": "not mapped", "how": "% margin right", "proposal": "normalise", "status": "proposed" },
-    "text.backgroundColor": { "handling": "partly", "how": "gold and the greys become section styles (bg-gold, bg-light-gray, bg-gray, bg-dark-gray); white, blue, dark gold, slate are dropped", "proposal": "map every corp colour: white box (matters on images / coloured panels), blue, dark gold, slate as section styles (names to approve); transparent = drop", "status": "proposed" },
-    "text.showDimensionalBox": { "handling": "partly", "how": "dimensional box recognised; no own look", "proposal": "map to a section style (shadow box), name to approve", "status": "proposed" },
-    "text.gradientDirectionInverse": { "handling": "no effect", "how": "only with a gradient background", "proposal": "drop", "status": "proposed" },
-    "largeheadline.backgroundColor": { "handling": "partly", "how": "as text.backgroundColor: gold / greys only; the white box behind hero text (environmental-programs) is lost", "proposal": "map as text.backgroundColor; in a hero slide the box behind the text (Hero Corp option, name to approve)", "status": "proposed" },
-    "largeheadline.gradientDirection": { "handling": "no effect", "how": "only with a gradient background", "proposal": "drop", "status": "proposed" },
-    "largeheadline.gradientDirectionInverse": { "handling": "no effect", "how": "only with a gradient background", "proposal": "drop", "status": "proposed" },
-    "largeheadline.topPadding": { "handling": "not mapped", "how": "% padding inside the headline box", "proposal": "normalise (box padding from the section style)", "status": "proposed" },
-    "largeheadline.bottomPadding": { "handling": "not mapped", "how": "as topPadding", "proposal": "normalise", "status": "proposed" },
-    "largeheadline.leftPadding": { "handling": "not mapped", "how": "as topPadding", "proposal": "normalise", "status": "proposed" },
-    "largeheadline.rightPadding": { "handling": "not mapped", "how": "as topPadding", "proposal": "normalise", "status": "proposed" },
-    "largeheadline.topMargin": { "handling": "not mapped", "how": "% margin above", "proposal": "normalise", "status": "proposed" },
-    "largeheadline.bottomMargin": { "handling": "not mapped", "how": "% margin below", "proposal": "normalise", "status": "proposed" },
-    "largeheadline.leftMargin": { "handling": "not mapped", "how": "% margin left; -25 (14 uses) pulls the box over the next column", "proposal": "normalise; review the -25 overlap pages", "status": "proposed" },
-    "largeheadline.rightMargin": { "handling": "not mapped", "how": "% margin right", "proposal": "normalise", "status": "proposed" },
-    "curatedcta.CTAButtonColor": { "handling": "partly", "how": "gold → Bold + Italic link (gold button); teal, purple, blue, others → Bold link (teal button)", "proposal": "map purple (187 uses) and blue (32) buttons too (convention or section style, name to approve)", "status": "proposed" },
-    "curatedcta.ctaOpenInNewTabOverride": { "handling": "mapped", "how": "target=_blank → #_blank", "proposal": "keep", "status": "proposed" },
-    "curatedcta.CTAOpenInNewTab": { "handling": "mapped", "how": "target=_blank → #_blank", "proposal": "keep", "status": "proposed" },
-    "curatedcta.CTAImageAltText": { "handling": "content", "how": "image button alt text kept", "proposal": "keep", "status": "proposed" },
-    "standaloneimage.openInNewTab": { "handling": "mapped", "how": "target=_blank → #_blank", "proposal": "keep", "status": "proposed" },
-    "secondarycta.openInNewWindow": { "handling": "mapped", "how": "target=_blank → #_blank", "proposal": "keep", "status": "proposed" },
-    "standalonevideo.type": { "handling": "mapped", "how": "the video source (DM path or id) becomes the Video block link", "proposal": "keep", "status": "proposed" },
-    "standalonevideo.hideBorder": { "handling": "not mapped", "how": "videos with a border (853) render without", "proposal": "map: the corp Video block keeps the source border by default, hideBorder = no border (option, name to approve)", "status": "proposed" },
-    "standalonevideo.borderColor": { "handling": "not mapped", "how": "black in 441 of 455", "proposal": "map with hideBorder (black default)", "status": "proposed" },
-    "standalonevideo.loopVal": { "handling": "not mapped", "how": "looping standalone videos (132)", "proposal": "map: autoplay + loop = a background-style video option (name to approve), as hero video slides", "status": "proposed" },
-    "standalonevideo.autoPlayVal": { "handling": "not mapped", "how": "autoplaying standalone videos (122)", "proposal": "map with loopVal", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.assetType": { "handling": "mapped", "how": "VideoAVS → video link, image sets → image link (dm-images transformer)", "proposal": "keep; MixedMediaSet / SpinSet (16): report", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.s7ImagePreset": { "handling": "no effect", "how": "empty", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.s7ViewerPreset": { "handling": "no effect", "how": "AEM viewer preset; EDS renders its own player", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.breakpoints": { "handling": "no effect", "how": "empty", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.s7PresetType": { "handling": "no effect", "how": "viewer type", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.unsharpMaskAmount": { "handling": "no effect", "how": "image sharpening defaults", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.unsharpMaskRadius": { "handling": "no effect", "how": "image sharpening defaults", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.unsharpMaskThreshold": { "handling": "no effect", "how": "image sharpening defaults", "proposal": "drop", "status": "proposed" },
-    "dam/components/scene7/dynamicmedia.jpegQuality": { "handling": "no effect", "how": "85 everywhere (DM default)", "proposal": "drop", "status": "proposed" },
-    "standalonevideo/dynamicmedia.breakpoints": { "handling": "no effect", "how": "empty", "proposal": "drop", "status": "proposed" },
-    "standalonevideo/dynamicmedia.s7ImagePreset": { "handling": "no effect", "how": "empty", "proposal": "drop", "status": "proposed" },
-    "standalonevideo/dynamicmedia.s7ViewerPreset": { "handling": "no effect", "how": "viewer preset", "proposal": "drop", "status": "proposed" },
-    "standalonevideo/dynamicmedia.s7PresetType": { "handling": "no effect", "how": "viewer type", "proposal": "drop", "status": "proposed" },
-    "standalonevideo/dynamicmedia.assetType": { "handling": "mapped", "how": "VideoAVS → Video block", "proposal": "keep", "status": "proposed" },
-    "disclaimer.disclaimer-type": { "handling": "partly", "how": "text disclaimers imported (page facts); path (17) = a disclaimer taken from another page: to verify", "proposal": "keep text; path: resolve to the referenced text", "status": "proposed" },
-    "marketoform.afterSubmitAction": { "handling": "mapped", "how": "thank-you message / redirect from the page facts", "proposal": "keep", "status": "proposed" },
-    "marketoform.useProduction": { "handling": "no effect", "how": "always true", "proposal": "drop", "status": "proposed" },
-    "marketoform.marketoInstance": { "handling": "mapped", "how": "the form base URL / Munchkin ID the live page loads", "proposal": "keep", "status": "proposed" },
-    "marketoform.hiddenConfiguredMarketo": { "handling": "no effect", "how": "dialog flag", "proposal": "drop", "status": "proposed" },
-    "fullbleedpanel.backgroundColor": { "handling": "partly", "how": "the rendered panel classes (bg-light-gray, gradients, bg-gold, …) become section styles; colours without a class (e.g. rgb(89,75,97), rgba(62,82,69,1)) to verify", "proposal": "map every panel colour to a corp colour section style (names to approve for new ones)", "status": "proposed" },
-    "contactbutton.hideComponent": { "handling": "mapped", "how": "hidden = not imported", "proposal": "keep", "status": "proposed" },
-    "secondarycta.hideComponent": { "handling": "mapped", "how": "hidden = not imported", "proposal": "keep", "status": "proposed" },
-    "pageshortdescription.hideComponent": { "handling": "mapped", "how": "hidden = not imported", "proposal": "keep", "status": "proposed" },
-    "tagcrumb.hideComponent": { "handling": "mapped", "how": "tag breadcrumb skipped (component map)", "proposal": "keep", "status": "proposed" },
-    "jumpbarnav.hideComponent": { "handling": "mapped", "how": "hidden = not imported; visible = Sticky Nav", "proposal": "keep", "status": "proposed" },
-    "jumpbarnav.deactiveNav": { "handling": "to verify", "how": "deactivated jump bar (172)", "proposal": "verify on the example pages; likely not rendered = skip", "status": "proposed" },
-    "pagehero.headColor": { "handling": "to verify", "how": "page hero title colour: gold (481), black (10)", "proposal": "map gold title (colour tag) if the live title is gold", "status": "proposed" },
-    "pagehero.usethumbnail": { "handling": "to verify", "how": "page hero shows the page thumbnail as image", "proposal": "keep (the rendered image is imported)", "status": "proposed" },
-    "pagehero.hideBottomLine": { "handling": "mapped", "how": "no gold rule = no border-bottom option", "proposal": "keep", "status": "proposed" },
-    "pagehero.imageAlt": { "handling": "content", "how": "image alt kept", "proposal": "keep", "status": "proposed" },
-    "carouselslidegroup/carouselslide.mobileOverlay": { "handling": "mapped", "how": "mobile_Bottom → text-below; mobile_Overlay → text over the image", "proposal": "keep", "status": "proposed" },
-    "carouselslidegroup/carouselslide.verticalMargin": { "handling": "mapped", "how": "top-<n> / bottom-<n> option from the rendered top:%", "proposal": "keep (numeric option)", "status": "proposed" },
-    "carouselslidegroup/carouselslide.marginLeft": { "handling": "mapped", "how": "left-<n> option", "proposal": "keep (numeric option)", "status": "proposed" },
-    "carouselslidegroup/carouselslide.marginRight": { "handling": "mapped", "how": "right-<n> option", "proposal": "keep (numeric option)", "status": "proposed" },
-    "carouselslidegroup/carouselslide.backgroundColor": { "handling": "not mapped", "how": "the slide's text box background (white in 452 of 463)", "proposal": "map with largeheadline.backgroundColor: the box behind the slide text (Hero Corp option, name to approve)", "status": "proposed" },
-    "carouselslidegroup/carouselslide.gradientDirection": { "handling": "no effect", "how": "only with a gradient", "proposal": "drop", "status": "proposed" },
-    "carouselslidegroup/carouselslide.standaloneVideoControls": { "handling": "mapped", "how": "hidden controls = background video slide", "proposal": "keep", "status": "proposed" },
-    "carouselslidegroup.backgroundNav": { "handling": "not mapped", "how": "slide navigation dots colour", "proposal": "drop (no rotation: one Hero Corp per slide)", "status": "proposed" },
-    "carouselslidegroup.opacityLocal": { "handling": "not mapped", "how": "overlay opacity (0 in 117)", "proposal": "drop; 75 / 40 / 50 (12): review", "status": "proposed" },
-    "carouselslidegroup.transitionEffects": { "handling": "not mapped", "how": "slide animation", "proposal": "drop (no rotation)", "status": "proposed" },
-    "carouselslidegroup.hcpBannerTextColor": { "handling": "not mapped", "how": "HCP banner text colour", "proposal": "drop (hcp-banner metadata is set; the banner has one look)", "status": "proposed" },
-    "carouselslidegroup.carouselscrollOptions": { "handling": "not mapped", "how": "scroll option", "proposal": "drop", "status": "proposed" },
-    "carouselslidegroup.alignHCP": { "handling": "not mapped", "how": "HCP banner left / right", "proposal": "drop", "status": "proposed" },
-    "carouselslidegroup.localNav": { "handling": "to verify", "how": "local page nav over (15) or under (2) the hero", "proposal": "keep the nav as Sticky Nav; position normalised", "status": "proposed" },
-    "carouselslidegroup.carouselOptionSpeed": { "handling": "not mapped", "how": "rotation speed", "proposal": "drop (no rotation)", "status": "proposed" },
-    "carouselslidegroup.arrowFlag": { "handling": "no effect", "how": "always false", "proposal": "drop", "status": "proposed" },
-    "carouselslidegroup.pauseonhover": { "handling": "no effect", "how": "always false", "proposal": "drop", "status": "proposed" },
-    "carouselslidegroup.carouselOptionAutoplay": { "handling": "not mapped", "how": "autoplay rotation (37)", "proposal": "decide: multi-slide carousels stay one Hero Corp per slide (no rotation), or a carousel block", "status": "proposed" },
-    "carouselslidegroup.firstItem": { "handling": "no effect", "how": "first slide marker", "proposal": "drop", "status": "proposed" },
-    "buttonset.buttonSeriesColors": { "handling": "partly", "how": "as CTAButtonColor: gold vs other", "proposal": "map as CTAButtonColor", "status": "proposed" },
-    "buttonset.buttonAlignment": { "handling": "no effect", "how": "left in 170 of 171", "proposal": "drop (right: 1 page, review)", "status": "proposed" },
-    "fullWidthImage.dimensionBox": { "handling": "to verify", "how": "text box style on the banner image (FDB / ND)", "proposal": "verify on the example pages", "status": "proposed" },
-    "fullWidthImage.layoutOptions": { "handling": "mapped", "how": "col-sm-N → right-<n>, 50_bottom / 50_top → bottom / top options (Hero Corp image-slide, text-above)", "proposal": "keep", "status": "proposed" },
-    "fullWidthImageHero.location": { "handling": "to verify", "how": "1 / 2: hero text position", "proposal": "verify on the example pages", "status": "proposed" },
-    "fullWidthImageHero.hideBottomLine": { "handling": "to verify", "how": "no gold rule under the hero", "proposal": "map as pagehero.hideBottomLine", "status": "proposed" },
-    "marketoform.formId": { "handling": "mapped", "how": "Marketo Form block", "proposal": "keep", "status": "proposed" },
-    "filteredcontenttypegrid.listSize": { "handling": "later", "how": "product / procedure grid filled by a query (no handler yet)", "proposal": "later: product grid block with the query and page size", "status": "proposed" },
-    "filteredcontenttypegrid.loadMoreText": { "handling": "later", "how": "grid button label", "proposal": "later (product grid)", "status": "proposed" },
-    "filteredcontenttypegrid.emptyText": { "handling": "later", "how": "grid empty message", "proposal": "later (product grid)", "status": "proposed" },
-    "filteredcontenttypegrid.defaultFilterOption": { "handling": "later", "how": "grid filter label", "proposal": "later (product grid)", "status": "proposed" },
-    "filteredcontenttypegrid.showProcedures": { "handling": "later", "how": "grid filter", "proposal": "later (product grid)", "status": "proposed" },
-    "filteredcontenttypegrid.showSystems": { "handling": "later", "how": "grid filter", "proposal": "later (product grid)", "status": "proposed" },
-    "customizable.hideButton": { "handling": "no effect", "how": "always false", "proposal": "drop", "status": "proposed" },
-    "customizable.hideThumbnail": { "handling": "no effect", "how": "always false", "proposal": "drop", "status": "proposed" },
-    "resourcesanddownload.jumpbarHidden": { "handling": "to verify", "how": "resources list not in the jump bar", "proposal": "verify; likely no visible effect", "status": "proposed" },
-    "sectionseparator.sectionColor": { "handling": "partly", "how": "every separator becomes the divider style (grey rule); white-hr (69) is a white rule", "proposal": "white-hr: verify if it is visible (white on white); if not, a section gap only", "status": "proposed" },
-    "numbercounter.startNumber": { "handling": "mapped", "how": "count-up from 0 (Statistics count-up)", "proposal": "keep; non-zero starts (16) count from 0", "status": "proposed" },
-    "numbercounter.endNumber": { "handling": "mapped", "how": "the stat value", "proposal": "keep", "status": "proposed" },
-    "numbercounter.fontColor": { "handling": "mapped", "how": "gold / navy / teal / purple colour keyword", "proposal": "keep", "status": "proposed" },
-    "numbercounter.numberTypeNumberCounter": { "handling": "mapped", "how": "number / currency / percent", "proposal": "keep", "status": "proposed" },
-    "numbercounter.currencyTypeNumberCounter": { "handling": "mapped", "how": "$ prefix", "proposal": "keep", "status": "proposed" },
-    "numbercounter.fontFace": { "handling": "mapped", "how": "Futura bold (Statistics default)", "proposal": "keep", "status": "proposed" },
-    "numbercounter.fontSize": { "handling": "not mapped", "how": "number size in vw (2.5–8vw); Statistics has one size", "proposal": "normalise, or size options like Hero Corp size-<n> (decide)", "status": "proposed" },
-    "numbercounter.numberCounterAlignment": { "handling": "not mapped", "how": "centred (35) / left (32); Statistics is centred", "proposal": "map left alignment as a Statistics option (name to approve)", "status": "proposed" },
-    "contentFragment.elementNames": { "handling": "mapped", "how": "the fields each use shows (Cards contact fragment)", "proposal": "keep", "status": "proposed" },
-    "contentFragment.displayMode": { "handling": "no effect", "how": "always multi", "proposal": "drop", "status": "proposed" },
-    "contentFragment.paragraphScope": { "handling": "no effect", "how": "always all", "proposal": "drop", "status": "proposed" },
-    "externalasset.gcs": { "handling": "later", "how": "external asset library pages", "proposal": "later (external-asset-library template)", "status": "proposed" },
-    "localpagenavigation.childrenNumber": { "handling": "to verify", "how": "how many child pages the local nav lists", "proposal": "verify against the Sticky Nav (local) output", "status": "proposed" },
-    "localpagenavigation.hideTopLine": { "handling": "to verify", "how": "no rule above the local nav", "proposal": "verify", "status": "proposed" },
-    "eventdetail.eventBU": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail template: page metadata)", "status": "proposed" },
-    "eventdetail.eventAudience": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventLocation": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventCity": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventType": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventTimeZone": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.hiddenCountry": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventCountry": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.hiddenEventTimeZone": { "handling": "later", "how": "event metadata", "proposal": "later (event-detail)", "status": "proposed" },
-    "eventdetail.eventContactEmail": { "handling": "later", "how": "event contact (content)", "proposal": "later (event-detail)", "status": "proposed" },
-    "contactus.groupContact": { "handling": "later", "how": "contact us component (no handler yet)", "proposal": "later (contactus handler)", "status": "proposed" }
+    "standaloneimage.preset": {
+      "handling": "mapped",
+      "how": "the DM preset stays in the image URL (?$max_width_1440$)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standaloneimage.enableBorder": {
+      "handling": "not mapped",
+      "how": "the 1px image border is lost (496 images have it on)",
+      "proposal": "map: a section style for bordered images (name to approve, e.g. image-border); colour from borderColor",
+      "status": "proposed"
+    },
+    "standaloneimage.borderColor": {
+      "handling": "not mapped",
+      "how": "only visible when enableBorder is true",
+      "proposal": "map with enableBorder: one border colour per corp colour (teal default, grey, black); other values rounded",
+      "status": "proposed"
+    },
+    "text.gradientDirection": {
+      "handling": "no effect",
+      "how": "direction of a background gradient; without a gradient background it renders nothing",
+      "proposal": "drop (the rare gradient boxes: see backgroundColor)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "text.hideComponent": {
+      "handling": "mapped",
+      "how": "hidden components are not imported (live page decides)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "text.topPadding": {
+      "handling": "not mapped",
+      "how": "% padding of the text box; template spacing instead",
+      "proposal": "normalise (spacing validator to find the cases that matter, then a spacing section style)",
+      "status": "proposed"
+    },
+    "text.bottomPadding": {
+      "handling": "not mapped",
+      "how": "as topPadding",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "text.leftPadding": {
+      "handling": "not mapped",
+      "how": "% inset of the text box; matters inside coloured boxes",
+      "proposal": "normalise; inside a coloured box use the box's own padding",
+      "status": "proposed"
+    },
+    "text.rightPadding": {
+      "handling": "not mapped",
+      "how": "as leftPadding",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "text.topMargin": {
+      "handling": "not mapped",
+      "how": "% margin above the text box (negative values pull it up)",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "text.bottomMargin": {
+      "handling": "not mapped",
+      "how": "% margin below the text box",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "text.leftMargin": {
+      "handling": "not mapped",
+      "how": "% margin left (20% = an indented narrow box)",
+      "proposal": "normalise; the 20% indent (57 uses) to review as a layout option",
+      "status": "proposed"
+    },
+    "text.rightMargin": {
+      "handling": "not mapped",
+      "how": "% margin right",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "text.backgroundColor": {
+      "handling": "partly",
+      "how": "gold and the greys become section styles (bg-gold, bg-light-gray, bg-gray, bg-dark-gray); white, blue, dark gold, slate are dropped",
+      "proposal": "map every corp colour: white box (matters on images / coloured panels), blue, dark gold, slate as section styles (names to approve); transparent = drop",
+      "status": "proposed"
+    },
+    "text.showDimensionalBox": {
+      "handling": "partly",
+      "how": "dimensional box recognised; no own look",
+      "proposal": "map to a section style (shadow box), name to approve",
+      "status": "proposed"
+    },
+    "text.gradientDirectionInverse": {
+      "handling": "no effect",
+      "how": "only with a gradient background",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "largeheadline.backgroundColor": {
+      "handling": "partly",
+      "how": "as text.backgroundColor: gold / greys only; the white box behind hero text (environmental-programs) is lost",
+      "proposal": "map as text.backgroundColor; in a hero slide the box behind the text (Hero Corp option, name to approve)",
+      "status": "proposed"
+    },
+    "largeheadline.gradientDirection": {
+      "handling": "no effect",
+      "how": "only with a gradient background",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "largeheadline.gradientDirectionInverse": {
+      "handling": "no effect",
+      "how": "only with a gradient background",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "largeheadline.topPadding": {
+      "handling": "not mapped",
+      "how": "% padding inside the headline box",
+      "proposal": "normalise (box padding from the section style)",
+      "status": "proposed"
+    },
+    "largeheadline.bottomPadding": {
+      "handling": "not mapped",
+      "how": "as topPadding",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "largeheadline.leftPadding": {
+      "handling": "not mapped",
+      "how": "as topPadding",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "largeheadline.rightPadding": {
+      "handling": "not mapped",
+      "how": "as topPadding",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "largeheadline.topMargin": {
+      "handling": "not mapped",
+      "how": "% margin above",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "largeheadline.bottomMargin": {
+      "handling": "not mapped",
+      "how": "% margin below",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "largeheadline.leftMargin": {
+      "handling": "not mapped",
+      "how": "% margin left; -25 (14 uses) pulls the box over the next column",
+      "proposal": "normalise; review the -25 overlap pages",
+      "status": "proposed"
+    },
+    "largeheadline.rightMargin": {
+      "handling": "not mapped",
+      "how": "% margin right",
+      "proposal": "normalise",
+      "status": "proposed"
+    },
+    "curatedcta.CTAButtonColor": {
+      "handling": "partly",
+      "how": "gold → Bold + Italic link (gold button); teal, purple, blue, others → Bold link (teal button)",
+      "proposal": "map purple (187 uses) and blue (32) buttons too (convention or section style, name to approve)",
+      "status": "proposed"
+    },
+    "curatedcta.ctaOpenInNewTabOverride": {
+      "handling": "mapped",
+      "how": "target=_blank → #_blank",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "curatedcta.CTAOpenInNewTab": {
+      "handling": "mapped",
+      "how": "target=_blank → #_blank",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "curatedcta.CTAImageAltText": {
+      "handling": "content",
+      "how": "image button alt text kept",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standaloneimage.openInNewTab": {
+      "handling": "mapped",
+      "how": "target=_blank → #_blank",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "secondarycta.openInNewWindow": {
+      "handling": "mapped",
+      "how": "target=_blank → #_blank",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo.type": {
+      "handling": "mapped",
+      "how": "the video source (DM path or id) becomes the Video block link",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo.hideBorder": {
+      "handling": "not mapped",
+      "how": "videos with a border (853) render without",
+      "proposal": "map: the corp Video block keeps the source border by default, hideBorder = no border (option, name to approve)",
+      "status": "proposed"
+    },
+    "standalonevideo.borderColor": {
+      "handling": "not mapped",
+      "how": "black in 441 of 455",
+      "proposal": "map with hideBorder (black default)",
+      "status": "proposed"
+    },
+    "standalonevideo.loopVal": {
+      "handling": "not mapped",
+      "how": "looping standalone videos (132)",
+      "proposal": "map: autoplay + loop = a background-style video option (name to approve), as hero video slides",
+      "status": "proposed"
+    },
+    "standalonevideo.autoPlayVal": {
+      "handling": "not mapped",
+      "how": "autoplaying standalone videos (122)",
+      "proposal": "map with loopVal",
+      "status": "proposed"
+    },
+    "dam/components/scene7/dynamicmedia.assetType": {
+      "handling": "mapped",
+      "how": "VideoAVS → video link, image sets → image link (dm-images transformer)",
+      "proposal": "keep; MixedMediaSet / SpinSet (16): report",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.s7ImagePreset": {
+      "handling": "no effect",
+      "how": "empty",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.s7ViewerPreset": {
+      "handling": "no effect",
+      "how": "AEM viewer preset; EDS renders its own player",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.breakpoints": {
+      "handling": "no effect",
+      "how": "empty",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.s7PresetType": {
+      "handling": "no effect",
+      "how": "viewer type",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.unsharpMaskAmount": {
+      "handling": "no effect",
+      "how": "image sharpening defaults",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.unsharpMaskRadius": {
+      "handling": "no effect",
+      "how": "image sharpening defaults",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.unsharpMaskThreshold": {
+      "handling": "no effect",
+      "how": "image sharpening defaults",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "dam/components/scene7/dynamicmedia.jpegQuality": {
+      "handling": "no effect",
+      "how": "85 everywhere (DM default)",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo/dynamicmedia.breakpoints": {
+      "handling": "no effect",
+      "how": "empty",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo/dynamicmedia.s7ImagePreset": {
+      "handling": "no effect",
+      "how": "empty",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo/dynamicmedia.s7ViewerPreset": {
+      "handling": "no effect",
+      "how": "viewer preset",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo/dynamicmedia.s7PresetType": {
+      "handling": "no effect",
+      "how": "viewer type",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "standalonevideo/dynamicmedia.assetType": {
+      "handling": "mapped",
+      "how": "VideoAVS → Video block",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "disclaimer.disclaimer-type": {
+      "handling": "partly",
+      "how": "text disclaimers imported (page facts); path (17) = a disclaimer taken from another page: to verify",
+      "proposal": "keep text; path: resolve to the referenced text",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "marketoform.afterSubmitAction": {
+      "handling": "mapped",
+      "how": "thank-you message / redirect from the page facts",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "marketoform.useProduction": {
+      "handling": "no effect",
+      "how": "always true",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "marketoform.marketoInstance": {
+      "handling": "mapped",
+      "how": "the form base URL / Munchkin ID the live page loads",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "marketoform.hiddenConfiguredMarketo": {
+      "handling": "no effect",
+      "how": "dialog flag",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "fullbleedpanel.backgroundColor": {
+      "handling": "partly",
+      "how": "the rendered panel classes (bg-light-gray, gradients, bg-gold, …) become section styles; colours without a class (e.g. rgb(89,75,97), rgba(62,82,69,1)) to verify",
+      "proposal": "map every panel colour to a corp colour section style (names to approve for new ones)",
+      "status": "proposed"
+    },
+    "contactbutton.hideComponent": {
+      "handling": "mapped",
+      "how": "hidden = not imported",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "secondarycta.hideComponent": {
+      "handling": "mapped",
+      "how": "hidden = not imported",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "pageshortdescription.hideComponent": {
+      "handling": "mapped",
+      "how": "hidden = not imported",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "tagcrumb.hideComponent": {
+      "handling": "mapped",
+      "how": "tag breadcrumb skipped (component map)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "jumpbarnav.hideComponent": {
+      "handling": "mapped",
+      "how": "hidden = not imported; visible = Sticky Nav",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "jumpbarnav.deactiveNav": {
+      "handling": "to verify",
+      "how": "deactivated jump bar (172)",
+      "proposal": "verify on the example pages; likely not rendered = skip",
+      "status": "proposed"
+    },
+    "pagehero.headColor": {
+      "handling": "to verify",
+      "how": "page hero title colour: gold (481), black (10)",
+      "proposal": "map gold title (colour tag) if the live title is gold",
+      "status": "proposed"
+    },
+    "pagehero.usethumbnail": {
+      "handling": "to verify",
+      "how": "page hero shows the page thumbnail as image",
+      "proposal": "keep (the rendered image is imported)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "pagehero.hideBottomLine": {
+      "handling": "mapped",
+      "how": "no gold rule = no border-bottom option",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "pagehero.imageAlt": {
+      "handling": "content",
+      "how": "image alt kept",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.mobileOverlay": {
+      "handling": "mapped",
+      "how": "mobile_Bottom → text-below; mobile_Overlay → text over the image",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.verticalMargin": {
+      "handling": "mapped",
+      "how": "top-<n> / bottom-<n> option from the rendered top:%",
+      "proposal": "keep (numeric option)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.marginLeft": {
+      "handling": "mapped",
+      "how": "left-<n> option",
+      "proposal": "keep (numeric option)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.marginRight": {
+      "handling": "mapped",
+      "how": "right-<n> option",
+      "proposal": "keep (numeric option)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.backgroundColor": {
+      "handling": "not mapped",
+      "how": "the slide's text box background (white in 452 of 463)",
+      "proposal": "map with largeheadline.backgroundColor: the box behind the slide text (Hero Corp option, name to approve)",
+      "status": "proposed"
+    },
+    "carouselslidegroup/carouselslide.gradientDirection": {
+      "handling": "no effect",
+      "how": "only with a gradient",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup/carouselslide.standaloneVideoControls": {
+      "handling": "mapped",
+      "how": "hidden controls = background video slide",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.backgroundNav": {
+      "handling": "not mapped",
+      "how": "slide navigation dots colour",
+      "proposal": "drop (no rotation: one Hero Corp per slide)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.opacityLocal": {
+      "handling": "not mapped",
+      "how": "overlay opacity (0 in 117)",
+      "proposal": "drop; 75 / 40 / 50 (12): review",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.transitionEffects": {
+      "handling": "not mapped",
+      "how": "slide animation",
+      "proposal": "drop (no rotation)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.hcpBannerTextColor": {
+      "handling": "not mapped",
+      "how": "HCP banner text colour",
+      "proposal": "drop (hcp-banner metadata is set; the banner has one look)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.carouselscrollOptions": {
+      "handling": "not mapped",
+      "how": "scroll option",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.alignHCP": {
+      "handling": "not mapped",
+      "how": "HCP banner left / right",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.localNav": {
+      "handling": "to verify",
+      "how": "local page nav over (15) or under (2) the hero",
+      "proposal": "keep the nav as Sticky Nav; position normalised",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.carouselOptionSpeed": {
+      "handling": "not mapped",
+      "how": "rotation speed",
+      "proposal": "drop (no rotation)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.arrowFlag": {
+      "handling": "no effect",
+      "how": "always false",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.pauseonhover": {
+      "handling": "no effect",
+      "how": "always false",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "carouselslidegroup.carouselOptionAutoplay": {
+      "handling": "not mapped",
+      "how": "autoplay rotation (37)",
+      "proposal": "decide: multi-slide carousels stay one Hero Corp per slide (no rotation), or a carousel block",
+      "status": "proposed"
+    },
+    "carouselslidegroup.firstItem": {
+      "handling": "no effect",
+      "how": "first slide marker",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "buttonset.buttonSeriesColors": {
+      "handling": "partly",
+      "how": "as CTAButtonColor: gold vs other",
+      "proposal": "map as CTAButtonColor",
+      "status": "proposed"
+    },
+    "buttonset.buttonAlignment": {
+      "handling": "no effect",
+      "how": "left in 170 of 171",
+      "proposal": "drop (right: 1 page, review)",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "fullWidthImage.dimensionBox": {
+      "handling": "to verify",
+      "how": "text box style on the banner image (FDB / ND)",
+      "proposal": "verify on the example pages",
+      "status": "proposed"
+    },
+    "fullWidthImage.layoutOptions": {
+      "handling": "mapped",
+      "how": "col-sm-N → right-<n>, 50_bottom / 50_top → bottom / top options (Hero Corp image-slide, text-above)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "fullWidthImageHero.location": {
+      "handling": "to verify",
+      "how": "1 / 2: hero text position",
+      "proposal": "verify on the example pages",
+      "status": "proposed"
+    },
+    "fullWidthImageHero.hideBottomLine": {
+      "handling": "to verify",
+      "how": "no gold rule under the hero",
+      "proposal": "map as pagehero.hideBottomLine",
+      "status": "proposed"
+    },
+    "marketoform.formId": {
+      "handling": "mapped",
+      "how": "Marketo Form block",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "filteredcontenttypegrid.listSize": {
+      "handling": "later",
+      "how": "product / procedure grid filled by a query (no handler yet)",
+      "proposal": "later: product grid block with the query and page size",
+      "status": "proposed"
+    },
+    "filteredcontenttypegrid.loadMoreText": {
+      "handling": "later",
+      "how": "grid button label",
+      "proposal": "later (product grid)",
+      "status": "proposed"
+    },
+    "filteredcontenttypegrid.emptyText": {
+      "handling": "later",
+      "how": "grid empty message",
+      "proposal": "later (product grid)",
+      "status": "proposed"
+    },
+    "filteredcontenttypegrid.defaultFilterOption": {
+      "handling": "later",
+      "how": "grid filter label",
+      "proposal": "later (product grid)",
+      "status": "proposed"
+    },
+    "filteredcontenttypegrid.showProcedures": {
+      "handling": "later",
+      "how": "grid filter",
+      "proposal": "later (product grid)",
+      "status": "proposed"
+    },
+    "filteredcontenttypegrid.showSystems": {
+      "handling": "later",
+      "how": "grid filter",
+      "proposal": "later (product grid)",
+      "status": "proposed"
+    },
+    "customizable.hideButton": {
+      "handling": "no effect",
+      "how": "always false",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "customizable.hideThumbnail": {
+      "handling": "no effect",
+      "how": "always false",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "resourcesanddownload.jumpbarHidden": {
+      "handling": "to verify",
+      "how": "resources list not in the jump bar",
+      "proposal": "verify; likely no visible effect",
+      "status": "proposed"
+    },
+    "sectionseparator.sectionColor": {
+      "handling": "partly",
+      "how": "every separator becomes the divider style (grey rule); white-hr (69) is a white rule",
+      "proposal": "white-hr: verify if it is visible (white on white); if not, a section gap only",
+      "status": "proposed"
+    },
+    "numbercounter.startNumber": {
+      "handling": "mapped",
+      "how": "count-up from 0 (Statistics count-up)",
+      "proposal": "keep; non-zero starts (16) count from 0",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.endNumber": {
+      "handling": "mapped",
+      "how": "the stat value",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.fontColor": {
+      "handling": "mapped",
+      "how": "gold / navy / teal / purple colour keyword",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.numberTypeNumberCounter": {
+      "handling": "mapped",
+      "how": "number / currency / percent",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.currencyTypeNumberCounter": {
+      "handling": "mapped",
+      "how": "$ prefix",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.fontFace": {
+      "handling": "mapped",
+      "how": "Futura bold (Statistics default)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "numbercounter.fontSize": {
+      "handling": "not mapped",
+      "how": "number size in vw (2.5–8vw); Statistics has one size",
+      "proposal": "normalise, or size options like Hero Corp size-<n> (decide)",
+      "status": "proposed"
+    },
+    "numbercounter.numberCounterAlignment": {
+      "handling": "not mapped",
+      "how": "centred (35) / left (32); Statistics is centred",
+      "proposal": "map left alignment as a Statistics option (name to approve)",
+      "status": "proposed"
+    },
+    "contentFragment.elementNames": {
+      "handling": "mapped",
+      "how": "the fields each use shows (Cards contact fragment)",
+      "proposal": "keep",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "contentFragment.displayMode": {
+      "handling": "no effect",
+      "how": "always multi",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "contentFragment.paragraphScope": {
+      "handling": "no effect",
+      "how": "always all",
+      "proposal": "drop",
+      "status": "approved",
+      "approved": "2026-10-28 (all keep and drop proposals)"
+    },
+    "externalasset.gcs": {
+      "handling": "later",
+      "how": "external asset library pages",
+      "proposal": "later (external-asset-library template)",
+      "status": "proposed"
+    },
+    "localpagenavigation.childrenNumber": {
+      "handling": "to verify",
+      "how": "how many child pages the local nav lists",
+      "proposal": "verify against the Sticky Nav (local) output",
+      "status": "proposed"
+    },
+    "localpagenavigation.hideTopLine": {
+      "handling": "to verify",
+      "how": "no rule above the local nav",
+      "proposal": "verify",
+      "status": "proposed"
+    },
+    "eventdetail.eventBU": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail template: page metadata)",
+      "status": "proposed"
+    },
+    "eventdetail.eventAudience": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventLocation": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventCity": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventType": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventTimeZone": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.hiddenCountry": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventCountry": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.hiddenEventTimeZone": {
+      "handling": "later",
+      "how": "event metadata",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "eventdetail.eventContactEmail": {
+      "handling": "later",
+      "how": "event contact (content)",
+      "proposal": "later (event-detail)",
+      "status": "proposed"
+    },
+    "contactus.groupContact": {
+      "handling": "later",
+      "how": "contact us component (no handler yet)",
+      "proposal": "later (contactus handler)",
+      "status": "proposed"
+    }
   }
 }
