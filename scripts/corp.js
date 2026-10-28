@@ -164,14 +164,18 @@ export async function loadFirstSections(main) {
 /**
  * Builds, decorates and loads a chrome block (header-corp / footer-corp) into its
  * landmark, in place of aem.js loadHeader / loadFooter. The blocks read the `nav` /
- * `footer` metadata themselves (defaults /nav, /footer).
+ * `footer` metadata themselves (defaults /nav, /footer). Like aem.js loadHeader /
+ * loadFooter, a block already in the landmark is replaced, not added to: the EW canvas
+ * loads the chrome again, which showed the header and footer twice.
  * @param {Element} parent The <header> or <footer> landmark
  * @param {string} name The block name
  */
 async function loadChrome(parent, name) {
   if (!parent) return null;
   const block = buildBlock(name, '');
-  parent.append(block);
+  const existing = parent.querySelector(`:scope > .${name}`);
+  if (existing) existing.replaceWith(block);
+  else parent.append(block);
   decorateBlock(block);
   return loadBlock(block);
 }
