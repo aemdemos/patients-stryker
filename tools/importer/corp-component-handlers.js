@@ -12,7 +12,7 @@ import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
   plainBoldParagraphs, serifHeadings, headingSizeStyle, contentCopy, colourClass,
 } from './corp-richtext.js';
-import { standaloneImageNodes } from './corp-components.js';
+import { standaloneImageNodes, isEmptyXf } from './corp-components.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import { videoLink } from './parsers/video.js';
@@ -234,7 +234,11 @@ function sharedCopyStyle(cells, ctx) {
     const style = n.copyStyle || '';
     weights.set(style, (weights.get(style) || 0) + text(n).length);
   });
-  if (!weights.size) return '';
+  if (!weights.size) {
+    // only labels (e.g. image + caption tiles): their shared size is the block's copy size
+    const sizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+    return sizes.size === 1 ? [...sizes][0] : '';
+  }
   const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
   if (weights.size > 1) {
     const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || 'default');
@@ -334,7 +338,14 @@ export function columnItems(columns, split, ctx) {
   // G: Columns, one row, one cell per column (empty columns keep their cell)
   const cells = cols.map((items) => cellNodes(items, ctx));
   const modifiers = [];
-  if (cols.some((items) => items.some((it) => it.role === 'headline'))) modifiers.push('large-headline');
+  // large-headline sets the Large Headline type scale on every cell (serif copy and lists,
+  // grey italic lines): only when no column is ordinary rich text (about 80 column controls
+  // put a Large Headline next to rich text, e.g. jr45/july); the h1 scale applies anyway
+  const headline = cols.some((items) => items.some((it) => it.role === 'headline'));
+  const richText = cols.some((items) => items.some((it) => it.role === 'text')
+    && !items.some((it) => it.role === 'headline'));
+  if (headline && !richText) modifiers.push('large-headline');
+  if (headline && richText) ctx.report.notes.push('Columns: Large Headline next to rich text, large-headline modifier left out');
   const flows = (items) => items.filter((it) => it.type === 'flow' && it.nodes.length);
   const first = flows(cols[0]);
   const last = flows(cols[cols.length - 1]);
@@ -497,9 +508,61 @@ function sectionTitle(el, ctx) {
     const u = ctx.doc.createElement('u');
     u.textContent = text(heading);
     h.append(u);
-    items.push({ type: 'flow', role: 'text', nodes: [h] });
+    // a subtitle under the title (e.g. an h3 description on the training video pages)
+    const rest = [...heading.parentElement.children].filter((n) => n !== heading && text(n));
+    const more = rest.flatMap((n) => {
+      const box = contentCopy(n, ctx.doc);
+      cleanRichText(box);
+      return [rename(box, BLOCK_TAGS.has(n.tagName) ? n.tagName.toLowerCase() : 'p')];
+    });
+    items.push({ type: 'flow', role: 'text', nodes: [h, ...more] });
   }
   return items;
+}
+
+/**
+ * fullWidthImage: a banner image (desktop crop in the picture's
+ * min-width source, mobile crop in its img) with an optional text box. With text: Hero Corp
+ * (image-slide, text-above), as live: the text box over the image from 841px (600px here),
+ * above the image on phones; the Large Headline's vw sizes as size-<n> / copy-size-<n>.
+ * Without text: the image as default content.
+ */
+function fullWidthImage(el, ctx) {
+  const { doc } = ctx;
+  const img = el.querySelector('.imgBoxId img') || el.querySelector('img');
+  const box = el.querySelector('.textBoxId');
+  const overlay = box ? inlineNodes(ctx.collect(box), ctx) : [];
+  if (!img && !overlay.length) return [];
+  const source = img && img.closest('picture') && img.closest('picture').querySelector('source[media*="min-width"]');
+  const image = (src) => {
+    const i = doc.createElement('img');
+    i.setAttribute('src', absoluteAsset(src));
+    i.setAttribute('alt', img.getAttribute('alt') || '');
+    return i;
+  };
+  const desktop = img && image((source && source.getAttribute('srcset').split(/[\s,]/)[0]) || img.getAttribute('src'));
+  const mobile = img && source && image(img.getAttribute('src'));
+  if (!overlay.length) return [{ type: 'flow', role: 'image', nodes: [para(doc, desktop)] }];
+  const variants = ['image-slide', 'text-above'];
+  const lines = box ? [...box.querySelectorAll('.line')] : [];
+  const size = lines[0] ? vwSize(lines[0]) : 0;
+  const copySize = lines[1] ? vwSize(lines[1]) : 0;
+  if (size) variants.push(`size-${String(size).replace('.', '-')}`);
+  if (copySize) variants.push(`copy-size-${String(copySize).replace('.', '-')}`);
+  const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
+  return [{
+    type: 'own', kind: 'hero', styles: cellStyles([overlay], ctx), nodes: [block(doc, `Hero Corp (${variants.join(', ')})`, rows)],
+  }];
+}
+
+/** h1-title (component-map: h1): the page title, a plain h1 (black Futura 28px, as live). */
+function h1Title(el, ctx) {
+  const source = el.querySelector('h1');
+  if (!source || !text(source)) return [];
+  const box = contentCopy(source, ctx.doc);
+  cleanRichText(box);
+  ctx.h1 = true;
+  return [{ type: 'flow', role: 'text', nodes: [rename(box, 'h1')] }];
 }
 
 function experienceFragment(el, ctx) {
@@ -510,6 +573,7 @@ function experienceFragment(el, ctx) {
       type: 'fragment', kind: 'fragment', styles: [], nodes: [block(ctx.doc, 'Fragment', [[a]])],
     }];
   }
+  if (isEmptyXf(el)) return [];
   ctx.report.notes.push(`XF not matched to the index, kept inline: ${text(el).slice(0, 50)}`);
   return ctx.collect(el);
 }
@@ -999,6 +1063,8 @@ const skip = () => [];
 // AEM components by wrapper class (or #id)
 export const COMPONENTS = {
   carouselslidegroup: carousel,
+  'h1-title': h1Title,
+  fullWidthImage,
   jumpbarnav: jumpBar,
   cols: columnControl,
   experienceFragment,

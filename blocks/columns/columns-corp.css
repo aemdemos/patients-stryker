@@ -31,6 +31,17 @@ body.corp .columns > div > div h2 {
   font-weight: var(--font-weight-bold);
 }
 
+/* serif section (styles-corp.css): the cells' copy keeps the section's copy size
+   (--corp-copy-size, 14px without a p-* style) instead of the patients 21px serif Columns
+   copy (stryker.com nse footed-attachments: 14px Egyptienne list) */
+body.corp .section.serif .columns :is(p, li) {
+  font-size: var(--corp-copy-size, var(--body-font-size-m));
+}
+
+body.corp .section.serif .columns :is(ul, a) {
+  font-size: inherit;
+}
+
 /* h-serif section style (styles-corp.css): the cells' h2 / h3 in Egyptienne Light, as the
    source's plain h2 / h3 (inspace "Shorter operative time"); bold parts stay Futura */
 body.corp .section.h-serif .columns > div > div :is(h2, h3) {

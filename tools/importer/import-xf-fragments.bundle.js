@@ -2760,6 +2760,7 @@ var CustomImportScript = (() => {
     return nodes;
   }
   var squash2 = (value) => String(value || "").replace(/\s+/g, " ").trim().toLowerCase();
+  var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
     const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
@@ -2769,6 +2770,7 @@ var CustomImportScript = (() => {
     let next = 0;
     wrappers.forEach((wrapper) => {
       const content = squash2(wrapper.textContent);
+      if (isEmptyXf(wrapper)) return;
       for (let i = next; i < refs.length; i += 1) {
         const ref = refs[i];
         const summary = squash2(ref.text).slice(0, 40);
@@ -3804,7 +3806,10 @@ var CustomImportScript = (() => {
       const style = n.copyStyle || "";
       weights.set(style, (weights.get(style) || 0) + text(n).length);
     });
-    if (!weights.size) return "";
+    if (!weights.size) {
+      const sizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+      return sizes.size === 1 ? [...sizes][0] : "";
+    }
     const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
     if (weights.size > 1) {
       const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || "default");
@@ -3887,7 +3892,10 @@ var CustomImportScript = (() => {
     }
     const cells = cols.map((items) => cellNodes(items, ctx));
     const modifiers = [];
-    if (cols.some((items) => items.some((it) => it.role === "headline"))) modifiers.push("large-headline");
+    const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    if (headline2 && !richText) modifiers.push("large-headline");
+    if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
     const first = flows(cols[0]);
     const last = flows(cols[cols.length - 1]);
@@ -4040,9 +4048,53 @@ var CustomImportScript = (() => {
       const u = ctx.doc.createElement("u");
       u.textContent = text(heading);
       h.append(u);
-      items.push({ type: "flow", role: "text", nodes: [h] });
+      const rest = [...heading.parentElement.children].filter((n) => n !== heading && text(n));
+      const more = rest.flatMap((n) => {
+        const box = contentCopy(n, ctx.doc);
+        cleanRichText(box);
+        return [rename(box, BLOCK_TAGS.has(n.tagName) ? n.tagName.toLowerCase() : "p")];
+      });
+      items.push({ type: "flow", role: "text", nodes: [h, ...more] });
     }
     return items;
+  }
+  function fullWidthImage(el, ctx) {
+    const { doc } = ctx;
+    const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
+    const box = el.querySelector(".textBoxId");
+    const overlay = box ? inlineNodes(ctx.collect(box), ctx) : [];
+    if (!img && !overlay.length) return [];
+    const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
+    const image = (src) => {
+      const i = doc.createElement("img");
+      i.setAttribute("src", absoluteAsset(src));
+      i.setAttribute("alt", img.getAttribute("alt") || "");
+      return i;
+    };
+    const desktop = img && image(source && source.getAttribute("srcset").split(/[\s,]/)[0] || img.getAttribute("src"));
+    const mobile = img && source && image(img.getAttribute("src"));
+    if (!overlay.length) return [{ type: "flow", role: "image", nodes: [para(doc, desktop)] }];
+    const variants = ["image-slide", "text-above"];
+    const lines = box ? [...box.querySelectorAll(".line")] : [];
+    const size = lines[0] ? vwSize(lines[0]) : 0;
+    const copySize = lines[1] ? vwSize(lines[1]) : 0;
+    if (size) variants.push(`size-${String(size).replace(".", "-")}`);
+    if (copySize) variants.push(`copy-size-${String(copySize).replace(".", "-")}`);
+    const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
+    return [{
+      type: "own",
+      kind: "hero",
+      styles: cellStyles([overlay], ctx),
+      nodes: [block(doc, `Hero Corp (${variants.join(", ")})`, rows)]
+    }];
+  }
+  function h1Title(el, ctx) {
+    const source = el.querySelector("h1");
+    if (!source || !text(source)) return [];
+    const box = contentCopy(source, ctx.doc);
+    cleanRichText(box);
+    ctx.h1 = true;
+    return [{ type: "flow", role: "text", nodes: [rename(box, "h1")] }];
   }
   function experienceFragment(el, ctx) {
     const match = ctx.xfMatches && ctx.xfMatches.get(el);
@@ -4055,6 +4107,7 @@ var CustomImportScript = (() => {
         nodes: [block(ctx.doc, "Fragment", [[a]])]
       }];
     }
+    if (isEmptyXf(el)) return [];
     ctx.report.notes.push(`XF not matched to the index, kept inline: ${text(el).slice(0, 50)}`);
     return ctx.collect(el);
   }
@@ -4497,6 +4550,8 @@ var CustomImportScript = (() => {
   var skip = () => [];
   var COMPONENTS2 = {
     carouselslidegroup: carousel,
+    "h1-title": h1Title,
+    fullWidthImage,
     jumpbarnav: jumpBar,
     cols: columnControl,
     experienceFragment,

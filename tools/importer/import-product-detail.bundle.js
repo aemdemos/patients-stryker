@@ -3052,6 +3052,7 @@ var CustomImportScript = (() => {
     return nodes;
   }
   var squash2 = (value) => String(value || "").replace(/\s+/g, " ").trim().toLowerCase();
+  var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
     const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
@@ -3061,6 +3062,7 @@ var CustomImportScript = (() => {
     let next = 0;
     wrappers.forEach((wrapper) => {
       const content = squash2(wrapper.textContent);
+      if (isEmptyXf(wrapper)) return;
       for (let i = next; i < refs.length; i += 1) {
         const ref = refs[i];
         const summary = squash2(ref.text).slice(0, 40);
@@ -3448,7 +3450,10 @@ var CustomImportScript = (() => {
       const style = n.copyStyle || "";
       weights.set(style, (weights.get(style) || 0) + text(n).length);
     });
-    if (!weights.size) return "";
+    if (!weights.size) {
+      const sizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+      return sizes.size === 1 ? [...sizes][0] : "";
+    }
     const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
     if (weights.size > 1) {
       const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || "default");
@@ -3531,7 +3536,10 @@ var CustomImportScript = (() => {
     }
     const cells = cols.map((items) => cellNodes(items, ctx));
     const modifiers = [];
-    if (cols.some((items) => items.some((it) => it.role === "headline"))) modifiers.push("large-headline");
+    const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    if (headline2 && !richText) modifiers.push("large-headline");
+    if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
     const first = flows(cols[0]);
     const last = flows(cols[cols.length - 1]);
@@ -3684,9 +3692,53 @@ var CustomImportScript = (() => {
       const u = ctx.doc.createElement("u");
       u.textContent = text(heading);
       h.append(u);
-      items.push({ type: "flow", role: "text", nodes: [h] });
+      const rest = [...heading.parentElement.children].filter((n) => n !== heading && text(n));
+      const more = rest.flatMap((n) => {
+        const box = contentCopy(n, ctx.doc);
+        cleanRichText(box);
+        return [rename(box, BLOCK_TAGS.has(n.tagName) ? n.tagName.toLowerCase() : "p")];
+      });
+      items.push({ type: "flow", role: "text", nodes: [h, ...more] });
     }
     return items;
+  }
+  function fullWidthImage(el, ctx) {
+    const { doc } = ctx;
+    const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
+    const box = el.querySelector(".textBoxId");
+    const overlay = box ? inlineNodes(ctx.collect(box), ctx) : [];
+    if (!img && !overlay.length) return [];
+    const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
+    const image = (src) => {
+      const i = doc.createElement("img");
+      i.setAttribute("src", absoluteAsset(src));
+      i.setAttribute("alt", img.getAttribute("alt") || "");
+      return i;
+    };
+    const desktop = img && image(source && source.getAttribute("srcset").split(/[\s,]/)[0] || img.getAttribute("src"));
+    const mobile = img && source && image(img.getAttribute("src"));
+    if (!overlay.length) return [{ type: "flow", role: "image", nodes: [para(doc, desktop)] }];
+    const variants = ["image-slide", "text-above"];
+    const lines = box ? [...box.querySelectorAll(".line")] : [];
+    const size = lines[0] ? vwSize(lines[0]) : 0;
+    const copySize = lines[1] ? vwSize(lines[1]) : 0;
+    if (size) variants.push(`size-${String(size).replace(".", "-")}`);
+    if (copySize) variants.push(`copy-size-${String(copySize).replace(".", "-")}`);
+    const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
+    return [{
+      type: "own",
+      kind: "hero",
+      styles: cellStyles([overlay], ctx),
+      nodes: [block(doc, `Hero Corp (${variants.join(", ")})`, rows)]
+    }];
+  }
+  function h1Title(el, ctx) {
+    const source = el.querySelector("h1");
+    if (!source || !text(source)) return [];
+    const box = contentCopy(source, ctx.doc);
+    cleanRichText(box);
+    ctx.h1 = true;
+    return [{ type: "flow", role: "text", nodes: [rename(box, "h1")] }];
   }
   function experienceFragment(el, ctx) {
     const match = ctx.xfMatches && ctx.xfMatches.get(el);
@@ -3699,6 +3751,7 @@ var CustomImportScript = (() => {
         nodes: [block(ctx.doc, "Fragment", [[a]])]
       }];
     }
+    if (isEmptyXf(el)) return [];
     ctx.report.notes.push(`XF not matched to the index, kept inline: ${text(el).slice(0, 50)}`);
     return ctx.collect(el);
   }
@@ -4141,6 +4194,8 @@ var CustomImportScript = (() => {
   var skip = () => [];
   var COMPONENTS = {
     carouselslidegroup: carousel,
+    "h1-title": h1Title,
+    fullWidthImage,
     jumpbarnav: jumpBar,
     cols: columnControl,
     experienceFragment,
@@ -4230,6 +4285,92 @@ var CustomImportScript = (() => {
     });
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
+
+  // tools/importer/corp-import.js
+  var transformers = [transform, transform2, transform3];
+  var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
+  function publishedDate(document) {
+    const input = document.querySelector("#hiddenPublishedDate");
+    const m = (input && input.getAttribute("value") || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
+  }
+  function createCorpImport({
+    name,
+    description,
+    urls,
+    facts: PAGE_FACTS
+  }) {
+    const PAGE_TEMPLATE = {
+      name,
+      site: "corp",
+      description,
+      urls
+    };
+    function executeTransformers(hookName, element, payload) {
+      const facts = PAGE_FACTS[pagePath(payload.params.originalURL)] || null;
+      const enhancedPayload = __spreadProps(__spreadValues({}, payload), {
+        template: PAGE_TEMPLATE,
+        corp: CORP_PAGE,
+        facts
+      });
+      transformers.forEach((fn) => {
+        try {
+          fn.call(null, hookName, element, enhancedPayload);
+        } catch (e) {
+          console.error(`Transformer failed at ${hookName}:`, e);
+        }
+      });
+    }
+    return {
+      // on the live page, before the import: what it hides and what its forms load
+      onLoad: ({ document }) => markLivePage(document),
+      transform: (payload) => {
+        const { document, url, params } = payload;
+        const main = document.body;
+        const published = publishedDate(document);
+        const hcpBanner = document.querySelector(".g-hcpbanner");
+        const hcp = !!(hcpBanner && hcpBanner.textContent.trim());
+        const keywords = (document.querySelector('meta[name="keywords" i]') || { content: "" }).content.trim();
+        const meta = WebImporter.Blocks.getMetadata(document);
+        executeTransformers("beforeTransform", main, payload);
+        const report = JSON.parse(main.getAttribute("data-corp-report") || "{}");
+        main.removeAttribute("data-corp-report");
+        executeTransformers("afterTransform", main, payload);
+        if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+        if (keywords) meta.Keywords = keywords;
+        meta.site = "corp";
+        meta.template = name;
+        if (published) meta.published = published;
+        if (hcp) meta["hcp-banner"] = "true";
+        const facts = PAGE_FACTS[pagePath(params.originalURL)];
+        if (facts) {
+          const m = facts.metadata;
+          if (!meta.Title && m.title) meta.Title = m.title;
+          if (!meta.Description && m.description) meta.Description = m.description;
+          if (m.contentID) meta["content-id"] = m.contentID;
+          if (m.tags && m.tags.length) meta.tags = m.tags.join(", ");
+          if (m.originallyPublished) meta["originally-published"] = m.originallyPublished.slice(0, 10);
+          if (m.imageAlt) meta["image-alt"] = m.imageAlt;
+        }
+        main.append(document.createElement("hr"));
+        main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+        WebImporter.rules.transformBackgroundImages(main, document);
+        WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+        const path = WebImporter.FileUtils.sanitizePath(pagePath(params.originalURL));
+        return [{
+          element: main,
+          path,
+          report: {
+            title: document.title,
+            template: PAGE_TEMPLATE.name,
+            unhandled: (report.unhandled || []).join(" | "),
+            notes: (report.notes || []).join(" | "),
+            hidden: report.hidden || 0
+          }
+        }];
+      }
+    };
+  }
 
   // tools/importer/data/page-facts/product-detail.js
   var product_detail_default = {
@@ -4933,84 +5074,13 @@ var CustomImportScript = (() => {
   };
 
   // tools/importer/import-product-detail.js
-  var PAGE_TEMPLATE = {
+  var import_product_detail_default = createCorpImport({
     name: "product-detail",
-    site: "corp",
     description: "www.stryker.com product pages: hero slide (Hero Corp image-slide), jump bar (Sticky Nav), column controls (Columns / Cards Corp / flex sections), XFs (Fragment), Marketo form beside the business-unit aside, resources tabs, page disclaimer.",
     urls: [
       "https://www.stryker.com/us/en/acute-care/products/isolibrium.html"
-    ]
-  };
-  var transformers = [transform, transform2, transform3];
-  var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
-  function executeTransformers(hookName, element, payload) {
-    const facts = product_detail_default[pagePath(payload.params.originalURL)] || null;
-    const enhancedPayload = __spreadProps(__spreadValues({}, payload), {
-      template: PAGE_TEMPLATE,
-      corp: CORP_PAGE,
-      facts
-    });
-    transformers.forEach((fn) => {
-      try {
-        fn.call(null, hookName, element, enhancedPayload);
-      } catch (e) {
-        console.error(`Transformer failed at ${hookName}:`, e);
-      }
-    });
-  }
-  function publishedDate(document) {
-    const input = document.querySelector("#hiddenPublishedDate");
-    const m = (input && input.getAttribute("value") || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
-  }
-  var import_product_detail_default = {
-    // on the live page, before the import: what it hides and what its forms load
-    onLoad: ({ document }) => markLivePage(document),
-    transform: (payload) => {
-      const { document, url, params } = payload;
-      const main = document.body;
-      const published = publishedDate(document);
-      const hcpBanner = document.querySelector(".g-hcpbanner");
-      const hcp = !!(hcpBanner && hcpBanner.textContent.trim());
-      const keywords = (document.querySelector('meta[name="keywords" i]') || { content: "" }).content.trim();
-      const meta = WebImporter.Blocks.getMetadata(document);
-      executeTransformers("beforeTransform", main, payload);
-      const report = JSON.parse(main.getAttribute("data-corp-report") || "{}");
-      main.removeAttribute("data-corp-report");
-      executeTransformers("afterTransform", main, payload);
-      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      if (keywords) meta.Keywords = keywords;
-      meta.site = "corp";
-      meta.template = "product-detail";
-      if (published) meta.published = published;
-      if (hcp) meta["hcp-banner"] = "true";
-      const facts = product_detail_default[pagePath(params.originalURL)];
-      if (facts) {
-        const m = facts.metadata;
-        if (!meta.Title && m.title) meta.Title = m.title;
-        if (!meta.Description && m.description) meta.Description = m.description;
-        if (m.contentID) meta["content-id"] = m.contentID;
-        if (m.tags && m.tags.length) meta.tags = m.tags.join(", ");
-        if (m.originallyPublished) meta["originally-published"] = m.originallyPublished.slice(0, 10);
-        if (m.imageAlt) meta["image-alt"] = m.imageAlt;
-      }
-      main.append(document.createElement("hr"));
-      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
-      WebImporter.rules.transformBackgroundImages(main, document);
-      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
-      const path = WebImporter.FileUtils.sanitizePath(pagePath(params.originalURL));
-      return [{
-        element: main,
-        path,
-        report: {
-          title: document.title,
-          template: PAGE_TEMPLATE.name,
-          unhandled: (report.unhandled || []).join(" | "),
-          notes: (report.notes || []).join(" | "),
-          hidden: report.hidden || 0
-        }
-      }];
-    }
-  };
+    ],
+    facts: product_detail_default
+  });
   return __toCommonJS(import_product_detail_exports);
 })();

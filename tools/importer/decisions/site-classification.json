@@ -42,7 +42,8 @@
    "componentSets": 80,
    "top3Share": 62,
    "singletonSets": 63,
-   "importTemplate": []
+   "importTemplate": [],
+   "edsTemplate": "long-page-detail-corp"
   },
   {
    "template": "tier2-landing-page",
@@ -104,7 +105,8 @@
    "componentSets": 19,
    "top3Share": 62,
    "singletonSets": 17,
-   "importTemplate": []
+   "importTemplate": [],
+   "edsTemplate": "procedure-detail-corp"
   },
   {
    "template": "contactdivision",
@@ -250,5 +252,13 @@
   "pages": "a representative set: ~5 news-detail incl. already-migrated ones, Smart Care (division), 2-3 product-detail, 1 tier2-landing-page, 1 long-page-detail, 1 contact directory (content fragments)",
   "check": "preview at 600/900/1200 vs source, diff vs the current migrated content for the already-migrated ones, link check, style validator offered",
   "then": "if everything checks out: re-import the already-migrated pages to their real paths (diffed), remove the pilot copies, continue with the import order"
+ },
+ "templateNames": {
+  "rule": "A corp AEM template whose name equals a patients template gets the -corp suffix as its EDS template (metadata template, templates/<name>/); the other corp templates keep the AEM name.",
+  "approved": "2026-10-28",
+  "names": {
+   "long-page-detail": "long-page-detail-corp",
+   "procedure-detail": "procedure-detail-corp"
+  }
  }
 }

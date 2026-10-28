@@ -481,7 +481,17 @@ body:where(.corp):has(main .hero-carousel) header {
 /* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5, label-1-75, label-2) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
    panels (with-nested-blocks) hold their section in .accordion-item-body; a fragment that
-   shares its section (a contact aside next to a form) keeps its sections in .fragment. */
+   shares its section (a contact aside next to a form) keeps its sections in .fragment.
+   --corp-copy-size: the section's copy size, for blocks that set their own copy size
+   (Columns in a serif section, columns-corp.css) */
+:where(body.corp) .section.p-0-8 { --corp-copy-size: var(--footnote-font-size); }
+:where(body.corp) .section.p-1 { --corp-copy-size: var(--body-font-size-m); }
+:where(body.corp) .section.p-1-25 { --corp-copy-size: var(--body-font-size-l); }
+:where(body.corp) .section.p-1-5 { --corp-copy-size: var(--body-font-size-xl); }
+:where(body.corp) .section.p-1-75 { --corp-copy-size: var(--heading-font-size-xl); }
+:where(body.corp) .section.p-2 { --corp-copy-size: var(--heading-font-size-xxl); }
+:where(body.corp) .section.p-2-5 { --corp-copy-size: var(--panel-heading-size); }
+
 :where(body.corp) main > .section.p-1 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li),
 :where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li),

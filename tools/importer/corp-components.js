@@ -53,6 +53,10 @@ export function standaloneImageNodes(component, doc) {
 
 const squash = (value) => String(value || '').replace(/\s+/g, ' ').trim().toLowerCase();
 
+/** An XF wrapper that renders nothing (no text, no media): e.g. an empty slot on a video page. */
+export const isEmptyXf = (wrapper) => !squash(wrapper.textContent)
+  && !wrapper.querySelector('img, picture, video, iframe, [data-widget], .s7dm-dynamic-media');
+
 /**
  * Experience fragments rendered inline on a source page → their EDS fragment documents.
  * The rendered XF wrapper (.experienceFragment) carries no path, so the wrappers are matched
@@ -77,6 +81,8 @@ export function matchXfWrappers(root, source) {
   let next = 0;
   wrappers.forEach((wrapper) => {
     const content = squash(wrapper.textContent);
+    // an empty XF slot (the page renders nothing in it): no fragment, nothing to report
+    if (isEmptyXf(wrapper)) return;
     for (let i = next; i < refs.length; i += 1) {
       const ref = refs[i];
       const summary = squash(ref.text).slice(0, 40);
