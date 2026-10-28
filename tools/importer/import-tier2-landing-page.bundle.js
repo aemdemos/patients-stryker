@@ -379,6 +379,7 @@ var CustomImportScript = (() => {
   }
   function effectiveSize(el) {
     const sizes = /* @__PURE__ */ new Set();
+    const copySizes = /* @__PURE__ */ new Set();
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (squash(n.textContent)) {
@@ -386,10 +387,14 @@ var CustomImportScript = (() => {
         for (let e = n.parentElement; e && e !== el.parentElement; e = e.parentElement) {
           factor = [...e.classList].reduce((f, c) => f * sizeFactor(c), factor);
         }
-        sizes.add(Math.round(factor * 100) / 100);
+        const size = Math.round(factor * 100) / 100;
+        sizes.add(size);
+        const label = n.parentElement.closest(".futura-bold, b, strong");
+        if (!label || !el.contains(label) || label === el) copySizes.add(size);
       }
     }
-    return sizes.size === 1 ? [...sizes][0] : null;
+    const counted = copySizes.size ? copySizes : sizes;
+    return counted.size === 1 ? [...counted][0] : null;
   }
   function coveredBy(el, cls) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -522,8 +527,26 @@ var CustomImportScript = (() => {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
-    tagPlainBoldLabels(root, wholeParagraphs);
     const doc = root.ownerDocument;
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
+    const trailingSpace = /[\s\u00a0]+$/;
+    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) {
+          if (/[\s\u00a0]/.test(last.textContent) && !(el.nextSibling && /^[\s\u00a0]/.test(el.nextSibling.textContent))) {
+            el.after(doc.createTextNode(" "));
+          }
+          last.remove();
+        } else el.after(last);
+        last = el.lastChild;
+      }
+      if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
+        last.textContent = last.textContent.replace(trailingSpace, "");
+        el.after(doc.createTextNode(" "));
+      }
+    });
+    tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
@@ -538,15 +561,6 @@ var CustomImportScript = (() => {
       strong.append(a);
     });
     mapColours(root);
-    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
-      let last = el.lastChild;
-      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
-        if (emptyElement(last)) last.remove();
-        else el.after(last);
-        last = el.lastChild;
-      }
-    });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
       if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
         rename(el, "strong");
@@ -4120,7 +4134,8 @@ var CustomImportScript = (() => {
       return [];
     });
     const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
-    const shared = sets.length ? sets[0].filter((s) => copyStyle(s) && sets.every((set) => set.includes(s))) : [];
+    const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
+    const shared = sets.length ? sets[0].filter(inAll) : [];
     const panels = collected.map((items) => inlineNodes(items, ctx));
     if (!panels.some((nodes2) => nodes2.length)) return [];
     const deepest = panels.flat().reduce((max, n) => /^H[1-6]$/.test(n.tagName) ? Math.max(max, Number(n.tagName[1])) : max, 2);
