@@ -3791,6 +3791,13 @@ var CustomImportScript = (() => {
     ctx.report.notes.push(`Columns: label size ${labelSize} has no label style, labels take the copy size`);
     return copy;
   }
+  function cellStyles(cells, ctx) {
+    const copy = sharedCopyStyle(cells, ctx);
+    const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
+    const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+    if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("serif and Futura h2 / h3 in one block, kept in Futura");
+    return [...copy ? copy.split(", ") : [], serif ? "h-serif" : ""].filter(Boolean);
+  }
   function columnItems(columns, split, ctx) {
     const { doc } = ctx;
     const anchors = [];
@@ -3810,10 +3817,10 @@ var CustomImportScript = (() => {
         nodes: [statistics(all, ctx, filled.length)]
       }];
     }
-    const flex = (styles2, items) => ({
+    const flex = (styles, items) => ({
       type: "own",
       kind: "flex",
-      styles: ["flex", ...styles2],
+      styles: ["flex", ...styles],
       nodes: inlineNodes(items, ctx)
     });
     const formCol = filled.findIndex((items) => items.some((it) => it.type === "form"));
@@ -3862,15 +3869,10 @@ var CustomImportScript = (() => {
     });
     const variants = [split.variant, ...modifiers].filter(Boolean);
     const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
-    const copy = sharedCopyStyle(cells, ctx);
-    const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-    const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
-    if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("Columns: serif and Futura h2 / h3 in one block, kept in Futura");
-    const styles = [...copy ? copy.split(", ") : [], serif ? "h-serif" : ""].filter(Boolean);
     return [...anchors, {
       type: "own",
       kind: "columns",
-      styles,
+      styles: cellStyles(cells, ctx),
       nodes: [block(doc, name, [cells])]
     }];
   }
@@ -4037,25 +4039,28 @@ var CustomImportScript = (() => {
         });
       }
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
-      if (slide.dataset.xfDesktop && !slide.querySelector(".experienceFragment-ef img")) {
-        ctx.report.notes.push(`hero slide ${slide.dataset.xfDesktop} is a video: Hero Corp renders image slides only`);
-      }
       const overlay = slide.querySelector(".overlayparsys");
       const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const copy = overlay && overlay.querySelector(".line2");
-      const copySize = copy ? vwSize(copy) : 0;
+      const lines = overlay ? [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter(text) : [];
+      const copySize = copy && vwSize(copy) || lines.slice(1).map(vwSize).find(Boolean) || 0;
+      if (!(copy && vwSize(copy)) && copySize && lines.slice(1).some((l) => !vwSize(l))) {
+        ctx.report.notes.push(`hero line without its own vw size takes copy-size-${copySize}: ${text(lines.slice(1).find((l) => !vwSize(l))).slice(0, 40)}`);
+      }
+      const variants = copySize ? [`copy-size-${String(copySize).replace(".", "-")}`] : [];
+      if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
       const holder = doc.createElement("div");
       holder.append(slide.cloneNode(true));
       parse(holder.firstElementChild, {
         document: doc,
         overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : void 0,
-        variants: copySize ? [`copy-size-${String(copySize).replace(".", "-")}`] : []
+        variants
       });
       return [{
         type: "own",
         kind: "hero",
-        styles: [],
+        styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [],
         nodes: [...holder.children]
       }];
     });

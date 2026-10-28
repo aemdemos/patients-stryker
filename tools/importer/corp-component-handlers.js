@@ -229,6 +229,18 @@ function sharedCopyStyle(cells, ctx) {
 }
 
 /**
+ * The section styles of block cells (Columns, a hero overlay): the shared copy style, and
+ * h-serif when every h2 / h3 in them is serif.
+ */
+function cellStyles(cells, ctx) {
+  const copy = sharedCopyStyle(cells, ctx);
+  const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
+  const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
+  if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('serif and Futura h2 / h3 in one block, kept in Futura');
+  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : ''].filter(Boolean);
+}
+
+/**
  * A column control (or a responsive-grid row) → items, by the approved branch order:
  * A all empty → nothing; B one column → its content; counters only → Statistics; C a form
  * beside content → flex section (flex-67-33 / flex-33-67 by the split); D a block beside
@@ -302,14 +314,8 @@ export function columnItems(columns, split, ctx) {
   });
   const variants = [split.variant, ...modifiers].filter(Boolean);
   const name = variants.length ? `Columns (${variants.join(', ')})` : 'Columns';
-  const copy = sharedCopyStyle(cells, ctx);
-  // Egyptienne h2 / h3 in the cells: the section's h-serif (one font for all of them)
-  const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-  const serif = heads.length > 0 && heads.every((n) => n.serifHeading);
-  if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('Columns: serif and Futura h2 / h3 in one block, kept in Futura');
-  const styles = [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : ''].filter(Boolean);
   return [...anchors, {
-    type: 'own', kind: 'columns', styles, nodes: [block(doc, name, [cells])],
+    type: 'own', kind: 'columns', styles: cellStyles(cells, ctx), nodes: [block(doc, name, [cells])],
   }];
 }
 
@@ -490,25 +496,33 @@ function carousel(el, ctx) {
       });
     }
     if (!slide.querySelector('img') && !slide.dataset.xfDesktop) return [];
-    if (slide.dataset.xfDesktop && !slide.querySelector('.experienceFragment-ef img')) {
-      ctx.report.notes.push(`hero slide ${slide.dataset.xfDesktop} is a video: Hero Corp renders image slides only`);
-    }
     // the overlay through the component handlers (rich text, buttons, Large Headline lines
     // with their colours); its copy (line 2) size as the copy-size option
     const overlay = slide.querySelector('.overlayparsys');
     const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
+    // the copy size: the Large Headline line 2's vw size, else the first vw size after the
+    // headline line (inspace: two lines with their own vw sizes in line 1, a fixed line 2)
     const copy = overlay && overlay.querySelector('.line2');
-    const copySize = copy ? vwSize(copy) : 0;
+    const lines = overlay ? [...overlay.querySelectorAll('h1, h2, h3, h4, h5, h6, p')].filter(text) : [];
+    const copySize = (copy && vwSize(copy)) || lines.slice(1).map(vwSize).find(Boolean) || 0;
+    if (!(copy && vwSize(copy)) && copySize && lines.slice(1).some((l) => !vwSize(l))) {
+      ctx.report.notes.push(`hero line without its own vw size takes copy-size-${copySize}: ${text(lines.slice(1).find((l) => !vwSize(l))).slice(0, 40)}`);
+    }
+    const variants = copySize ? [`copy-size-${String(copySize).replace('.', '-')}`] : [];
+    // the slide image in the right half of the slide XF's grid (offset 6 / width 6): the
+    // product hero layout
+    if (slide.querySelector('.experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6')) variants.push('image-right');
     const holder = doc.createElement('div');
     holder.append(slide.cloneNode(true));
     heroImageSlideParser(holder.firstElementChild, {
       document: doc,
       overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : undefined,
-      variants: copySize ? [`copy-size-${String(copySize).replace('.', '-')}`] : [],
+      variants,
     });
+    // the overlay's copy style and serif headings, as for Columns cells
     return [{
-      type: 'own', kind: 'hero', styles: [], nodes: [...holder.children],
+      type: 'own', kind: 'hero', styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [], nodes: [...holder.children],
     }];
   });
 }
