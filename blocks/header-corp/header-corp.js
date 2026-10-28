@@ -334,7 +334,9 @@ export default async function decorate(block) {
   utilityNav.querySelectorAll('li > a, li > p > a').forEach((a) => wrapLinkText(a));
   const localeDiv = moveChildren(locale, el('div', 'language-country-select'));
   localeDiv.querySelectorAll('a').forEach((a) => {
-    if (!a.querySelector('img, picture')) wrapLinkText(a, 'text site-language');
+    // the globe link (a zero-width box around its floated icon) draws its focus ring on the icon
+    if (a.querySelector('img, picture')) a.classList.add('locale-icon');
+    else wrapLinkText(a, 'text site-language');
   });
   container.append(
     logo,
