@@ -122,6 +122,13 @@ export default {
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
     meta.template = 'news-detail';
+    // the date below the title (`first-published`, YYYY-MM-DD): shown by the news-detail
+    // template, as the bottom "Last Updated" line is rendered from `published`
+    const firstPublished = main.getAttribute('data-first-published');
+    if (firstPublished) {
+      meta['first-published'] = firstPublished;
+      main.removeAttribute('data-first-published');
+    }
     if (published) meta.published = published;
     // the share image (og:image) is the original /content/dam file, which can exceed the
     // 20MB preview limit (e.g. a 27MB PNG on the OR of the Future page). When the article

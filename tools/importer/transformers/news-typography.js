@@ -197,7 +197,7 @@ function toRuledHeading(p, tag, divider) {
  * ≥ 2em (or a vw size) becomes the h1; Futura paragraphs followed by a divider line become
  * underlined h2 subheads.
  */
-function promoteTitles(root) {
+export function promoteTitles(root) {
   const paras = [...root.querySelectorAll(PARAS)];
   if (!root.querySelector('h1')) {
     const title = paras.find((p) => p.querySelector('.futura-bold') && textOf(p)
