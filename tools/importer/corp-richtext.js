@@ -2,8 +2,8 @@
  * www.stryker.com rich text → corp authoring conventions, shared by every corp importer.
  * Site-wide decision table: tools/importer/decisions/typography-map.json (approved 2026-10-27).
  *
- * Started from the news-detail import (transformers/news-detail-sections.js, #451, the rules
- * behind the migrated news pages) and extended with the approved site-wide rules:
+ * Started from the rich-text rules of the first news-detail import (#451, since replaced by
+ * the corp engine) and extended with the approved site-wide rules:
  *   - copy size: the effective size of the copy (nested .fontsize-<x>em classes multiply,
  *     fontsize-8em = 0.8em) → the nearest of p-0-8, p-1-25, p-1-5, p-1-75, p-2, p-2-5
  *     (1em = base copy, no style); span.urw-egyptienne copy → serif
@@ -369,16 +369,24 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
 
   // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
   // possibly followed by empty size spans) belongs after it: inside <strong> it would be
-  // lost on import, merging the label into the next line
+  // lost on import, merging the label into the next line. Innermost formatting first, so a
+  // break in nested formatting (<b><span class=futura-bold>About Stryker<br></span></b>, news
+  // national-direct-to-patient-marketing-campaign) moves out of every level.
   const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
     && !node.textContent.trim() && !node.querySelector('img, br');
-  root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
+  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
     let last = el.lastChild;
     while (last && (last.nodeName === 'BR' || emptyElement(last)
       || (last.nodeType === 3 && !last.textContent.trim()))) {
       if (emptyElement(last)) last.remove();
       else el.after(last);
       last = el.lastChild;
+    }
+    // a space typed at the end of the formatting ("The solution&nbsp;</span>you've", inspace)
+    // stays between the words, outside the bold
+    if (last && last.nodeType === 3 && /[\s\u00a0]$/.test(last.textContent)) {
+      last.textContent = last.textContent.replace(/[\s\u00a0]+$/, '');
+      el.after(doc.createTextNode(' '));
     }
   });
   // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body

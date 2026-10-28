@@ -1,6 +1,6 @@
 /* global WebImporter */
 /*
- * The import script of a www.stryker.com template (every corp template except news-detail):
+ * The import script of a www.stryker.com template (every corp template):
  * createCorpImport({ …template }) returns the object an import-<template>.js exports.
  *
  * The body is built by the corp section builder (corp-page.js through

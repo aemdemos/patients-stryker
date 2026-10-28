@@ -1,7 +1,6 @@
 /* global WebImporter */
 /*
- * www.stryker.com page → EDS sections, template-agnostic (every corp importer except the
- * news-detail one, which keeps its own rules in transformers/news-detail-sections.js).
+ * www.stryker.com page → EDS sections, template-agnostic (every corp importer).
  *
  * The builder walks the rendered page (or experience fragment) in authored order. Every AEM
  * component is found by its wrapper class (div.text, div.cols2, div.experienceFragment, …)

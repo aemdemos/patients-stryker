@@ -1,5 +1,5 @@
 /*
- * Transformer: www.stryker.com page structure for every corp template except news-detail.
+ * Transformer: www.stryker.com page structure for every corp template.
  *
  * The work is done by tools/importer/corp-page.js (section builder + component handlers),
  * which the corp import scripts pass in the payload (payload.corp = CORP_PAGE from

@@ -1177,6 +1177,18 @@ function promoTile(el, ctx) {
 
 const skip = () => [];
 
+/**
+ * Event location (news-detail template slot, component-map eventlocationproperties: default
+ * content): the location line under the date as a Heading 5, as live; empty on most pages.
+ */
+function eventLocation(el, ctx) {
+  const line = el.querySelector('h5') || el;
+  if (!text(line)) return [];
+  const h5 = ctx.doc.createElement('h5');
+  h5.textContent = text(line);
+  return [{ type: 'flow', role: 'text', nodes: [h5] }];
+}
+
 // AEM components by wrapper class (or #id)
 export const COMPONENTS = {
   carouselslidegroup: carousel,
@@ -1215,6 +1227,14 @@ export const COMPONENTS = {
   localpagenavigationchild: localNav,
   'c-navigation-bar': jumpBar,
   'c-tiles': promoTile,
+  // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
+  // publish date (the `published` metadata, component-map publishdate), the event location
+  // and the template's "back" link (navigation, not authored)
+  'c-standalone-image': standaloneImage,
+  'c-rich-text-editor': textComponent,
+  'c-publish-date': skip,
+  'c-event-location-properties': eventLocation,
+  'c-back-button': skip,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */

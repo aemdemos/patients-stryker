@@ -1,6 +1,5 @@
 /*
- * www.stryker.com page (or experience fragment) → its EDS body, for every corp template
- * except news-detail (which keeps transformers/news-detail-sections.js).
+ * www.stryker.com page (or experience fragment) → its EDS body, for every corp template.
  *
  * buildCorpBody rebuilds <body> as the page's authorable content: the corp section builder
  * (corp-section-builder.js) walks the source components in authored order and hands each to

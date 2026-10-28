@@ -4,7 +4,7 @@
 /**
  * Parser: www.stryker.com `.c-customizeable` related-content grid → `Cards Corp (teaser)`
  * (Block Library: "Cards Corp (teaser) – Related products"). The grid's "Related"
- * heading is kept as default content by news-detail-sections.js.
+ * heading is kept as default content by the cardList handler (corp-component-handlers.js).
  *
  * Source shape (4 per row):
  *   .item

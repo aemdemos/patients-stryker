@@ -81,8 +81,7 @@ var CustomImportScript = (() => {
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isNewsDetail = !!(payload && payload.template && payload.template.name === "news-detail");
-    const isCorp = isNewsDetail || !!(payload && payload.template && payload.template.site === "corp");
+    const isCorp = !!(payload && payload.template && payload.template.site === "corp");
     const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
@@ -379,6 +378,7 @@ var CustomImportScript = (() => {
   }
   function effectiveSize(el) {
     const sizes = /* @__PURE__ */ new Set();
+    const copySizes = /* @__PURE__ */ new Set();
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (squash(n.textContent)) {
@@ -386,10 +386,14 @@ var CustomImportScript = (() => {
         for (let e = n.parentElement; e && e !== el.parentElement; e = e.parentElement) {
           factor = [...e.classList].reduce((f, c) => f * sizeFactor(c), factor);
         }
-        sizes.add(Math.round(factor * 100) / 100);
+        const size = Math.round(factor * 100) / 100;
+        sizes.add(size);
+        const label = n.parentElement.closest(".futura-bold, b, strong");
+        if (!label || !el.contains(label) || label === el) copySizes.add(size);
       }
     }
-    return sizes.size === 1 ? [...sizes][0] : null;
+    const counted = copySizes.size ? copySizes : sizes;
+    return counted.size === 1 ? [...counted][0] : null;
   }
   function coveredBy(el, cls) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -539,7 +543,7 @@ var CustomImportScript = (() => {
     });
     mapColours(root);
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
+    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
       let last = el.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
         if (emptyElement(last)) last.remove();
@@ -4120,7 +4124,8 @@ var CustomImportScript = (() => {
       return [];
     });
     const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
-    const shared = sets.length ? sets[0].filter((s) => copyStyle(s) && sets.every((set) => set.includes(s))) : [];
+    const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
+    const shared = sets.length ? sets[0].filter(inAll) : [];
     const panels = collected.map((items) => inlineNodes(items, ctx));
     if (!panels.some((nodes2) => nodes2.length)) return [];
     const deepest = panels.flat().reduce((max, n) => /^H[1-6]$/.test(n.tagName) ? Math.max(max, Number(n.tagName[1])) : max, 2);
@@ -4285,6 +4290,13 @@ var CustomImportScript = (() => {
     return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
   }
   var skip = () => [];
+  function eventLocation(el, ctx) {
+    const line = el.querySelector("h5") || el;
+    if (!text(line)) return [];
+    const h5 = ctx.doc.createElement("h5");
+    h5.textContent = text(line);
+    return [{ type: "flow", role: "text", nodes: [h5] }];
+  }
   var COMPONENTS = {
     carouselslidegroup: carousel,
     "h1-title": h1Title,
@@ -4321,7 +4333,15 @@ var CustomImportScript = (() => {
     localpagenavigation: localNav,
     localpagenavigationchild: localNav,
     "c-navigation-bar": jumpBar,
-    "c-tiles": promoTile
+    "c-tiles": promoTile,
+    // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
+    // publish date (the `published` metadata, component-map publishdate), the event location
+    // and the template's "back" link (navigation, not authored)
+    "c-standalone-image": standaloneImage,
+    "c-rich-text-editor": textComponent,
+    "c-publish-date": skip,
+    "c-event-location-properties": eventLocation,
+    "c-back-button": skip
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 

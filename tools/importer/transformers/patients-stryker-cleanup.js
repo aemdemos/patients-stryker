@@ -92,13 +92,10 @@ export default function transform(hookName, element, payload) {
   // same treatment.
   const isIvsTreatment = !!(payload && payload.template
     && ['ivs-treatment', 'ivs-get-the-facts', 'ivs-contact'].includes(payload.template.name));
-  // The corp news-detail template (www.stryker.com news articles) rebuilds its own
-  // content (news-detail-sections.js): it keeps its <h1> and its authorable
-  // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
-  const isNewsDetail = !!(payload && payload.template && payload.template.name === 'news-detail');
-  // The other corp templates (template.site 'corp', e.g. product-detail) rebuild their body
-  // with the corp section builder (transformers/corp-sections.js): same as news-detail.
-  const isCorp = isNewsDetail || !!(payload && payload.template && payload.template.site === 'corp');
+  // The corp templates (template.site 'corp', www.stryker.com) rebuild their body with the
+  // corp section builder (transformers/corp-sections.js): they keep their <h1> and their
+  // authorable ".c-disclaimer", and none of the legal-copy formatting applies.
+  const isCorp = !!(payload && payload.template && payload.template.site === 'corp');
   const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
 
   if (hookName === TransformHook.beforeTransform) {
