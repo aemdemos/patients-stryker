@@ -9,8 +9,19 @@
    disclaimer-like "Products may not be available…" text, e.g. on the Rosales page). The
    importer opens these pages with a `spacer` section after the title (46px to the video
    row, as on the source) */
-@media (width >= 900px) {
+   @media (width >= 600px) {
+   body.news-detail.full-width .columns > div {
+   flex-direction: column;
+   }
+  }
+
+   @media (width >= 900px) {
+    body.news-detail.full-width .columns > div {
+     flex-flow: row wrap;
+  }
+
   body.news-detail.full-width main > .section > div {
     max-width: var(--container-max);
   }
+
 }
