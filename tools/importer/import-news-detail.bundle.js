@@ -180,7 +180,9 @@ var CustomImportScript = (() => {
       const assetPath = dm.getAttribute("data-asset-path");
       const videoServer = dm.getAttribute("data-videoserver") || `${DM_HOST}/is/content/`;
       const imageServer = dm.getAttribute("data-imageserver") || `${DM_HOST}/is/image/`;
-      const poster = dm.getAttribute("data-posterimage") || assetPath;
+      const modifiers = dm.getAttribute("data-viewermodifiers") || "";
+      const modifierPoster = (modifiers.match(/(?:^|&)VideoPlayer\.posterimage=([^&]+)/i) || [])[1];
+      const poster = dm.getAttribute("data-posterimage") || modifierPoster && decodeURIComponent(modifierPoster.replace(/\+/g, " ")).trim() || assetPath;
       a.href = `${videoServer}${encodePath(assetPath)}.m3u8?poster=${imageServer}${encodePath(poster)}?fit=constrain,1&wid=909&hei=511`;
       a.textContent = (dm.getAttribute("data-asset-name") || assetPath.split("/").pop()).replace(/\.[a-z0-9]+$/i, "");
       return a;
