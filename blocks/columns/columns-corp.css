@@ -309,10 +309,11 @@ body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
   font-size: var(--body-font-size-m);
 }
 
-/* gray-lead: the last cell opens with a light-grey box (stryker.com bg-light-gray
-   Large Headline: 20px padding) — its first paragraph, or a Heading 2 statement; the cell
-   itself starts level with the row (below) */
-body.corp .columns.gray-lead > div > div:last-child > :is(p, h2):first-child {
+/* gray-lead: the text cell (the one without the video, last or first — a mirrored row
+   puts it first) opens with a light-grey box (stryker.com bg-light-gray Large Headline:
+   20px padding) — its first paragraph, or a Heading 2 statement; the cell itself starts
+   level with the row (below) */
+body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p, h2):first-child {
   margin-bottom: var(--space-section-l);
   padding: var(--space-block-l);
   background-color: var(--color-surface);
@@ -390,8 +391,8 @@ body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
 }
 
-/* gray-lead: the last cell starts level with the row top, its grey box (above) first */
-body.corp .columns.gray-lead > div > div:last-child {
+/* gray-lead: the text cell starts level with the row top, its grey box (above) first */
+body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
   padding-top: 0;
 }
 

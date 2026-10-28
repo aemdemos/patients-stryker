@@ -21,6 +21,9 @@
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
+  --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
+  --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -381,6 +384,42 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* h1-21: a page title the source sets as a 1.5em Futura bold line opening the first rich
+   text, with no page title (e.g. the Emergency Relief Bed release): the page H1 at 21px,
+   lines 1.2 (25.2px; source 25.3px) */
+:where(body.corp) main > .section.h1-21 > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+/* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
+   35px, lines 1.15; h2 > span.fontsize-1-5em: 1.5x the h2, 31.5px and 36.75px from 600px
+   with the h2 step, lines 1.06), e.g. the "When Stryker employees…" feature. Like h2-0-8,
+   the heading flows into the text below it: one heading gap, not a section gap */
+:where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h2-1-5 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-1-25 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height-h4);
+}
+
+:where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+}
+
 /* image-1-3 / image-1-2: an image the source sets in a one-third / one-half grid column
    with the other column empty (stryker.com col-sm-4 / col-sm-6, e.g. a news logo or award
    graphic). From 600px (source 840px) the image box is that column: a third / half of the
@@ -423,6 +462,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main span.body-font,
 :where(body.corp) main span.body-font :is(strong, b) {
   font-family: var(--body-font-family);
+}
+
+/* bracket tag `[[text-1-25]…]`: a run of text at 1.25x the paragraph around it — stryker.com
+   span.fontsize-1-25em on part of a line, e.g. a bold release dateline ("Kalamazoo,
+   Michigan, USA – Aug 24, 2020", 17.5px) or a small-print "References" label (14px) */
+:where(body.corp) main span.text-1-25 {
+  font-size: var(--corp-font-scale-1-25);
 }
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a

@@ -40,6 +40,8 @@
  * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
+ * Gold text (colour #ffb500) is the `[[color-gold]…]` bracket tag around its formatting
+ * (bold + italic alone renders black in news articles).
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
  * that open in a new tab on the source get the `#_blank` marker.
  */
@@ -172,12 +174,107 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
   });
 }
 
+/**
+ * Gold text (inline colour #ffb500 / rgb(255,181,0)) is the `[[color-gold]…]` bracket tag
+ * (corp authoring conventions: in news articles bold + italic alone is black, gold Futura
+ * text is bold + italic inside the tag). A text is gold when its nearest colour is gold
+ * (a gold span around a black one, e.g. a quote name, is not). The tag goes around the
+ * formatting it fills (`[[color-gold]<span class=futura-bold>…</span>]` →
+ * `[[color-gold]***…***]`), not past a paragraph, heading, list item or link.
+ */
+const GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+
+function ownColour(el) {
+  const m = (el.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+  return m ? m[1].trim() : '';
+}
+
+/** Whether a node holds text in a colour other than gold. */
+function hasOtherColour(node) {
+  if (node.nodeType !== 1) return false;
+  const coloured = [node, ...node.querySelectorAll('[style*="color"]')]
+    .filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+  return coloured.some((el) => [...el.childNodes].some((child) => (child.nodeType === 3
+    ? child.textContent.trim() : !ownColour(child) && text(child))));
+}
+
+/**
+ * Wraps a run of sibling nodes in the `[[<classes>]…]` bracket tag, moving the tag out of
+ * the formatting the run fills (bold, italic, spans) but not past a paragraph, heading,
+ * list item, link or div. Line breaks and spaces at either end stay outside.
+ */
+function bracketTag(nodes, classes, root) {
+  const doc = root.ownerDocument;
+  const run = [...nodes];
+  const loose = (n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim());
+  while (run.length && loose(run[0])) run.shift();
+  while (run.length && loose(run[run.length - 1])) run.pop();
+  if (!run.length || !run.some((n) => n.textContent.trim())) return;
+  const open = doc.createTextNode(`[[${classes}]`);
+  const close = doc.createTextNode(']');
+  run[0].before(open);
+  run[run.length - 1].after(close);
+  const edge = (n, dir) => {
+    let s = n[dir];
+    while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
+    return s;
+  };
+  let parent = open.parentElement;
+  while (parent && parent !== root && parent === close.parentElement
+    && !parent.matches('p, li, h1, h2, h3, h4, h5, h6, a, div')
+    && !edge(open, 'previousSibling') && !edge(close, 'nextSibling')) {
+    parent.before(open);
+    parent.after(close);
+    parent = open.parentElement;
+  }
+}
+
+/**
+ * A 1.25em size span on part of a paragraph or list item (e.g. a bold release dateline
+ * at the start of the text) is the `[[text-1-25]…]` bracket tag (styles-corp.css). A span
+ * that holds the whole paragraph is left to the p-1-25 section style (copyStyles).
+ */
+function tagTextSize(root) {
+  const squash = (value) => value.replace(/[\s ]+/g, '');
+  [...root.querySelectorAll('.fontsize-1-25em')].forEach((span) => {
+    if (span.parentElement.closest('.fontsize-1-25em') || !text(span)) return;
+    const block = span.closest('p, li');
+    if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
+    if (squash(block.textContent) === squash(span.textContent)) return;
+    bracketTag([span], 'text-1-25', root);
+  });
+}
+
+function tagGoldText(root) {
+  const tagged = new Set();
+  const wrap = (nodes) => bracketTag(nodes, 'color-gold', root);
+  root.querySelectorAll('[style*="color"]').forEach((el) => {
+    if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+    tagged.add(el);
+    if (!hasOtherColour(el)) {
+      wrap([el]);
+      return;
+    }
+    // mixed: each run of children without another colour
+    let run = [];
+    [...el.childNodes].forEach((child) => {
+      if (hasOtherColour(child)) {
+        wrap(run);
+        run = [];
+      } else run.push(child);
+    });
+    wrap(run);
+  });
+}
+
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
   const doc = root.ownerDocument;
+  // links without an address (<a> wrappers, e.g. a Large Headline title) are plain text
+  root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
 
   // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
   // possibly followed by empty size spans, or nested: <b><span>…<br></span></b>) belongs
@@ -207,6 +304,8 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     }
   });
   tagPlainBoldLabels(root, wholeParagraphs);
+  tagGoldText(root);
+  tagTextSize(root);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
@@ -323,12 +422,26 @@ function labelHeadingsToParagraphs(root) {
  * h2 headings the source sets at 0.8em (the whole text in span.fontsize-8em, e.g. a news
  * subtitle): their own section with the `h2-0-8` style (styles-corp.css).
  */
+// headings the source sizes with a span (the whole text in it): [tag, span class, style]
+const HEADING_SIZES = [
+  ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-5em', 'h2-1-5'],
+  ['H1', 'fontsize-1-25em', 'h1-1-25'],
+];
+
 function smallHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  return new Set([...root.querySelectorAll('h2')].filter((h) => {
-    const spans = [...h.querySelectorAll('.fontsize-8em')].filter((span) => !span.parentElement.closest('.fontsize-8em'));
-    return text(h) && squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
-  }));
+  const styles = new Map();
+  root.querySelectorAll('h1, h2').forEach((h) => {
+    if (!text(h)) return;
+    const match = HEADING_SIZES.find(([tag, cls]) => {
+      if (h.tagName !== tag) return false;
+      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+    });
+    if (match) styles.set(h, match[2]);
+  });
+  return styles;
 }
 
 /**
@@ -359,6 +472,75 @@ function splitStyledLeads(root) {
   });
 }
 
+/**
+ * The title line a rich text opens with when the page has no title: the run before the
+ * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
+ * bold 21px on the source). Taken out of the component (with the breaks after it) and
+ * returned as an <h1>; null when the text does not open that way.
+ */
+function richTextTitle(component, doc) {
+  const p = component.querySelector('p');
+  if (!p) return null;
+  const nodes = [...p.childNodes];
+  const at = nodes.findIndex((node) => node.nodeName === 'BR');
+  const lead = at < 0 ? nodes : nodes.slice(0, at);
+  const squash = (value) => value.replace(/[\s ]+/g, ' ').trim();
+  const leadText = squash(lead.map((node) => node.textContent).join(''));
+  if (!leadText) return null;
+  const box = doc.createElement('div');
+  lead.forEach((node) => box.append(node.cloneNode(true)));
+  const large = squash([...box.querySelectorAll('.fontsize-1-5em')]
+    .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
+    .map((span) => span.textContent).join(''));
+  if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
+  lead.forEach((node) => node.remove());
+  while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
+  if (!text(p)) p.remove();
+  const h1 = doc.createElement('h1');
+  h1.textContent = leadText;
+  return h1;
+}
+
+/**
+ * The top-level blocks of a cleaned fragment, in source order, without losing copy:
+ * block elements as they are, <div>s unwrapped (at any depth), images and runs of
+ * loose text / inline elements (e.g. a small-print `<div>A surgeon must…</div>`) as
+ * paragraphs of their own.
+ */
+function blockNodes(container, doc) {
+  const nodes = [];
+  let run = [];
+  const flush = () => {
+    if (run.some((n) => (n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.('img')))) {
+      const p = doc.createElement('p');
+      p.append(...run);
+      // no line breaks at either end
+      while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
+      while (p.lastChild && (p.lastChild.nodeName === 'BR' || (p.lastChild.nodeType === 3 && !p.lastChild.textContent.trim()))) p.lastChild.remove();
+      nodes.push(p);
+    }
+    run = [];
+  };
+  [...container.childNodes].forEach((node) => {
+    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
+      flush();
+      if (text(node) || node.querySelector('img')) nodes.push(node);
+    } else if (node.nodeType === 1 && node.tagName === 'IMG') {
+      flush();
+      const p = doc.createElement('p');
+      p.append(node);
+      nodes.push(p);
+    } else if (node.nodeType === 1 && ['DIV', 'SECTION', 'ARTICLE'].includes(node.tagName)) {
+      flush();
+      nodes.push(...blockNodes(node, doc));
+    } else if (node.nodeType === 1 || node.nodeType === 3) {
+      run.push(node);
+    }
+  });
+  flush();
+  return nodes;
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -372,26 +554,11 @@ function richTextNodes(component, doc) {
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
   const { centred, size } = cleanRichText(box);
-  const nodes = [];
-  [...box.childNodes].forEach((node) => {
-    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
-      nodes.push(node);
-    } else if (node.nodeType === 1 && node.tagName === 'IMG') {
-      const p = doc.createElement('p');
-      p.append(node);
-      nodes.push(p);
-    } else if (node.nodeType === 1 && node.tagName === 'DIV') {
-      nodes.push(...[...node.children].filter((el) => BLOCK_TAGS.has(el.tagName)));
-    } else if (text(node)) {
-      const p = doc.createElement('p');
-      p.append(node.cloneNode(true));
-      nodes.push(p);
-    }
-  });
+  const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
     if (serifHeads.has(node)) node.serifHeading = true;
-    if (smallHeads.has(node)) node.headingStyle = 'h2-0-8';
+    if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
@@ -490,11 +657,22 @@ function headlineNodes(component, doc) {
  * row of the StrykerTalks podcast pages), or null.
  */
 function videoAside(video) {
-  const col = video.closest('[class*="col-sm-8"]');
+  const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
   const row = col && col.parentElement;
-  const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+  // 2/3 video + 1/3 headline (podcasts), or a 50/50 row (e.g. Carolyn, headline first)
+  const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
+  const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
   const headline = aside && aside.querySelector('.c-largeheadline');
   return headline && text(headline) ? headline : null;
+}
+
+/** The video of a 50/50 row whose Large Headline column comes first (e.g. Carolyn), or null. */
+function headlineVideo(headline) {
+  const col = headline.closest('[class*="col-sm-6"]');
+  const row = col && col.parentElement;
+  const videoCol = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+  const video = videoCol && videoCol.querySelector('.c-standalone-video');
+  return video && video.querySelector('[data-asset-path], iframe[src]') ? video : null;
 }
 
 /**
@@ -525,12 +703,27 @@ function videoTextColumns(video, rte, doc) {
 
 /**
  * A quote Large Headline under the grey box (survivor stories: the quote, a rule, the
- * name, the role) as the library's Video + quote cell: gold quote marks → Bold + Italic,
- * Futura words → Bold, one paragraph per line (the name a fully Bold paragraph).
+ * name, the role) as the library's Video + quote cell: gold quote marks →
+ * `[[color-gold]` Bold + Italic `]`, Futura words → Bold, one paragraph per line (the
+ * name a fully Bold paragraph).
  */
 function quoteNodes(headline, doc) {
   const box = doc.createElement('div');
   box.innerHTML = headline.innerHTML;
+  // a gold quote mark at the start or end of a longer bold run
+  // (<span class=futura-bold><span style="color: rgb(255,181,0)">”</span>The first…</span>)
+  // is a bold run of its own, so it can take the gold tag
+  box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
+    const bold = span.closest('.futura-bold');
+    if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
+    const atStart = text(bold).startsWith(text(span));
+    const mark = doc.createElement('span');
+    mark.className = 'futura-bold';
+    mark.append(span);
+    if (atStart) bold.before(mark);
+    else bold.after(mark);
+  });
+  tagGoldText(box);
   box.querySelectorAll('.futura-bold').forEach((span) => {
     const strong = doc.createElement('strong');
     while (span.firstChild) strong.append(span.firstChild);
@@ -542,6 +735,21 @@ function quoteNodes(headline, doc) {
   });
   box.querySelectorAll('span, font').forEach(unwrap);
   box.querySelectorAll('strong strong').forEach(unwrap);
+  // bold runs that touch are one run (two would merge on import and take the paragraph
+  // breaks after them along)
+  [...box.querySelectorAll('strong')].forEach((strong) => {
+    if (!strong.parentNode) return;
+    let next = strong.nextSibling;
+    // the next bold run, maybe after a space
+    const following = (node) => (node && node.nodeType === 3 && !node.textContent.trim() ? node.nextSibling : node);
+    while (following(next) && following(next).nodeName === 'STRONG') {
+      if (next.nodeType === 3) strong.append(next);
+      const run = strong.nextSibling;
+      while (run.firstChild) strong.append(run.firstChild);
+      run.remove();
+      next = strong.nextSibling;
+    }
+  });
   // a gold mark right against a Bold run goes inside it (<strong><em>“</em>I would…</strong>):
   // two touching emphasis runs would merge on import
   box.querySelectorAll('em').forEach((em) => {
@@ -588,26 +796,36 @@ function quoteNodes(headline, doc) {
 }
 
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = [], asideCtas = []) {
+function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
   const link = videoLink(video, doc);
-  const lines = headlineNodes(headline, doc);
-  if (!link || !lines.length) return null;
+  // no grey box in the headline column (only a quote, e.g. the last story of "When Stryker
+  // employees…"): every headline there is a quote and the block has no gray-lead
+  const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
+  const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
+  const lines = boxed ? headlineNodes(headline, doc) : [];
+  if (!link || (boxed && !lines.length)) return null;
   const media = doc.createElement('p');
   media.append(link);
   // a button under the video: a Bold link on its own line in the wide cell
   const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
   // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
   // (21px, e.g. Heath) stays a paragraph, the large-headline text size
-  const small = headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-  const statement = small ? lines : [rename(lines[0], 'h2'), ...lines.slice(1)];
+  const firstLine = headline.querySelector('.line') || headline;
+  const big = firstLine.querySelector('[class*="fontsize-2vw"]')
+    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+  const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
+  const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
   return WebImporter.Blocks.createBlock(doc, {
-    name: 'Columns (columns-67-33, large-headline, gray-lead)',
-    cells: [[[media, ...buttons], [
-      ...statement,
-      ...quotes.flatMap((q) => quoteNodes(q, doc)),
-      // a button in the narrow column (under the quote, e.g. Esley) stays there
-      ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
-    ]]],
+    name: `Columns (${half ? 'columns-50-50' : 'columns-67-33'}, large-headline${boxed ? ', gray-lead' : ''})`,
+    cells: [((mediaCell, textCell) => (mirrored ? [textCell, mediaCell] : [mediaCell, textCell]))(
+      [media, ...buttons],
+      [
+        ...statement,
+        ...quotes.flatMap((q) => quoteNodes(q, doc)),
+        // a button in the narrow column (under the quote, e.g. Esley) stays there
+        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
+      ],
+    )],
   });
 }
 
@@ -673,10 +891,22 @@ export default function transform(hookName, element, payload) {
     cleanRichText(heading);
     title.nodes.push(heading);
   }
+  // the publish date below the title ("03-Apr-2020") is the `first-published` page
+  // metadata (YYYY-MM-DD; import-news-detail.js), shown by templates/news-detail/news-detail.js
   const date = main.querySelector('.c-publish-date h5');
   if (date && text(date)) {
+    const value = text(date);
+    const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+    const month = m && 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(m[2].toLowerCase()) / 3 + 1;
+    element.setAttribute('data-first-published', month >= 1 && Number.isInteger(month)
+      ? `${m[3]}-${String(month).padStart(2, '0')}-${m[1].padStart(2, '0')}`
+      : value);
+  }
+  // the event location below the date ("Kalamazoo, MI, USA"), an H5 line of its own too
+  const location = main.querySelector('.c-event-location-properties h5');
+  if (location && text(location)) {
     const h5 = doc.createElement('h5');
-    h5.textContent = text(date);
+    h5.textContent = location.textContent.replace(/[\s ]+/g, ' ').replace(/\s+,/g, ',').trim();
     title.nodes.push(h5);
   }
 
@@ -688,6 +918,30 @@ export default function transform(hookName, element, payload) {
   });
 
   const consumed = new Set();
+  // a video with a Large Headline column beside it (2/3 + 1/3 or 50/50):
+  // Columns (…, large-headline, gray-lead) in a section of its own; true when built
+  const videoRowColumns = (video) => {
+    const aside = videoAside(video);
+    if (!aside) return false;
+    // further Large Headlines in the headline column (a quote) and buttons in either column
+    const asideCol = aside.closest('[class*="col-sm-"]');
+    const quotes = [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h));
+    const videoCol = video.closest('[class*="col-sm-"]');
+    const ctas = [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    const asideCtas = [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    // the headline column first in the source row (e.g. Carolyn): the text cell comes first
+    const cols = [...asideCol.parentElement.children];
+    const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+    if (!columns) return false;
+    [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    // the source runs the title and small print full width on these pages too: the
+    // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
+    element.setAttribute('data-news-theme', 'full-width');
+    startSection('columns').nodes.push(columns);
+    current = null;
+    return true;
+  };
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
@@ -742,27 +996,17 @@ export default function transform(hookName, element, payload) {
       current = null;
       return;
     }
-    if (component.matches('.c-standalone-video')) {
-      if (!component.querySelector('[data-asset-path], iframe[src]')) return;
-      const aside = videoAside(component);
-      // further Large Headlines in the narrow column (a quote) and buttons under the video
-      const asideCol = aside && aside.closest('[class*="col-sm-4"]');
-      const quotes = asideCol ? [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h)) : [];
-      const videoCol = component.closest('[class*="col-sm-8"]');
-      const ctas = aside && videoCol ? [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
-      const asideCtas = asideCol ? [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
-      const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas, asideCtas);
-      if (columns) {
-        consumed.add(aside);
-        quotes.forEach((q) => consumed.add(q));
-        [...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-        // the source runs the title and small print full width on these pages too: the
-        // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
-        element.setAttribute('data-news-theme', 'full-width');
-        startSection('columns').nodes.push(columns);
-        current = null;
+    // a 50/50 row whose Large Headline column comes before the video: build the row now
+    if (component.matches('.c-largeheadline') && headlineVideo(component) && !consumed.has(headlineVideo(component))) {
+      const video = headlineVideo(component);
+      if (videoRowColumns(video)) {
+        consumed.add(video);
         return;
       }
+    }
+    if (component.matches('.c-standalone-video')) {
+      if (!component.querySelector('[data-asset-path], iframe[src]')) return;
+      if (videoRowColumns(component)) return;
       // a video with article text in the other half of the row: Columns (columns-50-50)
       const textAside = videoTextAside(component);
       const textColumns = textAside && videoTextColumns(component, textAside, doc);
@@ -798,6 +1042,16 @@ export default function transform(hookName, element, payload) {
         startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
         current = null;
         return;
+      }
+    }
+    // no page title and the first rich text opens with a 1.5em Futura bold line (21px,
+    // e.g. the Emergency Relief Bed release): that line is the page H1, in its own
+    // section with the `h1-21` style (the source size); the rest of the text follows
+    if (isFirst && !hasTitle && component.matches('.c-rich-text-editor')) {
+      const heading = richTextTitle(component, doc);
+      if (heading) {
+        startSection('headline', 'h1-21').nodes.push(heading);
+        current = null;
       }
     }
     if (component.matches('.c-curatedcta')) {
@@ -854,7 +1108,7 @@ export default function transform(hookName, element, payload) {
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
     cleanRichText(box, { wholeParagraphs: true });
-    return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
+    return blockNodes(box, doc);
   }), doc);
   // small print: the corp `disclaimer` section style (11.2px copy; references as
   // "N: " entries 15px apart, then the document code)
