@@ -121,6 +121,28 @@ function itemLink(li) {
   return li.querySelector(':scope > a, :scope > p > a');
 }
 
+/** the keyboard-focusable controls of `root` that are rendered and not inert, in DOM order */
+function focusables(root) {
+  if (!root) return [];
+  return [...root.querySelectorAll('a[href], button, input')]
+    .filter((node) => !node.closest('[inert]') && node.getClientRects().length);
+}
+
+/**
+ * Keyboard access to the mobile drawer: while it is closed (slid off-screen) its links must
+ * not take focus, so it is inert; drilled into a submenu, only the submenu lane on screen
+ * takes focus (the main list beside it is inert). Desktop never is: there the drawer is the
+ * visible gold bar, and closed fly-outs are display: none.
+ */
+function syncFocus(block) {
+  const drawer = block.querySelector('.nav-container');
+  const mainNav = block.querySelector('.main-nav');
+  if (!drawer || !mainNav) return;
+  const mobile = !DESKTOP.matches;
+  drawer.inert = mobile && !block.classList.contains('show-main-nav');
+  mainNav.inert = mobile && block.classList.contains('show-secondary-nav');
+}
+
 function closeDrawer(block) {
   block.classList.remove('show-main-nav', 'show-secondary-nav');
   block.querySelectorAll('.secondary-nav.active').forEach((p) => p.classList.remove('active'));
@@ -131,6 +153,7 @@ function closeDrawer(block) {
     toggle.setAttribute('aria-label', 'Open navigation');
   }
   block.querySelectorAll('.main-nav li.has-sub').forEach((li) => itemLink(li).setAttribute('aria-expanded', 'false'));
+  syncFocus(block);
 }
 
 function closePanels(block) {
@@ -138,6 +161,7 @@ function closePanels(block) {
   block.querySelectorAll('.secondary-nav.active').forEach((p) => p.classList.remove('active'));
   block.querySelectorAll('.main-nav li.open').forEach((p) => p.classList.remove('open'));
   block.querySelectorAll('.main-nav li.has-sub').forEach((li) => itemLink(li).setAttribute('aria-expanded', 'false'));
+  syncFocus(block);
 }
 
 function openPanel(block, li) {
@@ -148,6 +172,74 @@ function openPanel(block, li) {
   const panel = block.querySelector(`.secondary-nav[data-nav="${li.dataset.nav}"]`);
   if (panel) panel.classList.add('active');
   if (!DESKTOP.matches) block.classList.add('show-secondary-nav');
+  syncFocus(block);
+}
+
+/**
+ * Tab order. The hamburger sits in the white row and the drawer it opens comes after the
+ * locale and search controls in the DOM (moving it would change the float layout), so the
+ * order is steered here: mobile hamburger → open menu → the controls after the hamburger
+ * (locale, search), closing the menu on the way out; desktop: an open fly-out's links
+ * follow its item (the panels come after the whole gold bar in the DOM), then the next item.
+ */
+function handleTab(block, e) {
+  const toggle = block.querySelector('.menu-toggle');
+  const { target } = e;
+  const focus = (node) => {
+    e.preventDefault();
+    node.focus({ preventScroll: true });
+  };
+
+  if (!DESKTOP.matches) {
+    if (!block.classList.contains('show-main-nav')) return;
+    const menu = focusables(block.querySelector('.nav-container'));
+    if (!menu.length) return;
+    if (target === toggle && !e.shiftKey) focus(menu[0]);
+    else if (target === menu[0] && e.shiftKey) focus(toggle);
+    else if (target === menu[menu.length - 1] && !e.shiftKey) {
+      const row = focusables(block.querySelector('.global-header'));
+      const next = row[row.indexOf(toggle) + 1];
+      closeDrawer(block);
+      if (next) focus(next);
+    }
+    return;
+  }
+
+  const li = block.querySelector('.main-nav li.has-sub.open');
+  if (!li) return;
+  const link = itemLink(li);
+  const panel = focusables(block.querySelector(`.secondary-nav[data-nav="${li.dataset.nav}"]`));
+  if (!link || !panel.length) return;
+  if (target === link && !e.shiftKey) focus(panel[0]);
+  else if (target === panel[0] && e.shiftKey) focus(link);
+  else if (target === panel[panel.length - 1] && !e.shiftKey) {
+    // the next gold-bar item; after the last one, Tab leaves the header as usual (focusout)
+    const items = [...block.querySelectorAll('.main-nav ul.main > li')].map(itemLink).filter(Boolean);
+    const next = items[items.indexOf(link) + 1];
+    if (next) {
+      closePanels(block);
+      focus(next);
+    }
+  }
+}
+
+/**
+ * Escape steps back one level: an open submenu / fly-out closes and focus returns to its
+ * item; otherwise the open mobile menu closes and focus returns to the hamburger. Focus is
+ * only moved when it was in the header.
+ */
+function handleEscape(block) {
+  const inHeader = block.contains(document.activeElement);
+  const li = block.querySelector('.main-nav li.has-sub.open');
+  if (li) {
+    closePanels(block);
+    const link = itemLink(li);
+    if (inHeader && link) link.focus({ preventScroll: true });
+    return;
+  }
+  const menuOpen = block.classList.contains('show-main-nav');
+  closeDrawer(block);
+  if (inHeader && menuOpen && !DESKTOP.matches) block.querySelector('.menu-toggle').focus();
 }
 
 function wireBehaviour(block) {
@@ -158,6 +250,7 @@ function wireBehaviour(block) {
     if (!open) closePanels(block);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    syncFocus(block);
   });
 
   const searchToggle = block.querySelector('.search-toggle');
@@ -175,8 +268,15 @@ function wireBehaviour(block) {
     a.setAttribute('aria-expanded', 'false');
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      if (li.classList.contains('open')) closePanels(block);
-      else openPanel(block, li);
+      if (li.classList.contains('open')) {
+        closePanels(block);
+        return;
+      }
+      openPanel(block, li);
+      // mobile: the main list is now inert, so focus moves to the submenu's back row
+      // (preventScroll: the drawer slides; focusing must not scroll it)
+      const back = block.querySelector(`.secondary-nav[data-nav="${li.dataset.nav}"] .back`);
+      if (!DESKTOP.matches && back) back.focus({ preventScroll: true });
     });
   });
 
@@ -184,16 +284,31 @@ function wireBehaviour(block) {
     back.addEventListener('click', (e) => {
       e.preventDefault();
       closePanels(block);
+      // back in the main list: focus returns to the item the submenu belongs to
+      const li = block.querySelector(`.main-nav li[data-nav="${back.closest('.secondary-nav').dataset.nav}"]`);
+      const link = li && itemLink(li);
+      if (link) link.focus({ preventScroll: true });
     });
   });
 
+  block.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') handleTab(block, e);
+  });
   window.addEventListener('keydown', (e) => {
-    if (e.code === 'Escape') closeDrawer(block);
+    if (e.code === 'Escape') handleEscape(block);
+  });
+  // focus leaving the header (Tab past the menu, or into the page) closes what is open, so
+  // it never stays over the content the focus moved to
+  block.addEventListener('focusout', (e) => {
+    if (!e.relatedTarget || block.contains(e.relatedTarget)) return;
+    if (!DESKTOP.matches && block.classList.contains('show-main-nav')) closeDrawer(block);
+    else closePanels(block);
   });
   document.addEventListener('click', (e) => {
     if (!block.contains(e.target)) closePanels(block);
   });
   DESKTOP.addEventListener('change', () => closeDrawer(block));
+  syncFocus(block);
 }
 
 /**
