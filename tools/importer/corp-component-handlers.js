@@ -155,9 +155,10 @@ export function richTextNodes(source, doc) {
 }
 
 /** Counters → one Statistics (count-up, cols-N) block. */
-function statistics(counters, ctx, columns = counters.length) {
-  const rows = counters.map((c) => [c.colour, c.value, c.desc]);
-  return block(ctx.doc, `Statistics (count-up, cols-${Math.min(Math.max(columns, 1), 4)})`, rows);
+function statistics(counters, ctx, columns = counters.length, countUp = true) {
+  const rows = counters.map((c) => (c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]));
+  const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
+  return block(ctx.doc, `Statistics (${countUp ? 'count-up, ' : ''}${cols})`, rows);
 }
 
 /** Section-level nodes of items (in one section: tabs panels, flex sections). */
@@ -593,6 +594,13 @@ function fullWidthImageHero(el, ctx) {
       box.append(span);
     }
     cleanRichText(box);
+    // the hero title is Futura bold at every width (stryker.com .hero-space h1, measured on
+    // surgical/learn): the Bold heading convention
+    if (!box.querySelector('strong')) {
+      const strong = ctx.doc.createElement('strong');
+      strong.append(...box.childNodes);
+      box.append(strong);
+    }
     if (title.tagName === 'H1') ctx.h1 = true;
     items.push({ type: 'flow', role: 'text', nodes: [rename(box, title.tagName.toLowerCase())] });
   }
@@ -781,6 +789,32 @@ function numberCounter(el, ctx) {
   }];
 }
 
+/**
+ * Fast facts (component-map row fastfacts → Statistics): the title, then one stat per
+ * .c-fastfacts-item (number | text). Static on live, so no count-up; two per row from
+ * 841px (col-sm-6) as cols-2. No colour keyword: the section's text colour applies.
+ */
+function fastFacts(el, ctx) {
+  const { doc } = ctx;
+  const facts = [...el.querySelectorAll('.c-fastfacts-item')].map((item) => {
+    const desc = doc.createElement('p');
+    desc.textContent = text(item.querySelector('.c-fastfacts-text'));
+    return { value: text(item.querySelector('.c-fastfacts-number')), desc };
+  }).filter((f) => f.value || text(f.desc));
+  const title = el.querySelector('.c-fastfacts-title');
+  const items = [];
+  if (title && text(title)) {
+    const h = doc.createElement('h2');
+    h.textContent = text(title);
+    items.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  if (facts.length) {
+    const columns = el.querySelector('.c-fastfacts-item.col-sm-6') ? 2 : facts.length;
+    items.push({ type: 'block', block: statistics(facts, ctx, columns, false) });
+  }
+  return items;
+}
+
 function standaloneVideo(el, ctx) {
   const link = videoLink(el, ctx.doc);
   if (!link) return [];
@@ -947,7 +981,20 @@ function tabs(el, ctx) {
   const { doc } = ctx;
   const titles = [...el.querySelectorAll('.tabs-nav .tab-link')].map(text);
   const panes = [...el.querySelectorAll('.tabs-content > .tab-content')];
-  const panels = panes.map((pane) => inlineNodes(ctx.collect(pane), ctx));
+  const collected = panes.map((pane) => ctx.collect(pane));
+  // all tabs share one section: it takes the copy styles that every text and nested block
+  // of the panes has (their own section styles cannot nest), e.g. p-1-25 on all product tabs
+  const sets = collected.flat().flatMap((it) => {
+    if (it.type === 'own' && it.styles && it.styles.length) return [it.styles];
+    if (it.type === 'flow' && it.role === 'text') {
+      return it.nodes.map((n) => String(n.copyStyle || '').split(',').map((s) => s.trim()).filter(Boolean));
+    }
+    return [];
+  });
+  const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
+  const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
+  const shared = sets.length ? sets[0].filter(inAll) : [];
+  const panels = collected.map((items) => inlineNodes(items, ctx));
   if (!panels.some((nodes) => nodes.length)) return [];
   const deepest = panels.flat().reduce((max, n) => (/^H[1-6]$/.test(n.tagName) ? Math.max(max, Number(n.tagName[1])) : max), 2);
   const level = Math.min(6, deepest + 1);
@@ -960,7 +1007,7 @@ function tabs(el, ctx) {
     if (!panel.length) ctx.report.notes.push(`tab "${title}" has no content`);
   });
   return [{
-    type: 'own', kind: 'tabs', styles: ['tabbed'], nodes,
+    type: 'own', kind: 'tabs', styles: ['tabbed', ...shared], nodes,
   }];
 }
 
@@ -1148,6 +1195,7 @@ export const COMPONENTS = {
   marketoform: marketoForm,
   tabs,
   numbercounter: numberCounter,
+  fastfacts: fastFacts,
   standalonevideo: standaloneVideo,
   interactivemedia: interactiveMedia,
   sectionseparator: () => [{ type: 'separator' }],

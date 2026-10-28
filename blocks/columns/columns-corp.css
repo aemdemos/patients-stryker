@@ -244,8 +244,9 @@ body.corp .columns > div > div h1.columns-number > :first-child {
   font-size: 2em;
 }
 
-/* a fully Bold Heading 1 is a stat number (stryker.com .fontsize-6vw) */
-body.corp .columns > div > div h1.columns-bold {
+/* a fully Bold Heading 1 in a Large Headline block is a stat number (stryker.com
+   .fontsize-6vw); next to rich text it keeps the headline size (jr45/july: 4vw, 56px) */
+body.corp .columns.large-headline > div > div h1.columns-bold {
   font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
 }
 

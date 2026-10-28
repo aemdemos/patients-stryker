@@ -407,6 +407,12 @@ body:where(.corp):has(main .hero-carousel) header {
   color: var(--color-white);
 }
 
+/* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn
+   "Our impact" panel: white numbers and text) */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
+  color: inherit;
+}
+
 /* section style `separator`: full-width rule between sections */
 :where(body.corp) main > .section.separator {
   margin: 0 0 var(--space-block-l);
@@ -598,7 +604,8 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* h-1-25 / h-1-5: the section's h2 / h3 authored 1.25x / 1.5x the plain heading (stryker.com
-   .fontsize-1-25em / -1-5em headings: product-detail h2 30.625px / 36.75px from 600px) */
+   .fontsize-1-25em / -1-5em headings: product-detail h2 30.625px / 36.75px from 600px). Card
+   titles keep their own size (emergency-medical-services featured articles: h2 1.5x, card h3 21px) */
 :where(body.corp) .section.h-1-25 {
   --corp-heading-scale: 1.25;
 }
@@ -607,12 +614,12 @@ body:where(.corp):has(main .hero-carousel) header {
   --corp-heading-scale: 1.5;
 }
 
-:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div h2 {
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
   line-height: var(--heading-line-height);
 }
 
-:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div h3 {
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h3 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h3-size, var(--heading-font-size-m)));
   line-height: var(--heading-line-height-h4);
 }

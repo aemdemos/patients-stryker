@@ -3751,9 +3751,10 @@ var CustomImportScript = (() => {
     });
     return { nodes, centred };
   }
-  function statistics(counters, ctx, columns = counters.length) {
-    const rows = counters.map((c) => [c.colour, c.value, c.desc]);
-    return block(ctx.doc, `Statistics (count-up, cols-${Math.min(Math.max(columns, 1), 4)})`, rows);
+  function statistics(counters, ctx, columns = counters.length, countUp = true) {
+    const rows = counters.map((c) => c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]);
+    const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
+    return block(ctx.doc, `Statistics (${countUp ? "count-up, " : ""}${cols})`, rows);
   }
   function inlineNodes(items, ctx) {
     const out = [];
@@ -4118,6 +4119,11 @@ var CustomImportScript = (() => {
         box.append(span);
       }
       cleanRichText(box);
+      if (!box.querySelector("strong")) {
+        const strong = ctx.doc.createElement("strong");
+        strong.append(...box.childNodes);
+        box.append(strong);
+      }
       if (title.tagName === "H1") ctx.h1 = true;
       items.push({ type: "flow", role: "text", nodes: [rename(box, title.tagName.toLowerCase())] });
     }
@@ -4293,6 +4299,26 @@ var CustomImportScript = (() => {
       desc
     }];
   }
+  function fastFacts(el, ctx) {
+    const { doc } = ctx;
+    const facts = [...el.querySelectorAll(".c-fastfacts-item")].map((item) => {
+      const desc = doc.createElement("p");
+      desc.textContent = text(item.querySelector(".c-fastfacts-text"));
+      return { value: text(item.querySelector(".c-fastfacts-number")), desc };
+    }).filter((f) => f.value || text(f.desc));
+    const title = el.querySelector(".c-fastfacts-title");
+    const items = [];
+    if (title && text(title)) {
+      const h = doc.createElement("h2");
+      h.textContent = text(title);
+      items.push({ type: "flow", role: "text", nodes: [h] });
+    }
+    if (facts.length) {
+      const columns = el.querySelector(".c-fastfacts-item.col-sm-6") ? 2 : facts.length;
+      items.push({ type: "block", block: statistics(facts, ctx, columns, false) });
+    }
+    return items;
+  }
   function standaloneVideo(el, ctx) {
     const link2 = videoLink(el, ctx.doc);
     if (!link2) return [];
@@ -4441,7 +4467,18 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const titles = [...el.querySelectorAll(".tabs-nav .tab-link")].map(text);
     const panes = [...el.querySelectorAll(".tabs-content > .tab-content")];
-    const panels = panes.map((pane) => inlineNodes(ctx.collect(pane), ctx));
+    const collected = panes.map((pane) => ctx.collect(pane));
+    const sets = collected.flat().flatMap((it) => {
+      if (it.type === "own" && it.styles && it.styles.length) return [it.styles];
+      if (it.type === "flow" && it.role === "text") {
+        return it.nodes.map((n) => String(n.copyStyle || "").split(",").map((s) => s.trim()).filter(Boolean));
+      }
+      return [];
+    });
+    const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-1-)/.test(s);
+    const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
+    const shared = sets.length ? sets[0].filter(inAll) : [];
+    const panels = collected.map((items) => inlineNodes(items, ctx));
     if (!panels.some((nodes2) => nodes2.length)) return [];
     const deepest = panels.flat().reduce((max, n) => /^H[1-6]$/.test(n.tagName) ? Math.max(max, Number(n.tagName[1])) : max, 2);
     const level = Math.min(6, deepest + 1);
@@ -4456,7 +4493,7 @@ var CustomImportScript = (() => {
     return [{
       type: "own",
       kind: "tabs",
-      styles: ["tabbed"],
+      styles: ["tabbed", ...shared],
       nodes
     }];
   }
@@ -4622,6 +4659,7 @@ var CustomImportScript = (() => {
     marketoform: marketoForm,
     tabs,
     numbercounter: numberCounter,
+    fastfacts: fastFacts,
     standalonevideo: standaloneVideo,
     interactivemedia: interactiveMedia,
     sectionseparator: () => [{ type: "separator" }],

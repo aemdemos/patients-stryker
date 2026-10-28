@@ -1,0 +1,10 @@
+/* Tier 2 Landing Page template (www.stryker.com landing pages, e.g.
+   /us/en/emergency-care/emergency-medical-services). Plain section headings as on product
+   pages: h2 21px / 24.5px and h3 17.5px / 21px below / from 600px (source 841px); headings
+   authored 1.25x / 1.5x get the h-1-25 / h-1-5 section styles (styles-corp.css). */
+@media (width >= 600px) {
+  body.tier2-landing-page {
+    --corp-h2-size: var(--heading-font-size-xl);
+    --corp-h3-size: var(--heading-font-size-l);
+  }
+}
