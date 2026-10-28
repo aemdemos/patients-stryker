@@ -119,6 +119,32 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 700;
 }
 
+/* bold links that decorateButtons() left as links are text, not the shared button fallback,
+   on stryker.com: a bold link in a default-content heading (e.g. the "Business Wire" heading
+   after "Read the full article:") keeps the heading's font, size and colour; a bold link in a
+   paragraph (sentence-style text such as "Please click here for the full article.", or a bold
+   link inside a sentence) is bold teal text in the paragraph's font. The hover rule below
+   turns both darker teal. */
+:where(body.corp) main :where(.default-content-wrapper > :is(h1, h2, h3, h4, h5, h6)) > strong > a:any-link:not(:has(u)),
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  color: var(--link-color);
+}
+
 /* links and bold + underline CTAs use a darker teal on hover/focus */
 :where(body.corp) a:any-link:hover,
 :where(body.corp) a:any-link:focus-visible,
