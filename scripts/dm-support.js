@@ -568,6 +568,18 @@ export default function decorateDMAssets(root) {
 
     el.replaceWith(replacement);
   });
+
+  // a linked image: the importer keeps the link target as the href and the image URL in the
+  // title (<a href="/target" title="https://…/is/image/…">alt</a>, tools/importer/transformers/
+  // patients-stryker-dm-images.js) — the image renders inside the link, the text is its alt
+  root.querySelectorAll('a[title*="/is/image/"], a[title*="/adobe/assets/"]').forEach((a) => {
+    const src = a.getAttribute('title');
+    const render = dmRendererFor(src);
+    if (!render || render === renderVideo || a.querySelector('picture, img, video')) return;
+    const text = a.textContent.trim();
+    a.replaceChildren(render(src, text && text !== src ? text : '', false));
+    a.removeAttribute('title');
+  });
 }
 
 /**

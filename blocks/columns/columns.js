@@ -97,7 +97,11 @@ export default function decorate(block) {
       // no editable mount point remains over it and the img-col styling still
       // applies. Only single-media wrappers are unwrapped, so cell text is never
       // touched; harmless on the published site.
-      col.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
+      col.querySelectorAll('picture, .dm-video-wrapper').forEach((found) => {
+        // a linked image (scripts/dm-support.js: <a href><picture></a>) moves with its link
+        const link = found.parentElement;
+        const media = link && link.tagName === 'A' && link.childElementCount === 1
+          && link.textContent.trim() === '' ? link : found;
         let node = media;
         while (node.parentElement
           && node.parentElement !== col
