@@ -336,12 +336,40 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
+  const doc = root.ownerDocument;
+
+  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
+  // possibly followed by empty size spans, or nested: <b><span>…<br></span></b>) belongs
+  // after it: inside <strong> it would be lost on import, merging the label into the next
+  // line. Innermost formatting first, so the break moves out of every level; done before
+  // the plain-bold labels are found (a "<b>About Stryker<br></b>" label is on its own line).
+  // A space typed at the end of the formatting ("2023&nbsp;</span>–") stays between the words.
+  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
+    && !node.textContent.trim() && !node.querySelector('img, br');
+  const trailingSpace = /[\s\u00a0]+$/;
+  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+    let last = el.lastChild;
+    while (last && (last.nodeName === 'BR' || emptyElement(last)
+      || (last.nodeType === 3 && !last.textContent.trim()))) {
+      if (emptyElement(last)) {
+        // an empty element that only held a space (e.g. <sup>&nbsp;</sup>) keeps the space
+        if (/[\s\u00a0]/.test(last.textContent) && !(el.nextSibling && /^[\s\u00a0]/.test(el.nextSibling.textContent))) {
+          el.after(doc.createTextNode(' '));
+        }
+        last.remove();
+      } else el.after(last);
+      last = el.lastChild;
+    }
+    if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
+      last.textContent = last.textContent.replace(trailingSpace, '');
+      el.after(doc.createTextNode(' '));
+    }
+  });
   tagPlainBoldLabels(root, wholeParagraphs);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
-  const doc = root.ownerDocument;
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
     const a = span.closest('a') || span.querySelector('a');
@@ -359,20 +387,6 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   // colours, before the formatting spans that may carry them are renamed or unwrapped
   mapColours(root);
 
-  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
-  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
-  // lost on import, merging the label into the next line
-  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
-    && !node.textContent.trim() && !node.querySelector('img, br');
-  root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
-    let last = el.lastChild;
-    while (last && (last.nodeName === 'BR' || emptyElement(last)
-      || (last.nodeType === 3 && !last.textContent.trim()))) {
-      if (emptyElement(last)) last.remove();
-      else el.after(last);
-      last = el.lastChild;
-    }
-  });
   // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
   // colour); <b> → <strong> (bold in the body font). Headings keep a plain <strong>.
   root.querySelectorAll('span.futura-bold').forEach((el) => {
