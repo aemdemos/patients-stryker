@@ -911,6 +911,7 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const inlinedXf = markSharedFragments(main, doc);
+  const hasForm = !!main.querySelector('.c-marketo-form form[data-marketo-form-id]');
   const sections = [];
   let current = null;
   let separatorNext = false;
@@ -985,6 +986,28 @@ export default function transform(hookName, element, payload) {
     current = null;
     return true;
   };
+  // the other column(s) of a form's 2/3 + 1/3 (or 50/50) row: the contact aside. Its
+  // components go after the form in the form's section, whichever column comes first.
+  const formAsides = new Map();
+  components.filter((el) => el.matches('.c-marketo-form') && el.querySelector('form[data-marketo-form-id]')).forEach((form) => {
+    const formColumn = form.closest('[class*="col-sm-"]');
+    const row = formColumn && formColumn.parentElement;
+    if (!row || !row.closest('.colctrl')) return;
+    const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el)
+      && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+    asides.forEach((aside) => consumed.add(aside));
+    formAsides.set(form, asides);
+  });
+  // a form page whose source has no H1 (the title only sits in the lead carousel): the
+  // carousel's single headline line becomes the H1 (hero-image-slide.js keeps headings)
+  if (hasForm && !main.querySelector('h1')) {
+    const lines = [...main.querySelectorAll('.c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line')]
+      .filter((line) => text(line));
+    if (lines.length === 1) {
+      lines[0].querySelectorAll('a:not([href])').forEach(unwrap);
+      rename(lines[0], 'h1');
+    }
+  }
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
@@ -1039,22 +1062,21 @@ export default function transform(hookName, element, payload) {
       current = null;
       return;
     }
-    // a Marketo form: its own section; a shared fragment in the other column of its
-    // 2/3 + 1/3 row (the contact aside) goes after it in the same section, which gets the
-    // `form-with-aside` style. The fragments are kept as links, never copied.
+    // a Marketo form: its own section; the content of the other column of its 2/3 + 1/3
+    // row (the contact aside: a shared fragment, kept as a link and never copied, or
+    // inline text / images) goes after it in the same section, which gets the
+    // `form-with-aside` style
     if (component.matches('.c-marketo-form')) {
       if (!component.querySelector('form[data-marketo-form-id]')) return;
       const nodes = [component];
-      const formColumn = component.closest('[class*="col-sm-"]');
-      const row = formColumn && formColumn.parentElement;
-      const asides = row && row.closest('.colctrl')
-        ? [...row.children].filter((col) => col !== formColumn).flatMap((col) => [...col.querySelectorAll('.xf-fragment')])
-        : [];
-      asides.forEach((aside) => {
-        consumed.add(aside);
-        nodes.push(fragmentBlock(aside.getAttribute('data-fragment'), doc));
+      (formAsides.get(component) || []).forEach((aside) => {
+        if (aside.matches('.xf-fragment')) nodes.push(fragmentBlock(aside.getAttribute('data-fragment'), doc));
+        else if (aside.matches('.c-standalone-image')) nodes.push(...imageNodes(aside, doc));
+        else if (aside.matches('.c-rich-text-editor')) nodes.push(...richTextNodes(aside, doc).nodes);
+        else if (aside.matches('.c-curatedcta')) nodes.push(...buttonNodes(aside, doc));
+        else if (aside.matches('.c-largeheadline')) nodes.push(...headlineNodes(aside, doc));
       });
-      startSection('form', asides.length ? 'form-with-aside' : undefined).nodes.push(...nodes);
+      startSection('form', nodes.length > 1 ? 'form-with-aside' : undefined).nodes.push(...nodes);
       current = null;
       return;
     }
@@ -1168,6 +1190,26 @@ export default function transform(hookName, element, payload) {
       current.nodes.push(node);
     });
   });
+
+  // a form page ends with exactly one H1: further ones (a campaign name under the title)
+  // are H2s
+  if (hasForm) {
+    let seen = 0;
+    sections.forEach((section) => {
+      section.nodes = section.nodes.map((node) => {
+        if (node.nodeType !== 1) return node;
+        const headings = [...(node.tagName === 'H1' ? [node] : []), ...node.querySelectorAll('h1')];
+        let result = node;
+        headings.forEach((heading) => {
+          seen += 1;
+          if (seen === 1) return;
+          const h2 = rename(heading, 'h2');
+          if (heading === node) result = h2;
+        });
+        return result;
+      });
+    });
+  }
 
   // 4. disclaimer: references (when the article has them) and the document code, in
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.

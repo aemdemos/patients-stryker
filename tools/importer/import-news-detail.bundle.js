@@ -904,6 +904,7 @@ var CustomImportScript = (() => {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const inlinedXf = markSharedFragments(main, doc);
+    const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
     const sections = [];
     let current = null;
     let separatorNext = false;
@@ -959,6 +960,22 @@ var CustomImportScript = (() => {
       current = null;
       return true;
     };
+    const formAsides = /* @__PURE__ */ new Map();
+    components.filter((el) => el.matches(".c-marketo-form") && el.querySelector("form[data-marketo-form-id]")).forEach((form) => {
+      const formColumn = form.closest('[class*="col-sm-"]');
+      const row = formColumn && formColumn.parentElement;
+      if (!row || !row.closest(".colctrl")) return;
+      const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el) && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+      asides.forEach((aside) => consumed.add(aside));
+      formAsides.set(form, asides);
+    });
+    if (hasForm && !main.querySelector("h1")) {
+      const lines = [...main.querySelectorAll(".c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line")].filter((line) => text(line));
+      if (lines.length === 1) {
+        lines[0].querySelectorAll("a:not([href])").forEach(unwrap);
+        rename(lines[0], "h1");
+      }
+    }
     let leadBelowDate = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
@@ -1005,14 +1022,14 @@ var CustomImportScript = (() => {
       if (component.matches(".c-marketo-form")) {
         if (!component.querySelector("form[data-marketo-form-id]")) return;
         const nodes2 = [component];
-        const formColumn = component.closest('[class*="col-sm-"]');
-        const row = formColumn && formColumn.parentElement;
-        const asides = row && row.closest(".colctrl") ? [...row.children].filter((col) => col !== formColumn).flatMap((col) => [...col.querySelectorAll(".xf-fragment")]) : [];
-        asides.forEach((aside) => {
-          consumed.add(aside);
-          nodes2.push(fragmentBlock(aside.getAttribute("data-fragment"), doc));
+        (formAsides.get(component) || []).forEach((aside) => {
+          if (aside.matches(".xf-fragment")) nodes2.push(fragmentBlock(aside.getAttribute("data-fragment"), doc));
+          else if (aside.matches(".c-standalone-image")) nodes2.push(...imageNodes(aside, doc));
+          else if (aside.matches(".c-rich-text-editor")) nodes2.push(...richTextNodes(aside, doc).nodes);
+          else if (aside.matches(".c-curatedcta")) nodes2.push(...buttonNodes(aside, doc));
+          else if (aside.matches(".c-largeheadline")) nodes2.push(...headlineNodes(aside, doc));
         });
-        startSection("form", asides.length ? "form-with-aside" : void 0).nodes.push(...nodes2);
+        startSection("form", nodes2.length > 1 ? "form-with-aside" : void 0).nodes.push(...nodes2);
         current = null;
         return;
       }
@@ -1100,6 +1117,23 @@ var CustomImportScript = (() => {
         current.nodes.push(node);
       });
     });
+    if (hasForm) {
+      let seen = 0;
+      sections.forEach((section) => {
+        section.nodes = section.nodes.map((node) => {
+          if (node.nodeType !== 1) return node;
+          const headings = [...node.tagName === "H1" ? [node] : [], ...node.querySelectorAll("h1")];
+          let result = node;
+          headings.forEach((heading) => {
+            seen += 1;
+            if (seen === 1) return;
+            const h2 = rename(heading, "h2");
+            if (heading === node) result = h2;
+          });
+          return result;
+        });
+      });
+    }
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
