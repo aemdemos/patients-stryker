@@ -3973,7 +3973,18 @@ var CustomImportScript = (() => {
   }
   function buttons(el, ctx) {
     const { doc } = ctx;
-    const nodes = [...el.querySelectorAll("a[href]")].map((a) => {
+    const head = [];
+    const title = el.querySelector(".cta-title");
+    if (title && text(title)) {
+      const h = doc.createElement(/^H[1-6]$/.test(title.tagName) ? title.tagName.toLowerCase() : "h4");
+      const a = title.querySelector("a[href]");
+      h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), text(a)) : doc.createTextNode(text(title)));
+      head.push(h);
+    }
+    el.querySelectorAll(".cta-description").forEach((d) => {
+      if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
+    });
+    const nodes = [...el.querySelectorAll("a[href]")].filter((a) => !a.closest(".cta-title, .cta-description")).map((a) => {
       if (text(a)) return buttonNode(doc, a, text(a));
       const source = a.querySelector("img");
       if (!source) return null;
@@ -3985,7 +3996,10 @@ var CustomImportScript = (() => {
       if (!source.getAttribute("alt")) ctx.report.notes.push(`image button without alt text: ${source.getAttribute("src")}`);
       return para(doc, link2);
     }).filter(Boolean);
-    return nodes.length ? [{ type: "flow", role: "cta", nodes }] : [];
+    return [
+      ...head.length ? [{ type: "flow", role: "text", nodes: head }] : [],
+      ...nodes.length ? [{ type: "flow", role: "cta", nodes }] : []
+    ];
   }
   function largeHeadline(el, ctx) {
     const { doc } = ctx;
@@ -4074,7 +4088,10 @@ var CustomImportScript = (() => {
     const desktop = img && image(source && source.getAttribute("srcset").split(/[\s,]/)[0] || img.getAttribute("src"));
     const mobile = img && source && image(img.getAttribute("src"));
     if (!overlay.length) return [{ type: "flow", role: "image", nodes: [para(doc, desktop)] }];
-    const variants = ["image-slide", "text-above"];
+    const bottom = box && box.classList.contains("bottom-text");
+    const variants = ["image-slide", bottom ? "bottom-0" : "text-above"];
+    const cols = box && [...box.classList].map((c) => c.match(/^col-sm-(\d+)$/)).find(Boolean);
+    if (cols && Number(cols[1]) < 12) variants.push(`right-${Math.round(100 - Number(cols[1]) * 100 / 12)}`);
     const lines = box ? [...box.querySelectorAll(".line")] : [];
     const size = lines[0] ? vwSize(lines[0]) : 0;
     const copySize = lines[1] ? vwSize(lines[1]) : 0;
@@ -4087,6 +4104,24 @@ var CustomImportScript = (() => {
       styles: cellStyles([overlay], ctx),
       nodes: [block(doc, `Hero Corp (${variants.join(", ")})`, rows)]
     }];
+  }
+  function fullWidthImageHero(el, ctx) {
+    const items = [];
+    const title = el.querySelector(".hero-space h1, .hero-space h2");
+    if (title && text(title)) {
+      const box = contentCopy(title, ctx.doc);
+      const colour = title.getAttribute("style");
+      if (colour && /color/i.test(colour)) {
+        const span = ctx.doc.createElement("span");
+        span.setAttribute("style", colour);
+        span.append(...box.childNodes);
+        box.append(span);
+      }
+      cleanRichText(box);
+      if (title.tagName === "H1") ctx.h1 = true;
+      items.push({ type: "flow", role: "text", nodes: [rename(box, title.tagName.toLowerCase())] });
+    }
+    return [...items, ...fullWidthImage(el.querySelector(".pDiv") || el, ctx)];
   }
   function h1Title(el, ctx) {
     const source = el.querySelector("h1");
@@ -4344,40 +4379,62 @@ var CustomImportScript = (() => {
       h2.textContent = text(heading);
       out.push({ type: "flow", role: "text", nodes: [h2] });
     }
-    if (!grid.querySelector(".item img")) {
-      const rows = items.map((item) => {
-        const body = [];
-        const title = item.querySelector("h3");
-        const link2 = title && title.querySelector("a[href]");
-        if (title) {
-          const h3 = doc.createElement("h3");
-          h3.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(link2)) : doc.createTextNode(text(title)));
-          body.push(h3);
-        }
-        item.querySelectorAll(".desc-container > p").forEach((p) => {
-          if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
-        });
-        const cta = item.querySelector("a.action-link[href]");
-        if (cta && text(cta)) {
-          const u = doc.createElement("u");
-          u.textContent = text(cta);
-          const a = linkTo(doc, cta.getAttribute("href"), "");
-          a.append(u);
-          const strong = doc.createElement("strong");
-          strong.append(a);
-          body.push(para(doc, strong));
-        }
-        return ["", body];
-      });
-      out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+    const description = grid.querySelector(".c-customizable-description");
+    if (description && text(description)) {
+      const h = doc.createElement(/^H[1-6]$/.test(description.tagName) ? description.tagName.toLowerCase() : "p");
+      h.textContent = text(description);
+      out.push({ type: "flow", role: "text", nodes: [h] });
+    }
+    const targets = (ctx.facts && ctx.facts.cardLists || []).flatMap((list) => list.items || []);
+    const imageSrc = (item) => {
+      const img = item.querySelector("img");
+      if (img && img.getAttribute("src")) return img.getAttribute("src");
+      const href = item.querySelector("a[href]");
+      if (!img || !href) return "";
+      const path = new URL(href.getAttribute("href"), "https://www.stryker.com").pathname.replace(/\.html$/, "");
+      const target = targets.find((t) => t.path === path && t.image);
+      return target ? absoluteAsset(encodeURI(target.image)) : "";
+    };
+    const sources = items.map(imageSrc);
+    if (sources.every(Boolean)) {
+      const holder = doc.createElement("div");
+      const copy = grid.cloneNode(true);
+      copy.querySelectorAll("h2").forEach((h) => h.remove());
+      [...copy.querySelectorAll(".item")].filter((item) => text(item)).forEach((item, i) => item.querySelector("img").setAttribute("src", sources[i]));
+      holder.append(copy);
+      parse2(copy, { document: doc });
+      out.push({ type: "block", block: holder.firstElementChild });
       return out;
     }
-    const holder = doc.createElement("div");
-    const copy = grid.cloneNode(true);
-    copy.querySelectorAll("h2").forEach((h) => h.remove());
-    holder.append(copy);
-    parse2(copy, { document: doc });
-    out.push({ type: "block", block: holder.firstElementChild });
+    const rows = items.map((item, i) => {
+      const body = [];
+      const title = item.querySelector("h3");
+      const link2 = title && title.querySelector("a[href]");
+      if (title) {
+        const h3 = doc.createElement("h3");
+        h3.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(link2)) : doc.createTextNode(text(title)));
+        body.push(h3);
+      }
+      item.querySelectorAll(".desc-container > p").forEach((p) => {
+        if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+      });
+      const cta = item.querySelector("a.action-link[href]");
+      if (cta && text(cta)) {
+        const u = doc.createElement("u");
+        u.textContent = text(cta);
+        const a = linkTo(doc, cta.getAttribute("href"), "");
+        a.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(a);
+        body.push(para(doc, strong));
+      }
+      if (!sources[i]) return ["", body];
+      const img = doc.createElement("img");
+      img.setAttribute("src", sources[i]);
+      img.setAttribute("alt", (item.querySelector("img") || { getAttribute: () => "" }).getAttribute("alt") || "");
+      return [img, body];
+    });
+    out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
     return out;
   }
   function tabs(el, ctx) {
@@ -4552,6 +4609,7 @@ var CustomImportScript = (() => {
     carouselslidegroup: carousel,
     "h1-title": h1Title,
     fullWidthImage,
+    fullWidthImageHero,
     jumpbarnav: jumpBar,
     cols: columnControl,
     experienceFragment,

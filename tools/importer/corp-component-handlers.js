@@ -424,7 +424,18 @@ function standaloneImage(el, ctx) {
 
 function buttons(el, ctx) {
   const { doc } = ctx;
-  const nodes = [...el.querySelectorAll('a[href]')].map((a) => {
+  // a curated CTA's title (h4.cta-title, often linked) and description (p.cta-description)
+  // above its button
+  const head = [];
+  const title = el.querySelector('.cta-title');
+  if (title && text(title)) {
+    const h = doc.createElement(/^H[1-6]$/.test(title.tagName) ? title.tagName.toLowerCase() : 'h4');
+    const a = title.querySelector('a[href]');
+    h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), text(a)) : doc.createTextNode(text(title)));
+    head.push(h);
+  }
+  el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
+  const nodes = [...el.querySelectorAll('a[href]')].filter((a) => !a.closest('.cta-title, .cta-description')).map((a) => {
     if (text(a)) return buttonNode(doc, a, text(a));
     // an image button (.cta-img): the image, linked
     const source = a.querySelector('img');
@@ -437,7 +448,10 @@ function buttons(el, ctx) {
     if (!source.getAttribute('alt')) ctx.report.notes.push(`image button without alt text: ${source.getAttribute('src')}`);
     return para(doc, link);
   }).filter(Boolean);
-  return nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : [];
+  return [
+    ...(head.length ? [{ type: 'flow', role: 'text', nodes: head }] : []),
+    ...(nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : []),
+  ];
 }
 
 /**
@@ -543,7 +557,12 @@ function fullWidthImage(el, ctx) {
   const desktop = img && image((source && source.getAttribute('srcset').split(/[\s,]/)[0]) || img.getAttribute('src'));
   const mobile = img && source && image(img.getAttribute('src'));
   if (!overlay.length) return [{ type: 'flow', role: 'image', nodes: [para(doc, desktop)] }];
-  const variants = ['image-slide', 'text-above'];
+  // the text box: col-sm-N wide from the left (right-<100 - N/12>), a bottom-text box anchored
+  // to the image bottom (the Hero Corp text-above / bottom-<n> options, fullWidthImageHero)
+  const bottom = box && box.classList.contains('bottom-text');
+  const variants = ['image-slide', bottom ? 'bottom-0' : 'text-above'];
+  const cols = box && [...box.classList].map((c) => c.match(/^col-sm-(\d+)$/)).find(Boolean);
+  if (cols && Number(cols[1]) < 12) variants.push(`right-${Math.round(100 - (Number(cols[1]) * 100) / 12)}`);
   const lines = box ? [...box.querySelectorAll('.line')] : [];
   const size = lines[0] ? vwSize(lines[0]) : 0;
   const copySize = lines[1] ? vwSize(lines[1]) : 0;
@@ -553,6 +572,31 @@ function fullWidthImage(el, ctx) {
   return [{
     type: 'own', kind: 'hero', styles: cellStyles([overlay], ctx), nodes: [block(doc, `Hero Corp (${variants.join(', ')})`, rows)],
   }];
+}
+
+/**
+ * fullWidthImageHero (component-map: Hero Corp image-slide, text-above / bottom-<n>): the page
+ * title above (.hero-space h1, gold on the source: its colour as a colour tag), then the
+ * banner with its text box as fullWidthImage.
+ */
+function fullWidthImageHero(el, ctx) {
+  const items = [];
+  const title = el.querySelector('.hero-space h1, .hero-space h2');
+  if (title && text(title)) {
+    const box = contentCopy(title, ctx.doc);
+    // the heading's own inline colour (style on the h1) as a span the cleaner maps to a tag
+    const colour = title.getAttribute('style');
+    if (colour && /color/i.test(colour)) {
+      const span = ctx.doc.createElement('span');
+      span.setAttribute('style', colour);
+      span.append(...box.childNodes);
+      box.append(span);
+    }
+    cleanRichText(box);
+    if (title.tagName === 'H1') ctx.h1 = true;
+    items.push({ type: 'flow', role: 'text', nodes: [rename(box, title.tagName.toLowerCase())] });
+  }
+  return [...items, ...fullWidthImage(el.querySelector('.pDiv') || el, ctx)];
 }
 
 /** h1-title (component-map: h1): the page title, a plain h1 (black Futura 28px, as live). */
@@ -832,40 +876,66 @@ function cardList(el, ctx) {
     h2.textContent = text(heading);
     out.push({ type: 'flow', role: 'text', nodes: [h2] });
   }
-  if (!grid.querySelector('.item img')) {
-    // cards without images (e.g. video links): an empty image cell, as cards-corp builds
-    // for index rows without an image
-    const rows = items.map((item) => {
-      const body = [];
-      const title = item.querySelector('h3');
-      const link = title && title.querySelector('a[href]');
-      if (title) {
-        const h3 = doc.createElement('h3');
-        h3.append(link ? linkTo(doc, link.getAttribute('href'), text(link)) : doc.createTextNode(text(title)));
-        body.push(h3);
-      }
-      item.querySelectorAll('.desc-container > p').forEach((p) => { if (text(p)) body.push(para(doc, doc.createTextNode(text(p)))); });
-      const cta = item.querySelector('a.action-link[href]');
-      if (cta && text(cta)) {
-        const u = doc.createElement('u');
-        u.textContent = text(cta);
-        const a = linkTo(doc, cta.getAttribute('href'), '');
-        a.append(u);
-        const strong = doc.createElement('strong');
-        strong.append(a);
-        body.push(para(doc, strong));
-      }
-      return ['', body];
-    });
-    out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  // the list's description line (h3.c-customizable-description, e.g. "Classroom courses")
+  const description = grid.querySelector('.c-customizable-description');
+  if (description && text(description)) {
+    const h = doc.createElement(/^H[1-6]$/.test(description.tagName) ? description.tagName.toLowerCase() : 'p');
+    h.textContent = text(description);
+    out.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  // each card's image: its own, else (an img the live page fills in later by asset id) the
+  // target page's own image from its export (page facts cardLists), else none
+  const targets = ((ctx.facts && ctx.facts.cardLists) || []).flatMap((list) => list.items || []);
+  const imageSrc = (item) => {
+    const img = item.querySelector('img');
+    if (img && img.getAttribute('src')) return img.getAttribute('src');
+    const href = item.querySelector('a[href]');
+    if (!img || !href) return '';
+    const path = new URL(href.getAttribute('href'), 'https://www.stryker.com').pathname.replace(/\.html$/, '');
+    const target = targets.find((t) => t.path === path && t.image);
+    return target ? absoluteAsset(encodeURI(target.image)) : '';
+  };
+  const sources = items.map(imageSrc);
+  if (sources.every(Boolean)) {
+    const holder = doc.createElement('div');
+    const copy = grid.cloneNode(true);
+    copy.querySelectorAll('h2').forEach((h) => h.remove());
+    [...copy.querySelectorAll('.item')].filter((item) => text(item))
+      .forEach((item, i) => item.querySelector('img').setAttribute('src', sources[i]));
+    holder.append(copy);
+    cardsCorpTeaserParser(copy, { document: doc });
+    out.push({ type: 'block', block: holder.firstElementChild });
     return out;
   }
-  const holder = doc.createElement('div');
-  const copy = grid.cloneNode(true);
-  copy.querySelectorAll('h2').forEach((h) => h.remove());
-  holder.append(copy);
-  cardsCorpTeaserParser(copy, { document: doc });
-  out.push({ type: 'block', block: holder.firstElementChild });
+  // some cards without an image (e.g. video links): those get an empty image cell, as
+  // cards-corp builds for index rows without an image; no card is left out
+  const rows = items.map((item, i) => {
+    const body = [];
+    const title = item.querySelector('h3');
+    const link = title && title.querySelector('a[href]');
+    if (title) {
+      const h3 = doc.createElement('h3');
+      h3.append(link ? linkTo(doc, link.getAttribute('href'), text(link)) : doc.createTextNode(text(title)));
+      body.push(h3);
+    }
+    item.querySelectorAll('.desc-container > p').forEach((p) => { if (text(p)) body.push(para(doc, doc.createTextNode(text(p)))); });
+    const cta = item.querySelector('a.action-link[href]');
+    if (cta && text(cta)) {
+      const u = doc.createElement('u');
+      u.textContent = text(cta);
+      const a = linkTo(doc, cta.getAttribute('href'), '');
+      a.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(a);
+      body.push(para(doc, strong));
+    }
+    if (!sources[i]) return ['', body];
+    const img = doc.createElement('img');
+    img.setAttribute('src', sources[i]);
+    img.setAttribute('alt', (item.querySelector('img') || { getAttribute: () => '' }).getAttribute('alt') || '');
+    return [img, body];
+  });
+  out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
   return out;
 }
 
@@ -1065,6 +1135,7 @@ export const COMPONENTS = {
   carouselslidegroup: carousel,
   'h1-title': h1Title,
   fullWidthImage,
+  fullWidthImageHero,
   jumpbarnav: jumpBar,
   cols: columnControl,
   experienceFragment,
