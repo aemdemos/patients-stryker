@@ -402,6 +402,11 @@ var CustomImportScript = (() => {
   function unwrap2(el) {
     el.replaceWith(...el.childNodes);
   }
+  function divsToParagraphs(box) {
+    [...box.querySelectorAll("div")].reverse().forEach((div) => {
+      if (!div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table") && text(div)) rename2(div, "p");
+    });
+  }
   function absoluteAsset(href) {
     return href && href.startsWith("/content/dam/") ? `${SOURCE_ORIGIN}${href}` : href;
   }
@@ -462,7 +467,8 @@ var CustomImportScript = (() => {
     const doc = root.ownerDocument;
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     const trailingSpace = /[\s\u00a0]+$/;
-    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+    const FORMATTING = "span.futura-bold, b, i, em, strong";
+    [...root.querySelectorAll(`${FORMATTING}, :is(${FORMATTING}) span`)].reverse().forEach((el) => {
       let last = el.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
         if (emptyElement(last)) {
@@ -506,6 +512,15 @@ var CustomImportScript = (() => {
     root.querySelectorAll("i").forEach((el) => rename2(el, "em"));
     root.querySelectorAll("span, font").forEach(unwrap2);
     root.querySelectorAll("strong strong, em em").forEach(unwrap2);
+    root.querySelectorAll("strong").forEach((strong) => {
+      const em = strong.querySelector(":scope > em");
+      const rest = [...strong.childNodes].filter((node) => node !== em);
+      if (!em || !rest.length || !rest.every((node) => node.nodeType === 3 && /^[\s.,;:!?)”’"']*$/.test(node.textContent))) return;
+      const nodes = [...strong.childNodes];
+      const at = nodes.indexOf(em);
+      em.prepend(...nodes.slice(0, at));
+      em.append(...nodes.slice(at + 1));
+    });
     root.querySelectorAll("strong, em").forEach((el) => {
       if (!el.textContent.trim() && !el.querySelector("img, br")) el.remove();
     });
@@ -593,9 +608,7 @@ var CustomImportScript = (() => {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
-    [...box.querySelectorAll("div")].reverse().forEach((div) => {
-      if (!div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table") && text(div)) rename2(div, "p");
-    });
+    divsToParagraphs(box);
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
     const plainBold = plainBoldParagraphs(box);
@@ -645,14 +658,33 @@ var CustomImportScript = (() => {
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
-    const nodes = [...component.querySelectorAll("img")].map((source) => {
+    const nodes = [...component.querySelectorAll("img")].flatMap((source) => {
       const img = doc.createElement("img");
       img.setAttribute("src", source.getAttribute("src"));
       img.setAttribute("alt", source.getAttribute("alt") || "");
       const p = doc.createElement("p");
       p.append(img);
-      return p;
+      const link2 = source.closest("a[href]");
+      const href = link2 && link2.getAttribute("href").trim();
+      if (!href || href === "#") return [p];
+      const a = doc.createElement("a");
+      a.setAttribute("href", newTabHref(link2, absoluteAsset(href)));
+      a.textContent = (source.getAttribute("alt") || "").trim() || text(link2) || href;
+      const line = doc.createElement("p");
+      line.append(a);
+      return [p, line];
     });
+    if (nodes.length) {
+      component.querySelectorAll(".c-standalone-image-content > p").forEach((caption) => {
+        if (!text(caption)) return;
+        const box = doc.createElement("div");
+        const p = doc.createElement("p");
+        p.innerHTML = caption.innerHTML;
+        box.append(p);
+        cleanRichText(box);
+        nodes.push(...box.children);
+      });
+    }
     if (nodes.length) {
       component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
         if (!text(title)) return;
@@ -853,11 +885,12 @@ var CustomImportScript = (() => {
       cleanRichText(heading);
       title.nodes.push(heading);
     }
-    const date = main.querySelector(".c-publish-date h5");
+    const date = main.querySelector(".c-publish-date h5:not(.hide)");
     if (date && text(date)) {
-      const h5 = doc.createElement("h5");
-      h5.textContent = text(date);
-      title.nodes.push(h5);
+      const value = text(date);
+      const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+      const month = m && "janfebmaraprmayjunjulaugsepoctnovdec".indexOf(m[2].toLowerCase()) / 3 + 1;
+      element.setAttribute("data-first-published", month >= 1 && Number.isInteger(month) ? `${m[3]}-${String(month).padStart(2, "0")}-${m[1].padStart(2, "0")}` : value);
     }
     if (!main.querySelector("h1")) promoteTitles(main);
     main.querySelectorAll(".experienceFragment").forEach((xf) => {
@@ -1100,6 +1133,7 @@ var CustomImportScript = (() => {
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
+      divsToParagraphs(box);
       cleanRichText(box, { wholeParagraphs: true });
       return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
     }), doc);
@@ -1465,6 +1499,11 @@ var CustomImportScript = (() => {
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
+      const firstPublished = main.getAttribute("data-first-published");
+      if (firstPublished) {
+        meta["first-published"] = firstPublished;
+        main.removeAttribute("data-first-published");
+      }
       if (published) meta.published = published;
       const shareImage = meta.Image && (meta.Image.querySelector ? meta.Image.querySelector("img") || meta.Image : meta.Image);
       const shareSrc = shareImage && shareImage.getAttribute && shareImage.getAttribute("src");

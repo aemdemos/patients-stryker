@@ -102,6 +102,17 @@ function unwrap(el) {
   el.replaceWith(...el.childNodes);
 }
 
+/**
+ * Some articles type their paragraphs as plain <div>s (e.g. the surgical smoke feature,
+ * the trademark notes in a disclaimer): a <div> holding only text and inline formatting
+ * is a paragraph.
+ */
+function divsToParagraphs(box) {
+  [...box.querySelectorAll('div')].reverse().forEach((div) => {
+    if (!div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table') && text(div)) rename(div, 'p');
+  });
+}
+
 function absoluteAsset(href) {
   return href && href.startsWith('/content/dam/') ? `${SOURCE_ORIGIN}${href}` : href;
 }
@@ -210,7 +221,10 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
     && !node.textContent.trim() && !node.querySelector('img, br');
   const trailingSpace = /[\s\u00a0]+$/;
-  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+  // plain spans inside the formatting count too: the break in "<span class=futura-bold>
+  // <span style="...">Want to see Rotator in action?<br></span></span>" must reach the outside
+  const FORMATTING = 'span.futura-bold, b, i, em, strong';
+  [...root.querySelectorAll(`${FORMATTING}, :is(${FORMATTING}) span`)].reverse().forEach((el) => {
     let last = el.lastChild;
     while (last && (last.nodeName === 'BR' || emptyElement(last)
       || (last.nodeType === 3 && !last.textContent.trim()))) {
@@ -265,6 +279,18 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   root.querySelectorAll('span, font').forEach(unwrap);
   // bold inside bold (e.g. <b><span class="futura-bold">) is one bold run
   root.querySelectorAll('strong strong, em em').forEach(unwrap);
+  // punctuation bolded next to a Futura bold run ("<b><span class=futura-bold>AM, also known
+  // as 3D printing</span>,</b>") joins the run: a bold-only comma beside bold + italic text
+  // would import as a literal "**,**"
+  root.querySelectorAll('strong').forEach((strong) => {
+    const em = strong.querySelector(':scope > em');
+    const rest = [...strong.childNodes].filter((node) => node !== em);
+    if (!em || !rest.length || !rest.every((node) => node.nodeType === 3 && /^[\s.,;:!?)”’"']*$/.test(node.textContent))) return;
+    const nodes = [...strong.childNodes];
+    const at = nodes.indexOf(em);
+    em.prepend(...nodes.slice(0, at));
+    em.append(...nodes.slice(at + 1));
+  });
   // a heading that is bold throughout keeps the bold (Futura); empty formatting goes
   root.querySelectorAll('strong, em').forEach((el) => { if (!el.textContent.trim() && !el.querySelector('img, br')) el.remove(); });
 
@@ -385,11 +411,7 @@ function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
-  // some articles type their paragraphs as plain <div>s (e.g. the surgical smoke feature):
-  // a <div> holding only text and inline formatting is a paragraph
-  [...box.querySelectorAll('div')].reverse().forEach((div) => {
-    if (!div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table') && text(div)) rename(div, 'p');
-  });
+  divsToParagraphs(box);
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
@@ -449,14 +471,36 @@ function imageColumnStyle(component) {
 }
 
 function imageNodes(component, doc) {
-  const nodes = [...component.querySelectorAll('img')].map((source) => {
+  const nodes = [...component.querySelectorAll('img')].flatMap((source) => {
     const img = doc.createElement('img');
     img.setAttribute('src', source.getAttribute('src'));
     img.setAttribute('alt', source.getAttribute('alt') || '');
     const p = doc.createElement('p');
     p.append(img);
-    return p;
+    // a linked image (e.g. a download: an infographic PDF): the link follows on its own
+    // line, named like the image (a DM image link can't also carry the target)
+    const link = source.closest('a[href]');
+    const href = link && link.getAttribute('href').trim();
+    if (!href || href === '#') return [p];
+    const a = doc.createElement('a');
+    a.setAttribute('href', newTabHref(link, absoluteAsset(href)));
+    a.textContent = (source.getAttribute('alt') || '').trim() || text(link) || href;
+    const line = doc.createElement('p');
+    line.append(a);
+    return [p, line];
   });
+  // a caption paragraph under the image (.c-standalone-image-content > p, body copy)
+  if (nodes.length) {
+    component.querySelectorAll('.c-standalone-image-content > p').forEach((caption) => {
+      if (!text(caption)) return;
+      const box = doc.createElement('div');
+      const p = doc.createElement('p');
+      p.innerHTML = caption.innerHTML;
+      box.append(p);
+      cleanRichText(box);
+      nodes.push(...box.children);
+    });
+  }
   // the image's caption heading (.title-content h4.title, Futura bold under the image)
   // follows it as a Heading 4 (news-detail.css sets the source h4)
   if (nodes.length) {
@@ -715,11 +759,17 @@ export default function transform(hookName, element, payload) {
     cleanRichText(heading);
     title.nodes.push(heading);
   }
-  const date = main.querySelector('.c-publish-date h5');
+  // the publish date below the title ("03-Apr-2020") is the `first-published` page
+  // metadata (YYYY-MM-DD; import-news-detail.js), shown by templates/news-detail/news-detail.js.
+  // A date the source hides (h5.hide, e.g. the network disruption updates) is not imported
+  const date = main.querySelector('.c-publish-date h5:not(.hide)');
   if (date && text(date)) {
-    const h5 = doc.createElement('h5');
-    h5.textContent = text(date);
-    title.nodes.push(h5);
+    const value = text(date);
+    const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+    const month = m && 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(m[2].toLowerCase()) / 3 + 1;
+    element.setAttribute('data-first-published', month >= 1 && Number.isInteger(month)
+      ? `${m[3]}-${String(month).padStart(2, '0')}-${m[1].padStart(2, '0')}`
+      : value);
   }
 
   // titles drawn as styled text (#441), on articles without an h1 (features whose whole
@@ -1038,6 +1088,7 @@ export default function transform(hookName, element, payload) {
   const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
+    divsToParagraphs(box);
     cleanRichText(box, { wholeParagraphs: true });
     return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
   }), doc);
