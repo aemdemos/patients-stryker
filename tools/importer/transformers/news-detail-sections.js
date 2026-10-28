@@ -47,6 +47,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -61,7 +62,20 @@ const COMPONENTS = [
   '.c-customizeable',
   '.c-section-separator',
   '.sectionseparator',
+  '.c-marketo-form',
+  '.xf-fragment',
 ].join(', ');
+
+// Shared Experience Fragments: the delivered HTML has no XF path, so each is recognised by
+// the start of its text and mapped to its XF path (xf-fragment-map.js lists them as shared).
+// An XF that matches none is not shared: its components are imported inline.
+const SHARED_XF_SIGNATURES = [
+  ['Connect with us Have feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master'],
+  ['Contact Information Customer support product feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master'],
+  ['Contact information Product feedback Customer service', '/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master'],
+  ['Resources Explore Sage homepage', '/content/experience-fragments/stryker/sage/en/footer/footer/master'],
+  ['Resources Explore Acute Care homepage', '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master'],
+];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = { A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'] };
@@ -862,12 +876,41 @@ function footnoteList(nodes, doc) {
   return out;
 }
 
+function fragmentBlock(path, doc) {
+  const a = doc.createElement('a');
+  a.setAttribute('href', path);
+  a.textContent = path;
+  return WebImporter.Blocks.createBlock(doc, { name: 'fragment', cells: [[a]] });
+}
+
+// each shared XF becomes a marker (`.xf-fragment[data-fragment]`) in place; the others are
+// returned so the import report can list them
+function markSharedFragments(main, doc) {
+  const inlined = [];
+  main.querySelectorAll('.experiencefragment').forEach((xf) => {
+    if (!xf.isConnected || xf.closest('header, footer, .modal')) return;
+    const signature = text(xf);
+    const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+    const path = match && xfFragmentPath(match[1]);
+    if (!path) {
+      if (signature) inlined.push(signature.slice(0, 80));
+      return;
+    }
+    const marker = doc.createElement('div');
+    marker.className = 'xf-fragment';
+    marker.setAttribute('data-fragment', path);
+    xf.replaceWith(marker);
+  });
+  return inlined;
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   if (!payload || !payload.template || payload.template.name !== 'news-detail') return;
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
 
+  const inlinedXf = markSharedFragments(main, doc);
   const sections = [];
   let current = null;
   let separatorNext = false;
@@ -993,6 +1036,32 @@ export default function transform(hookName, element, payload) {
         heading.remove();
       }
       section.nodes.push(component);
+      current = null;
+      return;
+    }
+    // a Marketo form: its own section; a shared fragment in the other column of its
+    // 2/3 + 1/3 row (the contact aside) goes after it in the same section, which gets the
+    // `form-with-aside` style. The fragments are kept as links, never copied.
+    if (component.matches('.c-marketo-form')) {
+      if (!component.querySelector('form[data-marketo-form-id]')) return;
+      const nodes = [component];
+      const formColumn = component.closest('[class*="col-sm-"]');
+      const row = formColumn && formColumn.parentElement;
+      const asides = row && row.closest('.colctrl')
+        ? [...row.children].filter((col) => col !== formColumn).flatMap((col) => [...col.querySelectorAll('.xf-fragment')])
+        : [];
+      asides.forEach((aside) => {
+        consumed.add(aside);
+        nodes.push(fragmentBlock(aside.getAttribute('data-fragment'), doc));
+      });
+      startSection('form', asides.length ? 'form-with-aside' : undefined).nodes.push(...nodes);
+      current = null;
+      return;
+    }
+    // a shared Experience Fragment (e.g. the "Connect with us" band): a fragment block in
+    // a section of its own
+    if (component.matches('.xf-fragment')) {
+      startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
       current = null;
       return;
     }
@@ -1145,4 +1214,10 @@ export default function transform(hookName, element, payload) {
     }
   });
   element.replaceChildren(...out);
+  const fragments = [...new Set(sections.flatMap((section) => section.nodes)
+    .flatMap((node) => (node.nodeType === 1 ? [...node.querySelectorAll('a[href^="/us/en/fragments/"]')] : []))
+    .map((a) => a.getAttribute('href')))];
+  if (fragments.length || inlinedXf.length) {
+    element.setAttribute('data-news-xf', JSON.stringify({ fragments, inlined: inlinedXf }));
+  }
 }
