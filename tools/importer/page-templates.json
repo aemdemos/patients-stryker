@@ -863,6 +863,29 @@
           ]
         }
       ]
+    },
+    {
+      "name": "long-page-detail-corp",
+      "description": "www.stryker.com long-page-detail pages, groups 1–3 (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; small print and document code as a `disclaimer` section; `published` + `last-updated: show` drive the corp Last Updated line, `page-back: show` the back link.",
+      "urls": [
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards131.html"
+      ],
+      "blocks": [
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
+          ]
+        },
+        {
+          "name": "cards-corp-resources",
+          "instances": [
+            ".c-resourcesanddownload"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,112 @@
+/* long-page-detail-corp — corp long-page-detail pages (`template: long-page-detail-corp`,
+   #469). CSS-only template.
+
+   Layout measured on the stryker.com long-page-detail pages (Virtual Learning Center
+   videos, video detail pages, text articles) at 375 / 1000 / 1440:
+   - title section (the first section with content): the H1, Futura bold 28px from 600px
+     (the light serif on phones), no rule below it
+   - the content starts 15px below the H1, and the sections follow each other 15px apart
+     (the source runs them as one column of components with 15px margins) */
+
+/* ---- title section ---- */
+
+body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+/* ---- section spacing ---- */
+
+body.long-page-detail-corp main > .section {
+  margin-bottom: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+/* ---- section title: an underlined Heading 2 and its Heading 3 description ----
+   From 600px the description is 2/3 of the column (source .c-section-title h3
+   { width: 66.66% } from 840px) */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .default-content-wrapper > h2.underline + h3 {
+    max-width: calc(100% * 2 / 3);
+  }
+}
+
+/* ---- downloads (Cards Corp resources) on phones ----
+   Below 600px (source 768px) each download is a row, as the stryker.com downloads
+   component shows it: the cover about a third of the card (source 33% inside its 15px
+   padding: 103px at 375px), the title beside it. From 600px the variant's grid of covers */
+body.long-page-detail-corp main .cards-corp.resources > ul > li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-block-xs);
+}
+
+body.long-page-detail-corp main .cards-corp.resources .cards-corp-card-image {
+  flex: 0 0 30%;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .cards-corp.resources > ul > li {
+    display: list-item;
+  }
+}
+
+/* ---- section style `column-10-12`: the Virtual Learning Center video item ----
+   From 900px (source 1024px) a centred 10/12 column, as the stryker.com AEM grid sets it
+   (10 columns, offset 1: 1175px at 1440px), the video, title and copy 15px in (1144px at
+   x=148). The downloads row is 11/12 wide from the same left edge (six 184px covers at
+   1440px). Full width below 900px, as on the source phones.
+   Spacing measured on the source: video → title 20px (30px from 600px), description →
+   downloads 20px (29px), downloads → small print 27px (40px); the small print (11.2px)
+   keeps the 14px paragraph's 19.25px lines. The gaps are set as top margins (they collapse
+   with the 15px margin of the video / description above) */
+body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper + .default-content-wrapper,
+body.long-page-detail-corp main > .section.column-10-12 > .default-content-wrapper + .cards-corp-wrapper {
+  margin-top: var(--space-block-l);
+}
+
+body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:last-child) {
+  margin-bottom: calc(var(--space-block) + var(--space-block-s));
+}
+
+body.long-page-detail-corp main > .section.disclaimer.column-10-12 p {
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper + .default-content-wrapper,
+  body.long-page-detail-corp main > .section.column-10-12 > .default-content-wrapper + .cards-corp-wrapper {
+    margin-top: var(--space-section);
+  }
+
+  body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:last-child) {
+    margin-bottom: calc(var(--space-section) + var(--space-block-s));
+  }
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp main > .section.column-10-12 > div {
+    max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+  }
+
+  body.long-page-detail-corp main > .section.column-10-12 > .cards-corp-wrapper {
+    max-width: calc(min(100vw, var(--container-max)) * 11 / 12);
+    margin-inline: calc((100% - min(100vw, var(--container-max)) * 10 / 12) / 2) auto;
+  }
+}
+
+/* ---- video caption (video detail pages): 10px below the video, as on the source ---- */
+body.long-page-detail-corp main > .section:not(.column-10-12) > .video-wrapper .video p {
+  margin-bottom: var(--space-block-s);
+}
+
+/* ---- Dynamic Media video: the 1px frame inside the video box (lazy-styles.css draws it
+   outside, 2px wider than the column); the source video is 1380px including its frame ---- */
+body.long-page-detail-corp main .dm-video {
+  box-sizing: border-box;
+}
