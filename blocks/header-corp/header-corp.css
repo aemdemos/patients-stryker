@@ -164,6 +164,7 @@ header.header-corp-wrapper {
   height: 40px;
   padding: 8px 11px;
   border: 0;
+  outline: 0; /* as on www.stryker.com: no ring on the search box, focused it shows its text cursor */
   color: var(--color-surface-muted);
   background: var(--color-surface);
   font: inherit;
@@ -664,17 +665,12 @@ body.hcp-banner .header-corp .hcp-band {
 
 /* ---- keyboard focus ---- */
 
-/* keyboard focus: every header control shows a ring while it has keyboard focus (mouse clicks
-   don't). Drawn inside the box, so the clipped drawer, gold bar and fly-outs don't cut it off,
+/* keyboard focus: every header link and button shows a ring while it has keyboard focus (mouse
+   clicks don't; the search box has none, see .search-control). Drawn inside the box, so the clipped drawer, gold bar and fly-outs don't cut it off,
    in the control's text colour, so it shows on white, gold, grey and the dark open item alike */
-.header-corp :is(a, button, input):focus-visible {
+.header-corp :is(a, button):focus-visible {
   outline: var(--corp-focus-ring) solid currentcolor;
   outline-offset: calc(-1 * var(--corp-focus-ring));
-}
-
-/* the search box's text colour is a light grey: its ring uses the dark header grey */
-.header-corp .search-control:focus-visible {
-  outline-color: var(--color-secondary);
 }
 
 /* the globe link is a zero-width box around its floated icon, and the logo link the 24px icon
