@@ -119,6 +119,32 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 700;
 }
 
+/* bold links that decorateButtons() left as links are text, not the shared button fallback,
+   on stryker.com: a bold link in a default-content heading (e.g. the "Business Wire" heading
+   after "Read the full article:") keeps the heading's font, size and colour; a bold link in a
+   paragraph (sentence-style text such as "Please click here for the full article.", or a bold
+   link inside a sentence) is bold teal text in the paragraph's font. The hover rule below
+   turns both darker teal. */
+:where(body.corp) main :where(.default-content-wrapper > :is(h1, h2, h3, h4, h5, h6)) > strong > a:any-link:not(:has(u)),
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  color: var(--link-color);
+}
+
 /* links and bold + underline CTAs use a darker teal on hover/focus */
 :where(body.corp) a:any-link:hover,
 :where(body.corp) a:any-link:focus-visible,
@@ -339,6 +365,15 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
+/* p-2: 28px copy (stryker.com .fontsize-2em, lines 1.06), e.g. the Egyptienne subtitle of
+   the "Trees, landfills and the environment" feature */
+:where(body.corp) main > .section.p-2 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
 /* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
    e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
    token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
@@ -384,6 +419,36 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* headline-1-5vw: the same Large Headline title at 1.5vw (stryker.com span.fontsize-1-5-vw,
+   e.g. the Neuroform Atlas expanded-indication release): 3vw, from 600px (source 841px)
+   1.5vw capped at 21px; lines 1.35. The source keeps 5px (15px from 600px) more below it
+   than the section gap (20px / 30px to the separator) */
+:where(body.corp) main > .section.headline-1-5vw {
+  --corp-headline-vw: 1.5vw;
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+  padding-bottom: var(--space-block-xs);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-1-5vw {
+    --corp-headline-vw: 0.75vw;
+  }
+
+  :where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+    padding-bottom: var(--space-block);
+  }
+}
+
 /* h1-21: a page title the source sets as a 1.5em Futura bold line opening the first rich
    text, with no page title (e.g. the Emergency Relief Bed release): the page H1 at 21px,
    lines 1.2 (25.2px; source 25.3px) */
@@ -393,6 +458,21 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-l);
   font-weight: var(--font-weight-bold);
   line-height: var(--corp-heading-line-height-s);
+}
+
+/* h1-42: the same opening title line set in a 2em and a 1.5em size span (3em, Futura bold
+   42px, lines 1.06; e.g. the "Trees, landfills and the environment" feature). The title
+   flows into the text below it: one paragraph gap (15px on the source), not a section gap */
+:where(body.corp) main > .section.h1-42 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-42 > .default-content-wrapper h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
 }
 
 /* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
@@ -477,6 +557,34 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
 :where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
   font-family: inherit;
+}
+
+/* section style `standalone-url`: a bold + underline link that shows its own URL keeps the
+   standalone link look (stryker.com span.standalone-link around a URL: Futura bold, uppercase,
+   teal, trailing arrow — e.g. the "Urgent 11" bulletin). scripts.js does not turn links whose
+   text is their URL into a.link-strong, so the section carries the look instead */
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) u {
+  text-decoration: none;
+  text-transform: inherit;
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u)::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
 }
 
 :where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
