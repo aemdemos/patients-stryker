@@ -3565,7 +3565,25 @@ var CustomImportScript = (() => {
     const headingSize = sizes.size === 1 ? [...sizes][0] : "";
     return [...copy ? copy.split(", ") : [], serif ? "h-serif" : "", headingSize, boldBody ? "bold-body" : ""].filter(Boolean);
   }
-  function columnItems(columns, split, ctx) {
+  var FRACTIONS = {
+    3: "1-4",
+    4: "1-3",
+    6: "1-2",
+    8: "2-3",
+    9: "3-4"
+  };
+  function columnStyles(widths, index, ctx) {
+    if (!widths || !widths[index]) return [];
+    const width = widths[index];
+    const start = widths.slice(0, index).reduce((sum, w) => sum + w, 0);
+    if (width >= 12) return [];
+    if (!FRACTIONS[width] || start && !FRACTIONS[start]) {
+      ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
+      return [];
+    }
+    return [`col-${FRACTIONS[width]}`, ...start ? [`col-at-${FRACTIONS[start]}`] : []];
+  }
+  function columnItems(columns, split, ctx, widths = null) {
     const { doc } = ctx;
     const anchors = [];
     const cols = columns.map((items) => items.filter((it) => {
@@ -3574,7 +3592,11 @@ var CustomImportScript = (() => {
     }));
     const filled = cols.filter(hasContent);
     if (!filled.length) return anchors;
-    if (filled.length === 1) return [...anchors, { type: "boundary" }, ...filled[0], { type: "boundary" }];
+    if (filled.length === 1) {
+      const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx);
+      if (!styles.length) return [...anchors, { type: "boundary" }, ...filled[0], { type: "boundary" }];
+      return [...anchors, { type: "group", styles, items: filled[0] }];
+    }
     const all = filled.flat();
     if (filled.every((items) => items.every((it) => it.type === "counter"))) {
       return [...anchors, {
@@ -3675,12 +3697,13 @@ var CustomImportScript = (() => {
     const row = el.querySelector(":scope > .colctrl > .row") || el.querySelector(".row");
     const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
     const items = columns.map((col) => ctx.collect(col));
+    const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
     if (split === "cols" || columns.length < 2) {
       const flat = items.flat();
       return hasContent(flat) ? [{ type: "boundary" }, ...flat, { type: "boundary" }] : flat;
     }
     if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
-    return columnItems(items, SPLITS[split] || {}, ctx);
+    return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
   }
   function gridRow(columns, widths, ctx) {
     const split = GRID_SPLITS[widths.join(",")];
@@ -3688,7 +3711,7 @@ var CustomImportScript = (() => {
       ctx.report.notes.push(`responsive grid row ${widths.join("+")}: no Columns variant, stacked`);
       return columns.flat();
     }
-    return columnItems(columns, split, ctx);
+    return columnItems(columns, split, ctx, widths);
   }
   function textComponent(el, ctx) {
     const source = el.querySelector(".c-rich-text-editor > div") || el.querySelector(".c-rich-text-editor") || el;

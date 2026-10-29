@@ -334,6 +334,29 @@ function cellStyles(cells, ctx) {
   return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : '', headingSize, boldBody ? 'bold-body' : ''].filter(Boolean);
 }
 
+// a fraction of the 12-column grid → its style suffix (8 → 2-3)
+const FRACTIONS = {
+  3: '1-4', 4: '1-3', 6: '1-2', 8: '2-3', 9: '3-4',
+};
+
+/**
+ * The section styles of a column with content of its own in an otherwise empty column
+ * control (widths in twelfths): col-<width> and, when it does not start at the left,
+ * col-at-<start> (e.g. a 2/3 column at the left → col-2-3; the right half → col-1-2,
+ * col-at-1-2). Full-width or unknown splits: none.
+ */
+function columnStyles(widths, index, ctx) {
+  if (!widths || !widths[index]) return [];
+  const width = widths[index];
+  const start = widths.slice(0, index).reduce((sum, w) => sum + w, 0);
+  if (width >= 12) return [];
+  if (!FRACTIONS[width] || (start && !FRACTIONS[start])) {
+    ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
+    return [];
+  }
+  return [`col-${FRACTIONS[width]}`, ...(start ? [`col-at-${FRACTIONS[start]}`] : [])];
+}
+
 /**
  * A column control (or a responsive-grid row) → items, by the approved branch order:
  * A all empty → nothing; B one column → its content; counters only → Statistics; C a form
@@ -342,8 +365,9 @@ function cellStyles(cells, ctx) {
  * column → Cards Corp; G → Columns (variant by the split, modifiers by the cell content).
  * @param {object[][]} columns the items of each column
  * @param {object} split { variant, flex, cards } of the column control
+ * @param {number[]} [widths] the columns' widths in twelfths (rendered col-sm-N)
  */
-export function columnItems(columns, split, ctx) {
+export function columnItems(columns, split, ctx, widths = null) {
   const { doc } = ctx;
   const anchors = [];
   const cols = columns.map((items) => items.filter((it) => {
@@ -352,7 +376,13 @@ export function columnItems(columns, split, ctx) {
   }));
   const filled = cols.filter(hasContent);
   if (!filled.length) return anchors;
-  if (filled.length === 1) return [...anchors, { type: 'boundary' }, ...filled[0], { type: 'boundary' }];
+  if (filled.length === 1) {
+    // B: one column with content: its content, at that column's width and position
+    // (lift and shift: e.g. a news article body in the 2/3 column of a 2/3 + 1/3 control)
+    const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx);
+    if (!styles.length) return [...anchors, { type: 'boundary' }, ...filled[0], { type: 'boundary' }];
+    return [...anchors, { type: 'group', styles, items: filled[0] }];
+  }
 
   const all = filled.flat();
   if (filled.every((items) => items.every((it) => it.type === 'counter'))) {
@@ -450,13 +480,14 @@ function columnControl(el, ctx) {
   const row = el.querySelector(':scope > .colctrl > .row') || el.querySelector('.row');
   const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
   const items = columns.map((col) => ctx.collect(col));
+  const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
   // cols: one column = a section boundary
   if (split === 'cols' || columns.length < 2) {
     const flat = items.flat();
     return hasContent(flat) ? [{ type: 'boundary' }, ...flat, { type: 'boundary' }] : flat;
   }
   if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
-  return columnItems(items, SPLITS[split] || {}, ctx);
+  return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
 }
 
 function gridRow(columns, widths, ctx) {
@@ -465,7 +496,7 @@ function gridRow(columns, widths, ctx) {
     ctx.report.notes.push(`responsive grid row ${widths.join('+')}: no Columns variant, stacked`);
     return columns.flat();
   }
-  return columnItems(columns, split, ctx);
+  return columnItems(columns, split, ctx, widths);
 }
 
 /* ---------- components ---------- */
@@ -1259,6 +1290,19 @@ function publishDate(el, ctx) {
 }
 
 /**
+ * A template slot (news-detail: the lead image and intro text slots sit in the template's
+ * col-sm-8 column, not in a column control) keeps that column's width, like the one filled
+ * column of a column control (columnStyles).
+ */
+const inTemplateColumn = (handler) => (el, ctx) => {
+  const items = handler(el, ctx);
+  const col = el.closest('[class*="col-sm-"]');
+  const width = col && Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]);
+  const styles = width && width < 12 && items.length ? columnStyles([width], 0, ctx) : [];
+  return styles.length ? [{ type: 'group', styles, items }] : items;
+};
+
+/**
  * Event location (news-detail template slot, component-map eventlocationproperties: default
  * content): the location line under the date as a Heading 5, as live; empty on most pages.
  */
@@ -1311,8 +1355,8 @@ export const COMPONENTS = {
   // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
   // publish date and the event location under the title, and the template's "back" link
   // (navigation, not authored)
-  'c-standalone-image': standaloneImage,
-  'c-rich-text-editor': textComponent,
+  'c-standalone-image': inTemplateColumn(standaloneImage),
+  'c-rich-text-editor': inTemplateColumn(textComponent),
   'c-publish-date': publishDate,
   'c-event-location-properties': eventLocation,
   'c-back-button': skip,

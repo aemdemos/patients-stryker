@@ -35,14 +35,30 @@ export function parseSpacing(tokens) {
 const boxes = new Map();
 let observer = null;
 
+/**
+ * Sets the box's spacing in px. AEM resolves the % against the column's inner width (the
+ * box without the column gutters), so the reference is the element's width without its own
+ * padding; the values add to that padding (the gutter stays). Left / right margins are
+ * added as padding: the element keeps its own (auto) margins, and the box has no
+ * background of its own in our markup, so the text lands where AEM puts it.
+ */
 function apply(el) {
-  const spacing = boxes.get(el);
-  if (!spacing) return;
-  const { width } = el.getBoundingClientRect();
-  spacing.forEach(({ prop, value, unit }) => {
-    el.style[prop] = unit === 'px' ? `${value}px` : `${Math.round((value * width) / 10) / 10}px`;
+  const box = boxes.get(el);
+  if (!box) return;
+  const { spacing, base } = box;
+  const reference = el.getBoundingClientRect().width - base.paddingLeft - base.paddingRight;
+  const px = ({ value, unit }) => (unit === 'px' ? value : (value * reference) / 100);
+  const extra = {};
+  spacing.forEach((s) => {
+    const prop = s.prop.replace(/^margin(Left|Right)$/, 'padding$1');
+    extra[prop] = (extra[prop] || 0) + px(s);
+  });
+  Object.entries(extra).forEach(([prop, value]) => {
+    el.style[prop] = `${Math.round((base[prop] + value) * 10) / 10}px`;
   });
 }
+
+const PROPS = ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight', 'marginTop', 'marginBottom'];
 
 /**
  * Gives an element its box spacing, kept in step with its width.
@@ -51,7 +67,9 @@ function apply(el) {
  */
 function setBox(el, spacing) {
   if (!spacing.length) return;
-  boxes.set(el, spacing);
+  const cs = getComputedStyle(el);
+  const base = Object.fromEntries(PROPS.map((p) => [p, parseFloat(cs[p]) || 0]));
+  boxes.set(el, { spacing, base });
   if (!observer && window.ResizeObserver) {
     observer = new ResizeObserver((entries) => entries.forEach((entry) => apply(entry.target)));
   }
