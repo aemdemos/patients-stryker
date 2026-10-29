@@ -23,7 +23,7 @@
  * The items are then placed into sections (place) and rendered as <hr>-separated sections
  * with Section Metadata (style, id).
  */
-import { text } from './corp-richtext.js';
+import { text, finishRuns } from './corp-richtext.js';
 
 // elements that are never content
 const NOT_CONTENT = new Set(['SCRIPT', 'STYLE', 'LINK', 'NOSCRIPT', 'INPUT', 'TEMPLATE', 'META', 'BUTTON']);
@@ -273,6 +273,8 @@ export function createBuilder({
     const out = [];
     sections.filter((s) => s.nodes.length).forEach((section, i) => {
       if (i > 0) out.push(doc.createElement('hr'));
+      // run sizes / fonts the section styles do not give → bracket tags (corp-richtext.js)
+      finishRuns(section.nodes, section.styles);
       out.push(...section.nodes);
       const cells = {};
       if (section.styles.length) cells.style = section.styles.join(', ');

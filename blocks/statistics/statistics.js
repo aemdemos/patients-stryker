@@ -127,6 +127,17 @@ export default function decorate(block) {
   const list = document.createElement('ul');
   list.className = 'statistics-list';
 
+  // a first row holding only a heading is the block's title (above the stats)
+  const first = block.firstElementChild;
+  const heading = first && first.children.length === 1
+    && first.firstElementChild.querySelector(':scope > :is(h1, h2, h3, h4, h5, h6):only-child');
+  let title = null;
+  if (heading) {
+    title = heading;
+    title.classList.add('statistics-title');
+    first.remove();
+  }
+
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'statistics-item';
@@ -157,7 +168,7 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  block.replaceChildren(list);
+  block.replaceChildren(...(title ? [title] : []), list);
 
   // optional count-up animation, enabled via the `count-up` authoring variant
   if (block.classList.contains('count-up')) setupCountUp(block);

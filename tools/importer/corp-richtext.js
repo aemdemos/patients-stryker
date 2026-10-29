@@ -171,6 +171,150 @@ export function copyStyles(root) {
   return [size, font && font[1]].filter(Boolean).join(', ');
 }
 
+/* ---------- run sizes and fonts (lift and shift) ---------- */
+
+/**
+ * The text next to a node on its own line: its siblings up to the next <br> (or the
+ * start / end of the parent) in one direction.
+ */
+function sameLineText(node, direction) {
+  let value = '';
+  let sibling = node[direction];
+  while (sibling && sibling.nodeName !== 'BR') {
+    value += sibling.textContent;
+    sibling = sibling[direction];
+  }
+  return squash(value);
+}
+
+// the source's vw sizes: fontsize-2vw, fontsize-2-5-vw → 2, 2.5 (0 for other classes)
+function vwFactor(cls) {
+  const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?-?vw$/);
+  return m ? Number(`${m[1]}.${m[2] || 0}`) : 0;
+}
+
+const RUN_TAG = 'x-run';
+const RUN_NAME = /^x-run-e(\d+)-(\d+)-v(\d+)-(\d+)-s([012])$/i;
+const round = (n) => Math.round(n * 10000) / 10000;
+const num = (n) => String(round(n)).replace('.', '-');
+// font: 1 = Egyptienne, 2 = bold in the body font (a plain <b> inside the copy)
+const runName = ({ em, vw, font }) => {
+  const [ei, ed = '0'] = String(round(em)).split('.');
+  const [vi, vd = '0'] = String(vw).split('.');
+  return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
+};
+
+/** The size and font of a text run in its block element (see markRuns). */
+function runOf(textNode, blockEl, serifDefault) {
+  const chain = [];
+  for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
+  // innermost first: the em classes below the innermost vw class multiply, the first font
+  // class met is the one that applies
+  const props = chain.reduce((acc, e) => {
+    [...e.classList].forEach((cls) => {
+      if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+      else if (!acc.vw) acc.em *= sizeFactor(cls);
+    });
+    if (!acc.font && e.classList.contains('urw-egyptienne')) acc.font = 'serif';
+    if (!acc.font && e.classList.contains('futura-bold')) acc.font = 'futura';
+    return acc;
+  }, { em: 1, vw: 0, font: '' });
+  const font = props.font || (serifDefault ? 'serif' : '');
+  // a plain bold (<b>, not span.futura-bold): the body font in copy (Futura on the site), the
+  // heading's Egyptienne in h1–h3. Labels on their own line and paragraphs bold throughout
+  // have their own rules (tagPlainBoldLabels, plainBoldParagraphs)
+  const b = props.font !== 'futura' && chain.find((e) => e.tagName === 'B');
+  const heading = /^H/.test(blockEl.tagName);
+  let code = 0;
+  if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) ? 1 : 0;
+  else if (font === 'serif') code = 1;
+  else if (b && squash(b.textContent) !== squash(blockEl.textContent)
+    && (sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling'))) code = 2;
+  return { em: props.em, vw: props.vw, font: code };
+}
+
+/**
+ * The size and font of every text run, read before cleaning (which drops the source's span
+ * classes): a run in its own size (nested .fontsize-*em classes multiply, below the innermost
+ * vw class), in a vw size (.fontsize-<n>vw, the innermost one) or in Egyptienne
+ * (span.urw-egyptienne, unless a span.futura-bold inside it) is wrapped in an <x-run-…>
+ * element named after those values (it survives the cleaning, cloning and attribute
+ * stripping). finishRuns() turns the runs whose look the section styles do not give into
+ * bracket tags. Text at the default size and font is left as it is. serifDefault: copy without
+ * a font class is Egyptienne (the Large Headline component's default, e.g. aaa-2023 line 2).
+ */
+export function markRuns(root, { serifDefault = false } = {}) {
+  const doc = root.ownerDocument;
+  const walker = doc.createTreeWalker(root, 4); // NodeFilter.SHOW_TEXT
+  const runs = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    const blockEl = n.parentElement && n.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6');
+    if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
+      const props = runOf(n, blockEl, serifDefault);
+      if (Math.abs(props.em - 1) > 0.001 || props.vw || props.font) runs.push([n, props]);
+    }
+  }
+  runs.forEach(([n, props]) => {
+    const run = doc.createElement(runName(props));
+    n.replaceWith(run);
+    run.append(n);
+  });
+}
+
+// section style → copy size factor (styles-corp.css p-*), heading size factor (h-*)
+const COPY_FACTORS = {
+  'p-0-8': 0.8, 'p-1': 1, 'p-1-25': 1.25, 'p-1-5': 1.5, 'p-1-75': 1.75, 'p-2': 2, 'p-2-5': 2.5,
+};
+const HEADING_FACTORS = { 'h-0-8': 0.8, 'h-1-25': 1.25, 'h-1-5': 1.5 };
+
+/**
+ * The marked runs (markRuns) of a section's nodes → bracket tags, for what the section
+ * styles do not already give them (scripts/corp-type.js renders the tags):
+ *   - a vw size → [[size-<n>vw]] (always: no section style carries it)
+ *   - a size other than the section's copy size (headings: their h-* size) → [[size-<n>em]]
+ *     (copy: × the 14px base copy, headings: × the heading)
+ *   - Egyptienne copy in a section without the serif style, Egyptienne bold → [[serif]]
+ *   - a plain bold inside the copy (the body font, bold) → [[body-font]], unless bold-body
+ * In a Hero Corp block with size-<n> only the vw sizes are tagged (the block sizes its lines).
+ * @param {Element[]} nodes the section's nodes
+ * @param {string[]} styles the section's styles
+ */
+export function finishRuns(nodes, styles) {
+  const copy = styles.map((s) => COPY_FACTORS[s]).find(Boolean) || 1;
+  const heading = styles.map((s) => HEADING_FACTORS[s]).find(Boolean) || 1;
+  const serifSection = styles.includes('serif');
+  nodes.forEach((node) => {
+    if (node.nodeType !== 1) return;
+    const runs = [node, ...node.querySelectorAll('*')].filter((el) => el.tagName.toLowerCase().startsWith(`${RUN_TAG}-`));
+    runs.forEach((run) => {
+      const m = run.tagName.match(RUN_NAME);
+      const doc = run.ownerDocument;
+      const tags = [];
+      if (m) {
+        const em = Number(`${m[1]}.${m[2]}`);
+        const vw = Number(`${m[3]}.${m[4]}`);
+        // a Hero Corp with size-<n> sizes its lines itself (only their vw sizes are tagged)
+        const table = run.closest('table');
+        const name = table ? text(table.querySelector('tr')) : '';
+        const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
+        const isHeading = !!run.closest('h1, h2, h3, h4, h5, h6');
+        const base = isHeading ? heading : copy;
+        if (vw) tags.push(`size-${num(vw)}vw`);
+        else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+        // serif runs: tagged unless the section is serif; inside a plain bold (<b>, which the
+        // site sets in Futura) always (Egyptienne bold on live)
+        if (!inHero && m[5] === '1' && (!serifSection || run.closest('strong'))) tags.push('serif');
+        if (m[5] === '2' && !styles.includes('bold-body')) tags.push('body-font');
+      }
+      if (tags.length) {
+        run.before(doc.createTextNode(`[[${tags.join(',')}]`));
+        run.after(doc.createTextNode(']'));
+      }
+      unwrap(run);
+    });
+  });
+}
+
 /* ---------- colour ---------- */
 
 // bracket colour classes (styles/styles.css span.color-*) by their exact hex
@@ -259,8 +403,9 @@ function wrapInTag(first, last, cls) {
 
 /**
  * Coloured text → bracket tags. An element with an inline colour gets its own text wrapped
- * as [[color-<name>]…]; children with a colour of their own (black included) are left out and
- * handled on their own. Black / default colours get no tag.
+ * as [[color-<name>]…]; descendants with a colour of their own (black included), at any depth,
+ * are left out and handled on their own (a black word in a size span inside a gold span stays
+ * black, orthopaedic "Precision Falcon"). Black / default colours get no tag.
  */
 export function mapColours(root) {
   const coloured = [...root.querySelectorAll('[style*="color"], font[color]')]
@@ -279,34 +424,27 @@ export function mapColours(root) {
     const cls = colourClass(own.get(el));
     if (!cls) return;
     if (cls === 'color-teal' && linkOnly(el)) return;
-    let run = [];
-    const flush = () => {
-      if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
-      run = [];
+    const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll('*')].some((d) => own.get(d));
+    const wrapFree = (parent) => {
+      let run = [];
+      const flush = () => {
+        if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+        run = [];
+      };
+      [...parent.childNodes].forEach((child) => {
+        if (child.nodeType === 1 && own.get(child)) flush();
+        else if (hasOwn(child)) {
+          flush();
+          wrapFree(child);
+        } else run.push(child);
+      });
+      flush();
     };
-    [...el.childNodes].forEach((child) => {
-      if (child.nodeType === 1 && own.get(child)) flush();
-      else run.push(child);
-    });
-    flush();
+    wrapFree(el);
   });
 }
 
 /* ---------- bold, links, cleanup ---------- */
-
-/**
- * The text next to a node on its own line: its siblings up to the next <br> (or the
- * start / end of the parent) in one direction.
- */
-function sameLineText(node, direction) {
-  let value = '';
-  let sibling = node[direction];
-  while (sibling && sibling.nodeName !== 'BR') {
-    value += sibling.textContent;
-    sibling = sibling[direction];
-  }
-  return squash(value);
-}
 
 /**
  * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the

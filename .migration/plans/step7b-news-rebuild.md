@@ -200,3 +200,35 @@ differ. By cause:
   - "Link lists rendering as LI 14px" (blueprint, surgical learn, ems) was a comparison tool
     error: it measured the card's list item instead of the title inside it. The tool now
     skips wrapper elements (DIV, SECTION, …); blueprint has 0 differences.
+
+## Batch 2026-10-29 (2): tier2 typography, run by run (lift and shift)
+- **Run tags.** AEM sets sizes and fonts on spans inside paragraphs; section styles only carry
+  one look per section. The importer now records each text run's size and font before
+  cleaning (`markRuns`) and writes bracket tags only where the section styles do not already
+  give the run its look (`finishRuns`, per section, in the section builder):
+  - `[[size-<n>vw]…]`: the source .fontsize-<n>vw classes (2 × <n>vw on phones, <n>vw up to
+    <n> × 14px from 600px; the live CSS: 2 × <n>vw below 840px, <n>vw, <n> × 14px from 1439px)
+  - `[[size-<n>em]…]`: the product of nested .fontsize-*em classes (2.1875 = 1.25 × 1.75), × 14px
+    in copy, × the heading in headings, when it differs from the section's p-* / h-* size
+  - `[[serif]…]`: Egyptienne copy where the section is not serif, serif inside a plain bold;
+    a plain bold in an h1–h3 (Egyptienne bold on live)
+  - `[[body-font]…]`: a plain bold inside a line of copy (Humanist bold on live)
+  - Large Headline copy without a font class is Egyptienne (the component default)
+  - rendered by scripts/corp-type.js and styles-corp.css (span.corp-vw, span.serif)
+- **Also:** h4 14px on phones site-wide (was news only); Statistics (fast-facts) for the
+  stryker.com Fast Facts panel (title row + number beside text, measured on surgical/learn);
+  a Large Headline line promoted to h1 is plain bold (was gold); the Large Headline band size
+  only on the section's own headings (not card titles in it), h-serif wins in the band; Hero
+  Corp without size-<n> keeps the page type (vw lines carry tags); colour tags leave nested
+  own colours out at any depth.
+- **Tools:** compare.mjs measures the first text run (the leaf), probe.mjs (box tree of one
+  component, live vs preview), authored.mjs (where a text is authored in the exports),
+  run-all.sh (batch re-import + comparison in the background).
+- **Result** (39 pilots, live re-measured): style diffs pd+lpd 51 / 50 → 17 / 19, t2+news
+  66 / 70 → 17 / 22 (1440 / 375); height distance t2+news 1.80 / 1.84 → 1.75 / 1.40. Coverage
+  91/91, no regressions (one page 1% shorter).
+- **Left:** nailing product links (a black bold link 21px on live, a button here); inspace
+  banner h4 (Columns large-headline sets h4 in serif, Futura on live); inspace hero h1 line
+  without a vw size takes the hero size-3-5; curated CTA title (Egyptienne, black link on
+  live); "In my practice" light grey rgb(237,238,236) rounded to white; focusrn h1 56px in a
+  Columns cell (28px live); EMS footer labels 21px (17.5px live).

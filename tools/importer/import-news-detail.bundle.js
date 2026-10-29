@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-news-detail.js
+  // ../../../tools/importer/import-news-detail.js
   var import_news_detail_exports = {};
   __export(import_news_detail_exports, {
     default: () => import_news_detail_default
   });
 
-  // tools/importer/transformers/corp-sections.js
+  // ../../../tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-cleanup.js
+  // ../../../tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -234,7 +234,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-dm-images.js
+  // ../../../tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -302,7 +302,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-richtext.js
+  // ../../../tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -408,6 +408,108 @@ var CustomImportScript = (() => {
     const font = FONT_STYLES.find(([cls]) => copy.every((el) => coveredBy(el, cls)));
     return [size, font && font[1]].filter(Boolean).join(", ");
   }
+  function sameLineText(node, direction) {
+    let value = "";
+    let sibling = node[direction];
+    while (sibling && sibling.nodeName !== "BR") {
+      value += sibling.textContent;
+      sibling = sibling[direction];
+    }
+    return squash(value);
+  }
+  function vwFactor(cls) {
+    const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?-?vw$/);
+    return m ? Number(`${m[1]}.${m[2] || 0}`) : 0;
+  }
+  var RUN_TAG = "x-run";
+  var RUN_NAME = /^x-run-e(\d+)-(\d+)-v(\d+)-(\d+)-s([012])$/i;
+  var round = (n) => Math.round(n * 1e4) / 1e4;
+  var num = (n) => String(round(n)).replace(".", "-");
+  var runName = ({ em, vw, font }) => {
+    const [ei, ed = "0"] = String(round(em)).split(".");
+    const [vi, vd = "0"] = String(vw).split(".");
+    return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
+  };
+  function runOf(textNode, blockEl, serifDefault) {
+    const chain = [];
+    for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
+    const props = chain.reduce((acc, e) => {
+      [...e.classList].forEach((cls) => {
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+        else if (!acc.vw) acc.em *= sizeFactor(cls);
+      });
+      if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
+      if (!acc.font && e.classList.contains("futura-bold")) acc.font = "futura";
+      return acc;
+    }, { em: 1, vw: 0, font: "" });
+    const font = props.font || (serifDefault ? "serif" : "");
+    const b = props.font !== "futura" && chain.find((e) => e.tagName === "B");
+    const heading = /^H/.test(blockEl.tagName);
+    let code = 0;
+    if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) ? 1 : 0;
+    else if (font === "serif") code = 1;
+    else if (b && squash(b.textContent) !== squash(blockEl.textContent) && (sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling"))) code = 2;
+    return { em: props.em, vw: props.vw, font: code };
+  }
+  function markRuns(root, { serifDefault = false } = {}) {
+    const doc = root.ownerDocument;
+    const walker = doc.createTreeWalker(root, 4);
+    const runs = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      const blockEl = n.parentElement && n.parentElement.closest("p, li, h1, h2, h3, h4, h5, h6");
+      if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
+        const props = runOf(n, blockEl, serifDefault);
+        if (Math.abs(props.em - 1) > 1e-3 || props.vw || props.font) runs.push([n, props]);
+      }
+    }
+    runs.forEach(([n, props]) => {
+      const run = doc.createElement(runName(props));
+      n.replaceWith(run);
+      run.append(n);
+    });
+  }
+  var COPY_FACTORS = {
+    "p-0-8": 0.8,
+    "p-1": 1,
+    "p-1-25": 1.25,
+    "p-1-5": 1.5,
+    "p-1-75": 1.75,
+    "p-2": 2,
+    "p-2-5": 2.5
+  };
+  var HEADING_FACTORS = { "h-0-8": 0.8, "h-1-25": 1.25, "h-1-5": 1.5 };
+  function finishRuns(nodes, styles) {
+    const copy = styles.map((s) => COPY_FACTORS[s]).find(Boolean) || 1;
+    const heading = styles.map((s) => HEADING_FACTORS[s]).find(Boolean) || 1;
+    const serifSection = styles.includes("serif");
+    nodes.forEach((node) => {
+      if (node.nodeType !== 1) return;
+      const runs = [node, ...node.querySelectorAll("*")].filter((el) => el.tagName.toLowerCase().startsWith(`${RUN_TAG}-`));
+      runs.forEach((run) => {
+        const m = run.tagName.match(RUN_NAME);
+        const doc = run.ownerDocument;
+        const tags = [];
+        if (m) {
+          const em = Number(`${m[1]}.${m[2]}`);
+          const vw = Number(`${m[3]}.${m[4]}`);
+          const table2 = run.closest("table");
+          const name = table2 ? text(table2.querySelector("tr")) : "";
+          const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
+          const isHeading = !!run.closest("h1, h2, h3, h4, h5, h6");
+          const base = isHeading ? heading : copy;
+          if (vw) tags.push(`size-${num(vw)}vw`);
+          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+          if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
+          if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
+        }
+        if (tags.length) {
+          run.before(doc.createTextNode(`[[${tags.join(",")}]`));
+          run.after(doc.createTextNode("]"));
+        }
+        unwrap(run);
+      });
+    });
+  }
   var COLOURS = {
     ffb500: "color-gold",
     "1c5687": "color-blue",
@@ -486,26 +588,24 @@ var CustomImportScript = (() => {
       const cls = colourClass(own.get(el));
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
-      let run = [];
-      const flush = () => {
-        if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
-        run = [];
+      const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
+      const wrapFree = (parent) => {
+        let run = [];
+        const flush = () => {
+          if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+          run = [];
+        };
+        [...parent.childNodes].forEach((child) => {
+          if (child.nodeType === 1 && own.get(child)) flush();
+          else if (hasOwn(child)) {
+            flush();
+            wrapFree(child);
+          } else run.push(child);
+        });
+        flush();
       };
-      [...el.childNodes].forEach((child) => {
-        if (child.nodeType === 1 && own.get(child)) flush();
-        else run.push(child);
-      });
-      flush();
+      wrapFree(el);
     });
-  }
-  function sameLineText(node, direction) {
-    let value = "";
-    let sibling = node[direction];
-    while (sibling && sibling.nodeName !== "BR") {
-      value += sibling.textContent;
-      sibling = sibling[direction];
-    }
-    return squash(value);
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
     const doc = root.ownerDocument;
@@ -644,7 +744,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp-section-builder.js
+  // ../../../tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridWidth(el) {
     const m = String(el.className).match(/\baem-GridColumn--default--(\d+)\b/);
@@ -848,6 +948,7 @@ var CustomImportScript = (() => {
       const out = [];
       sections.filter((s) => s.nodes.length).forEach((section, i) => {
         if (i > 0) out.push(doc.createElement("hr"));
+        finishRuns(section.nodes, section.styles);
         out.push(...section.nodes);
         const cells = {};
         if (section.styles.length) cells.style = section.styles.join(", ");
@@ -862,7 +963,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // ../../../tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3011,7 +3112,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // ../../../tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3027,7 +3128,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // ../../../tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3055,7 +3156,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-components.js
+  // ../../../tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3158,7 +3259,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // tools/importer/parsers/hero-image-slide.js
+  // ../../../tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3245,7 +3346,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/parsers/cards-corp-teaser.js
+  // ../../../tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3299,7 +3400,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/parsers/video.js
+  // ../../../tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3325,7 +3426,7 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-component-handlers.js
+  // ../../../tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -3466,6 +3567,7 @@ var CustomImportScript = (() => {
     const inlineBold = new Set([...box.querySelectorAll("p, li, ul, ol")].filter((el) => [...el.querySelectorAll("b")].some(plainB)));
     const headingSizes = new Map([...box.querySelectorAll("h2, h3")].map((h) => [h, headingSizeStyle(h)]).filter(([, s]) => s));
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+    markRuns(box);
     const { centred, size } = cleanRichText(box);
     const nodes = [];
     [...box.childNodes].forEach((node) => {
@@ -3828,12 +3930,14 @@ var CustomImportScript = (() => {
         }
         run.append(node);
       });
+      markRuns(box2, { serifDefault: true });
       if (cleanRichText(box2).centred) centred = true;
       [...box2.children].filter((n) => text(n) || n.querySelector("img")).forEach((n) => {
         let node = n;
         if (n.tagName === "H1") ctx.h1 = true;
         if (!ctx.h1 && futuraVw && !nodes.length && n.tagName !== "H1") {
           node = rename(n, "h1");
+          node.querySelectorAll("strong > em").forEach(unwrap);
           ctx.h1 = true;
         }
         if (node === n && serifHeads.has(n)) node.serifHeading = true;
@@ -4118,18 +4222,16 @@ var CustomImportScript = (() => {
       desc.textContent = text(item.querySelector(".c-fastfacts-text"));
       return { value: text(item.querySelector(".c-fastfacts-number")), desc };
     }).filter((f) => f.value || text(f.desc));
+    if (!facts.length) return [];
     const title = el.querySelector(".c-fastfacts-title");
-    const items = [];
+    const rows = facts.map((c) => [c.value, c.desc]);
     if (title && text(title)) {
       const h = doc.createElement("h2");
       h.textContent = text(title);
-      items.push({ type: "flow", role: "text", nodes: [h] });
+      rows.unshift([h]);
     }
-    if (facts.length) {
-      const columns = el.querySelector(".c-fastfacts-item.col-sm-6") ? 2 : facts.length;
-      items.push({ type: "block", block: statistics(facts, ctx, columns, false) });
-    }
-    return items;
+    const columns = el.querySelector(".c-fastfacts-item.col-sm-6") ? 2 : facts.length;
+    return [{ type: "block", block: block(doc, `Statistics (fast-facts, cols-${Math.min(Math.max(columns, 1), 4)})`, rows) }];
   }
   function standaloneVideo(el, ctx) {
     const link2 = videoLink(el, ctx.doc);
@@ -4532,7 +4634,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp-page.js
+  // ../../../tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -4588,7 +4690,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // tools/importer/corp-import.js
+  // ../../../tools/importer/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document) {
@@ -4674,7 +4776,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // tools/importer/data/page-facts/news-detail.js
+  // ../../../tools/importer/data/page-facts/news-detail.js
   var news_detail_default = {
     "/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-": { "template": "news-detail", "metadata": { "title": "\u201CSweynTooth\u201D BLE Vulnerabilities (ICSA- 20-063-01)", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news", "stryker:content-type/news/product-advisories-"], "originallyPublished": null, "lastPublished": "2020-07-24T14:12:22.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library": { "template": "news-detail", "metadata": { "title": "Apache \u201CLog4j\u201D Open Source Logging Library", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news", "stryker:content-type/news/product-advisories-"], "originallyPublished": null, "lastPublished": "2022-01-06T19:15:56.000Z", "contentID": "SYK CORP 2022-01-01" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
@@ -5454,7 +5556,7 @@ Stryker or its affiliated entities own, use, or have applied for the following t
     "/us/en/sustainability/news/world-environment-day-2025-": { "template": "news-detail", "metadata": { "title": "Stryker focuses on and celebrates sustainability ", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news"], "originallyPublished": "2025-06-04T15:58:06.000Z", "lastPublished": "2026-08-18T20:08:23.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [{ "formId": "2736", "afterSubmitAction": "showMessage", "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.", "useProduction": true }], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // tools/importer/import-news-detail.js
+  // ../../../tools/importer/import-news-detail.js
   var import_news_detail_default = createCorpImport({
     name: "news-detail",
     description: "www.stryker.com news articles: page title (h1-title) and publish date, lead slide (Hero Corp) or image, article rich text, images and videos, curated CTAs, related cards, XFs (Fragment), references and document code (page disclaimer).",

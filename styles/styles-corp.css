@@ -96,6 +96,13 @@
   --corp-chart-legend-gap: 23px; /* pie → legend swatch */
   --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
 
+  /* Statistics (fast-facts): stryker.com Fast Facts (learn "Our impact") */
+  --corp-facts-number-size: 56px; /* .c-fastfacts-number from 840px */
+  --corp-facts-title-size: 27px; /* .c-fastfacts-title from 840px */
+  --corp-facts-title-rule-gap: 6px; /* title text → its white rule */
+  --corp-facts-title-gap: 53px; /* rule → first fact, from 840px */
+  --corp-facts-padding: 60px 0 10px; /* .c-fastfacts .wrapper from 840px */
+
   /* gallery-corp: Scene7 MixedMediaViewer (xpedition-powered-stair-chair, stryker/gallery) */
   --corp-gallery-thumb-size: 56px; /* swatch and scroll-arrow box (66px pitch with the 10px gap) */
   --corp-gallery-control-size: 28px; /* zoom / full-screen buttons, 20px in from the stage corner */
@@ -148,6 +155,18 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) h3 {
   font-size: var(--corp-h3-size, var(--heading-font-size-m));
+}
+
+/* h4: 14px on phones, 17.5px from 600px (stryker.com h4 14px, 17.5px from 480px: no EDS
+   breakpoint, phones take the smallest size) */
+:where(body.corp) h4 {
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) h4 {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 /* bold: <strong> is Futura bold, <b> keeps the running font */
@@ -359,18 +378,24 @@ body:where(.corp):has(main .hero-carousel) header {
   padding: var(--space-block-l);
 }
 
-:where(body.corp) main > .section.large-headline :is(h1, h2, h3) {
+:where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: var(--display-font-family);
   font-size: min(5vw, var(--panel-heading-size));
-  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-hero);
 }
 
+/* Futura bold, but h2 / h3 in Egyptienne Light with h-serif (nailing-portfolio
+   "Cephalomedullary nailing (CMN) system…") */
+:where(body.corp) main > .section.large-headline > .default-content-wrapper > h1,
+:where(body.corp) main > .section.large-headline:not(.h-serif) > .default-content-wrapper > :is(h2, h3) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
 @media (width >= 900px) {
-  :where(body.corp) main > .section.large-headline :is(h1, h2, h3) {
+  :where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
     font-size: min(2.5vw, var(--panel-heading-size));
   }
 }
@@ -671,6 +696,26 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .fragment > .section.serif > .default-content-wrapper :is(p, li) {
+  font-family: var(--heading-font-family);
+}
+
+/* bracket tags `[[size-<n>vw]…]` (scripts/corp-type.js): the stryker.com .fontsize-<n>vw
+   classes — 2 × <n>vw below 600px (source 840px), <n>vw up to <n> × 14px from 600px (the
+   source's fixed <n> × 14px from 1439px), lines 1.35 as the source */
+:where(body.corp) main span.corp-vw {
+  font-size: calc(var(--corp-vw) * 2vw);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main span.corp-vw {
+    font-size: min(calc(var(--corp-vw) * 1vw), calc(var(--corp-vw) * var(--body-font-size-m)));
+  }
+}
+
+/* bracket tag `[[serif]…]`: Egyptienne copy inside other copy (stryker.com
+   span.urw-egyptienne in a paragraph that is not serif throughout) */
+:where(body.corp) main span.serif {
   font-family: var(--heading-font-family);
 }
 

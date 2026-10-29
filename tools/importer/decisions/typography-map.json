@@ -193,6 +193,41 @@
       "source": "paragraph that is plain <b> as a whole",
       "outcome": "section style bold-body",
       "status": "established"
+    },
+    {
+      "id": "vw-size-runs",
+      "source": "span.fontsize-<n>vw / fontsize-<n>-vw (Large Headline lines, hero lines, text)",
+      "outcome": "bracket tag [[size-<n>vw]…] on the run (innermost vw class): 2 × <n>vw below 600px, <n>vw up to <n> × 14px from 600px (source: 2 × <n>vw below 840px, <n>vw, <n> × 14px from 1439px); lines 1.35 (scripts/corp-type.js, styles-corp.css span.corp-vw)",
+      "status": "proposed",
+      "note": "2026-10-29 lift and shift: replaces the one size per Large Headline band / hero copy; tag names to approve"
+    },
+    {
+      "id": "em-size-runs",
+      "source": "nested span.fontsize-<x>em the section styles cannot carry: mixed sizes in a paragraph, a cell next to other copy, a product of factors off the p-* steps (1.25 × 1.75 = 2.19)",
+      "outcome": "bracket tag [[size-<n>em]…] with the product: × the 14px base copy in copy, × the heading in a heading; uniform copy on a p-* step keeps the section style",
+      "status": "proposed",
+      "note": "2026-10-29 lift and shift (corp-richtext.js markRuns / finishRuns); tag names to approve"
+    },
+    {
+      "id": "serif-runs",
+      "source": "span.urw-egyptienne in copy that is not serif throughout (a serif lead line in a cell, serif and Futura in one paragraph), or around a plain <b>",
+      "outcome": "bracket tag [[serif]…] (styles-corp.css span.serif); copy serif throughout keeps the serif section style",
+      "status": "proposed",
+      "note": "2026-10-29; tag name to approve"
+    },
+    {
+      "id": "plain-bold-runs",
+      "source": "a plain <b> (not span.futura-bold) inside a line of copy; a plain <b> in an h1–h3",
+      "outcome": "copy: [[body-font]…] (bold in the body font), unless the section is bold-body; h1–h3: [[serif]…] (Egyptienne bold, the source heading font). Labels on their own line keep tagPlainBoldLabels, paragraphs bold throughout bold-body",
+      "status": "proposed",
+      "note": "2026-10-29 (easyfuse dateline \"Kalamazoo, Michigan, USA –\", inspace \"InSpace:\")"
+    },
+    {
+      "id": "large-headline-font",
+      "source": "Large Headline line copy without a font class",
+      "outcome": "Egyptienne (the component default, .c-largeheadline .line): [[serif]…] where the section is not serif",
+      "status": "proposed",
+      "note": "2026-10-29 (aaa-2023, promoting-high-quality…). The component's 1vw default size between 840 and 1438px is not carried (14px from 1439px, as the page default)"
     }
   ],
   "colours": {

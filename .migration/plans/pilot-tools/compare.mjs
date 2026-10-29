@@ -36,8 +36,17 @@ function measure() {
       [cur] = kids;
     }
   };
+  // the element holding the first text (the source sets sizes and fonts on spans inside the
+  // paragraph: measure the run, not the paragraph)
+  const firstRun = (el) => {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (norm(n.textContent)) return n.parentElement;
+    }
+    return leaf(el);
+  };
   const sig = (el) => {
-    const s = getComputedStyle(leaf(el));
+    const s = getComputedStyle(firstRun(el));
     return `${s.fontFamily.split(',')[0].replace(/"/g, '').replace(' for Stryker', '')}|${s.fontSize}|${s.fontWeight}|${s.color.replace(/rgb\((\d+), (\d+), (\d+)\)/, '$1,$2,$3')}`;
   };
   const texts = {};

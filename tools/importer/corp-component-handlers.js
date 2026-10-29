@@ -10,7 +10,7 @@
  */
 import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
-  plainBoldParagraphs, serifHeadings, headingSizeStyle, contentCopy, colourClass,
+  plainBoldParagraphs, serifHeadings, headingSizeStyle, contentCopy, colourClass, markRuns,
 } from './corp-richtext.js';
 import { standaloneImageNodes, isEmptyXf } from './corp-components.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
@@ -205,6 +205,8 @@ export function richTextNodes(source, doc) {
     .map((h) => [h, headingSizeStyle(h)]).filter(([, s]) => s));
   // copy styles per top-level element: one serif lead paragraph keeps its own font
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+  // each run's own size / font, for what the section styles cannot carry (finishRuns)
+  markRuns(box);
   const { centred, size } = cleanRichText(box);
   const nodes = [];
   [...box.childNodes].forEach((node) => {
@@ -634,12 +636,18 @@ function largeHeadline(el, ctx) {
       }
       run.append(node);
     });
+    // each run's own size / font (vw lines), for what the section styles cannot carry; plain
+    // Large Headline copy is Egyptienne on live
+    markRuns(box, { serifDefault: true });
     if (cleanRichText(box).centred) centred = true;
     [...box.children].filter((n) => text(n) || n.querySelector('img')).forEach((n) => {
       let node = n;
       if (n.tagName === 'H1') ctx.h1 = true;
       if (!ctx.h1 && futuraVw && !nodes.length && n.tagName !== 'H1') {
         node = rename(n, 'h1');
+        // Futura bold in a paragraph is bold + italic (<strong><em>); in a heading that is the
+        // gold convention, and the line is black on live: plain bold
+        node.querySelectorAll('strong > em').forEach(unwrap);
         ctx.h1 = true;
       }
       if (node === n && serifHeads.has(n)) node.serifHeading = true;
@@ -960,18 +968,18 @@ function fastFacts(el, ctx) {
     desc.textContent = text(item.querySelector('.c-fastfacts-text'));
     return { value: text(item.querySelector('.c-fastfacts-number')), desc };
   }).filter((f) => f.value || text(f.desc));
+  if (!facts.length) return [];
+  // Statistics (fast-facts): the panel's look (number beside its text, Egyptienne); the
+  // title is the block's first row (its ruled heading belongs to the component)
   const title = el.querySelector('.c-fastfacts-title');
-  const items = [];
+  const rows = facts.map((c) => [c.value, c.desc]);
   if (title && text(title)) {
     const h = doc.createElement('h2');
     h.textContent = text(title);
-    items.push({ type: 'flow', role: 'text', nodes: [h] });
+    rows.unshift([h]);
   }
-  if (facts.length) {
-    const columns = el.querySelector('.c-fastfacts-item.col-sm-6') ? 2 : facts.length;
-    items.push({ type: 'block', block: statistics(facts, ctx, columns, false) });
-  }
-  return items;
+  const columns = el.querySelector('.c-fastfacts-item.col-sm-6') ? 2 : facts.length;
+  return [{ type: 'block', block: block(doc, `Statistics (fast-facts, cols-${Math.min(Math.max(columns, 1), 4)})`, rows) }];
 }
 
 function standaloneVideo(el, ctx) {

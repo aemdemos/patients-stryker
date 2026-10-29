@@ -1,0 +1,71 @@
+/* Statistics on www.stryker.com (body.corp, loaded by scripts/corp.js).
+   fast-facts: the stryker.com Fast Facts panel (learn "Our impact", measured at 1440 / 375px):
+   a title over a white rule, then each number with its text in Egyptienne Light, in the
+   section's text colour (white in the dark gradients). Below 600px (source 840px) number and
+   text are stacked 21px lines, 20px between facts; from 600px the 56px number sits beside its
+   text (21px, centred on it), two facts per row (cols-2), 50px between rows. */
+body.corp .statistics.fast-facts {
+  padding: var(--space-section) 0;
+}
+
+body.corp .statistics.fast-facts .statistics-title {
+  margin: 0 0 var(--space-block-l);
+  padding: 0 0 var(--corp-facts-title-rule-gap);
+  border-bottom: 1px solid currentcolor;
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .statistics.fast-facts ul.statistics-list {
+  gap: var(--space-block-l) 0;
+}
+
+body.corp .statistics.fast-facts .statistics-item {
+  align-items: flex-start;
+  padding: 0;
+  text-align: left;
+}
+
+body.corp .statistics.fast-facts :is(.statistics-value, .statistics-value p, .statistics-desc, .statistics-desc p) {
+  margin: 0;
+  color: inherit;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--paragraph-line-height);
+}
+
+@media (width >= 600px) {
+  body.corp .statistics.fast-facts {
+    padding: var(--corp-facts-padding);
+  }
+
+  body.corp .statistics.fast-facts .statistics-title {
+    margin-bottom: var(--corp-facts-title-gap);
+    font-size: var(--corp-facts-title-size);
+  }
+
+  body.corp .statistics.fast-facts ul.statistics-list {
+    gap: var(--space-section-l) 0;
+  }
+
+  body.corp .statistics.fast-facts .statistics-item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  body.corp .statistics.fast-facts :is(.statistics-value, .statistics-desc) {
+    max-width: 50%;
+    padding-right: var(--space-block-s);
+  }
+
+  body.corp .statistics.fast-facts :is(.statistics-value, .statistics-value p, .statistics-desc, .statistics-desc p) {
+    line-height: 1;
+  }
+
+  body.corp .statistics.fast-facts :is(.statistics-value, .statistics-value p) {
+    font-size: var(--corp-facts-number-size);
+  }
+}

@@ -9,13 +9,9 @@
      the publish date is Futura bold 14px, 15px under it (the section gap below it matches the
      source's 131-150px to the article)
    - plain h2 / h3 21px / 24.5px and 17.5px / 21px below / from 600px, as on product pages
-     (h-0-8 / h-1-25 / h-1-5 scale them: EP 0.8em h3 16.8px); h4 14px on phones (easyfuse
-     subtitle), the corp 17.5px from 600px */
+     (h-0-8 / h-1-25 / h-1-5 scale them: EP 0.8em h3 16.8px); h4 at the corp size (14px on
+     phones, 17.5px from 600px, styles-corp.css) */
 body.news-detail main .default-content-wrapper > h5 {
-  font-size: var(--body-font-size-m);
-}
-
-body.news-detail main > .section > .default-content-wrapper > h4 {
   font-size: var(--body-font-size-m);
 }
 
@@ -28,9 +24,5 @@ body.news-detail main > .section > .default-content-wrapper > h4 {
   body.news-detail main > .section > .default-content-wrapper > h1 {
     font-family: var(--display-font-family);
     font-weight: var(--font-weight-bold);
-  }
-
-  body.news-detail main > .section > .default-content-wrapper > h4 {
-    font-size: var(--heading-font-size-m);
   }
 }

@@ -73,9 +73,9 @@
   text-align: left;
 }
 
-/* the headline's vw size (size-<n>, default 2) — not in an image-right hero without
-   size-<n>, whose copy keeps the page type (below) */
-.hero-corp.image-slide:where(:not(.image-right:not([data-text-size]))) > div:last-child > * {
+/* the headline's vw size (size-<n>); a hero without size-<n> keeps the page type, its lines in
+   a vw size carry it as a [[size-<n>vw]] tag (scripts/corp-type.js), as on live */
+.hero-corp.image-slide[data-text-size] > div:last-child > * {
   font-size: calc(var(--hero-slide-text-size) * 2vw);
   line-height: var(--heading-line-height-hero);
 }
@@ -177,7 +177,7 @@
     padding-bottom: calc(2 * var(--space-block-l) + var(--space-block));
   }
 
-  .hero-corp.image-slide:where(:not(.image-right:not([data-text-size]))) > div:last-child > * {
+  .hero-corp.image-slide[data-text-size] > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 

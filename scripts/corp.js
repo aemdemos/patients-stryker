@@ -25,12 +25,13 @@ import {
 import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
+import decorateTypeTags from './corp-type.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'sticky-nav', 'table', 'video'];
+const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'statistics', 'sticky-nav', 'table', 'video'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
@@ -143,6 +144,7 @@ export function decorateSections(main) {
   // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
   // before accordion panels take their sections' content
   decorateSpacing(main);
+  decorateTypeTags(main);
   buildAccordionSections(main);
 }
 
