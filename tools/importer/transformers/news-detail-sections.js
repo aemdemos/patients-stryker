@@ -47,6 +47,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -64,7 +65,21 @@ const COMPONENTS = [
   '.c-customizeable',
   '.c-section-separator',
   '.sectionseparator',
+  '.c-marketo-form',
+  '.c-resourcesanddownload',
+  '.xf-fragment',
 ].join(', ');
+
+// Shared Experience Fragments: the delivered HTML has no XF path, so each is recognised by
+// the start of its text and mapped to its XF path (xf-fragment-map.js lists them as shared).
+// An XF that matches none is not shared: its components are imported inline.
+const SHARED_XF_SIGNATURES = [
+  ['Connect with us Have feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master'],
+  ['Contact Information Customer support product feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master'],
+  ['Contact information Product feedback Customer service', '/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master'],
+  ['Resources Explore Sage homepage', '/content/experience-fragments/stryker/sage/en/footer/footer/master'],
+  ['Resources Explore Acute Care homepage', '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master'],
+];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = { A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'] };
@@ -897,12 +912,42 @@ function footnoteList(nodes, doc) {
   return out;
 }
 
+function fragmentBlock(path, doc) {
+  const a = doc.createElement('a');
+  a.setAttribute('href', path);
+  a.textContent = path;
+  return WebImporter.Blocks.createBlock(doc, { name: 'fragment', cells: [[a]] });
+}
+
+// each shared XF becomes a marker (`.xf-fragment[data-fragment]`) in place; the others are
+// returned so the import report can list them
+function markSharedFragments(main, doc) {
+  const inlined = [];
+  main.querySelectorAll('.experiencefragment').forEach((xf) => {
+    if (!xf.isConnected || xf.closest('header, footer, .modal')) return;
+    const signature = text(xf);
+    const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+    const path = match && xfFragmentPath(match[1]);
+    if (!path) {
+      if (signature) inlined.push(signature.slice(0, 80));
+      return;
+    }
+    const marker = doc.createElement('div');
+    marker.className = 'xf-fragment';
+    marker.setAttribute('data-fragment', path);
+    xf.replaceWith(marker);
+  });
+  return inlined;
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   if (!payload || !payload.template || payload.template.name !== 'news-detail') return;
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
 
+  const inlinedXf = markSharedFragments(main, doc);
+  const hasForm = !!main.querySelector('.c-marketo-form form[data-marketo-form-id]');
   const sections = [];
   let current = null;
   let separatorNext = false;
@@ -977,6 +1022,28 @@ export default function transform(hookName, element, payload) {
     current = null;
     return true;
   };
+  // the other column(s) of a form's 2/3 + 1/3 (or 50/50) row: the contact aside. Its
+  // components go after the form in the form's section, whichever column comes first.
+  const formAsides = new Map();
+  components.filter((el) => el.matches('.c-marketo-form') && el.querySelector('form[data-marketo-form-id]')).forEach((form) => {
+    const formColumn = form.closest('[class*="col-sm-"]');
+    const row = formColumn && formColumn.parentElement;
+    if (!row || !row.closest('.colctrl')) return;
+    const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el)
+      && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+    asides.forEach((aside) => consumed.add(aside));
+    formAsides.set(form, asides);
+  });
+  // a form page whose source has no H1 (the title only sits in the lead carousel): the
+  // carousel's single headline line becomes the H1 (hero-image-slide.js keeps headings)
+  if (hasForm && !main.querySelector('h1')) {
+    const lines = [...main.querySelectorAll('.c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line')]
+      .filter((line) => text(line));
+    if (lines.length === 1) {
+      lines[0].querySelectorAll('a:not([href])').forEach(unwrap);
+      rename(lines[0], 'h1');
+    }
+  }
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
@@ -1033,6 +1100,59 @@ export default function transform(hookName, element, payload) {
         heading.remove();
       }
       section.nodes.push(component);
+      current = null;
+      return;
+    }
+    // a Marketo form: its own section; the content of the other column of its 2/3 + 1/3
+    // row (the contact aside: a shared fragment, kept as a link and never copied, or
+    // inline text / images) goes after it in the same section, which gets the
+    // `form-with-aside` style
+    if (component.matches('.c-marketo-form')) {
+      if (!component.querySelector('form[data-marketo-form-id]')) return;
+      const nodes = [component];
+      (formAsides.get(component) || []).forEach((aside) => {
+        if (aside.matches('.xf-fragment')) nodes.push(fragmentBlock(aside.getAttribute('data-fragment'), doc));
+        else if (aside.matches('.c-standalone-image')) nodes.push(...imageNodes(aside, doc));
+        else if (aside.matches('.c-rich-text-editor')) nodes.push(...richTextNodes(aside, doc).nodes);
+        else if (aside.matches('.c-curatedcta')) nodes.push(...buttonNodes(aside, doc));
+        else if (aside.matches('.c-largeheadline')) nodes.push(...headlineNodes(aside, doc));
+      });
+      startSection('form', nodes.length > 1 ? 'form-with-aside' : undefined).nodes.push(...nodes);
+      current = null;
+      return;
+    }
+    // a Resources & Download list on a form page (LCA0): kept as default content, its
+    // heading and one link per item (the thumbnail is dropped). No block exists for the
+    // component yet (#394 / #435); on pages without a form it is still ignored.
+    if (component.matches('.c-resourcesanddownload')) {
+      if (!hasForm) return;
+      const nodes = [];
+      const heading = component.querySelector('.title-container h2');
+      if (heading && text(heading)) {
+        const h2 = doc.createElement('h2');
+        h2.textContent = text(heading);
+        nodes.push(h2);
+      }
+      component.querySelectorAll('.item').forEach((item) => {
+        const link = item.querySelector('a[href]');
+        const label = text(item.querySelector('.title') || item);
+        if (!link || !label) return;
+        const a = doc.createElement('a');
+        a.href = newTabHref(link, absoluteAsset(link.getAttribute('href')));
+        a.textContent = label;
+        const p = doc.createElement('p');
+        p.append(a);
+        nodes.push(p);
+      });
+      if (!nodes.length) return;
+      if (!current || current.kind !== 'body') startSection('body');
+      current.nodes.push(...nodes);
+      return;
+    }
+    // a shared Experience Fragment (e.g. the "Connect with us" band): a fragment block in
+    // a section of its own
+    if (component.matches('.xf-fragment')) {
+      startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
       current = null;
       return;
     }
@@ -1144,6 +1264,26 @@ export default function transform(hookName, element, payload) {
     });
   });
 
+  // a form page ends with exactly one H1: further ones (a campaign name under the title)
+  // are H2s
+  if (hasForm) {
+    let seen = 0;
+    sections.forEach((section) => {
+      section.nodes = section.nodes.map((node) => {
+        if (node.nodeType !== 1) return node;
+        const headings = [...(node.tagName === 'H1' ? [node] : []), ...node.querySelectorAll('h1')];
+        let result = node;
+        headings.forEach((heading) => {
+          seen += 1;
+          if (seen === 1) return;
+          const h2 = rename(heading, 'h2');
+          if (heading === node) result = h2;
+        });
+        return result;
+      });
+    });
+  }
+
   // 4. disclaimer: references (when the article has them) and the document code, in
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.
   const disclaimers = [...doc.querySelectorAll('.c-disclaimer')]
@@ -1189,4 +1329,10 @@ export default function transform(hookName, element, payload) {
     }
   });
   element.replaceChildren(...out);
+  const fragments = [...new Set(sections.flatMap((section) => section.nodes)
+    .flatMap((node) => (node.nodeType === 1 ? [...node.querySelectorAll('a[href^="/us/en/fragments/"]')] : []))
+    .map((a) => a.getAttribute('href')))];
+  if (fragments.length || inlinedXf.length) {
+    element.setAttribute('data-news-xf', JSON.stringify({ fragments, inlined: inlinedXf }));
+  }
 }

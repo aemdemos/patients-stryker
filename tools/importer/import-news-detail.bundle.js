@@ -202,6 +202,70 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
   }
 
+  // tools/importer/parsers/news-detail/marketo-form.js
+  function parse4(element, { document }) {
+    const form = element.querySelector("form[data-marketo-form-id]");
+    const read = (name) => (form && form.getAttribute(name) || "").trim();
+    const rows = [
+      ["Base URL", read("data-marketo-base-url")],
+      ["Munchkin ID", read("data-marketo-munchkin-id")],
+      ["Form ID", read("data-marketo-form-id")]
+    ];
+    if (rows.some(([, value]) => !value)) {
+      element.remove();
+      return;
+    }
+    const cells = rows.map(([key, value]) => {
+      const k = document.createElement("div");
+      k.textContent = key;
+      const v = document.createElement("div");
+      v.textContent = value;
+      return [k, v];
+    });
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "marketo-form", cells }));
+  }
+
+  // tools/importer/xf-fragment-map.js
+  var xf_fragment_map_default = {
+    "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
+      name: 'Acute Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
+      name: 'Emergency Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
+      name: 'Sage "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
+      name: 'Sustainability "Connect with us" band (above the form)'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
+      name: "Sustainability contact aside (next to the form)"
+    },
+    "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
+      name: "Sage contact aside (LinkedIn / Facebook icons)"
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
+      name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    }
+  };
+
+  // tools/importer/xf-fragment-path.js
+  var XF_ROOT = "/content/experience-fragments/";
+  var FRAGMENTS_ROOT = "/us/en/fragments/";
+  function xfKey(xf) {
+    return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  }
+  function xfToFragmentPath(xf) {
+    const key = xfKey(xf);
+    if (!key.startsWith(XF_ROOT)) return null;
+    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+  function xfFragmentPath(xf) {
+    return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var COMPONENTS = [
@@ -217,8 +281,18 @@ var CustomImportScript = (() => {
     ".c-section-title",
     ".c-customizeable",
     ".c-section-separator",
-    ".sectionseparator"
+    ".sectionseparator",
+    ".c-marketo-form",
+    ".c-resourcesanddownload",
+    ".xf-fragment"
   ].join(", ");
+  var SHARED_XF_SIGNATURES = [
+    ["Connect with us Have feedback", "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master"],
+    ["Contact Information Customer support product feedback", "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"],
+    ["Contact information Product feedback Customer service", "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master"],
+    ["Resources Explore Sage homepage", "/content/experience-fragments/stryker/sage/en/footer/footer/master"],
+    ["Resources Explore Acute Care homepage", "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"]
+  ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
   function text(el) {
@@ -824,11 +898,37 @@ var CustomImportScript = (() => {
     out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
+  function fragmentBlock(path, doc) {
+    const a = doc.createElement("a");
+    a.setAttribute("href", path);
+    a.textContent = path;
+    return WebImporter.Blocks.createBlock(doc, { name: "fragment", cells: [[a]] });
+  }
+  function markSharedFragments(main, doc) {
+    const inlined = [];
+    main.querySelectorAll(".experiencefragment").forEach((xf) => {
+      if (!xf.isConnected || xf.closest("header, footer, .modal")) return;
+      const signature = text(xf);
+      const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+      const path = match && xfFragmentPath(match[1]);
+      if (!path) {
+        if (signature) inlined.push(signature.slice(0, 80));
+        return;
+      }
+      const marker = doc.createElement("div");
+      marker.className = "xf-fragment";
+      marker.setAttribute("data-fragment", path);
+      xf.replaceWith(marker);
+    });
+    return inlined;
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     if (!payload || !payload.template || payload.template.name !== "news-detail") return;
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
+    const inlinedXf = markSharedFragments(main, doc);
+    const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
     const sections = [];
     let current = null;
     let separatorNext = false;
@@ -884,6 +984,22 @@ var CustomImportScript = (() => {
       current = null;
       return true;
     };
+    const formAsides = /* @__PURE__ */ new Map();
+    components.filter((el) => el.matches(".c-marketo-form") && el.querySelector("form[data-marketo-form-id]")).forEach((form) => {
+      const formColumn = form.closest('[class*="col-sm-"]');
+      const row = formColumn && formColumn.parentElement;
+      if (!row || !row.closest(".colctrl")) return;
+      const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el) && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+      asides.forEach((aside) => consumed.add(aside));
+      formAsides.set(form, asides);
+    });
+    if (hasForm && !main.querySelector("h1")) {
+      const lines = [...main.querySelectorAll(".c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line")].filter((line) => text(line));
+      if (lines.length === 1) {
+        lines[0].querySelectorAll("a:not([href])").forEach(unwrap);
+        rename(lines[0], "h1");
+      }
+    }
     let leadBelowDate = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
@@ -929,6 +1045,50 @@ var CustomImportScript = (() => {
           heading.remove();
         }
         section.nodes.push(component);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-marketo-form")) {
+        if (!component.querySelector("form[data-marketo-form-id]")) return;
+        const nodes2 = [component];
+        (formAsides.get(component) || []).forEach((aside) => {
+          if (aside.matches(".xf-fragment")) nodes2.push(fragmentBlock(aside.getAttribute("data-fragment"), doc));
+          else if (aside.matches(".c-standalone-image")) nodes2.push(...imageNodes(aside, doc));
+          else if (aside.matches(".c-rich-text-editor")) nodes2.push(...richTextNodes(aside, doc).nodes);
+          else if (aside.matches(".c-curatedcta")) nodes2.push(...buttonNodes(aside, doc));
+          else if (aside.matches(".c-largeheadline")) nodes2.push(...headlineNodes(aside, doc));
+        });
+        startSection("form", nodes2.length > 1 ? "form-with-aside" : void 0).nodes.push(...nodes2);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-resourcesanddownload")) {
+        if (!hasForm) return;
+        const nodes2 = [];
+        const heading = component.querySelector(".title-container h2");
+        if (heading && text(heading)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = text(heading);
+          nodes2.push(h2);
+        }
+        component.querySelectorAll(".item").forEach((item) => {
+          const link2 = item.querySelector("a[href]");
+          const label = text(item.querySelector(".title") || item);
+          if (!link2 || !label) return;
+          const a = doc.createElement("a");
+          a.href = newTabHref(link2, absoluteAsset(link2.getAttribute("href")));
+          a.textContent = label;
+          const p = doc.createElement("p");
+          p.append(a);
+          nodes2.push(p);
+        });
+        if (!nodes2.length) return;
+        if (!current || current.kind !== "body") startSection("body");
+        current.nodes.push(...nodes2);
+        return;
+      }
+      if (component.matches(".xf-fragment")) {
+        startSection("fragment").nodes.push(fragmentBlock(component.getAttribute("data-fragment"), doc));
         current = null;
         return;
       }
@@ -1015,6 +1175,23 @@ var CustomImportScript = (() => {
         current.nodes.push(node);
       });
     });
+    if (hasForm) {
+      let seen = 0;
+      sections.forEach((section) => {
+        section.nodes = section.nodes.map((node) => {
+          if (node.nodeType !== 1) return node;
+          const headings = [...node.tagName === "H1" ? [node] : [], ...node.querySelectorAll("h1")];
+          let result = node;
+          headings.forEach((heading) => {
+            seen += 1;
+            if (seen === 1) return;
+            const h2 = rename(heading, "h2");
+            if (heading === node) result = h2;
+          });
+          return result;
+        });
+      });
+    }
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
@@ -1045,6 +1222,10 @@ var CustomImportScript = (() => {
       }
     });
     element.replaceChildren(...out);
+    const fragments = [...new Set(sections.flatMap((section) => section.nodes).flatMap((node) => node.nodeType === 1 ? [...node.querySelectorAll('a[href^="/us/en/fragments/"]')] : []).map((a) => a.getAttribute("href")))];
+    if (fragments.length || inlinedXf.length) {
+      element.setAttribute("data-news-xf", JSON.stringify({ fragments, inlined: inlinedXf }));
+    }
   }
 
   // tools/importer/transformers/patients-stryker-cleanup.js
@@ -1314,13 +1495,15 @@ var CustomImportScript = (() => {
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },
       { name: "video", instances: [".c-standalone-video"] },
-      { name: "cards-corp-teaser", instances: [".c-customizeable"] }
+      { name: "cards-corp-teaser", instances: [".c-customizeable"] },
+      { name: "marketo-form", instances: [".c-marketo-form"] }
     ]
   };
   var parsers = {
     "hero-image-slide": parse,
     video: parse3,
-    "cards-corp-teaser": parse2
+    "cards-corp-teaser": parse2,
+    "marketo-form": parse4
   };
   var transformers = [
     transform,
@@ -1364,6 +1547,18 @@ var CustomImportScript = (() => {
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
+      const forms = [...document.querySelectorAll("form.c-mkto-form[data-marketo-form-id]")].filter((form, i, all) => all.findIndex((f) => f.getAttribute("data-marketo-form-id") === form.getAttribute("data-marketo-form-id")) === i).map((form) => {
+        const id = form.getAttribute("data-marketo-form-id");
+        const alert = document.getElementById(`alert_${id}`);
+        return {
+          id,
+          munchkinId: form.getAttribute("data-marketo-munchkin-id"),
+          baseUrl: form.getAttribute("data-marketo-base-url"),
+          afterSubmit: form.getAttribute("data-after-submit-action"),
+          redirect: form.getAttribute("data-redirect-page"),
+          message: alert ? alert.textContent.replace(/\s+/g, " ").trim() : ""
+        };
+      });
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
@@ -1403,6 +1598,8 @@ var CustomImportScript = (() => {
         meta.theme = theme;
         main.removeAttribute("data-news-theme");
       }
+      const xf = main.getAttribute("data-news-xf");
+      if (xf) main.removeAttribute("data-news-xf");
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -1414,7 +1611,9 @@ var CustomImportScript = (() => {
         report: {
           title: document.title,
           template: PAGE_TEMPLATE.name,
-          blocks: pageBlocks.map((b) => b.name)
+          blocks: pageBlocks.map((b) => b.name),
+          forms: JSON.stringify(forms),
+          fragments: xf || ""
         }
       }];
     }

@@ -863,6 +863,24 @@
           ]
         }
       ]
+    },
+    {
+      "name": "news-detail-forms",
+      "description": "www.stryker.com news-detail articles with a Marketo form (#446), imported with import-news-detail.js. The form is the `marketo-form` block with the base URL, Munchkin ID and form ID of the source form (no captcha rows; the thank-you text and redirect are not carried). A shared contact Experience Fragment beside the form (2/3 + 1/3 row) is a `fragment` block in the same section (`form-with-aside`); the Sustainability \"Connect with us\" band is a `fragment` block in its own section.",
+      "urls": [
+        "https://www.stryker.com/us/en/sustainability/news/ASC.html",
+        "https://www.stryker.com/us/en/sage/news/2026/close-the-gap-in-fecal-management.html",
+        "https://www.stryker.com/us/en/sustainability/news/Supplychainweek.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html"
+      ],
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".c-marketo-form"
+          ]
+        }
+      ]
     }
   ]
 }
