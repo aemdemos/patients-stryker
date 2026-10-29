@@ -765,11 +765,11 @@ var CustomImportScript = (() => {
     ].filter(Boolean);
     let spacedBoxes = 0;
     function placeFlow(item) {
-      if ((item.role === "image" || item.role === "cta") && current && current.key && !current.spaced) {
+      if ((item.role === "image" || item.role === "cta") && current && current.key && !current.spaced && !item.own) {
         current.nodes.push(...item.nodes);
         return;
       }
-      if ((item.spacing || []).length && !item.spacedBox) {
+      if (((item.spacing || []).length || item.own) && !item.spacedBox) {
         spacedBoxes += 1;
         item.spacedBox = spacedBoxes;
       }
@@ -3407,13 +3407,30 @@ var CustomImportScript = (() => {
     return colourClass(hex);
   }
   var BOXES = [
+    ["dimensional-box", "dimensional"],
     ["bg-gold", "bg-gold"],
     ["bg-light-gray", "bg-light-gray"],
     ["bg-lighter-gray", "bg-gray"],
     ["bg-dark-gray", "bg-dark-gray"],
-    ["dimensional-box", "dimensional"]
+    ["bg-white", "bg-white"],
+    ["bg-blue", "bg-blue"],
+    ["bg-purple", "bg-purple"],
+    ["bg-teal", "bg-teal"],
+    ["bg-gray", "bg-silver"],
+    ["bg-orange", "bg-dark-gold"]
   ];
   var boxOf = (el) => (BOXES.find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+  var boxColour = (el) => (BOXES.slice(1).find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+  var heroBox = (overlay) => {
+    const box = overlay && overlay.querySelector(".c-largeheadline > .has-background, .c-rich-text-editor > .has-background");
+    const colour = boxColour(box);
+    return colour ? `box-${colour.replace(/^bg-/, "")}` : null;
+  };
+  var boxStyles = (el) => {
+    const colour = boxColour(el);
+    const shadow = !!(el && el.classList.contains("dimensional-box"));
+    return [colour || "", colour || shadow ? "boxed" : "", shadow ? "shadow-box" : ""].filter(Boolean);
+  };
   function vwSize(el) {
     return [...el.querySelectorAll('[class*="vw"]')].reduce((max, span) => {
       const m = span.className.match(/fontsize-(\d+)(?:-(\d+))?-?vw/);
@@ -3421,23 +3438,24 @@ var CustomImportScript = (() => {
     }, 0);
   }
   var SPACING_PROPS = [
-    ["padding-top", "pt"],
-    ["padding-bottom", "pb"],
-    ["padding-left", "pl"],
-    ["padding-right", "pr"],
-    ["margin-top", "mt"],
-    ["margin-bottom", "mb"],
-    ["margin-left", "ml"],
-    ["margin-right", "mr"]
+    "padding-top",
+    "padding-bottom",
+    "padding-left",
+    "padding-right",
+    "margin-top",
+    "margin-bottom",
+    "margin-left",
+    "margin-right"
   ];
   function spacingOf(box) {
     const style = box && box.getAttribute && box.getAttribute("style") || "";
-    return SPACING_PROPS.flatMap(([prop, key]) => {
+    return SPACING_PROPS.flatMap((prop) => {
       const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)(%|px)\\s*(?:;|$)`));
       if (!m || Number(m[1]) === 0) return [];
-      return [`${key}-${m[1].replace("-", "n").replace(".", "-")}${m[2] === "px" ? "px" : ""}`];
+      return [`${prop}-${m[1].replace("-", "minus-").replace(".", "-")}${m[2] === "px" ? "px" : ""}`];
     });
   }
+  var itemsSpacing = (items) => ((items || []).find((it) => it.type === "flow" && (it.spacing || []).length) || {}).spacing || [];
   function spacingMarker(doc, tokens) {
     const p = doc.createElement("p");
     p.textContent = `[[${["spacing", ...tokens].join(",")}]]`;
@@ -3537,7 +3555,8 @@ var CustomImportScript = (() => {
   function statistics(counters, ctx, columns = counters.length, countUp = true) {
     const rows = counters.map((c) => c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]);
     const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
-    return block(ctx.doc, `Statistics (${countUp ? "count-up, " : ""}${cols})`, rows);
+    const left = counters.some((c) => c.left) ? ", left" : "";
+    return block(ctx.doc, `Statistics (${countUp ? "count-up, " : ""}${cols}${left})`, rows);
   }
   function inlineNodes(items, ctx, { marks = true } = {}) {
     if (marks && items.some((it) => it.type === "flow" && (it.spacing || []).length)) {
@@ -3707,7 +3726,7 @@ var CustomImportScript = (() => {
       if (!spaced.length) return cellNodes(items, ctx);
       const same = new Set(spaced.map((it) => it.spacing.join(" "))).size === 1;
       if (same && spaced.length === content.length) {
-        modifiers.push(...spaced[0].spacing.map((t) => `c${i + 1}-${t}`));
+        modifiers.push(...spaced[0].spacing.map((t) => `cell-${i + 1}-${t}`));
         return cellNodes(items, ctx);
       }
       return cellNodes(items, ctx, { marks: true });
@@ -3785,13 +3804,28 @@ var CustomImportScript = (() => {
       box,
       spacing: spacingOf(source)
     };
-    if (box && box !== "dimensional") item.styles = [box];
-    if (box === "dimensional") item.styles = [];
+    item.styles = boxStyles(source);
     return [item];
   }
+  var BORDERS = {
+    "bor-teal": "image-border",
+    "bor-black": "image-border-black",
+    "bor-gray": "image-border-grey",
+    "bor-dark_gray": "image-border-grey",
+    "bor-dark_gray_40T": "image-border-grey"
+  };
   function standaloneImage(el, ctx) {
     const nodes = standaloneImageNodes(el, ctx.doc);
-    return nodes.length ? [{ type: "flow", role: "image", nodes }] : [];
+    if (!nodes.length) return [];
+    const img = el.querySelector('img[class*="bor-"]');
+    const cls = img && [...img.classList].find((c) => c.startsWith("bor-"));
+    if (cls && !BORDERS[cls]) ctx.report.notes.push(`image border ${cls}: no style, imported without border`);
+    const border = cls && BORDERS[cls];
+    return [__spreadValues({
+      type: "flow",
+      role: "image",
+      nodes
+    }, border ? { styles: [border], own: true } : {})];
   }
   function buttons(el, ctx) {
     const { doc } = ctx;
@@ -3818,9 +3852,14 @@ var CustomImportScript = (() => {
       if (!source.getAttribute("alt")) ctx.report.notes.push(`image button without alt text: ${source.getAttribute("src")}`);
       return para(doc, link2);
     }).filter(Boolean);
+    const colour = ["btn-purple", "btn-blue"].find((c) => el.querySelector(`a.${c}`));
     return [
       ...head.length ? [{ type: "flow", role: "text", nodes: head }] : [],
-      ...nodes.length ? [{ type: "flow", role: "cta", nodes }] : []
+      ...nodes.length ? [__spreadValues({
+        type: "flow",
+        role: "cta",
+        nodes
+      }, colour ? { styles: [colour], own: true } : {})] : []
     ];
   }
   function largeHeadline(el, ctx) {
@@ -3863,7 +3902,7 @@ var CustomImportScript = (() => {
     if (!nodes.length) return [];
     const size = vwSize(root);
     const box = boxOf(root);
-    const styles = [box && box !== "dimensional" ? box : "", size >= 2 ? "large-headline" : ""].filter(Boolean);
+    const styles = size >= 2 ? [boxColour(root) || "", "large-headline"].filter(Boolean) : boxStyles(root);
     return [{
       type: "flow",
       role: "headline",
@@ -3899,7 +3938,8 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
-    const overlay = box ? inlineNodes(ctx.collect(box), ctx, { marks: false }) : [];
+    const boxItems = box ? ctx.collect(box) : [];
+    const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -3920,6 +3960,8 @@ var CustomImportScript = (() => {
     const copySize = lines[1] ? vwSize(lines[1]) : 0;
     if (size) variants.push(`size-${String(size).replace(".", "-")}`);
     if (copySize) variants.push(`copy-size-${String(copySize).replace(".", "-")}`);
+    if (heroBox(box)) variants.push(heroBox(box));
+    variants.push(...itemsSpacing(boxItems));
     const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
     return [{
       type: "own",
@@ -3931,7 +3973,9 @@ var CustomImportScript = (() => {
   function fullWidthImageHero(el, ctx) {
     const items = [];
     const title = el.querySelector(".hero-space h1, .hero-space h2");
-    if (title && text(title)) {
+    const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute("style") || "");
+    if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+    if (title && text(title) && !transparent) {
       const box = contentCopy(title, ctx.doc);
       const colour = title.getAttribute("style");
       if (colour && /color/i.test(colour)) {
@@ -3991,7 +4035,8 @@ var CustomImportScript = (() => {
       }
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
-      const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx, { marks: false }) : void 0;
+      const overlayItems = overlay ? ctx.collect(overlay) : [];
+      const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const copy = overlay && overlay.querySelector(".line2");
       const lines = overlay ? [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter(text) : [];
@@ -4001,6 +4046,8 @@ var CustomImportScript = (() => {
       }
       const variants = copySize ? [`copy-size-${String(copySize).replace(".", "-")}`] : [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
+      if (heroBox(overlay)) variants.push(heroBox(overlay));
+      variants.push(...itemsSpacing(overlayItems));
       const holder = doc.createElement("div");
       holder.append(slide.cloneNode(true));
       parse(holder.firstElementChild, {
@@ -4114,11 +4161,13 @@ var CustomImportScript = (() => {
       const target = copy.querySelector("p") || copy;
       desc.append(...target.childNodes);
     }
+    const left = !!el.querySelector(".container > .text-left");
     return [{
       type: "counter",
       colour,
       value,
-      desc
+      desc,
+      left
     }];
   }
   function fastFacts(el, ctx) {
@@ -4144,9 +4193,15 @@ var CustomImportScript = (() => {
   function standaloneVideo(el, ctx) {
     const link2 = videoLink(el, ctx.doc);
     if (!link2) return [];
+    const comp = el.querySelector(".c-standalone-video") || el;
+    const options = [
+      comp.classList.contains("black-border") && !comp.classList.contains("hide-border") ? "" : "no-border",
+      el.querySelector("video[autoplay]") ? "autoplay" : ""
+    ].filter(Boolean);
+    const name = options.length ? `Video (${options.join(", ")})` : "Video";
     const items = [{
       type: "block",
-      block: block(ctx.doc, "Video", [[link2]]),
+      block: block(ctx.doc, name, [[link2]]),
       cellNodes: [para(ctx.doc, link2.cloneNode(true))]
     }];
     const desc = el.querySelector(".desc-content");
@@ -4446,12 +4501,14 @@ var CustomImportScript = (() => {
     const rows = [];
     const parent = nav.querySelector("a.parent-node[href]");
     if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute("href"), text(parent))]);
-    links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute("href"))]));
+    const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, "").replace(/\/index\.html(?=$|[?#])/, "/").replace(/\.html(?=$|[?#])/, "");
+    links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute("href"), path(a.getAttribute("href")))]));
+    const name = el.querySelector(".rule-separator") ? "Sticky Nav (local)" : "Sticky Nav (local, no-rule)";
     return [{
       type: "own",
       kind: "nav",
       styles: [],
-      nodes: [block(doc, "Sticky Nav (local)", rows)]
+      nodes: [block(doc, name, rows)]
     }];
   }
   function promoTile(el, ctx) {
@@ -4505,7 +4562,8 @@ var CustomImportScript = (() => {
     fastfacts: fastFacts,
     standalonevideo: standaloneVideo,
     interactivemedia: interactiveMedia,
-    sectionseparator: () => [{ type: "separator" }],
+    // a white rule (white-hr) is invisible on live: a plain section break; grey / unset: divider
+    sectionseparator: (el) => el.querySelector(".white-hr") ? [{ type: "boundary" }] : [{ type: "separator" }],
     curatedcta: buttons,
     buttonset: buttons,
     secondarycta: buttons,

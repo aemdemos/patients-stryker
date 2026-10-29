@@ -179,12 +179,13 @@ export function createBuilder({
 
   function placeFlow(item) {
     // an image (or image button) joins the default content it follows, whatever its copy style
-    if ((item.role === 'image' || item.role === 'cta') && current && current.key && !current.spaced) {
+    if ((item.role === 'image' || item.role === 'cta') && current && current.key && !current.spaced && !item.own) {
       current.nodes.push(...item.nodes);
       return;
     }
-    // a box with its own padding / margin (spacing tokens) is a section of its own
-    if ((item.spacing || []).length && !item.spacedBox) {
+    // a box with its own padding / margin (spacing tokens), or an item marked own (a bordered
+    // image, coloured buttons: their section style applies to them only), is a section of its own
+    if (((item.spacing || []).length || item.own) && !item.spacedBox) {
       spacedBoxes += 1;
       item.spacedBox = spacedBoxes;
     }

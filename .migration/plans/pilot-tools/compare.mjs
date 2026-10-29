@@ -1,6 +1,7 @@
 // render comparison of the pilots: live www.stryker.com vs the local preview, per width
 //   node compare.mjs <out.json> <list> [list …] [--widths 1440,375] [--refresh-live] [--base prev.json]
-// Live measurements are cached (/tmp/pilot-cache), as live pages do not change between runs:
+// Live measurements are cached (out/live-cache next to this script, kept across restarts that
+// clear /tmp; git-ignored), as live pages do not change between runs:
 // only the preview is loaded again (pass --refresh-live to re-measure live). One page at a time.
 // Per page: text-style differences (leaf computed font / size / weight / colour), live texts
 // missing from the preview, height ratio (incl. the source disclaimer), media counts.
@@ -19,7 +20,7 @@ const refresh = args.includes('--refresh-live') && args.splice(args.indexOf('--r
 const widths = (flag('--widths') || '1440,375').split(',').map(Number);
 const basePath = flag('--base');
 const [outFile, ...lists] = args;
-const CACHE = '/tmp/pilot-cache';
+const CACHE = new URL('./out/live-cache', import.meta.url).pathname;
 mkdirSync(CACHE, { recursive: true });
 
 const pages = lists.flatMap((f) => readFileSync(f, 'utf8').split('\n').map((l) => l.trim()).filter(Boolean)).map(resolvePage);
@@ -56,7 +57,18 @@ function measure() {
   };
 }
 
-async function load(page, url, scroll) {
+// a page that navigates while it is measured (late client-side redirect): measured again once
+async function load(page, url, scroll, retry = true) {
+  try {
+    return await measurePage(page, url, scroll);
+  } catch (e) {
+    if (!retry || !/context was destroyed|navigation/i.test(e.message)) throw e;
+    await page.waitForTimeout(2000);
+    return load(page, url, scroll, false);
+  }
+}
+
+async function measurePage(page, url, scroll) {
   await page.goto(url, { waitUntil: 'load', timeout: 45000 });
   await page.waitForTimeout(scroll ? 2500 : 2000);
   if (scroll) {

@@ -83,14 +83,15 @@ function renderYouTube(id, label) {
  * Pick a renderer for an authored video URL, or null if unsupported.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label
+ * @param {boolean} autoplay a muted, looping, autoplaying video (the `autoplay` option)
  * @returns {HTMLElement|null}
  */
-function renderFor(src, label) {
+function renderFor(src, label, autoplay = false) {
   if (YOUTUBE.test(src)) {
     const id = youTubeId(src);
     return id ? renderYouTube(id, label) : null;
   }
-  if (isDMVideoSrc(src)) return renderVideo(src, label);
+  if (isDMVideoSrc(src)) return renderVideo(src, label, { background: autoplay });
   return null;
 }
 
@@ -123,6 +124,6 @@ export default function decorate(block) {
   const text = link.textContent.trim();
   const label = cleanVideoLabel(link.getAttribute('title'), text);
 
-  const player = renderFor(src, label);
+  const player = renderFor(src, label, block.classList.contains('autoplay'));
   if (player) block.replaceChildren(player);
 }

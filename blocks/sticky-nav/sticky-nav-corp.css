@@ -180,3 +180,10 @@ body.corp .sticky-nav.local .sticky-nav-local-links a:any-link[aria-current="pag
     font-weight: var(--font-weight-regular);
   }
 }
+
+/* the 1px grey rule above the local page navigation (stryker.com .rule-separator.grey-hr);
+   the no-rule option (source hideTopLine) leaves it out */
+body.corp .sticky-nav.local:not(.no-rule) {
+  padding-top: var(--space-block);
+  border-top: 1px solid var(--color-surface-muted);
+}

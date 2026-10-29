@@ -16,16 +16,18 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "standaloneimage.enableBorder": {
-      "handling": "not mapped",
-      "how": "the 1px image border is lost (496 images have it on)",
-      "proposal": "map: a section style for bordered images (name to approve, e.g. image-border); colour from borderColor",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "the image is its own section with image-border (teal), image-border-grey or image-border-black: 1px solid on the image (2026-10-29)",
+      "proposal": "map: section style image-border (teal), image-border-grey, image-border-black",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "standaloneimage.borderColor": {
-      "handling": "not mapped",
-      "how": "only visible when enableBorder is true",
-      "proposal": "map with enableBorder: one border colour per corp colour (teal default, grey, black); other values rounded",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "with enableBorder: bor-teal → image-border, bor-black → image-border-black, the greys → image-border-grey (2026-10-29)",
+      "proposal": "map: with enableBorder: image-border / image-border-grey / image-border-black",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "text.gradientDirection": {
       "handling": "no effect",
@@ -43,71 +45,73 @@
     },
     "text.topPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise (spacing validator to find the cases that matter, then a spacing section style))",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.bottomPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.leftPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise; inside a coloured box use the box's own padding)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.rightPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.topMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.bottomMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.leftMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise; the 20% indent (57 uses) to review as a layout option)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.rightMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "text.backgroundColor": {
-      "handling": "partly",
-      "how": "gold and the greys become section styles (bg-gold, bg-light-gray, bg-gray, bg-dark-gray); white, blue, dark gold, slate are dropped",
-      "proposal": "map every corp colour: white box (matters on images / coloured panels), blue, dark gold, slate as section styles (names to approve); transparent = drop",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "the live palette classes become section styles + boxed (the colour on the text box, not the band): bg-white, bg-gold, bg-light-gray, bg-gray (AEM lighter gray), bg-dark-gray, bg-blue, bg-purple, bg-teal, bg-silver (AEM bg-gray #b2b4ae), bg-dark-gold (AEM bg-orange). Dark gold 182,114,25 / slate / plum are not in the live CSS: they render nothing and are dropped (2026-10-29)",
+      "proposal": "map: section styles bg-white, bg-gold, bg-light-gray, bg-gray, bg-dark-gray (reused), bg-blue, bg-dark-gold (approved), bg-purple, bg-teal, bg-silver + boxed (new, from the live palette); bg-slate / bg-plum / bg-forest dropped (not rendered on live); transparent = none",
+      "status": "approved",
+      "approved": "2026-10-29 (bg-purple, bg-teal, bg-silver, boxed confirmed; bg-slate / bg-plum / bg-forest dropped)"
     },
     "text.showDimensionalBox": {
-      "handling": "partly",
-      "how": "dimensional box recognised; no own look",
-      "proposal": "map to a section style (shadow box), name to approve",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "section style shadow-box (the 10px soft shadow and margin) (2026-10-29)",
+      "proposal": "map: section style shadow-box",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "text.gradientDirectionInverse": {
       "handling": "no effect",
@@ -117,10 +121,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "largeheadline.backgroundColor": {
-      "handling": "partly",
-      "how": "as text.backgroundColor: gold / greys only; the white box behind hero text (environmental-programs) is lost",
-      "proposal": "map as text.backgroundColor; in a hero slide the box behind the text (Hero Corp option, name to approve)",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "as text.backgroundColor (boxed box from size 2 down; large headlines keep the band); in a hero slide or banner: Hero Corp option box-<colour> (box-white, box-gold, box-light-gray, box-dark-gray, box-blue) (2026-10-29)",
+      "proposal": "map: as text.backgroundColor; in a hero slide: Hero Corp option box-white (box-<colour>)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "largeheadline.gradientDirection": {
       "handling": "no effect",
@@ -138,65 +143,66 @@
     },
     "largeheadline.topPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise (box padding from the section style))",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.bottomPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.leftPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.rightPadding": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.topMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.bottomMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.leftMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise; review the -25 overlap pages)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "largeheadline.rightMargin": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise)",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "curatedcta.CTAButtonColor": {
-      "handling": "partly",
-      "how": "gold → Bold + Italic link (gold button); teal, purple, blue, others → Bold link (teal button)",
-      "proposal": "map purple (187 uses) and blue (32) buttons too (convention or section style, name to approve)",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "gold → Bold + Italic link (gold button); btn-purple / btn-blue → the buttons in their own section with that section style; teal and the rest → Bold link (teal button) (2026-10-29)",
+      "proposal": "map: section styles btn-purple, btn-blue",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "curatedcta.ctaOpenInNewTabOverride": {
       "handling": "mapped",
@@ -241,28 +247,32 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "standalonevideo.hideBorder": {
-      "handling": "not mapped",
-      "how": "videos with a border (853) render without",
-      "proposal": "map: the corp Video block keeps the source border by default, hideBorder = no border (option, name to approve)",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "Video has the 1px black border by default; hide-border or no black-border → option no-border (2026-10-29)",
+      "proposal": "map: Video border by default; option no-border",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "standalonevideo.borderColor": {
       "handling": "not mapped",
       "how": "black in 441 of 455",
-      "proposal": "map with hideBorder (black default)",
-      "status": "proposed"
+      "proposal": "map: Video option border-grey (black default)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "standalonevideo.loopVal": {
-      "handling": "not mapped",
-      "how": "looping standalone videos (132)",
-      "proposal": "map: autoplay + loop = a background-style video option (name to approve), as hero video slides",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "with autoplay: Video option autoplay (muted, looping background playback) (2026-10-29)",
+      "proposal": "map: Video option autoplay (muted, looping)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "standalonevideo.autoPlayVal": {
-      "handling": "not mapped",
-      "how": "autoplaying standalone videos (122)",
-      "proposal": "map with loopVal",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "Video option autoplay (2026-10-29)",
+      "proposal": "map: Video option autoplay",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "dam/components/scene7/dynamicmedia.assetType": {
       "handling": "mapped",
@@ -400,8 +410,10 @@
     "fullbleedpanel.backgroundColor": {
       "handling": "partly",
       "how": "the rendered panel classes (bg-light-gray, gradients, bg-gold, …) become section styles; colours without a class (e.g. rgb(89,75,97), rgba(62,82,69,1)) to verify",
-      "proposal": "map every panel colour to a corp colour section style (names to approve for new ones)",
-      "status": "proposed"
+      "proposal": "map: panel colours as bg-* section styles (bg-plum, bg-forest new)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)",
+      "note": "bg-plum / bg-forest not added: panel colours without a live class are kept as before (to review with the panels)"
     },
     "contactbutton.hideComponent": {
       "handling": "mapped",
@@ -448,8 +460,9 @@
     "pagehero.headColor": {
       "handling": "to verify",
       "how": "page hero title colour: gold (481), black (10)",
-      "proposal": "map gold title (colour tag) if the live title is gold",
-      "status": "proposed"
+      "proposal": "map: gold title: [[color-gold]] colour tag (existing)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "pagehero.usethumbnail": {
       "handling": "to verify",
@@ -501,10 +514,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "carouselslidegroup/carouselslide.backgroundColor": {
-      "handling": "not mapped",
-      "how": "the slide's text box background (white in 452 of 463)",
-      "proposal": "map with largeheadline.backgroundColor: the box behind the slide text (Hero Corp option, name to approve)",
-      "status": "proposed"
+      "handling": "no effect",
+      "how": "verified: the slide colour is not visible on live; the white box behind the text comes from the Large Headline background (Hero Corp option box-white) (2026-10-29)",
+      "proposal": "map: Hero Corp option box-white (box-<colour>)",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "carouselslidegroup/carouselslide.gradientDirection": {
       "handling": "no effect",
@@ -604,10 +618,11 @@
       "approved": "2026-10-28 (all keep and drop proposals)"
     },
     "buttonset.buttonSeriesColors": {
-      "handling": "partly",
-      "how": "as CTAButtonColor: gold vs other",
-      "proposal": "map as CTAButtonColor",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "as curatedcta.CTAButtonColor (same handler) (2026-10-29)",
+      "proposal": "map: as CTAButtonColor: btn-purple, btn-blue",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "buttonset.buttonAlignment": {
       "handling": "no effect",
@@ -638,10 +653,11 @@
       "verified": "2026-10-28 on the example pages (1440px)"
     },
     "fullWidthImageHero.hideBottomLine": {
-      "handling": "to verify",
-      "how": "no gold rule under the hero",
-      "proposal": "map as pagehero.hideBottomLine",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "the page hero keeps the border-bottom option only when the gold rule renders (.border-bottom-gold) (2026-10-29)",
+      "proposal": "map: existing page-hero border-bottom option, left off",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "marketoform.formId": {
       "handling": "mapped",
@@ -708,11 +724,12 @@
       "verified": "2026-10-28 on the example pages (1440px)"
     },
     "sectionseparator.sectionColor": {
-      "handling": "partly",
-      "how": "verified: white-hr (69) is a 1px white line on a white page, invisible, only the 50px gap shows (acute-care); grey-hr (13) and unset are a visible grey rule (maternity-solutions). The importer makes every separator the visible divider",
-      "proposal": "map: white-hr = a plain section break (no rule, no new name); grey-hr / unset = divider (as today)",
-      "status": "proposed",
-      "verified": "2026-10-28 on the example pages (1440px)"
+      "handling": "mapped",
+      "how": "white-hr → a plain section break (no rule); grey-hr / unset → divider (2026-10-29)",
+      "proposal": "map: white-hr = a plain section break (no rule); grey-hr / unset = divider",
+      "status": "approved",
+      "verified": "2026-10-28 on the example pages (1440px)",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "numbercounter.startNumber": {
       "handling": "mapped",
@@ -758,16 +775,17 @@
     },
     "numbercounter.fontSize": {
       "handling": "mapped",
-      "how": "tokens from the rendered style (pt-4 = padding-top 4%, pl-3-6, mt-n8, pt-10px): a box on its own → section styles; a Columns cell with one spacing → c<N>-<token> options; mixed cells / flex sections → [[spacing,…]] marker paragraphs; scripts/corp-spacing.js applies them as % of the box width (2026-10-29). Not yet: Hero Corp slide / banner text boxes, tabs panels",
+      "how": "tokens from the rendered style (padding-top-4 = padding-top 4%, padding-left-3-6, margin-top-minus-8, padding-top-10px): a box on its own → section styles; a Columns cell → cell-<N>-<token> options; mixed cells / flex sections / tab panels → [[spacing,…]] marker paragraphs; a Hero Corp slide / banner text box → Hero Corp options; scripts/corp-spacing.js applies them as % of the box width, replacing the padding of a coloured box (2026-10-29)",
       "proposal": "carry the exact value (lift and shift; was: normalise, or size options like Hero Corp size-<n> (decide))",
       "status": "approved",
       "approved": "2026-10-28 (carry exact values, how: see the spacing options proposal)"
     },
     "numbercounter.numberCounterAlignment": {
-      "handling": "not mapped",
-      "how": "centred (35) / left (32); Statistics is centred",
-      "proposal": "map left alignment as a Statistics option (name to approve)",
-      "status": "proposed"
+      "handling": "mapped",
+      "how": "left-aligned counters → Statistics option left (2026-10-29)",
+      "proposal": "map: Statistics option left",
+      "status": "approved",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "contentFragment.elementNames": {
       "handling": "mapped",
@@ -804,11 +822,12 @@
       "verified": "2026-10-28 on the example pages (1440px)"
     },
     "localpagenavigation.hideTopLine": {
-      "handling": "not mapped",
-      "how": "verified: without the flag a 1px grey rule (rgb(178,180,174)) sits above the local nav (1788-platform); with it there is none (corporate-responsibility). Sticky Nav (local) draws no rule, so the 21 local navs with the rule lose it",
-      "proposal": "map: Sticky Nav (local) shows the grey rule by default; hideTopLine = an option without it (name to approve, e.g. no-rule)",
-      "status": "proposed",
-      "verified": "2026-10-28 on the example pages (1440px)"
+      "handling": "mapped",
+      "how": "Sticky Nav (local) has the grey rule on top by default; no rule → option no-rule (2026-10-29)",
+      "proposal": "map: Sticky Nav (local): grey rule by default, option no-rule",
+      "status": "approved",
+      "verified": "2026-10-28 on the example pages (1440px)",
+      "approved": "2026-10-29 (map names: all fine)"
     },
     "eventdetail.eventBU": {
       "handling": "later",
@@ -877,5 +896,7 @@
       "status": "proposed"
     }
   },
-  "principle": "Lift and shift (user, 2026-10-28): match the live page as closely as possible; carry authored values as they are rather than normalising them. Consolidation is the client's later choice."
+  "principle": "Lift and shift (user, 2026-10-28): match the live page as closely as possible; carry authored values as they are rather than normalising them. Consolidation is the client's later choice.",
+  "spacingTokens": "padding-top-5 / padding-bottom-1 / padding-left-3-6 / padding-right-5 / margin-top-30 / margin-bottom-10 / margin-top-minus-8 / padding-top-10px (% of the box's column unless px); Columns cell N: cell-N-<token>; mixed cells: [[spacing,<token>,…]] (user, 2026-10-29: explicit names)",
+  "columnStyles": "col-1-4 / col-1-3 / col-1-2 / col-2-3 / col-3-4, col-at-1-4 … col-at-3-4 (approved 2026-10-29)"
 }

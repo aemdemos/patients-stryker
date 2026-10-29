@@ -47,12 +47,40 @@ function styleColour(el) {
   return colourClass(hex);
 }
 
-// rendered background classes of a text / headline box → section style
+// rendered background classes of a text / headline box → section style (stryker.com palette:
+// .bg-* in base.min.css; colours outside it are not rendered, so they have no style)
 const BOXES = [
+  ['dimensional-box', 'dimensional'],
   ['bg-gold', 'bg-gold'], ['bg-light-gray', 'bg-light-gray'], ['bg-lighter-gray', 'bg-gray'],
-  ['bg-dark-gray', 'bg-dark-gray'], ['dimensional-box', 'dimensional'],
+  ['bg-dark-gray', 'bg-dark-gray'], ['bg-white', 'bg-white'], ['bg-blue', 'bg-blue'],
+  ['bg-purple', 'bg-purple'], ['bg-teal', 'bg-teal'], ['bg-gray', 'bg-silver'],
+  ['bg-orange', 'bg-dark-gold'],
 ];
 const boxOf = (el) => (BOXES.find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+/** The background colour style of a box (the dimensional box's own colour included). */
+const boxColour = (el) => (BOXES.slice(1)
+  .find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+/**
+ * Hero Corp box-<colour>: the coloured box behind the text of a slide or banner (its Large
+ * Headline / rich text has a background, e.g. environmental-programs: white), approved
+ * 2026-10-29. null without one.
+ */
+const heroBox = (overlay) => {
+  const box = overlay && overlay.querySelector('.c-largeheadline > .has-background, .c-rich-text-editor > .has-background');
+  const colour = boxColour(box);
+  return colour ? `box-${colour.replace(/^bg-/, '')}` : null;
+};
+
+/**
+ * The section styles of a box on its own: its colour and `boxed` (the background covers the
+ * box in the column with the box padding, not the full width), `shadow-box` for the
+ * dimensional box (approved 2026-10-29).
+ */
+const boxStyles = (el) => {
+  const colour = boxColour(el);
+  const shadow = !!(el && el.classList.contains('dimensional-box'));
+  return [colour || '', colour || shadow ? 'boxed' : '', shadow ? 'shadow-box' : ''].filter(Boolean);
+};
 
 /** The largest fontsize-<n>-vw / fontsize-<n>vw size in an element (3-5 → 3.5), or 0. */
 function vwSize(el) {
@@ -64,24 +92,26 @@ function vwSize(el) {
 
 // AEM box spacing fields as rendered (style="padding-top: 4%; …") → tokens (decisions
 // property-map: carried exactly, lift and shift); scripts/corp-spacing.js applies them
-const SPACING_PROPS = [
-  ['padding-top', 'pt'], ['padding-bottom', 'pb'], ['padding-left', 'pl'], ['padding-right', 'pr'],
-  ['margin-top', 'mt'], ['margin-bottom', 'mb'], ['margin-left', 'ml'], ['margin-right', 'mr'],
-];
+const SPACING_PROPS = ['padding-top', 'padding-bottom', 'padding-left', 'padding-right',
+  'margin-top', 'margin-bottom', 'margin-left', 'margin-right'];
 
 /**
- * The box spacing of a rendered text / Large Headline box: pt-4 (padding-top 4%), pl-3-6,
- * mt-n8 (-8%), pt-10px. Empty fields ("padding-top: %;") and values the browser ignores
- * (e.g. "10px%") have no effect on live, so none here.
+ * The box spacing of a rendered text / Large Headline box: padding-top-4 (padding-top 4% of the
+ * column), padding-left-3-6 (3.6%), margin-top-minus-8 (-8%), padding-top-10px. Empty fields
+ * ("padding-top: %;") and values the browser ignores (e.g. "10px%") have no effect on live, so
+ * none here.
  */
 export function spacingOf(box) {
   const style = (box && box.getAttribute && box.getAttribute('style')) || '';
-  return SPACING_PROPS.flatMap(([prop, key]) => {
+  return SPACING_PROPS.flatMap((prop) => {
     const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)(%|px)\\s*(?:;|$)`));
     if (!m || Number(m[1]) === 0) return [];
-    return [`${key}-${m[1].replace('-', 'n').replace('.', '-')}${m[2] === 'px' ? 'px' : ''}`];
+    return [`${prop}-${m[1].replace('-', 'minus-').replace('.', '-')}${m[2] === 'px' ? 'px' : ''}`];
   });
 }
+
+/** The spacing tokens of the first spaced box among items (a hero text box), or []. */
+const itemsSpacing = (items) => ((items || []).find((it) => it.type === 'flow' && (it.spacing || []).length) || {}).spacing || [];
 
 /** A [[spacing,…]] paragraph: the start of a spaced box in a cell (no tokens = the end). */
 function spacingMarker(doc, tokens) {
@@ -208,7 +238,9 @@ export function richTextNodes(source, doc) {
 function statistics(counters, ctx, columns = counters.length, countUp = true) {
   const rows = counters.map((c) => (c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]));
   const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
-  return block(ctx.doc, `Statistics (${countUp ? 'count-up, ' : ''}${cols})`, rows);
+  // left-aligned counters (numberCounterAlignment text-left): the left option (approved)
+  const left = counters.some((c) => c.left) ? ', left' : '';
+  return block(ctx.doc, `Statistics (${countUp ? 'count-up, ' : ''}${cols}${left})`, rows);
 }
 
 /** Section-level nodes of items (in one section: tabs panels, flex sections). */
@@ -421,7 +453,7 @@ export function columnItems(columns, split, ctx, widths = null) {
   }
 
   // G: Columns, one row, one cell per column (empty columns keep their cell). A cell whose
-  // content is one spaced box (or boxes with the same spacing) gets c<N>-<token> options;
+  // content is one spaced box (or boxes with the same spacing) gets cell-<N>-<token> options;
   // other spaced boxes are marked inside the cell ([[spacing,…]])
   const modifiers = [];
   const cells = cols.map((items, i) => {
@@ -430,7 +462,7 @@ export function columnItems(columns, split, ctx, widths = null) {
     if (!spaced.length) return cellNodes(items, ctx);
     const same = new Set(spaced.map((it) => it.spacing.join(' '))).size === 1;
     if (same && spaced.length === content.length) {
-      modifiers.push(...spaced[0].spacing.map((t) => `c${i + 1}-${t}`));
+      modifiers.push(...spaced[0].spacing.map((t) => `cell-${i + 1}-${t}`));
       return cellNodes(items, ctx);
     }
     return cellNodes(items, ctx, { marks: true });
@@ -509,15 +541,25 @@ function textComponent(el, ctx) {
   const item = {
     type: 'flow', role: 'text', nodes, centred, box, spacing: spacingOf(source),
   };
-  // a coloured box on its own (not in a column): the section takes the background
-  if (box && box !== 'dimensional') item.styles = [box];
-  if (box === 'dimensional') item.styles = [];
+  // a coloured / dimensional box on its own (not in a column): its section shows the box
+  item.styles = boxStyles(source);
   return [item];
 }
 
+// image border classes (base.min.css .c-standalone-image img.bor-*) → section styles
+const BORDERS = {
+  'bor-teal': 'image-border', 'bor-black': 'image-border-black', 'bor-gray': 'image-border-grey', 'bor-dark_gray': 'image-border-grey', 'bor-dark_gray_40T': 'image-border-grey',
+};
 function standaloneImage(el, ctx) {
   const nodes = standaloneImageNodes(el, ctx.doc);
-  return nodes.length ? [{ type: 'flow', role: 'image', nodes }] : [];
+  if (!nodes.length) return [];
+  const img = el.querySelector('img[class*="bor-"]');
+  const cls = img && [...img.classList].find((c) => c.startsWith('bor-'));
+  if (cls && !BORDERS[cls]) ctx.report.notes.push(`image border ${cls}: no style, imported without border`);
+  const border = cls && BORDERS[cls];
+  return [{
+    type: 'flow', role: 'image', nodes, ...(border ? { styles: [border], own: true } : {}),
+  }];
 }
 
 function buttons(el, ctx) {
@@ -546,9 +588,13 @@ function buttons(el, ctx) {
     if (!source.getAttribute('alt')) ctx.report.notes.push(`image button without alt text: ${source.getAttribute('src')}`);
     return para(doc, link);
   }).filter(Boolean);
+  // purple / blue buttons: the btn-purple / btn-blue section style (approved 2026-10-29)
+  const colour = ['btn-purple', 'btn-blue'].find((c) => el.querySelector(`a.${c}`));
   return [
     ...(head.length ? [{ type: 'flow', role: 'text', nodes: head }] : []),
-    ...(nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : []),
+    ...(nodes.length ? [{
+      type: 'flow', role: 'cta', nodes, ...(colour ? { styles: [colour], own: true } : {}),
+    }] : []),
   ];
 }
 
@@ -603,7 +649,10 @@ function largeHeadline(el, ctx) {
   if (!nodes.length) return [];
   const size = vwSize(root);
   const box = boxOf(root);
-  const styles = [box && box !== 'dimensional' ? box : '', size >= 2 ? 'large-headline' : ''].filter(Boolean);
+  // a large-headline band shows its colour as a band; a smaller headline box is a box
+  const styles = size >= 2
+    ? [boxColour(root) || '', 'large-headline'].filter(Boolean)
+    : boxStyles(root);
   return [{
     type: 'flow', role: 'headline', nodes, box, size, styles, centred, spacing: spacingOf(root),
   }];
@@ -643,8 +692,9 @@ function fullWidthImage(el, ctx) {
   const { doc } = ctx;
   const img = el.querySelector('.imgBoxId img') || el.querySelector('img');
   const box = el.querySelector('.textBoxId');
-  // (no [[spacing]] markers in a hero text box: Hero Corp does not read them yet)
-  const overlay = box ? inlineNodes(ctx.collect(box), ctx, { marks: false }) : [];
+  // the text box's own spacing goes on the block (Hero Corp options, scripts/corp-spacing.js)
+  const boxItems = box ? ctx.collect(box) : [];
+  const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
   if (!img && !overlay.length) return [];
   const source = img && img.closest('picture') && img.closest('picture').querySelector('source[media*="min-width"]');
   const image = (src) => {
@@ -667,6 +717,8 @@ function fullWidthImage(el, ctx) {
   const copySize = lines[1] ? vwSize(lines[1]) : 0;
   if (size) variants.push(`size-${String(size).replace('.', '-')}`);
   if (copySize) variants.push(`copy-size-${String(copySize).replace('.', '-')}`);
+  if (heroBox(box)) variants.push(heroBox(box));
+  variants.push(...itemsSpacing(boxItems));
   const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
   return [{
     type: 'own', kind: 'hero', styles: cellStyles([overlay], ctx), nodes: [block(doc, `Hero Corp (${variants.join(', ')})`, rows)],
@@ -681,7 +733,11 @@ function fullWidthImage(el, ctx) {
 function fullWidthImageHero(el, ctx) {
   const items = [];
   const title = el.querySelector('.hero-space h1, .hero-space h2');
-  if (title && text(title)) {
+  // a title line set transparent (rgba(…, 0): 31 heroes) is invisible on live: not imported
+  // (the banner headline is the page title then)
+  const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute('style') || '');
+  if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+  if (title && text(title) && !transparent) {
     const box = contentCopy(title, ctx.doc);
     // the heading's own inline colour (style on the h1) as a span the cleaner maps to a tag
     const colour = title.getAttribute('style');
@@ -751,8 +807,8 @@ function carousel(el, ctx) {
     // the overlay through the component handlers (rich text, buttons, Large Headline lines
     // with their colours); its copy (line 2) size as the copy-size option
     const overlay = slide.querySelector('.overlayparsys');
-    const overlayNodes = overlay
-      ? inlineNodes(ctx.collect(overlay), ctx, { marks: false }) : undefined;
+    const overlayItems = overlay ? ctx.collect(overlay) : [];
+    const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
     // the copy size: the Large Headline line 2's vw size, else the first vw size after the
     // headline line (inspace: two lines with their own vw sizes in line 1, a fixed line 2)
@@ -766,6 +822,9 @@ function carousel(el, ctx) {
     // the slide image in the right half of the slide XF's grid (offset 6 / width 6): the
     // product hero layout
     if (slide.querySelector('.experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6')) variants.push('image-right');
+    if (heroBox(overlay)) variants.push(heroBox(overlay));
+    // the text box's own spacing (Hero Corp options, scripts/corp-spacing.js)
+    variants.push(...itemsSpacing(overlayItems));
     const holder = doc.createElement('div');
     holder.append(slide.cloneNode(true));
     heroImageSlideParser(holder.firstElementChild, {
@@ -883,8 +942,9 @@ function numberCounter(el, ctx) {
     const target = copy.querySelector('p') || copy;
     desc.append(...target.childNodes);
   }
+  const left = !!el.querySelector('.container > .text-left');
   return [{
-    type: 'counter', colour, value, desc,
+    type: 'counter', colour, value, desc, left,
   }];
 }
 
@@ -917,8 +977,16 @@ function fastFacts(el, ctx) {
 function standaloneVideo(el, ctx) {
   const link = videoLink(el, ctx.doc);
   if (!link) return [];
+  // the source border (black-border, unless hide-border) is the default: no-border otherwise;
+  // a video that autoplays on live (muted, looping): autoplay (approved 2026-10-29)
+  const comp = el.querySelector('.c-standalone-video') || el;
+  const options = [
+    comp.classList.contains('black-border') && !comp.classList.contains('hide-border') ? '' : 'no-border',
+    el.querySelector('video[autoplay]') ? 'autoplay' : '',
+  ].filter(Boolean);
+  const name = options.length ? `Video (${options.join(', ')})` : 'Video';
   const items = [{
-    type: 'block', block: block(ctx.doc, 'Video', [[link]]), cellNodes: [para(ctx.doc, link.cloneNode(true))],
+    type: 'block', block: block(ctx.doc, name, [[link]]), cellNodes: [para(ctx.doc, link.cloneNode(true))],
   }];
   // the video's title / description under the player (.desc-content, e.g. an h3 on
   // /us/en/sports-medicine/products/inspace): kept as text after the video
@@ -1254,9 +1322,13 @@ function localNav(el, ctx) {
   const rows = [];
   const parent = nav.querySelector('a.parent-node[href]');
   if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute('href'), text(parent))]);
-  links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute('href'))]));
+  // the link cell shows the page path (as the link will read after the .html rewrite)
+  const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, '').replace(/\/index\.html(?=$|[?#])/, '/').replace(/\.html(?=$|[?#])/, '');
+  links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute('href'), path(a.getAttribute('href')))]));
+  // the grey rule above the nav (rule-separator) is the default; hideTopLine: no-rule
+  const name = el.querySelector('.rule-separator') ? 'Sticky Nav (local)' : 'Sticky Nav (local, no-rule)';
   return [{
-    type: 'own', kind: 'nav', styles: [], nodes: [block(doc, 'Sticky Nav (local)', rows)],
+    type: 'own', kind: 'nav', styles: [], nodes: [block(doc, name, rows)],
   }];
 }
 
@@ -1335,7 +1407,8 @@ export const COMPONENTS = {
   fastfacts: fastFacts,
   standalonevideo: standaloneVideo,
   interactivemedia: interactiveMedia,
-  sectionseparator: () => [{ type: 'separator' }],
+  // a white rule (white-hr) is invisible on live: a plain section break; grey / unset: divider
+  sectionseparator: (el) => (el.querySelector('.white-hr') ? [{ type: 'boundary' }] : [{ type: 'separator' }]),
   curatedcta: buttons,
   buttonset: buttons,
   secondarycta: buttons,

@@ -58,6 +58,7 @@
   inset: 0;
   box-sizing: border-box;
   padding: 5%;
+  background-color: var(--hero-box-bg, transparent);
 }
 
 .hero-corp.image-slide.text-below > div:last-child {
@@ -163,7 +164,7 @@
   .hero-corp.image-slide:is(.text-below, .text-above) > div:last-child {
     position: absolute;
     inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
-    padding: 0;
+    padding: var(--hero-box-padding, 0);
   }
 
   .hero-corp.image-slide.text-above > div:last-child {
@@ -205,3 +206,12 @@
     font-size: var(--heading-font-size-xl);
   }
 }
+
+/* box-<colour>: the coloured box behind the slide / banner text (stryker.com Large Headline
+   .has-background in the overlay, 20px padding; e.g. environmental-programs: white) */
+.hero-corp[class*="box-"] { --hero-box-padding: var(--space-block-l); }
+.hero-corp.box-white { --hero-box-bg: var(--color-white); }
+.hero-corp.box-gold { --hero-box-bg: var(--color-accent); }
+.hero-corp.box-light-gray { --hero-box-bg: var(--color-surface); }
+.hero-corp.box-dark-gray { --hero-box-bg: var(--color-secondary); }
+.hero-corp.box-blue { --hero-box-bg: var(--color-navy-bright); }

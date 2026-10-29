@@ -165,3 +165,34 @@ differ. By cause:
 - **Regression** (product-detail, long-page-detail and tier2 pilots, after the last fixes): two
   pages changed, both with a teal tag dropped inside a link (tier2
   business-association-agreement, news pangea). Everything else changed only in anchor IDs.
+
+## Batch 2026-10-29: explicit spacing names, approved map items (one re-import)
+- **Spacing tokens** use explicit names: `padding-top-5`, `padding-left-3-6`,
+  `margin-top-minus-8`, `padding-top-10px`. Columns cells use `cell-<N>-<token>`, mixed content
+  uses `[[spacing,…]]` markers (now also inside tab panels and block cells). The Hero Corp
+  text box takes them as block options (`spaceBlock` in scripts/corp-spacing.js). In a
+  coloured box (`boxed`, `box-*`) they replace the box padding, as in AEM.
+- **Map items implemented:**
+  - box colours: section styles plus `boxed`; new bg-purple, bg-teal, bg-silver (approved);
+    bg-slate / bg-plum / bg-forest dropped (not rendered on live);
+  - shadow-box; image-border / -grey / -black; btn-purple / btn-blue;
+  - white-hr = section break, grey-hr = divider;
+  - Statistics `left`; Sticky Nav (local) `no-rule`;
+  - Video `no-border` / `autoplay`; Hero Corp `box-<colour>`;
+  - transparent hero titles not imported.
+- **Re-import:** 39 pilots and 53 fragments, no failures; coverage 95/95; no .html or /index
+  links.
+- **Measured** (inspace verma-quote, shadow-box with padding-top-5 …): ours x 40 / width
+  1360 / padding 68px, against live 41 / 1359 / 68.9px.
+- **Comparison** (`node compare.mjs`, results in pilot-tools/out, git-ignored; the old base
+  files were lost when /tmp was cleared):
+  - pd + lpd: height distance 0.96 / 1.07 (1440 / 375), style diffs 57 / 56;
+  - t2 + news: height distance 1.80 / 2.13, style diffs 84 / 276 (188 of them were Table
+    cells at 12px on phones; fixed with blocks/table/table-corp.css: 14px at every width, as
+    live).
+- **Found, not fixed:**
+  - Cards (resources) video cards (inspace, 15 titles): the title link to the .mp4 becomes
+    an inline player inside the h5, so the title text disappears. Live shows a thumbnail and a
+    title, both linking to the video.
+  - Link lists whose live titles are H3 Egyptienne 21px render as LI 14px (te-virtual
+    blueprint 11, surgical learn 6, ems 1).

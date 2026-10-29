@@ -1,4 +1,5 @@
 import decorateDMAssets, { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
+import { spaceBlock } from '../../scripts/corp-spacing.js';
 
 // a slide's media: its picture, or its background video (a video slide)
 const MEDIA = 'picture, .dm-video-background';
@@ -185,4 +186,6 @@ export default async function decorate(block) {
   if (!block.querySelector(':scope > div:first-child :is(picture, .dm-video-background)')) {
     block.classList.add('no-image');
   }
+  // the text box's AEM padding / margin (spacing options, e.g. padding-top-4)
+  spaceBlock(block, block.lastElementChild);
 }

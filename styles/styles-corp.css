@@ -321,20 +321,28 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* section styles: backgrounds */
 :where(body.corp) main > .section.bg-white {
+  --corp-box-bg: var(--color-white);
+
   background-color: var(--color-white);
 }
 
 :where(body.corp) main > .section.bg-gold {
+  --corp-box-bg: var(--color-accent);
+
   background-color: var(--color-accent);
 }
 
 :where(body.corp) main > .section.bg-light-gray {
+  --corp-box-bg: var(--color-surface);
+
   background-color: var(--color-surface);
 }
 
 /* bg-gray: the stryker.com bg-lighter-gray band (#dfe1de, e.g. the contact directory's
    group headings on /us/en/about/contact) */
 :where(body.corp) main > .section.bg-gray {
+  --corp-box-bg: var(--color-surface-dim);
+
   background-color: var(--color-surface-dim);
 }
 
@@ -368,12 +376,83 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 :where(body.corp) main > .section.bg-dark-gray {
+  --corp-box-bg: var(--color-secondary);
+
   background-color: var(--color-secondary);
   color: var(--color-white);
 }
 
 :where(body.corp) main > .section.bg-dark-gray a:any-link {
   color: var(--color-white);
+}
+
+/* the rest of the stryker.com box palette (base.min.css .bg-blue / .bg-purple / .bg-teal /
+   .bg-gray / .bg-orange); like the source, the text keeps its own colour */
+:where(body.corp) main > .section.bg-blue {
+  --corp-box-bg: var(--color-navy-bright);
+
+  background-color: var(--color-navy-bright);
+}
+
+:where(body.corp) main > .section.bg-purple {
+  --corp-box-bg: var(--color-purple);
+
+  background-color: var(--color-purple);
+}
+
+:where(body.corp) main > .section.bg-teal {
+  --corp-box-bg: var(--color-primary);
+
+  background-color: var(--color-primary);
+}
+
+:where(body.corp) main > .section.bg-silver {
+  --corp-box-bg: var(--color-surface-muted);
+
+  background-color: var(--color-surface-muted);
+}
+
+:where(body.corp) main > .section.bg-dark-gold {
+  --corp-box-bg: var(--color-accent-link-hover);
+
+  background-color: var(--color-accent-link-hover);
+}
+
+/* boxed: a text / headline box with a background (stryker.com .has-background) is a box in
+   the column, not a band: the colour covers the box (column width, 10px padding), the
+   section itself stays clear. Box spacing tokens replace the 10px (scripts/corp-spacing.js) */
+:where(body.corp) main > .section.boxed {
+  background-color: transparent;
+}
+
+:where(body.corp) main > .section.boxed > .default-content-wrapper {
+  margin-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
+  padding: var(--space-block-s);
+  background-color: var(--corp-box-bg, transparent);
+}
+
+/* shadow-box: the dimensional box (stryker.com .dimensional-box: 10px shadow at 30%, 10px
+   margin in the column) */
+:where(body.corp) main > .section.shadow-box > .default-content-wrapper {
+  margin-block: var(--space-block-s);
+  margin-inline: max(calc(var(--container-gutter) + var(--space-block-s)), calc((100% - var(--container-max)) / 2 + var(--container-gutter) + var(--space-block-s)));
+  box-shadow: var(--shadow-soft);
+}
+
+/* image-border(-grey / -black): the image's 1px border (stryker.com img.bor-teal / bor-gray /
+   bor-black) */
+:where(body.corp) main > .section:is(.image-border, .image-border-grey, .image-border-black) picture img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-primary);
+}
+
+:where(body.corp) main > .section.image-border-grey picture img { border-color: var(--color-surface-muted); }
+:where(body.corp) main > .section.image-border-black picture img { border-color: var(--color-black); }
+
+/* Statistics (left): left-aligned counters (stryker.com numberCounterAlignment text-left) */
+:where(body.corp) .statistics.left .statistics-item {
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* section styles: full-bleed panel gradients (`dark` = the teal one). Measured on
