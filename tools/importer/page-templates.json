@@ -863,6 +863,46 @@
           ]
         }
       ]
+    },
+    {
+      "name": "news-detail-xf",
+      "description": "www.stryker.com news articles whose body is an Experience Fragment (#462; import-news-xf.js). As news-detail, plus: shared XFs (business-unit Resources links) as a fragment block before the small print; XF grid rows with two or more filled cells as Columns (variant from the column spans); blank titles and spacers dropped; Futura bold 2em-2.5em paragraphs as the H1 and ruled feature subheads as underlined H2s (gold rule); a dimensional box as Panel (left); news typography (#441).",
+      "urls": [
+        "https://www.stryker.com/us/en/acute-care/news/acute-care-training-and-education-resources.html",
+        "https://www.stryker.com/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html",
+        "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+        "https://www.stryker.com/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-.html",
+        "https://www.stryker.com/us/en/about/news/2025/features/stryker-releases-2024-comprehensive-report.html",
+        "https://www.stryker.com/us/en/about/news/features/improving-safety--spreading-truth-about-surgical-smoke.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing.html",
+        "https://www.stryker.com/us/en/about/news/features/employees-inspire-a-new-generation-of-robotics-engineers-through.html",
+        "https://www.stryker.com/us/en/about/news/features/from-behind-the-scenes-to-the-front-line.html",
+        "https://www.stryker.com/us/en/about/news/features/restoring-spines-and-hope.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/stryker-releases-comprehensive-report-highlighting-2022-performa.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-announces-leadership-succession.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".experiencefragment .aem-Grid"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".c-rich-text-editor:has(.dimensional-box)"
+          ]
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".experiencefragment"
+          ]
+        }
+      ]
     }
   ]
 }
