@@ -158,10 +158,34 @@ body.news-detail main a:any-link {
   text-decoration: none;
 }
 
+/* Columns `dark-last`: the last cell is a dark-grey pull quote box (stryker.com
+   bg-dark-gray rich text: 5% padding inside its 15px column gutter) in white 21px light
+   serif; Bold + Italic words keep the Futura bold (gold with [[color-gold]], e.g. the
+   surgical smoke feature) */
+body.news-detail main .columns.dark-last > div > div:last-child {
+  margin-inline: var(--space-block);
+  padding: var(--space-block);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+body.news-detail main .columns.dark-last > div > div:last-child p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 @media (width >= 600px) {
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
     font-family: var(--display-font-family);
     font-weight: var(--font-weight-bold);
+  }
+
+  /* two-tone title: a title with Bold words keeps its plain words in the light serif, as
+     on phones (stryker.com futura-bold + urw-egyptienne title, the surgical smoke feature) */
+  body.news-detail main > .section:nth-child(1 of :not(:empty)) h1:has(strong) {
+    font-family: var(--heading-font-family);
+    font-weight: var(--font-weight-medium);
   }
 
   body.news-detail main > .section > .default-content-wrapper > h4 {
@@ -186,6 +210,13 @@ body.news-detail main a:any-link {
      4 per row from 600px is too narrow in the 66.66% column) */
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Columns dark-last: the quote box takes what the text cell leaves (its margins sit
+     inside the column) and hugs its content */
+  body.news-detail main .columns.dark-last > div > div:last-child {
+    flex: 1 1 0;
+    align-self: flex-start;
   }
 }
 
