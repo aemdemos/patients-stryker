@@ -1,0 +1,28 @@
+/* long-page-detail-corp — corp long-page-detail pages (`template: long-page-detail-corp`,
+   #469). CSS-only template.
+
+   Layout measured on the stryker.com long-page-detail pages (Virtual Learning Center
+   videos, video detail pages, text articles) at 375 / 1000 / 1440:
+   - title section (the first section with content): the H1, Futura bold 28px from 600px
+     (the light serif on phones), no rule below it
+   - the content starts 15px below the H1, and the sections follow each other 15px apart
+     (the source runs them as one column of components with 15px margins) */
+
+/* ---- title section ---- */
+
+body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+/* ---- section spacing ---- */
+
+body.long-page-detail-corp main > .section {
+  margin-bottom: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+}

@@ -448,6 +448,20 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* column-10-12: the section in a centred 10/12 column, as the stryker.com AEM grid sets
+   the Virtual Learning Center video item (10 columns, offset 1: 1175px at 1440px, the
+   copy inside it 15px in, the video and the cards at its edges). From 900px (source
+   1024px); full width below, as on the source phones */
+@media (width >= 900px) {
+  :where(body.corp) main > .section.column-10-12 > div {
+    max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+  }
+
+  :where(body.corp) main > .section.column-10-12 > :not(.default-content-wrapper) {
+    padding-inline: 0;
+  }
+}
+
 /* section style `serif`: Egyptienne copy in default content (stryker.com
    span.urw-egyptienne); the copy size comes from p-1 / p-1-25 (columns style their own
    serif sections, blocks/columns) */
