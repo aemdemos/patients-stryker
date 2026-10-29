@@ -240,6 +240,14 @@
   --cards-corp-resource-cover-height: 238px;
 }
 
+/* the image box is 240px high at every width, the image centred in it (stryker.com
+   .c-resourcesanddownload .img-container: height 240px, vertical-align middle) */
+.cards-corp.resources .cards-corp-card-image {
+  display: flex;
+  align-items: center;
+  height: calc(var(--cards-corp-resource-cover-height) + 2px);
+}
+
 /* resources: the document cover in a 238px-high box at its own proportions, never stretched
    to the card (stryker.com resources and downloads: 184 x 238 at every width, clarifix /
    lifepak-15 / isolibrium) */

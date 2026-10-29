@@ -46,6 +46,25 @@ function buildCardCells(entry, href, ctaLabel) {
   return [imageCell, body];
 }
 
+/**
+ * Card titles that link to a video file: the page-wide Dynamic Media pass renders every link
+ * to a video as a player, but a card title is the card's link (www.stryker.com resources:
+ * the title and the image open the file in a new tab). The player goes back to that link.
+ * @param {Element} block The block element
+ */
+function restoreVideoTitleLinks(block) {
+  block.querySelectorAll(':is(h1, h2, h3, h4, h5, h6) .dm-video-wrapper').forEach((wrapper) => {
+    const video = wrapper.querySelector('video');
+    const src = video?.querySelector('source')?.getAttribute('src') || video?.getAttribute('src');
+    if (!src) return;
+    const link = document.createElement('a');
+    link.href = src;
+    link.target = '_blank';
+    link.textContent = video.getAttribute('aria-label') || src;
+    wrapper.replaceWith(link);
+  });
+}
+
 /* Rows authored as a single page link are filled from the query index;
    links to pages not (yet) published are dropped. */
 async function hydrateLinkRows(block) {
@@ -86,6 +105,7 @@ export default async function decorate(block) {
 
   // convert DM links to <picture>; the canvas re-renders fields from source, so re-run here
   decorateDMAssets(block);
+  restoreVideoTitleLinks(block);
 
   const isText = block.classList.contains('text');
 

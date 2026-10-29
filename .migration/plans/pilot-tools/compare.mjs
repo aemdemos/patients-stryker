@@ -44,7 +44,7 @@ function measure() {
   main.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,td,th,figcaption').forEach((el) => {
     if (el.closest('header, footer, nav, form, .marketo-form, script, style')) return;
     if (!el.getBoundingClientRect().width) return;
-    if ([...el.children].some((c) => /^(P|LI|H\d|UL|OL|TABLE)$/.test(c.tagName))) return;
+    if ([...el.children].some((c) => /^(P|LI|H\d|UL|OL|TABLE|DIV|SECTION|ARTICLE|FIGURE|BLOCKQUOTE)$/.test(c.tagName))) return;
     const t = norm(el.textContent).slice(0, 60);
     if (t.length < 4 || texts[t]) return;
     texts[t] = { tag: el.tagName, sig: sig(el) };

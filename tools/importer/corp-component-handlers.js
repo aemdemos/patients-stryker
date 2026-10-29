@@ -1044,7 +1044,8 @@ function resources(el, ctx) {
     const title = item.querySelector('.title, h5');
     const link = (title && title.closest('a[href]')) || item.querySelector('a[href]');
     const thumb = img ? absoluteAsset(img.getAttribute('src')) : '';
-    const href = absoluteAsset(link.getAttribute('href'));
+    // a link to a video file with the #_blank marker stays a link (not a player), as on live
+    const href = newTabHref(link, absoluteAsset(link.getAttribute('href')));
     const h5 = doc.createElement('h5');
     h5.append(linkTo(doc, href, text(title || link) || (img && img.getAttribute('alt')) || href));
     return [thumb ? para(doc, linkTo(doc, thumb.startsWith('/') ? `${SOURCE}${thumb}` : thumb)) : '', h5];

@@ -190,9 +190,13 @@ differ. By cause:
   - t2 + news: height distance 1.80 / 2.13, style diffs 84 / 276 (188 of them were Table
     cells at 12px on phones; fixed with blocks/table/table-corp.css: 14px at every width, as
     live).
-- **Found, not fixed:**
-  - Cards (resources) video cards (inspace, 15 titles): the title link to the .mp4 becomes
-    an inline player inside the h5, so the title text disappears. Live shows a thumbnail and a
-    title, both linking to the video.
-  - Link lists whose live titles are H3 Egyptienne 21px render as LI 14px (te-virtual
-    blueprint 11, surgical learn 6, ems 1).
+- **Follow-up fixes (no re-import needed):**
+  - Cards (resources) video cards (inspace, 15 titles): the page-wide DM pass turned the
+    title link to the .mp4 into an inline player, so the title text disappeared. Cards Corp
+    now turns it back into the title link (new tab, as live), and the importer adds the
+    `#_blank` marker so new imports keep a plain link. The image box is 240px high with the
+    image centred (live `.img-container`); at 375 / 1440 the card now matches live to the
+    pixel (image y 29 / 62, title y 248, next card y 315).
+  - "Link lists rendering as LI 14px" (blueprint, surgical learn, ems) was a comparison tool
+    error: it measured the card's list item instead of the title inside it. The tool now
+    skips wrapper elements (DIV, SECTION, …); blueprint has 0 differences.
