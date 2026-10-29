@@ -175,6 +175,24 @@ body.news-detail main .columns.dark-last > div > div:last-child p {
   line-height: var(--heading-line-height);
 }
 
+/* Cards Corp `text title-left`: the question titles left-aligned at 17.5px, lines 1.15, at
+   every width (stryker.com Q&A cards with a left-aligned Futura bold title on the gold
+   band, e.g. the additive manufacturing feature); plain `text` cards centre them */
+body.news-detail main .cards-corp.text.title-left h3 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+  text-align: left;
+}
+
+/* bracket tag `[[box]…]` around a whole paragraph: the paragraph's text sits in a white
+   soft-shadow box (stryker.com dimensional box: 3% padding, 2% plus the 15px paragraph gap
+   below; e.g. the "AM, also known as 3D printing" lead of the additive manufacturing feature) */
+body.news-detail main span.box {
+  display: block;
+  padding: 3% 3% calc(2% + var(--space-block));
+  box-shadow: var(--shadow-soft);
+}
+
 @media (width >= 600px) {
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
     font-family: var(--display-font-family);
@@ -217,6 +235,15 @@ body.news-detail main .columns.dark-last > div > div:last-child p {
   body.news-detail main .columns.dark-last > div > div:last-child {
     flex: 1 1 0;
     align-self: flex-start;
+  }
+
+  /* image-2-3: an image the source sets in a two-thirds grid column with the other column
+     empty (stryker.com col-sm-8, e.g. the additive manufacturing lead image on a
+     full-width page): two thirds of the container less the column padding (930px at
+     1440px), like the corp image-1-3 / image-1-2; full width below 600px */
+  body.news-detail main > .section.image-2-3 > .default-content-wrapper picture,
+  body.news-detail main > .section.image-2-3 > .video-wrapper .video {
+    max-width: calc(min(100vw, var(--container-max)) * 2 / 3 - 2 * var(--space-block));
   }
 }
 
