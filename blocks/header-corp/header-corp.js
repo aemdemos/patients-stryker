@@ -178,14 +178,6 @@ function wireBehaviour(block) {
       if (li.classList.contains('open')) closePanels(block);
       else openPanel(block, li);
     });
-    li.addEventListener('mouseenter', () => {
-      if (DESKTOP.matches) openPanel(block, li);
-    });
-  });
-
-  const megamenu = block.querySelector('.megamenu');
-  megamenu.addEventListener('mouseleave', () => {
-    if (DESKTOP.matches) closePanels(block);
   });
 
   block.querySelectorAll('.secondary-nav .back').forEach((back) => {
