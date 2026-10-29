@@ -280,6 +280,7 @@ var CustomImportScript = (() => {
     ".c-section-separator",
     ".sectionseparator",
     ".c-marketo-form",
+    ".c-resourcesanddownload",
     ".xf-fragment"
   ].join(", ");
   var SHARED_XF_SIGNATURES = [
@@ -1031,6 +1032,31 @@ var CustomImportScript = (() => {
         });
         startSection("form", nodes2.length > 1 ? "form-with-aside" : void 0).nodes.push(...nodes2);
         current = null;
+        return;
+      }
+      if (component.matches(".c-resourcesanddownload")) {
+        if (!hasForm) return;
+        const nodes2 = [];
+        const heading = component.querySelector(".title-container h2");
+        if (heading && text(heading)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = text(heading);
+          nodes2.push(h2);
+        }
+        component.querySelectorAll(".item").forEach((item) => {
+          const link2 = item.querySelector("a[href]");
+          const label = text(item.querySelector(".title") || item);
+          if (!link2 || !label) return;
+          const a = doc.createElement("a");
+          a.href = newTabHref(link2, absoluteAsset(link2.getAttribute("href")));
+          a.textContent = label;
+          const p = doc.createElement("p");
+          p.append(a);
+          nodes2.push(p);
+        });
+        if (!nodes2.length) return;
+        if (!current || current.kind !== "body") startSection("body");
+        current.nodes.push(...nodes2);
         return;
       }
       if (component.matches(".xf-fragment")) {

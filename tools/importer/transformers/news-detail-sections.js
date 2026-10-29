@@ -63,6 +63,7 @@ const COMPONENTS = [
   '.c-section-separator',
   '.sectionseparator',
   '.c-marketo-form',
+  '.c-resourcesanddownload',
   '.xf-fragment',
 ].join(', ');
 
@@ -1078,6 +1079,34 @@ export default function transform(hookName, element, payload) {
       });
       startSection('form', nodes.length > 1 ? 'form-with-aside' : undefined).nodes.push(...nodes);
       current = null;
+      return;
+    }
+    // a Resources & Download list on a form page (LCA0): kept as default content, its
+    // heading and one link per item (the thumbnail is dropped). No block exists for the
+    // component yet (#394 / #435); on pages without a form it is still ignored.
+    if (component.matches('.c-resourcesanddownload')) {
+      if (!hasForm) return;
+      const nodes = [];
+      const heading = component.querySelector('.title-container h2');
+      if (heading && text(heading)) {
+        const h2 = doc.createElement('h2');
+        h2.textContent = text(heading);
+        nodes.push(h2);
+      }
+      component.querySelectorAll('.item').forEach((item) => {
+        const link = item.querySelector('a[href]');
+        const label = text(item.querySelector('.title') || item);
+        if (!link || !label) return;
+        const a = doc.createElement('a');
+        a.href = newTabHref(link, absoluteAsset(link.getAttribute('href')));
+        a.textContent = label;
+        const p = doc.createElement('p');
+        p.append(a);
+        nodes.push(p);
+      });
+      if (!nodes.length) return;
+      if (!current || current.kind !== 'body') startSection('body');
+      current.nodes.push(...nodes);
       return;
     }
     // a shared Experience Fragment (e.g. the "Connect with us" band): a fragment block in
