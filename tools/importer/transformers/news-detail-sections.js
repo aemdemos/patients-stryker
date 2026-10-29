@@ -604,13 +604,25 @@ function imageColumnStyle(component) {
 }
 
 function imageNodes(component, doc) {
-  const nodes = [...component.querySelectorAll('img')].map((source) => {
+  const nodes = [...component.querySelectorAll('img')].flatMap((source) => {
     const img = doc.createElement('img');
     img.setAttribute('src', source.getAttribute('src'));
     img.setAttribute('alt', source.getAttribute('alt') || '');
     const p = doc.createElement('p');
     p.append(img);
-    return p;
+    // a linked image (a[href] around the img): its link alone on the next line, in a section
+    // with the `image-link` style (scripts/corp.js makes the image clickable from it); the
+    // link text is the image's alt, else the address (no text is made up)
+    const sourceLink = source.closest('a[href]');
+    if (!sourceLink) return [p];
+    const href = absoluteAsset(sourceLink.getAttribute('href'));
+    const a = doc.createElement('a');
+    a.setAttribute('href', newTabHref(sourceLink, href));
+    a.textContent = (source.getAttribute('alt') || '').trim() || href;
+    const linkLine = doc.createElement('p');
+    linkLine.append(a);
+    p.imageLink = true;
+    return [p, linkLine];
   });
   // the image's caption heading (.title-content h4.title, Futura bold under the image)
   // follows it as a Heading 4 (news-detail.css sets the source h4)
@@ -980,16 +992,21 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-image')) {
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
+      const linkStyle = nodes.some((node) => node.imageLink) ? 'image-link' : '';
       // the lead image, or an image in a narrow source column, is a section of its own
       const columnStyle = imageColumnStyle(component);
       if (isFirst && !component.closest('.colctrl')) leadBelowDate = true;
       if (isFirst || columnStyle) {
-        startSection(isFirst ? 'lead' : 'image', columnStyle || undefined).nodes.push(...nodes);
+        const style = [columnStyle, linkStyle].filter(Boolean).join(', ');
+        startSection(isFirst ? 'lead' : 'image', style || undefined).nodes.push(...nodes);
         current = null;
         return;
       }
       // an image joins the article section it follows, whatever its copy size
       if (!current || !current.kind.startsWith('body')) startSection('body');
+      if (linkStyle && !(current.style || '').split(', ').includes(linkStyle)) {
+        current.style = [current.style, linkStyle].filter(Boolean).join(', ');
+      }
       current.nodes.push(...nodes);
       return;
     }

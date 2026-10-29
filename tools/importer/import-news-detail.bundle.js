@@ -597,13 +597,22 @@ var CustomImportScript = (() => {
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
-    const nodes = [...component.querySelectorAll("img")].map((source) => {
+    const nodes = [...component.querySelectorAll("img")].flatMap((source) => {
       const img = doc.createElement("img");
       img.setAttribute("src", source.getAttribute("src"));
       img.setAttribute("alt", source.getAttribute("alt") || "");
       const p = doc.createElement("p");
       p.append(img);
-      return p;
+      const sourceLink = source.closest("a[href]");
+      if (!sourceLink) return [p];
+      const href = absoluteAsset(sourceLink.getAttribute("href"));
+      const a = doc.createElement("a");
+      a.setAttribute("href", newTabHref(sourceLink, href));
+      a.textContent = (source.getAttribute("alt") || "").trim() || href;
+      const linkLine = doc.createElement("p");
+      linkLine.append(a);
+      p.imageLink = true;
+      return [p, linkLine];
     });
     if (nodes.length) {
       component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
@@ -888,14 +897,19 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-image")) {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
+        const linkStyle = nodes2.some((node) => node.imageLink) ? "image-link" : "";
         const columnStyle = imageColumnStyle(component);
         if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle) {
-          startSection(isFirst ? "lead" : "image", columnStyle || void 0).nodes.push(...nodes2);
+          const style = [columnStyle, linkStyle].filter(Boolean).join(", ");
+          startSection(isFirst ? "lead" : "image", style || void 0).nodes.push(...nodes2);
           current = null;
           return;
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
+        if (linkStyle && !(current.style || "").split(", ").includes(linkStyle)) {
+          current.style = [current.style, linkStyle].filter(Boolean).join(", ");
+        }
         current.nodes.push(...nodes2);
         return;
       }
