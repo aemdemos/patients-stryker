@@ -22,7 +22,7 @@
   ],
   "jcr:uuid": "0451e9c1-9531-437c-a3e4-71896240b23e",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -33,7 +33,7 @@
       "stryker:business-unit/sports-medicine"
     ],
     "eventRegistrationLink": "https://aaos.org/register/",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "eventAudience": [
       "stryker:audience/trainees",
       "stryker:audience/nurses",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "5f71f195-a1e0-4b4a-a98b-c34fd6b6606e",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "227d5187-f4f5-4270-b9cf-9be332b77356"
   ],
@@ -39,13 +39,13 @@
   "jcr:uuid": "d99003d1-cc0b-4b4c-b381-58c05c6cef57",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Fri Feb 18 2022 19:45:37 GMT+0000",
@@ -66,7 +66,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160",
         "/content/dam/stryker/trauma-and-extremeties/products/bioskin/resources/Bioskin-Reimbursement-Guide.pdf"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Fri Aug 26 2022 14:16:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -77,7 +77,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Wound Adherence:</span></span><br>\nNaturally wicks to the wound bed or site of repair</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reimbursement:</span></span><br>\nReimbursable in outpatient and ASC settings.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Processing:</span></span><br>\nProprietary HydraTek Technology, a unique and state of the art process that preserves key elements of native human amniotic tissue.*</p>\n",
     "jcr:lastModified": "Thu Mar 03 2022 19:00:10 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -85,7 +85,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*Data on file at Human Regenerative Technologies, LLC</p>\r\n",
     "jcr:lastModified": "Mon Feb 21 2022 15:42:17 GMT+0000",

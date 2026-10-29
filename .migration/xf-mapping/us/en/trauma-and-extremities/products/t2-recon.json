@@ -8,7 +8,7 @@
   "jcr:title": "T2 Recon",
   "jcr:versionHistory": "aeb26e1a-c865-444b-9997-e31a2c97a2f0",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+  "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2recon/images/T2-Recon.png",
   "jcr:predecessors": [
     "7b541196-e386-4a78-b45c-35e542f2de25"
@@ -44,13 +44,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jun 21 2017 16:19:50 GMT-0400",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/t2recon/images/T2-Recon.png",
@@ -62,8 +62,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title_128453": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "frank.mastrangelo@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-98ada7da8d@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Jun 14 2017 13:35:51 GMT-0400",
       "title": "Distal Targeting System",
       "jcr:lastModified": "Tue Aug 08 2017 15:02:25 GMT-0400",
@@ -71,8 +71,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "devin.doran@stryker.com",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:createdBy": "user-c66c5d4a4b@example.invalid",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "jcr:created": "Fri Aug 04 2017 11:19:43 GMT-0400",
       "jcr:lastModified": "Fri Aug 04 2017 11:19:43 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -81,8 +81,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "devin.doran@stryker.com",
-          "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+          "jcr:createdBy": "user-c66c5d4a4b@example.invalid",
+          "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
           "jcr:created": "Fri Aug 04 2017 11:19:55 GMT-0400",
           "text": "<p>The Distal Targeting System allows for guided distal locking for our Gamma 3 long and T2 Recon nails</p>\n<ul>\n<li>May reduce x-ray exposure and improve OR efficiency<sup>1</sup></li>\n<li>Radiolucent design is compatible with existing targeting handle</li>\n<li>May provide additional working space due to 30 degree C-arm alignment</li>\n</ul>\n",
           "jcr:lastModified": "Thu Aug 24 2017 14:33:40 GMT-0400",
@@ -93,7 +93,7 @@
     },
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "title": "Distal Targeter",
       "jcr:lastModified": "Tue Aug 08 2017 14:16:57 GMT-0400",
       "sling:resourceType": "stryker/components/content/customizable"
@@ -106,7 +106,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1964268119",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_117867653"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Thu Aug 06 2020 19:20:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -115,7 +115,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>T2 Recon Nailing System</p>\r\n",
     "shortDescTop": "<p>With a tip of the greater trochanter entry point and both recon and antegrade femoral locking options, it offers an efficient treatment option for multiple indications. The T2 IM Nailing Platform offers a combination of innovation, simplicity and versatility that is designed to suit your various needs.</p>\r\n",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Thu Aug 10 2017 13:58:58 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -159,7 +159,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Adam et al. External distal targeting device for safe insertion of distal locking screws when performing long Gamma nail: Comparison with the freehand technique. Bone and Joint. Vol 94-B Supp XXXVII. 14 Sept 2012</li>\r\n</ol>\r\n<p>T2-AWI-1, 07-2017<br>\r\n</p>\r\n",
     "jcr:lastModified": "Wed Aug 09 2017 11:27:33 GMT-0400",

@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Orthopaedics to compensate additional eligible U.S. patients who had surgery to replace their Rejuvenate Modular-Neck and/or ABG II Modular-Neck Hip Stems",
   "jcr:versionHistory": "0cb09f29-fe8f-493c-bb2c-285d0cec0ad3",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "fc75d6f7-6cba-44c8-8887-66d93f9b1d7a"
   ],
@@ -26,14 +26,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Mon Dec 19 2016 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Dec-2016",
@@ -42,7 +42,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>Kalamazoo, Michigan - Stryker Corporation (NYSE:SYK) announced that Howmedica Osteonics Corp. (referred to as &quot;Stryker Orthopaedics&quot;), a subsidiary of Stryker Corporation, and Court-appointed committees of attorneys representing Rejuvenate Modular-Neck and ABG II Modular-Neck plaintiffs in New Jersey Multicounty and Federal Multidistrict litigations reached an agreement to compensate additional eligible U.S. patients who had surgery to replace their Rejuvenate Modular-Neck hip stem and/or ABG II Modular-Neck hip stem, known as a revision surgery, prior to December 19, 2016. This follows an initial 2014 Settlement Program that covered patients who had a revision surgery prior to November 3, 2014. In that initial program, over 95% of eligible patients enrolled. Under this new agreement, additional patients are now eligible to participate and may apply for compensation.</p>\n<p>The Settlement Agreement will help bring to a close significant Rejuvenate Modular-Neck and ABG II Modular-Neck litigation activity in the U.S. However, some lawsuits will remain and Stryker Orthopaedics will continue to defend against remaining claims. For more information about the Settlement Program, please visit <a href=\"http://www.strykermodularhipsettlement.com/\" target=\"_blank\">strykermodularhipsettlement.com</a>.</p>\n<p><b>Read the full article:</b><br>\n</p>\n<p><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=2230617\" target=\"_blank\">Stryker Investor Relations</a><br>\n</p>\n",
     "jcr:lastModified": "Tue May 30 2017 10:55:45 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

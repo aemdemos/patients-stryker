@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d7b7f313-4872-4eba-b8e7-df91af4615b5",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "cc2bd252-189a-4f4d-a859-c29111738862"
   ],
@@ -32,7 +32,7 @@
   "jcr:uuid": "ad05d3fd-3d97-4822-ae7b-9e46d8f9b20f",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -43,7 +43,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Wed Nov 09 2022 15:38:17 GMT+0000",
@@ -58,7 +58,7 @@
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
       "description": "At Sustainability Solutions, we partner with original manufacturers to offer our Save Simply™ blended program. Through this program, customers receive a mixture of new and reprocessed product at a guaranteed 100% fill rate from one vendor, using one PO and one part number. ",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "title": "Trusted quality. Simplified supply chain. Added value.",
       "jcr:lastModified": "Tue Dec 06 2022 20:28:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"

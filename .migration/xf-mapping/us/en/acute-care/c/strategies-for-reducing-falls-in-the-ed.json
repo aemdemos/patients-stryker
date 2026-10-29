@@ -9,7 +9,7 @@
   "jcr:versionHistory": "fe44fe0e-59da-4d58-a2f6-383a04a356e6",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "nurse looking back toward patient getting out of hospital bed",
   "jcr:predecessors": [
     "a4b501e3-a09d-4922-b4ce-21254666573a"
@@ -27,7 +27,7 @@
   "jcr:uuid": "d19eabae-1983-45ed-a983-d8309b1dd354",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -41,16 +41,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Feb 13 2024 17:25:23 GMT+0000",
       "jcr:lastModified": "Tue Feb 13 2024 17:25:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_1283327520_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "eleni.maistrellis@stryker.com",
-      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:createdBy": "user-fe8967f731@example.invalid",
+      "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
       "jcr:created": "Thu Sep 10 2020 15:10:39 GMT+0000",
       "jcr:lastModified": "Thu Sep 10 2020 15:10:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -59,8 +59,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
           "alt": "nurse assisting patient getting out of prime connect stretcher",
@@ -75,8 +75,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_908007915_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -91,8 +91,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -101,8 +101,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "rightMargin": "10",
           "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
@@ -116,8 +116,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Nov 30 2022 18:13:17 GMT+0000",
           "jcr:lastModified": "Wed Nov 30 2022 18:13:20 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
@@ -125,10 +125,10 @@
         },
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
           "afterSubmitAction": "redirectToPage",
           "formId": "2921",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
           "useProduction": "true",
           "redirectPage": "/content/stryker/us/en/acute-care/c/strategies-for-reducing-falls-in-the-ed/webinar",
@@ -141,8 +141,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Sep 10 2020 13:30:40 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Presented by:</span></span></p>\n",
           "jcr:lastModified": "Wed Nov 30 2022 16:51:29 GMT+0000",
@@ -151,8 +151,8 @@
         },
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Nov 30 2022 16:46:03 GMT+0000",
           "alt": "Zachary Allan headshot",
@@ -164,8 +164,8 @@
         },
         "text_copy_copy_copy__761489890": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Sep 10 2020 13:30:40 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">Zachary Allan</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">MHA, MSN, RN, CEN, PHRN<br>\n Emergency Services, Allegheny Health Network</span></p>\n",
           "jcr:lastModified": "Mon Feb 12 2024 20:32:02 GMT+0000",

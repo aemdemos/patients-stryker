@@ -9,7 +9,7 @@
   "jcr:versionHistory": "56c15bca-f6c9-40e0-85ae-5bdbf916aa26",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "cdc193fc-bd72-4b74-b32e-f8774ca7b9e8"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "aea6cf36-4067-4e1f-b9fe-2814af594584",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 19:10:10 GMT+0000",
       "text": "Clinical Use of Blueprint® on a B3 Glenoid – Parts 1 & 2 – Armodios Hatzidakis, MD Orthopedic surgeon, Armodios Hatzidakis, MD, demonstrates the planning for a shoulder prosthesis using Blueprint® 3D Planning + PSI. This is followed by the surgical procedure and follow-up discussion. Featured products include Tornier Simpliciti® Shoulder System and Tornier Perform® Anatomic Glenoid. AP-016273A",
       "jcr:lastModified": "Thu Jul 28 2022 19:10:51 GMT+0000",

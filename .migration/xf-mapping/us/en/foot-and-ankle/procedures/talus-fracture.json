@@ -8,7 +8,7 @@
   "jcr:title": "Talus Fracture",
   "jcr:versionHistory": "0f0720b5-5e9a-491f-8e1f-324f8f7ee9ce",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Talus-Fracture/Images/Hindfoot_TalusFracture.jpg",
   "jcr:predecessors": [
     "a904f21f-f0b9-43f4-971d-bb17ee3b2b2d"
@@ -37,13 +37,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:04:40 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Talus-Fracture/Images/Hindfoot_TalusFracture.jpg",
@@ -55,7 +55,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Mon Sep 14 2020 17:56:27 GMT+0000",

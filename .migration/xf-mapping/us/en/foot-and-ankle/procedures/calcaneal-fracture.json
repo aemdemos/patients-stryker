@@ -7,7 +7,7 @@
   "jcr:title": "Calcaneal Fracture",
   "jcr:versionHistory": "38d7d1e2-fee3-4795-97f4-56f1697524f4",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Calcaneal-Fracture/Images/Hindfoot_CalcanealFracture.jpg",
   "jcr:predecessors": [
     "cf3bb10a-a846-492e-87b9-0f5ce99e77c2"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:08:08 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Calcaneal-Fracture/Images/Hindfoot_CalcanealFracture.jpg",
@@ -54,7 +54,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Fri Jul 28 2017 10:21:16 GMT-0400",

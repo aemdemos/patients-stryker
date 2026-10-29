@@ -7,7 +7,7 @@
   "jcr:title": "Lisfranc",
   "jcr:versionHistory": "cb6957b3-4c19-4a3f-86d8-78967761d601",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Lisfranc/Images/Midfoot_Lisfranc.jpg",
   "jcr:predecessors": [
     "271d877a-3f48-4a11-8bda-cfec062e29bf"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Mon Jul 17 2017 12:20:05 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Lisfranc/Images/Midfoot_Lisfranc.jpg",
@@ -54,7 +54,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Wed Aug 12 2020 17:26:48 GMT+0000",

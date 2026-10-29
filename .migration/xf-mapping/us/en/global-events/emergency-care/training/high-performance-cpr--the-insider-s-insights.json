@@ -21,7 +21,7 @@
   ],
   "jcr:uuid": "bb07f2bf-4124-4532-a176-1133c3c4fc49",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "cq:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -34,7 +34,7 @@
     ],
     "eventContactEmail": "john.friederich@stryker.com",
     "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/WN_ofxNKiR3RkGQWCEd-8pERQ",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "eventAudience": [
       "stryker:audience/medical_professionals"
     ],

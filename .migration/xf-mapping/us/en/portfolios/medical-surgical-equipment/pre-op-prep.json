@@ -10,7 +10,7 @@
   "jcr:versionHistory": "4fbd7fe5-5b5e-413f-a9ae-4a5b2cff02ae",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Pre-op prep products",
   "jcr:predecessors": [
     "ac14afd0-0765-4399-b08f-bf70c67006a5"
@@ -39,7 +39,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment",
   "cq:childrenOrder": "skin-prep,nose-mouth-and-skin-prep,plumbing-protection,",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -54,7 +54,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue May 04 2021 18:52:50 GMT+0000",
@@ -62,7 +62,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
     "jcr:lastModified": "Tue Oct 08 2019 13:53:52 GMT+0000",
@@ -71,7 +71,7 @@
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "jcr:lastModified": "Wed Sep 18 2019 19:27:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
     "arbitraryOrdering": {

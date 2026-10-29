@@ -10,7 +10,7 @@
   "jcr:versionHistory": "be6a7417-a202-4092-9d23-fdaec3adbeb9",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Skin prep products to prevent surgical site infection",
   "jcr:predecessors": [
     "166609d2-b93e-4849-8ba9-47c2ed342ca8"
@@ -36,7 +36,7 @@
   "jcr:uuid": "16389aba-5532-47c7-8dbf-502dd50467ea",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -51,7 +51,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri Aug 02 2024 16:05:48 GMT+0000",
@@ -59,7 +59,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
     "jcr:lastModified": "Tue Oct 08 2019 13:55:44 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "FDA authorizes N95 respirator decontamination by Stryker",
   "jcr:versionHistory": "a38ae2bb-65ef-48ef-bcdf-41bb22243da9",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "8e4beaa1-bbc1-4dad-99b8-3cf687b7b4e2"
   ],
@@ -22,7 +22,7 @@
   "jcr:uuid": "d7fd5b61-7613-43af-8aab-795eb8dd55a9",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "noIndex": "true",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -30,7 +30,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Jun 08 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-Jun-2020",
@@ -39,7 +39,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>In support of the continued demand for PPE during the COVID-19 pandemic, Stryker has partnered closely with the FDA to receive authorization to decontaminate N95 respirators. These masks are designed to prevent exposure to pathogenic biological airborne particulates, like COVID-19, for healthcare personnel.</p>\n<p>Hospitals will collect used N95 respirators in a designated container and the collected devices will be shipped to Stryker for vaporized hydrogen peroxide (VHP) decontamination. Once the product has been decontaminated, the company will sell it back to healthcare facilities for additional uses.</p>\n<p>Contact your local Sustainability Solutions sales rep or customer service for more information: <a href=\"mailto:css@stryker.com\">css@stryker.com</a></p>\n",
     "jcr:lastModified": "Mon Jun 08 2020 19:10:26 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -47,7 +47,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/about/news/features/n95/n95-header.jpg",
     "jcr:lastModified": "Mon Jun 08 2020 17:32:27 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "The Joint Commission's Quick Safety issue focuses on the call to prevent non-ventilator hospital-acquired pneumonia",
   "jcr:versionHistory": "8d1245dc-a82b-47b7-8af0-2d917353d4c8",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "f4d548b8-a00e-48da-a057-bca4d921ecf6"
   ],
@@ -26,16 +26,16 @@
   "jcr:uuid": "c9f029a4-300c-4dc1-8e33-c31d76e0986d",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "buttonset": {
       "jcr:primaryType": "nt:unstructured",
       "buttonSeriesColors": "rgba(255,181,0,1)",
-      "jcr:createdBy": "kelley.may@stryker.com",
+      "jcr:createdBy": "user-d10587b9a8@example.invalid",
       "buttonAlignment": "horizontal-alignment align-left",
-      "jcr:lastModifiedBy": "kelley.may@stryker.com",
+      "jcr:lastModifiedBy": "user-d10587b9a8@example.invalid",
       "jcr:created": "Fri Oct 01 2021 21:00:20 GMT+0000",
       "jcr:lastModified": "Fri Oct 01 2021 21:00:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/buttonset",
@@ -53,7 +53,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Mon Jan 24 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Jan-2022",
@@ -62,7 +62,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "text": "<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">On Thursday, September 16, the Joint Commission released a statement about its new Quick Safety advisory, “Preventing non-ventilator hospital-acquired pneumonia.”</span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">One in 100 hospitalized patients is diagnosed with non-ventilator hospital-acquired pneumonia (NV-HAP) yearly, yet there is no national tracking system. The new Quick Safety advisory calls for a national conversation on prevention and safety actions.</span></span></p>\n",
     "jcr:lastModified": "Fri Oct 29 2021 18:51:23 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -70,7 +70,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/sage/news/2021/Sage-newsroom-Joint-Commission-thumbnail.jpg",
     "borderColor": "rgba(76,125,122,1)",

@@ -11,7 +11,7 @@
   "jcr:versionHistory": "3d9c98d2-65b4-475f-b0ff-d5cda9067232",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+  "jcr:lastModifiedBy": "user-16113fe70d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/triathlontritanium/images/Hero_JR_Knee_Triathlon_Tritanium.png",
   "jcr:predecessors": [
     "839f0960-5427-47ee-af63-6127dc91d969"
@@ -42,7 +42,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "cq:lastModifiedBy": "user-16113fe70d@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -50,31 +50,31 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
       "featuresCta": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
         "1": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
-          "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+          "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
         }
       }
     }
@@ -86,13 +86,13 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "jcr:lastModifiedBy": "user-16113fe70d@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "jcr:lastModified": "Tue Jul 21 2026 19:14:21 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "20",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -101,12 +101,12 @@
         "cq:LiveRelationship"
       ],
       "description": "Our Triathlon Total Knee System portfolio offers you many options to treat patients needing a total knee replacement. The Triathlon single radius is designed to work with the body to promote a natural-like circular motion, to help restore function and relieve pain. Our Triathlon Tritanium Total Knee System is made using AMagine additive manufacturing technology for cementless fixation. To date, the Triathlon single-radius design has helped restore function and relieve knee pain for over 3 million patients.",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "title": "Designed to work with the body",
       "jcr:lastModified": "Fri Feb 26 2021 16:34:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "pagehero": {
@@ -114,13 +114,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/hip/images/Hero_JR_Knee_Triathlon_Primary_Tritanium.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "hideBottomLine": "true"
   },
   "image": {

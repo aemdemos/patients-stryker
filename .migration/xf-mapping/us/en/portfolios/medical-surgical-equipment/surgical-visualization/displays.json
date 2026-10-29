@@ -10,7 +10,7 @@
   "jcr:versionHistory": "b3623787-c42c-496e-ab4e-9c369aea8d37",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Displays",
   "jcr:predecessors": [
     "29a56b07-80c1-411d-95d0-8ac225e7d5c9"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -50,7 +50,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 21:18:30 GMT+0000",
     "loadMoreText": "Load More",
@@ -61,7 +61,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Displays",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Wed Jul 17 2024 15:38:41 GMT+0000",

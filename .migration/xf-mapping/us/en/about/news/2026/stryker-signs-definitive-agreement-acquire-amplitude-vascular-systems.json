@@ -9,7 +9,7 @@
   "jcr:versionHistory": "9caa7a53-50b0-4afe-90ad-bdf79803607d",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Stryker",
   "jcr:predecessors": [
     "e8b85107-1493-4185-ad12-9dda574f095c"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "socialsharing": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Apr 10 2026 22:27:09 GMT+0000",
       "isColoredIcon": "1",
       "isLeftAligned": "1",
@@ -51,7 +51,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Mon Apr 13 2026 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "13-Apr-2026",
@@ -60,7 +60,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><b>PORTAGE, Mich., USA</b> – <b>April 13, 2026</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced that it has signed a definitive agreement to acquire Amplitude Vascular Systems, Inc. (AVS), a privately held medical technology company developing a next-generation intravascular lithotripsy (IVL) platform designed to treat calcified peripheral arterial disease.</p>\n<p>The acquisition will strengthen Stryker’s Peripheral Vascular (PV) portfolio by adding revascularization technology. Once cleared for use in applicable markets, the product will complement Stryker’s existing PV offerings and support the company’s strategy to expand its presence in arterial disease treatment.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2026/Stryker-signs-definitive-agreement-to-acquire-Amplitude-Vascular-Systems-to-add-next-generation-IVL-technology-to-peripheral-vascular-portfolio/default.aspx\" target=\"_blank\"><span class=\"standalone-link\">Read full press release here</span></a><br>\n&nbsp;</p>\n",
     "jcr:lastModified": "Mon Apr 13 2026 12:57:02 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -68,7 +68,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "alt": "Stryker logo",
     "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",

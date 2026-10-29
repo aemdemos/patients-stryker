@@ -10,7 +10,7 @@
   "jcr:versionHistory": "dd966a0f-e155-4c36-81e6-944b46022a95",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Stryker team at Peloton event for Nurses month in New York",
   "jcr:predecessors": [
     "738cf9e3-bbc6-484c-9883-07c6ae3e1628"
@@ -34,15 +34,15 @@
   "jcr:uuid": "c408ba4c-f086-48a1-b606-ee4c8fda5dd3",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Celebrating nurses with an unforgettable experience at Peloton's NYC studio",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Fri Jun 20 2025 14:47:30 GMT+0000",
       "alt": "Stryker team at Peloton’s New York City studio to celebrate Nurses Month",
@@ -54,8 +54,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Fri Jun 20 2025 14:47:38 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -67,8 +67,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Jun 23 2025 20:24:44 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Mon Jun 23 2025 20:28:16 GMT+0000",
@@ -92,7 +92,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Fri Jun 20 2025 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "20-Jun-2025",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "1c553336-f700-441f-b481-ca12817b0e16",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "4228402e-8148-4baf-8c54-cca41bc4779b"
   ],
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",

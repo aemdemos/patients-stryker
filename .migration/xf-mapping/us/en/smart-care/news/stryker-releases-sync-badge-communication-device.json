@@ -9,7 +9,7 @@
   "jcr:versionHistory": "88746a38-ddb5-491b-a204-fcf718ef438d",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Nurse in scrubs wearing the Sync Badge",
   "jcr:predecessors": [
     "25f7a746-a853-4ba0-9eeb-35bf6adb39ce"
@@ -33,15 +33,15 @@
   "jcr:uuid": "c4880b29-b1d7-4eb3-88f5-c70498feabad",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Introducing the new Sync Badge device",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Mon Apr 21 2025 19:05:56 GMT+0000",
       "alt": "Nurse in scrubs wearing the Sync Badge",
@@ -53,8 +53,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Feb 04 2025 16:16:52 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -66,8 +66,8 @@
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Apr 22 2025 17:02:05 GMT+0000",
       "hideButton": "false",
       "title": "Related products",
@@ -90,7 +90,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Thu Apr 24 2025 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Apr-2025",

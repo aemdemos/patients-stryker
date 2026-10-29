@@ -10,7 +10,7 @@
   "jcr:versionHistory": "51ce59c4-e5c6-4013-8d89-338f9b3733f9",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "PhotonGuide and PhotonGuide Adapt",
   "jcr:predecessors": [
     "6a70c2a9-413c-40fd-9728-47837aa91584"
@@ -39,13 +39,13 @@
   "jcr:uuid": "28588edc-9c67-436d-aa74-4f7a02d1bbb1",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+      "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Tue Oct 22 2019 19:34:33 GMT+0000",
@@ -65,16 +65,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 30 2026 17:56:44 GMT+0000",
       "jcr:lastModified": "Tue Jun 30 2026 17:56:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -83,16 +83,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
@@ -102,8 +102,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -112,8 +112,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
               "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
@@ -127,10 +127,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "4047",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -150,7 +150,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>PhotoGuide and PhotonGuide Adapt</p>\r\n",
     "shortDescTop": "<p>Patented total internal reflection design. T<span style=\"background-color: transparent;\">hermally cool illumination may help protect against thermal damage to tissues and surgical drapes.</span><sup style=\"background-color: transparent;\">2&nbsp;</sup><span style=\"background-color: transparent;\">Microlenses cover entire output surface for redundancy of light.</span></p>\r\n",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Wed Jul 15 2026 17:29:05 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -162,7 +162,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><span class=\"futura-bold\">PhotonGuide: Intracavity illumination</span></p>\n<ul>\n<li>Narrow and wide styles for single use with Eikon LT retractors</li>\n</ul>\n<p><span class=\"futura-bold\">PhotonGuide Adapt: Extending your reach</span></p>\n<ul>\n<li>Ability to position lighting anywhere along entire retractor length</li>\n<li>Simply slide to adjust as desired throughout your case<br>\n</li>\n<li>Can be removed and reinserted into other Adapt retractors as case needs change<br>\n</li>\n</ul>\n",
     "jcr:lastModified": "Thu Sep 19 2019 17:27:37 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -170,14 +170,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Jun 30 2026 17:56:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Jun 30 2026 17:56:39 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -186,7 +186,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Stryker data on file; LIT 12023</p>\r\n<p>2. LIT 10668 Eigr Technology Thermal and Insulation Characteristics Abstract</p>\r\n",
     "jcr:lastModified": "Wed Jul 15 2026 17:16:46 GMT+0000",

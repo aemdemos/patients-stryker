@@ -9,7 +9,7 @@
   "jcr:versionHistory": "98542688-b8ce-4831-b480-e285c1a6ddb2",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "jcr:predecessors": [
     "242b63ef-9047-497c-9720-57e456acca89"
   ],
@@ -30,14 +30,14 @@
   "jcr:uuid": "ef756ca6-10c3-4f83-9b2e-9344ed2e104d",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "cq:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kendra.pilon@stryker.com",
-      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:createdBy": "user-e895b4dde6@example.invalid",
+      "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
       "jcr:created": "Tue Jul 01 2025 13:46:35 GMT+0000",
       "jcr:lastModified": "Tue Jul 01 2025 13:46:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kendra.pilon@stryker.com",
-          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:createdBy": "user-e895b4dde6@example.invalid",
+          "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
           "jcr:created": "Tue Jul 01 2025 13:53:12 GMT+0000",
           "text": "<p><b>By Dr. Jason Stack, M.D.&nbsp;&nbsp;</b></p>\n<p><i><b>4-min read</b></i></p>\n<p>As an Orthopaedic surgeon, spending eight to ten hours a day in personal protective equipment (PPE) is a common occurrence. My practice focuses on joint replacement procedures, including robotic total knees, anterior hip replacements, partial knee replacements and hip fractures. Since much of my day is dedicated to these physically demanding procedures, the PPE I wear is no longer just about protection— it’s about performance, comfort, and user-centered design.</p>\n<p>Recently, the hospital decided to switch to a new helmet system, which no one on the surgical team had an opportunity to trial. This meant eliminating the Flyte helmet system, which we had used for over a decade. The replacement didn’t meet the team’s expectations for comfort, visibility or individual needs. This experience reinforced what I already knew: not all PPE is created equal.</p>\n<p>The importance of functional PPE is so integral to surgical workflow that I contacted administration, outlining why the new system was unsuitable.</p>\n<p>When I was first introduced to Steri-Shield 8, I immediately noticed improvements over its predecessors and realized that this equipment was developed with end-user feedback in mind.</p>\n<p>The surgical team requires excellent visibility throughout the entire procedure, which is why Steri-Shield 8’s peel-away shields are essential. During a total knee replacement, the first shield is no longer viable for use after completing bone cuts due to debris. The peel-away feature allows for a quick and efficient refresh without altering the helmet's position or delaying the procedure.</p>\n<p>Another standout feature of Steri-Shield 8 is the larger field of view. The expanded visual field improves our workflow during instrument passing, allowing me to incorporate more of my peripheral vision. This allows me to maintain focus on the surgical field.The amount of weight Steri-Shield 8’s design has been able to eliminate is a vast improvement over other helmet systems I’ve used. The ergonomics of the helmet fit, combined with the significant weight reduction, make it feel like it’s floating on your head—you almost forget you’re wearing it.</p>\n<p>Unlike older, heavier helmets that require you to tightly crank down the forehead strap for proper fit, Steri-Shield 8 stays secure and significantly reduces neck strain when compared to other systems.</p>\n<p>A smart feature incorporated into this new design that has been previously overlooked by other manufacturers is the delayed fan activation. It prevents air from being directed down past the head and face onto the surgical field and instrumentation prior to donning the shield. The integrated fans also keep me cool with airflow directed both forward toward my face and shield, as well as along the back of my neck. The improved efficiency of the dual fan design allows for lower fan settings, decreasing ambient noise and allowing improved communication with my team during the procedure.</p>\n<p>The design team has added welcome functionality to the placement and control of the surgical light. On some systems, the light control switch is located on the rear of the helmet, making it challenging to adjust while maintaining sterility. Steri-Shield 8’s light is not only more powerful and better positioned, improving field of view, but also easier to adjust without compromising sterility.&nbsp; As a result of the redesigned shroud that sits higher and congruently molds to the shield, glare is nearly eliminated.</p>\n<p>While Steri-Shield 8 was designed with the surgeon in mind, all the incorporated improvements can also be appreciated by every team member. One of my staff members suffers from migraines and has been grateful for how much more comfortable and lightweight this system feels. The ponytail path is another design consideration that colleagues with longer hair have acknowledged.</p>\n<p>Steri-Shield 8’s design team has recognized that comfort is not a luxury in PPE, but a necessity for improved effectiveness. The right PPE should feel like an extension of the user, naturally reducing physical and mental fatigue, while providing the freedom to stay 100 percent connected to your patient and the procedure. When the surgeon and the surgical team aren’t distracted by discomfort, everyone can focus on tasks with greater efficiency, which contributes to better outcomes for our patients.</p>\n<p>While PPE design has generally prioritized function over form, Steri-Shield 8 combines protection, performance and comfort while integrating ergonomics and an improved visual field. The new advances in design and materials offered by Steri-Shield 8 have reshaped the user experience and exceeded my team’s expectations.<br>\n</p>\n",
           "jcr:lastModified": "Tue Jul 01 2025 15:23:06 GMT+0000",
@@ -60,8 +60,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kendra.pilon@stryker.com",
-          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:createdBy": "user-e895b4dde6@example.invalid",
+          "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Jul 01 2025 13:57:27 GMT+0000",
           "alt": "Steri-Shield 8 PPE",
@@ -73,8 +73,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kendra.pilon@stryker.com",
-          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:createdBy": "user-e895b4dde6@example.invalid",
+          "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
           "jcr:created": "Tue Jul 01 2025 15:18:13 GMT+0000",
           "text": "<p style=\"text-align: center;\">Dr. Jason Stack, M.D.</p>\n",
           "jcr:lastModified": "Tue Jul 01 2025 15:20:33 GMT+0000",
@@ -85,8 +85,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kendra.pilon@stryker.com",
-      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:createdBy": "user-e895b4dde6@example.invalid",
+      "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
       "jcr:created": "Mon Jun 30 2025 19:35:05 GMT+0000",
       "title": "Related products",
       "jcr:lastModified": "Mon Jun 30 2025 19:36:35 GMT+0000",
@@ -102,7 +102,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "publishDate": "Fri Jun 06 2025 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-Jun-2025",
@@ -111,7 +111,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "jcr:lastModified": "Tue Jul 01 2025 14:16:28 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
@@ -121,7 +121,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>The opinions expressed by the author are those of the author and not necessarily those of Stryker. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using the product.</p>\r\n<p>Stryker Corporation, its divisions, or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: Flyte, Steri-Shield, Stryker. All other trademarks are trademarks of their respective owners or holders.&nbsp;&nbsp;</p>\r\n",
     "jcr:lastModified": "Tue Jul 01 2025 15:23:23 GMT+0000",

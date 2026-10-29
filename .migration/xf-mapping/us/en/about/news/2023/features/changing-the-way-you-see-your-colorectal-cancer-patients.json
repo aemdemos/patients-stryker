@@ -9,7 +9,7 @@
   "jcr:versionHistory": "bd84b677-9c95-4ffe-94c7-fb4f96e9e3a5",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailAltText": "AdobeStock_193417261",
   "jcr:predecessors": [
     "53332bcb-1229-468d-bfcf-4c2c1bf70e6d"
@@ -32,15 +32,15 @@
   "jcr:uuid": "7aec4e4a-a28b-4b15-a13c-e4917a552055",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "dimensionBox": "ND",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "layoutOptions": "col-sm-3",
       "backgroundImageRef": "/content/dam/stryker/about/news/2023/features/changing-the-way-you-see-your-colorectal-cancer-patients/Patient_Doctor_Edited.jpg",
       "jcr:created": "Wed Mar 22 2023 17:16:43 GMT+0000",
@@ -50,24 +50,24 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:33:36 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:33:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_910164484": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:36:44 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:36:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:27:04 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:27:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -76,8 +76,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Mar 20 2023 19:02:38 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Colorectal cancer is the fourth most commonly diagnosed cancer in the world and the third leading cause of cancer-related deaths.<sup>1</sup> One of the most effective ways to prevent colon cancer is through regular screening; however, the continued need for colorectal cancer surgery is unrelenting.<sup>2</sup> One of Stryker’s goals is to help surgeons avoid surgical complications through providing hospitals with the most advanced Imaging technology.</span></p>\n<p><span class=\"fontsize-1-25em\">Dr. Farshid Araghizadeh, a colorectal surgeon in Dallas, Texas explains that “The primary treatment for colorectal cancer is surgical resection, which involves removing the tumor and a segment of normal intestine or normal large bowel on either side of the tumor and reconnecting the remaining two ends of the bowel.” The <a href=\"https://www.stryker.com/us/en/endoscopy/systems/1688-aim-platform.html\">1688 AIM 4K Platform</a> was designed to provide enhanced visualization*, which may enable surgeons to have more confidence when treating colorectal cancer.</span></p>\n<p><span class=\"fontsize-1-25em\">“Our goal is helping surgeons to see more and do more,” said Caitlin Clark, Vice President of Marketing. “While detection may be one of the most important aspects of preventing and treating colon cancer, it is not the only one. Should a patient receive a colorectal cancer diagnosis and require surgery, surgeons continue to search for solutions that may help them improve patient outcomes. Our 1688 AIM 4K platform, with fluorescence imaging technology, helps make that possible.<sup>3</sup>”<br>\n </span>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Mar 22 2023 17:31:01 GMT+0000",
@@ -90,8 +90,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Mar 22 2023 17:27:11 GMT+0000",
           "alt": "1688 AIM",
@@ -105,16 +105,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:34:40 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:34:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:34:03 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:34:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -123,8 +123,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Mar 22 2023 17:27:45 GMT+0000",
           "alt": "Ribbon",
@@ -140,9 +140,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1565220027_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "topPadding": "10",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Mar 20 2023 19:03:43 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -156,24 +156,24 @@
     },
     "sectionseparator_1748459726": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:34:46 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:34:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2_537242759": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:36:15 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:36:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_2_3_1_3_1782228002": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:28:11 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:28:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -182,8 +182,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1565220027": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Mar 20 2023 19:03:43 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\">An enlightened perspective on surgery</span></span></p>\n<p><span class=\"fontsize-1-25em\">Anastomotic leaks, or the inadvertent mix of bodily fluids between structures like the colon and small intestine, are a frequent complication of colorectal surgery.<sup>5</sup>&nbsp;The 1688 AIM 4K Platform allows surgeons to visualize blood flow, which may help to prevent leaks.<sup>4</sup>&nbsp;The 1688 utilizes <a href=\"https://www.stryker.com/us/en/endoscopy/products/spy-phi.html\">SPY Fluorescence Imaging technology</a> which allows surgeons to visualize blood flow in vessels and related tissue perfusion intraoperatively. “SPY quite literally changes the way that surgeons see their patients,” says Clark. “By injecting an imaging agent that binds to the proteins in the patient’s blood, surgeons can then utilize the surgical camera to identify whether there is an adequate blood supply to and from the colorectal area. It may even allow surgeons to more clearly see where they can reconnect and reattach the healthy portions of the intestine together to help reduce the chances of poor tissue perfusion.<sup>5</sup>”</span></p>\n<p><span class=\"fontsize-1-25em\">A colorectal cancer diagnosis can be frightening for a patient, but with technologies like the 1688 AIM 4K Platform and SPY Fluorescence Imaging, surgeons and their patients might feel a little more confident going into surgery. At Stryker, we’ll keep innovating for the lives we hope to impact.<br>\n </span>&nbsp;</p>\n",
           "jcr:lastModified": "Thu Mar 23 2023 18:24:29 GMT+0000",
@@ -196,8 +196,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Mar 22 2023 17:28:17 GMT+0000",
           "alt": "SPY-PHI",
@@ -211,8 +211,8 @@
     },
     "cols2_189486002": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Mar 22 2023 17:36:19 GMT+0000",
       "jcr:lastModified": "Wed Mar 22 2023 17:36:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -220,7 +220,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Mon Mar 27 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Mar-2023",
@@ -233,7 +233,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>* Compared to previous generations.&nbsp;</p>\r\n<ol>\r\n<li>Rawla, Prashanth, Sunkara, Tagore, Barsouk, Adam. Epidemiology of colorectal cancer: incidence, mortality, survival, and risk factors. Prz Gastroenterol. 2019; 14(2): 89-103. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6791134/#. Published 2019, January 6. Accessed 2023.</li>\r\n<li>American Cancer Society. Colorectal Cancer Facts &amp; Figures 2020-2022. Atlanta: American Cancer Society; 2020.</li>\r\n<li>Starker PM, Chinn B. Using outcomes data to justify instituting new technology: a single institution's experience. Surg Endosc.2018;32(3):1586-1592</li>\r\n<li>Team, M. C. (2021, February 4).&nbsp;<i>When should you start getting screened for colorectal cancer?</i>&nbsp;American Cancer Society. Retrieved March 8, 2022, from&nbsp;<a href=\"https://www.cancer.org/latest-news/american-cancer-society-updates-colorectal-cancer-screening-guideline.html\">https://www.cancer.org/latest-news/american-cancer-society-updates-colorectal-cancer-screening-guideline.html</a>&nbsp;&nbsp;</li>\r\n<li>Hellan, M., Spinoglio, G., Pigazzi, A., &amp; Lagares-Garcia, J. (1970, January 1).&nbsp;<i>[PDF] the influence of fluorescence imaging on the location of bowel transection during robotic left-sided colorectal surgery: Semantic scholar</i>. Retrieved March 8, 2022, from&nbsp;<a href=\"https://www.semanticscholar.org/paper/The-influence-of-fluorescence-imaging-on-the-of-Hellan-Spinoglio/28219c765046fd6eb6e6ed93cd4b9a2852a0d3ee\">https://www.semanticscholar.org/paper/The-influence-of-fluorescence-imaging-on-the-of-Hellan-Spinoglio/28219c765046fd6eb6e6ed93cd4b9a2852a0d3ee</a>&nbsp;&nbsp;</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Mar 27 2023 14:32:58 GMT+0000",

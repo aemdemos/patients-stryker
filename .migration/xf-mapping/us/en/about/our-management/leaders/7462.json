@@ -9,7 +9,7 @@
   "jcr:versionHistory": "dab94d32-53ae-43d4-8c3f-5265faecd096",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "3da58cf4-d8c7-459c-a248-19cc564aeeec"
   ],
@@ -26,23 +26,23 @@
   "jcr:uuid": "74614397-4c42-4577-93ed-ed7650120d2d",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Katy Fink",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_998696161_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c_1622332412": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
       "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -51,16 +51,16 @@
     },
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
       "text": "Katy Fink Vice President, Chief Human Resources Officer Katy Fink became Vice President, Chief Human Resources Officer in January 2016. Katy is responsible for all human resources policies, practices, planning, direction and activities, including our talent acquisition and development, human resources shared services and our Total Rewards program. Katy began her career with us in 2013 as Vice President, Talent Management and became Vice President, Human Resources, MedSurg and Neurotechnology Group in 2015. Prior to joining us, she held a number of human resources roles of increasing scope and complexity at Cintas and Ethicon Endo Surgery, a division of Johnson & Johnson. Katy holds a bachelor's degree from Kenyon College and master's degree in human resource management (HRM) from Rutgers' School of Management and Labor Relations.",
       "jcr:lastModified": "Mon Jun 06 2022 16:01:01 GMT+0000",

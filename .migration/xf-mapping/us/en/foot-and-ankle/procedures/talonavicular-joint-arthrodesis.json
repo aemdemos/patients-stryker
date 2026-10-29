@@ -7,7 +7,7 @@
   "jcr:title": "Talonavicular Joint Arthrodesis",
   "jcr:versionHistory": "5d315906-5f8e-4b5c-af97-7f63adaa96ea",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Talonavicular-Joint-Arthrodesis/Images/Hindfoot_TalonavicularJointArthrodesis.jpg",
   "jcr:predecessors": [
     "3adc5de5-05b2-4e99-b100-1da893b34741"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:05:01 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Talonavicular-Joint-Arthrodesis/Images/Hindfoot_TalonavicularJointArthrodesis.jpg",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 16:34:29 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 16:34:29 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -64,8 +64,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:34:37 GMT-0400",
           "type": "typeId",
           "videoId": "-3VsUeHnfYg",
@@ -79,9 +79,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Talonavicular joint arthrodesis with VariAx plate",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "This video demonstrates a talonavicular fusion. It covers the incision, the desired outcome, the osteotomy and fixation. The demonstration is performed by Dr. Donald Bohay and John Anderson of Grand Rapids, MI.",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Aug 07 2017 08:23:02 GMT-0400",
@@ -92,7 +92,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Wed Aug 12 2020 19:51:32 GMT+0000",

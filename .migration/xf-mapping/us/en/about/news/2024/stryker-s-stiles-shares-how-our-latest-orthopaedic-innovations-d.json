@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e8adf8c3-5779-4d8d-87d9-2c4e1e9117bc",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "_Spencer Stiles StrykerTalks",
   "jcr:predecessors": [
     "b986a2b8-9190-43e9-ba9e-255b5867c79d"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 04 2023 21:00:29 GMT+0000",
       "jcr:lastModified": "Mon Dec 04 2023 21:00:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -48,8 +48,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Dec 04 2023 21:00:33 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -63,7 +63,7 @@
             "fileReference": "/content/dam/stryker/about/news/2024/stryker’s-stiles-shares-how-our-latest-orthopaedic-innovations-drive-growth/StrykerTalks24_4.16.24_1200x800_Vs1_1.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/StrykerTalks24_4.16.24_1200x800_Vs1_1-AVS",
             "urlModifiers": "",
@@ -81,8 +81,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Dec 04 2023 21:00:39 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h3><span class=\"fontsize-2vw\">Spencer Stiles, our Group President of Orthopaedics and Spine, joins the StrykerTalks podcast to share an update on our digital innovation and robotics advancements globally, as well as on our strategic M&amp;A approach.</span></h3>\r\n",
@@ -99,7 +99,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Apr 16 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-Apr-2024",
@@ -108,7 +108,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Products may not be available in all markets. Product availability is subject to the regulatory and/or medical practices in individual markets.</p>\r\n",
     "jcr:lastModified": "Tue Apr 16 2024 16:23:13 GMT+0000",

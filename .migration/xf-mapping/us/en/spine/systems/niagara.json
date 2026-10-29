@@ -10,7 +10,7 @@
   "jcr:versionHistory": "001f7c33-0482-4e8e-9eb6-fd96c128383c",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Niagara",
   "jcr:predecessors": [
     "bfc3f7a7-b96e-449a-b467-9d59c44de089"
@@ -42,13 +42,13 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/spine/systems",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jun 17 2020 18:59:00 GMT+0000",
       "compImageRef": "/content/dam/stryker/spine/systems/niagara-lateral-access-system/images/Niagara_System.png",
@@ -56,8 +56,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "joelle.battista@stryker.com",
-      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:createdBy": "user-16113fe70d@example.invalid",
+      "jcr:lastModifiedBy": "user-16113fe70d@example.invalid",
       "jcr:created": "Wed Apr 02 2025 17:39:58 GMT+0000",
       "text": "Now sold by VB Spine",
       "jcr:lastModified": "Wed Apr 02 2025 17:40:03 GMT+0000",
@@ -84,7 +84,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "text": "<ul>\n<li>Independent retraction and toeing of all three blades allows for enhanced control of Retractor orientation</li>\n<li>Intradiscal Shim placement with Dilators still in place is designed to help maintain desired access window to the disc space</li>\n<li>Dedicated mounting, lighting, and shim options allow for customized assembly and set-up</li>\n<li>Customized carbon fiber frame engineered to balance strength and visualization</li>\n<li>Carbon fiber and aluminum blades available from 80-200mm in length</li>\n<li>Strategic design of metal and carbon fiber components allows for ease of visualization on imaging<br>\n</li>\n<li>Comprehensive standard and angled disc preparation instrument options are designed to be adaptive to anatomy and technique<br>\n</li>\n<li>Designed to be used with lateral interbody and plate portfolios</li>\n<li>Designed for up to 85mm of retraction before toeing to allow access for corpectomy</li>\n</ul>\n",
     "jcr:lastModified": "Wed Jun 17 2020 19:00:35 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -92,7 +92,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.</p>\r\n",
     "jcr:lastModified": "Wed Jul 29 2020 18:19:51 GMT+0000",

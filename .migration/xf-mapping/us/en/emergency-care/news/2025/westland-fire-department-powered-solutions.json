@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7f2ba4a4-9162-4d42-8ed8-9ce3656366d1",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Westland Fire Department with patient on Power-PRO 2",
   "jcr:predecessors": [
     "aa99c850-94ae-4e6c-b831-a102cc2b7829"
@@ -34,15 +34,15 @@
   "jcr:uuid": "f858ea43-b617-4a52-8771-00d712b4c0f6",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "navTitle": "Westland Fire Department has the power to save",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu May 22 2025 21:46:57 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -56,7 +56,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/power-to-save/PTS_westland-fire-newsroom.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/PTS_westland-fire-newsroom-AVS",
         "urlModifiers": "",
@@ -73,8 +73,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "hideComponent": "false",
       "topMargin": "2",
       "jcr:created": "Thu May 22 2025 21:35:48 GMT+0000",
@@ -87,8 +87,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue May 27 2025 17:12:33 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Tue Aug 26 2025 20:46:24 GMT+0000",
@@ -112,7 +112,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Tue May 27 2025 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-May-2025",
@@ -121,7 +121,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Maguire, B. J., Al Amiry, A., &amp; O'Neill, B. J. (2023). Occupational Injuries and Illnesses among Paramedicine Clinicians: Analyses of US Department of Labor Data (2010 - 2020).&nbsp;<i>Prehospital and disaster medicine</i><span>,&nbsp;</span><i>38</i><span>(5), 581–588. </span><a href=\"https://doi.org/10.1017/S1049023X23006118\" style=\"background-color: rgb(240,240,240);\">https://doi.org/10.1017/S1049023X23006118</a></p>\r\n<p>2. Lad, U., Oomen, N. M. C. W., Callaghan, J. P. &amp; Fischer, S. L. (2018). Comparing the biomechanical and psychophysical demands imposed on paramedics when using manual and powered stretchers. Applied Ergonomics, 70, 167–174. <a href=\"https://doi.org/10.1016/j.apergo.2018.03.001\">https://doi.org/10.1016/j.apergo.2018.03.001</a></p>\r\n<p>The information presented is intended to demonstrate Stryker's products. A surgeon must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your representative if you have questions about the availability of Stryker's products in your area.<br>\r\n<br>\r\nThe opinions stated throughout by Westland Fire Department are those of the Westland Fire Department and may not necessarily be those of Stryker.<br>\r\n<br>\r\nStryker or its affiliated entities own, use, or have applied for the following trademarks, or service marks: Power-LOAD, Power-PRO, Stryker. All other trademarks of their respective owners or holders.</p>\r\n",
     "jcr:lastModified": "Tue May 27 2025 20:37:15 GMT+0000",

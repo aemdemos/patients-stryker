@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a7934436-e90a-4962-b926-98cdd33ddd18",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Survivor John Jimenez talking about his story",
   "jcr:predecessors": [
     "6a100f17-d1c1-4aa3-8cec-08c90805f211"
@@ -35,15 +35,15 @@
   "jcr:uuid": "b0393833-bbf6-4479-80c6-77188bee8a2d",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Survivor: John Jimenez",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu May 22 2025 21:56:26 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -57,7 +57,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-john-jimenez.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-john-jimenez-AVS",
         "urlModifiers": "",
@@ -74,8 +74,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideComponent": "false",
       "topMargin": "2",
       "jcr:created": "Thu May 22 2025 21:56:30 GMT+0000",
@@ -88,8 +88,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 27 2025 16:29:46 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Tue May 27 2025 20:03:17 GMT+0000",
@@ -113,7 +113,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Mon Apr 28 2025 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "28-Apr-2025",

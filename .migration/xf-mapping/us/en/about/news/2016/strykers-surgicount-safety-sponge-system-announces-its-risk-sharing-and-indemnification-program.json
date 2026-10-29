@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s SurgiCount Safety Sponge System announces its risk sharing and indemnification program",
   "jcr:versionHistory": "489b2270-4adc-4174-8bd0-4dee7c16f9b9",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "12f57025-ce9e-4b84-bd11-cc45a0f32aff"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Fri Aug 12 2016 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Aug-2016",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>The Promise. Despite efforts by hospitals nationwide, retained surgical items (RSIs) continue to be the #1 reported surgical never event. Nearly 70% of all RSIs...<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.group55.com/SurgiCountPromise/\" target=\"_blank\">SurgiCount Promise</a></p>\n",
     "jcr:lastModified": "Wed May 31 2017 22:11:06 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

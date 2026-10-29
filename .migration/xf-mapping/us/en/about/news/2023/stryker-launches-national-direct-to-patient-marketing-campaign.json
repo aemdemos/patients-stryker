@@ -9,7 +9,7 @@
   "jcr:versionHistory": "4e3b3fc8-5b6f-4de5-a3e5-4104f627a618",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Direct-to-patient marketing campaign",
   "jcr:predecessors": [
     "dc189a78-c2e5-4cd4-9379-e4746c9bf195"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:34:28 GMT+0000",
       "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">“Scan. Plan. Mako Can.” spotlights and differentiates Stryker’s Mako SmartRobotics™ for partial knee, total knee and total hip replacement surgery</span></span></p>\n<p><span class=\"futura-bold\">MAHWAH, N.J., USA –</span> Stryker (NYSE: SYK), one of the world’s largest medical technology companies, announced the launch of a nationwide, direct-to-patient marketing campaign, “Scan. Plan. Mako Can.” Through this campaign, Stryker aims to continue to drive patient awareness of Mako SmartRobotics™, an innovative option for those needing joint replacement surgery due to arthritis of the knee or hip.</p>\n<p>“‘Scan. Plan. Mako Can.’ is rooted in the foundation of Mako SmartRobotics™,” said Don Payerle, president of Stryker's Joint Replacement division. “We have an unwavering commitment to revolutionizing joint replacement technology and enabling surgeons to achieve enhanced outcomes for their patients. We are eager to share this campaign with patients experiencing joint pain so they can seek care and begin their journey towards returning to the activities they love.”<br>\n<br>\nCT-based planning is an integral component of Mako SmartRobotics™ that allows surgeons to know more about their patient’s anatomy and the procedure prior to surgery. Mako’s innovative AccuStop™ haptic technology enables surgeons to execute their plans with precision<sup>1-3</sup>, helping to minimize tissue disruption.<sup>4-6</sup> Mako SmartRobotics™ has demonstrated better outcomes, like less pain and quicker recovery times, compared to manual joint replacement surgery.<sup>7-9</sup><br>\n<br>\nAdditionally, by enabling products like Mako with digital capabilities, known as Advanced Digital Healthcare, Stryker is generating insights to drive improved clinical, operational and financial outcomes across the continuum of care.</p>\n<p>The omnichannel “Scan. Plan. Mako Can.” campaign will come to life through different assets and various media channels, including linear TV, streaming TV, social media, YouTube, programmatic/endemic and paid search. “Scan. Plan. Mako Can.” will begin rolling out to the public today.</p>\n<p>Those living with joint pain are encouraged to speak with their healthcare professional about available treatment plans and whether joint replacement surgery is right for them. More information about Mako SmartRobotics™ is available at <a href=\"https://patients.stryker.com/mako-robotic-arm-assisted-technology?utm_source=stryker.com&amp;utm_medium=press_release&amp;utm_campaign=stryker2023&amp;utm_content=&amp;cid=makodtp2023_stryker2023_press_release_stryker.com\">MakoCan.com</a>.</p>\n<p>All surgery carries risk. Surgeons must rely on their own professional clinical judgment when deciding whether to utilize a particular technology when treating a patient in their own practice. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any technology before using it in surgery. Not all patients will have the same postoperative recovery and activity level. Individual results vary.</p>\n",
       "jcr:lastModified": "Wed Aug 09 2023 17:34:48 GMT+0000",
@@ -50,24 +50,24 @@
     },
     "cols2_1095955883": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 20:06:28 GMT+0000",
       "jcr:lastModified": "Thu Aug 03 2023 20:06:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "sectionseparator_1153798054": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 20:06:23 GMT+0000",
       "jcr:lastModified": "Thu Aug 03 2023 20:06:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:34:28 GMT+0000",
       "text": "<p><b><span class=\"futura-bold\">About Stryker<br>\n </span></b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at www.stryker.com.</p>\n<p><br>\n<span class=\"futura-bold\">Media Contact</span><br>\nStryker, Joint Replacement<br>\nNiamh Grano<br>\nSr. Communications Manager<br>\nniamh.grano@stryker.com<br>\n201.831.5589</p>\n",
       "jcr:lastModified": "Thu Aug 03 2023 20:06:18 GMT+0000",
@@ -76,32 +76,32 @@
     },
     "cols2_1604231540": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:36:26 GMT+0000",
       "jcr:lastModified": "Thu Aug 03 2023 19:36:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:36:21 GMT+0000",
       "jcr:lastModified": "Thu Aug 03 2023 19:36:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:36:17 GMT+0000",
       "jcr:lastModified": "Thu Aug 03 2023 19:36:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "text_1114883830": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 03 2023 19:35:55 GMT+0000",
       "text": "<p><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">References<br>\n</span></span> <br>\n 1. Sicat CS, Buchalter DB, Luthringer TA, Schwarzkopf R, Vigdorchik JM. Intraoperative Technology Use Improves Accuracy of Functional Safe Zone Targeting in Total Hip Arthroplasty. J Arthroplasty. 2022;37(7S):S540-S545. doi:10.1016/j.arth.2022.02.038&nbsp;<br>\n 2. Deckey DG, Rosenow CS, Verhey JT, et al. Robotic-assisted total knee arthroplasty improves accuracy and precision compared to conventional techniques. Bone Joint J. 2021;103-B(6 Supple A):74-80. doi:10.1302/0301-620X.103B6.BJJ-2020-2003.R1c&nbsp;<br>\n 3. Bell SW, Anthony I, Jones B, MacLean A, Rowe P, Blyth M. Improved Accuracy of Component Positioning with Robotic-Assisted Unicompartmental Knee Arthroplasty: Data from a Prospective, Randomized Controlled Study. J Bone Joint Surg Am. 2016;98(8):627-635. doi:10.2106/JBJS.15.00664&nbsp;<br>\n 4. Kayani B, Konan S, Pietrzak JRT, Haddad FS. Iatrogenic Bone and Soft Tissue Trauma in Robotic-Arm Assisted Total Knee Arthroplasty Compared With Conventional Jig-Based Total Knee Arthroplasty: A Prospective Cohort Study and Validation of a New Classification System. J Arthroplasty. 2018;33(8):2496-2501. doi:10.1016/j.arth.2018.03.042&nbsp;<br>\n 5. Suarez-Ahedo C, Gui C, Martin TJ, Chandrasekaran S, Lodhia P, Domb BG. Robotic-arm assisted total hip arthroplasty results in smaller acetabular cup size in relation to the femoral head size: a matched-pair controlled study. Hip Int. 2017;27(2):147-152. doi:10.5301/hipint.5000418<br>\n 6. Banks SA. Haptic robotics enable a systems approach to design of a minimally invasive modular knee arthroplasty. Am J Orthop (Belle Mead NJ). 2009;38(2 Suppl):23-27.<br>\n 7. Kayani B, Konan S, Tahmassebi J, Pietrzak JRT, Haddad FS. Robotic-arm assisted total knee arthroplasty is associated with improved early functional recovery and reduced time to hospital discharge compared with conventional jig-based total knee arthroplasty: a prospective cohort study. Bone Joint J. 2018;100-B(7):930-937. doi:10.1302/0301 620X.100B7.BJJ-2017-1449.R1&nbsp;<br>\n 8. Clement ND, Gaston P, Bell A, et al. Robotic arm-assisted versus manual total hip arthroplasty. Bone Joint Res. 2021;10(1):22-30. doi:10.1302/2046-3758.101.BJR-2020- 0161.R1&nbsp;<br>\n 9. Brilliant ZR, Garvey MD, Haffner R, Chiu YF, Mayman DJ, Blevins JL. Unicompartmental Knee Arthroplasty Patients Have Lower Joint Awareness and Higher Function at 5 Years Compared to Total Knee Arthroplasties: A Matched Comparison [published online ahead of print, 2023 Feb 9]. J Arthroplasty. 2023;S0883-5403(23)00084-0. doi:10.1016/j.arth.2023.01.063&nbsp;</span></p>\n",
       "jcr:lastModified": "Thu Aug 03 2023 20:02:18 GMT+0000",
@@ -111,7 +111,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Fri Aug 04 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "04-Aug-2023",
@@ -120,7 +120,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "preset": "max_width_1440",
     "alt": "Direct-to-patient marketing campaign",
     "srcFileRef": "/content/dam/stryker/about/news/2023/stryker-launches-national-direct-to-patient-marketing-campaign/P00018133_Stryker_DSC4514_V5_RGB_HR.jpg",

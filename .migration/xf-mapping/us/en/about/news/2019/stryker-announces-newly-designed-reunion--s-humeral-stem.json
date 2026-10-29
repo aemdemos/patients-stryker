@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Announces Newly Designed ReUnion® S Humeral Stem",
   "jcr:versionHistory": "8e8ec61b-3755-4a3d-8f1c-a8a60d2d7bd0",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "4a61be31-977e-4986-a48d-ef462b8319c0"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "e6861a2c-5f0e-4ce7-9bbb-911b6ba9b1f3",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Tue Mar 12 2019 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Mar-2019",
@@ -43,14 +43,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/ReUnion S Stem.jpg",
     "jcr:lastModified": "Wed Mar 13 2019 19:15:37 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p><i>The ReUnion S stem is designed to be the ideal length humeral stem, optimizing bone preservation, alignment and stability as part of the ReUnion Shoulder Arthroplasty System</i></p>\n<p>Stryker's Trauma and Extremities Division announces the release of the newly designed ReUnion S Humeral Stem.&nbsp;This latest technology focuses on bone preservation, alignment and stability, which is designed to be the ideal length for use with the ReUnion Shoulder Arthroplasty System.&nbsp;These are intended for patients that may be considered for shoulder arthroplasty. Stryker will showcase its latest technologies, including the ReUnion S, at the 2019 Academy Meeting in&nbsp;Las Vegas, NV&nbsp;from&nbsp;March 12-16, 2019.</p>\n<p>&quot;Certain humeral short stems implanted to date have been associated with unacceptable high rates of malalignment, loosening, stress shielding and other modalities of adverse bone reactions,&quot; says&nbsp;Joaquin Sanchez-Sotelo, MD, PhD. &quot;This is driven by excessive shortening, increased proximal bulk, and poor implant alignment. By utilizing the Stryker Orthopaedics Modeling and Analytics (SOMA) database and software, study findings have allowed us to develop a more anatomically relevant&nbsp;length stem.&quot;</p>\n<p>These findings and the new stem have led to:</p>\n<ul>\n<li><b>Bone preservation</b>:&nbsp;ReUnion S preserves more bone mass proximally and distally compared to competitive stems.<sup>1</sup>By keeping the wedge shape proximal body, soft-tissue management preference is that of the user, not limited by the stem design. Reduced stem length was determined through our SOMA analysis; identifying a humeral transition point and alignment length.<sup>2</sup></li>\n<li><b>Alignment</b>:&nbsp;By extensively studying the cross-sectional geometry of the humeral canal with SOMA, a unique transition point was identified where the flare of the metaphysis tapers to the more regular, cylindrical shape in the diaphyseal region. With the transition point identified, our target alignment zone was identified to avoid varus/ valgus placement of the stem.<sup>2</sup></li>\n<li><b>Stability</b>:&nbsp;The enhanced medial sweep of the stem avoids distal engagement while the alignment focused length and incremental distal sizing options prevent canal migration. The S stem is designed to retain the alignment and stability benefits of a longer humeral stem prosthesis.<sup>2</sup></li>\n</ul>\n<p>Stryker's Trauma and Extremities portfolio offers market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements.</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes.&nbsp; More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings.&nbsp; A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.&nbsp; Please contact your sales representative if you have questions about the availability of products in your area.</p>\n<p><sup>1</sup>&nbsp;Internal document: A0042705<br>\n<sup>2</sup>&nbsp;Internal document: A0042660</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed Mar 13 2019 19:19:30 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

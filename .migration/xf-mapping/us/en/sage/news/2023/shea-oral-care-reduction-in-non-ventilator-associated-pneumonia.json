@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d180f9e2-c5e7-469c-99fb-9a3d38a80e16",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Poster presented at SHEA demonstrates 58% reduction in non-ventilator associated pneumonia",
   "jcr:predecessors": [
     "179dd5bd-7828-48b5-bf4e-92ccf6d30bda"
@@ -31,14 +31,14 @@
   "jcr:uuid": "3ae24d78-bf1e-404a-a6f8-e57f5b1be66c",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Thu May 25 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-May-2023",
@@ -47,7 +47,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "text": "<h2>Changing oral care protocol at Havasu Regional Medical Center</h2>\n<p>In 2021, Havasu Regional Medical Center in Arizona set out to better understand the relationship between an oral care bundle and non-ventilator hospital-acquired pneumonia (NV-HAP) and sepsis rates. To measure the impact of an oral care bundle, the authors collected baseline data from 1/1/21 to 6/4/21. In addition to the data collection, they identified that only 36.8% of patients had used their toothbrush. The information made it clear that it was time for a change in Havasu’s oral care protocol.</p>\n<h2>The impact of a robust oral care bundle</h2>\n<p>In June, a new oral care bundle was implemented using Stryker Sage’s Self Oral Care for all non-ventilated patients. From June through the end of 2021, Havasuper formed education and performed daily audits to measure compliance with the new oral care bundle. During the intervention period with the new oral care bundle, Havasu saw a 58% reduction in NV-HAP, a 41% reduction in sepsis with source documented as NV-HAP, and a 50% reduction of NV-HAP-related mortality.<sup>1</sup> Based on this outcome, the authors suggest hospital infection control programs should consider implementation of a robust oral care bundle as an effective strategy for NV-HAP prevention.</p>\n<p>To view the full poster, click <a href=\"https://www.stryker.com/content/dam/stryker/sage/news/2023/Sage-Newsroom_SHEA-Oral-Care-reduction-in-non-ventilator-associated-pneumonia.pdf\" title=\"View full poster\">here</a>.</p>\n<p>To learn more about products that address the risk factors associated with hospital-acquired pneumonia, click <a title=\"Click to view product information\" href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\">here</a>.</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed May 31 2023 16:53:34 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -59,7 +59,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "preset": "max_width_1440",
     "alt": "Poster presented at SHEA demonstrates 58% reduction in non-ventilator associated pneumonia",
     "srcFileRef": "/content/dam/stryker/sage/news/2023/Sage-Newsroom_SHEA-Oral-Care-reduction-in-non-ventilator-associated-pneumonia.jpg",
@@ -70,7 +70,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>Reference: 1. </b>Coury E, Dietz S, Implementation and evaluation of an oral carebundle for reduction of non-ventilator hospital-acquired pneumonia in a multiunitcommunity hospital, poster presented at SHEA Spring Conference, April 12-14, 2022.</p>\r\n",
     "jcr:lastModified": "Wed May 24 2023 18:58:40 GMT+0000",

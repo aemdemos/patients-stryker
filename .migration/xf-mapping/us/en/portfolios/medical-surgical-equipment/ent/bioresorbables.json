@@ -8,7 +8,7 @@
   "jcr:title": "Bioresorbables",
   "jcr:versionHistory": "13f556a7-cec0-4c6e-81c4-64be024658aa",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/ent/bioresorbables/images/Thumbnail_Bioresorbables.jpg",
   "jcr:predecessors": [
     "b52b3f5b-d814-4c26-975f-436866fc7174"
@@ -29,7 +29,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -44,7 +44,7 @@
   },
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:23:28 GMT+0000",
     "loadMoreText": "Load More",

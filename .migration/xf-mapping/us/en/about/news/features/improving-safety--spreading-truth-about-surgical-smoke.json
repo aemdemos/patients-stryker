@@ -7,7 +7,7 @@
   "jcr:title": "Improving safety: Spreading truth about surgical smoke",
   "jcr:versionHistory": "44b73449-0f8b-487e-ba7a-2c0cb9f3d4f7",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "e0c6fe9d-4cd8-48df-8e0c-77f98fcac1b3"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "eef086cf-7767-4a95-9d39-6d7afbb6409c",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Aug 25 2021 18:26:09 GMT+0000",
       "jcr:lastModified": "Wed Aug 25 2021 18:27:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -43,24 +43,24 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Aug 25 2021 18:29:32 GMT+0000",
       "jcr:lastModified": "Wed Aug 25 2021 18:29:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_3665971": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Aug 25 2021 18:29:37 GMT+0000",
       "jcr:lastModified": "Wed Aug 25 2021 18:29:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_1622165913": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Aug 25 2021 18:29:41 GMT+0000",
       "jcr:lastModified": "Wed Aug 25 2021 18:29:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -68,7 +68,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Wed Aug 25 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Aug-2021",
@@ -77,7 +77,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Aug 25 2021 18:26:20 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

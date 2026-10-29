@@ -10,7 +10,7 @@
   "jcr:versionHistory": "ebdbbf46-a14f-488e-996f-c8f210809279",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
   "thumbnailAltText": "Eli with his family following his diagnosis and treatment for osteoid osteoma",
   "thumbnailFileReference": "/content/dam/stryker/ivs/news/patient-stories/Eli-Hardin-patient-story_1200x680.png",
   "jcr:predecessors": [
@@ -36,17 +36,17 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
   "videoType": "typeId",
-  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "cq:lastModifiedBy": "user-4a9aa678a2@example.invalid",
   "navTitle": "More than growing pains: Eli’s journey to osteoid osteoma relief",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage_2084952639": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:createdBy": "user-4a9aa678a2@example.invalid",
       "altMob": "Eli with his family following his diagnosis and treatment for osteoid osteoma",
       "dimensionBox": "ND",
-      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
       "backgroundImageMobRef": "/content/dam/stryker/ivs/news/patient-stories/Eli-Hardin-patient-story_1200x680.png",
       "layoutOptions": "col-sm-3",
       "backgroundImageRef": "/content/dam/stryker/ivs/news/patient-stories/Eli_HCP_Hero_1920x800.png",
@@ -58,9 +58,9 @@
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "1",
-      "jcr:createdBy": "shanna.hearon@stryker.com",
+      "jcr:createdBy": "user-87afd405b7@example.invalid",
       "topPadding": "1",
-      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Jan 21 2025 20:08:44 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -71,9 +71,9 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:createdBy": "user-4a9aa678a2@example.invalid",
       "topPadding": "0",
-      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Sep 29 2026 17:13:28 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -84,8 +84,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.shannon@stryker.com",
-      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:createdBy": "user-4a9aa678a2@example.invalid",
+      "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "video",
       "jcr:created": "Tue Sep 29 2026 20:03:23 GMT+0000",
@@ -95,8 +95,8 @@
     },
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.shannon@stryker.com",
-      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:createdBy": "user-4a9aa678a2@example.invalid",
+      "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
       "jcr:created": "Tue Sep 29 2026 17:32:14 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -110,7 +110,7 @@
         "fileReference": "/content/dam/commercial/usa/interventional-spine/bone-tumor-ablation/IVS-OPTA-VID-3812630-EN_US.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/IVS-OPTA-VID-3812630-EN_US-AVS",
         "urlModifiers": "",
@@ -128,7 +128,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
     "publishDate": "Mon Oct 12 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Oct-2026",
@@ -137,7 +137,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*See the instructions for use (IFU) for size guidance.<br>\r\n<br>\r\n<b>References:</b></p>\r\n<ol>\r\n<li>Cleveland Clinic. (2023). Osteoid osteoma. Cleveland Clinic. Retrieved on July 8, 2025 from https://my.clevelandclinic.org/health/diseases/22405-osteoid-osteoma</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue Sep 29 2026 17:25:48 GMT+0000",
@@ -146,7 +146,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
     "jcr:lastModified": "Tue Sep 29 2026 17:13:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
@@ -157,7 +157,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "jcr:lastModifiedBy": "user-4a9aa678a2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue Sep 29 2026 17:34:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

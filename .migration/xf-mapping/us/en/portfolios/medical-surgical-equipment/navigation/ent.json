@@ -8,7 +8,7 @@
   "jcr:title": "ENT",
   "jcr:versionHistory": "b7cb60e5-7f23-41fa-9fff-8efa6500c925",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/ent/images/Thumbnail_ENT.png",
   "jcr:predecessors": [
     "70780b62-cb69-4ce5-9a34-5c35aa5645bd"
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -46,7 +46,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:27:08 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

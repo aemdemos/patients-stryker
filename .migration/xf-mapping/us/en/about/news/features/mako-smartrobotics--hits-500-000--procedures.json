@@ -7,7 +7,7 @@
   "jcr:title": "Mako SmartRobotics™ hits 500,000+ procedures",
   "jcr:versionHistory": "59cb8bcc-2a0c-45d3-9e78-d58a723d9f6e",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "c9b585e1-f0ac-409b-9909-7a33b229ad92"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "0228d030-734c-4f17-9e93-444b6e901609",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:52:05 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:52:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -42,10 +42,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/features/mako_smartrobotics_h/carousel---mako-500k-plus-hero---desktop/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/features/mako-smartrobotics-h/carousel-mako-500k-plus-hero-desktop/master",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "28",
           "jcr:created": "Thu Apr 29 2021 20:53:38 GMT+0000",
@@ -61,8 +61,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Apr 29 2021 20:57:05 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\">Mako SmartRobotics™ hits 500,000+ procedures</span></span>",
@@ -80,8 +80,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:55:51 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:55:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -91,8 +91,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Apr 29 2021 20:56:23 GMT+0000",
           "jcr:lastModified": "Thu Apr 29 2021 20:56:23 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -101,8 +101,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Apr 29 2021 20:56:27 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Thu Apr 29 2021 20:56:31 GMT+0000",
@@ -115,8 +115,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 19:23:55 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 19:23:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -131,16 +131,16 @@
     },
     "cols2_533379535": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:56:42 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:56:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:38:04 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:38:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -149,24 +149,24 @@
     },
     "cols2_1328961782": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:58:43 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:58:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_1677231171": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 20:59:11 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 20:59:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols3_1624663776": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 21:01:49 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 21:01:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -175,8 +175,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Apr 29 2021 21:02:16 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">To get the latest #makosmartrobotics updates, follow <a href=\"https://www.linkedin.com/showcase/stryker-joint-replacement/posts/\">@Stryker Joint Replacement</a>!</span></span><br>\n</p>\n",
           "jcr:lastModified": "Thu Apr 29 2021 21:21:12 GMT+0000",
@@ -187,16 +187,16 @@
     },
     "cols2_302162925": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 21:22:15 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 21:22:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_157443826": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 29 2021 21:22:12 GMT+0000",
       "jcr:lastModified": "Thu Apr 29 2021 21:22:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -204,7 +204,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed May 05 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "05-May-2021",
@@ -213,14 +213,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Apr 29 2021 20:12:22 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Kurtz AAOS. Total knee and hip replacement projections 2030. www.prnewswire.com/news-releases/total-kneeand- hip-replacement-surgery projections-show-meteoric-rise-by-2030-55519727.html. Accessed July 4, 2016.</p>\r\n<p>2. Christiaan Keurentjes J, Fiocco M, So-Osman C, et al. Patients with severe radiographic osteoarthritis have better prognosis in physical functioning after hip and knee replacement: a cohort-study. PLOS One. 2013; 8(4): 1-8.</p>\r\n<p>3. PROMS, NHS Digital, 2019.</p>\r\n<p>4. Clement et al. Robotic-arm assisted versus manual total hip arthroplasty: a propensity score matched cohort study. Bone Joint Res. 2021: 10(1): 22-30.</p>\r\n<p>5. Illgen, R, Bukowski, B, Abiola, R, Anderson, P, Chughtai, M, Khlopas, A, Mont, M. Robotic assisted total hip arthroplasty: Outcomes at minimum two year follow up. Surgical Technology International. 2017 July 25; 30:365-372.</p>\r\n<p>6. Kayani B, Konan S, Tahmassebi J, Pietrzak JRT, Haddad FS. Robotic-arm assisted total knee arthroplasty is associated with improved early functional recovery and reduced time to hospital discharge compared with conventional jig-based total knee arthroplasty: a prospective cohort study. The Bone and Joint Journal. 2018;100-B:930-7.</p>\r\n<p>7. Burger JA, Kleeblad LJ, Laas N, Pearle AD. Mid-term survivorship and patient-reported outcomes of robotic-arm assisted partial knee arthroplasty. Bone Joint J. 2020;102-B(1):108-116.</p>\r\n<p>8. Anthony I, Bell SW, Blyth M, Jones B et al. Improved accuracy of component positioning with robotic-assisted unicompartmental knee arthroplasty. J Bone Joint Surg Am. 2016;98-A(8):627-35.</p>\r\n<p>9. Illgen, R, Bukowski, B, Abiola, R, Anderson, P, Chughtai, M, Khlopas, A, Mont, M. Robotic-assisted total hip arthroplasty: Outcomes at minimum two year follow up. Surgical Technology International. 2017 July 25; 30:365-372.</p>\r\n<p>10. Mahoney O, Kinsey T, Mont M, Hozack W, Orozco F, Chen A. Can computer generated 3D bone models improve the accuracy of total knee component placement compared to manual instrumentation: a prospective multi-center evaluation? International Society for Technology in Arthroplasty 32nd Annual Congress. Toronto, Canada. October 2-5, 2019.</p>\r\n<p>11. Suarez-Ahedo, C; Gui, C; Martin, T; Chandrasekaran, S; Domb, B. Robotic arm assisted total hip arthroplasty results in smaller acetabular cup size in relation to the femoral head size: A Matched-Pair Controlled Study. Hip Int. 2017; 27 (2): 147-152.</p>\r\n<p>12. Haddad, F.S, et al. Iatrogenic Bone and Soft Tissue Trauma in Robotic-Arm Assisted Total Knee Arthroplasty Compared With Conventional Jig-Based Total Knee Arthroplasty: A Prospective Cohort Study and Validation of a New Classification System. J Arthroplasty. 2018 Aug;33(8):2496-2501. Epub 2018 Mar 27.</p>\r\n<p>13. Hozack, W, Chen, A, Khlopas, A, Mahoney, O, Mont, M, Murray, T, Orozco, F, Higuera Rueda, C, Stearns, K. Multicenter Analysis of Outcomes after Robotic-Arm Assisted Total Knee Arthroplasty. American Academy of Orthopedic Surgeons Annual Meeting. Las Vegas, NV. March 12-16, 2019.</p>\r\n<p>14. Banks, Scott A, PhD. Haptic Robotics Enable a Systems Approach to Design of a Minimally Invasive Modular Knee Arthroplasty. Am J Orthop. 2009;38(2 suppl):23-27. February 2009.</p>\r\n<p>15. Domb BG, Chen JW, Lall AC, Perets I, Maldonado DR. Minimum 5-year outcomes of robotic-assisted primary total hip arthroplasty with a nested comparison against manual primary total hip arthroplasty: a propensity score-matched study. J Am Acad Orthop Surg. Accepted manuscript. Published online February 25, 2020. doi:10.5435/JAAOS-D-19-00328.</p>\r\n<p>16. Vakharia RM, Law TY, Roche MW. Survivorship and patient satisfaction rates of robotic-assisted unicompartmental knee arthroplasty. Presented at: American Association of Hip and Knee Surgeons (AAHKS) Annual Meeting; November 5-8, 2020; Dallas, TX.</p>\r\n",
     "jcr:lastModified": "Tue May 04 2021 18:30:01 GMT+0000",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "9ad351fb-3c5b-4d11-989f-18c354ce8d7c",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "d1e3f44f-47ba-41d5-94de-95e022cdbc4c"
   ],
@@ -27,7 +27,7 @@
   "jcr:uuid": "47f0408c-0fbb-437b-a859-f933f64efede",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,8 +48,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Tue Mar 01 2022 22:55:59 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -62,7 +62,7 @@
         "fileReference": "/content/dam/stryker/sage/products/primafit/videos/Sage-PrimaFit-training-video.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Sage-PrimaFit-training-video-AVS",
         "urlModifiers": "",
@@ -79,8 +79,8 @@
     },
     "curatedcta_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "851c33f9-4c97-4698-bb53-4470165455bb",
   "cq:template": "/apps/stryker/templates/news-landing",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "jcr:predecessors": [
     "506877ef-951a-4dc1-883a-7a4b2b1f2399"
   ],
@@ -30,11 +30,11 @@
   "jcr:uuid": "937baeca-f146-4767-a1f6-1c610b732287",
   "sling:resourceType": "stryker/components/structure/pages/news-landing",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "cq:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "newsandannouncements": {
     "jcr:primaryType": "nt:unstructured",
     "showDates": "false",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "searchPath": "/content/stryker/us/en/orthopaedic-instruments/news",
     "hideNewsFilters": "false",
     "jcr:lastModified": "Wed Apr 09 2025 20:10:42 GMT+0000",
@@ -47,7 +47,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "imageAlt": "Orthopaedic Instruments newsroom",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Apr 08 2025 13:43:32 GMT+0000",
@@ -58,7 +58,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "hideComponent": "false",
     "gradientDirection": "left-to-right",
     "text": "<p><b><span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\"><span class=\"futura-bold\">Be in the know</span></span></span></b></p>\n<p>Engage with us on LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data, and more.</p>\n<p><a href=\"https://www.instagram.com/stryker.orthopaedicinstruments/\">Instagram</a></p>\n<p><a href=\"https://www.linkedin.com/showcase/18960150/admin/dashboard/\">LinkedIn</a></p>\n",

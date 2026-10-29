@@ -7,7 +7,7 @@
   "jcr:title": "Closing Wedge Osteotomy",
   "jcr:versionHistory": "536d8013-3708-42d4-8caf-0ad3dff00df9",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Closing-Wedge-Osteotomy/Images/Forefoot_ClosingWedge.jpg",
   "jcr:predecessors": [
     "d1e252db-52f4-4fb1-89c0-98a070167e10"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:09:45 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Closing-Wedge-Osteotomy/Images/Forefoot_ClosingWedge.jpg",
@@ -54,7 +54,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Fri Jul 28 2017 10:16:45 GMT-0400",

@@ -7,7 +7,7 @@
   "jcr:title": "My wife saved my life | Bob's sudden cardiac arrest story",
   "jcr:versionHistory": "f9224b36-fafe-4a05-9664-ed01a74cbb2a",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "f1ced7c0-d215-4d44-9b6d-c44b5767ba5d"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "851ea311-eeb7-4350-855f-8eae4e512d4c",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Jan 12 2022 16:13:58 GMT+0000",
       "jcr:lastModified": "Wed Jan 12 2022 16:13:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Dec 09 2021 18:24:25 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -56,7 +56,7 @@
             "fileReference": "/content/dam/stryker/patients/patient-stories/bob-zollner-1-12-22/stryker-bob-zollner-v8.mp4.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/stryker-bob-zollner-v8.mp4-AVS",
             "urlModifiers": "",
@@ -92,7 +92,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy53": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line2": "<span class=\"fontsize-1-5-vw\">Studies show that the rate of survival from sudden cardiac arrest decreases by 10% every minute without intervention.<sup>1</sup> Bob Zollner, a retired firefighter, suffered a sudden cardiac arrest on his wife’s birthday. Watch how she saved his life with the help of their local fire department.</span>",
           "jcr:lastModified": "Wed Jan 12 2022 16:14:40 GMT+0000",
@@ -120,7 +120,7 @@
         },
         "item1089953560363234": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"urw-egyptienne\"></span> ",
           "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">I met the two guys who actually worked on me </span>[during my sudden cardiac arrrest],<span class=\"futura-bold\"> </span>and they’re real nice guys. Thank you.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Bob</span><br>\r\n </span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Sudden cardiac arrest patient</span></span></span></span></p>\r\n",
@@ -153,7 +153,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Thu Jan 13 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "13-Jan-2022",
@@ -162,7 +162,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Cummins RO. 1989. From concept to standard of care? Review of the clinical experience with automated external defibrillators. Annals of Emergency Medicine. 18: 1269–75.</p>\r\n",
     "jcr:lastModified": "Wed Jan 12 2022 16:15:45 GMT+0000",

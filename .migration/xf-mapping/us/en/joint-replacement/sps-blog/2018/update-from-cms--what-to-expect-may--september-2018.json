@@ -7,7 +7,7 @@
   "jcr:title": "Update from CMS: What to expect May – September 2018",
   "jcr:versionHistory": "e92c9a29-da31-42d8-be76-8f5efcaec302",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+  "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
   "jcr:predecessors": [
     "da5b44b1-bde9-4f56-ac3a-c7e1d963bd3d"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "d4c6580b-addb-4d20-a1c8-d2e660a323ca",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "publishDate": "Tue May 08 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-May-2018",
@@ -41,7 +41,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>On April 24th, CMS provided an updated timeline of expected events to organizations around the country who submitted applications to participate in BPCI Advanced. While there was only one change to the timeline, CMS did provide more detail on items that we can expect to happen in the coming months.&nbsp;Here are a few highlights from that communication:</p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">May</span></span></p>\n<ul>\n<li>CMS continues to target May for release of claims data and target prices.</li>\n<li>CMS will complete their first level of screening for convener applicants and episode initiators that have applied in the program.&nbsp; Those that do not pass this first level of screening will not receive data or target prices.</li>\n<li>CMS will hold a live webinar to review the Model’s target pricing methodology and will publish additional resources to help explain the target price calculations.</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">June</span></span></p>\n<ul>\n<li>Convener applicants will have access to the BPCI Advanced Participation Agreement with CMS.&nbsp; This document should provide further guidance on program requirements as there has been little information provided to date.&nbsp;</li>\n<li>Expanded details about the Quality Measures in the Model and the calculations of the Composite Quality Score will be made available.</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">July</span></span></p>\n<ul>\n<li>CMS will provide Performance Solutions with templates of deliverables that must be completed on behalf of episode initiators that choose to go forward in the program with Stryker as their convener.</li>\n<li>Our team will complete these documents on your behalf and we will let you know if we need any further information from you to do so.</li>\n<li>Physician groups and hospitals that elect to participate in BPCI Advanced must select a convener and execute a participation agreement with the convener to move forward in the program.</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">August</span></span></p>\n<ul>\n<li>On August 1st, Performance Solutions must submit the list of episode initiators that have executed agreements with Stryker as their convener and declare which bundles each episode initiator is going forward with.</li>\n<li>CMS will receive results from the second level of screening performed for applicants in the program (law enforcement screening).</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">September</span></span></p>\n<ul>\n<li>On September 3rd, deliverables that Performance Solutions has completed on your behalf are due to CMS.</li>\n<li>CMS will provide formal notification regarding who passed screening and is selected to participate starting October 1st.</li>\n</ul>\n<p>Please be assured that our team will be on the ground making sure that you are prepared for the October 1st program start shortly after you sign your BPCI Advanced participation agreement with our Performance Solutions convener.&nbsp;&nbsp;</p>\n<p><span class=\"futura-bold\">Every episode is an opportunity to do what is best for your patients. <span style=\"color: #ffb500;\">We have your back.&nbsp;</span></span></p>\n<p><a href=\"http://www.strykerperformancesolutions.com\"><span class=\"futura-bold\">GO BACK</span></a></p>\n",
     "jcr:lastModified": "Wed May 09 2018 14:21:09 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -49,7 +49,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>This material and/or presentation is provided for guidance and/or illustrative purposes only and should not be construed as a guarantee of future results or a substitution for legal advice and/or medical advice from a healthcare provider. Stryker Performance Solutions does not practice medicine and assumes no responsibility for the administration of patient care. &nbsp;Further, Stryker Performance Solutions does not provide tax, compliance or accounting advice.</p>\r\n<p>©2018 Stryker’s Performance Solutions Reproduction or distribution prohibited without the express written consent of Stryker’s Performance Solutions.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n",
     "jcr:lastModified": "Mon May 07 2018 14:29:34 GMT-0400",

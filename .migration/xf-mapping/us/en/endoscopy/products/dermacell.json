@@ -10,7 +10,7 @@
   "jcr:versionHistory": "c70e5933-84fd-47d0-892f-a0e739a35870",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/endoscopy/images/HeroDermACELL.jpg",
   "jcr:predecessors": [
     "f809800d-45eb-4489-b306-e4c1e36dc764"
@@ -37,13 +37,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:lastModified": "Thu Aug 02 2018 14:24:27 GMT-0400",
       "compImageRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsDermACELL - Main.jpg",
       "sling:resourceType": "stryker/components/content/pagehero"
@@ -54,16 +54,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 01 2018 19:24:33 GMT-0400",
       "jcr:lastModified": "Wed Aug 01 2018 19:24:33 GMT-0400",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 01 2018 19:25:54 GMT-0400",
       "jcr:lastModified": "Wed Aug 01 2018 19:25:54 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -72,8 +72,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Wed Aug 01 2018 19:25:59 GMT-0400",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">DermACELL is</span><br>\r\n <span class=\"urw-egyptienne\">sterile and&nbsp;≥97% donor DNA free</span></span><br>\r\n",
@@ -92,8 +92,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Wed Aug 01 2018 19:31:17 GMT-0400",
           "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsDermACELL.- Infographic 1.jpg",
           "jcr:lastModified": "Thu Aug 02 2018 14:24:40 GMT-0400",
@@ -103,16 +103,16 @@
     },
     "sectionseparator_1561364159": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 01 2018 19:37:48 GMT-0400",
       "jcr:lastModified": "Wed Aug 01 2018 19:37:48 GMT-0400",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "largeheadline_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 01 2018 18:09:49 GMT-0400",
       "gradientDirection": "left-to-right",
       "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><b>DermACELL Acellular Dermal Matrix</b></span><span class=\"urw-egyptienne\"><br>\r\n </span></span>",
@@ -126,8 +126,8 @@
     },
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Thu Aug 02 2018 14:25:28 GMT-0400",
       "jcr:lastModified": "Thu Aug 02 2018 14:25:28 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -136,8 +136,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Thu Aug 02 2018 14:25:42 GMT-0400",
           "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsDermACELL - Shaping1.jpg",
           "jcr:lastModified": "Thu Aug 02 2018 14:45:53 GMT-0400",
@@ -149,8 +149,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Thu Aug 02 2018 14:46:12 GMT-0400",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Sterile</span></span></p>\n<p>Sterility assurance level (SAL) 10<sup>-6</sup>.<sup>2</sup></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Ready to use (RTU)</span></span></p>\n<p>No rinsing required.<sup>2</sup></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">≥97% Donor DNA-Free</span></span></p>\n<p>A proprietary and patented technology that removes at least 97% of donor DNA without compromising the desired biomechanical structure or biochemical properties for its intended use.<sup>2</sup></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Operative benefits</span></span></p>\n<p>Dermacell provides a medical device-grade sterility assurance level of 10<sup>-6</sup> and requires no rinsing prior to application.<sup>2</sup> The graft features a wide suture border to further support intraoperative placement.</p>\n",
           "jcr:lastModified": "Mon Dec 09 2019 17:33:10 GMT+0000",
@@ -161,16 +161,16 @@
     },
     "sectionseparator_207745941": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 30 2026 18:16:36 GMT+0000",
       "jcr:lastModified": "Tue Jun 30 2026 18:16:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -179,16 +179,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
@@ -198,8 +198,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -208,8 +208,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
               "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
@@ -223,10 +223,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "4047",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -242,7 +242,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>&nbsp;&nbsp;</p>\r\n",
     "shortDescTop": "<p>LifeNet Health has over 30 years of experience in tissue processing and holds the longest-running accreditation with the American Association of Tissue Banks (AATB).<sup>1</sup><br>\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Thu Aug 02 2018 14:54:55 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -254,13 +254,13 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Wed Aug 01 2018 19:24:23 GMT-0400",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<p>1. For more information, go page: https://www.lifenethealth.org/about/lifenet-health-advantage&quot;&nbsp;<br>\r\n2. Data on file. CTO #100038 63.00050.01 Rev.10 Dermacell IFU&nbsp;&nbsp;<br>\r\n</p>\r\n<p>Dermacell, Matracell and Preservon are registered trademarks of LifeNet Health, Inc.&nbsp;<br>\r\n</p>\r\n",
     "jcr:lastModified": "Tue Jul 16 2019 22:30:28 GMT+0000",
@@ -269,7 +269,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "linkNewWindow": "true",
     "jcr:lastModified": "Tue Jun 30 2026 18:16:28 GMT+0000",
@@ -282,7 +282,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Jun 30 2026 18:16:25 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

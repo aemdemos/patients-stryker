@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5e75f47c-c2a0-489a-8ad8-a8a9b6bad8c6",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "SunflowerWind_Sunset_Orsted",
   "jcr:predecessors": [
     "219d5e67-f1b9-45c5-b7f5-6a51e2965a9d"
@@ -31,14 +31,14 @@
   "jcr:uuid": "fa19494a-182e-479b-86be-fa18f823dcb0",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Dec 14 2022 16:30:51 GMT+0000",
       "jcr:lastModified": "Wed Dec 14 2022 16:30:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -47,8 +47,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Dec 14 2022 16:31:28 GMT+0000",
           "alt": "SunflowerWind_Sunset_Orsted",
@@ -62,8 +62,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Dec 14 2022 16:30:29 GMT+0000",
       "jcr:lastModified": "Wed Dec 14 2022 16:30:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -72,8 +72,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Dec 14 2022 16:27:08 GMT+0000",
           "text": "<p>In a critical step to become fully carbon neutral by 2030, Stryker has successfully met our 2024 goal of 20% carbon reduction for all our facilities ahead of schedule. As a result of global collaboration across teams, we have completed over 100 energy projects covering 30 Stryker sites in total, resulting in estimated annual carbon savings of more than 10,000 metric tons since 2019.</p>\n<p>Stryker also recently announced a new goal for our global sites to be powered by 100% renewable electricity by 2027. As a key milestone to meet this target, the company has partnered with global clean energy leader Ørsted and with Schneider Electric, a global leader in sustainability and renewable energy procurement, to enter our first ever long-term power purchase agreement for 37 megawatts (MW) – enough to address 75% of our electricity in North America with wind power for the next 12 years.</p>\n<p>The Sunflower Wind Farm operated by Ørsted is a 200-MW wind project in Marion County, Kansas, and will generate enough wind power to power the equivalent of more than 77,000 households.<sup>1</sup></p>\n<p>“As a global healthcare leader, we understand the growing link between human health and environmental health and our role to deliver sustainable solutions,” said Viju Menon, group president of Stryker’s Global Quality and Operations. “Securing renewable energy at large scale helps us play a role in decarbonizing the healthcare sector.”</p>\n<p>“Ørsted is pleased to deliver renewable energy from Sunflower Wind. We look forward to working with Stryker in supporting their sustainability journey,” said Ben Pratt, head of growth and revenue at Ørsted Americas.</p>\n<p><a href=\"https://www.stryker.com/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/cr-hub/resources/102022%20Energy%20and%20carbon%20supplement%20-%20SYK%20CORP%202022-10-159.pdf\">Read more about our commitments and progress in our environmental performance data report.</a><br>\n</p>\n",
           "jcr:lastModified": "Wed Dec 14 2022 19:15:53 GMT+0000",
@@ -85,7 +85,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Thu Dec 15 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "15-Dec-2022",
@@ -94,14 +94,14 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "jcr:lastModified": "Wed Dec 14 2022 16:30:15 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>¹Based on annual predicted production divided by average household consumption. (<a href=\"https://www.eia.gov/tools/faqs/faq.php?id=97&amp;t=3#:~:text=In%202021%2C%20the%20average%20annual,about%20886%20kWh%20per%20month\">https://www.eia.gov/tools/faqs/faq.php?id=97&amp;t=3#:~:text=In%202021%2C%20the%20average%20annual,about%20886%20kWh%20per%20month</a>)</p>\r\n",
     "jcr:lastModified": "Wed Dec 14 2022 16:35:14 GMT+0000",
@@ -110,7 +110,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "preset": "max_width_1440",
     "alt": "SunflowerWind_Sunset_Orsted",
     "borderColor": "rgba(76,125,122,1)",

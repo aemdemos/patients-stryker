@@ -10,7 +10,7 @@
   "jcr:versionHistory": "da63b401-e5cc-4779-b525-69d7860c8388",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/cobra/images/Thumb-Cobra.jpg",
   "jcr:predecessors": [
     "70a4a7e7-fc73-4d79-9cd8-5041a9c5af76"
@@ -45,14 +45,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Cobra",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:lastModified": "Fri May 10 2019 00:21:09 GMT+0000",
       "compImageRef": "/content/dam/stryker/sports-medicine/products/cobra/images/Hero.jpg",
       "sling:resourceType": "stryker/components/content/pagehero"
@@ -63,16 +63,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue May 07 2019 17:53:47 GMT+0000",
       "jcr:lastModified": "Tue May 07 2019 17:53:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue May 07 2019 17:50:38 GMT+0000",
       "jcr:lastModified": "Tue May 07 2019 17:50:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -81,8 +81,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue May 07 2019 17:50:44 GMT+0000",
           "type": "typePath",
           "jcr:lastModified": "Tue May 07 2019 17:51:59 GMT+0000",
@@ -94,7 +94,7 @@
             "fileReference": "/content/dam/stryker/sports-medicine/products/cobra/videos/strykercobrav2.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/strykercobrav2-AVS",
@@ -116,8 +116,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue May 07 2019 17:52:17 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">Reusable</span> <span class=\"futura-bold\"><span style=\"color: #ffb500;\">rigid stainless steel</span> </span><span class=\"urw-egyptienne\">needle</span></span><br>\r\n",
@@ -133,16 +133,16 @@
     },
     "sectionseparator_1575947481": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue May 07 2019 17:53:53 GMT+0000",
       "jcr:lastModified": "Tue May 07 2019 17:53:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Fri May 10 2019 00:03:53 GMT+0000",
       "jcr:lastModified": "Fri May 10 2019 00:03:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -151,8 +151,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:38 GMT+0000",
           "srcFileRef": "/content/dam/stryker/sports-medicine/products/cobra/images/Cobra.jpg",
           "jcr:lastModified": "Fri May 10 2019 00:31:15 GMT+0000",
@@ -160,8 +160,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:47 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Cobra is designed to eliminate a disposable needle and prevent needle migration.</span><br>\n</p>\n",
           "jcr:lastModified": "Tue Jul 16 2019 20:32:55 GMT+0000",
@@ -174,8 +174,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:41 GMT+0000",
           "srcFileRef": "/content/dam/stryker/sports-medicine/products/cobra/images/Tips.jpg",
           "jcr:lastModified": "Fri May 10 2019 00:31:21 GMT+0000",
@@ -183,8 +183,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:50 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Cobra is available in two models: Self-Capture or Hook &amp; Ratchet.</span><br>\n</p>\n",
           "jcr:lastModified": "Tue Jul 16 2019 17:58:47 GMT+0000",
@@ -197,8 +197,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:44 GMT+0000",
           "srcFileRef": "/content/dam/stryker/sports-medicine/products/cobra/images/Tips-2.jpg",
           "jcr:lastModified": "Wed May 15 2019 20:07:43 GMT+0000",
@@ -206,8 +206,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Fri May 10 2019 00:07:53 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">The stainless steel needle is integrated into the device, making Cobra a reusable device.</span><br>\n</p>\n",
           "jcr:lastModified": "Thu May 30 2019 19:35:52 GMT+0000",
@@ -218,12 +218,12 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
       "resources": [
         "/content/dam/stryker/sports-medicine/products/cobra/resources/RCR _Procedure_Guide_HR.pdf",
         "/content/dam/stryker/sports-medicine/products/cobra/resources/Cobra_DesignFeatures_1000902685RevB.pdf"
       ],
-      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:lastModifiedBy": "user-6f4c8b1e5d@example.invalid",
       "jcr:created": "Thu May 30 2019 19:36:29 GMT+0000",
       "title": "Resources and downloads",
       "jcr:lastModified": "Wed Feb 19 2020 18:46:43 GMT+0000",
@@ -231,8 +231,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "deepLinkingId": "related-prods",
       "jcr:created": "Tue Jun 03 2025 17:10:57 GMT+0000",
       "title": "Related products",
@@ -241,8 +241,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Tue Jun 03 2025 17:11:31 GMT+0000",
       "jcr:lastModified": "Tue Jun 03 2025 17:11:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -251,8 +251,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
-          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
+          "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 03 2025 17:11:35 GMT+0000",
@@ -270,8 +270,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
-          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
+          "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 03 2025 17:11:37 GMT+0000",
@@ -287,16 +287,16 @@
     },
     "sectionseparator_1363394380": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Aug 19 2026 14:09:39 GMT+0000",
       "jcr:lastModified": "Wed Aug 19 2026 14:09:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -305,8 +305,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
@@ -318,8 +318,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -328,10 +328,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3149",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -344,8 +344,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
           "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
@@ -359,7 +359,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>Designed to prevent needle skiving, misfires and needle breakage.&nbsp;</p>\r\n",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Wed May 15 2019 19:54:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -374,20 +374,20 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Tue May 07 2019 17:47:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Tue May 07 2019 17:49:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Aug 19 2026 14:09:31 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

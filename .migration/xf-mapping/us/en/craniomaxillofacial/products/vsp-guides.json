@@ -9,7 +9,7 @@
   "jcr:versionHistory": "83222952-4f95-48dc-a43c-54c1ac445fd3",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "thumbnailAltText": "VSP Guides thumbnail",
   "jcr:predecessors": [
     "dac6771d-c9a5-4473-87b7-87f80306393a"
@@ -43,7 +43,7 @@
   "jcr:uuid": "03ed731e-6d6c-439f-b58f-905ffdf75ed1",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "cq:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "navTitle": "Virtual Surgical Planning guides",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -54,9 +54,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "leftPadding": "3",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -68,8 +68,8 @@
     },
     "cols2_2_3_1_3_211193": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Feb 25 2025 21:36:14 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2025 21:36:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
           "alt": "VSP guides product",
@@ -93,8 +93,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -103,9 +103,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1971668492": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "leftPadding": "3",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -121,8 +121,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "ctaLinkType": "deep",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
@@ -134,8 +134,8 @@
         },
         "tagcrumb": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -144,16 +144,16 @@
     },
     "jumpbarnav": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 21:10:27 GMT+0000",
       "jcr:lastModified": "Fri Jun 06 2025 21:10:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/jumpbarnav"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "titanium",
       "jcr:created": "Fri Jun 06 2025 19:57:39 GMT+0000",
@@ -163,8 +163,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Titanium VSP<sup>®</sup>&nbsp;guides</span></span></p>\n",
       "jcr:lastModified": "Fri Jun 06 2025 19:58:57 GMT+0000",
@@ -173,8 +173,8 @@
     },
     "cols2_copy_496498813": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -184,9 +184,9 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
           "topPadding": "2",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -201,8 +201,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri Jun 06 2025 21:43:30 GMT+0000",
           "alt": "Titanium Orthog Mandibular Max image",
@@ -216,8 +216,8 @@
     },
     "section_title_1198156391": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "nylon",
       "jcr:created": "Fri Jun 06 2025 20:05:37 GMT+0000",
@@ -227,8 +227,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Nylon VSP<sup>®</sup>&nbsp;guides</span></span></p>\n",
       "jcr:lastModified": "Fri Jun 06 2025 19:59:19 GMT+0000",
@@ -237,8 +237,8 @@
     },
     "cols2_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -248,9 +248,9 @@
         "text_1201588021": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
           "topPadding": "2",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -265,8 +265,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
           "alt": "Nylon VSP guides",
@@ -280,8 +280,8 @@
     },
     "section_title_506416259": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "hybrid",
       "jcr:created": "Fri Jun 06 2025 20:06:14 GMT+0000",
@@ -291,8 +291,8 @@
     },
     "text_copy_1197864069": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Hybrid VSP<sup>®</sup>&nbsp;guides</span></span><br>\n</p>\n",
       "jcr:lastModified": "Mon Jun 09 2025 21:17:15 GMT+0000",
@@ -301,8 +301,8 @@
     },
     "cols2_copy_387976406": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -311,8 +311,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
           "text": "<p>This cutting and drilling guide for maxillofacial surgeons is a combination of a nylon occlusal guide and titanium cutting/drilling guide, the latest enhancement to 3D Systems’ VSP surgical planning solutions portfolio.</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Features and benefits:</span></span></p>\n<p><b>Easy guide placement</b><br>\nOcclusal-based registration enabled by an easy-to-use connection site with indicators to confirm the proper connection of guides.</p>\n<p><b>Reduced bulkiness</b><br>\nLower profile guides are easier to place in areas with limited exposure.</p>\n<p><b>Multi-material benefits</b><br>\nOcclusal registration from a nylon guide for accurate placement plus the increased strength and rigidity<sup>2</sup> of a titanium cutting/drilling guide.<br>\n</p>\n",
           "jcr:lastModified": "Tue Jun 10 2025 14:04:16 GMT+0000",
@@ -325,8 +325,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
           "alt": "hybrid-vsp-guides",
@@ -340,8 +340,8 @@
     },
     "section_title_2142175326": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "traditional",
       "jcr:created": "Fri Jun 06 2025 20:06:40 GMT+0000",
@@ -351,8 +351,8 @@
     },
     "text_copy_1197864069_1844441459": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Traditional VSP<sup>®</sup>&nbsp;guides</span></span><br>\n</p>\n",
       "jcr:lastModified": "Mon Jun 09 2025 21:04:35 GMT+0000",
@@ -361,8 +361,8 @@
     },
     "cols2_copy_1358904932": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -372,9 +372,9 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
           "topPadding": "2",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -389,8 +389,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
           "alt": "1596653442_Tradition---SLA-Fibula-Guide-cropped",
@@ -404,8 +404,8 @@
     },
     "section_title_395066825": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Fri Jun 06 2025 20:06:57 GMT+0000",
@@ -415,8 +415,8 @@
     },
     "text_995385999_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
       "text": "<h2><b><span class=\"futura-bold\">Resources</span></b></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 22:27:42 GMT+0000",
@@ -433,14 +433,14 @@
         "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/resources/us/3ds-br-1_vsp-surgical-positioning-guide.pdf",
         "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/resources/1597149035_CMF-FL-131_Patient-specific-product-workflows.pdf"
       ],
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:lastModified": "Tue Jun 10 2025 14:24:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "section_title_1610187111": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "products",
       "jcr:created": "Fri Jun 06 2025 20:07:25 GMT+0000",
@@ -450,8 +450,8 @@
     },
     "text_2090444076_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 22:28:06 GMT+0000",
@@ -460,7 +460,7 @@
     },
     "featuredcontent_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:lastModified": "Tue Sep 02 2025 21:52:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
       "featuresCta": {
@@ -485,8 +485,8 @@
     },
     "section_title_1416956731": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "contact",
       "jcr:created": "Fri Jun 06 2025 20:07:49 GMT+0000",
@@ -496,8 +496,8 @@
     },
     "text_1663437304_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 22:27:54 GMT+0000",
@@ -506,10 +506,10 @@
     },
     "marketoform_copy_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "3226",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -519,8 +519,8 @@
     "text_copy_1019504837": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "2",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Feb 25 2025 18:01:13 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -532,7 +532,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jun 06 2025 19:52:40 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -544,7 +544,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Fri Jun 06 2025 19:52:53 GMT+0000",
@@ -553,14 +553,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jun 06 2025 19:53:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jun 06 2025 19:53:07 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -569,7 +569,7 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jun 06 2025 19:53:15 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -577,7 +577,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jun 06 2025 19:53:28 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
@@ -588,7 +588,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>VSP is a registered trademark of 3D Systems, Inc.</p>\r\n",
     "jcr:lastModified": "Mon Jul 07 2025 19:56:49 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a8c079fc-4003-4b89-b135-a59fcb068ea8",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "0970bf5e-5119-43d7-9570-1b583a249233"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "3cfd8af5-c400-4a23-9134-ba60a9d7a9c4",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:37:34 GMT+0000",
       "text": "Tornier Approach Sterile Prep and Draping Dr. Brent Morris discusses sterile prep and draping for Tornier Approach. AP-016239A",
       "jcr:lastModified": "Thu Jul 28 2022 18:37:54 GMT+0000",

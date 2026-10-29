@@ -9,7 +9,7 @@
   "jcr:versionHistory": "467d4e20-a576-4255-9297-a2172535e9a0",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "q-guidance-thumbnail",
   "jcr:predecessors": [
     "2eb69b27-a719-4839-97f5-c77e288c70eb"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Oct 11 2023 17:38:52 GMT+0000",
       "jcr:lastModified": "Wed Oct 11 2023 17:38:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -48,8 +48,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Oct 11 2023 17:38:56 GMT+0000",
           "text": "<h2>Stryker to showcase Q Guidance System with spine and cranial applications at NASS Annual Meeting</h2>\n<p><b>LEESBURG, Va., USA</b> – Oct. 12, 2023 – Stryker (NYSE:SYK), one of the world’s leading medical technology companies, announced today that its Q Guidance System with Spine Guidance Software has been used to deliver enhanced surgical planning and navigation in over 2,400 spinal cases. The Q Guidance System for both spine and cranial applications will be featured at the <a href=\"https://www.spine.org/AM\">North American Spine Society (NASS)</a> annual meeting in Los Angeles, California, October 18 - 23, booth no. 1701.</p>\n<p>“The surgeon feedback on our Q Guidance System with Spine Guidance Software is overwhelmingly positive, and the number of completed surgical cases has exceeded our expectations,” said Keith Evans, vice president and general manager of Stryker’s Enabling Technologies business. &quot;We’ve seen firsthand how it has helped surgeons optimize their workflow and time spent in the OR. It’s also exciting that we could expand our reach by making this technology available for use with pediatric patients aged 13 and older. The Q Guidance System continues our legacy of ingenuity and is currently the center of our enabling technologies ecosystem that we continue to build upon year over year.”</p>\n<p>The <a href=\"https://www.strykeronegiantleap.com/\">Q Guidance System with Spine Guidance Software</a>, which launched in 2022, delivers unmatched speed and the flexibility of multiple optical tracking methods, including full-spectrum active/passive hybrid optical tracking, semi-automatic and automatic processing features, gesture recognition, and broad compatibility with various types of image sets.<sup>1</sup></p>\n<p>&quot;As a diehard freehand pedicle screw inserter, my first two cases with the Q Guidance System with Spine Guidance Software changed my views on navigation,” said Dr. Peter Newton*, chief of the Division of Orthopedics &amp; Scoliosis and surgeon-in-chief at Rady Children’s Hospital in San Diego, California. “In surgeries like these, I believe perfect screw positioning and maximal screw length are critical, and both were achieved for this patient. The ability to move the tracker and re-register quickly without another CT scan is a spectacular advance in navigation.&quot;</p>\n",
           "jcr:lastModified": "Thu Oct 12 2023 13:53:52 GMT+0000",
@@ -60,16 +60,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Oct 11 2023 18:49:56 GMT+0000",
       "jcr:lastModified": "Wed Oct 11 2023 18:49:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2_2_3_1_3_247471846": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Oct 11 2023 18:50:12 GMT+0000",
       "jcr:lastModified": "Wed Oct 11 2023 18:50:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Oct 11 2023 18:50:15 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">About Stryker</span></span><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually.</p>\n<p>More information is available at <a href=\"http://www.strykeronegiantleap.com\">www.strykeronegiantleap.com</a>.</p>\n",
           "jcr:lastModified": "Wed Oct 11 2023 18:51:21 GMT+0000",
@@ -90,8 +90,8 @@
     },
     "cols2_2_3_1_3_247471": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Oct 11 2023 18:50:12 GMT+0000",
       "jcr:lastModified": "Wed Oct 11 2023 18:50:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -100,8 +100,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Oct 11 2023 18:50:15 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Media contact</span></span><br>\nAndrea Sampson, Sampson Public Relations Group<br>\n562.304.0301<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n",
           "jcr:lastModified": "Wed Oct 11 2023 18:52:59 GMT+0000",
@@ -113,7 +113,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Thu Oct 12 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Oct-2023",
@@ -122,7 +122,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Stryker data on file</li>\r\n</ol>\r\n<div>* Dr. Peter Newton is a paid consultant of Stryker. His statements represent his own opinions based on personal experience and are not necessarily those of Stryker. Individual results may vary.</div>\r\n",
     "jcr:lastModified": "Wed Oct 11 2023 18:53:42 GMT+0000",
@@ -135,7 +135,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "q-guidance-thumbnail",
     "srcFileRef": "/content/dam/stryker/about/news/2023/over-2400-surgical-cases-completed-using-strykers-q-guidance-system-with-spine-guidance-software-in-first-year/images/q-guidance-thumbnail.png",

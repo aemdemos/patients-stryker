@@ -7,7 +7,7 @@
   "jcr:title": "Living life under 130 beats per minute",
   "jcr:versionHistory": "2a6499a8-5e4f-4081-a2e1-aa1e446769fd",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "503a9289-746d-4ee1-830b-05f76f9b40cd"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "15da7211-60c5-4692-a8bd-88a9569c6b6e",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 19:01:41 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 19:01:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -41,8 +41,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "danielle.smith@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-de9af95ca7@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Sep 03 2020 17:52:55 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -71,7 +71,7 @@
             "fileReference": "/content/dam/stryker/patients/patient-stories/bennett's-story/Survivor-Story_Bennett-Hart-1080-sm.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/Survivor-Story_Bennett-Hart-1080-sm-AVS",
             "urlModifiers": "",
@@ -88,8 +88,8 @@
         },
         "curatedcta_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
@@ -120,7 +120,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy53": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line2": "<span class=\"fontsize-1-5-vw\">Studies show that the rate of survival from sudden cardiac arrest decreases by 10% every minute without intervention.<sup>1</sup> Thankfully, Bennett’s coaches and emergency responders acted quickly to restart his heart when he collapsed at baseball practice. Watch how, miraculously, first responders restarted Bennett’s heart: three times.</span>",
           "jcr:lastModified": "Wed Sep 15 2021 19:02:23 GMT+0000",
@@ -148,7 +148,7 @@
         },
         "item1089953560363234": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"urw-egyptienne\"></span> ",
           "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">I’m very thankful for all of the people that were there that day when I went down.</span><span class=\"futura-bold\"> They saved me. I’m here because of them.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Bennett</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Sudden cardiac arrest patient</span></span></span></span></p>\r\n",
@@ -179,8 +179,8 @@
     },
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Aug 25 2021 17:15:00 GMT+0000",
       "text": "<p><span class=\"fontsize-8em\">References</span></p>\n<p><span class=\"fontsize-8em\">1. Cummins RO. 1989. From concept to standard of care? Review of the clinical experience with automated external defibrillators. Annals of Emergency Medicine. 18: 1269–75.&nbsp;</span></p>\n",
       "jcr:lastModified": "Wed Sep 15 2021 18:57:49 GMT+0000",
@@ -190,7 +190,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Fri Oct 01 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Oct-2021",

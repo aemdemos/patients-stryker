@@ -9,7 +9,7 @@
   "jcr:versionHistory": "56577e6b-f3ef-4e67-86b3-584048ce5eb6",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "IVS portfolio - running man",
   "jcr:predecessors": [
     "d6c78b63-4635-4502-a0c2-7ce09a2975de"
@@ -36,7 +36,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -47,7 +47,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Thu Jun 05 2025 20:53:16 GMT+0000",
@@ -55,7 +55,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Wed Sep 17 2025 14:23:16 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
@@ -64,7 +64,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "jcr:lastModified": "Wed Sep 17 2025 14:27:10 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

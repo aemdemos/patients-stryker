@@ -11,7 +11,7 @@
   "jcr:versionHistory": "d1390fc6-252f-4df6-8140-4152eb5e91ba",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "annie.werner@stryker.com",
+  "jcr:lastModifiedBy": "user-6f4c8b1e5d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 4.jpg",
   "jcr:predecessors": [
     "f0d893cc-bccf-4f8d-bd36-c472a2384a42"
@@ -37,7 +37,7 @@
   "jcr:uuid": "eed8650b-f66c-4b44-8253-cb962196f5a4",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,11 +45,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "bannercampaign": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Mon Feb 07 2022 21:47:53 GMT+0000",
       "alt": "video library",
       "srcFileRef": "/content/dam/stryker/sports-medicine/resources/SM_video-library-banner-2.png",
@@ -59,9 +59,9 @@
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
       "CTAOpenInNewTab": "true",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "ctaLinkType": "ext",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Thu Mar 03 2022 19:32:53 GMT+0000",
@@ -74,9 +74,9 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
       "description": "View more on our VuMedi page",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Fri May 28 2021 19:37:36 GMT+0000",
       "title": "Video library",
       "jcr:lastModified": "Fri Jul 16 2021 19:46:16 GMT+0000",
@@ -89,14 +89,14 @@
       "cq:LiveRelationship"
     ],
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Wed Jun 08 2022 14:38:27 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -136,13 +136,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Wed Feb 16 2022 17:49:52 GMT+0000",
     "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Small-Joints-2022.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

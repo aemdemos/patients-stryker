@@ -9,7 +9,7 @@
   "jcr:versionHistory": "79987be2-712e-4a05-bdb3-8aa0f61f68d8",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "EMT stands outside emergency vehicle holidng a LIFEPAK CR2 AED ",
   "jcr:predecessors": [
     "2de0b621-cffc-4ffd-aa85-39844a2768a3"
@@ -31,15 +31,15 @@
   "jcr:uuid": "b2fd6c73-eb6e-4a71-b6c7-11a78dbad7f8",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "12-year-old girl experiences cardiac arrest, Stryker employee responds",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -48,10 +48,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest--stryker-employee-re/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/master",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "15",
           "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
@@ -66,8 +66,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">12-year-old girl experiences<br>\r\n cardiac arrest, Stryker<br>\r\n employee responds</span></span></h1>\r\n",
@@ -85,8 +85,8 @@
     },
     "cols3_1341500114_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -100,8 +100,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
       "text": "1-minute read Florian Schanderl is head of a first responder unit in Munich, Germany, and one of Stryker’s senior sales representatives. Volunteers like him are part of the oldest first responder system in the region - Unterschleißheim Fire Department. They are on duty 24/7 and often arrive on scene up to six minutes before emergency services. On April 30, 2020 Florian took an emergency call regarding a 12-year-old girl suffering from a suspected seizure. He arrived on the scene three minutes later and saw the girl’s mother performing chest compressions and ventilations to her in the middle of their living room while the child was gasping. “I was really surprised when I saw the mother performing CPR on the girl—that’s a really rare event,” he said. “It was a great reaction from the mother that she realized that her daughter had a critical problem and started CPR.\" After quickly checking the girl’s vitals, he instructed the mother to continue chest compressions while he prepared the LIFEPAK CR2 AED which was available in his car. The AED analyzed the girl’s heart rhythm and advised a shock. While the shock was delivered, the second first responder arrived and continued CPR. They fitted the girl with an emergency ventilator and delivered two additional shocks before the ambulance and physician arrived on scene. Shortly after the third shock, she regained her pulse and was breathing normally. After that, the girl was transported to the hospital. A few hours later, she was neurologically fully recovered. She received treatment and is now at home. Together, we save lives. Help keep your workplace safe with Stryker's full line of automated external defibrillators. With the right solution for all public places, we can help you improve sudden cardiac arrest (SCA) survival rates in your community. Contact an AED expert today to learn more about our full line of defibrillators and program management options.",
       "jcr:lastModified": "Tue May 31 2022 18:38:29 GMT+0000",
@@ -111,8 +111,8 @@
     },
     "cols3_1341500114_cop_992652531": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -127,7 +127,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Sat Jan 15 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "15-Jan-2022",
@@ -140,14 +140,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue May 31 2022 18:34:05 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Tue May 31 2022 18:34:50 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",

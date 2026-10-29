@@ -8,7 +8,7 @@
   "jcr:title": "AXSᵀᴹ Neuro Driver",
   "jcr:versionHistory": "257360f0-ce06-4fb1-9c75-db67ecdad8db",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
   "jcr:predecessors": [
     "f1a6a35e-e1d4-4a4c-ae44-d0806b77de58"
   ],
@@ -32,13 +32,13 @@
   "jcr:uuid": "43701d28-14bd-4a34-b0e9-bd951a310ffe",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "cq:lastModifiedBy": "user-2fc21bab61@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "imageAlt": "AXS Neuro Driver",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Mar 24 2021 15:10:31 GMT+0000",
@@ -61,7 +61,7 @@
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
     "externalLink": "https://cmf.stryker.com/products/axs-neuro-driver#",
-    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
     "linkNewWindow": "true",
     "jcr:lastModified": "Mon Apr 05 2021 14:05:49 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -71,7 +71,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
     "jcr:lastModified": "Wed Mar 24 2021 15:11:59 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
@@ -79,7 +79,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p data-children-count=\"0\"><b>Close and restore</b> with confidence.</p>\r\n",
     "shortDescTop": "<p data-children-count=\"0\">The AXS™ Neuro Driver is programmed with a smart algorithm to sense when a screw has been inserted and stops at the optimal time. You retain full control if you need to stop sooner, simply release the button.<br>\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
     "jcr:lastModified": "Mon Apr 05 2021 14:05:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -91,7 +91,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
     "gradientDirection": "left-to-right",
     "text": "<p>NF-SM-4_ Rev-None_29283</p>\n",
     "jcr:lastModified": "Mon Apr 05 2021 14:04:54 GMT+0000",

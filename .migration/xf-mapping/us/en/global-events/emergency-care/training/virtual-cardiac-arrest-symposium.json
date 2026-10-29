@@ -21,15 +21,15 @@
   ],
   "jcr:uuid": "a102df55-ed11-4d9f-b7d0-b74d3b6e93bc",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "resources": "/content/dam/stryker/global-events/emergency-care/virtual-cardiac-arrest-symposium/March 2021 Symposium Speaker Flyer.pdf",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Mar 01 2021 19:25:50 GMT+0000",
       "jcr:lastModified": "Mon Mar 01 2021 19:28:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -43,7 +43,7 @@
     ],
     "eventContactEmail": "john.friederich@stryker.com",
     "eventRegistrationLink": "https://whova.com/portal/registration/crsst_202103/",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "eventAudience": [
       "stryker:audience/nurses",
       "stryker:audience/medical_professionals",

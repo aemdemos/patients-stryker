@@ -21,7 +21,7 @@
   "originallyPublished": "Mon Feb 06 2023 21:25:36 GMT+0000",
   "jcr:uuid": "0eac6fab-177d-44a9-8d8e-8f8a9424ff53",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -35,8 +35,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_1734178359_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "topMargin": "3",
       "jcr:created": "Thu Aug 31 2023 21:52:36 GMT+0000",
@@ -49,8 +49,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Aug 09 2023 19:49:02 GMT+0000",
       "jcr:lastModified": "Wed Aug 09 2023 19:49:02 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -59,8 +59,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Wed Aug 09 2023 19:50:38 GMT+0000",
           "text": "<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202608/us/professional-services-policy-for-vocera-solutions-us-rev-u-stand-alone.pdf\" target=\"_blank\" title=\"Open US Canada Professional Services Agreement\"><span class=\"standalone-link\">United States / Canada</span></a><br>\n</p>\n<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202505/uk/professional-services-uk-rev-g-04302025.pdf\" target=\"_blank\" title=\"Open UK Ireland Professional Services Agreement\"><span class=\"standalone-link\">United Kingdom / Ireland</span></a></p>\n<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202505/au/professional-services-au-rev-i-04302025.pdf\" target=\"_blank\" title=\"Open Australia Professional Services Agreement\"><span class=\"standalone-link\">Australia</span></a></p>\n<p><a title=\"Open Singapore Professional Services Agreement\" href=\"/content/dam/stryker/acute-care/vocera/legal/202506/professional-services-policy-for-vocera-solutions-sg-rev-c-04302025.pdf\" target=\"_blank\"><span class=\"standalone-link\">Singapore</span></a><br>\n</p>\n",
           "jcr:lastModified": "Fri Aug 14 2026 15:46:42 GMT+0000",

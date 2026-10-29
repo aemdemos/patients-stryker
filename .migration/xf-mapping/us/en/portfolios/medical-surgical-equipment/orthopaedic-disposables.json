@@ -9,7 +9,7 @@
   "jcr:versionHistory": "806d2e59-f0e4-4351-983b-298c77936424",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/orthopedic-disposables/images/Thumbnail_ORDisposables1.jpg",
   "jcr:predecessors": [
     "6c0237ed-7df1-4533-b3c6-c8cea6913b08"
@@ -34,7 +34,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -47,7 +47,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Fri Jul 14 2017 10:17:01 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -57,7 +57,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Thu Dec 02 2021 19:34:19 GMT+0000",

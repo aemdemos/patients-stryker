@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s Spine division to feature comprehensive product portfolio at AANS 2017 Conference",
   "jcr:versionHistory": "ff160d29-07dc-4291-a300-a9316faa6660",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "fea75c75-b760-4e63-a1a6-cce5f91752da"
   ],
@@ -28,14 +28,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Fri Apr 21 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Apr-2017",
@@ -44,7 +44,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division will exhibit its comprehensive suite of spinal products at the American Association of Neurological Surgeons (AANS) Annual Scientific Meeting, April 22–26, 2017, at the Los Angeles Convention Center (booth No. 1301). This exhibition includes a number of advanced spinal products and technologies that Stryker’s Spine division has introduced in the past year. The company also will offer a <a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.strykeraans.com%2F&amp;esheet=51544429&amp;newsitemid=20170421005080&amp;lan=en-US&amp;anchor=Lunch-and-Learn&amp;index=1&amp;md5=7ba06c83e633c155baadd7a855d99b09\" target=\"_blank\">Lunch-and-Learn</a> educational program for AANS members attending the meeting.</p>\n<p>“This is an exciting time, both for the field of spinal surgery and for Stryker’s Spine division,” said Bradley Paddock, President of the company’s Spine division. “Our expanding portfolio of spinal procedural innovations and differentiated technologies demonstrates our commitment to bringing state-of-the-art products to physicians and their patients. We will continue to increase and strengthen our leadership position in this segment and are thrilled to showcase our latest technology advances at the AANS conference.”<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20170421005080/en\" target=\"_blank\">Business Wire</a></p>\n",
     "jcr:lastModified": "Tue May 30 2017 17:55:11 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

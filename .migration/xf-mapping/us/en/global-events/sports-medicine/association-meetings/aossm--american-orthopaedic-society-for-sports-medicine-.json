@@ -22,7 +22,7 @@
   ],
   "jcr:uuid": "5dabd719-f4c5-495f-9d31-8f6d2f3b07e1",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -33,7 +33,7 @@
       "stryker:business-unit/sports-medicine"
     ],
     "eventRegistrationLink": "https://www.sportsmed.org/aossmimis/Members/Industry/2018_Annual_Meeting.aspx",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "eventAudience": [
       "stryker:audience/trainees",
       "stryker:audience/or-professionals"

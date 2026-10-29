@@ -7,7 +7,7 @@
   "jcr:title": "Healthcare professional disclaimer",
   "jcr:versionHistory": "d191a324-c61f-4679-93d0-50b5b126fa78",
   "cq:template": "/apps/stryker/templates/base",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "706eb9ff-5411-4ad7-ac97-213d4dca0382"
   ],
@@ -22,14 +22,14 @@
   "jcr:uuid": "5dba3acb-d467-4b11-8aa9-042fa556fd5d",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "title_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "mauricio.munoz@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-ee85960c2f@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "jcr:created": "Tue Mar 07 2017 17:19:41 GMT-0500",
       "title": "Healthcare professional disclaimer",
       "jcr:lastModified": "Fri May 03 2019 20:52:34 GMT+0000",
@@ -37,8 +37,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Fri Aug 04 2017 17:56:22 GMT-0400",
       "jcr:lastModified": "Fri Aug 04 2017 17:56:22 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -46,8 +46,8 @@
         "jcr:primaryType": "nt:unstructured",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Fri Aug 04 2017 17:56:27 GMT-0400",
           "text": "<p>This information is intended solely for the use of healthcare professionals. A healthcare professional must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using it in a procedure or surgery. A healthcare professional must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any Stryker product.&nbsp; The information presented is intended to demonstrate particular products, as well as the breadth of Stryker product offerings.&nbsp; Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of specific Stryker products in your area.&nbsp; Stryker products that are CE marked are marked according to the applicable EU Regulations and Directives.</p>\n",
           "jcr:lastModified": "Mon Apr 15 2019 19:44:21 GMT+0000",

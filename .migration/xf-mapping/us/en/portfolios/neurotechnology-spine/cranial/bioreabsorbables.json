@@ -8,7 +8,7 @@
   "jcr:title": "Bone cements",
   "jcr:versionHistory": "351a81a2-ac4f-4e7d-a055-4f964103d528",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "erica.mellema@stryker.com",
+  "jcr:lastModifiedBy": "user-2aa97c458a@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/directinjecton-demandhacement/images/Thumbnail_DirectInject.png",
   "jcr:predecessors": [
     "8f879d6d-dbf4-425e-89dc-7aca280d7de3"
@@ -37,7 +37,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/neurotechnology-spine/cranial",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "erica.mellema@stryker.com",
+  "cq:lastModifiedBy": "user-2aa97c458a@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -50,7 +50,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 17:52:52 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -60,7 +60,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Fri Aug 18 2017 14:36:27 GMT-0400",
     "compImageRef": "/content/dam/stryker/craniomaxillofacial/products/directinjecton-demandhacement/images/Hero_DirectInject.png",
@@ -68,7 +68,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>In the US, based on internal estimates. Sales data on file.<br>\r\n</p>\r\n",
     "jcr:lastModified": "Tue Sep 12 2017 15:09:22 GMT-0400",

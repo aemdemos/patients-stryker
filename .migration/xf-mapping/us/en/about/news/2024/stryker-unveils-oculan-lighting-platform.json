@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a0895bfa-a129-414c-92a9-23ad07a5e661",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Oculan",
   "jcr:predecessors": [
     "0658b654-b5c2-4326-967a-d5d78af75c61"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Nov 19 2024 03:45:54 GMT+0000",
       "jcr:lastModified": "Tue Nov 19 2024 03:45:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Nov 19 2024 03:43:34 GMT+0000",
           "alt": "Oculan",
@@ -68,8 +68,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Nov 19 2024 03:29:06 GMT+0000",
       "jcr:lastModified": "Tue Nov 19 2024 03:29:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Tue Nov 19 2024 03:28:58 GMT+0000",
           "text": "<p><b>Flower Mound, TX USA</b> – <b>November 19th, 2024</b> – Stryker (NYSE:SYK), a global leader in medical technologies, unveiled the Oculan Lighting Platform, an innovative lighting solution designed to provide consistent, high-quality illumination, allowing surgeons to focus on delivering the highest standard of care.</p>\n<p>In today’s operating rooms, where precision and accuracy are critical, even the smallest challenges may impact surgical outcomes – factors which may impede a surgeon’s ability to see clearly and work efficiently.</p>\n<p>&quot;The Oculan Lighting Platform was developed in response to real-world challenges faced by surgeons, as identified through extensive customer feedback,&quot; said Caitlin Clark, vice president and general manager of Stryker’s Communications business. &quot;This new solution is designed to improve the visualization experience, surgical performance and patient safety within the operating room.&quot;</p>\n<p>The Oculan Lighting Platform offers advanced features designed to enhance surgical precision and comfort:</p>\n<ul>\n<li><b>Fly Eye technology within the optical architecture</b>: This proprietary design ensures that instruments, hands, and the surgeon’s head do not create dim areas, providing even light distribution.</li>\n<li><b>Consistent illumination</b>: Allows surgeons to maintain a clear view and is designed to increase optical efficiency and reduce color ringing at the surgical site within procedures.</li>\n<li><b>Auto lux and Microspot</b>: Provides uniform brightness and pure white even in harder-to-reach areas such as a deep cavity or small incision procedures.</li>\n<li><b>SHD Mode</b>: Removal of perceived red is designed to improve contrast, tissue differentiation, and reduction of glare off instrumentation to improve the visual experience.</li>\n<li><b>Heat minimization</b>: Designed to produce less heat through heat dissipation, creating a cooler, more comfortable environment for lengthy surgeries.</li>\n<li><b>Reduced glare and reflections</b>: Helps surgeons stay focused and minimizes eye strain.</li>\n<li><b>Ease of adoption</b>: Suspension modularity allows for the Oculan Lighting Platform to be installed in operating rooms with existing Stryker surgical lights, causing minimal OR downtime.</li>\n</ul>\n<p>&quot;Clear visualization is one of the most critical aspects of surgical lighting,&quot; said Dr. Shyamali Mallick Singhal, Chief Medical Officer of Apricity Health in California. &quot;The ability to see clearly without shadows or dim spots is essential for precise work. The Oculan Lighting Platform excels in providing bright, even light in these hard-to-reach spaces, where surgeons need it most. Just as important are its enhanced contrast capabilities, which allow us to distinguish between different tissues and anatomical structures more easily, significantly improving our ability to identify critical details with greater accuracy and confidence. This level of visibility is essential for delivering safer, more efficient surgeries.&quot;</p>\n<p>Engineered for long-term performance, the Oculan Lighting Platform is designed to enhance functionality and durability. Its intuitive controls allow surgical teams to easily adjust settings to meet their specific needs. Emphasizing user-friendliness, the platform features multiple control points that streamline workflows and minimize disruptions. For more information about the Oculan Lighting Platform and Stryker's full range of medical technologies, <a href=\"/content/stryker/us/en/communications/products/oculan.html\">please visit here</a>.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Tue Nov 19 2024 03:38:56 GMT+0000",
@@ -88,16 +88,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Tue Nov 19 2024 03:34:03 GMT+0000",
           "jcr:lastModified": "Tue Nov 19 2024 03:34:03 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_178529570": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Nov 19 2024 03:34:23 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n",
           "jcr:lastModified": "Tue Nov 19 2024 15:51:30 GMT+0000",
@@ -113,7 +113,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Tue Nov 19 2024 00:00:00 GMT-0800",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Nov-2024",
@@ -122,7 +122,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Tue Nov 19 2024 03:43:29 GMT+0000",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0ac2c269-9ff8-4dee-b717-1f8729214273",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
   "thumbnailAltText": "Sirca Exam Light",
   "thumbnailFileReference": "/content/dam/stryker/communications/products/sirca-exam-light/images/Thumbnail.png",
   "jcr:predecessors": [
@@ -42,14 +42,14 @@
   "jcr:uuid": "1d14a523-ffd3-4f05-b60d-6509e6d0cae5",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Sirca",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "imageAlt": "SircaExamLight",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jun 14 2023 15:27:27 GMT+0000",
@@ -62,16 +62,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Mon Jun 29 2026 19:09:26 GMT+0000",
       "jcr:lastModified": "Mon Jun 29 2026 19:09:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -80,16 +80,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
@@ -99,8 +99,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -109,10 +109,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "2951",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -125,8 +125,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment_c": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
               "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
@@ -145,7 +145,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 19:09:10 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
@@ -153,7 +153,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>The Stryker Sirca Exam Light provides bright and shadow-resistant exam lighting. Along with the excellent depth of field, the Sirca Exam Light can be used in several critical applications. Multiple mounting options make for easy positioning. With 80,000 lux, and 5 levels of intensity control, Sirca brings light where you need it. The Sirca Exam Light is a functional lighting solution designed to meet your critical care and emergency needs across the ED, Trauma, and ICU environments.</p>\r\n",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Jun 14 2023 15:27:55 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -165,7 +165,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "text": "<p>The Stryker Sirca Exam Light provides bright and shadow-resistant exam lighting. Along with the excellent depth of field, the Sirca Exam Light can be used in several critical applications. Multiple mounting options make for easy positioning. With 80,000 lux, and 5 levels of intensity control, Sirca brings light where you need it. The Sirca Exam Light is a functional lighting solution designed to meet your critical care and emergency needs across the ED, Trauma, and ICU environments.</p>\n",
     "jcr:lastModified": "Wed Jun 14 2023 15:24:33 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -174,14 +174,14 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Jun 14 2023 15:24:45 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 19:09:13 GMT+0000",
     "linkNewWindowOverride": "0",

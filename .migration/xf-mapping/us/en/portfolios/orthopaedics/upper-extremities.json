@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c993ae33-d23d-4448-bd75-0e76cd24dc92",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "e3c29e73-4001-4b22-b250-df4ab58f69e0"
   ],
@@ -35,14 +35,14 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics",
   "cq:childrenOrder": "shoulder,hand-and-wrist,elbow,",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "bannercampaign_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://strykerwelcomeswright.com/",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
@@ -63,7 +63,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "jcr:lastModified": "Wed Sep 09 2020 15:23:30 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

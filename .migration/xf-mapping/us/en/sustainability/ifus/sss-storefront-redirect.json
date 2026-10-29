@@ -7,7 +7,7 @@
   "jcr:title": "SSS Storefront Redirect ",
   "jcr:versionHistory": "1c2698e5-293e-4876-968f-73dfbf7d788b",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "jcr:predecessors": [
     "17f0943d-9cde-4590-b038-145a27fc2fcd"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "0a49ff20-0dc0-4c53-b60a-84df7bd310ce",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "morgan.harder@stryker.com",
+  "cq:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -49,7 +49,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "text": "<p>The Ascension and Savings Direct URLs have changed. Please favorite the new URL(s) below:</p>\n<p><a href=\"https://strykersustainability.com/shop-ascension-portal/\">https://strykersustainability.com/shop-ascension-portal/</a><br>\n<a href=\"https://strykersustainability.com/shop-savings-direct/\">https://strykersustainability.com/shop-savings-direct/</a></p>\n",
     "jcr:lastModified": "Thu Feb 02 2023 22:19:47 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

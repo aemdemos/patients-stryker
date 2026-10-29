@@ -10,7 +10,7 @@
   "jcr:versionHistory": "4d3e44b3-cb8b-48a8-a0e8-9c0496ce2f85",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "SC+ Full Stand Beauty Shot",
   "jcr:predecessors": [
     "ecb17913-4e61-48e3-a9ba-7a85e0733041"
@@ -48,7 +48,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "imageAlt": "SC+ Full Stand Beauty Shot",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
@@ -60,7 +60,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "jcr:lastModified": "Wed May 08 2024 19:08:06 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

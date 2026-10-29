@@ -10,7 +10,7 @@
   "jcr:versionHistory": "bb9ccd05-011a-453a-91c5-5cdb760eb8b0",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Synchro SELECT Guidewires",
   "jcr:predecessors": [
     "e0cfba8c-a98d-45b8-8a85-edc816919853"
@@ -40,14 +40,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 19:27:04 GMT+0000",
       "text": "Synchro SELECT™ Guidewires Excellence comes down to the wire _____________________________________ Synchro SELECT Guidewires are the Synchro Guidewires you trust, fully optimized. Based on years of partnership with our customers, we understand that neurointerventional procedures now require access to distal tortuous anatomy, and that guidewires need to navigate with greater ease and control. That’s why we created Synchro SELECT Guidewires.",
       "jcr:lastModified": "Fri Apr 02 2021 19:28:11 GMT+0000",
@@ -61,8 +61,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "accordion": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 15:05:33 GMT+0000",
       "jcr:lastModified": "Fri Apr 02 2021 15:24:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/accordion",
@@ -72,8 +72,8 @@
         "accPosId": 1,
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "jcr:lastModified": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -82,8 +82,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Fri Apr 02 2021 15:24:26 GMT+0000",
               "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Tip-to tail upgrades to our nitinol hypotube and stainless steel core wire have led to improved tip shape retention, tip softness, and overall enhanced control to make navigating distal easier.&nbsp;</span></span></p>\n",
               "jcr:lastModified": "Fri Apr 02 2021 15:24:54 GMT+0000",
@@ -96,8 +96,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "standaloneimage": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Apr 02 2021 15:24:30 GMT+0000",
               "srcFileRef": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/Screen Shot 2021-04-02 at 12.56.02 PM.png",
@@ -113,8 +113,8 @@
         "accPosId": 2,
         "cols2_2_3_1_3_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "jcr:lastModified": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -123,8 +123,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Fri Apr 02 2021 15:24:26 GMT+0000",
               "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Since Synchro launched, it has been the market leader for guidewires. Synchro SELECT is the guidewire you trust, fully optimized.<br>\n </span></span>&nbsp;</p>\n",
               "jcr:lastModified": "Fri Apr 02 2021 15:26:16 GMT+0000",
@@ -133,8 +133,8 @@
             },
             "text_1472143052": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Fri Apr 02 2021 16:52:40 GMT+0000",
               "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A)</span>&nbsp;<span class=\"urw-egyptienne\">Conventional guidewire - Torque transmission</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">B)</span>&nbsp;<span class=\"urw-egyptienne\">Synchro Guidewire - Torque transmission</span></span></p>\n",
               "jcr:lastModified": "Fri Apr 02 2021 16:54:07 GMT+0000",
@@ -147,8 +147,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "standaloneimage": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Apr 02 2021 15:24:30 GMT+0000",
               "srcFileRef": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/Synchro_Torque_Map.jpg",
@@ -192,8 +192,8 @@
         "accPosId": 3,
         "cols2_2_3_1_3_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "jcr:lastModified": "Fri Apr 02 2021 15:24:21 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -202,8 +202,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Fri Apr 02 2021 15:24:26 GMT+0000",
               "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">With the Synchro SELECT Guidewire family, you can get wherever you need to go on a comprehensive .014&quot; platform.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Synchro SELECT Guidewires are available in three stiffness profiles:</span></span></p>\n",
               "jcr:lastModified": "Tue Apr 27 2021 19:13:52 GMT+0000",
@@ -212,8 +212,8 @@
             },
             "text_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Tue Apr 27 2021 14:29:19 GMT+0000",
               "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Stiffness profile</span></span></span></span></span></p>\n",
               "jcr:lastModified": "Tue Apr 27 2021 14:51:48 GMT+0000",
@@ -222,8 +222,8 @@
             },
             "standaloneimage_8688": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Apr 02 2021 17:38:49 GMT+0000",
               "srcFileRef": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/Select_Graph.png",
@@ -236,8 +236,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "standaloneimage_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Apr 02 2021 15:24:30 GMT+0000",
               "srcFileRef": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/SelectCloseUp_V2.jpg",
@@ -250,16 +250,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 17:21:48 GMT+0000",
       "jcr:lastModified": "Fri Apr 02 2021 17:21:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 15:29:28 GMT+0000",
       "title": "Specifications",
       "jcr:lastModified": "Fri Apr 02 2021 15:29:36 GMT+0000",
@@ -267,8 +267,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 15:28:24 GMT+0000",
       "jcr:lastModified": "Fri Apr 02 2021 15:28:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -277,9 +277,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "table": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td height=\"20\" width=\"89\"><b>UPN</b></td>\n<td width=\"276\"><b>Description</b></td>\n<td width=\"51\"><b>Length</b></td>\n</tr><tr><td height=\"20\">SSFT215STR</td>\n<td>Access Length, Soft</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSFT215PRE</td>\n<td>Access Length, Soft Pre-Shaped</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSFT300STR</td>\n<td>Exchange Length, Soft</td>\n<td>300cm</td>\n</tr><tr><td height=\"20\">SSFT300PRE</td>\n<td>Exchange Length, Soft Pre-Shaped</td>\n<td>300cm</td>\n</tr><tr><td height=\"20\">SSTD215STR</td>\n<td>Access Length, Standard</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSTD215PRE</td>\n<td>Access Length, Standard Pre-Shaped</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSTD300STR</td>\n<td>Exchange Length, Standard</td>\n<td>300cm</td>\n</tr><tr><td height=\"20\">SSTD300PRE</td>\n<td>Exchange Length, Standard Pre-Shaped</td>\n<td>300cm</td>\n</tr><tr><td height=\"20\">SSUP215STR</td>\n<td>Access Length, Support</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSUP215PRE</td>\n<td>Access Length, Support Pre-Shaped</td>\n<td>215cm</td>\n</tr><tr><td height=\"20\">SSUP300STR</td>\n<td>Exchange Length, Support</td>\n<td>300cm</td>\n</tr><tr><td height=\"20\">SSUP300PRE</td>\n<td>Exchange Length, Support Pre-Shaped</td>\n<td>300cm</td>\n</tr></tbody></table>\n",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 02 2021 15:28:32 GMT+0000",
           "jcr:lastModified": "Fri Apr 02 2021 16:39:00 GMT+0000",
           "sling:resourceType": "stryker/components/content/table",
@@ -291,8 +291,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 02 2021 15:28:41 GMT+0000",
           "text": "<p>OD: 0.014in (0.36mm)</p>\n<p>Distal wire segment: 35cm</p>\n",
           "jcr:lastModified": "Fri Apr 02 2021 15:29:17 GMT+0000",
@@ -303,8 +303,8 @@
     },
     "title_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 15:29:28 GMT+0000",
       "title": "Compatibility",
       "jcr:lastModified": "Fri Apr 02 2021 19:29:29 GMT+0000",
@@ -312,8 +312,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 02 2021 15:29:53 GMT+0000",
       "text": "<p>Microcatheter Compatibility: 0.016in (0.41mm)</p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Thu Apr 22 2021 18:02:07 GMT+0000",
@@ -322,9 +322,9 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "resources": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/US_Synchro_Select DFU.pdf",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Apr 22 2021 17:52:27 GMT+0000",
       "title": "Important Safety Information",
       "jcr:lastModified": "Thu Apr 22 2021 18:03:22 GMT+0000",
@@ -337,7 +337,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Fri Apr 02 2021 19:27:32 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -349,7 +349,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Fri Apr 02 2021 15:30:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   }

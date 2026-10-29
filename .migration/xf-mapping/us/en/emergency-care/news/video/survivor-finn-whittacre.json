@@ -9,7 +9,7 @@
   "jcr:versionHistory": "0b6f6e6d-2d05-488e-9208-bb6855c906a1",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Photo of Finn Whittacre",
   "jcr:predecessors": [
     "a80d8e85-4cf5-4630-a829-114e874ab5ab"
@@ -32,14 +32,14 @@
   "jcr:uuid": "675dbd0c-1e65-46f9-aa48-7543c4c48ea5",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Oct 15 2025 21:31:04 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -53,7 +53,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-finn-whittacre_us-ca-emea.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-finn-whittacre_us-ca-emea-AVS",
         "urlModifiers": "",
@@ -67,8 +67,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "topMargin": "2",
       "jcr:created": "Wed Oct 15 2025 21:31:17 GMT+0000",
@@ -81,8 +81,8 @@
     },
     "customizable_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Oct 15 2025 22:01:50 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Mon Oct 20 2025 13:35:34 GMT+0000",
@@ -110,7 +110,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Mon Oct 20 2025 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "20-Oct-2025",

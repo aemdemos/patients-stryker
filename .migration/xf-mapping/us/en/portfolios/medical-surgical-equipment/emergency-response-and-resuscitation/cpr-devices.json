@@ -7,7 +7,7 @@
   "jcr:title": "CPR devices",
   "jcr:versionHistory": "62005c4b-3a84-47fb-a21b-5fd3551233f4",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+  "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
   "jcr:predecessors": [
     "76b518a9-dac1-410d-992a-d7ca04a9c3ca"
   ],
@@ -29,7 +29,7 @@
   "jcr:uuid": "7a139b57-e66e-497e-8503-8d18b5993b7a",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "andy.tanabe@stryker.com",
+  "cq:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -44,7 +44,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Wed Jun 26 2019 22:40:06 GMT+0000",
@@ -54,7 +54,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
     "jcr:lastModified": "Wed Jun 26 2019 22:40:50 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

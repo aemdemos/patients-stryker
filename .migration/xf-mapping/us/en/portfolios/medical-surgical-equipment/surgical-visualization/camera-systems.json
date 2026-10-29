@@ -9,7 +9,7 @@
   "jcr:versionHistory": "07e3edb0-82ae-42a5-9a34-14e0b92b5e83",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Camera Systems",
   "jcr:predecessors": [
     "99d39aee-ede2-4929-aac0-7ed15f04a4f8"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "navTitle": "Camera systems",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -51,7 +51,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 21:18:58 GMT+0000",
     "loadMoreText": "Load More",
@@ -62,7 +62,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Camera-Systems",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Jul 16 2024 22:37:01 GMT+0000",

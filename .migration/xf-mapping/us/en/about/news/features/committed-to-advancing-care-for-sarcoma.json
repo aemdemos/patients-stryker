@@ -7,7 +7,7 @@
   "jcr:title": "Committed to advancing care for Sarcoma",
   "jcr:versionHistory": "6a2b2648-7c18-4375-8205-14562991da12",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "0e220844-78cc-4bc8-b087-32016feb4c73"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "fbf1f9ff-023b-41d1-b492-c79bda4bf599",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 19 2020 18:25:53 GMT+0000",
       "jcr:lastModified": "Fri Jun 19 2020 18:25:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -41,8 +41,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 19 2020 18:30:24 GMT+0000",
           "type": "typePath",
           "jcr:lastModified": "Fri Jun 19 2020 19:13:36 GMT+0000",
@@ -54,7 +54,7 @@
             "fileReference": "/content/dam/stryker/about/news/features/committed-to-advancing-care-for-sarcoma/committed-to-advancing-care-for-sarcoma-2.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/committed-to-advancing-care-for-sarcoma-2-AVS",
@@ -76,8 +76,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_1264474617": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 19 2020 19:14:01 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<p><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">July is Sarcoma Awareness Month.&nbsp;</span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\">We stand alongside the healthcare community, patients and their loved ones to recognize and bring attention to &quot;the forgotten cancer&quot;<sup>1</sup>. Sarcoma is rare, but the passion that fuels our employees is not. We're committed to advancing care and inspiring hope.</span></p>\r\n",
@@ -91,8 +91,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 19 2020 18:57:45 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2vw\"><span style=\"color: #ffffff;\">“Stryker wants to be at the forefront of the battle.”</span></span><br>\r\n<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><br>\r\n <span style=\"color: #ffb500;\">- Lee Roy Selmon Jr.</span></span></span></span>",
@@ -109,7 +109,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Fri Jun 26 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "26-Jun-2020",
@@ -118,7 +118,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>&nbsp;</p>\r\n<p>1. Sarcoma Foundation of America. Sarcoma Awareness Month. Accessed 19 June 2020 <a href=\"https://www.curesarcoma.org/sarcoma-awareness-month/\" style=\"background-color: rgb(240,240,240);\">https://www.curesarcoma.org/sarcoma-awareness-month/</a><br>\r\n</p>\r\n",
     "jcr:lastModified": "Tue Jul 07 2020 17:59:57 GMT+0000",

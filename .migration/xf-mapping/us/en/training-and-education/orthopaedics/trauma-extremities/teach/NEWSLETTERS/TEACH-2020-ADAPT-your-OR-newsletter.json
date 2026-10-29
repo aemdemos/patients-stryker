@@ -7,7 +7,7 @@
   "jcr:title": "ADAPT for Gamma3",
   "jcr:versionHistory": "c522873e-e4f3-4397-baa8-7732b795cc82",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "e0c8e093-ee74-4206-adc8-0847675e1e1f"
   ],
@@ -22,7 +22,7 @@
   "jcr:uuid": "e4ef40d6-3223-41ed-a2e1-e7fc473f59ff",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 05 2019 20:57:58 GMT+0000",
       "alt": "TEACH wordmark (CMYK)",
       "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-wordmark-small.jpg",
@@ -46,8 +46,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 14:55:02 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 14:55:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -57,10 +57,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "fullwidthimage_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-5b105250fc@example.invalid",
           "altMob": "newsletter wetzel mobile banner",
           "dimensionBox": "FDB",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "backgroundImageMobRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/newsletter-wetzel-mobile-banner.png",
           "layoutOptions": "col-sm-8 pull-left​",
           "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/TEACH-newsletter-Dr-Wetzel-banner.png",
@@ -73,8 +73,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "vince.wolff@stryker.com",
-              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:createdBy": "user-b2cf110515@example.invalid",
+              "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
               "jcr:created": "Thu Apr 25 2019 13:08:23 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<b><span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">ADAPT for Gamma3</span></span></span></b>",
@@ -93,16 +93,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 15:19:44 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 15:19:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -111,8 +111,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Tue Feb 05 2019 18:38:09 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">ADAPT</span> your OR</span></span></span><br>\n</p>\n<p>Fluoroscopy is a useful addition to and has become routinely used in the treatment of fracture fixation and other minimally invasive techniques, like intramedullary nailing for hip fracture repair.<sup>1</sup> In general, femoral intramedullary nailing and pelvic fracture fixation are associated with the greatest amount of scatter radiation exposure for orthopaedic trauma surgeons.<sup>1</sup> Radiation exposure is cumulative, cannot be seen, felt, or smelled. One study found that orthopaedic surgeons are 5.37 times more likely to have cancer compared to other healthcare workers.<sup>2</sup> Numerous studies have found that orthopaedic surgeons are often underinformed of the risks of radiation exposure and emphasized the need for education and protection for all individuals present in a room during fluoroscopy procedures.<sup>1,3,4,5,6,7</sup></p>\n<p>As surgeons it is important to understand the risks inherent in using radiation technologies during a surgical procedure and how to adequately protect patients and OR staff from unintended radiation exposure. The guiding principle for radiation safety using fluoroscopic imaging is ALARA, which stands for “as low as reasonably achievable”. The three basic protective measures are minimizing time, maximizing distance and use of shielding. Wearing protection devices such as lead aprons, thyroid shields, lead glasses should be used whenever possible.<sup>8</sup></p>\n<p>Another tool to help reduce radiation exposure for everyone in the OR, specifically in hip fracture procedures, is the use of ADAPT for Gamma3, software-based instrumentation designed to assist with implant alignment, lag screw positioning, and distal locking. The use of ADAPT has been shown to reduce radiation exposure by up to 11% with proximal implant placement.<sup>9,10</sup> Additional studies have demonstrated the use of ADAPT only required a single pass with the K-wire.<sup>11,12</sup> ADAPT also provides guidance for distal locking, the part of nailing procedures that can account for 50% of the total radiation time for the entire operation.<sup>13,14</sup> In combination with the Distal Targeting System, ADAPT has been shown to reduce fluoroscopy time by an average of 67%.<sup>15</sup> The same cadaveric study showed an average of 65% reduction in the number of X-rays taken during distal locking with ADAPT.<sup>15</sup></p>\n",
           "jcr:lastModified": "Thu Mar 12 2020 19:20:03 GMT+0000",
@@ -121,8 +121,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Wed Mar 11 2020 19:15:07 GMT+0000",
           "text": "<p>For more information, please visit <a href=\"https://www.stryker.com/ADAPTyourOR.com\">stryker.com/ADAPTyourOR.com</a></p>\n",
           "jcr:lastModified": "Wed Mar 11 2020 19:15:34 GMT+0000",
@@ -133,16 +133,16 @@
     },
     "sectionseparator_cop_1361383429": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 15:09:42 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 15:09:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -151,8 +151,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Tue Feb 25 2020 15:13:35 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Radiation risk</span></span>&nbsp;<br>\r\n <span class=\"urw-egyptienne\">isn't always visible<br>\r\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #b2b4ae;\"><span class=\"fontsize-2vw\"><span class=\"fontsize-3vw\">____</span></span></span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><br>\r\nADAPT</span> your OR</span></span></span>",
@@ -166,8 +166,8 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Feb 24 2020 21:13:27 GMT+0000",
@@ -183,8 +183,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Tue Feb 25 2020 15:09:46 GMT+0000",
           "alt": "ADAPT your OR half banner",
           "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/ADAPT-your-OR-banner-half.png",
@@ -195,16 +195,16 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2020 15:18:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Feb 26 2020 19:16:30 GMT+0000",
       "text": "<p><sub>1.&nbsp; &nbsp; &nbsp;Hayda, Roman A., et al. “Radiation Exposure and Health Risks for Orthopaedic Surgeons.” Journal of the American Academy of Orthopaedic Surgeons, vol. 26, no. 8, 2018, pp. 268–277.<br>\n 2.&nbsp; &nbsp; &nbsp;Mastrangelo G, Fedeli U, et al. Increased cancer risk among surgeons in an orthopaedic hospital. Occupational Medicine 2005;55:498-500<br>\n 3.&nbsp; &nbsp; &nbsp;Chow, Roxanne, et al. “Surgeons’ Perception of Fluoroscopic Radiation Hazards to Vision.” Am J Orthop. 2013;42(11):505-510<br>\n 4.&nbsp; &nbsp; &nbsp;Carmichael, Kelly D., and Lattisha L. Bilbrew. “Underestimation of Fluoroscopic Exposure among Orthopedic Residents.” Skeletal Radiology, vol. 49, no. 3, May 2019, pp. 383–385.<br>\n 5.&nbsp; &nbsp; &nbsp;Tunçer, Nejat, et al. “Orthopedic Surgeons’ Knowledge Regarding Risk of Radiation Exposition: a Survey Analysis.” Sicot-J, vol. 3, 2017, p. 29.<br>\n 6.&nbsp; &nbsp; &nbsp;Hoffler, C. Edward, and Asif M Ilyas. “Fluoroscopic Radiation Exposure.” The Journal of Bone and Joint Surgery-American Volume, vol. 97, no. 9, 2015, pp. 721–725.<br>\n 7.&nbsp; &nbsp; &nbsp;Frane, Nicholas, et al. “Radiation Exposure in Orthopaedics.” JBJS Reviews, vol. 8, no. 1, 2020.<br>\n 8.&nbsp; &nbsp; &nbsp;Fencl, Jennifer L. “Guideline Implementation: Radiation Safety.” AORN Journal, vol. 102, no. 6, 2015, pp. 629–639<br>\n 9.&nbsp; &nbsp; &nbsp;Mitchell Kuhl, DO; Claudia Beimel, MSc (2018): Precise lag screw placement with the use of a novel computer assisted surgery system during cephalomedullary nailing. Content ID: ADA-PO-1, 05-2018<br>\n 10.&nbsp; Regling, Matthias, et al. “Improved Lag Screw Positioning in the Treatment of Proximal Femur Fractures Using a Novel Computer Assisted Surgery Method: a Cadaveric Study.” BMC Musculoskeletal Disorders, vol. 15, no. 1, 2014<br>\n 11.&nbsp; Weidert, Simon, et al. “Fluoroscopic Marker-Based Guidance System Improves Lag Screw Placement during Gamma Nailing of Intertrochanteric Fractures.” Journal of Orthopaedic Trauma, 2019<br>\n 12.&nbsp; Sommer, F., et al,. “Evaluation of a new IGS for the implantation of proximal femoral interlocking nails.” International Journal of Computer Assisted Radiology and Surgery 2016 11:1 SUPPL. 1 (S251) {6}<br>\n 13.&nbsp; Uruc, Vedat, et al. “The Comparison of Freehand Fluoroscopic Guidance and Electromagnetic Navigation for Distal Locking of Intramedullary Implants.” Injury, vol. 44, no. 6, 2013, pp. 863–866.<br>\n 14.&nbsp; Levin, P E, et al. “Radiation Exposure to the Surgeon during Closed Interlocking Intramedullary Nailing.” The Journal of Bone &amp; Joint Surgery, vol. 69, no. 5, 1987, pp. 761–766<br>\n 15.&nbsp; Distal locking in femoral IM nailing using ADAPT for Gamma3: a cadaveric study ADA-WP_7, 12-2019</sub></p>\n",
       "jcr:lastModified": "Wed Mar 11 2020 19:17:36 GMT+0000",
@@ -214,7 +214,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Dr. Wetzel is a paid consultant of Stryker. The opinions expressed are those of Dr. Wetzel and not necessarily those of Stryker. Individual results may vary.</p>\r\n<p>A surgeon must always rely on his or her own professional clinical judgement when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n",
     "jcr:lastModified": "Wed Mar 11 2020 19:17:57 GMT+0000",

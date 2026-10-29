@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Launches New Prophecy Infinity Resect-Through Guides",
   "jcr:versionHistory": "bea440f9-166e-48c2-9c09-1fadc294cee4",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "f5ca1384-cc01-4c40-b1ce-2bff756e4886"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "b08ae580-42eb-4181-9058-4880e08cb3e7",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Nov 15 2021 15:42:10 GMT+0000",
       "jcr:lastModified": "Mon Nov 15 2021 15:42:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -44,8 +44,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Nov 15 2021 15:42:26 GMT+0000",
           "text": "<p><b>Building on Prophecy’s Legacy of Success, New System Offers Surgeons Fewer Steps, More Efficiency</b></p>\n<p><b>MAHWAH, N.J.—Nov. 16, 2021</b>—Stryker today launched the Prophecy® Infinity® Resect-Through Guides for use in total ankle replacement surgeries. The system represents the latest refinement of Stryker’s current industry gold standard technique, allowing surgeons to improve OR efficiency by reducing potentially time-consuming interoperative steps in a streamlined surgical process.</p>\n<p>“The new Prophecy Infinity Resect-Through Guides System builds on the product line’s legacy of success in the foot and ankle market,” said Michael Rankin, vice president of marketing and medical education for Stryker’s Foot &amp; Ankle business. “After 35,000 cases planned over the last nine years, the latest offering in the Prophecy System continues to push innovation that will advance ease-of-use and accuracy in the operating room.”</p>\n<p>The Prophecy Infinity Resect-Through Guides allow surgeons to take fewer steps in total ankle replacement surgeries than the Prophecy standard pin-through technique. The system helps increase efficiency in the OR by using just one guide for both drilling and cutting, reducing the number of steps in a patient’s surgical plan. Metal guides maintain cutting stability, while optional holes can couple alignment for the talus. The system also uses improved fluoroscopic visualization that can help surgeons view coronal alignment, positioning and implant size, all in one fluoro shot.</p>\n<p>“The Prophecy Infinity Resect-Through Guides can save steps in the OR and allow for a firmer attachment of the Prophecy guides to the bone,” said Scott Ellis, MD, foot and ankle surgeon and associate attending at Hospital for Special Surgery in New York. “With Stryker’s Resect-Through Guides, surgeons can enter the OR feeling confident that they are more likely to successfully follow their preoperative total ankle plan and achieve a well-aligned implant.”</p>\n<p>More information about the Prophecy Infinity Resect-Through Guides is available at <a href=\"/content/stryker/us/en/portfolios/orthopaedics/foot-and-ankle.html\">footankle.stryker.com</a>.</p>\n<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/\">www.stryker.com</a>.&nbsp;</p>\n<p>Follow Stryker Foot &amp; Ankle on <a href=\"https://www.linkedin.com/showcase/stryker-foot-&amp;-ankle/\">LinkedIn</a> and Stryker’s Trauma &amp; Extremities division on <a href=\"https://twitter.com/Stryker_TE\">Twitter</a>.</p>\n<p><b>Media Contact<br>\n </b>Andrea Sampson, Sampson Public Relations Group<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a><br>\n562.304.0301</p>\n",
           "jcr:lastModified": "Mon Nov 15 2021 19:02:34 GMT+0000",
@@ -57,7 +57,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Nov 16 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-Nov-2021",
@@ -66,7 +66,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n",
     "jcr:lastModified": "Mon Nov 15 2021 15:46:05 GMT+0000",
@@ -79,7 +79,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "preset": "max_width_1440",
     "alt": "prophecy infinity image",
     "srcFileRef": "/content/dam/stryker/about/news/2021/new-prophecy/ProphecyInfinity_11.16.21.png",

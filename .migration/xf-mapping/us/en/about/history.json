@@ -10,7 +10,7 @@
   "jcr:versionHistory": "a87da6b7-c337-496e-b0e2-3bccf5fc884e",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "cf18ed4b-27de-4351-8326-b8a3da862ac5"
   ],
@@ -30,16 +30,16 @@
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "longtexthero": {
       "jcr:primaryType": "nt:unstructured",
       "longCopy": "<p>When Dr. Homer Stryker, an orthopaedic surgeon from Kalamazoo, Michigan, U.S., found that certain medical products were not meeting his patients’ needs, he invented new ones. As interest in these products grew, Dr. Stryker started a company in 1941 to produce them.</p>\r\n<p>Today, we are one of the world's leading medical technology companies, and alongside our customers, we are impacting the lives of millions of patients each year. Our diverse array of innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine help improve patient and healthcare outcomes. As our portfolio grows, our culture still reflects Dr. Stryker’s legacy, and we are well-positioned to continue making healthcare better for generations to come.</p>\r\n<p><a href=\"/content/stryker/us/en/about.html\" target=\"_blank\"><b>About us</b></a></p>\r\n",
-      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:createdBy": "user-cc3049cb53@example.invalid",
       "thumbnailRP": "/content/dam/stryker/about/history/SYK_HistoryTL_BannerImage.jpg",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jun 06 2017 17:37:55 GMT-0400",
       "jcr:lastModified": "Wed Mar 22 2023 20:05:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/longtexthero",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 08 2019 13:39:01 GMT+0000",
       "jcr:lastModified": "Mon Jul 08 2019 13:39:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -64,8 +64,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_1784291905": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jul 12 2019 17:25:57 GMT+0000",
           "hideBorder": "false",
           "type": "typeId",
@@ -79,7 +79,7 @@
             "fileReference": "/content/dam/stryker/about/history/videos/19SYK0618Stryker OriginsAG v5 Final.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/19SYK0618Stryker OriginsAG v5 Final-AVS",
             "urlModifiers": "",
@@ -93,8 +93,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Jul 10 2019 13:19:13 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Stryker origins<br>\n </span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Innovation is in our DNA</span></span></p>\n<p>Learn more about Dr. Homer Stryker, and the legacy that inspires our mission.</p>\n",
           "jcr:lastModified": "Wed Jul 10 2019 19:08:21 GMT+0000",
@@ -106,7 +106,7 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "jcr:lastModified": "Mon Jun 05 2017 12:57:08 GMT-0400",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },

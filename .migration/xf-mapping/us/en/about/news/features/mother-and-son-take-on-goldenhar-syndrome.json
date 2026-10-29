@@ -7,7 +7,7 @@
   "jcr:title": "Mother and son take on Goldenhar syndrome",
   "jcr:versionHistory": "c042d530-0ef7-481d-bed7-69e14e165206",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "2e4e6035-1629-4860-8495-2cbf89527d9b"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "760fc13a-d801-47ab-8d20-a907dee415a1",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jul 15 2021 15:31:16 GMT+0000",
       "jcr:lastModified": "Thu Jul 15 2021 15:31:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -42,10 +42,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/features/mother_and_son_take_/carousel---mother-and-son-take-on-goldenhar-syndrome---desktop/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/features/mother-and-son-take/carousel-mother-and-son-take-on-goldenhar-syndrome-desktop/master",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "28",
           "jcr:created": "Thu Jul 15 2021 15:31:21 GMT+0000",
@@ -60,8 +60,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Apr 29 2021 20:57:05 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Mother and son take on Goldenhar syndrome</span></span>",
@@ -80,8 +80,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jul 15 2021 15:32:20 GMT+0000",
       "jcr:lastModified": "Thu Jul 15 2021 15:32:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -91,8 +91,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Jul 15 2021 15:32:31 GMT+0000",
           "jcr:lastModified": "Thu Jul 15 2021 15:32:31 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -101,8 +101,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Jul 15 2021 15:32:34 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Thu Jul 15 2021 15:32:38 GMT+0000",
@@ -115,8 +115,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jul 15 2021 15:32:34 GMT+0000",
       "text": "<p>&nbsp;&nbsp;</p>\n",
       "jcr:lastModified": "Thu Jul 15 2021 15:32:38 GMT+0000",
@@ -125,8 +125,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jul 15 2021 15:32:10 GMT+0000",
       "text": "No parent is prepared to hear that their newborn baby has a rare condition, so when the Sadlier family had their fourth child, the diagnosis came as a shock. When Philip’s mother Wilhelmine first learned that her son Philip had Goldenhar syndrome, she had lots of questions and no answers. ‘What was Goldenhar syndrome?’ and ‘Who do I speak to about a treatment plan?’ crossed her mind. Distressed by his inability to eat and troubling facial development, she reached out to his pediatrician for support. The pediatrician recommended Dr. Kevin Lung, a pediatric oral and maxillofacial surgeon who has 27 years of experience in treating complex craniofacial cases. Wilhelmine was thankful for the recommendation but concerned about the rest of the family. The Sadlier family lives in a remote town in northern Canada, so to ensure Philip received the best treatment, he and his mother had to spend months away from the rest of the family, traveling to several hospitals during the COVID-19 pandemic, so he could receive the necessary care. Philip met Dr. Lung and his colleagues, experts in the field of oral and maxillofacial surgery, at a hospital (Strollery Children’s Hospital) in Alberta, Canada. The healthcare team worked quickly to develop a treatment plan for one of the world’s most rare diseases. Wilhelmine learned that Goldenhar syndrome is a rare congenital condition that can affect the development of the eye, ear, nose, throat, jaw or spine.2 After doing a physical assessment and reviewing Philip’s CT scan, Dr. Lung diagnosed him with a hemifacial microsomia, a condition in which the tissues on one side of the face are underdeveloped. In Philip’s case, the right side of his jaw and throat was underdeveloped, causing challenges with his breathing and eating. Dr. Lung recalls the initial diagnosis. “With respect to Philip, I was asked to diagnose him based on his respiratory insufficiency (difficulty breathing). After working with the craniofacial team and discussing the diagnosis with the parents, we felt that the most improvement could occur with a mandibular distraction.” Common signs and symptoms of Goldenhar syndrome3 Cleft lip and/or palate Difficulty eating Difficulty breathing Ear abnormalities, like a partially formed or completely absent ear Growths on the eyes, also called eipbulbar tumors Hearing loss Speech impediment Underdeveloped jaw, cheekbone and/or temple bone A treatment for one of the world’s most rare diseases Mandiblular distraction is a surgical procedure that can increase the length of the jaw. Dr. Lung began the distraction using Stryker’s Pediatric Mandibular Distractor (PMD) with anti-reverse mechanism, a tool intended to help elongate Philip’s lower jaw. By fixating the linear distractor to Philip’s mandible and slowly turning it half a millimeter to a millimeter a day, Dr. Lung was able to open up Philip’s airway. Similar to palate expanders used in orthodontics, a small end of the distractor is accessible by the parent, who uses a special screwdriver at a specified time to make the exact measured turns. Dr. Lung was proud to report that Philip’s surgery was a success. “In Philip’s case, it was quite interesting because not only did I want to open up his airway but I also wanted to improve his (facial) symmetry. Before surgery, we developed a virtual surgical plan so I knew before going in to surgery what we could achieve. We provided a surgical simulation video to Philip’s parents so they could actually see what was going to happen before we did the surgery. They were extremely impressed,” says Dr. Lung. After reviewing the surgical plan and asking questions, Wilhelmine was ready to take on Goldenhar syndrome with her son. She felt hopeful that the surgical procedure could improve his facial structure and most importantly, his quality of life. A look inside at a mandible reconstruction plate A new beginning Wilhelmine happily holds Philip as she says, “I remember asking Dr. Lung after surgery, ‘Is that actually his jaw?’ Philip looks so good. I’m so impressed that there’s so much new bone growth on the side of his jaw that was missing. Seeing all the room in the back of his mouth is very exciting because he can finally breathe normally.” Philip is happy with the result as well. He gazes up at his mother, smiling, as she says, “He’s just so much happier. He’s thriving. He’s eating two teaspoons a day, which is so good and a lot of progress. We’re hoping that his swallowing keeps getting better and his throat keeps improving so he can eat more and more by mouth. That’s our goal!” It’s been a long journey for Philip, but thanks to his mother’s support and the skills of his surgical team, he has a new beginning. Philip post-surgery with his brother and sisters Meet Philip",
       "jcr:lastModified": "Thu Jul 15 2021 18:00:59 GMT+0000",
@@ -137,7 +137,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed Jul 21 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Jul-2021",
@@ -146,14 +146,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Jul 15 2021 15:41:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Nguengang Wakap S, Lambert D M, Olry A, Rodwell C, Gueydan C, Lanneau V, Murphy D, Le Cam Y, Rath A. Estimating cumulative point prevalence of rare diseases: analysis of the Orphanet database. European Journal of Human Genetics, 2020. <a href=\"https://www.nature.com/articles/s41431-019-0508-0\">https://www.nature.com/articles/s41431-019-0508-0</a></li>\r\n<li>Oculo-Auriculo-Vertebral Spectrum. (n.d.). National Organization for Rare Disorders. Retrieved April 23, 2021, from <a href=\"https://rarediseases.org/rare-diseases/oculo-auriculo-vertebral-spectrum/\">https://rarediseases.org/rare-diseases/oculo-auriculo-vertebral-spectrum/</a></li>\r\n<li>U.S. Department of Health and Human Services. (n.d.). Goldenhar disease. Genetic and Rare Diseases Information Center. <a href=\"https://rarediseases.info.nih.gov/diseases/6540/goldenhar-disease\">https://rarediseases.info.nih.gov/diseases/6540/goldenhar-disease</a></li>\r\n</ol>\r\n",
     "jcr:lastModified": "Thu Jul 15 2021 17:54:32 GMT+0000",

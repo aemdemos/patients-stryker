@@ -7,7 +7,7 @@
   "jcr:title": "O.R. Safety Series: Protecting the Air You Breathe",
   "jcr:versionHistory": "232a715d-f6bd-4234-9640-f161ad970f3a",
   "cq:template": "/apps/stryker/templates/event-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "1dba14e8-9c71-4351-ad7f-8ad5419ad172"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "9acdff58-de28-4ac7-8cb9-4c2ccebc5a7c",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -41,7 +41,7 @@
     ],
     "eventContactEmail": "stephanie.eaton@stryker.com",
     "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/2516055517885/WN_L2VbJQ3GRDC0h-ZxPKE1jw",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "eventAudience": [
       "stryker:audience/nurses",
       "stryker:audience/or-professionals"

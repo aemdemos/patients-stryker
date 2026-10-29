@@ -7,7 +7,7 @@
   "jcr:title": "Stryker acquires Arrinex",
   "jcr:versionHistory": "fe72637b-6262-4545-bc43-67a5721e97a5",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "2e48e21b-56d2-4608-b6a6-1c1c06bcb86d"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "bd0ea334-1525-4526-8428-550317bc3b40",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Mon Feb 25 2019 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Feb-2019",
@@ -44,7 +44,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>Stryker (NYSE:SYK) announced today it has completed the acquisition of Arrinex, Inc., a medical device company headquartered in Menlo Park, California, that has developed ClariFix®, a novel cryoablation technology for the treatment of chronic rhinitis.&nbsp; This condition, which affects over 24 million people in the U.S. each year, may cause runny nose, congestion, sneezing and nasal itching. Arrinex, which was founded in 2013, began commercializing ClariFix in late 2017 in the U.S. ClariFix further expands Stryker’s Ear, Nose and Throat (ENT) portfolio with a unique product to address a large, underpenetrated segment of the ENT market where Stryker does not currently compete.</p>\n<p>“The acquisition of Arrinex is highly complementary to Stryker’s ENT portfolio, which is part of our Neurotechnology business,” said Spencer Stiles, Stryker’s Group President, Neurotechnology, Instruments and Spine. “This acquisition aligns with our focus on providing ENT physicians with new technologies that deliver more treatment options and better patient outcomes.”</p>\n<p><b>Forward-looking statements<br>\n </b>This press release contains information that includes or is based on forward-looking statements within the meaning of the federal securities law that are subject to various risks and uncertainties that could cause our actual results to differ materially from those expressed or implied in such statements. Such factors include, but are not limited to: weakening of economic conditions that could adversely affect the level of demand for our products; pricing pressures generally, including cost-containment measures that could adversely affect the price of or demand for our products; changes in foreign exchange markets; legislative and regulatory actions; unexpected charges or expenses in connection with the acquisition of Arrinex; unanticipated issues arising in connection with clinical studies and otherwise that affect U.S. Food and Drug Administration approval of new products; potential supply disruptions; changes in reimbursement levels from third-party payors; a significant increase in product liability claims; the ultimate total costs of recall-related matters; the impact of investigative and legal proceedings and compliance risks; resolution of tax audits; the impact of the federal legislation to reform the United States healthcare system; changes in financial markets; changes in the competitive environment; our ability to integrate acquisitions, including the acquisition of Arrinex; and our ability to realize anticipated cost savings. Additional information concerning these and other factors is contained in our filings with the U.S. Securities and Exchange Commission, including our Annual Report on Form 10-K and Quarterly Reports on Form 10-Q.</p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at<a href=\"http://www.stryker.com\">&nbsp;www.stryker.com</a>.</p>\n<p><b>Contacts</b></p>\n<p><b>For investor inquiries please contact</b>:<b>&nbsp;</b><br>\nKatherine A. Owen, Vice President, Strategy &amp; Investor Relations at 269-385-2600 or katherine.owen@stryker.com</p>\n<p><b>For media inquiries please contact</b>:<br>\nYin Becker, Vice President, Communications, Public Affairs and Corporate Marketing at 269-385-2600 or&nbsp;yin.becker@stryker.com</p>\n",
     "jcr:lastModified": "Tue Feb 26 2019 16:39:19 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -52,7 +52,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/ClariFix.jpg",
     "jcr:lastModified": "Tue Feb 26 2019 22:27:56 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"

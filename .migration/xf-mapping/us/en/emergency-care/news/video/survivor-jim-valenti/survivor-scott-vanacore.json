@@ -9,7 +9,7 @@
   "jcr:versionHistory": "cbe77e19-6cb1-4c0b-a1fb-b3803662cc88",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Scott Vanacore inside car wearing racing helmet",
   "jcr:predecessors": [
     "762aaf44-5a48-4d62-b19e-30f645c674b9"
@@ -36,14 +36,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "videoType": "typeId",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Fri Sep 25 2026 14:10:30 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -57,7 +57,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-scott-vanacore_web.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-scott-vanacore_web-AVS",
         "urlModifiers": "",
@@ -74,8 +74,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Fri Sep 25 2026 14:10:35 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -88,8 +88,8 @@
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Fri Sep 25 2026 14:10:41 GMT+0000",
       "hideButton": "false",
       "title": "Related",
@@ -120,7 +120,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Fri Oct 02 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-Oct-2026",

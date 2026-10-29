@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s Environmental Alliance Partners with The McHenry County Conservation District to clean up Hickory Grove Highlands",
   "jcr:versionHistory": "b8eaa454-d711-4e83-b736-d72c3f3cb04f",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "thumbnailAltText": "Stryker’s Environmental Alliance team members",
   "jcr:predecessors": [
     "6b8e905c-f6a6-4cc6-a8a3-0ef913b4d6c0"
@@ -27,14 +27,14 @@
   "jcr:uuid": "4204eaaa-e6c2-4c70-a69f-1c3d6daf2a68",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Fri Jul 29 2022 18:51:58 GMT+0000",
       "jcr:lastModified": "Fri Jul 29 2022 18:51:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -43,9 +43,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
           "description": "Working together to clear the brush",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "preset": "max_width_auto",
           "jcr:created": "Fri Jul 29 2022 18:52:22 GMT+0000",
           "alt": "Stryker's Environmental Alliance team members clearing brush",
@@ -57,8 +57,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Fri Jul 29 2022 21:02:21 GMT+0000",
           "text": "<p>The team worked with MCCD employees to help remove invasive species such as buckthorn and honeysuckle that can often crowd out the native oak trees. This was the first of several planned events that SEA will partner with MCCD to help improve the local environment. Brian Ecklund, Senior Staff Engineer, and a SEA member said, “It’s great to know that in addition to working in the healthcare industry I can also make a direct impact on our community. Every little bit helps.”</p>\n<p>“As a healthcare company, we’re working to create a better world – and that includes our environment. We had a great time, made some new friends, and helped clean up our forest preserve. Sounds like a great day to me,” said Chris Schmidt, Senior Director, Manufacturing.</p>\n<p>This is the second environmental event the SEA has partnered with the MCCD. The first was a tree planting event which took place last Fall.</p>\n",
           "jcr:lastModified": "Fri Jul 29 2022 21:03:10 GMT+0000",
@@ -70,7 +70,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Fri Jul 29 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "29-Jul-2022",
@@ -83,7 +83,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_auto",
     "alt": "Stryker’s Environmental Alliance team members",
     "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-SEA-Event.jpg",
@@ -94,7 +94,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "text": "<p>Recently, members of the Stryker Environmental Alliance (SEA) participated in a clean-up event at the Hickory Grove Highlands Conservation Area in Cary, IL. Members of SEA are Stryker employees who volunteer their time and effort to put their commitment to improving the environment into action. The event was organized by the McHenry County Conservation District (MCCD). The MCCD owns or manages 25,623 acres of open space and provides wildlife habitat preservation, educational opportunities, and recreational amenities for the citizens of McHenry County to appreciate and enjoy. Within the District there are 17 dedicated State Nature Preserves.</p>\n<h2>Investing in our environment</h2>\n<p>The Stryker employees who took part in the event at Hickory Grove Highlands Nature Preserve were able to use designated volunteer hours to participate during the day. Jan Sahm, the SEA chapter leader and Staff Project Specialist Quality Operations, stated, “It was a great opportunity to make a real difference in our community. It shows a strong commitment from our corporate leadership to allow us to dedicate our time to this issue.”</p>\n",
     "jcr:lastModified": "Fri Jul 29 2022 21:02:47 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

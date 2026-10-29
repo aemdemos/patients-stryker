@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7ff76ad7-a35f-42fd-8534-e65087f44336",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "3D rendering of Smart Hospital rooms",
   "jcr:predecessors": [
     "314db0bc-93d7-4e9f-8d9b-cc9fc3c7846b"
@@ -30,22 +30,22 @@
   "jcr:uuid": "6520cf51-e1e6-425e-95a0-de4942fdabee",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Apr 06 2026 17:08:57 GMT+0000",
       "jcr:lastModified": "Mon Apr 06 2026 17:08:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Apr 06 2026 17:09:03 GMT+0000",
       "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;<br>\n<a>www.stryker.com</a>.</p>\n<p>To learn more about the SmartHospital Platform, visit <a>stryker.com/smarthospitalplatform</a>&nbsp;</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Stryker&nbsp;<br>\nJenny Braga&nbsp;<br>\nSenior Director, External Affairs<br>\n<a>jenny.braga@stryker.com</a>&nbsp;&nbsp;<br>\n</p>\n",
       "jcr:lastModified": "Mon Apr 06 2026 17:09:27 GMT+0000",
@@ -55,7 +55,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Mon Mar 09 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "09-Mar-2026",
@@ -68,7 +68,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "preset": "max_width_1440",
     "alt": "3D rendering depicting Smart Hospital rooms",
     "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-launches-smarthospital-platform/images/smarthospital-press-release-graphic-hero.jpg",
@@ -79,7 +79,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">New platform connects devices, data and care teams across the patient journey to streamline operations and enhance outcomes for patients and staff</span></span></p>\n<p><b><span class=\"futura-bold\">PORTAGE, Mich., USA&nbsp;–&nbsp;March 9, 2026&nbsp;</span></b>– Stryker (NYSE:SYK), a global leader in medical technologies, today announced its new SmartHospital Platform, a digital foundation designed to connect devices, data and care teams across the hospital into one intelligent, adaptive ecosystem. The launch comes ahead of the 2026 HIMSS Global Conference &amp; Exhibition and marks a significant expansion of Stryker’s digital offerings.</p>\n<p>The SmartHospital Platform is being led by Stryker’s new Smart Care business, established to advance the company’s ongoing commitment to supporting their customers’ digital transformations. Built to help address today’s healthcare challenges, including system fragmentation, staff overload and high patient volumes, the SmartHospital Platform scales to support the unique needs of hospitals and health systems, surfacing relevant insights to inform clinical decisions and enhance workflow efficiency.</p>\n<p>“We are dedicated to partnering with our customers on their digital journeys to help elevate care delivery,&quot; said Scott Sagehorn, VP/GM of Smart Care at Stryker. “The SmartHospital Platform is designed to evolve alongside health systems so teams can work more efficiently and stay focused on patient-centered care.”</p>\n<p>Key capabilities of the SmartHospital Platform include:</p>\n<ul>\n<li><b><span class=\"futura-bold\">Connected infrastructure:</span></b> The platform connects devices and data to support clinical and operational workflows across transport, treatment and recovery, helping teams better coordinate patient care.</li>\n<li><b><span class=\"futura-bold\">Clinical communication:</span></b> Voice-activated, hands-free communication devices such as Stryker’s Sync Badge give teams critical information and prioritized alarms to support timely, coordinated care delivery across the hospital.</li>\n<li><b><span class=\"futura-bold\">Workflow engine:</span>&nbsp;</b>Engage, the intelligent middleware engine behind the SmartHospital Platform, helps reduce communication silos by filtering and prioritizing alarms and notifications so staff can stay informed across busy care settings.</li>\n<li><b><span class=\"futura-bold\">Virtual care:</span></b> Virtual nursing and virtual monitoring workflows help support bedside staff by streamlining administrative tasks and empowering them to stay focused on the patient experience.</li>\n<li><b><span class=\"futura-bold\">Ambient intelligence:</span></b> Ambient sensors, computer vision, AI and contextual data help the care environment become more aware, adaptive and responsive.</li>\n</ul>\n<p>“Launching the SmartHospital Platform is an important step forward in supporting our customers as they transform care delivery,” said Jessica Mathieson, president of Medical at Stryker. “We remain focused on solving problems, helping nurses and staff spend less time navigating complexity and more time with patients.”</p>\n",
     "jcr:lastModified": "Mon Apr 06 2026 17:07:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

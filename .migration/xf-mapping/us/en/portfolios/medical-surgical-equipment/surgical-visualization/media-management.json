@@ -10,7 +10,7 @@
   "jcr:versionHistory": "1acdfedb-0252-4087-b57e-7af8775eadad",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Media and data management",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-DataManagement.jpg",
   "jcr:predecessors": [
@@ -38,7 +38,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -51,7 +51,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 21:17:03 GMT+0000",
     "loadMoreText": "Load More",
@@ -62,7 +62,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Media and data management",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Thu Aug 01 2024 23:43:33 GMT+0000",

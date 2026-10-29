@@ -9,7 +9,7 @@
   "jcr:versionHistory": "82940ea5-57a2-4378-86c2-3d7be66be767",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "46c79b9a-b36d-45e1-9ee7-4e2a532c3db3"
   ],
@@ -30,15 +30,15 @@
   "jcr:uuid": "2a0b74a5-74e1-4d4b-b5a0-366e5e847672",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "description": "Jordan Schoen was only 17 when he collapsed on the basketball court. Watch to learn how the system of care saved his life and why this experience drove his family to give back to their community.",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -51,7 +51,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-jordan-schoen.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-jordan-schoen-AVS",
         "urlModifiers": "",
@@ -65,16 +65,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:54:59 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:54:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
@@ -98,7 +98,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Fri Dec 10 2021 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Dec-2021",

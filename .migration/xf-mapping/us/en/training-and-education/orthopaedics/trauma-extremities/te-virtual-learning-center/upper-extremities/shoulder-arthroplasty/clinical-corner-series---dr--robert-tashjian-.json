@@ -9,7 +9,7 @@
   "jcr:versionHistory": "633dabc5-6575-404b-9bdd-1fe3b9fc7e3b",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "e926cfe1-eadf-49c4-8e5b-5323d95597e7"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "69343889-0606-4145-9f69-9cfdfd6db0f2",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:04:54 GMT+0000",
       "text": "Clinical Corner Series: Dr. Robert Tashjian Dr. Robert Tashjian, University of Utah – Salt Lake City, discusses this publication “Humeral Bone Loss in Revision Total Shoulder Arthroplasty: the Proximal Humeral Arthroplasty Revision Osseous inSufficiency (PHAROS) Classification System.\" AP-013806B Tashjian_Clinical Article Summary.pdf Clin Orthop Relat Res. 2019 Feb; 477(2): 432–441. The abstract can be found at: doi: 10.1097/CORR.0000000000000590 AP-016254A",
       "jcr:lastModified": "Tue Sep 27 2022 18:41:29 GMT+0000",

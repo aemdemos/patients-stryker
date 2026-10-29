@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f26e7148-0211-4ff6-86ce-f7546a6198ea",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Sage M² Microclimate Body Pads protect patient skin",
   "jcr:predecessors": [
     "9cc63ad8-e1f5-41a5-a4c2-eaf2092d7292"
@@ -40,14 +40,14 @@
   "jcr:uuid": "a0d77d0f-eedf-4bc3-9f9b-fa450b5e9f73",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:55:03 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:55:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -56,10 +56,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/sage_m2_microclimate/hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/sage-m2-microclimate/hero/master",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "18",
           "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
@@ -77,7 +77,7 @@
             },
             "text5520009668863520": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
               "hideComponent": "false",
               "topMargin": "7",
               "gradientDirection": "left-to-right",
@@ -97,8 +97,8 @@
             },
             "curatedcta_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "ctaLinkType": "deep",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
@@ -118,8 +118,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "overview",
       "jcr:created": "Tue Nov 21 2023 18:57:04 GMT+0000",
@@ -129,8 +129,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 28 2023 18:15:36 GMT+0000",
       "jcr:lastModified": "Tue Nov 28 2023 18:15:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -139,8 +139,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:46:50 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -155,8 +155,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -170,8 +170,8 @@
     },
     "section_title_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "connect",
       "jcr:created": "Tue Nov 21 2023 18:57:04 GMT+0000",
@@ -181,8 +181,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -192,10 +192,10 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "leftPadding": "2",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -209,8 +209,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -219,10 +219,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy_cop": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1259",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",
@@ -237,8 +237,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
           "text": "Contact information Product feedback Customer service",
           "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
@@ -250,8 +250,8 @@
     },
     "section_title_copy_357260990": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Tue Nov 21 2023 18:57:04 GMT+0000",
@@ -261,12 +261,12 @@
     },
     "carouselslide_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master",
       "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/master",
       "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile",
       "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/carousel-option-mobile",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "mobileOverlay": "mobile_Bottom",
       "verticalMargin": "5",
       "jcr:created": "Mon Oct 28 2024 21:35:46 GMT+0000",
@@ -279,8 +279,8 @@
     },
     "tabs": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:42:01 GMT+0000",
       "jcr:lastModified": "Fri Dec 15 2023 17:29:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/tabs",
@@ -295,7 +295,7 @@
             "/content/dam/stryker/sage/resources/Pressure-Injury-and-Safe-Patient-Handling-Brochure.pdf",
             "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Injury-Prevention.pdf"
           ],
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jumpbarHidden": "true",
           "jcr:lastModified": "Tue Nov 21 2023 18:57:56 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -308,7 +308,7 @@
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
           "resources": "/content/dam/stryker/sage/resources/What-the-Experts-Say-Pressure-Injury.pdf",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jumpbarHidden": "true",
           "jcr:lastModified": "Tue Nov 21 2023 18:58:03 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -320,8 +320,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "customizable_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
           "jcr:lastModified": "Wed Nov 29 2023 15:57:18 GMT+0000",
           "sling:resourceType": "stryker/components/content/customizable",
@@ -362,8 +362,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Tue Dec 13 2022 16:03:24 GMT+0000",
       "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
       "jcr:lastModified": "Tue Dec 13 2022 16:03:38 GMT+0000",
@@ -379,7 +379,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>Each disposable Microclimate Body Pad effectively absorbs sweat and incontinence moisture away from the skin. The pad also helps protect bedding and linens during an incontinent episode. The Microclimate Body Pad not only traps moisture, but also allows air to pass through, protecting the patient's skin.</p>\r\n",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Nov 28 2023 18:15:17 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -391,7 +391,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "internalLink": "/content/stryker/us/en/sage",
     "jcr:lastModified": "Tue Nov 28 2023 18:15:21 GMT+0000",
@@ -402,28 +402,28 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Nov 21 2023 18:48:33 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Tue Nov 21 2023 18:56:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Nov 28 2023 18:18:18 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Tue Nov 21 2023 18:47:24 GMT+0000",

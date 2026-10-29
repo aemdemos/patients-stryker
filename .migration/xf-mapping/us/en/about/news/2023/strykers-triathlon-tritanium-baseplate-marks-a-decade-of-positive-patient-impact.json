@@ -9,7 +9,7 @@
   "jcr:versionHistory": "98e69ec9-06d7-4960-85ab-e3bfc3af3f24",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Triathlon Cementless-hero",
   "jcr:predecessors": [
     "6e5ad7cd-7638-49f2-afb0-a5cc44a923e6"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Sep 12 2023 14:45:34 GMT+0000",
       "jcr:lastModified": "Tue Sep 12 2023 14:45:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -49,8 +49,8 @@
         "text_1521933723_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -62,8 +62,8 @@
         "text_1521933723_copy_954784943": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -76,8 +76,8 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+      "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
       "jcr:created": "Tue Sep 12 2023 14:53:53 GMT+0000",
       "jcr:lastModified": "Tue Sep 12 2023 14:53:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -85,8 +85,8 @@
     "text_1521933723_copy": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "2",
-      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -98,8 +98,8 @@
     "text_1521933723_copy_837895373": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "5",
-      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -111,7 +111,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Thu Sep 21 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Sep-2023",
@@ -120,7 +120,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>Stryker’s sales data on file</li>\r\n<li>Sharpe, K., Robinson, K., Cohen, R., Barnett TM., Rastogi, A., Masini, M. Does Implant Fixation Affect Early Return to Function Following Primary Total Knee Arthroplasty. ISTA 2018. London, UK.</li>\r\n<li>Hannon CP, Salih R, Barrack RL, Nunley RM. Cementless Versus Cemented Total Knee Arthroplasty: Concise Midterm Results of a Prospective Randomized Controlled Trial. JBJS. 2023 Jun 22:10-2106.</li>\r\n<li>Nam D, Bhowmik-Stoker M, Mahoney OM, Dunbar MJ, Barrack RL. Mid-Term Performance of the First Mass-Produced Three-Dimensional Printed Cementless Tibia in the United States as Reported in the American Joint Replacement Registry. J Arthroplasty. 2023 Jan;38(1):85-89.</li>\r\n<li>Nam, D, et al. Cemented Versus Cementless Total Knee Arthroplasty of the Same Modern Design: A Prospective, Randomized Trial. The Journal of Bone and Joint Surgery 101(13):p 1185-1192, July 3, 2019. | DOI: 10.2106/JBJS.18.01162</li>\r\n<li>Lawrie CM, Schwabe M, Pierce A, Nunley RM, Barrack RL. The cost of implanting a cemented versus cementless total knee arthroplasty. Bone Joint J. 2019 Jul;101-B(7_Supple_C):61-63. doi: 10.1302/0301-620X.101B7.BJJ-2018-1470.R1. PMID: 31256655.</li>\r\n<li>Triathlon Surgical Compendium TRIATH-SP-30_Rev-2_34473</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Thu Sep 21 2023 17:13:03 GMT+0000",
@@ -129,7 +129,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "Triathlon Cementless-hero",
     "srcFileRef": "/content/dam/stryker/about/news/2023/stryker-announces-over-1-million-triathlon-cementless-knees-implanted-globally/images/Triathlon Cementless-hero.jpg",

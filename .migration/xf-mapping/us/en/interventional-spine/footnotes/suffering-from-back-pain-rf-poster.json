@@ -10,7 +10,7 @@
   "jcr:versionHistory": "54adcbc8-8ce6-48df-b32f-a26568ea2059",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "3b2d81c0-5028-4217-a1cc-5bb0f1399f28"
   ],
@@ -27,7 +27,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
       "text": "❮ BACK",
       "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
@@ -47,16 +47,16 @@
     },
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Sep 10 2025 22:32:16 GMT+0000",
       "jcr:lastModified": "Wed Sep 10 2025 22:32:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Sep 10 2025 22:32:21 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Rev None</span></span></p>\n<p><b>Revision Date: 12.04.15</b></p>\n<ol>\n<li>North American Spine Society. Back Pain is a Big Issue for U.S. Adults: NASS Survey Results Show More than Half the Population Suffers. SpineLine NASS News, November/December 2004. p49. View Article, Accessed May 29, 2014.</li>\n<li>Nath S, Nath CA, Pettersson K. Percutaneous lumbar zygapophysial (facet) joint neurotomy using radiofrequency current, in the management of chronic low back pain. A randomized double-blind trial. Spine. 2008 May 20;33(12):1291-7; discussion 1298.</li>\n<li>International Spine Intervention Society. Practice Guidelines for Spinal Diagnostic and Treatment Procedures. Percuteneous radiofrequency lumbar medial branch neurotomy. pp188-218.</li>\n<li>Fenton DS, Czervionke LF. Chapter 3 Facet Denervation. Image-Guided Spine Intervention 1st Ed. Saunders 2002; p 51-71.</li>\n<li>Burnham RS, Yasui Y. An alternate method of radiofrequency neurotomy of the sacroiliac joint: a pilot study of the effect on pain, function, and satisfaction. Reg Anesth Pain Med. 2007 Jan-Feb;32(1):12-9.</li>\n<li>Boswell MV, Colson JD, Sehgal N, Dunbar EE, Epter R. A systematic review of therapeutic facet joint interventions in chronic spinal pain. Pain Physician 2007 Jan;10(1):229-53.</li>\n<li>Dreyfuss P, Halbrook B, Pauza K, Joshi A, McLarty J, Bogduk N. Efficacy and validity of radiofrequency neurotomy for chronic lumbar zygapophysial joint pain. Spine. 2000 May 15;25(10):1270-7.</li>\n</ol>\n",
       "jcr:lastModified": "Wed Sep 10 2025 22:33:18 GMT+0000",

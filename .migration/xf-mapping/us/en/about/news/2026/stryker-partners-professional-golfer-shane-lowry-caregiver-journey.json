@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f7ce9c36-55e2-4b86-a028-c5d3e1637108",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Shane Lowry and dad",
   "jcr:predecessors": [
     "060099f2-0872-4093-9192-5d2e5be27fea"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Jun 22 2026 22:13:23 GMT+0000",
       "jcr:lastModified": "Mon Jun 22 2026 22:13:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -50,8 +50,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Jun 22 2026 22:15:21 GMT+0000",
           "text": "<p><b>Portage, Mich., USA</b> – <b>June 24, 2026</b> –&nbsp;Stryker (NYSE: SYK), a global leader in medical technologies, today announced a new partnership with Major Champion and globally recognized golfer Shane Lowry at the Travelers Championship in Cromwell, Connecticut, naming him a sponsored brand ambassador for its Joint Replacement division. Through this collaboration, Lowry will share a deeply personal story, highlighting the critical role caregivers play in supporting loved ones through joint pain, surgery and recovery.</p>\n<p>As a caregiver to his father, Brendan, a former Gaelic football player and knee and hip replacement recipient, Lowry brings a unique perspective, having seen firsthand the impact joint pain has on both patients and their families. Research shows that support from family and caregivers can positively impact recovery and outcomes.<sup>1,2</sup> Together with Stryker, Lowry will help raise awareness of the experience someone struggling with joint pain may go through and empower caregivers to take an active role throughout their loved one’s journey, from education to recovery.</p>\n<p>“Watching my dad in pain because of his hip and knee was as hard as anything I’ve come across on the course. As a caregiver, you want to help, but it’s not always clear where to start,” said Lowry. “I’ve learned that asking the right questions, finding the right doctor and simply being there along the way can make a big difference. I didn’t realize at the time how many Stryker technologies are out there to support those who suffer from joint pain, and I’m proud to now be partnering with a company helping people to keep moving forward. I hope sharing my story encourages others to take that first step with a loved one.”</p>\n<p>Through a global campaign spanning media, social channels and educational initiatives, Lowry will help elevate the role of caregivers and encourage a more proactive engagement in the joint replacement journey. By focusing on awareness, education and access to information, the campaign aims to support caregivers as they help loved ones take the first step, from understanding treatment options to navigating recovery.</p>\n<p>“We know joint replacement is more than surgery – it’s a personal journey that affects both patients and the people who support them every step of the way,” said Katherine Truppi, president of Stryker’s Joint Replacement division. “As we continue to move lives, we also value the essential and often underrecognized role caregivers play in helping loved ones navigate treatment decisions and recovery. Shane’s story brings that perspective to life in an authentic and meaningful way that we hope can help more people.”</p>\n<p>Throughout the Travelers Championship, fans are invited to stop by the Fan Zone to learn about treatment options for joint pain.</p>\n<p>For more information and downloadable resources, please visit <a href=\"https://www.MoveLivesTogether.com\">www.MoveLivesTogether.com</a>.<br>\n&nbsp;</p>\n",
           "jcr:lastModified": "Tue Jun 23 2026 15:57:53 GMT+0000",
@@ -60,16 +60,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Jun 22 2026 22:16:55 GMT+0000",
           "jcr:lastModified": "Mon Jun 22 2026 22:16:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_1290792164": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Jun 22 2026 22:17:15 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nStryker<br>\nJenny Braga<br>\nSenior Director, External Affairs<br>\n<a href=\"mailto:jenny.braga@stryker.com\">jenny.braga@stryker.com</a></p>\n",
           "jcr:lastModified": "Mon Jun 22 2026 22:18:13 GMT+0000",
@@ -84,8 +84,8 @@
     },
     "socialsharing": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Jun 22 2026 22:16:35 GMT+0000",
       "isColoredIcon": "0",
       "isLeftAligned": "1",
@@ -99,7 +99,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Wed Jun 24 2026 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Jun-2026",
@@ -108,7 +108,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>Wylde V, Kunutsor SK, Lenguerrand E, Jackson J, Blom AW, Beswick AD. Is social support associated with patient-reported outcomes after joint replacement? A systematic review and meta-analysis. <i style=\"font-size: 0.8125rem;\">Lancet Rheumatol</i>. 2019;1(3):e174-e186. doi:10.1016/S2665-9913(19)30050-5</li>\r\n<li>Singh J, Saag K, Lemay C, Allison J, Franklin P. Effect of Family Support on Short-and Intermediate Term Pain and Function Outcomes after Knee or Hip Replacement. Abstract Number 64 American College of Rheumatology Annual Meeting 2014. November 14-19, 2014. Boston, MA.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue Jun 23 2026 15:58:33 GMT+0000",
@@ -117,7 +117,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_auto",
     "alt": "Shane Lowry and dad",
     "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-partners-with-shane-lowry/Shane-Lowry-and-dad-1200x625-v4.jpg",

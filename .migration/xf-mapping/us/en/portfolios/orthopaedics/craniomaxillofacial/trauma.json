@@ -8,7 +8,7 @@
   "jcr:title": "Trauma",
   "jcr:versionHistory": "017e01a1-53fe-4aa3-b474-165906739820",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+  "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/cmf-implants/images/Thumbnail_Trauma.png",
   "jcr:predecessors": [
     "e55cb705-8430-4492-b9f1-4b2838eeaf0d"
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -41,7 +41,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -49,7 +49,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -59,14 +59,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 16:08:55 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true"
   },
@@ -75,27 +75,27 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "disclaimer-type": "text",
     "disclaimer": "<p>¹In the US, based on internal estimates. Sales data on file.<br>\r\n</p>\r\n",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
     "textIsRich": "true",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/cmf-implants/images/Hero_Trauma.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

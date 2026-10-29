@@ -9,7 +9,7 @@
   "jcr:versionHistory": "4bb73246-941c-4b5f-aa46-16bc4060d71a",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+  "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
   "jcr:predecessors": [
     "62432774-43be-402c-9b18-03883392941c"
   ],
@@ -24,7 +24,7 @@
   "jcr:uuid": "02805f79-2b56-4365-82b5-e83a5d1016cb",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "troy.boehm@stryker.com",
+  "cq:lastModifiedBy": "user-5acc539437@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -33,8 +33,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Apr 05 2022 17:56:15 GMT+0000",
       "text": "<p><span style=\"color: #ffb500;\"><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">&lt; </a><u><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">Back to Driven By Evidence Home</a></u></span><u></u></p>\n",
       "jcr:lastModified": "Tue Apr 05 2022 18:01:39 GMT+0000",
@@ -43,8 +43,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Thu Mar 09 2023 19:36:28 GMT+0000",
       "jcr:lastModified": "Thu Mar 09 2023 19:36:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -53,8 +53,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Mar 09 2023 19:36:39 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -68,9 +68,9 @@
     },
     "fullwidthimage_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "dimensionBox": "FDB",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "layoutOptions": "50_top",
       "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/Atlas-Y-Stenting-Hero.png",
       "jcr:created": "Fri Feb 18 2022 19:10:06 GMT+0000",
@@ -82,8 +82,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Feb 18 2022 19:10:43 GMT+0000",
           "jcr:lastModified": "Fri Feb 18 2022 19:10:43 GMT+0000",
           "sling:resourceType": "stryker/components/content/largeheadline"
@@ -91,7 +91,7 @@
       },
       "col2": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+        "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
         "jcr:lastModified": "Wed Dec 07 2022 22:06:12 GMT+0000",
         "sling:resourceType": "stryker/components/content/columncontrol/cols2",
         "col1": {
@@ -99,8 +99,8 @@
           "sling:resourceType": "wcm/foundation/components/parsys",
           "text": {
             "jcr:primaryType": "nt:unstructured",
-            "jcr:createdBy": "darek.jansen1@stryker.com",
-            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "jcr:createdBy": "user-f03ac58e27@example.invalid",
+            "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
             "hideComponent": "false",
             "jcr:created": "Wed Dec 07 2022 21:38:11 GMT+0000",
             "gradientDirection": "left-to-right",
@@ -113,10 +113,10 @@
           "text_copy": {
             "jcr:primaryType": "nt:unstructured",
             "bottomPadding": ".5",
-            "jcr:createdBy": "garrett.shue@stryker.com",
+            "jcr:createdBy": "user-7065227e84@example.invalid",
             "leftPadding": "3",
             "topPadding": "0",
-            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
             "hideComponent": "false",
             "rightMargin": "15",
             "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
@@ -132,8 +132,8 @@
           },
           "text_copy_1654321463": {
             "jcr:primaryType": "nt:unstructured",
-            "jcr:createdBy": "garrett.shue@stryker.com",
-            "jcr:lastModifiedBy": "troy.boehm@stryker.com",
+            "jcr:createdBy": "user-7065227e84@example.invalid",
+            "jcr:lastModifiedBy": "user-5acc539437@example.invalid",
             "hideComponent": "false",
             "rightMargin": "15",
             "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
@@ -149,16 +149,16 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Wed Dec 07 2022 18:21:38 GMT+0000",
       "jcr:lastModified": "Wed Dec 07 2022 18:21:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Wed Dec 07 2022 18:23:19 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<h2><span class=\"futura-bold\">The results are in</span></h2>\r\n",
@@ -172,9 +172,9 @@
     },
     "fullwidthimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
       "dimensionBox": "ND",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "layoutOptions": "col-sm-12",
       "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/NV--Y Stenting -results infographic -60 patients -v3.png",
       "jcr:created": "Wed Dec 07 2022 18:24:36 GMT+0000",
@@ -184,8 +184,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "hideSectionTitleComp": "true",
       "jcr:created": "Wed Dec 07 2022 18:22:27 GMT+0000",
       "title": "The results are in",
@@ -194,8 +194,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Wed Dec 07 2022 17:43:51 GMT+0000",
       "jcr:lastModified": "Wed Dec 07 2022 17:43:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -204,8 +204,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Wed Dec 07 2022 17:44:10 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -218,9 +218,9 @@
         "buttonset": {
           "jcr:primaryType": "nt:unstructured",
           "buttonSeriesColors": "rgba(76,125,122,1)",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
           "buttonAlignment": "horizontal-alignment align-left",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Wed Dec 07 2022 21:57:33 GMT+0000",
           "jcr:lastModified": "Tue Jan 10 2023 18:02:47 GMT+0000",
           "sling:resourceType": "stryker/components/content/buttonset",
@@ -241,8 +241,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "preset": "max_width_png",
           "jcr:created": "Wed Dec 07 2022 18:14:52 GMT+0000",
           "alt": "Y Stenting: 81.1% Primary effectiveness endpoint",
@@ -258,8 +258,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "preset": "max_width_png",
           "jcr:created": "Wed Dec 07 2022 18:14:52 GMT+0000",
           "alt": "Y Stenting: 3.3% Primary safety endpoint",
@@ -273,8 +273,8 @@
     },
     "cols_2062942866": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 01 2022 16:07:31 GMT+0000",
       "jcr:lastModified": "Fri Apr 01 2022 16:07:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -283,16 +283,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Wed Dec 07 2022 18:21:38 GMT+0000",
           "jcr:lastModified": "Wed Dec 07 2022 18:21:38 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Wed Dec 07 2022 21:29:27 GMT+0000",
           "text": "<p>Results are based on retrospective subset analysis of a single-arm trial</p>\n<p>Source: Jadhav AP, Desai SM, Jovin TG et al. Y-Stent–Assisted Coiling of Wide-Necked Intracranial Aneurysms With the Neuroform Atlas Stent System.</p>\n<p>Stroke Vasc Interv Neurol. 2022;0:e000437</p>\n",
           "jcr:lastModified": "Wed Dec 07 2022 21:30:21 GMT+0000",
@@ -303,16 +303,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Wed Dec 07 2022 21:57:03 GMT+0000",
       "jcr:lastModified": "Wed Dec 07 2022 21:57:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Wed Dec 07 2022 22:19:57 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -323,8 +323,8 @@
     },
     "cols3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 01 2022 15:50:43 GMT+0000",
       "jcr:lastModified": "Fri Apr 01 2022 15:50:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -333,8 +333,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -350,8 +350,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
           "text": "<ul>\n<li>Mass&nbsp;effect</li>\n<li>Myocardial&nbsp;infarction</li>\n<li>Neurological&nbsp;deficit/intracranial&nbsp;sequelae</li>\n<li>Pseudoaneurysm</li>\n<li>Reaction to radiation exposure (i.e., alopecia, burns ranging in severity from skin&nbsp;reddening to ulcers, cataracts, or delayed neoplasia)</li>\n<li>Reactions&nbsp;to&nbsp;anti-platelet/anti-coagulant&nbsp;agents</li>\n<li>Renal&nbsp;failure</li>\n<li>Seizure</li>\n<li>Stent&nbsp;fracture,&nbsp;migration/embolization,&nbsp;or&nbsp;misplacement</li>\n<li>Stent&nbsp;thrombosis</li>\n<li>Stroke</li>\n<li>Transient&nbsp;ischemic&nbsp;attack</li>\n<li>Vasospasm</li>\n<li>Vessel&nbsp;occlusion&nbsp;or&nbsp;closure&nbsp;including&nbsp;parent&nbsp;vessel&nbsp;or&nbsp;non-target&nbsp;side-branches</li>\n<li>Vessel&nbsp;perforation/rupture,&nbsp;dissection,&nbsp;trauma&nbsp;or&nbsp;damage</li>\n<li>Vessel thrombosis</li>\n<li>Visual&nbsp;impairment</li>\n<li>Other procedural complications including but not limited to anesthetic and contrast media risks, hypotension, hypertension, access site complications (including pain, hematoma, local bleeding, local infection, and injury to the artery (i.e. dissection), vein, or adjacent nerves)<br>\n</li>\n<li>Unplanned&nbsp;intervention</li>\n</ul>\n<p><b>Warnings</b></p>\n<p>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</p>\n<p>For single use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing or resterilization may compromise the structural integrity of the device and/or lead to device failure which, in turn, may result in patient injury, illness or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection,including, but not limited to, the transmission of infectious disease(s) from one patient to another. Contamination of the device may lead to injury, illness or death of the patient.</p>\n<p>After use, dispose of product and packaging in accordance with hospital, administrative and/or local government policy.<br>\n</p>\n<ul>\n<li>This device should only be used by physicians who have received appropriate&nbsp;training in interventional neuroradiology or interventional radiology and preclinical&nbsp;training on the use of this device as established by Stryker Neurovascular.</li>\n<li>Persons allergic to nickel titanium (Nitinol) may suffer an allergic response to this&nbsp;stent&nbsp;implant.</li>\n</ul>\n",
           "jcr:lastModified": "Wed Dec 07 2022 22:38:56 GMT+0000",
@@ -364,8 +364,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -379,7 +379,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+    "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>AP-003948 v1.0<br>\r\n</p>\r\n",
     "jcr:lastModified": "Wed Dec 07 2022 21:56:49 GMT+0000",

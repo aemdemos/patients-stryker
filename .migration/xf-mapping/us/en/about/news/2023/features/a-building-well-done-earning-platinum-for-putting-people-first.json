@@ -9,7 +9,7 @@
   "jcr:versionHistory": "eed785e2-4bfb-4de8-8091-284e0665da96",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Stryker Jan 2020",
   "jcr:predecessors": [
     "0164a329-ecac-4aed-bfa7-0cb079d453d3"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 16 2023 21:54:25 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 21:54:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -50,12 +50,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/hero-image/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/a-building-well-done/hero-image/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/hero-image/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/a-building-well-done/hero-image/mobile",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "28",
           "jcr:created": "Thu Feb 16 2023 21:54:30 GMT+0000",
@@ -70,8 +70,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Feb 16 2023 21:55:13 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">A building WELL done</span>  <br />\r\n Earning Platinum for putting people first</span></h1>\r\n",
@@ -89,8 +89,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 16 2023 21:54:56 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 21:55:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -98,24 +98,24 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 16 2023 21:55:05 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 21:55:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_517861736": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 16 2023 21:55:09 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 21:55:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 16 2023 21:09:25 GMT+0000",
       "text": "Walk through the halls of 1941 Stryker Way in Portage, Michigan and you’ll experience a powerful showcase of our legacy and innovation story. You’ll also notice our relentless commitment to creating a healthy workplace where employees can thrive—the reason 1941 earned Michigan’s first-ever WELL-Certified Platinum-level award. From walking trails to workout areas, from the way meals are cooked to the way sound is dampened, every detail of 1941 Stryker Way was intentionally designed to best support our people and inspire their future innovations. The space wasn’t just designed for work. It was also designed for wellbeing—and that’s something the International WELL Building Institute recognized. As the International WELL Building Institute website states, “Projects pursuing WELL Certification can earn points based on performance outcomes for various policy, design and operational strategies and can achieve one of four certification levels: Bronze, Silver, Gold or Platinum.” For 1941 Stryker Way, points were determined via written documentation and on-site testing and verification, with the facility earning enough points to be certified at the Platinum level. The building is also Leadership in Energy and Environmental Design (LEED) Silver certified, making it the first building in Michigan to receive both certifications. Easy access to daylight, fresh air, and nature Filtered water throughout the building High-quality, locally-sourced, and healthy meal options, with free fruit on Tuesdays and Thursdays On-site fitness center with instructor-led classes; plus walking trails, bike storage, etc. Signage detailing the health benefits of the space Meditation/mothers’ rooms on every floor Sound masking and absorption “I love coming to work at this facility,” says Kristen Hicks, Senior Portfolio Manager, Neurosurgical. “The conference rooms and open shared spaces help foster greater collaboration and creativity amongst the teams. It’s also rewarding to show customers who come to visit our commitment to the health and wellbeing of all people. It’s a true physical representation of our mission to make healthcare better.”",
       "jcr:lastModified": "Thu Feb 16 2023 21:09:49 GMT+0000",
@@ -126,7 +126,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Mar 06 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-Mar-2023",
@@ -135,7 +135,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Thu Feb 16 2023 21:54:11 GMT+0000",
@@ -144,7 +144,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Feb 16 2023 21:57:18 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

@@ -24,14 +24,14 @@
   ],
   "jcr:uuid": "305c6266-bb8c-44a9-8812-e82b2cb8ea47",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Tue Mar 06 2018 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-Mar-2018",
@@ -40,7 +40,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "text": "<p><b>KALAMAZOO, Michigan, USA </b>--&nbsp;Stryker announced today the launch of the industry's first-ever, post-free hip distraction system, Pivot Guardian, designed to mitigate groin complications and heel slip associated with hip arthroscopy and improve patient outcomes.</p>\n<p>A recent study of 1,000 hip arthroscopies performed without the use of a perineal post found in every case that the procedure allows safe, adequate, reproducible access to the hip joint without groin-related soft tissue or nerve complications.<sup>1</sup></p>\n<p>&quot;Complications around the perineal post and current boot technology are well documented, so we are excited to offer surgeons a new option to address their clinical needs in hip arthroscopy,&quot; said Matt Moreau, Stryker's Sports Medicine Vice President and General Manager. &quot;Stryker is committed to advancing the procedure, so we worked with the inventing surgeon to develop a post-free solution that enables surgeons to create adequate force for distraction without applying pressure to the groin while mitigating heel slip and excessive pressure applied to the foot. In addition, the Pivot Guardian Distraction System increases intraoperative range of motion, enables more flexible c-arm positioning, and presents surgeons with the opportunity to consider more bilateral hips scopes in their practice.&quot;</p>\n<p>Building upon the established Pivot portfolio focused on access, suture management, implants and capsule closure, the Pivot Guardian Distraction System will allow Stryker to better surround the comprehensive procedure.&nbsp;&nbsp;</p>\n<p><a href=\"http://endoscopy.sykevents.com/aaos-2018/\">http://endoscopy.sykevents.com/aaos-2018/</a></p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><b>Media contact</b></p>\n<p><b>Heather Morrison</b></p>\n<p><b>Inprela</b></p>\n<p>heather@inprela.com</p>\n<p>Phone: 612 677 2023</p>\n<p>1. Omer Mei-Dan, MD et. al. Hip Distraction Without a Perineal Post.&nbsp;March 2018,&nbsp;<i>The American Journal of Sports Medicine</i><br>\n</p>\n",
     "jcr:lastModified": "Tue Feb 27 2024 18:50:25 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

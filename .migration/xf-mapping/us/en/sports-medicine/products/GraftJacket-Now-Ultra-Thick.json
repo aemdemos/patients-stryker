@@ -10,7 +10,7 @@
   "jcr:versionHistory": "95febe7d-8630-4a90-b84e-53ad525e654d",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "de98bb50-8b99-488f-aefe-c7f536bab1e5"
   ],
@@ -49,14 +49,14 @@
   "jcr:uuid": "c9b522e1-a7f2-4f4e-b5ec-07584db2ed70",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "GraftJacket Now Ultra-Thick",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "imageAlt": "graftjacket-now-ultra-thick-regenerative-tissue-matrix",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Dec 23 2021 19:09:14 GMT+0000",
@@ -70,8 +70,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Thu Dec 02 2021 19:33:54 GMT+0000",
       "jcr:lastModified": "Thu Dec 02 2021 19:33:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -80,8 +80,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
-          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
+          "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
           "jcr:created": "Thu Dec 02 2021 19:33:58 GMT+0000",
           "text": "<p>References:</p>\n<ol>\n<li>AlloSource White Paper M8S0062</li>\n<li>AlloSource White Paper M8S0100</li>\n<li>AlloSource White Paper M8S0115</li>\n</ol>\n",
           "jcr:lastModified": "Thu Dec 02 2021 19:34:29 GMT+0000",
@@ -92,8 +92,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Mon Dec 06 2021 21:14:31 GMT+0000",
       "jcr:lastModified": "Mon Dec 06 2021 21:14:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -102,8 +102,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
-          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
+          "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Dec 06 2021 21:14:36 GMT+0000",
@@ -123,23 +123,23 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/dam/stryker/sports-medicine/products/graftjacket-now-ultra-thick/resources/1000904048revb.pdf",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "title": "Resources and downloads",
       "jcr:lastModified": "Thu Dec 02 2021 21:52:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Aug 19 2026 16:40:04 GMT+0000",
       "jcr:lastModified": "Wed Aug 19 2026 16:40:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -148,8 +148,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
@@ -161,8 +161,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -171,10 +171,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3149",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -187,8 +187,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
           "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
@@ -205,7 +205,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
     "text": "<p><b>Key Benefits:</b></p>\n<p>• <b>Biomechanical properties: </b>High suture retention and ultimate tensile strength<sup>1,2</sup></p>\n<p>• <b>Biology: </b>Collagen-rich scaffold with demonstrated growth factor retention post-processing including bFGF, PDGF-bb, TGF-b and BMP2<sup>3</sup></p>\n<p>• <b>Ease-of-use: </b>Pre-hydrated to allow for immediate use in operative settings</p>\n",
     "jcr:lastModified": "Fri Dec 10 2021 19:29:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -213,7 +213,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Dec 02 2021 19:30:52 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -225,7 +225,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Aug 19 2026 16:39:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

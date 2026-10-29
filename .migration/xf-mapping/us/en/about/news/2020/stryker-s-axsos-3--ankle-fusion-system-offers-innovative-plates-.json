@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s AxSOS 3® Ankle Fusion System offers innovative plates that are designed to fit a range of patients",
   "jcr:versionHistory": "e42e2b27-b41e-4851-b77f-6b3c2d01b957",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+  "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "jcr:predecessors": [
     "cb0e59aa-7f42-44a9-a389-8314465ed784"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "be3e5bd2-3ea7-4edd-aacb-e1e3e0fc1002",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "cq:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "danielle.smith@stryker.com",
-      "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+      "jcr:createdBy": "user-de9af95ca7@example.invalid",
+      "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
       "jcr:created": "Tue Sep 01 2020 21:13:25 GMT+0000",
       "jcr:lastModified": "Tue Sep 01 2020 21:13:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -41,8 +41,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "danielle.smith@stryker.com",
-          "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+          "jcr:createdBy": "user-de9af95ca7@example.invalid",
+          "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
           "jcr:created": "Tue Sep 01 2020 21:13:33 GMT+0000",
           "jcr:lastModified": "Tue Sep 01 2020 21:13:33 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -51,8 +51,8 @@
     },
     "cols2_2_3_1_3_816681012": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "danielle.smith@stryker.com",
-      "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+      "jcr:createdBy": "user-de9af95ca7@example.invalid",
+      "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
       "jcr:created": "Tue Sep 01 2020 21:14:22 GMT+0000",
       "jcr:lastModified": "Tue Sep 01 2020 21:14:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -61,8 +61,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "danielle.smith@stryker.com",
-          "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+          "jcr:createdBy": "user-de9af95ca7@example.invalid",
+          "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
           "jcr:created": "Tue Sep 01 2020 21:14:29 GMT+0000",
           "text": "<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at www.stryker.com.</p>\n<p><b>Media contact</b><br>\nAndrea Sampson, Sullivan &amp; Sampson PR<br>\nasampson@sullivanpr.com<br>\n714 374 6174</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Tue Sep 01 2020 21:17:06 GMT+0000",
@@ -74,7 +74,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "publishDate": "Tue Sep 01 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Sep-2020",
@@ -83,7 +83,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "preset": "max_width_auto",
     "srcFileRef": "/content/dam/stryker/about/news/images/AxSOS_3.jpg",
     "jcr:lastModified": "Tue Sep 01 2020 21:07:15 GMT+0000",
@@ -91,7 +91,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "text": "<p><b>MAHWAH, N.J., September 1, 2020—</b>Stryker’s Trauma &amp; Extremities division today announced the launch of its AxSOS 3 Ankle Fusion System, an ankle fusion titanium plate system intended for the fusion of the tibio-talar joint.</p>\n<p>The AxSOS 3 Ankle Fusion System was developed using SOMA, Stryker’s proprietary orthopaedic design and development system that applies data from over 25,000 CT images of bones across different populations. As a result, these plates were designed to fit a range of patients with less customization.</p>\n<p>“The CP design utilized in Stryker’s forefoot and hindfoot plating systems served as the inspiration to take this technology into ankle fusions,” said Keith Wapner, MD* at Penn Medicine, one of the design surgeons. As it relates to mechanical testing, Dr. Wapner said, “Integrating the stability of plate fixation with the compression of the CP screw allows for a stable ankle fusion construct.”</p>\n<p>“We combined Stryker’s CP technology from Anchorage 2 with the company’s AxSOS 3 screw system and incorporated several additional instruments to assist with alignment and compression,” said Michael Coughlin, MD* at UCSF Health, one of the design surgeons. “The system is designed to provide surgeons with a dependable, user-friendly, intuitive technology option.”</p>\n<p><span class=\"standalone-link\"><a href=\"https://www.bit.ly/ANKLEFUSIONINFO\">Click here for additional information about AxSOS 3® Ti Ankle Fusion System</a></span></p>\n<p>*Drs. Coughlin and Wapner are paid consultants of Stryker Orthopaedics.<br>\n&nbsp;</p>\n",
     "jcr:lastModified": "Wed Sep 02 2020 12:07:16 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -99,7 +99,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>This is intended for US distribution only.</p>\r\n<p>AXSOS-BL-3_Rev-1, 08-2020</p>\r\n",
     "jcr:lastModified": "Tue Sep 01 2020 21:16:55 GMT+0000",

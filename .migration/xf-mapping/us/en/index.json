@@ -9,7 +9,7 @@
   "jcr:versionHistory": "76a1686e-a71c-4f7f-ad31-f51edd4dca3e",
   "cq:template": "/apps/stryker/templates/home",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hidePublicationDate": "true",
   "jcr:predecessors": [
     "19f84db8-d429-4e7d-954f-d6117dd24fb6"
@@ -33,12 +33,12 @@
   "sling:resourceType": "stryker/components/structure/pages/home",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Homepage",
   "missionstatement": {
     "jcr:primaryType": "nt:unstructured",
     "hideFlag": "true",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "textStyle": "text-white",
     "gradientDirection": "left-to-right",
     "title": "Mission",
@@ -48,7 +48,7 @@
   },
   "homeourpeople": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Dec 13 2023 17:50:07 GMT+0000",
     "sling:resourceType": "stryker/components/content/ourpeoplehome",
@@ -57,7 +57,7 @@
   },
   "latestnews": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Dec 13 2023 17:52:26 GMT+0000",
     "sling:resourceType": "stryker/components/content/latestnews"
@@ -65,7 +65,7 @@
   "awardssponsorships": {
     "jcr:primaryType": "nt:unstructured",
     "quantity": "0",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Dec 13 2023 17:51:43 GMT+0000",
     "sling:resourceType": "stryker/components/content/awardssponsorships"
@@ -79,7 +79,7 @@
   },
   "sectionseparator": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "sectionColor": "white-hr",
     "jcr:lastModified": "Thu Nov 05 2020 20:45:00 GMT+0000",
     "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -87,7 +87,7 @@
   "homecarousel": {
     "jcr:primaryType": "nt:unstructured",
     "hideFlag": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "carouselOptionSpeed": "300",
     "jcr:lastModified": "Thu Nov 05 2020 20:36:49 GMT+0000",
     "sling:resourceType": "stryker/components/content/carousel"
@@ -97,8 +97,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Oct 13 2022 14:30:38 GMT+0000",
       "jcr:lastModified": "Thu Oct 13 2022 14:30:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -107,12 +107,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/homepage/page_layout/hero_carousel/us-en/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/homepage/page-layout/hero-carousel/us-en/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/homepage/page_layout/hero_carousel/us-en/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/homepage/page-layout/hero-carousel/us-en/mobile",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "20",
           "jcr:created": "Thu Oct 13 2022 15:38:49 GMT+0000",
@@ -132,8 +132,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Dec 13 2023 18:38:09 GMT+0000",
       "jcr:lastModified": "Wed Dec 13 2023 18:38:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -143,8 +143,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jan 23 2023 18:20:49 GMT+0000",
           "text": "What we do Stryker is one of the world's leading medical technology companies. Alongside our customers around the world, we impact more than 150 million patients annually. GET TO KNOW US",
           "jcr:lastModified": "Mon Nov 13 2023 20:48:58 GMT+0000",
@@ -156,8 +156,8 @@
     },
     "fullbleedpanel_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue May 02 2023 15:39:20 GMT+0000",
       "jcr:lastModified": "Tue May 02 2023 15:39:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -167,8 +167,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue May 02 2023 15:39:36 GMT+0000",
           "jcr:lastModified": "Tue May 02 2023 15:39:36 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -177,8 +177,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Tue May 02 2023 15:39:45 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Tue May 02 2023 15:39:48 GMT+0000",
@@ -191,16 +191,16 @@
     },
     "cols2_1099439695_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 06 2023 14:22:59 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 14:22:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols4_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu May 04 2023 17:20:41 GMT+0000",
       "jcr:lastModified": "Thu May 04 2023 17:20:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -209,8 +209,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Oct 14 2022 20:48:58 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">Latest news</span></span></span></span></span></span><br>\r\n",
@@ -230,8 +230,8 @@
     },
     "latestnews_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Apr 06 2023 13:46:53 GMT+0000",
       "newsPaths": [
@@ -242,16 +242,16 @@
     },
     "cols2_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 06 2023 13:50:30 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 13:50:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment_1": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Dec 02 2022 14:53:09 GMT+0000",
       "text": "Our focus Medical and Surgical Empowering people for powerful outcomes By putting people at the heart of every innovation, we optimize pathways across the continuum of care — for the excellence of care delivery, the safety and wellbeing of care teams and the outcomes of patients. Learn more Orthopaedics and Spine Leading what's next Our Orthopaedics portfolio is a culmination of powerful solutions that maximize clinical, financial and operational outcomes. From iconic innovations to reliable platforms, from decision-driving data to medical education, we help move procedures and patients forward. Learn more Neurotechnology Better connected By delivering access to meaningful innovation, operational efficiency and the simplification of a single partner, we provide the power of a deeper understanding to help you better serve the needs of your patients and improve clinical and economic outcomes. Learn more Services Maximizing your investment From flexible financial options to sustainable options for reprocessing single-use devices to world class technicians trained to maintain and support your equipment—we’re here so you can focus on what matters most, your patients. Learn more Care settings Supporting you exactly where you need to be Healthcare doesn’t only happen in the hospital. Are you outfitting your ambulatory surgery center (ASC), looking for emergency response devices for an office or caring for a loved one at home? We have solutions to meet your needs right where you are. Learn more Training and education Advancing product and procedural knowledge Our partnership goes beyond delivering the latest technology and solutions. We offer a wide range of training and education options to help ensure you’re making the most of your time and investment. Learn more",
       "jcr:lastModified": "Tue Nov 21 2023 14:01:13 GMT+0000",
@@ -261,16 +261,16 @@
     },
     "cols2_981578147_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 06 2023 13:50:52 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 13:50:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment_2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Oct 19 2022 17:28:02 GMT+0000",
       "text": "People are at the heart of what we do, and by valuing our differences, we are stronger together. Join our team",
       "jcr:lastModified": "Mon Nov 13 2023 20:49:58 GMT+0000",
@@ -280,17 +280,17 @@
     },
     "cols2_1371271359_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 06 2023 13:52:44 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 13:52:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "carouselslidegroup_c_709121251": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "backgroundNav": "rgba(237,238,236,1)",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
       "jcr:created": "Fri Oct 14 2022 20:45:42 GMT+0000",
@@ -307,12 +307,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/homepage/page_layout/corporate-responsibility/corporate-responsibility",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/homepage/page-layout/corporate-responsibility/corporate-responsibility",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/homepage/page_layout/corporate-responsibility/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/homepage/page-layout/corporate-responsibility/mobile",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "10",
           "jcr:created": "Fri Oct 14 2022 20:45:47 GMT+0000",
@@ -327,8 +327,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Tue Jul 25 2023 18:04:26 GMT+0000",
               "text": "Corporate responsibility We are committed to positively impacting people and our planet through responsible, sustainable practices that create a better, healthier world. Read our Comprehensive Report",
               "jcr:lastModified": "Tue Nov 28 2023 16:32:46 GMT+0000",
@@ -342,16 +342,16 @@
     },
     "cols2_260210774_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Apr 06 2023 13:53:08 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 13:53:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "fullbleedpanel_14552": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 30 2023 19:15:31 GMT+0000",
       "jcr:lastModified": "Fri Jun 30 2023 19:15:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -361,8 +361,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 30 2023 19:15:40 GMT+0000",
           "jcr:lastModified": "Fri Jun 30 2023 19:15:40 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -371,8 +371,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Fri Jun 30 2023 19:15:43 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Fri Jun 30 2023 19:15:46 GMT+0000",
@@ -383,8 +383,8 @@
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Oct 17 2022 20:40:12 GMT+0000",
           "text": "Awards We owe our achievements to our dedicated employees View all awards",
           "jcr:lastModified": "Mon Nov 13 2023 20:50:39 GMT+0000",
@@ -394,8 +394,8 @@
         },
         "cols2_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 30 2023 19:15:40 GMT+0000",
           "jcr:lastModified": "Fri Jun 30 2023 19:15:40 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -404,8 +404,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Fri Jun 30 2023 19:15:43 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Fri Jun 30 2023 19:15:46 GMT+0000",
@@ -418,16 +418,16 @@
     },
     "cols2_96832139_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 30 2023 19:28:35 GMT+0000",
       "jcr:lastModified": "Fri Jun 30 2023 19:28:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment_c_1135262002": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Oct 17 2022 20:40:12 GMT+0000",
       "text": "Quick links Portfolio MEDICAL AND SURGICAL EQUIPMENT ORTHOPAEDICS NEUROTECHNOLOGY Offerings SERVICES CARE SETTINGS TRAINING AND EDUCATION Our company Contact us INVESTOR RELATIONS COMPREHENSIVE REPORT More information ADVANCED DIGITAL HEALTHCARe AMBULATORY SURGERY CENTERS TRAINING AND EDUCATION ACCESSIBILITY STATEMENT Patients",
       "jcr:lastModified": "Fri Jun 30 2023 19:27:56 GMT+0000",
@@ -438,7 +438,7 @@
   },
   "sectionseparator2": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "altText": "n/a",
     "sectionColor": "white-hr",
     "jcr:lastModified": "Wed Dec 13 2023 17:50:24 GMT+0000",
@@ -446,7 +446,7 @@
   },
   "sectionseparator3": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "altText": "n/a",
     "sectionColor": "white-hr",
     "jcr:lastModified": "Wed Dec 13 2023 17:50:50 GMT+0000",
@@ -454,7 +454,7 @@
   },
   "sectionseparator4": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "altText": "n/a",
     "sectionColor": "white-hr",
     "jcr:lastModified": "Wed Dec 13 2023 17:51:00 GMT+0000",

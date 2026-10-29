@@ -9,7 +9,7 @@
   "jcr:versionHistory": "392d94bd-aed9-45fe-afd3-6b7cfb12a6ae",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "jcr:predecessors": [
     "49b644af-108d-4d11-ac9d-90ea68ddac2f"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "a979ae76-3fc5-4897-bc03-cff06735c624",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "cq:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -38,7 +38,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Sep 03 2025 18:12:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
@@ -49,10 +49,10 @@
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "0",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
       "leftPadding": "0",
       "topPadding": "3",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Wed Sep 03 2025 18:12:10 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Reimbursement support</span></span></h1>\r\n",
@@ -66,8 +66,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Wed Sep 03 2025 18:13:26 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -79,8 +79,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Wed Sep 03 2025 18:22:37 GMT+0000",
       "jcr:lastModified": "Wed Sep 03 2025 18:22:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -89,10 +89,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "4053",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Wed Sep 03 2025 18:14:40 GMT+0000",
           "useProduction": "true",
           "message": "Thank you!",
@@ -101,8 +101,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Wed Sep 03 2025 18:23:08 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">*We respond to all requests for service within 24 hours, Monday–Friday, during regular business hours.</span></p>\n",
           "jcr:lastModified": "Wed Sep 03 2025 18:27:22 GMT+0000",
@@ -114,7 +114,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Tue Oct 14 2025 21:45:40 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",

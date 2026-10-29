@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d665a244-a089-42d1-8958-0df12a0f2916",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "jcr:predecessors": [
     "90031e72-3933-4248-8923-44331f873bba"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "94dd60ae-f8ca-4251-a8c2-ca3f07bb256d",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -43,8 +43,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "accordion": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu Oct 19 2023 17:17:42 GMT+0000",
       "jcr:lastModified": "Mon Mar 04 2024 18:53:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/accordion",
@@ -54,9 +54,9 @@
         "accPosId": 1,
         "table": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>2% Chlorohexidine Gluconate cloth</td>\n<td width=\"250\"><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/CHG%209717%20Environmental%20Data%20Sheet%20.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Stryker Nose to Toes</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/N2T%20Safety%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr></tbody></table>\n",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Thu Oct 19 2023 17:31:47 GMT+0000",
           "jcr:lastModified": "Thu Dec 21 2023 14:33:54 GMT+0000",
           "sling:resourceType": "stryker/components/content/table",
@@ -69,9 +69,9 @@
         "accPosId": 2,
         "table_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>Antiseptic Oral Rinse</td>\n<td width=\"250\"><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884635_REV-0_en_us%20Antiseptic%20Oral%20Rinse%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Antiplaque Solution</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884682_REV-0_en_us%20Antiplaque%20Solution%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Corinz Antiseptic Cleansing and Moisturizing Oral Rinse</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884038_REV-0_en_us%20Corinz%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Mouth Moisturizer</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884729_REV-0_en_us%20Mouth%20Moisturizer%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Perox-A-Mint Solution - Oral Debriding Agent</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884776_REV-0_en_us%20Perox-A-Mint%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Sodium Bicarbonate Mouthpaste</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/884823_REV-0_en_us%20Sodium%20Bicarbonate%20Mouthpaste%20Environmental%20Data%20Sheet_FINAL.pdf\" target=\"_blank\">Download</a></td>\n</tr></tbody></table>\n",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Thu Oct 19 2023 17:31:47 GMT+0000",
           "jcr:lastModified": "Thu Dec 21 2023 14:35:03 GMT+0000",
           "sling:resourceType": "stryker/components/content/table",
@@ -102,9 +102,9 @@
         "accPosId": 3,
         "table_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>Pre-packaged bathing washcloths - Fragrance solution</td>\n<td width=\"250\"><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/Fragrance%20Bath%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Pre-packaged bathing washclothes - Fragrance free solution</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/Pre-packaged%20bath%20washcloths%20-FF%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Incontinence Clean-up Cloths</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/Incontinence%20Clean-up%20Cloths%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Shampoo Cap</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/Shampoo%20Cap%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>Comfort Shield Barrier Cream Cloths</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/Comfort%20Shield%20Barrier%20Cream%20Cloths%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr><tr><td>M-care Meatal Cleansing Cloths</td>\n<td><a href=\"/content/dam/stryker/sage/environmental-data-sheets/resources/M-Care%20Environmental%20Data%20Sheet.pdf\" target=\"_blank\">Download</a></td>\n</tr></tbody></table>\n",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Thu Oct 19 2023 17:31:47 GMT+0000",
           "jcr:lastModified": "Thu Mar 14 2024 13:57:45 GMT+0000",
           "sling:resourceType": "stryker/components/content/table",

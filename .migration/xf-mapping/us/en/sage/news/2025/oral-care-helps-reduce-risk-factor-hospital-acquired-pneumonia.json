@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5042e954-d8be-4583-934f-1f0896851262",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Nurse using non-ventilated oral care product on a patient in a ProCuity bed",
   "jcr:predecessors": [
     "f15d3748-f355-476c-91af-789479dbb406"
@@ -34,15 +34,15 @@
   "jcr:uuid": "596959d9-64be-4b35-be1d-905f833840dc",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "navTitle": "Patient Oral Care Protocols | NV-HAP Prevention | Stryker",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Fri Sep 12 2025 13:21:49 GMT+0000",
       "alt": "Nurse using non-ventilated oral care product on a patient in a ProCuity bed",
@@ -54,8 +54,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-a168c26c27@example.invalid",
       "jcr:created": "Fri Sep 12 2025 13:21:57 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\">Hospital-Acquired Pneumonia (HAP) is the most prevalent healthcare-associated infection, with 65% of HAPs occurring in non-ventilated patients as non-ventilator hospital-acquired pneumonia (NV-HAP).<sup>1</sup> NV-HAP has emerged as a significant challenge within healthcare, increasing patient length of stay, the risk of sepsis, readmissions, and mortality rates.<sup>2-5</sup></span></p>\n<h2><span class=\"futura-bold\">NV-HAP’s impact across the hospital</span></h2>\n<p><span class=\"fontsize-1-25em\">NV-HAP occurs in 1 in 100 patients and significantly increases the risk of complications like sepsis for hospitalized patients.<sup>3,5</sup> In fact, sepsis is a leading cause of death in U.S. hospitals6 and occurs in 36% of NV-HAP cases.<sup>6</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Furthermore, NV-HAP accounts for 7.3% of all hospital deaths, with a mortality rate of 22%.<sup>7</sup> Nearly 1 in 14 hospital deaths can be attributed to NV-HAP, while 19% of NV-HAP patients face readmission within 30 days, as measured by the Centers for Medicare and Medicaid Services’ Hospital Readmissions Reduction Program.<sup>4,5</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The repercussions of NV-HAP extend beyond individual patients to encompass hospital performance metrics, including financial implications. A study published in Infection Control and Hospital Epidemiology shows that NV-HAP incurs an average additional cost of $18,596 per case and prolongs length of stay by 6.5 days, burdening healthcare systems financially, and affecting overall efficiency and resource allocation.<sup>2</sup></span></p>\n<p><span class=\"fontsize-1-25em\">NV-HAP demands urgent attention, given its profound implications for patient health and hospital performance metrics. Over the past four years, The Joint Commission, SHEA, IDSA, APIC, CDC, and other organizations have recognized the impact pneumonia has across the hospital and recommended comprehensive oral care as a prevention strategy to address NV-HAP.<sup>8-10</sup></span></p>\n<h2><span class=\"futura-bold\">Simple &amp; effective preventative strategies</span></h2>\n<p><span class=\"fontsize-1-25em\">Despite the clear links between NV-HAP and significant adverse outcomes, preventive measures are not always adequately implemented. One of the simplest and most effective strategies to address the risk factors for pneumonia is providing comprehensive oral care during a hospital stay, including adequate toothbrushes, toothpaste, and mouthwash.<sup>11,12</sup> Unfortunately, 46% of patients do not have access to or use a toothbrush while hospitalized.<sup>13</sup> This often occurs because there are conflicting care priorities, or the necessary tools are simply not provided. This oversight could be attributed to the fact that hospitals are not directly penalized for NV-HAP or a lack of oral care, leading to the lack of prioritization.</span></p>\n<p><span class=\"fontsize-1-25em\">Research published in the American Journal of Infection Control showed that implementing a consistent and comprehensive oral care protocol resulted in a 70% reduction in NV-HAP cases, offering a clear path to reducing its prevalence.<sup>4</sup> Additionally, this preventative approach helped the hospital avoid up to $5.9 million in NV-HAP costs.<sup>4</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Prioritizing comprehensive oral care as a fundamental part of patient safety initiatives can help hospitals address the risk factors of NV-HAP. By leveraging innovative solutions and resources such as Stryker’s Sage Self Oral Care system, hospitals can proactively help address NV-HAP risk factors, enhance patient safety and make it easier for staff to deliver care.</span></p>\n<h2><span class=\"futura-bold\">Recommendations &amp; resources</span></h2>\n<p><span class=\"fontsize-1-25em\">Preventing NV-HAP requires a multifaceted approach that begins with recognizing its significant effect on patients and hospitals. Hospitals must prioritize infection control and patient care strategies that include a strong emphasis on oral hygiene practices to effectively tackle this pervasive issue.</span></p>\n<p><span class=\"fontsize-1-25em\">Designed to help address pneumonia risk factors for non-ventilated dependent and independent patients, Stryker offers innovative solutions and resources to support hospitals in implementing oral care solutions that fit within staff workflow. Hospital administrators and healthcare professionals can learn more about the impact of NV-HAP and join Stryker’s non-vent partnership program by filling out <a href=\"/content/stryker/us/en/sage/c/oral-care-for-all.html#contact-us\">this form</a>.</span></p>\n<p><span class=\"fontsize-1-25em\">By prioritizing comprehensive oral care and leveraging available resources, hospitals can take meaningful steps toward reducing the incidence of NV-HAP, improving care quality, and safeguarding patient safety. Together, let us commit to combatting the risk factors of NV-HAP and advancing the standard of care in hospitals across the nation.<br>\n </span>&nbsp;</p>\n",
       "jcr:lastModified": "Tue Sep 23 2025 19:21:06 GMT+0000",
@@ -64,8 +64,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Fri Sep 12 2025 13:27:50 GMT+0000",
       "title": "Related articles",
       "jcr:lastModified": "Fri Sep 12 2025 13:28:45 GMT+0000",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Tue Sep 23 2025 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "23-Sep-2025",
@@ -102,7 +102,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>References:</b></p>\r\n<p>1. Magill SS, O’Leary E, Janelle SJ, et al. Changes in Prevalence of Health Care–Associated Infections in U.S. Hospitals. New England Journal of Medicine. 2018;379(18):1732-1744.</p>\r\n<p>2. Baker D, Giuliano K, Desmarias M, et. al. Impact of hospital-acquired pneumonia on the Medicare program. ICHE. 2023; 1-6.</p>\r\n<p>3. Giuliano K, Baker D, Quinn B. The epidemiology of nonventilator hospital-acquired pneumonia in the United States. AJIC. 2018;46:322-327.</p>\r\n<p>4. Baker D, Quinn B. Hospital Acquired Pneumonia Prevention. Initiative-2: Incidence of nonventilator hospital-acquired pneumonia in the United States. AJIC. 2018;46(1):2-7.</p>\r\n<p>5. Carey E, Chen H, Baker D, et al. The association between non-ventilator associated hospital acquired pneumonia and patient outcomes among U.S. Veterans. AJIC. 2022;50:1339-1345.</p>\r\n<p>6. Giuliano KK, Baker D. Sepsis in the context of nonventilator hospital-acquired pneumonia. American Journal of Critical Care. 2020;29:9-14.</p>\r\n<p>7. Jones BE, Sarvet AL, Ying J, et al. Incidence and outcomes of non–ventilator-associated hospital-acquired pneumonia in 284 US hospitals using electronic surveillance criteria. JAMA Network Open. 2023;6(5);1-14.</p>\r\n<p>8. Quick Safety: Preventing non-ventilator hospital-acquired pneumonia. The Joint Commission. 2021; 61.</p>\r\n<p>9. Klompas M, Branson R, Cawcutt K, et al. Strategies to prevent ventilator-associated pneumonia, ventilator-associated events, and nonventilator hospital-acquired pneumonia in acute-care hospitals: 2022 Update. ICHE. 2022;43(6):1-27.</p>\r\n<p>10. Oral Health in Healthcare Settings to Prevent Pneumonia Toolkit. CDC. https://www.cdc.gov/hai/prevent/Oral-Health-Toolkit.html#. September 20, 2023. Accessed May 15, 2024.</p>\r\n<p>11. Schleder B, Stott K, Lloyd R. The Effect of a Comprehensive Oral Care Protocol on Patients at Risk for Ventilator-Associated Pneumonia. Journal of Advocate Health. 2002;4(1):27-30.</p>\r\n<p>12. Quinn B, Ruble C. Procedure 3 – Endotracheal Tube Care and Oral Care Practices for Ventilated and Non-Ventilated Patients. In AACN Procedure Manual for Progressive and Critical Care. 8th Edition;35-40.</p>\r\n<p>13. DeJuilio P, Powers J, Soltis LM, Brooks JA. Multisite Evaluation of Toothbrushes and Microbial Growth in the Hospital Setting. Clin Nurse Spec. 2023;37(2):83-89. doi:10.1097/NUR.0000000000000733.</p>\r\n",
     "jcr:lastModified": "Fri Sep 12 2025 13:30:12 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "Stryker enabling surgeons to have a more predictable surgical experience with launch of Mako robotic-arm assisted total knee application",
   "jcr:versionHistory": "4cc3443f-7c99-42d6-8d4a-6650ceeefced",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "f3dd3725-fa89-4f44-99e6-50af540a4782"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Tue Mar 14 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "14-Mar-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p><i>The first and only robotic technology that can be used across the joint replacement service line to perform total knee, total hip and partial knee replacements now available</i></p>\n<p>Kalamazoo, Michigan - March 14, 2017 -&nbsp;Stryker Corporation (NYSE:SYK) announced the commercial launch of the highly anticipated robotic-arm assisted total knee arthroplasty application for use with its Mako System at the American Academy of Orthopaedic Surgeons (AAOS) annual meeting in San Diego. This latest advancement distinguishes the Mako System as the first and only robotic technology that can be used across the joint replacement service line to perform total knee, total hip and partial knee replacements.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=2253754\" target=\"_blank\">Stryker Investor Relations</a></p>\n",
     "jcr:lastModified": "Thu Jun 01 2017 17:29:05 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

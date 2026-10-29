@@ -10,7 +10,7 @@
   "jcr:versionHistory": "af068afa-56eb-49d1-ac52-4f9a1cec651e",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "5047f2a1-5b9e-4244-8580-d2ce0bb6f1f2"
   ],
@@ -32,21 +32,21 @@
   "jcr:uuid": "2577a196-8ae4-4a4e-a6e9-968cffce0b8a",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Illuminated instruments",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
       "jcr:lastModified": "Fri Jul 19 2019 04:49:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Dilara.Atkins@stryker.com",
-      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+      "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
       "jcr:created": "Fri Jul 19 2019 04:52:08 GMT+0000",
       "jcr:lastModified": "Fri Jul 19 2019 04:52:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -55,8 +55,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1988470310": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Dilara.Atkins@stryker.com",
-          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+          "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
           "jcr:created": "Fri Jul 19 2019 04:50:29 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">Total internal reflection:</span></span></span></span></p>\n<h3>Directs and shapes light</h3>\n<ul>\n<li>Proprietary design controls, transmits and retains light</li>\n<li>Bends and shapes light to maximize its critical angle and prevent light from escaping</li>\n<li>Narrow and wide PhotonGuide tip designs further tailor light projection</li>\n</ul>\n",
           "jcr:lastModified": "Fri Jul 19 2019 04:51:56 GMT+0000",
@@ -65,8 +65,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Dilara.Atkins@stryker.com",
-          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+          "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
           "jcr:created": "Fri Jul 19 2019 04:49:30 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Solid core optical-grade polymer:</span></span></span></p>\n<h3><span class=\"urw-egyptienne\">Couples and captures light</span></h3>\n<ul>\n<li>Solid core polymer captures light from the source</li>\n<li>Eliminates light loss and thermal risks that can occur with fiber-to-fiber misalignment</li>\n<li>Creates a thermally-cool connection</li>\n</ul>\n",
           "jcr:lastModified": "Fri Jul 19 2019 04:52:55 GMT+0000",
@@ -79,8 +79,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Dilara.Atkins@stryker.com",
-          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+          "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
           "jcr:created": "Fri Jul 19 2019 04:49:30 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Refractive output surface:</span></span></span></p>\n<h3><span class=\"urw-egyptienne\">Extracts and projects light</span></h3>\n<ul>\n<li>Unique, refractive microlenses cover the outputsurface, extracting and directing light at varying angles</li>\n<li>Creates redundancy of light that eliminates shadows</li>\n<li>Mitigates masking by blood or fluids</li>\n<li>Minimizes backward glare</li>\n<li>Results in wider light projection</li>\n</ul>\n",
           "jcr:lastModified": "Fri Jul 19 2019 04:55:33 GMT+0000",
@@ -89,8 +89,8 @@
         },
         "text_copy_232207016": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Dilara.Atkins@stryker.com",
-          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+          "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
           "jcr:created": "Fri Jul 19 2019 04:49:30 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Intelligent Photonics:</span></span></span></p>\n<h3><span class=\"urw-egyptienne\">Delivers thermally-cool, volumetric lighting</span></h3>\n<ul>\n<li>At equal distance from target, delivers broader,volumetric light projection</li>\n<li>Generates thermally-cool illumination; maximum output temperature remains below established burn risk<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Fri Jul 19 2019 04:56:31 GMT+0000",
@@ -101,8 +101,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Dilara.Atkins@stryker.com",
-      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+      "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
       "jcr:created": "Fri Jul 19 2019 04:49:15 GMT+0000",
       "jcr:lastModified": "Fri Jul 19 2019 04:49:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -122,7 +122,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue Jan 26 2021 20:03:27 GMT+0000",

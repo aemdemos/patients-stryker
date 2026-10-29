@@ -9,7 +9,7 @@
   "jcr:versionHistory": "4ae78e1b-7e1d-4af3-99f1-b36b2a00a690",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "jcr:lastModifiedBy": "user-a168c26c27@example.invalid",
   "thumbnailAltText": "Patient on monitor in virtual care session with doctor and virtual nurse",
   "jcr:predecessors": [
     "81b439f1-ce5f-40b2-a985-9adbfd60d305"
@@ -36,7 +36,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -51,7 +51,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue Jan 06 2026 14:27:07 GMT+0000",

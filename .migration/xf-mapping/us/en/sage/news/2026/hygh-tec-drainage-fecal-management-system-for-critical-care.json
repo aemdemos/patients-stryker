@@ -10,7 +10,7 @@
   "jcr:versionHistory": "431b896d-899a-4a32-9be4-dca1d0f59679",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "hygh-ec fecal management solution ",
   "jcr:predecessors": [
     "874dd893-595f-49e3-96c3-63337aa7e9f5"
@@ -36,14 +36,14 @@
   "jcr:uuid": "18e7e07d-8744-4b6a-b3d5-84ff47ea68c2",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Tue May 05 2026 15:17:46 GMT+0000",
       "alt": "hygh-tec fecal management system demonstration with cartoon drawing",
@@ -55,8 +55,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue May 05 2026 15:17:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Designed to help support a more streamlined approach to patient care&nbsp;</span></h2>\n<p><span class=\"fontsize-1-25em\">Stryker recently announced the launch of hygh-tec drainage, a fecal management system designed to support ICU clinicians in managing patients with acute fecal incontinence.</span></p>\n<p><span class=\"fontsize-1-25em\">In the critical care environment, managing fecal incontinence is both common and complex. Up to 40% of ICU patients experience fecal incontinence,¹ creating ongoing challenges related to skin integrity, infection risk and time-intensive care routines. For care teams already balancing competing priorities, even small inefficiencies can add up quickly.</span></p>\n<p><span class=\"fontsize-1-25em\">hygh-tec drainage was developed to help address these realities. With an innovative design and unique material, the system demonstrated reduced stool leakage compared to first-generation fecal management systems in a prospective study.² By helping contain and divert stool away from the patient’s skin, the system may support a more controlled care environment and more efficient workflows.</span></p>\n<p><span class=\"fontsize-1-25em\">Key design features include:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Wave-like transanal shaft: Engineered to work with sphincter muscles<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">PUR+Air balloon: A lightweight, air-filled polyurethane balloon follows the dynamics of the sphincter muscle and the patient’s movements<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Visual position indicator: A yellow control ring to help confirm correct placement<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Elastic insertion tip: A ring-like, elastically deformable gel olive designed to support insertion<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Closure strap: Enables temporary closure during irrigation, bag changes or stool sampling<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Direct access ports: Integrated ports for irrigation, inflation and stool sampling<sup>4</sup></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">By diverting stool away from the skin, fecal management systems like hygh-tec may help keep the skin dry—supporting efforts to address risk factors associated with incontinence-associated dermatitis (IAD),<sup>5</sup> hospital-acquired pressure injuries (HAPI)<sup>6</sup> and the spread of infections such as C. difficile in patients with acute fecal incontinence.<sup>7</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Designed for continuous transanal drainage and collection of liquid or semi-liquid stool for up to 29 days,<sup>4</sup> hygh-tec drainage supports care teams with a system built for both performance and practicality in demanding clinical environments.</span></p>\n<h2><span class=\"futura-bold\">Learn more</span></h2>\n<p><span class=\"fontsize-1-25em\">Stryker is one of the world's leading medical technology companies. Alongside our customers around the world, we impact more than 150 million patients annually. As part of Stryker’s commitment to supporting caregivers, hygh-tec drainage reflects a continued focus on helping clinicians manage complex conditions with confidence while maintaining efficiency in day-to-day care. To learn more about hygh-tec drainage and explore how it can support your ICU workflow, visit the <a href=\"/content/stryker/us/en/sage/products/hygh-tec.html\">hygh-tec product page</a>.</span><br>\n&nbsp;</p>\n",
       "jcr:lastModified": "Tue May 05 2026 15:25:13 GMT+0000",
@@ -66,8 +66,8 @@
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue May 05 2026 15:23:01 GMT+0000",
       "hideButton": "false",
       "jcr:lastModified": "Tue May 05 2026 15:23:23 GMT+0000",
@@ -96,7 +96,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>Note: </b>Rx only.</p>\r\n<p><b>References: 1.</b> García CB, Binks R, De Luca E, et al., (2013). Expert Recommendations for Managing Acute Faecal Incontinence with Diarrhoea in the Intensive Care Unit. Journal of the Intensive Care Society,14(4_suppl), 1-9. <b>2.</b> Gutting T, Brobeil A, Strach L, et al., (2025). Sealing efficiency and safety of a polyurethane-based fecal management system in intensive care-Results from a real-world study. Australian critical care: official journal of the Confederation of Australian Critical Care Nurses, 38(5), 101296. <b>3.</b> Sage Products, LLC. Data on file, 02/2026. <b>4. </b>Advanced Medical Balloons GmbH. (2026). hygh‑tec drainage: Instructions for use (K02‑00111, Rev. 05). <b>5.</b> Gray M, Bliss DZ, Doughty DB, Ermer-Seltun J, Kennedy-Evans KL, Palmer MH. Incontinence-associated dermatitis: a consensus. J Wound Ostomy Continence Nurs. 2007 Jan-Feb;34(1):45-54; quiz 55-6.&nbsp; <b>6.</b> Kayser SA, Phipps L, VanGilder CA, Lachenbruch C. Examining Prevalence and Risk Factors of Incontinence-Associated Dermatitis Using the International Pressure Ulcer Prevalence Survey. J Wound Ostomy Continence Nurs. 2019 Jul/Aug;46(4):285-290. <b>7.</b> Whiteley, I., Sinclair, G., Lyons, A. M., &amp; Riccardi, R. (2014). A retrospective review of outcomes using a fecal management system in acute care patients. Ostomy/wound management, 60(12), 37–43.&nbsp;&nbsp;</p>\r\n",
     "jcr:lastModified": "Tue May 05 2026 15:22:20 GMT+0000",

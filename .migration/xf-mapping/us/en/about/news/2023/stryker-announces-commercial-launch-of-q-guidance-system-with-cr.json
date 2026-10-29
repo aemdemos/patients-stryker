@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a1296f9c-a397-4cfd-89de-27097da039bf",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "cranial-guidance-press-release-thumbnail",
   "jcr:predecessors": [
     "857513a2-0de5-4bfe-950c-0d2de1e89491"
@@ -30,14 +30,14 @@
   "jcr:uuid": "b8cb2828-68b3-4b92-b87b-bbb4090166a4",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 30 2023 20:25:32 GMT+0000",
       "jcr:lastModified": "Fri Jun 30 2023 20:25:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Fri Jun 30 2023 20:25:38 GMT+0000",
           "text": "<h2><i><span class=\"fontsize-8em\">Stryker’s navigation system offers surgeons a comprehensive planning and guidance solution for complex cranial procedures.</span></i></h2>\n<p><b>Leesburg, Virginia, USA</b> – July 11, 2023 – Stryker (NYSE: SYK), one of the world’s leading medical technology companies, has commercially launched its Q Guidance System with Cranial Guidance Software to provide surgeons with an image-based planning and intraoperative guidance system that assists in positioning instruments and identifying patient anatomy during cranial surgery. The software can be used for craniotomies, skull base and transsphenoidal procedures, shunt placements, and biopsies.</p>\n<p>“With Cranial Guidance Software powered by Q, neurosurgeons have more surgical planning and guidance capabilities than ever before, with a special focus on biopsies and shunt placements,” said Robbie Robinson, president of Stryker’s Spine division. “This technology has the potential to become the standard of care and a possible means to increase accuracy and efficiency in the operating room.”</p>\n<p>The Q Guidance System with Cranial Guidance Software uses both active and passive tracking technology to provide groundbreaking planning and guidance capabilities that include:</p>\n<ul>\n<li><b>A proprietary camera</b>: Stryker’s new 4th generation FP8000 camera offers increased speeds compared to products currently offered in the market.<sup>1</sup><br>\n</li>\n<li><b>Dual PC system</b>: One PC powers the operating system's applications while the other provides real-time patient data.</li>\n<li><b>Diffusion Tensor Imaging (DTI) and tractography</b>: DTI uses anisotropic diffusion to estimate the brain's axonal organization, reconstructed in 3D.</li>\n<li><b>Precision Targeting System</b>: Enables navigated biopsy of cranial tissue by using comprehensive guidance data and imaging to pre-plan an approach for entry point.</li>\n<li><b>Electromagnetic catheter placement</b>: Enables pinless shunt procedures.</li>\n</ul>\n<p>“With Stryker’s new camera technology, we were able to quickly register patients using the CranialMask Tracker,” said Dr. J.D. Day, M.D. of UAMS Health in Little Rock, Arkansas. “The new user interface and workflows are slick, and our staff loves the intuitive new views like 3D targeting andthe new skull stripping feature.”</p>\n<p>The Q Guidance System with Cranial Guidance Software was <a href=\"/content/stryker/us/en/about/news/2023/stryker-launches-industry-s-only-fully-autonomous-guidance-syste.html\">used at six early product surveillance sites in May 2023</a>.</p>\n<p>Learn more about this new technology at <a href=\"https://www.strykeronegiantleap.com/\">strykeronegiantleap.com</a>.</p>\n",
           "jcr:lastModified": "Tue Jul 11 2023 14:13:22 GMT+0000",
@@ -58,16 +58,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 10 2023 17:56:47 GMT+0000",
       "jcr:lastModified": "Mon Jul 10 2023 17:56:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text_862428244_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Sep 26 2022 13:40:17 GMT+0000",
       "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually.<br>\n</p>\n<p>More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.&nbsp;<br>\n&nbsp;</p>\n",
       "jcr:lastModified": "Mon Jul 10 2023 18:00:57 GMT+0000",
@@ -76,8 +76,8 @@
     },
     "text_862428244_copy__1151107002": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Sep 26 2022 13:40:17 GMT+0000",
       "text": "<p><b>Media contact </b><br>\nSampson Public Relations Group<br>\nAndrea Sampson<br>\nCEO/President<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a><br>\nPhone: 562 304 0301</p>\n",
       "jcr:lastModified": "Mon Jul 10 2023 18:01:56 GMT+0000",
@@ -87,7 +87,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Tue Jul 11 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "11-Jul-2023",
@@ -96,7 +96,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Stryker data on file.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Jul 10 2023 18:00:34 GMT+0000",
@@ -109,7 +109,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "cranial-guidance-press-release-hero",
     "srcFileRef": "/content/dam/stryker/about/news/2023/stryker-announces-commercial-launch-of-q-guidance-system-with-cranial-guidance-software/images/cranial-guidance-press-release-hero.jpg",

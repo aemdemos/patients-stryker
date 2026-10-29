@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c403e108-92d0-486b-929d-06fd901a59ee",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "care.ai smart patient room sensor",
   "jcr:predecessors": [
     "5b6ba844-500c-4891-af21-d8b626f299d0"
@@ -33,15 +33,15 @@
   "jcr:uuid": "e028cd6f-a636-4571-bafb-93a5c6ec79fb",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Transforming care delivery with AI: how the care.ai SmartCare platform is enabling smart, connected care",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Mon May 12 2025 21:47:51 GMT+0000",
       "alt": "care.ai SmartCare Platform leverages always-aware ambient sensors",
@@ -53,8 +53,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon May 12 2025 21:47:55 GMT+0000",
       "text": "<p><i><span class=\"fontsize-1-25em\">2-minute read</span></i></p>\n<h2><span class=\"futura-bold\">Empowering care team members with AI-enabled virtual care and ambient monitoring solutions</span></h2>\n<p><span class=\"fontsize-1-25em\">The healthcare industry is facing significant challenges, including high staff turnover and care team member burnout. As hospitals struggle to retain clinicians, the financial impact is substantial—RN turnover alone can cost between $40,000 and $100,000 per nurse.<sup>1</sup> These pressures are further compounded by declining patient satisfaction rates and growing safety concerns.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Even in the face of ongoing challenges, the need for high-quality patient care remains. The care.ai SmartCare platform may help relieve some of the burden by integrating virtual care workflows into everyday clinical operations. By streamlining administrative tasks, the platform aims to reduce cognitive load and support clinicians with a smart, connected care ecosystem—intending to boost efficiency and make healthcare better for the patient and care team.</span></p>\n<h2><span class=\"futura-bold\">Smart workflows, more time for patient-centered care</span></h2>\n<p><span class=\"fontsize-1-25em\">The care.ai SmartCare Platform leverages always-aware ambient sensors and an AI-powered Command Center to manage and automate virtual care workflows, providing additional support to on-site care team members so they can stay focused on what matters most—delivering patient-centered care. By integrating data and near real-time analytics, care.ai equips clinicians with the insights they need to make informed decisions at critical moments throughout the patient journey.</span></p>\n<h2><span class=\"futura-bold\">Advancing the future of smart hospitals</span></h2>\n<p><span class=\"fontsize-1-25em\">As healthcare continues to evolve, connected care ecosystems are essential to meeting rising demand. care.ai will play a pivotal role in the transformation of smart hospitals, integrating with Stryker’s enterprise workflow platform, which includes communication devices, connected beds and stretchers, to enable dynamic clinical workflows. By seeking to reduce provider strain and enhance care delivery, the integration of care.ai into Stryker’s portfolio supports a more efficient and responsive healthcare environment.</span></p>\n<p><span class=\"fontsize-1-25em\">Learn more about empowering human-centered care: <a href=\"https://www.stryker.com/us/en/acute-care/c/care-ai-human-centered-care.html\" target=\"_blank\">https://www.stryker.com/us/en/acute-care/c/care-ai-human-centered-care.html</a></span></p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Tue May 13 2025 19:35:44 GMT+0000",
@@ -63,8 +63,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon May 12 2025 21:56:24 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Tue May 13 2025 19:34:03 GMT+0000",
@@ -88,7 +88,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Tue May 13 2025 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "13-May-2025",
@@ -101,7 +101,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Muir KJ, Wanchek TN, Lobo JM, et al. Evaluating the costs of nurse burnout-attributed turnover: a Markov modeling approach. J Patient Saf. 2022;18(4):351-356.</p>\r\n",
     "jcr:lastModified": "Mon May 12 2025 21:48:20 GMT+0000",

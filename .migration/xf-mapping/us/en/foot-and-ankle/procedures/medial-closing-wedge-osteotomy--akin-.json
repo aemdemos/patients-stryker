@@ -7,7 +7,7 @@
   "jcr:title": "Medial Closing Wedge Osteotomy (Akin)",
   "jcr:versionHistory": "6ab87af2-1c58-4669-a307-87500ba9d1b7",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Medial-closing-wedge-osteotomy--Akin-/Images/Forefoot_Akin.jpg",
   "jcr:predecessors": [
     "4c548971-f34a-472c-881f-bb7946b80e4c"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "megan.foltz@stryker.com",
+  "cq:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:10:48 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Medial-closing-wedge-osteotomy--Akin-/Images/Forefoot_Akin.jpg",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Tue Nov 05 2019 15:48:25 GMT+0000",
       "jcr:lastModified": "Tue Nov 05 2019 15:48:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -64,8 +64,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Tue Nov 05 2019 15:48:31 GMT+0000",
           "type": "typeId",
           "videoId": "DxNTdAw9ax8",
@@ -79,9 +79,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Akin osteotomy - Dr. Kai Olms",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "This video depicts a cadaveric surgical procedure of an Akin Osteotomy. This is a medial closing wedge osteotomy performed by Dr. Kai Olms on the proximal phalanx of the hallux using an Asnis Micro 2.0mm cannulated screw.",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Nov 05 2019 15:48:35 GMT+0000",
@@ -93,7 +93,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Fri Jul 28 2017 10:17:47 GMT-0400",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "bedafee5-516d-456e-badd-cb8d64ac02e1",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "05063661-2cc1-4dd1-94f7-244cb4afd9e0"
   ],
@@ -30,14 +30,14 @@
   "jcr:uuid": "e955c0bc-cf5d-4902-a09f-2b5f8ff8c1b3",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jun 11 2020 19:40:52 GMT+0000",
       "jcr:lastModified": "Thu Jun 11 2020 19:40:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Thu Jun 11 2020 19:40:57 GMT+0000",
           "hideBorder": "false",
           "type": "typeId",
@@ -61,8 +61,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Jun 11 2020 19:45:13 GMT+0000",
           "text": "<p>&nbsp;&nbsp;</p>\n",
           "jcr:lastModified": "Thu Jun 11 2020 19:45:29 GMT+0000",
@@ -71,8 +71,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Jun 11 2020 19:44:13 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">Stryker Chairman and CEO, <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Kevin Lobo</span></span><span class=\"urw-egyptienne\">, joins CNBC’s “Squawk Alley” to discuss our company's path forward as economies reopen, as well as our diversity and inclusion efforts.</span></span>",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Fri Jun 12 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Jun-2020",

@@ -22,7 +22,7 @@
   ],
   "jcr:uuid": "f961da85-33ba-41db-b6e2-1128c2884fa8",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -33,7 +33,7 @@
       "stryker:business-unit/sports-medicine"
     ],
     "eventRegistrationLink": "https://foreonline.org/event/chicago-sports-medicine-symposium/",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "eventAudience": [
       "stryker:audience/trainees",
       "stryker:audience/nurses",

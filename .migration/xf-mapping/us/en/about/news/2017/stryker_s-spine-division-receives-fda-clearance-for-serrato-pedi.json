@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s Spine Division Receives FDA Clearance for Serrato Pedicle Screw",
   "jcr:versionHistory": "620e6ca6-e6dc-46e0-86ea-420a471ddc62",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "9113d5e6-4827-4a06-b1c3-e08ba940ac6b"
   ],
@@ -30,14 +30,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Wed Aug 16 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-Aug-2017",
@@ -46,7 +46,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>Innovations Designed to Increase OR Efficiency and Construct Strength - Stryker’s Spine division announced that its Serrato™ Pedicle Screw, intended for use in the non-cervical spine as part of the company’s successful Xia® 3 Spinal System, has received 510(k) clearance from the U.S. Food and Drug Administration.</p>\n<p><b>Read the full article:</b></p>\n<h5><a href=\"http://www.businesswire.com/news/home/20170816005146/en/Stryker’s-Spine-Division-Receives-FDA-Clearance-Serrato\"><b>Business Wire</b></a><br>\n</h5>\n",
     "jcr:lastModified": "Thu Sep 14 2017 11:19:35 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -54,7 +54,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/Serrato 106x61.jpg",
     "jcr:lastModified": "Tue Oct 03 2017 10:23:23 GMT-0400",
     "sling:resourceType": "stryker/components/content/standaloneimage"

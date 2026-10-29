@@ -11,7 +11,7 @@
   "jcr:versionHistory": "e02f5d28-36e3-46a5-9a8c-808100c7e265",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_Replacement_2.png",
   "jcr:predecessors": [
     "6024c3ee-838a-49de-9a46-83c772599e0d"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "cq:lastModifiedBy": "user-42b58e166b@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,7 +45,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -53,7 +53,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -63,13 +63,13 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "20",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -78,12 +78,12 @@
         "cq:LiveRelationship"
       ],
       "description": "Many of our primary and revision hip implants are SOMA-designed for optimal fit and function. We are on the forefront of the latest surgical approaches, including novel muscle-sparing surgical approaches to THA and Mako Total Hip Replacement. ",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "title": "No two patients are the same. Variety is what you need. ",
       "jcr:lastModified": "Thu Feb 04 2021 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -91,7 +91,7 @@
         "cq:LiveRelationship"
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
       "1": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -100,7 +100,7 @@
         "filterName": "Product type",
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
         "tagFolder": "/etc/tags/stryker/custom/joint-replacements/product-type",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
       },
       "2": {
         "jcr:primaryType": "nt:unstructured",
@@ -110,7 +110,7 @@
         "filterName": "Procedure",
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
         "tagFolder": "/etc/tags/stryker/custom/joint-replacements/procedure",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
       }
     }
   },
@@ -119,14 +119,14 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "imageAlt": "Hero_JR_Hip_Replacement_2023",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Wed Mar 29 2023 15:22:49 GMT+0000",
     "compImageRef": "/content/dam/stryker/joint-replacement/images/Hero_JR_Hip_Replacement_2023.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "hideBottomLine": "true"
   },
   "image": {

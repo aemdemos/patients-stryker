@@ -11,7 +11,7 @@
   "jcr:versionHistory": "dc797cdb-ade0-49df-be5d-5ea8abbad194",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png",
   "jcr:predecessors": [
     "e8bfda3d-33dc-443a-97ee-b13548f9fbe1"
@@ -38,7 +38,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -46,11 +46,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "ctaLinkType": "none",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Fri Mar 15 2019 14:03:20 GMT+0000",
@@ -73,7 +73,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -83,14 +83,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon May 11 2020 15:27:06 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "200",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -99,12 +99,12 @@
         "cq:LiveRelationship"
       ],
       "description": "The healthcare landscape is evolving.  We can help prepare you with our unique combination of joint\r\nreplacement implants, proprietary robotics technology and\r\nconsultative services. Isn’t it time we create the future together?",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "title": "Let’s create the future together",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -125,11 +125,11 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "jcr:lastModified": "Mon Oct 07 2024 19:31:12 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "arbitraryOrdering": {
       "jcr:primaryType": "nt:unstructured",
       "1": {
@@ -159,13 +159,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

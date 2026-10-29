@@ -8,7 +8,7 @@
   "jcr:title": "Hindfoot",
   "jcr:versionHistory": "5563ee8f-fdc6-445a-a7ef-e70520575614",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/Header_Hindfoot.jpg",
   "jcr:predecessors": [
     "242ab0ac-a85b-4d92-b197-05f3dc4922c3"
@@ -37,7 +37,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/foot-and-ankle",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,7 +45,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -53,12 +53,12 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "bannercampaign_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://strykerwelcomeswright.com/",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
@@ -68,8 +68,8 @@
     },
     "bannercampaign_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "linkExternal": "https://Stryker.com/teachtalks",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Thu Oct 03 2019 20:05:02 GMT+0000",
@@ -85,14 +85,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 16:42:03 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true"
   },
@@ -101,13 +101,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/Header_Hindfoot.jpg",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

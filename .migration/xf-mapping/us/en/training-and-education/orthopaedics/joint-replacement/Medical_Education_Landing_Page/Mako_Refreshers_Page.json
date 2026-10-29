@@ -7,7 +7,7 @@
   "jcr:title": "Mako Refreshers Page",
   "jcr:versionHistory": "2bc0e751-099a-4df6-96e8-e5053ba58578",
   "cq:template": "/apps/stryker/templates/long-page-detail",
-  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
   "jcr:predecessors": [
     "6e91ff24-49d4-4475-8454-2ff68aeb6314"
   ],
@@ -26,15 +26,15 @@
   "jcr:uuid": "293339a9-9144-4c8e-adc5-bb8ac1147711",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "cq:lastModifiedBy": "user-42b58e166b@example.invalid",
   "navTitle": "Mako Refreshers",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "preset": "max_width_auto",
       "jcr:created": "Wed Mar 03 2021 15:48:45 GMT+0000",
       "srcFileRef": "/content/dam/stryker/joint-replacement/med-ed/images/banners/JR_Mako_refresher_Banner_1440.jpg",
@@ -43,16 +43,16 @@
     },
     "largeheadline_201663": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Mar 03 2021 16:09:43 GMT+0000",
       "jcr:lastModified": "Wed Mar 03 2021 16:09:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "fullbleedpanel_copy__147571067": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Fri Jan 10 2020 19:27:03 GMT+0000",
       "jcr:lastModified": "Fri Jan 10 2020 19:27:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -62,8 +62,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Fri Jan 10 2020 19:33:33 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h1><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\">Join us for one - or more - Mako SmartRobotics™&nbsp;</span></span></span><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">refresher courses</span><span style=\"color: rgb(255,181,0); background-color: transparent; font-weight: normal;\">!</span></span></span></h1>\r\n",
@@ -80,8 +80,8 @@
     },
     "fullbleedpanel_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Fri Jan 10 2020 19:27:03 GMT+0000",
       "jcr:lastModified": "Fri Jan 10 2020 19:27:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -89,24 +89,24 @@
     },
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 23:11:23 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 23:11:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "largeheadline_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 23:11:23 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 23:11:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "cols3_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Tue Nov 17 2020 19:15:18 GMT+0000",
       "jcr:lastModified": "Tue Nov 17 2020 19:15:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -115,8 +115,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu May 14 2020 18:45:23 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n <span style=\"color: #ffffff;\"><span class=\"fontsize-2em\">Mako Total Knee&nbsp;</span></span></span></span></p>\n",
@@ -127,8 +127,8 @@
         },
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri May 15 2020 17:02:27 GMT+0000",
           "srcFileRef": "/content/dam/stryker/joint-replacement/med-ed/images/Mako THA New 8.png",
@@ -137,7 +137,7 @@
         },
         "text_1159398179_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Agenda</span></span></span></span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Pre-planning</span></li>\n<li><span class=\"fontsize-1-25em\">OR set up/patient positioning</span></li>\n<li><span class=\"fontsize-1-25em\">Intraoperative workflow</span></li>\n<li><span class=\"fontsize-1-25em\">Tips and tricks</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Aug 17 2021 15:50:06 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
@@ -145,8 +145,8 @@
         },
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Wed May 13 2020 18:10:38 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Dates</span></span></span></span><br>\n </span></p>\n",
           "jcr:lastModified": "Tue Aug 17 2021 15:49:54 GMT+0000",
@@ -155,8 +155,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
           "jcr:created": "Fri Apr 30 2021 00:06:44 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Wednesday, November 10, 2021 | 8 p.m. ET</span><br>\n</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><a href=\"https://stryker.zoom.us/webinar/register/WN_DT-_UtncR32k05CxbG86pg\" target=\"_blank\">REGISTER</a></span></span></p>\n",
           "jcr:lastModified": "Fri Sep 24 2021 13:48:50 GMT+0000",
@@ -165,8 +165,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu Jun 17 2021 14:07:45 GMT+0000",
           "jcr:lastModified": "Thu Jun 17 2021 14:07:45 GMT+0000",
           "sling:resourceType": "stryker/components/content/largeheadline"
@@ -177,8 +177,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy__606981784": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu May 14 2020 18:45:23 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n <span style=\"color: #ffffff;\"><span class=\"fontsize-2em\">Mako Total Hip</span></span></span></span></p>\n",
@@ -189,8 +189,8 @@
         },
         "standaloneimage_copy_1740486058": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed May 13 2020 18:29:35 GMT+0000",
           "srcFileRef": "/content/dam/stryker/joint-replacement/med-ed/images/products/JR_Mako _THA_angle_thumb_1280_897.png",
@@ -199,7 +199,7 @@
         },
         "text_1159398179_copy_519660197": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Agenda</span></span></span></span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Pre-planning</span></li>\n<li><span class=\"fontsize-1-25em\">OR set up/patient positioning</span></li>\n<li><span class=\"fontsize-1-25em\">Intraoperative workflow</span></li>\n<li><span class=\"fontsize-1-25em\">Tips and tricks</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Aug 17 2021 15:50:30 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
@@ -207,8 +207,8 @@
         },
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
           "jcr:created": "Wed May 13 2020 18:10:38 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Dates</span></span></span></span><br>\n </span></p>\n",
           "jcr:lastModified": "Fri Sep 24 2021 13:42:24 GMT+0000",
@@ -217,8 +217,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
           "jcr:created": "Fri Apr 30 2021 00:06:44 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Tuesday, November 9, 2021 | 8 p.m. ET</span><br>\n</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><a href=\"https://stryker.zoom.us/webinar/register/WN_xsn8lXBaSQy1-CDeizB9Zw\" target=\"_blank\">REGISTER</a></span></span></p>\n",
           "jcr:lastModified": "Fri Sep 24 2021 13:50:19 GMT+0000",
@@ -227,8 +227,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu Jun 17 2021 14:07:50 GMT+0000",
           "jcr:lastModified": "Thu Jun 17 2021 14:07:50 GMT+0000",
           "sling:resourceType": "stryker/components/content/largeheadline"
@@ -239,8 +239,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu May 14 2020 18:45:23 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n <span style=\"color: #ffffff;\"><span class=\"fontsize-2em\">Mako Partial Knee</span></span></span></span></p>\n",
@@ -251,8 +251,8 @@
         },
         "standaloneimage_copy_1456747382": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed May 13 2020 18:29:35 GMT+0000",
           "srcFileRef": "/content/dam/stryker/joint-replacement/med-ed/images/products/JR_Mako _PKA_angle_2_thumb_1280_897 copy.png",
@@ -261,8 +261,8 @@
         },
         "text_1159398179_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Wed Mar 03 2021 17:38:50 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Agenda</span></span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Patient selection</span></li>\n<li><span class=\"fontsize-1-25em\">Mako Partial Knee case reviews</span><ul>\n<li><span class=\"fontsize-1-25em\">Medial uni</span></li>\n<li><span class=\"fontsize-1-25em\">Lateral uni</span></li>\n<li><span class=\"fontsize-1-25em\">Patellofemoral</span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\">Cement technique</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Aug 17 2021 15:50:41 GMT+0000",
@@ -271,8 +271,8 @@
         },
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Wed May 13 2020 18:10:38 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Dates</span></span></span></span><br>\n </span></p>\n",
           "jcr:lastModified": "Fri Apr 30 2021 00:14:46 GMT+0000",
@@ -281,8 +281,8 @@
         },
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
           "jcr:created": "Fri Apr 30 2021 00:06:44 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">Wednesday, December 1, 2021 | 8 p.m. ET</span><br>\n</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><a href=\"https://stryker.zoom.us/webinar/register/WN_3tuD3G3tS1aRmJaJO9iiLw\" target=\"_blank\">REGISTER</a></span></span></p>\n",
           "jcr:lastModified": "Mon Nov 01 2021 15:41:48 GMT+0000",
@@ -291,8 +291,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Thu Jun 17 2021 14:09:42 GMT+0000",
           "jcr:lastModified": "Thu Jun 17 2021 14:09:42 GMT+0000",
           "sling:resourceType": "stryker/components/content/largeheadline"
@@ -301,32 +301,32 @@
     },
     "largeheadline_305813_2069377225": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Apr 21 2021 17:28:25 GMT+0000",
       "jcr:lastModified": "Wed Apr 21 2021 17:28:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "largeheadline_678150235": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 23:32:07 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 23:32:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 18:45:10 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 18:45:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "fullbleedpanel_copy__2059336580": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Mar 03 2021 19:28:44 GMT+0000",
       "jcr:lastModified": "Wed Mar 03 2021 19:29:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -337,9 +337,9 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
           "topPadding": "2",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Wed Mar 03 2021 19:29:09 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -352,8 +352,8 @@
     },
     "fullbleedpanel_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Mar 03 2021 19:28:44 GMT+0000",
       "jcr:lastModified": "Wed Mar 03 2021 19:29:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -361,16 +361,16 @@
     },
     "largeheadline_678150": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 23:32:07 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 23:32:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/largeheadline"
     },
     "text_266520686": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 23:35:02 GMT+0000",
       "text": "<p>The faculty are paid consultants of Stryker. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\n<p>The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.</p>\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Mako, SmartRobotics, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\n",
       "jcr:lastModified": "Fri Sep 24 2021 13:51:57 GMT+0000",
@@ -384,7 +384,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Feb 04 2021 23:09:45 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

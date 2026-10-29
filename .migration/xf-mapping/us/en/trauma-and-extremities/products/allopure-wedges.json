@@ -8,7 +8,7 @@
   "jcr:title": "AlloPure Wedges",
   "jcr:versionHistory": "8ab40170-3c87-47c7-8b3d-de3be06cbbe8",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "3f6925c6-4bf8-4004-a678-26ebd9b900db"
   ],
@@ -35,13 +35,13 @@
   "jcr:uuid": "ea651229-bf19-46fb-a1d7-f1c8a6e282d1",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Fri Feb 18 2022 19:35:04 GMT+0000",
@@ -66,7 +66,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>Bicortical and tricortical allograft wedges for Cotton and Evans osteotomies.</p>\n<p>AlloPure provides a terminally sterilized allograft bone wedge with a cortical rim that provides natural strength.</p>\n",
     "jcr:lastModified": "Mon Feb 21 2022 14:58:42 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

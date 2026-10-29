@@ -9,7 +9,7 @@
   "jcr:versionHistory": "1a096349-9d6b-4608-b196-fc7c9468305a",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Eileen_Impact podcast with John Shegerian_thumbnail",
   "jcr:predecessors": [
     "a4544f1a-452c-40f0-9afb-ac57c353b0da"
@@ -30,14 +30,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Oct 31 2023 14:35:36 GMT+0000",
       "jcr:lastModified": "Tue Oct 31 2023 14:35:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Oct 31 2023 14:35:39 GMT+0000",
           "text": "<p>Eileen Buckley, Vice President of Corporate Responsibility, joins The Impact Podcast to discuss our commitment to create a better, healthier world for our employees, our customers and their patients.</p>\n",
           "jcr:lastModified": "Tue Oct 31 2023 14:35:52 GMT+0000",
@@ -56,9 +56,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Oct 31 2023 14:36:02 GMT+0000",
@@ -73,7 +73,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Tue Oct 31 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "31-Oct-2023",
@@ -82,7 +82,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "Eileen_Impact podcast with John Shegerian_thumbnail",
     "srcFileRef": "/content/dam/stryker/about/news/2023/strykers-corporate-responsibility-vp-talks-social-environmental-strategy-in-medtech-on-the-impact-podcast/Eileen_Impact podcast with John Shegerian_thumbnail.png",

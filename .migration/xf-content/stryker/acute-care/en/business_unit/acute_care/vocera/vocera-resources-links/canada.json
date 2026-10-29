@@ -23,32 +23,32 @@
   "cq:tags": [],
   "jcr:uuid": "4f9137fa-de85-4403-9dfe-862904af7e7f",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Fri Feb 16 2024 19:17:13 GMT+0000",
     "jcr:lastModified": "Fri Feb 16 2024 19:17:13 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+    "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "cq:lastRolledout": "Fri Feb 16 2024 19:17:13 GMT+0000",
       "deepLinkingId": "vocera-resources-footer-xf",
       "jcr:created": "Fri Sep 16 2022 20:39:14 GMT+0000",
       "title": "Vocera resources",
       "jcr:lastModified": "Fri Feb 16 2024 19:17:13 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "chris.kleckner@stryker.com"
+      "cq:lastRolledoutBy": "user-f123ca2978@example.invalid"
     },
     "text5598976517775081": {
       "jcr:primaryType": "nt:unstructured",
@@ -57,17 +57,17 @@
       ],
       "jcr:title": "Customer Support",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
       "jcr:lastModified": "Fri Feb 16 2024 19:37:33 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "text55989765177750811200728484688802": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
         "gradientDirection": "left-to-right",
@@ -75,7 +75,7 @@
         "jcr:lastModified": "Fri Feb 16 2024 19:37:33 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "bottomMargin": "2"
       },
       "cq:responsive": {
@@ -84,7 +84,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -93,7 +93,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -103,7 +103,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     },
@@ -114,7 +114,7 @@
       ],
       "jcr:title": "Vocera legal",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:lastModified": "Mon Mar 18 2024 15:12:43 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
       "text5598976517775081_828267591583157843667512": {
@@ -122,7 +122,7 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
         "gradientDirection": "left-to-right",
@@ -130,7 +130,7 @@
         "jcr:lastModified": "Fri Feb 16 2024 19:38:01 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "bottomMargin": "3"
       },
       "cq:responsive": {
@@ -149,18 +149,18 @@
       ],
       "jcr:title": "Training",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
       "jcr:lastModified": "Fri Feb 16 2024 19:37:39 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -169,7 +169,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -179,7 +179,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text5598976517775081_8887884381200749882108912": {
@@ -198,18 +198,18 @@
       ],
       "jcr:title": "Documentation",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
       "jcr:lastModified": "Fri Feb 16 2024 19:37:55 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -218,7 +218,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -228,7 +228,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text5598976517775081_21438441401200765590946521": {
@@ -237,13 +237,13 @@
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
         "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Documentation&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>\n<p><a title=\"Vocera Documentation portal\" href=\"https://pubs.vocera.com/\" target=\"_blank\">Vocera documentation portal</a></p>\n",
         "jcr:lastModified": "Fri Feb 16 2024 19:45:16 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "text5598976517775081_1036293979": {
@@ -253,18 +253,18 @@
       ],
       "jcr:title": "Legal",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
       "jcr:lastModified": "Fri Feb 16 2024 19:38:01 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -274,7 +274,7 @@
           "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
           "width": "4",
           "behavior": "newline",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -284,7 +284,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     },
@@ -309,8 +309,8 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Fri Feb 16 2024 19:17:13 GMT+0000",
       "jcr:created": "Tue Oct 17 2023 20:31:53 GMT+0000",
@@ -319,7 +319,7 @@
       "sling:resourceType": "stryker/components/content/text",
       "backgroundColor": "rgba(255,255,255,1)",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
       "bottomMargin": "3"
     }
   },

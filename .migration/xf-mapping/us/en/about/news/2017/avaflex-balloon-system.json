@@ -7,7 +7,7 @@
   "jcr:title": "AVAflex Balloon System",
   "jcr:versionHistory": "485b4b79-632c-45aa-9e6e-e7f0ba7c6914",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "531fb5f3-f4ee-4e3e-afdf-f13810676d2b"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Wed Mar 08 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-Mar-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>Confidence is close at hand with Stryker's AVAflex balloon system. Simplify your approach in treating vertebral compression fractures (VCFs) and achieve bipedicular results with a unipedicular approach.1 AVAflex’s multiple balloon sizes and needle gauge options are designed to meet your preferences and patient needs.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"https://providers.strykerivs.com/products/families/avaflex\" target=\"_blank\">Stryker Interventional Spine - Healthcare Providers</a></p>\n",
     "jcr:lastModified": "Tue May 30 2017 16:20:31 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

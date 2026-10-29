@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "110e79c3-d99e-4f7c-9b1c-9a68f5b6e93d",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Mon Oct 08 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-Oct-2018",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p><b>Expanded portfolio to be showcased at The Congress of Neurological Surgeons this week</b></p>\n<p>Stryker's Advanced Guidance Technologies business (formerly known as Stryker's Navigation business) announced today it has entered into strategic partnerships with Synaptive Medical and Ziehm Imaging, strengthening Stryker's position as a leader in surgical guidance.</p>\n<p>Through the partnership with Synaptive Medical, Stryker will offer the BrightMatter™ Plan software, which automatically generates high-fidelity, dynamic, whole-brain tractography. &nbsp;Surgeons can easily review tracts and explore multiple surgical approaches to create powerful pre-operative plans—for every case.&nbsp; Tractography can be used, without disrupting surgical workflow, to confirm the data is concordant with the intended approach and determine whether detailed surgical planning is required. Then, the surgical plans can be easily exported for navigation in the operating room.</p>\n<p>BrightMatter Plan is the only tractography offering that is automated and whole-brain. &nbsp;Other solutions on the market require a neuroradiologist or other tractography expert to generate tracts, which is both time consuming and a road block for surgeons.</p>\n<p>&quot;We are committed to providing our customers with a complete solution for surgical guidance,&quot; said&nbsp;Lisa Kloes, General Manager of Stryker's Advanced Guidance Technologies business. &quot;The partnerships with Synaptive Medical and Ziehm Imaging are an important step in that direction.&quot;</p>\n<p>The Ziehm Vision RFD 3D C-arm, which Stryker will now offer as part of its agreement with Ziehm Imaging, offers the latest flat-panel technology for CT-like image quality, giving surgeons access to detail-rich imaging that provides the accuracy and efficiency required in demanding orthopaedic, trauma or spinal procedures, all with minimized dose and less time.</p>\n<p>Over the last several years, Stryker's Advanced Guidance Technologies' product and service offerings have evolved beyond the traditional scope of navigation to also include Imaging, Augmented Reality and Planning Software. With the addition of BrightMatter Plan and Ziehm Vision RFD 3D C-arm to its portfolio, Stryker's Advanced Guidance Technologies reinforces its commitment to providing customers with better and complete surgical guidance solutions.</p>\n<p>To learn more about this expanded portfolio, please visit booth #1529 at The Congress of Neurological Surgeons (CNS).&nbsp;&nbsp;</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical, Surgical, Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"http://www.stryker.com/\">www.stryker.com</a>.</p>\n",
     "jcr:lastModified": "Thu Oct 11 2018 17:41:19 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

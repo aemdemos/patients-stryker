@@ -7,7 +7,7 @@
   "jcr:title": "“BPCI” A Team – Last but not Least!",
   "jcr:versionHistory": "c1ecf2a5-1837-40d1-aea6-9eb735c0af6e",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+  "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
   "jcr:predecessors": [
     "a9ae822e-5a51-47f2-947d-34f9293ba86d"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:parentPath": "/content/stryker/us/en/joint-replacement/sps-blog/2018",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "anna.kroll@stryker.com",
+  "cq:lastModifiedBy": "user-ac39b274ec@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "publishDate": "Tue Jun 26 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "26-Jun-2018",
@@ -43,14 +43,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "srcFileRef": "/content/dam/stryker/joint-replacement/sps_blog/mcinerny.png",
     "jcr:lastModified": "Mon Jun 25 2018 13:54:56 GMT-0400",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Jordan McInerney, MHA, Senior Managing Consultant</span></span></p>\n<p>Jordan consults with clients on innovative payment reform strategies, such as co-management arrangements, bundled payment initiatives and accountable care organizations. His expertise includes physician practice management and growth, network development, patient-centered medical homes and Medicaid managed care.</p>\n<p>After beginning his career with Medicaid, Jordan spent five years in practice management, during which he led the successful start-up and growth of a new Internal Medicine and Pediatrics practice. He received a Master of Healthcare Administration degree from the University of North Carolina at Chapel Hill and is a graduate of the Administrative Internship Program at Duke University Hospital.</p>\n<p><a href=\"https://www.stryker.com/content/stryker/us/en/joint-replacement/sps-blog.html\"><span class=\"futura-bold\">BACK</span></a></p>\n",
     "jcr:lastModified": "Mon Jun 25 2018 14:00:35 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -58,7 +58,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "jcr:lastModifiedBy": "user-ac39b274ec@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>This material and/or presentation is provided for guidance and/or illustrative purposes only and should not be construed as a guarantee of future results or a substitution for legal advice and/or medical advice from a healthcare provider. Stryker Performance Solutions does not practice medicine and assumes no responsibility for the administration of patient care.</p>\r\n<p>©2018 Stryker’s Performance Solutions Reproduction or distribution prohibited without the express written consent of Stryker’s Performance Solutions.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n",
     "jcr:lastModified": "Mon Jun 25 2018 13:59:31 GMT-0400",

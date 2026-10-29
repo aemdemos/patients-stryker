@@ -9,7 +9,7 @@
   "jcr:versionHistory": "98e4cdc7-c3ad-429b-8fc3-dd9f777d28dd",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "e8146055-a7f0-48a5-bfd2-676bf7846b23"
   ],
@@ -29,7 +29,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
   "videoType": "typeId",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -38,9 +38,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "dimensionBox": "FDB",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "layoutOptions": "50_top",
       "backgroundImageRef": "/content/dam/stryker/legal/it/images/IT_Legal_Hero_AdobeStock_315467564.jpg",
       "jcr:created": "Mon May 18 2020 15:46:28 GMT+0000",
@@ -53,8 +53,8 @@
           "sling:resourceType": "wcm/foundation/components/parsys",
           "text": {
             "jcr:primaryType": "nt:unstructured",
-            "jcr:createdBy": "garrett.shue@stryker.com",
-            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "jcr:createdBy": "user-7065227e84@example.invalid",
+            "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
             "jcr:created": "Mon May 18 2020 15:56:41 GMT+0000",
             "text": "<p style=\"margin-left: 80px;\">&nbsp;</p>\n<p style=\"margin-left: 80px;\">&nbsp;</p>\n<p style=\"margin-left: 80px;\">&nbsp;</p>\n<p style=\"margin-left: 80px;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Customer</span>&nbsp;<br>\n</span></span></span></span><b data-rte-class=\"rte-temp\"><span class=\"fontsize-2-5em\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\"><b data-rte-class=\"rte-temp\"><span class=\"urw-egyptienne\">Terms and Conditions</span></b></span></b></span></b></p>\n",
             "jcr:lastModified": "Mon May 18 2020 15:58:15 GMT+0000",
@@ -66,8 +66,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 10 2020 15:06:06 GMT+0000",
       "text": "<p>The below documents may apply to your individual customer contract.</p>\n",
       "jcr:lastModified": "Wed Jun 10 2020 15:06:12 GMT+0000",
@@ -76,25 +76,25 @@
     },
     "cols_38079522": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 24 2023 19:12:01 GMT+0000",
       "jcr:lastModified": "Thu Aug 24 2023 19:12:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "resources": "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
       "jcr:lastModified": "Thu Oct 05 2023 19:07:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "accordion_copy_copy__731499333": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 10 2020 15:03:25 GMT+0000",
       "title": "Acute Care",
       "jcr:lastModified": "Thu Aug 24 2023 19:12:18 GMT+0000",
@@ -105,13 +105,13 @@
         "accPosId": 8,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/lifenet/LIFENET.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Software and Hosting Terms and Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Stryker Enterprise BAA .pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:21:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -123,9 +123,9 @@
         "accPosId": 11,
         "resourcesanddownload_1486303595": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:45:33 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -137,12 +137,12 @@
         "accPosId": 12,
         "resourcesanddownload_989079740": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/surgicount-safety---sponge-system/word/Product Addendum for SurgiCount Connect Products (Rev. 1.24.23).docx"
           ],
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Tue Jan 24 2023 15:38:16 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -154,13 +154,13 @@
         "accPosId": 1,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/iBED Activation Service Terms and Conditions 020720.pdf",
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Wed Oct 15 2025 17:12:01 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -172,13 +172,13 @@
         "accPosId": 2,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-maintenance/iBed Maintenance Terms and Conditions 050420.pdf",
             "/content/dam/stryker/legal/it-direct-channel/ibed-maintenance/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Wed Oct 15 2025 17:14:45 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -190,12 +190,12 @@
         "accPosId": 3,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Fri May 17 2024 17:10:39 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -207,12 +207,12 @@
         "accPosId": 4,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Fri May 17 2024 17:10:59 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -257,12 +257,12 @@
         "accPosId": 5,
         "resourcesanddownload_1144974199": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Fri May 17 2024 17:11:20 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -274,12 +274,12 @@
         "accPosId": 6,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/pdfs/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Fri May 17 2024 17:11:39 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -288,16 +288,16 @@
     },
     "cols_1464340296": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 24 2023 19:11:43 GMT+0000",
       "jcr:lastModified": "Thu Aug 24 2023 19:11:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "accordion_copy_copy__724494467": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 10 2020 15:03:25 GMT+0000",
       "title": "Emergency Care",
       "jcr:lastModified": "Thu Aug 24 2023 19:10:20 GMT+0000",
@@ -308,12 +308,12 @@
         "accPosId": 1,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/code-stat/CODE-STAT.pdf",
             "/content/dam/stryker/legal/it-direct-channel/code-stat/Software and Hosting Terms and Conditions.pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:20:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -325,12 +325,12 @@
         "accPosId": 2,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/dt-express/DT EXPRESS.pdf",
             "/content/dam/stryker/legal/it-direct-channel/dt-express/Software and Hosting Terms and Conditions.pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:20:44 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -342,12 +342,12 @@
         "accPosId": 5,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -359,12 +359,12 @@
         "accPosId": 6,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -376,12 +376,12 @@
         "accPosId": 10,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -393,12 +393,12 @@
         "accPosId": 9,
         "resourcesanddownload_1144974199": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -410,9 +410,9 @@
         "accPosId": 11,
         "resourcesanddownload_1486303595": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:45:33 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -424,12 +424,12 @@
         "accPosId": 12,
         "resourcesanddownload_989079740": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/surgicount-safety---sponge-system/word/Product Addendum for SurgiCount Connect Products (Rev. 1.24.23).docx"
           ],
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Tue Jan 24 2023 15:38:16 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -464,12 +464,12 @@
         "accPosId": 3,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/lifelinkcentral/LIFELINKcentral.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifelinkcentral/Software and Hosting Terms and Conditions.pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:20:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -481,13 +481,13 @@
         "accPosId": 4,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/lifenet/LIFENET.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Software and Hosting Terms and Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Stryker Enterprise BAA .pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:21:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -496,16 +496,16 @@
     },
     "cols_1976118061": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 24 2023 19:11:48 GMT+0000",
       "jcr:lastModified": "Thu Aug 24 2023 19:11:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "accordion_copy_copy__99373666": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Jun 10 2020 15:03:25 GMT+0000",
       "title": "Surgical Technologies",
       "jcr:lastModified": "Tue Aug 13 2024 13:49:05 GMT+0000",
@@ -516,12 +516,12 @@
         "accPosId": 5,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -533,13 +533,13 @@
         "accPosId": 3,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/iBED Activation Service Terms and Conditions 020720.pdf",
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:42:39 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -551,13 +551,13 @@
         "accPosId": 4,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-maintenance/iBed Maintenance Terms and Conditions 050420.pdf",
             "/content/dam/stryker/legal/it-direct-channel/ibed-maintenance/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/ibed-maintenance/Standard Terms of Sale (US) (FINAL 11-12-20).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:41:19 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -569,12 +569,12 @@
         "accPosId": 6,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -586,12 +586,12 @@
         "accPosId": 7,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/lifelinkcentral/LIFELINKcentral.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifelinkcentral/Software and Hosting Terms and Conditions.pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:20:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -603,13 +603,13 @@
         "accPosId": 8,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/lifenet/LIFENET.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Software and Hosting Terms and Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Stryker Enterprise BAA .pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Wed Jun 28 2023 17:21:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -621,12 +621,12 @@
         "accPosId": 10,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -638,12 +638,12 @@
         "accPosId": 9,
         "resourcesanddownload_1144974199": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/ibed-activation/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Standard Terms of Sale (US).pdf"
           ],
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Aug 10 2023 18:40:41 GMT+0000",
           "jcr:lastModified": "Thu Aug 10 2023 18:43:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -655,9 +655,9 @@
         "accPosId": 1,
         "resourcesanddownload_989079740": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Tue Aug 13 2024 13:48:07 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -682,9 +682,9 @@
         "accPosId": 2,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "resources": "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2020 15:10:37 GMT+0000",
           "jcr:lastModified": "Tue Aug 13 2024 13:48:07 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -693,16 +693,16 @@
     },
     "cols_1067116960": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 24 2023 19:12:55 GMT+0000",
       "jcr:lastModified": "Thu Aug 24 2023 19:12:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "accordion": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Dec 19 2024 23:00:48 GMT+0000",
       "title": "Communications",
       "jcr:lastModified": "Wed Jan 15 2025 23:32:37 GMT+0000",
@@ -713,12 +713,12 @@
         "accPosId": 1,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Stryker-Enterprise-BAA.pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Dec 19 2024 23:01:53 GMT+0000",
           "jcr:lastModified": "Thu Dec 19 2024 23:02:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -730,12 +730,12 @@
         "accPosId": 2,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Stryker-Enterprise-BAA.pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Dec 19 2024 23:01:53 GMT+0000",
           "jcr:lastModified": "Thu Dec 19 2024 23:02:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -747,12 +747,12 @@
         "accPosId": 3,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/Stryker-Enterprise-BAA.pdf"
           ],
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Dec 19 2024 23:01:53 GMT+0000",
           "jcr:lastModified": "Thu Dec 19 2024 23:02:49 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -764,9 +764,9 @@
         "accPosId": 4,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "resources": "/content/dam/stryker/legal/it-direct-channel/standard-terms/pdf/Stryker Software and Hosting Terms  Conditions.pdf",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Dec 19 2024 23:01:53 GMT+0000",
           "jcr:lastModified": "Fri Dec 20 2024 14:51:21 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -798,16 +798,16 @@
     },
     "cols_1067116960_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Aug 24 2023 19:12:55 GMT+0000",
       "jcr:lastModified": "Thu Aug 24 2023 19:12:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "accordion_1597361620": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Sep 08 2026 14:28:52 GMT+0000",
       "title": "Endoscopy",
       "jcr:lastModified": "Tue Sep 08 2026 14:29:36 GMT+0000",
@@ -826,13 +826,13 @@
         "accPosId": 1,
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "resources": [
             "/content/dam/stryker/legal/it-direct-channel/secure-connect/Stryker Software and Hosting Terms  Conditions.pdf",
             "/content/dam/stryker/legal/it-direct-channel/lifenet/Stryker Enterprise BAA .pdf",
             "/content/dam/stryker/legal/it-direct-channel/case-care-cloud/Case Care Cloud Terms.pdf"
           ],
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Tue Sep 08 2026 14:39:54 GMT+0000",
           "jcr:lastModified": "Fri Sep 25 2026 13:55:51 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"

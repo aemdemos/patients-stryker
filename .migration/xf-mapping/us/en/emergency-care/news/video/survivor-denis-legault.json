@@ -9,7 +9,7 @@
   "jcr:versionHistory": "4b254a84-fee2-4fcd-bb66-a0f004936293",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Denis Legault holding eggs",
   "jcr:predecessors": [
     "55366002-bec3-40ae-bacb-df5018d95750"
@@ -32,15 +32,15 @@
   "jcr:uuid": "13a1522c-2910-4bf9-9662-322e6182cd4b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "description": "Denis Legault resides in South Glengarry, Ontario, Canada, approximately an hour and a half away from the nearest catheterization laboratory. After a routine doctor's visit earlier in the day and a stressful day at work, he sensed something was not right. He and his wife dialed 911, and Brad Hunt from Cornwall SDG Paramedic Services was dispatched to promptly respond. Thanks to the paramedics' quick action and speedy driving, Denis reached the Ottawa Heart Institute in just 52 minutes. Two years following his sudden cardiac arrest event, Denis reunited with the crew that helped save his life. ",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Oct 10 2023 14:38:51 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -54,7 +54,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/Stryker_Oleander_FinalV1_1025.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Stryker_Oleander_FinalV1_1025-AVS",
         "urlModifiers": "",
@@ -68,16 +68,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:41:42 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:41:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:42:36 GMT+0000",
@@ -101,7 +101,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Tue Oct 10 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Oct-2023",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "cd5adb4a-e549-4b42-b5fa-a2681c9c8f07",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Video Image Processing (VIP) Package",
   "businessUnitTag": "stryker:business-unit/endoscopy",
   "jcr:predecessors": [
@@ -42,13 +42,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Apr 07 2022 13:18:31 GMT+0000",
       "compImageRef": "/content/dam/stryker/endoscopy/products/vip-package/images/VIP.png",
@@ -60,16 +60,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 01 2018 18:02:39 GMT-0400",
       "jcr:lastModified": "Wed Aug 01 2018 18:02:39 GMT-0400",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Feb 28 2022 23:40:47 GMT+0000",
       "jcr:lastModified": "Mon Feb 28 2022 23:40:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Feb 28 2022 23:48:33 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -90,8 +90,8 @@
         },
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue Mar 01 2022 18:54:13 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-4-5-vw\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">93%</span></span></span>",
@@ -110,8 +110,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Mar 01 2022 21:20:38 GMT+0000",
           "srcFileRef": "/content/dam/stryker/endoscopy/products/vip-package/images/Smoke.png",
@@ -124,16 +124,16 @@
     },
     "cols_1394977963": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Mar 01 2022 19:34:11 GMT+0000",
       "jcr:lastModified": "Tue Mar 01 2022 19:34:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_1791130971": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Mar 01 2022 19:34:20 GMT+0000",
       "jcr:lastModified": "Tue Mar 01 2022 19:34:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -142,8 +142,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_1229379705": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Feb 28 2022 23:29:01 GMT+0000",
           "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">PneumoClear<br>\n </span></span><span class=\"urw-egyptienne\">The smart insufflator</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maintain a clear surgical environment and image with our smart inflow and outflow management </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">designed to maintain stability while actively evacuating smoke.</span></span></p>\n<p><span class=\"fontsize-1-25em\">Consolidate insufflation needs with Stryker's all-in-one heated, humidified, and smoke evacuation platform on the market.</span></p>\n",
           "jcr:lastModified": "Tue Apr 12 2022 21:32:05 GMT+0000",
@@ -156,8 +156,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Mar 01 2022 21:20:48 GMT+0000",
           "srcFileRef": "/content/dam/stryker/endoscopy/products/vip-package/images/PneumoClear.png",
@@ -170,8 +170,8 @@
     },
     "cols_1205805359": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Mar 01 2022 21:44:45 GMT+0000",
       "jcr:lastModified": "Tue Mar 01 2022 21:44:45 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -180,8 +180,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue Mar 01 2022 21:44:51 GMT+0000",
           "jcr:lastModified": "Tue Mar 01 2022 21:44:51 GMT+0000",
           "sling:resourceType": "stryker/components/content/text"
@@ -190,16 +190,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 30 2026 18:13:17 GMT+0000",
       "jcr:lastModified": "Tue Jun 30 2026 18:13:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -208,16 +208,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
@@ -227,8 +227,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -237,8 +237,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
               "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
@@ -252,10 +252,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "4047",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -275,7 +275,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Anticipate your needs with Stryker’s first software&nbsp;solution designed with artificial intelligence and&nbsp;<span style=\"font-size: 0.8125rem; background-color: transparent;\">machine learning concepts in mind.</span></p>\r\n",
     "shortDescTop": "<p>Anticipate your needs with Stryker’s first software&nbsp;solution designed with artificial intelligence and&nbsp;machine learning concepts in mind.</p>\r\n",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Feb 28 2022 23:26:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -288,7 +288,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Anticipate your needs with Stryker’s first software&nbsp;solution designed with</span> <span class=\"futura-bold\">artificial intelligence</span> <span class=\"urw-egyptienne\">and&nbsp;</span><span class=\"futura-bold\">machine learning</span><span class=\"urw-egyptienne\"> concepts in mind.</span></span></p>\n",
     "jcr:lastModified": "Tue Mar 01 2022 21:32:13 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -297,14 +297,14 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Feb 28 2022 23:28:26 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "linkNewWindow": "true",
     "jcr:lastModified": "Tue Jun 30 2026 18:13:08 GMT+0000",
@@ -314,7 +314,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>* As compared to ORs without the VIP system</p>\r\n<ol>\r\n<li>VIP Limited Launch Report: Reference: CPR10215 Connected OR Hub VIP Package Limited Launch Report. IFU (P47269); 115 surgeons surveyed.&nbsp;</li>\r\n<li>Data on file, Stryker Endoscopy, PN1000902407, &quot;PneumoClear Claims Research&quot;; 31 nurses surveyed.</li>\r\n</ol>\r\n<p>The information presented in this brochure is for informational purposes only. Always refer to the Stryker product’s package insert, product label and/or user instructions before using any Stryker product. Products may not be available in all markets. Product availability is subject to the regulatory or medical practices that govern individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area. Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
     "jcr:lastModified": "Tue Mar 01 2022 21:41:12 GMT+0000",
@@ -323,7 +323,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Jun 30 2026 18:13:03 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

@@ -7,7 +7,7 @@
   "jcr:title": "IRIS Course",
   "jcr:versionHistory": "c003058a-c841-471a-8dca-f9ec53f9fb88",
   "cq:template": "/apps/stryker/templates/event-detail",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "jcr:predecessors": [
     "60108852-2e15-43da-9ee5-a4ee20025cbd"
   ],
@@ -27,7 +27,7 @@
   "jcr:uuid": "45651b29-5f14-4849-89a5-86d4bf32d175",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "cq:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -39,7 +39,7 @@
       "stryker:business-unit/endoscopy"
     ],
     "eventContactEmail": "gianna.scarpetti@stryker.com",
-    "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+    "jcr:lastModifiedBy": "user-3302ad7061@example.invalid",
     "eventAudience": [
       "stryker:audience/medical_professionals"
     ],

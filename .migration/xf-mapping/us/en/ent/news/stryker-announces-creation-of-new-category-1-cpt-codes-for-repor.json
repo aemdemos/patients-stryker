@@ -24,14 +24,14 @@
   ],
   "jcr:uuid": "ea8dbeb5-4802-4e3a-b15a-eadc7a802066",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Nov 21 2022 19:22:40 GMT+0000",
       "jcr:lastModified": "Mon Nov 21 2022 19:22:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -40,8 +40,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Nov 21 2022 19:24:38 GMT+0000",
           "text": "<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p>Media contact</p>\n<p>Jennifer Lentner</p>\n<p>Senior Director, Communications</p>\n<p><a href=\"mailto:Jennifer.lentner@stryker.com\">Jennifer.lentner@stryker.com</a></p>\n",
           "jcr:lastModified": "Mon Nov 21 2022 19:25:46 GMT+0000",
@@ -53,7 +53,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed Oct 19 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Oct-2022",
@@ -62,7 +62,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><b>Kalamazoo, Michigan, USA – October 18, 2022</b> –&nbsp;Stryker (NYSE:SYK) announced that the American Medical Association (AMA) Current Procedural Terminology (CPT®) Editorial Panel will create new Category I CPT Codes for reporting posterior nasal nerve ablation procedures effective January 1, 2024.&nbsp; One of the new codes will be available to providers to report posterior nasal nerve ablation using a cryoablation device.</p>\n<p><a href=\"https://ent.stryker.com/medical-devices/cryotherapy/clarifix-cryotherapy-device\">ClariFix</a>&nbsp;is a cryoablation device used for the treatment of chronic rhinitis.&nbsp; The procedure is supported with robust clinical evidence, including five peer-reviewed publications, concluding that ClariFix can provide durable relief from chronic rhinitis and improved patient quality of life.</p>\n<p>“We are thrilled with the AMA’s decision to create a Category I CPT code and believe that this will foster greater patient access to care,” said Kate Stewart, Vice President and General Manager of Stryker’s ENT business. “Our ClariFix device can help many people suffering from chronic rhinitis and the value of ClariFix is supported with long-term clinical evidence.”</p>\n<p>Learn more about ClariFix&nbsp;<a href=\"https://ent.stryker.com/medical-devices/cryotherapy/clarifix-cryotherapy-device\">here</a>.</p>\n",
     "jcr:lastModified": "Mon Nov 21 2022 19:24:28 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

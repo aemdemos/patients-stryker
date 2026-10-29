@@ -9,7 +9,7 @@
   "jcr:versionHistory": "b3894470-c370-4545-ad87-17d7574dbeba",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "c9ef6ac2-b511-44f8-94d1-abae7494e98a"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "1193d711-88e4-4284-8f88-f234ba5da386",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Product discontinuation notice",
   "image": {
     "jcr:primaryType": "nt:unstructured"
@@ -35,8 +35,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jul 27 2022 18:56:44 GMT+0000",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 27 2022 20:29:21 GMT+0000",
@@ -45,9 +45,9 @@
     },
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -65,10 +65,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/services/end-of-life-notice/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/services/end-of-life-notice/master",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "3",
           "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
@@ -84,9 +84,9 @@
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
               "bottomPadding": "3",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "topPadding": "3",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Fri Oct 01 2021 17:37:38 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Product discontinuation notice</span></span></h1>\r\n",
@@ -105,16 +105,16 @@
     },
     "cols_copy_copy_12471": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jul 27 2022 18:56:57 GMT+0000",
       "jcr:lastModified": "Wed Jul 27 2022 18:56:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -123,8 +123,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -138,7 +138,7 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:createdBy": "user-fe8967f731@example.invalid",
       "resources": [
         "/content/stryker/us/en/emergency-care/asset-items/fda/jcr:content/par/externalasset_copy_c",
         "/content/dam/stryker/ems/resources/end-of-life/3344238_b_lifepak_eol_custltr_2020.pdf",
@@ -147,7 +147,7 @@
         "/content/dam/stryker/ems/resources/end-of-life/3342606_c_heartsine_eol_faq_2020.pdf"
       ],
       "description": "For more information on this product discontinuation and how we are complying with the latest FDA final order, please review the following.",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 21 2020 22:14:52 GMT+0000",
       "title": "Additional resources",
       "jcr:lastModified": "Wed Jul 27 2022 19:20:48 GMT+0000",
@@ -155,8 +155,8 @@
     },
     "text_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
       "gradientDirection": "left-to-right",

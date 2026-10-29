@@ -7,7 +7,7 @@
   "jcr:title": "Stryker joins leading executives and employers in forming OneTen ",
   "jcr:versionHistory": "517abf2f-1a8a-45e2-9bff-b368f9de7fe8",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "488960b4-533b-4cfb-912b-b8d0e5088a85"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "70c20998-9992-4dc3-b38a-e67b62f85e0e",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Thu Dec 10 2020 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Dec-2020",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p><span class=\"fontsize-1-5em\"><b>OneTen will create one million jobs for Black Americans over 10 years</b></span></p>\n<p><br>\nStryker announced today its participation as a founding member of OneTen, a coalition of leading CEOs and companies that will train, hire and advance one million Black Americans over the next 10 years.</p>\n<p>The organization will combine the power of leading executives and employers across industries to make a meaningful, measurable and lasting systemic impact on racial and economic justice and to create a more equitable society.</p>\n<p>OneTen connects employers with talent partners and leading non-profits who support the development of diverse talent. Through these partnerships, OneTen members will support the ongoing education and training of individuals in this network to build competitive skills and increase hiring from these talent pipelines.</p>\n<p>“We look forward to the opportunity to strengthen the diversity of our workforce and the broader community through the OneTen coalition. With actionable and measurable goals, we’re committed to leveraging the power of this coalition in our diversity, equity and inclusion programs and advancing Black talent,” says Stryker chairman and CEO Kevin Lobo.</p>\n<p><a href=\"https://www.oneten.org\"><span class=\"standalone-link\">Learn more about OneTen</span></a><br>\n</p>\n",
     "jcr:lastModified": "Thu Dec 10 2020 19:12:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

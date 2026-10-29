@@ -8,7 +8,7 @@
   "jcr:title": "T2 GTN",
   "jcr:versionHistory": "d51acbfe-afe5-4d96-89ff-a6af74336e90",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2gtn/images/T2-GTN.png",
   "jcr:predecessors": [
     "84d147fe-3c8a-462b-a4b3-75a075501c9c"
@@ -42,13 +42,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "cq:lastModifiedBy": "user-15c0b4d890@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jun 21 2017 16:26:08 GMT-0400",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/t2gtn/images/T2-GTN.png",
@@ -65,7 +65,7 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_548095_706339346",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "jcr:lastModified": "Fri Jun 16 2017 09:24:19 GMT-0400",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -74,7 +74,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>T2 GTN Nailing System</p>\r\n",
     "shortDescTop": "<p>The T2 IM Nailing Platform offers a combination of innovation, simplicity and versatility that is designed to suit your various needs.</p>\r\n",
-    "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+    "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
     "jcr:lastModified": "Wed Aug 23 2017 13:08:20 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -118,7 +118,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>T2-AWI-1, 07-2017</p>\r\n",
     "jcr:lastModified": "Wed Aug 09 2017 11:23:39 GMT-0400",

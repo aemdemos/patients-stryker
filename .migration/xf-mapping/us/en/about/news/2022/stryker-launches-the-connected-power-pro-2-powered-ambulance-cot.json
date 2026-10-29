@@ -7,7 +7,7 @@
   "jcr:title": "Stryker launches the connected Power-PRO 2 powered ambulance cot",
   "jcr:versionHistory": "a8d8b906-f389-4c53-ab77-8328ddc30813",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "df26bbc2-5cbd-4912-a3bb-6e918fb9a11e"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "24779468-be38-4f8b-a373-b4299a50cc0e",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Mar 14 2022 13:46:00 GMT+0000",
       "jcr:lastModified": "Mon Mar 14 2022 13:46:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -44,16 +44,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Mar 14 2022 13:46:12 GMT+0000",
           "jcr:lastModified": "Mon Mar 14 2022 13:46:12 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Mar 14 2022 13:46:06 GMT+0000",
           "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">stryker.com</a>.</p>\n",
           "jcr:lastModified": "Mon Mar 14 2022 14:02:57 GMT+0000",
@@ -65,7 +65,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Mar 15 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "15-Mar-2022",
@@ -74,7 +74,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot/PP2_news_banner_1440_v1.png",
     "borderColor": "rgba(76,125,122,1)",
@@ -88,7 +88,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "text": "<p><b>Kalamazoo, Michigan, USA </b>— Stryker, one of the world's leading medical technology companies, announced the industry's first connected ambulance cot. Building on the innovation of its predecessor, the Power-PRO 2 powered ambulance cot offers improved maneuverability, increased safety and connectivity tools to help optimize time and budget.</p>\n<p>“It is a privilege to work in partnership with our customers to continue Stryker’s legacy of designing new and improved solutions for their everyday challenges,” said Anne Mullally, vice president and general manager of Stryker’s Emergency Care business. “The new Power-PRO 2 is a reimagining of a proven design, helping first responders focus on what matters most—providing patients with the best medical care possible.”</p>\n<p>Key features and benefits of the Power-PRO 2 include:</p>\n<ul>\n<li>Ergonomic transport handle designed to help reduce the risk of medic injury</li>\n<li>Retractable foot end section, allowing the cot to navigate tighter spaces<br>\n</li>\n<li>Optimal loading height settings and a smarter hydraulic assembly, enabling a true, 700-pound unassisted lift<br>\n</li>\n<li>Remote “last known cot location” tracking with Stryker’s Smart Equipment Management (SEM) dashboard<br>\n</li>\n<li>A new lithium-ion battery to improve battery life and management<br>\n</li>\n</ul>\n<p>When pairing the Power-PRO 2 with Stryker’s Power-LOAD or Performance-LOAD cot fasteners, teams could see a reduction to workers’ compensation costs, injuries and lost/modified workdays—all backed by the company’s Proven to Save guarantee.<sup>1-2</sup></p>\n<p><a href=\"https://www.stryker.com/us/en/emergency-care/products/power-pro-2.html\"><span class=\"standalone-link\">Learn more about the Power-PRO 2 here</span></a></p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 14 2022 15:39:58 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -96,7 +96,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Refererences:</p>\r\n<ol>\r\n<li>Please contact your sales representative to see if you qualify for the EMS Guarantee.</li>\r\n<li>Subject to the terms and conditions of EMS Proven to Save.</li>\r\n</ol>\r\n<p>&nbsp;</p>\r\n",
     "jcr:lastModified": "Mon Mar 14 2022 14:04:56 GMT+0000",

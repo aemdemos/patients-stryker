@@ -9,7 +9,7 @@
   "jcr:versionHistory": "31272c41-9c76-4bb7-91c8-fe4884de69a2",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hidePublicationDate": "true",
   "jcr:predecessors": [
     "91a0d7aa-d108-45ee-9223-88e762883915"
@@ -28,7 +28,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Rachel Ruggeri",
   "image": {
     "jcr:primaryType": "nt:unstructured"
@@ -38,16 +38,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "◁ Back",
       "jcr:lastModified": "Tue Oct 11 2022 15:24:16 GMT+0000",
@@ -57,16 +57,16 @@
     },
     "cols_2140249363_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c_499318754": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "Rachel Ruggeri Director since 2024, Audit Committee Chair Former Executive Vice President and Chief Financial Officer of Starbucks Ms. Rachel Ruggeri is the former Executive Vice President and Chief Financial Officer of Starbucks from 2021 until March 2025. As the CFO of Starbucks, Ms. Ruggeri was responsible for the global finance function, where she developed and executed financial strategies. Previously, she served as the Senior Vice President of Global Retail, with responsibility for the retail portfolio of Starbucks including company-operated and licensed/franchised stores across the globe. While at Starbucks, Ms. Ruggeri held a variety of finance leadership positions within its North America and US businesses and led its Corporate Finance and Planning function. Ms. Ruggeri adds over 25 years of global finance leadership experience and valuable insights from a highly respected global consumer company to our Board.",
       "jcr:lastModified": "Tue Oct 11 2022 15:26:39 GMT+0000",

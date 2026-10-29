@@ -7,7 +7,7 @@
   "jcr:title": "Calcaneo-cuboid Arthrodesis",
   "jcr:versionHistory": "d497a470-e668-42ef-94d9-6e544fbdad2c",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Calcaneo-cuboid-Arthrodesis/Images/Hindfoot_Calcaneo-cuboid_arthro.jpg",
   "jcr:predecessors": [
     "4477ecf9-6608-4e88-9bbe-1c27f31fe2d5"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:07:18 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Calcaneo-cuboid-Arthrodesis/Images/Hindfoot_Calcaneo-cuboid_arthro.jpg",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 16:32:03 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 16:32:03 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -64,8 +64,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:32:10 GMT-0400",
           "type": "typeId",
           "videoId": "e49E5Dl-OEQ",
@@ -79,9 +79,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Calcaneo-cuboid arthrodesis with VariAx plate",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "This video demonstrates a calcaneal cuboid fusion. It covers the incision, the desired outcome, the osteotomy and fixation. The demonstration is performed by Dr. Donald Bohay and John Anderson of Grand Rapids, MI.",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Aug 07 2017 08:19:33 GMT-0400",
@@ -92,7 +92,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Mon Sep 14 2020 17:54:02 GMT+0000",

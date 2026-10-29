@@ -7,7 +7,7 @@
   "jcr:title": "Metatarsal Shortening (Weil) Osteotomy",
   "jcr:versionHistory": "c2b61f47-1f08-46f0-be22-a1f29ef4cf4a",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "jcr:lastModifiedBy": "user-15c0b4d890@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Metatarsal-Shortening--Weil--Osteotomy/Images/Forefoot_MetatarsalShortening.jpg",
   "jcr:predecessors": [
     "1298cc8b-51ac-43e4-9da8-a583668d841b"
@@ -33,13 +33,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:11:19 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Metatarsal-Shortening--Weil--Osteotomy/Images/Forefoot_MetatarsalShortening.jpg",
@@ -51,8 +51,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 16:27:24 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 16:27:24 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -61,8 +61,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:27:33 GMT-0400",
           "type": "typeId",
           "videoId": "_rQD_ajYgsI",
@@ -76,9 +76,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Smart Toe II hammertoe correction",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "This video shows a hammertoe correction, using a Smart Toe implant. It also shows a metatarsal shortening osteotomy, which is fixated with Fixos screws.",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Jun 29 2017 12:08:05 GMT-0400",
@@ -89,7 +89,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Fri Jul 28 2017 10:18:12 GMT-0400",

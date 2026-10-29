@@ -20,51 +20,51 @@
   "cq:tags": [],
   "jcr:uuid": "179f5227-19fa-47b0-afea-e7ac26e1d5ac",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "garrett.shue@stryker.com",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Tue Jun 28 2022 15:18:46 GMT+0000",
     "jcr:lastModified": "Tue Jun 28 2022 15:18:46 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+    "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
     "text": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "1",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:49:34 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "text140174845397495": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">The results are in</span></span></p>\n<p>The Target Coil platform delivers coil conformability, softness and&nbsp;volume in a single product family—and the Target Registry proves&nbsp;the effectiveness of Target Coils for the treatment of intracranial&nbsp;aneurysms. The investigator-initiated study demonstrated a&nbsp;low 2.4% retreatment rate and strong functional outcomes for&nbsp;the patient. Target Coils have been a trusted product for over a&nbsp;decade. And the evidence is a big reason why.</p>\n<p><span class=\"futura-bold\">Primary endpoints:</span><br>\nAneurysm packing density</p>\n<p><span class=\"futura-bold\">Secondary endpoints:</span><br>\nImmediate and long-term aneurysm occlusion rate<br>\n(Raymond scale) and independent functional outcome (mRS)</p>\n",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -72,7 +72,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "7",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -81,7 +81,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -90,7 +90,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -100,7 +100,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -108,7 +108,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "8",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -117,7 +117,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -126,7 +126,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "curatedcta": {
@@ -134,9 +134,9 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-7065227e84@example.invalid",
         "CTAOpenInNewTab": "true",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "ctaLinkType": "ext",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "ctaOpenInNewTabOverride": "0",
@@ -146,14 +146,14 @@
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/curatedcta",
         "CTAButtonColor": "rgba(255,181,0,1)",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -161,7 +161,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "4",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -170,7 +170,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
@@ -180,28 +180,28 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "1",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage10596798509211103": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/House_Icon.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -209,7 +209,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -217,7 +217,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -226,7 +226,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -235,7 +235,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -244,22 +244,22 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "garrett.shue@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-7065227e84@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
         "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">12&nbsp;clinical sites</span></span></span></p>\n",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -267,7 +267,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -276,7 +276,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -285,7 +285,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -295,7 +295,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -303,7 +303,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -312,7 +312,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -321,7 +321,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -330,28 +330,28 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "2",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage_copy10596828191758080": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Brain_Icon.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -359,7 +359,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -367,7 +367,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -376,7 +376,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -385,7 +385,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -395,7 +395,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -403,7 +403,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -412,7 +412,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -421,7 +421,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "text_550258104_copy": {
@@ -429,22 +429,22 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "garrett.shue@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-7065227e84@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
         "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">157&nbsp;aneurysms<br>\n </span></span></span><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">39% ruptured</span></span></span></span></p>\n",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -452,7 +452,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -461,7 +461,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -470,7 +470,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
@@ -480,28 +480,28 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "3",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage_copy_140947564710597011836140029": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/People_Icon.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -509,7 +509,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -518,7 +518,7 @@
             "offset": "10",
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -527,7 +527,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -536,7 +536,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -546,7 +546,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -554,7 +554,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -564,7 +564,7 @@
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
           "behavior": "newline",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -574,7 +574,7 @@
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "3",
           "behavior": "none",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "text_550258104_copy": {
@@ -582,22 +582,22 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "garrett.shue@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-7065227e84@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
         "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">148 patients<br>\n </span></span></span><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Median age of&nbsp;58 years (73% female)</span></span></span></span></p>\n",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -605,7 +605,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -614,7 +614,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -623,7 +623,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
@@ -633,28 +633,28 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "4",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage_copy_158118244810597031233758818": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Calendar_Icon.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -662,7 +662,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -670,7 +670,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -679,7 +679,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -688,7 +688,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -698,7 +698,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -706,7 +706,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -715,7 +715,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -724,7 +724,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "text_550258104_copy": {
@@ -732,22 +732,22 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "garrett.shue@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-7065227e84@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
         "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">6 months&nbsp;follow up<br>\n </span></span></span><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">29% packing density</span></span></span></span></p>\n",
         "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -755,7 +755,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -764,7 +764,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -773,7 +773,7 @@
             ],
             "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
@@ -784,9 +784,9 @@
         "cq:LiveRelationship"
       ],
       "bottomPadding": ".1",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "topPadding": "0",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "topMargin": "2",
@@ -796,7 +796,7 @@
       "sling:resourceType": "stryker/components/content/text",
       "backgroundColor": "rgba(178,180,174,1)",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "bottomMargin": "3"
     },
     "standaloneimage_copy_1032120547": {
@@ -804,14 +804,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Chart1.png",
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -819,7 +819,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -828,7 +828,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -837,7 +837,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -846,7 +846,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -855,22 +855,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
       "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">90%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Raymond<br>\n I and II</span></span><br>\n</p>\n",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -878,7 +878,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -887,7 +887,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -896,7 +896,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -905,14 +905,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Chart2.png",
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -920,7 +920,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -929,7 +929,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -939,7 +939,7 @@
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "5",
           "behavior": "newline",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -949,7 +949,7 @@
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
           "behavior": "newline",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -958,22 +958,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
       "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">95%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Long-term<br>\nindependent<br>\nfunctional&nbsp;outcome<br>\nachieved</span></span><br>\n</p>\n",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -981,7 +981,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -990,7 +990,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -999,7 +999,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1008,14 +1008,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Arrow.png",
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -1023,7 +1023,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -1032,7 +1032,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -1041,7 +1041,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -1051,7 +1051,7 @@
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
           "width": "6",
           "behavior": "newline",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1060,22 +1060,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
       "text": "<p style=\"text-align: left;\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Low</span></span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n <span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\">95%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">all-cause<br>\n mortality</span></span><br>\n</p>\n",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -1083,7 +1083,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -1092,7 +1092,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -1101,7 +1101,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1110,21 +1110,21 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "jcr:created": "Mon Mar 21 2022 18:39:20 GMT+0000",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
     },
     "text_550258104_copy__99159603": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "topMargin": "15",
@@ -1134,14 +1134,14 @@
       "jcr:lastModified": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -1150,7 +1150,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -1159,7 +1159,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -1168,7 +1168,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1177,14 +1177,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/148_Patients.png",
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -1192,7 +1192,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -1201,7 +1201,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "8",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -1210,7 +1210,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -1220,7 +1220,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "7",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1229,8 +1229,8 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "topMargin": "15",
@@ -1240,14 +1240,14 @@
       "jcr:lastModified": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -1255,7 +1255,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -1264,7 +1264,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "5",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -1273,7 +1273,7 @@
           ],
           "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -1282,15 +1282,15 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "jcr:created": "Mon Mar 21 2022 18:24:57 GMT+0000",
       "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Zaidat et al. Target Intracranial Aneurysm Registry, Frontiers in Neurology, July 2019/Volume10/Article 737&nbsp;<br>\n Target Registry is an Investigator Initiated Study that received grant funding from Stryker Neurovascular.</span></span></p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Tue Jun 28 2022 15:18:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
     },
     "text_2084961831_copy_1954425191": {
       "jcr:primaryType": "nt:unstructured",

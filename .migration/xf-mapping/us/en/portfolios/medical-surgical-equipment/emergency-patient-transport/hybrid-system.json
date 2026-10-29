@@ -7,7 +7,7 @@
   "jcr:title": "Hybrid system",
   "jcr:versionHistory": "486017d8-a9b4-46a3-b74c-5cea3f540c6a",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/emergency-medical-equipment/images/Thumbnail_EMS_HybridSystem.jpg",
   "jcr:predecessors": [
     "2587f9c8-1ec0-427e-981c-017654965e93"
@@ -35,14 +35,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
-      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:createdBy": "user-82a520efa4@example.invalid",
+      "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
       "jcr:created": "Fri Aug 25 2017 16:32:06 GMT-0400",
       "jcr:lastModified": "Fri Aug 25 2017 16:32:06 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -51,8 +51,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-82a520efa4@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Aug 25 2017 16:32:11 GMT-0400",
           "text": "<h3>Our Hybrid loading system</h3>\n<h5>Power-PRO 2 powered ambulance cot with Performance-LOAD fastener system</h5>\n<ul>\n<li>Meets crash safety recommendations for SAE J3207</li>\n<li>Inductive charging</li>\n<li>Guided loading/unloading</li>\n<li>Powered lifting and lowering of cot</li>\n<li>XPS Siderails</li>\n<li>SMRT Battery Kit</li>\n<li>Steer-Lock</li>\n<li>Knee-gatch</li>\n</ul>\n",
           "jcr:lastModified": "Tue Mar 15 2022 17:45:29 GMT+0000",
@@ -63,8 +63,8 @@
     },
     "bannercampaign": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
-      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:createdBy": "user-82a520efa4@example.invalid",
+      "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
       "jcr:created": "Mon Aug 06 2018 13:41:12 GMT-0400",
       "alt": "More Power to you",
       "jcr:lastModified": "Mon Aug 06 2018 13:41:36 GMT-0400",
@@ -78,7 +78,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Tue Mar 15 2022 12:37:48 GMT+0000",
     "loadMoreText": "Load More",
@@ -88,7 +88,7 @@
     "showProcedures": "true",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
       "title": "Products included in our Hybrid loading system",
       "jcr:lastModified": "Fri Aug 25 2017 16:31:57 GMT-0400",
       "sling:resourceType": "stryker/components/content/section-title"
@@ -103,7 +103,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Mar 15 2022 15:06:18 GMT+0000",
     "compImageRef": "/content/dam/stryker/ems/products/power-pro-2/images/pp2-hybrid.png",

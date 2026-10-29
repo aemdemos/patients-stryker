@@ -21,7 +21,7 @@
   ],
   "jcr:uuid": "035a0ef0-f734-4f1f-810c-4d4965fc6111",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "cq:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -34,7 +34,7 @@
     ],
     "eventContactEmail": "john.friederich@stryker.com",
     "eventRegistrationLink": "http://savinglivesnow.org/current.html",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "eventAudience": [
       "stryker:audience/Critical_Care_Nurses",
       "stryker:audience/nurses",

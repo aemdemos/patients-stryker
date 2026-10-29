@@ -7,7 +7,7 @@
   "jcr:title": "Stryker reports 2016 results and 2017 outlook",
   "jcr:versionHistory": "bd390b46-1a92-464e-bc6a-ee7a7add0a3e",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "ddb23447-434c-4143-a5dd-06e85a10de2b"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Tue Jan 24 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Jan-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker Corporation (NYSE:SYK) reported 2016 operating results for the fourth quarter and full year and 2017 outlook.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2017/Stryker-reports-2016-results-and-2017-outlook/default.aspx\">Read the full release here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 17:52:15 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

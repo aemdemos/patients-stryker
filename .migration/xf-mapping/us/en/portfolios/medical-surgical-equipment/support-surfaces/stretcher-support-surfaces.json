@@ -7,7 +7,7 @@
   "jcr:title": "Stretcher support surfaces",
   "jcr:versionHistory": "c4dc98fb-1296-41c8-b4f1-db80316c2e0f",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/acute-care/products/isoflexse/images/Thumbnail_IsoFlexSE.jpg",
   "jcr:predecessors": [
     "efe48dca-5f9c-4d62-b55f-8aaa3379fbce"
@@ -35,7 +35,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/support-surfaces",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+  "cq:lastModifiedBy": "user-82a520efa4@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,7 +48,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
     "jcr:lastModified": "Fri Jan 04 2019 20:29:44 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -77,7 +77,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue Jun 27 2017 16:14:36 GMT-0400",

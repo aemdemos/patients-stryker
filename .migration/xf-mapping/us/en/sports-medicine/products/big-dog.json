@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0bcbf7c7-94aa-4920-840f-a6a88109c480",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "bfc23434-50da-492f-ba3d-434dfedefd88"
   ],
@@ -54,14 +54,14 @@
   "jcr:uuid": "3237b38d-fcef-4021-bfa1-bb7f77ec80ef",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Big Dog flush cutter",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:lastModified": "Thu Nov 29 2018 18:33:44 GMT+0000",
       "compImageRef": "/content/dam/stryker/sports-medicine/products/big-dog-flush-cutter/Hero.jpg",
       "sling:resourceType": "stryker/components/content/pagehero"
@@ -72,16 +72,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Aug 19 2026 14:42:00 GMT+0000",
       "jcr:lastModified": "Wed Aug 19 2026 14:42:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -90,8 +90,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
@@ -103,8 +103,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -113,10 +113,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3149",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -129,8 +129,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
           "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
@@ -148,7 +148,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>The unique jaw design allows the suture to be loaded both inside and outside of the joint.</p>\r\n",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Thu Nov 29 2018 18:34:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -159,7 +159,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Aug 19 2026 14:41:44 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "748d7245-73fc-440c-ad59-2c7de033f9c4",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:lastModifiedBy": "user-97c08b5f98@example.invalid",
   "thumbnailAltText": "1452092164_medpor-custom-cranial-implant-hero",
   "jcr:predecessors": [
     "098c5099-7739-4173-9d11-3766faab6a53"
@@ -39,7 +39,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "ray.maniaci@stryker.com",
+  "cq:lastModifiedBy": "user-97c08b5f98@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -49,8 +49,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
       "alt": "medpor custom cranial implant hero",
@@ -62,8 +62,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Apr 14 2026 15:14:07 GMT+0000",
       "jcr:lastModified": "Tue Apr 14 2026 15:14:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -73,8 +73,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "topMargin": "1",
           "jcr:created": "Tue Apr 14 2026 15:14:16 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -92,8 +92,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "topMargin": "3",
       "jcr:created": "Tue Apr 14 2026 15:15:42 GMT+0000",
@@ -105,8 +105,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "topMargin": "2",
       "jcr:created": "Thu May 01 2025 20:52:31 GMT+0000",
@@ -118,16 +118,16 @@
     },
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Feb 07 2025 20:50:31 GMT+0000",
       "jcr:lastModified": "Fri Feb 07 2025 20:50:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Tue Apr 14 2026 15:22:57 GMT+0000",
       "alt": "medpor-implant-group-image",
@@ -140,10 +140,10 @@
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "0",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
       "leftPadding": "0",
       "topPadding": "1",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Apr 14 2026 15:25:03 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\">Features and benefits</span></span></h2>\r\n",
@@ -157,8 +157,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Apr 14 2026 15:25:55 GMT+0000",
       "jcr:lastModified": "Tue Apr 14 2026 15:25:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -167,8 +167,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Tue Apr 14 2026 15:26:08 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">More <span style=\"color: #ffb500;\">adaptable*</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Recessed areas designed for plate accommodation</span></li>\n<li><span class=\"fontsize-1-5em\">Integrated screw dimples and anatomical markers for fixation</span></li>\n<li><span class=\"fontsize-1-5em\">Can be positioned close to CMRP implants</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">More <span style=\"color: #ffb500;\">integrated</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Allows overlay or underlay of Facial iD 3D-printed plates</span></li>\n<li><span class=\"fontsize-1-5em\">Accommodates orbital, midface and mandible Facial iD plates</span></li>\n<li><span class=\"fontsize-1-5em\">Compatible with bone repositioning via VSP integration</span></li>\n<li><span class=\"fontsize-1-5em\">One design session with Stryker and 3DS designers</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">More <span style=\"color: #ffb500;\">personalized</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Single stage compatibility with guides and navigation</span></li>\n<li><span class=\"fontsize-1-5em\">Cut and shape MEDPOR intraoperatively</span></li>\n<li><span class=\"fontsize-1-5em\">CT/CBCT-based implants available</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">More <span style=\"color: #ffb500;\">versatile</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Midface inlay</span></li>\n<li><span class=\"fontsize-1-5em\">Multi-piece reconstruction</span></li>\n<li><span class=\"fontsize-1-5em\">Hybrid interventions (bone repositioning and implant fixation)</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Apr 14 2026 16:33:36 GMT+0000",
@@ -181,8 +181,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Apr 14 2026 15:26:11 GMT+0000",
           "alt": "Head2-Front1_1 1",
@@ -196,8 +196,8 @@
     },
     "cols_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -206,8 +206,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1879940623": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
           "text": "<h2><span class=\"futura-bold\">Resources</span></h2>\n",
           "jcr:lastModified": "Mon Feb 17 2025 16:56:54 GMT+0000",
@@ -218,7 +218,7 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/commercial/usa/craniomaxillofacial/id-solutions/CMF-GSNPS-BROC-2836272-EN_US.pdf",
         "/content/dam/stryker/craniomaxillofacial/products/medpor-customized-implant/resources/customized-implant-order-form_cmf-dr-1-rev.-none_11019_updated.pdf",
@@ -226,23 +226,23 @@
         "/content/dam/stryker/craniomaxillofacial/products/medpor-customized-implant/resources/Cranial iD Brochure.pdf",
         "/content/dam/stryker/craniomaxillofacial/products/medpor-customized-implant/resources/cmf-fl-9-rev.-b_11236-pterional-plus-postcard.pdf"
       ],
-      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
       "jcr:created": "Thu Feb 13 2025 21:30:56 GMT+0000",
       "jcr:lastModified": "Mon Apr 06 2026 17:54:50 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_70867890_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Feb 07 2025 21:00:44 GMT+0000",
       "jcr:lastModified": "Fri Feb 07 2025 21:00:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -251,8 +251,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1879940623": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
           "text": "<h2><span class=\"futura-bold\">Clinical evidence</span></h2>\n",
           "jcr:lastModified": "Mon Feb 17 2025 16:57:02 GMT+0000",
@@ -263,8 +263,8 @@
     },
     "accordion_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:30:08 GMT+0000",
       "jcr:lastModified": "Mon Apr 06 2026 17:28:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/accordion",
@@ -274,8 +274,8 @@
         "accPosId": 1,
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Feb 06 2025 20:18:22 GMT+0000",
           "jcr:lastModified": "Thu Feb 06 2025 20:18:22 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -284,8 +284,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "carolyn.lee@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
               "text": "<p>Craniectomy defects&nbsp;following&nbsp;resection&nbsp;of&nbsp;calvarial&nbsp;lesions are most often reconstructed using on-table manufacturing. With the advent of computer-aided design/manufacturing and&nbsp;customized&nbsp;craniofacial&nbsp;implants&nbsp;(CCIs), there seems to be more suited alternatives. In this study, the authors report their institutional experience and outcome using&nbsp;immediate,&nbsp;single-stage, CCI-based reconstruction for&nbsp;benign&nbsp;and&nbsp;malignant&nbsp;skull&nbsp;neoplasm defects.</p>\n<p><span class=\"futura-bold\">METHODS</span><br>\nA retrospective review of a prospectively maintained database of all implant cranioplasties performed between 2011 and 2014, by a single&nbsp;craniofacial&nbsp;surgeon at a tertiary academic medical institution was performed. Preoperative and postoperative computed tomography scans with 3D reconstruction were performed for the purpose of assessing adequate&nbsp;resection&nbsp;and reconstructive outcomes. Primary endpoints included length of surgery, predicted defect versus postoperative implant surface area, contour irregularities, and complications.<br>\n</p>\n<p><span class=\"futura-bold\">RESULTS</span><br>\nOf the 108 patients with&nbsp;cranioplasty&nbsp;identified, 7 patients were found to undergo&nbsp;immediate&nbsp;CCI-based reconstruction for calvarial neoplasms; 4 patients (4/7, 57%) presented with&nbsp;malignant&nbsp;pathology. All defects were &gt;5  cm2. As compared with their original size, all implants were modified intraoperatively between 0.2% and 40.8%, with a mean of 13.8%. With follow-up ranging between 1 and 16 months, there were no implant-related complications identified. The&nbsp;immediate&nbsp;and long-term aesthetic results, as well as patient satisfaction, were ideal.<br>\n</p>\n<p><span class=\"futura-bold\">CONCLUSION</span><br>\nWith this preliminary experience, the authors have successfully demonstrated that&nbsp;immediate&nbsp;customized&nbsp;implant reconstructive techniques, by way of intraoperative modification, are both safe and feasible for&nbsp;benign&nbsp;and&nbsp;malignant&nbsp;skull&nbsp;neoplasms. The authors believe that with wider acceptance of this multidisciplinary approach and increased surgeon familiarity, this technique will soon become the reconstructive standard of care.<br>\n</p>\n",
               "jcr:lastModified": "Thu May 01 2025 20:57:11 GMT+0000",
@@ -294,9 +294,9 @@
             },
             "curatedcta": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-1f15d09fdf@example.invalid",
               "CTAOpenInNewTab": "true",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "ctaLinkType": "ext",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
@@ -343,9 +343,9 @@
         "accPosId": 2,
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
@@ -362,9 +362,9 @@
         "accPosId": 3,
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
@@ -381,9 +381,9 @@
         "accPosId": 4,
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
@@ -400,9 +400,9 @@
         "accPosId": 5,
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
@@ -416,16 +416,16 @@
     },
     "cols_1598962680_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Feb 07 2025 21:00:52 GMT+0000",
       "jcr:lastModified": "Fri Feb 07 2025 21:00:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -434,8 +434,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1879940623": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
           "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
           "jcr:lastModified": "Mon Feb 17 2025 16:57:11 GMT+0000",
@@ -447,8 +447,8 @@
     "customizable_copy": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
       "jcr:created": "Fri Feb 07 2025 20:56:08 GMT+0000",
       "hideButton": "false",
       "jcr:lastModified": "Mon Apr 06 2026 17:42:48 GMT+0000",
@@ -477,16 +477,16 @@
     },
     "cols_1943014942_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Feb 07 2025 21:00:49 GMT+0000",
       "jcr:lastModified": "Fri Feb 07 2025 21:00:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "request-information",
       "jcr:created": "Thu May 01 2025 21:07:03 GMT+0000",
@@ -496,8 +496,8 @@
     },
     "cols_135584854_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Feb 07 2025 20:59:09 GMT+0000",
       "jcr:lastModified": "Fri Feb 07 2025 20:59:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -506,8 +506,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1663437304_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
           "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
           "jcr:lastModified": "Mon Feb 17 2025 16:57:20 GMT+0000",
@@ -518,10 +518,10 @@
     },
     "marketoform_copy_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "3226",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -531,7 +531,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu May 01 2025 19:52:20 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -543,7 +543,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Thu May 01 2025 19:52:29 GMT+0000",
@@ -551,14 +551,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu May 01 2025 19:52:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu May 01 2025 19:52:49 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -567,7 +567,7 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu May 01 2025 19:52:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -575,14 +575,14 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu May 01 2025 19:52:59 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>* Compared to the legacy MEDPOR system<br>\r\n</p>\r\n<p>VSP is a registered trademark of 3D Systems, Inc. </p>\r\n",
     "jcr:lastModified": "Mon Apr 06 2026 17:53:07 GMT+0000",

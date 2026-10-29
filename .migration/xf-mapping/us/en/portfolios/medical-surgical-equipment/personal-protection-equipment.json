@@ -10,7 +10,7 @@
   "jcr:versionHistory": "01b65454-d7a5-4468-b440-0792b2dbd2a0",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/surgical/products/flytehelmet/images/Thumbnail_Flyte.jpg",
   "jcr:predecessors": [
     "03353763-9d82-4b33-af6e-b9ad190eca61"
@@ -40,7 +40,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "cq:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "navTitle": "Personal protection equipment",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -53,7 +53,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Fri Jul 14 2017 10:01:45 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -62,7 +62,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
     "imageAlt": "Andrae-Full-Toga",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",

@@ -7,7 +7,7 @@
   "jcr:title": "Emergency care data solutions products",
   "jcr:versionHistory": "f72e6560-9543-4fe4-8d51-e9f62c461540",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+  "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
   "jcr:predecessors": [
     "65696233-538b-40d3-9a34-3df7b2793372"
   ],
@@ -28,7 +28,7 @@
   "jcr:uuid": "d392b601-a2f0-46aa-8b6d-7000a5a3935f",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "andy.tanabe@stryker.com",
+  "cq:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -43,7 +43,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Wed Jun 26 2019 22:53:39 GMT+0000",
@@ -54,7 +54,7 @@
     "jcr:primaryType": "nt:unstructured",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+      "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
       "title": "Emergency care data solutions products",
       "jcr:lastModified": "Wed Jun 26 2019 22:53:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"

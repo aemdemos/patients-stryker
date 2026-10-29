@@ -9,7 +9,7 @@
   "jcr:versionHistory": "71328c0a-3b4d-49de-8320-07a1e0eb6c6e",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/power-tools-and-cutting-accessories/images/Thumbnail_System8.jpg",
   "jcr:predecessors": [
     "f8540645-bf0d-4541-a838-6bcc113d096c"
@@ -35,7 +35,7 @@
   "jcr:uuid": "9d7bf2da-903a-4684-8766-c53ac20df2ad",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Power tools",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -48,7 +48,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Fri Jul 14 2017 10:02:05 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -57,7 +57,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Fri Aug 25 2017 10:45:30 GMT-0400",
     "sling:resourceType": "stryker/components/content/pagehero"

@@ -7,7 +7,7 @@
   "jcr:title": "Restoring spines and hope",
   "jcr:versionHistory": "7505c251-93ea-4d6b-a0c3-06963242dcd6",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "0bb96dcf-5506-4b64-835d-631b2faec0fd"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "52007de3-1895-4ef9-b36d-d470a9304ede",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Jun 05 2020 15:37:59 GMT+0000",
       "jcr:lastModified": "Fri Jun 05 2020 15:38:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -43,7 +43,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Mon Jul 06 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-Jul-2020",
@@ -56,13 +56,13 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Mon Mar 16 2020 18:49:19 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Fri Jun 05 2020 15:39:09 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

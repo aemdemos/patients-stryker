@@ -9,7 +9,7 @@
   "jcr:versionHistory": "948d3896-0cd2-4777-9289-b9f46760c017",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+  "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
   "thumbnailAltText": "StrykerTalks23_4.11.23_1200x800",
   "jcr:predecessors": [
     "778b8729-c6fe-45d9-93aa-cbbf6b9e6e66"
@@ -31,14 +31,14 @@
   "jcr:uuid": "96dab35a-5e6f-41ef-8a61-51d2904353a3",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+  "cq:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Mar 14 2022 19:47:40 GMT+0000",
       "jcr:lastModified": "Mon Mar 14 2022 19:47:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -47,8 +47,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
-          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "jcr:createdBy": "user-a6c55eaa2a@example.invalid",
+          "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
           "jcr:created": "Thu Aug 31 2023 19:23:33 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Andrés Rosales, VP and General Manager of our Endoscopy Business, joins the StrykerTalks podcast to share how we’re working with clinicians to develop new innovations in surgical visualization, such as &nbsp;the 1788 visualization platform for surgical procedures and the <a href=\"https://www.stryker.com/us/en/endoscopy/products/spy-phi.html\">SPY-PHI for lymphatic mapping</a> for breast cancer patients.</span></span>",
@@ -66,8 +66,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_3866": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Jun 06 2022 13:34:47 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -80,7 +80,7 @@
             "fileReference": "/content/dam/stryker/about/news/2023/endoscopy’s-rosales-shares-how-we-continue-innovating-in-surgical-visualization/videos/ST-Endo-Final-TS_1.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+            "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/ST-Endo-Final-TS_1-AVS",
             "urlModifiers": "",
@@ -97,8 +97,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
           "jcr:created": "Tue Apr 12 2022 17:06:21 GMT+0000",
           "text": "<p><span class=\"fontsize-8em\">Products may not be available in all markets. Product availability is subject to the regulatory and/or medical practices in individual markets.</span></p>\n",
           "jcr:lastModified": "Thu Aug 31 2023 18:53:56 GMT+0000",
@@ -110,7 +110,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+    "jcr:lastModifiedBy": "user-a6c55eaa2a@example.invalid",
     "publishDate": "Thu Aug 31 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "31-Aug-2023",

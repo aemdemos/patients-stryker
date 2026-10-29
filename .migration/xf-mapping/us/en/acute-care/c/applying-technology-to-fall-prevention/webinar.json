@@ -9,7 +9,7 @@
   "jcr:versionHistory": "2ffd1305-b85c-4f14-9384-0bd4dab6cfdb",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "e584de39-b618-4913-a649-78d6cbf0e1ff"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "580917b0-a6f0-4b2f-bcfc-268db9e8a03f",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Webinar: Applying technology to fall prevention",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -41,7 +41,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Webinar:&nbsp;Applying technology to fall prevention</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Thank you for registering for the Applying technology to fall prevention webinar.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Click the video below to start learning now or save this <a href=\"https://bit.ly/41ABBHi\" target=\"_blank\">link</a> to watch at a later date.<br>\n </span></p>\n",
       "jcr:lastModified": "Fri Mar 14 2025 17:22:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
@@ -49,8 +49,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Fri Mar 14 2025 17:15:13 GMT+0000",
       "jcr:lastModified": "Fri Mar 14 2025 17:15:13 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -70,7 +70,7 @@
             "fileReference": "/content/dam/stryker/acute-care/campaigns/applying-technology-to-fall-prevention/applying-technology-to-fall-prevention_webinar.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+            "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/applying-technology-to-fall-prevention_webinar-AVS",
             "urlModifiers": "",
@@ -89,8 +89,8 @@
     },
     "tabs_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu Jun 27 2024 18:53:38 GMT+0000",
       "jcr:lastModified": "Mon Dec 16 2024 16:20:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/tabs",
@@ -100,8 +100,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "customizable_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Jun 27 2024 18:54:30 GMT+0000",
           "jcr:lastModified": "Fri Mar 14 2025 17:13:23 GMT+0000",
           "sling:resourceType": "stryker/components/content/customizable",
@@ -123,8 +123,8 @@
         },
         "customizable": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Jun 27 2024 18:54:30 GMT+0000",
           "jcr:lastModified": "Fri Mar 14 2025 17:13:31 GMT+0000",
           "sling:resourceType": "stryker/components/content/customizable",

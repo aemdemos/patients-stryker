@@ -9,7 +9,7 @@
   "jcr:versionHistory": "64dc8494-24b6-4ae2-9f83-b8698c473130",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "HRC Equality Award news",
   "jcr:predecessors": [
     "6a528485-d8f6-49d7-9896-8368c81908ec"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Apr 12 2024 14:09:34 GMT+0000",
       "jcr:lastModified": "Fri Apr 12 2024 14:09:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -48,8 +48,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri Apr 12 2024 14:09:38 GMT+0000",
           "alt": "HRC Equality Award news",
@@ -63,8 +63,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Apr 12 2024 14:09:54 GMT+0000",
       "jcr:lastModified": "Fri Apr 12 2024 14:09:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -73,8 +73,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Apr 12 2024 14:09:58 GMT+0000",
           "text": "<p>For the seventh year in a row, we earned the top score on the Human Rights Campaign (HRC) Foundation’s 2023-2024 Corporate Equality Index (CEI) for LGBTQ+ Workplace Equality and received the “Equality 100 Award,” recognizing us as a leader in LGBTQ+ workplace inclusion.</p>\n<p>The CEI is the United States’ foremost benchmarking survey and report measuring corporate policies and practices related to LGBTQ+ workplace equality.</p>\n<p>The HRC Foundation gathers information from an annual CEI survey and assigns a rating. Criteria includes equal employment opportunity policies, equitable benefits for LGBTQ+ workers and their families, supporting an inclusive culture and corporate social responsibility.</p>\n<p>To learn more about the Corporate Equality Index, check out <a href=\"https://www.hrc.org/resources/corporate-equality-index\">Human Rights Campaign’s site</a>.</p>\n",
           "jcr:lastModified": "Fri Apr 12 2024 14:10:43 GMT+0000",
@@ -86,7 +86,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Fri Apr 12 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Apr-2024",

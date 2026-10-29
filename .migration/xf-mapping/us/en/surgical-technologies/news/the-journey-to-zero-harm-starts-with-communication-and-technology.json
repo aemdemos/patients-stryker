@@ -9,7 +9,7 @@
   "jcr:versionHistory": "04e1f963-bae7-4921-9a2c-2c9d47e8ba1f",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "thumbnail",
   "jcr:predecessors": [
     "a04536b5-f485-482a-88d0-0036b1bd42eb"
@@ -31,14 +31,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jun 11 2026 16:22:35 GMT+0000",
       "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1em\">The “Journey to Zero Harm” Starts with Communication, Protocols and Technology</span></span></h1>\n<h1><span class=\"futura-bold\"><span class=\"fontsize-8em\">Cleveland Clinic takes proactive steps in reducing OR errors</span></span></h1>\n",
       "jcr:lastModified": "Thu Jun 11 2026 16:23:25 GMT+0000",
@@ -47,8 +47,8 @@
     },
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jun 11 2026 16:23:41 GMT+0000",
       "jcr:lastModified": "Thu Jun 11 2026 16:23:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -57,10 +57,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/news/the-journey-to-zero/carousel/master",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "5",
           "jcr:created": "Thu Jun 11 2026 16:23:45 GMT+0000",
@@ -75,8 +75,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jun 11 2026 16:23:54 GMT+0000",
       "text": "Humans are fallible and errors are unavoidable, even in the best organizations. But when it comes to healthcare, errors can turn tragic. To support the “Journey to Zero harm” to patients mission, safety processes and integrative technologies can make a vital difference.‍ Communication plays a central role in Cleveland Clinic’s quality and safety culture. Before and during every surgical case, the surgeon, the anesthesiologist, the circulating nurse, the patient and anyone else involved in the patient’s care participate in a meeting called a huddle. “Employees are encouraged to speak up when they see something isn’t right,” says Dena Salamon, MSN, RN, director of main OR at Cleveland Clinic. “That gives the quality and safety department a chance to improve processes and change workflows. We also want patients to speak up and take part in their care. It helps us to hit the necessary things during the surgical procedure.” Cleveland Clinic has developed a thorough education program for OR nurses, surgical techs and surgical assistants, including weekly in-services that offer opportunities to ask questions and to do a deep dive on new products or procedures. In addition, surgeons routinely conduct morbidity and mortality conferences, and nurses are welcome to join. Cleveland Clinic has a variety of safety protocols in place to reduce risks associated with common operating room hazards. Surgical teams use timeouts, for example, to minimize distractions. “Before a surgical incision is made, every participating team member in the operating room stops for a timeout,” Salamon says. Safety checklists have also been integrated to the pre-op, post-op and intra-op phases of surgical procedures. “The safety checklist is similar to what a pilot does before taking off in a plane,” Salamon reports. When the procedure is over, the surgeons conduct a sign-out process, recapping what they did, outlining the post-op care plan and enumerating the specimens that were removed and where they need to go. Technology plays an important part in Cleveland Clinic’s OR safety efforts. Surgical teams use an EMR module called OpTime, which makes charting seamless. And adjunct technology, such as Stryker’s SurgiCount+, enables nursing teams and surgical techs to scan sponges at the beginning and end of a procedure to ensure no sponges are left behind, which happens as often as 11 times a day, every day, across the U.S.1 Caregivers and patients in the OR may also be exposed to dangerous splashes and spills, bacterial and viral particulates, and airborne chemicals and pollutants. Stryker’s Neptune is a constantly closed waste management solution with integrated HEPA and ULPA filters that protect the air that clinicians and patients breathe in the OR. And Stryker’s disposable QuickWick mats plug into the Neptune Waste Management System to keep the floor of the OR and procedural spaces dry. Health systems like Cleveland Clinic know they must leverage a portfolio of tools and techniques to achieve zero harm in the operating room. “Our end goal is to ensure all patients get the surgical care that they need and that both patients and caregivers are safe,” concludes Salamon. Dan O’Connor. (2017, July 4). You can’t count on counts alone. July, 2017; Outpatient surgery magazine. https://www.aorn.org/outpatient-surgery/articles/outpatient-surgery-magazine/2017/july/you-cant-count-on-counts-alone Back to trending topics",
       "jcr:lastModified": "Thu Jun 11 2026 16:24:43 GMT+0000",
@@ -98,7 +98,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Jun 11 2026 16:23:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

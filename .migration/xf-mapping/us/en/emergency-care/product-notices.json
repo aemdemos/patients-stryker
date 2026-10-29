@@ -9,7 +9,7 @@
   "jcr:versionHistory": "b530b114-5bb5-468a-b685-6a1380b8112f",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "4705f295-d0f5-48b6-8062-0cba8162aea0"
   ],
@@ -24,7 +24,7 @@
   "jcr:uuid": "14f9ad49-068a-4b30-bbeb-8297c44cd07f",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -45,8 +45,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -58,8 +58,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Oct 26 2023 16:23:45 GMT+0000",
       "jcr:lastModified": "Thu Oct 26 2023 16:23:45 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -70,8 +70,8 @@
     },
     "cols_1267917215": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Fri Oct 27 2023 19:24:55 GMT+0000",
       "jcr:lastModified": "Fri Oct 27 2023 19:24:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -79,7 +79,7 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon May 22 2023 19:15:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"

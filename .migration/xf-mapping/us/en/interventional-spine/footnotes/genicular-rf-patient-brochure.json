@@ -10,7 +10,7 @@
   "jcr:versionHistory": "308fb28e-e12d-45d7-bb1f-98c90069b03f",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "eb30927f-bf75-4eaf-9fb8-70e6ccde1544"
   ],
@@ -27,7 +27,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
       "text": "❮ BACK",
       "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
@@ -47,16 +47,16 @@
     },
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:06:12 GMT+0000",
       "jcr:lastModified": "Thu Sep 18 2025 23:06:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:06:17 GMT+0000",
       "text": "<p><b>Revision Date: 09.13.21</b></p>\n<ol>\n<li>Nguyen U et al. Increasing prevalence of knee pain and symptomatic knee osteoarthritis. Annals of Internal Medicine. 2011; 155(11):725-732.</li>\n<li>Peat G et al. Knee pain and osteoarthritis in older adults: A review of community burden and current use of primary health care. Annals of the Rheumatic Diseases. 2001; 60(2):91-97.</li>\n<li>Iannaccone F et al. A review of long-term pain relief after genicular nerve radiofrequency ablation in chronic knee osteoarthritis. Pain Physician. 2017; 20(3):E437-E444.</li>\n<li>El-Hakeim E et al. Fluoroscopic guided radiofrequency of genicular nerves for pain alleviation in chronic knee osteoarthritis: A single-blind randomized controlled trial. Pain Physician. 2018; 21(2):169-177.</li>\n<li>Konya Z et al. Results of genicular nerve ablation by radiofrequency in osteoarthritis-related chronic refractory knee pain. Turkish Journal of Medical Sciences. 2020; 50(1):86-95.</li>\n<li>HealthStar clinic. (2018, June 26). The 5 most common causes of knee pain. Retrieved from: https://www.healthstarclinic.com/most-common-causes-of-knee-pain/</li>\n<li>Sutter Health. (2021). Help for arthritic knees. Retrieved from: https://www.sutterhealth.org/services/orthopedic/non-surgical-treatment-knee-osteoarthritis</li>\n<li>Whelan C. (2020, March 30). Everything you need to know about osteoarthritis. Retrieved from: https://www.healthline.com/health/osteoarthritis</li>\n<li>Mayo clinic. (2021, June 16). Osteoarthritis. Retrieved from: https://www.mayoclinic.org/diseases-conditions/osteoarthritis/symptoms-causes/syc-20351925</li>\n<li>Zelman D. (2021, June 14). Osteoarthritis of the knee (degenerative arthritis of the knee). Retrieved from: https://www.webmd.com/osteoarthritis/ostearthritis-of-the-knee-degenerative-arthritis-of-the-knee</li>\n<li>Tufts Medical Center. (2021). Genicular nerve ablation. Retrieved from: https://www.tuftsmedicalcenter.org/patient-care-services/departments-and-services/physical-medicine/patient-resources/genicular-nerve-ablation</li>\n<li>Healthline Media. (2021). 7 symptoms of arthritis in the knee. Retrieved from: https://www.healthline.com/health/osteoarthritis/knee-arthritis-symptoms#deformity</li>\n<li>Florida Pain Medicine. (2021). Genicular nerve radiofrequency ablation. Retrieved from: https://www.floridapainmedicine.com/contents/genicular-nerve-radiofrequency-ablation</li>\n</ol>\n<p><b>Revision Date: 05.17.21</b></p>\n<ol>\n<li>Nguyen U et al. Increasing prevalence of knee pain and symptomatic knee osteoarthritis. Annals of Internal Medicine. 2011; 155(11):725-732.</li>\n<li>Peat G et al. Knee pain and osteoarthritis in older adults: A review of community burden and current use of primary health care. Annals of the Rheumatic Diseases. 2001; 60(2):91-97.</li>\n<li>Iannaccone F et al. A review of long-term pain relief after genicular nerve radiofrequency ablation in chronic knee osteoarthritis. Pain Physician. 2017; 20(3):E437-E444.</li>\n<li>El-Hakeim E et al. Fluoroscopic guided radiofrequency of genicular nerves for pain alleviation in chronic knee osteoarthritis: A single-blind randomized controlled trial. Pain Physician. 2018; 21(2):169-177.</li>\n<li>Choi W et al. Radiofrequency treatment relieves chronic knee osteoarthritis pain: A double-blind randomized controlled trial. Pain. 2011; 152(3):481-487.</li>\n<li>https://www.healthline.com/health/osteoarthritis/knee-arthritis-symptoms#deformity</li>\n<li>https://www.tuftsmedicalcenter.org/patient-care-services/departments-and-services/physical-medicine/patient-resources/genicular-nerve-ablation</li>\n<li>https://www.floridapainmedicine.com/contents/genicular-nerve-radiofrequency-ablation</li>\n<li>Josephine, T., Alexandra, R., Valeria, M., Christophe, R., Nathalie, P., Jean-Louis, L., Remy, N., Jean-Francois, B., Serge, P. and Celia, L., (2016). Predictive Factors of Chronic Post-Surgical Pain at 6 Months Following Knee Replacement: Influence of Postoperative Pain Trajectory and Genetics. [online] PubMed. Available at: https://www.ncbi.nlm.nih.gov/pubmed/27389116</li>\n</ol>\n",
       "jcr:lastModified": "Thu Sep 18 2025 23:10:49 GMT+0000",

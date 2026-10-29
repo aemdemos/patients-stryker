@@ -10,7 +10,7 @@
   "jcr:versionHistory": "af32fb29-a624-47ef-9087-e0288e58ec80",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "XPS Siderails",
   "thumbnailFileReference": "/content/dam/stryker/ems/products/xps-siderails/images/Thumbnail_XPS.jpg",
   "jcr:predecessors": [
@@ -41,14 +41,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
       "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -57,10 +57,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/xps_siderails/hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/xps-siderails/hero/master",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "18",
           "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
@@ -78,7 +78,7 @@
             },
             "text5520009668863520": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
               "hideComponent": "false",
               "gradientDirection": "left-to-right",
               "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">XPS Siderails</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Expandable patient surface</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Our XPS Siderails increase patient surface areas, adjusts to patients and environments and fosters a more comfortable patient experience.</span></span></p>\n",
@@ -97,8 +97,8 @@
             },
             "curatedcta_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "ctaLinkType": "deep",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
@@ -118,8 +118,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title_copy_c_631918257": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "features",
       "jcr:created": "Tue Dec 19 2023 15:22:22 GMT+0000",
@@ -129,8 +129,8 @@
     },
     "cols2_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu Dec 21 2023 19:39:14 GMT+0000",
       "jcr:lastModified": "Thu Dec 21 2023 19:39:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -139,8 +139,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "topMargin": "2",
           "jcr:created": "Tue Dec 19 2023 15:20:25 GMT+0000",
@@ -156,8 +156,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed May 14 2025 17:04:31 GMT+0000",
           "alt": "XPS Siderails on a Power-PRO 2 at the scene of a car crash",
@@ -171,8 +171,8 @@
     },
     "section_title_805408": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "connect",
       "jcr:created": "Tue Dec 19 2023 14:49:34 GMT+0000",
@@ -182,8 +182,8 @@
     },
     "cols_copy_1023882719": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -193,10 +193,10 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "leftPadding": "2",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -210,8 +210,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
       "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -220,8 +220,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
           "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
           "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
@@ -230,10 +230,10 @@
         },
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1322",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",
@@ -244,8 +244,8 @@
         },
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
           "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
           "jcr:lastModified": "Sun Apr 23 2023 15:56:17 GMT+0000",
@@ -258,8 +258,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
           "text": "Contact Information Customer service product feedback",
           "jcr:lastModified": "Tue Dec 19 2023 14:44:35 GMT+0000",
@@ -271,8 +271,8 @@
     },
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Tue Dec 19 2023 14:49:20 GMT+0000",
@@ -282,8 +282,8 @@
     },
     "experiencefragment_c_1902276998": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Jul 27 2022 13:39:11 GMT+0000",
       "text": "SERVICE AND SUPPORT Robust support for your team Technical support We'll work with you to quickly assess your situation and find the best solution. Contact support ProCare service plans Focus on saving lives while extending the integrity of your devices with a ProCare service plan. Learn more Product resources Find a variety of documents including best practices, datasheets and clinical information for easy download. Learn more Training and education Discover webinars, online and in-person courses and other resources to strengthen your clinical education. Learn more",
       "jcr:lastModified": "Wed May 14 2025 16:56:29 GMT+0000",
@@ -293,8 +293,8 @@
     },
     "tabs_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
       "jcr:lastModified": "Tue Dec 19 2023 14:49:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/tabs",
@@ -316,7 +316,7 @@
             "/content/dam/stryker/ems/products/xps-siderails/resources/XPS Brochure.pdf",
             "/content/dam/stryker/ems/products/power-pro-2/resources/Power-PRO 2 - Brochure - US-Canada.pdf"
           ],
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:lastModified": "Wed May 14 2025 16:58:20 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
         }
@@ -324,8 +324,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
       "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
       "jcr:lastModified": "Tue Dec 19 2023 14:47:58 GMT+0000",
@@ -336,7 +336,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Dec 22 2023 16:48:05 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -348,7 +348,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "openInNewWindow": true,
     "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/powered-system",
@@ -366,7 +366,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Sun Apr 23 2023 16:25:55 GMT+0000",
@@ -375,14 +375,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Apr 24 2023 15:28:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Dec 22 2023 16:48:08 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c3d5e8db-6814-4ead-81e8-8b6ff3f5efa5",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "NeurotechMobile_TruckOutside",
   "jcr:predecessors": [
     "c607a882-2306-490f-91fa-31121f958f52"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jan 10 2023 14:11:14 GMT+0000",
       "jcr:lastModified": "Tue Jan 10 2023 14:11:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -50,12 +50,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/advancing-healthcare/carousel/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/carousel/carousel---mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/advancing-healthcare/carousel/carousel-mobile",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "15",
           "jcr:created": "Tue Jan 10 2023 14:36:13 GMT+0000",
@@ -70,8 +70,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "jcr:created": "Tue Jan 10 2023 14:55:11 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"fontsize-2-5-vw\">Advancing healthcare professionals’ education with <span class=\"futura-bold\">Stryker’s Neurotech Mobile Experience</span></span>",
@@ -89,8 +89,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Jan 09 2023 15:10:48 GMT+0000",
       "text": "To help improve patient outcomes, Stryker provides extensive medical education and training on the safe and effective use of our products for thousands of HCPs worldwide. Learn how Stryker is using a new state-of-the-art mobile experience, the Neurotech Mobile Experience (NTME), to bring the complete Neurotechnology and Spine portfolio to the doorsteps of healthcare professionals in Europe. Earlier this year we expanded our medical education offering with the launch of the Neurotech Mobile Experience. This fully equipped truck brings Stryker’s complete Neurotech portfolio to healthcare professionals’ doorstep, providing them the opportunity to experience a full range of products at convenient locations. The NTME transforms into an educational and showroom environment, bringing Stryker’s solutions to facilities across Europe for awareness sessions and hands-on product demonstrations. \"The Neurotech Mobile Experience is important for Stryker because we no longer need to rely on our customers to take time off to come and see our products,” says Stuart Smith, Business Unit Manager on our Interventional Spine team. “[With the mobile lab] we can take our products and experience to them.” NTME on the road As one of the first of its kind in Europe, the NTME has been busy. Since its launch in May 2022, the mobile experience has traveled to 27 hospitals in 10 different countries across Europe including Rome (Italy), Rotterdam (the Netherlands), Manheim (Germany), London (UK), and more. The truck also visited 6 major European neuro-spine congresses. A comprehensive learning experience The features included inside the truck make it a high-tech environment for an optimal learning experience. The NTME expands to over 80 m2, comfortably hosting up to 30 visitors at the same time. The truck offers five integrated stations to experience Stryker's custom solutions, including the Airo TruCT, enabling realistic product simulations. The flexible setup provides an ideal environment for learning opportunities, such as product demonstrations, educational courses, and customer feedback sessions for next-generation products. Serving our purpose of making healthcare better, the NTME has been extremely well received by healthcare professionals and will continue touring Europe in 2023. LEARN MORE ABOUT THE NEUROTECH MOBILE EXPERIENCE",
       "jcr:lastModified": "Mon Jan 09 2023 15:11:24 GMT+0000",
@@ -101,7 +101,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Thu Jan 19 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Jan-2023",
@@ -114,7 +114,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue Jan 10 2023 14:56:07 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

@@ -17,13 +17,13 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "2832b609-6d6e-4851-9e03-c5d4d4ef8fed",
   "sling:resourceType": "stryker/components/structure/pages/tier1-landing-contact",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "corporatecontactus": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "formThankYou": "Thank you for contacting us. Please keep in mind we can only respond to e-mails specific to Recall questions.  If you need different information please review our contact page to assist you. ",
       "formTopicSubHeading": "This contact form is for recall questions only.  For other inquiries, please review this page for additional points of contact. ",
       "topicValidEmail": "1",
@@ -43,7 +43,7 @@
   },
   "tagline": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed May 09 2018 14:41:52 GMT-0400",
     "sling:resourceType": "stryker/components/content/tagline",

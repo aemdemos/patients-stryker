@@ -7,7 +7,7 @@
   "jcr:title": "PEOPLE magazine names Stryker as one of its Companies that Care® 2021",
   "jcr:versionHistory": "9d36bfb1-086e-4a83-84d3-7482a125a692",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailAltText": "Great Place to Work Certified",
   "jcr:predecessors": [
     "f940a9eb-ad7f-47b1-9565-c5a7584f3280"
@@ -30,14 +30,14 @@
   "jcr:uuid": "9672f428-21ad-4101-8a9e-c81ad7b29b73",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "publishDate": "Wed Sep 01 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Sep-2021",
@@ -46,7 +46,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "text": "<p>We are proud to announce that we’ve placed 45 on PEOPLE Companies that Care list for 2021. This list highlights the top 100 U.S. companies that have succeeded in business while also demonstrating outstanding respect, care and concern for their employees, communities and the environment.</p>\n<p>PEOPLE magazine teamed up with Great Place to Work® to produce the ranking based on employee surveys and Great Place to Work’s assessment of the generosity of each organization’s benefits and philanthropic and community support, with a particular focus on activities occurring in the last year.</p>\n<p>At Stryker, this has included delivering on our mission. We continue to meet the global pandemic challenge with resilience and flexibility, taking action to protect our employees, fulfilling our customers’ needs so they can focus on taking care of patients and working to ensure health and safety in communities.</p>\n<p>We’ve also worked to advance our corporate responsibility objective to positively impact people and our planet through responsible, sustainable practices that create a better, healthier world. As part of this, we’ve introduced “Impact,” a global employee engagement platform that connects and powers our giving and volunteering strategy, which aims to advance healthcare, support education and strengthen community vitality. In addition to employee engagement, Stryker supports many worthy organizations that align with our mission and values.</p>\n<p>As a healthcare company, we know that our choices affect the health of the planet and, ultimately, human health. That is why, in 2020, Stryker set several bold new goals, including achieving a 20 percent reduction in carbon emissions (scopes 1 and 2) by 2024 and being carbon neutral for all Stryker facilities (scopes 1 and 2) by 2030.</p>\n<p>“We’re honored to be named to the 2021 list of Companies That Care,” said Stryker Chair and CEO Kevin Lobo. “Our company values of integrity, accountability, people and performance underscore how we deliver on our mission to make healthcare better, serve our customers, employees and communities and protect the planet.”</p>\n<p><a href=\"https://people.com/human-interest/people-100-companies-that-care-2021/?slide=37da2f19-a3ae-4e3b-9b64-e3b487579dc6#37da2f19-a3ae-4e3b-9b64-e3b487579dc6\"><span class=\"standalone-link\">VIEW THE LIST</span></a><br>\n<br>\n<span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/about/corporate-responsibility.html\">Learn more about corporate responsibility at Stryker</a></span><br>\n&nbsp;</p>\n",
     "jcr:lastModified": "Wed Sep 01 2021 15:21:44 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -54,7 +54,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/about/news/features/people-magazine-names-stryker-as-one-of-its-companies-that-care®-2021-/082721 award EMBARGOED until Sept 1 - standalone image.jpg",
     "borderColor": "rgba(76,125,122,1)",
@@ -68,7 +68,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "jcr:lastModified": "Fri Aug 27 2021 16:45:40 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   }

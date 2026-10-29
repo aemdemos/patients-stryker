@@ -9,7 +9,7 @@
   "jcr:versionHistory": "07a6f2a4-756a-440e-ba84-357d114851b0",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Woman sitting at laptop reviewing workplace AED management software ",
   "jcr:predecessors": [
     "07a61e04-e9b1-421e-a324-863353a80966"
@@ -31,15 +31,15 @@
   "jcr:uuid": "79595efb-3274-47d4-a83e-7b845e114698",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "3 ways AED remote monitoring makes a difference",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -48,10 +48,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/master",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "15",
           "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
@@ -66,8 +66,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">3 ways AED remote monitoring makes a difference</span></span></h1>\r\n",
@@ -86,8 +86,8 @@
     },
     "cols3_1341500114_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -101,8 +101,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
       "text": "2-minute read If you’re a business owner or responsible for monitoring your company’s automated external defibrillator (AED) program, you know it can be a challenging task to keep track of expiration dates and battery status—especially if you have a fleet of devices to manage. To help eliminate device readiness issues and take some of the strain off employees, placing a defibrillator with remote monitoring capabilities in a highly visible area greatly reduces the effort and expense of managing your AED program and ensures the device is ready to use when needed. When comparing devices, it’s important to keep these three things in mind: 1. Manage whenever, wherever Many organizations are now working remotely and program managers may not be in the facility where AEDs are deployed. A device with Wi-Fi® connectivity for remote monitoring can be managed onsite or from afar. 2. Save time and money An AED program manager that monitors AEDs connected to a Wi-Fi network can alert you to things that may affect device readiness including battery status and expired accessories— greatly reducing the effort and expense of managing your fleet. 3. Decrease human error If the battery isn’t charged, how would you or your staff know? This is a common issue with devices in public spaces, and it’s hard to stay on top of it when you have no dedicated monitoring program. Connected AEDs provide readiness information and complete weekly self-tests for every AED in your fleet. LIFEPAK CR2 defibrillator AEDs help save lives, but they’re not all created equal. Stryker’s LIFEPAK CR2 AED is a self-monitoring solution that empowers bystanders or local staff members to quickly and easily assist in sudden cardiac arrest (SCA). Not only does the LIFEPAK CR2 feature remote monitoring capabilities, this device is the only AED that allows chest compressions during ECG rhythm analysis—reducing pauses between CPR and defibrillation, which studies have shown helps improve patient survival. Integrated Wi-Fi connectivity gives registered emergency responders a complete picture of each event and allows them to share vital data with physicians including details on shocks delivered and initial ECG rhythm. Together, we save lives Help keep your workplace safe with Stryker’s full line of defibrillators. With the right solution for all public places, we can help you improve SCA survival rates in your community. Contact an AED expert today to learn more about your remote monitoring options and how they can help your organization now and in the future.",
       "jcr:lastModified": "Tue May 31 2022 20:21:46 GMT+0000",
@@ -112,8 +112,8 @@
     },
     "cols3_1341500114_cop_1193715150": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -128,7 +128,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Sun Aug 29 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "29-Aug-2021",
@@ -141,7 +141,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue May 31 2022 20:13:23 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

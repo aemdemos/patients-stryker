@@ -9,7 +9,7 @@
   "jcr:versionHistory": "b739da32-2b5b-4f8c-9b6c-ad8b3437b8d4",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "thumbnailAltText": "Journey to Zero - Kristin Sexton",
   "jcr:predecessors": [
     "0952689f-6d3f-4ac6-99b8-af28b6fd9d09"
@@ -30,14 +30,14 @@
   "jcr:uuid": "39a485dd-6d2a-48e3-a02d-d822212f2c51",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Thu Aug 18 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-Aug-2022",
@@ -50,7 +50,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_auto",
     "alt": "Journey to Zero - Kristin Sexton",
     "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Journey-to-Zero-promotes-nurse-safety.jpg",
@@ -62,7 +62,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Zero healthcare worker injuries and zero doubt messages are not guarantees and are aspirational in nature. Quoted participants are Stryker employees and are not actively practicing clinicians.</p>\r\n",
     "jcr:lastModified": "Thu Aug 18 2022 14:26:16 GMT+0000",
@@ -71,7 +71,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "text": "<p>The signs are everywhere – on social media, billboards, and television. Not all superheroes wear capes. Healthcare workers are our heroes. But to really help our nurses we need to do more than talk. That’s why Sage has developed the <a title=\"Learn more about Sage's Journey to Zero healthcare worker injuries program.\" href=\"https://www.stryker.com/us/en/sage/c/journey-to-zero.html\">Journey to Zero healthcare worker injury program</a>. This comprehensive program provides products and services aimed at reducing risk of nurse injury due to repositioning patients.</p>\n<h2>Former clinicians share their perspectives</h2>\n<p>Bedside nursing has always been a challenging, but rewarding, profession. The work can be hard. It’s physical and emotional. In recent years the nursing shortage has pushed hospitals to the breaking point. Kristin Sexton RN, BSN, a currently non-practicing clinician states, “The nursing shortage is turning into a crisis. If we don’t keep our bedside nurses safe, we’re going to lose another generation of nurses. We need to make the profession safer – or the results are going to negatively impact all of healthcare.”</p>\n<p>Despite the risk of injury, many nurses continue to sacrifice and serve their patients. Hester Fletcher RN, MSN, ED, CNOR, currently a Staff Market Intelligence Specialist, recalled her experience at the bedside. “There were many times during my career when I was put in a difficult position,” she said. “Unfortunately, I was forced to care for patients without the right number of people for support. It was usually a matter of getting the job done or getting the job done right. I often put myself at risk for injury.”</p>\n<h2>Staff retention starts with nurse safety</h2>\n<p>Building a culture of safety for nurses starts by reducing injury risk. We’re committed to actively partnering with hospitals to reduce the risk of patient handling injuries and improve outcomes. To learn more, visit <a href=\"https://www.stryker.com/us/en/sage/c/journey-to-zero.html\" title=\"Learn more about Sage's Journey to Zero healthcare worker injuries program.\">stryker.com/JTZ</a>.</p>\n",
     "jcr:lastModified": "Thu Aug 18 2022 14:34:22 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

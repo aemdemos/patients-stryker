@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "9476d0ec-d703-43fa-beed-4e30679ff34b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Thu Oct 25 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Oct-2018",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker (NYSE:SYK) reported operating results for the third quarter of 2018.</p>\n<p>See full press release <a href=\"https://investors.stryker.com/press-releases/news-details/2018/Stryker-reports-third-quarter-2018-operating-results/default.aspx\">here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 18:51:08 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "787f9987-0899-4303-bfa1-bd2305054a08",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "0d100c90-6aec-4b06-8e94-714ad8b3e43b"
   ],
@@ -27,7 +27,7 @@
   "jcr:uuid": "a16ff8bd-503e-4de6-a163-9e1d182d3692",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "LIFEPAK 15 monitor/defibrillator configuration setup tool",
   "noIndex": "true",
   "hero_parsys": {
@@ -35,7 +35,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 27 2022 17:59:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jul 27 2022 17:55:46 GMT+0000",
       "jcr:lastModified": "Wed Jul 27 2022 17:55:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -65,8 +65,8 @@
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -78,8 +78,8 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 17:56:01 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 17:56:01 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -87,8 +87,8 @@
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -100,8 +100,8 @@
         },
         "sectionseparator_1727781431": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 17:59:25 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 17:59:25 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -109,8 +109,8 @@
         "text_copy_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -122,8 +122,8 @@
         },
         "sectionseparator_228849802": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 18:10:13 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 18:10:13 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -131,8 +131,8 @@
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -144,8 +144,8 @@
         },
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 27 2022 18:10:48 GMT+0000",
           "alt": "LIFEPAK 15 monitor/defibrillator configuration set up tool screen - Navigation",
@@ -157,8 +157,8 @@
         },
         "sectionseparator_1144009276": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 18:10:54 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 18:10:54 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -166,8 +166,8 @@
         "text_copy_copy_copy__210700069": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -179,8 +179,8 @@
         },
         "standaloneimage_1035760742": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 27 2022 18:11:34 GMT+0000",
           "alt": "LIFEPAK 15 monitor/defibrillator configuration set up tool screen - Site number and device ID",
@@ -193,8 +193,8 @@
         "text_copy_copy_copy__821858483": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -206,8 +206,8 @@
         },
         "standaloneimage_626008487": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 27 2022 18:11:52 GMT+0000",
           "alt": "LIFEPAK 15 monitor/defibrillator configuration set up tool screen - Site number and Device ID 2",
@@ -220,8 +220,8 @@
         "text_copy_copy_copy__516275223": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -233,8 +233,8 @@
         },
         "sectionseparator_251154513": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 18:12:12 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 18:12:12 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -242,8 +242,8 @@
         "text_copy_copy_copy__360707178": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -255,8 +255,8 @@
         },
         "sectionseparator_16854217": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 18:13:14 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 18:13:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -264,8 +264,8 @@
         "text_copy_copy_copy__1883692672": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -277,8 +277,8 @@
         },
         "sectionseparator_1216305616": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jul 27 2022 18:13:57 GMT+0000",
           "jcr:lastModified": "Wed Jul 27 2022 18:13:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -286,8 +286,8 @@
         "text_copy_copy_copy__771879058": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
           "gradientDirection": "left-to-right",

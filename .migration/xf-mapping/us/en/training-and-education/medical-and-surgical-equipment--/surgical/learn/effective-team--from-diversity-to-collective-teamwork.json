@@ -7,7 +7,7 @@
   "jcr:title": "Effective Team: From Diversity to Collective Teamwork",
   "jcr:versionHistory": "3c07abd4-c7aa-4c89-8277-4e726a7b9c46",
   "cq:template": "/apps/stryker/templates/long-page-detail",
-  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "jcr:predecessors": [
     "395b4ef5-a078-4ce8-811b-1b1f7b81abde"
   ],
@@ -27,15 +27,15 @@
   "jcr:uuid": "9d62b5fb-d236-4b91-8bfe-ab79ad278fd2",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "cq:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "navTitle": "Effective Team: From Diversity to Collective Teamwork",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Dilara.Atkins@stryker.com",
-      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+      "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
       "jcr:created": "Wed Dec 19 2018 15:42:10 GMT+0000",
       "jcr:lastModified": "Wed Dec 19 2018 15:42:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -43,8 +43,8 @@
         "jcr:primaryType": "nt:unstructured",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Dilara.Atkins@stryker.com",
-          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:createdBy": "user-5a4ae9843d@example.invalid",
+          "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
           "jcr:created": "Wed Dec 19 2018 15:40:40 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\">Course Code: 3922 / classroom</span></p>\n<p>2 contact hours</p>\n<p>Perioperative Nurses</p>\n<p>Sterile Processing Personnel</p>\n<p>Perioperative team members work in a fast-paced, demanding environment where they&nbsp;need to be flexible and ready to anticipate new challenges at any time. The composition&nbsp;of the team can vary from those who provide direct care in the operating room (OR),&nbsp;to those who provide direct care in the preoperative or postanesthesia care units, to&nbsp;those providing direct care for “on call” shifts, as well as those who provide support for&nbsp;the direct caregivers by processing and packaging instruments in the sterile processing&nbsp;area or present instructions for use for new equipment or technologies. Relationships&nbsp;and communications can breakdown under stressful circumstances. This continuing&nbsp;education activity will provide a brief review of how people who work in teams can&nbsp;increase their effectiveness by incorporating useful strategies into their daily experiences.&nbsp;An overview of group dynamics that team members often experience as they work&nbsp;together will be discussed. The factors that contribute to diversity in teams will be&nbsp;presented. Examples of strategies that can be used to enhance teamwork will also be&nbsp;discussed.</p>\n",
           "jcr:lastModified": "Wed Dec 19 2018 15:41:55 GMT+0000",

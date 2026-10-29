@@ -9,7 +9,7 @@
   "jcr:versionHistory": "b370f9cc-8290-4b56-8a7e-4f6f1fe78b51",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "3fd5d3a7-014c-4726-ae76-1b93a57fb1e9"
   ],
@@ -30,14 +30,14 @@
   "jcr:uuid": "bb5b7c9d-ae8a-4eb5-bb96-c22d969b9b94",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Aug 03 2020 18:42:25 GMT+0000",
       "jcr:lastModified": "Mon Aug 03 2020 18:42:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Thu Jun 11 2020 19:44:13 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">Stryker Chair and CEO, </span><span class=\"futura-bold\">Kevin Lobo</span><span class=\"urw-egyptienne\">, joins Fortune’s On Leading series to discuss how our culture is at the core of our growth, and his outlook for continued business success as our company heads toward a digital future.</span></span></span>",
@@ -61,9 +61,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Aug 03 2020 18:39:53 GMT+0000",
@@ -79,8 +79,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "preset": "max_width_1440",
           "linkExternal": "https://video.foxbusiness.com/v/6176981561001/#sp=show-clips",
           "jcr:created": "Mon Aug 03 2020 18:42:34 GMT+0000",
@@ -96,7 +96,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Fri Feb 04 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "04-Feb-2022",

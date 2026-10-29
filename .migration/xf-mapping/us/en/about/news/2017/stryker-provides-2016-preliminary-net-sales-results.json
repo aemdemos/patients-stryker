@@ -7,7 +7,7 @@
   "jcr:title": "Stryker provides 2016 preliminary net sales results",
   "jcr:versionHistory": "0d512183-5d38-4995-be6c-43f66f501339",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "a730af61-2c75-4234-9da3-66bf025d7958"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Tue Jan 10 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Jan-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>Kalamazoo, Michigan - Stryker Corporation (NYSE:SYK) announced today that preliminary results for the fourth quarter and full year 2016 were:</p>\n<p><b>Preliminary Fourth Quarter Highlights</b></p>\n<p><b>Net sales grew 16.3% to $3.2 billion (16.8% constant currency)</b></p>\n<p><a href=\"https://stryker.gcs-web.com/news-releases/news-release-details/stryker-provides-2016-preliminary-net-sales-results\">Read the full release here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Jan 08 2018 09:44:37 GMT-0500",
     "sling:resourceType": "stryker/components/content/text",

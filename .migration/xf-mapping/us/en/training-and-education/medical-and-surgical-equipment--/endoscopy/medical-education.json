@@ -9,7 +9,7 @@
   "jcr:versionHistory": "339dce6d-273b-47a9-a5c5-05b9a5da8761",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "da527139-8922-41a9-801c-db1cfd80d524"
   ],
@@ -27,7 +27,7 @@
   "jcr:uuid": "cafca435-011a-462a-9f0b-0337e5a1eb9b",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Medical Education",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -35,14 +35,14 @@
   },
   "localpagenavigation": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "childrenNumber": "9",
     "jcr:lastModified": "Wed Jul 23 2025 15:27:37 GMT+0000",
     "sling:resourceType": "stryker/components/content/localpagenavigation"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Tue Apr 28 2020 21:10:52 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
@@ -51,8 +51,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Sep 10 2018 18:02:14 GMT-0400",
       "jcr:lastModified": "Mon Sep 10 2018 18:02:14 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -60,8 +60,8 @@
         "jcr:primaryType": "nt:unstructured",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 17:50:44 GMT-0400",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">Stryker's</span><br />\r\n <span class=\"futura-bold\">Visualization</span><br />\r\n <span class=\"urw-egyptienne\">MedEd</span></span>",
@@ -80,8 +80,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:03:22 GMT-0400",
           "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Endo.MedEdPortal-Assets_r1Home-Main2.jpg",
           "jcr:lastModified": "Mon Sep 10 2018 18:03:38 GMT-0400",
@@ -91,8 +91,8 @@
     },
     "cols_28291390": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Apr 28 2020 21:20:40 GMT+0000",
       "jcr:lastModified": "Tue Apr 28 2020 21:20:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -101,8 +101,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue Apr 28 2020 21:20:48 GMT+0000",
           "jcr:lastModified": "Tue Apr 28 2020 21:20:48 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -111,8 +111,8 @@
     },
     "cols2_966796469": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Sep 10 2018 18:14:16 GMT-0400",
       "jcr:lastModified": "Mon Sep 10 2018 18:14:16 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -121,8 +121,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:14:49 GMT-0400",
           "alt": "stryker lab course",
           "srcFileRef": "/content/dam/stryker/endoscopy/meded/courses.png",
@@ -135,8 +135,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_608801065": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:16:45 GMT-0400",
           "gradientDirection": "left-to-right",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\">Events</span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Your opportunity to learn is here</span></span></p>\n",
@@ -146,8 +146,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:16:13 GMT-0400",
           "text": "<p><span class=\"fontsize-1-25em\">Each year our MedEd&nbsp;courses provide direct training and education to over 1,000 individual surgeons and healthcare professionals across the United States.</span></p>\n<p><span class=\"fontsize-1-25em\">We bring together experts from all around the country to deliver best in class training to local healthcare professionals. Our MedEd&nbsp;programs include summits, conferences, lectures, cadaveric workshops, and our mobile operating room experience.&nbsp;</span><br>\n</p>\n",
           "jcr:lastModified": "Mon May 20 2019 20:16:07 GMT+0000",
@@ -156,8 +156,8 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-3302ad7061@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon May 20 2019 20:16:53 GMT+0000",
@@ -171,8 +171,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Apr 28 2020 21:11:19 GMT+0000",
       "jcr:lastModified": "Tue Apr 28 2020 21:11:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -181,8 +181,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue Apr 28 2020 21:11:27 GMT+0000",
           "jcr:lastModified": "Tue Apr 28 2020 21:11:27 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -191,8 +191,8 @@
     },
     "cols2_2080873009": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Sep 10 2018 18:20:04 GMT-0400",
       "jcr:lastModified": "Mon Sep 10 2018 18:20:04 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -201,8 +201,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:14:49 GMT-0400",
           "alt": "stryker surgeon resources",
           "srcFileRef": "/content/dam/stryker/endoscopy/meded/resources2.jpg",
@@ -215,8 +215,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_608801065_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-3302ad7061@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:16:45 GMT-0400",
           "gradientDirection": "left-to-right",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\">Resources</span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Providing you with resources to learn.</span></span></p>\n",
@@ -226,8 +226,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Sep 10 2018 18:16:13 GMT-0400",
           "text": "<p><span class=\"fontsize-1-25em\">Our resource library is the place to start. Here you will find educational and clinical videos, documents and images highlighting our unique visualization products and technology.&nbsp;</span><br>\n</p>\n",
           "jcr:lastModified": "Mon May 20 2019 20:34:55 GMT+0000",
@@ -236,8 +236,8 @@
         },
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-3302ad7061@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon May 20 2019 20:16:53 GMT+0000",
@@ -251,8 +251,8 @@
     },
     "cols_763249842": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Jun 24 2019 16:32:38 GMT+0000",
       "jcr:lastModified": "Mon Jun 24 2019 17:18:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -263,8 +263,8 @@
     },
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Tue Apr 28 2020 21:11:19 GMT+0000",
       "jcr:lastModified": "Tue Apr 28 2020 21:11:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -273,8 +273,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Tue Apr 28 2020 21:11:27 GMT+0000",
           "jcr:lastModified": "Tue Apr 28 2020 21:11:27 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -283,8 +283,8 @@
     },
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Sep 10 2018 18:40:10 GMT-0400",
       "gradientDirection": "left-to-right",
       "line1": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Together with our customers,<br>\r\nwe are driven<br>\r\nto make healthcare better.</span></span></div>\r\n",
@@ -298,16 +298,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jul 01 2026 14:34:10 GMT+0000",
       "jcr:lastModified": "Wed Jul 01 2026 14:34:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -316,16 +316,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
@@ -335,8 +335,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -345,8 +345,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
               "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
@@ -360,10 +360,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "4047",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",

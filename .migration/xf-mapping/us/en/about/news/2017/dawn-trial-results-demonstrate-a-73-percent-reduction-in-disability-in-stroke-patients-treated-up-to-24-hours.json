@@ -7,7 +7,7 @@
   "jcr:title": "DAWN™ trial results demonstrate a 73% reduction in disability in stroke patients treated up to 24 hours",
   "jcr:versionHistory": "a8f36934-134c-4cb8-a3e1-2fc4e13c35e6",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "8a77d398-210c-4868-990b-f4561528852b"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Tue May 16 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-May-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p><a href=\"http://www.stryker.com/en-us/corporate/AboutUs/Newsroom/ProductBulletins/ssLINK/170114\" target=\"_blank\">Results from the DAWN Trial</a> were presented today at the European Stroke Organisation Conference (ESOC), providing compelling evidence that more patients suffering ischemic stroke may benefit from endovascular treatment. While previous randomized clinical trials have proven the benefit of stent retrievers within six hours of stroke onset, the DAWN Trial is the first to evaluate the late-window and wake-up stroke patient population.<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.stryker.com/stellent/groups/corporate/documents/web_prod/170114.pdf\" target=\"_blank\">Stryker.com</a></p>\n",
     "jcr:lastModified": "Thu Jun 01 2017 17:22:13 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -51,7 +51,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/Dawn NV00004184.AA_XP4 w_WeaveBeauty_CMYK_r1.jpg",
     "jcr:lastModified": "Thu Aug 24 2017 13:43:56 GMT-0400",
     "sling:resourceType": "stryker/components/content/standaloneimage"

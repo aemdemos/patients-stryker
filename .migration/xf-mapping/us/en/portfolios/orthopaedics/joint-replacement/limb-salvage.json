@@ -7,7 +7,7 @@
   "jcr:title": "Limb salvage",
   "jcr:versionHistory": "93dcdd71-886b-42b9-8b97-f59e8507d629",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
   "jcr:predecessors": [
     "3d8c8e00-f733-4e7c-9e34-116b2fcc2994"
   ],
@@ -30,13 +30,13 @@
   "jcr:uuid": "384b7274-ca3d-44c9-8a2a-f994b8ff6895",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "cq:lastModifiedBy": "user-482453db0b@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:lastModified": "Tue Jul 28 2020 19:17:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable"
     }
@@ -49,7 +49,7 @@
     "jcr:primaryType": "nt:unstructured",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:lastModified": "Wed Jul 29 2020 17:47:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"
     }

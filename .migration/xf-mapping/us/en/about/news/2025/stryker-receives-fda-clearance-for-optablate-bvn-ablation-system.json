@@ -9,7 +9,7 @@
   "jcr:versionHistory": "591d3787-76ce-44bd-b042-d311fe93ffac",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "OptaBlate BVN ablation system",
   "jcr:predecessors": [
     "75af79a3-0edd-4f2d-8a79-7ae8254d9dd5"
@@ -38,14 +38,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/news/2025",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Mar 06 2025 18:06:56 GMT+0000",
       "jcr:lastModified": "Thu Mar 06 2025 18:06:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -54,8 +54,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_516835410": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Mar 06 2025 18:26:03 GMT+0000",
           "alt": "OptaBlate BVN basivertebral nerve ablation system",
@@ -67,8 +67,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:07:08 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Stryker’s first basivertebral nerve ablation system targets the basivertebral nerve to provide relief from chronic* vertebrogenic low back pain.</span></span></p>\n<p>&nbsp;</p>\n<p><b>PORTAGE, Mich., USA </b>–<b> May 19, 2025</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced that its OptaBlate basivertebral nerve ablation system (OptaBlate BVN) received 510(k) clearance from the U.S. Food and Drug Administration. OptaBlate BVNA is used in a targeted minimally invasive procedure providing long-lasting<sup>†</sup> vertebrogenic pain relief<sup>1</sup>. The addition of the OptaBlate BVN to Stryker’s pain portfolio expands its advanced pain therapy solutions for patients and is an intersection of its two core competencies: radiofrequency ablation technology and vertebral access.</p>\n<p>&quot;We often see patients with chronic low back pain who have tried multiple treatments—physical therapy, injections, medications—without lasting relief,&quot; said Dr. Jad Khalil, Spine Surgeon at Michigan Orthopaedic Surgeons. &quot;BVNA is a minimally invasive and innovative procedure that targets a key source of this pain, particularly in patients with specific MRI findings. Before BVNA, options for lasting relief were limited. For many, it offers meaningful improvement and can help avoid more aggressive treatments like surgery.&quot;</p>\n",
           "jcr:lastModified": "Mon May 19 2025 14:56:13 GMT+0000",
@@ -79,8 +79,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri May 16 2025 21:21:39 GMT+0000",
       "jcr:lastModified": "Fri May 16 2025 21:21:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -89,8 +89,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Fri May 16 2025 20:57:44 GMT+0000",
           "alt": "OptaBlate-BVN-ablation-vertebral-body",
@@ -106,8 +106,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1963875488": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Fri May 16 2025 21:01:33 GMT+0000",
           "text": "<p><b>Key features of the system include:</b></p>\n<ul>\n<li>Achieves at least a 1 cm lesion in <b>7 minutes</b><sup>2</sup></li>\n<li>Steerable, dynamic curved introducer for <b>targeted performance</b><sup>2</sup></li>\n<li>Microinfusion technology, which keeps the zone hydrated, reducing impedance errors and preventing charring<sup>2</sup></li>\n<li>10-gauge access tools</li>\n</ul>\n<p>&quot;We have a long history in radiofrequency ablation, and we’re relentlessly committed to delivering groundbreaking approaches to protect and promote quality of life,&quot; said Kristen Berg, vice president and general manager of Stryker’s Interventional Spine business. &quot;Our legacy providing solutions to reduce pain now continues with OptaBlate BVN, addressing the underserved population suffering from chronic vertebrogenic lumbar pain.&quot;</p>\n",
           "jcr:lastModified": "Fri May 16 2025 21:06:25 GMT+0000",
@@ -116,8 +116,8 @@
         },
         "text_278224434": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Fri May 16 2025 20:55:54 GMT+0000",
           "text": "<p>Stryker’s Interventional Spine business will introduce OptaBlate BVN as part of its pain portfolio at the American Society of Pain &amp; Neuroscience (ASPN) Annual Meeting, July 17-20, in Miami, FL. (Booth #154)</p>\n<p>For questions, please <a href=\"https://providers.strykerivs.com/contact\" target=\"_blank\">click here</a>.</p>\n",
           "jcr:lastModified": "Fri May 16 2025 21:09:26 GMT+0000",
@@ -128,8 +128,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri May 16 2025 21:01:06 GMT+0000",
       "jcr:lastModified": "Fri May 16 2025 21:01:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -138,16 +138,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:12:08 GMT+0000",
           "jcr:lastModified": "Thu Mar 06 2025 18:12:08 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_207410299": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:12:19 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with its customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.<br>\n</p>\n<p><span class=\"futura-bold\">Media contact:</span><br>\nBeth Sizemore<br>\nSenior Director, Communications<br>\nbeth.sizemore@stryker.com</p>\n",
           "jcr:lastModified": "Fri May 16 2025 21:27:53 GMT+0000",
@@ -159,7 +159,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Mon May 19 2025 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-May-2025",
@@ -172,7 +172,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*Chronic low back pain of at least six months duration that has not responded to at least six months of conservative care</p>\r\n<p>†The evidence shows patients treated with BVNA had sustained benefits in pain and function for up to 5 years</p>\r\n<p>&nbsp;</p>\r\n<p><b>References</b></p>\r\n<ol>\r\n<li>Fischgrund JS, Rhyne A, Macadaeg K, Moore G, Kamrava E, Yeung C, Truumees E, Schaufele M, Yuan P, DePalma M, Anderson DG, Buxton D, Reynolds J, Sikorsky M. Long-term outcomes following intraosseous basivertebral nerve ablation for the treatment of chronic low back pain: 5-year treatment arm results from a prospective randomized double-blind sham-controlled multi-center study. Eur Spine J. 2020 Aug;29(8):1925-1934. doi: 10.1007/s00586-020-06448-x. Epub 2020 May 25. PMID: 32451777.</li>\r\n<li>Stryker data on file.</li>\r\n</ol>\r\n<div>&nbsp;</div>\r\n<div>IVS-OPTABVN-PRESS-1778390_REV-0</div>\r\n",
     "jcr:lastModified": "Fri May 16 2025 21:27:18 GMT+0000",

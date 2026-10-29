@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6f3238cf-0dc2-447d-8c5c-1f0ee47e9149",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "jcr:predecessors": [
     "808d78af-d552-4316-b127-37f5c6da41ee"
   ],
@@ -24,14 +24,14 @@
   "jcr:uuid": "f21d7fc4-22f1-480f-9d29-616e21add480",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "localpagenavigation": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "childrenNumber": "1",
     "jcr:lastModified": "Fri Sep 08 2023 17:35:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/localpagenavigation"
@@ -41,8 +41,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_989373914": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Aug 29 2023 20:37:32 GMT+0000",
       "jcr:lastModified": "Tue Aug 29 2023 20:37:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -51,8 +51,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_2049588629_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Sep 07 2023 21:37:04 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -63,8 +63,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Aug 29 2023 17:05:51 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -78,8 +78,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Aug 29 2023 20:36:44 GMT+0000",
       "jcr:lastModified": "Tue Aug 29 2023 20:36:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -88,10 +88,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "table": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
           "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\r\n<tbody><tr><td>Commands</td>\r\n<td>The Genie Says...</td>\r\n<td> </td>\r\n</tr><tr><td><p>Call Captain Kirk </p>\r\n</td>\r\n<td><p>Captain Kirk is busy in another Galaxy at the moment!</p>\r\n</td>\r\n<td> </td>\r\n</tr><tr><td><p>Make it so</p>\r\n</td>\r\n<td><p>OK, I made it but you will have to unmake it!</p>\r\n</td>\r\n<td> </td>\r\n</tr><tr><td><p>Beam me up! </p>\r\n</td>\r\n<td><p>Sorry the transporter feature is still under development.</p>\r\n</td>\r\n<td> </td>\r\n</tr><tr><td><p>Beam me down! </p>\r\n</td>\r\n<td><p>I don't think I can do that!</p>\r\n</td>\r\n<td> </td>\r\n</tr><tr><td><p>Goodbye</p>\r\n</td>\r\n<td><p>Live long and prosper!</p>\r\n</td>\r\n<td> </td>\r\n</tr><tr><td><p>I’m having a bad day</p>\r\n</td>\r\n<td>&quot;Take a deep breath and know that you are helping to save a life today.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>My Vocera is broken</p>\r\n</td>\r\n<td>&quot;Are you sure it’s not your wireless or the way you are holding your badge.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Genie, I have a wish *</p>\r\n</td>\r\n<td>&quot;Your wish is my command.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Genie, obey my commands</p>\r\n</td>\r\n<td>&quot;First you must follow my rules!&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Santa Claus</p>\r\n</td>\r\n<td>&quot;Ho Ho Ho, Santa hopes you feel better.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Mrs. Claus</p>\r\n</td>\r\n<td>&quot;Santa is watching you, be brave.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Easter Bunny *</p>\r\n</td>\r\n<td>&quot;Hopping you feel better.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>I need a hug</p>\r\n</td>\r\n<td>&quot;Warm fuzzies coming your way.&quot; </td>\r\n<td> </td>\r\n</tr><tr><td><p>Houston, we have a problem</p>\r\n</td>\r\n<td>&quot;Keep calm, and call a super hero.&quot; </td>\r\n<td> </td>\r\n</tr></tbody></table>\r\n",
           "description": "Below are some of the more popular Easter Egg commands. ",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Tue Aug 29 2023 17:09:59 GMT+0000",
           "title": "Command Reference",
           "jcr:lastModified": "Tue Aug 29 2023 17:11:13 GMT+0000",
@@ -105,8 +105,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Aug 31 2023 14:15:01 GMT+0000",
           "text": "Quick Links Vocera Support Vocera Easter Eggs Vocera Voice Commands Tech Support Toll Free: (800) 473-3971 or (408) 882-5700 vcsupport@stryker.com",
           "jcr:lastModified": "Thu Aug 31 2023 14:16:09 GMT+0000",

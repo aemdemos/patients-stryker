@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7e0d2964-6f6d-4271-8b07-869b36740865",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "thumbnailAltText": "Stryker's FocusRN webpage",
   "jcr:predecessors": [
     "b8161985-462d-42b0-aed7-8cb4732a4d2f"
@@ -30,14 +30,14 @@
   "jcr:uuid": "f4607d8f-23c8-4457-a3d8-3a677420b574",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Fri Jun 24 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Jun-2022",
@@ -46,7 +46,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-FocusRN.jpg",
     "borderColor": "rgba(76,125,122,1)",
@@ -60,7 +60,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "text": "<p>Stryker’s learning platform,&nbsp;<a title=\"Visit the FocusRN page.\" href=\"https://strykerlearning.csod.com/login/render.aspx?id=focusrn\" target=\"_blank\">FocusRN</a>&nbsp;has a new website designed with the needs of nurses in mind. The new site is mobile-friendly, making it easy to access from anywhere. The new platform provides clinical education and tools that address the challenges nurses face in patient care every day.</p>\n<p>The new FocusRN offers an enhanced selection of both accredited and non-accredited content. Nurses can also access downloadable resources and interactive e-learning activities.</p>\n<p>Program features include:</p>\n<ul>\n<li>Interactive modules</li>\n<li>Implementation and assessment tools</li>\n<li>White papers</li>\n<li>Journal references</li>\n<li>Professional guidelines</li>\n<li>Customized workshops</li>\n<li>Clinical expert speaker program</li>\n<li>Protocol examples</li>\n</ul>\n<p>To see the new site for yourself, visit <a title=\"Visit the FocusRN page.\" href=\"https://strykerlearning.csod.com/login/render.aspx?id=focusrn\" target=\"_blank\">FocusRN</a>.</p>\n",
     "jcr:lastModified": "Thu Dec 28 2023 20:21:05 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

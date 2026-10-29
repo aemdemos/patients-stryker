@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5688509a-a6f1-4b36-aa2b-9b564b2c286f",
   "cq:template": "/apps/stryker/templates/portfolio",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "6b34eb76-4190-4195-a1e0-87988097da9e"
   ],
@@ -35,14 +35,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios",
   "cq:childrenOrder": "advanced-digital-healthcare,craniomaxillofacial,foot-and-ankle,joint-replacement,spine--ortho-,sports-medicine,trauma-and-extremities,upper-extremities,",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "featuredcontentitem": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "jcr:created": "Wed May 10 2017 02:47:05 GMT-0400",
       "amountProductDetail": "2",
       "jcr:lastModified": "Wed May 10 2017 02:47:05 GMT-0400",
@@ -53,7 +53,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:42:49 GMT+0000",
     "loadMoreText": "Load More",
@@ -64,7 +64,7 @@
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
       "description": "We know Orthopaedics. It’s in our bones. We focus on anticipating your needs for innovative products and services that help us create the future together with you … where your patients get back to doing what they love.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "capabilities",
       "title": "One step ahead",
@@ -74,13 +74,13 @@
   },
   "bannercampaign": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jul 31 2017 19:18:08 GMT-0400",
     "sling:resourceType": "stryker/components/content/bannercampaign"
   },
   "featuredcontentcontext": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
     "jcr:lastModified": "Wed May 10 2017 02:46:57 GMT-0400",
     "sling:resourceType": "stryker/components/content/featuredcontentcontext",
     "textIsRich": [
@@ -91,7 +91,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Wed May 10 2017 02:47:21 GMT-0400",
     "sling:resourceType": "stryker/components/structure/disclaimer",
@@ -100,7 +100,7 @@
   "tagline": {
     "jcr:primaryType": "nt:unstructured",
     "hideTagLineComp": "true",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed Jan 10 2024 14:30:16 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagline",
@@ -115,8 +115,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_72378185_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
       "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Orthopaedics</span></span></p>\n",
       "jcr:lastModified": "Wed Jan 10 2024 14:30:04 GMT+0000",
@@ -125,8 +125,8 @@
     },
     "text_72378185_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
       "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Leading what’s next</span></span></p>\n",
       "jcr:lastModified": "Thu Jan 11 2024 19:00:48 GMT+0000",
@@ -135,16 +135,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jan 11 2024 19:00:51 GMT+0000",
       "jcr:lastModified": "Thu Jan 11 2024 19:00:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "topMargin": "-3",
       "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",

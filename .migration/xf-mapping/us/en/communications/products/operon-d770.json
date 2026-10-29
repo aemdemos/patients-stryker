@@ -10,7 +10,7 @@
   "jcr:versionHistory": "497c879e-e415-4982-8e53-715a1c72461c",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/communications/products/operond770/images/Thumb-D770.jpg",
   "jcr:predecessors": [
     "ee56c98d-de42-4638-94b9-bf6c8a14738d"
@@ -41,13 +41,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Aug 10 2017 12:25:49 GMT-0400",
       "compImageRef": "/content/dam/stryker/communications/products/operond770/images/Hero-D770.jpg",
@@ -59,7 +59,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "sheila.raja@stryker.com",
+      "jcr:lastModifiedBy": "user-0646c98fe2@example.invalid",
       "title": "Related Products",
       "jcr:lastModified": "Fri Aug 10 2018 12:47:34 GMT-0400",
       "sling:resourceType": "stryker/components/content/customizable",
@@ -77,8 +77,8 @@
     },
     "fullbleedpanel_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "cedu.ocson@stryker.com",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:createdBy": "user-65eab19e7c@example.invalid",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "jcr:created": "Fri Dec 23 2022 18:56:21 GMT+0000",
       "jcr:lastModified": "Fri Dec 23 2022 19:15:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -89,9 +89,9 @@
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
           "topPadding": "3",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Fri Dec 23 2022 18:56:38 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(237,238,236);\"><span class=\"futura-bold\">See what’s new.</span><br>\r\n</span></span><span style=\"color: rgb(237,238,236);\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">Explore the newest we have to offer&nbsp;</span></span></span>",
@@ -106,8 +106,8 @@
         },
         "cols4_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Fri Dec 23 2022 19:04:28 GMT+0000",
           "jcr:lastModified": "Fri Dec 23 2022 19:04:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -116,9 +116,9 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "curatedcta": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:createdBy": "user-65eab19e7c@example.invalid",
               "CTAOpenInNewTab": "true",
-              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
               "ctaLinkType": "ext",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Fri Dec 23 2022 19:05:04 GMT+0000",
@@ -132,8 +132,8 @@
         },
         "largeheadline_1911499753": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Fri Dec 23 2022 19:10:23 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": " ",
@@ -150,8 +150,8 @@
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -160,16 +160,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
@@ -179,8 +179,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -189,10 +189,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "2951",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -205,8 +205,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment_c": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
               "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
@@ -223,7 +223,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Operon D770</p>\r\n\r\n",
     "shortDescTop": "<p>The Operon D770 offers an 18.3” wide integrated x-ray channel designed to eliminate the need for separate x-ray tops. The D770 maintains a 1,000lb weight capacity in any articulation in normal orientation.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>With a focus on safety, the D770 provides your OR staff peace of mind with a manual backup system with foot pump and emergency keypad located on the column.<br>\r\n\r\n</p>\r\n\r\n",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Thu Aug 24 2017 13:56:09 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -238,14 +238,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 18:56:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 18:56:42 GMT+0000",
     "linkNewWindowOverride": "0",

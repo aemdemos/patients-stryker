@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "cc106783-9a60-4525-b1f5-ac1c1c38b4a2",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Tue Dec 12 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Dec-2017",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>Stryker has been named one of the Best Companies to Work for in Greater China for the first time. The list recognizes companies that have exceptional workplace cultures and is based on feedback from our employees.</p>\n<p>Great Place to Work announced the result at the awards ceremony on December 7, 2017. To learn more about the list, <a href=\"http://www.greatplacetowork.com.hk/best-companies/best-companies-to-work-for-in-greater-china\">click here</a>.</p>\n",
     "jcr:lastModified": "Tue Dec 12 2017 13:46:16 GMT-0500",
     "sling:resourceType": "stryker/components/content/text",

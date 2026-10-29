@@ -22,16 +22,16 @@
   "cq:tags": [],
   "jcr:uuid": "1d77f9bf-10b9-4a99-a325-546e1e629e3b",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
     "map": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "mapAddress": "<p>1941 Stryker Way<br>\r\nPortage, MI 49002</p>\r\n",
       "jcr:created": "Wed Sep 04 2019 16:10:11 GMT+0000",
       "groupContact": "1",
@@ -49,8 +49,8 @@
     },
     "contentfragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "elementNames": [
         "addressBlock1",
         "PhoneNumbers"
@@ -76,8 +76,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Feb 18 2020 18:48:18 GMT+0000",
       "text": "<p>&nbsp;&nbsp;</p>\n",
       "jcr:lastModified": "Tue Feb 18 2020 18:48:28 GMT+0000",
@@ -93,8 +93,8 @@
     },
     "contentfragment_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "elementNames": [
         "locationName",
         "addressBlock1",

@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "9dd4b816-9447-4569-a49c-cb6b3e4ed5b5",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Tue Jul 11 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "11-Jul-2017",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>MultiGen 2 RF Generator makes radiofrequency ablation more efficient and reliable - Stryker announced that it has received FDA 510(k) clearance for its MultiGen 2 RF Generator. This product provides physicians with the efficiency, control and reliability they need when performing radiofrequency ablation, a minimally invasive procedure that can provide lasting relief to those suffering from facet joint pain.1 The MultiGen 2 RF Generator will debut at the Spine Intervention Society's 25th annual meeting, July 19-22, in San Francisco.</p>\n<p><b><a href=\"http://www.prnewswire.com/news-releases/strykers-multigen-2-radiofrequency-generator-receives-fda-510k-clearance-300486007.html\">Please click here for the full article.</a></b><br>\n</p>\n",
     "jcr:lastModified": "Thu Aug 24 2017 09:43:04 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -45,7 +45,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "http://www.prnewswire.com/news-releases/strykers-multigen-2-radiofrequency-generator-receives-fda-510k-clearance-300486007.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/MultiGen.jpg",
     "jcr:lastModified": "Thu Aug 24 2017 09:44:32 GMT-0400",

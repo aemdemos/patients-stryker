@@ -18,7 +18,7 @@
   "jcr:versionHistory": "225967c0-1f43-4294-b7e1-8803bd1c9fe7",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "cq:lastRolledout": "Thu Jun 08 2017 14:05:44 GMT-0400",
   "thumbnailAltText": "Displays",
   "jcr:predecessors": [
@@ -46,8 +46,8 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastRolledoutBy": "Bridget.Campomanes@stryker.com",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastRolledoutBy": "user-f9c250736c@example.invalid",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -73,7 +73,7 @@
       "cq:LiveSyncCancelled"
     ],
     "cq:isCancelledForChildren": true,
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Displays",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Wed Jul 17 2024 15:35:17 GMT+0000",

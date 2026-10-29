@@ -10,7 +10,7 @@
   "jcr:versionHistory": "f967541f-a480-4e1a-b949-89253d18490b",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "ProCare technician giving demonstration of Stryker cot to emergency responders",
   "jcr:predecessors": [
     "435d529c-8c9f-4f7f-ac3c-a5d7adec93c1"
@@ -33,14 +33,14 @@
   "jcr:uuid": "30dc8417-5668-4568-91bb-8b664b61fad6",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Fri May 01 2026 21:48:28 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -54,7 +54,7 @@
         "fileReference": "/content/dam/stryker/ems/news/videos/Protected-by-ProCare_Mutual-Aid video.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Protected-by-ProCare_Mutual-Aid video-1-AVS",
         "urlModifiers": "",
@@ -68,8 +68,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Mon Apr 27 2026 14:20:48 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -81,9 +81,9 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
       "resources": "/content/dam/stryker/ems/Services/ProCare/Resources/Protected-by-ProCare-Case-Study_Mutual-Aid_US.pdf",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Apr 27 2026 15:02:52 GMT+0000",
       "title": "Resources",
       "jcr:lastModified": "Mon Apr 27 2026 15:03:51 GMT+0000",
@@ -92,8 +92,8 @@
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Apr 27 2026 14:24:39 GMT+0000",
       "hideButton": "false",
       "title": "Related",
@@ -105,7 +105,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Wed May 06 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-May-2026",
@@ -118,7 +118,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>This document is intended solely for the use of healthcare professionals. The information presented is intended to demonstrate the breadth of Stryker’s ProCare Services. Service plans will be subject to the terms and conditions outlined in the service contract. Products represented throughout may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.</p>\r\n",
     "jcr:lastModified": "Mon Apr 27 2026 17:46:35 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5cd1a9af-4eeb-4d55-be82-db3c942f1cbc",
   "cq:template": "/apps/stryker/templates/news-landing",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "4b9b5325-586b-427c-a2f1-32d8db83b9f0"
   ],
@@ -30,10 +30,10 @@
   "sling:resourceType": "stryker/components/structure/pages/news-landing",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "longtexthero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
     "jcr:lastModified": "Tue May 09 2017 18:15:06 GMT-0400",
     "sling:resourceType": "stryker/components/content/longtexthero",
     "textIsRich": [
@@ -43,7 +43,7 @@
   },
   "newsandannouncements": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+    "jcr:lastModifiedBy": "user-3302ad7061@example.invalid",
     "searchPath": "/content/stryker/us/en/endoscopy/news",
     "jcr:lastModified": "Fri Jan 18 2019 04:08:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/newsandannouncements",
@@ -89,7 +89,7 @@
     "jcr:primaryType": "nt:unstructured",
     "leftPadding": "4",
     "topPadding": "4",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "false",
     "gradientDirection": "left-to-right",
     "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Follow us</span></span></span></span></p>\n<p><b><span class=\"futura-bold\">Endoscopy</span></b></p>\n<ul>\n<li><a href=\"https://linkedin.com/company/stryker-endo\" target=\"_blank\" title=\"LinkedIn\"><span class=\"standalone-link\">LinkedIn</span></a></li>\n<li><span class=\"standalone-link\"><a title=\"X\" href=\"https://x.com/StrykerEndo\" target=\"_blank\">X</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"Instagram\" href=\"https://www.instagram.com/strykervisualization/\" target=\"_blank\">Instagram</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"YouTube\" href=\"https://www.youtube.com/@StrykersClinicalSolutions\" target=\"_blank\">YouTube</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"VuMedi\" href=\"https://www.vumedi.com/channel/stryker/tab/endoscopy-2/\" target=\"_blank\">VuMedi</a></span></li>\n</ul>\n<p><span class=\"futura-bold\">Breast Care</span></p>\n<ul>\n<li><a href=\"https://linkedin.com/company/stryker-breast-care\" target=\"_blank\" title=\"LinkedIn\"><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\">LinkedIn</span></b></a></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"X\" href=\"https://x.com/StrykerBreast\" target=\"_blank\">X</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"Instagram\" href=\"https://www.instagram.com/strykerbreastcare/\" target=\"_blank\">Instagram</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"YouTube\" href=\"https://www.youtube.com/@StrykersClinicalSolutions\" target=\"_blank\">YouTube</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"VuMedi\" href=\"https://www.vumedi.com/channel/stryker/tab/endoscopy-2/\" target=\"_blank\">VuMedi</a></span></b></li>\n</ul>\n",

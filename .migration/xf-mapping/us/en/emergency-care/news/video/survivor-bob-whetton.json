@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d1436f3c-542d-4209-9f6c-4b380311d0c8",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Survivor: Bob Whetton",
   "jcr:predecessors": [
     "b833a1b3-2fcb-4b97-be13-37e4fa51d128"
@@ -32,16 +32,16 @@
   "jcr:uuid": "1559a218-f61a-442f-a73f-003c5b478354",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Survivor: Bob Whetton",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "description": "Seven cardiac arrest events, seven saves. Watch this video to discover more about the cardiac arrest response system at Brighton FC's AMEX stadium.",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -54,7 +54,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-bob-whetton.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-bob-whetton-AVS",
         "urlModifiers": "",
@@ -68,16 +68,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:55:43 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:55:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
@@ -101,7 +101,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Mon Apr 10 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Apr-2023",

@@ -9,7 +9,7 @@
   "jcr:title": "Sports biologics",
   "jcr:versionHistory": "171979f1-e649-454d-9155-177902de39e6",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 7.jpg",
   "jcr:predecessors": [
     "d04e915d-0a76-4c33-b0a2-44e0e403b740"
@@ -34,7 +34,7 @@
   "jcr:uuid": "3b16e467-f547-4855-ab90-e89a1cd39b60",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -42,7 +42,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -50,7 +50,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "pagehero": {
@@ -58,13 +58,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Biologics.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",
@@ -73,7 +73,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Wed Jun 08 2022 14:38:43 GMT+0000",
     "loadMoreText": "Load More",

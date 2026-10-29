@@ -21,7 +21,7 @@
   "originallyPublished": "Mon Feb 06 2023 17:39:03 GMT+0000",
   "jcr:uuid": "35f9bf1c-78bc-457c-aedd-8c26d3d53dd8",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "cq:lastModifiedBy": "user-2fc21bab61@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -39,16 +39,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:33 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Balloon dilation",
       "jcr:lastModified": "Mon Dec 12 2022 16:12:03 GMT+0000",
@@ -56,8 +56,8 @@
     },
     "text_1490642143": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "andrew.reynolds@stryker.com",
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:createdBy": "user-2fc21bab61@example.invalid",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "jcr:created": "Tue Feb 17 2026 18:21:22 GMT+0000",
       "text": "<p><a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=00857326005017\" target=\"_blank\"><b>XprESS® ENT dilation system</b></a></p>\n",
       "jcr:lastModified": "Tue Feb 17 2026 18:21:46 GMT+0000",
@@ -66,28 +66,28 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/ent/ifus/us/balloon-dilation/5325-001-rA IFU Audion ET Dilation System.pdf",
         "/content/dam/stryker/ent/ifus/us/balloon-dilation/8-24-23/4322-001 rE - XprESS Ultra and LoProfile.pdf"
       ],
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
       "jcr:lastModified": "Tue Sep 05 2023 19:20:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_509099242": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Bioresorbable dressing",
       "jcr:lastModified": "Mon Dec 12 2022 16:06:43 GMT+0000",
@@ -95,7 +95,7 @@
     },
     "resourcesanddownload_1460299760": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/ent/ifus/us/bioresorbable-dressings/HemoPore IFU.pdf",
         "/content/dam/stryker/ent/ifus/us/bioresorbable-dressings/XeroGel IFU.pdf",
@@ -103,23 +103,23 @@
         "/content/dam/stryker/ent/ifus/us/bioresorbable-dressings/NasoPore FD IFU.pdf",
         "/content/dam/stryker/ent/ifus/us/bioresorbable-dressings/OtoPore IFU.pdf"
       ],
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:16:02 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_509099242_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy_2114293543": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Cryotherapy",
       "jcr:lastModified": "Mon Dec 12 2022 16:08:24 GMT+0000",
@@ -127,8 +127,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "andrew.reynolds@stryker.com",
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:createdBy": "user-2fc21bab61@example.invalid",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Feb 17 2026 18:05:59 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -139,8 +139,8 @@
     },
     "cols_509099242_copy_161942708": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -151,8 +151,8 @@
     },
     "section_title_copy_1491418414": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Imaging",
       "jcr:lastModified": "Mon Dec 12 2022 16:08:38 GMT+0000",
@@ -160,29 +160,29 @@
     },
     "resourcesanddownload_437734889": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/ent/ifus/us/imaging/3645-001-rB IFU Wireless Camera System.pdf",
         "/content/dam/stryker/ent/ifus/us/imaging/3260-001-rC IFU, FocESS Sinuscope_0.pdf",
         "/content/dam/stryker/ent/ifus/us/imaging/3529-001 rB IFU, FocESS Sinuscope Sterilization Tray.pdf"
       ],
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
       "jcr:lastModified": "Wed Feb 08 2023 18:13:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_509099242_copy_1406332986": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy_1": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "deepLinkingId": "microdebrider",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": " Microdebrider",
@@ -191,8 +191,8 @@
     },
     "cols_1423323938": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "andrew.reynolds@stryker.com",
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:createdBy": "user-2fc21bab61@example.invalid",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "jcr:created": "Fri Mar 06 2026 19:43:00 GMT+0000",
       "jcr:lastModified": "Fri Mar 06 2026 19:43:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -201,8 +201,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1490642143_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "andrew.reynolds@stryker.com",
-          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:createdBy": "user-2fc21bab61@example.invalid",
+          "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
           "jcr:created": "Tue Feb 17 2026 18:21:22 GMT+0000",
           "text": "<p><b><a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=07613327524116\" target=\"_blank\">Pello microdebrider</a></b></p>\n",
           "jcr:lastModified": "Fri Mar 06 2026 19:43:32 GMT+0000",
@@ -213,8 +213,8 @@
     },
     "section_title_copy_1637451610": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Nasal implant",
       "jcr:lastModified": "Mon Dec 12 2022 16:11:56 GMT+0000",
@@ -222,8 +222,8 @@
     },
     "text_1490642143_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "andrew.reynolds@stryker.com",
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:createdBy": "user-2fc21bab61@example.invalid",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "jcr:created": "Tue Feb 17 2026 18:21:22 GMT+0000",
       "text": "<p><b><a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=00857037006037\" target=\"_blank\">LATERA 20mm</a></b></p>\n<p><a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=00857037006075\" target=\"_blank\"><b>LATERA 24mm</b></a></p>\n",
       "jcr:lastModified": "Fri Mar 06 2026 19:40:27 GMT+0000",
@@ -232,16 +232,16 @@
     },
     "cols_509099242_copy_1336102359": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy_1145511582": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Navigation",
       "jcr:lastModified": "Mon Dec 12 2022 16:12:52 GMT+0000",
@@ -249,7 +249,7 @@
     },
     "resourcesanddownload_1729184781": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/ent/ifus/us/navigation/5207-001-rA IFU, Field Generator Stand.pdf",
         "/content/dam/stryker/ent/ifus/us/navigation/Scopis_ENT_Software_with_TGS_TD8000020701_F_IFU_ML.pdf",
@@ -275,23 +275,23 @@
         "/content/dam/stryker/ent/ifus/us/navigation/8-24-23/Calibration Body Electromagnetic IFU TD8000060701.pdf",
         "/content/dam/stryker/ent/ifus/us/navigation/8-24-23/Patient Tracker Electromagnetic IFU TD8000040700 (1).pdf"
       ],
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
       "jcr:lastModified": "Mon Sep 16 2024 17:38:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_509099242_copy_1863180216": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy_1194108642": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
       "title": "Surgical instruments and tools",
       "jcr:lastModified": "Mon Dec 12 2022 16:14:11 GMT+0000",
@@ -299,7 +299,7 @@
     },
     "resourcesanddownload_723704374": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/ent/ifus/us/surgical-instruments-and-tools/5117-001 rB - IFU Reinforced Anesthesia Needle.pdf",
         "/content/dam/stryker/ent/ifus/us/surgical-instruments-and-tools/3721-003-rB IFU, Entellus Medical Reusable Shaver Blade.pdf",
@@ -312,7 +312,7 @@
         "/content/dam/stryker/ent/ifus/us/surgical-instruments-and-tools/3721-001 rB IFU Entellus Medical Shaver System.pdf",
         "/content/dam/stryker/ent/ifus/us/surgical-instruments-and-tools/9-5-23/3103-002_rH MiniFESSLight Seeker_multilingual.pdf"
       ],
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
       "jcr:lastModified": "Tue Sep 05 2023 19:01:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"

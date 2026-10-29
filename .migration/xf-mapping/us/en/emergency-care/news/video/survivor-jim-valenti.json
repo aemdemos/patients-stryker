@@ -10,7 +10,7 @@
   "jcr:versionHistory": "13d373c3-19f4-4001-8236-fe3a1e9ac46e",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Jim Valenti shares his story and the events that saved his life",
   "jcr:predecessors": [
     "feda266c-426a-4052-83be-17454667a282"
@@ -37,15 +37,15 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "videoType": "typeId",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "description": "Jim Valenti shares a moment that changed everything, when his life hung in the balance. His story is a moving reminder of the second chances made possible by lifesaving care.   \r\n\r\n",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Apr 22 2026 20:46:49 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -59,7 +59,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-jim-valenti-2955130.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-jim-valenti-2955130-AVS",
         "urlModifiers": "",
@@ -73,8 +73,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Fri Sep 11 2026 18:08:47 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -87,8 +87,8 @@
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Oct 15 2025 22:01:50 GMT+0000",
       "hideButton": "false",
       "title": "Related",
@@ -119,7 +119,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Fri Oct 23 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "23-Oct-2026",

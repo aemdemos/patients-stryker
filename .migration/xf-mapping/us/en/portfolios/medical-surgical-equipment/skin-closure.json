@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e16ccef8-0b4d-464e-8d8e-ac9d02059bca",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "Surgical wound care ",
   "jcr:predecessors": [
     "fbed7f67-6734-4cb1-82d1-cfd7fe3375f0"
@@ -34,7 +34,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -49,7 +49,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
     "imageAlt": "SWC",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
@@ -60,7 +60,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
     "jcr:lastModified": "Thu Feb 19 2026 20:15:21 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

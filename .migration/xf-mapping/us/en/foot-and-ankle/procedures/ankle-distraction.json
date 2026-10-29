@@ -7,7 +7,7 @@
   "jcr:title": "Ankle Distraction",
   "jcr:versionHistory": "94ffa77f-e1a8-4b1f-a78d-8fb3efc5fbfb",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Ankle-Distraction/Images/Ankle_AnkleDistraction.jpg",
   "jcr:predecessors": [
     "7c8995b0-d2f8-4230-af94-751f3de21df8"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:03:36 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Ankle-Distraction/Images/Ankle_AnkleDistraction.jpg",
@@ -54,7 +54,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Mon Mar 04 2019 22:09:24 GMT+0000",

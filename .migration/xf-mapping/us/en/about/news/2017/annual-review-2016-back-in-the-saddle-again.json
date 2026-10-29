@@ -7,7 +7,7 @@
   "jcr:title": "Annual Review 2016: Back in the saddle again",
   "jcr:versionHistory": "460c5182-e7f8-49ab-afea-60a2b4f88285",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "f205479c-d576-4d2e-ae16-38aa45626ae3"
   ],
@@ -26,14 +26,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Thu Mar 30 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "30-Mar-2017",
@@ -42,7 +42,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>By 2012, the pain after horseback riding “progressed to a level that was unbearable.” Sam struggled with limitations due to the pain, which affected all aspects of her daily life. “I couldn’t sleep and I wasn’t able to get out of a chair.” After a series of misdiagnoses, Sam turned to Dr. Richard C. Mather III, an orthopaedic surgeon associated with Duke University Hospital. Please visit the <a href=\"http://www.stryker.com/2016/\" target=\"_blank\">2016 Annual Review</a> interactive website to learn about Dr. Mather’s diagnosis, the innovative Sports Medicine products that were used to help Sam and to find out what she is up to today. The website also features the story of an Iraq veteran’s journey to a new smile, a video message from Kevin Lobo, financial highlights and many of our newest, innovative products.<br>\n</p>\n<p><b>Read the full Annual Review:</b></p>\n<p><a href=\"http://www.stryker.com/2016/\" target=\"_blank\">Stryker.com</a></p>\n",
     "jcr:lastModified": "Tue May 30 2017 15:38:14 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

@@ -22,27 +22,27 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "b80958cc-adaf-4feb-8ab1-740642860df5",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
     "jcr:lastModified": "Fri Nov 10 2023 21:14:01 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
     "largeheadline_copy_c": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
       "bottomPadding": "2",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "topPadding": "3",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "jcr:created": "Fri Oct 14 2022 20:48:58 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -54,30 +54,30 @@
         "true",
         "true"
       ],
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "jcr:title": "Medical",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
       "jcr:lastModified": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage_copy": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
         "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
@@ -86,7 +86,7 @@
         "borderColor": "rgba(178,180,174,1)",
         "jcr:lastModified": "Wed Apr 17 2024 15:44:03 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "linkInternal": "/content/stryker/edit_intl/en/portfolios/medical-surgical-equipment",
         "openInNewTab": "true",
         "enableBorder": "true"
@@ -97,7 +97,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -106,7 +106,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -116,7 +116,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -126,7 +126,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_832606624_copy__505390974": {
@@ -135,11 +135,11 @@
           "cq:LiveSyncCancelled"
         ],
         "bottomPadding": "7",
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "leftPadding": "8",
         "cq:isCancelledForChildren": true,
         "topPadding": "5",
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Mon Nov 20 2023 22:09:52 GMT+0000",
         "rightMargin": "0",
@@ -153,7 +153,7 @@
         "backgroundColor": "rgba(255,255,255,1)",
         "showDimensionalBox": "true",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "leftMargin": "0",
         "bottomMargin": "15"
       }
@@ -163,22 +163,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "jcr:title": "Orthopaedics",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
       "jcr:lastModified": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -187,7 +187,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -197,7 +197,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -207,7 +207,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "standaloneimage_copy": {
@@ -215,9 +215,9 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
         "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
@@ -226,7 +226,7 @@
         "borderColor": "rgba(178,180,174,1)",
         "jcr:lastModified": "Wed Apr 17 2024 15:44:39 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "linkInternal": "/content/stryker/edit_intl/en/portfolios/orthopaedics",
         "openInNewTab": "true",
         "enableBorder": "true"
@@ -237,11 +237,11 @@
           "cq:LiveSyncCancelled"
         ],
         "bottomPadding": "3",
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "leftPadding": "8",
         "cq:isCancelledForChildren": true,
         "topPadding": "5",
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Mon Nov 20 2023 22:10:00 GMT+0000",
         "rightMargin": "0",
@@ -255,7 +255,7 @@
         "backgroundColor": "rgba(255,255,255,1)",
         "showDimensionalBox": "true",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "leftMargin": "0",
         "bottomMargin": "15"
       }
@@ -265,22 +265,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "jcr:title": "Neurotechnology",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
       "jcr:lastModified": "Fri Nov 10 2023 21:14:01 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -289,7 +289,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -299,7 +299,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -309,7 +309,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "standaloneimage_copy_1795893157": {
@@ -317,9 +317,9 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Fri Nov 10 2023 21:14:01 GMT+0000",
         "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
@@ -328,7 +328,7 @@
         "borderColor": "rgba(178,180,174,1)",
         "jcr:lastModified": "Wed Apr 17 2024 15:45:02 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "linkInternal": "/content/stryker/edit_intl/en/portfolios/neurotechnology-spine",
         "openInNewTab": "true",
         "enableBorder": "true"
@@ -339,11 +339,11 @@
           "cq:LiveSyncCancelled"
         ],
         "bottomPadding": "7",
-        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:createdBy": "user-c26bb7a766@example.invalid",
         "leftPadding": "8",
         "cq:isCancelledForChildren": true,
         "topPadding": "5",
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Mon Nov 20 2023 22:10:10 GMT+0000",
         "rightMargin": "0",
@@ -357,7 +357,7 @@
         "backgroundColor": "rgba(255,255,255,1)",
         "showDimensionalBox": "true",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "leftMargin": "0",
         "bottomMargin": "15"
       }
@@ -401,7 +401,7 @@
       "cq:LiveRelationship"
     ],
     "cq:lastRolledout": "Fri Nov 10 2023 21:14:02 GMT+0000",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "cq:LiveSyncConfig": {
     "jcr:primaryType": "cq:LiveCopy",

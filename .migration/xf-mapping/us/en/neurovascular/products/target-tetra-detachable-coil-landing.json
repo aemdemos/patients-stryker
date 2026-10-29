@@ -9,7 +9,7 @@
   "jcr:versionHistory": "37ed38fd-21ad-4134-9e58-a4b0d5be6633",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "d345debc-df58-46dc-a1a3-de0500a591ce"
   ],
@@ -30,15 +30,15 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "dimensionBox": "TA",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "layoutOptions": "col-sm-6 pull-left",
       "backgroundImageRef": "/content/dam/stryker/neurovascular/products/target-tetra/nv--target-tetra--spin1.gif",
       "jcr:created": "Mon Oct 05 2020 15:32:20 GMT+0000",
@@ -50,8 +50,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Apr 26 2023 13:48:19 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h1 style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Target Tetra</span><sup><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-1vw\">®</span></span></sup><span class=\"fontsize-2-5-vw\"> Detachable Coil</span></span></h1>\r\n<p style=\"text-align: left;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">A big </span><span style=\"font-size: 28.0px;\"><span class=\"fontsize-3-5-vw\">deal</span></span></span></span></span></b></p>\r\n<p style=\"text-align: left;\"><b style=\"font-size: 28.0px;background-color: transparent;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">for small spaces.</span></span></b></p>\r\n",
@@ -67,8 +67,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "locations",
       "jcr:created": "Fri Oct 18 2024 05:32:00 GMT+0000",
       "title": "Select your location",
@@ -77,8 +77,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Oct 18 2024 01:00:27 GMT+0000",
       "jcr:lastModified": "Fri Oct 18 2024 01:00:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -87,8 +87,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Jul 13 2017 14:50:27 GMT-0400",
           "gradientDirection": "left-to-right",
@@ -104,8 +104,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Jul 13 2017 14:50:27 GMT-0400",
           "gradientDirection": "left-to-right",
@@ -121,8 +121,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Jul 13 2017 14:50:27 GMT-0400",
           "gradientDirection": "left-to-right",

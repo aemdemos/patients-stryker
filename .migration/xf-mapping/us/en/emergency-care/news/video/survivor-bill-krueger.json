@@ -9,7 +9,7 @@
   "jcr:versionHistory": "19737113-43e5-4b68-9ec3-42b317c57035",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "06875f45-58c2-4b2b-af91-ff179f666a93"
   ],
@@ -30,15 +30,15 @@
   "jcr:uuid": "c866767b-04cc-4f3a-89b5-7820945f105f",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "description": "Former Major League Baseball player, William \"Bill\" Krueger, shares his sudden cardiac arrest survival story.",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -51,7 +51,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-bill-krueger.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-bill-krueger-AVS",
         "urlModifiers": "",
@@ -65,16 +65,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:55:24 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:55:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
@@ -98,7 +98,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Sun Aug 01 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Aug-2021",

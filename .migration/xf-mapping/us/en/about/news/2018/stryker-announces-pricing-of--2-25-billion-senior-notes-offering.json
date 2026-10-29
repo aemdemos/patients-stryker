@@ -7,7 +7,7 @@
   "jcr:title": "Stryker announces pricing of €2.25 billion senior notes offering",
   "jcr:versionHistory": "9f1350a4-a4f7-43bc-8d69-94b27bee2e73",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "jcr:predecessors": [
     "854698fa-2cb6-45a6-8a7a-976a73fb105a"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "6943ac87-bcfb-420a-8348-fd02c205fdd6",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "publishDate": "Tue Nov 27 2018 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Nov-2018",
@@ -41,7 +41,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker (NYSE:SYK) announced today that it has priced the following notes: (i) €550 million aggregate principal amount of the Company’s 1.125% Notes due 2023 (the “2023 Notes”), (ii) €750 million aggregate principal amount of the Company’s 2.125% Notes due 2027 (the “2027 Notes”), (iii) €650 million aggregate principal amount of the Company’s 2.625% Notes due 2030 (the “2030 Notes”) and (iv) €300 million aggregate principal amount of the Company’s Floating Rate Notes due 2020 (the “Floating Rate Notes” and together with the 2023 Notes, 2027 Notes and 2030 Notes, the “Notes”).&nbsp;</p>\n<p>&nbsp;</p>\n<p>See full press release <a href=\"https://investors.stryker.com/press-releases/news-details/2018/Stryker-announces-pricing-of-225-billion-senior-notes-offering/default.aspx\">here</a></p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 18:53:38 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

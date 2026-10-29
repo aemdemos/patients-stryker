@@ -7,7 +7,7 @@
   "jcr:title": "Training and education calendar",
   "jcr:versionHistory": "014b100c-543e-4ab5-81f1-7834ed28fd61",
   "cq:template": "/apps/stryker/templates/event-calendar",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "5b6b24be-cbe3-4565-b60f-4b005f73856b"
   ],
@@ -25,11 +25,11 @@
   "jcr:uuid": "7086327c-9db1-4ee8-9325-7d2bfc4c6265",
   "sling:resourceType": "stryker/components/structure/pages/event-calendar",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "navTitle": "Calendar",
   "eventcalendar": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en/global-events",
     "title": "Global education calendar",
     "jcr:lastModified": "Thu May 30 2019 19:59:45 GMT+0000",
@@ -40,7 +40,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures.<br>\r\nFor more information, contact your local sales representative.&nbsp;<br>\r\n</p>\r\n",
     "jcr:lastModified": "Tue Nov 28 2017 16:16:07 GMT-0500",

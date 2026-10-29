@@ -7,7 +7,7 @@
   "jcr:title": "Stryker CEO: For us it's always about innovation in medical technology",
   "jcr:versionHistory": "c445035a-1037-44ad-a497-ada6a44bf27f",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "87e8a386-0797-49e1-b370-8b647f9f79a8"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Fri Jul 28 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "28-Jul-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>Kevin Lobo, Stryker Chairman and CEO, talks about the company's mission to provide high-tech, innovative devices for treating patients, including robotic-arm assistance in the operating room.</p>\n<p><b><a href=\"https://www.cnbc.com/video/2017/07/28/stryker-ceo-for-us-its-always-about-innovation-in-medical-technology.html\">Please click here for the full article.</a></b><br>\n</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed Aug 23 2017 16:33:57 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -51,7 +51,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "https://www.cnbc.com/video/2017/07/28/stryker-ceo-for-us-its-always-about-innovation-in-medical-technology.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/Lobo Newsroom.jpg",
     "jcr:lastModified": "Wed Aug 23 2017 16:40:04 GMT-0400",

@@ -23,25 +23,25 @@
   "cq:tags": [],
   "jcr:uuid": "c3a6879f-5a2a-47aa-b0d2-65ef1bc20f82",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "garrett.shue@stryker.com",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Mon Jan 10 2022 16:40:48 GMT+0000",
     "jcr:lastModified": "Mon Jan 10 2022 16:40:48 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+    "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
       "cq:lastRolledout": "Mon Jan 10 2022 16:40:48 GMT+0000",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
     },
     "text_copy_copy_copy__1986654680": {
       "jcr:primaryType": "nt:unstructured",
@@ -49,7 +49,7 @@
         "cq:LiveRelationship"
       ],
       "cq:lastRolledout": "Mon Jan 10 2022 16:40:48 GMT+0000",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
     },
     "text_copy_copy_copy__318535877": {
       "jcr:primaryType": "nt:unstructured",
@@ -57,35 +57,35 @@
         "cq:LiveRelationship"
       ],
       "cq:lastRolledout": "Mon Jan 10 2022 16:40:48 GMT+0000",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
     },
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "jcr:title": "1",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "cq:lastRolledout": "Mon Jan 10 2022 16:40:48 GMT+0000",
       "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:40:48 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage_copy7210833941931576": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "srcFileRef": "/content/dam/stryker/ems/products/lifepak-cr2/icon_techsupport_purple.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Mon Jan 10 2022 16:40:48 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -93,7 +93,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -101,7 +101,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "1",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -110,7 +110,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "4",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -119,7 +119,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -129,7 +129,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -137,7 +137,7 @@
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -146,7 +146,7 @@
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "text_copy": {
@@ -155,9 +155,9 @@
           "cq:LiveRelationship"
         ],
         "bottomPadding": "3",
-        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:createdBy": "user-98fdffe29c@example.invalid",
         "topPadding": "3",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
@@ -167,14 +167,14 @@
         "sling:resourceType": "stryker/components/content/text",
         "rightPadding": "3",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -183,7 +183,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "5",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -193,7 +193,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -202,7 +202,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -211,8 +211,8 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "brittany.brady@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-98fdffe29c@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "ctaLinkType": "deep",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "ctaOpenInNewTabOverride": "0",
@@ -222,14 +222,14 @@
         "jcr:lastModified": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "sling:resourceType": "stryker/components/content/curatedcta",
         "CTAButtonColor": "rgba(28,86,135,1)",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -238,7 +238,7 @@
             "offset": "1",
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "5",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
@@ -248,28 +248,28 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "jcr:title": "2",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
       "jcr:created": "Wed Oct 20 2021 20:53:13 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:40:49 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "standaloneimage_copy_6488005807210879369220996": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "srcFileRef": "/content/dam/stryker/ems/images/test/wrench-ec.png",
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "enableBorder": "false",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
@@ -277,7 +277,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -285,7 +285,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "1",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -294,7 +294,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "4",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -303,7 +303,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -313,7 +313,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -321,7 +321,7 @@
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -330,7 +330,7 @@
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       },
       "text_copy_copy": {
@@ -339,9 +339,9 @@
           "cq:LiveRelationship"
         ],
         "bottomPadding": "3",
-        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:createdBy": "user-98fdffe29c@example.invalid",
         "topPadding": "3",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "hideComponent": "false",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
@@ -351,14 +351,14 @@
         "sling:resourceType": "stryker/components/content/text",
         "rightPadding": "3",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -366,7 +366,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "5",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -376,7 +376,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -385,7 +385,7 @@
             ],
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       },
@@ -394,8 +394,8 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "brittany.brady@stryker.com",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:createdBy": "user-98fdffe29c@example.invalid",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "ctaLinkType": "deep",
         "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "ctaOpenInNewTabOverride": "0",
@@ -405,14 +405,14 @@
         "jcr:lastModified": "Mon Jan 10 2022 16:40:49 GMT+0000",
         "sling:resourceType": "stryker/components/content/curatedcta",
         "CTAButtonColor": "rgba(28,86,135,1)",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -421,15 +421,15 @@
             "offset": "1",
             "cq:lastRolledout": "Mon Jan 10 2022 16:40:49 GMT+0000",
             "width": "5",
-            "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+            "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
           }
         }
       }
     },
     "standaloneimage_copy_262486339": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
       "srcFileRef": "/content/dam/stryker/ems/products/truecpr/us/icon_lucas_onlinetraining_101px.png",
@@ -447,8 +447,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -459,8 +459,8 @@
     },
     "curatedcta_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "ctaLinkType": "deep",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",
@@ -471,8 +471,8 @@
     },
     "standaloneimage_copy_1311545486": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Wed Oct 20 2021 20:53:13 GMT+0000",
       "srcFileRef": "/content/dam/stryker/ems/products/truecpr/us/icon_lucas_field-service_101px.png",
@@ -490,8 +490,8 @@
     },
     "text_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -502,8 +502,8 @@
     },
     "curatedcta_copy_copy_1115376656": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "ctaLinkType": "deep",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",
@@ -514,8 +514,8 @@
     },
     "standaloneimage_copy_958320428": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Wed Oct 20 2021 20:53:13 GMT+0000",
       "srcFileRef": "/content/dam/stryker/ems/products/truecpr/us/icon_lucas_continuing-education_101px.png",
@@ -533,8 +533,8 @@
     },
     "text_copy_copy_1510919949": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -545,8 +545,8 @@
     },
     "curatedcta_copy_copy_1779842132": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "ctaLinkType": "deep",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",

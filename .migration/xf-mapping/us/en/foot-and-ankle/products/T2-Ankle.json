@@ -7,7 +7,7 @@
   "jcr:title": "T2™ Ankle Arthrodesis Nail",
   "jcr:versionHistory": "28d842e2-a204-46af-bced-e4cfc0c98cca",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+  "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
   "jcr:predecessors": [
     "219e4f35-5abd-4123-944f-00db3d457893"
   ],
@@ -33,13 +33,13 @@
   "jcr:uuid": "460872cc-f25c-42ba-9858-be44dd4306fa",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "douglas.depreker@stryker.com",
+  "cq:lastModifiedBy": "user-4ed7efab4d@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+      "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Feb 12 2020 17:30:56 GMT+0000",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/products/t2-ankle/Header_T2Nail.jpg",
@@ -61,15 +61,15 @@
         "/content/stryker/us/en/foot-and-ankle/asset-items/jcr:content/par/externalasset_897043470",
         "/content/stryker/us/en/foot-and-ankle/asset-items/jcr:content/par/externalasset_1901878194"
       ],
-      "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+      "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
       "title": "Resources",
       "jcr:lastModified": "Wed Feb 12 2020 17:26:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "douglas.depreker@stryker.com",
-      "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+      "jcr:createdBy": "user-4ed7efab4d@example.invalid",
+      "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
       "jcr:created": "Mon Feb 24 2020 20:11:51 GMT+0000",
       "title": "Procedures",
       "jcr:lastModified": "Mon Feb 24 2020 20:12:00 GMT+0000",
@@ -77,8 +77,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "douglas.depreker@stryker.com",
-      "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+      "jcr:createdBy": "user-4ed7efab4d@example.invalid",
+      "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
       "jcr:created": "Mon Feb 24 2020 20:12:09 GMT+0000",
       "jcr:lastModified": "Mon Feb 24 2020 20:12:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -87,8 +87,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
           "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/Header_Hindfoot.jpg",
           "jcr:lastModified": "Fri Apr 26 2019 15:08:20 GMT+0000",
@@ -96,8 +96,8 @@
         },
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
           "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Hindfoot procedures</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/subtalar-joint-arthrodesis--talocalcaneal-arthrodesis-.html\">subtalar joint arthrodesis (talocalcaneal arthrodesis)</a>&nbsp;</span></span><br>\n</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Mon Feb 24 2020 20:20:47 GMT+0000",
@@ -110,8 +110,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
           "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/Header_Ankle.jpg",
           "jcr:lastModified": "Fri Apr 26 2019 15:08:29 GMT+0000",
@@ -119,8 +119,8 @@
         },
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
           "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Ankle procedures</span></span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/subtalar-joint-arthrodesis--talocalcaneal-arthrodesis-.html\">Charcot neuroarthropathy</a></span></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/tibio-talo-calcaneal--ttc--arthrodesis.html\"><span class=\"standalone-link\"><b><span class=\"fontsize-8em\">tibio-talo-calcaneal (TTC) arthrodesis</span></b></span></a></p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Mon Feb 24 2020 20:24:12 GMT+0000",
@@ -133,7 +133,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>The T2 Ankle Arthrodesis Nail offers strong biomechanical intramedullary stabilization using cannulated implants for the tibiotalocalcaneal fusion. The nailing system’s targeting device is made of radiolucent carbon fiber and features our patented friction locking mechanism. T2 also offers controlled internal compression, so with every turn, you achieve 1mm of internal compression and better control.</p>\r\n",
-    "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+    "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
     "jcr:lastModified": "Wed Feb 12 2020 17:15:23 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -167,7 +167,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "douglas.depreker@stryker.com",
+    "jcr:lastModifiedBy": "user-4ed7efab4d@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Stryker, T2.&nbsp; All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
     "jcr:lastModified": "Wed Feb 12 2020 17:16:08 GMT+0000",

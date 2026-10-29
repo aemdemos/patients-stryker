@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Redefines Nailing with T2 Alpha and ADAPT for Gamma3",
   "jcr:versionHistory": "fe5efafa-b20a-4118-a863-396a2f46013d",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "aba2bcb0-ba97-4ff8-ad0c-85c33b2845b9"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "af3580d8-1fb8-4de6-baf4-ae79e14dd8f6",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Tue Mar 12 2019 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Mar-2019",
@@ -47,14 +47,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/ADAPT-T2-Alpha.jpg",
     "jcr:lastModified": "Wed Mar 13 2019 19:22:16 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p><i>T2 Alpha nails and ADAPT software seamlessly aid surgeons as a complete nailing portfolio</i></p>\n<p>Stryker's Trauma and Extremities Division announces the launches of T2 Alpha Nailing System and its ADAPT for Gamma3 software. With the addition of these separate products, Stryker delivers a complete nailing portfolio comprised of innovative hardware, advanced software and distal targeting devices designed for procedural consistency. Stryker will showcase these latest technologies at the 2019 Academy Meeting in&nbsp;Las Vegas, NV&nbsp;from&nbsp;March 12-16.</p>\n<p>&quot;Stryker is redefining nailing by developing innovative hardware and software that help surgeons perform procedures for each of their unique patients,&quot; said&nbsp;John Nasonte, Vice President &amp; General Manager,&nbsp;Stryker Trauma. &quot;We're proud to continue to lead the way in introducing new technology that changes approaches to surgical procedures.&quot;</p>\n<p>T2 Alpha implants adapt to diverse intraoperative needs, addressing varying patient anatomy. New to T2 Alpha is the Advanced Locking Screw option, which provides added axial and angular stability. &nbsp;It limits relative motion between the nail and screw, allowing surgeons to provide additional nail stability when needed<sup>1</sup>.</p>\n<p>ADAPT for Gamma3 uses augmented reality to project 3D-based measurements on patient X-rays. ADAPT's software can eliminate the need for certain hardware instrumentation while enabling surgeons to guide implant alignment, lag screw length determination, lag screw positioning and distal targeting.</p>\n<p>Stryker's Trauma and Extremities portfolio offers market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements.</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes.&nbsp; More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><sup>1</sup>T2 Alpha Femur Antegrade GT/PF Nailing System Operative Technique, T2-ST-17_Rev-4, 09-2018</p>\n<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings.&nbsp; A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.&nbsp; Please contact your sales representative if you have questions about the availability of products in your area.</p>\n",
     "jcr:lastModified": "Wed Mar 13 2019 19:25:06 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

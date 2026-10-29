@@ -7,7 +7,7 @@
   "jcr:title": "Watch Kevin Lobo, Chairman and CEO, on Fox Business Network",
   "jcr:versionHistory": "d3a765e3-48d6-4266-98e4-e4113cf4d16d",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "68203740-8245-42ed-9bff-cc4a1b335ba3"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "2fc12e2e-d407-4a23-9c14-133f4eb21fbd",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Thu Apr 25 2019 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Apr-2019",
@@ -42,14 +42,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/Klobo1.png",
     "jcr:lastModified": "Thu May 02 2019 13:13:09 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>Kevin Lobo discusses innovation in medical device technology on Mornings with Maria, and shares how robotics, stroke care, and investment in innovation&nbsp;propel us forward.</p>\n<p><a href=\"https://video.foxbusiness.com/v/6029422667001/#sp=show-clips)\">Continue to watch video&gt;&gt;</a></p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Mon Apr 29 2019 16:03:31 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

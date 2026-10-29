@@ -10,7 +10,7 @@
   "jcr:versionHistory": "700d2a6e-f021-437e-9aa6-8e9c17117b58",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/neurotechnology/Thumbnail_Neuro 4.png",
   "jcr:predecessors": [
     "aa65ccbe-5086-42a6-856d-9cac72108207"
@@ -35,7 +35,7 @@
   "jcr:uuid": "ac6b5190-7fb7-47e5-9632-75d24c53cf72",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -45,8 +45,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "jcr:created": "Mon Apr 16 2018 10:55:07 GMT-0400",
       "jcr:lastModified": "Mon Apr 16 2018 10:55:07 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3"
@@ -54,7 +54,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Jun 27 2017 18:20:56 GMT-0400",
     "compImageRef": "/content/dam/stryker/portfolios/neurotechnology/Hero_Neuro 4.png",
@@ -64,7 +64,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Fri Jul 14 2017 10:35:33 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

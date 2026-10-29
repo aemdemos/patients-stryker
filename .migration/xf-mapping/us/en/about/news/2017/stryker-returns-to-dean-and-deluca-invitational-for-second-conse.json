@@ -7,7 +7,7 @@
   "jcr:title": "Stryker returns to DEAN & DELUCA Invitational for second consecutive year with plans to honor military veteran with service canine",
   "jcr:versionHistory": "f992017f-a35e-4be8-9570-8ba336a14a58",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "1c35afe8-f6a7-4c01-8e1f-e9e966514843"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Wed May 24 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-May-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>MAHWAH, N.J.,&nbsp;May 24, 2017&nbsp;/PRNewswire/ --&nbsp;Stryker Orthopaedics announced today plans to activate in Fort Worth, TX for the DEAN &amp; DELUCA Invitational. For the second consecutive year appearing at the tournament, Stryker will continue to engage with fans through its onsite activation, The Mobility Zone – a destination designed to educate golf fans on the importance of joint health through various engaging activities. New for 2017, on Friday, Army Veteran Robert Baker, Stryker's Vice President of Operations, will present one well-deserving military hero with a service dog in a special K9s For Warriors ceremony – marking the company's third donation this year.</p>\n<p>As an extension of a successful relationship that began last year, throughout the PGA TOUR® and PGA TOUR Champions 2017 season, Stryker will continue to give a new leash on life to military heroes by sponsoring service canines and empowering veterans to return to civilian life with dignity and independence. Tournament goers can also show their support to veterans by purchasing the same hat that PGA TOUR professionals and longtime brand ambassadors, Fred Funk and Hal Sutton wear on TOUR at the newly renovated Mobility Zone – Stryker's premiere &quot;joint health&quot; destination. With each hat purchase, Stryker will make a donation to the K9s For Warriors organization.</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-returns-to-dean--deluca-invitational-for-second-consecutive-year-with-plans-to-honor-military-veteran-with-service-canine-300461648.html\" target=\"_blank\">PRNewswire</a></p>\n",
     "jcr:lastModified": "Thu Aug 24 2017 10:50:07 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -51,7 +51,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "http://www.prnewswire.com/news-releases/stryker-returns-to-dean--deluca-invitational-for-second-consecutive-year-with-plans-to-honor-military-veteran-with-service-canine-300461648.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/Photo 2 Bill Huffnagle, Shari Duval, James Brereton at Stryker's Military Appreciation Event.JPG",
     "jcr:lastModified": "Thu Aug 24 2017 11:18:23 GMT-0400",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "2badd2bc-b197-44c0-a66f-8c59775413b1",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "9c12a274-8f04-46b8-92f9-28cfe10de031"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "77194f62-dd0c-429c-a44b-488f22f702f0",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 19:04:31 GMT+0000",
       "text": "Blueprint®: The Experts' Perspective Multiple surgeons discuss their use of Blueprint® 3D Planning + PSI with Tornier Perform® Reversed Glenoid in developing a surgeon controlled plan for their patients and the impact to their shoulder arthroplasty practice. AP-016298A",
       "jcr:lastModified": "Thu Jul 28 2022 19:04:45 GMT+0000",

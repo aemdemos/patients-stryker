@@ -7,7 +7,7 @@
   "jcr:title": "Stryker announces an early stop to enrollment in the DAWN™ trial due to the high probability of trial success",
   "jcr:versionHistory": "3add111d-5c2c-4524-9a9c-cde2266a188a",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "1e20079d-d1ca-463e-ac4b-dec6bcbb0b21"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Wed Mar 08 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-Mar-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>Stryker announced an early end to patient enrollment in the DAWN Trial, a clinical study designed to compare mechanical thrombectomy with the Trevo® Retriever plus medical therapy against medical therapy alone when initiated within six to 24 hours after time last known well. The independent Data Safety Monitoring Board (DSMB) recommended stopping study enrollment based on a pre-planned interim review of data from the first 200 patients, which concluded that multiple pre-specified stopping criteria were met. A final analysis of the data will be conducted upon completion of the remaining patient follow-up.</p>\n<p>The study was designed to enroll up to a maximum of 500 patients with a pre-specified interim analysis to assess for efficacy initiated upon enrollment of the first 200 patients.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://www.prweb.com/releases/2017/03/prweb14129893.htm\" target=\"_blank\">PRWeb</a></p>\n",
     "jcr:lastModified": "Tue May 30 2017 16:50:47 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

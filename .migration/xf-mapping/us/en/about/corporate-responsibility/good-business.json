@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e7110afb-eec6-4a79-a3db-2d4fc2b0ed0e",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "a29b9a12-c13f-4f64-9b19-8981ece424a6"
   ],
@@ -28,22 +28,22 @@
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon May 08 2023 14:55:18 GMT+0000",
       "jcr:lastModified": "Mon May 08 2023 14:55:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols_copy_copy_1226029262": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Sep 04 2019 17:50:48 GMT+0000",
       "jcr:lastModified": "Wed Sep 04 2019 17:50:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -51,8 +51,8 @@
         "jcr:primaryType": "nt:unstructured",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
           "text": "<p>Stryker is committed to doing what’s right through good corporate governance and high expectations for ourselves and our suppliers. We strive to conduct our affairs in compliance with all applicable laws and regulations and in accordance with the highest ethical standards. View our latest <a href=\"/content/stryker/us/en/about/governance.html\"><b>governance policies and information</b></a>.<br>\n</p>\n",
           "jcr:lastModified": "Wed Sep 10 2025 01:04:16 GMT+0000",
@@ -63,8 +63,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
       "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Ethical marketing and sales</span></span></p>\n<p>Stryker follows strict rules about how we market and sell our products and services, in compliance with applicable and legal requirements. Our Code of Conduct guides this commitment, and <a href=\"/content/dam/stryker/corporate/policies/en-us/141196\">Corporate Policy 5: On-Label Product Promotion</a> instructs our internal sales force and third parties—including ICs who sell on our behalf—to promote products only for their approved uses, as conveyed on the product's labeling.</p>\n<p>We've adopted ethical guidelines from AdvaMed and other industry groups to ensure proper interactions with healthcare professionals. We remain focused on modernizing and expanding our global healthcare professional interactions program to make it simpler and more consistent worldwide. This includes providing clear guidelines, practical training, and easy-to-use tools that help our employees do their jobs confidently and ethically. The improved program will also help us spot and solve problems more quickly.<br>\n&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Animal welfare directive</span></span></p>\n<p>Our animal welfare directive balances our ethical commitments to both patient care and animal welfare. This directive sets clear principles and limitations for when and how animals may be used in product development and lifecycle management. For more information, refer to our <a href=\"/content/dam/commercial/usa/corporate-communications/gsnps/COMM-GSNPS-WEB-515186-EN_US.pdf\" target=\"_blank\">complete directive</a>.<br>\n<br>\n</p>\n",
       "jcr:lastModified": "Fri Sep 05 2025 23:29:33 GMT+0000",
@@ -73,8 +73,8 @@
     },
     "cols_486581046": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Sep 05 2025 23:29:45 GMT+0000",
       "jcr:lastModified": "Fri Sep 05 2025 23:29:45 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -89,7 +89,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Fri May 05 2023 15:05:44 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
@@ -99,11 +99,11 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
       "carouselOptionAutoplay": "true",
       "pauseonhover": "false",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -121,10 +121,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/corporate_responsibi/good_business/cr---good-business-hero---desktop/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/corporate-responsibi/good-business/cr-good-business-hero-desktop/master",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "25",
           "jcr:created": "Fri Mar 05 2021 16:21:24 GMT+0000",
@@ -141,10 +141,10 @@
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
               "bottomPadding": "0",
-              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-1f15d09fdf@example.invalid",
               "leftPadding": "0",
               "topPadding": "0",
-              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
               "jcr:created": "Mon Feb 03 2025 23:14:44 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"fontsize-4vw\"><span class=\"fontsize-3vw\">Additional <span class=\"futura-bold\">governance information</span></span></span></h1>\r\n",
@@ -164,7 +164,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Fri Sep 05 2025 23:28:35 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",

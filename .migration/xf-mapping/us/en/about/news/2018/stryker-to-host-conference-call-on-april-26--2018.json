@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "b01d6c22-f5f3-41e8-a470-6ef4a5dc8366",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Thu Mar 22 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "22-Mar-2018",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker Corporation (NYSE:SYK) announced that it will host a conference call on&nbsp;Thursday, April 26, 2018 at 4:30 p.m., Eastern Time, to discuss the Company's operating results for the quarter ended&nbsp;March 31, 2018&nbsp;and provide an operational update. Final operating results for the quarter ended March 31, 2018 will be released at 4:05 p.m. that day.&nbsp;</p>\n<p>See full release <a href=\"https://investors.stryker.com/press-releases/news-details/2018/Stryker-to-host-conference-call-on-April-26-2018/default.aspx\">here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 18:35:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

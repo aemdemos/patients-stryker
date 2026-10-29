@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6be28541-02fd-4f2e-b309-fbe63e730778",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Stryker ProCare medical device tech standing in a hospital hallway",
   "thumbnailFileReference": "/content/dam/stryker/acute-care/Services/ProCare/Images/600x300_ProCare_main2.png",
   "jcr:predecessors": [
@@ -31,14 +31,14 @@
   "jcr:uuid": "a3ecd273-afe2-4865-84e6-336380507b05",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Dec 07 2023 19:30:24 GMT+0000",
       "jcr:lastModified": "Thu Dec 07 2023 19:30:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -47,12 +47,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/news/procare-technician-in-hallway-hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/news/procare-technician-in-hallway-hero/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/acute-care/en/news/procare-technician-in-hallway-hero/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/acute-care/en/news/procare-technician-in-hallway-hero/mobile",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "5",
           "jcr:created": "Thu Dec 07 2023 19:30:35 GMT+0000",
@@ -67,8 +67,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline_copy_c": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "rightMargin": "0",
               "topMargin": "3",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
@@ -88,16 +88,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Dec 07 2023 19:38:04 GMT+0000",
       "jcr:lastModified": "Thu Dec 07 2023 19:38:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Thu Dec 07 2023 18:52:15 GMT+0000",
       "text": "<p><i>2-minute read</i></p>\n<p><span class=\"fontsize-1-25em\">In today's fast-paced medical environment, ensuring the reliability and performance of hospital equipment is paramount. After all, the efficacy of medical interventions and patient safety often hinge on the state of this equipment. One key decision facing many hospitals is choosing between original equipment manufacturer (OEM) and third-party Independent Service Organizations for their medical equipment maintenance needs. While both options have their merits, there are several compelling reasons why opting for OEM maintenance contracts is the wiser choice for hospitals.</span></p>\n<p><span class=\"fontsize-1-25em\">Maintenance contracts directly from the manufacturer offer numerous advantages in terms of expertise and specialized knowledge. For example, OEMs possess an in-depth understanding of their own equipment, as they have designed and developed it. This familiarity translates into a higher level of technical proficiency, allowing them to effectively diagnose and resolve issues. Armed with comprehensive training and access to specialized tools, OEM technicians can ensure that the equipment operates optimally, reducing the risk of downtime and enhancing the overall efficiency of the medical equipment.</span></p>\n<p><span class=\"fontsize-1-25em\">Medical devices are intricate and sensitive, requiring precise components for proper functioning. Using subpar or counterfeit parts can lead to equipment malfunctions, jeopardizing patient safety.<sup>1 </sup>Opting for OEM maintenance contracts gives hospitals, and other healthcare organizations, the confidence of high-quality, authorized and original replacement part availability, designed to guarantee the longevity and reliability of the equipment.</span></p>\n<p><span class=\"fontsize-1-25em\">Furthermore, manufacturer maintenance contracts typically encompass comprehensive preventive maintenance plans. Regular inspections, calibrations and cleaning are essential for maximizing the lifespan and performance of hospital equipment.2 Manufacturers, equipped with their extensive knowledge of their own products, are suited to implement such maintenance protocols effectively. Through preventive measures, the risk of unexpected equipment failure can be reduced, minimizing disruptions and the potential for compromising patient care.<sup>2</sup></span></p>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">Advantages of OEM trained technicians</span></b></span></h3>\n<p><span class=\"fontsize-1-25em\">Manufacturer trained technicians offer several advantages over technicians who have not received specialized training.</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\"><b>Proprietary product knowledge: </b>No one understands a product better than those who made it. Manufacturer trained technicians have intricate knowledge of the equipment, which allows them to quickly diagnose and rectify equipment issues.</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\"><b>In-depth training:</b> Manufacturer technicians undergo rigorous training sessions, ensuring they are updated with the latest technological advancements and maintenance protocols.<br>\n <br>\n <b>Specialized tools &amp; components:</b> Maintenance often requires specialized tools that might only be available to OEM technicians. This guarantees the equipment is serviced precisely as intended, maintaining its optimum functionality.</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\"><b>Maintenance to OEM standards: </b>With an understanding of OEM standards, field service technicians strive to optimize medical equipment maintenance efforts to help keep the equipment operating smoothly, thereby reducing the risk of unexpected downtimes.</span></p>\n<p style=\"margin-left: 40px;\">&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">Understanding warranty limitations</span></b></span></h3>\n<p><span class=\"fontsize-1-25em\">It's essential to recognize that while warranties are beneficial, they often come with limitations. Typically, a warranty covers equipment for a limited duration and focuses only on manufacturing defects. This means the regular wear and tear, which is inevitable with continuous use, isn't included. Hence, relying solely on warranties can be a risky proposition. Having a manufacturer maintenance program ensures that the equipment is looked after even beyond the warranty period, and routine wear and tear are adequately managed.</span></p>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">The choice is clear</span></b></span></h3>\n<p><span class=\"fontsize-1-25em\">While third-party ISOs may initially appear to be a more budget-friendly option, it’s crucial to recognize the long-term advantages offered by manufacturer maintenance programs. To prioritize patient safety, ensure equipment longevity and optimize performance, it becomes increasingly clear that choosing an OEM maintenance program is the most rational decision. By relying on the expertise and specialized knowledge of the equipment's manufacturer, healthcare facilities can rest assured their maintenance needs are being handled with the utmost care and professionalism. OEM maintenance programs go beyond fixing issues; they offer comprehensive preventive maintenance, regular inspections and continuous training for staff members. This holistic approach is designed to guarantee the equipment is operating as expected, minimizing downtime, and ultimately contributing to the efficient functioning of the healthcare facility.</span></p>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">Partners in prevention</span></b></span></h3>\n<p><span class=\"fontsize-1-25em\">Dedicated to ensuring that Stryker’s medical equipment performs optimally, <a title=\"Stryker's ProCare® Services\" href=\"https://www.stryker.com/us/en/acute-care/services/procare.html\"><u>Stryker's ProCare® Services</u></a> stands out as a testament to the value of manufacturer-backed maintenance programs. With a commitment to clinical excellence and patient safety, ProCare offers comprehensive service solutions tailored to individual needs. Whether it's on-demand service interventions, preventive maintenance or user training, ProCare is designed to ensure that medical devices operate efficiently, helping with peace of mind for healthcare providers and patients alike.<br>\n </span>&nbsp;</p>\n",
       "jcr:lastModified": "Tue Feb 06 2024 18:33:54 GMT+0000",
@@ -106,8 +106,8 @@
     },
     "cols2_372635648": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Dec 07 2023 19:38:26 GMT+0000",
       "jcr:lastModified": "Thu Dec 07 2023 19:38:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -115,7 +115,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "publishDate": "Tue Jan 30 2024 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "30-Jan-2024",
@@ -128,7 +128,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. <a href=\"https://www.nsmedicaldevices.com/analysis/tackling-counterfeit-medical-devices/https://www.nsmedicaldevices.com/analysis/tackling-counterfeit-medical-devices/\" target=\"_blank\">https://www.nsmedicaldevices.com/analysis/tackling-counterfeit-medical-devices/</a></p>\r\n<p>2. Li, J., Mao, Y., &amp; Zhang, J. (2022). Maintenance and Quality Control of Medical Equipment Based on Information Fusion Technology. <i>Computational intelligence and neuroscience</i>, <i>2022</i>, 9333328. <a href=\"https://doi.org/10.1155/2022/9333328https://doi.org/10.1155/2022/9333328\" target=\"_blank\">https://doi.org/10.1155/2022/9333328</a></p>\r\n",
     "jcr:lastModified": "Thu Dec 07 2023 19:00:19 GMT+0000",
@@ -137,7 +137,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Dec 07 2023 19:34:28 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

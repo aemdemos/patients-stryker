@@ -8,7 +8,7 @@
   "jcr:title": "Trident",
   "jcr:versionHistory": "2b6fcfd5-58e4-46a0-b3d7-ab156673301c",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/trident/images/Thumbnail_Total_Hip_Implants_Trident_hemi_holes.png",
   "jcr:predecessors": [
     "f97fa821-5136-4f60-aafc-1be32073400a"
@@ -37,14 +37,14 @@
   "jcr:uuid": "d9d1a1ea-d27a-4c54-955b-38d9ebee4b29",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "cq:lastModifiedBy": "user-482453db0b@example.invalid",
   "navTitle": "Trident",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Aug 23 2017 11:20:58 GMT-0400",
       "compImageRef": "/content/dam/stryker/joint-replacement/products/trident/images/Thumbnail_Total_Hip_Implants_Trident_hemi_holes.png",
@@ -56,16 +56,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Aug 23 2017 10:48:37 GMT-0400",
       "jcr:lastModified": "Wed Aug 23 2017 10:48:37 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Aug 23 2017 15:08:43 GMT-0400",
       "jcr:lastModified": "Wed Aug 23 2017 15:08:43 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -80,8 +80,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Aug 23 2017 15:08:41 GMT-0400",
       "jcr:lastModified": "Wed Aug 23 2017 15:08:41 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -110,7 +110,7 @@
         },
         "text_1807741708_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "text": "<h4>Trident multihole shell</h4>\n<ul>\n<li>Hemispherical acetabular shell</li>\n<li>Arc-deposited with HA</li>\n<li>Compatible with Trident Torx Acetabular Screws</li>\n<li>Sizes:<br>\n<br>\n&nbsp; &nbsp; &nbsp; • 42 – 74mm<br>\n&nbsp; &nbsp; &nbsp; • 42 – 48mm: 8 holes<br>\n&nbsp; &nbsp; &nbsp; • 50mm: 10 holes<br>\n&nbsp; &nbsp; &nbsp; • 52 – 74mm: 12 holes<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Wed Nov 01 2017 12:35:36 GMT-0400",
           "sling:resourceType": "stryker/components/content/text",
@@ -118,8 +118,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Wed Aug 23 2017 15:08:42 GMT-0400",
           "jcr:lastModified": "Wed Aug 23 2017 15:08:42 GMT-0400",
           "sling:resourceType": "stryker/components/content/text"
@@ -135,7 +135,7 @@
         },
         "text_77462187": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "text": "<h4>Trident PSL shell (peripheral self locking)</h4>\n<ul>\n<li>Expanded rim geometry1.8mm peripheral press-fit</li>\n<li>Arc-Deposited CPTi (commercially pure titanium)<br>\n</li>\n<li>Available with PureFix HA coating</li>\n<li>Compatible with Trident Torx Acetabular Screws</li>\n<li>Sizes: 40 – 72mm</li>\n<li>Solidback &amp; clusterhole option</li>\n<li>Clusterhole options:<br>\n<br>\n&nbsp; &nbsp; &nbsp; • 40 – 48mm: 3 holes<br>\n&nbsp; &nbsp; &nbsp; • 50 – 72mm: 5 holes<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Wed Aug 30 2017 15:03:56 GMT-0400",
           "sling:resourceType": "stryker/components/content/text",
@@ -157,8 +157,8 @@
     },
     "cols2_2_3_1_3_291865809": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Fri Apr 26 2019 17:18:01 GMT+0000",
       "jcr:lastModified": "Fri Apr 26 2019 17:18:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -167,8 +167,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "linkExternal": "https://www.linkedin.com/showcase/stryker-joint-replacement/",
           "jcr:created": "Fri Apr 26 2019 17:18:15 GMT+0000",
           "alt": "JR LinkedIn banner.",
@@ -184,7 +184,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Options for you, options for your <a></a><a>patients</a></p>\r\n",
     "shortDescTop": "<p>Available in hemispherical, multi-hole and PSL (peripheral self-locking) options.<br>\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "jcr:lastModified": "Fri Aug 25 2017 10:26:20 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -195,7 +195,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "jcr:lastModified": "Tue Mar 06 2018 16:16:16 GMT-0500",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },

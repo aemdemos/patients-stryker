@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7ef32ce4-a023-49f3-95d2-1d0bbf53c8c1",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "jcr:predecessors": [
     "31a8884e-6e1f-4a4c-b0c6-394877a96d34"
   ],
@@ -26,21 +26,21 @@
   "jcr:uuid": "ee029569-dcc2-463e-8795-336048e82cc4",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_675929740": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Jan 21 2026 15:03:44 GMT+0000",
       "jcr:lastModified": "Wed Jan 21 2026 15:03:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Webinar: Cognitive offloading for nurses: Improving focus and reducing mental load</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Thank you for registering for the webinar.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Click the video below to start learning now or save this <a href=\"https://bit.ly/46r9CeA\" target=\"_blank\">link</a> to watch at a later date.</span></p>\n",
       "jcr:lastModified": "Tue Jan 20 2026 22:19:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
@@ -48,16 +48,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Jan 20 2026 22:18:11 GMT+0000",
       "jcr:lastModified": "Tue Jan 20 2026 22:18:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Sep 17 2025 16:39:07 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -71,7 +71,7 @@
         "fileReference": "/content/dam/stryker/ems/webinars/empowering-care--cognitive-offloading/mpowering-care_Cognitive-offloading.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/mpowering-care_Cognitive-offloading-AVS",
         "urlModifiers": "",

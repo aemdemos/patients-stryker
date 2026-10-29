@@ -8,7 +8,7 @@
   "jcr:title": "Foot and Ankle",
   "jcr:versionHistory": "a6f13c0d-1114-4124-a229-58e81f67017d",
   "cq:template": "/apps/stryker/templates/division",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/Business unit foot&ankle.jpg",
   "jcr:predecessors": [
     "ce62ea10-7758-44e3-b254-91535bb4f049"
@@ -31,14 +31,14 @@
   "sling:resourceType": "stryker/components/structure/pages/division",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "priscilla.nieto@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-efb40c97ba@example.invalid",
       "jcr:created": "Tue May 09 2017 17:46:36 GMT-0400",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Fri Sep 15 2017 11:26:03 GMT-0400",
@@ -51,8 +51,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carlos.castaneda@stryker.com",
-      "jcr:lastModifiedBy": "carlos.castaneda@stryker.com",
+      "jcr:createdBy": "user-7c88443df7@example.invalid",
+      "jcr:lastModifiedBy": "user-7c88443df7@example.invalid",
       "jcr:created": "Tue May 23 2017 13:59:08 GMT-0400",
       "jcr:lastModified": "Tue May 23 2017 13:59:08 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -64,8 +64,8 @@
         "jcr:primaryType": "nt:unstructured",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carlos.castaneda@stryker.com",
-          "jcr:lastModifiedBy": "carlos.castaneda@stryker.com",
+          "jcr:createdBy": "user-7c88443df7@example.invalid",
+          "jcr:lastModifiedBy": "user-7c88443df7@example.invalid",
           "ctaLinkType": "int",
           "jcr:created": "Tue May 23 2017 13:59:17 GMT-0400",
           "CTATitle": "contact us",
@@ -78,9 +78,9 @@
     },
     "featuredcontentgrid": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carlos.castaneda@stryker.com",
+      "jcr:createdBy": "user-7c88443df7@example.invalid",
       "featContGridTitle": "Featured products and services",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue May 23 2017 13:50:48 GMT-0400",
       "jcr:lastModified": "Thu May 26 2022 20:45:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentgrid",
@@ -118,8 +118,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carlos.castaneda@stryker.com",
-      "jcr:lastModifiedBy": "Ernest.Washington@stryker.com",
+      "jcr:createdBy": "user-7c88443df7@example.invalid",
+      "jcr:lastModifiedBy": "user-15c0b4d890@example.invalid",
       "jcr:created": "Tue May 23 2017 13:39:42 GMT-0400",
       "title": "Our product categories.",
       "jcr:lastModified": "Wed Aug 02 2017 10:25:10 GMT-0400",
@@ -138,8 +138,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Feb 06 2020 16:52:59 GMT+0000",
       "title": "Connect with Foot and Ankle",
       "jcr:lastModified": "Thu Feb 06 2020 16:53:22 GMT+0000",
@@ -147,8 +147,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Feb 06 2020 16:08:38 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2020 16:08:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -157,8 +157,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "latestnews_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Feb 06 2020 16:02:12 GMT+0000",
           "newsPaths": [
             "stryker:content-type/news/Features"
@@ -169,8 +169,8 @@
         },
         "text_294147091_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Tue Jan 14 2020 15:39:32 GMT+0000",
           "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Connect with&nbsp;</span><br>\n<span class=\"futura-bold\">Foot and ankle<br>\n </span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">_________________________________________________________</span></span></p>\n",
           "jcr:lastModified": "Mon Feb 03 2020 17:31:41 GMT+0000",
@@ -183,8 +183,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Thu Feb 06 2020 15:57:07 GMT+0000",
           "text": "<p><span class=\"standalone-link\"><a href=\"https://www.linkedin.com/showcase/18065252\">Follow Us on LinkedIN</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://twitter.com/strykerfa\">Follow Us on Twitter</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.instagram.com/strykerextremities/\">Follow us on Instagram</a></span></p>\n",
           "jcr:lastModified": "Thu Feb 06 2020 15:58:38 GMT+0000",
@@ -195,8 +195,8 @@
     },
     "cols2_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Feb 06 2020 16:07:04 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2020 16:07:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -205,8 +205,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Tue Jan 14 2020 15:36:42 GMT+0000",
           "srcFileRef": "/content/dam/userguide/garrett-shue/teach-talks/Foot_Ankle_BannersArtboard-2.jpg",
           "jcr:lastModified": "Tue Jan 14 2020 15:38:49 GMT+0000",
@@ -218,8 +218,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Tue Jan 14 2020 15:36:42 GMT+0000",
           "srcFileRef": "/content/dam/userguide/garrett-shue/teach-talks/Foot_Ankle_BannersArtboard-1.jpg",
           "jcr:lastModified": "Tue Jan 14 2020 15:38:44 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "9844a53b-7c09-4937-adc7-45a23eef8dd6",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "ca619ef1-9c00-434f-83cc-73fe96c95f04"
   ],
@@ -30,15 +30,15 @@
   "jcr:uuid": "27b4d4fc-e60b-463d-87a8-d4feec6e9ef1",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "description": "The most important thing to Esley Thorton is his family. Watch how they each played a role in saving his life with the help of an AED they keep in their kitchen pantry.",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -51,7 +51,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-esley-thorton .mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/survivor-esley-thorton-AVS",
         "urlModifiers": "",
@@ -65,16 +65,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:55:37 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:55:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
@@ -98,7 +98,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Fri Jul 29 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "29-Jul-2022",

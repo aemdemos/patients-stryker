@@ -9,7 +9,7 @@
   "jcr:versionHistory": "280df36f-f6ac-412f-ac7c-4619021cce9a",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "e33773a3-8618-449b-8ff3-f4a290a3e77c"
   ],
@@ -29,14 +29,14 @@
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 19:23:50 GMT+0000",
       "text": "Shoulder arthroplasty featuring Tornier Perform® Reversed Glenoid: Surgical Video – Prof. Markus Scheibel Professor Markus Scheibel goes through a shoulder arthroplasty in his surgical video featuring Tornier Perform® Reversed Glenoid. AP-016293A",
       "jcr:lastModified": "Thu Jul 28 2022 19:24:25 GMT+0000",

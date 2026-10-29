@@ -11,7 +11,7 @@
   "jcr:versionHistory": "87d63b1d-2f50-4ec2-9830-0ade51fb498f",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 2.jpg",
   "jcr:predecessors": [
     "e79f1328-b4da-4d4c-9565-0745eed6e226"
@@ -43,7 +43,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -51,7 +51,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -59,7 +59,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -68,14 +68,14 @@
       "cq:LiveRelationship"
     ],
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Tue Sep 01 2026 12:17:54 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -127,13 +127,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Hip.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

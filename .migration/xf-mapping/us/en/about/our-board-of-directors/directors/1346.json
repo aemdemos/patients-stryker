@@ -9,7 +9,7 @@
   "jcr:versionHistory": "953da75c-b118-4edd-b779-fbdbc8acbb6c",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "dc1bae40-0194-4be2-afbf-26c373cd9bdd"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "5ab87c3c-544e-490f-bd69-e742bcd660b5",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "navTitle": "Mary Brainerd",
   "image": {
     "jcr:primaryType": "nt:unstructured"
@@ -36,16 +36,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "◁ Back",
       "jcr:lastModified": "Tue Oct 11 2022 15:24:16 GMT+0000",
@@ -55,16 +55,16 @@
     },
     "cols_2140249363_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c_1223346665": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "Mary Brainerd Director since 2017, Governance and Nominating Committee Chair, Compensation and Human Capital Committee Former President and Chief Executive Officer of HealthPartners Ms. Brainerd is the former President and Chief Executive Officer of HealthPartners, the largest, consumer-governed, nonprofit healthcare organization in the United States, which she led from 2002 to May 2017. Prior to joining HealthPartners in 1992, she held various executive roles with Blue Cross and Blue Shield of Minnesota from 1984 to 1992. She also serves as a director of Bremer Financial Corporation, a privately held regional financial services company. Ms. Brainerd’s extensive experience surrounding both healthcare delivery and insurance enable her to provide unique and invaluable insight to our Board discussions, particularly in light of the evolving landscape in the healthcare delivery and payer markets.",
       "jcr:lastModified": "Tue Oct 11 2022 15:26:06 GMT+0000",

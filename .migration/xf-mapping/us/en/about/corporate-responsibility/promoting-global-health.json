@@ -10,7 +10,7 @@
   "jcr:versionHistory": "706f62b5-9018-4e8f-a953-448e13726409",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "3139e1d9-5a38-4f02-bf62-c5b63ef09c8b"
   ],
@@ -42,17 +42,17 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/corporate-responsibility",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
       "carouselOptionAutoplay": "true",
       "pauseonhover": "false",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -70,12 +70,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/corporate_responsibi/promoting_global_hea/hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/corporate-responsibi/promoting-global-hea/hero/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/corporate_responsibi/promoting_global_hea/hero/master",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/corporate-responsibi/promoting-global-hea/hero/master",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "25",
           "jcr:created": "Fri Mar 05 2021 16:21:24 GMT+0000",
@@ -91,8 +91,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "carolyn.lee@stryker.com",
-              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+              "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
               "jcr:created": "Tue Feb 04 2025 02:13:16 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"fontsize-3vw\"><span class=\"fontsize-4vw\">Better&nbsp;<br>\r\n<span class=\"futura-bold\">healthcare</span></span></span></h1>\r\n",
@@ -110,16 +110,16 @@
     },
     "cols_1846694925": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Mar 07 2025 01:14:34 GMT+0000",
       "jcr:lastModified": "Fri Mar 07 2025 01:14:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Sep 04 2019 17:50:48 GMT+0000",
       "jcr:lastModified": "Wed Sep 04 2019 17:50:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -128,8 +128,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -141,8 +141,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -154,9 +154,9 @@
         },
         "text_copy_986578282": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "topPadding": "2",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -169,8 +169,8 @@
     },
     "cols_2120583569": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Sep 05 2019 17:19:44 GMT+0000",
       "jcr:lastModified": "Thu Sep 05 2019 17:19:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -178,13 +178,13 @@
   },
   "localpagenavigation": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Tue Oct 01 2019 18:39:20 GMT+0000",
     "sling:resourceType": "stryker/components/content/localpagenavigationchild"
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Sep 04 2019 19:31:37 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

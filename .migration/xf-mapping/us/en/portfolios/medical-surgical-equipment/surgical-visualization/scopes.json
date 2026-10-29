@@ -8,7 +8,7 @@
   "jcr:title": "Scopes",
   "jcr:versionHistory": "d36b2f7e-3907-4da8-a7fd-e895a3dafcce",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-scopes.jpg",
   "jcr:predecessors": [
     "0b0222ff-9811-41f8-aa43-5b1cbe556819"
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -46,7 +46,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 21:15:25 GMT+0000",
     "loadMoreText": "Load More",
@@ -57,7 +57,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Jul 25 2017 14:02:26 GMT-0400",
     "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Portfolio-Scopes.jpg",

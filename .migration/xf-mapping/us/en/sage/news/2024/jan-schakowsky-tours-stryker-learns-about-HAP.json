@@ -9,7 +9,7 @@
   "jcr:versionHistory": "69a5523f-2804-4ead-a2ef-e3ca39e88695",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Sage_Congresswoman-Schakowsky-Visit-2",
   "jcr:predecessors": [
     "9fa26311-7adb-493f-a117-f3f253154150"
@@ -34,14 +34,14 @@
   "jcr:uuid": "3ad4560e-1fcb-463e-b51b-4ddfe48f8274",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Fri Jul 26 2024 17:07:46 GMT+0000",
       "alt": "Congresswoman Jan Schakowsky visits Stryker Sage in Cary, IL",
@@ -53,8 +53,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Fri Jul 26 2024 17:07:54 GMT+0000",
       "text": "<p><i><span class=\"fontsize-1-25em\">2-minute read</span></i></p>\n<h2><span class=\"futura-bold\">An educational visit to Cary, Illinois</span></h2>\n<p><span class=\"fontsize-1-25em\">Earlier this year, Jan Schakowsky, the U.S. representative from Illinois’s 9th congressional district, visited Stryker’s Sage business in Cary to learn about hospital-acquired pneumonia (HAP) and the clinical interventions and governmental involvement that can help reduce the risk of pneumonia for patients. Unfortunately, pneumonia is the most common type of hospital-acquired infection (HAI) and accounts for 25% of all HAIs.<sup>1</sup> It’s especially dangerous because it has a mortality rate of 22% for all NV-HAP patients<sup>2</sup> and can occur in every area of the hospital.&nbsp;</span></p>\n<h2><span class=\"futura-bold\">Presentations and discussions about patient safety&nbsp;</span></h2>\n<p><span class=\"fontsize-1-25em\">The congresswoman and her staff met with Paul Bean, Sage Vice President and General Manager, Chris Schmidt, Senior Director, Manufacturing, Nate Tipton, Senior Director, Government Affairs, and several marketing, human resources and clinical education associates. Following introductions, the congresswoman and her staff received a presentation about the company’s mission and impact on the local community as well as Stryker’s historical role in helping to address ther risk factors for hospital-acquired pneumonia through comprehensive oral care. Dr. Dian L. Baker, PhD, NP, RN, professor at the School of Nursing, California State University, also presented her published research and explained the need for the Centers for Disease Control and Prevention (CDC) and the Centers for Medicare and Medicaid Services (CMS) to take action to help reduce this patient safety issue. A productive dialog on the topic ensued. “It’s inspiring to see that our community leaders are interested and engaged on this issue. Hopefully, by working together we can make a greater impact,” stated Chip Bartel, Senior Manager, Downstream Marketing.</span></p>\n<h2><span class=\"futura-bold\">Taking a manufacturing tour&nbsp;</span></h2>\n<p><span class=\"fontsize-1-25em\">Representative Schakowsky then received a guided tour through the manufacturing facility. During the tour, she observed the processes and safety protocols in place to ensure the highest standards of product quality. The tour also highlighted the advanced technology and innovative techniques used in the manufacturing of the Stryker oral care products. Representative Schakowsky expressed her admiration for the company's dedication to patient safety and quality.&nbsp;</span></p>\n<h2><span class=\"futura-bold\">Continued commitment to patient safety&nbsp;</span></h2>\n<p><span class=\"fontsize-1-25em\">The visit concluded with an appreciation and commitment from all parties to work collaboratively towards reducing hospital-acquired pneumonia and enhancing patient care standards.&nbsp;</span></p>\n<h2><span class=\"futura-bold\">Learn more about our efforts</span></h2>\n<p><span class=\"fontsize-1-25em\">At Stryker, we are dedicated to improving patient safety and quality of care. To learn more about our Oral Care products, click <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\">here</a>.&nbsp;</span></p>\n",
       "jcr:lastModified": "Tue Sep 10 2024 14:56:36 GMT+0000",
@@ -63,8 +63,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Fri Jul 26 2024 17:15:17 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Fri Jul 26 2024 17:21:50 GMT+0000",
@@ -91,8 +91,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Tue Dec 13 2022 16:16:33 GMT+0000",
       "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
       "jcr:lastModified": "Tue Dec 13 2022 16:16:46 GMT+0000",
@@ -103,7 +103,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Fri Jul 26 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "26-Jul-2024",
@@ -116,7 +116,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:&nbsp;</p>\r\n<p><b>1</b>. Magill SS, O’Leary E, Janelle SJ, et al. Changes in Prevalence of Health Care–Associated Infections in U.S. Hospitals. New England Journal of Medicine. 2018;379(18):1732-1744.&nbsp;</p>\r\n<p><b>2</b>. Jones B, Sarvet A, Ying J. Incidence and Outcomes of Non–Ventilator-Associated Hospital-Acquired Pneumonia in 284 US Hospitals Using Electronic Surveillance Criteria. JAMA. 2023;6(5):e2314185.</p>\r\n",
     "jcr:lastModified": "Fri Jul 26 2024 17:14:16 GMT+0000",

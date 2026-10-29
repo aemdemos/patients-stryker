@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8b2e5d9d-57bd-43cf-ae0f-2f0de61c74ff",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Mark Dundore survived cardiac arrest in Portage, MI",
   "jcr:predecessors": [
     "787b1eb5-687f-4c8f-b6b6-77129d53d4c1"
@@ -33,15 +33,15 @@
   "jcr:uuid": "429ceb48-b705-4097-8f10-ca006e273fe2",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "description": "It was a typical Wednesday at work for Mark Dundore at the Portage Pharmacy in Portage, Michigan. Mark, who has had atrial fibrillation (Afib) since 2009, began to feel unwell and had difficulty breathing after lunch. His coworkers quickly noticed his distress and shortly thereafter, he became unresponsive. Demonstrating their preparedness, they immediately began chest compressions and used the AED they had on hand. Remarkably, it was just three weeks prior to Mark's sudden cardiac arrest that the Portage Pharmacy had set up their new AED. They had ordered several AEDs following the Damar Hamlin incident in 2023. The presence of this device on-site helped save Mark's life.",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Mon Jun 03 2024 16:59:01 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -55,7 +55,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/Mark Dundore_Patient Story.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Mark Dundore_Patient Story-AVS",
         "urlModifiers": "",
@@ -71,8 +71,8 @@
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Mon Jun 03 2024 19:17:51 GMT+0000",
@@ -96,7 +96,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Wed Jul 10 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Jul-2024",

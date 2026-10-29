@@ -10,7 +10,7 @@
   "jcr:versionHistory": "95f1a28a-3646-4ea9-ad72-fc6ea740fa45",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Why all police cars need AEDs - back of a patrol vehicle",
   "jcr:predecessors": [
     "5365c02c-fa91-4f59-ac12-c02073bf05f7"
@@ -32,15 +32,15 @@
   "jcr:uuid": "9c34a2d0-ee1d-4953-86c2-67d932af2096",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "Why all police cars need AEDs",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -49,10 +49,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/master",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "15",
           "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
@@ -67,8 +67,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Why all police cars need AEDs</span></span></h1>\r\n",
@@ -87,8 +87,8 @@
     },
     "cols3_1341500114_cop_1195620073": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -102,8 +102,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
       "text": "2-minute read More than 350,000 people experience a sudden cardiac arrest (SCA) outside of the hospital every year in the United States.1 A SCA victim's chance of survival decreases by seven to 10 percent for every minute without defibrillation.2 With an average response time of seven minutes by EMS, law enforcement is often the first to arrive on the scene of cardiac emergency situations.3 Equipping police patrol vehicles with automatic external defibrillators can increase survival rates of SCA victims by providing possible lifesaving defibrillation as early as possible. AED basics AEDs are lightweight, portable devices designed to save people experiencing SCA in a public setting and can be used on children, teens and adults. Bystanders can operate them by following audible and visual instructions during an emergency. Defibrillators detect the heart’s rhythm and send potentially lifesaving shocks to the heart if needed. They can help correct an arrhythmia and restore a normal heartbeat if the heart suddenly stops beating. Law enforcement and AEDs Studies show police AED programs help decrease the time from the 9-1-1 call to first defibrillation and improve the overall survival rates.5 While 80 percent of municipalities across the country state their police force is responding to medical emergencies, only 31 percent of police cars are equipped with AEDs.4 With such a discrepancy between the number of police responding to medical emergencies and the number of police cars equipped with AEDs, it is clear there is a great need to institute AED programs in many law enforcement organizations throughout the country. How to use an AED as a first responder 1. Start CPR 2. Locate an AED 3. Place electrodes on the chest according to AED instructions 4. If the AED advises a shock, ensure the area around the person is clear 5. Follow the voice prompts from the AED until EMS arrives The device may instruct you to begin CPR again after analyzing the victim's heart rhythm. It is critical to provide as much continuous CPR as possible throughout a resuscitation for the best chance of survival. Some AEDs, like Stryker’s LIFEPAK CR2 defibrillator, deliver escalating energy if multiple shocks are needed for difficult-to-defibrillate patients How Stryker can help Our AEDs offer the highest available escalating energy, CPR prompts consistent with the American Heart Association (AHA) Guidelines, exclusive technology and management programs designed with both patients and responders in mind. The LIFEPAK CR2 AED allows you to focus on your job, not the AED, with bold, clear graphics and easy voice instructions. Our cprINSIGHT analysis technology automatically analyzes and detects if a shock is needed during chest compressions without pausing during ECG rhythm analysis. The LIFEPAK 1000 AED is rugged and easy to use. This AED combines the simplicity of an AED with clear guidance, including onscreen and audio prompts with the flexibility of manual mode operation when indicated. This powerful AED combines basic guidance with advanced operational control, enabling responders to deliver fast, appropriate treatment. The HeartSine samaritan PAD 350P/360P AEDs transport easily in tight spaces as the smallest and lightest public access defibrillators (PADs) on the market. Proprietary electrode technology and SCOPE biphasic technology automatically adjust for differences in patient response to intervention. The HeartSine samaritan PAD 450P AED includes unique visual and verbal feedback on the rate of applied CPR with integrated CPR Rate Advisor. HeartSine connected AEDs use the power of Wi-Fi to provide remote readiness information and complete weekly self-tests for every AED in your fleet - drastically reducing the expense and effort needed to manage your AED program. Together, we save lives Connect with one of Stryker's AED experts to learn more about our AED offerings.",
       "jcr:lastModified": "Tue May 31 2022 17:39:29 GMT+0000",
@@ -113,8 +113,8 @@
     },
     "cols3_1341500114_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -128,8 +128,8 @@
     },
     "text_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
       "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
@@ -138,8 +138,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 20:47:24 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 20:47:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -147,8 +147,8 @@
         "jcr:primaryType": "nt:unstructured",
         "curatedlinklist_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
           "jcr:lastModified": "Tue May 31 2022 20:48:32 GMT+0000",
           "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -182,7 +182,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "publishDate": "Mon Sep 27 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Sep-2021",
@@ -195,14 +195,14 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "jcr:lastModified": "Tue May 31 2022 17:38:44 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "preset": "max_width_1440",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Tue May 31 2022 17:26:39 GMT+0000",
@@ -211,13 +211,13 @@
   },
   "eventlocationproperties": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "jcr:lastModified": "Tue May 31 2022 17:38:53 GMT+0000",
     "sling:resourceType": "stryker/components/content/eventlocationproperties"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li><i>Source: https://www.ahajournals.org/doi/10.1161/CIR.0000000000000558</i></li>\r\n<li><i>Source: American Heart Association, &quot;Implementing an AED Program.&quot; (PDF)</i></li>\r\n<li><i>https://medicalnewsbulletin.com/response-time-emergency-medical-services/</i></li>\r\n<li><i>Hawkins SC, Shapiro AH, Sever AE, Delbridge TR, Mosesso VN. The role of law enforcement agencies in out-of-hospital emergency care. Resuscitation 2007;72:386–93.</i></li>\r\n<li><i>Husain, S., &amp; Eisenberg, M. (2013). Police AED programs: a systematic review and meta-analysis.&nbsp;Resuscitation,&nbsp;84(9), 1184–1191. https://doi.org/10.1016/j.resuscitation.2013.03.040</i></li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue May 31 2022 17:42:26 GMT+0000",
@@ -226,7 +226,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue May 31 2022 17:38:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

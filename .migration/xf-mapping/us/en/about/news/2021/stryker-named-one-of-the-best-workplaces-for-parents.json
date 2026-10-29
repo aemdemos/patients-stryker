@@ -7,7 +7,7 @@
   "jcr:title": "Stryker named one of the Best Workplaces for Parents",
   "jcr:versionHistory": "9db8d0be-120c-4b73-9f71-bbcb5aa92050",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+  "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
   "jcr:predecessors": [
     "82552c46-dca0-4502-bc5d-d9099c92466b"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "7ebeb275-4cff-43c0-8a0e-0a78a314acce",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "rachele.juliano1@stryker.com",
+  "cq:lastModifiedBy": "user-4871592d87@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "rachele.juliano1@stryker.com",
-      "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+      "jcr:createdBy": "user-4871592d87@example.invalid",
+      "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
       "jcr:created": "Thu Dec 02 2021 20:17:12 GMT+0000",
       "jcr:lastModified": "Thu Dec 02 2021 20:17:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -40,7 +40,7 @@
         "jcr:primaryType": "nt:unstructured",
         "standaloneimage_1647": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+          "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
           "preset": "max_width_1440",
           "srcFileRef": "/content/dam/stryker/about/news/2021/best-workplace-for-parents-2021/GPTW for Parents_2021.png",
           "borderColor": "rgba(76,125,122,1)",
@@ -53,8 +53,8 @@
         "jcr:primaryType": "nt:unstructured",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "rachele.juliano1@stryker.com",
-          "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+          "jcr:createdBy": "user-4871592d87@example.invalid",
+          "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Dec 02 2021 19:08:04 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -68,7 +68,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+    "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
     "publishDate": "Fri Dec 03 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "03-Dec-2021",
@@ -77,7 +77,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+    "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
     "preset": "max_width_1440",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Thu Dec 02 2021 19:02:04 GMT+0000",
@@ -86,7 +86,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "rachele.juliano1@stryker.com",
+    "jcr:lastModifiedBy": "user-4871592d87@example.invalid",
     "jcr:lastModified": "Thu Dec 02 2021 19:07:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"

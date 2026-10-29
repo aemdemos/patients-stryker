@@ -8,7 +8,7 @@
   "jcr:title": "X3",
   "jcr:versionHistory": "55c5cfff-a354-4ec3-b82a-e910038b264e",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/x3/images/Thumbnail_X3.png",
   "jcr:predecessors": [
     "01130a1e-3deb-41f8-a72d-081a40954cd4"
@@ -37,14 +37,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "cq:lastModifiedBy": "user-42b58e166b@example.invalid",
   "navTitle": "X3",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Aug 24 2017 11:14:00 GMT-0400",
       "compImageRef": "/content/dam/stryker/joint-replacement/products/x3/images/Thumbnail_X3.png",
@@ -61,9 +61,9 @@
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
       "subtitle": "X3 Polyethylene Bearing Surface Design and Clinical Results",
-      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
       "description": "X3-VA-2_22221",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Mon Jul 09 2018 15:07:48 GMT-0400",
       "type": "typePath",
       "jcr:lastModified": "Thu Feb 04 2021 17:11:19 GMT+0000",
@@ -76,7 +76,7 @@
         "fileReference": "/content/dam/stryker/joint-replacement/products/x3/videos/X3 Polyethylene Bearing Surface Design and Clinical Results.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+        "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
         "unsharpMaskAmount": "0",
         "s7ViewerPreset": "Video|VIDEO|/etc/dam/presets/viewer/Video|false",
         "assetID": "stryker/X3 Polyethylene Bearing Surface Design and Clinical Results-AVS",
@@ -94,8 +94,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "tiffany.mlinscek@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-691a2e26c5@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Mon Aug 07 2017 02:12:45 GMT-0400",
       "jcr:lastModified": "Mon Aug 28 2017 16:26:36 GMT-0400",
       "sling:resourceType": "stryker/components/content/section-title"
@@ -103,22 +103,22 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_938882322",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:lastModified": "Thu Feb 04 2021 15:40:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 15:41:17 GMT+0000",
       "jcr:lastModified": "Thu Feb 04 2021 15:41:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Thu Feb 04 2021 15:40:36 GMT+0000",
       "text": "<p>Prior to 2018, any X3 data published included product manufactured using compression molding consolidation and gas plasma sterilization. In 2018, Stryker added ram extrusion consolidation and EtO sterilization capabilities to the X3 manufacturing process.</p>\n",
       "jcr:lastModified": "Thu Feb 04 2021 15:40:58 GMT+0000",
@@ -130,7 +130,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Highly cross-linked polyethylene</p>\r\n",
     "shortDescTop": "<p>X3 features a patented<sup>1</sup> three-step process of irradiation with 3MRads (total 9MRads) of gamma radiation and annealing.<sup>2</sup> This particular development of X3 allows for wear resistance,<sup>3,4</sup> mechanical strength<sup>5</sup> and oxidation resistance<sup>6&nbsp;</sup>without the use of additives. Stryker’s irradiation and annealing process for X3 has not changed since its development, allowing X3 to maintain its core properties and positive performance attributes. Since its first use in orthopaedics, there have been over 5 million X3 implantations worldwide across hip and knee arthroplasty.<sup>7</sup> The significant amount of clinical and joint registry data on X3 support its use in TKA<sup>8-11</sup> and THA.<sup>12-17</sup></p>\r\n",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "jcr:lastModified": "Mon Mar 08 2021 19:31:40 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -141,7 +141,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Wang A, Dumbleton JH, Essner A, Yau S, inventors; Howmedica Osteonics Corp, assignee. Sequentially cross-linked polyethylene. US patent 7,517,919. April 14, 2009.</li>\r\n<li>Wang A, Zeng H, Yau S-S, Essner A, Manely M, Dumbleton J. Wear, oxidation and mechanical properties of a sequentially irradiated and annealed UHMWPE in total joint replacement. J Phys D Appl Phys. 2006;39(15):3213-3219. doi:10.1088/0022-3727/39/15/S12</li>\r\n<li>Bonutti P, Essner A, Herrera L, Longaray J, Kester M. Influence of design and bearing materials on wear: comparing two different TKA designs. Poster presented at: 25th Annual Congress of the International Society for Technology in Arthroplasty; October 3-6, 2012; Sydney, Australia.</li>\r\n<li>Stryker Test Report RD-13-109. Wear evaluation of a hindered-phenol polyethylene compared to X3 polyethylene. 2013.</li>\r\n<li>Yau S-S Essner A, Manley MT, Dumbleton JH. Sequential irradiation and annealing of highly crosslinked polyethylenes: resist oxidation without sacrificing physical/ mechanical properties. Poster presented at: 51st Annual Meeting of the Orthopaedic Research Society; February 20-23, 2005; Washington, D.C.</li>\r\n<li>Yau S-S, Le K-P, Blitz JW, Dumbleton JH. Real-time shelf aging of sequential crosslinked and annealed UHMWPE. Poster presented at: 55th Annual Meeting of the Orthopaedic Research Society; February 22-25, 2009; Las Vegas, NV.</li>\r\n<li>Sales data on file at Stryker.</li>\r\n<li>National Joint Replacement Registry. Hip, Knee &amp; Shoulder Arthroplasty Annual Report 2017. Australian Orthopaedic Association; 2017.</li>\r\n<li>Meneghini RM, Ireland PH, Bhowmik-Stoker M. Multicenter study of highly cross-linked vs conventional polyethylene in total knee arthroplasty. J Arthroplasty. 2016;31(4):809-814. doi:10.1016/j.arth.2015.10.034</li>\r\n<li>Harwin SF, Issa K, Given K, et al. Clinical and patient-reported outcomes of primary TKA with a single-radius design. Orthopedics. 2013;36(7):e877-e882. doi:10.3928/01477447-20130624-17</li>\r\n<li>National Joint Registry for England, Wales and Northern Ireland and Isle of Man. 14th Annual Report. 2017.</li>\r\n<li>Campbell D, Callary S, Field J. Wear of a second-generation XLPE liner remains low at 10 years: an RSA study. Abstract presented at: 2017 ANZORS-RSA Joint Conference; October 6-8, 2017; Adelaide, SA, Australia.</li>\r\n<li>Gaudiana MA, White PB, Ghazi N, Ranawat AS, Ranawat CS. Wear rates with large metal and ceramic heads on a second generation highly cross-linked polyethylene at mean 6-year follow-up. J Arthroplasty. 33(2):590-594. doi:10.1016/j.arth.2017.09.006</li>\r\n<li>Epinette JA, Harwin SF, Rowan FE, et al. Early experience with dual mobility acetabular systems featuring highly cross-linked polyethylene liners for primary hip arthroplasty in patients under fifty five years of age: an international multi-centre preliminary study. Int Orthop. 2017;41(3):543-550. doi:10.1007/s00264-016-3367-0</li>\r\n<li>D’Antonio JA, Capello WN, Mesko JW, Ramakrishnan R. Second-generation annealed highly crosslinked polyethylene has low wear at mean seven year follow-up. Surg Technol Int. 2014;25:219-226.</li>\r\n<li>Takada R, Jinno T, Koga D, Miyatake K, Muneta T, Okawa A. Comparison of wear rate and osteolysis between second-generation annealed and first-generation remelted highly cross-linked polyethylene in total hip arthroplasty. A case control study at a minimum of five years. Orthop Traumatol Surg Res. 103(4):537-541. doi:10.1016/j.otsr.2017.02.004</li>\r\n<li>Epinette JA, Jolles-Haeberli BM. Comparative results from a national joint registry hip data set of a new cross-linked annealed polyethylene vs both conventional polyethylene and ceramic bearings. J Arthroplasty. 31(7):1483-1491. doi:10.1016/j.arth.2015.12.041</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Thu Feb 04 2021 15:42:44 GMT+0000",

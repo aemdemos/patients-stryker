@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6777db43-9730-46a6-8455-14f5c6e2d250",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Stryker SEA at a tree planting volunteer day",
   "jcr:predecessors": [
     "f3b28b79-605e-40d2-879a-5fbcbc42c270"
@@ -33,14 +33,14 @@
   "jcr:uuid": "730973ec-f2af-40b4-82be-dded05e1ebcd",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Mon Oct 30 2023 14:35:19 GMT+0000",
       "jcr:lastModified": "Mon Oct 30 2023 14:35:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Oct 30 2023 14:35:25 GMT+0000",
           "alt": "Stryker SEA at a tree-planting day",
@@ -66,8 +66,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Mon Oct 30 2023 14:35:27 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">The Stryker Environmental Alliance (SEA) recently partnered with the McHenry County Conservation District (MCCD) to organize the 3rd annual tree planting event at Hickory Nut Grove in Cary, IL.</span></p>\n<p><span class=\"fontsize-1-25em\">The weather wasn’t ideal, but that didn’t stop our dedicated Stryker employees from showing up and doing their part to help improve our environment. Alongside a few MCCD staff members, the group braved the cool and rainy weather together. The event combined action and education. The MCCD staff explained the history of the forest site and the unique qualities of the oak trees and hazelnut bushes that were being planted.</span></p>\n",
           "jcr:lastModified": "Mon Oct 30 2023 14:51:38 GMT+0000",
@@ -76,9 +76,9 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "topPadding": "5",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Oct 30 2023 14:50:23 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -91,8 +91,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Mon Oct 30 2023 14:52:50 GMT+0000",
       "jcr:lastModified": "Mon Oct 30 2023 14:52:50 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -101,8 +101,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_7743": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Oct 30 2023 14:50:26 GMT+0000",
           "alt": "Person in gray raincoat planting a tree",
@@ -118,8 +118,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Oct 30 2023 14:57:19 GMT+0000",
           "alt": "Person in black raincoat planting tree with shovel",
@@ -135,8 +135,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Oct 30 2023 14:57:19 GMT+0000",
           "alt": "Group of Stryker employees learning how to plant tree",
@@ -152,8 +152,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_6508": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Oct 30 2023 14:52:32 GMT+0000",
           "alt": "Stryker volunteers enjoying break from hard work and rain",
@@ -168,7 +168,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Mon Oct 30 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "30-Oct-2023",
@@ -177,7 +177,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "preset": "max_width_1440",
     "alt": "stryker-table-group-tree",
     "borderColor": "rgba(76,125,122,1)",

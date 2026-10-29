@@ -10,7 +10,7 @@
   "jcr:versionHistory": "74c9f02b-924a-4f0d-81ec-7e9c3a5b9e59",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Spinal access and decompression",
   "jcr:predecessors": [
     "55957edc-00f2-478d-838e-ce7ce877ad51"
@@ -40,7 +40,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/spine--ortho-",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -48,17 +48,17 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+      "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -68,14 +68,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Fri Apr 04 2025 13:39:15 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "20",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -84,12 +84,12 @@
         "cq:LiveRelationship"
       ],
       "description": "Exposing the spine as efficiently as possible is a critical part of spine surgery. We've designed a variety of retractors as well as manual and power tools to help you navigate your way through spinal access and decompression. ",
-      "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+      "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
       "title": "Helping you get there faster",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "sysfilters": {
       "jcr:primaryType": "nt:unstructured",
@@ -123,26 +123,26 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri Apr 17 2026 17:22:42 GMT+0000",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "disclaimer-type": "text",
     "jcr:lastModified": "Fri Apr 04 2025 13:29:16 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
     "textIsRich": "true",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

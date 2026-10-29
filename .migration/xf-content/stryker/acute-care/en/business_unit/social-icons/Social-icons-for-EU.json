@@ -25,18 +25,18 @@
   "cq:tags": [],
   "jcr:uuid": "f76ef490-0daf-4edd-8dc6-0c744e821689",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
     "jcr:lastModified": "Fri Mar 01 2024 18:41:13 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+    "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
     "standaloneimage74096": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -52,18 +52,18 @@
       ],
       "jcr:title": "Building Block",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
       "jcr:lastModified": "Fri Mar 01 2024 18:41:13 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
       "standaloneimage_1929_3382840253979060698550563": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
         "linkExternal": "https://www.linkedin.com/showcase/stryker-acute-care/",
@@ -72,7 +72,7 @@
         "borderColor": "rgba(76,125,122,1)",
         "jcr:lastModified": "Thu May 22 2025 20:41:53 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+        "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false",
         "cq:responsive": {
@@ -81,7 +81,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
-          "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+          "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -90,7 +90,7 @@
             "offset": "0",
             "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "chris.kleckner@stryker.com"
+            "cq:lastRolledoutBy": "user-f123ca2978@example.invalid"
           }
         }
       },
@@ -100,7 +100,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
-        "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+        "cq:lastRolledoutBy": "user-f123ca2978@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -109,7 +109,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Mar 01 2024 18:41:13 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "chris.kleckner@stryker.com"
+          "cq:lastRolledoutBy": "user-f123ca2978@example.invalid"
         }
       }
     },

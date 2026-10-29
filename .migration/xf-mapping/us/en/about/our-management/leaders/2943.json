@@ -9,7 +9,7 @@
   "jcr:versionHistory": "26df2125-0469-45b4-b9e3-6079bd5d10db",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "15406c61-bd92-4375-bf0b-60c83de68e69"
   ],
@@ -27,23 +27,23 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "navTitle": "Jill Duffy",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_998696161_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
       "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -52,16 +52,16 @@
     },
     "cols_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
       "text": "Jill Duffy Vice President, Assurance and Risk Advisory Jill Duffy became Vice President, Assurance and Risk Advisory in December 2024. Jill leads our Assurance and Risk Advisory (ARA) organization with responsibility for developing and implementing the company’s internal audit strategic plan aimed at mitigating a wide range of strategic, financial, compliance and operational risks while strengthening Stryker’s internal controls. Jill joins Stryker with over 26 years of experience. Most recently, Jill worked at Diageo where she held the role of Senior Vice President, Global Audit and Risk with responsibility for global business audits. Prior to Diageo, she held a variety of senior leadership roles at Warner Music Group, including Senior Vice President, Internal Audit and Risk Management, and Vice President, Shared Services. She also held several finance and audit positions at Bristol-Myers Squibb and KPMG. Jill holds a bachelor’s degree in accounting from the University of Missouri-Kansas City and is a Certified Public Accountant.",
       "jcr:lastModified": "Mon Jun 06 2022 16:55:43 GMT+0000",

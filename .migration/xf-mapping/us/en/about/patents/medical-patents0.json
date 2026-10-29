@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8b5ebd62-ca5a-461b-b133-8bb088c91d34",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "ashley.salerno@stryker.com",
+  "jcr:lastModifiedBy": "user-4b9c64adc2@example.invalid",
   "jcr:predecessors": [
     "6e150124-3cc9-4a52-bb63-6aed936f8016"
   ],
@@ -28,7 +28,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "ashley.salerno@stryker.com",
+  "cq:lastModifiedBy": "user-4b9c64adc2@example.invalid",
   "navTitle": "Mako patents",
   "image": {
     "jcr:primaryType": "nt:unstructured"
@@ -38,8 +38,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "patenttables": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "ashley.salerno@stryker.com",
-      "jcr:lastModifiedBy": "ashley.salerno@stryker.com",
+      "jcr:createdBy": "user-4b9c64adc2@example.invalid",
+      "jcr:lastModifiedBy": "user-4b9c64adc2@example.invalid",
       "jcr:created": "Fri Sep 13 2024 19:31:05 GMT+0000",
       "jcr:lastModified": "Tue Jun 16 2026 12:30:34 GMT+0000",
       "nameTable": "Mako patents",
@@ -50,7 +50,7 @@
         "jcr:primaryType": "nt:unstructured",
         "date_ModifiedBy": 1781613034412,
         "size_columns": 3,
-        "modifiedBy": "ashley.salerno@stryker.com",
+        "modifiedBy": "user-4b9c64adc2@example.invalid",
         "row_1": {
           "jcr:primaryType": "nt:unstructured",
           "COL1": "DIVISION",
@@ -70,8 +70,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1726255949840,
           "size_columns": 3,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "DIVISION",
@@ -89,8 +89,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1766154032972,
           "size_columns": 3,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "DIVISION",
@@ -108,8 +108,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1772467622266,
           "size_columns": 3,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "DIVISION",

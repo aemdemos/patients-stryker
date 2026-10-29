@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0fec3646-a884-46a9-b11a-cb2e7b4bf2f1",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "1896ef90-c3ad-4313-b0d0-6ece118dfd0a"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
       "text": "❮ BACK",
       "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
@@ -44,16 +44,16 @@
     },
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Sep 16 2025 20:50:43 GMT+0000",
       "jcr:lastModified": "Tue Sep 16 2025 20:50:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero"
     },
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Sep 11 2025 00:13:43 GMT+0000",
       "text": "<p><b>Current Revision Date: 08.03.20</b></p>\n<ol>\n<li>Riggs B. and Melton L. The worldwide problem of osteoporosis: Insights afforded by epidemiology.&nbsp;Bone. 1995; 17(Suppl 5):S505-S511.<br>\n</li>\n<li>Alexandru D. and So W. Evaluation and management of vertebral compression fractures.&nbsp;Permanente Journal. 2012; 16(4):46-51.</li>\n<li>National Institute of Health Osteoporosis and Related Bone Diseases National Resource Center. (2018). Osteoporosis Overview. Retrieved from https://www.bones.nih.gov/health-info/bone/osteoporosis/overview.</li>\n<li>Lips P. and Van Schoor N. Quality of life in patients with osteoporosis.&nbsp;Osteoporosis International. 2005; 16(5):447-455.</li>\n<li>Landgon J. et al. Vertebral compression fractures - new clinical signs to aid diagnosis.&nbsp;Annals of the Royal College of Surgeons of England.&nbsp;2010;92(2):163-166.+</li>\n<li>Mathis J., Deramond H., and Belkoff S. (2006). Percutaneous vertebroplasty and kyphoplasty. New York, NY: Springer Science+Business Media, Inc. Retrieved from https://rd.springer.com/content/pdf/10.1007%2F0-387-36083-2.pdf.</li>\n<li>SpineJack System Instructions for Use. Balma, France: Vexim SA; 2018.</li>\n<li>Noriega D et al. A prospective, international, randomized, non-inferiority study comparing an implantable titanium vertebral augmentation device versus balloon kyphoplasty in the reduction of vertebral compression fractures (SAKOS study).&nbsp;The Spine Journal. 2019. doi: 10.1016/j.spinee.2019.07.009.</li>\n</ol>\n",
       "jcr:lastModified": "Tue Sep 16 2025 20:54:13 GMT+0000",

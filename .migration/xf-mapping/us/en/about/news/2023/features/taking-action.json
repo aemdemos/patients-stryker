@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c0a2d138-fbb6-4fde-ae4d-17ed7765a6a7",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Boris",
   "jcr:predecessors": [
     "ac9cc188-9a1a-4964-8caa-18a299df60f7"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon May 15 2023 16:36:28 GMT+0000",
       "text": "Taking action Boris’ stroke story Boris was driving his grandson Benjamin to soccer practice when he suddenly became unresponsive. Learn how Benjamin took heroic actions to save his grandfather and how Boris’ healthcare team was able to quickly identify and treat his stroke, saving his life. “Benjamin saved his life, but Dr. Puri, he brought him back to normal life,” Boris’s wife says. “[Without Dr. Puri] it can be a completely different story, different ending.” ______________ Boris Stroke survivor Learn more about angioplasty and stenting",
       "jcr:lastModified": "Mon May 15 2023 16:46:23 GMT+0000",
@@ -51,7 +51,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Wed Jun 07 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "07-Jun-2023",

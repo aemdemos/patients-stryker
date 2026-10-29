@@ -8,7 +8,7 @@
   "jcr:title": "Imbibe",
   "jcr:versionHistory": "b49802e9-90c7-439c-928b-21e796fc8a7e",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/spine/products/imbibe/images/Thumbnail_Imbibe.png",
   "jcr:predecessors": [
     "efe8f943-ddee-4db0-af1b-43f39159c157"
@@ -45,13 +45,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+      "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Tue May 23 2017 11:38:50 GMT-0400",
@@ -72,7 +72,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1966210656",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1954204227"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Wed Mar 14 2018 16:09:11 GMT-0400",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -81,7 +81,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Imbibe Bone Marrow Aspiration and Delivery System</p>\r\n",
     "shortDescTop": "<p>Bone marrow aspirate (BMA) is an alternative to traditionally harvested iliac crest without the associated complications or morbidity.<sup>1</sup> Surgeons can easily aspirate BMA from several anatomical locations throughout the body including iliac crest, vertebral body or calcaneus. The Imbibe bone marrow aspiration needles provide you a minimally invasive way to harvest bone marrow. These needles come with either sharp beveled or trocar stylets, which are color coded to distinguish each needle.&nbsp;</p>\r\n",
-    "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+    "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
     "jcr:lastModified": "Thu Aug 24 2017 16:04:30 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -145,7 +145,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+    "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<div>References:</div>\r\n<ol>\r\n<li>Muschler, G.F., Nakamoto, C., Griffith, L.G., Engineering Principles of Clinical Cell-Based Tissue Engineering. Journal of Bone and Joint Surgery, 2004; 86(7): 1541.</li>\r\n</ol>\r\n<div>BISYN-WB-1_14834<br>\r\n</div>\r\n",
     "jcr:lastModified": "Tue Aug 15 2017 11:27:05 GMT-0400",

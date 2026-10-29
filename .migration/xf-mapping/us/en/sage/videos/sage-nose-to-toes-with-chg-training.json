@@ -10,7 +10,7 @@
   "jcr:versionHistory": "8dc7ad66-913c-4098-93bb-e32ed25720a9",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "9d5219fa-d4c6-4b57-b064-93f0e776d52f"
   ],
@@ -27,7 +27,7 @@
   "jcr:uuid": "b1242133-261e-4cbc-bf3d-93cb5d239527",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,8 +48,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Fri Jun 09 2023 20:42:25 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -63,7 +63,7 @@
         "fileReference": "/content/dam/stryker/sage/products/noes-to-toes/videos/Sage-Nose-to-Toes-with-CHG-Oral-Rinse-training-video.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Sage-Nose-to-Toes-with-CHG-Oral-Rinse-training-video-AVS",
         "urlModifiers": "",
@@ -80,8 +80,8 @@
     },
     "curatedcta_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",

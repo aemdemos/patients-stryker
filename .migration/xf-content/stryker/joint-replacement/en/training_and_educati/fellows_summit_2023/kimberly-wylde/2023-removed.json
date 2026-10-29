@@ -23,25 +23,25 @@
   "cq:tags": [],
   "jcr:uuid": "b0271bf2-3fc9-4c83-bbb4-55329274c668",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "garrett.shue@stryker.com",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Wed Oct 04 2023 17:04:13 GMT+0000",
     "jcr:lastModified": "Wed Oct 04 2023 17:04:13 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+    "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Wed Oct 04 2023 17:04:13 GMT+0000",
       "jcr:created": "Mon Oct 10 2022 15:11:37 GMT+0000",
@@ -50,7 +50,7 @@
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Wed Oct 04 2023 17:04:13 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -58,7 +58,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Wed Oct 04 2023 17:04:13 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -67,7 +67,7 @@
           "offset": "1",
           "cq:lastRolledout": "Wed Oct 04 2023 17:04:13 GMT+0000",
           "width": "4",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -76,23 +76,23 @@
       "jcr:mixinTypes": [
         "cq:LiveSyncCancelled"
       ],
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "cq:isCancelledForChildren": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Wed Oct 04 2023 17:04:14 GMT+0000",
       "jcr:created": "Wed Oct 05 2022 17:36:09 GMT+0000",
       "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Thank you for attending the Joint Replacement Fellows Summit!</span><br>\n</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Don’t hesitate to contact <a href=\"mailto:Kimberly.Wylde@stryker.com\"><span style=\"color: #85458a;\">Kimberly.Wylde@stryker.com</span></a> with questions.&nbsp;</span></span></p>\n",
       "jcr:lastModified": "Wed Oct 04 2023 17:04:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Wed Oct 04 2023 17:04:14 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -101,7 +101,7 @@
           "offset": "0",
           "cq:lastRolledout": "Wed Oct 04 2023 17:04:14 GMT+0000",
           "width": "7",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -111,7 +111,7 @@
           "offset": "0",
           "cq:lastRolledout": "Wed Oct 04 2023 17:04:14 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     }

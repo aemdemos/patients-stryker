@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0c06dc9c-84ba-4932-9202-901a5daa06f9",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/vitossandimbibe/images/PACK-hand-blood.png",
   "jcr:predecessors": [
     "4a59ba9c-48db-4d8e-8ab5-6cabf6d2bdf5"
@@ -45,13 +45,13 @@
   "jcr:uuid": "8ae7d6dc-94f1-42ee-bc7a-18f89d2cc7a8",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Thu Nov 09 2017 14:45:15 GMT-0500",
@@ -67,14 +67,14 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Mon Jul 27 2026 15:32:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>References:</b></p>\r\n<ol>\r\n<li>Stryker Test Report: 1000-2028R</li>\r\n<li>Stryker Test Report: 1015-0083</li>\r\n<li>US Markets for Orthopedic Biomaterials 2014 Source: Millennium Research Group.</li>\r\n<li>Stryker Test Report: 1010-0117R</li>\r\n</ol>\r\n<p>Based on&nbsp;BIVIT-WB-6_16133</p>\r\n",
     "jcr:lastModified": "Wed Nov 29 2017 10:08:40 GMT-0500",
@@ -85,7 +85,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p><b>Vitoss BBTrauma Bioactive Bone Graft Substitute</b><br>\r\n</p>\r\n",
     "shortDescTop": "<p>This unique Vitoss formulation features an ultraporous, open interconnected structure with BBTrauma bioactive glass particles that promote the deposition of calcium phosphate on the implant surface.<sup>1</sup> A broader range of particle size distribution leads to an increased surface area of bioactive glass that allows for both an immediate burst and sustained release of calcium, sodium, and silicon ions.<sup>2</sup></p>\r\n",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "jcr:lastModified": "Thu Nov 09 2017 14:39:51 GMT-0500",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [

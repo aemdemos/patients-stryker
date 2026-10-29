@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f0bb27d8-f403-4363-8154-4da91d7107e2",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "VSP Reconstruction",
   "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/images/Thumbnail_VSP Recon.png",
   "jcr:predecessors": [
@@ -45,7 +45,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "cq:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -55,8 +55,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -68,8 +68,8 @@
     },
     "cols2_2_3_1_3_2143951887": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 21:07:47 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 21:07:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:35:13 GMT+0000",
           "hideBorder": "true",
           "type": "typePath",
@@ -93,7 +93,7 @@
             "fileReference": "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/videos/VSP_Mandible_Reconstruction_featuring_Dr._Keith_Blackwell.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+            "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/VSP_Mandible_Reconstruction_featuring_Dr._Keith_Blackwell-AVS",
             "urlModifiers": "",
@@ -113,8 +113,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -123,8 +123,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1971668492": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -140,8 +140,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "deep",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
@@ -153,8 +153,8 @@
         },
         "tagcrumb": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -163,24 +163,24 @@
     },
     "jumpbarnav": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 20:43:01 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 20:43:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/jumpbarnav"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 21:10:15 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 21:10:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "features-and-benefits",
       "jcr:created": "Mon Apr 14 2025 20:43:27 GMT+0000",
@@ -190,8 +190,8 @@
     },
     "text_421968903_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:53:23 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Features and benefits</span></h2>\n",
       "jcr:lastModified": "Wed Feb 19 2025 17:51:26 GMT+0000",
@@ -200,16 +200,16 @@
     },
     "cols_329675469": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Jun 13 2025 23:25:04 GMT+0000",
       "jcr:lastModified": "Fri Jun 13 2025 23:25:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 20:44:08 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 20:44:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -218,8 +218,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:44:12 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Anatomical design</span></span></p>\n<p>Case is planned using patient-specific CT data. Allowing for the ability to visualize anatomical landmarks and ensure surgical plan matches patients anatomy.</p>\n",
           "jcr:lastModified": "Fri Jun 13 2025 23:23:54 GMT+0000",
@@ -232,8 +232,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:44:12 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Design session</span></span></p>\n<p>Web-based design session allows a surgeon direct input on every step of the pre-surgical plan.</p>\n",
           "jcr:lastModified": "Fri Jun 13 2025 23:24:12 GMT+0000",
@@ -246,8 +246,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_414082397": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:44:12 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Cutting/positioning guides</span></span></p>\n<p>Cutting and positioning guides transfer the pre-surgical plan into the operating room, helping to create increased accuracy and efficiency.</p>\n",
           "jcr:lastModified": "Fri Jun 13 2025 23:24:32 GMT+0000",
@@ -260,8 +260,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_414082397_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:44:12 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Case report</span></span></p>\n<p>Case report outlines the step-by-step of the pre-surgical plan, serving as a reference in before-surgery and in the operating room.</p>\n",
           "jcr:lastModified": "Tue Jul 08 2025 13:59:12 GMT+0000",
@@ -272,16 +272,16 @@
     },
     "cols_297165778": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 20:46:40 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 20:46:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_1054100419": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "clinical-evidence",
       "jcr:created": "Mon Apr 14 2025 20:46:48 GMT+0000",
@@ -291,8 +291,8 @@
     },
     "text_1879940623_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Clinical evidence</span></h2>\n",
       "jcr:lastModified": "Wed Feb 19 2025 17:51:42 GMT+0000",
@@ -301,16 +301,16 @@
     },
     "cols_1178908437": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Jun 13 2025 23:25:07 GMT+0000",
       "jcr:lastModified": "Fri Jun 13 2025 23:25:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "accordion": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 20:47:16 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 20:49:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/accordion",
@@ -353,8 +353,8 @@
         "accPosId": 1,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:50:07 GMT+0000",
           "text": "<p>Fibular osteotomy remains a challenging aspect of mandibular microsurgical reconstruction, dependent largely on surgeon experience, intraoperative judgment, and technical speed. Virtual surgical planning and stereolithographic modeling is a relatively new technique that can allow for reduction in the learning curve associated with neomandible contouring, enhanced levels of accuracy, and acceleration of a time-consuming intraoperative step. The authors present a video (narrated and edited from planning sessions and intraoperative use of technique to illustrate the technology) and describe their favorable results. Five patients underwent composite resection of the mandible and free fibula osteocutaneous reconstruction over a 6-month period (December of 2009 to June of 2010) at a single institution using a virtual planning session and stereolithographic modeling. Outcomes assessed included technical accuracy, aesthetic contour, and functional outcomes. All patients achieved negative margins with cutting guide-directed resection. Use of this technique eliminated the need for intraoperative measurement and yielded fibular segments with excellent apposition and faithful duplication of the preoperative plan. Minimal adjustments were needed for inset. Flap survival was 100 percent. All patients have maintained preoperative occlusion and a symmetric mandibular contour on Panorex study, three-dimensional computed tomography, and clinical examination. Accuracy of the reconstructed contour was confirmed using computed tomographic image overlay. This virtual surgical planning technique combined with stereolithographic model-guided osteotomy is the mainstay of the authors' approach to fibular osteotomy when dealing with patients requiring mandibular reconstruction. The authors feel this technology facilitates realization of technical accuracy, aesthetic contour, and functional outcomes and may be particularly useful if free fibular mandibular reconstruction is performed less frequently.</p>\n<p><b>CLINICAL QUESTION/LEVEL OF EVIDENCE:</b> Therapeutic, IV.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:50:38 GMT+0000",
@@ -363,9 +363,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:50:43 GMT+0000",
@@ -377,8 +377,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:01 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:01 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -390,8 +390,8 @@
         "accPosId": 2,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:51:26 GMT+0000",
           "text": "<p><b>OBJECTIVES/HYPOTHESIS</b></p>\n<p>To evaluate the use of computer-assisted design and rapid prototype modeling to improve the speed and accuracy of mandibular reconstruction.</p>\n<p><b>STUDY DESIGN</b></p>\n<p>Case-control study.</p>\n<p><b>METHODS</b></p>\n<p>Between 2005 and 2011, 38 subjects underwent fibula free flap mandibular reconstruction using computer-assisted design and rapid prototype modeling. Titanium plates were prebent using the models prior to surgery. Direct plate bending on the native mandible to accurately restore occlusion would not have been possible in 11 patients with exophytic tumors, nine patients with pathologic fractures, and 10 patients with a prior segmental mandibulectomy. Computer-generated cutting guides were utilized to facilitate fibular osteotomies.</p>\n<p><b>RESULTS</b></p>\n<p>The mean operative time for subjects was 8.8 ± 1.0 hours compared to the mean operative time defect-matched control group, for whom computer-assisted design and models were not used, of 10.5 ± 1.4 hours (P = .0006). Comparison of the preoperative and postoperative mandibles demonstrated that the mean change in position of selected bony landmarks (condyles, gonions, and gnathion) was less in the subject group than in the control group (4.11 ± 3.09 mm vs. 6.92 ± 5.64 mm, respectively; P = .001) Comparison of postoperative mandibles with preoperative virtual plans showed a mean deviation of 2.40 ± 2.06 mm from planned fibular segment lengths and 3.51 ± 2.69° from planned angles between fibular segments.</p>\n<p><b>CONCLUSIONS</b></p>\n<p>Computer-assisted design and rapid prototype modeling have the potential to increase the speed and accuracy of mandibular reconstruction. We believe these technologies are particularly useful for cases in which the original architecture of the mandible has been distorted or destroyed.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:52:59 GMT+0000",
@@ -400,9 +400,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:52:18 GMT+0000",
@@ -414,8 +414,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:05 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:05 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -427,8 +427,8 @@
         "accPosId": 3,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:53:32 GMT+0000",
           "text": "<p>The goal of this article was to illustrate the ease in which virtual surgery and computer-aided design and manufacturing can be used by the craniomaxillofacial surgeon to create tremendously accurate postoperative results and provide confidence with even the most complex three-dimensional bony reconstructions. With advancements in software technology and three-dimensional printing, our ability to plan and execute precise bony reconstruction has become a reality. With this technology, guides can be made to ensure exact bony repositioning or replacement. These guides can help guide cutting of the bone and can act as splints to precisely reposition the bone and direct plate placement. With use of these computer-aided design and manufacturing guides and the addition of guidance technology, the position of the bone can be guaranteed intraoperatively. We review our unique and advanced method in approaching some of these problems and illustrate the application of these techniques in mandibular reconstruction, orthognathic surgery, maxillofacial trauma, and temporomandibular joint reconstruction. This technology continues to evolve, and our indications for its application continue to grow. This article represents only a small portion of the types of cases in which these techniques have already been applied.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:53:45 GMT+0000",
@@ -437,9 +437,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:53:52 GMT+0000",
@@ -451,8 +451,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:09 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:09 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -464,8 +464,8 @@
         "accPosId": 4,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:54:27 GMT+0000",
           "text": "<p>Computer aided design and manufacturing (CAD/CAM) technology today is the standard in manufacturing industry. The application of the CAD/CAM technology, together with the emerging 3D medical images based virtual surgical planning (VSP) technology, to craniomaxillofacial reconstruction has been gaining increasing attention to reconstructive surgeons. This article illustrates the components, system and clinical management of the VSP and CAD/CAM technology including: data acquisition, virtual surgical and treatment planning, individual implant design and fabrication, and outcome assessment. It focuses primarily on the technical aspects of the VSP and CAD/CAM system to improve the predictability of the planning and outcome.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:54:47 GMT+0000",
@@ -474,9 +474,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:54:51 GMT+0000",
@@ -488,8 +488,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:12 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:12 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -501,8 +501,8 @@
         "accPosId": 5,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:55:41 GMT+0000",
           "text": "<p><b>PURPOSE</b></p>\n<p>The concept of virtual surgery uses surgical simulation rather than relying exclusively on intraoperative manual approximation of facial reconstruction. The purpose of this study was to evaluate the degree to which surgical outcomes in free fibula mandibular reconstructions planned with virtual surgery and carried out with prefabricated surgical plate templates and cutting guides correlated to the virtual surgical plan in a series of 11 patients.</p>\n<p><b>MATERIALS AND METHODS</b></p>\n<p>This retrospective study evaluated 11 consecutive patients (6 males and 5 females) with an average age of 50.73 years (range, 23-72 years) who required mandibular reconstruction for aggressive benign or malignant disease with a free fibula osseomyocutaneous flap at Emory University Hospital (Atlanta, GA) between January 1, 2009 and December 31, 2009. In each case, a high-resolution helical computed tomography (CT) scan of the maxillofacial region and mandible was obtained prior to surgery. The CT data was sent on a CD to a modeling company (Medical Modeling Inc, Golden, CO). The scans were then converted into 3-dimensional models of the maxillofacial skeleton utilizing both automatic and manual segmentation techniques in the SurgiCase CMF software (Materialise NV, Leuven, Belgium). A virtual surgery planning session was held via a Web meeting between the surgeons and the modeling company, at which the resection planes of the mandible, positioning of the plate, and fibula lengths/osteotomy angles were established. The surgery was then carried out using prefabricated cutting guides and manual bending of a reconstruction plate using a prefabricated plate template. A postoperative CT scan of each patient was obtained within the first 7 postoperative days on the same scanner. Three-dimensional computer models of the final reconstruction were obtained for comparison with the preoperative virtual plan. To make the desired comparisons, the 3-dimensional objects representing the postoperative surgical outcome were superimposed onto the preoperative virtual plan using manual alignment techniques. These objects were then compared by 1-to-1 magnification for measurements of fibular bone volume, location of mandibular osteotomies, location of fibular osteotomies, plate contour, plate position on fibula, and plate position on mandible. Comparison was made between the virtual and final plates with regard to contour and position through superimposition overlays of the 3-dimensional models that are registered in the same coordinate system.</p>\n<p><b>RESULTS</b></p>\n<p>A total of 19 mandibular osteotomies were carried out. The mean distance of the actual mandibular osteotomy when compared to the virtual mandibular osteotomy was 2.00 ± 1.12 mm. The mean volume determined by the software program of the 11 virtual fibulas was 13,669.45 ± 3,874.15 mm(3) (range, 9,568 to 22,860 mm(3)), and the mean volume of the 11 actual postoperative fibulas was 12,361.09 ± 4,161.80 mm(3) (range, 7,142 to 22,294 mm(3)). The mean percentage volumes of the actual postoperative fibula compared to the planned fibula were 90.93 ± 18.03%. A total of 22 fibular segments were involved in the study created by 44 separate fibula osteotomies. The mean distance of the actual fibula osteotomy when compared to the virtual fibula osteotomy was 1.30 ± 0.59 mm. The mean percentage overlap of the actual plate to the virtual plate was 58.73% ± 8.96%.</p>\n<p><b>CONCLUSIONS</b></p>\n<p>Virtual surgical planning appears to have a positive impact on the reconstruction of major mandibular defects through the provision of accuracy difficult to achieve through manual placement of the graft, even in the hands of experienced surgeons. Although a reasonably high level of accuracy was achieved in the mandibular and fibula osteotomies through use of the surgical cutting guides, the limited ability to correctly contour the plate by hand to replicate the plate template is reflected in our findings.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:56:23 GMT+0000",
@@ -511,9 +511,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:56:30 GMT+0000",
@@ -525,8 +525,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:16 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:16 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -538,8 +538,8 @@
         "accPosId": 6,
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:57:10 GMT+0000",
           "text": "<p>Traumatic craniofacial injuries often present as difficult reconstructive challenges for maxillofacial surgeons. Reconstruction is often complicated by significant soft tissue loss, comminuted bony fragments, a tenuous blood supply, and wound contamination. For panfacial injuries, restoration of normal facial width, facial height, and sagittal projection may be difficult to achieve. Marked swelling may limit the surgeons' ability to palpate and recognize subtle bony defects and malunion. Furthermore, a true 3-dimensional assessment of bony alignment may not be possible with traditional surgical exposures to the craniofacial skeleton. This article builds on previous work that introduced the use of 3-dimensionally guided surgery for microvascular free-flap reconstruction of the craniofacial skeleton. Use of this technology improves the planning, timing, and overall precision of microvascular reconstructive surgery. Based on this experience, a similar approach to reconstructing patients with significant craniofacial trauma has been adopted.</p>\n",
           "jcr:lastModified": "Mon Apr 14 2025 20:57:17 GMT+0000",
@@ -548,9 +548,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Apr 14 2025 20:57:26 GMT+0000",
@@ -562,8 +562,8 @@
         },
         "cols": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Mon Apr 14 2025 20:58:45 GMT+0000",
           "jcr:lastModified": "Mon Apr 14 2025 20:58:45 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -572,16 +572,16 @@
     },
     "cols_986011794": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 21:07:06 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 21:07:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_1374854762": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Mon Apr 14 2025 21:04:59 GMT+0000",
@@ -591,8 +591,8 @@
     },
     "text_995385999_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Resources</span></h2>\n",
       "jcr:lastModified": "Wed Feb 19 2025 17:51:53 GMT+0000",
@@ -608,22 +608,22 @@
         "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/resources/us/cmf-ss-1_rev.-1_17455-vsp-recon-order-form.pdf",
         "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/resources/us/cmf-ss-3_rev.-none_14140-vsp-demo-web-meeting-form.pdf"
       ],
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:lastModified": "Fri Jun 13 2025 23:23:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_179930762": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Apr 14 2025 21:05:32 GMT+0000",
       "jcr:lastModified": "Mon Apr 14 2025 21:05:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_2138676435": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "related-products",
       "jcr:created": "Mon Apr 14 2025 21:10:40 GMT+0000",
@@ -633,8 +633,8 @@
     },
     "text_2090444076_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
       "jcr:lastModified": "Wed Feb 19 2025 17:52:12 GMT+0000",
@@ -643,7 +643,7 @@
     },
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:lastModified": "Tue Sep 02 2025 22:05:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
       "featuresCta": {
@@ -668,16 +668,16 @@
     },
     "cols_1170590838": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Jun 13 2025 23:20:13 GMT+0000",
       "jcr:lastModified": "Fri Jun 13 2025 23:20:13 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_1363094945": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "request-information",
       "jcr:created": "Fri Jun 13 2025 23:21:24 GMT+0000",
@@ -687,8 +687,8 @@
     },
     "text_1663437304_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
       "jcr:lastModified": "Wed Feb 19 2025 17:52:01 GMT+0000",
@@ -697,18 +697,18 @@
     },
     "cols_2080246039_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Mar 03 2025 23:45:48 GMT+0000",
       "jcr:lastModified": "Mon Mar 03 2025 23:45:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "marketoform_copy_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "3226",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -717,8 +717,8 @@
     },
     "cols_207364976_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Mon Mar 03 2025 23:46:21 GMT+0000",
       "jcr:lastModified": "Mon Mar 03 2025 23:46:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -726,7 +726,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Apr 09 2025 22:21:58 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -738,7 +738,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "openInNewWindow": true,
     "linkUrl": "https://cmf.stryker.com/products/vsp-reconstruction",
@@ -756,28 +756,28 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Apr 09 2025 22:21:33 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Apr 09 2025 22:21:49 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Apr 09 2025 22:38:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Fri Jun 13 2025 23:17:27 GMT+0000",
@@ -786,7 +786,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>VSP is a registered trademark of 3D Systems, Inc. </p>\r\n",
     "jcr:lastModified": "Tue Sep 02 2025 21:07:31 GMT+0000",

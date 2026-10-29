@@ -10,7 +10,7 @@
   "jcr:versionHistory": "593d102f-08c9-4591-affa-49f83a723af3",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "Procedural Oxygen Mask",
   "jcr:predecessors": [
     "f42fee10-f9af-4cbe-b6e7-a4e70240f0b1"
@@ -38,7 +38,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -48,8 +48,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 19:05:37 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 19:05:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -58,10 +58,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/products/procedural_oxygen_ma/header-carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/products/procedural-oxygen-ma/header-carousel/master",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "5",
           "jcr:created": "Thu Feb 19 2026 20:00:59 GMT+0000",
@@ -78,10 +78,10 @@
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "bottomPadding": "4",
-              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
               "leftPadding": "5",
               "topPadding": "5",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "hideComponent": "false",
               "rightMargin": "5",
               "topMargin": "5",
@@ -102,8 +102,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 18:49:29 GMT+0000",
       "text": "You and your patients can now breathe easier. POM offers an innovative oxygen‑delivery solution for procedures requiring sedation. Contact us POM Procedural Oxygen Mask® Safety. Simplicity. Innovation. All in the same breath. A) Nose clip Secures the mask to the patient’s face. B) Oral & nasal membrane access ports Allows an instrument (scope, tube or probe) to enter either a patient’s oral or nasal passage. C) Oxygen adaptor port Allows for the insertion of a medium or high O2 concentration adaptor to facilitate oxygen delivery. D) Exhalation valve A one-way flap that allows the patient’s exhalation to vent or exit the mask. The valve closes during inhalation. E) EtCO2 sampling port with tethered cap Allows for the secure attachment of the EtCO2 sampling line to facilitate EtCO2 monitoring. F) Head strap Adjusts to accommodate appropriate size. Innovative oxygen delivery for procedures requiring sedation* Monitoring POM doesn’t just deliver oxygen to patients, it also samples gases for monitoring. POM helps decrease severe and prolonged hypoxic episodes and in-case interruptions, delays, and cancellations.**1 Versatile POM is a versatile multi-port oxygen mask, designed to accommodate a wide range of scopes, probes, and tubes with ease. With its unique design, it allows for hassle-free insertion through the patient’s mouth or nose, all while maintaining optimal oxygen delivery. POM is engineered to maximize oxygen flow and provide respiratory rate monitoring for enhanced safety. Sizes POM is now available in three sizes: large (adult), medium, and small (pediatric). For more information on the models available, see the resources section below for the full part number guide.",
       "jcr:lastModified": "Thu Feb 19 2026 18:50:05 GMT+0000",
@@ -113,16 +113,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 18:58:03 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 18:58:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "request-more-information",
       "jcr:created": "Thu Feb 19 2026 19:33:09 GMT+0000",
@@ -132,8 +132,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 18:58:10 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 18:58:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -144,8 +144,8 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Feb 23 2026 19:08:14 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -155,8 +155,8 @@
         },
         "text_1321285659": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Thu Feb 19 2026 18:59:37 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\">How can we help you?</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Together, our goal is zero. Partner with us today to start your journey.</span></span></p>\n",
           "jcr:lastModified": "Thu Feb 19 2026 19:00:31 GMT+0000",
@@ -165,10 +165,10 @@
         },
         "marketoform": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3248",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Thu Feb 19 2026 18:59:01 GMT+0000",
           "useProduction": "true",
           "message": "Thank you!",
@@ -178,8 +178,8 @@
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Feb 23 2026 19:08:14 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -191,8 +191,8 @@
     },
     "section_title_492791545": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "learn-more",
       "jcr:created": "Thu Feb 19 2026 19:34:22 GMT+0000",
@@ -202,8 +202,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 18:59:37 GMT+0000",
       "text": "<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span style=\"color: #000000;\"><span style=\"color: #4c7d7a;\">Learn more</span></span></span></span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Supporting your journey towards standardized safe OR solutions.</span></span></span></p>\n",
       "jcr:lastModified": "Thu Feb 19 2026 19:36:32 GMT+0000",
@@ -212,7 +212,7 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "resources": [
         "/content/dam/stryker/surgical-technologies/products/procedural-oxygen-mask/resources/Neptune S and Procedural Oxygen Mask Brochure.pdf",
         "/content/dam/stryker/surgical-technologies/products/procedural-oxygen-mask/resources/Procedural Oxygen Mask Brochure.pdf",
@@ -220,23 +220,23 @@
         "/content/dam/stryker/surgical-technologies/products/procedural-oxygen-mask/resources/POM Mask and Accessories.pdf",
         "/content/dam/stryker/surgical-technologies/products/procedural-oxygen-mask/resources/POM Part Number Reference Guide.pdf"
       ],
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 19:30:15 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 19:42:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_1068320333": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 19:01:49 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 19:01:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 19:02:21 GMT+0000",
       "jcr:lastModified": "Thu Feb 19 2026 19:02:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -245,8 +245,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h2 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">See</span><span class=\"futura-bold\">&nbsp;related solutions</span></span></h2>\r\n",
@@ -277,8 +277,8 @@
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 19 2026 19:02:32 GMT+0000",
       "hideButton": "false",
       "jcr:lastModified": "Thu Feb 19 2026 19:02:55 GMT+0000",
@@ -300,7 +300,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">POM</span></span></span></p>\n<p>You and your patients can now breathe easier.</p>\n<p>We're bringing an innovative solution for oxygen delivery with procedures requiring sedation* into our best-in-class portfolio.&nbsp;Previously available via distributor, POM used to be an independent product. Now it’s surrounded by the resources of Stryker.<br>\n<br>\nPOM is a versatile multi-port oxygen mask, designed to accommodate a wide range of scopes, probes, and tubes with ease. With its unique design, it allows for hassle-free insertion through the patient's mouth or nose, all while maintaining optimal oxygen delivery. POM is engineered to maximize oxygen flow and provide respiratory rate monitoring for enhanced safety.</p>\n<p>For more information please contact&nbsp;<a href=\"mailto:POMsupport@stryker.com\">POMsupport@stryker.com</a><br>\n<br>\n&nbsp;</p>\n",
@@ -310,14 +310,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu Feb 19 2026 16:37:30 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Thu Feb 19 2026 16:38:35 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
@@ -325,7 +325,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu May 11 2023 18:45:47 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -334,7 +334,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu Feb 19 2026 16:37:22 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -346,14 +346,14 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu Feb 19 2026 16:37:34 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu Feb 19 2026 16:37:38 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"

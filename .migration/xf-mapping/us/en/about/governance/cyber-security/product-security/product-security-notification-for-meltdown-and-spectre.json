@@ -7,7 +7,7 @@
   "jcr:title": "Security advisories notification for Meltdown and Spectre vulnerabilities",
   "jcr:versionHistory": "c2f4c5a5-afa3-49c6-9ccc-7876bd65e4d7",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "0993d059-fa4d-4980-9649-82ac77ef6e0b"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Thu Jan 18 2018 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-Jan-2018",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>Stryker is monitoring the situation with the Meltdown and Spectre vulnerabilities and recognizes that some of our customers may be impacted.&nbsp; <b>We are not aware of any exploitation of these vulnerabilities on our products.&nbsp; If Stryker products are found to be affected, product-specific updates and information will be distributed directly to customers.&nbsp; &nbsp;</b></p>\n<p>Meltdown and Spectre are Side-Channel attack vulnerabilities that impact CPU hardware which could allow sensitive content from memory regions to be accessed if exploited. These security vulnerabilities have been globally reported as known issues with Intel, AMD and ARM chips and are not linked to specific individual products or implementations. The difficulty in exploiting these vulnerabilities is high, any attack would likely require local or physical access, and the vulnerabilities do not have the potential to corrupt, modify, or delete data.</p>\n<p>For additional technical details and indicators associated with these vulnerabilities, please review US-CERT Alert (TA18-004A).&nbsp; &nbsp;(<a href=\"https://www.us-cert.gov/ncas/alerts/TA18-004A\">https://www.us-cert.gov/ncas/alerts/TA18-004A</a>)<br>\nStryker is conducting a thorough review and investigation of the impact of these vulnerabilities to our products.&nbsp; As CPU manufacturers, hardware vendors and operating system developers publish updates, we are committed to ensuring these updates will be examined, tested and when appropriate, updates made available for affected Stryker products.&nbsp; We are following our procedures for testing and verification of any updates to our products to ensure they operate safely and securely prior to releasing.&nbsp; If you have questions or concerns, please contact your Stryker representative and/or productsecurity@stryker.com.</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Thu Jan 25 2018 13:20:27 GMT-0500",
     "sling:resourceType": "stryker/components/content/text",

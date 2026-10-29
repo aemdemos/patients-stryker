@@ -7,7 +7,7 @@
   "jcr:title": "1st Metatarso-phalangeal (MTP) Arthrodesis",
   "jcr:versionHistory": "a7bbbc7b-a289-4e1e-89e8-00605b5c32d1",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/1st-Metatarso-phalangeal--MTP--Arthrodesis/Images/Forefoot_Arthrodesis.jpg",
   "jcr:predecessors": [
     "9ee73aff-e8ca-44b5-8dbf-b1a7957460c1"
@@ -33,13 +33,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:08:44 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/1st-Metatarso-phalangeal--MTP--Arthrodesis/Images/Forefoot_Arthrodesis.jpg",
@@ -51,8 +51,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 15:58:06 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 15:58:06 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -61,8 +61,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 15:58:19 GMT-0400",
           "type": "typeId",
           "videoId": "y7wjU3lIS1k",
@@ -71,8 +71,8 @@
         },
         "curatedcta_522777303": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:00:11 GMT-0400",
           "jcr:lastModified": "Mon Jun 26 2017 16:00:11 GMT-0400",
           "sling:resourceType": "stryker/components/content/curatedcta"
@@ -84,10 +84,10 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Anchorage CP MTP plate - 1st metatarsophalangeal joint fusion",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "This video demonstrates a first metatarsophalangeal joint fusion utilizing the patented Anchorage CP technology, with the MTP plate. A first MTP arthrodesis can be performed in cases of arthritis (hallux rigidus) or deformity. The goal is to fuse (or permanently stiffen) the first metatarsal and proximal phalanx.",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Aug 07 2017 08:11:54 GMT-0400",
@@ -98,8 +98,8 @@
     },
     "cols2_1473802953": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 16:04:08 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 16:04:08 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -108,8 +108,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_1683": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:04:23 GMT-0400",
           "type": "typeId",
           "videoId": "yNViDALPxro",
@@ -123,10 +123,10 @@
         "curatedcta_1220530911": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Anchorage CP plating systems animation",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "The Anchorage CP Plating systems are single use bone fixation appliances intended to be permanently implanted. They are designed with different shape plates made of biocompatible titanium. The bone plate systems use either 3mm or 3.5mm screws. The drill holes of the plates are aligned to assure the screws do not touch. The plates vary essentially through different curvatures, lengths, number of plate holes and shape.",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Jun 26 2017 16:04:41 GMT-0400",
@@ -137,7 +137,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Mon Aug 07 2017 14:19:52 GMT-0400",
@@ -173,13 +173,13 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
     "jcr:lastModified": "Mon Jun 26 2017 16:57:10 GMT-0400",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
     "jcr:lastModified": "Tue Jun 27 2017 11:14:50 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [

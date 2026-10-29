@@ -7,7 +7,7 @@
   "jcr:title": "O.R. Safety Series: Protecting Patients from Retained Surgical Items",
   "jcr:versionHistory": "ee24b617-695c-4a36-956e-e032f1565837",
   "cq:template": "/apps/stryker/templates/event-detail",
-  "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+  "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "jcr:predecessors": [
     "15d7d560-0205-4de0-bb20-e2c8417fd673"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "a4a797ce-1787-40ba-b24c-29b6e01ab529",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "cq:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -38,7 +38,7 @@
     ],
     "eventContactEmail": "stephanie.eaton@stryker.com",
     "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/5316055622356/WN_zqfkDm7aQSyW5kzAE3PeYg",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "eventAudience": [
       "stryker:audience/nurses",
       "stryker:audience/or-professionals"

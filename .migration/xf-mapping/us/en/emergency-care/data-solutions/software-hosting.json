@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5954292e-8f4d-420f-8480-f00effe9b1c9",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "jcr:predecessors": [
     "4132b847-e9f2-4fff-90a5-8492765290e4"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "4b83a064-674e-490b-b5d0-264e2cc2a8ac",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "Software hosting",
   "noIndex": "true",
   "hero_parsys": {
@@ -49,8 +49,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Fri Aug 05 2022 16:17:36 GMT+0000",
       "gradientDirection": "left-to-right",

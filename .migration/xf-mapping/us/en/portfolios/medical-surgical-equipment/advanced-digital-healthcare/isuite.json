@@ -9,7 +9,7 @@
   "jcr:versionHistory": "42527aba-85c9-4ce4-9425-370ce897f0ef",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "iSuite",
   "jcr:predecessors": [
     "6008aaab-0dee-43aa-9c35-2361bfefe3bf"
@@ -31,14 +31,14 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Aug 01 2024 16:27:40 GMT+0000",
       "jcr:lastModified": "Thu Aug 01 2024 16:27:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -47,12 +47,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/portfolios/medical_and_surgical/advanced_digital_hea/connected_stories/slide-3/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/portfolios/medical-and-surgical/advanced-digital-hea/connected-stories/slide-3/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/portfolios/medical_and_surgical/advanced_digital_hea/connected_stories/slide-2-mobile/master",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/portfolios/medical-and-surgical/advanced-digital-hea/connected-stories/slide-2-mobile/master",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "50",
           "jcr:created": "Thu Aug 01 2024 16:27:48 GMT+0000",
@@ -67,8 +67,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "carolyn.lee@stryker.com",
-              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+              "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
               "jcr:created": "Thu Aug 01 2024 16:29:06 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-4vw\">iSuite<sup>®</sup></span></span></h1>\r\n",
@@ -86,8 +86,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideComponent": "false",
       "topMargin": "5",
       "jcr:created": "Thu Aug 01 2024 16:44:29 GMT+0000",
@@ -100,8 +100,8 @@
     },
     "curatedcta_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Thu Aug 01 2024 16:36:52 GMT+0000",
@@ -113,8 +113,8 @@
     },
     "text_642121543_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Aug 01 2024 16:41:24 GMT+0000",
       "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Thu Aug 01 2024 16:41:28 GMT+0000",
@@ -123,8 +123,8 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Aug 01 2024 16:51:35 GMT+0000",
       "jcr:lastModified": "Thu Aug 01 2024 16:51:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"

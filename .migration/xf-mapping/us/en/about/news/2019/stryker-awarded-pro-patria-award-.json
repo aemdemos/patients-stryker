@@ -7,7 +7,7 @@
   "jcr:title": "Stryker receives Pro Patria Award ",
   "jcr:versionHistory": "bed0169b-afe5-4da9-974a-09bfd3fe451b",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "69f5d757-5321-45ac-aa2d-a289ba889bc8"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "3e050393-ed44-4076-8f69-55edf3513f94",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Wed Apr 24 2019 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Apr-2019",
@@ -41,14 +41,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/Pro Patria 2019.jpg",
     "jcr:lastModified": "Wed Apr 24 2019 19:09:17 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>The Michigan Committee for Employer Support of the Guard and Reserve (ESGR) recently awarded Stryker with the esteemed Pro Patria Award, the highest award given by an ESGR State Committee. Kenzi Pridgeon, who is a first officer on Stryker’s aviation team and also a Captain in the Michigan Air National Guard, 110th Wing in Battle Creek, accepted the honor along with her colleagues Tom Noonan and Mike Thomas on the company’s behalf. Kenzi nominated Stryker for the award which recognizes employers who provide exceptional support for their employees who serve in the Guard and Reserve through their leadership and practices. Kenzi’s supervisor, Ken Maciejewski, and the rest of the Stryker aviation team are honored to support Kenzi as she serves.<br>\n</p>\n",
     "jcr:lastModified": "Mon Apr 29 2019 16:04:55 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -56,7 +56,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "jcr:lastModified": "Wed Apr 24 2019 19:24:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },

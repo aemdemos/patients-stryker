@@ -9,7 +9,7 @@
   "jcr:versionHistory": "94ba4f67-01da-4564-8e3b-061cd5a14d1a",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "e71eccfe-9ada-4dab-b87f-53234c98b177"
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -44,7 +44,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Tue Apr 01 2025 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Apr-2025",
@@ -53,7 +53,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "alt": "Stryker",
     "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
@@ -64,7 +64,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "text": "<p><span style=\"font-family: &quot;Cambria&quot;,serif;\">Stryker (NYSE: SYK), a global leader in medical technologies, announced today that it has completed the sale of its U.S. spinal implants business to Viscogliosi Brothers, LLC, as part of the newly formed company VB Spine, LLC.</span></p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2025/Stryker-completes-sale-of-U-S--spinal-implants-business/default.aspx\"><span class=\"standalone-link\">Read full press release here</span></a></p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed Apr 02 2025 03:19:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

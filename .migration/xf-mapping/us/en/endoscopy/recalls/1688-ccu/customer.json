@@ -7,7 +7,7 @@
   "jcr:title": "Customer",
   "jcr:versionHistory": "ceee61a6-1e6a-4f28-975a-27fe3e54621c",
   "cq:template": "/apps/stryker/templates/base",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "1cf09d45-f3fb-49ff-8203-575678bb7b4c"
   ],
@@ -22,17 +22,17 @@
   "jcr:uuid": "3b8ac7b6-fb44-414d-9a33-19ebb52147a6",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "noIndex": "true",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "adobesignwebform_cop_240971291": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
       "widgetID": "CBFCIBAA3AAABLblqZhBDQelW4lC7P4DJ6beEKN62rohP9oiQNzVF4jnbSQGTdtmrcpZOh3tGIm8Rhazmo00",
       "minwidth": "100%",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Thu May 05 2022 16:07:35 GMT+0000",
       "minheight": "500px",
       "jcr:lastModified": "Fri May 06 2022 22:24:11 GMT+0000",

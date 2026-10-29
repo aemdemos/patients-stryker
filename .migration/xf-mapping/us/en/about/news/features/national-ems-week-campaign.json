@@ -7,7 +7,7 @@
   "jcr:title": "National EMS Week",
   "jcr:versionHistory": "80585dbc-5da6-40f5-b276-6679ae93fab6",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "277e8ba0-4f5d-431a-b2ad-0f213a0039f3"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "0b08cf24-f13b-4c48-bcfe-5059904a9830",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon May 18 2020 14:12:46 GMT+0000",
       "jcr:lastModified": "Mon May 18 2020 14:12:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon May 18 2020 14:12:50 GMT+0000",
           "type": "typeId",
           "videoId": "_PWKziVYJnY",
@@ -56,8 +56,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon May 18 2020 14:18:27 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-2vw\">Emergency care workers shine a light on even the darkest days. Thank you for fighting, for caring and for inspiring hope.</span>",
@@ -71,8 +71,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon May 18 2020 14:13:40 GMT+0000",
           "text": "<p><a href=\"https://www.stryker.com/us/en/emergency-care.html\"><span class=\"standalone-link\">Learn more about Emergency Care</span></a><br>\n</p>\n",
           "jcr:lastModified": "Mon May 18 2020 14:18:56 GMT+0000",
@@ -84,7 +84,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon May 18 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-May-2020",

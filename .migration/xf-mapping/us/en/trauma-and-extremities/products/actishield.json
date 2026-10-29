@@ -8,7 +8,7 @@
   "jcr:title": "ActiShield",
   "jcr:versionHistory": "b942314f-8cb9-4dc7-9421-6465e76d8353",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "6ae1b227-1c9b-4911-b0a9-3eba86a882a9"
   ],
@@ -36,13 +36,13 @@
   "jcr:uuid": "e9144f07-1d82-4038-bf4d-bea00ed3c474",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Fri Feb 18 2022 19:11:39 GMT+0000",
@@ -59,7 +59,7 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Fri May 20 2022 14:46:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -70,7 +70,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Wound Adherence:</span></span><br>\nNaturally wicks to the wound bed or site of repair</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Variation:</span></span><br>\nAvailable in two membrane forms and thicknesses. ActiShieldis a chorion-based membrane, while ActiShieldCF offers an amnion only membrane. Both offering no side-specific orientation for implantation.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Processing:</span></span><br>\nProprietary HydraTekTechnology, a unique and state of the art process that preserves key elements of native human amniotic tissue.*</p>\n<ul>\n<li>Ideal handling, both dry and wet*<br>\n</li>\n<li>Adheres well without sutures*<br>\n</li>\n<li>Easy to apply topically and internally*<br>\n</li>\n<li>Creates no additional bulk at the site*<br>\n</li>\n<li>5-year shelf life at ambient temperature<br>\n</li>\n</ul>\n",
     "jcr:lastModified": "Thu Mar 03 2022 18:59:26 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -78,7 +78,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>&nbsp;*Data on file at Human Regenerative Technologies, LLC<br>\r\n</p>\r\n",
     "jcr:lastModified": "Fri Feb 18 2022 19:11:00 GMT+0000",

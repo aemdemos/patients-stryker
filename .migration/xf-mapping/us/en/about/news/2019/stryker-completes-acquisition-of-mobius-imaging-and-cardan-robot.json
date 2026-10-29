@@ -7,7 +7,7 @@
   "jcr:title": "Stryker completes acquisition of Mobius Imaging and Cardan Robotics",
   "jcr:versionHistory": "0fb04088-11df-4816-a490-06216b35805d",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "efd6523c-6c6e-4667-9f39-f4ead815addb"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "0c73129d-97e2-4230-8975-af19eedc25a1",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Oct 21 2019 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Oct-2019",
@@ -42,7 +42,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>Stryker (NYSE: SYK) announced today it has completed the acquisition of Mobius Imaging, LLC, a leader in point-of-care imaging technology, and its sister company, GYS Tech, LLC (DBA Cardan Robotics).</p>\n<p>“Mobius Imaging and Cardan Robotics bring expertise in advanced imaging and robotics, as well as a robust product pipeline, that will provide Stryker the opportunity to increase its presence in Orthopaedics, Spine and Neurotechnology,” said Spencer Stiles, Stryker’s Group President, Orthopaedics and Spine. “With this acquisition, we are positioned to make healthcare better by providing more complete procedural solutions, including sales, service, and support. We remain committed to our surgeons and helping them achieve the best possible outcomes for their patients.”</p>\n<p><span class=\"standalone-link\"><a href=\"https://investors.stryker.com/press-releases/news-details/2019/Stryker-completes-acquisition-of-Mobius-Imaging-and-Cardan-Robotics/default.aspx\">Read full press release here</a></span></p>\n",
     "jcr:lastModified": "Tue Oct 22 2019 18:32:43 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -50,14 +50,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/stryker_logo2015_left.jpg",
     "jcr:lastModified": "Tue Oct 22 2019 17:25:12 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "eventlocationproperties": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "jcr:lastModified": "Tue Oct 22 2019 17:35:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/eventlocationproperties"
   },

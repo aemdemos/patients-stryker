@@ -9,7 +9,7 @@
   "jcr:versionHistory": "b6cd01a5-6b04-4293-afe4-182d6ce0ca20",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
   "thumbnailAltText": "QOSMIC_Double_Pad_3Q_R",
   "jcr:predecessors": [
     "d89a3221-ae25-4813-a5d1-ac1059cd9d10"
@@ -39,14 +39,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Mar 15 2024 13:55:53 GMT+0000",
       "jcr:lastModified": "Fri Mar 15 2024 13:55:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -55,10 +55,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/neurosurgical/en/products/qosmic_led_headlight/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurosurgical/en/products/qosmic-led-headlight/carousel/master",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "45",
           "jcr:created": "Fri Mar 15 2024 13:55:59 GMT+0000",
@@ -74,8 +74,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
               "jcr:created": "Fri Mar 15 2024 13:56:17 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Qosmic<sup>®&nbsp;</sup></span></span><span class=\"urw-egyptienne\"><span style=\"color: rgb(255,255,255);\">LED Headlight</span></span></span>",
@@ -98,24 +98,24 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Apr 16 2024 13:04:33 GMT+0000",
       "jcr:lastModified": "Tue Apr 16 2024 13:04:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols_1031547791": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Apr 22 2024 14:00:50 GMT+0000",
       "jcr:lastModified": "Mon Apr 22 2024 14:00:50 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Apr 05 2024 18:31:18 GMT+0000",
       "text": "A new stratosphere of quality Qosmic LED Headlight DRO (Double Ratchet with Occipital Pad) Qosmic LED Headlight SRO (Single Ratchet with Occipital Pad) Incredible brightness intensity. Lightweight comfort. Precise and comfortable adjustments. Battery packs that last for hours.1 It’s what surgeons asked for. And it’s what we’re delivering with the Qosmic LED Headlight. Contact Us Weighted in your favor Based on surgeon input, these headlights were designed for comfort and long-term wear in the OR. By choosing premium padding and head strap features, we created a more balanced-feeling headlight for a just-right, shake-free experience during your most important work. Lamp Headband Total Battery pack 3.8oz DRO 6.5oz DRO 10.3oz 9oz DR 6.1oz DR 9.9oz SRO 4.6oz SRO 8.4oz SR 4.1oz SR 7.9oz A beam come true Qosmic’s new optical design generates a bright white uniformed spot of 90,000+ LUX measured at 16 inches away. This consistent, intense beam of light provides color and spot performance that remains unchanged from the center to the edge. The result is our biggest sharpest beam ever with a cleaner edge around its entire circumference. A battery that takes charge Our Qosmic battery pack lasts for hours on end and clips to surgeons easily, so you’re never tethered to a power source. Each kit includes two batteries for convenient back-up coverage. The blue variable control buttons (-/+) adjust the brightness intensity. The green indicator lights on top of the battery track the 13 intensity levels. Audible beeps will also indicate changes in intensity levels during adjustment. Qosmic battery run time 4+ hours in the highest intensity setting. Lowering the intensity setting will extend the life of the battery. Low power alert at <10% life with an audible beep and flashing red indicator lights. NOTE: The Qosmic LED Headlight only works with the Qosmic Battery Pack. Packing light Safely store surgical headlights in your choice of a sturdy composite case or a convenient wall hanging drawstring bag. Each kit includes: Qosmic LED Headlight Carrying case 2 twist cables 2 battery packs 1 dual charging station(power cord included) 1 battery belt",
       "jcr:lastModified": "Fri Apr 05 2024 18:31:38 GMT+0000",
@@ -129,15 +129,15 @@
         "/content/dam/commercial/usa/neurosurgical/headlights/NS-QOS-BROC-995561-EN_US.pdf",
         "/content/dam/commercial/usa/neurosurgical/headlights/NS-QOS-BROC-995595-EN_US.pdf"
       ],
-      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
       "title": "Resources and downloads",
       "jcr:lastModified": "Mon May 20 2024 17:19:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "deepLinkingId": "contact-us",
       "jcr:created": "Tue Apr 23 2024 13:06:31 GMT+0000",
       "title": "Contact us",
@@ -146,8 +146,8 @@
     },
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Tue Dec 26 2023 19:41:37 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -158,8 +158,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Tue Mar 05 2024 13:33:40 GMT+0000",
       "jcr:lastModified": "Tue Mar 05 2024 13:33:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -168,10 +168,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3071",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Dec 26 2023 20:34:19 GMT+0000",
           "useProduction": "true",
           "message": "Thank you!",
@@ -182,16 +182,16 @@
     },
     "cols_1595725936": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Apr 22 2024 13:59:17 GMT+0000",
       "jcr:lastModified": "Mon Apr 22 2024 13:59:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "tagcrumb": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Mar 15 2024 13:59:05 GMT+0000",
       "jcr:lastModified": "Fri Mar 15 2024 13:59:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -203,7 +203,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Mar 15 2024 13:59:13 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -215,7 +215,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Fri Mar 15 2024 13:59:17 GMT+0000",
@@ -224,14 +224,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Mar 15 2024 13:59:21 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Mar 15 2024 13:59:25 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -240,14 +240,14 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Mar 15 2024 13:59:29 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Testing performed by Enova. Data on file at Enova.</p>\r\n",
     "jcr:lastModified": "Fri Apr 05 2024 19:07:05 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5591eee7-205e-4a19-b62b-4fabdb16ac8a",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "e73982c0-620d-4744-8ebf-85f9e8be6fb3"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed Feb 19 2025 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Feb-2025",
@@ -49,7 +49,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>Stryker (NYSE: SYK), a global leader in medical technologies, announced today that it has completed the acquisition of Inari Medical, Inc. (NASDAQ: NARI), a company that provides innovative solutions for venous thromboembolism (VTE) clot removal without the use of thrombolytic drugs. The addition of Inari brings an established peripheral vascular position to Stryker in the fast-growing VTE segment.</p>\n<p>“The acquisition of Inari Medical marks a significant milestone in expanding our interventional endovascular portfolio,” said Kevin Lobo, Chair and Chief Executive Officer, Stryker. “We look forward to welcoming the talented Inari team to Stryker and working together to improve outcomes for patients worldwide.”</p>\n<p><span class=\"standalone-link\"><a href=\"https://investors.stryker.com/press-releases/news-details/2025/Stryker-completes-acquisition-of-Inari-Medical-Inc.-providing-entry-into-the-high-growth-peripheral-vascular-segment/default.aspx\">READ FULL PRESS RELEASE HERE</a></span></p>\n",
     "jcr:lastModified": "Wed Feb 19 2025 16:20:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -61,7 +61,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "stryker_logo2015_left",
     "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",

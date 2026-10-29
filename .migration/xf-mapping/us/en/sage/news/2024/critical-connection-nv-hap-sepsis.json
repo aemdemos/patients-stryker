@@ -9,7 +9,7 @@
   "jcr:versionHistory": "674070a9-4683-480e-ae36-8a240fe15ae0",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Patient with non-ventilator associated hospital acquired pneumonia",
   "jcr:predecessors": [
     "efae700f-ee38-48e7-922c-dd921d41502b"
@@ -34,15 +34,15 @@
   "jcr:uuid": "f4eb3465-bcc5-4f2c-82f6-1c89db48a821",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "The critical connection between NV-HAP and sepsis",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Mon Sep 23 2024 20:09:04 GMT+0000",
       "alt": "Medical illustration of pneumonia in the lungs",
@@ -54,8 +54,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Mon Sep 23 2024 20:09:00 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><i>1-minute read</i></span></p>\n<p><span class=\"fontsize-1-25em\"><b>Jo Ann Brooks, PhD, RN, FAAN, FCCP</b></span></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Unsuspecting bedfellows: Sepsis and Nonventilator Hospital-Acquired Pneumonia</span></span></h2>\n<h3><span class=\"fontsize-1-25em\">Infection Control Today explores the importance of NV-HAP and sepsis prevention</span></h3>\n<p><span class=\"fontsize-1-25em\">Sepsis is a major healthcare challenge, responsible for hundreds of thousands of deaths each year and significant financial strain. While it receives much attention, nonventilator hospital-acquired pneumonia (NV-HAP) is a less recognized but equally serious issue. NV-HAP leads to high rates of morbidity and mortality, yet it lacks national mandates for prevention and reporting, creating an urgent need for greater awareness and action.</span></p>\n<h3><span class=\"fontsize-1-25em\">Patient oral care and the overlooked connection between NV-HAP and&nbsp;sepsis</span></h3>\n<p><span class=\"fontsize-1-25em\">Studies reveal a strong connection between NV-HAP and sepsis, with a significant number of sepsis cases developing from NV-HAP. This underscores the importance of patient oral care to help address some of the risk factors of NV-HAP as part of a comprehensive strategy to reduce sepsis rates and improve patient outcomes.</span></p>\n<p><span class=\"fontsize-1-25em\">For more details on this critical relationship and its implications for healthcare, read the full article <a href=\"https://www.infectioncontroltoday.com/view/unsuspecting-bedfellows-sepsis-nonventilator-hospital-acquired-pneumonia\" target=\"_blank\">here</a>.</span></p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Mon Sep 23 2024 20:18:33 GMT+0000",
@@ -64,8 +64,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Mon Sep 23 2024 20:15:08 GMT+0000",
       "title": "Learn more about NV-HAP",
       "jcr:lastModified": "Mon Sep 23 2024 20:16:58 GMT+0000",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Wed Sep 25 2024 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Sep-2024",
@@ -98,7 +98,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Jo Ann Brooks, PhD, RN, FAAN, FCCP is a paid consultant of Stryker. The data included in this presentation was collected by the author of this presentation. The opinions expressed are those of Jo Ann Brooks, PhD, RN, FAAN, FCCP and are not necessarily those of Stryker. Individual results may vary.</p>\r\n<p><b>Reference:&nbsp;</b></p>\r\n<p><b>1. </b>Brooks JA, Unsuspecting Bedfellows: Sepsis and Nonventilator Hospital-Acquired Pneumonia, Infection Control Today, May 6, 2024. Available at: https://www.infectioncontroltoday.com/view/unsuspecting-bedfellows-sepsis-nonventilator-hospital-acquired-pneumonia. Accessed: August 12, 2024.</p>\r\n",
     "jcr:lastModified": "Mon Sep 23 2024 20:12:10 GMT+0000",

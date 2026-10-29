@@ -9,7 +9,7 @@
   "jcr:versionHistory": "ea6579d9-7d29-46c2-ab16-f91e312d739b",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailAltText": "kevin and liz claman fox business 2",
   "jcr:predecessors": [
     "2675143f-15dc-4760-a6c8-471d4b6b8b0d"
@@ -30,14 +30,14 @@
   "jcr:uuid": "035ecb9f-7f53-4cf2-9925-6f1b9884fccf",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Feb 08 2023 21:42:51 GMT+0000",
       "jcr:lastModified": "Wed Feb 08 2023 21:42:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Feb 08 2023 21:42:56 GMT+0000",
           "alt": "Kevin and Liz Claman Fox Business",
@@ -63,8 +63,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Feb 08 2023 21:43:15 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Stryker Chair and CEO, Kevin Lobo, discusses our return to pre-pandemic growth with Liz Claman, and how our innovations – driven by AI-enabled digital technology – will continue improving the lives of our customers and their patients in 2023 and beyond.</span></span></p>\n",
           "jcr:lastModified": "Wed Feb 08 2023 21:43:52 GMT+0000",
@@ -73,9 +73,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Wed Feb 08 2023 21:43:57 GMT+0000",
@@ -90,7 +90,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Wed Feb 08 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-Feb-2023",

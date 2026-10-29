@@ -10,7 +10,7 @@
   "jcr:versionHistory": "9144c0c1-6886-4f55-83b9-baae196add3c",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/prochondrix-cr/ProChondrix-image.png",
   "jcr:predecessors": [
     "e8d2fc8c-55a3-434a-8c64-27386c31975a"
@@ -43,13 +43,13 @@
   "jcr:uuid": "7bc5b484-5f7a-4ead-bbb0-866b84a777a9",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Fri Feb 02 2018 09:56:06 GMT-0500",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/prochondrix-cr/ProChondrix-image.png",
@@ -70,7 +70,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1827917918",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Tue Nov 29 2022 20:40:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -79,7 +79,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>ProChondrix CR Cryopreserved Fresh Osteochondral Allograft<br>\r\n</p>\r\n",
     "shortDescTop": "<p>ProChondrix CR is a cryopreserved, fresh osteochondral allograft that contains live cells and other biological components for the repair of damaged cartilage tissues.<sup>1</sup></p>\r\n<p>ProChondrix CR can be used in a variety of orthopedic reconstructive procedures to aid in the repair of articular cartilage.<sup>2</sup></p>\r\n",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "jcr:lastModified": "Tue Feb 27 2018 08:56:30 GMT-0500",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -108,7 +108,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>Delaney, R, Barrett, C, Stevens, P. AlloSource, Centennial, CO. ProChondrix Cartilage Restoration Matrix Contains Growth Factors Necessary for Hyaline Cartilage Regeneration.</li>\r\n<li>ProChondrix CR Package Insert M1S2662.01</li>\r\n</ol>\r\n<p>AGFT-AWI-1, 02-2018</p>\r\n",
     "jcr:lastModified": "Tue Feb 27 2018 08:56:42 GMT-0500",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5efcc320-1304-4c43-afd3-473309ae48c2",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "Derrick Mosley sudden cardiac arrest survivor",
   "jcr:predecessors": [
     "87620624-0671-4238-9bd6-d6ad3e842441"
@@ -32,15 +32,15 @@
   "jcr:uuid": "3aa0afd8-2d01-47f5-a18b-78d8ada24553",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "description": "After going on a morning run, Derrick began to feel some chest discomfort. His wife, Melissa, a healthcare professional trained in resuscitation, quickly recognized the warning signs of a sudden cardiac arrest. Although he wasn’t having a heart attack, she knew there was no time to wait. On the way to the hospital, Derrick started turning red and became unresponsive. Melissa immediately pulled the car to the side of the road and began administering CPR. Luckily, an off-duty firefighter pulled over from traffic and began assisting. Soon EMS and Fire/Rescue units arrived to apply a LUCAS device. \r\n\r\n\r\nWatch this video to hear Derrick's story. \r\n",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -53,7 +53,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/stories/Survivor Derrick Mosely.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Survivor Derrick Mosely-AVS",
         "urlModifiers": "",
@@ -69,16 +69,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:41:48 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:41:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:42:17 GMT+0000",
@@ -102,7 +102,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Mon Oct 02 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-Oct-2023",

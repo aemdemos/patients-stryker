@@ -9,7 +9,7 @@
   "jcr:versionHistory": "abd32b94-ef7c-4c91-8b13-3f4ff2a9934f",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "StrykerTalks.Pierce",
   "jcr:predecessors": [
     "196c4b72-6ddd-46bb-8c26-efeb3d984267"
@@ -30,14 +30,14 @@
   "jcr:uuid": "1397961d-062f-4b2b-ae42-46af6a67f4f6",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Mar 14 2022 19:47:40 GMT+0000",
       "jcr:lastModified": "Mon Mar 14 2022 19:47:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -47,10 +47,10 @@
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "5",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "leftPadding": "5",
           "topPadding": "5",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Mar 14 2022 19:51:05 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h2><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Andy Pierce, our Group President of MedSurg and Neurotechnology, joins the StrykerTalks podcast series to share how our divisions collaborate to continue innovating for our customers and their patients into 2023.</span></span></h2>\r\n",
@@ -69,8 +69,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_386675570": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Jun 06 2022 13:34:47 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -83,7 +83,7 @@
             "fileReference": "/content/dam/stryker/about/news/2022/stryker’s-pierce-highlights-how-we-continue-innovating-toward-safer-care,-better-outcomes/StrykerTalksPierce.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/StrykerTalksPierce-AVS",
             "urlModifiers": "",
@@ -97,8 +97,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Tue Apr 12 2022 17:06:21 GMT+0000",
           "text": "<p><span class=\"fontsize-8em\">Products may not be available in all markets. Product availability is subject to the regulatory and/or medical practices in individual markets.</span></p>\n",
           "jcr:lastModified": "Fri Dec 16 2022 14:56:15 GMT+0000",
@@ -110,7 +110,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Mon Dec 19 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "19-Dec-2022",
@@ -119,7 +119,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Fri Dec 16 2022 14:53:54 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "85fa926e-610f-457c-9523-f33f1360050e",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Precision-knee-Thumbnail",
   "jcr:predecessors": [
     "a7aef01e-812f-473e-8aad-b5faad9f798c"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -51,7 +51,7 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
     "jcr:lastModified": "Mon May 06 2024 17:50:20 GMT+0000",
@@ -61,59 +61,59 @@
       "true",
       "true"
     ],
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Mon May 06 2024 17:50:25 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "backgroundColor": "rgba(255,255,255,1)",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
     "jcr:lastModified": "Mon May 06 2024 17:50:29 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
     "jcr:lastModified": "Mon May 06 2024 17:50:33 GMT+0000",
     "linkNewWindowOverride": "0",
     "linkType": "none",
     "sling:resourceType": "stryker/components/content/secondarycta",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
     "jcr:lastModified": "Mon May 06 2024 17:50:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
   },
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -123,14 +123,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:15:19 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:15:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
       "backgroundColor": "rgba(89,75,97,1)",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "fbleedparsys": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -138,19 +138,19 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 21:03:26 GMT+0000",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "col2": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -158,14 +158,14 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "standaloneimage": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
-              "jcr:createdBy": "cathy.lapico@stryker.com",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "preset": "max_width_png",
               "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:16:02 GMT+0000",
@@ -174,7 +174,7 @@
               "borderColor": "rgba(76,125,122,1)",
               "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
               "sling:resourceType": "stryker/components/content/standaloneimage",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
               "enableBorder": "false"
             }
           },
@@ -185,15 +185,15 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
-              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
               "topPadding": "10",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:15:59 GMT+0000",
@@ -202,7 +202,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           }
         }
@@ -213,13 +213,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:19:26 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:19:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "col1": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -227,14 +227,14 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "hideComponent": "false",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:19:31 GMT+0000",
@@ -243,7 +243,7 @@
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
           "textIsRich": "true",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "col2": {
@@ -253,14 +253,14 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "preset": "max_width_1440",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:19:34 GMT+0000",
@@ -269,7 +269,7 @@
           "borderColor": "rgba(76,125,122,1)",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/standaloneimage",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "enableBorder": "false"
         }
       }
@@ -279,26 +279,26 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:22:29 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:22:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
     },
     "cols2_1621758606_cop": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:22:32 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:22:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "col2": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -306,15 +306,15 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
           "topPadding": "10",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "hideComponent": "false",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:22:37 GMT+0000",
@@ -323,7 +323,7 @@
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
           "textIsRich": "true",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "col1": {
@@ -333,14 +333,14 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "preset": "max_width_1440",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:24:47 GMT+0000",
@@ -349,7 +349,7 @@
           "borderColor": "rgba(76,125,122,1)",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/standaloneimage",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "enableBorder": "false"
         }
       }
@@ -359,14 +359,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:30:34 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:30:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
       "backgroundColor": "rgba(237,238,236,1)",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "fbleedparsys": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -374,19 +374,19 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:36:23 GMT+0000",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "col1": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -394,15 +394,15 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
-              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
               "topPadding": "10",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:36:30 GMT+0000",
@@ -411,7 +411,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           }
         },
@@ -420,8 +420,8 @@
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "preset": "max_width_png",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:34:59 GMT+0000",
@@ -430,7 +430,7 @@
           "borderColor": "rgba(76,125,122,1)",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/standaloneimage",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "enableBorder": "false"
         },
         "cols3": {
@@ -438,13 +438,13 @@
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:34:49 GMT+0000",
           "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "col1": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -452,15 +452,15 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:35:47 GMT+0000",
@@ -469,7 +469,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           },
           "col2": {
@@ -479,15 +479,15 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:28 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:35:49 GMT+0000",
@@ -496,7 +496,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:28 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           },
           "col3": {
@@ -506,15 +506,15 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:35:52 GMT+0000",
@@ -523,7 +523,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           }
         }
@@ -534,13 +534,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:40:59 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:40:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "col1": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -548,14 +548,14 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 21:01:14 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -567,15 +567,15 @@
             "true",
             "true"
           ],
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "preset": "max_width_1440",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Mon Feb 20 2023 19:35:58 GMT+0000",
@@ -584,7 +584,7 @@
           "borderColor": "rgba(76,125,122,1)",
           "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/standaloneimage",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "enableBorder": "false"
         },
         "text": {
@@ -592,15 +592,15 @@
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:42:05 GMT+0000",
           "text": "<p>Intra-op assessment of varus/valgus deformity, laxity and alignment; range of motion; and knee joint stability.</p>\n",
           "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
           "textIsRich": "true",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "col2": {
@@ -610,15 +610,15 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
           "topPadding": "20",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "hideComponent": "false",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:41:10 GMT+0000",
@@ -627,7 +627,7 @@
           "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
           "textIsRich": "true",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     },
@@ -636,14 +636,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:46:46 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 20:46:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
       "backgroundColor": "rgba(89,75,97,1)",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "fbleedparsys": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -651,15 +651,15 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:47:15 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -671,20 +671,20 @@
             "true",
             "true"
           ],
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "cols3": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Fri Feb 17 2023 20:47:19 GMT+0000",
           "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "col1": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -692,16 +692,16 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
               "topPadding": "5",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:48:17 GMT+0000",
@@ -710,7 +710,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           },
           "col2": {
@@ -720,16 +720,16 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text_copy": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
               "topPadding": "5",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:48:17 GMT+0000",
@@ -738,7 +738,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           },
           "col3": {
@@ -748,16 +748,16 @@
             ],
             "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
             "sling:resourceType": "wcm/foundation/components/parsys",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
             "text_copy": {
               "jcr:primaryType": "nt:unstructured",
               "jcr:mixinTypes": [
                 "cq:LiveRelationship"
               ],
               "bottomPadding": "10",
-              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:createdBy": "user-4162137458@example.invalid",
               "topPadding": "5",
-              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "user-4162137458@example.invalid",
               "hideComponent": "false",
               "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
               "jcr:created": "Fri Feb 17 2023 20:48:17 GMT+0000",
@@ -766,7 +766,7 @@
               "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
               "sling:resourceType": "stryker/components/content/text",
               "textIsRich": "true",
-              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+              "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
             }
           }
         }
@@ -774,8 +774,8 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "jcr:created": "Fri Feb 17 2023 20:52:05 GMT+0000",
       "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -785,21 +785,21 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
       "jcr:created": "Fri Feb 17 2023 20:52:16 GMT+0000",
       "title": "Related products",
       "jcr:lastModified": "Fri Feb 17 2023 20:53:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "featuresCta": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "1": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -807,7 +807,7 @@
           ],
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "2": {
           "jcr:primaryType": "nt:unstructured",
@@ -816,7 +816,7 @@
           ],
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-express-knee",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "3": {
           "jcr:primaryType": "nt:unstructured",
@@ -825,7 +825,7 @@
           ],
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     },
@@ -834,13 +834,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "cathy.lapico@stryker.com",
-      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:createdBy": "user-4162137458@example.invalid",
+      "jcr:lastModifiedBy": "user-4162137458@example.invalid",
       "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
       "jcr:created": "Mon Feb 20 2023 15:49:42 GMT+0000",
       "jcr:lastModified": "Mon Feb 20 2023 15:49:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "col1": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -848,15 +848,15 @@
         ],
         "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:createdBy": "user-4162137458@example.invalid",
           "topPadding": "5",
-          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "user-4162137458@example.invalid",
           "hideComponent": "false",
           "cq:lastRolledout": "Mon May 06 2024 18:07:29 GMT+0000",
           "jcr:created": "Mon Feb 20 2023 15:49:46 GMT+0000",
@@ -865,22 +865,22 @@
           "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/text",
           "textIsRich": "true",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Aug 12 2024 20:18:25 GMT+0000",
       "jcr:lastModified": "Mon Aug 12 2024 20:18:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "deepLinkingId": "contact",
       "jcr:created": "Mon Aug 12 2024 20:06:31 GMT+0000",
       "title": "Contact us",
@@ -889,8 +889,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Aug 12 2024 20:06:19 GMT+0000",
       "jcr:lastModified": "Mon Aug 12 2024 20:06:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -899,10 +899,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3022",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Aug 12 2024 20:03:26 GMT+0000",
           "useProduction": "true",
           "message": "Thank you!",
@@ -914,7 +914,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Siddiqui, Z. (2016) US Market Analysis for Surgical Navigation Systems. Millennium Research Group.</li>\r\n<li>Anderson, K. et al. (2005) Computer navigation in total knee arthroplasty comparison with conventional methods. The Journal of Arthroplasty, Vol. 20 No. 7 Suppl. 3.</li>\r\n<li>Parratte, S. et al. (2010) Effect of postoperative mechanical axis alignment on the fifteen-year survival of modern cemented total knee replacements. J Bone Joint Surg. Am, 92:2143-2149.</li>\r\n<li>Choong, P. et al. (2009) Does Accurate Anatomical Alignment Result in Better Function and Quality of Life? Comparing Conventional and Computer-Assisted Total Knee Arthroplasty. The Journal of Arthroplasty, Vol. 24 No. 4.</li>\r\n<li>Lee, JH. et al. (2015) Risk of Femoral Anterior Notching in Navigated Total knee Arthroplasty. Clinics in orthopedic surgery, 7(2), 217-224. https://doi.org/10.4055/cios.2015.7.2.217</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon May 06 2024 18:07:29 GMT+0000",

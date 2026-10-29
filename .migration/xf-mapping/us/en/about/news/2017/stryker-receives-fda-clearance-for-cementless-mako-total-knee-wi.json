@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Receives FDA Clearance for Cementless Mako Total Knee with Triathlon® Tritanium®",
   "jcr:versionHistory": "f0241a15-d906-4833-9c1d-9c7edd074f11",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+  "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/about/news/images/Mako 10_16_17 thumbnail.png",
   "jcr:predecessors": [
     "2d53c385-3bfc-4a4d-8e65-6e66febf3483"
@@ -29,14 +29,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Michelle.Covello@stryker.com",
+  "cq:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "publishDate": "Mon Oct 16 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-Oct-2017",
@@ -45,14 +45,14 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/Mako 10_16_17.png",
     "jcr:lastModified": "Mon Oct 16 2017 09:12:16 GMT-0400",
     "sling:resourceType": "stryker/components/content/standaloneimage"
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "text": "<h4><b>New Offering Strengthens Stryker's Leadership Position in Robotic Technology</b></h4>\n<p>Stryker's Joint Replacement division today announced that its cementless Mako Total Knee with Triathlon Tritanium has received 510(k) market clearance by the U.S. Food and Drug Administration.</p>\n<p>Triathlon Tritanium combines the kinematics of Stryker's market leading Triathlon knee implant with the latest in highly porous biologic fixation technology for a knee system like no other.&nbsp; The innovation of Tritanium's tibial baseplate and metal-backed patella components are enabled by Stryker's proprietary AMagine additive manufacturing technology and are SOMA-designed.&nbsp;</p>\n<p>With cementless procedures rising in popularity and becoming a fast-growing trend<sup>1</sup>, Mako Total Knee with Triathlon Tritanium expands the current robotics offering to provide a cementless solution for orthopaedic surgeons seeking a more predictable surgical experience combined with increased operating room efficiency, biologic fixation and an alternative to bone cement.</p>\n<p>&quot;With the rise in demand for cementless knee technology, we believe this new offering can have a positive impact on procedural efficiency and patient outcomes,&quot; said Stuart Simpson, President, Stryker's Joint Replacement division.&nbsp; &quot;We're excited to continue to lead in robotic technology and combine two of our most advanced and differentiated products to provide surgeons with the ability to transform orthopaedic surgery.&quot;</p>\n<p>References:<br>\n1.&nbsp; Table 54: Primary TKA Implant Market. US Markets for Large-Joint Reconstructive Implants 2013. Millennium Research Group. March 2013. Pg. 84</p>\n<p>SOURCE: Stryker<br>\n</p>\n",
     "jcr:lastModified": "Mon Oct 16 2017 10:12:35 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

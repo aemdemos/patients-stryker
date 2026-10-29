@@ -7,7 +7,7 @@
   "jcr:title": "Stryker reports third quarter 2016 results",
   "jcr:versionHistory": "b2cca8cf-4afc-4e79-baf8-91cc0afc3a06",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "46a1800c-80ef-46c0-8f77-03a4663bf361"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Thu Oct 27 2016 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Oct-2016",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker Corporation (NYSE:SYK) reported operating results for the third quarter of 2016.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2016/Stryker-reports-third-quarter-2016-results/default.aspx\">See full release here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 17:46:02 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

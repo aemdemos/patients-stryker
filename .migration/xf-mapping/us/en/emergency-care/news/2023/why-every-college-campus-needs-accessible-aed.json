@@ -10,7 +10,7 @@
   "jcr:versionHistory": "9c174339-5f57-4ee6-883e-01d2bca1a42f",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "AEDs on college campuses",
   "jcr:predecessors": [
     "8162d4ea-d46b-4856-bc20-873b49d19872"
@@ -32,15 +32,15 @@
   "jcr:uuid": "263b4f8b-11a6-4d4a-85e2-89f450217405",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "Why every college campus needs accessible AEDs",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -49,10 +49,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/hero",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/hero",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "15",
           "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
@@ -67,8 +67,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Why every college campus needs accessible AEDs</span></span></h1>\r\n",
@@ -86,8 +86,8 @@
     },
     "cols3_1341500114_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -101,8 +101,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
       "text": "4-minute read Sudden cardiac arrest is a life-threatening event when the heart suddenly and unexpectedly stops working due to a lethal cardiac rhythm. Death can occur in just minutes as oxygenated blood stops flowing to the brain and vital organs. The American Heart Association (AHA) considers cardiac arrest a public health emergency. Out of the more than 356,000 out-of-hospital cardiac arrests (OHCAs) each year in the United States, 15 percent of them occur in public settings.1 Automated external defibrillator (AED) devices administer an electric shock through the chest wall to attempt to convert an abnormal heart rhythm. Providing bystanders with quick access to an AED could mean the difference between life and death for sudden cardiac arrest victims. Sudden cardiac arrest risk on college campuses Most colleges go to great lengths to promote safety on campus, including providing security personnel, a student health center and mental health services. University campuses are busy public settings, populated with students, faculty and visitors of all ages and hosting many events including conferences, concerts, sporting events and academic competitions. AED accessibility should also be part of every college campus’ community health and safety plan. Consider these facts: Sudden cardiac arrest can happen to people of all ages, even those who appear to be in good health.1 Sudden cardiac arrest is the leading cause of death among student athletes.2 If not treated within the critical first few minutes, nearly 90 percent of OHCAs are fatal.1 The survival rate increases to nearly 40 percent if cardiopulmonary resuscitation (CPR) is initiated within the first few minutes and followed (if indicated) by defibrillation before EMS arrival.3 Susan Koeppen, spokesperson for the Sudden Cardiac Arrest Foundation, advocates for AED placement on campuses by sharing her compelling life story.3 Susan was running with college friends in preparation for an upcoming marathon when she collapsed on campus. Fortunately, two medical students were nearby and administered lifesaving CPR until EMS arrived and used an AED. She made a full recovery. Many are not as lucky as Susan. Only one-third of sudden cardiac arrest victims receive CPR and 2 percent are treated with an AED by bystanders.3 As universities consider the public health impacts of cardiac arrest on campus, it’s necessary to recognize that AEDs are critical devices to have on hand for student athletes as well as everyone in the campus community. Placing accessible AEDs With only minutes to respond, it’s essential to consider where to place AEDs to allow for easy access to give sudden cardiac arrest victims their best chance at survival. Ideally, all campus buildings are equipped with AEDs. High-traffic areas on campus like student unions, dining halls, residence halls, auditoriums and libraries should be a priority. Due to the higher incidence among student athletes, AEDs need to be placed at athletic facilities near sports fields and tracks, where sports medical staff and coaches can access them easily. The Department of Health and Human Services (HHS) developed requirements for the design of public access AED programs in federal buildings, which serve as an excellent guide for determining how and where to place AEDs on college campuses.4 In general, colleges should place AEDs in public areas where bystanders can easily find and deploy them during an emergency. Maximizing AED program effectiveness For a college AED program to be effective, everyone in the campus community needs to know where to locate these life-saving devices. An AED campus map, AED locator app, campus signage and orientation materials for new students and staff are essential components of emergency preparation. Additional considerations include: Regular readiness checks to ensure AEDs are charged and functioning Integration of the on-site responder and AED programs with the local EMS system Reviewing and practicing the sudden cardiac arrest emergency response plan each year Installation of a notification system to alert health and safety personnel if an AED is accessed Together, we save lives Implementing a well-planned emergency response program at your college provides a safety net for the many people who live on and visit campus each year. Explore Stryker’s line of defibrillators to find the right AED for your campus community. Contact an AED expert today to learn more about your device options and how they can help your organization.",
       "jcr:lastModified": "Wed Dec 28 2022 19:40:54 GMT+0000",
@@ -112,16 +112,16 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Dec 28 2022 19:55:55 GMT+0000",
       "jcr:lastModified": "Wed Dec 28 2022 19:55:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3"
     },
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
       "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
@@ -130,8 +130,8 @@
     },
     "cols3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 20:47:24 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 20:47:24 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -139,8 +139,8 @@
         "jcr:primaryType": "nt:unstructured",
         "curatedlinklist_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
           "jcr:lastModified": "Tue May 31 2022 20:48:32 GMT+0000",
           "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -174,7 +174,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "publishDate": "Wed Jan 04 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "04-Jan-2023",
@@ -187,14 +187,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Dec 28 2022 19:38:34 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Tsao, et al, Heart Disease and Stroke Statistics—2022 Update: A Report From the American Heart Association. Circulation, 2022; 145(8): e 153-e939.<br>\r\n2. Drezner, et al, Survival After Exercise-Related Sudden Cardiac Arrest in Young Athletes: Can We Do Better? Sage Journals, 2019, 11(1): 91-98.<br>\r\n3. Saving lives on campus. Sudden Cardiac Arrest Foundation. Retrieved August 30, 2022, from https://www.sca-aware.org/campus#:~:text=Colleges%20are%20microcosms%20of%20the%20community%20at%20large.,strategically%20placed%20on%20campus%20and%20with%20athletic%20teams.<br>\r\n4. Guidelines for Public Access Defibrillation Programs in Federal Facilities. Department of Health and Human Services and General Services Administration. Retrieved August 30, 2022, from https://www.federalregister.gov/documents/2009/08/14/E9-19555/guidelines-for-public-access-defibrillation-programs-in-federal-facilities</p>\r\n",
     "jcr:lastModified": "Wed Dec 28 2022 19:59:42 GMT+0000",

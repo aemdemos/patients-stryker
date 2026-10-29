@@ -8,7 +8,7 @@
   "jcr:title": "Closure",
   "jcr:versionHistory": "7536b015-7074-45b2-ad75-e744e319304c",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "erica.mellema@stryker.com",
+  "jcr:lastModifiedBy": "user-2aa97c458a@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/neurotechnology/cranial/images/Thumbnail_closure.png",
   "jcr:predecessors": [
     "b43e99bb-6769-4c48-994d-c339bf285c6b"
@@ -37,7 +37,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/neurotechnology-spine/cranial",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "erica.mellema@stryker.com",
+  "cq:lastModifiedBy": "user-2aa97c458a@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -50,7 +50,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 17:52:16 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -60,7 +60,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Fri Aug 25 2017 16:17:30 GMT-0400",
     "compImageRef": "/content/dam/stryker/portfolios/neurotechnology/cranial/images/Hero_closure.png",

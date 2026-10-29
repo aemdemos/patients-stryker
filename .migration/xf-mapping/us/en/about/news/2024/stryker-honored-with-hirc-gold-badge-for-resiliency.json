@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e81e40e8-f748-4acd-9e53-33d5376665ee",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "HIRC Resiliency Partner Gold 2024",
   "jcr:predecessors": [
     "8494a062-b44f-4992-8a31-75bcfe2c0b92"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 17 2024 20:18:12 GMT+0000",
       "jcr:lastModified": "Tue Dec 17 2024 20:18:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "preset": "max_width_auto",
           "jcr:created": "Tue Dec 17 2024 20:18:28 GMT+0000",
           "alt": "HIRC Resiliency Partner Gold 2024",
@@ -64,8 +64,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 17 2024 18:17:38 GMT+0000",
       "jcr:lastModified": "Tue Dec 17 2024 18:17:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -74,8 +74,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Dec 17 2024 18:17:56 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -94,7 +94,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Tue Dec 17 2024 00:00:00 GMT-0800",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "17-Dec-2024",
@@ -103,14 +103,14 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "jcr:lastModified": "Tue Dec 17 2024 18:20:35 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Tue Dec 17 2024 18:20:43 GMT+0000",

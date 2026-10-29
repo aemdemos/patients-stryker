@@ -9,7 +9,7 @@
   "jcr:versionHistory": "2e009a48-5aa1-4d11-a76c-0f27f790c3a8",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Mako RPS",
   "jcr:predecessors": [
     "94f1619b-7afc-426f-97dd-3c0f71f9053c"
@@ -38,14 +38,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/news/2026",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Jul 15 2026 17:43:33 GMT+0000",
       "jcr:lastModified": "Wed Jul 15 2026 17:43:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -54,16 +54,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Jul 15 2026 17:44:14 GMT+0000",
           "jcr:lastModified": "Wed Jul 15 2026 17:44:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Jul 15 2026 17:43:27 GMT+0000",
           "text": "<p><b>Portage, MICH., USA</b> – <b>July 16, 2026</b> – Stryker (NYSE: SYK), a global leader in medical technologies, announced today the U.S. commercial launch of <b>Mako RPS<sup>®</sup> (Robotic Power System)</b> for total knee replacement procedures, further expanding the Mako portfolio into a new category of orthopaedic robotics.</p>\n<p>The launch marks the introduction of the <b>Mako Handheld Robotics</b> platform, alongside the <b>Mako SmartRobotics™ with Mako 4</b>, Stryker's multi-specialty robotic-arm assisted platform. Designed to provide surgeons with an intuitive handheld robotic experience, Mako RPS combines Stryker's expertise in robotics and power tools to bring robotic technology to a new customer segment of the orthopaedic market.</p>\n<p>&quot;Customer response during the limited market release has been exceptionally strong,&quot; said <b>Keith Evans, VP/GM of Stryker’s Mako and Enabling Technologies business</b>. &quot;As we expand the Mako portfolio, we’re proud to set a new standard for what customers can expect from a handheld robotics technology – bringing together robotics, power tool expertise and a deep understanding of surgical workflows.”</p>\n<p>As healthcare providers increasingly seek flexibility in how robotic technology is incorporated into orthopaedic procedures, Mako RPS offers a new option that blends robotic execution with a familiar surgical experience. The launch expands access to Mako, offering surgeons more robotic options and bringing Mako to a broader range of customers and care settings.</p>\n<p>Compatible with Stryker’s clinically proven<sup>1-2</sup> Triathlon<sup>®</sup> Total Knee System, Mako RPS for Total Knee features intraoperative planning and a robotically enabled saw equipped with Stryker's patented active adjustment technology, which responds to a surgeon's hand movements and helps maintain alignment with the surgical plan in real time. The system provides a familiar cutting experience without the need for cutting blocks, offering an option for surgeons interested in adopting robotic technology while integrating easily into their existing surgical workflows.</p>\n<p>“By combining robotic technology with the clinically proven Triathlon<sup>®</sup> Total Knee System, Mako RPS delivers an intuitive surgical experience that builds on the implant and workflow familiarity surgeons know and trust<sup>2-3</sup>,” said <b>Lisa Kloes, vice president and general manager of Stryker’s Knee business</b>.</p>\n<p>Built to work with Stryker's multi-specialty <b>Q Guidance System</b>, Mako RPS expands Stryker's ecosystem of enabling technologies across the continuum of orthopaedic care and sites of service.</p>\n<p>For more than two decades, Mako has defined orthopaedic robotics worldwide. With more than 2.5 million procedures performed in 47 countries, Mako continues to advance the adoption of robotics in orthopaedics and support surgeons in delivering personalized patient care.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Jul 15 2026 20:02:07 GMT+0000",
@@ -72,16 +72,16 @@
         },
         "sectionseparator_514343773": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Jul 15 2026 17:44:36 GMT+0000",
           "jcr:lastModified": "Wed Jul 15 2026 17:44:36 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_152399725": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Jul 15 2026 17:44:44 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nStryker<br>\nJenny Braga<br>\nSenior Director, External Affairs<br>\n<a href=\"mailto:jenny.braga@stryker.com\">jenny.braga@stryker.com</a></p>\n",
           "jcr:lastModified": "Wed Jul 15 2026 17:47:01 GMT+0000",
@@ -93,7 +93,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Thu Jul 16 2026 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "16-Jul-2026",
@@ -106,7 +106,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">New handheld robotic technology expands the Mako platform and brings Mako robotic-assisted knee replacement to a new segment of the orthopaedic market</span></span></p>\n<ul>\n<li>Stryker announced the U.S. commercial launch of Mako RPS (Robotic Power System) for total knee replacement procedures.</li>\n<li>The launch introduces Mako Handheld Robotics, expanding the Mako portfolio beyond robotic-arm assisted surgery.</li>\n<li>Mako RPS combines robotic execution, intraoperative planning and a familiar handheld power tool workflow.</li>\n</ul>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed Jul 15 2026 17:49:08 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -114,7 +114,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>American Joint Replacement Registry (AJRR): 2025 Annual Report. Rosemont, IL: American Academy of Orthopaedic Surgeons (AAOS), 2025.</li>\r\n<li>Australian Orthopaedic Association National Joint Replacement Registry (AOANJRR). Hip, Knee &amp; Shoulder Arthroplasty Annual Report 2025. AOA;2025. https://aoanjrr.sahmri.com/. Accessed 11 Oct. 2025</li>\r\n<li>Scott CEH, Snowden GT, Cawley W, et al. Fifteen-year prospective longitudinal cohort study of outcomes following single radius total knee arthroplasty. Bone Jt Open. 2023;4(10):808-816. Published 2023 Oct 24.doi:10.1302/2633-1462.410.BJO-2023-0086.R1</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Wed Jul 15 2026 17:46:25 GMT+0000",
@@ -123,7 +123,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "alt": "Mako RPS",
     "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-introduces-mako-handheld-robotics/mako-rps-press-release.jpg",

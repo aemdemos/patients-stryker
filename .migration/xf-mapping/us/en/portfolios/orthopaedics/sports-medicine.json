@@ -10,7 +10,7 @@
   "jcr:versionHistory": "c5361ea1-ba3d-440d-b2a5-bb4e3cade9b1",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/SM-RunningMan.jpg",
   "jcr:predecessors": [
     "ef200f13-0128-4568-9a76-2c4a766fd24e"
@@ -33,7 +33,7 @@
   "jcr:uuid": "f06a6fd2-1add-4100-9ab3-8d5b8008a786",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -41,20 +41,20 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:09:39 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:09:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
     },
     "filteredcontenttypeg": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:created": "Wed May 04 2022 13:36:50 GMT+0000",
       "jcr:lastModified": "Wed May 11 2022 19:30:05 GMT+0000",
@@ -65,7 +65,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Hip",
         "jcr:lastModified": "Wed May 04 2022 13:44:15 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -105,17 +105,17 @@
     },
     "title_1284468760": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:10:04 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:10:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
     },
     "filteredcontenttypeg_1736598261": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:created": "Wed May 04 2022 13:44:28 GMT+0000",
       "jcr:lastModified": "Wed May 11 2022 19:30:37 GMT+0000",
@@ -126,7 +126,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Knee",
         "jcr:lastModified": "Wed May 04 2022 13:44:49 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -166,17 +166,17 @@
     },
     "title_663141793": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:10:10 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:10:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
     },
     "filteredcontenttypeg_1734557986": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:created": "Wed May 04 2022 13:44:56 GMT+0000",
       "jcr:lastModified": "Wed Jun 08 2022 14:44:08 GMT+0000",
@@ -187,7 +187,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Small joints",
         "jcr:lastModified": "Wed May 04 2022 13:45:58 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -227,17 +227,17 @@
     },
     "title_1060377919": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:10:16 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:10:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
     },
     "filteredcontenttypeg_1169464255": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:created": "Wed May 04 2022 13:46:06 GMT+0000",
       "jcr:lastModified": "Wed Jun 08 2022 14:45:33 GMT+0000",
@@ -248,7 +248,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Sports biologics",
         "jcr:lastModified": "Wed May 04 2022 13:47:15 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -288,8 +288,8 @@
     },
     "title_125281090": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:10:20 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:10:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
@@ -297,7 +297,7 @@
     "filteredcontenttypeg_2097652171": {
       "jcr:primaryType": "nt:unstructured",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:lastModified": "Wed May 04 2022 19:56:00 GMT+0000",
       "loadMoreText": "Load More",
@@ -307,7 +307,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Arthroscopic resection",
         "jcr:lastModified": "Wed May 04 2022 19:55:23 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -347,8 +347,8 @@
     },
     "title_323878830": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed May 04 2022 20:10:26 GMT+0000",
       "jcr:lastModified": "Wed May 04 2022 20:10:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/title"
@@ -356,7 +356,7 @@
     "filteredcontenttypeg_344810445": {
       "jcr:primaryType": "nt:unstructured",
       "emptyText": "No Results found.",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "jcr:lastModified": "Wed May 04 2022 19:57:56 GMT+0000",
       "loadMoreText": "Load More",
@@ -366,7 +366,7 @@
       "showProcedures": "true",
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Fluid management",
         "jcr:lastModified": "Wed May 04 2022 19:57:17 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -406,7 +406,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "pagehero": {
@@ -414,23 +414,23 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:56 GMT+0000",
     "jcr:lastModified": "Wed Sep 21 2022 20:48:55 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "arbitraryOrdering": {
       "jcr:primaryType": "nt:unstructured",
       "1": {
@@ -470,13 +470,13 @@
     ],
     "fileReference": "/content/dam/stryker/sports-medicine/images/SM-RunningMan.jpg",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "searchPath": "/content/stryker/us/en/sports-medicine",
     "jcr:lastModified": "Mon Jun 27 2022 20:11:04 GMT+0000",
     "loadMoreText": "Load More",
@@ -486,7 +486,7 @@
     "showProcedures": "true",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "title": "Shoulder",
       "jcr:lastModified": "Wed May 04 2022 20:06:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"

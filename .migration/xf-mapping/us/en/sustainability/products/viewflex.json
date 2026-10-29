@@ -10,7 +10,7 @@
   "jcr:versionHistory": "ae378016-8fe9-413d-8bab-19e1f0e9cde7",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "thumbnailAltText": "ViewFlex straight",
   "jcr:predecessors": [
     "ed01bc74-c1c2-4649-b6a9-f62f7343f921"
@@ -39,15 +39,15 @@
   "jcr:uuid": "8054d8ba-44e9-47f2-9464-59f1e4e7f2e6",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "hero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:createdBy": "user-e2eca0ceb5@example.invalid",
       "subhead": "Ultrasound catheter - delivering an image of excellence",
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "imageAlt": "catheterization procedure",
       "jcr:created": "Tue Mar 25 2025 22:27:08 GMT+0000",
       "headColor": "rgb(255,181,0)",
@@ -72,23 +72,23 @@
         "/content/dam/stryker/endoscopy/products/viewflex/resources/ViewFlex sales sheet.pdf",
         "/content/dam/stryker/endoscopy/products/viewflex/resources/ViewFlex Xtra ICE White Paper.pdf"
       ],
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "title": "Resources and downloads",
       "jcr:lastModified": "Thu Nov 10 2022 14:46:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Aug 18 2026 20:19:35 GMT+0000",
       "jcr:lastModified": "Tue Aug 18 2026 20:19:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -97,8 +97,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
@@ -110,8 +110,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -120,10 +120,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "2736",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -136,8 +136,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
           "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
@@ -156,7 +156,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Abbott/St. Jude Medical Reprocessed ViewFlex Xtra ICE Catheter</p>\r\n",
     "shortDescTop": "<p>The ViewFlex is a 2D ICE catheter providing direct visualization of the pulmonary veins and other anatomical landmarks. The ViewFlex is inserted into the heart via intravascular access.</p>\r\n",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Nov 10 2022 14:45:55 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -206,7 +206,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Aug 18 2026 20:19:29 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

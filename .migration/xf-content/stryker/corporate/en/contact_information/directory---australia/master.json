@@ -19,16 +19,16 @@
   "cq:tags": [],
   "jcr:uuid": "fcbd546b-deb7-4c33-88e5-5530e4fddb92",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
     "largeheadline_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #dfe1de;\"><span style=\"color: #000000;\">Sales</span></span></span></span></span></span>",
@@ -42,9 +42,9 @@
     },
     "item3666116876391204": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
       "paragraphScope": "all",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "elementNames": [
         "locationName",
         "ShortDesc",
@@ -81,9 +81,9 @@
     },
     "item3666116876391204_410995134": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
       "paragraphScope": "all",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "elementNames": [
         "locationName",
         "ShortDesc",

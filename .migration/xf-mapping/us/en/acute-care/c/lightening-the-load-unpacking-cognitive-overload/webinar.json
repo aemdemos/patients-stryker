@@ -20,7 +20,7 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "4c0cfb9b-f8c0-4fff-8d1c-69bfd247e9a6",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -34,8 +34,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 30 2022 17:03:51 GMT+0000",
       "jcr:lastModified": "Wed Nov 30 2022 17:03:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -44,8 +44,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_908007915_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<h2><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Lightening the Load: Unpacking Cognitive Overload&nbsp;<br>\n</span></span></span></span></span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Thank&nbsp;you for registering for Lightening the Load: Unpacking Cognitive Overload virtual webinar. Click the video below to start learning now or save this link&nbsp;<b><a href=\"https://bit.ly/3sTaw3l\"><span class=\"futura-bold\">https://bit.ly/3sTaw3l</span></a></b>&nbsp;to watch at a later date.</span></span></p>\n",
@@ -58,8 +58,8 @@
     },
     "cols_573143608_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 30 2022 17:04:31 GMT+0000",
       "jcr:lastModified": "Wed Nov 30 2022 17:04:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -68,8 +68,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Nov 30 2022 17:04:36 GMT+0000",
           "hideBorder": "true",
           "type": "typePath",
@@ -82,7 +82,7 @@
             "fileReference": "/content/dam/stryker/acute-care/campaigns/lightening-the-load/lightening-the-load-unpacking-cognitive-overload.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/lightening-the-load-unpacking-cognitive-overload-AVS",
             "urlModifiers": "",
@@ -102,7 +102,7 @@
         "/content/dam/stryker/acute-care/campaigns/lightening-the-load/Major Health Partners Case Study.pdf",
         "/content/dam/stryker/acute-care/campaigns/lightening-the-load/Owensboro Health Regional Hospital Case Study.pdf"
       ],
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "title": "Additional lightening the load resources and downloads",
       "jcr:lastModified": "Wed Sep 13 2023 13:46:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"

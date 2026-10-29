@@ -9,7 +9,7 @@
   "jcr:versionHistory": "cf53bac6-d0fa-4a8f-a9b3-adc57e4963ef",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "b2270002-dbbd-4eee-ba06-c43530821459"
   ],
@@ -25,15 +25,15 @@
   "jcr:uuid": "3f27bd1f-ad32-4bd9-a39f-25fd46bb6b36",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "LIFEPAK device registration form",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Mon Oct 03 2022 20:11:21 GMT+0000",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Mon Oct 03 2022 20:12:31 GMT+0000",
@@ -42,8 +42,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Mon Oct 03 2022 20:13:42 GMT+0000",
       "text": "<p><a href=\"/content/stryker/us/en/emergency-care/device-registration.html\"><span style=\"color: #4c7d7a;\">&lt; BACK</span></a></p>\n",
       "jcr:lastModified": "Mon Oct 03 2022 20:14:43 GMT+0000",
@@ -52,16 +52,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Aug 17 2022 20:14:46 GMT+0000",
       "jcr:lastModified": "Wed Aug 17 2022 20:14:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols_597938896": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Aug 17 2022 20:14:57 GMT+0000",
       "jcr:lastModified": "Wed Aug 17 2022 20:14:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -70,8 +70,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Aug 17 2022 20:16:35 GMT+0000",
           "text": "",
           "jcr:lastModified": "Wed Aug 17 2022 20:16:47 GMT+0000",

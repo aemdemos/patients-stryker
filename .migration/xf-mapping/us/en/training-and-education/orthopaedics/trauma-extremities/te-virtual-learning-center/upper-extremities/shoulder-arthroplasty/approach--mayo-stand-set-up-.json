@@ -9,7 +9,7 @@
   "jcr:versionHistory": "3ff03dd4-3ab2-425d-a2a4-345084bc98b5",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "79a4f5a8-ea29-4e1d-8360-07db339b0d9f"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "cfbaa681-47c6-42b7-8c0e-2a99a6ca8b8e",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:32:52 GMT+0000",
       "text": "Tornier Approach Mayo Stand Set-up Dr. Brent Morris discusses the Mayo stand set-up for Tornier Approach. AP-016236A",
       "jcr:lastModified": "Thu Jul 28 2022 18:33:08 GMT+0000",

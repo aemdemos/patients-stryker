@@ -10,7 +10,7 @@
   "jcr:versionHistory": "1615acfc-56fd-4c9e-b49c-8bf1e9f85b8c",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "jcr:lastModifiedBy": "user-a168c26c27@example.invalid",
   "thumbnailAltText": "Prime Series smart stretcher and ProCuity connected hospital bed",
   "jcr:predecessors": [
     "aa3bb5b0-6647-4f5e-b371-af3770896719"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kennedy.lane@stryker.com",
+  "cq:lastModifiedBy": "user-a168c26c27@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -53,7 +53,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "jcr:lastModified": "Mon Dec 15 2025 20:06:29 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -77,7 +77,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue Jan 06 2026 14:27:27 GMT+0000",

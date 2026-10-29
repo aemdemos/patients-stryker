@@ -9,7 +9,7 @@
   "jcr:versionHistory": "003d6744-69c5-4869-bd67-17d4c0da3607",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "person wearing respirator mask",
   "jcr:predecessors": [
     "f14cbc9c-698e-4174-b94b-369562338f9d"
@@ -30,14 +30,14 @@
   "jcr:uuid": "71ab3527-8baf-42f2-9eab-c46cb7cc3b84",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:39:41 GMT+0000",
       "text": "<p>In March 2020, COVID-19 arrived in Baton Rouge, LA. Ochsner Medical Center ICU nurse James Bamber and his wife Katie Bamber – also a nurse and in her third trimester with the couple’s fourth child – knew they had to do something drastic to keep their patients and family safe from the virus. Together, they made a decision that would leave an indelible mark on their family: James would move in with his sister until their son was born, and – for the first time in their marriage – he wouldn’t be able to be present for the birth. As James told us, “It’s a small sacrifice to make compared to what our patients and their families are going through.” Thank you, James and Katie Bamber, for your selflessness and sacrifice, sense of purpose and your perspective. The world is a brighter place with caring and compassionate nurses like you in it.</p>\n",
       "jcr:lastModified": "Tue Oct 10 2023 21:06:52 GMT+0000",
@@ -46,8 +46,8 @@
     },
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:39:50 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -61,7 +61,7 @@
         "fileReference": "/content/dam/stryker/about/news/videos/Stryker Caregiver Stories Baton Rouge V7.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Stryker Caregiver Stories Baton Rouge V7-AVS",
         "urlModifiers": "",
@@ -75,16 +75,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:33:08 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:33:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:45:41 GMT+0000",
@@ -108,7 +108,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Fri Aug 20 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "20-Aug-2021",

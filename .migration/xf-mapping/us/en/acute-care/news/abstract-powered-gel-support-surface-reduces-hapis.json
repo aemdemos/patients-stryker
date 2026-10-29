@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e2db2a36-13d3-49d9-b660-b173046a8123",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "isoTour powered-gel support surface inflated",
   "jcr:predecessors": [
     "31855d4f-5c9a-4304-8ede-37bd764c8ae7"
@@ -32,14 +32,14 @@
   "jcr:uuid": "c1e23f3e-21ec-4b35-a576-bb2932667495",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Mon Oct 28 2024 18:25:49 GMT+0000",
       "alt": "IsoTour powerd-gel support surface inflated to help prevent pressure injuries",
@@ -51,8 +51,8 @@
     },
     "text_copy_1617821976": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Oct 28 2024 18:00:26 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><i>2-minute read</i></span></p>\n<p><span class=\"fontsize-1-25em\">Hospital-acquired pressure ulcers (HAPUs) and hospital-acquired pressure injuries (HAPIs) are a significant challenge for both patients and caregivers, as they can increase discomfort, length of hospital stays, cost, morbidity and, ultimately, mortality. Hospital support surfaces are an important element in pressure injury prevention and treatment. This observational study aimed to evaluate the safety and performance of the IsoTour powered gel support surface system as a part of a bundle of care in the context of pressure injury treatment and prevention.</span></p>\n<p><span class=\"fontsize-1-25em\">A retrospective survey-based study was conducted, collecting feedback from healthcare professionals who had used the <a title=\"Learn more about Stryker's IsoTour powered-gel support surface\" href=\"/content/stryker/us/en/acute-care/products/isotour.html\">IsoTour</a> hospital support surface system in the last six months. The study observed the incidence rate of new pressure ulcers and tracked pressure ulcer severity during treatment.</span></p>\n<p><span class=\"fontsize-1-25em\">The study included 313 patient cases from nine countries including Canada, France, Germany, Kuwait, Poland, United Kingdom and the United States. A statistically significant proportion of patients entering the care setting with existing pressure ulcers experienced a reduction in severity (p &lt; 0.001). Further, 95.8% of the total patient pool did not develop a new pressure ulcer by the end of treatment (p &lt; 0.05). Additionally, 98% of healthcare providers rated the usability of the IsoTour system as 'Acceptable' or better.</span></p>\n<p><span class=\"fontsize-1-25em\">The use of the IsoTour hospital mattress, in its powered configuration, when implemented as part of a comprehensive care strategy, can help treat and prevent pressure ulcers and ease the burden of healthcare providers. The IsoTour system demonstrated a significant reduction in the incidence of new pressure ulcers and improvement in the severity of existing pressure ulcers.</span></p>\n",
       "jcr:lastModified": "Thu Nov 21 2024 20:00:03 GMT+0000",
@@ -61,8 +61,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Nov 21 2024 19:41:33 GMT+0000",
       "jcr:lastModified": "Thu Nov 21 2024 19:41:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -71,9 +71,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "ctaDamLink": "/content/dam/stryker/acute-care/resources/IsoTour-System_Clinical-Summary_US-EMEA.pdf",
           "ctaLinkType": "dam",
           "ctaOpenInNewTabOverride": "0",
@@ -88,8 +88,8 @@
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Oct 28 2024 18:29:37 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Nov 21 2024 19:47:42 GMT+0000",
@@ -108,8 +108,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Oct 28 2024 18:28:38 GMT+0000",
       "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
       "jcr:lastModified": "Mon Aug 11 2025 14:53:15 GMT+0000",
@@ -120,7 +120,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Fri Nov 22 2024 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "22-Nov-2024",

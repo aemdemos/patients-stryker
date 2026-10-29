@@ -7,7 +7,7 @@
   "jcr:title": "ICU Critical Care beds",
   "jcr:versionHistory": "beecdb49-acc9-4f07-8994-870766b75709",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouchBed.jpg",
   "jcr:predecessors": [
     "1864d875-ee52-4107-882f-8ee3b5524e0c"
@@ -31,7 +31,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -44,7 +44,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:16:45 GMT+0000",
     "loadMoreText": "Load More",
@@ -55,7 +55,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Fri Aug 25 2017 20:02:24 GMT-0400",
     "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/bedframes/images/Thumbnail_ICU_AC.jpg",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6c309a60-c71f-430b-b971-b7c2e9b329d1",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Independent care systems for non-ventilated patients",
   "jcr:predecessors": [
     "b345afd6-66e2-40a9-938e-f439080f59ea"
@@ -38,7 +38,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -53,7 +53,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Mon Sep 09 2019 19:25:02 GMT+0000",
@@ -62,7 +62,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "jcr:lastModified": "Fri Oct 04 2019 20:54:25 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

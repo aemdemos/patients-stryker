@@ -9,7 +9,7 @@
   "jcr:versionHistory": "eab0992d-1e9e-413d-839e-e9c79cc6846a",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "The Microsoft HoloLens allows you to virtually envision an unparalleled design experience using Stryker’s exclusive 3D design tool, ByDesign. ",
   "jcr:predecessors": [
     "dc0a34e4-ff52-4ccf-b2b0-d9470a18a0b3"
@@ -35,14 +35,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jan 25 2024 15:14:29 GMT+0000",
       "text": "Hospitals and ambulatory surgery centers are facing a unique challenge as they plan for the future – how can they build or rebuild operating rooms to support modern equipment and technological needs? Stryker’s solution - augmented reality. The investment in a new or retrofitted surgical suite can cost upwards of a million dollars,1 and getting it right is crucial. When hospitals and ambulatory surgery centers learn that Stryker has more than 30 years of experience in OR planning and how we now use augmented reality to help them envision their space, they’re often eager to learn more. Augmented reality allows Stryker’s Communications team to work with customers to help them envision their ideal operating rooms. “ByDesign, Stryker’s exclusive 3D design tool allows us to design a customized OR and even add, move and configure products in a digital environment, providing customers a detailed view of the OR before breaking ground,” says Caitlin Clark, Vice President and General Manager of Stryker’s Communications business. “It’s all based on their specific architectural drawings, clinical feedback and workflow needs.” Hospitals and ASCs investing in operating room design are looking for solutions to simplify their projects, and Stryker’s OR of the Future is tailor made to do just that.",
       "jcr:lastModified": "Tue Jan 30 2024 16:50:21 GMT+0000",
@@ -52,16 +52,16 @@
     },
     "cols2_1405456696": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jan 30 2024 16:54:22 GMT+0000",
       "jcr:lastModified": "Tue Jan 30 2024 16:54:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "fullbleedpanel_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Jan 26 2024 14:45:01 GMT+0000",
       "jcr:lastModified": "Fri Jan 26 2024 14:45:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -71,8 +71,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2_2034002330": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Jan 26 2024 14:55:29 GMT+0000",
           "jcr:lastModified": "Fri Jan 26 2024 14:55:29 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -81,8 +81,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "hideComponent": "false",
               "topMargin": "3",
               "jcr:created": "Fri Jan 26 2024 14:55:37 GMT+0000",
@@ -95,8 +95,8 @@
         },
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Jan 26 2024 14:45:12 GMT+0000",
           "jcr:lastModified": "Fri Jan 26 2024 14:45:12 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -105,8 +105,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "standaloneimage": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Jan 26 2024 14:45:16 GMT+0000",
               "alt": "MicrosoftTeams image 23",
@@ -122,8 +122,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "standaloneimage": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "preset": "max_width_1440",
               "jcr:created": "Fri Jan 26 2024 14:45:19 GMT+0000",
               "alt": "patientcare-update",
@@ -137,8 +137,8 @@
         },
         "cols2_703511837": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Jan 26 2024 14:55:33 GMT+0000",
           "jcr:lastModified": "Fri Jan 26 2024 14:55:33 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -147,8 +147,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "hideComponent": "false",
               "topMargin": "3",
               "jcr:created": "Fri Jan 26 2024 14:55:37 GMT+0000",
@@ -163,16 +163,16 @@
     },
     "cols2_100728493": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jan 30 2024 16:54:17 GMT+0000",
       "jcr:lastModified": "Tue Jan 30 2024 16:54:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment_954193901": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jan 30 2024 16:50:01 GMT+0000",
       "text": "Envisioning the OR of the Future Stryker’s OR of the Future bridges the gap between imagination and implementation. Harnessing the latest technology, we give customers a floor-to-ceiling, wall-to-wall experience that showcases integrated operating rooms. “By helping customers visualize changes before construction, we’re helping to make the OR design experience easier and potentially more cost-efficient from the very beginning,” says Clark.  Our first OR of the Future was a model operating room inside our facility in Texas. The facility was designed to show how the right OR design can support productivity and operational efficiency. Modern ORs require careful planning and should consider: Software and equipment integration: Our iSuite and Advanced Digital Healthcare portfolios are designed to drive predictable and repeatable OR staff behavior—resulting in the means to achieve unprecedented workflows.  Sterility: Sterility, including materials and methods designed to support infection prevention and cleanability, should be top of mind during the planning process.  Technology: Technology that provides more personalized patient care by generating continuous, actionable data and insights from devices, which may influence how clinicians administer patient care before, during and after surgery. Ceiling and wall fabrication: Pre-built ceilings and walls can save time and cost during construction, which may enable the OR to be patient-ready sooner. The future: Future-proofed design elements, such as modular wall panels, designed for easier access to electrical when new technology is added in the future may help minimize downtime during upgrades.   Learn more about how you can envision a new OR of the Future.",
       "jcr:lastModified": "Tue Jan 30 2024 16:54:02 GMT+0000",
@@ -182,8 +182,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Jan 26 2024 14:53:59 GMT+0000",
       "jcr:lastModified": "Fri Jan 26 2024 14:53:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -191,7 +191,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Mon Feb 12 2024 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "12-Feb-2024",
@@ -204,7 +204,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Reference&nbsp;</p>\r\n<ol>\r\n<li>Rosen, E. “Operating Rooms Go Under the Knife,” New York Times. Published May 6, 2021, accessed November 10, 2023.&nbsp;</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Fri Jan 26 2024 14:44:26 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "fe54785f-8ca8-46ea-b477-d4810738b847",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "670e4383-2364-4d9a-b278-7d90bfdf1d51"
   ],
@@ -32,17 +32,17 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
       "carouselOptionAutoplay": "true",
       "pauseonhover": "false",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -60,12 +60,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/corporate_responsibi/supplier_diversity/supplier-diversity-hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/corporate-responsibi/supplier-diversity/supplier-diversity-hero/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/corporate_responsibi/supplier_diversity/supplier-diversity-hero/supplier-diversity-mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/corporate-responsibi/supplier-diversity/supplier-diversity-hero/supplier-diversity-mobile",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "25",
           "jcr:created": "Fri Mar 05 2021 16:21:24 GMT+0000",
@@ -81,8 +81,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
               "jcr:created": "Thu Aug 18 2022 14:20:45 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-4vw\"><span style=\"color: rgb(0,0,0);\">Global supplier</span>&nbsp;<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">inclusion</span></span></span></span></h1>\r\n",
@@ -105,16 +105,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Aug 18 2022 14:28:36 GMT+0000",
       "jcr:lastModified": "Thu Aug 18 2022 14:28:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_1542995427": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Aug 18 2022 15:21:40 GMT+0000",
       "text": "“Supporting supplier inclusion aligns with our values and strengthens our ability to make healthcare better.” — Kathleen Ward Vice President, Division Sourcing, Stryker Our efforts We embed supplier inclusion across major spend categories through our Supplier Inclusion Council and integration with enterprise activities. We identify potential suppliers in many ways, including: Participating in industry trade shows, manufacturing expos and other events. Engaging inclusion advocacy groups. Reviewing suppliers registered in our Supplier Inclusion Portal. Supplier Inclusion Portal Our Supplier Inclusion Portal allows suppliers to create a free profile. For suppliers interested in doing business with us, registering allows you to: Share information about your company and its capabilities. Maintain your profile so your information stays accurate and accessible to our procurement teams. For suppliers already doing business with us, registering allows you to: Support our reporting obligations to stakeholders, including the U.S. Government and other customers, related to supplier classifications collected in the portal. Increase your visibility, as other organizations use the same portal to identify potential suppliers. Access our Supplier Inclusion Portal Registration in this portal is separate from other onboarding and sourcing systems (e.g., Ariba) in which you may also be asked to register. We select suppliers for each need based on a range of factors, such as capabilities, quality, cost and demonstrated performance.",
       "jcr:lastModified": "Thu Aug 18 2022 15:22:19 GMT+0000",
@@ -124,8 +124,8 @@
     },
     "cols_543095136": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu May 07 2026 20:46:08 GMT+0000",
       "jcr:lastModified": "Thu May 07 2026 20:46:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -141,7 +141,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Thu May 07 2026 20:25:29 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",

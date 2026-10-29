@@ -8,7 +8,7 @@
   "jcr:title": "Ankle",
   "jcr:versionHistory": "63867536-4acc-49cf-9240-94975d506713",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/Header_Ankle.jpg",
   "jcr:predecessors": [
     "78e98c0b-b737-4e7c-b787-72e0b41874b3"
@@ -37,7 +37,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/foot-and-ankle",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,11 +45,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "bannercampaign_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://strykerwelcomeswright.com/",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
@@ -64,12 +64,12 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "bannercampaign": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://bit.ly/ANKLEFUSIONINFO",
       "jcr:created": "Mon Aug 31 2020 18:47:45 GMT+0000",
       "jcr:lastModified": "Mon Aug 31 2020 18:48:07 GMT+0000",
@@ -84,14 +84,14 @@
       "cq:LiveRelationship"
     ],
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Jan 21 2019 18:24:33 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "20",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true"
   },
@@ -100,13 +100,13 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/Header_Ankle.jpg",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

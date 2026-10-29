@@ -8,7 +8,7 @@
   "jcr:title": "Innovations in Orthopaedic Trauma",
   "jcr:versionHistory": "c4f551d3-5dc4-456f-afce-6a2460ecd966",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "f95323d8-2a23-477b-bcda-dade6a50bc12"
   ],
@@ -33,7 +33,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "imageAlt": "TEACH wordmark",
       "jcr:lastModified": "Fri Nov 02 2018 19:53:53 GMT+0000",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/images/TEACH-wordmark-(RGB).png",
@@ -52,10 +52,10 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "marketoform": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
       "afterSubmitAction": "redirectToPage",
       "formId": "623",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Fri Nov 02 2018 18:49:21 GMT+0000",
       "useProduction": "true",
       "redirectPage": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-Landing-Page/TEACH-Thank-You",
@@ -65,7 +65,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>This page is intended for US use only.</p>\r\n",
     "jcr:lastModified": "Fri Dec 07 2018 17:05:36 GMT+0000",

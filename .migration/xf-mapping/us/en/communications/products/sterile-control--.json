@@ -10,7 +10,7 @@
   "jcr:versionHistory": "5df72eae-3f92-4d05-98f4-a9f0671cac02",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "sheila.brennan@stryker.com",
+  "jcr:lastModifiedBy": "user-e337f07f72@example.invalid",
   "thumbnailAltText": "Surgical Light Handle",
   "jcr:predecessors": [
     "36d7a821-987a-4c04-9e70-2de50f012a68"
@@ -39,13 +39,13 @@
   "jcr:uuid": "fafca5ea-ea81-4fa7-94ea-853bcb33e349",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Sat Aug 29 2020 05:25:40 GMT+0000",
       "compImageRef": "/content/dam/stryker/communications/products/sterile-control--/images/SYKC.Stryker.com.Products.SterileControl_R2-ASSETSHero.jpg",
@@ -57,8 +57,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Wed Aug 26 2020 05:19:52 GMT+0000",
       "jcr:lastModified": "Wed Aug 26 2020 05:19:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -67,8 +67,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Wed Aug 26 2020 05:20:00 GMT+0000",
           "type": "typePath",
           "jcr:lastModified": "Wed Aug 26 2020 05:20:07 GMT+0000",
@@ -80,7 +80,7 @@
             "fileReference": "/content/dam/stryker/communications/products/slx-surgical-light/videos/SLX628SurgicalLight.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/SLX628SurgicalLight-1-AVS",
@@ -102,8 +102,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Wed Aug 26 2020 05:20:23 GMT+0000",
           "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Putting power</span></span> <br>\n <span class=\"urw-egyptienne\">in surgeons hands</span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Customizable control of the SLX628 Surgical Light from the sterile field</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1em\"><b>Compatible with standard slip-on disposable handles</b></span></li>\n<li><span class=\"fontsize-1em\"><b>Sterilizable handle option available</b></span></li>\n</ul>\n",
           "jcr:lastModified": "Fri Sep 25 2020 16:44:41 GMT+0000",
@@ -114,16 +114,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Mon Jun 29 2026 19:10:50 GMT+0000",
       "jcr:lastModified": "Mon Jun 29 2026 19:10:50 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -132,16 +132,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
@@ -151,8 +151,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -161,10 +161,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "2951",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -177,8 +177,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment_c": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
               "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
@@ -194,7 +194,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Wed Aug 26 2020 05:14:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
@@ -204,7 +204,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">SLX628 Surgical Light featuring</span> <br>\n <span class=\"futura-bold\">Sterile Control +</span></span></p>\n",
     "jcr:lastModified": "Wed Sep 16 2020 00:36:31 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -212,14 +212,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 19:10:38 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jun 29 2026 19:10:41 GMT+0000",
     "linkNewWindowOverride": "0",

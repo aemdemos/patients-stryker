@@ -23,39 +23,39 @@
   "cq:tags": [],
   "jcr:uuid": "a16eb505-8069-4008-9945-30c21e66210e",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
     "jcr:lastModified": "Tue Nov 14 2023 16:20:15 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "jcr:title": "1",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
       "jcr:created": "Wed Oct 19 2022 17:29:24 GMT+0000",
       "jcr:lastModified": "Tue Nov 14 2023 16:20:15 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "largeheadline_copy30": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "topPadding": "20",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
         "gradientDirection": "left-to-right",
         "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">People are at the heart of what we do, </span></span></span></span><br />\r\n",
@@ -67,14 +67,14 @@
           "true",
           "true"
         ],
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -83,7 +83,7 @@
             "offset": "0",
             "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           },
           "tablet": {
             "jcr:primaryType": "nt:unstructured",
@@ -93,7 +93,7 @@
             "offset": "0",
             "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -103,7 +103,7 @@
             "offset": "0",
             "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           }
         }
       },
@@ -113,7 +113,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -122,7 +122,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -132,7 +132,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -142,7 +142,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "curatedcta_copy_copy": {
@@ -150,9 +150,9 @@
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "CTAOpenInNewTab": "true",
-        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
         "ctaLinkType": "ext",
         "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
         "ctaOpenInNewTabOverride": "0",
@@ -162,14 +162,14 @@
         "jcr:lastModified": "Tue Nov 14 2023 16:20:15 GMT+0000",
         "sling:resourceType": "stryker/components/content/curatedcta",
         "CTAButtonColor": "rgba(76,125,122,1)",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "cq:responsive": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -178,7 +178,7 @@
             "offset": "0",
             "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
             "width": "6",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           }
         }
       }
@@ -188,7 +188,7 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
       "alt": "Group Photo",
@@ -196,7 +196,7 @@
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Tue Nov 14 2023 16:20:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -204,7 +204,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -214,7 +214,7 @@
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "6",
           "behavior": "none",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -224,7 +224,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -234,7 +234,7 @@
           "offset": "0",
           "cq:lastRolledout": "Tue Nov 14 2023 16:20:15 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       }
     }

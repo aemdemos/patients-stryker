@@ -9,7 +9,7 @@
   "jcr:versionHistory": "9c649159-351e-4982-9dd7-9b1a82cad629",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Sage Rinse-Free Shampoo Cap - self-contained, no mess ",
   "jcr:predecessors": [
     "22545637-0c93-4a9c-bc46-8e21472b6526"
@@ -38,14 +38,14 @@
   "jcr:uuid": "27973b9d-a26d-495b-8a91-90fd6d5e6a9e",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Dec 06 2023 13:54:28 GMT+0000",
       "jcr:lastModified": "Wed Dec 06 2023 13:54:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -54,10 +54,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide_copy_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/sage_rinse_free_sham/hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/sage-rinse-free-sham/hero/master",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "18",
           "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
@@ -75,7 +75,7 @@
             },
             "text5520009668863520": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
               "hideComponent": "false",
               "topMargin": "7",
               "gradientDirection": "left-to-right",
@@ -95,8 +95,8 @@
             },
             "curatedcta_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "ctaLinkType": "deep",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
@@ -116,8 +116,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "overview",
       "jcr:created": "Wed Dec 06 2023 13:59:41 GMT+0000",
@@ -127,8 +127,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Feb 27 2024 15:08:41 GMT+0000",
       "jcr:lastModified": "Tue Feb 27 2024 15:08:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -137,8 +137,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -154,8 +154,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "jcr:created": "Tue Feb 27 2024 15:10:27 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\">When your patients feel clean, they’re more likely to be satisfied with their hospital experience. Our all-in-one shampoo cap makes it easy to clean and condition hair for patients with limited mobility. It’s entirely self-contained and eliminates mess, cleanup time, and the need to change wet bed linens, providing the ultimate convenience!</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Fabric-lined cap is pre-moistened with a gentle, rinse-free shampoo and conditioner to leave hair clean and fresh</span></li>\n<li><span class=\"fontsize-1-25em\">Contains USP purified water and is not made with natural rubber latex</span></li>\n<li><span class=\"fontsize-1-25em\">Eliminates the need to move patients to running water or use rinsettes</span></li>\n</ul>\n",
           "jcr:lastModified": "Fri Mar 01 2024 14:23:38 GMT+0000",
@@ -166,8 +166,8 @@
     },
     "section_title_645812": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "connect",
       "jcr:created": "Wed Dec 06 2023 13:59:47 GMT+0000",
@@ -177,8 +177,8 @@
     },
     "cols_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -188,10 +188,10 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "leftPadding": "2",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -205,8 +205,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -215,10 +215,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy_cop": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1259",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",
@@ -233,8 +233,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c_323188712": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
           "text": "Contact information Product feedback Customer service",
           "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
@@ -246,8 +246,8 @@
     },
     "section_title_162452": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Wed Dec 06 2023 13:59:54 GMT+0000",
@@ -257,12 +257,12 @@
     },
     "carouselslide_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master",
       "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/master",
       "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile",
       "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/carousel-option-mobile",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "mobileOverlay": "mobile_Bottom",
       "verticalMargin": "5",
       "jcr:created": "Mon Oct 28 2024 21:35:46 GMT+0000",
@@ -275,8 +275,8 @@
     },
     "tabs_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
       "jcr:lastModified": "Fri Dec 15 2023 17:28:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/tabs",
@@ -292,7 +292,7 @@
             "/content/dam/stryker/sage/resources/Incontinence-associated-Dermatitis-IAD-Brochure.pdf",
             "/content/dam/stryker/sage/resources/Reduce-CAUTI-Risk-Factors-Brochure.pdf"
           ],
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:lastModified": "Tue Jun 11 2024 13:53:58 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
         }
@@ -304,7 +304,7 @@
         "resourcesanddownload": {
           "jcr:primaryType": "nt:unstructured",
           "resources": "/content/dam/stryker/sage/resources/What-the-Experts-Say-Hospital-Tap-Water-and-Basin-Water-Contamination.pdf",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:lastModified": "Tue Feb 27 2024 15:07:41 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
         }
@@ -315,8 +315,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Thu Aug 29 2019 13:48:57 GMT+0000",
           "jcr:lastModified": "Thu Aug 29 2019 13:48:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -326,8 +326,8 @@
             "standalonevideo": {
               "jcr:primaryType": "nt:unstructured",
               "subtitle": "Training video",
-              "jcr:createdBy": "errin.pace@stryker.com",
-              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+              "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
               "jcr:created": "Thu Aug 29 2019 13:49:09 GMT+0000",
               "hideBorder": "false",
               "type": "typePath",
@@ -341,7 +341,7 @@
                 "fileReference": "/content/dam/stryker/sage/products/rinse-free-shampoo-caps/videos/Sage-Shampoo-Cap-training-video.mp4",
                 "s7ImagePreset": "",
                 "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-                "jcr:lastModifiedBy": "errin.pace@stryker.com",
+                "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
                 "s7ViewerPreset": "",
                 "assetID": "stryker/Sage-Shampoo-Cap-training-video-AVS",
                 "urlModifiers": "",
@@ -365,8 +365,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "customizable": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
           "jcr:lastModified": "Wed Dec 06 2023 14:33:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/customizable",
@@ -412,8 +412,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Tue Dec 13 2022 16:07:20 GMT+0000",
       "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
       "jcr:lastModified": "Tue Dec 13 2022 16:07:35 GMT+0000",
@@ -428,7 +428,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Feb 27 2024 15:11:11 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -441,7 +441,7 @@
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
     "externalLink": "https://sageproducts.com/comfort-rinse-free-shampoo-cap/",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "internalLink": "/content/stryker/us/en/sage",
     "jcr:lastModified": "Tue Feb 14 2023 13:55:28 GMT+0000",
@@ -452,21 +452,21 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Tue Feb 27 2024 15:13:30 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Feb 14 2023 13:55:31 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Tue Feb 27 2024 15:10:55 GMT+0000",
@@ -475,7 +475,7 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Feb 27 2024 15:11:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"

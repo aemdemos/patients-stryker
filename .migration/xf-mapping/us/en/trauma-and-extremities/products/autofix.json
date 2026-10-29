@@ -8,7 +8,7 @@
   "jcr:title": "AutoFix",
   "jcr:versionHistory": "f0412339-b0ac-4f1f-b4ca-37d409527dba",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/asnis/images/autofix-single-image.png",
   "jcr:predecessors": [
     "cd9a6113-b0a9-4e3e-ae21-c97235c1657f"
@@ -41,13 +41,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "cq:lastModifiedBy": "user-15c0b4d890@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Thu Jun 29 2017 15:33:57 GMT-0400",
@@ -70,7 +70,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>AutoFix Cannulated Screw System</p>\r\n",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Mon Jul 17 2017 14:02:11 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -99,7 +99,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>CP-AWI-14, 07-2017</p>\r\n",
     "jcr:lastModified": "Tue Aug 01 2017 14:28:58 GMT-0400",

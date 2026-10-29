@@ -20,7 +20,7 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "9882d466-2af3-4df6-80fb-56a852504b4c",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -34,8 +34,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "topMargin": "3",
       "jcr:created": "Mon Sep 11 2023 21:47:19 GMT+0000",
@@ -48,16 +48,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Sep 11 2023 21:50:21 GMT+0000",
       "jcr:lastModified": "Mon Sep 11 2023 21:50:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Mon Sep 11 2023 21:51:26 GMT+0000",
       "jcr:lastModified": "Mon Sep 11 2023 21:51:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -66,8 +66,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Mon Sep 11 2023 21:51:30 GMT+0000",
           "text": "<p><a title=\"Open Vocear Analytics PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-alarm-analytics.pdf\" target=\"_blank\">Vocera Alarm Analytics</a></p>\n<p><a title=\"Open Vocera Alarm Management PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-alarm-management.pdf\" target=\"_blank\">Vocera Alarm Management</a></p>\n<p><a title=\"Open Vocera Badge Firmware PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-badge-firmware.pdf\" target=\"_blank\">Vocera Badge Firmware</a></p>\n<p><a title=\"Open Vocera Cardiac Consult\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-cardiac-consult.pdf\" target=\"_blank\">Vocera Cardiac Consult</a></p>\n<p><a title=\"Open Vocera Care Experience PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-care-experience.pdf\" target=\"_blank\">Vocera Care Experience</a></p>\n<p><a title=\"Open Vocera Clinical Workflow Engine PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-clinical-workflow-engine.pdf\" target=\"_blank\">Vocera Clinical Workflow Engine</a><br>\n(including Patient Monitoring Connector)</p>\n<p><a title=\"Open Vocera Engage Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-engage-platform.pdf\" target=\"_blank\">Vocera Engage Platform</a><br>\n(including Airstrip)</p>\n<p><a title=\"Open Vocera Engage Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-integrations.pdf\" target=\"_blank\">Vocera Integrations</a><br>\n(including Vocera Care Team Synchronization and Vocera Environmental Services)</p>\n<p><a title=\"Open Vocera Messaging Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-messaging-platform.pdf\" target=\"_blank\">Vocera Messaging Platform</a></p>\n<p><a title=\"Open Vocera Smartphone Applications PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-smartphone-applications.pdf\" target=\"_blank\">Vocera Smartphone Applications</a><br>\n(including Vocera Collaboration Suite and Vocera Secure Texting)</p>\n<p><a title=\"Open Vocera Voice Server PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-voice-server.pdf\" target=\"_blank\">Vocera Voice Server</a></p>\n",
           "jcr:lastModified": "Mon Sep 11 2023 21:57:06 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "Working together to save lives | Garry’s sudden cardiac arrest story",
   "jcr:versionHistory": "91f42430-1e28-46ea-8373-ad80e810af85",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "32418e2d-eebd-4b4c-a5e8-0c398889bfac"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "2356b866-d3dd-4a44-9929-d47301bb9f1b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon May 16 2022 20:50:41 GMT+0000",
       "jcr:lastModified": "Mon May 16 2022 20:50:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -41,8 +41,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Mar 22 2022 16:14:57 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -56,7 +56,7 @@
             "fileReference": "/content/dam/stryker/patients/patient-stories/garry-5-16-22/Survivor story - Garry.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/Survivor story - Garry-AVS",
             "urlModifiers": "",
@@ -89,9 +89,9 @@
         },
         "curatedcta_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
@@ -122,7 +122,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy53": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line2": "<span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">Garry was performing a hymn song during church when he collapsed on stage from a sudden cardiac arrest. Thankfully, a few key audience members immediately sprang to action. Watch how the audience members and Emergency Medical Services saved his life.</span></span>",
           "jcr:lastModified": "Mon May 16 2022 20:51:35 GMT+0000",
@@ -150,7 +150,7 @@
         },
         "item1089953560363234": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"urw-egyptienne\"></span> ",
           "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\">I can’t thank them enough. </span><span class=\"urw-egyptienne\">All of them; Life Ambulance, Bronson Hospital and Oshtemo Fire Department.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Carrie&nbsp;</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Garry’s daughter</span></span></span></span></p>\r\n",
@@ -182,7 +182,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed May 18 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-May-2022",

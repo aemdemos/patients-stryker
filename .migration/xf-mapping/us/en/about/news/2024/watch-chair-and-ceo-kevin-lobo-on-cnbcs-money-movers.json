@@ -9,7 +9,7 @@
   "jcr:versionHistory": "9e1dc8ee-8524-4a63-b1fc-df7e4c9b578b",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "CNBC - Kevin Lobo",
   "jcr:predecessors": [
     "a8523bd3-7d15-4910-9e77-ed2eee0cda01"
@@ -31,14 +31,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Feb 01 2024 21:55:14 GMT+0000",
       "jcr:lastModified": "Thu Feb 01 2024 21:55:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -47,8 +47,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Thu Feb 01 2024 21:55:17 GMT+0000",
           "text": "<p>Stryker Chair and CEO, Kevin Lobo, joins CNBC’s Money Movers with Carl Quintanilla and Sara Eisen to discuss our company’s growth milestones in 2023, our M&amp;A approach in the coming year and how new advancements in robotics and enabling technologies will continue to improve patient outcomes.</p>\n",
           "jcr:lastModified": "Mon Feb 05 2024 16:40:54 GMT+0000",
@@ -57,8 +57,8 @@
         },
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Thu Feb 01 2024 21:55:46 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -72,7 +72,7 @@
             "fileReference": "/content/dam/stryker/about/news/2024/watch-chair-and-ceo-kevin-lobo-on-cnbcs-money-movers/CNBC Money Movers 240131 Stryker Kevin Lobo-comp.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/CNBC Money Movers 240131 Stryker Kevin Lobo-comp-AVS",
             "urlModifiers": "",
@@ -92,7 +92,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Fri Feb 02 2024 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-Feb-2024",

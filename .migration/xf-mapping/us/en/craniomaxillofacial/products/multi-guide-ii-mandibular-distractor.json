@@ -8,7 +8,7 @@
   "jcr:title": "Multi-Guide II",
   "jcr:versionHistory": "2e700497-ffa4-4c58-a00d-b08122792761",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "jcr:lastModifiedBy": "user-15c0b4d890@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/multi-guideiimandibulardistractor/images/Thumbnail_multiguide.png",
   "jcr:predecessors": [
     "f0d1cdb5-d8ba-468b-8b2c-78e1b9ae7918"
@@ -35,13 +35,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jun 07 2017 14:58:26 GMT-0400",
       "compImageRef": "/content/dam/stryker/craniomaxillofacial/products/multi-guideiimandibulardistractor/images/Hero_multiguide.png",
@@ -62,7 +62,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "openInNewWindow": true,
     "internalLink": "https://cmf.stryker.com/products/multi-guide-ii-mandibular-distractor",
     "linkUrl": "https://cmf.stryker.com/products/multi-guide-ii-mandibular-distractor",
@@ -76,7 +76,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Controlled mandibular distraction.<br>\r\n</p>\r\n",
     "shortDescTop": "<p>Designed to provide you with control in deficient or misshapen mandibles, this device is designed to provide you with the ability to gradually, independently and simultaneously distract the mandible in more than one plane.<br>\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
     "jcr:lastModified": "Mon Jul 10 2017 13:49:37 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [

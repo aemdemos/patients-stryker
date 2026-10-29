@@ -21,15 +21,15 @@
   "originallyPublished": "Mon Feb 06 2023 18:42:57 GMT+0000",
   "jcr:uuid": "9529723f-761d-4225-bbac-1fa10b6efe52",
   "sling:resourceType": "stryker/components/structure/pages/base",
-  "cq:lastModifiedBy": "ashley.salerno@stryker.com",
+  "cq:lastModifiedBy": "user-4b9c64adc2@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "longtexthero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "matt.thomson@stryker.com",
+      "jcr:createdBy": "user-102428dadb@example.invalid",
       "description": "<p>Stryker Corporation or affiliated entities own, use or have applied for the trademarks or service marks listed below. &nbsp;All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>&nbsp;</p>\r\n<p>The absence of a product or service name or logo from this list does not constitute a waiver of Stryker's trademark or other intellectual property rights concerning that name or logo.</p>\r\n",
-      "jcr:lastModifiedBy": "matt.thomson@stryker.com",
+      "jcr:lastModifiedBy": "user-102428dadb@example.invalid",
       "jcr:created": "Thu Aug 24 2017 12:42:24 GMT-0400",
       "jcr:lastModified": "Thu Aug 24 2017 13:54:19 GMT-0400",
       "sling:resourceType": "stryker/components/content/longtexthero",
@@ -40,8 +40,8 @@
     },
     "patenttables": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "ashley.salerno@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-4b9c64adc2@example.invalid",
       "jcr:created": "Tue Dec 02 2025 16:13:37 GMT+0000",
       "jcr:lastModified": "Tue Oct 20 2026 16:15:09 GMT+0000",
       "nameTable": "Trademarks",
@@ -52,7 +52,7 @@
         "jcr:primaryType": "nt:unstructured",
         "date_ModifiedBy": 1792512909116,
         "size_columns": 1,
-        "modifiedBy": "ashley.salerno@stryker.com",
+        "modifiedBy": "user-4b9c64adc2@example.invalid",
         "row_1": {
           "jcr:primaryType": "nt:unstructured",
           "COL1": "100 Top Smart Hospitals™"
@@ -5348,8 +5348,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1764697068830,
           "size_columns": 1,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "100 Top Smart Hospitals™"
@@ -10423,8 +10423,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1772468499220,
           "size_columns": 1,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "100 Top Smart Hospitals™"
@@ -15518,8 +15518,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1772471858839,
           "size_columns": 1,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "100 Top Smart Hospitals™"
@@ -20665,8 +20665,8 @@
           "jcr:primaryType": "nt:unstructured",
           "date": 1778672915418,
           "size_columns": 1,
-          "modifiedBy": "ashley.salerno@stryker.com",
-          "publishBy": "ashley.salerno@stryker.com",
+          "modifiedBy": "user-4b9c64adc2@example.invalid",
+          "publishBy": "user-4b9c64adc2@example.invalid",
           "row_1": {
             "jcr:primaryType": "nt:unstructured",
             "COL1": "100 Top Smart Hospitals™"

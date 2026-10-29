@@ -9,7 +9,7 @@
   "jcr:versionHistory": "35b5a645-ee5b-4a33-a828-71750364d7a4",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "82d0dfcf-d045-428d-8415-e181d6030785"
@@ -35,14 +35,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/news/2024",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_206563": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:19:34 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:19:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -51,8 +51,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Tue Jan 16 2024 15:19:38 GMT+0000",
           "text": "<p><b>MAHWAH, N.J., USA - March 21, 2024</b>&nbsp;– Stryker (NYSE: SYK), a leading global medical technology company, announced today that it has completed the <a href=\"https://www.stryker.com/us/en/about/news/2023/stryker-announces-intent-to-acquire-serf-sas-enhancing-its-global-joint-replacement-leadership.html\">previously announced</a> acquisition of SERF SAS, a France-based joint replacement company, from Menix.</p>\n<p>&quot;The acquisition of SERF SAS further strengthens our global portfolio and reinforces our dedication to orthopaedic excellence,” said Katherine Truppi, president of Stryker’s Joint Replacement division. “We welcome the SERF SAS team to Stryker and look forward to working together to help advance product innovation and customer satisfaction.”</p>\n<p>With a legacy of over 50 years, SERF SAS is recognized by healthcare professionals worldwide for its innovations in hip implants, including the invention of the original Dual Mobility Cup. This acquisition complements Stryker’s existing presence in France and across Europe as well as its global joint replacement portfolio, allowing Stryker to serve a wider range of patients by strengthening its implant product line.</p>\n<p>&quot;The SERF SAS product portfolio is built on a trusted legacy within the orthopaedic industry,” said Mathieu Badard, vice president and general manager of Stryker’s Joint Replacement division, Europe. “We are thrilled to combine our best-in-class product portfolios and work together to expand our presence within Europe and increase patient access to differentiated products for joint replacement.”</p>\n<p><b>Forward-looking statements</b></p>\n<p>This press release contains information that includes or is based on forward-looking statements within the meaning of the federal securities law that are subject to various risks and uncertainties that could cause our actual results to differ materially from those expressed or implied in such statements. Such factors include, but are not limited to: weakening of economic conditions, or the anticipation thereof, that could adversely affect the level of demand for our products; pricing pressures generally, including cost-containment measures that could adversely affect the price of or demand for our products; changes in foreign currency exchange markets; legislative and regulatory actions; unanticipated issues arising in connection with clinical studies and otherwise that affect United States Food and Drug Administration approval of new products; inflationary pressures; increased interest rates; supply chain disruptions; changes in reimbursement levels from third-party payors; a significant increase in product liability claims; the ultimate total cost with respect to recall-related matters; the impact of investigative and legal proceedings and compliance risks; resolution of tax audits; changes in tax laws and regulations; the impact of federal legislation to reform the United States healthcare system; costs to comply with medical device regulations; changes in financial markets; changes in our credit ratings; changes in the competitive environment; our ability to integrate and realize the anticipated benefits of acquisitions in full or at all or within the expected timeframes; our ability to realize anticipated cost savings; potential negative impacts resulting from environmental, social and governance (ESG) and sustainability related matters; the impact on our operations and financial results of any public health emergency and any related policies and actions by governments or other third parties; and breaches or failures of our or our vendors' information technology systems or products, including by cyber-attack, data leakage, unauthorized access or theft. Additional information concerning these, and other factors is contained in our filings with the United States Securities and Exchange Commission, including our Annual Report on Form 10-K and Quarterly Reports on Form 10-Q. We disclaim any intention or obligation to publicly update or revise any forward-looking statement to reflect any change in our expectations or in events, conditions or circumstances on which those expectations may be based, or that affect the likelihood that actual results will differ from those contained in the forward-looking statements.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Mar 20 2024 18:07:01 GMT+0000",
@@ -63,16 +63,16 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:26:49 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:26:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2_2_3_1_3_122672": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:21:27 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:21:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -81,8 +81,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Tue Jan 16 2024 15:21:32 GMT+0000",
           "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">About Stryker</span></span></h3>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">About Menix</span></span></p>\n<p>Menix comprises cutting-edge technological industries in the orthopaedic (primarily hip and knee) and dental sectors, as well as 3D digital solutions. In the field of orthopaedics, Menix enjoys a leadership position on the dual mobility and first intention stem markets in France.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">About SERF SAS</span></span></p>\n<p>SERF SAS is a French company that develops, manufactures, and sells a range of large joint replacement products on an international basis. Since its founding, SERF SAS has developed numerous innovative concepts, including the invention of the original Dual Mobility Cup. SERF SAS’s main office is based in Décines-Charpieu, France.</p>\n<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">Media contact</span></span></h3>\n<p>Stryker, Joint Replacement<br>\nNiamh Grano<br>\nSr. Communications Manager<br>\n<a href=\"mailto:niamh.grano@stryker.com\">niamh.grano@stryker.com</a><br>\n+1 201.831.5589</p>\n",
           "jcr:lastModified": "Wed Mar 20 2024 16:08:03 GMT+0000",
@@ -94,7 +94,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Thu Mar 21 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Mar-2024",

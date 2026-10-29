@@ -10,7 +10,7 @@
   "jcr:versionHistory": "302c4d7a-5914-4042-bbde-6a7a9bfe71d6",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Trauma and Extremities",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/systems/trauma-running-man.jpg",
   "jcr:predecessors": [
@@ -41,7 +41,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics",
   "cq:childrenOrder": "elbow--hand-and-wrist,foot-and-ankle,hip-fracture,pediatrics,shoulder,tibia-and-femur,biologics,biologics-redirect,clavicle,proximal-humerus,elbow,pelvis,hip-fracture0,femur,tibia,alliance,",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -49,11 +49,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "bannercampaign_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "alt": "Trauma Story",
       "jcr:lastModified": "Wed May 01 2024 17:12:02 GMT+0000",
@@ -66,13 +66,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
       "col2": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -80,7 +80,7 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
       },
       "col1": {
         "jcr:primaryType": "nt:unstructured",
@@ -89,15 +89,15 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
         "curatedcta_105712785": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "jcr:createdBy": "user-01f2970e9a@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "ext",
           "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "ctaOpenInNewTabOverride": "0",
@@ -106,7 +106,7 @@
           "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-42116",
           "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/curatedcta",
-          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
           "CTAUrl": "",
           "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
         }
@@ -117,13 +117,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
       "col2": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -131,7 +131,7 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
       },
       "col1": {
         "jcr:primaryType": "nt:unstructured",
@@ -140,15 +140,15 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
         "curatedcta_105712785": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "jcr:createdBy": "user-01f2970e9a@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "ext",
           "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "ctaOpenInNewTabOverride": "0",
@@ -157,7 +157,7 @@
           "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-46979",
           "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/curatedcta",
-          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
           "CTAUrl": "",
           "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
         }
@@ -168,13 +168,13 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
       "col2": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
@@ -182,7 +182,7 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
       },
       "col1": {
         "jcr:primaryType": "nt:unstructured",
@@ -191,15 +191,15 @@
         ],
         "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys",
-        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
         "curatedcta_105712785": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
             "cq:LiveRelationship"
           ],
-          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "jcr:createdBy": "user-01f2970e9a@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "ext",
           "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "ctaOpenInNewTabOverride": "0",
@@ -208,7 +208,7 @@
           "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-46991",
           "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/curatedcta",
-          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
           "CTAUrl": "",
           "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
         }
@@ -222,14 +222,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Wed May 01 2024 18:04:32 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "200",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -237,11 +237,11 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -257,24 +257,24 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "headColor": "rgba(255,181,0,1)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "title": "Product categories",
     "jcr:lastModified": "Fri Jan 07 2022 21:17:51 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "arbitraryOrdering": {
       "jcr:primaryType": "nt:unstructured",
       "1": {
@@ -304,14 +304,14 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "disclaimer-type": "text",
     "disclaimer": "<p>&nbsp;</p>\r\n<p>The SR MCP and PIP Arthroplasty System is sold as a HUMANITARIAN USE DEVICE in the US. The effectiveness of this device for this use has not been demonstrated.</p>\r\n<p>CP-AWI-13, 07-2017</p>\r\n",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
     "textIsRich": "true",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",
@@ -320,6 +320,6 @@
     ],
     "fileReference": "/content/dam/stryker/trauma-and-extremeties/systems/trauma-running-man.jpg",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   }
 }

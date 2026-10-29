@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e3af219e-ada3-41b1-80f7-e9062339c578",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "IP BRAVoE",
   "jcr:predecessors": [
     "530f48cb-50dd-41ed-9cec-8044dada9a8c"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Oct 24 2025 00:25:41 GMT+0000",
       "jcr:lastModified": "Fri Oct 24 2025 00:25:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -51,8 +51,8 @@
     },
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "preset": "max_width_auto",
       "jcr:created": "Fri Oct 24 2025 00:45:18 GMT+0000",
       "alt": "IP BRAVoE",
@@ -64,8 +64,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Oct 24 2025 00:25:46 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\">As surgical environments evolve, integration systems must do more than connect devices. They must simplify workflows, reduce complexity, and support real-time clinical decisions. <a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">IP BRAVoE</a> is Stryker’s newest and most advanced integration platform, built to address the real-world needs of surgical teams while preparing for what’s next in the operating room.<br>\n &nbsp;</span></p>\n<h2><span style=\"color: inherit;\"><span class=\"fontsize-1-25em\">Built in response to what we heard</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Across surgical specialties, teams shared a familiar frustration: too many systems, too many interfaces, and not enough cohesion. They weren’t just looking for smarter technology – they were looking for simplicity. A system that could streamline set up, centralize control, and reduce unnecessary touchpoints. One that worked seamlessly in the OR and behind the scenes – making installation and service as streamlined as the experience in the OR.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">IP BRAVoE</a> was created in direct response to those needs. It reflects deep collaboration with the ultimate users!<br>\n &nbsp;</span></p>\n<h2><span class=\"fontsize-1-25em\">Designed to adapt</span></h2>\n<p><span class=\"fontsize-1-25em\">At the heart of the Connected OR’s <a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">IP BRAVoE</a> is flexibility. It features plug-and-play device compatibility, scalable hardware, and install options that fit any OR layout, including zero-footprint configurations. With 8K-ready video routing and compatibility across all standard signals, it delivers performance today while staying ready for tomorrow’s demands.</span></p>\n<p><span class=\"fontsize-1-25em\">The standardized interface spans all Stryker integration platforms, so surgical teams experience consistency across every room, every time.<br>\n &nbsp;</span></p>\n<h2><span class=\"fontsize-1-25em\">Control that empowers</span></h2>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">IP BRAVoE</a> puts control where it belongs - in the hands of the surgical team. From a single platform, users can manage video routing, access the EHR, and control connected devices from three distinct points, including the sterile field. One-touch workflows support efficiency, while automated functions like predictive smoke evacuation and image enhancement allow you to focus more on the patient rather than devices.<sup>1</sup><br>\n &nbsp;</span></p>\n<h2><span class=\"fontsize-1-25em\">Integration that delivers</span></h2>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">IP BRAVoE</a> is more than an upgrade. It’s a solution designed to scale with the surgical environment. Supported by Stryker’s complementary technologies and service, it establishes a strong foundation for our future integration solutions by driving operational efficiency.<sup>1</sup></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">The future of <a href=\"/content/stryker/us/en/communications/products/connected-or-ip.html\" target=\"_blank\">integration</a> starts here. Centered on you.</span><br>\n </span>&nbsp;</p>\n",
       "jcr:lastModified": "Wed Oct 29 2025 17:54:21 GMT+0000",
@@ -74,16 +74,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Oct 24 2025 00:47:17 GMT+0000",
       "jcr:lastModified": "Fri Oct 24 2025 00:47:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri Oct 24 2025 00:47:32 GMT+0000",
       "jcr:lastModified": "Fri Oct 24 2025 00:47:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -91,7 +91,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Mon Oct 27 2025 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Oct-2025",
@@ -104,7 +104,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>1524158</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Fri Oct 24 2025 00:27:10 GMT+0000",
@@ -113,7 +113,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_auto",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Fri Oct 24 2025 00:45:11 GMT+0000",

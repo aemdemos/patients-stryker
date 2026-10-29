@@ -10,7 +10,7 @@
   "jcr:versionHistory": "dd98bae1-352d-43a2-837c-1d207be9c1e5",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Nose, mouth, and skin prep products",
   "jcr:predecessors": [
     "0f3ccb65-1595-4b44-a9db-8b740d6f6417"
@@ -39,7 +39,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/pre-op-prep",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -54,7 +54,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue May 04 2021 19:02:07 GMT+0000",
@@ -62,7 +62,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
     "jcr:lastModified": "Tue Oct 08 2019 13:56:29 GMT+0000",

@@ -8,7 +8,7 @@
   "jcr:title": "VariAx 2  Distal Fibula",
   "jcr:versionHistory": "6b623e9f-39e8-4731-8473-3126ec7b993b",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/variaxfibula/images/VariAx-Fibula.png",
   "jcr:predecessors": [
     "f17d5d5d-f873-461f-b9b9-9483bc427d9a"
@@ -39,13 +39,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "megan.foltz@stryker.com",
+  "cq:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Jun 22 2017 08:39:52 GMT-0400",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxfibula/images/VariAx-Fibula.png",
@@ -62,7 +62,7 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/stryker/us/en/foot-and-ankle/asset-items/jcr:content/par/externalasset_367444557",
-      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
       "jcr:lastModified": "Wed Aug 23 2017 09:49:43 GMT-0400",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -71,7 +71,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Plating that fits.</p>\r\n",
     "shortDescTop": "<p>The VariAx Fibula Locking Plate System represents a new generation of implant technology.&nbsp;</p>\r\n",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Mon Jul 17 2017 16:09:30 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -105,7 +105,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>CP-AWI-14, 07-2017</p>\r\n",
     "jcr:lastModified": "Tue Aug 01 2017 13:48:13 GMT-0400",

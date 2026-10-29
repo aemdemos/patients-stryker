@@ -8,7 +8,7 @@
   "jcr:title": "Medium bone power tools",
   "jcr:versionHistory": "84bbd36c-f78d-4a4c-9425-439123475e9f",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/surgical/products/system8cordlessdriverandsabo/images/Thumbnail_System8CordlessDriverSABO.jpg",
   "jcr:predecessors": [
     "bb76c140-fd7c-4d62-869d-265f69cfb91d"
@@ -34,7 +34,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "navTitle": "Medium bone power tools",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -48,7 +48,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:41:19 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",

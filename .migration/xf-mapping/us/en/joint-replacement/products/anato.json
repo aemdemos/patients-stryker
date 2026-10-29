@@ -10,7 +10,7 @@
   "jcr:versionHistory": "8c2222ff-48e8-4725-bf20-d5c16dc6e9aa",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Anato thumbnail",
   "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/anato/images/Hero_JR_Hip_Anato.png",
   "jcr:predecessors": [
@@ -43,14 +43,14 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Femoral Hip Stem",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Fri Jul 14 2017 16:17:17 GMT-0400",
       "compImageRef": "/content/dam/stryker/joint-replacement/products/anato/images/Hero_JR_Hip_Anato.png",
@@ -67,7 +67,7 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_149583996",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:lastModified": "Wed Jun 24 2020 15:16:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -76,7 +76,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p><b>Evolving the anatomic stem for your surgical approach</b></p>\r\n",
     "shortDescTop": "<p>Anato is an evolution of past clinically successful anatomic femoral stem iterations, offering the confidence of clinical history based on the heritage of Porous Coated Anatomic (PCA), ABG and Citation. Published studies demonstrate over 11 years of clinical performance and survivorship with predecessor stems.<sup>1,2,3</sup></p>\r\n",
-    "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+    "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
     "jcr:lastModified": "Thu Aug 31 2017 22:19:10 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -88,7 +88,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Nourissat C., Essig J., Asencio G. The Cementless Anatomic Benoist Girard (ABG) II Total Hip Arthroplasty A Minimum 8-year follow up study. JOA 2013; 28: 707-711.</li>\r\n<li>Bejescul, JA, Xenos JS, Callaghan JJ, et a. Results of Porous-Coated Anatomic Total Hip Arthroplasty without Cement at Fifteen Years: A Concise Follow-Up of a Previous Report. Journal of Bone and Joint Surgery Series A 2003; 85; 1079-1083.</li>\r\n<li>Herrera A, Mateo J, Lobo-Escolar A, et al. Long-Term Outcomes of a New Model of Anatomical Hydroxyapatite-Coated Hip Prosthesis. The Journal of Arthroplasty 2013; 28: 1160-1166.</li>\r\n<li>Lovell T, Hozack W, Kreuzer S, Merritt P, Nogler M, Puri L, Wuestemann T, Bastian A. Influence of Stem Length on the Insertion Path in THR. 2009 ORS Poster #2040.</li>\r\n<li>Global native Femoral Anteversion SOMA analysis. Stryker Internal Report #RD-14-071.&nbsp;September, 2014.<br>\r\n</li>\r\n<li>Gerges J, Hozack, W, Essig J, Boucher F, Asencio G. Changes in Femoral Version During Implantation of Anatomic Stems. ORS Abstract.</li>\r\n<li>Pederson DR, Callaghan JJ, Brown TD. Activity Dependence of the “Safe Zone” for Impingement Versus Dislocation Avoidance. Medical Engineering and Physics 2005; 27:323-328.&nbsp;</li>\r\n<li>Patel AB, Wagle RR, Usrey MM, et al. Guideline for Implant Placement to Minimize Impingement During Activities of Daily Living After Total Hip Arthroplasty. The Journal of Arthroplasty 2010; 25; 1275-1281.</li>\r\n<li>Dorr LD, Malik A, Dastane M, et al. Combined Anteversion Technique f or Total Hip Arthroplasty. Clin Orthop 2009; 467: 119-127.</li>\r\n<li>Gerges J, Krebs V, Hedley A, Hitt K. Three-Dimensional Metaphyseal Fit Analysis of Anatomic Stems. ISTA Abstract.</li>\r\n<li>Anatomic Stem Analysis. Stryker Internal Report #RD-13-050.&nbsp;May, 2013<br>\r\n</li>\r\n<li>Capello, W., D’Antonio J., Jaffe, W., Geesink, R., Manley, M., Feinbery, J. “Hydrdoxyapatite coated Femoral Component, 15 year follow-up”. Clin Orthop Relat Res. 2006 Dec(453); pp.75-80.<br>\r\n</li>\r\n<li>Micromotion, Strain and Force at fracture Comparing ABG II vs. Anato. Stryker Internal Report #RD-13-020.February, 2013.<br>\r\n</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue Mar 02 2021 15:04:53 GMT+0000",

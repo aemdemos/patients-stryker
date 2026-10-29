@@ -9,7 +9,7 @@
   "jcr:versionHistory": "10cd3e2f-99f2-4453-b5e2-2fbaf65086b2",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "290799b7-b0aa-4488-a1dc-0fd55e1183c7"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "cdbe9193-5241-492f-b111-cefe79a1524a",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:16:41 GMT+0000",
       "text": "Primary Reversed Dr. William Paterson reviews difficult primary reverse shoulder arthroplasty in this “Tough Case Tuesday\" webinar presentation featuring Drs. George Athwal, Jay Keener, and Robert Tashjian. Featured products include Aequalis® Flex Revision and Tornier Perform® Reversed Glenoid. AP-016268A",
       "jcr:lastModified": "Thu Jul 28 2022 18:16:59 GMT+0000",

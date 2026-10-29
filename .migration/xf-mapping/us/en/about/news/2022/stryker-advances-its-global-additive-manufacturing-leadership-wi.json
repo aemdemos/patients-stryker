@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c02a6c3e-b11b-4329-9f69-1a80a4c1e688",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "e427c767-e6a5-44d6-b5c5-d05e4acc6014"
   ],
@@ -29,14 +29,14 @@
   "jcr:uuid": "8ba66c12-874c-4488-88fb-ba6f02642145",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Aug 03 2022 12:58:05 GMT+0000",
       "jcr:lastModified": "Wed Aug 03 2022 12:58:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -45,16 +45,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Aug 03 2022 12:58:09 GMT+0000",
           "jcr:lastModified": "Wed Aug 03 2022 12:58:09 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Aug 03 2022 12:58:13 GMT+0000",
           "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually.&nbsp;</p>\n<p>Stryker’s Irish presence includes more than 4,000 people across eight facilities in Belfast, Limerick and Cork. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n",
           "jcr:lastModified": "Wed Aug 03 2022 13:30:24 GMT+0000",
@@ -66,7 +66,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Wed Aug 03 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "03-Aug-2022",
@@ -75,7 +75,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "text": "<p><i>New development creates more opportunities for high-tech roles in the region and furthers innovation globally</i></p>\n<p><b>3 August 2022, Carrigtwohill, Co. Cork.</b> – Stryker (NYSE: SYK), one of the world’s leading medical technology companies, today celebrated the official opening of the high-tech facility at Anngrove with a visit from Taoiseach Micheál Martin TD, the IDA and other local guests. The new 156,000-square-foot development creates capacity for 600 high-tech jobs in the future, and will help further Stryker’s leadership in additive manufacturing. Stryker has made significant investments in Anngrove to establish itself as a world leader in this technology, and will continue to invest for growth.</p>\n<p>Welcoming the news, <b>Taoiseach Micheál Martin TD</b> said: “I am delighted to be at the opening of Stryker’s newly expanded Anngrove facility, a very welcome development for Cork and the South West region. Today’s opening and announcement of the capacity for new jobs is testament to the capability, dedication and vision of the Stryker team, and of the growth and success of Stryker here. Government will work to ensure Ireland continues to be an attractive location for the med-tech sector, and business in general, supported by our highly-skilled and talented workforce.”</p>\n<p>Stryker is a global leader in the application of additive manufacturing technologies, also known as 3D printing, to healthcare innovation, particularly for the manufacture of specialised medical devices. The company manufactures products to treat bone-related conditions across knees, hips, shoulder, ankle, craniomaxillofacial and spine, as well as patient-specific solutions for people with significant disease progression often with no alternative.</p>\n<p>In addition to housing Stryker’s manufacturing facilities, Anngrove is also the worldwide headquarters of the AMagine Institute, which is the center of excellence for additive manufacturing across Stryker. The institute develops breakthrough technologies, from early research and development to full commercial launch and scaling, and deploys these new technologies across its full portfolio of products and services.</p>\n<p>Announcing the news today, <b>Viju Menon, Group President Global Quality and Operations at Stryker</b>, said, “The new facility and talent will continue to unlock new opportunities that were previously not possible, accelerate innovation globally and further support our mission to make healthcare better together with our customers. With our experience and proprietary technology, we are excited to impact more patients and drive growth with this additional investment. We are also pleased toexpand our talent base in Ireland with engaging roles across a range of disciplines. At Stryker we are committed to a diverse, safe and inclusive work environment.”</p>\n<p><b>IDA Ireland CEO Martin Shanahan</b> said: “Stryker has been innovating in additive manufacturing within the MedTech industry for more than 20 years and opened its Anngrove facility in 2016. The expanded facility furthers the company’s four-decade commitment to Ireland and recognises the strong ecosystem of universities, engineering talent and partners such as the IDA. It also builds on Stryker’s outstanding track record for innovation and shows the key role Anngrove plays in the company’s global additive technology research and development. We welcome this exciting development in Anngrove, the potential it brings for future high tech job growth, and look forward to continued success for Stryker in Ireland.”</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Wed Aug 03 2022 12:59:09 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -87,7 +87,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/about/news/2022/stryker-advances-its-global-additive-manufacturing-leadership-with-new-facility-at-anngrove,-creating-capacity-for-600-additional-jobs-/Image 2 Walking_anngrove.jpg",
     "borderColor": "rgba(76,125,122,1)",

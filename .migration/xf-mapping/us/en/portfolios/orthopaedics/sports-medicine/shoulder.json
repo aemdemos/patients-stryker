@@ -11,7 +11,7 @@
   "jcr:versionHistory": "eb9fd9bc-003b-40a4-a412-8f2d845b737d",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 1.jpg",
   "jcr:predecessors": [
     "23035452-128c-42bc-8b32-8f11700f11e4"
@@ -37,7 +37,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,11 +45,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu May 07 2020 20:35:01 GMT+0000",
       "jcr:lastModified": "Thu Dec 23 2021 14:54:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable"
@@ -61,14 +61,14 @@
       "cq:LiveRelationship"
     ],
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Wed Jun 08 2022 14:37:27 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -76,12 +76,12 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
       "title": "Comprehensive shoulder solutions",
       "jcr:lastModified": "Thu May 07 2020 20:37:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -121,26 +121,26 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "sheila.raja@stryker.com",
+    "jcr:lastModifiedBy": "user-0646c98fe2@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Thu Aug 27 2020 20:26:36 GMT+0000",
     "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Shoulder.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "disclaimer-type": "path",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
     "textIsRich": "true",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

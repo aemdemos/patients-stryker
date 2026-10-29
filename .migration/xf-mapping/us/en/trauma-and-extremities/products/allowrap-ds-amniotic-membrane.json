@@ -8,7 +8,7 @@
   "jcr:title": "AlloWrap DS",
   "jcr:versionHistory": "c73a19bb-eacb-4a38-9069-37d97f432e44",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/allowrap/images/Allowrap DS Final.PNG.jpg",
   "jcr:predecessors": [
     "d1dfa83e-1019-4f7a-8ff8-ec47fd4c92a2"
@@ -41,13 +41,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Aug 10 2017 11:15:49 GMT-0400",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/allowrap/images/Allowrap DS Final.PNG.jpg",
@@ -71,7 +71,7 @@
         "/content/dam/stryker/trauma-and-extremeties/products/allowrap/resources/2022-Physician-Office-Solutions.pdf",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Fri May 20 2022 14:45:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -80,7 +80,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p><sup>AlloWrap DS &nbsp;</sup></p>\r\n",
     "shortDescTop": "<p>Amniotic membranes are commonly used for wound coverage and nerve or tendon protection.<sup>1</sup> AlloWrap DS is a dual layer graft that is processed so the epithelial layer is facing outwards on both sides of the graft. This allows for omni-directional implantation.<sup>2</sup></p>\r\n",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Thu Aug 10 2017 11:21:26 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -114,7 +114,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Duarte, IGL, and Ivana Duval-Araujo. &quot;Amniotic Membrane as a Biological Dressing in Infected Wound Healing in Rabbits.&quot; Acta Cirúrgica Brasileira 29.4 (2014): 334-39</li>\r\n<li>AlloWQrap Package Insert, M1S1174.01</li>\r\n</ol>\r\n<p>Processed by: Allosource 6278 S Troy Cir. Centennial, CO 80111 t: 800 557 3587</p>\r\n<p>CP-AWI-12, 07-2017<br>\r\n</p>\r\n",
     "jcr:lastModified": "Thu Aug 24 2017 11:22:37 GMT-0400",

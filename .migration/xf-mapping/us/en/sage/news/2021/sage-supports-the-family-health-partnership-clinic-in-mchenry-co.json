@@ -7,7 +7,7 @@
   "jcr:title": "Sage supports the Family Health Partnership Clinic in McHenry County",
   "jcr:versionHistory": "e327a8a1-55e5-44c2-a175-702fb72ea42b",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "d0bd7c96-cfc0-4453-822b-930fc5173f2d"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "cc658b58-9c27-49bd-9605-2bb8321327a4",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kelley.may@stryker.com",
-      "jcr:lastModifiedBy": "kelley.may@stryker.com",
+      "jcr:createdBy": "user-d10587b9a8@example.invalid",
+      "jcr:lastModifiedBy": "user-d10587b9a8@example.invalid",
       "jcr:created": "Fri Oct 01 2021 21:24:21 GMT+0000",
       "text": "<p>&nbsp;</p>\n<p><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Donate today – any amount makes a difference!</span></span></span></p>\n",
       "jcr:lastModified": "Fri Oct 01 2021 21:26:56 GMT+0000",
@@ -43,9 +43,9 @@
     "buttonset_1232401161": {
       "jcr:primaryType": "nt:unstructured",
       "buttonSeriesColors": "rgba(255,181,0,1)",
-      "jcr:createdBy": "kelley.may@stryker.com",
+      "jcr:createdBy": "user-d10587b9a8@example.invalid",
       "buttonAlignment": "horizontal-alignment align-left",
-      "jcr:lastModifiedBy": "kelley.may@stryker.com",
+      "jcr:lastModifiedBy": "user-d10587b9a8@example.invalid",
       "jcr:created": "Fri Oct 01 2021 21:24:36 GMT+0000",
       "jcr:lastModified": "Fri Oct 22 2021 17:37:45 GMT+0000",
       "sling:resourceType": "stryker/components/content/buttonset",
@@ -63,7 +63,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Mon Jan 24 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Jan-2022",
@@ -72,7 +72,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kelley.may@stryker.com",
+    "jcr:lastModifiedBy": "user-d10587b9a8@example.invalid",
     "hideComponent": "false",
     "gradientDirection": "left-to-right",
     "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Raising funds and awareness at the Care4Breast Cancer 5K</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">The Care4Breast Cancer 5K celebrated its 21st year of raising critical funds for Family Health Partnership Clinic on Sunday, October 17 at Woodstock North High School. The FHPC is a nonprofit organization dedicated to providing quality healthcare to the uninsured men and women of McHenry County. All of the proceeds from the Care4 race benefit FHPC and stay here, in McHenry County, to take care of our neighbors in need.</span></span><br>\n</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Helping our neighbors</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">Everyone who participated had a great time because it’s not about who has the best finish time, it’s that we’re coming together to help our community. The funds raised from this race help ensure that the uninsured men and women of McHenry County have access to breast cancer screenings, early diagnosis and treatment, education and other women's health services. Early diagnosis is a key to survival and without health insurance, early detection may not happen.</span></span></p>\n",
@@ -82,13 +82,13 @@
   },
   "eventlocationproperties": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "jcr:lastModified": "Mon Jan 24 2022 20:01:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/eventlocationproperties"
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/sage/news/2021/Sage-newsroom-Care4-Breast-Cancer-thumbnail.jpg",
     "borderColor": "rgba(76,125,122,1)",

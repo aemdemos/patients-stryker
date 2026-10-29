@@ -9,7 +9,7 @@
   "jcr:versionHistory": "efd4d056-7c32-49bc-8bdf-f445f99806aa",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "thumbnailAltText": "doctor and patient looking tablet",
   "jcr:predecessors": [
     "7b9f55d2-4a65-4c54-a2d4-b49da555d071"
@@ -29,7 +29,7 @@
   "jcr:uuid": "0612435d-d7b2-46bd-82b7-f6eba0313bae",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Automate workflows. Empower teams. Get back to the bedside.",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -44,16 +44,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Feb 19 2025 21:57:18 GMT+0000",
       "jcr:lastModified": "Wed Feb 19 2025 21:57:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "richard.thomas2@stryker.com",
-      "jcr:lastModifiedBy": "richard.thomas2@stryker.com",
+      "jcr:createdBy": "user-3d4e7ad506@example.invalid",
+      "jcr:lastModifiedBy": "user-3d4e7ad506@example.invalid",
       "jcr:created": "Thu Feb 16 2023 19:46:05 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 19:46:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -62,8 +62,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_908007915_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<h2><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Automate workflows. Empower teams. Get back to the bedside.</span></span></span></span></span></span></h2>\n<h2>Help drive efficiency and collaboration through smart, connected workflows</h2>\n<p><span class=\"fontsize-1-25em\">Hospitals are facing growing challenges—staffing shortages<sup>1</sup>, rising costs<sup>2</sup> and complex systems<sup>3</sup> that can slow down care. But what if your technology worked for you instead of against you?</span></p>\n<p><span class=\"fontsize-1-25em\">With Stryker’s enterprise workflow platform, hospitals are seeing real results:</span></p>\n<p><span class=\"fontsize-1-25em\"><b>• 80% improvement in patient length of stay</b><sup><b>4</b></sup><br>\n <b>• 66% reduction in patient falls with injury<sup>4</sup></b><br>\n <b>• $500K+ annual savings from reduced contract labor<sup>4</sup></b></span></p>\n<p><span class=\"fontsize-1-25em\">By streamlining communication, automating workflows and reducing inefficiencies, we help your team focus on what matters most—caring for patients.</span></p>\n<p><span class=\"fontsize-1-25em\">Let’s build a smart, more connected hospital together.<br>\n </span>&nbsp;</p>\n<p>&nbsp;</p>\n",
@@ -78,8 +78,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "richard.thomas2@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-3d4e7ad506@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Feb 16 2023 19:46:59 GMT+0000",
           "alt": "Doctor and patient reviewing information on a tablet",
@@ -93,8 +93,8 @@
     },
     "cols_1290405602_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "richard.thomas2@stryker.com",
-      "jcr:lastModifiedBy": "richard.thomas2@stryker.com",
+      "jcr:createdBy": "user-3d4e7ad506@example.invalid",
+      "jcr:lastModifiedBy": "user-3d4e7ad506@example.invalid",
       "jcr:created": "Fri Feb 17 2023 21:35:48 GMT+0000",
       "jcr:lastModified": "Fri Feb 17 2023 21:35:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -103,8 +103,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Ready to learn more? </span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\">Download the whitepaper today.</span></span></h3>\n",
@@ -117,8 +117,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -127,10 +127,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1315",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",
@@ -148,7 +148,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Unger, Dan, et al. <i>A Healthcare Worker Shortage Action Plan: Short-Term Wins and Long-Term Strategy</i>. healthcatalyst.com.</p>\r\n<p>2. Bendix, J. (2023, September 5). <i>Staffing shortages pose risks to health care organizations, execs say</i>. MedicalEconomics. https://www.medicaleconomics.com/view/staffing-shortages-pose-risks-to-health-care-organizations-execs-say‌</p>\r\n<p>3. Nikpour J, Carthon JMB. Characteristics, work environments, and rates of burnout and job dissatisfaction among registered nurses in primary care. <i>Nurse Outlook</i>. 2023;71(4):101988. doi:10.1016/j.outlook.2023.101988</p>\r\n<p>4. Stryker and Becker’s. <i>Enabling Fall Prevention Through Connected Bed Workflows. </i>Stryker, 2024.</p>\r\n",
     "jcr:lastModified": "Mon Mar 10 2025 16:56:30 GMT+0000",

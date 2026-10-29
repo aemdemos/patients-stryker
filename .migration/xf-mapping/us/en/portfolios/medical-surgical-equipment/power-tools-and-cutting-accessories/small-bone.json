@@ -7,7 +7,7 @@
   "jcr:title": "Small bone power tools",
   "jcr:versionHistory": "00157969-9306-4910-abe8-63c495e4fec4",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/surgical/products/strykerf1/images/Thumbnail_StrykerF1.jpg",
   "jcr:predecessors": [
     "715cc23b-8e5e-43b4-884c-d7ab728181a2"
@@ -31,7 +31,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "cq:lastModifiedBy": "user-5a4ae9843d@example.invalid",
   "navTitle": "Small bone power tools",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -45,7 +45,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:40:20 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -55,7 +55,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Thu Aug 24 2017 19:19:09 GMT-0400",

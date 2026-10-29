@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8b3b297c-8184-496b-8d03-bf311c6a1eac",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "AEDs are vital to athlete safety ",
   "jcr:predecessors": [
     "c7d9801a-1378-4d7a-b6d5-51b48d6c00a3"
@@ -31,14 +31,14 @@
   "jcr:uuid": "f70184b5-d5a7-45cc-be65-87e206b68a0a",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Mon Feb 26 2024 15:23:04 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -51,7 +51,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "publishDate": "Mon Mar 11 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "11-Mar-2024",
@@ -64,7 +64,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "preset": "max_width_1440",
     "alt": "AEDs play a vital role in keeping athletes safe ",
     "srcFileRef": "/content/dam/stryker/ems/news/images/track-and-field-runners-for-ec-aed-article 900x400.jpg",
@@ -75,14 +75,14 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "jcr:lastModified": "Mon Feb 26 2024 15:26:58 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Rothmier, J. D., &amp; Drezner, J. A. (2009). The role of automated external defibrillators in athletics. <i>Sports health</i>, <i>1</i>(1), 16–20.<br>\r\n2. Steinbuch Y, Arizona girl, 12 saved by teammates mom after suffering sudden cardiac arrest during soccer, New York Post, Published May 1, 2023. Available at: <a href=\"https://nypost.com/2023/05/01/arizona-girl-12-suffers-cardiac-arrest-during-soccer-practice\" style=\"font-size: 0.8125rem; background-color: rgb(240, 240, 240);\">https://nypost.com/2023/05/01/arizona-girl-12-suffers-cardiac-arrest-during-soccer-practice</a><br>\r\n3. Page R. L. (2011). The AED in resuscitation: it's not just about the shock. <i style=\"font-size: 0.8125rem;\">Transactions of the American Clinical and Climatological Association</i><span style=\"font-size: 0.8125rem;\">, </span><i style=\"font-size: 0.8125rem;\">122</i>, 347–355.<br>\r\n4. American Heart Association Heart and Stroke Statistics – 2022 Update highlights, Sudden Cardiac Arrest Foundation, Available at: <a href=\"https://www.sca-aware.org/about-sudden-cardiac-arrest/latest-statistics\" style=\"background-color: rgb(240, 240, 240); font-size: 0.8125rem;\">https://www.sca-aware.org/about-sudden-cardiac-arrest/latest-statistics</a><br>\r\n5. Medical Advisory Secretariat (2005). Use of automated external defibrillators in cardiac arrest: an evidence-based analysis. <i style=\"font-size: 0.8125rem;\">Ontario health technology assessment series</i><span style=\"font-size: 0.8125rem;\">, </span><i style=\"font-size: 0.8125rem;\">5</i>(19), 1–29.<br>\r\n6. Robert Campell, Stuart Berger, Michael J. Ackerman, W. Robert Morrow, Kathy Jenkins, L. LuAnn Minich, Geoffrey L. Rosenthal, Christopher S. Snyder, James Twedell; Pediatric Sudden Cardiac Arrest. <i style=\"font-size: 0.8125rem;\">Pediatrics </i><span style=\"font-size: 0.8125rem;\">April 2012; 129 (4): e1094–e1102. 10.1542/peds.2012-0144</span></p>\r\n",
     "jcr:lastModified": "Mon Mar 11 2024 16:50:02 GMT+0000",

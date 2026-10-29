@@ -10,7 +10,7 @@
   "jcr:versionHistory": "11a30c35-1464-48bd-9add-78dd94f61c86",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+  "jcr:lastModifiedBy": "user-76a17b8b97@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/cmf-implants/images/Thumbnail_Reconstruction.png",
   "jcr:predecessors": [
     "dddb76c6-ec34-4c03-ae47-dcade6d162d8"
@@ -40,7 +40,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/craniomaxillofacial",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "cq:lastModifiedBy": "user-2fc21bab61@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -48,7 +48,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -56,7 +56,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -66,14 +66,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 16:09:26 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true"
   },
@@ -82,14 +82,14 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModifiedBy": "user-2fc21bab61@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "imageAlt": "Mandible Recon_CMRP2.0",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue May 09 2023 17:18:20 GMT+0000",
     "compImageRef": "/content/dam/stryker/craniomaxillofacial/products/Mandible Recon_CMRP2.0.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

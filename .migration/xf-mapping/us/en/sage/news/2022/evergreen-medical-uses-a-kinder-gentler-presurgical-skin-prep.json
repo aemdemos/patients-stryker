@@ -9,7 +9,7 @@
   "jcr:versionHistory": "06b7f9f1-a82a-4df5-a938-cf4729f67ca7",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "thumbnailAltText": "Evergreen Healthcare Kinder, Gentler Presurgical Skin Prep poster",
   "jcr:predecessors": [
     "20c88bd7-8a19-42e3-ad74-295a6f00f07d"
@@ -30,14 +30,14 @@
   "jcr:uuid": "a0e5f59f-d2c3-47f4-b486-2de9dfe72f1a",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "publishDate": "Mon Oct 31 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "31-Oct-2022",
@@ -50,7 +50,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "preset": "max_width_auto",
     "linkExternal": "https://www.stryker.com/content/dam/stryker/sage/news/resources/2022/Kinder-Gentler-Presurgical-Skin-Prep-poster.pdf",
     "alt": "Evergreen Healthcare Kinder, Gentler Presurgical Skin Prep poster",
@@ -63,7 +63,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "text": "<p>In 2019, Susanne Parker MSN, RN, CSN and Jeanette Harris MS, MSM, MT (ASCP), CIC, FAPIC initiated a study at Evergreen Healthcare in Kirkland, WA. The purpose of the study was to determine if there was a CHG skin prep product that didn’t use isopropyl alcohol and benzalkonium chloride as the primary disinfecting agent but could reduce the bio load on skin areas while decreasing adverse skin reactions.</p>\n<p>The study included all outpatient surgical patients for two continuous months and all surgical patients (including inpatients) for the final third month. The groups were split into an interventional group and a control group. The interventional group received a presurgical skin preparation using 2% CHG cloths. The control group continued with disinfectants, isopropyl alcohol, and benzalkonium. The study examined a total of 1,818 cases between both groups.</p>\n<p>The study revealed that the interventional group experienced only minor adverse skin reaction in three out of 829 cases. The control group, which consisted of 989 cases, experienced 11 adverse skin reactions, three required inpatient treatment, and two patients required emergency department visits.</p>\n<p>To view the poster: <a href=\"/content/dam/stryker/education-and-training/focusrn/resources/hospital-acquired-infections/surgical-site-infections/posters/Kinder-Gentler-Presurgical-Skin-Prep-poster.pdf\" target=\"_blank\" title=\"View the Kinder, Gentler Presurgical Skin Prep poster.\">click here</a>.</p>\n<p>Our clinically proven systems can help standardize your pre-op approach for maximum efficiency and enhanced compliance to reduce surgical site infections. To learn more, <a title=\"View our pre-op prep products.\" href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/pre-op-prep.html\">click here</a>.</p>\n",
     "jcr:lastModified": "Mon Oct 31 2022 15:20:29 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

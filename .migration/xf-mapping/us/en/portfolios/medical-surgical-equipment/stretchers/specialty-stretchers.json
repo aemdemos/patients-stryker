@@ -7,7 +7,7 @@
   "jcr:title": "Specialty stretchers",
   "jcr:versionHistory": "428a26e4-53a4-419b-84fa-3985193975ae",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "thumbnailAltText": "Specialty Stretchers",
   "thumbnailFileReference": "/content/dam/stryker/acute-care/products/gynnie/images/Thumbnail_GynnieStretcher.jpg",
   "jcr:predecessors": [
@@ -31,7 +31,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -44,7 +44,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:49:06 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -54,7 +54,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri Aug 04 2017 14:02:57 GMT-0400",

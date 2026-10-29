@@ -22,14 +22,14 @@
   ],
   "jcr:uuid": "d553dd81-87bc-4b29-9c82-651dae02b753",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "publishDate": "Tue May 08 2018 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "08-May-2018",
@@ -38,7 +38,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "text": "<p>Stryker’s investment in additive manufacturing and technology advancements has enabled us to focus on the development of innovative new products that would not be possible with traditional manufacturing methods. John Haller, Stryker’s VP of Global Supply, shared his perspectives on our journey and the benefits to patient care during GE Additive’s Industry in 3D event on Thursday, May 3. <a href=\"https://www.youtube.com/watch?v=FH4WTY-OM9Q&amp;list=PLnn8rx4jIRosey5Em9ZecBlr7qV5fLEhg&amp;index=4&amp;t=0s\">Click here</a> to view the panel discussion featuring Haller; Dr. Jonathan M. Morris, M.D. Radiologist, Mayo Clinic; and Jimmie Beacham, Chief Engineer Additive Manufacturing, GE Healthcare.</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Tue May 08 2018 10:06:11 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

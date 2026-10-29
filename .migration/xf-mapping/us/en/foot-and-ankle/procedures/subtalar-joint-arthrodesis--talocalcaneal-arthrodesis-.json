@@ -7,7 +7,7 @@
   "jcr:title": "Subtalar Joint Arthrodesis (Talocalcaneal Arthrodesis)",
   "jcr:versionHistory": "4f827d42-9e31-4950-a3c4-a595453fd2bf",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Subtalar-Joint-Arthrodesis--Talocalcaneal-Arthrodesis-/Images/Hindfoot_SubtalarJointArthrodesis.jpg",
   "jcr:predecessors": [
     "ba963538-a7c0-4e40-be67-da55e39c6be0"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:06:13 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Subtalar-Joint-Arthrodesis--Talocalcaneal-Arthrodesis-/Images/Hindfoot_SubtalarJointArthrodesis.jpg",
@@ -54,7 +54,7 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Wed Aug 12 2020 19:50:46 GMT+0000",

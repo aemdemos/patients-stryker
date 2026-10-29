@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6ef1cf33-89b8-4359-bcd3-0359a5fd5c2d",
   "cq:template": "/apps/stryker/templates/contactdivision",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "39ddfbc2-6acc-47fa-825d-d5073f37c3be"
   ],
@@ -41,14 +41,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/spine",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "contact-us",
       "jcr:created": "Wed Apr 29 2026 15:43:02 GMT+0000",
       "title": "Send us a note",
@@ -57,10 +57,10 @@
     },
     "marketoform": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "4903",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Apr 29 2026 15:42:55 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -70,7 +70,7 @@
   },
   "contactus": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "title": "Contact us",
     "groupContact": "1",
     "jcr:lastModified": "Wed Apr 29 2026 15:42:39 GMT+0000",

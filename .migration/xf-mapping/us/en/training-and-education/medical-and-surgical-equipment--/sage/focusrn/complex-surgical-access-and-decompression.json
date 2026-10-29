@@ -9,7 +9,7 @@
   "jcr:versionHistory": "92aeca0b-e724-4daf-b420-f782d00e90da",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "f7f18ad5-b596-4322-bbe3-c130da26a107"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "5554d3e1-cd52-4b47-97c0-6eebe9ea7d3e",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -37,7 +37,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Apr 21 2022 19:48:06 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
@@ -47,8 +47,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Fri May 13 2022 16:22:12 GMT+0000",
       "jcr:lastModified": "Fri May 13 2022 16:23:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -57,8 +57,8 @@
     },
     "cols_1263276765_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Fri May 13 2022 15:57:10 GMT+0000",
       "jcr:lastModified": "Fri May 13 2022 15:57:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -67,8 +67,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Fri May 13 2022 15:57:20 GMT+0000",
           "jcr:lastModified": "Fri May 13 2022 15:57:20 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -77,8 +77,8 @@
     },
     "cols2_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Thu Apr 21 2022 18:23:18 GMT+0000",
       "jcr:lastModified": "Thu Apr 21 2022 18:23:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -87,8 +87,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Thu Apr 21 2022 18:24:21 GMT+0000",
           "text": "<h1><span class=\"futura-bold\">Complex surgical access and decompression</span></h1>\n<p><span class=\"fontsize-1-25em\">Exposing the spine as efficiently as possible is a critical part of spine surgery. OR staff must be knowledgeable about these delicate surgical techniques and the best practices for successful outcomes. This section will provide educational content to review the latest evidence-based approach to these procedures.</span></p>\n",
           "jcr:lastModified": "Fri May 13 2022 17:56:59 GMT+0000",
@@ -101,8 +101,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "preset": "max_width_auto",
           "jcr:created": "Thu Apr 21 2022 18:33:37 GMT+0000",
           "alt": "Complex surgical access and decompression",
@@ -114,9 +114,9 @@
         },
         "curatedcta_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "1",
           "jcr:created": "Fri May 13 2022 12:16:12 GMT+0000",
@@ -130,8 +130,8 @@
     },
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Mar 17 2022 18:47:38 GMT+0000",
       "title": "Educational Courses ",
       "jcr:lastModified": "Fri May 12 2023 20:01:52 GMT+0000",
@@ -139,8 +139,8 @@
     },
     "cols2_1_3_2_3_copy_9": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
       "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -149,8 +149,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "preset": "max_width_png",
           "linkExternal": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
           "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
@@ -168,8 +168,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
           "text": "<h2>Cranial Anatomy &amp; Procedural Overview<br>\n</h2>\n<h3>Learning objectives<br>\n</h3>\n<ul>\n<li>List and describe the location of the bones in the skull<br>\n</li>\n<li>List the lobes of the brain<br>\n</li>\n<li>Describe the meninges with name and location<br>\n</li>\n<li>Describe the general steps of a craniotomy<br>\n</li>\n<li>List the types of craniotomies and rationale for approach<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Thu Apr 21 2022 21:57:43 GMT+0000",
@@ -178,9 +178,9 @@
         },
         "curatedcta_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",

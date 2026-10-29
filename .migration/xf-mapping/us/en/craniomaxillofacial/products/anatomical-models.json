@@ -10,7 +10,7 @@
   "jcr:versionHistory": "fa24a4f0-28b4-47a9-b13c-fbd0ada18b39",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "thumbnailAltText": "Medical models thumbnail",
   "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/medicalmodels/images/Thumbnail_Medical Modeling.png",
   "jcr:predecessors": [
@@ -48,7 +48,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "cq:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -58,9 +58,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "leftPadding": "3",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -72,8 +72,8 @@
     },
     "cols2_2_3_1_3_211193": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Feb 25 2025 21:36:14 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2025 21:36:14 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -82,8 +82,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "preset": "max_width_auto",
           "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
           "alt": "MEDPOR ENT Surgery hero",
@@ -97,8 +97,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -107,9 +107,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1971668492": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
           "leftPadding": "3",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -125,8 +125,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "ctaLinkType": "deep",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
@@ -138,8 +138,8 @@
         },
         "tagcrumb": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -148,16 +148,16 @@
     },
     "jumpbarnav_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Feb 28 2025 21:51:33 GMT+0000",
       "jcr:lastModified": "Fri Feb 28 2025 21:51:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/jumpbarnav"
     },
     "section_title_720419466": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "features",
       "jcr:created": "Wed Mar 05 2025 22:51:45 GMT+0000",
@@ -167,8 +167,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Fri Feb 28 2025 23:01:17 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Features and benefits</span></span></p>\n",
       "jcr:lastModified": "Fri Feb 28 2025 23:02:05 GMT+0000",
@@ -177,8 +177,8 @@
     },
     "cols2_1814330717_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Feb 25 2025 21:59:38 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2025 21:59:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -187,8 +187,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Tue Feb 25 2025 21:59:44 GMT+0000",
           "text": "<p><b><span class=\"fontsize-1-25em\">CT-based design</span></b></p>\n<p>Models created using patient-specific CT data, providing an accurate match to the patient's anatomy.</p>\n",
           "jcr:lastModified": "Tue Jul 29 2025 19:41:02 GMT+0000",
@@ -201,8 +201,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Tue Feb 25 2025 21:59:44 GMT+0000",
           "text": "<p><b><span class=\"fontsize-1-25em\">Anatomical template</span></b></p>\n<p>Patient-specific design allows for pre-contouring of necessary hardware in advance of surgery, which may reduce the time<sup>1</sup> historically spent on hardware manipulation.</p>\n",
           "jcr:lastModified": "Thu Jul 31 2025 20:30:28 GMT+0000",
@@ -213,8 +213,8 @@
     },
     "cols2_1814330717_cop_1612176152": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Tue Feb 25 2025 21:59:38 GMT+0000",
       "jcr:lastModified": "Tue Feb 25 2025 21:59:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -223,8 +223,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Tue Feb 25 2025 21:59:44 GMT+0000",
           "text": "<p><b><span class=\"fontsize-1-25em\">Selective coloration</span></b></p>\n<p>ClearView models are translucent and have a unique ability for selective coloration to highlight vital structures such as tumors, vascular structures or tooth roots.</p>\n",
           "jcr:lastModified": "Wed Mar 05 2025 22:47:47 GMT+0000",
@@ -237,8 +237,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "courtney.dickens@stryker.com",
-          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+          "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
           "jcr:created": "Tue Feb 25 2025 21:59:44 GMT+0000",
           "text": "<p><b><span class=\"fontsize-1-25em\">Sterilizable</span></b></p>\n<p>Allows for use as a surgical reference in the operating room.<br>\n</p>\n",
           "jcr:lastModified": "Wed Mar 05 2025 22:48:11 GMT+0000",
@@ -249,8 +249,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "products",
       "jcr:created": "Wed Mar 05 2025 22:51:10 GMT+0000",
@@ -260,8 +260,8 @@
     },
     "text_2090444076_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 22:28:06 GMT+0000",
@@ -270,7 +270,7 @@
     },
     "featuredcontent_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:lastModified": "Wed Mar 05 2025 22:50:23 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
       "featuresCta": {
@@ -295,8 +295,8 @@
     },
     "section_title_577701344": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "courtney.dickens@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-b3eaac8b1c@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "contact",
       "jcr:created": "Wed Mar 05 2025 22:51:26 GMT+0000",
@@ -306,8 +306,8 @@
     },
     "text_1663437304_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 22:27:54 GMT+0000",
@@ -316,10 +316,10 @@
     },
     "marketoform_copy_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "3226",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -330,7 +330,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p>In partnership with 3D Systems, we are proud to offer patient specific anatomical models to facilitate pre-surgical planning in complex cases such as distraction osteogenesis, orthognathics, skull base tumors, mandible and cranial reconstructions.<br />\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 05 2025 22:40:27 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -360,7 +360,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "openInNewWindow": true,
     "linkUrl": "https://cmf.stryker.com/products/medical-models",
@@ -377,7 +377,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed Mar 05 2025 22:40:33 GMT+0000",
@@ -386,14 +386,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 05 2025 22:40:36 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 05 2025 22:40:47 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -401,14 +401,14 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 05 2025 22:40:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "jcr:lastModifiedBy": "user-b3eaac8b1c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<p>1. Xia JJ, Shevchenko L, Gateno J, Teichgraeber JF, Taylor TD, Lasky RE, English JD, Kau CH, McGrory KR. Outcome study of computer-aided surgical simulation in the treatment of patients with craniomaxillofacial deformities. J Oral Maxillofac Surg. 2011 Jul;69(7):2014-24.</p>\r\n",
     "jcr:lastModified": "Thu Jul 31 2025 20:33:16 GMT+0000",

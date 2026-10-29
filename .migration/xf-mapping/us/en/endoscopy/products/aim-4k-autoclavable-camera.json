@@ -10,7 +10,7 @@
   "jcr:versionHistory": "b6ea7a9e-cf95-4d4b-ad66-b28d93335fc3",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Advanced Imaging Modalities 4k surgical autoclavable camera head",
   "businessUnitTag": "stryker:business-unit/endoscopy",
   "jcr:predecessors": [
@@ -38,14 +38,14 @@
   "jcr:uuid": "b4123df0-d6c4-4a8c-91f8-cef5de49d655",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "AIM 4K Autoclavable Camera",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "imageAlt": "Advanced Imaging Modalities 4k surgical autoclavable camera head",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Thu Feb 16 2023 06:55:27 GMT+0000",
@@ -58,8 +58,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_1023003861_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
       "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -68,8 +68,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
           "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -78,8 +78,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "cedu.ocson@stryker.com",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:createdBy": "user-65eab19e7c@example.invalid",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "jcr:created": "Wed Feb 15 2023 10:23:36 GMT+0000",
       "jcr:lastModified": "Wed Feb 15 2023 10:23:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -88,8 +88,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Wed Feb 15 2023 10:23:41 GMT+0000",
           "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">See More.</span> <span class=\"futura-bold\">Do More.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><br>\nThe </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">1688 AIM 4K Platform</span></span><span class=\"urw-egyptienne\"> brings together real-time imaging of anatomy and automated light adjustment for a seamless and consistent workflow.<br>\n<br>\n&nbsp;</span></span></p>\n",
           "jcr:lastModified": "Wed Feb 15 2023 10:37:48 GMT+0000",
@@ -98,9 +98,9 @@
         },
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "ctaLinkType": "ext",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Wed Feb 15 2023 10:38:00 GMT+0000",
@@ -116,8 +116,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "cedu.ocson@stryker.com",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:createdBy": "user-65eab19e7c@example.invalid",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Feb 15 2023 10:35:43 GMT+0000",
           "alt": "1688 AIM 4K Platform",
@@ -131,8 +131,8 @@
     },
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "cedu.ocson@stryker.com",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:createdBy": "user-65eab19e7c@example.invalid",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "jcr:created": "Mon Feb 20 2023 20:49:01 GMT+0000",
       "title": "Related products",
       "jcr:lastModified": "Mon Feb 20 2023 20:50:19 GMT+0000",
@@ -159,16 +159,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 30 2026 18:07:17 GMT+0000",
       "jcr:lastModified": "Tue Jun 30 2026 18:07:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_1670451800_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -177,16 +177,16 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols_1195287680_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
           "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols"
         },
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
@@ -196,8 +196,8 @@
         },
         "cols2_2_3_1_3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -206,8 +206,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "experiencefragment": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
               "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
               "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
@@ -221,10 +221,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "marketoform": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
               "afterSubmitAction": "showMessage",
               "formId": "4047",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
               "useProduction": "true",
               "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -242,7 +242,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">See your patients</span><br>\n <span class=\"futura-bold\">in a whole new light<span style=\"color: #ffb500;\">.</span>&nbsp;</span></span></p>\n",
     "jcr:lastModified": "Mon Feb 20 2023 20:43:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -250,14 +250,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Jun 30 2026 18:07:09 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Feb 15 2023 10:19:03 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -266,7 +266,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Feb 15 2023 10:19:12 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -279,14 +279,14 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Feb 15 2023 10:19:28 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "disclaimer-type": "text",
     "jcr:lastModified": "Fri Feb 24 2023 22:48:23 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
@@ -294,7 +294,7 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Mar 09 2023 19:34:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"

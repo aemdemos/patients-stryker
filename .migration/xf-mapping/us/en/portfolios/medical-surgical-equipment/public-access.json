@@ -10,7 +10,7 @@
   "jcr:versionHistory": "7c2dc16a-989c-484e-b6ad-932771f98740",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "61481aec-4b02-4006-85f1-9b7527d19124"
   ],
@@ -32,7 +32,7 @@
   "jcr:uuid": "92662306-6743-4b21-a26f-eec621dbbeec",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,7 +48,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
     "jcr:lastModified": "Mon Jul 01 2019 18:10:50 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -56,7 +56,7 @@
     "defaultFilterOption": "Show All",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+      "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
       "title": "Public Access products",
       "jcr:lastModified": "Wed Jun 26 2019 22:51:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"
@@ -64,7 +64,7 @@
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
     "jcr:lastModified": "Wed Jun 26 2019 22:51:35 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta"
   }

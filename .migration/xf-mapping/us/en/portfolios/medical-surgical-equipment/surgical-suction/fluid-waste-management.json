@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0d05983d-6cbb-45b8-a942-958366a49a53",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-suction/images/Thumbnail_SurgicalSuction.jpg",
   "jcr:predecessors": [
     "082ff911-e004-44d2-89e5-c065d2f96b1d"
@@ -37,7 +37,7 @@
   "jcr:uuid": "f321879a-9dbd-4d92-b10a-416a5c9cbaf6",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Fluid waste management",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -51,7 +51,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:58:36 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -61,7 +61,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri Jul 28 2017 13:53:14 GMT-0400",

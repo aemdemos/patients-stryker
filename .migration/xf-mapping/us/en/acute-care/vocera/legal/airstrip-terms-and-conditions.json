@@ -20,7 +20,7 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "8f44bd57-c454-4be5-a79e-e80ed9fef107",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -34,9 +34,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_1565525453": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
       "topPadding": "2",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Aug 31 2023 22:01:25 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -47,8 +47,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "topMargin": "3",
       "jcr:created": "Thu Aug 31 2023 21:54:24 GMT+0000",
@@ -61,16 +61,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Aug 31 2023 21:55:04 GMT+0000",
       "jcr:lastModified": "Thu Aug 31 2023 21:55:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Aug 09 2023 16:18:26 GMT+0000",
       "jcr:lastModified": "Wed Aug 09 2023 16:18:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -79,8 +79,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Wed Aug 09 2023 16:24:31 GMT+0000",
           "text": "<ol>\n<li>The Airstrip Platform License (SKU 905-00301) and the Airstrip Application License (SKUs 905-00302 through 905-00306) are licensed pursuant to&nbsp;<a href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/airstrip-end-user-license-agreement.pdf\" target=\"_blank\" title=\"Open Airstrip Terms and Conditions PDF\">the following terms and conditions required by Airstrip</a>.</li>\n<li>Support for all software licensed by Airstrip is provided by Airstrip (and not by Vocera / Extension Healthcare). This support is provided to all end users with current subscriptions to the relevant Airstrip Application License.&nbsp;<a href=\"/content/dam/stryker/acute-care/vocera/legal/airstrip-support-services.pdf\" title=\"Open Airstrip support services PDF\" target=\"_blank\">Airstrip has committed to provide the following support.</a></li>\n<li>Professional services for deployment of the Airstrip solution are provided by Airstrip. Please consult the relevant Statement of Work for details.</li>\n</ol>\n",
           "jcr:lastModified": "Mon Sep 11 2023 21:17:15 GMT+0000",
@@ -91,8 +91,8 @@
     },
     "cols_1480971523": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Aug 09 2023 16:18:54 GMT+0000",
       "jcr:lastModified": "Wed Aug 09 2023 16:18:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"

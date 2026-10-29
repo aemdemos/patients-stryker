@@ -7,7 +7,7 @@
   "jcr:title": "Safe Patient Handling: Reducing Risk Through Evidence Based Interventions",
   "jcr:versionHistory": "b8f4bdf0-70fe-4087-9ee4-314796e1bc2f",
   "cq:template": "/apps/stryker/templates/event-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "337b3ec7-8608-449d-bb5a-941c0121dac1"
   ],
@@ -25,15 +25,15 @@
   "jcr:uuid": "21d0430e-b9b3-4688-bc78-5fa9d4bbffed",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "eleni.maistrellis@stryker.com",
+  "cq:lastModifiedBy": "user-fe8967f731@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "resources": "/content/dam/stryker/global-events/sage/safe-patient-handling--reducing-risk-through-evidence-based-interventions/Safe Patient Handling- Reducing Risk Through  Evidence-Based Interventions.pdf",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Feb 01 2021 19:21:00 GMT+0000",
       "jcr:lastModified": "Mon Feb 01 2021 19:22:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -47,7 +47,7 @@
     ],
     "eventContactEmail": "Malori.Paplow@stryker.com",
     "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/3016113319313/WN_-SlKlOs_TGOegUWuOxgzWQ",
-    "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+    "jcr:lastModifiedBy": "user-fe8967f731@example.invalid",
     "eventAudience": [
       "stryker:audience/Critical_Care_Nurses"
     ],

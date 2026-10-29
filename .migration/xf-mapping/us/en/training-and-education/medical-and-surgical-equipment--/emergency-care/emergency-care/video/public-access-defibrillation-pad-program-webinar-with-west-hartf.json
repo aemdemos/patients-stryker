@@ -9,7 +9,7 @@
   "jcr:versionHistory": "31928e1a-12f9-4c2a-b2de-ab7b7f16cf23",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "e9b1ffc0-9de2-4a8a-9178-40f40c489f97"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "b687dae4-c4db-4272-a057-9fce76da51ac",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Sep 08 2022 17:02:18 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -47,7 +47,7 @@
         "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials/West-Hartford-Fire-PAD-Program-on-demand-webinar.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/West-Hartford-Fire-PAD-Program-on-demand-webinar-AVS",
         "urlModifiers": "",

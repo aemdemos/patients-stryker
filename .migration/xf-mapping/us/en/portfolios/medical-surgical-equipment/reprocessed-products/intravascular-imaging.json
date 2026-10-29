@@ -9,7 +9,7 @@
   "jcr:versionHistory": "723ca0f7-dd37-4a39-942d-aca0e76240b4",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "jcr:predecessors": [
     "b99d0467-79c5-4992-a9d4-d714b7c8ffa5"
   ],
@@ -39,7 +39,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/reprocessed-products",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "morgan.harder@stryker.com",
+  "cq:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,7 +48,7 @@
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
         "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Proven performance and reliability ",
         "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -56,8 +56,8 @@
     },
     "text_1853064107": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideComponent": "false",
       "topMargin": "1",
       "jcr:created": "Thu Feb 13 2025 16:07:10 GMT+0000",
@@ -74,7 +74,7 @@
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
         "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Proven performance and reliability ",
         "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -85,7 +85,7 @@
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
         "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Proven performance and reliability ",
         "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -96,7 +96,7 @@
       "sectionTitle": {
         "jcr:primaryType": "nt:unstructured",
         "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
-        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
         "title": "Proven performance and reliability ",
         "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
         "sling:resourceType": "stryker/components/content/section-title"
@@ -109,7 +109,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "IVUS",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
@@ -119,7 +119,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Philips. Eagle Eye Platinum Digital IVUS catheter. Accessed January 24, 2025. Philips - Eagle Eye Platinum Digital IVUS catheter</p>\r\n<p>2. Philips. INSTRUCTIONS FOR USE EAGLE EYE PLATINUM ST DIGITAL IVUS CATHETER. Philips; March 8, 2022. Accessed February 12, 2025. Available from: https://www.documents.philips.com/assets/Instruction%20for%20Use/20220112/45a32b12220246db80d4ae1b0115d3ce.pdf?feed=ifu_docs_feed</p>\r\n<p>3. Philips. INSTRUCTIONS FOR USE EAGLE EYE PLATINUM RX DIGITAL IVUS CATHETER. Philips; March 8, 2022. Accessed February 12, 2025. Available from: https://www.documents.philips.com/assets/Instruction%20for%20Use/20220308/ae6b05bcbf4b447a80c0ae520172add7.pdf?feed=ifu_docs_feed</p>\r\n",
     "jcr:lastModified": "Thu Feb 13 2025 15:52:05 GMT+0000",
@@ -129,7 +129,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "jcr:lastModified": "Thu Feb 13 2025 21:08:42 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -137,7 +137,7 @@
     "defaultFilterOption": "Show All",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "intravascular-imaging",
       "title": "Intravascular imaging solutions for Cath Labs",
       "jcr:lastModified": "Thu Feb 13 2025 16:08:03 GMT+0000",

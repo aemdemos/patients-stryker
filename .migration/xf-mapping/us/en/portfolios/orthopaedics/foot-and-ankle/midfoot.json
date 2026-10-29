@@ -8,7 +8,7 @@
   "jcr:title": "Midfoot",
   "jcr:versionHistory": "85fb642a-5e78-476a-84d9-e320bed4e292",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailAltText": "Midfoot",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/header_midfoot.jpg",
   "jcr:predecessors": [
@@ -37,7 +37,7 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/foot-and-ankle",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -45,49 +45,49 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent_copy": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "featuredcontentconte": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "jcr:created": "Thu May 11 2017 15:57:22 GMT-0400",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentcontext",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "featuredcontentitem": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "jcr:created": "Thu May 11 2017 15:57:27 GMT-0400",
       "amountProductDetail": "2",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentitem",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "bannercampaign_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://strykerwelcomeswright.com/",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
@@ -97,8 +97,8 @@
     },
     "bannercampaign_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "linkExternal": "https://bit.ly/T2ICFINFO",
       "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
       "jcr:lastModified": "Mon Aug 31 2020 18:53:37 GMT+0000",
@@ -113,25 +113,25 @@
       "cq:LiveRelationship"
     ],
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:13:36 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "showProcedures": "true",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "pagehero": {
@@ -139,14 +139,14 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "headColor": "rgba(255,181,0,1)",
     "usethumbnail": "true",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/header_midfoot.jpg",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

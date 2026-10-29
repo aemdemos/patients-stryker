@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6a5060f2-b121-45f2-9cf4-3687c6bb2e6f",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "AdobeStock_215107768",
   "jcr:predecessors": [
     "9d57c510-d594-4931-96ce-5f7829f1d6e4"
@@ -29,14 +29,14 @@
   "jcr:uuid": "4fdbea9b-eb1c-4b4c-87f0-1acae09ced10",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Nov 18 2022 14:51:00 GMT+0000",
       "jcr:lastModified": "Fri Nov 18 2022 14:51:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -45,12 +45,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/what-it-s-like-being/carousel/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/carousel/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/what-it-s-like-being/carousel/mobile",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "30",
           "jcr:created": "Fri Nov 18 2022 14:51:41 GMT+0000",
@@ -65,8 +65,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "hannah.white@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-73104d59b2@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "jcr:created": "Fri Nov 18 2022 15:06:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">What it’s like being a caregiver to a loved one with Alzheimer’s</span></span>",
@@ -84,16 +84,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Nov 18 2022 15:20:35 GMT+0000",
       "jcr:lastModified": "Fri Nov 18 2022 15:20:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Nov 18 2022 14:25:56 GMT+0000",
       "text": "The Alzheimer’s Association estimates that 6.5 million Americans aged 65 and older are living with Alzheimer’s in 2022.1 Patty is one of them, and her husband Steve shares how he cares for her at home. My wife Patty and I used to have conversations. She loved children and loved to cook, and we talked about both. I also remember her homemade spaghetti sauce—she was quite the cook. We’ve enjoyed a good life together. Now we find ourselves in a new season of life. Patty was diagnosed with Frontal Temporal Lobe Dementia and Alzheimer’s. Many caregivers who understand this neurological disease know how hard it is to watch the rapid personality changes that go with it. While I knew that would happen, I didn’t expect it to happen so quickly. The truth is—we have no control over these situations. So I learned to adapt to the changes and accept them—as hard as it was. Let me tell you—it’s not easy preparing for the day when your partner no longer communicates with you the way they used to. All I can do now is hang onto the cherished memories we created together. A devoted husband and caregiver As Patty’s decline grew more evident, she stopped walking and eventually stopped feeding herself. Thankfully two caregivers help out because I still work and travel. They provide care when I’m away, but also on a limited basis when I’m home. My wife has a special connection with Teresa, her primary caregiver. No doubt, the two share a bond. People who visit the house notice it right away. When Teresa arrives, Patty can’t take her eyes off Teresa; tracking her every move. Teresa is very special to us because she’s made personal sacrifices that have allowed her to care for Patty. Talking to nurses over the years, I eventually discovered Stryker’s home care products since hospitals use the product. My favorite product is the soft foam toothbrush—known as the Toothette Plus Swabs. I like how these foam swabs are so gentle on Patty’s mouth. I don’t worry about damaging her gums. Using the Toothette Plus Swabs helps keep my wife comfortable. Once we started using the swabs, it became clear why hospitals use them too. Keeping your mouth clean is an important part of staying healthy. Stryker’s oral care products help reduce the risk of plaque buildup in the mouth and promote oral health. Routinely performing oral care can help reduce potential risk of pneumonia. A healthy, moisturized mouth makes it easier to eat and communicate. Stryker’s Oral Care products can help you care for someone who needs help with their daily oral hygiene. Bringing quality care to your home Everyone deserves quality care. And, as basic needs get less basic, home care products enable individuals and caregivers to provide quality care. If you're looking for simple ways to bathe, clean, and provide skin care and oral care for yourself or someone important to you, our Stryker home care products can help. Each is designed to be effective and easy to use, as well as provide the comfort needed for care at home. Bathing Warm bath, without a tub or shower Incontinence Incontinence skin protecting cloths Hair care Warm soothing shampoo without the mess Oral care Helps clean and moisturize the mouth Before surgery Antiseptic solution helps reduce bacteria on the skin Heel protection Keeps heels off the mattress to relieve pressure References 1. Alzheimer’s Association. ‘Facts and figures.’ Accessed 25 October 2021. https://www.alz.org/alzheimers-dementia/facts-figures 22-HC-29310 No individuals or organizations were compensated by Stryker for contributing to this article. COMM-OC-WEB-484814",
       "jcr:lastModified": "Fri Nov 18 2022 14:44:48 GMT+0000",
@@ -104,7 +104,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Nov 29 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "29-Nov-2022",
@@ -117,7 +117,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Fri Nov 18 2022 15:10:32 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

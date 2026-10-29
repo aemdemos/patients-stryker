@@ -8,7 +8,7 @@
   "jcr:title": "E62 Enzymatic Detergent",
   "jcr:versionHistory": "78448fce-7f3b-4128-8b5d-b6b60450b606",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
   "jcr:predecessors": [
     "9adb3b84-484c-47bc-a9f1-8b667b1f609c"
   ],
@@ -30,13 +30,13 @@
   "jcr:uuid": "38a834e4-1e47-47c3-a0a0-fd60ed675fef",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "cq:lastModifiedBy": "user-bffe03609f@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Tue Jan 28 2020 21:09:31 GMT+0000",
@@ -61,7 +61,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "gradientDirection": "left-to-right",
     "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Solution for your cleaning needs<br>\n &nbsp;</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Protease enzymes</span></span><br>\nThe first new protease enzyme on the market since 1980</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Clinically proven results</span></span><br>\nPerformance verified on actual clinical soil<sup>1</sup></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Enzyme concentration</span></span><br>\nMore enzymes per ½ oz of solution compared to competitive<br>\nenzymatic detergents.<br>\n</p>\n",
     "jcr:lastModified": "Mon Mar 16 2020 19:45:06 GMT+0000",
@@ -70,7 +70,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModifiedBy": "user-bffe03609f@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Internal Test Report S2459.190812&nbsp;</p>\r\n",
     "jcr:lastModified": "Mon Mar 16 2020 19:46:16 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "177d4823-5401-4767-923c-6273e9e86f62",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "201332f9-69ca-4d4c-90ea-a2158a3065be"
@@ -33,14 +33,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Sep 09 2024 19:43:44 GMT+0000",
       "jcr:lastModified": "Mon Sep 09 2024 19:43:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 09 2024 19:43:50 GMT+0000",
           "text": "<p>Stryker (NYSE: SYK) announced that it has completed the <a href=\"/content/stryker/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-care-ai--a-lea.html\">previously announced</a> acquisition of care.ai, a privately held company specializing in delivering AI-assisted virtual care workflows, smart room technology and ambient intelligence solutions.<br>\n</p>\n<p>“We welcome the care.ai team to Stryker and look forward to working together to accelerate our digital vision to provide customers with real-time, smart and connected decision-making tools that can enhance the lives of caregivers and their patients,” stated Andy Pierce, Group President, MedSurg and Neurotechnology, Stryker.</p>\n<p>The acquisition will strengthen Stryker’s growing healthcare IT offering and wirelessly connected medical device portfolio.<br>\n</p>\n",
           "jcr:lastModified": "Mon Sep 16 2024 20:39:47 GMT+0000",
@@ -59,16 +59,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Sep 09 2024 19:46:34 GMT+0000",
           "jcr:lastModified": "Mon Sep 09 2024 19:46:34 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_981231063": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 09 2024 19:46:46 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Meghan Menz<br>\nSr. Director, Communications<br>\n<a href=\"mailto:meghan.menz@stryker.com\">meghan.menz@stryker.com</a></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-care-ai--a-lea.html\">READ MORE ON OUR INVESTOR RELATIONS SITE HERE</a></span><br>\n</p>\n",
           "jcr:lastModified": "Mon Sep 16 2024 17:52:02 GMT+0000",
@@ -80,7 +80,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Tue Sep 17 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "17-Sep-2024",

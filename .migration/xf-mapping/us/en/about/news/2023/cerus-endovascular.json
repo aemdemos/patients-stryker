@@ -9,7 +9,7 @@
   "jcr:versionHistory": "ca71578c-074a-4b80-b2af-a84395736261",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailAltText": "Stryker",
   "jcr:predecessors": [
     "70a5cd73-397e-4ebc-8325-8f4656ef0fd7"
@@ -35,14 +35,14 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/about/news/2023",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Apr 26 2023 14:30:05 GMT+0000",
       "jcr:lastModified": "Wed Apr 26 2023 14:30:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -51,8 +51,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Apr 26 2023 14:10:46 GMT+0000",
           "alt": "ciam-stryker-logo",
@@ -66,8 +66,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Apr 26 2023 14:08:32 GMT+0000",
       "text": "<p>Stryker (NYSE:SYK), one of the world’s leading medical technology companies, announced today that it has completed the acquisition of Cerus Endovascular Ltd., a privately held, commercial-stage, medical device company engaged in the design and development of neurointerventional devices for the treatment of intracranial aneurysms. Cerus Endovascular’s CE Marked products, the Contour Neurovascular System and the Neqstent Coil Assisted Flow Diverter, will expand Stryker’s current portfolio of aneurysm treatment solutions.<br>\n<br>\nTechnology for the endovascular treatment of aneurysms has been foundational to Stryker’s Neurovascular division and Cerus Endovascular’s portfolio will address the growing need for one-and-done intrasaccular aneurysm therapy.<br>\n<br>\n“The acquisition of Cerus Endovascular is highly complementary to Stryker’s Neurovascular business, and strengthens our hemorrhagic portfolio globally,” stated Jim Marucci, president of Stryker’s Neurovascular division. “We look forward to working with the Cerus team to deliver on our mission of making healthcare better. Together, we will enable physicians to treat a broader range of aneurysms.”</p>\n",
       "jcr:lastModified": "Fri Apr 28 2023 16:04:16 GMT+0000",
@@ -76,24 +76,24 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 28 2023 16:04:27 GMT+0000",
       "jcr:lastModified": "Fri Apr 28 2023 16:04:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Fri Apr 28 2023 16:04:22 GMT+0000",
       "jcr:lastModified": "Fri Apr 28 2023 16:04:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Apr 26 2023 14:08:32 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">About Stryker</span></span><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.<br>\n<br>\n<span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Media contact</span></span><br>\nLindsay Harris<br>\nGlobal Director, Digital, Marcom and Events<br>\n<a href=\"mailto:lindsay.harris@stryker.com\">lindsay.harris@stryker.com</a><br>\n&nbsp;</p>\n",
       "jcr:lastModified": "Fri Apr 28 2023 16:03:37 GMT+0000",
@@ -103,7 +103,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Tue May 02 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-May-2023",

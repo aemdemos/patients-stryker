@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f9374097-abe1-462f-a8ab-e13fdfc53b34",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "News_Thumbnail_hirc-awards",
   "jcr:predecessors": [
     "1a9e1279-5053-4e73-b73c-dbb6234e9d2b"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Mar 02 2026 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-Mar-2026",
@@ -50,7 +50,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "text": "<p>The Healthcare Industry Resiliency Collaborative (HIRC) has awarded Stryker with the HIRC Enterprise Gold Resiliency Badge — the first multinational medical device manufacturer to receive the distinction. This badge recognizes organizations that demonstrate exceptional adaptability and performance within the healthcare supply chain.</p>\n<p>In 2024, Stryker’s Orthopaedic Group was awarded the HIRC Gold Resiliency Badge, a group recognition achieved by just a select few healthcare companies. This year, our MedSurg and Neurotechnology Group has also been recognized with this badge — emphasizing our full enterprise commitment to resiliency within the healthcare supply chain now and in the future.</p>\n<p>“Receiving HIRC’s Enterprise Gold Resiliency Badge is a powerful reminder that, by focusing on operational excellence through Lean, our supply chain is a true competitive advantage for Stryker,” said Viju Menon, group president of global quality and operations for Stryker.<br>\n</p>\n<p>HIRC is a non-profit healthcare supply chain trade association founded by providers and their trading partners to tackle resiliency issues for continuity of patient care. The HIRC Resiliency Badge is achieved based on a rigorous third-party evaluation of several key domains, including demand planning, inventory management, supply chain visibility, supplier management, risk management and operational health.</p>\n<p>Our historical strengths continue to hold, and we have most notably advanced in adaptability, decision-making and resilience under pressure as evidenced through our:</p>\n<ul>\n<li>Embedded resiliency culture</li>\n<li>Adaptive planning capabilities</li>\n<li>Proactive risk anticipation</li>\n<li>Risk-aligned continuity strategies</li>\n</ul>\n<p>“This award reflects the incredible teamwork across our supply chain organization, Global Quality and Operations (GQO), and all divisions,” said Brent Ladd, president of Customer Solutions for Stryker. “Our purpose-driven collaboration allows us to continue delivering quality, reliability and excellence at every level to our customers.”</p>\n<p>Stryker’s commitment to continuous innovation and improvement is evident in our investment in Lean methodologies, strategic supplier partnerships and cutting-edge technologies. Our focus is on strengthening our manufacturing and distribution networks, helping us build a resilient and agile supply chain and supporting our mission to improve healthcare worldwide.</p>\n<p>Learn more about&nbsp;<a href=\"https://hircstrong.com/\">HIRC</a>&nbsp;and the&nbsp;<a href=\"https://www.hirc.org/resiliency-badge/\">Resiliency Badge</a>.</p>\n",
     "jcr:lastModified": "Thu Apr 23 2026 16:37:48 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -58,7 +58,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "alt": "hirc-awards-news-hero",
     "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-honored-with-hircs-first-ever-enterprise-gold-resiliency-badge/images/hirc-awards-news-hero-v2.jpg",

@@ -7,7 +7,7 @@
   "jcr:title": "Events-Calendar",
   "jcr:versionHistory": "81c8f09e-cfb9-41ff-881d-2fdc9952a716",
   "cq:template": "/apps/stryker/templates/long-page-detail",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "jcr:predecessors": [
     "5449ced8-4ad0-4636-b79d-534f828d513b"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "f33cdcc9-713c-4f2a-9b17-41d8a70b2b8d",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "cq:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "eventcalendar": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "searchPath": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-",
       "jcr:created": "Thu Nov 29 2018 21:15:11 GMT+0000",
       "jcr:lastModified": "Thu Nov 29 2018 21:15:11 GMT+0000",

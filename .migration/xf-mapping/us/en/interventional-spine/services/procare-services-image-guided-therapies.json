@@ -8,7 +8,7 @@
   "jcr:title": "ProCare Services",
   "jcr:versionHistory": "74109c22-b489-4c86-a82f-c7b70f1b2819",
   "cq:template": "/apps/stryker/templates/packagedetail",
-  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
   "jcr:predecessors": [
     "b2f53fd1-50ac-450b-b2e8-0ec86c4870c2"
   ],
@@ -32,7 +32,7 @@
   "sling:resourceType": "stryker/components/structure/pages/packagedetail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "cq:lastModifiedBy": "user-15c0b4d890@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -46,8 +46,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 16:16:30 GMT-0400",
       "title": "MultiGen",
       "jcr:lastModified": "Mon Sep 18 2017 16:17:15 GMT-0400",
@@ -55,8 +55,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 16:23:58 GMT-0400",
       "jcr:lastModified": "Mon Sep 18 2017 16:23:58 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -65,8 +65,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
           "jcr:created": "Mon Sep 18 2017 16:17:22 GMT-0400",
           "text": "<h4>Repair Replace</h4>\n<p>The true value of ProCare isn't the way our people handle equipment service and repairs. It's in the time you'll save and the hassles you won't have to endure. Stryker's Repair Replace service was designed to maximize equipment uptime.</p>\n<h5>Predictable and consistent customer experience</h5>\n<ul>\n<li>Time and efficiency gained by receiving replacement equipment</li>\n<li>Critical customer needs met by receiving replacements per Stryker’s quality repair specifications</li>\n</ul>\n<h5>Eliminate loaners and save time</h5>\n<ul>\n<li>Provides replacements to meet critical customer needs per Stryker’s quality repair specifications</li>\n<li>Dual exchange is conducted to replace equipment</li>\n</ul>\n",
           "jcr:lastModified": "Mon Sep 18 2017 16:18:41 GMT-0400",
@@ -75,8 +75,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
           "jcr:created": "Mon Sep 18 2017 16:17:22 GMT-0400",
           "text": "<h4>Dual&nbsp;exchange</h4>\n<p>Take the following simple steps to initiate your equipment replacement order. The instant you scan your Stryker-supplied shipping label, an overnight replacement order is placed<sup>1</sup>.<br>\n</p>\n",
           "jcr:lastModified": "Mon Sep 18 2017 16:23:26 GMT-0400",
@@ -85,8 +85,8 @@
         },
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
           "jcr:created": "Mon Sep 18 2017 16:27:08 GMT-0400",
           "srcFileRef": "/content/dam/stryker/ivs/services/ProCareServices/1496936939_Procare-repair-replace-process.png",
           "jcr:lastModified": "Mon Sep 18 2017 16:27:18 GMT-0400",
@@ -97,8 +97,8 @@
         "jcr:primaryType": "nt:unstructured",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
           "jcr:created": "Mon Sep 18 2017 16:19:18 GMT-0400",
           "srcFileRef": "/content/dam/stryker/ivs/services/procare-radiofrequency-generator/images/1496936496_Repair-service.jpg",
           "jcr:lastModified": "Mon Sep 18 2017 16:19:42 GMT-0400",
@@ -108,8 +108,8 @@
     },
     "productgroups_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 14:37:21 GMT-0400",
       "jcr:lastModified": "Mon Sep 18 2017 16:18:58 GMT-0400",
       "sling:resourceType": "stryker/components/content/productgroups",
@@ -124,8 +124,8 @@
     },
     "section_title_1608111334": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 16:53:48 GMT-0400",
       "title": "Venom electrodes",
       "jcr:lastModified": "Mon Sep 18 2017 16:56:30 GMT-0400",
@@ -133,8 +133,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 16:58:25 GMT-0400",
       "jcr:lastModified": "Mon Sep 18 2017 16:58:25 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -143,8 +143,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:createdBy": "user-f9c250736c@example.invalid",
+          "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
           "jcr:created": "Mon Sep 18 2017 16:58:29 GMT-0400",
           "text": "<h4>ProCare Protect</h4>\n<p>The true value of ProCare isn't the way our people handle equipment service and repairs. It's in the time you'll save and the hassles you won't have to endure. Stryker's ProCare Services was designed to maximize equipment uptime.</p>\n<p>With Stryker’s ProCare Protect contract for Venom electrodes you can:</p>\n<ul>\n<li>Save time and increase efficiency by receiving replacement equipment</li>\n<li>Have confidence your equipment will perform up to OEM specifications</li>\n<li>Gain complete service support with Stryker’s dedicated service call center&nbsp;</li>\n</ul>\n",
           "jcr:lastModified": "Mon Sep 18 2017 16:59:00 GMT-0400",
@@ -155,8 +155,8 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 17:01:19 GMT-0400",
       "jcr:lastModified": "Mon Sep 18 2017 17:01:19 GMT-0400",
       "sling:resourceType": "stryker/components/content/productgroups",
@@ -171,8 +171,8 @@
     },
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
-      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:createdBy": "user-f9c250736c@example.invalid",
+      "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
       "jcr:created": "Mon Sep 18 2017 17:05:53 GMT-0400",
       "jcr:lastModified": "Mon Sep 18 2017 17:05:53 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3"
@@ -182,7 +182,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Get the most from your equipment&nbsp;investment</p>\r\n",
     "shortDescTop": "<p>With ProCare Services, we set a new standard for customer support. Our goal is to make it easier for you to get the most from your investment in equipment from Stryker. ProCare Services offer you peace of mind at a fixed cost.</p>\r\n",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Sep 18 2017 16:15:31 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -194,7 +194,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>&nbsp;Available on specific products.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Sep 18 2017 16:23:43 GMT-0400",

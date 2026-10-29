@@ -7,7 +7,7 @@
   "jcr:title": "Making a difference through mentorship",
   "jcr:versionHistory": "82a6eb59-b3f1-4ece-b517-739f65126b8a",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "13c22bdf-f985-436c-817b-04da1d24b527"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "f5c1c170-af1d-4262-9c77-023cc6dcbb3a",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jun 15 2020 20:31:06 GMT+0000",
       "jcr:lastModified": "Mon Jun 15 2020 20:31:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -42,10 +42,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/carousel/carousel---making-a-difference-through-mentorship---desktop/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/features/making-a-difference/carousel/carousel-making-a-difference-through-mentorship-desktop/master",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "30",
           "jcr:created": "Mon Jun 15 2020 20:31:12 GMT+0000",
@@ -60,8 +60,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Mon Jun 15 2020 20:32:02 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Making a difference</span></span> <span class=\"urw-egyptienne\">through mentorship</span></span>",
@@ -79,8 +79,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 12 2020 18:51:54 GMT+0000",
       "jcr:lastModified": "Fri Jun 12 2020 18:53:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -89,8 +89,8 @@
     },
     "experiencefragment_1": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jun 15 2020 19:40:14 GMT+0000",
       "jcr:lastModified": "Mon Jun 15 2020 19:41:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -99,8 +99,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Jun 12 2020 18:51:54 GMT+0000",
       "jcr:lastModified": "Fri Jun 12 2020 18:55:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -109,8 +109,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jun 15 2020 18:39:48 GMT+0000",
       "jcr:lastModified": "Mon Jun 15 2020 18:39:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -124,16 +124,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jun 15 2020 20:11:43 GMT+0000",
       "jcr:lastModified": "Mon Jun 15 2020 20:11:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_574365322": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jun 15 2020 20:11:46 GMT+0000",
       "jcr:lastModified": "Mon Jun 15 2020 20:11:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -141,7 +141,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Jun 22 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "22-Jun-2020",
@@ -154,7 +154,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Mon Jun 15 2020 19:33:50 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

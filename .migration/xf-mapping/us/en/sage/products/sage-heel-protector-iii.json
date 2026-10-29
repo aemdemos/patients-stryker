@@ -9,7 +9,7 @@
   "jcr:versionHistory": "efd34dba-4336-4aba-b30b-a52c02a6952d",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Sage Heel Protector III",
   "jcr:predecessors": [
     "98f8b5ff-75ac-49bf-87ae-3ccf932c2cf8"
@@ -37,14 +37,14 @@
   "jcr:uuid": "2afbdf94-b913-464b-8870-09baf0795551",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Dec 06 2023 13:54:28 GMT+0000",
       "jcr:lastModified": "Wed Dec 06 2023 13:54:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -53,10 +53,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide_copy_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/prevalon_heel_protec_1409719329/hero/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/prevalon-heel-protec-1409719329/hero/master",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "7",
           "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
@@ -74,7 +74,7 @@
             },
             "text5520009668863520": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
               "hideComponent": "false",
               "topMargin": "7",
               "gradientDirection": "left-to-right",
@@ -94,8 +94,8 @@
             },
             "curatedcta_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
               "ctaLinkType": "deep",
               "ctaOpenInNewTabOverride": "0",
               "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
@@ -115,8 +115,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "overview",
       "jcr:created": "Wed Dec 06 2023 13:59:41 GMT+0000",
@@ -126,8 +126,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Fri Jul 26 2024 17:52:09 GMT+0000",
       "jcr:lastModified": "Fri Jul 26 2024 17:52:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -136,8 +136,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
           "jcr:created": "Fri Jul 26 2024 17:50:16 GMT+0000",
           "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Help protect your patients' heels in the ICU</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The heel is the second most common site for pressure injury development.<sup>1</sup> The Heel Protector III is specifically designed to help reduce the risk of heel pressure injury in the ICU.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Offloads the heel</span></li>\n<li><span class=\"fontsize-1-25em\">Reduces plantar flexion contracture risk</span></li>\n<li><span class=\"fontsize-1-25em\">Helps prevent lateral rotation, reducing risk of peroneal nerve damage</span></li>\n<li><span class=\"fontsize-1-25em\">Sequential Compression Device (SCD) compatible</span></li>\n</ul>\n",
           "jcr:lastModified": "Mon Aug 12 2024 18:13:19 GMT+0000",
@@ -148,8 +148,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Fri Jul 26 2024 17:52:20 GMT+0000",
       "jcr:lastModified": "Fri Jul 26 2024 17:52:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -158,8 +158,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "topMargin": "5",
           "jcr:created": "Fri Jul 26 2024 17:52:23 GMT+0000",
@@ -175,8 +175,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "topMargin": "5",
           "jcr:created": "Fri Jul 26 2024 17:52:23 GMT+0000",
@@ -192,8 +192,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "topMargin": "5",
           "jcr:created": "Fri Jul 26 2024 17:52:23 GMT+0000",
@@ -207,8 +207,8 @@
     },
     "section_title_645812": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "connect",
       "jcr:created": "Wed Dec 06 2023 13:59:47 GMT+0000",
@@ -218,8 +218,8 @@
     },
     "cols_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -229,10 +229,10 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "leftPadding": "2",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -246,8 +246,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -256,10 +256,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy_cop": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1259",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",
@@ -274,8 +274,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c_1440038035": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
           "text": "Contact information Product feedback Customer service",
           "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
@@ -287,8 +287,8 @@
     },
     "section_title_162452": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Wed Dec 06 2023 13:59:54 GMT+0000",
@@ -298,12 +298,12 @@
     },
     "carouselslide_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
       "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master",
       "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/master",
       "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile",
       "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/carousel-option-mobile",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "mobileOverlay": "mobile_Bottom",
       "verticalMargin": "5",
       "jcr:created": "Mon Oct 28 2024 21:35:46 GMT+0000",
@@ -316,8 +316,8 @@
     },
     "tabs_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
       "jcr:lastModified": "Fri Jul 26 2024 17:42:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/tabs",
@@ -332,7 +332,7 @@
             "/content/dam/stryker/sage/resources/Heel-Pressure-Injury-in-the-ICU-and-OR-Brochure.pdf",
             "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Injury-Prevention.pdf"
           ],
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:lastModified": "Fri Jul 26 2024 17:42:01 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
         }
@@ -343,12 +343,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "resourcesanddownload_803942939": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
           "resources": [
             "/content/dam/stryker/sage/resources/What-the-Experts-Say-Reduce-the-Risk-of-Heel-Pressure-Injury-in-the-OR-and-the-ICU.pdf",
             "/content/dam/stryker/sage/resources/What-the-Experts-Say-Pressure-Injury.pdf"
           ],
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Tue Sep 03 2019 21:46:31 GMT+0000",
           "jcr:lastModified": "Fri Jul 26 2024 17:42:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -383,8 +383,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols3": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "errin.pace@stryker.com",
-          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+          "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
           "jcr:created": "Tue Sep 03 2019 21:48:04 GMT+0000",
           "jcr:lastModified": "Tue Sep 03 2019 21:48:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -394,8 +394,8 @@
             "standalonevideo": {
               "jcr:primaryType": "nt:unstructured",
               "subtitle": "Training video",
-              "jcr:createdBy": "errin.pace@stryker.com",
-              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+              "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
               "jcr:created": "Tue Sep 03 2019 21:48:09 GMT+0000",
               "hideBorder": "false",
               "type": "typePath",
@@ -409,7 +409,7 @@
                 "fileReference": "/content/dam/stryker/sage/products/heel-protector-iii/videos/Sage-Prevalon-Heel-Protector-III-training-video.mp4",
                 "s7ImagePreset": "",
                 "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-                "jcr:lastModifiedBy": "errin.pace@stryker.com",
+                "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
                 "s7ViewerPreset": "",
                 "assetID": "stryker/Sage-Prevalon-Heel-Protector-III-training-video-AVS",
                 "urlModifiers": "",
@@ -433,7 +433,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "featuredcontent_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:lastModified": "Fri Jul 26 2024 17:44:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/customizable",
           "featuresCta": {
@@ -460,8 +460,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Tue Dec 13 2022 16:16:33 GMT+0000",
       "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
       "jcr:lastModified": "Tue Dec 13 2022 16:16:46 GMT+0000",
@@ -476,7 +476,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jul 26 2024 18:05:17 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -489,7 +489,7 @@
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
     "externalLink": "https://sageproducts.com/prevalon-heel-protectors/",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "internalLink": "/content/stryker/us/en/sage",
     "jcr:lastModified": "Tue Feb 14 2023 14:02:13 GMT+0000",
@@ -500,14 +500,14 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Fri Jul 26 2024 18:05:09 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>Reference:&nbsp;</b></p>\r\n<p><b>1.</b>&nbsp;Salcido R, Lee A, Ahn C, Heel Pressure Ulcers: Purple Heel and Deep Tissue Injury, Clinical Management Extra, Advances in Skin &amp; Wound Care 2011:24(4);374-380.</p>\r\n<p><b>2.</b> Berlowitz, D., VanDeusen Lukas, C., Parker, V., et al. (content last reviewed October 2014). Preventing Pressure Ulcers in Hospitals: A Toolkit for Improving&nbsp;<span style=\"font-size: 0.8125rem;\">Quality of Care. Agency for Healthcare Research and Quality, Rockville, MD. Retrieved from http://www.ahrq.gov/professionals/systems/hospital/pressureulcertoolkit/index.html</span></p>\r\n<p><b>3</b>. VanGilder, C., Lachenbruch, C., Algrim-Boyle, C., et al. (2017, January/February). The International Pressure Ulcer Prevalence™ Survey: 2006-2015: A 10-Year Pressure Injury&nbsp;<span style=\"font-size: 0.8125rem;\">Prevalence and Demographic Trend Analysis by Care Setting. J Wound Ostomy Continence Nurs, 44(1), 20-28. doi: 10.1097/WON.0000000000000292&nbsp;</span></p>\r\n",
     "jcr:lastModified": "Fri Jul 26 2024 18:04:41 GMT+0000",
@@ -516,21 +516,21 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Feb 14 2023 14:02:10 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Fri Jul 26 2024 18:05:21 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Fri Jul 26 2024 18:05:25 GMT+0000",

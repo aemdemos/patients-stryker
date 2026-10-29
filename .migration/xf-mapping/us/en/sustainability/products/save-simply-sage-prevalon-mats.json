@@ -10,7 +10,7 @@
   "jcr:versionHistory": "cbe0abcd-5f6c-4302-a15d-cd901a1d22bf",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "thumbnailAltText": "Sage Prevalon MATS",
   "jcr:predecessors": [
     "caf72d4c-147d-4f41-8057-5dd330847e4b"
@@ -38,13 +38,13 @@
   "jcr:uuid": "14680736-01d1-4d12-a9ab-4c8cd22b981a",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Wed Nov 09 2022 19:59:40 GMT+0000",
@@ -56,9 +56,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "table": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"121\"><p><b>Item number</b></p>\n</td>\n<td width=\"639\"><p><b>Description</b></p>\n</td>\n</tr><tr><td width=\"121\"><p>3242-R</p>\n</td>\n<td width=\"639\"><p>(1)&nbsp;&nbsp; SAGE Prevalon MATS Mobile Air Transfer System 39&quot; W x 81&quot; L</p>\n<p>(1)&nbsp;&nbsp; M<sup>2 </sup>Microclimate Body Pad</p>\n</td>\n</tr></tbody></table>\n",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Nov 09 2022 20:03:12 GMT+0000",
       "jcr:lastModified": "Wed Nov 09 2022 20:04:10 GMT+0000",
       "sling:resourceType": "stryker/components/content/table",
@@ -72,15 +72,15 @@
         "/content/dam/stryker/sustainability/products/sage-prevalon-mat/Transferring with Air-Assisted Technology Statistics.pdf",
         "/content/dam/stryker/sustainability/products/sage-prevalon-mat/Sage Prevalon MATS Reprocessing Overview.pdf"
       ],
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "title": "Resources and downloads",
       "jcr:lastModified": "Thu Jul 20 2023 19:56:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "morgan.harder@stryker.com",
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:createdBy": "user-e2eca0ceb5@example.invalid",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "jcr:created": "Thu Jul 20 2023 19:23:00 GMT+0000",
       "jcr:lastModified": "Thu Jul 20 2023 19:23:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -91,16 +91,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Aug 18 2026 20:18:42 GMT+0000",
       "jcr:lastModified": "Tue Aug 18 2026 20:18:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -109,8 +109,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
@@ -122,8 +122,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -132,10 +132,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "2736",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -148,8 +148,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
           "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
@@ -168,7 +168,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>The reprocessing program making a meaningful difference</p>\r\n",
     "shortDescTop": "<p>Before being sent back to you, all reprocessed devices are required to pass through our robust manufacturing process consisting of:</p>\r\n",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Fri Feb 03 2023 20:02:12 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -203,14 +203,14 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Jul 20 2023 19:22:22 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "hideComponent": "false",
     "internalLink": "/content/stryker/us/en/sage/products/sage-mats",
     "jcr:lastModified": "Thu Aug 03 2023 20:25:05 GMT+0000",
@@ -221,7 +221,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Aug 18 2026 20:18:35 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "6e4d17f8-e9e4-4e13-b4f6-b484cd8b5787",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Teacher wearing Smartbadge greeting students at front door of school",
   "jcr:predecessors": [
     "5dda960e-db9e-44ed-96b6-89526353d145"
@@ -29,7 +29,7 @@
   "jcr:uuid": "8b2e12ed-61b1-42be-bd5f-eb439b5f6446",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "navTitle": "Smart emergency communication that goes beyond the panic button",
   "image": {
     "jcr:primaryType": "nt:unstructured",
@@ -40,16 +40,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Apr 23 2025 21:33:39 GMT+0000",
       "jcr:lastModified": "Wed Apr 23 2025 21:33:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_copy_copy_copy_354793993": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "richard.thomas2@stryker.com",
-      "jcr:lastModifiedBy": "richard.thomas2@stryker.com",
+      "jcr:createdBy": "user-3d4e7ad506@example.invalid",
+      "jcr:lastModifiedBy": "user-3d4e7ad506@example.invalid",
       "jcr:created": "Thu Feb 16 2023 19:46:05 GMT+0000",
       "jcr:lastModified": "Thu Feb 16 2023 19:46:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -58,8 +58,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_908007915_copy_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
           "gradientDirection": "left-to-right",
           "text": "<h2><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Smart emergency communication that goes beyond a panic button</span></span></span></span></span></span></h2>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Effective school safety starts with fast, clear communication. But traditional panic alarms can only go so far. That’s why it’s important to consider adopting mobile, two-way communication tools that help staff respond quickly and stay connected.</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">This white paper explores seven best practices for school emergency communication—from portable panic devices with geo-location to tools that support both crisis response and day-to-day campus operations.</span></span></p>\n",
@@ -74,8 +74,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "richard.thomas2@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-3d4e7ad506@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Feb 16 2023 19:46:59 GMT+0000",
           "alt": "Teacher wearing Smartbadge greeting students at front door of school",
@@ -89,8 +89,8 @@
     },
     "cols_copy_1023882719": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -100,10 +100,10 @@
         "text": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
           "leftPadding": "2",
           "topPadding": "4",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -117,8 +117,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -127,10 +127,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:createdBy": "user-fe8967f731@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "1315",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
           "useProduction": "true",
           "marketoInstance": "b2bProd",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "7a2b002c-749f-4934-95a0-c3984b7a5f02",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "47dcedf9-80c5-4430-bb26-4612f3b77dc3"
   ],
@@ -27,7 +27,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
       "text": "❮ BACK",
       "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
@@ -47,16 +47,16 @@
     },
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:49:02 GMT+0000",
       "jcr:lastModified": "Thu Sep 18 2025 23:49:02 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:49:06 GMT+0000",
       "text": "<p><b>Revision Date: 05.07.25</b></p>\n<ol>\n<li>Nwosu M, Agyeman WY, Bisht A, Gopinath A, Cheema AH, Chaludiya K, Khalid M, Yu AK. The Effectiveness of Intraosseous Basivertebral Nerve Ablation in the Treatment of Nonradiating Vertebrogenic Pain: A Systematic Review. Cureus. 2023 Apr 4;15(4):e37114. doi: 10.7759/cureus.37114. PMID: 37034146; PMCID: PMC10075185.</li>\n<li>Tieppo Francio V, Sayed D. Basivertebral Nerve Ablation. [Updated 2023 May 22]. In: StatPearls [Internet]. Treasure Island (FL): Stat Pearls Publishing; 2024 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK572127/.</li>\n<li>Fischgrund JS, Rhyne A, Macadaeg K, Moore G, Kamrava E, Yeung C, Truumees E, Schaufele M, Yuan P, DePalma M, Anderson DG, Buxton D, Reynolds J, Sikorsky M. Long-term outcomes following intraosseous basivertebral nerve ablation for the treatment of chronic low back pain: 5-year treatment arm results from a prospective randomized double-blind sham-controlled multi-center study. Eur Spine J. 2020 Aug;29(8):1925-1934. doi: 10.1007/s00586-020-06448-x. Epub 2020 May 25. PMID: 32451777.</li>\n<li>Koreckij T, Kreiner S, Khalil JG, Smuck M, Markman J, Garfin S; INTRACEPT Trial Investigators. Prospective, randomized, multicenter study of intraosseous basivertebral nerve ablation for the treatment of chronic low back pain: 24-Month treatment arm results. N Am Spine Soc J. 2021 Oct 26;8:100089. doi: 10.1016/j.xnsj.2021.100089. PMID: 35141653; PMCID: PMC8820067.</li>\n<li>Smuck M, Truumees E, Macadaeg K, Pena E, Arbuckle J 2nd, Gentile J 2nd, Funk R, Singh D, Vinayek S. Intraosseous basivertebral nerve ablation: Pooled long-term outcomes from two prospective studies. Interventional Pain Medicine. 2023;2(2):100088. doi: 10.1016/j.inpm.2023.100088. *Date accessed 3/20/25.</li>\n</ol>\n<p>Bone cement: Serious adverse events, some with fatal outcome, associated with the use of bone cements for vertebroplasty, kyphoplasty and sacroplasty include myocardial infarction, cardiac arrest, cerebrovascular accident, pulmonary embolism and cardiac embolism. Although it is rare, some adverse events have been known to occur beyond one year post-operatively. Additional risks exist with the use of bone cement. Please see the IFU for a complete list of potential risks.</p>\n",
       "jcr:lastModified": "Thu Sep 18 2025 23:49:44 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "Kevin Lobo, Chairman and CEO, CNBC Squawk Box: Medical tax ",
   "jcr:versionHistory": "12a7294f-52d3-4d34-a4a4-71c269bfa8db",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+  "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
   "jcr:predecessors": [
     "672354fd-1d2d-4471-8ad0-8900de3e6b53"
   ],
@@ -26,14 +26,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "jcr:created": "Fri Oct 20 2017 15:11:01 GMT-0400",
       "jcr:lastModified": "Fri Oct 20 2017 15:11:01 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jeannie.chan@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-5b105250fc@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Fri Oct 20 2017 15:11:06 GMT-0400",
           "type": "typePath",
           "jcr:lastModified": "Fri Oct 20 2017 15:16:41 GMT-0400",
@@ -54,7 +54,7 @@
             "fileReference": "/content/dam/stryker/about/news/videos/Kevin-Lobo-Chairman-and-CEO-CNBC-Squawk-Box-Medical-tax.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+            "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/Kevin-Lobo-Chairman-and-CEO-CNBC-Squawk-Box-Medical-tax-AVS",
@@ -76,7 +76,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Fri Dec 09 2016 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "09-Dec-2016",
@@ -85,7 +85,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "text": "<p>Kevin Lobo, Stryker chairman &amp; CEO, talks about some of the company's newest technology and the potential impact of the new administration on the MedTech industry.<br>\n</p>\n<p><b>Watch the full video:</b></p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Fri Oct 20 2017 15:20:05 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "849a5761-66c9-40aa-8640-42fa64c5335a",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "0ce74b3e-495d-492c-8353-d69aada86cfb"
   ],
@@ -34,7 +34,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -49,7 +49,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Venous disease",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Wed Jun 17 2026 23:46:33 GMT+0000",
@@ -58,7 +58,7 @@
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "jcr:lastModified": "Thu Jun 18 2026 22:15:23 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
     "arbitraryOrdering": {

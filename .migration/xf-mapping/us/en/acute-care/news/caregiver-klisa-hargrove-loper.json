@@ -9,7 +9,7 @@
   "jcr:versionHistory": "2a7947cb-6824-4652-852b-b74372bffa77",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "caregiver wearing ppe",
   "jcr:predecessors": [
     "2d1d9fd5-31ed-4568-a223-d3afc6675be0"
@@ -30,14 +30,14 @@
   "jcr:uuid": "d4cfa523-2d1d-4bbc-b573-fb5cd5a96416",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:07:58 GMT+0000",
       "text": "<p>“Klisa is love. She’s love wrapped up in one person.” That’s how AtlantiCare nurse Marisol Ramos describes her dear friend and colleague, Klisa Hargrove-Loper, DNP, CRNA, APN. As her family and friends can attest, caregiving is engrained into everything Klisa is and everything she does. She’s a CRNA in an out-patient surgery center and trauma unit – the “eyes and ears of the OR.” She’s a mom. A wife. A mentor. A friend. And when she lost her mother to breast cancer in the middle of the pandemic, she took her pain and channeled it into something truly inspiring.</p>\n<p>This is her story.&nbsp;<br>\n</p>\n",
       "jcr:lastModified": "Tue Oct 10 2023 20:28:52 GMT+0000",
@@ -46,8 +46,8 @@
     },
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:08:04 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -61,7 +61,7 @@
         "fileReference": "/content/dam/stryker/acute-care/videos/caregiver-stories-klisa-hargrove-loper.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video|VIDEO|false",
         "assetID": "stryker/caregiver-stories-klisa-hargrove-loper-AVS",
         "urlModifiers": "",
@@ -76,16 +76,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:32:09 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:32:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:45:30 GMT+0000",
@@ -109,7 +109,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Fri Jul 15 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "15-Jul-2022",

@@ -8,7 +8,7 @@
   "jcr:title": "Tibia and femur",
   "jcr:versionHistory": "94a2bcb5-4f05-4aa7-9f35-600665b1d44e",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/tibia-femur-image.png",
   "jcr:predecessors": [
     "2be02dee-7b89-419c-aa37-229160ac81db"
@@ -32,7 +32,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -40,7 +40,7 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
@@ -48,7 +48,7 @@
       ],
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -58,14 +58,14 @@
     ],
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 20:03:19 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "100",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "showProcedures": "true",
     "sectionTitle": {
@@ -73,12 +73,12 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
       "title": "Portfolio",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -100,27 +100,27 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+    "jcr:lastModifiedBy": "user-98ada7da8d@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/tibia-femur-image.png",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "disclaimer-type": "text",
     "disclaimer": "<p>CP-AWI-13, 07-2017</p>\r\n",
     "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
     "sling:resourceType": "stryker/components/structure/disclaimer",
     "textIsRich": "true",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

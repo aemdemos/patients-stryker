@@ -22,7 +22,7 @@
   ],
   "jcr:uuid": "6d5ebd08-e23d-4c1a-a100-53048012792a",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -33,7 +33,7 @@
       "stryker:business-unit/sports-medicine"
     ],
     "eventRegistrationLink": "http://ishaconference.com/",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "eventAudience": [
       "stryker:audience/trainees",
       "stryker:audience/or-professionals"

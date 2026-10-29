@@ -10,7 +10,7 @@
   "jcr:versionHistory": "4b06d093-7179-4e12-b1d0-2697902243d3",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "jcr:predecessors": [
     "6e88f62f-edbd-4a0f-9e46-338eadfcb993"
   ],
@@ -34,7 +34,7 @@
   "jcr:uuid": "c38bf982-ff71-4a0b-96ad-680483bf7e2c",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -50,7 +50,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "jcr:lastModified": "Mon Nov 18 2024 23:06:20 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -58,7 +58,7 @@
     "defaultFilterOption": "Show All",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+      "jcr:lastModifiedBy": "user-a9ea1ecbcc@example.invalid",
       "title": "Emergency response and resuscitation products",
       "jcr:lastModified": "Wed Jun 26 2019 22:49:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"

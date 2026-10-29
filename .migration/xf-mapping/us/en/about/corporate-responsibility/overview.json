@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0b560ad8-421f-4644-8b77-b7702307811b",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "bdcf11bb-08aa-4d8d-9ea7-5fa35c9504e6"
   ],
@@ -46,17 +46,17 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/corporate-responsibility",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
       "carouselOptionAutoplay": "true",
       "pauseonhover": "false",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -74,12 +74,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2020_1830211760/homepage/bottom-section-2/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2020-1830211760/homepage/bottom-section-2/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2020_1830211760/homepage/bottom-section-1/master",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/annual-review/2020-1830211760/homepage/bottom-section-1/master",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "27",
           "jcr:created": "Fri Mar 05 2021 16:21:24 GMT+0000",
@@ -95,8 +95,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
               "hideComponent": "false",
               "jcr:created": "Thu Apr 01 2021 16:23:27 GMT+0000",
               "gradientDirection": "left-to-right",
@@ -112,8 +112,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Thu Nov 04 2021 18:02:35 GMT+0000",
       "text": "At Stryker, corporate responsibility is connected to our company mission: Together with our customers, we are driven to make healthcare better. Our corporate responsibility objective is: We will positively impact people and our planet through responsible, sustainable practices that create a better, healthier world. We believe the health of the world is as important as the people who live in it. Therefore, our approach to corporate responsibility is built on the following framework: Creating a better, healthier world Stronger people We are committed to serving our communities and creating a healthy, inclusive workplace where employees thrive. Healthier planet We are committed to reducing our environmental impact on the world through responsible, sustainable operations. Good business We are committed to helping customers improve patient outcomes and growing responsibly by pursuing quality and integrity in everything we do. Our key commitments Advance a culture of inclusion, engagement and belonging Strengthen the diversity of our workforce Power all facilities with 100% renewable electricity by 2027 Become carbon neutral for Scopes 1 and 2 at all Stryker facilities by 2030 Committed to science based targets Engage 85% of our direct suppliers (by spend) on environmental, human rights and ethical performance by 2027 Maintain oversight of corporate responsibility by the Board of Directors Reporting approach Stryker's non-financial (e.g. corporate responsibility, environmental social and governance (ESG)) reporting, focuses on the priority topics noted below for each of our three pillars. We identified these topics through a prioritization assessment involving review of frameworks and regulations, engagement with key internal and external stakeholders and peer benchmarking. We continue to monitor frameworks and regulations and evolve our approach by considering concepts introduced by such frameworks and regulations and adapting our reporting approach as needed. Topics may be added or removed from this list accordingly. We monitor our priority issues, as well as the evolving landscape and regulation, to continue to report and disclose on the most relevant topics and frameworks. Our reporting is informed by the Taskforce for Climate-related Financial Disclosures (TCFD), and our emissions goals are aligned with the 1.5-degree threshold for science-based targets. To prepare for emerging sustainability disclosure regulation, we are preparing to comply where appropriate, including with the Corporate Sustainability Reporting Directive (CSRD). Stronger people Access to quality healthcare Community engagement, charitable giving and volunteering Diversity, equity and inclusion Employee and patient health and safety Employee development and training Engagement with healthcare providers and customers Ethical marketing Product social impact and innovation Healthier planet Air pollution Climate change Environmentally friendly product packaging development and design Operational waste management Good business Ethics, compliance, anticorruption and antitrust Information security and privacy, intellectual property and cybersecurity Product safety and quality Responsible sourcing and human rights Supply chain transparency and diversity Transparency and stakeholder engagement",
       "jcr:lastModified": "Thu Nov 04 2021 18:08:20 GMT+0000",
@@ -123,8 +123,8 @@
     },
     "cols_1474030254": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Nov 01 2021 18:26:47 GMT+0000",
       "jcr:lastModified": "Mon Nov 01 2021 18:26:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
@@ -136,7 +136,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Sep 04 2019 17:51:29 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

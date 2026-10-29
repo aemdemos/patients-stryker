@@ -8,7 +8,7 @@
   "jcr:title": "NeuroMend",
   "jcr:versionHistory": "6b2b2fe3-9327-4bc8-b36e-3603f18c0278",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "0025a77e-159e-4f09-aaa1-d4d03f08da23"
   ],
@@ -36,13 +36,13 @@
   "jcr:uuid": "1be048b3-7e59-4ea3-a75b-00d96219ba55",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Thu Mar 24 2022 15:58:29 GMT+0000",
@@ -63,7 +63,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_548095_2032196979"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Wed Jul 06 2022 13:20:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -74,7 +74,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Li ST. Peripheral Nerve Repair with Collagen Conduits. Clinical Materials 9 (1992) 195-200.</li>\r\n<li>The results of preclinical and in vitro studies may not be indicative of human clinical outcomes</li>\r\n<li>Li St., Yuen D., Jenssen JR., A semipermeable, Kink Resistant Type I Colalgen-based Nerve Guide for PNS Repair. Collagen Matrix, Inc. 2003.</li>\r\n<li>U.S. Patent #6,716,225, Implant Devices for Nerve Repair, 2004.</li>\r\n<li>Taras, John, Vipul Nanavati, and Pamela Steelman. “Nerve Conduits.” Journal of Hand Therapy 18.2 (2005): 191-97.</li>\r\n<li>Weber, Robert, Warren Breidenbach, Richard Brown, Michael Jabaley, and Daniel Mass. “A Randomized Prospective Study of Polyglycolic Acid Conduits for Digital Nerve Reconstruction in Humans.” Plastic and Reconstructive Surgery 106.5 (2000): 1036-045.</li>\r\n<li>The results of preclinical and in vitro studies may not be indicative of human clinical outcomes</li>\r\n<li>Animal study data on file at Collagen Matrix, Inc</li>\r\n</ol>\r\n<p>Manufacturered&nbsp;by: Collagen Matrix, Inc. 15 Thornton Rd Oakland, NJ 07436</p>\r\n",
     "jcr:lastModified": "Thu Mar 10 2022 19:41:41 GMT+0000",
@@ -83,7 +83,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<ul>\n<li>NeuroMend allows for a 25% overlap to potentially eliminate the need for a running suture.</li>\n<li>NeuroMend offers a self-curling design to better match the dimensions of the nerve and provides the ability to wrap nerves from 2.0mm to 12.0mm in diameter.<br>\n</li>\n<li>Expected to completely resorb in about 8 months after implantation.<sup>7,8</sup><br>\n</li>\n</ul>\n",
     "jcr:lastModified": "Thu Mar 10 2022 19:37:23 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

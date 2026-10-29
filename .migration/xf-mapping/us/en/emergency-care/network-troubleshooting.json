@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f9cc2f8a-bb01-4138-b0f6-f8e0a8514dd6",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "ba5b7400-c461-42d0-917f-5ba7a02199b2"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "59ddc27e-3951-4eea-bdf2-8698eef110eb",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "noIndex": "true",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -47,16 +47,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy_copy_copy__833419013": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "text_1508999103": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:43:21 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Action needed: 4G modem to be required for LIFEPAK 15 monitor/defibrillator</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">AT&amp;T will terminate their 3G network by February 22, 2022. To continue transmitting with your LIFEPAK 15 monitor/defibrillator, you will need to have a 4G modem.&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">See the chart below to help select the appropriate replacement for your AT&amp;T modem:</span></span></p>\n",
       "jcr:lastModified": "Tue Aug 30 2022 12:31:44 GMT+0000",
@@ -65,17 +65,17 @@
     },
     "cols_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "table": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
       "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Current modem</b></td>\n<td><b>Current part number</b></td>\n<td><b>Recommended replacement modem</b></td>\n<td><b>Replacement part number</b></td>\n</tr><tr><td>MultiTech cellular only with AT&amp;T data plan</td>\n<td>21996-000081</td>\n<td>MultiTech cellular only with AT&amp;T data plan</td>\n<td>11996-000476</td>\n</tr><tr><td>MultiTech cellular only with Stryker data plan</td>\n<td>21996-000082</td>\n<td>MultiTech cellular only with Stryker data plan</td>\n<td>11996-000475</td>\n</tr><tr><td>Ositech cellular/Wi-Fi with AT&amp;T data plan</td>\n<td>21996-000093<br>\n21996-000112 or<br>\n21996-000092</td>\n<td>Ositech cellular/Wi-Fi/audio with AT&amp;T data plan</td>\n<td>11996-000480</td>\n</tr><tr><td>Ositech cellular/Wi-Fi with Stryker data plan</td>\n<td>21996-000095 or<br>\n21996-000113</td>\n<td>Ositech cellular/Wi-Fi/audio with AT&amp;T data plan</td>\n<td>11996-000484</td>\n</tr><tr><td>Ositech cellular/Wi-Fi/ audio with AT&amp;T data plan</td>\n<td>21996-000110</td>\n<td>Ositech cellular/Wi-Fi/audio with AT&amp;T data plan</td>\n<td>11996-000480</td>\n</tr><tr><td>Ositech cellular/Wi-Fi/ audio with Stryker data plan</td>\n<td>21996-000094 or<br>\n21996-000111</td>\n<td>Ositech cellular/Wi-Fi/audio with Stryker data plan</td>\n<td>11996-000484</td>\n</tr></tbody></table>\n",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:39:59 GMT+0000",
       "jcr:lastModified": "Tue Jul 19 2022 17:42:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/table",
@@ -83,8 +83,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:42:49 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If you would like to switch to a Verizon modem or if you have any questions about which AT&amp;T modem you currently have, your Stryker representative can assist you in selecting the right modem for your needs.&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If you have any questions, please contact our Solution Center at +1 844 999 2787 or&nbsp;<a href=\"mailto:solutioncenter@stryker.com\" target=\"_blank\">solutioncenter@stryker.com</a>.</span></span><br>\n</p>\n",
       "jcr:lastModified": "Tue Aug 30 2022 12:29:23 GMT+0000",
@@ -93,24 +93,24 @@
     },
     "cols_copy_copy_copy__2022446939": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:44:49 GMT+0000",
       "jcr:lastModified": "Tue Jul 19 2022 17:44:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text_1508999103_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:43:21 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Troubleshooting 4G upgrade</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><u><span class=\"futura-bold\">&quot;No modem was found&quot; error</span></u></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b>Cause -&nbsp;This error can occur for one of the following reasons:</b></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">An Ethernet cable is not plugged into your computer.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The Ethernet cable is not plugged in properly.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The Ethernet cable may be faulty.&nbsp;</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b>Solution -&nbsp;Try one of the following solutions:</b></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that the gateway/modem is properly connected to the system connector on the LIFEPAK 15 monitor/defibrillator.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that the LIFEPAK device is turned on.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that your computer is connected to the gateway/modem with an Ethernet cable.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If the computer and modem are already connected with an Ethernet cable, check that the cable is plugged in properly at both ends.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Try using a different Ethernet cable.</span></span></li>\n</ul>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><u>&quot;Incompatible version&quot; error</u></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Cause -&nbsp;This error can occur for one of the following reasons:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">You are trying to update the gateway/modem to an incompatible version of the LIFENET Advanced Wireless Gateway software. You cannot continue with the update.&nbsp;</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Solution&nbsp;</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Check that you have the latest version of the LIFENET Advanced Wireless Gateway update tool. You can download the latest version from the LIFENET System website under System &gt; Resource Center. Ensure you are updating a compatible gateway/modem model (e.g., MultiTech MTR-LAT1).</span></span></li>\n</ul>\n",
       "jcr:lastModified": "Tue Aug 30 2022 12:30:50 GMT+0000",
@@ -119,24 +119,24 @@
     },
     "cols_copy_copy_copy__2060778704": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "sectionseparator_738023199": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:50:39 GMT+0000",
       "jcr:lastModified": "Tue Jul 19 2022 17:50:39 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "text_480210336": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue Jul 19 2022 17:51:27 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Troubleshooting no modem</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><u>&quot;No modem was found&quot; error&nbsp;</u></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Cause -&nbsp;This error can occur for one of the following reasons:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">A USB cable is not plugged into your computer.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The USB cable is not plugged in properly.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The USB cable can be faulty.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">There might be a problem with the USB port on the computer.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Solution - Try one of the following solutions:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that the modem is connected to the LIFEPAK device properly.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that the LIFEPAK device is turned on.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Make sure that your computer is connected to the modem with a USB cable.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If the computer and modem are already connected with a USB cable, check that the cable is plugged in properly at both ends.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Try using a different USB cable.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Try plugging the cable into a different USB port on the computer.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><u>&quot;Incompatible version&quot; error</u></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Cause - This error can occur for one of the following reasons:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The update tool was run before the modem could complete bootup.&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Your modem is already at v1.3 software and does not require the update.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Solution - Try one of the following solutions:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Wait at least 60 to 90 seconds before launching the update tool to allow the modem time to be detected by the computer and to complete bootup.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Close the update tool. Disconnect the modem, power off the attached LIFEPAK. Then, reconnect the modem to USB, power on the LIFEPAK, and wait at least 60 to 90 seconds before launching the update tool again to retry the update.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Check your LIFENET System account and ensure the modem software version listed is 1.0 or 1.2. Version 1.3 does not require the update.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><u>&quot;Transmission failed&quot; error after update has completed</u></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Cause -&nbsp;This error can occur for one of the following reasons:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The modem has insufficient cellular signal strength.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The modem software requires a restart.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The modem requires a Preferred Roaming List (PRL) update.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Solution - Try one of the following solutions:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Ensure you have adequate signal by checking the ‘C, D, E’ (signal) indicators and ensure that you have at least one indicator illuminated (C). Relocate to an area with stronger signal (near a window or outside) to perform a test transmission.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Disconnect the modem from USB and power off the attached LIFEPAK. Power the LIFEPAK back on and wait at least 60 seconds (until the ‘B’ indicator is continuously illuminated) and then attempt a transmission.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Contact Stryker Data Solutions Technical Support to perform the Preferred Roaming List (PRL) update.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">More questions? Email&nbsp;<a href=\"mailto:solutionssupport@stryker.com\" target=\"_blank\">solutionssupport@stryker.com</a>, call 1-800-732-3081, or contact your sales representative.</span></span></p>\n",
       "jcr:lastModified": "Tue Aug 30 2022 12:31:18 GMT+0000",
@@ -145,8 +145,8 @@
     },
     "cols_copy_copy_copy__305633094": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"

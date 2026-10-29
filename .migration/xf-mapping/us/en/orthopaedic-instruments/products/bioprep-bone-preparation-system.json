@@ -8,7 +8,7 @@
   "jcr:title": "BioPrep",
   "jcr:versionHistory": "9720b96e-398c-4554-b8af-24935a2911de",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/surgical/products/bioprep/images/Thumbnail_BioPrep.jpg",
   "jcr:predecessors": [
     "41f51378-18b5-4253-973d-dced886b069e"
@@ -37,13 +37,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Tue Jun 27 2017 08:41:06 GMT-0400",
@@ -66,7 +66,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>BioPrep Bone Preparation Kit</p>\r\n\r\n",
     "shortDescTop": "<p>The BioPrep Bone Preparation Kit contains brushes and sponges which allow the medullary canal and acetabulum to be cleaned prior to placement of bone cement and/or prosthesis. It also contains sculps which may be used to remove excess cement around the prosthesis.<br>\r\n\r\n</p>\r\n\r\n",
-    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModifiedBy": "user-5a4ae9843d@example.invalid",
     "jcr:lastModified": "Mon Aug 07 2017 15:02:47 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [

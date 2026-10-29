@@ -9,7 +9,7 @@
   "jcr:versionHistory": "fb32a746-a64b-4f69-8a7b-e12ce299b9d4",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "Stryker Sage's team posing with family they built wheelchair Halloween costume with",
   "thumbnailFileReference": "/content/dam/stryker/sage/news/2023/23-SGC-872642-November_Newsroom3.jpg",
   "jcr:predecessors": [
@@ -31,14 +31,14 @@
   "jcr:uuid": "4de7976a-98b5-49ff-afa2-d10496f8524b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Tue Nov 28 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "28-Nov-2023",
@@ -51,7 +51,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Employees create a “Magic Wheelchair” for local family</span></span></h2>\n<p>Recently, a team of Stryker employees joined together to generously give their time and talents to raise the spirits of a local McHenry County family. The team was sponsored by the Allies for All Abilities (3A) Employee Resource Group (ERG) at Stryker. 3A promotes and advances disability inclusion practices within Stryker that spark greater innovation, engagement, and productivity. The team reached out to all employees to help collect donations to support the Magic Wheelchair fundraiser.&nbsp;&nbsp;&nbsp;</p>\n<p>Their efforts were unveiled on Halloween in Cary, Illinois, as 14-year-old Kayli Whistler saw her costume for the first time - a sky-blue pickup meticulously designed to resemble her late father's truck. The presentation was made in the cafeteria in front of a large crowd that was filled with smiles and tears. Read more about this remarkable project <a href=\"https://www.shawlocal.com/northwest-herald/2023/11/01/cary-company-transforms-woodstock-girls-wheelchair-into-a-custom-made-halloween-costume/?mkt_tok=MzM4LVdBUC01NzEAAAGPQ7EsehYY5Owm81a8uGin5cOQPXCr98wR3nB8zcFv1wx_lrBsV1vPOF-4EIbSHZZXuQEFVLHYujwwdJd-u8e5drbJzdX-J6bizQvne2Wg9R1rng\">here</a>.</p>\n",
     "jcr:lastModified": "Tue Nov 28 2023 20:31:47 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -59,7 +59,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "preset": "max_width_1440",
     "alt": "Stryker Sage's build team posing with wheelchair Halloween costume for family.",
     "srcFileRef": "/content/dam/stryker/sage/news/2023/23-SGC-872642-November_Newsroom3.jpg",

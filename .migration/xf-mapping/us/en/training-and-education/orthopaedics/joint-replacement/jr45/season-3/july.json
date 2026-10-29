@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a490ba28-4430-4f25-9318-462c0d281b2a",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "3bfbf219-a3c9-4140-aca5-ca074605afb4"
   ],
@@ -30,14 +30,14 @@
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
       "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -46,8 +46,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<h1><span class=\"fontsize-4vw\"><span style=\"background-color: transparent; font-weight: normal; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Addressing instability with&nbsp;<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Modular Dual Mobility and Novae Monobloc Dual Mobility</span></span></span></span></span></h1>\r\n",
@@ -65,8 +65,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
           "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program objectives</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Evaluate and identify common indications for using dual mobility</span></li>\n<li><span class=\"fontsize-1-25em\">Understand the difference in clinical benefits between monobloc and modular dual mobility</span></li>\n<li><span class=\"fontsize-1-25em\">Identify cases in which cemented dual mobility is an appropriate treatment solution</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Jul 15 2025 14:04:04 GMT+0000",
@@ -75,8 +75,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
           "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Product focus</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Modular Dual Mobility (MDM)</span></li>\n<li><span class=\"fontsize-1-25em\">Novae Monobloc Dual Mobility</span></li>\n</ul>\n",
           "jcr:lastModified": "Tue Jul 15 2025 14:04:48 GMT+0000",
@@ -87,8 +87,8 @@
     },
     "cols_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 25 2022 19:11:35 GMT+0000",
       "jcr:lastModified": "Mon Jul 25 2022 19:11:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -97,8 +97,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 19:11:39 GMT+0000",
           "jcr:lastModified": "Mon Jul 25 2022 19:11:39 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -107,8 +107,8 @@
     },
     "cols3_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 25 2022 18:39:33 GMT+0000",
       "jcr:lastModified": "Mon Jul 25 2022 18:39:33 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -117,8 +117,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_1906037106": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu May 08 2025 19:00:23 GMT+0000",
           "alt": "Nessler_Joseph_JR45",
@@ -130,8 +130,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Joseph Nessler, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">St. Cloud, MN</span><br>\n<br>\n<b>Residency</b>: Mayo Clinic</p>\n",
           "jcr:lastModified": "Tue Jul 15 2025 20:54:50 GMT+0000",
@@ -144,8 +144,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_1906": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu May 08 2025 19:00:23 GMT+0000",
           "alt": "Wooster_Benjamin_JR45",
@@ -157,8 +157,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Benjamin Wooster, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Charlotte, NC</span><br>\n<br>\n<b>Residency</b>: Duke University Medical Center<br>\n<b>Fellowship</b>: Mayo Clinic</p>\n",
           "jcr:lastModified": "Tue Jul 15 2025 14:07:04 GMT+0000",
@@ -171,10 +171,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "leftPadding": "5",
           "topPadding": "5",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Mon Jul 25 2022 18:46:11 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -190,16 +190,16 @@
     },
     "cols_1347437557_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 25 2022 19:23:16 GMT+0000",
       "jcr:lastModified": "Mon Jul 25 2022 19:23:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "deepLinkingId": "learning",
       "jcr:created": "Wed Dec 07 2022 19:18:53 GMT+0000",
       "title": "On-demand learning",
@@ -208,8 +208,8 @@
     },
     "text_copy_copy_copy__821685603": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
       "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">RESOURCES</span></span></p>\n",
       "jcr:lastModified": "Wed Dec 07 2022 19:21:39 GMT+0000",
@@ -218,14 +218,14 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "resources": [
         "/content/dam/stryker/no-index/training-and-education/jr45/season-3/july/resources/Jump distance- Raising the bar with MDM.pdf",
         "/content/dam/stryker/no-index/training-and-education/jr45/season-3/july/resources/MDM X3 surgical protocol.pdf",
         "/content/dam/stryker/no-index/training-and-education/jr45/season-3/july/resources/NOVAE Dual Mobility Messaging Deck.pdf",
         "/content/dam/stryker/no-index/training-and-education/jr45/season-3/july/resources/NOVAE Dual Mobility Cups surgical technique.pdf"
       ],
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jul 26 2022 18:11:01 GMT+0000",
       "jcr:lastModified": "Tue Jul 15 2025 14:15:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -237,14 +237,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue Jul 15 2025 13:41:17 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>The faculty are paid consultants of Stryker Orthopaedics. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\r\n<p>The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.&nbsp;</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: MDM, Novae, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
     "jcr:lastModified": "Tue Jul 15 2025 14:16:11 GMT+0000",

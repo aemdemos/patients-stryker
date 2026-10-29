@@ -7,7 +7,7 @@
   "jcr:title": "Stryker's Women’s Network",
   "jcr:versionHistory": "227627da-07b0-4256-9582-135e88bb8fc7",
   "cq:template": "/apps/stryker/templates/base",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "6eb71087-062a-4ea4-a30d-ff17975fed5f"
   ],
@@ -23,14 +23,14 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jane.irwin@stryker.com",
-      "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+      "jcr:createdBy": "user-cc3049cb53@example.invalid",
+      "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
       "jcr:created": "Thu Jun 08 2017 17:43:29 GMT-0400",
       "headColor": "rgba(0,0,0,1)",
       "jcr:lastModified": "Fri Oct 20 2017 16:10:06 GMT-0400",
@@ -38,8 +38,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "jcr:created": "Mon Jan 15 2018 10:45:11 GMT-0500",
       "jcr:lastModified": "Tue Jan 30 2018 09:52:02 GMT-0500",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jeannie.chan@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-5b105250fc@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Tue Jan 30 2018 09:49:17 GMT-0500",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Advancing women <span style=\"color: #ffb500;\">together</span></span></span>",
@@ -67,8 +67,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jane.irwin@stryker.com",
-      "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+      "jcr:createdBy": "user-cc3049cb53@example.invalid",
+      "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
       "jcr:created": "Thu Jun 08 2017 17:43:10 GMT-0400",
       "jcr:lastModified": "Thu Jun 08 2017 17:44:06 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -77,8 +77,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jane.irwin@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-cc3049cb53@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Thu Jun 08 2017 17:43:41 GMT-0400",
           "text": "<p>We know that it takes many different kinds of people to be a successful company. To continue to build on our success, we value our employees’ unique perspectives and ideas. It is in this spirit that we created Stryker's&nbsp;Women’s Network (SWN).</p>\n<p>SWN offers enhanced opportunities for members through networking, professional development, leadership mentoring, community outreach and educational projects that drive the attraction, development and retention of talented women. The SWN is open to all employees, both men and women, and includes over 1,500 members across the globe.</p>\n<p>The SWN is committed to encouraging a more inclusive work environment and providing a forum that offers women new opportunities to grow as professionals, leaders and individuals.</p>\n<p>SWN initiatives include a sales sub-committee that is dedicated to attracting, developing and retaining women in the sales force and a mentorship sub-committee, which is focused on enriching mentorship programs across Stryker.<br>\n&nbsp;</p>\n",
           "jcr:lastModified": "Fri Feb 09 2018 11:14:11 GMT-0500",
@@ -91,8 +91,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jeannie.chan@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-5b105250fc@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Tue Jan 30 2018 09:59:35 GMT-0500",
           "jcr:lastModified": "Tue Jan 30 2018 09:59:35 GMT-0500",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -101,10 +101,10 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "image": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "jcr:createdBy": "user-5b105250fc@example.invalid",
               "fileReference": "/content/dam/stryker/about/corporate-responsiblity/DiversityAndInclusion/swn/Great Places to Work for Women Word Mark_r.jpg",
               "height": "0",
-              "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+              "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
               "jcr:created": "Tue Jan 30 2018 09:59:48 GMT-0500",
               "width": "0",
               "jcr:lastModified": "Tue Jan 30 2018 10:01:16 GMT-0500",
@@ -117,7 +117,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+    "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
     "disclaimer-type": "path",
     "jcr:lastModified": "Fri Oct 20 2017 16:09:51 GMT-0400",
     "sling:resourceType": "stryker/components/structure/disclaimer",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "dcc78b0c-8045-434d-8536-9963accc41b7",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "390ac5d5-6023-4dc8-9b96-cd94e0753f75"
   ],
@@ -35,7 +35,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -50,7 +50,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Deep vein thrombosis",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Thu Jun 18 2026 22:26:09 GMT+0000",
@@ -59,7 +59,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>Indications for Use</b></p>\r\n<p>The ClotTriever Thrombectomy System is indicated for: (1) The non surgical removal of thrombi and emboli from blood vessels. (2) Injection, infusion, and/or aspiration of contrast&nbsp;<span style=\"font-size: 0.8125rem;\">media and other fluids into or from a blood vessel. The ClotTriever Thrombectomy System is intended for use in the peripheral vasculature including deep vein thrombosis (DVT).</span></p>\r\n<p>The ClotTriever Sheaths are indicated for use as a conduit for the insertion of endovascular devices into the vasculature while minimizing blood loss associated with such insertions.</p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and contraindications prior to use of the product.</p>\r\n<p>Caution: Federal (USA) law restricts this device to sale by or on the order of a physician.</p>\r\n",
     "jcr:lastModified": "Thu Jun 18 2026 22:30:16 GMT+0000",

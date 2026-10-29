@@ -9,7 +9,7 @@
   "jcr:versionHistory": "80dabafd-37a2-4d18-a043-c091da2a47ef",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "KevinLobo_Thumbnail",
   "jcr:predecessors": [
     "800c28fc-ff23-48b6-9cc8-4142ec4d3131"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Oct 25 2023 15:31:08 GMT+0000",
       "jcr:lastModified": "Wed Oct 25 2023 15:31:08 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -48,8 +48,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Wed Oct 25 2023 15:25:27 GMT+0000",
           "hideBorder": "false",
           "type": "typeId",
@@ -62,8 +62,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Oct 25 2023 15:29:05 GMT+0000",
       "text": "<p>At Stryker, we focus on the traits that make our employees successful. We integrate <a href=\"https://www.stryker.com/us/en/about/news/2023/stryker-receives-the-don-clifton-strengths-based-culture-award.html\">Gallup’s CliftonStrengths</a> methodology into our culture and development, including for our top leaders.</p>\n<p>Stryker Chair and CEO Kevin Lobo recently joined Gallup CEO Jon Clifton to discuss how he puts his top 5 strengths into practice as a leader every day.</p>\n",
       "jcr:lastModified": "Wed Oct 25 2023 20:16:32 GMT+0000",
@@ -72,9 +72,9 @@
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "CTAOpenInNewTab": "true",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "ctaLinkType": "ext",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Wed Oct 25 2023 15:29:46 GMT+0000",
@@ -86,8 +86,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Oct 25 2023 15:31:31 GMT+0000",
       "jcr:lastModified": "Wed Oct 25 2023 15:31:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -95,7 +95,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Wed Oct 25 2023 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "25-Oct-2023",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "bfaa4a95-2aa4-4bd6-b4a7-12fee54be454",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "The hygh-tec fecal management solution",
   "jcr:predecessors": [
     "86ae1396-3688-4ddb-9eb6-af732dd5c6f2"
@@ -37,14 +37,14 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Tue May 19 2026 16:11:51 GMT+0000",
       "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Rx only</span></span></p>\n",
       "jcr:lastModified": "Tue May 19 2026 16:12:18 GMT+0000",
@@ -58,7 +58,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri May 01 2026 15:13:25 GMT+0000",
@@ -66,7 +66,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>References</b></p>\r\n<p>1. Data on File. Sage Products LLC. 01/2026.</p>\r\n<p>2. Whiteley, I., Sinclair, G., Lyons, A. M., &amp; Riccardi, R. (2014). A retrospective review of outcomes using a fecal management system in acute care patients. Ostomy/wound management, 60(12), 37–43&nbsp;</p>\r\n<p>3. Gutting, T., Brobeil, A., Strach, L., Stricker, E., Boxberger, M., Trierweiler-Hauke, B., Heine, C., Michl, P., Luntz, S., Robert, B., Göbel, F., Weis, C., &amp; Pfützner, A. (2025). Sealing efficiency and safety of a polyurethane-based fecal management system in intensive care-Results from a real-world study. Australian critical care: official journal of the Confederation of Australian Critical Care Nurses, 38(5), 101296. <a href=\"https://doi.org/10.1016/j.aucc.2025.101296\">https://doi.org/10.1016/j.aucc.2025.101296</a></p>\r\n",
     "jcr:lastModified": "Tue May 19 2026 15:17:35 GMT+0000",
@@ -78,7 +78,7 @@
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
       "description": "Rx only",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "deepLinkingId": "products",
       "jcr:lastModified": "Tue May 19 2026 16:11:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title"

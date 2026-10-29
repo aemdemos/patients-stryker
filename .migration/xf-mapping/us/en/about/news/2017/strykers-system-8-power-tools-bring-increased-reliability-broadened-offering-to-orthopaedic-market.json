@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s System 8 Power Tools bring increased reliability, broadened offering to orthopaedic market",
   "jcr:versionHistory": "9b409151-4ea7-4b1b-9d52-bf55d1385005",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "b9d9d4ea-15ff-4ebf-bf13-954f89006786"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Wed Mar 15 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "15-Mar-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>Stryker’s Instruments division announces the launch of System 8 power tools, an evolutionary system that delivers increased reliability in the O.R. and throughout the hospital, and brings additional tools for dedicated orthopaedic applications within one family.&nbsp;</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://www.stryker.com/stellent/groups/corporate/documents/web_prod/170031.pdf\" target=\"_blank\">Stryker.com</a></p>\n",
     "jcr:lastModified": "Tue May 30 2017 16:00:32 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

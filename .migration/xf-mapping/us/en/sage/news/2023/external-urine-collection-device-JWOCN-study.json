@@ -9,7 +9,7 @@
   "jcr:versionHistory": "4f1f9ed2-0d20-4b27-b65c-eee2f4649c3d",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "thumbnailAltText": "PrimaFit External Urine Management for the Female Anatomy photo of application",
   "jcr:predecessors": [
     "9e048d8f-dc96-4c06-80f0-1d7471f93f0a"
@@ -33,14 +33,14 @@
   "jcr:uuid": "89681074-df7c-4e2f-b672-5c826f796ce0",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Dec 13 2023 15:11:37 GMT+0000",
       "jcr:lastModified": "Wed Dec 13 2023 15:11:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -49,8 +49,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Dec 13 2023 15:11:41 GMT+0000",
           "alt": "PrimaFit External Urine Management for the Female Anatomy photo of application",
@@ -66,8 +66,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kent.schwartz@stryker.com",
-          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:createdBy": "user-7a617b9e44@example.invalid",
+          "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
           "jcr:created": "Wed Dec 13 2023 15:11:44 GMT+0000",
           "text": "<h2><span class=\"fontsize-1-25em\">Journal of Wound Ostomy and Continence Nursing published a study showing an External Urinary Device for Female Anatomy (EUDFA) is an effective alternative to indwelling urinary catheters</span></h2>\n<p><span class=\"fontsize-1-25em\">The authors of this article examined whether an EUDFA (Sage PrimaFit External Urine Management System for the Female Anatomy) could effectively divert urine away from the patients’ skin. There were two parts to this study: a prospective, observational cohort to demonstrate the effectiveness of the device and a quasi-experimental, retrospective cross-sectional cohort to study changes in indwelling catheter use, catheter-associated urinary tract infection (CAUTIs), urinary infections, and incontinence-associated dermatitis (IAD) rates.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Prospective, observational cohort study</b></span></p>\n<p><span class=\"fontsize-1-25em\">This portion of the research showed that the EUDFA effectively diverted 85.5% of patients’ urine away from vulnerable skin. This makes it a viable alternative to indwelling catheters which carry the risk of CAUTI.</span></p>\n",
           "jcr:lastModified": "Wed Dec 13 2023 15:16:43 GMT+0000",
@@ -78,8 +78,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kent.schwartz@stryker.com",
-      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:createdBy": "user-7a617b9e44@example.invalid",
+      "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
       "jcr:created": "Wed Dec 13 2023 15:14:27 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><b>Quasi-experimental, retrospective cross-sectional cohort study</b></span></p>\n<p><span class=\"fontsize-1-25em\">This portion of the research looked at database information from 2016, prior to the introduction of the EUDFA and for 2018 and 2019, to see whether any trends could be discovered. They looked at all adult patients in critical or progressive care during the study month of each year. The data set did not allow them to separate the females only. Indwelling catheter use decreased from 43.9% in 2016 to 36.6% in 2019. CAUTI was reduced from 1.34/1000 catheter days in 2016, to 0.50/1000 catheter days in 2019. The rate of IAD decreased from 69.2% in 2016 to 39.1% in 2019.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Conclusions</b></span></p>\n<p><span class=\"fontsize-1-25em\">There is a desperate need to reduce the risk factors that can lead to serious infection. The statistically significant drop in indwelling catheter use must be applauded since they had to also include data from males due to database limitations. If the male data could have been excluded, it is likely the difference would be even more significant.</span></p>\n<p><span class=\"fontsize-1-25em\">Catheter-related infections decreased from before the introduction to EUDFA and after. This is not a cause-and-effect relationship, but the trend is promising.</span></p>\n<p><span class=\"fontsize-1-25em\">A very important point is that skin damage related to incontinence (IAD) was reduced by more than 29%. Keep in mind that fecal or fecal combined with urinary incontinence is responsible for IAD and the rates of damage in incontinent patients decreased after the EUDFA was introduced. Again, no cause-and-effect relationship can be inferred, but that is a clinically significant trend.</span></p>\n<p><span class=\"fontsize-1-25em\">In research, statistical significance is not always achieved, often due to the low number of occurrences (only 4 cases of CAUTI were reported in one of the study years in this report). However, nurses know that clinical significance counts too. Others who appreciate the clinical significance include those women who have experienced having an indwelling urinary catheter with the accompanying discomfort and often resulting urinary tract infection!</span></p>\n<p><span class=\"fontsize-1-25em\">As the authors state, more studies, including randomized controlled studies are needed. Although more time-intensive and expensive to conduct, randomized controlled studies would contribute significant knowledge that could change clinical practice for the benefit of incontinent women.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Learn more</b></span></p>\n<p><span class=\"fontsize-1-25em\">To learn more about PrimaFit how can help manage urinary incontinence for your patients with female anatomy and promote early catheter removal, <a href=\"/content/stryker/us/en/sage/products/sage-primafit.html\">click here</a>.</span></p>\n",
       "jcr:lastModified": "Wed Dec 13 2023 15:18:21 GMT+0000",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "publishDate": "Wed Dec 13 2023 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "13-Dec-2023",
@@ -102,7 +102,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed Dec 13 2023 15:16:48 GMT+0000",
@@ -111,7 +111,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Conflict of Interest: The authors declare that funding for this study and for assistance with manuscript preparation was supplied by Sage Products, a business unit of Stryker.</p>\r\n<p>1. Beeson T, Pittman J, Davis CR, Effectiveness of an External Urinary Device for Female Anatomy and Trends in Catheter-Associated Urinary Tract Infections, Journal of Wound Ostomy Continence Nursing, 2023;50(2):137-41.&nbsp;</p>\r\n",
     "jcr:lastModified": "Wed Dec 13 2023 15:18:39 GMT+0000",

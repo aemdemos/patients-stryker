@@ -17,7 +17,7 @@
   "jcr:isCheckedOut": true,
   "jcr:uuid": "84e8bbe0-6bd8-4a50-9f43-ece4216f9c4f",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "cq:lastModifiedBy": "user-482453db0b@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -35,8 +35,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Wed Feb 27 2019 15:40:19 GMT+0000",
       "gradientDirection": "left-to-right",
       "text": "<h4><span class=\"urw-egyptienne\">Magnetic Resonance Imaging Information</span></h4>\n",
@@ -48,9 +48,9 @@
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
       "CTAOpenInNewTab": "true",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "ctaLinkType": "gcs",
       "ctaOpenInNewTabOverride": "1",
       "jcr:created": "Wed Feb 27 2019 15:43:31 GMT+0000",

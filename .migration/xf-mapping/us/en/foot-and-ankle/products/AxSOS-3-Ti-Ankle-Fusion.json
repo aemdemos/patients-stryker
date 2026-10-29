@@ -8,7 +8,7 @@
   "jcr:title": "AxSOS 3 Ti Platform",
   "jcr:versionHistory": "1af75b74-b99f-4b93-ae7c-422d6f28f52a",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "10bd7105-78b3-4571-851b-ff4da3ce247c"
   ],
@@ -34,13 +34,13 @@
   "jcr:uuid": "59c51f70-3844-4aa0-abaa-058e886d9eb2",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "imageAlt": "AxSOS Ankle Fusion",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 01 2020 15:56:00 GMT+0000",
@@ -53,8 +53,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Fri Jun 26 2020 14:07:04 GMT+0000",
       "jcr:lastModified": "Fri Jun 26 2020 14:07:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -63,8 +63,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 16:41:48 GMT+0000",
           "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/axsos-3-ti-ankle-fusion/Four-axsos-ankle-fusion.jpg",
@@ -77,8 +77,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Mon Dec 03 2018 21:38:17 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Why</span></span><span class=\"urw-egyptienne\"> Titanium?<br />\r\n</span><br />\r\n </span>",
@@ -95,16 +95,16 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Jul 01 2020 16:36:46 GMT+0000",
       "jcr:lastModified": "Wed Jul 01 2020 16:36:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Jul 01 2020 16:45:40 GMT+0000",
       "jcr:lastModified": "Wed Jul 01 2020 16:45:40 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -112,9 +112,9 @@
         "jcr:primaryType": "nt:unstructured",
         "standaloneimage_copy_384324866": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "description": "Left and Right",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 16:41:48 GMT+0000",
           "title": "Antero-Lateral TT CP Plate",
@@ -128,9 +128,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy_2017522891": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "description": "Left and Right",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 16:41:48 GMT+0000",
           "title": "Antero-Lateral TT Plate",
@@ -144,9 +144,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "description": "Left and Right",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 16:41:48 GMT+0000",
           "title": "Anterior TT CP Plate",
@@ -160,9 +160,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "description": "Left and Right",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 16:41:48 GMT+0000",
           "title": "Anterior TT Plate",
@@ -174,16 +174,16 @@
     },
     "sectionseparator_140384074": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Jul 01 2020 16:53:27 GMT+0000",
       "jcr:lastModified": "Wed Jul 01 2020 16:53:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "largeheadline_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Mon Dec 03 2018 21:38:17 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<span class=\"fontsize-3vw\"><b><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Updated</span></span></b><span class=\"urw-egyptienne\"><b> screw offerings</b></span></span>",
@@ -197,8 +197,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Jul 01 2020 16:54:54 GMT+0000",
       "jcr:lastModified": "Wed Jul 01 2020 16:54:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -207,8 +207,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Sat Jan 26 2019 01:48:39 GMT+0000",
           "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Ease of removal<sup>3</sup><br>\n </span><span style=\"font-weight: 400;\"><span class=\"urw-egyptienne\">Patented screw/plate interface&nbsp;designed for&nbsp;consistent screw insertion and helps ease extraction<sup>3</sup><br>\n </span></span><br>\n</span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">•</span> Conically shaped screw head&nbsp;</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">•</span>&nbsp;Rounded threads&nbsp;</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">•</span>&nbsp;One free thread path&nbsp;</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">•</span>&nbsp;Type II anodization</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Universal hole design</span><br>\n <span class=\"urw-egyptienne\">Cortical screw angulation</span></span></p>\n<p><span class=\"fontsize-2em\">&nbsp;</span></p>\n<p><span class=\"fontsize-2em\">&nbsp;</span></p>\n",
           "jcr:lastModified": "Mon Aug 17 2020 18:21:14 GMT+0000",
@@ -217,8 +217,8 @@
         },
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Mon Aug 31 2020 18:51:42 GMT+0000",
           "type": "typeId",
           "videoId": "j70rXz0rFpI",
@@ -231,8 +231,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 17:12:20 GMT+0000",
           "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/axsos-3-ti-ankle-fusion/ankle-fusion-screws3.jpg",
@@ -241,8 +241,8 @@
         },
         "standaloneimage_copy_836255677": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Wed Jul 01 2020 17:12:20 GMT+0000",
           "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/axsos-3-ti-ankle-fusion/ankle-fusion-screws2.jpg",
@@ -253,16 +253,16 @@
     },
     "sectionseparator_647337490": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Mon Aug 31 2020 18:50:59 GMT+0000",
       "jcr:lastModified": "Mon Aug 31 2020 18:50:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "preset": "max_width_1440",
       "linkExternal": "https://bit.ly/T2ICFINFO",
       "jcr:created": "Mon Aug 31 2020 18:50:21 GMT+0000",
@@ -274,8 +274,8 @@
     },
     "sectionseparator_1523078543": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Mon Aug 31 2020 18:51:05 GMT+0000",
       "jcr:lastModified": "Mon Aug 31 2020 18:51:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -286,9 +286,9 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
       "resources": "/content/stryker/us/en/foot-and-ankle/asset-items/jcr:content/par/externalasset_367444_182256910",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Mar 17 2021 16:00:47 GMT+0000",
       "jcr:lastModified": "Wed Mar 17 2021 16:01:32 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
@@ -301,7 +301,7 @@
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
     "shortDescTop": "<p><b>Fit Matters</b></p>\r\n",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "jcr:lastModified": "Mon Aug 17 2020 18:19:51 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -320,7 +320,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Williams, DF. On the mechanisms of biocompatibility. Biomaterials (2008), 1-13.&nbsp;<br>\r\n</li>\r\n<li>Pohler, O EM. Unalloyed titanium for implants in bone surgery. Injury 31(2000) S-D7-13.&nbsp;</li>\r\n<li>White paper, content ID# AXSOS-WP-4. Konowalczyk, S. et al. AxSOS 3 Titanium Plating System – Screw Removal. September 2014.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Aug 17 2020 18:21:05 GMT+0000",

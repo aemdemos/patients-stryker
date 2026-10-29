@@ -20,15 +20,15 @@
   ],
   "jcr:uuid": "e4012ca4-85ad-4816-989a-145944d1fc42",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
       "dimensionBox": "ND",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "layoutOptions": "50_top",
       "backgroundImageRef": "/content/dam/stryker/spine/products/bacs/images/Step_Up_Banner1.jpg",
       "jcr:created": "Tue Feb 25 2020 20:39:42 GMT+0000",
@@ -45,8 +45,8 @@
           "sling:resourceType": "wcm/foundation/components/parsys",
           "text_copy_copy": {
             "jcr:primaryType": "nt:unstructured",
-            "jcr:createdBy": "garrett.shue@stryker.com",
-            "jcr:lastModifiedBy": "Katie.Powers@stryker.com",
+            "jcr:createdBy": "user-7065227e84@example.invalid",
+            "jcr:lastModifiedBy": "user-8af8208474@example.invalid",
             "jcr:created": "Tue Feb 25 2020 19:59:18 GMT+0000",
             "gradientDirection": "left-to-right",
             "text": "<p style=\"text-align: left;\"><span style=\"color: #ffffff;\"><br>\n <span class=\"futura-bold\"><span class=\"fontsize-2-5em\">&nbsp; BACS Assure<br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">&nbsp; &nbsp; &nbsp; Advanced insight and analysis for comprehensive treatment decisions</span></span></span></p>\n",
@@ -57,8 +57,8 @@
           },
           "text_1896911466_copy": {
             "jcr:primaryType": "nt:unstructured",
-            "jcr:createdBy": "garrett.shue@stryker.com",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:createdBy": "user-7065227e84@example.invalid",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "jcr:created": "Tue Feb 25 2020 20:01:04 GMT+0000",
             "gradientDirection": "left-to-right",
             "text": "<p><span style=\"color: #ffffff;\">&nbsp;</span></p>\n<p><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">Everyone knows the value of data. The BACS Assure tool simplifies data management by capturing and analyzing data throughout the continuum of spinal care – it can provide you with insights that allow you to make treatment decisions for your patients.</span></span></p>\n<p style=\"margin-left: 40px;\">&nbsp;</p>\n<p style=\"margin-left: 40px;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">- Understand what treatment options have resulted in quality patient outcomes</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">- Share data with your patient to foster engagement and allow them to feel involved in treatment decisions</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">- Track, analyze and understand long-term outcomes and trends for all your patients in real-time</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">- View your patient outcomes using our templates, or create your own detailed ad hoc reports</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span style=\"color: #b2b4ae;\">-&nbsp;Benchmark your practice</span></span></span></p>\n",
@@ -76,7 +76,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Jul 22 2020 17:21:12 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

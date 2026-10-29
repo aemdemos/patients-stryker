@@ -10,7 +10,7 @@
   "jcr:versionHistory": "b715de38-1dbc-401a-b06d-a9b5e9e0b3ee",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "Healthcare professional using Sync Badge voice technology for clinical documentation",
   "jcr:predecessors": [
     "beebcf5a-987b-4d98-89ad-65bdfb089dc8"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "videoType": "typeId",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Wed Jul 29 2026 16:20:26 GMT+0000",
       "alt": "Healthcare professional using Sync Badge voice technology for clinical documentation",
@@ -53,8 +53,8 @@
     },
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Jul 16 2026 22:13:37 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -67,8 +67,8 @@
     "customizable_copy_1248091488": {
       "jcr:primaryType": "nt:unstructured",
       "titleFont": "font-egyptienne",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Jul 28 2026 22:27:29 GMT+0000",
       "hideButton": "false",
       "title": "Related",
@@ -99,7 +99,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "publishDate": "Mon Aug 10 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Aug-2026",
@@ -112,7 +112,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1. Lau RS, Boesen ME, Richer L, Hill MD. Siloed mentality, health system suboptimization and the healthcare symphony: a Canadian perspective. Health Res Policy Syst. 2024 Jul 17;22(1):87. doi: 10.1186/s12961-024-01168-w. PMID: 39020412; PMCID: PMC11253392.</p>\r\n<p>2. Abernethy A, Asfar N, Anderson B, et al. National Academy of Medicine. Toward a National Health Digital and Data Architecture: Laying the Foundation for Digital Transformation. March 29, 2026. </p>\r\n<p>3. World Economic Forum. 4 ways data is improving healthcare. Dec 5, 2019. <a href=\"https://www.weforum.org/stories/2019/12/four-ways-data-is-improving-healthcare/\">4 ways data is improving healthcare | World Economic Forum</a>. </p>\r\n<p>4<span style=\"font-size: 0.8125rem;\">. </span>Lehne M, Sass J, Shepers J, et al. NPJ Digital Medicine. Why digital medicine depends on interoperability. August 20, 2019.</p>\r\n<p>5. U.S. Food and Drug Administration. Study Data Technical Conformance Guide. 2025. </p>\r\n<p>6. Center for Connected Medicine and KLAS. Top of Mind for Top Health Systems 2020. </p>\r\n<p>7. Scientific Research in Hospital Solutions. Hospital Management. The Role of Interoperability in Hospital Information Systems. December 7, 2025. <a href=\"https://www.srhs.org/interoperability-in-hospital-information-systems\">https://www.srhs.org/interoperability-in-hospital-information-systems</a>. </p>\r\n<p>8. Rajaei O, Khayami SR, Rezaei MS. Smart hospital definition: Academic and industrial perspective. Int J Med Inform. 2024 Feb;182:105304. doi: 10.1016/j.ijmedinf.2023.105304. Epub 2023 Nov 28. PMID: 38065002.</p>\r\n",
     "jcr:lastModified": "Wed Jul 29 2026 22:17:04 GMT+0000",

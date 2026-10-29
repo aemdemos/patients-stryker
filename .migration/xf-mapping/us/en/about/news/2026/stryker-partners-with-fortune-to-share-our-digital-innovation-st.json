@@ -10,7 +10,7 @@
   "jcr:versionHistory": "76e913cd-dd65-4dac-8c19-d30b8ad152a5",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Stryker partners with Fortune video",
   "jcr:predecessors": [
     "9a979952-c0bf-4aa7-9ce4-3be3c5a8cb27"
@@ -41,7 +41,7 @@
   "videoType": "typePath",
   "videoContentUrl": "https://www.stryker.com/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune%20Stryker%20v2.9-lowres.mp4",
   "videoAssetPath": "/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune Stryker v2.9-lowres.mp4",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "videoDuration": "PT3M10S",
   "videoDescription": "In this Fortune Brand Studio feature, Chair and CEO Kevin Lobo and Stryker leaders share how digital innovation and connected medical technologies power the future of the SmartHospital.",
   "customizablearea_parsys": {
@@ -49,8 +49,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Jun 10 2026 17:15:28 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 17:15:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -59,8 +59,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2026 17:15:34 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -74,7 +74,7 @@
             "fileReference": "/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune Stryker v2.9-lowres.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/Fortune Stryker v2.9-lowres-AVS",
             "urlModifiers": "",
@@ -90,8 +90,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Wed Jun 10 2026 17:15:38 GMT+0000",
           "text": "<p>Fortune Brand Studio sat down with Stryker leaders to explore how our connected digital solutions deliver value to our customers across the continuum of care.</p>\n<p>In this video, watch Chair and CEO Kevin Lobo, President of Stryker’s Medical Division Jessica Mathieson, President and COO Spencer Stiles and Group President of Orthopaedics Dylan Crotty discuss how our customers are navigating increasing operational pressures and how our connected technologies can help address those challenges.</p>\n<p><a href=\"https://fortune.com/brandstudio/stryker/connected-technologies-smarter-outcomes-how-stryker-is-reimagining-health-care-delivery/\"><span class=\"standalone-link\">Read more on Fortune’s site here</span></a></p>\n",
           "jcr:lastModified": "Thu Jun 11 2026 13:10:45 GMT+0000",
@@ -103,7 +103,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Thu Jun 11 2026 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "11-Jun-2026",

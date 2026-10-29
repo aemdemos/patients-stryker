@@ -7,7 +7,7 @@
   "jcr:title": "Not all superheroes wear capes. Some wear scrubs.",
   "jcr:versionHistory": "5108fde6-c76b-4690-95e4-1755b7345f0e",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "176ad811-a3cf-4bdc-98a9-40afb46d278b"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "a46b2bec-9d2f-433c-9cb0-9b6362ae5633",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_1_3_2_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Feb 03 2020 18:02:51 GMT+0000",
       "jcr:lastModified": "Mon Feb 03 2020 18:02:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
@@ -44,8 +44,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Feb 03 2020 18:03:45 GMT+0000",
       "jcr:lastModified": "Mon Feb 03 2020 18:03:45 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -54,8 +54,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Feb 03 2020 18:03:49 GMT+0000",
           "text": "<p>Although Judy Gay, NP formally retired from a decades-long career in nursing in 2019, she’s never stopped visiting and advocating for the chronically ill children who were under her care. Dr. Edward Clark, one of the doctors Judy worked closely with for many years, said it best: “<span class=\"futura-bold\">Judy is the wonder woman of pediatrics.</span>”<br>\n</p>\n<p><a href=\"https://www.stryker.com/us/en/acute-care/c/caregiver-stories.html\"><span class=\"standalone-link\"><br>\nNOMINATE A hero for our caregiver series&nbsp;</span></a></p>\n",
           "jcr:lastModified": "Tue Feb 18 2020 16:24:57 GMT+0000",
@@ -67,8 +67,8 @@
         "jcr:primaryType": "nt:unstructured",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Feb 03 2020 17:55:53 GMT+0000",
           "type": "typeId",
           "videoId": "rUUFoU6jqJw",
@@ -81,7 +81,7 @@
             "fileReference": "/content/dam/stryker/about/news/videos/ACCaregivers stories V5.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/ACCaregivers stories V5-AVS",
@@ -101,8 +101,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Feb 03 2020 17:54:07 GMT+0000",
       "jcr:lastModified": "Mon Feb 03 2020 17:54:07 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -114,7 +114,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Mon Feb 24 2020 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Feb-2020",
@@ -127,14 +127,14 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Mon Feb 03 2020 18:09:35 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
     "textIsRich": "true"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
     "jcr:lastModified": "Fri Feb 07 2020 19:17:48 GMT+0000",

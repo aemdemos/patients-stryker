@@ -7,7 +7,7 @@
   "jcr:title": "National Doctors’ Day",
   "jcr:versionHistory": "66444163-2f3d-4140-9fd8-735e2693d500",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+  "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "jcr:predecessors": [
     "9f15a4f3-b8db-404f-94fd-37ea76d0d379"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "9e6c109a-375d-4276-8c9b-f581f006c86b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "cq:lastModifiedBy": "user-de9af95ca7@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "customizable": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "danielle.smith@stryker.com",
-      "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+      "jcr:createdBy": "user-de9af95ca7@example.invalid",
+      "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
       "jcr:created": "Wed Mar 24 2021 18:16:24 GMT+0000",
       "jcr:lastModified": "Thu Mar 25 2021 19:51:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
@@ -57,8 +57,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "danielle.smith@stryker.com",
-      "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+      "jcr:createdBy": "user-de9af95ca7@example.invalid",
+      "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
       "jcr:created": "Thu Mar 25 2021 19:57:44 GMT+0000",
       "jcr:lastModified": "Thu Mar 25 2021 19:57:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -67,8 +67,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "danielle.smith@stryker.com",
-          "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+          "jcr:createdBy": "user-de9af95ca7@example.invalid",
+          "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Mar 25 2021 19:57:53 GMT+0000",
           "alt": "Dr. Erin Peled",
@@ -78,8 +78,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "danielle.smith@stryker.com",
-          "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+          "jcr:createdBy": "user-de9af95ca7@example.invalid",
+          "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
           "jcr:created": "Thu Mar 25 2021 19:58:03 GMT+0000",
           "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">When breast cancer surgeon becomes the patient, expertise, emotions and empathy come together</span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.youtube.com/watch?v=h6B2kg3YH88\">Learn more</a></span></p>\n",
           "jcr:lastModified": "Thu Mar 25 2021 20:00:27 GMT+0000",
@@ -91,7 +91,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "publishDate": "Tue Mar 30 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "30-Mar-2021",
@@ -104,7 +104,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "jcr:lastModifiedBy": "user-de9af95ca7@example.invalid",
     "text": "<p>80 years ago, Dr. Homer Stryker started working with healthcare professionals to make healthcare better. Today it’s an honor to continue his legacy by partnering with doctors to develop solutions for their patients.</p>\n<p>The following stories highlight doctors whose knowledge and commitment to their community have impacted the patient in the story, and countless others. Thank you for providing us with inspiration when we need it the most.</p>\n<p>Meet Professor Ton Tran, Professor Oheneba Boachie-Adjei, Dr. Vernon Burke and Dr. Anne Peled.<br>\n</p>\n",
     "jcr:lastModified": "Mon Mar 29 2021 20:12:45 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

@@ -28,14 +28,14 @@
   "relatedExternalLink": "https://stryker.gcs-web.com/news-releases/news-release-details/stryker-announces-definitive-agreement-acquire-entellus",
   "externalLinkText": "View release.",
   "externalLinkType": "ext",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModifiedBy": "user-cedd1f612a@example.invalid",
     "publishDate": "Thu Dec 07 2017 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "07-Dec-2017",
@@ -44,7 +44,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>Stryker Corporation (NYSE: SYK) announced today a definitive merger agreement to acquire Entellus Medical, Inc. (NASDAQ: ENTL) for $24.00 per share, or an equity value of approximately $662 million. Entellus is a high-growth global medical technology company focused on delivering superior patient and physician experiences through products designed for the minimally invasive treatment of various ear, nose and throat (ENT) disease states. Founded in 2006, and headquartered in Plymouth, Minnesota, the company has a broad portfolio of ENT products, including the XprESS® Multi-Sinus Dilation System and the LATERA® Absorbable Nasal Implant, which are highly complementary to the existing ENT portfolio of Stryker’s Instruments business.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2017/Stryker-announces-definitive-agreement-to-acquire-Entellus/default.aspx\">Read full release here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 18:21:16 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

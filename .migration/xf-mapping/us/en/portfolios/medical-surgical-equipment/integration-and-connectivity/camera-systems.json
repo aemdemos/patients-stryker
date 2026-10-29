@@ -17,7 +17,7 @@
   "jcr:versionHistory": "b6c1b7a3-e2c7-4de5-98a6-02b2141bb1ad",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "cq:lastRolledout": "Thu Jun 08 2017 14:01:39 GMT-0400",
   "thumbnailAltText": "Camera systems",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-CameraSystems.jpg",
@@ -44,8 +44,8 @@
   "jcr:uuid": "dd83768d-0cf9-4716-bc96-787b9db27744",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "activationGroup": "stryker-superuser",
-  "cq:lastRolledoutBy": "Bridget.Campomanes@stryker.com",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastRolledoutBy": "user-f9c250736c@example.invalid",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -71,7 +71,7 @@
       "cq:LiveSyncCancelled"
     ],
     "cq:isCancelledForChildren": true,
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "imageAlt": "Camera Systems",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Tue Jul 16 2024 22:51:45 GMT+0000",

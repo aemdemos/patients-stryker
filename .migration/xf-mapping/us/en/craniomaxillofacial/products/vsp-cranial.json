@@ -9,7 +9,7 @@
   "jcr:versionHistory": "63a7fbd5-4026-4455-996b-6a3109359768",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "1500578553_VSP-Cranial-hero",
   "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/vspcranial/images/Thumbnail_VSP Cranial.png",
   "jcr:predecessors": [
@@ -42,7 +42,7 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -52,9 +52,9 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "leftPadding": "3",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -66,8 +66,8 @@
     },
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "preset": "max_width_1440",
       "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
       "alt": "VSP Cranial",
@@ -79,8 +79,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -89,8 +89,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_1971668492": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -105,8 +105,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "ctaLinkType": "deep",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
@@ -118,8 +118,8 @@
         },
         "tagcrumb": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
           "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -128,16 +128,16 @@
     },
     "jumpbarnav_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Feb 14 2025 14:51:21 GMT+0000",
       "jcr:lastModified": "Fri Feb 14 2025 14:51:21 GMT+0000",
       "sling:resourceType": "stryker/components/content/jumpbarnav"
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "features-and-benefits",
       "jcr:created": "Wed Mar 12 2025 14:09:23 GMT+0000",
@@ -147,8 +147,8 @@
     },
     "text_995385999_copy__1244296590": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
       "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Plan with <span style=\"color: #ffb500;\">confidence.</span></span></span></h2>\n",
       "jcr:lastModified": "Thu May 29 2025 18:34:26 GMT+0000",
@@ -157,16 +157,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu May 29 2025 18:33:51 GMT+0000",
       "jcr:lastModified": "Thu May 29 2025 18:33:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "text_995385999_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Features and benefits</span></h2>\n",
       "jcr:lastModified": "Wed Mar 12 2025 14:01:44 GMT+0000",
@@ -175,16 +175,16 @@
     },
     "cols_1753345670": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu May 29 2025 18:35:06 GMT+0000",
       "jcr:lastModified": "Thu May 29 2025 18:35:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Feb 14 2025 15:02:43 GMT+0000",
       "jcr:lastModified": "Fri Feb 14 2025 15:02:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -193,8 +193,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_902227187_": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Feb 14 2025 15:03:49 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Design session</span></span></p>\n",
           "jcr:lastModified": "Thu May 29 2025 18:36:23 GMT+0000",
@@ -204,8 +204,8 @@
         "text_669411101_copy_": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Feb 14 2025 15:06:35 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -220,8 +220,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_902227187": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Feb 14 2025 15:03:49 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Marking/Positioning guides</span></span></p>\n",
           "jcr:lastModified": "Thu May 29 2025 18:36:35 GMT+0000",
@@ -231,8 +231,8 @@
         "text_669411101_copy": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "3",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "jcr:created": "Fri Feb 14 2025 15:06:35 GMT+0000",
           "gradientDirection": "left-to-right",
@@ -245,16 +245,16 @@
     },
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Mar 12 2025 13:55:26 GMT+0000",
       "jcr:lastModified": "Wed Mar 12 2025 13:55:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_701196491": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "resources",
       "jcr:created": "Wed Mar 12 2025 14:10:10 GMT+0000",
@@ -264,8 +264,8 @@
     },
     "text_995385999_copy__745871541": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Resources</span></h2>\n",
       "jcr:lastModified": "Wed Mar 12 2025 13:53:31 GMT+0000",
@@ -274,28 +274,28 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "resources": [
         "/content/dam/stryker/craniomaxillofacial/products/vspcranial/resources/VSP Cranial Flyer.pdf",
         "/content/dam/stryker/craniomaxillofacial/products/vspcranial/resources/VSP Cranial Demo Case Report.pdf"
       ],
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Feb 14 2025 15:20:52 GMT+0000",
       "jcr:lastModified": "Wed Mar 12 2025 14:31:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "cols_206169873_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Mar 12 2025 13:55:37 GMT+0000",
       "jcr:lastModified": "Wed Mar 12 2025 13:55:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_2025483132": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "related-products",
       "jcr:created": "Wed Mar 12 2025 14:10:48 GMT+0000",
@@ -305,8 +305,8 @@
     },
     "text_1663437304_copy_2024837066": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 21:44:49 GMT+0000",
@@ -315,8 +315,8 @@
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Feb 14 2025 15:24:07 GMT+0000",
       "jcr:lastModified": "Thu May 29 2025 18:33:26 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
@@ -338,16 +338,16 @@
     },
     "cols_277224459": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jun 10 2025 13:25:35 GMT+0000",
       "jcr:lastModified": "Tue Jun 10 2025 13:25:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "section_title_1048197081": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "request-information",
       "jcr:created": "Wed Mar 12 2025 14:10:30 GMT+0000",
@@ -357,8 +357,8 @@
     },
     "text_1663437304_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
       "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
       "jcr:lastModified": "Fri Feb 14 2025 21:45:00 GMT+0000",
@@ -367,18 +367,18 @@
     },
     "cols_9527726_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 20:22:28 GMT+0000",
       "jcr:lastModified": "Thu Feb 06 2025 20:22:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "marketoform_copy_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
       "afterSubmitAction": "showMessage",
       "formId": "3226",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
       "useProduction": "true",
       "message": "Thank you!",
@@ -390,7 +390,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Mark. Position. Reconstruct.</p>\r\n",
     "shortDescTop": "<p data-children-count=\"0\">Working in collaboration with 3D Systems, VSP® Cranial provides a solution designed to make surgery more predictable and efficient. We help take the guesswork out of the procedure; allowing you to optimize the defined osteotomies and bony movements prior to surgery. <br />\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 12 2025 14:06:43 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -419,7 +419,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed Mar 12 2025 14:06:49 GMT+0000",
@@ -428,14 +428,14 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 12 2025 14:06:53 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 12 2025 14:06:57 GMT+0000",
     "linkNewWindowOverride": "0",
@@ -444,21 +444,21 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 12 2025 14:07:01 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Wed Mar 12 2025 14:07:05 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>VSP is a registered trademark of 3D Systems, Inc.</p>\r\n<p><b>References:</b></p>\r\n<ol>\r\n<li>Roser SM, Ramachandra S, Blair H, Grist W, Carlson GW, Christensen AM, Weimer KA, Steed MB: The accuracy of virtual surgical planning in free fibula mandibular reconstruction: comparison of planned and final results. J Oral Maxillofac Surg 68:2824-2832, 2010</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue Jul 29 2025 16:48:01 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "ce92d31b-c91c-428b-b16f-d2e1c8d613df",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "bfdc47e5-9a1d-48ba-bf0b-d746c957bc2a"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "574007c6-c6bb-4aec-a0b9-5fafae50c10b",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:05:40 GMT+0000",
       "text": "Clinical Corner Series: Dr. R. Sean Churchill (Fluted Peg Glenoid) Dr. R. Sean Churchill, Aurora Health Care – St. Luke’s Hospital at Milwaukee, WI, discusses this publication \"One and two-year clinical outcomes for a polyethylene glenoid with a fluted peg: one thousand two hundred seventy individual patients from eleven centers.\" AP-013802A Churchill_Tornier Perform Anatomic_Clinical Article Summary.pdf International Orthopaedics (2019) 43:367–378 The abstract can be found at: https://doi.org/10.1007/s00264-018-4213-3 AP-016251A",
       "jcr:lastModified": "Thu Jul 28 2022 18:06:00 GMT+0000",

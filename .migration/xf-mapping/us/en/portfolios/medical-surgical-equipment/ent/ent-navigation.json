@@ -8,7 +8,7 @@
   "jcr:title": "ENT Navigation",
   "jcr:versionHistory": "c2e9af75-8a26-44cf-8757-85cb9e085c76",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/ent/ent-navigation/images/Thumbnail_ENTNavigation.jpg",
   "jcr:predecessors": [
     "1ec566c9-32c8-4030-bbd2-99a09d68ba27"
@@ -29,7 +29,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -45,7 +45,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:25:43 GMT+0000",
     "loadMoreText": "Load More",

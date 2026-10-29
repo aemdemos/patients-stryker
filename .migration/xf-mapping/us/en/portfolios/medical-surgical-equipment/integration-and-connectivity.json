@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8a36eb97-eeef-43d3-8e42-395c5314577c",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/communications/products/connectedoroperatingsystem/images/Comm_stryker.com_phase_one_photo_--_Connected_OR.png",
   "jcr:predecessors": [
     "0560dd31-ff03-4dde-8f6b-626a0a00893b"
@@ -35,7 +35,7 @@
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -48,7 +48,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Thu Oct 30 2025 21:38:59 GMT+0000",
     "loadMoreText": "Load More",
@@ -74,7 +74,7 @@
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "jcr:lastModified": "Fri Oct 17 2025 02:47:39 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
     "arbitraryOrdering": {

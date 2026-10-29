@@ -7,7 +7,7 @@
   "jcr:title": "Vocera, now part of Stryker, introduces latest evolution in hands-free communication to help protect and connect healthcare workers",
   "jcr:versionHistory": "0357a1ff-956c-4c57-95fb-32b0944e3837",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "2ea358ff-51a1-4c8b-b908-d886f5c37189"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "85259910-6d7a-48f1-9fda-54c37aec4405",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Feb 28 2022 17:08:17 GMT+0000",
       "jcr:lastModified": "Mon Feb 28 2022 17:08:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -43,8 +43,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 28 2022 17:08:45 GMT+0000",
           "text": "<p><i><span class=\"fontsize-1-25em\">New Minibadge expands intuitive mobile solutions for care team collaboration and safety</span></i></p>\n<p><b>Kalamazoo, Michigan, USA</b> – Vocera, now part of Stryker, a global leading medical technology company, introduced the new <a href=\"https://www.vocera.com/vocera-minibadge\">Minibadge</a>, a wearable, voice-driven device that enables mobile workers to communicate completely hands-free. The launch of this small, lightweight device, which can integrate with multiple clinical and operational systems, expands communication and collaboration solutions for frontline workers in healthcare and other mission-critical environments. Providing users with additional flexibility, the Minibadge works in conjunction with Vocera smartphone apps, making it fast and easy for users to alternate between mobile devices to fit their communication needs in the moment.</p>\n<p>“The Minibadge is a great option for healthcare workers who need to be completely hands-free while communicating and collaborating with colleagues,” said David Augsburger, MSN, MBA, RN, CCRN, Director of Clinically Integrated Technology and Systems at Major Health Partners (MHP), where hospital leaders and frontline workers collaborate to find innovative ways to improve the safety and well-being of their patients, families, staff and community.</p>\n<p>During human-centered design sessions and beta testing for the Minibadge, MHP team members expressed their delight with the device, emphasizing its ease of use, the long life of the battery, and its small, sleek form factor. MHP team members also praised the intuitive voice recognition of the Minibadge and its dedicated panic button. This discreet button is also a feature of the <a href=\"https://www.vocera.com/vocera-smartbadge\">Smartbadge</a>, which combines smartphone usability with hands-free communication and is deployed enterprise-wide at the hospital.</p>\n<p>“The dedicated panic button on both the Minibadge and Smartbadge gives team members a sense of security and peace of mind,” Augsburger said. “Plus, the slight vibration of the Minibadge after the discreet one-way distress call is made, lets staff know they are being heard by security and help is on the way.”</p>\n<p>Hands-free communication has helped protect and connect hospital workers around the world. It enables those in isolated environments to stay connected, ask for help, request supplies, and access information without having to leave the bedside or remove personal protective equipment (PPE).</p>\n<p>“For more than 21 years, Vocera has led the way in <a href=\"https://www.vocera.com/vocera-minibadge\">hands-free communication</a>, innovating on voice-driven solutions that simplify workflows and improve the safety and well-being of our customers and the people they serve,” said Dave Lively, Senior Vice President of Product Management, Vocera. “The Minibadge is a perfect example of that evolution. Its seamless compatibility with smartphones provides a valuable ‘and’ rather than ‘or’ option for organizations—empowering a broader spectrum of team members who need the flexibility to choose the best device for their assignment or task.”</p>\n<p>Like with the predecessor Smartbadge, care team members can wear the Minibadge under PPE and initiate communication by saying “OK Vocera,” followed by simple voice commands, such as “call room 102 nurse,” “broadcast code blue,” or “schedule a reminder to turn Mr. Jones.” The Minibadge also enables team members to make and receive calls, quickly collaborate with colleagues, listen to messages and respond to alarm notifications completely hands-free. Depending on which device works best for their roles and workflows, the Vocera portfolio provides additional choices when it comes to mobility and interoperability.</p>\n<p>“The Minibadge aligns to the technologies and solutions we provide as we strive to provide safer care and better outcomes,” said Jessica Mathieson, VP/GM of Acute Care, Stryker. “We’re excited to have the Vocera team join us at Stryker.”</p>\n<p>Healthcare leaders can get a closer look at the Minibadge, Smartbadge, and other voice-driven solutions at the HIMSS Global Conference, March 14-18, 2022, in booth #2347. Attendees also can learn how intelligent, integrated voice capabilities enhance care team experience.<br>\n</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Tue Mar 01 2022 13:30:10 GMT+0000",
@@ -53,16 +53,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 28 2022 17:18:55 GMT+0000",
           "jcr:lastModified": "Mon Feb 28 2022 17:18:55 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_1585421093": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 28 2022 17:18:59 GMT+0000",
           "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p>On Feb. 23, 2022, Stryker completed the acquisition of Vocera Communications, a leader in digital care coordination and communication.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Mon Feb 28 2022 17:22:24 GMT+0000",
@@ -71,16 +71,16 @@
         },
         "sectionseparator_1190341616": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 28 2022 17:19:04 GMT+0000",
           "jcr:lastModified": "Mon Feb 28 2022 17:19:04 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_255133992": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 28 2022 17:19:13 GMT+0000",
           "text": "<p><b>Media contact<br>\n </b>Meghan Menz<br>\nSr. Director, Communications<br>\n<a href=\"mailto:meghan.menz@stryker.com\">meghan.menz@stryker.com</a></p>\n",
           "jcr:lastModified": "Mon Feb 28 2022 17:22:37 GMT+0000",
@@ -92,7 +92,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Mar 01 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "01-Mar-2022",

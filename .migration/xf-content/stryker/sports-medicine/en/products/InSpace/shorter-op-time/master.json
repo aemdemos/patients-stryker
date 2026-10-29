@@ -23,16 +23,16 @@
   "sling:resourceType": "stryker/components/structure/xfpage",
   "cq:parentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/shorter-op-time",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "cq:lastModifiedBy": "user-1cc9f530da@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
     "text_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Mon May 23 2022 15:24:23 GMT+0000",
       "text": "<ul>\n<li><span class=\"fontsize-1-5em\">InSpace resulted in a </span><b style=\"font-family: HumanistSlab712W01, Cambria, Palatino, serif; font-size: 14px;\"><span class=\"fontsize-1-5em\">significant advantage for operative time (44 min)</span></b><span class=\"fontsize-1-5em\"><b style=\"font-family: HumanistSlab712W01, Cambria, Palatino, serif; font-size: 14px;\"> </b>compared to partial repair (71min).&nbsp;(p&lt;0.0001)</span><br>\n</li>\n</ul>\n",
       "jcr:lastModified": "Fri May 27 2022 13:52:41 GMT+0000",
@@ -41,8 +41,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carissa.frausto@stryker.com",
-      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:createdBy": "user-1cc9f530da@example.invalid",
+      "jcr:lastModifiedBy": "user-1cc9f530da@example.invalid",
       "jcr:created": "Mon May 23 2022 18:28:57 GMT+0000",
       "jcr:lastModified": "Mon May 23 2022 18:28:57 GMT+0000",
       "sling:resourceType": "stryker/components/content/text"

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a4438e24-71ed-4f05-b117-cc329bb89314",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "iBed Wireless",
   "jcr:predecessors": [
     "5c09faa8-388c-403c-9052-39d7a80f6721"
@@ -31,14 +31,14 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Aug 20 2024 20:38:42 GMT+0000",
       "jcr:lastModified": "Tue Aug 20 2024 20:38:42 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -78,8 +78,8 @@
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideComponent": "false",
       "topMargin": "5",
       "jcr:created": "Thu Aug 01 2024 16:31:59 GMT+0000",
@@ -92,8 +92,8 @@
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Thu Aug 01 2024 16:36:52 GMT+0000",
@@ -105,8 +105,8 @@
     },
     "text_642121543": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Aug 01 2024 16:41:24 GMT+0000",
       "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
       "jcr:lastModified": "Thu Aug 01 2024 16:41:28 GMT+0000",
@@ -115,8 +115,8 @@
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Aug 01 2024 16:41:05 GMT+0000",
       "jcr:lastModified": "Thu Aug 01 2024 16:41:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -124,7 +124,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<p>1. The features listed are only available when iBed Wireless is integrated with third party systems that bring data to EHRs, handheld devices, Alert Management Systems, Nurse Call, or Equipment Management Systems. The iBed Wireless System requires iBed Radios, iBed Locators, and a Stryker Server application.&nbsp;</p>\r\n<p>*When combining the proper processes and technologies to help reduce risk of bed-related falls.&nbsp;</p>\r\n",
     "jcr:lastModified": "Thu Aug 01 2024 16:33:37 GMT+0000",

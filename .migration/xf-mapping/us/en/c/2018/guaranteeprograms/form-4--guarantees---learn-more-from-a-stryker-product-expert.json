@@ -7,7 +7,7 @@
   "jcr:title": "Learn more from a Stryker product expert",
   "jcr:versionHistory": "c2d2a794-695d-4925-8ae3-c6c43f75168f",
   "cq:template": "/apps/stryker/templates/long-page-detail",
-  "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+  "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
   "jcr:predecessors": [
     "cccf822d-9320-4498-8be1-70519825090f"
   ],
@@ -22,15 +22,15 @@
   "jcr:lastModified": "Thu Sep 13 2018 10:26:36 GMT-0400",
   "jcr:uuid": "52abff15-a4a4-44d4-a4e3-0d22fdb94173",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
-  "cq:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+  "cq:lastModifiedBy": "user-82a520efa4@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "fullwidthimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
       "dimensionBox": "ND",
-      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
       "backgroundImageMobRef": "/content/dam/stryker/campaigns/acute-care/images/white.jpg",
       "layoutOptions": "col-sm-12",
       "backgroundImageRef": "/content/dam/stryker/campaigns/acute-care/images/Blue_Banner.png",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
-          "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:createdBy": "user-82a520efa4@example.invalid",
+          "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
           "jcr:created": "Fri Sep 14 2018 15:36:14 GMT-0400",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">Learn more from a Stryker product expert</span></span></span>",
@@ -59,10 +59,10 @@
     },
     "marketoform": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:createdBy": "user-82a520efa4@example.invalid",
       "afterSubmitAction": "redirectToPage",
       "formId": "599",
-      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
       "jcr:created": "Thu Aug 23 2018 15:34:26 GMT-0400",
       "useProduction": "true",
       "redirectPage": "/content/stryker/us/en/c/2018/guaranteeprograms/thank-you",
@@ -76,7 +76,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModifiedBy": "user-82a520efa4@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Fri Sep 14 2018 15:59:35 GMT-0400",
     "sling:resourceType": "stryker/components/content/h1-title"

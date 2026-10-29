@@ -8,7 +8,7 @@
   "jcr:title": "Extremity",
   "jcr:versionHistory": "a041c9bd-8e74-4f57-9956-4135cb4904d7",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "f8c75f1f-55ec-4885-83d1-47ee363d44ba"
   ],
@@ -36,13 +36,13 @@
   "jcr:uuid": "d1038fe0-139a-4a98-b269-540423270b3f",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Fri Feb 18 2022 19:51:42 GMT+0000",
@@ -67,7 +67,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Precise</span></span><br>\nTargeting Guide preserves intact articular cartilage via a retrograde technique.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Enabling</span></span><br>\nPro-Dense can be delivered minimally invasively.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reproducible</span></span><br>\nTarget lesions and backfill surgically created defects via a disposable instrument kit.</p>\n",
     "jcr:lastModified": "Fri Feb 18 2022 19:53:50 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

@@ -7,7 +7,7 @@
   "jcr:title": "Joint Replacement",
   "jcr:versionHistory": "b75d01ac-60c1-4ad3-b92d-873e7a04c324",
   "cq:template": "/apps/stryker/templates/division",
-  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
   "jcr:predecessors": [
     "c556dcaf-b7f9-4154-b307-c3b9c35e3a5d"
   ],
@@ -28,13 +28,13 @@
   "sling:resourceType": "stryker/components/structure/pages/division",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "cq:lastModifiedBy": "user-482453db0b@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Mon Aug 28 2017 10:37:57 GMT-0400",
       "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png",
@@ -46,8 +46,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carlos.castaneda@stryker.com",
-      "jcr:lastModifiedBy": "carlos.castaneda@stryker.com",
+      "jcr:createdBy": "user-7c88443df7@example.invalid",
+      "jcr:lastModifiedBy": "user-7c88443df7@example.invalid",
       "jcr:created": "Tue May 23 2017 14:07:51 GMT-0400",
       "jcr:lastModified": "Tue May 23 2017 14:07:51 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -60,8 +60,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carlos.castaneda@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-7c88443df7@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue May 23 2017 14:08:00 GMT-0400",
@@ -73,8 +73,8 @@
         },
         "curatedcta_1291557836": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Thu May 31 2018 15:35:28 GMT-0400",
@@ -92,8 +92,8 @@
         },
         "curatedcta_391422291": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 05 2018 13:11:36 GMT-0400",
@@ -112,8 +112,8 @@
         },
         "curatedcta_329717863": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Mar 05 2019 18:23:40 GMT+0000",
@@ -126,8 +126,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Fri Mar 15 2019 14:16:34 GMT+0000",
           "text": "<h3><span class=\"futura-bold\">Follow the Joint Replacement LinkedIn Page</span> to learn how we can make healthcare better, together.</h3>\n",
           "jcr:lastModified": "Fri Mar 15 2019 14:17:27 GMT+0000",
@@ -136,10 +136,10 @@
         },
         "engagementcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:createdBy": "user-482453db0b@example.invalid",
           "buttonColor": "rgba(76,125,122,1)",
           "buttonAlignment": "Vertical",
-          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
           "jcr:created": "Fri Mar 15 2019 14:11:10 GMT+0000",
           "buttonTextAlignment": "Left",
           "jcr:lastModified": "Fri Mar 15 2019 14:16:09 GMT+0000",
@@ -159,7 +159,7 @@
     "featuredcontentgrid": {
       "jcr:primaryType": "nt:unstructured",
       "featContGridTitle": "Featured products and services",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:lastModified": "Fri Mar 08 2019 19:04:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentgrid",
       "featuredPathGrid": {
@@ -183,23 +183,23 @@
     },
     "featuredcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "title": "Let’s create the future together",
       "jcr:lastModified": "Thu Aug 10 2017 14:55:18 GMT-0400",
       "sling:resourceType": "stryker/components/content/customizable"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Mon Mar 11 2019 19:36:17 GMT+0000",
       "jcr:lastModified": "Mon Mar 11 2019 19:36:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "sectionseparator_1875818490": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "stephen.brown@stryker.com",
-      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:createdBy": "user-482453db0b@example.invalid",
+      "jcr:lastModifiedBy": "user-482453db0b@example.invalid",
       "jcr:created": "Mon Mar 11 2019 19:36:27 GMT+0000",
       "jcr:lastModified": "Mon Mar 11 2019 19:36:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"

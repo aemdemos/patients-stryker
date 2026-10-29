@@ -10,7 +10,7 @@
   "jcr:versionHistory": "5aea6f09-457e-4e12-b984-aaf69fd96e29",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
   "thumbnailAltText": "image of AlloFiber",
   "jcr:predecessors": [
     "632e7c08-aae4-456f-9728-45e05f1d1fed"
@@ -44,13 +44,13 @@
   "jcr:uuid": "89d5685d-16c2-4198-b49f-1e0cc48042e9",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "cq:lastModifiedBy": "user-42b58e166b@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Fri Feb 18 2022 19:13:54 GMT+0000",
@@ -67,7 +67,7 @@
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
       "resources": "/content/dam/stryker/trauma-and-extremeties/products/allofiber/resources/AlloFiber-AlloFiber-Sell-Sheet.pdf",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Tue Apr 05 2022 16:17:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -78,7 +78,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>AlloFiber is osteoinductive, osteoconductive, and osteogenic when hydrated with patient’s BMA<sup>1</sup></p>\n<p>It is comprised of 100% cortical bone with no added carriers and is processed to preserve endogenous growth factors, such as BMP’s, PDGF-BB, and others<sup>2</sup></p>\n",
     "jcr:lastModified": "Fri Feb 18 2022 19:16:03 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -86,7 +86,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Data on file at MTF<br>\r\n</li>\r\n<li>Gruskin, E., Doll, B. A., Futrell, F. W., Schmitz, J. P., &amp; Hollinger, J. O. (2012). Demineralized bone matrix in bone repair: deliveryreviews, 64(12), 1063–1077.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Fri Feb 18 2022 19:16:41 GMT+0000",

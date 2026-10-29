@@ -20,25 +20,25 @@
   "cq:tags": [],
   "jcr:uuid": "2aaf1744-71c1-4648-952e-69fdd2575f59",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "garrett.shue@stryker.com",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
     "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+    "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
     "text_550258104_copy_": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "topMargin": "15",
@@ -48,14 +48,14 @@
       "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -64,7 +64,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "1",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -73,7 +73,7 @@
           ],
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -82,7 +82,7 @@
           ],
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "2",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -91,7 +91,7 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "preset": "max_width_1440",
       "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "alt": "infographic with people",
@@ -99,7 +99,7 @@
       "borderColor": "rgba(76,125,122,1)",
       "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/standaloneimage",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "enableBorder": "false",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
@@ -107,7 +107,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -116,7 +116,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "10",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -125,7 +125,7 @@
           ],
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "11",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         },
         "tablet": {
           "jcr:primaryType": "nt:unstructured",
@@ -135,7 +135,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "7",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -144,22 +144,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
       "text": "<p><span class=\"urw-egyptienne\">Mean age of 56 years | 75% female</span></p>\n",
       "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -168,7 +168,7 @@
           "offset": "0",
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     },
@@ -177,22 +177,22 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
       "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #b2b4ae;\">◼ 48 ruptured </span>&nbsp; &nbsp; &nbsp;<span style=\"color: #85458a;\">◼ 52 unruptured</span></span></span></p>\n",
       "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
       "cq:responsive": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
-        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "cq:lastRolledoutBy": "user-7065227e84@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -200,7 +200,7 @@
           ],
           "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
           "width": "6",
-          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+          "cq:lastRolledoutBy": "user-7065227e84@example.invalid"
         }
       }
     }

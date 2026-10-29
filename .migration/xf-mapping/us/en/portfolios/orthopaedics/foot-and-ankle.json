@@ -11,7 +11,7 @@
   "jcr:versionHistory": "f1a2aa6b-daa7-4ebf-ab36-732a49f22045",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "Foot and Ankle",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/images/FA-foot-image.jpg",
   "jcr:predecessors": [
@@ -43,7 +43,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics",
   "cq:childrenOrder": "forefoot,midfoot,ankle,hindfoot,biologics,",
-  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "cq:lastModifiedBy": "user-42b58e166b@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
@@ -51,11 +51,11 @@
     ],
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/parsys",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "cols2_351653127": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Mon Nov 11 2019 19:31:36 GMT+0000",
       "jcr:lastModified": "Mon Nov 11 2019 19:31:36 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -65,30 +65,30 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/customizable",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "featuredcontentconte": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "jcr:created": "Thu May 11 2017 15:51:54 GMT-0400",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentcontext",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:createdBy": "user-42b58e166b@example.invalid",
       "CTAOpenInNewTab": "true",
-      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
       "ctaDamLink": "/content/dam/stryker/foot-and-ankle/resources/CartivaFSN30Oct2024_US.pdf",
       "ctaLinkType": "dam",
       "ctaOpenInNewTabOverride": "0",
@@ -103,14 +103,14 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "dominik.soldo@stryker.com",
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:createdBy": "user-570d0a82db@example.invalid",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "jcr:created": "Thu May 11 2017 15:52:00 GMT-0400",
       "amountProductDetail": "2",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/featuredcontentitem",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     }
   },
   "filteredcontenttypegrid": {
@@ -119,25 +119,25 @@
       "cq:LiveRelationship"
     ],
     "emptyText": "No Results found.",
-    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "jcr:lastModifiedBy": "user-42b58e166b@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 11 2024 21:55:09 GMT+0000",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
     "listSize": "50",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid",
     "defaultFilterOption": "Show All",
     "sectionTitle": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
       "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/section-title",
-      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
     },
     "filters": {
       "jcr:primaryType": "nt:unstructured",
@@ -158,24 +158,24 @@
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "headColor": "rgba(255,181,0,1)",
     "jcr:lastModified": "Thu May 25 2023 18:27:22 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/frontfoot.jpg",
     "sling:resourceType": "stryker/components/content/pagehero",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "highlevelcta": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
     "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
     "jcr:lastModified": "Thu Jun 20 2024 18:24:49 GMT+0000",
     "sling:resourceType": "stryker/components/content/highlevelcta",
-    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    "cq:lastRolledoutBy": "user-5b105250fc@example.invalid"
   },
   "image": {
     "jcr:primaryType": "nt:unstructured",

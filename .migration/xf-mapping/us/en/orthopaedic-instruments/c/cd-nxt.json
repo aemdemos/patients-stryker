@@ -9,7 +9,7 @@
   "jcr:versionHistory": "3703baa0-66ba-4d8d-8e6c-d1347eef74ec",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
   "jcr:predecessors": [
     "6371465c-569a-4a14-a18d-b26144f5a0dd"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "8efa1780-7aa5-401b-8feb-c43a0c2d9e77",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "cedu.ocson@stryker.com",
+  "cq:lastModifiedBy": "user-65eab19e7c@example.invalid",
   "navTitle": "cd-nxt",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -33,7 +33,7 @@
   },
   "localpagenavigation": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "childrenNumber": "0",
     "jcr:lastModified": "Thu Sep 01 2022 19:31:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/localpagenavigation"
@@ -41,7 +41,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Thu Sep 01 2022 19:31:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
@@ -51,10 +51,10 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
       "backgroundNav": "rgba(255,255,255,1)",
       "pauseonhover": "false",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "arrowFlag": "false",
       "opacityLocal": "0",
       "textColorNav": "rgba(255,255,255,1)",
@@ -72,12 +72,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/cd_nxt/hero-ambient-video/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/products/cd-nxt/hero-ambient-video/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/cd_nxt/hero-ambient-video/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/orthopaedic-instruments/en/products/cd-nxt/hero-ambient-video/mobile",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "5",
           "jcr:created": "Mon Aug 22 2022 21:54:45 GMT+0000",
@@ -93,10 +93,10 @@
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
               "bottomPadding": "3",
-              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:createdBy": "user-5891a4f69d@example.invalid",
               "leftPadding": "5",
               "topPadding": "5",
-              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
               "jcr:created": "Mon Aug 22 2022 21:56:40 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"fontsize-5-5-vw\"><span class=\"urw-egyptienne\">Taking power</span><br />\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">to new depths. </span></span></span>",
@@ -115,8 +115,8 @@
     },
     "fullbleedpanel_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
       "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
       "jcr:lastModified": "Thu Nov 03 2022 20:45:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -127,10 +127,10 @@
         "largeheadline_copy_c": {
           "jcr:primaryType": "nt:unstructured",
           "bottomPadding": "2",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
           "leftPadding": "0",
           "topPadding": "3",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Connect</span></span> <span class=\"urw-egyptienne\">with your local power tool rep about CD NXT.</span></span></span></span>",
@@ -149,8 +149,8 @@
     },
     "cols_1890460301_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
       "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -159,10 +159,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_1837183079": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "2624",
-          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "user-65eab19e7c@example.invalid",
           "jcr:created": "Thu Sep 01 2022 15:43:05 GMT+0000",
           "useProduction": "true",
           "message": "Thank you for your submission. Our team looks forward to showing you what’s NXT with CD NXT and helping you remove errors commonly associated with manual depth gauges. Our team will be in contact with more information soon.",
@@ -171,8 +171,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Thu Sep 01 2022 18:17:16 GMT+0000",
           "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Thu Sep 01 2022 18:17:20 GMT+0000",
@@ -183,8 +183,8 @@
     },
     "cols_841472271_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "lee.fuller1@stryker.com",
-      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:createdBy": "user-5891a4f69d@example.invalid",
+      "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
       "jcr:created": "Thu Sep 01 2022 18:22:20 GMT+0000",
       "jcr:lastModified": "Thu Sep 01 2022 18:22:20 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -193,8 +193,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "lee.fuller1@stryker.com",
-          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:createdBy": "user-5891a4f69d@example.invalid",
+          "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
           "jcr:created": "Thu Sep 01 2022 18:22:25 GMT+0000",
           "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Thu Sep 01 2022 18:22:30 GMT+0000",

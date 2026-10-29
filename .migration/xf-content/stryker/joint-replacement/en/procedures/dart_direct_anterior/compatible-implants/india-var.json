@@ -25,26 +25,26 @@
   "cq:tags": [],
   "jcr:uuid": "11be19ab-93be-48c3-9197-ae23be4999ef",
   "sling:resourceType": "stryker/components/structure/xfpage",
-  "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "root": {
     "jcr:primaryType": "nt:unstructured",
     "jcr:mixinTypes": [
       "cq:LiveRelationship"
     ],
-    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModifiedBy": "user-ceb741eed8@example.invalid",
     "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
     "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
     "sling:resourceType": "wcm/foundation/components/responsivegrid",
-    "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+    "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
     "text_2098027320_copy": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "topPadding": "2",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:created": "Tue Oct 18 2022 18:58:03 GMT+0000",
@@ -53,36 +53,36 @@
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
     },
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:created": "Tue Oct 25 2022 18:37:29 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage2897280247262568": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "Hero_JR_Hip_Insignia",
         "srcFileRef": "/content/dam/stryker/joint-replacement/products/insignia/images/Hero_JR_Hip_Insignia.png",
         "jcr:lastModified": "Fri May 23 2025 18:53:39 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false"
       },
@@ -92,7 +92,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -101,7 +101,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -111,7 +111,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text": {
@@ -119,16 +119,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Insignia<sup>®</sup></span></span></p>\n<p>The Insignia hip stem leverages more than 1,300 CT scans, utilizing a 3D modeling and analytics system, Stryker Orthopedic Modeling and Analytics (SOMA) bone database, and is engineered to optimize fit and function.<sup>1</sup> Founded on Stryker’s signature principles of implant fit, Insignia® is your collared, metaphyseal-filling hip stem designed specifically for muscle-sparing approaches.</p>\n<p><a href=\"https://www.stryker.com/in/en/joint-replacement/products/Insignia.html\"><span class=\"standalone-link\"><span class=\"fontsize-1em\">Learn More</span></span></a></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:51:16 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "standaloneimage28972": {
@@ -138,25 +138,25 @@
       ],
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage289722897319716785438": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "Accolade photo",
         "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_AccoladeII.png",
         "jcr:lastModified": "Fri May 23 2025 18:53:30 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false"
       },
@@ -166,7 +166,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -175,7 +175,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -185,7 +185,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_copy": {
@@ -193,16 +193,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Accolade II</span></span></p>\n<p>Morphometric wedge femoral stem, an evolution of your conventional tapered wedge stem that is SOMA-designed for today’s diverse THA patient population.</p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/in/en/joint-replacement/products/accolade-ii.html\"><span class=\"standalone-link\">Learn More</span></a></span></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:51:30 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "standaloneimage28972_74448703": {
@@ -212,25 +212,25 @@
       ],
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage28972_744487032897328431915985": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "Exeter product image",
         "srcFileRef": "/content/dam/stryker/joint-replacement/products/exeter/images/Hero_JR_Hip_Exeter_Single.png",
         "jcr:lastModified": "Fri May 23 2025 18:53:22 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false"
       },
@@ -240,7 +240,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -249,7 +249,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -259,7 +259,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_copy": {
@@ -267,16 +267,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Exeter</span></span></p>\n<p>The Exeter cemented femoral hip system is designed for surgeons who are looking to perform all hip indications - primary, revision and fracture - with a single proven system.</p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/in/en/joint-replacement/products/exeter.html\"><span class=\"standalone-link\">Learn More</span></a></span></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:51:43 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "standaloneimage28972_807833301": {
@@ -286,25 +286,25 @@
       ],
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage28972_8078333012897331203658789": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "restoration-modular-hero",
         "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/hero_RestorationModular.psd",
         "jcr:lastModified": "Fri May 23 2025 18:53:13 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false",
         "cq:responsive": {
@@ -313,7 +313,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -322,7 +322,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
             "width": "3",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -332,7 +332,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           }
         }
       },
@@ -342,7 +342,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -351,7 +351,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -361,7 +361,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_copy": {
@@ -369,16 +369,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Restoration<sup>®</sup> Modular</span></span></p>\n<p>Make the most of your revision cases with a clinically-backed platform that is designed to leverage versatility and simplicity to help you achieve desired revision THA outcomes.</p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/in/en/joint-replacement/products/restoration-modular.html\"><span class=\"standalone-link\">Learn More</span></a></span></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:51:58 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "text_2098027320_copy_440432871": {
@@ -386,9 +386,9 @@
       "jcr:mixinTypes": [
         "cq:LiveRelationship"
       ],
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "topPadding": "2",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:created": "Tue Oct 18 2022 18:58:03 GMT+0000",
@@ -397,7 +397,7 @@
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/text",
       "textIsRich": "true",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
     },
     "standaloneimage28972_995875729": {
       "jcr:primaryType": "nt:unstructured",
@@ -406,25 +406,25 @@
       ],
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage28972_9958757292897359419567533": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "product photo of Trident II acetabuler cups",
         "srcFileRef": "/content/dam/stryker/joint-replacement/products/trident-ii/images/Trident_V.jpg",
         "jcr:lastModified": "Fri May 23 2025 18:53:03 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false"
       },
@@ -434,7 +434,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -443,7 +443,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -453,7 +453,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_copy": {
@@ -461,16 +461,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Trident II</span></span></p>\n<p>Have confidence in a powerful combination–a system that builds on the legacy that has defined our Trident brand for more than two decades, paired with the latest additive manufactured Tritanium In-Growth Technology or PureFix HA.</p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/in/en/joint-replacement/products/trident-ii.html\"><span class=\"standalone-link\">Learn More</span></a></span></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:52:18 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     },
     "standaloneimage28972_94875762": {
@@ -480,25 +480,25 @@
       ],
       "jcr:title": "Standalone",
       "cq:masterBuildingBlock": true,
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
       "jcr:lastModified": "Mon May 19 2025 15:50:00 GMT+0000",
       "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
-      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
       "standaloneimage28972_948757622897372381419906": {
         "jcr:primaryType": "nt:unstructured",
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "preset": "max_width_1440",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "alt": "JR_Trident_II_Tritanium_Thumb",
         "srcFileRef": "/content/dam/stryker/joint-replacement/products/mdm/images/JR_Trident_II_Tritanium_Thumb.jpg",
         "jcr:lastModified": "Fri May 23 2025 18:52:38 GMT+0000",
         "sling:resourceType": "stryker/components/content/standaloneimage",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "openInNewTab": "true",
         "enableBorder": "false",
         "cq:responsive": {
@@ -507,7 +507,7 @@
             "cq:LiveRelationship"
           ],
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
           "default": {
             "jcr:primaryType": "nt:unstructured",
             "jcr:mixinTypes": [
@@ -516,7 +516,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
             "width": "2",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           },
           "phone": {
             "jcr:primaryType": "nt:unstructured",
@@ -526,7 +526,7 @@
             "offset": "0",
             "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
             "width": "12",
-            "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
           }
         }
       },
@@ -536,7 +536,7 @@
           "cq:LiveRelationship"
         ],
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid",
         "default": {
           "jcr:primaryType": "nt:unstructured",
           "jcr:mixinTypes": [
@@ -545,7 +545,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "3",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         },
         "phone": {
           "jcr:primaryType": "nt:unstructured",
@@ -555,7 +555,7 @@
           "offset": "0",
           "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
           "width": "12",
-          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+          "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
         }
       },
       "text_copy": {
@@ -563,16 +563,16 @@
         "jcr:mixinTypes": [
           "cq:LiveSyncCancelled"
         ],
-        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:createdBy": "user-73104d59b2@example.invalid",
         "cq:isCancelledForChildren": true,
-        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
         "cq:lastRolledout": "Mon May 19 2025 15:50:00 GMT+0000",
         "jcr:created": "Tue Oct 25 2022 18:38:06 GMT+0000",
         "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Modular Dual Mobility</span></span></p>\n<p>Modular Dual Mobility is a premium acetabular offering designed to help prevent dislocation. The system builds upon our Anatomic Dual Mobility offering by providing you a choice of fixation surfaces and screwhole configurations for primary or revision THA.</p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/in/en/joint-replacement/products/modular-dual-mobility.html\"><span class=\"standalone-link\">Learn More</span></a></span></p>\n",
         "jcr:lastModified": "Fri May 23 2025 18:52:54 GMT+0000",
         "sling:resourceType": "stryker/components/content/text",
         "textIsRich": "true",
-        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        "cq:lastRolledoutBy": "user-c26bb7a766@example.invalid"
       }
     }
   },

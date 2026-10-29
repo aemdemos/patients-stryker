@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d935ced3-c392-46f2-882e-4a00e02627bb",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "Artix",
   "jcr:predecessors": [
     "847a09cd-0e94-4e0a-8761-0bac9759801e"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Mar 06 2025 18:06:56 GMT+0000",
       "jcr:lastModified": "Thu Mar 06 2025 18:06:56 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -50,8 +50,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage_516835410": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Mar 06 2025 18:26:03 GMT+0000",
           "alt": "Artix System Distal Only Layout 1",
@@ -63,8 +63,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:07:08 GMT+0000",
           "text": "<p><span class=\"futura-bold\">PORTAGE, Mich.</span> – <span class=\"futura-bold\">March 6, 2025</span> — Inari Medical, now part of Stryker (NYSE: SYK), a global leader in medical technologies, announced the launch of its Artix Thrombectomy System. Purpose-built for the distinct needs of the peripheral arterial system, Artix is a combined aspiration plus mechanical thrombectomy solution that delivers procedural control and versatility, and is designed to set a new standard for arterial thrombectomy.</p>\n<p>An arterial blood clot in the leg is a life- and limb-threatening emergency requiring immediate treatment. However, existing therapies for arterial thromboembolism can lead to:</p>\n<ul>\n<li>Ineffective clot retrieval leading to additional procedures (open surgery or amputation<sup>1,2</sup>)</li>\n<li>Significant blood loss<sup>1</sup></li>\n<li>Adverse events such as arterial embolization and vessel trauma<sup>2,3</sup></li>\n<li>High rates of lytic use, which may result in complications<sup>1,2</sup></li>\n</ul>\n<p>The Artix System builds on the success of Inari’s venous thrombectomy devices and is its inaugural entry into the arterial space. Inari offers a comprehensive toolkit approach to arterial thrombectomy with an innovative, over-the-wire system that provides physicians with the flexibility to aspirate and/or mechanically extract a clot.&nbsp;</p>\n<p>Jonathan Bowman, MD FACS, Chief of Vascular at Norwalk Hospital in Norwalk, CT, performed the first commercial case with Artix on October 19, 2024. “The Artix Thrombectomy System marks a significant advancement in peripheral arterial thromboembolism treatment,” said Dr. Bowman. “With Artix, I finally have a solution that effectively addresses a wide range of clots while enabling me to maintain vessel access and retain control throughout the entire case. I expect Artix will take the place of open surgical repair in many of my arterial cases.”</p>\n<p>Key distinctive features of the Artix system include:</p>\n<ul>\n<li><span class=\"futura-bold\">Dual mechanical thrombectomy and aspiration toolkit</span> designed to remove acute to chronic clots in a single session via a streamlined procedure<sup>4</sup></li>\n<li><span class=\"futura-bold\">Aspiration-capable, 8 Fr. low profile, trackable, kink-resistant sheath in both 65cm and 90cm lengths</span> expands treatment options by enabling more complex and distal interventions</li>\n<li><span class=\"futura-bold\">Innovative over-the-wire mechanical element</span> designed to effectively collect and retrieve acute-to-chronic clot<sup>4</sup></li>\n<li><span class=\"futura-bold\">Covered nitinol mesh funnel</span> provides temporary flow restriction during the procedure to minimize the risk of arterial clot migration<sup>5</sup></li>\n</ul>\n<p>“There is a real clinical need to address chronic thrombi and decrease the risk of clot migration. Artix will raise the bar of effective arterial thrombectomy,” said Tom Tu, MD, Chief Medical Officer of Inari Medical. “We are excited to bring Inari’s core competency in thrombectomy to the arterial space with the goal of improving outcomes.”</p>\n<p><span class=\"futura-bold\">For more information, visit</span> <a href=\"https://www.inarimedical.com/artix-system\" target=\"_blank\">https://www.inarimedical.com/artix-system</a></p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Thu Mar 06 2025 18:16:02 GMT+0000",
@@ -73,16 +73,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:12:08 GMT+0000",
           "jcr:lastModified": "Thu Mar 06 2025 18:12:08 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_207410299": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Thu Mar 06 2025 18:12:19 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;<a href=\"/content/stryker/us/en/index.html\" target=\"_blank\">www.stryker.com</a>.</p>\n<p>On February 19, 2025, Stryker acquired Inari Medical, a medical device company with a mission to treat and transform the lives of patients suffering from venous and other diseases.</p>\n<p><span class=\"futura-bold\">Media contact:</span><br>\nSherri Oakson<br>\nSenior Director, Communications<br>\nMedSurg and Neurotechnology<br>\nsherri.oakson@stryker.com</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Thu Mar 06 2025 18:26:57 GMT+0000",
@@ -94,7 +94,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Thu Mar 06 2025 00:00:00 GMT-0800",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "06-Mar-2025",
@@ -103,7 +103,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>De Donato et al. The INDIAN Trial. Eur J Vasc Endovasc Surg. 2021; 61: 820-828.</li>\r\n<li>Heller et al. Percutaneous Mechanical Thrombectomy Using Rotarex Device in Acute Limb Ischemia in Infrainguinal Occlusions. BioMed Research International. 2017.</li>\r\n<li>Olinic et al. Acute Limb Ischemia: An Update on Diagnosis and Management. J Clin Med. 2019.</li>\r\n<li>Designed to remove acute to chronic arterial clots. According to benchtop testing compared to control. Internal data on file. Narula et al. JACC 2018;72:2153-63</li>\r\n<li>According to benchtop testing compared to control. Internal data on file. NOTE: To attempt to minimize risk of arterial embolization of blood clots, use of a device that entraps clots may potentially be helpful, but this has not yet been demonstrated to be effective in the arterial system.</li>\r\n</ol>\r\n<p>Dr. Jonathan Bowman is a paid consultant of Inari Medical. All views and opinions expressed here by Dr. Jonathan Bowman are his own and do not represent those of Inari Medical.</p>\r\n<p> </p>\r\n<p><b>Indications for Use: </b>The Artix thin-walled sheath is indicated for: (1) The non-surgical removal of emboli and <span style=\"\">thrombi from blood vessels. (2) Injection, infusion and/or aspiration of contrast media and other fluids into or from a blood vessel. (3) Use as a conduit for endovascular devices. (4) Use in facilitating the insertion and guidance of an intravascular catheter into a selected blood vessel. The funnel provides temporary vascular occlusion during these and other angiographic procedures. The Artix thin-walled sheath is intended for use in the peripheral vasculature. The Artix MT thrombectomy device is indicated for (1) the non-surgical removal of emboli and thrombi from a blood vessel; and (2) injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel. The Artix MT thrombectomy device is intended for use in the peripheral vasculature. The Artix AX aspiration catheter is indicated for (1) the non-surgical removal of emboli and thrombi from blood vessels; and (2) injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel. The Artix AX aspiration catheter is intended for use in the peripheral vasculature. The FlowSaver blood return system is used with Inari Medical catheters and sheaths for autologous blood transfusion.</span></p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and Contraindications prior to use of these products.</p>\r\n",
     "jcr:lastModified": "Thu Mar 06 2025 19:01:21 GMT+0000",

@@ -10,7 +10,7 @@
   "jcr:versionHistory": "24a408a8-efcf-4980-8ef0-ab0deebe2411",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
   "thumbnailAltText": "Reprocessed Masimo LNCS Pulse Oximeter Sensor",
   "jcr:predecessors": [
     "675326a2-7fbb-41bd-99a5-86b0ea246516"
@@ -39,15 +39,15 @@
   "jcr:uuid": "6af8bb2f-4bfd-4de4-8f47-038849da9d31",
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "hero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:createdBy": "user-e2eca0ceb5@example.invalid",
       "subhead": "Patient monitoring pulse oximeter",
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "imageAlt": "spo2",
       "jcr:created": "Tue Mar 25 2025 22:21:17 GMT+0000",
       "headColor": "rgb(255,181,0)",
@@ -64,8 +64,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Nov 09 2022 19:24:44 GMT+0000",
       "title": "Ordering information",
       "jcr:lastModified": "Wed Nov 09 2022 19:25:34 GMT+0000",
@@ -73,9 +73,9 @@
     },
     "table": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
       "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"139\" valign=\"top\"><b>Item number&nbsp;</b></td>\n<td width=\"139\" valign=\"top\"><b>Weight Indication</b></td>\n<td width=\"139\" valign=\"top\"><p><b>Tape Style</b></p>\n</td>\n<td width=\"139\" valign=\"top\"><p><b>Application</b></p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\">1859</td>\n<td width=\"139\" valign=\"top\"><p>&gt;30 kg </p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1860</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>10 - 50 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1861</p>\n</td>\n<td width=\"139\" valign=\"top\">2 - 29 kg</td>\n<td width=\"139\" valign=\"top\">Woven</td>\n<td width=\"139\" valign=\"top\"><p>Toe</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1862</p>\n</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\">2317</td>\n<td width=\"139\" valign=\"top\">&gt;30 kg</td>\n<td width=\"139\" valign=\"top\">Transpore</td>\n<td>Finger</td>\n</tr><tr><td>2319</td>\n<td>2 - 29 kg</td>\n<td>Woven</td>\n<td>Toe</td>\n</tr><tr><td>2320</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td>Woven</td>\n<td>Finger</td>\n</tr><tr><td>2328</td>\n<td>2 - 29 kg</td>\n<td>Woven</td>\n<td>Toe</td>\n</tr><tr><td>2329</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td>Woven</td>\n<td>Finger</td>\n</tr></tbody></table>\n",
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "jcr:created": "Wed Nov 09 2022 19:23:09 GMT+0000",
       "jcr:lastModified": "Thu Jul 27 2023 21:44:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/table",
@@ -91,23 +91,23 @@
         "/content/dam/stryker/endoscopy/products/masimo-lncs/resources/Pulse Oximeter Reprocessing Overview (2).pdf",
         "/content/dam/stryker/endoscopy/products/masimo-lncs/resources/Vaporized Hydrogen Peroxide (VHP) sterilization White Paper.pdf"
       ],
-      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
       "title": "Resources and downloads",
       "jcr:lastModified": "Thu Jul 27 2023 21:47:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "sectionseparator": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Aug 18 2026 20:23:11 GMT+0000",
       "jcr:lastModified": "Tue Aug 18 2026 20:23:11 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols_copy_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -116,8 +116,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
           "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
           "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
@@ -129,8 +129,8 @@
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -139,10 +139,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "marketoform_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:createdBy": "user-1cc9f530da@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "2736",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
           "useProduction": "true",
           "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
@@ -155,8 +155,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "experiencefragment_c": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
           "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
           "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
@@ -175,7 +175,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>Monitoring your patients and your bottom line</p>\r\n",
     "shortDescTop": "<p>Before being sent back to you, all reprocessed devices are required to pass through our robust manufacturing process consisting of:</p>\r\n",
-    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModifiedBy": "user-e2eca0ceb5@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Jul 27 2023 21:35:45 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -220,7 +220,7 @@
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Tue Aug 18 2026 20:23:04 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"

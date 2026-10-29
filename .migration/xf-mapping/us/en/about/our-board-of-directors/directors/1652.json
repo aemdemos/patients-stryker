@@ -9,7 +9,7 @@
   "jcr:versionHistory": "a3144350-d97c-421d-b718-5231e1683719",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hidePublicationDate": "true",
   "jcr:predecessors": [
     "174f6200-cdc4-468d-ac74-a0b5fa9901c5"
@@ -28,7 +28,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Andy Silvernail",
   "image": {
     "jcr:primaryType": "nt:unstructured"
@@ -38,16 +38,16 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:48 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "◁ Back",
       "jcr:lastModified": "Tue Oct 11 2022 15:24:16 GMT+0000",
@@ -57,16 +57,16 @@
     },
     "cols_2140249363_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "jcr:lastModified": "Tue Oct 11 2022 15:23:58 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c_1656086350": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
       "text": "Andy Silvernail Director since 2013, Audit Committee Chief Executive Officer of International Paper Mr. Silvernail is the Chief Executive Officer of International Paper, a global producer of renewable fiber-based packaging, pulp and paper products. He is the former Chairman and Chief Executive Officer of Madison Industries, one of the world's largest privately held companies. He is also the former Chairman, President and Chief Executive Officer of IDEX Corporation, Chairman from 2012 to 2020 and President and Chief Executive Officer from 2011 to 2020. By virtue of his role as Chief Executive Officer of International Paper, his prior service as Chairman, President and Chief Executive Officer of IDEX Corporation and his preceding experience in executive leadership positions with other large public companies, Mr. Silvernail provides valuable business, leadership and management insights and useful perspectives to our Board discussions. His experience leading large public companies with global operations gives him a clear understanding of the issues facing multinational businesses.",
       "jcr:lastModified": "Tue Oct 11 2022 15:27:20 GMT+0000",

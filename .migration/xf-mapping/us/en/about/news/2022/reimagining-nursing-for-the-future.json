@@ -7,7 +7,7 @@
   "jcr:title": "Reimagining nursing for the future",
   "jcr:versionHistory": "99c6307c-7511-4fe7-9a4c-ac830071faf8",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "987d3d9e-cc97-4728-9c0e-bed97dc76e41"
   ],
@@ -25,14 +25,14 @@
   "jcr:uuid": "62994439-6d8e-41d8-b655-923087e3515b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c_1574371546": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Fri Mar 04 2022 16:34:18 GMT+0000",
       "jcr:lastModified": "Fri Mar 04 2022 16:34:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -41,12 +41,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/reimagining_nursing_/carousel/carousel2",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/reimagining-nursing/carousel/carousel2",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/reimagining_nursing_/mobile/mobile2",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/reimagining-nursing/mobile/mobile2",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "30",
           "jcr:created": "Fri Mar 04 2022 16:34:22 GMT+0000",
@@ -61,8 +61,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
               "jcr:created": "Fri Mar 04 2022 16:36:17 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\">Reimagining nursing for the future</span></span><br>\r\n<span class=\"fontsize-1-5-vw\">Nurses are innovators</span>",
@@ -80,8 +80,8 @@
     },
     "fullbleedpanel_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Jan 19 2022 16:49:09 GMT+0000",
       "jcr:lastModified": "Wed Jan 19 2022 16:49:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -91,8 +91,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Jan 19 2022 16:49:28 GMT+0000",
           "jcr:lastModified": "Wed Jan 19 2022 16:49:28 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -101,8 +101,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Wed Jan 19 2022 16:49:31 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Wed Jan 19 2022 16:49:34 GMT+0000",
@@ -115,8 +115,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Apr 28 2022 14:06:53 GMT+0000",
       "jcr:lastModified": "Thu Apr 28 2022 14:06:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -125,9 +125,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "topPadding": "1",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "hideComponent": "false",
           "topMargin": "1",
           "jcr:created": "Thu Apr 28 2022 14:06:58 GMT+0000",
@@ -142,7 +142,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Mon May 02 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-May-2022",
@@ -155,7 +155,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Apr 28 2022 14:44:15 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

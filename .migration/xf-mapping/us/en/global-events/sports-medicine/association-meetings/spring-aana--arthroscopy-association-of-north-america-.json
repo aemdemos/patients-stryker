@@ -22,7 +22,7 @@
   ],
   "jcr:uuid": "f27d1c07-2ebf-4891-873c-dd25b4dd873f",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -33,7 +33,7 @@
       "stryker:business-unit/sports-medicine"
     ],
     "eventRegistrationLink": "http://www.aana.org/account/login?ReturnUrl=http%3a%2f%2fwww.aana.org%2fMeeting-Registration%2fRegister-Group%2fRegister-Group-Step-1%3fMeetingId%3dA80D0919-E9B4-E711-88F5-0050569142AF",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "eventAudience": [
       "stryker:audience/trainees",
       "stryker:audience/or-professionals"

@@ -21,7 +21,7 @@
   "originallyPublished": "Mon Feb 06 2023 19:04:53 GMT+0000",
   "jcr:uuid": "105609f4-1d0d-4f39-88d3-d41d9d10c1ed",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
-  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "cq:lastModifiedBy": "user-f123ca2978@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -35,8 +35,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "hideComponent": "false",
       "topMargin": "3",
       "jcr:created": "Mon Sep 11 2023 22:05:56 GMT+0000",
@@ -49,8 +49,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Aug 09 2023 20:03:17 GMT+0000",
       "jcr:lastModified": "Wed Aug 09 2023 20:03:17 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -59,8 +59,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "accordion": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Wed Aug 09 2023 20:03:20 GMT+0000",
           "jcr:lastModified": "Mon Apr 13 2026 21:30:14 GMT+0000",
           "sling:resourceType": "stryker/components/content/accordion",
@@ -70,8 +70,8 @@
             "accPosId": 1,
             "curatedlinklist": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Fri Aug 14 2026 15:40:15 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -195,8 +195,8 @@
             "accPosId": 2,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Fri Aug 28 2026 21:52:24 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -259,8 +259,8 @@
             "accPosId": 3,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Fri May 02 2025 23:06:56 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -323,8 +323,8 @@
             "accPosId": 4,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Fri May 02 2025 23:07:03 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -387,8 +387,8 @@
             "accPosId": 5,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Sat May 10 2025 12:47:42 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -443,8 +443,8 @@
             "accPosId": 6,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Sat May 10 2025 12:45:06 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",
@@ -499,8 +499,8 @@
             "accPosId": 7,
             "curatedlinklist_copy": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "chris.kleckner@stryker.com",
-              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:createdBy": "user-f123ca2978@example.invalid",
+              "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
               "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
               "jcr:lastModified": "Sat May 10 2025 12:51:03 GMT+0000",
               "sling:resourceType": "stryker/components/content/curatedlinklist",

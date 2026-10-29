@@ -7,7 +7,7 @@
   "jcr:title": "Stryker highlights commitment to Advanced Digital Healthcare",
   "jcr:versionHistory": "bc5dbc74-5155-470f-8cf4-c18d7ce2228b",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "697f029d-a9fb-4cb1-b291-948bc80d697d"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "839d52e6-7109-4867-9c01-e62c2ac5b224",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Aug 30 2021 15:37:37 GMT+0000",
       "jcr:lastModified": "Mon Aug 30 2021 15:37:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Aug 30 2021 15:37:42 GMT+0000",
           "text": "<p>When Dr. Homer Stryker, an orthopaedic surgeon from Kalamazoo, Michigan found that certain medical products were not meeting his patients’ needs, he invented new ones and pursued innovative ideas guided by better patient outcomes. This desire to improve healthcare through innovation still drives us today. Digital innovation is not new at Stryker, it’s an important part of how we deliver value. In fact, we have over 85 global digital solutions that make healthcare better by enabling safer patient care and helping our customers improve outcomes.</p>\n<p>It’s what we call Advanced Digital Healthcare—innovation that empowers outcomes.</p>\n<p>From advanced devices and software that are transforming care settings into state-of-the-art&nbsp;environments, to advanced visualization that guides surgeons and robotics with insightful analytics, Stryker’s Advanced Digital Healthcare is driving improved clinical, operational and financial outcomes across the continuum of care.</p>\n<p>We will highlight Advanced Digital Healthcare during the American Academy of Orthopaedic Surgeons (AAOS) trade show in San Diego Aug. 31 through Sept. 3.</p>\n<p>We’re passionate about digital innovation and helping you deliver improved outcomes—today and tomorrow.</p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare.html\"><span class=\"standalone-link\">Learn more about Advanced Digital Healthcare here</span></a><br>\n&nbsp;</p>\n",
           "jcr:lastModified": "Tue Aug 31 2021 16:32:10 GMT+0000",
@@ -55,7 +55,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Tue Aug 31 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "31-Aug-2021",
@@ -64,7 +64,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "jcr:lastModified": "Mon Aug 30 2021 15:37:32 GMT+0000",
     "sling:resourceType": "stryker/components/content/text"
   },
@@ -74,7 +74,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/advanced-digital-healthcare/images/ADH_IMAGE.png",
     "borderColor": "rgba(76,125,122,1)",

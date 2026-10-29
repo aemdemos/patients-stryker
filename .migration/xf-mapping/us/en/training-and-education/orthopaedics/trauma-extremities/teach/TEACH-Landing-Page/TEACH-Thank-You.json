@@ -8,7 +8,7 @@
   "jcr:title": "Thank you for registering.",
   "jcr:versionHistory": "3614ce5e-06bd-4975-aaef-eae7144a3b1f",
   "cq:template": "/apps/stryker/templates/long-page-detail",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "f8b940fa-4ae0-44b2-8a40-f1aaf3616813"
   ],
@@ -33,8 +33,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Fri Dec 07 2018 17:10:57 GMT+0000",
       "alt": "FINISH-btn",
       "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/FINISH-btn.png",
@@ -55,8 +55,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "imageAlt": "TEACH wordmark",
       "jcr:created": "Fri Nov 02 2018 19:23:18 GMT+0000",
       "headColor": "rgb(255,181,0)",
@@ -67,7 +67,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Fri Nov 02 2018 19:23:27 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "ecd21720-fe18-41c4-ba93-70b9e9c88a99",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "redirectTarget": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care",
   "jcr:predecessors": [
     "8d214a4e-15b9-440b-a170-d24395c56a8e"
@@ -27,7 +27,7 @@
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -41,23 +41,23 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 01 2024 12:18:49 GMT+0000",
       "jcr:lastModified": "Tue Oct 01 2024 12:18:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Aug 22 2024 15:44:15 GMT+0000",
       "jcr:lastModified": "Thu Aug 22 2024 15:44:15 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
       "parsys": {
         "jcr:primaryType": "nt:unstructured",
-        "jcr:createdBy": "chris.kleckner@stryker.com",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:createdBy": "user-f123ca2978@example.invalid",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "jcr:created": "Wed Oct 16 2024 20:08:04 GMT+0000",
         "jcr:lastModified": "Wed Oct 16 2024 20:08:04 GMT+0000",
         "sling:resourceType": "wcm/foundation/components/parsys"
@@ -67,8 +67,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Tue Aug 20 2024 12:53:01 GMT+0000",
           "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Emergency Care </span>|<span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">Symposium</span></span></span><br>\n</p>\n",
           "jcr:lastModified": "Tue Oct 15 2024 19:36:33 GMT+0000",
@@ -77,8 +77,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "topMargin": "3",
           "jcr:created": "Mon Aug 19 2024 21:36:23 GMT+0000",
@@ -90,8 +90,8 @@
         },
         "text_copy_188497224": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Mon Aug 19 2024 21:36:23 GMT+0000",
           "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Description:</span></span><br>\n</p>\n<p><span class=\"fontsize-1-25em\">Attend this half-day virtual symposium to discover actionable techniques to help improve resuscitation survival rates in your systems and community.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Agenda topics include:</span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">• Event medicine<br>\n • Capnography<br>\n • Airway management<br>\n • Synchronized Cardioversion<br>\n • High-quality CPR<br>\n • Types of shock</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Who should attend?</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">EMS (i.e. chiefs, paramedics, EMTs)</span></li>\n<li><span class=\"fontsize-1-25em\">Hospital providers (i.e. nurses, physicians, RTs, educators)</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Cost:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">$25 until November 7th</span></li>\n<li><span class=\"fontsize-1-25em\">$40 after November 7th</span></li>\n</ul>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Fri Oct 18 2024 15:10:41 GMT+0000",
@@ -100,8 +100,8 @@
         },
         "text_1920514816": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Thu Aug 22 2024 19:08:52 GMT+0000",
           "text": "<p>This CE activity is approved for 4.0 CEH by ResponderCast, an organization accredited by the Commission on Accreditation for Pre-Hospital Continuing Education (CAPCE). This educational activity is approved for 4.0 contact hours by ResponderCast, an accreditedprovider for continuing education. Provider approved by California Board of Nursing. Provider #14477 and the Florida Board of NursingProvider #50-17032 This program has been approved for 4.0 contact hours Continuing Respiratory Care Education (CRCE) credit by theAmerican Association of Respiratory Care.<br>\n</p>\n",
           "jcr:lastModified": "Wed Oct 16 2024 19:59:22 GMT+0000",
@@ -116,8 +116,8 @@
     },
     "cols2_2_3_1_3_151557": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Thu Aug 22 2024 15:45:02 GMT+0000",
       "jcr:lastModified": "Thu Aug 22 2024 15:45:02 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -126,7 +126,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "hideComponent": "false",
           "gradientDirection": "left-to-right",
           "text": "<h3><span class=\"fontsize-2em\"><span class=\"futura-bold\">Register now</span> to attend the symposium!</span></h3>\n",
@@ -138,10 +138,10 @@
         },
         "marketoform": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:createdBy": "user-f123ca2978@example.invalid",
           "afterSubmitAction": "showMessage",
           "formId": "3286",
-          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
           "jcr:created": "Mon Aug 19 2024 21:36:35 GMT+0000",
           "useProduction": "true",
           "message": "Thank you registering. You will be receiving an email with information to view/download the webinar. ",
@@ -152,17 +152,17 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
       "resources": "/content/dam/stryker/ems/campaigns/webinars/resources/virtual-cardiac-resuscitation-symposium_speaker-flyer.pdf",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Oct 16 2024 20:22:00 GMT+0000",
       "jcr:lastModified": "Fri Oct 18 2024 16:19:35 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Wed Aug 21 2024 17:30:41 GMT+0000",
       "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
       "jcr:lastModified": "Wed Aug 21 2024 17:31:11 GMT+0000",

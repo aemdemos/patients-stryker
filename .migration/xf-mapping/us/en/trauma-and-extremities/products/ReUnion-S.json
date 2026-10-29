@@ -10,7 +10,7 @@
   "jcr:versionHistory": "399db0b2-5bbc-49cc-b03a-0f4eabca4c6c",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "ReUnion S",
   "jcr:predecessors": [
     "5fc34a6a-5d1a-4592-8606-0e1b9de9cca5"
@@ -47,13 +47,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "jcr:lastModified": "Thu Mar 14 2019 18:06:44 GMT+0000",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/Final ReUnion S.jpg",
       "sling:resourceType": "stryker/components/content/pagehero"
@@ -64,8 +64,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_973914145": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "devin.doran@stryker.com",
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:createdBy": "user-c66c5d4a4b@example.invalid",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "jcr:created": "Thu Feb 28 2019 19:13:27 GMT+0000",
       "jcr:lastModified": "Thu Feb 28 2019 19:13:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -76,8 +76,8 @@
     },
     "cols2_1709677033": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Tue Nov 05 2019 04:46:28 GMT+0000",
       "jcr:lastModified": "Tue Nov 05 2019 04:46:28 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -86,8 +86,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Tue Nov 05 2019 04:46:39 GMT+0000",
           "type": "typeId",
           "videoId": "NpBnBFNliXw",
@@ -101,9 +101,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Scientifically determining the ideal length stem",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "Scientifically determining the ideal stem length: An animation. Learn about humeral length over time and about part of Stryker’s shoulder platform: ReUnion S. ",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Nov 05 2019 04:46:51 GMT+0000",
@@ -115,8 +115,8 @@
     },
     "cols2_597120438": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Tue Jul 02 2019 16:54:46 GMT+0000",
       "jcr:lastModified": "Tue Jul 02 2019 16:54:46 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -125,8 +125,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Tue Jul 02 2019 16:55:01 GMT+0000",
           "type": "typeId",
           "videoId": "eZ8a9jHqcW4",
@@ -140,9 +140,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "ReUnion S  - Innovation Theater Presentation ",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "Dr. Sanchez-Sotelo presents \"The Science behind humeral stem length in shoulder arthroplasty\" during the Innovation Theater.  ",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jul 02 2019 16:56:28 GMT+0000",
@@ -154,8 +154,8 @@
     },
     "cols2_663591510": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Tue May 05 2020 17:01:03 GMT+0000",
       "jcr:lastModified": "Tue May 05 2020 17:01:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -164,8 +164,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Tue May 05 2020 17:01:15 GMT+0000",
           "type": "typeId",
           "videoId": "byz8IrIjuhg",
@@ -179,9 +179,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Anatomic Shoulder Arthroplasty for Primary Glenohumeral Osteoarthritis",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "Anatomic Shoulder Arthroplasty for Primary Glenohumeral Osteoarthritis performed by Dr. Sanchez-Sotelo and moderated by Dr. McFarland",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue May 05 2020 17:01:22 GMT+0000",
@@ -193,8 +193,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Fri Jun 14 2019 14:00:51 GMT+0000",
       "jcr:lastModified": "Fri Jun 14 2019 14:00:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -203,8 +203,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Fri Jun 14 2019 14:01:04 GMT+0000",
           "type": "typeId",
           "videoId": "tO2sa1qp-z4",
@@ -218,9 +218,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "ReUnion S - designed to be the ideal length stem",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "The ReUnion S stem is designed to be the ideal length stem, optimizing bone preservation, alignment, and stability.",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Fri Jun 14 2019 14:01:09 GMT+0000",
@@ -232,7 +232,7 @@
     },
     "resourcesanddownload": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "devin.doran@stryker.com",
+      "jcr:createdBy": "user-c66c5d4a4b@example.invalid",
       "resources": [
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_150206021",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_71818680",
@@ -240,7 +240,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_260728406",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_873233419"
       ],
-      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
       "jcr:created": "Tue Mar 26 2019 19:58:25 GMT+0000",
       "title": "Resources",
       "jcr:lastModified": "Fri Jun 28 2019 17:13:43 GMT+0000",
@@ -248,8 +248,8 @@
     },
     "standaloneimage": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Wed Oct 02 2019 17:29:16 GMT+0000",
       "alt": "TEACH Talks Ad Banner",
       "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/TEACH-talks-ad-banner.jpg",
@@ -266,7 +266,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>ReUnion S Humeral Stem<br />\r\n</p>\r\n",
     "shortDescTop": "<p>Historically, standard length stems in shoulder arthroplasty have had low complication rates.<sup>1</sup> There is a growing trend in shoulder arthroplasty toward humeral stem prosthesis designs focused on preserving distal bone by reducing distal stem length. The Stryker Orthopaedic Modeling and Analytics (SOMA) database was utilized to identify the minimum stem length for a stemmed shoulder prosthesis. <br />\r\n</p>\r\n<p>The ReUnion S stem is designed to be the ideal length stem, optimizing bone preservation, alignment, and stability.<br />\r\n</p>\r\n",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Tue Mar 12 2019 20:20:46 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -295,7 +295,7 @@
   },
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "linkNewWindow": "true",
     "jcr:lastModified": "Thu Feb 28 2019 20:03:27 GMT+0000",
     "linkType": "gcs",
@@ -303,13 +303,13 @@
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "jcr:lastModified": "Thu Feb 28 2019 20:24:25 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModifiedBy": "user-c66c5d4a4b@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>1) Gilot G et al., The incidence of radiographic aseptic loosening of the humeral component in reverse total shoulder arthroplasty. J Shoulder Elbow Surg. 2015 Oct;24(10):1555-9.</p>\r\n<p>2) RU-WP-3: Analysis of humeral morphology as it relates to stem length</p>\r\n<p>RU-AWI-3, 03-2019<br>\r\n</p>\r\n",
     "jcr:lastModified": "Thu Mar 14 2019 18:11:39 GMT+0000",

@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Launches PROstep™ MICA® SOLO Guide  to Simplify Minimally Invasive Bunion Procedures",
   "jcr:versionHistory": "c67da4f0-e6d8-4c14-a73d-f232a72ed30e",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "0f783e6b-46a1-491d-ba6d-8dcedf0c13a9"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "29c8a5ae-86f4-4698-a6ec-fd5ea383cd36",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Feb 21 2022 14:41:16 GMT+0000",
       "jcr:lastModified": "Mon Feb 21 2022 14:41:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -44,8 +44,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 21 2022 14:41:38 GMT+0000",
           "text": "<p><i><span class=\"fontsize-1-25em\">Company to feature new all-in-one guide at 2022 ACFAS and during March 2 live event</span></i></p>\n<p><b>MAHWAH, New Jersey</b>—Stryker, one of the world’s leading medical technology companies, will debut the new PROstep™ MICA<sup>®</sup> SOLO Guide at the <a href=\"https://annualconference.acfas.org/\">American College of Foot and Ankle Surgery (ACFAS) 2022 meeting</a> and will host a <a href=\"https://vimeo.com/webinars/events/99a61c18-d2c1-4808-8480-dbc8512cff60\">live event</a> on March 2 at 7 p.m. EST. The all-in-one procedure guide is used during PROstep MICA minimally invasive bunion procedures and is designed for use by a solo surgeon, potentially eliminating the need for additional surgical assistance during the operation.</p>\n<p>Traditionally, surgeons conducting MIS bunion procedures use a “freehand” technique, requiring both of the surgeon’s hands to perform different tasks simultaneously, with a sizeable learning curve. The PROstep MICA SOLO is an all-in-one guide that acts as a third hand for the surgeon, providing automatic targeting of the screw, stabilization of the head fragment and a controlled, adjustable shift. The intuitive guide streamlines the procedure, allowing for reproducibility while minimizing the need for a surgical assistant.</p>\n<p>In addition to the unique surgeon advantages, the PROstep MICA offers patients the following benefits when compared to traditional open bunion surgery:</p>\n<ul>\n<li>Faster return to function<sup>2,3</sup></li>\n<li>Less pain<sup>1</sup><br>\n</li>\n<li>Smaller scars<sup>1,2</sup><br>\n</li>\n<li>Overall increased patient satisfaction<sup>1</sup><br>\n</li>\n<li>Less need for opioids post-op<sup>4</sup><br>\n</li>\n</ul>\n<p>“I am delighted that we now have a precision tool for this technique right where the surgeon needs it,” said David Redfern, FRCS, foot and ankle surgeon at Cleveland Clinic London Hospital. “The PROstep MICA SOLO Guide is like having an expert assistant at hand to make the necessary surgical steps in this procedure much easier.”</p>\n<p>“At Stryker, we’re constantly working with our customers to understand their challenges and develop solutions to address unmet needs,” said Michael Rankin, vice president of marketing and medical education of Stryker’s Foot &amp; Ankle business. “The PROstep MICA SOLO Guide reflects Stryker’s ongoing commitment to technological innovation, and we see it playing an integral role in the future of minimally invasive foot and ankle surgery.”</p>\n<p>The PROstep MICA SOLO Guide will be showcased at an industry-sponsored “Stryker Experience” event on Feb. 24 at ACFAS and will be featured at Stryker’s exhibit booth (614). On March 2, a live surgeon panel discussion and cadaveric presentation of the new all-in-one procedure guide will be hosted virtually by the creator of the MICA procedure, David Redfern FRCS (Tr&amp;Orth). Those interested in signing up can visit the <a href=\"https://vimeo.com/webinars/events/99a61c18-d2c1-4808-8480-dbc8512cff60\">event registration site</a>.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Feb 23 2022 18:31:45 GMT+0000",
@@ -54,16 +54,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 21 2022 14:41:43 GMT+0000",
           "jcr:lastModified": "Mon Feb 21 2022 14:41:43 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_1628472771": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 21 2022 14:41:48 GMT+0000",
           "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p>Follow Stryker Foot &amp; Ankle on <a href=\"https://www.linkedin.com/showcase/stryker-foot-&amp;-ankle/\">LinkedIn</a>.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Mon Feb 21 2022 15:03:05 GMT+0000",
@@ -72,16 +72,16 @@
         },
         "sectionseparator_1097408724": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 21 2022 14:41:58 GMT+0000",
           "jcr:lastModified": "Mon Feb 21 2022 14:41:58 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_606891172": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Feb 21 2022 14:42:04 GMT+0000",
           "text": "<p><b>Media Contacts<br>\n </b>Andrea Sampson, Sampson Public Relations Group<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com<br>\n </a>562.304.0301</p>\n",
           "jcr:lastModified": "Mon Feb 21 2022 14:51:53 GMT+0000",
@@ -93,7 +93,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Thu Feb 24 2022 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "24-Feb-2022",
@@ -106,7 +106,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "preset": "max_width_1440",
     "borderColor": "rgba(76,125,122,1)",
     "jcr:lastModified": "Wed Feb 23 2022 18:29:50 GMT+0000",
@@ -115,7 +115,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Blueprint, Perform, Stryker, Tornier. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>Content ID: AP-015815_A<br>\r\nCopyright © 2022 Stryker</p>\r\n<p>References:</p>\r\n<ol>\r\n<li>Lam P, Lee M, Xing J, Di Nallo M. Percutaneous Surgery for Mild to Moderate Hallux Valgus. Foot Ankle Clin N Am 2016; 21: 459-477.</li>\r\n<li>Lee M, Walsh J, Smith MM, Ling J, Wines A, Lam P. Hallux Valgus Correction Comparing Percutaneous Chevron/Akin (PECA) and Open Scarf/Akin Osteotomies. Foot Ankle Intl 2017; 38(8): 838-846.3</li>\r\n<li>Maffulli N, Longo UG, Oliva F, Denaro V, Coppola C. Bosch Osteotomy and Scarf Osteotomy for Hallux Valgus</li>\r\n<li>Jimmy J. Chan, MD; Javier Z. Guzman, MD; Andrea Nordio, MD; Jesse C. Chan; Carl M. Cirino, MD; Ettore Vulcano, MD. Opioid Consumption and Time to Return to Work After Percutaneous Osteotomy in Foot Surgery. Orthopedics. May 7, 2020.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Feb 21 2022 14:55:13 GMT+0000",

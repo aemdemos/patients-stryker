@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s T2 ICF Nail System Offers Surgeons New Option for Patients Suffering from Serious Foot Conditions",
   "jcr:versionHistory": "05996cb2-7540-42cd-8537-baa8ef3c1270",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "19cd0e11-c7f5-47e6-91d2-730e292585af"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "10d2a0d6-739e-4f80-b987-533e6759eaba",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Sep 28 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "28-Sep-2020",
@@ -47,7 +47,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_png",
     "srcFileRef": "/content/dam/stryker/about/news/2020/t2-icf-nail-system/images/T2-ICF-Nail-System.png",
     "jcr:lastModified": "Mon Sep 28 2020 17:36:54 GMT+0000",
@@ -55,7 +55,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Intramedullary Nailing System Provides Strong, Stable and Efficient Tool Designed to Promote Accurate Nail Insertion</span></span></p>\n<p><b>MAHWAH, N.J., September 28, 2020</b>—Stryker’s Trauma &amp; Extremities division today announced the launch of its T2® ICF Intramedullary nailing system, offering a solution for patients suffering from serious foot conditions such as Charcot foot—a condition associated with diabetes resulting in poor bone quality, possible nerve damage and potential foot ulcers.<sup>1</sup></p>\n<p>The T2 ICF system is a stable product that provides a surgical option designed to prevent nail back out and promote fixation and accuracy. It is estimated that a leg is amputated every 30 seconds globally, and 85% of these amputations are the result of diabetic foot ulcers.<sup>2</sup></p>\n<p>“We are always looking for ways to improve fixation strategies in Charcot patients, as they tend to have poor bone quality and often end up needing limb-salvage procedures,” said Vinod Panchbhavi*, MD, FACS, FAOA, FABOS, FAAOS, Professor and Chief of Ankle &amp; Foot Surgery, UTMB Health. “The T2 ICF nails are lightweight and sturdy, are easy to use.”</p>\n<p>“This medial and lateral column nail provides rigid fixation with the ability to apply up to 10 millimeters of compression through the nail<sup>3</sup>,” said William Simon*, DPM, Bayview Physicians Group, and designer of the T2 ICF nail. “The stable nail is designed to be compatible with cross screws to help prevent nail back-out<sup>4</sup> and the large nail diameters are intended to help prevent nail breakage<sup>3</sup>.”</p>\n<p>The T2 ICF Intramedullary nailing system can also be used to treat other conditions such as fracture fixation, osteotomies, non- and mal-unions, and fusions. Additional information about T2 ICF can be found at: <a href=\"https://bit.ly/T2ICFINFO\">https://bit.ly/T2ICFINFO</a></p>\n<p>&nbsp;</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p>&nbsp;</p>\n<p><b>Media Contact</b><br>\nAndrea Sampson, Sullivan &amp; Sampson PR<br>\nasampson@sullivanpr.com<br>\n714/374-6174</p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Mon Sep 28 2020 18:15:20 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -63,7 +63,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Rogers, Lee. “The Charcot Foot in Diabetes.” <i>Diabetes Journal<b> </b></i>September 2011. Volume 34. care.diabetesjournals.org</li>\r\n<li>Caffrey, Mary. “Diabetic Amputations May Be Rising in the United States.” <i style=\"font-size: 0.8125rem;\">American Journal of Managed Care.</i><span style=\"font-size: 0.8125rem;\"> 13 December, 2018.</span><a href=\"https://www.ajmc.com/newsroom/diabetic-amputations-may-be-rising-in-the-united-states#:~:text=In%20the%20United%20States%2C%20every,of%20a%20diabetic%20foot%20ulcer.%E2%80%9D\" style=\"background-color: rgb(240, 240, 240); font-size: 0.8125rem;\"> </a><a href=\"https://www.ajmc.com/newsroom/diabetic-amputations-may-be-rising-in-the-united-states#:~:text=In%20the%20United%20States%2C%20every,of%20a%20diabetic%20foot%20ulcer.%E2%80%9D\" style=\"background-color: rgb(240, 240, 240); font-size: 0.8125rem;\">https://www.ajmc.com/newsroom/diabetic-amputations-may-be-rising-in-the-united-states#:~:text=In%20the%20United%20States%2C%20every,of%20a%20diabetic%20foot%20ulcer.%E2%80%9D</a></li>\r\n<li>Stryker T2 ICF Op Tech T2-ST-32,07-2019</li>\r\n<li>Stryker V18371 (A0046580, Ver. 3, 2/28/2020) T2 ICF Targeting System_Life Cycle Simulation &amp; Stiffness Test</li>\r\n</ol>\r\n<div>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</div>\r\n<div>&nbsp;</div>\r\n<div>The information presented is intended to demonstrate the breadth of Stryker's product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</div>\r\n<div>&nbsp;</div>\r\n<div>*Dr. Panchbhavi and Dr. Simon are paid-consultants of Stryker Orthopaedics.</div>\r\n<div>&nbsp;</div>\r\n<div>This is intended for US distribution only.</div>\r\n",
     "jcr:lastModified": "Mon Sep 28 2020 17:41:31 GMT+0000",

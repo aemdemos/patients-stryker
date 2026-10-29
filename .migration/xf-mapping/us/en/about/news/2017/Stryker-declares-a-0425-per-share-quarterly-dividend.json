@@ -7,7 +7,7 @@
   "jcr:title": "Stryker declares a $0.425 per share quarterly dividend",
   "jcr:versionHistory": "a5016a19-7be9-4ebb-b4f6-5b4e7ddf4872",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "bb1c516a-8fa7-4d3a-8e1b-0135c918e4d4"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Wed May 03 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "03-May-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
     "text": "<p>&nbsp;Stryker Corporation (NYSE:SYK) announced that its Board of Directors has declared a quarterly dividend of $0.425 per share payable on July 31, 2017 to shareholders of record at the close of business on June 30, 2017, representing an increase of 12% versus the prior year and unchanged from the previous quarter.&nbsp;</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2017/Stryker-declares-a-0425-per-share-quarterly-dividend-20170503000000/default.aspx\">Read the full release here</a>.&nbsp;</p>\n",
     "jcr:lastModified": "Mon Mar 11 2019 18:13:54 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

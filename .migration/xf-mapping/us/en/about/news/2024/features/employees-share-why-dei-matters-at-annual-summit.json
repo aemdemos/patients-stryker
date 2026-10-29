@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7276af60-8d68-4bee-81ee-0ed65f590ac8",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Two Stryker employees smiling at one another and talking at the annual DE&I Summit",
   "jcr:predecessors": [
     "346afb1b-0a57-46b1-aa5b-fb9cabc87f80"
@@ -35,14 +35,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Aug 15 2024 19:26:53 GMT+0000",
       "text": "Employees share why DE&I matters at annual Summit Back in 2021, we hosted our first global Diversity, Equity and Inclusion (DE&I) Summit for Stryker employees—and we’ve been on an inspiring journey ever since. For two immersive days, employees dive into the value of diversity, equity and inclusion. And because we believe each one of us should feel seen, heard and valued, our 2024 Summit invited each attendee to share why DE&I is important to them. Every year, the DE&I Summit demonstrates the power of sharing stories From the beginning of the event, employees were deeply moved by powerful stories from fellow colleagues. We learned why DE&I matters to each person, the value of inclusive language and the critical role of allyship in fostering a culture of inclusion and belonging. Many employees stood on stage and shared their “why” with courage and vulnerability, while others added their reasons to the “What’s your why?” wall. “For me, I added ‘unlock potential’ to the wall because creating a culture where everyone can thrive enables innovation and growth,” said Annie Heath, Vice President, Diversity Equity and Inclusion. “When you feel like you belong, you have the ability to reach your potential.” Stryker employees use learnings to advance DE&I Collective action is the cornerstone of meaningful change. By actively listening, sharing experiences, and adapting individual behaviors, we’re creating a ripple effect that transforms our workplace. Employee reflections highlight the power of shared stories in fostering new perspectives and inspiring positive actions. Here's what some team members shared: \"The stories are inspiring and serve as a good reminder of how I can make a difference when it comes to DE&I. Being a minority myself, it also encourages me to continue speaking up and sharing my thoughts.” –Vanessa Niederleig, Senior Human Resources Manager “Knowing that everyone has the power to be the spark for change motivates me to challenge my own biases and create a more welcoming environment for all colleagues.\" –Chris Camacho, Associate Manager for Inventory Accounting \"Together we are stronger,” she said. “We must continue to learn from, inspire and support one another.” –Franziska de Rooij, Finance Director Stryker employees dedicate time to give back Employee resource group (ERG) members partnered with Stryker’s Global Volunteer Network to organize a volunteer activity to support the American Red Cross. Together, employees assembled disaster relief kits for people affected by disasters like floods, hurricanes, and countless other crises. The Red Cross is one of our key nonprofit partners, and efforts like these help us further our commitment to creating a healthier and more equitable world. Stryker leadership reflects on the value of a diverse workplace After the 2024 Summit, Stryker leaders have been sharing insights on the transformative power of a diverse workplace. \"At the end of the day, DE&I is about being a good human,” says Annie Heath. “This means caring for each other, speaking up for those who may not feel they have a voice and recognizing that small steps can add up to big strides.\" Andy Pierce, Group President, MedSurg and Neurotechnology – also the executive sponsor for SOMOS, our ERG dedicated to the Hispanic/Latino community – shared in his closing remarks: \"Be an ally and a champion for others. You can change your perspective through small actions. Empathy is a bridge to acceptance.\" Our President of Asia Pacific, John Collings shared, “True DE&I goes beyond policies and workshops. It is about creating and fostering a culture where every individual feels safe and included. When we start to embrace true DE&I, we start to foster an environment where everyone can thrive.” By understanding each other’s “why,” we cultivate a culture where everyone feels seen, heard and valued. In a recap video, employees summed up our fourth-annual Summit best: “As we return to our daily lives, our work, our communities, friends and teams, we carry with us a piece of every person we have met, enriched by their stories and inspired by their “why.” Watch Stryker’s DE&I Summit recap video Learn more about Stryker's DE&I commitments",
       "jcr:lastModified": "Thu Aug 15 2024 19:27:17 GMT+0000",
@@ -52,16 +52,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Aug 15 2024 20:17:30 GMT+0000",
       "jcr:lastModified": "Thu Aug 15 2024 20:17:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "latestnews_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Thu Feb 06 2020 16:02:12 GMT+0000",
       "newsPaths": [
@@ -74,7 +74,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Wed Aug 21 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Aug-2024",
@@ -87,7 +87,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Thu Aug 15 2024 20:03:55 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

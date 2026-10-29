@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d34a3bf1-ea44-43a7-997b-80c39d0eaea8",
   "cq:template": "/apps/stryker/templates/product-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "Reinforced anesthesia needle thumbnail",
   "jcr:predecessors": [
     "a4f959ac-9eca-43d9-b976-688541b28628"
@@ -35,13 +35,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "headColor": "rgb(255,181,0)",
       "usethumbnail": "true",
       "jcr:lastModified": "Tue Aug 29 2023 15:23:35 GMT+0000",
@@ -53,8 +53,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "section_title_467666505": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "hideSectionTitleComp": "true",
       "deepLinkingId": "features-and-benefits",
       "jcr:created": "Tue Mar 19 2024 21:03:18 GMT+0000",
@@ -64,8 +64,8 @@
     },
     "cols2_1928321632": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 17 2023 17:59:22 GMT+0000",
       "jcr:lastModified": "Mon Jul 17 2023 17:59:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -74,8 +74,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Jul 17 2023 18:00:30 GMT+0000",
@@ -87,8 +87,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 17 2023 18:01:26 GMT+0000",
           "text": "<p><a href=\"https://ent.stryker.com/\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
           "jcr:lastModified": "Mon Jul 17 2023 18:01:44 GMT+0000",
@@ -97,8 +97,8 @@
         },
         "tagcrumb": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 17 2023 17:59:38 GMT+0000",
           "jcr:lastModified": "Mon Jul 17 2023 17:59:38 GMT+0000",
           "sling:resourceType": "stryker/components/content/tagcrumb"
@@ -109,8 +109,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Jul 17 2023 18:01:55 GMT+0000",
           "text": "<h2><span class=\"futura-bold\">Features and benefits</span></h2>\n<p>The reinforced anesthesia needle was designed to offer ENT surgeons enhanced control. Important features and benefits include:</p>\n<ul>\n<li>The unique combination of a 27G tip and larger outer sleeve allows for a positive stop for injection depth precision<sup>1,4</sup></li>\n</ul>\n",
           "jcr:lastModified": "Thu Aug 24 2023 18:21:47 GMT+0000",
@@ -119,8 +119,8 @@
         },
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Thu Apr 06 2023 16:23:23 GMT+0000",
           "alt": "anesthesia-needle-anatomy",
@@ -134,8 +134,8 @@
     },
     "section_title_356917840": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "product-specifications",
       "jcr:created": "Tue Mar 19 2024 21:04:24 GMT+0000",
       "title": "Product specifications",
@@ -144,9 +144,9 @@
     },
     "table": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
       "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Product</b></td>\n<td><b>Ordering no.</b></td>\n<td><b>Description</b></td>\n</tr><tr><td>Reinforced anesthesia needle</td>\n<td>RAN-027-2</td>\n<td>27 G, 3.5&quot;, 2-pack (only sold in a bundle configuration)</td>\n</tr><tr><td>Reinforced anesthesia needle</td>\n<td>RAN-027-5</td>\n<td>27 G, 3.5&quot;, 5-pack</td>\n</tr></tbody></table>\n",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Apr 06 2023 15:36:29 GMT+0000",
       "jcr:lastModified": "Thu Apr 06 2023 16:11:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/table",
@@ -154,8 +154,8 @@
     },
     "section_title": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "resources-and-downloads",
       "jcr:created": "Wed Mar 20 2024 15:24:42 GMT+0000",
       "title": "Resources and downloads",
@@ -168,14 +168,14 @@
         "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-PRDC-655033-EN_US.pdf",
         "/content/dam/stryker/ent/ifus/us/surgical-instruments-and-tools/5117-001 rB - IFU Reinforced Anesthesia Needle.pdf"
       ],
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:lastModified": "Fri Apr 19 2024 17:48:06 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     },
     "section_title_553489035": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "deepLinkingId": "related-products",
       "jcr:created": "Tue Mar 19 2024 21:09:28 GMT+0000",
       "title": "Related products",
@@ -184,8 +184,8 @@
     },
     "cols4": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jun 27 2023 18:44:44 GMT+0000",
       "jcr:lastModified": "Tue Jun 27 2023 18:44:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols4",
@@ -194,8 +194,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Jun 27 2023 18:44:49 GMT+0000",
           "alt": "ClariFix2_straight_activate_cryogen_final_V2",
@@ -207,8 +207,8 @@
         },
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Jun 27 2023 18:44:54 GMT+0000",
           "text": "<h3>ClariFix® cryotherapy device</h3>\n<p>Stryker's ClariFix device goes straight to the root of chronic rhinitis - the overactive nerves. Using a minimally invasive treatment called cryotherapy, the ClariFix device applies focal, controlled freezing to target tissue under direct visualization.<sup>7</sup><br>\n</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/ent/products/clarifix-cryotherapy-device.html\">LEARN MORE</a></span></p>\n",
           "jcr:lastModified": "Mon Jul 17 2023 18:06:55 GMT+0000",
@@ -221,8 +221,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Jun 27 2023 18:45:59 GMT+0000",
           "alt": "XprESS_LoProfile_2",
@@ -234,8 +234,8 @@
         },
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Jun 27 2023 18:44:54 GMT+0000",
           "text": "<h3>XprESS® ENT dilation system</h3>\n<p>This system delivers control and versatility for balloon dilation. Its seeker-based design and tip malleability provide the tactile feel and flexibility to address complex anatomy for a broad range of patients.<sup>5-6<br>\n</sup></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/ent/products/xpress-ent-dilation-system.html\">LEARN MORE</a></span></p>\n",
           "jcr:lastModified": "Mon Jul 17 2023 19:16:26 GMT+0000",
@@ -250,16 +250,16 @@
     },
     "cols_1264909969": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Jul 17 2023 17:57:18 GMT+0000",
       "jcr:lastModified": "Mon Jul 17 2023 17:57:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Mon Jul 17 2023 18:07:43 GMT+0000",
@@ -277,7 +277,7 @@
   "secondarycta": {
     "jcr:primaryType": "nt:unstructured",
     "externalLink": "https://ent.stryker.com/",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "linkNewWindow": "true",
     "jcr:lastModified": "Mon Jul 17 2023 18:03:20 GMT+0000",
@@ -288,7 +288,7 @@
   },
   "pageshortdescription": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jul 17 2023 18:03:37 GMT+0000",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
@@ -300,7 +300,7 @@
   },
   "rte": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Mon Jul 17 2023 18:03:33 GMT+0000",
@@ -309,7 +309,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p><b>References:</b><br>\r\n</p>\r\n<ol>\r\n<li>Data on file at Stryker 3455-004</li>\r\n<li>Data on file at Stryker 3455-006</li>\r\n<li>Data on file at Stryker 4674-001</li>\r\n<li>Reinforced anesthesia needle instructions for use&nbsp;5117-001</li>\r\n<li>XprESS instructions for use 4322-001</li>\r\n<li>Data on file at Stryker DHF 1656-001</li>\r\n<li>ClariFix instructions for use 5082-001</li>\r\n</ol>\r\n<div><b>Disclaimer</b></div>\r\n<div><b><br>\r\n</b>This document is intended solely for the use of healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. We do not dispense medical advice and recommend that surgeons be trained in the use of any particular product before using it in surgery.&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>The information presented is intended to demonstrate Stryker’s products. A surgeon must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your representative if you have questions about the availability of Stryker’s products in your area.&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: Audion, Cyclone, XprESS and Stryker. All other trademarks are trademarks of their respective owners or holders. The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.&nbsp;</div>\r\n<ul>\r\n</ul>\r\n",
     "jcr:lastModified": "Thu Aug 10 2023 15:26:14 GMT+0000",
@@ -318,21 +318,21 @@
   },
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Tue Mar 19 2024 21:02:53 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"
   },
   "contactbutton": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jul 17 2023 18:03:14 GMT+0000",
     "sling:resourceType": "stryker/components/content/contactbutton"
   },
   "tagcrumb": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "jcr:lastModified": "Mon Jul 17 2023 18:03:25 GMT+0000",
     "sling:resourceType": "stryker/components/content/tagcrumb"

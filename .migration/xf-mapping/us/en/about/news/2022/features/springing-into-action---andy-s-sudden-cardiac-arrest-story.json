@@ -9,7 +9,7 @@
   "jcr:versionHistory": "69111fae-9919-4e82-80b3-c8203256c8d2",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "jcr:predecessors": [
     "d7bcf19d-41f0-4dad-ac95-7c28799ffda6"
   ],
@@ -29,14 +29,14 @@
   "jcr:uuid": "c7b44c30-e662-4e26-ba46-3b2cc764a8ab",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Tue Jul 26 2022 20:30:28 GMT+0000",
       "text": "Andy Hannan was playing walking football when he collapsed on the field from a sudden cardiac arrest. Thankfully, one of his co-players, Sue, a first aid volunteer, immediately sprang to action. Watch how she saved his life with the help of the system of care. “I told Sue in person how very grateful I was that she’d made a big difference to me: the difference between life and death, and I’m very grateful for what she did that night.” ______________ Andy Sudden cardiac arrest survivor Watch more survivor stories",
       "jcr:lastModified": "Tue Jul 26 2022 20:37:21 GMT+0000",
@@ -47,7 +47,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Wed Aug 03 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "03-Aug-2022",

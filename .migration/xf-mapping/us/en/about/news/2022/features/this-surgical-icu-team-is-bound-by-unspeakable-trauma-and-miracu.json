@@ -9,7 +9,7 @@
   "jcr:versionHistory": "7d4bab5a-2d4d-4bba-86a3-c05975241bc5",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "5e010646-9f66-4b81-98a3-c4f39cb7dbf8"
   ],
@@ -29,14 +29,14 @@
   "jcr:uuid": "e7afcc79-05c8-48ad-9ed4-798627e87f5b",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:54:09 GMT+0000",
       "jcr:lastModified": "Tue Aug 16 2022 18:54:09 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -45,12 +45,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide_copy_4": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/homepage/homepage_carousel/temple-university-caregiver-story---this-surgical-icu-team-is-bo/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/homepage/homepage-carousel/temple-university-caregiver-story-this-surgical-icu-team-is-bo/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/homepage/homepage_carousel/temple-university-caregiver-story---this-surgical-icu-team-is-bo/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/homepage/homepage-carousel/temple-university-caregiver-story-this-surgical-icu-team-is-bo/mobile",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "15",
           "jcr:created": "Fri May 08 2020 17:45:54 GMT+0000",
@@ -65,8 +65,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline_copy_c": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "garrett.shue@stryker.com",
-              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:createdBy": "user-7065227e84@example.invalid",
+              "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
               "jcr:created": "Mon Jul 13 2020 18:29:18 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\"><span style=\"color: #000000;\">This Surgical ICU team is bound by unspeakable trauma and miraculous healings</span></span></span></span>",
@@ -84,24 +84,24 @@
     },
     "cols2_1850874164": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:54:55 GMT+0000",
       "jcr:lastModified": "Tue Aug 16 2022 18:54:55 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:55:04 GMT+0000",
       "jcr:lastModified": "Tue Aug 16 2022 18:55:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:49:59 GMT+0000",
       "text": "The streets of north Philadelphia are no strangers to poverty and violence. But inside Temple University Hospital’s Level 1 Surgical ICU, a dedicated team of nurses come together every day for a shared purpose. Together, they face trauma after trauma head on – all the while quietly helping to strengthen their community. Through their shared experiences of tremendous grief, miraculous recoveries, and everything in between, this unit has become a family and forged unbreakable bonds. This is their story. Do you know an exceptional nurse who truly goes above and beyond? Nominate a hero for our Caregiver Stories series",
       "jcr:lastModified": "Tue Aug 16 2022 18:53:50 GMT+0000",
@@ -111,16 +111,16 @@
     },
     "cols2_1338701917": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:58:01 GMT+0000",
       "jcr:lastModified": "Tue Aug 16 2022 18:58:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "cols2_982639999": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Tue Aug 16 2022 18:58:04 GMT+0000",
       "jcr:lastModified": "Tue Aug 16 2022 18:58:04 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -128,7 +128,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Tue Aug 23 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "23-Aug-2022",
@@ -141,7 +141,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue Aug 16 2022 18:54:27 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

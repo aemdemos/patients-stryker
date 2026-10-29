@@ -7,7 +7,7 @@
   "jcr:title": "Technologies that promote safe care for mother and baby during childbirth",
   "jcr:versionHistory": "bd098464-2c9d-47c2-a30c-a6c7582862be",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "c404e599-2430-47a7-b4d4-217a4e2baaaf"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "b06b05c8-5ab4-4a6b-a136-b0e698f93a93",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 14:19:44 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 14:19:44 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -42,12 +42,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/features/technologies-that-pr/carousel/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/carousel/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/features/technologies-that-pr/carousel/mobile",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "15",
           "jcr:created": "Wed Sep 15 2021 14:19:48 GMT+0000",
@@ -62,8 +62,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Wed Sep 15 2021 14:26:23 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Technologies that promote safe care for mother and baby during childbirth</span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">On World Patient Safety Day 2021, the World Health Organization (WHO) encourages the global community to ‘Act now for safe and respectful childbirth.<sup>1</sup>'&nbsp;To address this issue, we’re raising awareness of our Birthing Bed and Nära<b> </b>Bassinet, underscoring our commitment to create a safe environment for mother, baby and caregivers.</span></span></p>\r\n",
@@ -81,8 +81,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 14:20:53 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 14:20:59 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -92,8 +92,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed Sep 15 2021 14:21:03 GMT+0000",
           "jcr:lastModified": "Wed Sep 15 2021 14:21:03 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -102,8 +102,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Wed Sep 15 2021 14:21:08 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Wed Sep 15 2021 14:21:13 GMT+0000",
@@ -116,16 +116,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 14:30:03 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 14:30:03 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 14:30:08 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 14:30:37 GMT+0000",
       "sling:resourceType": "stryker/components/content/experienceFragment",
@@ -134,8 +134,8 @@
     },
     "cols2_1953929293": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Sep 15 2021 15:12:41 GMT+0000",
       "jcr:lastModified": "Wed Sep 15 2021 15:12:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
@@ -143,7 +143,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Fri Sep 17 2021 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "17-Sep-2021",
@@ -152,7 +152,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>World Health Organization. ‘World Patient Safety Day 2021.’ Accessed 24 August 2021 at <a href=\"https://www.who.int/news-room/events/detail/2021/09/17/default-calendar/world-patient-safety-day-2021\">https://www.who.int/news-room/events/detail/2021/09/17/default-calendar/world-patient-safety-day-2021</a>.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Tue Sep 14 2021 21:09:05 GMT+0000",
@@ -161,7 +161,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Sep 15 2021 14:26:19 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

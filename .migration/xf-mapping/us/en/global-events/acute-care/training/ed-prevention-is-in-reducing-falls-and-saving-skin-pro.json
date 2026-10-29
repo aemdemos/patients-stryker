@@ -7,7 +7,7 @@
   "jcr:title": "ED Prevention is IN: Reducing Falls and Saving Skin Pro",
   "jcr:versionHistory": "8d1e12b2-a9f8-4067-ba13-be49eb369829",
   "cq:template": "/apps/stryker/templates/event-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "444ec884-7c72-494a-ad34-16761fb75af9"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "02b32c83-7770-445c-baeb-71af8b9152f6",
   "sling:resourceType": "stryker/components/structure/pages/event-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -40,7 +40,7 @@
       "stryker:business-unit/acute-care"
     ],
     "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/6816037281703/WN_9XeT_3L4SoSR6RBg7ZbarQ",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "eventAudience": [
       "stryker:audience/Critical_Care_Nurses",
       "stryker:audience/nurses"

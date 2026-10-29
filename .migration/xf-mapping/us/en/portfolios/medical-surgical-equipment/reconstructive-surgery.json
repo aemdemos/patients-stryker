@@ -9,7 +9,7 @@
   "jcr:versionHistory": "dd56b990-7e14-4e0b-bf86-29dbe00dd915",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "6542e64c-45e4-438c-8da0-0924496e5a97"
   ],
@@ -31,7 +31,7 @@
   "jcr:uuid": "b2e93db6-c29c-48d9-a2ec-eacd3ee62fae",
   "sling:resourceType": "stryker/components/structure/pages/capability",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -43,7 +43,7 @@
   "filteredcontenttypegrid": {
     "jcr:primaryType": "nt:unstructured",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 21:13:39 GMT+0000",
     "loadMoreText": "Load More",
@@ -53,7 +53,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModifiedBy": "user-5891a4f69d@example.invalid",
     "jcr:lastModified": "Tue Nov 20 2018 16:37:13 GMT+0000",
     "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/reconstructive-surgery/Template-Hero-PortfolioPage-R1-RecoV3.jpg",
     "sling:resourceType": "stryker/components/content/pagehero"

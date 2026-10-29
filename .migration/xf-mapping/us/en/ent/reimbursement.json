@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f14491ee-328c-46cb-9941-6c5a39212be3",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
   "jcr:predecessors": [
     "a6bfb7cf-cfa6-4835-9725-54ceed57d58d"
   ],
@@ -26,7 +26,7 @@
   "jcr:uuid": "b84a78eb-3539-4bed-a48b-9db7b1c8c3af",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "cq:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -47,8 +47,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_706246011": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "allisa.chamberlin@stryker.com",
-      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
+      "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
       "jcr:created": "Thu Nov 02 2023 20:30:16 GMT+0000",
       "jcr:lastModified": "Thu Nov 02 2023 20:30:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -57,8 +57,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_964312640": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "allisa.chamberlin@stryker.com",
-          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
+          "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
           "jcr:created": "Thu Nov 02 2023 20:31:13 GMT+0000",
           "text": "<p>Phone: 844 842 4232<br>\nEmail:&nbsp;ENT-Reimbursement@stryker.com</p>\n",
           "jcr:lastModified": "Thu Nov 02 2023 20:31:54 GMT+0000",
@@ -69,8 +69,8 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jan 26 2023 20:09:52 GMT+0000",
       "jcr:lastModified": "Thu Jan 26 2023 20:09:52 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols",
@@ -79,8 +79,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "section_title": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "allisa.chamberlin@stryker.com",
-          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
+          "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
           "deepLinkingId": "resources",
           "jcr:created": "Fri Dec 01 2023 19:51:49 GMT+0000",
           "title": "Resources",
@@ -89,7 +89,7 @@
         },
         "resourcesanddownload_1111663280": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "resources": [
             "/content/dam/commercial/usa/ent/cfx/ENT-GSNPS-BROC-862094-EN_US.pdf",
             "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-REIM-766503-EN_US.pdf",
@@ -106,16 +106,16 @@
     },
     "cols_1382030942": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Thu Jan 26 2023 20:10:01 GMT+0000",
       "jcr:lastModified": "Thu Jan 26 2023 20:10:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "allisa.chamberlin@stryker.com",
-      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
+      "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
       "jcr:created": "Fri Jul 26 2024 18:43:12 GMT+0000",
       "jcr:lastModified": "Fri Jul 26 2024 18:43:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -124,8 +124,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "allisa.chamberlin@stryker.com",
-          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
+          "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
           "jcr:created": "Fri Jul 26 2024 18:43:27 GMT+0000",
           "hideBorder": "false",
           "type": "typeId",
@@ -137,9 +137,9 @@
         "buttonset": {
           "jcr:primaryType": "nt:unstructured",
           "buttonSeriesColors": "rgba(76,125,122,1)",
-          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:createdBy": "user-b81b2f2bb0@example.invalid",
           "buttonAlignment": "horizontal-alignment align-left",
-          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
           "jcr:created": "Fri Sep 06 2024 15:39:21 GMT+0000",
           "jcr:lastModified": "Fri Sep 06 2024 15:48:57 GMT+0000",
           "sling:resourceType": "stryker/components/content/buttonset",
@@ -163,7 +163,7 @@
   "jumpbarnav": {
     "jcr:primaryType": "nt:unstructured",
     "deactiveNav": "true",
-    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "jcr:lastModifiedBy": "user-b81b2f2bb0@example.invalid",
     "hideComponent": "false",
     "jcr:lastModified": "Thu Nov 02 2023 17:46:22 GMT+0000",
     "sling:resourceType": "stryker/components/content/jumpbarnav"

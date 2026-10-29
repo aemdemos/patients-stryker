@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f7a3822e-3d2a-4907-8fef-8f590b15b371",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "4d46a6ed-3df6-4f8b-abb2-51c8c91d9132"
   ],
@@ -25,7 +25,7 @@
   "jcr:uuid": "cc20ddb4-6d8c-4cdb-8a2a-966dfe8888ae",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "cq:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -46,8 +46,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "jcr:created": "Wed Aug 24 2022 19:03:57 GMT+0000",
       "hideBorder": "false",
       "type": "typePath",
@@ -60,7 +60,7 @@
         "fileReference": "/content/dam/stryker/sage/journey-to-zero/videos/Sage-Journey-to-Zero-Part-2-video.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/Sage-Journey-to-Zero-Part-2-video-AVS",
         "urlModifiers": "",
@@ -77,8 +77,8 @@
     },
     "curatedcta": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "errin.pace@stryker.com",
-      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:createdBy": "user-c8b824f5b1@example.invalid",
+      "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
       "ctaLinkType": "int",
       "ctaOpenInNewTabOverride": "0",
       "jcr:created": "Wed Aug 24 2022 19:05:32 GMT+0000",

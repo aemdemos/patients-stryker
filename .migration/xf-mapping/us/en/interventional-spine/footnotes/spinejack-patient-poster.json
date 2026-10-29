@@ -10,7 +10,7 @@
   "jcr:versionHistory": "23c1749e-e3a6-44f4-818a-977f52392294",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "jcr:predecessors": [
     "13144d1b-bd92-4060-8c10-53c4fa1dffe2"
   ],
@@ -27,7 +27,7 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "image": {
     "jcr:primaryType": "nt:unstructured"
   },
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
       "text": "❮ BACK",
       "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
@@ -47,16 +47,16 @@
     },
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:51:30 GMT+0000",
       "jcr:lastModified": "Thu Sep 18 2025 23:51:30 GMT+0000",
       "sling:resourceType": "stryker/components/content/pagehero"
     },
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Thu Sep 18 2025 23:51:40 GMT+0000",
       "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Rev None</span></span></p>\n<p><b>Revision Date: 08.14.24</b></p>\n<ol>\n<li>Beaumont. (2021). Back, spine, and neck mobility. Retrieved from: https://www.beaumont.org/conditions/back-spine-and-neck-mobility.</li>\n<li>Noriega D et al. A prospective, international, randomized, non-inferiority study comparing an implantable titanium vertebral augmentation device versus balloon kyphoplasty in the reduction of vertebral compression fractures (SAKOS study). The Spine Journal. 2019. doi: 10.1016/j.spinee.2019.07.009.</li>\n</ol>\n<p>The information presented is for educational purposes only. Please speak with your doctor to decide what course of treatment is right for you. Only your doctor can make the medical judgment regarding which products and treatment is right for you. Any medical procedure carries certain risks and your doctor will explain all possible complications and/or side effects. Not all patients will experience the same results.</p>\n",
       "jcr:lastModified": "Thu Sep 18 2025 23:52:24 GMT+0000",

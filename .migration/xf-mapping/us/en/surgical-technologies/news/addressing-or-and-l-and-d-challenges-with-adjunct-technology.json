@@ -10,7 +10,7 @@
   "jcr:versionHistory": "0473dbb6-0b48-40cd-9b19-7257553c31e2",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "thumbnail",
   "jcr:predecessors": [
     "82b13b4e-c89c-49d0-8eae-7fb3a518df9d"
@@ -32,15 +32,15 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
       "bottomPadding": "2",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "hideComponent": "false",
       "jcr:created": "Wed Jun 10 2026 17:42:27 GMT+0000",
       "gradientDirection": "left-to-right",
@@ -51,8 +51,8 @@
     },
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Jun 10 2026 15:43:05 GMT+0000",
       "jcr:lastModified": "Wed Jun 10 2026 15:43:05 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -61,10 +61,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/news/addressing-or-and-l/carousel/master",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "5",
           "jcr:created": "Wed Jun 10 2026 15:43:16 GMT+0000",
@@ -79,8 +79,8 @@
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Wed Jun 10 2026 15:43:10 GMT+0000",
       "text": "Labor and delivery departments and operating rooms are hectic by nature. Patient safety is of the highest priority, yet challenges and unintended outcomes like retained surgical sponges and postpartum hemorrhage (PPH) can happen. In fact, 88% of retained surgical items are due to incorrect counts.¹ And nationwide, PPH is an issue on the rise.² Nakeisha McNeill Tolliver, AORN Past President 2024-2025 and Director of Perioperative Services at Texas Children's Hospital, says many times staff members don't know they have a problem until it shows up and rears its head.³ “Despite the fact that we come to work every day expecting to just do the most excellent cases and provide the best care we possibly can, human error happens,” she said. The manual counting process can be cumbersome and could lead to a retained surgical sponge—a potentially life-threatening situation. Retained surgical items (RSIs) are considered a sentinel event by The Joint Commission.⁴ Sentinel events are considered preventable, serious, and should theoretically never occur. When it comes to PPH, care teams might not know if a patient is in danger if they don’t know how much blood has been lost, and it could be too late when they do find out. In fact, there are 50,000 cases of severe maternal morbidity annually nationwide.⁵ Both retained surgical sponges and unidentified PPH can be debilitating for patients and reduce trust in healthcare providers. That’s why the right equipment to help count surgical sponges and assess blood loss is crucial. Technology can make a difference. While researching how to help reduce human errors like incorrect counts, Tolliver explored adjunct technology. Stryker’s innovation, SurgiCount+, is designed to help reduce retained surgical sponges. In addition, it supports the standardization of a facility’s clinical protocol for charting sponge use. “It really is like another team member for the nurse in that case,” Tolliver says. “From a support perspective, it wasn't just going to be something we did sometimes. It's something you use in every case.” SurgiCount+ and its integrated Triton technology also help assess real-time blood loss across the continuum of care. Hospital-specific protocols and text alerts are integrated to support the clinical team in coordinating its hemorrhage response. Take the first step to help reduce harm. Whether the work happens in an operating room or labor and delivery department, adjunct technology exists to help address some challenges faced during procedures. With SurgiCount+ and its integrated Triton technology, you can feel confident in your surgical sponge count and blood loss assessment. Hospital leadership might question whether adjunct technology will disrupt staff members, but Tolliver explains it’s meant to give an extra vote of confidence. Stryker’s product can be seen as an investment in patient safety and caregiver confidence. Plus, Stryker has an AORN Center of Excellence in Surgical Safety: RSI Prevention certification. “As all hospitals work through trying to understand how we make surgery safer, the adjunct technology is what will help with that,” said Tolliver. “I think it's important to know that it is a part of the counting process, and it doesn't remove the manual [counting].” Does your facility use adjunct technology to help reduce retained surgical sponges and assess real-time blood loss? Discover how SurgiCount+ and Triton can integrate into your workflow. Surgicount+ and Triton Gawande, A. A., Studdert, D. M., Orav, E. J., Brennan, T. A., & Zinner, M. J. (2003). Risk factors for retained instruments and sponges after surgery. The New England Journal of Medicine, 348(3), 229–235. https://doi.org/10.1056/NEJMsa021721 Corbetta-Rastelli CM, Friedman AM, Sobhani NC, Arditi B, Goffman D, Wen T. Postpartum Hemorrhage Trends and Outcomes in the United States, 2000-2019. Obstet Gynecol. 2023 Jan 1;141(1):152-161. doi: 10.1097/AOG.0000000000004972. Epub 2022 Nov 30. PMID: 36701615. This is a paid interview with a Stryker consultant, conducted 9/26/2024, on behalf of Stryker. Patra KP, De Jesus O. Sentinel Event. [Updated 2023 Mar 29]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK564388/ Callaghan, W. M., Creanga, A. A., & Kuklina, E. V. (2012). Severe maternal morbidity among delivery and postpartum hospitalizations in the United States. Obstetrics and Gynecology, 120(5), 1029–1036. https://doi.org/10.1097/aog.0b013e31826d60c5 ST-GSNPS-ARTI-1461902_REV-0 Back to trending topics",
       "jcr:lastModified": "Wed Jun 10 2026 15:44:22 GMT+0000",
@@ -98,7 +98,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Wed Jun 10 2026 17:44:34 GMT+0000",
@@ -111,7 +111,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed Jun 10 2026 17:44:24 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

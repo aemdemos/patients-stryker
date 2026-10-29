@@ -7,7 +7,7 @@
   "jcr:title": "Stryker and AlloSource announce collaboration to distribute biologics for use in sports medicine procedures",
   "jcr:versionHistory": "ddd0c5d5-4271-4b86-b0b5-ba20504bf8a5",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "054b441a-f385-4338-b0c5-fc0e0bd44948"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Thu May 18 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-May-2017",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>DENVER,&nbsp;May 18, 2017&nbsp;/PRNewswire-USNewswire/ -- Today at the 2017 Annual Arthroscopy Association of North America (AANA) Meeting (booth #109), Stryker's Sports Medicine business and AlloSource® formally announced their collaboration to provide high quality, innovative biologics for use in sports medicine procedures. This collaboration is driven by the companies' combined commitment to better serve their customers, help patients in need and fully honor the gift of tissue donation.</p>\n<p>&quot;We believe biologics will play a critical role in advancing the field of Sports Medicine, so we are very excited about the opportunity to collaborate with AlloSource given their history of quality and innovation,&quot; said Matt Moreau, Vice President &amp; General Manager of Stryker's Sports Medicine business. &quot;The collaboration between Stryker and AlloSource will enable us to combine our unique areas of expertise to develop new ways to improve patient outcomes.&quot;<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-and-allosource-announce-collaboration-to-distribute-biologics-for-use-in-sports-medicine-procedures-300460130.html\" target=\"_blank\">PRNewswire</a></p>\n",
     "jcr:lastModified": "Thu Jun 01 2017 17:19:09 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -51,7 +51,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "http://www.prnewswire.com/news-releases/stryker-and-allosource-announce-collaboration-to-distribute-biologics-for-use-in-sports-medicine-procedures-300460130.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/allosource stryker cobranding logo.jpg",
     "jcr:lastModified": "Thu Aug 24 2017 10:57:36 GMT-0400",

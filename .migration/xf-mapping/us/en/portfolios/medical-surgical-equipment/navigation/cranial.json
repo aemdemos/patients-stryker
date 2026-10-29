@@ -8,7 +8,7 @@
   "jcr:title": "Cranial",
   "jcr:versionHistory": "1815a4fe-ebce-4c79-9321-2075ef0f68fc",
   "cq:template": "/apps/stryker/templates/specialty",
-  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/navigation/cranial/images/Thumbnail_NavCranial.png",
   "jcr:predecessors": [
     "b99e1a21-4d29-42b1-9b2a-b456d4c4e7e3"
@@ -33,7 +33,7 @@
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "cq:lastModifiedBy": "user-c27b3ab3c8@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -46,7 +46,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModifiedBy": "user-f9c250736c@example.invalid",
     "jcr:lastModified": "Mon Jun 19 2017 18:28:34 GMT-0400",
     "loadMoreText": "Load More",
     "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
@@ -56,7 +56,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+    "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
     "headColor": "rgb(255,181,0)",
     "jcr:lastModified": "Fri Sep 01 2017 11:18:13 GMT-0400",
     "sling:resourceType": "stryker/components/content/pagehero"

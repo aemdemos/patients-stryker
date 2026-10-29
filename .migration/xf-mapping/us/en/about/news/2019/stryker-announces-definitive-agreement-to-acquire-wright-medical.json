@@ -7,7 +7,7 @@
   "jcr:title": "Stryker announces definitive agreement to acquire Wright Medical",
   "jcr:versionHistory": "78a941b6-72ef-45d1-9ac2-cee98b632b4b",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "e9a2ff68-71b7-43f5-ba61-ecc5901f8a66"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "25bf21ba-08b0-4ee6-8f83-2a3c7b896549",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Nov 04 2019 15:09:19 GMT+0000",
       "jcr:lastModified": "Mon Nov 04 2019 15:09:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -41,8 +41,8 @@
         "jcr:primaryType": "nt:unstructured",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Mon Nov 04 2019 15:08:03 GMT+0000",
           "text": "<p>Stryker (NYSE: SYK) announced today a definitive agreement to acquire all of the issued and outstanding ordinary shares of Wright Medical Group N.V. (NASDAQ: WMGI) for $30.75 per share, or a total equity value of approximately $4.0 billion and a total enterprise value of approximately $5.4 billion (including convertible notes). Wright Medical, which was founded in 1950, is a global medical device company focused on extremities and biologics.&nbsp;</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2019/Stryker-announces-definitive-agreement-to-acquire-Wright-Medical/default.aspx\"><span class=\"standalone-link\">READ FULL PRESS RELEASE HERE</span></a></p>\n",
           "jcr:lastModified": "Mon Nov 04 2019 15:09:15 GMT+0000",
@@ -58,7 +58,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Mon Nov 04 2019 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "04-Nov-2019",
@@ -67,7 +67,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "srcFileRef": "/content/dam/stryker/about/news/images/stryker_logo2015_left.jpg",
     "jcr:lastModified": "Mon Nov 04 2019 15:49:30 GMT+0000",
     "sling:resourceType": "stryker/components/content/standaloneimage"

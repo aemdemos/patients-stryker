@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f5130977-7eea-4731-b2c9-1ed560f1e4e1",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+  "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
   "jcr:predecessors": [
     "56051e9d-f792-451d-b3e3-8c892d278611"
   ],
@@ -29,14 +29,14 @@
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "cq:parentPath": "/content/stryker/us/en/neurovascular",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "darek.jansen1@stryker.com",
+  "cq:lastModifiedBy": "user-f03ac58e27@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "largeheadline": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Thu May 01 2025 18:15:42 GMT+0000",
       "gradientDirection": "left-to-right",
       "line1": "<span class=\"fontsize-2vw\">Surpass Elite Flow Diverter System</span>",
@@ -50,8 +50,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Thu May 01 2025 18:17:29 GMT+0000",
       "jcr:lastModified": "Thu May 01 2025 18:17:29 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -60,8 +60,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Thu May 01 2025 18:17:38 GMT+0000",
           "text": "<p><span class=\"futura-bold\">This document is intended solely for the use of healthcare professionals in the U.S.</span></p>\n<p><b>RX ONLY</b></p>\n<p>See package insert for complete indications, contraindications, warning sand instructions for use.</p>\n<p><b>US Intended use / indications for use</b></p>\n<p>The Surpass Elite Flow Diverter System is indicated for use in the endovascular treatment of patients (18 years of age and older) with unruptured large or giant saccular wide-neck (neck width ≥ 4mm ordome-to-neck ratio &lt; 2) or fusiform intracranial aneurysms in the internalcarotid artery from the petrous segment to the terminus aris</p>\n",
           "jcr:lastModified": "Thu May 01 2025 20:07:37 GMT+0000",
@@ -74,8 +74,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Thu May 01 2025 18:18:39 GMT+0000",
           "text": "<p><b>Contraindications</b></p>\n<p>The Surpass Elite Flow Diverter is contraindicated in the following patient types:</p>\n<ul>\n<li>Patients in whom the parent vessel size does not fall within theindicated range.</li>\n<li>Patients in whom antiplatelet and / or anticoagulation therapy (e.g.,aspirin and clopidogrel) is contraindicated.</li>\n<li>Patients who have not received dual anti-platelet agents prior to the procedure.</li>\n<li>Patients with an active bacterial infection.</li>\n<li>Patients in whom the angiography demonstrates the anatomy is notappropriate for endovascular treatment due to conditions such as:<ul>\n<li>Severe intracranial vessel tortuosity or stenosis; and/or</li>\n<li>Intracranial vasospasm not responsive to medical therapy</li>\n</ul>\n</li>\n</ul>\n",
           "jcr:lastModified": "Thu May 01 2025 20:07:51 GMT+0000",
@@ -86,8 +86,8 @@
     },
     "cols3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "darek.jansen1@stryker.com",
-      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:createdBy": "user-f03ac58e27@example.invalid",
+      "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
       "jcr:created": "Thu May 01 2025 18:20:25 GMT+0000",
       "jcr:lastModified": "Thu May 01 2025 18:20:25 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -96,8 +96,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Thu May 01 2025 18:20:31 GMT+0000",
           "text": "<p><b>Potential adverse events</b></p>\n<p>Risks that may be associated with the use of the Surpass Elite Flow Diverter System in the intracranial arteries include:</p>\n<ul>\n<li>Adverse reaction to anesthesia, contrast or antiplatelet/anticoagulation agents</li>\n<li>Allergic reaction</li>\n<li>Aphasia</li>\n<li>Cardiac arrhythmia</li>\n<li>Cranial neuropathy</li>\n<li>Confusion, coma, change in mental status</li>\n<li>Death</li>\n<li>Device migration, fracture, misplacement</li>\n<li>Dissection of the parent artery</li>\n<li>Embolism (air, clots, device fragments)</li>\n<li>Groin injury (bleeding, pain, vessel/nerve damage)</li>\n<li>Headache</li>\n<li>Hemiplegia</li>\n<li>Hydrocephalus</li>\n<li>Implant or parent vessel stenosis</li>\n<li>Implant thrombosis/occlusion</li>\n<li>Infection</li>\n<li>Intracerebral bleeding</li>\n<li>Mass effect</li>\n<li>Myocardial infarction</li>\n<li>Neurological deficits</li>\n<li>Perforation or rupture of aneurysm</li>\n<li>Perforation of Parent Artery</li>\n<li>Progressive neurologic symptoms related to intracranial aneurysm (IA)</li>\n<li>Pseudoaneurysm formation</li>\n<li>Reaction to radiation exposure (i.e., alopecia, burns ranging in severity from skin reddening to ulcers, cataracts, delayed neoplasia)</li>\n<li>Renal failure</li>\n<li>Retroperitoneal hematoma</li>\n<li>Seizure</li>\n<li>Stroke</li>\n<li>Subarachnoid hemorrhage</li>\n<li>Thromboembolism from device</li>\n<li>Thrombosis of parent artery or branch vessel</li>\n<li>Transient ischemic attack (TIA)</li>\n<li>Vasospasm</li>\n</ul>\n<p>Risks that are eye related with the use of the Surpass Elite Flow Diverter System may include:</p>\n<ul>\n<li>Amaurosis fugax/transient blindness</li>\n<li>Blindness</li>\n<li>Diplopia</li>\n<li>Reduced visual acuity/field</li>\n<li>Retinal artery occlusion</li>\n<li>Retinal ischemia</li>\n<li>Retinal infarction</li>\n<li>Vision impairment<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Thu May 01 2025 18:35:44 GMT+0000",
@@ -110,8 +110,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Thu May 01 2025 18:23:55 GMT+0000",
           "text": "<p><b>Warnings</b></p>\n<ul>\n<li>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</li>\n<li>For single patient use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing or resterilization may compromise the structural integrity of the device and/or lead to device failure which, in turn, may result in patient injury, illness or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection, including, but not limited to, the transmission of infectious disease(s) from one patient to another. Contamination of the device may lead to injury, illness or death of the patient.</li>\n<li>After use, dispose of product and packaging in accordance with hospital administrative and/or local government policy.</li>\n<li>This device should only be used with adequate fluoroscopic guidance by physicians who have received appropriate training in interventional neuroradiology or interventional radiology, and training on the use of this device as established by Stryker Neurovascular.</li>\n<li>Persons allergic to nickel, cobalt chromium or platinum tungsten metal may suffer an allergic response to this system.</li>\n<li>Appropriate anti-platelet and anti-coagulation therapy should be employed in accordance with standard medical practice.</li>\n<li><b>[Clinical Warning]</b>&nbsp;The safety and effectiveness of the device has not been evaluated or demonstrated for ruptured intracranial aneurysms.</li>\n<li><b>[Clinical Warning]</b>&nbsp;A decrease in effectiveness has been observed in subjects aged &gt; 65 years old, subjects with history of smoking and history of prior non-target intracranial aneurysm treated.</li>\n<li><b>[Clinical Warning]</b>&nbsp;Placement of multiple Surpass Elite Flow Diverters may increase the risk of ischemic complications. Implantation of more than one Surpass Elite Flow Diverter in non-clinical in vivo studies showed an increase in the generation of platinum microparticulates in the surrounding vessel tissues. The presence of the platinum microparticulates did not produce any adverse pathological changes such as overt inflammation or altered healing in the implanted vessels in the animals; however, the risk of platinum microparticulates in human patients is unknown.</li>\n<li><b>[Clinical Warning]</b>&nbsp;Delayed aneurysm rupture may occur with large and giant intracranial aneurysms.<br>\n</li>\n</ul>\n",
           "jcr:lastModified": "Thu May 01 2025 18:34:53 GMT+0000",
@@ -124,8 +124,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "darek.jansen1@stryker.com",
-          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:createdBy": "user-f03ac58e27@example.invalid",
+          "jcr:lastModifiedBy": "user-f03ac58e27@example.invalid",
           "jcr:created": "Thu May 01 2025 18:25:56 GMT+0000",
           "text": "<p><b>Cautions / precautions</b></p>\n<ul>\n<li>Carefully weigh the benefits of treatment vs. the risks associated with treatment using the device for each individual patient based on their medical health status and risks factors for intracranial aneurysm rupture during their expected lifetime such as age, medical comorbidities, history of smoking, intracranial aneurysm size, location, and morphology, family history, history of prior asymptomatic subarachnoid hemorrhage (aSAH), documented growth of intracranial aneurysm on serial imaging, presence of multiple intracranial aneurysms, and presence of concurrent pathology. The benefits of device use may not outweigh the risk sassociated with the device in certain patients; therefore, judicious patientselection is recommended.</li>\n<li>This device has not been evaluated for pediatric use.</li>\n<li>The safety and effectiveness of the device has not been established in the treatment of small and medium wide-neck intracranial aneurysms.</li>\n<li>Experience with endovascular implants indicates that there is a risk of stenosis. Subsequent stenosis may require dilatation of the vessel segment containing the device. The risks and long-term outcome following dilatation of endothelialized devices is unknown at present.</li>\n<li>A thrombosing aneurysm may aggravate pre-existing or cause newsymptoms of mass effect and may require medical therapy.</li>\n<li>Operators should take all necessary precautions to limit X-radiation dose to patients and themselves by using sufficient shielding, reducing fluoroscopy times, and modifying X-ray technical factors where possible.</li>\n<li>Lower intracranial aneurysm occlusion rates may be associated with giant intracranial aneurysms (&gt;25mm).</li>\n<li>Lower intracranial aneurysm occlusion rates may be associated with implants that are not fully apposed to the vessel wall.</li>\n</ul>\n<p><b>MRI Safety Information</b></p>\n<p>Non-clinical testing demonstrated that the Surpass Elite Flow Diverter is MR Conditional for single and overlapping up to 60mm in length. A patient with the Surpass Elite Flow Diverter can be scanned safely in an MRsystem under the following conditions:</p>\n<ul>\n<li>Static magnetic field of 1.5 Tesla and 3 Tesla, only</li>\n<li>Maximum spatial gradient magnetic field of 3,000 Gauss/cm (30 T/m)</li>\n<li>Maximum MR system reported, whole body averaged specific absorptionrate (SAR) of 2 W/kg in the Normal Operating Mode</li>\n</ul>\n<p>Under the scan conditions defined, the Surpass Elite Flow Diverter is expected to produce a maximum temperature rise of 3.0°C after 15 minutes of continuous scanning (i.e., per pulse sequence). In non-clinical testing, the image artifact caused by the Surpass Elite Flow Diverter extends approximately 10mm from this implant when imaged using a gradient echo pulse sequence and a 3 Tesla MR system. The lumen cannot be visualized on gradient echo or T1-weighted, spin echo pulse sequences.</p>\n<p><b>Caution:&nbsp;</b>The Surpass Elite Flow Diverter may create local field inhomogeneity and susceptibility artifacts during magnetic resonance angiography (MRA), which may degrade the diagnostic quality to assess effective intracranial aneurysm treatment.</p>\n<p>The health state of the patient or the presence of other implants may require reduction of the MRI limits.</p>\n",
           "jcr:lastModified": "Thu May 01 2025 20:10:22 GMT+0000",

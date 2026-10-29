@@ -8,7 +8,7 @@
   "jcr:title": "BIO⁴",
   "jcr:versionHistory": "7986f8b8-507d-45c6-aeca-be1e04e4fb80",
   "cq:template": "/apps/stryker/templates/product-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/bio4/images/Bio4-666x392.png",
   "jcr:predecessors": [
     "5f52697f-1b4e-497e-bee5-92c2fa1681a1"
@@ -42,13 +42,13 @@
   "sling:resourceType": "stryker/components/structure/pages/product-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Mon Jun 12 2017 13:47:46 GMT-0400",
       "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/bio4/images/Bio4-666x392.png",
@@ -69,7 +69,7 @@
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_2095786845",
         "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1982081592"
       ],
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:lastModified": "Wed Jul 06 2022 13:32:12 GMT+0000",
       "sling:resourceType": "stryker/components/content/resourcesanddownload"
     }
@@ -78,7 +78,7 @@
     "jcr:primaryType": "nt:unstructured",
     "shortDescTitle": "<p>BIO<sup>4</sup> Viable Bone Matrix</p>\r\n",
     "shortDescTop": "<p>BIO<sup>4&nbsp;</sup>possesses all four characteristics involved in bone repair and regeneration: osteoconductive, osteoinductive, osteogenic, and angiogenic.<sup>1-3&nbsp;</sup>It is an alternative to autograft that minimizes the potential for harvest site comorbidities. BIO<sup>4</sup>:</p>\r\n",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "jcr:lastModified": "Mon Mar 12 2018 14:19:13 GMT-0400",
     "sling:resourceType": "stryker/components/content/pageshortdescription",
     "textIsRich": [
@@ -127,7 +127,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>BIO4 is manufactured by Osiris Therapeutics, Inc.&nbsp;&nbsp;<br>\r\n</p>\r\n<p>References:</p>\r\n<ol>\r\n<li>Data on file at Osiris Therapeutics, Inc.</li>\r\n<li>Roberts and Rosenbaum, “Bone grafts, bone substitutes and orthobiologics,” Organogenesis (2012).</li>\r\n<li>Bourke et al., “Vascular Endothelial Growth Factor (VEGF) in Human Peristeum - Normal Expression and Response to Fracture,” Journal of Bone &amp; Joint Surgery, British Volume (2003).</li>\r\n</ol>\r\n<p>BIBI4-WB-3_14832</p>\r\n",
     "jcr:lastModified": "Mon Mar 12 2018 14:25:42 GMT-0400",

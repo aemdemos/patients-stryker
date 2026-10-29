@@ -9,7 +9,7 @@
   "jcr:versionHistory": "0cec7705-d141-4202-8efc-37baec0125cd",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "f4955b41-c43c-402c-b410-6ed98d5c227a"
@@ -38,14 +38,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/news/2024",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Wed Aug 21 2024 16:54:18 GMT+0000",
       "jcr:lastModified": "Wed Aug 21 2024 16:54:18 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -54,8 +54,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Aug 21 2024 16:54:51 GMT+0000",
           "text": "<p><b>PORTAGE, Mich.</b> – <b>Aug. 22, 2024</b> – Stryker (NYSE: SYK), a global leader in medical technologies, announced today a definitive agreement to acquire Vertos Medical Inc., a privately held company providing a minimally invasive solution for treating chronic lower back pain caused by lumbar spinal stenosis.&nbsp;</p>\n<p>Lumbar spinal stenosis affects millions of people globally and is a leading cause of pain and disability. Patients today are seeking minimally invasive treatment options, valuing reduced recovery times and quicker returns to daily life. Vertos Medical’s mild<sup>®</sup> procedure provides a solution for pain relief and may improve mobility<sup>1,2</sup> without the need for major surgery.&nbsp;</p>\n<p>“We are committed to helping customers restore patients’ quality of life with interventional solutions to address chronic pain,” said Andy Pierce, Group President, MedSurg and Neurotechnology, Stryker. “This acquisition strengthens our minimally invasive pain management portfolio with differentiated treatments and expands our reach across ambulatory surgery centers.”&nbsp;</p>\n<p>“Allowing patients to get back to what matters most to them is what matters most to us,” said Eric Wichems, Vertos Medical’s Chief Executive Officer. “Stryker’s mission and focus on interventional solutions provides an opportunity to further improve patients' quality of life.”&nbsp;</p>\n<p>This transaction is subject to customary closing conditions. Stryker and Vertos Medical Inc. will continue to operate as separate entities and proceed with business as usual until the transaction closes.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Aug 21 2024 16:59:06 GMT+0000",
@@ -64,16 +64,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Aug 21 2024 16:58:53 GMT+0000",
           "jcr:lastModified": "Wed Aug 21 2024 16:58:53 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_1777164210": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Wed Aug 21 2024 16:59:10 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.&nbsp;</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nBeth Sizemore<br>\nSr. Director, Strategic Communications<br>\n<a href=\"mailto:beth.sizemore@stryker.com\">beth.sizemore@stryker.com</a></p>\n",
           "jcr:lastModified": "Wed Aug 21 2024 17:46:04 GMT+0000",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Thu Aug 22 2024 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "22-Aug-2024",
@@ -98,7 +98,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "alt": "Stryker logo",
     "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
@@ -109,13 +109,13 @@
   },
   "eventlocationproperties": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "jcr:lastModified": "Wed Aug 21 2024 16:54:01 GMT+0000",
     "sling:resourceType": "stryker/components/content/eventlocationproperties"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References</p>\r\n<p>1. Deer TR, Chafin TB, Costandi SJ, Qu H, Kim C, Jassal N, Patel K, Calodney A. The MOTION study: Two-year results of a real-world randomized controlled trial of the mild® procedure for treatment of lumbar spinal stenosis. Pain Pract. 2024 Jan;24(1):109-119.</p>\r\n<p>2. Deer TR, Costandi SJ, Washabaugh E, Chafin TB, Wahezi SE, Jassal N, Sayed D. The MOTION Study: A Randomized Controlled Trial with Objective Real-World Outcomes for Lumbar Spinal Stenosis Patients Treated with the mild® Procedure: One-Year Results. Pain Med. 2022 Apr 8;23(4):625-634.</p>\r\n",
     "jcr:lastModified": "Wed Aug 21 2024 19:57:47 GMT+0000",

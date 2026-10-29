@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Unveils Game-Changing Soft Tissue Technology With SonicAnchor™",
   "jcr:versionHistory": "17d062ae-cf56-40d8-ace9-951ade8584c9",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
   "jcr:predecessors": [
     "85a703ff-a08d-463b-a5b5-45e4ab34dbd6"
   ],
@@ -27,14 +27,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "cq:lastModifiedBy": "user-f9c250736c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "publishDate": "Thu Jul 14 2016 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "14-Jul-2016",
@@ -43,7 +43,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
     "text": "<p>MAHWAH, N.J.,&nbsp;July 14, 2016&nbsp;/PRNewswire/ --&nbsp;Stryker's Foot &amp; Ankle business unit today announced its new soft tissue solution, SonicAnchor™, the only implant in the U.S. market that utilizes ultrasonic energy to liquefy and flow into cancellous bone, is now available nationwide for suture or tissue fixation in foot, ankle, knee, hand, wrist, elbow and shoulder open procedures. SonicAnchor™ will be showcased during the American Orthopaedic Foot &amp; Ankle Society (AOFAS) annual meeting from July 20-23 in Toronto.</p>\n<p>Unlike traditional anchor fixation, the product's design and SonicFusion technology may lower risk of breakage during insertion and offers high pull out strength and reliability.<sup>1</sup> The application of ultrasonic energy liquefies the tip of the SonicAnchor™, a bioresorbable polylactide polymer, enabling it to flow into cancellous bone cavities for stable fixation within five seconds after application.<sup>2</sup><br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-unveils-game-changing-soft-tissue-technology-with-sonicanchor-300298559.html\" target=\"_blank\">PRNewswire</a><br>\n</p>\n",
     "jcr:lastModified": "Fri Jun 02 2017 11:06:58 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",

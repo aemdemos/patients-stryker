@@ -9,7 +9,7 @@
   "jcr:versionHistory": "1323cc65-14ac-42a5-8565-46150109b525",
   "cq:template": "/apps/stryker/templates/specialty",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "jcr:predecessors": [
     "b75a79be-ddc4-4ec5-be1d-3c530ae71181"
   ],
@@ -33,7 +33,7 @@
   "jcr:uuid": "3eb43430-641e-4a60-bcda-3e3ccd532b79",
   "sling:resourceType": "stryker/components/structure/pages/specialty",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "navTitle": "Emergency response and resuscitation AEDs",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
@@ -49,7 +49,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Mon Jun 17 2019 13:50:40 GMT+0000",

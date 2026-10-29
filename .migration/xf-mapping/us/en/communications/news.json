@@ -9,7 +9,7 @@
   "jcr:versionHistory": "cb5b72f5-f11e-4ebf-b4d4-0e5f541eb563",
   "cq:template": "/apps/stryker/templates/news-landing",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:lastModifiedBy": "user-97c08b5f98@example.invalid",
   "jcr:predecessors": [
     "89c236c3-134f-4106-b2aa-d8e15c55befb"
   ],
@@ -28,11 +28,11 @@
   "sling:resourceType": "stryker/components/structure/pages/news-landing",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "newsandannouncements": {
     "jcr:primaryType": "nt:unstructured",
     "showDates": "false",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "searchPath": "/content/stryker/us/en/communications/news",
     "hideNewsFilters": "false",
     "jcr:lastModified": "Mon Mar 24 2025 22:49:16 GMT+0000",
@@ -54,7 +54,7 @@
   },
   "longtexthero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModifiedBy": "user-570d0a82db@example.invalid",
     "imageMap": "[poly(1478,728,1488,728,1488,718,1478,718,1478,728)\"quickview:sku=\"|\"\"|\"Hotspot 1\"]",
     "jcr:lastModified": "Tue May 09 2017 18:39:13 GMT-0400",
     "sling:resourceType": "stryker/components/content/longtexthero",
@@ -68,7 +68,7 @@
     "bottomPadding": "4",
     "leftPadding": "5",
     "topPadding": "5",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideComponent": "false",
     "rightMargin": "5",
     "gradientDirection": "left-to-right",

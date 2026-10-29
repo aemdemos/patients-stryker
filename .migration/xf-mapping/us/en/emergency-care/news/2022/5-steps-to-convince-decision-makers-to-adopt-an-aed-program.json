@@ -9,7 +9,7 @@
   "jcr:versionHistory": "e30a07d7-fb0a-48d6-8761-4a600dd2400c",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
   "thumbnailAltText": "Group of executives discussing creating an AED program for their workplace ",
   "jcr:predecessors": [
     "d55b9284-4330-445c-9fe0-192e371f2074"
@@ -31,15 +31,15 @@
   "jcr:uuid": "74c5323e-10a3-411c-ae28-d72954c4d932",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "cq:lastModifiedBy": "user-9846ac1203@example.invalid",
   "navTitle": "5 steps to convince decision makers to adopt an AED program",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
       "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -48,10 +48,10 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:createdBy": "user-98fdffe29c@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/master",
-          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
           "mobileOverlay": "mobile_Bottom",
           "verticalMargin": "15",
           "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
@@ -66,8 +66,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "brittany.brady@stryker.com",
-              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:createdBy": "user-98fdffe29c@example.invalid",
+              "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
               "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">5 steps to convince<br>\r\n decision makers to adopt<br>\r\n an AED program</span></span></h1>\r\n",
@@ -85,8 +85,8 @@
     },
     "cols3_1341500114_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -100,8 +100,8 @@
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-9846ac1203@example.invalid",
       "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
       "text": "2-minute read You believe that an automated external defibrillator (AED) program is important for your company, yet others don’t understand the potentially lifesaving benefits. Below is a step-by-step guide on how to convince decision makers to adopt an AED program at your organization. 1. Educate senior management about sudden cardiac arrest Many people mistakenly believe performing CPR after a sudden cardiac arrest is enough until emergency services arrive on scene. Although CPR helps maintain blood flow to the brain and heart, defibrillation is the only definitive treatment for cardiac arrest and the sooner it begins, the better. Familiarize yourself with facts about sudden cardiac arrest and possible survival: The American Heart Association (AHA) estimates that more than 350,000 people suffer sudden cardiac arrest every year.1 The AHA recommends defibrillation within five minutes of collapse, as early defibrillation provides the best possibility of survival for the victim.2 A study of public access defibrillation (PAD) programs showed that communities with volunteers trained in CPR and the use of AEDs had twice as many victims survive compared to communities with volunteers trained only in CPR.3 The average response time for EMS arrival is eight to 10 minutes.4 The chance of survival for a victim decreases for each minute that passes after a sudden cardiac attack by as much as 10 percent.5 Using a nearby AED with responders trained in recognizing sudden cardiac arrest, calling 911 and performing CPR is the best assurance that a colleague or workplace visitor experiencing cardiac arrest will receive prompt treatment. 2. Demonstrate AED usability Assure your management team that AEDs are designed to be safe and intuitive to use in an emergency. The devices provide detailed directions with voice and visual prompts, so rescuers know exactly what to do. Some AED models are fully automatic and do not require the user to press a button if the AED determines a shock is needed. The AED automatically gives the shock after alerting rescuers to stand clear of the victim. Some AEDs, including the LIFEPAK CR2, connect to Wi-Fi® to give emergency responders a complete picture of the sudden cardiac arrest event before they arrive on scene. We recommend arranging an on-site CPR and AED demonstration from your local EMS or hospital system or through an AED expert at Stryker. 3. Explain how an AED management program simplifies Senior management may have valid concerns about the financial and personnel resources needed to implement and maintain an AED program. Stryker’s LIFELINKcentral AED program manager offers: Need assessments AED placement recommendations Implementation planning Ongoing AED management and servicing Remote monitoring Map views of your fleet Battery status alerts and expiration notifications Important safety equipment tracking* It is essential to establish a regular schedule for device inspection, carefully track when the battery and electrode pads need replacing and act when team refresher training courses are needed. LIFELINKcentral greatly reduces the effort and expense of managing your AED program, while increasing readiness and effectiveness. 4. Dispel concerns about liability In the U.S., Good Samaritan laws in all 50 states give legal protection to bystanders who help others experiencing a medical emergency. Many states now mandate AEDs in certain locations including schools and health clubs. Your company's legal counsel can advise you about the laws in your state. Key thought leaders in public health and safety have taken the lead in advancing the cause of AED placement in the workplace and other locations: Cardiac Arrest Survival Act of 2000 encourages AED placement in all federal buildings The FAA requires all passenger flights to carry an onboard AED 5. Cultivate allies to support the cause Before presenting your proposal to create an AED program to senior leadership, recruit other employees within your company. Ideas to gain support include creating a task force to research the issue and provide recommendations, educating fellow employees on the importance of an AED program and tapping into your organization's human resources department or employee resource groups to gain supporters. The more people aware of the dangers of sudden cardiac arrest and the importance of early defibrillation in saving lives and improving outcomes, the stronger the advocacy you can build within your organization. Together, we save lives. Help keep your workplace safe with Stryker's full line of defibrillators. With the right solution for all public places, we can help you improve sudden cardiac arrest survival rates in your community. Contact an AED expert today to learn more about our full line of defibrillators and program management options.",
       "jcr:lastModified": "Mon Aug 15 2022 19:02:01 GMT+0000",
@@ -111,8 +111,8 @@
     },
     "cols3_1341500114_cop_132129200": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols3",
@@ -127,7 +127,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Wed Oct 13 2021 00:00:00 GMT-0500",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "13-Oct-2021",
@@ -140,14 +140,14 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Tue May 31 2022 18:41:44 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*Features included with a pro license/paid subscription</p>\r\n<p>1. Source:CPR.heart.org<br>\r\n2. https://www.ahajournals.org/doi/10.1161/circ.102.suppl_1.I-60<br>\r\n3. A. Hallstrom, J.P. Ornato. New England Journal of Medicine. &quot;Public-access-defibrillation and survival after out-of-hospital cardiac arrest.&quot; Volume 351, Issue 7, Pages 637-646, 2004.<br>\r\n4. National EMS database: Accessed September 2012<br>\r\n5. R.O. Cummins, Annals of Emergency Medicine. &quot;From concept to standard of care? Review of the clinical experience with automated external defibrillators.&quot; Volume 18, Issue 12, pages 1269-75, 1989.</p>\r\n",
     "jcr:lastModified": "Tue May 31 2022 18:42:52 GMT+0000",

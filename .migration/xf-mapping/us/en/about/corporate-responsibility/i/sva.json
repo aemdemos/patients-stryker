@@ -7,7 +7,7 @@
   "jcr:title": "Stryker’s veterans association (SVA)",
   "jcr:versionHistory": "fdbc4325-b93f-4473-9317-a3c2f7d1fec3",
   "cq:template": "/apps/stryker/templates/base",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "0019e1e0-28d5-4fe9-8292-b6f57a2030a3"
   ],
@@ -22,14 +22,14 @@
   "jcr:uuid": "94088249-8ea9-4e2f-b717-f13af833b75d",
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jane.irwin@stryker.com",
-      "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+      "jcr:createdBy": "user-cc3049cb53@example.invalid",
+      "jcr:lastModifiedBy": "user-54ce2ef3a1@example.invalid",
       "jcr:created": "Thu Jun 08 2017 17:43:29 GMT-0400",
       "headColor": "rgba(0,0,0,1)",
       "jcr:lastModified": "Fri Oct 20 2017 16:10:06 GMT-0400",
@@ -37,8 +37,8 @@
     },
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jane.irwin@stryker.com",
-      "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+      "jcr:createdBy": "user-cc3049cb53@example.invalid",
+      "jcr:lastModifiedBy": "user-cc3049cb53@example.invalid",
       "jcr:created": "Thu Jun 08 2017 17:43:10 GMT-0400",
       "jcr:lastModified": "Thu Jun 08 2017 17:44:06 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -47,8 +47,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jane.irwin@stryker.com",
-          "jcr:lastModifiedBy": "adam.wenz@stryker.com",
+          "jcr:createdBy": "user-cc3049cb53@example.invalid",
+          "jcr:lastModifiedBy": "user-5be275c543@example.invalid",
           "jcr:created": "Thu Jun 08 2017 17:43:41 GMT-0400",
           "text": "<p><br>\nWe understand how a veteran workforce can positively impact an employer and the region.&nbsp; We also understand the importance of having a strong employee connection with team and community.&nbsp; That’s why we created Stryker’s veterans association (SVA).&nbsp;</p>\n<p>SVA strives to make Stryker a preferred destination for top veteran talent by driving military employee engagement.&nbsp; Our meetings provide career insights for our members and hiring managers, and our meet-ups build camaraderie among our members and their families.&nbsp;&nbsp;</p>\n<p>SVA initiatives focus on teamwork, reflecting the team focus found within the military. SVA activities also emphasize helping others, which ties directly to Stryker’s mission, “Together with our customers, we are driven to make healthcare better.”&nbsp; We participate in community initiatives and host fundraisers for active military, veterans and families in need.<br>\n</p>\n",
           "jcr:lastModified": "Thu Nov 15 2018 16:19:04 GMT+0000",
@@ -61,8 +61,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "adam.wenz@stryker.com",
-          "jcr:lastModifiedBy": "adam.wenz@stryker.com",
+          "jcr:createdBy": "user-5be275c543@example.invalid",
+          "jcr:lastModifiedBy": "user-5be275c543@example.invalid",
           "jcr:created": "Mon Nov 12 2018 17:13:22 GMT+0000",
           "alt": "Military Friendly Employer Bronze",
           "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/military-friendly-employer-bronze.png",
@@ -73,8 +73,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
-      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
+      "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
       "jcr:created": "Wed Aug 01 2018 13:38:47 GMT-0400",
       "jcr:lastModified": "Wed Aug 01 2018 13:38:47 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -82,8 +82,8 @@
         "jcr:primaryType": "nt:unstructured",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "jeannie.chan@stryker.com",
-          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:createdBy": "user-5b105250fc@example.invalid",
+          "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
           "jcr:created": "Wed Aug 01 2018 13:38:39 GMT-0400",
           "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/DiversityAndInclusion/SVA sample photo.png",
           "jcr:lastModified": "Wed Aug 01 2018 13:38:53 GMT-0400",

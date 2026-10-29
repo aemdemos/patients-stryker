@@ -9,7 +9,7 @@
   "jcr:versionHistory": "1e4485b9-d957-470f-acd4-640fd7826adf",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "stryker-logo-thumbnail",
   "jcr:predecessors": [
     "78c1cb6d-7d1f-4948-b84c-2c9905bd2018"
@@ -32,14 +32,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Fri Jun 14 2024 17:39:51 GMT+0000",
       "jcr:lastModified": "Fri Jun 14 2024 17:39:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -48,8 +48,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Jun 14 2024 17:40:16 GMT+0000",
           "text": "<p><span class=\"futura-bold\">PORTAGE, Mich., and CHARLOTTE, N.C., June 18, 2024</span>&nbsp;– Stryker is bringing its innovative products, platforms and robotic technologies to IRCAD North America (IRCAD NA), a subsidiary of Atrium Health, as part of a multi-year agreement supporting the creation of a cutting-edge experiential education center in Charlotte, North Carolina. IRCAD NA is set to become the cornerstone of the first research building at “The Pearl,” a new innovation district currently under construction in the heart of Charlotte. It will attract thousands of medical professionals from around the world each year for advanced training in the latest surgical techniques and technologies.</p>\n<p>Stryker's involvement underscores its commitment to advancing medical education and patient care through collaboration and aligns with its mission to make healthcare better. The company will help equip IRCAD NA’s training center with its advanced medical devices, aiming to elevate the skill levels of physicians and technicians. This training center will focus on education in the areas of robotics, medical virtual and augmented reality, surgical artificial intelligence and simulation training.</p>\n<p>“Stryker was inspired by IRCAD North America’s vision to elevate education and enhance healthcare for future generations of clinicians,” said Mike Carlin, president of customer solutions for Stryker. “We are thrilled to incorporate Stryker’s products and technologies into this state-of-the-art training center, which we believe will make a significant impact on medicine globally.”</p>\n<p>Founded in 1994, IRCAD opened its first facility on the grounds of the University Hospital of Strasbourg, France, and currently has training centers in seven countries: Brazil, China, France, India, Lebanon, Rwanda and Taiwan. When it opens in the summer of 2025, IRCAD NA, in Charlotte, will be its exclusive training headquarters in North America.</p>\n<p>“We are building something remarkable in Charlotte at The Pearl, a hub for innovation, medical science and research that will accelerate the pace, scale and impact of clinical breakthroughs,” said Eugene A. Woods, CEO of Advocate Health, of which Atrium Health is a part. “This training center at IRCAD’s North American headquarters and the partnership with Stryker will play a critical role in helping us shape the future of medicine and help clinicians deliver the most advanced and cutting-edge care.”</p>\n<p>The collaborative relationship between the organizations is designed to create a unique, non-clinical physician training environment in a state-of-the-art experiential center. For Stryker, having its technologies readily available in the training center allows IRCAD NA trainees to improve their surgical skills, using Stryker’s technologies. The ultimate goal is improved patient outcomes and the advancement of medicine.</p>\n<p>“IRCAD NA holds so much promise for enhancing the capabilities of medicine and surgery through innovations in robotics, data science and artificial intelligence,” said Dr. Dionisios Vrochides, executive director of IRCAD NA and a clinical professor of surgical sciences at Wake Forest University School of Medicine. “We’ve set a bold and unique vision for IRCAD North America, which expands the education and training model beyond general surgery to offer education sessions and labs in the fields of cardiology, neurosciences and orthopedics – disciplines that aren’t available at other IRCAD training locations around the world.”</p>\n<p>Stryker will assist IRCAD NA in the development of curriculum at the center and have an opportunity to host a variety of its own onsite classes, in addition to those offered by IRCAD NA, to develop and enhance skills on some of its most advanced equipment.</p>\n<p>The Pearl is a joint development between Atrium Health and Wexford Science &amp; Technology. In addition to IRCAD NA, a second campus of Wake Forest University School of Medicine – the academic core of Advocate Health – will anchor the innovation district. IRCAD’s presence is expected to draw multiple industry partners with an interest in advancing medicine and its capabilities.</p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Fri Jun 14 2024 20:34:24 GMT+0000",
@@ -58,16 +58,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Fri Jun 14 2024 17:43:22 GMT+0000",
           "jcr:lastModified": "Fri Jun 14 2024 17:43:22 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_copy_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Tue Jan 16 2024 15:21:32 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker<br>\n <span class=\"fontsize-1-25em\"></span><span class=\"fontsize-8em\"></span></span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">About IRCAD North America<br>\n </span>FIRCAD North America (IRCAD NA) is an advanced, experiential, surgical training center located in <a href=\"https://www.thepearlclt.com/\">The Pearl</a> innovation district in the heart of Charlotte, North Carolina. A subsidiary of <a href=\"https://atriumhealth.org/\">Atrium Health</a>, IRCAD NA serves as the exclusive North American headquarters of the global network of <a href=\"https://www.ircad.fr/\">IRCAD</a>&nbsp;surgical training facilities, founded and based in Strasbourg, France. Opening Summer 2025, IRCAD NA will specialize in educating physicians from around the world in minimally invasive surgery and image-guided surgery techniques. It features translational research laboratories and research and development units in computer science and robotics that design and develop tools for diagnosis, surgical planning and simulation aimed at improving and making surgical procedures safer. In addition to general surgery, IRCAD NA’s training curriculum will include the latest techniques in cardiovascular, neuro- and orthopedic surgeries, among others.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Jeanine Guilfoyle<br>\nDirector, Communications, Stryker<br>\n<a href=\"mailto:jeanine.guilfoyle@stryker.com\">jeanine.guilfoyle@stryker.com</a></p>\n",
           "jcr:lastModified": "Fri Jun 14 2024 20:46:17 GMT+0000",
@@ -79,7 +79,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Jun 18 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "18-Jun-2024",

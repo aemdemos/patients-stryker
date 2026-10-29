@@ -9,7 +9,7 @@
   "jcr:versionHistory": "5b395b8f-d0ee-4bc4-b4b9-7b9174adf9db",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
   "thumbnailAltText": "two patients laying in separate beds next to one another",
   "jcr:predecessors": [
     "8d51e3cc-07fe-4929-bbd1-29049bf31254"
@@ -30,14 +30,14 @@
   "jcr:uuid": "73850c74-2951-4868-a5f6-5f0c65136221",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "cq:lastModifiedBy": "user-98fdffe29c@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "text": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:27:33 GMT+0000",
       "text": "<p>When Pam Mizerany, RN, learned that one of her best friends and fellow nurse at Tampa General Hospital, Debbie, was in dire need of a life-saving kidney, she immediately raised her hand to help. Fortunately for Debbie, the pair of friends were a perfect match. Hear more about Pam and her selfless act, and the deep bond that exists between them that allowed both to continue doing what they love: caring for their patients.&nbsp;&nbsp;&nbsp;&nbsp;</p>\n",
       "jcr:lastModified": "Thu Oct 19 2023 13:16:10 GMT+0000",
@@ -46,8 +46,8 @@
     },
     "standalonevideo": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "chris.kleckner@stryker.com",
-      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:createdBy": "user-f123ca2978@example.invalid",
+      "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
       "jcr:created": "Tue Oct 10 2023 20:27:38 GMT+0000",
       "hideBorder": "true",
       "type": "typePath",
@@ -61,7 +61,7 @@
         "fileReference": "/content/dam/stryker/acute-care/videos/caregiver-stories-pam-mizerany.mp4",
         "s7ImagePreset": "",
         "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "user-f123ca2978@example.invalid",
         "s7ViewerPreset": "",
         "assetID": "stryker/caregiver-stories-pam-mizerany-AVS",
         "urlModifiers": "",
@@ -75,16 +75,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:32:34 GMT+0000",
       "jcr:lastModified": "Thu Jan 25 2024 22:32:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "customizable_copy_co": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "brittany.brady@stryker.com",
-      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:createdBy": "user-98fdffe29c@example.invalid",
+      "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
       "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
       "title": "Related",
       "jcr:lastModified": "Thu Jan 25 2024 22:45:36 GMT+0000",
@@ -108,7 +108,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "publishDate": "Fri Jan 21 2022 00:00:00 GMT-0600",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Jan-2022",

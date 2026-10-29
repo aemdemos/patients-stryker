@@ -9,7 +9,7 @@
   "jcr:versionHistory": "03dc52f4-3a48-4e22-bfbd-9e53b8784e01",
   "cq:template": "/apps/stryker/templates/base",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "hidePublicationDate": "true",
   "jcr:predecessors": [
     "d24397c9-d17c-474f-b159-ab346f88c5c5"
@@ -28,23 +28,23 @@
   "sling:resourceType": "stryker/components/structure/pages/base",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "navTitle": "Kevin Lobo",
   "par": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols_998696161": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c_805636421": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
       "text": "◁ Back",
       "jcr:lastModified": "Wed Oct 12 2022 16:40:43 GMT+0000",
@@ -54,16 +54,16 @@
     },
     "cols": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols"
     },
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "garrett.shue@stryker.com",
-      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:createdBy": "user-7065227e84@example.invalid",
+      "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
       "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
       "text": "Kevin Lobo Chair and CEO Kevin has been CEO of Stryker since October 1, 2012, and also assumed the role of Chair of the Board on July 22, 2014. He had previously been Group President of Orthopaedics. Since he joined the company in 2011, Stryker has completed more than 60 acquisitions and advanced innovation and global market presence. Kevin serves on the Boards of GE HealthCare (Nasdaq: GEHC), Parker Hannifin (NYSE: PH) and the Advanced Medical Technology Association (AdvaMed) and is also a member of the Business Council. Additionally, he serves as Chair of the Valley Health System's board of trustees in New Jersey. Prior to Stryker, he held leadership roles at Johnson & Johnson, including President of Ethicon Endo Surgery, President of J&J Medical Products Canada, and CFO roles within its consumer and women’s health divisions. Earlier in his career, he held finance and management roles at Rhone-Poulenc, including international assignments in Europe, as well as at Kraft Canada, Unilever, and KPMG. He holds a Bachelor of Commerce from McGill University, an MBA from the University of Toronto, and is a Chartered Accountant. COMM-GSNPS-SYK-3185901",
       "jcr:lastModified": "Mon Jun 06 2022 16:01:58 GMT+0000",

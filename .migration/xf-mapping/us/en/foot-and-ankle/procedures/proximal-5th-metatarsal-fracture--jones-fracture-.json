@@ -7,7 +7,7 @@
   "jcr:title": "Proximal 5th Metatarsal Fracture (Jones Fracture)",
   "jcr:versionHistory": "4e34e270-bcc1-433d-bd28-20a0d1a3f089",
   "cq:template": "/apps/stryker/templates/procedure-detail",
-  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
   "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Proximal-5th-metatarsal-fracture--Jones-fracture-/Images/Forefoot_JonesFracture.jpg",
   "jcr:predecessors": [
     "fba9449c-ec47-469a-aef0-6e0f0d14325b"
@@ -36,13 +36,13 @@
   "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "megan.foltz@stryker.com",
+  "cq:lastModifiedBy": "user-dcb21bd994@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "pagehero": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "headColor": "rgb(255,181,0)",
       "jcr:lastModified": "Wed Jul 12 2017 10:12:01 GMT-0400",
       "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Proximal-5th-metatarsal-fracture--Jones-fracture-/Images/Forefoot_JonesFracture.jpg",
@@ -54,8 +54,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_1988009981": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "megan.foltz@stryker.com",
-      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:createdBy": "user-dcb21bd994@example.invalid",
+      "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
       "jcr:created": "Tue Nov 05 2019 15:44:41 GMT+0000",
       "jcr:lastModified": "Tue Nov 05 2019 15:44:41 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -64,8 +64,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "megan.foltz@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Tue Nov 05 2019 15:44:46 GMT+0000",
           "type": "typeId",
           "videoId": "6QOrPg_vN68",
@@ -79,9 +79,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "5th Metatarsal Fracture with Dr. Mark Hardy & Dr. Jordan Grossman",
-          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-dcb21bd994@example.invalid",
           "description": "Dr. Hardy and Dr. Grossman demonstrate a 5th Metatarsal fracture using Asnis JFX.",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Nov 05 2019 15:44:50 GMT+0000",
@@ -93,8 +93,8 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "dan.scanlon@stryker.com",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "jcr:created": "Mon Jun 26 2017 16:28:35 GMT-0400",
       "jcr:lastModified": "Mon Jun 26 2017 16:28:35 GMT-0400",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -103,8 +103,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
-          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
+          "jcr:lastModifiedBy": "user-dcb21bd994@example.invalid",
           "jcr:created": "Mon Jun 26 2017 16:28:43 GMT-0400",
           "type": "typeId",
           "videoId": "3gngsHYtmTQ",
@@ -118,9 +118,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "Asnis JFX cadaver video",
-          "jcr:createdBy": "dan.scanlon@stryker.com",
+          "jcr:createdBy": "user-1f16b89b7f@example.invalid",
           "description": "This video shows the operative technique for Stryker's Asnis JFX system. The surgery is performed on a cadaver, by Dr. Berlet and Dr. Hyer, from Columbus, OH.",
-          "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+          "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Mon Aug 07 2017 08:16:53 GMT-0400",
@@ -131,7 +131,7 @@
     },
     "productgroups": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "jcr:lastModifiedBy": "user-1f16b89b7f@example.invalid",
       "searchPath": "/content/stryker/us/en",
       "title": "Related products",
       "jcr:lastModified": "Fri Jul 28 2017 10:19:12 GMT-0400",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "f70fef21-9487-4f4b-b092-cdf96206c283",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
   "thumbnailAltText": "Q Guidance",
   "jcr:predecessors": [
     "c5d85259-1a8e-41ec-b6d7-67e4c8a2f421"
@@ -31,14 +31,14 @@
   "jcr:uuid": "46a4b1bc-3ed3-4036-bd91-cb0f557a2bb7",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "cq:lastModifiedBy": "user-73104d59b2@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Sep 26 2022 19:41:34 GMT+0000",
       "jcr:lastModified": "Mon Sep 26 2022 19:41:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -47,8 +47,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Mon Sep 26 2022 19:41:39 GMT+0000",
           "alt": "Q Guidance",
@@ -62,8 +62,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Mon Sep 26 2022 13:32:51 GMT+0000",
       "jcr:lastModified": "Mon Sep 26 2022 13:32:51 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -72,8 +72,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Sep 26 2022 13:32:55 GMT+0000",
           "text": "<p><i><span class=\"fontsize-1-25em\">First spine navigation software to receive clearance from the FDA for use with pediatric patients aged 13 and older&nbsp;</span></i></p>\n<p><b>Kalamazoo, Mich.</b> –&nbsp;Stryker (NYSE:SYK), one of the world’s leading medical technology companies, announced today the launch of its Q Guidance System for spine applications. The System combines new optical tracking options provided by a redesigned, state-of-the-art camera with sophisticated algorithms of the newly launched Spine Guidance Software to deliver more surgical planning and navigation capability than ever before. When used with the Q Guidance System, the Spine Guidance Software is intended as a planning and intraoperative guidance system to enable open or percutaneous computer-assisted surgery and is the first spine navigation software to receive FDA clearance for use with pediatric patients aged 13 and older.</p>\n<p>“The Q Guidance System offers cutting-edge tracking options with its 4th generation FP8000 camera, and Spine Guidance Software allows for advanced planning and computer-assisted execution,” said Robbie Robinson, President of the Spine division. “With the addition of the Q Guidance System, customers now have access to a robust solution that includes imaging, guidance, and instruments and is fully integrated and designed to meet complex customer needs. In the years to come, our goal is to use the versatility of this System to help advance our technologies across multiple specialties including cranial, spine, ENT, and orthopaedics.”</p>\n<p>Q Guidance offers surgeons numerous benefits, including:</p>\n<ul>\n<li><b>A proprietary camera:</b> The Q Guidance System features a 4th generation FP8000 camera that offers unmatched speeds and the flexibility of multiple optical tracking methods, including full-spectrum active/passive hybrid optical tracking.<sup>1</sup> It is the only guidance system with proprietary active technology and a non-invasive patient tracker, SpineMask.</li>\n<li><b>Image processing:</b> Spine Guidance Software features completely redesigned applications, semi-automatic and automatic processing features, gesture recognition, and broad compatibility with various types of image sets.</li>\n<li><b>Spine Guidance Software:</b> Spine Guidance Software is designed to help surgeons optimize their workflow and address complex clinical decisions and techniques intraoperatively. Its computational power is designed to support our spine product and software roadmap. It is our intention to develop and release new technologies within the Q ecosystem.</li>\n</ul>\n<p>“In my experience, Spine Guidance Software truly simplifies preoperative planning, navigation and execution,” said Stephen George M.D., Director of Spine Surgery, Nicklaus Children's Hospital. “From what I have seen, the Q Guidance System is a powerful platform that has provided reliability and performance in a solution that is conveniently scalable to a wide array of surgical procedures, ranging from a single level fusion to a multi-level deformity correction. When used with the Airo TruCT scanner, Spine Guidance Software is designed to minimize time spent intraoperatively planning, thanks to its auto segmentation capability, while also allowing us the benefit of being able to image the patient in the surgical position. Its intuitive and customizable software enables us to configure the System to fit our preferences.”</p>\n<p>Stryker will be featuring the Q Guidance System and offering demonstrations at several upcoming meetings, including:</p>\n<ul>\n<li>Society for Minimally Invasive Spine Surgery (SMISS) 2022 Annual Forum in Las Vegas, Sept. 29–Oct. 1, 2022 (booth #206, #208, #210)<span style=\"color: rgb(0, 0, 0); font-size: medium;\"></span></li>\n<li>Congress of Neurological Surgeons (CNS) 2022 Annual Meeting in San Francisco, Oct. 8–12, 2022 (booth #419)<span style=\"color: rgb(0, 0, 0); font-size: medium;\"></span></li>\n<li>North American Spine Society (NASS) Annual Meeting in Chicago, Oct. 12–15, 2022 (booth #4211)<span style=\"color: rgb(0, 0, 0); font-size: medium;\"></span></li>\n</ul>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Wed Dec 21 2022 19:59:52 GMT+0000",
@@ -82,8 +82,8 @@
         },
         "text_862428244": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "hannah.white@stryker.com",
-          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:createdBy": "user-73104d59b2@example.invalid",
+          "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
           "jcr:created": "Mon Sep 26 2022 13:40:17 GMT+0000",
           "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, and Orthopaedics and Spine that help improve patient and hospital outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p>Dr. Stephen G. George is a paid consultant of Stryker. His statements represent his own opinions based on personal experience and are not necessarily those of Stryker. Individual results may vary.</p>\n<p>&nbsp;</p>\n<p><b>Media contact<br>\n </b>Andrea Sampson, Sampson Public Relations Group<br>\n562.304.0301<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n",
           "jcr:lastModified": "Mon Sep 26 2022 13:59:46 GMT+0000",
@@ -95,7 +95,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "publishDate": "Tue Sep 27 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "27-Sep-2022",
@@ -104,7 +104,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Stryker data on file</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Sep 26 2022 13:43:06 GMT+0000",

@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c01c6784-345b-4230-b987-3e7b5dfa346e",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "19489183-0f81-476b-b6a2-d664ab7f3655"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "897772a3-d056-4d78-bc05-583cad48194b",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:49:04 GMT+0000",
       "text": "Blueprint® Complex Case Debate: Pre-Operative Planning and Decision Making for a C2 Type Glenoid Join Gilles Walch, MD, Jon J.P. Warner, MD, and George Athwal, MD for a virtual symposium where they utilize Blueprint® 3D Planning Software to debate Pre-Operative Planning and Decision Making for a C2 Type Glenoid. AP-016302A",
       "jcr:lastModified": "Thu Jul 28 2022 18:49:24 GMT+0000",

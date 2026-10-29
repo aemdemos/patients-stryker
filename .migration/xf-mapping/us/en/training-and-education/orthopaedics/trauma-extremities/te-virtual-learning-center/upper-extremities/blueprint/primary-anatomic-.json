@@ -9,7 +9,7 @@
   "jcr:versionHistory": "70c8fa03-c5e0-4115-8fca-b352bcb6c76d",
   "cq:template": "/apps/stryker/templates/long-page-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "eb72c7c8-28ad-4c34-b1f8-912f9a44ad29"
   ],
@@ -28,14 +28,14 @@
   "jcr:uuid": "e0e4af16-2ef3-4e04-b0b8-fa4166ab9d88",
   "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "experiencefragment_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "hannah.white@stryker.com",
-      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:createdBy": "user-73104d59b2@example.invalid",
+      "jcr:lastModifiedBy": "user-73104d59b2@example.invalid",
       "jcr:created": "Thu Jul 28 2022 18:12:21 GMT+0000",
       "text": "Primary Anatomic Dr. Dave Shukla presents anatomic shoulder arthroplasty to an esteemed panel on “Tough Case Tuesday\" webinar presentation. Featured products include Tornier Simpliciti® Shoulder System and Tornier Perform® Anatomic Augmented Glenoid. AP-016267A",
       "jcr:lastModified": "Thu Jul 28 2022 18:12:37 GMT+0000",

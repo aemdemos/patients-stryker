@@ -9,7 +9,7 @@
   "jcr:versionHistory": "c0581cae-461b-4f92-8435-443375837818",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "lifepak35 thumbnail",
   "jcr:predecessors": [
     "1314a71c-b00b-4cea-934d-6bec3a46cd3e"
@@ -34,14 +34,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:19:19 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:19:19 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -50,8 +50,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standaloneimage": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "preset": "max_width_1440",
           "jcr:created": "Tue Jan 16 2024 15:19:24 GMT+0000",
           "alt": "lifepak35",
@@ -65,8 +65,8 @@
     },
     "cols2_2_3_1_3_206563": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:19:34 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:19:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -75,8 +75,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Jan 16 2024 15:19:38 GMT+0000",
           "text": "<h3><span class=\"urw-egyptienne\">LIFEPAK 35, a clinically advanced monitor/defibrillator, reduces caregiver burden and streamlines workflow.<sup>1</sup></span><br>\n</h3>\n<p><b>PORTAGE, Mich., USA – June 4, 2024</b>&nbsp;–&nbsp;Stryker (NYSE:SYK), a global leader in medical technologies, announced the launch of LIFEPAK 35 monitor/defibrillator, the latest product in the monitor/defibrillator space, offering advanced technology and built on an intuitive<sup>1</sup>, modern platform to help advance patient care.</p>\n<p>Emergency responders and healthcare professionals are facing unprecedented challenges and staff shortages. Seventy-five percent of healthcare workers face mental health struggles such as burnout, stress and anxiety.<sup>2</sup> First responders and healthcare providers work in a demanding, fast-paced environment and providing them with advanced technology can help streamline efficiencies. The LIFEPAK 35 is a connected solution giving life-saving teams real-time access to crucial patient information<sup>3</sup>, supporting their needs while enhancing patient care<sup>4,5,6</sup>.</p>\n<p>“After more than 10 years of research, coupled with feedback from hundreds of our customers around the globe, we’re excited to offer first responders and essential healthcare professionals an innovative monitor/defibrillator in a familiar, trusted platform,” said Anne Mullally, vice president and general manager of Stryker’s Emergency Care business. “By enabling more efficient workflow and providing clinical advancements with LIFEPAK 35, we are proud to support the challenges these providers face in our communities.”</p>\n<p>Built on a legacy of life-saving products and designed for today’s modern healthcare professional, the LIFEPAK 35 platform offers a slim, light, ergonomical design with a large intuitive touch screen to provide a customizable clinical experience. The LIFEPAK 35 allows trend monitoring to help guide caregiver decisions with its configurable events and connected capabilities for patient data, helping to support advanced patient care.<sup>3</sup> To learn more about LIFEPAK 35, please visit <a href=\"/content/stryker/us/en/emergency-care/products/lifepak-35.html\">our website</a>.</p>\n<p>To learn more about our smart, connected digital solutions and how we are making healthcare better, please visit <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare.html\">http://stryker.com/AdvancedDigitalHealthcare</a>.</p>\n",
           "jcr:lastModified": "Mon Jun 03 2024 20:55:08 GMT+0000",
@@ -87,16 +87,16 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:26:49 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:26:49 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
     },
     "cols2_2_3_1_3_122672": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue Jan 16 2024 15:21:27 GMT+0000",
       "jcr:lastModified": "Tue Jan 16 2024 15:21:27 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -105,8 +105,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Tue Jan 16 2024 15:21:32 GMT+0000",
           "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">About Stryker</span></span></h3>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.<br>\n&nbsp;</p>\n<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">Media contact</span></span></h3>\n<p>Meghan Menz<br>\nSr. Director, Communications<br>\n<a href=\"mailto:meghan.menz@stryker.com\">meghan.menz@stryker.com</a><br>\n</p>\n",
           "jcr:lastModified": "Mon Jun 03 2024 19:57:28 GMT+0000",
@@ -118,7 +118,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Tue Jun 04 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "04-Jun-2024",
@@ -127,7 +127,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Data on file. Stryker, HFVR 3338373.</li>\r\n<li><a href=\"https://mhanational.org/mental-health-healthcare-workers-covid-19\">https://mhanational.org/mental-health-healthcare-workers-covid-19</a></li>\r\n<li>Data on file. Stryker, OI 3337705.</li>\r\n<li>Data on file. Stryker, SHVR 3338410.</li>\r\n<li>Umesh N. Khot, et al. “Emergency Department Physician Activation of the Catheterization Laboratory and Immediate Transfer to an Immediately Available Catheterization Laboratory Reduce Door-to-Balloon time in ST-Elevation Myocardial Infarction”. Circulation. Journal of the American Heart Association, 2007.</li>\r\n<li>2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction: A Report of the American College of Cardiology Foundation/American Heart Association Task Force on Practice Guidelines&quot; Journal of the American College of Cardiology. 2013, section 3.4.1.1 and 3.4.1.2.</li>\r\n</ol>\r\n",
     "jcr:lastModified": "Mon Jun 03 2024 20:36:52 GMT+0000",

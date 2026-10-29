@@ -7,7 +7,7 @@
   "jcr:title": "Stryker Returns To 3M Championship For Its Third Year By Welcoming Fans To The Mobility Zone",
   "jcr:versionHistory": "52d16f0e-2f40-4dfd-bc7c-741aba573ce6",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
   "jcr:predecessors": [
     "065d4ad2-2e9b-4003-b92d-d8ffdef75528"
   ],
@@ -26,14 +26,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Thu Aug 03 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "03-Aug-2017",
@@ -42,7 +42,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>Stryker Orthopaedics, the Official Joint Replacement Products of the PGA TOUR® and PGA TOUR Champions, will return to one of the most acclaimed PGA TOUR Champions events – The 3M Championship. At the tournament's 25th anniversary, Stryker will host tournament goers at The Mobility Zone – a destination designed to educate golf fans on the importance of joint health at TPC Twin Cities in Blaine, Minnesota.</p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-returns-to-3m-championship-for-its-third-year-by-welcoming-fans-to-the-mobility-zone-300499026.html\"><b>Please click here for the full article.</b></a><br>\n</p>\n",
     "jcr:lastModified": "Wed Aug 23 2017 16:09:09 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -50,7 +50,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "http://www.prnewswire.com/news-releases/stryker-returns-to-3m-championship-for-its-third-year-by-welcoming-fans-to-the-mobility-zone-300499026.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/3M.jpg",
     "jcr:lastModified": "Wed Aug 23 2017 15:47:38 GMT-0400",

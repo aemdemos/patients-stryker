@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8cadabca-37c1-4856-affd-8b64bcf21571",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "thumbnailAltText": "India testing lab thumbnail",
   "jcr:predecessors": [
     "2c0663dd-55df-4831-8464-8c69a209689b"
@@ -35,14 +35,14 @@
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
   "activationGroup": "stryker-superuser",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "carouselslidegroup": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed May 29 2024 19:00:53 GMT+0000",
       "jcr:lastModified": "Wed May 29 2024 19:00:53 GMT+0000",
       "sling:resourceType": "stryker/components/content/carouselslidegroup",
@@ -51,12 +51,12 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "carouselslide": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/carousel/master",
           "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/carousel/master",
           "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/carousel/mobile",
           "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/carousel/mobile",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "mobileOverlay": "mobile_Overlay",
           "verticalMargin": "23",
           "jcr:created": "Wed May 29 2024 19:00:57 GMT+0000",
@@ -71,8 +71,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "largeheadline": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Wed May 29 2024 19:03:01 GMT+0000",
               "gradientDirection": "left-to-right",
               "line1": "<h1><span class=\"fontsize-3vw\"><span class=\"futura-bold\">Stryker boosts innovation</span>: <br>\r\nR&amp;D expands with medical device testing facility</span></h1>\r\n",
@@ -90,8 +90,8 @@
     },
     "fullbleedpanel": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed May 29 2024 19:02:25 GMT+0000",
       "jcr:lastModified": "Wed May 29 2024 19:02:31 GMT+0000",
       "sling:resourceType": "stryker/components/content/fullbleedpanel",
@@ -101,8 +101,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "cols2": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Wed May 29 2024 19:02:39 GMT+0000",
           "jcr:lastModified": "Wed May 29 2024 19:02:39 GMT+0000",
           "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -111,8 +111,8 @@
             "sling:resourceType": "wcm/foundation/components/parsys",
             "text": {
               "jcr:primaryType": "nt:unstructured",
-              "jcr:createdBy": "kristian.bocage@stryker.com",
-              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:createdBy": "user-c26bb7a766@example.invalid",
+              "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
               "jcr:created": "Wed May 29 2024 19:02:42 GMT+0000",
               "text": "<p>&nbsp;&nbsp;</p>\n",
               "jcr:lastModified": "Wed May 29 2024 19:02:44 GMT+0000",
@@ -125,16 +125,16 @@
     },
     "cols2": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed May 29 2024 19:02:47 GMT+0000",
       "jcr:lastModified": "Wed May 29 2024 19:02:47 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2"
     },
     "experiencefragment": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Tue May 28 2024 20:25:49 GMT+0000",
       "text": "Research and development (R&D) play a crucial role in improving the health and well-being of patients all over the world. It leads to the development of new technologies and procedures that empower healthcare professionals to deliver for their patients. Stryker’s R&D facility in India, Stryker’s Global Technology Centre (SGTC), recently expanded to accommodate rigorous life cycle testing of medical devices, including additional highly skilled engineers and microbiologists to conduct prototyping and product development testing in addition to expanded microbiology development testing. At Stryker, our commitment to industry-leading quality standards starts with our product development process, where we design for quality, manufacturability, serviceability, product security and reliability. Stryker established its first R&D facility in India more than 15 years ago and today the company’s footprint continues to expand to meet the healthcare needs of care teams all over the world. In 2022, Stryker strengthened its R&D capabilities by opening a new research and development facility, Stryker’s Global Technology Centre (SGTC), in India to help accelerate innovation globally. The SGTC facility has recently expanded to accommodate rigorous life cycle testing of medical devices, including additional highly skilled engineers and microbiologists to conduct prototyping and product development testing in addition to expanded pre-clinical microbiology testing. Why it’s important The expansion allows Stryker to add more capabilities and accommodate for the future growth of R&D across a variety of procedures. Ram Rangarajan, Vice President of Stryker Global Technology Center says, \"This new lab represents our commitment to developing medical technologies that improve patient outcomes and comply with the highest regulatory standards.\" READ THE FULL STORY Research and development (R&D) play a crucial role in improving the health and well-being of patients all over the world. It leads to the development of new technologies and procedures that empower healthcare professionals to deliver outcomes for their patients. At Stryker, our commitment to industry-leading quality standards starts with our product development process, where we design for quality, manufacturability, serviceability, product security and reliability. Stryker established its first R&D facility in India more than 15 years ago to provide engineering support to R&D functions in domestic and other emerging markets. Today the center has over 1,100 employees and is one of the company’s leading strategic innovation hubs. In 2022, Stryker expanded its footprint in India by launching a new facility under the flagship of Stryker Global Technology Centre (SGTC) to further the company’s commitment to create a robust ecosystem of research, medical technology innovation and talent expertise. The SGTC facility has expanded to allow for rigorous product development life cycle testing of Stryker’s technology. This advanced facility, spanning 55,600 square feet across three floors, serves as a key enabler for accelerating innovation from India for local and global markets. \"This new lab represents our commitment to developing medical technologies that improve patient outcomes and comply with the highest regulatory standards,\" says Ram Rangarajan, Vice President of Stryker Global Technology Center, India. The new lab possesses several key features that demonstrate our commitment to quality: Prototyping and product assurance hub: Equipped with state-of-the-art infrastructure for plastic 3D printing, metal machining, and a diverse range of testing capabilities, the lab supports prototyping and product development across Stryker’s entire product portfolio. Expanded microbiology competency: The lab strengthens Stryker’s ability to conduct comprehensive microbiological testing as part of the product development process. Talented team of engineers and microbiologists: Highly skilled engineers and microbiologists will use the advanced equipment and expertise to develop innovative solutions that positively impact patients around the world. Rangarajan says, “This lab expansion further strengthens our Stryker Global Technology Center and marks a significant milestone in our commitment towards fostering innovation from India. By leveraging the talent and expertise in the country, Stryker aims to develop medical technologies that benefit patients worldwide.” Creating a better, healthier world Learn how together with our customers across the world, we impact more than 150 million patients annually. Learn more",
       "jcr:lastModified": "Tue May 28 2024 20:39:32 GMT+0000",
@@ -145,7 +145,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Jun 10 2024 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "10-Jun-2024",
@@ -154,7 +154,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideComponent": "true",
     "gradientDirection": "left-to-right",
     "jcr:lastModified": "Tue May 28 2024 20:40:07 GMT+0000",
@@ -163,7 +163,7 @@
   },
   "h1-title": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "hideTitle": "true",
     "jcr:lastModified": "Wed May 29 2024 19:06:17 GMT+0000",
     "sling:resourceType": "stryker/components/content/h1-title"

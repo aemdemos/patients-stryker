@@ -9,7 +9,7 @@
   "jcr:versionHistory": "8f2dda54-dfb0-4b62-b4a9-71c2436747ea",
   "cq:template": "/apps/stryker/templates/news-landing",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:lastModifiedBy": "user-c8b824f5b1@example.invalid",
   "jcr:predecessors": [
     "253cb832-2285-4e8b-bdd1-f4ff56f0d785"
   ],
@@ -27,11 +27,11 @@
   "jcr:uuid": "c3d9ceee-f226-491b-ae57-e55b522b3eb9",
   "sling:resourceType": "stryker/components/structure/pages/news-landing",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "cq:lastModifiedBy": "user-7a617b9e44@example.invalid",
   "newsandannouncements": {
     "jcr:primaryType": "nt:unstructured",
     "showDates": "false",
-    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModifiedBy": "user-7a617b9e44@example.invalid",
     "searchPath": "/content/stryker/us/en/sage/news",
     "hideNewsFilters": "false",
     "jcr:lastModified": "Mon Aug 05 2024 15:18:58 GMT+0000",
@@ -74,7 +74,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "jcr:lastModifiedBy": "user-98fdffe29c@example.invalid",
     "text": "<p><span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Links:&nbsp;</span></span></span><br>\n</p>\n<ul>\n<li><a href=\"/content/stryker/us/en/sage.html\">About Sage</a></li>\n<li><a href=\"/content/stryker/us/en/sage/news-and-updates.html\" target=\"_blank\">Subscribe to Sage's newsletter</a></li>\n<li><a href=\"https://www.stryker.com/us/en/about/news.html\">Stryker News</a></li>\n</ul>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Follow us on social media for more updates:</span></span></p>\n<ul>\n<li><a href=\"https://www.facebook.com/StrykerSage\">Facebook</a></li>\n<li><a href=\"https://twitter.com/Strykersage\">Twitter</a></li>\n<li><a href=\"https://www.linkedin.com/company/strykersage/\">LinkedIn</a></li>\n<li><a href=\"https://www.youtube.com/c/StrykerSage\">Youtube</a></li>\n</ul>\n",
     "jcr:lastModified": "Thu Jun 29 2023 13:58:56 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",

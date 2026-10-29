@@ -9,7 +9,7 @@
   "jcr:versionHistory": "d124dfeb-9fd4-4e93-be0e-5b56a1e25101",
   "cq:template": "/apps/stryker/templates/news-detail",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "thumbnailAltText": "TPX HD",
   "jcr:predecessors": [
     "bdd7ab72-7e56-4eba-8303-9693763555d5"
@@ -38,14 +38,14 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/about/news/2026",
   "cq:childrenOrder": "",
-  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "cq:lastModifiedBy": "user-1f15d09fdf@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "carolyn.lee@stryker.com",
-      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+      "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
       "jcr:created": "Fri May 29 2026 21:38:43 GMT+0000",
       "jcr:lastModified": "Fri May 29 2026 21:38:43 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -54,8 +54,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Fri May 29 2026 21:38:47 GMT+0000",
           "text": "<p><b>PORTAGE, Mich., USA</b> – <b>June 2, 2026</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced the launch of its TPX HD, a premium small bone power tool designed to support performance, control and ergonomics in a wide range of challenging orthopaedic procedures such as total joint revisions, minimally invasive surgery and oral maxillofacial procedures.</p>\n<p>“Revision procedures are some of the most demanding cases surgeons face, especially when metal cutting is involved,” said Mike Carlin, president of Stryker’s Ortho Tech division. “TPX HD was designed with those moments in mind, when visibility is limited, precision matters and surgeons need a tool they can trust to perform.”</p>\n<p>TPX HD incorporates several design features aimed at improving performance and usability, including a tapered attachment design for improved visibility in confined spaces, a housing designed to act as a barrier for motor heat at high speeds and enhanced ergonomics through a shorter handpiece length and improved grip.*</p>\n<p><b>Key system features include:</b></p>\n<ul>\n<li>Power and speed, delivering up to 296% more torque** and 40% faster performance* compared to the TPX Micro Drill at high speed</li>\n<li>Customizable control, enabled via I.D. Touch software within Stryker’s CORE™ 2 Console, allowing surgeons to tailor drill response and sensitivity</li>\n<li>Specialized attachments, including multiple attachment lengths, a PROStep™ 5:1 reducer and capability for metal and bone cement cutting and removal</li>\n</ul>\n<p>For more information, visit <a href=\"/content/stryker/us/en/orthopaedic-instruments/products/tpx-hd.html\">https://www.stryker.com/us/en/orthopaedic-instruments/products/tpx-hd.html</a></p>\n<p>&nbsp;</p>\n",
           "jcr:lastModified": "Fri May 29 2026 21:45:03 GMT+0000",
@@ -64,16 +64,16 @@
         },
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Fri May 29 2026 21:41:44 GMT+0000",
           "jcr:lastModified": "Fri May 29 2026 21:41:44 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
         },
         "text_1739876367": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "carolyn.lee@stryker.com",
-          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:createdBy": "user-1f15d09fdf@example.invalid",
+          "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
           "jcr:created": "Fri May 29 2026 21:41:49 GMT+0000",
           "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nStryker<br>\nJenny Braga<br>\nSenior Director, External Affairs<br>\n<a href=\"mailto:jenny.braga@stryker.com\">jenny.braga@stryker.com</a></p>\n",
           "jcr:lastModified": "Fri May 29 2026 21:42:56 GMT+0000",
@@ -89,7 +89,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "publishDate": "Tue Jun 02 2026 00:00:00 GMT-0700",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "02-Jun-2026",
@@ -98,7 +98,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>*As compared to TPX Micro Drill<br>\r\n**As compared to TPX Micro Drill at high speed</p>\r\n",
     "jcr:lastModified": "Fri May 29 2026 21:45:12 GMT+0000",
@@ -107,7 +107,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModifiedBy": "user-1f15d09fdf@example.invalid",
     "preset": "max_width_1440",
     "alt": "TPX HD",
     "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-launches-tpx-hd-power-tool/images/Ortho-Tech-TPX-HD-news.jpg",

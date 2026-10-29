@@ -7,7 +7,7 @@
   "jcr:title": "TEACH Newsletter: December 2019",
   "jcr:versionHistory": "db53fe78-40ab-4f1c-93c0-17c167bc1429",
   "cq:template": "/apps/stryker/templates/tier2-landing-page",
-  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
   "jcr:predecessors": [
     "a4704a0a-756e-4ae9-af85-2b3aec9380df"
   ],
@@ -22,7 +22,7 @@
   "jcr:uuid": "9eb3ba0d-eb08-4009-b823-7aa5a64d0368",
   "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "cq:lastModifiedBy": "user-b2cf110515@example.invalid",
   "hero_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
@@ -36,8 +36,8 @@
     "sling:resourceType": "wcm/foundation/components/parsys",
     "standaloneimage_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 05 2019 20:57:58 GMT+0000",
       "alt": "TEACH wordmark (CMYK)",
       "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-wordmark-small.jpg",
@@ -46,9 +46,9 @@
     },
     "fullwidthimage_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:createdBy": "user-5b105250fc@example.invalid",
       "dimensionBox": "FDB",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "layoutOptions": "col-sm-8 pull-left​",
       "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/Nov-2019-newsletter-langford.jpg",
       "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
@@ -59,8 +59,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "jcr:created": "Thu Apr 25 2019 13:08:23 GMT+0000",
           "gradientDirection": "left-to-right",
           "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><b>T2 Alpha Nailing System</b></span></span></span></p>\r\n<p><br>\r\n<br>\r\n</p>\r\n",
@@ -75,9 +75,9 @@
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
           "subtitle": "A message from Dr. Langford",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "none",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Feb 05 2019 18:11:44 GMT+0000",
@@ -89,8 +89,8 @@
     },
     "text_1402513245_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 05 2019 18:38:52 GMT+0000",
       "text": "<p><br>\n&nbsp;</p>\n",
       "jcr:lastModified": "Tue Nov 26 2019 19:39:14 GMT+0000",
@@ -99,8 +99,8 @@
     },
     "text_copy_copy_copy_": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Feb 05 2019 18:38:09 GMT+0000",
       "text": "<p><span class=\"futura-bold\">The simplicity and versatility of the T2 Alpha Nailing System will be appreciated by surgeons and OR staff.&nbsp;</span>As someone who prefers to nail whenever possible, the T2 Alpha nailing system allows me to use a nail where I normally would use a plate for distal tibia fractures, as the three interlocks are located closer to the distal end of the nail, and the Advanced Locking Screws provide angular and axial stability near the fracture site.</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">The T2 Alpha IM Nails</span></span></span></p>\n<p>For antegrade femoral nailing, T2 Alpha offers a piriformis and greater trochanteric option. The beveled tip of the nail facilitates easy insertion and the hybrid nail concept allows for multiple proximal and distal locking configurations. The new instrumentation is even simpler than the T2 system, and the incremental enhancements across the platform reduce frustration in the OR. I particularly appreciate the new capture screwdriver as it alleviates concern about losing the screw in the soft tissue. The ergonomic handles, legible depth gauges and light weight jigs make the system easy to use.</p>\n<p>T2 Alpha was designed in collaboration with surgeons from across the world, and I believe that other surgeons will appreciate the design enhancements as much as I have.<br>\n</p>\n",
       "jcr:lastModified": "Wed Dec 18 2019 13:41:12 GMT+0000",
@@ -109,8 +109,8 @@
     },
     "text_copy_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Thu May 16 2019 20:22:40 GMT+0000",
       "text": "<p><b><span class=\"fontsize-1em\"><br>\n Learn more about the T2 Alpha Nailing System.</span></b></p>\n",
       "jcr:lastModified": "Tue Dec 17 2019 17:17:27 GMT+0000",
@@ -119,8 +119,8 @@
     },
     "cols2_copy": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Dec 17 2019 15:31:34 GMT+0000",
       "jcr:lastModified": "Tue Dec 17 2019 15:31:34 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2",
@@ -129,9 +129,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Dec 17 2019 15:31:53 GMT+0000",
@@ -147,9 +147,9 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "curatedcta_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:createdBy": "user-b2cf110515@example.invalid",
           "CTAOpenInNewTab": "true",
-          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Dec 17 2019 15:31:53 GMT+0000",
@@ -163,8 +163,8 @@
     },
     "sectionseparator_cop": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "vince.wolff@stryker.com",
-      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:createdBy": "user-b2cf110515@example.invalid",
+      "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
       "jcr:created": "Tue Nov 26 2019 19:39:01 GMT+0000",
       "jcr:lastModified": "Tue Nov 26 2019 19:39:01 GMT+0000",
       "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -172,7 +172,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModifiedBy": "user-b2cf110515@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<p>Dr. Landford is a paid consultant of Stryker.  The opinions expressed are those of Dr. Langford and not necessarily those of Stryker.  Individual results may vary.</p>\r\n<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings.  A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.  Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n",
     "jcr:lastModified": "Tue Dec 17 2019 17:07:10 GMT+0000",

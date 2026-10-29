@@ -10,7 +10,7 @@
   "jcr:versionHistory": "af2f179c-a845-4afd-bc0e-7c9d3666c510",
   "cq:template": "/apps/stryker/templates/capability",
   "cq:lastReplicatedBy": "replication-service",
-  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "jcr:predecessors": [
     "5b210cd1-e97a-401c-91a4-98ee6399fb21"
   ],
@@ -40,7 +40,7 @@
   "activationGroup": "stryker-superuser",
   "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment",
   "cq:childrenOrder": "disc,radiofrequency-neurotomy,vertebral-compression-fractures,bone-tumor-ablation,",
-  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "cq:lastModifiedBy": "user-e895b4dde6@example.invalid",
   "featured_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
@@ -53,7 +53,7 @@
     "jcr:primaryType": "nt:unstructured",
     "emptyText": "No Results found.",
     "showSystems": "true",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "searchPath": "/content/stryker/us/en",
     "jcr:lastModified": "Mon Nov 19 2018 15:32:50 GMT+0000",
     "loadMoreText": "Load More",
@@ -64,7 +64,7 @@
   },
   "pagehero": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "headColor": "rgb(255,181,0)",
     "usethumbnail": "true",
     "jcr:lastModified": "Fri Aug 11 2023 18:09:59 GMT+0000",

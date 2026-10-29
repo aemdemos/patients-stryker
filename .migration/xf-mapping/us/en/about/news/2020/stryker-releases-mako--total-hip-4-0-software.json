@@ -7,7 +7,7 @@
   "jcr:title": "Stryker releases Mako Total Hip 4.0",
   "jcr:versionHistory": "76413ba9-7f9a-45b0-83e6-d11ad66e2999",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "jcr:predecessors": [
     "984beb83-d39f-48e7-9b28-5a8cff95d92a"
   ],
@@ -27,14 +27,14 @@
   "jcr:uuid": "8cb01d21-045a-45a4-bd4b-3d8af812fbf5",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "user-c26bb7a766@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_90721024": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Sep 14 2020 15:45:00 GMT+0000",
       "jcr:lastModified": "Mon Sep 14 2020 15:45:00 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -43,8 +43,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "sectionseparator": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 14 2020 15:45:05 GMT+0000",
           "jcr:lastModified": "Mon Sep 14 2020 15:45:05 GMT+0000",
           "sling:resourceType": "stryker/components/content/sectionseparator"
@@ -53,8 +53,8 @@
     },
     "cols2_2_3_1_3": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Mon Sep 14 2020 15:43:22 GMT+0000",
       "jcr:lastModified": "Mon Sep 14 2020 15:43:22 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -63,8 +63,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "text_copy": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 14 2020 13:58:47 GMT+0000",
           "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Watch here to learn more about Mako Total Hip 4.0</span></span></p>\n",
           "jcr:lastModified": "Mon Sep 21 2020 13:15:53 GMT+0000",
@@ -73,8 +73,8 @@
         },
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 21 2020 13:13:37 GMT+0000",
           "type": "typePath",
           "jcr:lastModified": "Mon Sep 21 2020 13:13:45 GMT+0000",
@@ -86,7 +86,7 @@
             "fileReference": "/content/dam/stryker/about/news/mako-total-hip-4-0/videos/20-SYK-0824-Mako-40-GFX-V14.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
             "unsharpMaskAmount": "0",
             "s7ViewerPreset": "",
             "assetID": "stryker/20-SYK-0824-Mako-40-GFX-V14-AVS",
@@ -105,9 +105,9 @@
         "buttonset": {
           "jcr:primaryType": "nt:unstructured",
           "buttonSeriesColors": "rgba(76,125,122,1)",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
           "buttonAlignment": "horizontal-alignment align-left",
-          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
           "jcr:created": "Mon Sep 14 2020 15:44:25 GMT+0000",
           "jcr:lastModified": "Mon Sep 21 2020 13:19:53 GMT+0000",
           "sling:resourceType": "stryker/components/content/buttonset",
@@ -127,7 +127,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "publishDate": "Mon Sep 21 2020 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Sep-2020",
@@ -136,7 +136,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "text": "<p>Stryker has announced the release of Mako® Total Hip 4.0. With CT-based 3D modeling and new planning features, this SmartRobotics<sup>TM</sup> system provides unprecedented information.</p>\n<p>The new software of Mako Total Hip 4.0 is designed to enhance the user experience with approach-specific, region-based pelvic registration. New features allow surgeons to plan a patient’s implant position while taking into account changes in pelvic tilt in the patient’s sitting, standing and supine poses. Surgeons can now also visualize the femur-to-pelvis and component relationship to help detect risk of potential impingement.</p>\n<p>“Mako Total Hip had 3D templating, which I thought was brilliant,” said Dr. Robert Marchand of Wakefield, R.I. “But now, with the new software, I not only have 3D templating but also dynamic range-of-motion modeling and the ability to incorporate spino-pelvic motion into planning.”</p>\n<p>Using AccuStop™ haptic technology and a patient-specific CT scan, Mako Total Hip enables single-stage reaming and guided cup impactions to help promote accurate implant placement.<sup>1</sup> Studies have demonstrated greater bone preservation<sup>2</sup> and reduced blood loss<sup>3</sup> when compared to manual total hip arthroplasty.</p>\n<p>“With this new software, our promise of ‘knowing more’ before and during surgery is just that much more powerful,&quot; said Don Payerle, president of Stryker’s Joint Replacement division. “Surgeons have access to information they’ve never had before. Now they have the ability to visualize impingement issues before they arise and can plan a patient’s implant position based on that patient’s individualized pelvic tilt through different ranges of motion. These features are a game-changer for Mako Total Hip users.”</p>\n<p>The Mako Total Hip 4.0 software has been a success throughout the limited market release in the U.S. With the commercial launch, all new Mako SmartRobotics Systems and software applications sold will have the new Mako Total Hip 4.0 software. The product rollout is also underway in the United Kingdom, Australia and Japan.<br>\n</p>\n",
     "jcr:lastModified": "Mon Sep 21 2020 14:23:59 GMT+0000",
     "sling:resourceType": "stryker/components/content/text",
@@ -144,7 +144,7 @@
   },
   "disclaimer": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "disclaimer-type": "text",
     "disclaimer": "<ol>\r\n<li>Domb BG, El Bitar YF, Sadik AY, Stake CE, Botser IB. Comparison of robotic-assisted and conventional acetabular cup placement in THA: a matched-pair controlled study. Clin Orthop Relat Res. 2014;472(1):329-336. doi:10.1007/s11999-013-3253-7</li>\r\n<li>Suarez-Ahedo C, Gui C, Martin TJ, Chandrasekaran S, Lodhia P, Domb BG. Robotic-arm assisted total hip arthroplasty results in smaller acetabular cup size in relation to the femoral head size: a matched-pair controlled study. Hip Int. 2017;27(2):147-152. doi:10.5301/hipint.5000418</li>\r\n<li>Bukowski BR, Anderson P, Khlopas A, Chughtai M, Mont MA, Illgen RL 2nd. Improved Functional Outcomes with Robotic Compared with Manual Total Hip Arthroplasty. Surg Technol Int. 2016;29:303-308.</li>\r\n</ol>\r\n<div>&nbsp;</div>\r\n<div>Dr. Marchand is a paid consultant of Stryker Orthopaedics. The opinions expressed by Dr. Marchand are those of Dr. Marchand and not necessarily those of Stryker. Individual experiences may vary.</div>\r\n<div>&nbsp;</div>\r\n<div>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</div>\r\n<div>&nbsp;</div>\r\n<div>The information presented is intended to demonstrate the breadth of Stryker's product offerings.&nbsp; A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets.&nbsp; Please contact your sales representative if you have questions about the availability of products in your area.</div>\r\n<div>&nbsp;</div>\r\n<div>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: AccuStop, Mako, Mako Total Hip, SmartRobotics, Stryker. All other trademarks are trademarks of their respective owners or holders.</div>\r\n",
     "jcr:lastModified": "Mon Sep 21 2020 15:20:41 GMT+0000",
@@ -157,7 +157,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
     "preset": "max_width_1440",
     "srcFileRef": "/content/dam/stryker/about/news/mako-total-hip-4-0/images/Mako Total Hip 4.0 header.png",
     "jcr:lastModified": "Mon Sep 14 2020 15:39:14 GMT+0000",

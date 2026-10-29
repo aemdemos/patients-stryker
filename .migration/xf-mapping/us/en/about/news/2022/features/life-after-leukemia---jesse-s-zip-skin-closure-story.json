@@ -7,7 +7,7 @@
   "jcr:title": "Life after leukemia - Jesse’s Zip skin closure story",
   "jcr:versionHistory": "74f1662c-77cd-4195-a281-386525787a23",
   "cq:template": "/apps/stryker/templates/news-detail",
-  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
   "jcr:predecessors": [
     "094913fa-ebaf-4462-9a32-862d819a642b"
   ],
@@ -26,14 +26,14 @@
   "jcr:uuid": "3df6dbb9-96bd-44eb-b299-eea3de667100",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
   "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
-  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "user-7065227e84@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys",
     "cols2_2_3_1_3_copy_c": {
       "jcr:primaryType": "nt:unstructured",
-      "jcr:createdBy": "kristian.bocage@stryker.com",
-      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:createdBy": "user-c26bb7a766@example.invalid",
+      "jcr:lastModifiedBy": "user-c26bb7a766@example.invalid",
       "jcr:created": "Wed Jul 28 2021 19:47:16 GMT+0000",
       "jcr:lastModified": "Wed Jul 28 2021 19:47:16 GMT+0000",
       "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
@@ -42,8 +42,8 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "standalonevideo": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "garrett.shue@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-7065227e84@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "jcr:created": "Tue Mar 22 2022 16:14:57 GMT+0000",
           "hideBorder": "false",
           "type": "typePath",
@@ -56,7 +56,7 @@
             "fileReference": "/content/dam/stryker/about/news/2022/features/life-after-leukemia/21-SYK-0610-ZIP-Jesse20Decker20ZIP20site20version.mp4",
             "s7ImagePreset": "",
             "viewerPath": "https://media-assets.stryker.com/s7viewers/",
-            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
             "s7ViewerPreset": "",
             "assetID": "stryker/21-SYK-0610-ZIP-Jesse20Decker20ZIP20site20version-AVS",
             "urlModifiers": "",
@@ -73,8 +73,8 @@
         },
         "curatedcta_copy_copy_289278285": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:createdBy": "kristian.bocage@stryker.com",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:createdBy": "user-c26bb7a766@example.invalid",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "ctaLinkType": "int",
           "ctaOpenInNewTabOverride": "0",
           "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
@@ -105,7 +105,7 @@
         "sling:resourceType": "wcm/foundation/components/parsys",
         "largeheadline_copy53": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"fontsize-1-5-vw\">After recovering from leukemia, Jesse was ready to get back to his active lifestyle. However, his doctor let him know that his hip wasn’t ready for physical activity and that he would need hip resurfacing surgery. Watch Jesse as he shares how Zip provided him with more comfort, less scars and a quicker recovery so he could get back to his aerobic activities.</span>",
           "jcr:lastModified": "Tue Mar 22 2022 16:03:03 GMT+0000",
@@ -133,7 +133,7 @@
         },
         "item1089953560363234_234768509": {
           "jcr:primaryType": "nt:unstructured",
-          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
           "gradientDirection": "left-to-right",
           "line1": "<span class=\"urw-egyptienne\"></span> ",
           "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\">I would say at about month two, I started doing more impactful aerobic activity.&nbsp;</span>Overall I’m incredibly happy with my surgeon, with the procedure itself and my experience with Zip.</span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Jesse</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Zip skin closure patient</span></span></span></span></p>\r\n",
@@ -165,7 +165,7 @@
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModifiedBy": "user-7065227e84@example.invalid",
     "publishDate": "Mon Mar 28 2022 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "28-Mar-2022",

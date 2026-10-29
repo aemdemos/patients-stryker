@@ -21,14 +21,14 @@
   ],
   "jcr:uuid": "fdb901cb-3b2b-4024-af4d-2a7a8502c2ec",
   "sling:resourceType": "stryker/components/structure/pages/news-detail",
-  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "cq:lastModifiedBy": "user-5b105250fc@example.invalid",
   "customizablearea_parsys": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/foundation/components/parsys"
   },
   "publishdate": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "publishDate": "Wed Jun 21 2017 00:00:00 GMT-0400",
     "dateFormat": "dd-MMM-yyyy",
     "dateString": "21-Jun-2017",
@@ -37,7 +37,7 @@
   },
   "text": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "text": "<p>Stryker Orthopaedics, the Official Joint Replacement Products of the PGA TOUR® and PGA TOUR Champions, announced plans to activate on-site at the Travelers Championship in Cromwell, CT. This weekend marks the sixth tournament of the year where Stryker will engage with consumers and bring The Mobility Zone – a destination designed to educate golf fans on the importance of joint health and mobility – on site. In addition, on Friday of tournament week, Stryker will make its fourth K9s for Warriors donation of 2017 in an effort to honor the company’s ongoing commitment to our nation’s military.</p>\n<p><b><a href=\"http://www.prnewswire.com/news-releases/stryker-to-make-its-fourth-k9s-for-warriors-donation-of-2017-at-travelers-championship-300477091.html\">Please click here for the full article.</a></b></p>\n<p>&nbsp;</p>\n",
     "jcr:lastModified": "Thu Aug 24 2017 09:57:23 GMT-0400",
     "sling:resourceType": "stryker/components/content/text",
@@ -45,7 +45,7 @@
   },
   "standaloneimage": {
     "jcr:primaryType": "nt:unstructured",
-    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModifiedBy": "user-5b105250fc@example.invalid",
     "linkExternal": "http://www.prnewswire.com/news-releases/stryker-to-make-its-fourth-k9s-for-warriors-donation-of-2017-at-travelers-championship-300477091.html",
     "srcFileRef": "/content/dam/stryker/about/news/images/GettyImages-485914700 (2).jpg",
     "jcr:lastModified": "Thu Aug 24 2017 10:04:10 GMT-0400",
