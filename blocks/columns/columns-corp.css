@@ -6,8 +6,9 @@
  * and every split goes side by side from 600px.
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair (image grid), large-headline (the stryker.com Large
- * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
+ * columns-20-80 (icon + text), dark-last (pull quote box), media-pair (image grid),
+ * large-headline (the stryker.com Large Headline type scale) and link-groups (lists of
+ * links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
@@ -304,6 +305,13 @@ body.corp .columns .columns-img-col video {
   width: 100%;
 }
 
+/* dark-last: the pull quote text (its box, below) */
+body.corp .columns.dark-last > div > div:last-child p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 /* large-headline: a Bold + Underline link on its own line (link-strong CTA) stays at the 14px corp size */
 body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
   font-size: var(--body-font-size-m);
@@ -390,6 +398,16 @@ body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
 }
 
+/* dark-last: the last cell is a dark-grey pull quote box (stryker.com bg-dark-gray rich
+   text: 5% padding inside its 15px column gutter) in white 21px light serif; Bold + Italic
+   words keep the Futura bold (gold with [[color-gold]], the surgical smoke feature) */
+body.corp .columns.dark-last > div > div:last-child {
+  margin-inline: var(--space-block);
+  padding: var(--space-block);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
 /* gray-lead: the last cell starts level with the row top, its grey box (above) first */
 body.corp .columns.gray-lead > div > div:last-child {
   padding-top: 0;
@@ -450,10 +468,11 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     flex: 0 0 33.333%;
   }
 
-  /* boxed-last / gold-first: the box takes what the other cell leaves (its margins
-     sit inside the column) and hugs its content */
+  /* boxed-last / gold-first / dark-last: the box takes what the other cell leaves (its
+     margins sit inside the column) and hugs its content */
   body.corp .columns.boxed-last > div > div:last-child,
-  body.corp .columns.gold-first > div > div:first-child {
+  body.corp .columns.gold-first > div > div:first-child,
+  body.corp .columns.dark-last > div > div:last-child {
     flex: 1 1 0;
     align-self: flex-start;
   }
