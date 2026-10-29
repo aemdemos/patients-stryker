@@ -23,6 +23,7 @@
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
   --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
+  --corp-font-scale-0-8: 0.8em; /* source span.fontsize-8em: 0.8x the text around it (11.2px small print in 14px copy) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
@@ -282,6 +283,23 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) main > .section.disclaimer p {
   line-height: var(--paragraph-line-height);
+}
+
+/* bracket tag `[[text-0-8]…]`: small print at 0.8x the text around it — stryker.com
+   span.fontsize-8em where no small-print section fits, e.g. "Products may not be
+   available in all markets…" under a video inside a Columns cell (11.2px). A paragraph
+   that is all small print also takes the small-print lines (source 11.2px / 13.44px) */
+:where(body.corp) main span.text-0-8 {
+  font-size: var(--corp-font-scale-0-8);
+}
+
+:where(body.corp) main p:has(> span.text-0-8:only-child) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main p:has(> span.text-0-8:only-child) > span.text-0-8 {
+  font-size: inherit;
 }
 
 /* a document code authored as <code> stays small print */
