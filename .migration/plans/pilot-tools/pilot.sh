@@ -1,5 +1,6 @@
 #!/bin/bash
-# pilot helper (kept outside /tmp, survives resets):
+# pilot helper for ONE page (kept outside /tmp, survives resets); for several pages use
+# pilot-batch.sh (one bundle, one browser, coverage once) and compare.mjs (cached live):
 #   pilot.sh <page path, EDS or AEM names, e.g. /us/en/x/products/y> [importer, default product-detail]
 # bundles, imports the page's XFs and the page into /tmp/pilotPD, runs coverage + link check,
 # copies the preview (page under content/drafts/reimport, fragments under content/us/en/fragments)
