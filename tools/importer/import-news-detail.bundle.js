@@ -210,6 +210,9 @@ var CustomImportScript = (() => {
     ".c-rich-text-editor",
     ".c-standalone-video",
     ".c-curatedcta",
+    // a Button Set (.buttonset > .button-group > a.btn, e.g. the gold "Read the full
+    // statement" / "DONATE" buttons on Sage news) imports like a Curated CTA
+    ".buttonset",
     ".c-largeheadline",
     ".c-section-title",
     ".c-customizeable",
@@ -245,7 +248,8 @@ var CustomImportScript = (() => {
     ["fontsize-8em", "disclaimer"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
-    ["fontsize-1-75em", "p-1-75"]
+    ["fontsize-1-75em", "p-1-75"],
+    ["fontsize-2em", "p-2"]
   ];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
@@ -434,6 +438,7 @@ var CustomImportScript = (() => {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("h3")].filter((h) => {
       if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
+      if (!h.querySelector("[class]")) return true;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
       return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
@@ -509,11 +514,14 @@ var CustomImportScript = (() => {
     lead.forEach((node) => box.append(node.cloneNode(true)));
     const large = squash([...box.querySelectorAll(".fontsize-1-5em")].filter((span) => !span.parentElement.closest(".fontsize-1-5em")).map((span) => span.textContent).join(""));
     if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
+    const huge = squash([...box.querySelectorAll(".fontsize-2em")].filter((span) => !span.parentElement.closest(".fontsize-2em")).map((span) => span.textContent).join(""));
+    const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el)) && !hasOtherColour(el) && squash(el.textContent) === leadText);
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
     if (!text(p)) p.remove();
     const h1 = doc.createElement("h1");
-    h1.textContent = leadText;
+    h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
+    h1.titleStyle = huge === leadText ? "h1-42" : "h1-21";
     return h1;
   }
   function blockNodes(container, doc) {
@@ -589,13 +597,22 @@ var CustomImportScript = (() => {
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
-    const nodes = [...component.querySelectorAll("img")].map((source) => {
+    const nodes = [...component.querySelectorAll("img")].flatMap((source) => {
       const img = doc.createElement("img");
       img.setAttribute("src", source.getAttribute("src"));
       img.setAttribute("alt", source.getAttribute("alt") || "");
       const p = doc.createElement("p");
       p.append(img);
-      return p;
+      const sourceLink = source.closest("a[href]");
+      if (!sourceLink) return [p];
+      const href = absoluteAsset(sourceLink.getAttribute("href"));
+      const a = doc.createElement("a");
+      a.setAttribute("href", newTabHref(sourceLink, href));
+      a.textContent = (source.getAttribute("alt") || "").trim() || href;
+      const linkLine = doc.createElement("p");
+      linkLine.append(a);
+      p.imageLink = true;
+      return [p, linkLine];
     });
     if (nodes.length) {
       component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
@@ -603,6 +620,12 @@ var CustomImportScript = (() => {
         const h4 = doc.createElement("h4");
         h4.textContent = text(title);
         nodes.push(h4);
+      });
+      component.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre").forEach((caption) => {
+        if (!text(caption)) return;
+        const p = doc.createElement("p");
+        p.textContent = text(caption);
+        nodes.push(p);
       });
     }
     return nodes;
@@ -874,14 +897,19 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-image")) {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
+        const linkStyle = nodes2.some((node) => node.imageLink) ? "image-link" : "";
         const columnStyle = imageColumnStyle(component);
         if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle) {
-          startSection(isFirst ? "lead" : "image", columnStyle || void 0).nodes.push(...nodes2);
+          const style = [columnStyle, linkStyle].filter(Boolean).join(", ");
+          startSection(isFirst ? "lead" : "image", style || void 0).nodes.push(...nodes2);
           current = null;
           return;
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
+        if (linkStyle && !(current.style || "").split(", ").includes(linkStyle)) {
+          current.style = [current.style, linkStyle].filter(Boolean).join(", ");
+        }
         current.nodes.push(...nodes2);
         return;
       }
@@ -933,12 +961,16 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+      const headlineStyle = component.matches(".c-largeheadline") && [
+        ['[class*="fontsize-2vw"]', "headline-2vw"],
+        ['[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]', "headline-1-5vw"]
+      ].find(([selector]) => component.querySelector(selector));
+      if (isFirst && !hasTitle && headlineStyle && text(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
           const heading = rename(lines[0], "h1");
           heading.querySelectorAll("strong, em").forEach(unwrap);
-          startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
+          startSection("headline", headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
           current = null;
           return;
         }
@@ -946,11 +978,11 @@ var CustomImportScript = (() => {
       if (isFirst && !hasTitle && component.matches(".c-rich-text-editor")) {
         const heading = richTextTitle(component, doc);
         if (heading) {
-          startSection("headline", "h1-21").nodes.push(heading);
+          startSection("headline", heading.titleStyle).nodes.push(heading);
           current = null;
         }
       }
-      if (component.matches(".c-curatedcta")) {
+      if (component.matches(".c-curatedcta, .buttonset")) {
         const nodes2 = buttonNodes(component, doc);
         if (!nodes2.length) return;
         const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');

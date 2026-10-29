@@ -56,6 +56,9 @@ const COMPONENTS = [
   '.c-rich-text-editor',
   '.c-standalone-video',
   '.c-curatedcta',
+  // a Button Set (.buttonset > .button-group > a.btn, e.g. the gold "Read the full
+  // statement" / "DONATE" buttons on Sage news) imports like a Curated CTA
+  '.buttonset',
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
@@ -106,6 +109,7 @@ const SIZE_STYLES = [
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
+  ['fontsize-2em', 'p-2'],
 ];
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
@@ -380,13 +384,15 @@ function plainBoldParagraphs(root) {
 }
 
 /**
- * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
- * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
+ * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, or
+ * a plain h3 with no bold and no styled span, the live h3 face): the template's h3 is
+ * Futura bold, so their section gets the `h-serif` style.
  */
 function serifHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   return new Set([...root.querySelectorAll('h3')].filter((h) => {
     if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+    if (!h.querySelector('[class]')) return true;
     const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
     return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
   }));
@@ -476,7 +482,10 @@ function splitStyledLeads(root) {
  * The title line a rich text opens with when the page has no title: the run before the
  * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
  * bold 21px on the source). Taken out of the component (with the breaks after it) and
- * returned as an <h1>; null when the text does not open that way.
+ * returned as an <h1>; null when the text does not open that way. The h1's `titleStyle`
+ * is its section style: `h1-42` when the line is also in a 2em span (Futura bold 42px,
+ * e.g. the "Trees, landfills and the environment" feature), else `h1-21`; a title that
+ * is gold as a whole is in the `[[color-gold]…]` tag.
  */
 function richTextTitle(component, doc) {
   const p = component.querySelector('p');
@@ -493,11 +502,17 @@ function richTextTitle(component, doc) {
     .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
     .map((span) => span.textContent).join(''));
   if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
+  const huge = squash([...box.querySelectorAll('.fontsize-2em')]
+    .filter((span) => !span.parentElement.closest('.fontsize-2em'))
+    .map((span) => span.textContent).join(''));
+  const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el))
+    && !hasOtherColour(el) && squash(el.textContent) === leadText);
   lead.forEach((node) => node.remove());
   while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
   if (!text(p)) p.remove();
   const h1 = doc.createElement('h1');
-  h1.textContent = leadText;
+  h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
+  h1.titleStyle = huge === leadText ? 'h1-42' : 'h1-21';
   return h1;
 }
 
@@ -589,13 +604,25 @@ function imageColumnStyle(component) {
 }
 
 function imageNodes(component, doc) {
-  const nodes = [...component.querySelectorAll('img')].map((source) => {
+  const nodes = [...component.querySelectorAll('img')].flatMap((source) => {
     const img = doc.createElement('img');
     img.setAttribute('src', source.getAttribute('src'));
     img.setAttribute('alt', source.getAttribute('alt') || '');
     const p = doc.createElement('p');
     p.append(img);
-    return p;
+    // a linked image (a[href] around the img): its link alone on the next line, in a section
+    // with the `image-link` style (scripts/corp.js makes the image clickable from it); the
+    // link text is the image's alt, else the address (no text is made up)
+    const sourceLink = source.closest('a[href]');
+    if (!sourceLink) return [p];
+    const href = absoluteAsset(sourceLink.getAttribute('href'));
+    const a = doc.createElement('a');
+    a.setAttribute('href', newTabHref(sourceLink, href));
+    a.textContent = (source.getAttribute('alt') || '').trim() || href;
+    const linkLine = doc.createElement('p');
+    linkLine.append(a);
+    p.imageLink = true;
+    return [p, linkLine];
   });
   // the image's caption heading (.title-content h4.title, Futura bold under the image)
   // follows it as a Heading 4 (news-detail.css sets the source h4)
@@ -605,6 +632,14 @@ function imageNodes(component, doc) {
       const h4 = doc.createElement('h4');
       h4.textContent = text(title);
       nodes.push(h4);
+    });
+    // a caption line under the image (p.u-white-space-pre, body text on the source, e.g.
+    // "Working together to clear the brush") follows it as a paragraph
+    component.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre').forEach((caption) => {
+      if (!text(caption)) return;
+      const p = doc.createElement('p');
+      p.textContent = text(caption);
+      nodes.push(p);
     });
   }
   return nodes;
@@ -957,16 +992,21 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-image')) {
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
+      const linkStyle = nodes.some((node) => node.imageLink) ? 'image-link' : '';
       // the lead image, or an image in a narrow source column, is a section of its own
       const columnStyle = imageColumnStyle(component);
       if (isFirst && !component.closest('.colctrl')) leadBelowDate = true;
       if (isFirst || columnStyle) {
-        startSection(isFirst ? 'lead' : 'image', columnStyle || undefined).nodes.push(...nodes);
+        const style = [columnStyle, linkStyle].filter(Boolean).join(', ');
+        startSection(isFirst ? 'lead' : 'image', style || undefined).nodes.push(...nodes);
         current = null;
         return;
       }
       // an image joins the article section it follows, whatever its copy size
       if (!current || !current.kind.startsWith('body')) startSection('body');
+      if (linkStyle && !(current.style || '').split(', ').includes(linkStyle)) {
+        current.style = [current.style, linkStyle].filter(Boolean).join(', ');
+      }
       current.nodes.push(...nodes);
       return;
     }
@@ -1032,14 +1072,18 @@ export default function transform(hookName, element, payload) {
     }
     // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
     // date (e.g. OptaBlate, ProStep): that headline is the page H1, in its own section with
-    // the `headline-2vw` style (the source size)
-    if (isFirst && !hasTitle && component.matches('.c-largeheadline')
-      && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+    // the `headline-2vw` style (the source size); a 1.5vw one (e.g. the Neuroform Atlas
+    // expanded-indication release) gets `headline-1-5vw`
+    const headlineStyle = component.matches('.c-largeheadline') && [
+      ['[class*="fontsize-2vw"]', 'headline-2vw'],
+      ['[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]', 'headline-1-5vw'],
+    ].find(([selector]) => component.querySelector(selector));
+    if (isFirst && !hasTitle && headlineStyle && text(component)) {
       const lines = headlineNodes(component, doc);
       if (lines.length) {
         const heading = rename(lines[0], 'h1');
         heading.querySelectorAll('strong, em').forEach(unwrap);
-        startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
+        startSection('headline', headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
         current = null;
         return;
       }
@@ -1050,11 +1094,11 @@ export default function transform(hookName, element, payload) {
     if (isFirst && !hasTitle && component.matches('.c-rich-text-editor')) {
       const heading = richTextTitle(component, doc);
       if (heading) {
-        startSection('headline', 'h1-21').nodes.push(heading);
+        startSection('headline', heading.titleStyle).nodes.push(heading);
         current = null;
       }
     }
-    if (component.matches('.c-curatedcta')) {
+    if (component.matches('.c-curatedcta, .buttonset')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
       // a button is centred when the source centres it (an offset grid column, e.g. the
