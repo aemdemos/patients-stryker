@@ -82,6 +82,13 @@
   margin-bottom: 15px;
 }
 
+/* smaller bullets, as on the source: there the item text is a 1.25em span inside a
+   14px <li>, so the disc keeps the 14px body size while the text is 17.5px */
+.panel.cta .panel-body li::marker,
+.panel.left .panel-body li::marker {
+  font-size: var(--body-font-size-m);
+}
+
 /* bold + italic body text → gold accent  */
 .panel .panel-body strong em,
 .panel .panel-body em strong,
