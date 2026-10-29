@@ -49,9 +49,17 @@ body.corp .section.h-serif .columns > div > div :is(h2, h3) {
   font-weight: var(--font-weight-medium);
 }
 
+/* h4: the corp h4, 14px on phones and 17.5px from 600px (stryker.com 17.5px from 480px,
+   surgical/learn "$1,350,000+ in scholarships") */
 body.corp .columns h4 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.corp .columns h4 {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 /* icon + text (columns-20-80) titles: stryker.com 14px on phones, 16.8px from 840px */

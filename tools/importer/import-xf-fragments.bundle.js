@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../tools/importer/import-xf-fragments.js
+  // tools/importer/import-xf-fragments.js
   var import_xf_fragments_exports = {};
   __export(import_xf_fragments_exports, {
     default: () => import_xf_fragments_default
   });
 
-  // ../../../tools/importer/transformers/corp-sections.js
+  // tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../tools/importer/transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -158,8 +158,8 @@ var CustomImportScript = (() => {
         });
         if (kids.length !== 1) return;
         const only = kids[0];
-        const isLabel2 = only.nodeType === 1 && (only.tagName === "B" || only.tagName === "STRONG" || only.classList && only.classList.contains("futura-bold"));
-        if (!isLabel2) return;
+        const isLabel3 = only.nodeType === 1 && (only.tagName === "B" || only.tagName === "STRONG" || only.classList && only.classList.contains("futura-bold"));
+        if (!isLabel3) return;
         const nextP = p.nextElementSibling;
         if (!nextP || nextP.tagName !== "P") return;
         nextP.insertBefore(element.ownerDocument.createElement("br"), nextP.firstChild);
@@ -234,7 +234,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../tools/importer/transformers/patients-stryker-dm-images.js
+  // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -302,7 +302,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../tools/importer/corp-richtext.js
+  // tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -423,7 +423,7 @@ var CustomImportScript = (() => {
   }
   var RUN_TAG = "x-run";
   var RUN_NAME = /^x-run-e(\d+)-(\d+)-v(\d+)-(\d+)-s([012])$/i;
-  var round = (n) => Math.round(n * 1e4) / 1e4;
+  var round = (n) => Math.round(n * 1e5) / 1e5;
   var num = (n) => String(round(n)).replace(".", "-");
   var runName = ({ em, vw, font }) => {
     const [ei, ed = "0"] = String(round(em)).split(".");
@@ -446,7 +446,8 @@ var CustomImportScript = (() => {
     const b = props.font !== "futura" && chain.find((e) => e.tagName === "B");
     const heading = /^H/.test(blockEl.tagName);
     let code = 0;
-    if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) ? 1 : 0;
+    const serifInBold = props.font === "serif" && chain.some((e) => e.classList.contains("futura-bold"));
+    if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) || serifInBold ? 1 : 0;
     else if (font === "serif") code = 1;
     else if (b && squash(b.textContent) !== squash(blockEl.textContent) && (sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling"))) code = 2;
     return { em: props.em, vw: props.vw, font: code };
@@ -478,9 +479,17 @@ var CustomImportScript = (() => {
     "p-2-5": 2.5
   };
   var HEADING_FACTORS = { "h-0-8": 0.8, "h-1-25": 1.25, "h-1-5": 1.5 };
+  var LABEL_FACTORS = { "label-1-5": 1.5, "label-1-75": 1.75, "label-2": 2 };
+  var isLabel = (p) => {
+    const kids = [...p.children];
+    if (kids.length !== 1) return false;
+    const [kid] = kids;
+    return kid.tagName === "STRONG" || kid.tagName === "EM" && kid.children.length === 1 && kid.firstElementChild.tagName === "STRONG";
+  };
   function finishRuns(nodes, styles) {
     const copy = styles.map((s) => COPY_FACTORS[s]).find(Boolean) || 1;
     const heading = styles.map((s) => HEADING_FACTORS[s]).find(Boolean) || 1;
+    const label = styles.map((s) => LABEL_FACTORS[s]).find(Boolean);
     const serifSection = styles.includes("serif");
     nodes.forEach((node) => {
       if (node.nodeType !== 1) return;
@@ -496,7 +505,9 @@ var CustomImportScript = (() => {
           const name = table2 ? text(table2.querySelector("tr")) : "";
           const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
           const isHeading = !!run.closest("h1, h2, h3, h4, h5, h6");
-          const base = isHeading ? heading : copy;
+          const line = run.closest("p");
+          let base = isHeading ? heading : copy;
+          if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
           else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
@@ -517,9 +528,14 @@ var CustomImportScript = (() => {
     "4c7d7a": "color-teal",
     "27455c": "color-navy",
     545857: "color-grey",
-    ffffff: "color-white"
+    ffffff: "color-white",
+    // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
+    // practice…", "CONTACT US" links), silver (107) and dark gold (58)
+    edeeec: "color-light-gray",
+    b2b4ae: "color-silver",
+    af6d04: "color-dark-gold"
   };
-  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-grey", ""]);
+  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-silver", "color-grey", ""]);
   function toHex(value) {
     const v = (value || "").trim().toLowerCase();
     if (v === "white") return "ffffff";
@@ -585,7 +601,7 @@ var CustomImportScript = (() => {
     };
     const linkOnly = (el) => !!el.closest("a[href]") || [...el.querySelectorAll("a[href]")].some((a) => squash(a.textContent) === squash(el.textContent));
     coloured.forEach((el) => {
-      const cls = colourClass(own.get(el));
+      const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
@@ -679,9 +695,46 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    mapColours(root);
+    const futuraText = (el) => {
+      const walker = doc.createTreeWalker(el, 4);
+      let all = true;
+      let any = false;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) {
+          any = true;
+          if (!n.parentElement.closest(".futura-bold")) all = false;
+        }
+      }
+      return any && all;
+    };
+    const boldLinks = [...root.querySelectorAll("a[href]")].filter((a) => {
+      const line = a.closest("p, li");
+      if (standalone.has(a) || !line || a.querySelector("img")) return false;
+      if (squash(line.textContent) !== squash(a.textContent) || !futuraText(a)) return false;
+      a.querySelectorAll("span.futura-bold").forEach(unwrap);
+      [...line.querySelectorAll("span.futura-bold")].filter((span) => span.contains(a)).forEach(unwrap);
+      return true;
+    });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
-      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
+      const walker = doc.createTreeWalker(el, 4);
+      let serif = false;
+      let futura = false;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) {
+          const font = n.parentElement.closest(".urw-egyptienne, .futura-bold");
+          if (font && font !== el && el.contains(font) && font.classList.contains("urw-egyptienne")) serif = true;
+          else futura = true;
+        }
+      }
+      if (serif && !futura) el.dataset.serifInside = "1";
+    });
+    mapColours(root);
+    boldLinks.forEach((a) => {
+      a.prepend(doc.createTextNode("[[futura-bold]"));
+      a.append(doc.createTextNode("]"));
+    });
+    root.querySelectorAll("span.futura-bold").forEach((el) => {
+      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6") || el.dataset.serifInside) {
         rename(el, "strong");
         return;
       }
@@ -744,7 +797,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../tools/importer/corp-section-builder.js
+  // tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridWidth(el) {
     const m = String(el.className).match(/\baem-GridColumn--default--(\d+)\b/);
@@ -963,7 +1016,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // ../../../tools/importer/data/xf-index.js
+  // tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3112,7 +3165,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // ../../../tools/importer/xf-path-rule.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var CF_ROOT = "/content/dam/stryker/content-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
@@ -3135,7 +3188,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}content-fragments/${segments.join("/")}` : null;
   }
 
-  // ../../../tools/importer/xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3163,7 +3216,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../tools/importer/corp-components.js
+  // tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3318,7 +3371,7 @@ var CustomImportScript = (() => {
     return { sections, unknown };
   }
 
-  // ../../../tools/importer/parsers/hero-image-slide.js
+  // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3360,7 +3413,12 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse(element, { document, overlayNodes, variants: extra = [] }) {
+  function parse(element, {
+    document,
+    overlayNodes,
+    variants: extra = [],
+    vwSize: vwSize2 = true
+  }) {
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
@@ -3395,7 +3453,7 @@ var CustomImportScript = (() => {
       if (right !== null) variants.push(`right-${right}`);
       const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
       const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (size && vwSize2) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
     variants.push(...extra);
@@ -3405,7 +3463,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../tools/importer/parsers/cards-corp-teaser.js
+  // tools/importer/parsers/cards-corp-teaser.js
   function clean2(text3) {
     return (text3 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3459,7 +3517,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // ../../../tools/importer/parsers/video.js
+  // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3485,7 +3543,7 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // ../../../tools/importer/corp-component-handlers.js
+  // tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -3705,18 +3763,18 @@ var CustomImportScript = (() => {
       return [];
     });
   }
-  var isLabel = (node) => node.tagName === "P" && node.querySelector("strong") && text(node.querySelector("strong")) === text(node) && !node.querySelector("a, picture, img");
+  var isLabel2 = (node) => node.tagName === "P" && node.querySelector("strong") && text(node.querySelector("strong")) === text(node) && !node.querySelector("a, picture, img");
   var sizeOf = (style) => (style || "").split(", ").find((s) => /^p-\d/.test(s)) || "";
   var LABEL_STYLES = { "p-1-5": "label-1-5", "p-1-75": "label-1-75", "p-2": "label-2" };
   function sharedCopyStyle(cells, ctx) {
     const nodes = cells.flat().filter((n) => n.copyStyle !== void 0);
     const weights = /* @__PURE__ */ new Map();
-    nodes.filter((n) => !isLabel(n)).forEach((n) => {
+    nodes.filter((n) => !isLabel2(n)).forEach((n) => {
       const style = n.copyStyle || "";
       weights.set(style, (weights.get(style) || 0) + text(n).length);
     });
     if (!weights.size) {
-      const sizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+      const sizes = new Set(nodes.filter(isLabel2).map((n) => sizeOf(n.copyStyle)));
       return sizes.size === 1 ? [...sizes][0] : "";
     }
     const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
@@ -3724,7 +3782,7 @@ var CustomImportScript = (() => {
       const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || "default");
       ctx.report.notes.push(`Columns: mixed copy styles, kept ${copy || "default"} (also ${others.join(" / ")})`);
     }
-    const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+    const labelSizes = new Set(nodes.filter(isLabel2).map((n) => sizeOf(n.copyStyle)));
     const [labelSize] = [...labelSizes];
     if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
     if (LABEL_STYLES[labelSize]) return [copy, LABEL_STYLES[labelSize]].filter(Boolean).join(", ");
@@ -3936,7 +3994,8 @@ var CustomImportScript = (() => {
     if (title && text(title)) {
       const h = doc.createElement(/^H[1-6]$/.test(title.tagName) ? title.tagName.toLowerCase() : "h4");
       const a = title.querySelector("a[href]");
-      h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), text(a)) : doc.createTextNode(text(title)));
+      const label = (value, link2) => `[[${link2 ? "serif,color-black" : "serif"}]${value}]`;
+      h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), label(text(a), true)) : doc.createTextNode(label(text(title))));
       head.push(h);
     }
     el.querySelectorAll(".cta-description").forEach((d) => {
@@ -3988,6 +4047,19 @@ var CustomImportScript = (() => {
           node.before(run);
         }
         run.append(node);
+      });
+      box2.querySelectorAll("h4").forEach((h) => {
+        const walker = doc.createTreeWalker(h, 4);
+        let serif = true;
+        for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+          const font = n.textContent.trim() && n.parentElement.closest(".urw-egyptienne, .futura-bold");
+          if (n.textContent.trim() && (!font || !font.classList.contains("urw-egyptienne") || !h.contains(font))) serif = false;
+        }
+        if (serif || !text(h)) return;
+        const span = doc.createElement("span");
+        span.className = "futura-bold";
+        while (h.firstChild) span.append(h.firstChild);
+        h.append(span);
       });
       markRuns(box2, { serifDefault: true });
       if (cleanRichText(box2).centred) centred = true;
@@ -4059,11 +4131,6 @@ var CustomImportScript = (() => {
     const variants = ["image-slide", bottom ? "bottom-0" : "text-above"];
     const cols = box && [...box.classList].map((c) => c.match(/^col-sm-(\d+)$/)).find(Boolean);
     if (cols && Number(cols[1]) < 12) variants.push(`right-${Math.round(100 - Number(cols[1]) * 100 / 12)}`);
-    const lines = box ? [...box.querySelectorAll(".line")] : [];
-    const size = lines[0] ? vwSize(lines[0]) : 0;
-    const copySize = lines[1] ? vwSize(lines[1]) : 0;
-    if (size) variants.push(`size-${String(size).replace(".", "-")}`);
-    if (copySize) variants.push(`copy-size-${String(copySize).replace(".", "-")}`);
     if (heroBox(box)) variants.push(heroBox(box));
     variants.push(...itemsSpacing(boxItems));
     const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
@@ -4142,13 +4209,7 @@ var CustomImportScript = (() => {
       const overlayItems = overlay ? ctx.collect(overlay) : [];
       const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
-      const copy = overlay && overlay.querySelector(".line2");
-      const lines = overlay ? [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter(text) : [];
-      const copySize = copy && vwSize(copy) || lines.slice(1).map(vwSize).find(Boolean) || 0;
-      if (!(copy && vwSize(copy)) && copySize && lines.slice(1).some((l) => !vwSize(l))) {
-        ctx.report.notes.push(`hero line without its own vw size takes copy-size-${copySize}: ${text(lines.slice(1).find((l) => !vwSize(l))).slice(0, 40)}`);
-      }
-      const variants = copySize ? [`copy-size-${String(copySize).replace(".", "-")}`] : [];
+      const variants = [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
       if (heroBox(overlay)) variants.push(heroBox(overlay));
       variants.push(...itemsSpacing(overlayItems));
@@ -4157,7 +4218,8 @@ var CustomImportScript = (() => {
       parse(holder.firstElementChild, {
         document: doc,
         overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : void 0,
-        variants
+        variants,
+        vwSize: false
       });
       return [{
         type: "own",
@@ -4693,7 +4755,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // ../../../tools/importer/corp-page.js
+  // tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -4749,7 +4811,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // ../../../tools/importer/import-news-shared-fragments.js
+  // tools/importer/import-news-shared-fragments.js
   var FRAGMENTS2 = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       type: "resources",
@@ -4825,7 +4887,16 @@ var CustomImportScript = (() => {
   function sectionMetadata(document, style) {
     return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
   }
-  function buildResources(document, src) {
+  function emFactor(p) {
+    return [...p.querySelectorAll('[class*="fontsize-"]')].reduce((f, el) => [...el.classList].reduce((g, cls) => {
+      const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?em$/);
+      if (!m) return g;
+      return g * (!m[2] && Number(m[1]) > 4 ? Number(m[1]) / 10 : Number(`${m[1]}.${m[2] || 0}`));
+    }, f), 1);
+  }
+  function buildResources(document, src, def = {}) {
+    const labelStyle = (def.style || "").match(/label-(\d+)-(\d+)/);
+    const labelSize = labelStyle ? Number(`${labelStyle[1]}.${labelStyle[2]}`) : 1.25;
     const out = [];
     const h2 = document.createElement("h2");
     h2.textContent = text2(src.querySelector(".c-section-title h2")) || "Resources";
@@ -4839,7 +4910,8 @@ var CustomImportScript = (() => {
         } else if (text2(p)) {
           const lp = document.createElement("p");
           const strong = document.createElement("strong");
-          strong.textContent = text2(p);
+          const factor = Math.round(emFactor(p) * 1e4) / 1e4;
+          strong.textContent = Math.abs(factor / labelSize - 1) > 0.03 ? `[[size-${String(factor).replace(".", "-")}em]${text2(p)}]` : text2(p);
           lp.append(strong);
           cell.push(lp);
         }
@@ -4961,7 +5033,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // ../../../tools/importer/import-xf-fragments.js
+  // tools/importer/import-xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var corpTransformers = [transform, transform2, transform3];
   var import_xf_fragments_default = {

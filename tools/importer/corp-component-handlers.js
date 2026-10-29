@@ -573,7 +573,10 @@ function buttons(el, ctx) {
   if (title && text(title)) {
     const h = doc.createElement(/^H[1-6]$/.test(title.tagName) ? title.tagName.toLowerCase() : 'h4');
     const a = title.querySelector('a[href]');
-    h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), text(a)) : doc.createTextNode(text(title)));
+    // the title is Egyptienne Light, a linked one black (stryker.com .c-curatedcta .cta-title,
+    // e.g. surgical/learn "Contact us")
+    const label = (value, link) => `[[${link ? 'serif,color-black' : 'serif'}]${value}]`;
+    h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), label(text(a), true)) : doc.createTextNode(label(text(title))));
     head.push(h);
   }
   el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
@@ -636,6 +639,22 @@ function largeHeadline(el, ctx) {
       }
       run.append(node);
     });
+    // an h4 line is Futura bold on live unless its text is set in Egyptienne (the innermost
+    // font class): bold, as the Columns large-headline title is the light serif when plain
+    // (24 of the 34 Large Headline h4s, e.g. inspace "Understanding InSpace")
+    box.querySelectorAll('h4').forEach((h) => {
+      const walker = doc.createTreeWalker(h, 4); // NodeFilter.SHOW_TEXT
+      let serif = true;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const font = n.textContent.trim() && n.parentElement.closest('.urw-egyptienne, .futura-bold');
+        if (n.textContent.trim() && (!font || !font.classList.contains('urw-egyptienne') || !h.contains(font))) serif = false;
+      }
+      if (serif || !text(h)) return;
+      const span = doc.createElement('span');
+      span.className = 'futura-bold';
+      while (h.firstChild) span.append(h.firstChild);
+      h.append(span);
+    });
     // each run's own size / font (vw lines), for what the section styles cannot carry; plain
     // Large Headline copy is Egyptienne on live
     markRuns(box, { serifDefault: true });
@@ -693,7 +712,7 @@ function sectionTitle(el, ctx) {
  * fullWidthImage: a banner image (desktop crop in the picture's
  * min-width source, mobile crop in its img) with an optional text box. With text: Hero Corp
  * (image-slide, text-above), as live: the text box over the image from 841px (600px here),
- * above the image on phones; the Large Headline's vw sizes as size-<n> / copy-size-<n>.
+ * above the image on phones; the Large Headline lines carry their own vw sizes (tags).
  * Without text: the image as default content.
  */
 function fullWidthImage(el, ctx) {
@@ -720,11 +739,7 @@ function fullWidthImage(el, ctx) {
   const variants = ['image-slide', bottom ? 'bottom-0' : 'text-above'];
   const cols = box && [...box.classList].map((c) => c.match(/^col-sm-(\d+)$/)).find(Boolean);
   if (cols && Number(cols[1]) < 12) variants.push(`right-${Math.round(100 - (Number(cols[1]) * 100) / 12)}`);
-  const lines = box ? [...box.querySelectorAll('.line')] : [];
-  const size = lines[0] ? vwSize(lines[0]) : 0;
-  const copySize = lines[1] ? vwSize(lines[1]) : 0;
-  if (size) variants.push(`size-${String(size).replace('.', '-')}`);
-  if (copySize) variants.push(`copy-size-${String(copySize).replace('.', '-')}`);
+  // the lines carry their own sizes ([[size-<n>vw]] tags): no size-<n> / copy-size-<n>
   if (heroBox(box)) variants.push(heroBox(box));
   variants.push(...itemsSpacing(boxItems));
   const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
@@ -813,20 +828,14 @@ function carousel(el, ctx) {
     }
     if (!slide.querySelector('img') && !slide.dataset.xfDesktop) return [];
     // the overlay through the component handlers (rich text, buttons, Large Headline lines
-    // with their colours); its copy (line 2) size as the copy-size option
+    // with their colours and their own sizes as [[size-<n>vw]] / [[size-<n>em]] tags)
     const overlay = slide.querySelector('.overlayparsys');
     const overlayItems = overlay ? ctx.collect(overlay) : [];
     const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
-    // the copy size: the Large Headline line 2's vw size, else the first vw size after the
-    // headline line (inspace: two lines with their own vw sizes in line 1, a fixed line 2)
-    const copy = overlay && overlay.querySelector('.line2');
-    const lines = overlay ? [...overlay.querySelectorAll('h1, h2, h3, h4, h5, h6, p')].filter(text) : [];
-    const copySize = (copy && vwSize(copy)) || lines.slice(1).map(vwSize).find(Boolean) || 0;
-    if (!(copy && vwSize(copy)) && copySize && lines.slice(1).some((l) => !vwSize(l))) {
-      ctx.report.notes.push(`hero line without its own vw size takes copy-size-${copySize}: ${text(lines.slice(1).find((l) => !vwSize(l))).slice(0, 40)}`);
-    }
-    const variants = copySize ? [`copy-size-${String(copySize).replace('.', '-')}`] : [];
+    // no size-<n> / copy-size-<n> options: each line carries its own size (a line without a
+    // vw size keeps the page type, as live: inspace "A breakthrough in the shoulder…" h1 28px)
+    const variants = [];
     // the slide image in the right half of the slide XF's grid (offset 6 / width 6): the
     // product hero layout
     if (slide.querySelector('.experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6')) variants.push('image-right');
@@ -839,6 +848,7 @@ function carousel(el, ctx) {
       document: doc,
       overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : undefined,
       variants,
+      vwSize: false,
     });
     // the overlay's copy style and serif headings, as for Columns cells
     return [{

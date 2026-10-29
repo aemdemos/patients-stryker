@@ -228,6 +228,48 @@
       "outcome": "Egyptienne (the component default, .c-largeheadline .line): [[serif]…] where the section is not serif",
       "status": "proposed",
       "note": "2026-10-29 (aaa-2023, promoting-high-quality…). The component's 1vw default size between 840 and 1438px is not carried (14px from 1439px, as the page default)"
+    },
+    {
+      "id": "futura-bold-link",
+      "source": "a link in span.futura-bold throughout, alone on its line, no triangle (357 on 112 pages: product names under their image, \"CONTACT US\" in bands)",
+      "outcome": "a text link with [[futura-bold]…] inside it (not a button: bold around a whole link is the button convention, and DA moves bold covering a link out of it); its colour as [[color-…]] tags (black included: [[color-black]])",
+      "status": "proposed",
+      "note": "2026-10-29 (nailing-portfolio \"Gamma4 Trochanteric Nail\": Futura bold 21px black on live); tag names to approve"
+    },
+    {
+      "id": "corp-colours",
+      "source": "inline colours #edeeec / rgb(237,238,236) (613), #b2b4ae (107), #af6d04 (58), black in a link",
+      "outcome": "exact bracket tags [[color-light-gray]], [[color-silver]], [[color-dark-gold]], [[color-black]] (styles-corp.css) instead of the nearest shared colour",
+      "status": "proposed",
+      "note": "2026-10-29 (orthopaedic \"In my practice…\" was rounded to white); tag names to approve"
+    },
+    {
+      "id": "egyptienne-in-futura-bold",
+      "source": "span.futura-bold whose text is all in an inner span.urw-egyptienne",
+      "outcome": "Egyptienne bold, as live (the innermost font class applies): plain bold + [[serif]] (paragraphs and headings), not the Futura bold + italic paragraph form",
+      "status": "proposed",
+      "note": "2026-10-29 (orthopaedic \"Ask for Stryker\", inspace \"InSpace:\")"
+    },
+    {
+      "id": "large-headline-h4",
+      "source": "a Large Headline h4 line not set in Egyptienne (24 of 34)",
+      "outcome": "bold h4 (Futura bold, as live); a plain h4 stays the Columns large-headline light serif title (Block Library rule)",
+      "status": "proposed",
+      "note": "2026-10-29 (inspace \"Understanding InSpace\")"
+    },
+    {
+      "id": "curated-cta-title",
+      "source": "curated CTA title (h4.cta-title)",
+      "outcome": "[[serif]…] (Egyptienne), a linked title also [[color-black]]",
+      "status": "proposed",
+      "note": "2026-10-29 (surgical/learn \"Contact us\")"
+    },
+    {
+      "id": "hero-line-sizes",
+      "source": "hero slide / banner lines",
+      "outcome": "no size-<n> / copy-size-<n> Hero Corp options from the corp engine: each line carries its own [[size-<n>vw]] / [[size-<n>em]] tags; a line without a size keeps the page type (inspace h1 28px)",
+      "status": "proposed",
+      "note": "2026-10-29; the options stay supported for heroes already in DA"
     }
   ],
   "colours": {

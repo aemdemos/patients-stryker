@@ -713,6 +713,29 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* bracket tag `[[futura-bold]…]` inside a link: a bold text link (stryker.com span.futura-bold
+   around a link alone on its line, e.g. nailing-portfolio "Gamma4 Trochanteric Nail"), not a
+   button */
+:where(body.corp) main span.futura-bold {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* corp colour tags (the shared ones are in styles.css): [[color-black]…] black link text (the
+   link default is teal), [[color-light-gray]…] #edeeec, [[color-silver]…] #b2b4ae,
+   [[color-dark-gold]…] #af6d04 (stryker.com inline colours) */
+:where(body.corp) main span.color-black { --span-color: var(--color-black); }
+:where(body.corp) main span.color-light-gray { --span-color: var(--color-surface); }
+:where(body.corp) main span.color-silver { --span-color: var(--color-surface-muted); }
+:where(body.corp) main span.color-dark-gold { --span-color: var(--color-accent-link-hover); }
+
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold),
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold) :is(strong, b, em, i, a:any-link) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
 /* bracket tag `[[serif]…]`: Egyptienne copy inside other copy (stryker.com
    span.urw-egyptienne in a paragraph that is not serif throughout) */
 :where(body.corp) main span.serif {

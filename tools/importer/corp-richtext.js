@@ -195,7 +195,7 @@ function vwFactor(cls) {
 
 const RUN_TAG = 'x-run';
 const RUN_NAME = /^x-run-e(\d+)-(\d+)-v(\d+)-(\d+)-s([012])$/i;
-const round = (n) => Math.round(n * 10000) / 10000;
+const round = (n) => Math.round(n * 100000) / 100000;
 const num = (n) => String(round(n)).replace('.', '-');
 // font: 1 = Egyptienne, 2 = bold in the body font (a plain <b> inside the copy)
 const runName = ({ em, vw, font }) => {
@@ -226,7 +226,10 @@ function runOf(textNode, blockEl, serifDefault) {
   const b = props.font !== 'futura' && chain.find((e) => e.tagName === 'B');
   const heading = /^H/.test(blockEl.tagName);
   let code = 0;
-  if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) ? 1 : 0;
+  // headings: a plain bold in an h1–h3, or Egyptienne inside a Futura bold (the cleaner makes it
+  // a <strong>, Futura on the site)
+  const serifInBold = props.font === 'serif' && chain.some((e) => e.classList.contains('futura-bold'));
+  if (heading) code = (b && /^H[1-3]$/.test(blockEl.tagName)) || serifInBold ? 1 : 0;
   else if (font === 'serif') code = 1;
   else if (b && squash(b.textContent) !== squash(blockEl.textContent)
     && (sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling'))) code = 2;
@@ -266,6 +269,14 @@ const COPY_FACTORS = {
   'p-0-8': 0.8, 'p-1': 1, 'p-1-25': 1.25, 'p-1-5': 1.5, 'p-1-75': 1.75, 'p-2': 2, 'p-2-5': 2.5,
 };
 const HEADING_FACTORS = { 'h-0-8': 0.8, 'h-1-25': 1.25, 'h-1-5': 1.5 };
+// label styles (styles-corp.css label-*: a paragraph that is one bold run)
+const LABEL_FACTORS = { 'label-1-5': 1.5, 'label-1-75': 1.75, 'label-2': 2 };
+const isLabel = (p) => {
+  const kids = [...p.children];
+  if (kids.length !== 1) return false;
+  const [kid] = kids;
+  return kid.tagName === 'STRONG' || (kid.tagName === 'EM' && kid.children.length === 1 && kid.firstElementChild.tagName === 'STRONG');
+};
 
 /**
  * The marked runs (markRuns) of a section's nodes → bracket tags, for what the section
@@ -282,6 +293,7 @@ const HEADING_FACTORS = { 'h-0-8': 0.8, 'h-1-25': 1.25, 'h-1-5': 1.5 };
 export function finishRuns(nodes, styles) {
   const copy = styles.map((s) => COPY_FACTORS[s]).find(Boolean) || 1;
   const heading = styles.map((s) => HEADING_FACTORS[s]).find(Boolean) || 1;
+  const label = styles.map((s) => LABEL_FACTORS[s]).find(Boolean);
   const serifSection = styles.includes('serif');
   nodes.forEach((node) => {
     if (node.nodeType !== 1) return;
@@ -298,7 +310,11 @@ export function finishRuns(nodes, styles) {
         const name = table ? text(table.querySelector('tr')) : '';
         const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
         const isHeading = !!run.closest('h1, h2, h3, h4, h5, h6');
-        const base = isHeading ? heading : copy;
+        const line = run.closest('p');
+        // a label in a section with a label size: that size is the reference (EMS footer
+        // "Support" 1.25em next to "Explore" 1.5em)
+        let base = isHeading ? heading : copy;
+        if (!isHeading && label && line && isLabel(line)) base = label;
         if (vw) tags.push(`size-${num(vw)}vw`);
         else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
         // serif runs: tagged unless the section is serif; inside a plain bold (<b>, which the
@@ -326,8 +342,13 @@ const COLOURS = {
   '27455c': 'color-navy',
   545857: 'color-grey',
   ffffff: 'color-white',
+  // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
+  // practice…", "CONTACT US" links), silver (107) and dark gold (58)
+  edeeec: 'color-light-gray',
+  b2b4ae: 'color-silver',
+  af6d04: 'color-dark-gold',
 };
-const NEUTRAL = new Set(['color-white', 'color-grey', '']);
+const NEUTRAL = new Set(['color-white', 'color-light-gray', 'color-silver', 'color-grey', '']);
 
 /** A CSS colour value as 6-digit lowercase hex (no #), or '' when it cannot be read. */
 function toHex(value) {
@@ -421,7 +442,8 @@ export function mapColours(root) {
   const linkOnly = (el) => !!el.closest('a[href]')
     || [...el.querySelectorAll('a[href]')].some((a) => squash(a.textContent) === squash(el.textContent));
   coloured.forEach((el) => {
-    const cls = colourClass(own.get(el));
+    // black is the text default, but not a link's (teal): black link text keeps its colour
+    const cls = colourClass(own.get(el)) || (own.get(el) === '000000' && linkOnly(el) ? 'color-black' : '');
     if (!cls) return;
     if (cls === 'color-teal' && linkOnly(el)) return;
     const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll('*')].some((d) => own.get(d));
@@ -559,13 +581,59 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
     strong.append(a);
   });
 
+  // a link in Futura bold throughout, alone on its line (product names under their image,
+  // "CONTACT US" in a band: 357 on 112 pages): a bold text link on live, not a button. Bold
+  // around the whole link is the button convention (and Document Authoring moves bold that
+  // covers a link's text out of it), so the Futura bold is a bracket tag inside the link
+  const futuraText = (el) => {
+    const walker = doc.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT
+    let all = true;
+    let any = false;
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (squash(n.textContent)) {
+        any = true;
+        if (!n.parentElement.closest('.futura-bold')) all = false;
+      }
+    }
+    return any && all;
+  };
+  const boldLinks = [...root.querySelectorAll('a[href]')].filter((a) => {
+    const line = a.closest('p, li');
+    if (standalone.has(a) || !line || a.querySelector('img')) return false;
+    if (squash(line.textContent) !== squash(a.textContent) || !futuraText(a)) return false;
+    a.querySelectorAll('span.futura-bold').forEach(unwrap);
+    [...line.querySelectorAll('span.futura-bold')].filter((span) => span.contains(a)).forEach(unwrap);
+    return true;
+  });
+
+  // a span.futura-bold whose text is all in an Egyptienne span inside it is Egyptienne bold
+  // on live (orthopaedic "Ask for Stryker", inspace "InSpace:")
+  root.querySelectorAll('span.futura-bold').forEach((el) => {
+    const walker = doc.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT
+    let serif = false;
+    let futura = false;
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (squash(n.textContent)) {
+        const font = n.parentElement.closest('.urw-egyptienne, .futura-bold');
+        if (font && font !== el && el.contains(font) && font.classList.contains('urw-egyptienne')) serif = true;
+        else futura = true;
+      }
+    }
+    if (serif && !futura) el.dataset.serifInside = '1';
+  });
+
   // colours, before the formatting spans that may carry them are renamed or unwrapped
   mapColours(root);
+  // the bold-link tag outside the colour tags, inside the link
+  boldLinks.forEach((a) => {
+    a.prepend(doc.createTextNode('[[futura-bold]'));
+    a.append(doc.createTextNode(']'));
+  });
 
   // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
   // colour); <b> → <strong> (bold in the body font). Headings keep a plain <strong>.
   root.querySelectorAll('span.futura-bold').forEach((el) => {
-    if (!el.closest('p, li') || el.closest('h1, h2, h3, h4, h5, h6')) {
+    if (!el.closest('p, li') || el.closest('h1, h2, h3, h4, h5, h6') || el.dataset.serifInside) {
       rename(el, 'strong');
       return;
     }

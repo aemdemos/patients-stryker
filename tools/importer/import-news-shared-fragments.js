@@ -109,7 +109,19 @@ function sectionMetadata(document, style) {
   return WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
 }
 
-function buildResources(document, src) {
+// the product of a paragraph's .fontsize-<x>em classes (fontsize-1-25em → 1.25, fontsize-8em → 0.8)
+function emFactor(p) {
+  return [...p.querySelectorAll('[class*="fontsize-"]')].reduce((f, el) => [...el.classList].reduce((g, cls) => {
+    const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?em$/);
+    if (!m) return g;
+    return g * (!m[2] && Number(m[1]) > 4 ? Number(m[1]) / 10 : Number(`${m[1]}.${m[2] || 0}`));
+  }, f), 1);
+}
+
+function buildResources(document, src, def = {}) {
+  // the labels' size: the section's label-<n> style, else its copy size (p-1-25)
+  const labelStyle = (def.style || '').match(/label-(\d+)-(\d+)/);
+  const labelSize = labelStyle ? Number(`${labelStyle[1]}.${labelStyle[2]}`) : 1.25;
   const out = [];
   const h2 = document.createElement('h2');
   h2.textContent = text(src.querySelector('.c-section-title h2')) || 'Resources';
@@ -124,7 +136,11 @@ function buildResources(document, src) {
         // column label (Explore / Learn / Support / More): bold paragraph
         const lp = document.createElement('p');
         const strong = document.createElement('strong');
-        strong.textContent = text(p);
+        // a label authored at another size keeps it (emergency-care "Support" / "More" 1.25em
+        // next to "Explore" / "Learn" 1.5em): [[size-<n>em]] (scripts/corp-type.js)
+        const factor = Math.round(emFactor(p) * 10000) / 10000;
+        strong.textContent = Math.abs(factor / labelSize - 1) > 0.03
+          ? `[[size-${String(factor).replace('.', '-')}em]${text(p)}]` : text(p);
         lp.append(strong);
         cell.push(lp);
       }

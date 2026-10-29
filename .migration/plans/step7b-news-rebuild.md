@@ -232,3 +232,26 @@ differ. By cause:
   without a vw size takes the hero size-3-5; curated CTA title (Egyptienne, black link on
   live); "In my practice" light grey rgb(237,238,236) rounded to white; focusrn h1 56px in a
   Columns cell (28px live); EMS footer labels 21px (17.5px live).
+
+## Batch 2026-10-29 (3): remaining tier2 typography
+- Futura bold links alone on their line (357 on 112 pages): a text link with
+  `[[futura-bold]…]` inside it, not a button; black link text `[[color-black]]`.
+- Exact corp colours: `[[color-light-gray]]` (#edeeec, 613 uses), `[[color-silver]]` (#b2b4ae),
+  `[[color-dark-gold]]` (#af6d04) instead of rounding to the nearest shared colour.
+- Futura bold around Egyptienne text is Egyptienne bold (innermost class), paragraphs and
+  headings: plain bold + `[[serif]]` (orthopaedic "Ask for Stryker", inspace "InSpace:").
+- Large Headline h4 not set in Egyptienne: bold h4 (Futura, as live); the Columns
+  large-headline plain h4 stays the library's light serif title.
+- Curated CTA title: `[[serif]]`, linked `[[serif,color-black]]`.
+- Hero Corp: the corp engine writes no size-<n> / copy-size-<n>; each line carries its own
+  tags, lines without a size keep the page type (the options stay supported for DA content).
+- Labels: a label authored at another size than the section's label-<n> keeps it (EMS footer).
+- Columns h4: the corp h4 scale (14px phones, 17.5px from 600px).
+- **Result** (39 pilots): style diffs pd+lpd 17 / 19 → 3 / 6, t2+news 17 / 22 → 3 / 4.
+- **Left:** cardiovascular-health rich-text h1 in a Columns cell (the library contract makes
+  a cell h1 a Large Headline, 56px; live 28px: needs a decision); EMS hero on phones (live
+  shows black text, ours the authored white; the slide has a mobile XF, cause not confirmed);
+  EMS tabs next to a column become a flex section without tabs (structural); Large Headline
+  default size of plain lines (21px phones, 1vw to 14px desktop, not carried); isolibrium h2
+  1.25em in an image-right hero and the #323232 heading colour; lifepak-15 "Connect with an
+  expert" (a button on ours, an h2 on live); news "References" label 11.2px (14px live).

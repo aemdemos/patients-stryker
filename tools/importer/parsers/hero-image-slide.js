@@ -73,9 +73,13 @@ function percent(style, re) {
  * @param {Element} element the carousel (or slide)
  * @param {object} options document; overlayNodes: the overlay text already converted by the
  *   caller (corp section builder: rich text + buttons of a product hero), used instead of
- *   the Large Headline lines; variants: more block options (e.g. copy-size-<n>)
+ *   the Large Headline lines; variants: more block options; vwSize: false when the caller's
+ *   overlay lines carry their own vw sizes as [[size-<n>vw]] tags (the corp engine), so no
+ *   size-<n> option is written
  */
-export default function parse(element, { document, overlayNodes, variants: extra = [] }) {
+export default function parse(element, {
+  document, overlayNodes, variants: extra = [], vwSize = true,
+}) {
   const slide = element.querySelector('.carouselslide:not(.slick-cloned)') || element;
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
@@ -117,7 +121,7 @@ export default function parse(element, { document, overlayNodes, variants: extra
 
     const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
     const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-    if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+    if (size && vwSize) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
 
     if (overlay.classList.contains('mobile_Bottom')) variants.push('text-below');
   }
