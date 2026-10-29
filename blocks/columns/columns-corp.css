@@ -5,8 +5,9 @@
  * pages: cells keep the 15px side padding (30px gutter), body copy is 14px Humanist
  * and every split goes side by side from 600px.
  *
- * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair (image grid), large-headline (the stryker.com Large
+ * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
+ * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
+ * large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
@@ -436,9 +437,21 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     flex: 0 0 25%;
   }
 
+  /* columns-25-25-50: three image columns 25% / 25% / 50% wide, as the stryker.com image row
+     (AEM grid 3 / 3 / 6): two portrait photos and a landscape one come out about the same
+     height, nothing cropped (the SurgiCount+ release) */
+  body.corp .columns.columns-25-25-50 > div > div {
+    flex: 0 0 25%;
+  }
+
   /* text beside an image starts level with the image, not 30px lower */
   body.corp .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding-top: 0;
+  }
+
+  /* columns-25-25-50: the last (landscape) image column is twice as wide */
+  body.corp .columns.columns-25-25-50 > div > div:last-child {
+    flex: 0 0 50%;
   }
 
   body.corp .columns.columns-67-33 > div > div:first-child,

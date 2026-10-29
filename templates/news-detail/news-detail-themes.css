@@ -25,6 +25,13 @@ body.news-detail.full-width main > .section.separator > div:first-child {
    body.news-detail.full-width .columns > div {
    flex-direction: column;
    }
+
+  /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
+     start of the full-width section, as on the source (the additive manufacturing lead
+     image), not centred like the template's article-column images */
+  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
+    margin-inline: 0 auto;
+  }
   }
 
    @media (width >= 900px) {
