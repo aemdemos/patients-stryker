@@ -5,8 +5,9 @@
  * pages: cells keep the 15px side padding (30px gutter), body copy is 14px Humanist
  * and every split goes side by side from 600px.
  *
- * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair (image grid), large-headline (the stryker.com Large
+ * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-33-33-33
+ * (three images of one height), columns-20-80 (icon + text), media-pair (image grid),
+ * large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
@@ -428,12 +429,34 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     row-gap: 0;
   }
 
+  /* columns-33-33-33 (cells below): the row stretches every cell to the tallest image */
+  body.corp .columns.columns-33-33-33 > div {
+    align-items: stretch;
+  }
+
   body.corp .columns.columns-50-50 > div > div {
     flex: 0 0 50%;
   }
 
   body.corp .columns.columns-4-cols > div > div {
     flex: 0 0 25%;
+  }
+
+  /* columns-33-33-33: three equal image columns of one height (the tallest image's); a
+     wider image fills its column and is cropped at the sides, e.g. two portrait photos
+     and a landscape one in a row (the SurgiCount+ release) */
+  body.corp .columns.columns-33-33-33 > div > div {
+    flex: 0 0 33.333%;
+  }
+
+  body.corp .columns.columns-33-33-33 .columns-img-col picture {
+    display: block;
+    height: 100%;
+  }
+
+  body.corp .columns.columns-33-33-33 .columns-img-col img {
+    height: 100%;
+    object-fit: cover;
   }
 
   /* text beside an image starts level with the image, not 30px lower */
