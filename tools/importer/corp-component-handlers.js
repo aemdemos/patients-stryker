@@ -62,6 +62,56 @@ function vwSize(el) {
   }, 0);
 }
 
+// AEM box spacing fields as rendered (style="padding-top: 4%; …") → tokens (decisions
+// property-map: carried exactly, lift and shift); scripts/corp-spacing.js applies them
+const SPACING_PROPS = [
+  ['padding-top', 'pt'], ['padding-bottom', 'pb'], ['padding-left', 'pl'], ['padding-right', 'pr'],
+  ['margin-top', 'mt'], ['margin-bottom', 'mb'], ['margin-left', 'ml'], ['margin-right', 'mr'],
+];
+
+/**
+ * The box spacing of a rendered text / Large Headline box: pt-4 (padding-top 4%), pl-3-6,
+ * mt-n8 (-8%), pt-10px. Empty fields ("padding-top: %;") and values the browser ignores
+ * (e.g. "10px%") have no effect on live, so none here.
+ */
+export function spacingOf(box) {
+  const style = (box && box.getAttribute && box.getAttribute('style')) || '';
+  return SPACING_PROPS.flatMap(([prop, key]) => {
+    const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)(%|px)\\s*(?:;|$)`));
+    if (!m || Number(m[1]) === 0) return [];
+    return [`${key}-${m[1].replace('-', 'n').replace('.', '-')}${m[2] === 'px' ? 'px' : ''}`];
+  });
+}
+
+/** A [[spacing,…]] paragraph: the start of a spaced box in a cell (no tokens = the end). */
+function spacingMarker(doc, tokens) {
+  const p = doc.createElement('p');
+  p.textContent = `[[${['spacing', ...tokens].join(',')}]]`;
+  return p;
+}
+
+/**
+ * Flow items of one container (a cell, a flex section) → nodes with [[spacing]] markers
+ * around the spaced boxes.
+ */
+function markedNodes(items, nodesOf, doc) {
+  let open = false;
+  return items.flatMap((it) => {
+    const tokens = it.type === 'flow' ? it.spacing || [] : [];
+    const nodes = nodesOf(it);
+    if (!nodes.length) return [];
+    if (tokens.length) {
+      open = true;
+      return [spacingMarker(doc, tokens), ...nodes];
+    }
+    if (open) {
+      open = false;
+      return [spacingMarker(doc, []), ...nodes];
+    }
+    return nodes;
+  });
+}
+
 /** A button paragraph: gold → Bold + Italic link, other colours → Bold link (conventions). */
 function buttonNode(doc, source, label) {
   const a = linkTo(doc, newTabHref(source, absoluteAsset(source.getAttribute('href'))), label);
@@ -162,7 +212,10 @@ function statistics(counters, ctx, columns = counters.length, countUp = true) {
 }
 
 /** Section-level nodes of items (in one section: tabs panels, flex sections). */
-export function inlineNodes(items, ctx) {
+export function inlineNodes(items, ctx, { marks = true } = {}) {
+  if (marks && items.some((it) => it.type === 'flow' && (it.spacing || []).length)) {
+    return markedNodes(items, (it) => inlineNodes([it], ctx, { marks: false }), ctx.doc);
+  }
   const out = [];
   let counters = [];
   const flushCounters = () => {
@@ -202,7 +255,8 @@ function isCard(items) {
 }
 
 /** A cell's content: flow nodes, and blocks that have a cell form (video links). */
-function cellNodes(items, ctx) {
+function cellNodes(items, ctx, { marks = false } = {}) {
+  if (marks) return markedNodes(items, (it) => cellNodes([it], ctx), ctx.doc);
   return items.flatMap((it) => {
     if (it.type === 'flow') return it.nodes;
     if (it.type === 'block' && it.cellNodes) return it.cellNodes;
@@ -336,9 +390,21 @@ export function columnItems(columns, split, ctx) {
     }];
   }
 
-  // G: Columns, one row, one cell per column (empty columns keep their cell)
-  const cells = cols.map((items) => cellNodes(items, ctx));
+  // G: Columns, one row, one cell per column (empty columns keep their cell). A cell whose
+  // content is one spaced box (or boxes with the same spacing) gets c<N>-<token> options;
+  // other spaced boxes are marked inside the cell ([[spacing,…]])
   const modifiers = [];
+  const cells = cols.map((items, i) => {
+    const content = items.filter((it) => (it.type === 'flow' && it.nodes.length) || (it.type === 'block' && it.cellNodes));
+    const spaced = content.filter((it) => (it.spacing || []).length);
+    if (!spaced.length) return cellNodes(items, ctx);
+    const same = new Set(spaced.map((it) => it.spacing.join(' '))).size === 1;
+    if (same && spaced.length === content.length) {
+      modifiers.push(...spaced[0].spacing.map((t) => `c${i + 1}-${t}`));
+      return cellNodes(items, ctx);
+    }
+    return cellNodes(items, ctx, { marks: true });
+  });
   // large-headline sets the Large Headline type scale on every cell (serif copy and lists,
   // grey italic lines): only when no column is ordinary rich text (about 80 column controls
   // put a Large Headline next to rich text, e.g. jr45/july); the h1 scale applies anyway
@@ -410,7 +476,7 @@ function textComponent(el, ctx) {
   if (!nodes.length) return [];
   const box = boxOf(source);
   const item = {
-    type: 'flow', role: 'text', nodes, centred, box,
+    type: 'flow', role: 'text', nodes, centred, box, spacing: spacingOf(source),
   };
   // a coloured box on its own (not in a column): the section takes the background
   if (box && box !== 'dimensional') item.styles = [box];
@@ -508,7 +574,7 @@ function largeHeadline(el, ctx) {
   const box = boxOf(root);
   const styles = [box && box !== 'dimensional' ? box : '', size >= 2 ? 'large-headline' : ''].filter(Boolean);
   return [{
-    type: 'flow', role: 'headline', nodes, box, size, styles, centred,
+    type: 'flow', role: 'headline', nodes, box, size, styles, centred, spacing: spacingOf(root),
   }];
 }
 
@@ -546,7 +612,8 @@ function fullWidthImage(el, ctx) {
   const { doc } = ctx;
   const img = el.querySelector('.imgBoxId img') || el.querySelector('img');
   const box = el.querySelector('.textBoxId');
-  const overlay = box ? inlineNodes(ctx.collect(box), ctx) : [];
+  // (no [[spacing]] markers in a hero text box: Hero Corp does not read them yet)
+  const overlay = box ? inlineNodes(ctx.collect(box), ctx, { marks: false }) : [];
   if (!img && !overlay.length) return [];
   const source = img && img.closest('picture') && img.closest('picture').querySelector('source[media*="min-width"]');
   const image = (src) => {
@@ -653,7 +720,8 @@ function carousel(el, ctx) {
     // the overlay through the component handlers (rich text, buttons, Large Headline lines
     // with their colours); its copy (line 2) size as the copy-size option
     const overlay = slide.querySelector('.overlayparsys');
-    const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : undefined;
+    const overlayNodes = overlay
+      ? inlineNodes(ctx.collect(overlay), ctx, { marks: false }) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
     // the copy size: the Large Headline line 2's vw size, else the first vw size after the
     // headline line (inspace: two lines with their own vw sizes in line 1, a fixed line 2)

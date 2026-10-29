@@ -173,17 +173,24 @@ export function createBuilder({
     ...String(node.copyStyle || '').split(',').map((s) => s.trim()),
     node.boldBody ? 'bold-body' : '',
     ...(item.styles || []),
+    ...(item.spacing || []),
   ].filter(Boolean);
+  let spacedBoxes = 0;
 
   function placeFlow(item) {
     // an image (or image button) joins the default content it follows, whatever its copy style
-    if ((item.role === 'image' || item.role === 'cta') && current && current.key) {
+    if ((item.role === 'image' || item.role === 'cta') && current && current.key && !current.spaced) {
       current.nodes.push(...item.nodes);
       return;
     }
+    // a box with its own padding / margin (spacing tokens) is a section of its own
+    if ((item.spacing || []).length && !item.spacedBox) {
+      spacedBoxes += 1;
+      item.spacedBox = spacedBoxes;
+    }
     item.nodes.forEach((node) => {
       const styles = nodeStyles(node, item);
-      const key = `flow:${styles.join(',')}`;
+      const key = `flow:${styles.join(',')}${item.spacedBox ? `#${item.spacedBox}` : ''}`;
       // an Egyptienne h2 / h3 adds h-serif to its section; a Futura one after it starts a new
       // one. Likewise an h2 / h3 authored larger adds its size style (h-1-25 / h-1-5); one of
       // another size after it starts a new section
@@ -196,6 +203,7 @@ export function createBuilder({
       if (!current || current.key !== key || (font && current.font && current.font !== font)
         || (size && current.headingSize && current.headingSize !== size)) {
         start('flow', styles).key = key;
+        current.spaced = !!item.spacedBox;
       }
       if (font) {
         if (font === 'serif' && current.font !== 'serif') current.styles.push('h-serif');

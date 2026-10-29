@@ -24,6 +24,7 @@ import {
 } from './aem.js';
 import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
+import decorateSpacing from './corp-spacing.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
@@ -139,6 +140,9 @@ function buildAccordionSections(main) {
  * @param {Element} main The container element
  */
 export function decorateSections(main) {
+  // the AEM boxes' padding / margin (section styles, Columns c<N>- options, [[spacing]]),
+  // before accordion panels take their sections' content
+  decorateSpacing(main);
   buildAccordionSections(main);
 }
 

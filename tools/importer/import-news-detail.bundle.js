@@ -760,16 +760,22 @@ var CustomImportScript = (() => {
       item.centred ? "center" : "",
       ...String(node.copyStyle || "").split(",").map((s) => s.trim()),
       node.boldBody ? "bold-body" : "",
-      ...item.styles || []
+      ...item.styles || [],
+      ...item.spacing || []
     ].filter(Boolean);
+    let spacedBoxes = 0;
     function placeFlow(item) {
-      if ((item.role === "image" || item.role === "cta") && current && current.key) {
+      if ((item.role === "image" || item.role === "cta") && current && current.key && !current.spaced) {
         current.nodes.push(...item.nodes);
         return;
       }
+      if ((item.spacing || []).length && !item.spacedBox) {
+        spacedBoxes += 1;
+        item.spacedBox = spacedBoxes;
+      }
       item.nodes.forEach((node) => {
         const styles = nodeStyles(node, item);
-        const key = `flow:${styles.join(",")}`;
+        const key = `flow:${styles.join(",")}${item.spacedBox ? `#${item.spacedBox}` : ""}`;
         let font = null;
         let size = null;
         if (/^H[23]$/.test(node.tagName)) {
@@ -778,6 +784,7 @@ var CustomImportScript = (() => {
         }
         if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
           start("flow", styles).key = key;
+          current.spaced = !!item.spacedBox;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");
@@ -3354,6 +3361,46 @@ var CustomImportScript = (() => {
       return m ? Math.max(max, Number(`${m[1]}.${m[2] || 0}`)) : max;
     }, 0);
   }
+  var SPACING_PROPS = [
+    ["padding-top", "pt"],
+    ["padding-bottom", "pb"],
+    ["padding-left", "pl"],
+    ["padding-right", "pr"],
+    ["margin-top", "mt"],
+    ["margin-bottom", "mb"],
+    ["margin-left", "ml"],
+    ["margin-right", "mr"]
+  ];
+  function spacingOf(box) {
+    const style = box && box.getAttribute && box.getAttribute("style") || "";
+    return SPACING_PROPS.flatMap(([prop, key]) => {
+      const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)(%|px)\\s*(?:;|$)`));
+      if (!m || Number(m[1]) === 0) return [];
+      return [`${key}-${m[1].replace("-", "n").replace(".", "-")}${m[2] === "px" ? "px" : ""}`];
+    });
+  }
+  function spacingMarker(doc, tokens) {
+    const p = doc.createElement("p");
+    p.textContent = `[[${["spacing", ...tokens].join(",")}]]`;
+    return p;
+  }
+  function markedNodes(items, nodesOf, doc) {
+    let open = false;
+    return items.flatMap((it) => {
+      const tokens = it.type === "flow" ? it.spacing || [] : [];
+      const nodes = nodesOf(it);
+      if (!nodes.length) return [];
+      if (tokens.length) {
+        open = true;
+        return [spacingMarker(doc, tokens), ...nodes];
+      }
+      if (open) {
+        open = false;
+        return [spacingMarker(doc, []), ...nodes];
+      }
+      return nodes;
+    });
+  }
   function buttonNode(doc, source, label) {
     const a = linkTo(doc, newTabHref(source, absoluteAsset(source.getAttribute("href"))), label);
     const strong = doc.createElement("strong");
@@ -3433,7 +3480,10 @@ var CustomImportScript = (() => {
     const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
     return block(ctx.doc, `Statistics (${countUp ? "count-up, " : ""}${cols})`, rows);
   }
-  function inlineNodes(items, ctx) {
+  function inlineNodes(items, ctx, { marks = true } = {}) {
+    if (marks && items.some((it) => it.type === "flow" && (it.spacing || []).length)) {
+      return markedNodes(items, (it) => inlineNodes([it], ctx, { marks: false }), ctx.doc);
+    }
     const out = [];
     let counters = [];
     const flushCounters = () => {
@@ -3463,7 +3513,8 @@ var CustomImportScript = (() => {
     const rest = items.slice(1).flatMap((it) => it.nodes);
     return rest.length >= 2 && isTitle(rest[0]) && isCta(rest[rest.length - 1]);
   }
-  function cellNodes(items, ctx) {
+  function cellNodes(items, ctx, { marks = false } = {}) {
+    if (marks) return markedNodes(items, (it) => cellNodes([it], ctx), ctx.doc);
     return items.flatMap((it) => {
       if (it.type === "flow") return it.nodes;
       if (it.type === "block" && it.cellNodes) return it.cellNodes;
@@ -3568,8 +3619,18 @@ var CustomImportScript = (() => {
         nodes: [block(doc, `Cards Corp (${split.cards})`, rows)]
       }];
     }
-    const cells = cols.map((items) => cellNodes(items, ctx));
     const modifiers = [];
+    const cells = cols.map((items, i) => {
+      const content = items.filter((it) => it.type === "flow" && it.nodes.length || it.type === "block" && it.cellNodes);
+      const spaced = content.filter((it) => (it.spacing || []).length);
+      if (!spaced.length) return cellNodes(items, ctx);
+      const same = new Set(spaced.map((it) => it.spacing.join(" "))).size === 1;
+      if (same && spaced.length === content.length) {
+        modifiers.push(...spaced[0].spacing.map((t) => `c${i + 1}-${t}`));
+        return cellNodes(items, ctx);
+      }
+      return cellNodes(items, ctx, { marks: true });
+    });
     const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
     const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
     if (headline2 && !richText) modifiers.push("large-headline");
@@ -3639,7 +3700,8 @@ var CustomImportScript = (() => {
       role: "text",
       nodes,
       centred,
-      box
+      box,
+      spacing: spacingOf(source)
     };
     if (box && box !== "dimensional") item.styles = [box];
     if (box === "dimensional") item.styles = [];
@@ -3727,7 +3789,8 @@ var CustomImportScript = (() => {
       box,
       size,
       styles,
-      centred
+      centred,
+      spacing: spacingOf(root)
     }];
   }
   function sectionTitle(el, ctx) {
@@ -3754,7 +3817,7 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
-    const overlay = box ? inlineNodes(ctx.collect(box), ctx) : [];
+    const overlay = box ? inlineNodes(ctx.collect(box), ctx, { marks: false }) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -3846,7 +3909,7 @@ var CustomImportScript = (() => {
       }
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
-      const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : void 0;
+      const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx, { marks: false }) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const copy = overlay && overlay.querySelector(".line2");
       const lines = overlay ? [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6, p")].filter(text) : [];
