@@ -26,6 +26,7 @@ import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
 import decorateTypeTags from './corp-type.js';
+import fetchPlainHtml from './plain-html.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
@@ -54,7 +55,7 @@ function prefetchHeroFragments(doc) {
     if (url.origin !== window.location.origin) return;
     const path = url.pathname.replace(/\/$/, '');
     if (window.hlx.heroFragments.has(path)) return;
-    window.hlx.heroFragments.set(path, fetch(`${path}.plain.html`)
+    window.hlx.heroFragments.set(path, fetchPlainHtml(path)
       .then((resp) => (resp.ok ? resp.text() : null))
       .catch(() => null));
   });

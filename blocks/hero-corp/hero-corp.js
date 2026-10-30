@@ -1,5 +1,6 @@
 import decorateDMAssets, { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
 import { spaceBlock } from '../../scripts/corp-spacing.js';
+import fetchPlainHtml from '../../scripts/plain-html.js';
 
 // a slide's media: its picture, or its background video (a video slide)
 const MEDIA = 'picture, .dm-video-background';
@@ -35,7 +36,7 @@ async function resolveFragmentImages(block) {
       // started early by scripts/corp.js (prefetchHeroFragments) for the first heroes
       const pending = window.hlx && window.hlx.heroFragments && window.hlx.heroFragments.get(path);
       const html = pending ? await pending
-        : await fetch(`${path}.plain.html`).then((resp) => (resp.ok ? resp.text() : null));
+        : await fetchPlainHtml(path).then((resp) => (resp.ok ? resp.text() : null));
       if (!html) return {};
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const video = [...doc.body.querySelectorAll('a[href]')]

@@ -10,6 +10,7 @@ import { decorateMain } from '../../scripts/scripts.js';
 import {
   loadSections,
 } from '../../scripts/aem.js';
+import fetchPlainHtml from '../../scripts/plain-html.js';
 
 /**
  * Removes CTA links/buttons from sections styled with `no-cta`.
@@ -85,7 +86,7 @@ export function mergeSectionCards(section) {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/') && !path.startsWith('//')) {
-    const resp = await fetch(`${path}.plain.html`);
+    const resp = await fetchPlainHtml(path);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
