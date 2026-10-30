@@ -252,7 +252,9 @@ export function markRuns(root, { serifDefault = false } = {}) {
   const walker = doc.createTreeWalker(root, 4); // NodeFilter.SHOW_TEXT
   const runs = [];
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
-    const blockEl = n.parentElement && n.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6');
+    // a line authored in a <div> (adaptable-arm-positioner quote) becomes a paragraph in the
+    // cleaner, after this: the div is its block
+    const blockEl = n.parentElement && n.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6, div');
     if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
       const props = runOf(n, blockEl, serifDefault);
       runs.push([n, props]);
@@ -531,7 +533,7 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   // plain-bold labels are found: "<b>About Stryker<br></b>" is a label on its own line.
   const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
     && !node.textContent.trim() && !node.querySelector('img, br');
-  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+  [...root.querySelectorAll('span, b, i, em, strong')].reverse().forEach((el) => {
     let last = el.lastChild;
     while (last && (last.nodeName === 'BR' || emptyElement(last)
       || (last.nodeType === 3 && !last.textContent.trim()))) {

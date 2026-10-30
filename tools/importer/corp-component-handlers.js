@@ -1199,8 +1199,11 @@ function tabs(el, ctx) {
 
 /** Page short description: hidden on most pages (skipped as hidden); visible → lead content. */
 function shortDescription(el, ctx) {
-  const { nodes } = richTextNodes(el, ctx.doc);
-  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+  // the product-detail template's two columns under the hero: their components through the
+  // walk (the rich text in its column, c-rich-text-editor; the secondary CTA; the tag crumb),
+  // not as one rich text, which kept only shallow paragraphs (229 lines on 78 product pages,
+  // e.g. connected-or-ip "The future of integration is here.")
+  return ctx.collect(el);
 }
 
 /**
@@ -1436,6 +1439,8 @@ export const COMPONENTS = {
   resourcesanddownload: resources,
   '#product-detail-container': shortDescription,
   tagcrumb: skip,
+  // the tag crumb rendered by the template without its AEM wrapper (approved: metadata tags)
+  'c-tagcrumb': skip,
   accordion,
   pagehero: pageHero,
   hero: pageHero,

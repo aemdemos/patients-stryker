@@ -371,7 +371,10 @@ export default function transform(hookName, element, payload) {
     element.querySelectorAll('img[src], a[href], iframe[src], iframe[data-src]').forEach((node) => {
       const ref = node.getAttribute('src') || node.getAttribute('href') || node.getAttribute('data-src') || '';
       const isPixel = node.tagName === 'IMG' && !node.getAttribute('alt') && isOffDomain(ref);
-      if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+      // tracking hosts only in absolute URLs: an in-page or relative link that mentions one
+      // (a "Connect with an expert" button to #marketo-form, stryker.com vocera-edge) stays
+      const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
+      if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
         const wrapper = node.closest('p, picture, div') || node;
         wrapper.remove();
       }

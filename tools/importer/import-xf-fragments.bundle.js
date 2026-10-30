@@ -211,7 +211,8 @@ var CustomImportScript = (() => {
       element.querySelectorAll("img[src], a[href], iframe[src], iframe[data-src]").forEach((node) => {
         const ref = node.getAttribute("src") || node.getAttribute("href") || node.getAttribute("data-src") || "";
         const isPixel = node.tagName === "IMG" && !node.getAttribute("alt") && isOffDomain(ref);
-        if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+        const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
+        if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
           const wrapper = node.closest("p, picture, div") || node;
           wrapper.remove();
         }
@@ -457,7 +458,7 @@ var CustomImportScript = (() => {
     const walker = doc.createTreeWalker(root, 4);
     const runs = [];
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
-      const blockEl = n.parentElement && n.parentElement.closest("p, li, h1, h2, h3, h4, h5, h6");
+      const blockEl = n.parentElement && n.parentElement.closest("p, li, h1, h2, h3, h4, h5, h6, div");
       if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
         const props = runOf(n, blockEl, serifDefault);
         runs.push([n, props]);
@@ -652,7 +653,7 @@ var CustomImportScript = (() => {
     const size = copyStyles(root);
     const doc = root.ownerDocument;
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+    [...root.querySelectorAll("span, b, i, em, strong")].reverse().forEach((el) => {
       let last = el.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
         if (emptyElement(last)) {
@@ -4545,8 +4546,7 @@ var CustomImportScript = (() => {
     }];
   }
   function shortDescription(el, ctx) {
-    const { nodes } = richTextNodes(el, ctx.doc);
-    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+    return ctx.collect(el);
   }
   function fallback(el, ctx) {
     const { doc } = ctx;
@@ -4742,6 +4742,8 @@ var CustomImportScript = (() => {
     resourcesanddownload: resources,
     "#product-detail-container": shortDescription,
     tagcrumb: skip,
+    // the tag crumb rendered by the template without its AEM wrapper (approved: metadata tags)
+    "c-tagcrumb": skip,
     accordion,
     pagehero: pageHero,
     hero: pageHero,
