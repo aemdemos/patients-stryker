@@ -4,7 +4,7 @@
  "evidence": "tools/importer/data/catalog/components.json (counts over 2,553 page exports + 1,180 XF variations); Block Library https://main--patients-stryker--aemdemos.aem.page/.da/library/blocks.json (2026-10-27)",
  "libraryGaps": "Corp blocks hero-corp, cards-corp, table, sticky-nav, social-share-corp are not in the Block Library yet; entries needed once their variants are approved.",
  "layoutHints": {
-  "cq:responsive": "width/offset of the 12-column grid → choose Columns variant (e.g. 8/4 → 70-30); never CSS values",
+  "cq:responsive": "width/offset of the 12-column grid → choose Columns variant (e.g. 8/4 → 70-30); never CSS values. Responsive-grid rows of other widths, with offsets, in nested grids or laid out otherwise on tablet / phone → Columns grid options from the rendered aem-GridColumn classes: grid-<widths> (from 1200px), grid-t-<widths> (600-1199px, source tablet 651-1200), grid-m-<widths> (below 600px, source phone up to 650); o<N> offset, n newline, h hidden, of<N> nested grid units (approach B, approved 2026-10-30). Rows of unequal widths holding blocks or fragments stay stacked (flex sections have equal columns).",
   "backgroundColor": "text / column backgrounds → section style (dark, light-gray, gold, blue)",
   "padding": "topPadding / bottomPadding / leftPadding → spacer / compact section styles"
  },

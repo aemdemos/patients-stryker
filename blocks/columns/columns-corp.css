@@ -392,6 +392,11 @@ body.corp .columns.columns-4-cols > div {
   row-gap: var(--space-block);
 }
 
+/* grid rows (grid-… options) wrap like the source grid, with no gap between lines */
+body.corp .columns.columns-grid > div {
+  row-gap: 0;
+}
+
 /* ---- cells ---- */
 
 body.corp .columns.columns-4-cols > div > div {

@@ -28,11 +28,29 @@ import { text, finishRuns } from './corp-richtext.js';
 // elements that are never content
 const NOT_CONTENT = new Set(['SCRIPT', 'STYLE', 'LINK', 'NOSCRIPT', 'INPUT', 'TEMPLATE', 'META', 'BUTTON']);
 
-/** The width of a responsive-grid column (aem-GridColumn--default--N), or null. */
-function gridWidth(el) {
-  const m = String(el.className).match(/\baem-GridColumn--default--(\d+)\b/);
-  return m ? Number(m[1]) : null;
+/**
+ * The layout of a responsive-grid column, from its aem-GridColumn classes: per breakpoint
+ * (default, tablet, phone) the width, offset and behaviour (newline, hide, none), or null
+ * where the class is not set. Null for an element without a default width.
+ */
+export function gridSpec(el) {
+  const cls = String(el.className);
+  const get = (re) => (cls.match(re) || [])[1] ?? null;
+  const at = (bp) => {
+    const w = get(new RegExp(`\\baem-GridColumn--${bp}--(\\d+)\\b`));
+    const o = get(new RegExp(`\\baem-GridColumn--offset--${bp}--(\\d+)\\b`));
+    return {
+      w: w === null ? null : Number(w),
+      o: o === null ? null : Number(o),
+      beh: get(new RegExp(`\\baem-GridColumn--${bp}--(newline|hide|none)\\b`)),
+    };
+  };
+  const spec = { d: at('default'), t: at('tablet'), m: at('phone') };
+  return spec.d.w ? spec : null;
 }
+
+/** The number of columns of a responsive grid (aem-Grid--N; a nested grid has its column's). */
+const gridTotal = (el) => Number((String(el.className).match(/\baem-Grid--(\d+)\b/) || [])[1]) || 12;
 
 /** An element the page hides (marked in onLoad from the live page's computed style). */
 export const isHidden = (el) => el.getAttribute('data-corp-hidden') === 'true';
@@ -114,34 +132,50 @@ export function createBuilder({
   };
 
   /**
-   * The items of a container, in order. In a responsive grid, side-by-side columns
-   * (aem-GridColumn widths that add up to 12, e.g. image 4 + text 8) are one row:
-   * handlers.row (the column-control rules) decides what they become.
+   * The items of a container, in order. In a responsive grid of N columns (12, or a nested
+   * grid's column width), columns narrower than N fill lines the AEM way (width + offset up
+   * to N; a newline column starts a new line; columns hidden on the page take no room). Two
+   * or more columns on a line are one row (e.g. image 4 + text 8, or 4 + 6 with 2 left
+   * empty): handlers.row (the column-control rules) decides what they become, with each
+   * column's layout at every breakpoint (gridSpec).
    */
   ctx.collect = function collect(container) {
     const out = [];
+    const total = gridTotal(container);
     let run = [];
-    const flush = (complete) => {
-      if (complete && run.length > 1 && handlers.row) {
-        out.push(...handlers.row(run.map((r) => collectOne(r.el)), run.map((r) => r.width), ctx));
+    let used = 0;
+    const flush = () => {
+      if (run.length > 1 && handlers.row) {
+        out.push(...handlers.row(
+          run.map((r) => collectOne(r.el)),
+          run.map((r) => r.spec.d.w),
+          ctx,
+          { specs: run.map((r) => r.spec), total },
+        ));
       } else {
         run.forEach((r) => out.push(...collectOne(r.el)));
       }
       run = [];
+      used = 0;
     };
     [...container.children].forEach((child) => {
-      const width = gridWidth(child);
-      if (width && width < 12 && !(isHidden(child) && !keepHidden(child))) {
-        run.push({ el: child, width });
-        const sum = run.reduce((s, r) => s + r.width, 0);
-        if (sum === 12) flush(true);
-        else if (sum > 12) flush(false);
+      const spec = gridSpec(child);
+      if (spec && spec.d.w < total) {
+        if (isHidden(child) && !keepHidden(child)) {
+          report.hidden += 1;
+          return;
+        }
+        const room = (spec.d.o || 0) + spec.d.w;
+        if (run.length && (used + room > total || spec.d.beh === 'newline')) flush();
+        run.push({ el: child, spec });
+        used += room;
+        if (used >= total) flush();
         return;
       }
-      flush(false);
+      flush();
       out.push(...collectOne(child));
     });
-    flush(false);
+    flush();
     return out;
   };
   ctx.collectOne = collectOne;

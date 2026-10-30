@@ -379,10 +379,10 @@ const FRACTIONS = {
  * col-at-<start> (e.g. a 2/3 column at the left → col-2-3; the right half → col-1-2,
  * col-at-1-2). Full-width or unknown splits: none.
  */
-function columnStyles(widths, index, ctx) {
+function columnStyles(widths, index, ctx, starts = null) {
   if (!widths || !widths[index]) return [];
   const width = widths[index];
-  const start = widths.slice(0, index).reduce((sum, w) => sum + w, 0);
+  const start = starts ? starts[index] : widths.slice(0, index).reduce((sum, w) => sum + w, 0);
   if (width >= 12) return [];
   if (!FRACTIONS[width] || (start && !FRACTIONS[start])) {
     ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
@@ -400,8 +400,9 @@ function columnStyles(widths, index, ctx) {
  * @param {object[][]} columns the items of each column
  * @param {object} split { variant, flex, cards } of the column control
  * @param {number[]} [widths] the columns' widths in twelfths (rendered col-sm-N)
+ * @param {number[]} [starts] where each column starts, in twelfths (grid rows with offsets)
  */
-export function columnItems(columns, split, ctx, widths = null) {
+export function columnItems(columns, split, ctx, widths = null, starts = null) {
   const { doc } = ctx;
   const anchors = [];
   const cols = columns.map((items) => items.filter((it) => {
@@ -413,7 +414,7 @@ export function columnItems(columns, split, ctx, widths = null) {
   if (filled.length === 1) {
     // B: one column with content: its content, at that column's width and position
     // (lift and shift: e.g. a news article body in the 2/3 column of a 2/3 + 1/3 control)
-    const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx);
+    const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx, starts);
     if (!styles.length) return [...anchors, { type: 'boundary' }, ...filled[0], { type: 'boundary' }];
     return [...anchors, { type: 'group', styles, items: filled[0] }];
   }
@@ -443,8 +444,15 @@ export function columnItems(columns, split, ctx, widths = null) {
     ];
   }
   const inCell = (it) => it.type === 'flow' || it.type === 'separator' || (it.type === 'block' && it.cellNodes);
-  if (all.some((it) => !inCell(it) && it.type !== 'fragment')) return [...anchors, flex([], all)]; // D
-  if (all.some((it) => it.type === 'fragment')) return [...anchors, flex([], all)]; // E
+  if (!all.every(inCell)) {
+    // D / E: a flex section has equal columns; a grid row of unequal widths stays stacked
+    // (its columns' content mixes in the section's wrappers, so widths cannot follow)
+    if (split.grid && split.unequal) {
+      ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
+      return columns.flat();
+    }
+    return [...anchors, flex([], all)];
+  }
 
   if (split.cards && filled.length >= 2 && filled.every(isCard)) {
     // F: Cards Corp, one row per column: image | title + text + CTA
@@ -524,13 +532,59 @@ function columnControl(el, ctx) {
   return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
 }
 
-function gridRow(columns, widths, ctx) {
-  const split = GRID_SPLITS[widths.join(',')];
-  if (!split) {
-    ctx.report.notes.push(`responsive grid row ${widths.join('+')}: no Columns variant, stacked`);
-    return columns.flat();
+/**
+ * The Columns grid options of a responsive-grid row (blocks/columns: grid-…): the columns'
+ * widths in grid units at each breakpoint, `o<N>` an offset before a column, `n` a column
+ * that starts a new line, `h` a hidden one; `of<N>` the grid's columns when not 12 (nested
+ * grid). grid-t-… (tablet) and grid-m-… (phone) only where they differ from the default:
+ * as on AEM, a breakpoint without its own class keeps the default value, column by column.
+ * @param {object[]} specs the columns' gridSpec
+ * @param {number} total the grid's columns
+ */
+export function gridOptions(specs, total) {
+  const value = (spec, bp, key) => spec[bp][key] ?? spec.d[key];
+  const tokens = (bp) => specs.map((spec) => {
+    const beh = value(spec, bp, 'beh');
+    if (beh === 'hide') return 'h';
+    const o = value(spec, bp, 'o');
+    return `${o ? `o${o}-` : ''}${beh === 'newline' ? 'n' : ''}${value(spec, bp, 'w')}`;
+  }).join('-');
+  const d = tokens('d');
+  const t = tokens('t');
+  const m = tokens('m');
+  return [
+    `grid-${total === 12 ? '' : `of${total}-`}${d}`,
+    ...(t !== d ? [`grid-t-${t}`] : []),
+    ...(m !== d ? [`grid-m-${m}`] : []),
+  ];
+}
+
+function gridRow(columns, widths, ctx, { specs = [], total = 12 } = {}) {
+  const offsets = specs.some((spec) => spec.d.o);
+  const split = total === 12 && !offsets ? GRID_SPLITS[widths.join(',')] : null;
+  if (split) {
+    // the split variants stack below 600px and keep the default widths from 600px; a row
+    // laid out otherwise on tablet / phone also gets the grid options (they set the layout)
+    const grid = gridOptions(specs, total);
+    const stacked = `grid-m-${specs.map(() => 12).join('-')}`;
+    if (!grid.some((option) => option.startsWith('grid-t-')) && grid.includes(stacked)) {
+      return columnItems(columns, split, ctx, widths);
+    }
+    const variant = [split.variant, ...grid].filter(Boolean).join(', ');
+    return columnItems(columns, { ...split, variant, grid: true }, ctx, widths);
   }
-  return columnItems(columns, split, ctx, widths);
+  // any other row: Columns with the source widths, offsets and breakpoints (a single filled
+  // column keeps its width and position as column styles when it is a fraction of 12)
+  const starts = [];
+  specs.reduce((at, spec) => {
+    starts.push(at + (spec.d.o || 0));
+    return at + (spec.d.o || 0) + spec.d.w;
+  }, 0);
+  const twelfths = total === 12 ? { widths, starts } : null;
+  const grid = {
+    variant: gridOptions(specs, total).join(', '), grid: true, unequal: offsets || new Set(widths).size > 1,
+  };
+  return columnItems(columns, grid, ctx, twelfths?.widths, twelfths?.starts);
 }
 
 /* ---------- components ---------- */

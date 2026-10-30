@@ -877,3 +877,50 @@ main > .section:has(> div > :where(.columns.related-links)) {
     font-size: 21px;
   }
 }
+
+/* grid-… options (columns.js decorateGrid): an AEM responsive-grid row, lift and shift. Each
+   cell sits on a 12-unit grid (or the nested grid's units) at its source width and offset,
+   with no gutter of its own (cells keep their 15px padding, like the source components);
+   --grid-area-m below 600px, -t from 600px, -d from 1200px; top-aligned like AEM's floats */
+.columns.columns-grid > div {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-total, 12), minmax(0, 1fr));
+  gap: 0;
+  align-items: start;
+}
+
+.columns.columns-grid > div > div {
+  grid-area: var(--grid-area-m, auto);
+}
+
+.columns.columns-grid > div > div.grid-hide-m {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .columns.columns-grid > div > div {
+    grid-area: var(--grid-area-t, auto);
+  }
+
+  .columns.columns-grid > div > div.grid-hide-m {
+    display: block;
+  }
+
+  .columns.columns-grid > div > div.grid-hide-t {
+    display: none;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns.columns-grid > div > div {
+    grid-area: var(--grid-area-d, auto);
+  }
+
+  .columns.columns-grid > div > div:is(.grid-hide-m, .grid-hide-t) {
+    display: block;
+  }
+
+  .columns.columns-grid > div > div.grid-hide-d {
+    display: none;
+  }
+}
