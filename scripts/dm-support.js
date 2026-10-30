@@ -503,6 +503,8 @@ export function renderVideo(src, label, { background = false } = {}) {
   // centered button captures them. Styling lives in styles/lazy-styles.css.
   const wrapper = document.createElement('div');
   wrapper.className = 'dm-video-wrapper';
+  // the authored link, for blocks that render it again (hero-corp: a background video)
+  wrapper.dataset.dmSrc = src;
 
   const overlay = document.createElement('div');
   overlay.className = 'dm-video-overlay';

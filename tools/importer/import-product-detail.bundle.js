@@ -4771,8 +4771,8 @@ var CustomImportScript = (() => {
     }
     const a = ctx.doc.createElement("a");
     a.setAttribute("href", path);
-    a.textContent = img.getAttribute("alt") || img.getAttribute("title") || text(title);
-    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image), para(ctx.doc, a)] }];
+    a.append(image);
+    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, a)] }];
   }
   var skip = () => [];
   function publishDate(el, ctx) {

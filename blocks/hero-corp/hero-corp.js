@@ -179,8 +179,24 @@ function readSlideOptions(block) {
   }
 }
 
+/**
+ * A slide row authored as a Dynamic Media video link (rendered as a player by
+ * decorateDMAssets) is a video slide: the muted, looping background video, as a video slide
+ * fragment gives (resolveFragmentImages).
+ * @param {Element} block The hero-corp block
+ */
+function backgroundVideos(block) {
+  [...block.querySelectorAll(':scope > div > div')].forEach((cell) => {
+    const player = cell.querySelector('.dm-video-wrapper:not(.dm-video-background)');
+    if (!player || !player.dataset.dmSrc) return;
+    const label = player.querySelector('video')?.getAttribute('aria-label') || '';
+    cell.replaceChildren(renderVideo(player.dataset.dmSrc, label, { background: true }));
+  });
+}
+
 export default async function decorate(block) {
   readSlideOptions(block);
+  backgroundVideos(block);
   await resolveFragmentImages(block);
   setupHero(block);
 

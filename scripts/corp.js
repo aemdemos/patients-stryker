@@ -39,32 +39,27 @@ const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'statistics', 'stick
  * @param {Document} doc The document
  */
 /**
- * Modal tiles (the stryker.com ProCare tile): an image line followed by a line holding only a
- * link to a `/modals/` document become one tile, the image linked to the modal (blocks/modal)
- * with the link text as its name and the gold arrow of the source tile.
+ * Modal tiles (the stryker.com ProCare tile): an image linked, alone on its line, to a
+ * `/modals/` document is the tile: the image opens the modal (blocks/modal), with the image's
+ * alt text as the link's name and the gold arrow of the source tile.
  * @param {Element} main The container
  */
 function decorateModalTiles(main) {
-  main.querySelectorAll('p > a[href*="/modals/"]:only-child').forEach((link) => {
-    const line = link.parentElement;
-    const image = line.previousElementSibling;
-    const picture = image && image.tagName === 'P' && image.querySelector(':scope > picture:only-child');
-    if (!picture || image.textContent.trim()) return;
-    const tile = document.createElement('p');
-    tile.className = 'modal-tile';
-    const a = document.createElement('a');
-    a.className = 'modal-tile-link';
-    a.href = link.getAttribute('href');
-    a.setAttribute('aria-label', link.textContent.trim());
-    a.title = link.textContent.trim();
+  main.querySelectorAll('p > a[href*="/modals/"]:only-child').forEach((a) => {
+    const picture = a.querySelector(':scope > picture:only-child');
+    if (!picture || a.parentElement.textContent.trim()) return;
+    const label = (picture.querySelector('img') || {}).alt || '';
+    a.parentElement.classList.add('modal-tile');
+    a.classList.add('modal-tile-link');
+    if (label) {
+      a.setAttribute('aria-label', label);
+      a.title = label;
+    }
+    picture.classList.add('modal-tile-image');
     const icon = document.createElement('span');
     icon.className = 'modal-tile-icon';
     icon.setAttribute('aria-hidden', 'true');
-    picture.classList.add('modal-tile-image');
-    a.append(picture, icon);
-    tile.append(a);
-    image.replaceWith(tile);
-    line.remove();
+    a.append(icon);
   });
 }
 

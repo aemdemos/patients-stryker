@@ -1448,11 +1448,10 @@ function localNav(el, ctx) {
 }
 
 /**
- * Cross-promotional tile (template c-tiles, the ProCare tile): the tile image, then on its own
- * line a link to the modal's fragment document (corp-modal-path.js; the document comes from
- * import-modal-fragments.js) with the image's alt text. On the page the two lines are the tile
- * (scripts/corp.js decorateModalTiles): the image opens the modal (blocks/modal). Empty on
- * most pages.
+ * Cross-promotional tile (template c-tiles, the ProCare tile): the tile image linked to the
+ * modal's fragment document (corp-modal-path.js; the document comes from
+ * import-modal-fragments.js). On the page the linked image is the tile (scripts/corp.js
+ * decorateModalTiles) and opens the modal (blocks/modal). Empty on most pages.
  */
 function promoTile(el, ctx) {
   const img = el.querySelector('.c-cross-promotional-tile img');
@@ -1466,10 +1465,11 @@ function promoTile(el, ctx) {
     ctx.report.notes.push(`cross-promotional tile without a modal title, kept as its image: ${img.getAttribute('alt') || img.getAttribute('src')}`);
     return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image)] }];
   }
+  // a linked image (the DM images transformer keeps the image URL in the link's title)
   const a = ctx.doc.createElement('a');
   a.setAttribute('href', path);
-  a.textContent = img.getAttribute('alt') || img.getAttribute('title') || text(title);
-  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image), para(ctx.doc, a)] }];
+  a.append(image);
+  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, a)] }];
 }
 
 /** The block nodes of a rich text box: its headings, paragraphs and lists, cleaned. */
