@@ -16,6 +16,7 @@ import { standaloneImageNodes, isEmptyXf } from './corp-components.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import { videoLink } from './parsers/video.js';
+import procareModalPath from './corp-modal-path.js';
 
 const SOURCE = 'https://www.stryker.com';
 
@@ -1447,17 +1448,71 @@ function localNav(el, ctx) {
 }
 
 /**
- * Cross-promotional tile (template c-tiles, e.g. the ProCare tile): the tile image, the
- * modal behind it is not content of the page (reported). Empty on most pages.
+ * Cross-promotional tile (template c-tiles, the ProCare tile): the tile image, then on its own
+ * line a link to the modal's fragment document (corp-modal-path.js; the document comes from
+ * import-modal-fragments.js) with the image's alt text. On the page the two lines are the tile
+ * (scripts/corp.js decorateModalTiles): the image opens the modal (blocks/modal). Empty on
+ * most pages.
  */
 function promoTile(el, ctx) {
   const img = el.querySelector('.c-cross-promotional-tile img');
   if (!img) return [];
-  ctx.report.notes.push(`cross-promotional tile kept as its image, its modal content is not imported: ${img.getAttribute('alt') || img.getAttribute('src')}`);
   const image = ctx.doc.createElement('img');
   image.setAttribute('src', img.getAttribute('src'));
   image.setAttribute('alt', img.getAttribute('alt') || '');
-  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image)] }];
+  const title = el.querySelector('.c-procare-tile-modal .c-procare-tile-title, #c-procare-tile-modal .c-procare-tile-title');
+  const path = title && procareModalPath(text(title));
+  if (!path) {
+    ctx.report.notes.push(`cross-promotional tile without a modal title, kept as its image: ${img.getAttribute('alt') || img.getAttribute('src')}`);
+    return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image)] }];
+  }
+  const a = ctx.doc.createElement('a');
+  a.setAttribute('href', path);
+  a.textContent = img.getAttribute('alt') || img.getAttribute('title') || text(title);
+  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image), para(ctx.doc, a)] }];
+}
+
+/** The block nodes of a rich text box: its headings, paragraphs and lists, cleaned. */
+function boxNodes(el, doc) {
+  const box = contentCopy(el, doc);
+  cleanRichText(box);
+  return [...box.querySelectorAll('h1, h2, h3, h4, h5, h6, p, ul, ol')]
+    .filter((node) => !node.parentElement.closest('p, ul, ol') && text(node));
+}
+
+/**
+ * The content of a ProCare modal (.c-procare-tile-info, the product template's tile) → items
+ * of its fragment document (import-modal-fragments.js): the title as a Heading 2, the contact
+ * columns as Columns (columns-50-50; labels Heading 4, as the source), the coverage table, the
+ * closing copy and its Learn More button.
+ * @param {Element} info the modal's .c-procare-tile-info
+ */
+export function procareModalItems(info, ctx) {
+  const { doc } = ctx;
+  const items = [];
+  const title = info.querySelector('.c-procare-tile-title');
+  if (title && text(title)) {
+    const h2 = doc.createElement('h2');
+    h2.textContent = text(title);
+    items.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  const contact = info.querySelector('.c-procare-tile-contact');
+  if (contact) {
+    const cols = [...contact.children].filter((col) => /\bcol-/.test(col.className));
+    const columns = cols.map((col) => {
+      const nodes = boxNodes(col, doc);
+      return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+    });
+    items.push(...columnItems(columns, { variant: 'columns-50-50' }, ctx, cols.map(() => 6)));
+  }
+  info.querySelectorAll('.c-table').forEach((el) => items.push(...table(el, ctx)));
+  info.querySelectorAll('.c-procare-tile-addinfo').forEach((el) => {
+    const nodes = boxNodes(el, doc);
+    if (nodes.length) items.push({ type: 'flow', role: 'text', nodes });
+  });
+  const button = info.querySelector(':scope > a.btn[href]');
+  if (button && text(button)) items.push({ type: 'flow', role: 'text', nodes: [buttonNode(doc, button, text(button))] });
+  return items;
 }
 
 const skip = () => [];

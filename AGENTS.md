@@ -349,6 +349,7 @@ How to rewrite:
   - `https://patients.stryker.com/us/en/ivs/index.html` → `/us/en/ivs/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ivs/)
   - `https://patients.stryker.com/us/en/ent/index.html` → `/us/en/ent/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ent/)
 - Keep any query string and `#hash` on the rewritten link (e.g. `.../back-pain.html#disclaimer` → `.../back-pain#disclaimer`).
+- **Use the page's document name.** The importer saves every page at its cleaned name (`WebImporter.FileUtils.sanitizeFilename`: lowercase, every run of other characters one `-`, no `-` at either end), so links get the same names: `/us/en/foot---ankle/…` → `/us/en/foot-ankle/…`, `/…/-isuite-experience` → `/…/isuite-experience`, `/…/Rotator_Cuff_Repair` → `/…/rotator-cuff-repair` (`documentLink` in the same transformer).
 - If the source link redirects (e.g. `/us/en/ivs/find-a-doctor.html` 301 → `https://physicianlocator.strykerivs.com/`), link to the final target instead, matching what the migrated sibling pages use.
 
 This is about **links**. The imported document for an index page is still saved at `/something/index` (`WebImporter.FileUtils.sanitizePath`), which EDS serves at `/something/`.

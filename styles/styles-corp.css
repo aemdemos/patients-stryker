@@ -96,6 +96,20 @@
   --corp-chart-legend-gap: 23px; /* pie → legend swatch */
   --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
 
+  /* Modal (stryker.com Bootstrap modal: the ProCare tile, nara-bassinet) */
+  --corp-modal-width: 600px; /* .modal-dialog from 841px */
+  --corp-modal-top: 30px; /* .modal-dialog margin-top from 841px */
+  --corp-modal-radius: 6px; /* .modal-content */
+  --corp-modal-border: rgb(0 0 0 / 20%); /* .modal-content 1px border */
+  --corp-modal-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+  --corp-modal-shadow-l: 0 5px 15px rgb(0 0 0 / 50%); /* from 841px */
+  --corp-modal-close-size: 30px; /* .c-procare-tile-close circle */
+  --corp-modal-title-end: 40px; /* title right padding, clear of the close button */
+  --corp-tile-icon-size: 40px; /* .c-procare-tile-icon gold circle */
+  --corp-tile-width: 666px; /* the tile image's own width, below 1025px */
+  --corp-tile-width-l: 311px; /* .c-cross-promotional-tile max-width from 1025px */
+  --corp-tile-width-xl: 420px; /* from 1440px */
+
   /* Related Categories (stryker.com product tag crumb) */
   --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
   --corp-tag-line-height: 21px; /* .c-tagcrumb-item lines */
@@ -1135,5 +1149,59 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+}
+
+/* modal tiles (scripts/corp.js decorateModalTiles; the stryker.com ProCare tile, measured on
+   /us/en/acute-care/products/nara-bassinet): the image centred at its own width (666px), a
+   third of the row from 900px (source 311px from 1025px) and 420px from 1200px (source
+   1440px); a 40px gold circle with a black arrow 20px from the right and 15px from the
+   bottom of the image */
+:where(body.corp) main p.modal-tile {
+  max-width: var(--corp-tile-width);
+  margin-inline: auto;
+}
+
+/* a grid, the picture's contents its item: the image sits flush, no inline gap under it */
+:where(body.corp) main .modal-tile-link {
+  display: grid;
+  position: relative;
+}
+
+:where(body.corp) main .modal-tile-image {
+  display: contents;
+}
+
+:where(body.corp) main .modal-tile-icon {
+  position: absolute;
+  right: var(--space-block-l);
+  bottom: var(--space-block);
+  width: var(--corp-tile-icon-size);
+  height: var(--corp-tile-icon-size);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main .modal-tile-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: var(--space-block-s);
+  height: var(--space-block-s);
+  border-top: 2px solid var(--color-black);
+  border-right: 2px solid var(--color-black);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main p.modal-tile {
+    max-width: var(--corp-tile-width-l);
+  }
+}
+
+@media (width >= 1200px) {
+  :where(body.corp) main p.modal-tile {
+    max-width: var(--corp-tile-width-xl);
   }
 }

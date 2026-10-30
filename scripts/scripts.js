@@ -94,8 +94,9 @@ function buildWidgetAutoBlocks(main) {
 function buildAutoBlocks(main) {
   try {
     // auto load `*/fragments/*` references (tabs load their own panel fragments, hero-corp
-    // its slide image fragments)
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment, .tabs, .hero-corp'));
+    // its slide image fragments; links to `/modals/` fragments open them in a modal)
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')]
+      .filter((f) => !f.closest('.fragment, .tabs, .hero-corp') && !f.getAttribute('href').includes('/modals/'));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {

@@ -39,6 +39,50 @@ const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'statistics', 'stick
  * @param {Document} doc The document
  */
 /**
+ * Modal tiles (the stryker.com ProCare tile): an image line followed by a line holding only a
+ * link to a `/modals/` document become one tile, the image linked to the modal (blocks/modal)
+ * with the link text as its name and the gold arrow of the source tile.
+ * @param {Element} main The container
+ */
+function decorateModalTiles(main) {
+  main.querySelectorAll('p > a[href*="/modals/"]:only-child').forEach((link) => {
+    const line = link.parentElement;
+    const image = line.previousElementSibling;
+    const picture = image && image.tagName === 'P' && image.querySelector(':scope > picture:only-child');
+    if (!picture || image.textContent.trim()) return;
+    const tile = document.createElement('p');
+    tile.className = 'modal-tile';
+    const a = document.createElement('a');
+    a.className = 'modal-tile-link';
+    a.href = link.getAttribute('href');
+    a.setAttribute('aria-label', link.textContent.trim());
+    a.title = link.textContent.trim();
+    const icon = document.createElement('span');
+    icon.className = 'modal-tile-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    picture.classList.add('modal-tile-image');
+    a.append(picture, icon);
+    tile.append(a);
+    image.replaceWith(tile);
+    line.remove();
+  });
+}
+
+/**
+ * Links to `/modals/` documents open them in a modal (blocks/modal), as on stryker.com.
+ * @param {Document} doc The document
+ */
+function autolinkModals(doc) {
+  doc.addEventListener('click', async (e) => {
+    const link = e.target.closest('a[href*="/modals/"]');
+    if (!link) return;
+    e.preventDefault();
+    const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+    openModal(link.href);
+  });
+}
+
+/**
  * Starts fetching the slide image fragments of the heroes in the first sections (Hero Corp
  * rows that link to fragment documents) before the block code loads, so the LCP image is
  * known one round trip earlier. The pending responses are kept in window.hlx.heroFragments
@@ -64,6 +108,7 @@ function prefetchHeroFragments(doc) {
 export async function loadEager(doc) {
   prefetchHeroFragments(doc);
   doc.body.classList.add('corp');
+  autolinkModals(doc);
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (styles-corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {
@@ -82,6 +127,7 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  decorateModalTiles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {

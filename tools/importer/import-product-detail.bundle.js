@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-product-detail.js
+  // tools/importer/import-product-detail.js
   var import_product_detail_exports = {};
   __export(import_product_detail_exports, {
     default: () => import_product_detail_default
   });
 
-  // transformers/corp-sections.js
+  // tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -77,6 +77,22 @@ var CustomImportScript = (() => {
     let edsPath = path.replace(/\.html?$/i, "");
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
+  }
+  function documentName(name) {
+    let decoded = name;
+    try {
+      decoded = decodeURIComponent(name);
+    } catch (e) {
+    }
+    return decoded.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+  function documentLink(href) {
+    const m = String(href || "").match(/^(\/[^?#]*)([?#].*)?$/);
+    if (!m || href.startsWith("//") || m[1].startsWith("/content/")) return null;
+    const segments = m[1].split("/");
+    if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
+    const path = segments.map((s) => s ? documentName(s) : s).join("/");
+    return path === m[1] ? null : `${path}${m[2] || ""}`;
   }
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
@@ -224,6 +240,11 @@ var CustomImportScript = (() => {
       element.querySelectorAll("a[href]").forEach((a) => {
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
+        const href = a.getAttribute("href");
+        const cleaned = documentLink(href);
+        if (cleaned === null) return;
+        if (a.textContent.trim() === href) a.textContent = cleaned;
+        a.setAttribute("href", cleaned);
       });
       if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
@@ -235,7 +256,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // transformers/patients-stryker-dm-images.js
+  // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -303,7 +324,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp-richtext.js
+  // tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -818,7 +839,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp-section-builder.js
+  // tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1065,7 +1086,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // data/xf-index.js
+  // tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3214,7 +3235,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // xf-path-rule.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3230,7 +3251,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3258,7 +3279,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp-components.js
+  // tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3361,7 +3382,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // parsers/hero-image-slide.js
+  // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3453,7 +3474,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // parsers/cards-corp-teaser.js
+  // tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3507,7 +3528,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // parsers/video.js
+  // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3533,7 +3554,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // corp-component-handlers.js
+  // tools/importer/corp-modal-path.js
+  var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  function procareModalPath(title) {
+    const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
+    return name ? `/us/en/fragments/modals/procare/${name}` : null;
+  }
+
+  // tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4732,11 +4760,19 @@ var CustomImportScript = (() => {
   function promoTile(el, ctx) {
     const img = el.querySelector(".c-cross-promotional-tile img");
     if (!img) return [];
-    ctx.report.notes.push(`cross-promotional tile kept as its image, its modal content is not imported: ${img.getAttribute("alt") || img.getAttribute("src")}`);
     const image = ctx.doc.createElement("img");
     image.setAttribute("src", img.getAttribute("src"));
     image.setAttribute("alt", img.getAttribute("alt") || "");
-    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
+    const title = el.querySelector(".c-procare-tile-modal .c-procare-tile-title, #c-procare-tile-modal .c-procare-tile-title");
+    const path = title && procareModalPath(text(title));
+    if (!path) {
+      ctx.report.notes.push(`cross-promotional tile without a modal title, kept as its image: ${img.getAttribute("alt") || img.getAttribute("src")}`);
+      return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
+    }
+    const a = ctx.doc.createElement("a");
+    a.setAttribute("href", path);
+    a.textContent = img.getAttribute("alt") || img.getAttribute("title") || text(title);
+    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image), para(ctx.doc, a)] }];
   }
   var skip = () => [];
   function publishDate(el, ctx) {
@@ -4815,7 +4851,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // corp-page.js
+  // tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -4871,7 +4907,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // corp-import.js
+  // tools/importer/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document) {
@@ -4957,7 +4993,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // data/page-facts/product-detail.js
+  // tools/importer/data/page-facts/product-detail.js
   var product_detail_default = {
     "/us/en/acute-care/products/arise-1000-ex": { "template": "product-detail", "metadata": { "title": "Arise 1000 EX", "pageTitle": null, "description": "Pressure relief bariatric surface.", "image": "/content/dam/stryker/acute-care/products/arize1000ex/images/Thumbnail_Arise1000EXSurface.jpg", "imageAlt": "Arize 1000EX", "tags": ["stryker:content-type/product", "stryker:product/acute-care/arize-1000-ex", "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces", "stryker:capability/support-surfaces", "stryker:portfolio/medical-and-surgical-equipment", "stryker:specialty/bed-support-surfaces", "stryker:content-type/hcp_content", "stryker:business-unit/acute-care"], "originallyPublished": "2023-02-06T17:26:10.000Z", "lastPublished": "2026-08-13T17:26:10.000Z", "contentID": "MKT LIT-1923 26 MAR 2020 REV A" }, "anchors": [{ "id": "features", "title": "Features", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "contact", "title": "Contact", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "resources", "title": "Resources", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }], "disclaimer": null, "forms": [{ "formId": "1320", "afterSubmitAction": "showMessage", "message": "Thanks!", "useProduction": true }], "tabs": [["Product information", "Related products"]], "cardLists": [{ "component": "featuredcontent", "title": null, "items": [{ "path": "/us/en/acute-care/products/bari-10a", "resolved": true, "title": "Bari10A", "description": "Large-capacity patient care.", "image": "/content/dam/stryker/acute-care/products/bari10a/images/Thumbnail_Bari10ABed.jpg", "alt": "Bari10A" }, { "path": "/us/en/acute-care/products/mv3", "resolved": true, "title": "MV3 | Bariatric hospital bed", "description": "As the obese and morbidly obese population has risen, the need for providing bariatric patient care in a safe and dignified manner has become increasingly important.", "image": "/content/dam/stryker/acute-care/products/mv3/images/2019_MV3-Website-product-page-layout.jpg", "alt": "MV3 bariatric hospital bed can accommodate up to 1,102 pounds safe working load" }] }], "missingAlt": [] },
     "/us/en/acute-care/products/bari-10a": { "template": "product-detail", "metadata": { "title": "Bari10A", "pageTitle": null, "description": "Large-capacity patient care.", "image": "/content/dam/stryker/acute-care/products/bari10a/images/Thumbnail_Bari10ABed.jpg", "imageAlt": "Bari10A", "tags": ["stryker:capability/bedframes", "stryker:content-type/product", "stryker:portfolio/medical-and-surgical-equipment", "stryker:custom/acute-care/department/bariatric", "stryker:product/acute-care/bari-10a", "stryker:specialty/specialty-beds", "stryker:services/procare/acute-care/beds", "stryker:content-type/hcp_content", "stryker:business-unit/acute-care"], "originallyPublished": "2023-02-06T22:09:30.000Z", "lastPublished": "2026-08-13T17:26:45.000Z", "contentID": "Mkt Lit-1924 26 MAR 2020 REV A" }, "anchors": [{ "id": "features", "title": "Features", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "contact", "title": "Contact", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "resources", "title": "Resources", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }], "disclaimer": null, "forms": [{ "formId": "1320", "afterSubmitAction": "showMessage", "message": "Thanks!", "useProduction": true }], "tabs": [["Product information", "Related products"]], "cardLists": [{ "component": "featuredcontent_1203554224", "title": null, "items": [{ "path": "/us/en/acute-care/products/mv3", "resolved": true, "title": "MV3 | Bariatric hospital bed", "description": "As the obese and morbidly obese population has risen, the need for providing bariatric patient care in a safe and dignified manner has become increasingly important.", "image": "/content/dam/stryker/acute-care/products/mv3/images/2019_MV3-Website-product-page-layout.jpg", "alt": "MV3 bariatric hospital bed can accommodate up to 1,102 pounds safe working load" }, { "path": "/us/en/acute-care/products/arise-1000-ex", "resolved": true, "title": "Arise 1000 EX", "description": "Pressure relief bariatric surface.", "image": "/content/dam/stryker/acute-care/products/arize1000ex/images/Thumbnail_Arise1000EXSurface.jpg", "alt": "Arize 1000EX" }, { "path": "/us/en/acute-care/products/barimatt-plus", "resolved": true, "title": "BariMatt Plus", "description": "Pressure redistribution bariatric hospital support surface", "image": "/content/dam/stryker/acute-care/products/barimattplus/images/Thumbnail_BariMattPlusSurface.jpg", "alt": "BariMatt Plus" }] }], "missingAlt": [] },
@@ -5658,7 +5694,7 @@ var CustomImportScript = (() => {
     "/us/en/trauma-and-extremities/products/x-ream": { "template": "product-detail", "metadata": { "title": "X-Ream", "pageTitle": null, "description": "Advanced core decompression: Debride more through the same hole with the X-Ream Expandable Reamer", "image": "/content/dam/stryker/trauma-and-extremeties/products/x-ream/images/X-Ream_AP-015801.jpg", "imageAlt": null, "tags": ["stryker:content-type/product", "stryker:product/trauma-and-extremities/x-ream", "stryker:capability/biologics", "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits", "stryker:portfolio/orthopaedics", "stryker:specialty/bone-grafting", "stryker:business-unit/trauma-and-extremities", "stryker:content-type/hcp_content", "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits", "stryker:capability/trauma-and-extremities"], "originallyPublished": null, "lastPublished": "2022-03-31T18:35:35.000Z", "contentID": "AP-015801" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // import-product-detail.js
+  // tools/importer/import-product-detail.js
   var import_product_detail_default = createCorpImport({
     name: "product-detail",
     description: "www.stryker.com product pages: hero slide (Hero Corp image-slide), jump bar (Sticky Nav), column controls (Columns / Cards Corp / flex sections), XFs (Fragment), Marketo form beside the business-unit aside, resources tabs, page disclaimer.",
