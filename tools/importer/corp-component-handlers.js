@@ -1092,8 +1092,11 @@ function cardList(el, ctx) {
   const out = [];
   const heading = grid.querySelector('h2');
   if (heading && text(heading)) {
+    // a title with the gold rule (h2.border-bottom-gold: "Related", "Articles") → Underline
     const h2 = doc.createElement('h2');
-    h2.textContent = text(heading);
+    const label = heading.classList.contains('border-bottom-gold') ? doc.createElement('u') : h2;
+    label.textContent = text(heading);
+    if (label !== h2) h2.append(label);
     out.push({ type: 'flow', role: 'text', nodes: [h2] });
   }
   // the list's description line (h3.c-customizable-description, e.g. "Classroom courses")

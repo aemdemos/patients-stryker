@@ -123,8 +123,12 @@ function buildResources(document, src, def = {}) {
   const labelStyle = (def.style || '').match(/label-(\d+)-(\d+)/);
   const labelSize = labelStyle ? Number(`${labelStyle[1]}.${labelStyle[2]}`) : 1.25;
   const out = [];
+  // the title, with its gold rule (h2.border-bottom-gold) as the Underline convention
+  const title = src.querySelector('.c-section-title h2');
   const h2 = document.createElement('h2');
-  h2.textContent = text(src.querySelector('.c-section-title h2')) || 'Resources';
+  const label = !title || title.classList.contains('border-bottom-gold') ? document.createElement('u') : h2;
+  label.textContent = text(title) || 'Resources';
+  if (label !== h2) h2.append(label);
   out.push(h2);
   const cells = [...src.querySelectorAll('.c-rich-text-editor')].map((rte) => {
     const cell = [];

@@ -221,17 +221,6 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
-/* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
-:where(body.corp) main > .section > .default-content-wrapper h2 {
-  padding-bottom: var(--heading-underline-gap);
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-:where(body.corp) main > .section > .default-content-wrapper h2:has(> em > :is(strong, b)) {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
 /* underlined headings render as a heading with a rule below, not underlined text */
 :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
 :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {

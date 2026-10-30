@@ -530,6 +530,15 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
       if (text(div) && !div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table')) rename(div, 'p');
     });
   }
+  // a heading with the rule class (stryker.com h2.border-bottom-gold, a component title such as
+  // "Our Nailing Portfolio") → the Underline heading convention (styles-corp.css), read before the
+  // attributes go
+  root.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((h) => {
+    if (!h.classList.contains('border-bottom-gold') || h.querySelector('u') || !text(h)) return;
+    const u = root.ownerDocument.createElement('u');
+    while (h.firstChild) u.append(h.firstChild);
+    h.append(u);
+  });
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
