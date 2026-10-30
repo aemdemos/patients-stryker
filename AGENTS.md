@@ -422,7 +422,9 @@ These folders hold read-only JSON snapshots of the client's AEM content for www.
 - The rendered page decides what is live and how it looks.
 - When the two disagree, follow the live page and tell the user.
 
-Never edit the exports. They are refreshed by re-exporting from AEM (`generated` in the manifest gives the snapshot date). `.hlxignore` keeps them off the site.
+Never edit the exports. They are refreshed by re-exporting from AEM (`generated` in the manifest gives the snapshot date).
+
+**The exports are local only: never commit or push them, not even anonymised.** The repo is public. They live in one git-ignored folder, `.corp-exports/` (the anonymised exports), and `.migration/xf-mapping`, `xf-content` and `cf-content` are git-ignored links to it, so the tools read them at the paths below. The ignore rules are in `.git/info/exclude`, and local `pre-commit` / `pre-push` hooks refuse any export file. What is generated from them (`tools/importer/data/`, the import bundles, the decision tables) is committed: it was checked to hold nothing sensitive. A new export must be anonymised before it goes into `.corp-exports/`.
 
 #### 1. Find the page export
 `.migration/xf-mapping/<source URL path without .html>.json`, with the letter case kept:
