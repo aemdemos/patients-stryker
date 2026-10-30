@@ -1,0 +1,439 @@
+# Images imported without alt text (221 on 214 pages)
+
+The source has no alt text for these images; none was invented. Authors add it in Document Authoring.
+
+- us/en/acute-care/products/isolibrium
+  - stryker/Isolibrium_Maincallout:
+- us/en/communications/products/accend-surgical-light
+  - https://media-assets.stryker.com/is/image/stryker/Hero-12?$preset_666_392$
+- us/en/communications/products/berchtold-led-f-gen
+  - https://media-assets.stryker.com/is/image/stryker/Hero-BerchTold1?$preset_666_392$
+- us/en/communications/products/customized-suspension-solutions
+  - https://media-assets.stryker.com/is/image/stryker/hero-Suspension?$preset_666_392$
+- us/en/communications/products/equipment-management-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Suspension?$preset_666_392$
+- us/en/communications/products/hospital-status
+  - https://media-assets.stryker.com/is/image/stryker/SYKC.Stryker.com.Products.HospitalStatus_R2-ASSETSHero?$preset_666_392$
+- us/en/communications/products/isuite-diagnostic-4k-large-monitor-systems
+  - https://media-assets.stryker.com/is/image/stryker/EIZO-Hero?$preset_666_392$
+- us/en/communications/products/nurse-documentation-stations
+  - https://media-assets.stryker.com/is/image/stryker/Hero-NurseStation?$preset_666_392$
+- us/en/communications/products/operon-accessories
+  - https://media-assets.stryker.com/is/image/stryker/OperonAcc?$preset_666_392$
+- us/en/communications/products/operon-d770
+  - https://media-assets.stryker.com/is/image/stryker/Hero-D770?$preset_666_392$
+- us/en/communications/products/operon-d830
+  - https://media-assets.stryker.com/is/image/stryker/D830Hero-2022?$preset_666_392$
+- us/en/communications/products/or-renovation-services
+  - https://media-assets.stryker.com/is/image/stryker/Hero-ORREno?$preset_666_392$
+- us/en/communications/products/project-services
+  - https://media-assets.stryker.com/is/image/stryker/Hero-ProjectServices?$preset_666_392$
+- us/en/communications/products/room-cameras
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PTZ?$preset_666_392$
+- us/en/communications/products/slx-surgical-light
+  - https://media-assets.stryker.com/is/image/stryker/SYKC.Stryker.com.Products.SLX_R2-ASSETSHero-1?$preset_666_392$
+- us/en/communications/products/sterile-control
+  - https://media-assets.stryker.com/is/image/stryker/SYKC.Stryker.com.Products.SterileControl_R2-ASSETSHero-1?$preset_666_392$
+- us/en/communications/products/surgical-monitor-mounting
+  - https://media-assets.stryker.com/is/image/stryker/Hero-MonitorMounting?$preset_666_392$
+- us/en/communications/products/teletom
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Teletom?$preset_666_392$
+- us/en/communications/products/universal-device-connection
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Universal?$preset_666_392$
+- us/en/communications/products/universal-display-mount
+  - https://media-assets.stryker.com/is/image/stryker/HeroHEro?$preset_666_392$
+- us/en/communications/products/visum-blade-led
+  - https://media-assets.stryker.com/is/image/stryker/Hero-VisumBlade?$preset_666_392$
+- us/en/communications/products/visum-led-ii
+  - https://media-assets.stryker.com/is/image/stryker/VisumBlade2?$preset_666_392$
+- us/en/communications/products/wall-control
+  - https://media-assets.stryker.com/is/image/stryker/SYKC.Stryker.com.Products.HospitalStatus_R2-ASSETSHero-1?$preset_666_392$
+- us/en/communications/products/wall-mounted-lcd-displays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Wallmounted?$preset_666_392$
+- us/en/craniomaxillofacial/products/multi-guide-ii-mandibular-distractor
+  - https://media-assets.stryker.com/is/image/stryker/Hero_multiguide?$preset_666_392$
+- us/en/craniomaxillofacial/products/universal-mandible
+  - https://media-assets.stryker.com/is/image/stryker/Hero_Universal%20Mandible%20and%20Fracture?$preset_666_392$
+- us/en/craniomaxillofacial/products/universal-orthognathic
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_Universal%20Ortho?$preset_666_392$
+- us/en/craniomaxillofacial/products/universal-trauma
+  - https://media-assets.stryker.com/is/image/stryker/Hero_Trauma?$preset_666_392$
+- us/en/endoscopy/products/10-0-mm-laparoscopic-instruments
+  - https://media-assets.stryker.com/is/image/stryker/Hero-10mmLaparoscopic?$preset_666_392$
+- us/en/endoscopy/products/1488-hd-3-chip-camera-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-1488?$preset_666_392$
+- us/en/endoscopy/products/1588-aim-camera-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-1588Camera?$preset_666_392$
+- us/en/endoscopy/products/1588-aim-laproscopes
+  - https://media-assets.stryker.com/is/image/stryker/Hero-1588Laparascope?$preset_666_392$
+- us/en/endoscopy/products/1588-sterilization-trays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-1588Sterilization?$preset_666_392$
+- us/en/endoscopy/products/1688-camera-head-with-4k-image-resolution0
+  - https://media-assets.stryker.com/is/image/stryker/Hero1688Head%20-%20Hero_1?$preset_666_392$
+- us/en/endoscopy/products/4k-32-surgical-display
+  - https://media-assets.stryker.com/is/image/stryker/Hero-4K?$preset_666_392$
+- us/en/endoscopy/products/5-0-mm-laparoscopic-instruments
+  - https://media-assets.stryker.com/is/image/stryker/Hero-5mmLaparoscopicInstruments?$preset_666_392$
+- us/en/endoscopy/products/5-0-mm-sliding-lock-graspers
+  - https://media-assets.stryker.com/is/image/stryker/Hero-5mmSlidinglock?$preset_666_392$
+- us/en/endoscopy/products/ahto-pump
+  - https://media-assets.stryker.com/is/image/stryker/Hero-AHTO?$preset_666_392$
+- us/en/endoscopy/products/arthroscopic-instrument-trays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Sterilization-1?$preset_666_392$
+- us/en/endoscopy/products/connected-or-hub0
+  - https://media-assets.stryker.com/is/image/stryker/HeroConnectedOR%20Hero?$preset_666_392$
+- us/en/endoscopy/products/cystoscope-hardware
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CystoscopeHardware?$preset_666_392$
+- us/en/endoscopy/products/cystoscope-instrumentation
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CystoscopeIns?$preset_666_392$
+- us/en/endoscopy/products/dermacell
+  - https://media-assets.stryker.com/is/image/stryker/SYK.Stryker.com.NovadaqPages_AssetsDermACELL%20-%20Main?$preset_666_392$
+- us/en/endoscopy/products/flexible-instruments
+  - https://media-assets.stryker.com/is/image/stryker/Hero-FlexibleInstruments?$preset_666_392$
+- us/en/endoscopy/products/gynecologic-laparscopy-instruments
+  - https://media-assets.stryker.com/is/image/stryker/Hero-GynecologicLaparoscopy?$preset_666_392$
+- us/en/endoscopy/products/hardware
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Hardware?$preset_666_392$
+- us/en/endoscopy/products/ideal-eyes-hd-autocalvable-eyepiece-arthroscopes
+  - https://media-assets.stryker.com/is/image/stryker/Hero-IdealEyesCmount?$preset_666_392$
+- us/en/endoscopy/products/insufflator-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-InsufflatorAccessories1?$preset_666_392$
+- us/en/endoscopy/products/iris-u-kits
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Ukit?$preset_666_392$
+- us/en/endoscopy/products/l-11-light-source-and-auto-light-technology0
+  - https://media-assets.stryker.com/is/image/stryker/HeroL11-Hero?$preset_666_392$
+- us/en/endoscopy/products/l10-aim-light-source
+  - https://media-assets.stryker.com/is/image/stryker/Hero-L10?$preset_666_392$
+- us/en/endoscopy/products/laparoscope-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-LaparascopeAccessories?$preset_666_392$
+- us/en/endoscopy/products/laparoscopic-instrument-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-LaparoscopicInstrumentAccessories?$preset_666_392$
+- us/en/endoscopy/products/laparoscopic-instrument-trays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-LaparoscopicInstrumentAccessories?$preset_666_392$
+- us/en/endoscopy/products/laser-cystoscope-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-LaserCystoscope?$preset_666_392$
+- us/en/endoscopy/products/microcart
+  - https://media-assets.stryker.com/is/image/stryker/Hero-StrykerCart?$preset_666_392$
+- us/en/endoscopy/products/pinpoint
+  - https://media-assets.stryker.com/is/image/stryker/SYK.Stryker.com.NovadaqPages_AssetsPINPOINT%20-%20Main?$preset_666_392$
+- us/en/endoscopy/products/pneumoclear
+  - https://media-assets.stryker.com/is/image/stryker/SYK.AEM.ASectionHero-Template-Endo-Pneumo-Hero?$preset_666_392$
+- us/en/endoscopy/products/pneumosurexl
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PneumoSure?$preset_666_392$
+- us/en/endoscopy/products/precision-ac
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PrecisionAC1?$preset_666_392$
+- us/en/endoscopy/products/precision-ideal-eyes-hd-autocalvable-c-mount-arthorscopes
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PrecisionIdealEyesAutoclavable?$preset_666_392$
+- us/en/endoscopy/products/precision-ideal-eyes-hd-autoclavable-laparoscopes
+  - https://media-assets.stryker.com/is/image/stryker/Endo-PrecisionIELap?$preset_666_392$
+- us/en/endoscopy/products/precision-light-source
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PrecisionLightSource?$preset_666_392$
+- us/en/endoscopy/products/printers
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Printer?$preset_666_392$
+- us/en/endoscopy/products/pump-accessories
+  - https://media-assets.stryker.com/is/image/stryker/PumpAccessories-Hero1?$preset_666_392$
+- us/en/endoscopy/products/reposable-electro-surgical-tips
+  - https://media-assets.stryker.com/is/image/stryker/Hero-ElectroTips?$preset_666_392$
+- us/en/endoscopy/products/resectoscope
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Resectoscope?$preset_666_392$
+- us/en/endoscopy/products/resectoscope-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Resec-Accessories?$preset_666_392$
+- us/en/endoscopy/products/rev360-22-24-fr-resection-products
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Rev3602224FR?$preset_666_392$
+- us/en/endoscopy/products/rev360-ideal-eyes-autocalvable-hysteroscopes
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Rev360Hysteroscope?$preset_666_392$
+- us/en/endoscopy/products/rev360-kits
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Rev360?$preset_666_392$
+- us/en/endoscopy/products/rev360-semi-flexible-instrumentation
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SemiFlexible?$preset_666_392$
+- us/en/endoscopy/products/semi-rigid-autoclavable-uretroscopes
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SemiRigid?$preset_666_392$
+- us/en/endoscopy/products/serfas
+  - https://media-assets.stryker.com/is/image/stryker/HERO-SERFAS?$preset_666_392$
+- us/en/endoscopy/products/shavers
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Shavers1?$preset_666_392$
+- us/en/endoscopy/products/soloassist-ii-robotic-scope-holder
+  - https://media-assets.stryker.com/is/image/stryker/Hero-17?$preset_666_392$
+- us/en/endoscopy/products/spy-elite
+  - https://media-assets.stryker.com/is/image/stryker/SYK.Stryker.com.NovadaqPages_AssetsSPY-Elite%20-%20Mail?$preset_666_392$
+- us/en/endoscopy/products/sterilization-trays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SterilizationTrays?$preset_666_392$
+- us/en/endoscopy/products/strykeflow2-pump
+  - https://media-assets.stryker.com/is/image/stryker/Hero-StrykeFlow2Pump?$preset_666_392$
+- us/en/endoscopy/products/suction-irrigation
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SuctionIrrigation?$preset_666_392$
+- us/en/endoscopy/products/suction-irrigation-tips
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SuctionTips?$preset_666_392$
+- us/en/endoscopy/products/ureteroscope-accessories
+  - https://media-assets.stryker.com/is/image/stryker/Hero-ResectionSterilizationTray?$preset_666_392$
+- us/en/endoscopy/products/urology-gynecology-sterilization-trays
+  - https://media-assets.stryker.com/is/image/stryker/Hero-ResectionSterilizationTray?$preset_666_392$
+- us/en/endoscopy/products/vip-package
+  - https://media-assets.stryker.com/is/image/stryker/VIP?$preset_666_392$
+- us/en/endoscopy/products/visual-urethrotome
+  - https://media-assets.stryker.com/is/image/stryker/Hero-VisualUretrotome?$preset_666_392$
+- us/en/ent/products/bioresorbable-dressing
+  - https://media-assets.stryker.com/is/image/stryker/XeroGel%20product%20copy?$preset_666_392$
+- us/en/ent/products/clarifix-cryotherapy-device
+  - https://media-assets.stryker.com/is/image/stryker/ClariFix2_straight_activate_cryogen_final_V2?$preset_666_392$
+- us/en/ent/products/cyclone-sinonasal-suction-and-irrigation-system
+  - https://media-assets.stryker.com/is/image/stryker/Cyclone_suction?$preset_666_392$
+- us/en/ent/products/instruments
+  - https://media-assets.stryker.com/is/image/stryker/Forceps_Turb_Open_PRESS?$preset_666_392$
+- us/en/ent/products/latera-absorbable-nasal-implant-system
+  - https://media-assets.stryker.com/is/image/stryker/LATERA_System-Shot_Frontal?$preset_666_392$
+- us/en/ent/products/seekers
+  - https://media-assets.stryker.com/is/image/stryker/MiniFESS%20Light%20Seeker?$preset_666_392$
+- us/en/ent/products/suction
+  - https://media-assets.stryker.com/is/image/stryker/cliq-pump_0?$preset_666_392$
+- us/en/foot-and-ankle/products/axsos-3
+  - https://media-assets.stryker.com/is/image/stryker/AxSOS-plates?$preset_666_392$
+- us/en/foot-and-ankle/products/hoffmann-ii-mri
+  - https://media-assets.stryker.com/is/image/stryker/hoffmannIImri?$preset_666_392$
+- us/en/foot-and-ankle/products/neuromend
+  - https://media-assets.stryker.com/is/image/stryker/NeuroMend?$preset_666_392$
+- us/en/foot-and-ankle/products/osteoset
+  - https://media-assets.stryker.com/is/image/stryker/OsteoSet_AP-015413B?$preset_666_392$
+- us/en/foot-and-ankle/products/t2-ankle
+  - https://media-assets.stryker.com/is/image/stryker/Header_T2Nail?$preset_666_392$
+- us/en/joint-replacement/products/anato
+  - https://media-assets.stryker.com/is/image/stryker/Hero_JR_Hip_Anato?$preset_666_392$
+- us/en/joint-replacement/products/restoris-mck
+  - https://media-assets.stryker.com/is/image/stryker/MCK_BiC_Onlay?$preset_666_392$
+- us/en/joint-replacement/products/secur-fit-advanced
+  - https://media-assets.stryker.com/is/image/stryker/Hero_JR_Hip_SecurFit_Advanced?$preset_666_392$
+- us/en/joint-replacement/products/triathlon-total-knee-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero_JR_Knee_Triathlon_Primary?$preset_666_392$
+- us/en/joint-replacement/products/trident
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_Total_Hip_Implants_Trident_hemi_holes?$preset_666_392$
+- us/en/joint-replacement/products/x3
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_X3?$preset_666_392$
+- us/en/orthopaedic-instruments/products/auto62-cleaning-chemistries
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_Auto62?$preset_666_392$
+- us/en/orthopaedic-instruments/products/bioprep-bone-preparation-system
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_BioPrep?$preset_666_392$
+- us/en/orthopaedic-instruments/products/blu62-pretreatment-foam-and-instrument-detergent
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_Blu62?$preset_666_392$
+- us/en/orthopaedic-instruments/products/blu62-pretreatment-foam-and-instrument-detergent/speed-spray62
+  - https://media-assets.stryker.com/is/image/stryker/Hero-11?$preset_666_392$
+- us/en/orthopaedic-instruments/products/e62-enzymatic-detergent
+  - https://media-assets.stryker.com/is/image/stryker/E62_thumbnail?$preset_666_392$
+- us/en/orthopaedic-instruments/products/mixevac-iii-bone-cement-mixer
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_MixeVac%20III?$preset_666_392$
+- us/en/orthopaedic-instruments/products/performance-series-blades
+  - https://media-assets.stryker.com/is/image/stryker/Hero-16?$preset_666_392$
+- us/en/orthopaedic-instruments/products/precision-falcon
+  - https://media-assets.stryker.com/is/image/stryker/Hero-14?$preset_666_392$
+- us/en/orthopaedic-instruments/products/smartpump-tourniquet
+  - https://media-assets.stryker.com/is/image/stryker/Stryker_SmartPump_Rolling_Stand_PumpRemoved?$preset_666_392$
+- us/en/orthopaedic-instruments/products/stryker-f1-system-cordless-small-bone-power-tool-system
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_StrykerF1-1?$preset_666_392$
+- us/en/orthopaedic-instruments/products/system-8-ezout
+  - https://media-assets.stryker.com/is/image/stryker/hero-7?$preset_666_392$
+- us/en/orthopaedic-instruments/products/zip-skin-closure
+  - https://media-assets.stryker.com/is/image/stryker/zip_thumbnail?$preset_666_392$
+- us/en/spine/systems/niagara
+  - https://media-assets.stryker.com/is/image/stryker/Niagara_System?$preset_666_392$
+- us/en/sports-medicine/products/2-0-knot-pusher-suture-cutter-and-slotted-cannula-set
+  - https://media-assets.stryker.com/is/image/stryker/Hero-20Knot?$preset_666_392$
+- us/en/sports-medicine/products/big-dog
+  - https://media-assets.stryker.com/is/image/stryker/Hero-2?$preset_666_392$
+- us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors
+  - https://media-assets.stryker.com/is/image/stryker/hero-BiosteonIntraline?$preset_666_392$
+- us/en/sports-medicine/products/champion-shoulder-instrumentation-set
+  - https://media-assets.stryker.com/is/image/stryker/hero-ChampionShoulderInstrumentation?$preset_666_392$
+- us/en/sports-medicine/products/champion-slingshot-single-portal-suture-passing-system
+  - https://media-assets.stryker.com/is/image/stryker/hero-championslingshot?$preset_666_392$
+- us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-cinchlock?$preset_666_392$
+- us/en/sports-medicine/products/cobra
+  - https://media-assets.stryker.com/is/image/stryker/Hero?$preset_666_392$
+- us/en/sports-medicine/products/conquest-manual-instruments
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Conquest?$preset_666_392$
+- us/en/sports-medicine/products/crossblade-series-cutters
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CrossbladeBurs?$preset_666_392$
+- us/en/sports-medicine/products/crossblade-xl-diamond-burs
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CrossBladeDiamond?$preset_666_392$
+- us/en/sports-medicine/products/crossfire-2-integrated-resection-and-energy-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CrossFire2?$preset_666_392$
+- us/en/sports-medicine/products/cutter-cannula-set
+  - https://media-assets.stryker.com/is/image/stryker/Hero-CutterCannula?$preset_666_392$
+- us/en/sports-medicine/products/flosteady-select
+  - https://media-assets.stryker.com/is/image/stryker/Hero-FlosteadyPump?$preset_666_392$
+- us/en/sports-medicine/products/flosteady-tubing
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Flosteady?$preset_666_392$
+- us/en/sports-medicine/products/formula-series-cutters-and-burs
+  - https://media-assets.stryker.com/is/image/stryker/hero-formulacutter?$preset_666_392$
+- us/en/sports-medicine/products/formula-shaver-handpieces
+  - https://media-assets.stryker.com/is/image/stryker/hero-formulashaverhandpieces?$preset_666_392$
+- us/en/sports-medicine/products/gateway
+  - https://media-assets.stryker.com/is/image/stryker/Gateway-AssetsHero2?$preset_666_392$
+- us/en/sports-medicine/products/graftjacket-now-ultra-thick
+  - https://media-assets.stryker.com/is/image/stryker/sm-biologics-thumb?$max_width_1410$
+- us/en/sports-medicine/products/iconix-speed
+  - https://media-assets.stryker.com/is/image/stryker/Hero-3?$preset_666_392$
+- us/en/sports-medicine/products/injector-ii-capsule-closure
+  - https://media-assets.stryker.com/is/image/stryker/Hero-InJector?$preset_666_392$
+- us/en/sports-medicine/products/inspace
+  - https://media-assets.stryker.com/is/image/stryker/ui-button2-grey2?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/cpr-button2?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/ue-button2-grey2?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/ear-button2-grey?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/st-button2-grey?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/InSpacesurgtech-thumb?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/rcr-procedural-thumbnail?$max_width_1410$
+  - https://media-assets.stryker.com/is/image/stryker/SM-Hero-R1Artboard%201?$max_width_1410$
+- us/en/sports-medicine/products/knotilus-knotless-anchor-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Knotilus?$preset_666_392$
+- us/en/sports-medicine/products/microfx-osteochondral-drilling-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-MicroFX?$preset_666_392$
+- us/en/sports-medicine/products/nano-tack-peek-anchor
+  - https://media-assets.stryker.com/is/image/stryker/Hero-NanoTack?$preset_666_392$
+- us/en/sports-medicine/products/nanopass-suture-management-system
+  - https://media-assets.stryker.com/is/image/stryker/hero-NanoPass?$preset_666_392$
+- us/en/sports-medicine/products/nanotack-tt
+  - https://media-assets.stryker.com/is/image/stryker/Hero2?$preset_666_392$
+- us/en/sports-medicine/products/peek-zip-anchor
+  - https://media-assets.stryker.com/is/image/stryker/Hero-PeekZip?$preset_666_392$
+- us/en/sports-medicine/products/phoenix-microfracture-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Pivot?$preset_666_392$
+- us/en/sports-medicine/products/pivot-complete-hip-arthroscopy-access-and-instrumentation-kit
+  - https://media-assets.stryker.com/is/image/stryker/Hero-HipArthroscopy?$preset_666_392$
+- us/en/sports-medicine/products/pivot-guardian-distraction-system
+  - https://media-assets.stryker.com/is/image/stryker/PG-brochure-thumbnail?$max_width_1410$
+- us/en/sports-medicine/products/portal-entry-kit
+  - https://media-assets.stryker.com/is/image/stryker/hero-portalentry?$preset_666_392$
+- us/en/sports-medicine/products/samurai-blade
+  - https://media-assets.stryker.com/is/image/stryker/hero-samurai?$preset_666_392$
+- us/en/sports-medicine/products/serfas-energy-platform
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SERFAS?$preset_666_392$
+- us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Sharpshooter?$preset_666_392$
+- us/en/sports-medicine/products/slingshot-capsule-restoration-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Pivot-1?$preset_666_392$
+- us/en/sports-medicine/products/slot-meniscal-transplantation-set
+  - https://media-assets.stryker.com/is/image/stryker/Hero-SLOT?$preset_666_392$
+- us/en/sports-medicine/products/speed
+  - https://media-assets.stryker.com/is/image/stryker/Hero-4?$preset_666_392$
+- us/en/sports-medicine/products/tps-small-joint-series-cutters-and-burs
+  - https://media-assets.stryker.com/is/image/stryker/Hero-V2?$preset_666_392$
+- us/en/sports-medicine/products/transport-and-flowport-cannulas
+  - https://media-assets.stryker.com/is/image/stryker/hero-transport?$preset_666_392$
+- us/en/sports-medicine/products/twinloop-flex-anchor-system
+  - https://media-assets.stryker.com/is/image/stryker/Hero-Twinloop?$preset_666_392$
+- us/en/sports-medicine/products/versitomic-isi
+  - https://media-assets.stryker.com/is/image/stryker/hero-versitomooic?$preset_666_392$
+- us/en/surgical-technologies/products/floor-fluid-disposables
+  - https://media-assets.stryker.com/is/image/stryker/Thumbnail_FloorFluidDisposables?$preset_666_392$
+- us/en/surgical-technologies/products/photonblade
+  - https://media-assets.stryker.com/is/image/stryker/Photonblade?$preset_666_392$
+- us/en/surgical-technologies/products/photonsaber-f
+  - https://media-assets.stryker.com/is/image/stryker/PhotonSaber%20F%20with%20light?$preset_666_392$
+- us/en/surgical-technologies/products/photonsaber-y
+  - https://media-assets.stryker.com/is/image/stryker/PhotonSaber%20Y%20with%20light?$preset_666_392$
+- us/en/surgical/products/sterizone-vp4
+  - https://media-assets.stryker.com/is/image/stryker/sterizone_cut_out_open?$preset_666_392$
+- us/en/surgical/services/smart-equipment-management
+  - https://media-assets.stryker.com/is/image/stryker/SEM_Devices?$preset_666_392$
+- us/en/trauma-and-extremities/products/actishield
+  - https://media-assets.stryker.com/is/image/stryker/ActiShield-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/aequalis-fx-shoulder-system
+  - https://media-assets.stryker.com/is/image/stryker/fx?$preset_666_392$
+- us/en/trauma-and-extremities/products/aequalis-reversed-fx-shoulder-prosthesis
+  - https://media-assets.stryker.com/is/image/stryker/Aequalis_Reversed_FX_Product-Image?$preset_666_392$
+- us/en/trauma-and-extremities/products/allograft-wedges
+  - https://media-assets.stryker.com/is/image/stryker/allograft-wedges?$preset_666_392$
+- us/en/trauma-and-extremities/products/allomatrix
+  - https://media-assets.stryker.com/is/image/stryker/AlloMatrix_AP-015809?$preset_666_392$
+- us/en/trauma-and-extremities/products/allopure-wedges
+  - https://media-assets.stryker.com/is/image/stryker/allopure-imgs?$preset_666_392$
+- us/en/trauma-and-extremities/products/allowrap-ds-amniotic-membrane
+  - https://media-assets.stryker.com/is/image/stryker/Allowrap%20DS%20Final.PNG?$preset_666_392$
+- us/en/trauma-and-extremities/products/asnis-micro-cannulated-screw-system
+  - https://media-assets.stryker.com/is/image/stryker/default_curated_HERO_asnismicro?$preset_666_392$
+- us/en/trauma-and-extremities/products/autofix
+  - https://media-assets.stryker.com/is/image/stryker/autofix-single-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/bio4
+  - https://media-assets.stryker.com/is/image/stryker/Bio4-666x392?$preset_666_392$
+- us/en/trauma-and-extremities/products/bioskin
+  - https://media-assets.stryker.com/is/image/stryker/BioSkinimg?$preset_666_392$
+- us/en/trauma-and-extremities/products/cablefix-xpress-carpometacarpal-fixation-system
+  - https://media-assets.stryker.com/is/image/stryker/cablefix-666x392?$preset_666_392$
+- us/en/trauma-and-extremities/products/dbm
+  - https://media-assets.stryker.com/is/image/stryker/DBM-Hand?$preset_666_392$
+- us/en/trauma-and-extremities/products/endotrac-ectr
+  - https://media-assets.stryker.com/is/image/stryker/Endotrac-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/epk-kit
+  - https://media-assets.stryker.com/is/image/stryker/EPK_AP-015806?$preset_666_392$
+- us/en/trauma-and-extremities/products/fusionflex
+  - https://media-assets.stryker.com/is/image/stryker/fusionflex?$preset_666_392$
+- us/en/trauma-and-extremities/products/graftjacket-now
+  - https://media-assets.stryker.com/is/image/stryker/GJN_AP-015805?$preset_666_392$
+- us/en/trauma-and-extremities/products/hydroset
+  - https://media-assets.stryker.com/is/image/stryker/397003---397015?$preset_666_392$
+- us/en/trauma-and-extremities/products/ignite
+  - https://media-assets.stryker.com/is/image/stryker/ignite-img2?$preset_666_392$
+- us/en/trauma-and-extremities/products/imbibe
+  - https://media-assets.stryker.com/is/image/stryker/autologous-sm?$preset_666_392$
+- us/en/trauma-and-extremities/products/instrumentation/g2
+  - https://media-assets.stryker.com/is/image/stryker/STR_CIGI_0200_render?$preset_666_392$
+- us/en/trauma-and-extremities/products/knifelight
+  - https://media-assets.stryker.com/is/image/stryker/knifelight-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/nerve-repair
+  - https://media-assets.stryker.com/is/image/stryker/nerve-repair-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/neuroflex
+  - https://media-assets.stryker.com/is/image/stryker/neuroflex-img?$preset_666_392$
+- us/en/trauma-and-extremities/products/neuromatrix
+  - https://media-assets.stryker.com/is/image/stryker/neuromatrix-img?$preset_666_392$
+- us/en/trauma-and-extremities/products/neuromend
+  - https://media-assets.stryker.com/is/image/stryker/neuromend?$preset_666_392$
+- us/en/trauma-and-extremities/products/osteolysis-kit
+  - https://media-assets.stryker.com/is/image/stryker/opk-img?$preset_666_392$
+- us/en/trauma-and-extremities/products/prochondrix-cr
+  - https://media-assets.stryker.com/is/image/stryker/ProChondrix-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/prolayer
+  - https://media-assets.stryker.com/is/image/stryker/cover-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/prolayer-xenograft0
+  - https://media-assets.stryker.com/is/image/stryker/Prolayer-xenograft?$preset_666_392$
+- us/en/trauma-and-extremities/products/prostim
+  - https://media-assets.stryker.com/is/image/stryker/Pro-Stim_AP-015802?$preset_666_392$
+- us/en/trauma-and-extremities/products/reunion-rfx
+  - https://media-assets.stryker.com/is/image/stryker/ReUnion-RFX-with-shoulder?$preset_666_392$
+- us/en/trauma-and-extremities/products/reunion-s
+  - https://media-assets.stryker.com/is/image/stryker/Final%20ReUnion%20S-1?$preset_666_392$
+- us/en/trauma-and-extremities/products/rhead-plating-system
+  - https://media-assets.stryker.com/is/image/stryker/rHead-Lateral?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-ankle-arthrodesis
+  - https://media-assets.stryker.com/is/image/stryker/1210_T2_AAN%20cover?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-femur-ar
+  - https://media-assets.stryker.com/is/image/stryker/T2-Femur?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-gtn
+  - https://media-assets.stryker.com/is/image/stryker/T2-GTN?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-recon
+  - https://media-assets.stryker.com/is/image/stryker/T2-Recon?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-scn
+  - https://media-assets.stryker.com/is/image/stryker/T2-SCN?$preset_666_392$
+- us/en/trauma-and-extremities/products/t2-tibia
+  - https://media-assets.stryker.com/is/image/stryker/T2-tibia-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/tensix
+  - https://media-assets.stryker.com/is/image/stryker/Tensix_AP-15800?$preset_666_392$
+- us/en/trauma-and-extremities/products/traditional-allograft
+  - https://media-assets.stryker.com/is/image/stryker/Stryker.com_Traditional%20Allograft_AGFT-AWI-2?$preset_666_392$
+- us/en/trauma-and-extremities/products/twinfix-cannulated-compression-screw
+  - https://media-assets.stryker.com/is/image/stryker/TwinFix-2?$preset_666_392$
+- us/en/trauma-and-extremities/products/variax-2-distal-fibula-plating-system
+  - https://media-assets.stryker.com/is/image/stryker/VariAx-Fibula?$preset_666_392$
+- us/en/trauma-and-extremities/products/variax-2-foot-plating-system
+  - https://media-assets.stryker.com/is/image/stryker/VariAx-Foot?$preset_666_392$
+- us/en/trauma-and-extremities/products/variax-2-speedguide
+  - https://media-assets.stryker.com/is/image/stryker/speedguide-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/vitoss
+  - https://media-assets.stryker.com/is/image/stryker/vitoss-image1?$preset_666_392$
+- us/en/trauma-and-extremities/products/vitoss-ba
+  - https://media-assets.stryker.com/is/image/stryker/BBTrauma-icon?$preset_666_392$
+- us/en/trauma-and-extremities/products/vitoss-ba2x
+  - https://media-assets.stryker.com/is/image/stryker/BA2X-trauma-image?$preset_666_392$
+- us/en/trauma-and-extremities/products/vitoss-bbtrauma
+  - https://media-assets.stryker.com/is/image/stryker/PACK-hand-blood?$preset_666_392$
+- us/en/trauma-and-extremities/products/x-ream
+  - https://media-assets.stryker.com/is/image/stryker/X-Ream_AP-015801?$preset_666_392$
