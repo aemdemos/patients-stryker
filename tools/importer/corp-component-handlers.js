@@ -1213,6 +1213,23 @@ function shortDescription(el, ctx) {
 }
 
 /**
+ * The product template's secondary CTA (.c-secondary-cta a.action-link, "Additional
+ * resources"): the bold + underline link (a.link-strong, the arrow CTA convention).
+ */
+function secondaryCta(el, ctx) {
+  const nodes = [...el.querySelectorAll('a[href]')].filter((a) => text(a)).map((a) => {
+    const link = linkTo(ctx.doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+    const u = ctx.doc.createElement('u');
+    u.textContent = text(a);
+    link.append(u);
+    const strong = ctx.doc.createElement('strong');
+    strong.append(link);
+    return para(ctx.doc, strong);
+  });
+  return nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : [];
+}
+
+/**
  * The product template's tag crumb ("Related categories", stryker.com .c-tagcrumb, shown
  * unless hidden on the page) → the Related Categories block holding its heading: the block
  * builds the categories from the page's `tags` metadata and the tag list sheet (approved
@@ -1457,8 +1474,12 @@ export const COMPONENTS = {
   resourcesanddownload: resources,
   '#product-detail-container': shortDescription,
   tagcrumb: skip,
-  // the tag crumb rendered by the template without its AEM wrapper: Related Categories
+  // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
+  // Categories), the short description (rich text), the contact button and the secondary CTA
   'c-tagcrumb': relatedCategories,
+  'c-page-short-description': textComponent,
+  'c-contact-button': buttons,
+  'c-secondary-cta': secondaryCta,
   accordion,
   pagehero: pageHero,
   hero: pageHero,
