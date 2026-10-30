@@ -511,6 +511,17 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
  *   is centred, and its copy section styles (copyStyles)
  */
 export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = true } = {}) {
+  // control characters typed into the source text (vip-package "Six Clarity enhancements" ends
+  // in a U+0003 inside the bold run: the bold shows as literal *** on import); tab, line feed
+  // and carriage return stay
+  const control = (ch) => {
+    const code = ch.charCodeAt(0);
+    return (code < 32 && ![9, 10, 13].includes(code)) || code === 127;
+  };
+  const ctrlWalker = root.ownerDocument.createTreeWalker(root, 4); // NodeFilter.SHOW_TEXT
+  for (let n = ctrlWalker.nextNode(); n; n = ctrlWalker.nextNode()) {
+    if ([...n.textContent].some(control)) n.textContent = [...n.textContent].filter((ch) => !control(ch)).join('');
+  }
   // text authored in a bare <div> (no paragraph inside, e.g. a "* …" footnote line) is a
   // paragraph: the section builders only keep block elements, so it would be lost.
   // (divParagraphs: false for callers that hold on to their own <div> lines)

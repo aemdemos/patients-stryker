@@ -643,6 +643,14 @@ var CustomImportScript = (() => {
     });
   }
   function cleanRichText(root, { wholeParagraphs = false, divParagraphs = true } = {}) {
+    const control = (ch) => {
+      const code = ch.charCodeAt(0);
+      return code < 32 && ![9, 10, 13].includes(code) || code === 127;
+    };
+    const ctrlWalker = root.ownerDocument.createTreeWalker(root, 4);
+    for (let n = ctrlWalker.nextNode(); n; n = ctrlWalker.nextNode()) {
+      if ([...n.textContent].some(control)) n.textContent = [...n.textContent].filter((ch) => !control(ch)).join("");
+    }
     if (divParagraphs) {
       [...root.querySelectorAll("div")].reverse().forEach((div) => {
         if (text(div) && !div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table")) rename(div, "p");
