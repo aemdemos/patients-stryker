@@ -243,7 +243,8 @@ function runOf(textNode, blockEl, serifDefault) {
  * (span.urw-egyptienne, unless a span.futura-bold inside it) is wrapped in an <x-run-…>
  * element named after those values (it survives the cleaning, cloning and attribute
  * stripping). finishRuns() turns the runs whose look the section styles do not give into
- * bracket tags. Text at the default size and font is left as it is. serifDefault: copy without
+ * bracket tags. Every run is marked, default-size text too (its section may take a larger copy
+ * size from other text); its spaces stay outside the marker. serifDefault: copy without
  * a font class is Egyptienne (the Large Headline component's default, e.g. aaa-2023 line 2).
  */
 export function markRuns(root, { serifDefault = false } = {}) {
@@ -254,13 +255,17 @@ export function markRuns(root, { serifDefault = false } = {}) {
     const blockEl = n.parentElement && n.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6');
     if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
       const props = runOf(n, blockEl, serifDefault);
-      if (Math.abs(props.em - 1) > 0.001 || props.vw || props.font) runs.push([n, props]);
+      runs.push([n, props]);
     }
   }
   runs.forEach(([n, props]) => {
+    // leading / trailing spaces stay outside the marker: the cleaner moves a space typed at the
+    // end of the formatting out of it (else words run together on import)
+    const [, lead, core, tail] = n.textContent.match(/^([\s\u00a0]*)([\s\S]*?)([\s\u00a0]*)$/);
     const run = doc.createElement(runName(props));
-    n.replaceWith(run);
-    run.append(n);
+    run.textContent = core;
+    const parts = [lead && doc.createTextNode(lead), run, tail && doc.createTextNode(tail)];
+    n.replaceWith(...parts.filter(Boolean));
   });
 }
 
@@ -306,14 +311,21 @@ export function finishRuns(nodes, styles) {
         const em = Number(`${m[1]}.${m[2]}`);
         const vw = Number(`${m[3]}.${m[4]}`);
         // a Hero Corp with size-<n> sizes its lines itself (only their vw sizes are tagged)
+        // the block around the run: a table (its first row is the name, its options in words:
+        // "Hero Corp (image Slide, …, Image Right)") or the <div class="hero-corp …"> form
         const table = run.closest('table');
-        const name = table ? text(table.querySelector('tr')) : '';
-        const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
+        const div = run.closest('div[class*="hero-corp"]');
+        let name = table ? text(table.querySelector('tr')) : '';
+        if (!name && div) name = div.className.replace('hero-corp', 'hero corp');
+        const heroBlock = /^hero corp/i.test(name);
+        const inHero = heroBlock && /size[- ]\d/i.test(name);
         const isHeading = !!run.closest('h1, h2, h3, h4, h5, h6');
         const line = run.closest('p');
         // a label in a section with a label size: that size is the reference (EMS footer
-        // "Support" 1.25em next to "Explore" 1.5em)
+        // "Support" 1.25em next to "Explore" 1.5em); a Hero Corp heading is sized by the block,
+        // not by the section's h-* style, in the image-right product hero (barimatt-plus h2 1.25em)
         let base = isHeading ? heading : copy;
+        if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
         if (!isHeading && label && line && isLabel(line)) base = label;
         if (vw) tags.push(`size-${num(vw)}vw`);
         else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);

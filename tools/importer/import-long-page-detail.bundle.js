@@ -460,13 +460,15 @@ var CustomImportScript = (() => {
       const blockEl = n.parentElement && n.parentElement.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (squash(n.textContent) && blockEl && root.contains(blockEl)) {
         const props = runOf(n, blockEl, serifDefault);
-        if (Math.abs(props.em - 1) > 1e-3 || props.vw || props.font) runs.push([n, props]);
+        runs.push([n, props]);
       }
     }
     runs.forEach(([n, props]) => {
+      const [, lead, core, tail] = n.textContent.match(/^([\s\u00a0]*)([\s\S]*?)([\s\u00a0]*)$/);
       const run = doc.createElement(runName(props));
-      n.replaceWith(run);
-      run.append(n);
+      run.textContent = core;
+      const parts = [lead && doc.createTextNode(lead), run, tail && doc.createTextNode(tail)];
+      n.replaceWith(...parts.filter(Boolean));
     });
   }
   var COPY_FACTORS = {
@@ -503,10 +505,12 @@ var CustomImportScript = (() => {
           const vw = Number(`${m[3]}.${m[4]}`);
           const table2 = run.closest("table");
           const name = table2 ? text(table2.querySelector("tr")) : "";
-          const inHero = /^hero corp/i.test(name) && /size-\d/.test(name);
+          const heroBlock = /^hero corp/i.test(name);
+          const inHero = heroBlock && /size-\d/.test(name);
           const isHeading = !!run.closest("h1, h2, h3, h4, h5, h6");
           const line = run.closest("p");
           let base = isHeading ? heading : copy;
+          if (isHeading && heroBlock) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
           else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
