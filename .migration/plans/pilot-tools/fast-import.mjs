@@ -31,10 +31,11 @@ const { processPlainHtml } = await import(`${S}/import-processors/index.js`);
 const HERE = dirname(fileURLToPath(import.meta.url));
 const VIEWPORT = { width: 1920, height: 1080 }; // as run-bulk-import.js
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
-// third parties the content does not need: analytics, tag manager, consent, Marketo tracking,
-// social pixels. Video players (Scene7, YouTube) and Marketo forms still load: they build
-// content the importer reads (a Scene7 video's poster image)
-const TRACKERS = /adobedtm|cookielaw|onetrust|demdex|omtrdc|munchkin|mktoresp|telemetry\.stryker|google-analytics|googletagmanager|doubleclick|facebook|linkedin|hotjar|bing\.com|qualtrics|clarity\.ms|rum\.hlx/;
+// third parties the content does not need: analytics, consent, Marketo tracking, social pixels.
+// Video players (Scene7, YouTube) and Marketo forms still load: they build content the
+// importer reads (a Scene7 video's poster image). Adobe Launch (adobedtm) loads too: it loads
+// the YouTube iframe API, which gives each YouTube iframe its video title (the link text)
+const TRACKERS = /cookielaw|onetrust|demdex|omtrdc|munchkin|mktoresp|telemetry\.stryker|google-analytics|googletagmanager|doubleclick|facebook|linkedin|hotjar|bing\.com|qualtrics|clarity\.ms|rum\.hlx/;
 // stryker.com rule (stryker-block.mjs): never load ALTCHA; the <altcha-widget> element
 // (challengeurl, read by markLivePage) is in the markup either way
 const blocked = (url) => TRACKERS.test(new URL(url).host) || ALTCHA.test(new URL(url).pathname);
@@ -100,7 +101,12 @@ async function record(context, url) {
       if (req.resourceType() === 'stylesheet') return stylesheet(route);
       return route.continue();
     });
-    const response = await page.goto(url, { waitUntil: 'load', timeout: 45000 });
+    // as run-bulk-import.js: a page whose load event never comes is taken once its DOM is ready
+    const response = await page.goto(url, { waitUntil: 'load', timeout: 45000 }).catch(async () => {
+      const r = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+      await page.waitForTimeout(3000);
+      return r;
+    });
     await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
     // content built when it scrolls into view (Scene7 video posters): the whole page, once
     await page.evaluate(async () => {
