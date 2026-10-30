@@ -1199,11 +1199,29 @@ function tabs(el, ctx) {
 
 /** Page short description: hidden on most pages (skipped as hidden); visible → lead content. */
 function shortDescription(el, ctx) {
-  // the product-detail template's two columns under the hero: their components through the
-  // walk (the rich text in its column, c-rich-text-editor; the secondary CTA; the tag crumb),
-  // not as one rich text, which kept only shallow paragraphs (229 lines on 78 product pages,
-  // e.g. connected-or-ip "The future of integration is here.")
-  return ctx.collect(el);
+  // the product-detail template's two columns under the hero (col-sm-6 + col-sm-6): their
+  // components through the walk (the rich text, the secondary CTA, the tag crumb), not as one
+  // rich text, which kept only shallow paragraphs (229 lines on 78 product pages, e.g.
+  // connected-or-ip "The future of integration is here."); then the column-control rules:
+  // both filled → side by side (a block beside text: flex section), one filled → its half
+  const columns = [...el.querySelectorAll(':scope > .row > [class*="col-sm-"]')];
+  if (columns.length !== 2) return ctx.collect(el);
+  // the template-slot handlers wrap their items in a column group: the control decides here
+  const items = columns.map((col) => ctx.collect(col).flatMap((it) => (it.type === 'group' ? it.items : [it])));
+  const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+  return columnItems(items, SPLITS.cols2, ctx, widths.every(Boolean) ? widths : null);
+}
+
+/**
+ * The product template's tag crumb ("Related categories", stryker.com .c-tagcrumb, shown
+ * unless hidden on the page) → the Related Categories block holding its heading: the block
+ * builds the categories from the page's `tags` metadata and the tag list sheet (approved
+ * 2026-10-30).
+ */
+function relatedCategories(el, ctx) {
+  const title = text(el.querySelector('.c-tagcrumb-title') || ctx.doc.createElement('h4')) || 'Related categories';
+  if (!el.querySelector('.c-tagcrumb-item a[href]')) return [];
+  return [{ type: 'block', block: block(ctx.doc, 'Related Categories', [[title]]) }];
 }
 
 /**
@@ -1439,8 +1457,8 @@ export const COMPONENTS = {
   resourcesanddownload: resources,
   '#product-detail-container': shortDescription,
   tagcrumb: skip,
-  // the tag crumb rendered by the template without its AEM wrapper (approved: metadata tags)
-  'c-tagcrumb': skip,
+  // the tag crumb rendered by the template without its AEM wrapper: Related Categories
+  'c-tagcrumb': relatedCategories,
   accordion,
   pagehero: pageHero,
   hero: pageHero,

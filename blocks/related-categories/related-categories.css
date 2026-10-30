@@ -1,0 +1,48 @@
+/* Related Categories (stryker.com product page tag crumb, measured on
+   /us/en/communications/products/connected-or-ip at 1440 / 375px): an Egyptienne Light 21px
+   heading, one line per category group 6px apart, its links inline with " | " between them,
+   black 14px body text without underline. A thin grey rule under it on phones (the source
+   column's border-bottom, removed from 840px → 600px here). */
+.related-categories {
+  margin: var(--space-block-l) 0;
+  padding-bottom: var(--space-block-s);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.related-categories .related-categories-title {
+  margin: 0 0 var(--space-block-s);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-h4);
+}
+
+.related-categories ul {
+  margin: 0 0 var(--corp-tag-group-gap);
+  padding: 0;
+  list-style: none;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--corp-tag-line-height);
+}
+
+.related-categories li {
+  display: inline;
+}
+
+.related-categories li + li::before {
+  content: " | ";
+}
+
+.related-categories a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  .related-categories {
+    margin-bottom: var(--space-section);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}

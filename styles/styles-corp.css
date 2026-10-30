@@ -96,6 +96,10 @@
   --corp-chart-legend-gap: 23px; /* pie → legend swatch */
   --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
 
+  /* Related Categories (stryker.com product tag crumb) */
+  --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
+  --corp-tag-line-height: 21px; /* .c-tagcrumb-item lines */
+
   /* Statistics (fast-facts): stryker.com Fast Facts (learn "Our impact") */
   --corp-facts-number-size: 56px; /* .c-fastfacts-number from 840px */
   --corp-facts-title-size: 27px; /* .c-fastfacts-title from 840px */
