@@ -5,6 +5,9 @@
 # - output (the raw import, as it would go to DA) in out/<run name>/content, kept across
 #   restarts (out/ is git-ignored); re-running the same command resumes: pages and XFs already
 #   saved are reused (no --force)
+# - FAST=1: fast-import.mjs instead of the excat bulk importer (same output, 4-15x faster; pages
+#   from the local page cache, recorded from the live site the first time; REFRESH=1 records
+#   them again). Every page is imported again (from the cache), nothing is reused
 # - the XFs of all pages first, then the pages, in chunks; after every chunk the result is
 #   copied to the preview: pages under content/drafts/reimport, fragments under
 #   content/us/en/fragments (fragment links get the local /content prefix there)
@@ -42,8 +45,13 @@ run_chunks() { # <bundle> <url list> <label>
   split -l "$CHUNK" -d -a 3 "$2" "$OUT/chunks/$3-"
   for c in "$OUT/chunks/$3-"*; do
     log "$3 $(basename "$c"): $(wc -l < "$c") urls"
-    (cd "$OUT" && WORKSPACE_PATH=$OUT node $S/run-bulk-import.js --import-script "$1" --urls "$c" 2>&1 \
-      | grep -E "Completed|Failures: [1-9]|✗" | cut -c1-200 >> "$LOG")
+    if [ -n "$FAST" ]; then
+      node $T/fast-import.mjs --import-script "$1" --urls "$c" --out "$OUT" ${REFRESH:+--refresh} 2>&1 \
+        | grep -E "Completed|❌" | cut -c1-200 >> "$LOG"
+    else
+      (cd "$OUT" && WORKSPACE_PATH=$OUT node $S/run-bulk-import.js --import-script "$1" --urls "$c" 2>&1 \
+        | grep -E "Completed|Failures: [1-9]|✗" | cut -c1-200 >> "$LOG")
+    fi
     copy_preview
   done
 }

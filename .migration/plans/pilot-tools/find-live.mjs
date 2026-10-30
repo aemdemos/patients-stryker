@@ -1,6 +1,7 @@
 // where a text is on the rendered live page: node find-live.mjs <live url> <text> [width]
 // prints whether it is visible and the classes of its ancestors (innermost first)
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -9,6 +10,7 @@ const [url, needle, width = '1440'] = process.argv.slice(2);
 const browser = await chromium.launch();
 try {
   const page = await browser.newPage({ viewport: { width: Number(width), height: 900 } });
+  await blockAltcha(page);
   await page.goto(url, { waitUntil: 'load', timeout: 45000 });
   await page.waitForTimeout(3000);
   const out = await page.evaluate((n) => {

@@ -19,6 +19,16 @@ while [ $# -ge 2 ]; do
   node $T/batch-urls.mjs "$RUN" "$LIST" || exit 1
   cat "$RUN/pages.tsv" >> $OUT/all-pages.tsv
   bash $S/aem-import-bundle.sh --importjs $R/tools/importer/$IMPORTER.js >/dev/null 2>&1 || echo "bundle $IMPORTER failed"
+  if [ -n "$FAST" ]; then
+    # fast-import.mjs: the same output, from the local page cache (REFRESH=1: from live again)
+    if [ -s "$RUN/xf-urls.txt" ]; then
+      node $T/fast-import.mjs --import-script $R/tools/importer/import-xf-fragments.bundle.js \
+        --urls "$RUN/xf-urls.txt" --out $OUT ${REFRESH:+--refresh} 2>&1 | grep -E "Completed|❌" | cut -c1-200
+    fi
+    node $T/fast-import.mjs --import-script $R/tools/importer/$IMPORTER.bundle.js \
+      --urls "$RUN/urls.txt" --out $OUT ${REFRESH:+--refresh} 2>&1 | grep -E "Completed|❌" | cut -c1-200
+    continue
+  fi
   (cd $OUT || exit 1
     if [ -s "$RUN/xf-urls.txt" ]; then
       WORKSPACE_PATH=$OUT node $S/run-bulk-import.js --import-script $R/tools/importer/import-xf-fragments.bundle.js \

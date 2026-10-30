@@ -2,6 +2,7 @@
 // each column's aem-GridColumn classes, position, width, padding and display.
 // usage: node grid-measure.mjs <url> [url …] > out.json
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -11,6 +12,7 @@ const browser = await chromium.launch();
 const result = {};
 for (const url of urls) {
   const page = await browser.newPage();
+  await blockAltcha(page);
   page.setDefaultTimeout(15000);
   try {
     await page.goto(url, { waitUntil: 'load', timeout: 45000 });

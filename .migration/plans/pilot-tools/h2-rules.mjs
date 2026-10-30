@@ -1,6 +1,7 @@
 // h2 bottom rules, live vs preview, on a page list: node h2-rules.mjs <list>
 // for every h2 whose text is on both: whether it has a visible bottom border on each side
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 import { readFileSync } from 'fs';
 import { resolvePage } from './resolve.mjs';
 
@@ -21,6 +22,7 @@ const oursOnly = [];
 try {
   for (const p of pages) {
     const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+    await blockAltcha(page);
     try {
       await page.goto(`https://www.stryker.com${p.aem}.html`, { waitUntil: 'load', timeout: 45000 });
       const live = new Map(await page.evaluate(read));

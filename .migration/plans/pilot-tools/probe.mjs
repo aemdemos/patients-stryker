@@ -4,6 +4,7 @@
 // first element matching the selector that contains the text is used. Prints each element's
 // tag.class, position (relative to the probed element), size, font, margin and padding.
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 import { resolvePage } from './resolve.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
@@ -13,6 +14,7 @@ const [width, path, liveSel, oursSel, depth = '3', needle = ''] = process.argv.s
 const page0 = resolvePage(path);
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: Number(width), height: 900 } });
+await blockAltcha(ctx);
 const urls = [[`https://www.stryker.com${page0.aem}.html`, liveSel], [`http://localhost:3000/content/drafts/reimport${page0.eds}`, oursSel]];
 try {
   for (const [url, sel] of urls) {

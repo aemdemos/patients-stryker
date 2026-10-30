@@ -6,6 +6,7 @@
 // Per page: text-style differences (leaf computed font / size / weight / colour), live texts
 // missing from the preview, height ratio (incl. the source disclaimer), media counts.
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 import {
   readFileSync, writeFileSync, existsSync, mkdirSync,
 } from 'fs';
@@ -100,6 +101,7 @@ const res = {};
 try {
   for (const width of widths) {
     const context = await browser.newContext({ viewport: { width, height: 900 } });
+    await blockAltcha(context);
     for (const p of pages) {
       const key = `${width} ${p.eds.slice(7)}`;
       const cacheFile = `${CACHE}/${width}-${p.eds.replace(/\//g, '_')}.json`;
