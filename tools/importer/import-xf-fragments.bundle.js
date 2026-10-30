@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-xf-fragments.js
+  // import-xf-fragments.js
   var import_xf_fragments_exports = {};
   __export(import_xf_fragments_exports, {
     default: () => import_xf_fragments_default
   });
 
-  // tools/importer/transformers/corp-sections.js
+  // transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-cleanup.js
+  // transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -235,7 +235,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-dm-images.js
+  // transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -303,7 +303,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-richtext.js
+  // corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -656,6 +656,12 @@ var CustomImportScript = (() => {
         if (text(div) && !div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table")) rename(div, "p");
       });
     }
+    root.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+      if (!h.classList.contains("border-bottom-gold") || h.querySelector("u") || !text(h)) return;
+      const u = root.ownerDocument.createElement("u");
+      while (h.firstChild) u.append(h.firstChild);
+      h.append(u);
+    });
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
@@ -812,12 +818,27 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp-section-builder.js
+  // corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
-  function gridWidth(el) {
-    const m = String(el.className).match(/\baem-GridColumn--default--(\d+)\b/);
-    return m ? Number(m[1]) : null;
+  function gridSpec(el) {
+    const cls = String(el.className);
+    const get = (re) => {
+      var _a;
+      return (_a = (cls.match(re) || [])[1]) != null ? _a : null;
+    };
+    const at = (bp) => {
+      const w = get(new RegExp(`\\baem-GridColumn--${bp}--(\\d+)\\b`));
+      const o = get(new RegExp(`\\baem-GridColumn--offset--${bp}--(\\d+)\\b`));
+      return {
+        w: w === null ? null : Number(w),
+        o: o === null ? null : Number(o),
+        beh: get(new RegExp(`\\baem-GridColumn--${bp}--(newline|hide|none)\\b`))
+      };
+    };
+    const spec = { d: at("default"), t: at("tablet"), m: at("phone") };
+    return spec.d.w ? spec : null;
   }
+  var gridTotal = (el) => Number((String(el.className).match(/\baem-Grid--(\d+)\b/) || [])[1]) || 12;
   var isHidden = (el) => el.getAttribute("data-corp-hidden") === "true";
   function markLivePage(document) {
     const root = document.querySelector("#aem-specific-data") || document.body;
@@ -876,28 +897,41 @@ var CustomImportScript = (() => {
     };
     ctx.collect = function collect(container) {
       const out = [];
+      const total = gridTotal(container);
       let run = [];
-      const flush = (complete) => {
-        if (complete && run.length > 1 && handlers.row) {
-          out.push(...handlers.row(run.map((r) => collectOne(r.el)), run.map((r) => r.width), ctx));
+      let used = 0;
+      const flush = () => {
+        if (run.length > 1 && handlers.row) {
+          out.push(...handlers.row(
+            run.map((r) => collectOne(r.el)),
+            run.map((r) => r.spec.d.w),
+            ctx,
+            { specs: run.map((r) => r.spec), total }
+          ));
         } else {
           run.forEach((r) => out.push(...collectOne(r.el)));
         }
         run = [];
+        used = 0;
       };
       [...container.children].forEach((child) => {
-        const width = gridWidth(child);
-        if (width && width < 12 && !(isHidden(child) && !keepHidden(child))) {
-          run.push({ el: child, width });
-          const sum = run.reduce((s, r) => s + r.width, 0);
-          if (sum === 12) flush(true);
-          else if (sum > 12) flush(false);
+        const spec = gridSpec(child);
+        if (spec && spec.d.w < total) {
+          if (isHidden(child) && !keepHidden(child)) {
+            report.hidden += 1;
+            return;
+          }
+          const room = (spec.d.o || 0) + spec.d.w;
+          if (run.length && (used + room > total || spec.d.beh === "newline")) flush();
+          run.push({ el: child, spec });
+          used += room;
+          if (used >= total) flush();
           return;
         }
-        flush(false);
+        flush();
         out.push(...collectOne(child));
       });
-      flush(false);
+      flush();
       return out;
     };
     ctx.collectOne = collectOne;
@@ -1031,7 +1065,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3180,7 +3214,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var CF_ROOT = "/content/dam/stryker/content-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
@@ -3203,7 +3237,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}content-fragments/${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3231,7 +3265,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-components.js
+  // corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3386,7 +3420,7 @@ var CustomImportScript = (() => {
     return { sections, unknown };
   }
 
-  // tools/importer/parsers/hero-image-slide.js
+  // parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3478,7 +3512,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/parsers/cards-corp-teaser.js
+  // parsers/cards-corp-teaser.js
   function clean2(text3) {
     return (text3 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3532,7 +3566,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/parsers/video.js
+  // parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3558,7 +3592,7 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-component-handlers.js
+  // corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -3825,10 +3859,10 @@ var CustomImportScript = (() => {
     8: "2-3",
     9: "3-4"
   };
-  function columnStyles(widths, index, ctx) {
+  function columnStyles(widths, index, ctx, starts = null) {
     if (!widths || !widths[index]) return [];
     const width = widths[index];
-    const start = widths.slice(0, index).reduce((sum, w) => sum + w, 0);
+    const start = starts ? starts[index] : widths.slice(0, index).reduce((sum, w) => sum + w, 0);
     if (width >= 12) return [];
     if (!FRACTIONS[width] || start && !FRACTIONS[start]) {
       ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
@@ -3836,7 +3870,7 @@ var CustomImportScript = (() => {
     }
     return [`col-${FRACTIONS[width]}`, ...start ? [`col-at-${FRACTIONS[start]}`] : []];
   }
-  function columnItems(columns, split, ctx, widths = null) {
+  function columnItems(columns, split, ctx, widths = null, starts = null) {
     const { doc } = ctx;
     const anchors = [];
     const cols = columns.map((items) => items.filter((it) => {
@@ -3846,7 +3880,7 @@ var CustomImportScript = (() => {
     const filled = cols.filter(hasContent);
     if (!filled.length) return anchors;
     if (filled.length === 1) {
-      const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx);
+      const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx, starts);
       if (!styles.length) return [...anchors, { type: "boundary" }, ...filled[0], { type: "boundary" }];
       return [...anchors, { type: "group", styles, items: filled[0] }];
     }
@@ -3883,8 +3917,13 @@ var CustomImportScript = (() => {
       ];
     }
     const inCell = (it) => it.type === "flow" || it.type === "separator" || it.type === "block" && it.cellNodes;
-    if (all.some((it) => !inCell(it) && it.type !== "fragment")) return [...anchors, flex([], all)];
-    if (all.some((it) => it.type === "fragment")) return [...anchors, flex([], all)];
+    if (!all.every(inCell)) {
+      if (split.grid && split.unequal) {
+        ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
+        return columns.flat();
+      }
+      return [...anchors, flex([], all)];
+    }
     if (split.cards && filled.length >= 2 && filled.every(isCard)) {
       const rows = filled.map((items) => [items[0].nodes, items.slice(1).flatMap((it) => it.nodes)]);
       return [...anchors, {
@@ -3958,13 +3997,50 @@ var CustomImportScript = (() => {
     if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
     return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
   }
-  function gridRow(columns, widths, ctx) {
-    const split = GRID_SPLITS[widths.join(",")];
-    if (!split) {
-      ctx.report.notes.push(`responsive grid row ${widths.join("+")}: no Columns variant, stacked`);
-      return columns.flat();
+  function gridOptions(specs, total) {
+    const value = (spec, bp, key) => {
+      var _a;
+      return (_a = spec[bp][key]) != null ? _a : spec.d[key];
+    };
+    const tokens = (bp) => specs.map((spec) => {
+      const beh = value(spec, bp, "beh");
+      if (beh === "hide") return "h";
+      const o = value(spec, bp, "o");
+      return `${o ? `o${o}-` : ""}${beh === "newline" ? "n" : ""}${value(spec, bp, "w")}`;
+    }).join("-");
+    const d = tokens("d");
+    const t = tokens("t");
+    const m = tokens("m");
+    return [
+      `grid-${total === 12 ? "" : `of${total}-`}${d}`,
+      ...t !== d ? [`grid-t-${t}`] : [],
+      ...m !== d ? [`grid-m-${m}`] : []
+    ];
+  }
+  function gridRow(columns, widths, ctx, { specs = [], total = 12 } = {}) {
+    const offsets = specs.some((spec) => spec.d.o);
+    const split = total === 12 && !offsets ? GRID_SPLITS[widths.join(",")] : null;
+    if (split) {
+      const grid2 = gridOptions(specs, total);
+      const stacked = `grid-m-${specs.map(() => 12).join("-")}`;
+      if (!grid2.some((option) => option.startsWith("grid-t-")) && grid2.includes(stacked)) {
+        return columnItems(columns, split, ctx, widths);
+      }
+      const variant = [split.variant, ...grid2].filter(Boolean).join(", ");
+      return columnItems(columns, __spreadProps(__spreadValues({}, split), { variant, grid: true }), ctx, widths);
     }
-    return columnItems(columns, split, ctx, widths);
+    const starts = [];
+    specs.reduce((at, spec) => {
+      starts.push(at + (spec.d.o || 0));
+      return at + (spec.d.o || 0) + spec.d.w;
+    }, 0);
+    const twelfths = total === 12 ? { widths, starts } : null;
+    const grid = {
+      variant: gridOptions(specs, total).join(", "),
+      grid: true,
+      unequal: offsets || new Set(widths).size > 1
+    };
+    return columnItems(columns, grid, ctx, twelfths == null ? void 0 : twelfths.widths, twelfths == null ? void 0 : twelfths.starts);
   }
   function textComponent(el, ctx) {
     const source = el.querySelector(".c-rich-text-editor > div") || el.querySelector(".c-rich-text-editor") || el;
@@ -4458,7 +4534,9 @@ var CustomImportScript = (() => {
     const heading = grid.querySelector("h2");
     if (heading && text(heading)) {
       const h2 = doc.createElement("h2");
-      h2.textContent = text(heading);
+      const label = heading.classList.contains("border-bottom-gold") ? doc.createElement("u") : h2;
+      label.textContent = text(heading);
+      if (label !== h2) h2.append(label);
       out.push({ type: "flow", role: "text", nodes: [h2] });
     }
     const description = grid.querySelector(".c-customizable-description");
@@ -4554,7 +4632,28 @@ var CustomImportScript = (() => {
     }];
   }
   function shortDescription(el, ctx) {
-    return ctx.collect(el);
+    const columns = [...el.querySelectorAll(':scope > .row > [class*="col-sm-"]')];
+    if (columns.length !== 2) return ctx.collect(el);
+    const items = columns.map((col) => ctx.collect(col).flatMap((it) => it.type === "group" ? it.items : [it]));
+    const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+    return columnItems(items, SPLITS.cols2, ctx, widths.every(Boolean) ? widths : null);
+  }
+  function secondaryCta(el, ctx) {
+    const nodes = [...el.querySelectorAll("a[href]")].filter((a) => text(a)).map((a) => {
+      const link2 = linkTo(ctx.doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+      const u = ctx.doc.createElement("u");
+      u.textContent = text(a);
+      link2.append(u);
+      const strong = ctx.doc.createElement("strong");
+      strong.append(link2);
+      return para(ctx.doc, strong);
+    });
+    return nodes.length ? [{ type: "flow", role: "cta", nodes }] : [];
+  }
+  function relatedCategories(el, ctx) {
+    const title = text(el.querySelector(".c-tagcrumb-title") || ctx.doc.createElement("h4")) || "Related categories";
+    if (!el.querySelector(".c-tagcrumb-item a[href]")) return [];
+    return [{ type: "block", block: block(ctx.doc, "Related Categories", [[title]]) }];
   }
   function fallback(el, ctx) {
     const { doc } = ctx;
@@ -4750,8 +4849,12 @@ var CustomImportScript = (() => {
     resourcesanddownload: resources,
     "#product-detail-container": shortDescription,
     tagcrumb: skip,
-    // the tag crumb rendered by the template without its AEM wrapper (approved: metadata tags)
-    "c-tagcrumb": skip,
+    // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
+    // Categories), the short description (rich text), the contact button and the secondary CTA
+    "c-tagcrumb": relatedCategories,
+    "c-page-short-description": textComponent,
+    "c-contact-button": buttons,
+    "c-secondary-cta": secondaryCta,
     accordion,
     pagehero: pageHero,
     hero: pageHero,
@@ -4771,7 +4874,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp-page.js
+  // corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -4827,7 +4930,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // tools/importer/import-news-shared-fragments.js
+  // import-news-shared-fragments.js
   var FRAGMENTS2 = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       type: "resources",
@@ -4914,8 +5017,11 @@ var CustomImportScript = (() => {
     const labelStyle = (def.style || "").match(/label-(\d+)-(\d+)/);
     const labelSize = labelStyle ? Number(`${labelStyle[1]}.${labelStyle[2]}`) : 1.25;
     const out = [];
+    const title = src.querySelector(".c-section-title h2");
     const h2 = document.createElement("h2");
-    h2.textContent = text2(src.querySelector(".c-section-title h2")) || "Resources";
+    const label = !title || title.classList.contains("border-bottom-gold") ? document.createElement("u") : h2;
+    label.textContent = text2(title) || "Resources";
+    if (label !== h2) h2.append(label);
     out.push(h2);
     const cells = [...src.querySelectorAll(".c-rich-text-editor")].map((rte) => {
       const cell = [];
@@ -5049,7 +5155,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/import-xf-fragments.js
+  // import-xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var corpTransformers = [transform, transform2, transform3];
   var import_xf_fragments_default = {
