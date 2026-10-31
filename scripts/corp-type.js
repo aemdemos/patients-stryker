@@ -14,6 +14,12 @@
 
 const SIZE = /^size-(\d+)(?:-(\d+))?(em|vw)$/;
 
+/* line heights of the source's .fontsize-<n>em classes (stryker.com base.min.css); a size the
+   source has no class for keeps the paragraph's */
+const LINE_HEIGHTS = {
+  1: 'var(--body-line-height)', 1.25: '1.15', 1.5: '1.06', 1.75: '1.06', 2: '1.06', 2.5: '1.06',
+};
+
 /**
  * Gives the size tags of a container (main, or a fragment) their size.
  * @param {Element} main The container
@@ -31,6 +37,7 @@ export default function decorateTypeTags(main) {
         span.style.fontSize = `${value}em`;
       } else {
         span.style.fontSize = `calc(${value} * var(--body-font-size-m))`;
+        if (LINE_HEIGHTS[value]) span.style.lineHeight = LINE_HEIGHTS[value];
       }
     });
   });
