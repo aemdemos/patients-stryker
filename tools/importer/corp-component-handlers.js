@@ -453,6 +453,21 @@ export function columnItems(columns, split, ctx, widths = null, starts = null) {
       ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
       return columns.flat();
     }
+    // tabs alone in the last column: the flex section keeps their tabbed style, the other
+    // columns' content comes before the first tab title, so scripts.js buildTabbedSections
+    // leaves it beside the tabs (approved 2026-10-31; emergency-medical-services: video |
+    // Westland / Delhi / Vernon). Not when another column has headings as deep as the titles
+    const last = filled[filled.length - 1];
+    if (last.length === 1 && last[0].type === 'own' && last[0].kind === 'tabs') {
+      const others = inlineNodes(filled.slice(0, -1).flat(), ctx);
+      const level = Number((last[0].nodes.find((n) => /^H[1-6]$/.test(n.tagName)) || { tagName: 'H6' }).tagName[1]);
+      if (!others.some((n) => /^H[1-6]$/.test(n.tagName) && Number(n.tagName[1]) >= level)) {
+        return [...anchors, {
+          type: 'own', kind: 'flex', styles: ['flex', ...last[0].styles], nodes: [...others, ...last[0].nodes],
+        }];
+      }
+      ctx.report.notes.push('tabs beside content with headings as deep as the tab titles: tabbed style dropped');
+    }
     return [...anchors, flex([], all)];
   }
 
@@ -1348,18 +1363,33 @@ function accordion(el, ctx) {
   const panels = [...el.querySelectorAll('.panel-group > .panel')].map((panel) => ({
     title: text(panel.querySelector('.panel-title') || doc.createElement('p')),
     items: ctx.collect(panel.querySelector('.panel-body') || panel),
+    // open on load on the source (AEM defaultExpanded, rendered .panel-collapse.in)
+    open: !!panel.querySelector(':scope > .panel-collapse.in'),
   })).filter((p) => p.title || hasContent(p.items));
   if (!panels.length) return [];
+  // a panel open on load: its label in bold (authoring convention: bold label = open,
+  // approved 2026-10-31; nailing-portfolio "Surgeon resources")
+  const label = (p, holder = doc.createElement('span')) => {
+    if (!p.open) {
+      holder.textContent = p.title;
+      return holder;
+    }
+    const strong = doc.createElement('strong');
+    strong.textContent = p.title;
+    holder.append(strong);
+    return holder;
+  };
   const flowOnly = panels.every((p) => p.items.every((it) => it.type === 'flow' || it.type === 'anchor'));
   if (flowOnly) {
-    const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
+    const rows = panels.map((p) => [
+      para(doc, ...label(p).childNodes), p.items.flatMap((it) => it.nodes || []),
+    ]);
     return [{
       type: 'own', kind: 'accordion', styles: [], nodes: [block(doc, 'Accordion', rows)],
     }];
   }
   return panels.map((p) => {
-    const h = doc.createElement('h3');
-    h.textContent = p.title;
+    const h = label(p, doc.createElement('h3'));
     return {
       type: 'own', kind: 'accordion-panel', styles: ['accordion-panel'], nodes: [h, ...inlineNodes(p.items, ctx)],
     };

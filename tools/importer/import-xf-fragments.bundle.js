@@ -3981,6 +3981,20 @@ var CustomImportScript = (() => {
         ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
         return columns.flat();
       }
+      const last2 = filled[filled.length - 1];
+      if (last2.length === 1 && last2[0].type === "own" && last2[0].kind === "tabs") {
+        const others = inlineNodes(filled.slice(0, -1).flat(), ctx);
+        const level = Number((last2[0].nodes.find((n) => /^H[1-6]$/.test(n.tagName)) || { tagName: "H6" }).tagName[1]);
+        if (!others.some((n) => /^H[1-6]$/.test(n.tagName) && Number(n.tagName[1]) >= level)) {
+          return [...anchors, {
+            type: "own",
+            kind: "flex",
+            styles: ["flex", ...last2[0].styles],
+            nodes: [...others, ...last2[0].nodes]
+          }];
+        }
+        ctx.report.notes.push("tabs beside content with headings as deep as the tab titles: tabbed style dropped");
+      }
       return [...anchors, flex([], all)];
     }
     if (split.cards && filled.length >= 2 && filled.every(isCard)) {
@@ -4747,12 +4761,27 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const panels = [...el.querySelectorAll(".panel-group > .panel")].map((panel) => ({
       title: text(panel.querySelector(".panel-title") || doc.createElement("p")),
-      items: ctx.collect(panel.querySelector(".panel-body") || panel)
+      items: ctx.collect(panel.querySelector(".panel-body") || panel),
+      // open on load on the source (AEM defaultExpanded, rendered .panel-collapse.in)
+      open: !!panel.querySelector(":scope > .panel-collapse.in")
     })).filter((p) => p.title || hasContent(p.items));
     if (!panels.length) return [];
+    const label = (p, holder = doc.createElement("span")) => {
+      if (!p.open) {
+        holder.textContent = p.title;
+        return holder;
+      }
+      const strong = doc.createElement("strong");
+      strong.textContent = p.title;
+      holder.append(strong);
+      return holder;
+    };
     const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
     if (flowOnly) {
-      const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
+      const rows = panels.map((p) => [
+        para(doc, ...label(p).childNodes),
+        p.items.flatMap((it) => it.nodes || [])
+      ]);
       return [{
         type: "own",
         kind: "accordion",
@@ -4761,8 +4790,7 @@ var CustomImportScript = (() => {
       }];
     }
     return panels.map((p) => {
-      const h = doc.createElement("h3");
-      h.textContent = p.title;
+      const h = label(p, doc.createElement("h3"));
       return {
         type: "own",
         kind: "accordion-panel",

@@ -56,8 +56,9 @@ function formatStatNumber(value, {
 
 /**
  * Wires up the count-up animation for a statistics block: each stat's number
- * counts from 0 to its value over COUNTUP_DURATION whenever the block scrolls
- * into view, resetting to 0 when it leaves so it replays on return.
+ * counts from 0 to its value over COUNTUP_DURATION the first time the block
+ * scrolls into view (or is scrolled past), then keeps its value (as stryker.com's
+ * number counters).
  * @param {Element} block the decorated statistics block
  */
 function setupCountUp(block) {
@@ -104,17 +105,29 @@ function setupCountUp(block) {
   // hold at 0 until the block first enters the viewport
   render(0);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        run();
-      } else {
-        stop();
-        render(0);
-      }
-    });
+  // starts once the block has come into view, or has been scrolled past (a fast scroll or
+  // a jump to an anchor can skip it without the block ever intersecting)
+  let started = false;
+  let observer;
+  const scrolling = new AbortController();
+  const start = () => {
+    if (started) return;
+    started = true;
+    observer.disconnect();
+    scrolling.abort();
+    run();
+  };
+  // scrolled past: above the viewport's bottom edge and laid out (a section still hidden
+  // while it loads has an empty box)
+  const check = () => {
+    const rect = block.getBoundingClientRect();
+    if (rect.height && rect.top < window.innerHeight) start();
+  };
+  observer = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) start();
   });
   observer.observe(block);
+  window.addEventListener('scroll', check, { passive: true, signal: scrolling.signal });
 }
 
 /**
