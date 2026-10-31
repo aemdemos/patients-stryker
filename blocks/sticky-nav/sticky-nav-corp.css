@@ -206,3 +206,23 @@ body.corp .sticky-nav.block:not(.local) .sticky-nav-item {
   min-width: min-content;
   max-width: none;
 }
+
+/* stuck to the top the bar is 70px with 62px gold boxes (source .nav-wrap.sticky, 80px in the
+   flow; virtual-monitoring from 900px to 1440px). The 10px it gives up stays in the page flow,
+   transparent and click-through, so the content below doesn't jump when the bar pins */
+body.corp .section.sticky-nav-pinned:has(.sticky-nav.block:not(.local)) {
+  padding-bottom: calc(var(--corp-jump-bar-height) - var(--corp-jump-bar-height-pinned));
+  pointer-events: none;
+}
+
+body.corp .section.sticky-nav-pinned .sticky-nav.block:not(.local) {
+  pointer-events: auto;
+}
+
+body.corp .section.sticky-nav-pinned .sticky-nav.block:not(.local) .sticky-nav-item {
+  min-height: var(--corp-jump-bar-height-pinned);
+}
+
+body.corp .section.sticky-nav-pinned .sticky-nav.block:not(.local) .sticky-nav-item p {
+  min-height: var(--corp-jump-box-height-pinned);
+}

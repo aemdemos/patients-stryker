@@ -113,6 +113,9 @@
   --corp-tile-width-xl: 420px; /* from 1440px */
   --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
   --corp-jump-item-width: 14%; /* Sticky Nav item: source .c-navigation-bar nav a */
+  --corp-jump-bar-height: 80px; /* Sticky Nav in the page flow: source .c-navigation-bar */
+  --corp-jump-bar-height-pinned: 70px; /* stuck to the top: source .nav-wrap.sticky */
+  --corp-jump-box-height-pinned: 62px; /* its gold box (the item keeps 4px padding) */
   --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
   --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
   --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */
