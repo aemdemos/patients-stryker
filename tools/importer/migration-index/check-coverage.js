@@ -155,5 +155,6 @@ const results = files.map(async (file) => {
 });
 Promise.all(results).then((lines) => {
   process.stdout.write(`${lines.join('\n')}\n`);
-  process.exit(failed ? 1 : 0);
+  // exitCode, not exit(): into a pipe stdout is asynchronous, exit() would cut the output
+  process.exitCode = failed ? 1 : 0;
 });
