@@ -933,6 +933,10 @@ const PANELS = {
   'bg-dark-blue-gradient': 'bg-dark-blue-gradient',
   'bg-golden-gradient': 'bg-golden-gradient',
   'bg-blue': 'blue',
+  // the panel's bg-purple is the Stryker purple (#85458a); its bg-gray the silver (#b2b4ae,
+  // e.g. target-tetra), not the light bg-gray band
+  'bg-purple': 'bg-purple',
+  'bg-gray': 'bg-silver',
 };
 
 function fullBleedPanel(el, ctx) {
