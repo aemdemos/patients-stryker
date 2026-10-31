@@ -65,10 +65,21 @@ function setupCountUp(block) {
   // honor reduced-motion: leave the authored values untouched, no animation
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  // the innermost element holding the whole number (e.g. a size span inside the <p>), so
+  // counting keeps its formatting
+  const innermost = (el) => {
+    let target = el;
+    while (target.children.length === 1
+      && target.firstElementChild.textContent.trim() === target.textContent.trim()) {
+      target = target.firstElementChild;
+    }
+    return target;
+  };
+
   // collect only the stats that actually contain a number
   const stats = [...block.querySelectorAll('.statistics-value')]
     .map((el) => {
-      const target = el.querySelector('p') || el;
+      const target = innermost(el);
       const parsed = parseStatNumber(target.textContent.trim());
       return parsed ? { target, parsed } : null;
     })

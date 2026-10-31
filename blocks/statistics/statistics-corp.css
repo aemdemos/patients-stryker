@@ -69,3 +69,10 @@ body.corp .statistics.fast-facts :is(.statistics-value, .statistics-value p, .st
     font-size: var(--corp-facts-number-size);
   }
 }
+
+/* a counter label in Futura bold (stryker.com span.futura-bold, imported as bold): Futura, as
+   any corp <strong>; the patients block keeps its bold labels in the body serif. Measured on
+   /us/en/acute-care/products/isolibrium.html "reduction in HAPIs…" (Futura bold 21px at 1440) */
+body.corp .statistics .statistics-desc strong {
+  font-family: var(--display-font-family);
+}

@@ -4497,15 +4497,18 @@ var CustomImportScript = (() => {
     let value = shown && shown.replace(/[^\d.]/g, "") === end ? shown : end;
     if (value === end && kind === "3") value = `${end}%`;
     if (value === end && kind === "2") value = `${currency}${end}`;
+    const vwClass = number && [...number.classList].find((c) => /^fontsize-\d+(-\d+)?-?vw$/.test(c));
+    if (vwClass) value = `[[${vwClass.replace(/^fontsize-/, "size-").replace(/-vw$/, "vw")}]${value}]`;
     const colour = COUNTER_COLOURS[styleColour(number)] || "teal";
     const label = el.querySelector(".container > .text-left, .container > div:last-child");
-    const desc = doc.createElement("p");
+    let desc = doc.createElement("p");
     if (label) {
-      const copy = contentCopy(label, doc);
-      cleanRichText(copy);
-      copy.querySelectorAll("strong, em").forEach(unwrap);
-      const target = copy.querySelector("p") || copy;
-      desc.append(...target.childNodes);
+      const { nodes } = richTextNodes(label, doc);
+      if (nodes.length === 1) [desc] = nodes;
+      else if (nodes.length) {
+        desc = doc.createElement("div");
+        desc.append(...nodes);
+      }
     }
     const left = !!el.querySelector(".container > .text-left");
     return [{

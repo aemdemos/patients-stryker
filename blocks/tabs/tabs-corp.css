@@ -1,0 +1,24 @@
+/*
+ * Tabs: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only (CORP_BLOCK_STYLES
+ * in scripts/corp.js). Measured on /us/en/acute-care/products/arise-1000-ex.html and
+ * /us/en/emergency-care/emergency-medical-services.html (1440 / 375px): .tabs-nav .tab-link is
+ * 40px high (12px + 20px line + 7px + a 1px bottom border, gold on the active tab, transparent
+ * on the others), 14px Futura whatever the section's copy size, no divider between tabs.
+ */
+body.corp .tabs .tabs-tab {
+  padding-block: 0;
+}
+
+body.corp .tabs .tabs-tab p {
+  border-bottom: 1px solid transparent;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body.corp .tabs .tabs-tab:not(:last-child) p::after {
+  content: none;
+}
+
+body.corp .tabs .tabs-tab[aria-selected="true"] p {
+  border-bottom-color: var(--color-accent);
+}

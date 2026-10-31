@@ -1037,15 +1037,22 @@ function numberCounter(el, ctx) {
   let value = shown && shown.replace(/[^\d.]/g, '') === end ? shown : end;
   if (value === end && kind === '3') value = `${end}%`;
   if (value === end && kind === '2') value = `${currency}${end}`;
+  // the number's own vw size (span.numbercounter-number.fontsize-<n>vw: 2.5vw to 9vw on the
+  // site, e.g. isolibrium 6vw, 84px at 1440) → a [[size-<n>vw]] tag
+  const vwClass = number && [...number.classList].find((c) => /^fontsize-\d+(-\d+)?-?vw$/.test(c));
+  if (vwClass) value = `[[${vwClass.replace(/^fontsize-/, 'size-').replace(/-vw$/, 'vw')}]${value}]`;
   const colour = COUNTER_COLOURS[styleColour(number)] || 'teal';
   const label = el.querySelector('.container > .text-left, .container > div:last-child');
-  const desc = doc.createElement('p');
+  let desc = doc.createElement('p');
   if (label) {
-    const copy = contentCopy(label, doc);
-    cleanRichText(copy);
-    copy.querySelectorAll('strong, em').forEach(unwrap);
-    const target = copy.querySelector('p') || copy;
-    desc.append(...target.childNodes);
+    // the label's rich text with its fonts and sizes (Futura bold, Egyptienne, vw sizes: the
+    // runs finishRuns tags), as any text component
+    const { nodes } = richTextNodes(label, doc);
+    if (nodes.length === 1) [desc] = nodes;
+    else if (nodes.length) {
+      desc = doc.createElement('div');
+      desc.append(...nodes);
+    }
   }
   const left = !!el.querySelector('.container > .text-left');
   return [{
