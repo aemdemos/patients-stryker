@@ -305,7 +305,8 @@ export function createBuilder({
     if (pendingIds.length) report.notes.push(`anchors at the end without a section: #${pendingIds.join(', #')}`);
     if (pendingStyles.length) report.notes.push(`trailing ${pendingStyles.join(', ')} without a section after it, dropped`);
     const out = [];
-    sections.filter((s) => s.nodes.length).forEach((section, i) => {
+    // a stripe (an empty coloured band) is a section without content
+    sections.filter((s) => s.nodes.length || s.kind === 'stripe').forEach((section, i) => {
       if (i > 0) out.push(doc.createElement('hr'));
       // run sizes / fonts the section styles do not give → bracket tags (corp-richtext.js)
       finishRuns(section.nodes, section.styles);

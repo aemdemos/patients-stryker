@@ -17,6 +17,7 @@ import heroImageSlideParser from './parsers/hero-image-slide.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import { videoLink } from './parsers/video.js';
 import procareModalPath from './corp-modal-path.js';
+import { SETS as DM_SETS } from './data/dm-sets.js';
 
 const SOURCE = 'https://www.stryker.com';
 
@@ -937,8 +938,19 @@ const PANELS = {
 function fullBleedPanel(el, ctx) {
   const panel = el.querySelector('.c-full-bleed-panel') || el;
   const items = ctx.collect(panel);
-  if (!hasContent(items.filter((it) => it.type !== 'anchor' && it.type !== 'boundary'))) return items.filter((it) => it.type === 'anchor');
   const cls = [...panel.classList].find((c) => PANELS[c]);
+  if (!hasContent(items.filter((it) => it.type !== 'anchor' && it.type !== 'boundary'))) {
+    const anchors = items.filter((it) => it.type === 'anchor');
+    // an empty coloured panel shown with its section spacing (page-section) is a band: the
+    // 34px gold stripe under the news heroes (section style stripe, approved 2026-10-31);
+    // without page-section it has no height on live
+    if (cls && cls !== 'bg-white' && panel.classList.contains('page-section')) {
+      return [...anchors, {
+        type: 'own', kind: 'stripe', styles: [PANELS[cls], 'stripe'], nodes: [],
+      }];
+    }
+    return anchors;
+  }
   if (!cls && /\bbg-/.test(panel.className)) ctx.report.notes.push(`full-bleed panel background ${panel.className}: no section style`);
   return [{ type: 'group', styles: cls ? [PANELS[cls]] : [], items }];
 }
@@ -1472,6 +1484,252 @@ function promoTile(el, ctx) {
   return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, a)] }];
 }
 
+/** A component title (h2.component-subheading): a Heading 2, its gold rule as Underline. */
+function componentTitle(h, doc) {
+  const h2 = doc.createElement('h2');
+  if (h.classList.contains('border-bottom-gold')) {
+    const u = doc.createElement('u');
+    u.textContent = text(h);
+    h2.append(u);
+  } else h2.textContent = text(h);
+  return h2;
+}
+
+/**
+ * Title component (component-map title): the title as a Heading 2 with its rule (Underline)
+ * and the optional subtitle as the Heading 3 it is on the source.
+ */
+function titleComponent(el, ctx) {
+  const { doc } = ctx;
+  const box = el.querySelector('.title-container') || el;
+  const nodes = [];
+  const title = box.querySelector('h2');
+  if (title && text(title)) nodes.push(componentTitle(title, doc));
+  box.querySelectorAll(':scope > h3').forEach((h) => {
+    if (!text(h)) return;
+    const h3 = doc.createElement('h3');
+    h3.textContent = text(h);
+    nodes.push(h3);
+  });
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Division contact form (component-map divisioncontactus, approved): the AEM email form has no
+ * EDS counterpart; it becomes a Marketo Form once the client supplies the form IDs per business
+ * unit. Until then: the title (Underline) and the description, the form left out (reported).
+ */
+function divisionContactUs(el, ctx) {
+  const { doc } = ctx;
+  const form = el.querySelector('form') || el;
+  const nodes = [];
+  const title = form.querySelector('h2');
+  if (title && text(title)) nodes.push(componentTitle(title, doc));
+  const description = form.querySelector('.form-description');
+  if (description) {
+    const copy = description.cloneNode(true);
+    copy.querySelectorAll('.form-control-asterix').forEach((star) => star.remove());
+    if (text(copy)) {
+      const p = doc.createElement('p');
+      p.textContent = text(copy);
+      nodes.push(p);
+    }
+  }
+  ctx.report.notes.push('division contact form: no Marketo form ID for it yet (client), the form is left out');
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Mixed media gallery (component-map mixedmediagallery, approved): Gallery Corp, one row per
+ * set member, a Dynamic Media image in set order. The members come from data/dm-sets.js (the
+ * Scene7 set, drawn client-side on the source); they have no alt text (reported).
+ */
+function mixedMediaGallery(el, ctx) {
+  const { doc } = ctx;
+  const viewer = el.querySelector('[data-asset-path]');
+  const asset = viewer && viewer.getAttribute('data-asset-path');
+  const set = asset && DM_SETS[asset];
+  if (!set || !set.members.length) {
+    if (asset) ctx.report.notes.push(`gallery ${asset}: no members in data/dm-sets.js (npm run build:dm-sets), left out`);
+    return [];
+  }
+  const server = viewer.getAttribute('data-imageserver') || 'https://media-assets.stryker.com/is/image/';
+  const rows = set.members.map((member) => {
+    const img = doc.createElement('img');
+    img.setAttribute('src', `${server}${member.name.split('/').map(encodeURIComponent).join('/')}?$max_width_1440$`);
+    img.setAttribute('alt', '');
+    return [para(doc, img)];
+  });
+  ctx.report.notes.push(`gallery ${asset}: ${rows.length} images without alt text (authors add it)`);
+  return [{
+    type: 'own', kind: 'gallery', styles: [], nodes: [block(doc, 'Gallery Corp', rows)],
+  }];
+}
+
+/**
+ * A Dynamic Media viewer on its own (dam/components/scene7/dynamicmedia, established: a
+ * default-content image): the viewer's asset as an image.
+ */
+function dynamicMedia(el, ctx) {
+  const { doc } = ctx;
+  const viewer = el.querySelector('[data-asset-path]');
+  const asset = viewer && viewer.getAttribute('data-asset-path');
+  if (!asset) return [];
+  const server = viewer.getAttribute('data-imageserver') || 'https://media-assets.stryker.com/is/image/';
+  const img = doc.createElement('img');
+  img.setAttribute('src', `${server}${asset.split('/').map(encodeURIComponent).join('/')}?$max_width_1440$`);
+  img.setAttribute('alt', '');
+  ctx.report.notes.push(`dynamic media viewer ${asset}: image without alt text (authors add it)`);
+  return [{ type: 'flow', role: 'image', nodes: [para(doc, img)] }];
+}
+
+/**
+ * Featured content grid (component-map featuredcontentgrid, approved): the title (Underline),
+ * the intro as a paragraph, then Columns (related-links): per item its linked Heading 4, the
+ * description and the More link on its own line (Underline: the chevron link).
+ */
+function featuredContentGrid(el, ctx) {
+  const { doc } = ctx;
+  const items = [];
+  const title = el.querySelector('h2.component-subheading');
+  const intro = el.querySelector('.intro');
+  const lead = [];
+  if (title && text(title)) lead.push(componentTitle(title, doc));
+  if (intro && text(intro)) {
+    const p = doc.createElement('p');
+    p.textContent = text(intro);
+    lead.push(p);
+  }
+  if (lead.length) items.push({ type: 'flow', role: 'text', nodes: lead });
+  const cells = [...el.querySelectorAll('.grid-item-wrapper')].map((item) => {
+    const nodes = [];
+    const head = item.querySelector('a h4, h4');
+    const link = head && head.closest('a');
+    if (head && text(head)) {
+      const h4 = doc.createElement('h4');
+      h4.append(link ? linkTo(doc, link.getAttribute('href'), text(head)) : doc.createTextNode(text(head)));
+      nodes.push(h4);
+    }
+    const description = item.querySelector('.page-description');
+    if (description && text(description)) {
+      const p = doc.createElement('p');
+      p.textContent = text(description);
+      nodes.push(p);
+    }
+    const more = item.querySelector('a.more[href]');
+    if (more) {
+      const u = doc.createElement('u');
+      u.textContent = text(more);
+      const a = linkTo(doc, more.getAttribute('href'), '');
+      a.textContent = '';
+      a.append(u);
+      nodes.push(para(doc, a));
+    }
+    return nodes;
+  }).filter((nodes) => nodes.length);
+  if (cells.length) {
+    items.push({
+      type: 'own', kind: 'columns', styles: [], nodes: [block(doc, 'Columns (related-links)', [cells])],
+    });
+  }
+  return items;
+}
+
+/**
+ * Banner campaign (component-map bannercampaign, approved): the banner image, linked when the
+ * source links it (a new tab kept as #_blank). Missing alt text is reported.
+ */
+function bannerCampaign(el, ctx) {
+  const { doc } = ctx;
+  const source = el.querySelector('.c-banner-campaign-content img');
+  if (!source) return [];
+  const img = doc.createElement('img');
+  const largest = el.querySelector('.c-banner-campaign-content source[srcset]');
+  img.setAttribute('src', (largest && largest.getAttribute('srcset').split(/\s+/)[0]) || source.getAttribute('src'));
+  img.setAttribute('alt', source.getAttribute('alt') || '');
+  if (!source.getAttribute('alt')) ctx.report.notes.push(`banner image without alt text: ${img.getAttribute('src')}`);
+  const link = source.closest('a[href]');
+  if (!link) return [{ type: 'flow', role: 'image', nodes: [para(doc, img)] }];
+  const a = linkTo(doc, newTabHref(link, link.getAttribute('href')), '');
+  a.textContent = '';
+  a.append(img);
+  return [{ type: 'flow', role: 'image', nodes: [para(doc, a)] }];
+}
+
+// engagement CTA icons that exist in icons/ (Twitter / X and the contact message icon do not)
+const ENGAGEMENT_ICONS = { facebook: ':facebook:', linkedin: ':linkedin:' };
+
+/**
+ * Engagement CTA (component-map engagementcta, approved): one Bold link per paragraph, the
+ * network's icon before the label when it exists (:facebook: / :linkedin:); a purple or blue
+ * button gets its section style (btn-purple / btn-blue).
+ */
+function engagementCta(el, ctx) {
+  const { doc } = ctx;
+  const links = [...el.querySelectorAll('.engagementCTAcluster a.btn[href]')];
+  if (!links.length) return [];
+  const nodes = links.map((source) => {
+    const icon = ENGAGEMENT_ICONS[String(source.id).toLowerCase()];
+    const label = text(source);
+    const a = linkTo(doc, newTabHref(source, source.getAttribute('href')), [icon, label].filter(Boolean).join(' ') || source.id);
+    const strong = doc.createElement('strong');
+    strong.append(a);
+    return para(doc, strong);
+  });
+  const colour = links[0].classList.contains('bg-purple') ? 'btn-purple' : (links[0].classList.contains('bg-blue') && 'btn-blue');
+  return [{
+    type: 'flow', role: 'cta', own: !!colour, styles: colour ? [colour] : [], nodes,
+  }];
+}
+
+/**
+ * Animated bar chart (component-map animatedbarchart, approved): Chart Corp (column or bar):
+ * Title, Subtitle, Format, Max, Axis title and Labels rows, then one row per shown series item:
+ * label | value | the source colour.
+ */
+function animatedBarChart(el, ctx) {
+  const { doc } = ctx;
+  const value = (cls) => (el.querySelector(`input.${cls}`) || { value: '' }).value.trim();
+  const items = [...el.querySelectorAll('select.hdnChartSeries option')].map((option) => {
+    const [colour, label, show] = text(option).split('|');
+    return {
+      label: (label || '').trim(), value: option.getAttribute('value'), colour: (colour || '').trim(), show: show !== 'false',
+    };
+  }).filter((item) => item.show && item.label);
+  if (!items.length) return [];
+  const format = value('numberType') === 'Currency' ? `Currency ${value('currency')}` : value('numberType');
+  const rows = [
+    ['Title', value('chartTitle')],
+    ['Subtitle', value('chartSubTitle')],
+    ['Format', format],
+    ['Max', value('maxValue')],
+    ['Axis title', value('yAxisTitle')],
+    ['Labels', value('dataLabelDisplay') === 'false' ? 'false' : 'true'],
+  ].filter(([, v]) => v);
+  items.forEach((item) => rows.push([item.label, item.value, item.colour]));
+  const variant = /bar/i.test(value('chartType')) ? 'Chart Corp (bar)' : 'Chart Corp';
+  return [{
+    type: 'own', kind: 'chart', styles: [], nodes: [block(doc, variant, rows)],
+  }];
+}
+
+/**
+ * The legacy AEM video component (div.video): a video shown on the page → Video block (the
+ * DAM file); the copies the source never shows (0×0 players, the component used to carry a
+ * script) are skipped.
+ */
+function legacyVideo(el, ctx) {
+  const { doc } = ctx;
+  const player = el.querySelector('video');
+  const path = (String(el.innerHTML).match(/var mediaPath = '([^']+)'/) || [])[1];
+  const visible = player && Number(player.getAttribute('width')) > 0 && Number(player.getAttribute('height')) > 0;
+  if (!path || !visible) return [];
+  const href = path.replace(/\\u002D/g, '-').replace(/\\\//g, '/');
+  return [{
+    type: 'block', block: block(doc, 'Video', [[linkTo(doc, absoluteAsset(href), href.split('/').pop())]]),
+  }];
+}
+
 /** The block nodes of a rich text box: its headings, paragraphs and lists, cleaned. */
 function boxNodes(el, doc) {
   const box = contentCopy(el, doc);
@@ -1600,6 +1858,15 @@ export const COMPONENTS = {
   localpagenavigationchild: localNav,
   'c-navigation-bar': jumpBar,
   'c-tiles': promoTile,
+  title: titleComponent,
+  divisioncontactus: divisionContactUs,
+  mixedmediagallery: mixedMediaGallery,
+  dynamicmedia: dynamicMedia,
+  featuredcontentgrid: featuredContentGrid,
+  bannercampaign: bannerCampaign,
+  engagementcta: engagementCta,
+  animatedbarchart: animatedBarChart,
+  video: legacyVideo,
   // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
   // publish date and the event location under the title, and the template's "back" link
   // (navigation, not authored)

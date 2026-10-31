@@ -109,6 +109,7 @@
   --corp-tile-width: 666px; /* the tile image's own width, below 1025px */
   --corp-tile-width-l: 311px; /* .c-cross-promotional-tile max-width from 1025px */
   --corp-tile-width-xl: 420px; /* from 1440px */
+  --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
 
   /* Related Categories (stryker.com product tag crumb) */
   --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
@@ -337,12 +338,26 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* a section left without content (metadata only, or moved by a block) paints nothing;
    `spacer` sections are empty on purpose (shared styles.css gives them their height) */
-:where(body.corp) main .section:empty:not(.spacer) {
+:where(body.corp) main .section:empty:not(.spacer, .stripe) {
   display: none;
+}
+
+/* the content above a stripe ends flush with it */
+:where(body.corp) main > .section:has(+ .section.stripe) {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
   margin-bottom: 0;
+}
+
+/* stripe (with a background style: bg-gold, stripe / bg-golden-gradient, stripe): the
+   stryker.com empty full-bleed panel, a 34px band at every width, flush with the content
+   above and below it (e.g. under the news heroes: packaging-for-a-better-planet; bpx) */
+:where(body.corp) main > .section.stripe {
+  height: var(--corp-stripe-height);
+  margin-block: 0;
+  padding: 0;
 }
 
 /* section styles: backgrounds */
