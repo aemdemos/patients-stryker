@@ -2,6 +2,7 @@
 // (inside default content, Columns cells, Hero Corp boxes) the margin-top / margin-bottom
 // values found, with counts. usage: node rhythm.mjs <url> [width]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -9,6 +10,7 @@ const { chromium } = require('playwright');
 const [url, width = '1440'] = process.argv.slice(2);
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: Number(width), height: 900 } });
+await blockAltcha(page);
 await page.goto(url, { waitUntil: 'load', timeout: 45000 });
 await page.waitForTimeout(2500);
 const out = await page.evaluate(() => {

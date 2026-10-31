@@ -2,6 +2,7 @@
 // each cell's position, width and display, relative to its row; the first text of the cell.
 // usage: node grid-local.mjs <url> [url …]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -9,6 +10,7 @@ const { chromium } = require('playwright');
 const browser = await chromium.launch();
 for (const url of process.argv.slice(2)) {
   const page = await browser.newPage();
+  await blockAltcha(page);
   page.setDefaultTimeout(15000);
   console.log(url);
   try {

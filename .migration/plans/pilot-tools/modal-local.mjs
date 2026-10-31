@@ -2,6 +2,7 @@
 // click → dialog box, title, close button, contact columns, table, button.
 // usage: node modal-local.mjs <url> [375,768,1440]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -9,6 +10,7 @@ const { chromium } = require('playwright');
 const browser = await chromium.launch();
 for (const width of (process.argv[3] || '375,768,1440').split(',').map(Number)) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
+  await blockAltcha(page);
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto(process.argv[2], { waitUntil: 'load', timeout: 45000 });

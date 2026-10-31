@@ -2,6 +2,7 @@
 // on preview pages, per width: the block's classes and the overflow in px.
 // usage: node hero-overflow.mjs <widths> <url> [url …]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -13,6 +14,7 @@ const total = {};
 for (const url of urls) {
   for (const width of widths) {
     const page = await browser.newPage({ viewport: { width, height: 900 } });
+    await blockAltcha(page);
     try {
       await page.goto(url, { waitUntil: 'load', timeout: 45000 });
       await page.waitForTimeout(1500);

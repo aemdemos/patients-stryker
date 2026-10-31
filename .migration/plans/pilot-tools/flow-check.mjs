@@ -2,6 +2,7 @@
 // absolute / fixed that overlap the next section, and sections whose boxes overlap.
 // usage: node flow-check.mjs [--width 1440] <url> [url …]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -15,6 +16,7 @@ if (args[0] === '--width') {
 const browser = await chromium.launch();
 for (const url of args) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
+  await blockAltcha(page);
   try {
     await page.goto(url, { waitUntil: 'load', timeout: 45000 });
     await page.waitForTimeout(3000);

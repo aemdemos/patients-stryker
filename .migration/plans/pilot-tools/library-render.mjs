@@ -1,6 +1,7 @@
 // Renders block library preview pages and reports each block: name, options, load status, size,
 // and the first text; page errors too. usage: node library-render.mjs <url> [url …]
 import { createRequire } from 'module';
+import { blockAltcha } from './stryker-block.mjs';
 
 const require = createRequire('/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/package.json');
 const { chromium } = require('playwright');
@@ -8,6 +9,7 @@ const { chromium } = require('playwright');
 const browser = await chromium.launch();
 for (const url of process.argv.slice(2)) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await blockAltcha(page);
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message.slice(0, 120)));
   await page.goto(url, { waitUntil: 'load', timeout: 45000 });
