@@ -112,6 +112,7 @@
   --corp-tile-width-l: 311px; /* .c-cross-promotional-tile max-width from 1025px */
   --corp-tile-width-xl: 420px; /* from 1440px */
   --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
+  --corp-jump-item-width: 14%; /* Sticky Nav item: source .c-navigation-bar nav a */
   --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
   --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
   --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */

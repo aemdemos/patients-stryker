@@ -9,7 +9,7 @@ const { chromium } = require('playwright');
 
 const browser = await chromium.launch();
 for (const url of process.argv.slice(2)) {
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  const page = await browser.newPage({ viewport: { width: Number(process.env.WIDTH || 1440), height: 900 } });
   await blockAltcha(page);
   try {
     await page.goto(url, { waitUntil: 'load', timeout: 45000 });
@@ -18,7 +18,7 @@ for (const url of process.argv.slice(2)) {
       const r = el.getBoundingClientRect();
       const cs = getComputedStyle(el);
       const media = el.querySelectorAll('img, video, iframe').length;
-      return `${String(el.className).replace(/\s+/g, ' ').trim()} ${Math.round(r.width)}x${Math.round(r.height)} y${Math.round(r.top + window.scrollY)} ${cs.display} bg ${cs.backgroundImage !== 'none' ? cs.backgroundImage.slice(0, 60) : cs.backgroundColor} text ${(el.innerText || '').trim().length} media ${media}`;
+      return `${String(el.className).replace(/\s+/g, ' ').trim()} ${Math.round(r.width)}x${Math.round(r.height)} y${Math.round(r.top + window.scrollY)} ${cs.display} bg ${cs.backgroundImage !== 'none' ? cs.backgroundImage.slice(0, 60) : cs.backgroundColor} mt ${cs.marginTop} mb ${cs.marginBottom} next ${el.closest(".fullbleedpanel")?.nextElementSibling ? Math.round(el.closest(".fullbleedpanel").nextElementSibling.getBoundingClientRect().top + window.scrollY) : "-"} prev-end ${el.closest(".fullbleedpanel")?.previousElementSibling ? Math.round(el.closest(".fullbleedpanel").previousElementSibling.getBoundingClientRect().bottom + window.scrollY) : "-"} text ${(el.innerText || '').trim().length} media ${media}`;
     }));
     console.log(url);
     rows.forEach((row) => console.log('  ', row));

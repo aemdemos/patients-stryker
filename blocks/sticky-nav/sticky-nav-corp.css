@@ -187,3 +187,22 @@ body.corp .sticky-nav.local:not(.no-rule) {
   padding-top: var(--space-block);
   border-top: 1px solid var(--color-surface-muted);
 }
+
+/* the anchor bar (not `local`): items 14% of the content width each (source nav a, from
+   840px; 600px here), centred in the bar (source nav text-align center), past seven onto a
+   new line. Measured on /us/en/smart-care/products/virtual-monitoring: four 193px items from
+   334px at 1440px, 139px from 234px at 1024px */
+body.corp .sticky-nav.block:not(.local) .sticky-nav-list {
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: var(--container-max);
+  padding-inline: var(--container-gutter);
+}
+
+/* a long single word widens its item rather than spilling out of it (narrow tablets) */
+body.corp .sticky-nav.block:not(.local) .sticky-nav-item {
+  flex: 0 1 var(--corp-jump-item-width);
+  min-width: min-content;
+  max-width: none;
+}

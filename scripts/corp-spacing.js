@@ -120,8 +120,8 @@ function markerBoxes(container) {
 export default function decorateSpacing(main) {
   main.querySelectorAll(':scope > .section').forEach((section) => {
     const spacing = parseSpacing([...section.classList]);
-    // AEM boxes stack flush, their own padding / margin is the gap: no section gap on top
-    if (spacing.length) section.style.marginBottom = '0px';
+    // the section keeps its component gap; boxes of the same source component box stack flush
+    // through the `continued` section style
     section.querySelectorAll(':scope > .default-content-wrapper').forEach((wrapper) => {
       if (spacing.length) setBox(wrapper, spacing, section.classList.contains('boxed'));
     });

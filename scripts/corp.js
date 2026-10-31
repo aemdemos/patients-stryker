@@ -32,7 +32,7 @@ import fetchPlainHtml from './plain-html.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'statistics', 'sticky-nav', 'table', 'video'];
+const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'marketo-form', 'statistics', 'sticky-nav', 'table', 'video'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.

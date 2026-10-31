@@ -139,6 +139,22 @@ export function createBuilder({
    * empty): handlers.row (the column-control rules) decides what they become, with each
    * column's layout at every breakpoint (gridSpec).
    */
+  /**
+   * The source component box of an element: the stryker.com .page-section it is (a column
+   * control, a table …) or sits in, null outside any. Components in the same box (or both
+   * outside any) stack flush on the source (only their lines' 15px); a new box starts with the
+   * 20 / 30px component gap.
+   */
+  const boxOf = (el) => (el.classList.contains('page-section') ? el
+    : el.querySelector(':scope > .page-section') || el.closest('.page-section') || null);
+  const boxed = (items, el) => {
+    const box = boxOf(el);
+    items.forEach((it) => {
+      if (it && typeof it === 'object' && !('box' in it)) it.box = box;
+    });
+    return items;
+  };
+
   ctx.collect = function collect(container) {
     const out = [];
     const total = gridTotal(container);
@@ -146,14 +162,14 @@ export function createBuilder({
     let used = 0;
     const flush = () => {
       if (run.length > 1 && handlers.row) {
-        out.push(...handlers.row(
-          run.map((r) => collectOne(r.el)),
+        out.push(...boxed(handlers.row(
+          run.map((r) => boxed(collectOne(r.el), r.el)),
           run.map((r) => r.spec.d.w),
           ctx,
           { specs: run.map((r) => r.spec), total },
-        ));
+        ), run[0].el));
       } else {
-        run.forEach((r) => out.push(...collectOne(r.el)));
+        run.forEach((r) => out.push(...boxed(collectOne(r.el), r.el)));
       }
       run = [];
       used = 0;
@@ -173,7 +189,7 @@ export function createBuilder({
         return;
       }
       flush();
-      out.push(...collectOne(child));
+      out.push(...boxed(collectOne(child), child));
     });
     flush();
     return out;
@@ -237,12 +253,16 @@ export function createBuilder({
       }
       if (!current || current.key !== key || (font && current.font && current.font !== font)
         || (size && current.headingSize && current.headingSize !== size)) {
-        // a section split off the same source component (its copy changes style) continues
-        // it: no component gap before it (section style continued, approved 2026-10-31)
-        const continues = !!current && current.item === item;
+        // a section split off the same source component (its copy changes style), or the next
+        // component in the same source box (two text components in one column control),
+        // continues it: no component gap before it (section style continued, approved 2026-10-31)
+        // (components outside any box, e.g. the news article column's text, stack flush too)
+        const sameBox = !!current && 'box' in item && current.box === item.box;
+        const continues = !!current && (current.item === item || sameBox);
         start('flow', continues ? [...styles, 'continued'] : styles).key = key;
         current.spaced = !!item.spacedBox;
         current.item = item;
+        current.box = item.box;
       }
       if (font) {
         if (font === 'serif' && current.font !== 'serif') current.styles.push('h-serif');

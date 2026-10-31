@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-tier2-landing-page.js
+  // ../../../tools/importer/import-tier2-landing-page.js
   var import_tier2_landing_page_exports = {};
   __export(import_tier2_landing_page_exports, {
     default: () => import_tier2_landing_page_default
   });
 
-  // tools/importer/transformers/corp-sections.js
+  // ../../../tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-cleanup.js
+  // ../../../tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -256,7 +256,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-dm-images.js
+  // ../../../tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -324,7 +324,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-richtext.js
+  // ../../../tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -839,7 +839,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp-section-builder.js
+  // ../../../tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -916,6 +916,14 @@ var CustomImportScript = (() => {
       if (/^(P|H[1-6]|UL|OL|TABLE|IMG|A)$/.test(el.tagName) && text(el)) return ctx.unknown(el, "loose content");
       return ctx.collect(el);
     };
+    const boxOf2 = (el) => el.classList.contains("page-section") ? el : el.querySelector(":scope > .page-section") || el.closest(".page-section") || null;
+    const boxed = (items, el) => {
+      const box = boxOf2(el);
+      items.forEach((it) => {
+        if (it && typeof it === "object" && !("box" in it)) it.box = box;
+      });
+      return items;
+    };
     ctx.collect = function collect(container) {
       const out = [];
       const total = gridTotal(container);
@@ -923,14 +931,14 @@ var CustomImportScript = (() => {
       let used = 0;
       const flush = () => {
         if (run.length > 1 && handlers.row) {
-          out.push(...handlers.row(
-            run.map((r) => collectOne(r.el)),
+          out.push(...boxed(handlers.row(
+            run.map((r) => boxed(collectOne(r.el), r.el)),
             run.map((r) => r.spec.d.w),
             ctx,
             { specs: run.map((r) => r.spec), total }
-          ));
+          ), run[0].el));
         } else {
-          run.forEach((r) => out.push(...collectOne(r.el)));
+          run.forEach((r) => out.push(...boxed(collectOne(r.el), r.el)));
         }
         run = [];
         used = 0;
@@ -950,7 +958,7 @@ var CustomImportScript = (() => {
           return;
         }
         flush();
-        out.push(...collectOne(child));
+        out.push(...boxed(collectOne(child), child));
       });
       flush();
       return out;
@@ -1006,10 +1014,12 @@ var CustomImportScript = (() => {
           size = node.headingSize || "plain";
         }
         if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
-          const continues = !!current && current.item === item;
+          const sameBox = !!current && "box" in item && current.box === item.box;
+          const continues = !!current && (current.item === item || sameBox);
           start("flow", continues ? [...styles, "continued"] : styles).key = key;
           current.spaced = !!item.spacedBox;
           current.item = item;
+          current.box = item.box;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");
@@ -1088,7 +1098,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // ../../../tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3237,7 +3247,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // ../../../tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3253,7 +3263,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // ../../../tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3281,7 +3291,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp-components.js
+  // ../../../tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3384,7 +3394,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // tools/importer/parsers/hero-image-slide.js
+  // ../../../tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3476,7 +3486,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/parsers/cards-corp-teaser.js
+  // ../../../tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3530,7 +3540,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/parsers/video.js
+  // ../../../tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3556,14 +3566,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-modal-path.js
+  // ../../../tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // tools/importer/data/dm-sets.js
+  // ../../../tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3582,7 +3592,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // tools/importer/corp-component-handlers.js
+  // ../../../tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -5105,7 +5115,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp-page.js
+  // ../../../tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -5161,7 +5171,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // tools/importer/corp-import.js
+  // ../../../tools/importer/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document) {
@@ -5247,7 +5257,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // tools/importer/data/page-facts/tier2-landing-page.js
+  // ../../../tools/importer/data/page-facts/tier2-landing-page.js
   var tier2_landing_page_default = {
     "/us/en/about/awards/awards": { "template": "tier2-landing-page", "metadata": { "title": "Awards", "pageTitle": "Awards ", "description": "Here are a few honors we\u2019ve received for our business results, workplace culture and philanthropic activities.", "image": "/content/dam/stryker/about/Awards/2020/FranceTeam.png", "imageAlt": null, "tags": [], "originallyPublished": "2023-02-06T20:43:45.000Z", "lastPublished": "2025-12-08T20:43:45.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/about/corporate-responsibility": { "template": "tier2-landing-page", "metadata": { "title": "Corporate Responsibility at Stryker", "pageTitle": "Corporate Responsibility", "description": "Learn how Stryker is creating a better, healthier world through our environmental, social and governance commitments", "image": null, "imageAlt": null, "tags": ["environment", "societal", "sustainability", "energy", "governance", "esg", "giving", "supply_chains", "donations", "volunteering"], "originallyPublished": "2023-02-06T20:22:46.000Z", "lastPublished": "2026-02-27T20:56:16.000Z", "contentID": "COMM-GSNPS-SYK-764297_Rev-4" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": ["/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/overview-and-approach/JOR_2019_Madaba_Guest_David-OSullivan_edit.png", "/content/dam/m/2020-comprehensive-report/homepage/gif/Windmill_Image.jpg"] },
@@ -5541,7 +5551,7 @@ var CustomImportScript = (() => {
     "/us/en/trauma-and-extremities/c/west-point": { "template": "tier2-landing-page", "metadata": { "title": "Army West Point Athletics", "pageTitle": "Army West Point Athletics", "description": null, "image": null, "imageAlt": null, "tags": [], "originallyPublished": "2023-02-06T16:50:16.000Z", "lastPublished": "2026-07-14T16:50:16.000Z", "contentID": "AP-016894" }, "anchors": [], "disclaimer": "<p>Individual results and activity levels after surgery vary and depend on many factors including age, weight and prior activity level. There are risks and recovery times associated with surgery and there are certain individuals who should not undergo surgery. Only a physician can tell you if this product and associated procedure are right for you and your unique circumstances. Please consult with a physician for complete information regarding benefits, risks, anticipated implant duration and possible outcomes.</p>", "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // tools/importer/import-tier2-landing-page.js
+  // ../../../tools/importer/import-tier2-landing-page.js
   var import_tier2_landing_page_default = createCorpImport({
     name: "tier2-landing-page",
     description: "www.stryker.com landing pages: page hero (Columns page-intro), hero slides (Hero Corp), local page navigation and jump bar (Sticky Nav), column controls (Columns / Cards Corp / flex sections), Large Headlines, full-bleed panels, card lists, videos, Marketo forms, XFs (Fragment), page disclaimer.",

@@ -1,0 +1,10 @@
+/*
+ * Marketo Form: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). The form sits flush in its component box on
+ * stryker.com (the first label level with the aside next to it, measured on
+ * /us/en/smart-care/products/virtual-monitoring.html): the section gap is its space, not
+ * the patients block's padding.
+ */
+body.corp .marketo-form {
+  padding-block: 0;
+}
