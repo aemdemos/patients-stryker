@@ -780,6 +780,23 @@ function sectionTitle(el, ctx) {
 }
 
 /**
+ * Block content inside a block cell (a Hero Corp slide overlay): blocks cannot nest, so a
+ * nested block (WebImporter table) gives its cells' content in place, e.g. a page hero in a
+ * slide XF (Columns page-intro: trevo-nxt) or an XF in it (Fragment: its link, which the page
+ * loads as a fragment: sternalplate); 2 pages rendered the block name as text.
+ */
+function cellContent(nodes, doc) {
+  return nodes.flatMap((node) => {
+    if (node.tagName !== 'TABLE') return [node];
+    return [...node.querySelectorAll(':scope > tbody > tr > td, :scope > tr > td')].flatMap((td) => {
+      const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+      if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+      return kids.length ? [para(doc, ...kids)] : [];
+    });
+  });
+}
+
+/**
  * fullWidthImage: a banner image (desktop crop in the picture's
  * min-width source, mobile crop in its img) with an optional text box. With text: Hero Corp
  * (image-slide, text-above), as live: the text box over the image from 841px (600px here),
@@ -792,7 +809,8 @@ function fullWidthImage(el, ctx) {
   const box = el.querySelector('.textBoxId');
   // the text box's own spacing goes on the block (Hero Corp options, scripts/corp-spacing.js)
   const boxItems = box ? ctx.collect(box) : [];
-  const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
+  const overlay = boxItems.length
+    ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
   if (!img && !overlay.length) return [];
   const source = img && img.closest('picture') && img.closest('picture').querySelector('source[media*="min-width"]');
   const image = (src) => {
@@ -902,7 +920,8 @@ function carousel(el, ctx) {
     // with their colours and their own sizes as [[size-<n>vw]] / [[size-<n>em]] tags)
     const overlay = slide.querySelector('.overlayparsys');
     const overlayItems = overlay ? ctx.collect(overlay) : [];
-    const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : undefined;
+    const overlayNodes = overlay
+      ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
     // no size-<n> / copy-size-<n> options: each line carries its own size (a line without a
     // vw size keeps the page type, as live: inspace "A breakthrough in the shoulder…" h1 28px)
@@ -1386,21 +1405,31 @@ function accordion(el, ctx) {
     holder.append(strong);
     return holder;
   };
+  // the accordion's own title (h3.component-subheading "FAQs": ld-304, sync-badge), above it
+  const heading = el.querySelector('.c-accordion > .container > .component-subheading');
+  const title = [];
+  if (heading && text(heading)) {
+    const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : 'h3');
+    const u = heading.classList.contains('border-bottom-gold') ? doc.createElement('u') : h;
+    u.textContent = text(heading);
+    if (u !== h) h.append(u);
+    title.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
   const flowOnly = panels.every((p) => p.items.every((it) => it.type === 'flow' || it.type === 'anchor'));
   if (flowOnly) {
     const rows = panels.map((p) => [
       para(doc, ...label(p).childNodes), p.items.flatMap((it) => it.nodes || []),
     ]);
-    return [{
+    return [...title, {
       type: 'own', kind: 'accordion', styles: [], nodes: [block(doc, 'Accordion', rows)],
     }];
   }
-  return panels.map((p) => {
+  return [...title, ...panels.map((p) => {
     const h = label(p, doc.createElement('h3'));
     return {
       type: 'own', kind: 'accordion-panel', styles: ['accordion-panel'], nodes: [h, ...inlineNodes(p.items, ctx)],
     };
-  });
+  })];
 }
 
 /**
@@ -1429,9 +1458,18 @@ function pageHero(el, ctx) {
     cleanRichText(h2);
     cell.push(h2);
   }
+  // p.content and what follows it in its column: a list in the copy closes the <p> when the page
+  // is parsed, so the list and the text after it are its siblings (sustainability/products/
+  // masimo-lncs "Features and benefits include:" + list + closing sentence)
   root.querySelectorAll('.content').forEach((content) => {
-    const { nodes } = richTextNodes(content, doc);
-    cell.push(...nodes);
+    const box = doc.createElement('div');
+    box.append(content.cloneNode(true));
+    for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches('.title, .subhead, .content'));
+      n = n.nextSibling) {
+      if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+    }
+    const { nodes } = richTextNodes(box, doc);
+    cell.push(...nodes.filter((node) => text(node)));
   });
   if (!cell.length) return [];
   const img = root.querySelector('picture img, img');

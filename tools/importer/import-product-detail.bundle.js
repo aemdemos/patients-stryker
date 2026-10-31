@@ -4215,12 +4215,22 @@ var CustomImportScript = (() => {
     }
     return items;
   }
+  function cellContent(nodes, doc) {
+    return nodes.flatMap((node) => {
+      if (node.tagName !== "TABLE") return [node];
+      return [...node.querySelectorAll(":scope > tbody > tr > td, :scope > tr > td")].flatMap((td) => {
+        const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+        if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+        return kids.length ? [para(doc, ...kids)] : [];
+      });
+    });
+  }
   function fullWidthImage(el, ctx) {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
     const boxItems = box ? ctx.collect(box) : [];
-    const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
+    const overlay = boxItems.length ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -4312,7 +4322,7 @@ var CustomImportScript = (() => {
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
       const overlayItems = overlay ? ctx.collect(overlay) : [];
-      const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
+      const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
@@ -4720,20 +4730,29 @@ var CustomImportScript = (() => {
       holder.append(strong);
       return holder;
     };
+    const heading = el.querySelector(".c-accordion > .container > .component-subheading");
+    const title = [];
+    if (heading && text(heading)) {
+      const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : "h3");
+      const u = heading.classList.contains("border-bottom-gold") ? doc.createElement("u") : h;
+      u.textContent = text(heading);
+      if (u !== h) h.append(u);
+      title.push({ type: "flow", role: "text", nodes: [h] });
+    }
     const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
     if (flowOnly) {
       const rows = panels.map((p) => [
         para(doc, ...label(p).childNodes),
         p.items.flatMap((it) => it.nodes || [])
       ]);
-      return [{
+      return [...title, {
         type: "own",
         kind: "accordion",
         styles: [],
         nodes: [block(doc, "Accordion", rows)]
       }];
     }
-    return panels.map((p) => {
+    return [...title, ...panels.map((p) => {
       const h = label(p, doc.createElement("h3"));
       return {
         type: "own",
@@ -4741,7 +4760,7 @@ var CustomImportScript = (() => {
         styles: ["accordion-panel"],
         nodes: [h, ...inlineNodes(p.items, ctx)]
       };
-    });
+    })];
   }
   function pageHero(el, ctx) {
     const { doc } = ctx;
@@ -4766,8 +4785,13 @@ var CustomImportScript = (() => {
       cell.push(h2);
     }
     root.querySelectorAll(".content").forEach((content) => {
-      const { nodes } = richTextNodes(content, doc);
-      cell.push(...nodes);
+      const box = doc.createElement("div");
+      box.append(content.cloneNode(true));
+      for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches(".title, .subhead, .content")); n = n.nextSibling) {
+        if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+      }
+      const { nodes } = richTextNodes(box, doc);
+      cell.push(...nodes.filter((node) => text(node)));
     });
     if (!cell.length) return [];
     const img = root.querySelector("picture img, img");
@@ -5198,6 +5222,31 @@ var CustomImportScript = (() => {
     }), doc);
     return nodes;
   }
+  function counterSections(items, ctx) {
+    const out = [];
+    let run = [];
+    const flush = () => {
+      if (run.length) {
+        out.push({
+          type: "own",
+          kind: "statistics",
+          styles: [],
+          nodes: inlineNodes(run, ctx)
+        });
+      }
+      run = [];
+    };
+    items.forEach((item) => {
+      if (item.type === "counter") {
+        run.push(item);
+        return;
+      }
+      flush();
+      out.push(item.type === "group" ? __spreadProps(__spreadValues({}, item), { items: counterSections(item.items, ctx) }) : item);
+    });
+    flush();
+    return out;
+  }
   function buildCorpBody(element, payload) {
     const doc = element.ownerDocument;
     const main = doc.querySelector("#aem-specific-data") || element;
@@ -5216,7 +5265,7 @@ var CustomImportScript = (() => {
     ctx.h1 = [...root.querySelectorAll("h1")].some((h) => !h.closest('[data-corp-hidden="true"]'));
     ctx.slideRefs = payload.xf ? [] : pageXfRefs(source).filter((r) => r.kind === "slide");
     if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(" | ")}`);
-    const items = ctx.collect(root);
+    const items = counterSections(ctx.collect(root), ctx);
     const styles = payload.sectionStyles || [];
     ctx.place(styles.length ? [{ type: "group", styles, items }] : items);
     if (!payload.xf) {

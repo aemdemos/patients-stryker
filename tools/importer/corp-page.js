@@ -13,7 +13,7 @@
  * functions in its payload (payload.corp = CORP_PAGE): transformers import nothing.
  */
 import { createBuilder } from './corp-section-builder.js';
-import { CORP_HANDLERS } from './corp-component-handlers.js';
+import { CORP_HANDLERS, inlineNodes } from './corp-component-handlers.js';
 import { matchXfWrappers, markXfSlides, corpLinkHref } from './corp-components.js';
 import { pageXfRefs } from './xf-fragment-path.js';
 import {
@@ -30,6 +30,34 @@ function disclaimerNodes(main, root, doc) {
     return [...copy.children].filter((el) => BLOCK_TAGS.has(el.tagName));
   }), doc);
   return nodes;
+}
+
+/**
+ * Number counters outside a column control (foot-and-ankle/products/prophecy "65000 + cases…
+ * and counting", on its own in the content area) were dropped by the builder, which places
+ * counters only in columns: each run of them becomes a Statistics block of its own.
+ */
+function counterSections(items, ctx) {
+  const out = [];
+  let run = [];
+  const flush = () => {
+    if (run.length) {
+      out.push({
+        type: 'own', kind: 'statistics', styles: [], nodes: inlineNodes(run, ctx),
+      });
+    }
+    run = [];
+  };
+  items.forEach((item) => {
+    if (item.type === 'counter') {
+      run.push(item);
+      return;
+    }
+    flush();
+    out.push(item.type === 'group' ? { ...item, items: counterSections(item.items, ctx) } : item);
+  });
+  flush();
+  return out;
 }
 
 /**
@@ -56,7 +84,7 @@ export function buildCorpBody(element, payload) {
   if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(' | ')}`);
 
   // payload.sectionStyles: styles of every section (an aside XF: contact-aside)
-  const items = ctx.collect(root);
+  const items = counterSections(ctx.collect(root), ctx);
   const styles = payload.sectionStyles || [];
   ctx.place(styles.length ? [{ type: 'group', styles, items }] : items);
   if (!payload.xf) {
