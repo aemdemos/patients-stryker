@@ -931,6 +931,7 @@ const PANELS = {
   'bg-dark-teal-gradient': 'dark',
   'bg-dark-purple-gradient': 'bg-dark-purple-gradient',
   'bg-dark-blue-gradient': 'bg-dark-blue-gradient',
+  'bg-dark-orange-gradient': 'bg-dark-orange-gradient',
   'bg-golden-gradient': 'bg-golden-gradient',
   'bg-blue': 'blue',
   // the panel's bg-purple is the Stryker purple (#85458a); its bg-gray the silver (#b2b4ae,

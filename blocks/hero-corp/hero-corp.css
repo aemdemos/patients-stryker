@@ -73,6 +73,15 @@
   text-align: left;
 }
 
+/* the source's 15px under every heading of a slide box, and under every line of the product
+   hero's rich text (image-right; stryker.com p / h margin 0 0 15px; a Large Headline line has
+   none: .c-largeheadline p). The full-width image hero (text-above) and the bottom-anchored
+   box keep their own gaps below */
+.hero-corp.image-slide:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :is(h1, h2, h3, h4, h5, h6),
+.hero-corp.image-slide.image-right:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :is(p, ul, ol) {
+  margin-bottom: var(--space-block);
+}
+
 /* the headline's vw size (size-<n>); a hero without size-<n> keeps the page type, its lines in
    a vw size carry it as a [[size-<n>vw]] tag (scripts/corp-type.js), as on live */
 .hero-corp.image-slide[data-text-size] > div:last-child > * {
@@ -152,16 +161,16 @@
 }
 
 @media (width >= 600px) {
-  .hero-corp.image-slide .hero-image-desktop {
+  .hero-corp.image-slide:not(.text-below) .hero-image-desktop {
     display: block;
   }
 
-  .hero-corp.image-slide .hero-image-mobile {
+  .hero-corp.image-slide:not(.text-below) .hero-image-mobile {
     display: none;
   }
 
-  .hero-corp.image-slide > div:last-child,
-  .hero-corp.image-slide:is(.text-below, .text-above) > div:last-child {
+  .hero-corp.image-slide:not(.text-below) > div:last-child,
+  .hero-corp.image-slide.text-above > div:last-child {
     position: absolute;
     inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
     padding: var(--hero-box-padding, 0);
@@ -193,17 +202,46 @@
     font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
   }
 
-  .hero-corp.image-slide.image-right > div:first-child {
+  .hero-corp.image-slide.image-right:not(.text-below) > div:first-child {
     width: 50%;
     margin-left: 50%;
   }
 
-  .hero-corp.image-slide.image-right > div:first-child:not(:has(.hero-image-mobile)) {
+  .hero-corp.image-slide.image-right:not(.text-below) > div:first-child:not(:has(.hero-image-mobile)) {
     display: block;
   }
 
   .hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
     font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* text-below slides (the source mobile_Bottom: text under the image below 841px) keep the
+   phone layout up to 900px: from 600px the image is too low for the box (product heroes'
+   fixed-size type, ambient-monitoring), which spilled over the next section and under the
+   sticky jump bar. From 900px: the desktop image and the box over it / beside it */
+@media (width >= 900px) {
+  .hero-corp.image-slide.text-below .hero-image-desktop {
+    display: block;
+  }
+
+  .hero-corp.image-slide.text-below .hero-image-mobile {
+    display: none;
+  }
+
+  .hero-corp.image-slide.text-below > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: var(--hero-box-padding, 0);
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:first-child {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:first-child:not(:has(.hero-image-mobile)) {
+    display: block;
   }
 }
 

@@ -194,6 +194,31 @@ function backgroundVideos(block) {
   });
 }
 
+/**
+ * A text box over (or beside) the image that is taller than the image would run over the next
+ * section (and under the sticky jump bar): the hero grows to hold it. Kept in step as the box
+ * or the image resizes (fonts, image load, viewport).
+ * @param {Element} block The hero-corp block
+ */
+function fitBox(block) {
+  const box = block.lastElementChild;
+  if (!box || box === block.firstElementChild) return;
+  const fit = () => {
+    block.style.minHeight = '';
+    const style = getComputedStyle(box);
+    if (style.position !== 'absolute') return;
+    // the box's own bottom margin (its margin-bottom-<n> spacing) is room it keeps below it
+    const needed = box.offsetTop + box.offsetHeight + (parseFloat(style.marginBottom) || 0);
+    if (needed > block.clientHeight + 1) block.style.minHeight = `${Math.ceil(needed)}px`;
+  };
+  const later = () => window.requestAnimationFrame(fit);
+  // the box (fonts, wrapping), the image (loading) and the viewport; not the block itself,
+  // whose height this sets
+  new ResizeObserver(later).observe(box);
+  block.querySelectorAll('img').forEach((img) => img.addEventListener('load', later));
+  window.addEventListener('resize', later);
+}
+
 export default async function decorate(block) {
   readSlideOptions(block);
   backgroundVideos(block);
@@ -205,4 +230,5 @@ export default async function decorate(block) {
   }
   // the text box's AEM padding / margin (spacing options, e.g. padding-top-4)
   spaceBlock(block, block.lastElementChild);
+  fitBox(block);
 }

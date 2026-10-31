@@ -80,8 +80,10 @@
      .bg-golden-gradient); the teal one is the shared `dark` style (--panel-dark-gradient) */
   --corp-color-purple-gray: #594b61;
   --corp-color-blue-gray: #425361;
+  --corp-color-orange-gray: #635c4f; /* bg-dark-orange-gradient end (bone-mill) */
   --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-purple-gray));
   --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-blue-gray));
+  --corp-gradient-dark-orange: linear-gradient(90deg, var(--color-secondary), var(--corp-color-orange-gray));
   --corp-gradient-golden: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
 
   /* news-list-corp (source /us/en/about/news c-newsandannouncements) */
@@ -331,8 +333,12 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* ---- sections ---- */
 
-/* measured on www.stryker.com: every component (.page-section) ends with a 20px gap, 30px from 480px */
+/* a section is a stryker.com component box (.page-section: 20px below it, 30px from 600px,
+   source 480px; measured on www.stryker.com). Its content keeps its own margins inside it, as on the source, where the
+   Bootstrap rows' clearfix keeps the last paragraph's 15px and an authored top margin inside
+   the component: margins do not collapse through the section (flow-root) */
 :where(body.corp) main > .section {
+  display: flow-root;
   margin-bottom: var(--space-block-l);
 }
 
@@ -347,8 +353,10 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: 0;
 }
 
+/* the last component ends with its own 20px / 30px before the footer, as every other
+   (the shared 45px page end of styles.css is the patients site's) */
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
-  margin-bottom: 0;
+  margin-bottom: var(--space-block-l);
 }
 
 /* stripe (with a background style: bg-gold, stripe / bg-golden-gradient, stripe): the
@@ -508,6 +516,7 @@ body:where(.corp):has(main .hero-carousel) header {
    inside the band (source clearfix rows) and the next component starts flush below it. */
 :where(body.corp) main > .section.bg-dark-purple-gradient,
 :where(body.corp) main > .section.bg-dark-blue-gradient,
+:where(body.corp) main > .section.bg-dark-orange-gradient,
 :where(body.corp) main > .section.bg-golden-gradient,
 :where(body.corp) main > .section.dark {
   display: flow-root;
@@ -525,17 +534,22 @@ body:where(.corp):has(main .hero-carousel) header {
   color: var(--color-white);
 }
 
+:where(body.corp) main > .section.bg-dark-orange-gradient {
+  background: var(--corp-gradient-dark-orange);
+  color: var(--color-white);
+}
+
 :where(body.corp) main > .section.bg-golden-gradient {
   background: var(--corp-gradient-golden);
 }
 
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .dark) a:any-link:not(.button, .link-strong) {
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong) {
   color: var(--color-white);
 }
 
 /* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn
    "Our impact" panel: white numbers and text) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
   color: inherit;
 }
 
@@ -1084,6 +1098,10 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 
   :where(body.corp) main > .section {
+    margin-bottom: var(--space-section);
+  }
+
+  :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
     margin-bottom: var(--space-section);
   }
 

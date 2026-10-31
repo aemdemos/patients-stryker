@@ -1,0 +1,102 @@
+{
+  "previewBase": "http://localhost:3000",
+  "excludeContexts": [
+    "marketo-form"
+  ],
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [
+    390,
+    768,
+    1200
+  ],
+  "textStyleBreakpoints": [
+    390,
+    1200
+  ],
+  "blockUrlPatterns": [
+    "/altcha/",
+    "/captcha/"
+  ],
+  "blockClasses": [
+    "hero-corp",
+    "columns",
+    "cards-corp",
+    "tabs",
+    "accordion",
+    "table",
+    "statistics",
+    "sticky-nav"
+  ],
+  "importScript": "tools/importer/import-product-detail.js",
+  "fontFamilyAliases": {
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab",
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Egyptienne for Stryker Light": "egyptienne-light",
+    "URWEgyptienneW01-Light": "egyptienne-light"
+  },
+  "pairs": [
+    {
+      "name": "ambient-monitoring",
+      "source": "https://www.stryker.com/us/en/smart-care/products/ambient-monitoring.html",
+      "migrated": "/content/us/en/smart-care/products/ambient-monitoring"
+    },
+    {
+      "name": "surgistool",
+      "source": "https://www.stryker.com/us/en/acute-care/products/surgistool.html",
+      "migrated": "/content/us/en/acute-care/products/surgistool"
+    },
+    {
+      "name": "isolibrium",
+      "source": "https://www.stryker.com/us/en/acute-care/products/isolibrium.html",
+      "migrated": "/content/us/en/acute-care/products/isolibrium"
+    },
+    {
+      "name": "sage-airtap-lc",
+      "source": "https://www.stryker.com/us/en/sage/products/sage-airtap-lc.html",
+      "migrated": "/content/us/en/sage/products/sage-airtap-lc"
+    },
+    {
+      "name": "molli",
+      "source": "https://www.stryker.com/us/en/endoscopy/products/molli.html",
+      "migrated": "/content/us/en/endoscopy/products/molli"
+    },
+    {
+      "name": "lifepak-cr2",
+      "source": "https://www.stryker.com/us/en/emergency-care/products/lifepak-cr2.html",
+      "migrated": "/content/us/en/emergency-care/products/lifepak-cr2"
+    },
+    {
+      "name": "bpx",
+      "source": "https://www.stryker.com/us/en/orthopaedic-instruments/products/bpx.html",
+      "migrated": "/content/us/en/orthopaedic-instruments/products/bpx"
+    },
+    {
+      "name": "nara-bassinet",
+      "source": "https://www.stryker.com/us/en/acute-care/products/nara-bassinet.html",
+      "migrated": "/content/us/en/acute-care/products/nara-bassinet"
+    },
+    {
+      "name": "axs-vecta-46",
+      "source": "https://www.stryker.com/us/en/neurovascular/products/axs-vecta-46.html",
+      "migrated": "/content/us/en/neurovascular/products/axs-vecta-46"
+    },
+    {
+      "name": "gravity",
+      "source": "https://www.stryker.com/us/en/sports-medicine/products/gravity.html",
+      "migrated": "/content/us/en/sports-medicine/products/gravity"
+    },
+    {
+      "name": "neuromend",
+      "source": "https://www.stryker.com/us/en/foot-and-ankle/products/neuromend.html",
+      "migrated": "/content/us/en/foot-and-ankle/products/neuromend"
+    },
+    {
+      "name": "modular-dual-mobility",
+      "source": "https://www.stryker.com/us/en/joint-replacement/products/modular-dual-mobility.html",
+      "migrated": "/content/us/en/joint-replacement/products/modular-dual-mobility"
+    }
+  ]
+}
