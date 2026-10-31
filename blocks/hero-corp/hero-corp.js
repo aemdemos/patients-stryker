@@ -207,16 +207,24 @@ function fitBox(block) {
     block.style.minHeight = '';
     const style = getComputedStyle(box);
     if (style.position !== 'absolute') return;
-    // the box's own bottom margin (its margin-bottom-<n> spacing) is room it keeps below it
-    const needed = box.offsetTop + box.offsetHeight + (parseFloat(style.marginBottom) || 0);
-    if (needed > block.clientHeight + 1) block.style.minHeight = `${Math.ceil(needed)}px`;
+    // the box's own bottom margin (its margin-bottom-<n> spacing) is room it keeps below it;
+    // its top-<n> inset is a % of the hero's height, so a taller hero moves it down: a few
+    // passes until it fits
+    for (let pass = 0; pass < 4; pass += 1) {
+      const below = parseFloat(getComputedStyle(box).marginBottom) || 0;
+      const needed = box.offsetTop + box.offsetHeight + below;
+      if (needed <= block.clientHeight + 1) return;
+      block.style.minHeight = `${Math.ceil(needed)}px`;
+    }
   };
   const later = () => window.requestAnimationFrame(fit);
-  // the box (fonts, wrapping), the image (loading) and the viewport; not the block itself,
-  // whose height this sets
-  new ResizeObserver(later).observe(box);
-  block.querySelectorAll('img').forEach((img) => img.addEventListener('load', later));
-  window.addEventListener('resize', later);
+  // the box (fonts, wrapping, spacing) and the image row (loading, viewport); not the block
+  // itself, whose height this sets
+  const observer = new ResizeObserver(later);
+  observer.observe(box);
+  observer.observe(block.firstElementChild);
+  // its margins (spacing options, set in px by corp-spacing.js) do not resize it
+  new MutationObserver(later).observe(box, { attributes: true, attributeFilter: ['style'] });
 }
 
 export default async function decorate(block) {
