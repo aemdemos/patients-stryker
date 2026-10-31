@@ -237,8 +237,12 @@ export function createBuilder({
       }
       if (!current || current.key !== key || (font && current.font && current.font !== font)
         || (size && current.headingSize && current.headingSize !== size)) {
-        start('flow', styles).key = key;
+        // a section split off the same source component (its copy changes style) continues
+        // it: no component gap before it (section style continued, approved 2026-10-31)
+        const continues = !!current && current.item === item;
+        start('flow', continues ? [...styles, 'continued'] : styles).key = key;
         current.spaced = !!item.spacedBox;
+        current.item = item;
       }
       if (font) {
         if (font === 'serif' && current.font !== 'serif') current.styles.push('h-serif');

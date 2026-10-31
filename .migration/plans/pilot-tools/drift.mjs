@@ -31,6 +31,7 @@ const tops = await src.evaluate((texts) => {
 }, anchors.map((a) => a.text));
 let prev = 0;
 const seen = new Set();
+const sums = { lost: 0, gained: 0, big: 0 };
 anchors.forEach((a, i) => {
   if (tops[i] === null || seen.has(a.text)) return;
   seen.add(a.text);
@@ -38,6 +39,11 @@ anchors.forEach((a, i) => {
   const step = delta - prev;
   prev = delta;
   const mark = Math.abs(step) >= 15 ? ' <<' : '';
+  // steps over 300px are a missing / extra part (a form that does not render locally), not spacing
+  if (Math.abs(step) > 300) sums.big += 1;
+  else if (step < 0) sums.lost += -step;
+  else sums.gained += step;
   console.log(`${String(tops[i]).padStart(6)} ${String(a.top).padStart(6)} Δ${String(delta).padStart(6)} step ${String(step).padStart(5)}${mark}  ${a.tag} "${a.text}" [${a.section.replace(/\bsection\b/, '').trim().slice(0, 40)}]`);
 });
+console.log(`SUMMARY lost ${sums.lost}px, gained ${sums.gained}px, net ${sums.gained - sums.lost}px (steps over 300px left out: ${sums.big})`);
 await browser.close();

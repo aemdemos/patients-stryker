@@ -1006,8 +1006,10 @@ var CustomImportScript = (() => {
           size = node.headingSize || "plain";
         }
         if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
-          start("flow", styles).key = key;
+          const continues = !!current && current.item === item;
+          start("flow", continues ? [...styles, "continued"] : styles).key = key;
           current.spaced = !!item.spacedBox;
+          current.item = item;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");

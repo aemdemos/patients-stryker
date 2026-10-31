@@ -145,15 +145,25 @@
   display: none;
 }
 
+/* the button is its own component on the source (curated CTA): the copy above it ends its
+   component (its 15px + the 20px / 30px component gap) */
+.hero-corp.image-slide:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :not(.button-wrapper) + .button-wrapper {
+  margin-top: var(--corp-component-gap-after-text);
+}
+
 /* image-right copy without size-<n> (stryker.com product hero rich text): h1 and h2 at the
    corp heading sizes (h2 21px / 24.5px from 600px, sage-barrier-cream-cloths), the copy at
    the section's copy style (p-*, serif) */
+
 .hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > :is(h1, h2) {
   line-height: var(--heading-line-height);
 }
 
+/* the subtitle's lines: 35.2px at 24.5px on the source (a 1.25x span in the plain h2, whose own
+   font still sets the line; measured on 6 product heroes) */
 .hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
   font-size: var(--heading-font-size-l);
+  line-height: calc(var(--corp-hero-heading-line-height) * 1em);
 }
 
 .section.serif .hero-corp.image-slide.image-right > div:last-child > p {

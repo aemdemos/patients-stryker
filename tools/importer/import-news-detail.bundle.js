@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-news-detail.js
+  // tools/importer/import-news-detail.js
   var import_news_detail_exports = {};
   __export(import_news_detail_exports, {
     default: () => import_news_detail_default
   });
 
-  // transformers/corp-sections.js
+  // tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -77,6 +77,22 @@ var CustomImportScript = (() => {
     let edsPath = path.replace(/\.html?$/i, "");
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
+  }
+  function documentName(name) {
+    let decoded = name;
+    try {
+      decoded = decodeURIComponent(name);
+    } catch (e) {
+    }
+    return decoded.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+  function documentLink(href) {
+    const m = String(href || "").match(/^(\/[^?#]*)([?#].*)?$/);
+    if (!m || href.startsWith("//") || m[1].startsWith("/content/")) return null;
+    const segments = m[1].split("/");
+    if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
+    const path = segments.map((s) => s ? documentName(s) : s).join("/");
+    return path === m[1] ? null : `${path}${m[2] || ""}`;
   }
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
@@ -224,6 +240,11 @@ var CustomImportScript = (() => {
       element.querySelectorAll("a[href]").forEach((a) => {
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
+        const href = a.getAttribute("href");
+        const cleaned = documentLink(href);
+        if (cleaned === null) return;
+        if (a.textContent.trim() === href) a.textContent = cleaned;
+        a.setAttribute("href", cleaned);
       });
       if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
@@ -235,7 +256,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // transformers/patients-stryker-dm-images.js
+  // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -303,7 +324,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp-richtext.js
+  // tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -818,7 +839,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp-section-builder.js
+  // tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -985,8 +1006,10 @@ var CustomImportScript = (() => {
           size = node.headingSize || "plain";
         }
         if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
-          start("flow", styles).key = key;
+          const continues = !!current && current.item === item;
+          start("flow", continues ? [...styles, "continued"] : styles).key = key;
           current.spaced = !!item.spacedBox;
+          current.item = item;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");
@@ -1048,7 +1071,7 @@ var CustomImportScript = (() => {
       if (pendingIds.length) report.notes.push(`anchors at the end without a section: #${pendingIds.join(", #")}`);
       if (pendingStyles.length) report.notes.push(`trailing ${pendingStyles.join(", ")} without a section after it, dropped`);
       const out = [];
-      sections.filter((s) => s.nodes.length).forEach((section, i) => {
+      sections.filter((s) => s.nodes.length || s.kind === "stripe").forEach((section, i) => {
         if (i > 0) out.push(doc.createElement("hr"));
         finishRuns(section.nodes, section.styles);
         out.push(...section.nodes);
@@ -1065,7 +1088,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // data/xf-index.js
+  // tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3214,7 +3237,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // xf-path-rule.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3230,7 +3253,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3258,7 +3281,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp-components.js
+  // tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3361,7 +3384,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // parsers/hero-image-slide.js
+  // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3453,7 +3476,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // parsers/cards-corp-teaser.js
+  // tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3507,7 +3530,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // parsers/video.js
+  // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3533,7 +3556,33 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // corp-component-handlers.js
+  // tools/importer/corp-modal-path.js
+  var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  function procareModalPath(title) {
+    const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
+    return name ? `/us/en/fragments/modals/procare/${name}` : null;
+  }
+
+  // tools/importer/data/dm-sets.js
+  var SETS = {
+    "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
+    "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
+    "stryker/Cart_with_Hydro": { "type": "spin", "members": [{ "name": "stryker/RISE with Hydro - Orbit Frame.649.1-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.14-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.20-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.26-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.32-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.38-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.44-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.50-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.56-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.62-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.68-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.74-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.79-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.100-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.106-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.112-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.118-1920x1151", "type": "image", "width": 1920, "height": 1151 }] },
+    "stryker/Hargrove-Loper": { "type": "media_set", "members": [{ "name": "stryker/20210607-SYK_CGS_Klisa-109", "type": "image", "width": 6537, "height": 4358 }, { "name": "stryker/20210607-SYK_CGS_Klisa-182", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-202", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-233", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-55", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-229", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-197", "type": "image", "width": 6082, "height": 4055 }, { "name": "stryker/20210607-SYK_CGS_Klisa-31", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-187", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-217-2", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-75", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-195", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-135", "type": "image", "width": 5938, "height": 3959 }, { "name": "stryker/20210607-SYK_CGS_Klisa-127", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-24", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-212", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/James_Bamber_MixedMedia": { "type": "media_set", "members": [{ "name": "stryker/20201021-CGS_Baton_Rouge-128", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-67", "type": "image", "width": 4480, "height": 6720 }, { "name": "stryker/20201021-CGS_Baton_Rouge-135", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-76", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-174", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-185", "type": "image", "width": 6618, "height": 4412 }, { "name": "stryker/20201021-CGS_Baton_Rouge-191", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-199", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-219", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-224", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-230", "type": "image", "width": 6671, "height": 4447 }, { "name": "stryker/20201021-CGS_Baton_Rouge-272", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-297", "type": "image", "width": 6540, "height": 4360 }, { "name": "stryker/20201021-CGS_Baton_Rouge-354", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-381", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-4", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-450", "type": "image", "width": 6493, "height": 4329 }, { "name": "stryker/20201021-CGS_Baton_Rouge-462", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-467", "type": "image", "width": 6448, "height": 4299 }, { "name": "stryker/20201021-CGS_Baton_Rouge-469", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-474", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-482", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-486", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-496-2", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-520-2", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-58", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/Meet_the_SurgicalICUteamatTempleUniversityHospital": { "type": "media_set", "members": [{ "name": "stryker/CarouselandFeaturePic", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-1", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-5", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-19", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-36", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-52", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-61", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-87", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-88", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-116", "type": "image", "width": 4480, "height": 6720 }, { "name": "stryker/20220502-SYK_CGSPhilly-117", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-125", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-126", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-136", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-148", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-162", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-186", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-215", "type": "image", "width": 6546, "height": 4364 }, { "name": "stryker/20220502-SYK_CGSPhilly-223", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-235", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-243", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-262", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-269", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/Spine_MedEd_US_MixMedia": { "type": "media_set", "members": [{ "name": "stryker/NeuroTech", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/IMG_4224", "type": "image", "width": 640, "height": 480 }, { "name": "stryker/HCP-2", "type": "image", "width": 303, "height": 406 }, { "name": "stryker/Adult-Deformity", "type": "image", "width": 364, "height": 259 }, { "name": "stryker/Dr-Bergsneider-UCLA", "type": "image", "width": 889, "height": 597 }, { "name": "stryker/HCP-3", "type": "image", "width": 463, "height": 305 }, { "name": "stryker/IMG_1232", "type": "image", "width": 640, "height": 480 }, { "name": "stryker/HCP", "type": "image", "width": 313, "height": 413 }, { "name": "stryker/House2", "type": "image", "width": 893, "height": 596 }, { "name": "stryker/IMG_4549", "type": "image", "width": 480, "height": 640 }, { "name": "stryker/Latin-American-Course", "type": "image", "width": 5947, "height": 2958 }, { "name": "stryker/MIAT-Team", "type": "image", "width": 595, "height": 338 }, { "name": "stryker/pic 3", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/Pic 2", "type": "image", "width": 4032, "height": 3024 }] },
+    "stryker/Surgeon_engagement": { "type": "media_set", "members": [{ "name": "stryker/110A3303", "type": "image", "width": 4800, "height": 2700 }, { "name": "stryker/110A3329", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/110A3410", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/2019-05-18 10.18.00-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 10.18.06-1", "type": "image", "width": 3024, "height": 4032 }, { "name": "stryker/2019-05-18 10.18.30-1", "type": "image", "width": 3024, "height": 4032 }, { "name": "stryker/2019-05-18 10.29.14 HDR-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 10.36.53", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 12.48.36 HDR-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/AW2A6334", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/DSC_0065", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/DSC_0071", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/DSC_0132", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/mobile lab 2-1", "type": "image", "width": 842, "height": 561 }, { "name": "stryker/mobile lab", "type": "image", "width": 842, "height": 561 }, { "name": "stryker/Stryker Lab 3-1", "type": "image", "width": 7952, "height": 5304 }, { "name": "stryker/Stryker TBC 2019 Group Photo-1", "type": "image", "width": 3e3, "height": 2400 }, { "name": "stryker/WHole Group 1", "type": "image", "width": 7579, "height": 4841 }] },
+    "stryker/aria_drill_mixedmedia": { "type": "media_set", "members": [{ "name": "stryker/Aria_mixMedia2", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/Aria_mixMedia3", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/Aria_mix", "type": "image", "width": 1800, "height": 750 }] },
+    "stryker/gallery": { "type": "media_set", "members": [{ "name": "stryker/Xpedition_gallery_first", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition_gallery_second", "type": "image", "width": 1200, "height": 1800 }, { "name": "stryker/Xpedition_gallery_third", "type": "image", "width": 1200, "height": 800 }, { "name": "stryker/Xpedition_gallery_fourth", "type": "image", "width": 853, "height": 1200 }, { "name": "stryker/Xpedition_gallery_fifith", "type": "image", "width": 849, "height": 1200 }, { "name": "stryker/Xpedition_gallery_6", "type": "image", "width": 843, "height": 1200 }, { "name": "stryker/Xpedition_gallery_7", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition top of stairs with patient", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition down stairs with lights", "type": "image", "width": 1066, "height": 1501 }, { "name": "stryker/Xpedition door threshhold", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition to the ambulance", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition_track closeup", "type": "image", "width": 1054, "height": 1291 }, { "name": "stryker/Xpedition back lights", "type": "image", "width": 800, "height": 1200 }, { "name": "stryker/Xpedition buttons", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition up_down stairs buttons", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition foot rest", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition restraints", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition buckles", "type": "image", "width": 1600, "height": 1066 }] },
+    "stryker/judy_mixed_media2": { "type": "media_set", "members": [{ "name": "stryker/20191105-AC_Caregivers_Judy-274", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/110519ACCaregiverStory-18", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-102", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-129", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-134", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-160", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-182", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-183", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-197", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-243", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-252", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-256", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-29", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-296", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-358", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-385", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-407", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-416", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-517", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-53", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-535", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-544", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-548", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-94", "type": "image", "width": 1280, "height": 720 }] },
+    "stryker/saan_2018": { "type": "media_set", "members": [{ "name": "stryker/JVB_2031", "type": "image", "width": 2695, "height": 1855 }, { "name": "stryker/39847828304_ec62829212_k", "type": "image", "width": 2048, "height": 1365 }, { "name": "stryker/SVA-SAAN Event", "type": "image", "width": 4524, "height": 2388 }, { "name": "stryker/Howard Event 27-Feb-2018", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/JVB_2030", "type": "image", "width": 2732, "height": 1830 }] },
+    "stryker/safe": { "type": "img_set", "members": [{ "name": "stryker/pic_4", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_1", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_2", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_3", "type": "image", "width": 617, "height": 525 }] },
+    "stryker/silverglide_mixedmedia": { "type": "media_set", "members": [{ "name": "stryker/silver_mixMed1", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/silver_mixMed2", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/silver_mixMed3", "type": "image", "width": 1800, "height": 750 }] },
+    "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
+  };
+
+  // tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4278,14 +4327,30 @@ var CustomImportScript = (() => {
     "bg-dark-teal-gradient": "dark",
     "bg-dark-purple-gradient": "bg-dark-purple-gradient",
     "bg-dark-blue-gradient": "bg-dark-blue-gradient",
+    "bg-dark-orange-gradient": "bg-dark-orange-gradient",
     "bg-golden-gradient": "bg-golden-gradient",
-    "bg-blue": "blue"
+    "bg-blue": "blue",
+    // the panel's bg-purple is the Stryker purple (#85458a); its bg-gray the silver (#b2b4ae,
+    // e.g. target-tetra), not the light bg-gray band
+    "bg-purple": "bg-purple",
+    "bg-gray": "bg-silver"
   };
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
     const items = ctx.collect(panel);
-    if (!hasContent(items.filter((it) => it.type !== "anchor" && it.type !== "boundary"))) return items.filter((it) => it.type === "anchor");
     const cls = [...panel.classList].find((c) => PANELS[c]);
+    if (!hasContent(items.filter((it) => it.type !== "anchor" && it.type !== "boundary"))) {
+      const anchors = items.filter((it) => it.type === "anchor");
+      if (cls && cls !== "bg-white" && panel.classList.contains("page-section")) {
+        return [...anchors, {
+          type: "own",
+          kind: "stripe",
+          styles: [PANELS[cls], "stripe"],
+          nodes: []
+        }];
+      }
+      return anchors;
+    }
     if (!cls && /\bbg-/.test(panel.className)) ctx.report.notes.push(`full-bleed panel background ${panel.className}: no section style`);
     return [{ type: "group", styles: cls ? [PANELS[cls]] : [], items }];
   }
@@ -4732,11 +4797,227 @@ var CustomImportScript = (() => {
   function promoTile(el, ctx) {
     const img = el.querySelector(".c-cross-promotional-tile img");
     if (!img) return [];
-    ctx.report.notes.push(`cross-promotional tile kept as its image, its modal content is not imported: ${img.getAttribute("alt") || img.getAttribute("src")}`);
     const image = ctx.doc.createElement("img");
     image.setAttribute("src", img.getAttribute("src"));
     image.setAttribute("alt", img.getAttribute("alt") || "");
-    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
+    const title = el.querySelector(".c-procare-tile-modal .c-procare-tile-title, #c-procare-tile-modal .c-procare-tile-title");
+    const path = title && procareModalPath(text(title));
+    if (!path) {
+      ctx.report.notes.push(`cross-promotional tile without a modal title, kept as its image: ${img.getAttribute("alt") || img.getAttribute("src")}`);
+      return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
+    }
+    const a = ctx.doc.createElement("a");
+    a.setAttribute("href", path);
+    a.append(image);
+    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, a)] }];
+  }
+  function componentTitle(h, doc) {
+    const h2 = doc.createElement("h2");
+    if (h.classList.contains("border-bottom-gold")) {
+      const u = doc.createElement("u");
+      u.textContent = text(h);
+      h2.append(u);
+    } else h2.textContent = text(h);
+    return h2;
+  }
+  function titleComponent(el, ctx) {
+    const { doc } = ctx;
+    const box = el.querySelector(".title-container") || el;
+    const nodes = [];
+    const title = box.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    box.querySelectorAll(":scope > h3").forEach((h) => {
+      if (!text(h)) return;
+      const h3 = doc.createElement("h3");
+      h3.textContent = text(h);
+      nodes.push(h3);
+    });
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function divisionContactUs(el, ctx) {
+    const { doc } = ctx;
+    const form = el.querySelector("form") || el;
+    const nodes = [];
+    const title = form.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    const description = form.querySelector(".form-description");
+    if (description) {
+      const copy = description.cloneNode(true);
+      copy.querySelectorAll(".form-control-asterix").forEach((star) => star.remove());
+      if (text(copy)) {
+        const p = doc.createElement("p");
+        p.textContent = text(copy);
+        nodes.push(p);
+      }
+    }
+    ctx.report.notes.push("division contact form: no Marketo form ID for it yet (client), the form is left out");
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function mixedMediaGallery(el, ctx) {
+    const { doc } = ctx;
+    const viewer = el.querySelector("[data-asset-path]");
+    const asset = viewer && viewer.getAttribute("data-asset-path");
+    const set = asset && SETS[asset];
+    if (!set || !set.members.length) {
+      if (asset) ctx.report.notes.push(`gallery ${asset}: no members in data/dm-sets.js (npm run build:dm-sets), left out`);
+      return [];
+    }
+    const server = viewer.getAttribute("data-imageserver") || "https://media-assets.stryker.com/is/image/";
+    const rows = set.members.map((member) => {
+      const img = doc.createElement("img");
+      img.setAttribute("src", `${server}${member.name.split("/").map(encodeURIComponent).join("/")}?$max_width_1440$`);
+      img.setAttribute("alt", "");
+      return [para(doc, img)];
+    });
+    ctx.report.notes.push(`gallery ${asset}: ${rows.length} images without alt text (authors add it)`);
+    return [{
+      type: "own",
+      kind: "gallery",
+      styles: [],
+      nodes: [block(doc, "Gallery Corp", rows)]
+    }];
+  }
+  function dynamicMedia(el, ctx) {
+    const { doc } = ctx;
+    const viewer = el.querySelector("[data-asset-path]");
+    const asset = viewer && viewer.getAttribute("data-asset-path");
+    if (!asset) return [];
+    const server = viewer.getAttribute("data-imageserver") || "https://media-assets.stryker.com/is/image/";
+    const img = doc.createElement("img");
+    img.setAttribute("src", `${server}${asset.split("/").map(encodeURIComponent).join("/")}?$max_width_1440$`);
+    img.setAttribute("alt", "");
+    ctx.report.notes.push(`dynamic media viewer ${asset}: image without alt text (authors add it)`);
+    return [{ type: "flow", role: "image", nodes: [para(doc, img)] }];
+  }
+  function featuredContentGrid(el, ctx) {
+    const { doc } = ctx;
+    const items = [];
+    const title = el.querySelector("h2.component-subheading");
+    const intro = el.querySelector(".intro");
+    const lead = [];
+    if (title && text(title)) lead.push(componentTitle(title, doc));
+    if (intro && text(intro)) {
+      const p = doc.createElement("p");
+      p.textContent = text(intro);
+      lead.push(p);
+    }
+    if (lead.length) items.push({ type: "flow", role: "text", nodes: lead });
+    const cells = [...el.querySelectorAll(".grid-item-wrapper")].map((item) => {
+      const nodes = [];
+      const head = item.querySelector("a h4, h4");
+      const link2 = head && head.closest("a");
+      if (head && text(head)) {
+        const h4 = doc.createElement("h4");
+        h4.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(head)) : doc.createTextNode(text(head)));
+        nodes.push(h4);
+      }
+      const description = item.querySelector(".page-description");
+      if (description && text(description)) {
+        const p = doc.createElement("p");
+        p.textContent = text(description);
+        nodes.push(p);
+      }
+      const more = item.querySelector("a.more[href]");
+      if (more) {
+        const u = doc.createElement("u");
+        u.textContent = text(more);
+        const a = linkTo(doc, more.getAttribute("href"), "");
+        a.textContent = "";
+        a.append(u);
+        nodes.push(para(doc, a));
+      }
+      return nodes;
+    }).filter((nodes) => nodes.length);
+    if (cells.length) {
+      items.push({
+        type: "own",
+        kind: "columns",
+        styles: [],
+        nodes: [block(doc, "Columns (related-links)", [cells])]
+      });
+    }
+    return items;
+  }
+  function bannerCampaign(el, ctx) {
+    const { doc } = ctx;
+    const source = el.querySelector(".c-banner-campaign-content img");
+    if (!source) return [];
+    const img = doc.createElement("img");
+    const largest = el.querySelector(".c-banner-campaign-content source[srcset]");
+    img.setAttribute("src", largest && largest.getAttribute("srcset").split(/\s+/)[0] || source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    if (!source.getAttribute("alt")) ctx.report.notes.push(`banner image without alt text: ${img.getAttribute("src")}`);
+    const link2 = source.closest("a[href]");
+    if (!link2) return [{ type: "flow", role: "image", nodes: [para(doc, img)] }];
+    const a = linkTo(doc, newTabHref(link2, link2.getAttribute("href")), "");
+    a.textContent = "";
+    a.append(img);
+    return [{ type: "flow", role: "image", nodes: [para(doc, a)] }];
+  }
+  var ENGAGEMENT_ICONS = { facebook: ":facebook:", linkedin: ":linkedin:" };
+  function engagementCta(el, ctx) {
+    const { doc } = ctx;
+    const links = [...el.querySelectorAll(".engagementCTAcluster a.btn[href]")];
+    if (!links.length) return [];
+    const nodes = links.map((source) => {
+      const icon = ENGAGEMENT_ICONS[String(source.id).toLowerCase()];
+      const label = text(source);
+      const a = linkTo(doc, newTabHref(source, source.getAttribute("href")), [icon, label].filter(Boolean).join(" ") || source.id);
+      const strong = doc.createElement("strong");
+      strong.append(a);
+      return para(doc, strong);
+    });
+    const colour = links[0].classList.contains("bg-purple") ? "btn-purple" : links[0].classList.contains("bg-blue") && "btn-blue";
+    return [{
+      type: "flow",
+      role: "cta",
+      own: !!colour,
+      styles: colour ? [colour] : [],
+      nodes
+    }];
+  }
+  function animatedBarChart(el, ctx) {
+    const { doc } = ctx;
+    const value = (cls) => (el.querySelector(`input.${cls}`) || { value: "" }).value.trim();
+    const items = [...el.querySelectorAll("select.hdnChartSeries option")].map((option) => {
+      const [colour, label, show] = text(option).split("|");
+      return {
+        label: (label || "").trim(),
+        value: option.getAttribute("value"),
+        colour: (colour || "").trim(),
+        show: show !== "false"
+      };
+    }).filter((item) => item.show && item.label);
+    if (!items.length) return [];
+    const format = value("numberType") === "Currency" ? `Currency ${value("currency")}` : value("numberType");
+    const rows = [
+      ["Title", value("chartTitle")],
+      ["Subtitle", value("chartSubTitle")],
+      ["Format", format],
+      ["Max", value("maxValue")],
+      ["Axis title", value("yAxisTitle")],
+      ["Labels", value("dataLabelDisplay") === "false" ? "false" : "true"]
+    ].filter(([, v]) => v);
+    items.forEach((item) => rows.push([item.label, item.value, item.colour]));
+    const variant = /bar/i.test(value("chartType")) ? "Chart Corp (bar)" : "Chart Corp";
+    return [{
+      type: "own",
+      kind: "chart",
+      styles: [],
+      nodes: [block(doc, variant, rows)]
+    }];
+  }
+  function legacyVideo(el, ctx) {
+    const { doc } = ctx;
+    const player = el.querySelector("video");
+    const path = (String(el.innerHTML).match(/var mediaPath = '([^']+)'/) || [])[1];
+    const visible = player && Number(player.getAttribute("width")) > 0 && Number(player.getAttribute("height")) > 0;
+    if (!path || !visible) return [];
+    const href = path.replace(/\\u002D/g, "-").replace(/\\\//g, "/");
+    return [{
+      type: "block",
+      block: block(doc, "Video", [[linkTo(doc, absoluteAsset(href), href.split("/").pop())]])
+    }];
   }
   var skip = () => [];
   function publishDate(el, ctx) {
@@ -4804,6 +5085,15 @@ var CustomImportScript = (() => {
     localpagenavigationchild: localNav,
     "c-navigation-bar": jumpBar,
     "c-tiles": promoTile,
+    title: titleComponent,
+    divisioncontactus: divisionContactUs,
+    mixedmediagallery: mixedMediaGallery,
+    dynamicmedia: dynamicMedia,
+    featuredcontentgrid: featuredContentGrid,
+    bannercampaign: bannerCampaign,
+    engagementcta: engagementCta,
+    animatedbarchart: animatedBarChart,
+    video: legacyVideo,
     // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
     // publish date and the event location under the title, and the template's "back" link
     // (navigation, not authored)
@@ -4815,7 +5105,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // corp-page.js
+  // tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -4871,7 +5161,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // corp-import.js
+  // tools/importer/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document) {
@@ -4957,7 +5247,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // data/page-facts/news-detail.js
+  // tools/importer/data/page-facts/news-detail.js
   var news_detail_default = {
     "/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-": { "template": "news-detail", "metadata": { "title": "\u201CSweynTooth\u201D BLE Vulnerabilities (ICSA- 20-063-01)", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news", "stryker:content-type/news/product-advisories-"], "originallyPublished": null, "lastPublished": "2020-07-24T14:12:22.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library": { "template": "news-detail", "metadata": { "title": "Apache \u201CLog4j\u201D Open Source Logging Library", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news", "stryker:content-type/news/product-advisories-"], "originallyPublished": null, "lastPublished": "2022-01-06T19:15:56.000Z", "contentID": "SYK CORP 2022-01-01" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
@@ -5737,7 +6027,7 @@ Stryker or its affiliated entities own, use, or have applied for the following t
     "/us/en/sustainability/news/world-environment-day-2025-": { "template": "news-detail", "metadata": { "title": "Stryker focuses on and celebrates sustainability ", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/news"], "originallyPublished": "2025-06-04T15:58:06.000Z", "lastPublished": "2026-08-18T20:08:23.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [{ "formId": "2736", "afterSubmitAction": "showMessage", "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.", "useProduction": true }], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // import-news-detail.js
+  // tools/importer/import-news-detail.js
   var import_news_detail_default = createCorpImport({
     name: "news-detail",
     description: "www.stryker.com news articles: page title (h1-title) and publish date, lead slide (Hero Corp) or image, article rich text, images and videos, curated CTAs, related cards, XFs (Fragment), references and document code (page disclaimer).",

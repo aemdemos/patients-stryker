@@ -112,6 +112,11 @@
   --corp-tile-width-l: 311px; /* .c-cross-promotional-tile max-width from 1025px */
   --corp-tile-width-xl: 420px; /* from 1440px */
   --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
+  --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
+  --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
+  --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */
+  --corp-heading-line-height-1-5: 1.3; /* h-1-5 headings on phones; 1.36 from 600px */
+  --corp-hero-heading-line-height: 1.44; /* product hero h2 (35.2px lines at 24.5px) */
 
   /* Related Categories (stryker.com product tag crumb) */
   --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
@@ -135,6 +140,14 @@
   --corp-sitemap-line-height-l1: 40px; /* h3 a, 20px Futura */
   --corp-sitemap-line-height-l2: 24px; /* h4 a, 16px Futura */
   --corp-sitemap-line-height-l3: 22px; /* h5 a, 16px Humanist */
+}
+
+@media (width >= 600px) {
+  :where(body.corp) {
+    --corp-heading-line-height-1-5: 1.36; /* h-1-5 headings from 600px (source 480px) */
+    --corp-component-gap: var(--space-section);
+    --corp-component-gap-after-text: calc(var(--space-section) + var(--space-block));
+  }
 }
 
 @media (width >= 900px) {
@@ -348,9 +361,27 @@ body:where(.corp):has(main .hero-carousel) header {
   display: none;
 }
 
-/* the content above a stripe ends flush with it */
+/* the content above a stripe ends flush with it; a `continued` section (split off the same
+   source component, where its copy changes style) follows without a component gap: only the
+   last paragraph's own 15px stays between them */
 :where(body.corp) main > .section:has(+ .section.stripe) {
   margin-bottom: 0;
+}
+
+:where(body.corp) main .section:has(+ .section.continued) {
+  margin-bottom: 0;
+}
+
+/* component gaps inside a section: a button line (curated CTA) and an image line (standalone
+   image) are their own component on stryker.com, so the line before them ends its component
+   (its 15px + the 20px / 30px component gap) and the one after them starts the next (20px /
+   30px). Measured specific gaps (columns, large-headline) keep their own rules */
+:where(body.corp) main :where(.default-content-wrapper, .columns > div > div) > :not(.button-wrapper, :has(> picture:only-child)) + :is(p.button-wrapper, p:has(> picture:only-child)) {
+  margin-top: var(--corp-component-gap-after-text);
+}
+
+:where(body.corp) main :where(.default-content-wrapper, .columns > div > div) > :is(p.button-wrapper, p:has(> picture:only-child)) + :not(.button-wrapper, :has(> picture:only-child)) {
+  margin-top: var(--corp-component-gap);
 }
 
 /* the last component ends with its own 20px / 30px before the footer, as every other
@@ -819,22 +850,28 @@ body:where(.corp):has(main .hero-carousel) header {
   --corp-heading-scale: 0.8;
 }
 
+/* their line height: on the source the larger size sits on a span inside the plain heading,
+   whose own font still sets the line, so the lines are taller than the size alone gives
+   (measured on 10 product pages: a 1.25x h3 has 38.2px lines at 26.25px and 32.2px at 21.9px;
+   a 1.5x h2 50px at 36.75px, 39-42px at 31.5px on phones) */
 :where(body.corp) .section.h-1-25 {
   --corp-heading-scale: 1.25;
+  --corp-scaled-heading-line-height: var(--corp-heading-line-height-1-25);
 }
 
 :where(body.corp) .section.h-1-5 {
   --corp-heading-scale: 1.5;
+  --corp-scaled-heading-line-height: var(--corp-heading-line-height-1-5);
 }
 
 :where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
-  line-height: var(--heading-line-height);
+  line-height: var(--corp-scaled-heading-line-height, var(--heading-line-height));
 }
 
 :where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h3 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h3-size, var(--heading-font-size-m)));
-  line-height: var(--heading-line-height-h4);
+  line-height: var(--corp-scaled-heading-line-height, var(--heading-line-height-h4));
 }
 
 /* label-1-5 / label-1-75 / label-2: labels (a paragraph that is one bold run, <strong> or the
