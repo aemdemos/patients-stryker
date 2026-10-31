@@ -367,10 +367,20 @@ body.corp .columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only
   line-height: var(--paragraph-line-height);
 }
 
+/* a linked Heading 4 (the stryker.com featured content grid item title, e.g.
+   /us/en/trauma-and-extremities/c/nailing-portfolio): the heading's own black Futura, not the
+   variant's link colour and serif */
+body.corp .columns.related-links h4 a:any-link {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
 body.corp .columns.related-links p a:any-link:has(u) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
+
 
 /* section style serif with p-1 / p-1-25: 14px or 17.5px serif copy (stryker.com
    urw-egyptienne at 1em / .fontsize-1-25em); serif alone sets 21px */
