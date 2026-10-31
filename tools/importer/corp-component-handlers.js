@@ -1450,9 +1450,11 @@ function localNav(el, ctx) {
   const { doc } = ctx;
   const nav = el.querySelector('nav.greedy');
   const links = nav ? [...nav.querySelectorAll('ul.links a[href]')].filter((a) => text(a)) : [];
-  if (!links.length) return [];
+  const parent = nav && nav.querySelector('a.parent-node[href]');
+  // a nav without child pages still shows its parent title (orthopaedic-instruments/systems/
+  // orthopaedic: "Home" only)
+  if (!links.length && !(parent && text(parent))) return [];
   const rows = [];
-  const parent = nav.querySelector('a.parent-node[href]');
   if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute('href'), text(parent))]);
   // the link cell shows the page path (as the link will read after the .html rewrite)
   const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, '').replace(/\/index\.html(?=$|[?#])/, '/').replace(/\.html(?=$|[?#])/, '');
@@ -1498,6 +1500,52 @@ function componentTitle(h, doc) {
     h2.append(u);
   } else h2.textContent = text(h);
   return h2;
+}
+
+/**
+ * Latest news (component-map latestnews, approved: Cards Corp teaser, today's articles frozen):
+ * the title (Underline), then one teaser card per article the component renders: its image,
+ * title, description and the "Read More" link, as on the source
+ * (/us/en/orthopaedic-instruments/systems/orthopaedic "Articles").
+ */
+function latestNews(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-latestnews') || el;
+  const items = [...root.querySelectorAll('.latestnews-container > .item')].filter((item) => text(item));
+  if (!items.length) return [];
+  const out = [];
+  const heading = root.querySelector('h2');
+  if (heading && text(heading)) out.push({ type: 'flow', role: 'text', nodes: [componentTitle(heading, doc)] });
+  const rows = items.map((item) => {
+    const body = [];
+    const title = item.querySelector('h3');
+    if (title && text(title)) {
+      const h3 = doc.createElement('h3');
+      h3.textContent = text(title);
+      body.push(h3);
+    }
+    item.querySelectorAll(':scope > p.model, :scope > p.description').forEach((p) => {
+      if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+    });
+    const cta = item.querySelector('a.news-link[href], a.action-link[href]');
+    if (cta && text(cta)) {
+      const u = doc.createElement('u');
+      u.textContent = text(cta);
+      const a = linkTo(doc, cta.getAttribute('href'), '');
+      a.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(a);
+      body.push(para(doc, strong));
+    }
+    const img = item.querySelector('img[src]');
+    if (!img) return ['', body];
+    const image = doc.createElement('img');
+    image.setAttribute('src', img.getAttribute('src'));
+    image.setAttribute('alt', img.getAttribute('alt') || '');
+    return [image, body];
+  });
+  out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  return out;
 }
 
 /**
@@ -1848,7 +1896,10 @@ export const COMPONENTS = {
   customizable: cardList,
   resourcesanddownload: resources,
   '#product-detail-container': shortDescription,
-  tagcrumb: skip,
+  // a tag crumb placed as a component (ent/products/clarifix-cryotherapy-device, in a column):
+  // the Related Categories block as the template's own; hidden ones are skipped by the walk
+  tagcrumb: relatedCategories,
+  latestnews: latestNews,
   // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
   // Categories), the short description (rich text), the contact button and the secondary CTA
   'c-tagcrumb': relatedCategories,
