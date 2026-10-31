@@ -140,7 +140,9 @@ function wrapMultiNodeTag(container) {
  */
 function updateHeadingId(heading, authoredText) {
   const slug = (text) => text.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-  if (heading.id !== slug(authoredText)) return; // an explicitly authored id: keep it
+  // compared without hyphens: the backend's slug drops some spaces ours keeps (after a <br>)
+  const bare = (id) => id.replace(/-/g, '');
+  if (bare(heading.id) !== bare(slug(authoredText))) return; // an explicitly authored id: keep it
   const id = slug(heading.textContent);
   if (id && !document.getElementById(id)) heading.id = id;
 }
