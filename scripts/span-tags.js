@@ -14,11 +14,15 @@ import { toClassName } from './aem.js';
 // formatting a bracket expression may run through (and may itself be wrapped in)
 const INLINE_TAGS = new Set(['A', 'B', 'BR', 'DEL', 'EM', 'I', 'S', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U']);
 
-// `[[classes]content]` within one text node; `[` is not allowed inside, so the
-// innermost expression of `[[x]…[[y]…]` is the one matched
-const SPAN_TAG_RE = /\[\[([^\][]+)\]([^\][]*)\]/g;
+// `[[classes]content]` within one text node; the content may hold plain `[…]` (e.g. a
+// quoted "[107 patients]"), but no other `[`, so the innermost expression of
+// `[[x]…[[y]…]` is the one matched
+const SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
 // a `[[classes]` opener whose closing `]` is in a later text node
 const OPEN_TAG_RE = /\[\[([^\][]+)\]/g;
+// plain `[…]` in the content: its `]` doesn't close an expression
+const LITERAL_RE = /\[[^\][]*\]/g;
+const blank = (m) => ' '.repeat(m.length);
 
 /**
  * Parses the comma-separated class list of a bracket expression.
@@ -110,11 +114,12 @@ function wrapMultiNodeTag(container) {
   const nodes = getTextNodes(container);
   return nodes.some((openNode, i) => {
     const text = openNode.nodeValue;
+    // the first `]` that closes an expression (not the `]` of a `[[classes]` opener or of
+    // a plain `[…]`)
+    const closeAt = (value) => value.replace(OPEN_TAG_RE, blank).replace(LITERAL_RE, blank).indexOf(']');
     const open = [...text.matchAll(OPEN_TAG_RE)].pop();
-    if (!open || text.slice(open.index + open[0].length).includes(']')) return false;
+    if (!open || closeAt(text.slice(open.index + open[0].length)) >= 0) return false;
     const classes = parseClasses(open[1]);
-    // the first `]` that closes an expression (not the `]` of a `[[classes]` opener)
-    const closeAt = (value) => value.replace(OPEN_TAG_RE, (m) => ' '.repeat(m.length)).indexOf(']');
     const closeIndex = nodes.findIndex((node, j) => j > i && closeAt(node.nodeValue) >= 0);
     const closeNode = nodes[closeIndex];
     if (!classes.length || !closeNode) return false;

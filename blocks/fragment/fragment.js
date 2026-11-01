@@ -137,6 +137,11 @@ export default async function decorate(block) {
   const sections = [...fragment.children].filter((el) => el.classList.contains('section'));
   if (sections.length && isWholeSectionEmbed(section, block)) {
     if (noCta) sections.forEach((s) => removeCtas(s));
+    // The host section's styles (Section Metadata: visibility, background, divider…) still
+    // apply to what it embeds: every hoisted section gets them, except `divider`, which
+    // draws the rule above the fragment, so only on its first section.
+    const styles = [...section.classList].filter((c) => c !== 'section' && !c.endsWith('-container'));
+    sections.forEach((s, i) => s.classList.add(...styles.filter((c) => c !== 'divider' || i === 0)));
     section.replaceWith(...sections);
     return;
   }
