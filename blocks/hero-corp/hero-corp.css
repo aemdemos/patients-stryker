@@ -166,7 +166,9 @@
   line-height: calc(var(--corp-hero-heading-line-height) * 1em);
 }
 
-.section.serif .hero-corp.image-slide.image-right > div:last-child > p {
+/* a serif section's copy is Egyptienne in every slide layout (stryker.com span.urw-egyptienne:
+   procuity-icu, mcgrath-mac-ems positioned text boxes) */
+.section.serif .hero-corp.image-slide > div:last-child > p {
   font-family: var(--heading-font-family);
 }
 
