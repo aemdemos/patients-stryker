@@ -260,7 +260,13 @@ function decorateFootnotes(main) {
         fragment.append(document.createTextNode(part));
       }
     });
-    sup.replaceChildren(fragment);
+    // the links go inside formatting that holds all of the number (a bracket size span), so
+    // it keeps its size
+    let target = sup;
+    const wrapsAll = (el) => el.children.length === 1
+      && el.firstElementChild.textContent === el.textContent;
+    while (wrapsAll(target)) target = target.firstElementChild;
+    target.replaceChildren(fragment);
   });
 }
 

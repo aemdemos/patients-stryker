@@ -31,6 +31,11 @@ export default function decorateTypeTags(main) {
       const m = cls.match(SIZE);
       if (!m) return;
       const value = Number(`${m[1]}.${m[2] || 0}`);
+      // an em run inside a superscript is em of the superscript on the source, so it keeps
+      // the superscript's 75% (bone-cements citations 13.1px after 17.5px copy); em sizes in a
+      // heading are relative and already get it. A vw size is absolute, also in a superscript
+      // (inbone ® 21px: span.fontsize-1-5-vw inside the sup)
+      const inSup = !!span.closest('sup, sub');
       if (m[3] === 'vw') {
         span.style.setProperty('--corp-vw', value);
         span.classList.add('corp-vw');
@@ -38,12 +43,12 @@ export default function decorateTypeTags(main) {
         // an h1's run: × the source h1 (28px), whatever the h1's own size here (a Columns cell
         // sets its h1s to the Large Headline scale, 56px: broadway-system "Broadway® System"
         // came out 112px); in a superscript × its 0.75 (the ® 42px)
-        const sup = span.closest('sup, sub') ? ' * 0.75' : '';
+        const sup = inSup ? ' * 0.75' : '';
         span.style.fontSize = `calc(${value} * var(--heading-font-size-xxl)${sup})`;
       } else if (span.closest('h1, h2, h3, h4, h5, h6')) {
         span.style.fontSize = `${value}em`;
       } else {
-        span.style.fontSize = `calc(${value} * var(--body-font-size-m))`;
+        span.style.fontSize = `calc(${value} * var(--body-font-size-m)${inSup ? ' * 0.75' : ''})`;
         if (LINE_HEIGHTS[value]) span.style.lineHeight = LINE_HEIGHTS[value];
       }
     });

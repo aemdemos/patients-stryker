@@ -200,7 +200,7 @@ const num = (n) => String(round(n)).replace('.', '-');
 // font: 1 = Egyptienne, 2 = bold in the body font (a plain <b> inside the copy)
 const runName = ({ em, vw, font }) => {
   const [ei, ed = '0'] = String(round(em)).split('.');
-  const [vi, vd = '0'] = String(vw).split('.');
+  const [vi, vd = '0'] = String(round(vw)).split('.');
   return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
 };
 
@@ -209,10 +209,12 @@ function runOf(textNode, blockEl, serifDefault) {
   const chain = [];
   for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
   // innermost first: the em classes below the innermost vw class multiply, the first font
-  // class met is the one that applies
+  // class met is the one that applies. A superscript below the vw class is 75% of it on the
+  // source (exeter citations 15.75px in 1.5vw copy); one with the vw class inside it is not
   const props = chain.reduce((acc, e) => {
+    if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
     [...e.classList].forEach((cls) => {
-      if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+      if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
       else if (!acc.vw) acc.em *= sizeFactor(cls);
     });
     if (!acc.font && e.classList.contains('urw-egyptienne')) acc.font = 'serif';
