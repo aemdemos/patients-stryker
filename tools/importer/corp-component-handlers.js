@@ -959,11 +959,17 @@ function carousel(el, ctx) {
         if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
       });
     }
-    if (!slide.querySelector('img') && !slide.dataset.xfDesktop) return [];
     // the overlay through the component handlers (rich text, buttons, Large Headline lines
     // with their colours and their own sizes as [[size-<n>vw]] / [[size-<n>em]] tags)
     const overlay = slide.querySelector('.overlayparsys');
+    if (!slide.querySelector('img') && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
     const overlayItems = overlay ? ctx.collect(overlay) : [];
+    // a slide whose XF the page does not render (unpublished, redirect): its overlay copy is
+    // still on the live page, kept as text (sonopet-iq "Introducing Pulse Control")
+    if (!slide.querySelector('img') && !slide.dataset.xfDesktop) {
+      ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+      return overlayItems;
+    }
     const overlayNodes = overlay
       ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : undefined;
     if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;

@@ -43,14 +43,34 @@ export default function xfFragmentPath(xf) {
   return info ? info.eds : null;
 }
 
-const resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+/**
+ * An XF the export has no published copy of (unpublished, or a redirect page) that a page
+ * still renders: its fragment document is built from that page's rendering (import-xf-
+ * fragments.js, URL <page>.html?xf=<XF path>), at the path of the XF rule (approved
+ * 2026-11-01: every XF a page shows becomes its fragment).
+ * @param {string} xf XF path or URL
+ * @returns {string|null} EDS fragment path, or null (published, or not an XF)
+ */
+export function hostedFragmentPath(xf) {
+  const status = xfStatus(xf);
+  return status === 'unpublished' || status === 'redirect' ? xfToFragmentPath(xfKey(xf)) : null;
+}
+
+const resolve = (xf) => {
+  const published = xfFragmentPath(xf);
+  const hosted = published ? null : hostedFragmentPath(xf);
+  return {
+    xf, eds: published || hosted, status: xfStatus(xf), hosted: !!hosted,
+  };
+};
 
 /**
  * A page's XF references in authored order.
  * @param {string} page source page path or URL (/us/en/smart-care or …/smart-care.html)
- * @returns {object[]} fragment refs { kind: 'fragment', xf, eds, status, text, area, type }
- *   and slide refs { kind: 'slide', desktop: { xf, eds, status }, mobile: {…}, area, type };
- *   eds is null for references that cannot be imported
+ * @returns {object[]} fragment refs { kind: 'fragment', xf, eds, status, hosted, text, area,
+ *   type } and slide refs { kind: 'slide', desktop: { xf, eds, status, hosted }, mobile: {…},
+ *   area, type }; eds is null for references that cannot be imported (not an XF); hosted: the
+ *   fragment comes from the page's rendering
  */
 export function pageXfRefs(page) {
   const refs = PAGES[xfKey(page)] || [];

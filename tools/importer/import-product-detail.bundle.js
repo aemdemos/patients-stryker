@@ -3282,7 +3282,20 @@ var CustomImportScript = (() => {
     const info = xfInfo(xf);
     return info ? info.eds : null;
   }
-  var resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+  function hostedFragmentPath(xf) {
+    const status = xfStatus(xf);
+    return status === "unpublished" || status === "redirect" ? xfToFragmentPath(xfKey(xf)) : null;
+  }
+  var resolve = (xf) => {
+    const published = xfFragmentPath(xf);
+    const hosted = published ? null : hostedFragmentPath(xf);
+    return {
+      xf,
+      eds: published || hosted,
+      status: xfStatus(xf),
+      hosted: !!hosted
+    };
+  };
   function pageXfRefs(page) {
     const refs = PAGES[xfKey(page)] || [];
     return refs.map((r) => {
@@ -3336,7 +3349,7 @@ var CustomImportScript = (() => {
   var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
-    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
+    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || hostedFragmentPath(xf) })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
     const wrappers = [...root.querySelectorAll(".experienceFragment")].filter((el) => !el.parentElement.closest(".experienceFragment"));
     const matches = /* @__PURE__ */ new Map();
     const unmatched = [];
@@ -3362,7 +3375,8 @@ var CustomImportScript = (() => {
   var dmAsset = (src) => decodeURIComponent(String(src || "").split("/is/image/")[1] || "").split("?")[0].split("/").pop().toLowerCase();
   function markXfSlides(root, source) {
     const refs = pageXfRefs(source).filter((r) => r.kind === "slide");
-    const slides = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")].filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
+    const all = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    const slides = all.length === refs.length ? all : all.filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
     const unmatched = [];
     slides.forEach((slide, i) => {
       const ref = refs[i];
@@ -4363,9 +4377,13 @@ var CustomImportScript = (() => {
           if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
         });
       }
-      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
+        ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+        return overlayItems;
+      }
       const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];

@@ -1,7 +1,7 @@
 // page path (EDS or AEM names) → { aem, eds } from the export file names (each segment matched
 // by its EDS form: lowercase, non-alphanumerics → '-'), and the XF URLs the page uses
 import { readdirSync } from 'fs';
-import { pageXfRefs, xfInfo } from '../../../tools/importer/xf-fragment-path.js';
+import { pageXfRefs, xfInfo, hostedFragmentPath } from '../../../tools/importer/xf-fragment-path.js';
 
 export const edsName = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const root = new URL('../../xf-mapping/', import.meta.url);
@@ -36,4 +36,28 @@ export function pageXfs({ aem, eds }) {
     targets.forEach((t) => { if (t && t.eds) walk(t.xf); });
   }));
   return [...xfs];
+}
+
+/**
+ * The XF import URLs of a page: a published XF's publish URL, an XF without a published copy
+ * (hosted: unpublished, redirect) as <host>.html?xf=<path>, its host the page or the XF it is
+ * nested in (import-xf-fragments.js builds it from that rendering).
+ */
+export function pageXfUrls({ aem, eds }) {
+  const urls = new Set();
+  const seen = new Set();
+  const walk = (x, host, hosted) => {
+    if (seen.has(x)) return;
+    seen.add(x);
+    urls.add(hosted ? `https://www.stryker.com${host}.html?xf=${x}` : `https://www.stryker.com${x}.html`);
+    ((xfInfo(x) || {}).refs || []).forEach((child) => {
+      const nested = !xfInfo(child) && !!hostedFragmentPath(child);
+      if (xfInfo(child) || nested) walk(child, x, nested);
+    });
+  };
+  [aem, eds].forEach((p) => pageXfRefs(p).forEach((r) => {
+    const targets = r.kind === 'slide' ? [r.desktop, r.mobile] : [r];
+    targets.forEach((t) => { if (t && t.eds) walk(t.xf, aem, t.hosted); });
+  }));
+  return [...urls];
 }

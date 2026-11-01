@@ -3289,7 +3289,20 @@ var CustomImportScript = (() => {
     const info = xfInfo(xf);
     return info ? info.eds : null;
   }
-  var resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+  function hostedFragmentPath(xf) {
+    const status = xfStatus(xf);
+    return status === "unpublished" || status === "redirect" ? xfToFragmentPath(xfKey(xf)) : null;
+  }
+  var resolve = (xf) => {
+    const published = xfFragmentPath(xf);
+    const hosted = published ? null : hostedFragmentPath(xf);
+    return {
+      xf,
+      eds: published || hosted,
+      status: xfStatus(xf),
+      hosted: !!hosted
+    };
+  };
   function pageXfRefs(page) {
     const refs = PAGES[xfKey(page)] || [];
     return refs.map((r) => {
@@ -3343,7 +3356,7 @@ var CustomImportScript = (() => {
   var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
-    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
+    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || hostedFragmentPath(xf) })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
     const wrappers = [...root.querySelectorAll(".experienceFragment")].filter((el) => !el.parentElement.closest(".experienceFragment"));
     const matches = /* @__PURE__ */ new Map();
     const unmatched = [];
@@ -3369,7 +3382,8 @@ var CustomImportScript = (() => {
   var dmAsset = (src) => decodeURIComponent(String(src || "").split("/is/image/")[1] || "").split("?")[0].split("/").pop().toLowerCase();
   function markXfSlides(root, source) {
     const refs = pageXfRefs(source).filter((r) => r.kind === "slide");
-    const slides = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")].filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
+    const all = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    const slides = all.length === refs.length ? all : all.filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
     const unmatched = [];
     slides.forEach((slide, i) => {
       const ref = refs[i];
@@ -4422,9 +4436,13 @@ var CustomImportScript = (() => {
           if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
         });
       }
-      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
+        ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+        return overlayItems;
+      }
       const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
@@ -5682,15 +5700,41 @@ var CustomImportScript = (() => {
   // tools/importer/import-xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var corpTransformers = [transform, transform2, transform3];
+  function hostedContent(document, host, xf) {
+    const eds = hostedFragmentPath(xf);
+    const root = document.querySelector("#aem-specific-data") || document.body;
+    let found = null;
+    matchXfWrappers(root, host).matches.forEach((match, wrapper) => {
+      if (!found && match.eds === eds) found = wrapper;
+    });
+    if (!found) {
+      markXfSlides(root, host);
+      const slide = [...root.querySelectorAll(".carouselslide")].find((s) => s.dataset.xfDesktop === eds || s.dataset.xfMobile === eds);
+      if (slide) {
+        found = slide.querySelector(slide.dataset.xfDesktop === eds ? ".experienceFragment-ef" : ".experienceFragment-ef-mobile");
+      }
+    }
+    if (!found) throw new Error(`hosted XF ${xf} is not rendered on ${host}`);
+    const content = found.cloneNode(true);
+    document.body.replaceChildren(content);
+  }
   var import_xf_fragments_default = {
     // on the live XF page: what it hides and what its forms load (used by the corp builder)
     onLoad: ({ document }) => markLivePage(document),
     transform: (payload) => {
       const { document, url, params } = payload;
-      const key = xfKey(params.originalURL || url);
+      const address = new URL(params.originalURL || url);
+      const hostedXf = address.searchParams.get("xf");
+      if (hostedXf) hostedContent(document, `${address.origin}${address.pathname}`, hostedXf);
+      const key = xfKey(hostedXf || address.href);
       if (FRAGMENTS2[key]) return import_news_shared_fragments_default.transform(payload);
-      const info = xfInfo(key);
-      if (!info) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
+      const info = hostedXf ? {
+        eds: hostedFragmentPath(hostedXf),
+        templates: [],
+        pages: [address.pathname],
+        refs: []
+      } : xfInfo(key);
+      if (!info || !info.eds) throw new Error(`Not an XF in data/xf-index.js: ${key}`);
       const main = document.body;
       if (main.querySelector("dl.cmp-contentfragment[data-path]")) {
         const { sections, unknown } = contactDirectorySections(main, document);

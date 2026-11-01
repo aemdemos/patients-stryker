@@ -4,7 +4,9 @@
  * (decision table: tools/importer/decisions/component-map.json).
  */
 import { text, cleanRichText } from './corp-richtext.js';
-import { pageXfRefs, xfInfo, cfToFragmentPath } from './xf-fragment-path.js';
+import {
+  pageXfRefs, xfInfo, cfToFragmentPath, hostedFragmentPath,
+} from './xf-fragment-path.js';
 
 /**
  * Standalone image (stryker/components/content/standaloneimage, .c-standalone-image) →
@@ -62,8 +64,9 @@ export const isEmptyXf = (wrapper) => !squash(wrapper.textContent)
  * The rendered XF wrapper (.experienceFragment) carries no path, so the wrappers are matched
  * to the authored references in order (xf-index PAGES for a page, FRAGMENTS[xf].refs for the
  * XFs nested in an XF): a reference is taken when the wrapper's text starts like the
- * reference's text summary (when it has one); references that cannot be imported
- * (unpublished, redirect, not an XF) and do not render are skipped. Hero / carousel slide
+ * reference's text summary (when it has one); an unpublished / redirect XF the page renders is
+ * matched too (its fragment comes from this rendering: hostedFragmentPath); references that
+ * are not XFs, or do not render, are skipped. Hero / carousel slide
  * XFs (.experienceFragment-ef / -ef-mobile) are left to the hero parsers.
  * @param {Element} root the source page (or XF) content
  * @param {string} source the source page path or URL (page refs), or an XF path (nested refs)
@@ -72,7 +75,7 @@ export const isEmptyXf = (wrapper) => !squash(wrapper.textContent)
 export function matchXfWrappers(root, source) {
   const nested = xfInfo(source);
   const refs = nested
-    ? nested.refs.map((xf) => ({ kind: 'fragment', xf, eds: (xfInfo(xf) || {}).eds || null }))
+    ? nested.refs.map((xf) => ({ kind: 'fragment', xf, eds: (xfInfo(xf) || {}).eds || hostedFragmentPath(xf) }))
     : pageXfRefs(source).filter((r) => r.kind === 'fragment');
   const wrappers = [...root.querySelectorAll('.experienceFragment')]
     .filter((el) => !el.parentElement.closest('.experienceFragment'));
@@ -118,8 +121,12 @@ const dmAsset = (src) => decodeURIComponent(String(src || '').split('/is/image/'
  */
 export function markXfSlides(root, source) {
   const refs = pageXfRefs(source).filter((r) => r.kind === 'slide');
-  const slides = [...root.querySelectorAll('.carouselslide:not(.slick-cloned)')]
-    .filter((slide) => slide.querySelector('.experienceFragment-ef, .experienceFragment-ef-mobile'));
+  // one reference per slide: when every slide has one, slide i is reference i, also for slides
+  // whose XF the page does not render (an unpublished one: no XF area; sonopet-iq slides 1
+  // and 3); otherwise the slides with an XF area, in order
+  const all = [...root.querySelectorAll('.carouselslide:not(.slick-cloned)')];
+  const slides = all.length === refs.length ? all
+    : all.filter((slide) => slide.querySelector('.experienceFragment-ef, .experienceFragment-ef-mobile'));
   const unmatched = [];
   slides.forEach((slide, i) => {
     const ref = refs[i];

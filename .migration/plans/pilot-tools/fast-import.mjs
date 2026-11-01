@@ -57,7 +57,15 @@ const bundle = readFileSync(importScript, 'utf-8');
 const urls = readFileSync(urlsFile, 'utf-8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
 
 const hash = (s) => createHash('sha1').update(s).digest('hex');
-const pageFile = (url) => join(cache, 'pages', `${hash(url)}.html`);
+// a hosted XF (<host>.html?xf=…) or content fragment (?cf=…) is imported from its host's
+// snapshot: the same page, so the same file
+const cacheUrl = (url) => {
+  const u = new URL(url);
+  u.searchParams.delete('xf');
+  u.searchParams.delete('cf');
+  return u.href;
+};
+const pageFile = (url) => join(cache, 'pages', `${hash(cacheUrl(url))}.html`);
 const assetFile = (url) => join(cache, 'assets', hash(url));
 const write = (file, data) => {
   mkdirSync(dirname(file), { recursive: true });

@@ -151,18 +151,27 @@ sizes['catalog/typography.json'] = writeJson(join(DATA, 'catalog/typography.json
 sizes['catalog/components.json'] = writeJson(join(DATA, 'catalog/components.json'), catalogs.components);
 sizes['catalog/site.json'] = writeJson(join(DATA, 'catalog/site.json'), catalogs.site);
 
-// XF import lists per template: the published XFs its pages reference inline (kind
-// fragment, not hero / carousel slides), plus the XFs nested in those
+// XF import lists per template: the XFs its pages reference inline (kind fragment, not hero /
+// carousel slides), plus the XFs nested in those. A published XF from its publish URL; an XF
+// without a published copy (unpublished, redirect) from the page (or XF) that renders it:
+// <host>.html?xf=<path> (import-xf-fragments.js, approved 2026-11-01)
+const hostable = (path) => !xf.FRAGMENTS[path] && !!xf.SKIPPED[path]
+  && ['unpublished', 'redirect'].includes(xf.SKIPPED[path].status);
+const xfUrl = (path, host) => (xf.FRAGMENTS[path]
+  ? `https://www.stryker.com${path}.html`
+  : `https://www.stryker.com${host}.html?xf=${path}`);
 const xfUrls = {};
 Object.entries(xf.PAGES).forEach(([page, refs]) => {
   const { template } = catalogs.site.pages[page];
   const set = xfUrls[template] || new Set();
-  const add = (path) => {
-    if (!xf.FRAGMENTS[path] || set.has(path)) return;
-    set.add(path);
-    xf.FRAGMENTS[path].refs.forEach(add);
+  const seen = new Set();
+  const add = (path, host) => {
+    if (seen.has(path) || !(xf.FRAGMENTS[path] || hostable(path))) return;
+    seen.add(path);
+    set.add(xfUrl(path, host));
+    ((xf.FRAGMENTS[path] || {}).refs || []).forEach((child) => add(child, path));
   };
-  refs.filter((r) => r.kind === 'fragment').forEach((r) => add(r.xf));
+  refs.filter((r) => r.kind === 'fragment').forEach((r) => add(r.xf, page));
   xfUrls[template] = set;
 });
 // slide XFs (hero / carousel desktop + mobile images), imported as fragment documents too
@@ -171,16 +180,15 @@ Object.entries(xf.PAGES).forEach(([page, refs]) => {
   const { template } = catalogs.site.pages[page];
   const set = slideUrls[template] || new Set();
   refs.filter((r) => r.kind === 'slide').forEach((r) => [r.desktop, r.mobile]
-    .filter((path) => path && xf.FRAGMENTS[path]).forEach((path) => set.add(path)));
+    .filter((path) => path && (xf.FRAGMENTS[path] || hostable(path)))
+    .forEach((path) => set.add(xfUrl(path, page))));
   slideUrls[template] = set;
 });
 Object.entries(slideUrls).filter(([, set]) => set.size).forEach(([template, set]) => {
-  writeFileSync(join(DATA, `catalog/xf-urls-slides-${template}.txt`), `${[...set].sort()
-    .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);
+  writeFileSync(join(DATA, `catalog/xf-urls-slides-${template}.txt`), `${[...set].sort().join('\n')}\n`);
 });
 Object.entries(xfUrls).forEach(([template, set]) => {
-  writeFileSync(join(DATA, `catalog/xf-urls-${template}.txt`), `${[...set].sort()
-    .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);
+  writeFileSync(join(DATA, `catalog/xf-urls-${template}.txt`), `${[...set].sort().join('\n')}\n`);
 });
 
 // content-fragment import list: one URL per content fragment, the publish page of an XF

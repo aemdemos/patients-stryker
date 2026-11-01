@@ -27,12 +27,41 @@ import { CORP_PAGE } from './corp-page.js';
 import { markLivePage } from './corp-section-builder.js';
 
 import sharedFragmentsImport, { FRAGMENTS as SHARED } from './import-news-shared-fragments.js';
-import { xfKey, xfInfo } from './xf-fragment-path.js';
-import { contactDirectorySections } from './corp-components.js';
+import { xfKey, xfInfo, hostedFragmentPath } from './xf-fragment-path.js';
+import { contactDirectorySections, matchXfWrappers, markXfSlides } from './corp-components.js';
 
 // every XF: the corp section builder, as the page importers (corp-import.js)
 const CORP_XF_TEMPLATE = { name: 'corp-xf', site: 'corp' };
 const corpTransformers = [corpSectionsTransformer, cleanupTransformer, dmImagesTransformer];
+
+/**
+ * The rendering of a hosted XF on its host page (or XF) → the document's whole content: the
+ * XF wrapper matched to it (matchXfWrappers), or the slide image area of the carousel slide
+ * marked with its fragment path (markXfSlides).
+ * @param {Document} document the host page
+ * @param {string} host the host page or XF URL
+ * @param {string} xf the hosted XF path
+ */
+function hostedContent(document, host, xf) {
+  const eds = hostedFragmentPath(xf);
+  const root = document.querySelector('#aem-specific-data') || document.body;
+  let found = null;
+  matchXfWrappers(root, host).matches.forEach((match, wrapper) => {
+    if (!found && match.eds === eds) found = wrapper;
+  });
+  if (!found) {
+    markXfSlides(root, host);
+    const slide = [...root.querySelectorAll('.carouselslide')]
+      .find((s) => s.dataset.xfDesktop === eds || s.dataset.xfMobile === eds);
+    if (slide) {
+      found = slide.querySelector(slide.dataset.xfDesktop === eds ? '.experienceFragment-ef' : '.experienceFragment-ef-mobile');
+    }
+  }
+  if (!found) throw new Error(`hosted XF ${xf} is not rendered on ${host}`);
+  const content = found.cloneNode(true);
+  // the content starts where an XF page starts (its body)
+  document.body.replaceChildren(content);
+}
 
 export default {
   // on the live XF page: what it hides and what its forms load (used by the corp builder)
@@ -40,10 +69,19 @@ export default {
 
   transform: (payload) => {
     const { document, url, params } = payload;
-    const key = xfKey(params.originalURL || url);
+    const address = new URL(params.originalURL || url);
+    // an XF without a published copy (unpublished, redirect) that a page or XF renders:
+    // <host>.html?xf=<XF path>; its fragment is built from that rendering
+    const hostedXf = address.searchParams.get('xf');
+    if (hostedXf) hostedContent(document, `${address.origin}${address.pathname}`, hostedXf);
+    const key = xfKey(hostedXf || address.href);
     if (SHARED[key]) return sharedFragmentsImport.transform(payload);
-    const info = xfInfo(key);
-    if (!info) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
+    const info = hostedXf
+      ? {
+        eds: hostedFragmentPath(hostedXf), templates: [], pages: [address.pathname], refs: [],
+      }
+      : xfInfo(key);
+    if (!info || !info.eds) throw new Error(`Not an XF in data/xf-index.js: ${key}`);
 
     const main = document.body;
     if (main.querySelector('dl.cmp-contentfragment[data-path]')) {
