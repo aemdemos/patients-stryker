@@ -292,7 +292,8 @@ const isLabel = (p) => {
  *   - a size other than the section's copy size (headings: their h-* size) → [[size-<n>em]]
  *     (copy: × the 14px base copy, headings: × the heading)
  *   - Egyptienne copy in a section without the serif style, Egyptienne bold → [[serif]]
- *   - a plain bold inside the copy (the body font, bold) → [[body-font]], unless bold-body
+ *   - a plain bold inside the copy (the body font, bold) → [[body-font]], unless bold-body;
+ *     body-font copy in a serif section → [[body-font]]
  * In a Hero Corp block with size-<n> only the vw sizes are tagged (the block sizes its lines).
  * @param {Element[]} nodes the section's nodes
  * @param {string[]} styles the section's styles
@@ -335,6 +336,11 @@ export function finishRuns(nodes, styles) {
         // site sets in Futura) always (Egyptienne bold on live)
         if (!inHero && m[5] === '1' && (!serifSection || run.closest('strong'))) tags.push('serif');
         if (m[5] === '2' && !styles.includes('bold-body')) tags.push('body-font');
+        // body-font copy in a serif section (a Humanist line among Egyptienne ones: cranial-
+        // guidance-software "*Overall system accuracy…"), not in headings or bold (Futura)
+        if (m[5] === '0' && serifSection && !inHero && !isHeading && !run.closest('strong, b')) {
+          tags.push('body-font');
+        }
       }
       if (tags.length) {
         run.before(doc.createTextNode(`[[${tags.join(',')}]`));
@@ -460,6 +466,10 @@ export function mapColours(root) {
     const cls = colourClass(own.get(el)) || (own.get(el) === '000000' && linkOnly(el) ? 'color-black' : '');
     if (!cls) return;
     if (cls === 'color-teal' && linkOnly(el)) return;
+    // a colour around a link alone (not inside it) does not reach the link, which keeps the
+    // link colour on the source (infinity "CONTACT US": light grey span, teal link)
+    const around = !el.closest('a[href]') && linkOnly(el);
+    if (around && cls !== 'color-black') return;
     const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll('*')].some((d) => own.get(d));
     const wrapFree = (parent) => {
       let run = [];

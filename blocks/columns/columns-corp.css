@@ -42,6 +42,14 @@ body.corp .section.serif .columns :is(ul, a) {
   font-size: inherit;
 }
 
+/* buttons keep the button type (Futura 14px) in a serif section, which sets every cell link
+   in the serif copy (stryker.com flowtriever-system / artix "CONNECT WITH AN EXPERT") */
+body.corp .section.serif .columns p.button-wrapper a.button:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 /* h-serif section style (styles-corp.css): the cells' h2 / h3 in Egyptienne Light, as the
    source's plain h2 / h3 (inspace "Shorter operative time"); bold parts stay Futura */
 body.corp .section.h-serif .columns > div > div :is(h2, h3) {

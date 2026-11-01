@@ -8,7 +8,8 @@
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   decorateSections(main)  after the section metadata is applied, before the blocks are
- *                           decorated: builds blocks from section styles (accordion-panel)
+ *                           decorated: builds blocks from section styles (accordion-panel,
+ *                           carousel)
  *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
@@ -26,6 +27,7 @@ import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
 import decorateTypeTags from './corp-type.js';
+import buildCarouselSections from './corp-carousel.js';
 import fetchPlainHtml from './plain-html.js';
 
 /**
@@ -188,6 +190,7 @@ export function decorateSections(main) {
   decorateSpacing(main);
   decorateTypeTags(main);
   buildAccordionSections(main);
+  buildCarouselSections(main);
 }
 
 /**

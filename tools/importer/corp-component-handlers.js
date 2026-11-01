@@ -498,8 +498,10 @@ export function columnItems(columns, split, ctx, widths = null, starts = null) {
   // grey italic lines): only when no column is ordinary rich text (about 80 column controls
   // put a Large Headline next to rich text, e.g. jr45/july); the h1 scale applies anyway
   const headline = cols.some((items) => items.some((it) => it.role === 'headline'));
-  const richText = cols.some((items) => items.some((it) => it.role === 'text')
-    && !items.some((it) => it.role === 'headline'));
+  // rich text in any column, also under a Large Headline in the same column (its lines carry
+  // their own sizes and fonts as tags): core-2-console "Everyone claims…", safeair, high-speed-
+  // drills, where large-headline set that copy in the 21px serif (Humanist 14px on the source)
+  const richText = cols.some((items) => items.some((it) => it.role === 'text'));
   if (headline && !richText) modifiers.push('large-headline');
   if (headline && richText) ctx.report.notes.push('Columns: Large Headline next to rich text, large-headline modifier left out');
   const flows = (items) => items.filter((it) => it.type === 'flow' && it.nodes.length);
@@ -652,6 +654,18 @@ function buttons(el, ctx) {
   }
   el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
   const nodes = [...el.querySelectorAll('a[href]')].filter((a) => !a.closest('.cta-title, .cta-description')).map((a) => {
+    // a text CTA (a.action-link: Futura bold uppercase teal with a triangle, as span.standalone-
+    // link; 419 curated CTAs, e.g. infinity "LINKEDIN") → bold + underline link (link-strong),
+    // not a button
+    if (text(a) && a.classList.contains('action-link')) {
+      const u = doc.createElement('u');
+      u.textContent = text(a);
+      const link = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+      link.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(link);
+      return para(doc, strong);
+    }
     if (text(a)) return buttonNode(doc, a, text(a));
     // an image button (.cta-img): the image, linked
     const source = a.querySelector('img');
@@ -845,10 +859,16 @@ function fullWidthImage(el, ctx) {
 function fullWidthImageHero(el, ctx) {
   const items = [];
   const title = el.querySelector('.hero-space h1, .hero-space h2');
-  // a title line set transparent (rgba(…, 0): 31 heroes) is invisible on live: not imported
-  // (the banner headline is the page title then)
+  // a title line set transparent (rgba(…, 0): 31 heroes) is invisible on live but is the page's
+  // heading for search engines and screen readers: kept, visually hidden ([[visually-hidden]],
+  // approved 2026-11-01; nse/products/silverglide "SILVERGlide")
   const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute('style') || '');
-  if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+  if (title && text(title) && transparent) {
+    const h = ctx.doc.createElement(title.tagName.toLowerCase());
+    h.textContent = `[[visually-hidden]${text(title)}]`;
+    if (title.tagName === 'H1') ctx.h1 = true;
+    items.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
   if (title && text(title) && !transparent) {
     const box = contentCopy(title, ctx.doc);
     // the heading's own inline colour (style on the h1) as a span the cleaner maps to a tag
@@ -902,9 +922,25 @@ function carousel(el, ctx) {
   if (!slides.length) return [];
   const index = ctx.slideIndex || 0;
   ctx.slideIndex = index + slides.length;
-  // a carousel of several slides: one Hero Corp per slide, in order (Hero Corp shows one
-  // slide; the rotation is lost, the content is not)
-  if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+  // a carousel of several slides: one Hero Corp per slide, each slide's section with the
+  // `carousel` style (scripts/corp.js buildCarouselSections rotates consecutive ones, approved
+  // 2026-11-01); the first slide carries the source options: autoplay-<ms> (data-autoplay +
+  // data-autoplayspeed) and fade (data-transition)
+  const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+  const options = ['carousel'];
+  if (widget && widget.getAttribute('data-autoplay') === 'true') {
+    const ms = Number(widget.getAttribute('data-autoplayspeed')) || 3000;
+    options.push(`autoplay-${Math.max(ms, 1000)}`);
+  }
+  if (widget && widget.getAttribute('data-transition') === 'true') options.push('fade');
+  const multi = slides.length > 1;
+  let first = true;
+  const slideStyles = () => {
+    if (!multi) return [];
+    const out = first ? options : ['carousel'];
+    first = false;
+    return out;
+  };
   return slides.flatMap((slide, i) => {
     // slide XFs that cannot be imported (e.g. a mobile variation never published) are
     // reported; the live page shows what it can, nothing is invented
@@ -942,7 +978,10 @@ function carousel(el, ctx) {
     });
     // the overlay's copy style and serif headings, as for Columns cells
     return [{
-      type: 'own', kind: 'hero', styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [], nodes: [...holder.children],
+      type: 'own',
+      kind: 'hero',
+      styles: [...slideStyles(), ...(overlayNodes ? cellStyles([overlayNodes], ctx) : [])],
+      nodes: [...holder.children],
     }];
   });
 }

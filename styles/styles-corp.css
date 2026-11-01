@@ -113,6 +113,14 @@
   --corp-tile-width-xl: 420px; /* from 1440px */
   --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
   --corp-jump-item-width: 14%; /* Sticky Nav item: source .c-navigation-bar nav a */
+  --corp-carousel-arrow-width: 36px; /* hero carousel: source .slick-arrow (arrow_left3.png) */
+  --corp-carousel-arrow-height: 65px;
+  --corp-carousel-arrow-inset: 14px; /* from the sides */
+  --corp-carousel-chevron: 44px; /* the chevron's rotated square: 65px tall */
+  --corp-carousel-chevron-shadow: 0 0 2px rgb(0 0 0 / 35%); /* the PNG's grey edge: visible on white */
+  --corp-carousel-dot-size: 16px; /* source .slick-dots button (dots.png) */
+  --corp-carousel-dot-gap: 13px; /* 29px apart */
+  --corp-carousel-speed: 300ms; /* source data-speed */
   --corp-jump-bar-height: 80px; /* Sticky Nav in the page flow: source .c-navigation-bar */
   --corp-jump-bar-height-pinned: 70px; /* stuck to the top: source .nav-wrap.sticky */
   --corp-jump-box-height-pinned: 62px; /* its gold box (the item keeps 4px padding) */
@@ -813,6 +821,136 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: var(--heading-font-family);
 }
 
+/* section style `carousel` (scripts/corp-carousel.js): consecutive Hero Corp slide sections
+   are one carousel showing one slide at a time; `fade` fades the next slide in, else it slides
+   in from the right. Measured on /us/en/foot-and-ankle/products/augment.html and
+   versitomic-flexible-reaming-system: from 600px (source 841px) white chevrons 14px in from
+   the sides, no dots; below 600px no chevrons, 16px dots 29px apart centred 10px under the
+   slide, gold = the current one */
+:where(body.corp) main > .section.hero-corp-carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-item:not(.hero-corp-carousel-active, .hero-corp-carousel-measure) {
+  display: none;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-fade {
+  animation: corp-carousel-fade var(--corp-carousel-speed) ease;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-slide-in > div {
+  animation: corp-carousel-slide var(--corp-carousel-speed) ease;
+}
+
+@keyframes corp-carousel-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes corp-carousel-slide {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+
+:where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: var(--corp-carousel-arrow-width);
+  height: var(--corp-carousel-arrow-height);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-prev {
+  left: var(--corp-carousel-arrow-inset);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-next {
+  right: var(--corp-carousel-arrow-inset);
+}
+
+/* the chevron: two sides of a rotated square, its corner at the arrow's outer edge */
+:where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: var(--corp-carousel-chevron);
+  height: var(--corp-carousel-chevron);
+  border: solid var(--color-white);
+  border-width: 0 0 2px 2px;
+  filter: drop-shadow(var(--corp-carousel-chevron-shadow));
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-prev::before {
+  left: calc(var(--corp-carousel-chevron) * 0.15);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-next::before {
+  right: calc(var(--corp-carousel-chevron) * 0.15);
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--corp-carousel-dot-gap);
+  margin: var(--space-block-s) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots button {
+  display: block;
+  width: var(--corp-carousel-dot-size);
+  height: var(--corp-carousel-dot-size);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-surface-muted);
+  border-radius: 50%;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots button[aria-current="true"] {
+  border-color: var(--color-accent-link-hover);
+  background: var(--color-accent);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+    display: block;
+  }
+
+  :where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots {
+    display: none;
+  }
+}
+
+/* bracket tag `[[visually-hidden]…]`: text kept for search engines and screen readers, not
+   shown (stryker.com hero titles set transparent, e.g. nse/products/silverglide); a heading
+   that holds only it takes no room either */
+:where(body.corp) main span.visually-hidden,
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> span.visually-hidden:only-child) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
    font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
 :where(body.corp) main span.body-font,
@@ -822,12 +960,13 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
    bold news subtitle, or "Reorder #7502" in a Columns cell on sage-barrier-cream-cloths)
-   instead of the corp Futura bold, in default content and blocks; Futura bold (bold + italic)
-   and buttons stay Futura */
-:where(body.corp) main > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
-:where(body.corp) .tabs-panel > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
-:where(body.corp) .accordion-item-body > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)),
-:where(body.corp) .fragment > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em)) {
+   instead of the corp Futura bold, in default content and blocks; Futura bold (bold + italic),
+   buttons and bold words in a heading (a spacing box can hold one inside its <p>: isolibrium
+   "Integrated and intuitive") stay Futura */
+:where(body.corp) main > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .tabs-panel > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .accordion-item-body > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .fragment > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *) {
   font-family: inherit;
 }
 

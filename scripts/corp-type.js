@@ -8,7 +8,8 @@
  *     600px (source 840px), from 600px <n>vw up to <n> × 14px (the source's fixed size from
  *     1439px); styles/styles-corp.css span.corp-vw
  *   - size-<n>em (size-1-75em, size-2-19em): <n> × the base copy (14px) in copy, <n> × the
- *     heading's size in a heading (the source's nested .fontsize-<x>em classes, multiplied)
+ *     heading's size in a heading (the source's nested .fontsize-<x>em classes, multiplied),
+ *     <n> × the source h1 (28px) in an h1
  *   - serif: Egyptienne copy (source span.urw-egyptienne), styles-corp.css span.serif
  */
 
@@ -33,6 +34,12 @@ export default function decorateTypeTags(main) {
       if (m[3] === 'vw') {
         span.style.setProperty('--corp-vw', value);
         span.classList.add('corp-vw');
+      } else if (span.closest('h1') && !span.parentElement.closest('[class*="size-"]')) {
+        // an h1's run: × the source h1 (28px), whatever the h1's own size here (a Columns cell
+        // sets its h1s to the Large Headline scale, 56px: broadway-system "Broadway® System"
+        // came out 112px); in a superscript × its 0.75 (the ® 42px)
+        const sup = span.closest('sup, sub') ? ' * 0.75' : '';
+        span.style.fontSize = `calc(${value} * var(--heading-font-size-xxl)${sup})`;
       } else if (span.closest('h1, h2, h3, h4, h5, h6')) {
         span.style.fontSize = `${value}em`;
       } else {

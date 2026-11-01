@@ -540,6 +540,9 @@ var CustomImportScript = (() => {
           else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
           if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
+          if (m[5] === "0" && serifSection && !inHero && !isHeading && !run.closest("strong, b")) {
+            tags.push("body-font");
+          }
         }
         if (tags.length) {
           run.before(doc.createTextNode(`[[${tags.join(",")}]`));
@@ -632,6 +635,8 @@ var CustomImportScript = (() => {
       const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
+      const around = !el.closest("a[href]") && linkOnly(el);
+      if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
       const wrapFree = (parent) => {
         let run = [];
@@ -3511,6 +3516,11 @@ var CustomImportScript = (() => {
       const titleLink = title.querySelector("a[href]");
       if (titleLink) h3.append(link(document, titleLink, clean2(titleLink.textContent)));
       else h3.textContent = clean2(title.textContent);
+      if (title.classList.contains("futura-bold") || title.querySelector(".futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.append(...h3.childNodes);
+        h3.append(strong);
+      }
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p").forEach((source) => {
@@ -3960,7 +3970,7 @@ var CustomImportScript = (() => {
       return cellNodes(items, ctx, { marks: true });
     });
     const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
-    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text"));
     if (headline2 && !richText) modifiers.push("large-headline");
     if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
@@ -4107,6 +4117,15 @@ var CustomImportScript = (() => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
     });
     const nodes = [...el.querySelectorAll("a[href]")].filter((a) => !a.closest(".cta-title, .cta-description")).map((a) => {
+      if (text(a) && a.classList.contains("action-link")) {
+        const u = doc.createElement("u");
+        u.textContent = text(a);
+        const link3 = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+        link3.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(link3);
+        return para(doc, strong);
+      }
       if (text(a)) return buttonNode(doc, a, text(a));
       const source = a.querySelector("img");
       if (!source) return null;
@@ -4260,7 +4279,12 @@ var CustomImportScript = (() => {
     const items = [];
     const title = el.querySelector(".hero-space h1, .hero-space h2");
     const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute("style") || "");
-    if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+    if (title && text(title) && transparent) {
+      const h = ctx.doc.createElement(title.tagName.toLowerCase());
+      h.textContent = `[[visually-hidden]${text(title)}]`;
+      if (title.tagName === "H1") ctx.h1 = true;
+      items.push({ type: "flow", role: "text", nodes: [h] });
+    }
     if (title && text(title) && !transparent) {
       const box = contentCopy(title, ctx.doc);
       const colour = title.getAttribute("style");
@@ -4310,7 +4334,21 @@ var CustomImportScript = (() => {
     if (!slides.length) return [];
     const index = ctx.slideIndex || 0;
     ctx.slideIndex = index + slides.length;
-    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+    const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+    const options = ["carousel"];
+    if (widget && widget.getAttribute("data-autoplay") === "true") {
+      const ms = Number(widget.getAttribute("data-autoplayspeed")) || 3e3;
+      options.push(`autoplay-${Math.max(ms, 1e3)}`);
+    }
+    if (widget && widget.getAttribute("data-transition") === "true") options.push("fade");
+    const multi = slides.length > 1;
+    let first = true;
+    const slideStyles = () => {
+      if (!multi) return [];
+      const out = first ? options : ["carousel"];
+      first = false;
+      return out;
+    };
     return slides.flatMap((slide, i) => {
       const ref = (ctx.slideRefs || [])[index + i];
       if (ref) {
@@ -4339,7 +4377,7 @@ var CustomImportScript = (() => {
       return [{
         type: "own",
         kind: "hero",
-        styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [],
+        styles: [...slideStyles(), ...overlayNodes ? cellStyles([overlayNodes], ctx) : []],
         nodes: [...holder.children]
       }];
     });

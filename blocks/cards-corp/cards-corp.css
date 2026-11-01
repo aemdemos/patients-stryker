@@ -133,6 +133,12 @@
   line-height: var(--paragraph-line-height);
 }
 
+/* a Bold title: Futura bold, also when linked (stryker.com h3.futura-bold card lists, e.g.
+   orthopaedic-instruments/products/tpx-hd "Related products": 21px Futura 700) */
+.cards-corp.teaser h3 strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
 
 /* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
    title text (h3 / gold eyebrow) keep their own sizes */
@@ -205,6 +211,10 @@
 .cards-corp.teaser h3 a:any-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+.cards-corp.teaser h3 strong > a:any-link {
+  font-weight: inherit;
 }
 
 .cards-corp.teaser h3 a:any-link:is(:hover, :focus) {

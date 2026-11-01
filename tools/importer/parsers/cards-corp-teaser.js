@@ -45,6 +45,13 @@ function textCell(item, document) {
     const titleLink = title.querySelector('a[href]');
     if (titleLink) h3.append(link(document, titleLink, clean(titleLink.textContent)));
     else h3.textContent = clean(title.textContent);
+    // a title authored in Futura bold (h3.futura-bold, 3 card lists: tpx-hd, bpx) → Bold,
+    // Futura bold on corp pages; the others keep the light serif title
+    if (title.classList.contains('futura-bold') || title.querySelector('.futura-bold')) {
+      const strong = document.createElement('strong');
+      strong.append(...h3.childNodes);
+      h3.append(strong);
+    }
     body.push(h3);
   }
   item.querySelectorAll('.desc-container > p').forEach((source) => {
