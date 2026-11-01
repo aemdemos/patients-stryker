@@ -50,6 +50,12 @@ body.long-page-detail-corp main .cards-corp.resources .cards-corp-card-image {
   flex: 0 0 30%;
 }
 
+/* in the VLC column (`column-10-12`, 10/12 wide on phones) the cover is the source's 33%
+   of the download (103px at 375px) */
+body.long-page-detail-corp main > .section.column-10-12 .cards-corp.resources .cards-corp-card-image {
+  flex-basis: 33%;
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main .cards-corp.resources > ul > li {
     display: list-item;
@@ -57,21 +63,54 @@ body.long-page-detail-corp main .cards-corp.resources .cards-corp-card-image {
 }
 
 /* ---- section style `column-10-12`: the Virtual Learning Center video item ----
-   From 900px (source 1024px) a centred 10/12 column, as the stryker.com AEM grid sets it
-   (10 columns, offset 1: 1175px at 1440px), the video, title and copy 15px in (1144px at
-   x=148). The downloads row is 11/12 wide from the same left edge (six 184px covers at
-   1440px). Full width below 900px, as on the source phones.
+   A centred 10/12 column, as the stryker.com AEM grid sets it (10 columns, offset 1:
+   1175px at 1440px), the copy 15px in (1144px at x=148). The downloads row is 11/12 wide
+   from the same left edge (six 184px covers at 1440px). The source keeps the small print
+   and downloads in that column at every width (47px in at 375px); the title and its
+   description are full width below 768px (EDS 600px) and the video below 1440px (EDS
+   1200px), measured on brent-morris and the Dr. R. Sean Churchill pages.
    Spacing measured on the source: video → title 20px (30px from 600px), description →
-   downloads 20px (29px), downloads → small print 27px (40px); the small print (11.2px)
+   downloads 20px (29px), the covers → small print 35px (55px from 600px), description → small print (no downloads)
+   20px (30px); the small print (11.2px)
    keeps the 14px paragraph's 19.25px lines. The gaps are set as top margins (they collapse
    with the 15px margin of the video / description above) */
+body.long-page-detail-corp main > .section.column-10-12 > div {
+  max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+}
+
+body.long-page-detail-corp main > .section.column-10-12 > .cards-corp-wrapper {
+  max-width: calc(min(100vw, var(--container-max)) * 11 / 12);
+  margin-inline: calc((100% - min(100vw, var(--container-max)) * 10 / 12) / 2) auto;
+}
+
+body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper,
+body.long-page-detail-corp main > .section.column-10-12:not(.disclaimer) > .default-content-wrapper {
+  max-width: var(--container-max);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.column-10-12:not(.disclaimer) > .default-content-wrapper {
+    max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+  }
+}
+
+@media (width >= 1200px) {
+  body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper {
+    max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+  }
+}
+
 body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper + .default-content-wrapper,
 body.long-page-detail-corp main > .section.column-10-12 > .default-content-wrapper + .cards-corp-wrapper {
   margin-top: var(--space-block-l);
 }
 
-body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:last-child) {
-  margin-bottom: calc(var(--space-block) + var(--space-block-s));
+body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: calc(var(--space-section) + var(--space-block-s));
+}
+
+body.long-page-detail-corp main > .section.column-10-12:not(.disclaimer):has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: var(--space-block-l);
 }
 
 body.long-page-detail-corp main > .section.disclaimer.column-10-12 p {
@@ -84,19 +123,12 @@ body.long-page-detail-corp main > .section.disclaimer.column-10-12 p {
     margin-top: var(--space-section);
   }
 
-  body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:last-child) {
-    margin-bottom: calc(var(--space-section) + var(--space-block-s));
-  }
-}
-
-@media (width >= 900px) {
-  body.long-page-detail-corp main > .section.column-10-12 > div {
-    max-width: calc(min(100vw, var(--container-max)) * 10 / 12);
+  body.long-page-detail-corp main > .section.column-10-12:has(> .cards-corp-wrapper:nth-last-child(1 of :not(:empty))) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
-  body.long-page-detail-corp main > .section.column-10-12 > .cards-corp-wrapper {
-    max-width: calc(min(100vw, var(--container-max)) * 11 / 12);
-    margin-inline: calc((100% - min(100vw, var(--container-max)) * 10 / 12) / 2) auto;
+  body.long-page-detail-corp main > .section.column-10-12:not(.disclaimer):has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+    margin-bottom: var(--space-section);
   }
 }
 

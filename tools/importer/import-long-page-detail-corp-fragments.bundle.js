@@ -167,7 +167,17 @@ var CustomImportScript = (() => {
     ["fontsize-8em", "disclaimer"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
-    ["fontsize-1-75em", "p-1-75"]
+    ["fontsize-1-75em", "p-1-75"],
+    // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
+    ["fontsize-2em", "p-2"],
+    ["fontsize-2-5em", "p-2-5"]
+  ];
+  var SIZE_TAGS = [
+    ["fontsize-1-25em", "text-1-25"],
+    ["fontsize-1-5em", "text-1-5"],
+    ["fontsize-1-75em", "text-1-75"],
+    ["fontsize-2em", "text-2"],
+    ["fontsize-2-5em", "text-2-5"]
   ];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
@@ -182,7 +192,13 @@ var CustomImportScript = (() => {
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
     const size = SIZE_STYLES.find(([cls]) => covers(cls));
-    const font = FONT_STYLES.find(([cls]) => covers(cls));
+    const coversFont = (cls) => copy.every((el) => {
+      const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
+      const covered = squash(spans.map((span) => span.textContent).join("")) + squash(bold.map((span) => span.textContent).join(""));
+      return spans.length > 0 && covered.length === squash(el.textContent).length;
+    });
+    const font = FONT_STYLES.find(([cls]) => coversFont(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
   function sameLineText(node, direction) {
@@ -241,12 +257,14 @@ var CustomImportScript = (() => {
   }
   function tagTextSize(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
-      if (span.parentElement.closest(".fontsize-1-25em") || !text2(span)) return;
-      const block = span.closest("p, li");
-      if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
-      if (squash(block.textContent) === squash(span.textContent)) return;
-      bracketTag([span], "text-1-25", root);
+    SIZE_TAGS.forEach(([cls, tag]) => {
+      [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
+        if (span.parentElement.closest(`.${cls}`) || !text2(span)) return;
+        const block = span.closest("p, li");
+        if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
+        if (squash(block.textContent) === squash(span.textContent)) return;
+        bracketTag([span], tag, root);
+      });
     });
   }
   function tagGoldText(root) {
@@ -309,16 +327,7 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    root.querySelectorAll("span.futura-bold").forEach((el) => {
-      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
-        rename(el, "strong");
-        return;
-      }
-      const strong = rename(el, "strong");
-      const em = root.ownerDocument.createElement("em");
-      while (strong.firstChild) em.append(strong.firstChild);
-      strong.append(em);
-    });
+    root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
     root.querySelectorAll("span, font").forEach(unwrap);
@@ -508,6 +517,7 @@ var CustomImportScript = (() => {
     if (!match) return "";
     const others = [...col.parentElement.children].filter((el) => el !== col);
     if (others.some((el) => text2(el) || el.querySelector("img, video, iframe"))) return "";
+    if (/\bcol-md-3\b/.test(col.className)) return "image-1-4";
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
@@ -799,7 +809,8 @@ var CustomImportScript = (() => {
       }
       if (keep && component.matches(keep)) {
         if (component.getAttribute("data-keep") === "section") {
-          startSection("kept").nodes.push(component);
+          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(component);
+          component.removeAttribute("data-section-style");
           lastKept = sections[sections.length - 1];
           current = null;
           return;
@@ -1594,12 +1605,41 @@ var CustomImportScript = (() => {
             if (i) h1.append(doc.createElement("br"));
             h1.append(...line.childNodes);
           });
+          [...h1.querySelectorAll("strong, em")].reverse().forEach((el) => {
+            let last = el.lastChild;
+            while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
+              if (last.nodeName === "BR") el.after(last);
+              else last.remove();
+              last = el.lastChild;
+            }
+          });
           out.push(h1);
         } else out.push(...lines);
       } else if (c.matches(".c-curatedcta, .buttonset")) out.push(...buttonNodes(c, doc));
       else out.push(c);
     });
     return out;
+  }
+  function sizeTag(copyStyle) {
+    const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
+    return size ? `text-${size.slice(2)}` : "";
+  }
+  function rowCopyStyle(cells, doc) {
+    const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+    const weight = {};
+    copy.forEach((n) => {
+      weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text3(n).length;
+    });
+    const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
+    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => {
+      const tag = sizeTag(n.copyStyle);
+      const targets = n.matches("ul, ol") ? [...n.querySelectorAll(":scope > li")] : [n];
+      targets.forEach((el) => {
+        el.prepend(doc.createTextNode(`[[${tag}]`));
+        el.append(doc.createTextNode("]"));
+      });
+    });
+    return dominant;
   }
   var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
   function columnWidth(col) {
@@ -1622,11 +1662,13 @@ var CustomImportScript = (() => {
       const key = columns.map(columnWidth).join(",");
       const variant = COLUMN_VARIANTS[key];
       const cells = columns.map((col) => cellNodes(col, doc));
+      const style = rowCopyStyle(cells, doc);
       const block = WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });
       block.setAttribute("data-keep", "section");
+      if (style) block.setAttribute("data-section-style", style);
       wrapper.replaceWith(block);
     });
     [...main.querySelectorAll(".c-marketo-form")].forEach((component) => {
@@ -1653,7 +1695,12 @@ var CustomImportScript = (() => {
     videoCaptions(main, doc);
     const hasTitle = !!(main.querySelector(".h1-title h1") && text3(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     const firstHeadline = !hasTitle && main.querySelector(".c-largeheadline");
-    if (firstHeadline && text3(firstHeadline)) firstHeadline.setAttribute("data-page-title", "");
+    if (firstHeadline && text3(firstHeadline)) {
+      firstHeadline.setAttribute("data-page-title", "");
+      firstHeadline.querySelectorAll("b").forEach((b) => {
+        if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
+      });
+    }
     columnRows(main, doc);
     buildArticle(element, {
       keep: ".c-resourcesanddownload, [data-keep]",
