@@ -101,8 +101,8 @@ function removeIfEmpty(node, container) {
 }
 
 /**
- * Wraps the first bracket expression whose `[[classes]` and `]` are in different text
- * nodes of the container, i.e. whose content runs through formatting (bold, links, <br>).
+ * Wraps the first innermost bracket expression whose `[[classes]` and `]` are in different
+ * text nodes of the container, i.e. whose content runs through formatting (bold, links, <br>).
  * @param {Element} container The container
  * @returns {boolean} Whether an expression was wrapped
  */
@@ -113,12 +113,22 @@ function wrapMultiNodeTag(container) {
     const open = [...text.matchAll(OPEN_TAG_RE)].pop();
     if (!open || text.slice(open.index + open[0].length).includes(']')) return false;
     const classes = parseClasses(open[1]);
-    const closeNode = nodes.slice(i + 1).find((node) => node.nodeValue.includes(']'));
+    // the first `]` that closes an expression (not the `]` of a `[[classes]` opener)
+    const closeAt = (value) => value.replace(OPEN_TAG_RE, (m) => ' '.repeat(m.length)).indexOf(']');
+    const closeIndex = nodes.findIndex((node, j) => j > i && closeAt(node.nodeValue) >= 0);
+    const closeNode = nodes[closeIndex];
     if (!classes.length || !closeNode) return false;
+    // an expression opened in between (nested, e.g. `[[body-font]**[[color-gold]"]**]`) is
+    // wrapped first: that `]` closes it, not this one
+    const opens = (value) => [...value.matchAll(OPEN_TAG_RE)].length > 0;
+    const before = closeNode.nodeValue.slice(0, closeAt(closeNode.nodeValue));
+    if (nodes.slice(i + 1, closeIndex).some((node) => opens(node.nodeValue)) || opens(before)) {
+      return false;
+    }
 
     const range = document.createRange();
     range.setStart(openNode, open.index + open[0].length);
-    range.setEnd(closeNode, closeNode.nodeValue.indexOf(']'));
+    range.setEnd(closeNode, closeAt(closeNode.nodeValue));
     // the extracted copy keeps formatting that the brackets cut through (e.g. a
     // partially bracketed <strong>); the span lands where the content was
     const span = createSpan(classes, range.extractContents());
