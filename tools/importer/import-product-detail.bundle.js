@@ -4113,6 +4113,12 @@ var CustomImportScript = (() => {
       h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), label(text(a), true)) : doc.createTextNode(label(text(title))));
       head.push(h);
     }
+    el.querySelectorAll(".cta-subtitle").forEach((d) => {
+      if (!text(d)) return;
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-1-5em]${text(d)}]`;
+      head.push(para(doc, strong));
+    });
     el.querySelectorAll(".cta-description").forEach((d) => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
     });

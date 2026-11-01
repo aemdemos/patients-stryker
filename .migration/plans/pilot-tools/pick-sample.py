@@ -1,6 +1,7 @@
 # Picks a QA sample of imported pages: every feature (block / section style) at least `min`
 # times, then business units spread evenly, up to `size` pages. Deterministic (sorted input).
-# usage: python3 -I pick-sample.py <content dir> <pages.tsv> <size> [min per feature]
+# usage: python3 -I pick-sample.py <content dir> <pages.tsv> <size> [min per feature] [exclude.tsv …]
+# (exclude: earlier samples, whose pages are not picked again)
 # prints "source path<TAB>eds path" lines
 import collections
 import os
@@ -9,6 +10,9 @@ import sys
 
 content, tsv, size = sys.argv[1], sys.argv[2], int(sys.argv[3])
 per_feature = int(sys.argv[4]) if len(sys.argv) > 4 else 3
+excluded = set()
+for f in sys.argv[5:]:
+    excluded.update(line.split('\t')[1].strip() for line in open(f) if '\t' in line)
 
 FEATURES = {
     'tabs': r'<div>style</div><div>[^<]*\btabbed\b',
@@ -16,7 +20,7 @@ FEATURES = {
     'accordion-open': r'class="accordion[^"]*">(?:(?!</div></div></div>).)*?<p><strong>',
     'nested-accordion': r'\baccordion-panel\b',
     'statistics': r'class="statistics\b',
-    'carousel': r'class="hero-corp[^"]*".*class="hero-corp',
+    'carousel': r'<div>style</div><div>carousel\b',
     'marketo-form': r'class="marketo-form\b',
     'video': r'class="video\b',
     'cards-teaser': r'class="cards-corp teaser',
@@ -38,6 +42,8 @@ for line in open(tsv):
     if len(parts) < 2:
         continue
     src, eds = parts[0], parts[1]
+    if eds in excluded:
+        continue
     f = os.path.join(content, eds.lstrip('/') + '.plain.html')
     if not os.path.exists(f):
         continue

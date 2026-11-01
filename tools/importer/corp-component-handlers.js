@@ -652,6 +652,14 @@ function buttons(el, ctx) {
     h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), label(text(a), true)) : doc.createTextNode(label(text(title))));
     head.push(h);
   }
+  // a subtitle above the button (p.cta-subtitle.subheading: Futura bold 21px, black;
+  // performance-series-blades "Stryker Precision Saw") → a Bold line, 1.5 × the copy
+  el.querySelectorAll('.cta-subtitle').forEach((d) => {
+    if (!text(d)) return;
+    const strong = doc.createElement('strong');
+    strong.textContent = `[[size-1-5em]${text(d)}]`;
+    head.push(para(doc, strong));
+  });
   el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
   const nodes = [...el.querySelectorAll('a[href]')].filter((a) => !a.closest('.cta-title, .cta-description')).map((a) => {
     // a text CTA (a.action-link: Futura bold uppercase teal with a triangle, as span.standalone-
