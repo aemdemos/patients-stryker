@@ -244,6 +244,14 @@ body:where(.corp):has(main .hero-carousel) header {
   text-decoration: none;
 }
 
+/* a citation authored as a link (stryker.com <a href="#references"><sup>1</sup></a>, the
+   interventional-spine pages) is the site link colour wherever it is, as live: in gold text
+   and on dark bands too (mild-procedure, dekompressor), the commas between numbers included */
+:where(body.corp) main a:any-link > sup:has(> a[href^="#fn-"]),
+:where(body.corp) main a:any-link > sup > a[href^="#fn-"]:any-link {
+  color: var(--color-primary);
+}
+
 :where(body.corp) strong > a:any-link,
 :where(body.corp) a:any-link > strong {
   font-weight: 400;
@@ -592,7 +600,9 @@ body:where(.corp):has(main .hero-carousel) header {
   background: var(--corp-gradient-golden);
 }
 
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong) {
+/* links on dark bands are white, except citation links: those keep the colour of the text
+   they cite from (npseal, pidrive gold stat citations) */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
   color: var(--color-white);
 }
 
