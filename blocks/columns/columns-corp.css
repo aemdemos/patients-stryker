@@ -129,12 +129,22 @@ body.corp .columns.link-groups li > a:any-link::after {
 body.corp .columns.large-headline {
   --columns-corp-lh-heading-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
   --columns-corp-lh-title-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--columns-corp-vw))));
-  --columns-corp-lh-text-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+
+  /* plain copy is the source Large Headline line2 at its default size: 21px below 600px
+     (source <840px), 1vw up to 14px from 600px (pinpoint, spy-elite "Published literature…";
+     copy authored in another size keeps its size tag) */
+  --columns-corp-lh-text-size: var(--body-font-size-xl);
   --columns-corp-lh-small-size: max(var(--body-font-size-xs), min(calc(1 * var(--body-font-size-m)), calc(1 * var(--columns-corp-vw))));
   --columns-corp-lh-heading-gap: var(--space-block);
   --columns-corp-lh-gap: var(--space-block-l);
   --columns-corp-lh-cta-gap: calc(var(--space-section) + var(--space-block-s));
   --columns-corp-lh-after-cta-gap: var(--space-section);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.large-headline {
+    --columns-corp-lh-text-size: min(1vw, var(--body-font-size-m));
+  }
 }
 
 body.corp .columns.large-headline :is(h2, h4, p) {
