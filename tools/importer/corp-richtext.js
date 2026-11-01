@@ -331,7 +331,10 @@ export function finishRuns(nodes, styles) {
         if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
         if (!isHeading && label && line && isLabel(line)) base = label;
         if (vw) tags.push(`size-${num(vw)}vw`);
-        else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+        // a heading's run is sized in em of the heading, which the section's h-* style has
+        // already scaled: the tag carries the ratio (vocera-engage "ProAssure" 1.5em of the
+        // plain h2 in an h-1-25 section → 1.2em); copy runs are × the 14px base copy
+        else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(isHeading ? em / base : em)}em`);
         // serif runs: tagged unless the section is serif; inside a plain bold (<b>, which the
         // site sets in Futura) always (Egyptienne bold on live)
         if (!inHero && m[5] === '1' && (!serifSection || run.closest('strong'))) tags.push('serif');
