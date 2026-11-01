@@ -65,6 +65,9 @@ const COMPONENTS = [
   '.c-rich-text-editor',
   '.c-standalone-video',
   '.c-curatedcta',
+  // a Button Set (.buttonset > .button-group > a.btn) imports like a Curated CTA (as in
+  // news-detail-sections.js on main, f4ab244)
+  '.buttonset',
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
@@ -117,6 +120,19 @@ const SIZE_STYLES = [
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
+  // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
+  ['fontsize-2em', 'p-2'],
+  ['fontsize-2-5em', 'p-2-5'],
+];
+
+// source size spans on part of a line → the bracket size tags (styles-corp.css: text-1-25;
+// long-page-detail-corp template CSS: the larger sizes)
+const SIZE_TAGS = [
+  ['fontsize-1-25em', 'text-1-25'],
+  ['fontsize-1-5em', 'text-1-5'],
+  ['fontsize-1-75em', 'text-1-75'],
+  ['fontsize-2em', 'text-2'],
+  ['fontsize-2-5em', 'text-2-5'],
 ];
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
@@ -141,7 +157,18 @@ function copyStyles(root) {
     return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
   });
   const size = SIZE_STYLES.find(([cls]) => covers(cls));
-  const font = FONT_STYLES.find(([cls]) => covers(cls));
+  // the running font: Futura bold words (span.futura-bold → <strong>, Futura in any
+  // section) don't count, e.g. room-design "Design your OR with Stryker and" (serif) + "see
+  // the difference." (Futura bold) is a serif paragraph
+  const coversFont = (cls) => copy.every((el) => {
+    const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+    const bold = [...el.querySelectorAll('.futura-bold')]
+      .filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest('.futura-bold'));
+    const covered = squash(spans.map((span) => span.textContent).join(''))
+      + squash(bold.map((span) => span.textContent).join(''));
+    return spans.length > 0 && covered.length === squash(el.textContent).length;
+  });
+  const font = FONT_STYLES.find(([cls]) => coversFont(cls));
   return [size && size[1], font && font[1]].filter(Boolean).join(', ');
 }
 
@@ -247,12 +274,14 @@ function bracketTag(nodes, classes, root) {
  */
 function tagTextSize(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  [...root.querySelectorAll('.fontsize-1-25em')].forEach((span) => {
-    if (span.parentElement.closest('.fontsize-1-25em') || !text(span)) return;
-    const block = span.closest('p, li');
-    if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
-    if (squash(block.textContent) === squash(span.textContent)) return;
-    bracketTag([span], 'text-1-25', root);
+  SIZE_TAGS.forEach(([cls, tag]) => {
+    [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
+      if (span.parentElement.closest(`.${cls}`) || !text(span)) return;
+      const block = span.closest('p, li');
+      if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
+      if (squash(block.textContent) === squash(span.textContent)) return;
+      bracketTag([span], tag, root);
+    });
   });
 }
 
@@ -335,19 +364,10 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     strong.append(a);
   });
 
-  // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
-  // colour in news-detail.css); <b> → <strong> (bold in the body font). Headings keep a
-  // plain <strong>.
-  root.querySelectorAll('span.futura-bold').forEach((el) => {
-    if (!el.closest('p, li') || el.closest('h1, h2, h3, h4, h5, h6')) {
-      rename(el, 'strong');
-      return;
-    }
-    const strong = rename(el, 'strong');
-    const em = root.ownerDocument.createElement('em');
-    while (strong.firstChild) em.append(strong.firstChild);
-    strong.append(em);
-  });
+  // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
+  // (styles-corp.css). (news-detail-sections.js makes it <strong><em> for its own template
+  // CSS; without it bold + italic renders gold, the authoring convention.) <b> → <strong>.
+  root.querySelectorAll('span.futura-bold').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
   root.querySelectorAll('span, font').forEach(unwrap);
@@ -599,6 +619,9 @@ function imageColumnStyle(component) {
   if (!match) return '';
   const others = [...col.parentElement.children].filter((el) => el !== col);
   if (others.some((el) => text(el) || el.querySelector('img, video, iframe'))) return '';
+  // a quarter column on desktop (col-sm-6 col-md-3, e.g. the jr45 e-learning video):
+  // `image-1-4` (long-page-detail-corp template CSS)
+  if (/\bcol-md-3\b/.test(col.className)) return 'image-1-4';
   return match[1] === '4' ? 'image-1-3' : 'image-1-2';
 }
 
@@ -891,8 +914,9 @@ function footnoteList(nodes, doc) {
  * @param {Object} [options]
  * @param {string} [options.keep] selector of elements prepared by the calling transformer
  *   (block tables, source components left for a block parser) that are kept as they are,
- *   in source order: with `data-keep="section"` in a section of their own, otherwise in
- *   the current article section
+ *   in source order: with `data-keep="section"` in a section of their own, with
+ *   `data-keep="join"` in the section of the element kept before it, otherwise in the
+ *   current article section
  * @param {boolean} [options.spacer] the `spacer` section below the title (news-detail)
  * @param {Function} [options.componentStyle] (component) → a section style for the
  *   sections built from that component ('' for none); a component with another style than
@@ -908,6 +932,8 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   let separatorNext = false;
   // the componentStyle of the component being built
   let extraStyle = '';
+  // the section of the last `data-keep="section"` element (`data-keep="join"` joins it)
+  let lastKept = null;
   const startSection = (kind, sectionStyle) => {
     const style = [separatorNext ? 'separator' : '', sectionStyle, extraStyle]
       .filter(Boolean).join(', ') || undefined;
@@ -992,8 +1018,15 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     }
     if (keep && component.matches(keep)) {
       if (component.getAttribute('data-keep') === 'section') {
-        startSection('kept').nodes.push(component);
+        startSection('kept', component.getAttribute('data-section-style') || undefined)
+          .nodes.push(component);
+        component.removeAttribute('data-section-style');
+        lastKept = sections[sections.length - 1];
         current = null;
+        return;
+      }
+      if (component.getAttribute('data-keep') === 'join' && lastKept) {
+        lastKept.nodes.push(component);
         return;
       }
       if (!current || !current.kind.startsWith('body')) startSection('body');
@@ -1106,7 +1139,7 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         current = null;
       }
     }
-    if (component.matches('.c-curatedcta')) {
+    if (component.matches('.c-curatedcta, .buttonset')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
       // a button is centred when the source centres it (an offset grid column, e.g. the
@@ -1202,3 +1235,9 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   });
   element.replaceChildren(...out);
 }
+
+// helpers for the long-page-detail-corp column rows (long-page-detail-corp-sections.js)
+export {
+  SIZE_STYLES, SIZE_TAGS, text, cleanRichText, richTextNodes, imageNodes, buttonNodes,
+  headlineNodes, blockNodes, absoluteAsset, newTabHref,
+};

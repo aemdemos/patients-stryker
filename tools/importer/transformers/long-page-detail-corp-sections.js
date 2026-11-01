@@ -29,7 +29,11 @@
  * the news articles. No `spacer` section follows the title.
  */
 
-import buildArticle from './long-page-detail-corp-article.js';
+import buildArticle, {
+  richTextNodes, imageNodes, buttonNodes, headlineNodes,
+} from './long-page-detail-corp-article.js';
+import { videoLink } from '../parsers/video.js';
+import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 import PAGE_BACK from '../long-page-detail-corp-page-back.js';
@@ -80,33 +84,60 @@ function richText(doc, nodes) {
   return box;
 }
 
-function experienceFragments(main, doc, xfs) {
-  const slots = [...main.querySelectorAll('.experiencefragment')]
-    .filter((slot) => !slot.parentElement.closest('.experiencefragment'));
-  const filled = slots.filter((slot) => {
-    if (text(slot) || slot.querySelector('img, [data-asset-path], iframe')) return true;
-    slot.remove();
-    return false;
-  });
+/** The columns of an AEM column row (.colctrl > .row > .col-*). */
+function rowColumns(colctrl) {
+  const row = colctrl.querySelector(':scope > .row');
+  return row ? [...row.children].filter((el) => /\bcol-(xs|sm|md)-\d+/.test(el.className)) : [];
+}
+
+/** Where a slot sits, as in long-page-detail-corp-xf-slots.js: "<row>:<column>" or "". */
+function slotSignature(slot) {
+  const colctrl = slot.closest('.colctrl');
+  if (!colctrl) return '';
+  const row = (colctrl.parentElement.className.match(/\bcols[\w-]*/) || [''])[0].replace(/-/g, '_');
+  const column = rowColumns(colctrl).findIndex((col) => col.contains(slot)) + 1;
+  return `${row}:${column}`;
+}
+
+function fragmentBlock(doc, path) {
+  const a = doc.createElement('a');
+  a.href = path;
+  a.textContent = path;
+  return WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[a]] });
+}
+
+function experienceFragments(main, doc, xfs, slots) {
+  const filled = [...main.querySelectorAll('.experiencefragment')]
+    .filter((slot) => !slot.parentElement.closest('.experiencefragment'))
+    .filter((slot) => {
+      if (text(slot) || slot.querySelector('img, [data-asset-path], iframe')) return true;
+      slot.remove();
+      return false;
+    });
   if (!filled.length) return;
-  // the export gives a page's XFs, not their order on the page: a slot is resolved only
-  // when the page has one XF (every slot shows it); otherwise the slots are imported
-  // inline and the page is marked for the import report
-  if (xfs.length !== 1) {
-    main.ownerDocument.body.setAttribute('data-xf-unresolved', String(xfs.length));
-    return;
-  }
-  const path = sharedFragmentPath(xfs[0]);
-  filled.forEach((slot, i) => {
-    if (i > 0) {
+  // the export gives a page's XFs, not their order: one XF → every slot shows it; two or
+  // more → each slot is matched by its position (long-page-detail-corp-xf-slots.js). A
+  // slot that matches nothing is imported inline and the page is marked for the report.
+  const seen = new Set();
+  filled.forEach((slot) => {
+    let xf = xfs.length === 1 ? xfs[0] : null;
+    if (!xf && slots) {
+      const signature = slotSignature(slot);
+      xf = Object.keys(slots).find((key) => slots[key] === signature) || null;
+    }
+    if (!xf) {
+      main.ownerDocument.body.setAttribute('data-xf-unresolved', String(xfs.length));
+      return;
+    }
+    // the same XF shown twice is imported once
+    if (seen.has(xf)) {
       slot.remove();
       return;
     }
+    seen.add(xf);
+    const path = sharedFragmentPath(xf);
     if (!path) return;
-    const a = doc.createElement('a');
-    a.href = path;
-    a.textContent = path;
-    const block = WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[a]] });
+    const block = fragmentBlock(doc, path);
     block.setAttribute('data-keep', 'section');
     slot.replaceWith(block);
   });
@@ -143,6 +174,180 @@ function videoCaptions(main, doc) {
   });
 }
 
+/**
+ * The source local navigation (.localpagenavigation nav: the parent page link, then the
+ * links of its section) → `Local Nav` block: row 1 the parent link, row 2 the list of
+ * links. Removed from the page; null when the page has none.
+ */
+function localNav(main, doc) {
+  const nav = main.querySelector('.localpagenavigation nav');
+  if (!nav) return null;
+  const parent = nav.querySelector('a.parent-node');
+  const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
+  nav.closest('.localpagenavigation').remove();
+  if (!parent && !links.length) return null;
+  const rows = [];
+  if (parent) {
+    const a = doc.createElement('a');
+    a.href = parent.getAttribute('href');
+    a.textContent = text(parent);
+    rows.push([a]);
+  }
+  const ul = doc.createElement('ul');
+  links.forEach((source) => {
+    const li = doc.createElement('li');
+    const a = doc.createElement('a');
+    a.href = source.getAttribute('href');
+    a.textContent = text(source);
+    li.append(a);
+    ul.append(li);
+  });
+  rows.push([ul]);
+  return WebImporter.Blocks.createBlock(doc, { name: 'Local Nav', cells: rows });
+}
+
+/** A source Marketo form (form[data-marketo-form-id]) → `Marketo Form` block, or null. */
+function marketoBlock(container, doc) {
+  const form = container.querySelector('form[data-marketo-form-id]');
+  if (!form) return null;
+  const cells = [
+    ['Base URL', form.getAttribute('data-marketo-base-url') || ''],
+    ['Munchkin ID', form.getAttribute('data-marketo-munchkin-id') || ''],
+    ['Form ID', form.getAttribute('data-marketo-form-id') || ''],
+  ];
+  return WebImporter.Blocks.createBlock(doc, { name: 'Marketo Form', cells });
+}
+
+const CELL_COMPONENTS = [
+  '.c-rich-text-editor', '.c-standalone-image', '.c-standalone-video', '.c-largeheadline',
+  '.c-curatedcta', '.buttonset', 'table',
+].join(', ');
+
+/**
+ * The content of one column of a source column row, cleaned as in the article builder.
+ * The Large Headline marked `data-page-title` (the page's first, on a page without a
+ * title) is the page H1.
+ */
+function cellNodes(col, doc) {
+  const out = [];
+  [...col.querySelectorAll(CELL_COMPONENTS)]
+    .filter((c) => !c.parentElement.closest(CELL_COMPONENTS))
+    .forEach((c) => {
+      if (c.matches('.c-rich-text-editor')) out.push(...richTextNodes(c, doc).nodes);
+      else if (c.matches('.c-standalone-image')) out.push(...imageNodes(c, doc));
+      else if (c.matches('.c-standalone-video')) {
+        const a = videoLink(c, doc);
+        if (a) {
+          const p = doc.createElement('p');
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches('.c-largeheadline')) {
+        const lines = headlineNodes(c, doc);
+        if (c.hasAttribute('data-page-title') && lines.length) {
+          const h1 = doc.createElement('h1');
+          lines.forEach((line, i) => {
+            if (i) h1.append(doc.createElement('br'));
+            h1.append(...line.childNodes);
+          });
+          // a line break at the end of bold / italic text would be lost on import: it
+          // goes after the formatting
+          [...h1.querySelectorAll('strong, em')].reverse().forEach((el) => {
+            let last = el.lastChild;
+            while (last && (last.nodeName === 'BR' || (last.nodeType === 3 && !last.textContent.trim()))) {
+              if (last.nodeName === 'BR') el.after(last);
+              else last.remove();
+              last = el.lastChild;
+            }
+          });
+          out.push(h1);
+        } else out.push(...lines);
+      } else if (c.matches('.c-curatedcta, .buttonset')) out.push(...buttonNodes(c, doc));
+      else out.push(c);
+    });
+  return out;
+}
+
+/** The size tag of a copy style: 'p-1-25' → 'text-1-25', '' when it sets no size. */
+function sizeTag(copyStyle) {
+  const size = (copyStyle || '').split(',').map((s) => s.trim()).find((s) => /^p-\d/.test(s));
+  return size ? `text-${size.slice(2)}` : '';
+}
+
+/**
+ * The copy style of a column row: the style of most of its text (by length) becomes the
+ * section style (e.g. `p-1-25` for 17.5px lists); text in another size gets its size tag
+ * (e.g. `[[text-2]Program objectives]`, 28px), as the cells share the section.
+ */
+function rowCopyStyle(cells, doc) {
+  const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== undefined
+    && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+  const weight = {};
+  copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
+  const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
+  copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant))
+    .forEach((n) => {
+      const tag = sizeTag(n.copyStyle);
+      const targets = n.matches('ul, ol') ? [...n.querySelectorAll(':scope > li')] : [n];
+      targets.forEach((el) => {
+        el.prepend(doc.createTextNode(`[[${tag}]`));
+        el.append(doc.createTextNode(']'));
+      });
+    });
+  return dominant;
+}
+
+// source column widths (col-sm-*) → the Columns variant
+const COLUMN_VARIANTS = { '8,4': 'columns-67-33', '4,8': 'columns-33-67', '6,6': 'columns-50-50' };
+
+function columnWidth(col) {
+  const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
+  return m ? Number(m[1]) : 12;
+}
+
+/**
+ * Source column rows (.colctrl) with two or more columns that have content, innermost
+ * first:
+ *   - a row with a Marketo form: the `Marketo Form` block in a section of its own, a
+ *     Fragment block in another column (the contact aside) in the same section
+ *   - any other row: a `Columns` block (variant from the column widths), its own section
+ */
+function columnRows(main, doc) {
+  [...main.querySelectorAll('.colctrl')].reverse().forEach((colctrl) => {
+    const columns = rowColumns(colctrl)
+      .filter((col) => text(col) || col.querySelector('img, [data-asset-path], iframe, form, table'));
+    if (columns.length < 2) return;
+    const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className)
+      ? colctrl.parentElement : colctrl;
+    const form = marketoBlock(colctrl, doc);
+    if (form) {
+      form.setAttribute('data-keep', 'section');
+      const asides = [...colctrl.querySelectorAll('table')].filter((t) => t.getAttribute('data-keep'));
+      asides.forEach((t) => t.setAttribute('data-keep', 'join'));
+      wrapper.replaceWith(form, ...asides);
+      return;
+    }
+    const key = columns.map(columnWidth).join(',');
+    const variant = COLUMN_VARIANTS[key];
+    const cells = columns.map((col) => cellNodes(col, doc));
+    const style = rowCopyStyle(cells, doc);
+    const block = WebImporter.Blocks.createBlock(doc, {
+      name: variant ? `Columns (${variant})` : 'Columns',
+      cells: [cells],
+    });
+    block.setAttribute('data-keep', 'section');
+    if (style) block.setAttribute('data-section-style', style);
+    wrapper.replaceWith(block);
+  });
+  // a Marketo form outside a column row: a section of its own
+  [...main.querySelectorAll('.c-marketo-form')].forEach((component) => {
+    const form = marketoBlock(component, doc);
+    if (!form) return;
+    form.setAttribute('data-keep', 'section');
+    (component.closest('.marketoform') || component).replaceWith(form);
+  });
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
@@ -153,12 +358,32 @@ export default function transform(hookName, element, payload) {
   if (PAGE_BACK.has(path) || main.querySelector('.c-back-button')) {
     element.setAttribute('data-page-back', 'show');
   }
-  experienceFragments(main, doc, PAGE_XFS[path] || []);
+  // the second, white-on-white H1 below a full-width image hero is not visible content
+  main.querySelectorAll('.hero-space').forEach((el) => el.remove());
+  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
+  const nav = localNav(main, doc);
+  experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);
   videoCaptions(main, doc);
+  const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
+    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
+  // no title: the first Large Headline (in source order) is the page H1
+  const firstHeadline = !hasTitle && main.querySelector('.c-largeheadline');
+  if (firstHeadline && text(firstHeadline)) {
+    firstHeadline.setAttribute('data-page-title', '');
+    // plain bold (<b>) in the title keeps the heading's serif on the source; imported as
+    // bold it would be Futura (corp <strong>), so it is plain text (e.g. jr45 "Complex
+    // revision total hip"); Futura bold (span.futura-bold) stays bold
+    firstHeadline.querySelectorAll('b').forEach((b) => {
+      if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
+    });
+  }
+  columnRows(main, doc);
   buildArticle(element, {
     keep: '.c-resourcesanddownload, [data-keep]',
     spacer: false,
     componentStyle: columnStyle,
   });
+  // the local navigation: a section of its own above the page
+  if (nav) element.prepend(nav, doc.createElement('hr'));
 }

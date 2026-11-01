@@ -116,6 +116,151 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
   }
 
+  // tools/importer/parsers/hero-full-width-image.js
+  function text2(el) {
+    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function image(src, alt, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", src);
+    img.setAttribute("alt", alt || "");
+    return img;
+  }
+  function inline(source, document) {
+    const out = [];
+    source.childNodes.forEach((node) => {
+      if (node.nodeType === 3) {
+        if (node.textContent.trim()) out.push(document.createTextNode(node.textContent.replace(/\u00a0/g, " ")));
+      } else if (node.nodeName === "BR") {
+        out.push(document.createElement("br"));
+      } else if (node.nodeType === 1 && node.classList.contains("futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.textContent = text2(node);
+        out.push(strong);
+      } else if (node.nodeType === 1) {
+        out.push(...inline(node, document));
+      }
+    });
+    return out;
+  }
+  function parse3(element, { document }) {
+    const picture = element.querySelector(".imgBoxId picture");
+    const mobile = picture && picture.querySelector("img");
+    const desktop = picture && picture.querySelector("source[srcset]");
+    const box = element.querySelector(".textBoxId");
+    const rows = [];
+    if (desktop) {
+      const src = desktop.getAttribute("srcset").split(/\s+/)[0];
+      rows.push([image(src, mobile && mobile.getAttribute("alt"), document)]);
+    }
+    if (mobile) rows.push([image(mobile.getAttribute("src"), mobile.getAttribute("alt"), document)]);
+    const content = [];
+    const headline2 = box && box.querySelector(".c-largeheadline");
+    if (headline2) {
+      const line1 = headline2.querySelector(".line1");
+      const heading = line1 && line1.querySelector("h1, h2, h3");
+      if (line1 && text2(line1)) {
+        const h = document.createElement(heading ? heading.tagName.toLowerCase() : "p");
+        h.append(...inline(heading || line1, document));
+        content.push(h);
+      }
+      const line2 = headline2.querySelector(".line2");
+      if (line2 && text2(line2)) {
+        const p = document.createElement("p");
+        p.append(...inline(line2, document));
+        content.push(p);
+      }
+    }
+    if (content.length) rows.push([content]);
+    if (!rows.length) {
+      element.remove();
+      return;
+    }
+    const options = ["image-slide"];
+    if (box) {
+      const right = /\bpull-right\b/.test(box.className);
+      options.push("top-4", right ? "left-50" : "left-1", right ? "right-1" : "right-50");
+    }
+    const sized = headline2 && headline2.querySelector('[class*="fontsize-"][class*="-vw"]');
+    const m = sized && sized.className.match(/fontsize-(\d+(?:-\d+)?)-vw/);
+    if (m) options.push(`size-${m[1]}`);
+    const name = `Hero Corp (${options.join(", ")})`;
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
+  }
+
+  // tools/importer/parsers/hero-image-slide.js
+  function copyImage(source, document) {
+    const img = document.createElement("img");
+    img.setAttribute("src", source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    return img;
+  }
+  function clean(text5) {
+    return (text5 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  }
+  function headline(overlay, document) {
+    const out = [];
+    const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
+    const lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    lines.forEach((line) => {
+      if (!clean(line.textContent)) return;
+      const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
+      const box = document.createElement("div");
+      box.innerHTML = line.innerHTML;
+      box.querySelectorAll("span.futura-bold, b").forEach((span) => {
+        const strong = document.createElement("strong");
+        while (span.firstChild) strong.append(span.firstChild);
+        span.replaceWith(strong);
+      });
+      box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+      box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
+      box.querySelectorAll("*").forEach((node) => {
+        [...node.attributes].forEach((attr) => {
+          if (!(node.tagName === "A" && attr.name === "href")) node.removeAttribute(attr.name);
+        });
+      });
+      while (box.firstChild && box.firstChild.nodeType === 3 && !box.firstChild.textContent.trim()) box.firstChild.remove();
+      while (box.lastChild && box.lastChild.nodeType === 3 && !box.lastChild.textContent.trim()) box.lastChild.remove();
+      while (box.firstChild) el.append(box.firstChild);
+      out.push(el);
+    });
+    return out;
+  }
+  function percent(style, re) {
+    const m = style.match(re);
+    return m ? String(parseFloat(m[1])).replace(".", "-") : null;
+  }
+  function parse4(element, { document }) {
+    const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
+    const desktop = slide.querySelector(".experienceFragment-ef img");
+    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
+    const overlay = slide.querySelector(".overlayparsys");
+    const first = desktop || mobile || slide.querySelector("img");
+    if (!first) return;
+    const variants = ["image-slide"];
+    const cells = [[copyImage(first, document)]];
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    if (overlay) {
+      const lines = headline(overlay, document);
+      if (lines.length) cells.push([lines]);
+      const style = overlay.getAttribute("style") || "";
+      const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
+      const left = percent(style, /margin-left:\s*(\d+(?:\.\d+)?)%/i);
+      const right = percent(style, /width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(\d+(?:\.\d+)?)%\s*\)/i);
+      if (top !== null) variants.push(`top-${top}`);
+      if (left !== null) variants.push(`left-${left}`);
+      if (right !== null) variants.push(`right-${right}`);
+      const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
+      const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
+      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+    }
+    element.replaceWith(WebImporter.Blocks.createBlock(document, {
+      name: `Hero Corp (${variants.join(", ")})`,
+      cells
+    }));
+  }
+
   // tools/importer/transformers/long-page-detail-corp-article.js
   var SOURCE_ORIGIN2 = "https://www.stryker.com";
   var COMPONENTS = [
@@ -124,6 +269,9 @@ var CustomImportScript = (() => {
     ".c-rich-text-editor",
     ".c-standalone-video",
     ".c-curatedcta",
+    // a Button Set (.buttonset > .button-group > a.btn) imports like a Curated CTA (as in
+    // news-detail-sections.js on main, f4ab244)
+    ".buttonset",
     ".c-largeheadline",
     ".c-section-title",
     ".c-customizeable",
@@ -137,7 +285,7 @@ var CustomImportScript = (() => {
     TD: ["colspan", "rowspan"],
     TH: ["colspan", "rowspan"]
   };
-  function text2(el) {
+  function text3(el) {
     return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
   }
   function rename(el, tagName) {
@@ -164,14 +312,24 @@ var CustomImportScript = (() => {
     ["fontsize-8em", "disclaimer"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
-    ["fontsize-1-75em", "p-1-75"]
+    ["fontsize-1-75em", "p-1-75"],
+    // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
+    ["fontsize-2em", "p-2"],
+    ["fontsize-2-5em", "p-2-5"]
+  ];
+  var SIZE_TAGS = [
+    ["fontsize-1-25em", "text-1-25"],
+    ["fontsize-1-5em", "text-1-5"],
+    ["fontsize-1-75em", "text-1-75"],
+    ["fontsize-2em", "text-2"],
+    ["fontsize-2-5em", "text-2-5"]
   ];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
   ];
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
-    const copy = candidates.filter((el) => text2(el) && !el.querySelector("p, li"));
+    const copy = candidates.filter((el) => text3(el) && !el.querySelector("p, li"));
     if (!copy.length) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const covers = (cls) => copy.every((el) => {
@@ -179,7 +337,13 @@ var CustomImportScript = (() => {
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
     const size = SIZE_STYLES.find(([cls]) => covers(cls));
-    const font = FONT_STYLES.find(([cls]) => covers(cls));
+    const coversFont = (cls) => copy.every((el) => {
+      const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
+      const covered = squash(spans.map((span) => span.textContent).join("")) + squash(bold.map((span) => span.textContent).join(""));
+      return spans.length > 0 && covered.length === squash(el.textContent).length;
+    });
+    const font = FONT_STYLES.find(([cls]) => coversFont(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
   function sameLineText(node, direction) {
@@ -195,10 +359,10 @@ var CustomImportScript = (() => {
     const doc = root.ownerDocument;
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
-      if (!text2(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
+      if (!text3(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
-      if (!wholeParagraphs && text2(block) === text2(b)) return;
+      if (!wholeParagraphs && text3(block) === text3(b)) return;
       b.before(doc.createTextNode("[[body-font]"));
       b.after(doc.createTextNode("]"));
     });
@@ -211,7 +375,7 @@ var CustomImportScript = (() => {
   function hasOtherColour(node) {
     if (node.nodeType !== 1) return false;
     const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
-    return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text2(child)));
+    return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text3(child)));
   }
   function bracketTag(nodes, classes, root) {
     const doc = root.ownerDocument;
@@ -238,12 +402,14 @@ var CustomImportScript = (() => {
   }
   function tagTextSize(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
-      if (span.parentElement.closest(".fontsize-1-25em") || !text2(span)) return;
-      const block = span.closest("p, li");
-      if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
-      if (squash(block.textContent) === squash(span.textContent)) return;
-      bracketTag([span], "text-1-25", root);
+    SIZE_TAGS.forEach(([cls, tag]) => {
+      [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
+        if (span.parentElement.closest(`.${cls}`) || !text3(span)) return;
+        const block = span.closest("p, li");
+        if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
+        if (squash(block.textContent) === squash(span.textContent)) return;
+        bracketTag([span], tag, root);
+      });
     });
   }
   function tagGoldText(root) {
@@ -267,7 +433,7 @@ var CustomImportScript = (() => {
     });
   }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
-    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text2(el));
+    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text3(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
     const doc = root.ownerDocument;
@@ -306,16 +472,7 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    root.querySelectorAll("span.futura-bold").forEach((el) => {
-      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
-        rename(el, "strong");
-        return;
-      }
-      const strong = rename(el, "strong");
-      const em = root.ownerDocument.createElement("em");
-      while (strong.firstChild) em.append(strong.firstChild);
-      strong.append(em);
-    });
+    root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
     root.querySelectorAll("span, font").forEach(unwrap);
@@ -336,7 +493,7 @@ var CustomImportScript = (() => {
       while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
         el.lastChild.remove();
       }
-      if (!text2(el) && !el.querySelector("img")) el.remove();
+      if (!text3(el) && !el.querySelector("img")) el.remove();
     });
     return { centred, size };
   }
@@ -352,7 +509,7 @@ var CustomImportScript = (() => {
   function serifHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("h3")].filter((h) => {
-      if (!text2(h) || h.querySelector(".futura-bold, b, strong")) return false;
+      if (!text3(h) || h.querySelector(".futura-bold, b, strong")) return false;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
       return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
@@ -360,7 +517,7 @@ var CustomImportScript = (() => {
   var LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
-      if (!LABEL_HEADING.test(text2(h))) return;
+      if (!LABEL_HEADING.test(text3(h))) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
       p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
@@ -383,7 +540,7 @@ var CustomImportScript = (() => {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const styles = /* @__PURE__ */ new Map();
     root.querySelectorAll("h1, h2").forEach((h) => {
-      if (!text2(h)) return;
+      if (!text3(h)) return;
       const match = HEADING_SIZES.find(([tag, cls]) => {
         if (h.tagName !== tag) return false;
         const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -405,9 +562,9 @@ var CustomImportScript = (() => {
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
-      const leadText = text2(lead).replace(/[\s\u00a0]+/g, "");
+      const leadText = text3(lead).replace(/[\s\u00a0]+/g, "");
       const covered = [...lead.querySelectorAll(styled)].filter((span) => !span.parentElement.closest(styled)).map((span) => span.textContent).join("").replace(/[\s\u00a0]+/g, "");
-      if (!leadText || covered !== leadText || !text2(p)) {
+      if (!leadText || covered !== leadText || !text3(p)) {
         p.prepend(...lead.childNodes);
         return;
       }
@@ -430,7 +587,7 @@ var CustomImportScript = (() => {
     if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
-    if (!text2(p)) p.remove();
+    if (!text3(p)) p.remove();
     const h1 = doc.createElement("h1");
     h1.textContent = leadText;
     return h1;
@@ -441,7 +598,7 @@ var CustomImportScript = (() => {
     const flush = () => {
       if (run.some((n) => {
         var _a;
-        return n.nodeType === 3 ? n.textContent.trim() : text2(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
+        return n.nodeType === 3 ? n.textContent.trim() : text3(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
       })) {
         const p = doc.createElement("p");
         p.append(...run);
@@ -454,7 +611,7 @@ var CustomImportScript = (() => {
     [...container.childNodes].forEach((node) => {
       if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
         flush();
-        if (text2(node) || node.querySelector("img")) nodes.push(node);
+        if (text3(node) || node.querySelector("img")) nodes.push(node);
       } else if (node.nodeType === 1 && node.tagName === "IMG") {
         flush();
         const p = doc.createElement("p");
@@ -504,7 +661,8 @@ var CustomImportScript = (() => {
     const match = col && col.className.match(/\bcol-sm-(4|6)\b/);
     if (!match) return "";
     const others = [...col.parentElement.children].filter((el) => el !== col);
-    if (others.some((el) => text2(el) || el.querySelector("img, video, iframe"))) return "";
+    if (others.some((el) => text3(el) || el.querySelector("img, video, iframe"))) return "";
+    if (/\bcol-md-3\b/.test(col.className)) return "image-1-4";
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
@@ -518,19 +676,19 @@ var CustomImportScript = (() => {
     });
     if (nodes.length) {
       component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
-        if (!text2(title)) return;
+        if (!text3(title)) return;
         const h4 = doc.createElement("h4");
-        h4.textContent = text2(title);
+        h4.textContent = text3(title);
         nodes.push(h4);
       });
     }
     return nodes;
   }
   function buttonNodes(component, doc) {
-    return [...component.querySelectorAll("a[href]")].filter((a) => text2(a)).map((source) => {
+    return [...component.querySelectorAll("a[href]")].filter((a) => text3(a)).map((source) => {
       const a = doc.createElement("a");
       a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
-      a.textContent = text2(source);
+      a.textContent = text3(source);
       const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
       if (colour) a.setAttribute("data-btn-style", colour);
       const strong = doc.createElement("strong");
@@ -553,7 +711,7 @@ var CustomImportScript = (() => {
     lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap));
     cleanRichText(box);
     return (lines.length ? lines : [box]).map((line) => {
-      if (!text2(line)) return null;
+      if (!text3(line)) return null;
       const p = doc.createElement("p");
       while (line.firstChild) p.append(line.firstChild);
       return p;
@@ -564,11 +722,11 @@ var CustomImportScript = (() => {
     const row = col && col.parentElement;
     const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
     const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
-    const headline = aside && aside.querySelector(".c-largeheadline");
-    return headline && text2(headline) ? headline : null;
+    const headline2 = aside && aside.querySelector(".c-largeheadline");
+    return headline2 && text3(headline2) ? headline2 : null;
   }
-  function headlineVideo(headline) {
-    const col = headline.closest('[class*="col-sm-6"]');
+  function headlineVideo(headline2) {
+    const col = headline2.closest('[class*="col-sm-6"]');
     const row = col && col.parentElement;
     const videoCol = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
     const video = videoCol && videoCol.querySelector(".c-standalone-video");
@@ -579,7 +737,7 @@ var CustomImportScript = (() => {
     const row = col && col.parentElement;
     const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
     const rte = aside && aside.querySelector(".c-rich-text-editor");
-    if (!rte || !text2(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
+    if (!rte || !text3(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
     return rte;
   }
   function videoTextColumns(video, rte, doc) {
@@ -593,13 +751,13 @@ var CustomImportScript = (() => {
       cells: [[media, nodes]]
     });
   }
-  function quoteNodes(headline, doc) {
+  function quoteNodes(headline2, doc) {
     const box = doc.createElement("div");
-    box.innerHTML = headline.innerHTML;
+    box.innerHTML = headline2.innerHTML;
     box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
       const bold = span.closest(".futura-bold");
-      if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text2(span)) || text2(bold) === text2(span)) return;
-      const atStart = text2(bold).startsWith(text2(span));
+      if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text3(span)) || text3(bold) === text3(span)) return;
+      const atStart = text3(bold).startsWith(text3(span));
       const mark = doc.createElement("span");
       mark.className = "futura-bold";
       mark.append(span);
@@ -610,7 +768,7 @@ var CustomImportScript = (() => {
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
-      if (/^[“”"‘’']+$/.test(text2(strong))) {
+      if (/^[“”"‘’']+$/.test(text3(strong))) {
         const em = doc.createElement("em");
         em.append(strong);
         span.replaceWith(em);
@@ -657,7 +815,7 @@ var CustomImportScript = (() => {
     blocks.forEach((block) => {
       let line = doc.createElement("p");
       const flush = () => {
-        if (text2(line)) out.push(line);
+        if (text3(line)) out.push(line);
         line = doc.createElement("p");
       };
       [...block.childNodes].forEach((node) => {
@@ -671,17 +829,17 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
     const link = videoLink(video, doc);
-    const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
-    const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
-    const lines = boxed ? headlineNodes(headline, doc) : [];
+    const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
+    const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
+    const lines = boxed ? headlineNodes(headline2, doc) : [];
     if (!link || boxed && !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
-    const firstLine = headline.querySelector(".line") || headline;
-    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const firstLine = headline2.querySelector(".line") || headline2;
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     return WebImporter.Blocks.createBlock(doc, {
@@ -728,6 +886,7 @@ var CustomImportScript = (() => {
     let current = null;
     let separatorNext = false;
     let extraStyle = "";
+    let lastKept = null;
     const startSection = (kind, sectionStyle) => {
       const style = [separatorNext ? "separator" : "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
       separatorNext = false;
@@ -742,7 +901,7 @@ var CustomImportScript = (() => {
     };
     const title = startSection("title");
     const h1 = main.querySelector(".h1-title h1");
-    const hasTitle = !!(h1 && text2(h1));
+    const hasTitle = !!(h1 && text3(h1));
     if (hasTitle) {
       const heading = doc.createElement("h1");
       heading.innerHTML = h1.innerHTML;
@@ -750,14 +909,14 @@ var CustomImportScript = (() => {
       title.nodes.push(heading);
     }
     const date = main.querySelector(".c-publish-date h5");
-    if (date && text2(date)) {
-      const value = text2(date);
+    if (date && text3(date)) {
+      const value = text3(date);
       const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
       const month = m && "janfebmaraprmayjunjulaugsepoctnovdec".indexOf(m[2].toLowerCase()) / 3 + 1;
       element.setAttribute("data-first-published", month >= 1 && Number.isInteger(month) ? `${m[3]}-${String(month).padStart(2, "0")}-${m[1].padStart(2, "0")}` : value);
     }
     const location = main.querySelector(".c-event-location-properties h5");
-    if (location && text2(location)) {
+    if (location && text3(location)) {
       const h5 = doc.createElement("h5");
       h5.textContent = location.textContent.replace(/[\s\u00a0]+/g, " ").replace(/\s+,/g, ",").trim();
       title.nodes.push(h5);
@@ -771,10 +930,10 @@ var CustomImportScript = (() => {
       const aside = videoAside(video);
       if (!aside) return false;
       const asideCol = aside.closest('[class*="col-sm-"]');
-      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text2(h));
+      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text3(h));
       const videoCol = video.closest('[class*="col-sm-"]');
-      const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text2(c));
-      const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text2(c));
+      const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text3(c));
+      const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text3(c));
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
       const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
@@ -795,8 +954,14 @@ var CustomImportScript = (() => {
       }
       if (keep && component.matches(keep)) {
         if (component.getAttribute("data-keep") === "section") {
-          startSection("kept").nodes.push(component);
+          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(component);
+          component.removeAttribute("data-section-style");
+          lastKept = sections[sections.length - 1];
           current = null;
+          return;
+        }
+        if (component.getAttribute("data-keep") === "join" && lastKept) {
+          lastKept.nodes.push(component);
           return;
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
@@ -832,9 +997,9 @@ var CustomImportScript = (() => {
         if (!component.querySelector(".item img")) return;
         const section = startSection("cards");
         const heading = component.querySelector("h2");
-        if (heading && text2(heading)) {
+        if (heading && text3(heading)) {
           const h2 = doc.createElement("h2");
-          h2.textContent = text2(heading);
+          h2.textContent = text3(heading);
           section.nodes.push(h2);
           heading.remove();
         }
@@ -871,7 +1036,7 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text2(component)) {
+      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text3(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
           const heading = rename(lines[0], "h1");
@@ -888,7 +1053,7 @@ var CustomImportScript = (() => {
           current = null;
         }
       }
-      if (component.matches(".c-curatedcta")) {
+      if (component.matches(".c-curatedcta, .buttonset")) {
         const nodes2 = buttonNodes(component, doc);
         if (!nodes2.length) return;
         const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');
@@ -924,7 +1089,7 @@ var CustomImportScript = (() => {
       });
     });
     extraStyle = "";
-    const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text2(el));
+    const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text3(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
@@ -958,6 +1123,43 @@ var CustomImportScript = (() => {
     });
     element.replaceChildren(...out);
   }
+
+  // tools/importer/long-page-detail-corp-xf-slots.js
+  var long_page_detail_corp_xf_slots_default = {
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/systems/connected_or/surgical-workflow/master": ""
+    },
+    "/us/en/communications/systems/-isuite-experience/procare-services.html": {
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/communications/systems/-isuite-experience/room-design.html": {
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/general-surgery.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/thoracic.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/urology.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/thermaclear.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": {
+      "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master": "",
+      "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master": ""
+    }
+  };
 
   // tools/importer/xf-fragment-path.js
   var XF_ROOT = "/content/experience-fragments/";
@@ -1389,7 +1591,7 @@ var CustomImportScript = (() => {
   function columnStyle(component) {
     return component.closest(CENTRED_COLUMN) ? "column-10-12" : "";
   }
-  function text3(el) {
+  function text4(el) {
     return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
   }
   function sourcePath(payload) {
@@ -1407,29 +1609,49 @@ var CustomImportScript = (() => {
     box.append(inner);
     return box;
   }
-  function experienceFragments(main, doc, xfs) {
-    const slots = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment"));
-    const filled = slots.filter((slot) => {
-      if (text3(slot) || slot.querySelector("img, [data-asset-path], iframe")) return true;
+  function rowColumns(colctrl) {
+    const row = colctrl.querySelector(":scope > .row");
+    return row ? [...row.children].filter((el) => /\bcol-(xs|sm|md)-\d+/.test(el.className)) : [];
+  }
+  function slotSignature(slot) {
+    const colctrl = slot.closest(".colctrl");
+    if (!colctrl) return "";
+    const row = (colctrl.parentElement.className.match(/\bcols[\w-]*/) || [""])[0].replace(/-/g, "_");
+    const column = rowColumns(colctrl).findIndex((col) => col.contains(slot)) + 1;
+    return `${row}:${column}`;
+  }
+  function fragmentBlock(doc, path) {
+    const a = doc.createElement("a");
+    a.href = path;
+    a.textContent = path;
+    return WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
+  }
+  function experienceFragments(main, doc, xfs, slots) {
+    const filled = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment")).filter((slot) => {
+      if (text4(slot) || slot.querySelector("img, [data-asset-path], iframe")) return true;
       slot.remove();
       return false;
     });
     if (!filled.length) return;
-    if (xfs.length !== 1) {
-      main.ownerDocument.body.setAttribute("data-xf-unresolved", String(xfs.length));
-      return;
-    }
-    const path = sharedFragmentPath(xfs[0]);
-    filled.forEach((slot, i) => {
-      if (i > 0) {
+    const seen = /* @__PURE__ */ new Set();
+    filled.forEach((slot) => {
+      let xf = xfs.length === 1 ? xfs[0] : null;
+      if (!xf && slots) {
+        const signature = slotSignature(slot);
+        xf = Object.keys(slots).find((key) => slots[key] === signature) || null;
+      }
+      if (!xf) {
+        main.ownerDocument.body.setAttribute("data-xf-unresolved", String(xfs.length));
+        return;
+      }
+      if (seen.has(xf)) {
         slot.remove();
         return;
       }
+      seen.add(xf);
+      const path = sharedFragmentPath(xf);
       if (!path) return;
-      const a = doc.createElement("a");
-      a.href = path;
-      a.textContent = path;
-      const block = WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
+      const block = fragmentBlock(doc, path);
       block.setAttribute("data-keep", "section");
       slot.replaceWith(block);
     });
@@ -1438,15 +1660,15 @@ var CustomImportScript = (() => {
     main.querySelectorAll(".c-section-title").forEach((title) => {
       const nodes = [];
       const heading = title.querySelector("h2");
-      if (heading && text3(heading)) {
+      if (heading && text4(heading)) {
         const h2 = doc.createElement("h2");
         const u = doc.createElement("u");
-        u.textContent = text3(heading);
+        u.textContent = text4(heading);
         h2.append(u);
         nodes.push(h2);
       }
       const container = title.querySelector(".title-container") || title;
-      [...container.children].filter((el) => el !== heading && text3(el)).forEach((el) => {
+      [...container.children].filter((el) => el !== heading && text4(el)).forEach((el) => {
         nodes.push(el.cloneNode(true));
       });
       title.replaceWith(richText(doc, nodes));
@@ -1456,11 +1678,149 @@ var CustomImportScript = (() => {
     main.querySelectorAll(".c-standalone-video").forEach((video) => {
       const caption = video.querySelector(".desc-content");
       if (!caption) return;
-      if (text3(caption)) {
+      if (text4(caption)) {
         const copy = caption.cloneNode(true);
         (video.closest(".standalonevideo") || video).after(richText(doc, [...copy.childNodes]));
       }
       caption.remove();
+    });
+  }
+  function localNav(main, doc) {
+    const nav = main.querySelector(".localpagenavigation nav");
+    if (!nav) return null;
+    const parent = nav.querySelector("a.parent-node");
+    const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
+    nav.closest(".localpagenavigation").remove();
+    if (!parent && !links.length) return null;
+    const rows = [];
+    if (parent) {
+      const a = doc.createElement("a");
+      a.href = parent.getAttribute("href");
+      a.textContent = text4(parent);
+      rows.push([a]);
+    }
+    const ul = doc.createElement("ul");
+    links.forEach((source) => {
+      const li = doc.createElement("li");
+      const a = doc.createElement("a");
+      a.href = source.getAttribute("href");
+      a.textContent = text4(source);
+      li.append(a);
+      ul.append(li);
+    });
+    rows.push([ul]);
+    return WebImporter.Blocks.createBlock(doc, { name: "Local Nav", cells: rows });
+  }
+  function marketoBlock(container, doc) {
+    const form = container.querySelector("form[data-marketo-form-id]");
+    if (!form) return null;
+    const cells = [
+      ["Base URL", form.getAttribute("data-marketo-base-url") || ""],
+      ["Munchkin ID", form.getAttribute("data-marketo-munchkin-id") || ""],
+      ["Form ID", form.getAttribute("data-marketo-form-id") || ""]
+    ];
+    return WebImporter.Blocks.createBlock(doc, { name: "Marketo Form", cells });
+  }
+  var CELL_COMPONENTS = [
+    ".c-rich-text-editor",
+    ".c-standalone-image",
+    ".c-standalone-video",
+    ".c-largeheadline",
+    ".c-curatedcta",
+    ".buttonset",
+    "table"
+  ].join(", ");
+  function cellNodes(col, doc) {
+    const out = [];
+    [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS)).forEach((c) => {
+      if (c.matches(".c-rich-text-editor")) out.push(...richTextNodes(c, doc).nodes);
+      else if (c.matches(".c-standalone-image")) out.push(...imageNodes(c, doc));
+      else if (c.matches(".c-standalone-video")) {
+        const a = videoLink(c, doc);
+        if (a) {
+          const p = doc.createElement("p");
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches(".c-largeheadline")) {
+        const lines = headlineNodes(c, doc);
+        if (c.hasAttribute("data-page-title") && lines.length) {
+          const h1 = doc.createElement("h1");
+          lines.forEach((line, i) => {
+            if (i) h1.append(doc.createElement("br"));
+            h1.append(...line.childNodes);
+          });
+          [...h1.querySelectorAll("strong, em")].reverse().forEach((el) => {
+            let last = el.lastChild;
+            while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
+              if (last.nodeName === "BR") el.after(last);
+              else last.remove();
+              last = el.lastChild;
+            }
+          });
+          out.push(h1);
+        } else out.push(...lines);
+      } else if (c.matches(".c-curatedcta, .buttonset")) out.push(...buttonNodes(c, doc));
+      else out.push(c);
+    });
+    return out;
+  }
+  function sizeTag(copyStyle) {
+    const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
+    return size ? `text-${size.slice(2)}` : "";
+  }
+  function rowCopyStyle(cells, doc) {
+    const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+    const weight = {};
+    copy.forEach((n) => {
+      weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text4(n).length;
+    });
+    const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
+    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => {
+      const tag = sizeTag(n.copyStyle);
+      const targets = n.matches("ul, ol") ? [...n.querySelectorAll(":scope > li")] : [n];
+      targets.forEach((el) => {
+        el.prepend(doc.createTextNode(`[[${tag}]`));
+        el.append(doc.createTextNode("]"));
+      });
+    });
+    return dominant;
+  }
+  var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
+  function columnWidth(col) {
+    const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
+    return m ? Number(m[1]) : 12;
+  }
+  function columnRows(main, doc) {
+    [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
+      const columns = rowColumns(colctrl).filter((col) => text4(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
+      if (columns.length < 2) return;
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      const form = marketoBlock(colctrl, doc);
+      if (form) {
+        form.setAttribute("data-keep", "section");
+        const asides = [...colctrl.querySelectorAll("table")].filter((t) => t.getAttribute("data-keep"));
+        asides.forEach((t) => t.setAttribute("data-keep", "join"));
+        wrapper.replaceWith(form, ...asides);
+        return;
+      }
+      const key = columns.map(columnWidth).join(",");
+      const variant = COLUMN_VARIANTS[key];
+      const cells = columns.map((col) => cellNodes(col, doc));
+      const style = rowCopyStyle(cells, doc);
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: variant ? `Columns (${variant})` : "Columns",
+        cells: [cells]
+      });
+      block.setAttribute("data-keep", "section");
+      if (style) block.setAttribute("data-section-style", style);
+      wrapper.replaceWith(block);
+    });
+    [...main.querySelectorAll(".c-marketo-form")].forEach((component) => {
+      const form = marketoBlock(component, doc);
+      if (!form) return;
+      form.setAttribute("data-keep", "section");
+      (component.closest(".marketoform") || component).replaceWith(form);
     });
   }
   function transform(hookName, element, payload) {
@@ -1472,14 +1832,27 @@ var CustomImportScript = (() => {
     if (long_page_detail_corp_page_back_default.has(path) || main.querySelector(".c-back-button")) {
       element.setAttribute("data-page-back", "show");
     }
-    experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || []);
+    main.querySelectorAll(".hero-space").forEach((el) => el.remove());
+    main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
+    const nav = localNav(main, doc);
+    experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
     sectionTitles(main, doc);
     videoCaptions(main, doc);
+    const hasTitle = !!(main.querySelector(".h1-title h1") && text4(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
+    const firstHeadline = !hasTitle && main.querySelector(".c-largeheadline");
+    if (firstHeadline && text4(firstHeadline)) {
+      firstHeadline.setAttribute("data-page-title", "");
+      firstHeadline.querySelectorAll("b").forEach((b) => {
+        if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
+      });
+    }
+    columnRows(main, doc);
     buildArticle(element, {
       keep: ".c-resourcesanddownload, [data-keep]",
       spacer: false,
       componentStyle: columnStyle
     });
+    if (nav) element.prepend(nav, doc.createElement("hr"));
   }
 
   // tools/importer/transformers/patients-stryker-cleanup.js
@@ -1519,8 +1892,8 @@ var CustomImportScript = (() => {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
           heading.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-            const text4 = span.textContent.replace(/ /g, " ").trim();
-            if (!text4) return;
+            const text5 = span.textContent.replace(/ /g, " ").trim();
+            if (!text5) return;
             const em = element.ownerDocument.createElement("em");
             const strong = element.ownerDocument.createElement("strong");
             while (span.firstChild) strong.appendChild(span.firstChild);
@@ -1558,15 +1931,15 @@ var CustomImportScript = (() => {
         return;
       }
       element.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-        const text4 = span.textContent.replace(/ /g, " ").trim();
-        if (!text4) return;
+        const text5 = span.textContent.replace(/ /g, " ").trim();
+        if (!text5) return;
         const strong = element.ownerDocument.createElement("strong");
         const em = element.ownerDocument.createElement("em");
-        em.textContent = text4;
+        em.textContent = text5;
         strong.appendChild(em);
         let target = span;
         let parent = span.parentElement;
-        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text4) {
+        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text5) {
           target = parent;
           parent = parent.parentElement;
         }
@@ -1734,7 +2107,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-long-page-detail-corp.js
   var PAGE_TEMPLATE = {
     name: "long-page-detail-corp",
-    description: "www.stryker.com long-page-detail pages, groups 1\u20133 (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; small print and document code as a `disclaimer` section; `published` + `last-updated: show` drive the corp Last Updated line, `page-back: show` the back link.",
+    description: "www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` + `last-updated: show` drive the corp Last Updated line, `page-back: show` the back link.",
     urls: [
       "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html",
       "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html",
@@ -1742,12 +2115,16 @@ var CustomImportScript = (() => {
     ],
     blocks: [
       { name: "video", instances: [".c-standalone-video"] },
-      { name: "cards-corp-resources", instances: [".c-resourcesanddownload"] }
+      { name: "cards-corp-resources", instances: [".c-resourcesanddownload"] },
+      { name: "hero-full-width-image", instances: [".fullWidthImageHero"] },
+      { name: "hero-image-slide", instances: [".c-autocarousel"] }
     ]
   };
   var parsers = {
     video: parse,
-    "cards-corp-resources": parse2
+    "cards-corp-resources": parse2,
+    "hero-full-width-image": parse3,
+    "hero-image-slide": parse4
   };
   var transformers = [
     transform,
