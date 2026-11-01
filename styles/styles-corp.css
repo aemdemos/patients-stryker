@@ -121,6 +121,12 @@
   --corp-carousel-dot-size: 16px; /* source .slick-dots button (dots.png) */
   --corp-carousel-dot-gap: 13px; /* 29px apart */
   --corp-carousel-speed: 300ms; /* source data-speed */
+  --corp-carousel-banner-arrow-width: 35px; /* banner: source arrow-right-carousel.png tab */
+  --corp-carousel-banner-arrow-height: 25px;
+  --corp-carousel-banner-chevron: 9px;
+  --corp-carousel-banner-inset: 35px; /* the copy's extra inset (source x50 = 15 + 35) */
+  --corp-carousel-banner-title-size: 24px; /* source .slide-title below 841px */
+  --corp-carousel-banner-title-size-l: 56px; /* from 841px (EDS 600px) */
   --corp-jump-bar-height: 80px; /* Sticky Nav in the page flow: source .c-navigation-bar */
   --corp-jump-bar-height-pinned: 70px; /* stuck to the top: source .nav-wrap.sticky */
   --corp-jump-box-height-pinned: 62px; /* its gold box (the item keeps 4px padding) */
@@ -933,6 +939,73 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots {
     display: none;
+  }
+}
+
+/* carousel option `banner` (the large hero carousel, measured on nse/products/malis-
+   disposable-non-stick-bipolar-forceps at 375 / 768 / 1024 / 1440px): gold 35 x 25px arrow
+   tabs at the edges at every width, no dots; the copy inset 35px more and centred on the
+   image, the title 24px light serif (56px from 600px, source 841px), the subtitle 17.5px
+   Futura, white */
+:where(body.corp) main .hero-corp-carousel-banner :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+  display: block;
+  width: var(--corp-carousel-banner-arrow-width);
+  height: var(--corp-carousel-banner-arrow-height);
+  background: var(--color-accent);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-prev {
+  left: 0;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-next {
+  right: 0;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner :is(.hero-corp-carousel-prev, .hero-corp-carousel-next)::before {
+  width: var(--corp-carousel-banner-chevron);
+  height: var(--corp-carousel-banner-chevron);
+  filter: none;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-prev::before {
+  left: calc(50% - var(--corp-carousel-banner-chevron) / 3);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-next::before {
+  right: calc(50% - var(--corp-carousel-banner-chevron) / 3);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-dots {
+  display: none;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns > div {
+  align-items: center;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner :where(.columns > div > div:first-child) {
+  padding-inline: var(--corp-carousel-banner-inset);
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns h2 {
+  margin: 0 0 var(--space-block-s);
+  color: var(--color-white);
+  font-size: var(--corp-carousel-banner-title-size);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns p {
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.hero-corp-carousel-banner .columns h2 {
+    margin-bottom: var(--space-block-l);
+    font-size: var(--corp-carousel-banner-title-size-l);
   }
 }
 

@@ -3,7 +3,8 @@
  * 2026-11-01). Each slide is authored as a Hero Corp block in its own section with the
  * `carousel` section style; consecutive ones are one carousel, showing one slide at a time.
  * The first slide's section holds the source options: `autoplay-<ms>` (rotate every <ms>),
- * `fade` (the slide fades in, else it slides in from the right). The slides stay sections of
+ * `fade` (the slide fades in, else it slides in from the right), `banner` (the large hero
+ * carousel: gold arrow tabs at the edges at every width, no dots). The slides stay sections of
  * their own, so each keeps its section styles (copy sizes, fonts).
  *
  * Measured on /us/en/foot-and-ankle/products/augment.html and
@@ -23,6 +24,8 @@ function wire(slides) {
   const options = [...slides[0].classList];
   const interval = Number((options.map((c) => c.match(AUTOPLAY)).find(Boolean) || [])[1]) || 0;
   const effect = options.includes('fade') ? 'fade' : 'slide';
+  // `banner` (the large hero carousel's look): every slide carries it, for its styles
+  if (options.includes('banner')) slides.forEach((slide) => slide.classList.add('hero-corp-carousel-banner'));
   let current = 0;
 
   const controls = doc.createElement('nav');

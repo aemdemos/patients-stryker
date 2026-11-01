@@ -4413,6 +4413,63 @@ var CustomImportScript = (() => {
     "bg-purple": "bg-purple",
     "bg-gray": "bg-silver"
   };
+  function heroLargeCarousel(el, ctx) {
+    const { doc } = ctx;
+    const out = [];
+    const title = el.querySelector(".c-hero-large-header .title");
+    if (title && text(title)) {
+      const h1 = doc.createElement("h1");
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-0-75em]${text(title)}]`;
+      h1.append(strong);
+      ctx.h1 = true;
+      out.push({ type: "flow", role: "text", nodes: [h1] });
+    }
+    const slides = [...el.querySelectorAll(".slide:not(.slick-cloned)")].filter((s) => text(s) || s.querySelector("img"));
+    slides.forEach((slide, i) => {
+      const container = slide.querySelector(".slide-container") || slide;
+      const band = [...container.classList].map((c) => PANELS[c]).find(Boolean);
+      const textCell2 = [];
+      const heading = slide.querySelector(".slide-title");
+      if (heading && text(heading)) {
+        const h2 = doc.createElement("h2");
+        const copy = contentCopy(heading, doc);
+        cleanRichText(copy);
+        h2.append(...copy.childNodes);
+        textCell2.push(h2);
+      }
+      const subtitle = slide.querySelector(".slide-subtitle");
+      if (subtitle && text(subtitle)) {
+        const copy = contentCopy(subtitle, doc);
+        cleanRichText(copy);
+        textCell2.push(para(doc, ...copy.childNodes));
+      }
+      const link2 = slide.querySelector("a.slide-link[href]");
+      if (link2 && text(link2)) textCell2.push(buttonNode(doc, link2, text(link2)));
+      const img = slide.querySelector(".slide-image-container.hidden-xs img, .slide-image img");
+      const imageCell2 = [];
+      if (img) {
+        const image = doc.createElement("img");
+        image.setAttribute("src", img.getAttribute("src"));
+        image.setAttribute("alt", (img.getAttribute("alt") || "").trim());
+        if (!img.getAttribute("alt")) ctx.report.notes.push(`carousel slide image without alt text: ${img.getAttribute("src")}`);
+        imageCell2.push(para(doc, image));
+      }
+      out.push({
+        type: "own",
+        kind: "columns",
+        // banner: this component's look (gold arrow tabs at the edges, no dots, centred copy)
+        styles: ["carousel", ...i ? [] : ["banner"], ...band ? [band] : [], "h-serif"],
+        nodes: [block(doc, "Columns (columns-50-50)", [[textCell2, imageCell2]])]
+      });
+    });
+    if (slides.length < 2) {
+      out.forEach((item) => {
+        if (item.styles) item.styles = item.styles.filter((st) => !["carousel", "banner"].includes(st));
+      });
+    }
+    return out;
+  }
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
     const items = ctx.collect(panel);
@@ -5191,6 +5248,7 @@ var CustomImportScript = (() => {
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
+    "hero-large-carousel": heroLargeCarousel,
     "h1-title": h1Title,
     fullWidthImage,
     fullWidthImageHero,
