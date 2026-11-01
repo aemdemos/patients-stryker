@@ -964,6 +964,29 @@ function carousel(el, ctx) {
     const overlay = slide.querySelector('.overlayparsys');
     if (!slide.querySelector('img') && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
     const overlayItems = overlay ? ctx.collect(overlay) : [];
+    // a slide XF that is a whole composition (its own copy, image and button: gmrs "GMRS Global
+    // Modular Replacement System", insignia, triathlon-revision; Hero Corp only takes a slide
+    // fragment's image) and no overlay: the fragment itself, the mobile XF in its place below
+    // 600px (section styles desktop-only / mobile-only, source 841px)
+    const copyText = (selector) => {
+      const area = slide.querySelector(selector);
+      if (!area) return '';
+      const copy = area.cloneNode(true);
+      copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+      return text(copy);
+    };
+    if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText('.experienceFragment-ef')) {
+      const fragment = (path, styles) => ({
+        type: 'fragment', kind: 'fragment', styles, nodes: [block(doc, 'Fragment', [[linkTo(doc, path)]])],
+      });
+      const carouselStyles = slideStyles();
+      // in a carousel a slide is one section: the desktop composition at every width
+      const both = !carouselStyles.length && slide.dataset.xfMobile && copyText('.experienceFragment-ef-mobile');
+      return both ? [
+        fragment(slide.dataset.xfDesktop, [...carouselStyles, 'desktop-only']),
+        fragment(slide.dataset.xfMobile, [...carouselStyles, 'mobile-only']),
+      ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+    }
     // a slide whose XF the page does not render (unpublished, redirect): its overlay copy is
     // still on the live page, kept as text (sonopet-iq "Introducing Pulse Control")
     if (!slide.querySelector('img') && !slide.dataset.xfDesktop) {

@@ -1009,6 +1009,23 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* section styles `desktop-only` / `mobile-only`: a hero composition authored twice (stryker.com
+   desktop / mobile slide XFs, e.g. joint-replacement/products/gmrs): the mobile one below 600px
+   (source 841px), the desktop one from there */
+:where(body.corp) main > .section.desktop-only {
+  display: none;
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.desktop-only {
+    display: flow-root;
+  }
+
+  :where(body.corp) main > .section.mobile-only {
+    display: none;
+  }
+}
+
 /* bracket tag `[[visually-hidden]…]`: text kept for search engines and screen readers, not
    shown (stryker.com hero titles set transparent, e.g. nse/products/silverglide); a heading
    that holds only it takes no room either */

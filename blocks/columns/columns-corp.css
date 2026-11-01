@@ -244,6 +244,14 @@ body.corp .columns > div > div h1 {
   line-height: 1.66;
 }
 
+/* a Heading 1 without a vw size (a rich-text h1 in a cell, or a Large Headline line without
+   a size class) is the source's plain h1: 28px, lines 1.06 (epf "Designed for the treatment
+   of plantar fasciosis", the gmrs hero XF "Global Modular Replacement System") */
+body.corp .columns > div > div h1:where(:not(:has(span.corp-vw), .columns-gold, .columns-bold, .columns-number)) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
 /* a headline in one font per line (fully gold or fully Bold, or a gold number over the
    text) keeps the source's 1.35 line spacing; a gold number alone on the first line
    (columns.js .columns-number) is twice the headline size (stryker.com 9vw number over

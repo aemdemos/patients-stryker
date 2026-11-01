@@ -4439,6 +4439,27 @@ var CustomImportScript = (() => {
       const overlay = slide.querySelector(".overlayparsys");
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
+      const copyText = (selector) => {
+        const area = slide.querySelector(selector);
+        if (!area) return "";
+        const copy = area.cloneNode(true);
+        copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+        return text(copy);
+      };
+      if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText(".experienceFragment-ef")) {
+        const fragment = (path, styles) => ({
+          type: "fragment",
+          kind: "fragment",
+          styles,
+          nodes: [block(doc, "Fragment", [[linkTo(doc, path)]])]
+        });
+        const carouselStyles = slideStyles();
+        const both = !carouselStyles.length && slide.dataset.xfMobile && copyText(".experienceFragment-ef-mobile");
+        return both ? [
+          fragment(slide.dataset.xfDesktop, [...carouselStyles, "desktop-only"]),
+          fragment(slide.dataset.xfMobile, [...carouselStyles, "mobile-only"])
+        ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+      }
       if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
         ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
         return overlayItems;
