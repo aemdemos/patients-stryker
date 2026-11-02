@@ -13,9 +13,17 @@
 /* the `separator` rule runs across the whole page, edge to edge (source .c-section-separator:
    1440px at 1440px, "When Stryker employees…"; mix-width: the rule between the article and
    the "Connect with us" band), not across the container: it sits on the section, which
-   spans the page, instead of its content box */
+   spans the page, instead of its content box. An empty separator section (only its
+   metadata, e.g. the rule authored on its own before a fragment) still shows: it is the
+   rule, which the corp "empty sections paint nothing" rule would otherwise hide */
 body.news-detail:is(.full-width, .mix-width) main > .section.separator {
   border-top: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail:is(.full-width, .mix-width) main > .section.separator:empty {
+  display: block;
+  padding-block: 0;
+  margin-bottom: var(--space-block-l);
 }
 
 body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:first-child {
@@ -26,6 +34,12 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
    body.news-detail.full-width .columns > div {
    flex-direction: column;
    }
+
+  /* the empty separator section: 50px to the next section from 600px (source 51px at
+     1280px; 21px on phones, above) */
+  body.news-detail:is(.full-width, .mix-width) main > .section.separator:empty {
+    margin-bottom: var(--space-section-l);
+  }
 
   /* a 25/75 row (a cover beside its text) and a thumbnails row (text beside its download
      thumbnails) stay side by side, as on the source (the 2022 Comprehensive Report
