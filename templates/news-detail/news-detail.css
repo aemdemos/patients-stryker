@@ -230,6 +230,18 @@ body.news-detail main .columns span.body-font :is(strong, b) {
   font-family: var(--body-font-family);
 }
 
+/* bracket tag `[[indent]…]` around a whole paragraph: the paragraph is indented 40px
+   (stryker.com rich-text indent, p style margin-left: 40px — e.g. the description under
+   each bold list label of the Sage air-assisted transfer system release) */
+body.news-detail {
+  --news-indent: 40px;
+}
+
+body.news-detail main span.indent {
+  display: block;
+  margin-inline-start: var(--news-indent);
+}
+
 /* bracket tag `[[serif]…]`: text in the light serif (stryker.com span.urw-egyptienne on part
    of a cell, e.g. the pull quotes beside the photos of the "From behind the scenes…"
    feature, whose story text stays in the body font); bold text in it keeps the corp Futura.
