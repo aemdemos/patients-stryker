@@ -69,6 +69,21 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
 }
 
 /**
+ * www.stryker.com links into the AEM content tree that are not assets: /content/stryker/… is
+ * the site path itself (the prefix dropped, as for the export links); any other /content/…
+ * (the microsites /content/m/hsc/en/, /content/m/stroke-awareness/) stays on www.stryker.com,
+ * so it becomes absolute there. Other links are left alone.
+ * @param {string} href
+ * @returns {string|null} the link, or null when nothing changes
+ */
+function corpContentLink(href) {
+  const value = (href || '').trim();
+  if (!/^\/content\/(?!dam\/)/.test(value)) return null;
+  if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, '');
+  return `https://www.stryker.com${value}`;
+}
+
+/**
  * A page name as the importer saves the page document (WebImporter.FileUtils
  * sanitizeFilename): lowercase, accents dropped, every run of other characters one `-`, no
  * `-` at either end. foot---ankle → foot-ankle, -isuite-experience → isuite-experience,
@@ -422,6 +437,10 @@ export default function transform(hookName, element, payload) {
     // Runs for every template, after the block parsers, so block cells are covered.
     const hostRe = sourceHostFor(payload);
     element.querySelectorAll('a[href]').forEach((a) => {
+      if (hostRe === CORP_HOST_RE) {
+        const content = corpContentLink(a.getAttribute('href'));
+        if (content !== null) a.setAttribute('href', content);
+      }
       const rewritten = rewriteSourceLink(a.getAttribute('href'), hostRe);
       if (rewritten !== null) a.setAttribute('href', rewritten);
       // the page names as the documents are saved (a link shown as its URL follows)

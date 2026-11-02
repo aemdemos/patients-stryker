@@ -170,6 +170,12 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
+  function corpContentLink(href) {
+    const value = (href || "").trim();
+    if (!/^\/content\/(?!dam\/)/.test(value)) return null;
+    if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, "");
+    return `https://www.stryker.com${value}`;
+  }
   function documentName(name) {
     let decoded = name;
     try {
@@ -330,6 +336,10 @@ var CustomImportScript = (() => {
       });
       const hostRe = sourceHostFor(payload);
       element.querySelectorAll("a[href]").forEach((a) => {
+        if (hostRe === CORP_HOST_RE) {
+          const content = corpContentLink(a.getAttribute("href"));
+          if (content !== null) a.setAttribute("href", content);
+        }
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
         const href = a.getAttribute("href");
