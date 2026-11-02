@@ -48,6 +48,16 @@ body.news-detail main > .section.headline-2vw > .default-content-wrapper p {
   line-height: var(--heading-line-height-hero);
 }
 
+/* the heading of a `bg-dark-blue-gradient` band (the background is defined with the bracket
+   tags, below): the Large Headline at 2.5vw (5vw on phones), capped at 35px, white Futura
+   bold (source span.fontsize-2-5-vw: 18.75px at 375px, 32px at 1280px, 35px from 1400px) */
+body.news-detail main > .section.bg-dark-blue-gradient > .default-content-wrapper > h2 {
+  margin-bottom: 0;
+  color: var(--color-white);
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2 * var(--news-band-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
 /* ---- title section ---- */
 
 body.news-detail main > .section:nth-child(1 of :not(:empty)) {
@@ -291,6 +301,12 @@ body.news-detail {
   --news-scale-1-25: 1.25; /* h3-1-25 section style, below */
   --news-h3-size: var(--heading-font-size-m); /* the corp h3 size; 21px from 600px */
   --news-h2-size: var(--heading-font-size-l); /* the corp h2 size; 24.5px from 600px */
+  --news-font-scale-1-5: 1.5em; /* [[text-1-5]], below */
+  --news-band-headline-vw: 2.5vw; /* bg-dark-blue-gradient band heading, below; 1.25vw from 600px */
+
+  /* stryker.com bg-dark-blue-g full-bleed panel: grey to slate blue, left to right */
+  --news-color-dark-blue-gradient-end: #425361;
+  --news-dark-blue-gradient: linear-gradient(90deg, var(--color-secondary), var(--news-color-dark-blue-gradient-end));
 }
 
 body.news-detail main span.indent {
@@ -315,6 +331,37 @@ body.news-detail main span.serif.text-1-25 {
    in a 21px h3, 14px on phones; token with the indent one above) */
 body.news-detail main span.text-0-8 {
   font-size: var(--news-font-scale-0-8);
+}
+
+/* bracket tag `[[text-1-5]…]`: text at 1.5x the size around it (stryker.com
+   span.fontsize-1-5em, e.g. the 21px stat lines and, with text-1-25 inside, the 26.25px chart
+   titles of the ENRICH release band); lines 1.06, as the source span */
+body.news-detail main span.text-1-5 {
+  font-size: var(--news-font-scale-1-5);
+  line-height: var(--heading-line-height);
+}
+
+/* bracket tag `[[center]…]` around a whole paragraph: the paragraph is centred in its cell
+   (stryker.com centred rich text in one grid column, e.g. the 88% / 3% stats of the ENRICH
+   release) */
+body.news-detail main span.center {
+  display: block;
+  text-align: center;
+}
+
+/* Section Metadata `background: bg-dark-blue-gradient`: a full-bleed band, grey to slate
+   blue, with white text (stryker.com c-full-bleed-panel bg-dark-blue-g, e.g. the ENRICH
+   results band of the NEJM release: the heading one Large Headline line below the band top,
+   the charts at its bottom edge) */
+body.news-detail main > .section.bg-dark-blue-gradient {
+  padding-top: calc(var(--space-section) + var(--space-block-s));
+  background: var(--news-dark-blue-gradient);
+  color: var(--color-white);
+}
+
+/* …its Columns rows follow each other directly, as the source grid rows (no row gap) */
+body.news-detail main > .section.bg-dark-blue-gradient .columns > div + div {
+  margin-top: 0;
 }
 
 /* section styles `h3-0-8` / `h3-1-25`: every Heading 3 of the section at 0.8x / 1.25x the
@@ -386,6 +433,7 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
   body.news-detail {
     --news-h3-size: var(--heading-font-size-l);
     --news-h2-size: var(--heading-font-size-xl);
+    --news-band-headline-vw: 1.25vw;
   }
 
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
