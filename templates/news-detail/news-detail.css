@@ -205,6 +205,31 @@ body.news-detail main > .section .columns.label-right > div > div:first-child p 
   text-align: right;
 }
 
+/* Columns `thumbnails` (with columns-75-25 media-pair): the last cell is a column of
+   download thumbnails with a 1px gold border (stryker.com img.bor-gold beside a press
+   release, e.g. the leadership succession infographics); on phones they sit two per row,
+   a last odd one across the row */
+body.news-detail main .columns.thumbnails > div > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--space-section);
+}
+
+body.news-detail main .columns.thumbnails > div > div:last-child > .columns-img-col:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+body.news-detail main .columns.thumbnails > div > div:last-child img {
+  border: 1px solid var(--color-accent);
+}
+
+/* bracket tag `[[body-font]…]` in a Columns cell: its bold keeps the body font, as in
+   default content (the corp Columns set <strong> in Futura), e.g. "Forward-Looking
+   Statements" / "Contacts" in the leadership succession release */
+body.news-detail main .columns span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
 /* bracket tag `[[serif]…]`: text in the light serif (stryker.com span.urw-egyptienne on part
    of a cell, e.g. the pull quotes beside the photos of the "From behind the scenes…"
    feature, whose story text stays in the body font); bold text in it keeps the corp Futura.
@@ -305,6 +330,12 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     flex: 0 0 75%;
   }
 
+  /* Columns thumbnails: one per row in the side column, as wide as the column (source
+     col-sm-3 until 1024px) */
+  body.news-detail main .columns.thumbnails > div > div:last-child {
+    display: block;
+  }
+
   /* image-2-3: an image the source sets in a two-thirds grid column with the other column
      empty (stryker.com col-sm-8, e.g. the additive manufacturing lead image on a
      full-width page): two thirds of the container less the column padding (930px at
@@ -322,5 +353,11 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
   
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* Columns thumbnails: a sixth of the container less the column padding (source
+     col-md-2 from 1024px: 183px at 1280px) */
+  body.news-detail main .columns.thumbnails > div > div:last-child .columns-img-col {
+    max-width: calc(min(100vw, var(--container-max)) / 6 - 2 * var(--space-block));
   }
 }

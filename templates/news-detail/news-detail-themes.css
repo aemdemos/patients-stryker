@@ -26,9 +26,10 @@ body.news-detail.full-width main > .section.separator > div:first-child {
    flex-direction: column;
    }
 
-  /* a 25/75 row (a cover beside its text) stays side by side, as on the source (the 2022
-     Comprehensive Report release: 145px cover beside the text at 700px) */
-  body.news-detail.full-width .columns.columns-25-75 > div {
+  /* a 25/75 row (a cover beside its text) and a thumbnails row (text beside its download
+     thumbnails) stay side by side, as on the source (the 2022 Comprehensive Report
+     release: 145px cover beside the text at 700px; the leadership succession release) */
+  body.news-detail.full-width .columns:is(.columns-25-75, .thumbnails) > div {
     flex-direction: row;
   }
 
