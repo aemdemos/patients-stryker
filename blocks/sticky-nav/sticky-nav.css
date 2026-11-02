@@ -112,3 +112,92 @@
 .sticky-nav .sticky-nav-item-current p {
   background: var(--color-accent);
 }
+
+/* ---- Phones (< 600px): the bar is hidden; a floating "⋮" button bottom-right can open
+   the sections in a gray panel sliding over the right 80% of the screen — measured from
+   the source jump-bar mobile menu. Built at the end of <body> by sticky-nav.js and hidden
+   by default: a page theme switches it on (styles/themes.css, e.g. body.ivs-home). ---- */
+.sticky-nav-mobile {
+  display: none;
+}
+
+.sticky-nav-mobile .sticky-nav-mobile-toggle {
+  position: fixed;
+  right: 8px;
+  bottom: 17px;
+  z-index: 111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-black);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+/* three gold dots, stacked */
+.sticky-nav-mobile .sticky-nav-mobile-dots {
+  width: 4px;
+  height: 20px; /* three 7px tiles: room for the last dot's full radius */
+  background: radial-gradient(circle, var(--color-accent) 0 2px, transparent 2.5px) center top / 4px 7px repeat-y;
+}
+
+.sticky-nav-mobile .sticky-nav-mobile-close {
+  display: none;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: 1;
+}
+
+/* open: the button turns into a gold "X" sitting at the panel's left edge */
+.sticky-nav-mobile.sticky-nav-mobile-open .sticky-nav-mobile-toggle {
+  right: 80%;
+}
+
+.sticky-nav-mobile.sticky-nav-mobile-open .sticky-nav-mobile-dots {
+  display: none;
+}
+
+.sticky-nav-mobile.sticky-nav-mobile-open .sticky-nav-mobile-close {
+  display: block;
+}
+
+.sticky-nav-mobile .sticky-nav-mobile-panel {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 110;
+  width: 80%;
+  overflow-y: auto;
+  background: var(--color-secondary);
+}
+
+.sticky-nav-mobile .sticky-nav-mobile-item {
+  display: block;
+  box-sizing: border-box;
+  height: 40px;
+  padding-left: 10px;
+  border-bottom: 1px solid var(--color-white);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: 39px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* the section in view, in gold */
+.sticky-nav-mobile .sticky-nav-mobile-item.sticky-nav-mobile-item-current {
+  color: var(--color-accent);
+}
+
+.sticky-nav-mobile .sticky-nav-mobile-toggle:focus-visible,
+.sticky-nav-mobile .sticky-nav-mobile-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}

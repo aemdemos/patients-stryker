@@ -95,7 +95,9 @@ export default function transform(hookName, element, payload) {
   // The corp news-detail template (www.stryker.com news articles) rebuilds its own
   // content (news-detail-sections.js): it keeps its <h1> and its authorable
   // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
-  const isNewsDetail = !!(payload && payload.template && payload.template.name === 'news-detail');
+  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template)
+  const isNewsDetail = !!(payload && payload.template
+    && ['news-detail', 'news-detail-xf'].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 
   if (hookName === TransformHook.beforeTransform) {

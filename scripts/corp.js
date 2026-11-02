@@ -107,12 +107,37 @@ function buildAccordionSections(main) {
 }
 
 /**
+ * `image-link` section style: a plain link alone on the line right after an image makes
+ * the image clickable (a DM image link can't also carry the target address; the same rule
+ * as the Columns media-pair variant). The link text becomes the image link's name and the
+ * link line goes. Runs before decorateLinkTargets(), so a `#_blank` link still opens in a
+ * new tab.
+ * @param {Element} main The container element
+ */
+function decorateImageLinks(main) {
+  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach((p) => {
+    const picture = p.querySelector(':scope > picture');
+    if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+    const next = p.nextElementSibling;
+    const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+    if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+    const a = document.createElement('a');
+    a.href = link.getAttribute('href');
+    a.setAttribute('aria-label', link.textContent.trim());
+    a.append(picture);
+    p.append(a);
+    next.remove();
+  });
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
  */
 export function decorateSections(main) {
   buildAccordionSections(main);
+  decorateImageLinks(main);
 }
 
 /**
@@ -164,14 +189,18 @@ export async function loadFirstSections(main) {
 /**
  * Builds, decorates and loads a chrome block (header-corp / footer-corp) into its
  * landmark, in place of aem.js loadHeader / loadFooter. The blocks read the `nav` /
- * `footer` metadata themselves (defaults /nav, /footer).
+ * `footer` metadata themselves (defaults /nav, /footer). Like aem.js loadHeader /
+ * loadFooter, a block already in the landmark is replaced, not added to: the EW canvas
+ * loads the chrome again, which showed the header and footer twice.
  * @param {Element} parent The <header> or <footer> landmark
  * @param {string} name The block name
  */
 async function loadChrome(parent, name) {
   if (!parent) return null;
   const block = buildBlock(name, '');
-  parent.append(block);
+  const existing = parent.querySelector(`:scope > .${name}`);
+  if (existing) existing.replaceWith(block);
+  else parent.append(block);
   decorateBlock(block);
   return loadBlock(block);
 }

@@ -424,10 +424,12 @@ export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
   let poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
-  // a poster URL with its own query (`…/image?fit=constrain,1&wid=909&hei=511`) is
-  // authored unencoded, so its `&wid…` params split off as video params: when the
-  // poster value has a `?`, everything after `poster=` belongs to the poster
-  if (poster?.includes('?')) {
+  // www.stryker.com (corp) only: a poster URL with its own query
+  // (`…/image?fit=constrain,1&wid=909&hei=511`) is authored unencoded, so its `&wid…`
+  // params split off as video params: when the poster value has a `?`, everything after
+  // `poster=` belongs to the poster. Other pages encode the poster's query (`%26wid…`)
+  // and keep the decoded searchParams value.
+  if (poster?.includes('?') && isCorpPage()) {
     const at = src.search(/[?&]poster=/);
     poster = src.slice(src.indexOf('=', at) + 1);
     const rest = new URL(src.slice(0, at), window.location.href);
