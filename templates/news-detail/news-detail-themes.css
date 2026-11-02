@@ -77,9 +77,10 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
      container;
    - a form-with-aside section puts its form in the first two thirds and the contact
      links fragment in the last third, side by side (stacked below 900px, the links
-     under the form, as on the source) */
+     under the form, as on the source). full-width pages lay it out the same way (the Sage
+     "Closing the gap in fecal management" webinar: form 637px beside the links at 1000px) */
 @media (width >= 900px) {
-  body.news-detail.mix-width main > .section.form-with-aside {
+  body.news-detail:is(.full-width, .mix-width) main > .section.form-with-aside {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: start;
@@ -87,7 +88,7 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     margin-inline: auto;
   }
 
-  body.news-detail.mix-width main > .section.form-with-aside > div {
+  body.news-detail:is(.full-width, .mix-width) main > .section.form-with-aside > div {
     width: auto;
     max-width: none;
     margin: 0;

@@ -310,6 +310,36 @@ body.news-detail main .section.contact-aside > .default-content-wrapper p.button
   margin-top: var(--space-block);
 }
 
+/* the form of a form-with-aside section starts at the top of the section, level with its
+   contact links, as on the source (stryker.com c-marketo-form has no space above the form:
+   the Sage webinar and Sustainability EP releases) */
+body.news-detail main > .section.form-with-aside .marketo-form {
+  padding-top: 0;
+}
+
+/* the form of a form-with-aside section starts at the top of the section, level with its
+   contact links, as on the source (stryker.com c-marketo-form has no space above the form:
+   the Sage webinar and Sustainability EP releases) */
+body.news-detail main > .section.form-with-aside .marketo-form {
+  padding-top: 0;
+}
+
+/* Section Metadata `background: bg-gold`: a gold box around the section's text, inside the
+   container gutters rather than a page-wide band (stryker.com rich text
+   .has-background.bg-gold, e.g. the "Want to learn more?" heading above the Sage webinar
+   form: padding 4% top, 10px right, 3% bottom, 2% left of the box, 2% below it) */
+body.news-detail main > .section.bg-gold {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bg-gold > .default-content-wrapper {
+  width: calc(100% - 2 * var(--container-gutter));
+  max-width: calc(var(--container-max) - 2 * var(--container-gutter));
+  margin-bottom: min(2%, var(--container-max) * 0.02);
+  padding: min(4%, var(--container-max) * 0.04) var(--space-block-s) min(3%, var(--container-max) * 0.03) min(2%, var(--container-max) * 0.02);
+  background-color: var(--color-accent);
+}
+
 /* section style `separator-wide` (with `separator`): the rule spans the page container
    (1410px less the 15px gutters), not the article column, e.g. the first rule of the
    BattleBots Q&A (source full-width .component-subheading). The section content keeps its
