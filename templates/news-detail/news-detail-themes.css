@@ -10,6 +10,15 @@
    importer opens these pages with a `spacer` section after the title (46px to the video
    row, as on the source) */
 
+/* section style `col-10` on full-width pages: the section's content in the centred 10/12
+   grid column, at every width (stryker.com aem-GridColumn--default--10 offset 1, e.g. the
+   article, video and "Resources for nurses" boxes of the nurses feature: 1036px at 1280px,
+   553px at 700px, 282px at 375px) */
+body.news-detail.full-width main > .section.col-10 > div {
+  width: calc(100% * 5 / 6);
+  max-width: calc(var(--container-max) * 5 / 6);
+}
+
 /* the `separator` rule runs across the whole page, edge to edge (source .c-section-separator:
    1440px at 1440px, "When Stryker employees…"; mix-width: the rule between the article and
    the "Connect with us" band), not across the container: it sits on the section, which
