@@ -140,10 +140,13 @@ body.long-page-detail-corp main > .section:not(.column-10-12) > .video-wrapper .
 /* ---- Dynamic Media video: the 1px frame inside the column (lazy-styles.css draws it outside,
    2px wider than the column; the source video is 1380px including its frame). The video area
    inside the frame stays exactly 16:9, so a playing 16:9 video fills it (`contain`) without a
-   gap at the sides (a 16:9 border box left 1378x774, ~1px each side) ---- */
+   gap at the sides (a 16:9 border box left 1378x774, ~1px each side). The video area takes
+   the video's own shape when the template script has read it (long-page-detail-corp.js:
+   e.g. 1244x720 → 1380x799 at 1440, as on stryker.com), otherwise 16:9 ---- */
 body.long-page-detail-corp main .dm-video-wrapper:not(.is-fullscreen) .dm-video {
   box-sizing: content-box;
   width: calc(100% - 2 * var(--long-page-detail-corp-video-frame));
+  aspect-ratio: var(--long-page-detail-corp-video-ratio, 16 / 9);
 }
 
 /* the poster fills the 16:9 frame, as on stryker.com (object-fit: cover): Dynamic Media
