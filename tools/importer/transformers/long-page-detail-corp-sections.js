@@ -33,7 +33,7 @@
  */
 
 import buildArticle, {
-  richTextNodes, imageNodes, buttonNodes, headlineNodes,
+  richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
@@ -247,22 +247,7 @@ function cellNodes(col, doc) {
       } else if (c.matches('.c-largeheadline')) {
         const lines = headlineNodes(c, doc);
         if (c.hasAttribute('data-page-title') && lines.length) {
-          const h1 = doc.createElement('h1');
-          lines.forEach((line, i) => {
-            if (i) h1.append(doc.createElement('br'));
-            h1.append(...line.childNodes);
-          });
-          // a line break at the end of bold / italic text would be lost on import: it
-          // goes after the formatting
-          [...h1.querySelectorAll('strong, em')].reverse().forEach((el) => {
-            let last = el.lastChild;
-            while (last && (last.nodeName === 'BR' || (last.nodeType === 3 && !last.textContent.trim()))) {
-              if (last.nodeName === 'BR') el.after(last);
-              else last.remove();
-              last = el.lastChild;
-            }
-          });
-          out.push(h1);
+          out.push(titleHeading(lines, doc));
         } else out.push(...lines);
       } else if (c.matches('.c-curatedcta, .buttonset')) out.push(...buttonNodes(c, doc));
       else out.push(c);
@@ -350,6 +335,48 @@ function columnRows(main, doc) {
   });
 }
 
+/** Replaces an element by a `tag` element with the same content. */
+function renameTo(el, tag, doc) {
+  if (el.tagName.toLowerCase() === tag) return el;
+  const out = doc.createElement(tag);
+  out.append(...el.childNodes);
+  el.replaceWith(out);
+  return out;
+}
+
+/** Wraps the content of an element in a bracket tag (`[[tag]…]`). */
+function sizeTagged(el, tag, doc) {
+  el.prepend(doc.createTextNode(`[[${tag}]`));
+  el.append(doc.createTextNode(']'));
+  return el;
+}
+
+// heading size spans with a size tag (template CSS)
+const TITLE_SIZES = ['1-25', '1-5', '1-75', '2', '2-5'];
+
+/**
+ * A rich-text heading that is the page title, as an H1 looking like the source heading:
+ * an h4-h6 is Futura bold (span.futura-bold → bold), and a size span around all of it
+ * (span.fontsize-2-5em) becomes its size tag (e.g. the Mako thank-you page's H4).
+ */
+function titleFromHeading(heading, doc) {
+  const level = heading.tagName;
+  const h1 = renameTo(heading, 'h1', doc);
+  const spans = [...h1.querySelectorAll('[class*="fontsize-"]')]
+    .filter((span) => text(span) === text(h1));
+  const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1])
+    .find((n) => TITLE_SIZES.includes(n));
+  if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith('fontsize-'))));
+  if (/^H[4-6]$/.test(level) && !h1.querySelector('.futura-bold, b, strong')) {
+    const bold = doc.createElement('span');
+    bold.className = 'futura-bold';
+    bold.append(...h1.childNodes);
+    h1.append(bold);
+  }
+  if (size) sizeTagged(h1, `text-${size}`, doc);
+  return h1;
+}
+
 /** Drops the video components whose asset is a plain DAM file (not Dynamic Media). */
 function dropDamVideos(main) {
   main.querySelectorAll('.c-standalone-video').forEach((video) => {
@@ -390,9 +417,18 @@ export default function transform(hookName, element, payload) {
   videoCaptions(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
     || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
-  // no title: the first Large Headline (in source order) is the page H1
-  const firstHeadline = !hasTitle && main.querySelector('.c-largeheadline');
-  if (firstHeadline && text(firstHeadline)) {
+  // no title: the first non-empty Large Headline or rich-text heading (in source order) is
+  // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
+  // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1
+  let firstTitle = !hasTitle && [...main.querySelectorAll('.c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)')]
+    .find((el) => text(el) && !el.closest('.h1-title'));
+  const firstHeadline = firstTitle && firstTitle.matches('.c-largeheadline') ? firstTitle : null;
+  if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
+  main.querySelectorAll('.c-rich-text-editor h1').forEach((h) => {
+    // a second H1 keeps the source's 28px (the H1 size) as an H2
+    if (h !== firstTitle) sizeTagged(renameTo(h, 'h2', doc), 'text-2', doc);
+  });
+  if (firstHeadline) {
     firstHeadline.setAttribute('data-page-title', '');
     // plain bold (<b>) in the title keeps the heading's serif on the source; imported as
     // bold it would be Futura (corp <strong>), so it is plain text (e.g. jr45 "Complex

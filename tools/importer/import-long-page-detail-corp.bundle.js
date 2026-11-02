@@ -508,8 +508,14 @@ var CustomImportScript = (() => {
   }
   function serifHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    return new Set([...root.querySelectorAll("h3")].filter((h) => {
-      if (!text3(h) || h.querySelector(".futura-bold, b, strong")) return false;
+    return new Set([...root.querySelectorAll("h2, h3")].filter((h) => {
+      if (!text3(h)) return false;
+      if (h.tagName === "H2") {
+        if (h.querySelector("u")) return false;
+        const bold = [...h.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong"));
+        return squash(bold.map((b) => b.textContent).join("")) !== squash(h.textContent);
+      }
+      if (h.querySelector(".futura-bold, b, strong")) return false;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
       return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
@@ -704,18 +710,59 @@ var CustomImportScript = (() => {
       return p;
     });
   }
+  function headlineTag(el) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1]).map(([n]) => n)[0];
+    const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
+    const serif = squash(bold) !== squash(el.textContent);
+    return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
+  }
   function headlineNodes(component, doc) {
     const box = doc.createElement("div");
     box.innerHTML = component.innerHTML;
-    const lines = [...box.querySelectorAll(".line")].map((line) => rename(line, "div"));
-    lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap));
+    const BLOCKS = "h1, h2, h3, h4, h5, h6, p";
+    const lines = [...box.querySelectorAll(".line")];
+    const segments = (lines.length ? lines : [box]).flatMap((line) => {
+      const blocks = [...line.querySelectorAll(BLOCKS)].filter((block) => text3(block) && !block.parentElement.closest(BLOCKS));
+      return blocks.length > 1 ? blocks : [line];
+    });
+    const tags = segments.map(headlineTag);
+    const levels = segments.map((segment) => /^H[2-6]$/.test(segment.tagName) ? segment.tagName.toLowerCase() : "");
+    const parts = segments.map((segment) => segment === box ? box : rename(segment, "div"));
+    parts.forEach((part) => part.querySelectorAll(`${BLOCKS}, div`).forEach((block) => {
+      let prev = block.previousSibling;
+      while (prev && prev.nodeType === 3 && !prev.textContent.trim()) prev = prev.previousSibling;
+      if (prev && prev.nodeName !== "BR" && text3(block)) block.before(doc.createElement("br"));
+      unwrap(block);
+    }));
     cleanRichText(box);
-    return (lines.length ? lines : [box]).map((line) => {
-      if (!text3(line)) return null;
+    return parts.map((part, i) => {
+      if (!text3(part)) return null;
       const p = doc.createElement("p");
-      while (line.firstChild) p.append(line.firstChild);
+      while (part.firstChild) p.append(part.firstChild);
+      if (tags[i]) {
+        p.prepend(doc.createTextNode(`[[${tags[i]}]`));
+        p.append(doc.createTextNode("]"));
+      }
+      if (levels[i]) p.headingLevel = levels[i];
       return p;
     }).filter(Boolean);
+  }
+  function titleHeading(lines, doc) {
+    const h1 = doc.createElement("h1");
+    lines.forEach((line, i) => {
+      if (i) h1.append(doc.createElement("br"));
+      h1.append(...line.childNodes);
+    });
+    [...h1.querySelectorAll("strong, em")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
+        if (last.nodeName === "BR") el.after(last);
+        else last.remove();
+        last = el.lastChild;
+      }
+    });
+    return h1;
   }
   function videoAside(video) {
     const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
@@ -1036,6 +1083,17 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
+      if (component.matches(".c-largeheadline[data-page-title]")) {
+        const lines = headlineNodes(component, doc);
+        const titleLines = lines.filter((line) => !line.headingLevel);
+        if (titleLines.length) {
+          const others = lines.filter((line) => line.headingLevel).map((line) => rename(line, line.headingLevel));
+          const section = isFirst ? title : startSection("headline");
+          section.nodes.push(titleHeading(titleLines, doc), ...others);
+          current = null;
+          return;
+        }
+      }
       if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text3(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
@@ -1074,7 +1132,9 @@ var CustomImportScript = (() => {
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
         let h3Font = null;
-        if (node.tagName === "H3") h3Font = node.serifHeading ? "serif" : "futura";
+        if (node.tagName === "H3" || node.tagName === "H2" && node.serifHeading) {
+          h3Font = node.serifHeading ? "serif" : "futura";
+        }
         const otherH3Font = h3Font && current && current.h3Font && current.h3Font !== h3Font;
         if (!current || current.kind !== kind || otherH3Font) {
           startSection(kind, styles.join(", ") || void 0);
@@ -1488,20 +1548,7 @@ var CustomImportScript = (() => {
       } else if (c.matches(".c-largeheadline")) {
         const lines = headlineNodes(c, doc);
         if (c.hasAttribute("data-page-title") && lines.length) {
-          const h1 = doc.createElement("h1");
-          lines.forEach((line, i) => {
-            if (i) h1.append(doc.createElement("br"));
-            h1.append(...line.childNodes);
-          });
-          [...h1.querySelectorAll("strong, em")].reverse().forEach((el) => {
-            let last = el.lastChild;
-            while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
-              if (last.nodeName === "BR") el.after(last);
-              else last.remove();
-              last = el.lastChild;
-            }
-          });
-          out.push(h1);
+          out.push(titleHeading(lines, doc));
         } else out.push(...lines);
       } else if (c.matches(".c-curatedcta, .buttonset")) out.push(...buttonNodes(c, doc));
       else out.push(c);
@@ -1566,6 +1613,34 @@ var CustomImportScript = (() => {
       (component.closest(".marketoform") || component).replaceWith(form);
     });
   }
+  function renameTo(el, tag, doc) {
+    if (el.tagName.toLowerCase() === tag) return el;
+    const out = doc.createElement(tag);
+    out.append(...el.childNodes);
+    el.replaceWith(out);
+    return out;
+  }
+  function sizeTagged(el, tag, doc) {
+    el.prepend(doc.createTextNode(`[[${tag}]`));
+    el.append(doc.createTextNode("]"));
+    return el;
+  }
+  var TITLE_SIZES = ["1-25", "1-5", "1-75", "2", "2-5"];
+  function titleFromHeading(heading, doc) {
+    const level = heading.tagName;
+    const h1 = renameTo(heading, "h1", doc);
+    const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text4(span) === text4(h1));
+    const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith("fontsize-"))));
+    if (/^H[4-6]$/.test(level) && !h1.querySelector(".futura-bold, b, strong")) {
+      const bold = doc.createElement("span");
+      bold.className = "futura-bold";
+      bold.append(...h1.childNodes);
+      h1.append(bold);
+    }
+    if (size) sizeTagged(h1, `text-${size}`, doc);
+    return h1;
+  }
   function dropDamVideos(main) {
     main.querySelectorAll(".c-standalone-video").forEach((video) => {
       const asset = video.querySelector("[data-asset-path]");
@@ -1598,8 +1673,13 @@ var CustomImportScript = (() => {
     sectionTitles(main, doc);
     videoCaptions(main, doc);
     const hasTitle = !!(main.querySelector(".h1-title h1") && text4(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
-    const firstHeadline = !hasTitle && main.querySelector(".c-largeheadline");
-    if (firstHeadline && text4(firstHeadline)) {
+    let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text4(el) && !el.closest(".h1-title"));
+    const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
+    if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
+    main.querySelectorAll(".c-rich-text-editor h1").forEach((h) => {
+      if (h !== firstTitle) sizeTagged(renameTo(h, "h2", doc), "text-2", doc);
+    });
+    if (firstHeadline) {
       firstHeadline.setAttribute("data-page-title", "");
       firstHeadline.querySelectorAll("b").forEach((b) => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);

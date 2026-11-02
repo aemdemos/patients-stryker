@@ -415,11 +415,22 @@ function plainBoldParagraphs(root) {
 /**
  * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
  * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
+ * An h2 without bold is Egyptienne light on the long-page-detail pages (their own h2 font,
+ * e.g. the Mako thank-you page): `h-serif` as well (the corp h2 is Futura bold).
  */
 function serifHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  return new Set([...root.querySelectorAll('h3')].filter((h) => {
-    if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+  return new Set([...root.querySelectorAll('h2, h3')].filter((h) => {
+    if (!text(h)) return false;
+    if (h.tagName === 'H2') {
+      // an underlined h2 is a section title (Futura bold, long-page-detail-corp-sections.js)
+      if (h.querySelector('u')) return false;
+      // serif unless all of it is bold (a bold phrase inside stays Futura bold)
+      const bold = [...h.querySelectorAll('.futura-bold, b, strong')]
+        .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'));
+      return squash(bold.map((b) => b.textContent).join('')) !== squash(h.textContent);
+    }
+    if (h.querySelector('.futura-bold, b, strong')) return false;
     const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
     return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
   }));
@@ -671,22 +682,91 @@ function buttonNodes(component, doc) {
 }
 
 /**
- * A large headline outside the slide: each non-empty line as a paragraph (a heading in a
- * line gives its text, not the heading). The line spans become divs first: cleanRichText
- * unwraps spans, which would empty them.
+ * The bracket tag of a large-headline line, as the source sets it: `headline-N` for its
+ * size (span.fontsize-4vw → headline-4, span.fontsize-3-5-vw → headline-3-5; N% of the
+ * content width, template CSS) and `serif` unless it is all Futura bold (the large
+ * headline's own font is Egyptienne light). '' when neither applies.
+ */
+function headlineTag(el) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  // the size of the span holding most of the text (an empty sized span, e.g. around a line
+  // break, does not count)
+  const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')]
+    .map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || '') || [])[1], squash(span.textContent).length])
+    .filter(([n, length]) => n && length)
+    .sort((a, b) => b[1] - a[1])
+    .map(([n]) => n)[0];
+  const bold = [...el.querySelectorAll('.futura-bold, b, strong')]
+    .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
+    .map((b) => b.textContent).join('');
+  const serif = squash(bold) !== squash(el.textContent);
+  return [size ? `headline-${size}` : '', serif ? 'serif' : ''].filter(Boolean).join(',');
+}
+
+/**
+ * A large headline outside the slide: each non-empty line as a paragraph, in a bracket
+ * tag with the line's size and font (headlineTag). A heading or paragraph in a line is a
+ * line of its own (e.g. rep-portal "Blueprint Digital Platform" H1 + "Rep portal" H2, both
+ * in the first line), giving its text. The lines become divs first: cleanRichText unwraps
+ * spans, which would empty them.
  */
 function headlineNodes(component, doc) {
   const box = doc.createElement('div');
   box.innerHTML = component.innerHTML;
-  const lines = [...box.querySelectorAll('.line')].map((line) => rename(line, 'div'));
-  lines.forEach((line) => line.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(unwrap));
+  const BLOCKS = 'h1, h2, h3, h4, h5, h6, p';
+  const lines = [...box.querySelectorAll('.line')];
+  const segments = (lines.length ? lines : [box]).flatMap((line) => {
+    const blocks = [...line.querySelectorAll(BLOCKS)]
+      .filter((block) => text(block) && !block.parentElement.closest(BLOCKS));
+    return blocks.length > 1 ? blocks : [line];
+  });
+  const tags = segments.map(headlineTag);
+  // a heading other than h1 in the line (rep-portal "Rep portal" h2): marked, so a page
+  // title keeps it as a heading of its own
+  const levels = segments.map((segment) => (/^H[2-6]$/.test(segment.tagName) ? segment.tagName.toLowerCase() : ''));
+  const parts = segments.map((segment) => (segment === box ? box : rename(segment, 'div')));
+  // blocks inside a line (a div or paragraph, e.g. "Together with our customers…") become
+  // its text, a line break between them: the bracket tag must wrap the whole line
+  parts.forEach((part) => part.querySelectorAll(`${BLOCKS}, div`).forEach((block) => {
+    let prev = block.previousSibling;
+    while (prev && prev.nodeType === 3 && !prev.textContent.trim()) prev = prev.previousSibling;
+    if (prev && prev.nodeName !== 'BR' && text(block)) block.before(doc.createElement('br'));
+    unwrap(block);
+  }));
   cleanRichText(box);
-  return (lines.length ? lines : [box]).map((line) => {
-    if (!text(line)) return null;
+  return parts.map((part, i) => {
+    if (!text(part)) return null;
     const p = doc.createElement('p');
-    while (line.firstChild) p.append(line.firstChild);
+    while (part.firstChild) p.append(part.firstChild);
+    if (tags[i]) {
+      p.prepend(doc.createTextNode(`[[${tags[i]}]`));
+      p.append(doc.createTextNode(']'));
+    }
+    if (levels[i]) p.headingLevel = levels[i];
     return p;
   }).filter(Boolean);
+}
+
+/**
+ * The page title from the lines of a Large Headline (headlineNodes): one H1, a line break
+ * between the lines. A line break at the end of bold / italic text would be lost on import:
+ * it goes after the formatting.
+ */
+function titleHeading(lines, doc) {
+  const h1 = doc.createElement('h1');
+  lines.forEach((line, i) => {
+    if (i) h1.append(doc.createElement('br'));
+    h1.append(...line.childNodes);
+  });
+  [...h1.querySelectorAll('strong, em')].reverse().forEach((el) => {
+    let last = el.lastChild;
+    while (last && (last.nodeName === 'BR' || (last.nodeType === 3 && !last.textContent.trim()))) {
+      if (last.nodeName === 'BR') el.after(last);
+      else last.remove();
+      last = el.lastChild;
+    }
+  });
+  return h1;
 }
 
 /**
@@ -1115,6 +1195,22 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       current.nodes.push(component);
       return;
     }
+    // the page title the long-page-detail transformer marked (`data-page-title`: the first
+    // Large Headline of a page without a title): the page H1, in the title section when it
+    // opens the page, otherwise in a section of its own
+    if (component.matches('.c-largeheadline[data-page-title]')) {
+      const lines = headlineNodes(component, doc);
+      const titleLines = lines.filter((line) => !line.headingLevel);
+      if (titleLines.length) {
+        // a heading of another level in the headline follows the H1 as that heading
+        const others = lines.filter((line) => line.headingLevel)
+          .map((line) => rename(line, line.headingLevel));
+        const section = isFirst ? title : startSection('headline');
+        section.nodes.push(titleHeading(titleLines, doc), ...others);
+        current = null;
+        return;
+      }
+    }
     // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
     // date (e.g. OptaBlate, ProStep): that headline is the page H1, in its own section with
     // the `headline-2vw` style (the source size)
@@ -1169,10 +1265,12 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
       const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
       const kind = [centred ? 'center' : 'body', ...extra].join(' ');
-      // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);
-      // a Futura h3 in the same run starts a new section
+      // an Egyptienne h3 (or h2) adds `h-serif` to its section (it stays with the copy around
+      // it); a Futura h3 in the same run starts a new section
       let h3Font = null;
-      if (node.tagName === 'H3') h3Font = node.serifHeading ? 'serif' : 'futura';
+      if (node.tagName === 'H3' || (node.tagName === 'H2' && node.serifHeading)) {
+        h3Font = node.serifHeading ? 'serif' : 'futura';
+      }
       const otherH3Font = h3Font && current && current.h3Font && current.h3Font !== h3Font;
       if (!current || current.kind !== kind || otherH3Font) {
         startSection(kind, styles.join(', ') || undefined);
@@ -1239,5 +1337,5 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
 // helpers for the long-page-detail-corp column rows (long-page-detail-corp-sections.js)
 export {
   SIZE_STYLES, SIZE_TAGS, text, cleanRichText, richTextNodes, imageNodes, buttonNodes,
-  headlineNodes, blockNodes, absoluteAsset, newTabHref,
+  headlineNodes, titleHeading, blockNodes, absoluteAsset, newTabHref,
 };

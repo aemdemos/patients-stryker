@@ -171,6 +171,7 @@ body.long-page-detail-corp main .columns > div > div h1 {
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
   --long-page-detail-corp-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
+  --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
 }
 
 body.long-page-detail-corp main span.text-1-5 {
@@ -247,4 +248,73 @@ body.long-page-detail-corp main > .section .columns a.button:any-link {
    35px), not the 21px copy's */
 body.long-page-detail-corp main span:is(.text-2, .text-2-5) {
   line-height: var(--heading-line-height);
+}
+
+/* ---- large headlines (stryker.com .c-largeheadline): bracket tags for each line's size and
+   font, as the source sets them (measured on the endoscopy plastic-surgery, biologics,
+   form-4 and rep-portal pages at 375 / 1000 / 1440):
+   - `[[headline-N]…]`: N% of the content width (span.fontsize-Nvw: headline-4 is 56px at
+     1440, 40px at 1000), twice that below 600px (source 840px: 30px at 375); 1.35x line
+     spacing (75.6px at 56px). N = the source size: 1-5, 2, 2-5, 3, 3-5, 4, 4-5, 5, 5-5, 6, 9
+   - `[[serif]…]`: Egyptienne light, the large headline's own font (lines not in Futura bold),
+     also inside a heading
+   Combined in one tag, e.g. `[[headline-3-5,serif]Plastic Surgery]` ---- */
+@media (width >= 600px) {
+  body.long-page-detail-corp {
+    --long-page-detail-corp-headline-unit: calc(min(100vw, var(--container-max)) / 100);
+  }
+}
+
+body.long-page-detail-corp main span.headline-1-5 {
+  --long-page-detail-corp-headline-size: 1.5;
+}
+
+body.long-page-detail-corp main span.headline-2 {
+  --long-page-detail-corp-headline-size: 2;
+}
+
+body.long-page-detail-corp main span.headline-2-5 {
+  --long-page-detail-corp-headline-size: 2.5;
+}
+
+body.long-page-detail-corp main span.headline-3 {
+  --long-page-detail-corp-headline-size: 3;
+}
+
+body.long-page-detail-corp main span.headline-3-5 {
+  --long-page-detail-corp-headline-size: 3.5;
+}
+
+body.long-page-detail-corp main span.headline-4 {
+  --long-page-detail-corp-headline-size: 4;
+}
+
+body.long-page-detail-corp main span.headline-4-5 {
+  --long-page-detail-corp-headline-size: 4.5;
+}
+
+body.long-page-detail-corp main span.headline-5 {
+  --long-page-detail-corp-headline-size: 5;
+}
+
+body.long-page-detail-corp main span.headline-5-5 {
+  --long-page-detail-corp-headline-size: 5.5;
+}
+
+body.long-page-detail-corp main span.headline-6 {
+  --long-page-detail-corp-headline-size: 6;
+}
+
+body.long-page-detail-corp main span.headline-9 {
+  --long-page-detail-corp-headline-size: 9;
+}
+
+body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-9) {
+  font-size: calc(var(--long-page-detail-corp-headline-size) * var(--long-page-detail-corp-headline-unit));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp main span.serif {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
 }
