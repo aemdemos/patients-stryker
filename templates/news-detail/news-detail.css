@@ -205,6 +205,12 @@ body.news-detail main > .section .columns.label-right > div > div:first-child p 
   text-align: right;
 }
 
+/* Columns `image-border`: the block's images get a 1px black border (stryker.com
+   img.bor-black, e.g. the report cover of the 2022 Comprehensive Report release) */
+body.news-detail main .columns.image-border .columns-img-col img {
+  border: 1px solid var(--color-black);
+}
+
 /* Columns `thumbnails` (with columns-75-25 media-pair): the last cell is a column of
    download thumbnails with a 1px gold border (stryker.com img.bor-gold beside a press
    release, e.g. the leadership succession infographics); on phones they sit two per row,
