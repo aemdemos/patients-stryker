@@ -17,7 +17,8 @@
  *      then its description (Heading 3) as on the source.
  *   3. a video caption (.c-standalone-video .desc-content) follows the video as a paragraph.
  *   4. Resources & downloads (.c-resourcesanddownload) stay in the article section for the
- *      cards-corp-resources parser.
+ *      cards-corp-resources parser; their title ("Brochures") is an underlined Heading 2
+ *      before them.
  *   5. the source back link (.c-back-button) is not content and is not migrated (no back
  *      link on the corp pages).
  *   6. components the source sets in the centred AEM grid column (offset 1, 10 or 11 of 12
@@ -164,6 +165,24 @@ function sectionTitles(main, doc) {
   });
 }
 
+/**
+ * The title of a Resources & downloads component ("Brochures", "Clinical articles" on the
+ * endoscopy medical-education pages: Futura bold with a grey rule below) as an underlined
+ * Heading 2 before the downloads (authoring conventions; as the section titles).
+ */
+function downloadTitles(main, doc) {
+  main.querySelectorAll('.c-resourcesanddownload').forEach((downloads) => {
+    const title = downloads.querySelector('.title-container :is(h2, h3, h4)');
+    if (!title || !text(title)) return;
+    const h2 = doc.createElement('h2');
+    const u = doc.createElement('u');
+    u.textContent = text(title);
+    h2.append(u);
+    (downloads.closest('.resourcesanddownload') || downloads).before(richText(doc, [h2]));
+    title.remove();
+  });
+}
+
 function videoCaptions(main, doc) {
   main.querySelectorAll('.c-standalone-video').forEach((video) => {
     const caption = video.querySelector('.desc-content');
@@ -301,8 +320,17 @@ function columnWidth(col) {
  */
 function columnRows(main, doc) {
   [...main.querySelectorAll('.colctrl')].reverse().forEach((colctrl) => {
-    const columns = rowColumns(colctrl)
+    const all = rowColumns(colctrl);
+    let columns = all
       .filter((col) => text(col) || col.querySelector('img, [data-asset-path], iframe, form, table'));
+    // one video or image item with its text in a row of 3+ equal columns (e.g. the 4th
+    // endoscopy video under a row of three): the whole row, the empty columns as empty
+    // cells, so the item keeps its one-third column as in the row above
+    const media = (col) => col.querySelector('img, [data-asset-path], iframe');
+    if (columns.length === 1 && all.length >= 3 && media(columns[0]) && text(columns[0])
+      && new Set(all.map(columnWidth)).size === 1) {
+      columns = all;
+    }
     if (columns.length < 2) return;
     const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className)
       ? colctrl.parentElement : colctrl;
@@ -414,6 +442,7 @@ export default function transform(hookName, element, payload) {
   const nav = localNav(main, doc);
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);
+  downloadTitles(main, doc);
   videoCaptions(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
     || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');

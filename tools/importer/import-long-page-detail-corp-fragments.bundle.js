@@ -1332,6 +1332,18 @@ var CustomImportScript = (() => {
       title.replaceWith(richText(doc, nodes));
     });
   }
+  function downloadTitles(main, doc) {
+    main.querySelectorAll(".c-resourcesanddownload").forEach((downloads) => {
+      const title = downloads.querySelector(".title-container :is(h2, h3, h4)");
+      if (!title || !text3(title)) return;
+      const h2 = doc.createElement("h2");
+      const u = doc.createElement("u");
+      u.textContent = text3(title);
+      h2.append(u);
+      (downloads.closest(".resourcesanddownload") || downloads).before(richText(doc, [h2]));
+      title.remove();
+    });
+  }
   function videoCaptions(main, doc) {
     main.querySelectorAll(".c-standalone-video").forEach((video) => {
       const caption = video.querySelector(".desc-content");
@@ -1438,7 +1450,12 @@ var CustomImportScript = (() => {
   }
   function columnRows(main, doc) {
     [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
-      const columns = rowColumns(colctrl).filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
+      const all = rowColumns(colctrl);
+      let columns = all.filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
+      const media = (col) => col.querySelector("img, [data-asset-path], iframe");
+      if (columns.length === 1 && all.length >= 3 && media(columns[0]) && text3(columns[0]) && new Set(all.map(columnWidth)).size === 1) {
+        columns = all;
+      }
       if (columns.length < 2) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
       const form = marketoBlock(colctrl, doc);
@@ -1526,6 +1543,7 @@ var CustomImportScript = (() => {
     const nav = localNav(main, doc);
     experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
     sectionTitles(main, doc);
+    downloadTitles(main, doc);
     videoCaptions(main, doc);
     const hasTitle = !!(main.querySelector(".h1-title h1") && text3(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text3(el) && !el.closest(".h1-title"));
