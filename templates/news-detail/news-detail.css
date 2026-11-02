@@ -48,12 +48,17 @@ body.news-detail main > .section > .default-content-wrapper picture img {
 }
 
 /* article headings: light serif, no rule below (corp default content draws one); the
-   heading over the cards keeps the corp Futura heading with its rule */
+   heading over the cards keeps the corp Futura heading with its rule, and so does an
+   underlined heading with a gold rule ([[rule-gold]], e.g. the story headings of
+   "From behind the scenes to the front line": source gold underscores below them) */
 body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2 {
-  padding-bottom: 0;
-  border-bottom: 0;
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
+}
+
+body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2:not(:has(span.rule-gold)) {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 /* bold inside running text keeps the body font; a bold line on its own stays Futura
@@ -199,6 +204,18 @@ body.news-detail main > .section .columns.label-right > div > div:first-child p 
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
   text-align: right;
+}
+
+/* bracket tag `[[serif]…]`: text in the light serif (stryker.com span.urw-egyptienne on part
+   of a cell, e.g. the pull quotes beside the photos of the "From behind the scenes…"
+   feature, whose story text stays in the body font); bold text in it keeps the corp Futura.
+   With `text-1-25` (a 17.5px quote) the lines are 1.15, the source's 20.1px */
+body.news-detail main span.serif {
+  font-family: var(--heading-font-family);
+}
+
+body.news-detail main span.serif.text-1-25 {
+  line-height: var(--heading-line-height-h4);
 }
 
 /* bracket tag `[[box]…]` around a whole paragraph: the paragraph's text sits in a white
