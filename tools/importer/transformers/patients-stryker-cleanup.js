@@ -72,12 +72,13 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
  * www.stryker.com links into the AEM content tree that are not assets: /content/stryker/… is
  * the site path itself (the prefix dropped, as for the export links); any other /content/…
  * (the microsites /content/m/hsc/en/, /content/m/stroke-awareness/) stays on www.stryker.com,
- * so it becomes absolute there. Other links are left alone.
+ * so it becomes absolute there and keeps its .html / index.html. Relative or absolute on
+ * www.stryker.com (the corp builder makes them absolute first). Other links are left alone.
  * @param {string} href
  * @returns {string|null} the link, or null when nothing changes
  */
 function corpContentLink(href) {
-  const value = (href || '').trim();
+  const value = (href || '').trim().replace(CORP_HOST_RE, '');
   if (!/^\/content\/(?!dam\/)/.test(value)) return null;
   if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, '');
   return `https://www.stryker.com${value}`;
@@ -440,6 +441,8 @@ export default function transform(hookName, element, payload) {
       if (hostRe === CORP_HOST_RE) {
         const content = corpContentLink(a.getAttribute('href'));
         if (content !== null) a.setAttribute('href', content);
+        // a microsite link stays as it is on www.stryker.com (not one of the site's pages)
+        if (content && content.startsWith('https://')) return;
       }
       const rewritten = rewriteSourceLink(a.getAttribute('href'), hostRe);
       if (rewritten !== null) a.setAttribute('href', rewritten);

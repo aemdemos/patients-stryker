@@ -100,7 +100,7 @@ var CustomImportScript = (() => {
     return `${edsPath || "/"}${suffix}`;
   }
   function corpContentLink(href) {
-    const value = (href || "").trim();
+    const value = (href || "").trim().replace(CORP_HOST_RE, "");
     if (!/^\/content\/(?!dam\/)/.test(value)) return null;
     if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, "");
     return `https://www.stryker.com${value}`;
@@ -268,6 +268,7 @@ var CustomImportScript = (() => {
         if (hostRe === CORP_HOST_RE) {
           const content = corpContentLink(a.getAttribute("href"));
           if (content !== null) a.setAttribute("href", content);
+          if (content && content.startsWith("https://")) return;
         }
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
