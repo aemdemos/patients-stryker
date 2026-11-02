@@ -204,19 +204,46 @@ const runName = ({ em, vw, font }) => {
   return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
 };
 
+/**
+ * An inline font size (style="font-size: 21px", set in the AEM rich-text editor or pasted) in
+ * the 14px base copy's em: px and rem (the source root is 10px) are absolute, em is relative
+ * like a size class. A zero size (hidden spacers) counts as none.
+ * @param {Element} e
+ * @returns {{em: number, absolute: boolean}|null}
+ */
+function inlineSize(e) {
+  const m = (e.getAttribute('style') || '').match(/font-size:\s*([\d.]+)(px|rem|em)\b/i);
+  const value = m ? Number(m[1]) : 0;
+  if (!value) return null;
+  const unit = m[2].toLowerCase();
+  if (unit === 'em') return { em: value, absolute: false };
+  return { em: (unit === 'px' ? value : value * 10) / 14, absolute: true };
+}
+
 /** The size and font of a text run in its block element (see markRuns). */
 function runOf(textNode, blockEl, serifDefault) {
   const chain = [];
   for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
   // innermost first: the em classes below the innermost vw class multiply, the first font
   // class met is the one that applies. A superscript below the vw class is 75% of it on the
-  // source (exeter citations 15.75px in 1.5vw copy); one with the vw class inside it is not
+  // source (exeter citations 15.75px in 1.5vw copy); one with the vw class inside it is not.
+  // An inline size beats the element's classes; a px / rem one is absolute, so the classes
+  // around it no longer count (pull quotes at style="font-size: 21px" in Large Headlines). In
+  // headings an em is of the heading, which a px size can't be expressed in: classes only
+  const heading = /^H/.test(blockEl.tagName);
   const props = chain.reduce((acc, e) => {
     if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
-    [...e.classList].forEach((cls) => {
-      if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
-      else if (!acc.vw) acc.em *= sizeFactor(cls);
-    });
+    const inline = heading || acc.vw || acc.absolute ? null : inlineSize(e);
+    if (inline) {
+      acc.em *= inline.em;
+      acc.absolute = inline.absolute;
+    }
+    if (!inline && !acc.absolute) {
+      [...e.classList].forEach((cls) => {
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
+        else if (!acc.vw) acc.em *= sizeFactor(cls);
+      });
+    }
     if (!acc.font && e.classList.contains('urw-egyptienne')) acc.font = 'serif';
     if (!acc.font && e.classList.contains('futura-bold')) acc.font = 'futura';
     return acc;
@@ -226,7 +253,6 @@ function runOf(textNode, blockEl, serifDefault) {
   // heading's Egyptienne in h1–h3. Labels on their own line and paragraphs bold throughout
   // have their own rules (tagPlainBoldLabels, plainBoldParagraphs)
   const b = props.font !== 'futura' && chain.find((e) => e.tagName === 'B');
-  const heading = /^H/.test(blockEl.tagName);
   let code = 0;
   // headings: a plain bold in an h1–h3, or Egyptienne inside a Futura bold (the cleaner makes it
   // a <strong>, Futura on the site)
