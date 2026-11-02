@@ -1,26 +1,9 @@
 /* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
-  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __propIsEnum = Object.prototype.propertyIsEnumerable;
-  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __spreadValues = (a, b) => {
-    for (var prop in b || (b = {}))
-      if (__hasOwnProp.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    if (__getOwnPropSymbols)
-      for (var prop of __getOwnPropSymbols(b)) {
-        if (__propIsEnum.call(b, prop))
-          __defNormalProp(a, prop, b[prop]);
-      }
-    return a;
-  };
-  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -83,36 +66,18 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse(element, {
-    document,
-    overlayNodes,
-    variants: extra = [],
-    vwSize = true
-  }) {
+  function parse(element, { document }) {
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
     const overlay = slide.querySelector(".overlayparsys");
     const first = desktop || mobile || slide.querySelector("img");
-    if (!first && !slide.dataset.xfDesktop) return;
+    if (!first) return;
     const variants = ["image-slide"];
-    const fragmentLink = (path) => {
-      const a = document.createElement("a");
-      a.href = path;
-      a.textContent = path;
-      return a;
-    };
-    const cells = [];
-    if (slide.dataset.xfDesktop) {
-      cells.push([fragmentLink(slide.dataset.xfDesktop)]);
-      if (slide.dataset.xfMobile) cells.push([fragmentLink(slide.dataset.xfMobile)]);
-      else if (mobile) cells.push([copyImage(mobile, document)]);
-    } else {
-      cells.push([copyImage(first, document)]);
-      if (desktop && mobile) cells.push([copyImage(mobile, document)]);
-    }
+    const cells = [[copyImage(first, document)]];
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
     if (overlay) {
-      const lines = overlayNodes || headline(overlay, document);
+      const lines = headline(overlay, document);
       if (lines.length) cells.push([lines]);
       const style = overlay.getAttribute("style") || "";
       const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
@@ -123,10 +88,9 @@ var CustomImportScript = (() => {
       if (right !== null) variants.push(`right-${right}`);
       const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
       const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-      if (size && vwSize) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
-    variants.push(...extra);
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
       cells
@@ -158,11 +122,6 @@ var CustomImportScript = (() => {
       const titleLink = title.querySelector("a[href]");
       if (titleLink) h3.append(link(document, titleLink, clean2(titleLink.textContent)));
       else h3.textContent = clean2(title.textContent);
-      if (title.classList.contains("futura-bold") || title.querySelector(".futura-bold")) {
-        const strong = document.createElement("strong");
-        strong.append(...h3.childNodes);
-        h3.append(strong);
-      }
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p").forEach((source) => {
@@ -226,6 +185,70 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
   }
 
+  // tools/importer/parsers/news-detail/marketo-form.js
+  function parse4(element, { document }) {
+    const form = element.querySelector("form[data-marketo-form-id]");
+    const read = (name) => (form && form.getAttribute(name) || "").trim();
+    const rows = [
+      ["Base URL", read("data-marketo-base-url")],
+      ["Munchkin ID", read("data-marketo-munchkin-id")],
+      ["Form ID", read("data-marketo-form-id")]
+    ];
+    if (rows.some(([, value]) => !value)) {
+      element.remove();
+      return;
+    }
+    const cells = rows.map(([key, value]) => {
+      const k = document.createElement("div");
+      k.textContent = key;
+      const v = document.createElement("div");
+      v.textContent = value;
+      return [k, v];
+    });
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "marketo-form", cells }));
+  }
+
+  // tools/importer/xf-fragment-map.js
+  var xf_fragment_map_default = {
+    "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
+      name: 'Acute Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
+      name: 'Emergency Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
+      name: 'Sage "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
+      name: 'Sustainability "Connect with us" band (above the form)'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
+      name: "Sustainability contact aside (next to the form)"
+    },
+    "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
+      name: "Sage contact aside (LinkedIn / Facebook icons)"
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
+      name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    }
+  };
+
+  // tools/importer/xf-fragment-path.js
+  var XF_ROOT = "/content/experience-fragments/";
+  var FRAGMENTS_ROOT = "/us/en/fragments/";
+  function xfKey(xf) {
+    return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  }
+  function xfToFragmentPath(xf) {
+    const key = xfKey(xf);
+    if (!key.startsWith(XF_ROOT)) return null;
+    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+  function xfFragmentPath(xf) {
+    return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var COMPONENTS = [
@@ -241,8 +264,19 @@ var CustomImportScript = (() => {
     ".c-section-title",
     ".c-customizeable",
     ".c-section-separator",
-    ".sectionseparator"
+    ".sectionseparator",
+    ".c-marketo-form",
+    ".c-resourcesanddownload",
+    ".xf-fragment"
   ].join(", ");
+  var SHARED_XF_SIGNATURES = [
+    ["Connect with us Have feedback", "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master"],
+    ["Contact Information Customer support product feedback", "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master"],
+    ["Contact information Product feedback Customer service", "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master"],
+    ["Resources Explore Sage homepage", "/content/experience-fragments/stryker/sage/en/footer/footer/master"],
+    ["Resources Explore Acute Care homepage", "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"],
+    ["Resources Explore Emergency Care homepage", "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"]
+  ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
   function text(el) {
@@ -508,10 +542,7 @@ var CustomImportScript = (() => {
     const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
     [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
       const nodes = [...p.childNodes];
-      const at = nodes.findIndex((node, i) => {
-        var _a;
-        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
-      });
+      const at = nodes.findIndex((node, i) => node.nodeName === "BR" && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === "BR");
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
@@ -552,10 +583,7 @@ var CustomImportScript = (() => {
     const nodes = [];
     let run = [];
     const flush = () => {
-      if (run.some((n) => {
-        var _a;
-        return n.nodeType === 3 ? n.textContent.trim() : text(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
-      })) {
+      if (run.some((n) => n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.("img"))) {
         const p = doc.createElement("p");
         p.append(...run);
         while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
@@ -848,11 +876,264 @@ var CustomImportScript = (() => {
     out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
+  var BLANK = /[\s\u00a0\u00ad\u2800\u3164\u200e\u200b]/g;
+  var DIVIDER = /_{3,}/;
+  function fragmentBlock(path, doc) {
+    const a = doc.createElement("a");
+    a.setAttribute("href", path);
+    a.textContent = path;
+    return WebImporter.Blocks.createBlock(doc, { name: "fragment", cells: [[a]] });
+  }
+  function markSharedFragments(main, doc) {
+    const inlined = [];
+    main.querySelectorAll(".experiencefragment").forEach((xf) => {
+      if (!xf.isConnected || xf.closest("header, footer, .modal")) return;
+      const signature = text(xf);
+      const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+      const path = match && xfFragmentPath(match[1]);
+      if (!path) {
+        if (signature) inlined.push(signature.slice(0, 80));
+        return;
+      }
+      const marker = doc.createElement("div");
+      marker.className = "xf-fragment";
+      marker.setAttribute("data-fragment", path);
+      xf.replaceWith(marker);
+    });
+    return inlined;
+  }
+  var gridNumber = (el, re) => {
+    const m = (el.className || "").match(re);
+    return m ? Number(m[1]) : null;
+  };
+  var gridColumns = (grid) => gridNumber(grid, /\baem-Grid--(\d+)\b/) || 12;
+  var itemSpan = (item, n) => gridNumber(item, /\baem-GridColumn--default--(\d+)\b/) || n;
+  var itemOffset = (item) => gridNumber(item, /\baem-GridColumn--offset--default--(\d+)\b/) || 0;
+  var gridItems = (grid) => [...grid.children].filter((el) => el.classList.contains("aem-GridColumn"));
+  var nestedGrid = (item) => item.querySelector(":scope > .aem-Grid");
+  var filled = (el) => !!el.querySelector("img") || !!(el.textContent || "").replace(BLANK, "");
+  var SPAN_VARIANTS = {
+    "5/3": "columns-67-33",
+    "5/2": "columns-67-33",
+    "8/4": "columns-67-33",
+    "3/4": "columns-33-67",
+    "3/5": "columns-33-67",
+    "4/8": "columns-33-67",
+    "3/9": "columns-33-67",
+    "9/3": "columns-75-25",
+    "9/2": "columns-75-25"
+  };
+  function spanVariant(spans) {
+    if (spans.length !== 2 || spans[0] === spans[1]) return "";
+    const known = SPAN_VARIANTS[spans.join("/")];
+    if (known) return known;
+    const ratio = spans[0] / (spans[0] + spans[1]);
+    const [[, nearest]] = [[0.5, "columns-50-50"], [2 / 3, "columns-67-33"], [1 / 3, "columns-33-67"], [0.75, "columns-75-25"]].sort(([a], [b]) => Math.abs(a - ratio) - Math.abs(b - ratio));
+    return nearest;
+  }
+  function liftDimensionalBox(item) {
+    const box = item.querySelector(".dimensional-box");
+    const boxItem = box && box.closest(".aem-GridColumn");
+    if (!boxItem || boxItem === item) return [];
+    const moved = [];
+    for (let el = boxItem; el; el = el.nextElementSibling) {
+      if (el.classList.contains("aem-GridColumn")) moved.push(el);
+    }
+    return moved;
+  }
+  function gridRows(grid, doc, fraction = 1) {
+    const n = gridColumns(grid);
+    const rows = [];
+    let row = null;
+    gridItems(grid).forEach((item) => {
+      const span = itemSpan(item, n);
+      const offset = itemOffset(item);
+      if (row && row.used + offset + span <= n) {
+        row.cells.push({ span, items: [item] });
+        row.used += offset + span;
+        return;
+      }
+      const last = row && row.cells[row.cells.length - 1];
+      const others = row && row.cells.slice(0, -1).reduce((sum, cell) => sum + cell.span, 0);
+      if (row && row.cells.length > 1 && span === last.span && row.cells[0].span !== span && others + span <= n) {
+        last.items.push(item);
+        return;
+      }
+      row = { used: offset + span, cells: [{ span, items: [item] }] };
+      rows.push(row);
+    });
+    rows.forEach((r) => {
+      const lifted = r.cells.length > 1 ? r.cells.flatMap((cell) => cell.items.flatMap(liftDimensionalBox)) : [];
+      lifted.forEach((el) => el.setAttribute("data-xf-lifted", ""));
+      const cells = r.cells.filter((cell) => cell.items.some((item) => {
+        if (!lifted.length) return filled(item);
+        const copy = item.cloneNode(true);
+        copy.querySelectorAll("[data-xf-lifted]").forEach((el) => el.remove());
+        return filled(copy);
+      }));
+      lifted.forEach((el) => el.removeAttribute("data-xf-lifted"));
+      if (cells.length < 2) {
+        r.cells.forEach((cell) => cell.items.forEach((item) => {
+          const share = fraction * cell.span / n;
+          const nested = nestedGrid(item);
+          if (nested) gridRows(nested, doc, share);
+          else if (item.querySelector(".c-standalone-image img")) {
+            const style = share <= 1 / 3 + 0.01 && "image-1-3" || share <= 0.5 + 0.01 && "image-1-2" || "";
+            if (style) item.querySelector(".c-standalone-image").setAttribute("data-xf-image-style", style);
+          }
+        }));
+        return;
+      }
+      const marker = doc.createElement("div");
+      marker.className = "xf-columns";
+      const spans = cells.map((cell) => cell.span);
+      marker.setAttribute("data-variant", spanVariant(spans));
+      const pad = spans.every((s) => s === spans[0]) ? Math.floor(n / spans[0]) - cells.length : 0;
+      r.cells[0].items[0].before(marker);
+      cells.forEach((cell) => {
+        const div = doc.createElement("div");
+        div.className = "xf-cell";
+        div.append(...cell.items);
+        marker.append(div);
+      });
+      for (let i = 0; i < pad; i += 1) {
+        const div = doc.createElement("div");
+        div.className = "xf-cell";
+        marker.append(div);
+      }
+      marker.after(...lifted);
+    });
+  }
+  var paragraphsOf = (root) => [...root.querySelectorAll(".c-rich-text-editor p, .c-rich-text-editor div")].filter((el) => el.tagName === "P" || !el.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table"));
+  var ruleText = (el) => (el.textContent || "").replace(/_{3,}/g, "").replace(BLANK, " ").replace(/\s+/g, " ").trim();
+  var isDividerOnly = (el) => !!el && DIVIDER.test(el.textContent) && !ruleText(el);
+  function coveredBy(el, selector) {
+    const all = ruleText(el).replace(/\s/g, "");
+    const styled = [...el.querySelectorAll(selector)].filter((s) => !s.parentElement.closest(selector)).map(ruleText).join("").replace(/\s/g, "");
+    return !!all && styled === all;
+  }
+  function titleDivider(p) {
+    const holder = DIVIDER.test(p.textContent) ? p : isDividerOnly(p.nextElementSibling) && p.nextElementSibling;
+    if (!holder) return null;
+    const walker = p.ownerDocument.createTreeWalker(holder, 4);
+    const lines = [];
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (DIVIDER.test(node.textContent) && /^[\s_\u00a0]*$/.test(node.textContent)) lines.push(node);
+    }
+    if (!lines.length) return null;
+    const gold = [...lines].some((line) => {
+      for (let e = line.parentElement; e && e !== holder.parentElement; e = e.parentElement) {
+        if (ownColour(e)) return GOLD.test(ownColour(e));
+      }
+      return false;
+    });
+    return { gold, remove: () => holder === p ? lines.forEach((l) => l.remove()) : holder.remove() };
+  }
+  function titleHeading(p, tag, divider, doc) {
+    const h = doc.createElement(tag);
+    const value = ruleText(p);
+    if (!divider) {
+      h.textContent = value;
+      return h;
+    }
+    const u = doc.createElement("u");
+    u.textContent = divider.gold ? `[[rule-gold]${value}]` : value;
+    h.append(u);
+    return h;
+  }
+  function featureTitles(main, doc, hasTitle) {
+    let h1 = null;
+    paragraphsOf(main).forEach((p) => {
+      if (!p.isConnected || !ruleText(p) || !p.querySelector(".futura-bold")) return;
+      const divider = titleDivider(p);
+      const big = coveredBy(p, ".fontsize-2em, .fontsize-2-5em");
+      if (!hasTitle && !h1 && big) {
+        h1 = titleHeading(p, "h1", divider, doc);
+        if (divider) divider.remove();
+        p.remove();
+        return;
+      }
+      if (!divider || !coveredBy(p, ".futura-bold")) return;
+      const h2 = titleHeading(p, "h2", divider, doc);
+      divider.remove();
+      p.replaceWith(h2);
+    });
+    return h1;
+  }
+  function dropBlankComponents(main) {
+    main.querySelectorAll(".c-section-title, .c-rich-text-editor").forEach((el) => {
+      if (!filled(el)) el.remove();
+    });
+  }
+  function tidyParagraphs(main) {
+    main.querySelectorAll(".experiencefragment .c-rich-text-editor sup").forEach((sup) => {
+      const before = sup.previousSibling;
+      const after = sup.nextSibling;
+      const size = before && before.nodeType === 1 && [...before.classList].find((c) => c.startsWith("fontsize-"));
+      if (!size || !after || after.nodeType !== 1 || !after.classList.contains(size)) return;
+      before.append(sup, ...after.childNodes);
+      after.remove();
+    });
+    main.querySelectorAll(".experiencefragment .c-rich-text-editor p").forEach((p) => {
+      const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+      const sizes = new Set([...p.querySelectorAll('[class*="fontsize-"]')].flatMap((el) => [...el.classList].filter((c) => c.startsWith("fontsize-"))));
+      sizes.forEach((size) => {
+        const runs = [...p.querySelectorAll(`.${size}`)].filter((el) => !el.parentElement.closest(`.${size}`));
+        if (runs.length < 2 || squash(runs.map((el) => el.textContent).join("")) !== squash(p.textContent)) return;
+        runs.forEach((el) => el.classList.remove(size));
+        const span = p.ownerDocument.createElement("span");
+        span.className = size;
+        span.append(...p.childNodes);
+        p.append(span);
+      });
+      const walker = p.ownerDocument.createTreeWalker(p, 5);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        if (node.nodeType === 1 && node.tagName === "BR") {
+          node.remove();
+          return;
+        }
+        if (node.nodeType === 3 ? node.textContent.trim() : node.tagName !== "SPAN") return;
+      }
+    });
+  }
+  function cellNodes(cell, doc) {
+    const selector = COMPONENTS;
+    return [...cell.querySelectorAll(selector)].filter((el) => !el.parentElement.closest(selector)).flatMap((component) => {
+      if (component.matches(".c-rich-text-editor")) return richTextNodes(component, doc).nodes;
+      if (component.matches(".c-standalone-image")) return imageNodes(component, doc);
+      if (component.matches(".c-curatedcta, .buttonset")) return buttonNodes(component, doc);
+      if (component.matches(".c-largeheadline, .c-section-title")) return headlineNodes(component, doc);
+      return [];
+    });
+  }
+  function xfColumns(marker, doc) {
+    const cells = [...marker.children].map((cell) => cellNodes(cell, doc));
+    const nodes = cells.flat();
+    const variants = [marker.getAttribute("data-variant"), nodes.some((node) => node.imageLink) ? "media-pair" : ""].filter(Boolean);
+    const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
+    const copy = nodes.filter((node) => node.copyStyle !== void 0 && node.copyStyle !== null).sort((a, b) => text(b).length - text(a).length)[0];
+    const style = copy ? copy.copyStyle : "";
+    nodes.forEach((node) => {
+      if (!(node.copyStyle || "").split(", ").includes("p-1-25") || style.split(", ").includes("p-1-25")) return;
+      const lines = node.matches("ul, ol") ? [...node.querySelectorAll("li")] : [node];
+      lines.filter((line) => line.matches("p, li") && text(line)).forEach((line) => {
+        line.prepend(doc.createTextNode("[[text-1-25]"));
+        line.append(doc.createTextNode("]"));
+      });
+    });
+    const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => c.length ? c : "")] });
+    return { block, style };
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
-    if (!payload || !payload.template || payload.template.name !== "news-detail") return;
+    const templateName = payload && payload.template && payload.template.name;
+    if (templateName !== "news-detail" && templateName !== "news-detail-xf") return;
+    const xf = templateName === "news-detail-xf";
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
+    const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
+    const inlinedXf = markSharedFragments(main, doc);
+    const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
     const sections = [];
     let current = null;
     let separatorNext = false;
@@ -885,8 +1166,18 @@ var CustomImportScript = (() => {
       h5.textContent = location.textContent.replace(/[\s ]+/g, " ").replace(/\s+,/g, ",").trim();
       title.nodes.push(h5);
     }
-    const components = [...main.querySelectorAll(COMPONENTS)].filter((el) => {
-      const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
+    if (xf) {
+      dropBlankComponents(main);
+      tidyParagraphs(main);
+      const feature = featureTitles(main, doc, hasTitle);
+      if (feature) title.nodes.push(feature);
+      main.querySelectorAll(".experiencefragment").forEach((fragment) => {
+        const grid = fragment.querySelector(".aem-Grid");
+        if (grid && !fragment.closest("header, footer, .modal")) gridRows(grid, doc);
+      });
+    }
+    const components = [...main.querySelectorAll(componentSelector)].filter((el) => {
+      const parent = el.parentElement && el.parentElement.closest(componentSelector);
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
@@ -908,10 +1199,49 @@ var CustomImportScript = (() => {
       current = null;
       return true;
     };
+    const formAsides = /* @__PURE__ */ new Map();
+    components.filter((el) => el.matches(".c-marketo-form") && el.querySelector("form[data-marketo-form-id]")).forEach((form) => {
+      const formColumn = form.closest('[class*="col-sm-"]');
+      const row = formColumn && formColumn.parentElement;
+      if (!row || !row.closest(".colctrl")) return;
+      const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el) && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+      asides.forEach((aside) => consumed.add(aside));
+      formAsides.set(form, asides);
+    });
+    if (hasForm && !main.querySelector("h1")) {
+      const lines = [...main.querySelectorAll(".c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line")].filter((line) => text(line));
+      if (lines.length === 1) {
+        lines[0].querySelectorAll("a:not([href])").forEach(unwrap);
+        rename(lines[0], "h1");
+      }
+    }
     let leadBelowDate = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
+      if (component.matches(".xf-fragment")) {
+        startSection("fragment").nodes.push(fragmentBlock(component.getAttribute("data-fragment"), doc));
+        current = null;
+        return;
+      }
+      if (component.matches(".xf-columns")) {
+        const { block, style } = xfColumns(component, doc);
+        if (!current || current.kind !== "xf-columns" || current.copy !== style) {
+          startSection("xf-columns", style || void 0).copy = style;
+        }
+        current.nodes.push(block);
+        return;
+      }
+      if (xf && component.matches(".c-rich-text-editor") && component.querySelector(".dimensional-box")) {
+        const { nodes: nodes2 } = richTextNodes(component, doc);
+        if (!nodes2.length) return;
+        const copy = nodes2.find((node) => node.copyStyle);
+        startSection("panel", copy ? copy.copyStyle : void 0).nodes.push(
+          WebImporter.Blocks.createBlock(doc, { name: "Panel (left)", cells: [[nodes2]] })
+        );
+        current = null;
+        return;
+      }
       if (component.matches(".c-autocarousel")) {
         if (!component.querySelector("img")) return;
         startSection("hero").nodes.push(component);
@@ -922,7 +1252,7 @@ var CustomImportScript = (() => {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
         const linkStyle = nodes2.some((node) => node.imageLink) ? "image-link" : "";
-        const columnStyle = imageColumnStyle(component);
+        const columnStyle = imageColumnStyle(component) || component.getAttribute("data-xf-image-style") || "";
         if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle) {
           const style = [columnStyle, linkStyle].filter(Boolean).join(", ");
@@ -953,6 +1283,50 @@ var CustomImportScript = (() => {
           heading.remove();
         }
         section.nodes.push(component);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-marketo-form")) {
+        if (!component.querySelector("form[data-marketo-form-id]")) return;
+        const nodes2 = [component];
+        (formAsides.get(component) || []).forEach((aside) => {
+          if (aside.matches(".xf-fragment")) nodes2.push(fragmentBlock(aside.getAttribute("data-fragment"), doc));
+          else if (aside.matches(".c-standalone-image")) nodes2.push(...imageNodes(aside, doc));
+          else if (aside.matches(".c-rich-text-editor")) nodes2.push(...richTextNodes(aside, doc).nodes);
+          else if (aside.matches(".c-curatedcta")) nodes2.push(...buttonNodes(aside, doc));
+          else if (aside.matches(".c-largeheadline")) nodes2.push(...headlineNodes(aside, doc));
+        });
+        startSection("form", nodes2.length > 1 ? "form-with-aside" : void 0).nodes.push(...nodes2);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-resourcesanddownload")) {
+        if (!hasForm) return;
+        const nodes2 = [];
+        const heading = component.querySelector(".title-container h2");
+        if (heading && text(heading)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = text(heading);
+          nodes2.push(h2);
+        }
+        component.querySelectorAll(".item").forEach((item) => {
+          const link2 = item.querySelector("a[href]");
+          const label = text(item.querySelector(".title") || item);
+          if (!link2 || !label) return;
+          const a = doc.createElement("a");
+          a.href = newTabHref(link2, absoluteAsset(link2.getAttribute("href")));
+          a.textContent = label;
+          const p = doc.createElement("p");
+          p.append(a);
+          nodes2.push(p);
+        });
+        if (!nodes2.length) return;
+        if (!current || current.kind !== "body") startSection("body");
+        current.nodes.push(...nodes2);
+        return;
+      }
+      if (component.matches(".xf-fragment")) {
+        startSection("fragment").nodes.push(fragmentBlock(component.getAttribute("data-fragment"), doc));
         current = null;
         return;
       }
@@ -1039,6 +1413,23 @@ var CustomImportScript = (() => {
         current.nodes.push(node);
       });
     });
+    if (hasForm) {
+      let seen = 0;
+      sections.forEach((section) => {
+        section.nodes = section.nodes.map((node) => {
+          if (node.nodeType !== 1) return node;
+          const headings = [...node.tagName === "H1" ? [node] : [], ...node.querySelectorAll("h1")];
+          let result = node;
+          headings.forEach((heading) => {
+            seen += 1;
+            if (seen === 1) return;
+            const h2 = rename(heading, "h2");
+            if (heading === node) result = h2;
+          });
+          return result;
+        });
+      });
+    }
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
@@ -1069,6 +1460,10 @@ var CustomImportScript = (() => {
       }
     });
     element.replaceChildren(...out);
+    const fragments = [...new Set(sections.flatMap((section) => section.nodes).flatMap((node) => node.nodeType === 1 ? [...node.querySelectorAll('a[href^="/us/en/fragments/"]')] : []).map((a) => a.getAttribute("href")))];
+    if (fragments.length || inlinedXf.length) {
+      element.setAttribute("data-news-xf", JSON.stringify({ fragments, inlined: inlinedXf }));
+    }
   }
 
   // tools/importer/transformers/patients-stryker-cleanup.js
@@ -1079,7 +1474,7 @@ var CustomImportScript = (() => {
     try {
       const { hostname } = new URL(payload.params.originalURL);
       if (hostname === "www.stryker.com") return CORP_HOST_RE;
-    } catch (e) {
+    } catch {
     }
     return PATIENTS_HOST_RE;
   }
@@ -1096,30 +1491,14 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
-  function documentName(name) {
-    let decoded = name;
-    try {
-      decoded = decodeURIComponent(name);
-    } catch (e) {
-    }
-    return decoded.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  }
-  function documentLink(href) {
-    const m = String(href || "").match(/^(\/[^?#]*)([?#].*)?$/);
-    if (!m || href.startsWith("//") || m[1].startsWith("/content/")) return null;
-    const segments = m[1].split("/");
-    if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
-    const path = segments.map((s) => s ? documentName(s) : s).join("/");
-    return path === m[1] ? null : `${path}${m[2] || ""}`;
-  }
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isCorp = !!(payload && payload.template && (payload.template.site === "corp" || payload.template.name === "news-detail"));
-    const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
+    const isNewsDetail = !!(payload && payload.template && ["news-detail", "news-detail-xf"].includes(payload.template.name));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
-      if (isCorp) return;
+      if (isNewsDetail) return;
       if (isIvsTreatment) {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
@@ -1245,8 +1624,7 @@ var CustomImportScript = (() => {
       element.querySelectorAll("img[src], a[href], iframe[src], iframe[data-src]").forEach((node) => {
         const ref = node.getAttribute("src") || node.getAttribute("href") || node.getAttribute("data-src") || "";
         const isPixel = node.tagName === "IMG" && !node.getAttribute("alt") && isOffDomain(ref);
-        const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
-        if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
+        if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
           const wrapper = node.closest("p, picture, div") || node;
           wrapper.remove();
         }
@@ -1258,11 +1636,6 @@ var CustomImportScript = (() => {
       element.querySelectorAll("a[href]").forEach((a) => {
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
-        const href = a.getAttribute("href");
-        const cleaned = documentLink(href);
-        if (cleaned === null) return;
-        if (a.textContent.trim() === href) a.textContent = cleaned;
-        a.setAttribute("href", cleaned);
       });
       if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
@@ -1279,7 +1652,7 @@ var CustomImportScript = (() => {
     let u;
     try {
       u = new URL(urlStr, "https://x/");
-    } catch (e) {
+    } catch {
       return false;
     }
     if (u.pathname.startsWith("/is/image/")) {
@@ -1360,13 +1733,15 @@ var CustomImportScript = (() => {
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },
       { name: "video", instances: [".c-standalone-video"] },
-      { name: "cards-corp-teaser", instances: [".c-customizeable"] }
+      { name: "cards-corp-teaser", instances: [".c-customizeable"] },
+      { name: "marketo-form", instances: [".c-marketo-form"] }
     ]
   };
   var parsers = {
     "hero-image-slide": parse,
     video: parse3,
-    "cards-corp-teaser": parse2
+    "cards-corp-teaser": parse2,
+    "marketo-form": parse4
   };
   var transformers = [
     transform,
@@ -1374,7 +1749,7 @@ var CustomImportScript = (() => {
     transform3
   ];
   function executeTransformers(hookName, element, payload) {
-    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
     transformers.forEach((fn) => {
       try {
         fn.call(null, hookName, element, enhancedPayload);
@@ -1395,8 +1770,7 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   function publishedDate(document) {
-    var _a;
-    const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (m) return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`;
     const updated = document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
@@ -1406,10 +1780,21 @@ var CustomImportScript = (() => {
   }
   var import_news_detail_default = {
     transform: (payload) => {
-      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
+      const forms = [...document.querySelectorAll("form.c-mkto-form[data-marketo-form-id]")].filter((form, i, all) => all.findIndex((f) => f.getAttribute("data-marketo-form-id") === form.getAttribute("data-marketo-form-id")) === i).map((form) => {
+        const id = form.getAttribute("data-marketo-form-id");
+        const alert = document.getElementById(`alert_${id}`);
+        return {
+          id,
+          munchkinId: form.getAttribute("data-marketo-munchkin-id"),
+          baseUrl: form.getAttribute("data-marketo-base-url"),
+          afterSubmit: form.getAttribute("data-after-submit-action"),
+          redirect: form.getAttribute("data-redirect-page"),
+          message: alert ? alert.textContent.replace(/\s+/g, " ").trim() : ""
+        };
+      });
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
@@ -1426,7 +1811,7 @@ var CustomImportScript = (() => {
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
+      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
@@ -1449,6 +1834,8 @@ var CustomImportScript = (() => {
         meta.theme = theme;
         main.removeAttribute("data-news-theme");
       }
+      const xf = main.getAttribute("data-news-xf");
+      if (xf) main.removeAttribute("data-news-xf");
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -1460,7 +1847,9 @@ var CustomImportScript = (() => {
         report: {
           title: document.title,
           template: PAGE_TEMPLATE.name,
-          blocks: pageBlocks.map((b) => b.name)
+          blocks: pageBlocks.map((b) => b.name),
+          forms: JSON.stringify(forms),
+          fragments: xf || ""
         }
       }];
     }

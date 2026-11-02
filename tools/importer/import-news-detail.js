@@ -5,6 +5,7 @@
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import videoParser from './parsers/video.js';
+import marketoFormParser from './parsers/news-detail/marketo-form.js';
 
 // TRANSFORMER IMPORTS
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
@@ -30,6 +31,7 @@ const PAGE_TEMPLATE = {
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
     { name: 'video', instances: ['.c-standalone-video'] },
     { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
+    { name: 'marketo-form', instances: ['.c-marketo-form'] },
   ],
 };
 
@@ -38,6 +40,7 @@ const parsers = {
   'hero-image-slide': heroImageSlideParser,
   video: videoParser,
   'cards-corp-teaser': cardsCorpTeaserParser,
+  'marketo-form': marketoFormParser,
 };
 
 // TRANSFORMER REGISTRY — the sections transformer rebuilds the body first (it runs
@@ -90,6 +93,21 @@ export default {
     const { document, url, params } = payload;
     const main = document.body;
     const published = publishedDate(document);
+    // the form values and the after-submit behaviour of each source form, for the import report
+    const forms = [...document.querySelectorAll('form.c-mkto-form[data-marketo-form-id]')].filter((form, i, all) => (
+      all.findIndex((f) => f.getAttribute('data-marketo-form-id') === form.getAttribute('data-marketo-form-id')) === i
+    )).map((form) => {
+      const id = form.getAttribute('data-marketo-form-id');
+      const alert = document.getElementById(`alert_${id}`);
+      return {
+        id,
+        munchkinId: form.getAttribute('data-marketo-munchkin-id'),
+        baseUrl: form.getAttribute('data-marketo-base-url'),
+        afterSubmit: form.getAttribute('data-after-submit-action'),
+        redirect: form.getAttribute('data-redirect-page'),
+        message: alert ? alert.textContent.replace(/\s+/g, ' ').trim() : '',
+      };
+    });
 
     // 1. beforeTransform: rebuild the article content, strip chrome
     executeTransformers('beforeTransform', main, payload);
@@ -150,6 +168,8 @@ export default {
       meta.theme = theme;
       main.removeAttribute('data-news-theme');
     }
+    const xf = main.getAttribute('data-news-xf');
+    if (xf) main.removeAttribute('data-news-xf');
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -166,6 +186,8 @@ export default {
         title: document.title,
         template: PAGE_TEMPLATE.name,
         blocks: pageBlocks.map((b) => b.name),
+        forms: JSON.stringify(forms),
+        fragments: xf || '',
       },
     }];
   },
