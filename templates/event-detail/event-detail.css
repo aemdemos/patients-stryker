@@ -1,0 +1,26 @@
+/* event-detail — corp event template (`template: event-detail`, set on
+   /us/en/global-events/** pages).
+
+   Measured on the stryker.com event pages: the title is Futura bold at the h2 size, and the
+   field headings (Meeting time, Location, …) are 14px Futura bold. The underlined Details /
+   Registration headings draw their rule right under the text (no gap). */
+
+/* the title sits 15px above the event fields (its own margin), no padded title rule */
+body.event-detail main > .section:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.event-detail main h1 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+}
+
+body.event-detail main h5,
+body.event-detail main h5:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xs);
+}
+
+body.event-detail main h5:is(.underline, :has(> u)) {
+  padding-bottom: 0;
+}
