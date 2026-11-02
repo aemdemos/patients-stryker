@@ -66,6 +66,14 @@ body.news-detail main > .section > .default-content-wrapper picture img {
   height: auto;
 }
 
+/* section style `h2-1-25`: every Heading 2 of the section at 1.25x the h2 size (stryker.com
+   h2 > span.fontsize-1-25em on whole headings, e.g. the bold subheads of the Sage "100%
+   CAUTI reduction" release: 30.625px, 26.25px on phones) */
+body.news-detail main > .section.h2-1-25 > .default-content-wrapper > h2 {
+  font-size: calc(var(--news-h2-size) * var(--news-scale-1-25));
+  line-height: var(--heading-line-height);
+}
+
 /* article headings: light serif, no rule below (corp default content draws one). These
    keep the corp Futura bold heading with its rule (stryker.com section titles): the
    heading over the cards, the business-unit "Resources" heading (`bu-resources`
@@ -265,6 +273,7 @@ body.news-detail {
   --news-scale-0-8: 0.8; /* h3-0-8 section style, below */
   --news-scale-1-25: 1.25; /* h3-1-25 section style, below */
   --news-h3-size: var(--heading-font-size-m); /* the corp h3 size; 21px from 600px */
+  --news-h2-size: var(--heading-font-size-l); /* the corp h2 size; 24.5px from 600px */
 }
 
 body.news-detail main span.indent {
@@ -359,6 +368,7 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
 @media (width >= 600px) {
   body.news-detail {
     --news-h3-size: var(--heading-font-size-l);
+    --news-h2-size: var(--heading-font-size-xl);
   }
 
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
@@ -380,7 +390,6 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
   body.news-detail main > .section.hero-container {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
-
 
   body.news-detail main > .section.separator {
     margin-bottom: var(--space-section);
