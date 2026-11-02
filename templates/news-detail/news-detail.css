@@ -48,15 +48,17 @@ body.news-detail main > .section > .default-content-wrapper picture img {
 }
 
 /* article headings: light serif, no rule below (corp default content draws one); the
-   heading over the cards keeps the corp Futura heading with its rule, and so does an
-   underlined heading with a gold rule ([[rule-gold]], e.g. the story headings of
-   "From behind the scenes to the front line": source gold underscores below them) */
-body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2 {
+   heading over the cards and the business-unit "Resources" heading (`bu-resources`
+   fragment, stryker.com section title) keep the corp Futura heading with its grey rule,
+   and an underlined heading with a gold rule ([[rule-gold]], e.g. the story headings of
+   "From behind the scenes to the front line": source gold underscores below them) keeps
+   its rule */
+body.news-detail main > .section:not(.cards-corp-container, .bu-resources) > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
 }
 
-body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2:not(:has(span.rule-gold)) {
+body.news-detail main > .section:not(.cards-corp-container, .bu-resources) > .default-content-wrapper h2:not(:has(span.rule-gold)) {
   padding-bottom: 0;
   border-bottom: 0;
 }
