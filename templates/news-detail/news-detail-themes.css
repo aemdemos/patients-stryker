@@ -26,6 +26,12 @@ body.news-detail.full-width main > .section.separator > div:first-child {
    flex-direction: column;
    }
 
+  /* a 25/75 row (a cover beside its text) stays side by side, as on the source (the 2022
+     Comprehensive Report release: 145px cover beside the text at 700px) */
+  body.news-detail.full-width .columns.columns-25-75 > div {
+    flex-direction: row;
+  }
+
   /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
      start of the full-width section, as on the source (the additive manufacturing lead
      image), not centred like the template's article-column images */

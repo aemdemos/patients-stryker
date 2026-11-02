@@ -295,6 +295,17 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     padding-top: var(--space-section);
   }
 
+  /* Columns `columns-25-75`: a narrow first cell (25%) beside the text (75%), the mirror of
+     the corp columns-75-25 (stryker.com col-sm-3 + col-sm-9, e.g. the report cover beside
+     the 2022 Comprehensive Report release) */
+  body.news-detail main .columns.columns-25-75 > div > div:first-child {
+    flex: 0 0 25%;
+  }
+
+  body.news-detail main .columns.columns-25-75 > div > div:last-child {
+    flex: 0 0 75%;
+  }
+
   /* image-2-3: an image the source sets in a two-thirds grid column with the other column
      empty (stryker.com col-sm-8, e.g. the additive manufacturing lead image on a
      full-width page): two thirds of the container less the column padding (930px at
