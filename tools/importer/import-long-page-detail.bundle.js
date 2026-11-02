@@ -452,22 +452,37 @@ var CustomImportScript = (() => {
     const [vi, vd = "0"] = String(round(vw)).split(".");
     return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
   };
+  function inlineSize(e) {
+    const m = (e.getAttribute("style") || "").match(/font-size:\s*([\d.]+)(px|rem|em)\b/i);
+    const value = m ? Number(m[1]) : 0;
+    if (!value) return null;
+    const unit = m[2].toLowerCase();
+    if (unit === "em") return { em: value, absolute: false };
+    return { em: (unit === "px" ? value : value * 10) / 14, absolute: true };
+  }
   function runOf(textNode, blockEl, serifDefault) {
     const chain = [];
     for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
+    const heading = /^H/.test(blockEl.tagName);
     const props = chain.reduce((acc, e) => {
       if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
-      [...e.classList].forEach((cls) => {
-        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
-        else if (!acc.vw) acc.em *= sizeFactor(cls);
-      });
+      const inline = heading || acc.vw || acc.absolute ? null : inlineSize(e);
+      if (inline) {
+        acc.em *= inline.em;
+        acc.absolute = inline.absolute;
+      }
+      if (!inline && !acc.absolute) {
+        [...e.classList].forEach((cls) => {
+          if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
+          else if (!acc.vw) acc.em *= sizeFactor(cls);
+        });
+      }
       if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
       if (!acc.font && e.classList.contains("futura-bold")) acc.font = "futura";
       return acc;
     }, { em: 1, vw: 0, font: "" });
     const font = props.font || (serifDefault ? "serif" : "");
     const b = props.font !== "futura" && chain.find((e) => e.tagName === "B");
-    const heading = /^H/.test(blockEl.tagName);
     let code = 0;
     const serifInBold = props.font === "serif" && chain.some((e) => e.classList.contains("futura-bold"));
     if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) || serifInBold ? 1 : 0;
