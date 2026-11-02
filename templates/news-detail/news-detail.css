@@ -184,6 +184,23 @@ body.news-detail main .cards-corp.text.title-left h3 {
   text-align: left;
 }
 
+/* Columns `label-right`: Q&A rows, the question in the first cell right-aligned in Futura
+   bold 21px, lines 1.06, at every width (stryker.com right-aligned futura-bold 1.5em
+   question beside its answer, e.g. the BattleBots feature); outranks the serif / p-1-25
+   copy size of the row's section. Each row keeps the source's room around the rule of its
+   `separator` section (an empty subheading and paragraph there): about 70px (80px from
+   600px, where the separator pads 50px instead of 20px) from the rule to the question,
+   and 80px from the answer to the next rule */
+body.news-detail main .columns.label-right {
+  padding-block: var(--space-section-l);
+}
+
+body.news-detail main > .section .columns.label-right > div > div:first-child p {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+  text-align: right;
+}
+
 /* bracket tag `[[box]…]` around a whole paragraph: the paragraph's text sits in a white
    soft-shadow box (stryker.com dimensional box: 3% padding, 2% plus the 15px paragraph gap
    below; e.g. the "AM, also known as 3D printing" lead of the additive manufacturing feature) */
@@ -235,6 +252,11 @@ body.news-detail main span.box {
   body.news-detail main .columns.dark-last > div > div:last-child {
     flex: 1 1 0;
     align-self: flex-start;
+  }
+
+  /* Columns label-right: 30px above the question (+ the separator's 50px) */
+  body.news-detail main .columns.label-right {
+    padding-top: var(--space-section);
   }
 
   /* image-2-3: an image the source sets in a two-thirds grid column with the other column
