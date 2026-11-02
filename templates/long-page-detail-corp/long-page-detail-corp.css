@@ -143,6 +143,14 @@ body.long-page-detail-corp main .dm-video {
   box-sizing: border-box;
 }
 
+/* the poster fills the 16:9 frame, as on stryker.com (object-fit: cover): Dynamic Media
+   returns some posters slightly narrower than 16:9 (e.g. 1370x776 for 1380x776), which
+   `contain` (lazy-styles.css) shows with a gap at the sides. While the video plays it
+   keeps `contain`, so a video that isn't 16:9 is never cropped */
+body.long-page-detail-corp main .dm-video-wrapper:not(.is-playing) .dm-video {
+  object-fit: cover;
+}
+
 /* ---- large headline in a Columns cell (medical-education pages, e.g. jr45 "What would you
    do? / Complex revision total hip"): one font per line, 1.35x the size apart (75.6px at
    56px on the source; columns-corp spaces mixed-font news headlines 1.66x) ---- */
