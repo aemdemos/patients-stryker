@@ -137,10 +137,13 @@ body.long-page-detail-corp main > .section:not(.column-10-12) > .video-wrapper .
   margin-bottom: var(--space-block-s);
 }
 
-/* ---- Dynamic Media video: the 1px frame inside the video box (lazy-styles.css draws it
-   outside, 2px wider than the column); the source video is 1380px including its frame ---- */
-body.long-page-detail-corp main .dm-video {
-  box-sizing: border-box;
+/* ---- Dynamic Media video: the 1px frame inside the column (lazy-styles.css draws it outside,
+   2px wider than the column; the source video is 1380px including its frame). The video area
+   inside the frame stays exactly 16:9, so a playing 16:9 video fills it (`contain`) without a
+   gap at the sides (a 16:9 border box left 1378x774, ~1px each side) ---- */
+body.long-page-detail-corp main .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+  box-sizing: content-box;
+  width: calc(100% - 2 * var(--long-page-detail-corp-video-frame));
 }
 
 /* the poster fills the 16:9 frame, as on stryker.com (object-fit: cover): Dynamic Media
@@ -164,6 +167,7 @@ body.long-page-detail-corp main .columns > div > div h1 {
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
 }
 
 body.long-page-detail-corp main span.text-1-5 {
