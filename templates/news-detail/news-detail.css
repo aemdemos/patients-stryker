@@ -210,6 +210,26 @@ body.news-detail main span.box {
   box-shadow: var(--shadow-soft);
 }
 
+/* section style `separator-wide` (with `separator`): the rule spans the page container
+   (1410px less the 15px gutters), not the article column, e.g. the first rule of the
+   BattleBots Q&A (source full-width .component-subheading). The section content keeps its
+   article column; the rule is drawn on the section */
+body.news-detail main > .section.separator.separator-wide {
+  position: relative;
+}
+
+body.news-detail main > .section.separator.separator-wide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail main > .section.separator.separator-wide > div:first-child {
+  border-top: 0;
+}
+
 @media (width >= 600px) {
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
     font-family: var(--display-font-family);
@@ -230,7 +250,6 @@ body.news-detail main span.box {
   body.news-detail main > .section.hero-container {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
-
 
 
   body.news-detail main > .section.separator {
