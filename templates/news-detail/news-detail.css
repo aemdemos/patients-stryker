@@ -50,10 +50,11 @@ body.news-detail main > .section > .default-content-wrapper picture img {
 /* article headings: light serif, no rule below (corp default content draws one). These
    keep the corp Futura bold heading with its rule (stryker.com section titles): the
    heading over the cards, the business-unit "Resources" heading (`bu-resources`
-   fragment), and an underlined heading — grey rule (e.g. "Driven by gratitude" on the
-   life-saving journey story) or gold with [[rule-gold]] (e.g. the story headings of
-   "From behind the scenes to the front line") */
-body.news-detail main > .section:not(.cards-corp-container, .bu-resources) > .default-content-wrapper h2:not(.underline) {
+   fragment), the gold "Connect with us" band (`connect-band` fragment: Futura bold in a
+   padded band, styles-corp.css), and an underlined heading — grey rule (e.g. "Driven by
+   gratitude" on the life-saving journey story) or gold with [[rule-gold]] (e.g. the story
+   headings of "From behind the scenes to the front line") */
+body.news-detail main > .section:not(.cards-corp-container, .bu-resources, .connect-band) > .default-content-wrapper h2:not(.underline) {
   padding-bottom: 0;
   border-bottom: 0;
   font-family: var(--heading-font-family);
@@ -267,6 +268,13 @@ body.news-detail main span.box {
   display: block;
   padding: 3% 3% calc(2% + var(--space-block));
   box-shadow: var(--shadow-soft);
+}
+
+/* contact-aside (the contact links beside a news form, e.g. Sustainability "Contact
+   Information"): the social buttons sit one paragraph gap further below the links, as on
+   the source (31px from "Product feedback" to the LinkedIn / X / YouTube buttons) */
+body.news-detail main .section.contact-aside > .default-content-wrapper p.button-wrapper {
+  margin-top: var(--space-block);
 }
 
 /* section style `separator-wide` (with `separator`): the rule spans the page container
