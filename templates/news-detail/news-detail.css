@@ -242,6 +242,7 @@ body.news-detail main .columns span.body-font :is(strong, b) {
    each bold list label of the Sage air-assisted transfer system release) */
 body.news-detail {
   --news-indent: 40px;
+  --news-font-scale-0-8: 0.8em; /* [[text-0-8]], below */
 }
 
 body.news-detail main span.indent {
@@ -259,6 +260,13 @@ body.news-detail main span.serif {
 
 body.news-detail main span.serif.text-1-25 {
   line-height: var(--heading-line-height-h4);
+}
+
+/* bracket tag `[[text-0-8]…]`: text at 0.8x the size around it (stryker.com
+   span.fontsize-8em, e.g. the body copy the EP lab release writes inside Heading 3s: 16.8px
+   in a 21px h3, 14px on phones; token with the indent one above) */
+body.news-detail main span.text-0-8 {
+  font-size: var(--news-font-scale-0-8);
 }
 
 /* bracket tag `[[box]…]` around a whole paragraph: the paragraph's text sits in a white
