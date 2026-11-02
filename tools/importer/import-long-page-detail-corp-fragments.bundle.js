@@ -549,6 +549,16 @@ var CustomImportScript = (() => {
     return [...component.querySelectorAll("a[href]")].filter((a) => text2(a)).map((source) => {
       const a = doc.createElement("a");
       a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
+      if (source.matches(".action-link, li a")) {
+        const u = doc.createElement("u");
+        u.textContent = text2(source);
+        a.append(u);
+        const strong2 = doc.createElement("strong");
+        strong2.append(a);
+        const p2 = doc.createElement("p");
+        p2.append(strong2);
+        return p2;
+      }
       a.textContent = text2(source);
       const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
       if (colour) a.setAttribute("data-btn-style", colour);
@@ -602,6 +612,9 @@ var CustomImportScript = (() => {
       if (levels[i]) p.headingLevel = levels[i];
       return p;
     }).filter(Boolean);
+  }
+  function whiteBox(headline) {
+    return !!headline.querySelector(".has-background.bg-white");
   }
   function titleHeading(lines, doc) {
     const h1 = doc.createElement("h1");
@@ -862,6 +875,11 @@ var CustomImportScript = (() => {
           current = null;
           return;
         }
+        if (component.getAttribute("data-keep") === "nodes") {
+          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(...component.children);
+          current = null;
+          return;
+        }
         if (component.getAttribute("data-keep") === "join" && lastKept) {
           lastKept.nodes.push(component);
           return;
@@ -943,7 +961,9 @@ var CustomImportScript = (() => {
         const titleLines = lines.filter((line) => !line.headingLevel);
         if (titleLines.length) {
           const others = lines.filter((line) => line.headingLevel).map((line) => rename(line, line.headingLevel));
-          const section = isFirst ? title : startSection("headline");
+          const boxed = whiteBox(component);
+          const section = isFirst ? title : startSection("headline", boxed ? "headline-box" : void 0);
+          if (isFirst && boxed) title.style = [title.style, "headline-box"].filter(Boolean).join(", ");
           section.nodes.push(titleHeading(titleLines, doc), ...others);
           current = null;
           return;
@@ -965,6 +985,22 @@ var CustomImportScript = (() => {
           startSection("headline", "h1-21").nodes.push(heading);
           current = null;
         }
+      }
+      if (component.matches(".c-largeheadline") && whiteBox(component)) {
+        const nodes2 = headlineNodes(component, doc);
+        if (!nodes2.length) return;
+        startSection("headline", "headline-box").nodes.push(...nodes2);
+        current = null;
+        return;
+      }
+      const ctaOffset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+      const ctaCentred = ctaOffset && !/aem-GridColumn--offset--default--0\b/.test(ctaOffset.className);
+      if (component.matches(".c-curatedcta") && !ctaCentred) {
+        const nodes2 = buttonNodes(component, doc);
+        if (!nodes2.length) return;
+        if (!current || current.kind !== "cta") startSection("cta", "cta-inset");
+        current.nodes.push(...nodes2);
+        return;
       }
       if (component.matches(".c-curatedcta, .buttonset")) {
         const nodes2 = buttonNodes(component, doc);
@@ -1485,6 +1521,28 @@ var CustomImportScript = (() => {
       (component.closest(".marketoform") || component).replaceWith(form);
     });
   }
+  function fullWidthImages(main, doc) {
+    main.querySelectorAll(".imgBoxId.full-width-img").forEach((box) => {
+      var _a, _b;
+      const img = box.querySelector("img");
+      if (!img) return;
+      const desktop = ((_b = (_a = box.querySelector("source[srcset]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "srcset")) || img.getAttribute("src");
+      const phone = img.getAttribute("src");
+      const alt = img.getAttribute("alt") || "";
+      const holder = doc.createElement("div");
+      holder.setAttribute("data-keep", "nodes");
+      holder.setAttribute("data-section-style", box.classList.contains("bg-shadow") ? "full-width-image, shadow" : "full-width-image");
+      [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+        const p = doc.createElement("p");
+        const image = doc.createElement("img");
+        image.setAttribute("src", src);
+        image.setAttribute("alt", alt);
+        p.append(image);
+        holder.append(p);
+      });
+      box.replaceWith(holder);
+    });
+  }
   function renameTo(el, tag, doc) {
     if (el.tagName.toLowerCase() === tag) return el;
     const out = doc.createElement(tag);
@@ -1539,6 +1597,7 @@ var CustomImportScript = (() => {
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     dropDamVideos(main);
+    fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
     experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);

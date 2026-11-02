@@ -363,6 +363,36 @@ function columnRows(main, doc) {
   });
 }
 
+/**
+ * A full-width image (stryker.com .imgBoxId.full-width-img, 22 boxes on 17 pages: the
+ * container width, edge to edge on phones): its image in a section with the
+ * `full-width-image` style, `shadow` for .bg-shadow (template CSS). The desktop image
+ * (picture source ≥840px) comes first; a different phone image (img src, incl. the white
+ * placeholder some forms show on phones) follows and replaces it below 600px. URLs and alt
+ * text as on the source.
+ */
+function fullWidthImages(main, doc) {
+  main.querySelectorAll('.imgBoxId.full-width-img').forEach((box) => {
+    const img = box.querySelector('img');
+    if (!img) return;
+    const desktop = (box.querySelector('source[srcset]') || {}).getAttribute?.('srcset') || img.getAttribute('src');
+    const phone = img.getAttribute('src');
+    const alt = img.getAttribute('alt') || '';
+    const holder = doc.createElement('div');
+    holder.setAttribute('data-keep', 'nodes');
+    holder.setAttribute('data-section-style', box.classList.contains('bg-shadow') ? 'full-width-image, shadow' : 'full-width-image');
+    [...new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+      const p = doc.createElement('p');
+      const image = doc.createElement('img');
+      image.setAttribute('src', src);
+      image.setAttribute('alt', alt);
+      p.append(image);
+      holder.append(p);
+    });
+    box.replaceWith(holder);
+  });
+}
+
 /** Replaces an element by a `tag` element with the same content. */
 function renameTo(el, tag, doc) {
   if (el.tagName.toLowerCase() === tag) return el;
@@ -438,6 +468,7 @@ export default function transform(hookName, element, payload) {
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   dropDamVideos(main);
+  fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);

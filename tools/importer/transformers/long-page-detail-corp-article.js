@@ -662,6 +662,18 @@ function buttonNodes(component, doc) {
   return [...component.querySelectorAll('a[href]')].filter((a) => text(a)).map((source) => {
     const a = doc.createElement('a');
     a.setAttribute('href', newTabHref(source, absoluteAsset(source.getAttribute('href'))));
+    // a curated CTA's link list (a.action-link: teal bold uppercase text, e.g. rep-portal
+    // "Sign in"): a bold underlined link (authoring conventions), not a button
+    if (source.matches('.action-link, li a')) {
+      const u = doc.createElement('u');
+      u.textContent = text(source);
+      a.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(a);
+      const p = doc.createElement('p');
+      p.append(strong);
+      return p;
+    }
     a.textContent = text(source);
     // purple / blue source buttons (a.btn-purple, a.btn-blue): a bold link in a section with
     // the btn-purple / btn-blue style (authoring conventions); marked here, set on the section
@@ -745,6 +757,11 @@ function headlineNodes(component, doc) {
     if (levels[i]) p.headingLevel = levels[i];
     return p;
   }).filter(Boolean);
+}
+
+/** A Large Headline in a white box (`.largeheadline.has-background.bg-white`). */
+function whiteBox(headline) {
+  return !!headline.querySelector('.has-background.bg-white');
 }
 
 /**
@@ -1105,6 +1122,13 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         current = null;
         return;
       }
+      // its content (paragraphs) in a section of its own, e.g. a full-width image
+      if (component.getAttribute('data-keep') === 'nodes') {
+        startSection('kept', component.getAttribute('data-section-style') || undefined)
+          .nodes.push(...component.children);
+        current = null;
+        return;
+      }
       if (component.getAttribute('data-keep') === 'join' && lastKept) {
         lastKept.nodes.push(component);
         return;
@@ -1205,7 +1229,9 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         // a heading of another level in the headline follows the H1 as that heading
         const others = lines.filter((line) => line.headingLevel)
           .map((line) => rename(line, line.headingLevel));
-        const section = isFirst ? title : startSection('headline');
+        const boxed = whiteBox(component);
+        const section = isFirst ? title : startSection('headline', boxed ? 'headline-box' : undefined);
+        if (isFirst && boxed) title.style = [title.style, 'headline-box'].filter(Boolean).join(', ');
         section.nodes.push(titleHeading(titleLines, doc), ...others);
         current = null;
         return;
@@ -1234,6 +1260,26 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         startSection('headline', 'h1-21').nodes.push(heading);
         current = null;
       }
+    }
+    // a large headline in a white box (stryker.com .largeheadline.has-background.bg-white,
+    // its text 20px in): a section of its own with the `headline-box` style (template CSS)
+    if (component.matches('.c-largeheadline') && whiteBox(component)) {
+      const nodes = headlineNodes(component, doc);
+      if (!nodes.length) return;
+      startSection('headline', 'headline-box').nodes.push(...nodes);
+      current = null;
+      return;
+    }
+    // a curated CTA (buttons and a link list, 40px in on the source): `cta-inset`; a CTA the
+    // source centres (an offset grid column) stays centred below
+    const ctaOffset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+    const ctaCentred = ctaOffset && !/aem-GridColumn--offset--default--0\b/.test(ctaOffset.className);
+    if (component.matches('.c-curatedcta') && !ctaCentred) {
+      const nodes = buttonNodes(component, doc);
+      if (!nodes.length) return;
+      if (!current || current.kind !== 'cta') startSection('cta', 'cta-inset');
+      current.nodes.push(...nodes);
+      return;
     }
     if (component.matches('.c-curatedcta, .buttonset')) {
       const nodes = buttonNodes(component, doc);
