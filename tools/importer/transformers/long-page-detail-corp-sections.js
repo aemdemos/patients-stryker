@@ -23,6 +23,11 @@
  *   6. components the source sets in the centred AEM grid column (offset 1, 10 or 11 of 12
  *      columns: the Virtual Learning Center video item) get the `column-10-12` section
  *      style (the template CSS sets the 10/12 column and the 11/12 downloads row).
+ *   7. a video whose asset is a plain DAM file (data-asset-path /content/dam/…), not a
+ *      Dynamic Media video, renders nothing on stryker.com: it is dropped instead of becoming
+ *      a broken player (e.g. Introducing Blueprint® Mixed Reality).
+ *   8. an address written right after a colon ("found at:https://…") gets a space after the
+ *      colon: EDS reads `:https:` as an icon and the text would disappear.
  * The H1 title, rich text, separators and the small print (`disclaimer`) are built as in
  * the news articles. No `spacer` section follows the title.
  */
@@ -345,6 +350,28 @@ function columnRows(main, doc) {
   });
 }
 
+/** Drops the video components whose asset is a plain DAM file (not Dynamic Media). */
+function dropDamVideos(main) {
+  main.querySelectorAll('.c-standalone-video').forEach((video) => {
+    const asset = video.querySelector('[data-asset-path]');
+    if (asset && asset.getAttribute('data-asset-path').startsWith('/content/dam/')) {
+      (video.closest('.standalonevideo') || video).remove();
+    }
+  });
+}
+
+const SHOW_TEXT = 4; // NodeFilter.SHOW_TEXT
+
+/** "at:https://…" → "at: https://…", so EDS doesn't read `:https:` as an icon. */
+function spaceUrlColons(main, doc) {
+  const walker = doc.createTreeWalker(main, SHOW_TEXT);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    if (/\S:https?:\/\//.test(node.textContent)) {
+      node.textContent = node.textContent.replace(/(\S):(https?:\/\/)/g, '$1: $2');
+    }
+  }
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
@@ -355,6 +382,8 @@ export default function transform(hookName, element, payload) {
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
+  dropDamVideos(main);
+  spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);

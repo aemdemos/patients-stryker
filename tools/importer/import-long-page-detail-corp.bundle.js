@@ -1566,6 +1566,23 @@ var CustomImportScript = (() => {
       (component.closest(".marketoform") || component).replaceWith(form);
     });
   }
+  function dropDamVideos(main) {
+    main.querySelectorAll(".c-standalone-video").forEach((video) => {
+      const asset = video.querySelector("[data-asset-path]");
+      if (asset && asset.getAttribute("data-asset-path").startsWith("/content/dam/")) {
+        (video.closest(".standalonevideo") || video).remove();
+      }
+    });
+  }
+  var SHOW_TEXT = 4;
+  function spaceUrlColons(main, doc) {
+    const walker = doc.createTreeWalker(main, SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (/\S:https?:\/\//.test(node.textContent)) {
+        node.textContent = node.textContent.replace(/(\S):(https?:\/\/)/g, "$1: $2");
+      }
+    }
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
@@ -1574,6 +1591,8 @@ var CustomImportScript = (() => {
     const path = sourcePath(payload);
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
+    dropDamVideos(main);
+    spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
     experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
     sectionTitles(main, doc);
