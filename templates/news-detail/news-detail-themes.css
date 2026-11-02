@@ -51,3 +51,37 @@ body.news-detail.full-width main > .section.separator > div:first-child {
   }
 
 }
+
+/* mix-width: news pages whose source runs the article in a left-aligned two-thirds column
+   (col-md-8) and, from the first fragment on ("Connect with us" band, the form with its
+   contact links), the whole container — e.g. the Sustainability "World Environment Day 2025"
+   release. The title section spans the container too. From 900px (source 1024px):
+   - every section spans the container, as in full-width;
+   - the sections between the title and the first fragment section (connect-band,
+     form-with-aside) keep their content in the first two thirds;
+   - a form-with-aside section puts its form in the first two thirds and the contact
+     links fragment in the last third, side by side (stacked below 900px, the links
+     under the form, as on the source) */
+@media (width >= 900px) {
+  body.news-detail.mix-width main > .section > div {
+    max-width: var(--container-max);
+  }
+
+  body.news-detail.mix-width main > .section.form-with-aside {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.news-detail.mix-width main > .section.form-with-aside > div {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  body.news-detail.mix-width main > .section:not(:nth-child(1 of :not(:empty)), .connect-band, .form-with-aside):has(~ .section:is(.connect-band, .form-with-aside)) > div {
+    padding-inline-end: calc(min(100%, var(--container-max)) / 3 + var(--space-block));
+  }
+}
