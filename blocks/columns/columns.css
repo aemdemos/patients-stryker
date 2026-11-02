@@ -33,6 +33,38 @@
   border: 0;
 }
 
+/* Google map (scripts/map-embed.js): full cell width, 300px high, 400px from 600px; the
+   address link sits under the frame */
+.columns .map-embed {
+  position: relative;
+  height: var(--map-embed-height);
+  margin-bottom: var(--space-block-s);
+}
+
+.columns .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* the address link, under the map; on top while keyboard-focused */
+.columns .map-embed a {
+  position: relative;
+}
+
+.columns .map-embed a:focus-visible {
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+@media (width >= 600px) {
+  .columns .map-embed {
+    height: var(--map-embed-height-m);
+  }
+}
+
 .columns > div > div {
   box-sizing: border-box;
   min-width: 0; 
@@ -843,5 +875,52 @@ main > .section:has(> div > :where(.columns.related-links)) {
 @media (width >=1200px) {
  .columns p:has(code) code {
     font-size: 21px;
+  }
+}
+
+/* grid-… options (columns.js decorateGrid): an AEM responsive-grid row, lift and shift. Each
+   cell sits on a 12-unit grid (or the nested grid's units) at its source width and offset,
+   with no gutter of its own (cells keep their 15px padding, like the source components);
+   --grid-area-m below 600px, -t from 600px, -d from 1200px; top-aligned like AEM's floats */
+.columns.columns-grid > div {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-total, 12), minmax(0, 1fr));
+  gap: 0;
+  align-items: start;
+}
+
+.columns.columns-grid > div > div {
+  grid-area: var(--grid-area-m, auto);
+}
+
+.columns.columns-grid > div > div.grid-hide-m {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .columns.columns-grid > div > div {
+    grid-area: var(--grid-area-t, auto);
+  }
+
+  .columns.columns-grid > div > div.grid-hide-m {
+    display: block;
+  }
+
+  .columns.columns-grid > div > div.grid-hide-t {
+    display: none;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns.columns-grid > div > div {
+    grid-area: var(--grid-area-d, auto);
+  }
+
+  .columns.columns-grid > div > div:is(.grid-hide-m, .grid-hide-t) {
+    display: block;
+  }
+
+  .columns.columns-grid > div > div.grid-hide-d {
+    display: none;
   }
 }

@@ -1,0 +1,133 @@
+/* Modal dialog (blocks/modal/modal.js), measured on the stryker.com Bootstrap modal (the
+   ProCare tile, /us/en/acute-care/products/nara-bassinet): 10px from the screen edges on
+   phones and tablets, 600px wide and 30px from the top from 600px (source 841px); a white
+   box with a 6px radius, a 1px translucent border and a shadow, 15px inside; a 50% black
+   backdrop; a 30px round close button 5px inside the top-right corner. */
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal dialog {
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--space-block-s));
+  max-width: none;
+  max-height: calc(100dvh - 2 * var(--space-block-s));
+  margin: var(--space-block-s) auto;
+  padding: 0;
+  border: 1px solid var(--corp-modal-border);
+  border-radius: var(--corp-modal-radius);
+  background-color: var(--color-white);
+  box-shadow: var(--corp-modal-shadow);
+  overflow: hidden;
+}
+
+.modal dialog::backdrop {
+  background-color: var(--overlay-scrim);
+}
+
+.modal .modal-content {
+  box-sizing: border-box;
+  max-height: calc(100dvh - 2 * var(--space-block-s) - 2px);
+  padding: var(--space-block);
+  overflow-y: auto;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: var(--space-block-xs);
+  right: var(--space-block-xs);
+  width: var(--corp-modal-close-size);
+  height: var(--corp-modal-close-size);
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--color-secondary);
+  border-radius: 50%;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+/* the close icon: two black strokes */
+.modal .modal-close::before,
+.modal .modal-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--body-font-size-m);
+  height: 2px;
+  background-color: var(--color-black);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal .modal-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal .modal-content > .section {
+  margin: 0;
+  padding: 0;
+}
+
+/* the source rhythm: 15px between the title, the contact lines and the table, 45px from the
+   table to the closing copy (table 30px + 15px), 30px above the button */
+.modal .modal-content > .section + .section {
+  margin-top: var(--space-block);
+}
+
+.modal .modal-content > .section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* the modal title (its first heading): Futura bold, a grey rule under it, clear of the close
+   button (source .c-procare-tile-title) */
+.modal .modal-content > .section:first-child > .default-content-wrapper > h2:first-child {
+  margin: 0;
+  padding: 0 var(--corp-modal-title-end) var(--space-block-xs) 0;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* contact labels and lines: body font 14px, the labels bold (source .c-procare-tile-contact) */
+.modal .modal-content h4,
+.modal .modal-content .columns h4 {
+  margin: 0 0 1px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+}
+
+.modal .modal-content p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* the contact columns sit inside the box (no row overhang), the cells keep their 15px inset */
+.modal .modal-content .columns > div {
+  margin: 0;
+}
+
+.modal .modal-content .table-wrapper + .default-content-wrapper {
+  margin-top: calc(var(--space-section) + var(--space-block));
+}
+
+.modal .modal-content p.button-wrapper {
+  margin-top: var(--space-section);
+}
+
+@media (width >= 600px) {
+  .modal dialog {
+    width: var(--corp-modal-width);
+    margin-top: var(--corp-modal-top);
+    box-shadow: var(--corp-modal-shadow-l);
+  }
+
+  .modal .modal-content > .section:first-child > .default-content-wrapper > h2:first-child {
+    font-size: var(--heading-font-size-xl);
+  }
+}

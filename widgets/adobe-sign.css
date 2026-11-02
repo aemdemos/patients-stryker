@@ -1,0 +1,13 @@
+/* Adobe Sign web form: full width, at least the authored height (source iframe style
+   min-height 500/700/900px, min-width 100%, no border) */
+.widget.adobe-sign .adobe-sign-frame {
+  min-height: var(--adobe-sign-height);
+}
+
+.widget.adobe-sign iframe {
+  display: block;
+  width: 100%;
+  min-height: var(--adobe-sign-height);
+  border: 0;
+  overflow: hidden;
+}

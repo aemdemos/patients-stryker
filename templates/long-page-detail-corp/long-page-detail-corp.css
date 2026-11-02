@@ -1,0 +1,11 @@
+/* Long Page Detail template, corp (www.stryker.com AEM template long-page-detail: training
+   and education, corporate responsibility and campaign pages; the name long-page-detail is
+   the patients ENT template). The page title (stryker.com h1-title, a plain h1 in default
+   content) is black 28px Egyptienne Light on phones and Futura bold from 600px (source
+   841px; measured on /us/en/c/2018/guaranteeprograms/thank-you). */
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section > .default-content-wrapper > h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+}

@@ -8,7 +8,8 @@
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   decorateSections(main)  after the section metadata is applied, before the blocks are
- *                           decorated: builds blocks from section styles (accordion-panel)
+ *                           decorated: builds blocks from section styles (accordion-panel,
+ *                           carousel)
  *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
@@ -23,19 +24,88 @@ import {
   waitForFirstImage,
 } from './aem.js';
 import { previewDMLinkEditors } from './dm-support.js';
+import decorateMapLinks from './map-embed.js';
+import decorateSpacing from './corp-spacing.js';
+import decorateTypeTags from './corp-type.js';
+import buildCarouselSections from './corp-carousel.js';
+import fetchPlainHtml from './plain-html.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'columns'];
+const CORP_BLOCK_STYLES = ['accordion', 'cards', 'columns', 'marketo-form', 'statistics', 'sticky-nav', 'table', 'tabs', 'video'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
  * @param {Document} doc The document
  */
+/**
+ * Modal tiles (the stryker.com ProCare tile): an image linked, alone on its line, to a
+ * `/modals/` document is the tile: the image opens the modal (blocks/modal), with the image's
+ * alt text as the link's name and the gold arrow of the source tile.
+ * @param {Element} main The container
+ */
+function decorateModalTiles(main) {
+  main.querySelectorAll('p > a[href*="/modals/"]:only-child').forEach((a) => {
+    const picture = a.querySelector(':scope > picture:only-child');
+    if (!picture || a.parentElement.textContent.trim()) return;
+    const label = (picture.querySelector('img') || {}).alt || '';
+    a.parentElement.classList.add('modal-tile');
+    a.classList.add('modal-tile-link');
+    if (label) {
+      a.setAttribute('aria-label', label);
+      a.title = label;
+    }
+    picture.classList.add('modal-tile-image');
+    const icon = document.createElement('span');
+    icon.className = 'modal-tile-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    a.append(icon);
+  });
+}
+
+/**
+ * Links to `/modals/` documents open them in a modal (blocks/modal), as on stryker.com.
+ * @param {Document} doc The document
+ */
+function autolinkModals(doc) {
+  doc.addEventListener('click', async (e) => {
+    const link = e.target.closest('a[href*="/modals/"]');
+    if (!link) return;
+    e.preventDefault();
+    const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+    openModal(link.href);
+  });
+}
+
+/**
+ * Starts fetching the slide image fragments of the heroes in the first sections (Hero Corp
+ * rows that link to fragment documents) before the block code loads, so the LCP image is
+ * known one round trip earlier. The pending responses are kept in window.hlx.heroFragments
+ * (path → Promise<string|null>) for blocks/hero-corp to reuse.
+ * @param {Document} doc The document
+ */
+function prefetchHeroFragments(doc) {
+  const sections = [...doc.querySelectorAll('main > div')].slice(0, 2);
+  const links = sections.flatMap((section) => [...section.querySelectorAll('.hero-corp a[href*="/fragments/"]')]);
+  if (!links.length) return;
+  window.hlx.heroFragments = window.hlx.heroFragments || new Map();
+  links.forEach((link) => {
+    const url = new URL(link.getAttribute('href'), window.location.href);
+    if (url.origin !== window.location.origin) return;
+    const path = url.pathname.replace(/\/$/, '');
+    if (window.hlx.heroFragments.has(path)) return;
+    window.hlx.heroFragments.set(path, fetchPlainHtml(path)
+      .then((resp) => (resp.ok ? resp.text() : null))
+      .catch(() => null));
+  });
+}
+
 export async function loadEager(doc) {
+  prefetchHeroFragments(doc);
   doc.body.classList.add('corp');
+  autolinkModals(doc);
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (styles-corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {
@@ -54,6 +124,9 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  decorateModalTiles(main);
+  // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
+  decorateMapLinks(main, ':scope > div > p');
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
     block.classList.replace('hero', 'hero-corp');
     block.closest('.section')?.classList.add('hero-container');
@@ -136,8 +209,13 @@ function decorateImageLinks(main) {
  * @param {Element} main The container element
  */
 export function decorateSections(main) {
+  // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
+  // before accordion panels take their sections' content
+  decorateSpacing(main);
+  decorateTypeTags(main);
   buildAccordionSections(main);
   decorateImageLinks(main);
+  buildCarouselSections(main);
 }
 
 /**

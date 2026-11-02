@@ -133,6 +133,12 @@
   line-height: var(--paragraph-line-height);
 }
 
+/* a Bold title: Futura bold, also when linked (stryker.com h3.futura-bold card lists, e.g.
+   orthopaedic-instruments/products/tpx-hd "Related products": 21px Futura 700) */
+.cards-corp.teaser h3 strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
 
 /* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
    title text (h3 / gold eyebrow) keep their own sizes */
@@ -207,6 +213,10 @@
   text-decoration: none;
 }
 
+.cards-corp.teaser h3 strong > a:any-link {
+  font-weight: inherit;
+}
+
 .cards-corp.teaser h3 a:any-link:is(:hover, :focus) {
   color: var(--color-primary-pressed);
 }
@@ -234,6 +244,27 @@
   box-sizing: border-box;
   border: 1px solid var(--color-surface-muted);
   margin-bottom: 0;
+}
+
+.cards-corp.resources {
+  --cards-corp-resource-cover-height: 238px;
+}
+
+/* the image box is 240px high at every width, the image centred in it (stryker.com
+   .c-resourcesanddownload .img-container: height 240px, vertical-align middle) */
+.cards-corp.resources .cards-corp-card-image {
+  display: flex;
+  align-items: center;
+  height: calc(var(--cards-corp-resource-cover-height) + 2px);
+}
+
+/* resources: the document cover in a 238px-high box at its own proportions, never stretched
+   to the card (stryker.com resources and downloads: 184 x 238 at every width, clarifix /
+   lifepak-15 / isolibrium) */
+.cards-corp.resources .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--cards-corp-resource-cover-height);
 }
 
 .cards-corp.border > ul > li {

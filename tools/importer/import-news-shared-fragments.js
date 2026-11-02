@@ -3,7 +3,7 @@
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-// XF → EDS fragment path lookup (xf-fragment-map.js, shared by every importer)
+// XF → EDS fragment path lookup (site-wide index from the AEM exports, shared by every importer)
 import xfFragmentPath from './xf-fragment-path.js';
 
 /*
@@ -16,13 +16,14 @@ import xfFragmentPath from './xf-fragment-path.js';
  * preview URL; the fragment block hoists the section into the page, so the same
  * `main .section.{style}` rules apply when embedded.
  *
- * Keys are the XF paths from the customer's "Experience Fragment References" export.
- * Each fragment is saved at the path derived from its XF path (tools/importer/xf-fragment-path.js,
- * e.g. /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master
+ * Keys are XF variation paths. This table only carries how each fragment is built and styled
+ * (type, section style, image overrides); its path comes from the site-wide XF index
+ * (tools/importer/xf-fragment-path.js → data/xf-index.js, e.g.
+ * /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master
  * → /us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master), the same lookup
  * every page importer uses to emit the fragment block.
  */
-const FRAGMENTS = {
+export const FRAGMENTS = {
   '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master': {
     type: 'resources', style: 'bu-resources, p-1-25',
   },
@@ -32,9 +33,8 @@ const FRAGMENTS = {
   '/content/experience-fragments/stryker/sage/en/footer/footer/master': {
     type: 'resources', style: 'bu-resources, p-1-25',
   },
-  '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master': {
-    type: 'connect', style: 'connect-band',
-  },
+  // (sustainability-solutions contact_information/header: built by the corp section builder,
+  // as the same "Connect with us" XF of the other business units: bg-gold, h-1-5)
   '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master': {
     type: 'contact', style: 'contact-aside',
   },
@@ -109,10 +109,26 @@ function sectionMetadata(document, style) {
   return WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
 }
 
-function buildResources(document, src) {
+// the product of a paragraph's .fontsize-<x>em classes (fontsize-1-25em → 1.25, fontsize-8em → 0.8)
+function emFactor(p) {
+  return [...p.querySelectorAll('[class*="fontsize-"]')].reduce((f, el) => [...el.classList].reduce((g, cls) => {
+    const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?em$/);
+    if (!m) return g;
+    return g * (!m[2] && Number(m[1]) > 4 ? Number(m[1]) / 10 : Number(`${m[1]}.${m[2] || 0}`));
+  }, f), 1);
+}
+
+function buildResources(document, src, def = {}) {
+  // the labels' size: the section's label-<n> style, else its copy size (p-1-25)
+  const labelStyle = (def.style || '').match(/label-(\d+)-(\d+)/);
+  const labelSize = labelStyle ? Number(`${labelStyle[1]}.${labelStyle[2]}`) : 1.25;
   const out = [];
+  // the title, with its gold rule (h2.border-bottom-gold) as the Underline convention
+  const title = src.querySelector('.c-section-title h2');
   const h2 = document.createElement('h2');
-  h2.textContent = text(src.querySelector('.c-section-title h2')) || 'Resources';
+  const label = !title || title.classList.contains('border-bottom-gold') ? document.createElement('u') : h2;
+  label.textContent = text(title) || 'Resources';
+  if (label !== h2) h2.append(label);
   out.push(h2);
   const cells = [...src.querySelectorAll('.c-rich-text-editor')].map((rte) => {
     const cell = [];
@@ -124,7 +140,11 @@ function buildResources(document, src) {
         // column label (Explore / Learn / Support / More): bold paragraph
         const lp = document.createElement('p');
         const strong = document.createElement('strong');
-        strong.textContent = text(p);
+        // a label authored at another size keeps it (emergency-care "Support" / "More" 1.25em
+        // next to "Explore" / "Learn" 1.5em): [[size-<n>em]] (scripts/corp-type.js)
+        const factor = Math.round(emFactor(p) * 10000) / 10000;
+        strong.textContent = Math.abs(factor / labelSize - 1) > 0.03
+          ? `[[size-${String(factor).replace('.', '-')}em]${text(p)}]` : text(p);
         lp.append(strong);
         cell.push(lp);
       }
@@ -242,7 +262,7 @@ export default {
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
     const path = xfFragmentPath(key);
-    if (!path) throw new Error(`Shared fragment missing from xf-fragment-map.js: ${key}`);
+    if (!path) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
     return [{
       element: main,
       path,

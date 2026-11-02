@@ -1,0 +1,47 @@
+/* Cards on corp pages (body.corp, loaded by scripts/corp.js CORP_BLOCK_STYLES). */
+
+/* cards (contact): the stryker.com contact directory location boxes (one content fragment per
+   card, merged into one grid by blocks/fragment), measured on /us/en/about/contact:
+   1-up, 2-up from 600px, 4-up from 900px; 25px gutter (12.5px column padding), text only:
+   Futura bold location name (h2 24.5px, h4 17.5px, h5 14px), Humanist 14px fields 15px
+   apart, 20px below each box */
+body.corp .cards.contact > ul {
+  gap: 0 var(--space-inset-m);
+}
+
+@media (width >= 900px) {
+  body.corp .cards.contact > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+body.corp .cards.contact .cards-card-body {
+  margin: 0 0 var(--space-block-l);
+}
+
+body.corp .cards.contact .cards-card-body :is(h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  border: 0;
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .cards.contact .cards-card-body h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+body.corp .cards.contact .cards-card-body h4 {
+  font-size: var(--body-font-size-l);
+}
+
+body.corp .cards.contact .cards-card-body h5 {
+  font-size: var(--body-font-size-m);
+}
+
+body.corp .cards.contact .cards-card-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}

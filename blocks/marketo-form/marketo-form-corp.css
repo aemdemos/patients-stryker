@@ -1,0 +1,32 @@
+/*
+ * Marketo Form: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). Measured on
+ * /us/en/smart-care/products/virtual-monitoring.html:
+ * - the form sits flush in its component box (the first label level with the aside next to
+ *   it): the section gap is its space, not the patients block's padding
+ * - fields (text, lists, checkboxes) are 420px wide, 10px apart; a row's second field goes
+ *   next to the first only when both fit (source floated columns: two per row at 1440px, one
+ *   under the other at 1200px and below, also on aaa-2023), narrower screens shrink them;
+ *   rows without a field (text) take the whole row
+ */
+
+/* stylelint-disable selector-class-pattern */
+
+body.corp .marketo-form {
+  padding-block: 0;
+}
+
+body.corp .marketo-form .mktoForm .mktoFormRow {
+  flex-flow: row wrap;
+  column-gap: var(--space-block-s);
+}
+
+body.corp .marketo-form .mktoForm .mktoFormCol {
+  flex: 1 1 100%;
+}
+
+body.corp .marketo-form .mktoForm .mktoFormCol:has(.mktoField) {
+  flex: 0 1 var(--form-field-max-width);
+}
+
+/* stylelint-enable selector-class-pattern */

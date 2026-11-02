@@ -1,7 +1,8 @@
 /*
  * Corp image-slide hero, isolated from the patients hero block.
- * The image-slide variant uses authored top/left/right/size options and text-below
- * to position its headline like the source slide.
+ * The image-slide variant uses authored top/bottom/left/right/size/copy-size options and text-below /
+ * text-above to position its headline like the source slide (news carousel slides) or the
+ * source fullWidthImageHero text box.
  */
 
 .hero-corp-container .hero-corp-wrapper {
@@ -11,6 +12,7 @@
 
 .hero-corp.image-slide {
   --hero-slide-top: 15%;
+  --hero-slide-bottom: auto;
   --hero-slide-left: 5%;
   --hero-slide-right: 50%;
   --hero-slide-text-size: 2;
@@ -35,8 +37,20 @@
   height: auto;
 }
 
-.hero-corp.image-slide picture.hero-image-desktop {
+.hero-corp.image-slide .hero-image-desktop {
   display: none;
+}
+
+/* video slide (its fragment holds a video): a muted, looping background video in the live
+   3:1 crop (stryker.com inspace / 1788-platform hero: 1464 x 488 at 1440px, cover) */
+.hero-corp.image-slide .dm-video-background {
+  display: block;
+}
+
+.hero-corp.image-slide .dm-video-background .dm-video {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  border: 0;
 }
 
 .hero-corp.image-slide > div:last-child {
@@ -44,6 +58,7 @@
   inset: 0;
   box-sizing: border-box;
   padding: 5%;
+  background-color: var(--hero-box-bg, transparent);
 }
 
 .hero-corp.image-slide.text-below > div:last-child {
@@ -55,28 +70,198 @@
   max-width: none;
   margin: 0;
   color: var(--text-color);
-  font-size: calc(var(--hero-slide-text-size) * 2vw);
-  line-height: var(--heading-line-height-hero);
   text-align: left;
 }
 
+/* the source's 15px under every heading of a slide box, and under every line of the product
+   hero's rich text (image-right; stryker.com p / h margin 0 0 15px; a Large Headline line has
+   none: .c-largeheadline p). The full-width image hero (text-above) and the bottom-anchored
+   box keep their own gaps below */
+.hero-corp.image-slide:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :is(h1, h2, h3, h4, h5, h6),
+.hero-corp.image-slide.image-right:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :is(p, ul, ol) {
+  margin-bottom: var(--space-block);
+}
+
+/* the headline's vw size (size-<n>); a hero without size-<n> keeps the page type, its lines in
+   a vw size carry it as a [[size-<n>vw]] tag (scripts/corp-type.js), as on live */
+.hero-corp.image-slide[data-text-size] > div:last-child > * {
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* text-above: the source fullWidthImageHero 'col-sm-N pull-left' text box. It comes before
+   the image and is static on phones (copy above the image, 20px gap); from 600px it is the
+   overlay, at the image top-left by default, with the source box padding (20px / 15px). */
+.hero-corp.image-slide.text-above {
+  --hero-slide-top: 0%;
+  --hero-slide-left: 0%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-corp.image-slide.text-above > div:last-child {
+  order: -1;
+  position: static;
+  padding: 0 var(--space-block-l) var(--space-block-l);
+}
+
+/* text boxes with several lines (fullWidthImageHero): ~10px between the lines, 35px above
+   the button (source h2 15px margin + 20px largeheadline margin) */
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + * {
+  margin-top: var(--space-block-s);
+}
+
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + .button-wrapper {
+  margin-top: calc(var(--space-block) + var(--space-block-l));
+}
+
+/* copy-size-<n> in any text box: the lines after the headline are its copy, in Egyptienne at
+   their own vw size (stryker.com Large Headline line2: lifepak-15 1.5vw, 1788-platform 2.5vw) */
+.hero-corp.image-slide[data-copy-size] > div:last-child > * + :not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: calc(var(--hero-slide-copy-size) * 2vw);
+}
+
+/* size-<n> sizes the headline only: the lines after it are the source Large Headline
+   copy (line2) at its default font and size - Egyptienne Light, 21px below 600px
+   (source <840px), 1vw up to 14px from 600px (measured: instability.html line2) */
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--body-font-size-xl);
+}
+
+/* copy-size-<n>: copy with its own vw size (source fontsize-<n>-vw on line2), scaled like size-<n> */
+.hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+  font-size: calc(var(--hero-slide-copy-size) * 2vw);
+}
+
+/* image-right: the product hero (stryker.com slide image at grid offset 6 / width 6). Below
+   600px a slide without a mobile image shows its text only, as live; from 600px the image
+   fills the right half and the text box sits over the left half (below) */
+.hero-corp.image-slide.image-right > div:first-child:not(:has(.hero-image-mobile)) {
+  display: none;
+}
+
+/* the button is its own component on the source (curated CTA): the copy above it ends its
+   component (its 15px + the 20px / 30px component gap) */
+.hero-corp.image-slide:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :not(.button-wrapper) + .button-wrapper {
+  margin-top: var(--corp-component-gap-after-text);
+}
+
+/* image-right copy without size-<n> (stryker.com product hero rich text): h1 and h2 at the
+   corp heading sizes (h2 21px / 24.5px from 600px, sage-barrier-cream-cloths), the copy at
+   the section's copy style (p-*, serif) */
+
+.hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > :is(h1, h2) {
+  line-height: var(--heading-line-height);
+}
+
+/* the subtitle's lines: 35.2px at 24.5px on the source (a 1.25x span in the plain h2, whose own
+   font still sets the line; measured on 6 product heroes) */
+.hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
+  font-size: var(--heading-font-size-l);
+  line-height: calc(var(--corp-hero-heading-line-height) * 1em);
+}
+
+/* a serif section's copy is Egyptienne in every slide layout (stryker.com span.urw-egyptienne:
+   procuity-icu, mcgrath-mac-ems positioned text boxes) */
+.section.serif .hero-corp.image-slide > div:last-child > p {
+  font-family: var(--heading-font-family);
+}
+
 @media (width >= 600px) {
-  .hero-corp.image-slide picture.hero-image-desktop {
+  .hero-corp.image-slide:not(.text-below) .hero-image-desktop {
     display: block;
   }
 
-  .hero-corp.image-slide picture.hero-image-mobile {
+  .hero-corp.image-slide:not(.text-below) .hero-image-mobile {
     display: none;
   }
 
-  .hero-corp.image-slide > div:last-child,
-  .hero-corp.image-slide.text-below > div:last-child {
+  .hero-corp.image-slide:not(.text-below) > div:last-child,
+  .hero-corp.image-slide.text-above > div:last-child {
     position: absolute;
-    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
-    padding: 0;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: var(--hero-box-padding, 0);
   }
 
-  .hero-corp.image-slide > div:last-child > * {
+  .hero-corp.image-slide.text-above > div:last-child {
+    padding: var(--space-block-l) var(--space-block);
+  }
+
+  /* bottom-<n>: the source .bottom-text box ends 55px below its button (20px box padding,
+     20px column margin, 15px button margin) */
+  .hero-corp.image-slide[data-slide-anchor="bottom"] > div:last-child {
+    padding-bottom: calc(2 * var(--space-block-l) + var(--space-block));
+  }
+
+  .hero-corp.image-slide[data-text-size] > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
+
+  .hero-corp.image-slide[data-copy-size] > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(1vw, var(--body-font-size-m));
+  }
+
+  .hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide.image-right:not(.text-below) > div:first-child {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-corp.image-slide.image-right:not(.text-below) > div:first-child:not(:has(.hero-image-mobile)) {
+    display: block;
+  }
+
+  .hero-corp.image-slide.image-right:not([data-text-size]) > div:last-child > h2 {
+    font-size: var(--heading-font-size-xl);
+  }
 }
+
+/* text-below slides (the source mobile_Bottom: text under the image below 841px) keep the
+   phone layout up to 900px: from 600px the image is too low for the box (product heroes'
+   fixed-size type, ambient-monitoring), which spilled over the next section and under the
+   sticky jump bar. From 900px: the desktop image and the box over it / beside it */
+@media (width >= 900px) {
+  .hero-corp.image-slide.text-below .hero-image-desktop {
+    display: block;
+  }
+
+  .hero-corp.image-slide.text-below .hero-image-mobile {
+    display: none;
+  }
+
+  .hero-corp.image-slide.text-below > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: var(--hero-box-padding, 0);
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:first-child {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:first-child:not(:has(.hero-image-mobile)) {
+    display: block;
+  }
+}
+
+/* box-<colour>: the coloured box behind the slide / banner text (stryker.com Large Headline
+   .has-background in the overlay, 20px padding; e.g. environmental-programs: white) */
+.hero-corp[class*="box-"] { --hero-box-padding: var(--space-block-l); }
+.hero-corp.box-white { --hero-box-bg: var(--color-white); }
+.hero-corp.box-gold { --hero-box-bg: var(--color-accent); }
+.hero-corp.box-light-gray { --hero-box-bg: var(--color-surface); }
+.hero-corp.box-dark-gray { --hero-box-bg: var(--color-secondary); }
+.hero-corp.box-blue { --hero-box-bg: var(--color-navy-bright); }

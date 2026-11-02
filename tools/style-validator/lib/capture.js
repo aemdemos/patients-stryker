@@ -28,6 +28,18 @@ async function settleLayout(page, settleMs) {
 }
 
 /**
+ * Aborts the requests whose URL path matches one of the patterns (config blockUrlPatterns,
+ * e.g. ["/altcha/", "/captcha/"] for a site whose form captcha takes all the CPU).
+ * @param {import('playwright').BrowserContext} context
+ * @param {string[]} patterns regular expression sources
+ */
+async function blockUrls(context, patterns = []) {
+  if (!patterns.length) return;
+  const res = patterns.map((p) => new RegExp(p, 'i'));
+  await context.route((url) => res.some((re) => re.test(url.pathname)), (route) => route.abort());
+}
+
+/**
  * @param {import('playwright').Browser} browser
  * @param {string} url
  * @param {object} opts { waitUntil, minLength, settleMs }
@@ -41,8 +53,10 @@ export async function captureRuns(browser, url, opts = {}) {
     timeoutMs = 45000,
     blockClasses = [],
     variantClasses = [],
+    blockUrlPatterns = [],
   } = opts;
   const context = await browser.newContext({ bypassCSP: true });
+  await blockUrls(context, blockUrlPatterns);
   const page = await context.newPage();
   try {
     try {
@@ -108,10 +122,12 @@ export async function captureGeometry(browser, url, opts = {}) {
     breakpoints = [390, 1200],
     blockClasses = [],
     variantClasses = [],
+    blockUrlPatterns = [],
   } = opts;
   const out = {};
   for (const width of breakpoints) {
     const context = await browser.newContext({ bypassCSP: true, viewport: { width, height: 900 } });
+    await blockUrls(context, blockUrlPatterns);
     const page = await context.newPage();
     try {
       try {

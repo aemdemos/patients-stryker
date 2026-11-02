@@ -68,6 +68,41 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   return `${edsPath || '/'}${suffix}`;
 }
 
+/**
+ * A page name as the importer saves the page document (WebImporter.FileUtils
+ * sanitizeFilename): lowercase, accents dropped, every run of other characters one `-`, no
+ * `-` at either end. foot---ankle → foot-ankle, -isuite-experience → isuite-experience,
+ * Rotator_Cuff_Repair → rotator-cuff-repair.
+ * @param {string} name one path segment
+ * @returns {string}
+ */
+function documentName(name) {
+  let decoded = name;
+  try {
+    decoded = decodeURIComponent(name);
+  } catch { /* keep it as is */ }
+  return decoded.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+/**
+ * A link to a page of the site (root-relative, after rewriteSourceLink) → the path of the
+ * page's document, so it matches where the imported page is saved (the source keeps the AEM
+ * names: foot---ankle, -isuite-experience, Rotator_Cuff_Repair). Assets (/content/…, a file
+ * extension) and other links are left alone; the query and hash are kept.
+ * @param {string} href
+ * @returns {string|null} the cleaned link, or null when nothing changes
+ */
+function documentLink(href) {
+  const m = String(href || '').match(/^(\/[^?#]*)([?#].*)?$/);
+  if (!m || href.startsWith('//') || m[1].startsWith('/content/')) return null;
+  const segments = m[1].split('/');
+  if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
+  const path = segments.map((s) => (s ? documentName(s) : s)).join('/');
+  return path === m[1] ? null : `${path}${m[2] || ''}`;
+}
+
 export default function transform(hookName, element, payload) {
   // The sa-resources template shares this site-wide cleanup, but a handful of the
   // behaviours below are specific to the /legal/ long-form text pages and would
@@ -92,16 +127,18 @@ export default function transform(hookName, element, payload) {
   // same treatment.
   const isIvsTreatment = !!(payload && payload.template
     && ['ivs-treatment', 'ivs-get-the-facts', 'ivs-contact'].includes(payload.template.name));
-  // The corp news-detail template (www.stryker.com news articles) rebuilds its own
-  // content (news-detail-sections.js): it keeps its <h1> and its authorable
-  // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
-  const isNewsDetail = !!(payload && payload.template && payload.template.name === 'news-detail');
-  const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
+  // The corp templates (template.site 'corp', www.stryker.com) rebuild their body with the
+  // corp section builder (transformers/corp-sections.js), and the corp news-detail template
+  // its own content (news-detail-sections.js): they keep their <h1> and their authorable
+  // ".c-disclaimer", and none of the legal-copy formatting applies.
+  const isCorp = !!(payload && payload.template
+    && (payload.template.site === 'corp' || payload.template.name === 'news-detail'));
+  const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
 
   if (hookName === TransformHook.beforeTransform) {
     // Cookie consent SDK / preference center - third-party chrome (cleaned.html line 307).
     WebImporter.DOMUtils.remove(element, ['#onetrust-consent-sdk']);
-    if (isNewsDetail) return;
+    if (isCorp) return;
 
     if (isIvsTreatment) {
       // ivs-treatment: its block parsers handle their own gold/CTA/heading encoding,
@@ -371,7 +408,10 @@ export default function transform(hookName, element, payload) {
     element.querySelectorAll('img[src], a[href], iframe[src], iframe[data-src]').forEach((node) => {
       const ref = node.getAttribute('src') || node.getAttribute('href') || node.getAttribute('data-src') || '';
       const isPixel = node.tagName === 'IMG' && !node.getAttribute('alt') && isOffDomain(ref);
-      if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+      // tracking hosts only in absolute URLs: an in-page or relative link that mentions one
+      // (a "Connect with an expert" button to #marketo-form, stryker.com vocera-edge) stays
+      const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
+      if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
         const wrapper = node.closest('p, picture, div') || node;
         wrapper.remove();
       }
@@ -386,6 +426,12 @@ export default function transform(hookName, element, payload) {
     element.querySelectorAll('a[href]').forEach((a) => {
       const rewritten = rewriteSourceLink(a.getAttribute('href'), hostRe);
       if (rewritten !== null) a.setAttribute('href', rewritten);
+      // the page names as the documents are saved (a link shown as its URL follows)
+      const href = a.getAttribute('href');
+      const cleaned = documentLink(href);
+      if (cleaned === null) return;
+      if (a.textContent.trim() === href) a.textContent = cleaned;
+      a.setAttribute('href', cleaned);
     });
 
     // Normalise the page title to <h2>. Most legal pages author the title as an

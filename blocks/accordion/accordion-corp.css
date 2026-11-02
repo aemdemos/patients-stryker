@@ -1,23 +1,36 @@
 /*
  * Accordion: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
  * (CORP_BLOCK_STYLES in scripts/corp.js). The label font, size and case are shared
- * with patients; corp labels have no rule under them, sit 15px above the panel and
- * the panel body has no padding.
+ * with patients. Measured on /us/en/smart-care/products/virtual-monitoring.html: labels
+ * sit 15px apart with a rule under each closed label; an open item moves the rule under
+ * its panel, which has no padding (its text keeps its line margins).
  */
 
 body.corp .accordion .accordion-item-label {
   margin-bottom: var(--space-block);
   padding: var(--space-block-s) 0;
-  border: 0;
+}
+
+body.corp .accordion .accordion-item-label p {
+  line-height: inherit;
 }
 
 body.corp .accordion .accordion-item-label::after {
   margin-right: var(--space-block-xs);
 }
 
+body.corp .accordion .accordion-item-open .accordion-item-label {
+  border-bottom: 0;
+}
+
 body.corp .accordion .accordion-item-body {
   padding: 0;
-  border: 0;
+}
+
+/* the panel's last line keeps its 15px margin inside the panel, above the rule (source
+   .panel-body: the text component box holds its margins) */
+body.corp .accordion .accordion-item-body :is(p, ul, ol):last-child {
+  margin-bottom: var(--space-block);
 }
 
 @media (width >= 900px) {

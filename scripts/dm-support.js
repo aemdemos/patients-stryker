@@ -110,6 +110,22 @@ export function isDMVideoSrc(src) {
   return !!src && (DM_VIDEO.test(src) || VIDEO_EXT.test(src));
 }
 
+/**
+ * A small square rendition of a Scene7 image (`/is/image/`), for thumbnails: the asset
+ * path with its preset/query replaced by `fit=constrain,1&wid=<size>&hei=<size>` (the
+ * request the source Scene7 viewers make for their swatches), keeping transparency for
+ * PNG presets. Other URLs (OpenAPI, publish-path, video) return null.
+ * @param {string} src the authored DM image URL
+ * @param {number} size the box edge in px
+ * @returns {string|null}
+ */
+export function dmThumbnailSrc(src, size) {
+  if (!src || !DM_SCENE7.test(src) || DM_VIDEO.test(src)) return null;
+  const [path, query = ''] = src.split('?');
+  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decodeSrc(query));
+  return `${path}?fit=constrain,1&wid=${size}&hei=${size}&fmt=${png ? 'png-alpha' : 'jpg'}`;
+}
+
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
 // nodes (avoids iterating every anchor/image on the page)
 const DM_SELECTOR = [
@@ -418,9 +434,13 @@ function hlsDuration(src) {
  * <video poster> and stripped from the media source.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label (from link title)
+ * @param {object} [options]
+ * @param {boolean} [options.background] a decorative background video (corp hero slides):
+ *   muted, looping, playing on its own without controls; the poster only when the user
+ *   prefers reduced motion
  * @returns {HTMLElement} a wrapper div containing the <video> and the play overlay
  */
-export function renderVideo(src, label) {
+export function renderVideo(src, label, { background = false } = {}) {
   const url = new URL(src, window.location.href);
   let poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
@@ -467,6 +487,17 @@ export function renderVideo(src, label) {
   // the HLS source is attached lazily, so make sure it is there before playing
   const playVideo = () => startMedia().then(() => video.play().catch(() => {}));
 
+  if (background) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'dm-video-wrapper dm-video-background';
+    video.muted = true;
+    video.loop = true;
+    video.setAttribute('aria-hidden', 'true');
+    wrapper.append(video);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) playVideo();
+    return wrapper;
+  }
+
   // wrap the video with a centered play-icon overlay (with or without a poster):
   // it sits over the frame before playback and fades out/in as the video is
   // played/paused, mirroring the source's Scene7 viewer. The overlay layer itself
@@ -474,6 +505,8 @@ export function renderVideo(src, label) {
   // centered button captures them. Styling lives in styles/lazy-styles.css.
   const wrapper = document.createElement('div');
   wrapper.className = 'dm-video-wrapper';
+  // the authored link, for blocks that render it again (hero-corp: a background video)
+  wrapper.dataset.dmSrc = src;
 
   const overlay = document.createElement('div');
   overlay.className = 'dm-video-overlay';
@@ -553,6 +586,18 @@ export default function decorateDMAssets(root) {
     }
 
     el.replaceWith(replacement);
+  });
+
+  // a linked image: the importer keeps the link target as the href and the image URL in the
+  // title (<a href="/target" title="https://…/is/image/…">alt</a>, tools/importer/transformers/
+  // patients-stryker-dm-images.js) — the image renders inside the link, the text is its alt
+  root.querySelectorAll('a[title*="/is/image/"], a[title*="/adobe/assets/"]').forEach((a) => {
+    const src = a.getAttribute('title');
+    const render = dmRendererFor(src);
+    if (!render || render === renderVideo || a.querySelector('picture, img, video')) return;
+    const text = a.textContent.trim();
+    a.replaceChildren(render(src, text && text !== src ? text : '', false));
+    a.removeAttribute('title');
   });
 }
 

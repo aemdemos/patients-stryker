@@ -349,6 +349,7 @@ How to rewrite:
   - `https://patients.stryker.com/us/en/ivs/index.html` → `/us/en/ivs/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ivs/)
   - `https://patients.stryker.com/us/en/ent/index.html` → `/us/en/ent/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ent/)
 - Keep any query string and `#hash` on the rewritten link (e.g. `.../back-pain.html#disclaimer` → `.../back-pain#disclaimer`).
+- **Use the page's document name.** The importer saves every page at its cleaned name (`WebImporter.FileUtils.sanitizeFilename`: lowercase, every run of other characters one `-`, no `-` at either end), so links get the same names: `/us/en/foot---ankle/…` → `/us/en/foot-ankle/…`, `/…/-isuite-experience` → `/…/isuite-experience`, `/…/Rotator_Cuff_Repair` → `/…/rotator-cuff-repair` (`documentLink` in the same transformer).
 - If the source link redirects (e.g. `/us/en/ivs/find-a-doctor.html` 301 → `https://physicianlocator.strykerivs.com/`), link to the final target instead, matching what the migrated sibling pages use.
 
 This is about **links**. The imported document for an index page is still saved at `/something/index` (`WebImporter.FileUtils.sanitizePath`), which EDS serves at `/something/`.
@@ -408,12 +409,122 @@ Corp pages are gated by page metadata `site: corp` → `body.corp` and `scripts/
 - **Reuse patients blocks.** If a patients block (`cards`, `columns`, `video`, `hero`, `accordion`, `tabs`, …) fits, reuse it: corp styling goes in `blocks/<name>/<name>-corp.css`, scoped under `body.corp`, and the name is added to `CORP_BLOCK_STYLES` in `scripts/corp.js`. Do not create `<name>-corp` block forks for CSS differences or small variant-gated JS.
 - **New corp block** (`<name>-corp` folder) only when no patients block fits the content model — explain why to the user first.
 - **Variants:** port only the variants the user/reviewer has listed. Do not carry over variants from analysis or old branches without approval.
-- **Templates** live in `templates/<t>/`: `<t>.css` (template styles), `<t>.js` (template behaviour — its default export is called with the document by `corp.loadTemplate`; keep it for page-level decoration that no block owns) and `<t>-themes.css` (template themes, loaded only when the page sets `theme`). A corp page that sets `theme` also loads the shared `styles/themes.css`: when a corp page matches a patients page (e.g. search), reuse its existing theme (`theme: search`) and section styles (`spacer`) instead of copying the rules into a new template. Put behaviour in a block when a block owns the content; use the template JS only for page-wide concerns.
+- **Templates** live in `templates/<t>/`: `<t>.css` (template styles), `<t>.js` (template behaviour — its default export is called with the document by `corp.loadTemplate`; keep it for page-level decoration that no block owns) and `<t>-themes.css` (template themes, loaded only when the page sets `theme`). A corp page that sets `theme` also loads the shared `styles/themes.css`: when a corp page matches a patients page (e.g. search), reuse its existing theme (`theme: search`) and section styles (`spacer`) instead of copying the rules into a new template. Put behaviour in a block when a block owns the content; use the template JS only for page-wide concerns. A corp AEM template whose name is already a patients template gets the `-corp` suffix as its EDS template (`long-page-detail-corp`, `procedure-detail-corp`); the others keep the AEM name (`decisions/site-classification.json` → `templateNames`).
 - **Theme scoping:** both theme files load on a themed corp page. If a template theme has the same name as a theme in `styles/themes.css`, target it as `body.<template>.<theme>` in `templates/<t>/<t>-themes.css` so its rules apply only to that template.
 - **Global corp styles/tokens** live in `styles/styles-corp.css`. Do not edit `styles/styles.css` for corp needs unless the user approves.
 - **Breakpoints:** Hard Rule 5 applies unchanged. www.stryker.com uses the same source breakpoints as patients (480 / 840–841 / 1024 / 1440) — map them to 600 / 900 / 1200 per the table in Hard Rule 5.
 - **Video:** YouTube/DM videos are authored as the `video` block; there is no auto-blocking of bare links.
 - **Scope of a change:** one block (or template) per branch/PR, with a demo page path for the reviewer. Do not bundle unrelated blocks.
+
+### Corp source exports (`.migration/xf-mapping`, `.migration/xf-content`, `.migration/cf-content`)
+
+These folders hold read-only JSON snapshots of the client's AEM content for www.stryker.com (`jcr:content.infinity.json`). Read them in every corp migration task: page analysis, import parsers and transformers, and fragment imports. Use them **together with** the scraped page:
+- The export shows what was authored.
+- The rendered page decides what is live and how it looks.
+- When the two disagree, follow the live page and tell the user.
+
+Never edit the exports. They are refreshed by re-exporting from AEM (`generated` in the manifest gives the snapshot date).
+
+**The exports are local only: never commit or push them, not even anonymised.** The repo is public. They live in one git-ignored folder, `.corp-exports/` (the anonymised exports), and `.migration/xf-mapping`, `xf-content` and `cf-content` are git-ignored links to it, so the tools read them at the paths below. The ignore rules are in `.git/info/exclude`, and local `pre-commit` / `pre-push` hooks refuse any export file. What is generated from them (`tools/importer/data/`, the import bundles, the decision tables) is committed: it was checked to hold nothing sensitive. A new export must be anonymised before it goes into `.corp-exports/`.
+
+#### 1. Find the page export
+`.migration/xf-mapping/<source URL path without .html>.json`, with the letter case kept:
+- `https://www.stryker.com/us/en/smart-care.html` → `.migration/xf-mapping/us/en/smart-care.json`
+- `/us/en/index.html` → `us/en/index.json`; `/us/en/joint-replacement/products/Insignia.html` → `…/products/Insignia.json`
+
+The file is the page's `jcr:content`, taken from the **author** instance:
+- **Page properties** are at the top level.
+- **Content** sits in the template's areas (`hero_parsys`, `customizablearea_parsys`, `featured_parsys`, `par`, …) and in page-level components (`disclaimer`, `publishdate`, `pageshortdescription`, `image`, …).
+- **Order:** inside an area, components are listed in render order. Where each area sits on the page is set by the template (`cq:template`), so confirm it against the rendered page.
+
+#### 2. Experience fragments (XFs)
+A component that uses an XF stores the AEM path and, next to it, the EDS path where the fragment document must be created:
+
+| AEM key | EDS key |
+|---|---|
+| `fragmentPath` | `edsFragmentPath` |
+| `experienceFragmentPath` | `edsExperienceFragmentPath` |
+| `experienceFragmentPathMobile` | `edsExperienceFragmentPathMobile` |
+| `fragmentVariationPath` | `edsFragmentVariationPath` |
+
+- **Create every referenced XF as its own fragment document** at its `eds*` path, and include it in the page with the `fragment` block. The EDS folder structure mirrors the client's AEM structure, so they can trace each fragment back to its XF. A fragment used on several pages is created once, and every page references the same path.
+- **Use the `eds*` value as is.** It equals `xfToFragmentPath()` in `tools/importer/xf-fragment-path.js`: strip `/content/experience-fragments/`, prefix `/us/en/fragments/`, lowercase each segment, and turn `_` and repeated `-` into a single `-`. Example: `/content/experience-fragments/stryker/smart_care/en/business_unit/landing-page-hero/master` → `/us/en/fragments/stryker/smart-care/en/business-unit/landing-page-hero/master`. Never derive fragment paths any other way. In importers, use `tools/importer/xf-fragment-path.js`:
+  - `xfFragmentPath(xf)` returns the EDS path of any published XF, and `null` for references that can't be imported.
+  - `pageXfRefs(page)` returns a page's XF references in authored order.
+  - `cfToFragmentPath(cf)` gives the content-fragment rule.
+
+  These read `tools/importer/data/xf-index.js`, which is generated from the exports (see 5. below).
+- **XF content** lives in `.migration/xf-content/<AEM path without /content/experience-fragments/>.json`, keeping the AEM names (underscores included). For example: `.migration/xf-content/stryker/smart_care/en/business_unit/landing-page-hero/master.json`.
+  - Or look the XF up in `.migration/xf-content/_manifest.json`: `fragments[].variations[]` holds `path`, `edsPath`, `file`, `master` and `references`.
+  - These files come from the **publish** instance, so they show what is live.
+- **Nested XFs:** XF files use the same reference keys (and the manifest lists them in `references`). Create nested XFs as fragments too, and reference them from the parent fragment.
+- **Mobile variants:** `experienceFragmentPathMobile` points to the mobile version of a hero or carousel slide, which a desktop scrape never shows. Carry it over when the block supports a mobile image or variant.
+- **References to skip:**
+  - entries in the manifest's `redirects` (they all redirect to the home page, so they aren't real XFs)
+  - `unresolvedReferences` with status `not_an_xf` (e.g. a component pointing at `/content/experience-fragments/stryker`)
+- **Missing variations:** a variation referenced by a page but absent from the manifest was never published. Check what the live page renders at mobile and desktop width, and report it to the user. Never invent its content.
+- **Content fragments become their own fragment documents too.** A `fragmentPath` under `/content/dam/stryker/content-fragments/` (contact and location boxes inside XFs) points to a DAM content fragment.
+  - It goes to `cfToFragmentPath()`: `/content/dam/stryker/content-fragments/eemea/en/contact-information/russia` → `/us/en/fragments/content-fragments/eemea/en/contact-information/russia`.
+  - The XF fragment that contains it references it with the `fragment` block.
+  - Its fields come from `.migration/cf-content/<path without /content/dam/>.json` (the export of `{path}/jcr:content.infinity.json`). The component's `text` property is only a plain-text snapshot.
+  - `tools/importer/data/cf-index.js` lists every content fragment, its fields and each use (`elementNames` = the fields that use shows).
+- **Summary text:** the `text` property of an `experienceFragment` component is only a summary. Take the content from the XF file.
+
+#### 3. Other data to take from the exports (instead of guessing)
+- **Page metadata:**
+  - `jcr:title` and `jcr:description`
+  - `thumbnailAltText` (alt text of the share image)
+  - `cq:tags` (business unit, content type)
+  - `originallyPublished` and `lastPublished` (real publish dates)
+  - `contentID` (the client's regulatory document ID)
+  - `cq:template` (classify pages into templates without scraping)
+- **Authored rich text:** the `text` property of `stryker/components/content/text` holds the text as authored, with the font classes (`futura-bold`, `fontsize-1-5em`, …) and inline colours. It is the cleanest input for choosing authoring conventions. Still verify the rendered result.
+- **Images:** `standaloneimage` → `srcFileRef` plus `alt`. Dynamic Media (`dam/components/scene7/dynamicmedia`) → `assetID`, `imageserverurl` and presets. List missing alt text for authors, as required by *Image alt text in imports* above.
+- **CTAs:** `curatedcta` → `CTATitle`, link type, `ctaInternalLink`, `ctaOpenInNewTabOverride`, `ctaDeepLinkID` and button colour.
+- **In-page anchors:** a `section-title` with `hideSectionTitleComp: "true"` doesn't render, but its `deepLinkingId` is the anchor used by the jump bar and deep-link CTAs. Keep these IDs exactly as they are, typos included, so the links keep working.
+- **Forms:** `marketoform` → `formId`, `afterSubmitAction` and the thank-you `message`.
+- **Page disclaimer:** the top-level `disclaimer` (rich text) is easy to miss in a scrape.
+- **Tabs and card lists:**
+  - `tabs` → `tabsGrid` holds the tab titles.
+  - `customizable` lists hold only the target page paths (`featuresCta[].cta`). Card titles, descriptions and images come from those pages (their own export or rendered page).
+- **Layout hints:** `cq:responsive` widths and offsets, `backgroundColor`, padding properties and column-control types (`cols2`, `cols3`, `cols2_2-3_1-3`). Use them to choose block variants and section styles, never as CSS values. Measure CSS on the source page.
+- **Skip:**
+  - empty components and containers (no child components)
+  - `wcm/msm/components/ghost` (deleted inherited components)
+  - components with `hideComponent: "true"`, after confirming they don't render
+
+#### 4. Links in the exports
+Internal links are AEM paths (`/content/stryker/us/en/…`, often without `.html`). Strip `/content/stryker`, then apply *Link rewriting in import scripts* above. For example, `/content/stryker/us/en/smart-care/products/vocera-edge` → `/us/en/smart-care/products/vocera-edge`, and `…/index` → `…/`.
+
+#### 5. The migration index (generated from the exports)
+Import scripts run bundled in the browser importer and **can't read `.migration/`**. `npm run build:migration-index` (`tools/importer/migration-index/`) turns the exports into files in `tools/importer/data/`. **Run it after every re-export and commit the output.** Never edit the generated files by hand. They are excluded from lint.
+
+Bundled by the importers:
+- `xf-index.js` — `FRAGMENTS` (every published XF variation: EDS path, status, nested XFs and content fragments, DM assets, page count, templates of those pages, `aside` when shown next to a Marketo form), `PAGES` (each page's XF references in authored order, kind `fragment` or `slide` with desktop/mobile) and `SKIPPED` (redirect, unpublished, not-an-xf). Read it through `xf-fragment-path.js`, not directly.
+- `cf-index.js` — content fragments, as above.
+- `page-facts/<template>.js` (one file per AEM template, bundled only by that template's importer) — per page: metadata (title, description, share image and alt, tags, publish dates, contentID), anchors (`deepLinkingId` incl. hidden section titles), disclaimer, Marketo forms, tab titles, card-list targets resolved from their own exports, interactive-image hotspots (`interactiveMedia`, drawn client-side so a scrape never sees them), images without alt.
+
+Decision catalogs (committed, not bundled), in `data/catalog/`:
+- `xf-report.json` — counts, most-shared XFs, skipped references with their pages, nested XFs, XFs per template, images without alt.
+- `typography.json` — every formatting combination in authored rich text (block tag, classes, colour, inline tags) with counts, templates and example pages.
+- `components.json` — every component type with its properties and values, `cq:responsive` patterns, hidden / empty counts and parent components.
+- `site.json` — every page with its template, component set, XF counts, migration state and import template, grouped by template.
+- `cf-to-export.txt` — the content-fragment paths to export.
+
+**Importing a template's XFs:** a page importer replaces each XF rendered on the page (`.experienceFragment`) with a Fragment block. It matches them against `PAGES` in order and by text summary (`matchXfWrappers` in `tools/importer/corp-components.js`). Unmatched XFs stay inline and are reported. The fragment documents themselves come from `tools/importer/import-xf-fragments.js`, run with `data/catalog/xf-urls-<template>.txt` (and `xf-urls-slides-<template>.txt`). An XF used by news-detail pages (`FRAGMENTS[xf].templates`) gets the news-detail rules; every other XF gets the corp section builder (below), and an XF shown next to a Marketo form (`aside`) the `contact-aside` style. Import a template's XFs together with its pages; a page without its fragment documents renders empty where the XF was.
+
+**Corp section builder** (every corp template except news-detail): `tools/importer/corp-page.js` rebuilds the page body from the rendered components in authored order; `corp-section-builder.js` is the engine (walk, sections, Section Metadata) and `corp-component-handlers.js` holds one handler per row of `decisions/component-map.json`. A component without a handler is kept as cleaned default content and reported (`report.unhandled` in the import report); add a handler there instead of patching pages. Import scripts pass it to `transformers/corp-sections.js` as `payload.corp` (transformers import nothing) and call `markLivePage` in `onLoad`. Reference importer: `tools/importer/import-product-detail.js`.
+
+**Content fragments:** `tools/importer/import-cf-fragments.js` runs on `data/catalog/cf-urls.txt`. That list has one URL per content fragment: a containing XF's publish page plus `?cf=<DAM path>`. Each document is a `Cards (contact)` card holding the fields the live pages show, plus a Metadata block with the other fields and the labels. `blocks/fragment` never renders a fragment's Metadata block. Directory XFs (rendered `dl.cmp-contentfragment`) are built by `import-xf-fragments.js` whatever list it runs on. Each group band becomes a section (`large-headline` + `bg-gold` / `bg-gray`), followed by one Fragment block per content fragment; text between boxes gets its own section so the card grids keep the source order. Run both, then the coverage check.
+
+**Coverage check — run it after every import** (pilot or real):
+`node tools/importer/migration-index/check-coverage.js <output content dir> [page path …]`
+- It lists every visible text authored in AEM (rich text, image titles and descriptions, headings, CTA labels, large headlines, video texts, tables, page disclaimer) that is missing from the import output.
+- Text that is not on the live page either is reported as author-only (the page exports come from author) and doesn't fail the check.
+- It also fails pages where the import fetched the source's 404 page.
+- **Source URLs:** the EDS path is the cleaned-up AEM name (`foot---ankle` → `foot-ankle`, trailing `-` dropped), so take the URLs to import from the export file names, never from EDS paths.
+
+The site-wide decisions built from these catalogs (typography, component → block mapping, templates and import order) live next to them as decision tables. Apply those tables in importers instead of deciding per page.
 
 ## Testing & Quality Assurance
 
