@@ -15,8 +15,11 @@
 /* Section Metadata `background: bg-gold`: a gold box around the section's text, inside the
    container gutters rather than a page-wide band (stryker.com rich text
    .has-background.bg-gold, e.g. the "Want to learn more?" heading above the Sage webinar
-   form: padding 4% top, 10px right, 3% bottom, 2% left of the box, 2% below it) */
+   form: padding 4% top, 10px right, 3% bottom, 2% left of the box, 2% below it). The box
+   keeps a blank line's space above it, as on the source (49px from the text above, at
+   every width: the source leaves an empty paragraph before the box) */
 body.news-detail main > .section.bg-gold {
+  margin-top: var(--space-section-l);
   background-color: transparent;
 }
 
