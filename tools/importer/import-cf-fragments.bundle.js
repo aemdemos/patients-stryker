@@ -131,6 +131,7 @@ var CustomImportScript = (() => {
   }
   function effectiveSize(el) {
     const sizes = /* @__PURE__ */ new Set();
+    const copySizes = /* @__PURE__ */ new Set();
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (squash(n.textContent)) {
@@ -138,10 +139,14 @@ var CustomImportScript = (() => {
         for (let e = n.parentElement; e && e !== el.parentElement; e = e.parentElement) {
           factor = [...e.classList].reduce((f, c) => f * sizeFactor(c), factor);
         }
-        sizes.add(Math.round(factor * 100) / 100);
+        const size = Math.round(factor * 100) / 100;
+        sizes.add(size);
+        const label = n.parentElement.closest(".futura-bold, b, strong");
+        if (!label || !el.contains(label) || label === el) copySizes.add(size);
       }
     }
-    return sizes.size === 1 ? [...sizes][0] : null;
+    const counted = copySizes.size ? copySizes : sizes;
+    return counted.size === 1 ? [...counted][0] : null;
   }
   function coveredBy(el, cls) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -156,6 +161,15 @@ var CustomImportScript = (() => {
     const font = FONT_STYLES.find(([cls]) => copy.every((el) => coveredBy(el, cls)));
     return [size, font && font[1]].filter(Boolean).join(", ");
   }
+  function sameLineText(node, direction) {
+    let value = "";
+    let sibling = node[direction];
+    while (sibling && sibling.nodeName !== "BR") {
+      value += sibling.textContent;
+      sibling = sibling[direction];
+    }
+    return squash(value);
+  }
   var COLOURS = {
     ffb500: "color-gold",
     "1c5687": "color-blue",
@@ -163,9 +177,14 @@ var CustomImportScript = (() => {
     "4c7d7a": "color-teal",
     "27455c": "color-navy",
     545857: "color-grey",
-    ffffff: "color-white"
+    ffffff: "color-white",
+    // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
+    // practice…", "CONTACT US" links), silver (107) and dark gold (58)
+    edeeec: "color-light-gray",
+    b2b4ae: "color-silver",
+    af6d04: "color-dark-gold"
   };
-  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-grey", ""]);
+  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-silver", "color-grey", ""]);
   function toHex(value) {
     const v = (value || "").trim().toLowerCase();
     if (v === "white") return "ffffff";
@@ -229,29 +248,31 @@ var CustomImportScript = (() => {
       if (node.nodeType !== 1 || own.get(node)) return "";
       return [...node.childNodes].map(freeText).join("");
     };
+    const linkOnly = (el) => !!el.closest("a[href]") || [...el.querySelectorAll("a[href]")].some((a) => squash(a.textContent) === squash(el.textContent));
     coloured.forEach((el) => {
-      const cls = colourClass(own.get(el));
+      const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
-      let run = [];
-      const flush = () => {
-        if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
-        run = [];
+      if (cls === "color-teal" && linkOnly(el)) return;
+      const around = !el.closest("a[href]") && linkOnly(el);
+      if (around && cls !== "color-black") return;
+      const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
+      const wrapFree = (parent) => {
+        let run = [];
+        const flush = () => {
+          if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+          run = [];
+        };
+        [...parent.childNodes].forEach((child) => {
+          if (child.nodeType === 1 && own.get(child)) flush();
+          else if (hasOwn(child)) {
+            flush();
+            wrapFree(child);
+          } else run.push(child);
+        });
+        flush();
       };
-      [...el.childNodes].forEach((child) => {
-        if (child.nodeType === 1 && own.get(child)) flush();
-        else run.push(child);
-      });
-      flush();
+      wrapFree(el);
     });
-  }
-  function sameLineText(node, direction) {
-    let value = "";
-    let sibling = node[direction];
-    while (sibling && sibling.nodeName !== "BR") {
-      value += sibling.textContent;
-      sibling = sibling[direction];
-    }
-    return squash(value);
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
     const doc = root.ownerDocument;
@@ -266,20 +287,70 @@ var CustomImportScript = (() => {
     });
   }
   function cleanRichText(root, { wholeParagraphs = false, divParagraphs = true } = {}) {
+    const control = (ch) => {
+      const code = ch.charCodeAt(0);
+      return code < 32 && ![9, 10, 13].includes(code) || code === 127;
+    };
+    const ctrlWalker = root.ownerDocument.createTreeWalker(root, 4);
+    for (let n = ctrlWalker.nextNode(); n; n = ctrlWalker.nextNode()) {
+      if ([...n.textContent].some(control)) n.textContent = [...n.textContent].filter((ch) => !control(ch)).join("");
+    }
     if (divParagraphs) {
       [...root.querySelectorAll("div")].reverse().forEach((div) => {
         if (text(div) && !div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table")) rename(div, "p");
       });
     }
+    root.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+      if (!h.classList.contains("border-bottom-gold") || h.querySelector("u") || !text(h)) return;
+      const u = root.ownerDocument.createElement("u");
+      while (h.firstChild) u.append(h.firstChild);
+      h.append(u);
+    });
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
-    tagPlainBoldLabels(root, wholeParagraphs);
     const doc = root.ownerDocument;
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
+    [...root.querySelectorAll("span, b, i, em, strong")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) {
+          const next = el.nextSibling;
+          if (/[\s\u00a0]/.test(last.textContent) && !(next && /^[\s\u00a0]/.test(next.textContent))) {
+            el.after(doc.createTextNode(" "));
+          }
+          last.remove();
+        } else el.after(last);
+        last = el.lastChild;
+      }
+      if (last && last.nodeType === 3 && /[\s\u00a0]$/.test(last.textContent)) {
+        last.textContent = last.textContent.replace(/[\s\u00a0]+$/, "");
+        el.after(doc.createTextNode(" "));
+      }
+    });
+    tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
       if (a) standalone.add(a);
+    });
+    const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
+    root.querySelectorAll("a[href]").forEach((a) => {
+      if (!triangle.test(a.textContent)) return;
+      if (!(a.closest(".futura-bold") || a.querySelector(".futura-bold"))) return;
+      const walker = doc.createTreeWalker(a, 4);
+      let lastText = null;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) lastText = n;
+      }
+      if (lastText) lastText.textContent = lastText.textContent.replace(triangle, "");
+      let span = a.parentElement;
+      while (span && span.tagName === "SPAN" && squash(span.textContent) === squash(a.textContent)) {
+        unwrap(span);
+        span = a.parentElement;
+      }
+      a.querySelectorAll("span").forEach(unwrap);
+      standalone.add(a);
     });
     standalone.forEach((a) => {
       const u = doc.createElement("u");
@@ -289,18 +360,46 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    mapColours(root);
-    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
-      let last = el.lastChild;
-      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
-        if (emptyElement(last)) last.remove();
-        else el.after(last);
-        last = el.lastChild;
+    const futuraText = (el) => {
+      const walker = doc.createTreeWalker(el, 4);
+      let all = true;
+      let any = false;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) {
+          any = true;
+          if (!n.parentElement.closest(".futura-bold")) all = false;
+        }
       }
+      return any && all;
+    };
+    const boldLinks = [...root.querySelectorAll("a[href]")].filter((a) => {
+      const line = a.closest("p, li");
+      if (standalone.has(a) || !line || a.querySelector("img")) return false;
+      if (squash(line.textContent) !== squash(a.textContent) || !futuraText(a)) return false;
+      a.querySelectorAll("span.futura-bold").forEach(unwrap);
+      [...line.querySelectorAll("span.futura-bold")].filter((span) => span.contains(a)).forEach(unwrap);
+      return true;
     });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
-      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
+      const walker = doc.createTreeWalker(el, 4);
+      let serif = false;
+      let futura = false;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (squash(n.textContent)) {
+          const font = n.parentElement.closest(".urw-egyptienne, .futura-bold");
+          if (font && font !== el && el.contains(font) && font.classList.contains("urw-egyptienne")) serif = true;
+          else futura = true;
+        }
+      }
+      if (serif && !futura) el.dataset.serifInside = "1";
+    });
+    mapColours(root);
+    boldLinks.forEach((a) => {
+      a.prepend(doc.createTextNode("[[futura-bold]"));
+      a.append(doc.createTextNode("]"));
+    });
+    root.querySelectorAll("span.futura-bold").forEach((el) => {
+      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6") || el.dataset.serifInside) {
         rename(el, "strong");
         return;
       }

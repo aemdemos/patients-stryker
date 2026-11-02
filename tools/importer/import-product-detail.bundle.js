@@ -449,15 +449,16 @@ var CustomImportScript = (() => {
   var num = (n) => String(round(n)).replace(".", "-");
   var runName = ({ em, vw, font }) => {
     const [ei, ed = "0"] = String(round(em)).split(".");
-    const [vi, vd = "0"] = String(vw).split(".");
+    const [vi, vd = "0"] = String(round(vw)).split(".");
     return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
   };
   function runOf(textNode, blockEl, serifDefault) {
     const chain = [];
     for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
     const props = chain.reduce((acc, e) => {
+      if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
       [...e.classList].forEach((cls) => {
-        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
         else if (!acc.vw) acc.em *= sizeFactor(cls);
       });
       if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
@@ -537,7 +538,7 @@ var CustomImportScript = (() => {
           if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
-          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(isHeading ? em / base : em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
           if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
           if (m[5] === "0" && serifSection && !inHero && !isHeading && !run.closest("strong, b")) {

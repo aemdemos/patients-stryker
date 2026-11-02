@@ -449,15 +449,16 @@ var CustomImportScript = (() => {
   var num = (n) => String(round(n)).replace(".", "-");
   var runName = ({ em, vw, font }) => {
     const [ei, ed = "0"] = String(round(em)).split(".");
-    const [vi, vd = "0"] = String(vw).split(".");
+    const [vi, vd = "0"] = String(round(vw)).split(".");
     return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
   };
   function runOf(textNode, blockEl, serifDefault) {
     const chain = [];
     for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
     const props = chain.reduce((acc, e) => {
+      if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
       [...e.classList].forEach((cls) => {
-        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
         else if (!acc.vw) acc.em *= sizeFactor(cls);
       });
       if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
@@ -537,9 +538,12 @@ var CustomImportScript = (() => {
           if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
-          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(isHeading ? em / base : em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
           if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
+          if (m[5] === "0" && serifSection && !inHero && !isHeading && !run.closest("strong, b")) {
+            tags.push("body-font");
+          }
         }
         if (tags.length) {
           run.before(doc.createTextNode(`[[${tags.join(",")}]`));
@@ -632,6 +636,8 @@ var CustomImportScript = (() => {
       const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
+      const around = !el.closest("a[href]") && linkOnly(el);
+      if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
       const wrapFree = (parent) => {
         let run = [];
@@ -3277,7 +3283,20 @@ var CustomImportScript = (() => {
     const info = xfInfo(xf);
     return info ? info.eds : null;
   }
-  var resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+  function hostedFragmentPath(xf) {
+    const status = xfStatus(xf);
+    return status === "unpublished" || status === "redirect" ? xfToFragmentPath(xfKey(xf)) : null;
+  }
+  var resolve = (xf) => {
+    const published = xfFragmentPath(xf);
+    const hosted = published ? null : hostedFragmentPath(xf);
+    return {
+      xf,
+      eds: published || hosted,
+      status: xfStatus(xf),
+      hosted: !!hosted
+    };
+  };
   function pageXfRefs(page) {
     const refs = PAGES[xfKey(page)] || [];
     return refs.map((r) => {
@@ -3331,7 +3350,7 @@ var CustomImportScript = (() => {
   var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
-    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
+    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || hostedFragmentPath(xf) })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
     const wrappers = [...root.querySelectorAll(".experienceFragment")].filter((el) => !el.parentElement.closest(".experienceFragment"));
     const matches = /* @__PURE__ */ new Map();
     const unmatched = [];
@@ -3357,7 +3376,8 @@ var CustomImportScript = (() => {
   var dmAsset = (src) => decodeURIComponent(String(src || "").split("/is/image/")[1] || "").split("?")[0].split("/").pop().toLowerCase();
   function markXfSlides(root, source) {
     const refs = pageXfRefs(source).filter((r) => r.kind === "slide");
-    const slides = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")].filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
+    const all = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    const slides = all.length === refs.length ? all : all.filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
     const unmatched = [];
     slides.forEach((slide, i) => {
       const ref = refs[i];
@@ -3511,6 +3531,11 @@ var CustomImportScript = (() => {
       const titleLink = title.querySelector("a[href]");
       if (titleLink) h3.append(link(document, titleLink, clean2(titleLink.textContent)));
       else h3.textContent = clean2(title.textContent);
+      if (title.classList.contains("futura-bold") || title.querySelector(".futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.append(...h3.childNodes);
+        h3.append(strong);
+      }
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p").forEach((source) => {
@@ -3960,7 +3985,7 @@ var CustomImportScript = (() => {
       return cellNodes(items, ctx, { marks: true });
     });
     const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
-    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text"));
     if (headline2 && !richText) modifiers.push("large-headline");
     if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
@@ -4103,10 +4128,25 @@ var CustomImportScript = (() => {
       h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), label(text(a), true)) : doc.createTextNode(label(text(title))));
       head.push(h);
     }
+    el.querySelectorAll(".cta-subtitle").forEach((d) => {
+      if (!text(d)) return;
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-1-5em]${text(d)}]`;
+      head.push(para(doc, strong));
+    });
     el.querySelectorAll(".cta-description").forEach((d) => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
     });
     const nodes = [...el.querySelectorAll("a[href]")].filter((a) => !a.closest(".cta-title, .cta-description")).map((a) => {
+      if (text(a) && a.classList.contains("action-link")) {
+        const u = doc.createElement("u");
+        u.textContent = text(a);
+        const link3 = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+        link3.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(link3);
+        return para(doc, strong);
+      }
       if (text(a)) return buttonNode(doc, a, text(a));
       const source = a.querySelector("img");
       if (!source) return null;
@@ -4215,12 +4255,22 @@ var CustomImportScript = (() => {
     }
     return items;
   }
+  function cellContent(nodes, doc) {
+    return nodes.flatMap((node) => {
+      if (node.tagName !== "TABLE") return [node];
+      return [...node.querySelectorAll(":scope > tbody > tr > td, :scope > tr > td")].flatMap((td) => {
+        const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+        if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+        return kids.length ? [para(doc, ...kids)] : [];
+      });
+    });
+  }
   function fullWidthImage(el, ctx) {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
     const boxItems = box ? ctx.collect(box) : [];
-    const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
+    const overlay = boxItems.length ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -4250,7 +4300,12 @@ var CustomImportScript = (() => {
     const items = [];
     const title = el.querySelector(".hero-space h1, .hero-space h2");
     const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute("style") || "");
-    if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+    if (title && text(title) && transparent) {
+      const h = ctx.doc.createElement(title.tagName.toLowerCase());
+      h.textContent = `[[visually-hidden]${text(title)}]`;
+      if (title.tagName === "H1") ctx.h1 = true;
+      items.push({ type: "flow", role: "text", nodes: [h] });
+    }
     if (title && text(title) && !transparent) {
       const box = contentCopy(title, ctx.doc);
       const colour = title.getAttribute("style");
@@ -4300,7 +4355,21 @@ var CustomImportScript = (() => {
     if (!slides.length) return [];
     const index = ctx.slideIndex || 0;
     ctx.slideIndex = index + slides.length;
-    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+    const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+    const options = ["carousel"];
+    if (widget && widget.getAttribute("data-autoplay") === "true") {
+      const ms = Number(widget.getAttribute("data-autoplayspeed")) || 3e3;
+      options.push(`autoplay-${Math.max(ms, 1e3)}`);
+    }
+    if (widget && widget.getAttribute("data-transition") === "true") options.push("fade");
+    const multi = slides.length > 1;
+    let first = true;
+    const slideStyles = () => {
+      if (!multi) return [];
+      const out = first ? options : ["carousel"];
+      first = false;
+      return out;
+    };
     return slides.flatMap((slide, i) => {
       const ref = (ctx.slideRefs || [])[index + i];
       if (ref) {
@@ -4309,10 +4378,35 @@ var CustomImportScript = (() => {
           if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
         });
       }
-      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
-      const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
+      const copyText = (selector) => {
+        const area = slide.querySelector(selector);
+        if (!area) return "";
+        const copy = area.cloneNode(true);
+        copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+        return text(copy);
+      };
+      if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText(".experienceFragment-ef")) {
+        const fragment = (path, styles) => ({
+          type: "fragment",
+          kind: "fragment",
+          styles,
+          nodes: [block(doc, "Fragment", [[linkTo(doc, path)]])]
+        });
+        const carouselStyles = slideStyles();
+        const both = !carouselStyles.length && slide.dataset.xfMobile && copyText(".experienceFragment-ef-mobile");
+        return both ? [
+          fragment(slide.dataset.xfDesktop, [...carouselStyles, "desktop-only"]),
+          fragment(slide.dataset.xfMobile, [...carouselStyles, "mobile-only"])
+        ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+      }
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
+        ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+        return overlayItems;
+      }
+      const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
@@ -4329,7 +4423,7 @@ var CustomImportScript = (() => {
       return [{
         type: "own",
         kind: "hero",
-        styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [],
+        styles: [...slideStyles(), ...overlayNodes ? cellStyles([overlayNodes], ctx) : []],
         nodes: [...holder.children]
       }];
     });
@@ -4359,6 +4453,63 @@ var CustomImportScript = (() => {
     "bg-purple": "bg-purple",
     "bg-gray": "bg-silver"
   };
+  function heroLargeCarousel(el, ctx) {
+    const { doc } = ctx;
+    const out = [];
+    const title = el.querySelector(".c-hero-large-header .title");
+    if (title && text(title)) {
+      const h1 = doc.createElement("h1");
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-0-75em]${text(title)}]`;
+      h1.append(strong);
+      ctx.h1 = true;
+      out.push({ type: "flow", role: "text", nodes: [h1] });
+    }
+    const slides = [...el.querySelectorAll(".slide:not(.slick-cloned)")].filter((s) => text(s) || s.querySelector("img"));
+    slides.forEach((slide, i) => {
+      const container = slide.querySelector(".slide-container") || slide;
+      const band = [...container.classList].map((c) => PANELS[c]).find(Boolean);
+      const textCell2 = [];
+      const heading = slide.querySelector(".slide-title");
+      if (heading && text(heading)) {
+        const h2 = doc.createElement("h2");
+        const copy = contentCopy(heading, doc);
+        cleanRichText(copy);
+        h2.append(...copy.childNodes);
+        textCell2.push(h2);
+      }
+      const subtitle = slide.querySelector(".slide-subtitle");
+      if (subtitle && text(subtitle)) {
+        const copy = contentCopy(subtitle, doc);
+        cleanRichText(copy);
+        textCell2.push(para(doc, ...copy.childNodes));
+      }
+      const link2 = slide.querySelector("a.slide-link[href]");
+      if (link2 && text(link2)) textCell2.push(buttonNode(doc, link2, text(link2)));
+      const img = slide.querySelector(".slide-image-container.hidden-xs img, .slide-image img");
+      const imageCell2 = [];
+      if (img) {
+        const image = doc.createElement("img");
+        image.setAttribute("src", img.getAttribute("src"));
+        image.setAttribute("alt", (img.getAttribute("alt") || "").trim());
+        if (!img.getAttribute("alt")) ctx.report.notes.push(`carousel slide image without alt text: ${img.getAttribute("src")}`);
+        imageCell2.push(para(doc, image));
+      }
+      out.push({
+        type: "own",
+        kind: "columns",
+        // banner: this component's look (gold arrow tabs at the edges, no dots, centred copy)
+        styles: ["carousel", ...i ? [] : ["banner"], ...band ? [band] : [], "h-serif"],
+        nodes: [block(doc, "Columns (columns-50-50)", [[textCell2, imageCell2]])]
+      });
+    });
+    if (slides.length < 2) {
+      out.forEach((item) => {
+        if (item.styles) item.styles = item.styles.filter((st) => !["carousel", "banner"].includes(st));
+      });
+    }
+    return out;
+  }
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
     const items = ctx.collect(panel);
@@ -4720,20 +4871,29 @@ var CustomImportScript = (() => {
       holder.append(strong);
       return holder;
     };
+    const heading = el.querySelector(".c-accordion > .container > .component-subheading");
+    const title = [];
+    if (heading && text(heading)) {
+      const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : "h3");
+      const u = heading.classList.contains("border-bottom-gold") ? doc.createElement("u") : h;
+      u.textContent = text(heading);
+      if (u !== h) h.append(u);
+      title.push({ type: "flow", role: "text", nodes: [h] });
+    }
     const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
     if (flowOnly) {
       const rows = panels.map((p) => [
         para(doc, ...label(p).childNodes),
         p.items.flatMap((it) => it.nodes || [])
       ]);
-      return [{
+      return [...title, {
         type: "own",
         kind: "accordion",
         styles: [],
         nodes: [block(doc, "Accordion", rows)]
       }];
     }
-    return panels.map((p) => {
+    return [...title, ...panels.map((p) => {
       const h = label(p, doc.createElement("h3"));
       return {
         type: "own",
@@ -4741,7 +4901,7 @@ var CustomImportScript = (() => {
         styles: ["accordion-panel"],
         nodes: [h, ...inlineNodes(p.items, ctx)]
       };
-    });
+    })];
   }
   function pageHero(el, ctx) {
     const { doc } = ctx;
@@ -4766,8 +4926,13 @@ var CustomImportScript = (() => {
       cell.push(h2);
     }
     root.querySelectorAll(".content").forEach((content) => {
-      const { nodes } = richTextNodes(content, doc);
-      cell.push(...nodes);
+      const box = doc.createElement("div");
+      box.append(content.cloneNode(true));
+      for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches(".title, .subhead, .content")); n = n.nextSibling) {
+        if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+      }
+      const { nodes } = richTextNodes(box, doc);
+      cell.push(...nodes.filter((node) => text(node)));
     });
     if (!cell.length) return [];
     const img = root.querySelector("picture img, img");
@@ -5123,6 +5288,7 @@ var CustomImportScript = (() => {
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
+    "hero-large-carousel": heroLargeCarousel,
     "h1-title": h1Title,
     fullWidthImage,
     fullWidthImageHero,
@@ -5198,6 +5364,31 @@ var CustomImportScript = (() => {
     }), doc);
     return nodes;
   }
+  function counterSections(items, ctx) {
+    const out = [];
+    let run = [];
+    const flush = () => {
+      if (run.length) {
+        out.push({
+          type: "own",
+          kind: "statistics",
+          styles: [],
+          nodes: inlineNodes(run, ctx)
+        });
+      }
+      run = [];
+    };
+    items.forEach((item) => {
+      if (item.type === "counter") {
+        run.push(item);
+        return;
+      }
+      flush();
+      out.push(item.type === "group" ? __spreadProps(__spreadValues({}, item), { items: counterSections(item.items, ctx) }) : item);
+    });
+    flush();
+    return out;
+  }
   function buildCorpBody(element, payload) {
     const doc = element.ownerDocument;
     const main = doc.querySelector("#aem-specific-data") || element;
@@ -5216,7 +5407,7 @@ var CustomImportScript = (() => {
     ctx.h1 = [...root.querySelectorAll("h1")].some((h) => !h.closest('[data-corp-hidden="true"]'));
     ctx.slideRefs = payload.xf ? [] : pageXfRefs(source).filter((r) => r.kind === "slide");
     if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(" | ")}`);
-    const items = ctx.collect(root);
+    const items = counterSections(ctx.collect(root), ctx);
     const styles = payload.sectionStyles || [];
     ctx.place(styles.length ? [{ type: "group", styles, items }] : items);
     if (!payload.xf) {

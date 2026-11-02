@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../tools/importer/import-long-page-detail.js
+  // tools/importer/import-long-page-detail.js
   var import_long_page_detail_exports = {};
   __export(import_long_page_detail_exports, {
     default: () => import_long_page_detail_default
   });
 
-  // ../../../tools/importer/transformers/corp-sections.js
+  // tools/importer/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../tools/importer/transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -256,7 +256,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../tools/importer/transformers/patients-stryker-dm-images.js
+  // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -324,7 +324,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../tools/importer/corp-richtext.js
+  // tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -449,15 +449,16 @@ var CustomImportScript = (() => {
   var num = (n) => String(round(n)).replace(".", "-");
   var runName = ({ em, vw, font }) => {
     const [ei, ed = "0"] = String(round(em)).split(".");
-    const [vi, vd = "0"] = String(vw).split(".");
+    const [vi, vd = "0"] = String(round(vw)).split(".");
     return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
   };
   function runOf(textNode, blockEl, serifDefault) {
     const chain = [];
     for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
     const props = chain.reduce((acc, e) => {
+      if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
       [...e.classList].forEach((cls) => {
-        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
         else if (!acc.vw) acc.em *= sizeFactor(cls);
       });
       if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
@@ -537,9 +538,12 @@ var CustomImportScript = (() => {
           if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
-          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(isHeading ? em / base : em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
           if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
+          if (m[5] === "0" && serifSection && !inHero && !isHeading && !run.closest("strong, b")) {
+            tags.push("body-font");
+          }
         }
         if (tags.length) {
           run.before(doc.createTextNode(`[[${tags.join(",")}]`));
@@ -632,6 +636,8 @@ var CustomImportScript = (() => {
       const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
+      const around = !el.closest("a[href]") && linkOnly(el);
+      if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
       const wrapFree = (parent) => {
         let run = [];
@@ -839,7 +845,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../tools/importer/corp-section-builder.js
+  // tools/importer/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1098,7 +1104,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // ../../../tools/importer/data/xf-index.js
+  // tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3247,7 +3253,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // ../../../tools/importer/xf-path-rule.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3263,7 +3269,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // ../../../tools/importer/xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3277,7 +3283,20 @@ var CustomImportScript = (() => {
     const info = xfInfo(xf);
     return info ? info.eds : null;
   }
-  var resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+  function hostedFragmentPath(xf) {
+    const status = xfStatus(xf);
+    return status === "unpublished" || status === "redirect" ? xfToFragmentPath(xfKey(xf)) : null;
+  }
+  var resolve = (xf) => {
+    const published = xfFragmentPath(xf);
+    const hosted = published ? null : hostedFragmentPath(xf);
+    return {
+      xf,
+      eds: published || hosted,
+      status: xfStatus(xf),
+      hosted: !!hosted
+    };
+  };
   function pageXfRefs(page) {
     const refs = PAGES[xfKey(page)] || [];
     return refs.map((r) => {
@@ -3291,7 +3310,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../tools/importer/corp-components.js
+  // tools/importer/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3331,7 +3350,7 @@ var CustomImportScript = (() => {
   var isEmptyXf = (wrapper) => !squash2(wrapper.textContent) && !wrapper.querySelector("img, picture, video, iframe, [data-widget], .s7dm-dynamic-media");
   function matchXfWrappers(root, source) {
     const nested = xfInfo(source);
-    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || null })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
+    const refs = nested ? nested.refs.map((xf) => ({ kind: "fragment", xf, eds: (xfInfo(xf) || {}).eds || hostedFragmentPath(xf) })) : pageXfRefs(source).filter((r) => r.kind === "fragment");
     const wrappers = [...root.querySelectorAll(".experienceFragment")].filter((el) => !el.parentElement.closest(".experienceFragment"));
     const matches = /* @__PURE__ */ new Map();
     const unmatched = [];
@@ -3357,7 +3376,8 @@ var CustomImportScript = (() => {
   var dmAsset = (src) => decodeURIComponent(String(src || "").split("/is/image/")[1] || "").split("?")[0].split("/").pop().toLowerCase();
   function markXfSlides(root, source) {
     const refs = pageXfRefs(source).filter((r) => r.kind === "slide");
-    const slides = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")].filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
+    const all = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")];
+    const slides = all.length === refs.length ? all : all.filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
     const unmatched = [];
     slides.forEach((slide, i) => {
       const ref = refs[i];
@@ -3394,7 +3414,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // ../../../tools/importer/parsers/hero-image-slide.js
+  // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3486,7 +3506,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../tools/importer/parsers/cards-corp-teaser.js
+  // tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3511,6 +3531,11 @@ var CustomImportScript = (() => {
       const titleLink = title.querySelector("a[href]");
       if (titleLink) h3.append(link(document, titleLink, clean2(titleLink.textContent)));
       else h3.textContent = clean2(title.textContent);
+      if (title.classList.contains("futura-bold") || title.querySelector(".futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.append(...h3.childNodes);
+        h3.append(strong);
+      }
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p").forEach((source) => {
@@ -3540,7 +3565,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // ../../../tools/importer/parsers/video.js
+  // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3566,14 +3591,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // ../../../tools/importer/corp-modal-path.js
+  // tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // ../../../tools/importer/data/dm-sets.js
+  // tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3592,7 +3617,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // ../../../tools/importer/corp-component-handlers.js
+  // tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -3922,6 +3947,20 @@ var CustomImportScript = (() => {
         ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
         return columns.flat();
       }
+      const last2 = filled[filled.length - 1];
+      if (last2.length === 1 && last2[0].type === "own" && last2[0].kind === "tabs") {
+        const others = inlineNodes(filled.slice(0, -1).flat(), ctx);
+        const level = Number((last2[0].nodes.find((n) => /^H[1-6]$/.test(n.tagName)) || { tagName: "H6" }).tagName[1]);
+        if (!others.some((n) => /^H[1-6]$/.test(n.tagName) && Number(n.tagName[1]) >= level)) {
+          return [...anchors, {
+            type: "own",
+            kind: "flex",
+            styles: ["flex", ...last2[0].styles],
+            nodes: [...others, ...last2[0].nodes]
+          }];
+        }
+        ctx.report.notes.push("tabs beside content with headings as deep as the tab titles: tabbed style dropped");
+      }
       return [...anchors, flex([], all)];
     }
     if (split.cards && filled.length >= 2 && filled.every(isCard)) {
@@ -3946,7 +3985,7 @@ var CustomImportScript = (() => {
       return cellNodes(items, ctx, { marks: true });
     });
     const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
-    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text"));
     if (headline2 && !richText) modifiers.push("large-headline");
     if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
@@ -4089,10 +4128,25 @@ var CustomImportScript = (() => {
       h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), label(text(a), true)) : doc.createTextNode(label(text(title))));
       head.push(h);
     }
+    el.querySelectorAll(".cta-subtitle").forEach((d) => {
+      if (!text(d)) return;
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-1-5em]${text(d)}]`;
+      head.push(para(doc, strong));
+    });
     el.querySelectorAll(".cta-description").forEach((d) => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
     });
     const nodes = [...el.querySelectorAll("a[href]")].filter((a) => !a.closest(".cta-title, .cta-description")).map((a) => {
+      if (text(a) && a.classList.contains("action-link")) {
+        const u = doc.createElement("u");
+        u.textContent = text(a);
+        const link3 = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+        link3.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(link3);
+        return para(doc, strong);
+      }
       if (text(a)) return buttonNode(doc, a, text(a));
       const source = a.querySelector("img");
       if (!source) return null;
@@ -4201,12 +4255,22 @@ var CustomImportScript = (() => {
     }
     return items;
   }
+  function cellContent(nodes, doc) {
+    return nodes.flatMap((node) => {
+      if (node.tagName !== "TABLE") return [node];
+      return [...node.querySelectorAll(":scope > tbody > tr > td, :scope > tr > td")].flatMap((td) => {
+        const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+        if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+        return kids.length ? [para(doc, ...kids)] : [];
+      });
+    });
+  }
   function fullWidthImage(el, ctx) {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
     const boxItems = box ? ctx.collect(box) : [];
-    const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
+    const overlay = boxItems.length ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -4236,7 +4300,12 @@ var CustomImportScript = (() => {
     const items = [];
     const title = el.querySelector(".hero-space h1, .hero-space h2");
     const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute("style") || "");
-    if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+    if (title && text(title) && transparent) {
+      const h = ctx.doc.createElement(title.tagName.toLowerCase());
+      h.textContent = `[[visually-hidden]${text(title)}]`;
+      if (title.tagName === "H1") ctx.h1 = true;
+      items.push({ type: "flow", role: "text", nodes: [h] });
+    }
     if (title && text(title) && !transparent) {
       const box = contentCopy(title, ctx.doc);
       const colour = title.getAttribute("style");
@@ -4286,7 +4355,21 @@ var CustomImportScript = (() => {
     if (!slides.length) return [];
     const index = ctx.slideIndex || 0;
     ctx.slideIndex = index + slides.length;
-    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+    const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+    const options = ["carousel"];
+    if (widget && widget.getAttribute("data-autoplay") === "true") {
+      const ms = Number(widget.getAttribute("data-autoplayspeed")) || 3e3;
+      options.push(`autoplay-${Math.max(ms, 1e3)}`);
+    }
+    if (widget && widget.getAttribute("data-transition") === "true") options.push("fade");
+    const multi = slides.length > 1;
+    let first = true;
+    const slideStyles = () => {
+      if (!multi) return [];
+      const out = first ? options : ["carousel"];
+      first = false;
+      return out;
+    };
     return slides.flatMap((slide, i) => {
       const ref = (ctx.slideRefs || [])[index + i];
       if (ref) {
@@ -4295,10 +4378,35 @@ var CustomImportScript = (() => {
           if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
         });
       }
-      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
-      const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
+      const copyText = (selector) => {
+        const area = slide.querySelector(selector);
+        if (!area) return "";
+        const copy = area.cloneNode(true);
+        copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+        return text(copy);
+      };
+      if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText(".experienceFragment-ef")) {
+        const fragment = (path, styles) => ({
+          type: "fragment",
+          kind: "fragment",
+          styles,
+          nodes: [block(doc, "Fragment", [[linkTo(doc, path)]])]
+        });
+        const carouselStyles = slideStyles();
+        const both = !carouselStyles.length && slide.dataset.xfMobile && copyText(".experienceFragment-ef-mobile");
+        return both ? [
+          fragment(slide.dataset.xfDesktop, [...carouselStyles, "desktop-only"]),
+          fragment(slide.dataset.xfMobile, [...carouselStyles, "mobile-only"])
+        ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+      }
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
+        ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+        return overlayItems;
+      }
+      const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
@@ -4315,7 +4423,7 @@ var CustomImportScript = (() => {
       return [{
         type: "own",
         kind: "hero",
-        styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [],
+        styles: [...slideStyles(), ...overlayNodes ? cellStyles([overlayNodes], ctx) : []],
         nodes: [...holder.children]
       }];
     });
@@ -4345,6 +4453,63 @@ var CustomImportScript = (() => {
     "bg-purple": "bg-purple",
     "bg-gray": "bg-silver"
   };
+  function heroLargeCarousel(el, ctx) {
+    const { doc } = ctx;
+    const out = [];
+    const title = el.querySelector(".c-hero-large-header .title");
+    if (title && text(title)) {
+      const h1 = doc.createElement("h1");
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-0-75em]${text(title)}]`;
+      h1.append(strong);
+      ctx.h1 = true;
+      out.push({ type: "flow", role: "text", nodes: [h1] });
+    }
+    const slides = [...el.querySelectorAll(".slide:not(.slick-cloned)")].filter((s) => text(s) || s.querySelector("img"));
+    slides.forEach((slide, i) => {
+      const container = slide.querySelector(".slide-container") || slide;
+      const band = [...container.classList].map((c) => PANELS[c]).find(Boolean);
+      const textCell2 = [];
+      const heading = slide.querySelector(".slide-title");
+      if (heading && text(heading)) {
+        const h2 = doc.createElement("h2");
+        const copy = contentCopy(heading, doc);
+        cleanRichText(copy);
+        h2.append(...copy.childNodes);
+        textCell2.push(h2);
+      }
+      const subtitle = slide.querySelector(".slide-subtitle");
+      if (subtitle && text(subtitle)) {
+        const copy = contentCopy(subtitle, doc);
+        cleanRichText(copy);
+        textCell2.push(para(doc, ...copy.childNodes));
+      }
+      const link2 = slide.querySelector("a.slide-link[href]");
+      if (link2 && text(link2)) textCell2.push(buttonNode(doc, link2, text(link2)));
+      const img = slide.querySelector(".slide-image-container.hidden-xs img, .slide-image img");
+      const imageCell2 = [];
+      if (img) {
+        const image = doc.createElement("img");
+        image.setAttribute("src", img.getAttribute("src"));
+        image.setAttribute("alt", (img.getAttribute("alt") || "").trim());
+        if (!img.getAttribute("alt")) ctx.report.notes.push(`carousel slide image without alt text: ${img.getAttribute("src")}`);
+        imageCell2.push(para(doc, image));
+      }
+      out.push({
+        type: "own",
+        kind: "columns",
+        // banner: this component's look (gold arrow tabs at the edges, no dots, centred copy)
+        styles: ["carousel", ...i ? [] : ["banner"], ...band ? [band] : [], "h-serif"],
+        nodes: [block(doc, "Columns (columns-50-50)", [[textCell2, imageCell2]])]
+      });
+    });
+    if (slides.length < 2) {
+      out.forEach((item) => {
+        if (item.styles) item.styles = item.styles.filter((st) => !["carousel", "banner"].includes(st));
+      });
+    }
+    return out;
+  }
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
     const items = ctx.collect(panel);
@@ -4424,15 +4589,18 @@ var CustomImportScript = (() => {
     let value = shown && shown.replace(/[^\d.]/g, "") === end ? shown : end;
     if (value === end && kind === "3") value = `${end}%`;
     if (value === end && kind === "2") value = `${currency}${end}`;
+    const vwClass = number && [...number.classList].find((c) => /^fontsize-\d+(-\d+)?-?vw$/.test(c));
+    if (vwClass) value = `[[${vwClass.replace(/^fontsize-/, "size-").replace(/-vw$/, "vw")}]${value}]`;
     const colour = COUNTER_COLOURS[styleColour(number)] || "teal";
     const label = el.querySelector(".container > .text-left, .container > div:last-child");
-    const desc = doc.createElement("p");
+    let desc = doc.createElement("p");
     if (label) {
-      const copy = contentCopy(label, doc);
-      cleanRichText(copy);
-      copy.querySelectorAll("strong, em").forEach(unwrap);
-      const target = copy.querySelector("p") || copy;
-      desc.append(...target.childNodes);
+      const { nodes } = richTextNodes(label, doc);
+      if (nodes.length === 1) [desc] = nodes;
+      else if (nodes.length) {
+        desc = doc.createElement("div");
+        desc.append(...nodes);
+      }
     }
     const left = !!el.querySelector(".container > .text-left");
     return [{
@@ -4688,29 +4856,52 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const panels = [...el.querySelectorAll(".panel-group > .panel")].map((panel) => ({
       title: text(panel.querySelector(".panel-title") || doc.createElement("p")),
-      items: ctx.collect(panel.querySelector(".panel-body") || panel)
+      items: ctx.collect(panel.querySelector(".panel-body") || panel),
+      // open on load on the source (AEM defaultExpanded, rendered .panel-collapse.in)
+      open: !!panel.querySelector(":scope > .panel-collapse.in")
     })).filter((p) => p.title || hasContent(p.items));
     if (!panels.length) return [];
+    const label = (p, holder = doc.createElement("span")) => {
+      if (!p.open) {
+        holder.textContent = p.title;
+        return holder;
+      }
+      const strong = doc.createElement("strong");
+      strong.textContent = p.title;
+      holder.append(strong);
+      return holder;
+    };
+    const heading = el.querySelector(".c-accordion > .container > .component-subheading");
+    const title = [];
+    if (heading && text(heading)) {
+      const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : "h3");
+      const u = heading.classList.contains("border-bottom-gold") ? doc.createElement("u") : h;
+      u.textContent = text(heading);
+      if (u !== h) h.append(u);
+      title.push({ type: "flow", role: "text", nodes: [h] });
+    }
     const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
     if (flowOnly) {
-      const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
-      return [{
+      const rows = panels.map((p) => [
+        para(doc, ...label(p).childNodes),
+        p.items.flatMap((it) => it.nodes || [])
+      ]);
+      return [...title, {
         type: "own",
         kind: "accordion",
         styles: [],
         nodes: [block(doc, "Accordion", rows)]
       }];
     }
-    return panels.map((p) => {
-      const h = doc.createElement("h3");
-      h.textContent = p.title;
+    return [...title, ...panels.map((p) => {
+      const h = label(p, doc.createElement("h3"));
       return {
         type: "own",
         kind: "accordion-panel",
         styles: ["accordion-panel"],
         nodes: [h, ...inlineNodes(p.items, ctx)]
       };
-    });
+    })];
   }
   function pageHero(el, ctx) {
     const { doc } = ctx;
@@ -4735,8 +4926,13 @@ var CustomImportScript = (() => {
       cell.push(h2);
     }
     root.querySelectorAll(".content").forEach((content) => {
-      const { nodes } = richTextNodes(content, doc);
-      cell.push(...nodes);
+      const box = doc.createElement("div");
+      box.append(content.cloneNode(true));
+      for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches(".title, .subhead, .content")); n = n.nextSibling) {
+        if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+      }
+      const { nodes } = richTextNodes(box, doc);
+      cell.push(...nodes.filter((node) => text(node)));
     });
     if (!cell.length) return [];
     const img = root.querySelector("picture img, img");
@@ -4790,9 +4986,9 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const nav = el.querySelector("nav.greedy");
     const links = nav ? [...nav.querySelectorAll("ul.links a[href]")].filter((a) => text(a)) : [];
-    if (!links.length) return [];
+    const parent = nav && nav.querySelector("a.parent-node[href]");
+    if (!links.length && !(parent && text(parent))) return [];
     const rows = [];
-    const parent = nav.querySelector("a.parent-node[href]");
     if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute("href"), text(parent))]);
     const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, "").replace(/\/index\.html(?=$|[?#])/, "/").replace(/\.html(?=$|[?#])/, "");
     links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute("href"), path(a.getAttribute("href")))]));
@@ -4829,6 +5025,45 @@ var CustomImportScript = (() => {
       h2.append(u);
     } else h2.textContent = text(h);
     return h2;
+  }
+  function latestNews(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-latestnews") || el;
+    const items = [...root.querySelectorAll(".latestnews-container > .item")].filter((item) => text(item));
+    if (!items.length) return [];
+    const out = [];
+    const heading = root.querySelector("h2");
+    if (heading && text(heading)) out.push({ type: "flow", role: "text", nodes: [componentTitle(heading, doc)] });
+    const rows = items.map((item) => {
+      const body = [];
+      const title = item.querySelector("h3");
+      if (title && text(title)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text(title);
+        body.push(h3);
+      }
+      item.querySelectorAll(":scope > p.model, :scope > p.description").forEach((p) => {
+        if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+      });
+      const cta = item.querySelector("a.news-link[href], a.action-link[href]");
+      if (cta && text(cta)) {
+        const u = doc.createElement("u");
+        u.textContent = text(cta);
+        const a = linkTo(doc, cta.getAttribute("href"), "");
+        a.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(a);
+        body.push(para(doc, strong));
+      }
+      const img = item.querySelector("img[src]");
+      if (!img) return ["", body];
+      const image = doc.createElement("img");
+      image.setAttribute("src", img.getAttribute("src"));
+      image.setAttribute("alt", img.getAttribute("alt") || "");
+      return [image, body];
+    });
+    out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+    return out;
   }
   function titleComponent(el, ctx) {
     const { doc } = ctx;
@@ -5053,6 +5288,7 @@ var CustomImportScript = (() => {
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
+    "hero-large-carousel": heroLargeCarousel,
     "h1-title": h1Title,
     fullWidthImage,
     fullWidthImageHero,
@@ -5080,7 +5316,10 @@ var CustomImportScript = (() => {
     customizable: cardList,
     resourcesanddownload: resources,
     "#product-detail-container": shortDescription,
-    tagcrumb: skip,
+    // a tag crumb placed as a component (ent/products/clarifix-cryotherapy-device, in a column):
+    // the Related Categories block as the template's own; hidden ones are skipped by the walk
+    tagcrumb: relatedCategories,
+    latestnews: latestNews,
     // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
     // Categories), the short description (rich text), the contact button and the secondary CTA
     "c-tagcrumb": relatedCategories,
@@ -5115,7 +5354,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // ../../../tools/importer/corp-page.js
+  // tools/importer/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const nodes = footnoteList(boxes.flatMap((box) => {
@@ -5124,6 +5363,31 @@ var CustomImportScript = (() => {
       return [...copy.children].filter((el) => BLOCK_TAGS.has(el.tagName));
     }), doc);
     return nodes;
+  }
+  function counterSections(items, ctx) {
+    const out = [];
+    let run = [];
+    const flush = () => {
+      if (run.length) {
+        out.push({
+          type: "own",
+          kind: "statistics",
+          styles: [],
+          nodes: inlineNodes(run, ctx)
+        });
+      }
+      run = [];
+    };
+    items.forEach((item) => {
+      if (item.type === "counter") {
+        run.push(item);
+        return;
+      }
+      flush();
+      out.push(item.type === "group" ? __spreadProps(__spreadValues({}, item), { items: counterSections(item.items, ctx) }) : item);
+    });
+    flush();
+    return out;
   }
   function buildCorpBody(element, payload) {
     const doc = element.ownerDocument;
@@ -5143,7 +5407,7 @@ var CustomImportScript = (() => {
     ctx.h1 = [...root.querySelectorAll("h1")].some((h) => !h.closest('[data-corp-hidden="true"]'));
     ctx.slideRefs = payload.xf ? [] : pageXfRefs(source).filter((r) => r.kind === "slide");
     if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(" | ")}`);
-    const items = ctx.collect(root);
+    const items = counterSections(ctx.collect(root), ctx);
     const styles = payload.sectionStyles || [];
     ctx.place(styles.length ? [{ type: "group", styles, items }] : items);
     if (!payload.xf) {
@@ -5171,7 +5435,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // ../../../tools/importer/corp-import.js
+  // tools/importer/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document) {
@@ -5257,7 +5521,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // ../../../tools/importer/data/page-facts/long-page-detail.js
+  // tools/importer/data/page-facts/long-page-detail.js
   var long_page_detail_default = {
     "/us/en/about/corporate-responsibility/cr-hub": { "template": "long-page-detail", "metadata": { "title": "Corporate Responsibility reports and resources", "pageTitle": "CR Reports and Resources", "description": "Access Stryker\u2019s environmental, social and governance reports, data and resources", "image": null, "imageAlt": null, "tags": ["guide", "resources", "hub", "annual_reports", "redirect", "sustainability_reports", "esg"], "originallyPublished": "2023-02-06T17:58:59.000Z", "lastPublished": "2026-09-15T13:00:17.000Z", "contentID": "SOCI-GSNPS-PPT-487000_Rev-17" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": ["/content/dam/m/2020-comprehensive-report/homepage/gif/Windmill_Image.jpg"] },
     "/us/en/about/corporate-responsibility/employee-benefits-and-resources": { "template": "long-page-detail", "metadata": { "title": "Employee benefits and resources", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/hcp_content"], "originallyPublished": "2025-03-13T20:07:24.000Z", "lastPublished": "2025-03-14T13:00:09.000Z", "contentID": "SOCI-GSNPS-SYK-1579300" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
@@ -5552,7 +5816,7 @@ var CustomImportScript = (() => {
     "/us/en/trauma-and-extremities/products/blueprint/rep-portal": { "template": "long-page-detail", "metadata": { "title": "Rep portal", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/hcp_content"], "originallyPublished": "2023-02-06T21:20:27.000Z", "lastPublished": "2025-09-05T18:40:39.000Z", "contentID": "AP-016654A 20-Mar-2023" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // ../../../tools/importer/import-long-page-detail.js
+  // tools/importer/import-long-page-detail.js
   var import_long_page_detail_default = createCorpImport({
     name: "long-page-detail-corp",
     description: "www.stryker.com long pages: local page navigation (Sticky Nav local), page title (h1-title), XF content, Dynamic Media videos and images, Large Headlines, column controls (Columns / Cards Corp / flex sections), hero slides (Hero Corp), Marketo forms, resources, page disclaimer.",

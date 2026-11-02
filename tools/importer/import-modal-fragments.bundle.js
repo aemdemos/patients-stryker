@@ -144,15 +144,16 @@ var CustomImportScript = (() => {
   var num = (n) => String(round(n)).replace(".", "-");
   var runName = ({ em, vw, font }) => {
     const [ei, ed = "0"] = String(round(em)).split(".");
-    const [vi, vd = "0"] = String(vw).split(".");
+    const [vi, vd = "0"] = String(round(vw)).split(".");
     return `${RUN_TAG}-e${ei}-${ed}-v${vi}-${vd}-s${font}`;
   };
   function runOf(textNode, blockEl, serifDefault) {
     const chain = [];
     for (let e = textNode.parentElement; e && e !== blockEl; e = e.parentElement) chain.push(e);
     const props = chain.reduce((acc, e) => {
+      if (!acc.vw && /^SU[PB]$/.test(e.tagName)) acc.sup = true;
       [...e.classList].forEach((cls) => {
-        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls);
+        if (!acc.vw && vwFactor(cls)) acc.vw = vwFactor(cls) * (acc.sup ? 0.75 : 1);
         else if (!acc.vw) acc.em *= sizeFactor(cls);
       });
       if (!acc.font && e.classList.contains("urw-egyptienne")) acc.font = "serif";
@@ -232,9 +233,12 @@ var CustomImportScript = (() => {
           if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
-          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(em)}em`);
+          else if (!inHero && Math.abs(em / base - 1) > 0.03) tags.push(`size-${num(isHeading ? em / base : em)}em`);
           if (!inHero && m[5] === "1" && (!serifSection || run.closest("strong"))) tags.push("serif");
           if (m[5] === "2" && !styles.includes("bold-body")) tags.push("body-font");
+          if (m[5] === "0" && serifSection && !inHero && !isHeading && !run.closest("strong, b")) {
+            tags.push("body-font");
+          }
         }
         if (tags.length) {
           run.before(doc.createTextNode(`[[${tags.join(",")}]`));
@@ -327,6 +331,8 @@ var CustomImportScript = (() => {
       const cls = colourClass(own.get(el)) || (own.get(el) === "000000" && linkOnly(el) ? "color-black" : "");
       if (!cls) return;
       if (cls === "color-teal" && linkOnly(el)) return;
+      const around = !el.closest("a[href]") && linkOnly(el);
+      if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
       const wrapFree = (parent) => {
         let run = [];
@@ -596,6 +602,14 @@ var CustomImportScript = (() => {
       if (/^(P|H[1-6]|UL|OL|TABLE|IMG|A)$/.test(el.tagName) && text(el)) return ctx.unknown(el, "loose content");
       return ctx.collect(el);
     };
+    const boxOf2 = (el) => el.classList.contains("page-section") ? el : el.querySelector(":scope > .page-section") || el.closest(".page-section") || null;
+    const boxed = (items, el) => {
+      const box = boxOf2(el);
+      items.forEach((it) => {
+        if (it && typeof it === "object" && !("box" in it)) it.box = box;
+      });
+      return items;
+    };
     ctx.collect = function collect(container) {
       const out = [];
       const total = gridTotal(container);
@@ -603,14 +617,14 @@ var CustomImportScript = (() => {
       let used = 0;
       const flush = () => {
         if (run.length > 1 && handlers.row) {
-          out.push(...handlers.row(
-            run.map((r) => collectOne(r.el)),
+          out.push(...boxed(handlers.row(
+            run.map((r) => boxed(collectOne(r.el), r.el)),
             run.map((r) => r.spec.d.w),
             ctx,
             { specs: run.map((r) => r.spec), total }
-          ));
+          ), run[0].el));
         } else {
-          run.forEach((r) => out.push(...collectOne(r.el)));
+          run.forEach((r) => out.push(...boxed(collectOne(r.el), r.el)));
         }
         run = [];
         used = 0;
@@ -630,7 +644,7 @@ var CustomImportScript = (() => {
           return;
         }
         flush();
-        out.push(...collectOne(child));
+        out.push(...boxed(collectOne(child), child));
       });
       flush();
       return out;
@@ -686,8 +700,12 @@ var CustomImportScript = (() => {
           size = node.headingSize || "plain";
         }
         if (!current || current.key !== key || font && current.font && current.font !== font || size && current.headingSize && current.headingSize !== size) {
-          start("flow", styles).key = key;
+          const sameBox = !!current && "box" in item && current.box === item.box;
+          const continues = !!current && (current.item === item || sameBox);
+          start("flow", continues ? [...styles, "continued"] : styles).key = key;
           current.spaced = !!item.spacedBox;
+          current.item = item;
+          current.box = item.box;
         }
         if (font) {
           if (font === "serif" && current.font !== "serif") current.styles.push("h-serif");
@@ -749,7 +767,7 @@ var CustomImportScript = (() => {
       if (pendingIds.length) report.notes.push(`anchors at the end without a section: #${pendingIds.join(", #")}`);
       if (pendingStyles.length) report.notes.push(`trailing ${pendingStyles.join(", ")} without a section after it, dropped`);
       const out = [];
-      sections.filter((s) => s.nodes.length).forEach((section, i) => {
+      sections.filter((s) => s.nodes.length || s.kind === "stripe").forEach((section, i) => {
         if (i > 0) out.push(doc.createElement("hr"));
         finishRuns(section.nodes, section.styles);
         out.push(...section.nodes);
@@ -935,6 +953,11 @@ var CustomImportScript = (() => {
       const titleLink = title.querySelector("a[href]");
       if (titleLink) h3.append(link(document, titleLink, clean2(titleLink.textContent)));
       else h3.textContent = clean2(title.textContent);
+      if (title.classList.contains("futura-bold") || title.querySelector(".futura-bold")) {
+        const strong = document.createElement("strong");
+        strong.append(...h3.childNodes);
+        h3.append(strong);
+      }
       body.push(h3);
     }
     item.querySelectorAll(".desc-container > p").forEach((source) => {
@@ -996,6 +1019,25 @@ var CustomImportScript = (() => {
     const name = documentName(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
+
+  // tools/importer/data/dm-sets.js
+  var SETS = {
+    "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
+    "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
+    "stryker/Cart_with_Hydro": { "type": "spin", "members": [{ "name": "stryker/RISE with Hydro - Orbit Frame.649.1-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.14-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.20-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.26-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.32-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.38-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.44-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.50-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.56-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.62-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.68-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.74-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.79-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.100-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.106-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.112-1920x1151", "type": "image", "width": 1920, "height": 1151 }, { "name": "stryker/RISE with Hydro - Orbit Frame.649.118-1920x1151", "type": "image", "width": 1920, "height": 1151 }] },
+    "stryker/Hargrove-Loper": { "type": "media_set", "members": [{ "name": "stryker/20210607-SYK_CGS_Klisa-109", "type": "image", "width": 6537, "height": 4358 }, { "name": "stryker/20210607-SYK_CGS_Klisa-182", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-202", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-233", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-55", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-229", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-197", "type": "image", "width": 6082, "height": 4055 }, { "name": "stryker/20210607-SYK_CGS_Klisa-31", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-187", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-217-2", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-75", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-195", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-135", "type": "image", "width": 5938, "height": 3959 }, { "name": "stryker/20210607-SYK_CGS_Klisa-127", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-24", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20210607-SYK_CGS_Klisa-212", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/James_Bamber_MixedMedia": { "type": "media_set", "members": [{ "name": "stryker/20201021-CGS_Baton_Rouge-128", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-67", "type": "image", "width": 4480, "height": 6720 }, { "name": "stryker/20201021-CGS_Baton_Rouge-135", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-76", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-174", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-185", "type": "image", "width": 6618, "height": 4412 }, { "name": "stryker/20201021-CGS_Baton_Rouge-191", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-199", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-219", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-224", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-230", "type": "image", "width": 6671, "height": 4447 }, { "name": "stryker/20201021-CGS_Baton_Rouge-272", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-297", "type": "image", "width": 6540, "height": 4360 }, { "name": "stryker/20201021-CGS_Baton_Rouge-354", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-381", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-4", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-450", "type": "image", "width": 6493, "height": 4329 }, { "name": "stryker/20201021-CGS_Baton_Rouge-462", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-467", "type": "image", "width": 6448, "height": 4299 }, { "name": "stryker/20201021-CGS_Baton_Rouge-469", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-474", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-482", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-486", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20201021-CGS_Baton_Rouge-496-2", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-520-2", "type": "image", "width": 2e3, "height": 1333 }, { "name": "stryker/20201021-CGS_Baton_Rouge-58", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/Meet_the_SurgicalICUteamatTempleUniversityHospital": { "type": "media_set", "members": [{ "name": "stryker/CarouselandFeaturePic", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-1", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-5", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-19", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-36", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-52", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-61", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-87", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-88", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-116", "type": "image", "width": 4480, "height": 6720 }, { "name": "stryker/20220502-SYK_CGSPhilly-117", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-125", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-126", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-136", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-148", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-162", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-186", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-215", "type": "image", "width": 6546, "height": 4364 }, { "name": "stryker/20220502-SYK_CGSPhilly-223", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-235", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-243", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-262", "type": "image", "width": 6720, "height": 4480 }, { "name": "stryker/20220502-SYK_CGSPhilly-269", "type": "image", "width": 6720, "height": 4480 }] },
+    "stryker/Spine_MedEd_US_MixMedia": { "type": "media_set", "members": [{ "name": "stryker/NeuroTech", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/IMG_4224", "type": "image", "width": 640, "height": 480 }, { "name": "stryker/HCP-2", "type": "image", "width": 303, "height": 406 }, { "name": "stryker/Adult-Deformity", "type": "image", "width": 364, "height": 259 }, { "name": "stryker/Dr-Bergsneider-UCLA", "type": "image", "width": 889, "height": 597 }, { "name": "stryker/HCP-3", "type": "image", "width": 463, "height": 305 }, { "name": "stryker/IMG_1232", "type": "image", "width": 640, "height": 480 }, { "name": "stryker/HCP", "type": "image", "width": 313, "height": 413 }, { "name": "stryker/House2", "type": "image", "width": 893, "height": 596 }, { "name": "stryker/IMG_4549", "type": "image", "width": 480, "height": 640 }, { "name": "stryker/Latin-American-Course", "type": "image", "width": 5947, "height": 2958 }, { "name": "stryker/MIAT-Team", "type": "image", "width": 595, "height": 338 }, { "name": "stryker/pic 3", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/Pic 2", "type": "image", "width": 4032, "height": 3024 }] },
+    "stryker/Surgeon_engagement": { "type": "media_set", "members": [{ "name": "stryker/110A3303", "type": "image", "width": 4800, "height": 2700 }, { "name": "stryker/110A3329", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/110A3410", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/2019-05-18 10.18.00-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 10.18.06-1", "type": "image", "width": 3024, "height": 4032 }, { "name": "stryker/2019-05-18 10.18.30-1", "type": "image", "width": 3024, "height": 4032 }, { "name": "stryker/2019-05-18 10.29.14 HDR-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 10.36.53", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/2019-05-18 12.48.36 HDR-1", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/AW2A6334", "type": "image", "width": 4800, "height": 3200 }, { "name": "stryker/DSC_0065", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/DSC_0071", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/DSC_0132", "type": "image", "width": 1936, "height": 1296 }, { "name": "stryker/mobile lab 2-1", "type": "image", "width": 842, "height": 561 }, { "name": "stryker/mobile lab", "type": "image", "width": 842, "height": 561 }, { "name": "stryker/Stryker Lab 3-1", "type": "image", "width": 7952, "height": 5304 }, { "name": "stryker/Stryker TBC 2019 Group Photo-1", "type": "image", "width": 3e3, "height": 2400 }, { "name": "stryker/WHole Group 1", "type": "image", "width": 7579, "height": 4841 }] },
+    "stryker/aria_drill_mixedmedia": { "type": "media_set", "members": [{ "name": "stryker/Aria_mixMedia2", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/Aria_mixMedia3", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/Aria_mix", "type": "image", "width": 1800, "height": 750 }] },
+    "stryker/gallery": { "type": "media_set", "members": [{ "name": "stryker/Xpedition_gallery_first", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition_gallery_second", "type": "image", "width": 1200, "height": 1800 }, { "name": "stryker/Xpedition_gallery_third", "type": "image", "width": 1200, "height": 800 }, { "name": "stryker/Xpedition_gallery_fourth", "type": "image", "width": 853, "height": 1200 }, { "name": "stryker/Xpedition_gallery_fifith", "type": "image", "width": 849, "height": 1200 }, { "name": "stryker/Xpedition_gallery_6", "type": "image", "width": 843, "height": 1200 }, { "name": "stryker/Xpedition_gallery_7", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition top of stairs with patient", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition down stairs with lights", "type": "image", "width": 1066, "height": 1501 }, { "name": "stryker/Xpedition door threshhold", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition to the ambulance", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition_track closeup", "type": "image", "width": 1054, "height": 1291 }, { "name": "stryker/Xpedition back lights", "type": "image", "width": 800, "height": 1200 }, { "name": "stryker/Xpedition buttons", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition up_down stairs buttons", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition foot rest", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition restraints", "type": "image", "width": 1600, "height": 1066 }, { "name": "stryker/Xpedition buckles", "type": "image", "width": 1600, "height": 1066 }] },
+    "stryker/judy_mixed_media2": { "type": "media_set", "members": [{ "name": "stryker/20191105-AC_Caregivers_Judy-274", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/110519ACCaregiverStory-18", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-102", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-129", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-134", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-160", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-182", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-183", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-197", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-243", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-252", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-256", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-29", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-296", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-358", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-385", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-407", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-416", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-517", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-53", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-535", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-544", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-548", "type": "image", "width": 1280, "height": 720 }, { "name": "stryker/20191105-AC_Caregivers_Judy-94", "type": "image", "width": 1280, "height": 720 }] },
+    "stryker/saan_2018": { "type": "media_set", "members": [{ "name": "stryker/JVB_2031", "type": "image", "width": 2695, "height": 1855 }, { "name": "stryker/39847828304_ec62829212_k", "type": "image", "width": 2048, "height": 1365 }, { "name": "stryker/SVA-SAAN Event", "type": "image", "width": 4524, "height": 2388 }, { "name": "stryker/Howard Event 27-Feb-2018", "type": "image", "width": 4032, "height": 3024 }, { "name": "stryker/JVB_2030", "type": "image", "width": 2732, "height": 1830 }] },
+    "stryker/safe": { "type": "img_set", "members": [{ "name": "stryker/pic_4", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_1", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_2", "type": "image", "width": 617, "height": 525 }, { "name": "stryker/pic_3", "type": "image", "width": 617, "height": 525 }] },
+    "stryker/silverglide_mixedmedia": { "type": "media_set", "members": [{ "name": "stryker/silver_mixMed1", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/silver_mixMed2", "type": "image", "width": 1800, "height": 750 }, { "name": "stryker/silver_mixMed3", "type": "image", "width": 1800, "height": 750 }] },
+    "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
+  };
 
   // tools/importer/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
@@ -1327,6 +1369,20 @@ var CustomImportScript = (() => {
         ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
         return columns.flat();
       }
+      const last2 = filled[filled.length - 1];
+      if (last2.length === 1 && last2[0].type === "own" && last2[0].kind === "tabs") {
+        const others = inlineNodes(filled.slice(0, -1).flat(), ctx);
+        const level = Number((last2[0].nodes.find((n) => /^H[1-6]$/.test(n.tagName)) || { tagName: "H6" }).tagName[1]);
+        if (!others.some((n) => /^H[1-6]$/.test(n.tagName) && Number(n.tagName[1]) >= level)) {
+          return [...anchors, {
+            type: "own",
+            kind: "flex",
+            styles: ["flex", ...last2[0].styles],
+            nodes: [...others, ...last2[0].nodes]
+          }];
+        }
+        ctx.report.notes.push("tabs beside content with headings as deep as the tab titles: tabbed style dropped");
+      }
       return [...anchors, flex([], all)];
     }
     if (split.cards && filled.length >= 2 && filled.every(isCard)) {
@@ -1351,7 +1407,7 @@ var CustomImportScript = (() => {
       return cellNodes(items, ctx, { marks: true });
     });
     const headline2 = cols.some((items) => items.some((it) => it.role === "headline"));
-    const richText = cols.some((items) => items.some((it) => it.role === "text") && !items.some((it) => it.role === "headline"));
+    const richText = cols.some((items) => items.some((it) => it.role === "text"));
     if (headline2 && !richText) modifiers.push("large-headline");
     if (headline2 && richText) ctx.report.notes.push("Columns: Large Headline next to rich text, large-headline modifier left out");
     const flows = (items) => items.filter((it) => it.type === "flow" && it.nodes.length);
@@ -1494,10 +1550,25 @@ var CustomImportScript = (() => {
       h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), label(text(a), true)) : doc.createTextNode(label(text(title))));
       head.push(h);
     }
+    el.querySelectorAll(".cta-subtitle").forEach((d) => {
+      if (!text(d)) return;
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-1-5em]${text(d)}]`;
+      head.push(para(doc, strong));
+    });
     el.querySelectorAll(".cta-description").forEach((d) => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
     });
     const nodes = [...el.querySelectorAll("a[href]")].filter((a) => !a.closest(".cta-title, .cta-description")).map((a) => {
+      if (text(a) && a.classList.contains("action-link")) {
+        const u = doc.createElement("u");
+        u.textContent = text(a);
+        const link3 = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+        link3.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(link3);
+        return para(doc, strong);
+      }
       if (text(a)) return buttonNode(doc, a, text(a));
       const source = a.querySelector("img");
       if (!source) return null;
@@ -1606,12 +1677,22 @@ var CustomImportScript = (() => {
     }
     return items;
   }
+  function cellContent(nodes, doc) {
+    return nodes.flatMap((node) => {
+      if (node.tagName !== "TABLE") return [node];
+      return [...node.querySelectorAll(":scope > tbody > tr > td, :scope > tr > td")].flatMap((td) => {
+        const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+        if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+        return kids.length ? [para(doc, ...kids)] : [];
+      });
+    });
+  }
   function fullWidthImage(el, ctx) {
     const { doc } = ctx;
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
     const boxItems = box ? ctx.collect(box) : [];
-    const overlay = boxItems.length ? inlineNodes(boxItems, ctx, { marks: false }) : [];
+    const overlay = boxItems.length ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
     const image = (src) => {
@@ -1641,7 +1722,12 @@ var CustomImportScript = (() => {
     const items = [];
     const title = el.querySelector(".hero-space h1, .hero-space h2");
     const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute("style") || "");
-    if (transparent) ctx.report.notes.push(`invisible hero title not imported: ${text(title).slice(0, 50)}`);
+    if (title && text(title) && transparent) {
+      const h = ctx.doc.createElement(title.tagName.toLowerCase());
+      h.textContent = `[[visually-hidden]${text(title)}]`;
+      if (title.tagName === "H1") ctx.h1 = true;
+      items.push({ type: "flow", role: "text", nodes: [h] });
+    }
     if (title && text(title) && !transparent) {
       const box = contentCopy(title, ctx.doc);
       const colour = title.getAttribute("style");
@@ -1691,7 +1777,21 @@ var CustomImportScript = (() => {
     if (!slides.length) return [];
     const index = ctx.slideIndex || 0;
     ctx.slideIndex = index + slides.length;
-    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+    const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+    const options = ["carousel"];
+    if (widget && widget.getAttribute("data-autoplay") === "true") {
+      const ms = Number(widget.getAttribute("data-autoplayspeed")) || 3e3;
+      options.push(`autoplay-${Math.max(ms, 1e3)}`);
+    }
+    if (widget && widget.getAttribute("data-transition") === "true") options.push("fade");
+    const multi = slides.length > 1;
+    let first = true;
+    const slideStyles = () => {
+      if (!multi) return [];
+      const out = first ? options : ["carousel"];
+      first = false;
+      return out;
+    };
     return slides.flatMap((slide, i) => {
       const ref = (ctx.slideRefs || [])[index + i];
       if (ref) {
@@ -1700,10 +1800,35 @@ var CustomImportScript = (() => {
           if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
         });
       }
-      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
       const overlay = slide.querySelector(".overlayparsys");
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
       const overlayItems = overlay ? ctx.collect(overlay) : [];
-      const overlayNodes = overlay ? inlineNodes(overlayItems, ctx, { marks: false }) : void 0;
+      const copyText = (selector) => {
+        const area = slide.querySelector(selector);
+        if (!area) return "";
+        const copy = area.cloneNode(true);
+        copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+        return text(copy);
+      };
+      if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText(".experienceFragment-ef")) {
+        const fragment = (path, styles) => ({
+          type: "fragment",
+          kind: "fragment",
+          styles,
+          nodes: [block(doc, "Fragment", [[linkTo(doc, path)]])]
+        });
+        const carouselStyles = slideStyles();
+        const both = !carouselStyles.length && slide.dataset.xfMobile && copyText(".experienceFragment-ef-mobile");
+        return both ? [
+          fragment(slide.dataset.xfDesktop, [...carouselStyles, "desktop-only"]),
+          fragment(slide.dataset.xfMobile, [...carouselStyles, "mobile-only"])
+        ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+      }
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) {
+        ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+        return overlayItems;
+      }
+      const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
       if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
@@ -1720,7 +1845,7 @@ var CustomImportScript = (() => {
       return [{
         type: "own",
         kind: "hero",
-        styles: overlayNodes ? cellStyles([overlayNodes], ctx) : [],
+        styles: [...slideStyles(), ...overlayNodes ? cellStyles([overlayNodes], ctx) : []],
         nodes: [...holder.children]
       }];
     });
@@ -1742,14 +1867,87 @@ var CustomImportScript = (() => {
     "bg-dark-teal-gradient": "dark",
     "bg-dark-purple-gradient": "bg-dark-purple-gradient",
     "bg-dark-blue-gradient": "bg-dark-blue-gradient",
+    "bg-dark-orange-gradient": "bg-dark-orange-gradient",
     "bg-golden-gradient": "bg-golden-gradient",
-    "bg-blue": "blue"
+    "bg-blue": "blue",
+    // the panel's bg-purple is the Stryker purple (#85458a); its bg-gray the silver (#b2b4ae,
+    // e.g. target-tetra), not the light bg-gray band
+    "bg-purple": "bg-purple",
+    "bg-gray": "bg-silver"
   };
+  function heroLargeCarousel(el, ctx) {
+    const { doc } = ctx;
+    const out = [];
+    const title = el.querySelector(".c-hero-large-header .title");
+    if (title && text(title)) {
+      const h1 = doc.createElement("h1");
+      const strong = doc.createElement("strong");
+      strong.textContent = `[[size-0-75em]${text(title)}]`;
+      h1.append(strong);
+      ctx.h1 = true;
+      out.push({ type: "flow", role: "text", nodes: [h1] });
+    }
+    const slides = [...el.querySelectorAll(".slide:not(.slick-cloned)")].filter((s) => text(s) || s.querySelector("img"));
+    slides.forEach((slide, i) => {
+      const container = slide.querySelector(".slide-container") || slide;
+      const band = [...container.classList].map((c) => PANELS[c]).find(Boolean);
+      const textCell2 = [];
+      const heading = slide.querySelector(".slide-title");
+      if (heading && text(heading)) {
+        const h2 = doc.createElement("h2");
+        const copy = contentCopy(heading, doc);
+        cleanRichText(copy);
+        h2.append(...copy.childNodes);
+        textCell2.push(h2);
+      }
+      const subtitle = slide.querySelector(".slide-subtitle");
+      if (subtitle && text(subtitle)) {
+        const copy = contentCopy(subtitle, doc);
+        cleanRichText(copy);
+        textCell2.push(para(doc, ...copy.childNodes));
+      }
+      const link2 = slide.querySelector("a.slide-link[href]");
+      if (link2 && text(link2)) textCell2.push(buttonNode(doc, link2, text(link2)));
+      const img = slide.querySelector(".slide-image-container.hidden-xs img, .slide-image img");
+      const imageCell2 = [];
+      if (img) {
+        const image = doc.createElement("img");
+        image.setAttribute("src", img.getAttribute("src"));
+        image.setAttribute("alt", (img.getAttribute("alt") || "").trim());
+        if (!img.getAttribute("alt")) ctx.report.notes.push(`carousel slide image without alt text: ${img.getAttribute("src")}`);
+        imageCell2.push(para(doc, image));
+      }
+      out.push({
+        type: "own",
+        kind: "columns",
+        // banner: this component's look (gold arrow tabs at the edges, no dots, centred copy)
+        styles: ["carousel", ...i ? [] : ["banner"], ...band ? [band] : [], "h-serif"],
+        nodes: [block(doc, "Columns (columns-50-50)", [[textCell2, imageCell2]])]
+      });
+    });
+    if (slides.length < 2) {
+      out.forEach((item) => {
+        if (item.styles) item.styles = item.styles.filter((st) => !["carousel", "banner"].includes(st));
+      });
+    }
+    return out;
+  }
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
     const items = ctx.collect(panel);
-    if (!hasContent(items.filter((it) => it.type !== "anchor" && it.type !== "boundary"))) return items.filter((it) => it.type === "anchor");
     const cls = [...panel.classList].find((c) => PANELS[c]);
+    if (!hasContent(items.filter((it) => it.type !== "anchor" && it.type !== "boundary"))) {
+      const anchors = items.filter((it) => it.type === "anchor");
+      if (cls && cls !== "bg-white" && panel.classList.contains("page-section")) {
+        return [...anchors, {
+          type: "own",
+          kind: "stripe",
+          styles: [PANELS[cls], "stripe"],
+          nodes: []
+        }];
+      }
+      return anchors;
+    }
     if (!cls && /\bbg-/.test(panel.className)) ctx.report.notes.push(`full-bleed panel background ${panel.className}: no section style`);
     return [{ type: "group", styles: cls ? [PANELS[cls]] : [], items }];
   }
@@ -1813,15 +2011,18 @@ var CustomImportScript = (() => {
     let value = shown && shown.replace(/[^\d.]/g, "") === end ? shown : end;
     if (value === end && kind === "3") value = `${end}%`;
     if (value === end && kind === "2") value = `${currency}${end}`;
+    const vwClass = number && [...number.classList].find((c) => /^fontsize-\d+(-\d+)?-?vw$/.test(c));
+    if (vwClass) value = `[[${vwClass.replace(/^fontsize-/, "size-").replace(/-vw$/, "vw")}]${value}]`;
     const colour = COUNTER_COLOURS[styleColour(number)] || "teal";
     const label = el.querySelector(".container > .text-left, .container > div:last-child");
-    const desc = doc.createElement("p");
+    let desc = doc.createElement("p");
     if (label) {
-      const copy = contentCopy(label, doc);
-      cleanRichText(copy);
-      copy.querySelectorAll("strong, em").forEach(unwrap);
-      const target = copy.querySelector("p") || copy;
-      desc.append(...target.childNodes);
+      const { nodes } = richTextNodes(label, doc);
+      if (nodes.length === 1) [desc] = nodes;
+      else if (nodes.length) {
+        desc = doc.createElement("div");
+        desc.append(...nodes);
+      }
     }
     const left = !!el.querySelector(".container > .text-left");
     return [{
@@ -2077,29 +2278,52 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const panels = [...el.querySelectorAll(".panel-group > .panel")].map((panel) => ({
       title: text(panel.querySelector(".panel-title") || doc.createElement("p")),
-      items: ctx.collect(panel.querySelector(".panel-body") || panel)
+      items: ctx.collect(panel.querySelector(".panel-body") || panel),
+      // open on load on the source (AEM defaultExpanded, rendered .panel-collapse.in)
+      open: !!panel.querySelector(":scope > .panel-collapse.in")
     })).filter((p) => p.title || hasContent(p.items));
     if (!panels.length) return [];
+    const label = (p, holder = doc.createElement("span")) => {
+      if (!p.open) {
+        holder.textContent = p.title;
+        return holder;
+      }
+      const strong = doc.createElement("strong");
+      strong.textContent = p.title;
+      holder.append(strong);
+      return holder;
+    };
+    const heading = el.querySelector(".c-accordion > .container > .component-subheading");
+    const title = [];
+    if (heading && text(heading)) {
+      const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : "h3");
+      const u = heading.classList.contains("border-bottom-gold") ? doc.createElement("u") : h;
+      u.textContent = text(heading);
+      if (u !== h) h.append(u);
+      title.push({ type: "flow", role: "text", nodes: [h] });
+    }
     const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
     if (flowOnly) {
-      const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
-      return [{
+      const rows = panels.map((p) => [
+        para(doc, ...label(p).childNodes),
+        p.items.flatMap((it) => it.nodes || [])
+      ]);
+      return [...title, {
         type: "own",
         kind: "accordion",
         styles: [],
         nodes: [block(doc, "Accordion", rows)]
       }];
     }
-    return panels.map((p) => {
-      const h = doc.createElement("h3");
-      h.textContent = p.title;
+    return [...title, ...panels.map((p) => {
+      const h = label(p, doc.createElement("h3"));
       return {
         type: "own",
         kind: "accordion-panel",
         styles: ["accordion-panel"],
         nodes: [h, ...inlineNodes(p.items, ctx)]
       };
-    });
+    })];
   }
   function pageHero(el, ctx) {
     const { doc } = ctx;
@@ -2124,8 +2348,13 @@ var CustomImportScript = (() => {
       cell.push(h2);
     }
     root.querySelectorAll(".content").forEach((content) => {
-      const { nodes } = richTextNodes(content, doc);
-      cell.push(...nodes);
+      const box = doc.createElement("div");
+      box.append(content.cloneNode(true));
+      for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches(".title, .subhead, .content")); n = n.nextSibling) {
+        if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+      }
+      const { nodes } = richTextNodes(box, doc);
+      cell.push(...nodes.filter((node) => text(node)));
     });
     if (!cell.length) return [];
     const img = root.querySelector("picture img, img");
@@ -2179,9 +2408,9 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const nav = el.querySelector("nav.greedy");
     const links = nav ? [...nav.querySelectorAll("ul.links a[href]")].filter((a) => text(a)) : [];
-    if (!links.length) return [];
+    const parent = nav && nav.querySelector("a.parent-node[href]");
+    if (!links.length && !(parent && text(parent))) return [];
     const rows = [];
-    const parent = nav.querySelector("a.parent-node[href]");
     if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute("href"), text(parent))]);
     const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, "").replace(/\/index\.html(?=$|[?#])/, "/").replace(/\.html(?=$|[?#])/, "");
     links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute("href"), path(a.getAttribute("href")))]));
@@ -2207,8 +2436,255 @@ var CustomImportScript = (() => {
     }
     const a = ctx.doc.createElement("a");
     a.setAttribute("href", path);
-    a.textContent = img.getAttribute("alt") || img.getAttribute("title") || text(title);
-    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image), para(ctx.doc, a)] }];
+    a.append(image);
+    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, a)] }];
+  }
+  function componentTitle(h, doc) {
+    const h2 = doc.createElement("h2");
+    if (h.classList.contains("border-bottom-gold")) {
+      const u = doc.createElement("u");
+      u.textContent = text(h);
+      h2.append(u);
+    } else h2.textContent = text(h);
+    return h2;
+  }
+  function latestNews(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-latestnews") || el;
+    const items = [...root.querySelectorAll(".latestnews-container > .item")].filter((item) => text(item));
+    if (!items.length) return [];
+    const out = [];
+    const heading = root.querySelector("h2");
+    if (heading && text(heading)) out.push({ type: "flow", role: "text", nodes: [componentTitle(heading, doc)] });
+    const rows = items.map((item) => {
+      const body = [];
+      const title = item.querySelector("h3");
+      if (title && text(title)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text(title);
+        body.push(h3);
+      }
+      item.querySelectorAll(":scope > p.model, :scope > p.description").forEach((p) => {
+        if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+      });
+      const cta = item.querySelector("a.news-link[href], a.action-link[href]");
+      if (cta && text(cta)) {
+        const u = doc.createElement("u");
+        u.textContent = text(cta);
+        const a = linkTo(doc, cta.getAttribute("href"), "");
+        a.append(u);
+        const strong = doc.createElement("strong");
+        strong.append(a);
+        body.push(para(doc, strong));
+      }
+      const img = item.querySelector("img[src]");
+      if (!img) return ["", body];
+      const image = doc.createElement("img");
+      image.setAttribute("src", img.getAttribute("src"));
+      image.setAttribute("alt", img.getAttribute("alt") || "");
+      return [image, body];
+    });
+    out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+    return out;
+  }
+  function titleComponent(el, ctx) {
+    const { doc } = ctx;
+    const box = el.querySelector(".title-container") || el;
+    const nodes = [];
+    const title = box.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    box.querySelectorAll(":scope > h3").forEach((h) => {
+      if (!text(h)) return;
+      const h3 = doc.createElement("h3");
+      h3.textContent = text(h);
+      nodes.push(h3);
+    });
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function divisionContactUs(el, ctx) {
+    const { doc } = ctx;
+    const form = el.querySelector("form") || el;
+    const nodes = [];
+    const title = form.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    const description = form.querySelector(".form-description");
+    if (description) {
+      const copy = description.cloneNode(true);
+      copy.querySelectorAll(".form-control-asterix").forEach((star) => star.remove());
+      if (text(copy)) {
+        const p = doc.createElement("p");
+        p.textContent = text(copy);
+        nodes.push(p);
+      }
+    }
+    ctx.report.notes.push("division contact form: no Marketo form ID for it yet (client), the form is left out");
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function mixedMediaGallery(el, ctx) {
+    const { doc } = ctx;
+    const viewer = el.querySelector("[data-asset-path]");
+    const asset = viewer && viewer.getAttribute("data-asset-path");
+    const set = asset && SETS[asset];
+    if (!set || !set.members.length) {
+      if (asset) ctx.report.notes.push(`gallery ${asset}: no members in data/dm-sets.js (npm run build:dm-sets), left out`);
+      return [];
+    }
+    const server = viewer.getAttribute("data-imageserver") || "https://media-assets.stryker.com/is/image/";
+    const rows = set.members.map((member) => {
+      const img = doc.createElement("img");
+      img.setAttribute("src", `${server}${member.name.split("/").map(encodeURIComponent).join("/")}?$max_width_1440$`);
+      img.setAttribute("alt", "");
+      return [para(doc, img)];
+    });
+    ctx.report.notes.push(`gallery ${asset}: ${rows.length} images without alt text (authors add it)`);
+    return [{
+      type: "own",
+      kind: "gallery",
+      styles: [],
+      nodes: [block(doc, "Gallery Corp", rows)]
+    }];
+  }
+  function dynamicMedia(el, ctx) {
+    const { doc } = ctx;
+    const viewer = el.querySelector("[data-asset-path]");
+    const asset = viewer && viewer.getAttribute("data-asset-path");
+    if (!asset) return [];
+    const server = viewer.getAttribute("data-imageserver") || "https://media-assets.stryker.com/is/image/";
+    const img = doc.createElement("img");
+    img.setAttribute("src", `${server}${asset.split("/").map(encodeURIComponent).join("/")}?$max_width_1440$`);
+    img.setAttribute("alt", "");
+    ctx.report.notes.push(`dynamic media viewer ${asset}: image without alt text (authors add it)`);
+    return [{ type: "flow", role: "image", nodes: [para(doc, img)] }];
+  }
+  function featuredContentGrid(el, ctx) {
+    const { doc } = ctx;
+    const items = [];
+    const title = el.querySelector("h2.component-subheading");
+    const intro = el.querySelector(".intro");
+    const lead = [];
+    if (title && text(title)) lead.push(componentTitle(title, doc));
+    if (intro && text(intro)) {
+      const p = doc.createElement("p");
+      p.textContent = text(intro);
+      lead.push(p);
+    }
+    if (lead.length) items.push({ type: "flow", role: "text", nodes: lead });
+    const cells = [...el.querySelectorAll(".grid-item-wrapper")].map((item) => {
+      const nodes = [];
+      const head = item.querySelector("a h4, h4");
+      const link2 = head && head.closest("a");
+      if (head && text(head)) {
+        const h4 = doc.createElement("h4");
+        h4.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(head)) : doc.createTextNode(text(head)));
+        nodes.push(h4);
+      }
+      const description = item.querySelector(".page-description");
+      if (description && text(description)) {
+        const p = doc.createElement("p");
+        p.textContent = text(description);
+        nodes.push(p);
+      }
+      const more = item.querySelector("a.more[href]");
+      if (more) {
+        const u = doc.createElement("u");
+        u.textContent = text(more);
+        const a = linkTo(doc, more.getAttribute("href"), "");
+        a.textContent = "";
+        a.append(u);
+        nodes.push(para(doc, a));
+      }
+      return nodes;
+    }).filter((nodes) => nodes.length);
+    if (cells.length) {
+      items.push({
+        type: "own",
+        kind: "columns",
+        styles: [],
+        nodes: [block(doc, "Columns (related-links)", [cells])]
+      });
+    }
+    return items;
+  }
+  function bannerCampaign(el, ctx) {
+    const { doc } = ctx;
+    const source = el.querySelector(".c-banner-campaign-content img");
+    if (!source) return [];
+    const img = doc.createElement("img");
+    const largest = el.querySelector(".c-banner-campaign-content source[srcset]");
+    img.setAttribute("src", largest && largest.getAttribute("srcset").split(/\s+/)[0] || source.getAttribute("src"));
+    img.setAttribute("alt", source.getAttribute("alt") || "");
+    if (!source.getAttribute("alt")) ctx.report.notes.push(`banner image without alt text: ${img.getAttribute("src")}`);
+    const link2 = source.closest("a[href]");
+    if (!link2) return [{ type: "flow", role: "image", nodes: [para(doc, img)] }];
+    const a = linkTo(doc, newTabHref(link2, link2.getAttribute("href")), "");
+    a.textContent = "";
+    a.append(img);
+    return [{ type: "flow", role: "image", nodes: [para(doc, a)] }];
+  }
+  var ENGAGEMENT_ICONS = { facebook: ":facebook:", linkedin: ":linkedin:" };
+  function engagementCta(el, ctx) {
+    const { doc } = ctx;
+    const links = [...el.querySelectorAll(".engagementCTAcluster a.btn[href]")];
+    if (!links.length) return [];
+    const nodes = links.map((source) => {
+      const icon = ENGAGEMENT_ICONS[String(source.id).toLowerCase()];
+      const label = text(source);
+      const a = linkTo(doc, newTabHref(source, source.getAttribute("href")), [icon, label].filter(Boolean).join(" ") || source.id);
+      const strong = doc.createElement("strong");
+      strong.append(a);
+      return para(doc, strong);
+    });
+    const colour = links[0].classList.contains("bg-purple") ? "btn-purple" : links[0].classList.contains("bg-blue") && "btn-blue";
+    return [{
+      type: "flow",
+      role: "cta",
+      own: !!colour,
+      styles: colour ? [colour] : [],
+      nodes
+    }];
+  }
+  function animatedBarChart(el, ctx) {
+    const { doc } = ctx;
+    const value = (cls) => (el.querySelector(`input.${cls}`) || { value: "" }).value.trim();
+    const items = [...el.querySelectorAll("select.hdnChartSeries option")].map((option) => {
+      const [colour, label, show] = text(option).split("|");
+      return {
+        label: (label || "").trim(),
+        value: option.getAttribute("value"),
+        colour: (colour || "").trim(),
+        show: show !== "false"
+      };
+    }).filter((item) => item.show && item.label);
+    if (!items.length) return [];
+    const format = value("numberType") === "Currency" ? `Currency ${value("currency")}` : value("numberType");
+    const rows = [
+      ["Title", value("chartTitle")],
+      ["Subtitle", value("chartSubTitle")],
+      ["Format", format],
+      ["Max", value("maxValue")],
+      ["Axis title", value("yAxisTitle")],
+      ["Labels", value("dataLabelDisplay") === "false" ? "false" : "true"]
+    ].filter(([, v]) => v);
+    items.forEach((item) => rows.push([item.label, item.value, item.colour]));
+    const variant = /bar/i.test(value("chartType")) ? "Chart Corp (bar)" : "Chart Corp";
+    return [{
+      type: "own",
+      kind: "chart",
+      styles: [],
+      nodes: [block(doc, variant, rows)]
+    }];
+  }
+  function legacyVideo(el, ctx) {
+    const { doc } = ctx;
+    const player = el.querySelector("video");
+    const path = (String(el.innerHTML).match(/var mediaPath = '([^']+)'/) || [])[1];
+    const visible = player && Number(player.getAttribute("width")) > 0 && Number(player.getAttribute("height")) > 0;
+    if (!path || !visible) return [];
+    const href = path.replace(/\\u002D/g, "-").replace(/\\\//g, "/");
+    return [{
+      type: "block",
+      block: block(doc, "Video", [[linkTo(doc, absoluteAsset(href), href.split("/").pop())]])
+    }];
   }
   function boxNodes(el, doc) {
     const box = contentCopy(el, doc);
@@ -2266,6 +2742,7 @@ var CustomImportScript = (() => {
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
+    "hero-large-carousel": heroLargeCarousel,
     "h1-title": h1Title,
     fullWidthImage,
     fullWidthImageHero,
@@ -2293,7 +2770,10 @@ var CustomImportScript = (() => {
     customizable: cardList,
     resourcesanddownload: resources,
     "#product-detail-container": shortDescription,
-    tagcrumb: skip,
+    // a tag crumb placed as a component (ent/products/clarifix-cryotherapy-device, in a column):
+    // the Related Categories block as the template's own; hidden ones are skipped by the walk
+    tagcrumb: relatedCategories,
+    latestnews: latestNews,
     // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
     // Categories), the short description (rich text), the contact button and the secondary CTA
     "c-tagcrumb": relatedCategories,
@@ -2308,6 +2788,15 @@ var CustomImportScript = (() => {
     localpagenavigationchild: localNav,
     "c-navigation-bar": jumpBar,
     "c-tiles": promoTile,
+    title: titleComponent,
+    divisioncontactus: divisionContactUs,
+    mixedmediagallery: mixedMediaGallery,
+    dynamicmedia: dynamicMedia,
+    featuredcontentgrid: featuredContentGrid,
+    bannercampaign: bannerCampaign,
+    engagementcta: engagementCta,
+    animatedbarchart: animatedBarChart,
+    video: legacyVideo,
     // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
     // publish date and the event location under the title, and the template's "back" link
     // (navigation, not authored)
