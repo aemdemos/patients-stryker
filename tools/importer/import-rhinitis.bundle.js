@@ -189,7 +189,7 @@ var CustomImportScript = (() => {
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isCorp = !!(payload && payload.template && (payload.template.site === "corp" || payload.template.name === "news-detail"));
+    const isCorp = !!(payload && payload.template && (payload.template.site === "corp" || ["news-detail", "news-detail-xf"].includes(payload.template.name)));
     const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
