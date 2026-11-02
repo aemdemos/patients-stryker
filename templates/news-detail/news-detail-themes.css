@@ -72,8 +72,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
    with its contact links) span the whole container — e.g. the Sustainability "World
    Environment Day 2025" release. A `separator` section between the two parts draws the
    page-wide rule (above). From 900px (source 1024px):
-   - the connect-band and form-with-aside sections, and every section after them, span
-     the container;
+   - the connect-band, form-with-aside and Cards Corp sections (e.g. the LCA report
+     download, source Resources & downloads), and every section after them, span the
+     container;
    - a form-with-aside section puts its form in the first two thirds and the contact
      links fragment in the last third, side by side (stacked below 900px, the links
      under the form, as on the source) */
@@ -92,7 +93,7 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     margin: 0;
   }
 
-  body.news-detail.mix-width main > .section:is(.connect-band, .form-with-aside, .connect-band ~ .section, .form-with-aside ~ .section) > div {
+  body.news-detail.mix-width main > .section:is(.connect-band, .form-with-aside, .cards-corp-container, .connect-band ~ .section, .form-with-aside ~ .section, .cards-corp-container ~ .section) > div {
     max-width: var(--container-max);
   }
 }
