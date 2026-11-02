@@ -18,10 +18,8 @@
  *   3. a video caption (.c-standalone-video .desc-content) follows the video as a paragraph.
  *   4. Resources & downloads (.c-resourcesanddownload) stay in the article section for the
  *      cards-corp-resources parser.
- *   5. the source back link (.c-back-button) is not content: the page is marked for the
- *      `page-back: show` metadata (import-long-page-detail-corp.js). The stryker.com
- *      script removes the link from the rendered page, so the pages that have it are
- *      listed in long-page-detail-corp-page-back.js (from the server HTML).
+ *   5. the source back link (.c-back-button) is not content and is not migrated (no back
+ *      link on the corp pages).
  *   6. components the source sets in the centred AEM grid column (offset 1, 10 or 11 of 12
  *      columns: the Virtual Learning Center video item) get the `column-10-12` section
  *      style (the template CSS sets the 10/12 column and the 11/12 downloads row).
@@ -36,7 +34,6 @@ import { videoLink } from '../parsers/video.js';
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
-import PAGE_BACK from '../long-page-detail-corp-page-back.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
@@ -355,9 +352,6 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const path = sourcePath(payload);
-  if (PAGE_BACK.has(path) || main.querySelector('.c-back-button')) {
-    element.setAttribute('data-page-back', 'show');
-  }
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));

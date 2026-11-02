@@ -16,7 +16,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
   name: 'long-page-detail-corp',
-  description: 'www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` + `last-updated: show` drive the corp Last Updated line, `page-back: show` the back link.',
+  description: 'www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).',
   urls: [
     'https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html',
     'https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html',
@@ -122,13 +122,10 @@ export default {
     meta.site = 'corp';
     meta.template = PAGE_TEMPLATE.name;
     if (hcp) meta['hcp-banner'] = 'true';
+    // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
     if (published) {
       meta.published = published;
-      meta['last-updated'] = 'show';
-    }
-    if (main.getAttribute('data-page-back')) {
-      meta['page-back'] = main.getAttribute('data-page-back');
-      main.removeAttribute('data-page-back');
+      meta['last-updated'] = 'false';
     }
     const unresolvedXfs = main.getAttribute('data-xf-unresolved');
     main.removeAttribute('data-xf-unresolved');
