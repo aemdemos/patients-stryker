@@ -159,7 +159,13 @@ export default {
       const dm = [...main.querySelectorAll('a[href*="media-assets.stryker.com/is/image/"], img[src*="media-assets.stryker.com/is/image/"]')]
         .map((el) => el.getAttribute('href') || el.getAttribute('src'))
         .find((u) => fileName(u) === name);
-      if (dm) shareImage.setAttribute('src', dm);
+      // no such rendition on the page and a PNG original (the oversized ones, e.g. T7: a 30MB
+      // "T7 helmet.png" while the article shows another graphic): the same-named Dynamic
+      // Media asset at the 1440px rendition
+      const original = decodeURIComponent(shareSrc.split('?')[0].split('/').pop());
+      const png = /\.png$/i.test(original);
+      const fallback = png && `https://media-assets.stryker.com/is/image/stryker/${encodeURIComponent(original.replace(/\.png$/i, ''))}?$max_width_1440$`;
+      if (dm || fallback) shareImage.setAttribute('src', dm || fallback);
     }
     // pages the sections transformer marks (a video + Large Headline row) run the title
     // and small print full width: the news-detail `full-width` theme

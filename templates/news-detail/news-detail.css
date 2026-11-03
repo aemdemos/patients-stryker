@@ -559,8 +559,9 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
   }
 
   /* the article column: two-thirds of the container, centred, from the source's 841px
-     (col-sm-8) — 600px here */
-  body.news-detail main > .section:not(.hero-container, .hero-corp-container) > div {
+     (col-sm-8) — 600px here — on plain articles (the full-width and mix-width themes and
+     the form-right section keep their own layout below 900px) */
+  body.news-detail:where(:not(.full-width, .mix-width)) main > .section:not(.hero-container, .hero-corp-container):where(:not(.form-right)) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 
@@ -673,7 +674,7 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     body.news-detail main > .section:not(.hero-container, .hero-corp-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
-
+  
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

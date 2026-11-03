@@ -532,6 +532,22 @@ var CustomImportScript = (() => {
     });
     return match ? match[2] : null;
   }
+  function largeLabels(root) {
+    const squash = (value) => value.replace(/[\s ]+/g, " ").trim();
+    return new Set([...root.children].filter((p) => {
+      if (p.tagName !== "P") return false;
+      const span = p.querySelector(".fontsize-1-5em");
+      if (!span || !(span.querySelector(".futura-bold, b") || span.closest(".futura-bold, b"))) return false;
+      const label = squash(span.textContent);
+      const all = squash(p.textContent);
+      if (!label || label.length > 40 || label === all || !all.startsWith(label)) return false;
+      let run = span;
+      while (run.parentElement !== p && squash(run.parentElement.textContent) === label) run = run.parentElement;
+      let after = run.nextSibling;
+      while (after && after.nodeType === 3 && !after.textContent.trim()) after = after.nextSibling;
+      return !!after && after.nodeName === "BR";
+    }));
+  }
   function smallHeadings(root) {
     const styles = /* @__PURE__ */ new Map();
     root.querySelectorAll("h1, h2, h3").forEach((h) => {
@@ -629,6 +645,7 @@ var CustomImportScript = (() => {
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
+    const labels = largeLabels(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
@@ -636,6 +653,7 @@ var CustomImportScript = (() => {
       if (plainBold.has(node)) node.boldBody = true;
       if (serifHeads.has(node)) node.serifHeading = true;
       if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+      if (labels.has(node)) node.headingStyle = "label-1-5";
     });
     let last = null;
     nodes.forEach((node) => {
@@ -846,12 +864,22 @@ var CustomImportScript = (() => {
     media.append(link2);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const firstLine = headline2.querySelector(".line") || headline2;
-    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const greyBox = headline2.querySelector('.has-background, [class*="bg-light-gray"]') || headline2;
+    const baseSize = boxed && !greyBox.querySelector('[class*="fontsize-"][class*="vw"]');
+    const big = !baseSize && (firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]'));
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
+    const walker = doc.createTreeWalker(greyBox, 4);
+    let firstText = walker.nextNode();
+    while (firstText && !firstText.textContent.trim()) firstText = walker.nextNode();
+    const textLine = firstText && firstText.parentElement.closest(".line");
+    const inHeading = !!(firstText && firstText.parentElement.closest("h1, h2, h3, h4, h5, h6"));
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     const variants = [half ? "columns-50-50" : "columns-67-33", "large-headline"];
     if (boxed) variants.push("gray-lead");
-    if (boxed && !big && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
+    if (boxed && !big && !baseSize && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
+    if (baseSize) variants.push("gray-base");
+    if (boxed && textLine && textLine.classList.contains("line2")) variants.push("lines-30");
+    else if (boxed && big && !inHeading) variants.push("lines-25");
     const quoteText = (q) => [...q.querySelectorAll("p")].find((p) => p.textContent.includes("\u201C"));
     if (boxed && quotes.some((q) => {
       var _a;
@@ -1862,7 +1890,12 @@ var CustomImportScript = (() => {
   function transform3(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isNewsDetail = !!(payload && payload.template && ["news-detail", "news-detail-xf"].includes(payload.template.name));
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments"
+    ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook2.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
