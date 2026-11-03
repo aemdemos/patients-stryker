@@ -4123,10 +4123,10 @@ var CustomImportScript = (() => {
     "4,4,4": SPLITS.cols3,
     "3,3,3,3": SPLITS.cols4
   };
+  var colWidth = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
   function phoneGrid(columns) {
-    const width = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
-    const desktop = columns.map((col) => width(col, "md") || width(col, "sm"));
-    const phone = columns.map((col) => width(col, "xs") || 12);
+    const desktop = columns.map((col) => colWidth(col, "md") || colWidth(col, "sm"));
+    const phone = columns.map((col) => colWidth(col, "xs") || 12);
     if (!desktop.every(Boolean) || desktop.reduce((a, b) => a + b, 0) > 12) return [];
     const usual = columns.length === 4 ? 6 : 12;
     if (phone.every((w) => w === usual)) return [];
@@ -4137,7 +4137,7 @@ var CustomImportScript = (() => {
     const row = el.querySelector(":scope > .colctrl > .row") || el.querySelector(".row");
     const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
     const items = columns.map((col) => ctx.collect(col));
-    const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+    const widths = columns.map((col) => colWidth(col, "md") || colWidth(col, "sm"));
     if (split === "cols" || columns.length < 2) {
       const flat = items.flat();
       return hasContent(flat) ? [{ type: "boundary" }, ...flat, { type: "boundary" }] : flat;

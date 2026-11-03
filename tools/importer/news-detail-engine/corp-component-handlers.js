@@ -410,7 +410,7 @@ function columnStyles(widths, index, ctx, starts = null, phone = false) {
  * column → Cards Corp; G → Columns (variant by the split, modifiers by the cell content).
  * @param {object[][]} columns the items of each column
  * @param {object} split { variant, flex, cards } of the column control
- * @param {number[]} [widths] the columns' widths in twelfths (rendered col-sm-N)
+ * @param {number[]} [widths] the columns' widths in twelfths (rendered col-md-N, else col-sm-N)
  * @param {number[]} [starts] where each column starts, in twelfths (grid rows with offsets)
  */
 export function columnItems(columns, split, ctx, widths = null, starts = null) {
@@ -547,6 +547,9 @@ const GRID_SPLITS = {
   '6,6': SPLITS.cols2, '8,4': SPLITS['cols2_2-3_1-3'], '4,8': SPLITS['cols2_1-3_2-3'], '4,4,4': SPLITS.cols3, '3,3,3,3': SPLITS.cols4,
 };
 
+/** A column control column's width at a bootstrap size (xs, sm, md), in twelfths; 0 when unset. */
+const colWidth = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
+
 /**
  * The phone layout of a column control as Columns grid options, when it is not the one the
  * corp Columns give its cells below 600px (four cells two per row, fewer cells stacked): the
@@ -558,9 +561,8 @@ const GRID_SPLITS = {
  * @returns {string[]} the grid options, or none
  */
 function phoneGrid(columns) {
-  const width = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
-  const desktop = columns.map((col) => width(col, 'md') || width(col, 'sm'));
-  const phone = columns.map((col) => width(col, 'xs') || 12);
+  const desktop = columns.map((col) => colWidth(col, 'md') || colWidth(col, 'sm'));
+  const phone = columns.map((col) => colWidth(col, 'xs') || 12);
   if (!desktop.every(Boolean) || desktop.reduce((a, b) => a + b, 0) > 12) return [];
   const usual = columns.length === 4 ? 6 : 12;
   if (phone.every((w) => w === usual)) return [];
@@ -572,7 +574,10 @@ function columnControl(el, ctx) {
   const row = el.querySelector(':scope > .colctrl > .row') || el.querySelector('.row');
   const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
   const items = columns.map((col) => ctx.collect(col));
-  const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+  // the desktop widths (col-md, else col-sm): a lone filled column keeps its width from 1024px
+  // (EDS 900px) and up, e.g. an image in the 3/12 column of a 4-column control
+  // (stryker-named-a-best-workplace-in-europe-for-second-consecutive: col-sm-6 col-md-3)
+  const widths = columns.map((col) => colWidth(col, 'md') || colWidth(col, 'sm'));
   // cols: one column = a section boundary
   if (split === 'cols' || columns.length < 2) {
     const flat = items.flat();
