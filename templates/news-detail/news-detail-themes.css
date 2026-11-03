@@ -103,6 +103,15 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     max-width: none;
   }
 
+  /* section style `col-8`: the section's content in the left 8/12 column of the container,
+     full width below 900px (stryker.com col-sm-8 article beside an empty col-sm-4, e.g. the
+     quote, video, text and form of "Nurses in the OR": 637px at 1000px, 910px from x 30 at
+     1440px, while its title spans the container). A gold box: see `col-8` below */
+  body.news-detail.full-width main > .section.col-8 > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+    margin-inline: max(0px, (100% - var(--container-max)) / 2) auto;
+  }
+
   /* …a `bg-gold` box stays inside the container gutters, level with the text around it
      (stryker.com .has-background.bg-gold: 1380px from x 30 at 1440px, e.g. "Want to learn
      more?" of the powered-fleet eGuide and fecal-management webinar articles) */
