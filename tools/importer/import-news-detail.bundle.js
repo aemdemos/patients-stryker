@@ -1814,7 +1814,7 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
-      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      if (meta.Title) meta.Title = meta.Title.replace(/(\s*\|\s*Stryker)+\s*$/i, "");
       const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
