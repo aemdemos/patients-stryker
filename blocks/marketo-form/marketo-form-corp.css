@@ -78,7 +78,6 @@ body.corp .marketo-form .mktoForm .mktoHtmlText {
     font-size: var(--body-font-size-m);
     line-height: var(--corp-form-field-line-height);
   }
-
   /* stacked from 600px: 420px fields with 14px text (the nurses nomination form: 40px
      fields, 186px story box); labels are as wide as the fields, so the asterisk floated to
      the end of the label ends level with the field. Below 600px the stacked fields keep the
