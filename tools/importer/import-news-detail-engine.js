@@ -1,14 +1,17 @@
 /*
  * www.stryker.com news articles (AEM template news-detail, 710 pages: press releases,
- * features, StrykerTalks) → EDS pages with template news-detail-engine, through the shared
- * corp import (corp-import.js: section builder, page facts metadata), like every corp template.
+ * features, StrykerTalks) → EDS pages with template news-detail-engine, through the template's
+ * own copy of the corp import rules (news-detail-engine/, forked 2026-11-03 from the shared
+ * corp rules). Changes there affect only this template.
  * The EDS template has its own name so these pages can sit next to the news-detail template
  * (import-news-detail.js) and the two approaches can be compared (agreed 2026-11-02).
  *
  * Import: run with the news-detail URLs taken from the export file names, together with the
- * template's XF lists (data/catalog/xf-urls-news-detail.txt, xf-urls-slides-news-detail.txt).
+ * template's XFs (data/catalog/xf-urls-news-detail.txt, xf-urls-slides-news-detail.txt): its
+ * own ones with import-news-detail-engine-fragments.js, the ones other templates show too
+ * with import-xf-fragments.js.
  */
-import { createCorpImport } from './corp-import.js';
+import { createCorpImport } from './news-detail-engine/corp-import.js';
 import PAGE_FACTS from './data/page-facts/news-detail.js';
 
 export default createCorpImport({
