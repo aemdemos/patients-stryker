@@ -299,6 +299,16 @@ body.corp .columns .columns-img-col + p:has(> strong:only-child) {
   text-align: center;
 }
 
+/* large-headline: small print under the video (a plain paragraph after it in the video
+   cell, e.g. "Products may not be available…" on the StrykerTalks podcast pages): 11.2px
+   on the 14px text's lines, 20px below the video on mobile, 30px from 600px */
+body.corp .columns.large-headline p:has(> .dm-video-wrapper) ~ p:not(.button-wrapper) {
+  margin: var(--space-block-l) 0 0;
+  font-family: var(--body-font-family);
+  font-size: var(--footnote-font-size);
+  line-height: calc(var(--paragraph-line-height) * var(--body-font-size-m));
+}
+
 body.corp .columns .columns-img-col img,
 body.corp .columns .columns-img-col video {
   width: 100%;
@@ -603,6 +613,11 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
     --columns-corp-quote-base: clamp(var(--columns-corp-tablet-vw), 1vw, var(--body-font-size-m));
     --columns-corp-quote-name-size: clamp(calc(1.5 * var(--columns-corp-tablet-vw)), 1.5vw, var(--body-font-size-xl));
     --columns-corp-quote-gap: var(--space-inset-l);
+  }
+
+  /* small print under the video: the source's 30px component gap */
+  body.corp .columns.large-headline p:has(> .dm-video-wrapper) ~ p:not(.button-wrapper) {
+    margin-top: var(--space-section);
   }
 
   body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
