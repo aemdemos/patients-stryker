@@ -111,7 +111,6 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
     margin-inline: max(0px, (100% - var(--container-max)) / 2) auto;
   }
-
   /* …a `bg-gold` box stays inside the container gutters, level with the text around it
      (stryker.com .has-background.bg-gold: 1380px from x 30 at 1440px, e.g. "Want to learn
      more?" of the powered-fleet eGuide and fecal-management webinar articles) */
