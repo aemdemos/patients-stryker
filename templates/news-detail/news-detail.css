@@ -477,7 +477,10 @@ body.news-detail main span.box-gold a:any-link {
   color: inherit;
 }
 
-/* …its bold words are text in Futura bold, not the shared bold-link button */
+/* …its bold words are text in Futura bold, not the shared bold-link button, whether the
+   bold is inside the link or around it (DA saves a bold part of a link as its own
+   bold link) */
+body.news-detail main span.box-gold strong > a:any-link,
 body.news-detail main span.box-gold a:any-link > strong {
   display: inline;
   padding: 0;
