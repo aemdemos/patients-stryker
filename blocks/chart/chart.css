@@ -1,0 +1,49 @@
+.chart {
+  min-width: 0;
+  color: var(--color-black);
+  background: var(--color-white);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+.chart .chart-status {
+  margin-block: 0 var(--space-block);
+  color: var(--color-black);
+}
+
+.chart .chart-visual {
+  width: 100%;
+  height: clamp(calc(var(--space-section) * 10), 60vw, calc(var(--space-section) * 14));
+  overflow: clip;
+}
+
+.chart .chart-data {
+  margin-block-start: var(--space-block);
+}
+
+.chart .chart-table-scroll {
+  overflow: auto;
+}
+
+.chart .chart-data table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+}
+
+.chart .chart-data caption {
+  padding: var(--space-block-s);
+  font-weight: var(--font-weight-bold);
+  text-align: start;
+}
+
+.chart .chart-data th,
+.chart .chart-data td {
+  padding: var(--space-block-s);
+  border-block-end: var(--radius-sm) solid var(--color-border);
+  overflow-wrap: anywhere;
+}
+
+.chart .chart-data th {
+  font-weight: var(--font-weight-bold);
+}
