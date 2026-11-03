@@ -493,12 +493,14 @@ var CustomImportScript = (() => {
       return acc;
     }, { em: 1, vw: 0, font: "" });
     const font = props.font || (serifDefault ? "serif" : "");
-    const b = props.font !== "futura" && chain.find((e) => e.tagName === "B");
+    const bolds = props.font !== "futura" ? chain.filter((e) => e.tagName === "B") : [];
+    const b = bolds[0];
+    const besideCopy = (x) => squash(x.textContent) !== squash(blockEl.textContent) && (sameLineText(x, "previousSibling") || sameLineText(x, "nextSibling"));
     let code = 0;
     const serifInBold = props.font === "serif" && chain.some((e) => e.classList.contains("futura-bold"));
     if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) || serifInBold ? 1 : 0;
     else if (font === "serif") code = 1;
-    else if (b && squash(b.textContent) !== squash(blockEl.textContent) && (sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling"))) code = 2;
+    else if (bolds.some(besideCopy)) code = 2;
     return { em: props.em, vw: props.vw, font: code };
   }
   function markRuns(root, { serifDefault = false } = {}) {
@@ -559,8 +561,10 @@ var CustomImportScript = (() => {
           const heroBlock = /^hero corp/i.test(name);
           const inHero = heroBlock && /size[- ]\d/i.test(name);
           const isHeading = !!run.closest("h1, h2, h3, h4, h5, h6");
+          const scaledHeading = !!run.closest("h2, h3");
           const line = run.closest("p");
-          let base = isHeading ? heading : copy;
+          let base = copy;
+          if (isHeading) base = scaledHeading ? heading : 1;
           if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
           if (!isHeading && label && line && isLabel(line)) base = label;
           if (vw) tags.push(`size-${num(vw)}vw`);
@@ -3892,11 +3896,16 @@ var CustomImportScript = (() => {
   function cellStyles(cells, ctx) {
     const copy = sharedCopyStyle(cells, ctx);
     const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-    const allBold = (h) => h.children.length === 1 && h.firstElementChild.tagName === "STRONG" && text(h.firstElementChild) === text(h) && !h.querySelector("em");
+    const boldRuns = (h) => [...h.children].filter((c) => c.tagName !== "SUP");
+    const allBold = (h) => {
+      const runs = boldRuns(h);
+      const outside = [...h.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim());
+      return runs.length === 1 && runs[0].tagName === "STRONG" && !outside && !h.querySelector("em");
+    };
     const serif = heads.some((n) => n.serifHeading) && heads.every((n) => n.serifHeading || allBold(n));
     if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push("serif and Futura h2 / h3 in one block, kept in Futura");
     if (!serif) {
-      heads.filter((h) => h.tagName === "H2" && allBold(h)).forEach((h) => unwrap(h.firstElementChild));
+      heads.filter((h) => h.tagName === "H2" && allBold(h)).forEach((h) => unwrap(boldRuns(h)[0]));
     }
     const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
     const sizes = new Set(heads.map((n) => n.headingSize || ""));
@@ -5383,11 +5392,13 @@ var CustomImportScript = (() => {
   // tools/importer/news-detail-engine/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
+    const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
     const nodes = footnoteList(boxes.flatMap((box) => {
       const copy = contentCopy(box, doc);
       cleanRichText(copy, { wholeParagraphs: true });
       return [...copy.children].filter((el) => BLOCK_TAGS.has(el.tagName));
     }), doc);
+    nodes.plainBold = plainBold;
     return nodes;
   }
   function counterSections(items, ctx) {
@@ -5438,7 +5449,8 @@ var CustomImportScript = (() => {
     ctx.place(styles.length ? [{ type: "group", styles, items }] : items);
     if (!payload.xf) {
       const small = disclaimerNodes(main, root, doc);
-      if (small.length) ctx.addSection("disclaimer", [small.converted ? "disclaimer, references-spaced" : "disclaimer"], small);
+      const smallStyles = ["disclaimer", small.converted ? "references-spaced" : "", small.plainBold ? "bold-body" : ""];
+      if (small.length) ctx.addSection("disclaimer", [smallStyles.filter(Boolean).join(", ")], small);
     }
     const nodes = ctx.render();
     element.replaceChildren(...nodes);

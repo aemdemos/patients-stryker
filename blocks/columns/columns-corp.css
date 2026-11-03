@@ -75,6 +75,15 @@ body.corp .columns.columns-20-80 h4 {
   font-size: var(--body-font-size-m);
 }
 
+/* image caption (below, with its gap): the fully Bold paragraph (columns.js .columns-bold;
+   strong:only-child alone also matches a paragraph that only opens in bold, "Surgical tables
+   at Stryker…", which is 14px copy on the source) right under an image */
+body.corp .columns .columns-img-col + p.columns-bold {
+  font-size: var(--footnote-font-size);
+  line-height: var(--body-line-height-l);
+  text-align: center;
+}
+
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
    stryker.com puts there (not a lead-in line right before a button); large-headline
@@ -184,7 +193,10 @@ body.corp .columns.large-headline p {
   font-size: var(--columns-corp-lh-text-size);
 }
 
-body.corp .columns.large-headline p:has(> em:only-child) {
+/* an Italic paragraph is the small grey venue line; Bold + Italic (the Markdown <em><strong>
+   of a Futura bold quote, when-stryker-employees-and-their-family-members-become-patients)
+   keeps the copy colour and size */
+body.corp .columns.large-headline p:has(> em:only-child):not(:has(> em > strong)) {
   color: var(--color-surface-muted);
   font-size: var(--columns-corp-lh-small-size);
 }
@@ -352,14 +364,8 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns .columns-img-col:has(+ p.columns-bold) {
   margin-bottom: var(--columns-corp-caption-gap);
-}
-
-body.corp .columns .columns-img-col + p:has(> strong:only-child) {
-  font-size: var(--footnote-font-size);
-  line-height: var(--body-line-height-l);
-  text-align: center;
 }
 
 /* images fill the cell but are never enlarged past their own size: stryker.com shows a

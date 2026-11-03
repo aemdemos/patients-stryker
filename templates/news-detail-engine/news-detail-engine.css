@@ -15,6 +15,21 @@ body.news-detail-engine main .default-content-wrapper > h5 {
   font-size: var(--body-font-size-m);
 }
 
+/* Egyptienne words in an h1 that are not bold (a Large Headline quote, e.g. the ACE box of
+   /us/en/about/news/2022/features/advancing-healthcare-through-asian-culture-and-collaboration)
+   are Egyptienne Light at the regular weight at every width, not the title's weight */
+body.news-detail-engine main h1 span.serif:not(strong *, b *) {
+  font-weight: var(--font-weight-regular);
+}
+
+/* Large Headline band (section style large-headline) copy: the source line2 default size,
+   as in the Columns large-headline variant: 21px below 600px (source <840px), 1vw up to 14px
+   from 600px (stryker-is-doubling-down-in-the-fight-against-brain-tumors "According to the
+   National Brain Tumor Society…"); copy authored in another size keeps its size tag */
+body.news-detail-engine main > .section.large-headline > .default-content-wrapper > :is(p, ul, ol) {
+  font-size: var(--body-font-size-xl);
+}
+
 @media (width >= 600px) {
   body.news-detail-engine {
     --corp-h2-size: var(--heading-font-size-xl);
@@ -24,5 +39,9 @@ body.news-detail-engine main .default-content-wrapper > h5 {
   body.news-detail-engine main > .section > .default-content-wrapper > h1 {
     font-family: var(--display-font-family);
     font-weight: var(--font-weight-bold);
+  }
+
+  body.news-detail-engine main > .section.large-headline > .default-content-wrapper > :is(p, ul, ol) {
+    font-size: min(1vw, var(--body-font-size-m));
   }
 }

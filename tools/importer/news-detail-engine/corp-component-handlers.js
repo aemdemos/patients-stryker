@@ -350,9 +350,14 @@ function sharedCopyStyle(cells, ctx) {
 function cellStyles(cells, ctx) {
   const copy = sharedCopyStyle(cells, ctx);
   const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
-  // a heading that is bold throughout (span.futura-bold): Futura whatever the section font
-  const allBold = (h) => h.children.length === 1 && h.firstElementChild.tagName === 'STRONG'
-    && text(h.firstElementChild) === text(h) && !h.querySelector('em');
+  // a heading that is bold throughout (span.futura-bold): Futura whatever the section font; a
+  // footnote marker after it (<sup><b>2</b></sup>, early-mobility-benefits-icu) doesn't count
+  const boldRuns = (h) => [...h.children].filter((c) => c.tagName !== 'SUP');
+  const allBold = (h) => {
+    const runs = boldRuns(h);
+    const outside = [...h.childNodes].some((c) => c.nodeType === 3 && c.textContent.trim());
+    return runs.length === 1 && runs[0].tagName === 'STRONG' && !outside && !h.querySelector('em');
+  };
   const serif = heads.some((n) => n.serifHeading)
     && heads.every((n) => n.serifHeading || allBold(n));
   if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('serif and Futura h2 / h3 in one block, kept in Futura');
@@ -360,7 +365,7 @@ function cellStyles(cells, ctx) {
   // typography-map futura-heading), not the Columns bold display heading; a corp h3 is
   // Egyptienne by default, so its bold stays
   if (!serif) {
-    heads.filter((h) => h.tagName === 'H2' && allBold(h)).forEach((h) => unwrap(h.firstElementChild));
+    heads.filter((h) => h.tagName === 'H2' && allBold(h)).forEach((h) => unwrap(boldRuns(h)[0]));
   }
   // plain bold in the cells (Humanist bold, e.g. "Reorder #7502"): bold-body
   const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);

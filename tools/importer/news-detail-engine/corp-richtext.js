@@ -252,15 +252,19 @@ function runOf(textNode, blockEl, serifDefault) {
   // a plain bold (<b>, not span.futura-bold): the body font in copy (Futura on the site), the
   // heading's Egyptienne in h1–h3. Labels on their own line and paragraphs bold throughout
   // have their own rules (tagPlainBoldLabels, plainBoldParagraphs)
-  const b = props.font !== 'futura' && chain.find((e) => e.tagName === 'B');
+  const bolds = props.font !== 'futura' ? chain.filter((e) => e.tagName === 'B') : [];
+  const b = bolds[0];
+  // nested bold (<b><span class=fontsize-1-5em><b>Publish date:</b> </span></b> March 2,
+  // 2026: interventional-spine blogs): the copy next to it can be outside the outer one
+  const besideCopy = (x) => squash(x.textContent) !== squash(blockEl.textContent)
+    && (sameLineText(x, 'previousSibling') || sameLineText(x, 'nextSibling'));
   let code = 0;
   // headings: a plain bold in an h1–h3, or Egyptienne inside a Futura bold (the cleaner makes it
   // a <strong>, Futura on the site)
   const serifInBold = props.font === 'serif' && chain.some((e) => e.classList.contains('futura-bold'));
   if (heading) code = (b && /^H[1-3]$/.test(blockEl.tagName)) || serifInBold ? 1 : 0;
   else if (font === 'serif') code = 1;
-  else if (b && squash(b.textContent) !== squash(blockEl.textContent)
-    && (sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling'))) code = 2;
+  else if (bolds.some(besideCopy)) code = 2;
   return { em: props.em, vw: props.vw, font: code };
 }
 
@@ -351,11 +355,16 @@ export function finishRuns(nodes, styles) {
         const heroBlock = /^hero corp/i.test(name);
         const inHero = heroBlock && /size[- ]\d/i.test(name);
         const isHeading = !!run.closest('h1, h2, h3, h4, h5, h6');
+        // the h-* styles size the section's h2 / h3 only (styles-corp.css): a run in an h1 or
+        // h4–h6 is in em of the plain heading (LCA0 h4 "fontsize-1em" stays 1em; the
+        // downside-of-repeat-epidural… title h1 in 1.25em gets its tag in an h-1-25 section)
+        const scaledHeading = !!run.closest('h2, h3');
         const line = run.closest('p');
         // a label in a section with a label size: that size is the reference (EMS footer
         // "Support" 1.25em next to "Explore" 1.5em); a Hero Corp heading is sized by the block,
         // not by the section's h-* style, in the image-right product hero (barimatt-plus h2 1.25em)
-        let base = isHeading ? heading : copy;
+        let base = copy;
+        if (isHeading) base = scaledHeading ? heading : 1;
         if (isHeading && heroBlock && /image[- ]right/i.test(name)) base = 1;
         if (!isHeading && label && line && isLabel(line)) base = label;
         if (vw) tags.push(`size-${num(vw)}vw`);

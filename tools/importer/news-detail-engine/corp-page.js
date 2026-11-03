@@ -24,11 +24,16 @@ import {
 function disclaimerNodes(main, root, doc) {
   const boxes = [...main.querySelectorAll('.c-disclaimer')].filter((el) => !root.contains(el)
     && !el.querySelector('#publishedDate') && !el.parentElement.closest('.c-disclaimer') && text(el));
+  // plain bold (<b>, not span.futura-bold) is the body font, bold, on the source (footnote
+  // numbers "<b>1.</b>", "<b>DFHD 17934 Rev A</b>"): read before cleaning makes it <strong>
+  const plainBold = boxes.some((box) => [...box.querySelectorAll('b')]
+    .some((b) => !b.closest('.futura-bold') && !b.querySelector('.futura-bold') && text(b)));
   const nodes = footnoteList(boxes.flatMap((box) => {
     const copy = contentCopy(box, doc);
     cleanRichText(copy, { wholeParagraphs: true });
     return [...copy.children].filter((el) => BLOCK_TAGS.has(el.tagName));
   }), doc);
+  nodes.plainBold = plainBold;
   return nodes;
 }
 
@@ -89,7 +94,8 @@ export function buildCorpBody(element, payload) {
   ctx.place(styles.length ? [{ type: 'group', styles, items }] : items);
   if (!payload.xf) {
     const small = disclaimerNodes(main, root, doc);
-    if (small.length) ctx.addSection('disclaimer', [small.converted ? 'disclaimer, references-spaced' : 'disclaimer'], small);
+    const smallStyles = ['disclaimer', small.converted ? 'references-spaced' : '', small.plainBold ? 'bold-body' : ''];
+    if (small.length) ctx.addSection('disclaimer', [smallStyles.filter(Boolean).join(', ')], small);
   }
   const nodes = ctx.render();
   element.replaceChildren(...nodes);
