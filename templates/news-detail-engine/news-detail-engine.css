@@ -1,0 +1,47 @@
+/* News Detail Engine template (www.stryker.com news articles, e.g.
+   /us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance), built by the corp
+   engine like the other corp templates. Measured at 1440 / 900 / 600 / 375px:
+   - the title (h1) and the publish date (h5) run the full container width; the article body
+     keeps its AEM column (most: the 2/3 column of a 2/3 + 1/3 control → section style
+     col-2-3, 910px at 1440px), the boxes outside a column ("About Stryker", "Media contact")
+     run full width, as on the source
+   - the title is Egyptienne Light 28px on phones and Futura bold from 600px (source 841px);
+     the publish date is Futura bold 14px, 15px under it (the section gap below it matches the
+     source's 131-150px to the article)
+   - plain h2 / h3 21px / 24.5px and 17.5px / 21px below / from 600px, as on product pages
+     (h-0-8 / h-1-25 / h-1-5 scale them: EP 0.8em h3 16.8px); h4 at the corp size (14px on
+     phones, 17.5px from 600px, styles-corp.css) */
+body.news-detail-engine main .default-content-wrapper > h5 {
+  font-size: var(--body-font-size-m);
+}
+
+/* Egyptienne words in an h1 that are not bold (a Large Headline quote, e.g. the ACE box of
+   /us/en/about/news/2022/features/advancing-healthcare-through-asian-culture-and-collaboration)
+   are Egyptienne Light at the regular weight at every width, not the title's weight */
+body.news-detail-engine main h1 span.serif:not(strong *, b *) {
+  font-weight: var(--font-weight-regular);
+}
+
+/* Large Headline band (section style large-headline) copy: the source line2 default size,
+   as in the Columns large-headline variant: 21px below 600px (source <840px), 1vw up to 14px
+   from 600px (stryker-is-doubling-down-in-the-fight-against-brain-tumors "According to the
+   National Brain Tumor Society…"); copy authored in another size keeps its size tag */
+body.news-detail-engine main > .section.large-headline > .default-content-wrapper > :is(p, ul, ol) {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.news-detail-engine {
+    --corp-h2-size: var(--heading-font-size-xl);
+    --corp-h3-size: var(--heading-font-size-l);
+  }
+
+  body.news-detail-engine main > .section > .default-content-wrapper > h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  body.news-detail-engine main > .section.large-headline > .default-content-wrapper > :is(p, ul, ol) {
+    font-size: min(1vw, var(--body-font-size-m));
+  }
+}

@@ -98,10 +98,84 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
+  var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
+  function sourceHostFor(payload) {
+    try {
+      const { hostname } = new URL(payload.params.originalURL);
+      if (hostname === "www.stryker.com") return CORP_HOST_RE;
+    } catch (e) {
+    }
+    return PATIENTS_HOST_RE;
+  }
+  function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
+    if (!href) return null;
+    const value = href.trim();
+    let rest;
+    if (value.startsWith("/") && !value.startsWith("//")) rest = value;
+    else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
+    else return null;
+    const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
+    if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
+    let edsPath = path.replace(/\.html?$/i, "");
+    if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
+    return `${edsPath || "/"}${suffix}`;
+  }
+  function corpContentLink(href) {
+    const value = (href || "").trim().replace(CORP_HOST_RE, "");
+    if (!/^\/content\/(?!dam\/)/.test(value)) return null;
+    if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, "");
+    return `https://www.stryker.com${value}`;
+  }
+  function documentName(name) {
+    let decoded = name;
+    try {
+      decoded = decodeURIComponent(name);
+    } catch (e) {
+    }
+    return decoded.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+  function documentLink(href) {
+    const m = String(href || "").match(/^(\/[^?#]*)([?#].*)?$/);
+    if (!m || href.startsWith("//") || m[1].startsWith("/content/")) return null;
+    const segments = m[1].split("/");
+    if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
+    const path = segments.map((s) => s ? documentName(s) : s).join("/");
+    return path === m[1] ? null : `${path}${m[2] || ""}`;
+  }
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
+    const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
+    const isCorp = !!(payload && payload.template && (payload.template.site === "corp" || ["news-detail", "news-detail-xf", "long-page-detail-corp", "long-page-detail-corp-fragments"].includes(payload.template.name)));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      if (isCorp) return;
+      if (isIvsTreatment) {
+        WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
+        element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+          heading.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
+            const text = span.textContent.replace(/ /g, " ").trim();
+            if (!text) return;
+            const em = element.ownerDocument.createElement("em");
+            const strong = element.ownerDocument.createElement("strong");
+            while (span.firstChild) strong.appendChild(span.firstChild);
+            em.appendChild(strong);
+            span.replaceWith(em);
+          });
+        });
+        element.querySelectorAll(".buttonset a.btn-gold").forEach((a) => {
+          if (a.closest("em") && a.closest("strong")) return;
+          a.removeAttribute("class");
+          a.removeAttribute("style");
+          const strong = element.ownerDocument.createElement("strong");
+          const em = element.ownerDocument.createElement("em");
+          a.replaceWith(strong);
+          strong.appendChild(em);
+          em.appendChild(a);
+        });
+        return;
+      }
       if (isSaResources) {
         element.querySelectorAll("a.btn-gold").forEach((a) => {
           if (a.closest("em") && a.closest("strong")) return;
@@ -111,6 +185,11 @@ var CustomImportScript = (() => {
           a.replaceWith(strong);
           strong.appendChild(em);
           em.appendChild(a);
+        });
+        element.querySelectorAll('a[target="_blank" i][href]').forEach((a) => {
+          const href = a.getAttribute("href").trim();
+          if (!href || href.endsWith("#_blank") || /^(mailto|tel):/i.test(href)) return;
+          a.setAttribute("href", `${href.replace(/#$/, "")}#_blank`);
         });
         return;
       }
@@ -165,9 +244,21 @@ var CustomImportScript = (() => {
         "footer#footer",
         ".c-back-to-top"
       ]);
-      if (isSaResources) {
-        const publishedDate = element.querySelector("#publishedDate");
-        if (publishedDate) publishedDate.removeAttribute("id");
+      if (isSkinnedContent) {
+        WebImporter.DOMUtils.remove(element, ["#publishedDate", ".container.c-disclaimer.page-section"]);
+        if (isIvsTreatment) {
+          element.querySelectorAll('a[href="#disclaimer"]').forEach((a) => {
+            const sup = a.querySelector("sup");
+            if (sup) a.replaceWith(sup);
+            else a.replaceWith(...a.childNodes);
+          });
+          const hiw = [...element.querySelectorAll("h3")].find((h) => h.textContent.replace(/ /g, " ").trim() === "How it works" && !h.querySelector("strong, b"));
+          if (hiw) {
+            const strong = element.ownerDocument.createElement("strong");
+            while (hiw.firstChild) strong.appendChild(hiw.firstChild);
+            hiw.appendChild(strong);
+          }
+        }
       } else {
         WebImporter.DOMUtils.remove(element, [
           ".c-disclaimer",
@@ -185,7 +276,8 @@ var CustomImportScript = (() => {
       element.querySelectorAll("img[src], a[href], iframe[src], iframe[data-src]").forEach((node) => {
         const ref = node.getAttribute("src") || node.getAttribute("href") || node.getAttribute("data-src") || "";
         const isPixel = node.tagName === "IMG" && !node.getAttribute("alt") && isOffDomain(ref);
-        if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+        const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
+        if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
           const wrapper = node.closest("p, picture, div") || node;
           wrapper.remove();
         }
@@ -193,7 +285,22 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
-      if (isSaResources) return;
+      const hostRe = sourceHostFor(payload);
+      element.querySelectorAll("a[href]").forEach((a) => {
+        if (hostRe === CORP_HOST_RE) {
+          const content = corpContentLink(a.getAttribute("href"));
+          if (content !== null) a.setAttribute("href", content);
+          if (content && content.startsWith("https://")) return;
+        }
+        const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
+        if (rewritten !== null) a.setAttribute("href", rewritten);
+        const href = a.getAttribute("href");
+        const cleaned = documentLink(href);
+        if (cleaned === null) return;
+        if (a.textContent.trim() === href) a.textContent = cleaned;
+        a.setAttribute("href", cleaned);
+      });
+      if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
         const h2 = element.ownerDocument.createElement("h2");
         [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
@@ -243,9 +350,8 @@ var CustomImportScript = (() => {
     if (parent.textContent.trim() !== "") return null;
     return parent;
   }
-  var EMPTY_ALT_SENTINEL = "Image without alt text";
-  function altToLinkText(alt) {
-    return alt || EMPTY_ALT_SENTINEL;
+  function altToLinkText(alt, src) {
+    return alt || src;
   }
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
@@ -257,7 +363,7 @@ var CustomImportScript = (() => {
       const linkedAnchor = findLinkedDmCarrier(img);
       if (linkedAnchor) {
         linkedAnchor.setAttribute("title", src);
-        linkedAnchor.textContent = altToLinkText(alt);
+        linkedAnchor.textContent = altToLinkText(alt, src);
         return;
       }
       const parent = img.parentElement;
@@ -267,7 +373,7 @@ var CustomImportScript = (() => {
       }
       const a = doc.createElement("a");
       a.href = src;
-      a.textContent = altToLinkText(alt);
+      a.textContent = altToLinkText(alt, src);
       img.replaceWith(a);
     });
   }

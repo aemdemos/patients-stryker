@@ -1,4 +1,4 @@
-import { loadCSS } from '../../scripts/aem.js';
+import { loadCSS, toCamelCase } from '../../scripts/aem.js';
 
 /**
  * Parses a widget href into folder path and name.
@@ -35,8 +35,11 @@ function applyWidgetShell(widget, source, widgetName, searchParams) {
   widget.classList.add(widgetName);
   widget.classList.remove('block');
   widget.dataset.source = source.href;
+  // the link text (the widget HTML replaces the link): accessible name for frames
+  widget.dataset.label = source.textContent.trim();
+  // `widget-id` → data-widget-id (a raw hyphenated dataset key throws)
   searchParams.forEach((value, key) => {
-    widget.dataset[key] = value;
+    widget.dataset[toCamelCase(key)] = value;
   });
 
   const wrapper = widget.closest('.widget-wrapper');

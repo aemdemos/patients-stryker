@@ -1,0 +1,91 @@
+/* sitemap-corp — stryker.com site map (source .sitemap .c-map, /us/en/site-map): an H2 per
+   top-level section, then the pages as nested lists. No bullets; each level has its own
+   font, and from 600px (source max-width: 500px) each level is indented by n x its own
+   font size (source 1em / 2em / 3em / 4em / 5em on h3 / h4 / h5 / h6 / p). */
+
+.sitemap-corp ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemap-corp h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--corp-sitemap-line-height-section);
+}
+
+.sitemap-corp :is(a, .sitemap-corp-folder) {
+  display: block;
+}
+
+.sitemap-corp a:any-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.sitemap-corp a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-hover);
+}
+
+.sitemap-corp a:any-link:active {
+  color: var(--color-primary-active);
+}
+
+/* level 1 (source h3 a): Futura bold 20px / 40px */
+.sitemap-corp .sitemap-corp-level-1 > li > :is(a, span) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-sitemap-line-height-l1);
+}
+
+/* level 2 (source h4 a): Futura bold 16px / 24px, 0.5em of the 14px h4 below */
+.sitemap-corp .sitemap-corp-level-2 > li > :is(a, span) {
+  margin-bottom: calc(var(--body-font-size-m) / 2);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-sitemap-line-height-l2);
+}
+
+/* level 3 (source h5 a): Humanist 16px / 22px over a light rule */
+.sitemap-corp .sitemap-corp-level-3 > li > :is(a, span) {
+  margin-bottom: var(--body-font-size-m);
+  border-bottom: 1px solid var(--color-surface);
+  padding-bottom: var(--space-block-s);
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-s);
+  line-height: var(--corp-sitemap-line-height-l3);
+}
+
+/* level 4 and deeper (source h6 a / p a): Humanist 14px / 19.25px */
+.sitemap-corp :is(.sitemap-corp-level-4, .sitemap-corp-level-5) > li > :is(a, span) {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
+}
+
+@media (width >= 600px) {
+  .sitemap-corp .sitemap-corp-level-1 > li > :is(a, span) {
+    margin-left: var(--heading-font-size-l);
+  }
+
+  .sitemap-corp .sitemap-corp-level-2 > li > :is(a, span) {
+    margin: 0 0 calc(var(--heading-font-size-m) / 2) calc(var(--heading-font-size-m) * 2);
+  }
+
+  .sitemap-corp .sitemap-corp-level-3 > li > :is(a, span) {
+    margin-left: calc(var(--body-font-size-m) * 3);
+  }
+
+  .sitemap-corp .sitemap-corp-level-4 > li > :is(a, span) {
+    margin: 0 0 var(--space-block) calc(var(--body-font-size-m) * 4);
+  }
+
+  .sitemap-corp .sitemap-corp-level-5 > li > :is(a, span) {
+    margin: 0 0 var(--space-block) calc(var(--body-font-size-m) * 5);
+  }
+}

@@ -56,6 +56,13 @@
   display: none !important;
 }
 
+/* a conditional field's empty placeholder (e.g. State until the country asks for it) and the
+   float clearer are flex items too: hidden, so they don't add a column gap before the field */
+.marketo-form .mktoForm .mktoFormRow > .mktoPlaceholder:empty,
+.marketo-form .mktoForm .mktoFormRow > .mktoClear {
+  display: none;
+}
+
 /* labels — bold, tight bottom gap; width:auto overrides Marketo's inline width */
 .marketo-form .mktoForm .mktoLabel {
   font-family: var(--body-font-family);

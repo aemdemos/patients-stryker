@@ -7,8 +7,8 @@
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
  * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
- * large-headline (the stryker.com Large
- * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
+ * large-headline (the stryker.com Large Headline type scale), link-groups (lists of links)
+ * and page-intro (the page hero, its rules last); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
@@ -31,14 +31,57 @@ body.corp .columns > div > div h2 {
   font-weight: var(--font-weight-bold);
 }
 
+/* serif section (styles-corp.css): the cells' copy keeps the section's copy size
+   (--corp-copy-size, 14px without a p-* style) instead of the patients 21px serif Columns
+   copy (stryker.com nse footed-attachments: 14px Egyptienne list) */
+body.corp .section.serif .columns :is(p, li) {
+  font-size: var(--corp-copy-size, var(--body-font-size-m));
+}
+
+body.corp .section.serif .columns :is(ul, a) {
+  font-size: inherit;
+}
+
+/* buttons keep the button type (Futura 14px) in a serif section, which sets every cell link
+   in the serif copy (stryker.com flowtriever-system / artix "CONNECT WITH AN EXPERT") */
+body.corp .section.serif .columns p.button-wrapper a.button:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* h-serif section style (styles-corp.css): the cells' h2 / h3 in Egyptienne Light, as the
+   source's plain h2 / h3 (inspace "Shorter operative time"); bold parts stay Futura */
+body.corp .section.h-serif .columns > div > div :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+/* h4: the corp h4, 14px on phones and 17.5px from 600px (stryker.com 17.5px from 480px,
+   surgical/learn "$1,350,000+ in scholarships") */
 body.corp .columns h4 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.corp .columns h4 {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 /* icon + text (columns-20-80) titles: stryker.com 14px on phones, 16.8px from 840px */
 body.corp .columns.columns-20-80 h4 {
   font-size: var(--body-font-size-m);
+}
+
+/* image caption (below, with its gap): the fully Bold paragraph (columns.js .columns-bold;
+   strong:only-child alone also matches a paragraph that only opens in bold, "Surgical tables
+   at Stryker…", which is 14px copy on the source) right under an image */
+body.corp .columns .columns-img-col + p.columns-bold {
+  font-size: var(--footnote-font-size);
+  line-height: var(--body-line-height-l);
+  text-align: center;
 }
 
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
@@ -95,12 +138,22 @@ body.corp .columns.link-groups li > a:any-link::after {
 body.corp .columns.large-headline {
   --columns-corp-lh-heading-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
   --columns-corp-lh-title-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--columns-corp-vw))));
-  --columns-corp-lh-text-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+
+  /* plain copy is the source Large Headline line2 at its default size: 21px below 600px
+     (source <840px), 1vw up to 14px from 600px (pinpoint, spy-elite "Published literature…";
+     copy authored in another size keeps its size tag) */
+  --columns-corp-lh-text-size: var(--body-font-size-xl);
   --columns-corp-lh-small-size: max(var(--body-font-size-xs), min(calc(1 * var(--body-font-size-m)), calc(1 * var(--columns-corp-vw))));
   --columns-corp-lh-heading-gap: var(--space-block);
   --columns-corp-lh-gap: var(--space-block-l);
   --columns-corp-lh-cta-gap: calc(var(--space-section) + var(--space-block-s));
   --columns-corp-lh-after-cta-gap: var(--space-section);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.large-headline {
+    --columns-corp-lh-text-size: min(1vw, var(--body-font-size-m));
+  }
 }
 
 body.corp .columns.large-headline :is(h2, h4, p) {
@@ -140,7 +193,10 @@ body.corp .columns.large-headline p {
   font-size: var(--columns-corp-lh-text-size);
 }
 
-body.corp .columns.large-headline p:has(> em:only-child) {
+/* an Italic paragraph is the small grey venue line; Bold + Italic (the Markdown <em><strong>
+   of a Futura bold quote, when-stryker-employees-and-their-family-members-become-patients)
+   keeps the copy colour and size */
+body.corp .columns.large-headline p:has(> em:only-child):not(:has(> em > strong)) {
   color: var(--color-surface-muted);
   font-size: var(--columns-corp-lh-small-size);
 }
@@ -189,8 +245,10 @@ body.corp .columns h2 :is(em strong, strong em) {
 }
 
 /* bold display heading: a fully Bold Heading 2 (columns.js .columns-bold) is 35px black
-   Futura bold at every width (stryker.com .fontsize-2-5em .futura-bold paragraph) */
-body.corp .columns:not(.large-headline) > div > div h2.columns-bold {
+   Futura bold at every width (stryker.com .fontsize-2-5em .futura-bold paragraph). In an
+   h-serif section the bold only marks a Futura heading among serif ones (clarifix), so the
+   heading keeps its size. */
+body.corp .section:not(.h-serif) .columns:not(.large-headline) > div > div h2.columns-bold {
   margin-bottom: var(--space-inset-m);
   font-size: var(--columns-corp-display-size-s);
   line-height: var(--heading-line-height);
@@ -206,6 +264,14 @@ body.corp .columns > div > div h1 {
   font-size: var(--columns-corp-headline-size);
   font-weight: var(--font-weight-regular);
   line-height: 1.66;
+}
+
+/* a Heading 1 without a vw size (a rich-text h1 in a cell, or a Large Headline line without
+   a size class) is the source's plain h1: 28px, lines 1.06 (epf "Designed for the treatment
+   of plantar fasciosis", the gmrs hero XF "Global Modular Replacement System") */
+body.corp .columns > div > div h1:where(:not(:has(span.corp-vw), .columns-gold, .columns-bold, .columns-number)) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
 }
 
 /* a headline in one font per line (fully gold or fully Bold, or a gold number over the
@@ -224,9 +290,17 @@ body.corp .columns > div > div h1.columns-number > :first-child {
   font-size: 2em;
 }
 
-/* a fully Bold Heading 1 is a stat number (stryker.com .fontsize-6vw) */
-body.corp .columns > div > div h1.columns-bold {
+/* a fully Bold Heading 1 in a Large Headline block with vw-sized words is a stat number
+   (stryker.com .fontsize-6vw); next to rich text it keeps the headline size (jr45/july: 4vw,
+   56px). Without a size it is the source's plain h1: 28px, lines 1.06 at every width
+   (exeter "Cementing our place in history", restoration-modular "Rest easy with") */
+body.corp .columns.large-headline > div > div h1.columns-bold:has(span.corp-vw) {
   font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
+}
+
+body.corp .columns.large-headline > div > div h1.columns-bold:not(:has(span.corp-vw)) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
 }
 
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
@@ -290,17 +364,20 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns .columns-img-col:has(+ p.columns-bold) {
   margin-bottom: var(--columns-corp-caption-gap);
 }
 
-body.corp .columns .columns-img-col + p:has(> strong:only-child) {
-  font-size: var(--footnote-font-size);
-  line-height: var(--body-line-height-l);
-  text-align: center;
+/* images fill the cell but are never enlarged past their own size: stryker.com shows a
+   100px icon at 100px, centred (lifepak-15 product highlights); videos fill the cell.
+   DM images carry no width / height: the 1px box lets a lazy image load (0 x 0 never does) */
+body.corp .columns .columns-img-col img {
+  width: auto;
+  min-width: 1px;
+  min-height: 1px;
+  max-width: 100%;
 }
 
-body.corp .columns .columns-img-col img,
 body.corp .columns .columns-img-col video {
   width: 100%;
 }
@@ -312,9 +389,10 @@ body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
 
 /* gray-lead: the text cell (the one without the video, last or first — a mirrored row
    puts it first) opens with a light-grey box (stryker.com bg-light-gray Large Headline:
-   20px padding) — its first paragraph, or a Heading 2 statement; the cell itself starts
-   level with the row (below) */
-body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p, h2):first-child {
+   20px padding) — its first paragraph, or a Heading 2 / 3 statement
+   (neurovasculars-marucci-shares-how-were-advancing-stroke-care-globally h3); the cell itself
+   starts level with the row (below) */
+body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p, h2, h3):first-child {
   margin-bottom: var(--space-section-l);
   padding: var(--space-block-l);
   background-color: var(--color-surface);
@@ -330,10 +408,20 @@ body.corp .columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only
   line-height: var(--paragraph-line-height);
 }
 
+/* a linked Heading 4 (the stryker.com featured content grid item title, e.g.
+   /us/en/trauma-and-extremities/c/nailing-portfolio): the heading's own black Futura, not the
+   variant's link colour and serif */
+body.corp .columns.related-links h4 a:any-link {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
 body.corp .columns.related-links p a:any-link:has(u) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
+
 
 /* section style serif with p-1 / p-1-25: 14px or 17.5px serif copy (stryker.com
    urw-egyptienne at 1em / .fontsize-1-25em); serif alone sets 21px */
@@ -353,6 +441,11 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 body.corp .columns.columns-4-cols > div {
   flex-flow: row wrap;
   row-gap: var(--space-block);
+}
+
+/* grid rows (grid-… options) wrap like the source grid, with no gap between lines */
+body.corp .columns.columns-grid > div {
+  row-gap: 0;
 }
 
 /* ---- cells ---- */
@@ -409,9 +502,21 @@ body.corp .columns.link-groups.columns-4-cols > div > div {
   flex-basis: 100%;
 }
 
+/* page-intro: cells keep the 15px column gutter at every width, level with the row top */
+body.corp .columns.columns-50-50.page-intro > div > div {
+  margin-top: 0;
+  padding: 0 var(--space-block);
+}
+
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
 body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   padding-top: 0;
+}
+
+/* page-intro: the text before an image too (no patients 50-50 / compact 30px drop or 49px inset) */
+body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+  margin-top: 0;
+  padding: 0 var(--space-block);
 }
 
 @media (width >= 600px) {
@@ -552,5 +657,79 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+}
+
+/* page-intro: the stryker.com page hero (pagehero, hero, longtexthero components), authored
+   as columns-50-50 page-intro (+ border-bottom for the source's grey rule): a Bold + Italic
+   Heading 1 is the 28px gold Futura title, a plain Heading 1 the black Futura title of the
+   long-text hero, a plain Heading 2 the 24.5px Egyptienne Light subhead and paragraphs the
+   14px body copy | image. With no image the text cell alone takes half the row from 600px
+   (source col-sm-6); the cell gutter is set in the cells section. The rule sits 15px under
+   the text (paragraph gap) or 10px under the image. Placed last so it overrides the corp
+   Large Headline h1 and the patients 50-50 / compact insets whatever the section. */
+body.corp .columns.columns-50-50.page-intro.border-bottom {
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro > div > div.columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro.border-bottom > div > div.columns-img-col {
+  padding-bottom: var(--space-block-s);
+}
+
+/* the image keeps its rendition width (666px for the source preset_666_392), never wider
+   than the cell, at the cell's start edge */
+body.corp .columns.columns-50-50.page-intro .columns-img-col img {
+  width: auto;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro > div > div h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* gold title: 28px with 1em above it; below 600px its line box stays the 21px heading's
+   (22.26px lines), as on stryker.com below 840px */
+body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+  margin: 1em 0 var(--space-block-s);
+  font-size: var(--heading-font-size-xxl);
+  line-height: calc(var(--heading-line-height) * var(--heading-font-size-l));
+}
+
+/* the subhead: a plain Heading 2 (not a gold or bold display heading) */
+body.corp .columns.columns-50-50.page-intro > div > div h2:not(.columns-gold, .columns-bold) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+/* a Bold + Underline link (long-text hero "About us") stays a bold body-font text link */
+body.corp .columns.columns-50-50.page-intro a.link-strong:any-link {
+  font-family: var(--body-font-family);
+  text-transform: none;
+}
+
+body.corp .columns.columns-50-50.page-intro a.link-strong:any-link::after {
+  content: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.columns-50-50.page-intro > div > div h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+    line-height: var(--heading-line-height);
   }
 }

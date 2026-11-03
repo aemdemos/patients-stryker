@@ -1,0 +1,10 @@
+/* Product Detail template (www.stryker.com product pages, e.g.
+   /us/en/ent/products/clarifix-cryotherapy-device). Plain section headings: h2 21px / 24.5px
+   and h3 17.5px / 21px below / from 600px (source 841px); headings authored 1.25x / 1.5x get
+   the h-1-25 / h-1-5 section styles (styles-corp.css), which scale these sizes. */
+@media (width >= 600px) {
+  body.product-detail {
+    --corp-h2-size: var(--heading-font-size-xl);
+    --corp-h3-size: var(--heading-font-size-l);
+  }
+}

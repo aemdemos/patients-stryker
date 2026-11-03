@@ -14,11 +14,15 @@ import { toClassName } from './aem.js';
 // formatting a bracket expression may run through (and may itself be wrapped in)
 const INLINE_TAGS = new Set(['A', 'B', 'BR', 'DEL', 'EM', 'I', 'S', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U']);
 
-// `[[classes]content]` within one text node; `[` is not allowed inside, so the
-// innermost expression of `[[x]…[[y]…]` is the one matched
-const SPAN_TAG_RE = /\[\[([^\][]+)\]([^\][]*)\]/g;
+// `[[classes]content]` within one text node; the content may hold plain `[…]` (e.g. a
+// quoted "[107 patients]"), but no other `[`, so the innermost expression of
+// `[[x]…[[y]…]` is the one matched
+const SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
 // a `[[classes]` opener whose closing `]` is in a later text node
 const OPEN_TAG_RE = /\[\[([^\][]+)\]/g;
+// plain `[…]` in the content: its `]` doesn't close an expression
+const LITERAL_RE = /\[[^\][]*\]/g;
+const blank = (m) => ' '.repeat(m.length);
 
 /**
  * Parses the comma-separated class list of a bracket expression.
@@ -101,8 +105,8 @@ function removeIfEmpty(node, container) {
 }
 
 /**
- * Wraps the first bracket expression whose `[[classes]` and `]` are in different text
- * nodes of the container, i.e. whose content runs through formatting (bold, links, <br>).
+ * Wraps the first innermost bracket expression whose `[[classes]` and `]` are in different
+ * text nodes of the container, i.e. whose content runs through formatting (bold, links, <br>).
  * @param {Element} container The container
  * @returns {boolean} Whether an expression was wrapped
  */
@@ -110,15 +114,26 @@ function wrapMultiNodeTag(container) {
   const nodes = getTextNodes(container);
   return nodes.some((openNode, i) => {
     const text = openNode.nodeValue;
+    // the first `]` that closes an expression (not the `]` of a `[[classes]` opener or of
+    // a plain `[…]`)
+    const closeAt = (value) => value.replace(OPEN_TAG_RE, blank).replace(LITERAL_RE, blank).indexOf(']');
     const open = [...text.matchAll(OPEN_TAG_RE)].pop();
-    if (!open || text.slice(open.index + open[0].length).includes(']')) return false;
+    if (!open || closeAt(text.slice(open.index + open[0].length)) >= 0) return false;
     const classes = parseClasses(open[1]);
-    const closeNode = nodes.slice(i + 1).find((node) => node.nodeValue.includes(']'));
+    const closeIndex = nodes.findIndex((node, j) => j > i && closeAt(node.nodeValue) >= 0);
+    const closeNode = nodes[closeIndex];
     if (!classes.length || !closeNode) return false;
+    // an expression opened in between (nested, e.g. `[[body-font]**[[color-gold]"]**]`) is
+    // wrapped first: that `]` closes it, not this one
+    const opens = (value) => [...value.matchAll(OPEN_TAG_RE)].length > 0;
+    const before = closeNode.nodeValue.slice(0, closeAt(closeNode.nodeValue));
+    if (nodes.slice(i + 1, closeIndex).some((node) => opens(node.nodeValue)) || opens(before)) {
+      return false;
+    }
 
     const range = document.createRange();
     range.setStart(openNode, open.index + open[0].length);
-    range.setEnd(closeNode, closeNode.nodeValue.indexOf(']'));
+    range.setEnd(closeNode, closeAt(closeNode.nodeValue));
     // the extracted copy keeps formatting that the brackets cut through (e.g. a
     // partially bracketed <strong>); the span lands where the content was
     const span = createSpan(classes, range.extractContents());
@@ -140,7 +155,9 @@ function wrapMultiNodeTag(container) {
  */
 function updateHeadingId(heading, authoredText) {
   const slug = (text) => text.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-  if (heading.id !== slug(authoredText)) return; // an explicitly authored id: keep it
+  // compared without hyphens: the backend's slug drops some spaces ours keeps (after a <br>)
+  const bare = (id) => id.replace(/-/g, '');
+  if (bare(heading.id) !== bare(slug(authoredText))) return; // an explicitly authored id: keep it
   const id = slug(heading.textContent);
   if (id && !document.getElementById(id)) heading.id = id;
 }

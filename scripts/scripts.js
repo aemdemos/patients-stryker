@@ -93,8 +93,10 @@ function buildWidgetAutoBlocks(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // auto load `*/fragments/*` references (tabs load their own panel fragments)
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment, .tabs'));
+    // auto load `*/fragments/*` references (tabs load their own panel fragments, hero-corp
+    // its slide image fragments; links to `/modals/` fragments open them in a modal)
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')]
+      .filter((f) => !f.closest('.fragment, .tabs, .hero-corp') && !f.getAttribute('href').includes('/modals/'));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
@@ -258,7 +260,13 @@ function decorateFootnotes(main) {
         fragment.append(document.createTextNode(part));
       }
     });
-    sup.replaceChildren(fragment);
+    // the links go inside formatting that holds all of the number (a bracket size span), so
+    // it keeps its size
+    let target = sup;
+    const wrapsAll = (el) => el.children.length === 1
+      && el.firstElementChild.textContent === el.textContent;
+    while (wrapsAll(target)) target = target.firstElementChild;
+    target.replaceChildren(fragment);
   });
 }
 

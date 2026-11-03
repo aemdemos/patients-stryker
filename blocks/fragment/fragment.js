@@ -10,6 +10,7 @@ import { decorateMain } from '../../scripts/scripts.js';
 import {
   loadSections,
 } from '../../scripts/aem.js';
+import fetchPlainHtml from '../../scripts/plain-html.js';
 
 /**
  * Removes CTA links/buttons from sections styled with `no-cta`.
@@ -85,10 +86,13 @@ export function mergeSectionCards(section) {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/') && !path.startsWith('//')) {
-    const resp = await fetch(`${path}.plain.html`);
+    const resp = await fetchPlainHtml(path);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
+      // a fragment's Metadata block describes the fragment document (e.g. the content
+      // fragment fields a card does not show); it is never rendered into the page
+      main.querySelectorAll('div.metadata').forEach((meta) => meta.remove());
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
@@ -133,6 +137,11 @@ export default async function decorate(block) {
   const sections = [...fragment.children].filter((el) => el.classList.contains('section'));
   if (sections.length && isWholeSectionEmbed(section, block)) {
     if (noCta) sections.forEach((s) => removeCtas(s));
+    // The host section's styles (Section Metadata: visibility, background, divider…) still
+    // apply to what it embeds: every hoisted section gets them, except `divider`, which
+    // draws the rule above the fragment, so only on its first section.
+    const styles = [...section.classList].filter((c) => c !== 'section' && !c.endsWith('-container'));
+    sections.forEach((s, i) => s.classList.add(...styles.filter((c) => c !== 'divider' || i === 0)));
     section.replaceWith(...sections);
     return;
   }

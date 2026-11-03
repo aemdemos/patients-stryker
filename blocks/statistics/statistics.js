@@ -56,18 +56,30 @@ function formatStatNumber(value, {
 
 /**
  * Wires up the count-up animation for a statistics block: each stat's number
- * counts from 0 to its value over COUNTUP_DURATION whenever the block scrolls
- * into view, resetting to 0 when it leaves so it replays on return.
+ * counts from 0 to its value over COUNTUP_DURATION the first time the block
+ * scrolls into view (or is scrolled past), then keeps its value (as stryker.com's
+ * number counters).
  * @param {Element} block the decorated statistics block
  */
 function setupCountUp(block) {
   // honor reduced-motion: leave the authored values untouched, no animation
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  // the innermost element holding the whole number (e.g. a size span inside the <p>), so
+  // counting keeps its formatting
+  const innermost = (el) => {
+    let target = el;
+    while (target.children.length === 1
+      && target.firstElementChild.textContent.trim() === target.textContent.trim()) {
+      target = target.firstElementChild;
+    }
+    return target;
+  };
+
   // collect only the stats that actually contain a number
   const stats = [...block.querySelectorAll('.statistics-value')]
     .map((el) => {
-      const target = el.querySelector('p') || el;
+      const target = innermost(el);
       const parsed = parseStatNumber(target.textContent.trim());
       return parsed ? { target, parsed } : null;
     })
@@ -104,17 +116,46 @@ function setupCountUp(block) {
   // hold at 0 until the block first enters the viewport
   render(0);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        run();
-      } else {
-        stop();
-        render(0);
-      }
+  // default: counts up every time the block comes into view, back to 0 when it leaves
+  if (!block.classList.contains('count-once')) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          run();
+        } else {
+          stop();
+          render(0);
+        }
+      });
     });
+    observer.observe(block);
+    return;
+  }
+
+  // count-once (www.stryker.com counters): counts up once, when the block has come into
+  // view or has been scrolled past (a fast scroll or a jump to an anchor can skip it without
+  // the block ever intersecting), and keeps the numbers
+  let started = false;
+  let observer;
+  const scrolling = new AbortController();
+  const start = () => {
+    if (started) return;
+    started = true;
+    observer.disconnect();
+    scrolling.abort();
+    run();
+  };
+  // scrolled past: above the viewport's bottom edge and laid out (a section still hidden
+  // while it loads has an empty box)
+  const check = () => {
+    const rect = block.getBoundingClientRect();
+    if (rect.height && rect.top < window.innerHeight) start();
+  };
+  observer = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) start();
   });
   observer.observe(block);
+  window.addEventListener('scroll', check, { passive: true, signal: scrolling.signal });
 }
 
 /**
@@ -126,6 +167,17 @@ export default function decorate(block) {
 
   const list = document.createElement('ul');
   list.className = 'statistics-list';
+
+  // a first row holding only a heading is the block's title (above the stats)
+  const first = block.firstElementChild;
+  const heading = first && first.children.length === 1
+    && first.firstElementChild.querySelector(':scope > :is(h1, h2, h3, h4, h5, h6):only-child');
+  let title = null;
+  if (heading) {
+    title = heading;
+    title.classList.add('statistics-title');
+    first.remove();
+  }
 
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
@@ -157,7 +209,7 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  block.replaceChildren(list);
+  block.replaceChildren(...(title ? [title] : []), list);
 
   // optional count-up animation, enabled via the `count-up` authoring variant
   if (block.classList.contains('count-up')) setupCountUp(block);

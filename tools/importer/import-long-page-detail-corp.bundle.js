@@ -230,18 +230,36 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse4(element, { document }) {
+  function parse4(element, {
+    document,
+    overlayNodes,
+    variants: extra = [],
+    vwSize = true
+  }) {
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
     const overlay = slide.querySelector(".overlayparsys");
     const first = desktop || mobile || slide.querySelector("img");
-    if (!first) return;
+    if (!first && !slide.dataset.xfDesktop) return;
     const variants = ["image-slide"];
-    const cells = [[copyImage(first, document)]];
-    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    const fragmentLink = (path) => {
+      const a = document.createElement("a");
+      a.href = path;
+      a.textContent = path;
+      return a;
+    };
+    const cells = [];
+    if (slide.dataset.xfDesktop) {
+      cells.push([fragmentLink(slide.dataset.xfDesktop)]);
+      if (slide.dataset.xfMobile) cells.push([fragmentLink(slide.dataset.xfMobile)]);
+      else if (mobile) cells.push([copyImage(mobile, document)]);
+    } else {
+      cells.push([copyImage(first, document)]);
+      if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    }
     if (overlay) {
-      const lines = headline(overlay, document);
+      const lines = overlayNodes || headline(overlay, document);
       if (lines.length) cells.push([lines]);
       const style = overlay.getAttribute("style") || "";
       const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
@@ -252,9 +270,10 @@ var CustomImportScript = (() => {
       if (right !== null) variants.push(`right-${right}`);
       const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
       const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-      if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+      if (size && vwSize) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
+    variants.push(...extra);
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
       cells
@@ -1348,16 +1367,19 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/xf-fragment-path.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
-  function xfKey(xf) {
-    return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  function xfKey(ref) {
+    return String(ref || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  }
+  function edsSegments(rest) {
+    return rest.split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
   }
   function xfToFragmentPath(xf) {
     const key = xfKey(xf);
     if (!key.startsWith(XF_ROOT)) return null;
-    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    const segments = edsSegments(key.slice(XF_ROOT.length));
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
@@ -1965,19 +1987,36 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
+  function corpContentLink(href) {
+    const value = (href || "").trim().replace(CORP_HOST_RE, "");
+    if (!/^\/content\/(?!dam\/)/.test(value)) return null;
+    if (/^\/content\/stryker\/[a-z]{2}\//.test(value)) return value.replace(/^\/content\/stryker/, "");
+    return `https://www.stryker.com${value}`;
+  }
+  function documentName(name) {
+    let decoded = name;
+    try {
+      decoded = decodeURIComponent(name);
+    } catch (e) {
+    }
+    return decoded.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+  function documentLink(href) {
+    const m = String(href || "").match(/^(\/[^?#]*)([?#].*)?$/);
+    if (!m || href.startsWith("//") || m[1].startsWith("/content/")) return null;
+    const segments = m[1].split("/");
+    if (/\.[a-z0-9]{2,5}$/i.test(segments[segments.length - 1])) return null;
+    const path = segments.map((s) => s ? documentName(s) : s).join("/");
+    return path === m[1] ? null : `${path}${m[2] || ""}`;
+  }
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isNewsDetail = !!(payload && payload.template && [
-      "news-detail",
-      "news-detail-xf",
-      "long-page-detail-corp",
-      "long-page-detail-corp-fragments"
-    ].includes(payload.template.name));
-    const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
+    const isCorp = !!(payload && payload.template && (payload.template.site === "corp" || ["news-detail", "news-detail-xf", "long-page-detail-corp", "long-page-detail-corp-fragments"].includes(payload.template.name)));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
-      if (isNewsDetail) return;
+      if (isCorp) return;
       if (isIvsTreatment) {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
@@ -2103,7 +2142,8 @@ var CustomImportScript = (() => {
       element.querySelectorAll("img[src], a[href], iframe[src], iframe[data-src]").forEach((node) => {
         const ref = node.getAttribute("src") || node.getAttribute("href") || node.getAttribute("data-src") || "";
         const isPixel = node.tagName === "IMG" && !node.getAttribute("alt") && isOffDomain(ref);
-        if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+        const trackingHost = /^(https?:)?\/\//i.test(ref) && TRACKING_HOST_RE.test(ref);
+        if (trackingHost || PLACEHOLDER_RE.test(ref) || isPixel) {
           const wrapper = node.closest("p, picture, div") || node;
           wrapper.remove();
         }
@@ -2113,8 +2153,18 @@ var CustomImportScript = (() => {
       });
       const hostRe = sourceHostFor(payload);
       element.querySelectorAll("a[href]").forEach((a) => {
+        if (hostRe === CORP_HOST_RE) {
+          const content = corpContentLink(a.getAttribute("href"));
+          if (content !== null) a.setAttribute("href", content);
+          if (content && content.startsWith("https://")) return;
+        }
         const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
+        const href = a.getAttribute("href");
+        const cleaned = documentLink(href);
+        if (cleaned === null) return;
+        if (a.textContent.trim() === href) a.textContent = cleaned;
+        a.setAttribute("href", cleaned);
       });
       if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {

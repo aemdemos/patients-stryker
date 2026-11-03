@@ -1,4 +1,5 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
+import decorateMapLinks from '../../scripts/map-embed.js';
 
 // YouTube link signatures (watch, short youtu.be and nocookie embeds)
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -47,14 +48,76 @@ function decorateYouTube(block) {
   });
 }
 
+/**
+ * Grid options (an AEM responsive-grid row, lift and shift): `grid-<widths>` for desktop
+ * (from 1200px), `grid-t-<widths>` for 600–1199px and `grid-m-<widths>` below 600px, each in
+ * grid units (12, or `of<N>` first). `o<N>` is an offset before the next column, `n` starts a
+ * new line, `h` hides the column. A breakpoint without an option takes the desktop one.
+ * Each cell gets its place on a 12-unit CSS grid per breakpoint (--grid-area-m/-t/-d).
+ */
+function decorateGrid(block) {
+  const options = {};
+  [...block.classList].forEach((c) => {
+    const m = c.match(/^grid-(?:([tm])-)?((?:of\d+-)?(?:(?:o\d+-)?n?\d+|h)(?:-(?:o\d+-)?n?\d+|-h)*)$/);
+    if (!m) return;
+    const [, bp, value] = m;
+    options[bp || 'd'] = value;
+  });
+  if (!options.d) return;
+  const total = Number((options.d.match(/^of(\d+)-/) || [])[1]) || 12;
+  const columns = (value) => {
+    const out = [];
+    let offset = 0;
+    value.replace(/^of\d+-/, '').split('-').forEach((token) => {
+      if (token.startsWith('o')) offset = Number(token.slice(1));
+      else {
+        out.push(token === 'h' ? { hide: true } : {
+          w: Number(token.replace('n', '')), o: offset, newline: token.startsWith('n'),
+        });
+        offset = 0;
+      }
+    });
+    return out;
+  };
+  // AEM floats: a column that does not fit on the line (or a newline one) starts the next line
+  const place = (cols) => {
+    let line = 1;
+    let used = 0;
+    return cols.map((col) => {
+      if (col.hide) return null;
+      if (used && (col.newline || used + col.o + col.w > total)) {
+        line += 1;
+        used = 0;
+      }
+      const area = `${line} / ${used + col.o + 1} / auto / span ${Math.min(col.w, total)}`;
+      used += col.o + col.w;
+      return area;
+    });
+  };
+  const layouts = Object.fromEntries(['d', 't', 'm'].map((bp) => [bp, place(columns(options[bp] || options.d))]));
+  block.classList.add('columns-grid');
+  [...block.children].forEach((row) => {
+    row.style.setProperty('--grid-total', total);
+    [...row.children].forEach((cell, i) => {
+      Object.entries(layouts).forEach(([bp, areas]) => {
+        if (areas[i] === null) cell.classList.add(`grid-hide-${bp}`);
+        else if (areas[i]) cell.style.setProperty(`--grid-area-${bp}`, areas[i]);
+      });
+    });
+  });
+}
+
 export default function decorate(block) {
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);
   decorateYouTube(block);
+  // a lone Google Maps link (e.g. contact info | map) becomes an embedded map
+  decorateMapLinks(block);
 
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
+  decorateGrid(block);
 
   // text-only columns (no image, plain section, not 50-50) use smaller mobile
   // type than the image/variant layouts — tag them so the CSS can target a
@@ -94,7 +157,11 @@ export default function decorate(block) {
       // no editable mount point remains over it and the img-col styling still
       // applies. Only single-media wrappers are unwrapped, so cell text is never
       // touched; harmless on the published site.
-      col.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
+      col.querySelectorAll('picture, .dm-video-wrapper').forEach((found) => {
+        // a linked image (scripts/dm-support.js: <a href><picture></a>) moves with its link
+        const link = found.parentElement;
+        const media = link && link.tagName === 'A' && link.childElementCount === 1
+          && link.textContent.trim() === '' ? link : found;
         let node = media;
         while (node.parentElement
           && node.parentElement !== col

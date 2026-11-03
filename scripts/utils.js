@@ -48,21 +48,22 @@ async function fetchIndexRows(url, offset = 0, rows = []) {
 
 const indexCache = {};
 /**
- * Loads every page of `{prefix}/query-index.json` once per prefix.
+ * Loads every page of `{prefix}/query-index.json` (or of another index sheet) once per URL.
  * @param {string} prefix locale folder from getLocalePrefix()
+ * @param {string} [url] index sheet URL, default `{prefix}/query-index.json`
  * @returns {Promise<Map<string,Object>>} rows keyed by toIndexPath(path), empty on failure
  */
-export function fetchQueryIndex(prefix = '') {
-  indexCache[prefix] ||= fetchIndexRows(`${prefix}/query-index.json`)
+export function fetchQueryIndex(prefix = '', url = `${prefix}/query-index.json`) {
+  indexCache[url] ||= fetchIndexRows(url)
     .then((rows) => new Map(rows
       .filter((r) => r.path)
       .map((r) => [toIndexPath(r.path), r])))
     .catch(() => {
       // allow a later caller to retry
-      delete indexCache[prefix];
+      delete indexCache[url];
       return new Map();
     });
-  return indexCache[prefix];
+  return indexCache[url];
 }
 
 /**
@@ -116,4 +117,25 @@ export async function applySectionBackgrounds(main) {
       section.classList.add(toClassName(value));
     }
   });
+}
+
+/**
+ * Runs `callback` once, when `element` comes near the viewport. Third-party widgets use it
+ * so their scripts and frames load only when the visitor is about to see them, never in
+ * the eager (LCP) phase.
+ * @param {Element} element The element to watch
+ * @param {Function} callback Called once
+ * @param {string} rootMargin How far ahead of the viewport to start
+ */
+export function whenNearViewport(element, callback, rootMargin = '200px') {
+  if (typeof IntersectionObserver !== 'function') {
+    callback();
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    callback();
+  }, { rootMargin });
+  observer.observe(element);
 }

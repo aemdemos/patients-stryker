@@ -713,9 +713,8 @@ var CustomImportScript = (() => {
     if (parent.textContent.trim() !== "") return null;
     return parent;
   }
-  var EMPTY_ALT_SENTINEL = "Image without alt text";
-  function altToLinkText(alt) {
-    return alt || EMPTY_ALT_SENTINEL;
+  function altToLinkText(alt, src) {
+    return alt || src;
   }
   function transform4(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
@@ -727,7 +726,7 @@ var CustomImportScript = (() => {
       const linkedAnchor = findLinkedDmCarrier(img);
       if (linkedAnchor) {
         linkedAnchor.setAttribute("title", src);
-        linkedAnchor.textContent = altToLinkText(alt);
+        linkedAnchor.textContent = altToLinkText(alt, src);
         return;
       }
       const parent = img.parentElement;
@@ -737,7 +736,7 @@ var CustomImportScript = (() => {
       }
       const a = doc.createElement("a");
       a.href = src;
-      a.textContent = altToLinkText(alt);
+      a.textContent = altToLinkText(alt, src);
       img.replaceWith(a);
     });
   }

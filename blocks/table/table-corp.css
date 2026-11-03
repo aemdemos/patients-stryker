@@ -1,0 +1,4 @@
+/* www.stryker.com tables keep the copy size (14px) at every width (measured: news-archive) */
+body.corp .table.block table {
+  font-size: var(--body-font-size-m);
+}

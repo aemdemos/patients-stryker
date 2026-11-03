@@ -1,0 +1,2156 @@
+/* global WebImporter */
+/*
+ * www.stryker.com components → EDS content: the handlers of the corp section builder
+ * (tools/importer/corp-section-builder.js), one per row of the approved decision table
+ * tools/importer/decisions/component-map.json (outcome + contentModel). A handler gets the
+ * component's wrapper element and the builder context, and returns builder items.
+ *
+ * Add a component by adding a handler under its wrapper class (or `#id`) in COMPONENTS.
+ * Components without one are kept as cleaned default content (fallback) and reported.
+ */
+import {
+  BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
+  plainBoldParagraphs, serifHeadings, headingSizeStyle, contentCopy, colourClass, markRuns,
+} from './corp-richtext.js';
+import { standaloneImageNodes, isEmptyXf } from './corp-components.js';
+import heroImageSlideParser from './parsers/hero-image-slide.js';
+import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
+import { videoLink } from './parsers/video.js';
+import procareModalPath from '../corp-modal-path.js';
+import { SETS as DM_SETS } from '../data/dm-sets.js';
+
+const SOURCE = 'https://www.stryker.com';
+
+/* ---------- helpers ---------- */
+
+const block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
+
+const linkTo = (doc, href, label = href) => {
+  const a = doc.createElement('a');
+  a.setAttribute('href', href);
+  a.textContent = label;
+  return a;
+};
+
+const para = (doc, ...children) => {
+  const p = doc.createElement('p');
+  p.append(...children);
+  return p;
+};
+
+/** Bracket colour class of an inline style colour (`color: rgb(…)`), or ''. */
+function styleColour(el) {
+  const m = ((el && el.getAttribute('style')) || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+  if (!m) return '';
+  const v = m[1].trim().toLowerCase();
+  const rgb = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+  const hex = rgb ? rgb.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, '0')).join('')
+    : (v.match(/^#([0-9a-f]{6})$/) || [])[1] || '';
+  return colourClass(hex);
+}
+
+// rendered background classes of a text / headline box → section style (stryker.com palette:
+// .bg-* in base.min.css; colours outside it are not rendered, so they have no style)
+const BOXES = [
+  ['dimensional-box', 'dimensional'],
+  ['bg-gold', 'bg-gold'], ['bg-light-gray', 'bg-light-gray'], ['bg-lighter-gray', 'bg-gray'],
+  ['bg-dark-gray', 'bg-dark-gray'], ['bg-white', 'bg-white'], ['bg-blue', 'bg-blue'],
+  ['bg-purple', 'bg-purple'], ['bg-teal', 'bg-teal'], ['bg-gray', 'bg-silver'],
+  ['bg-orange', 'bg-dark-gold'],
+];
+const boxOf = (el) => (BOXES.find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+/** The background colour style of a box (the dimensional box's own colour included). */
+const boxColour = (el) => (BOXES.slice(1)
+  .find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
+/**
+ * Hero Corp box-<colour>: the coloured box behind the text of a slide or banner (its Large
+ * Headline / rich text has a background, e.g. environmental-programs: white), approved
+ * 2026-10-29. null without one.
+ */
+const heroBox = (overlay) => {
+  const box = overlay && overlay.querySelector('.c-largeheadline > .has-background, .c-rich-text-editor > .has-background');
+  const colour = boxColour(box);
+  return colour ? `box-${colour.replace(/^bg-/, '')}` : null;
+};
+
+/**
+ * The section styles of a box on its own: its colour and `boxed` (the background covers the
+ * box in the column with the box padding, not the full width), `shadow-box` for the
+ * dimensional box (approved 2026-10-29).
+ */
+const boxStyles = (el) => {
+  const colour = boxColour(el);
+  const shadow = !!(el && el.classList.contains('dimensional-box'));
+  return [colour || '', colour || shadow ? 'boxed' : '', shadow ? 'shadow-box' : ''].filter(Boolean);
+};
+
+/** The largest fontsize-<n>-vw / fontsize-<n>vw size in an element (3-5 → 3.5), or 0. */
+function vwSize(el) {
+  return [...el.querySelectorAll('[class*="vw"]')].reduce((max, span) => {
+    const m = span.className.match(/fontsize-(\d+)(?:-(\d+))?-?vw/);
+    return m ? Math.max(max, Number(`${m[1]}.${m[2] || 0}`)) : max;
+  }, 0);
+}
+
+// AEM box spacing fields as rendered (style="padding-top: 4%; …") → tokens (decisions
+// property-map: carried exactly, lift and shift); scripts/corp-spacing.js applies them
+const SPACING_PROPS = ['padding-top', 'padding-bottom', 'padding-left', 'padding-right',
+  'margin-top', 'margin-bottom', 'margin-left', 'margin-right'];
+
+/**
+ * The box spacing of a rendered text / Large Headline box: padding-top-4 (padding-top 4% of the
+ * column), padding-left-3-6 (3.6%), margin-top-minus-8 (-8%), padding-top-10px. Empty fields
+ * ("padding-top: %;") and values the browser ignores (e.g. "10px%") have no effect on live, so
+ * none here.
+ */
+export function spacingOf(box) {
+  const style = (box && box.getAttribute && box.getAttribute('style')) || '';
+  return SPACING_PROPS.flatMap((prop) => {
+    const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)(%|px)\\s*(?:;|$)`));
+    if (!m || Number(m[1]) === 0) return [];
+    return [`${prop}-${m[1].replace('-', 'minus-').replace('.', '-')}${m[2] === 'px' ? 'px' : ''}`];
+  });
+}
+
+/** The spacing tokens of the first spaced box among items (a hero text box), or []. */
+const itemsSpacing = (items) => ((items || []).find((it) => it.type === 'flow' && (it.spacing || []).length) || {}).spacing || [];
+
+/** A [[spacing,…]] paragraph: the start of a spaced box in a cell (no tokens = the end). */
+function spacingMarker(doc, tokens) {
+  const p = doc.createElement('p');
+  p.textContent = `[[${['spacing', ...tokens].join(',')}]]`;
+  return p;
+}
+
+/**
+ * Flow items of one container (a cell, a flex section) → nodes with [[spacing]] markers
+ * around the spaced boxes.
+ */
+function markedNodes(items, nodesOf, doc) {
+  let open = false;
+  return items.flatMap((it) => {
+    const tokens = it.type === 'flow' ? it.spacing || [] : [];
+    const nodes = nodesOf(it);
+    if (!nodes.length) return [];
+    if (tokens.length) {
+      open = true;
+      return [spacingMarker(doc, tokens), ...nodes];
+    }
+    if (open) {
+      open = false;
+      return [spacingMarker(doc, []), ...nodes];
+    }
+    return nodes;
+  });
+}
+
+/** A button paragraph: gold → Bold + Italic link, other colours → Bold link (conventions). */
+function buttonNode(doc, source, label) {
+  const a = linkTo(doc, newTabHref(source, absoluteAsset(source.getAttribute('href'))), label);
+  const strong = doc.createElement('strong');
+  if (source.classList.contains('btn-gold')) {
+    const em = doc.createElement('em');
+    em.append(a);
+    strong.append(em);
+  } else {
+    strong.append(a);
+  }
+  return para(doc, strong);
+}
+
+/**
+ * Inline content directly in a rich-text box (text, <sup>, links … not in a paragraph, e.g.
+ * the page hero p.content copied without its <p>) → paragraphs; a double <br> starts a
+ * new paragraph, as it reads on the source.
+ */
+function wrapInlineRuns(box, doc) {
+  let run = null;
+  [...box.childNodes].forEach((node) => {
+    // a <br> already dropped as the second half of a paragraph break
+    if (node.parentNode !== box) return;
+    if (node.nodeType === 1 && (BLOCK_TAGS.has(node.tagName) || node.tagName === 'DIV')) {
+      run = null;
+      return;
+    }
+    if (node.nodeType === 1 && node.tagName === 'BR' && run) {
+      let next = node.nextSibling;
+      while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+      if (next && next.nodeName === 'BR') {
+        next.remove();
+        node.remove();
+        run = null;
+        return;
+      }
+    }
+    if (!run) {
+      if (node.nodeType === 3 && !node.textContent.trim()) return;
+      run = doc.createElement('p');
+      node.before(run);
+    }
+    run.append(node);
+  });
+}
+
+/** Rich text (cleaned) → block nodes, each with its copy style (as the news rules). */
+export function richTextNodes(source, doc) {
+  const box = contentCopy(source, doc);
+  wrapInlineRuns(box, doc);
+  const plainBold = plainBoldParagraphs(box);
+  const serifHeads = serifHeadings(box);
+  // text with a plain <b> run (Humanist bold on the source, not span.futura-bold): read before
+  // the cleaner turns every bold into <strong>
+  const plainB = (b) => !b.closest('.futura-bold') && !b.querySelector('.futura-bold');
+  const inlineBold = new Set([...box.querySelectorAll('p, li, ul, ol')]
+    .filter((el) => [...el.querySelectorAll('b')].some(plainB)));
+  // h2 / h3 authored 1.25x / 1.5x (their size class goes with the cleaning)
+  const headingSizes = new Map([...box.querySelectorAll('h2, h3')]
+    .map((h) => [h, headingSizeStyle(h)]).filter(([, s]) => s));
+  // copy styles per top-level element: one serif lead paragraph keeps its own font
+  const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+  // each run's own size / font, for what the section styles cannot carry (finishRuns)
+  markRuns(box);
+  const { centred, size } = cleanRichText(box);
+  const nodes = [];
+  [...box.childNodes].forEach((node) => {
+    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) nodes.push(node);
+    else if (node.nodeType === 1 && node.tagName === 'IMG') nodes.push(para(doc, node));
+    else if (node.nodeType === 1 && node.tagName === 'DIV') {
+      nodes.push(...[...node.children].filter((el) => BLOCK_TAGS.has(el.tagName)));
+    } else if (text(node)) nodes.push(para(doc, node.cloneNode(true)));
+  });
+  nodes.forEach((node) => {
+    if (plainBold.has(node)) node.boldBody = true;
+    if (inlineBold.has(node)) node.inlineBold = true;
+    if (serifHeads.has(node)) node.serifHeading = true;
+    if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
+  });
+  // elements without copy of their own (headings, images) follow the copy around them
+  let last = null;
+  nodes.forEach((node) => {
+    const style = elementStyles.get(node);
+    node.copyStyle = style === undefined || style === null ? last : style;
+    if (node.copyStyle !== null) last = node.copyStyle;
+  });
+  const first = nodes.find((node) => node.copyStyle !== null);
+  nodes.forEach((node) => {
+    if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
+  });
+  return { nodes, centred };
+}
+
+/** Counters → one Statistics (count-up, count-once, cols-N) block: stryker.com counters
+ * count up once and keep their numbers (the block's default recounts on every view). */
+function statistics(counters, ctx, columns = counters.length, countUp = true) {
+  const rows = counters.map((c) => (c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]));
+  const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
+  // left-aligned counters (numberCounterAlignment text-left): the left option (approved)
+  const left = counters.some((c) => c.left) ? ', left' : '';
+  return block(ctx.doc, `Statistics (${countUp ? 'count-up, count-once, ' : ''}${cols}${left})`, rows);
+}
+
+/** Section-level nodes of items (in one section: tabs panels, flex sections). */
+export function inlineNodes(items, ctx, { marks = true } = {}) {
+  if (marks && items.some((it) => it.type === 'flow' && (it.spacing || []).length)) {
+    return markedNodes(items, (it) => inlineNodes([it], ctx, { marks: false }), ctx.doc);
+  }
+  const out = [];
+  let counters = [];
+  const flushCounters = () => {
+    // consecutive counters: one Statistics block
+    if (counters.length) out.push(statistics(counters, ctx));
+    counters = [];
+  };
+  items.forEach((item) => {
+    if (item.type !== 'counter') flushCounters();
+    if (item.type === 'counter') counters.push(item);
+    else if (item.type === 'flow') out.push(...item.nodes);
+    else if (item.type === 'block') out.push(item.block);
+    else if (['own', 'fragment', 'form'].includes(item.type)) {
+      if (item.type === 'own' && (item.styles || []).length) ctx.report.notes.push(`section style ${item.styles.join(', ')} of a nested ${item.kind} dropped`);
+      out.push(...item.nodes);
+    } else if (item.type === 'group') out.push(...inlineNodes(item.items, ctx));
+    else if (item.type === 'anchor') ctx.report.notes.push(`anchor #${item.id} inside a nested section, dropped`);
+  });
+  flushCounters();
+  return out;
+}
+
+/* ---------- column controls (component-map rows columncontrol/cols*) ---------- */
+
+const hasContent = (items) => items.some((it) => it.type !== 'flow' || it.nodes.length);
+const isTitle = (node) => /^H[1-6]$/.test(node.tagName)
+  || (node.tagName === 'P' && node.querySelector('strong') && text(node.querySelector('strong')) === text(node));
+const isCta = (node) => node.tagName === 'P' && node.querySelectorAll('a').length === 1
+  && text(node.querySelector('a')) === text(node);
+
+/** Branch F: image first, then a title and a CTA, no video. */
+function isCard(items) {
+  if (!items.every((it) => it.type === 'flow')) return false;
+  if (!items.length || items[0].role !== 'image') return false;
+  const rest = items.slice(1).flatMap((it) => it.nodes);
+  return rest.length >= 2 && isTitle(rest[0]) && isCta(rest[rest.length - 1]);
+}
+
+/** A cell's content: flow nodes, and blocks that have a cell form (video links). */
+function cellNodes(items, ctx, { marks = false } = {}) {
+  if (marks) return markedNodes(items, (it) => cellNodes([it], ctx), ctx.doc);
+  return items.flatMap((it) => {
+    if (it.type === 'flow') return it.nodes;
+    if (it.type === 'block' && it.cellNodes) return it.cellNodes;
+    if (it.type === 'separator') {
+      ctx.report.notes.push('section separator inside a column, dropped');
+      return [];
+    }
+    return [];
+  });
+}
+
+// a label: a paragraph that is one bold run (Futura <strong><em> or plain <strong>)
+const isLabel = (node) => node.tagName === 'P' && node.querySelector('strong')
+  && text(node.querySelector('strong')) === text(node) && !node.querySelector('a, picture, img');
+const sizeOf = (style) => (style || '').split(', ').find((s) => /^p-\d/.test(s)) || '';
+// label sizes with a section style (styles/styles-corp.css label-*)
+const LABEL_STYLES = { 'p-1-5': 'label-1-5', 'p-1-75': 'label-1-75', 'p-2': 'label-2' };
+
+/**
+ * The section styles of a Columns block: the copy style shared by every text node of the
+ * cells but the labels (labels are often set larger than the copy beside them), plus the
+ * labels' size when they share one that differs from the copy.
+ */
+function sharedCopyStyle(cells, ctx) {
+  const nodes = cells.flat().filter((n) => n.copyStyle !== undefined);
+  // the copy style of most of the text (a block has one set of section styles): e.g. a
+  // short serif title over the body copy keeps the body's style; the others are reported
+  const weights = new Map();
+  nodes.filter((n) => !isLabel(n)).forEach((n) => {
+    const style = n.copyStyle || '';
+    weights.set(style, (weights.get(style) || 0) + text(n).length);
+  });
+  if (!weights.size) {
+    // only labels (e.g. image + caption tiles): their shared size is the block's copy size
+    const sizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+    return sizes.size === 1 ? [...sizes][0] : '';
+  }
+  const [copy] = [...weights.entries()].sort((a, b) => b[1] - a[1])[0];
+  if (weights.size > 1) {
+    const others = [...weights.keys()].filter((s) => s !== copy).map((s) => s || 'default');
+    ctx.report.notes.push(`Columns: mixed copy styles, kept ${copy || 'default'} (also ${others.join(' / ')})`);
+  }
+  const labelSizes = new Set(nodes.filter(isLabel).map((n) => sizeOf(n.copyStyle)));
+  const [labelSize] = [...labelSizes];
+  if (labelSizes.size !== 1 || !labelSize || labelSize === sizeOf(copy)) return copy;
+  if (LABEL_STYLES[labelSize]) return [copy, LABEL_STYLES[labelSize]].filter(Boolean).join(', ');
+  ctx.report.notes.push(`Columns: label size ${labelSize} has no label style, labels take the copy size`);
+  return copy;
+}
+
+/**
+ * The section styles of block cells (Columns, a hero overlay): the shared copy style, and
+ * h-serif when every h2 / h3 in them is serif.
+ */
+function cellStyles(cells, ctx) {
+  const copy = sharedCopyStyle(cells, ctx);
+  const heads = cells.flat().filter((n) => /^H[23]$/.test(n.tagName));
+  // a heading that is bold throughout (span.futura-bold): Futura whatever the section font
+  const allBold = (h) => h.children.length === 1 && h.firstElementChild.tagName === 'STRONG'
+    && text(h.firstElementChild) === text(h) && !h.querySelector('em');
+  const serif = heads.some((n) => n.serifHeading)
+    && heads.every((n) => n.serifHeading || allBold(n));
+  if (!serif && heads.some((n) => n.serifHeading)) ctx.report.notes.push('serif and Futura h2 / h3 in one block, kept in Futura');
+  // without h-serif a bold-throughout h2 is a plain corp h2 (Futura bold by default,
+  // typography-map futura-heading), not the Columns bold display heading; a corp h3 is
+  // Egyptienne by default, so its bold stays
+  if (!serif) {
+    heads.filter((h) => h.tagName === 'H2' && allBold(h)).forEach((h) => unwrap(h.firstElementChild));
+  }
+  // plain bold in the cells (Humanist bold, e.g. "Reorder #7502"): bold-body
+  const boldBody = cells.flat().some((n) => n.inlineBold || n.boldBody);
+  // the h2 / h3 size when every one of them is authored at the same larger size
+  const sizes = new Set(heads.map((n) => n.headingSize || ''));
+  const headingSize = sizes.size === 1 ? [...sizes][0] : '';
+  return [...(copy ? copy.split(', ') : []), serif ? 'h-serif' : '', headingSize, boldBody ? 'bold-body' : ''].filter(Boolean);
+}
+
+// a fraction of the 12-column grid → its style suffix (8 → 2-3)
+const FRACTIONS = {
+  3: '1-4', 4: '1-3', 6: '1-2', 8: '2-3', 9: '3-4',
+};
+
+/**
+ * The section styles of a column with content of its own in an otherwise empty column
+ * control (widths in twelfths): col-<width> and, when it does not start at the left,
+ * col-at-<start> (e.g. a 2/3 column at the left → col-2-3; the right half → col-1-2,
+ * col-at-1-2). Full-width or unknown splits: none.
+ */
+function columnStyles(widths, index, ctx, starts = null) {
+  if (!widths || !widths[index]) return [];
+  const width = widths[index];
+  const start = starts ? starts[index] : widths.slice(0, index).reduce((sum, w) => sum + w, 0);
+  if (width >= 12) return [];
+  if (!FRACTIONS[width] || (start && !FRACTIONS[start])) {
+    ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
+    return [];
+  }
+  return [`col-${FRACTIONS[width]}`, ...(start ? [`col-at-${FRACTIONS[start]}`] : [])];
+}
+
+/**
+ * A column control (or a responsive-grid row) → items, by the approved branch order:
+ * A all empty → nothing; B one column → its content; counters only → Statistics; C a form
+ * beside content → flex section (flex-67-33 / flex-33-67 by the split); D a block beside
+ * content → flex section; E an XF beside content → flex section; F image + title + CTA per
+ * column → Cards Corp; G → Columns (variant by the split, modifiers by the cell content).
+ * @param {object[][]} columns the items of each column
+ * @param {object} split { variant, flex, cards } of the column control
+ * @param {number[]} [widths] the columns' widths in twelfths (rendered col-sm-N)
+ * @param {number[]} [starts] where each column starts, in twelfths (grid rows with offsets)
+ */
+export function columnItems(columns, split, ctx, widths = null, starts = null) {
+  const { doc } = ctx;
+  const anchors = [];
+  const cols = columns.map((items) => items.filter((it) => {
+    if (it.type === 'anchor') anchors.push(it);
+    return it.type !== 'anchor';
+  }));
+  const filled = cols.filter(hasContent);
+  if (!filled.length) return anchors;
+  if (filled.length === 1) {
+    // B: one column with content: its content, at that column's width and position
+    // (lift and shift: e.g. a news article body in the 2/3 column of a 2/3 + 1/3 control)
+    const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx, starts);
+    if (!styles.length) return [...anchors, { type: 'boundary' }, ...filled[0], { type: 'boundary' }];
+    return [...anchors, { type: 'group', styles, items: filled[0] }];
+  }
+
+  const all = filled.flat();
+  if (filled.every((items) => items.every((it) => it.type === 'counter'))) {
+    return [...anchors, {
+      type: 'own', kind: 'statistics', styles: [], nodes: [statistics(all, ctx, filled.length)],
+    }];
+  }
+
+  const flex = (styles, items) => ({
+    type: 'own', kind: 'flex', styles: ['flex', ...styles], nodes: inlineNodes(items, ctx),
+  });
+  const formCol = filled.findIndex((items) => items.some((it) => it.type === 'form'));
+  if (formCol >= 0) {
+    // C: the form column's text above / below the form goes in the sections around it
+    const items = filled[formCol];
+    const at = items.findIndex((it) => it.type === 'form');
+    const before = items.slice(0, at).filter((it) => hasContent([it]));
+    const after = items.slice(at + 1).filter((it) => hasContent([it]));
+    const inFlex = filled.map((col, i) => (i === formCol ? [items[at]] : col)).flat();
+    return [
+      ...anchors, { type: 'boundary' }, ...before,
+      flex(split.flex ? [split.flex] : [], inFlex),
+      { type: 'boundary' }, ...after, { type: 'boundary' },
+    ];
+  }
+  const inCell = (it) => it.type === 'flow' || it.type === 'separator' || (it.type === 'block' && it.cellNodes);
+  if (!all.every(inCell)) {
+    // D / E: a flex section has equal columns; a grid row of unequal widths stays stacked
+    // (its columns' content mixes in the section's wrappers, so widths cannot follow)
+    if (split.grid && split.unequal) {
+      ctx.report.notes.push(`responsive grid row (${split.variant}) with blocks or fragments: no layout for unequal widths, stacked`);
+      return columns.flat();
+    }
+    // tabs alone in the last column: the flex section keeps their tabbed style, the other
+    // columns' content comes before the first tab title, so scripts.js buildTabbedSections
+    // leaves it beside the tabs (approved 2026-10-31; emergency-medical-services: video |
+    // Westland / Delhi / Vernon). Not when another column has headings as deep as the titles
+    const last = filled[filled.length - 1];
+    if (last.length === 1 && last[0].type === 'own' && last[0].kind === 'tabs') {
+      const others = inlineNodes(filled.slice(0, -1).flat(), ctx);
+      const level = Number((last[0].nodes.find((n) => /^H[1-6]$/.test(n.tagName)) || { tagName: 'H6' }).tagName[1]);
+      if (!others.some((n) => /^H[1-6]$/.test(n.tagName) && Number(n.tagName[1]) >= level)) {
+        return [...anchors, {
+          type: 'own', kind: 'flex', styles: ['flex', ...last[0].styles], nodes: [...others, ...last[0].nodes],
+        }];
+      }
+      ctx.report.notes.push('tabs beside content with headings as deep as the tab titles: tabbed style dropped');
+    }
+    return [...anchors, flex([], all)];
+  }
+
+  if (split.cards && filled.length >= 2 && filled.every(isCard)) {
+    // F: Cards Corp, one row per column: image | title + text + CTA
+    const rows = filled.map((items) => [items[0].nodes, items.slice(1).flatMap((it) => it.nodes)]);
+    return [...anchors, {
+      type: 'own', kind: 'cards', styles: [], nodes: [block(doc, `Cards Corp (${split.cards})`, rows)],
+    }];
+  }
+
+  // G: Columns, one row, one cell per column (empty columns keep their cell). A cell whose
+  // content is one spaced box (or boxes with the same spacing) gets cell-<N>-<token> options;
+  // other spaced boxes are marked inside the cell ([[spacing,…]])
+  const modifiers = [];
+  const cells = cols.map((items, i) => {
+    const content = items.filter((it) => (it.type === 'flow' && it.nodes.length) || (it.type === 'block' && it.cellNodes));
+    const spaced = content.filter((it) => (it.spacing || []).length);
+    if (!spaced.length) return cellNodes(items, ctx);
+    const same = new Set(spaced.map((it) => it.spacing.join(' '))).size === 1;
+    if (same && spaced.length === content.length) {
+      modifiers.push(...spaced[0].spacing.map((t) => `cell-${i + 1}-${t}`));
+      return cellNodes(items, ctx);
+    }
+    return cellNodes(items, ctx, { marks: true });
+  });
+  // large-headline sets the Large Headline type scale on every cell (serif copy and lists,
+  // grey italic lines): only when no column is ordinary rich text (about 80 column controls
+  // put a Large Headline next to rich text, e.g. jr45/july); the h1 scale applies anyway
+  const headline = cols.some((items) => items.some((it) => it.role === 'headline'));
+  // rich text in any column, also under a Large Headline in the same column (its lines carry
+  // their own sizes and fonts as tags): core-2-console "Everyone claims…", safeair, high-speed-
+  // drills, where large-headline set that copy in the 21px serif (Humanist 14px on the source)
+  const richText = cols.some((items) => items.some((it) => it.role === 'text'));
+  if (headline && !richText) modifiers.push('large-headline');
+  if (headline && richText) ctx.report.notes.push('Columns: Large Headline next to rich text, large-headline modifier left out');
+  const flows = (items) => items.filter((it) => it.type === 'flow' && it.nodes.length);
+  const first = flows(cols[0]);
+  const last = flows(cols[cols.length - 1]);
+  if (first.length && first.every((it) => it.box === 'bg-gold')) modifiers.push('gold-first');
+  if (last.length && last[0].box === 'bg-light-gray') modifiers.push('gray-lead');
+  if (last.length && last.every((it) => it.box === 'dimensional')) modifiers.push('boxed-last');
+  if (cols.every((items) => flows(items).every((it) => it.role === 'image'))) modifiers.push('media-pair');
+  const boxes = cols.flatMap((items) => flows(items)).filter((it) => it.box);
+  const used = { 'bg-gold': 'gold-first', 'bg-light-gray': 'gray-lead', dimensional: 'boxed-last' };
+  boxes.filter((it) => !modifiers.includes(used[it.box])).forEach((it) => {
+    ctx.report.notes.push(`Columns: ${it.box} box not reproduced (no variant for it in that cell): ${text(it.nodes[0] || doc.createElement('p')).slice(0, 40)}`);
+  });
+  const variants = [split.variant, ...modifiers].filter(Boolean);
+  const name = variants.length ? `Columns (${variants.join(', ')})` : 'Columns';
+  return [...anchors, {
+    type: 'own', kind: 'columns', styles: cellStyles(cells, ctx), nodes: [block(doc, name, [cells])],
+  }];
+}
+
+// AEM column-control splits (component-map rows)
+const SPLITS = {
+  cols2: { variant: 'columns-50-50', cards: 'two-up' },
+  'cols2_2-3_1-3': { variant: 'columns-67-33', flex: 'flex-67-33' },
+  'cols2_1-3_2-3': { variant: 'columns-33-67', flex: 'flex-33-67' },
+  cols3: { variant: '', cards: 'three-up' },
+  cols4: { variant: '' },
+};
+// responsive-grid rows by their column widths
+const GRID_SPLITS = {
+  '6,6': SPLITS.cols2, '8,4': SPLITS['cols2_2-3_1-3'], '4,8': SPLITS['cols2_1-3_2-3'], '4,4,4': SPLITS.cols3, '3,3,3,3': SPLITS.cols4,
+};
+
+function columnControl(el, ctx) {
+  const split = [...el.classList].find((c) => /^cols\d?/.test(c)) || 'cols';
+  const row = el.querySelector(':scope > .colctrl > .row') || el.querySelector('.row');
+  const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
+  const items = columns.map((col) => ctx.collect(col));
+  const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+  // cols: one column = a section boundary
+  if (split === 'cols' || columns.length < 2) {
+    const flat = items.flat();
+    return hasContent(flat) ? [{ type: 'boundary' }, ...flat, { type: 'boundary' }] : flat;
+  }
+  if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
+  return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
+}
+
+/**
+ * The Columns grid options of a responsive-grid row (blocks/columns: grid-…): the columns'
+ * widths in grid units at each breakpoint, `o<N>` an offset before a column, `n` a column
+ * that starts a new line, `h` a hidden one; `of<N>` the grid's columns when not 12 (nested
+ * grid). grid-t-… (tablet) and grid-m-… (phone) only where they differ from the default:
+ * as on AEM, a breakpoint without its own class keeps the default value, column by column.
+ * @param {object[]} specs the columns' gridSpec
+ * @param {number} total the grid's columns
+ */
+export function gridOptions(specs, total) {
+  const value = (spec, bp, key) => spec[bp][key] ?? spec.d[key];
+  const tokens = (bp) => specs.map((spec) => {
+    const beh = value(spec, bp, 'beh');
+    if (beh === 'hide') return 'h';
+    const o = value(spec, bp, 'o');
+    return `${o ? `o${o}-` : ''}${beh === 'newline' ? 'n' : ''}${value(spec, bp, 'w')}`;
+  }).join('-');
+  const d = tokens('d');
+  const t = tokens('t');
+  const m = tokens('m');
+  return [
+    `grid-${total === 12 ? '' : `of${total}-`}${d}`,
+    ...(t !== d ? [`grid-t-${t}`] : []),
+    ...(m !== d ? [`grid-m-${m}`] : []),
+  ];
+}
+
+function gridRow(columns, widths, ctx, { specs = [], total = 12 } = {}) {
+  const offsets = specs.some((spec) => spec.d.o);
+  const split = total === 12 && !offsets ? GRID_SPLITS[widths.join(',')] : null;
+  if (split) {
+    // the split variants stack below 600px and keep the default widths from 600px; a row
+    // laid out otherwise on tablet / phone also gets the grid options (they set the layout)
+    const grid = gridOptions(specs, total);
+    const stacked = `grid-m-${specs.map(() => 12).join('-')}`;
+    if (!grid.some((option) => option.startsWith('grid-t-')) && grid.includes(stacked)) {
+      return columnItems(columns, split, ctx, widths);
+    }
+    const variant = [split.variant, ...grid].filter(Boolean).join(', ');
+    return columnItems(columns, { ...split, variant, grid: true }, ctx, widths);
+  }
+  // any other row: Columns with the source widths, offsets and breakpoints (a single filled
+  // column keeps its width and position as column styles when it is a fraction of 12)
+  const starts = [];
+  specs.reduce((at, spec) => {
+    starts.push(at + (spec.d.o || 0));
+    return at + (spec.d.o || 0) + spec.d.w;
+  }, 0);
+  const twelfths = total === 12 ? { widths, starts } : null;
+  const grid = {
+    variant: gridOptions(specs, total).join(', '), grid: true, unequal: offsets || new Set(widths).size > 1,
+  };
+  return columnItems(columns, grid, ctx, twelfths?.widths, twelfths?.starts);
+}
+
+/* ---------- components ---------- */
+
+function textComponent(el, ctx) {
+  const source = el.querySelector('.c-rich-text-editor > div') || el.querySelector('.c-rich-text-editor') || el;
+  const { nodes, centred } = richTextNodes(source, ctx.doc);
+  if (!nodes.length) return [];
+  const box = boxOf(source);
+  const item = {
+    type: 'flow', role: 'text', nodes, centred, box, spacing: spacingOf(source),
+  };
+  // a coloured / dimensional box on its own (not in a column): its section shows the box
+  item.styles = boxStyles(source);
+  return [item];
+}
+
+// image border classes (base.min.css .c-standalone-image img.bor-*) → section styles
+const BORDERS = {
+  'bor-teal': 'image-border', 'bor-black': 'image-border-black', 'bor-gray': 'image-border-grey', 'bor-dark_gray': 'image-border-grey', 'bor-dark_gray_40T': 'image-border-grey',
+};
+function standaloneImage(el, ctx) {
+  const nodes = standaloneImageNodes(el, ctx.doc);
+  if (!nodes.length) return [];
+  const img = el.querySelector('img[class*="bor-"]');
+  const cls = img && [...img.classList].find((c) => c.startsWith('bor-'));
+  if (cls && !BORDERS[cls]) ctx.report.notes.push(`image border ${cls}: no style, imported without border`);
+  const border = cls && BORDERS[cls];
+  return [{
+    type: 'flow', role: 'image', nodes, ...(border ? { styles: [border], own: true } : {}),
+  }];
+}
+
+function buttons(el, ctx) {
+  const { doc } = ctx;
+  // a curated CTA's title (h4.cta-title, often linked) and description (p.cta-description)
+  // above its button
+  const head = [];
+  const title = el.querySelector('.cta-title');
+  if (title && text(title)) {
+    const h = doc.createElement(/^H[1-6]$/.test(title.tagName) ? title.tagName.toLowerCase() : 'h4');
+    const a = title.querySelector('a[href]');
+    // the title is Egyptienne Light, a linked one black (stryker.com .c-curatedcta .cta-title,
+    // e.g. surgical/learn "Contact us")
+    const label = (value, link) => `[[${link ? 'serif,color-black' : 'serif'}]${value}]`;
+    h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), label(text(a), true)) : doc.createTextNode(label(text(title))));
+    head.push(h);
+  }
+  // a subtitle above the button (p.cta-subtitle.subheading: Futura bold 21px, black;
+  // performance-series-blades "Stryker Precision Saw") → a Bold line, 1.5 × the copy
+  el.querySelectorAll('.cta-subtitle').forEach((d) => {
+    if (!text(d)) return;
+    const strong = doc.createElement('strong');
+    strong.textContent = `[[size-1-5em]${text(d)}]`;
+    head.push(para(doc, strong));
+  });
+  el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
+  const nodes = [...el.querySelectorAll('a[href]')].filter((a) => !a.closest('.cta-title, .cta-description')).map((a) => {
+    // a text CTA (a.action-link: Futura bold uppercase teal with a triangle, as span.standalone-
+    // link; 419 curated CTAs, e.g. infinity "LINKEDIN") → bold + underline link (link-strong),
+    // not a button
+    if (text(a) && a.classList.contains('action-link')) {
+      const u = doc.createElement('u');
+      u.textContent = text(a);
+      const link = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+      link.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(link);
+      return para(doc, strong);
+    }
+    if (text(a)) return buttonNode(doc, a, text(a));
+    // an image button (.cta-img): the image, linked
+    const source = a.querySelector('img');
+    if (!source) return null;
+    const img = doc.createElement('img');
+    img.setAttribute('src', source.getAttribute('src'));
+    img.setAttribute('alt', source.getAttribute('alt') || '');
+    const link = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+    link.append(img);
+    if (!source.getAttribute('alt')) ctx.report.notes.push(`image button without alt text: ${source.getAttribute('src')}`);
+    return para(doc, link);
+  }).filter(Boolean);
+  // purple / blue buttons: the btn-purple / btn-blue section style (approved 2026-10-29)
+  const colour = ['btn-purple', 'btn-blue'].find((c) => el.querySelector(`a.${c}`));
+  return [
+    ...(head.length ? [{ type: 'flow', role: 'text', nodes: head }] : []),
+    ...(nodes.length ? [{
+      type: 'flow', role: 'cta', nodes, ...(colour ? { styles: [colour], own: true } : {}),
+    }] : []),
+  ];
+}
+
+/**
+ * Large Headline: line1 + line2 in order; authored headings keep their level, plain lines
+ * become paragraphs. Formatting through the corp rich-text rules. When the page has no h1,
+ * the first Futura vw line becomes the h1.
+ */
+function largeHeadline(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-largeheadline > .largeheadline') || el;
+  const lines = [...root.querySelectorAll('.line')];
+  const nodes = [];
+  let centred = false;
+  (lines.length ? lines : [root]).forEach((line) => {
+    const box = contentCopy(line, doc);
+    const futuraVw = !!line.querySelector('.futura-bold') && vwSize(line) > 0;
+    // Egyptienne h2 / h3 (the source default without span.futura-bold), read before cleaning
+    const serifHeads = serifHeadings(box);
+    // a line set in a centred block (often a <div style="text-align: center">, which the
+    // rich-text cleaner renames without its style)
+    const squashed = (e) => text(e).replace(/\s+/g, '');
+    const centredText = [...line.querySelectorAll('[style*="text-align"]')]
+      .filter((e) => /text-align:\s*center/i.test(e.getAttribute('style')))
+      .map(squashed).join('');
+    if (squashed(line) && centredText === squashed(line)) centred = true;
+    // inline runs between block elements become paragraphs
+    let run = null;
+    [...box.childNodes].forEach((node) => {
+      if (node.nodeType === 1 && (BLOCK_TAGS.has(node.tagName) || node.tagName === 'DIV')) {
+        run = null;
+        return;
+      }
+      if (!run) {
+        run = doc.createElement('p');
+        node.before(run);
+      }
+      run.append(node);
+    });
+    // an h4 line is Futura bold on live unless its text is set in Egyptienne (the innermost
+    // font class): bold, as the Columns large-headline title is the light serif when plain
+    // (24 of the 34 Large Headline h4s, e.g. inspace "Understanding InSpace")
+    box.querySelectorAll('h4').forEach((h) => {
+      const walker = doc.createTreeWalker(h, 4); // NodeFilter.SHOW_TEXT
+      let serif = true;
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const font = n.textContent.trim() && n.parentElement.closest('.urw-egyptienne, .futura-bold');
+        if (n.textContent.trim() && (!font || !font.classList.contains('urw-egyptienne') || !h.contains(font))) serif = false;
+      }
+      if (serif || !text(h)) return;
+      const span = doc.createElement('span');
+      span.className = 'futura-bold';
+      while (h.firstChild) span.append(h.firstChild);
+      h.append(span);
+    });
+    // each run's own size / font (vw lines), for what the section styles cannot carry; plain
+    // Large Headline copy is Egyptienne on live
+    markRuns(box, { serifDefault: true });
+    if (cleanRichText(box).centred) centred = true;
+    [...box.children].filter((n) => text(n) || n.querySelector('img')).forEach((n) => {
+      let node = n;
+      if (n.tagName === 'H1') ctx.h1 = true;
+      if (!ctx.h1 && futuraVw && !nodes.length && n.tagName !== 'H1') {
+        node = rename(n, 'h1');
+        // Futura bold in a paragraph is bold + italic (<strong><em>); in a heading that is the
+        // gold convention, and the line is black on live: plain bold
+        node.querySelectorAll('strong > em').forEach(unwrap);
+        ctx.h1 = true;
+      }
+      if (node === n && serifHeads.has(n)) node.serifHeading = true;
+      nodes.push(node);
+    });
+  });
+  if (!nodes.length) return [];
+  const size = vwSize(root);
+  const box = boxOf(root);
+  // a large-headline band shows its colour as a band; a smaller headline box is a box
+  const styles = size >= 2
+    ? [boxColour(root) || '', 'large-headline'].filter(Boolean)
+    : boxStyles(root);
+  return [{
+    type: 'flow', role: 'headline', nodes, box, size, styles, centred, spacing: spacingOf(root),
+  }];
+}
+
+function sectionTitle(el, ctx) {
+  const title = el.querySelector('.c-section-title');
+  const id = title && title.id;
+  const heading = title && title.querySelector('.title-container h1, .title-container h2, .title-container h3, .title-container h4');
+  const items = id ? [{ type: 'anchor', id }] : [];
+  if (heading && text(heading) && el.getAttribute('data-corp-hidden') !== 'true') {
+    // rendered with a gold bottom border: the Underline heading convention
+    const h = ctx.doc.createElement(heading.tagName.toLowerCase());
+    const u = ctx.doc.createElement('u');
+    u.textContent = text(heading);
+    h.append(u);
+    // a subtitle under the title (e.g. an h3 description on the training video pages)
+    const rest = [...heading.parentElement.children].filter((n) => n !== heading && text(n));
+    const more = rest.flatMap((n) => {
+      const box = contentCopy(n, ctx.doc);
+      cleanRichText(box);
+      return [rename(box, BLOCK_TAGS.has(n.tagName) ? n.tagName.toLowerCase() : 'p')];
+    });
+    items.push({ type: 'flow', role: 'text', nodes: [h, ...more] });
+  }
+  return items;
+}
+
+/**
+ * Block content inside a block cell (a Hero Corp slide overlay): blocks cannot nest, so a
+ * nested block (WebImporter table) gives its cells' content in place, e.g. a page hero in a
+ * slide XF (Columns page-intro: trevo-nxt) or an XF in it (Fragment: its link, which the page
+ * loads as a fragment: sternalplate); 2 pages rendered the block name as text.
+ */
+function cellContent(nodes, doc) {
+  return nodes.flatMap((node) => {
+    if (node.tagName !== 'TABLE') return [node];
+    return [...node.querySelectorAll(':scope > tbody > tr > td, :scope > tr > td')].flatMap((td) => {
+      const kids = [...td.childNodes].filter((n) => n.nodeType === 1 || text(n));
+      if (kids.every((n) => n.nodeType === 1 && BLOCK_TAGS.has(n.tagName))) return kids;
+      return kids.length ? [para(doc, ...kids)] : [];
+    });
+  });
+}
+
+/**
+ * fullWidthImage: a banner image (desktop crop in the picture's
+ * min-width source, mobile crop in its img) with an optional text box. With text: Hero Corp
+ * (image-slide, text-above), as live: the text box over the image from 841px (600px here),
+ * above the image on phones; the Large Headline lines carry their own vw sizes (tags).
+ * Without text: the image as default content.
+ */
+function fullWidthImage(el, ctx) {
+  const { doc } = ctx;
+  const img = el.querySelector('.imgBoxId img') || el.querySelector('img');
+  const box = el.querySelector('.textBoxId');
+  // the text box's own spacing goes on the block (Hero Corp options, scripts/corp-spacing.js)
+  const boxItems = box ? ctx.collect(box) : [];
+  const overlay = boxItems.length
+    ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
+  if (!img && !overlay.length) return [];
+  const source = img && img.closest('picture') && img.closest('picture').querySelector('source[media*="min-width"]');
+  const image = (src) => {
+    const i = doc.createElement('img');
+    i.setAttribute('src', absoluteAsset(src));
+    i.setAttribute('alt', img.getAttribute('alt') || '');
+    return i;
+  };
+  const desktop = img && image((source && source.getAttribute('srcset').split(/[\s,]/)[0]) || img.getAttribute('src'));
+  const mobile = img && source && image(img.getAttribute('src'));
+  if (!overlay.length) return [{ type: 'flow', role: 'image', nodes: [para(doc, desktop)] }];
+  // the text box: col-sm-N wide from the left (right-<100 - N/12>), a bottom-text box anchored
+  // to the image bottom (the Hero Corp text-above / bottom-<n> options, fullWidthImageHero)
+  const bottom = box && box.classList.contains('bottom-text');
+  const variants = ['image-slide', bottom ? 'bottom-0' : 'text-above'];
+  const cols = box && [...box.classList].map((c) => c.match(/^col-sm-(\d+)$/)).find(Boolean);
+  if (cols && Number(cols[1]) < 12) variants.push(`right-${Math.round(100 - (Number(cols[1]) * 100) / 12)}`);
+  // the lines carry their own sizes ([[size-<n>vw]] tags): no size-<n> / copy-size-<n>
+  if (heroBox(box)) variants.push(heroBox(box));
+  variants.push(...itemsSpacing(boxItems));
+  const rows = [desktop && [desktop], mobile && [mobile], [overlay]].filter(Boolean);
+  return [{
+    type: 'own', kind: 'hero', styles: cellStyles([overlay], ctx), nodes: [block(doc, `Hero Corp (${variants.join(', ')})`, rows)],
+  }];
+}
+
+/**
+ * fullWidthImageHero (component-map: Hero Corp image-slide, text-above / bottom-<n>): the page
+ * title above (.hero-space h1, gold on the source: its colour as a colour tag), then the
+ * banner with its text box as fullWidthImage.
+ */
+function fullWidthImageHero(el, ctx) {
+  const items = [];
+  const title = el.querySelector('.hero-space h1, .hero-space h2');
+  // a title line set transparent (rgba(…, 0): 31 heroes) is invisible on live but is the page's
+  // heading for search engines and screen readers: kept, visually hidden ([[visually-hidden]],
+  // approved 2026-11-01; nse/products/silverglide "SILVERGlide")
+  const transparent = title && /color:\s*(transparent|rgba\([^)]*,\s*0\s*\))/i.test(title.getAttribute('style') || '');
+  if (title && text(title) && transparent) {
+    const h = ctx.doc.createElement(title.tagName.toLowerCase());
+    h.textContent = `[[visually-hidden]${text(title)}]`;
+    if (title.tagName === 'H1') ctx.h1 = true;
+    items.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  if (title && text(title) && !transparent) {
+    const box = contentCopy(title, ctx.doc);
+    // the heading's own inline colour (style on the h1) as a span the cleaner maps to a tag
+    const colour = title.getAttribute('style');
+    if (colour && /color/i.test(colour)) {
+      const span = ctx.doc.createElement('span');
+      span.setAttribute('style', colour);
+      span.append(...box.childNodes);
+      box.append(span);
+    }
+    cleanRichText(box);
+    // the hero title is Futura bold at every width (stryker.com .hero-space h1, measured on
+    // surgical/learn): the Bold heading convention
+    if (!box.querySelector('strong')) {
+      const strong = ctx.doc.createElement('strong');
+      strong.append(...box.childNodes);
+      box.append(strong);
+    }
+    if (title.tagName === 'H1') ctx.h1 = true;
+    items.push({ type: 'flow', role: 'text', nodes: [rename(box, title.tagName.toLowerCase())] });
+  }
+  return [...items, ...fullWidthImage(el.querySelector('.pDiv') || el, ctx)];
+}
+
+/** h1-title (component-map: h1): the page title, a plain h1 (black Futura 28px, as live). */
+function h1Title(el, ctx) {
+  const source = el.querySelector('h1');
+  if (!source || !text(source)) return [];
+  const box = contentCopy(source, ctx.doc);
+  cleanRichText(box);
+  ctx.h1 = true;
+  return [{ type: 'flow', role: 'text', nodes: [rename(box, 'h1')] }];
+}
+
+function experienceFragment(el, ctx) {
+  const match = ctx.xfMatches && ctx.xfMatches.get(el);
+  if (match) {
+    const a = linkTo(ctx.doc, match.eds);
+    return [{
+      type: 'fragment', kind: 'fragment', styles: [], nodes: [block(ctx.doc, 'Fragment', [[a]])],
+    }];
+  }
+  if (isEmptyXf(el)) return [];
+  ctx.report.notes.push(`XF not matched to the index, kept inline: ${text(el).slice(0, 50)}`);
+  return ctx.collect(el);
+}
+
+function carousel(el, ctx) {
+  const { doc } = ctx;
+  const slides = [...el.querySelectorAll('.carouselslide:not(.slick-cloned)')];
+  if (!slides.length) return [];
+  const index = ctx.slideIndex || 0;
+  ctx.slideIndex = index + slides.length;
+  // a carousel of several slides: one Hero Corp per slide, each slide's section with the
+  // `carousel` style (scripts/corp.js buildCarouselSections rotates consecutive ones, approved
+  // 2026-11-01); the first slide carries the source options: autoplay-<ms> (data-autoplay +
+  // data-autoplayspeed) and fade (data-transition)
+  const widget = el.querySelector('[data-widget="stryker-autocarousel"]');
+  const options = ['carousel'];
+  if (widget && widget.getAttribute('data-autoplay') === 'true') {
+    const ms = Number(widget.getAttribute('data-autoplayspeed')) || 3000;
+    options.push(`autoplay-${Math.max(ms, 1000)}`);
+  }
+  if (widget && widget.getAttribute('data-transition') === 'true') options.push('fade');
+  const multi = slides.length > 1;
+  let first = true;
+  const slideStyles = () => {
+    if (!multi) return [];
+    const out = first ? options : ['carousel'];
+    first = false;
+    return out;
+  };
+  return slides.flatMap((slide, i) => {
+    // slide XFs that cannot be imported (e.g. a mobile variation never published) are
+    // reported; the live page shows what it can, nothing is invented
+    const ref = (ctx.slideRefs || [])[index + i];
+    if (ref) {
+      ['desktop', 'mobile'].forEach((side) => {
+        const target = ref[side];
+        if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
+      });
+    }
+    // the overlay through the component handlers (rich text, buttons, Large Headline lines
+    // with their colours and their own sizes as [[size-<n>vw]] / [[size-<n>em]] tags)
+    const overlay = slide.querySelector('.overlayparsys');
+    if (!slide.querySelector('img') && !slide.dataset.xfDesktop && !(overlay && text(overlay))) return [];
+    const overlayItems = overlay ? ctx.collect(overlay) : [];
+    // a slide XF that is a whole composition (its own copy, image and button: gmrs "GMRS Global
+    // Modular Replacement System", insignia, triathlon-revision; Hero Corp only takes a slide
+    // fragment's image) and no overlay: the fragment itself, the mobile XF in its place below
+    // 600px (section styles desktop-only / mobile-only, source 841px)
+    const copyText = (selector) => {
+      const area = slide.querySelector(selector);
+      if (!area) return '';
+      const copy = area.cloneNode(true);
+      copy.querySelectorAll('script, style, [class*="s7"]').forEach((e) => e.remove());
+      return text(copy);
+    };
+    if (slide.dataset.xfDesktop && !(overlay && text(overlay)) && copyText('.experienceFragment-ef')) {
+      const fragment = (path, styles) => ({
+        type: 'fragment', kind: 'fragment', styles, nodes: [block(doc, 'Fragment', [[linkTo(doc, path)]])],
+      });
+      const carouselStyles = slideStyles();
+      // in a carousel a slide is one section: the desktop composition at every width
+      const both = !carouselStyles.length && slide.dataset.xfMobile && copyText('.experienceFragment-ef-mobile');
+      return both ? [
+        fragment(slide.dataset.xfDesktop, [...carouselStyles, 'desktop-only']),
+        fragment(slide.dataset.xfMobile, [...carouselStyles, 'mobile-only']),
+      ] : [fragment(slide.dataset.xfDesktop, carouselStyles)];
+    }
+    // a slide whose XF the page does not render (unpublished, redirect): its overlay copy is
+    // still on the live page, kept as text (sonopet-iq "Introducing Pulse Control")
+    if (!slide.querySelector('img') && !slide.dataset.xfDesktop) {
+      ctx.report.notes.push(`slide without an image (its XF not rendered): overlay copy kept as text: ${text(overlay).slice(0, 40)}`);
+      return overlayItems;
+    }
+    const overlayNodes = overlay
+      ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : undefined;
+    if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
+    // no size-<n> / copy-size-<n> options: each line carries its own size (a line without a
+    // vw size keeps the page type, as live: inspace "A breakthrough in the shoulder…" h1 28px)
+    const variants = [];
+    // the slide image in the right half of the slide XF's grid (offset 6 / width 6): the
+    // product hero layout
+    if (slide.querySelector('.experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6')) variants.push('image-right');
+    if (heroBox(overlay)) variants.push(heroBox(overlay));
+    // the text box's own spacing (Hero Corp options, scripts/corp-spacing.js)
+    variants.push(...itemsSpacing(overlayItems));
+    const holder = doc.createElement('div');
+    holder.append(slide.cloneNode(true));
+    heroImageSlideParser(holder.firstElementChild, {
+      document: doc,
+      overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : undefined,
+      variants,
+      vwSize: false,
+    });
+    // the overlay's copy style and serif headings, as for Columns cells
+    return [{
+      type: 'own',
+      kind: 'hero',
+      styles: [...slideStyles(), ...(overlayNodes ? cellStyles([overlayNodes], ctx) : [])],
+      nodes: [...holder.children],
+    }];
+  });
+}
+
+/** Jump bar (jumpbarnav, or the template's own .c-navigation-bar) → Sticky Nav: label | #id. */
+function jumpBar(el, ctx) {
+  const rows = [...el.querySelectorAll('a[data-linking]')].filter((a) => text(a))
+    .map((a) => [text(a), `#${a.getAttribute('data-linking')}`]);
+  return rows.length ? [{
+    type: 'own', kind: 'nav', styles: [], nodes: [block(ctx.doc, 'Sticky Nav', rows)],
+  }] : [];
+}
+
+// full-bleed panel background classes → section styles (component-map fullbleedpanel)
+const PANELS = {
+  'bg-light-gray': 'bg-light-gray',
+  'bg-gold': 'bg-gold',
+  'bg-dark-gray': 'bg-dark-gray',
+  'bg-white': 'bg-white',
+  'bg-dark-teal-gradient': 'dark',
+  'bg-dark-purple-gradient': 'bg-dark-purple-gradient',
+  'bg-dark-blue-gradient': 'bg-dark-blue-gradient',
+  'bg-dark-orange-gradient': 'bg-dark-orange-gradient',
+  'bg-golden-gradient': 'bg-golden-gradient',
+  'bg-blue': 'blue',
+  // the panel's bg-purple is the Stryker purple (#85458a); its bg-gray the silver (#b2b4ae,
+  // e.g. target-tetra), not the light bg-gray band
+  'bg-purple': 'bg-purple',
+  'bg-gray': 'bg-silver',
+};
+
+/**
+ * Large hero carousel (component-map hero-large-carousel, approved: one Columns (columns-50-50)
+ * band per slide; reuses the corp carousel, 2026-11-01): the header title as the h1, then each
+ * slide as its own section with the `carousel` style and the slide's band (PANELS): title (h2,
+ * the light serif) and subtitle | product image, linked when the slide links. Measured on
+ * nse/products/malis-disposable-non-stick-bipolar-forceps (4 slides, no autoplay, slides in).
+ */
+function heroLargeCarousel(el, ctx) {
+  const { doc } = ctx;
+  const out = [];
+  const title = el.querySelector('.c-hero-large-header .title');
+  if (title && text(title)) {
+    // Futura bold 21px on the source: Bold, 0.75 × the h1
+    const h1 = doc.createElement('h1');
+    const strong = doc.createElement('strong');
+    strong.textContent = `[[size-0-75em]${text(title)}]`;
+    h1.append(strong);
+    ctx.h1 = true;
+    out.push({ type: 'flow', role: 'text', nodes: [h1] });
+  }
+  const slides = [...el.querySelectorAll('.slide:not(.slick-cloned)')].filter((s) => text(s) || s.querySelector('img'));
+  slides.forEach((slide, i) => {
+    const container = slide.querySelector('.slide-container') || slide;
+    const band = [...container.classList].map((c) => PANELS[c]).find(Boolean);
+    const textCell = [];
+    const heading = slide.querySelector('.slide-title');
+    if (heading && text(heading)) {
+      const h2 = doc.createElement('h2');
+      const copy = contentCopy(heading, doc);
+      cleanRichText(copy);
+      h2.append(...copy.childNodes);
+      textCell.push(h2);
+    }
+    const subtitle = slide.querySelector('.slide-subtitle');
+    if (subtitle && text(subtitle)) {
+      const copy = contentCopy(subtitle, doc);
+      cleanRichText(copy);
+      textCell.push(para(doc, ...copy.childNodes));
+    }
+    const link = slide.querySelector('a.slide-link[href]');
+    if (link && text(link)) textCell.push(buttonNode(doc, link, text(link)));
+    const img = slide.querySelector('.slide-image-container.hidden-xs img, .slide-image img');
+    const imageCell = [];
+    if (img) {
+      const image = doc.createElement('img');
+      image.setAttribute('src', img.getAttribute('src'));
+      image.setAttribute('alt', (img.getAttribute('alt') || '').trim());
+      if (!img.getAttribute('alt')) ctx.report.notes.push(`carousel slide image without alt text: ${img.getAttribute('src')}`);
+      imageCell.push(para(doc, image));
+    }
+    out.push({
+      type: 'own',
+      kind: 'columns',
+      // banner: this component's look (gold arrow tabs at the edges, no dots, centred copy)
+      styles: ['carousel', ...(i ? [] : ['banner']), ...(band ? [band] : []), 'h-serif'],
+      nodes: [block(doc, 'Columns (columns-50-50)', [[textCell, imageCell]])],
+    });
+  });
+  if (slides.length < 2) {
+    out.forEach((item) => {
+      if (item.styles) item.styles = item.styles.filter((st) => !['carousel', 'banner'].includes(st));
+    });
+  }
+  return out;
+}
+
+function fullBleedPanel(el, ctx) {
+  const panel = el.querySelector('.c-full-bleed-panel') || el;
+  const items = ctx.collect(panel);
+  const cls = [...panel.classList].find((c) => PANELS[c]);
+  if (!hasContent(items.filter((it) => it.type !== 'anchor' && it.type !== 'boundary'))) {
+    const anchors = items.filter((it) => it.type === 'anchor');
+    // an empty coloured panel shown with its section spacing (page-section) is a band: the
+    // 34px gold stripe under the news heroes (section style stripe, approved 2026-10-31);
+    // without page-section it has no height on live
+    if (cls && cls !== 'bg-white' && panel.classList.contains('page-section')) {
+      return [...anchors, {
+        type: 'own', kind: 'stripe', styles: [PANELS[cls], 'stripe'], nodes: [],
+      }];
+    }
+    return anchors;
+  }
+  if (!cls && /\bbg-/.test(panel.className)) ctx.report.notes.push(`full-bleed panel background ${panel.className}: no section style`);
+  return [{ type: 'group', styles: cls ? [PANELS[cls]] : [], items }];
+}
+
+/** Remote component (microapp) → widget link in its own section (component-map). */
+function remoteComponent(el, ctx) {
+  const input = el.querySelector('input.hdnSelComp');
+  const value = (input && input.getAttribute('value')) || '';
+  const [id, url] = value.split('|');
+  if (!url) return [];
+  const query = new URLSearchParams({ url: url.trim(), id: id.trim() }).toString();
+  const a = linkTo(ctx.doc, `/widgets/remote-component?${query}`, id.trim());
+  return [{
+    type: 'own', kind: 'widget', styles: [], nodes: [para(ctx.doc, a)],
+  }];
+}
+
+/**
+ * Marketo form → Marketo Form block; the base URL and Munchkin ID of the forms2 script the
+ * live page loads (markLivePage), the captcha rows when the live form has one.
+ */
+function marketoForm(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-marketo-form') || el;
+  const form = root.querySelector('form[id^="mktoForm_"]');
+  const alert = root.querySelector('[id^="alert_"]');
+  const facts = (ctx.facts && ctx.facts.forms) || [];
+  ctx.formIndex = (ctx.formIndex || 0) + 1;
+  const formId = (form && form.id.replace('mktoForm_', ''))
+    || (alert && alert.id.replace('alert_', '')) || (facts[ctx.formIndex - 1] || {}).formId;
+  if (!formId) {
+    ctx.report.notes.push('Marketo form without a form ID, dropped');
+    return [];
+  }
+  const base = root.getAttribute('data-corp-marketo-base') || '//lp.stryker.com';
+  const munchkin = (base.match(/\/\/(\d{3}-[A-Z]{3}-\d{3})\./) || [])[1] || '338-WAP-571';
+  const rows = [['Base URL', base], ['Munchkin ID', munchkin], ['Form ID', formId]];
+  const captcha = root.getAttribute('data-corp-captcha');
+  if (captcha) {
+    rows.push(['Captcha Script', `${SOURCE}/etc.clientlibs/stryker/components/content/altcha/altcha.js`]);
+    rows.push(['Captcha Challenge URL', new URL(captcha, SOURCE).href]);
+  }
+  return [{
+    type: 'form', kind: 'form', styles: [], nodes: [block(doc, 'Marketo Form', rows)],
+  }];
+}
+
+// counter colours (bracket colour classes) → Statistics colour keywords
+const COUNTER_COLOURS = {
+  'color-gold': 'gold', 'color-blue': 'navy', 'color-navy': 'navy', 'color-teal': 'teal', 'color-purple': 'purple',
+};
+
+/** Number counter → a Statistics row (count-up): colour keyword | number | label. */
+function numberCounter(el, ctx) {
+  const { doc } = ctx;
+  const box = el.querySelector('[data-numbercounter-end-number]');
+  const number = el.querySelector('.numbercounter-number');
+  if (!box && !number) return [];
+  const end = box ? box.getAttribute('data-numbercounter-end-number') : '';
+  const kind = box ? box.getAttribute('data-numbercounter-number-type') : '';
+  const currency = box ? box.getAttribute('data-numbercounter-currency-type') || '' : '';
+  const shown = number ? text(number) : '';
+  // the rendered final value when the count has finished, else the authored end value
+  let value = shown && shown.replace(/[^\d.]/g, '') === end ? shown : end;
+  if (value === end && kind === '3') value = `${end}%`;
+  if (value === end && kind === '2') value = `${currency}${end}`;
+  // the number's own vw size (span.numbercounter-number.fontsize-<n>vw: 2.5vw to 9vw on the
+  // site, e.g. isolibrium 6vw, 84px at 1440) → a [[size-<n>vw]] tag
+  const vwClass = number && [...number.classList].find((c) => /^fontsize-\d+(-\d+)?-?vw$/.test(c));
+  if (vwClass) value = `[[${vwClass.replace(/^fontsize-/, 'size-').replace(/-vw$/, 'vw')}]${value}]`;
+  const colour = COUNTER_COLOURS[styleColour(number)] || 'teal';
+  const label = el.querySelector('.container > .text-left, .container > div:last-child');
+  let desc = doc.createElement('p');
+  if (label) {
+    // the label's rich text with its fonts and sizes (Futura bold, Egyptienne, vw sizes: the
+    // runs finishRuns tags), as any text component
+    const { nodes } = richTextNodes(label, doc);
+    if (nodes.length === 1) [desc] = nodes;
+    else if (nodes.length) {
+      desc = doc.createElement('div');
+      desc.append(...nodes);
+    }
+  }
+  const left = !!el.querySelector('.container > .text-left');
+  return [{
+    type: 'counter', colour, value, desc, left,
+  }];
+}
+
+/**
+ * Fast facts (component-map row fastfacts → Statistics): the title, then one stat per
+ * .c-fastfacts-item (number | text). Static on live, so no count-up; two per row from
+ * 841px (col-sm-6) as cols-2. No colour keyword: the section's text colour applies.
+ */
+function fastFacts(el, ctx) {
+  const { doc } = ctx;
+  const facts = [...el.querySelectorAll('.c-fastfacts-item')].map((item) => {
+    const desc = doc.createElement('p');
+    desc.textContent = text(item.querySelector('.c-fastfacts-text'));
+    return { value: text(item.querySelector('.c-fastfacts-number')), desc };
+  }).filter((f) => f.value || text(f.desc));
+  if (!facts.length) return [];
+  // Statistics (fast-facts): the panel's look (number beside its text, Egyptienne); the
+  // title is the block's first row (its ruled heading belongs to the component)
+  const title = el.querySelector('.c-fastfacts-title');
+  const rows = facts.map((c) => [c.value, c.desc]);
+  if (title && text(title)) {
+    const h = doc.createElement('h2');
+    h.textContent = text(title);
+    rows.unshift([h]);
+  }
+  const columns = el.querySelector('.c-fastfacts-item.col-sm-6') ? 2 : facts.length;
+  return [{ type: 'block', block: block(doc, `Statistics (fast-facts, cols-${Math.min(Math.max(columns, 1), 4)})`, rows) }];
+}
+
+function standaloneVideo(el, ctx) {
+  const link = videoLink(el, ctx.doc);
+  if (!link) return [];
+  // the source border (black-border, unless hide-border) is the default: no-border otherwise;
+  // a video that autoplays on live (muted, looping): autoplay (approved 2026-10-29)
+  const comp = el.querySelector('.c-standalone-video') || el;
+  const options = [
+    comp.classList.contains('black-border') && !comp.classList.contains('hide-border') ? '' : 'no-border',
+    el.querySelector('video[autoplay]') ? 'autoplay' : '',
+  ].filter(Boolean);
+  const name = options.length ? `Video (${options.join(', ')})` : 'Video';
+  const items = [{
+    type: 'block', block: block(ctx.doc, name, [[link]]), cellNodes: [para(ctx.doc, link.cloneNode(true))],
+  }];
+  // the video's title / description under the player (.desc-content, e.g. an h3 on
+  // /us/en/sports-medicine/products/inspace): kept as text after the video
+  const desc = el.querySelector('.desc-content');
+  if (desc && text(desc)) {
+    const copy = contentCopy(desc, ctx.doc);
+    cleanRichText(copy);
+    const nodes = [...copy.querySelectorAll('h1, h2, h3, h4, h5, h6, p, ul, ol')]
+      .filter((node) => !node.parentElement.closest('p, ul, ol') && text(node));
+    if (nodes.length) items.push({ type: 'flow', role: 'text', nodes });
+  }
+  return items;
+}
+
+/**
+ * Interactive image (Scene7 hotspots) → the image as a DM link, then a list of its hotspot
+ * links (labels and targets from the page facts: the viewer draws them client-side).
+ */
+function interactiveMedia(el, ctx) {
+  const { doc } = ctx;
+  const viewer = el.querySelector('[data-asset-path]');
+  if (!viewer) return [];
+  const asset = viewer.getAttribute('data-asset-path');
+  const server = viewer.getAttribute('data-imageserver') || 'https://media-assets.stryker.com/is/image/';
+  const img = doc.createElement('img');
+  img.setAttribute('src', `${server}${asset.split('/').map(encodeURIComponent).join('/')}?$max_width_1440$`);
+  img.setAttribute('alt', '');
+  ctx.report.notes.push(`interactive image ${asset}: no alt text in the export (authors add it)`);
+  const nodes = [para(doc, img)];
+  const facts = ((ctx.facts && ctx.facts.interactiveMedia) || []).find((m) => m.asset === asset);
+  const spots = (facts && facts.hotspots) || [];
+  if (spots.length) {
+    const ul = doc.createElement('ul');
+    spots.forEach((spot) => {
+      const anchor = spot.href.match(/^quickview:.*(#[\w-]+)$/);
+      const href = anchor ? anchor[1] : spot.href.replace(/^https?:\/\/author-[^/]+/, '');
+      const li = doc.createElement('li');
+      li.append(linkTo(doc, href, spot.label));
+      ul.append(li);
+    });
+    nodes.push(ul);
+  } else {
+    ctx.report.notes.push(`interactive image ${asset}: no hotspots in the page facts`);
+  }
+  return [{ type: 'flow', role: 'image', nodes }];
+}
+
+/** Resources and downloads → Heading 2 (title) + Cards Corp (resources, six-up). */
+function resources(el, ctx) {
+  const { doc } = ctx;
+  const items = [...el.querySelectorAll('.item-list .item')].filter((item) => item.querySelector('a[href]'));
+  if (!items.length) return [];
+  const rows = items.map((item) => {
+    const img = item.querySelector('img');
+    const title = item.querySelector('.title, h5');
+    const link = (title && title.closest('a[href]')) || item.querySelector('a[href]');
+    const thumb = img ? absoluteAsset(img.getAttribute('src')) : '';
+    // a link to a video file with the #_blank marker stays a link (not a player), as on live
+    const href = newTabHref(link, absoluteAsset(link.getAttribute('href')));
+    const h5 = doc.createElement('h5');
+    h5.append(linkTo(doc, href, text(title || link) || (img && img.getAttribute('alt')) || href));
+    return [thumb ? para(doc, linkTo(doc, thumb.startsWith('/') ? `${SOURCE}${thumb}` : thumb)) : '', h5];
+  });
+  const out = [];
+  const heading = el.querySelector('.title-container h2, .title-container h3');
+  if (heading && text(heading)) {
+    const h2 = doc.createElement('h2');
+    const u = doc.createElement('u');
+    u.textContent = text(heading);
+    h2.append(u);
+    out.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  out.push({
+    type: 'block', block: block(doc, 'Cards Corp (resources, six-up)', rows),
+  });
+  return out;
+}
+
+/** Card list (customizable) → its heading + Cards Corp (teaser) (cards-corp-teaser parser). */
+function cardList(el, ctx) {
+  const { doc } = ctx;
+  const grid = el.querySelector('.c-customizeable') || el;
+  const items = [...grid.querySelectorAll('.item')].filter((item) => text(item));
+  if (!items.length) return [];
+  const out = [];
+  const heading = grid.querySelector('h2');
+  if (heading && text(heading)) {
+    // a title with the gold rule (h2.border-bottom-gold: "Related", "Articles") → Underline
+    const h2 = doc.createElement('h2');
+    const label = heading.classList.contains('border-bottom-gold') ? doc.createElement('u') : h2;
+    label.textContent = text(heading);
+    if (label !== h2) h2.append(label);
+    out.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  // the list's description line (h3.c-customizable-description, e.g. "Classroom courses")
+  const description = grid.querySelector('.c-customizable-description');
+  if (description && text(description)) {
+    const h = doc.createElement(/^H[1-6]$/.test(description.tagName) ? description.tagName.toLowerCase() : 'p');
+    h.textContent = text(description);
+    out.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  // each card's image: its own, else (an img the live page fills in later by asset id) the
+  // target page's own image from its export (page facts cardLists), else none
+  const targets = ((ctx.facts && ctx.facts.cardLists) || []).flatMap((list) => list.items || []);
+  const imageSrc = (item) => {
+    const img = item.querySelector('img');
+    if (img && img.getAttribute('src')) return img.getAttribute('src');
+    const href = item.querySelector('a[href]');
+    if (!img || !href) return '';
+    const path = new URL(href.getAttribute('href'), 'https://www.stryker.com').pathname.replace(/\.html$/, '');
+    const target = targets.find((t) => t.path === path && t.image);
+    return target ? absoluteAsset(encodeURI(target.image)) : '';
+  };
+  const sources = items.map(imageSrc);
+  if (sources.every(Boolean)) {
+    const holder = doc.createElement('div');
+    const copy = grid.cloneNode(true);
+    copy.querySelectorAll('h2').forEach((h) => h.remove());
+    [...copy.querySelectorAll('.item')].filter((item) => text(item))
+      .forEach((item, i) => item.querySelector('img').setAttribute('src', sources[i]));
+    holder.append(copy);
+    cardsCorpTeaserParser(copy, { document: doc });
+    out.push({ type: 'block', block: holder.firstElementChild });
+    return out;
+  }
+  // some cards without an image (e.g. video links): those get an empty image cell, as
+  // cards-corp builds for index rows without an image; no card is left out
+  const rows = items.map((item, i) => {
+    const body = [];
+    const title = item.querySelector('h3');
+    const link = title && title.querySelector('a[href]');
+    if (title) {
+      const h3 = doc.createElement('h3');
+      h3.append(link ? linkTo(doc, link.getAttribute('href'), text(link)) : doc.createTextNode(text(title)));
+      body.push(h3);
+    }
+    item.querySelectorAll('.desc-container > p').forEach((p) => { if (text(p)) body.push(para(doc, doc.createTextNode(text(p)))); });
+    const cta = item.querySelector('a.action-link[href]');
+    if (cta && text(cta)) {
+      const u = doc.createElement('u');
+      u.textContent = text(cta);
+      const a = linkTo(doc, cta.getAttribute('href'), '');
+      a.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(a);
+      body.push(para(doc, strong));
+    }
+    if (!sources[i]) return ['', body];
+    const img = doc.createElement('img');
+    img.setAttribute('src', sources[i]);
+    img.setAttribute('alt', (item.querySelector('img') || { getAttribute: () => '' }).getAttribute('alt') || '');
+    return [img, body];
+  });
+  out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  return out;
+}
+
+/**
+ * Tabs → a `tabbed` section (scripts.js buildTabbedSections): each tab title as a heading
+ * of the section's deepest heading level, followed by the tab's content (text and blocks).
+ */
+function tabs(el, ctx) {
+  const { doc } = ctx;
+  const titles = [...el.querySelectorAll('.tabs-nav .tab-link')].map(text);
+  const panes = [...el.querySelectorAll('.tabs-content > .tab-content')];
+  const collected = panes.map((pane) => ctx.collect(pane));
+  // all tabs share one section: it takes the copy styles that every text and nested block
+  // of the panes has (their own section styles cannot nest), e.g. p-1-25 on all product tabs
+  const sets = collected.flat().flatMap((it) => {
+    if (it.type === 'own' && it.styles && it.styles.length) return [it.styles];
+    if (it.type === 'flow' && it.role === 'text') {
+      return it.nodes.map((n) => String(n.copyStyle || '').split(',').map((s) => s.trim()).filter(Boolean));
+    }
+    return [];
+  });
+  const copyStyle = (s) => /^(p-\d|serif$|bold-body$|label-|h-serif$|h-\d-)/.test(s);
+  const inAll = (s) => copyStyle(s) && sets.every((set) => set.includes(s));
+  const shared = sets.length ? sets[0].filter(inAll) : [];
+  const panels = collected.map((items) => inlineNodes(items, ctx));
+  if (!panels.some((nodes) => nodes.length)) return [];
+  const deepest = panels.flat().reduce((max, n) => (/^H[1-6]$/.test(n.tagName) ? Math.max(max, Number(n.tagName[1])) : max), 2);
+  const level = Math.min(6, deepest + 1);
+  const nodes = [];
+  panels.forEach((panel, i) => {
+    const title = titles[i] || ((ctx.facts && ctx.facts.tabs && ctx.facts.tabs[0]) || [])[i] || `Tab ${i + 1}`;
+    const h = doc.createElement(`h${level}`);
+    h.textContent = title;
+    nodes.push(h, ...panel);
+    if (!panel.length) ctx.report.notes.push(`tab "${title}" has no content`);
+  });
+  return [{
+    type: 'own', kind: 'tabs', styles: ['tabbed', ...shared], nodes,
+  }];
+}
+
+/** Page short description: hidden on most pages (skipped as hidden); visible → lead content. */
+function shortDescription(el, ctx) {
+  // the product-detail template's two columns under the hero (col-sm-6 + col-sm-6): their
+  // components through the walk (the rich text, the secondary CTA, the tag crumb), not as one
+  // rich text, which kept only shallow paragraphs (229 lines on 78 product pages, e.g.
+  // connected-or-ip "The future of integration is here."); then the column-control rules:
+  // both filled → side by side (a block beside text: flex section), one filled → its half
+  const columns = [...el.querySelectorAll(':scope > .row > [class*="col-sm-"]')];
+  if (columns.length !== 2) return ctx.collect(el);
+  // the template-slot handlers wrap their items in a column group: the control decides here
+  const items = columns.map((col) => ctx.collect(col).flatMap((it) => (it.type === 'group' ? it.items : [it])));
+  const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+  return columnItems(items, SPLITS.cols2, ctx, widths.every(Boolean) ? widths : null);
+}
+
+/**
+ * The product template's secondary CTA (.c-secondary-cta a.action-link, "Additional
+ * resources"): the bold + underline link (a.link-strong, the arrow CTA convention).
+ */
+function secondaryCta(el, ctx) {
+  const nodes = [...el.querySelectorAll('a[href]')].filter((a) => text(a)).map((a) => {
+    const link = linkTo(ctx.doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+    const u = ctx.doc.createElement('u');
+    u.textContent = text(a);
+    link.append(u);
+    const strong = ctx.doc.createElement('strong');
+    strong.append(link);
+    return para(ctx.doc, strong);
+  });
+  return nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : [];
+}
+
+/**
+ * The product template's tag crumb ("Related categories", stryker.com .c-tagcrumb, shown
+ * unless hidden on the page) → the Related Categories block holding its heading: the block
+ * builds the categories from the page's `tags` metadata and the tag list sheet (approved
+ * 2026-10-30).
+ */
+function relatedCategories(el, ctx) {
+  const title = text(el.querySelector('.c-tagcrumb-title') || ctx.doc.createElement('h4')) || 'Related categories';
+  if (!el.querySelector('.c-tagcrumb-item a[href]')) return [];
+  return [{ type: 'block', block: block(ctx.doc, 'Related Categories', [[title]]) }];
+}
+
+/**
+ * Any other component: its visible content as cleaned default content (block elements and
+ * images), hidden parts (modals) and controls left out. Reported by the builder.
+ */
+function fallback(el, ctx) {
+  const { doc } = ctx;
+  const copy = el.cloneNode(true);
+  copy.querySelectorAll('[data-corp-hidden="true"], script, style, button, input, noscript').forEach((n) => n.remove());
+  copy.querySelectorAll('a[href^="#"]').forEach((a) => {
+    if (a.querySelector('img') || !doc.getElementById(a.getAttribute('href').slice(1))) unwrap(a);
+  });
+  const box = doc.createElement('div');
+  box.append(copy);
+  cleanRichText(box);
+  const nodes = [...box.querySelectorAll('p, h1, h2, h3, h4, h5, h6, ul, ol, table, img')]
+    .filter((n) => !n.parentElement.closest('p, h1, h2, h3, h4, h5, h6, ul, ol, table'))
+    .map((n) => (n.tagName === 'IMG' ? para(doc, n) : n))
+    .filter((n) => text(n) || n.querySelector('img'));
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Accordion → Accordion block (label | panel content) when every panel holds default
+ * content only; panels with blocks (columns, cards, video …) → one `accordion-panel`
+ * section per panel, label as its first heading (scripts/corp.js builds the
+ * `accordion with-nested-blocks` block from them).
+ */
+function accordion(el, ctx) {
+  const { doc } = ctx;
+  const panels = [...el.querySelectorAll('.panel-group > .panel')].map((panel) => ({
+    title: text(panel.querySelector('.panel-title') || doc.createElement('p')),
+    items: ctx.collect(panel.querySelector('.panel-body') || panel),
+    // open on load on the source (AEM defaultExpanded, rendered .panel-collapse.in)
+    open: !!panel.querySelector(':scope > .panel-collapse.in'),
+  })).filter((p) => p.title || hasContent(p.items));
+  if (!panels.length) return [];
+  // a panel open on load: its label in bold (authoring convention: bold label = open,
+  // approved 2026-10-31; nailing-portfolio "Surgeon resources")
+  const label = (p, holder = doc.createElement('span')) => {
+    if (!p.open) {
+      holder.textContent = p.title;
+      return holder;
+    }
+    const strong = doc.createElement('strong');
+    strong.textContent = p.title;
+    holder.append(strong);
+    return holder;
+  };
+  // the accordion's own title (h3.component-subheading "FAQs": ld-304, sync-badge), above it
+  const heading = el.querySelector('.c-accordion > .container > .component-subheading');
+  const title = [];
+  if (heading && text(heading)) {
+    const h = doc.createElement(/^H[1-6]$/.test(heading.tagName) ? heading.tagName.toLowerCase() : 'h3');
+    const u = heading.classList.contains('border-bottom-gold') ? doc.createElement('u') : h;
+    u.textContent = text(heading);
+    if (u !== h) h.append(u);
+    title.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  const flowOnly = panels.every((p) => p.items.every((it) => it.type === 'flow' || it.type === 'anchor'));
+  if (flowOnly) {
+    const rows = panels.map((p) => [
+      para(doc, ...label(p).childNodes), p.items.flatMap((it) => it.nodes || []),
+    ]);
+    return [...title, {
+      type: 'own', kind: 'accordion', styles: [], nodes: [block(doc, 'Accordion', rows)],
+    }];
+  }
+  return [...title, ...panels.map((p) => {
+    const h = label(p, doc.createElement('h3'));
+    return {
+      type: 'own', kind: 'accordion-panel', styles: ['accordion-panel'], nodes: [h, ...inlineNodes(p.items, ctx)],
+    };
+  })];
+}
+
+/**
+ * Page hero (pagehero, hero) → Columns (columns-50-50, page-intro[, border-bottom]):
+ * title as a Bold + Italic H1, subhead as H2, content paragraphs | image.
+ */
+function pageHero(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-page-hero, .c-hero') || el;
+  const title = root.querySelector('.title');
+  const cell = [];
+  if (title && text(title)) {
+    const h1 = doc.createElement('h1');
+    const strong = doc.createElement('strong');
+    const em = doc.createElement('em');
+    em.textContent = text(title);
+    strong.append(em);
+    h1.append(strong);
+    cell.push(h1);
+    ctx.h1 = true;
+  }
+  const subhead = root.querySelector('.subhead');
+  if (subhead && text(subhead)) {
+    const h2 = doc.createElement('h2');
+    h2.append(...contentCopy(subhead, doc).childNodes);
+    cleanRichText(h2);
+    cell.push(h2);
+  }
+  // p.content and what follows it in its column: a list in the copy closes the <p> when the page
+  // is parsed, so the list and the text after it are its siblings (sustainability/products/
+  // masimo-lncs "Features and benefits include:" + list + closing sentence)
+  root.querySelectorAll('.content').forEach((content) => {
+    const box = doc.createElement('div');
+    box.append(content.cloneNode(true));
+    for (let n = content.nextSibling; n && !(n.nodeType === 1 && n.matches('.title, .subhead, .content'));
+      n = n.nextSibling) {
+      if (n.nodeType === 1 || text(n)) box.append(n.cloneNode(true));
+    }
+    const { nodes } = richTextNodes(box, doc);
+    cell.push(...nodes.filter((node) => text(node)));
+  });
+  if (!cell.length) return [];
+  const img = root.querySelector('picture img, img');
+  const cells = [cell];
+  if (img) {
+    // the largest rendition (the picture's first source), as on the desktop page
+    const source = root.querySelector('picture source[srcset]');
+    const image = doc.createElement('img');
+    image.setAttribute('src', (source && source.getAttribute('srcset').split(/[\s,]/)[0]) || img.getAttribute('src'));
+    image.setAttribute('alt', img.getAttribute('alt') || '');
+    if (!img.getAttribute('alt')) ctx.report.notes.push(`page hero image without alt text: ${image.getAttribute('src')}`);
+    cells.push([para(doc, image)]);
+  }
+  const variants = ['columns-50-50', 'page-intro'];
+  if (root.querySelector('.border-bottom-gold')) variants.push('border-bottom');
+  return [{
+    type: 'own', kind: 'page-intro', styles: [], nodes: [block(doc, `Columns (${variants.join(', ')})`, [cells])],
+  }];
+}
+
+/** Table → Table block; a first row that is bold throughout is the header, else no-header. */
+function table(el, ctx) {
+  const { doc } = ctx;
+  const source = el.querySelector('table');
+  if (!source) return [];
+  const rows = [...source.querySelectorAll('tr')].map((tr) => [...tr.children].map((td) => {
+    const box = contentCopy(td, doc);
+    cleanRichText(box);
+    return [...box.childNodes];
+  }));
+  if (!rows.length) return [];
+  const first = source.querySelector('tr');
+  const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll('b, strong, th')].some((b) => text(b) === text(td)) || td.tagName === 'TH');
+  if (header) {
+    rows[0] = rows[0].map((nodes) => nodes.map((n) => {
+      if (n.nodeType === 1) n.querySelectorAll('strong').forEach(unwrap);
+      return n.nodeType === 1 && n.tagName === 'STRONG' ? doc.createTextNode(n.textContent) : n;
+    }));
+  }
+  const out = [];
+  const caption = el.querySelector('.title-container h2, .title-container h3, .table-title');
+  if (caption && text(caption)) {
+    const h = doc.createElement('h3');
+    h.textContent = text(caption);
+    out.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  out.push({ type: 'block', block: block(doc, header ? 'Table' : 'Table (no-header)', rows) });
+  return out;
+}
+
+/** Local page navigation → Sticky Nav (local): parent link, then label | page link. */
+function localNav(el, ctx) {
+  const { doc } = ctx;
+  const nav = el.querySelector('nav.greedy');
+  const links = nav ? [...nav.querySelectorAll('ul.links a[href]')].filter((a) => text(a)) : [];
+  const parent = nav && nav.querySelector('a.parent-node[href]');
+  // a nav without child pages still shows its parent title (orthopaedic-instruments/systems/
+  // orthopaedic: "Home" only)
+  if (!links.length && !(parent && text(parent))) return [];
+  const rows = [];
+  if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute('href'), text(parent))]);
+  // the link cell shows the page path (as the link will read after the .html rewrite)
+  const path = (href) => href.replace(/^https?:\/\/www\.stryker\.com/, '').replace(/\/index\.html(?=$|[?#])/, '/').replace(/\.html(?=$|[?#])/, '');
+  links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute('href'), path(a.getAttribute('href')))]));
+  // the grey rule above the nav (rule-separator) is the default; hideTopLine: no-rule
+  const name = el.querySelector('.rule-separator') ? 'Sticky Nav (local)' : 'Sticky Nav (local, no-rule)';
+  return [{
+    type: 'own', kind: 'nav', styles: [], nodes: [block(doc, name, rows)],
+  }];
+}
+
+/**
+ * Cross-promotional tile (template c-tiles, the ProCare tile): the tile image linked to the
+ * modal's fragment document (corp-modal-path.js; the document comes from
+ * import-modal-fragments.js). On the page the linked image is the tile (scripts/corp.js
+ * decorateModalTiles) and opens the modal (blocks/modal). Empty on most pages.
+ */
+function promoTile(el, ctx) {
+  const img = el.querySelector('.c-cross-promotional-tile img');
+  if (!img) return [];
+  const image = ctx.doc.createElement('img');
+  image.setAttribute('src', img.getAttribute('src'));
+  image.setAttribute('alt', img.getAttribute('alt') || '');
+  const title = el.querySelector('.c-procare-tile-modal .c-procare-tile-title, #c-procare-tile-modal .c-procare-tile-title');
+  const path = title && procareModalPath(text(title));
+  if (!path) {
+    ctx.report.notes.push(`cross-promotional tile without a modal title, kept as its image: ${img.getAttribute('alt') || img.getAttribute('src')}`);
+    return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image)] }];
+  }
+  // a linked image (the DM images transformer keeps the image URL in the link's title)
+  const a = ctx.doc.createElement('a');
+  a.setAttribute('href', path);
+  a.append(image);
+  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, a)] }];
+}
+
+/** A component title (h2.component-subheading): a Heading 2, its gold rule as Underline. */
+function componentTitle(h, doc) {
+  const h2 = doc.createElement('h2');
+  if (h.classList.contains('border-bottom-gold')) {
+    const u = doc.createElement('u');
+    u.textContent = text(h);
+    h2.append(u);
+  } else h2.textContent = text(h);
+  return h2;
+}
+
+/**
+ * Latest news (component-map latestnews, approved: Cards Corp teaser, today's articles frozen):
+ * the title (Underline), then one teaser card per article the component renders: its image,
+ * title, description and the "Read More" link, as on the source
+ * (/us/en/orthopaedic-instruments/systems/orthopaedic "Articles").
+ */
+function latestNews(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-latestnews') || el;
+  const items = [...root.querySelectorAll('.latestnews-container > .item')].filter((item) => text(item));
+  if (!items.length) return [];
+  const out = [];
+  const heading = root.querySelector('h2');
+  if (heading && text(heading)) out.push({ type: 'flow', role: 'text', nodes: [componentTitle(heading, doc)] });
+  const rows = items.map((item) => {
+    const body = [];
+    const title = item.querySelector('h3');
+    if (title && text(title)) {
+      const h3 = doc.createElement('h3');
+      h3.textContent = text(title);
+      body.push(h3);
+    }
+    item.querySelectorAll(':scope > p.model, :scope > p.description').forEach((p) => {
+      if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+    });
+    const cta = item.querySelector('a.news-link[href], a.action-link[href]');
+    if (cta && text(cta)) {
+      const u = doc.createElement('u');
+      u.textContent = text(cta);
+      const a = linkTo(doc, cta.getAttribute('href'), '');
+      a.append(u);
+      const strong = doc.createElement('strong');
+      strong.append(a);
+      body.push(para(doc, strong));
+    }
+    const img = item.querySelector('img[src]');
+    if (!img) return ['', body];
+    const image = doc.createElement('img');
+    image.setAttribute('src', img.getAttribute('src'));
+    image.setAttribute('alt', img.getAttribute('alt') || '');
+    return [image, body];
+  });
+  out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  return out;
+}
+
+/**
+ * Title component (component-map title): the title as a Heading 2 with its rule (Underline)
+ * and the optional subtitle as the Heading 3 it is on the source.
+ */
+function titleComponent(el, ctx) {
+  const { doc } = ctx;
+  const box = el.querySelector('.title-container') || el;
+  const nodes = [];
+  const title = box.querySelector('h2');
+  if (title && text(title)) nodes.push(componentTitle(title, doc));
+  box.querySelectorAll(':scope > h3').forEach((h) => {
+    if (!text(h)) return;
+    const h3 = doc.createElement('h3');
+    h3.textContent = text(h);
+    nodes.push(h3);
+  });
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Division contact form (component-map divisioncontactus, approved): the AEM email form has no
+ * EDS counterpart; it becomes a Marketo Form once the client supplies the form IDs per business
+ * unit. Until then: the title (Underline) and the description, the form left out (reported).
+ */
+function divisionContactUs(el, ctx) {
+  const { doc } = ctx;
+  const form = el.querySelector('form') || el;
+  const nodes = [];
+  const title = form.querySelector('h2');
+  if (title && text(title)) nodes.push(componentTitle(title, doc));
+  const description = form.querySelector('.form-description');
+  if (description) {
+    const copy = description.cloneNode(true);
+    copy.querySelectorAll('.form-control-asterix').forEach((star) => star.remove());
+    if (text(copy)) {
+      const p = doc.createElement('p');
+      p.textContent = text(copy);
+      nodes.push(p);
+    }
+  }
+  ctx.report.notes.push('division contact form: no Marketo form ID for it yet (client), the form is left out');
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Mixed media gallery (component-map mixedmediagallery, approved): Gallery Corp, one row per
+ * set member, a Dynamic Media image in set order. The members come from data/dm-sets.js (the
+ * Scene7 set, drawn client-side on the source); they have no alt text (reported).
+ */
+function mixedMediaGallery(el, ctx) {
+  const { doc } = ctx;
+  const viewer = el.querySelector('[data-asset-path]');
+  const asset = viewer && viewer.getAttribute('data-asset-path');
+  const set = asset && DM_SETS[asset];
+  if (!set || !set.members.length) {
+    if (asset) ctx.report.notes.push(`gallery ${asset}: no members in data/dm-sets.js (npm run build:dm-sets), left out`);
+    return [];
+  }
+  const server = viewer.getAttribute('data-imageserver') || 'https://media-assets.stryker.com/is/image/';
+  const rows = set.members.map((member) => {
+    const img = doc.createElement('img');
+    img.setAttribute('src', `${server}${member.name.split('/').map(encodeURIComponent).join('/')}?$max_width_1440$`);
+    img.setAttribute('alt', '');
+    return [para(doc, img)];
+  });
+  ctx.report.notes.push(`gallery ${asset}: ${rows.length} images without alt text (authors add it)`);
+  return [{
+    type: 'own', kind: 'gallery', styles: [], nodes: [block(doc, 'Gallery Corp', rows)],
+  }];
+}
+
+/**
+ * A Dynamic Media viewer on its own (dam/components/scene7/dynamicmedia, established: a
+ * default-content image): the viewer's asset as an image.
+ */
+function dynamicMedia(el, ctx) {
+  const { doc } = ctx;
+  const viewer = el.querySelector('[data-asset-path]');
+  const asset = viewer && viewer.getAttribute('data-asset-path');
+  if (!asset) return [];
+  const server = viewer.getAttribute('data-imageserver') || 'https://media-assets.stryker.com/is/image/';
+  const img = doc.createElement('img');
+  img.setAttribute('src', `${server}${asset.split('/').map(encodeURIComponent).join('/')}?$max_width_1440$`);
+  img.setAttribute('alt', '');
+  ctx.report.notes.push(`dynamic media viewer ${asset}: image without alt text (authors add it)`);
+  return [{ type: 'flow', role: 'image', nodes: [para(doc, img)] }];
+}
+
+/**
+ * Featured content grid (component-map featuredcontentgrid, approved): the title (Underline),
+ * the intro as a paragraph, then Columns (related-links): per item its linked Heading 4, the
+ * description and the More link on its own line (Underline: the chevron link).
+ */
+function featuredContentGrid(el, ctx) {
+  const { doc } = ctx;
+  const items = [];
+  const title = el.querySelector('h2.component-subheading');
+  const intro = el.querySelector('.intro');
+  const lead = [];
+  if (title && text(title)) lead.push(componentTitle(title, doc));
+  if (intro && text(intro)) {
+    const p = doc.createElement('p');
+    p.textContent = text(intro);
+    lead.push(p);
+  }
+  if (lead.length) items.push({ type: 'flow', role: 'text', nodes: lead });
+  const cells = [...el.querySelectorAll('.grid-item-wrapper')].map((item) => {
+    const nodes = [];
+    const head = item.querySelector('a h4, h4');
+    const link = head && head.closest('a');
+    if (head && text(head)) {
+      const h4 = doc.createElement('h4');
+      h4.append(link ? linkTo(doc, link.getAttribute('href'), text(head)) : doc.createTextNode(text(head)));
+      nodes.push(h4);
+    }
+    const description = item.querySelector('.page-description');
+    if (description && text(description)) {
+      const p = doc.createElement('p');
+      p.textContent = text(description);
+      nodes.push(p);
+    }
+    const more = item.querySelector('a.more[href]');
+    if (more) {
+      const u = doc.createElement('u');
+      u.textContent = text(more);
+      const a = linkTo(doc, more.getAttribute('href'), '');
+      a.textContent = '';
+      a.append(u);
+      nodes.push(para(doc, a));
+    }
+    return nodes;
+  }).filter((nodes) => nodes.length);
+  if (cells.length) {
+    items.push({
+      type: 'own', kind: 'columns', styles: [], nodes: [block(doc, 'Columns (related-links)', [cells])],
+    });
+  }
+  return items;
+}
+
+/**
+ * Banner campaign (component-map bannercampaign, approved): the banner image, linked when the
+ * source links it (a new tab kept as #_blank). Missing alt text is reported.
+ */
+function bannerCampaign(el, ctx) {
+  const { doc } = ctx;
+  const source = el.querySelector('.c-banner-campaign-content img');
+  if (!source) return [];
+  const img = doc.createElement('img');
+  const largest = el.querySelector('.c-banner-campaign-content source[srcset]');
+  img.setAttribute('src', (largest && largest.getAttribute('srcset').split(/\s+/)[0]) || source.getAttribute('src'));
+  img.setAttribute('alt', source.getAttribute('alt') || '');
+  if (!source.getAttribute('alt')) ctx.report.notes.push(`banner image without alt text: ${img.getAttribute('src')}`);
+  const link = source.closest('a[href]');
+  if (!link) return [{ type: 'flow', role: 'image', nodes: [para(doc, img)] }];
+  const a = linkTo(doc, newTabHref(link, link.getAttribute('href')), '');
+  a.textContent = '';
+  a.append(img);
+  return [{ type: 'flow', role: 'image', nodes: [para(doc, a)] }];
+}
+
+// engagement CTA icons that exist in icons/ (Twitter / X and the contact message icon do not)
+const ENGAGEMENT_ICONS = { facebook: ':facebook:', linkedin: ':linkedin:' };
+
+/**
+ * Engagement CTA (component-map engagementcta, approved): one Bold link per paragraph, the
+ * network's icon before the label when it exists (:facebook: / :linkedin:); a purple or blue
+ * button gets its section style (btn-purple / btn-blue).
+ */
+function engagementCta(el, ctx) {
+  const { doc } = ctx;
+  const links = [...el.querySelectorAll('.engagementCTAcluster a.btn[href]')];
+  if (!links.length) return [];
+  const nodes = links.map((source) => {
+    const icon = ENGAGEMENT_ICONS[String(source.id).toLowerCase()];
+    const label = text(source);
+    const a = linkTo(doc, newTabHref(source, source.getAttribute('href')), [icon, label].filter(Boolean).join(' ') || source.id);
+    const strong = doc.createElement('strong');
+    strong.append(a);
+    return para(doc, strong);
+  });
+  const colour = links[0].classList.contains('bg-purple') ? 'btn-purple' : (links[0].classList.contains('bg-blue') && 'btn-blue');
+  return [{
+    type: 'flow', role: 'cta', own: !!colour, styles: colour ? [colour] : [], nodes,
+  }];
+}
+
+/**
+ * Animated bar chart (component-map animatedbarchart, approved): Chart Corp (column or bar):
+ * Title, Subtitle, Format, Max, Axis title and Labels rows, then one row per shown series item:
+ * label | value | the source colour.
+ */
+function animatedBarChart(el, ctx) {
+  const { doc } = ctx;
+  const value = (cls) => (el.querySelector(`input.${cls}`) || { value: '' }).value.trim();
+  const items = [...el.querySelectorAll('select.hdnChartSeries option')].map((option) => {
+    const [colour, label, show] = text(option).split('|');
+    return {
+      label: (label || '').trim(), value: option.getAttribute('value'), colour: (colour || '').trim(), show: show !== 'false',
+    };
+  }).filter((item) => item.show && item.label);
+  if (!items.length) return [];
+  const format = value('numberType') === 'Currency' ? `Currency ${value('currency')}` : value('numberType');
+  const rows = [
+    ['Title', value('chartTitle')],
+    ['Subtitle', value('chartSubTitle')],
+    ['Format', format],
+    ['Max', value('maxValue')],
+    ['Axis title', value('yAxisTitle')],
+    ['Labels', value('dataLabelDisplay') === 'false' ? 'false' : 'true'],
+  ].filter(([, v]) => v);
+  items.forEach((item) => rows.push([item.label, item.value, item.colour]));
+  const variant = /bar/i.test(value('chartType')) ? 'Chart Corp (bar)' : 'Chart Corp';
+  return [{
+    type: 'own', kind: 'chart', styles: [], nodes: [block(doc, variant, rows)],
+  }];
+}
+
+/**
+ * The legacy AEM video component (div.video): a video shown on the page → Video block (the
+ * DAM file); the copies the source never shows (0×0 players, the component used to carry a
+ * script) are skipped.
+ */
+function legacyVideo(el, ctx) {
+  const { doc } = ctx;
+  const player = el.querySelector('video');
+  const path = (String(el.innerHTML).match(/var mediaPath = '([^']+)'/) || [])[1];
+  const visible = player && Number(player.getAttribute('width')) > 0 && Number(player.getAttribute('height')) > 0;
+  if (!path || !visible) return [];
+  const href = path.replace(/\\u002D/g, '-').replace(/\\\//g, '/');
+  return [{
+    type: 'block', block: block(doc, 'Video', [[linkTo(doc, absoluteAsset(href), href.split('/').pop())]]),
+  }];
+}
+
+/** The block nodes of a rich text box: its headings, paragraphs and lists, cleaned. */
+function boxNodes(el, doc) {
+  const box = contentCopy(el, doc);
+  cleanRichText(box);
+  return [...box.querySelectorAll('h1, h2, h3, h4, h5, h6, p, ul, ol')]
+    .filter((node) => !node.parentElement.closest('p, ul, ol') && text(node));
+}
+
+/**
+ * The content of a ProCare modal (.c-procare-tile-info, the product template's tile) → items
+ * of its fragment document (import-modal-fragments.js): the title as a Heading 2, the contact
+ * columns as Columns (columns-50-50; labels Heading 4, as the source), the coverage table, the
+ * closing copy and its Learn More button.
+ * @param {Element} info the modal's .c-procare-tile-info
+ */
+export function procareModalItems(info, ctx) {
+  const { doc } = ctx;
+  const items = [];
+  const title = info.querySelector('.c-procare-tile-title');
+  if (title && text(title)) {
+    const h2 = doc.createElement('h2');
+    h2.textContent = text(title);
+    items.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  const contact = info.querySelector('.c-procare-tile-contact');
+  if (contact) {
+    const cols = [...contact.children].filter((col) => /\bcol-/.test(col.className));
+    const columns = cols.map((col) => {
+      const nodes = boxNodes(col, doc);
+      return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+    });
+    items.push(...columnItems(columns, { variant: 'columns-50-50' }, ctx, cols.map(() => 6)));
+  }
+  info.querySelectorAll('.c-table').forEach((el) => items.push(...table(el, ctx)));
+  info.querySelectorAll('.c-procare-tile-addinfo').forEach((el) => {
+    const nodes = boxNodes(el, doc);
+    if (nodes.length) items.push({ type: 'flow', role: 'text', nodes });
+  });
+  const button = info.querySelector(':scope > a.btn[href]');
+  if (button && text(button)) items.push({ type: 'flow', role: 'text', nodes: [buttonNode(doc, button, text(button))] });
+  return items;
+}
+
+const skip = () => [];
+
+/**
+ * Publish date (news-detail template slot, component-map publishdate, approved 2026-10-28):
+ * the date under the title as a Heading 5, as live (Futura bold 14px); it is also the
+ * `published` metadata (corp-import.js).
+ */
+function publishDate(el, ctx) {
+  const line = el.querySelector('h5') || el;
+  if (!text(line)) return [];
+  const h5 = ctx.doc.createElement('h5');
+  h5.textContent = text(line);
+  return [{ type: 'flow', role: 'text', nodes: [h5] }];
+}
+
+/**
+ * A template slot (news-detail: the lead image and intro text slots sit in the template's
+ * col-sm-8 column, not in a column control) keeps that column's width, like the one filled
+ * column of a column control (columnStyles).
+ */
+const inTemplateColumn = (handler) => (el, ctx) => {
+  const items = handler(el, ctx);
+  const col = el.closest('[class*="col-sm-"]');
+  const width = col && Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]);
+  const styles = width && width < 12 && items.length ? columnStyles([width], 0, ctx) : [];
+  return styles.length ? [{ type: 'group', styles, items }] : items;
+};
+
+/**
+ * Event location (news-detail template slot, component-map eventlocationproperties: default
+ * content): the location line under the date as a Heading 5, as live; empty on most pages.
+ */
+function eventLocation(el, ctx) {
+  const line = el.querySelector('h5') || el;
+  if (!text(line)) return [];
+  const h5 = ctx.doc.createElement('h5');
+  h5.textContent = text(line);
+  return [{ type: 'flow', role: 'text', nodes: [h5] }];
+}
+
+// AEM components by wrapper class (or #id)
+export const COMPONENTS = {
+  carouselslidegroup: carousel,
+  'hero-large-carousel': heroLargeCarousel,
+  'h1-title': h1Title,
+  fullWidthImage,
+  fullWidthImageHero,
+  jumpbarnav: jumpBar,
+  cols: columnControl,
+  experienceFragment,
+  'section-title': sectionTitle,
+  text: textComponent,
+  standaloneimage: standaloneImage,
+  largeheadline: largeHeadline,
+  fullbleedpanel: fullBleedPanel,
+  remotecomponent: remoteComponent,
+  marketoform: marketoForm,
+  tabs,
+  numbercounter: numberCounter,
+  fastfacts: fastFacts,
+  standalonevideo: standaloneVideo,
+  interactivemedia: interactiveMedia,
+  // a white rule (white-hr) is invisible on live: a plain section break; grey / unset: divider
+  sectionseparator: (el) => (el.querySelector('.white-hr') ? [{ type: 'boundary' }] : [{ type: 'separator' }]),
+  curatedcta: buttons,
+  buttonset: buttons,
+  secondarycta: buttons,
+  contactbutton: buttons,
+  customizable: cardList,
+  resourcesanddownload: resources,
+  '#product-detail-container': shortDescription,
+  // a tag crumb placed as a component (ent/products/clarifix-cryotherapy-device, in a column):
+  // the Related Categories block as the template's own; hidden ones are skipped by the walk
+  tagcrumb: relatedCategories,
+  latestnews: latestNews,
+  // the product template's parts rendered without their AEM wrapper: the tag crumb (Related
+  // Categories), the short description (rich text), the contact button and the secondary CTA
+  'c-tagcrumb': relatedCategories,
+  'c-page-short-description': textComponent,
+  'c-contact-button': buttons,
+  'c-secondary-cta': secondaryCta,
+  accordion,
+  pagehero: pageHero,
+  hero: pageHero,
+  table,
+  localpagenavigation: localNav,
+  localpagenavigationchild: localNav,
+  'c-navigation-bar': jumpBar,
+  'c-tiles': promoTile,
+  title: titleComponent,
+  divisioncontactus: divisionContactUs,
+  mixedmediagallery: mixedMediaGallery,
+  dynamicmedia: dynamicMedia,
+  featuredcontentgrid: featuredContentGrid,
+  bannercampaign: bannerCampaign,
+  engagementcta: engagementCta,
+  animatedbarchart: animatedBarChart,
+  video: legacyVideo,
+  // news-detail template slots (no AEM wrapper): the lead image and the intro rich text, the
+  // publish date and the event location under the title, and the template's "back" link
+  // (navigation, not authored)
+  'c-standalone-image': inTemplateColumn(standaloneImage),
+  'c-rich-text-editor': inTemplateColumn(textComponent),
+  'c-publish-date': publishDate,
+  'c-event-location-properties': eventLocation,
+  'c-back-button': skip,
+};
+
+/** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */
+export const CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };

@@ -13,8 +13,8 @@
  *
  * Block (blocks/hero-corp/hero-corp.js, image-slide), one column:
  *   | Hero Corp (image-slide, top-15, left-56, right-10, size-2[, text-below]) |
- *   | <desktop image> |
- *   | <mobile image>  |   (when the slide has one)
+ *   | <desktop image> |   or a link to the desktop slide's XF fragment document
+ *   | <mobile image>  |   (when the slide has one) or a link to the mobile XF fragment
  *   | <headline>      |   heading kept as on the source; a plain headline line stays a
  *                           paragraph (no H1 is created)
  * The variant options carry the source headline box: top/left/right inset in % of the
@@ -69,20 +69,46 @@ function percent(style, re) {
   return m ? String(parseFloat(m[1])).replace('.', '-') : null;
 }
 
-export default function parse(element, { document }) {
+/**
+ * @param {Element} element the carousel (or slide)
+ * @param {object} options document; overlayNodes: the overlay text already converted by the
+ *   caller (corp section builder: rich text + buttons of a product hero), used instead of
+ *   the Large Headline lines; variants: more block options; vwSize: false when the caller's
+ *   overlay lines carry their own vw sizes as [[size-<n>vw]] tags (the corp engine), so no
+ *   size-<n> option is written
+ */
+export default function parse(element, {
+  document, overlayNodes, variants: extra = [], vwSize = true,
+}) {
   const slide = element.querySelector('.carouselslide:not(.slick-cloned)') || element;
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
   const overlay = slide.querySelector('.overlayparsys');
   const first = desktop || mobile || slide.querySelector('img');
-  if (!first) return;
+  // a slide whose XF holds a video has no image, only its fragment link
+  if (!first && !slide.dataset.xfDesktop) return;
 
   const variants = ['image-slide'];
-  const cells = [[copyImage(first, document)]];
-  if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+  // slide images that are experience fragments (marked by markXfSlides in corp-components.js):
+  // a link to each fragment document instead of the image, desktop first
+  const fragmentLink = (path) => {
+    const a = document.createElement('a');
+    a.href = path;
+    a.textContent = path;
+    return a;
+  };
+  const cells = [];
+  if (slide.dataset.xfDesktop) {
+    cells.push([fragmentLink(slide.dataset.xfDesktop)]);
+    if (slide.dataset.xfMobile) cells.push([fragmentLink(slide.dataset.xfMobile)]);
+    else if (mobile) cells.push([copyImage(mobile, document)]);
+  } else {
+    cells.push([copyImage(first, document)]);
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+  }
 
   if (overlay) {
-    const lines = headline(overlay, document);
+    const lines = overlayNodes || headline(overlay, document);
     if (lines.length) cells.push([lines]);
 
     const style = overlay.getAttribute('style') || '';
@@ -95,11 +121,12 @@ export default function parse(element, { document }) {
 
     const sized = overlay.querySelector('[class*="fontsize-"][class*="vw"]');
     const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
-    if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
+    if (size && vwSize) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
 
     if (overlay.classList.contains('mobile_Bottom')) variants.push('text-below');
   }
 
+  variants.push(...extra);
   element.replaceWith(WebImporter.Blocks.createBlock(document, {
     name: `Hero Corp (${variants.join(', ')})`,
     cells,

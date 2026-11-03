@@ -36,6 +36,27 @@
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 
+  /* event-calendar-corp (source /us/en/sports-medicine/calendar c-event, FullCalendar month view) */
+  --corp-calendar-cell-bg: #fafafa; /* source td.fc-day */
+  --corp-calendar-today-bg: #fcf8e3; /* source td.fc-today */
+  --corp-calendar-row-height: 140px; /* source .fc-week, every width */
+  --corp-calendar-head-height: 40px; /* source th.fc-day-header */
+  --corp-calendar-date-width: 100px; /* source list .dateContainer */
+  --corp-calendar-option-line-height: 29px; /* source .checkbox label */
+  --corp-calendar-checkbox-size: 18px;
+  --corp-calendar-option-gap: 4px; /* source checkbox 4px below its label top; Apply / Reset 4px apart */
+  --corp-calendar-view-padding: 4px 3px 3px; /* source .calendar-view i: 28 x 29px box around a 20px glyph */
+  --corp-calendar-event-gap: 2px; /* source .fc-day-grid-event margin, .fc-day-number padding */
+  --corp-calendar-event-padding: 1px;
+  --corp-calendar-date-padding: 17px 0 21px; /* source .dateBlock 5px + h4 12px / 1px + 15px + 5px */
+  --corp-calendar-date-line-height: 1.3; /* source .dateBlock h4 19.5px / 15px */
+  --corp-calendar-year-padding: 10px 0 6px; /* source .yearBlock 5px + h3 5px / 1px + 5px */
+  --corp-calendar-arrow-font: "Courier New", courier, monospace; /* source .fc-icon-left-single-arrow */
+  --corp-color-event-meeting: #008080; /* source event bar backgroundColor "teal" (association meetings) */
+  --corp-color-event: #808080; /* source event bar backgroundColor "gray" (other event types) */
+  --corp-color-alert: #cf6e29; /* source .alert-warning "No scheduled events" */
+  --corp-color-alert-border: #ba4a25;
+
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
@@ -43,6 +64,16 @@
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
+
+  /* sticky-nav local: stryker.com local page nav (nav.greedy, measured on
+     /us/en/care-settings/asc.html and /asc/pre-operative.html) */
+  --corp-color-local-nav-link: #9f9d9d; /* ul.links a */
+  --corp-color-local-nav-divider: #c2c2c2; /* ul.links li::after "|" */
+  --corp-color-local-nav-menu-link: #404040; /* below 841px: ul.mobile-list a */
+  --corp-local-nav-height: 40px; /* nav.greedy height */
+  --corp-local-nav-arrow-half-width: 4px; /* dropdown-arrow.png: 8px gold triangles */
+  --corp-local-nav-arrow-height: 5px;
+  --corp-local-nav-arrow-gap: 2px;
 
   /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
      .form-control field text */
@@ -54,6 +85,97 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
+
+  /* full-bleed panel gradients (source base.min.css .bg-dark-purple-gradient / .bg-dark-blue-gradient /
+     .bg-golden-gradient); the teal one is the shared `dark` style (--panel-dark-gradient) */
+  --corp-color-purple-gray: #594b61;
+  --corp-color-blue-gray: #425361;
+  --corp-color-orange-gray: #635c4f; /* bg-dark-orange-gradient end (bone-mill) */
+  --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-purple-gray));
+  --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-blue-gray));
+  --corp-gradient-dark-orange: linear-gradient(90deg, var(--color-secondary), var(--corp-color-orange-gray));
+  --corp-gradient-golden: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+
+  /* news-list-corp (source /us/en/about/news c-newsandannouncements) */
+  --corp-news-tab-padding-top: 12px; /* source .tab-link: 12px above the 20px label, 7px + 1px rule below */
+  --corp-news-image-max-width: 666px; /* source thumbnail preset $preset_666_392$ (its stacked width) */
+  --corp-news-image-ratio: 666 / 392;
+
+  /* chart-corp: source Google Charts (animatedbarchart / pieChart) */
+  --corp-color-chart-stem: #999; /* value-label leader line */
+  --corp-color-chart-legend: #222; /* pie legend text */
+  --corp-chart-pie-height: 400px; /* source pie chart height */
+  --corp-chart-legend-gap: 23px; /* pie → legend swatch */
+  --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
+
+  /* Modal (stryker.com Bootstrap modal: the ProCare tile, nara-bassinet) */
+  --corp-modal-width: 600px; /* .modal-dialog from 841px */
+  --corp-modal-top: 30px; /* .modal-dialog margin-top from 841px */
+  --corp-modal-radius: 6px; /* .modal-content */
+  --corp-modal-border: rgb(0 0 0 / 20%); /* .modal-content 1px border */
+  --corp-modal-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+  --corp-modal-shadow-l: 0 5px 15px rgb(0 0 0 / 50%); /* from 841px */
+  --corp-modal-close-size: 30px; /* .c-procare-tile-close circle */
+  --corp-modal-title-end: 40px; /* title right padding, clear of the close button */
+  --corp-tile-icon-size: 40px; /* .c-procare-tile-icon gold circle */
+  --corp-tile-width: 666px; /* the tile image's own width, below 1025px */
+  --corp-tile-width-l: 311px; /* .c-cross-promotional-tile max-width from 1025px */
+  --corp-tile-width-xl: 420px; /* from 1440px */
+  --corp-stripe-height: 34px; /* stripe: the empty .c-full-bleed-panel.page-section band */
+  --corp-jump-item-width: 14%; /* Sticky Nav item: source .c-navigation-bar nav a */
+  --corp-carousel-arrow-width: 36px; /* hero carousel: source .slick-arrow (arrow_left3.png) */
+  --corp-carousel-arrow-height: 65px;
+  --corp-carousel-arrow-inset: 14px; /* from the sides */
+  --corp-carousel-chevron: 44px; /* the chevron's rotated square: 65px tall */
+  --corp-carousel-chevron-shadow: 0 0 2px rgb(0 0 0 / 35%); /* the PNG's grey edge: visible on white */
+  --corp-carousel-dot-size: 16px; /* source .slick-dots button (dots.png) */
+  --corp-carousel-dot-gap: 13px; /* 29px apart */
+  --corp-carousel-speed: 300ms; /* source data-speed */
+  --corp-carousel-banner-arrow-width: 35px; /* banner: source arrow-right-carousel.png tab */
+  --corp-carousel-banner-arrow-height: 25px;
+  --corp-carousel-banner-chevron: 9px;
+  --corp-carousel-banner-inset: 35px; /* the copy's extra inset (source x50 = 15 + 35) */
+  --corp-carousel-banner-title-size: 24px; /* source .slide-title below 841px */
+  --corp-carousel-banner-title-size-l: 56px; /* from 841px (EDS 600px) */
+  --corp-jump-bar-height: 80px; /* Sticky Nav in the page flow: source .c-navigation-bar */
+  --corp-jump-bar-height-pinned: 70px; /* stuck to the top: source .nav-wrap.sticky */
+  --corp-jump-box-height-pinned: 62px; /* its gold box (the item keeps 4px padding) */
+  --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
+  --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
+  --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */
+  --corp-heading-line-height-1-5: 1.3; /* h-1-5 headings on phones; 1.36 from 600px */
+  --corp-hero-heading-line-height: 1.44; /* product hero h2 (35.2px lines at 24.5px) */
+
+  /* Related Categories (stryker.com product tag crumb) */
+  --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
+  --corp-tag-line-height: 21px; /* .c-tagcrumb-item lines */
+
+  /* Statistics (fast-facts): stryker.com Fast Facts (learn "Our impact") */
+  --corp-facts-number-size: 56px; /* .c-fastfacts-number from 840px */
+  --corp-facts-title-size: 27px; /* .c-fastfacts-title from 840px */
+  --corp-facts-title-rule-gap: 6px; /* title text → its white rule */
+  --corp-facts-title-gap: 53px; /* rule → first fact, from 840px */
+  --corp-facts-padding: 60px 0 10px; /* .c-fastfacts .wrapper from 840px */
+
+  /* gallery-corp: Scene7 MixedMediaViewer (xpedition-powered-stair-chair, stryker/gallery) */
+  --corp-gallery-thumb-size: 56px; /* swatch and scroll-arrow box (66px pitch with the 10px gap) */
+  --corp-gallery-control-size: 28px; /* zoom / full-screen buttons, 20px in from the stage corner */
+  --corp-color-gallery-active: #666; /* selected swatch border; arrow / full-screen icon grey */
+  --corp-gallery-max-width: 940px; /* viewer width in its source col-sm-8 at 1440px */
+
+  /* sitemap-corp line boxes (source /us/en/site-map .sitemap: line-height 2 / 2 / 1.5 / 1.375) */
+  --corp-sitemap-line-height-section: 48px; /* h2 a, 24px Egyptienne */
+  --corp-sitemap-line-height-l1: 40px; /* h3 a, 20px Futura */
+  --corp-sitemap-line-height-l2: 24px; /* h4 a, 16px Futura */
+  --corp-sitemap-line-height-l3: 22px; /* h5 a, 16px Humanist */
+}
+
+@media (width >= 600px) {
+  :where(body.corp) {
+    --corp-heading-line-height-1-5: 1.36; /* h-1-5 headings from 600px (source 480px) */
+    --corp-component-gap: var(--space-section);
+    --corp-component-gap-after-text: calc(var(--space-section) + var(--space-block));
+  }
 }
 
 @media (width >= 900px) {
@@ -87,12 +209,26 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 700;
 }
 
+/* --corp-h2-size / --corp-h3-size: a template's plain heading sizes (templates/product-detail);
+   the h-1-25 / h-1-5 section styles scale them */
 :where(body.corp) h2 {
-  font-size: var(--heading-font-size-l);
+  font-size: var(--corp-h2-size, var(--heading-font-size-l));
 }
 
 :where(body.corp) h3 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--corp-h3-size, var(--heading-font-size-m));
+}
+
+/* h4: 14px on phones, 17.5px from 600px (stryker.com h4 14px, 17.5px from 480px: no EDS
+   breakpoint, phones take the smallest size) */
+:where(body.corp) h4 {
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) h4 {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 /* bold: <strong> is Futura bold, <b> keeps the running font */
@@ -106,10 +242,24 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* bold + italic copy (stryker.com span.futura-bold labels) keeps the text colour: styles.css
+   makes it gold, which corp copy marks with a colour tag instead ([[color-gold]…]) */
+:where(body.corp) main :is(p, li) :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
+  color: inherit;
+}
+
 /* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
    underlines every link, which suits patients pages only. */
 :where(body.corp) a:any-link {
   text-decoration: none;
+}
+
+/* a citation authored as a link (stryker.com <a href="#references"><sup>1</sup></a>, the
+   interventional-spine pages) is the site link colour wherever it is, as live: in gold text
+   and on dark bands too (mild-procedure, dekompressor), the commas between numbers included */
+:where(body.corp) main a:any-link > sup:has(> a[href^="#fn-"]),
+:where(body.corp) main a:any-link > sup > a[href^="#fn-"]:any-link {
+  color: var(--color-primary);
 }
 
 :where(body.corp) strong > a:any-link,
@@ -163,17 +313,6 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
-/* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
-:where(body.corp) main > .section > .default-content-wrapper h2 {
-  padding-bottom: var(--heading-underline-gap);
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-:where(body.corp) main > .section > .default-content-wrapper h2:has(> em > :is(strong, b)) {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
 /* underlined headings render as a heading with a rule below, not underlined text */
 :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
 :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
@@ -210,6 +349,45 @@ body:where(.corp):has(main .hero-carousel) header {
   scroll-margin-top: calc(var(--nav-height) + var(--space-block-s));
 }
 
+/* standalone image title: the h4 sits right under its image (stryker.com .c-standalone-image
+   h4.title, no gap; measured on /us/en/about/news/2022/stryker-launches-easyfuse-…) */
+:where(body.corp) main .default-content-wrapper > p:has(> picture, > a > picture):has(+ h4) {
+  margin-bottom: 0;
+}
+
+/* Google map from a lone maps link (scripts/map-embed.js): full width, 300px high, 400px
+   from 600px; the address link sits under the frame (measured
+   /us/en/acute-care/contact and /us/en/about/contact: .map 300/400px, 10px below) */
+:where(body.corp) main .default-content-wrapper > .map-embed {
+  position: relative;
+  height: var(--map-embed-height);
+  margin-bottom: var(--space-block-s);
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* the address link, under the map; on top while keyboard-focused */
+:where(body.corp) main .default-content-wrapper > .map-embed a {
+  position: relative;
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed a:focus-visible {
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .default-content-wrapper > .map-embed {
+    height: var(--map-embed-height-m);
+  }
+}
+
 /* ---- DA canvas only (dm-support.js previewDMLinkEditors): a DM image link shown as a
    one-line caption under its preview ---- */
 :where(body.corp) main .prosemirror-editor.dm-qe-link {
@@ -230,41 +408,276 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* ---- sections ---- */
 
-/* measured on www.stryker.com: every component (.page-section) ends with a 20px gap, 30px from 480px */
+/* a section is a stryker.com component box (.page-section: 20px below it, 30px from 600px,
+   source 480px; measured on www.stryker.com). Its content keeps its own margins inside it, as on the source, where the
+   Bootstrap rows' clearfix keeps the last paragraph's 15px and an authored top margin inside
+   the component: margins do not collapse through the section (flow-root) */
 :where(body.corp) main > .section {
+  display: flow-root;
   margin-bottom: var(--space-block-l);
 }
 
 /* a section left without content (metadata only, or moved by a block) paints nothing;
    `spacer` sections are empty on purpose (shared styles.css gives them their height) */
-:where(body.corp) main .section:empty:not(.spacer) {
+:where(body.corp) main .section:empty:not(.spacer, .stripe) {
   display: none;
 }
 
-:where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+/* the content above a stripe ends flush with it; a `continued` section (split off the same
+   source component, where its copy changes style) follows without a component gap: only the
+   last paragraph's own 15px stays between them */
+:where(body.corp) main > .section:has(+ .section.stripe) {
   margin-bottom: 0;
+}
+
+:where(body.corp) main .section:has(+ .section.continued) {
+  margin-bottom: 0;
+}
+
+/* component gaps inside a section: a button line (curated CTA) and an image line (standalone
+   image) are their own component on stryker.com, so the line before them ends its component
+   (its 15px + the 20px / 30px component gap) and the one after them starts the next (20px /
+   30px). Measured specific gaps (columns, large-headline) keep their own rules */
+:where(body.corp) main :where(.default-content-wrapper, .columns > div > div) > :not(.button-wrapper, :has(> picture:only-child)) + :is(p.button-wrapper, p:has(> picture:only-child)) {
+  margin-top: var(--corp-component-gap-after-text);
+}
+
+:where(body.corp) main :where(.default-content-wrapper, .columns > div > div) > :is(p.button-wrapper, p:has(> picture:only-child)) + :not(.button-wrapper, :has(> picture:only-child)) {
+  margin-top: var(--corp-component-gap);
+}
+
+/* the last component ends with its own 20px / 30px before the footer, as every other
+   (the shared 45px page end of styles.css is the patients site's) */
+:where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: var(--space-block-l);
+}
+
+/* stripe (with a background style: bg-gold, stripe / bg-golden-gradient, stripe): the
+   stryker.com empty full-bleed panel, a 34px band at every width, flush with the content
+   above and below it (e.g. under the news heroes: packaging-for-a-better-planet; bpx) */
+:where(body.corp) main > .section.stripe {
+  height: var(--corp-stripe-height);
+  margin-block: 0;
+  padding: 0;
 }
 
 /* section styles: backgrounds */
 :where(body.corp) main > .section.bg-white {
+  --corp-box-bg: var(--color-white);
+
   background-color: var(--color-white);
 }
 
 :where(body.corp) main > .section.bg-gold {
+  --corp-box-bg: var(--color-accent);
+
   background-color: var(--color-accent);
 }
 
 :where(body.corp) main > .section.bg-light-gray {
+  --corp-box-bg: var(--color-surface);
+
   background-color: var(--color-surface);
 }
 
+/* bg-gray: the stryker.com bg-lighter-gray band (#dfe1de, e.g. the contact directory's
+   group headings on /us/en/about/contact) */
+:where(body.corp) main > .section.bg-gray {
+  --corp-box-bg: var(--color-surface-dim);
+
+  background-color: var(--color-surface-dim);
+}
+
+/* large-headline: a standalone stryker.com Large Headline band (contact directory group
+   headings: Futura bold, 2.5vw at 1440px = 35px, 18.75px at 375px, 20px padding). The
+   band's background (bg-gold / bg-gray) covers the content column, not the full width */
+:where(body.corp) main > .section.large-headline {
+  background-clip: content-box;
+}
+
+:where(body.corp) main > .section.large-headline > .default-content-wrapper {
+  /* in line with the block wrappers (the card grid below starts 15px further in) */
+  margin-inline: var(--space-block);
+  padding: var(--space-block-l);
+}
+
+:where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: min(5vw, var(--panel-heading-size));
+  line-height: var(--heading-line-height-hero);
+}
+
+/* Futura bold, but h2 / h3 in Egyptienne Light with h-serif (nailing-portfolio
+   "Cephalomedullary nailing (CMN) system…") */
+:where(body.corp) main > .section.large-headline > .default-content-wrapper > h1,
+:where(body.corp) main > .section.large-headline:not(.h-serif) > .default-content-wrapper > :is(h2, h3) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
+    font-size: min(2.5vw, var(--panel-heading-size));
+  }
+}
+
 :where(body.corp) main > .section.bg-dark-gray {
+  --corp-box-bg: var(--color-secondary);
+
   background-color: var(--color-secondary);
   color: var(--color-white);
 }
 
 :where(body.corp) main > .section.bg-dark-gray a:any-link {
   color: var(--color-white);
+}
+
+/* the rest of the stryker.com box palette (base.min.css .bg-blue / .bg-purple / .bg-teal /
+   .bg-gray / .bg-orange); like the source, the text keeps its own colour */
+:where(body.corp) main > .section.bg-blue {
+  --corp-box-bg: var(--color-navy-bright);
+
+  background-color: var(--color-navy-bright);
+}
+
+:where(body.corp) main > .section.bg-purple {
+  --corp-box-bg: var(--color-purple);
+
+  background-color: var(--color-purple);
+}
+
+:where(body.corp) main > .section.bg-teal {
+  --corp-box-bg: var(--color-primary);
+
+  background-color: var(--color-primary);
+}
+
+:where(body.corp) main > .section.bg-silver {
+  --corp-box-bg: var(--color-surface-muted);
+
+  background-color: var(--color-surface-muted);
+}
+
+:where(body.corp) main > .section.bg-dark-gold {
+  --corp-box-bg: var(--color-accent-link-hover);
+
+  background-color: var(--color-accent-link-hover);
+}
+
+/* boxed: a text / headline box with a background (stryker.com .has-background) is a box in
+   the column, not a band: the colour covers the box (column width, 10px padding), the
+   section itself stays clear. Box spacing tokens replace the 10px (scripts/corp-spacing.js) */
+:where(body.corp) main > .section.boxed {
+  background-color: transparent;
+}
+
+:where(body.corp) main > .section.boxed > .default-content-wrapper {
+  margin-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
+  padding: var(--space-block-s);
+  background-color: var(--corp-box-bg, transparent);
+}
+
+/* shadow-box: the dimensional box (stryker.com .dimensional-box: 10px shadow at 30%, 10px
+   margin in the column) */
+:where(body.corp) main > .section.shadow-box > .default-content-wrapper {
+  margin-block: var(--space-block-s);
+  margin-inline: max(calc(var(--container-gutter) + var(--space-block-s)), calc((100% - var(--container-max)) / 2 + var(--container-gutter) + var(--space-block-s)));
+  box-shadow: var(--shadow-soft);
+}
+
+/* image-border(-grey / -black): the image's 1px border (stryker.com img.bor-teal / bor-gray /
+   bor-black) */
+:where(body.corp) main > .section:is(.image-border, .image-border-grey, .image-border-black) picture img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-primary);
+}
+
+:where(body.corp) main > .section.image-border-grey picture img { border-color: var(--color-surface-muted); }
+:where(body.corp) main > .section.image-border-black picture img { border-color: var(--color-black); }
+
+/* Statistics (left): left-aligned counters (stryker.com numberCounterAlignment text-left) */
+:where(body.corp) .statistics.left .statistics-item {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* section styles: full-bleed panel gradients (`dark` = the teal one). Measured on
+   www.stryker.com (nse, hoffmann-lrf-hexapod, sage oral-care-for-all, AlphaVent): the
+   panel has no padding or margin of its own; the authored content keeps its margins
+   inside the band (source clearfix rows) and the next component starts flush below it. */
+:where(body.corp) main > .section.bg-dark-purple-gradient,
+:where(body.corp) main > .section.bg-dark-blue-gradient,
+:where(body.corp) main > .section.bg-dark-orange-gradient,
+:where(body.corp) main > .section.bg-golden-gradient,
+:where(body.corp) main > .section.dark {
+  display: flow-root;
+  margin-bottom: 0;
+}
+
+/* the dark gradients carry light text and links; buttons and CTAs keep their own colours */
+:where(body.corp) main > .section.bg-dark-purple-gradient {
+  background: var(--corp-gradient-dark-purple);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-dark-blue-gradient {
+  background: var(--corp-gradient-dark-blue);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-dark-orange-gradient {
+  background: var(--corp-gradient-dark-orange);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-golden-gradient {
+  background: var(--corp-gradient-golden);
+}
+
+/* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn
+   "Our impact" panel: white numbers and text) */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
+  color: inherit;
+}
+
+/* section styles col-<width> / col-at-<start>: content from the one filled column of an AEM
+   column control keeps that column (lift and shift: a news article body in the 2/3 column of
+   a 2/3 + 1/3 control, 910px at 1440px; the right half of a 1/2 + 1/2 control; an AEM grid
+   column alone on its line, e.g. the article text at 8/12 after 2/12 of
+   going-the-distance-for-front-line-heroes). From 600px (source col-sm-*, 841px) the section
+   content is that share of the container, at its position; full width below, unless
+   col-phone: an AEM grid column with no phone width of its own keeps its place on phones
+   (going-the-distance: 250px at 63px of 375px) */
+:where(body.corp) main > .section.col-1-4 { --corp-col-width: 0.25; }
+:where(body.corp) main > .section.col-1-3 { --corp-col-width: 0.3333; }
+:where(body.corp) main > .section.col-1-2 { --corp-col-width: 0.5; }
+:where(body.corp) main > .section.col-2-3 { --corp-col-width: 0.6667; }
+:where(body.corp) main > .section.col-3-4 { --corp-col-width: 0.75; }
+:where(body.corp) main > .section.col-5-6 { --corp-col-width: 0.8333; }
+:where(body.corp) main > .section.col-at-1-12 { --corp-col-start: 0.0833; }
+:where(body.corp) main > .section.col-at-1-6 { --corp-col-start: 0.1667; }
+:where(body.corp) main > .section.col-at-1-4 { --corp-col-start: 0.25; }
+:where(body.corp) main > .section.col-at-1-3 { --corp-col-start: 0.3333; }
+:where(body.corp) main > .section.col-at-1-2 { --corp-col-start: 0.5; }
+:where(body.corp) main > .section.col-at-2-3 { --corp-col-start: 0.6667; }
+:where(body.corp) main > .section.col-at-3-4 { --corp-col-start: 0.75; }
+
+:where(body.corp) main > .section:is(.col-1-4, .col-1-3, .col-1-2, .col-2-3, .col-3-4, .col-5-6):where(.col-phone) > div {
+  box-sizing: border-box;
+  max-width: calc(min(100%, var(--container-max)) * var(--corp-col-width));
+  margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-col-start, 0));
+  margin-right: auto;
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section:is(.col-1-4, .col-1-3, .col-1-2, .col-2-3, .col-3-4, .col-5-6) > div {
+    box-sizing: border-box;
+    max-width: calc(min(100%, var(--container-max)) * var(--corp-col-width));
+    margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-col-start, 0));
+    margin-right: auto;
+  }
 }
 
 /* section style `separator`: full-width rule between sections */
@@ -338,19 +751,32 @@ body:where(.corp):has(main .hero-carousel) header {
   letter-spacing: normal;
 }
 
-/* section styles: copy size (p-1, p-1-25, p-1-75), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+/* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5, label-1-75, label-2) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
-   panels (with-nested-blocks) hold their section in .accordion-item-body. */
+   panels (with-nested-blocks) hold their section in .accordion-item-body; a fragment that
+   shares its section (a contact aside next to a form) keeps its sections in .fragment.
+   --corp-copy-size: the section's copy size, for blocks that set their own copy size
+   (Columns in a serif section, columns-corp.css) */
+:where(body.corp) .section.p-0-8 { --corp-copy-size: var(--footnote-font-size); }
+:where(body.corp) .section.p-1 { --corp-copy-size: var(--body-font-size-m); }
+:where(body.corp) .section.p-1-25 { --corp-copy-size: var(--body-font-size-l); }
+:where(body.corp) .section.p-1-5 { --corp-copy-size: var(--body-font-size-xl); }
+:where(body.corp) .section.p-1-75 { --corp-copy-size: var(--heading-font-size-xl); }
+:where(body.corp) .section.p-2 { --corp-copy-size: var(--heading-font-size-xxl); }
+:where(body.corp) .section.p-2-5 { --corp-copy-size: var(--panel-heading-size); }
+
 :where(body.corp) main > .section.p-1 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1 > div :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
 :where(body.corp) main > .section.p-1-25 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-25 > div :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
@@ -358,7 +784,8 @@ body:where(.corp):has(main .hero-carousel) header {
 /* p-1-5: 21px copy (stryker.com .fontsize-1-5em, e.g. a serif news intro) */
 :where(body.corp) main > .section.p-1-5 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-5 > div :is(p, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
@@ -366,16 +793,28 @@ body:where(.corp):has(main .hero-carousel) header {
 /* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
 :where(body.corp) main > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
 }
 
-/* p-2: 28px copy (stryker.com .fontsize-2em, lines 1.06), e.g. the Egyptienne subtitle of
-   the "Trees, landfills and the environment" feature */
+/* p-0-8: 11.2px small print (stryker.com .fontsize-8em = 0.8em: footnotes, references,
+   data notes); the source keeps the 14px paragraph's 19.25px lines */
+:where(body.corp) main > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-0-8 > div :is(p, li) {
+  font-size: var(--footnote-font-size);
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
+}
+
+/* p-2 / p-2-5: 28px / 35px large copy (stryker.com .fontsize-2em / .fontsize-2-5em static
+   text, lines 1.06) */
 :where(body.corp) main > .section.p-2 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
-:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-2 > div :is(p, li) {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
 }
@@ -534,13 +973,279 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+:where(body.corp) main > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .fragment > .section.p-2-5 > div :is(p, li) {
+  font-size: var(--panel-heading-size);
+  line-height: var(--heading-line-height);
+}
+
 /* section style `serif`: Egyptienne copy in default content (stryker.com
    span.urw-egyptienne); the copy size comes from p-1 / p-1-25 (columns style their own
    serif sections, blocks/columns) */
 :where(body.corp) main > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif > .default-content-wrapper :is(p, li) {
   font-family: var(--heading-font-family);
+}
+
+/* bracket tags `[[size-<n>vw]…]` (scripts/corp-type.js): the stryker.com .fontsize-<n>vw
+   classes — 2 × <n>vw below 600px (source 840px), <n>vw up to <n> × 14px from 600px (the
+   source's fixed <n> × 14px from 1439px), lines 1.35 as the source */
+:where(body.corp) main span.corp-vw {
+  font-size: calc(var(--corp-vw) * 2vw);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main span.corp-vw {
+    font-size: min(calc(var(--corp-vw) * 1vw), calc(var(--corp-vw) * var(--body-font-size-m)));
+  }
+}
+
+/* bracket tag `[[futura-bold]…]` inside a link: a bold text link (stryker.com span.futura-bold
+   around a link alone on its line, e.g. nailing-portfolio "Gamma4 Trochanteric Nail"), not a
+   button */
+:where(body.corp) main span.futura-bold {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* corp colour tags (the shared ones are in styles.css): [[color-black]…] black link text (the
+   link default is teal), [[color-light-gray]…] #edeeec, [[color-silver]…] #b2b4ae,
+   [[color-dark-gold]…] #af6d04 (stryker.com inline colours) */
+:where(body.corp) main span.color-black { --span-color: var(--color-black); }
+:where(body.corp) main span.color-light-gray { --span-color: var(--color-surface); }
+:where(body.corp) main span.color-silver { --span-color: var(--color-surface-muted); }
+:where(body.corp) main span.color-dark-gold { --span-color: var(--color-accent-link-hover); }
+
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold),
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold) :is(strong, b, em, i, a:any-link) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
+/* bracket tag `[[serif]…]`: Egyptienne copy inside other copy (stryker.com
+   span.urw-egyptienne in a paragraph that is not serif throughout) */
+:where(body.corp) main span.serif {
+  font-family: var(--heading-font-family);
+}
+
+/* section style `carousel` (scripts/corp-carousel.js): consecutive Hero Corp slide sections
+   are one carousel showing one slide at a time; `fade` fades the next slide in, else it slides
+   in from the right. Measured on /us/en/foot-and-ankle/products/augment.html and
+   versitomic-flexible-reaming-system: from 600px (source 841px) white chevrons 14px in from
+   the sides, no dots; below 600px no chevrons, 16px dots 29px apart centred 10px under the
+   slide, gold = the current one */
+:where(body.corp) main > .section.hero-corp-carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-item:not(.hero-corp-carousel-active, .hero-corp-carousel-measure) {
+  display: none;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-fade {
+  animation: corp-carousel-fade var(--corp-carousel-speed) ease;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-slide-in > div {
+  animation: corp-carousel-slide var(--corp-carousel-speed) ease;
+}
+
+@keyframes corp-carousel-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes corp-carousel-slide {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+
+:where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: var(--corp-carousel-arrow-width);
+  height: var(--corp-carousel-arrow-height);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-prev {
+  left: var(--corp-carousel-arrow-inset);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-next {
+  right: var(--corp-carousel-arrow-inset);
+}
+
+/* the chevron: two sides of a rotated square, its corner at the arrow's outer edge */
+:where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: var(--corp-carousel-chevron);
+  height: var(--corp-carousel-chevron);
+  border: solid var(--color-white);
+  border-width: 0 0 2px 2px;
+  filter: drop-shadow(var(--corp-carousel-chevron-shadow));
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-prev::before {
+  left: calc(var(--corp-carousel-chevron) * 0.15);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-next::before {
+  right: calc(var(--corp-carousel-chevron) * 0.15);
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--corp-carousel-dot-gap);
+  margin: var(--space-block-s) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots button {
+  display: block;
+  width: var(--corp-carousel-dot-size);
+  height: var(--corp-carousel-dot-size);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-surface-muted);
+  border-radius: 50%;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+:where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots button[aria-current="true"] {
+  border-color: var(--color-accent-link-hover);
+  background: var(--color-accent);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .hero-corp-carousel-item :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+    display: block;
+  }
+
+  :where(body.corp) main .hero-corp-carousel-item .hero-corp-carousel-dots {
+    display: none;
+  }
+}
+
+/* carousel option `banner` (the large hero carousel, measured on nse/products/malis-
+   disposable-non-stick-bipolar-forceps at 375 / 768 / 1024 / 1440px): gold 35 x 25px arrow
+   tabs at the edges at every width, no dots; the copy inset 35px more and centred on the
+   image, the title 24px light serif (56px from 600px, source 841px), the subtitle 17.5px
+   Futura, white */
+:where(body.corp) main .hero-corp-carousel-banner :is(.hero-corp-carousel-prev, .hero-corp-carousel-next) {
+  display: block;
+  width: var(--corp-carousel-banner-arrow-width);
+  height: var(--corp-carousel-banner-arrow-height);
+  background: var(--color-accent);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-prev {
+  left: 0;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-next {
+  right: 0;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner :is(.hero-corp-carousel-prev, .hero-corp-carousel-next)::before {
+  width: var(--corp-carousel-banner-chevron);
+  height: var(--corp-carousel-banner-chevron);
+  filter: none;
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-prev::before {
+  left: calc(50% - var(--corp-carousel-banner-chevron) / 3);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-next::before {
+  right: calc(50% - var(--corp-carousel-banner-chevron) / 3);
+}
+
+:where(body.corp) main .hero-corp-carousel-banner .hero-corp-carousel-dots {
+  display: none;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns > div {
+  align-items: center;
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner :where(.columns > div > div:first-child) {
+  padding-inline: var(--corp-carousel-banner-inset);
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns h2 {
+  margin: 0 0 var(--space-block-s);
+  color: var(--color-white);
+  font-size: var(--corp-carousel-banner-title-size);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.hero-corp-carousel-banner .columns p {
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.hero-corp-carousel-banner .columns h2 {
+    margin-bottom: var(--space-block-l);
+    font-size: var(--corp-carousel-banner-title-size-l);
+  }
+}
+
+/* section styles `desktop-only` / `mobile-only`: a hero composition authored twice (stryker.com
+   desktop / mobile slide XFs, e.g. joint-replacement/products/gmrs): the mobile one below 600px
+   (source 841px), the desktop one from there */
+:where(body.corp) main > .section.desktop-only {
+  display: none;
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.desktop-only {
+    display: flow-root;
+  }
+
+  :where(body.corp) main > .section.mobile-only {
+    display: none;
+  }
+}
+
+/* bracket tag `[[visually-hidden]…]`: text kept for search engines and screen readers, not
+   shown (stryker.com hero titles set transparent, e.g. nse/products/silverglide); a heading
+   that holds only it takes no room either */
+:where(body.corp) main span.visually-hidden,
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> span.visually-hidden:only-child) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
@@ -558,10 +1263,14 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
-   bold news subtitle) instead of the corp Futura bold */
-:where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
-:where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
-:where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
+   bold news subtitle, or "Reorder #7502" in a Columns cell on sage-barrier-cream-cloths)
+   instead of the corp Futura bold, in default content and blocks; Futura bold (bold + italic),
+   buttons and bold words in a heading (a spacing box can hold one inside its <p>: isolibrium
+   "Integrated and intuitive") stay Futura */
+:where(body.corp) main > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .tabs-panel > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .accordion-item-body > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *),
+:where(body.corp) .fragment > .section.bold-body > div :is(p:not(.button-wrapper), li) :is(strong, b):not(em strong, :has(em), :is(h1, h2, h3, h4, h5, h6) *) {
   font-family: inherit;
 }
 
@@ -593,23 +1302,79 @@ body:where(.corp):has(main .hero-carousel) header {
   border-color: transparent transparent transparent currentcolor;
 }
 
+/* links on dark bands are white, except citation links: those keep the colour of the text
+   they cite from (npseal, pidrive gold stat citations) */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
+  color: var(--color-white);
+}
+
 :where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
 
 /* serif with p-1-5: 21px Egyptienne renders 26.25px lines on the source */
 :where(body.corp) main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
-:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .fragment > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
   line-height: var(--paragraph-line-height-serif-l);
 }
 
-:where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
-  font-size: var(--body-font-size-xl);
+/* h-0-8 / h-1-25 / h-1-5: the section's h2 / h3 authored 0.8x / 1.25x / 1.5x the plain heading
+   (news EP: h3 16.8px at 1440px, 14px on phones; stryker.com
+   .fontsize-1-25em / -1-5em headings: product-detail h2 30.625px / 36.75px from 600px). Card
+   titles keep their own size (emergency-medical-services featured articles: h2 1.5x, card h3 21px) */
+:where(body.corp) .section.h-0-8 {
+  --corp-heading-scale: 0.8;
+}
+
+/* their line height: on the source the larger size sits on a span inside the plain heading,
+   whose own font still sets the line, so the lines are taller than the size alone gives
+   (measured on 10 product pages: a 1.25x h3 has 38.2px lines at 26.25px and 32.2px at 21.9px;
+   a 1.5x h2 50px at 36.75px, 39-42px at 31.5px on phones) */
+:where(body.corp) .section.h-1-25 {
+  --corp-heading-scale: 1.25;
+  --corp-scaled-heading-line-height: var(--corp-heading-line-height-1-25);
+}
+
+:where(body.corp) .section.h-1-5 {
+  --corp-heading-scale: 1.5;
+  --corp-scaled-heading-line-height: var(--corp-heading-line-height-1-5);
+}
+
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
+  font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
+  line-height: var(--corp-scaled-heading-line-height, var(--heading-line-height));
+}
+
+:where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h3 {
+  font-size: calc(var(--corp-heading-scale) * var(--corp-h3-size, var(--heading-font-size-m)));
+  line-height: var(--corp-scaled-heading-line-height, var(--heading-line-height-h4));
+}
+
+/* label-1-5 / label-1-75 / label-2: labels (a paragraph that is one bold run, <strong> or the
+   Futura <em><strong>) at 21px / 24.5px / 28px, when they are set larger than the copy beside
+   them (stryker.com .fontsize-1-5em / -1-75em / -2em labels: lifepak-15, isolibrium) */
+:where(body.corp) .section.label-1-5 {
+  --corp-label-size: var(--body-font-size-xl);
+}
+
+:where(body.corp) .section.label-1-75 {
+  --corp-label-size: var(--heading-font-size-xl);
+}
+
+:where(body.corp) .section.label-2 {
+  --corp-label-size: var(--heading-font-size-xxl);
+}
+
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+  font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }
 
@@ -693,6 +1458,20 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon-facebook {
   border-radius: 50%;
   background-color: var(--corp-color-facebook);
+}
+
+/* a social icon authored as a linked image, one per line (stryker.com lead-gen-social /
+   social-icons XFs): side by side at the icon size, 30px apart, as live */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper p:has(> a:only-child > picture:only-child) {
+  display: inline-block;
+  margin-inline-end: var(--space-inset-l);
+  vertical-align: top;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper :where(p > a:any-link:only-child > picture) img {
+  display: block;
+  width: var(--corp-social-icon-size);
+  height: auto;
 }
 
 /* talent-banner: full-width image (mobile image below 600px) with a blue button on it */
@@ -811,6 +1590,13 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 
+/* section styles `flex-67-33` / `flex-33-67` (with `flex`): a block beside an aside fragment
+   (e.g. Marketo form | business-unit contact links), two wrappers. Stacked below 600px, 20px apart
+   (source col-xs-12 stack: the form component's 20px page-section gap). */
+:where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:where(:not(:first-child, :empty)) {
+  margin-top: var(--space-block-l);
+}
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -830,6 +1616,10 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 
   :where(body.corp) main > .section {
+    margin-bottom: var(--space-section);
+  }
+
+  :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
     margin-bottom: var(--space-section);
   }
 
@@ -857,6 +1647,10 @@ body:where(.corp):has(main .hero-carousel) header {
     height: var(--corp-social-icon-size-l);
   }
 
+  :where(body.corp) main .section.contact-aside > .default-content-wrapper :where(p > a:any-link:only-child > picture) img {
+    width: var(--corp-social-icon-size-l);
+  }
+
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
     display: block;
   }
@@ -868,6 +1662,34 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
     margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
   }
+
+  /* flex-67-33 / flex-33-67: source col-sm-8 + col-sm-4 from 841px (EDS 600px), top-aligned,
+     one 30px gutter, 15px outer edge; widths are thirds of the row (content + one gutter) */
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > .section.flex-67-33 > div:first-child,
+  :where(body.corp) main > .section.flex-33-67 > div:nth-child(2) {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:empty {
+    display: none;
+  }
 }
 
 @media (width >= 900px) {
@@ -878,5 +1700,59 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+}
+
+/* modal tiles (scripts/corp.js decorateModalTiles; the stryker.com ProCare tile, measured on
+   /us/en/acute-care/products/nara-bassinet): the image centred at its own width (666px), a
+   third of the row from 900px (source 311px from 1025px) and 420px from 1200px (source
+   1440px); a 40px gold circle with a black arrow 20px from the right and 15px from the
+   bottom of the image */
+:where(body.corp) main p.modal-tile {
+  max-width: var(--corp-tile-width);
+  margin-inline: auto;
+}
+
+/* a grid, the picture's contents its item: the image sits flush, no inline gap under it */
+:where(body.corp) main .modal-tile-link {
+  display: grid;
+  position: relative;
+}
+
+:where(body.corp) main .modal-tile-image {
+  display: contents;
+}
+
+:where(body.corp) main .modal-tile-icon {
+  position: absolute;
+  right: var(--space-block-l);
+  bottom: var(--space-block);
+  width: var(--corp-tile-icon-size);
+  height: var(--corp-tile-icon-size);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main .modal-tile-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: var(--space-block-s);
+  height: var(--space-block-s);
+  border-top: 2px solid var(--color-black);
+  border-right: 2px solid var(--color-black);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main p.modal-tile {
+    max-width: var(--corp-tile-width-l);
+  }
+}
+
+@media (width >= 1200px) {
+  :where(body.corp) main p.modal-tile {
+    max-width: var(--corp-tile-width-xl);
   }
 }
