@@ -505,6 +505,12 @@ body.long-page-detail-corp main > .section .columns a.button:any-link {
   font-size: var(--body-font-size-m);
 }
 
+/* buttons in a Columns cell 15px below the copy and each other, as the source CTAs (margins
+   don't collapse in the cell: webinars "REGISTER" buttons 53px apart) */
+body.long-page-detail-corp main > .section .columns p.button-wrapper {
+  margin-block: 0 var(--space-block);
+}
+
 /* the 21px / 28px / 35px size tags set their own line spacing, 1.06x as on the source
    (22.26px at 21px: jr45 faculty names, endoscopy video titles; 37.1px at 35px), not the
    copy's */
