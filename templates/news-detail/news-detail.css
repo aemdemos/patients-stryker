@@ -560,15 +560,22 @@ body.news-detail main > .section.video-text.light-gray {
   background-color: transparent;
 }
 
-body.news-detail main > .section.video-text.light-gray > .default-content-wrapper > :is(p, h2):first-child {
+body.news-detail main > .section.video-text.light-gray > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
   padding: var(--space-block-l);
   background-color: var(--color-surface);
 }
 
 /* …in a Large Headline column (headline-1-5vw: no paragraph gaps) the quote starts a
    section gap below the box, as the source Large Headline components (Columns gray-lead) */
-body.news-detail main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(p, h2):first-child {
+body.news-detail main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
   margin-bottom: var(--space-section-l);
+}
+
+/* video-text: a button right after the video (a Bold link on its own line opening the
+   text, e.g. Matt's "Learn more about the LUCAS…") is the source's button under the video:
+   on phones video, button, text, 20px / 15px apart; from 900px under the video (below) */
+body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child {
+  margin: var(--space-block-l) 0 var(--space-block);
 }
 
 @media (width >= 600px) {
@@ -697,6 +704,32 @@ body.news-detail main > .section.video-text.light-gray.headline-1-5vw > .default
 
   body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper {
     padding-inline: 0;
+  }
+
+  /* …with a button under the video: the video and the button in the two-thirds column
+     (floats, a section gap apart), the text beside them in the one-third column */
+  body.news-detail main > .section.video-text:has(> .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child) {
+    --news-video-column: calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+
+    display: flow-root;
+  }
+
+  body.news-detail main > .section.video-text:has(> .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child) > .video-wrapper {
+    float: left;
+    width: var(--news-video-column);
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child {
+    float: left;
+    clear: left;
+    width: var(--news-video-column);
+
+    /* 30px below the player, as the source: the video wrapper ends 15px below it */
+    margin: var(--space-block) 0 0;
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper:has(> p.button-wrapper:first-child) > :not(:first-child) {
+    margin-left: calc(var(--news-video-column) + 2 * var(--container-gutter));
   }
 
     body.news-detail main > .section:not(.hero-container, .hero-corp-container) > div {

@@ -1388,7 +1388,7 @@ export default function transform(hookName, element, payload) {
   // the Video block, then the column as default content beside it in a `video-text`
   // section — `headline-1-5vw` (the Large Headline text sizes), `background: light-gray`
   // for the grey box (its first line a Heading 2 statement when the source sets it at
-  // 2vw); buttons under the video go in a section of their own below the row
+  // 2vw); a button under the video opens the text, right after the video
   const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas) => {
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const lead = boxed ? headlineNodes(headline, doc) : [];
@@ -1407,8 +1407,9 @@ export default function transform(hookName, element, payload) {
     element.setAttribute('data-news-theme', 'full-width');
     const section = startSection('video-text', 'video-text, headline-1-5vw');
     if (boxed) section.background = 'light-gray';
-    section.nodes.push(video, ...nodes);
-    if (ctas.length) startSection('buttons').nodes.push(...ctas.flatMap((cta) => buttonNodes(cta, doc)));
+    // a button under the video comes right after it, before the text (source order: on
+    // phones video, button, text; from 900px the template keeps it under the video)
+    section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
     current = null;
     return true;
   };

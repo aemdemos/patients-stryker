@@ -1273,8 +1273,7 @@ var CustomImportScript = (() => {
       element.setAttribute("data-news-theme", "full-width");
       const section = startSection("video-text", "video-text, headline-1-5vw");
       if (boxed) section.background = "light-gray";
-      section.nodes.push(video, ...nodes);
-      if (ctas.length) startSection("buttons").nodes.push(...ctas.flatMap((cta) => buttonNodes(cta, doc)));
+      section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
       current = null;
       return true;
     };
