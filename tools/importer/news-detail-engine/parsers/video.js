@@ -9,7 +9,8 @@
  *
  * Source shapes:
  *   - Dynamic Media viewer: .s7dm-dynamic-media[data-asset-path="stryker/<asset>-AVS"]
- *     with data-videoserver / data-imageserver (and data-posterimage when set). Imported
+ *     with data-videoserver / data-imageserver (and the poster from data-posterimage or the
+ *     VideoPlayer.posterimage viewer setting when set). Imported
  *     as the Scene7 HLS link with the poster as `?poster=`, the same shape as the authored
  *     corp video drafts:
  *       https://media-assets.stryker.com/is/content/stryker/<asset>-AVS.m3u8
@@ -31,7 +32,14 @@ export function videoLink(element, document) {
     const assetPath = dm.getAttribute('data-asset-path');
     const videoServer = dm.getAttribute('data-videoserver') || `${DM_HOST}/is/content/`;
     const imageServer = dm.getAttribute('data-imageserver') || `${DM_HOST}/is/image/`;
-    const poster = dm.getAttribute('data-posterimage') || assetPath;
+    // the poster: data-posterimage, or the viewer setting VideoPlayer.posterimage=<asset>
+    // (e.g. data-viewermodifiers="VideoPlayer.posterimage=stryker/jeff-bradley&"), else the
+    // video's own first frame
+    const modifiers = dm.getAttribute('data-viewermodifiers') || '';
+    const modifierPoster = (modifiers.match(/(?:^|&)VideoPlayer\.posterimage=([^&]+)/i) || [])[1];
+    const poster = dm.getAttribute('data-posterimage')
+      || (modifierPoster && decodeURIComponent(modifierPoster.replace(/\+/g, ' ')).trim())
+      || assetPath;
     a.href = `${videoServer}${encodePath(assetPath)}.m3u8?poster=${imageServer}${encodePath(poster)}?fit=constrain,1&wid=909&hei=511`;
     a.textContent = (dm.getAttribute('data-asset-name') || assetPath.split('/').pop()).replace(/\.[a-z0-9]+$/i, '');
     return a;
