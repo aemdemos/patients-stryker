@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-news-detail-engine-fragments.js
+  // ../../../../../tools/importer/import-news-detail-engine-fragments.js
   var import_news_detail_engine_fragments_exports = {};
   __export(import_news_detail_engine_fragments_exports, {
     default: () => import_news_detail_engine_fragments_default
   });
 
-  // tools/importer/news-detail-engine/transformers/corp-sections.js
+  // ../../../../../tools/importer/news-detail-engine/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/news-detail-engine/transformers/patients-stryker-cleanup.js
+  // ../../../../../tools/importer/news-detail-engine/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/news-detail-engine/transformers/patients-stryker-dm-images.js
+  // ../../../../../tools/importer/news-detail-engine/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/news-detail-engine/corp-richtext.js
+  // ../../../../../tools/importer/news-detail-engine/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
@@ -875,7 +875,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/news-detail-engine/corp-section-builder.js
+  // ../../../../../tools/importer/news-detail-engine/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1134,7 +1134,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // ../../../../../tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3283,7 +3283,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // ../../../../../tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var CF_ROOT = "/content/dam/stryker/content-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
@@ -3306,7 +3306,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}content-fragments/${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // ../../../../../tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3347,7 +3347,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/news-detail-engine/corp-components.js
+  // ../../../../../tools/importer/news-detail-engine/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3503,7 +3503,7 @@ var CustomImportScript = (() => {
     return { sections, unknown };
   }
 
-  // tools/importer/news-detail-engine/parsers/hero-image-slide.js
+  // ../../../../../tools/importer/news-detail-engine/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3595,7 +3595,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/news-detail-engine/parsers/cards-corp-teaser.js
+  // ../../../../../tools/importer/news-detail-engine/parsers/cards-corp-teaser.js
   function clean2(text3) {
     return (text3 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3654,7 +3654,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/news-detail-engine/parsers/video.js
+  // ../../../../../tools/importer/news-detail-engine/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3682,14 +3682,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-modal-path.js
+  // ../../../../../tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // tools/importer/data/dm-sets.js
+  // ../../../../../tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3708,7 +3708,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // tools/importer/news-detail-engine/corp-component-handlers.js
+  // ../../../../../tools/importer/news-detail-engine/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4123,10 +4123,10 @@ var CustomImportScript = (() => {
     "4,4,4": SPLITS.cols3,
     "3,3,3,3": SPLITS.cols4
   };
+  var colWidth = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
   function phoneGrid(columns) {
-    const width = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
-    const desktop = columns.map((col) => width(col, "md") || width(col, "sm"));
-    const phone = columns.map((col) => width(col, "xs") || 12);
+    const desktop = columns.map((col) => colWidth(col, "md") || colWidth(col, "sm"));
+    const phone = columns.map((col) => colWidth(col, "xs") || 12);
     if (!desktop.every(Boolean) || desktop.reduce((a, b) => a + b, 0) > 12) return [];
     const usual = columns.length === 4 ? 6 : 12;
     if (phone.every((w) => w === usual)) return [];
@@ -4137,7 +4137,7 @@ var CustomImportScript = (() => {
     const row = el.querySelector(":scope > .colctrl > .row") || el.querySelector(".row");
     const columns = row ? [...row.children].filter((c) => /\bcol-/.test(c.className)) : [];
     const items = columns.map((col) => ctx.collect(col));
-    const widths = columns.map((col) => Number((col.className.match(/\bcol-sm-(\d+)\b/) || [])[1]) || 0);
+    const widths = columns.map((col) => colWidth(col, "md") || colWidth(col, "sm"));
     if (split === "cols" || columns.length < 2) {
       const flat = items.flat();
       return hasContent(flat) ? [{ type: "boundary" }, ...flat, { type: "boundary" }] : flat;
@@ -5468,7 +5468,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/news-detail-engine/corp-page.js
+  // ../../../../../tools/importer/news-detail-engine/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -5552,7 +5552,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // tools/importer/news-detail-engine/news-shared-fragments.js
+  // ../../../../../tools/importer/news-detail-engine/news-shared-fragments.js
   var FRAGMENTS2 = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       type: "resources",
@@ -5777,7 +5777,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/news-detail-engine/xf-fragments.js
+  // ../../../../../tools/importer/news-detail-engine/xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var TEMPLATE = "news-detail";
   var corpTransformers = [transform, transform2, transform3];
@@ -5882,7 +5882,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/import-news-detail-engine-fragments.js
+  // ../../../../../tools/importer/import-news-detail-engine-fragments.js
   var import_news_detail_engine_fragments_default = xf_fragments_default;
   return __toCommonJS(import_news_detail_engine_fragments_exports);
 })();
