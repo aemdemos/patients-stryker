@@ -24,3 +24,24 @@ body.event-detail main h5:is(.underline, :has(> u)) {
 body.event-detail main h5:is(.underline, :has(> u)) {
   padding-bottom: 0;
 }
+
+body.event-detail {
+  --event-map-height: 362px;
+}
+
+body.event-detail .event-map iframe {
+  display: block;
+  width: 100%;
+  height: var(--event-map-height);
+  border: 0;
+}
+
+body.event-detail .event-map:not(:last-child) {
+  margin-block-end: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.event-detail {
+    --event-map-height: 400px;
+  }
+}
