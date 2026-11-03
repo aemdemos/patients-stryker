@@ -51,15 +51,20 @@
   padding: var(--space-block) var(--space-block-l) 0;
 }
 
-/* dark-box: the headline in a dark grey box with 20px padding over the image, at its
-   top-left on phones (20px in from the edges) and at the authored top/left/right from 600px
+/* dark-box: the headline in a dark grey box with 20px padding — on phones alone, 20px in
+   from the edges, and from 600px over the image at the authored top/left/right
    (stryker.com .c-largeheadline.bg-dark-gray, e.g. the "Nurses: A key driver in advancing
    global health" feature) */
 .hero-corp.image-slide.dark-box > div:last-child {
-  position: absolute;
-  inset: var(--space-block-l) var(--space-block-l) auto;
+  position: static;
+  margin: 0 var(--space-block-l) calc(2 * var(--space-section));
   padding: var(--space-block-l);
   background-color: var(--color-secondary);
+}
+
+/* …on phones the source shows the title box alone, without the image */
+.hero-corp.image-slide.dark-box > div:first-child {
+  display: none;
 }
 
 .hero-corp.image-slide > div:last-child > * {
@@ -91,8 +96,14 @@
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 
+  .hero-corp.image-slide.dark-box > div:first-child {
+    display: block;
+  }
+
   .hero-corp.image-slide.dark-box > div:last-child {
+    position: absolute;
     inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    margin: 0;
     padding: var(--space-block-l);
   }
 }

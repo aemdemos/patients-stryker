@@ -17,6 +17,7 @@
 body.news-detail main > .section.form-right {
   display: flex;
   flex-direction: column;
+  margin-top: calc(2 * var(--space-section));
 }
 
 body.news-detail main > .section.form-right > .default-content-wrapper {
@@ -83,6 +84,30 @@ body.news-detail main > .section.bg-dark-blue-gradient > .default-content-wrappe
   line-height: var(--heading-line-height-hero);
 }
 
+/* the full-bleed slide sits further below the date than a column image (source 36px,
+   46px from 600px; the margin collapses with the title section's) */
+body.news-detail main > .section:is(.hero-container, .hero-corp-container) {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* a Hero Corp slide is full-bleed at every width, like the hero above: not in the article
+   column nor the page container (stryker.com hero image 1920px wide at 1920px, e.g. "Nurses
+   in the OR" and the features with a slide) */
+body.news-detail main > .section.hero-corp-container > div {
+  max-width: none;
+}
+
+/* a Columns block of gold boxes: one section gap below the heading above it (20px on
+   phones), and its rows follow each other with only the boxes' 10px margins between them
+   (stryker.com: 55px from "Resources for nurses" to the boxes, 20px between box rows) */
+body.news-detail main .columns-wrapper:has(span.box-gold) {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+body.news-detail main .columns:has(span.box-gold) > div + div {
+  margin-top: 0;
+}
+
 /* ---- title section ---- */
 
 body.news-detail main > .section:nth-child(1 of :not(:empty)) {
@@ -97,19 +122,6 @@ body.news-detail main > .section:nth-child(1 of :not(:empty)) > .default-content
 body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
   margin-bottom: 0;
   font-size: var(--heading-font-size-xs);
-}
-
-/* the full-bleed slide sits further below the date than a column image (source 36px,
-   46px from 600px; the margin collapses with the title section's) */
-body.news-detail main > .section.hero-container {
-  margin-top: calc(var(--space-block-l) + var(--space-block));
-}
-
-/* a Hero Corp slide is full-bleed at every width, like the hero above: not in the article
-   column nor the page container (stryker.com hero image 1920px wide at 1920px, e.g. "Nurses
-   in the OR" and the features with a slide) */
-body.news-detail main > .section.hero-corp-container > div {
-  max-width: none;
 }
 
 /* ---- article column (66.66% from 600px, see the media query) ---- */
@@ -197,7 +209,12 @@ body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4) em
 }
 
 /* join: a section the importer split off the same live text component (a component that mixes
-   text styles) sits at the 15px block margin, without the section gap */
+   text styles) sits at the 15px block margin, without the section gap (the last paragraph's
+   margin above it; e.g. the document code under the references of the nurses feature) */
+body.news-detail main > .section:has(+ .section.join) {
+  margin-bottom: 0;
+}
+
 body.news-detail main > .section:has(+ .section.join) > .default-content-wrapper {
   padding-bottom: 0;
 }
@@ -223,6 +240,13 @@ body.news-detail main > .section.compact > .default-content-wrapper > :last-chil
    600px), and the section ends with the usual section gap */
 body.news-detail main > .section:has(+ .section.separator) {
   margin-bottom: var(--space-block);
+}
+
+/* a page whose title is in a Hero Corp slide opens with the date alone (the authored H5 or
+   the first-published one, news-detail.js): it sits right under the header, without the
+   header's 10px gap (stryker.com: 0px, e.g. the nurses and mental health features) */
+body.news-detail main > .section:has(> .default-content-wrapper > h5:only-child):has(+ .section.hero-corp-container) {
+  margin-top: calc(-1 * var(--space-block-s));
 }
 
 body.news-detail main > .section.separator {
@@ -523,7 +547,7 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     font-size: var(--heading-font-size-m);
   }
 
-  body.news-detail main > .section.hero-container {
+  body.news-detail main > .section:is(.hero-container, .hero-corp-container) {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
@@ -585,7 +609,13 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
      offset and its form in the right half (stryker.com col-sm-5 offset-1 + col-sm-6, e.g.
      the "Nominate a heroic healer" form of the nurses feature); stacked below 900px, the
      text first */
+  body.news-detail main .columns-wrapper:has(span.box-gold) {
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
   body.news-detail main > .section.form-right {
+    margin-top: calc(3 * var(--space-section));
+    margin-bottom: calc(var(--space-section) + var(--space-block-s));
     display: grid;
     grid-template-columns: 1fr 5fr 6fr;
     align-items: start;
