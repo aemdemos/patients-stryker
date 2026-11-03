@@ -1026,7 +1026,7 @@ function quoteNodes(headline, doc, { sizes = false } = {}) {
 }
 
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false, notes = []) {
   const link = videoLink(video, doc);
   // no grey box in the headline column (only a quote, e.g. the last story of "When Stryker
   // employees…"): every headline there is a quote and the block has no gray-lead
@@ -1057,7 +1057,8 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
   return WebImporter.Blocks.createBlock(doc, {
     name: `Columns (${variants.join(', ')})`,
     cells: [((mediaCell, textCell) => (mirrored ? [textCell, mediaCell] : [mediaCell, textCell]))(
-      [media, ...buttons],
+      // small print under the video: a paragraph after it in the video cell
+      [media, ...buttons, ...notes],
       [
         ...statement,
         ...quotes.flatMap((q) => quoteNodes(q, doc)),
@@ -1497,13 +1498,21 @@ export default function transform(hookName, element, payload) {
     return !parent && !el.closest('header, footer, .modal');
   });
 
+  // an article whose first text runs across the whole container on the source, outside
+  // the col-sm-8 column (e.g. Cerus Endovascular, EMS powered products): full-width theme
+  const firstText = components.find((c) => c.matches('.c-rich-text-editor') && text(c)
+    && !c.closest('.c-largeheadline, .c-disclaimer, .xf-fragment'));
+  if (!xf && firstText && !firstText.closest('[class*="col-sm-"]')) {
+    element.setAttribute('data-news-theme', 'full-width');
+  }
+
   const consumed = new Set();
   // a video with a Large Headline column beside it, video on the left of a 2/3 + 1/3 row:
   // the Video block, then the column as default content beside it in a `video-text`
   // section — `headline-1-5vw` (the Large Headline text sizes), `background: light-gray`
   // for the grey box (its first line a Heading 2 statement when the source sets it at
   // 2vw); a button under the video opens the text, right after the video
-  const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas) => {
+  const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas, noteNodes, notes) => {
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const lead = boxed ? headlineNodes(headline, doc) : [];
     if (boxed && !lead.length) return false;
@@ -1517,13 +1526,13 @@ export default function transform(hookName, element, payload) {
       ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
     ];
     boldInTextItalic(nodes, doc);
-    [headline, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    [headline, ...quotes, ...ctas, ...asideCtas, ...notes].forEach((c) => consumed.add(c.closest(COMPONENTS) || c));
     element.setAttribute('data-news-theme', 'full-width');
     const section = startSection('video-text', 'video-text, headline-1-5vw');
     if (boxed) section.background = 'light-gray';
     // a button under the video comes right after it, before the text (source order: on
     // phones video, button, text; from 900px the template keeps it under the video)
-    section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
+    section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...noteNodes, ...nodes);
     current = null;
     return true;
   };
@@ -1538,18 +1547,23 @@ export default function transform(hookName, element, payload) {
     const videoCol = video.closest('[class*="col-sm-"]');
     const ctas = [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
     const asideCtas = [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    // small print under the video (all 0.8em, "Products may not be available…" on the
+    // StrykerTalks podcast pages) stays in the video column
+    const notes = [...videoCol.querySelectorAll('.c-rich-text-editor')]
+      .filter((c) => text(c) && !c.closest('.c-largeheadline') && copyStyles(c) === 'disclaimer');
     // the headline column first in the source row (e.g. Carolyn): the text cell comes first
     const cols = [...asideCol.parentElement.children];
     const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+    const noteNodes = notes.flatMap((c) => richTextNodes(c, doc).nodes);
     // the video on the left of a 2/3 + 1/3 row (e.g. Bob, Matt): the Video block and the
     // headline column as default content beside it (video-text); a 50/50 or mirrored row
     // (e.g. Carolyn) stays Columns
     if (!/\bcol-sm-6\b/.test(videoCol.className) && !mirrored) {
-      return videoHeadlineRow(video, aside, quotes, ctas, asideCtas);
+      return videoHeadlineRow(video, aside, quotes, ctas, asideCtas, noteNodes, notes);
     }
-    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored, noteNodes);
     if (!columns) return false;
-    [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    [aside, ...quotes, ...ctas, ...asideCtas, ...notes].forEach((c) => consumed.add(c.closest(COMPONENTS) || c));
     // the source runs the title and small print full width on these pages too: the
     // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
     element.setAttribute('data-news-theme', 'full-width');
