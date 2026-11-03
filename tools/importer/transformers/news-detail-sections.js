@@ -425,6 +425,9 @@ const LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contac
 function labelHeadingsToParagraphs(root) {
   root.querySelectorAll('h2, h3, h4, h5, h6').forEach((h) => {
     if (!LABEL_HEADING.test(text(h))) return;
+    // an h3 label set in a 0.8em span (14px, 16.8px from 840px) stays a heading: the
+    // `h3-0-8` section style (smallHeadings) gives it the source size
+    if (h.tagName === 'H3' && headingSizeStyle(h) === 'h3-0-8') return;
     const p = root.ownerDocument.createElement('p');
     while (h.firstChild) p.append(h.firstChild);
     // the heading's own size span (e.g. fontsize-8em) is not copy size: the label is 14px
@@ -447,21 +450,31 @@ function labelHeadingsToParagraphs(root) {
 // headings the source sizes with a span (the whole text in it): [tag, span class, style]
 const HEADING_SIZES = [
   ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-25em', 'h2-1-25'],
   ['H2', 'fontsize-1-5em', 'h2-1-5'],
   ['H1', 'fontsize-1-25em', 'h1-1-25'],
+  // a 28px h1 in a 1.5em span is 42px Futura bold, the `h1-42` title (e.g. the AED buying guide)
+  ['H1', 'fontsize-1-5em', 'h1-42'],
+  ['H3', 'fontsize-8em', 'h3-0-8'],
 ];
 
-function smallHeadings(root) {
+/** The HEADING_SIZES section style of a heading whose whole text is in one size span, or null. */
+function headingSizeStyle(h) {
+  if (!text(h)) return null;
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  const match = HEADING_SIZES.find(([tag, cls]) => {
+    if (h.tagName !== tag) return false;
+    const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+    return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+  });
+  return match ? match[2] : null;
+}
+
+function smallHeadings(root) {
   const styles = new Map();
-  root.querySelectorAll('h1, h2').forEach((h) => {
-    if (!text(h)) return;
-    const match = HEADING_SIZES.find(([tag, cls]) => {
-      if (h.tagName !== tag) return false;
-      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
-    });
-    if (match) styles.set(h, match[2]);
+  root.querySelectorAll('h1, h2, h3').forEach((h) => {
+    const style = headingSizeStyle(h);
+    if (style) styles.set(h, style);
   });
   return styles;
 }
@@ -847,7 +860,7 @@ function quoteNodes(headline, doc) {
 }
 
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false, notes = []) {
   const link = videoLink(video, doc);
   // no grey box in the headline column (only a quote, e.g. the last story of "When Stryker
   // employees…"): every headline there is a quote and the block has no gray-lead
@@ -866,10 +879,20 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
     || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
   const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
   const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+  const variants = [half ? 'columns-50-50' : 'columns-67-33', 'large-headline'];
+  if (boxed) variants.push('gray-lead');
+  // a 1.5vw grey box set inside a heading (the StrykerTalks podcast pages, e.g. Heath): its
+  // text stays a paragraph, `statement-s` gives it that heading's line spacing
+  if (boxed && !big && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
+  // a quote whose text is on the 1.5vw scale (a fontsize-N-vw span, e.g. Bob, Rose) rather
+  // than the fixed 21px of the other grey-box quotes: `quote-scaled`
+  const quoteText = (q) => [...q.querySelectorAll('p')].find((p) => p.textContent.includes('“'));
+  if (boxed && quotes.some((q) => quoteText(q)?.querySelector('[class*="fontsize-"][class*="vw"]'))) variants.push('quote-scaled');
   return WebImporter.Blocks.createBlock(doc, {
-    name: `Columns (${half ? 'columns-50-50' : 'columns-67-33'}, large-headline${boxed ? ', gray-lead' : ''})`,
+    name: `Columns (${variants.join(', ')})`,
     cells: [((mediaCell, textCell) => (mirrored ? [textCell, mediaCell] : [mediaCell, textCell]))(
-      [media, ...buttons],
+      // small print under the video: a paragraph after it in the video cell
+      [media, ...buttons, ...notes],
       [
         ...statement,
         ...quotes.flatMap((q) => quoteNodes(q, doc)),
@@ -1308,6 +1331,14 @@ export default function transform(hookName, element, payload) {
     return !parent && !el.closest('header, footer, .modal');
   });
 
+  // an article whose first text runs across the whole container on the source, outside
+  // the col-sm-8 column (e.g. Cerus Endovascular, EMS powered products): full-width theme
+  const firstText = components.find((c) => c.matches('.c-rich-text-editor') && text(c)
+    && !c.closest('.c-largeheadline, .c-disclaimer, .xf-fragment'));
+  if (!xf && firstText && !firstText.closest('[class*="col-sm-"]')) {
+    element.setAttribute('data-news-theme', 'full-width');
+  }
+
   const consumed = new Set();
   // a video with a Large Headline column beside it (2/3 + 1/3 or 50/50):
   // Columns (…, large-headline, gray-lead) in a section of its own; true when built
@@ -1320,12 +1351,17 @@ export default function transform(hookName, element, payload) {
     const videoCol = video.closest('[class*="col-sm-"]');
     const ctas = [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
     const asideCtas = [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    // small print under the video (all 0.8em, "Products may not be available…" on the
+    // StrykerTalks podcast pages) stays in the video column
+    const notes = [...videoCol.querySelectorAll('.c-rich-text-editor')]
+      .filter((c) => text(c) && !c.closest('.c-largeheadline') && copyStyles(c) === 'disclaimer');
     // the headline column first in the source row (e.g. Carolyn): the text cell comes first
     const cols = [...asideCol.parentElement.children];
     const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
-    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+    const noteNodes = notes.flatMap((c) => richTextNodes(c, doc).nodes);
+    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored, noteNodes);
     if (!columns) return false;
-    [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    [aside, ...quotes, ...ctas, ...asideCtas, ...notes].forEach((c) => consumed.add(c.closest(COMPONENTS) || c));
     // the source runs the title and small print full width on these pages too: the
     // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
     element.setAttribute('data-news-theme', 'full-width');

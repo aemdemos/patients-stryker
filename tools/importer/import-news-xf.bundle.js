@@ -1,9 +1,26 @@
 /* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -482,6 +499,7 @@ var CustomImportScript = (() => {
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
       if (!LABEL_HEADING.test(text(h))) return;
+      if (h.tagName === "H3" && headingSizeStyle(h) === "h3-0-8") return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
       p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
@@ -497,20 +515,28 @@ var CustomImportScript = (() => {
   }
   var HEADING_SIZES = [
     ["H2", "fontsize-8em", "h2-0-8"],
+    ["H2", "fontsize-1-25em", "h2-1-25"],
     ["H2", "fontsize-1-5em", "h2-1-5"],
-    ["H1", "fontsize-1-25em", "h1-1-25"]
+    ["H1", "fontsize-1-25em", "h1-1-25"],
+    // a 28px h1 in a 1.5em span is 42px Futura bold, the `h1-42` title (e.g. the AED buying guide)
+    ["H1", "fontsize-1-5em", "h1-42"],
+    ["H3", "fontsize-8em", "h3-0-8"]
   ];
-  function smallHeadings(root) {
+  function headingSizeStyle(h) {
+    if (!text(h)) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const match = HEADING_SIZES.find(([tag, cls]) => {
+      if (h.tagName !== tag) return false;
+      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+    });
+    return match ? match[2] : null;
+  }
+  function smallHeadings(root) {
     const styles = /* @__PURE__ */ new Map();
-    root.querySelectorAll("h1, h2").forEach((h) => {
-      if (!text(h)) return;
-      const match = HEADING_SIZES.find(([tag, cls]) => {
-        if (h.tagName !== tag) return false;
-        const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-        return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
-      });
-      if (match) styles.set(h, match[2]);
+    root.querySelectorAll("h1, h2, h3").forEach((h) => {
+      const style = headingSizeStyle(h);
+      if (style) styles.set(h, style);
     });
     return styles;
   }
@@ -519,7 +545,10 @@ var CustomImportScript = (() => {
     const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
     [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
       const nodes = [...p.childNodes];
-      const at = nodes.findIndex((node, i) => node.nodeName === "BR" && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === "BR");
+      const at = nodes.findIndex((node, i) => {
+        var _a;
+        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
+      });
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
@@ -560,7 +589,10 @@ var CustomImportScript = (() => {
     const nodes = [];
     let run = [];
     const flush = () => {
-      if (run.some((n) => n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.("img"))) {
+      if (run.some((n) => {
+        var _a;
+        return n.nodeType === 3 ? n.textContent.trim() : text(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
+      })) {
         const p = doc.createElement("p");
         p.append(...run);
         while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
@@ -804,7 +836,7 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false, notes = []) {
     const link2 = videoLink(video, doc);
     const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
     const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
@@ -817,10 +849,19 @@ var CustomImportScript = (() => {
     const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+    const variants = [half ? "columns-50-50" : "columns-67-33", "large-headline"];
+    if (boxed) variants.push("gray-lead");
+    if (boxed && !big && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
+    const quoteText = (q) => [...q.querySelectorAll("p")].find((p) => p.textContent.includes("\u201C"));
+    if (boxed && quotes.some((q) => {
+      var _a;
+      return (_a = quoteText(q)) == null ? void 0 : _a.querySelector('[class*="fontsize-"][class*="vw"]');
+    })) variants.push("quote-scaled");
     return WebImporter.Blocks.createBlock(doc, {
-      name: `Columns (${half ? "columns-50-50" : "columns-67-33"}, large-headline${boxed ? ", gray-lead" : ""})`,
+      name: `Columns (${variants.join(", ")})`,
       cells: [/* @__PURE__ */ ((mediaCell, textCell2) => mirrored ? [textCell2, mediaCell] : [mediaCell, textCell2])(
-        [media, ...buttons],
+        // small print under the video: a paragraph after it in the video cell
+        [media, ...buttons, ...notes],
         [
           ...statement,
           ...quotes.flatMap((q) => quoteNodes(q, doc)),
@@ -1157,6 +1198,10 @@ var CustomImportScript = (() => {
       const parent = el.parentElement && el.parentElement.closest(componentSelector);
       return !parent && !el.closest("header, footer, .modal");
     });
+    const firstText = components.find((c) => c.matches(".c-rich-text-editor") && text(c) && !c.closest(".c-largeheadline, .c-disclaimer, .xf-fragment"));
+    if (!xf && firstText && !firstText.closest('[class*="col-sm-"]')) {
+      element.setAttribute("data-news-theme", "full-width");
+    }
     const consumed = /* @__PURE__ */ new Set();
     const videoRowColumns = (video) => {
       const aside = videoAside(video);
@@ -1166,11 +1211,13 @@ var CustomImportScript = (() => {
       const videoCol = video.closest('[class*="col-sm-"]');
       const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
+      const notes = [...videoCol.querySelectorAll(".c-rich-text-editor")].filter((c) => text(c) && !c.closest(".c-largeheadline") && copyStyles(c) === "disclaimer");
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
-      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+      const noteNodes = notes.flatMap((c) => richTextNodes(c, doc).nodes);
+      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored, noteNodes);
       if (!columns) return false;
-      [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      [aside, ...quotes, ...ctas, ...asideCtas, ...notes].forEach((c) => consumed.add(c.closest(COMPONENTS) || c));
       element.setAttribute("data-news-theme", "full-width");
       startSection("columns").nodes.push(columns);
       current = null;
@@ -1755,13 +1802,14 @@ var CustomImportScript = (() => {
   function writeSections(root) {
     const doc = root.ownerDocument;
     root.querySelectorAll(`[${MARK}]`).forEach((el) => {
+      var _a, _b;
       const style = el.getAttribute(MARK);
       el.removeAttribute(MARK);
       if (el.closest("table")) return;
-      if (el.previousElementSibling?.tagName !== "HR") el.before(doc.createElement("hr"));
+      if (((_a = el.previousElementSibling) == null ? void 0 : _a.tagName) !== "HR") el.before(doc.createElement("hr"));
       const meta = WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells: [["Style", style]] });
       el.after(meta);
-      if (hasFollowing(meta, root) && meta.nextElementSibling?.tagName !== "HR") meta.after(doc.createElement("hr"));
+      if (hasFollowing(meta, root) && ((_b = meta.nextElementSibling) == null ? void 0 : _b.tagName) !== "HR") meta.after(doc.createElement("hr"));
     });
   }
   function transform2(hookName, element, payload) {
@@ -1794,7 +1842,7 @@ var CustomImportScript = (() => {
     try {
       const { hostname } = new URL(payload.params.originalURL);
       if (hostname === "www.stryker.com") return CORP_HOST_RE;
-    } catch {
+    } catch (e) {
     }
     return PATIENTS_HOST_RE;
   }
@@ -1972,7 +2020,7 @@ var CustomImportScript = (() => {
     let u;
     try {
       u = new URL(urlStr, "https://x/");
-    } catch {
+    } catch (e) {
       return false;
     }
     if (u.pathname.startsWith("/is/image/")) {
@@ -2072,7 +2120,7 @@ var CustomImportScript = (() => {
     transform4
   ];
   function executeTransformers(hookName, element, payload) {
-    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
     transformers.forEach((fn) => {
       try {
         fn.call(null, hookName, element, enhancedPayload);
@@ -2093,7 +2141,8 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   function publishedDate(document) {
-    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    var _a;
+    const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (m) return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`;
     const updated = document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
@@ -2103,6 +2152,7 @@ var CustomImportScript = (() => {
   }
   var import_news_xf_default = {
     transform: (payload) => {
+      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
@@ -2122,7 +2172,7 @@ var CustomImportScript = (() => {
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
+      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
