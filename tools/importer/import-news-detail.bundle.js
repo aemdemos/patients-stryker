@@ -901,6 +901,7 @@ var CustomImportScript = (() => {
     if (boxed) variants.push("gray-lead");
     if (boxed && !big && !baseSize && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
     if (baseSize) variants.push("gray-base");
+    if (boxed && /padding-top:\s*5%/.test(greyBox.getAttribute("style") || "")) variants.push("pad-5");
     if (boxed && textLine && textLine.classList.contains("line2")) variants.push("lines-30");
     else if (boxed && big && !inHeading) variants.push("lines-25");
     const quoteText = (q) => [...q.querySelectorAll("p")].find((p) => p.textContent.includes("\u201C"));

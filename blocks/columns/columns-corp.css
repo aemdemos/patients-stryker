@@ -326,7 +326,7 @@ body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
    level with the row (below) */
 body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p, h2):first-child {
   margin-bottom: var(--space-section-l);
-  padding: var(--space-block-l);
+  padding: var(--columns-corp-gray-lead-pad, var(--space-block-l));
   background-color: var(--color-surface);
 }
 
@@ -341,6 +341,17 @@ body.corp .columns.gray-lead:where(.large-headline) > div > div:not(:has(video, 
   margin-top: var(--space-block);
   font-size: 3vw;
   line-height: max(var(--columns-corp-gray-lead-line-min), calc(var(--heading-line-height-hero) * 1em));
+}
+
+/* …a Heading 2 statement box (e.g. Rosales) sits 15px below the small print too */
+body.corp .columns.gray-lead:where(.large-headline) > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > h2:first-child {
+  margin-top: var(--space-block);
+}
+
+/* …and 20px below a video that ends its cell (no button or small print under it, e.g. Bob,
+   Softball) */
+body.corp .columns.gray-lead:where(.large-headline) > div > div > p:has(> .dm-video-wrapper):last-child {
+  margin-bottom: var(--space-block-xs);
 }
 
 /* link groups (related-links): body copy in the corp body font, and the underlined
@@ -467,8 +478,9 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
   line-height: var(--paragraph-line-height);
 }
 
-/* the name and the role follow each other line by line (one source paragraph) */
-body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p.columns-bold, p.columns-bold + p) {
+/* the name and the role follow each other line by line (one source paragraph); the last
+   one ends the cell (below) */
+body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p.columns-bold, p.columns-bold + p):not(:last-child) {
   margin-bottom: 0;
 }
 
@@ -489,9 +501,18 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
 
 /* statement-s: the grey box text set inside a heading on the source (the StrykerTalks podcast
    pages, e.g. Heath): the 21px h2's line box (lines 1.06), 24.5px from 840px (600px here),
-   sets the line spacing — 22.3px on phones, 26px on tablets — the text's own 1.35 above it */
+   sets the line spacing — 22.3px on phones, 26px on tablets — the text's own 1.35 above it;
+   the heading's 15px bottom margin stays inside the box, under the text */
 body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
   --columns-corp-gray-lead-line-min: calc(var(--heading-line-height) * var(--heading-font-size-l));
+
+  padding-bottom: calc(var(--columns-corp-gray-lead-pad, var(--space-block-l)) + var(--space-block));
+}
+
+/* pad-5: the grey box padding the source sets to 5% of the column (the StrykerTalks podcast
+   pages: 17.25px on phones, 22px at 1440px) instead of 20px */
+body.corp .columns.gray-lead.pad-5 > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
+  --columns-corp-gray-lead-pad: 5%;
 }
 
 /* lines-30: the grey box text in the source's .line2 wrapper (21px / 30px lines on phones,
@@ -531,6 +552,20 @@ body.corp .columns.gray-lead.quote-scaled > div > div:not(:has(video, iframe, .d
 /* the grey box ends one quote base line (the source's empty first line) above the quote */
 body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child:has(+ p > .color-gold:first-child) {
   margin-bottom: calc(var(--columns-corp-quote-gap) + var(--paragraph-line-height) * var(--columns-corp-quote-base));
+}
+
+/* gray-base (e.g. Rose): on phones the quote follows the box one quote gap below it, with
+   no blank base line between them */
+body.corp .columns.gray-lead.gray-base > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child:has(+ p > .color-gold:first-child) {
+  margin-bottom: var(--columns-corp-quote-gap);
+}
+
+/* the row ends as the source components do: the Large Headline cell 20px below its last
+   line (the grey box or the quote's role) on phones, 30px from 600px (source
+   .c-largeheadline margin, 841px); from 600px the video cell 15px below its small print
+   or button (the source rich-text / CTA bottom margin) */
+body.corp .columns.gray-lead:where(.large-headline) > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > :is(p, h2):last-child {
+  margin-bottom: var(--columns-corp-lh-end, var(--space-block-l));
 }
 
 @media (width >= 600px) {
@@ -660,6 +695,21 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
     line-height: var(--heading-line-height-hero);
   }
 
+  /* side by side from 600px: the phone gaps above the box go */
+  body.corp .columns.gray-lead:where(.large-headline) > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > h2:first-child {
+    margin-top: 0;
+  }
+
+  /* a video that ends its cell keeps the source video component's 30px below it (20px on
+     phones, above) */
+  body.corp .columns.gray-lead:where(.large-headline) > div > div > p:has(> .dm-video-wrapper):last-child {
+    margin-bottom: var(--space-section);
+  }
+
+  body.corp .columns.gray-lead:where(.large-headline) > div > div > p:has(> .dm-video-wrapper) ~ p:last-child {
+    margin-bottom: var(--space-block);
+  }
+
   body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
     line-height: max(calc(var(--heading-line-height) * var(--heading-font-size-xl)), calc(var(--heading-line-height-hero) * 1em));
   }
@@ -670,6 +720,14 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
 
   body.corp .columns.gray-lead.gray-base > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
     line-height: var(--heading-line-height-hero);
+  }
+
+  body.corp .columns.gray-lead.gray-base > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child:has(+ p > .color-gold:first-child) {
+    margin-bottom: calc(var(--columns-corp-quote-gap) + var(--paragraph-line-height) * var(--columns-corp-quote-base));
+  }
+
+  body.corp .columns.gray-lead:where(.large-headline) {
+    --columns-corp-lh-end: var(--space-section);
   }
 }
 

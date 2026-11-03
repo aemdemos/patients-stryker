@@ -922,6 +922,8 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
   if (boxed && !big && !baseSize && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
   // grey box text at the Large Headline base size (no vw span, e.g. Rose): `gray-base`
   if (baseSize) variants.push('gray-base');
+  // the author set the grey box padding to 5% (the StrykerTalks podcast pages): `pad-5`
+  if (boxed && /padding-top:\s*5%/.test(greyBox.getAttribute('style') || '')) variants.push('pad-5');
   // grey box text in the source's .line2 wrapper: 30px lines on phones (`lines-30`); a 2vw
   // statement outside a heading (e.g. Rosales) keeps the .line1 wrapper's 25px (`lines-25`)
   if (boxed && textLine && textLine.classList.contains('line2')) variants.push('lines-30');
