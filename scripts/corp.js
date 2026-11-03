@@ -49,6 +49,33 @@ export async function loadEager(doc) {
   ]);
 }
 
+/* brand spellings for icon names that title-casing gets wrong */
+const ICON_LINK_LABELS = {
+  linkedin: 'LinkedIn',
+  youtube: 'YouTube',
+  x: 'X',
+};
+
+/**
+ * Gives links that hold only `:icon:` images an accessible name (e.g. the Sage contact
+ * LinkedIn / Facebook links): the icon images are decorative (empty alt), so the link is
+ * labelled from its authored title, else from the icon name (`:linkedin:` → "LinkedIn",
+ * `:facebook-logo:` → "Facebook"). Runs before scripts.js decorateLinkTargets(), which
+ * appends "(opens in a new tab)" to the label.
+ * @param {Element} main The container element
+ */
+function decorateIconLinks(main) {
+  main.querySelectorAll('a:not([aria-label]):has(> .icon)').forEach((a) => {
+    if (a.textContent.trim()) return;
+    const icon = [...a.querySelector(':scope > .icon').classList]
+      .find((c) => c.startsWith('icon-'))?.substring(5);
+    const name = icon && icon.replace(/-logo$/, '');
+    const label = a.title.trim() || ICON_LINK_LABELS[name]
+      || (name && name.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()));
+    if (label) a.setAttribute('aria-label', label);
+  });
+}
+
 /**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
@@ -58,6 +85,7 @@ export function decorateMain(main) {
     block.classList.replace('hero', 'hero-corp');
     block.closest('.section')?.classList.add('hero-container');
   });
+  decorateIconLinks(main);
 }
 
 /**
