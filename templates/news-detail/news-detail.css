@@ -227,9 +227,10 @@ body.news-detail main > .section > .default-content-wrapper > h4 {
 }
 
 /* the small-print section (`disclaimer`: references and document code) sits directly
-   above the "Last Updated" line, as on the source */
-body.news-detail main > .section.disclaimer:has(+ .last-modified-section),
-body.news-detail main > .section.compact:has(+ .last-modified-section),
+   above the "Last Updated" line, as on the source — also across the empty (hidden) section
+   the page metadata leaves between them */
+body.news-detail main > .section.disclaimer:has(+ .last-modified-section, + .section:empty + .last-modified-section),
+body.news-detail main > .section.compact:has(+ .last-modified-section, + .section:empty + .last-modified-section),
 body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
   margin-bottom: 0;
 }
