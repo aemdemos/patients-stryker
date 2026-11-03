@@ -65,6 +65,9 @@ export default {
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute('content')?.trim();
     const docCode = documentCode(document);
+    // the site-wide "Information for healthcare professionals" band (header-corp shows it
+    // for `hcp-banner: true`)
+    const hcpBanner = !!document.querySelector('.g-hcpbanner');
 
     executeTransformers('beforeTransform', main, payload);
 
@@ -107,6 +110,7 @@ export default {
     meta.site = 'corp';
     meta.template = 'event-detail';
     if (published) meta.published = published;
+    if (hcpBanner) meta['hcp-banner'] = 'true';
     // event facts for the event calendar (query index)
     const rows = {
       'event-start': facts.start,

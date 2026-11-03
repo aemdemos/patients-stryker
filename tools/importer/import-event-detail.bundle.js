@@ -528,6 +528,7 @@ var CustomImportScript = (() => {
       const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       const ogImage = (_d = (_c = document.querySelector('meta[property="og:image"]')) == null ? void 0 : _c.getAttribute("content")) == null ? void 0 : _d.trim();
       const docCode = documentCode(document);
+      const hcpBanner = !!document.querySelector(".g-hcpbanner");
       executeTransformers("beforeTransform", main, payload);
       const event = parse(document);
       const blocks = [];
@@ -560,6 +561,7 @@ var CustomImportScript = (() => {
       meta.site = "corp";
       meta.template = "event-detail";
       if (published) meta.published = published;
+      if (hcpBanner) meta["hcp-banner"] = "true";
       const rows = {
         "event-start": facts.start,
         "event-end": facts.end,
