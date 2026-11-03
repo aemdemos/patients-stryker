@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-news-detail.js
+  // .worktrees/news-heading-styles/tools/importer/import-news-detail.js
   var import_news_detail_exports = {};
   __export(import_news_detail_exports, {
     default: () => import_news_detail_default
   });
 
-  // tools/importer/parsers/hero-image-slide.js
+  // .worktrees/news-heading-styles/tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -213,7 +213,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
   }
 
-  // tools/importer/parsers/video.js
+  // .worktrees/news-heading-styles/tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -274,7 +274,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "marketo-form", cells }));
   }
 
-  // tools/importer/xf-fragment-map.js
+  // .worktrees/news-heading-styles/tools/importer/xf-fragment-map.js
   var xf_fragment_map_default = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       name: 'Acute Care "Resources" links'
@@ -303,7 +303,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/xf-fragment-path.js
+  // .worktrees/news-heading-styles/tools/importer/xf-fragment-path.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(xf) {
@@ -592,6 +592,7 @@ var CustomImportScript = (() => {
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
       if (!LABEL_HEADING.test(text2(h))) return;
+      if (h.tagName === "H3" && headingSizeStyle(h) === "h3-0-8") return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
       p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
@@ -607,20 +608,28 @@ var CustomImportScript = (() => {
   }
   var HEADING_SIZES = [
     ["H2", "fontsize-8em", "h2-0-8"],
+    ["H2", "fontsize-1-25em", "h2-1-25"],
     ["H2", "fontsize-1-5em", "h2-1-5"],
-    ["H1", "fontsize-1-25em", "h1-1-25"]
+    ["H1", "fontsize-1-25em", "h1-1-25"],
+    // a 28px h1 in a 1.5em span is 42px Futura bold, the `h1-42` title (e.g. the AED buying guide)
+    ["H1", "fontsize-1-5em", "h1-42"],
+    ["H3", "fontsize-8em", "h3-0-8"]
   ];
-  function smallHeadings(root) {
+  function headingSizeStyle(h) {
+    if (!text2(h)) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const match = HEADING_SIZES.find(([tag, cls]) => {
+      if (h.tagName !== tag) return false;
+      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+    });
+    return match ? match[2] : null;
+  }
+  function smallHeadings(root) {
     const styles = /* @__PURE__ */ new Map();
-    root.querySelectorAll("h1, h2").forEach((h) => {
-      if (!text2(h)) return;
-      const match = HEADING_SIZES.find(([tag, cls]) => {
-        if (h.tagName !== tag) return false;
-        const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-        return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
-      });
-      if (match) styles.set(h, match[2]);
+    root.querySelectorAll("h1, h2, h3").forEach((h) => {
+      const style = headingSizeStyle(h);
+      if (style) styles.set(h, style);
     });
     return styles;
   }
@@ -1021,8 +1030,16 @@ var CustomImportScript = (() => {
     const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+    const variants = [half ? "columns-50-50" : "columns-67-33", "large-headline"];
+    if (boxed) variants.push("gray-lead");
+    if (boxed && !big && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
+    const quoteText = (q) => [...q.querySelectorAll("p")].find((p) => p.textContent.includes("\u201C"));
+    if (boxed && quotes.some((q) => {
+      var _a;
+      return (_a = quoteText(q)) == null ? void 0 : _a.querySelector('[class*="fontsize-"][class*="vw"]');
+    })) variants.push("quote-scaled");
     return WebImporter.Blocks.createBlock(doc, {
-      name: `Columns (${half ? "columns-50-50" : "columns-67-33"}, large-headline${boxed ? ", gray-lead" : ""})`,
+      name: `Columns (${variants.join(", ")})`,
       cells: [/* @__PURE__ */ ((mediaCell, textCell2) => mirrored ? [textCell2, mediaCell] : [mediaCell, textCell2])(
         [media, ...buttons],
         [
@@ -1725,7 +1742,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-cleanup.js
+  // .worktrees/news-heading-styles/tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -1913,7 +1930,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-dm-images.js
+  // .worktrees/news-heading-styles/tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -1981,7 +1998,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/import-news-detail.js
+  // .worktrees/news-heading-styles/tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
     description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",

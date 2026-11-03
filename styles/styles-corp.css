@@ -32,6 +32,7 @@
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
+  --corp-heading-font-size-h2-1-25: 30.625px; /* measured: a 1.25em span in a 24.5px source h2 (from 840px) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -474,6 +475,43 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 @media (width >= 600px) {
   :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-compact-m);
+  }
+}
+
+/* h3-0-8: an h3 the source sets at 0.8em (stryker.com h3 > span.fontsize-8em, e.g. the
+   "About Stryker" / "Media contact" labels of some press releases): Futura bold 14px, and
+   16.8px from 600px (source 840px) with the h3 step, lines 1.2. It flows into the text
+   below it: one paragraph gap, not a section gap */
+:where(body.corp) main > .section.h3-0-8 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h3-0-8 > .default-content-wrapper h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h3-0-8 > .default-content-wrapper h3 {
+    font-size: var(--heading-font-size-compact);
+  }
+}
+
+/* h2-1-25: an h2 the source enlarges with a 1.25em span (stryker.com h2 > span.fontsize-1-25em,
+   e.g. the AED buying guide): 26.25px, 30.625px from 600px (source 840px) with the h2 step,
+   lines 1.15. It flows into the text below it: one heading gap, not a section gap */
+:where(body.corp) main > .section.h2-1-25 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+    font-size: var(--corp-heading-font-size-h2-1-25);
   }
 }
 
