@@ -17,9 +17,9 @@
  *       width: the video link, then the headline as a Heading 2 statement in the grey box;
  *       the page gets `theme: full-width` (title and small print full width, as on the source)
  * A page without a title whose article opens with a 2vw Large Headline gets that headline
- * as its H1, in a `headline-2vw` section below the date.
- * A `spacer` section follows the title section when it holds the H1 (or before such a
- * headline), unless the article
+ * as its H1, in a `headline-2vw` section (the template shows the date below it).
+ * A `spacer` section follows the title section when it holds the H1 (or such a headline
+ * section), unless the article
  * opens with a lead image directly below the date (outside a column layout).
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
@@ -1659,8 +1659,11 @@ export default function transform(hookName, element, payload) {
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
-      const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
-      const kind = [centred ? 'center' : 'body', ...extra].join(' ');
+      // the page title (an H1 in the article when the page has none, e.g. the AED buying
+      // guide) stays left-aligned with the date below it, like every news title
+      const nodeCentred = centred && !(node.tagName === 'H1' && !hasTitle);
+      const styles = [nodeCentred ? 'center' : '', ...extra].filter(Boolean);
+      const kind = [nodeCentred ? 'center' : 'body', ...extra].join(' ');
       // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);
       // a Futura h3 in the same run starts a new section
       const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
@@ -1716,9 +1719,12 @@ export default function transform(hookName, element, payload) {
   // the title section (when it holds the H1) is followed by a `spacer` section: the
   // article starts 46px below the date on the source (30px spacer + the 15px title gap) —
   // except a lead image placed directly below the date, 15px below it
-  const opensWithHeadline = sections.some((section) => section.kind === 'headline');
-  if ((title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline) && !leadBelowDate) {
-    sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
+  // A page whose H1 is an article headline (no page title) gets the spacer below that
+  // headline: the template shows the date below the H1 on every page
+  const titleHasH1 = title.nodes.some((node) => node.tagName === 'H1');
+  const headlineSection = !titleHasH1 && sections.find((section) => section.kind === 'headline');
+  if ((titleHasH1 || headlineSection) && !leadBelowDate) {
+    sections.splice(sections.indexOf(headlineSection || title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
