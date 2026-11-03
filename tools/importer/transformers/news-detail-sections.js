@@ -501,6 +501,30 @@ function headingSizeStyle(h) {
   return match ? match[2] : null;
 }
 
+/**
+ * Paragraphs that open with a short 1.5em Futura bold label on a line of its own and go on
+ * with the text (stryker.com <span.fontsize-1-5em><span.futura-bold>About Stryker</span>
+ * </span><br>…, e.g. the T7 and Cerus releases): their section gets `label-1-5` (the label
+ * at 21px on the paragraph's lines).
+ */
+function largeLabels(root) {
+  const squash = (value) => value.replace(/[\s ]+/g, ' ').trim();
+  return new Set([...root.children].filter((p) => {
+    if (p.tagName !== 'P') return false;
+    const span = p.querySelector('.fontsize-1-5em');
+    if (!span || !(span.querySelector('.futura-bold, b') || span.closest('.futura-bold, b'))) return false;
+    const label = squash(span.textContent);
+    const all = squash(p.textContent);
+    if (!label || label.length > 40 || label === all || !all.startsWith(label)) return false;
+    // the label run (the outermost element holding just the label) ends at a line break
+    let run = span;
+    while (run.parentElement !== p && squash(run.parentElement.textContent) === label) run = run.parentElement;
+    let after = run.nextSibling;
+    while (after && after.nodeType === 3 && !after.textContent.trim()) after = after.nextSibling;
+    return !!after && after.nodeName === 'BR';
+  }));
+}
+
 function smallHeadings(root) {
   const styles = new Map();
   root.querySelectorAll('h1, h2, h3').forEach((h) => {
@@ -659,6 +683,7 @@ function richTextNodes(component, doc) {
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
   const spaced = spacedSubheads(box);
+  const labels = largeLabels(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -678,6 +703,7 @@ function richTextNodes(component, doc) {
     }
     if (serifHeads.has(node)) node.serifHeading = true;
     if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+    if (labels.has(node)) node.headingStyle = 'label-1-5';
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
@@ -1041,15 +1067,31 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
   // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
   // (21px, e.g. Heath) stays a paragraph, the large-headline text size
   const firstLine = headline.querySelector('.line') || headline;
-  const big = firstLine.querySelector('[class*="fontsize-2vw"]')
-    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+  const greyBox = headline.querySelector('.has-background, [class*="bg-light-gray"]') || headline;
+  // grey box text in no vw size span (e.g. Rose): the Large Headline base size, a paragraph
+  const baseSize = boxed && !greyBox.querySelector('[class*="fontsize-"][class*="vw"]');
+  const big = !baseSize && (firstLine.querySelector('[class*="fontsize-2vw"]')
+    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]'));
   const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
+  // the source line wrapper around the grey box text: .line2 sets 30px lines on phones
+  // (Bob, Softball, Garry), .line1 the 21px text's 25px ones
+  const walker = doc.createTreeWalker(greyBox, 4);
+  let firstText = walker.nextNode();
+  while (firstText && !firstText.textContent.trim()) firstText = walker.nextNode();
+  const textLine = firstText && firstText.parentElement.closest('.line');
+  const inHeading = !!(firstText && firstText.parentElement.closest('h1, h2, h3, h4, h5, h6'));
   const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
   const variants = [half ? 'columns-50-50' : 'columns-67-33', 'large-headline'];
   if (boxed) variants.push('gray-lead');
   // a 1.5vw grey box set inside a heading (the StrykerTalks podcast pages, e.g. Heath): its
   // text stays a paragraph, `statement-s` gives it that heading's line spacing
-  if (boxed && !big && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
+  if (boxed && !big && !baseSize && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
+  // grey box text at the Large Headline base size (no vw span, e.g. Rose): `gray-base`
+  if (baseSize) variants.push('gray-base');
+  // grey box text in the source's .line2 wrapper: 30px lines on phones (`lines-30`); a 2vw
+  // statement outside a heading (e.g. Rosales) keeps the .line1 wrapper's 25px (`lines-25`)
+  if (boxed && textLine && textLine.classList.contains('line2')) variants.push('lines-30');
+  else if (boxed && big && !inHeading) variants.push('lines-25');
   // a quote whose text is on the 1.5vw scale (a fontsize-N-vw span, e.g. Bob, Rose) rather
   // than the fixed 21px of the other grey-box quotes: `quote-scaled`
   const quoteText = (q) => [...q.querySelectorAll('p')].find((p) => p.textContent.includes('“'));

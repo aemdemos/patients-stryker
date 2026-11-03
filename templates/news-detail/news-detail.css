@@ -770,6 +770,13 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     margin-bottom: var(--space-section);
   }
 
+  /* the article column: two-thirds of the container, centred, from the source's 841px
+     (col-sm-8) — 600px here — on plain articles (the full-width and mix-width themes and
+     the form-right section keep their own layout below 900px) */
+  body.news-detail:where(:not(.full-width, .mix-width)) main > .section:not(.hero-container, .hero-corp-container):where(:not(.form-right)) > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+  }
+
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
     font-family: var(--display-font-family);
     font-weight: var(--font-weight-bold);
@@ -780,12 +787,6 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1:has(strong) {
     font-family: var(--heading-font-family);
     font-weight: var(--font-weight-medium);
-  }
-
-  /* the article column: two-thirds of the container, centred, from the source's 841px
-     (col-sm-8) — 600px here */
-  body.news-detail main > .section:not(.hero-container, .hero-corp-container) > div {
-    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 
   body.news-detail main > .section > .default-content-wrapper > h4 {

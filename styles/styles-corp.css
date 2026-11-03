@@ -302,6 +302,11 @@ body:where(.corp):has(main .hero-carousel) header {
   display: none;
 }
 
+/* the section before a `label-1-5` paragraph flows into it too (one paragraph gap) */
+:where(body.corp) main > .section:has(+ .section.label-1-5) {
+  margin-bottom: 0;
+}
+
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
   margin-bottom: 0;
 }
@@ -495,6 +500,20 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   :where(body.corp) main > .section.h3-0-8 > .default-content-wrapper h3 {
     font-size: var(--heading-font-size-compact);
   }
+}
+
+/* label-1-5: a paragraph that opens with a 1.5em Futura bold label on a line of its own
+   (stryker.com span.fontsize-1-5em "About Stryker" + line break, e.g. the T7 and Cerus
+   releases): the label — the paragraph's first Bold (+ Italic) run — at 21px with the
+   source span's 1.06 lines, at every width. It flows into the text around it: one
+   paragraph gap, not a section gap */
+:where(body.corp) main > .section.label-1-5 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.label-1-5 > .default-content-wrapper p > :is(strong, em):first-child {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
 }
 
 /* h2-1-25: an h2 the source enlarges with a 1.25em span (stryker.com h2 > span.fontsize-1-25em,

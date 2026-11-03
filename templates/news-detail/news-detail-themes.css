@@ -96,6 +96,12 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     flex-direction: row;
   }
 
+  /* the video row (stryker.com col-sm-8 + col-sm-4, Columns large-headline) goes side by
+     side from the source 841px, 600px here, as the columns block does */
+  body.news-detail.full-width .columns.large-headline > div {
+    flex-direction: row;
+  }
+
   /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
      start of the full-width section, as on the source (the additive manufacturing lead
      image), not centred like the template's article-column images */
