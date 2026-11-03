@@ -560,9 +560,15 @@ body.news-detail main > .section.video-text.light-gray {
   background-color: transparent;
 }
 
-body.news-detail main > .section.video-text.light-gray > .default-content-wrapper > p:first-child {
+body.news-detail main > .section.video-text.light-gray > .default-content-wrapper > :is(p, h2):first-child {
   padding: var(--space-block-l);
   background-color: var(--color-surface);
+}
+
+/* …in a Large Headline column (headline-1-5vw: no paragraph gaps) the quote starts a
+   section gap below the box, as the source Large Headline components (Columns gray-lead) */
+body.news-detail main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(p, h2):first-child {
+  margin-bottom: var(--space-section-l);
 }
 
 @media (width >= 600px) {

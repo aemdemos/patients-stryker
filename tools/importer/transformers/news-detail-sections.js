@@ -735,6 +735,31 @@ function videoRichTextAside(video) {
   return box && text(box) ? first : null;
 }
 
+/**
+ * In default content Bold inside running text keeps the copy font, so a source Futura bold
+ * run in a line of text (e.g. "I would like to say thank you…") becomes Bold + Italic, the
+ * news-detail convention for Futura bold in text; a bold line on its own stays Bold.
+ */
+function boldInTextItalic(nodes, doc) {
+  nodes.forEach((node) => node.querySelectorAll('strong').forEach((strong) => {
+    if (strong.closest('em') || text(strong) === text(node)) return;
+    const em = doc.createElement('em');
+    strong.replaceWith(em);
+    em.append(strong);
+    // a space at either end of the run stays between the words, outside the formatting
+    const first = strong.firstChild;
+    const last = strong.lastChild;
+    if (first && first.nodeType === 3 && /^[\s ]/.test(first.textContent)) {
+      first.textContent = first.textContent.replace(/^[\s ]+/, '');
+      em.before(doc.createTextNode(' '));
+    }
+    if (last && last.nodeType === 3 && /[\s ]$/.test(last.textContent)) {
+      last.textContent = last.textContent.replace(/[\s ]+$/, '');
+      em.after(doc.createTextNode(' '));
+    }
+  }));
+}
+
 /** The paragraphs of a grey-box rich text (the lead of a rich-text side column). */
 function leadNodes(component) {
   const box = component.ownerDocument.createElement('div');
@@ -1359,6 +1384,34 @@ export default function transform(hookName, element, payload) {
   });
 
   const consumed = new Set();
+  // a video with a Large Headline column beside it, video on the left of a 2/3 + 1/3 row:
+  // the Video block, then the column as default content beside it in a `video-text`
+  // section — `headline-1-5vw` (the Large Headline text sizes), `background: light-gray`
+  // for the grey box (its first line a Heading 2 statement when the source sets it at
+  // 2vw); buttons under the video go in a section of their own below the row
+  const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas) => {
+    const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
+    const lead = boxed ? headlineNodes(headline, doc) : [];
+    if (boxed && !lead.length) return false;
+    const firstLine = headline.querySelector('.line') || headline;
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]')
+      || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const statement = big && lead.length ? [rename(lead[0], 'h2'), ...lead.slice(1)] : lead;
+    const nodes = [
+      ...statement,
+      ...(boxed ? quotes : [headline, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
+      ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
+    ];
+    boldInTextItalic(nodes, doc);
+    [headline, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    element.setAttribute('data-news-theme', 'full-width');
+    const section = startSection('video-text', 'video-text, headline-1-5vw');
+    if (boxed) section.background = 'light-gray';
+    section.nodes.push(video, ...nodes);
+    if (ctas.length) startSection('buttons').nodes.push(...ctas.flatMap((cta) => buttonNodes(cta, doc)));
+    current = null;
+    return true;
+  };
   // a video with a Large Headline column beside it (2/3 + 1/3 or 50/50):
   // Columns (…, large-headline, gray-lead) in a section of its own; true when built
   const videoRowColumns = (video) => {
@@ -1373,6 +1426,12 @@ export default function transform(hookName, element, payload) {
     // the headline column first in the source row (e.g. Carolyn): the text cell comes first
     const cols = [...asideCol.parentElement.children];
     const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+    // the video on the left of a 2/3 + 1/3 row (e.g. Bob, Matt): the Video block and the
+    // headline column as default content beside it (video-text); a 50/50 or mirrored row
+    // (e.g. Carolyn) stays Columns
+    if (!/\bcol-sm-6\b/.test(videoCol.className) && !mirrored) {
+      return videoHeadlineRow(video, aside, quotes, ctas, asideCtas);
+    }
     const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
     if (!columns) return false;
     [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
@@ -1394,15 +1453,7 @@ export default function transform(hookName, element, payload) {
     const quotes = [...asideCol.querySelectorAll('.c-rich-text-editor')].filter((c) => c !== lead && text(c));
     const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
     if (!nodes.length) return false;
-    // in default content Bold inside running text keeps the copy font: the source's Futura
-    // bold run (e.g. "I would like to say thank you…") is Bold + Italic, the news-detail
-    // convention for Futura bold in text; a bold line on its own stays Bold
-    nodes.forEach((p) => p.querySelectorAll('strong').forEach((strong) => {
-      if (strong.closest('em') || text(strong) === text(p)) return;
-      const em = doc.createElement('em');
-      strong.replaceWith(em);
-      em.append(strong);
-    }));
+    boldInTextItalic(nodes, doc);
     [lead, ...quotes].forEach((c) => consumed.add(c));
     element.setAttribute('data-news-theme', 'full-width');
     const style = [

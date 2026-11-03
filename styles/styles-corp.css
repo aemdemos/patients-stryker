@@ -445,6 +445,21 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height-hero);
 }
 
+/* …and the text of a Large Headline column at that size (the video row of e.g. Bob's or
+   Matt's story, `video-text, headline-1-5vw`): light serif lines 1.35 high with no gap
+   between them, a Heading 2 the column's 2vw statement (capped at 28px) */
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper :is(p, h2) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(8 * var(--corp-headline-vw) / 3)));
+}
+
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-1-5vw {
     --corp-headline-vw: 0.75vw;

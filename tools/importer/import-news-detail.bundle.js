@@ -755,6 +755,24 @@ var CustomImportScript = (() => {
     const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
     return box && text(box) ? first : null;
   }
+  function boldInTextItalic(nodes, doc) {
+    nodes.forEach((node) => node.querySelectorAll("strong").forEach((strong) => {
+      if (strong.closest("em") || text(strong) === text(node)) return;
+      const em = doc.createElement("em");
+      strong.replaceWith(em);
+      em.append(strong);
+      const first = strong.firstChild;
+      const last = strong.lastChild;
+      if (first && first.nodeType === 3 && /^[\s ]/.test(first.textContent)) {
+        first.textContent = first.textContent.replace(/^[\s ]+/, "");
+        em.before(doc.createTextNode(" "));
+      }
+      if (last && last.nodeType === 3 && /[\s ]$/.test(last.textContent)) {
+        last.textContent = last.textContent.replace(/[\s ]+$/, "");
+        em.after(doc.createTextNode(" "));
+      }
+    }));
+  }
   function leadNodes(component) {
     const box = component.ownerDocument.createElement("div");
     box.innerHTML = component.innerHTML;
@@ -1238,6 +1256,28 @@ var CustomImportScript = (() => {
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
+    const videoHeadlineRow = (video, headline2, quotes, ctas, asideCtas) => {
+      const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
+      const lead = boxed ? headlineNodes(headline2, doc) : [];
+      if (boxed && !lead.length) return false;
+      const firstLine = headline2.querySelector(".line") || headline2;
+      const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+      const statement = big && lead.length ? [rename(lead[0], "h2"), ...lead.slice(1)] : lead;
+      const nodes = [
+        ...statement,
+        ...(boxed ? quotes : [headline2, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
+        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
+      ];
+      boldInTextItalic(nodes, doc);
+      [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      const section = startSection("video-text", "video-text, headline-1-5vw");
+      if (boxed) section.background = "light-gray";
+      section.nodes.push(video, ...nodes);
+      if (ctas.length) startSection("buttons").nodes.push(...ctas.flatMap((cta) => buttonNodes(cta, doc)));
+      current = null;
+      return true;
+    };
     const videoRowColumns = (video) => {
       const aside = videoAside(video);
       if (!aside) return false;
@@ -1248,6 +1288,9 @@ var CustomImportScript = (() => {
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+      if (!/\bcol-sm-6\b/.test(videoCol.className) && !mirrored) {
+        return videoHeadlineRow(video, aside, quotes, ctas, asideCtas);
+      }
       const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
       if (!columns) return false;
       [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
@@ -1263,12 +1306,7 @@ var CustomImportScript = (() => {
       const quotes = [...asideCol.querySelectorAll(".c-rich-text-editor")].filter((c) => c !== lead && text(c));
       const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
       if (!nodes.length) return false;
-      nodes.forEach((p) => p.querySelectorAll("strong").forEach((strong) => {
-        if (strong.closest("em") || text(strong) === text(p)) return;
-        const em = doc.createElement("em");
-        strong.replaceWith(em);
-        em.append(strong);
-      }));
+      boldInTextItalic(nodes, doc);
       [lead, ...quotes].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
       const style = [
