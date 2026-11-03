@@ -615,6 +615,13 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* …stacked, they keep the block's phone rule between them (source gold
+     .desc-container border at 700px, e.g. "SHEA CAUTI prevention practice updates") */
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: var(--space-block-xs);
+    border-bottom: 1px solid var(--color-accent);
+  }
+
   /* Columns dark-last: the quote box takes what the text cell leaves (its margins sit
      inside the column) and hugs its content */
   body.news-detail main .columns.dark-last > div > div:last-child {
@@ -695,6 +702,11 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
   
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   /* Columns thumbnails: a sixth of the container less the column padding (source
