@@ -643,7 +643,10 @@ var CustomImportScript = (() => {
       run = [];
     };
     [...container.childNodes].forEach((node) => {
-      if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
+      if (node.nodeType === 1 && ["BLANK-LINE", "TRAILING-BLANK"].includes(node.tagName)) {
+        flush();
+        nodes.push(node);
+      } else if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
         flush();
         if (text(node) || node.querySelector("img")) nodes.push(node);
       } else if (node.nodeType === 1 && node.tagName === "IMG") {
@@ -673,10 +676,11 @@ var CustomImportScript = (() => {
     const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
     return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
   }
-  function richTextNodes(component, doc) {
+  function richTextNodes(component, doc, { blankLines = false } = {}) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
+    [...box.children].filter((p) => p.tagName === "P" && !text(p) && !p.querySelector("img")).forEach((p) => p.replaceWith(doc.createElement("blank-line")));
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
     const plainBold = plainBoldParagraphs(box);
@@ -714,7 +718,7 @@ var CustomImportScript = (() => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
       if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
     });
-    return { nodes, centred, size };
+    return { nodes: blankLines ? nodes : nodes.filter((node) => !["BLANK-LINE", "TRAILING-BLANK"].includes(node.tagName)), centred, size };
   }
   function imageColumnStyle(component) {
     const col = component.closest('[class*="col-sm-"]');
@@ -989,7 +993,7 @@ var CustomImportScript = (() => {
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     const variants = [half ? "columns-50-50" : "columns-67-33", "large-headline"];
     if (boxed) variants.push("gray-lead");
-    if (boxed && !big && !baseSize && firstLine.querySelector("h1, h2, h3")) variants.push("statement-s");
+    if (boxed && !big && !baseSize && firstLine.querySelector("h1, h2, h3") || boxed && big && inHeading) variants.push("statement-s");
     if (baseSize) variants.push("gray-base");
     if (boxed && /padding-top:\s*5%/.test(greyBox.getAttribute("style") || "")) variants.push("pad-5");
     if (boxed && textLine && textLine.classList.contains("line2")) variants.push("lines-30");
@@ -1284,6 +1288,104 @@ var CustomImportScript = (() => {
     const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => c.length ? c : "")] });
     return { block, style };
   }
+  function restoreBlankLines(main, html, doc) {
+    if (!html || typeof DOMParser === "undefined") return;
+    const original = new DOMParser().parseFromString(html, "text/html");
+    const rtes = (root) => [...root.querySelectorAll(".c-rich-text-editor, .c-disclaimer")].filter((el) => !el.closest("header, footer, .modal") && !el.parentElement.closest(".c-rich-text-editor, .c-disclaimer"));
+    const host = (el) => (el.querySelector("p") || {}).parentElement || el;
+    const empty = (el) => el.tagName === "P" && !text(el) && !el.querySelector("img");
+    const blank = (el) => empty(el) && /&nbsp;|\u00a0|<br/i.test(el.innerHTML);
+    const inline = /<\/?(?:span|b|i|font|strong|em)\b[^>]*>/gi;
+    const trailingBlank = (el) => el.tagName === "P" && !empty(el) && /<br\s*\/?>\s*(?:&nbsp;|\u00a0|<br\s*\/?>)[\s\u00a0]*$/i.test(el.innerHTML.replace(inline, ""));
+    const now = rtes(doc);
+    const used = /* @__PURE__ */ new Set();
+    rtes(original).forEach((rte) => {
+      const sig = text(rte);
+      if (!sig) return;
+      const match = now.find((el) => !used.has(el) && text(el) === sig);
+      if (!match) return;
+      used.add(match);
+      const from = host(rte);
+      const to = host(match);
+      const kids = [...from.children];
+      if (!kids.some((el) => blank(el) || trailingBlank(el))) return;
+      const kept = kids.filter((el) => !empty(el));
+      const current = [...to.children].filter((el) => !empty(el));
+      if (kept.length !== current.length || kept.some((el, j) => el.tagName !== current[j].tagName)) return;
+      kept.forEach((el, j) => {
+        if (!trailingBlank(el)) return;
+        current[j].after(doc.createElement("trailing-blank"));
+      });
+      kids.forEach((el, j) => {
+        if (!blank(el)) return;
+        const next = kids.slice(j + 1).find((k) => !empty(k));
+        const marker = doc.createElement("blank-line");
+        if (next) current[kept.indexOf(next)].before(marker);
+        else to.append(marker);
+      });
+    });
+  }
+  function sourceBox(component) {
+    if (!component || typeof component.getBoundingClientRect !== "function") return null;
+    const parts = [
+      component.matches("hr") ? component : null,
+      ...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, img, video, iframe, hr, .s7dm-dynamic-media")
+    ].filter(Boolean).map((el) => el.getBoundingClientRect()).filter((r) => r.height > 0 && r.width > 0);
+    if (!parts.length && component.matches(".sectionseparator, .c-section-separator")) {
+      const r = component.getBoundingClientRect();
+      if (r.width > 0) parts.push(r);
+    }
+    if (!parts.length) return null;
+    const host = component.querySelector(":scope > div[style]");
+    const pad = (side) => {
+      const m = (host && host.getAttribute("style") || "").match(new RegExp(`padding-${side}:\\s*([\\d.]+)%`));
+      return m && Number(m[1]) > 0 ? { pct: Number(m[1]), px: parseFloat(getComputedStyle(host)[`padding${side[0].toUpperCase()}${side.slice(1)}`]) || 0 } : null;
+    };
+    return {
+      top: Math.min(...parts.map((r) => r.top)),
+      bottom: Math.max(...parts.map((r) => r.bottom)),
+      padTop: pad("top"),
+      padBottom: pad("bottom")
+    };
+  }
+  var GAP_STEPS = [[0, "gap-0"], [15, "gap-s"], [30, "gap-m"], [45, "gap-l"], [60, "gap-xl"]];
+  var PAD_STEPS = [1, 2, 3, 5, 7];
+  function sectionGaps(sections, boxes) {
+    const box = (c) => {
+      if (!c) return null;
+      if (!boxes.has(c)) boxes.set(c, sourceBox(c));
+      return boxes.get(c);
+    };
+    const addStyle = (section, style) => {
+      if (!(section.style || "").split(", ").includes(style)) section.style = [section.style, style].filter(Boolean).join(", ");
+    };
+    const nearestPad = (pct) => PAD_STEPS.reduce((best, s) => Math.abs(s - pct) < Math.abs(best - pct) ? s : best);
+    sections.forEach((section, i) => {
+      if (["title", "spacer", "blank-line"].includes(section.kind)) return;
+      const first = box(section.firstComp);
+      if (first && first.padTop && (i === 0 || sections[i - 1].lastComp !== section.firstComp)) addStyle(section, `pad-top-${nearestPad(first.padTop.pct)}`);
+      const last = box(section.lastComp);
+      const after = sections.slice(i + 1).find((s) => s.kind !== "blank-line");
+      if (last && last.padBottom && (!after || after.firstComp !== section.lastComp)) addStyle(section, `pad-bottom-${nearestPad(last.padBottom.pct)}`);
+    });
+    for (let i = 1; i < sections.length; i += 1) {
+      const next = sections[i];
+      let j = i - 1;
+      while (j > 0 && sections[j].kind === "blank-line") j -= 1;
+      const prev = sections[j];
+      const styles = (next.style || "").split(", ");
+      const skip = ["title", "spacer", "blank-line"].includes(prev.kind) || ["spacer", "blank-line"].includes(next.kind) || styles.includes("join") || prev.kind === "columns" || next.kind === "columns" || !prev.lastComp || !next.firstComp || prev.lastComp === next.firstComp;
+      const a = !skip && box(prev.lastComp);
+      const b = !skip && box(next.firstComp);
+      const pads = (a && a.padBottom ? a.padBottom.px + 15 : 0) + (b && b.padTop ? b.padTop.px : 0);
+      const gap = a && b ? b.top - a.bottom - pads : null;
+      if (gap !== null && gap >= -5 && gap <= 90) {
+        const step = GAP_STEPS.reduce((best, s) => Math.abs(s[0] - gap) < Math.abs(best[0] - gap) ? s : best);
+        const fallback = styles.includes("separator") ? "gap-s" : "gap-m";
+        if (step[1] !== fallback) addStyle(next, step[1]);
+      }
+    }
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     const templateName = payload && payload.template && payload.template.name;
@@ -1293,15 +1395,19 @@ var CustomImportScript = (() => {
     const main = doc.querySelector('[role="main"]') || element;
     spacedSubheadTexts = rawSpacedSubheads(payload && payload.html);
     const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
+    restoreBlankLines(main, payload && payload.html, doc);
     const inlinedXf = markSharedFragments(main, doc);
     const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
     const sections = [];
     let current = null;
     let separatorNext = false;
+    let activeComponent = null;
+    let pendingRule = null;
     const startSection = (kind, sectionStyle) => {
       const style = separatorNext ? ["separator", sectionStyle].filter(Boolean).join(", ") : sectionStyle;
+      const first = separatorNext && pendingRule ? pendingRule : activeComponent;
       separatorNext = false;
-      current = { kind, style, nodes: [] };
+      current = { kind, style, nodes: [], firstComp: first, lastComp: activeComponent };
       sections.push(current);
       return current;
     };
@@ -1429,8 +1535,13 @@ var CustomImportScript = (() => {
       }
     }
     let leadBelowDate = false;
+    const boxes = new Map(components.map((c) => [c, sourceBox(c)]));
+    let lastComponent = null;
     components.forEach((component) => {
       if (consumed.has(component)) return;
+      if (current && lastComponent && current !== title) current.lastComp = lastComponent;
+      activeComponent = component;
+      lastComponent = component;
       const isFirst = current === title;
       if (component.matches(".xf-fragment")) {
         startSection("fragment").nodes.push(fragmentBlock(component.getAttribute("data-fragment"), doc));
@@ -1481,15 +1592,13 @@ var CustomImportScript = (() => {
           current = null;
           return;
         }
-        if (!current || !current.kind.startsWith("body")) startSection("body");
-        if (linkStyle && !(current.style || "").split(", ").includes(linkStyle)) {
-          current.style = [current.style, linkStyle].filter(Boolean).join(", ");
-        }
-        current.nodes.push(...nodes2);
+        startSection("image", linkStyle || void 0).nodes.push(...nodes2);
+        current = null;
         return;
       }
       if (component.matches(".c-section-separator, .sectionseparator")) {
         separatorNext = true;
+        pendingRule = component;
         current = null;
         return;
       }
@@ -1630,20 +1739,27 @@ var CustomImportScript = (() => {
         current.nodes.push(...nodes2);
         return;
       }
-      const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
+      const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc, { blankLines: true }) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
       nodes.forEach((node, i) => {
+        if (["BLANK-LINE", "TRAILING-BLANK"].includes(node.tagName)) {
+          startSection("blank-line", node.tagName === "TRAILING-BLANK" ? "blank-line, join" : "blank-line").component = component;
+          return;
+        }
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const nodeCentred = centred && !(node.tagName === "H1" && !hasTitle);
         const styles = [nodeCentred ? "center" : "", ...extra].filter(Boolean);
         const kind = [nodeCentred ? "center" : "body", ...extra].join(" ");
         const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
-        if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
+        const prev = current;
+        if (!current || current.kind !== kind || current.component !== component || h3Font && current.h3Font && current.h3Font !== h3Font) {
           if (node.followsText && current && i > 0) {
             current.style = [current.style, "ps-0"].filter(Boolean).join(", ");
           }
-          startSection(kind, styles.join(", ") || void 0);
+          const joined = prev && prev.component === component;
+          startSection(kind, [...styles, joined ? "join" : ""].filter(Boolean).join(", ") || void 0);
+          current.component = component;
         }
         if (h3Font) {
           if (h3Font === "serif" && current.h3Font !== "serif") {
@@ -1671,15 +1787,30 @@ var CustomImportScript = (() => {
         });
       });
     }
+    if (current && lastComponent && current !== title) current.lastComp = lastComponent;
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
-    const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
+    disclaimers.forEach((disclaimer) => {
+      activeComponent = disclaimer;
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
       cleanRichText(box, { wholeParagraphs: true });
-      return blockNodes(box, doc);
-    }), doc);
-    const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
-    if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
+      const disclaimerNodes = footnoteList(blockNodes(box, doc), doc);
+      const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
+      let part = null;
+      disclaimerNodes.forEach((node) => {
+        if (["BLANK-LINE", "TRAILING-BLANK"].includes(node.tagName)) {
+          if (part) startSection("blank-line", node.tagName === "TRAILING-BLANK" ? "blank-line, join" : "blank-line");
+          part = null;
+          return;
+        }
+        if (!part) {
+          const afterBlank = current && current.kind === "blank-line" && current.firstComp === disclaimer;
+          part = startSection("disclaimer", [disclaimerStyle, afterBlank ? "join" : ""].filter(Boolean).join(", "));
+        }
+        part.nodes.push(node);
+      });
+    });
+    sectionGaps(sections, boxes);
     const titleHasH1 = title.nodes.some((node) => node.tagName === "H1");
     const headlineSection = !titleHasH1 && sections.find((section) => section.kind === "headline");
     if ((titleHasH1 || headlineSection) && !leadBelowDate) {
@@ -1690,7 +1821,7 @@ var CustomImportScript = (() => {
       opening.style = [opening.style, "date-above"].filter(Boolean).join(", ");
     }
     const out = [];
-    sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
+    sections.filter((section) => section.nodes.length || section.kind === "spacer" || section.kind === "blank-line").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
       const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);

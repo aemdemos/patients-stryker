@@ -243,9 +243,10 @@ body.corp .columns.large-headline .columns-img-col ~ p.button-wrapper {
   margin-top: var(--space-block-s);
 }
 
-/* large-headline: a button right under a video keeps the source's 30px component gap */
+/* large-headline: a button right under a video keeps the source's component gap: 20px on
+   phones, 30px from 600px (below) */
 body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
-  margin-top: var(--space-section);
+  margin-top: var(--space-block-l);
 }
 
 /* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
@@ -531,6 +532,11 @@ body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm
   padding-bottom: calc(var(--columns-corp-gray-lead-pad, var(--space-block-l)) + var(--space-block));
 }
 
+/* …a Heading 2 statement box (a 2vw statement in a heading, e.g. Stiles) keeps that 15px too */
+body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > h2:first-child {
+  padding-bottom: calc(var(--columns-corp-gray-lead-pad, var(--space-block-l)) + var(--space-block));
+}
+
 /* pad-5: the grey box padding the source sets to 5% of the column (the StrykerTalks podcast
    pages: 17.25px on phones, 22px at 1440px) instead of 20px */
 body.corp .columns.gray-lead.pad-5 > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
@@ -704,6 +710,10 @@ body.corp .columns.gray-lead:where(.large-headline) > div > div:not(:has(video, 
     --columns-corp-quote-base: clamp(var(--columns-corp-tablet-vw), 1vw, var(--body-font-size-m));
     --columns-corp-quote-name-size: clamp(calc(1.5 * var(--columns-corp-tablet-vw)), 1.5vw, var(--body-font-size-xl));
     --columns-corp-quote-gap: var(--space-inset-l);
+  }
+
+  body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
+    margin-top: var(--space-section);
   }
 
   /* small print under the video: the source's 30px component gap */

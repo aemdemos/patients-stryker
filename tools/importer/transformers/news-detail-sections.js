@@ -621,7 +621,11 @@ function blockNodes(container, doc) {
     run = [];
   };
   [...container.childNodes].forEach((node) => {
-    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
+    // a blank-line marker (an empty source paragraph, richTextNodes) stays in place
+    if (node.nodeType === 1 && ['BLANK-LINE', 'TRAILING-BLANK'].includes(node.tagName)) {
+      flush();
+      nodes.push(node);
+    } else if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
       flush();
       if (text(node) || node.querySelector('img')) nodes.push(node);
     } else if (node.nodeType === 1 && node.tagName === 'IMG') {
@@ -672,10 +676,20 @@ function spacedSubheads(root) {
     || spacedSubheadTexts.has(squashText(h)));
 }
 
-function richTextNodes(component, doc) {
+/**
+ * The rich text of a component as block nodes with their copy styles. Blank-line markers
+ * (empty source paragraphs) are kept only for the article body (`blankLines`); rich text
+ * in a block cell drops them.
+ */
+function richTextNodes(component, doc, { blankLines = false } = {}) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  // an empty paragraph (<p>&nbsp;</p>) is a blank line on the source: a <blank-line>
+  // marker (restoreBlankLines puts back those the importer dropped), which becomes an empty
+  // `blank-line` section (EDS drops empty paragraphs)
+  [...box.children].filter((p) => p.tagName === 'P' && !text(p) && !p.querySelector('img'))
+    .forEach((p) => p.replaceWith(doc.createElement('blank-line')));
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
@@ -717,7 +731,7 @@ function richTextNodes(component, doc) {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
     if (spaced) node.copyStyle = [node.copyStyle, 'h4-spaced'].filter(Boolean).join(', ');
   });
-  return { nodes, centred, size };
+  return { nodes: blankLines ? nodes : nodes.filter((node) => !['BLANK-LINE', 'TRAILING-BLANK'].includes(node.tagName)), centred, size };
 }
 
 /**
@@ -1085,7 +1099,9 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
   if (boxed) variants.push('gray-lead');
   // a 1.5vw grey box set inside a heading (the StrykerTalks podcast pages, e.g. Heath): its
   // text stays a paragraph, `statement-s` gives it that heading's line spacing
-  if (boxed && !big && !baseSize && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
+  // (also a 2vw statement whose source text is in a heading, e.g. Stiles: the heading's 15px
+  // bottom margin stays inside the box)
+  if ((boxed && !big && !baseSize && firstLine.querySelector('h1, h2, h3')) || (boxed && big && inHeading)) variants.push('statement-s');
   // grey box text at the Large Headline base size (no vw span, e.g. Rose): `gray-base`
   if (baseSize) variants.push('gray-base');
   // the author set the grey box padding to 5% (the StrykerTalks podcast pages): `pad-5`
@@ -1468,6 +1484,155 @@ function xfColumns(marker, doc) {
   return { block, style };
 }
 
+/**
+ * The importer drops empty paragraphs (<p>&nbsp;</p>) before the transformers run, but on
+ * the source each is a blank line. From the original HTML (payload.html), puts a
+ * <blank-line> marker back where each one was in its rich text: each rich text is matched by
+ * its text, and one whose other elements do not line up one to one is left as is.
+ */
+function restoreBlankLines(main, html, doc) {
+  if (!html || typeof DOMParser === 'undefined') return;
+  const original = new DOMParser().parseFromString(html, 'text/html');
+  // rich texts and small print (each .c-disclaimer component)
+  const rtes = (root) => [...root.querySelectorAll('.c-rich-text-editor, .c-disclaimer')]
+    .filter((el) => !el.closest('header, footer, .modal') && !el.parentElement.closest('.c-rich-text-editor, .c-disclaimer'));
+  // the element that holds the paragraphs
+  const host = (el) => (el.querySelector('p') || {}).parentElement || el;
+  // a paragraph without text (the importer drops them); one with a non-breaking space or a
+  // line break renders as a blank line, one with only a plain space takes no height
+  const empty = (el) => el.tagName === 'P' && !text(el) && !el.querySelector('img');
+  const blank = (el) => empty(el) && /&nbsp;|\u00a0|<br/i.test(el.innerHTML);
+  // a paragraph ending with a line break and a non-breaking space or a second break
+  const inline = /<\/?(?:span|b|i|font|strong|em)\b[^>]*>/gi;
+  const trailingBlank = (el) => el.tagName === 'P' && !empty(el)
+    && /<br\s*\/?>\s*(?:&nbsp;|\u00a0|<br\s*\/?>)[\s\u00a0]*$/i.test(el.innerHTML.replace(inline, ''));
+  // the whole page: the small print sits outside the article main
+  const now = rtes(doc);
+  const used = new Set();
+  rtes(original).forEach((rte) => {
+    const sig = text(rte);
+    if (!sig) return;
+    const match = now.find((el) => !used.has(el) && text(el) === sig);
+    if (!match) return;
+    used.add(match);
+    const from = host(rte);
+    const to = host(match);
+    const kids = [...from.children];
+    if (!kids.some((el) => blank(el) || trailingBlank(el))) return;
+    const kept = kids.filter((el) => !empty(el));
+    const current = [...to.children].filter((el) => !empty(el));
+    if (kept.length !== current.length || kept.some((el, j) => el.tagName !== current[j].tagName)) return;
+    // a paragraph that ends with a line break and a non-breaking space or a second break
+    // (".…www.stryker.com.<br>&nbsp;</p>", trimmed by the importer) ends with a blank line:
+    // a marker after it
+    kept.forEach((el, j) => {
+      if (!trailingBlank(el)) return;
+      current[j].after(doc.createElement('trailing-blank'));
+    });
+    // each blank paragraph goes before the element that followed it (or at the end)
+    kids.forEach((el, j) => {
+      if (!blank(el)) return;
+      const next = kids.slice(j + 1).find((k) => !empty(k));
+      const marker = doc.createElement('blank-line');
+      if (next) current[kept.indexOf(next)].before(marker);
+      else to.append(marker);
+    });
+  });
+}
+
+/**
+ * Where a source component's content sits on the rendered source page: the top of its first
+ * and the bottom of its last visible text block, image, video or rule (null when the page is
+ * not laid out or the component shows nothing).
+ */
+function sourceBox(component) {
+  if (!component || typeof component.getBoundingClientRect !== 'function') return null;
+  const parts = [component.matches('hr') ? component : null,
+    ...component.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, img, video, iframe, hr, .s7dm-dynamic-media')]
+    .filter(Boolean)
+    .map((el) => el.getBoundingClientRect())
+    .filter((r) => r.height > 0 && r.width > 0);
+  // a rule wrapper whose <hr> the importer dropped: the wrapper's own place
+  if (!parts.length && component.matches('.sectionseparator, .c-section-separator')) {
+    const r = component.getBoundingClientRect();
+    if (r.width > 0) parts.push(r);
+  }
+  if (!parts.length) return null;
+  // the author's padding on the rich text (style="padding-bottom: 5%"): the pad-* section
+  // styles carry it (it scales with the column), so the gap steps leave it out
+  const host = component.querySelector(':scope > div[style]');
+  const pad = (side) => {
+    const m = (host && host.getAttribute('style') || '').match(new RegExp(`padding-${side}:\\s*([\\d.]+)%`));
+    return m && Number(m[1]) > 0 ? { pct: Number(m[1]), px: parseFloat(getComputedStyle(host)[`padding${side[0].toUpperCase()}${side.slice(1)}`]) || 0 } : null;
+  };
+  return {
+    top: Math.min(...parts.map((r) => r.top)),
+    bottom: Math.max(...parts.map((r) => r.bottom)),
+    padTop: pad('top'),
+    padBottom: pad('bottom'),
+  };
+}
+
+/**
+ * The gap between two sections follows the source: the space between the source components
+ * they come from (measured on the rendered page, 1920px wide) comes in steps — a paragraph
+ * gap (15px), a component gap (30px; 20px on phones), a component gap plus a paragraph gap
+ * (45px, e.g. text leaving a column layout keeps its last paragraph's margin), two
+ * component gaps (60px, e.g. an image leaving a column layout) and none (after a padded
+ * rich text). The next section gets the gap-0 / gap-s / gap-m / gap-l / gap-xl style when its step differs from the default there (the
+ * component gap; the paragraph gap above a separator rule). Sections split off the same
+ * component (`join`) and blank lines keep their own spacing.
+ */
+const GAP_STEPS = [[0, 'gap-0'], [15, 'gap-s'], [30, 'gap-m'], [45, 'gap-l'], [60, 'gap-xl']];
+const PAD_STEPS = [1, 2, 3, 5, 7];
+function sectionGaps(sections, boxes) {
+  const box = (c) => {
+    if (!c) return null;
+    if (!boxes.has(c)) boxes.set(c, sourceBox(c));
+    return boxes.get(c);
+  };
+  const addStyle = (section, style) => {
+    if (!(section.style || '').split(', ').includes(style)) section.style = [section.style, style].filter(Boolean).join(', ');
+  };
+  // the author's % padding of a rich text, on its first / last section (pad-top-N /
+  // pad-bottom-N, the nearest step)
+  const nearestPad = (pct) => PAD_STEPS.reduce((best, s) => (Math.abs(s - pct) < Math.abs(best - pct) ? s : best));
+  sections.forEach((section, i) => {
+    if (['title', 'spacer', 'blank-line'].includes(section.kind)) return;
+    const first = box(section.firstComp);
+    if (first && first.padTop && (i === 0 || sections[i - 1].lastComp !== section.firstComp)) addStyle(section, `pad-top-${nearestPad(first.padTop.pct)}`);
+    const last = box(section.lastComp);
+    const after = sections.slice(i + 1).find((s) => s.kind !== 'blank-line');
+    if (last && last.padBottom && (!after || after.firstComp !== section.lastComp)) addStyle(section, `pad-bottom-${nearestPad(last.padBottom.pct)}`);
+  });
+  for (let i = 1; i < sections.length; i += 1) {
+    const next = sections[i];
+    // the gap is measured from the last text before any blank lines (the importer removed the
+    // empty paragraphs before the page was measured; the blank-line sections add them back)
+    let j = i - 1;
+    while (j > 0 && sections[j].kind === 'blank-line') j -= 1;
+    const prev = sections[j];
+    const styles = (next.style || '').split(', ');
+    const skip = ['title', 'spacer', 'blank-line'].includes(prev.kind)
+      || ['spacer', 'blank-line'].includes(next.kind) || styles.includes('join')
+      // a video + Large Headline row keeps the gaps its own variant sets (columns-corp.css)
+      || prev.kind === 'columns' || next.kind === 'columns'
+      || !prev.lastComp || !next.firstComp || prev.lastComp === next.firstComp;
+    const a = !skip && box(prev.lastComp);
+    const b = !skip && box(next.firstComp);
+    // a padded rich text keeps its last paragraph's 15px margin inside the padding: the step is
+    // what is left after the padded box (often nothing, e.g. straight into a rule: gap-0)
+    const pads = (a && a.padBottom ? a.padBottom.px + 15 : 0) + (b && b.padTop ? b.padTop.px : 0);
+    const gap = a && b ? b.top - a.bottom - pads : null;
+    // (a few px either side of a step is rounding: a padded box measured to the pixel)
+    if (gap !== null && gap >= -5 && gap <= 90) {
+      const step = GAP_STEPS.reduce((best, s) => (Math.abs(s[0] - gap) < Math.abs(best[0] - gap) ? s : best));
+      const fallback = styles.includes('separator') ? 'gap-s' : 'gap-m';
+      if (step[1] !== fallback) addStyle(next, step[1]);
+    }
+  }
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   const templateName = payload && payload.template && payload.template.name;
@@ -1478,17 +1643,22 @@ export default function transform(hookName, element, payload) {
   spacedSubheadTexts = rawSpacedSubheads(payload && payload.html);
   const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
 
+  restoreBlankLines(main, payload && payload.html, doc);
   const inlinedXf = markSharedFragments(main, doc);
   const hasForm = !!main.querySelector('.c-marketo-form form[data-marketo-form-id]');
   const sections = [];
   let current = null;
   let separatorNext = false;
+  // the source component being turned into sections, and the rule a separator section opens with
+  let activeComponent = null;
+  let pendingRule = null;
   const startSection = (kind, sectionStyle) => {
     const style = separatorNext
       ? ['separator', sectionStyle].filter(Boolean).join(', ')
       : sectionStyle;
+    const first = separatorNext && pendingRule ? pendingRule : activeComponent;
     separatorNext = false;
-    current = { kind, style, nodes: [] };
+    current = { kind, style, nodes: [], firstComp: first, lastComp: activeComponent };
     sections.push(current);
     return current;
   };
@@ -1666,8 +1836,16 @@ export default function transform(hookName, element, payload) {
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
+  // where each source component sits on the rendered source page (the importer renders it,
+  // 1920px wide): the gaps between them set the section gaps (sectionGaps below)
+  const boxes = new Map(components.map((c) => [c, sourceBox(c)]));
+  let lastComponent = null;
   components.forEach((component) => {
     if (consumed.has(component)) return;
+    // a section still open takes the previous component as its last one
+    if (current && lastComponent && current !== title) current.lastComp = lastComponent;
+    activeComponent = component;
+    lastComponent = component;
     const isFirst = current === title;
     if (component.matches('.xf-fragment')) {
       startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
@@ -1723,12 +1901,10 @@ export default function transform(hookName, element, payload) {
         current = null;
         return;
       }
-      // an image joins the article section it follows, whatever its copy size
-      if (!current || !current.kind.startsWith('body')) startSection('body');
-      if (linkStyle && !(current.style || '').split(', ').includes(linkStyle)) {
-        current.style = [current.style, linkStyle].filter(Boolean).join(', ');
-      }
-      current.nodes.push(...nodes);
+      // an image is a source component of its own: a section of its own (the 20px / 30px
+      // component gap above and below it, as on the source)
+      startSection('image', linkStyle || undefined).nodes.push(...nodes);
+      current = null;
       return;
     }
     // the importer drops <hr> elements before the transform, so the rule is also found by
@@ -1738,6 +1914,7 @@ export default function transform(hookName, element, payload) {
       // next section starts with it — `separator` section style (1px grey rule on top).
       // (A section holding only the rule would be dropped by the importer.)
       separatorNext = true;
+      pendingRule = component;
       current = null;
       return;
     }
@@ -1908,7 +2085,7 @@ export default function transform(hookName, element, payload) {
       return;
     }
     const { nodes, centred, size } = component.matches('.c-rich-text-editor')
-      ? richTextNodes(component, doc)
+      ? richTextNodes(component, doc, { blankLines: true })
       : { nodes: headlineNodes(component, doc), centred: false };
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
@@ -1916,7 +2093,16 @@ export default function transform(hookName, element, payload) {
     // paragraph (boldBody) gets a section of its own with `bold-body`; a Futura text link
     // after the copy of its rich text (followsText) keeps the paragraph gap above it, so
     // the section before it gets `ps-0`.
+    // Section boundaries follow the source components: each rich text starts a section of
+    // its own (the source's 20px / 30px component gap), and a section split off the same
+    // rich text (a change of text style) has `join` (the 15px paragraph gap)
     nodes.forEach((node, i) => {
+      // a blank line: an empty `blank-line` section; the text after it starts a new section
+      if (['BLANK-LINE', 'TRAILING-BLANK'].includes(node.tagName)) {
+        // a blank line that ends a paragraph (<br>&nbsp;) sits right under it: `join`
+        startSection('blank-line', node.tagName === 'TRAILING-BLANK' ? 'blank-line, join' : 'blank-line').component = component;
+        return;
+      }
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
@@ -1928,11 +2114,15 @@ export default function transform(hookName, element, payload) {
       // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);
       // a Futura h3 in the same run starts a new section
       const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
-      if (!current || current.kind !== kind || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
+      const prev = current;
+      if (!current || current.kind !== kind || current.component !== component
+        || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
         if (node.followsText && current && i > 0) {
           current.style = [current.style, 'ps-0'].filter(Boolean).join(', ');
         }
-        startSection(kind, styles.join(', ') || undefined);
+        const joined = prev && prev.component === component;
+        startSection(kind, [...styles, joined ? 'join' : ''].filter(Boolean).join(', ') || undefined);
+        current.component = component;
       }
       if (h3Font) {
         if (h3Font === 'serif' && current.h3Font !== 'serif') {
@@ -1964,21 +2154,41 @@ export default function transform(hookName, element, payload) {
     });
   }
 
+  // the section still open ends with the last component
+  if (current && lastComponent && current !== title) current.lastComp = lastComponent;
+
   // 4. disclaimer: references (when the article has them) and the document code, in
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.
   const disclaimers = [...doc.querySelectorAll('.c-disclaimer')]
     .filter((el) => !el.querySelector('#publishedDate') && !el.parentElement.closest('.c-disclaimer') && text(el));
-  const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
+  // small print: the corp `disclaimer` section style (11.2px copy; references as
+  // "N: " entries 15px apart, then the document code)
+  // references authored as "1: …" paragraphs keep that look: `references-spaced`.
+  // Each source component is a section of its own (the 20px / 30px component gap, e.g. the
+  // document code below the references), and a blank line in it a `blank-line` section
+  disclaimers.forEach((disclaimer) => {
+    activeComponent = disclaimer;
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
     cleanRichText(box, { wholeParagraphs: true });
-    return blockNodes(box, doc);
-  }), doc);
-  // small print: the corp `disclaimer` section style (11.2px copy; references as
-  // "N: " entries 15px apart, then the document code)
-  // references authored as "1: …" paragraphs keep that look: `references-spaced`
-  const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
-  if (disclaimerNodes.length) startSection('disclaimer', disclaimerStyle).nodes.push(...disclaimerNodes);
+    const disclaimerNodes = footnoteList(blockNodes(box, doc), doc);
+    const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
+    let part = null;
+    disclaimerNodes.forEach((node) => {
+      if (['BLANK-LINE', 'TRAILING-BLANK'].includes(node.tagName)) {
+        if (part) startSection('blank-line', node.tagName === 'TRAILING-BLANK' ? 'blank-line, join' : 'blank-line');
+        part = null;
+        return;
+      }
+      if (!part) {
+        const afterBlank = current && current.kind === 'blank-line' && current.firstComp === disclaimer;
+        part = startSection('disclaimer', [disclaimerStyle, afterBlank ? 'join' : ''].filter(Boolean).join(', '));
+      }
+      part.nodes.push(node);
+    });
+  });
+
+  sectionGaps(sections, boxes);
 
   // the title section (when it holds the H1) is followed by a `spacer` section: the
   // article starts 46px below the date on the source (30px spacer + the 15px title gap) —
@@ -2003,7 +2213,7 @@ export default function transform(hookName, element, payload) {
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)
   const out = [];
-  sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
+  sections.filter((section) => section.nodes.length || section.kind === 'spacer' || section.kind === 'blank-line').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
     // a section holding purple / blue buttons gets the btn-purple / btn-blue style
