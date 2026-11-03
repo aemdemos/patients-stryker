@@ -511,6 +511,24 @@ function dmRendererFor(src) {
 }
 
 /**
+ * True when a standalone publish-path image link is the link target of the image on the
+ * line above it in a Columns `media-pair` cell (blocks/columns makes that image clickable
+ * with the link alone on the next line), e.g. a thumbnail linking to its full-size JPG
+ * download on the leadership succession release: that link stays a link.
+ * @param {HTMLAnchorElement} a the link
+ * @returns {boolean}
+ */
+function isMediaPairTarget(a) {
+  const line = a.closest('p');
+  if (!line || !line.closest('.columns.media-pair')) return false;
+  const prev = line.previousElementSibling;
+  if (!prev || !prev.matches('p') || prev.children.length !== 1) return false;
+  const media = prev.firstElementChild;
+  if (media.tagName === 'PICTURE') return true;
+  return media.tagName === 'A' && dmRendererFor(media.getAttribute('href')) !== null;
+}
+
+/**
  * Replace authored DM links/images within `root` with the matching native
  * element (<picture> for images, <video> for videos). Idempotent, so blocks can
  * re-run it on their own subtree (decorateMain runs it once page-wide).
@@ -536,7 +554,7 @@ export default function decorateDMAssets(root) {
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
-      if (render === renderPublishImage && !isStandaloneLink(el)) return;
+      if (render === renderPublishImage && (!isStandaloneLink(el) || isMediaPairTarget(el))) return;
       const text = el.textContent.trim();
       if (text && text !== src) displayText = text;
     }

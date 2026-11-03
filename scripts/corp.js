@@ -131,6 +131,27 @@ function decorateImageLinks(main) {
 }
 
 /**
+ * An underlined heading that DA stores with its underline split around a line break or
+ * bold words (`<u>Improving safety</u><br><u>Spreading truth…</u>`) gets one `<u>` around
+ * the whole heading again, so scripts.js decorateUnderlinedHeadings (which wants a single
+ * `<u>`, and runs after decorateSections) still draws the heading rule (e.g. rule-gold).
+ * @param {Element} main The container element
+ */
+function joinSplitHeadingUnderlines(main) {
+  const squash = (value) => value.replace(/\s+/g, '');
+  main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+    const us = [...heading.querySelectorAll('u')].filter((u) => !u.parentElement.closest('u'));
+    if (us.length < 2) return;
+    const text = squash(heading.textContent);
+    if (!text || squash(us.map((u) => u.textContent).join('')) !== text) return;
+    us.forEach((u) => u.replaceWith(...u.childNodes));
+    const u = document.createElement('u');
+    u.append(...heading.childNodes);
+    heading.append(u);
+  });
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
@@ -138,6 +159,7 @@ function decorateImageLinks(main) {
 export function decorateSections(main) {
   buildAccordionSections(main);
   decorateImageLinks(main);
+  joinSplitHeadingUnderlines(main);
 }
 
 /**
