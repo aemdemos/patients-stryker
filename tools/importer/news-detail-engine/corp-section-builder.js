@@ -161,7 +161,10 @@ export function createBuilder({
     let run = [];
     let used = 0;
     const flush = () => {
-      if (run.length > 1 && handlers.row) {
+      // a column alone on its line keeps its width and place too (going-the-distance-for-
+      // front-line-heroes: the article text at 8/12 after 2): the row rules give it its
+      // column styles
+      if (run.length && handlers.row) {
         out.push(...boxed(handlers.row(
           run.map((r) => boxed(collectOne(r.el), r.el)),
           run.map((r) => r.spec.d.w),

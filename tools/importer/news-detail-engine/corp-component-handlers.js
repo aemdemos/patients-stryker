@@ -377,25 +377,29 @@ function cellStyles(cells, ctx) {
 
 // a fraction of the 12-column grid → its style suffix (8 → 2-3)
 const FRACTIONS = {
-  3: '1-4', 4: '1-3', 6: '1-2', 8: '2-3', 9: '3-4',
+  3: '1-4', 4: '1-3', 6: '1-2', 8: '2-3', 9: '3-4', 10: '5-6',
 };
+// where a column starts, in twelfths → its col-at-<start> suffix (an article body centred at
+// 8/12 after 2, going-the-distance-for-front-line-heroes; 10/12 after 1)
+const STARTS = { ...FRACTIONS, 1: '1-12', 2: '1-6' };
 
 /**
  * The section styles of a column with content of its own in an otherwise empty column
  * control (widths in twelfths): col-<width> and, when it does not start at the left,
  * col-at-<start> (e.g. a 2/3 column at the left → col-2-3; the right half → col-1-2,
- * col-at-1-2). Full-width or unknown splits: none.
+ * col-at-1-2), and col-phone when the column keeps that place on phones too (an AEM grid
+ * column with no phone width of its own). Full-width or unknown splits: none.
  */
-function columnStyles(widths, index, ctx, starts = null) {
+function columnStyles(widths, index, ctx, starts = null, phone = false) {
   if (!widths || !widths[index]) return [];
   const width = widths[index];
   const start = starts ? starts[index] : widths.slice(0, index).reduce((sum, w) => sum + w, 0);
   if (width >= 12) return [];
-  if (!FRACTIONS[width] || (start && !FRACTIONS[start])) {
+  if (!FRACTIONS[width] || (start && !STARTS[start])) {
     ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
     return [];
   }
-  return [`col-${FRACTIONS[width]}`, ...(start ? [`col-at-${FRACTIONS[start]}`] : [])];
+  return [`col-${FRACTIONS[width]}`, ...(start ? [`col-at-${STARTS[start]}`] : []), ...(phone ? ['col-phone'] : [])];
 }
 
 /**
@@ -421,7 +425,9 @@ export function columnItems(columns, split, ctx, widths = null, starts = null) {
   if (filled.length === 1) {
     // B: one column with content: its content, at that column's width and position
     // (lift and shift: e.g. a news article body in the 2/3 column of a 2/3 + 1/3 control)
-    const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx, starts);
+    const at = cols.indexOf(filled[0]);
+    const phone = !!(split.phoneKeeps && split.phoneKeeps[at]);
+    const styles = columnStyles(widths, at, ctx, starts, phone);
     if (!styles.length) return [...anchors, { type: 'boundary' }, ...filled[0], { type: 'boundary' }];
     return [...anchors, { type: 'group', styles, items: filled[0] }];
   }
@@ -541,6 +547,26 @@ const GRID_SPLITS = {
   '6,6': SPLITS.cols2, '8,4': SPLITS['cols2_2-3_1-3'], '4,8': SPLITS['cols2_1-3_2-3'], '4,4,4': SPLITS.cols3, '3,3,3,3': SPLITS.cols4,
 };
 
+/**
+ * The phone layout of a column control as Columns grid options, when it is not the one the
+ * corp Columns give its cells below 600px (four cells two per row, fewer cells stacked): the
+ * columns' col-xs widths, with the desktop widths (col-md, else col-sm) as the grid. The
+ * history-of-cutting-blades timeline (col-xs-12 col-sm-6 col-md-3) is one per row on phones,
+ * not two. Other widths keep the variant's layout (the grid's tablet range, 600–1199px, is
+ * not the source's 840 / 1024px steps).
+ * @param {Element[]} columns the control's column elements
+ * @returns {string[]} the grid options, or none
+ */
+function phoneGrid(columns) {
+  const width = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
+  const desktop = columns.map((col) => width(col, 'md') || width(col, 'sm'));
+  const phone = columns.map((col) => width(col, 'xs') || 12);
+  if (!desktop.every(Boolean) || desktop.reduce((a, b) => a + b, 0) > 12) return [];
+  const usual = columns.length === 4 ? 6 : 12;
+  if (phone.every((w) => w === usual)) return [];
+  return [`grid-${desktop.join('-')}`, `grid-m-${phone.join('-')}`];
+}
+
 function columnControl(el, ctx) {
   const split = [...el.classList].find((c) => /^cols\d?/.test(c)) || 'cols';
   const row = el.querySelector(':scope > .colctrl > .row') || el.querySelector('.row');
@@ -553,7 +579,10 @@ function columnControl(el, ctx) {
     return hasContent(flat) ? [{ type: 'boundary' }, ...flat, { type: 'boundary' }] : flat;
   }
   if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
-  return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
+  const spec = SPLITS[split] || {};
+  const grid = phoneGrid(columns);
+  const layout = grid.length ? { ...spec, variant: [spec.variant, ...grid].filter(Boolean).join(', '), grid: true } : spec;
+  return columnItems(items, layout, ctx, widths.every(Boolean) ? widths : null);
 }
 
 /**
@@ -605,8 +634,13 @@ function gridRow(columns, widths, ctx, { specs = [], total = 12 } = {}) {
     return at + (spec.d.o || 0) + spec.d.w;
   }, 0);
   const twelfths = total === 12 ? { widths, starts } : null;
+  // phones: a column with no phone width or offset of its own keeps its desktop place
+  const keepsPhone = (spec) => spec.m.w === null && spec.m.o === null && !spec.m.beh;
   const grid = {
-    variant: gridOptions(specs, total).join(', '), grid: true, unequal: offsets || new Set(widths).size > 1,
+    variant: gridOptions(specs, total).join(', '),
+    grid: true,
+    unequal: offsets || new Set(widths).size > 1,
+    phoneKeeps: specs.map(keepsPhone),
   };
   return columnItems(columns, grid, ctx, twelfths?.widths, twelfths?.starts);
 }
