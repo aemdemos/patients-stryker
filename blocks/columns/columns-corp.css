@@ -499,14 +499,24 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
   line-height: var(--paragraph-line-height);
 }
 
+/* statement-s: the grey box text set inside a heading on the source (the StrykerTalks podcast
+   pages, e.g. Heath): the 21px h2's line box (lines 1.06), 24.5px from 840px (600px here),
+   sets the line spacing — 22.3px on phones, 26px on tablets — the text's own 1.35 above it */
+body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
+  --columns-corp-gray-lead-line-min: calc(var(--heading-line-height) * var(--heading-font-size-l));
+}
+
 /* quote-scaled: the quote text on the 1.5vw scale (the gold marks stay 21px), as on Bob's and
-   Rose's stories */
+   Rose's stories; its source paragraph keeps the base size, whose line is the minimum */
 body.corp .columns.gray-lead.quote-scaled > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:has(> .color-gold:first-child) {
   font-size: var(--columns-corp-quote-name-size);
+  line-height: max(calc(var(--paragraph-line-height) * var(--columns-corp-quote-base)), calc(var(--paragraph-line-height) * 1em));
 }
 
 body.corp .columns.gray-lead.quote-scaled > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:has(> .color-gold:first-child) > .color-gold {
+  font-family: var(--display-font-family);
   font-size: var(--body-font-size-xl);
+  line-height: var(--paragraph-line-height);
 }
 
 /* the grey box ends one quote base line (the source's empty first line) above the quote */
@@ -634,6 +644,10 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
     margin-top: 0;
     font-size: var(--columns-corp-quote-name-size);
     line-height: var(--heading-line-height-hero);
+  }
+
+  body.corp .columns.gray-lead.statement-s > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
+    line-height: max(calc(var(--heading-line-height) * var(--heading-font-size-xl)), calc(var(--heading-line-height-hero) * 1em));
   }
 }
 
