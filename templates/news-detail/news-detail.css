@@ -42,6 +42,20 @@ body.news-detail main > .section.bg-gold > .default-content-wrapper {
   background-color: var(--color-accent);
 }
 
+/* Section Metadata `background: bg-light-gray`: the section's paragraph in a light grey box
+   inside the column, not a page-wide band (stryker.com rich text .has-background
+   .bg-light-gray, e.g. the "Together, we can make surgical smoke…" quote of "Protect your
+   patients … and your OR staff": 3% margin, padding 5% top and sides, 4% bottom) */
+body.news-detail main > .section.bg-light-gray {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bg-light-gray > .default-content-wrapper > p {
+  margin: 3%;
+  padding: 5% 5% 4%;
+  background-color: var(--color-surface);
+}
+
 /* a gold Large Headline (`headline-2vw` with `background: bg-gold`): the source
    .c-largeheadline.bg-gold box pads its text 20px all round (e.g. the "Want to learn more?"
    box of the orthopaedic instruments exudate whitepaper release) */
