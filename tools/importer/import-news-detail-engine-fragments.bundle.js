@@ -966,7 +966,7 @@ var CustomImportScript = (() => {
       let run = [];
       let used = 0;
       const flush = () => {
-        if (run.length > 1 && handlers.row) {
+        if (run.length && handlers.row) {
           out.push(...boxed(handlers.row(
             run.map((r) => boxed(collectOne(r.el), r.el)),
             run.map((r) => r.spec.d.w),
@@ -3978,18 +3978,20 @@ var CustomImportScript = (() => {
     4: "1-3",
     6: "1-2",
     8: "2-3",
-    9: "3-4"
+    9: "3-4",
+    10: "5-6"
   };
-  function columnStyles(widths, index, ctx, starts = null) {
+  var STARTS = __spreadProps(__spreadValues({}, FRACTIONS), { 1: "1-12", 2: "1-6" });
+  function columnStyles(widths, index, ctx, starts = null, phone = false) {
     if (!widths || !widths[index]) return [];
     const width = widths[index];
     const start = starts ? starts[index] : widths.slice(0, index).reduce((sum, w) => sum + w, 0);
     if (width >= 12) return [];
-    if (!FRACTIONS[width] || start && !FRACTIONS[start]) {
+    if (!FRACTIONS[width] || start && !STARTS[start]) {
       ctx.report.notes.push(`one filled column of ${width}/12 at ${start}/12: no column style, full width`);
       return [];
     }
-    return [`col-${FRACTIONS[width]}`, ...start ? [`col-at-${FRACTIONS[start]}`] : []];
+    return [`col-${FRACTIONS[width]}`, ...start ? [`col-at-${STARTS[start]}`] : [], ...phone ? ["col-phone"] : []];
   }
   function columnItems(columns, split, ctx, widths = null, starts = null) {
     const { doc } = ctx;
@@ -4001,7 +4003,9 @@ var CustomImportScript = (() => {
     const filled = cols.filter(hasContent);
     if (!filled.length) return anchors;
     if (filled.length === 1) {
-      const styles = columnStyles(widths, cols.indexOf(filled[0]), ctx, starts);
+      const at = cols.indexOf(filled[0]);
+      const phone = !!(split.phoneKeeps && split.phoneKeeps[at]);
+      const styles = columnStyles(widths, at, ctx, starts, phone);
       if (!styles.length) return [...anchors, { type: "boundary" }, ...filled[0], { type: "boundary" }];
       return [...anchors, { type: "group", styles, items: filled[0] }];
     }
@@ -4119,6 +4123,15 @@ var CustomImportScript = (() => {
     "4,4,4": SPLITS.cols3,
     "3,3,3,3": SPLITS.cols4
   };
+  function phoneGrid(columns) {
+    const width = (col, size) => Number((col.className.match(new RegExp(`\\bcol-${size}-(\\d+)\\b`)) || [])[1]) || 0;
+    const desktop = columns.map((col) => width(col, "md") || width(col, "sm"));
+    const phone = columns.map((col) => width(col, "xs") || 12);
+    if (!desktop.every(Boolean) || desktop.reduce((a, b) => a + b, 0) > 12) return [];
+    const usual = columns.length === 4 ? 6 : 12;
+    if (phone.every((w) => w === usual)) return [];
+    return [`grid-${desktop.join("-")}`, `grid-m-${phone.join("-")}`];
+  }
   function columnControl(el, ctx) {
     const split = [...el.classList].find((c) => /^cols\d?/.test(c)) || "cols";
     const row = el.querySelector(":scope > .colctrl > .row") || el.querySelector(".row");
@@ -4130,7 +4143,10 @@ var CustomImportScript = (() => {
       return hasContent(flat) ? [{ type: "boundary" }, ...flat, { type: "boundary" }] : flat;
     }
     if (!SPLITS[split]) ctx.report.notes.push(`column control ${split}: no Columns variant, imported as plain Columns`);
-    return columnItems(items, SPLITS[split] || {}, ctx, widths.every(Boolean) ? widths : null);
+    const spec = SPLITS[split] || {};
+    const grid = phoneGrid(columns);
+    const layout = grid.length ? __spreadProps(__spreadValues({}, spec), { variant: [spec.variant, ...grid].filter(Boolean).join(", "), grid: true }) : spec;
+    return columnItems(items, layout, ctx, widths.every(Boolean) ? widths : null);
   }
   function gridOptions(specs, total) {
     const value = (spec, bp, key) => {
@@ -4170,10 +4186,12 @@ var CustomImportScript = (() => {
       return at + (spec.d.o || 0) + spec.d.w;
     }, 0);
     const twelfths = total === 12 ? { widths, starts } : null;
+    const keepsPhone = (spec) => spec.m.w === null && spec.m.o === null && !spec.m.beh;
     const grid = {
       variant: gridOptions(specs, total).join(", "),
       grid: true,
-      unequal: offsets || new Set(widths).size > 1
+      unequal: offsets || new Set(widths).size > 1,
+      phoneKeeps: specs.map(keepsPhone)
     };
     return columnItems(columns, grid, ctx, twelfths == null ? void 0 : twelfths.widths, twelfths == null ? void 0 : twelfths.starts);
   }
