@@ -75,6 +75,11 @@
   --corp-local-nav-arrow-height: 5px;
   --corp-local-nav-arrow-gap: 2px;
 
+  /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
+     .form-control field text */
+  --corp-form-field-font-size-l: 18px;
+  --corp-form-field-line-height-l: 1.5;
+
   /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
   --corp-color-purple-dark: #753d79;
   --corp-color-purple-pressed: #643468;

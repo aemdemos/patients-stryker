@@ -144,13 +144,15 @@ export default function transform(hookName, element, payload) {
   const isIvsTreatment = !!(payload && payload.template
     && ['ivs-treatment', 'ivs-get-the-facts', 'ivs-contact'].includes(payload.template.name));
   // The corp templates (template.site 'corp', www.stryker.com) rebuild their body with the
-  // corp section builder (transformers/corp-sections.js), and the corp news-detail template
-  // its own content (news-detail-sections.js; news-detail-xf, the XF-bodied articles of
-  // import-news-xf.js, is the same template): they keep their <h1> and their authorable
-  // ".c-disclaimer", and none of the legal-copy formatting applies.
+  // corp section builder (transformers/corp-sections.js), the corp news-detail template its
+  // own content (news-detail-sections.js; news-detail-xf, the XF-bodied articles of
+  // import-news-xf.js, is the same template) and long-page-detail-corp (and its shared
+  // fragments) the same way (long-page-detail-corp-sections.js): they keep their <h1> and
+  // their authorable ".c-disclaimer", and none of the legal-copy formatting applies.
   const isCorp = !!(payload && payload.template
     && (payload.template.site === 'corp'
-      || ['news-detail', 'news-detail-xf'].includes(payload.template.name)));
+      || ['news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments']
+        .includes(payload.template.name)));
   const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
 
   if (hookName === TransformHook.beforeTransform) {
