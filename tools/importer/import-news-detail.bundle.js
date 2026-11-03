@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // .worktrees/news-heading-styles/tools/importer/import-news-detail.js
+  // tools/importer/import-news-detail.js
   var import_news_detail_exports = {};
   __export(import_news_detail_exports, {
     default: () => import_news_detail_default
   });
 
-  // .worktrees/news-heading-styles/tools/importer/parsers/hero-image-slide.js
+  // tools/importer/parsers/hero-image-slide.js
   function copyImage(source, document) {
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -114,7 +114,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // .worktrees/news-heading-styles/tools/importer/parsers/cards-corp-teaser.js
+  // tools/importer/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -168,7 +168,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // .worktrees/news-heading-styles/tools/importer/parsers/video.js
+  // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -202,7 +202,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
   }
 
-  // .worktrees/news-heading-styles/tools/importer/parsers/news-detail/marketo-form.js
+  // tools/importer/parsers/news-detail/marketo-form.js
   function parse4(element, { document }) {
     const form = element.querySelector("form[data-marketo-form-id]");
     const read = (name) => (form && form.getAttribute(name) || "").trim();
@@ -225,7 +225,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "marketo-form", cells }));
   }
 
-  // .worktrees/news-heading-styles/tools/importer/xf-fragment-map.js
+  // tools/importer/xf-fragment-map.js
   var xf_fragment_map_default = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       name: 'Acute Care "Resources" links'
@@ -250,7 +250,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // .worktrees/news-heading-styles/tools/importer/xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(xf) {
@@ -266,7 +266,7 @@ var CustomImportScript = (() => {
     return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
   }
 
-  // .worktrees/news-heading-styles/tools/importer/transformers/news-detail-sections.js
+  // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var COMPONENTS = [
     ".c-autocarousel",
@@ -859,7 +859,7 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false, notes = []) {
     const link2 = videoLink(video, doc);
     const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
     const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
@@ -883,7 +883,8 @@ var CustomImportScript = (() => {
     return WebImporter.Blocks.createBlock(doc, {
       name: `Columns (${variants.join(", ")})`,
       cells: [/* @__PURE__ */ ((mediaCell, textCell2) => mirrored ? [textCell2, mediaCell] : [mediaCell, textCell2])(
-        [media, ...buttons],
+        // small print under the video: a paragraph after it in the video cell
+        [media, ...buttons, ...notes],
         [
           ...statement,
           ...quotes.flatMap((q) => quoteNodes(q, doc)),
@@ -1220,6 +1221,10 @@ var CustomImportScript = (() => {
       const parent = el.parentElement && el.parentElement.closest(componentSelector);
       return !parent && !el.closest("header, footer, .modal");
     });
+    const firstText = components.find((c) => c.matches(".c-rich-text-editor") && text(c) && !c.closest(".c-largeheadline, .c-disclaimer, .xf-fragment"));
+    if (!xf && firstText && !firstText.closest('[class*="col-sm-"]')) {
+      element.setAttribute("data-news-theme", "full-width");
+    }
     const consumed = /* @__PURE__ */ new Set();
     const videoRowColumns = (video) => {
       const aside = videoAside(video);
@@ -1229,11 +1234,13 @@ var CustomImportScript = (() => {
       const videoCol = video.closest('[class*="col-sm-"]');
       const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
+      const notes = [...videoCol.querySelectorAll(".c-rich-text-editor")].filter((c) => text(c) && !c.closest(".c-largeheadline") && copyStyles(c) === "disclaimer");
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
-      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+      const noteNodes = notes.flatMap((c) => richTextNodes(c, doc).nodes);
+      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored, noteNodes);
       if (!columns) return false;
-      [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      [aside, ...quotes, ...ctas, ...asideCtas, ...notes].forEach((c) => consumed.add(c.closest(COMPONENTS) || c));
       element.setAttribute("data-news-theme", "full-width");
       startSection("columns").nodes.push(columns);
       current = null;
@@ -1506,7 +1513,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // .worktrees/news-heading-styles/tools/importer/transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -1687,7 +1694,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // .worktrees/news-heading-styles/tools/importer/transformers/patients-stryker-dm-images.js
+  // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -1755,7 +1762,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // .worktrees/news-heading-styles/tools/importer/import-news-detail.js
+  // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
     description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
