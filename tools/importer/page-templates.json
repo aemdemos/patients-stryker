@@ -253,199 +253,29 @@
       "coverageGaps": [],
       "description": "IVS patient homepage (standalone singleton, styled via the `ivs-home` theme in styles/themes.css). Zones top-to-bottom: (1) hero (banner) 'Pain doesn't hold the power. You do.' + Find a doctor CTA; (2) a sticky-nav in-page anchor bar (Overview/Testimonials/Find a Doctor/Resources/Disclaimer); (3) a 'flex' intro section — default 'Making every moment matter.' text left + a video block right; (4) a gold panel band 'There's hope ahead'; (5) a 4-up cards (linked) pain-type grid (back/neck, knee, hip, shoulder); (6) a statistics dashboard (6 metrics, two 3-up rows); (7) a 'flex' section of two panel (cta) spotlights (VCF; radiofrequency ablation); (8) two testimonial columns (Janet; Lynn) on a dark-teal band — text left + video right; (9) a gold panel band 'Tired of living in pain?'; (10) a marketo-form doctor-finder; (11) a 'Resources' heading + tabs block whose six tabs reference the brochure card fragments under /fragments/resources/ (preceded by a spacer section, same as the conditions pages); (12) a 'compact' disclaimer/references section. Header/footer and the runtime Scene7 video chrome are stripped on import; all mapped blocks reuse existing project blocks — no new block code.",
       "blocks": [
-        {
-          "name": "hero",
-          "section": "hero",
-          "instances": [
-            ".fullWidthImageHero"
-          ]
-        },
-        {
-          "name": "sticky-nav",
-          "section": "anchor-nav",
-          "instances": [
-            ".c-navigation-bar .nav-wrap"
-          ]
-        },
-        {
-          "name": "columns",
-          "instances": [
-            ".cols2:has(.standalonevideo)"
-          ]
-        },
-        {
-          "name": "panel-gold",
-          "section": "hope",
-          "instances": [
-            ".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"
-          ]
-        },
-        {
-          "name": "cards",
-          "section": "pain-cards",
-          "instances": [
-            ".cols4:not(.tabs .cols4) > .colctrl"
-          ]
-        },
-        {
-          "name": "statistics",
-          "section": "statistics",
-          "instances": [
-            ".cols3 > .colctrl"
-          ]
-        },
-        {
-          "name": "panel-cta",
-          "section": "spotlights",
-          "instances": [
-            ".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"
-          ]
-        },
-        {
-          "name": "panel-gold-cta",
-          "section": "find-doctor",
-          "instances": [
-            ".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"
-          ]
-        },
-        {
-          "name": "tabs",
-          "section": "resources",
-          "instances": [
-            ".tabs:has(.c-tabs)"
-          ]
-        }
+        { "name": "hero", "section": "hero", "instances": [".fullWidthImageHero"] },
+        { "name": "sticky-nav", "section": "anchor-nav", "instances": [".c-navigation-bar .nav-wrap"] },
+        { "name": "columns", "instances": [".cols2:has(.standalonevideo)"] },
+        { "name": "panel-gold", "section": "hope", "instances": [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
+        { "name": "cards", "section": "pain-cards", "instances": [".cols4:not(.tabs .cols4) > .colctrl"] },
+        { "name": "statistics", "section": "statistics", "instances": [".cols3 > .colctrl"] },
+        { "name": "panel-cta", "section": "spotlights", "instances": [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
+        { "name": "panel-gold-cta", "section": "find-doctor", "instances": [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] },
+        { "name": "tabs", "section": "resources", "instances": [".tabs:has(.c-tabs)"] }
       ],
       "sections": [
-        {
-          "id": "hero",
-          "name": "Hero banner",
-          "selector": ".fullWidthImageHero",
-          "style": null,
-          "blocks": [
-            "hero"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "anchor-nav",
-          "name": "Sticky anchor bar",
-          "selector": ".c-navigation-bar",
-          "style": null,
-          "blocks": [
-            "sticky-nav"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "intro-video",
-          "name": "Intro: text + video",
-          "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)",
-          "style": "flex",
-          "anchor": "overview",
-          "blocks": [
-            "columns"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "hope",
-          "name": "There's hope ahead (gold)",
-          "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)",
-          "style": null,
-          "blocks": [
-            "panel-gold"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "pain-cards",
-          "name": "Pain-type cards",
-          "selector": ".cols4",
-          "style": null,
-          "blocks": [
-            "cards"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "statistics",
-          "name": "Statistics dashboard",
-          "selector": ".cols3",
-          "style": "divider",
-          "spacerBefore": true,
-          "blocks": [
-            "statistics"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "spotlights",
-          "name": "Condition/treatment spotlights",
-          "selector": ".cols2:has(.dimensional-box)",
-          "style": "flex",
-          "blocks": [
-            "panel-cta"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "testimonials",
-          "name": "Patient testimonials (dark teal)",
-          "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)",
-          "style": "dark",
-          "anchor": "testimonials",
-          "blocks": [
-            "columns"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "find-doctor",
-          "name": "Find a doctor (gold)",
-          "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])",
-          "style": null,
-          "anchor": "find-a-doctor",
-          "blocks": [
-            "panel-gold-cta"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "marketo",
-          "name": "Doctor-finder form",
-          "selector": ".marketoform",
-          "style": null,
-          "anchor": "resources",
-          "blocks": [
-            "marketo-form"
-          ],
-          "defaultContent": []
-        },
-        {
-          "id": "resources",
-          "name": "Resources brochure tabs",
-          "selector": ".tabs:has(.c-tabs)",
-          "style": null,
-          "spacerBefore": true,
-          "blocks": [
-            "tabs"
-          ],
-          "defaultContent": [
-            ".tabs .c-tabs h2.component-subheading"
-          ]
-        },
-        {
-          "id": "disclaimer",
-          "name": "Disclaimer + references",
-          "selector": ".c-disclaimer.page-section:not(.container)",
-          "style": "compact",
-          "anchor": "disclaimer",
-          "blocks": [],
-          "defaultContent": [
-            ".c-disclaimer.page-section:not(.container)"
-          ]
-        }
+        { "id": "hero", "name": "Hero banner", "selector": ".fullWidthImageHero", "style": null, "blocks": ["hero"], "defaultContent": [] },
+        { "id": "anchor-nav", "name": "Sticky anchor bar", "selector": ".c-navigation-bar", "style": null, "blocks": ["sticky-nav"], "defaultContent": [] },
+        { "id": "intro-video", "name": "Intro: text + video", "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)", "style": "flex", "anchor": "overview", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "hope", "name": "There's hope ahead (gold)", "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)", "style": null, "blocks": ["panel-gold"], "defaultContent": [] },
+        { "id": "pain-cards", "name": "Pain-type cards", "selector": ".cols4", "style": null, "blocks": ["cards"], "defaultContent": [] },
+        { "id": "statistics", "name": "Statistics dashboard", "selector": ".cols3", "style": "divider", "spacerBefore": true, "blocks": ["statistics"], "defaultContent": [] },
+        { "id": "spotlights", "name": "Condition/treatment spotlights", "selector": ".cols2:has(.dimensional-box)", "style": "flex", "blocks": ["panel-cta"], "defaultContent": [] },
+        { "id": "testimonials", "name": "Patient testimonials (dark teal)", "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)", "style": "dark", "anchor": "testimonials", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "find-doctor", "name": "Find a doctor (gold)", "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", "style": null, "anchor": "find-a-doctor", "blocks": ["panel-gold-cta"], "defaultContent": [] },
+        { "id": "marketo", "name": "Doctor-finder form", "selector": ".marketoform", "style": null, "anchor": "resources", "blocks": ["marketo-form"], "defaultContent": [] },
+        { "id": "resources", "name": "Resources brochure tabs", "selector": ".tabs:has(.c-tabs)", "style": null, "spacerBefore": true, "blocks": ["tabs"], "defaultContent": [".tabs .c-tabs h2.component-subheading"] },
+        { "id": "disclaimer", "name": "Disclaimer + references", "selector": ".c-disclaimer.page-section:not(.container)", "style": "compact", "anchor": "disclaimer", "blocks": [], "defaultContent": [".c-disclaimer.page-section:not(.container)"] }
       ]
     },
     {
@@ -870,7 +700,7 @@
           "blocks": [],
           "defaultContent": [
             ".c-disclaimer p"
-          ]
+            ]
         }
       ]
     },
@@ -1030,6 +860,64 @@
           "name": "cards-corp-teaser",
           "instances": [
             ".c-customizeable"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news-detail-forms",
+      "description": "www.stryker.com news-detail articles with a Marketo form (#446), imported with import-news-detail.js. The form is the `marketo-form` block with the base URL, Munchkin ID and form ID of the source form (no captcha rows; the thank-you text and redirect are not carried). A shared contact Experience Fragment beside the form (2/3 + 1/3 row) is a `fragment` block in the same section (`form-with-aside`); the Sustainability \"Connect with us\" band is a `fragment` block in its own section.",
+      "urls": [
+        "https://www.stryker.com/us/en/sustainability/news/ASC.html",
+        "https://www.stryker.com/us/en/sage/news/2026/close-the-gap-in-fecal-management.html",
+        "https://www.stryker.com/us/en/sustainability/news/Supplychainweek.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html"
+      ],
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".c-marketo-form"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news-detail-xf",
+      "description": "www.stryker.com news articles whose body is an Experience Fragment (#462; import-news-xf.js). As news-detail, plus: shared XFs (business-unit Resources links) as a fragment block before the small print; XF grid rows with two or more filled cells as Columns (variant from the column spans); blank titles and spacers dropped; Futura bold 2em-2.5em paragraphs as the H1 and ruled feature subheads as underlined H2s (gold rule); a dimensional box as Panel (left); news typography (#441).",
+      "urls": [
+        "https://www.stryker.com/us/en/acute-care/news/acute-care-training-and-education-resources.html",
+        "https://www.stryker.com/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html",
+        "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+        "https://www.stryker.com/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-.html",
+        "https://www.stryker.com/us/en/about/news/2025/features/stryker-releases-2024-comprehensive-report.html",
+        "https://www.stryker.com/us/en/about/news/features/improving-safety--spreading-truth-about-surgical-smoke.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing.html",
+        "https://www.stryker.com/us/en/about/news/features/employees-inspire-a-new-generation-of-robotics-engineers-through.html",
+        "https://www.stryker.com/us/en/about/news/features/from-behind-the-scenes-to-the-front-line.html",
+        "https://www.stryker.com/us/en/about/news/features/restoring-spines-and-hope.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/stryker-releases-comprehensive-report-highlighting-2022-performa.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-announces-leadership-succession.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".experiencefragment .aem-Grid"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".c-rich-text-editor:has(.dimensional-box)"
+          ]
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".experiencefragment"
           ]
         }
       ]

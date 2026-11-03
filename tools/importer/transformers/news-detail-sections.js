@@ -47,6 +47,7 @@
  */
 
 import { videoLink } from '../parsers/video.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -56,12 +57,30 @@ const COMPONENTS = [
   '.c-rich-text-editor',
   '.c-standalone-video',
   '.c-curatedcta',
+  // a Button Set (.buttonset > .button-group > a.btn, e.g. the gold "Read the full
+  // statement" / "DONATE" buttons on Sage news) imports like a Curated CTA
+  '.buttonset',
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
   '.c-section-separator',
   '.sectionseparator',
+  '.c-marketo-form',
+  '.c-resourcesanddownload',
+  '.xf-fragment',
 ].join(', ');
+
+// Shared Experience Fragments: the delivered HTML has no XF path, so each is recognised by
+// the start of its text and mapped to its XF path (xf-fragment-map.js lists them as shared).
+// An XF that matches none is not shared: its components are imported inline.
+const SHARED_XF_SIGNATURES = [
+  ['Connect with us Have feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master'],
+  ['Contact Information Customer support product feedback', '/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master'],
+  ['Contact information Product feedback Customer service', '/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master'],
+  ['Resources Explore Sage homepage', '/content/experience-fragments/stryker/sage/en/footer/footer/master'],
+  ['Resources Explore Acute Care homepage', '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master'],
+  ['Resources Explore Emergency Care homepage', '/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master'],
+];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = { A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'] };
@@ -106,6 +125,7 @@ const SIZE_STYLES = [
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
+  ['fontsize-2em', 'p-2'],
 ];
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
@@ -380,13 +400,15 @@ function plainBoldParagraphs(root) {
 }
 
 /**
- * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
- * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
+ * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, or
+ * a plain h3 with no bold and no styled span, the live h3 face): the template's h3 is
+ * Futura bold, so their section gets the `h-serif` style.
  */
 function serifHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   return new Set([...root.querySelectorAll('h3')].filter((h) => {
     if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+    if (!h.querySelector('[class]')) return true;
     const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
     return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
   }));
@@ -476,7 +498,10 @@ function splitStyledLeads(root) {
  * The title line a rich text opens with when the page has no title: the run before the
  * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
  * bold 21px on the source). Taken out of the component (with the breaks after it) and
- * returned as an <h1>; null when the text does not open that way.
+ * returned as an <h1>; null when the text does not open that way. The h1's `titleStyle`
+ * is its section style: `h1-42` when the line is also in a 2em span (Futura bold 42px,
+ * e.g. the "Trees, landfills and the environment" feature), else `h1-21`; a title that
+ * is gold as a whole is in the `[[color-gold]…]` tag.
  */
 function richTextTitle(component, doc) {
   const p = component.querySelector('p');
@@ -493,11 +518,17 @@ function richTextTitle(component, doc) {
     .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
     .map((span) => span.textContent).join(''));
   if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
+  const huge = squash([...box.querySelectorAll('.fontsize-2em')]
+    .filter((span) => !span.parentElement.closest('.fontsize-2em'))
+    .map((span) => span.textContent).join(''));
+  const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el))
+    && !hasOtherColour(el) && squash(el.textContent) === leadText);
   lead.forEach((node) => node.remove());
   while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
   if (!text(p)) p.remove();
   const h1 = doc.createElement('h1');
-  h1.textContent = leadText;
+  h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
+  h1.titleStyle = huge === leadText ? 'h1-42' : 'h1-21';
   return h1;
 }
 
@@ -589,13 +620,25 @@ function imageColumnStyle(component) {
 }
 
 function imageNodes(component, doc) {
-  const nodes = [...component.querySelectorAll('img')].map((source) => {
+  const nodes = [...component.querySelectorAll('img')].flatMap((source) => {
     const img = doc.createElement('img');
     img.setAttribute('src', source.getAttribute('src'));
     img.setAttribute('alt', source.getAttribute('alt') || '');
     const p = doc.createElement('p');
     p.append(img);
-    return p;
+    // a linked image (a[href] around the img): its link alone on the next line, in a section
+    // with the `image-link` style (scripts/corp.js makes the image clickable from it); the
+    // link text is the image's alt, else the address (no text is made up)
+    const sourceLink = source.closest('a[href]');
+    if (!sourceLink) return [p];
+    const href = absoluteAsset(sourceLink.getAttribute('href'));
+    const a = doc.createElement('a');
+    a.setAttribute('href', newTabHref(sourceLink, href));
+    a.textContent = (source.getAttribute('alt') || '').trim() || href;
+    const linkLine = doc.createElement('p');
+    linkLine.append(a);
+    p.imageLink = true;
+    return [p, linkLine];
   });
   // the image's caption heading (.title-content h4.title, Futura bold under the image)
   // follows it as a Heading 4 (news-detail.css sets the source h4)
@@ -605,6 +648,14 @@ function imageNodes(component, doc) {
       const h4 = doc.createElement('h4');
       h4.textContent = text(title);
       nodes.push(h4);
+    });
+    // a caption line under the image (p.u-white-space-pre, body text on the source, e.g.
+    // "Working together to clear the brush") follows it as a paragraph
+    component.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre').forEach((caption) => {
+      if (!text(caption)) return;
+      const p = doc.createElement('p');
+      p.textContent = text(caption);
+      nodes.push(p);
     });
   }
   return nodes;
@@ -862,12 +913,339 @@ function footnoteList(nodes, doc) {
   return out;
 }
 
+/*
+ * Template news-detail-xf (import-news-xf.js): news articles whose body is an Experience
+ * Fragment (XF). Everything below runs for that template only.
+ */
+
+// text that renders blank: braille / hangul fillers, left-to-right marks, &nbsp;
+const BLANK = /[\s\u00a0\u00ad\u2800\u3164\u200e\u200b]/g;
+const DIVIDER = /_{3,}/;
+
+function fragmentBlock(path, doc) {
+  const a = doc.createElement('a');
+  a.setAttribute('href', path);
+  a.textContent = path;
+  return WebImporter.Blocks.createBlock(doc, { name: 'fragment', cells: [[a]] });
+}
+
+// each shared XF becomes a marker (`.xf-fragment[data-fragment]`) in place; the others are
+// returned so the import report can list them
+function markSharedFragments(main, doc) {
+  const inlined = [];
+  main.querySelectorAll('.experiencefragment').forEach((xf) => {
+    if (!xf.isConnected || xf.closest('header, footer, .modal')) return;
+    const signature = text(xf);
+    const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+    const path = match && xfFragmentPath(match[1]);
+    if (!path) {
+      if (signature) inlined.push(signature.slice(0, 80));
+      return;
+    }
+    const marker = doc.createElement('div');
+    marker.className = 'xf-fragment';
+    marker.setAttribute('data-fragment', path);
+    xf.replaceWith(marker);
+  });
+  return inlined;
+}
+
+const gridNumber = (el, re) => {
+  const m = (el.className || '').match(re);
+  return m ? Number(m[1]) : null;
+};
+const gridColumns = (grid) => gridNumber(grid, /\baem-Grid--(\d+)\b/) || 12;
+const itemSpan = (item, n) => gridNumber(item, /\baem-GridColumn--default--(\d+)\b/) || n;
+const itemOffset = (item) => gridNumber(item, /\baem-GridColumn--offset--default--(\d+)\b/) || 0;
+const gridItems = (grid) => [...grid.children].filter((el) => el.classList.contains('aem-GridColumn'));
+const nestedGrid = (item) => item.querySelector(':scope > .aem-Grid');
+const filled = (el) => !!el.querySelector('img') || !!(el.textContent || '').replace(BLANK, '');
+
+// columns variant by the spans of two unequal filled cells (nearest existing variant)
+const SPAN_VARIANTS = {
+  '5/3': 'columns-67-33',
+  '5/2': 'columns-67-33',
+  '8/4': 'columns-67-33',
+  '3/4': 'columns-33-67',
+  '3/5': 'columns-33-67',
+  '4/8': 'columns-33-67',
+  '3/9': 'columns-33-67',
+  '9/3': 'columns-75-25',
+  '9/2': 'columns-75-25',
+};
+
+function spanVariant(spans) {
+  // equal cells (and three or more) are the plain Columns layout
+  if (spans.length !== 2 || spans[0] === spans[1]) return '';
+  const known = SPAN_VARIANTS[spans.join('/')];
+  if (known) return known;
+  const ratio = spans[0] / (spans[0] + spans[1]);
+  const [[, nearest]] = [[0.5, 'columns-50-50'], [2 / 3, 'columns-67-33'], [1 / 3, 'columns-33-67'], [0.75, 'columns-75-25']]
+    .sort(([a], [b]) => Math.abs(a - ratio) - Math.abs(b - ratio));
+  return nearest;
+}
+
+/**
+ * A dimensional box (rich text in a `.dimensional-box` wrapper) inside a building block of
+ * a column row cannot sit in a Columns cell as a block: the box and the items after it in
+ * the building block move after the row (they follow it in the article).
+ */
+function liftDimensionalBox(item) {
+  const box = item.querySelector('.dimensional-box');
+  const boxItem = box && box.closest('.aem-GridColumn');
+  if (!boxItem || boxItem === item) return [];
+  const moved = [];
+  for (let el = boxItem; el; el = el.nextElementSibling) {
+    if (el.classList.contains('aem-GridColumn')) moved.push(el);
+  }
+  return moved;
+}
+
+/**
+ * The AEM grid of an XF as rows: grid items fill a row up to the grid's column count
+ * (offset + span); an item that wraps but has the narrow column's span joins that column
+ * (the AEM grid floats it under the narrow cell, next to the taller wide one). A row with
+ * two or more filled cells becomes a `.xf-columns` marker (cells `.xf-cell`, the variant in
+ * data-variant); a row with one filled cell stays as it is, a building block in it is read
+ * as a grid of its own. `fraction` is the grid's width share of the page column; a lone
+ * image item gets data-xf-image-style (image-1-3 / image-1-2) from its share.
+ */
+function gridRows(grid, doc, fraction = 1) {
+  const n = gridColumns(grid);
+  const rows = [];
+  let row = null;
+  gridItems(grid).forEach((item) => {
+    const span = itemSpan(item, n);
+    const offset = itemOffset(item);
+    if (row && row.used + offset + span <= n) {
+      row.cells.push({ span, items: [item] });
+      row.used += offset + span;
+      return;
+    }
+    const last = row && row.cells[row.cells.length - 1];
+    const others = row && row.cells.slice(0, -1).reduce((sum, cell) => sum + cell.span, 0);
+    if (row && row.cells.length > 1 && span === last.span && row.cells[0].span !== span && others + span <= n) {
+      last.items.push(item);
+      return;
+    }
+    row = { used: offset + span, cells: [{ span, items: [item] }] };
+    rows.push(row);
+  });
+  rows.forEach((r) => {
+    const lifted = r.cells.length > 1 ? r.cells.flatMap((cell) => cell.items.flatMap(liftDimensionalBox)) : [];
+    lifted.forEach((el) => el.setAttribute('data-xf-lifted', ''));
+    const cells = r.cells.filter((cell) => cell.items.some((item) => {
+      if (!lifted.length) return filled(item);
+      const copy = item.cloneNode(true);
+      copy.querySelectorAll('[data-xf-lifted]').forEach((el) => el.remove());
+      return filled(copy);
+    }));
+    lifted.forEach((el) => el.removeAttribute('data-xf-lifted'));
+    if (cells.length < 2) {
+      r.cells.forEach((cell) => cell.items.forEach((item) => {
+        const share = (fraction * cell.span) / n;
+        const nested = nestedGrid(item);
+        if (nested) gridRows(nested, doc, share);
+        else if (item.querySelector('.c-standalone-image img')) {
+          const style = (share <= 1 / 3 + 0.01 && 'image-1-3') || (share <= 0.5 + 0.01 && 'image-1-2') || '';
+          if (style) item.querySelector('.c-standalone-image').setAttribute('data-xf-image-style', style);
+        }
+      }));
+      return;
+    }
+    const marker = doc.createElement('div');
+    marker.className = 'xf-columns';
+    const spans = cells.map((cell) => cell.span);
+    marker.setAttribute('data-variant', spanVariant(spans));
+    // equal cells that leave the row part empty (4 + 4 of 12) keep their width: empty cells
+    const pad = spans.every((s) => s === spans[0]) ? Math.floor(n / spans[0]) - cells.length : 0;
+    r.cells[0].items[0].before(marker);
+    cells.forEach((cell) => {
+      const div = doc.createElement('div');
+      div.className = 'xf-cell';
+      div.append(...cell.items);
+      marker.append(div);
+    });
+    for (let i = 0; i < pad; i += 1) {
+      const div = doc.createElement('div');
+      div.className = 'xf-cell';
+      marker.append(div);
+    }
+    marker.after(...lifted);
+  });
+}
+
+/** A paragraph-level element of a rich text: <p> or a leaf <div>. */
+const paragraphsOf = (root) => [...root.querySelectorAll('.c-rich-text-editor p, .c-rich-text-editor div')]
+  .filter((el) => el.tagName === 'P' || !el.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table'));
+const ruleText = (el) => (el.textContent || '').replace(/_{3,}/g, '').replace(BLANK, ' ').replace(/\s+/g, ' ').trim();
+const isDividerOnly = (el) => !!el && DIVIDER.test(el.textContent) && !ruleText(el);
+
+/** True when the outermost `selector` elements of `el` hold all of its (non-divider) text. */
+function coveredBy(el, selector) {
+  const all = ruleText(el).replace(/\s/g, '');
+  const styled = [...el.querySelectorAll(selector)].filter((s) => !s.parentElement.closest(selector))
+    .map(ruleText).join('').replace(/\s/g, '');
+  return !!all && styled === all;
+}
+
+/** The "____" line drawn under a title (inside it or the next paragraph): {gold, remove} or null. */
+function titleDivider(p) {
+  const holder = DIVIDER.test(p.textContent) ? p : (isDividerOnly(p.nextElementSibling) && p.nextElementSibling);
+  if (!holder) return null;
+  const walker = p.ownerDocument.createTreeWalker(holder, 4);
+  const lines = [];
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    if (DIVIDER.test(node.textContent) && /^[\s_\u00a0]*$/.test(node.textContent)) lines.push(node);
+  }
+  if (!lines.length) return null;
+  const gold = [...lines].some((line) => {
+    for (let e = line.parentElement; e && e !== holder.parentElement; e = e.parentElement) {
+      if (ownColour(e)) return GOLD.test(ownColour(e));
+    }
+    return false;
+  });
+  return { gold, remove: () => (holder === p ? lines.forEach((l) => l.remove()) : holder.remove()) };
+}
+
+/** A heading `tag` with the title's text; underlined (gold rule `[[rule-gold]…]`) when ruled. */
+function titleHeading(p, tag, divider, doc) {
+  const h = doc.createElement(tag);
+  const value = ruleText(p);
+  if (!divider) {
+    h.textContent = value;
+    return h;
+  }
+  const u = doc.createElement('u');
+  u.textContent = divider.gold ? `[[rule-gold]${value}]` : value;
+  h.append(u);
+  return h;
+}
+
+/**
+ * Feature titles drawn as styled paragraphs (corp news typography, #441): with no page
+ * title, the first Futura bold paragraph at 2em / 2.5em is the h1; a Futura bold paragraph
+ * with a "____" divider line under it is an underlined h2 (the gold rule for a gold line).
+ * Returns the h1 (taken out of the article) or null.
+ */
+function featureTitles(main, doc, hasTitle) {
+  let h1 = null;
+  paragraphsOf(main).forEach((p) => {
+    if (!p.isConnected || !ruleText(p) || !p.querySelector('.futura-bold')) return;
+    const divider = titleDivider(p);
+    const big = coveredBy(p, '.fontsize-2em, .fontsize-2-5em');
+    if (!hasTitle && !h1 && big) {
+      h1 = titleHeading(p, 'h1', divider, doc);
+      if (divider) divider.remove();
+      p.remove();
+      return;
+    }
+    if (!divider || !coveredBy(p, '.futura-bold')) return;
+    const h2 = titleHeading(p, 'h2', divider, doc);
+    divider.remove();
+    p.replaceWith(h2);
+  });
+  return h1;
+}
+
+/** Section titles and rich texts with no visible text (blank fillers, &nbsp; spacers) go. */
+function dropBlankComponents(main) {
+  main.querySelectorAll('.c-section-title, .c-rich-text-editor').forEach((el) => {
+    if (!filled(el)) el.remove();
+  });
+}
+
+/**
+ * Rich-text paragraphs that open with a line break (a blank first line) lose it, and a
+ * <sup> between two runs of the same font size joins them (one size for the paragraph).
+ */
+function tidyParagraphs(main) {
+  main.querySelectorAll('.experiencefragment .c-rich-text-editor sup').forEach((sup) => {
+    const before = sup.previousSibling;
+    const after = sup.nextSibling;
+    const size = before && before.nodeType === 1 && [...before.classList].find((c) => c.startsWith('fontsize-'));
+    if (!size || !after || after.nodeType !== 1 || !after.classList.contains(size)) return;
+    before.append(sup, ...after.childNodes);
+    after.remove();
+  });
+  main.querySelectorAll('.experiencefragment .c-rich-text-editor p').forEach((p) => {
+    // a paragraph set in one size over several runs (spans per font) is one size span
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+    const sizes = new Set([...p.querySelectorAll('[class*="fontsize-"]')]
+      .flatMap((el) => [...el.classList].filter((c) => c.startsWith('fontsize-'))));
+    sizes.forEach((size) => {
+      const runs = [...p.querySelectorAll(`.${size}`)].filter((el) => !el.parentElement.closest(`.${size}`));
+      if (runs.length < 2 || squash(runs.map((el) => el.textContent).join('')) !== squash(p.textContent)) return;
+      runs.forEach((el) => el.classList.remove(size));
+      const span = p.ownerDocument.createElement('span');
+      span.className = size;
+      span.append(...p.childNodes);
+      p.append(span);
+    });
+    const walker = p.ownerDocument.createTreeWalker(p, 5);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeType === 1 && node.tagName === 'BR') {
+        node.remove();
+        return;
+      }
+      if (node.nodeType === 3 ? node.textContent.trim() : node.tagName !== 'SPAN') return;
+    }
+  });
+}
+
+/** The nodes of one Columns cell: its components in source order. */
+function cellNodes(cell, doc) {
+  const selector = COMPONENTS;
+  return [...cell.querySelectorAll(selector)]
+    .filter((el) => !el.parentElement.closest(selector))
+    .flatMap((component) => {
+      if (component.matches('.c-rich-text-editor')) return richTextNodes(component, doc).nodes;
+      if (component.matches('.c-standalone-image')) return imageNodes(component, doc);
+      if (component.matches('.c-curatedcta, .buttonset')) return buttonNodes(component, doc);
+      if (component.matches('.c-largeheadline, .c-section-title')) return headlineNodes(component, doc);
+      return [];
+    });
+}
+
+/**
+ * A `.xf-columns` marker → { block, style }: a Columns block (the row's variant, plus
+ * media-pair when a cell holds a linked image, so the image is clickable) and the copy
+ * style of its longest text as the section style.
+ */
+function xfColumns(marker, doc) {
+  const cells = [...marker.children].map((cell) => cellNodes(cell, doc));
+  const nodes = cells.flat();
+  const variants = [marker.getAttribute('data-variant'), nodes.some((node) => node.imageLink) ? 'media-pair' : '']
+    .filter(Boolean);
+  const name = variants.length ? `Columns (${variants.join(', ')})` : 'Columns';
+  const copy = nodes.filter((node) => node.copyStyle !== undefined && node.copyStyle !== null)
+    .sort((a, b) => text(b).length - text(a).length)[0];
+  const style = copy ? copy.copyStyle : '';
+  // 1.25em copy in a cell of other-size copy (e.g. a quote beside the article): the
+  // `[[text-1-25]…]` bracket tag, the only size with an inline tag
+  nodes.forEach((node) => {
+    if (!(node.copyStyle || '').split(', ').includes('p-1-25') || style.split(', ').includes('p-1-25')) return;
+    const lines = node.matches('ul, ol') ? [...node.querySelectorAll('li')] : [node];
+    lines.filter((line) => line.matches('p, li') && text(line)).forEach((line) => {
+      line.prepend(doc.createTextNode('[[text-1-25]'));
+      line.append(doc.createTextNode(']'));
+    });
+  });
+  const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => (c.length ? c : ''))] });
+  return { block, style };
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
-  if (!payload || !payload.template || payload.template.name !== 'news-detail') return;
+  const templateName = payload && payload.template && payload.template.name;
+  if (templateName !== 'news-detail' && templateName !== 'news-detail-xf') return;
+  const xf = templateName === 'news-detail-xf';
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
+  const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
 
+  const inlinedXf = markSharedFragments(main, doc);
+  const hasForm = !!main.querySelector('.c-marketo-form form[data-marketo-form-id]');
   const sections = [];
   let current = null;
   let separatorNext = false;
@@ -910,10 +1288,23 @@ export default function transform(hookName, element, payload) {
     title.nodes.push(h5);
   }
 
+  // the article body is an XF: shared XFs → fragment markers, blank components go, styled
+  // titles → headings, the XF grid rows → Columns markers
+  if (xf) {
+    dropBlankComponents(main);
+    tidyParagraphs(main);
+    const feature = featureTitles(main, doc, hasTitle);
+    if (feature) title.nodes.push(feature);
+    main.querySelectorAll('.experiencefragment').forEach((fragment) => {
+      const grid = fragment.querySelector('.aem-Grid');
+      if (grid && !fragment.closest('header, footer, .modal')) gridRows(grid, doc);
+    });
+  }
+
   // 2.-3. lead media and article components, in source order (outermost only; a
   // slide's own image and headline belong to the carousel)
-  const components = [...main.querySelectorAll(COMPONENTS)].filter((el) => {
-    const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
+  const components = [...main.querySelectorAll(componentSelector)].filter((el) => {
+    const parent = el.parentElement && el.parentElement.closest(componentSelector);
     return !parent && !el.closest('header, footer, .modal');
   });
 
@@ -942,12 +1333,58 @@ export default function transform(hookName, element, payload) {
     current = null;
     return true;
   };
+  // the other column(s) of a form's 2/3 + 1/3 (or 50/50) row: the contact aside. Its
+  // components go after the form in the form's section, whichever column comes first.
+  const formAsides = new Map();
+  components.filter((el) => el.matches('.c-marketo-form') && el.querySelector('form[data-marketo-form-id]')).forEach((form) => {
+    const formColumn = form.closest('[class*="col-sm-"]');
+    const row = formColumn && formColumn.parentElement;
+    if (!row || !row.closest('.colctrl')) return;
+    const asides = components.filter((el) => el !== form && !el.contains(form) && !formColumn.contains(el)
+      && [...row.children].some((col) => col !== formColumn && col.contains(el)));
+    asides.forEach((aside) => consumed.add(aside));
+    formAsides.set(form, asides);
+  });
+  // a form page whose source has no H1 (the title only sits in the lead carousel): the
+  // carousel's single headline line becomes the H1 (hero-image-slide.js keeps headings)
+  if (hasForm && !main.querySelector('h1')) {
+    const lines = [...main.querySelectorAll('.c-autocarousel .carouselslide:not(.slick-cloned) .overlayparsys .line')]
+      .filter((line) => text(line));
+    if (lines.length === 1) {
+      lines[0].querySelectorAll('a:not([href])').forEach(unwrap);
+      rename(lines[0], 'h1');
+    }
+  }
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
   components.forEach((component) => {
     if (consumed.has(component)) return;
     const isFirst = current === title;
+    if (component.matches('.xf-fragment')) {
+      startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
+      current = null;
+      return;
+    }
+    if (component.matches('.xf-columns')) {
+      const { block, style } = xfColumns(component, doc);
+      // consecutive rows with the same copy style (e.g. Q&A rows) share a section
+      if (!current || current.kind !== 'xf-columns' || current.copy !== style) {
+        startSection('xf-columns', style || undefined).copy = style;
+      }
+      current.nodes.push(block);
+      return;
+    }
+    if (xf && component.matches('.c-rich-text-editor') && component.querySelector('.dimensional-box')) {
+      const { nodes } = richTextNodes(component, doc);
+      if (!nodes.length) return;
+      const copy = nodes.find((node) => node.copyStyle);
+      startSection('panel', copy ? copy.copyStyle : undefined).nodes.push(
+        WebImporter.Blocks.createBlock(doc, { name: 'Panel (left)', cells: [[nodes]] }),
+      );
+      current = null;
+      return;
+    }
     if (component.matches('.c-autocarousel')) {
       if (!component.querySelector('img')) return;
       startSection('hero').nodes.push(component);
@@ -957,16 +1394,21 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-image')) {
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
+      const linkStyle = nodes.some((node) => node.imageLink) ? 'image-link' : '';
       // the lead image, or an image in a narrow source column, is a section of its own
-      const columnStyle = imageColumnStyle(component);
+      const columnStyle = imageColumnStyle(component) || component.getAttribute('data-xf-image-style') || '';
       if (isFirst && !component.closest('.colctrl')) leadBelowDate = true;
       if (isFirst || columnStyle) {
-        startSection(isFirst ? 'lead' : 'image', columnStyle || undefined).nodes.push(...nodes);
+        const style = [columnStyle, linkStyle].filter(Boolean).join(', ');
+        startSection(isFirst ? 'lead' : 'image', style || undefined).nodes.push(...nodes);
         current = null;
         return;
       }
       // an image joins the article section it follows, whatever its copy size
       if (!current || !current.kind.startsWith('body')) startSection('body');
+      if (linkStyle && !(current.style || '').split(', ').includes(linkStyle)) {
+        current.style = [current.style, linkStyle].filter(Boolean).join(', ');
+      }
       current.nodes.push(...nodes);
       return;
     }
@@ -993,6 +1435,59 @@ export default function transform(hookName, element, payload) {
         heading.remove();
       }
       section.nodes.push(component);
+      current = null;
+      return;
+    }
+    // a Marketo form: its own section; the content of the other column of its 2/3 + 1/3
+    // row (the contact aside: a shared fragment, kept as a link and never copied, or
+    // inline text / images) goes after it in the same section, which gets the
+    // `form-with-aside` style
+    if (component.matches('.c-marketo-form')) {
+      if (!component.querySelector('form[data-marketo-form-id]')) return;
+      const nodes = [component];
+      (formAsides.get(component) || []).forEach((aside) => {
+        if (aside.matches('.xf-fragment')) nodes.push(fragmentBlock(aside.getAttribute('data-fragment'), doc));
+        else if (aside.matches('.c-standalone-image')) nodes.push(...imageNodes(aside, doc));
+        else if (aside.matches('.c-rich-text-editor')) nodes.push(...richTextNodes(aside, doc).nodes);
+        else if (aside.matches('.c-curatedcta')) nodes.push(...buttonNodes(aside, doc));
+        else if (aside.matches('.c-largeheadline')) nodes.push(...headlineNodes(aside, doc));
+      });
+      startSection('form', nodes.length > 1 ? 'form-with-aside' : undefined).nodes.push(...nodes);
+      current = null;
+      return;
+    }
+    // a Resources & Download list on a form page (LCA0): kept as default content, its
+    // heading and one link per item (the thumbnail is dropped). No block exists for the
+    // component yet (#394 / #435); on pages without a form it is still ignored.
+    if (component.matches('.c-resourcesanddownload')) {
+      if (!hasForm) return;
+      const nodes = [];
+      const heading = component.querySelector('.title-container h2');
+      if (heading && text(heading)) {
+        const h2 = doc.createElement('h2');
+        h2.textContent = text(heading);
+        nodes.push(h2);
+      }
+      component.querySelectorAll('.item').forEach((item) => {
+        const link = item.querySelector('a[href]');
+        const label = text(item.querySelector('.title') || item);
+        if (!link || !label) return;
+        const a = doc.createElement('a');
+        a.href = newTabHref(link, absoluteAsset(link.getAttribute('href')));
+        a.textContent = label;
+        const p = doc.createElement('p');
+        p.append(a);
+        nodes.push(p);
+      });
+      if (!nodes.length) return;
+      if (!current || current.kind !== 'body') startSection('body');
+      current.nodes.push(...nodes);
+      return;
+    }
+    // a shared Experience Fragment (e.g. the "Connect with us" band): a fragment block in
+    // a section of its own
+    if (component.matches('.xf-fragment')) {
+      startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
       current = null;
       return;
     }
@@ -1032,14 +1527,18 @@ export default function transform(hookName, element, payload) {
     }
     // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
     // date (e.g. OptaBlate, ProStep): that headline is the page H1, in its own section with
-    // the `headline-2vw` style (the source size)
-    if (isFirst && !hasTitle && component.matches('.c-largeheadline')
-      && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+    // the `headline-2vw` style (the source size); a 1.5vw one (e.g. the Neuroform Atlas
+    // expanded-indication release) gets `headline-1-5vw`
+    const headlineStyle = component.matches('.c-largeheadline') && [
+      ['[class*="fontsize-2vw"]', 'headline-2vw'],
+      ['[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]', 'headline-1-5vw'],
+    ].find(([selector]) => component.querySelector(selector));
+    if (isFirst && !hasTitle && headlineStyle && text(component)) {
       const lines = headlineNodes(component, doc);
       if (lines.length) {
         const heading = rename(lines[0], 'h1');
         heading.querySelectorAll('strong, em').forEach(unwrap);
-        startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
+        startSection('headline', headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
         current = null;
         return;
       }
@@ -1050,11 +1549,11 @@ export default function transform(hookName, element, payload) {
     if (isFirst && !hasTitle && component.matches('.c-rich-text-editor')) {
       const heading = richTextTitle(component, doc);
       if (heading) {
-        startSection('headline', 'h1-21').nodes.push(heading);
+        startSection('headline', heading.titleStyle).nodes.push(heading);
         current = null;
       }
     }
-    if (component.matches('.c-curatedcta')) {
+    if (component.matches('.c-curatedcta, .buttonset')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
       // a button is centred when the source centres it (an offset grid column, e.g. the
@@ -1099,6 +1598,26 @@ export default function transform(hookName, element, payload) {
       current.nodes.push(node);
     });
   });
+
+  // a form page ends with exactly one H1: further ones (a campaign name under the title)
+  // are H2s
+  if (hasForm) {
+    let seen = 0;
+    sections.forEach((section) => {
+      section.nodes = section.nodes.map((node) => {
+        if (node.nodeType !== 1) return node;
+        const headings = [...(node.tagName === 'H1' ? [node] : []), ...node.querySelectorAll('h1')];
+        let result = node;
+        headings.forEach((heading) => {
+          seen += 1;
+          if (seen === 1) return;
+          const h2 = rename(heading, 'h2');
+          if (heading === node) result = h2;
+        });
+        return result;
+      });
+    });
+  }
 
   // 4. disclaimer: references (when the article has them) and the document code, in
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.
@@ -1145,4 +1664,10 @@ export default function transform(hookName, element, payload) {
     }
   });
   element.replaceChildren(...out);
+  const fragments = [...new Set(sections.flatMap((section) => section.nodes)
+    .flatMap((node) => (node.nodeType === 1 ? [...node.querySelectorAll('a[href^="/us/en/fragments/"]')] : []))
+    .map((a) => a.getAttribute('href')))];
+  if (fragments.length || inlinedXf.length) {
+    element.setAttribute('data-news-xf', JSON.stringify({ fragments, inlined: inlinedXf }));
+  }
 }
