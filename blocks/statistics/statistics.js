@@ -116,8 +116,25 @@ function setupCountUp(block) {
   // hold at 0 until the block first enters the viewport
   render(0);
 
-  // starts once the block has come into view, or has been scrolled past (a fast scroll or
-  // a jump to an anchor can skip it without the block ever intersecting)
+  // default: counts up every time the block comes into view, back to 0 when it leaves
+  if (!block.classList.contains('count-once')) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          run();
+        } else {
+          stop();
+          render(0);
+        }
+      });
+    });
+    observer.observe(block);
+    return;
+  }
+
+  // count-once (www.stryker.com counters): counts up once, when the block has come into
+  // view or has been scrolled past (a fast scroll or a jump to an anchor can skip it without
+  // the block ever intersecting), and keeps the numbers
   let started = false;
   let observer;
   const scrolling = new AbortController();

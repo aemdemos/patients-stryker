@@ -238,13 +238,14 @@ export function richTextNodes(source, doc) {
   return { nodes, centred };
 }
 
-/** Counters → one Statistics (count-up, cols-N) block. */
+/** Counters → one Statistics (count-up, count-once, cols-N) block: stryker.com counters
+ * count up once and keep their numbers (the block's default recounts on every view). */
 function statistics(counters, ctx, columns = counters.length, countUp = true) {
   const rows = counters.map((c) => (c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]));
   const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
   // left-aligned counters (numberCounterAlignment text-left): the left option (approved)
   const left = counters.some((c) => c.left) ? ', left' : '';
-  return block(ctx.doc, `Statistics (${countUp ? 'count-up, ' : ''}${cols}${left})`, rows);
+  return block(ctx.doc, `Statistics (${countUp ? 'count-up, count-once, ' : ''}${cols}${left})`, rows);
 }
 
 /** Section-level nodes of items (in one section: tabs panels, flex sections). */
