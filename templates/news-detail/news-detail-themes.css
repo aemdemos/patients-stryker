@@ -92,8 +92,10 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   }
 
   /* every section spans the container, except a Hero Corp, which stays full-bleed
-     (stryker.com full-width hero image: 1920px at 1920px, the nurses feature) */
-  body.news-detail.full-width main > .section:not(.hero-corp-container) > div {
+     (stryker.com full-width hero image: 1920px at 1920px, the nurses feature), and a
+     `col-10` section, which keeps its 10/12 column capped at 5/6 of the container (1144px
+     of text from 1440px) */
+  body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10) > div {
     max-width: var(--container-max);
   }
 

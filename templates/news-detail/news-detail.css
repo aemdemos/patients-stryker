@@ -104,6 +104,10 @@ body.news-detail main .columns-wrapper:has(span.box-gold) {
   margin-top: calc(var(--space-block-l) + var(--space-block));
 }
 
+body.news-detail main .columns:has(span.box-gold) > div {
+  align-items: stretch;
+}
+
 body.news-detail main .columns:has(span.box-gold) > div + div {
   margin-top: 0;
 }
@@ -492,6 +496,25 @@ body.news-detail main span.box-gold a:any-link > strong {
   font-weight: var(--font-weight-bold);
   line-height: inherit;
   text-transform: none;
+}
+
+/* …the boxes side by side in a row are as tall as the tallest: the row's cells stretch to
+   the same height, the paragraph and its box fill the cell (stryker.com: 122px and 122px at
+   1440px, "Register for free" and "Follow @strykerfornurses") */
+body.news-detail main .columns:has(span.box-gold) > div > div > :has(> span.box-gold) {
+  height: 100%;
+  margin: 0;
+}
+
+body.news-detail main .columns:has(span.box-gold) span.box-gold {
+  box-sizing: border-box;
+  height: calc(100% - 2 * var(--space-block-s));
+}
+
+/* …a box alone in its row keeps 10px more below its text (stryker.com: 173px for the
+   "Watch our Nurses Week special" box at 1440px) */
+body.news-detail main .columns:has(span.box-gold) > div > div:only-child span.box-gold {
+  padding-bottom: calc(4% + var(--space-block-s));
 }
 
 /* contact-aside (the contact links beside a news form, e.g. Sustainability "Contact
