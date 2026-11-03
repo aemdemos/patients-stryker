@@ -99,7 +99,8 @@ var CustomImportScript = (() => {
       const src = absolute(img.getAttribute("src"));
       const cover = document.createElement("a");
       cover.href = src;
-      cover.textContent = src;
+      const alt = img.getAttribute("alt") || "";
+      cover.textContent = alt.trim() ? alt : src;
       const h5 = document.createElement("h5");
       const a = document.createElement("a");
       a.href = newTab(link, absolute(link.getAttribute("href")));

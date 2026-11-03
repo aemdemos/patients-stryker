@@ -6,7 +6,9 @@
  *
  * Two columns, one row per download (card):
  *   cell 1 (image): the PDF cover image, as the Library authors it: a link to its image
- *     URL (…/file.pdf.thumb.319.319.png), which the block renders as the cover picture
+ *     URL (…/file.pdf.thumb.319.319.png), which the block renders as the cover picture;
+ *     the link text is the source image's alt text, exactly (the block makes it the
+ *     picture's alt); with no alt on the source the text is the URL (an empty alt)
  *   cell 2 (text): a Heading 5 whose text is a plain link to the file (the source title)
  * Files stay on www.stryker.com (absolute links); a link that opens in a new tab on the
  * source, or a PDF, gets the `#_blank` marker (as in the news-detail import).
@@ -41,7 +43,8 @@ export default function parse(element, { document }) {
     const src = absolute(img.getAttribute('src'));
     const cover = document.createElement('a');
     cover.href = src;
-    cover.textContent = src;
+    const alt = img.getAttribute('alt') || '';
+    cover.textContent = alt.trim() ? alt : src;
     const h5 = document.createElement('h5');
     const a = document.createElement('a');
     a.href = newTab(link, absolute(link.getAttribute('href')));
