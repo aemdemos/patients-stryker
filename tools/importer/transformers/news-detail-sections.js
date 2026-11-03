@@ -16,8 +16,9 @@
  *       StrykerTalks podcasts) → `Columns (columns-67-33, large-headline, gray-lead)`, full
  *       width: the video link, then the headline as a Heading 2 statement in the grey box;
  *       the page gets `theme: full-width` (title and small print full width, as on the source).
- *       A one-third column authored as rich text (a grey box, then the quote, e.g. Ellys'
- *       maxillofacial surgery story) is built the same way, the grey box as the lead.
+ *       A one-third column authored as rich text instead (a grey box, then the quote, e.g.
+ *       Ellys' maxillofacial surgery story): the Video block, then the text as default
+ *       content beside it, in a `video-text` section (`background: light-gray` for the box).
  * A page without a title whose article opens with a 2vw Large Headline gets that headline
  * as its H1, in a `headline-2vw` section below the date.
  * A `spacer` section follows the title section when it holds the H1 (or before such a
@@ -716,17 +717,19 @@ function videoAside(video) {
   const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
   const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
   const headline = aside && aside.querySelector('.c-largeheadline');
-  if (headline) return text(headline) ? headline : null;
-  return aside && width === 4 ? richTextAside(aside) : null;
+  return headline && text(headline) ? headline : null;
 }
 
 /**
- * The same one-third column authored as rich text instead of Large Headlines (e.g.
- * Ellys' maxillofacial surgery story): a grey box first, then the quote. Only text in
- * the column. Returns the grey-box rich text, or null.
+ * Rich text in the one-third column next to a video (col-sm-8 + col-sm-4, no Large
+ * Headline, e.g. Ellys' maxillofacial surgery story): a grey box first, then the quote.
+ * Only text in the column. Returns the grey-box rich text, or null.
  */
-function richTextAside(aside) {
-  if (aside.querySelector('.c-marketo-form, img, video, iframe, [data-asset-path]')) return null;
+function videoRichTextAside(video) {
+  const col = video.closest('[class*="col-sm-8"]');
+  const row = col && col.parentElement;
+  const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+  if (!aside || aside.querySelector('.c-largeheadline, .c-marketo-form, img, video, iframe, [data-asset-path]')) return null;
   const first = aside.querySelector('.c-rich-text-editor');
   const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
   return box && text(box) ? first : null;
@@ -781,9 +784,22 @@ function videoTextColumns(video, rte, doc) {
  * `[[color-gold]` Bold + Italic `]`, Futura words → Bold, one paragraph per line (the
  * name a fully Bold paragraph).
  */
-function quoteNodes(headline, doc) {
+function quoteNodes(headline, doc, { sizes = false } = {}) {
   const box = doc.createElement('div');
   box.innerHTML = headline.innerHTML;
+  // rich text (a rich-text side column, e.g. Ellys): a 1.25em run (the rule under the
+  // quote, 26.25px) is the `[[text-1-25]…]` tag — the line breaks typed inside it go
+  // after it first, innermost formatting first, so they stay out of the tag
+  if (sizes) {
+    box.querySelectorAll('.fontsize-1-25em').forEach((span) => {
+      [span, ...span.querySelectorAll('*')].reverse().forEach((el) => {
+        while (el.lastChild && (el.lastChild.nodeName === 'BR' || (el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim()))) {
+          el.after(el.lastChild);
+        }
+      });
+    });
+    tagTextSize(box);
+  }
   // a gold quote mark at the start or end of a longer bold run
   // (<span class=futura-bold><span style="color: rgb(255,181,0)">”</span>The first…</span>)
   // is a bold run of its own, so it can take the gold tag
@@ -887,19 +903,17 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
   // employees…"): every headline there is a quote and the block has no gray-lead
   const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
   const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
-  const rich = headline.matches('.c-rich-text-editor');
-  const lines = boxed ? (rich ? leadNodes(headline) : headlineNodes(headline, doc)) : [];
+  const lines = boxed ? headlineNodes(headline, doc) : [];
   if (!link || (boxed && !lines.length)) return null;
   const media = doc.createElement('p');
   media.append(link);
   // a button under the video: a Bold link on its own line in the wide cell
   const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
   // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
-  // (21px, e.g. Heath) stays a paragraph, the large-headline text size — as does a
-  // rich-text lead (1.5em, 21px, e.g. Ellys)
+  // (21px, e.g. Heath) stays a paragraph, the large-headline text size
   const firstLine = headline.querySelector('.line') || headline;
-  const big = !rich && (firstLine.querySelector('[class*="fontsize-2vw"]')
-    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]'));
+  const big = firstLine.querySelector('[class*="fontsize-2vw"]')
+    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
   const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
   const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
   return WebImporter.Blocks.createBlock(doc, {
@@ -1352,9 +1366,7 @@ export default function transform(hookName, element, payload) {
     if (!aside) return false;
     // further Large Headlines in the headline column (a quote) and buttons in either column
     const asideCol = aside.closest('[class*="col-sm-"]');
-    // (a rich-text column: the rich text after the grey box)
-    const quoteSelector = aside.matches('.c-rich-text-editor') ? '.c-rich-text-editor' : '.c-largeheadline';
-    const quotes = [...asideCol.querySelectorAll(quoteSelector)].filter((h) => h !== aside && text(h));
+    const quotes = [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h));
     const videoCol = video.closest('[class*="col-sm-"]');
     const ctas = [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
     const asideCtas = [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
@@ -1368,6 +1380,40 @@ export default function transform(hookName, element, payload) {
     // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
     element.setAttribute('data-news-theme', 'full-width');
     startSection('columns').nodes.push(columns);
+    current = null;
+    return true;
+  };
+  // a video with rich text in the one-third column beside it (e.g. Ellys): the Video block,
+  // then the text as default content beside it, in a `video-text` section. The source
+  // copy's serif and fixed sizes are section styles (serif; p-1-5, 1.5em; quote-1-75, the
+  // 1.75em quote) and the grey box its `light-gray` background; true when built
+  const videoRichTextRow = (video) => {
+    const lead = videoRichTextAside(video);
+    if (!lead) return false;
+    const asideCol = lead.closest('[class*="col-sm-"]');
+    const quotes = [...asideCol.querySelectorAll('.c-rich-text-editor')].filter((c) => c !== lead && text(c));
+    const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
+    if (!nodes.length) return false;
+    // in default content Bold inside running text keeps the copy font: the source's Futura
+    // bold run (e.g. "I would like to say thank you…") is Bold + Italic, the news-detail
+    // convention for Futura bold in text; a bold line on its own stays Bold
+    nodes.forEach((p) => p.querySelectorAll('strong').forEach((strong) => {
+      if (strong.closest('em') || text(strong) === text(p)) return;
+      const em = doc.createElement('em');
+      strong.replaceWith(em);
+      em.append(strong);
+    }));
+    [lead, ...quotes].forEach((c) => consumed.add(c));
+    element.setAttribute('data-news-theme', 'full-width');
+    const style = [
+      'video-text',
+      asideCol.querySelector('.urw-egyptienne') && 'serif',
+      lead.querySelector('.fontsize-1-5em') && 'p-1-5',
+      quotes.some((q) => q.querySelector('.fontsize-1-75em')) && 'quote-1-75',
+    ].filter(Boolean).join(', ');
+    const section = startSection('video-text', style);
+    section.background = 'light-gray';
+    section.nodes.push(video, ...nodes);
     current = null;
     return true;
   };
@@ -1540,6 +1586,7 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-video')) {
       if (!component.querySelector('[data-asset-path], iframe[src]')) return;
       if (videoRowColumns(component)) return;
+      if (videoRichTextRow(component)) return;
       // a video with article text in the other half of the row: Columns (columns-50-50)
       const textAside = videoTextAside(component);
       const textColumns = textAside && videoTextColumns(component, textAside, doc);
@@ -1694,11 +1741,11 @@ export default function transform(hookName, element, payload) {
       section.style = [section.style, style].filter(Boolean).join(', ');
     });
     marked.forEach((a) => a.removeAttribute('data-btn-style'));
-    if (section.style) {
-      out.push(WebImporter.Blocks.createBlock(doc, {
-        name: 'Section Metadata',
-        cells: { style: section.style },
-      }));
+    if (section.style || section.background) {
+      const cells = {};
+      if (section.style) cells.style = section.style;
+      if (section.background) cells.background = section.background;
+      out.push(WebImporter.Blocks.createBlock(doc, { name: 'Section Metadata', cells }));
     }
   });
   element.replaceChildren(...out);

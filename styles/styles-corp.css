@@ -613,6 +613,15 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
+/* section style `quote-1-75`: the gold-quote paragraph (the one with the gold quote marks)
+   as 24.5px copy, lines 1.06 as p-1-75, the rest of the copy at its own size (stryker.com
+   .fontsize-1-75em quote in 1.5em text, e.g. Ellys' maxillofacial surgery story:
+   `serif, p-1-5, quote-1-75`; after the serif rules, whose lines it replaces) */
+:where(body.corp) main > .section.quote-1-75 > .default-content-wrapper p:has(> span.color-gold) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 :where(body.corp) main > div.section.ps-0,
 :where(body.corp) .tabs-panel > .section.ps-0,
 :where(body.corp) .accordion-item-body > .section.ps-0 {
@@ -878,5 +887,11 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+
+  /* video-text (styles.css): the empty wrapper its Section Metadata leaves is no third
+     column of the row (as in flex) */
+  :where(body.corp) main > .section.video-text > div:empty {
+    display: none;
   }
 }

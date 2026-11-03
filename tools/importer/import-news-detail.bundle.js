@@ -744,11 +744,13 @@ var CustomImportScript = (() => {
     const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
     const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
     const headline2 = aside && aside.querySelector(".c-largeheadline");
-    if (headline2) return text(headline2) ? headline2 : null;
-    return aside && width === 4 ? richTextAside(aside) : null;
+    return headline2 && text(headline2) ? headline2 : null;
   }
-  function richTextAside(aside) {
-    if (aside.querySelector(".c-marketo-form, img, video, iframe, [data-asset-path]")) return null;
+  function videoRichTextAside(video) {
+    const col = video.closest('[class*="col-sm-8"]');
+    const row = col && col.parentElement;
+    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+    if (!aside || aside.querySelector(".c-largeheadline, .c-marketo-form, img, video, iframe, [data-asset-path]")) return null;
     const first = aside.querySelector(".c-rich-text-editor");
     const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
     return box && text(box) ? first : null;
@@ -785,9 +787,19 @@ var CustomImportScript = (() => {
       cells: [[media, nodes]]
     });
   }
-  function quoteNodes(headline2, doc) {
+  function quoteNodes(headline2, doc, { sizes = false } = {}) {
     const box = doc.createElement("div");
     box.innerHTML = headline2.innerHTML;
+    if (sizes) {
+      box.querySelectorAll(".fontsize-1-25em").forEach((span) => {
+        [span, ...span.querySelectorAll("*")].reverse().forEach((el) => {
+          while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
+            el.after(el.lastChild);
+          }
+        });
+      });
+      tagTextSize(box);
+    }
     box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
       const bold = span.closest(".futura-bold");
       if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
@@ -876,14 +888,13 @@ var CustomImportScript = (() => {
     const link2 = videoLink(video, doc);
     const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
     const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
-    const rich = headline2.matches(".c-rich-text-editor");
-    const lines = boxed ? rich ? leadNodes(headline2) : headlineNodes(headline2, doc) : [];
+    const lines = boxed ? headlineNodes(headline2, doc) : [];
     if (!link2 || boxed && !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const firstLine = headline2.querySelector(".line") || headline2;
-    const big = !rich && (firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]'));
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     return WebImporter.Blocks.createBlock(doc, {
@@ -1231,8 +1242,7 @@ var CustomImportScript = (() => {
       const aside = videoAside(video);
       if (!aside) return false;
       const asideCol = aside.closest('[class*="col-sm-"]');
-      const quoteSelector = aside.matches(".c-rich-text-editor") ? ".c-rich-text-editor" : ".c-largeheadline";
-      const quotes = [...asideCol.querySelectorAll(quoteSelector)].filter((h) => h !== aside && text(h));
+      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h));
       const videoCol = video.closest('[class*="col-sm-"]');
       const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
@@ -1243,6 +1253,33 @@ var CustomImportScript = (() => {
       [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
       startSection("columns").nodes.push(columns);
+      current = null;
+      return true;
+    };
+    const videoRichTextRow = (video) => {
+      const lead = videoRichTextAside(video);
+      if (!lead) return false;
+      const asideCol = lead.closest('[class*="col-sm-"]');
+      const quotes = [...asideCol.querySelectorAll(".c-rich-text-editor")].filter((c) => c !== lead && text(c));
+      const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
+      if (!nodes.length) return false;
+      nodes.forEach((p) => p.querySelectorAll("strong").forEach((strong) => {
+        if (strong.closest("em") || text(strong) === text(p)) return;
+        const em = doc.createElement("em");
+        strong.replaceWith(em);
+        em.append(strong);
+      }));
+      [lead, ...quotes].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      const style = [
+        "video-text",
+        asideCol.querySelector(".urw-egyptienne") && "serif",
+        lead.querySelector(".fontsize-1-5em") && "p-1-5",
+        quotes.some((q) => q.querySelector(".fontsize-1-75em")) && "quote-1-75"
+      ].filter(Boolean).join(", ");
+      const section = startSection("video-text", style);
+      section.background = "light-gray";
+      section.nodes.push(video, ...nodes);
       current = null;
       return true;
     };
@@ -1387,6 +1424,7 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-video")) {
         if (!component.querySelector("[data-asset-path], iframe[src]")) return;
         if (videoRowColumns(component)) return;
+        if (videoRichTextRow(component)) return;
         const textAside = videoTextAside(component);
         const textColumns = textAside && videoTextColumns(component, textAside, doc);
         if (textColumns) {
@@ -1499,11 +1537,11 @@ var CustomImportScript = (() => {
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
       marked.forEach((a) => a.removeAttribute("data-btn-style"));
-      if (section.style) {
-        out.push(WebImporter.Blocks.createBlock(doc, {
-          name: "Section Metadata",
-          cells: { style: section.style }
-        }));
+      if (section.style || section.background) {
+        const cells = {};
+        if (section.style) cells.style = section.style;
+        if (section.background) cells.background = section.background;
+        out.push(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells }));
       }
     });
     element.replaceChildren(...out);
