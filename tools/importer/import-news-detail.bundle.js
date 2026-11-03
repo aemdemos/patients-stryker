@@ -1,9 +1,26 @@
 /* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -542,7 +559,10 @@ var CustomImportScript = (() => {
     const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
     [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
       const nodes = [...p.childNodes];
-      const at = nodes.findIndex((node, i) => node.nodeName === "BR" && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === "BR");
+      const at = nodes.findIndex((node, i) => {
+        var _a;
+        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
+      });
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
@@ -583,7 +603,10 @@ var CustomImportScript = (() => {
     const nodes = [];
     let run = [];
     const flush = () => {
-      if (run.some((n) => n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.("img"))) {
+      if (run.some((n) => {
+        var _a;
+        return n.nodeType === 3 ? n.textContent.trim() : text(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
+      })) {
         const p = doc.createElement("p");
         p.append(...run);
         while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
@@ -721,7 +744,20 @@ var CustomImportScript = (() => {
     const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
     const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
     const headline2 = aside && aside.querySelector(".c-largeheadline");
-    return headline2 && text(headline2) ? headline2 : null;
+    if (headline2) return text(headline2) ? headline2 : null;
+    return aside && width === 4 ? richTextAside(aside) : null;
+  }
+  function richTextAside(aside) {
+    if (aside.querySelector(".c-marketo-form, img, video, iframe, [data-asset-path]")) return null;
+    const first = aside.querySelector(".c-rich-text-editor");
+    const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
+    return box && text(box) ? first : null;
+  }
+  function leadNodes(component) {
+    const box = component.ownerDocument.createElement("div");
+    box.innerHTML = component.innerHTML;
+    cleanRichText(box);
+    return [...box.querySelectorAll("p")].filter((p) => text(p));
   }
   function headlineVideo(headline2) {
     const col = headline2.closest('[class*="col-sm-6"]');
@@ -808,6 +844,15 @@ var CustomImportScript = (() => {
         el.after(el.lastChild);
       }
     });
+    box.querySelectorAll("strong").forEach((strong) => {
+      if (!strong.querySelector(":scope > br")) return;
+      const parts = [doc.createElement("strong")];
+      [...strong.childNodes].forEach((node) => {
+        if (node.nodeName === "BR") parts.push(node, doc.createElement("strong"));
+        else parts[parts.length - 1].append(node);
+      });
+      strong.replaceWith(...parts.filter((part) => part.nodeName === "BR" || text(part)));
+    });
     const out = [];
     const blocks = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
     blocks.forEach((block) => {
@@ -831,13 +876,14 @@ var CustomImportScript = (() => {
     const link2 = videoLink(video, doc);
     const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
     const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
-    const lines = boxed ? headlineNodes(headline2, doc) : [];
+    const rich = headline2.matches(".c-rich-text-editor");
+    const lines = boxed ? rich ? leadNodes(headline2) : headlineNodes(headline2, doc) : [];
     if (!link2 || boxed && !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const firstLine = headline2.querySelector(".line") || headline2;
-    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const big = !rich && (firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]'));
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
     const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     return WebImporter.Blocks.createBlock(doc, {
@@ -1185,7 +1231,8 @@ var CustomImportScript = (() => {
       const aside = videoAside(video);
       if (!aside) return false;
       const asideCol = aside.closest('[class*="col-sm-"]');
-      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h));
+      const quoteSelector = aside.matches(".c-rich-text-editor") ? ".c-rich-text-editor" : ".c-largeheadline";
+      const quotes = [...asideCol.querySelectorAll(quoteSelector)].filter((h) => h !== aside && text(h));
       const videoCol = video.closest('[class*="col-sm-"]');
       const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
@@ -1474,7 +1521,7 @@ var CustomImportScript = (() => {
     try {
       const { hostname } = new URL(payload.params.originalURL);
       if (hostname === "www.stryker.com") return CORP_HOST_RE;
-    } catch {
+    } catch (e) {
     }
     return PATIENTS_HOST_RE;
   }
@@ -1494,7 +1541,12 @@ var CustomImportScript = (() => {
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isNewsDetail = !!(payload && payload.template && ["news-detail", "news-detail-xf"].includes(payload.template.name));
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments"
+    ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
@@ -1652,7 +1704,7 @@ var CustomImportScript = (() => {
     let u;
     try {
       u = new URL(urlStr, "https://x/");
-    } catch {
+    } catch (e) {
       return false;
     }
     if (u.pathname.startsWith("/is/image/")) {
@@ -1749,7 +1801,7 @@ var CustomImportScript = (() => {
     transform3
   ];
   function executeTransformers(hookName, element, payload) {
-    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
     transformers.forEach((fn) => {
       try {
         fn.call(null, hookName, element, enhancedPayload);
@@ -1770,7 +1822,8 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   function publishedDate(document) {
-    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    var _a;
+    const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (m) return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`;
     const updated = document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
@@ -1780,6 +1833,7 @@ var CustomImportScript = (() => {
   }
   var import_news_detail_default = {
     transform: (payload) => {
+      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
@@ -1811,7 +1865,7 @@ var CustomImportScript = (() => {
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
+      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
