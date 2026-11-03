@@ -103,6 +103,12 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     max-width: none;
   }
 
+  /* …a `bg-gold` box stays inside the container gutters, level with the text around it
+     (stryker.com .has-background.bg-gold: 1380px from x 30 at 1440px, e.g. "Want to learn
+     more?" of the powered-fleet eGuide and fecal-management webinar articles) */
+  body.news-detail.full-width main > .section.bg-gold > .default-content-wrapper {
+    max-width: calc(var(--container-max) - 2 * var(--container-gutter));
+  }
 }
 
 /* mix-width: news pages whose article (title included) keeps the template's centred
@@ -134,5 +140,19 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 
   body.news-detail.mix-width main > .section:is(.connect-band, .form-with-aside, .cards-corp-container, .connect-band ~ .section, .form-with-aside ~ .section, .cards-corp-container ~ .section) > div {
     max-width: var(--container-max);
+  }
+
+  /* section style `col-8` (with `background: bg-gold`): the gold box in the left 8/12
+     column of the container, level with a form-with-aside form below it; full width below
+     900px (stryker.com col-sm-8, e.g. the "Interested in learning more?" box of the virtual
+     care partnership case study: 637px at 1000px, 910px from x 30 at 1440px). The column
+     less its gutters; its 4% / 3% / 2% padding and 2% bottom margin are taken of the box,
+     not of the page (source 36px above the text at 1440px) */
+  body.news-detail:is(.full-width, .mix-width) main > .section.col-8.bg-gold > .default-content-wrapper {
+    --news-col-8-box: calc(min(100%, var(--container-max)) * 2 / 3 - 2 * var(--container-gutter));
+
+    max-width: var(--news-col-8-box);
+    margin: 0 auto calc(var(--news-col-8-box) * 0.02) calc(max(0px, (100% - var(--container-max)) / 2) + var(--container-gutter));
+    padding: calc(var(--news-col-8-box) * 0.04) var(--space-block-s) calc(var(--news-col-8-box) * 0.03) calc(var(--news-col-8-box) * 0.02);
   }
 }
