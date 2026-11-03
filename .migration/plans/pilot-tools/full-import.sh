@@ -61,7 +61,16 @@ node $T/batch-urls.mjs "$OUT" "$LIST" >> "$LOG" 2>&1
 bash $S/aem-import-bundle.sh --importjs $R/tools/importer/import-xf-fragments.js >/dev/null 2>&1 || log "bundle import-xf-fragments failed"
 bash $S/aem-import-bundle.sh --importjs $R/tools/importer/$IMPORTER.js >/dev/null 2>&1 || log "bundle $IMPORTER failed"
 rm -f "$OUT/chunks/"*
-[ -s "$OUT/xf-urls.txt" ] && run_chunks $R/tools/importer/import-xf-fragments.bundle.js "$OUT/xf-urls.txt" xf
+# a template with its own rules (tools/importer/<template>/, import-<template>-fragments.js)
+# builds its own XFs; the XFs other templates show too come from the shared importer
+if [ -s "$OUT/xf-urls.txt" ] && [ -f "$R/tools/importer/$IMPORTER-fragments.js" ]; then
+  bash $S/aem-import-bundle.sh --importjs $R/tools/importer/$IMPORTER-fragments.js >/dev/null 2>&1 || log "bundle $IMPORTER-fragments failed"
+  node --no-warnings $T/split-xf-urls.mjs "$OUT/xf-urls.txt" "${IMPORTER#import-}" "$OUT/xf-own.txt" "$OUT/xf-shared.txt" >> "$LOG" 2>&1
+  [ -s "$OUT/xf-own.txt" ] && run_chunks $R/tools/importer/$IMPORTER-fragments.bundle.js "$OUT/xf-own.txt" xfo
+  [ -s "$OUT/xf-shared.txt" ] && run_chunks $R/tools/importer/import-xf-fragments.bundle.js "$OUT/xf-shared.txt" xfs
+elif [ -s "$OUT/xf-urls.txt" ]; then
+  run_chunks $R/tools/importer/import-xf-fragments.bundle.js "$OUT/xf-urls.txt" xf
+fi
 run_chunks $R/tools/importer/$IMPORTER.bundle.js "$OUT/urls.txt" pages
 cd $R || exit 1
 node tools/importer/migration-index/check-coverage.js "$OUT/content" 2>&1 | grep -vE "Warning|Reparsing|trace-warnings|To eliminate|author-only" > "$OUT/coverage.txt"
