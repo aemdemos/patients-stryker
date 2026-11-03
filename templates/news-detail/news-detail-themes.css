@@ -60,11 +60,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   border-top: 0;
 }
 
-   @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
-   flex-direction: column;
-   }
-
+/* the video row (stryker.com col-sm-8 + col-sm-4) goes side by side from the source 841px,
+   600px here, as the columns block does: no stacking at 600-899px */
+@media (width >= 600px) {
   /* the empty separator section: 50px to the next section from 600px (source 51px at
      1280px; 21px on phones, above) */
   body.news-detail:is(.full-width, .mix-width) main > .section.separator:empty {
@@ -84,7 +82,7 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
     margin-inline: 0 auto;
   }
-  }
+}
 
    @media (width >= 900px) {
     body.news-detail.full-width .columns > div {
