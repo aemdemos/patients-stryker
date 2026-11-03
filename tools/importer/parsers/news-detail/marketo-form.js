@@ -10,10 +10,15 @@
  *   | Base URL     | //lp.stryker.com         |
  *   | Munchkin ID  | 338-WAP-571              |
  *   | Form ID      | 2736                     |
+ *   | Captcha Script        | https://www.stryker.com/…/altcha.js        |
+ *   | Captcha Challenge URL | https://www.stryker.com/bin/stryker/captcha/challenge |
  *
  * The three values differ per form (lp.stryker.com / 424-GXO-933.mktoweb.com /
  * 029-IBF-960.mktoweb.com), so they are read from the form's own data-marketo-*
- * attributes, never defaulted. The source has no captcha, so no captcha rows are emitted.
+ * attributes, never defaulted. The captcha is not in the source markup: the stryker.com
+ * marketoform widget adds an Altcha widget above the submit button of every form (e.g.
+ * the nurses nomination form and the ASC release), so the two captcha rows are always
+ * emitted, with the same values as the other corp form pages.
  * The values are text, not links: the shared cleanup drops any link or image whose URL
  * mentions marketo / munchkin.
  * The after-submit behaviour (thank-you text, redirect) is not carried by the block.
@@ -30,6 +35,10 @@ export default function parse(element, { document }) {
     element.remove();
     return;
   }
+  rows.push(
+    ['Captcha Script', 'https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js'],
+    ['Captcha Challenge URL', 'https://www.stryker.com/bin/stryker/captcha/challenge'],
+  );
 
   const cells = rows.map(([key, value]) => {
     const k = document.createElement('div');

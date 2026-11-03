@@ -198,6 +198,10 @@ var CustomImportScript = (() => {
       element.remove();
       return;
     }
+    rows.push(
+      ["Captcha Script", "https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js"],
+      ["Captcha Challenge URL", "https://www.stryker.com/bin/stryker/captcha/challenge"]
+    );
     const cells = rows.map(([key, value]) => {
       const k = document.createElement("div");
       k.textContent = key;

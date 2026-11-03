@@ -45,9 +45,10 @@
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 
   /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
-     .form-control field text */
+     .form-control field text: 18px/1.5 on phones, 14px/1.2 from 600px (Marketo's field line) */
   --corp-form-field-font-size-l: 18px;
   --corp-form-field-line-height-l: 1.5;
+  --corp-form-field-line-height: 1.2;
 
   /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
   --corp-color-purple-dark: #753d79;
