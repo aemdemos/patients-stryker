@@ -425,6 +425,9 @@ const LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contac
 function labelHeadingsToParagraphs(root) {
   root.querySelectorAll('h2, h3, h4, h5, h6').forEach((h) => {
     if (!LABEL_HEADING.test(text(h))) return;
+    // an h3 label set in a 0.8em span (14px, 16.8px from 840px) stays a heading: the
+    // `h3-0-8` section style (smallHeadings) gives it the source size
+    if (h.tagName === 'H3' && headingSizeStyle(h) === 'h3-0-8') return;
     const p = root.ownerDocument.createElement('p');
     while (h.firstChild) p.append(h.firstChild);
     // the heading's own size span (e.g. fontsize-8em) is not copy size: the label is 14px
@@ -447,21 +450,31 @@ function labelHeadingsToParagraphs(root) {
 // headings the source sizes with a span (the whole text in it): [tag, span class, style]
 const HEADING_SIZES = [
   ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-25em', 'h2-1-25'],
   ['H2', 'fontsize-1-5em', 'h2-1-5'],
   ['H1', 'fontsize-1-25em', 'h1-1-25'],
+  // a 28px h1 in a 1.5em span is 42px Futura bold, the `h1-42` title (e.g. the AED buying guide)
+  ['H1', 'fontsize-1-5em', 'h1-42'],
+  ['H3', 'fontsize-8em', 'h3-0-8'],
 ];
 
-function smallHeadings(root) {
+/** The HEADING_SIZES section style of a heading whose whole text is in one size span, or null. */
+function headingSizeStyle(h) {
+  if (!text(h)) return null;
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  const match = HEADING_SIZES.find(([tag, cls]) => {
+    if (h.tagName !== tag) return false;
+    const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+    return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+  });
+  return match ? match[2] : null;
+}
+
+function smallHeadings(root) {
   const styles = new Map();
-  root.querySelectorAll('h1, h2').forEach((h) => {
-    if (!text(h)) return;
-    const match = HEADING_SIZES.find(([tag, cls]) => {
-      if (h.tagName !== tag) return false;
-      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
-    });
-    if (match) styles.set(h, match[2]);
+  root.querySelectorAll('h1, h2, h3').forEach((h) => {
+    const style = headingSizeStyle(h);
+    if (style) styles.set(h, style);
   });
   return styles;
 }
@@ -866,8 +879,17 @@ function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [],
     || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
   const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
   const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+  const variants = [half ? 'columns-50-50' : 'columns-67-33', 'large-headline'];
+  if (boxed) variants.push('gray-lead');
+  // a 1.5vw grey box set inside a heading (the StrykerTalks podcast pages, e.g. Heath): its
+  // text stays a paragraph, `statement-s` gives it that heading's line spacing
+  if (boxed && !big && firstLine.querySelector('h1, h2, h3')) variants.push('statement-s');
+  // a quote whose text is on the 1.5vw scale (a fontsize-N-vw span, e.g. Bob, Rose) rather
+  // than the fixed 21px of the other grey-box quotes: `quote-scaled`
+  const quoteText = (q) => [...q.querySelectorAll('p')].find((p) => p.textContent.includes('“'));
+  if (boxed && quotes.some((q) => quoteText(q)?.querySelector('[class*="fontsize-"][class*="vw"]'))) variants.push('quote-scaled');
   return WebImporter.Blocks.createBlock(doc, {
-    name: `Columns (${half ? 'columns-50-50' : 'columns-67-33'}, large-headline${boxed ? ', gray-lead' : ''})`,
+    name: `Columns (${variants.join(', ')})`,
     cells: [((mediaCell, textCell) => (mirrored ? [textCell, mediaCell] : [mediaCell, textCell]))(
       [media, ...buttons],
       [
