@@ -618,18 +618,21 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
     margin-bottom: var(--space-block);
   }
 
-  /* gray-lead beside the video (from the source 840px, 600px here): level with the video, the
-     1.5vw text scale; the quote's base size is 1vw up to 14px and the box ends a little
-     further above it */
+  /* gray-lead beside the video (from the source 841px, 600px here): level with the video, the
+     source tablet sizes — grey box, name and role 1.5vw up to 21px, the quote's base size 1vw
+     up to 14px — never below their size at the source's 841px tablet start (1vw = 8.41px),
+     so 600-840px show the source's smallest tablet sizes and from 841px they are the
+     source's; the box ends a little further above the quote */
   body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
-    --columns-corp-quote-base: min(var(--columns-corp-vw), var(--body-font-size-m));
-    --columns-corp-quote-name-size: var(--columns-corp-lh-text-size);
+    --columns-corp-tablet-vw: 8.41px; /* 1vw at the source's 841px tablet breakpoint */
+    --columns-corp-quote-base: clamp(var(--columns-corp-tablet-vw), 1vw, var(--body-font-size-m));
+    --columns-corp-quote-name-size: clamp(calc(1.5 * var(--columns-corp-tablet-vw)), 1.5vw, var(--body-font-size-xl));
     --columns-corp-quote-gap: var(--space-inset-l);
   }
 
   body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
     margin-top: 0;
-    font-size: var(--columns-corp-lh-text-size);
+    font-size: var(--columns-corp-quote-name-size);
     line-height: var(--heading-line-height-hero);
   }
 }
