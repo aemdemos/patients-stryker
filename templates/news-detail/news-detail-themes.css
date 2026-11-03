@@ -21,12 +21,8 @@ body.news-detail.full-width main > .section.separator > div:first-child {
   border-top: 0;
 }
 
-   @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
-   flex-direction: column;
-   }
-  }
-
+/* the video row (stryker.com col-sm-8 + col-sm-4) goes side by side from the source 841px,
+   600px here, as the columns block does: no stacking at 600-899px */
    @media (width >= 900px) {
     body.news-detail.full-width .columns > div {
      flex-flow: row wrap;
