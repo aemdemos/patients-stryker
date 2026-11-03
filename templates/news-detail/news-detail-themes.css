@@ -70,8 +70,14 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
      flex-flow: row wrap;
   }
 
-  body.news-detail.full-width main > .section > div {
+  /* every section spans the container, except a Hero Corp, which stays full-bleed
+     (stryker.com full-width hero image: 1920px at 1920px, the nurses feature) */
+  body.news-detail.full-width main > .section:not(.hero-corp-container) > div {
     max-width: var(--container-max);
+  }
+
+  body.news-detail.full-width main > .section.hero-corp-container > div {
+    max-width: none;
   }
 
 }
