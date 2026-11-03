@@ -109,6 +109,11 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   body.news-detail.full-width .columns > div > div:has(> .columns-youtube) {
     align-self: stretch;
   }
+
+  /* Full-width articles use the page container from tablet widths. */
+  body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10) > div {
+    max-width: var(--container-max);
+  }
 }
 
 @media (width >= 900px) {
@@ -120,10 +125,8 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     align-self: auto;
   }
 
-  /* every section spans the container, except a Hero Corp, which stays full-bleed
-     (stryker.com full-width hero image: 1920px at 1920px, the nurses feature), and a
-     `col-10` section, which keeps its 10/12 column capped at 5/6 of the container (1144px
-     of text from 1440px) */
+  /* Every section spans the container, except a Hero Corp, which stays full-bleed, and a
+     col-10 section, which keeps its 10/12 column. */
   body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10) > div {
     max-width: var(--container-max);
   }
