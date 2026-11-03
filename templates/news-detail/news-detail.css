@@ -128,6 +128,12 @@ body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
   font-size: var(--heading-font-size-xs);
 }
 
+/* the spacer below the title: the source's component gap, 20px on phones (36px from the date
+   to the article, with the title's 15px) and 30px from 600px (source 841px), below */
+body.news-detail main > .section.spacer {
+  height: var(--space-block-l);
+}
+
 /* ---- article column (66.66% from 600px, see the media query) ---- */
 
 body.news-detail main > .section > .default-content-wrapper picture {
@@ -136,9 +142,12 @@ body.news-detail main > .section > .default-content-wrapper picture {
   margin: auto;
 }
 
+/* a block image: no inline line below it (5px under every image), as on the source */
 body.news-detail main > .section > .default-content-wrapper picture img {
+  display: block;
   max-width: 100%;
   height: auto;
+  margin-inline: auto;
 }
 
 /* section style `h2-1-25`: every Heading 2 of the section at 1.25x the h2 size (stryker.com
@@ -206,6 +215,14 @@ body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 {
   font-weight: var(--font-weight-bold);
 }
 
+/* …the live h3 is in the light serif heading face with the Futura span inside: the two fonts'
+   boxes on each line make the line box ~6px taller (28px at 21px, e.g. EMS powered products).
+   An h3 whose text is a Bold run takes the same structure */
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3:where(:has(> strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
 /* italic inside an article heading stays italic (live <i> in h2); the global heading rule only
    means to straighten the bold + italic gold marker */
 body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4) em:not(strong em, :has(strong)) {
@@ -221,6 +238,46 @@ body.news-detail main > .section:has(+ .section.join) {
 
 body.news-detail main > .section:has(+ .section.join) > .default-content-wrapper {
   padding-bottom: 0;
+}
+
+/* …a blank line before more of its text, or before another blank line, keeps the paragraph
+   gap below it */
+body.news-detail main > .section.blank-line:has(+ .section:is(.join, .blank-line)) {
+  margin-bottom: var(--space-block);
+}
+
+/* section styles pad-top-N / pad-bottom-N (the importer): the padding the author gave the
+   source rich text (style="padding-bottom: 5%"), N% of the article column above / below
+   the section's text */
+body.news-detail main > .section:is(.pad-top-1, .pad-top-2, .pad-top-3, .pad-top-5, .pad-top-7) > .default-content-wrapper::before,
+body.news-detail main > .section:is(.pad-bottom-1, .pad-bottom-2, .pad-bottom-3, .pad-bottom-5, .pad-bottom-7) > .default-content-wrapper::after {
+  content: "";
+  display: block;
+}
+
+body.news-detail main > .section.pad-top-1 > .default-content-wrapper::before,
+body.news-detail main > .section.pad-bottom-1 > .default-content-wrapper::after {
+  padding-top: 1%;
+}
+
+body.news-detail main > .section.pad-top-2 > .default-content-wrapper::before,
+body.news-detail main > .section.pad-bottom-2 > .default-content-wrapper::after {
+  padding-top: 2%;
+}
+
+body.news-detail main > .section.pad-top-3 > .default-content-wrapper::before,
+body.news-detail main > .section.pad-bottom-3 > .default-content-wrapper::after {
+  padding-top: 3%;
+}
+
+body.news-detail main > .section.pad-top-5 > .default-content-wrapper::before,
+body.news-detail main > .section.pad-bottom-5 > .default-content-wrapper::after {
+  padding-top: 5%;
+}
+
+body.news-detail main > .section.pad-top-7 > .default-content-wrapper::before,
+body.news-detail main > .section.pad-bottom-7 > .default-content-wrapper::after {
+  padding-top: 7%;
 }
 
 /* h4: live Futura Bold, 14px below 480 (mapped to the 600 breakpoint), 17.5px above */
@@ -245,6 +302,31 @@ body.news-detail main > .section.compact > .default-content-wrapper > :last-chil
    600px), and the section ends with the usual section gap */
 body.news-detail main > .section:has(+ .section.separator) {
   margin-bottom: var(--space-block);
+}
+
+/* section styles gap-0 / gap-s / gap-m / gap-l / gap-xl (the importer, from the source): the
+   gap above the section, in the source's steps — none (after a padded rich text, pad-*), a
+   paragraph gap (15px), a component gap (20px
+   on phones, 30px from 600px), a component gap plus a paragraph gap (text leaving a source
+   column layout), two component gaps (an image leaving a column layout) */
+body.news-detail main > .section:has(+ .section.gap-0) {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section:has(+ .section.gap-s) {
+  margin-bottom: var(--space-block);
+}
+
+body.news-detail main > .section:has(+ .section.gap-m) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section:has(+ .section.gap-l) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+body.news-detail main > .section:has(+ .section.gap-xl) {
+  margin-bottom: calc(2 * var(--space-block-l));
 }
 
 /* a page whose title is in a Hero Corp slide opens with the date alone (the authored H5 or
@@ -449,6 +531,15 @@ body.news-detail main > .section.h3-1-25 > .default-content-wrapper > h3 {
   line-height: calc(var(--news-h3-size) * var(--news-scale-1-25) * var(--heading-line-height));
 }
 
+/* …an h3 whose text is a Bold run takes the source's structure: the h3 at the h3 size and its
+   Bold run (the source's size span) at 0.8em / 1.25em, so each line holds both boxes and has
+   the source's height, the text low in it (e.g. "Media contact" of the LIFEPAK 35 release:
+   28px lines at 1440px) */
+body.news-detail main > .section:is(.h3-0-8, .h3-1-25) > .default-content-wrapper > h3:where(:has(> strong)) {
+  font-size: var(--news-h3-size);
+  line-height: calc(var(--news-h3-size) * var(--heading-line-height));
+}
+
 /* section style `h-serif-bold` (with `h-serif`): bold in the section's h2 / h3 keeps the
    Egyptienne heading font, in bold (stryker.com bold serif subheads, e.g. ExpectMore),
    instead of the corp Futura bold */
@@ -496,6 +587,28 @@ body.news-detail main span.box-gold a:any-link > strong {
   font-weight: var(--font-weight-bold);
   line-height: inherit;
   text-transform: none;
+}
+
+/* the Bold run of an article h3 (above): Futura bold */
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3:where(:has(> strong)) > strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* the Bold run of an h3-0-8 / h3-1-25 heading (above) at 0.8em / 1.25em; the source wraps that
+   size span in a Futura span at the h3 size, whose box also sets the line: an empty box at
+   the h3 size */
+body.news-detail main > .section.h3-0-8 > .default-content-wrapper > h3:where(:has(> strong)) > strong {
+  font-size: calc(var(--news-scale-0-8) * 1em);
+}
+
+body.news-detail main > .section.h3-1-25 > .default-content-wrapper > h3:where(:has(> strong)) > strong {
+  font-size: calc(var(--news-scale-1-25) * 1em);
+}
+
+body.news-detail main > .section:is(.h3-0-8, .h3-1-25) > .default-content-wrapper > h3:where(:has(> strong)) > strong::before {
+  content: "";
+  font-size: var(--news-h3-size);
 }
 
 /* …the boxes side by side in a row are as tall as the tallest: the row's cells stretch to
@@ -556,6 +669,10 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     --news-h3-size: var(--heading-font-size-l);
     --news-h2-size: var(--heading-font-size-xl);
     --news-band-headline-vw: 1.25vw;
+  }
+
+  body.news-detail main > .section.spacer {
+    height: var(--space-section);
   }
 
   /* the article column: two-thirds of the container, centred, from the source's 841px
@@ -683,5 +800,20 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
      col-md-2 from 1024px: 183px at 1280px) */
   body.news-detail main .columns.thumbnails > div > div:last-child .columns-img-col {
     max-width: calc(min(100vw, var(--container-max)) / 6 - 2 * var(--space-block));
+  }
+}
+
+/* the gap-m / gap-l / gap-xl steps from 600px (source 841px): 30px component gaps */
+@media (width >= 600px) {
+  body.news-detail main > .section:has(+ .section.gap-m) {
+    margin-bottom: var(--space-section);
+  }
+
+  body.news-detail main > .section:has(+ .section.gap-l) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section:has(+ .section.gap-xl) {
+    margin-bottom: calc(2 * var(--space-section));
   }
 }
