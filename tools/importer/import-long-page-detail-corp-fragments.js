@@ -14,7 +14,9 @@
 
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
-import longPageDetailSectionsTransformer from './transformers/long-page-detail-corp-sections.js';
+import longPageDetailSectionsTransformer, {
+  keepHeadlineBlankLines, edsLinkPaths,
+} from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import { xfToFragmentPath, xfKey } from './xf-fragment-path.js';
@@ -145,6 +147,9 @@ function findBlocksOnPage(document, template) {
 }
 
 export default {
+  // before the importer's own cleanup, which drops empty paragraphs
+  preprocess: ({ document }) => keepHeadlineBlankLines(document),
+
   transform: (payload) => {
     const { document, url, params } = payload;
     const main = document.body;
@@ -169,6 +174,8 @@ export default {
       });
       executeTransformers('afterTransform', main, payload);
     }
+    // links to site pages: their EDS paths (after the cleanup's .html rewrite)
+    edsLinkPaths(main);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
     return [{
       element: main,

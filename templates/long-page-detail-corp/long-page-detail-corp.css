@@ -52,6 +52,23 @@ body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .defau
   padding-bottom: 0;
 }
 
+/* ---- large headline paragraphs (the `headline-N` tags, below): the source sets the box in
+   Egyptienne light, 21px below 600px (lines 28.875px) and 14px from 600px, and its lines sit
+   on that line spacing (biologics' 11.25px intro lines 29px apart on phones, courses' blank
+   line 44px) ---- */
+body.long-page-detail-corp main .default-content-wrapper > p:has(> span[class*="headline-"]) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--paragraph-line-height);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .default-content-wrapper > p:has(> span[class*="headline-"]) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
 /* ---- section spacing ---- */
 
 body.long-page-detail-corp main > .section {
@@ -74,6 +91,13 @@ body.long-page-detail-corp main > .section {
   }
 }
 
+/* ---- an image in a Columns cell at its own size (at most the cell), centred, as the source
+   standalone image (img-responsive in a centred box: the courses 410px webinar image, the
+   rep-portal 320px icons; columns-corp makes images fill the cell) ---- */
+body.long-page-detail-corp main > .section .columns .columns-img-col img {
+  width: auto;
+}
+
 /* ---- downloads (Cards Corp resources) ----
    stryker.com has two downloads layouts, the same component in two wrappers:
    - in the Virtual Learning Center column (`column-10-12`, source resourcesanddownload_v1,
@@ -81,8 +105,9 @@ body.long-page-detail-corp main > .section {
      33% of the download (103px at 375px), the title beside it; from 600px the variant's
      grid of covers
    - anywhere else (source resourcesanddownload, 32 pages: endoscopy medical education,
-     jr45, Mako…): the cover at most 184px wide (its size on the source at every width,
-     e.g. plastic-surgery), above its title, also on phones */
+     jr45, Mako…): the cover above its title, also on phones, in a 240px box, vertically
+     centred, at most the download's width and 238px high (a portrait cover 184px wide,
+     e.g. plastic-surgery; a landscape one the full 205px at 1440, e.g. arthroscopy) */
 body.long-page-detail-corp main > .section.column-10-12 .cards-corp.resources > ul > li {
   display: flex;
   align-items: flex-start;
@@ -94,7 +119,16 @@ body.long-page-detail-corp main > .section.column-10-12 .cards-corp.resources .c
 }
 
 body.long-page-detail-corp main > .section:not(.column-10-12) .cards-corp.resources .cards-corp-card-image {
-  max-width: var(--long-page-detail-corp-download-cover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--long-page-detail-corp-download-box);
+}
+
+body.long-page-detail-corp main > .section:not(.column-10-12) .cards-corp.resources .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--long-page-detail-corp-download-cover);
 }
 
 @media (width >= 600px) {
@@ -103,18 +137,31 @@ body.long-page-detail-corp main > .section:not(.column-10-12) .cards-corp.resour
   }
 }
 
-/* ---- spacing measured on the endoscopy medical-education pages (plastic-surgery, 375 /
-   1440), also where they repeat elsewhere:
-   - a video or image in a Columns cell → its title: 30px (20px below 600px), as in the VLC
-     item
-   (the downloads and large-headline spacing follow the VLC rules below) ---- */
-body.long-page-detail-corp main .columns > div > div > p:has(.dm-video-wrapper, picture) + p {
-  margin-top: var(--space-block-l);
+/* ---- a source column row (Columns) keeps the source component spacing below it: 20px,
+   30px from 600px (stryker.com .colctrl.page-section, e.g. the courses image rows) ---- */
+body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
+  margin-bottom: var(--space-block-l);
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main .columns > div > div > p:has(.dm-video-wrapper, picture) + p {
-    margin-top: var(--space-section);
+  body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* ---- spacing measured on the endoscopy medical-education pages (plastic-surgery, 375 /
+   1440), also where they repeat elsewhere:
+   - below a video or image in a Columns cell: 30px (20px below 600px), the source component
+     spacing (e.g. plastic-surgery video → its title, general-surgery YouTube video → its
+     title, courses image → the row's end)
+   (the downloads and large-headline spacing follow the VLC rules below) ---- */
+body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-wrapper), .columns-youtube) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-wrapper), .columns-youtube) {
+    margin-bottom: var(--space-section);
   }
 }
 
@@ -200,6 +247,12 @@ body.long-page-detail-corp main .default-content-wrapper > p:has(> span[class*="
   margin-bottom: var(--space-block-l);
 }
 
+/* the lines of a large headline stack without a gap, as on the source (courses "Your
+   opportunity to learn is here." above its intro) */
+body.long-page-detail-corp main .default-content-wrapper > p:has(> span[class*="headline-"]):has(+ p > span[class*="headline-"]) {
+  margin-bottom: 0;
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main .default-content-wrapper > p:has(> span[class*="headline-"]):not(:has(+ p > span[class*="headline-"])) {
     margin-bottom: var(--space-section-l);
@@ -238,6 +291,13 @@ body.long-page-detail-corp main .columns > div > div h1 {
   line-height: var(--heading-line-height-hero);
 }
 
+/* ---- a page title from a large headline with copy lines below it (courses "Events" →
+   "Your opportunity to learn is here."): the copy follows right under the title, as the
+   lines of one source headline ---- */
+body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[class*="headline-"]) {
+  margin-bottom: 0;
+}
+
 /* ---- copy sizes of the source (relative to its 14px copy): bracket size tags on part of
    the text, `[[text-1-5]…]` 21px, `[[text-1-75]…]` 24.5px, `[[text-2]…]` 28px,
    `[[text-2-5]…]` 35px (e.g. jr45 faculty names, "Program objectives"), and the section
@@ -246,7 +306,8 @@ body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
   --long-page-detail-corp-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
   --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
-  --long-page-detail-corp-download-cover: 184px; /* a download cover outside the VLC column */
+  --long-page-detail-corp-download-box: 240px; /* a download cover's box outside the VLC column */
+  --long-page-detail-corp-download-cover: 238px; /* the cover's maximum height there */
 }
 
 body.long-page-detail-corp main span.text-1-5 {
@@ -301,18 +362,14 @@ body.long-page-detail-corp main > .section.p-1-5 .columns .columns-img-col + p:h
    copy above it (30px + its 15px bottom margin; 35px below 600px, 50px right below the page
    title from 600px). Below it the source rule keeps 20px (50px
    from 600px), and the next component adds its own top spacing: a large headline box 20px
-   from 600px (`headline-box` below; plastic-surgery: 21 / 71px at 375 / 1440), a column row
-   20px (30px from 600px; jr45: 41 / 81px) ---- */
+   from 600px (`headline-box` below; plastic-surgery: 21 / 71px at 375 / 1440). A rule in an
+   empty column row has the row's spacing as well (`separator-row` below) ---- */
 body.long-page-detail-corp main > .section.separator {
   margin-top: var(--space-block-l);
 }
 
 body.long-page-detail-corp main > .section.separator > div:first-child {
   padding-top: var(--space-block-l);
-}
-
-body.long-page-detail-corp main > .section.separator > .columns-wrapper:first-child > .columns {
-  margin-top: var(--space-block-l);
 }
 
 @media (width >= 600px) {
@@ -328,15 +385,31 @@ body.long-page-detail-corp main > .section.separator > .columns-wrapper:first-ch
   body.long-page-detail-corp main > .section.separator > div:first-child {
     padding-top: var(--space-section-l);
   }
+}
 
-  body.long-page-detail-corp main > .section.separator > .columns-wrapper:first-child > .columns {
-    margin-top: var(--space-section);
+/* a `spacer` after the content of a source one-column row: the row's 20px (30px from
+   600px), nested rows adding up (webinars 70px from a button to the rule at 1440,
+   general-surgery 85px from its downloads); a rule right after it adds no gap of its own
+   (on the source it follows the row directly) */
+body.long-page-detail-corp main > .section.spacer:not(.separator) {
+  height: var(--space-block-l);
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.spacer:not(.separator) {
+    height: var(--space-section);
   }
 }
 
-/* a separator right after downloads: the 55px are its top margin (margins collapse there) */
+body.long-page-detail-corp main > .section.spacer + .section.separator {
+  margin-top: 0;
+}
+
+/* a separator right after downloads: 55px from the last titles, as on the source (its top
+   margin + the titles' own 15px; arthroscopy, plastic-surgery at 375 / 1440) */
 body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-wrapper:nth-last-child(1 of :not(:empty)) .cards-corp.resources) + .section.separator {
-  margin-top: calc(var(--space-section-l) + var(--space-block-xs));
+  margin-top: calc(var(--space-section-l) - var(--space-block-s));
 }
 
 /* a `headline-box` right below the rule: the box's 20px top on the rule's 50px (from 600px) */
@@ -346,7 +419,66 @@ body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-
   }
 }
 
-/* ---- section style `image-1-4`: a video or image the source sets in a quarter column
+/* a rule at the end of the page, nothing after it (`separator, spacer`, Mako thank-you
+   page): as on the source 35px below the text and 77px above the footer, 45px / 126px from
+   600px (the source's empty large headlines around the rule) */
+body.long-page-detail-corp main > .section.separator.spacer {
+  height: calc(2 * var(--space-section));
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.separator.spacer {
+    height: calc(var(--space-section-xl) + var(--space-block-l));
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+}
+
+/* consecutive `headline-box` sections are one source box whose lines are centred only in
+   part (biologics "Coming soon!" centred above its left-aligned intro; not a box below a
+   rule): no gap between them (the source's blank line between them is a line break) */
+body.long-page-detail-corp main > .section.headline-box:has(+ .section.headline-box:not(.separator)) {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main > .section.headline-box:has(+ .section.headline-box:not(.separator)) > .default-content-wrapper > p:last-child {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main > .section.headline-box + .section.headline-box:not(.separator) > .default-content-wrapper {
+  padding-top: 0;
+}
+
+/* `separator-row`: a rule the source sets in an otherwise empty column row (endoscopy
+   courses, jr45, room-design): the row's 20px (30px from 600px) below the rule as well,
+   whatever follows (1440: 80px from the rule to the next row, 50px for a rule on its own) */
+body.long-page-detail-corp main > .section.separator.separator-row > div:first-child {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.separator.separator-row > div:first-child {
+    margin-top: var(--space-section);
+  }
+}
+
+/* ---- section style `h4-2-5`: a page title the source sets as a Heading 4 enlarged 2.5x
+   (Mako thank-you page: Futura bold at every width, 35px, 43.75px from 600px, lines
+   1.06) ---- */
+body.long-page-detail-corp main > .section.h4-2-5 > .default-content-wrapper h1 {
+  font-family: var(--display-font-family);
+  font-size: calc(2.5 * var(--body-font-size-m));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.h4-2-5 > .default-content-wrapper h1 {
+    font-size: calc(2.5 * var(--heading-font-size-m));
+  }
+}
+
+/* ---- section style `image-1-4`:a video or image the source sets in a quarter column
    (col-sm-6 col-md-3, the other columns empty): half the container from 600px, a quarter
    from 900px (source 1024px), at the start of the section; the source column has no
    padding (353px at 1440px) ---- */
@@ -365,11 +497,10 @@ body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-
   }
 }
 
-/* ---- a button or bold underlined link in a Columns cell of a serif / larger-copy section
-   keeps the corp face (Futura 14px, uppercase; columns-corp gives serif section links the
-   copy font), as the source teal button (room-design "Learn more") and action links
-   (rep-portal "Demo software") ---- */
-body.long-page-detail-corp main > .section .columns :is(a.button, a.link-strong):any-link {
+/* ---- a button in a Columns cell of a serif / larger-copy section keeps the corp button
+   face (Futura 14px, uppercase; columns-corp gives serif section links the copy font), as
+   the source teal button (room-design "Learn more") ---- */
+body.long-page-detail-corp main > .section .columns a.button:any-link {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
 }
@@ -443,6 +574,13 @@ body.long-page-detail-corp main span.headline-9 {
 body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-9) {
   font-size: calc(var(--long-page-detail-corp-headline-size) * var(--long-page-detail-corp-headline-unit));
   line-height: var(--heading-line-height-hero);
+}
+
+/* a line without `serif` is all Futura bold: its sized span in Futura too, so the line has
+   one font as on the source (which sizes the Futura span itself; "Coming soon!" 95px high
+   at 1440, not 116) */
+body.long-page-detail-corp main span[class*="headline-"]:not(.serif) {
+  font-family: var(--display-font-family);
 }
 
 body.long-page-detail-corp main span.serif {

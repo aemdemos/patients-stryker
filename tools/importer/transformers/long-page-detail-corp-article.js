@@ -471,6 +471,9 @@ const HEADING_SIZES = [
   ['H2', 'fontsize-8em', 'h2-0-8'],
   ['H2', 'fontsize-1-5em', 'h2-1-5'],
   ['H1', 'fontsize-1-25em', 'h1-1-25'],
+  // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+  // long-page-detail-corp-sections.js → titleFromHeading)
+  ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
 ];
 
 function smallHeadings(root) {
@@ -693,6 +696,12 @@ function buttonNodes(component, doc) {
   });
 }
 
+/** A large-headline line the source centres (an inline text-align: center on it). */
+function centredLine(el) {
+  return /text-align:\s*center/.test(el.getAttribute('style') || '')
+    || !!el.querySelector('[style*="text-align: center"], [style*="text-align:center"]');
+}
+
 /**
  * The bracket tag of a large-headline line, as the source sets it: `headline-N` for its
  * size (span.fontsize-4vw → headline-4, span.fontsize-3-5-vw → headline-3-5; N% of the
@@ -716,6 +725,19 @@ function headlineTag(el) {
 }
 
 /**
+ * A blank line at the end of a headline paragraph (before the closing `]` of its bracket
+ * tag): two line breaks, or one when the line already ends with a break.
+ */
+function blankLineAfter(p, doc) {
+  const end = p.lastChild && p.lastChild.nodeType === 3 && p.lastChild.textContent === ']'
+    ? p.lastChild : null;
+  let last = end ? end.previousSibling : p.lastChild;
+  while (last && last.nodeType === 3 && !last.textContent.trim()) last = last.previousSibling;
+  const count = last && last.nodeName === 'BR' ? 1 : 2;
+  for (let n = 0; n < count; n += 1) p.insertBefore(doc.createElement('br'), end);
+}
+
+/**
  * A large headline outside the slide: each non-empty line as a paragraph, in a bracket
  * tag with the line's size and font (headlineTag). A heading or paragraph in a line is a
  * line of its own (e.g. rep-portal "Blueprint Digital Platform" H1 + "Rep portal" H2, both
@@ -733,28 +755,80 @@ function headlineNodes(component, doc) {
     return blocks.length > 1 ? blocks : [line];
   });
   const tags = segments.map(headlineTag);
+  const centredSegments = segments.map((segment) => segment !== box && centredLine(segment));
   // a heading other than h1 in the line (rep-portal "Rep portal" h2): marked, so a page
   // title keeps it as a heading of its own
   const levels = segments.map((segment) => (/^H[2-6]$/.test(segment.tagName) ? segment.tagName.toLowerCase() : ''));
+  // a line that is copy (a paragraph in the headline, e.g. courses "Your opportunity to learn
+  // is here." under "Events"): not part of a page title
+  const copy = segments.map((segment) => segment.tagName === 'P' || !!segment.querySelector('p'));
   const parts = segments.map((segment) => (segment === box ? box : rename(segment, 'div')));
   // blocks inside a line (a div or paragraph, e.g. "Together with our customers…") become
   // its text, a line break between them: the bracket tag must wrap the whole line
+  // (no break when the block before already ends with one, e.g. courses "Your opportunity
+  // to learn is here.<br>")
+  const endsWithBreak = (node) => {
+    let last = node;
+    while (last && last.nodeType === 1 && last.nodeName !== 'BR') {
+      let child = last.lastChild;
+      while (child && child.nodeType === 3 && !child.textContent.trim()) {
+        child = child.previousSibling;
+      }
+      last = child;
+    }
+    return !!last && last.nodeName === 'BR';
+  };
   parts.forEach((part) => part.querySelectorAll(`${BLOCKS}, div`).forEach((block) => {
     let prev = block.previousSibling;
     while (prev && prev.nodeType === 3 && !prev.textContent.trim()) prev = prev.previousSibling;
-    if (prev && prev.nodeName !== 'BR' && text(block)) block.before(doc.createElement('br'));
+    const needsBreak = prev && !endsWithBreak(prev) && text(block);
+    if (needsBreak) block.before(doc.createElement('br'));
     unwrap(block);
   }));
+  // a line that opens with a blank line (a line break or an empty paragraph before its text:
+  // courses "Every day…", biologics "We are excited…"), and the size the source sets the
+  // blank line in (the fontsize-Nvw span around the break; '' for none): cleaning drops it
+  const sizeOf = (tag) => (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tag || '') || [])[1] || '';
+  const leadingBlank = parts.map((part) => {
+    if (part === box) return null;
+    const walker = doc.createTreeWalker(part, 5); // NodeFilter.SHOW_ELEMENT | SHOW_TEXT
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (n.nodeName === 'BR') {
+        const sized = n.parentElement.closest('[class*="fontsize-"]');
+        return sized && part.contains(sized)
+          ? (/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(sized.className) || [])[1] || '' : '';
+      }
+      if (n.nodeType === 3 ? text(n) : n.matches('img, picture')) return null;
+    }
+    return null;
+  });
   cleanRichText(box);
+  let previous = null;
+  let previousIndex = -1;
   return parts.map((part, i) => {
     if (!text(part)) return null;
     const p = doc.createElement('p');
     while (part.firstChild) p.append(part.firstChild);
+    while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !text(p.firstChild)))) {
+      p.firstChild.remove();
+    }
+    // the blank line at the size it is set in: the end of the line before when that line has
+    // the size and the same alignment (courses: a 2vw break below the 2vw line), else the
+    // start of this line (biologics: an empty 1.5vw paragraph above the 1.5vw intro)
+    const blank = leadingBlank[i] !== null && previous;
+    const onPrevious = blank && leadingBlank[i] === sizeOf(tags[previousIndex])
+      && centredSegments[previousIndex] === centredSegments[i];
+    if (blank && !onPrevious) p.prepend(doc.createElement('br'));
     if (tags[i]) {
       p.prepend(doc.createTextNode(`[[${tags[i]}]`));
       p.append(doc.createTextNode(']'));
     }
     if (levels[i]) p.headingLevel = levels[i];
+    if (copy[i]) p.copyLine = true;
+    if (centredSegments[i]) p.centredLine = true;
+    if (onPrevious) blankLineAfter(previous, doc);
+    previous = p;
+    previousIndex = i;
     return p;
   }).filter(Boolean);
 }
@@ -762,6 +836,21 @@ function headlineNodes(component, doc) {
 /** A Large Headline in a white box (`.largeheadline.has-background.bg-white`). */
 function whiteBox(headline) {
   return !!headline.querySelector('.has-background.bg-white');
+}
+
+/**
+ * A Large Headline whose every line the source centres (an inline text-align: center on
+ * the line, e.g. the endoscopy "Together with our customers…").
+ */
+function centredHeadline(headline) {
+  const lines = [...headline.querySelectorAll('.line')].filter((line) => text(line));
+  return lines.length > 0 && lines.every(centredLine);
+}
+
+/** The section styles of a Large Headline: `headline-box` (white box), `center` (centred). */
+function headlineStyles(headline) {
+  return [whiteBox(headline) ? 'headline-box' : '', centredHeadline(headline) ? 'center' : '']
+    .filter(Boolean).join(', ');
 }
 
 /**
@@ -1032,7 +1121,7 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   // the section of the last `data-keep="section"` element (`data-keep="join"` joins it)
   let lastKept = null;
   const startSection = (kind, sectionStyle) => {
-    const style = [separatorNext ? 'separator' : '', sectionStyle, extraStyle]
+    const style = [separatorNext || '', sectionStyle, extraStyle]
       .filter(Boolean).join(', ') || undefined;
     separatorNext = false;
     current = {
@@ -1106,8 +1195,17 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
+  // the end of a source column row after the last component (data-row-end, set by
+  // long-page-detail-corp-sections.js): a `spacer` section per row level, before the next
+  const rowSpacers = (count) => {
+    for (let n = 0; n < count; n += 1) sections.push({ kind: 'spacer', style: 'spacer', nodes: [] });
+    if (count) current = null;
+  };
+  let rowEnds = 0;
   components.forEach((component) => {
     if (consumed.has(component)) return;
+    rowSpacers(rowEnds);
+    rowEnds = Number(component.getAttribute('data-row-end') || 0);
     const isFirst = current === title;
     if (componentStyle) {
       extraStyle = componentStyle(component) || '';
@@ -1165,7 +1263,11 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       // a horizontal rule between parts of the article (e.g. before "About AVS"): the
       // next section starts with it — `separator` section style (1px grey rule on top).
       // (A section holding only the rule would be dropped by the importer.)
-      separatorNext = true;
+      // A rule the source sets in an otherwise empty column row has the row's spacing below
+      // it as well: `separator-row` (40 separators, e.g. endoscopy courses)
+      const row = component.closest('.colctrl');
+      const inRow = row && !text(row) && !row.querySelector('img, [data-asset-path], iframe, form, table');
+      separatorNext = inRow ? 'separator, separator-row' : 'separator';
       current = null;
       return;
     }
@@ -1224,14 +1326,20 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     // opens the page, otherwise in a section of its own
     if (component.matches('.c-largeheadline[data-page-title]')) {
       const lines = headlineNodes(component, doc);
-      const titleLines = lines.filter((line) => !line.headingLevel);
+      // the title: the lines up to the first copy line; a heading of another level in the
+      // headline follows the H1 as that heading, the copy lines as paragraphs
+      const firstCopy = lines.findIndex((line) => line.copyLine);
+      const head = firstCopy < 0 ? lines : lines.slice(0, firstCopy);
+      const titleLines = head.filter((line) => !line.headingLevel);
       if (titleLines.length) {
-        // a heading of another level in the headline follows the H1 as that heading
-        const others = lines.filter((line) => line.headingLevel)
-          .map((line) => rename(line, line.headingLevel));
-        const boxed = whiteBox(component);
-        const section = isFirst ? title : startSection('headline', boxed ? 'headline-box' : undefined);
-        if (isFirst && boxed) title.style = [title.style, 'headline-box'].filter(Boolean).join(', ');
+        const others = [
+          ...head.filter((line) => line.headingLevel)
+            .map((line) => rename(line, line.headingLevel)),
+          ...(firstCopy < 0 ? [] : lines.slice(firstCopy)),
+        ];
+        const styles = headlineStyles(component);
+        const section = isFirst ? title : startSection('headline', styles || undefined);
+        if (isFirst && styles) title.style = [title.style, styles].filter(Boolean).join(', ');
         section.nodes.push(titleHeading(titleLines, doc), ...others);
         current = null;
         return;
@@ -1262,11 +1370,29 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       }
     }
     // a large headline in a white box (stryker.com .largeheadline.has-background.bg-white,
-    // its text 20px in): a section of its own with the `headline-box` style (template CSS)
-    if (component.matches('.c-largeheadline') && whiteBox(component)) {
+    // its text 20px in) and / or centred: a section of its own with the `headline-box` /
+    // `center` styles
+    // a headline whose lines are centred only in part (the VLC landing pages' "Coming soon!"
+    // above a left-aligned intro): a section per run of lines, `center` on the centred runs
+    // (template CSS joins consecutive boxes)
+    const partlyCentred = component.matches('.c-largeheadline')
+      && [...component.querySelectorAll('.line')].some((line) => text(line) && centredLine(line));
+    if (component.matches('.c-largeheadline') && (headlineStyles(component) || partlyCentred)) {
       const nodes = headlineNodes(component, doc);
       if (!nodes.length) return;
-      startSection('headline', 'headline-box').nodes.push(...nodes);
+      const box = whiteBox(component) ? 'headline-box' : '';
+      const runs = [];
+      nodes.forEach((node) => {
+        const centred = !!node.centredLine;
+        if (!runs.length || runs[runs.length - 1].centred !== centred) {
+          runs.push({ centred, nodes: [] });
+        }
+        runs[runs.length - 1].nodes.push(node);
+      });
+      runs.forEach((run) => {
+        const style = [box, run.centred ? 'center' : ''].filter(Boolean).join(', ');
+        startSection('headline', style || undefined).nodes.push(...run.nodes);
+      });
       current = null;
       return;
     }
@@ -1346,7 +1472,13 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   // "N: " entries 15px apart, then the document code)
   // references authored as "1: …" paragraphs keep that look: `references-spaced`
   const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
+  rowSpacers(rowEnds);
   if (disclaimerNodes.length) startSection('disclaimer', disclaimerStyle).nodes.push(...disclaimerNodes);
+  // a rule at the end of the page, nothing after it (Mako thank-you page, above the footer):
+  // a `spacer` section with the rule (its spacing: template CSS)
+  if (separatorNext) {
+    sections.push({ kind: 'spacer', style: `${separatorNext}, spacer`, nodes: [] });
+  }
 
   // the title section (when it holds the H1) is followed by a `spacer` section: the
   // article starts 46px below the date on the source (30px spacer + the 15px title gap) —

@@ -395,7 +395,10 @@ var CustomImportScript = (() => {
   var HEADING_SIZES = [
     ["H2", "fontsize-8em", "h2-0-8"],
     ["H2", "fontsize-1-5em", "h2-1-5"],
-    ["H1", "fontsize-1-25em", "h1-1-25"]
+    ["H1", "fontsize-1-25em", "h1-1-25"],
+    // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+    // long-page-detail-corp-sections.js → titleFromHeading)
+    ["H1", "fontsize-h4-2-5", "h4-2-5"]
   ];
   function smallHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
@@ -575,12 +578,22 @@ var CustomImportScript = (() => {
       return p;
     });
   }
+  function centredLine(el) {
+    return /text-align:\s*center/.test(el.getAttribute("style") || "") || !!el.querySelector('[style*="text-align: center"], [style*="text-align:center"]');
+  }
   function headlineTag(el) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1]).map(([n]) => n)[0];
     const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
     const serif = squash(bold) !== squash(el.textContent);
     return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
+  }
+  function blankLineAfter(p, doc) {
+    const end = p.lastChild && p.lastChild.nodeType === 3 && p.lastChild.textContent === "]" ? p.lastChild : null;
+    let last = end ? end.previousSibling : p.lastChild;
+    while (last && last.nodeType === 3 && !last.textContent.trim()) last = last.previousSibling;
+    const count = last && last.nodeName === "BR" ? 1 : 2;
+    for (let n = 0; n < count; n += 1) p.insertBefore(doc.createElement("br"), end);
   }
   function headlineNodes(component, doc) {
     const box = doc.createElement("div");
@@ -592,29 +605,76 @@ var CustomImportScript = (() => {
       return blocks.length > 1 ? blocks : [line];
     });
     const tags = segments.map(headlineTag);
+    const centredSegments = segments.map((segment) => segment !== box && centredLine(segment));
     const levels = segments.map((segment) => /^H[2-6]$/.test(segment.tagName) ? segment.tagName.toLowerCase() : "");
+    const copy = segments.map((segment) => segment.tagName === "P" || !!segment.querySelector("p"));
     const parts = segments.map((segment) => segment === box ? box : rename(segment, "div"));
+    const endsWithBreak = (node) => {
+      let last = node;
+      while (last && last.nodeType === 1 && last.nodeName !== "BR") {
+        let child = last.lastChild;
+        while (child && child.nodeType === 3 && !child.textContent.trim()) {
+          child = child.previousSibling;
+        }
+        last = child;
+      }
+      return !!last && last.nodeName === "BR";
+    };
     parts.forEach((part) => part.querySelectorAll(`${BLOCKS}, div`).forEach((block) => {
       let prev = block.previousSibling;
       while (prev && prev.nodeType === 3 && !prev.textContent.trim()) prev = prev.previousSibling;
-      if (prev && prev.nodeName !== "BR" && text2(block)) block.before(doc.createElement("br"));
+      const needsBreak = prev && !endsWithBreak(prev) && text2(block);
+      if (needsBreak) block.before(doc.createElement("br"));
       unwrap(block);
     }));
+    const sizeOf = (tag) => (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tag || "") || [])[1] || "";
+    const leadingBlank = parts.map((part) => {
+      if (part === box) return null;
+      const walker = doc.createTreeWalker(part, 5);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (n.nodeName === "BR") {
+          const sized = n.parentElement.closest('[class*="fontsize-"]');
+          return sized && part.contains(sized) ? (/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(sized.className) || [])[1] || "" : "";
+        }
+        if (n.nodeType === 3 ? text2(n) : n.matches("img, picture")) return null;
+      }
+      return null;
+    });
     cleanRichText(box);
+    let previous = null;
+    let previousIndex = -1;
     return parts.map((part, i) => {
       if (!text2(part)) return null;
       const p = doc.createElement("p");
       while (part.firstChild) p.append(part.firstChild);
+      while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !text2(p.firstChild))) {
+        p.firstChild.remove();
+      }
+      const blank = leadingBlank[i] !== null && previous;
+      const onPrevious = blank && leadingBlank[i] === sizeOf(tags[previousIndex]) && centredSegments[previousIndex] === centredSegments[i];
+      if (blank && !onPrevious) p.prepend(doc.createElement("br"));
       if (tags[i]) {
         p.prepend(doc.createTextNode(`[[${tags[i]}]`));
         p.append(doc.createTextNode("]"));
       }
       if (levels[i]) p.headingLevel = levels[i];
+      if (copy[i]) p.copyLine = true;
+      if (centredSegments[i]) p.centredLine = true;
+      if (onPrevious) blankLineAfter(previous, doc);
+      previous = p;
+      previousIndex = i;
       return p;
     }).filter(Boolean);
   }
   function whiteBox(headline) {
     return !!headline.querySelector(".has-background.bg-white");
+  }
+  function centredHeadline(headline) {
+    const lines = [...headline.querySelectorAll(".line")].filter((line) => text2(line));
+    return lines.length > 0 && lines.every(centredLine);
+  }
+  function headlineStyles(headline) {
+    return [whiteBox(headline) ? "headline-box" : "", centredHeadline(headline) ? "center" : ""].filter(Boolean).join(", ");
   }
   function titleHeading(lines, doc) {
     const h1 = doc.createElement("h1");
@@ -803,7 +863,7 @@ var CustomImportScript = (() => {
     let extraStyle = "";
     let lastKept = null;
     const startSection = (kind, sectionStyle) => {
-      const style = [separatorNext ? "separator" : "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
+      const style = [separatorNext || "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
       separatorNext = false;
       current = {
         kind,
@@ -860,8 +920,15 @@ var CustomImportScript = (() => {
       return true;
     };
     let leadBelowDate = false;
+    const rowSpacers = (count) => {
+      for (let n = 0; n < count; n += 1) sections.push({ kind: "spacer", style: "spacer", nodes: [] });
+      if (count) current = null;
+    };
+    let rowEnds = 0;
     components.forEach((component) => {
       if (consumed.has(component)) return;
+      rowSpacers(rowEnds);
+      rowEnds = Number(component.getAttribute("data-row-end") || 0);
       const isFirst = current === title;
       if (componentStyle) {
         extraStyle = componentStyle(component) || "";
@@ -909,7 +976,9 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-section-separator, .sectionseparator")) {
-        separatorNext = true;
+        const row = component.closest(".colctrl");
+        const inRow = row && !text2(row) && !row.querySelector("img, [data-asset-path], iframe, form, table");
+        separatorNext = inRow ? "separator, separator-row" : "separator";
         current = null;
         return;
       }
@@ -958,12 +1027,17 @@ var CustomImportScript = (() => {
       }
       if (component.matches(".c-largeheadline[data-page-title]")) {
         const lines = headlineNodes(component, doc);
-        const titleLines = lines.filter((line) => !line.headingLevel);
+        const firstCopy = lines.findIndex((line) => line.copyLine);
+        const head = firstCopy < 0 ? lines : lines.slice(0, firstCopy);
+        const titleLines = head.filter((line) => !line.headingLevel);
         if (titleLines.length) {
-          const others = lines.filter((line) => line.headingLevel).map((line) => rename(line, line.headingLevel));
-          const boxed = whiteBox(component);
-          const section = isFirst ? title : startSection("headline", boxed ? "headline-box" : void 0);
-          if (isFirst && boxed) title.style = [title.style, "headline-box"].filter(Boolean).join(", ");
+          const others = [
+            ...head.filter((line) => line.headingLevel).map((line) => rename(line, line.headingLevel)),
+            ...firstCopy < 0 ? [] : lines.slice(firstCopy)
+          ];
+          const styles = headlineStyles(component);
+          const section = isFirst ? title : startSection("headline", styles || void 0);
+          if (isFirst && styles) title.style = [title.style, styles].filter(Boolean).join(", ");
           section.nodes.push(titleHeading(titleLines, doc), ...others);
           current = null;
           return;
@@ -986,10 +1060,23 @@ var CustomImportScript = (() => {
           current = null;
         }
       }
-      if (component.matches(".c-largeheadline") && whiteBox(component)) {
+      const partlyCentred = component.matches(".c-largeheadline") && [...component.querySelectorAll(".line")].some((line) => text2(line) && centredLine(line));
+      if (component.matches(".c-largeheadline") && (headlineStyles(component) || partlyCentred)) {
         const nodes2 = headlineNodes(component, doc);
         if (!nodes2.length) return;
-        startSection("headline", "headline-box").nodes.push(...nodes2);
+        const box = whiteBox(component) ? "headline-box" : "";
+        const runs = [];
+        nodes2.forEach((node) => {
+          const centred2 = !!node.centredLine;
+          if (!runs.length || runs[runs.length - 1].centred !== centred2) {
+            runs.push({ centred: centred2, nodes: [] });
+          }
+          runs[runs.length - 1].nodes.push(node);
+        });
+        runs.forEach((run) => {
+          const style = [box, run.centred ? "center" : ""].filter(Boolean).join(", ");
+          startSection("headline", style || void 0).nodes.push(...run.nodes);
+        });
         current = null;
         return;
       }
@@ -1048,7 +1135,11 @@ var CustomImportScript = (() => {
       return blockNodes(box, doc);
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
+    rowSpacers(rowEnds);
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
+    if (separatorNext) {
+      sections.push({ kind: "spacer", style: `${separatorNext}, spacer`, nodes: [] });
+    }
     const opensWithHeadline = sections.some((section) => section.kind === "headline");
     if (spacer && (title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
@@ -1281,6 +1372,32 @@ var CustomImportScript = (() => {
   function sharedFragmentPath(xf) {
     return XF_PAGES[xf] > 1 ? xfToFragmentPath(xf) : null;
   }
+  function keepHeadlineBlankLines(document) {
+    const blank = (node) => !(node.textContent || "").replace(/\u00a0/g, " ").trim() && !(node.nodeType === 1 && node.querySelector("img, picture, iframe"));
+    const textBeside = (node, dir) => {
+      for (let n = node[dir]; n; n = n[dir]) {
+        if (!blank(n)) return true;
+      }
+      return false;
+    };
+    document.querySelectorAll(".c-largeheadline .line p").forEach((p) => {
+      if (!blank(p) || !textBeside(p, "nextSibling")) return;
+      const breaks = textBeside(p, "previousSibling") ? 2 : 1;
+      p.replaceWith(...Array.from({ length: breaks }, () => document.createElement("br")));
+    });
+  }
+  function edsLinkPaths(main) {
+    main.querySelectorAll('a[href^="/"]').forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href.startsWith("//") || href.startsWith("/content/")) return;
+      const [, path, suffix = ""] = href.match(/^([^?#]*)([?#].*)?$/);
+      const slash = path.length > 1 && path.endsWith("/") ? "/" : "";
+      const bare = path.replace(/\/$/, "");
+      if (!bare) return;
+      const clean = WebImporter.FileUtils.sanitizePath(bare);
+      if (clean && clean !== bare) a.setAttribute("href", `${clean}${slash}${suffix}`);
+    });
+  }
   var CENTRED_COLUMN = ":is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1";
   function columnStyle(component) {
     return component.closest(CENTRED_COLUMN) ? "column-10-12" : "";
@@ -1436,12 +1553,27 @@ var CustomImportScript = (() => {
     ".buttonset",
     "table"
   ].join(", ");
+  function linkedImage(component) {
+    const img = component.querySelector("img");
+    const link = img && img.closest("a[href]");
+    return link && component.contains(link) ? link : null;
+  }
   function cellNodes(col, doc) {
     const out = [];
     [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS)).forEach((c) => {
       if (c.matches(".c-rich-text-editor")) out.push(...richTextNodes(c, doc).nodes);
-      else if (c.matches(".c-standalone-image")) out.push(...imageNodes(c, doc));
-      else if (c.matches(".c-standalone-video")) {
+      else if (c.matches(".c-standalone-image")) {
+        out.push(...imageNodes(c, doc));
+        const link = linkedImage(c);
+        if (link) {
+          const a = doc.createElement("a");
+          a.setAttribute("href", newTabHref(link, absoluteAsset(link.getAttribute("href"))));
+          a.textContent = link.querySelector("img").getAttribute("alt") || text3(link) || a.getAttribute("href");
+          const p = doc.createElement("p");
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches(".c-standalone-video")) {
         const a = videoLink(c, doc);
         if (a) {
           const p = doc.createElement("p");
@@ -1457,6 +1589,13 @@ var CustomImportScript = (() => {
       else out.push(c);
     });
     return out;
+  }
+  function centredColumn(col) {
+    const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+    const images = [...col.querySelectorAll(".c-standalone-image img")];
+    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)")].filter((el) => text3(el));
+    const items = [...images, ...paragraphs];
+    return items.length > 0 && items.every(centred);
   }
   function sizeTag(copyStyle) {
     const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
@@ -1484,14 +1623,29 @@ var CustomImportScript = (() => {
     const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
     return m ? Number(m[1]) : 12;
   }
+  function markRowEnds(main) {
+    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const hasContent = (el) => text3(el) || el.querySelector("img, iframe, [data-asset-path]");
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const row = colctrl.querySelector(":scope > .row");
+      const all = row ? [...row.children] : [];
+      const cols = all.filter(hasContent);
+      if (cols.length !== 1 || all.length > 2) return;
+      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT}`)].filter((el) => {
+        const outer = el.parentElement.closest(`.colctrl, ${COMPONENT}`);
+        return (!outer || outer === colctrl) && (text3(el) || el.querySelector("img, iframe, [data-asset-path]"));
+      });
+      const last = units[units.length - 1];
+      if (!last) return;
+      const unit = last.matches(".colctrl") && last.parentElement && /\bcols/.test(last.parentElement.className) ? last.parentElement : last;
+      unit.setAttribute("data-row-end", String(Number(unit.getAttribute("data-row-end") || 0) + 1));
+    });
+  }
   function columnRows(main, doc) {
     [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
       const all = rowColumns(colctrl);
-      let columns = all.filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
-      const media = (col) => col.querySelector("img, [data-asset-path], iframe");
-      if (columns.length === 1 && all.length >= 3 && media(columns[0]) && text3(columns[0]) && new Set(all.map(columnWidth)).size === 1) {
-        columns = all;
-      }
+      const filled = all.filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
+      const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
       if (columns.length < 2) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
       const form = marketoBlock(colctrl, doc);
@@ -1503,15 +1657,18 @@ var CustomImportScript = (() => {
         return;
       }
       const key = columns.map(columnWidth).join(",");
-      const variant = COLUMN_VARIANTS[key];
+      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
+      const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : ""].filter(Boolean).join(", ");
+      const centred = filled.every(centredColumn);
       const cells = columns.map((col) => cellNodes(col, doc));
-      const style = rowCopyStyle(cells, doc);
+      const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
       const block = WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
       });
       block.setAttribute("data-keep", "section");
       if (style) block.setAttribute("data-section-style", style);
+      if (wrapper.hasAttribute("data-row-end")) block.setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
       wrapper.replaceWith(block);
     });
     [...main.querySelectorAll(".c-marketo-form")].forEach((component) => {
@@ -1561,14 +1718,16 @@ var CustomImportScript = (() => {
     const h1 = renameTo(heading, "h1", doc);
     const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text3(span) === text3(h1));
     const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    const h4Enlarged = level === "H4" && size === "2-5";
     if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith("fontsize-"))));
+    if (h4Enlarged) spans[0].classList.add("fontsize-h4-2-5");
     if (/^H[4-6]$/.test(level) && !h1.querySelector(".futura-bold, b, strong")) {
       const bold = doc.createElement("span");
       bold.className = "futura-bold";
       bold.append(...h1.childNodes);
       h1.append(bold);
     }
-    if (size) sizeTagged(h1, `text-${size}`, doc);
+    if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
     return h1;
   }
   function dropDamVideos(main) {
@@ -1617,7 +1776,17 @@ var CustomImportScript = (() => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
       });
     }
+    markRowEnds(main);
     columnRows(main, doc);
+    main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
+      const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el) => !el.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text3(el) || el.querySelector("img, iframe, [data-asset-path]")));
+      const last = parts[parts.length - 1];
+      if (last) {
+        const count = Number(wrapper.getAttribute("data-row-end")) + Number(last.getAttribute("data-row-end") || 0);
+        last.setAttribute("data-row-end", String(count));
+      }
+      wrapper.removeAttribute("data-row-end");
+    });
     buildArticle(element, {
       keep: ".c-resourcesanddownload, [data-keep]",
       spacer: false,
@@ -1984,6 +2153,8 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   var import_long_page_detail_corp_fragments_default = {
+    // before the importer's own cleanup, which drops empty paragraphs
+    preprocess: ({ document }) => keepHeadlineBlankLines(document),
     transform: (payload) => {
       const { document, url, params } = payload;
       const main = document.body;
@@ -2007,6 +2178,7 @@ var CustomImportScript = (() => {
         });
         executeTransformers("afterTransform", main, payload);
       }
+      edsLinkPaths(main);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       return [{
         element: main,

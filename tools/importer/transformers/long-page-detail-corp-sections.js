@@ -34,7 +34,7 @@
  */
 
 import buildArticle, {
-  richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading,
+  richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
@@ -56,6 +56,52 @@ const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
  */
 export function sharedFragmentPath(xf) {
   return XF_PAGES[xf] > 1 ? xfToFragmentPath(xf) : null;
+}
+
+/**
+ * Run as the import's `preprocess`, before the importer drops empty paragraphs: an empty
+ * paragraph in a Large Headline line with text after it (biologics: an &nbsp; paragraph
+ * between "Coming soon!" and the intro) is a blank line on the source, so it becomes line
+ * breaks (headlineNodes keeps them).
+ * @param {Document} document
+ */
+export function keepHeadlineBlankLines(document) {
+  const blank = (node) => !(node.textContent || '').replace(/\u00a0/g, ' ').trim()
+    && !(node.nodeType === 1 && node.querySelector('img, picture, iframe'));
+  const textBeside = (node, dir) => {
+    for (let n = node[dir]; n; n = n[dir]) {
+      if (!blank(n)) return true;
+    }
+    return false;
+  };
+  document.querySelectorAll('.c-largeheadline .line p').forEach((p) => {
+    if (!blank(p) || !textBeside(p, 'nextSibling')) return;
+    // between two text paragraphs: the line break that ends the first one as well
+    const breaks = textBeside(p, 'previousSibling') ? 2 : 1;
+    p.replaceWith(...Array.from({ length: breaks }, () => document.createElement('br')));
+  });
+}
+
+/**
+ * Run after the shared cleanup's link rewrite (which drops `.html`): a link to a site page
+ * (root-relative, not an asset) points to the page's EDS document path, cleaned as the
+ * imported pages' paths are (WebImporter.FileUtils.sanitizePath, e.g.
+ * `/…/medical-and-surgical-equipment--/…` → `/…/medical-and-surgical-equipment/…`,
+ * `Medical_Education_Landing_Page` → `medical-education-landing-page`). Query, #hash and
+ * the trailing slash of an index page are kept. For this template only.
+ * @param {Element} main
+ */
+export function edsLinkPaths(main) {
+  main.querySelectorAll('a[href^="/"]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (href.startsWith('//') || href.startsWith('/content/')) return;
+    const [, path, suffix = ''] = href.match(/^([^?#]*)([?#].*)?$/);
+    const slash = path.length > 1 && path.endsWith('/') ? '/' : '';
+    const bare = path.replace(/\/$/, '');
+    if (!bare) return;
+    const clean = WebImporter.FileUtils.sanitizePath(bare);
+    if (clean && clean !== bare) a.setAttribute('href', `${clean}${slash}${suffix}`);
+  });
 }
 
 // the centred AEM grid column of the Virtual Learning Center video item
@@ -244,6 +290,13 @@ const CELL_COMPONENTS = [
   '.c-curatedcta', '.buttonset', 'table',
 ].join(', ');
 
+/** The link around a standalone image (a[href] > img), or null. */
+function linkedImage(component) {
+  const img = component.querySelector('img');
+  const link = img && img.closest('a[href]');
+  return link && component.contains(link) ? link : null;
+}
+
 /**
  * The content of one column of a source column row, cleaned as in the article builder.
  * The Large Headline marked `data-page-title` (the page's first, on a page without a
@@ -255,8 +308,21 @@ function cellNodes(col, doc) {
     .filter((c) => !c.parentElement.closest(CELL_COMPONENTS))
     .forEach((c) => {
       if (c.matches('.c-rich-text-editor')) out.push(...richTextNodes(c, doc).nodes);
-      else if (c.matches('.c-standalone-image')) out.push(...imageNodes(c, doc));
-      else if (c.matches('.c-standalone-video')) {
+      else if (c.matches('.c-standalone-image')) {
+        out.push(...imageNodes(c, doc));
+        // a linked image (the endoscopy resources specialty tiles): the link alone on the
+        // line after it makes the image clickable (`Columns (media-pair)`, columns.js), its
+        // text the image's alt text
+        const link = linkedImage(c);
+        if (link) {
+          const a = doc.createElement('a');
+          a.setAttribute('href', newTabHref(link, absoluteAsset(link.getAttribute('href'))));
+          a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
+          const p = doc.createElement('p');
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches('.c-standalone-video')) {
         const a = videoLink(c, doc);
         if (a) {
           const p = doc.createElement('p');
@@ -272,6 +338,19 @@ function cellNodes(col, doc) {
       else out.push(c);
     });
   return out;
+}
+
+/**
+ * A source column whose content is all centred (images in a .text-center box, paragraphs
+ * with text-align: center; e.g. the rep-portal icon + link cells): the row gets `center`.
+ */
+function centredColumn(col) {
+  const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+  const images = [...col.querySelectorAll('.c-standalone-image img')];
+  const paragraphs = [...col.querySelectorAll('.c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)')]
+    .filter((el) => text(el));
+  const items = [...images, ...paragraphs];
+  return items.length > 0 && items.every(centred);
 }
 
 /** The size tag of a copy style: 'p-1-25' → 'text-1-25', '' when it sets no size. */
@@ -312,6 +391,35 @@ function columnWidth(col) {
 }
 
 /**
+ * A source row whose content stays as it is (one column with content in a row of one or two
+ * columns: not a Columns block) adds its 20px (30px from 840px) below its content, also
+ * when nested in another row (webinars, the general-surgery downloads): its last content (a
+ * component, or an inner row) is marked `data-row-end` (one per row level); the article
+ * builder adds a `spacer` section after it (template CSS sets the row spacing). A row that
+ * becomes Columns has its spacing already (template CSS).
+ */
+function markRowEnds(main) {
+  const COMPONENT = '[class^="c-"], [class*=" c-"]';
+  const hasContent = (el) => text(el) || el.querySelector('img, iframe, [data-asset-path]');
+  main.querySelectorAll('.colctrl').forEach((colctrl) => {
+    const row = colctrl.querySelector(':scope > .row');
+    const all = row ? [...row.children] : [];
+    const cols = all.filter(hasContent);
+    if (cols.length !== 1 || all.length > 2) return;
+    // the last unit with content: an inner row (its .cols wrapper) or a top-level component
+    const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT}`)].filter((el) => {
+      const outer = el.parentElement.closest(`.colctrl, ${COMPONENT}`);
+      return (!outer || outer === colctrl) && (text(el) || el.querySelector('img, iframe, [data-asset-path]'));
+    });
+    const last = units[units.length - 1];
+    if (!last) return;
+    const unit = last.matches('.colctrl') && last.parentElement && /\bcols/.test(last.parentElement.className)
+      ? last.parentElement : last;
+    unit.setAttribute('data-row-end', String(Number(unit.getAttribute('data-row-end') || 0) + 1));
+  });
+}
+
+/**
  * Source column rows (.colctrl) with two or more columns that have content, innermost
  * first:
  *   - a row with a Marketo form: the `Marketo Form` block in a section of its own, a
@@ -321,16 +429,13 @@ function columnWidth(col) {
 function columnRows(main, doc) {
   [...main.querySelectorAll('.colctrl')].reverse().forEach((colctrl) => {
     const all = rowColumns(colctrl);
-    let columns = all
+    const filled = all
       .filter((col) => text(col) || col.querySelector('img, [data-asset-path], iframe, form, table'));
-    // one video or image item with its text in a row of 3+ equal columns (e.g. the 4th
-    // endoscopy video under a row of three): the whole row, the empty columns as empty
-    // cells, so the item keeps its one-third column as in the row above
-    const media = (col) => col.querySelector('img, [data-asset-path], iframe');
-    if (columns.length === 1 && all.length >= 3 && media(columns[0]) && text(columns[0])
-      && new Set(all.map(columnWidth)).size === 1) {
-      columns = all;
-    }
+    // a row of three or more columns whose content leaves some empty (e.g. the 4th endoscopy
+    // video under a row of three, the webinars text in a one-third column): the whole row,
+    // the empty columns as empty cells, so the content keeps its source column width (a
+    // two-column row with one empty column stays the content alone, e.g. a thank-you page)
+    const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
     if (columns.length < 2) return;
     const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className)
       ? colctrl.parentElement : colctrl;
@@ -343,15 +448,19 @@ function columnRows(main, doc) {
       return;
     }
     const key = columns.map(columnWidth).join(',');
-    const variant = COLUMN_VARIANTS[key];
+    // linked images (the endoscopy resources specialty tiles): `media-pair`
+    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : ''].filter(Boolean).join(', ');
+    const centred = filled.every(centredColumn);
     const cells = columns.map((col) => cellNodes(col, doc));
-    const style = rowCopyStyle(cells, doc);
+    const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
     const block = WebImporter.Blocks.createBlock(doc, {
       name: variant ? `Columns (${variant})` : 'Columns',
       cells: [cells],
     });
     block.setAttribute('data-keep', 'section');
     if (style) block.setAttribute('data-section-style', style);
+    if (wrapper.hasAttribute('data-row-end')) block.setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
     wrapper.replaceWith(block);
   });
   // a Marketo form outside a column row: a section of its own
@@ -424,14 +533,18 @@ function titleFromHeading(heading, doc) {
     .filter((span) => text(span) === text(h1));
   const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1])
     .find((n) => TITLE_SIZES.includes(n));
+  // a Heading 4 enlarged 2.5x keeps its size relative to the heading (43.75 / 35px): the
+  // `h4-2-5` section style (the builder's heading sizes), not a copy size tag
+  const h4Enlarged = level === 'H4' && size === '2-5';
   if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith('fontsize-'))));
+  if (h4Enlarged) spans[0].classList.add('fontsize-h4-2-5');
   if (/^H[4-6]$/.test(level) && !h1.querySelector('.futura-bold, b, strong')) {
     const bold = doc.createElement('span');
     bold.className = 'futura-bold';
     bold.append(...h1.childNodes);
     h1.append(bold);
   }
-  if (size) sizeTagged(h1, `text-${size}`, doc);
+  if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
   return h1;
 }
 
@@ -497,7 +610,20 @@ export default function transform(hookName, element, payload) {
       if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
     });
   }
+  markRowEnds(main);
   columnRows(main, doc);
+  // a marked inner row that stays as its content (not Columns): its last component ends it
+  main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
+    const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')]
+      .filter((el) => !el.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]')
+        && (text(el) || el.querySelector('img, iframe, [data-asset-path]')));
+    const last = parts[parts.length - 1];
+    if (last) {
+      const count = Number(wrapper.getAttribute('data-row-end')) + Number(last.getAttribute('data-row-end') || 0);
+      last.setAttribute('data-row-end', String(count));
+    }
+    wrapper.removeAttribute('data-row-end');
+  });
   buildArticle(element, {
     keep: '.c-resourcesanddownload, [data-keep]',
     spacer: false,

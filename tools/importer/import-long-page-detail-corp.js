@@ -9,7 +9,9 @@ import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
-import longPageDetailSectionsTransformer from './transformers/long-page-detail-corp-sections.js';
+import longPageDetailSectionsTransformer, {
+  keepHeadlineBlankLines, edsLinkPaths,
+} from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
@@ -85,6 +87,9 @@ function publishedDate(document) {
 }
 
 export default {
+  // before the importer's own cleanup, which drops empty paragraphs
+  preprocess: ({ document }) => keepHeadlineBlankLines(document),
+
   transform: (payload) => {
     const { document, url, params } = payload;
     const main = document.body;
@@ -111,6 +116,8 @@ export default {
 
     // 3. afterTransform: links, DM images, final cleanup
     executeTransformers('afterTransform', main, payload);
+    // links to site pages: their EDS paths (after the cleanup's .html rewrite)
+    edsLinkPaths(main);
 
     // 4. metadata. `site: corp` and the " | Stryker" title suffix come from the corp bulk
     // metadata; site + template are repeated on the page so it renders the same anywhere.
