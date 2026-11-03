@@ -321,6 +321,20 @@ body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapp
   background-color: var(--color-surface);
 }
 
+/* phones and tablets (box stacked under the video cell): as on the source, the box sits
+   15px below the button above it, and its text keeps the source phone scale — 3vw (its
+   .fontsize-1-5vw doubles below the source 840px tablet breakpoint; kept here up to 900px
+   so 600-899px tablets match the source there) with lines at least 25px apart (the source
+   text is a span inside a 14px/20px paragraph, whose line box sets that floor). Like the
+   source, this scale is neither capped nor floored, so the box wraps the same way */
+body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
+  --columns-corp-gray-lead-line-min: 25px;
+
+  margin-top: var(--space-block);
+  font-size: 3vw;
+  line-height: max(var(--columns-corp-gray-lead-line-min), calc(var(--heading-line-height-hero) * 1em));
+}
+
 /* link groups (related-links): body copy in the corp body font, and the underlined
    chevron links (patients related-links CTA) at the corp 14px, one paragraph apart */
 body.corp .columns.related-links :is(p, ul, li) {
@@ -574,6 +588,13 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+
+  /* gray-lead beside the video (desktop): level with the video, the desktop text scale */
+  body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) > p:first-child {
+    margin-top: 0;
+    font-size: var(--columns-corp-lh-text-size);
+    line-height: var(--heading-line-height-hero);
   }
 }
 
