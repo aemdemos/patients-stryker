@@ -1702,8 +1702,9 @@ var CustomImportScript = (() => {
       nodes.forEach((node, i) => {
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
-        const styles = [centred ? "center" : "", ...extra].filter(Boolean);
-        const kind = [centred ? "center" : "body", ...extra].join(" ");
+        const nodeCentred = centred && !(node.tagName === "H1" && !hasTitle);
+        const styles = [nodeCentred ? "center" : "", ...extra].filter(Boolean);
+        const kind = [nodeCentred ? "center" : "body", ...extra].join(" ");
         const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
         if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
           if (node.followsText && current && i > 0) {
@@ -1746,9 +1747,10 @@ var CustomImportScript = (() => {
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
-    const opensWithHeadline = sections.some((section) => section.kind === "headline");
-    if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
-      sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
+    const titleHasH1 = title.nodes.some((node) => node.tagName === "H1");
+    const headlineSection = !titleHasH1 && sections.find((section) => section.kind === "headline");
+    if ((titleHasH1 || headlineSection) && !leadBelowDate) {
+      sections.splice(sections.indexOf(headlineSection || title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
     const opening = sections.find((section) => section.nodes.length);
     if (element.hasAttribute("data-first-published") && !title.nodes.length && opening && opening.nodes[0].tagName === "H1") {

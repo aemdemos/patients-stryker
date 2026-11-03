@@ -54,7 +54,10 @@ function decorateFirstPublished(doc) {
   h5.className = 'first-published';
   h5.textContent = value;
 
-  const first = main.querySelector(':scope > .section');
+  // the first section with content: a spacer authored above an article headline H1 (older
+  // imports) does not count, so the date still goes below that H1
+  const first = [...main.querySelectorAll(':scope > .section')]
+    .find((section) => !section.classList.contains('spacer') && section.children.length);
   const content = first?.querySelector(':scope > .default-content-wrapper');
   const lead = content?.firstElementChild;
   if (lead?.tagName === 'H1') {
