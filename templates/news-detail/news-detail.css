@@ -159,6 +159,12 @@ body.news-detail main a:any-link {
 }
 
 @media (width >= 600px) {
+  /* the article column: two-thirds of the container, centred, from the source's 841px
+     (col-sm-8) — 600px here */
+  body.news-detail main > .section:not(.hero-container) > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+  }
+
   body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
     font-family: var(--display-font-family);
     font-weight: var(--font-weight-bold);
@@ -190,10 +196,6 @@ body.news-detail main a:any-link {
 }
 
 @media (width >= 900px) {
-    body.news-detail main > .section:not(.hero-container) > div {
-    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
-  }
-  
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

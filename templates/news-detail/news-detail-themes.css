@@ -21,19 +21,19 @@ body.news-detail.full-width main > .section.separator > div:first-child {
   border-top: 0;
 }
 
-   @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
-   flex-direction: column;
-   }
+@media (width >= 600px) {
+  body.news-detail.full-width .columns > div {
+    flex-direction: column;
   }
 
-   @media (width >= 900px) {
-    body.news-detail.full-width .columns > div {
-     flex-flow: row wrap;
-  }
-
+  /* full width from 600px, where the template's two-thirds column starts */
   body.news-detail.full-width main > .section > div {
     max-width: var(--container-max);
   }
+}
 
+@media (width >= 900px) {
+  body.news-detail.full-width .columns > div {
+    flex-flow: row wrap;
+  }
 }
