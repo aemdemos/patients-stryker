@@ -1227,7 +1227,7 @@ var CustomImportScript = (() => {
     const rows = counters.map((c) => c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]);
     const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
     const left = counters.some((c) => c.left) ? ", left" : "";
-    return block(ctx.doc, `Statistics (${countUp ? "count-up, " : ""}${cols}${left})`, rows);
+    return block(ctx.doc, `Statistics (${countUp ? "count-up, count-once, " : ""}${cols}${left})`, rows);
   }
   function inlineNodes(items, ctx, { marks = true } = {}) {
     if (marks && items.some((it) => it.type === "flow" && (it.spacing || []).length)) {
