@@ -107,6 +107,18 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* subscript: 75% of the text around it on the line it sits on, 0.25em low (stryker.com
+   normalize; e.g. the SPS blog posts set their copy in span.fontsize-1-75em > sub > sup:
+   24.5px → 18.375px → 13.78px, lines 27px apart). The browser default (smaller, sub) made
+   that copy 15.3px with taller lines */
+:where(body.corp) sub {
+  position: relative;
+  bottom: -0.25em;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
 /* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
    underlines every link, which suits patients pages only. */
 :where(body.corp) a:any-link {
