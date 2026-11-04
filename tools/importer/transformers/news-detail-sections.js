@@ -599,18 +599,36 @@ function blockNodes(container, doc) {
   return nodes;
 }
 
+const squashText = (el) => (el.textContent || '').replace(/[\s\u00a0]+/g, '');
+const isBlankLine = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector('img') && !squashText(el);
+
+/**
+ * The Heading 4 texts the source page follows with an empty paragraph (<p>&nbsp;</p> or an
+ * empty h3), read from the raw page HTML: the importer drops empty paragraphs from the
+ * document before the transformers run, so they are only in `payload.html`.
+ * @param {string} html the raw source HTML
+ * @returns {Set<string>} the subheads' texts, whitespace removed
+ */
+function rawSpacedSubheads(html) {
+  if (!html || typeof DOMParser === 'undefined') return new Set();
+  const raw = new DOMParser().parseFromString(html, 'text/html');
+  return new Set([...raw.querySelectorAll('.c-rich-text-editor h4')]
+    .filter((h) => squashText(h) && isBlankLine(h.nextElementSibling))
+    .map(squashText));
+}
+let spacedSubheadTexts = new Set();
+
 /**
  * Whether the rich text sets its subheads between blank lines: every Heading 4 is followed
- * by an empty paragraph (<p>&nbsp;</p>, or an empty h3), e.g. the Sustainability
- * "Reprocessing in the EP Lab" release. EDS drops the empty paragraphs, so the section gets
- * the `h4-spaced` style instead (styles-corp.css: a blank line above and below each h4).
- * Checked before cleanRichText removes the blanks.
+ * by an empty paragraph on the source (<p>&nbsp;</p>, or an empty h3), e.g. the
+ * Sustainability "Reprocessing in the EP Lab" release. EDS drops empty paragraphs, so the
+ * section gets the `h4-spaced` style instead (styles-corp.css: a blank line above and below
+ * each h4).
  */
 function spacedSubheads(root) {
-  const empty = (el) => !(el.textContent || '').replace(/[\s\u00a0]+/g, '');
-  const blank = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector('img') && empty(el);
-  const subheads = [...root.children].filter((el) => el.tagName === 'H4' && !empty(el));
-  return subheads.length > 0 && subheads.every((h) => blank(h.nextElementSibling));
+  const subheads = [...root.children].filter((el) => el.tagName === 'H4' && squashText(el));
+  return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling)
+    || spacedSubheadTexts.has(squashText(h)));
 }
 
 function richTextNodes(component, doc) {
@@ -1296,6 +1314,7 @@ export default function transform(hookName, element, payload) {
   const xf = templateName === 'news-detail-xf';
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
+  spacedSubheadTexts = rawSpacedSubheads(payload && payload.html);
   const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
 
   const inlinedXf = markSharedFragments(main, doc);
@@ -1700,6 +1719,15 @@ export default function transform(hookName, element, payload) {
   const opensWithHeadline = sections.some((section) => section.kind === 'headline');
   if ((title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline) && !leadBelowDate) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
+  }
+
+  // no title component on the source (its H1 opens the rich text, e.g. the Spencer Stiles
+  // release): the date widget, which follows the empty title slot, sits above that H1 —
+  // section style `date-above` (templates/news-detail/news-detail.js)
+  const opening = sections.find((section) => section.nodes.length);
+  if (element.hasAttribute('data-first-published') && !title.nodes.length
+    && opening && opening.nodes[0].tagName === 'H1') {
+    opening.style = [opening.style, 'date-above'].filter(Boolean).join(', ');
   }
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a

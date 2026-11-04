@@ -23,6 +23,8 @@
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
   --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
+  --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
@@ -42,6 +44,7 @@
   --corp-band-strut-s: 9px; /* measured: the source band h2 (21px, lines 1.06) around its 1.5em span makes a 42.4px line box, 9px more than the span's 33.4px line, below 600px */
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
+  --corp-qa-title-line-height: 23.25px; /* measured: a Q&A card question, a 17.5px span on 14px paragraph lines (46.5px for 2 lines) */
 
   /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
@@ -511,6 +514,18 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) main > .section.h4-spaced > .default-content-wrapper > h4:not(:first-child) {
   margin-top: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+/* section style `h1-0-8`: a second title line the source sets as an h1 at 0.8em
+   (h1 > span.fontsize-8em: 22.4px Futura bold, lines 37.7px apart, at every width; e.g.
+   "Stryker's Smoke-Free OR Campaign" under the "Protect your patients … and your OR staff."
+   title). Author it as a Heading 1 in a section of its own after the title, and give the
+   title section `ps-0` so the two lines keep one heading gap (15px) between them */
+:where(body.corp) main > .section.h1-0-8 > .default-content-wrapper h1 {
+  font-family: var(--display-font-family);
+  font-size: var(--corp-heading-font-size-h1-0-8);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-h1-0-8);
 }
 
 /* h1-1-25 / h1-2-5 / h2-1-5: headings the source enlarges with a size span (h1 >
