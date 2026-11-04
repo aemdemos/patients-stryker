@@ -239,3 +239,22 @@ body.news-detail.news-video main > .section.video-text > .video-wrapper + .defau
 body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p {
   margin-bottom: 0;
 }
+
+/* …stacked below 900px (source col-sm-8 / col-sm-4 below 840px): the text starts a section
+   gap below the video (the source video component's page-section margin: 20px, 30px from
+   600px; the margin takes in the 15px below the video's paragraph); side by side from 900px */
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    margin-top: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    margin-top: 0;
+  }
+}
