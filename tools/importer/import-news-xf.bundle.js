@@ -1327,10 +1327,22 @@ var CustomImportScript = (() => {
   }
   function sourceBox(component) {
     if (!component || typeof component.getBoundingClientRect !== "function") return null;
+    const doc = component.ownerDocument;
     const parts = [
       component.matches("hr") ? component : null,
-      ...component.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, img, video, iframe, hr, .s7dm-dynamic-media")
-    ].filter(Boolean).map((el) => el.getBoundingClientRect()).filter((r) => r.height > 0 && r.width > 0);
+      ...component.querySelectorAll("img, video, iframe, hr, .s7dm-dynamic-media")
+    ].filter(Boolean).map((el) => el.getBoundingClientRect());
+    const walker = doc.createTreeWalker(component, 4);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (n.textContent.trim()) {
+        const range = doc.createRange();
+        range.selectNodeContents(n);
+        parts.push(...range.getClientRects());
+      }
+    }
+    const visible = parts.filter((r) => r.height > 0 && r.width > 0);
+    parts.length = 0;
+    parts.push(...visible);
     if (!parts.length && component.matches(".sectionseparator, .c-section-separator")) {
       const r = component.getBoundingClientRect();
       if (r.width > 0) parts.push(r);
