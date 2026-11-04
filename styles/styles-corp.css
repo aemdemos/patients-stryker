@@ -38,7 +38,10 @@
 
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
-  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
+  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block) + var(--corp-band-strut-s)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin + the heading's taller line box / 2% */
+  --corp-band-strut-s: 9px; /* measured: the source band h2 (21px, lines 1.06) around its 1.5em span makes a 42.4px line box, 9px more than the span's 33.4px line, below 600px */
+  --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
+  --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
@@ -657,9 +660,10 @@ body:where(.corp):has(main .hero-carousel) header {
    that fills its section into main, or nests it inside the block when it shares the
    section (contact aside next to a form), so the rules match `main .section.{style}`. */
 
-/* connect-band: heading in a gold band (Sustainability "Connect with us") */
+/* connect-band: heading in a gold band (Sustainability "Connect with us"), as tall as the
+   source band and as far above the text after it */
 :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
-  margin: 0 0 var(--space-block);
+  margin: 0 0 var(--corp-band-gap);
   padding: var(--corp-band-padding);
   border-bottom: 0;
   background-color: var(--color-accent);
@@ -876,6 +880,7 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 
   :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+    padding-bottom: calc(3% + var(--space-block) + var(--corp-band-strut));
     font-size: var(--heading-font-size-xxxl-s);
   }
 
