@@ -142,6 +142,13 @@ body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
   font-size: var(--heading-font-size-xs);
 }
 
+/* section style `date-above` (news-detail.js): the date above the H1 sits as far above it
+   as the source date widget above the article text (36px, 46px from 600px; e.g. the
+   Spencer Stiles release) */
+body.news-detail main > .section.date-above > .default-content-wrapper > h5.first-published {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
 /* ---- article column (66.66% from 600px, see the media query) ---- */
 
 body.news-detail main > .section > .default-content-wrapper picture {
@@ -590,6 +597,10 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
 
   body.news-detail main > .section:is(.hero-container, .hero-corp-container) {
     margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section.date-above > .default-content-wrapper > h5.first-published {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
   body.news-detail main > .section.separator {

@@ -1512,6 +1512,10 @@ var CustomImportScript = (() => {
     if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
+    const opening = sections.find((section) => section.nodes.length);
+    if (element.hasAttribute("data-first-published") && !title.nodes.length && opening && opening.nodes[0].tagName === "H1") {
+      opening.style = [opening.style, "date-above"].filter(Boolean).join(", ");
+    }
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));

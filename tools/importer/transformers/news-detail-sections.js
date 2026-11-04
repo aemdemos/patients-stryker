@@ -1721,6 +1721,15 @@ export default function transform(hookName, element, payload) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 
+  // no title component on the source (its H1 opens the rich text, e.g. the Spencer Stiles
+  // release): the date widget, which follows the empty title slot, sits above that H1 —
+  // section style `date-above` (templates/news-detail/news-detail.js)
+  const opening = sections.find((section) => section.nodes.length);
+  if (element.hasAttribute('data-first-published') && !title.nodes.length
+    && opening && opening.nodes[0].tagName === 'H1') {
+    opening.style = [opening.style, 'date-above'].filter(Boolean).join(', ');
+  }
+
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)
   const out = [];
