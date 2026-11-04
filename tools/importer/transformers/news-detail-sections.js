@@ -36,7 +36,9 @@
  * fontsize-1-5em, fontsize-1-75em) or font span (urw-egyptienne) gets the matching section
  * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
  * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
- * `bold-body` style (bold in the body font); inline `span.futura-bold` becomes
+ * `bold-body` style (bold in the body font), and so does a paragraph that is only a link
+ * in span.futura-bold (a teal Futura bold text link, e.g. the SPS blog BACK; the text
+ * before it gets `ps-0`, as it is one paragraph gap above the link); inline `span.futura-bold` becomes
  * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
@@ -400,6 +402,26 @@ function plainBoldParagraphs(root) {
 }
 
 /**
+ * Paragraphs that are only a link set in span.futura-bold (stryker.com <p><a><span
+ * class="futura-bold">BACK</span></a></p>, the end of the SPS blog posts): a teal Futura
+ * bold text link, not a button. Imported as a bold + italic link (span.futura-bold →
+ * <strong><em>), which decorateButtons makes a gold button; in a `bold-body` section the
+ * news-detail template keeps it a text link.
+ */
+function futuraLinkParagraphs(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return new Set([...root.children].filter((p) => {
+    if (p.tagName !== 'P') return false;
+    const links = p.querySelectorAll('a[href]');
+    const all = squash(p.textContent);
+    if (links.length !== 1 || !all || squash(links[0].textContent) !== all) return false;
+    if (/\bbtn\b/.test(links[0].className) || p.querySelector('img')) return false;
+    const spans = [...p.querySelectorAll('.futura-bold')].filter((span) => !span.parentElement.closest('.futura-bold'));
+    return squash(spans.map((span) => span.textContent).join('')) === all;
+  }));
+}
+
+/**
  * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, or
  * a plain h3 with no bold and no styled span, the live h3 face): the template's h3 is
  * Futura bold, so their section gets the `h-serif` style.
@@ -579,6 +601,7 @@ function richTextNodes(component, doc) {
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
+  const futuraLinks = futuraLinkParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
@@ -588,6 +611,10 @@ function richTextNodes(component, doc) {
   const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
+    if (futuraLinks.has(node)) {
+      node.boldBody = true;
+      node.followsText = true;
+    }
     if (serifHeads.has(node)) node.serifHeading = true;
     if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
   });
@@ -1576,8 +1603,10 @@ export default function transform(hookName, element, payload) {
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
-    // paragraph (boldBody) gets a section of its own with `bold-body`.
-    nodes.forEach((node) => {
+    // paragraph (boldBody) gets a section of its own with `bold-body`; a Futura text link
+    // after the copy of its rich text (followsText) keeps the paragraph gap above it, so
+    // the section before it gets `ps-0`.
+    nodes.forEach((node, i) => {
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
@@ -1587,6 +1616,9 @@ export default function transform(hookName, element, payload) {
       // a Futura h3 in the same run starts a new section
       const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
       if (!current || current.kind !== kind || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
+        if (node.followsText && current && i > 0) {
+          current.style = [current.style, 'ps-0'].filter(Boolean).join(', ');
+        }
         startSection(kind, styles.join(', ') || undefined);
       }
       if (h3Font) {
