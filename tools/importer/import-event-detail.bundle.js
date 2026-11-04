@@ -117,9 +117,15 @@ var CustomImportScript = (() => {
     h.append(u);
     return h;
   }
+  function normalizeHref(href) {
+    const value = (href || "").trim();
+    if (/^mailto:?[^/]*@/i.test(value)) return value.replace(/^mailto:?\s*/i, "mailto:");
+    if (/^tel:?\s*\+?[\d(]/i.test(value)) return `tel:${value.replace(/^tel:?/i, "").replace(/\s/g, "")}`;
+    return value;
+  }
   function link(doc, a, text) {
     const out = doc.createElement("a");
-    out.href = a.getAttribute("href").trim();
+    out.href = normalizeHref(a.getAttribute("href"));
     out.textContent = text || clean(a.textContent);
     return out;
   }
@@ -221,7 +227,7 @@ var CustomImportScript = (() => {
         if (a) p.append(link(doc, a));
         main.push(p);
         if (name) facts.contactName = name;
-        if (a) facts.contactEmail = a.getAttribute("href").trim().replace(/^mailto:/i, "");
+        if (a) facts.contactEmail = normalizeHref(a.getAttribute("href")).replace(/^mailto:/, "");
       }
     }
     const details = comp.querySelector(".event-details-wrap");
@@ -553,6 +559,7 @@ var CustomImportScript = (() => {
         console.error("event-detail: no .c-event-detail-component on", params.originalURL);
       }
       executeTransformers("afterTransform", main, payload);
+      main.querySelectorAll("a[href]").forEach((a) => a.setAttribute("href", normalizeHref(a.getAttribute("href"))));
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       const facts = event ? event.facts : {};

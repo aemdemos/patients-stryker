@@ -13,7 +13,7 @@ body.event-detail main > .section:first-child > .default-content-wrapper {
 body.event-detail main h1 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 body.event-detail main h5,
@@ -27,16 +27,14 @@ body.event-detail main h5:is(.underline, :has(> u)) {
 
 body.event-detail {
   --event-map-height: 362px;
-  --event-details-gap: 118px;
-  --event-registration-gap: 83.5px;
 }
 
 body.event-detail main .columns h5:is(.underline, :has(> u)) ~ h5:is(.underline, :has(> u)) {
-  margin-top: var(--event-registration-gap);
+  margin-top: calc(var(--space-section-l) + var(--space-section));
 }
 
 body.event-detail main .columns h5:is(.underline, :has(> u)):not(h5:is(.underline, :has(> u)) ~ h5) {
-  margin-top: var(--event-details-gap);
+  margin-top: calc(var(--space-section-xl) + var(--space-section));
 }
 
 body.event-detail main .columns h5:is(.underline, :has(> u)) + p.button-wrapper {

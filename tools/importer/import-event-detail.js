@@ -1,7 +1,7 @@
 /* global WebImporter */
 
 // PARSER IMPORTS
-import eventDetailParser from './parsers/event-detail/event-detail.js';
+import eventDetailParser, { normalizeHref } from './parsers/event-detail/event-detail.js';
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
@@ -92,6 +92,7 @@ export default {
     }
 
     executeTransformers('afterTransform', main, payload);
+    main.querySelectorAll('a[href]').forEach((a) => a.setAttribute('href', normalizeHref(a.getAttribute('href'))));
 
     // metadata
     main.appendChild(document.createElement('hr'));

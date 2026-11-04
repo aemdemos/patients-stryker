@@ -95,9 +95,17 @@ function dividerHeading(doc, text) {
   return h;
 }
 
+/** Trimmed href; `Mailtoa@b.com` / `Mailto:` become `mailto:`, `Tel:` / spaced numbers `tel:`. */
+export function normalizeHref(href) {
+  const value = (href || '').trim();
+  if (/^mailto:?[^/]*@/i.test(value)) return value.replace(/^mailto:?\s*/i, 'mailto:');
+  if (/^tel:?\s*\+?[\d(]/i.test(value)) return `tel:${value.replace(/^tel:?/i, '').replace(/\s/g, '')}`;
+  return value;
+}
+
 function link(doc, a, text) {
   const out = doc.createElement('a');
-  out.href = a.getAttribute('href').trim();
+  out.href = normalizeHref(a.getAttribute('href'));
   out.textContent = text || clean(a.textContent);
   return out;
 }
@@ -211,7 +219,7 @@ export default function parse(document) {
       if (a) p.append(link(doc, a));
       main.push(p);
       if (name) facts.contactName = name;
-      if (a) facts.contactEmail = a.getAttribute('href').trim().replace(/^mailto:/i, '');
+      if (a) facts.contactEmail = normalizeHref(a.getAttribute('href')).replace(/^mailto:/, '');
     }
   }
 
