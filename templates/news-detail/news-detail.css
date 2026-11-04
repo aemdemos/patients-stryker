@@ -240,6 +240,12 @@ body.news-detail main > .section:has(+ .section.join) > .default-content-wrapper
   padding-bottom: 0;
 }
 
+/* the text before a blank line keeps the paragraph gap above it, also in a separator section
+   (whose own margin is the section gap) */
+body.news-detail main > .section:has(+ .section.blank-line) {
+  margin-bottom: var(--space-block);
+}
+
 /* …a blank line before more of its text, or before another blank line, keeps the paragraph
    gap below it */
 body.news-detail main > .section.blank-line:has(+ .section:is(.join, .blank-line)) {
