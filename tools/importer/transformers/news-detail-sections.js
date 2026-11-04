@@ -255,15 +255,19 @@ function bracketTag(nodes, classes, root) {
 /**
  * A 1.25em size span on part of a paragraph or list item (e.g. a bold release dateline
  * at the start of the text) is the `[[text-1-25]…]` bracket tag (styles-corp.css). A span
- * that holds the whole paragraph is left to the p-1-25 section style (copyStyles).
+ * that holds the whole paragraph is left to the p-1-25 section style (copyStyles). In an
+ * h2–h6 the span is the bracket tag too, whole heading or part (e.g. the IP BRAVoE article
+ * subheadings, h2 > span.fontsize-1-25em: 30.625px); an h1 keeps the h1-1-25 section style.
  */
 function tagTextSize(root) {
   const squash = (value) => value.replace(/[\s ]+/g, '');
   [...root.querySelectorAll('.fontsize-1-25em')].forEach((span) => {
     if (span.parentElement.closest('.fontsize-1-25em') || !text(span)) return;
-    const block = span.closest('p, li');
-    if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
-    if (squash(block.textContent) === squash(span.textContent)) return;
+    if (span.closest('h1')) return;
+    const heading = span.closest('h2, h3, h4, h5, h6');
+    const block = heading || span.closest('p, li');
+    if (!block) return;
+    if (!heading && squash(block.textContent) === squash(span.textContent)) return;
     bracketTag([span], 'text-1-25', root);
   });
 }

@@ -404,9 +404,11 @@ var CustomImportScript = (() => {
     const squash = (value) => value.replace(/[\s ]+/g, "");
     [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
       if (span.parentElement.closest(".fontsize-1-25em") || !text(span)) return;
-      const block = span.closest("p, li");
-      if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
-      if (squash(block.textContent) === squash(span.textContent)) return;
+      if (span.closest("h1")) return;
+      const heading = span.closest("h2, h3, h4, h5, h6");
+      const block = heading || span.closest("p, li");
+      if (!block) return;
+      if (!heading && squash(block.textContent) === squash(span.textContent)) return;
       bracketTag([span], "text-1-25", root);
     });
   }

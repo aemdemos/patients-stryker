@@ -578,6 +578,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--corp-font-scale-1-25);
 }
 
+/* …in a heading it is the source h2 > span.fontsize-1-25em, lines 1.15 (e.g. the IP BRAVoE
+   article subheadings: 30.625px on 35.2px lines, 26.25px on 30.2px below 600px) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6) span.text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}
+
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
    bold news subtitle) instead of the corp Futura bold */
 :where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
