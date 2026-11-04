@@ -445,3 +445,29 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+
+/* text: the cards of a row line up — the gold titles of a row are as tall as the tallest and
+   the grey answer boxes end level, whatever the length of the question or the answer
+   (stryker.com equal-height Q&A columns, e.g. the additive manufacturing feature). Each card
+   spans two rows of the list's grid (subgrid), the title row and the answer row */
+.cards-corp.text > ul > li {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+/* text title-left: the questions left-aligned at 17.5px, at every width (stryker.com Q&A cards
+   with a left-aligned Futura bold title on the gold band, e.g. the additive manufacturing
+   feature); plain text cards centre them. As on the source the question lines are 23.25px
+   apart, with 4% padding above and the question's 15px margin + 10px padding below (the
+   source's gold boxes: 132–136px in the first row and 110–112px in the second at 1440px) */
+.cards-corp.text.title-left h3 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--corp-qa-title-line-height);
+  text-align: left;
+}
+
+.cards-corp.text.title-left .cards-corp-card-title {
+  padding-bottom: calc(var(--space-block) + var(--space-block-s));
+}
