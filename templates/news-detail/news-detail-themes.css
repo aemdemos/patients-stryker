@@ -201,3 +201,41 @@ body.news-detail.full-width .cards-corp.text.title-left h3 {
 body.news-detail.full-width .cards-corp.text.title-left .cards-corp-card-title {
   padding-bottom: calc(var(--space-block) + var(--space-block-s));
 }
+
+/* news-video: patient-story news pages whose text beside the video (the `video-text`
+   section) is set as on the source, measured on Ellys' maxillofacial surgery story
+   (.../2021/facing-the-future-with-confidence-ellys--maxillofacial-surgery-s.html):
+   - every line 1.06 high (the source's 1.5em / 1.75em spans: 22.26px for the 21px copy)
+   - the light-grey intro box padded 5% of the column (22px at 1440px, 18px at 390px) and
+     25px below its text (the copy's 15px margin + the box's 10px padding)
+   - the gold quote one empty 24.5px line below the box (the source quote opens with a
+     line break)
+   - the sign-off: the rule line at 1.25x the copy (26.25px Futura bold), the name and the
+     caption below it on consecutive lines */
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p {
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail.news-video main > .section.video-text.light-gray > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
+  margin-bottom: 0;
+  padding: 5% 5% calc(var(--space-block) + var(--space-block-s));
+}
+
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) {
+  margin-top: calc(var(--heading-font-size-xl) * var(--heading-line-height));
+}
+
+/* the quote's first line is its bold Futura run only: on the source that run sits in a
+   body-font span, so the line is as tall as the Futura (29px), not the serif's 34px */
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold)::first-line {
+  font-family: var(--body-font-family);
+}
+
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p {
+  margin-bottom: calc(var(--space-block) + var(--space-block-s));
+  font-size: calc(var(--body-font-size-xl) * var(--news-scale-1-25));
+}
+
+body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p {
+  margin-bottom: 0;
+}
