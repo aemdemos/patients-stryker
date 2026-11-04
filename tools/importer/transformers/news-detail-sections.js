@@ -37,8 +37,9 @@
  * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
  * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
  * `bold-body` style (bold in the body font), and so does a paragraph that is only a link
- * in span.futura-bold (a teal Futura bold text link, e.g. the SPS blog BACK; the text
- * before it gets `ps-0`, as it is one paragraph gap above the link); inline `span.futura-bold` becomes
+ * in span.futura-bold (a teal Futura bold text link, e.g. the SPS blog BACK, authored
+ * [[color-teal]**[BACK](…)**]; the text before it gets `ps-0`, as it is one paragraph
+ * gap above the link); inline `span.futura-bold` becomes
  * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
@@ -404,9 +405,9 @@ function plainBoldParagraphs(root) {
 /**
  * Paragraphs that are only a link set in span.futura-bold (stryker.com <p><a><span
  * class="futura-bold">BACK</span></a></p>, the end of the SPS blog posts): a teal Futura
- * bold text link, not a button. Imported as a bold + italic link (span.futura-bold →
- * <strong><em>), which decorateButtons makes a gold button; in a `bold-body` section the
- * news-detail template keeps it a text link.
+ * bold text link, not a button. Authored as a bold link in the teal colour tag
+ * ([[color-teal]**[BACK](…)**], authoring conventions: Futura text = bold in a colour tag)
+ * in a `bold-body` section, where the news-detail template keeps it a text link.
  */
 function futuraLinkParagraphs(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
@@ -612,6 +613,12 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
     if (futuraLinks.has(node)) {
+      // span.futura-bold became <strong><em> (cleanRichText): a bold link in the teal tag
+      const link = node.querySelector('a');
+      link.textContent = link.textContent.trim();
+      const strong = doc.createElement('strong');
+      strong.append(link);
+      node.replaceChildren('[[color-teal]', strong, ']');
       node.boldBody = true;
       node.followsText = true;
     }

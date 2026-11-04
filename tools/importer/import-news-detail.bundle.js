@@ -666,6 +666,11 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
       if (futuraLinks.has(node)) {
+        const link2 = node.querySelector("a");
+        link2.textContent = link2.textContent.trim();
+        const strong = doc.createElement("strong");
+        strong.append(link2);
+        node.replaceChildren("[[color-teal]", strong, "]");
         node.boldBody = true;
         node.followsText = true;
       }

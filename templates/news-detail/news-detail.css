@@ -715,3 +715,31 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     max-width: calc(min(100vw, var(--container-max)) / 6 - 2 * var(--space-block));
   }
 }
+
+/* a bold link in a colour tag alone on its line in a `bold-body` section (news-detail.js
+   puts it back from a button) is Futura bold text in the tag's colour, like bold text in a
+   colour tag: stryker.com <a><span class="futura-bold">, e.g. the [[color-teal]…] BACK link
+   that ends the SPS blog posts (teal 14px, darker teal on hover) */
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link:is(:hover, :focus-visible) {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span.color-teal strong > a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
