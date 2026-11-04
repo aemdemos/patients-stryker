@@ -133,8 +133,9 @@ export default {
     main.appendChild(document.createElement('hr'));
     const meta = WebImporter.Blocks.getMetadata(document);
     // the corp bulk metadata adds `title:suffix` "| Stryker", so drop the source's own
-    // " | Stryker" from the title (it would show twice)
-    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
+    // " | Stryker" from the title (it would show twice) — every trailing copy of it, as a few
+    // source titles carry it twice ("Closing the gap in fecal management | Stryker | Stryker")
+    if (meta.Title) meta.Title = meta.Title.replace(/(\s*\|\s*Stryker)+\s*$/i, '');
     // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
