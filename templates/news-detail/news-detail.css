@@ -318,6 +318,19 @@ body.news-detail main .cards-corp.text.title-left h3 {
   text-align: left;
 }
 
+/* Cards Corp `text`: the cards of a row are as tall as each other, the grey answer box
+   filling the card below its gold title (stryker.com equal-height Q&A columns, e.g. the
+   additive manufacturing feature: the three grey boxes of a row end level, 562px from the
+   top of the row at 1440px, whatever the length of the answer) */
+body.news-detail main .cards-corp.text > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+body.news-detail main .cards-corp.text .cards-corp-card-body {
+  flex: 1 1 auto;
+}
+
 /* the lead line of a form-right section (e.g. "…Nominate a heroic healer today") is followed
    by a blank 28px line on the source (<br>&nbsp; in span.fontsize-2em): 38px more space
    before the next paragraph */
