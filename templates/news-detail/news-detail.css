@@ -13,15 +13,22 @@
      beside it, source col-sm-8 + col-sm-4) span the full container width */
 
 /* section style `form-right` (layout from 900px, below): stacked, the text comes before the
-   form, as on the source */
+   form, as on the source. Text and form span the container (no auto margins, which would
+   shrink the form to Marketo's intrinsic width); the text is indented 17% (stryker.com
+   rich text .left-to-right, the nurses nomination form: 58px at 375px, 114px at 700px) */
 body.news-detail main > .section.form-right {
   display: flex;
   flex-direction: column;
   margin-top: calc(2 * var(--space-section));
 }
 
+body.news-detail main > .section.form-right > div {
+  margin-inline: 0;
+}
+
 body.news-detail main > .section.form-right > .default-content-wrapper {
   order: -1;
+  padding-inline-start: calc(var(--container-gutter) + (100% - 2 * var(--container-gutter)) * var(--news-form-text-indent));
 }
 
 /* Section Metadata `background: bg-gold`: a gold box around the section's text, inside the
@@ -33,6 +40,13 @@ body.news-detail main > .section.form-right > .default-content-wrapper {
 body.news-detail main > .section.bg-gold {
   margin-top: var(--space-section-l);
   background-color: transparent;
+}
+
+/* the box's own 2% bottom margin is the whole gap to the next section (the form below
+   it), as on the source; a gold Large Headline (`headline-2vw`, below) keeps the section
+   gap of the source .c-largeheadline */
+body.news-detail main > .section.bg-gold:not(.headline-2vw) {
+  margin-bottom: 0;
 }
 
 body.news-detail main > .section.bg-gold > .default-content-wrapper {
@@ -304,6 +318,13 @@ body.news-detail main .cards-corp.text.title-left h3 {
   text-align: left;
 }
 
+/* the lead line of a form-right section (e.g. "…Nominate a heroic healer today") is followed
+   by a blank 28px line on the source (<br>&nbsp; in span.fontsize-2em): 38px more space
+   before the next paragraph */
+body.news-detail main > .section.form-right > .default-content-wrapper > p:first-child {
+  margin-bottom: calc(var(--space-block) + var(--news-blank-line-2));
+}
+
 /* Columns `label-right`: Q&A rows, the question in the first cell right-aligned in Futura
    bold 21px, lines 1.06, at every width (stryker.com right-aligned futura-bold 1.5em
    question beside its answer, e.g. the BattleBots feature); outranks the serif / p-1-25
@@ -365,6 +386,8 @@ body.news-detail {
   --news-font-scale-1-5: 1.5em; /* [[text-1-5]], below */
   --news-font-scale-2: 2em; /* [[text-2]], below */
   --news-band-headline-vw: 2.5vw; /* bg-dark-blue-gradient band heading, below; 1.25vw from 600px */
+  --news-form-text-indent: 0.17; /* form-right text indent below 900px, a share of the column (top) */
+  --news-blank-line-2: 38px; /* a blank line in 28px [[text-2]] text: form-right lead (top) */
 
   /* stryker.com bg-dark-blue-g full-bleed panel: grey to slate blue, left to right */
   --news-color-dark-blue-gradient-end: #425361;
@@ -592,6 +615,13 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* …stacked, they keep the block's phone rule between them (source gold
+     .desc-container border at 700px, e.g. "SHEA CAUTI prevention practice updates") */
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: var(--space-block-xs);
+    border-bottom: 1px solid var(--color-accent);
+  }
+
   /* Columns dark-last: the quote box takes what the text cell leaves (its margins sit
      inside the column) and hugs its content */
   body.news-detail main .columns.dark-last > div > div:last-child {
@@ -656,8 +686,10 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     margin: 0;
   }
 
+  /* the 1fr grid column is the text's indent from here */
   body.news-detail main > .section.form-right > .default-content-wrapper {
     grid-area: 1 / 2;
+    padding-inline-start: var(--container-gutter);
   }
 
   body.news-detail main > .section.form-right > .marketo-form-wrapper {
@@ -672,9 +704,42 @@ body.news-detail main > .section.separator.separator-wide > div:first-child {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
   /* Columns thumbnails: a sixth of the container less the column padding (source
      col-md-2 from 1024px: 183px at 1280px) */
   body.news-detail main .columns.thumbnails > div > div:last-child .columns-img-col {
     max-width: calc(min(100vw, var(--container-max)) / 6 - 2 * var(--space-block));
   }
+}
+
+/* a bold link in a colour tag alone on its line in a `bold-body` section (news-detail.js
+   puts it back from a button) is Futura bold text in the tag's colour, like bold text in a
+   colour tag: stryker.com <a><span class="futura-bold">, e.g. the [[color-teal]…] BACK link
+   that ends the SPS blog posts (teal 14px, darker teal on hover) */
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link:is(:hover, :focus-visible) {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span.color-teal strong > a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
 }

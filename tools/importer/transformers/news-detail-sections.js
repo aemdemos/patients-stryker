@@ -36,7 +36,10 @@
  * fontsize-1-5em, fontsize-1-75em) or font span (urw-egyptienne) gets the matching section
  * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
  * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
- * `bold-body` style (bold in the body font); inline `span.futura-bold` becomes
+ * `bold-body` style (bold in the body font), and so does a paragraph that is only a link
+ * in span.futura-bold (a teal Futura bold text link, e.g. the SPS blog BACK, authored
+ * [[color-teal]**[BACK](…)**]; the text before it gets `ps-0`, as it is one paragraph
+ * gap above the link); inline `span.futura-bold` becomes
  * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
@@ -252,15 +255,19 @@ function bracketTag(nodes, classes, root) {
 /**
  * A 1.25em size span on part of a paragraph or list item (e.g. a bold release dateline
  * at the start of the text) is the `[[text-1-25]…]` bracket tag (styles-corp.css). A span
- * that holds the whole paragraph is left to the p-1-25 section style (copyStyles).
+ * that holds the whole paragraph is left to the p-1-25 section style (copyStyles). In an
+ * h2–h6 the span is the bracket tag too, whole heading or part (e.g. the IP BRAVoE article
+ * subheadings, h2 > span.fontsize-1-25em: 30.625px); an h1 keeps the h1-1-25 section style.
  */
 function tagTextSize(root) {
   const squash = (value) => value.replace(/[\s ]+/g, '');
   [...root.querySelectorAll('.fontsize-1-25em')].forEach((span) => {
     if (span.parentElement.closest('.fontsize-1-25em') || !text(span)) return;
-    const block = span.closest('p, li');
-    if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
-    if (squash(block.textContent) === squash(span.textContent)) return;
+    if (span.closest('h1')) return;
+    const heading = span.closest('h2, h3, h4, h5, h6');
+    const block = heading || span.closest('p, li');
+    if (!block) return;
+    if (!heading && squash(block.textContent) === squash(span.textContent)) return;
     bracketTag([span], 'text-1-25', root);
   });
 }
@@ -396,6 +403,26 @@ function plainBoldParagraphs(root) {
     if (!all || p.querySelector('.futura-bold')) return false;
     const bold = [...p.querySelectorAll('b')].filter((b) => !b.parentElement.closest('b'));
     return squash(bold.map((b) => b.textContent).join('')) === all;
+  }));
+}
+
+/**
+ * Paragraphs that are only a link set in span.futura-bold (stryker.com <p><a><span
+ * class="futura-bold">BACK</span></a></p>, the end of the SPS blog posts): a teal Futura
+ * bold text link, not a button. Authored as a bold link in the teal colour tag
+ * ([[color-teal]**[BACK](…)**], authoring conventions: Futura text = bold in a colour tag)
+ * in a `bold-body` section, where the news-detail template keeps it a text link.
+ */
+function futuraLinkParagraphs(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return new Set([...root.children].filter((p) => {
+    if (p.tagName !== 'P') return false;
+    const links = p.querySelectorAll('a[href]');
+    const all = squash(p.textContent);
+    if (links.length !== 1 || !all || squash(links[0].textContent) !== all) return false;
+    if (/\bbtn\b/.test(links[0].className) || p.querySelector('img')) return false;
+    const spans = [...p.querySelectorAll('.futura-bold')].filter((span) => !span.parentElement.closest('.futura-bold'));
+    return squash(spans.map((span) => span.textContent).join('')) === all;
   }));
 }
 
@@ -572,6 +599,20 @@ function blockNodes(container, doc) {
   return nodes;
 }
 
+/**
+ * Whether the rich text sets its subheads between blank lines: every Heading 4 is followed
+ * by an empty paragraph (<p>&nbsp;</p>, or an empty h3), e.g. the Sustainability
+ * "Reprocessing in the EP Lab" release. EDS drops the empty paragraphs, so the section gets
+ * the `h4-spaced` style instead (styles-corp.css: a blank line above and below each h4).
+ * Checked before cleanRichText removes the blanks.
+ */
+function spacedSubheads(root) {
+  const empty = (el) => !(el.textContent || '').replace(/[\s\u00a0]+/g, '');
+  const blank = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector('img') && empty(el);
+  const subheads = [...root.children].filter((el) => el.tagName === 'H4' && !empty(el));
+  return subheads.length > 0 && subheads.every((h) => blank(h.nextElementSibling));
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -579,8 +620,10 @@ function richTextNodes(component, doc) {
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
+  const futuraLinks = futuraLinkParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
+  const spaced = spacedSubheads(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -588,6 +631,16 @@ function richTextNodes(component, doc) {
   const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
+    if (futuraLinks.has(node)) {
+      // span.futura-bold became <strong><em> (cleanRichText): a bold link in the teal tag
+      const link = node.querySelector('a');
+      link.textContent = link.textContent.trim();
+      const strong = doc.createElement('strong');
+      strong.append(link);
+      node.replaceChildren('[[color-teal]', strong, ']');
+      node.boldBody = true;
+      node.followsText = true;
+    }
     if (serifHeads.has(node)) node.serifHeading = true;
     if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
   });
@@ -601,6 +654,7 @@ function richTextNodes(component, doc) {
   const first = nodes.find((node) => node.copyStyle !== null);
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
+    if (spaced) node.copyStyle = [node.copyStyle, 'h4-spaced'].filter(Boolean).join(', ');
   });
   return { nodes, centred, size };
 }
@@ -1576,8 +1630,10 @@ export default function transform(hookName, element, payload) {
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
-    // paragraph (boldBody) gets a section of its own with `bold-body`.
-    nodes.forEach((node) => {
+    // paragraph (boldBody) gets a section of its own with `bold-body`; a Futura text link
+    // after the copy of its rich text (followsText) keeps the paragraph gap above it, so
+    // the section before it gets `ps-0`.
+    nodes.forEach((node, i) => {
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
@@ -1587,6 +1643,9 @@ export default function transform(hookName, element, payload) {
       // a Futura h3 in the same run starts a new section
       const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
       if (!current || current.kind !== kind || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
+        if (node.followsText && current && i > 0) {
+          current.style = [current.style, 'ps-0'].filter(Boolean).join(', ');
+        }
         startSection(kind, styles.join(', ') || undefined);
       }
       if (h3Font) {

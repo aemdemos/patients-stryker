@@ -73,6 +73,31 @@ function decorateFirstPublished(doc) {
 }
 
 /**
+ * A bold link alone on its line in a `bold-body` section is bold text, not a button: the
+ * older press releases end with "Read the full article:" and a plain bold link on its own
+ * line (stryker.com <b><a>, e.g. "PR Newswire" on the fifth K9s for Warriors donation).
+ * scripts.js decorateButtons() made it a teal button; put it back in its <strong>, which
+ * styles-corp.css shows as bold teal text in the paragraph's font. A bold link in a
+ * colour tag ([[color-teal]**[BACK](…)**], stryker.com <a><span class="futura-bold">, e.g.
+ * the BACK link that ends the SPS blog posts) is put back the same way, in its tag;
+ * news-detail.css shows it as Futura bold text in the tag's colour.
+ * @param {Document} doc The document
+ */
+function decorateBoldBodyLinks(doc) {
+  const wrapper = 'main > .section.bold-body > .default-content-wrapper > p.button-wrapper';
+  doc.querySelectorAll(`${wrapper} > a.button.primary, ${wrapper} > span[class*="color-"] > a.button.primary`).forEach((a) => {
+    const strong = doc.createElement('strong');
+    const p = a.closest('p');
+    p.classList.remove('button-wrapper');
+    if (!p.classList.length) p.removeAttribute('class');
+    a.classList.remove('button', 'primary');
+    if (!a.classList.length) a.removeAttribute('class');
+    a.replaceWith(strong);
+    strong.append(a);
+  });
+}
+
+/**
  * Bold text in a news article keeps the body font when it sits in a sentence, but bold
  * text on a line of its own stays Futura bold: a paragraph or list item that is bold as a
  * whole ("References:"), or a label on its own line before a line break ("About AVS",
@@ -82,6 +107,7 @@ function decorateFirstPublished(doc) {
  */
 export default function decorate(doc) {
   decorateFirstPublished(doc);
+  decorateBoldBodyLinks(doc);
   doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong').forEach((strong) => {
     if (!lineText(strong, 'previousSibling') && !lineText(strong, 'nextSibling')) {
       strong.classList.add('standalone');

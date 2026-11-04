@@ -45,6 +45,8 @@ function sourceHostFor(payload) {
  *   https://patients.stryker.com/us/en/ivs/index.html → /us/en/ivs/   (index pages keep the trailing slash; /index 404s)
  *   /index.html                              → /
  *   .../back-pain.html#disclaimer            → .../back-pain#disclaimer (query + hash kept)
+ *   https://www.stryker.com/content/stryker/us/en/x.html → /us/en/x (the AEM repository path
+ *     of a www.stryker.com page, which redirects to /us/en/x.html, e.g. the SPS blog BACK link)
  * Returns null for anything that must stay as-is: other hosts, protocol-relative
  * URLs, mailto:/tel:, in-page #anchors, and non-page links such as assets and
  * downloads (/content/dam/..., .pdf, images) — only .html/.htm page links change.
@@ -64,6 +66,7 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
 
   let edsPath = path.replace(/\.html?$/i, '');
+  if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
   if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
   return `${edsPath || '/'}${suffix}`;
 }

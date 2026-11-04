@@ -329,6 +329,15 @@
   border: 0;
 }
 
+/* stacked teasers (phones): a 1px gold rule under every card but the last, 21px below
+   its "Learn more" and 20px above the next card (source .desc-container border-bottom
+   #ffb500 below 840px, e.g. the "Related" cards of the virtual care case study); none
+   once the cards sit side by side, from 600px */
+.cards-corp.teaser > ul > li:not(:last-child) .cards-corp-card-body {
+  padding-bottom: var(--space-block-xs);
+  border-bottom: 1px solid var(--color-accent);
+}
+
 @media (width >= 600px) {
   .cards-corp.text h3 {
     font-size: var(--heading-font-size-compact);
@@ -336,6 +345,11 @@
 
   .cards-corp.teaser h3 {
     font-size: var(--heading-font-size-l);
+  }
+
+  .cards-corp.teaser > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   .cards-corp > ul {
