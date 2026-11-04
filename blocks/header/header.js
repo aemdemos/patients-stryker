@@ -8,6 +8,16 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
 // fragment metadata so locale/site changes don't require a code edit
 const SEARCH_ACTION = 'https://patients.stryker.com/us/en/ent/search.html';
 
+// keyboard access to the mobile drawer: while it is closed (slid off-screen) its
+// links must not take focus, so the drawer is inert; desktop never is (the drawer
+// is display:contents there and its links are the visible primary nav)
+function syncDrawerFocus(nav) {
+  const drawer = nav.querySelector('.nav-drawer');
+  if (!drawer) return;
+  drawer.inert = !isDesktop.matches && nav.getAttribute('aria-expanded') !== 'true';
+  if (drawer.navSyncLanes) drawer.navSyncLanes();
+}
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -44,6 +54,7 @@ function toggleMenu(nav, forceExpanded = null) {
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   if (button) {
     button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+    button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   }
   if (!expanded && !isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
@@ -52,6 +63,7 @@ function toggleMenu(nav, forceExpanded = null) {
     window.removeEventListener('keydown', closeOnEscape);
     document.removeEventListener('click', closeOnClickOutside);
   }
+  syncDrawerFocus(nav);
 }
 
 /**
@@ -112,14 +124,18 @@ function closeDropdownsOnClickOutside(e) {
   collapseDropdown(open);
 }
 
-// close any open dropdown on Escape and return focus to its toggle (the link)
+// close any open dropdown on Escape and return focus to its toggle (the link).
+// On mobile this is one step back (submenu → main menu): stop the event so the
+// menu-level Escape handler doesn't also close the whole drawer.
 function closeDropdownsOnEscape(e) {
   if (e.code !== 'Escape') return;
   const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
   if (!open) return;
+  e.stopImmediatePropagation();
   collapseDropdown(open);
-  const toggle = open.querySelector(':scope > a.nav-drop-toggle');
-  if (toggle) toggle.focus();
+  // EDS wraps the authored toggle link in a <p> (li > p > a), see buildDropdowns
+  const toggle = open.querySelector(':scope > a.nav-drop-toggle, :scope > p > a.nav-drop-toggle');
+  if (toggle) toggle.focus({ preventScroll: true });
 }
 
 /**
@@ -171,8 +187,19 @@ function buildDropdowns(drawer) {
   track.append(mainLane, subLane);
   drawer.append(track);
 
+  // mobile drill-in: only the lane on screen takes focus (the main list while not
+  // drilled, the submenu while drilled); desktop flyouts are always focusable
+  const syncLanes = () => {
+    const mobile = !isDesktop.matches;
+    const drilled = drawer.classList.contains('nav-drilled');
+    mainLane.inert = mobile && drilled;
+    subLane.inert = mobile && !drilled;
+  };
+  drawer.navSyncLanes = syncLanes;
+
   const setDrilled = () => {
     drawer.classList.toggle('nav-drilled', openItems.some((li) => li.getAttribute('aria-expanded') === 'true'));
+    syncLanes();
   };
 
   items.forEach((li) => {
@@ -260,13 +287,18 @@ function buildDropdowns(drawer) {
       e.preventDefault();
       e.stopPropagation();
       close();
-      toggleControl.focus();
+      // preventScroll: focusing inside the clipped, sliding track must not scroll it
+      toggleControl.focus({ preventScroll: true });
     });
 
     toggleControl.addEventListener('click', (e) => {
       e.preventDefault();
       if (li.getAttribute('aria-expanded') === 'true') close();
-      else open();
+      else {
+        open();
+        // mobile: the main list is now inert, so move focus into the submenu
+        if (!isDesktop.matches) backBtn.focus({ preventScroll: true });
+      }
     });
 
     li.navDropClose = close;
@@ -277,6 +309,7 @@ function buildDropdowns(drawer) {
     document.addEventListener('click', closeDropdownsOnClickOutside);
     window.addEventListener('keydown', closeDropdownsOnEscape);
   }
+  syncLanes();
 }
 
 /**
@@ -349,7 +382,7 @@ export default async function decorate(block) {
   navDrawer.className = 'nav-drawer';
   if (navSections) navDrawer.append(navSections);
   if (navTools) navDrawer.append(navTools);
-  nav.append(navDrawer);
+  // appended after the hamburger below, so Tab goes hamburger → menu items
   // wire any authored nested lists as click-to-toggle dropdowns (e.g. IVS nav's
   // Conditions / Treatments megamenu items). Called after the drawer is assembled
   // so the mobile drill-in track can wrap the whole drawer (links + tools).
@@ -408,14 +441,25 @@ export default async function decorate(block) {
     // opening the menu closes the search panel
     if (nav.getAttribute('aria-expanded') === 'true') nav.setAttribute('data-search', 'closed');
   });
-  // append hamburger before the search toggle so keyboard Tab order matches the
-  // visual left-to-right order (hamburger left, magnifier right); the mobile CSS
-  // `order` values keep the visual placement regardless of DOM order
-  nav.append(hamburger);
+  hamburgerButton.setAttribute('aria-expanded', 'false');
+  // keyboard Tab order: hamburger → the menu it opens → magnifier → search panel.
+  // The drawer is absolutely positioned (mobile) or display:contents placed by the
+  // grid (desktop, where the hamburger and magnifier are hidden), and the mobile
+  // CSS `order` values keep the hamburger left / magnifier right, so this DOM
+  // order changes no layout — desktop Tab order stays brand → links → tools.
+  nav.append(hamburger, navDrawer);
   if (searchToggle) nav.append(searchToggle, searchPanel);
   // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
   if (hasSearch) nav.setAttribute('data-search', 'closed');
+  syncDrawerFocus(nav);
+
+  // Tabbing out of the open menu (past its last link, or Shift+Tab before the
+  // hamburger) closes it, so focus never moves to page content hidden under it
+  nav.addEventListener('focusout', (e) => {
+    if (isDesktop.matches || nav.getAttribute('aria-expanded') !== 'true') return;
+    if (e.relatedTarget && !nav.contains(e.relatedTarget)) toggleMenu(nav, false);
+  });
 
   // on breakpoint change, reset any open mobile menu — but suppress the drawer
   // slide animation so it doesn't briefly animate closed while crossing 900px
@@ -427,6 +471,8 @@ export default async function decorate(block) {
       // search box), so close it when crossing the breakpoint
       nav.setAttribute('data-search', 'closed');
     }
+    // desktop links are always focusable; mobile ones only while the menu is open
+    syncDrawerFocus(nav);
     // re-enable the transition after the layout has settled
     requestAnimationFrame(() => {
       requestAnimationFrame(() => nav.classList.remove('nav-no-transition'));

@@ -805,6 +805,275 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "news-shared-fragments",
+      "urls": [
+        "https://www.stryker.com/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sage/en/footer/footer/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html",
+      "coverageGaps": [],
+      "description": "stryker.com news-detail shared Experience Fragments (#443), imported from their XF master URLs as fragment documents at the short paths in tools/importer/xf-fragment-map.js (XF path from the customer export → /us/en/fragments/…): business-unit Resources links (columns), Sustainability \"Connect with us\" band, Sustainability and Sage contact asides, and the Join our talent network banner. Pages include them with the fragment block.",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".c-rich-text-editor"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news-detail",
+      "description": "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
+      "urls": [
+        "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
+        "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
+        "https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html",
+        "https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html"
+      ],
+      "blocks": [
+        {
+          "name": "hero-image-slide",
+          "instances": [
+            ".c-autocarousel"
+          ]
+        },
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
+          ]
+        },
+        {
+          "name": "cards-corp-teaser",
+          "instances": [
+            ".c-customizeable"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news-detail-forms",
+      "description": "www.stryker.com news-detail articles with a Marketo form (#446), imported with import-news-detail.js. The form is the `marketo-form` block with the base URL, Munchkin ID and form ID of the source form (no captcha rows; the thank-you text and redirect are not carried). A shared contact Experience Fragment beside the form (2/3 + 1/3 row) is a `fragment` block in the same section (`form-with-aside`); the Sustainability \"Connect with us\" band is a `fragment` block in its own section.",
+      "urls": [
+        "https://www.stryker.com/us/en/sustainability/news/ASC.html",
+        "https://www.stryker.com/us/en/sage/news/2026/close-the-gap-in-fecal-management.html",
+        "https://www.stryker.com/us/en/sustainability/news/Supplychainweek.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration.html"
+      ],
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".c-marketo-form"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "news-detail-xf",
+      "description": "www.stryker.com news articles whose body is an Experience Fragment (#462; import-news-xf.js). As news-detail, plus: shared XFs (business-unit Resources links) as a fragment block before the small print; XF grid rows with two or more filled cells as Columns (variant from the column spans); blank titles and spacers dropped; Futura bold 2em-2.5em paragraphs as the H1 and ruled feature subheads as underlined H2s (gold rule); a dimensional box as Panel (left); news typography (#441).",
+      "urls": [
+        "https://www.stryker.com/us/en/acute-care/news/acute-care-training-and-education-resources.html",
+        "https://www.stryker.com/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2024/life-saving-journey-inspires-community.html",
+        "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+        "https://www.stryker.com/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-.html",
+        "https://www.stryker.com/us/en/about/news/2025/features/stryker-releases-2024-comprehensive-report.html",
+        "https://www.stryker.com/us/en/about/news/features/improving-safety--spreading-truth-about-surgical-smoke.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing.html",
+        "https://www.stryker.com/us/en/about/news/features/employees-inspire-a-new-generation-of-robotics-engineers-through.html",
+        "https://www.stryker.com/us/en/about/news/features/from-behind-the-scenes-to-the-front-line.html",
+        "https://www.stryker.com/us/en/about/news/features/restoring-spines-and-hope.html",
+        "https://www.stryker.com/us/en/about/news/2023/features/stryker-releases-comprehensive-report-highlighting-2022-performa.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-announces-leadership-succession.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/about/news/2026/a-message-to-our-customers-03-2026.html",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".experiencefragment .aem-Grid"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".c-rich-text-editor:has(.dimensional-box)"
+          ]
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".experiencefragment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "long-page-detail-corp",
+      "description": "www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).",
+      "urls": [
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards131.html",
+        "https://www.stryker.com/us/en/c/2018/guaranteeprograms/thank-you.html",
+        "https://www.stryker.com/us/en/c/2018/guaranteeprograms/thank-you0.html",
+        "https://www.stryker.com/us/en/c/2018/more-power-to-you/thank-you.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/3d-biphasic-defibrillation-animation.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/5-ways-to-improve-cath-lab-activation-accuracy.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/after-a-disaster--ems-response-recovery-and-opportunities.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/beyond-st-elevation--uncovering-cath-lab-candidates.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/capnography--reading-the-waves-and-why-it-matters-from-ems-throu.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-one-introduction.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-three-annotation-tools.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-two-waveform-viewer-navigation-and-tools.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/cracking-complex-pediatric-airway-cases.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/high-performance-cpr--the-insider-s-insights.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/improving-your-stemi-recognition-and-treatment-using-18-lead-ecg.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/insight-into-cprinsight-analysis-technology.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifelinkcentral-aed-program-manager.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifenet-15--noninvasive-pacing.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifenet-asset-demo.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-1000--in-service-video.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--acquiring-a-12-lead-ecg.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--aed-mode.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--manual-defibrillation.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-etco2.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-invasive-pressure.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-noninvasive-blood-pressure.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-spo2--spco-and-spmet.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-temperature.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-the-ecg.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--power-supply.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--synchronized-cardioversion.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--vital-sign-and-st-segment-trends.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--aed-mode.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--connecting-to-power.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--data-management.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--general-maintenance-and-testing.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--introduction.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--manual-defibrillation.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-etco2.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-spo2.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-the-ecg.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--noninvasive-pacing.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--switching-from-aed-to-manual-mode.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--synchronized-cardioversion.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--lifenet-aed-event-viewer.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--maintaining-readiness.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--replacing-electrodes-and-battery.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-a-child--30-2-cpr-wi.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-a-child--30-2-cpr.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--30-2-cpr.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--hands-only.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--hands-only0.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-a-child--30-2-cpr-wit.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-a-child--30-2-cpr.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult--30-2-cpr-wi.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult--30-2-cpr.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--wireless-setup.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifesaving-partnerships--implementing-aeds-in-law-enforcement.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lucas-3--v3-1---setup-option-ventilation-alert.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lucas-3--v3-1-chest-compression-system.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/public-access-defibrillation-pad-program-webinar-with-west-hartf.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/reducing-time-to-treatment-for-stemi-patients.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/stair-chair--safe-medic-training.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/ImprovedSurgicalOutcomesThroughAdvancedAccessandVisualization.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-1.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-11.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-team--from-diversity-to-collective-teamwork.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/powered-instruments-and-caregiver-safety.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/preventing-drug-diversion-in-healthcare.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards1.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards11.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards12.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards121.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards13.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/the-dangers-of-third-party-service-agreements.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/what-do-i-need-to-know-about-low-temperature-sterilization.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/3d-virtual-planning-for-a-severely-retroverted-glenoid-with-bren.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/abcs-of-the-gilles-walch-classification--asap-meeting-2020.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/aequalis-trade--shoulder-system-extraction-instrument-overview.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/are-you-kidding--the-only-solution-is-revising-to-a-reverse-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2--is-bone-grafting-still-an-option--dr--keener---asap-meeting-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bio-rsa-for-a2-glenoid-erosion-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bone-preserving-tsa-with-simpliciti--and-perform---featuring-dr-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--george-athwal-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--jay-keener-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--keith-m--baumgarten-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--r--sean-churchill-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--robert-tashjian-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--greg-nicholson.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--pascal-boileau--md--phd.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series-dr-r-sean-churchill-tornier-simpliciti.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/glenoid-morphology--how-does-it-affect-my-plan--how-important-is.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/humeral-osteotomy-technique.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/introducing-blueprint--mixed-reality.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/making-sense-of-all-our-measures---inclination--version--subluxa.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/my-10-tips-and-tricks-to-glenoid-exposure-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--glenoid-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--humerus--.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision-arthroplasty-5-humeral-tips-to-remember-featuring-aequa.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform---reamer-instrument-asse.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform-reversed--surgical-video.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-simpliciti--simpliciti--user-exp.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex---gill.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--glenoid-implants.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--humeral-implants.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial---richard.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---john-b.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---tommie-h.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-surgical-case---armodios-hatzidakis-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us0.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/tips---pearls--use-of-niceloop-trade--non-absorbable-braided-sut.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/what-s-new-with-the-b2-.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever0.html",
+        "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever1.html"
+      ],
+      "blocks": [
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
+          ]
+        },
+        {
+          "name": "cards-corp-resources",
+          "instances": [
+            ".c-resourcesanddownload"
+          ]
+        },
+        {
+          "name": "hero-full-width-image",
+          "instances": [
+            ".fullWidthImageHero"
+          ]
+        },
+        {
+          "name": "hero-image-slide",
+          "instances": [
+            ".c-autocarousel"
+          ]
+        }
+      ]
     }
   ]
 }

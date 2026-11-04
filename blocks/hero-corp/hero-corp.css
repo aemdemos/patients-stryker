@@ -19,6 +19,8 @@
  * (phones: mobile image, then the headline); mobile-text-black; stripe-gold /
  * stripe-gradient (34px band under the slide). Phones hide the desktop image or video; the
  * headline sits over the mobile image, or alone when there is none.
+ * Earlier imports' options still work (hero-corp.js readLegacyOptions): text-below,
+ * dark-box and size-N (both text sizes at N vw).
  *
  * tagline-band: a gold band in the page container holding a Futura bold h1 title and a
  * serif light h2 message. Authored as one row: h1 + h2.

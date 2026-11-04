@@ -16,11 +16,17 @@
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
+  --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
   --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
+  --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
+  --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
+  --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
+  --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -31,6 +37,25 @@
   --corp-share-icon-radius: 5px;
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
+
+  /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
+  --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
+  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
+  --corp-social-icon-size: 32px;
+  --corp-social-icon-size-l: 48px;
+  --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
+  --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
+
+  /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
+     .form-control field text */
+  --corp-form-field-font-size-l: 18px;
+  --corp-form-field-line-height-l: 1.5;
+
+  /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
+  --corp-color-purple-dark: #753d79;
+  --corp-color-purple-pressed: #643468;
+  --corp-color-navy-bright-dark: #184972;
+  --corp-color-navy-bright-pressed: #133b5d;
 }
 
 @media (width >= 900px) {
@@ -83,6 +108,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
+   underlines every link, which suits patients pages only. */
+:where(body.corp) a:any-link {
+  text-decoration: none;
+}
+
 :where(body.corp) strong > a:any-link,
 :where(body.corp) a:any-link > strong {
   font-weight: 400;
@@ -94,6 +125,39 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) a:any-link > strong:has(u) u,
 :where(body.corp) a.link-strong:any-link {
   font-weight: 700;
+}
+
+/* bold links that decorateButtons() left as links are text, not the shared button fallback,
+   on stryker.com: a bold link in a default-content heading (e.g. the "Business Wire" heading
+   after "Read the full article:") keeps the heading's font, size and colour; a bold link in a
+   paragraph (sentence-style text such as "Please click here for the full article.", or a bold
+   link inside a sentence) is bold teal text in the paragraph's font. The hover rule below
+   turns both darker teal. */
+:where(body.corp) main :where(.default-content-wrapper > :is(h1, h2, h3, h4, h5, h6)) > strong > a:any-link:not(:has(u)),
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+:where(body.corp) main p > strong > a:any-link:not(:has(u)) {
+  color: var(--link-color);
+}
+
+/* links and bold + underline CTAs use a darker teal on hover/focus */
+:where(body.corp) a:any-link:hover,
+:where(body.corp) a:any-link:focus-visible,
+:where(body.corp) a.link-strong:any-link:is(:hover, :focus) {
+  color: var(--color-primary-pressed);
 }
 
 :where(body.corp) a.button:any-link,
@@ -141,26 +205,11 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-xxl);
 }
 
-/* page title band: an underlined Heading 1 opening the page (stryker.com page hero, e.g. the
-   SVIN and security-advisories pages): Futura bold 28px, 28px below the band top, the rule
-   15px under the title; from 600px the title keeps to the left half, the rule spans the page.
-   Bold + italic keeps the gold title. */
-:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
-  margin: 0 0 var(--space-block-l);
-  padding: var(--corp-page-title-offset) 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--corp-page-title-line-height-s);
-}
-
-/* a title band alone in its section: the section gap (20px, 30px from 600px) is the space below
-   it, as between stryker.com components */
-:where(body.corp) main > .section:first-child > .default-content-wrapper:has(> h1.underline:only-child) {
-  padding-bottom: 0;
-}
-
-:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:only-child {
-  margin-bottom: 0;
+/* h-serif section style: the section's h2 / h3 in Egyptienne Light (live h2 / h3 without
+   span.futura-bold) instead of Futura bold; h4 stays Futura, as live */
+:where(body.corp) main > .section.h-serif > div :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
 }
 
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
@@ -258,6 +307,27 @@ body:where(.corp):has(main .hero-carousel) header {
   color: inherit;
 }
 
+/* references: an ordered list (scripts.js decorateFootnotes links the citation
+   superscripts to it), shown like the stryker.com .c-disclaimer list — "1." markers,
+   20px indent, tight small-print lines — then a section gap (20px, 30px from 600px)
+   before the document code */
+:where(body.corp) main > .section.disclaimer ol {
+  margin-bottom: var(--space-block-l);
+}
+
+/* section style `references-spaced` (with `disclaimer`): references the source authored
+   as numbered paragraphs ("1: Author…", "1. https://…") — the entries keep that number as
+   text, so the list marker is hidden; flush left, 15px apart */
+:where(body.corp) main > .section.disclaimer.references-spaced ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(body.corp) main > .section.disclaimer.references-spaced ol > li {
+  margin-bottom: var(--space-block);
+  line-height: var(--paragraph-line-height);
+}
+
 :where(body.corp) main > .section.disclaimer p:last-child,
 :where(body.corp) main > .section.disclaimer :is(ol, ul):last-child {
   margin-bottom: 0;
@@ -296,12 +366,255 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* p-1-5: 21px copy (stryker.com .fontsize-1-5em, e.g. a serif news intro) */
+:where(body.corp) main > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 /* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
 :where(body.corp) main > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* p-2: 28px copy (stryker.com .fontsize-2em, lines 1.06), e.g. the Egyptienne subtitle of
+   the "Trees, landfills and the environment" feature */
+:where(body.corp) main > .section.p-2 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+/* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
+   e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
+   token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
+   (the h2's 15px), not a section gap */
+:where(body.corp) main > .section.h2-0-8 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-compact);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-compact-m);
+  }
+}
+
+/* headline-2vw: a page title the source sets as a Large Headline below the date
+   (stryker.com .c-largeheadline > span.fontsize-2vw.futura-bold, e.g. OptaBlate, ProStep):
+   the page H1 in Futura bold at 4vw, from 600px (source 840px) 2vw capped at 28px; the
+   source keeps 15px more below it than the section gap */
+:where(body.corp) main > .section.headline-2vw {
+  --corp-headline-vw: 2vw;
+}
+
+:where(body.corp) main > .section.headline-2vw > .default-content-wrapper {
+  padding-bottom: var(--space-block);
+}
+
+:where(body.corp) main > .section.headline-2vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-2vw {
+    --corp-headline-vw: 1vw;
+  }
+}
+
+/* headline-1-5vw: the same Large Headline title at 1.5vw (stryker.com span.fontsize-1-5-vw,
+   e.g. the Neuroform Atlas expanded-indication release): 3vw, from 600px (source 841px)
+   1.5vw capped at 21px; lines 1.35. The source keeps 5px (15px from 600px) more below it
+   than the section gap (20px / 30px to the separator) */
+:where(body.corp) main > .section.headline-1-5vw {
+  --corp-headline-vw: 1.5vw;
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+  padding-bottom: var(--space-block-xs);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-1-5vw {
+    --corp-headline-vw: 0.75vw;
+  }
+
+  :where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper {
+    padding-bottom: var(--space-block);
+  }
+}
+
+/* h1-21: a page title the source sets as a 1.5em Futura bold line opening the first rich
+   text, with no page title (e.g. the Emergency Relief Bed release): the page H1 at 21px,
+   lines 1.2 (25.2px; source 25.3px) */
+:where(body.corp) main > .section.h1-21 > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+/* h1-42: the same opening title line set in a 2em and a 1.5em size span (3em, Futura bold
+   42px, lines 1.06; e.g. the "Trees, landfills and the environment" feature). The title
+   flows into the text below it: one paragraph gap (15px on the source), not a section gap */
+:where(body.corp) main > .section.h1-42 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-42 > .default-content-wrapper h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
+   35px, lines 1.15; h2 > span.fontsize-1-5em: 1.5x the h2, 31.5px and 36.75px from 600px
+   with the h2 step, lines 1.06), e.g. the "When Stryker employees…" feature. Like h2-0-8,
+   the heading flows into the text below it: one heading gap, not a section gap */
+:where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h2-1-5 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-1-25 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height-h4);
+}
+
+:where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+}
+
+/* image-1-3 / image-1-2: an image the source sets in a one-third / one-half grid column
+   with the other column empty (stryker.com col-sm-4 / col-sm-6, e.g. a news logo or award
+   graphic). From 600px (source 840px) the image box is that column: a third / half of the
+   container less the column padding (440px / 675px at 1440px), at the start of the
+   section, the image centred in it. A video block in such a column (e.g. a podcast
+   video) is capped the same way. Full width below, as on the source */
+@media (width >= 600px) {
+  :where(body.corp) main > .section:is(.image-1-3, .image-1-2) > .default-content-wrapper picture {
+    display: block;
+    margin-inline: 0 auto;
+    text-align: center;
+  }
+
+  :where(body.corp) main > .section:is(.image-1-3, .image-1-2) > .video-wrapper .video {
+    margin-inline: 0 auto;
+  }
+
+  :where(body.corp) main > .section.image-1-3 > .default-content-wrapper picture,
+  :where(body.corp) main > .section.image-1-3 > .video-wrapper .video {
+    max-width: calc(min(100vw, var(--container-max)) / 3 - 2 * var(--space-block));
+  }
+
+  :where(body.corp) main > .section.image-1-2 > .default-content-wrapper picture,
+  :where(body.corp) main > .section.image-1-2 > .video-wrapper .video {
+    max-width: calc(min(100vw, var(--container-max)) / 2 - 2 * var(--space-block));
+  }
+}
+
+/* section style `serif`: Egyptienne copy in default content (stryker.com
+   span.urw-egyptienne); the copy size comes from p-1 / p-1-25 (columns style their own
+   serif sections, blocks/columns) */
+:where(body.corp) main > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
+  font-family: var(--heading-font-family);
+}
+
+/* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
+   font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
+:where(body.corp) main span.body-font,
+:where(body.corp) main span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+/* bracket tag `[[text-1-25]…]`: a run of text at 1.25x the paragraph around it — stryker.com
+   span.fontsize-1-25em on part of a line, e.g. a bold release dateline ("Kalamazoo,
+   Michigan, USA – Aug 24, 2020", 17.5px) or a small-print "References" label (14px) */
+:where(body.corp) main span.text-1-25 {
+  font-size: var(--corp-font-scale-1-25);
+}
+
+/* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
+   bold news subtitle) instead of the corp Futura bold */
+:where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
+  font-family: inherit;
+}
+
+/* section style `standalone-url`: a bold + underline link that shows its own URL keeps the
+   standalone link look (stryker.com span.standalone-link around a URL: Futura bold, uppercase,
+   teal, trailing arrow — e.g. the "Urgent 11" bulletin). scripts.js does not turn links whose
+   text is their URL into a.link-strong, so the section carries the look instead */
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u) u {
+  text-decoration: none;
+  text-transform: inherit;
+}
+
+:where(body.corp) main > .section.standalone-url strong > a:any-link:has(u)::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+:where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+/* serif with p-1-5: 21px Egyptienne renders 26.25px lines on the source */
+:where(body.corp) main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
@@ -321,6 +634,158 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.ps-1,
 :where(body.corp) .accordion-item-body > .section.ps-1 {
   margin-bottom: var(--space-block-l);
+}
+
+/* ---- shared news-detail fragments (/us/en/fragments/…, #443) ----
+   Each fragment document sets one section style. The fragment block hoists a fragment
+   that fills its section into main, or nests it inside the block when it shares the
+   section (contact aside next to a form), so the rules match `main .section.{style}`. */
+
+/* connect-band: heading in a gold band (Sustainability "Connect with us") */
+:where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+  margin: 0 0 var(--space-block);
+  padding: var(--corp-band-padding);
+  border-bottom: 0;
+  background-color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: var(--corp-heading-font-size-band);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* contact-aside: contact links next to a form (Sustainability, Sage). An underlined
+   link is the stryker.com "standalone link" (uppercase Futura); bold links are buttons,
+   shown in a row; links holding a social icon show it on its brand square. */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> u) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link > u {
+  text-decoration: none;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> u)::after {
+  content: var(--corp-chevron-glyph);
+  padding-inline-start: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-regular);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper p.button-wrapper {
+  display: inline-block;
+  margin: 0 var(--space-block-s) var(--space-block-s) 0;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a.button:any-link {
+  width: var(--corp-contact-button-width);
+}
+
+/* the icon links are authored side by side, without a space between them */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> .icon) {
+  display: inline-block;
+  margin-inline-end: var(--space-inset-l);
+  vertical-align: top;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon {
+  display: block;
+  width: var(--corp-social-icon-size);
+  height: var(--corp-social-icon-size);
+  border-radius: var(--corp-share-icon-radius);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper .icon-linkedin {
+  background-color: var(--corp-color-linkedin);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon-facebook {
+  border-radius: 50%;
+  background-color: var(--corp-color-facebook);
+}
+
+/* talent-banner: full-width image (mobile image below 600px) with a blue button on it */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper {
+  display: grid;
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > * {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+
+/* full width: from the content column out to the viewport edges; desktop image from 600px */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > * > picture {
+  display: block;
+  margin-inline: calc(50% - 50vw);
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
+  display: none;
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* the button sits on the image (same grid cell). The image is full width with a fixed
+   shape, so its position is measured against the viewport width on the shared pages:
+   5vw across, 25.9vw down below 600px; 57vw across, 14.8vw down (44% of the 3:1 image)
+   from 600px. `(100vw - 100%) / 2` is the gap between the viewport and the content column. */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
+  z-index: 1;
+  place-self: start;
+  margin: 25.9vw 0 0 calc(5vw - (100vw - 100%) / 2);
+}
+
+/* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue;
+   the talent banner's button is the blue one */
+:where(body.corp) main .section.btn-purple a.button.primary:any-link {
+  border-color: var(--corp-color-purple-dark);
+  background-color: var(--color-purple);
+}
+
+:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link {
+  border-color: var(--corp-color-navy-bright-dark);
+  background-color: var(--color-navy-bright);
+}
+
+:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-purple-pressed);
+  background-color: var(--corp-color-purple-pressed);
+}
+
+:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-navy-bright-pressed);
+  background-color: var(--corp-color-navy-bright-pressed);
+}
+
+/* ---- page title band ---- */
+
+/* page title band: an underlined Heading 1 opening the page (stryker.com page hero, e.g. the
+   SVIN and security-advisories pages): Futura bold 28px, 28px below the band top, the rule
+   15px under the title; from 600px the title keeps to the left half, the rule spans the page.
+   Bold + italic keeps the gold title. */
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
+  margin: 0 0 var(--space-block-l);
+  padding: var(--corp-page-title-offset) 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-page-title-line-height-s);
+}
+
+/* a title band alone in its section: the section gap (20px, 30px from 600px) is the space below
+   it, as between stryker.com components */
+:where(body.corp) main > .section:first-child > .default-content-wrapper:has(> h1.underline:only-child) {
+  padding-bottom: 0;
+}
+
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:only-child {
+  margin-bottom: 0;
 }
 
 /* ---- back-to-top control (corp.js) ---- */
@@ -380,6 +845,7 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height);
 }
 
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -412,11 +878,36 @@ body:where(.corp):has(main .hero-carousel) header {
     margin-bottom: var(--space-section-l);
   }
 
+  :where(body.corp) main > .section.disclaimer ol {
+    margin-bottom: var(--space-section);
+  }
+
   :where(body.corp) main > .section.last-modified-section,
   :where(body.corp) main > div.section.ps-1,
   :where(body.corp) .tabs-panel > .section.ps-1,
   :where(body.corp) .accordion-item-body > .section.ps-1 {
     margin-bottom: var(--space-inset-l);
+  }
+
+  :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  :where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon {
+    width: var(--corp-social-icon-size-l);
+    height: var(--corp-social-icon-size-l);
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
+    display: block;
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > :nth-child(2) > picture {
+    display: none;
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
+    margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
   }
 }
 

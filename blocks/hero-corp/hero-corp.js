@@ -87,6 +87,12 @@ function setupRows(block) {
       else if (!mobilePic) mobilePic = pic;
     } else if (cell.querySelector('h1, h2, h3, p')) {
       contentCell = cell;
+    } else if (!pic && cell.textContent.trim()) {
+      // a headline typed straight into the cell, without a paragraph
+      const p = document.createElement('p');
+      p.append(...cell.childNodes);
+      cell.append(p);
+      contentCell = cell;
     }
   });
 
@@ -172,14 +178,32 @@ function markTextRoles(box) {
 }
 
 /**
+ * Options of the earlier image-slide (the news-detail imports, tools/importer/parsers/
+ * hero-image-slide.js) read as their current equivalents: text-below = mobile-below,
+ * dark-box = box-dark, and size-N (N vw, `2-5` = 2.5) sets both text sizes to N in place of
+ * the section's title-N / subline-N.
+ * @param {Element} block the hero-corp block
+ */
+function readLegacyOptions(block) {
+  if (block.classList.contains('text-below')) block.classList.add('mobile-below');
+  if (block.classList.contains('dark-box')) block.classList.add('box-dark');
+  const size = [...block.classList].map((cls) => cls.match(/^size-(\d+)(?:-(\d+))?$/)).find(Boolean);
+  if (!size) return;
+  const step = size[2] ? `${size[1]}.${size[2]}` : size[1];
+  block.style.setProperty('--corp-image-slide-title-step', step);
+  block.style.setProperty('--corp-image-slide-subline-step', step);
+}
+
+/**
  * image-slide: the headline lines go in a box (`.hero-corp-headline`), the button
  * paragraphs after it. Block options: box-white / -gold / -blue / -gray / -dark colour the
  * box, box-mt-N … box-pl-N set its margin / padding in percent (`n` = negative: box-mt-n4)
- * as the source's inline box styles, and top-N / left-N / right-N (percent of the slide)
- * place it.
+ * as the source's inline box styles, and top-N / left-N / right-N (percent of the slide,
+ * `7-5` = 7.5) place it.
  * @param {Element} block the hero-corp block
  */
 function setupImageSlide(block) {
+  readLegacyOptions(block);
   const content = block.lastElementChild;
   const lines = [...content.children].filter((el) => !el.classList.contains('button-wrapper'));
   if (lines.length) {
@@ -195,8 +219,8 @@ function setupImageSlide(block) {
     });
   }
   [...block.classList].forEach((cls) => {
-    const m = cls.match(/^(top|left|right)-(\d+)$/);
-    if (m) block.style.setProperty(`--hero-box-${m[1]}`, `${m[2]}%`);
+    const m = cls.match(/^(top|left|right)-(\d+)(?:-(\d+))?$/);
+    if (m) block.style.setProperty(`--hero-box-${m[1]}`, `${m[2]}${m[3] ? `.${m[3]}` : ''}%`);
   });
 }
 

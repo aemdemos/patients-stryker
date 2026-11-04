@@ -2,7 +2,68 @@
  * Shared utility functions, pulled into scripts/blocks as needed.
  */
 
-import { toClassName } from './aem.js';
+import { toClassName, toCamelCase } from './aem.js';
+
+/**
+ * Locale folder of the current page (`/<country>/<language>`), where its
+ * query-index and placeholders live.
+ * @returns {string} e.g. '/gb/en', or '' when the page is not under a locale folder
+ */
+export function getLocalePrefix() {
+  return window.location.pathname.match(/^\/[a-z]{2}\/[a-z]{2}(?=\/|$)/i)?.[0].toLowerCase() || '';
+}
+
+/**
+ * Loads `{prefix}/placeholders.json` once per prefix, keyed by camelCased `Key`.
+ * @param {string} prefix locale folder from getLocalePrefix()
+ * @returns {Promise<Object<string,string>>} placeholders, or {} on failure
+ */
+export function fetchPlaceholders(prefix = '') {
+  window.placeholders = window.placeholders || {};
+  window.placeholders[prefix] ||= fetch(`${prefix}/placeholders.json`)
+    .then((resp) => (resp.ok ? resp.json() : {}))
+    .then(({ data = [] }) => Object.fromEntries(data
+      .filter((p) => p.Key)
+      .map((p) => [toCamelCase(p.Key), p.Text])))
+    .catch(() => ({}));
+  return window.placeholders[prefix];
+}
+
+/**
+ * Normalizes a link/href to a query-index path (no host, `.html` or trailing slash).
+ * @param {string} href absolute or relative URL
+ * @returns {string} path
+ */
+export const toIndexPath = (href) => new URL(href, window.location.href).pathname
+  .replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+
+async function fetchIndexRows(url, offset = 0, rows = []) {
+  const resp = await fetch(`${url}?offset=${offset}&limit=1000`);
+  if (!resp.ok) return rows;
+  const { data = [], total = 0 } = await resp.json();
+  rows.push(...data);
+  const next = offset + data.length;
+  return data.length && next < total ? fetchIndexRows(url, next, rows) : rows;
+}
+
+const indexCache = {};
+/**
+ * Loads every page of `{prefix}/query-index.json` once per prefix.
+ * @param {string} prefix locale folder from getLocalePrefix()
+ * @returns {Promise<Map<string,Object>>} rows keyed by toIndexPath(path), empty on failure
+ */
+export function fetchQueryIndex(prefix = '') {
+  indexCache[prefix] ||= fetchIndexRows(`${prefix}/query-index.json`)
+    .then((rows) => new Map(rows
+      .filter((r) => r.path)
+      .map((r) => [toIndexPath(r.path), r])))
+    .catch(() => {
+      // allow a later caller to retry
+      delete indexCache[prefix];
+      return new Map();
+    });
+  return indexCache[prefix];
+}
 
 /**
  * Builds a colour→option-name map from the DA library `background` block-option

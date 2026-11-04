@@ -191,15 +191,18 @@ header nav .nav-sections li { margin: 0; }
    The tools links get the same treatment in the .nav-tools p rule below. */
 header nav .nav-sections p { margin: 0; }
 
+/* mobile rows: 60px (20px line + 20px padding) with a 1px white line under
+   every row, the last one included — as on the source */
 header nav .nav-sections li a {
   display: block;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 20px 30px 20px 15px;
-  border-top: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-white);
   color: var(--color-black);
   font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -224,11 +227,18 @@ header nav .nav-tools p a {
   width: 100%;
   margin: 0;
   padding: 20px 30px 20px 15px;
-  border-top: 1px solid var(--color-white);
+  border-bottom: 1px solid var(--color-white);
   color: var(--color-black);
   font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
   text-transform: uppercase;
   text-decoration: none;
+}
+
+/* the tools group starts with its own line, so it is set off from the menu
+   above by a double (2px) white line, as on the source */
+header nav .nav-tools p:first-child a {
+  border-top: 1px solid var(--color-white);
 }
 
 header nav .nav-tools .nav-search { display: none; }
@@ -238,11 +248,6 @@ header nav .nav-sections li a:hover,
 header nav .nav-tools p a:hover {
   background-color: var(--color-secondary);
   color: var(--color-white);
-}
-
-/* no divider above the very first menu item */
-header nav .nav-sections li:first-child a {
-  border-top: 0;
 }
 
 /* ---- Dropdowns (nested list under a nav item, e.g. IVS Conditions/Treatments)
@@ -323,15 +328,17 @@ header nav .nav-drawer .nav-drop-panel.nav-drop-panel-open {
   display: flex;
 }
 
-/* BACK bar — dark-gray row with a left-pointing arrow */
+/* BACK bar — dark-gray row with a solid left-pointing triangle (the source's
+   8×12px white back-arrow.png at 15px), text at 30px, white line underneath */
 header nav .nav-drawer .nav-drop-back-btn {
   display: block;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 20px 15px 20px 40px;
+  padding: 20px 15px 20px 30px;
   position: relative;
   border: 0;
+  border-bottom: 1px solid var(--color-white);
   background-color: var(--color-secondary);
   color: var(--color-white);
   font-family: inherit;
@@ -344,23 +351,25 @@ header nav .nav-drawer .nav-drop-back-btn {
 header nav .nav-drawer .nav-drop-back-btn::before {
   content: '';
   position: absolute;
-  left: 18px;
+  left: 15px;
   top: 50%;
-  width: 8px;
-  height: 8px;
-  border: solid currentcolor;
-  border-width: 2px 0 0 2px;
-  transform: translateY(-50%) rotate(-45deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 8px 6px 0;
+  border-color: transparent currentcolor transparent transparent;
+  transform: translateY(-50%);
 }
 
-/* submenu links mirror the source: bold black title-case text on the gray
-   panel, transparent background, gold fill on hover */
+/* submenu links mirror the source: bold black title-case text at 15px on the
+   gray panel, a white line under every row, gold fill on hover */
 header nav .nav-drawer .nav-drop-panel li a {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 15px 15px 15px 30px;
+  padding: 15px 30px 15px 15px;
   border-top: 0;
+  border-bottom: 1px solid var(--color-white);
   background-color: transparent;
   color: var(--color-black);
   font-weight: var(--font-weight-bold);
@@ -530,11 +539,14 @@ header nav.nav-variant-legal .nav-brand img {
     margin: 0 10px 0 0;
   }
 
+  /* desktop bar links: drop the mobile row line and 20px row line height —
+     `inherit` keeps the line height each header had before (it differs per nav) */
   header nav .nav-sections li a {
     width: auto;
     margin: 5px 0;
     padding: 5px 15px;
-    border-top: 0;
+    border-bottom: 0;
+    line-height: inherit;
     white-space: nowrap;
   }
 
@@ -564,12 +576,14 @@ header nav.nav-variant-legal .nav-brand img {
     color: var(--color-black);
   }
 
-  header nav .nav-tools p a {
+  header nav .nav-tools p a,
+  header nav .nav-tools p:first-child a {
     display: inline;
     width: auto;
     padding: 0;
-    border-top: 0;
+    border: 0;
     font-size: var(--body-font-size-xs);
+    line-height: inherit;
   }
 
   /* Stryker.com hover is gold text on desktop (not the gray mobile treatment) */

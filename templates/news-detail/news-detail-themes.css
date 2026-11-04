@@ -1,2 +1,138 @@
 /* news-detail themes — loaded with the template only when the page sets `theme`
    metadata; scope every rule to body.news-detail.<theme> */
+
+/* full-width: news pages whose source runs the title, the small print and the "Last
+   Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
+   .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date
+   and disclaimer 1380px wide at 1440px). Every section spans the container, left
+   aligned, instead of the template's centred 66.66% column — the article copy too (the
+   disclaimer-like "Products may not be available…" text, e.g. on the Rosales page). The
+   importer opens these pages with a `spacer` section after the title (46px to the video
+   row, as on the source) */
+
+/* section style `col-10` on full-width pages: the section's content in the centred 10/12
+   grid column, at every width (stryker.com aem-GridColumn--default--10 offset 1, e.g. the
+   article, video and "Resources for nurses" boxes of the nurses feature: 1036px at 1280px,
+   553px at 700px, 282px at 375px) */
+body.news-detail.full-width main > .section.col-10 > div {
+  width: calc(100% * 5 / 6);
+  max-width: calc(var(--container-max) * 5 / 6);
+}
+
+/* …with `phone-full`, the section is full width on phones and in the 10/12 column from
+   600px (stryker.com aem-GridColumn--phone--12, e.g. the article of "Protect your patients
+   … and your OR staff": 344px at 375px, 553px at 700px, 1036px at 1280px) */
+body.news-detail.full-width main > .section.col-10.phone-full > div {
+  width: auto;
+  max-width: var(--container-max);
+}
+
+@media (width >= 600px) {
+  body.news-detail.full-width main > .section.col-10.phone-full > div {
+    width: calc(100% * 5 / 6);
+    max-width: calc(var(--container-max) * 5 / 6);
+  }
+
+  /* an image in a grid-column section style inside the 10/12 column stays centred, as
+     on the source (the one-third photos of the "Protect your patients" article) */
+  body.news-detail.full-width main > .section.col-10:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
+    margin-inline: auto;
+  }
+}
+
+/* the `separator` rule runs across the whole page, edge to edge (source .c-section-separator:
+   1440px at 1440px, "When Stryker employees…"; mix-width: the rule between the article and
+   the "Connect with us" band), not across the container: it sits on the section, which
+   spans the page, instead of its content box. An empty separator section (only its
+   metadata, e.g. the rule authored on its own before a fragment) still shows: it is the
+   rule, which the corp "empty sections paint nothing" rule would otherwise hide */
+body.news-detail:is(.full-width, .mix-width) main > .section.separator {
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail:is(.full-width, .mix-width) main > .section.separator:empty {
+  display: block;
+  padding-block: 0;
+  margin-bottom: var(--space-block-l);
+}
+
+body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:first-child {
+  border-top: 0;
+}
+
+   @media (width >= 600px) {
+   body.news-detail.full-width .columns > div {
+   flex-direction: column;
+   }
+
+  /* the empty separator section: 50px to the next section from 600px (source 51px at
+     1280px; 21px on phones, above) */
+  body.news-detail:is(.full-width, .mix-width) main > .section.separator:empty {
+    margin-bottom: var(--space-section-l);
+  }
+
+  /* a 25/75 row (a cover beside its text) and a thumbnails row (text beside its download
+     thumbnails) stay side by side, as on the source (the 2022 Comprehensive Report
+     release: 145px cover beside the text at 700px; the leadership succession release) */
+  body.news-detail.full-width .columns:is(.columns-25-75, .thumbnails) > div {
+    flex-direction: row;
+  }
+
+  /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
+     start of the full-width section, as on the source (the additive manufacturing lead
+     image), not centred like the template's article-column images */
+  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
+    margin-inline: 0 auto;
+  }
+  }
+
+   @media (width >= 900px) {
+    body.news-detail.full-width .columns > div {
+     flex-flow: row wrap;
+  }
+
+  /* every section spans the container, except a Hero Corp, which stays full-bleed
+     (stryker.com full-width hero image: 1920px at 1920px, the nurses feature), and a
+     `col-10` section, which keeps its 10/12 column capped at 5/6 of the container (1144px
+     of text from 1440px) */
+  body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10) > div {
+    max-width: var(--container-max);
+  }
+
+  body.news-detail.full-width main > .section.hero-corp-container > div {
+    max-width: none;
+  }
+
+}
+
+/* mix-width: news pages whose article (title included) keeps the template's centred
+   two-thirds column, and from the first fragment on ("Connect with us" band, the form
+   with its contact links) span the whole container — e.g. the Sustainability "World
+   Environment Day 2025" release. A `separator` section between the two parts draws the
+   page-wide rule (above). From 900px (source 1024px):
+   - the connect-band, form-with-aside and Cards Corp sections (e.g. the LCA report
+     download, source Resources & downloads), and every section after them, span the
+     container;
+   - a form-with-aside section puts its form in the first two thirds and the contact
+     links fragment in the last third, side by side (stacked below 900px, the links
+     under the form, as on the source). full-width pages lay it out the same way (the Sage
+     "Closing the gap in fecal management" webinar: form 637px beside the links at 1000px) */
+@media (width >= 900px) {
+  body.news-detail:is(.full-width, .mix-width) main > .section.form-with-aside {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.news-detail:is(.full-width, .mix-width) main > .section.form-with-aside > div {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  body.news-detail.mix-width main > .section:is(.connect-band, .form-with-aside, .cards-corp-container, .connect-band ~ .section, .form-with-aside ~ .section, .cards-corp-container ~ .section) > div {
+    max-width: var(--container-max);
+  }
+}

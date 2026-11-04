@@ -1,0 +1,2196 @@
+/* eslint-disable */
+var CustomImportScript = (() => {
+  var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // tools/importer/import-long-page-detail-corp-fragments.js
+  var import_long_page_detail_corp_fragments_exports = {};
+  __export(import_long_page_detail_corp_fragments_exports, {
+    default: () => import_long_page_detail_corp_fragments_default
+  });
+
+  // tools/importer/parsers/video.js
+  var DM_HOST = "https://media-assets.stryker.com";
+  function encodePath(path) {
+    return path.split("/").map((part) => encodeURIComponent(part)).join("/");
+  }
+  function videoLink(element, document) {
+    const a = document.createElement("a");
+    const dm = element.querySelector("[data-asset-path]");
+    if (dm) {
+      const assetPath = dm.getAttribute("data-asset-path");
+      const videoServer = dm.getAttribute("data-videoserver") || `${DM_HOST}/is/content/`;
+      const imageServer = dm.getAttribute("data-imageserver") || `${DM_HOST}/is/image/`;
+      const modifiers = dm.getAttribute("data-viewermodifiers") || "";
+      const modifierPoster = (modifiers.match(/(?:^|&)VideoPlayer\.posterimage=([^&]+)/i) || [])[1];
+      const poster = dm.getAttribute("data-posterimage") || modifierPoster && decodeURIComponent(modifierPoster.replace(/\+/g, " ")).trim() || assetPath;
+      a.href = `${videoServer}${encodePath(assetPath)}.m3u8?poster=${imageServer}${encodePath(poster)}?fit=constrain,1&wid=909&hei=511`;
+      a.textContent = (dm.getAttribute("data-asset-name") || assetPath.split("/").pop()).replace(/\.[a-z0-9]+$/i, "");
+      return a;
+    }
+    const iframe = element.querySelector('iframe[src*="youtube"], iframe[data-src*="youtube"]');
+    const src = iframe && (iframe.getAttribute("src") || iframe.getAttribute("data-src"));
+    const id = src && (src.match(/(?:embed\/|v=|youtu\.be\/)([\w-]{11})/) || [])[1];
+    if (!id) return null;
+    a.href = `https://www.youtube.com/watch?v=${id}`;
+    a.textContent = iframe.getAttribute("title") || a.href;
+    return a;
+  }
+  function parse(element, { document }) {
+    const link = videoLink(element, document);
+    if (!link) return;
+    const cells = [[link]];
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
+  }
+
+  // tools/importer/parsers/cards-corp-resources.js
+  var SOURCE_ORIGIN = "https://www.stryker.com";
+  function text(el) {
+    return (el && el.textContent ? el.textContent : "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function absolute(href) {
+    return href && href.startsWith("/") && !href.startsWith("//") ? `${SOURCE_ORIGIN}${href}` : href;
+  }
+  function newTab(source, href) {
+    if (!href || href.includes("#")) return href;
+    const isPdf = /\.pdf(\?|$)/i.test(href);
+    const blank = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || blank ? `${href}#_blank` : href;
+  }
+  function parse2(element, { document }) {
+    const items = [...element.querySelectorAll(".item")];
+    const rows = items.map((item) => {
+      const title = item.querySelector(".title, h5, h4");
+      const link = title && title.closest("a[href]") || item.querySelector("a[href]");
+      const img = item.querySelector("img");
+      if (!link || !img) return null;
+      const src = absolute(img.getAttribute("src"));
+      const cover = document.createElement("a");
+      cover.href = src;
+      cover.textContent = src;
+      const h5 = document.createElement("h5");
+      const a = document.createElement("a");
+      a.href = newTab(link, absolute(link.getAttribute("href")));
+      a.textContent = text(title) || text(link);
+      h5.append(a);
+      return [cover, h5];
+    }).filter(Boolean);
+    if (!rows.length) {
+      element.remove();
+      return;
+    }
+    const sixUp = items.some((item) => /\bcol-md-2\b/.test(item.className));
+    const name = sixUp ? "Cards Corp (resources, six-up)" : "Cards Corp (resources)";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells: rows }));
+  }
+
+  // tools/importer/transformers/long-page-detail-corp-article.js
+  var SOURCE_ORIGIN2 = "https://www.stryker.com";
+  var COMPONENTS = [
+    ".c-autocarousel",
+    ".c-standalone-image",
+    ".c-rich-text-editor",
+    ".c-standalone-video",
+    ".c-curatedcta",
+    // a Button Set (.buttonset > .button-group > a.btn) imports like a Curated CTA (as in
+    // news-detail-sections.js on main, f4ab244)
+    ".buttonset",
+    ".c-largeheadline",
+    ".c-section-title",
+    ".c-customizeable",
+    ".c-section-separator",
+    ".sectionseparator"
+  ].join(", ");
+  var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
+  var KEEP_ATTRS = {
+    A: ["href"],
+    IMG: ["src", "alt"],
+    TD: ["colspan", "rowspan"],
+    TH: ["colspan", "rowspan"]
+  };
+  function text2(el) {
+    return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function rename(el, tagName) {
+    const doc = el.ownerDocument;
+    const next = doc.createElement(tagName);
+    while (el.firstChild) next.append(el.firstChild);
+    el.replaceWith(next);
+    return next;
+  }
+  function unwrap(el) {
+    el.replaceWith(...el.childNodes);
+  }
+  function absoluteAsset(href) {
+    return href && href.startsWith("/content/dam/") ? `${SOURCE_ORIGIN2}${href}` : href;
+  }
+  function newTabHref(source, href) {
+    if (!href || href.includes("#") || /^(mailto|tel):/i.test(href)) return href;
+    const isPdf = /\.pdf(\?|$)/i.test(href);
+    const newTab2 = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || newTab2 ? `${href}#_blank` : href;
+  }
+  var SIZE_STYLES = [
+    // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
+    ["fontsize-8em", "disclaimer"],
+    ["fontsize-1-25em", "p-1-25"],
+    ["fontsize-1-5em", "p-1-5"],
+    ["fontsize-1-75em", "p-1-75"],
+    // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
+    ["fontsize-2em", "p-2"],
+    ["fontsize-2-5em", "p-2-5"]
+  ];
+  var SIZE_TAGS = [
+    ["fontsize-1-25em", "text-1-25"],
+    ["fontsize-1-5em", "text-1-5"],
+    ["fontsize-1-75em", "text-1-75"],
+    ["fontsize-2em", "text-2"],
+    ["fontsize-2-5em", "text-2-5"]
+  ];
+  var FONT_STYLES = [
+    ["urw-egyptienne", "serif"]
+  ];
+  function copyStyles(root) {
+    const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
+    const copy = candidates.filter((el) => text2(el) && !el.querySelector("p, li"));
+    if (!copy.length) return null;
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const covers = (cls) => copy.every((el) => {
+      const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
+    });
+    const size = SIZE_STYLES.find(([cls]) => covers(cls));
+    const coversFont = (cls) => copy.every((el) => {
+      const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
+      const covered = squash(spans.map((span) => span.textContent).join("")) + squash(bold.map((span) => span.textContent).join(""));
+      return spans.length > 0 && covered.length === squash(el.textContent).length;
+    });
+    const font = FONT_STYLES.find(([cls]) => coversFont(cls));
+    return [size && size[1], font && font[1]].filter(Boolean).join(", ");
+  }
+  function sameLineText(node, direction) {
+    let value = "";
+    let sibling = node[direction];
+    while (sibling && sibling.nodeName !== "BR") {
+      value += sibling.textContent;
+      sibling = sibling[direction];
+    }
+    return value.replace(/[\s\u00a0]+/g, "");
+  }
+  function tagPlainBoldLabels(root, wholeParagraphs) {
+    const doc = root.ownerDocument;
+    [...root.querySelectorAll("b")].forEach((b) => {
+      if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
+      if (!text2(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
+      const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
+      if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
+      if (!wholeParagraphs && text2(block) === text2(b)) return;
+      b.before(doc.createTextNode("[[body-font]"));
+      b.after(doc.createTextNode("]"));
+    });
+  }
+  var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+  function ownColour(el) {
+    const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+    return m ? m[1].trim() : "";
+  }
+  function hasOtherColour(node) {
+    if (node.nodeType !== 1) return false;
+    const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+    return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text2(child)));
+  }
+  function bracketTag(nodes, classes, root) {
+    const doc = root.ownerDocument;
+    const run = [...nodes];
+    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const open = doc.createTextNode(`[[${classes}]`);
+    const close = doc.createTextNode("]");
+    run[0].before(open);
+    run[run.length - 1].after(close);
+    const edge = (n, dir) => {
+      let s = n[dir];
+      while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
+      return s;
+    };
+    let parent = open.parentElement;
+    while (parent && parent !== root && parent === close.parentElement && !parent.matches("p, li, h1, h2, h3, h4, h5, h6, a, div") && !edge(open, "previousSibling") && !edge(close, "nextSibling")) {
+      parent.before(open);
+      parent.after(close);
+      parent = open.parentElement;
+    }
+  }
+  function tagTextSize(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    SIZE_TAGS.forEach(([cls, tag]) => {
+      [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
+        if (span.parentElement.closest(`.${cls}`) || !text2(span)) return;
+        const block = span.closest("p, li");
+        if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
+        if (squash(block.textContent) === squash(span.textContent)) return;
+        bracketTag([span], tag, root);
+      });
+    });
+  }
+  function tagGoldText(root) {
+    const tagged = /* @__PURE__ */ new Set();
+    const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
+    root.querySelectorAll('[style*="color"]').forEach((el) => {
+      if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+      tagged.add(el);
+      if (!hasOtherColour(el)) {
+        wrap([el]);
+        return;
+      }
+      let run = [];
+      [...el.childNodes].forEach((child) => {
+        if (hasOtherColour(child)) {
+          wrap(run);
+          run = [];
+        } else run.push(child);
+      });
+      wrap(run);
+    });
+  }
+  function cleanRichText(root, { wholeParagraphs = false } = {}) {
+    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text2(el));
+    const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
+    const size = copyStyles(root);
+    const doc = root.ownerDocument;
+    root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
+    const trailingSpace = /[\s\u00a0]+$/;
+    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) {
+          if (/[\s\u00a0]/.test(last.textContent) && !(el.nextSibling && /^[\s\u00a0]/.test(el.nextSibling.textContent))) {
+            el.after(doc.createTextNode(" "));
+          }
+          last.remove();
+        } else el.after(last);
+        last = el.lastChild;
+      }
+      if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
+        last.textContent = last.textContent.replace(trailingSpace, "");
+        el.after(doc.createTextNode(" "));
+      }
+    });
+    tagPlainBoldLabels(root, wholeParagraphs);
+    tagGoldText(root);
+    tagTextSize(root);
+    const standalone = /* @__PURE__ */ new Set();
+    root.querySelectorAll(".standalone-link").forEach((span) => {
+      const a = span.closest("a") || span.querySelector("a");
+      if (a) standalone.add(a);
+    });
+    standalone.forEach((a) => {
+      const u = doc.createElement("u");
+      while (a.firstChild) u.append(a.firstChild);
+      a.append(u);
+      const strong = doc.createElement("strong");
+      a.replaceWith(strong);
+      strong.append(a);
+    });
+    root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
+    root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
+    root.querySelectorAll("i").forEach((el) => rename(el, "em"));
+    root.querySelectorAll("span, font").forEach(unwrap);
+    root.querySelectorAll("strong strong, em em").forEach(unwrap);
+    root.querySelectorAll("strong, em").forEach((el) => {
+      if (!el.textContent.trim() && !el.querySelector("img, br")) el.remove();
+    });
+    root.querySelectorAll("a[href]").forEach((a) => {
+      a.setAttribute("href", newTabHref(a, absoluteAsset(a.getAttribute("href"))));
+    });
+    root.querySelectorAll("*").forEach((el) => {
+      const keep = KEEP_ATTRS[el.tagName] || [];
+      [...el.attributes].forEach((attr) => {
+        if (!keep.includes(attr.name)) el.removeAttribute(attr.name);
+      });
+    });
+    root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").forEach((el) => {
+      while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
+        el.lastChild.remove();
+      }
+      if (!text2(el) && !el.querySelector("img")) el.remove();
+    });
+    return { centred, size };
+  }
+  function plainBoldParagraphs(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.querySelectorAll("p")].filter((p) => {
+      const all = squash(p.textContent);
+      if (!all || p.querySelector(".futura-bold")) return false;
+      const bold = [...p.querySelectorAll("b")].filter((b) => !b.parentElement.closest("b"));
+      return squash(bold.map((b) => b.textContent).join("")) === all;
+    }));
+  }
+  function serifHeadings(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.querySelectorAll("h2, h3")].filter((h) => {
+      if (!text2(h)) return false;
+      if (h.tagName === "H2") {
+        if (h.querySelector("u")) return false;
+        const bold = [...h.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong"));
+        return squash(bold.map((b) => b.textContent).join("")) !== squash(h.textContent);
+      }
+      if (h.querySelector(".futura-bold, b, strong")) return false;
+      const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+    }));
+  }
+  var LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
+  function labelHeadingsToParagraphs(root) {
+    root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
+      if (!LABEL_HEADING.test(text2(h))) return;
+      const p = root.ownerDocument.createElement("p");
+      while (h.firstChild) p.append(h.firstChild);
+      p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
+      if (!p.querySelector(".futura-bold")) {
+        p.querySelectorAll("b, strong").forEach(unwrap);
+        const bold = root.ownerDocument.createElement("span");
+        bold.className = "futura-bold";
+        while (p.firstChild) bold.append(p.firstChild);
+        p.append(bold);
+      }
+      h.replaceWith(p);
+    });
+  }
+  var HEADING_SIZES = [
+    ["H2", "fontsize-8em", "h2-0-8"],
+    ["H2", "fontsize-1-5em", "h2-1-5"],
+    ["H1", "fontsize-1-25em", "h1-1-25"],
+    // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+    // long-page-detail-corp-sections.js → titleFromHeading)
+    ["H1", "fontsize-h4-2-5", "h4-2-5"]
+  ];
+  function smallHeadings(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const styles = /* @__PURE__ */ new Map();
+    root.querySelectorAll("h1, h2").forEach((h) => {
+      if (!text2(h)) return;
+      const match = HEADING_SIZES.find(([tag, cls]) => {
+        if (h.tagName !== tag) return false;
+        const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+        return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+      });
+      if (match) styles.set(h, match[2]);
+    });
+    return styles;
+  }
+  function splitStyledLeads(root) {
+    const doc = root.ownerDocument;
+    const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
+    [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
+      const nodes = [...p.childNodes];
+      const at = nodes.findIndex((node, i) => {
+        var _a;
+        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
+      });
+      if (at < 1) return;
+      const lead = doc.createElement("p");
+      nodes.slice(0, at).forEach((node) => lead.append(node));
+      const leadText = text2(lead).replace(/[\s\u00a0]+/g, "");
+      const covered = [...lead.querySelectorAll(styled)].filter((span) => !span.parentElement.closest(styled)).map((span) => span.textContent).join("").replace(/[\s\u00a0]+/g, "");
+      if (!leadText || covered !== leadText || !text2(p)) {
+        p.prepend(...lead.childNodes);
+        return;
+      }
+      while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
+      p.before(lead);
+    });
+  }
+  function richTextTitle(component, doc) {
+    const p = component.querySelector("p");
+    if (!p) return null;
+    const nodes = [...p.childNodes];
+    const at = nodes.findIndex((node) => node.nodeName === "BR");
+    const lead = at < 0 ? nodes : nodes.slice(0, at);
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, " ").trim();
+    const leadText = squash(lead.map((node) => node.textContent).join(""));
+    if (!leadText) return null;
+    const box = doc.createElement("div");
+    lead.forEach((node) => box.append(node.cloneNode(true)));
+    const large = squash([...box.querySelectorAll(".fontsize-1-5em")].filter((span) => !span.parentElement.closest(".fontsize-1-5em")).map((span) => span.textContent).join(""));
+    if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
+    lead.forEach((node) => node.remove());
+    while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
+    if (!text2(p)) p.remove();
+    const h1 = doc.createElement("h1");
+    h1.textContent = leadText;
+    return h1;
+  }
+  function blockNodes(container, doc) {
+    const nodes = [];
+    let run = [];
+    const flush = () => {
+      if (run.some((n) => {
+        var _a;
+        return n.nodeType === 3 ? n.textContent.trim() : text2(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
+      })) {
+        const p = doc.createElement("p");
+        p.append(...run);
+        while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
+        while (p.lastChild && (p.lastChild.nodeName === "BR" || p.lastChild.nodeType === 3 && !p.lastChild.textContent.trim())) p.lastChild.remove();
+        nodes.push(p);
+      }
+      run = [];
+    };
+    [...container.childNodes].forEach((node) => {
+      if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
+        flush();
+        if (text2(node) || node.querySelector("img")) nodes.push(node);
+      } else if (node.nodeType === 1 && node.tagName === "IMG") {
+        flush();
+        const p = doc.createElement("p");
+        p.append(node);
+        nodes.push(p);
+      } else if (node.nodeType === 1 && ["DIV", "SECTION", "ARTICLE"].includes(node.tagName)) {
+        flush();
+        nodes.push(...blockNodes(node, doc));
+      } else if (node.nodeType === 1 || node.nodeType === 3) {
+        run.push(node);
+      }
+    });
+    flush();
+    return nodes;
+  }
+  function richTextNodes(component, doc) {
+    const box = doc.createElement("div");
+    const source = component.querySelector(":scope > div") || component;
+    box.innerHTML = source.innerHTML;
+    labelHeadingsToParagraphs(box);
+    splitStyledLeads(box);
+    const plainBold = plainBoldParagraphs(box);
+    const serifHeads = serifHeadings(box);
+    const smallHeads = smallHeadings(box);
+    const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+    const { centred, size } = cleanRichText(box);
+    const nodes = blockNodes(box, doc);
+    nodes.forEach((node) => {
+      if (plainBold.has(node)) node.boldBody = true;
+      if (serifHeads.has(node)) node.serifHeading = true;
+      if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
+    });
+    let last = null;
+    nodes.forEach((node) => {
+      const style = elementStyles.get(node);
+      node.copyStyle = style === void 0 || style === null ? last : style;
+      if (node.copyStyle !== null) last = node.copyStyle;
+    });
+    const first = nodes.find((node) => node.copyStyle !== null);
+    nodes.forEach((node) => {
+      if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
+    });
+    return { nodes, centred, size };
+  }
+  function imageColumnStyle(component) {
+    const col = component.closest('[class*="col-sm-"]');
+    const match = col && col.className.match(/\bcol-sm-(4|6)\b/);
+    if (!match) return "";
+    const others = [...col.parentElement.children].filter((el) => el !== col);
+    if (others.some((el) => text2(el) || el.querySelector("img, video, iframe"))) return "";
+    if (/\bcol-md-3\b/.test(col.className)) return "image-1-4";
+    return match[1] === "4" ? "image-1-3" : "image-1-2";
+  }
+  function imageNodes(component, doc) {
+    const nodes = [...component.querySelectorAll("img")].map((source) => {
+      const img = doc.createElement("img");
+      img.setAttribute("src", source.getAttribute("src"));
+      img.setAttribute("alt", source.getAttribute("alt") || "");
+      const p = doc.createElement("p");
+      p.append(img);
+      return p;
+    });
+    if (nodes.length) {
+      component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
+        if (!text2(title)) return;
+        const h4 = doc.createElement("h4");
+        h4.textContent = text2(title);
+        nodes.push(h4);
+      });
+    }
+    return nodes;
+  }
+  function buttonNodes(component, doc) {
+    return [...component.querySelectorAll("a[href]")].filter((a) => text2(a)).map((source) => {
+      const a = doc.createElement("a");
+      a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
+      if (source.matches(".action-link, li a")) {
+        const u = doc.createElement("u");
+        u.textContent = text2(source);
+        a.append(u);
+        const strong2 = doc.createElement("strong");
+        strong2.append(a);
+        const p2 = doc.createElement("p");
+        p2.append(strong2);
+        return p2;
+      }
+      a.textContent = text2(source);
+      const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
+      if (colour) a.setAttribute("data-btn-style", colour);
+      const strong = doc.createElement("strong");
+      if (source.classList.contains("btn-gold")) {
+        const em = doc.createElement("em");
+        em.append(a);
+        strong.append(em);
+      } else {
+        strong.append(a);
+      }
+      const p = doc.createElement("p");
+      p.append(strong);
+      return p;
+    });
+  }
+  function centredLine(el) {
+    return /text-align:\s*center/.test(el.getAttribute("style") || "") || !!el.querySelector('[style*="text-align: center"], [style*="text-align:center"]');
+  }
+  function headlineTag(el) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1]).map(([n]) => n)[0];
+    const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
+    const serif = squash(bold) !== squash(el.textContent);
+    return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
+  }
+  function blankLineAfter(p, doc) {
+    const end = p.lastChild && p.lastChild.nodeType === 3 && p.lastChild.textContent === "]" ? p.lastChild : null;
+    let last = end ? end.previousSibling : p.lastChild;
+    while (last && last.nodeType === 3 && !last.textContent.trim()) last = last.previousSibling;
+    const count = last && last.nodeName === "BR" ? 1 : 2;
+    for (let n = 0; n < count; n += 1) p.insertBefore(doc.createElement("br"), end);
+  }
+  function headlineNodes(component, doc) {
+    const box = doc.createElement("div");
+    box.innerHTML = component.innerHTML;
+    const BLOCKS = "h1, h2, h3, h4, h5, h6, p";
+    const lines = [...box.querySelectorAll(".line")];
+    const segments = (lines.length ? lines : [box]).flatMap((line) => {
+      const blocks = [...line.querySelectorAll(BLOCKS)].filter((block) => text2(block) && !block.parentElement.closest(BLOCKS));
+      return blocks.length > 1 ? blocks : [line];
+    });
+    const tags = segments.map(headlineTag);
+    const centredSegments = segments.map((segment) => segment !== box && centredLine(segment));
+    const levels = segments.map((segment) => /^H[2-6]$/.test(segment.tagName) ? segment.tagName.toLowerCase() : "");
+    const copy = segments.map((segment) => segment.tagName === "P" || !!segment.querySelector("p"));
+    const parts = segments.map((segment) => segment === box ? box : rename(segment, "div"));
+    const endsWithBreak = (node) => {
+      let last = node;
+      while (last && last.nodeType === 1 && last.nodeName !== "BR") {
+        let child = last.lastChild;
+        while (child && child.nodeType === 3 && !child.textContent.trim()) {
+          child = child.previousSibling;
+        }
+        last = child;
+      }
+      return !!last && last.nodeName === "BR";
+    };
+    parts.forEach((part) => part.querySelectorAll(`${BLOCKS}, div`).forEach((block) => {
+      let prev = block.previousSibling;
+      while (prev && prev.nodeType === 3 && !prev.textContent.trim()) prev = prev.previousSibling;
+      const needsBreak = prev && !endsWithBreak(prev) && text2(block);
+      if (needsBreak) block.before(doc.createElement("br"));
+      unwrap(block);
+    }));
+    const sizeOf = (tag) => (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tag || "") || [])[1] || "";
+    const leadingBlank = parts.map((part) => {
+      if (part === box) return null;
+      const walker = doc.createTreeWalker(part, 5);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (n.nodeName === "BR") {
+          const sized = n.parentElement.closest('[class*="fontsize-"]');
+          return sized && part.contains(sized) ? (/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(sized.className) || [])[1] || "" : "";
+        }
+        if (n.nodeType === 3 ? text2(n) : n.matches("img, picture")) return null;
+      }
+      return null;
+    });
+    cleanRichText(box);
+    let previous = null;
+    let previousIndex = -1;
+    return parts.map((part, i) => {
+      if (!text2(part)) return null;
+      const p = doc.createElement("p");
+      while (part.firstChild) p.append(part.firstChild);
+      while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !text2(p.firstChild))) {
+        p.firstChild.remove();
+      }
+      const blank = leadingBlank[i] !== null && previous;
+      const onPrevious = blank && leadingBlank[i] === sizeOf(tags[previousIndex]) && centredSegments[previousIndex] === centredSegments[i];
+      if (blank && !onPrevious) p.prepend(doc.createElement("br"));
+      if (tags[i]) {
+        p.prepend(doc.createTextNode(`[[${tags[i]}]`));
+        p.append(doc.createTextNode("]"));
+      }
+      if (levels[i]) p.headingLevel = levels[i];
+      if (copy[i]) p.copyLine = true;
+      if (centredSegments[i]) p.centredLine = true;
+      if (onPrevious) blankLineAfter(previous, doc);
+      previous = p;
+      previousIndex = i;
+      return p;
+    }).filter(Boolean);
+  }
+  function whiteBox(headline) {
+    return !!headline.querySelector(".has-background.bg-white");
+  }
+  function centredHeadline(headline) {
+    const lines = [...headline.querySelectorAll(".line")].filter((line) => text2(line));
+    return lines.length > 0 && lines.every(centredLine);
+  }
+  function headlineStyles(headline) {
+    return [whiteBox(headline) ? "headline-box" : "", centredHeadline(headline) ? "center" : ""].filter(Boolean).join(", ");
+  }
+  function titleHeading(lines, doc) {
+    const h1 = doc.createElement("h1");
+    lines.forEach((line, i) => {
+      if (i) h1.append(doc.createElement("br"));
+      h1.append(...line.childNodes);
+    });
+    [...h1.querySelectorAll("strong, em")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
+        if (last.nodeName === "BR") el.after(last);
+        else last.remove();
+        last = el.lastChild;
+      }
+    });
+    return h1;
+  }
+  function videoAside(video) {
+    const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
+    const row = col && col.parentElement;
+    const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
+    const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
+    const headline = aside && aside.querySelector(".c-largeheadline");
+    return headline && text2(headline) ? headline : null;
+  }
+  function headlineVideo(headline) {
+    const col = headline.closest('[class*="col-sm-6"]');
+    const row = col && col.parentElement;
+    const videoCol = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+    const video = videoCol && videoCol.querySelector(".c-standalone-video");
+    return video && video.querySelector("[data-asset-path], iframe[src]") ? video : null;
+  }
+  function videoTextAside(video) {
+    const col = video.closest('[class*="col-sm-6"]');
+    const row = col && col.parentElement;
+    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+    const rte = aside && aside.querySelector(".c-rich-text-editor");
+    if (!rte || !text2(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
+    return rte;
+  }
+  function videoTextColumns(video, rte, doc) {
+    const link = videoLink(video, doc);
+    const { nodes } = richTextNodes(rte, doc);
+    if (!link || !nodes.length) return null;
+    const media = doc.createElement("p");
+    media.append(link);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: "Columns (columns-50-50)",
+      cells: [[media, nodes]]
+    });
+  }
+  function quoteNodes(headline, doc) {
+    const box = doc.createElement("div");
+    box.innerHTML = headline.innerHTML;
+    box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
+      const bold = span.closest(".futura-bold");
+      if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text2(span)) || text2(bold) === text2(span)) return;
+      const atStart = text2(bold).startsWith(text2(span));
+      const mark = doc.createElement("span");
+      mark.className = "futura-bold";
+      mark.append(span);
+      if (atStart) bold.before(mark);
+      else bold.after(mark);
+    });
+    tagGoldText(box);
+    box.querySelectorAll(".futura-bold").forEach((span) => {
+      const strong = doc.createElement("strong");
+      while (span.firstChild) strong.append(span.firstChild);
+      if (/^[“”"‘’']+$/.test(text2(strong))) {
+        const em = doc.createElement("em");
+        em.append(strong);
+        span.replaceWith(em);
+      } else span.replaceWith(strong);
+    });
+    box.querySelectorAll("span, font").forEach(unwrap);
+    box.querySelectorAll("strong strong").forEach(unwrap);
+    [...box.querySelectorAll("strong")].forEach((strong) => {
+      if (!strong.parentNode) return;
+      let next = strong.nextSibling;
+      const following = (node) => node && node.nodeType === 3 && !node.textContent.trim() ? node.nextSibling : node;
+      while (following(next) && following(next).nodeName === "STRONG") {
+        if (next.nodeType === 3) strong.append(next);
+        const run = strong.nextSibling;
+        while (run.firstChild) strong.append(run.firstChild);
+        run.remove();
+        next = strong.nextSibling;
+      }
+    });
+    box.querySelectorAll("em").forEach((em) => {
+      const mark = em.firstElementChild;
+      if (!mark || mark.tagName !== "STRONG" || em.childNodes.length !== 1) return;
+      const next = em.nextSibling;
+      const prev = em.previousSibling;
+      const inner = doc.createElement("em");
+      while (mark.firstChild) inner.append(mark.firstChild);
+      if (next && next.nodeName === "STRONG") {
+        next.prepend(inner);
+        em.remove();
+      } else if (prev && prev.nodeName === "STRONG") {
+        prev.append(inner);
+        em.remove();
+      } else {
+        mark.append(...inner.childNodes);
+      }
+    });
+    [...box.querySelectorAll("em, strong")].reverse().forEach((el) => {
+      while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
+        el.after(el.lastChild);
+      }
+    });
+    const out = [];
+    const blocks = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
+    blocks.forEach((block) => {
+      let line = doc.createElement("p");
+      const flush = () => {
+        if (text2(line)) out.push(line);
+        line = doc.createElement("p");
+      };
+      [...block.childNodes].forEach((node) => {
+        if (node.nodeName === "BR") flush();
+        else line.append(node);
+      });
+      flush();
+    });
+    out.forEach((p) => p.querySelectorAll("*").forEach((el) => {
+      [...el.attributes].forEach((attr) => el.removeAttribute(attr.name));
+    }));
+    return out;
+  }
+  function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+    const link = videoLink(video, doc);
+    const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
+    const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
+    const lines = boxed ? headlineNodes(headline, doc) : [];
+    if (!link || boxed && !lines.length) return null;
+    const media = doc.createElement("p");
+    media.append(link);
+    const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
+    const firstLine = headline.querySelector(".line") || headline;
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
+    const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: `Columns (${half ? "columns-50-50" : "columns-67-33"}, large-headline${boxed ? ", gray-lead" : ""})`,
+      cells: [/* @__PURE__ */ ((mediaCell, textCell) => mirrored ? [textCell, mediaCell] : [mediaCell, textCell])(
+        [media, ...buttons],
+        [
+          ...statement,
+          ...quotes.flatMap((q) => quoteNodes(q, doc)),
+          // a button in the narrow column (under the quote, e.g. Esley) stays there
+          ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
+        ]
+      )]
+    });
+  }
+  function footnoteList(nodes, doc) {
+    const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
+    const out = [];
+    let ol = null;
+    nodes.forEach((node) => {
+      const match = node.tagName === "P" && node.textContent.match(NUMBERED);
+      const next = ol ? ol.children.length + 1 : 1;
+      if (match && Number(match[1]) === next) {
+        if (!ol) {
+          ol = doc.createElement("ol");
+          out.push(ol);
+        }
+        const li = doc.createElement("li");
+        while (node.firstChild) li.append(node.firstChild);
+        ol.append(li);
+        return;
+      }
+      ol = null;
+      out.push(node);
+    });
+    out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
+    return out;
+  }
+  function buildArticle(element, { keep = "", spacer = true, componentStyle = null } = {}) {
+    const doc = element.ownerDocument;
+    const main = doc.querySelector('[role="main"]') || element;
+    const selector = keep ? `${COMPONENTS}, ${keep}` : COMPONENTS;
+    const sections = [];
+    let current = null;
+    let separatorNext = false;
+    let extraStyle = "";
+    let lastKept = null;
+    const startSection = (kind, sectionStyle) => {
+      const style = [separatorNext || "", sectionStyle, extraStyle].filter(Boolean).join(", ") || void 0;
+      separatorNext = false;
+      current = {
+        kind,
+        style,
+        nodes: [],
+        extra: extraStyle
+      };
+      sections.push(current);
+      return current;
+    };
+    const title = startSection("title");
+    const h1 = main.querySelector(".h1-title h1");
+    const hasTitle = !!(h1 && text2(h1));
+    if (hasTitle) {
+      const heading = doc.createElement("h1");
+      heading.innerHTML = h1.innerHTML;
+      cleanRichText(heading);
+      title.nodes.push(heading);
+    }
+    const date = main.querySelector(".c-publish-date h5");
+    if (date && text2(date)) {
+      const value = text2(date);
+      const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+      const month = m && "janfebmaraprmayjunjulaugsepoctnovdec".indexOf(m[2].toLowerCase()) / 3 + 1;
+      element.setAttribute("data-first-published", month >= 1 && Number.isInteger(month) ? `${m[3]}-${String(month).padStart(2, "0")}-${m[1].padStart(2, "0")}` : value);
+    }
+    const location = main.querySelector(".c-event-location-properties h5");
+    if (location && text2(location)) {
+      const h5 = doc.createElement("h5");
+      h5.textContent = location.textContent.replace(/[\s\u00a0]+/g, " ").replace(/\s+,/g, ",").trim();
+      title.nodes.push(h5);
+    }
+    const components = [...main.querySelectorAll(selector)].filter((el) => {
+      const parent = el.parentElement && el.parentElement.closest(selector);
+      return !parent && !el.closest("header, footer, .modal");
+    });
+    const consumed = /* @__PURE__ */ new Set();
+    const videoRowColumns = (video) => {
+      const aside = videoAside(video);
+      if (!aside) return false;
+      const asideCol = aside.closest('[class*="col-sm-"]');
+      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text2(h));
+      const videoCol = video.closest('[class*="col-sm-"]');
+      const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text2(c));
+      const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text2(c));
+      const cols = [...asideCol.parentElement.children];
+      const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+      if (!columns) return false;
+      [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      startSection("columns").nodes.push(columns);
+      current = null;
+      return true;
+    };
+    let leadBelowDate = false;
+    const rowSpacers = (count) => {
+      for (let n = 0; n < count; n += 1) sections.push({ kind: "spacer", style: "spacer", nodes: [] });
+      if (count) current = null;
+    };
+    let rowEnds = 0;
+    components.forEach((component) => {
+      if (consumed.has(component)) return;
+      rowSpacers(rowEnds);
+      rowEnds = Number(component.getAttribute("data-row-end") || 0);
+      const isFirst = current === title;
+      if (componentStyle) {
+        extraStyle = componentStyle(component) || "";
+        if (current && current !== title && current.extra !== extraStyle) current = null;
+      }
+      if (keep && component.matches(keep)) {
+        if (component.getAttribute("data-keep") === "section") {
+          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(component);
+          component.removeAttribute("data-section-style");
+          lastKept = sections[sections.length - 1];
+          current = null;
+          return;
+        }
+        if (component.getAttribute("data-keep") === "nodes") {
+          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(...component.children);
+          current = null;
+          return;
+        }
+        if (component.getAttribute("data-keep") === "join" && lastKept) {
+          lastKept.nodes.push(component);
+          return;
+        }
+        if (!current || !current.kind.startsWith("body")) startSection("body");
+        current.nodes.push(component);
+        return;
+      }
+      if (component.matches(".c-autocarousel")) {
+        if (!component.querySelector("img")) return;
+        startSection("hero").nodes.push(component);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-standalone-image")) {
+        const nodes2 = imageNodes(component, doc);
+        if (!nodes2.length) return;
+        const columnStyle2 = imageColumnStyle(component);
+        if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
+        if (isFirst || columnStyle2) {
+          startSection(isFirst ? "lead" : "image", columnStyle2 || void 0).nodes.push(...nodes2);
+          current = null;
+          return;
+        }
+        if (!current || !current.kind.startsWith("body")) startSection("body");
+        current.nodes.push(...nodes2);
+        return;
+      }
+      if (component.matches(".c-section-separator, .sectionseparator")) {
+        const row = component.closest(".colctrl");
+        const inRow = row && !text2(row) && !row.querySelector("img, [data-asset-path], iframe, form, table");
+        separatorNext = inRow ? "separator, separator-row" : "separator";
+        current = null;
+        return;
+      }
+      if (component.matches(".c-customizeable")) {
+        if (!component.querySelector(".item img")) return;
+        const section = startSection("cards");
+        const heading = component.querySelector("h2");
+        if (heading && text2(heading)) {
+          const h2 = doc.createElement("h2");
+          h2.textContent = text2(heading);
+          section.nodes.push(h2);
+          heading.remove();
+        }
+        section.nodes.push(component);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-largeheadline") && headlineVideo(component) && !consumed.has(headlineVideo(component))) {
+        const video = headlineVideo(component);
+        if (videoRowColumns(video)) {
+          consumed.add(video);
+          return;
+        }
+      }
+      if (component.matches(".c-standalone-video")) {
+        if (!component.querySelector("[data-asset-path], iframe[src]")) return;
+        if (videoRowColumns(component)) return;
+        const textAside = videoTextAside(component);
+        const textColumns = textAside && videoTextColumns(component, textAside, doc);
+        if (textColumns) {
+          consumed.add(textAside.closest(COMPONENTS) || textAside);
+          element.setAttribute("data-news-theme", "full-width");
+          startSection("columns").nodes.push(textColumns);
+          current = null;
+          return;
+        }
+        const columnStyle2 = imageColumnStyle(component);
+        if (columnStyle2) {
+          startSection("video", columnStyle2).nodes.push(component);
+          current = null;
+          return;
+        }
+        if (!current || current.kind !== "body") startSection("body");
+        current.nodes.push(component);
+        return;
+      }
+      if (component.matches(".c-largeheadline[data-page-title]")) {
+        const lines = headlineNodes(component, doc);
+        const firstCopy = lines.findIndex((line) => line.copyLine);
+        const head = firstCopy < 0 ? lines : lines.slice(0, firstCopy);
+        const titleLines = head.filter((line) => !line.headingLevel);
+        if (titleLines.length) {
+          const others = [
+            ...head.filter((line) => line.headingLevel).map((line) => rename(line, line.headingLevel)),
+            ...firstCopy < 0 ? [] : lines.slice(firstCopy)
+          ];
+          const styles = headlineStyles(component);
+          const section = isFirst ? title : startSection("headline", styles || void 0);
+          if (isFirst && styles) title.style = [title.style, styles].filter(Boolean).join(", ");
+          section.nodes.push(titleHeading(titleLines, doc), ...others);
+          current = null;
+          return;
+        }
+      }
+      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text2(component)) {
+        const lines = headlineNodes(component, doc);
+        if (lines.length) {
+          const heading = rename(lines[0], "h1");
+          heading.querySelectorAll("strong, em").forEach(unwrap);
+          startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
+          current = null;
+          return;
+        }
+      }
+      if (isFirst && !hasTitle && component.matches(".c-rich-text-editor")) {
+        const heading = richTextTitle(component, doc);
+        if (heading) {
+          startSection("headline", "h1-21").nodes.push(heading);
+          current = null;
+        }
+      }
+      const partlyCentred = component.matches(".c-largeheadline") && [...component.querySelectorAll(".line")].some((line) => text2(line) && centredLine(line));
+      if (component.matches(".c-largeheadline") && (headlineStyles(component) || partlyCentred)) {
+        const nodes2 = headlineNodes(component, doc);
+        if (!nodes2.length) return;
+        const box = whiteBox(component) ? "headline-box" : "";
+        const runs = [];
+        nodes2.forEach((node) => {
+          const centred2 = !!node.centredLine;
+          if (!runs.length || runs[runs.length - 1].centred !== centred2) {
+            runs.push({ centred: centred2, nodes: [] });
+          }
+          runs[runs.length - 1].nodes.push(node);
+        });
+        runs.forEach((run) => {
+          const style = [box, run.centred ? "center" : ""].filter(Boolean).join(", ");
+          startSection("headline", style || void 0).nodes.push(...run.nodes);
+        });
+        current = null;
+        return;
+      }
+      const ctaOffset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+      const ctaCentred = ctaOffset && !/aem-GridColumn--offset--default--0\b/.test(ctaOffset.className);
+      if (component.matches(".c-curatedcta") && !ctaCentred) {
+        const nodes2 = buttonNodes(component, doc);
+        if (!nodes2.length) return;
+        if (!current || current.kind !== "cta") startSection("cta", "cta-inset");
+        current.nodes.push(...nodes2);
+        return;
+      }
+      if (component.matches(".c-curatedcta, .buttonset")) {
+        const nodes2 = buttonNodes(component, doc);
+        if (!nodes2.length) return;
+        const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+        const centred2 = offset && !/aem-GridColumn--offset--default--0\b/.test(offset.className) || current && current.kind.startsWith("center");
+        if (centred2) {
+          if (!current || !current.kind.startsWith("center")) startSection("center", "center");
+        } else if (!current || !current.kind.startsWith("body")) {
+          startSection("body");
+        }
+        current.nodes.push(...nodes2);
+        return;
+      }
+      const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
+      if (!nodes.length) return;
+      nodes.forEach((node) => {
+        const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
+        const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
+        const styles = [centred ? "center" : "", ...extra].filter(Boolean);
+        const kind = [centred ? "center" : "body", ...extra].join(" ");
+        let h3Font = null;
+        if (node.tagName === "H3" || node.tagName === "H2" && node.serifHeading) {
+          h3Font = node.serifHeading ? "serif" : "futura";
+        }
+        const otherH3Font = h3Font && current && current.h3Font && current.h3Font !== h3Font;
+        if (!current || current.kind !== kind || otherH3Font) {
+          startSection(kind, styles.join(", ") || void 0);
+        }
+        if (h3Font) {
+          if (h3Font === "serif" && current.h3Font !== "serif") {
+            current.style = [current.style, "h-serif"].filter(Boolean).join(", ");
+          }
+          current.h3Font = h3Font;
+        }
+        current.nodes.push(node);
+      });
+    });
+    extraStyle = "";
+    const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text2(el));
+    const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
+      const box = doc.createElement("div");
+      box.innerHTML = disclaimer.innerHTML;
+      cleanRichText(box, { wholeParagraphs: true });
+      return blockNodes(box, doc);
+    }), doc);
+    const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
+    rowSpacers(rowEnds);
+    if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
+    if (separatorNext) {
+      sections.push({ kind: "spacer", style: `${separatorNext}, spacer`, nodes: [] });
+    }
+    const opensWithHeadline = sections.some((section) => section.kind === "headline");
+    if (spacer && (title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
+      sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
+    }
+    const out = [];
+    sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
+      if (i > 0) out.push(doc.createElement("hr"));
+      out.push(...section.nodes);
+      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
+      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
+        section.style = [section.style, style].filter(Boolean).join(", ");
+      });
+      marked.forEach((a) => a.removeAttribute("data-btn-style"));
+      section.nodes.forEach((node) => {
+        if (node.nodeType === 1) node.removeAttribute("data-keep");
+      });
+      if (section.style) {
+        out.push(WebImporter.Blocks.createBlock(doc, {
+          name: "Section Metadata",
+          cells: { style: section.style }
+        }));
+      }
+    });
+    element.replaceChildren(...out);
+  }
+
+  // tools/importer/long-page-detail-corp-xf-slots.js
+  var long_page_detail_corp_xf_slots_default = {
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/systems/connected_or/surgical-workflow/master": ""
+    },
+    "/us/en/communications/systems/-isuite-experience/procare-services.html": {
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/communications/systems/-isuite-experience/room-design.html": {
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/general-surgery.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/thoracic.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/1788-platform/urology.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/endoscopy/products/thermaclear.html": {
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master": "cols2_2_3_1_3:2",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master": "cols:1"
+    },
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": {
+      "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master": "",
+      "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master": ""
+    }
+  };
+
+  // tools/importer/xf-fragment-path.js
+  var XF_ROOT = "/content/experience-fragments/";
+  var FRAGMENTS_ROOT = "/us/en/fragments/";
+  function xfKey(xf) {
+    return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  }
+  function xfToFragmentPath(xf) {
+    const key = xfKey(xf);
+    if (!key.startsWith(XF_ROOT)) return null;
+    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+
+  // tools/importer/long-page-detail-corp-xf.js
+  var long_page_detail_corp_xf_default = {
+    "/us/en/about/corporate-responsibility/overview.html": ["/content/experience-fragments/stryker/corporate/en/corporate_responsibi/overview/our-corporate-responsibility-commitments/master"],
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/endoscopy/en/systems/connected_or/surgical-workflow/master"
+    ],
+    "/us/en/communications/systems/-isuite-experience/procare-services.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master"
+    ],
+    "/us/en/communications/systems/-isuite-experience/room-design.html": [
+      "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/communications/en/contact_information/header/master"
+    ],
+    "/us/en/endoscopy/products/1788-platform/general-surgery.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master"
+    ],
+    "/us/en/endoscopy/products/1788-platform/thoracic.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master"
+    ],
+    "/us/en/endoscopy/products/1788-platform/urology.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master"
+    ],
+    "/us/en/endoscopy/products/thermaclear.html": [
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+      "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master"
+    ],
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html": [
+      "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master",
+      "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/b2-glenoid-critical-assessment---virtual-implantation-using-blue.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/b2-glenoid-critical-assessment---virtual-implantation-using-blue/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/b2-glenoid-critical-assessment---virtual-implantation-using-blue0.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/b2-glenoid-critical-assessment---virtual-implantation-using-blue0/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--complex-case-debate--pre-operative-planning-and-decis.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--complex-case-debate--pre-operative-planning-and-decis/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--complex-case-debate--pre-operative-planning-for-an-au.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--complex-case-debate--pre-operative-planning-for-an-au/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--the-experts--perspective.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--the-experts--perspective/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/how-blueprint-works---from-ct-to-3d.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/how-blueprint-works---from-ct-to-3d/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/pre-operative-planning---virtual-surgery--augmented-anatomic-com.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/pre-operative-planning---virtual-surgery--augmented-anatomic-com/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/primary-anatomic-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/primary-anatomic/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/primary-reversed-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/primary-reversed/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--planning---surgery---.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--planning---surgery---/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/humeral-fracture-management/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/humeral-fracture-management/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/3d-virtual-planning-for-a-severely-retroverted-glenoid-with-bren.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/3d-virtual-planning-for-a-severely-retroverted-glenoid-with-bren/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/abcs-of-the-gilles-walch-classification--asap-meeting-2020.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/abcs-of-the-gilles-walch-classification--asap-meeting-2020/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/aequalis-trade--shoulder-system-extraction-instrument-overview.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/aequalis-trade--shoulder-system-extraction-instrument-overview/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--alternative-retractor-uses-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--alternative-retractor-uses/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--back-table-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--back-table-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--mayo-stand-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--mayo-stand-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--operating-room-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--operating-room-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--or-staff-roles---responsibilities.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--or-staff-rules---responsibilities/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--patient-positioning.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--patient-positioning/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--staff-positioning.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--staff-positioning/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--sterile-prep-and-draping.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--sterile-prep-and-draping/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--tips-and-pearls.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--tips-and-pearls/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/are-you-kidding--the-only-solution-is-revising-to-a-reverse-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/are-you-kidding--the-only-solution-is-revising-to-a-reverse/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2--is-bone-grafting-still-an-option--dr--keener---asap-meeting-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/b2--is-bone-grafting-still-an-option--dr--keener---asap-meeting-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2-glenoid-critical-assessment---virtual-implantation-using-blue.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/b2-glenoid-critical-assessment---virtual-implantation-using-blue0/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2-glenoid-critical-assessment---virtual-implantation-using-blue0.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/b2-glenoid-critical-assessment---virtual-implantation-using-blue/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bio-rsa-for-a2-glenoid-erosion-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/bio-rsa-for-a2-glenoid-erosion/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--complex-case-debate--pre-operative-planning-and-decis.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--complex-case-debate--pre-operative-planning-and-decis/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--complex-case-debate--pre-operative-planning-for-an-au.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--complex-case-debate--pre-operative-planning-for-an-au/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--the-experts--perspective.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--the-experts--perspective/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bone-preserving-tsa-with-simpliciti--and-perform---featuring-dr-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/bone-preserving-tsa-with-simpliciti--and-perform---featuring-dr-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--george-athwal-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--george-athwal/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--jay-keener-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--jay-keener/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--keith-m--baumgarten-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--keith-m--baumgarten/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--r--sean-churchill-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--r--sean-churchill/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--robert-tashjian-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--robert-tashjian/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--brent-morris/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--greg-nicholson.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--greg-nicholson/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--pascal-boileau--md--phd.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--pascal-boileau--md--phd/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--what-i-ve-learned---dr--gilles-walch.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--what-i-ve-learned---dr--gilles-walch/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series-dr-gilles-walch.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--what-i-ve-learned---dr--gilles-walch/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series-dr-r-sean-churchill-tornier-simpliciti.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--r--sean-churchill--tornier-simplicit/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/dr--moen-delto-pectoral-technique-surgical-video-approach--.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/dr--moen-delto-pectoral-technique-surgical-video-approach-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/glenoid-morphology--how-does-it-affect-my-plan--how-important-is.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/glenoid-morphology--how-does-it-affect-my-plan--how-important-is/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/how-blueprint-works---from-ct-to-3d.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/how-blueprint-works---from-ct-to-3d/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/humeral-osteotomy-technique.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/humeral-osteotomy-technique/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/introducing-blueprint--mixed-reality.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/introducing-blueprint--mixed-reality/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/making-sense-of-all-our-measures---inclination--version--subluxa.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/making-sense-of-all-our-measures---inclination--version--subluxa/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/my-10-tips-and-tricks-to-glenoid-exposure-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/my-10-tips-and-tricks-to-glenoid-exposure-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/pre-operative-planning---virtual-surgery--augmented-anatomic-com.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/pre-operative-planning---virtual-surgery--augmented-anatomic-com/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-anatomic-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/primary-anatomic/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-reversed-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/primary-reversed/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-reversed.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/primary-reversed/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--glenoid-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/revision--glenoid-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--humerus--.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/revision--humerus-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision-arthroplasty-5-humeral-tips-to-remember-featuring-aequa.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/revision-arthroplasty-5-humeral-tips-to-remember-featuring-aequa/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--planning---surgery---.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--planning---surgery---/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform---reamer-instrument-asse.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-perform---reamer-instrument-asse/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform-reversed--surgical-video.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-perform-reversed--surgical-video/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-simpliciti--simpliciti--user-exp.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-simpliciti--simpliciti--user-exp/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex---gill.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex---gill/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--glenoid-implants.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-revision-tools-and-techniques--glenoid-implants/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--humeral-implants.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-revision-tools-and-techniques--humeral-implants/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial---richard.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/simpliciti--shoulder-system-patient-testimonial---richard/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---john-b.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/simpliciti--shoulder-system-patient-testimonial-video---john-b/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---tommie-h.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/simpliciti--shoulder-system-patient-testimonial-video---tommie-h/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-surgical-case---armodios-hatzidakis-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/simpliciti--shoulder-system-surgical-case---armodios-hatzidakis-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us0/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us0.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/tips---pearls--use-of-niceloop-trade--non-absorbable-braided-sut.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/tips---pearls--use-of-niceloop-trade--non-absorbable-braided-sut/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/what-s-new-with-the-b2-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/what-s-new-with-the-b2/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--alternative-retractor-uses-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--alternative-retractor-uses/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--back-table-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--back-table-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--mayo-stand-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--mayo-stand-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--operating-room-set-up-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--operating-room-set-up/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--or-staff-rules---responsibilities-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--or-staff-rules---responsibilities/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--patient-positioning.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--patient-positioning/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--staff-positioning.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--staff-positioning/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--sterile-prep-and-draping.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--sterile-prep-and-draping/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--tips-and-pearls.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--tips-and-pearls/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/dr--moen-delto-pectoral-technique-surgical-video-approach--.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/dr--moen-delto-pectoral-technique-surgical-video-approach-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever0.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever0/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever1.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever1/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-/master"],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge/master"]
+  };
+
+  // tools/importer/transformers/long-page-detail-corp-sections.js
+  var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
+  var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
+    counts[xf] = (counts[xf] || 0) + 1;
+    return counts;
+  }, {});
+  function sharedFragmentPath(xf) {
+    return XF_PAGES[xf] > 1 ? xfToFragmentPath(xf) : null;
+  }
+  function keepHeadlineBlankLines(document) {
+    const blank = (node) => !(node.textContent || "").replace(/\u00a0/g, " ").trim() && !(node.nodeType === 1 && node.querySelector("img, picture, iframe"));
+    const textBeside = (node, dir) => {
+      for (let n = node[dir]; n; n = n[dir]) {
+        if (!blank(n)) return true;
+      }
+      return false;
+    };
+    document.querySelectorAll(".c-largeheadline .line p").forEach((p) => {
+      if (!blank(p) || !textBeside(p, "nextSibling")) return;
+      const breaks = textBeside(p, "previousSibling") ? 2 : 1;
+      p.replaceWith(...Array.from({ length: breaks }, () => document.createElement("br")));
+    });
+  }
+  function edsLinkPaths(main) {
+    main.querySelectorAll('a[href^="/"]').forEach((a) => {
+      const href = a.getAttribute("href");
+      if (href.startsWith("//") || href.startsWith("/content/")) return;
+      const [, path, suffix = ""] = href.match(/^([^?#]*)([?#].*)?$/);
+      const slash = path.length > 1 && path.endsWith("/") ? "/" : "";
+      const bare = path.replace(/\/$/, "");
+      if (!bare) return;
+      const clean = WebImporter.FileUtils.sanitizePath(bare);
+      if (clean && clean !== bare) a.setAttribute("href", `${clean}${slash}${suffix}`);
+    });
+  }
+  var CENTRED_COLUMN = ":is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1";
+  function columnStyle(component) {
+    return component.closest(CENTRED_COLUMN) ? "column-10-12" : "";
+  }
+  function text3(el) {
+    return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function sourcePath(payload) {
+    try {
+      return new URL(payload.params.originalURL).pathname;
+    } catch (e) {
+      return "";
+    }
+  }
+  function richText(doc, nodes) {
+    const box = doc.createElement("div");
+    box.className = "c-rich-text-editor";
+    const inner = doc.createElement("div");
+    inner.append(...nodes);
+    box.append(inner);
+    return box;
+  }
+  function rowColumns(colctrl) {
+    const row = colctrl.querySelector(":scope > .row");
+    return row ? [...row.children].filter((el) => /\bcol-(xs|sm|md)-\d+/.test(el.className)) : [];
+  }
+  function slotSignature(slot) {
+    const colctrl = slot.closest(".colctrl");
+    if (!colctrl) return "";
+    const row = (colctrl.parentElement.className.match(/\bcols[\w-]*/) || [""])[0].replace(/-/g, "_");
+    const column = rowColumns(colctrl).findIndex((col) => col.contains(slot)) + 1;
+    return `${row}:${column}`;
+  }
+  function fragmentBlock(doc, path) {
+    const a = doc.createElement("a");
+    a.href = path;
+    a.textContent = path;
+    return WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] });
+  }
+  function experienceFragments(main, doc, xfs, slots) {
+    const filled = [...main.querySelectorAll(".experiencefragment")].filter((slot) => !slot.parentElement.closest(".experiencefragment")).filter((slot) => {
+      if (text3(slot) || slot.querySelector("img, [data-asset-path], iframe")) return true;
+      slot.remove();
+      return false;
+    });
+    if (!filled.length) return;
+    const seen = /* @__PURE__ */ new Set();
+    filled.forEach((slot) => {
+      let xf = xfs.length === 1 ? xfs[0] : null;
+      if (!xf && slots) {
+        const signature = slotSignature(slot);
+        xf = Object.keys(slots).find((key) => slots[key] === signature) || null;
+      }
+      if (!xf) {
+        main.ownerDocument.body.setAttribute("data-xf-unresolved", String(xfs.length));
+        return;
+      }
+      if (seen.has(xf)) {
+        slot.remove();
+        return;
+      }
+      seen.add(xf);
+      const path = sharedFragmentPath(xf);
+      if (!path) return;
+      const block = fragmentBlock(doc, path);
+      block.setAttribute("data-keep", "section");
+      slot.replaceWith(block);
+    });
+  }
+  function sectionTitles(main, doc) {
+    main.querySelectorAll(".c-section-title").forEach((title) => {
+      const nodes = [];
+      const heading = title.querySelector("h2");
+      if (heading && text3(heading)) {
+        const h2 = doc.createElement("h2");
+        const u = doc.createElement("u");
+        u.textContent = text3(heading);
+        h2.append(u);
+        nodes.push(h2);
+      }
+      const container = title.querySelector(".title-container") || title;
+      [...container.children].filter((el) => el !== heading && text3(el)).forEach((el) => {
+        nodes.push(el.cloneNode(true));
+      });
+      title.replaceWith(richText(doc, nodes));
+    });
+  }
+  function downloadTitles(main, doc) {
+    main.querySelectorAll(".c-resourcesanddownload").forEach((downloads) => {
+      const title = downloads.querySelector(".title-container :is(h2, h3, h4)");
+      if (!title || !text3(title)) return;
+      const h2 = doc.createElement("h2");
+      const u = doc.createElement("u");
+      u.textContent = text3(title);
+      h2.append(u);
+      (downloads.closest(".resourcesanddownload") || downloads).before(richText(doc, [h2]));
+      title.remove();
+    });
+  }
+  function videoCaptions(main, doc) {
+    main.querySelectorAll(".c-standalone-video").forEach((video) => {
+      const caption = video.querySelector(".desc-content");
+      if (!caption) return;
+      if (text3(caption)) {
+        const copy = caption.cloneNode(true);
+        (video.closest(".standalonevideo") || video).after(richText(doc, [...copy.childNodes]));
+      }
+      caption.remove();
+    });
+  }
+  function localNav(main, doc) {
+    const nav = main.querySelector(".localpagenavigation nav");
+    if (!nav) return null;
+    const parent = nav.querySelector("a.parent-node");
+    const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
+    nav.closest(".localpagenavigation").remove();
+    if (!parent && !links.length) return null;
+    const rows = [];
+    if (parent) {
+      const a = doc.createElement("a");
+      a.href = parent.getAttribute("href");
+      a.textContent = text3(parent);
+      rows.push([a]);
+    }
+    const ul = doc.createElement("ul");
+    links.forEach((source) => {
+      const li = doc.createElement("li");
+      const a = doc.createElement("a");
+      a.href = source.getAttribute("href");
+      a.textContent = text3(source);
+      li.append(a);
+      ul.append(li);
+    });
+    rows.push([ul]);
+    return WebImporter.Blocks.createBlock(doc, { name: "Local Nav", cells: rows });
+  }
+  function marketoBlock(container, doc) {
+    const form = container.querySelector("form[data-marketo-form-id]");
+    if (!form) return null;
+    const cells = [
+      ["Base URL", form.getAttribute("data-marketo-base-url") || ""],
+      ["Munchkin ID", form.getAttribute("data-marketo-munchkin-id") || ""],
+      ["Form ID", form.getAttribute("data-marketo-form-id") || ""]
+    ];
+    return WebImporter.Blocks.createBlock(doc, { name: "Marketo Form", cells });
+  }
+  var CELL_COMPONENTS = [
+    ".c-rich-text-editor",
+    ".c-standalone-image",
+    ".c-standalone-video",
+    ".c-largeheadline",
+    ".c-curatedcta",
+    ".buttonset",
+    "table"
+  ].join(", ");
+  function linkedImage(component) {
+    const img = component.querySelector("img");
+    const link = img && img.closest("a[href]");
+    return link && component.contains(link) ? link : null;
+  }
+  function cellNodes(col, doc) {
+    const out = [];
+    [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS)).forEach((c) => {
+      if (c.matches(".c-rich-text-editor")) out.push(...richTextNodes(c, doc).nodes);
+      else if (c.matches(".c-standalone-image")) {
+        out.push(...imageNodes(c, doc));
+        const link = linkedImage(c);
+        if (link) {
+          const a = doc.createElement("a");
+          a.setAttribute("href", newTabHref(link, absoluteAsset(link.getAttribute("href"))));
+          a.textContent = link.querySelector("img").getAttribute("alt") || text3(link) || a.getAttribute("href");
+          const p = doc.createElement("p");
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches(".c-standalone-video")) {
+        const a = videoLink(c, doc);
+        if (a) {
+          const p = doc.createElement("p");
+          p.append(a);
+          out.push(p);
+        }
+      } else if (c.matches(".c-largeheadline")) {
+        const lines = headlineNodes(c, doc);
+        if (c.hasAttribute("data-page-title") && lines.length) {
+          out.push(titleHeading(lines, doc));
+        } else out.push(...lines);
+      } else if (c.matches(".c-curatedcta, .buttonset")) out.push(...buttonNodes(c, doc));
+      else out.push(c);
+    });
+    return out;
+  }
+  function centredColumn(col) {
+    const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+    const images = [...col.querySelectorAll(".c-standalone-image img")];
+    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)")].filter((el) => text3(el));
+    const items = [...images, ...paragraphs];
+    return items.length > 0 && items.every(centred);
+  }
+  function sizeTag(copyStyle) {
+    const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
+    return size ? `text-${size.slice(2)}` : "";
+  }
+  function rowCopyStyle(cells, doc) {
+    const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+    const weight = {};
+    copy.forEach((n) => {
+      weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text3(n).length;
+    });
+    const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
+    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => {
+      const tag = sizeTag(n.copyStyle);
+      const targets = n.matches("ul, ol") ? [...n.querySelectorAll(":scope > li")] : [n];
+      targets.forEach((el) => {
+        el.prepend(doc.createTextNode(`[[${tag}]`));
+        el.append(doc.createTextNode("]"));
+      });
+    });
+    return dominant;
+  }
+  var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
+  function columnWidth(col) {
+    const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
+    return m ? Number(m[1]) : 12;
+  }
+  function markRowEnds(main) {
+    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const hasContent = (el) => text3(el) || el.querySelector("img, iframe, [data-asset-path]");
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const row = colctrl.querySelector(":scope > .row");
+      const all = row ? [...row.children] : [];
+      const cols = all.filter(hasContent);
+      if (cols.length !== 1 || all.length > 2) return;
+      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT}`)].filter((el) => {
+        const outer = el.parentElement.closest(`.colctrl, ${COMPONENT}`);
+        return (!outer || outer === colctrl) && (text3(el) || el.querySelector("img, iframe, [data-asset-path]"));
+      });
+      const last = units[units.length - 1];
+      if (!last) return;
+      const unit = last.matches(".colctrl") && last.parentElement && /\bcols/.test(last.parentElement.className) ? last.parentElement : last;
+      unit.setAttribute("data-row-end", String(Number(unit.getAttribute("data-row-end") || 0) + 1));
+    });
+  }
+  function columnRows(main, doc) {
+    [...main.querySelectorAll(".colctrl")].reverse().forEach((colctrl) => {
+      const all = rowColumns(colctrl);
+      const filled = all.filter((col) => text3(col) || col.querySelector("img, [data-asset-path], iframe, form, table"));
+      const columns = filled.length && filled.length < all.length && all.length >= 3 ? all : filled;
+      if (columns.length < 2) return;
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      const form = marketoBlock(colctrl, doc);
+      if (form) {
+        form.setAttribute("data-keep", "section");
+        const asides = [...colctrl.querySelectorAll("table")].filter((t) => t.getAttribute("data-keep"));
+        asides.forEach((t) => t.setAttribute("data-keep", "join"));
+        wrapper.replaceWith(form, ...asides);
+        return;
+      }
+      const key = columns.map(columnWidth).join(",");
+      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
+      const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : ""].filter(Boolean).join(", ");
+      const centred = filled.every(centredColumn);
+      const cells = columns.map((col) => cellNodes(col, doc));
+      const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: variant ? `Columns (${variant})` : "Columns",
+        cells: [cells]
+      });
+      block.setAttribute("data-keep", "section");
+      if (style) block.setAttribute("data-section-style", style);
+      if (wrapper.hasAttribute("data-row-end")) block.setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+      wrapper.replaceWith(block);
+    });
+    [...main.querySelectorAll(".c-marketo-form")].forEach((component) => {
+      const form = marketoBlock(component, doc);
+      if (!form) return;
+      form.setAttribute("data-keep", "section");
+      (component.closest(".marketoform") || component).replaceWith(form);
+    });
+  }
+  function fullWidthImages(main, doc) {
+    main.querySelectorAll(".imgBoxId.full-width-img").forEach((box) => {
+      var _a, _b;
+      const img = box.querySelector("img");
+      if (!img) return;
+      const desktop = ((_b = (_a = box.querySelector("source[srcset]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "srcset")) || img.getAttribute("src");
+      const phone = img.getAttribute("src");
+      const alt = img.getAttribute("alt") || "";
+      const holder = doc.createElement("div");
+      holder.setAttribute("data-keep", "nodes");
+      holder.setAttribute("data-section-style", box.classList.contains("bg-shadow") ? "full-width-image, shadow" : "full-width-image");
+      [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean).forEach((src) => {
+        const p = doc.createElement("p");
+        const image = doc.createElement("img");
+        image.setAttribute("src", src);
+        image.setAttribute("alt", alt);
+        p.append(image);
+        holder.append(p);
+      });
+      box.replaceWith(holder);
+    });
+  }
+  function renameTo(el, tag, doc) {
+    if (el.tagName.toLowerCase() === tag) return el;
+    const out = doc.createElement(tag);
+    out.append(...el.childNodes);
+    el.replaceWith(out);
+    return out;
+  }
+  function sizeTagged(el, tag, doc) {
+    el.prepend(doc.createTextNode(`[[${tag}]`));
+    el.append(doc.createTextNode("]"));
+    return el;
+  }
+  var TITLE_SIZES = ["1-25", "1-5", "1-75", "2", "2-5"];
+  function titleFromHeading(heading, doc) {
+    const level = heading.tagName;
+    const h1 = renameTo(heading, "h1", doc);
+    const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text3(span) === text3(h1));
+    const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
+    const h4Enlarged = level === "H4" && size === "2-5";
+    if (size) spans.forEach((span) => span.classList.remove(...[...span.classList].filter((c) => c.startsWith("fontsize-"))));
+    if (h4Enlarged) spans[0].classList.add("fontsize-h4-2-5");
+    if (/^H[4-6]$/.test(level) && !h1.querySelector(".futura-bold, b, strong")) {
+      const bold = doc.createElement("span");
+      bold.className = "futura-bold";
+      bold.append(...h1.childNodes);
+      h1.append(bold);
+    }
+    if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
+    return h1;
+  }
+  function dropDamVideos(main) {
+    main.querySelectorAll(".c-standalone-video").forEach((video) => {
+      const asset = video.querySelector("[data-asset-path]");
+      if (asset && asset.getAttribute("data-asset-path").startsWith("/content/dam/")) {
+        (video.closest(".standalonevideo") || video).remove();
+      }
+    });
+  }
+  var SHOW_TEXT = 4;
+  function spaceUrlColons(main, doc) {
+    const walker = doc.createTreeWalker(main, SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (/\S:https?:\/\//.test(node.textContent)) {
+        node.textContent = node.textContent.replace(/(\S):(https?:\/\/)/g, "$1: $2");
+      }
+    }
+  }
+  function transform(hookName, element, payload) {
+    if (hookName !== "beforeTransform") return;
+    if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
+    const doc = element.ownerDocument;
+    const main = doc.querySelector('[role="main"]') || element;
+    const path = sourcePath(payload);
+    main.querySelectorAll(".hero-space").forEach((el) => el.remove());
+    main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
+    dropDamVideos(main);
+    fullWidthImages(main, doc);
+    spaceUrlColons(main, doc);
+    const nav = localNav(main, doc);
+    experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
+    sectionTitles(main, doc);
+    downloadTitles(main, doc);
+    videoCaptions(main, doc);
+    const hasTitle = !!(main.querySelector(".h1-title h1") && text3(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
+    let firstTitle = !hasTitle && [...main.querySelectorAll(".c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)")].find((el) => text3(el) && !el.closest(".h1-title"));
+    const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
+    if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
+    main.querySelectorAll(".c-rich-text-editor h1").forEach((h) => {
+      if (h !== firstTitle) sizeTagged(renameTo(h, "h2", doc), "text-2", doc);
+    });
+    if (firstHeadline) {
+      firstHeadline.setAttribute("data-page-title", "");
+      firstHeadline.querySelectorAll("b").forEach((b) => {
+        if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
+      });
+    }
+    markRowEnds(main);
+    columnRows(main, doc);
+    main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
+      const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el) => !el.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text3(el) || el.querySelector("img, iframe, [data-asset-path]")));
+      const last = parts[parts.length - 1];
+      if (last) {
+        const count = Number(wrapper.getAttribute("data-row-end")) + Number(last.getAttribute("data-row-end") || 0);
+        last.setAttribute("data-row-end", String(count));
+      }
+      wrapper.removeAttribute("data-row-end");
+    });
+    buildArticle(element, {
+      keep: ".c-resourcesanddownload, [data-keep]",
+      spacer: false,
+      componentStyle: columnStyle
+    });
+    if (nav) element.prepend(nav, doc.createElement("hr"));
+  }
+
+  // tools/importer/transformers/patients-stryker-cleanup.js
+  var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
+  var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
+  function sourceHostFor(payload) {
+    try {
+      const { hostname } = new URL(payload.params.originalURL);
+      if (hostname === "www.stryker.com") return CORP_HOST_RE;
+    } catch (e) {
+    }
+    return PATIENTS_HOST_RE;
+  }
+  function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
+    if (!href) return null;
+    const value = href.trim();
+    let rest;
+    if (value.startsWith("/") && !value.startsWith("//")) rest = value;
+    else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
+    else return null;
+    const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
+    if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
+    let edsPath = path.replace(/\.html?$/i, "");
+    if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
+    return `${edsPath || "/"}${suffix}`;
+  }
+  function transform2(hookName, element, payload) {
+    const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
+    const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments"
+    ].includes(payload.template.name));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
+    if (hookName === TransformHook.beforeTransform) {
+      WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      if (isNewsDetail) return;
+      if (isIvsTreatment) {
+        WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
+        element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+          heading.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
+            const text5 = span.textContent.replace(/ /g, " ").trim();
+            if (!text5) return;
+            const em = element.ownerDocument.createElement("em");
+            const strong = element.ownerDocument.createElement("strong");
+            while (span.firstChild) strong.appendChild(span.firstChild);
+            em.appendChild(strong);
+            span.replaceWith(em);
+          });
+        });
+        element.querySelectorAll(".buttonset a.btn-gold").forEach((a) => {
+          if (a.closest("em") && a.closest("strong")) return;
+          a.removeAttribute("class");
+          a.removeAttribute("style");
+          const strong = element.ownerDocument.createElement("strong");
+          const em = element.ownerDocument.createElement("em");
+          a.replaceWith(strong);
+          strong.appendChild(em);
+          em.appendChild(a);
+        });
+        return;
+      }
+      if (isSaResources) {
+        element.querySelectorAll("a.btn-gold").forEach((a) => {
+          if (a.closest("em") && a.closest("strong")) return;
+          a.removeAttribute("class");
+          const strong = element.ownerDocument.createElement("strong");
+          const em = element.ownerDocument.createElement("em");
+          a.replaceWith(strong);
+          strong.appendChild(em);
+          em.appendChild(a);
+        });
+        element.querySelectorAll('a[target="_blank" i][href]').forEach((a) => {
+          const href = a.getAttribute("href").trim();
+          if (!href || href.endsWith("#_blank") || /^(mailto|tel):/i.test(href)) return;
+          a.setAttribute("href", `${href.replace(/#$/, "")}#_blank`);
+        });
+        return;
+      }
+      element.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
+        const text5 = span.textContent.replace(/ /g, " ").trim();
+        if (!text5) return;
+        const strong = element.ownerDocument.createElement("strong");
+        const em = element.ownerDocument.createElement("em");
+        em.textContent = text5;
+        strong.appendChild(em);
+        let target = span;
+        let parent = span.parentElement;
+        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text5) {
+          target = parent;
+          parent = parent.parentElement;
+        }
+        let next = target.nextSibling;
+        while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+        const alreadyHasBr = next && next.nodeType === 1 && next.tagName === "BR";
+        if (alreadyHasBr) {
+          target.replaceWith(strong);
+        } else {
+          target.replaceWith(strong, element.ownerDocument.createElement("br"));
+        }
+      });
+      [...element.querySelectorAll("p")].forEach((p) => {
+        const kids = [...p.childNodes].filter((n) => {
+          if (n.nodeType === 3) return n.textContent.trim() !== "";
+          if (n.nodeType === 1 && n.tagName === "BR") return false;
+          return n.nodeType === 1;
+        });
+        if (kids.length !== 1) return;
+        const only = kids[0];
+        const isLabel = only.nodeType === 1 && (only.tagName === "B" || only.tagName === "STRONG" || only.classList && only.classList.contains("futura-bold"));
+        if (!isLabel) return;
+        const nextP = p.nextElementSibling;
+        if (!nextP || nextP.tagName !== "P") return;
+        nextP.insertBefore(element.ownerDocument.createElement("br"), nextP.firstChild);
+        nextP.insertBefore(only, nextP.firstChild);
+        p.remove();
+      });
+      element.querySelectorAll(".standalone-link a").forEach((a) => {
+        if (a.querySelector("strong")) return;
+        const strong = element.ownerDocument.createElement("strong");
+        while (a.firstChild) strong.appendChild(a.firstChild);
+        a.appendChild(strong);
+      });
+    }
+    if (hookName === TransformHook.afterTransform) {
+      WebImporter.DOMUtils.remove(element, [
+        "#header",
+        "footer#footer",
+        ".c-back-to-top"
+      ]);
+      if (isSkinnedContent) {
+        WebImporter.DOMUtils.remove(element, ["#publishedDate", ".container.c-disclaimer.page-section"]);
+        if (isIvsTreatment) {
+          element.querySelectorAll('a[href="#disclaimer"]').forEach((a) => {
+            const sup = a.querySelector("sup");
+            if (sup) a.replaceWith(sup);
+            else a.replaceWith(...a.childNodes);
+          });
+          const hiw = [...element.querySelectorAll("h3")].find((h) => h.textContent.replace(/ /g, " ").trim() === "How it works" && !h.querySelector("strong, b"));
+          if (hiw) {
+            const strong = element.ownerDocument.createElement("strong");
+            while (hiw.firstChild) strong.appendChild(hiw.firstChild);
+            hiw.appendChild(strong);
+          }
+        }
+      } else {
+        WebImporter.DOMUtils.remove(element, [
+          ".c-disclaimer",
+          "#publishedDate"
+        ]);
+      }
+      WebImporter.DOMUtils.remove(element, [
+        "#businessUnitTag",
+        "#hiddenPublishedDate"
+      ]);
+      WebImporter.DOMUtils.remove(element, ["input", "link", "noscript"]);
+      const TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
+      const PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;
+      const isOffDomain = (ref) => /^https?:\/\//i.test(ref) && !/(^|\.)(stryker\.com|aem\.page|aem\.live|hlx\.(page|live))/i.test(ref);
+      element.querySelectorAll("img[src], a[href], iframe[src], iframe[data-src]").forEach((node) => {
+        const ref = node.getAttribute("src") || node.getAttribute("href") || node.getAttribute("data-src") || "";
+        const isPixel = node.tagName === "IMG" && !node.getAttribute("alt") && isOffDomain(ref);
+        if (TRACKING_HOST_RE.test(ref) || PLACEHOLDER_RE.test(ref) || isPixel) {
+          const wrapper = node.closest("p, picture, div") || node;
+          wrapper.remove();
+        }
+      });
+      element.querySelectorAll("p").forEach((p) => {
+        if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
+      });
+      const hostRe = sourceHostFor(payload);
+      element.querySelectorAll("a[href]").forEach((a) => {
+        const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
+        if (rewritten !== null) a.setAttribute("href", rewritten);
+      });
+      if (isSkinnedContent) return;
+      element.querySelectorAll("h1").forEach((h1) => {
+        const h2 = element.ownerDocument.createElement("h2");
+        [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
+        while (h1.firstChild) h2.appendChild(h1.firstChild);
+        h1.replaceWith(h2);
+      });
+    }
+  }
+
+  // tools/importer/transformers/patients-stryker-dm-images.js
+  function detectDynamicMediaUrl(urlStr) {
+    let u;
+    try {
+      u = new URL(urlStr, "https://x/");
+    } catch (e) {
+      return false;
+    }
+    if (u.pathname.startsWith("/is/image/")) {
+      return "scene7";
+    }
+    if (/^delivery-p\d+-e\d+\.adobeaemcloud\.com$/.test(u.hostname) && u.pathname.startsWith("/adobe/assets/urn:")) {
+      return "dm-openapi";
+    }
+    return false;
+  }
+  var LINKED_DM_INLINE_WRAPPER_TAGS = /* @__PURE__ */ new Set(["PICTURE"]);
+  var LINKED_DM_WRAPPER_SIBLING_TAGS = /* @__PURE__ */ new Set(["SOURCE"]);
+  function findLinkedDmCarrier(img) {
+    if (!img || !img.parentElement) return null;
+    let node = img;
+    let parent = img.parentElement;
+    while (parent && LINKED_DM_INLINE_WRAPPER_TAGS.has(parent.tagName)) {
+      let foundNode = false;
+      for (const child of parent.children) {
+        if (child === node) {
+          foundNode = true;
+        } else if (!LINKED_DM_WRAPPER_SIBLING_TAGS.has(child.tagName)) {
+          return null;
+        }
+      }
+      if (!foundNode) return null;
+      node = parent;
+      parent = parent.parentElement;
+    }
+    if (!parent || parent.tagName !== "A") return null;
+    if (parent.children.length !== 1 || parent.children[0] !== node) return null;
+    if (parent.textContent.trim() !== "") return null;
+    return parent;
+  }
+  function altToLinkText(alt, src) {
+    return alt || src;
+  }
+  function transform3(hookName, element, payload) {
+    if (hookName !== "afterTransform") return;
+    const doc = element.ownerDocument;
+    element.querySelectorAll("img").forEach((img) => {
+      const src = img.getAttribute("src") || "";
+      if (!detectDynamicMediaUrl(src)) return;
+      const alt = img.getAttribute("alt") || "";
+      const linkedAnchor = findLinkedDmCarrier(img);
+      if (linkedAnchor) {
+        linkedAnchor.setAttribute("title", src);
+        linkedAnchor.textContent = altToLinkText(alt, src);
+        return;
+      }
+      const parent = img.parentElement;
+      if (parent && parent.tagName === "A") {
+        console.warn("DM image inside mixed-content anchor, skipped:", src);
+        return;
+      }
+      const a = doc.createElement("a");
+      a.href = src;
+      a.textContent = altToLinkText(alt, src);
+      img.replaceWith(a);
+    });
+  }
+
+  // tools/importer/import-long-page-detail-corp-fragments.js
+  var PAGE_TEMPLATE = {
+    name: "long-page-detail-corp-fragments",
+    description: "Shared Experience Fragments of the long-page-detail pages, imported as fragment documents (#469).",
+    urls: [],
+    blocks: [
+      { name: "video", instances: [".c-standalone-video"] },
+      { name: "cards-corp-resources", instances: [".c-resourcesanddownload"] }
+    ]
+  };
+  var parsers = {
+    video: parse,
+    "cards-corp-resources": parse2
+  };
+  var transformers = [transform, transform2, transform3];
+  function executeTransformers(hookName, element, payload) {
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
+    transformers.forEach((fn) => {
+      try {
+        fn.call(null, hookName, element, enhancedPayload);
+      } catch (e) {
+        console.error(`Transformer failed at ${hookName}:`, e);
+      }
+    });
+  }
+  var text4 = (el) => el ? el.textContent.replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim() : "";
+  function corpLink(href) {
+    const m = (href || "").match(/^(?:https?:\/\/www\.stryker\.com)?(\/us\/en\/[^?#]*?)(index)?\.html([?#].*)?$/i);
+    if (!m) return href;
+    return `${m[1]}${m[3] || ""}`;
+  }
+  var isStandalone = (a) => !!(a.closest(".standalone-link") || a.querySelector(".standalone-link"));
+  function linkPara(document, a, standalone) {
+    const p = document.createElement("p");
+    const link = document.createElement("a");
+    link.href = corpLink(a.getAttribute("href"));
+    if (standalone) {
+      const u = document.createElement("u");
+      u.textContent = text4(a);
+      link.append(u);
+    } else {
+      link.textContent = text4(a);
+    }
+    p.append(link);
+    return p;
+  }
+  function sectionMetadata(document, style) {
+    return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+  }
+  function buildConnect(document, src) {
+    const out = [];
+    const h2 = document.createElement("h2");
+    h2.textContent = text4(src.querySelector("h2"));
+    out.push(h2);
+    src.querySelectorAll(".c-rich-text-editor p").forEach((p) => {
+      if (!text4(p)) return;
+      const np = document.createElement("p");
+      p.childNodes.forEach((n) => {
+        if (n.nodeName === "A") {
+          const a = document.createElement("a");
+          a.href = corpLink(n.getAttribute("href"));
+          a.textContent = text4(n);
+          np.append(a);
+        } else {
+          np.append(document.createTextNode(n.textContent.replace(/\u00a0/g, " ")));
+        }
+      });
+      const last = np.lastChild;
+      if (last && last.nodeType === 3) last.textContent = last.textContent.replace(/\s+$/, "");
+      out.push(np);
+    });
+    return out;
+  }
+  function buildContact(document, src) {
+    const out = [];
+    src.querySelectorAll(".c-rich-text-editor p, .buttonset a.btn").forEach((node) => {
+      if (node.matches("a.btn")) {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a2 = document.createElement("a");
+        a2.href = corpLink(node.getAttribute("href"));
+        a2.textContent = text4(node);
+        strong.append(a2);
+        p.append(strong);
+        out.push(p);
+        return;
+      }
+      const a = node.querySelector("a[href]");
+      if (a) out.push(linkPara(document, a, isStandalone(a)));
+      else if (text4(node)) {
+        const h4 = document.createElement("h4");
+        h4.textContent = text4(node);
+        out.push(h4);
+      }
+    });
+    return out;
+  }
+  function findBlocksOnPage(document, template) {
+    const pageBlocks = [];
+    template.blocks.forEach((blockDef) => {
+      blockDef.instances.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element) => {
+          pageBlocks.push({ name: blockDef.name, selector, element });
+        });
+      });
+    });
+    return pageBlocks;
+  }
+  var import_long_page_detail_corp_fragments_default = {
+    // before the importer's own cleanup, which drops empty paragraphs
+    preprocess: ({ document }) => keepHeadlineBlankLines(document),
+    transform: (payload) => {
+      const { document, url, params } = payload;
+      const main = document.body;
+      const key = xfKey(params.originalURL || url);
+      const path = xfToFragmentPath(key);
+      if (!path) throw new Error(`Not an Experience Fragment: ${key}`);
+      const src = document.querySelector(".xf-content-height") || main;
+      if (/\/contact_information\/(header|contact)\/master$/.test(key)) {
+        const isHeader = /\/header\/master$/.test(key);
+        const nodes = isHeader ? buildConnect(document, src) : buildContact(document, src);
+        main.replaceChildren(...nodes, sectionMetadata(document, isHeader ? "connect-band" : "contact-aside"));
+      } else {
+        executeTransformers("beforeTransform", main, payload);
+        findBlocksOnPage(document, PAGE_TEMPLATE).forEach((block) => {
+          if (!block.element.parentNode) return;
+          try {
+            parsers[block.name](block.element, { document, url, params });
+          } catch (e) {
+            console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
+          }
+        });
+        executeTransformers("afterTransform", main, payload);
+      }
+      edsLinkPaths(main);
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      return [{
+        element: main,
+        path,
+        report: { title: path, template: PAGE_TEMPLATE.name, xf: key }
+      }];
+    }
+  };
+  return __toCommonJS(import_long_page_detail_corp_fragments_exports);
+})();

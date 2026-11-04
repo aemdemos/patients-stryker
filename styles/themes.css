@@ -1154,6 +1154,14 @@ body.resources main {
   padding-top: 40px;
 }
 
+body.resources main:has(> .page-back) {
+  padding-top: 0;
+}
+
+body.resources main > .page-back {
+  margin-block-end: calc(2 * var(--space-block-l));
+}
+
 body.resources main .section.no-cta h1 {
   margin-top: 0;
   margin-bottom: 40px;
@@ -1183,6 +1191,12 @@ body.ivs-home main > .section.compact {
 
 body.ivs-home main > .section.sticky-nav-container {
   margin-top: var(--space-block-l);
+}
+
+/* phones: the floating "⋮" section menu (built by the sticky-nav block, hidden by default),
+   as on the source IVS home — hidden again from 600px, where the bar shows */
+body.ivs-home .sticky-nav-mobile {
+  display: block;
 }
 
 body.ivs-home main > .section.hero-container {
@@ -1294,6 +1308,10 @@ body.ivs-home .panel.cta .panel-body h3 {
 }
 
 @media (width >= 600px) {
+  body.ivs-home .sticky-nav-mobile {
+    display: none;
+  }
+
   body.ivs-home .panel.gold .panel-body h2 {
     font-size: calc(var(--heading-font-size-xl) * 1.25);
   }
