@@ -599,6 +599,20 @@ function blockNodes(container, doc) {
   return nodes;
 }
 
+/**
+ * Whether the rich text sets its subheads between blank lines: every Heading 4 is followed
+ * by an empty paragraph (<p>&nbsp;</p>, or an empty h3), e.g. the Sustainability
+ * "Reprocessing in the EP Lab" release. EDS drops the empty paragraphs, so the section gets
+ * the `h4-spaced` style instead (styles-corp.css: a blank line above and below each h4).
+ * Checked before cleanRichText removes the blanks.
+ */
+function spacedSubheads(root) {
+  const empty = (el) => !(el.textContent || '').replace(/[\s\u00a0]+/g, '');
+  const blank = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector('img') && empty(el);
+  const subheads = [...root.children].filter((el) => el.tagName === 'H4' && !empty(el));
+  return subheads.length > 0 && subheads.every((h) => blank(h.nextElementSibling));
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -609,6 +623,7 @@ function richTextNodes(component, doc) {
   const futuraLinks = futuraLinkParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
+  const spaced = spacedSubheads(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -639,6 +654,7 @@ function richTextNodes(component, doc) {
   const first = nodes.find((node) => node.copyStyle !== null);
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
+    if (spaced) node.copyStyle = [node.copyStyle, 'h4-spaced'].filter(Boolean).join(', ');
   });
   return { nodes, centred, size };
 }
