@@ -37,9 +37,11 @@ function firstPublished() {
 }
 
 /**
- * Shows the `first-published` date as an H5 in the title section: after the H1, before an
- * authored location line (H5), or — on pages without a title section (the title is a
- * Large Headline or a hero) — in a title section of its own at the top of the page.
+ * Shows the `first-published` date as an H5 in the title section: after the H1 (before it
+ * in a `date-above` section: the source page has no title component and its title opens
+ * the article text, e.g. the Spencer Stiles release), before an authored location line
+ * (H5), or — on pages without a title section (the title is a Large Headline or a hero) —
+ * in a title section of its own at the top of the page.
  * Runs before the first section is shown (scripts/corp.js loadTemplate), so it does not
  * shift the layout.
  * @param {Document} doc The document
@@ -56,7 +58,7 @@ function decorateFirstPublished(doc) {
   const content = first?.querySelector(':scope > .default-content-wrapper');
   const lead = content?.firstElementChild;
   if (lead?.tagName === 'H1') {
-    lead.after(h5);
+    lead[first.classList.contains('date-above') ? 'before' : 'after'](h5);
   } else if (lead?.tagName === 'H5') {
     lead.before(h5);
   } else {

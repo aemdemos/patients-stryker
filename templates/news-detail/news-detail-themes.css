@@ -174,3 +174,30 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     padding: calc(var(--news-col-8-box) * 0.04) var(--space-block-s) calc(var(--news-col-8-box) * 0.03) calc(var(--news-col-8-box) * 0.02);
   }
 }
+
+/* Cards Corp `text` on full-width pages: the cards of a row line up — the gold titles of a
+   row are as tall as the tallest and the grey answer boxes end level, whatever the length
+   of the question or the answer (stryker.com equal-height Q&A columns, e.g. the additive
+   manufacturing feature). Each card spans two rows of the list's grid (subgrid), the title
+   row and the answer row */
+body.news-detail.full-width .cards-corp.text > ul > li {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+/* …`title-left`: the questions left-aligned at 17.5px, at every width (stryker.com Q&A
+   cards with a left-aligned Futura bold title on the gold band). As on the source the
+   question lines are 23.25px apart, with 4% padding above and the question's 15px margin
+   + 10px padding below (the source's gold boxes: 132–136px in the first row and 110–112px
+   in the second at 1440px) */
+body.news-detail.full-width .cards-corp.text.title-left h3 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--corp-qa-title-line-height);
+  text-align: left;
+}
+
+body.news-detail.full-width .cards-corp.text.title-left .cards-corp-card-title {
+  padding-bottom: calc(var(--space-block) + var(--space-block-s));
+}

@@ -652,11 +652,17 @@ var CustomImportScript = (() => {
     flush();
     return nodes;
   }
+  var squashText = (el) => (el.textContent || "").replace(/[\s\u00a0]+/g, "");
+  var isBlankLine = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector("img") && !squashText(el);
+  function rawSpacedSubheads(html) {
+    if (!html || typeof DOMParser === "undefined") return /* @__PURE__ */ new Set();
+    const raw = new DOMParser().parseFromString(html, "text/html");
+    return new Set([...raw.querySelectorAll(".c-rich-text-editor h4")].filter((h) => squashText(h) && isBlankLine(h.nextElementSibling)).map(squashText));
+  }
+  var spacedSubheadTexts = /* @__PURE__ */ new Set();
   function spacedSubheads(root) {
-    const empty = (el) => !(el.textContent || "").replace(/[\s\u00a0]+/g, "");
-    const blank = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector("img") && empty(el);
-    const subheads = [...root.children].filter((el) => el.tagName === "H4" && !empty(el));
-    return subheads.length > 0 && subheads.every((h) => blank(h.nextElementSibling));
+    const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
+    return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
   }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
@@ -1242,6 +1248,7 @@ var CustomImportScript = (() => {
     const xf = templateName === "news-detail-xf";
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
+    spacedSubheadTexts = rawSpacedSubheads(payload && payload.html);
     const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
     const inlinedXf = markSharedFragments(main, doc);
     const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
@@ -1603,6 +1610,10 @@ var CustomImportScript = (() => {
     const opensWithHeadline = sections.some((section) => section.kind === "headline");
     if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
+    }
+    const opening = sections.find((section) => section.nodes.length);
+    if (element.hasAttribute("data-first-published") && !title.nodes.length && opening && opening.nodes[0].tagName === "H1") {
+      opening.style = [opening.style, "date-above"].filter(Boolean).join(", ");
     }
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
