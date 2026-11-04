@@ -52,23 +52,24 @@ body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .defau
   padding-bottom: 0;
 }
 
-/* `headline-box` with the site's colour section style (`gold`, `light-gray`, `blue`, `dark`):
+/* `headline-box` with a colour section style (`gold`, `light-gray`, `blue`, `dark`; this
+   template's `purple`, `purple-gradient`, `gray-gradient`):
    the source box in that colour (.largeheadline.has-background.bg-gold …, e.g. the nse
    "Elite …" boxes): inside the content column (the gutter stays clear), 20px in on every
    side at every width; white text on blue and dark (on gold and light grey the source's
    black, its white words as `[[color-white]…]`). The colour is the box's, not the band's
    (the site styles colour the whole section) */
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) {
   background: none;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper {
   border-inline: var(--container-gutter) solid transparent;
   padding: var(--space-block-l);
   background-clip: padding-box;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) > .default-content-wrapper > :last-child {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper > :last-child {
   margin-bottom: 0;
 }
 
@@ -87,6 +88,21 @@ body.long-page-detail-corp main > .section.headline-box.blue > .default-content-
 
 body.long-page-detail-corp main > .section.headline-box.dark > .default-content-wrapper {
   background-image: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.purple > .default-content-wrapper {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.purple-gradient > .default-content-wrapper {
+  background-image: var(--long-page-detail-corp-purple-gradient);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.gray-gradient > .default-content-wrapper {
+  background-image: var(--long-page-detail-corp-gray-gradient);
   color: var(--color-white);
 }
 
@@ -360,6 +376,10 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-copy-3-5: 49px; /* 1.75em of a 28px source H1 (Mako refreshers) */
+  --long-page-detail-corp-gray-gradient: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* source .bg-gray-gradient */
+  --long-page-detail-corp-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
+  --long-page-detail-corp-gold-bar: 34px; /* source empty gold panel (OR staff) */
   --long-page-detail-corp-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
   --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
   --long-page-detail-corp-download-box: 240px; /* a download cover's box outside the VLC column */
@@ -380,6 +400,11 @@ body.long-page-detail-corp main span.text-2 {
 
 body.long-page-detail-corp main span.text-2-5 {
   font-size: var(--long-page-detail-corp-copy-2-5);
+}
+
+/* `[[text-3-5]…]` 49px: a statement line (Mako refreshers "Together with our customers…") */
+body.long-page-detail-corp main span.text-3-5 {
+  font-size: var(--long-page-detail-corp-copy-3-5);
 }
 
 body.long-page-detail-corp main > .section.p-2 > div :is(p, li) {
@@ -571,10 +596,10 @@ body.long-page-detail-corp main > .section .columns p.button-wrapper {
   margin-block: 0 var(--space-block);
 }
 
-/* the 21px / 28px / 35px size tags set their own line spacing, 1.06x as on the source
+/* the 21px / 28px / 35px / 49px size tags set their own line spacing, 1.06x as on the source
    (22.26px at 21px: jr45 faculty names, endoscopy video titles; 37.1px at 35px), not the
    copy's */
-body.long-page-detail-corp main span:is(.text-1-5, .text-2, .text-2-5) {
+body.long-page-detail-corp main span:is(.text-1-5, .text-2, .text-2-5, .text-3-5) {
   line-height: var(--heading-line-height);
 }
 
@@ -652,4 +677,32 @@ body.long-page-detail-corp main span[class*="headline-"]:not(.serif) {
 body.long-page-detail-corp main span.serif {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-regular);
+}
+
+/* this template's colour section styles (stryker.com .bg-purple, .bg-dark-purple-gradient,
+   .bg-gray-gradient; Mako refreshers, ispies, OR staff): with `full-bleed` the band, with
+   `headline-box` the box (above); white text */
+body.long-page-detail-corp main > .section:is(.purple, .purple-gradient, .gray-gradient):not(.headline-box) {
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.purple:not(.headline-box) {
+  background-color: var(--color-purple);
+}
+
+body.long-page-detail-corp main > .section.purple-gradient:not(.headline-box) {
+  background-image: var(--long-page-detail-corp-purple-gradient);
+}
+
+body.long-page-detail-corp main > .section.gray-gradient:not(.headline-box) {
+  background-image: var(--long-page-detail-corp-gray-gradient);
+}
+
+/* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
+   34px gold bar the container width (edge to edge on phones) */
+body.long-page-detail-corp main > .section.gold-bar {
+  max-width: var(--container-max);
+  height: var(--long-page-detail-corp-gold-bar);
+  margin-inline: auto;
+  background-color: var(--color-accent);
 }

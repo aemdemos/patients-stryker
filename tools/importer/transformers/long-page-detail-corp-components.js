@@ -41,9 +41,14 @@ function colourStyle(el) {
   if (!m) return '';
   const bg = m[1];
   if (/^(gold|golden-gradient|yellow)$/.test(bg)) return 'gold';
-  if (/^(light-gray|gray|grey|gray-gradient|light-gray-gradient)$/.test(bg)) return 'light-gray';
+  // the grey-to-light-grey and purple panels (OR staff band titles, Mako refreshers bands,
+  // ispies event boxes): template colour styles
+  if (bg === 'gray-gradient') return 'gray-gradient';
+  if (bg === 'purple') return 'purple';
+  if (bg === 'dark-purple-gradient') return 'purple-gradient';
+  if (/^(light-gray|gray|grey|light-gray-gradient)$/.test(bg)) return 'light-gray';
   if (/^(blue|navy)$/.test(bg)) return 'blue';
-  if (/^(dark|dark-gray|black|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return 'dark';
+  if (/^(dark|dark-gray|black)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return 'dark';
   return '';
 }
 
@@ -62,12 +67,35 @@ function contentUnits(container) {
   return units;
 }
 
+/**
+ * A block built with a section style (a Columns row: `p-1-5`, `serif`) that moves into
+ * another section (a tab, a band) loses the style: the copy it set keeps its size and font
+ * as bracket tags (`[[text-1-5,serif]…]`; neurosurgical events card titles).
+ */
+function inlineSectionStyle(unit, doc, h) {
+  const parts = (unit.getAttribute('data-section-style') || '').split(',').map((s) => s.trim());
+  const size = parts.find((s) => /^p-\d/.test(s));
+  const serif = parts.includes('serif');
+  if (!size && !serif) return;
+  [...unit.querySelectorAll('td > p, td > ul, td > ol, div > p, div > ul, div > ol')]
+    .filter((n) => typeof n.copyStyle === 'string')
+    .forEach((n) => {
+      const own = n.copyStyle.split(',').map((s) => s.trim());
+      const tags = [size && own.includes(size) ? `text-${size.slice(2)}` : '', serif && own.includes('serif') ? 'serif' : '']
+        .filter(Boolean);
+      if (!tags.length) return;
+      h.tagCopy(n, tags.join(','), doc);
+    });
+  unit.removeAttribute('data-section-style');
+}
+
 function unitNodes(unit, doc, h) {
   // components a block parser converts after this step (downloads, related cards, hero
   // carousels): moved as they are, the parser finds them in their new place
   if (unit.matches(PARSED)) return [unit];
   if (unit.hasAttribute('data-keep')) {
     const nodes = unit.getAttribute('data-keep') === 'nodes' ? [...unit.children] : [unit];
+    if (unit.getAttribute('data-keep') === 'section') inlineSectionStyle(unit, doc, h);
     unit.removeAttribute('data-keep');
     return nodes;
   }
@@ -234,6 +262,8 @@ function fullBleedPanels(main, doc, h) {
       } else run.push(...unitNodes(unit, doc, h));
     });
     flush();
+    // an empty gold panel (OR staff: the 34px gold band under the page title): `gold-bar`
+    if (!out.length && colour === 'gold' && !h.text(component)) out.push(keepNodes(doc, [], 'gold-bar'));
     if (!out.length) return;
     (component.closest('.fullbleedpanel') || component).replaceWith(...out);
   });
@@ -300,25 +330,71 @@ function groupLists(main, doc, h) {
   });
 }
 
+/**
+ * Fast facts (OR staff: the "Mako Total Knee / Hip / Partial Knee" band titles the sticky
+ * navigation scrolls to): the title as a Heading 2, any other text as paragraphs.
+ */
+function fastFacts(main, doc, h) {
+  main.querySelectorAll('.c-fastfacts').forEach((component) => {
+    const nodes = [...component.querySelectorAll('h2, h3, h4, p, li')]
+      .filter((el) => h.text(el) && !el.querySelector('h2, h3, h4, p, li'))
+      .map((el) => {
+        const copy = doc.createElement(el.matches('.c-fastfacts-title') ? 'h2' : 'p');
+        copy.textContent = h.text(el);
+        return copy;
+      });
+    if (!nodes.length) {
+      component.remove();
+      return;
+    }
+    (component.closest('.fastfacts') || component).replaceWith(h.richText(doc, nodes));
+  });
+}
+
+/**
+ * A page hero (TEACH thank-you): its title (gold when the source colours it), subhead,
+ * text and image. Text beside the image (two columns) is `Columns (columns-50-50)`; the
+ * image is the desktop one (the picture source from 480px). Its bottom rule
+ * (.border-bottom-gold, a 1px grey line on stryker.com) is a separator before what follows.
+ */
 function pageHeroes(main, doc, h) {
   main.querySelectorAll('.c-page-hero').forEach((component) => {
-    const nodes = [];
-    component.querySelectorAll('h1, h2, p, img').forEach((el) => {
+    const columnNodes = (col) => [...col.querySelectorAll('h1, h2, p, img')].flatMap((el) => {
       if (el.matches('img')) {
+        const source = el.closest('picture') && el.closest('picture').querySelector('source[srcset]');
         const img = doc.createElement('img');
-        img.setAttribute('src', el.getAttribute('src'));
+        img.setAttribute('src', source ? source.getAttribute('srcset').split(/\s+/)[0] : el.getAttribute('src'));
         img.setAttribute('alt', el.getAttribute('alt') || '');
         const p = doc.createElement('p');
         p.append(img);
-        nodes.push(p);
-      } else if (h.text(el)) {
-        const copy = doc.createElement(el.tagName.toLowerCase());
-        copy.textContent = h.text(el);
-        nodes.push(copy);
+        return [p];
       }
+      if (!h.text(el)) return [];
+      const copy = doc.createElement(el.tagName.toLowerCase());
+      const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i
+        .test(((el.getAttribute('style') || '').match(/color\s*:\s*([^;]+)/i) || [])[1]?.trim() || '');
+      // the hero's title is Futura bold 28px, its subhead Egyptienne light 24.5px (stryker.com)
+      if (el.matches('h1')) {
+        const strong = doc.createElement('strong');
+        strong.textContent = h.text(el);
+        copy.append(doc.createTextNode(gold ? '[[text-2][[color-gold]' : '[[text-2]'), strong, doc.createTextNode(gold ? ']]' : ']'));
+      } else if (el.matches('h2')) {
+        copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
+      } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
+      return [copy];
     });
-    if (!nodes.length) return;
-    (component.closest('.pagehero') || component).replaceWith(h.richText(doc, nodes));
+    const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector('img'));
+    const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
+    if (!cells.length) return;
+    const out = cells.length === 2
+      ? [keepBlock(WebImporter.Blocks.createBlock(doc, { name: 'Columns (columns-50-50)', cells: [cells] }))]
+      : [h.richText(doc, cells.flat())];
+    if (component.querySelector('.border-bottom-gold')) {
+      const rule = doc.createElement('div');
+      rule.className = 'sectionseparator';
+      out.push(rule);
+    }
+    (component.closest('.pagehero') || component).replaceWith(...out);
   });
 }
 
@@ -428,10 +504,12 @@ function eventCalendars(main) {
  * image), so a column holding one keeps it.
  * @param {Element} main the page content
  * @param {Document} doc
- * @param {{ cellNodes: Function, richText: Function, text: Function }} h helpers of
+ * @param {{ cellNodes: Function, richText: Function, text: Function, tagCopy: Function }} h
+ *   helpers of
  *   long-page-detail-corp-sections.js
  */
 export function convertBeforeRows(main, doc, h) {
+  fastFacts(main, doc, h);
   whiteText(main, doc, h);
   interactiveImages(main, doc);
   numberCounters(main, doc, h);
@@ -447,7 +525,8 @@ export function convertBeforeRows(main, doc, h) {
  * accordions) and the ones that become blocks.
  * @param {Element} main the page content
  * @param {Document} doc
- * @param {{ cellNodes: Function, richText: Function, text: Function }} h helpers of
+ * @param {{ cellNodes: Function, richText: Function, text: Function, tagCopy: Function }} h
+ *   helpers of
  *   long-page-detail-corp-sections.js
  */
 export function convertAfterRows(main, doc, h) {

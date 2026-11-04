@@ -299,6 +299,24 @@ function linkedImage(component) {
 }
 
 /**
+ * A column holding an unlinked image without a caption and, under it, a rich text that is
+ * one fully bold line (an nse grid item: image, then its name): [image, text], else null.
+ */
+function imageLabel(col) {
+  const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
+    .filter((c) => !c.parentElement.closest(CELL_COMPONENTS));
+  if (parts.length !== 2) return null;
+  const [image, label] = parts;
+  if (!image.matches('.c-standalone-image') || linkedImage(image)
+    || image.querySelector('.title-content :is(h2, h3, h4, h5)') || !label.matches('.c-rich-text-editor')) return null;
+  const lines = [...label.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6')].filter((el) => text(el));
+  const bold = lines.length === 1 && [...lines[0].querySelectorAll('.futura-bold, b, strong')]
+    .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
+    .map((b) => text(b)).join(' ') === text(lines[0]);
+  return bold && lines[0].matches('p') ? [image, label] : null;
+}
+
+/**
  * The content of one column of a source column row, cleaned as in the article builder.
  * The Large Headline marked `data-page-title` (the page's first, on a page without a
  * title) is the page H1.
@@ -310,19 +328,20 @@ function cellNodes(col, doc) {
     .forEach((c) => {
       if (c.matches('.c-rich-text-editor')) out.push(...richTextNodes(c, doc).nodes);
       else if (c.matches('.c-standalone-image')) {
-        out.push(...imageNodes(c, doc));
+        const nodes = imageNodes(c, doc);
         // a linked image (the endoscopy resources specialty tiles): the link alone on the
         // line after it makes the image clickable (`Columns (media-pair)`, columns.js), its
-        // text the image's alt text
+        // text the image's alt text; before the image's caption heading (OR staff tiles)
         const link = linkedImage(c);
-        if (link) {
+        if (link && nodes.length) {
           const a = doc.createElement('a');
           a.setAttribute('href', newTabHref(link, absoluteAsset(link.getAttribute('href'))));
           a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
           const p = doc.createElement('p');
           p.append(a);
-          out.push(p);
+          nodes.splice(1, 0, p);
         }
+        out.push(...nodes);
       } else if (c.matches('.c-standalone-video')) {
         const a = videoLink(c, doc);
         if (a) {
@@ -361,25 +380,51 @@ function sizeTag(copyStyle) {
 }
 
 /**
+ * Wraps the text of a paragraph or list in a bracket tag (`[[tag]…]`): each paragraph, or
+ * each list item, nested ones too; a list item's paragraphs, or its text before a nested
+ * list, so a tag never holds a block (Mako refreshers: "case reviews" over a nested list).
+ */
+function tagCopy(n, tag, doc) {
+  const wrap = (first, last) => {
+    if (first.nodeType === 3 && first.textContent.trimStart().startsWith(`[[${tag}]`)) return;
+    first.before(doc.createTextNode(`[[${tag}]`));
+    last.after(doc.createTextNode(']'));
+  };
+  if (!n.matches('ul, ol')) {
+    if (n.firstChild) wrap(n.firstChild, n.lastChild);
+    return;
+  }
+  n.querySelectorAll('li').forEach((li) => {
+    const paragraphs = li.querySelectorAll(':scope > p');
+    if (paragraphs.length) {
+      paragraphs.forEach((p) => { if (p.firstChild) wrap(p.firstChild, p.lastChild); });
+      return;
+    }
+    const inline = [];
+    for (let c = li.firstChild; c && !(c.nodeType === 1 && c.matches('ul, ol')); c = c.nextSibling) inline.push(c);
+    if (inline.some((c) => c.textContent.trim())) wrap(inline[0], inline[inline.length - 1]);
+  });
+}
+
+/**
  * The copy style of a column row: the style of most of its text (by length) becomes the
  * section style (e.g. `p-1-25` for 17.5px lists); text in another size gets its size tag
- * (e.g. `[[text-2]Program objectives]`, 28px), as the cells share the section.
+ * (e.g. `[[text-2]Program objectives]`, 28px), as the cells share the section. When some
+ * of the text is in the default size (14px), the section sets no size and each sized text
+ * gets its tag instead (nse grids: 21px item names over 14px sizes; neurosurgical events:
+ * a 21px card title over a 14px date), as there is no tag for the default size.
  */
 function rowCopyStyle(cells, doc) {
   const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== undefined
     && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
   const weight = {};
   copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
-  const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
+  let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
+  if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
+    dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
+  }
   copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant))
-    .forEach((n) => {
-      const tag = sizeTag(n.copyStyle);
-      const targets = n.matches('ul, ol') ? [...n.querySelectorAll(':scope > li')] : [n];
-      targets.forEach((el) => {
-        el.prepend(doc.createTextNode(`[[${tag}]`));
-        el.append(doc.createTextNode(']'));
-      });
-    });
+    .forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
   return dominant;
 }
 
@@ -483,6 +528,31 @@ function columnRows(main, doc) {
     const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
     const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : ''].filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
+    // a grid row whose items are an image with its bold label under it (the nse grids' last
+    // row, e.g. "Flame dermabrader"; their other rows are an image row, then a label row):
+    // the same two rows, as a fully bold line right under an image is a caption (columns-corp)
+    const items = columns.map(imageLabel);
+    if (filled.every((col) => items[columns.indexOf(col)])) {
+      const rowOf = (part) => columns.map((col, i) => {
+        if (!items[i]) return [];
+        const box = doc.createElement('div');
+        box.append(items[i][part].cloneNode(true));
+        return cellNodes(box, doc);
+      });
+      const blocks = [rowOf(0), rowOf(1)].map((cells) => {
+        const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
+        const block = WebImporter.Blocks.createBlock(doc, {
+          name: variant ? `Columns (${variant})` : 'Columns',
+          cells: [cells],
+        });
+        block.setAttribute('data-keep', 'section');
+        if (style) block.setAttribute('data-section-style', style);
+        return block;
+      });
+      if (wrapper.hasAttribute('data-row-end')) blocks[1].setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
+      wrapper.replaceWith(...blocks);
+      return;
+    }
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
     const block = WebImporter.Blocks.createBlock(doc, {
@@ -629,8 +699,20 @@ export default function transform(hookName, element, payload) {
   const firstHeadline = firstTitle && firstTitle.matches('.c-largeheadline') ? firstTitle : null;
   if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
   main.querySelectorAll('.c-rich-text-editor h1').forEach((h) => {
-    // a second H1 keeps the source's 28px (the H1 size) as an H2
-    if (h !== firstTitle) sizeTagged(renameTo(h, 'h2', doc), 'text-2', doc);
+    if (h === firstTitle) return;
+    // a second H1 keeps the source's 28px (the H1 size) as an H2, and its Egyptienne light
+    // unless it is all Futura bold (the OR staff form titles); one all in a 1.75em span
+    // (49px, Mako refreshers "Together with our customers…") is a statement paragraph, as
+    // the other pages' "Together with our customers" lines
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+    const bold = [...h.querySelectorAll('.futura-bold, b, strong')]
+      .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'));
+    const serif = squash(bold.map((b) => b.textContent).join('')) !== squash(h.textContent);
+    const big = [...h.querySelectorAll('.fontsize-1-75em')].filter((s) => !s.parentElement.closest('.fontsize-1-75em'));
+    const statement = squash(big.map((s) => s.textContent).join('')) === squash(h.textContent);
+    const tag = [statement ? 'text-3-5' : 'text-2', serif ? 'serif' : ''].filter(Boolean).join(',');
+    if (statement) big.forEach((span) => span.classList.remove('fontsize-1-75em'));
+    sizeTagged(renameTo(h, statement ? 'p' : 'h2', doc), tag, doc);
   });
   if (firstHeadline) {
     firstHeadline.setAttribute('data-page-title', '');
@@ -641,7 +723,9 @@ export default function transform(hookName, element, payload) {
       if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
     });
   }
-  const helpers = { cellNodes, richText, text };
+  const helpers = {
+    cellNodes, richText, text, tagCopy,
+  };
   convertBeforeRows(main, doc, helpers);
   markRowEnds(main);
   columnRows(main, doc);

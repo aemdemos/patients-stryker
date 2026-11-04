@@ -499,7 +499,7 @@ var CustomImportScript = (() => {
     root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     const trailingSpace = /[\s\u00a0]+$/;
-    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+    [...root.querySelectorAll('span.futura-bold, span[style*="color"], b, i, em, strong')].reverse().forEach((el) => {
       let last = el.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
         if (emptyElement(last)) {
@@ -530,6 +530,16 @@ var CustomImportScript = (() => {
       const strong = doc.createElement("strong");
       a.replaceWith(strong);
       strong.append(a);
+    });
+    const squashed = (el) => el.textContent.replace(/[\s\u00a0]+/g, "");
+    root.querySelectorAll(".futura-bold a[href], a[href] .futura-bold").forEach((el) => {
+      const a = el.closest("a[href]");
+      const block = a.closest("p, li");
+      if (standalone.has(a) || a.querySelector("u, img") || !block || !squashed(a) || squashed(block) !== squashed(a)) return;
+      standalone.add(a);
+      const u = doc.createElement("u");
+      while (a.firstChild) u.append(a.firstChild);
+      a.append(u);
     });
     root.querySelectorAll("span.futura-bold").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
@@ -787,7 +797,15 @@ var CustomImportScript = (() => {
   }
   function headlineTag(el) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1]).map(([n]) => n)[0];
+    const depth = (span) => {
+      let n = 0;
+      if (span === el) return n;
+      for (let p = span.parentElement; p && p !== el; p = p.parentElement) {
+        if (/\bfontsize-/.test(p.className || "")) n += 1;
+      }
+      return n;
+    };
+    const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
     const bold = [...el.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
     const serif = squash(bold) !== squash(el.textContent);
     return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
@@ -878,9 +896,12 @@ var CustomImportScript = (() => {
     const box = headline2.querySelector(".has-background");
     const bg = (box && box.className.match(/\bbg-([a-z-]+)\b/) || [])[1] || "";
     if (/^(gold|golden-gradient)$/.test(bg)) return "headline-box, gold";
-    if (/^(light-gray|gray|gray-gradient)$/.test(bg)) return "headline-box, light-gray";
+    if (bg === "gray-gradient") return "headline-box, gray-gradient";
+    if (bg === "purple") return "headline-box, purple";
+    if (bg === "dark-purple-gradient") return "headline-box, purple-gradient";
+    if (/^(light-gray|gray)$/.test(bg)) return "headline-box, light-gray";
     if (/^blue$/.test(bg)) return "headline-box, blue";
-    if (/^(dark|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "headline-box, dark";
+    if (/^dark$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "headline-box, dark";
     return "";
   }
   function centredHeadline(headline2) {
@@ -1157,7 +1178,8 @@ var CustomImportScript = (() => {
           return;
         }
         if (component.getAttribute("data-keep") === "nodes") {
-          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(...component.children);
+          const style = component.getAttribute("data-section-style") || void 0;
+          startSection(component.children.length || !style ? "kept" : "spacer", style).nodes.push(...component.children);
           current = null;
           return;
         }
@@ -1178,6 +1200,20 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-image")) {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
+        const img = component.querySelector("img");
+        const link2 = img && img.closest("a[href]");
+        if (link2 && component.contains(link2)) {
+          const a = doc.createElement("a");
+          a.setAttribute("href", newTabHref(link2, absoluteAsset(link2.getAttribute("href"))));
+          a.textContent = (img.getAttribute("alt") || "").trim() || a.getAttribute("href");
+          const p = doc.createElement("p");
+          p.append(a);
+          nodes2.splice(1, 0, p);
+          const style = ["image-link", link2.closest(".text-center") ? "center" : ""].filter(Boolean).join(", ");
+          startSection("image", style).nodes.push(...nodes2);
+          current = null;
+          return;
+        }
         const columnStyle2 = imageColumnStyle(component);
         if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle2) {
@@ -1389,9 +1425,12 @@ var CustomImportScript = (() => {
     if (!m) return "";
     const bg = m[1];
     if (/^(gold|golden-gradient|yellow)$/.test(bg)) return "gold";
-    if (/^(light-gray|gray|grey|gray-gradient|light-gray-gradient)$/.test(bg)) return "light-gray";
+    if (bg === "gray-gradient") return "gray-gradient";
+    if (bg === "purple") return "purple";
+    if (bg === "dark-purple-gradient") return "purple-gradient";
+    if (/^(light-gray|gray|grey|light-gray-gradient)$/.test(bg)) return "light-gray";
     if (/^(blue|navy)$/.test(bg)) return "blue";
-    if (/^(dark|dark-gray|black|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "dark";
+    if (/^(dark|dark-gray|black)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "dark";
     return "";
   }
   function contentUnits(container) {
@@ -1402,10 +1441,24 @@ var CustomImportScript = (() => {
     if (!units.length && container.matches(COMPONENT)) return [container];
     return units;
   }
+  function inlineSectionStyle(unit, doc, h) {
+    const parts = (unit.getAttribute("data-section-style") || "").split(",").map((s) => s.trim());
+    const size = parts.find((s) => /^p-\d/.test(s));
+    const serif = parts.includes("serif");
+    if (!size && !serif) return;
+    [...unit.querySelectorAll("td > p, td > ul, td > ol, div > p, div > ul, div > ol")].filter((n) => typeof n.copyStyle === "string").forEach((n) => {
+      const own = n.copyStyle.split(",").map((s) => s.trim());
+      const tags = [size && own.includes(size) ? `text-${size.slice(2)}` : "", serif && own.includes("serif") ? "serif" : ""].filter(Boolean);
+      if (!tags.length) return;
+      h.tagCopy(n, tags.join(","), doc);
+    });
+    unit.removeAttribute("data-section-style");
+  }
   function unitNodes(unit, doc, h) {
     if (unit.matches(PARSED)) return [unit];
     if (unit.hasAttribute("data-keep")) {
       const nodes = unit.getAttribute("data-keep") === "nodes" ? [...unit.children] : [unit];
+      if (unit.getAttribute("data-keep") === "section") inlineSectionStyle(unit, doc, h);
       unit.removeAttribute("data-keep");
       return nodes;
     }
@@ -1540,6 +1593,7 @@ var CustomImportScript = (() => {
         } else run.push(...unitNodes(unit, doc, h));
       });
       flush();
+      if (!out.length && colour === "gold" && !h.text(component)) out.push(keepNodes(doc, [], "gold-bar"));
       if (!out.length) return;
       (component.closest(".fullbleedpanel") || component).replaceWith(...out);
     });
@@ -1604,25 +1658,55 @@ var CustomImportScript = (() => {
       (component.closest(".grouplist") || component).replaceWith(...out);
     });
   }
+  function fastFacts(main, doc, h) {
+    main.querySelectorAll(".c-fastfacts").forEach((component) => {
+      const nodes = [...component.querySelectorAll("h2, h3, h4, p, li")].filter((el) => h.text(el) && !el.querySelector("h2, h3, h4, p, li")).map((el) => {
+        const copy = doc.createElement(el.matches(".c-fastfacts-title") ? "h2" : "p");
+        copy.textContent = h.text(el);
+        return copy;
+      });
+      if (!nodes.length) {
+        component.remove();
+        return;
+      }
+      (component.closest(".fastfacts") || component).replaceWith(h.richText(doc, nodes));
+    });
+  }
   function pageHeroes(main, doc, h) {
     main.querySelectorAll(".c-page-hero").forEach((component) => {
-      const nodes = [];
-      component.querySelectorAll("h1, h2, p, img").forEach((el) => {
+      const columnNodes = (col) => [...col.querySelectorAll("h1, h2, p, img")].flatMap((el) => {
+        var _a;
         if (el.matches("img")) {
+          const source = el.closest("picture") && el.closest("picture").querySelector("source[srcset]");
           const img = doc.createElement("img");
-          img.setAttribute("src", el.getAttribute("src"));
+          img.setAttribute("src", source ? source.getAttribute("srcset").split(/\s+/)[0] : el.getAttribute("src"));
           img.setAttribute("alt", el.getAttribute("alt") || "");
           const p = doc.createElement("p");
           p.append(img);
-          nodes.push(p);
-        } else if (h.text(el)) {
-          const copy = doc.createElement(el.tagName.toLowerCase());
-          copy.textContent = h.text(el);
-          nodes.push(copy);
+          return [p];
         }
+        if (!h.text(el)) return [];
+        const copy = doc.createElement(el.tagName.toLowerCase());
+        const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
+        if (el.matches("h1")) {
+          const strong = doc.createElement("strong");
+          strong.textContent = h.text(el);
+          copy.append(doc.createTextNode(gold ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold ? "]]" : "]"));
+        } else if (el.matches("h2")) {
+          copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
+        } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
+        return [copy];
       });
-      if (!nodes.length) return;
-      (component.closest(".pagehero") || component).replaceWith(h.richText(doc, nodes));
+      const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));
+      const cells = cols.map(columnNodes).filter((nodes) => nodes.length);
+      if (!cells.length) return;
+      const out = cells.length === 2 ? [keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Columns (columns-50-50)", cells: [cells] }))] : [h.richText(doc, cells.flat())];
+      if (component.querySelector(".border-bottom-gold")) {
+        const rule = doc.createElement("div");
+        rule.className = "sectionseparator";
+        out.push(rule);
+      }
+      (component.closest(".pagehero") || component).replaceWith(...out);
     });
   }
   function engagementCtas(main, doc, h) {
@@ -1708,6 +1792,7 @@ var CustomImportScript = (() => {
     main.querySelectorAll(".c-event").forEach((component) => (component.closest(".event") || component).remove());
   }
   function convertBeforeRows(main, doc, h) {
+    fastFacts(main, doc, h);
     whiteText(main, doc, h);
     interactiveImages(main, doc);
     numberCounters(main, doc, h);
@@ -2117,21 +2202,31 @@ var CustomImportScript = (() => {
     const link2 = img && img.closest("a[href]");
     return link2 && component.contains(link2) ? link2 : null;
   }
+  function imageLabel(col) {
+    const parts = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS));
+    if (parts.length !== 2) return null;
+    const [image2, label] = parts;
+    if (!image2.matches(".c-standalone-image") || linkedImage(image2) || image2.querySelector(".title-content :is(h2, h3, h4, h5)") || !label.matches(".c-rich-text-editor")) return null;
+    const lines = [...label.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6")].filter((el) => text4(el));
+    const bold = lines.length === 1 && [...lines[0].querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => text4(b)).join(" ") === text4(lines[0]);
+    return bold && lines[0].matches("p") ? [image2, label] : null;
+  }
   function cellNodes(col, doc) {
     const out = [];
     [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS)).forEach((c) => {
       if (c.matches(".c-rich-text-editor")) out.push(...richTextNodes(c, doc).nodes);
       else if (c.matches(".c-standalone-image")) {
-        out.push(...imageNodes(c, doc));
+        const nodes = imageNodes(c, doc);
         const link2 = linkedImage(c);
-        if (link2) {
+        if (link2 && nodes.length) {
           const a = doc.createElement("a");
           a.setAttribute("href", newTabHref(link2, absoluteAsset(link2.getAttribute("href"))));
           a.textContent = link2.querySelector("img").getAttribute("alt") || text4(link2) || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
-          out.push(p);
+          nodes.splice(1, 0, p);
         }
+        out.push(...nodes);
       } else if (c.matches(".c-standalone-video")) {
         const a = videoLink(c, doc);
         if (a) {
@@ -2160,21 +2255,40 @@ var CustomImportScript = (() => {
     const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
     return size ? `text-${size.slice(2)}` : "";
   }
+  function tagCopy(n, tag, doc) {
+    const wrap = (first, last) => {
+      if (first.nodeType === 3 && first.textContent.trimStart().startsWith(`[[${tag}]`)) return;
+      first.before(doc.createTextNode(`[[${tag}]`));
+      last.after(doc.createTextNode("]"));
+    };
+    if (!n.matches("ul, ol")) {
+      if (n.firstChild) wrap(n.firstChild, n.lastChild);
+      return;
+    }
+    n.querySelectorAll("li").forEach((li) => {
+      const paragraphs = li.querySelectorAll(":scope > p");
+      if (paragraphs.length) {
+        paragraphs.forEach((p) => {
+          if (p.firstChild) wrap(p.firstChild, p.lastChild);
+        });
+        return;
+      }
+      const inline2 = [];
+      for (let c = li.firstChild; c && !(c.nodeType === 1 && c.matches("ul, ol")); c = c.nextSibling) inline2.push(c);
+      if (inline2.some((c) => c.textContent.trim())) wrap(inline2[0], inline2[inline2.length - 1]);
+    });
+  }
   function rowCopyStyle(cells, doc) {
     const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
     const weight = {};
     copy.forEach((n) => {
       weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text4(n).length;
     });
-    const dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
-    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => {
-      const tag = sizeTag(n.copyStyle);
-      const targets = n.matches("ul, ol") ? [...n.querySelectorAll(":scope > li")] : [n];
-      targets.forEach((el) => {
-        el.prepend(doc.createTextNode(`[[${tag}]`));
-        el.append(doc.createTextNode("]"));
-      });
-    });
+    let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || "";
+    if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
+      dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
+    }
+    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
     return dominant;
   }
   var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
@@ -2240,6 +2354,28 @@ var CustomImportScript = (() => {
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
       const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : ""].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
+      const items = columns.map(imageLabel);
+      if (filled.every((col) => items[columns.indexOf(col)])) {
+        const rowOf = (part) => columns.map((col, i) => {
+          if (!items[i]) return [];
+          const box = doc.createElement("div");
+          box.append(items[i][part].cloneNode(true));
+          return cellNodes(box, doc);
+        });
+        const blocks = [rowOf(0), rowOf(1)].map((cells2) => {
+          const style2 = [rowCopyStyle(cells2, doc), centred ? "center" : ""].filter(Boolean).join(", ");
+          const block2 = WebImporter.Blocks.createBlock(doc, {
+            name: variant ? `Columns (${variant})` : "Columns",
+            cells: [cells2]
+          });
+          block2.setAttribute("data-keep", "section");
+          if (style2) block2.setAttribute("data-section-style", style2);
+          return block2;
+        });
+        if (wrapper.hasAttribute("data-row-end")) blocks[1].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
+        wrapper.replaceWith(...blocks);
+        return;
+      }
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
       const block = WebImporter.Blocks.createBlock(doc, {
@@ -2348,7 +2484,15 @@ var CustomImportScript = (() => {
     const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
     if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
     main.querySelectorAll(".c-rich-text-editor h1").forEach((h) => {
-      if (h !== firstTitle) sizeTagged(renameTo(h, "h2", doc), "text-2", doc);
+      if (h === firstTitle) return;
+      const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+      const bold = [...h.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong"));
+      const serif = squash(bold.map((b) => b.textContent).join("")) !== squash(h.textContent);
+      const big = [...h.querySelectorAll(".fontsize-1-75em")].filter((s) => !s.parentElement.closest(".fontsize-1-75em"));
+      const statement = squash(big.map((s) => s.textContent).join("")) === squash(h.textContent);
+      const tag = [statement ? "text-3-5" : "text-2", serif ? "serif" : ""].filter(Boolean).join(",");
+      if (statement) big.forEach((span) => span.classList.remove("fontsize-1-75em"));
+      sizeTagged(renameTo(h, statement ? "p" : "h2", doc), tag, doc);
     });
     if (firstHeadline) {
       firstHeadline.setAttribute("data-page-title", "");
@@ -2356,7 +2500,12 @@ var CustomImportScript = (() => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
       });
     }
-    const helpers = { cellNodes, richText, text: text4 };
+    const helpers = {
+      cellNodes,
+      richText,
+      text: text4,
+      tagCopy
+    };
     convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
     columnRows(main, doc);
