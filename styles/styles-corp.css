@@ -42,6 +42,7 @@
   --corp-band-strut-s: 9px; /* measured: the source band h2 (21px, lines 1.06) around its 1.5em span makes a 42.4px line box, 9px more than the span's 33.4px line, below 600px */
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
+
   /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
   --corp-social-icon-size: 32px;
