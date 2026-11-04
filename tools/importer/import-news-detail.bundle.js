@@ -652,6 +652,12 @@ var CustomImportScript = (() => {
     flush();
     return nodes;
   }
+  function spacedSubheads(root) {
+    const empty = (el) => !(el.textContent || "").replace(/[\s\u00a0]+/g, "");
+    const blank = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector("img") && empty(el);
+    const subheads = [...root.children].filter((el) => el.tagName === "H4" && !empty(el));
+    return subheads.length > 0 && subheads.every((h) => blank(h.nextElementSibling));
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
@@ -662,6 +668,7 @@ var CustomImportScript = (() => {
     const futuraLinks = futuraLinkParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
+    const spaced = spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
@@ -688,6 +695,7 @@ var CustomImportScript = (() => {
     const first = nodes.find((node) => node.copyStyle !== null);
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
+      if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
     });
     return { nodes, centred, size };
   }
