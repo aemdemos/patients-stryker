@@ -1062,6 +1062,12 @@
           ]
         },
         {
+          "name": "cards-corp-teaser",
+          "instances": [
+            ".c-customizeable"
+          ]
+        },
+        {
           "name": "hero-full-width-image",
           "instances": [
             ".fullWidthImageHero"

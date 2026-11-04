@@ -52,6 +52,50 @@ body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .defau
   padding-bottom: 0;
 }
 
+/* `headline-box` with the site's colour section style (`gold`, `light-gray`, `blue`, `dark`):
+   the source box in that colour (.largeheadline.has-background.bg-gold …, e.g. the nse
+   "Elite …" boxes): inside the content column (the gutter stays clear), 20px in on every
+   side at every width; white text on blue and dark (on gold and light grey the source's
+   black, its white words as `[[color-white]…]`). The colour is the box's, not the band's
+   (the site styles colour the whole section) */
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) {
+  background: none;
+}
+
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) > .default-content-wrapper {
+  border-inline: var(--container-gutter) solid transparent;
+  padding: var(--space-block-l);
+  background-clip: padding-box;
+}
+
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark) > .default-content-wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper {
+  background-color: var(--color-accent);
+}
+
+body.long-page-detail-corp main > .section.headline-box.light-gray > .default-content-wrapper {
+  background-color: var(--color-surface);
+}
+
+body.long-page-detail-corp main > .section.headline-box.blue > .default-content-wrapper {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.dark > .default-content-wrapper {
+  background-image: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
+/* section style `gold` (the site's colour style, here for a stryker.com gold full-bleed
+   panel: `gold, full-bleed`): the gold band */
+body.long-page-detail-corp main > .section.gold:not(.headline-box) {
+  background-color: var(--color-accent);
+}
+
 /* ---- large headline paragraphs (the `headline-N` tags, below): the source sets the box in
    Egyptienne light, 21px below 600px (lines 28.875px) and 14px from 600px, and its lines sit
    on that line spacing (biologics' 11.25px intro lines 29px apart on phones, courses' blank
@@ -145,6 +189,18 @@ body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
 
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* the same below a column row in a tab (`tabbed` section: the rows share the tab's panel,
+   e.g. the nse product grids: image row, caption row) */
+body.long-page-detail-corp main .tabs-panel .columns-wrapper {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .tabs-panel .columns-wrapper {
     margin-bottom: var(--space-section);
   }
 }

@@ -839,6 +839,22 @@ function whiteBox(headline) {
 }
 
 /**
+ * The section styles of a Large Headline in a box: `headline-box`, with the box colour as
+ * the site's section colour style when it isn't white (bg-gold → `gold`, bg-blue → `blue`,
+ * dark gradients → `dark`; e.g. the nse "Attachments" gold boxes); '' when not in a box.
+ */
+function boxStyles(headline) {
+  if (whiteBox(headline)) return 'headline-box';
+  const box = headline.querySelector('.has-background');
+  const bg = ((box && box.className.match(/\bbg-([a-z-]+)\b/)) || [])[1] || '';
+  if (/^(gold|golden-gradient)$/.test(bg)) return 'headline-box, gold';
+  if (/^(light-gray|gray|gray-gradient)$/.test(bg)) return 'headline-box, light-gray';
+  if (/^blue$/.test(bg)) return 'headline-box, blue';
+  if (/^(dark|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return 'headline-box, dark';
+  return '';
+}
+
+/**
  * A Large Headline whose every line the source centres (an inline text-align: center on
  * the line, e.g. the endoscopy "Together with our customers…").
  */
@@ -849,7 +865,7 @@ function centredHeadline(headline) {
 
 /** The section styles of a Large Headline: `headline-box` (white box), `center` (centred). */
 function headlineStyles(headline) {
-  return [whiteBox(headline) ? 'headline-box' : '', centredHeadline(headline) ? 'center' : '']
+  return [boxStyles(headline), centredHeadline(headline) ? 'center' : '']
     .filter(Boolean).join(', ');
 }
 
@@ -1380,7 +1396,7 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-largeheadline') && (headlineStyles(component) || partlyCentred)) {
       const nodes = headlineNodes(component, doc);
       if (!nodes.length) return;
-      const box = whiteBox(component) ? 'headline-box' : '';
+      const box = boxStyles(component);
       const runs = [];
       nodes.forEach((node) => {
         const centred = !!node.centredLine;

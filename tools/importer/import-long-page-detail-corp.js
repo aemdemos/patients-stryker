@@ -6,6 +6,7 @@
 // PARSER IMPORTS
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
+import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
@@ -27,6 +28,7 @@ const PAGE_TEMPLATE = {
   blocks: [
     { name: 'video', instances: ['.c-standalone-video'] },
     { name: 'cards-corp-resources', instances: ['.c-resourcesanddownload'] },
+    { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
     { name: 'hero-full-width-image', instances: ['.fullWidthImageHero'] },
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
   ],
@@ -36,6 +38,7 @@ const PAGE_TEMPLATE = {
 const parsers = {
   video: videoParser,
   'cards-corp-resources': cardsCorpResourcesParser,
+  'cards-corp-teaser': cardsCorpTeaserParser,
   'hero-full-width-image': heroFullWidthImageParser,
   'hero-image-slide': heroImageSlideParser,
 };

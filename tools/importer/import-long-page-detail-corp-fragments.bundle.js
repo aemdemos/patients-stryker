@@ -95,13 +95,17 @@ var CustomImportScript = (() => {
       const title = item.querySelector(".title, h5, h4");
       const link = title && title.closest("a[href]") || item.querySelector("a[href]");
       const img = item.querySelector("img");
-      if (!link || !img) return null;
+      if (!img || !link && !text(title)) return null;
       const src = absolute(img.getAttribute("src"));
       const cover = document.createElement("a");
       cover.href = src;
       const alt = img.getAttribute("alt") || "";
       cover.textContent = alt.trim() ? alt : src;
       const h5 = document.createElement("h5");
+      if (!link) {
+        h5.textContent = text(title);
+        return [cover, h5];
+      }
       const a = document.createElement("a");
       a.href = newTab(link, absolute(link.getAttribute("href")));
       a.textContent = text(title) || text(link);
@@ -670,12 +674,22 @@ var CustomImportScript = (() => {
   function whiteBox(headline) {
     return !!headline.querySelector(".has-background.bg-white");
   }
+  function boxStyles(headline) {
+    if (whiteBox(headline)) return "headline-box";
+    const box = headline.querySelector(".has-background");
+    const bg = (box && box.className.match(/\bbg-([a-z-]+)\b/) || [])[1] || "";
+    if (/^(gold|golden-gradient)$/.test(bg)) return "headline-box, gold";
+    if (/^(light-gray|gray|gray-gradient)$/.test(bg)) return "headline-box, light-gray";
+    if (/^blue$/.test(bg)) return "headline-box, blue";
+    if (/^(dark|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "headline-box, dark";
+    return "";
+  }
   function centredHeadline(headline) {
     const lines = [...headline.querySelectorAll(".line")].filter((line) => text2(line));
     return lines.length > 0 && lines.every(centredLine);
   }
   function headlineStyles(headline) {
-    return [whiteBox(headline) ? "headline-box" : "", centredHeadline(headline) ? "center" : ""].filter(Boolean).join(", ");
+    return [boxStyles(headline), centredHeadline(headline) ? "center" : ""].filter(Boolean).join(", ");
   }
   function titleHeading(lines, doc) {
     const h1 = doc.createElement("h1");
@@ -1065,7 +1079,7 @@ var CustomImportScript = (() => {
       if (component.matches(".c-largeheadline") && (headlineStyles(component) || partlyCentred)) {
         const nodes2 = headlineNodes(component, doc);
         if (!nodes2.length) return;
-        const box = whiteBox(component) ? "headline-box" : "";
+        const box = boxStyles(component);
         const runs = [];
         nodes2.forEach((node) => {
           const centred2 = !!node.centredLine;
@@ -1165,6 +1179,351 @@ var CustomImportScript = (() => {
       }
     });
     element.replaceChildren(...out);
+  }
+
+  // tools/importer/transformers/long-page-detail-corp-components.js
+  var COMPONENT = '[class^="c-"], [class*=" c-"]';
+  var UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
+  var PARSED = ".c-resourcesanddownload, .c-customizeable, .c-autocarousel";
+  function colourStyle(el) {
+    const m = (el.className || "").match(/\bbg-([a-z-]+)\b/);
+    if (!m) return "";
+    const bg = m[1];
+    if (/^(gold|golden-gradient|yellow)$/.test(bg)) return "gold";
+    if (/^(light-gray|gray|grey|gray-gradient|light-gray-gradient)$/.test(bg)) return "light-gray";
+    if (/^(blue|navy)$/.test(bg)) return "blue";
+    if (/^(dark|dark-gray|black|purple)$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return "dark";
+    return "";
+  }
+  function contentUnits(container) {
+    const units = [...container.querySelectorAll(UNIT)].filter((el) => {
+      const outer = el.parentElement.closest(UNIT);
+      return !outer || outer === container || !container.contains(outer);
+    });
+    if (!units.length && container.matches(COMPONENT)) return [container];
+    return units;
+  }
+  function unitNodes(unit, doc, h) {
+    if (unit.matches(PARSED)) return [unit];
+    if (unit.hasAttribute("data-keep")) {
+      const nodes = unit.getAttribute("data-keep") === "nodes" ? [...unit.children] : [unit];
+      unit.removeAttribute("data-keep");
+      return nodes;
+    }
+    const box = doc.createElement("div");
+    box.append(unit.cloneNode(true));
+    return h.cellNodes(box, doc);
+  }
+  function contentNodes(container, doc, h) {
+    return contentUnits(container).flatMap((unit) => unitNodes(unit, doc, h));
+  }
+  function keepNodes(doc, nodes, style) {
+    const box = doc.createElement("div");
+    box.setAttribute("data-keep", "nodes");
+    if (style) box.setAttribute("data-section-style", style);
+    box.append(...nodes);
+    return box;
+  }
+  function keepBlock(block) {
+    block.setAttribute("data-keep", "section");
+    return block;
+  }
+  var headingLevel = (node) => node.nodeType === 1 && /^H[1-6]$/.test(node.tagName) ? Number(node.tagName[1]) : 0;
+  function tabs(main, doc, h) {
+    main.querySelectorAll(".c-tabs").forEach((component) => {
+      const labels = [...component.querySelectorAll(".tabs-nav a.tab-link")].map((a) => h.text(a));
+      const panels = [...component.querySelectorAll(".tabs-content > .tab-content")];
+      if (!panels.length) return;
+      const contents = panels.map((panel) => contentNodes(panel, doc, h));
+      const deepest = Math.max(0, ...contents.flat().map(headingLevel));
+      const level = Math.min(6, Math.max(2, deepest + 1));
+      const nodes = [];
+      contents.forEach((content, i) => {
+        if (!content.length) return;
+        const heading = doc.createElement(`h${level}`);
+        heading.textContent = labels[i] || `Tab ${i + 1}`;
+        nodes.push(heading, ...content);
+      });
+      if (!nodes.length) return;
+      (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, "tabbed"));
+    });
+  }
+  function accordionsInColumns(main, doc, h) {
+    main.querySelectorAll(".panel-group").forEach((group) => {
+      const col = group.closest('[class*="col-sm-"], [class*="col-md-"]');
+      const row = col && col.parentElement;
+      const filled = (c) => h.text(c) || c.querySelector("img, iframe, [data-asset-path], form, table");
+      if (!row || [...row.children].filter((c) => c !== col && filled(c)).length === 0) return;
+      const colctrl = row.closest(".colctrl");
+      if (!colctrl) return;
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      wrapper.replaceWith(...[...row.children].flatMap((c) => [...c.children]));
+    });
+  }
+  function blockCells(table) {
+    return [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")].slice(1).flatMap((tr) => [...tr.children].flatMap((td) => [...td.childNodes]));
+  }
+  function accordions(main, doc, h) {
+    main.querySelectorAll(".panel-group").forEach((group) => {
+      const panels = [...group.querySelectorAll(":scope > .panel")].filter((p) => p.querySelector(".panel-title"));
+      if (!panels.length) return;
+      const items = panels.map((panel) => ({
+        label: h.text(panel.querySelector(".panel-title")),
+        body: contentNodes(panel.querySelector(".panel-body") || panel, doc, h)
+      }));
+      const target = group.closest(".c-accordion") || group;
+      const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))));
+      if (nested && target.closest(".tab-content")) {
+        items.forEach((item) => {
+          item.body = item.body.flatMap((n) => n.nodeType === 1 && n.matches("table") ? blockCells(n) : [n]);
+        });
+        if (items.some(({ body }) => body.some((n) => n.nodeType === 1 && n.matches("table")))) return;
+        const rows2 = items.map(({ label, body }) => {
+          const p = doc.createElement("p");
+          p.textContent = label;
+          return [p, body];
+        });
+        target.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Accordion", cells: rows2 })));
+        return;
+      }
+      if (nested) {
+        items.forEach(({ label, body }) => {
+          const heading = doc.createElement("h4");
+          heading.textContent = label;
+          target.before(keepNodes(doc, [heading, ...body], "accordion-panel"));
+        });
+        target.remove();
+        return;
+      }
+      const rows = items.map(({ label, body }) => {
+        const p = doc.createElement("p");
+        p.textContent = label;
+        return [p, body];
+      });
+      target.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Accordion", cells: rows })));
+    });
+  }
+  function headingId(label) {
+    return label.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  }
+  function navigationBars(main, doc, h) {
+    main.querySelectorAll(".c-navigation-bar").forEach((component) => {
+      const rows = [...component.querySelectorAll(".nav-wrap a.anchor")].map((a) => h.text(a)).filter(Boolean).map((label) => {
+        const p = doc.createElement("p");
+        p.textContent = label;
+        const a = doc.createElement("a");
+        a.href = `#${headingId(label)}`;
+        a.textContent = label;
+        return [p, a];
+      });
+      if (!rows.length) {
+        component.remove();
+        return;
+      }
+      (component.closest(".navigationbar") || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Sticky Nav", cells: rows })));
+    });
+  }
+  function fullBleedPanels(main, doc, h) {
+    main.querySelectorAll(".c-full-bleed-panel").forEach((component) => {
+      const colour = colourStyle(component);
+      const style = [colour, "full-bleed"].filter(Boolean).join(", ");
+      const out = [];
+      let run = [];
+      const flush = () => {
+        if (run.length) out.push(keepNodes(doc, run, style));
+        run = [];
+      };
+      contentUnits(component).forEach((unit) => {
+        if (unit.getAttribute("data-keep") === "nodes" && unit.hasAttribute("data-section-style")) {
+          flush();
+          unit.setAttribute("data-section-style", `${style}, ${unit.getAttribute("data-section-style")}`);
+          out.push(unit);
+        } else run.push(...unitNodes(unit, doc, h));
+      });
+      flush();
+      if (!out.length) return;
+      (component.closest(".fullbleedpanel") || component).replaceWith(...out);
+    });
+  }
+  function textBoxes(main, doc, h) {
+    main.querySelectorAll(".c-rich-text-editor").forEach((component) => {
+      if (component.closest(".pDiv, .panel-group, .c-full-bleed-panel, .c-tabs, [data-keep]")) return;
+      const box = component.querySelector(":scope > .dimensional-box, :scope > .has-background, :scope > div > .dimensional-box");
+      if (!box || !h.text(box)) return;
+      const col = component.closest('[class*="col-sm-"], [class*="col-md-"]');
+      const row = col && col.parentElement;
+      if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
+      let variant = "";
+      if (box.classList.contains("dimensional-box")) variant = "left";
+      else {
+        const colour = colourStyle(box);
+        variant = {
+          gold: "gold",
+          "light-gray": "gray",
+          dark: "dark",
+          blue: "blue"
+        }[colour] || "";
+        if (!variant) return;
+      }
+      const nodes = contentNodes(component, doc, h);
+      if (!nodes.length) return;
+      const name = variant ? `Panel (${variant})` : "Panel";
+      (component.closest(".text") || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
+    });
+  }
+  function groupLists(main, doc, h) {
+    main.querySelectorAll(".c-grouplist").forEach((component) => {
+      const title = component.querySelector(":scope > h2");
+      const cells = [...component.querySelectorAll(".list-container")].map((group) => {
+        const nodes = [];
+        const heading = group.querySelector("h3");
+        if (heading && h.text(heading)) {
+          const h3 = doc.createElement("h3");
+          h3.textContent = h.text(heading);
+          nodes.push(h3);
+        }
+        const ul = doc.createElement("ul");
+        group.querySelectorAll("li a[href]").forEach((link) => {
+          const li = doc.createElement("li");
+          const a = doc.createElement("a");
+          a.href = link.getAttribute("href");
+          a.textContent = h.text(link);
+          li.append(a);
+          ul.append(li);
+        });
+        if (ul.children.length) nodes.push(ul);
+        return nodes;
+      }).filter((nodes) => nodes.length);
+      if (!cells.length) return;
+      const out = [];
+      if (title && h.text(title)) {
+        const h2 = doc.createElement("h2");
+        h2.textContent = h.text(title);
+        out.push(h.richText(doc, [h2]));
+      }
+      out.push(keepBlock(WebImporter.Blocks.createBlock(doc, { name: "Columns (columns-50-50, link-groups)", cells: [cells] })));
+      (component.closest(".grouplist") || component).replaceWith(...out);
+    });
+  }
+  function pageHeroes(main, doc, h) {
+    main.querySelectorAll(".c-page-hero").forEach((component) => {
+      const nodes = [];
+      component.querySelectorAll("h1, h2, p, img").forEach((el) => {
+        if (el.matches("img")) {
+          const img = doc.createElement("img");
+          img.setAttribute("src", el.getAttribute("src"));
+          img.setAttribute("alt", el.getAttribute("alt") || "");
+          const p = doc.createElement("p");
+          p.append(img);
+          nodes.push(p);
+        } else if (h.text(el)) {
+          const copy = doc.createElement(el.tagName.toLowerCase());
+          copy.textContent = h.text(el);
+          nodes.push(copy);
+        }
+      });
+      if (!nodes.length) return;
+      (component.closest(".pagehero") || component).replaceWith(h.richText(doc, nodes));
+    });
+  }
+  function engagementCtas(main, doc, h) {
+    main.querySelectorAll(".c-engagementcta").forEach((component) => {
+      const nodes = [];
+      const desc = component.querySelector(".m-c-subheading-description");
+      if (desc && h.text(desc)) {
+        [...desc.children].filter((el) => h.text(el)).forEach((el) => nodes.push(el.cloneNode(true)));
+      }
+      component.querySelectorAll(".btn-container a[href]").forEach((link) => {
+        const img = link.querySelector("img");
+        const label = h.text(link) || img && (img.getAttribute("alt") || "").trim() || link.getAttribute("href");
+        const a = doc.createElement("a");
+        a.href = link.getAttribute("href");
+        a.textContent = label;
+        const strong = doc.createElement("strong");
+        strong.append(a);
+        const p = doc.createElement("p");
+        p.append(strong);
+        nodes.push(p);
+      });
+      if (!nodes.length) return;
+      (component.closest(".engagementcta") || component).replaceWith(h.richText(doc, nodes));
+    });
+  }
+  function interactiveImages(main, doc) {
+    main.querySelectorAll(".interactivemedia").forEach((component) => {
+      const asset = component.querySelector("[data-asset-path]");
+      const path = asset && asset.getAttribute("data-asset-path");
+      if (!path) {
+        component.remove();
+        return;
+      }
+      const img = doc.createElement("img");
+      img.setAttribute("src", `https://media-assets.stryker.com/is/image/${path}`);
+      img.setAttribute("alt", "");
+      const box = doc.createElement("div");
+      box.className = "c-standalone-image";
+      box.append(img);
+      component.replaceWith(box);
+    });
+  }
+  function numberCounters(main, doc, h) {
+    main.querySelectorAll(".numbercounter").forEach((component) => {
+      const widget = component.querySelector('[data-widget="numbercounter"]');
+      if (!widget) return;
+      const end = widget.getAttribute("data-numbercounter-end-number") || "";
+      const type = widget.getAttribute("data-numbercounter-number-type");
+      const currency = widget.getAttribute("data-numbercounter-currency-type") || "";
+      let figure = end;
+      if (type === "3") figure = `${end}%`;
+      else if (type === "2") figure = `${currency}${end}`;
+      const nodes = [];
+      if (end) {
+        const strong = doc.createElement("strong");
+        strong.textContent = figure;
+        const p = doc.createElement("p");
+        p.append(strong);
+        nodes.push(p);
+      }
+      const label = [...widget.children].find((el) => !el.querySelector(".numbercounter-number") && h.text(el));
+      if (label) {
+        const p = doc.createElement("p");
+        label.querySelectorAll("br").forEach((br) => br.replaceWith(doc.createTextNode(" ")));
+        p.textContent = h.text(label);
+        nodes.push(p);
+      }
+      if (nodes.length) component.replaceWith(h.richText(doc, nodes));
+    });
+  }
+  var WHITE = /^(?:#fff|#ffffff|white|rgb\(\s*255\s*,\s*255\s*,\s*255\s*\))$/i;
+  var COLOURED_BOX = '.has-background:not(.bg-white), .c-full-bleed-panel[class*="bg-"]';
+  function whiteText(main, doc, h) {
+    main.querySelectorAll('[style*="color"]').forEach((el) => {
+      const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+      if (!m || !WHITE.test(m[1].trim()) || !el.closest(COLOURED_BOX) || !h.text(el)) return;
+      if (el.parentElement.closest('[style*="color"]') && WHITE.test((el.parentElement.closest('[style*="color"]').getAttribute("style") || "").replace(/.*color\s*:\s*([^;]+).*/i, "$1").trim())) return;
+      el.prepend(doc.createTextNode("[[color-white]"));
+      el.append(doc.createTextNode("]"));
+    });
+  }
+  function eventCalendars(main) {
+    main.querySelectorAll(".c-event").forEach((component) => (component.closest(".event") || component).remove());
+  }
+  function convertBeforeRows(main, doc, h) {
+    whiteText(main, doc, h);
+    interactiveImages(main, doc);
+    numberCounters(main, doc, h);
+    accordionsInColumns(main, doc, h);
+    eventCalendars(main);
+    pageHeroes(main, doc, h);
+    engagementCtas(main, doc, h);
+    groupLists(main, doc, h);
+  }
+  function convertAfterRows(main, doc, h) {
+    navigationBars(main, doc, h);
+    accordions(main, doc, h);
+    textBoxes(main, doc, h);
+    tabs(main, doc, h);
+    fullBleedPanels(main, doc, h);
   }
 
   // tools/importer/long-page-detail-corp-xf-slots.js
@@ -1469,7 +1828,7 @@ var CustomImportScript = (() => {
     });
   }
   function sectionTitles(main, doc) {
-    main.querySelectorAll(".c-section-title").forEach((title) => {
+    main.querySelectorAll(".c-section-title, .c-title").forEach((title) => {
       const nodes = [];
       const heading = title.querySelector("h2");
       if (heading && text3(heading)) {
@@ -1625,21 +1984,36 @@ var CustomImportScript = (() => {
     return m ? Number(m[1]) : 12;
   }
   function markRowEnds(main) {
-    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const COMPONENT2 = '[class^="c-"], [class*=" c-"]';
     const hasContent = (el) => text3(el) || el.querySelector("img, iframe, [data-asset-path]");
     main.querySelectorAll(".colctrl").forEach((colctrl) => {
       const row = colctrl.querySelector(":scope > .row");
       const all = row ? [...row.children] : [];
       const cols = all.filter(hasContent);
       if (cols.length !== 1 || all.length > 2) return;
-      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT}`)].filter((el) => {
-        const outer = el.parentElement.closest(`.colctrl, ${COMPONENT}`);
+      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT2}`)].filter((el) => {
+        const outer = el.parentElement.closest(`.colctrl, ${COMPONENT2}`);
         return (!outer || outer === colctrl) && (text3(el) || el.querySelector("img, iframe, [data-asset-path]"));
       });
       const last = units[units.length - 1];
       if (!last) return;
       const unit = last.matches(".colctrl") && last.parentElement && /\bcols/.test(last.parentElement.className) ? last.parentElement : last;
       unit.setAttribute("data-row-end", String(Number(unit.getAttribute("data-row-end") || 0) + 1));
+    });
+    const mark = (el) => el.setAttribute("data-row-end", String(Number(el.getAttribute("data-row-end") || 0) + 1));
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      if (hasContent(colctrl) || colctrl.querySelector(".c-section-separator, .sectionseparator, hr")) return;
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      let prev = wrapper.previousElementSibling;
+      while (prev && !hasContent(prev)) prev = prev.previousElementSibling;
+      if (!prev) return;
+      if (/\bcols/.test(prev.className) && prev.querySelector(":scope > .colctrl")) {
+        mark(prev);
+        return;
+      }
+      const parts = [...prev.querySelectorAll(COMPONENT2)].filter((el) => !el.parentElement.closest(COMPONENT2) && hasContent(el));
+      const last = parts[parts.length - 1] || (prev.matches(COMPONENT2) ? prev : null);
+      if (last) mark(last);
     });
   }
   function columnRows(main, doc) {
@@ -1654,7 +2028,13 @@ var CustomImportScript = (() => {
         form.setAttribute("data-keep", "section");
         const asides = [...colctrl.querySelectorAll("table")].filter((t) => t.getAttribute("data-keep"));
         asides.forEach((t) => t.setAttribute("data-keep", "join"));
-        wrapper.replaceWith(form, ...asides);
+        const others = columns.filter((col) => !col.querySelector(".c-marketo-form") && !col.querySelector("table[data-keep]")).map((col) => cellNodes(col, doc)).filter((nodes) => nodes.length).map((nodes) => {
+          const box = doc.createElement("div");
+          box.setAttribute("data-keep", "join");
+          box.append(...nodes);
+          return box;
+        });
+        wrapper.replaceWith(form, ...asides, ...others);
         return;
       }
       const key = columns.map(columnWidth).join(",");
@@ -1777,8 +2157,11 @@ var CustomImportScript = (() => {
         if (!b.closest(".futura-bold") && !b.querySelector(".futura-bold")) b.replaceWith(...b.childNodes);
       });
     }
+    const helpers = { cellNodes, richText, text: text3 };
+    convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
     columnRows(main, doc);
+    convertAfterRows(main, doc, helpers);
     main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
       const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el) => !el.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text3(el) || el.querySelector("img, iframe, [data-asset-path]")));
       const last = parts[parts.length - 1];

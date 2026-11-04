@@ -37,6 +37,7 @@ import buildArticle, {
   richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
+import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-components.js';
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
@@ -193,7 +194,7 @@ function experienceFragments(main, doc, xfs, slots) {
 }
 
 function sectionTitles(main, doc) {
-  main.querySelectorAll('.c-section-title').forEach((title) => {
+  main.querySelectorAll('.c-section-title, .c-title').forEach((title) => {
     const nodes = [];
     const heading = title.querySelector('h2');
     if (heading && text(heading)) {
@@ -417,6 +418,24 @@ function markRowEnds(main) {
       ? last.parentElement : last;
     unit.setAttribute('data-row-end', String(Number(unit.getAttribute('data-row-end') || 0) + 1));
   });
+  // an empty row (no content, no rule: e.g. between the nse product rows) still adds its
+  // row spacing on the source: a row end after the content before it
+  const mark = (el) => el.setAttribute('data-row-end', String(Number(el.getAttribute('data-row-end') || 0) + 1));
+  main.querySelectorAll('.colctrl').forEach((colctrl) => {
+    if (hasContent(colctrl) || colctrl.querySelector('.c-section-separator, .sectionseparator, hr')) return;
+    const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+    let prev = wrapper.previousElementSibling;
+    while (prev && !hasContent(prev)) prev = prev.previousElementSibling;
+    if (!prev) return;
+    if (/\bcols/.test(prev.className) && prev.querySelector(':scope > .colctrl')) {
+      mark(prev);
+      return;
+    }
+    const parts = [...prev.querySelectorAll(COMPONENT)]
+      .filter((el) => !el.parentElement.closest(COMPONENT) && hasContent(el));
+    const last = parts[parts.length - 1] || (prev.matches(COMPONENT) ? prev : null);
+    if (last) mark(last);
+  });
 }
 
 /**
@@ -444,7 +463,19 @@ function columnRows(main, doc) {
       form.setAttribute('data-keep', 'section');
       const asides = [...colctrl.querySelectorAll('table')].filter((t) => t.getAttribute('data-keep'));
       asides.forEach((t) => t.setAttribute('data-keep', 'join'));
-      wrapper.replaceWith(form, ...asides);
+      // the content of the other columns (e.g. the spine contact page's "Check out our social
+      // media" and its buttons) joins the form's section too, so none of it is lost
+      const others = columns
+        .filter((col) => !col.querySelector('.c-marketo-form') && !col.querySelector('table[data-keep]'))
+        .map((col) => cellNodes(col, doc))
+        .filter((nodes) => nodes.length)
+        .map((nodes) => {
+          const box = doc.createElement('div');
+          box.setAttribute('data-keep', 'join');
+          box.append(...nodes);
+          return box;
+        });
+      wrapper.replaceWith(form, ...asides, ...others);
       return;
     }
     const key = columns.map(columnWidth).join(',');
@@ -610,8 +641,11 @@ export default function transform(hookName, element, payload) {
       if (!b.closest('.futura-bold') && !b.querySelector('.futura-bold')) b.replaceWith(...b.childNodes);
     });
   }
+  const helpers = { cellNodes, richText, text };
+  convertBeforeRows(main, doc, helpers);
   markRowEnds(main);
   columnRows(main, doc);
+  convertAfterRows(main, doc, helpers);
   // a marked inner row that stays as its content (not Columns): its last component ends it
   main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
     const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')]
