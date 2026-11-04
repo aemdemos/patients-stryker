@@ -42,6 +42,9 @@
   --corp-band-strut-s: 9px; /* measured: the source band h2 (21px, lines 1.06) around its 1.5em span makes a 42.4px line box, 9px more than the span's 33.4px line, below 600px */
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
+
+  /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
+  --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
@@ -495,6 +498,19 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-xxl-l);
   font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
+}
+
+/* section style `h4-spaced`: every Heading 4 of the section has a blank line above and below
+   it — stryker.com subheads set between empty <p>&nbsp;</p> spacers, which EDS drops (e.g.
+   the Sustainability "Reprocessing in the EP Lab" release: 49px from the text above to the
+   subhead and from the subhead to its text, at every width). A Heading 4 that opens the
+   section keeps the normal space above it */
+:where(body.corp) main > .section.h4-spaced > .default-content-wrapper > h4 {
+  margin-bottom: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+:where(body.corp) main > .section.h4-spaced > .default-content-wrapper > h4:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--corp-blank-line));
 }
 
 /* h1-1-25 / h1-2-5 / h2-1-5: headings the source enlarges with a size span (h1 >
