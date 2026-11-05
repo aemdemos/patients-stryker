@@ -140,15 +140,17 @@ function tabs(main, doc, h) {
       nodes.push(heading, ...content);
     });
     if (!nodes.length) return;
-    (component.closest('.tabs') || component).replaceWith(keepNodes(doc, nodes, 'tabbed'));
+    const style = component.hasAttribute('data-image-aside') ? 'tabbed, image-aside' : 'tabbed';
+    (component.closest('.tabs') || component).replaceWith(keepNodes(doc, nodes, style));
   });
 }
 
 /**
  * An accordion in a column of a row with other content (Mako surgeon campaign: the clinical
  * studies beside an image) can't be a block in a Columns cell: the row is unwrapped (its
- * columns' content one after the other: the accordion, then the image), so the accordion
- * stays an Accordion, closed as on the source.
+ * columns' content one after the other: the image, then the accordion), so the accordion
+ * stays an Accordion, closed as on the source; in a tab the image goes beside it again
+ * (`image-aside`).
  */
 function accordionsInColumns(main, doc, h) {
   main.querySelectorAll('.panel-group').forEach((group) => {
@@ -160,7 +162,15 @@ function accordionsInColumns(main, doc, h) {
     const colctrl = row.closest('.colctrl');
     if (!colctrl) return;
     const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
-    wrapper.replaceWith(...[...row.children].flatMap((c) => [...c.children]));
+    // an image in the third before the accordion's two thirds (Mako surgeon campaign tabs):
+    // the tab section gets `image-aside` (tabs, below)
+    const cols = [...row.children];
+    if (cols.length === 2 && cols[1] === col && /\bcol-sm-4\b/.test(cols[0].className)
+      && cols[0].querySelector('img') && !h.text(cols[0])) {
+      const tabSet = colctrl.closest('.c-tabs');
+      if (tabSet) tabSet.setAttribute('data-image-aside', '');
+    }
+    wrapper.replaceWith(...cols.flatMap((c) => [...c.children]));
   });
 }
 
@@ -492,6 +502,8 @@ function whiteText(main, doc, h) {
     if (el.parentElement.closest('[style*="color"]') && WHITE.test((el.parentElement.closest('[style*="color"]').getAttribute('style') || '').replace(/.*color\s*:\s*([^;]+).*/i, '$1').trim())) return;
     el.prepend(doc.createTextNode('[[color-white]'));
     el.append(doc.createTextNode(']'));
+    // a box in a column row without a Columns box variant drops it again (columnRows)
+    el.setAttribute('data-white-tag', '');
   });
 }
 

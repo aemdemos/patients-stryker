@@ -706,3 +706,49 @@ body.long-page-detail-corp main > .section.gold-bar {
   margin-inline: auto;
   background-color: var(--color-accent);
 }
+
+/* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
+   tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
+   row (source col-sm-4 / col-sm-8, 840px); stacked on phones */
+@media (width >= 600px) {
+  /* each tab the full row (the tabs block sizes a tab to its content from 900px) */
+  body.long-page-detail-corp main > .section.image-aside .tabs .tabs-tab-row {
+    flex: 0 0 100%;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* the source column's gutters: the image centred in the third, 20px clear of the accordion,
+     which starts 10px further in */
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .default-content-wrapper {
+    flex: 0 0 33.333%;
+    box-sizing: border-box;
+    padding-inline-end: var(--space-block-l);
+    text-align: center;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .default-content-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .accordion-wrapper {
+    flex: 1 1 0;
+    box-sizing: border-box;
+    min-width: 0;
+    padding-inline-start: var(--space-block-s);
+  }
+}
+
+/* section style `column-8-12` (with a coloured `headline-box`; ispies event titles): the box
+   two thirds of the content width (source col-sm-8 beside an empty col-sm-4, 840px) */
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+    max-width: calc(var(--container-max) * 2 / 3);
+    margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
+    width: 66.667%;
+  }
+}

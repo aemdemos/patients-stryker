@@ -109,7 +109,17 @@ export function edsLinkPaths(main) {
 const CENTRED_COLUMN = ':is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1';
 
 function columnStyle(component) {
-  return component.closest(CENTRED_COLUMN) ? 'column-10-12' : '';
+  if (component.closest(CENTRED_COLUMN)) return 'column-10-12';
+  // a coloured Large Headline box in the 2/3 column of a row whose other column is empty
+  // (ispies event titles, source cols2_2-3_1-3): `column-8-12`, the box 2/3 wide
+  const col = component.matches('.c-largeheadline') && component.querySelector('.has-background:not(.bg-white)')
+    && component.closest('[class*="col-sm-8"]');
+  const row = col && col.parentElement;
+  const empty = (c) => !c.textContent.trim() && !c.querySelector('img, iframe, [data-asset-path]');
+  if (row && [...row.children].every((c) => c === col || empty(c))) {
+    return 'column-8-12';
+  }
+  return '';
 }
 
 function text(el) {
@@ -299,6 +309,77 @@ function linkedImage(component) {
 }
 
 /**
+ * A row of four columns that stryker.com sets one per row on phones (col-xs-12, e.g. the nse
+ * grids, surgical videos): `Columns (stack)` (corp 4-cell rows are two per row on phones).
+ */
+function stackRow(columns) {
+  return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
+}
+
+// a source box colour (.has-background.bg-…, a .dimensional-box without a colour: `boxed`)
+// → its Columns variant colour
+const BOX_COLOURS = {
+  'light-gray': 'gray', blue: 'blue', gold: 'gold', purple: 'purple', 'dark-gray': 'dark',
+};
+// the Columns box variants (columns-corp): a cell's text in a coloured box
+const BOX_VARIANTS = new Set(['gray-last', 'gray-2', 'gray-all', 'boxed-all', 'blue-all', 'gold-lead',
+  'dark-lead', 'purple-last', 'gold-first', 'boxed-last', 'gray-lead']);
+
+/**
+ * How a column's text sits in a coloured box (its own row's boxes, not a nested row's):
+ * { colour, kind } with kind `whole` (all its text is in the box; an image above it stays
+ * out) or `lead` (its first text is the box, more text follows), else null.
+ */
+function cellBox(col) {
+  const row = col.closest('.colctrl');
+  const boxes = [...col.querySelectorAll('.has-background:not(.bg-white), .dimensional-box')]
+    .filter((b) => b.closest('.colctrl') === row && text(b))
+    .filter((b) => !b.parentElement.closest('.has-background:not(.bg-white), .dimensional-box'));
+  if (!boxes.length) return null;
+  const colourOf = (b) => {
+    const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
+    if (b.classList.contains('dimensional-box') && (!bg || bg === 'white')) return 'boxed';
+    return BOX_COLOURS[bg] || '';
+  };
+  const colours = [...new Set(boxes.map(colourOf))];
+  if (colours.length !== 1 || !colours[0]) return { colour: '', kind: '' };
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  const boxed = squash(boxes.map((b) => b.textContent).join(''));
+  if (boxed === squash(col.textContent)) return { colour: colours[0], kind: 'whole' };
+  const first = [...col.querySelectorAll(CELL_COMPONENTS)]
+    .filter((c) => !c.parentElement.closest(CELL_COMPONENTS) && text(c))[0];
+  if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: 'lead' };
+  return { colour: '', kind: '' };
+}
+
+/**
+ * The Columns box variant of a row: one colour, all its text cells boxed (`gray-all`), one cell
+ * boxed (`gray-last`, `gray-2`, `gold-first`) or every text cell opening with a box
+ * (`dark-lead`); only the variants columns-corp has, else ''.
+ */
+function boxVariant(columns) {
+  const boxes = columns.map(cellBox);
+  const used = boxes.filter(Boolean);
+  if (!used.length) return '';
+  const colours = [...new Set(used.map((b) => b.colour))];
+  const kinds = [...new Set(used.map((b) => b.kind))];
+  if (colours.length !== 1 || !colours[0] || kinds.length !== 1) return '';
+  const textCols = columns.filter((col) => text(col));
+  let name = '';
+  if (kinds[0] === 'lead' && used.length === textCols.length) name = `${colours[0]}-lead`;
+  if (kinds[0] === 'whole') {
+    if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
+    else if (used.length === 1) {
+      const i = boxes.findIndex(Boolean);
+      if (i === columns.length - 1) name = `${colours[0]}-last`;
+      else if (i === 0) name = `${colours[0]}-first`;
+      else name = `${colours[0]}-${i + 1}`;
+    }
+  }
+  return BOX_VARIANTS.has(name) ? name : '';
+}
+
+/**
  * A column holding an unlinked image without a caption and, under it, a rich text that is
  * one fully bold line (an nse grid item: image, then its name): [image, text], else null.
  */
@@ -367,7 +448,9 @@ function cellNodes(col, doc) {
 function centredColumn(col) {
   const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
   const images = [...col.querySelectorAll('.c-standalone-image img')];
-  const paragraphs = [...col.querySelectorAll('.c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)')]
+  // the text too: rich text, Large Headline lines and an image's title (OR staff tiles,
+  // instruments contact information: centred images over left-aligned text, not centred)
+  const paragraphs = [...col.querySelectorAll('.c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li), .c-standalone-image .title-content :is(h2, h3, h4, h5), .c-largeheadline .line')]
     .filter((el) => text(el));
   const items = [...images, ...paragraphs];
   return items.length > 0 && items.every(centred);
@@ -526,7 +609,21 @@ function columnRows(main, doc) {
     const key = columns.map(columnWidth).join(',');
     // linked images (the endoscopy resources specialty tiles): `media-pair`
     const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : ''].filter(Boolean).join(', ');
+    const boxes = boxVariant(columns);
+    // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
+    // stays in the text colour, so it stays readable
+    if (!boxes) {
+      colctrl.querySelectorAll('[data-white-tag]').forEach((el) => {
+        // only the boxes of this row (not a band around it, not a nested row's)
+        const inBox = el.closest('.has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel');
+        if (!inBox || inBox.matches('.c-full-bleed-panel') || inBox.closest('.colctrl') !== colctrl) return;
+        if (el.firstChild && el.firstChild.nodeValue === '[[color-white]') el.firstChild.remove();
+        if (el.lastChild && el.lastChild.nodeValue === ']') el.lastChild.remove();
+        el.removeAttribute('data-white-tag');
+      });
+    }
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes]
+      .filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
     // a grid row whose items are an image with its bold label under it (the nse grids' last
     // row, e.g. "Flame dermabrader"; their other rows are an image row, then a label row):

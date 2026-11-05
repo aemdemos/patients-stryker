@@ -1497,7 +1497,8 @@ var CustomImportScript = (() => {
         nodes.push(heading, ...content);
       });
       if (!nodes.length) return;
-      (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, "tabbed"));
+      const style = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
+      (component.closest(".tabs") || component).replaceWith(keepNodes(doc, nodes, style));
     });
   }
   function accordionsInColumns(main, doc, h) {
@@ -1509,7 +1510,12 @@ var CustomImportScript = (() => {
       const colctrl = row.closest(".colctrl");
       if (!colctrl) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
-      wrapper.replaceWith(...[...row.children].flatMap((c) => [...c.children]));
+      const cols = [...row.children];
+      if (cols.length === 2 && cols[1] === col && /\bcol-sm-4\b/.test(cols[0].className) && cols[0].querySelector("img") && !h.text(cols[0])) {
+        const tabSet = colctrl.closest(".c-tabs");
+        if (tabSet) tabSet.setAttribute("data-image-aside", "");
+      }
+      wrapper.replaceWith(...cols.flatMap((c) => [...c.children]));
     });
   }
   function blockCells(table) {
@@ -1786,6 +1792,7 @@ var CustomImportScript = (() => {
       if (el.parentElement.closest('[style*="color"]') && WHITE.test((el.parentElement.closest('[style*="color"]').getAttribute("style") || "").replace(/.*color\s*:\s*([^;]+).*/i, "$1").trim())) return;
       el.prepend(doc.createTextNode("[[color-white]"));
       el.append(doc.createTextNode("]"));
+      el.setAttribute("data-white-tag", "");
     });
   }
   function eventCalendars(main) {
@@ -2044,7 +2051,14 @@ var CustomImportScript = (() => {
   }
   var CENTRED_COLUMN = ":is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1";
   function columnStyle(component) {
-    return component.closest(CENTRED_COLUMN) ? "column-10-12" : "";
+    if (component.closest(CENTRED_COLUMN)) return "column-10-12";
+    const col = component.matches(".c-largeheadline") && component.querySelector(".has-background:not(.bg-white)") && component.closest('[class*="col-sm-8"]');
+    const row = col && col.parentElement;
+    const empty = (c) => !c.textContent.trim() && !c.querySelector("img, iframe, [data-asset-path]");
+    if (row && [...row.children].every((c) => c === col || empty(c))) {
+      return "column-8-12";
+    }
+    return "";
   }
   function text4(el) {
     return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
@@ -2202,6 +2216,68 @@ var CustomImportScript = (() => {
     const link2 = img && img.closest("a[href]");
     return link2 && component.contains(link2) ? link2 : null;
   }
+  function stackRow(columns) {
+    return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
+  }
+  var BOX_COLOURS = {
+    "light-gray": "gray",
+    blue: "blue",
+    gold: "gold",
+    purple: "purple",
+    "dark-gray": "dark"
+  };
+  var BOX_VARIANTS = /* @__PURE__ */ new Set([
+    "gray-last",
+    "gray-2",
+    "gray-all",
+    "boxed-all",
+    "blue-all",
+    "gold-lead",
+    "dark-lead",
+    "purple-last",
+    "gold-first",
+    "boxed-last",
+    "gray-lead"
+  ]);
+  function cellBox(col) {
+    const row = col.closest(".colctrl");
+    const boxes = [...col.querySelectorAll(".has-background:not(.bg-white), .dimensional-box")].filter((b) => b.closest(".colctrl") === row && text4(b)).filter((b) => !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box"));
+    if (!boxes.length) return null;
+    const colourOf = (b) => {
+      const bg = (b.className.match(/\bbg-([a-z-]+)/) || [])[1];
+      if (b.classList.contains("dimensional-box") && (!bg || bg === "white")) return "boxed";
+      return BOX_COLOURS[bg] || "";
+    };
+    const colours = [...new Set(boxes.map(colourOf))];
+    if (colours.length !== 1 || !colours[0]) return { colour: "", kind: "" };
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const boxed = squash(boxes.map((b) => b.textContent).join(""));
+    if (boxed === squash(col.textContent)) return { colour: colours[0], kind: "whole" };
+    const first = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS) && text4(c))[0];
+    if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: "lead" };
+    return { colour: "", kind: "" };
+  }
+  function boxVariant(columns) {
+    const boxes = columns.map(cellBox);
+    const used = boxes.filter(Boolean);
+    if (!used.length) return "";
+    const colours = [...new Set(used.map((b) => b.colour))];
+    const kinds = [...new Set(used.map((b) => b.kind))];
+    if (colours.length !== 1 || !colours[0] || kinds.length !== 1) return "";
+    const textCols = columns.filter((col) => text4(col));
+    let name = "";
+    if (kinds[0] === "lead" && used.length === textCols.length) name = `${colours[0]}-lead`;
+    if (kinds[0] === "whole") {
+      if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
+      else if (used.length === 1) {
+        const i = boxes.findIndex(Boolean);
+        if (i === columns.length - 1) name = `${colours[0]}-last`;
+        else if (i === 0) name = `${colours[0]}-first`;
+        else name = `${colours[0]}-${i + 1}`;
+      }
+    }
+    return BOX_VARIANTS.has(name) ? name : "";
+  }
   function imageLabel(col) {
     const parts = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS));
     if (parts.length !== 2) return null;
@@ -2247,7 +2323,7 @@ var CustomImportScript = (() => {
   function centredColumn(col) {
     const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
     const images = [...col.querySelectorAll(".c-standalone-image img")];
-    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)")].filter((el) => text4(el));
+    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li), .c-standalone-image .title-content :is(h2, h3, h4, h5), .c-largeheadline .line")].filter((el) => text4(el));
     const items = [...images, ...paragraphs];
     return items.length > 0 && items.every(centred);
   }
@@ -2352,7 +2428,17 @@ var CustomImportScript = (() => {
       }
       const key = columns.map(columnWidth).join(",");
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
-      const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : ""].filter(Boolean).join(", ");
+      const boxes = boxVariant(columns);
+      if (!boxes) {
+        colctrl.querySelectorAll("[data-white-tag]").forEach((el) => {
+          const inBox = el.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
+          if (!inBox || inBox.matches(".c-full-bleed-panel") || inBox.closest(".colctrl") !== colctrl) return;
+          if (el.firstChild && el.firstChild.nodeValue === "[[color-white]") el.firstChild.remove();
+          if (el.lastChild && el.lastChild.nodeValue === "]") el.lastChild.remove();
+          el.removeAttribute("data-white-tag");
+        });
+      }
+      const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : "", stackRow(columns) ? "stack" : "", boxes].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
       const items = columns.map(imageLabel);
       if (filled.every((col) => items[columns.indexOf(col)])) {
