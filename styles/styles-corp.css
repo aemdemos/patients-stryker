@@ -478,6 +478,21 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   line-height: var(--heading-line-height-hero);
 }
 
+/* …and the text of a Large Headline column at that size (the video row of e.g. Bob's or
+   Matt's story, `video-text, headline-1-5vw`): light serif lines 1.35 high with no gap
+   between them, a Heading 2 the column's 2vw statement (capped at 28px) */
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper :is(p, h2) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(8 * var(--corp-headline-vw) / 3)));
+}
+
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-1-5vw {
     --corp-headline-vw: 0.75vw;
@@ -682,6 +697,15 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 :where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
 :where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
   font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* section style `quote-1-75`: the gold-quote paragraph (the one with the gold quote marks)
+   as 24.5px copy, lines 1.06 as p-1-75, the rest of the copy at its own size (stryker.com
+   .fontsize-1-75em quote in 1.5em text, e.g. Ellys' maxillofacial surgery story:
+   `serif, p-1-5, quote-1-75`; after the serif rules, whose lines it replaces) */
+:where(body.corp) main > .section.quote-1-75 > .default-content-wrapper p:has(> span.color-gold) {
+  font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
 }
 
@@ -956,5 +980,11 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+
+  /* video-text (styles.css): the empty wrapper its Section Metadata leaves is no third
+     column of the row (as in flex) */
+  :where(body.corp) main > .section.video-text > div:empty {
+    display: none;
   }
 }
