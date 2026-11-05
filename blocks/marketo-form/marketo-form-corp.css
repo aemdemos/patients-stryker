@@ -1,0 +1,103 @@
+/*
+ * Marketo Form: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). Patients marketo-form.css stays as-is; this
+ * file sets the default (not `stacked`) form layout of the stryker.com c-marketo-form,
+ * measured on the ASC and virtual care news releases and the osteotomy truss, 10 mm
+ * laparoscopic and Primex product pages:
+ * - every label on its own line above its field, the whole width of the field
+ *   (21px label, field 26px below its top, a field every 76px);
+ * - phones: every field the full width of the form, 18px field text;
+ * - from 600px (source 480px): 420px fields with 14px text, two side by side (430px
+ *   apart) only where the form has room for both, else one per line.
+ * It also holds the corp rules for every form (textarea height, rich-text rows) and for
+ * the `stacked` variant from 600px (the nurses nomination form).
+ * The .mkto* class names are Marketo's, so kebab-case linting is disabled below.
+ */
+
+/* stylelint-disable selector-class-pattern */
+
+/* textareas are as tall as their rows (source textarea.form-control height:auto); Marketo's
+   phone stylesheet would otherwise collapse them to a single line */
+body.corp .marketo-form .mktoForm textarea.mktoField {
+  height: auto;
+}
+
+body.corp .marketo-form:not(.stacked) .mktoForm .mktoFormRow {
+  gap: 0 var(--space-block-s);
+}
+
+body.corp .marketo-form:not(.stacked) .mktoForm .mktoLabel {
+  display: block;
+  float: none;
+  padding-top: var(--space-block-xs);
+}
+
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="text"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="email"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="tel"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="number"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="url"],
+body.corp .marketo-form:not(.stacked) .mktoForm select.mktoField,
+body.corp .marketo-form:not(.stacked) .mktoForm textarea.mktoField {
+  font-size: var(--corp-form-field-font-size-l);
+  line-height: var(--corp-form-field-line-height-l);
+}
+
+/* text fields and selects stay 40px tall with the larger text (source .form-control) */
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="text"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="email"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="tel"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="number"],
+body.corp .marketo-form:not(.stacked) .mktoForm input[type="url"],
+body.corp .marketo-form:not(.stacked) .mktoForm select.mktoField {
+  height: var(--form-field-min-height);
+}
+
+/* rich-text rows (e.g. the donation or consent notes) in the body text size (source
+   14px/20px; Marketo inherits its 13px), in default and stacked forms */
+body.corp .marketo-form .mktoForm .mktoHtmlText {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+@media (width >= 600px) {
+  /* a column is one 420px field wide; a row's columns sit side by side while they fit
+     and wrap one per line when they don't (shrinking only in a form narrower than one
+     field) */
+  body.corp .marketo-form:not(.stacked) .mktoForm .mktoFormCol {
+    flex: 0 1 var(--form-field-max-width);
+  }
+
+  body.corp .marketo-form:not(.stacked) .mktoForm input[type="text"],
+  body.corp .marketo-form:not(.stacked) .mktoForm input[type="email"],
+  body.corp .marketo-form:not(.stacked) .mktoForm input[type="tel"],
+  body.corp .marketo-form:not(.stacked) .mktoForm input[type="number"],
+  body.corp .marketo-form:not(.stacked) .mktoForm input[type="url"],
+  body.corp .marketo-form:not(.stacked) .mktoForm select.mktoField,
+  body.corp .marketo-form:not(.stacked) .mktoForm textarea.mktoField {
+    font-size: var(--body-font-size-m);
+    line-height: var(--corp-form-field-line-height);
+  }
+
+  /* stacked from 600px: 420px fields with 14px text (the nurses nomination form: 40px
+     fields, 186px story box); labels are as wide as the fields, so the asterisk floated to
+     the end of the label ends level with the field. Below 600px the stacked fields keep the
+     full width and 18px text of marketo-form.css */
+  body.corp .marketo-form.stacked .mktoForm .mktoLabel {
+    max-width: var(--form-field-max-width);
+  }
+
+  body.corp .marketo-form.stacked .mktoForm input[type="text"],
+  body.corp .marketo-form.stacked .mktoForm input[type="email"],
+  body.corp .marketo-form.stacked .mktoForm input[type="tel"],
+  body.corp .marketo-form.stacked .mktoForm input[type="number"],
+  body.corp .marketo-form.stacked .mktoForm input[type="url"],
+  body.corp .marketo-form.stacked .mktoForm select.mktoField,
+  body.corp .marketo-form.stacked .mktoForm textarea.mktoField {
+    max-width: var(--form-field-max-width);
+    font-size: var(--body-font-size-m);
+    line-height: var(--corp-form-field-line-height);
+  }
+}
+
+/* stylelint-enable selector-class-pattern */

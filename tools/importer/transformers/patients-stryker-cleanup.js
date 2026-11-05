@@ -45,6 +45,8 @@ function sourceHostFor(payload) {
  *   https://patients.stryker.com/us/en/ivs/index.html → /us/en/ivs/   (index pages keep the trailing slash; /index 404s)
  *   /index.html                              → /
  *   .../back-pain.html#disclaimer            → .../back-pain#disclaimer (query + hash kept)
+ *   https://www.stryker.com/content/stryker/us/en/x.html → /us/en/x (the AEM repository path
+ *     of a www.stryker.com page, which redirects to /us/en/x.html, e.g. the SPS blog BACK link)
  * Returns null for anything that must stay as-is: other hosts, protocol-relative
  * URLs, mailto:/tel:, in-page #anchors, and non-page links such as assets and
  * downloads (/content/dam/..., .pdf, images) — only .html/.htm page links change.
@@ -64,6 +66,7 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
 
   let edsPath = path.replace(/\.html?$/i, '');
+  if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
   if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
   return `${edsPath || '/'}${suffix}`;
 }
@@ -95,11 +98,13 @@ export default function transform(hookName, element, payload) {
   // The corp news-detail template (www.stryker.com news articles) rebuilds its own
   // content (news-detail-sections.js): it keeps its <h1> and its authorable
   // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
-  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template)
+  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template;
+  // the corp event-detail pages of import-event-detail.js rebuild their body the same way)
   // The corp long-page-detail-corp pages (and their shared fragments) are rebuilt the
   // same way (long-page-detail-corp-sections.js), so they get the same treatment.
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
+    'event-detail',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 

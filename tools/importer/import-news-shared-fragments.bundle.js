@@ -394,7 +394,7 @@ var CustomImportScript = (() => {
     });
     const icons = [...src.querySelectorAll(".c-standalone-image a[href]")].map((a) => {
       const href = a.getAttribute("href");
-      const name = /linkedin/i.test(href) ? "linkedin" : /facebook/i.test(href) ? "facebook" : "";
+      const name = /linkedin/i.test(href) ? "linkedin" : /facebook/i.test(href) ? "facebook-logo" : "";
       return name ? { href, name } : null;
     }).filter(Boolean);
     if (icons.length) {

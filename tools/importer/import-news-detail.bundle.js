@@ -1,9 +1,26 @@
 /* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -198,6 +215,10 @@ var CustomImportScript = (() => {
       element.remove();
       return;
     }
+    rows.push(
+      ["Captcha Script", "https://www.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js"],
+      ["Captcha Challenge URL", "https://www.stryker.com/bin/stryker/captcha/challenge"]
+    );
     const cells = rows.map(([key, value]) => {
       const k = document.createElement("div");
       k.textContent = key;
@@ -383,9 +404,11 @@ var CustomImportScript = (() => {
     const squash = (value) => value.replace(/[\s ]+/g, "");
     [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
       if (span.parentElement.closest(".fontsize-1-25em") || !text(span)) return;
-      const block = span.closest("p, li");
-      if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
-      if (squash(block.textContent) === squash(span.textContent)) return;
+      if (span.closest("h1")) return;
+      const heading = span.closest("h2, h3, h4, h5, h6");
+      const block = heading || span.closest("p, li");
+      if (!block) return;
+      if (!heading && squash(block.textContent) === squash(span.textContent)) return;
       bracketTag([span], "text-1-25", root);
     });
   }
@@ -492,6 +515,18 @@ var CustomImportScript = (() => {
       return squash(bold.map((b) => b.textContent).join("")) === all;
     }));
   }
+  function futuraLinkParagraphs(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.children].filter((p) => {
+      if (p.tagName !== "P") return false;
+      const links = p.querySelectorAll("a[href]");
+      const all = squash(p.textContent);
+      if (links.length !== 1 || !all || squash(links[0].textContent) !== all) return false;
+      if (/\bbtn\b/.test(links[0].className) || p.querySelector("img")) return false;
+      const spans = [...p.querySelectorAll(".futura-bold")].filter((span) => !span.parentElement.closest(".futura-bold"));
+      return squash(spans.map((span) => span.textContent).join("")) === all;
+    }));
+  }
   function serifHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("h3")].filter((h) => {
@@ -542,7 +577,10 @@ var CustomImportScript = (() => {
     const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
     [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
       const nodes = [...p.childNodes];
-      const at = nodes.findIndex((node, i) => node.nodeName === "BR" && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === "BR");
+      const at = nodes.findIndex((node, i) => {
+        var _a;
+        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
+      });
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
@@ -583,7 +621,10 @@ var CustomImportScript = (() => {
     const nodes = [];
     let run = [];
     const flush = () => {
-      if (run.some((n) => n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.("img"))) {
+      if (run.some((n) => {
+        var _a;
+        return n.nodeType === 3 ? n.textContent.trim() : text(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
+      })) {
         const p = doc.createElement("p");
         p.append(...run);
         while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
@@ -611,6 +652,18 @@ var CustomImportScript = (() => {
     flush();
     return nodes;
   }
+  var squashText = (el) => (el.textContent || "").replace(/[\s\u00a0]+/g, "");
+  var isBlankLine = (el) => !!el && /^(P|H3)$/.test(el.tagName) && !el.querySelector("img") && !squashText(el);
+  function rawSpacedSubheads(html) {
+    if (!html || typeof DOMParser === "undefined") return /* @__PURE__ */ new Set();
+    const raw = new DOMParser().parseFromString(html, "text/html");
+    return new Set([...raw.querySelectorAll(".c-rich-text-editor h4")].filter((h) => squashText(h) && isBlankLine(h.nextElementSibling)).map(squashText));
+  }
+  var spacedSubheadTexts = /* @__PURE__ */ new Set();
+  function spacedSubheads(root) {
+    const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
+    return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
@@ -618,13 +671,24 @@ var CustomImportScript = (() => {
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
     const plainBold = plainBoldParagraphs(box);
+    const futuraLinks = futuraLinkParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
+    const spaced = spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
+      if (futuraLinks.has(node)) {
+        const link2 = node.querySelector("a");
+        link2.textContent = link2.textContent.trim();
+        const strong = doc.createElement("strong");
+        strong.append(link2);
+        node.replaceChildren("[[color-teal]", strong, "]");
+        node.boldBody = true;
+        node.followsText = true;
+      }
       if (serifHeads.has(node)) node.serifHeading = true;
       if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
     });
@@ -637,6 +701,7 @@ var CustomImportScript = (() => {
     const first = nodes.find((node) => node.copyStyle !== null);
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
+      if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
     });
     return { nodes, centred, size };
   }
@@ -723,6 +788,39 @@ var CustomImportScript = (() => {
     const headline2 = aside && aside.querySelector(".c-largeheadline");
     return headline2 && text(headline2) ? headline2 : null;
   }
+  function videoRichTextAside(video) {
+    const col = video.closest('[class*="col-sm-8"]');
+    const row = col && col.parentElement;
+    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+    if (!aside || aside.querySelector(".c-largeheadline, .c-marketo-form, img, video, iframe, [data-asset-path]")) return null;
+    const first = aside.querySelector(".c-rich-text-editor");
+    const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
+    return box && text(box) ? first : null;
+  }
+  function boldInTextItalic(nodes, doc) {
+    nodes.forEach((node) => node.querySelectorAll("strong").forEach((strong) => {
+      if (strong.closest("em") || text(strong) === text(node)) return;
+      const em = doc.createElement("em");
+      strong.replaceWith(em);
+      em.append(strong);
+      const first = strong.firstChild;
+      const last = strong.lastChild;
+      if (first && first.nodeType === 3 && /^[\s ]/.test(first.textContent)) {
+        first.textContent = first.textContent.replace(/^[\s ]+/, "");
+        em.before(doc.createTextNode(" "));
+      }
+      if (last && last.nodeType === 3 && /[\s ]$/.test(last.textContent)) {
+        last.textContent = last.textContent.replace(/[\s ]+$/, "");
+        em.after(doc.createTextNode(" "));
+      }
+    }));
+  }
+  function leadNodes(component) {
+    const box = component.ownerDocument.createElement("div");
+    box.innerHTML = component.innerHTML;
+    cleanRichText(box);
+    return [...box.querySelectorAll("p")].filter((p) => text(p));
+  }
   function headlineVideo(headline2) {
     const col = headline2.closest('[class*="col-sm-6"]');
     const row = col && col.parentElement;
@@ -749,9 +847,19 @@ var CustomImportScript = (() => {
       cells: [[media, nodes]]
     });
   }
-  function quoteNodes(headline2, doc) {
+  function quoteNodes(headline2, doc, { sizes = false } = {}) {
     const box = doc.createElement("div");
     box.innerHTML = headline2.innerHTML;
+    if (sizes) {
+      box.querySelectorAll(".fontsize-1-25em").forEach((span) => {
+        [span, ...span.querySelectorAll("*")].reverse().forEach((el) => {
+          while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
+            el.after(el.lastChild);
+          }
+        });
+      });
+      tagTextSize(box);
+    }
     box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
       const bold = span.closest(".futura-bold");
       if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
@@ -807,6 +915,15 @@ var CustomImportScript = (() => {
       while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
         el.after(el.lastChild);
       }
+    });
+    box.querySelectorAll("strong").forEach((strong) => {
+      if (!strong.querySelector(":scope > br")) return;
+      const parts = [doc.createElement("strong")];
+      [...strong.childNodes].forEach((node) => {
+        if (node.nodeName === "BR") parts.push(node, doc.createElement("strong"));
+        else parts[parts.length - 1].append(node);
+      });
+      strong.replaceWith(...parts.filter((part) => part.nodeName === "BR" || text(part)));
     });
     const out = [];
     const blocks = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
@@ -1131,6 +1248,7 @@ var CustomImportScript = (() => {
     const xf = templateName === "news-detail-xf";
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
+    spacedSubheadTexts = rawSpacedSubheads(payload && payload.html);
     const componentSelector = xf ? `${COMPONENTS}, .xf-columns, .xf-fragment` : COMPONENTS;
     const inlinedXf = markSharedFragments(main, doc);
     const hasForm = !!main.querySelector(".c-marketo-form form[data-marketo-form-id]");
@@ -1181,6 +1299,27 @@ var CustomImportScript = (() => {
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
+    const videoHeadlineRow = (video, headline2, quotes, ctas, asideCtas) => {
+      const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
+      const lead = boxed ? headlineNodes(headline2, doc) : [];
+      if (boxed && !lead.length) return false;
+      const firstLine = headline2.querySelector(".line") || headline2;
+      const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+      const statement = big && lead.length ? [rename(lead[0], "h2"), ...lead.slice(1)] : lead;
+      const nodes = [
+        ...statement,
+        ...(boxed ? quotes : [headline2, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
+        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
+      ];
+      boldInTextItalic(nodes, doc);
+      [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      const section = startSection("video-text", "video-text, headline-1-5vw");
+      if (boxed) section.background = "light-gray";
+      section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
+      current = null;
+      return true;
+    };
     const videoRowColumns = (video) => {
       const aside = videoAside(video);
       if (!aside) return false;
@@ -1191,11 +1330,36 @@ var CustomImportScript = (() => {
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+      if (!/\bcol-sm-6\b/.test(videoCol.className) && !mirrored) {
+        return videoHeadlineRow(video, aside, quotes, ctas, asideCtas);
+      }
       const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
       if (!columns) return false;
       [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
       startSection("columns").nodes.push(columns);
+      current = null;
+      return true;
+    };
+    const videoRichTextRow = (video) => {
+      const lead = videoRichTextAside(video);
+      if (!lead) return false;
+      const asideCol = lead.closest('[class*="col-sm-"]');
+      const quotes = [...asideCol.querySelectorAll(".c-rich-text-editor")].filter((c) => c !== lead && text(c));
+      const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
+      if (!nodes.length) return false;
+      boldInTextItalic(nodes, doc);
+      [lead, ...quotes].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      const style = [
+        "video-text",
+        asideCol.querySelector(".urw-egyptienne") && "serif",
+        lead.querySelector(".fontsize-1-5em") && "p-1-5",
+        quotes.some((q) => q.querySelector(".fontsize-1-75em")) && "quote-1-75"
+      ].filter(Boolean).join(", ");
+      const section = startSection("video-text", style);
+      section.background = "light-gray";
+      section.nodes.push(video, ...nodes);
       current = null;
       return true;
     };
@@ -1340,6 +1504,7 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-video")) {
         if (!component.querySelector("[data-asset-path], iframe[src]")) return;
         if (videoRowColumns(component)) return;
+        if (videoRichTextRow(component)) return;
         const textAside = videoTextAside(component);
         const textColumns = textAside && videoTextColumns(component, textAside, doc);
         if (textColumns) {
@@ -1395,13 +1560,16 @@ var CustomImportScript = (() => {
       }
       const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
-      nodes.forEach((node) => {
+      nodes.forEach((node, i) => {
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
         const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
         if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
+          if (node.followsText && current && i > 0) {
+            current.style = [current.style, "ps-0"].filter(Boolean).join(", ");
+          }
           startSection(kind, styles.join(", ") || void 0);
         }
         if (h3Font) {
@@ -1443,6 +1611,10 @@ var CustomImportScript = (() => {
     if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
+    const opening = sections.find((section) => section.nodes.length);
+    if (element.hasAttribute("data-first-published") && !title.nodes.length && opening && opening.nodes[0].tagName === "H1") {
+      opening.style = [opening.style, "date-above"].filter(Boolean).join(", ");
+    }
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -1452,11 +1624,11 @@ var CustomImportScript = (() => {
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
       marked.forEach((a) => a.removeAttribute("data-btn-style"));
-      if (section.style) {
-        out.push(WebImporter.Blocks.createBlock(doc, {
-          name: "Section Metadata",
-          cells: { style: section.style }
-        }));
+      if (section.style || section.background) {
+        const cells = {};
+        if (section.style) cells.style = section.style;
+        if (section.background) cells.background = section.background;
+        out.push(WebImporter.Blocks.createBlock(doc, { name: "Section Metadata", cells }));
       }
     });
     element.replaceChildren(...out);
@@ -1474,7 +1646,7 @@ var CustomImportScript = (() => {
     try {
       const { hostname } = new URL(payload.params.originalURL);
       if (hostname === "www.stryker.com") return CORP_HOST_RE;
-    } catch {
+    } catch (e) {
     }
     return PATIENTS_HOST_RE;
   }
@@ -1488,13 +1660,19 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
+    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
   function transform2(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isNewsDetail = !!(payload && payload.template && ["news-detail", "news-detail-xf"].includes(payload.template.name));
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments"
+    ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
@@ -1652,7 +1830,7 @@ var CustomImportScript = (() => {
     let u;
     try {
       u = new URL(urlStr, "https://x/");
-    } catch {
+    } catch (e) {
       return false;
     }
     if (u.pathname.startsWith("/is/image/")) {
@@ -1749,7 +1927,7 @@ var CustomImportScript = (() => {
     transform3
   ];
   function executeTransformers(hookName, element, payload) {
-    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
     transformers.forEach((fn) => {
       try {
         fn.call(null, hookName, element, enhancedPayload);
@@ -1770,7 +1948,8 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   function publishedDate(document) {
-    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    var _a;
+    const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (m) return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`;
     const updated = document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
@@ -1780,6 +1959,7 @@ var CustomImportScript = (() => {
   }
   var import_news_detail_default = {
     transform: (payload) => {
+      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
@@ -1810,8 +1990,8 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
-      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
+      if (meta.Title) meta.Title = meta.Title.replace(/(\s*\|\s*Stryker)+\s*$/i, "");
+      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";

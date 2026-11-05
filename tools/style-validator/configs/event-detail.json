@@ -1,0 +1,247 @@
+{
+  "previewBase": "https://499-corp-event-detail-import--stryker-com--strykerenterprise.aem.page",
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [
+    390,
+    600,
+    900,
+    1200
+  ],
+  "blockClasses": [
+    "columns",
+    "event-map"
+  ],
+  "variantClasses": [
+    "columns-67-33"
+  ],
+  "fontFamilyAliases": {
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab"
+  },
+  "importScript": null,
+  "pairs": [
+    {
+      "name": "ed-prevention-is-in-reducing-falls-and-saving-skin-pro",
+      "source": "https://www.stryker.com/us/en/global-events/acute-care/training/ed-prevention-is-in-reducing-falls-and-saving-skin-pro.html",
+      "migrated": "/us/en/global-events/acute-care/training/ed-prevention-is-in-reducing-falls-and-saving-skin-pro"
+    },
+    {
+      "name": "patient-temperature-management",
+      "source": "https://www.stryker.com/us/en/global-events/acute-care/training/patient-temperature-management.html",
+      "migrated": "/us/en/global-events/acute-care/training/patient-temperature-management"
+    },
+    {
+      "name": "innovations-updates-in-cardiac-resuscitation-symposium",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/innovations---updates-in-cardiac-resuscitation-symposium.html",
+      "migrated": "/us/en/global-events/emergency-care/association-meetings/innovations-updates-in-cardiac-resuscitation-symposium"
+    },
+    {
+      "name": "nti-2019-in-booth-education",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/nti-2019-in-booth-education.html",
+      "migrated": "/us/en/global-events/emergency-care/association-meetings/nti-2019-in-booth-education"
+    },
+    {
+      "name": "refractory-cardiac-arrest-symposium",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/refractory-cardiac-arrest-symposium.html",
+      "migrated": "/us/en/global-events/emergency-care/association-meetings/refractory-cardiac-arrest-symposium"
+    },
+    {
+      "name": "high-performance-cpr-the-insider-s-insights",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/training/high-performance-cpr--the-insider-s-insights.html",
+      "migrated": "/us/en/global-events/emergency-care/training/high-performance-cpr-the-insider-s-insights"
+    },
+    {
+      "name": "the-code-whisperer-nurse-driven-resuscitation0",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/training/the-code-whisperer--nurse-driven-resuscitation0.html",
+      "migrated": "/us/en/global-events/emergency-care/training/the-code-whisperer-nurse-driven-resuscitation0"
+    },
+    {
+      "name": "virtual-cardiac-arrest-symposium",
+      "source": "https://www.stryker.com/us/en/global-events/emergency-care/training/virtual-cardiac-arrest-symposium.html",
+      "migrated": "/us/en/global-events/emergency-care/training/virtual-cardiac-arrest-symposium"
+    },
+    {
+      "name": "safe-patient-handling-reducing-risk-through-evidence-based-inte",
+      "source": "https://www.stryker.com/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte.html",
+      "migrated": "/us/en/global-events/sage/training/safe-patient-handling-reducing-risk-through-evidence-based-inte"
+    },
+    {
+      "name": "safe-patient-handling-reducing-risk-through-evidence-based-inte0",
+      "source": "https://www.stryker.com/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte0.html",
+      "migrated": "/us/en/global-events/sage/training/safe-patient-handling-reducing-risk-through-evidence-based-inte0"
+    },
+    {
+      "name": "aaos-american-academy-of-orthopaedic-surgeons",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aaos--american-academy-of-orthopaedic-surgeons-.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/aaos-american-academy-of-orthopaedic-surgeons"
+    },
+    {
+      "name": "aaos-aossm-aana-sports-medicine-course",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aaos-aossm-aana-sports-medicine-course.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/aaos-aossm-aana-sports-medicine-course"
+    },
+    {
+      "name": "aorn-association-of-perioperative-registered-nurses-arthrosc",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aorn--association-of-perioperative-registered-nurses----arthrosc.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/aorn-association-of-perioperative-registered-nurses-arthrosc"
+    },
+    {
+      "name": "aossm-american-orthopaedic-society-for-sports-medicine",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aossm--american-orthopaedic-society-for-sports-medicine-.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/aossm-american-orthopaedic-society-for-sports-medicine"
+    },
+    {
+      "name": "isha-international-society-for-hip-arthroscopy",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/isha--international-society-for-hip-arthroscopy-.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/isha-international-society-for-hip-arthroscopy"
+    },
+    {
+      "name": "orthopedics-today",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/orthopedics-today.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/orthopedics-today"
+    },
+    {
+      "name": "spring-aana-arthroscopy-association-of-north-america",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/spring-aana--arthroscopy-association-of-north-america-.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/spring-aana-arthroscopy-association-of-north-america"
+    },
+    {
+      "name": "winter-sks-shoulder-knee-sports-meeting",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/winter-sks--shoulder--knee---sports-meeting.html",
+      "migrated": "/us/en/global-events/sports-medicine/association-meetings/winter-sks-shoulder-knee-sports-meeting"
+    },
+    {
+      "name": "chicago-sports-medicine-symposium-fore",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/training/chicago-sports-medicine-symposium--fore-.html",
+      "migrated": "/us/en/global-events/sports-medicine/training/chicago-sports-medicine-symposium-fore"
+    },
+    {
+      "name": "international-fellows-course-ismf",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/training/international-fellows-course-ismf.html",
+      "migrated": "/us/en/global-events/sports-medicine/training/international-fellows-course-ismf"
+    },
+    {
+      "name": "st-louis-hip-skills-course-hip-arthroscopy-and-preservation-pr",
+      "source": "https://www.stryker.com/us/en/global-events/sports-medicine/training/st--louis-hip-skills-course--hip-arthroscopy-and-preservation-pr.html",
+      "migrated": "/us/en/global-events/sports-medicine/training/st-louis-hip-skills-course-hip-arthroscopy-and-preservation-pr"
+    },
+    {
+      "name": "o-r-safety-series-protecting-patients-from-retained-surgical-i",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-protecting-patients-from-retained-surgical-i"
+    },
+    {
+      "name": "o-r-safety-series-protecting-patients-from-retained-surgical-i0",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-protecting-patients-from-retained-surgical-i0"
+    },
+    {
+      "name": "o-r-safety-series-protecting-patients-from-retained-surgical-i1",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i1.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-protecting-patients-from-retained-surgical-i1"
+    },
+    {
+      "name": "o-r-safety-series-protecting-patients-from-retained-surgical-i2",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i2.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-protecting-patients-from-retained-surgical-i2"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke-2",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-2.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke-2"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke-3",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-3.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke-3"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke-4",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-4.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke-4"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke-5",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-5.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke-5"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke-6",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-6.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke-6"
+    },
+    {
+      "name": "o-r-safety-series-journey-to-zero-smoke",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/o-r-safety-series-journey-to-zero-smoke"
+    },
+    {
+      "name": "protecting-the-air-your-breathe",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/protecting-the-air-your-breathe.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/protecting-the-air-your-breathe"
+    },
+    {
+      "name": "smoke-evacuation-dangers-of-smoke-plume",
+      "source": "https://www.stryker.com/us/en/global-events/surgical-technologies/training/smoke-evacuation-dangers-of-smoke-plume.html",
+      "migrated": "/us/en/global-events/surgical-technologies/training/smoke-evacuation-dangers-of-smoke-plume"
+    },
+    {
+      "name": "surgical-o-r-safety-series-protecting-patients-from-retained-surgical-i",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-patients-from-retained-surgical-i"
+    },
+    {
+      "name": "surgical-o-r-safety-series-protecting-patients-from-retained-surgical-i0",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-patients-from-retained-surgical-i0"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe-april-pm-2",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm-2.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe-april-pm-2"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe-april-pm",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe-april-pm"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe-april",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe-april"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe-march-pm",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march-pm.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe-march-pm"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe-march",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe-march"
+    },
+    {
+      "name": "o-r-safety-series-protecting-the-air-you-breathe",
+      "source": "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe.html",
+      "migrated": "/us/en/global-events/surgical/training/o-r-safety-series-protecting-the-air-you-breathe"
+    },
+    {
+      "name": "ascrs",
+      "source": "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/ASCRS.html",
+      "migrated": "/us/en/training-and-education/medical-and-surgical-equipment/endoscopy/medical-education/events-calendar/ascrs"
+    },
+    {
+      "name": "iris-course",
+      "source": "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course.html",
+      "migrated": "/us/en/training-and-education/medical-and-surgical-equipment/endoscopy/medical-education/events-calendar/iris-course"
+    },
+    {
+      "name": "iris-course0",
+      "source": "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course0.html",
+      "migrated": "/us/en/training-and-education/medical-and-surgical-equipment/endoscopy/medical-education/events-calendar/iris-course0"
+    }
+  ]
+}

@@ -23,6 +23,8 @@
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
   --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
+  --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
@@ -38,16 +40,24 @@
 
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
-  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
+  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block) + var(--corp-band-strut-s)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin + the heading's taller line box / 2% */
+  --corp-band-strut-s: 9px; /* measured: the source band h2 (21px, lines 1.06) around its 1.5em span makes a 42.4px line box, 9px more than the span's 33.4px line, below 600px */
+  --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
+  --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
+  --corp-qa-title-line-height: 23.25px; /* measured: a Q&A card question, a 17.5px span on 14px paragraph lines (46.5px for 2 lines) */
+
+  /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
+  --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 
   /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
-     .form-control field text */
+     .form-control field text: 18px/1.5 on phones, 14px/1.2 from 600px (Marketo's field line) */
   --corp-form-field-font-size-l: 18px;
   --corp-form-field-line-height-l: 1.5;
+  --corp-form-field-line-height: 1.2;
 
   /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
   --corp-color-purple-dark: #753d79;
@@ -104,6 +114,18 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) b {
   font-weight: 700;
   font-family: inherit;
+}
+
+/* subscript: 75% of the text around it on the line it sits on, 0.25em low (stryker.com
+   normalize; e.g. the SPS blog posts set their copy in span.fontsize-1-75em > sub > sup:
+   24.5px → 18.375px → 13.78px, lines 27px apart). The browser default (smaller, sub) made
+   that copy 15.3px with taller lines */
+:where(body.corp) sub {
+  position: relative;
+  bottom: -0.25em;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
 /* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
@@ -326,9 +348,20 @@ body:where(.corp):has(main .hero-carousel) header {
   padding-left: var(--space-block-l);
 }
 
-/* "Last Updated" line (corp.js decorateLastModified) */
-:where(body.corp) main > .section.last-modified-section {
+/* "Last Updated" line (corp.js decorateLastModified, `last-updated: show`): stryker.com sets
+   it as its own component (.c-disclaimer.page-section), so the content above ends with the
+   component gap, a document code (`disclaimer`) sits directly above it, and the line keeps
+   the gap before the footer: 20px, 30px from 480px (the 3d-biphasic video and
+   improved-surgical-outcomes learn pages at 375 / 1440). `body.corp`, not :where(), so the
+   spacing holds on every corp page whatever section spacing its template sets; :has() also
+   looks across the empty (hidden) section the page metadata leaves before the line */
+body.corp main > .section:has(+ .last-modified-section, + .section:empty + .last-modified-section),
+body.corp main > .section.last-modified-section {
   margin-bottom: var(--space-block-l);
+}
+
+body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:empty + .last-modified-section) {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section.last-modified-section .last-modified {
@@ -445,6 +478,21 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height-hero);
 }
 
+/* …and the text of a Large Headline column at that size (the video row of e.g. Bob's or
+   Matt's story, `video-text, headline-1-5vw`): light serif lines 1.35 high with no gap
+   between them, a Heading 2 the column's 2vw statement (capped at 28px) */
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper :is(p, h2) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+:where(body.corp) main > .section.headline-1-5vw > .default-content-wrapper h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(8 * var(--corp-headline-vw) / 3)));
+}
+
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-1-5vw {
     --corp-headline-vw: 0.75vw;
@@ -481,11 +529,39 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
-/* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
-   35px, lines 1.15; h2 > span.fontsize-1-5em: 1.5x the h2, 31.5px and 36.75px from 600px
-   with the h2 step, lines 1.06), e.g. the "When Stryker employees…" feature. Like h2-0-8,
-   the heading flows into the text below it: one heading gap, not a section gap */
+/* section style `h4-spaced`: every Heading 4 of the section has a blank line above and below
+   it — stryker.com subheads set between empty <p>&nbsp;</p> spacers, which EDS drops (e.g.
+   the Sustainability "Reprocessing in the EP Lab" release: 49px from the text above to the
+   subhead and from the subhead to its text, at every width). A Heading 4 that opens the
+   section keeps the normal space above it */
+:where(body.corp) main > .section.h4-spaced > .default-content-wrapper > h4 {
+  margin-bottom: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+:where(body.corp) main > .section.h4-spaced > .default-content-wrapper > h4:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+/* section style `h1-0-8`: a second title line the source sets as an h1 at 0.8em
+   (h1 > span.fontsize-8em: 22.4px Futura bold, lines 37.7px apart, at every width; e.g.
+   "Stryker's Smoke-Free OR Campaign" under the "Protect your patients … and your OR staff."
+   title). Author it as a Heading 1 in a section of its own after the title, and give the
+   title section `ps-0` so the two lines keep one heading gap (15px) between them */
+:where(body.corp) main > .section.h1-0-8 > .default-content-wrapper h1 {
+  font-family: var(--display-font-family);
+  font-size: var(--corp-heading-font-size-h1-0-8);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-h1-0-8);
+}
+
+/* h1-1-25 / h1-2-5 / h2-1-5: headings the source enlarges with a size span (h1 >
+   span.fontsize-1-25em: 35px, lines 1.15, e.g. the "When Stryker employees…" feature;
+   a title paragraph with span.fontsize-2-5em: 35px, lines 1.06 (37.1px), e.g. the
+   BattleBots and "Restoring spines and hope" features; h2 > span.fontsize-1-5em: 1.5x the
+   h2, 31.5px and 36.75px from 600px with the h2 step, lines 1.06). Like h2-0-8, the
+   heading flows into the text below it: one heading gap, not a section gap */
 :where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h1-2-5,
 :where(body.corp) main > .section.h2-1-5 {
   margin-bottom: 0;
 }
@@ -493,6 +569,11 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.h1-1-25 > .default-content-wrapper h1 {
   font-size: var(--corp-heading-font-size-h1-1-25);
   line-height: var(--heading-line-height-h4);
+}
+
+:where(body.corp) main > .section.h1-2-5 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height);
 }
 
 :where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
@@ -557,6 +638,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--corp-font-scale-1-25);
 }
 
+/* …in a heading it is the source h2 > span.fontsize-1-25em, lines 1.15 (e.g. the IP BRAVoE
+   article subheadings: 30.625px on 35.2px lines, 26.25px on 30.2px below 600px) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6) span.text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}
+
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
    bold news subtitle) instead of the corp Futura bold */
 :where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
@@ -613,6 +700,15 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
+/* section style `quote-1-75`: the gold-quote paragraph (the one with the gold quote marks)
+   as 24.5px copy, lines 1.06 as p-1-75, the rest of the copy at its own size (stryker.com
+   .fontsize-1-75em quote in 1.5em text, e.g. Ellys' maxillofacial surgery story:
+   `serif, p-1-5, quote-1-75`; after the serif rules, whose lines it replaces) */
+:where(body.corp) main > .section.quote-1-75 > .default-content-wrapper p:has(> span.color-gold) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 :where(body.corp) main > div.section.ps-0,
 :where(body.corp) .tabs-panel > .section.ps-0,
 :where(body.corp) .accordion-item-body > .section.ps-0 {
@@ -630,9 +726,10 @@ body:where(.corp):has(main .hero-carousel) header {
    that fills its section into main, or nests it inside the block when it shares the
    section (contact aside next to a form), so the rules match `main .section.{style}`. */
 
-/* connect-band: heading in a gold band (Sustainability "Connect with us") */
+/* connect-band: heading in a gold band (Sustainability "Connect with us"), as tall as the
+   source band and as far above the text after it */
 :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
-  margin: 0 0 var(--space-block);
+  margin: 0 0 var(--corp-band-gap);
   padding: var(--corp-band-padding);
   border-bottom: 0;
   background-color: var(--color-accent);
@@ -841,7 +938,11 @@ body:where(.corp):has(main .hero-carousel) header {
     margin-bottom: var(--space-section);
   }
 
-  :where(body.corp) main > .section.last-modified-section,
+  body.corp main > .section:not(.disclaimer):has(+ .last-modified-section, + .section:empty + .last-modified-section),
+  body.corp main > .section.last-modified-section {
+    margin-bottom: var(--space-section);
+  }
+
   :where(body.corp) main > div.section.ps-1,
   :where(body.corp) .tabs-panel > .section.ps-1,
   :where(body.corp) .accordion-item-body > .section.ps-1 {
@@ -849,6 +950,7 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 
   :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+    padding-bottom: calc(3% + var(--space-block) + var(--corp-band-strut));
     font-size: var(--heading-font-size-xxxl-s);
   }
 
@@ -878,5 +980,11 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+
+  /* video-text (styles.css): the empty wrapper its Section Metadata leaves is no third
+     column of the row (as in flex) */
+  :where(body.corp) main > .section.video-text > div:empty {
+    display: none;
   }
 }

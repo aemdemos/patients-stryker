@@ -176,10 +176,12 @@ function buildContact(document, src) {
     p.append(strong);
     out.push(p);
   });
-  // social icon images (LinkedIn / Facebook) → icon links in one paragraph
+  // social icon images (LinkedIn / Facebook) → icon links in one paragraph. The source
+  // Facebook image is the full-colour logo (blue disc, white f), so it is `:facebook-logo:`;
+  // `:facebook:` is the white glyph the share row paints a square behind
   const icons = [...src.querySelectorAll('.c-standalone-image a[href]')].map((a) => {
     const href = a.getAttribute('href');
-    const name = /linkedin/i.test(href) ? 'linkedin' : /facebook/i.test(href) ? 'facebook' : '';
+    const name = /linkedin/i.test(href) ? 'linkedin' : /facebook/i.test(href) ? 'facebook-logo' : '';
     return name ? { href, name } : null;
   }).filter(Boolean);
   // (side by side, no space between them: the contact-aside style sets the gap)
