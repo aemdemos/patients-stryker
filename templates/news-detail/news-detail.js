@@ -104,20 +104,23 @@ function decorateBoldBodyLinks(doc) {
  * the stryker.com viewer does (e.g. the 3:2 StrykerTalks ENT episode: 910 x 607px at
  * 1440px); news-detail-themes.css frames it 16:9 until the shape is known. Scene7's set
  * response for the adaptive video (`…/is/image/<asset>?req=set,json`) lists its
- * renditions with their size. Runs before the video block loads, so the authored link is
- * still there; the shape is set as --news-video-aspect on the section.
+ * renditions with their size. The video's URL is the player's data-src (scripts/
+ * dm-support.js), or the authored link if the player isn't built yet; the shape is set as
+ * --news-video-aspect on the section.
  * @param {Document} doc The document
  */
 function sizeNewsVideos(doc) {
   if (!doc.body.classList.contains('news-video')) return;
   doc.querySelectorAll('main > .section.video-text').forEach((section) => {
-    const link = section.querySelector('a[href*="/is/content/"]');
-    const asset = link?.href.match(/^(https:\/\/[^/]+)\/is\/content\/([^?#]+?)\.(?:m3u8|mpd)(?:[?#]|$)/);
+    const src = section.querySelector('video[data-src]')?.dataset.src
+      || section.querySelector('a[href*="/is/content/"]')?.href;
+    const asset = src?.match(/^(https:\/\/[^/]+)\/is\/content\/([^?#]+?)\.(?:m3u8|mpd)(?:[?#]|$)/);
     if (!asset) return;
     fetch(`${asset[1]}/is/image/${asset[2]}?req=set,json`)
       .then((response) => (response.ok ? response.text() : ''))
       .then((text) => {
-        const json = text.slice(text.indexOf('(') + 1, text.lastIndexOf(')'));
+        // JSONP: s7jsonResponse({…},"")
+        const json = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
         const items = [JSON.parse(json).set?.item].flat();
         const video = items.find((item) => Number(item?.v?.dx) && Number(item?.v?.dy))?.v;
         if (video) section.style.setProperty('--news-video-aspect', `${video.dx} / ${video.dy}`);
