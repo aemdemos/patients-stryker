@@ -355,3 +355,13 @@ body.news-detail.news-video main > .section.video-text a.button {
   white-space: normal;
   text-align: center;
 }
+
+/* both: the video in a 16:9 frame at every width, its poster and video cropped to fill it
+   (source Scene7 viewer: 910 x 512px at 1440px, 360 x 203px at 390px, object-fit cover),
+   rather than the poster's own shape the template lets news videos take (e.g. 912 x 427px
+   for the wide 130 beats per minute video); the frame's border is inside the column */
+body.news-detail.news-video main > .section.video-text .dm-video {
+  box-sizing: border-box;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
