@@ -4,7 +4,20 @@
 
 ## In one paragraph
 
-The migrated stryker.com pages were rejected because they rely on many cryptic classes and hidden conventions. That concern is right, and it is fixable without redesigning the site. stryker.com is not random: it is the values authors set in AEM component dialogs (padding, widths, colours, font sizes). We moved those values out of class names into **readable settings rows** and **named text styles**, kept the ~85 real design names as normal EDS section styles and variants, and listed every remaining convention on one page with live examples. A converter turns the existing pages into this form automatically: **98.6% of all 2,023 imported pages and fragments convert completely, and the converted pages render identically.**
+The migrated stryker.com pages were rejected because they rely on many cryptic classes and hidden conventions. That concern is right, and it is fixable without redesigning the site. stryker.com is not random: it is the values authors set in AEM component dialogs (padding, widths, colours, font sizes). We moved those values out of class names into **readable settings rows** and **named text styles**, kept the 77 design names (44 section styles, 33 block variants) as normal EDS section styles and variants, and listed every remaining convention on one page with live examples. A converter turns the existing pages into this form automatically: **98.6% of all 2,023 imported pages and fragments convert completely, and the converted pages render identically.**
+
+## Before and after, on all 2,023 imported pages and fragments
+
+| | **Before** (today's migration) | **After** (readable settings) |
+|---|---|---|
+| Classes with numbers in them (`cell-2-padding-left-3`, `grid-of3-6-3`, `p-1-25` …) | **13,691** uses, ~660 different ones | **27** (one Statistics option, `cols-3`) |
+| Bracket tags in the text | **13,551**, all with class names: `[[color-gold][[size-3vw]…]]` | **9,924** by name or value: `[[Gold,Display]…]`, `[[1.75×]…]`; **16** still with a class name; **3,627** replaced by `Headings` / `Text` rows and `Box` lines |
+| Padded boxes inside text | **820** `[[spacing,padding-top-3,padding-left-3]]` markers | **820** `Box: top 3%, left 3%` lines |
+| Documents an author can read without the code (no number classes, no class-name brackets) | **424** (21%) | **1,994** (98.6%) |
+| Design names (section styles and block variants) | 77 | 77 (unchanged: they were never the problem) |
+| Conventions (formatting that triggers a style or behaviour) | 27, written down nowhere | 27, on one page with a live example each |
+
+Rendering before and after: identical (exact comparison on 11 pages, QA tool on 5).
 
 ## What authors see: one real section, before and after
 
@@ -36,14 +49,14 @@ Identical rendering (the same classes, section heights and every text run's styl
 |---|---|
 | Templates, themes and block variants for every look | **~1,500 items**: 909 distinct section-style combinations and 598 distinct block + variant combinations are in use today. Combinations multiply; each one would be a variant or theme to maintain. |
 | Standardise the design to a few templates and variants | **1,573 of 2,023 documents (78%)** carry at least one measured value; under a standard set each of them can change, and each change needs the customer's approval. |
-| Today's migration (classes) | ~660 distinct number-carrying classes (`cell-2-padding-left-3`, `grid-of3-6-3`, `size-1-75em` …) plus 11,791 bracket tags with class names. This is what was rejected. |
-| **Readable settings** | **~85 design names** (normal EDS section styles and variants) + **13 settings rows** + **20 named text styles** with sizes written as values (`1.75×`, `5.5vw`) + **27 documented conventions**. |
+| Today's migration (classes) | 13,691 uses of ~660 different number-carrying classes (`cell-2-padding-left-3`, `grid-of3-6-3`, `p-1-25` …) plus 13,551 bracket tags with class names. This is what was rejected. |
+| **Readable settings** | **77 design names** (normal EDS section styles and variants) + **13 settings rows** + **20 named text styles** with sizes written as values (`1.75×`, `5.5vw`) + **27 documented conventions**. |
 
 ### The vocabulary, complete
 
 | Layer | Size | Examples |
 |---|---|---|
-| Design names (what a thing *is*) | ~85 | `large-headline`, `bg-gold`, `divider`, `Hero Corp (image-slide, text-below)`, `Cards Corp (resources, six-up)` |
+| Design names (what a thing *is*) | 77 (see the appendix) | `large-headline`, `bg-gold`, `divider`, `Hero Corp (image-slide, text-below)`, `Cards Corp (resources, six-up)` |
 | Settings rows (measured values, readable) | 13 | `Padding`, `Margin`, `Text box`, `Column widths`, `Grid`, `Cell colours`, `Column`, `Copy size`, `Label size`, `Heading size`, `Autoplay`, `Headings`, `Text` (+ `(2)` for a section's second Columns block) |
 | Text styles | 20 names + values | `Display`, `Title`, `Lead`, `Large`, `Serif`, `Futura`, the 11 palette colours; `[[1.75×]…]`, `[[5.5vw]…]` |
 | Padded boxes inside text | 1 form | a line `Box: top 3%, all 6%` … `Box end` |
@@ -113,3 +126,32 @@ The demo pages need the prototype code, which is on the branch `readable-setting
 | Coverage and dry run numbers | `.migration/vocabulary-coverage.md` |
 | The full rules inventory | `.migration/authoring-rules-inventory.md` |
 | The first sketch and its evidence | `.migration/authoring-sketch-lifepak-15.md` |
+
+## Appendix: the 77 design names
+
+The names an author picks on purpose: a section style in a section's `Style` row, or a block variant in parentheses after the block name. Counted in all 2,023 imported documents (44 section styles, 33 block variants, on 14 blocks). Their reference is the Block Library (a sample and a description each). About 8 of them also come with a content rule (how the content inside is written matters); those are on the authoring rules page too.
+
+**Section styles (44)**
+
+| Purpose | Names |
+|---|---|
+| Backgrounds and boxes (18) | `bg-white`, `bg-gold`, `bg-light-gray`, `bg-dark-gray`, `bg-blue`, `bg-purple`, `bg-teal`, `bg-silver`, `bg-golden-gradient`, `bg-dark-purple-gradient`, `bg-dark-blue-gradient`, `bg-dark-orange-gradient`, `dark`, `boxed`, `shadow-box`, `stripe`, `gradient-top-to-bottom`, `gradient-inverse` |
+| Type (5) | `serif`, `h-serif`, `bold-body`, `center`, `large-headline` |
+| How sections join (3) | `divider`, `continued`, `flex` |
+| Structure (5) | `accordion-panel`, `tabbed`, `carousel` (options `fade`, `banner`) |
+| Special areas (5) | `disclaimer`, `references-spaced`, `contact-aside`, `talent-banner`, `bu-resources` |
+| Visibility (3) | `desktop-only`, `mobile-only`, `col-phone` |
+| Buttons and images (4) | `btn-purple`, `btn-blue`, `image-border-black`, `image-border-grey` |
+| Probably a leftover (1) | `blue` (used once) |
+
+**Block variants (33)**
+
+| Block | Variants |
+|---|---|
+| Columns | `page-intro`, `border-bottom`, `large-headline`, `media-pair`, `boxed-last`, `gray-lead`, `gold-first`, `related-links` |
+| Cards Corp | `resources`, `six-up`, `teaser`, `three-up`, `two-up` |
+| Hero Corp | `image-slide`, `text-below`, `text-above`, `image-right`, `box-white`, `box-gold`, `box-dark-gray`, `box-blue`, `box-light-gray` |
+| Statistics | `count-up`, `count-once`, `left`, `fast-facts` |
+| Video · Sticky Nav · Table · Cards · Chart Corp | `no-border`, `autoplay` · `local`, `no-rule` · `no-header` · `contact` · `bar` |
+
+Names that come with a content rule: `accordion-panel`, `tabbed`, `carousel`, `continued`, `large-headline` (Columns), `bold-body`, `contact-aside`, `disclaimer`.
