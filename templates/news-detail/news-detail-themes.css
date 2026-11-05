@@ -289,7 +289,7 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw {
     --news-video-rule-size: min(var(--body-font-size-m), 1vw);
     --news-video-name-line-height: var(--heading-line-height-hero);
     --news-video-name-strut: var(--news-video-copy-size);
-    --news-video-caption-gap: 0;
+    --news-video-caption-gap: 0px;
     --news-video-lead-line-height: var(--heading-line-height-hero);
     --news-video-quote-line-height: var(--news-video-quote-ratio);
   }
@@ -327,6 +327,13 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-w
 
 body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p + p {
   margin-top: var(--news-video-caption-gap);
+}
+
+/* a button after the sign-off (e.g. Esley's "Watch more survivor stories") is the source's
+   separate button component: a section gap below the name or caption (20px, 30px from 600px,
+   plus the caption's 3px below 900px) */
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) ~ p.button-wrapper {
+  margin-top: calc(var(--news-video-gap) + var(--news-video-caption-gap));
 }
 
 body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
