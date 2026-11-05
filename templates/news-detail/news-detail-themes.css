@@ -329,6 +329,14 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-w
   margin-top: var(--news-video-caption-gap);
 }
 
+/* a quote that opens the column (no grey intro, e.g. Carolyn's row of the "When Stryker
+   employees … become patients" feature) sits one empty Large Headline line below its top,
+   as on the source (the quote component's empty first line; padding, so the line stays when
+   the column's own gap below the video is added) */
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold):first-child {
+  padding-top: var(--news-video-line);
+}
+
 /* a button after the sign-off (e.g. Esley's "Watch more survivor stories") is the source's
    separate button component: a section gap below the name or caption (20px, 30px from 600px,
    plus the caption's 3px below 900px) */
