@@ -370,6 +370,55 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw.quote-1-5v
   font-size: var(--body-font-size-xl);
 }
 
+/* section style `lead-title`: the grey box holds a Large Headline title (a Heading 2, e.g.
+   Christina's "Getting her life back" over "Christina's bunionectomy story") and the intro
+   paragraph after it (stryker.com Large Headline: fontsize-2vw title line, then a line
+   break and the intro): one box, the title at the Large Headline title size (4vw, 2vw from
+   900px, capped at 28px; its Bold Italic first line in Futura bold at that size, the rest
+   regular), at least the column's 25px line below 900px; one empty column line between
+   title and intro; the intro at the column's own size (21px on 30px lines below 900px,
+   from 900px 1vw capped at 14px on 1.35 lines) */
+body.news-detail.news-video main > .section.video-text.headline-1-5vw.lead-title {
+  --news-video-intro-line-height: 30px; /* measured: a source Large Headline second line below 840px */
+  --news-video-intro-gap: 30px;
+}
+
+@media (width >= 900px) {
+  body.news-detail.news-video main > .section.video-text.headline-1-5vw.lead-title {
+    --news-video-intro-line-height: var(--heading-line-height-hero);
+    --news-video-intro-gap: calc(var(--news-video-rule-size) * var(--heading-line-height-hero));
+  }
+}
+
+/* the title's first line sits as high as on the source where its lines are raised to 25px */
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child {
+  margin-bottom: 0;
+  padding-top: calc(var(--space-block-l) - max(0px, (var(--news-video-line) - var(--heading-line-height-hero) * 1em) / 2));
+  padding-bottom: 0;
+  font-weight: var(--font-weight-regular);
+  line-height: max(var(--news-video-line), calc(var(--heading-line-height-hero) * 1em));
+}
+
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child :is(em, strong) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child + p {
+  margin: 0 0 calc(var(--news-video-gap) + var(--news-video-line));
+  padding: var(--news-video-intro-gap) var(--space-block-l) var(--space-block-l);
+  background-color: var(--color-surface);
+  font-size: var(--news-video-rule-size);
+  line-height: var(--news-video-intro-line-height);
+}
+
+@media (width >= 900px) {
+  body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child {
+    padding-top: var(--space-block-l);
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
 /* both: stacked below 900px (source col-sm-8 / col-sm-4 below 840px): the text starts a section
    gap below the video (the source video component's page-section margin: 20px, 30px from
    600px; the margin takes in the 15px below the video's paragraph); side by side from 900px */
