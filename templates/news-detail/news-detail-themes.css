@@ -213,6 +213,59 @@ body.news-detail.full-width .cards-corp.text.title-left .cards-corp-card-title {
   padding-bottom: calc(var(--space-block) + var(--space-block-s));
 }
 
+/* app-blog: Advanced Practice Provider blog posts (`theme: full-width, app-blog`), measured
+   on stryker.com .../advanced-practice-providers/blogs/understanding-lumbar-spinal-stenosis-
+   with-neurogenic-claudicatio.html. Each rich text component has 1% padding above and below
+   and no component gap (text 15px + 2 x 1% apart: 44px at 1440px, 23px at 390px); each image
+   is a standalone image in a column control, two component gaps (20px, 30px from 480px) under
+   the image (60px at 1440px). The importer gives each text component its own section */
+body.news-detail.app-blog {
+  --app-blog-pad: calc((min(100%, var(--container-max)) - 2 * var(--container-gutter)) / 100);
+  --app-blog-gap: var(--space-block-l);
+}
+
+/* an image section: the image component's gap under the image (a caption, e.g. "Cleveland
+   Clinic Study, 1-year study", sits there), then the column control's gap (the section's) */
+body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3) {
+  display: flow-root;
+}
+
+body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3) > .default-content-wrapper > p:has(> picture) {
+  margin-bottom: var(--app-blog-gap);
+}
+
+/* …the image box as tall as the image (no line descender under it) */
+body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3) > .default-content-wrapper > p > picture img {
+  vertical-align: top;
+}
+
+body.news-detail.app-blog main > .section:is(.p-1, .p-1-25, .p-1-5, .p-1-75) {
+  margin-bottom: 0;
+  padding-block: var(--app-blog-pad);
+}
+
+/* the title component: 2% below it */
+body.news-detail.app-blog main > .section:has(> .default-content-wrapper > h1) {
+  margin-bottom: 0;
+  padding-block: 0 calc(2 * var(--app-blog-pad));
+}
+
+/* a text component the importer split (`join`, e.g. the bold "What is neurogenic
+   claudication?" label) keeps one padding around the pair */
+body.news-detail.app-blog main > .section:has(+ .section.join) {
+  padding-bottom: 0;
+}
+
+body.news-detail.app-blog main > .section.join {
+  padding-top: 0;
+}
+
+@media (width >= 600px) {
+  body.news-detail.app-blog {
+    --app-blog-gap: var(--space-section);
+  }
+}
+
 /* news-video: patient-story news pages whose text beside the video (the `video-text`
    section) is set as on the source — the serif text of e.g. Ellys' story, the Large
    Headline text of e.g. Matt's story (below) */

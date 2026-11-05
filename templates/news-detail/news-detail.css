@@ -324,6 +324,38 @@ body.news-detail main > .section.form-right > .default-content-wrapper > p:first
   margin-bottom: calc(var(--space-block) + var(--news-blank-line-2));
 }
 
+/* section style `curated-cta`: a Columns row of Curated CTAs (stryker.com .c-curatedcta,
+   e.g. "Key Resources" of the APP lumbar spinal stenosis blog): a document thumbnail 200px
+   wide at every width, its bold title (a fully Bold paragraph) 20px below in the body font
+   at 16.25px (source span), left aligned; a video cell takes the cell's full width with the
+   same title under the player. The cells keep the 15px gutter, without the 50-50 text
+   inset */
+body.news-detail main > .section.curated-cta .columns {
+  --col-5050-inset: var(--container-gutter);
+  --columns-corp-caption-gap: var(--space-block-l);
+  --news-cta-title-size: 16.25px; /* stryker.com curated CTA title span */
+}
+
+/* the video player's paragraph: the video component's gap under the player (20px, 30px
+   from 480px); the title takes no label gap of its own above it */
+body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) + p.columns-bold {
+  margin-top: 0;
+}
+
+body.news-detail main > .section.curated-cta .columns p:has(> strong:only-child) {
+  font-size: var(--news-cta-title-size);
+  line-height: var(--paragraph-line-height);
+  text-align: start;
+}
+
+body.news-detail main > :where(.section.curated-cta) .columns p > strong:only-child {
+  font-family: var(--body-font-family);
+}
+
 /* Columns `label-right`: Q&A rows, the question in the first cell right-aligned in Futura
    bold 21px, lines 1.06, at every width (stryker.com right-aligned futura-bold 1.5em
    question beside its answer, e.g. the BattleBots feature); outranks the serif / p-1-25
@@ -363,6 +395,13 @@ body.news-detail main .columns.thumbnails > div > div:last-child > .columns-img-
 
 body.news-detail main .columns.thumbnails > div > div:last-child img {
   border: 1px solid var(--color-accent);
+}
+
+/* section style `curated-cta` (above): the thumbnail */
+body.news-detail main > .section.curated-cta .columns .columns-img-col img {
+  width: 200px;
+  max-width: 100%;
+  margin-inline: 0;
 }
 
 /* bracket tag `[[body-font]…]` in a Columns cell: its bold keeps the body font, as in
@@ -712,6 +751,10 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
   body.news-detail main > .section.image-2-3 > .default-content-wrapper picture,
   body.news-detail main > .section.image-2-3 > .video-wrapper .video {
     max-width: calc(min(100vw, var(--container-max)) * 2 / 3 - 2 * var(--space-block));
+  }
+
+  body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) {
+    margin-bottom: var(--space-section);
   }
 }
 
