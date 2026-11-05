@@ -371,8 +371,8 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw.quote-1-5v
 }
 
 /* section style `lead-title`: the grey box holds a Large Headline title (a Heading 2, e.g.
-   Christina's "Getting her life back" over "Christina's bunionectomy story") and the intro
-   paragraph after it (stryker.com Large Headline: fontsize-2vw title line, then a line
+   Christina's "Getting her life back" over "Christina's bunionectomy story"), alone or with
+   the intro paragraph after it (stryker.com Large Headline: fontsize-2vw title line, then a line
    break and the intro): one box, the title at the Large Headline title size (4vw, 2vw from
    900px, capped at 28px; its Bold Italic first line in Futura bold at that size, the rest
    regular), at least the column's 25px line below 900px; one empty column line between
@@ -390,13 +390,22 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw.lead-title
   }
 }
 
-/* the title's first line sits as high as on the source where its lines are raised to 25px */
+/* a title alone in the box (e.g. the StrykerTalks Rosales intro, set at the title size)
+   keeps the box's bottom padding; a title with an intro after it hands it to the intro */
 body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child {
-  margin-bottom: 0;
-  padding-top: calc(var(--space-block-l) - max(0px, (var(--news-video-line) - var(--heading-line-height-hero) * 1em) / 2));
-  padding-bottom: 0;
   font-weight: var(--font-weight-regular);
   line-height: max(var(--news-video-line), calc(var(--heading-line-height-hero) * 1em));
+}
+
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child:has(+ p) {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* a title opening with its Bold Italic (Futura) line sits as high as on the source where its
+   lines are raised to 25px */
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child:has(> :is(em, strong):first-child) {
+  padding-top: calc(var(--space-block-l) - max(0px, (var(--news-video-line) - var(--heading-line-height-hero) * 1em) / 2));
 }
 
 body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child :is(em, strong) {
@@ -414,8 +423,11 @@ body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw
 
 @media (width >= 900px) {
   body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child {
-    padding-top: var(--space-block-l);
     line-height: var(--heading-line-height-hero);
+  }
+
+  body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw.lead-title > .video-wrapper + .default-content-wrapper > h2:first-child:has(> :is(em, strong):first-child) {
+    padding-top: var(--space-block-l);
   }
 }
 
