@@ -12,8 +12,8 @@
    - H4 labels (Toll free, Fax, Email…): bold, 14px Humanist on phones, 17.5px Futura from
      600px, 14px above the label and its value line right under it (source margin 14px / 1px)
    - value paragraphs follow each other without a gap (source 19.25px line pitch)
-   The map stays a link here; the form beside the intro text (`flex-33-67`) comes from the
-   section layout, not this template. */
+   The map embed (scripts/map-embed.js) and the form beside the intro text (`flex-33-67`) come
+   from the shared Columns and section styles, not this template. */
 
 body.contact-division main h1 {
   margin-bottom: var(--space-section);

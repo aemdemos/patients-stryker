@@ -144,6 +144,11 @@
   /* form fields — measured from source `.c-marketo-form .form-control` */
   --form-field-max-width: 420px;
   --form-field-min-height: 40px;
+
+  /* embedded Google map (lone maps link, scripts/map-embed.js) — measured: www.stryker.com
+     /us/en/acute-care/contact and /us/en/about/contact map 300px high, 400px from 841px */
+  --map-embed-height: 300px;
+  --map-embed-height-m: 400px;
   --heading-underline-gap: 7px; /* measured: h2 text → 1px underline (component-subheading) */
   --list-indent: 17px;
   --list-indent-l: 40px; /* measured: search page suggestions list (browser-default ul indent) */

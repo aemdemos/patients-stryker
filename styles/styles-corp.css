@@ -232,6 +232,39 @@ body:where(.corp):has(main .hero-carousel) header {
   scroll-margin-top: calc(var(--nav-height) + var(--space-block-s));
 }
 
+/* Google map from a lone maps link (scripts/map-embed.js): full width, 300px high, 400px
+   from 600px; the address link sits under the frame (measured
+   /us/en/acute-care/contact and /us/en/about/contact: .map 300/400px, 10px below) */
+:where(body.corp) main .default-content-wrapper > .map-embed {
+  position: relative;
+  height: var(--map-embed-height);
+  margin-bottom: var(--space-block-s);
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* the address link, under the map; on top while keyboard-focused */
+:where(body.corp) main .default-content-wrapper > .map-embed a {
+  position: relative;
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed a:focus-visible {
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .default-content-wrapper > .map-embed {
+    height: var(--map-embed-height-m);
+  }
+}
+
 /* ---- DA canvas only (dm-support.js previewDMLinkEditors): a DM image link shown as a
    one-line caption under its preview ---- */
 :where(body.corp) main .prosemirror-editor.dm-qe-link {
@@ -908,6 +941,13 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 }
 
 
+/* section styles `flex-67-33` / `flex-33-67` (with `flex`): a block beside an aside fragment
+   (e.g. Marketo form | business-unit contact links), two wrappers. Stacked below 600px, 20px apart
+   (source col-xs-12 stack: the form component's 20px page-section gap). */
+:where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:where(:not(:first-child, :empty)) {
+  margin-top: var(--space-block-l);
+}
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -969,6 +1009,34 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
     margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
+  }
+
+  /* flex-67-33 / flex-33-67: source col-sm-8 + col-sm-4 from 841px (EDS 600px), top-aligned,
+     one 30px gutter, 15px outer edge; widths are thirds of the row (content + one gutter) */
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > .section.flex-67-33 > div:first-child,
+  :where(body.corp) main > .section.flex-33-67 > div:nth-child(2) {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:empty {
+    display: none;
   }
 }
 
