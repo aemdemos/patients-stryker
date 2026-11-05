@@ -98,11 +98,13 @@ export default function transform(hookName, element, payload) {
   // The corp news-detail template (www.stryker.com news articles) rebuilds its own
   // content (news-detail-sections.js): it keeps its <h1> and its authorable
   // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
-  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template)
+  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template;
+  // the corp event-detail pages of import-event-detail.js rebuild their body the same way)
   // The corp long-page-detail-corp pages (and their shared fragments) are rebuilt the
   // same way (long-page-detail-corp-sections.js), so they get the same treatment.
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
+    'event-detail',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 

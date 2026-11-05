@@ -1075,6 +1075,64 @@
           ]
         }
       ]
+    },
+    {
+      "name": "event-detail",
+      "description": "www.stryker.com event pages (/us/en/global-events/**, #499). The H2 event title becomes the H1; the event fields go in one Columns (columns-67-33): main cell = Meeting time / Location / Country / Contact (H5 + text), Details and Registration as underlined H5s (divider convention) with their text, the bold \"Disclaimer:\" paragraph and the register link in bold (primary button); sidebar cell = Related links or empty. Customizable Area extras (e.g. Contact Us, PDFs) follow as default content in their own section; a document code (.c-disclaimer, e.g. \"1000903067 Rev A\") as a small-print `disclaimer` section. Map, PRINT and ADD TO CALENDAR are dropped; the event facts are kept as event-* page metadata (ISO start/end, timezone, location, country, registration, contact). Template CSS (templates/event-detail) sets the Futura bold title and 14px field headings.",
+      "urls": [
+        "https://www.stryker.com/us/en/global-events/acute-care/training/ed-prevention-is-in-reducing-falls-and-saving-skin-pro.html",
+        "https://www.stryker.com/us/en/global-events/acute-care/training/patient-temperature-management.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/innovations---updates-in-cardiac-resuscitation-symposium.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/nti-2019-in-booth-education.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/association-meetings/refractory-cardiac-arrest-symposium.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/training/high-performance-cpr--the-insider-s-insights.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/training/the-code-whisperer--nurse-driven-resuscitation0.html",
+        "https://www.stryker.com/us/en/global-events/emergency-care/training/virtual-cardiac-arrest-symposium.html",
+        "https://www.stryker.com/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte.html",
+        "https://www.stryker.com/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte0.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aaos--american-academy-of-orthopaedic-surgeons-.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aaos-aossm-aana-sports-medicine-course.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aorn--association-of-perioperative-registered-nurses----arthrosc.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/aossm--american-orthopaedic-society-for-sports-medicine-.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/isha--international-society-for-hip-arthroscopy-.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/orthopedics-today.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/spring-aana--arthroscopy-association-of-north-america-.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/association-meetings/winter-sks--shoulder--knee---sports-meeting.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/training/chicago-sports-medicine-symposium--fore-.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/training/international-fellows-course-ismf.html",
+        "https://www.stryker.com/us/en/global-events/sports-medicine/training/st--louis-hip-skills-course--hip-arthroscopy-and-preservation-pr.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i1.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i2.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-2.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-3.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-4.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-5.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-6.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/protecting-the-air-your-breathe.html",
+        "https://www.stryker.com/us/en/global-events/surgical-technologies/training/smoke-evacuation-dangers-of-smoke-plume.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm-2.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march-pm.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march.html",
+        "https://www.stryker.com/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/ASCRS.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course.html",
+        "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course0.html"
+      ],
+      "blocks": [
+        {
+          "name": "columns-67-33",
+          "instances": [
+            ".c-event-detail-component"
+          ]
+        }
+      ]
     }
   ]
 }
