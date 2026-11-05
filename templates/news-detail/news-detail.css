@@ -667,6 +667,24 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
 }
 
 
+/* section style `white-lead`: a Columns (…, large-headline) video row whose text sits in a
+   white Large Headline box below a blank line (stryker.com .has-background.bg-white after
+   a `<p>&nbsp;</p>`, e.g. "Watch Kevin Lobo on CNBC's Squawk Alley"): the video at the row
+   top, the text 20px in from both sides of the box; on phones the text starts the video
+   component's 20px gap and the blank line under the video (54px), from 600px (840px on
+   the source) the blank line and the box's 20px top inset below the row top (54px) */
+body.news-detail main > .section.white-lead .columns > div > div:has(.columns-youtube, iframe, video, .dm-video-wrapper) {
+  padding-top: 0;
+}
+
+body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) {
+  padding-top: calc(var(--space-block-l) - var(--space-block) + var(--corp-blank-line));
+}
+
+body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) > * {
+  padding-inline: var(--space-block-l);
+}
+
 @media (width >= 600px) {
   body.news-detail {
     --news-h3-size: var(--heading-font-size-l);
@@ -755,6 +773,10 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
 
   body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) {
     margin-bottom: var(--space-section);
+  }
+
+  body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) {
+    padding-top: calc(var(--corp-blank-line) + var(--space-block-l));
   }
 }
 

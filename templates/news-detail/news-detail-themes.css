@@ -263,8 +263,9 @@ body.news-detail.app-blog main > .section.join {
 
 /* text right after an image (or a row of two, Columns media-pair) has no padding above it
    (6 of the 8 such components on the first two measured posts, e.g. "What is LSS?" under
-   the first image) */
-body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3, :has(> .columns-wrapper > .media-pair)) + .section:is(.p-1, .p-1-25, .p-1-5, .p-1-75) {
+   the first image); so has text after a `spacer` (the empty section title above each step
+   heading of the imaging review post, e.g. "1. Linking the sagittal and axial views") */
+body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3, .spacer, :has(> .columns-wrapper > .media-pair)) + .section:is(.p-1, .p-1-25, .p-1-5, .p-1-75) {
   padding-top: 0;
 }
 
@@ -273,6 +274,13 @@ body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3,
    32px below the image at 1440px and 390px instead of 60px / 40px) */
 body.news-detail.app-blog main > .section.pull-up {
   margin-top: calc(-2 * var(--app-blog-pad));
+}
+
+/* section style `bg-white` on a blog post: the source's white text box (.has-background
+   bg-white) keeps its 10px inset on the right, so the lines wrap as on the source (e.g. the
+   imaging review post: 350px of text at 390px instead of 360px) */
+body.news-detail.app-blog main > .section.bg-white > .default-content-wrapper > * {
+  margin-inline-end: var(--space-block-s);
 }
 
 /* a nested list sits right under its item, without a list gap (stryker.com: 0px, e.g.
