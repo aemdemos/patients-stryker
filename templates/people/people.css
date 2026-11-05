@@ -1,0 +1,9 @@
+@media (width >= 600px) {
+  body.people .columns > div > div:first-child {
+    flex: 0 0 58.333%;
+  }
+
+  body.people .columns > div > div:last-child {
+    flex: 0 0 41.667%;
+  }
+}

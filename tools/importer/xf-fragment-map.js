@@ -33,4 +33,10 @@ export default {
   '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop': {
     name: '"Join our talent network" banner (carousel slide; mobile slide: …/join-our-talent-network-v2-mobile1)',
   },
+  '/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master': {
+    name: 'Our management "◁ Back" link (leader bio pages)',
+  },
+  '/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master': {
+    name: 'Board of directors "◁ Back" link (director bio pages)',
+  },
 };
