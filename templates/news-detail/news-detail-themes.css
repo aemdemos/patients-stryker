@@ -84,11 +84,22 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
     margin-inline: 0 auto;
   }
+
+  /* …a stacked YouTube player keeps the full column width (16:9), as the Dynamic Media
+     player does: the block's top-aligned cells would shrink it to the embed's default 300px
+     (stryker.com 570 x 321px at 600px, e.g. the National Nurses Week video) */
+  body.news-detail.full-width .columns > div > div:has(> .columns-youtube) {
+    align-self: stretch;
+  }
   }
 
    @media (width >= 900px) {
     body.news-detail.full-width .columns > div {
      flex-flow: row wrap;
+  }
+
+  body.news-detail.full-width .columns > div > div:has(> .columns-youtube) {
+    align-self: auto;
   }
 
   /* every section spans the container, except a Hero Corp, which stays full-bleed
