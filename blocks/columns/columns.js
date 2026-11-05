@@ -47,6 +47,39 @@ function decorateYouTube(block) {
   });
 }
 
+// the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
+// box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
+const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark)-lead)\b/;
+const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
+
+/**
+ * Box variants: the boxed part of a cell, its text below any image or video it opens with
+ * (or, for `-lead`, its first line of text), goes in a div.columns-box, as the source's
+ * coloured text box. Cells without text are left as they are.
+ * @param {Element} block The columns block
+ */
+function decorateBoxes(block) {
+  const match = block.className.match(BOX_VARIANT);
+  if (!match) return;
+  const variant = match[0];
+  [...block.children].forEach((row) => {
+    const cells = [...row.children];
+    let targets = cells;
+    if (variant.endsWith('-last')) targets = cells.slice(-1);
+    else if (variant.endsWith('-2')) targets = cells.slice(1, 2);
+    targets.filter((cell) => cell.textContent.trim()).forEach((cell) => {
+      const content = [...cell.children];
+      const start = content.findIndex((el) => !el.matches(MEDIA) && el.textContent.trim());
+      if (start < 0) return;
+      const nodes = variant.endsWith('-lead') ? [content[start]] : content.slice(start);
+      const box = document.createElement('div');
+      box.className = 'columns-box';
+      nodes[0].before(box);
+      box.append(...nodes);
+    });
+  });
+}
+
 export default function decorate(block) {
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
@@ -177,4 +210,6 @@ export default function decorate(block) {
       });
     });
   });
+
+  decorateBoxes(block);
 }

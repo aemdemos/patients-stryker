@@ -409,6 +409,13 @@ body.corp .columns.link-groups.columns-4-cols > div > div {
   flex-basis: 100%;
 }
 
+/* stack: four cells one per row on phones, two per row from 600px, four from 900px
+   (stryker.com col-xs-12 col-sm-6 col-md-3: the nse grids, surgical videos); without it a
+   corp four-cell row is two per row on phones */
+body.corp .columns.stack.columns-4-cols > div > div {
+  flex-basis: 100%;
+}
+
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
 body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   padding-top: 0;
@@ -552,5 +559,85 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+}
+
+/* ---- box variants: a stryker.com coloured text box in a column row (a Large Headline or rich
+   text with a background, a dimensional box) is the cell's text (columns.js wraps it in
+   div.columns-box), below an image or video the cell opens with, as tall as its text, 20px in.
+   gray-last / gray-2 / gray-all: light grey (jr45 episodes, mis, clout); blue-all: blue
+   (instruments contact information, tech support); purple-last: purple (giving-back);
+   boxed-all: a white shadow box (clout); gold-lead / dark-lead: the text cell's first line
+   in a gold / dark grey bar, centred (SKILL, Mako refreshers). White text on blue, purple and
+   dark grey ---- */
+body.corp .columns .columns-box {
+  padding: var(--space-block-l);
+  background: var(--columns-corp-box-bg);
+  box-shadow: var(--columns-corp-box-shadow, none);
+  color: var(--columns-corp-box-color, inherit);
+}
+
+body.corp .columns .columns-box > :last-child {
+  margin-bottom: 0;
+}
+
+body.corp .columns:is(.gray-last, .gray-2, .gray-all) {
+  --columns-corp-box-bg: var(--color-surface);
+}
+
+body.corp .columns.blue-all {
+  --columns-corp-box-bg: var(--color-navy-bright);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns.purple-last {
+  --columns-corp-box-bg: var(--color-purple);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns.boxed-all {
+  --columns-corp-box-bg: var(--color-white);
+  --columns-corp-box-shadow: var(--shadow-soft);
+}
+
+body.corp .columns.gold-lead {
+  --columns-corp-box-bg: var(--color-accent);
+}
+
+body.corp .columns.dark-lead {
+  --columns-corp-box-bg: var(--color-secondary);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
+  margin-bottom: var(--space-block);
+  text-align: center;
+}
+
+/* an image right under a title bar touches it (Mako refreshers) */
+body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
+  margin-bottom: 0;
+}
+
+/* ---- stack (cells: above): two per row from 600px, four from 900px ---- */
+@media (width >= 600px) {
+  body.corp .columns.stack.columns-4-cols > div {
+    flex-wrap: wrap;
+    row-gap: var(--space-block);
+  }
+
+  body.corp .columns.stack.columns-4-cols > div > div {
+    flex: 0 0 50%;
+  }
+}
+
+@media (width >= 900px) {
+  body.corp .columns.stack.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  body.corp .columns.stack.columns-4-cols > div > div {
+    flex: 0 0 25%;
   }
 }
