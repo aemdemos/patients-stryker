@@ -247,24 +247,26 @@ body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5v
 /* Large Headline text (`video-text, headline-1-5vw`), measured on Matt's sudden cardiac
    arrest story (.../features/being-in-the-right-place-at-the-right-time--matt-s-sudden-
    cardia.html):
-   - the grey box, the name and the caption at the Large Headline size: 3vw, 1.5vw from
-     900px (source 840px), capped at 21px and without the corp 12px floor; lines 25px apart
-     below 900px (the source's vw text on the column's 14px lines), 1.35 from 900px
+   - the grey box, the name and the caption at the Large Headline size: 3vw (not capped:
+     25.2px at 839px on the source), from 900px (source 840px) 1.5vw capped at 21px, and
+     without the corp 12px floor; lines 1.35 high but at least the column's 25px line
+     below 900px (the source's small vw text on the column's 14px lines), 1.35 from 900px
    - the quote at 21px on 1.375 lines at every width (source inline 21px)
    - the rule line in the column's own size: 21px, from 900px 1vw capped at 14px
    - the quote a section gap and one empty Large Headline line below the box, the name one
      empty rule line below the rule (the source's empty line and line breaks); the name's
-     lines are as tall as the column's (21px below 900px), so the caption follows it as on
-     the source
+     lines are as tall as the column's (21px below 900px) or 1.35 its text where larger
+     (e.g. 25.2px at 839px), so the caption follows it as on the source
    The sizes change per breakpoint through the custom properties below */
 body.news-detail.news-video main > .section.video-text.headline-1-5vw {
   --corp-headline-vw: 1.5vw;
+  --news-video-copy-size: calc(2 * var(--corp-headline-vw));
   --news-video-gap: var(--space-block-l);
   --news-video-line: 25px; /* measured: a source Large Headline line below 840px */
-  --news-video-copy-line-height: var(--news-video-line);
+  --news-video-copy-line-height: max(var(--news-video-line), calc(var(--heading-line-height-hero) * 1em));
   --news-video-rule-size: var(--body-font-size-xl);
   --news-video-rule-line: calc(var(--news-video-rule-size) * var(--paragraph-line-height));
-  --news-video-name-line-height: var(--news-video-rule-line);
+  --news-video-name-line-height: max(var(--news-video-rule-line), calc(var(--heading-line-height-hero) * 1em));
   --news-video-name-strut: var(--body-font-size-xl);
   --news-video-caption-gap: var(--space-block-xxs);
 }
@@ -278,17 +280,18 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw {
 @media (width >= 900px) {
   body.news-detail.news-video main > .section.video-text.headline-1-5vw {
     --corp-headline-vw: 0.75vw;
+    --news-video-copy-size: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
     --news-video-line: calc(min(var(--body-font-size-m), 1vw) * var(--heading-line-height-hero));
     --news-video-copy-line-height: var(--heading-line-height-hero);
     --news-video-rule-size: min(var(--body-font-size-m), 1vw);
     --news-video-name-line-height: var(--heading-line-height-hero);
-    --news-video-name-strut: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+    --news-video-name-strut: var(--news-video-copy-size);
     --news-video-caption-gap: 0;
   }
 }
 
 body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:not(.button-wrapper, :has(> span.color-gold)) {
-  font-size: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+  font-size: var(--news-video-copy-size);
   line-height: var(--news-video-copy-line-height);
 }
 
@@ -313,7 +316,8 @@ body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-w
 }
 
 body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p > strong {
-  font-size: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+  font-size: var(--news-video-copy-size);
+  line-height: var(--news-video-name-line-height);
 }
 
 body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p + p {
