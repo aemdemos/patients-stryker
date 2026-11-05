@@ -203,7 +203,11 @@ body.news-detail.full-width .cards-corp.text.title-left .cards-corp-card-title {
 }
 
 /* news-video: patient-story news pages whose text beside the video (the `video-text`
-   section) is set as on the source, measured on Ellys' maxillofacial surgery story
+   section) is set as on the source — the serif text of e.g. Ellys' story, the Large
+   Headline text of e.g. Matt's story (below) */
+
+/* serif text (`video-text, serif, p-1-5, quote-1-75`), measured on Ellys' maxillofacial
+   surgery story
    (.../2021/facing-the-future-with-confidence-ellys--maxillofacial-surgery-s.html):
    - every line 1.06 high (the source's 1.5em / 1.75em spans: 22.26px for the 21px copy)
    - the light-grey intro box padded 5% of the column (22px at 1440px, 18px at 390px) and
@@ -212,35 +216,115 @@ body.news-detail.full-width .cards-corp.text.title-left .cards-corp-card-title {
      line break)
    - the sign-off: the rule line at 1.25x the copy (26.25px Futura bold), the name and the
      caption below it on consecutive lines */
-body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p {
+body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5vw)) > .video-wrapper + .default-content-wrapper > p {
   line-height: var(--heading-line-height);
 }
 
-body.news-detail.news-video main > .section.video-text.light-gray > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
+body.news-detail.news-video main > .section.video-text.light-gray:where(:not(.headline-1-5vw)) > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
   margin-bottom: 0;
   padding: 5% 5% calc(var(--space-block) + var(--space-block-s));
 }
 
-body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) {
+body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5vw)) > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) {
   margin-top: calc(var(--heading-font-size-xl) * var(--heading-line-height));
 }
 
 /* the quote's first line is its bold Futura run only: on the source that run sits in a
    body-font span, so the line is as tall as the Futura (29px), not the serif's 34px */
-body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold)::first-line {
+body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5vw)) > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold)::first-line {
   font-family: var(--body-font-family);
 }
 
-body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p {
+body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5vw)) > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p {
   margin-bottom: calc(var(--space-block) + var(--space-block-s));
   font-size: calc(var(--body-font-size-xl) * var(--news-scale-1-25));
 }
 
-body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p {
+body.news-detail.news-video main > .section.video-text:where(:not(.headline-1-5vw)) > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p {
   margin-bottom: 0;
 }
 
-/* …stacked below 900px (source col-sm-8 / col-sm-4 below 840px): the text starts a section
+/* Large Headline text (`video-text, headline-1-5vw`), measured on Matt's sudden cardiac
+   arrest story (.../features/being-in-the-right-place-at-the-right-time--matt-s-sudden-
+   cardia.html):
+   - the grey box, the name and the caption at the Large Headline size: 3vw, 1.5vw from
+     900px (source 840px), capped at 21px and without the corp 12px floor; lines 25px apart
+     below 900px (the source's vw text on the column's 14px lines), 1.35 from 900px
+   - the quote at 21px on 1.375 lines at every width (source inline 21px)
+   - the rule line in the column's own size: 21px, from 900px 1vw capped at 14px
+   - the quote a section gap and one empty Large Headline line below the box, the name one
+     empty rule line below the rule (the source's empty line and line breaks); the name's
+     lines are as tall as the column's (21px below 900px), so the caption follows it as on
+     the source
+   The sizes change per breakpoint through the custom properties below */
+body.news-detail.news-video main > .section.video-text.headline-1-5vw {
+  --corp-headline-vw: 1.5vw;
+  --news-video-gap: var(--space-block-l);
+  --news-video-line: 25px; /* measured: a source Large Headline line below 840px */
+  --news-video-copy-line-height: var(--news-video-line);
+  --news-video-rule-size: var(--body-font-size-xl);
+  --news-video-rule-line: calc(var(--news-video-rule-size) * var(--paragraph-line-height));
+  --news-video-name-line-height: var(--news-video-rule-line);
+  --news-video-name-strut: var(--body-font-size-xl);
+  --news-video-caption-gap: var(--space-block-xxs);
+}
+
+@media (width >= 600px) {
+  body.news-detail.news-video main > .section.video-text.headline-1-5vw {
+    --news-video-gap: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.news-video main > .section.video-text.headline-1-5vw {
+    --corp-headline-vw: 0.75vw;
+    --news-video-line: calc(min(var(--body-font-size-m), 1vw) * var(--heading-line-height-hero));
+    --news-video-copy-line-height: var(--heading-line-height-hero);
+    --news-video-rule-size: min(var(--body-font-size-m), 1vw);
+    --news-video-name-line-height: var(--heading-line-height-hero);
+    --news-video-name-strut: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+    --news-video-caption-gap: 0;
+  }
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:not(.button-wrapper, :has(> span.color-gold)) {
+  font-size: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+  line-height: var(--news-video-copy-line-height);
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p {
+  font-size: var(--news-video-rule-size);
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p ~ p {
+  line-height: var(--news-video-name-line-height);
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p {
+  margin-top: var(--news-video-rule-line);
+  font-family: var(--body-font-family);
+  font-size: var(--news-video-name-strut);
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p > strong {
+  font-size: min(var(--heading-font-size-l), calc(2 * var(--corp-headline-vw)));
+}
+
+body.news-detail.news-video main > .section.video-text.headline-1-5vw > .video-wrapper + .default-content-wrapper > p:has(> span.color-gold) + p + p + p {
+  margin-top: var(--news-video-caption-gap);
+}
+
+body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
+  margin-bottom: calc(var(--news-video-gap) + var(--news-video-line));
+}
+
+/* both: stacked below 900px (source col-sm-8 / col-sm-4 below 840px): the text starts a section
    gap below the video (the source video component's page-section margin: 20px, 30px from
    600px; the margin takes in the 15px below the video's paragraph); side by side from 900px */
 body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper {
@@ -257,4 +341,13 @@ body.news-detail.news-video main > .section.video-text > .video-wrapper + .defau
   body.news-detail.news-video main > .section.video-text > .video-wrapper + .default-content-wrapper {
     margin-top: 0;
   }
+}
+
+/* both: a button under the video wraps its text onto centred lines where the column is
+   narrower than the label (source inline-block .btn, e.g. Matt's "Learn more about the
+   LUCAS chest compression system": two lines, 56px tall at 390px), instead of the corp
+   button's single cut-off line */
+body.news-detail.news-video main > .section.video-text a.button {
+  white-space: normal;
+  text-align: center;
 }
