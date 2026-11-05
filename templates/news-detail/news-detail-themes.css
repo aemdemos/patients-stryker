@@ -261,10 +261,18 @@ body.news-detail.app-blog main > .section.join {
   padding-top: 0;
 }
 
-/* text right after an image has no padding above it (6 of the 8 such components on the
-   two measured posts, e.g. "What is LSS?" under the first image) */
-body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3) + .section:is(.p-1, .p-1-25, .p-1-5, .p-1-75) {
+/* text right after an image (or a row of two, Columns media-pair) has no padding above it
+   (6 of the 8 such components on the first two measured posts, e.g. "What is LSS?" under
+   the first image) */
+body.news-detail.app-blog main > .section:is(.image-1-2, .image-1-3, .image-2-3, :has(> .columns-wrapper > .media-pair)) + .section:is(.p-1, .p-1-25, .p-1-5, .p-1-75) {
   padding-top: 0;
+}
+
+/* section style `pull-up`: a text component the source pulls up under the image above it
+   (margin-top: -2%, e.g. "LSS with NC patients…" on the identifying-and-educating post:
+   32px below the image at 1440px and 390px instead of 60px / 40px) */
+body.news-detail.app-blog main > .section.pull-up {
+  margin-top: calc(-2 * var(--app-blog-pad));
 }
 
 /* a nested list sits right under its item, without a list gap (stryker.com: 0px, e.g.
