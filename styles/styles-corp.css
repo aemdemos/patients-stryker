@@ -348,9 +348,20 @@ body:where(.corp):has(main .hero-carousel) header {
   padding-left: var(--space-block-l);
 }
 
-/* "Last Updated" line (corp.js decorateLastModified) */
-:where(body.corp) main > .section.last-modified-section {
+/* "Last Updated" line (corp.js decorateLastModified, `last-updated: show`): stryker.com sets
+   it as its own component (.c-disclaimer.page-section), so the content above ends with the
+   component gap, a document code (`disclaimer`) sits directly above it, and the line keeps
+   the gap before the footer: 20px, 30px from 480px (the 3d-biphasic video and
+   improved-surgical-outcomes learn pages at 375 / 1440). `body.corp`, not :where(), so the
+   spacing holds on every corp page whatever section spacing its template sets; :has() also
+   looks across the empty (hidden) section the page metadata leaves before the line */
+body.corp main > .section:has(+ .last-modified-section, + .section:empty + .last-modified-section),
+body.corp main > .section.last-modified-section {
   margin-bottom: var(--space-block-l);
+}
+
+body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:empty + .last-modified-section) {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section.last-modified-section .last-modified {
@@ -927,7 +938,11 @@ body:where(.corp):has(main .hero-carousel) header {
     margin-bottom: var(--space-section);
   }
 
-  :where(body.corp) main > .section.last-modified-section,
+  body.corp main > .section:not(.disclaimer):has(+ .last-modified-section, + .section:empty + .last-modified-section),
+  body.corp main > .section.last-modified-section {
+    margin-bottom: var(--space-section);
+  }
+
   :where(body.corp) main > div.section.ps-1,
   :where(body.corp) .tabs-panel > .section.ps-1,
   :where(body.corp) .accordion-item-body > .section.ps-1 {
