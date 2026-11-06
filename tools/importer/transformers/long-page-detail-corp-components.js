@@ -307,7 +307,13 @@ function fullBleedPanels(main, doc, h) {
     });
     flush();
     // an empty gold panel (OR staff: the 34px gold band under the page title): `gold-bar`
-    if (!out.length && colour === 'gold' && !h.text(component)) out.push(keepNodes(doc, [], 'gold-bar'));
+    if (!out.length && colour === 'gold' && !h.text(component)) {
+      const bar = keepNodes(doc, [], 'gold-bar');
+      // the row spacing after it (markRowEnds: the gold bar ends the title row)
+      const end = component.getAttribute('data-row-end');
+      if (end) bar.setAttribute('data-row-end', end);
+      out.push(bar);
+    }
     if (!out.length) return;
     (component.closest('.fullbleedpanel') || component).replaceWith(...out);
   });

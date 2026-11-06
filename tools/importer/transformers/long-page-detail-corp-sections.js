@@ -586,10 +586,12 @@ function markRowEnds(main) {
     const all = row ? [...row.children] : [];
     const cols = all.filter(hasContent);
     if (cols.length !== 1 || all.length > 2) return;
-    // the last unit with content: an inner row (its .cols wrapper) or a top-level component
+    // the last unit with content: an inner row (its .cols wrapper) or a top-level component;
+    // an empty coloured panel counts (OR staff: the gold bar under the title ends the row)
     const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT}`)].filter((el) => {
       const outer = el.parentElement.closest(`.colctrl, ${COMPONENT}`);
-      return (!outer || outer === colctrl) && (text(el) || el.querySelector('img, iframe, [data-asset-path]'));
+      return (!outer || outer === colctrl) && (text(el) || el.querySelector('img, iframe, [data-asset-path]')
+        || el.matches('.c-full-bleed-panel[class*="bg-"]'));
     });
     const last = units[units.length - 1];
     if (!last) return;

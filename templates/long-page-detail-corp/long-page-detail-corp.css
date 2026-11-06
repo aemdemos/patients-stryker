@@ -1059,3 +1059,21 @@ body.long-page-detail-corp main > .section > .default-content-wrapper :is(h2):ha
   padding-bottom: 0;
   border-bottom: 0;
 }
+
+/* ---- the gold bar under the title box (`headline-box` then `gold-bar`, OR staff): the source
+   title's 20px margin above it (50px from 600px: its 30px and the source box's empty second
+   line), the row spacing below it in the spacer that follows ---- */
+body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
+  margin-block: var(--space-block-l) 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
+    margin-top: var(--space-section-l);
+  }
+
+  /* the jump bar (Sticky Nav): the source navigation bar's 25px bottom margin */
+  body.long-page-detail-corp main > .section.sticky-nav-container {
+    margin-bottom: var(--space-inset-m);
+  }
+}

@@ -1442,7 +1442,12 @@ var CustomImportScript = (() => {
         } else run.push(...unitNodes(unit, doc, h));
       });
       flush();
-      if (!out.length && colour === "gold" && !h.text(component)) out.push(keepNodes(doc, [], "gold-bar"));
+      if (!out.length && colour === "gold" && !h.text(component)) {
+        const bar = keepNodes(doc, [], "gold-bar");
+        const end = component.getAttribute("data-row-end");
+        if (end) bar.setAttribute("data-row-end", end);
+        out.push(bar);
+      }
       if (!out.length) return;
       (component.closest(".fullbleedpanel") || component).replaceWith(...out);
     });
@@ -2224,7 +2229,7 @@ var CustomImportScript = (() => {
       if (cols.length !== 1 || all.length > 2) return;
       const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT2}`)].filter((el) => {
         const outer = el.parentElement.closest(`.colctrl, ${COMPONENT2}`);
-        return (!outer || outer === colctrl) && (text3(el) || el.querySelector("img, iframe, [data-asset-path]"));
+        return (!outer || outer === colctrl) && (text3(el) || el.querySelector("img, iframe, [data-asset-path]") || el.matches('.c-full-bleed-panel[class*="bg-"]'));
       });
       const last = units[units.length - 1];
       if (!last) return;
