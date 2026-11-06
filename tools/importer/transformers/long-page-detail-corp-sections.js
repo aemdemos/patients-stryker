@@ -490,6 +490,10 @@ function rowCopyStyle(cells, doc) {
   }
   copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant))
     .forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
+  // serif copy at the source's 14px: `serif, p-1` (in Columns `serif` alone is 21px;
+  // footed attachments, jr45 faculty)
+  const parts = dominant.split(',').map((s) => s.trim()).filter(Boolean);
+  if (parts.includes('serif') && !parts.some((s) => sizeTag(s))) return ['p-1', ...parts].join(', ');
   return dominant;
 }
 
@@ -604,8 +608,13 @@ function columnRows(main, doc) {
         el.removeAttribute('data-white-tag');
       });
     }
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes]
-      .filter(Boolean).join(', ');
+    // a rule at the end of the first of two columns (the nse intros: a section separator under
+    // the text, not under the image beside it): `left-border-bottom`
+    const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)]
+      .filter((c) => c.closest('.colctrl') === colctrl && (text(c) || c.matches('.sectionseparator'))) : [];
+    const firstRule = parts.length > 1 && parts[parts.length - 1].matches('.sectionseparator');
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
+      firstRule ? 'left-border-bottom' : ''].filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');

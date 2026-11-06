@@ -417,6 +417,20 @@ body.corp .columns.stack.columns-4-cols > div > div {
   flex-basis: 100%;
 }
 
+/* ---- left-border-bottom: a 1px grey rule under the first (left) cell's text, the cell's
+   full width with its gutters, not under the image beside it (stryker.com: a section
+   separator at the end of the text column; nse footed / heavy-duty attachments intros):
+   20px below the text on phones, 50px from 600px, and 50px above what follows ---- */
+body.corp .columns.left-border-bottom > div > div:first-child {
+  align-self: flex-start;
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.corp .columns.left-border-bottom > div > div:first-child > :last-child {
+  margin-bottom: 0;
+}
+
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
 body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   padding-top: 0;
@@ -648,5 +662,12 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
   body.corp .columns.stack.columns-4-cols > div {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 0;
+  }
+}
+
+@media (width >= 600px) {
+  body.corp .columns.left-border-bottom > div > div:first-child {
+    margin-bottom: calc(var(--space-block-l) + var(--space-section));
+    padding-bottom: calc(var(--space-block-l) + var(--space-section));
   }
 }

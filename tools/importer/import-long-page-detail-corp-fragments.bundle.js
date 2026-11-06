@@ -2166,6 +2166,8 @@ var CustomImportScript = (() => {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
     }
     copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
+    const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
+    if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
     return dominant;
   }
   var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
@@ -2239,7 +2241,15 @@ var CustomImportScript = (() => {
           el.removeAttribute("data-white-tag");
         });
       }
-      const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : "", stackRow(columns) ? "stack" : "", boxes].filter(Boolean).join(", ");
+      const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)].filter((c) => c.closest(".colctrl") === colctrl && (text3(c) || c.matches(".sectionseparator"))) : [];
+      const firstRule = parts.length > 1 && parts[parts.length - 1].matches(".sectionseparator");
+      const variant = [
+        COLUMN_VARIANTS[key],
+        linked ? "media-pair" : "",
+        stackRow(columns) ? "stack" : "",
+        boxes,
+        firstRule ? "left-border-bottom" : ""
+      ].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
