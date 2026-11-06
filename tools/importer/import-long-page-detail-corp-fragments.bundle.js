@@ -265,6 +265,11 @@ var CustomImportScript = (() => {
     SIZE_TAGS.forEach(([cls, tag]) => {
       [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
         if (span.parentElement.closest(`.${cls}`) || !text2(span)) return;
+        const h4 = span.closest("h4");
+        if (h4 && ["text-1-25", "text-1-5"].includes(tag) && squash(h4.textContent) === squash(span.textContent)) {
+          bracketTag([span], tag, root);
+          return;
+        }
         const block = span.closest("p, li");
         if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
         if (squash(block.textContent) === squash(span.textContent)) return;
@@ -990,6 +995,11 @@ var CustomImportScript = (() => {
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
         current.nodes.push(component);
+        return;
+      }
+      if (component.matches(".c-largeheadline") && !isFirst && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+        sections.push({ kind: "spacer", style: "spacer", nodes: [] });
+        current = null;
         return;
       }
       if (component.matches(".c-autocarousel")) {

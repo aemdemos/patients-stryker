@@ -881,3 +881,68 @@ body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) 
     margin-top: 0;
   }
 }
+
+/* ---- a `blue, full-bleed` headline band (Mako surgeon campaign "Know more. Cut less."): the
+   source band's 20px padding, its lines as blocks (the second line a Heading 3 15px below
+   the first, then the copy, its empty first line only on phones) and its empty lines below
+   the copy; the video follows right under the band ---- */
+body.long-page-detail-corp main > .section.blue.full-bleed {
+  margin-bottom: 0;
+  padding-block: var(--space-block-l) calc(4 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.blue.full-bleed h1 :is(strong) {
+  display: block;
+  margin-top: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 {
+  display: block;
+  margin-top: var(--space-inset-m);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 {
+    margin-top: var(--space-block-xs);
+  }
+
+  body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 > br:first-child {
+    display: none;
+  }
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed {
+    padding-bottom: calc(3 * var(--space-block-l));
+  }
+}
+
+@media (width >= 1200px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed {
+    padding-bottom: calc(4 * var(--space-block-l));
+  }
+}
+
+/* ---- size tags in a Heading 4 (stryker.com h4 > span.fontsize-1-25em / 1-5em, Mako surgeon
+   campaign "Cut less", "For more procedural videos…"): 1.25x / 1.5x the source heading, which
+   is 14px below 840px (17.5px / 21px) and 17.5px above it (21.875px / 26.25px) ---- */
+body.long-page-detail-corp main h4 :is(span).text-1-25 {
+  font-size: 1em;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main h4 :is(span).text-1-25 {
+    font-size: var(--corp-font-scale-1-25);
+  }
+
+  body.long-page-detail-corp main h4 :is(span).text-1-5 {
+    font-size: 1.5em;
+  }
+}
+
+/* ---- a section title alone in its section (stryker.com .c-section-title, 30px bottom margin
+   under its heading's 15px: Mako surgeon campaign "HOW IT WORKS", jr45 "E-learning", spine
+   resources "BioSkills"; a `separator` rule above it as well) ---- */
+body.long-page-detail-corp main > .section:has(> .default-content-wrapper:first-child > h2.underline:only-child):not(:has(> .default-content-wrapper ~ :not(:empty))) {
+  margin-bottom: calc(var(--space-block) + var(--space-section));
+}

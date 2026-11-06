@@ -464,6 +464,11 @@ var CustomImportScript = (() => {
     SIZE_TAGS.forEach(([cls, tag]) => {
       [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
         if (span.parentElement.closest(`.${cls}`) || !text3(span)) return;
+        const h4 = span.closest("h4");
+        if (h4 && ["text-1-25", "text-1-5"].includes(tag) && squash(h4.textContent) === squash(span.textContent)) {
+          bracketTag([span], tag, root);
+          return;
+        }
         const block = span.closest("p, li");
         if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
         if (squash(block.textContent) === squash(span.textContent)) return;
@@ -1189,6 +1194,11 @@ var CustomImportScript = (() => {
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
         current.nodes.push(component);
+        return;
+      }
+      if (component.matches(".c-largeheadline") && !isFirst && !text3(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+        sections.push({ kind: "spacer", style: "spacer", nodes: [] });
+        current = null;
         return;
       }
       if (component.matches(".c-autocarousel")) {
@@ -2064,6 +2074,40 @@ var CustomImportScript = (() => {
       if (!blank(p) || !textBeside(p, "nextSibling")) return;
       const breaks = textBeside(p, "previousSibling") ? 2 : 1;
       p.replaceWith(...Array.from({ length: breaks }, () => document.createElement("br")));
+    });
+  }
+  var BLANK_LINE_PAGES = /* @__PURE__ */ new Set([
+    "/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html"
+  ]);
+  function blankLineSpacers(document, url) {
+    if (!BLANK_LINE_PAGES.has(new URL(url).pathname)) return;
+    const blank = (node) => node.nodeType !== 1 || node.tagName === "P" && !node.textContent.replace(/\u00a0/g, " ").trim() && !node.querySelector("img, picture, iframe");
+    document.querySelectorAll(".text.parbase > .c-rich-text-editor > div").forEach((box) => {
+      const component = box.parentElement.parentElement;
+      if (component.closest(".c-tabs, .panel, .c-accordion")) return;
+      const parts = [[]];
+      [...box.childNodes].forEach((node) => {
+        if (node.nodeType === 1 && blank(node)) parts.push([]);
+        else parts[parts.length - 1].push(node);
+      });
+      const filled = parts.filter((part) => part.some((node) => !blank(node)));
+      if (filled.length < 2) return;
+      let last = component;
+      filled.forEach((part, i) => {
+        if (i === 0) {
+          box.replaceChildren(...part);
+          return;
+        }
+        const spacer = document.createElement("div");
+        spacer.className = "largeheadline";
+        const headline2 = document.createElement("div");
+        headline2.className = "c-largeheadline page-section container";
+        spacer.append(headline2);
+        const copy = component.cloneNode(true);
+        copy.querySelector(".c-rich-text-editor > div").replaceChildren(...part);
+        last.after(spacer, copy);
+        last = copy;
+      });
     });
   }
   function edsLinkPaths(main) {
@@ -2990,7 +3034,10 @@ var CustomImportScript = (() => {
   }
   var import_long_page_detail_corp_default = {
     // before the importer's own cleanup, which drops empty paragraphs
-    preprocess: ({ document }) => keepHeadlineBlankLines(document),
+    preprocess: ({ document, params }) => {
+      keepHeadlineBlankLines(document);
+      blankLineSpacers(document, params.originalURL);
+    },
     transform: (payload) => {
       var _a, _b;
       const { document, url, params } = payload;

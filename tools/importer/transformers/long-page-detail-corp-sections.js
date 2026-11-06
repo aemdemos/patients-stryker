@@ -83,6 +83,54 @@ export function keepHeadlineBlankLines(document) {
   });
 }
 
+// pages whose blank rich-text paragraphs are kept as space (blankLineSpacers), page by page
+const BLANK_LINE_PAGES = new Set([
+  '/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html',
+]);
+
+/**
+ * Run as the import's `preprocess` as well: on the BLANK_LINE_PAGES, a blank paragraph
+ * (&nbsp;) between two parts of a rich text is about 34px of space on the source (Mako
+ * surgeon campaign: before "Cut less", around "Turn data into insights"). The rich text is
+ * split there, with an empty Large Headline between the parts, which the article builder
+ * makes a `spacer` section. Not in tabs or accordion panels.
+ * @param {Document} document
+ * @param {string} url the source page URL
+ */
+export function blankLineSpacers(document, url) {
+  if (!BLANK_LINE_PAGES.has(new URL(url).pathname)) return;
+  const blank = (node) => node.nodeType !== 1 || (node.tagName === 'P'
+    && !node.textContent.replace(/\u00a0/g, ' ').trim() && !node.querySelector('img, picture, iframe'));
+  document.querySelectorAll('.text.parbase > .c-rich-text-editor > div').forEach((box) => {
+    const component = box.parentElement.parentElement;
+    // text in tabs and accordion panels keeps its own spacing
+    if (component.closest('.c-tabs, .panel, .c-accordion')) return;
+    const parts = [[]];
+    [...box.childNodes].forEach((node) => {
+      if (node.nodeType === 1 && blank(node)) parts.push([]);
+      else parts[parts.length - 1].push(node);
+    });
+    const filled = parts.filter((part) => part.some((node) => !blank(node)));
+    if (filled.length < 2) return;
+    let last = component;
+    filled.forEach((part, i) => {
+      if (i === 0) {
+        box.replaceChildren(...part);
+        return;
+      }
+      const spacer = document.createElement('div');
+      spacer.className = 'largeheadline';
+      const headline = document.createElement('div');
+      headline.className = 'c-largeheadline page-section container';
+      spacer.append(headline);
+      const copy = component.cloneNode(true);
+      copy.querySelector('.c-rich-text-editor > div').replaceChildren(...part);
+      last.after(spacer, copy);
+      last = copy;
+    });
+  });
+}
+
 /**
  * Run after the shared cleanup's link rewrite (which drops `.html`): a link to a site page
  * (root-relative, not an asset) points to the page's EDS document path, cleaned as the

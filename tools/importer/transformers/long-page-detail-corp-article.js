@@ -277,6 +277,13 @@ function tagTextSize(root) {
   SIZE_TAGS.forEach(([cls, tag]) => {
     [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
       if (span.parentElement.closest(`.${cls}`) || !text(span)) return;
+      // a Heading 4 all in a 1.25em / 1.5em span (Mako surgeon campaign "Cut less", "For more
+      // procedural videos…"): the tag on the heading text (template CSS sizes it)
+      const h4 = span.closest('h4');
+      if (h4 && ['text-1-25', 'text-1-5'].includes(tag) && squash(h4.textContent) === squash(span.textContent)) {
+        bracketTag([span], tag, root);
+        return;
+      }
       const block = span.closest('p, li');
       if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
       if (squash(block.textContent) === squash(span.textContent)) return;
@@ -1280,6 +1287,16 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       }
       if (!current || !current.kind.startsWith('body')) startSection('body');
       current.nodes.push(component);
+      return;
+    }
+    // an empty Large Headline outside a column row is 30px of space on the source (its
+    // bottom margin; Mako surgeon campaign: three before "CLINICAL STUDIES"): a `spacer`
+    // section (consecutive ones merge into `spacer, large / xlarge` below)
+    if (component.matches('.c-largeheadline') && !isFirst && !text(component)
+      && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
+      && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      sections.push({ kind: 'spacer', style: 'spacer', nodes: [] });
+      current = null;
       return;
     }
     if (component.matches('.c-autocarousel')) {
