@@ -679,6 +679,31 @@ body.news-detail main > .section.blank-above > .default-content-wrapper > :first
   margin-top: 0;
 }
 
+/* section style `box-gap-5`: the section sits below the blank line the source authors typed
+   at the end of the text box above (<p>&nbsp;</p>, which EDS drops) and the box's 5% bottom
+   margin, instead of the section gap (e.g. "Resources" under "Learn more about ProCare" on
+   the Mutual Aid case study: 103px at 1440px, 78px at 900px, 52px at 390px) */
+body.news-detail main > .section.box-gap-5 {
+  --news-box-gap: calc(5 * (min(100%, var(--container-max)) - 2 * var(--container-gutter)) / 100);
+
+  padding-top: calc(var(--corp-blank-line) + var(--news-box-gap) - var(--space-block-l));
+}
+
+/* Cards Corp (resources) in an article: the PDF cover keeps its size in a 240px high
+   cell, centred, at every width (stryker.com .c-resourcesanddownload: max-height 238px,
+   184 x 238px, e.g. the Mutual Aid case study) instead of the card width */
+body.news-detail main .cards-corp.resources .cards-corp-card-image {
+  display: flex;
+  align-items: center;
+  height: 240px;
+}
+
+body.news-detail main .cards-corp.resources.block > ul > li .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 238px;
+}
+
 /* a button right after the references of a `disclaimer` section (e.g. "Back to trending
    topics" closing the colonoscopy article's small print) sits a paragraph gap below
    them, as on the source, not the references' section gap */
@@ -821,6 +846,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
 
   body.news-detail main > .section.blank-above {
     padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-section));
+  }
+
+  body.news-detail main > .section.box-gap-5 {
+    padding-top: calc(var(--corp-blank-line) + var(--news-box-gap) - var(--space-section));
   }
 }
 
