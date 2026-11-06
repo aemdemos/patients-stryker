@@ -12,6 +12,30 @@
    - Cards Corp (e.g. the "Related" teasers) and Columns (e.g. a video with a Large Headline
      beside it, source col-sm-8 + col-sm-4) span the full container width */
 
+/* Accordion in an article: the label's 1.15 lines (stryker.com panel-title: 17.5px Futura
+   bold on 20.1px lines, 41px with its padding, e.g. "READ THE FULL STORY" of the SGTC lab
+   feature), and Bold in the panel text is Humanist bold, as Bold is in news text
+   (authoring conventions; the source's plain <b> lead-ins, e.g. "Prototyping and product
+   assurance hub") */
+body.news-detail main .accordion.block .accordion-item-label,
+body.news-detail main .accordion.block .accordion-item-label > p {
+  line-height: var(--heading-line-height-h4);
+}
+
+/* …its grey rule under the label and the component's 20px below the label's 15px margin
+   (35px to the next component; the block margin collapses with them) */
+body.news-detail main .accordion.block .accordion-item-label {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail main .accordion.block {
+  margin-bottom: calc(var(--space-block) + var(--space-block-l));
+}
+
+body.news-detail main :where(.accordion .accordion-item-body) :is(p, li) strong:not(em strong, :has(em)) {
+  font-family: var(--body-font-family);
+}
+
 /* section style `form-right` (layout from 900px, below): stacked, the text comes before the
    form, as on the source. Text and form span the container (no auto margins, which would
    shrink the form to Marketo's intrinsic width); the text is indented 17% (stryker.com
@@ -1108,4 +1132,24 @@ body.news-detail main .columns.block:not(.large-headline) > div > div > p > stro
    "Proactive steps to reduce the risk of CAUTI": 21px more than the paragraph gap) */
 body.news-detail main > .section.h2-spaced > .default-content-wrapper > h2:not(:first-child) {
   margin-top: calc(var(--space-block) + var(--news-blank-line-l));
+}
+
+/* Columns (large-headline) of a photo and its headline (stryker.com Large Headline beside a
+   standalone image, e.g. "Creating a better, healthier world" next to the 150M patients
+   graphic): the headline starts 8% of its column down, as the source component's top
+   margin (31px at 1440px, 21px at 900px), with the 17px gap to its text; a Bold headline
+   keeps the source's Futura lines (37.8px apart at 1440px, not the serif heading's) */
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div:has(> h2:first-child) {
+  padding-top: 0;
+}
+
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div > h2:first-child {
+  margin-top: 8%;
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+  font-family: var(--display-font-family);
+}
+
+/* …its button 34px below the text (the source's Curated CTA under the headline) */
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div:has(> h2:first-child) > p.button-wrapper {
+  margin-top: calc(var(--space-section) + var(--space-block-xs));
 }
