@@ -617,6 +617,45 @@ body.news-detail.news-video main > .section.video-text > .video-wrapper + .defau
   }
 }
 
+/* section style `video-right`: a mirrored row — the text column first, the video on the
+   right, half and half from 900px (source col-sm-6 + col-sm-6 from 840px, e.g. Carolyn's
+   bunionectomy story: 675px + 675px at 1440px); stacked, the text above the video, a
+   component gap (20px, 30px from 600px) apart */
+body.news-detail.news-video main > .section.video-text.video-right {
+  display: flex;
+  flex-direction: column;
+}
+
+body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper {
+  margin-top: var(--space-block-l);
+}
+
+body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper + .default-content-wrapper {
+  order: -1;
+  margin-top: 0;
+}
+
+@media (width >= 600px) {
+  body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper {
+    margin-top: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.news-video main > .section.video-text.video-right {
+    flex-direction: row;
+  }
+
+  body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper {
+    flex: 0 0 calc(50% - var(--container-gutter));
+    margin-top: 0;
+  }
+
+  body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper + .default-content-wrapper {
+    flex: 0 0 calc(50% - var(--container-gutter));
+  }
+}
+
 /* both: a button under the video wraps its text onto centred lines where the column is
    narrower than the label (source inline-block .btn, e.g. Matt's "Learn more about the
    LUCAS chest compression system": two lines, 56px tall at 390px), instead of the corp
