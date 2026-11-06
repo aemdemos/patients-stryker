@@ -840,3 +840,32 @@ body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:no
     padding-inline-start: 1.9vw;
   }
 }
+
+/* ---- a headline beside an image in Columns 50-50 (ispies "Join us for iSPIES in
+   Charlotte!"): the source text box sits 15px in from its column and adds 20px on the left
+   and 15% of its width on top; its Futura lines are 1.35x the size apart, so they align to
+   the line top instead of the serif heading's baseline ---- */
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + :is(div):has(> h1:first-child) {
+  padding-inline-start: calc(var(--space-block) + var(--space-block-l));
+  padding-top: calc((100% - 2 * var(--space-block)) * 0.15);
+}
+
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child > :is(span) {
+  vertical-align: top;
+}
+
+/* the serif date line below them sits just under its baseline, which puts it as far below
+   them as on the source */
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child > :is(span).serif {
+  vertical-align: -0.1em;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + :is(div):has(> h1:first-child) {
+    padding-top: calc((50% - 2 * var(--space-block)) * 0.15);
+  }
+
+  body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child {
+    margin-top: 0;
+  }
+}
