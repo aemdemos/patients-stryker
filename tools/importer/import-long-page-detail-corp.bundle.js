@@ -2085,27 +2085,33 @@ var CustomImportScript = (() => {
     document.querySelectorAll(".text.parbase > .c-rich-text-editor > div").forEach((box) => {
       const component = box.parentElement.parentElement;
       if (component.closest(".c-tabs, .panel, .c-accordion")) return;
-      const parts = [[]];
+      const items = [];
       [...box.childNodes].forEach((node) => {
-        if (node.nodeType === 1 && blank(node)) parts.push([]);
-        else parts[parts.length - 1].push(node);
+        const prev = items[items.length - 1];
+        if (node.nodeType === 1 && blank(node)) {
+          if (items.length) items.push(null);
+        } else if (prev) prev.push(node);
+        else if (!blank(node) || items.length) items.push([node]);
       });
-      const filled = parts.filter((part) => part.some((node) => !blank(node)));
-      if (filled.length < 2) return;
+      if (!items.includes(null)) return;
+      const parts = items.filter(Boolean);
+      box.replaceChildren(...parts[0]);
       let last = component;
-      filled.forEach((part, i) => {
-        if (i === 0) {
-          box.replaceChildren(...part);
+      items.slice(items.indexOf(parts[0]) + 1).forEach((item) => {
+        if (!item) {
+          const spacer = document.createElement("div");
+          spacer.className = "largeheadline";
+          const headline2 = document.createElement("div");
+          headline2.className = "c-largeheadline page-section container";
+          spacer.append(headline2);
+          last.after(spacer);
+          last = spacer;
           return;
         }
-        const spacer = document.createElement("div");
-        spacer.className = "largeheadline";
-        const headline2 = document.createElement("div");
-        headline2.className = "c-largeheadline page-section container";
-        spacer.append(headline2);
+        if (!item.some((node) => !blank(node))) return;
         const copy = component.cloneNode(true);
-        copy.querySelector(".c-rich-text-editor > div").replaceChildren(...part);
-        last.after(spacer, copy);
+        copy.querySelector(".c-rich-text-editor > div").replaceChildren(...item);
+        last.after(copy);
         last = copy;
       });
     });

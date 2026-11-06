@@ -756,7 +756,22 @@ body.long-page-detail-corp main > .section.gold-bar {
 
 /* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
    tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
-   row (source col-sm-4 / col-sm-8, 840px); stacked on phones */
+   row (source col-sm-4 / col-sm-8, 840px); stacked on phones. The source accordion keeps its
+   labels 15px apart (the panel title's bottom margin) and 55px of its column's spacing below
+   the last one; from 600px the image column keeps 40px below the image (with its paragraph's
+   15px: 55px). The tab set keeps the source tabs' 30px bottom margin */
+body.long-page-detail-corp main > .section.image-aside {
+  margin-bottom: var(--space-section);
+}
+
+body.long-page-detail-corp main > .section.image-aside .accordion .accordion-item + :is(.accordion-item) {
+  margin-top: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section > .accordion-wrapper {
+  padding-bottom: calc(var(--space-section) + var(--space-inset-m));
+}
+
 @media (width >= 600px) {
   /* each tab the full row (the tabs block sizes a tab to its content from 900px) */
   body.long-page-detail-corp main > .section.image-aside .tabs .tabs-tab-row {
@@ -774,6 +789,7 @@ body.long-page-detail-corp main > .section.gold-bar {
     flex: 0 0 33.333%;
     box-sizing: border-box;
     padding-inline-end: var(--space-block-l);
+    padding-bottom: calc(2 * var(--space-block-l));
     text-align: center;
   }
 

@@ -91,9 +91,10 @@ const BLANK_LINE_PAGES = new Set([
 /**
  * Run as the import's `preprocess` as well: on the BLANK_LINE_PAGES, a blank paragraph
  * (&nbsp;) between two parts of a rich text is about 34px of space on the source (Mako
- * surgeon campaign: before "Cut less", around "Turn data into insights"). The rich text is
- * split there, with an empty Large Headline between the parts, which the article builder
- * makes a `spacer` section. Not in tabs or accordion panels.
+ * surgeon campaign: before "Cut less", around "Turn data into insights", two after the
+ * "**Patient satisfaction" note). The rich text is split there, with an empty Large Headline
+ * per blank line between the parts and after the last one, which the article builder makes
+ * a `spacer` section. Not in tabs or accordion panels.
  * @param {Document} document
  * @param {string} url the source page URL
  */
@@ -105,27 +106,34 @@ export function blankLineSpacers(document, url) {
     const component = box.parentElement.parentElement;
     // text in tabs and accordion panels keeps its own spacing
     if (component.closest('.c-tabs, .panel, .c-accordion')) return;
-    const parts = [[]];
+    // the text parts and blank lines in order (blank lines before the first text dropped)
+    const items = [];
     [...box.childNodes].forEach((node) => {
-      if (node.nodeType === 1 && blank(node)) parts.push([]);
-      else parts[parts.length - 1].push(node);
+      const prev = items[items.length - 1];
+      if (node.nodeType === 1 && blank(node)) {
+        if (items.length) items.push(null);
+      } else if (prev) prev.push(node);
+      else if (!blank(node) || items.length) items.push([node]);
     });
-    const filled = parts.filter((part) => part.some((node) => !blank(node)));
-    if (filled.length < 2) return;
+    if (!items.includes(null)) return;
+    const parts = items.filter(Boolean);
+    box.replaceChildren(...parts[0]);
     let last = component;
-    filled.forEach((part, i) => {
-      if (i === 0) {
-        box.replaceChildren(...part);
+    items.slice(items.indexOf(parts[0]) + 1).forEach((item) => {
+      if (!item) {
+        const spacer = document.createElement('div');
+        spacer.className = 'largeheadline';
+        const headline = document.createElement('div');
+        headline.className = 'c-largeheadline page-section container';
+        spacer.append(headline);
+        last.after(spacer);
+        last = spacer;
         return;
       }
-      const spacer = document.createElement('div');
-      spacer.className = 'largeheadline';
-      const headline = document.createElement('div');
-      headline.className = 'c-largeheadline page-section container';
-      spacer.append(headline);
+      if (!item.some((node) => !blank(node))) return;
       const copy = component.cloneNode(true);
-      copy.querySelector('.c-rich-text-editor > div').replaceChildren(...part);
-      last.after(spacer, copy);
+      copy.querySelector('.c-rich-text-editor > div').replaceChildren(...item);
+      last.after(copy);
       last = copy;
     });
   });
