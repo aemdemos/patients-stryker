@@ -428,6 +428,7 @@ body.news-detail {
   --news-scale-0-8: 0.8; /* h3-0-8 section style, below */
   --news-scale-1-25: 1.25; /* h3-1-25 section style, below */
   --news-gold-box-line-height: 1.25; /* gold-boxes text: 22px lines for 17.5px, below */
+  --news-blank-line-l: calc(var(--body-font-size-l) * 1.2); /* a blank 17.5px line: h2-spaced, below */
   --news-h3-size: var(--heading-font-size-m); /* the corp h3 size; 21px from 600px */
   --news-h2-size: var(--heading-font-size-l); /* the corp h2 size; 24.5px from 600px */
   --news-font-scale-1-5: 1.5em; /* [[text-1-5]], below */
@@ -1099,4 +1100,12 @@ body.news-detail main .columns.block:not(.large-headline) > div > div > p > stro
   body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col:has(+ p) {
     margin-bottom: calc(var(--space-section) + 3%);
   }
+}
+
+/* section style `h2-spaced`: every Heading 2 of the section after its first element has a
+   blank 17.5px line above it, as the source's subheads after a typed blank line
+   (<br>&nbsp; at the end of the paragraph above, which EDS drops; e.g. "What is CAUTI?" and
+   "Proactive steps to reduce the risk of CAUTI": 21px more than the paragraph gap) */
+body.news-detail main > .section.h2-spaced > .default-content-wrapper > h2:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--news-blank-line-l));
 }
