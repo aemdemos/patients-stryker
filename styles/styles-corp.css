@@ -620,6 +620,25 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   }
 }
 
+/* h3-1-25: an h3 the source enlarges with h3 > span.fontsize-1-25em (21.9px on mobile,
+   26.25px from 600px with the h3 step, lines 1.15, e.g. the "Contact a Stryker Smart Care
+   representative" form title). Like h1-1-25 it flows into the text below it: one heading
+   gap, not a section gap */
+:where(body.corp:not(.news-detail)) main > .section.h3-1-25 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h3-1-25 > .default-content-wrapper h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h3-1-25 > .default-content-wrapper h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+}
+
 /* image-1-3 / image-1-2: an image the source sets in a one-third / one-half grid column
    with the other column empty (stryker.com col-sm-4 / col-sm-6, e.g. a news logo or award
    graphic). From 600px (source 840px) the image box is that column: a third / half of the

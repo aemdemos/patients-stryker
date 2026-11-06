@@ -278,7 +278,15 @@ var CustomImportScript = (() => {
     }
     return nodes;
   }
+  function enlargedH3(component) {
+    const root = component.querySelector(".left-to-right") || component;
+    const heads = [...root.children].filter((node) => text(node));
+    if (heads.length !== 1 || !heads[0].matches("h3")) return "";
+    const span = heads[0].querySelector("span.fontsize-1-25em");
+    return span && text(span) === text(heads[0]) ? text(heads[0]) : "";
+  }
   function componentParts(component, doc, ctx) {
+    var _a;
     const cls = component.classList;
     if (cls.contains("section-title")) {
       const { nodes, id } = sectionTitle(component, doc);
@@ -290,6 +298,13 @@ var CustomImportScript = (() => {
         return [];
       }
       const nodes = richNodes(component, doc);
+      const title = enlargedH3(component);
+      if (title && nodes.length === 1) {
+        if ((_a = component.nextElementSibling) == null ? void 0 : _a.classList.contains("fullWidthImage")) {
+          return [{ nodes: [underlined(doc, "h2", title)] }];
+        }
+        return [{ nodes, style: "h3-1-25" }];
+      }
       return nodes.length ? [{ nodes }] : [];
     }
     if (cls.contains("marketoform")) {

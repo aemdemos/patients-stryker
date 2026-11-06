@@ -18,6 +18,9 @@ import { xfToFragmentPath } from '../xf-fragment-path.js';
  *      form in the form's column goes into the sections before / after it.
  *   3. document numbers (.c-disclaimer, a small-print line under a form) in a closing
  *      `disclaimer` section.
+ *   A form title that is an h3 enlarged by span.fontsize-1-25em is an underlined Heading 2
+ *   when the source draws a gold line (fullWidthImage) under it, else a Heading 3 in a
+ *   `h3-1-25` section.
  * Phone links get a clean `tel:+1XXXXXXXXXX` href built from the number; fax numbers, hours
  * and other words are plain text; an email address in a phone line is a mailto: link.
  * Every rewrite is recorded in payload.contactReport for the import report.
@@ -248,6 +251,15 @@ function divisionContactUs(component, doc) {
   return nodes;
 }
 
+/** The text of a text component that is only an h3 enlarged by span.fontsize-1-25em. */
+function enlargedH3(component) {
+  const root = component.querySelector('.left-to-right') || component;
+  const heads = [...root.children].filter((node) => text(node));
+  if (heads.length !== 1 || !heads[0].matches('h3')) return '';
+  const span = heads[0].querySelector('span.fontsize-1-25em');
+  return span && text(span) === text(heads[0]) ? text(heads[0]) : '';
+}
+
 /**
  * The parts of a component, in order: { nodes, style, id, own } (own: a section of its
  * own). Doc numbers go to `small`.
@@ -264,6 +276,13 @@ function componentParts(component, doc, ctx) {
       return [];
     }
     const nodes = richNodes(component, doc);
+    const title = enlargedH3(component);
+    if (title && nodes.length === 1) {
+      if (component.nextElementSibling?.classList.contains('fullWidthImage')) {
+        return [{ nodes: [underlined(doc, 'h2', title)] }];
+      }
+      return [{ nodes, style: 'h3-1-25' }];
+    }
     return nodes.length ? [{ nodes }] : [];
   }
   if (cls.contains('marketoform')) {
