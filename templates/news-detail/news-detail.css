@@ -296,6 +296,14 @@ body.news-detail main .dm-video {
   aspect-ratio: auto;
 }
 
+/* a Video block between paragraphs of the article keeps the source video component's gap
+   below it, 20px (30px from 600px), not the paragraph gap (stryker.com standalone video
+   page-section, e.g. the Steri-Shield 8 launch release: 31px from the video to "The
+   Steri-Shield 8 personal protection system includes…" at 1440px, 21px at 390px) */
+body.news-detail main > .section:not(.video-text) > .video-wrapper:has(+ .default-content-wrapper) {
+  margin-bottom: var(--space-block-l);
+}
+
 body.news-detail main a:any-link {
   text-decoration: none;
 }
@@ -741,6 +749,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     --news-h3-size: var(--heading-font-size-l);
     --news-h2-size: var(--heading-font-size-xl);
     --news-band-headline-vw: 1.25vw;
+  }
+
+  body.news-detail main > .section:not(.video-text) > .video-wrapper:has(+ .default-content-wrapper) {
+    margin-bottom: var(--space-section);
   }
 
 

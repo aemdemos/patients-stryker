@@ -1973,7 +1973,8 @@ var CustomImportScript = (() => {
       "news-detail",
       "news-detail-xf",
       "long-page-detail-corp",
-      "long-page-detail-corp-fragments"
+      "long-page-detail-corp-fragments",
+      "event-detail"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
