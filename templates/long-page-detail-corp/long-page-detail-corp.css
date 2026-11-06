@@ -561,6 +561,21 @@ body.long-page-detail-corp main > .section.separator.spacer {
   }
 }
 
+/* a rule with an empty large headline below it and content after (`separator, spacer`, Mako
+   surgeon campaign "INSIGHTFUL DATA ANALYTICS"): 20px above the rule (30px from 600px), then
+   the rule's own 20px (50px) and the headline's 20px (30px) before the next section */
+body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer)) {
+  height: calc(2 * var(--space-block-l));
+  margin-block: var(--space-block-l) 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer)) {
+    height: calc(var(--space-section-l) + var(--space-section));
+    margin-top: var(--space-section);
+  }
+}
+
 /* consecutive `headline-box` sections are one source box whose lines are centred only in
    part (biologics "Coming soon!" centred above its left-aligned intro; not a box below a
    rule): no gap between them (the source's blank line between them is a line break) */

@@ -1291,11 +1291,14 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     }
     // an empty Large Headline outside a column row is 30px of space on the source (its
     // bottom margin; Mako surgeon campaign: three before "CLINICAL STUDIES"): a `spacer`
-    // section (consecutive ones merge into `spacer, large / xlarge` below)
+    // section (consecutive ones merge into `spacer, large / xlarge` below). Right after a
+    // rule, the rule with the space below it: a `separator, spacer` section (Mako surgeon
+    // campaign "INSIGHTFUL DATA ANALYTICS", Mako thank-you page)
     if (component.matches('.c-largeheadline') && !isFirst && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
       && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-      sections.push({ kind: 'spacer', style: 'spacer', nodes: [] });
+      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      separatorNext = false;
       current = null;
       return;
     }

@@ -998,7 +998,8 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-largeheadline") && !isFirst && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-        sections.push({ kind: "spacer", style: "spacer", nodes: [] });
+        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
+        separatorNext = false;
         current = null;
         return;
       }
