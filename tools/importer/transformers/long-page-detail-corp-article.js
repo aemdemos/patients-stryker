@@ -77,7 +77,8 @@ const COMPONENTS = [
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = {
-  A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
+  // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
+  A: ['href', 'data-btn-style'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
 };
 
 function text(el) {
@@ -374,8 +375,8 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   });
 
   // a Futura bold link alone on its line (Mako refreshers "REGISTER": teal Futura bold
-  // text, not a button) → bold + underline link, as the standalone links above; a bold link
-  // alone would become a button
+  // text, not a button, no arrow) → bold + underline link, as the standalone links above (a
+  // bold link alone would become a button), in a section with the `no-arrow` style
   const squashed = (el) => el.textContent.replace(/[\s\u00a0]+/g, '');
   root.querySelectorAll('.futura-bold a[href], a[href] .futura-bold').forEach((el) => {
     const a = el.closest('a[href]');
@@ -383,6 +384,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     if (standalone.has(a) || a.querySelector('u, img') || !block || !squashed(a)
       || squashed(block) !== squashed(a)) return;
     standalone.add(a);
+    a.setAttribute('data-btn-style', 'no-arrow');
     const u = doc.createElement('u');
     while (a.firstChild) u.append(a.firstChild);
     a.append(u);

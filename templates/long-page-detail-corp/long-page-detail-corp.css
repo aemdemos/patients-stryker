@@ -984,3 +984,43 @@ body.long-page-detail-corp main > .section:has(> .default-content-wrapper:first-
 body.long-page-detail-corp main .section:is(.p-1-25, .p-1-5, .p-1-75, .p-2, .p-2-5) > div li::marker {
   font-size: var(--body-font-size-m);
 }
+
+/* ---- a `separator` on a colour band (`separator, purple, full-bleed`: Mako Refreshers
+   "Together with our customers"): the source rule is its own line in the white, 20px above
+   the band (50px from 600px), not the band's top edge; no rule spacing inside the band, and
+   on phones the source band's own 5px / 20px padding (30px from 600px) ---- */
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) {
+  position: relative;
+  border-top: calc(1px + var(--space-block-l)) solid transparent;
+  padding-block: var(--space-block-xs) var(--space-block-l);
+  background-clip: padding-box;
+}
+
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box)::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1px - var(--space-block-l)) 0 auto;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) > div:first-child {
+  padding-top: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) {
+    border-top-width: calc(1px + var(--space-section-l));
+    padding-block: var(--space-section);
+  }
+
+  body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box)::before {
+    top: calc(-1px - var(--space-section-l));
+  }
+}
+
+/* ---- a list item all in a `[[text-1-25]…]` tag (stryker.com li > span.fontsize-1-25em,
+   Mako Refreshers "Agenda", NeuroElite fellows): the size span keeps its own 1.15 line
+   spacing in the 14px item, which puts the items 21px apart ---- */
+body.long-page-detail-corp main li > :is(span).text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}

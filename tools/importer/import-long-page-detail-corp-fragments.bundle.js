@@ -140,7 +140,8 @@ var CustomImportScript = (() => {
   ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
-    A: ["href"],
+    // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
+    A: ["href", "data-btn-style"],
     IMG: ["src", "alt"],
     TD: ["colspan", "rowspan"],
     TH: ["colspan", "rowspan"]
@@ -343,6 +344,7 @@ var CustomImportScript = (() => {
       const block = a.closest("p, li");
       if (standalone.has(a) || a.querySelector("u, img") || !block || !squashed(a) || squashed(block) !== squashed(a)) return;
       standalone.add(a);
+      a.setAttribute("data-btn-style", "no-arrow");
       const u = doc.createElement("u");
       while (a.firstChild) u.append(a.firstChild);
       a.append(u);
