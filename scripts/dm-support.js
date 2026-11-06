@@ -447,6 +447,10 @@ export function renderVideo(src, label) {
   // can be adjusted without touching this script
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
+  // the media URL, for page code that needs the asset before playback (e.g. the corp
+  // news-detail template reads the Scene7 video's shape); the source itself is attached
+  // lazily
+  video.dataset.src = mediaSrc;
 
   const hlsSrc = preferHls(mediaSrc);
   let startMedia = () => Promise.resolve();
