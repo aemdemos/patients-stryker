@@ -4,6 +4,7 @@
 // PARSER IMPORTS
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
+import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import videoParser from './parsers/video.js';
 import marketoFormParser from './parsers/news-detail/marketo-form.js';
 
@@ -31,6 +32,7 @@ const PAGE_TEMPLATE = {
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
     { name: 'video', instances: ['.c-standalone-video'] },
     { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
+    { name: 'cards-corp-resources', instances: ['.c-resourcesanddownload'] },
     { name: 'marketo-form', instances: ['.c-marketo-form'] },
   ],
 };
@@ -40,6 +42,7 @@ const parsers = {
   'hero-image-slide': heroImageSlideParser,
   video: videoParser,
   'cards-corp-teaser': cardsCorpTeaserParser,
+  'cards-corp-resources': cardsCorpResourcesParser,
   'marketo-form': marketoFormParser,
 };
 

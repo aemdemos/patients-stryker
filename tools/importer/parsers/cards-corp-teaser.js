@@ -6,7 +6,7 @@
  * (Block Library: "Cards Corp (teaser) – Related products"). The grid's "Related"
  * heading is kept as default content by news-detail-sections.js.
  *
- * Source shape (4 per row):
+ * Source shape (4 per row; 3 or 2 per row → three-up / two-up):
  *   .item
  *     .img-cont a > img
  *     .desc-container h3 > a, p, a.action-link "Learn more"
@@ -72,5 +72,11 @@ export default function parse(element, { document }) {
   const items = [...element.querySelectorAll('.item')].filter((item) => item.querySelector('img'));
   if (!items.length) return;
   const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
-  element.replaceWith(WebImporter.Blocks.createBlock(document, { name: 'Cards Corp (teaser)', cells }));
+  // the source grid's column width: 3 per row (col-sm-4, e.g. the pediatric virtual nursing
+  // pilot's "Related") → three-up, 2 per row (col-sm-6) → two-up; otherwise 4 per row
+  const cols = items[0].className;
+  let variant = '';
+  if (/\bcol-sm-4\b/.test(cols)) variant = ', three-up';
+  else if (/\bcol-sm-6\b/.test(cols)) variant = ', two-up';
+  element.replaceWith(WebImporter.Blocks.createBlock(document, { name: `Cards Corp (teaser${variant})`, cells }));
 }

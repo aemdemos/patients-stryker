@@ -100,6 +100,44 @@ function decorateBoldBodyLinks(doc) {
 }
 
 /**
+ * On `news-video` pages the video row's player takes the shape of its Scene7 video, as
+ * the stryker.com viewer does (e.g. the 3:2 StrykerTalks ENT episode: 910 x 607px at
+ * 1440px); news-detail-themes.css frames it 16:9 until the shape is known. On `full-width`
+ * pages a Video block's player does the same (e.g. the 1272 x 540 Delhi Township Fire
+ * video: 1380 x 586px at 1440px). Scene7's set response for the adaptive video
+ * (`…/is/image/<asset>?req=set,json`) lists its renditions with their size. The video's
+ * URL is the player's data-src (scripts/dm-support.js), or the authored link if the player
+ * isn't built yet; the shape is set as --news-video-aspect on the section.
+ * @param {Document} doc The document
+ */
+function sizeNewsVideos(doc) {
+  const { classList } = doc.body;
+  const sections = [
+    classList.contains('news-video') && 'main > .section.video-text',
+    classList.contains('full-width') && 'main > .section.video-container',
+  ].filter(Boolean);
+  if (!sections.length) return;
+  doc.querySelectorAll(sections.join(', ')).forEach((section) => {
+    const src = section.querySelector('video[data-src]')?.dataset.src
+      || section.querySelector('a[href*="/is/content/"]')?.href;
+    const asset = src?.match(/^(https:\/\/[^/]+)\/is\/content\/([^?#]+?)\.(?:m3u8|mpd)(?:[?#]|$)/);
+    if (!asset) return;
+    fetch(`${asset[1]}/is/image/${asset[2]}?req=set,json`)
+      .then((response) => (response.ok ? response.text() : ''))
+      .then((text) => {
+        // JSONP: s7jsonResponse({…},"")
+        const json = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
+        const items = [JSON.parse(json).set?.item].flat();
+        const video = items.find((item) => Number(item?.v?.dx) && Number(item?.v?.dy))?.v;
+        if (video) section.style.setProperty('--news-video-aspect', `${video.dx} / ${video.dy}`);
+      })
+      .catch(() => {
+        // no set response: the player keeps its 16:9 frame
+      });
+  });
+}
+
+/**
  * Bold text in a news article keeps the body font when it sits in a sentence, but bold
  * text on a line of its own stays Futura bold: a paragraph or list item that is bold as a
  * whole ("References:"), or a label on its own line before a line break ("About AVS",
@@ -107,12 +145,31 @@ function decorateBoldBodyLinks(doc) {
  * them apart; CSS alone can't, as it ignores the text around an element.
  * @param {Document} doc The document
  */
-export default function decorate(doc) {
-  decorateFirstPublished(doc);
-  decorateBoldBodyLinks(doc);
-  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong').forEach((strong) => {
+function markStandaloneBold(doc) {
+  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong:not(.standalone)').forEach((strong) => {
     if (!lineText(strong, 'previousSibling') && !lineText(strong, 'nextSibling')) {
       strong.classList.add('standalone');
     }
   });
+}
+
+export default function decorate(doc) {
+  decorateFirstPublished(doc);
+  decorateBoldBodyLinks(doc);
+  sizeNewsVideos(doc);
+  markStandaloneBold(doc);
+
+  // content that arrives after the template ran (the sections of a Fragment block, e.g.
+  // the article body of "Technology helps improve colonoscopy…") gets the same bold
+  // handling once it is in the page
+  const main = doc.querySelector('main');
+  if (!main) return;
+  new MutationObserver((mutations) => {
+    const content = mutations.some((mutation) => [...mutation.addedNodes]
+      .some((node) => node.nodeType === Node.ELEMENT_NODE
+        && (node.matches('.default-content-wrapper') || node.querySelector('.default-content-wrapper'))));
+    if (!content) return;
+    decorateBoldBodyLinks(doc);
+    markStandaloneBold(doc);
+  }).observe(main, { childList: true, subtree: true });
 }
