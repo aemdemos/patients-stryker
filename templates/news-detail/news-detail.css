@@ -667,6 +667,25 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
 }
 
 
+/* section style `blank-above`: the empty paragraph the source authors typed above it
+   (<p>&nbsp;</p>, which EDS drops): the section starts one blank 14px line plus the
+   paragraph gap below the text above (49px) instead of the section gap, e.g. the NEPTUNE S
+   button under "Begin your Journey to Zero* harm today at Neptune S." */
+body.news-detail main > .section.blank-above {
+  padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-block-l));
+}
+
+body.news-detail main > .section.blank-above > .default-content-wrapper > :first-child {
+  margin-top: 0;
+}
+
+/* a button right after the references of a `disclaimer` section (e.g. "Back to trending
+   topics" closing the colonoscopy article's small print) sits a paragraph gap below
+   them, as on the source, not the references' section gap */
+body.news-detail main > .section.disclaimer > .default-content-wrapper > :is(ol, ul):has(+ p.button-wrapper) {
+  margin-bottom: var(--space-block);
+}
+
 /* section style `white-lead`: a Columns (…, large-headline) video row whose text sits in a
    white Large Headline box below a blank line (stryker.com .has-background.bg-white after
    a `<p>&nbsp;</p>`, e.g. "Watch Kevin Lobo on CNBC's Squawk Alley"): the video at the row
@@ -798,6 +817,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     column-gap: calc(2 * var(--container-gutter));
     align-items: start;
     margin-top: calc(var(--space-section) + var(--space-block-xs)); /* the source's 49px from the text to the portrait, with the 15px paragraph gap */
+  }
+
+  body.news-detail main > .section.blank-above {
+    padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-section));
   }
 }
 

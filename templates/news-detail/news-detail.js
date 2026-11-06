@@ -139,13 +139,31 @@ function sizeNewsVideos(doc) {
  * them apart; CSS alone can't, as it ignores the text around an element.
  * @param {Document} doc The document
  */
-export default function decorate(doc) {
-  decorateFirstPublished(doc);
-  decorateBoldBodyLinks(doc);
-  sizeNewsVideos(doc);
-  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong').forEach((strong) => {
+function markStandaloneBold(doc) {
+  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong:not(.standalone)').forEach((strong) => {
     if (!lineText(strong, 'previousSibling') && !lineText(strong, 'nextSibling')) {
       strong.classList.add('standalone');
     }
   });
+}
+
+export default function decorate(doc) {
+  decorateFirstPublished(doc);
+  decorateBoldBodyLinks(doc);
+  sizeNewsVideos(doc);
+  markStandaloneBold(doc);
+
+  // content that arrives after the template ran (the sections of a Fragment block, e.g.
+  // the article body of "Technology helps improve colonoscopy…") gets the same bold
+  // handling once it is in the page
+  const main = doc.querySelector('main');
+  if (!main) return;
+  new MutationObserver((mutations) => {
+    const content = mutations.some((mutation) => [...mutation.addedNodes]
+      .some((node) => node.nodeType === Node.ELEMENT_NODE
+        && (node.matches('.default-content-wrapper') || node.querySelector('.default-content-wrapper'))));
+    if (!content) return;
+    decorateBoldBodyLinks(doc);
+    markStandaloneBold(doc);
+  }).observe(main, { childList: true, subtree: true });
 }
