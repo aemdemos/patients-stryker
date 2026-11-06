@@ -564,13 +564,13 @@ body.long-page-detail-corp main > .section.separator.spacer {
 /* a rule with an empty large headline below it and content after (`separator, spacer`, Mako
    surgeon campaign "INSIGHTFUL DATA ANALYTICS"): 20px above the rule (30px from 600px), then
    the rule's own 20px (50px) and the headline's 20px (30px) before the next section */
-body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer)) {
+body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer, :empty)) {
   height: calc(2 * var(--space-block-l));
   margin-block: var(--space-block-l) 0;
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer)) {
+  body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer, :empty)) {
     height: calc(var(--space-section-l) + var(--space-section));
     margin-top: var(--space-section);
   }
@@ -976,4 +976,11 @@ body.long-page-detail-corp main h4 :is(span).text-1-25 {
    resources "BioSkills"; a `separator` rule above it as well) ---- */
 body.long-page-detail-corp main > .section:has(> .default-content-wrapper:first-child > h2.underline:only-child):not(:has(> .default-content-wrapper ~ :not(:empty))) {
   margin-bottom: calc(var(--space-block) + var(--space-section));
+}
+
+/* ---- list bullets in enlarged copy (`p-1-25`, `p-1-5`, `p-1-75`, `p-2`, `p-2-5`): on
+   stryker.com the size span sits inside a 14px list item, so the bullet keeps the 14px size
+   (Mako surgeon campaign "Enhance patient engagement…") ---- */
+body.long-page-detail-corp main .section:is(.p-1-25, .p-1-5, .p-1-75, .p-2, .p-2-5) > div li::marker {
+  font-size: var(--body-font-size-m);
 }
