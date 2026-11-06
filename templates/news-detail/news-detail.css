@@ -567,6 +567,20 @@ body.news-detail main span.box-gold a:any-link > strong {
   text-transform: none;
 }
 
+
+/* …a bold h3 is that live h3 > span.futura-bold: the h3 keeps the Egyptienne line and only
+   its bold words are Futura, so the line is as tall as the source's mixed-font one (28px for
+   a 21px h3 at 1440px instead of 22px, e.g. the five steps of the workplace violence article
+   and the SHEA CAUTI practice updates) */
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3:has(strong) {
+  font-family: var(--heading-font-family);
+}
+
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
 /* …the boxes side by side in a row are as tall as the tallest: the row's cells stretch to
    the same height, the paragraph and its box fill the cell (stryker.com: 122px and 122px at
    1440px, "Register for free" and "Follow @strykerfornurses") */
@@ -991,3 +1005,47 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
   }
 }
 
+
+/* section style `gold-boxes`: each cell of the section's Columns block is a plain gold box
+   (stryker.com .has-background.bg-gold rich text in a col-sm-6 col-md-4 row, e.g. the three
+   workplace violence figures: 440 x 115px at 1440px, 5% padding on top and at the sides,
+   10px below the text, the text's 15px margin inside the box and 3% below it), its text
+   centred on 1.15 lines (22px apart for the 17.5px text); the boxes of a row are as tall as
+   the tallest; they stack on phones, go 2 per row from 600px and 3 per row from 900px */
+body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+  align-items: stretch;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p {
+  flex: 1 1 auto;
+  margin: 0 0 3%;
+  padding: 5% 5% calc(var(--space-block-s) + var(--space-block));
+  background-color: var(--color-accent);
+  text-align: center;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p span.text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.gold-boxes .columns.block > div {
+    flex-flow: row wrap;
+  }
+
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+    flex: 0 0 50%;
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+    flex: 1 1 0;
+  }
+}
