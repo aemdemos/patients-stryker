@@ -32,6 +32,8 @@ function decorateNestedBlocks(body) {
 
 export default function decorate(block) {
   const nested = block.classList.contains('with-nested-blocks');
+  // `open` variant: every panel starts open (www.stryker.com ispies); they still close on click
+  const startOpen = block.classList.contains('open');
   const list = document.createElement('ul');
   list.className = 'accordion-list';
   const bodies = [];
@@ -60,7 +62,11 @@ export default function decorate(block) {
     if (nested && !button.textContent.trim()) button.setAttribute('aria-label', 'Expand section');
 
     content.className = 'accordion-item-body';
-    content.hidden = true;
+    content.hidden = !startOpen;
+    if (startOpen) {
+      button.setAttribute('aria-expanded', 'true');
+      item.classList.add('accordion-item-open');
+    }
 
     button.addEventListener('click', () => {
       const open = button.getAttribute('aria-expanded') === 'true';

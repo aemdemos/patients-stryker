@@ -116,8 +116,12 @@ function keepNodes(doc, nodes, style) {
   return box;
 }
 
-function keepBlock(block) {
+function keepBlock(block, from) {
   block.setAttribute('data-keep', 'section');
+  // the source row spacing after the component it replaces (markRowEnds; ispies: the empty row
+  // after each accordion)
+  const end = from && from.getAttribute('data-row-end');
+  if (end) block.setAttribute('data-row-end', end);
   return block;
 }
 
@@ -180,14 +184,42 @@ function blockCells(table) {
     .flatMap((tr) => [...tr.children].flatMap((td) => [...td.childNodes]));
 }
 
+/**
+ * The copy of an Accordion panel keeps its source size and font as bracket tags (a panel has
+ * no section style; ispies: 17.5px lists `[[text-1-25]…]`).
+ */
+function tagPanelCopy(nodes, doc, h) {
+  nodes.filter((n) => n.nodeType === 1 && typeof n.copyStyle === 'string' && n.copyStyle).forEach((n) => {
+    const own = n.copyStyle.split(',').map((s) => s.trim());
+    const size = own.find((s) => s.startsWith('p-') && /\d/.test(s[2]));
+    const tags = [size ? `text-${size.slice(2)}` : '', own.includes('serif') ? 'serif' : ''].filter(Boolean);
+    if (tags.length) h.tagCopy(n, tags.join(','), doc);
+  });
+}
+
+/**
+ * The Accordion options of a source accordion: `open` when every panel starts open
+ * (.panel-collapse.in, ispies), `gray-list` when each panel's list sits in a light-grey box
+ * (a .has-background.bg-light-gray rich text holding the list).
+ */
+function accordionOptions(panels) {
+  const open = panels.every((p) => p.querySelector('.panel-collapse.in, .panel-collapse.show'));
+  const gray = panels.every((p) => [...p.querySelectorAll('.has-background.bg-light-gray')]
+    .some((b) => b.querySelector('ul, ol')));
+  return [open ? 'open' : '', gray ? 'gray-list' : ''].filter(Boolean).join(', ');
+}
+
 function accordions(main, doc, h) {
   main.querySelectorAll('.panel-group').forEach((group) => {
     const panels = [...group.querySelectorAll(':scope > .panel')].filter((p) => p.querySelector('.panel-title'));
     if (!panels.length) return;
+    const options = accordionOptions(panels);
+    const name = options ? `Accordion (${options})` : 'Accordion';
     const items = panels.map((panel) => ({
       label: h.text(panel.querySelector('.panel-title')),
       body: contentNodes(panel.querySelector('.panel-body') || panel, doc, h),
     }));
+    items.forEach(({ body }) => tagPanelCopy(body, doc, h));
     const target = group.closest('.c-accordion') || group;
     const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))));
     // in a tab, panels can't be sections: the blocks in a panel (Columns rows, e.g. the Mako
@@ -203,7 +235,8 @@ function accordions(main, doc, h) {
         p.textContent = label;
         return [p, body];
       });
-      target.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name: 'Accordion', cells: rows })));
+      const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
+      target.replaceWith(keepBlock(block, target));
       return;
     }
     if (nested) {
@@ -220,7 +253,8 @@ function accordions(main, doc, h) {
       p.textContent = label;
       return [p, body];
     });
-    target.replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name: 'Accordion', cells: rows })));
+    const block = WebImporter.Blocks.createBlock(doc, { name, cells: rows });
+    target.replaceWith(keepBlock(block, target));
   });
 }
 

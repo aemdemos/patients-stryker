@@ -809,3 +809,29 @@ body.long-page-detail-corp main .section.serif.p-1 .columns :is(p) {
 body.long-page-detail-corp main .section.serif.p-1 .columns :is(li) {
   line-height: var(--long-page-detail-corp-serif-item-line-height);
 }
+
+/* `p-1-75` paragraphs (24.5px Egyptienne spans in the source's 14px paragraphs, ispies intro):
+   the mixed fonts set them 22px apart on stryker.com */
+body.long-page-detail-corp main > .section.p-1-75 > .default-content-wrapper > :is(p) {
+  margin-bottom: var(--space-block-l);
+}
+
+/* accordions: each panel ends with a 1px grey rule (stryker.com .panel border, under the
+   label when closed, under the content when open; ispies, Mako surgeon campaign) */
+body.long-page-detail-corp main .accordion .accordion-item {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* the panel's last line (e.g. a button) 15px above that rule */
+body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:not(ul, ol) {
+  margin-bottom: var(--space-block);
+}
+
+/* `column-8-12` title boxes (ispies): the source box's own padding, 4% at the top and 3% on
+   the left of its width (36 / 27px at 1440) from 600px */
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+    padding-block-start: 2.5vw;
+    padding-inline-start: 1.9vw;
+  }
+}
