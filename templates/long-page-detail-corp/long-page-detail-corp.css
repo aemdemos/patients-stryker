@@ -1077,3 +1077,12 @@ body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
     margin-bottom: var(--space-inset-m);
   }
 }
+
+/* ---- a large headline at the top of a Columns cell (`[[headline-N]…]`, jr45 "What would you
+   do?"): the source headline has no box, so its first line is not set lower (columns-corp
+   insets boxed headlines 10px) ---- */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns > div > div > h1:first-child:has(> span[class*="headline-"]) {
+    margin-top: 0;
+  }
+}
