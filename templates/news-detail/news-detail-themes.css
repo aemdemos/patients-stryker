@@ -40,6 +40,25 @@ body.news-detail.full-width main > .section.col-10.phone-full > div {
   }
 }
 
+/* section style `bg-white` on full-width pages: the source's white text box (.has-background
+   bg-white, e.g. the Smart Care handoff article) keeps its 10px inset on both sides and its
+   3% margin below (41px under the box at 1440px, 11px at 390px) */
+body.news-detail.full-width main > .section.bg-white {
+  --news-box-below: calc(3 * (min(100%, var(--container-max)) - 2 * var(--container-gutter)) / 100);
+
+  margin-bottom: calc(var(--space-block-l) + var(--news-box-below));
+}
+
+body.news-detail.full-width main > .section.bg-white > .default-content-wrapper > * {
+  margin-inline: var(--space-block-s);
+}
+
+@media (width >= 600px) {
+  body.news-detail.full-width main > .section.bg-white {
+    margin-bottom: calc(var(--space-section) + var(--news-box-below));
+  }
+}
+
 /* the `separator` rule runs across the whole page, edge to edge (source .c-section-separator:
    1440px at 1440px, "When Stryker employees…"; mix-width: the rule between the article and
    the "Connect with us" band), not across the container: it sits on the section, which
