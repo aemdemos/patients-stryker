@@ -553,8 +553,12 @@ function rowCopyStyle(cells, doc) {
   if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
     dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
   }
+  // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
+  // the Egyptienne 24.5px intro in the grey box beside the faculty)
+  const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
   copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant))
-    .forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
+    .forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? 'serif' : '']
+      .filter(Boolean).join(','), doc));
   // serif copy at the source's 14px: `serif, p-1` (in Columns `serif` alone is 21px;
   // footed attachments, jr45 faculty)
   const parts = dominant.split(',').map((s) => s.trim()).filter(Boolean);

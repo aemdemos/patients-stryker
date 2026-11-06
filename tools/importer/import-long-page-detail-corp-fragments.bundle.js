@@ -2209,7 +2209,8 @@ var CustomImportScript = (() => {
     if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
     }
-    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, sizeTag(n.copyStyle), doc));
+    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
+    copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? "serif" : ""].filter(Boolean).join(","), doc));
     const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
     if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
     return dominant;

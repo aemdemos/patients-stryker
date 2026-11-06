@@ -656,6 +656,27 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
   body.corp .columns.stack:not(.media-pair) .columns-img-col {
     margin-bottom: calc(2 * var(--space-block) + var(--space-section));
   }
+
+  /* a cell that is a box alone (`gray-last` beside jr45 faculty) spans the cell's rows (at its
+     own height beside other cells), and its extra height goes to the last row, so the other
+     cells' names stay under their images */
+  body.corp .columns.stack.columns-4-cols > div > div > .columns-box:only-child {
+    grid-row: 1 / -1;
+  }
+
+  body.corp .columns.stack.gray-last > div > div > .columns-box:only-child {
+    align-self: start;
+  }
+
+  body.corp .columns.stack.columns-4-cols:has(> div > div > .columns-box:only-child) > div {
+    grid-auto-rows: auto auto 1fr;
+  }
+
+  /* jr45 faculty (`stack, gray-last`): the image and its text are one source column, the name
+     24px under the image */
+  body.corp .columns.stack.gray-last .columns-img-col {
+    margin-bottom: var(--space-section);
+  }
 }
 
 @media (width >= 900px) {

@@ -658,10 +658,10 @@ body.long-page-detail-corp main > .section .columns p.button-wrapper {
   margin-block: 0 var(--space-block);
 }
 
-/* the 21px / 28px / 35px / 49px size tags set their own line spacing, 1.06x as on the source
-   (22.26px at 21px: jr45 faculty names, endoscopy video titles; 37.1px at 35px), not the
-   copy's */
-body.long-page-detail-corp main span:is(.text-1-5, .text-2, .text-2-5, .text-3-5) {
+/* the 21px / 24.5px / 28px / 35px / 49px size tags set their own line spacing, 1.06x as on
+   the source (22.26px at 21px: jr45 faculty names, endoscopy video titles; 25.97px at 24.5px:
+   jr45 season 3 March grey box, TEACH thank-you, webinars; 37.1px at 35px), not the copy's */
+body.long-page-detail-corp main span:is(.text-1-5, .text-1-75, .text-2, .text-2-5, .text-3-5) {
   line-height: var(--heading-line-height);
 }
 
