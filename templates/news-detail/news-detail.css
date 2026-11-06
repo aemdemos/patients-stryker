@@ -427,6 +427,7 @@ body.news-detail {
   --news-font-scale-0-8: 0.8em; /* [[text-0-8]], below */
   --news-scale-0-8: 0.8; /* h3-0-8 section style, below */
   --news-scale-1-25: 1.25; /* h3-1-25 section style, below */
+  --news-gold-box-line-height: 1.25; /* gold-boxes text: 22px lines for 17.5px, below */
   --news-h3-size: var(--heading-font-size-m); /* the corp h3 size; 21px from 600px */
   --news-h2-size: var(--heading-font-size-l); /* the corp h2 size; 24.5px from 600px */
   --news-font-scale-1-5: 1.5em; /* [[text-1-5]], below */
@@ -1026,15 +1027,30 @@ body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > 
   margin: 0 0 calc(var(--gold-box-width) * 3 / 100);
   padding: calc(var(--gold-box-width) * 5 / 100) calc(var(--gold-box-width) * 5 / 100) calc(var(--space-block-s) + var(--space-block));
   background-color: var(--color-accent);
+  font-size: var(--body-font-size-l);
+  line-height: var(--news-gold-box-line-height);
   text-align: center;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 body.news-detail main > .section.gold-boxes .columns.block > div > div > p:last-child {
   margin-bottom: 0;
 }
 
-body.news-detail main > .section.gold-boxes .columns.block span.text-1-25 {
-  line-height: var(--heading-line-height-h4);
+/* …the box text is 17.5px, 22px apart (stryker.com span.fontsize-1-25em), and its Bold
+   figure on the first line is 21px black Futura bold (span.futura-bold > span.fontsize-1-5em,
+   e.g. "$62,100 to $67,100"): the sizes come with the section style, the text is authored
+   with plain Bold only */
+body.news-detail main > .section.gold-boxes .columns.block strong {
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
 }
 
 @media (width >= 600px) {
