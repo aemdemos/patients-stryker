@@ -200,10 +200,12 @@ var CustomImportScript = (() => {
     });
     return p;
   }
+  var CONTACT_LINE = /^(phone|tel|fax|e-?mail)\b|[^\s@]+@[^\s@]+\.[^\s@]+/i;
   function mapLink(contactus, doc) {
     const map = contactus.querySelector("[data-address]");
     if (!map) return null;
-    const lines = map.getAttribute("data-address").split(/<br\s*\/?>|<\/p>/i).map((line) => line.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
+    const clean = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+    const lines = map.getAttribute("data-address").split(/<\/p>/i).filter((paragraph) => !CONTACT_LINE.test(clean(paragraph))).flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i)).map((line) => clean(line).replace(/[\s,]+$/, "")).filter(Boolean);
     if (!lines.length) return null;
     const address = lines.join(", ");
     return el(doc, "p", link(doc, `https://www.google.com/maps?q=${encodeURIComponent(address)}`, address));

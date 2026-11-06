@@ -164,13 +164,18 @@ function addressLines(holder, doc) {
   return p;
 }
 
-/** The Google Maps link of the contact map (its data-address, one line). */
+const CONTACT_LINE = /^(phone|tel|fax|e-?mail)\b|[^\s@]+@[^\s@]+\.[^\s@]+/i;
+
+/** The Google Maps link of the contact map (its data-address, contact lines dropped, one line). */
 function mapLink(contactus, doc) {
   const map = contactus.querySelector('[data-address]');
   if (!map) return null;
+  const clean = (html) => html.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
   const lines = map.getAttribute('data-address')
-    .split(/<br\s*\/?>|<\/p>/i)
-    .map((line) => line.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim())
+    .split(/<\/p>/i)
+    .filter((paragraph) => !CONTACT_LINE.test(clean(paragraph)))
+    .flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i))
+    .map((line) => clean(line).replace(/[\s,]+$/, ''))
     .filter(Boolean);
   if (!lines.length) return null;
   const address = lines.join(', ');

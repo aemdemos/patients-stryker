@@ -19,32 +19,32 @@ body.contact-division main h1 {
   margin-bottom: var(--space-section);
 }
 
-body.contact-division main > .section > .default-content-wrapper:has(+ .columns-wrapper) {
+body.contact-division main > .section > .default-content-wrapper:has(+ .columns-wrapper .map-embed) {
   padding-bottom: 0;
 }
 
-body.contact-division main .columns > div > div:first-child {
+body.contact-division main .columns:has(.map-embed) > div > div:first-child {
   padding-bottom: var(--space-block-l);
 }
 
-body.contact-division main .columns > div > div:first-child > p {
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > p {
   margin-bottom: 0;
 }
 
-body.contact-division main .columns > div > div:first-child > h3 {
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > h3 {
   margin-top: var(--space-block-l);
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }
 
-body.contact-division main .columns > div > div:first-child > h4 {
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > h4 {
   margin: var(--space-block) 0 0;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-bold);
 }
 
-body.contact-division main .columns > div > div:first-child > :is(h3, h4):first-child {
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > :is(h3, h4):first-child {
   margin-top: 0;
 }
 
@@ -54,15 +54,15 @@ body.contact-division main .columns > div > div:first-child > :is(h3, h4):first-
     font-weight: var(--font-weight-bold);
   }
 
-  body.contact-division main .columns > div > div:first-child {
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child {
     padding-bottom: var(--space-section);
   }
 
-  body.contact-division main .columns > div > div:first-child > h3 {
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child > h3 {
     margin-top: var(--space-section);
   }
 
-  body.contact-division main .columns > div > div:first-child > h4 {
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child > h4 {
     font-family: var(--display-font-family);
     font-size: var(--heading-font-size-m);
   }
