@@ -695,3 +695,30 @@ body.news-detail.news-video main > .section.video-text .dm-video {
   aspect-ratio: var(--news-video-aspect, 16 / 9);
   object-fit: cover;
 }
+
+/* a row of photos on a full-width page (every cell an image, e.g. the Smart Hospital Summit
+   photos, stryker.com col-sm-6 col-md-4 standalone images): each photo centred in its cell
+   with the source image component's 20px below it (20px apart and 40px to "Related" at
+   390px); from 600px 2 per row, 30px apart (420px each at 900px on the source), with 30px
+   below; 3 per row from 900px (440px each and 60px to "Related" at 1440px) */
+body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.columns-img-col))) > div > div {
+  margin-bottom: var(--space-block-l);
+  text-align: center;
+}
+
+@media (width >= 600px) {
+  body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.columns-img-col))) > div {
+    flex-flow: row wrap;
+  }
+
+  body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.columns-img-col))) > div > div {
+    flex: 0 0 50%;
+    margin-bottom: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.columns-img-col))) > div > div {
+    flex: 1 1 0;
+  }
+}

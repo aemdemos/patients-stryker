@@ -165,7 +165,11 @@ var CustomImportScript = (() => {
     const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img"));
     if (!items.length) return;
     const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
+    const cols = items[0].className;
+    let variant = "";
+    if (/\bcol-sm-4\b/.test(cols)) variant = ", three-up";
+    else if (/\bcol-sm-6\b/.test(cols)) variant = ", two-up";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: `Cards Corp (teaser${variant})`, cells }));
   }
 
   // tools/importer/parsers/cards-corp-resources.js
@@ -760,6 +764,18 @@ var CustomImportScript = (() => {
     const others = [...col.parentElement.children].filter((el) => el !== col);
     if (others.some((el) => text2(el) || el.querySelector("img, video, iframe"))) return "";
     return match[1] === "4" ? "image-1-3" : "image-1-2";
+  }
+  function imageRow(component) {
+    const col = component.closest('.colctrl [class*="col-sm-"]');
+    const row = col && col.parentElement;
+    if (!row || !row.closest(".colctrl")) return null;
+    const cols = [...row.children];
+    if (cols.length < 2) return null;
+    const images = cols.map((c) => {
+      const found = c.querySelectorAll(".c-standalone-image");
+      return found.length === 1 && !text2(c) && c.querySelectorAll("img").length === 1 ? found[0] : null;
+    });
+    return images.every(Boolean) ? images : null;
   }
   function imageNodes(component, doc) {
     const nodes = [...component.querySelectorAll("img")].flatMap((source) => {
@@ -1461,6 +1477,14 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-standalone-image")) {
+        const row = !isFirst && imageRow(component);
+        if (row) {
+          row.forEach((image) => consumed.add(image));
+          const cells = row.map((image) => imageNodes(image, doc));
+          startSection("columns").nodes.push(WebImporter.Blocks.createBlock(doc, { name: "Columns", cells: [cells] }));
+          current = null;
+          return;
+        }
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
         const linkStyle = nodes2.some((node) => node.imageLink) ? "image-link" : "";
@@ -1734,7 +1758,8 @@ var CustomImportScript = (() => {
       "news-detail",
       "news-detail-xf",
       "long-page-detail-corp",
-      "long-page-detail-corp-fragments"
+      "long-page-detail-corp-fragments",
+      "event-detail"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {

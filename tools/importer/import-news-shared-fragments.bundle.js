@@ -43,26 +43,44 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
-  var SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
-  function rewriteSourceLink(href) {
+  var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
+  function sourceHostFor(payload) {
+    try {
+      const { hostname } = new URL(payload.params.originalURL);
+      if (hostname === "www.stryker.com") return CORP_HOST_RE;
+    } catch (e) {
+    }
+    return PATIENTS_HOST_RE;
+  }
+  function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
     if (!href) return null;
     const value = href.trim();
     let rest;
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
-    else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, "") || "/";
+    else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
+    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isSkinnedContent = isSaResources || isIvsTreatment;
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments",
+      "event-detail"
+    ].includes(payload.template.name));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      if (isNewsDetail) return;
       if (isIvsTreatment) {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
@@ -196,8 +214,9 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
+      const hostRe = sourceHostFor(payload);
       element.querySelectorAll("a[href]").forEach((a) => {
-        const rewritten = rewriteSourceLink(a.getAttribute("href"));
+        const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
       });
       if (isSkinnedContent) return;
@@ -232,6 +251,10 @@ var CustomImportScript = (() => {
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
       name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    },
+    // an article body kept as its own fragment document (the page's Fragment block)
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master": {
+      name: 'Article body of "Technology helps improve colonoscopy safety and efficiency"'
     }
   };
 
@@ -248,7 +271,9 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
   function xfFragmentPath(xf) {
-    return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+    const entry = xf_fragment_map_default[xfKey(xf)];
+    if (!entry) return null;
+    return entry.fragment || xfToFragmentPath(xf);
   }
 
   // tools/importer/import-news-shared-fragments.js

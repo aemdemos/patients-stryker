@@ -704,6 +704,13 @@ body.news-detail main .cards-corp.resources.block > ul > li .cards-corp-card-ima
   max-height: 238px;
 }
 
+/* …and the list ends the source's 20px item margin and 20px component margin below the
+   last title (55px from the title to the next section at every width, e.g. "Related"
+   under the white paper of the pediatric virtual nursing pilot), with the section gap */
+body.news-detail main .cards-corp.resources {
+  padding-bottom: var(--space-block-l);
+}
+
 /* a button right after the references of a `disclaimer` section (e.g. "Back to trending
    topics" closing the colonoscopy article's small print) sits a paragraph gap below
    them, as on the source, not the references' section gap */
@@ -850,6 +857,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
 
   body.news-detail main > .section.box-gap-5 {
     padding-top: calc(var(--corp-blank-line) + var(--news-box-gap) - var(--space-section));
+  }
+
+  body.news-detail main .cards-corp.resources {
+    padding-bottom: var(--space-block-s);
   }
 }
 

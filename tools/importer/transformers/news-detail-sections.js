@@ -86,6 +86,7 @@ const SHARED_XF_SIGNATURES = [
   ['Resources Explore Sage homepage', '/content/experience-fragments/stryker/sage/en/footer/footer/master'],
   ['Resources Explore Acute Care homepage', '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master'],
   ['Resources Explore Emergency Care homepage', '/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master'],
+  ['Colonoscopy and colorectal cancer screening procedures are on the rise', '/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master'],
 ];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
@@ -692,6 +693,24 @@ function imageColumnStyle(component) {
   const others = [...col.parentElement.children].filter((el) => el !== col);
   if (others.some((el) => text(el) || el.querySelector('img, video, iframe'))) return '';
   return match[1] === '4' ? 'image-1-3' : 'image-1-2';
+}
+
+/**
+ * The standalone images of a source column row (.colctrl) when every column of the row
+ * holds exactly one image and nothing else (e.g. the three photos of the Smart Hospital
+ * Summit, col-sm-6 col-md-4); null otherwise.
+ */
+function imageRow(component) {
+  const col = component.closest('.colctrl [class*="col-sm-"]');
+  const row = col && col.parentElement;
+  if (!row || !row.closest('.colctrl')) return null;
+  const cols = [...row.children];
+  if (cols.length < 2) return null;
+  const images = cols.map((c) => {
+    const found = c.querySelectorAll('.c-standalone-image');
+    return found.length === 1 && !text(c) && c.querySelectorAll('img').length === 1 ? found[0] : null;
+  });
+  return images.every(Boolean) ? images : null;
 }
 
 function imageNodes(component, doc) {
@@ -1601,6 +1620,17 @@ export default function transform(hookName, element, payload) {
       return;
     }
     if (component.matches('.c-standalone-image')) {
+      // a row of photos (one image per column, nothing else): Columns, one image per cell,
+      // in a section of its own (news-detail-themes.css lays it out as the source on
+      // full-width pages)
+      const row = !isFirst && imageRow(component);
+      if (row) {
+        row.forEach((image) => consumed.add(image));
+        const cells = row.map((image) => imageNodes(image, doc));
+        startSection('columns').nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Columns', cells: [cells] }));
+        current = null;
+        return;
+      }
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
       const linkStyle = nodes.some((node) => node.imageLink) ? 'image-link' : '';
@@ -1666,10 +1696,27 @@ export default function transform(hookName, element, payload) {
       return;
     }
     // a Resources & Download list on a form page (LCA0): kept as default content, its
-    // heading and one link per item (the thumbnail is dropped). No block exists for the
-    // component yet (#394 / #435); on pages without a form it is still ignored.
+    // heading and one link per item (the thumbnail is dropped). On other pages (e.g. the
+    // Mutual Aid ProCare case study) it is a section of its own: its heading underlined
+    // (the grey rule, authoring conventions), the list left for the cards-corp-resources
+    // parser (Cards Corp (resources): cover image + Heading 5 link per download)
     if (component.matches('.c-resourcesanddownload')) {
-      if (!hasForm) return;
+      if (!hasForm) {
+        if (!component.querySelector('.item img')) return;
+        const section = startSection('cards');
+        const heading = component.querySelector('.title-container :is(h2, h3, h4)');
+        if (heading && text(heading)) {
+          const h2 = doc.createElement('h2');
+          const u = doc.createElement('u');
+          u.textContent = text(heading);
+          h2.append(u);
+          section.nodes.push(h2);
+          heading.remove();
+        }
+        section.nodes.push(component);
+        current = null;
+        return;
+      }
       const nodes = [];
       const heading = component.querySelector('.title-container h2');
       if (heading && text(heading)) {
