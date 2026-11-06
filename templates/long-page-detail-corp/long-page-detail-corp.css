@@ -393,6 +393,7 @@ body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
   --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
   --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
+  --long-page-detail-corp-serif-1-75-line-height: 1.265; /* measured: a 24.5px Egyptienne span in a 14px source paragraph renders 31px lines (ispies intro) */
   --long-page-detail-corp-copy-3-5: 49px; /* 1.75em of a 28px source H1 (Mako refreshers) */
   --long-page-detail-corp-gray-gradient: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* source .bg-gray-gradient */
   --long-page-detail-corp-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
@@ -790,11 +791,21 @@ body.long-page-detail-corp main > .section.gold-bar {
 }
 
 /* section style `column-8-12` (with a coloured `headline-box`; ispies event titles): the box
-   two thirds of the content width (source col-sm-8 beside an empty col-sm-4, 840px) */
+   two thirds of the content width (source col-sm-8 beside an empty col-sm-4, 840px). The
+   source title is a Heading 3 with its 15px bottom margin inside the box (4% top padding on
+   phones), and the box is 5px (15px from 600px) further from the line below it (its margin
+   takes the place of the section's 15px) */
+body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper) {
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+  padding-top: 4%;
+  padding-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
     max-width: calc(var(--container-max) * 2 / 3);
     margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
+    margin-bottom: calc(2 * var(--space-block));
     width: 66.667%;
   }
 }
@@ -811,9 +822,10 @@ body.long-page-detail-corp main .section.serif.p-1 .columns :is(li) {
 }
 
 /* `p-1-75` paragraphs (24.5px Egyptienne spans in the source's 14px paragraphs, ispies intro):
-   the mixed fonts set them 22px apart on stryker.com */
+   the mixed fonts set their lines 31px apart and the paragraphs 15px on stryker.com */
 body.long-page-detail-corp main > .section.p-1-75 > .default-content-wrapper > :is(p) {
-  margin-bottom: var(--space-block-l);
+  margin-bottom: var(--space-block);
+  line-height: var(--long-page-detail-corp-serif-1-75-line-height);
 }
 
 /* accordions: each panel ends with a 1px grey rule (stryker.com .panel border, under the
