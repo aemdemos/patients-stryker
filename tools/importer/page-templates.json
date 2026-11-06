@@ -1180,6 +1180,73 @@
           ]
         }
       ]
+    },
+    {
+      "name": "people",
+      "urls": [
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1064.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1346.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1652.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1663.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/2575.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/3326.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/5380.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/8093.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/8216.html",
+        "https://www.stryker.com/us/en/about/our-board-of-directors/directors/8594.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/1004.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/1361.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/1652.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/1942.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/1997.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/2006.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/2158.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/2943.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/3326.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/4473.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/5238.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/6278.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/6401.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/6659.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/7462.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/8540.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/8739.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/9122.html",
+        "https://www.stryker.com/us/en/about/our-management/leaders/9569.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/about/our-management/leaders/1004.html",
+      "description": "www.stryker.com People pages (#515): 19 leader and 10 director bios (Back link Fragment, H1 with gold first name + role in a `serif, p-1-75, h1-1-25` section, Columns [bio | portrait]) and the leaders index (H1 + intro in `serif, p-2`, an H2 per group, Cards Corp (people) tiles). Script: tools/importer/import-people.js.",
+      "blocks": [
+        {
+          "name": "fragment",
+          "instances": [
+            ".experienceFragment"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".c-rich-text-editor:has(h1)"
+          ]
+        },
+        {
+          "name": "cards-corp-people",
+          "instances": [
+            ".buildingblock"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "people-fragments",
+      "urls": [
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
+      "description": "Back link Experience Fragments of the People bio pages (#515), imported from their XF master URLs as fragment documents at the paths in tools/importer/xf-fragment-map.js. Script: tools/importer/import-people-fragments.js.",
+      "blocks": []
     }
   ]
 }

@@ -102,10 +102,12 @@ export default function transform(hookName, element, payload) {
   // the corp event-detail pages of import-event-detail.js rebuild their body the same way)
   // The corp long-page-detail-corp pages (and their shared fragments) are rebuilt the
   // same way (long-page-detail-corp-sections.js), so they get the same treatment, as do
-  // the corp division contact pages (contact-division-sections.js).
+  // the corp division contact pages (contact-division-sections.js) and the corp People
+  // pages with their Back link fragments (import-people.js).
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
     'event-detail', 'contact-division',
+    'people', 'people-fragments',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 

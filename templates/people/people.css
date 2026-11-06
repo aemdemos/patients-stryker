@@ -1,0 +1,19 @@
+/* a people page that opens with its H1 (the leaders index; bios open with the Back fragment).
+   The margin collapses with the header's bottom margin, so it is the whole header -> H1 gap. */
+body.people main > .section:first-child > .default-content-wrapper > h1:first-child {
+  margin-top: var(--space-section);
+}
+
+@media (width >= 600px) {
+  body.people main > .section:first-child > .default-content-wrapper > h1:first-child {
+    margin-top: calc(var(--space-section) + var(--space-block-s));
+  }
+
+  body.people .columns > div > div:first-child {
+    flex: 0 0 58.333%;
+  }
+
+  body.people .columns > div > div:last-child {
+    flex: 0 0 41.667%;
+  }
+}

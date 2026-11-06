@@ -13,6 +13,9 @@ const cases = [
   [xfFragmentPath, `${XF}/sage/en/business_unit/social-icons/master.html?wcmmode=disabled`, '/us/en/fragments/stryker/sage/en/business-unit/social-icons/master'],
   // "_2022" → "2022": aem.live drops leading dashes from folder names
   [xfFragmentPath, '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop.html', '/us/en/fragments/stryker/corporate/en/about/news/2022/features/advancing-healthcare/join-our-talent-network/join-our-talent-network-v2-desktop'],
+  // People bio Back links (#515)
+  [xfFragmentPath, `${XF}/corporate/en/about/our_management/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master'],
+  [xfFragmentPath, `${XF}/corporate/en/about/our_board_of_directo/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/back-button/master'],
   // not a shared XF: imported inline
   [xfFragmentPath, '/content/experience-fragments/stryker/corporate/en/about/news/features/some-article/body/master', null],
   // the rule itself works for any XF
