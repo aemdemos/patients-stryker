@@ -1074,3 +1074,29 @@ body.news-detail main > .section.gold-boxes .columns.block strong {
     flex: 1 1 0;
   }
 }
+
+/* Columns: a caption under the photo of a cell (stryker.com: a rich text below the image
+   component in the same grid column, e.g. the bio under Darryl Conway's headshot) is body
+   copy (14px, not the section's copy size) and sits the image component's 20px (30px from
+   600px) and the caption's own 3% margin below the photo (44px at 1440px, 30px at 390px) */
+body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col:has(+ p) {
+  margin-bottom: calc(var(--space-block-l) + 3%);
+}
+
+body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col ~ p:nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* …a Bold lead-in on a line of its own, then a line break and its text (the source's plain
+   <b>, e.g. "A – Airway" and the bio's name), is Humanist bold, as Bold is in news text
+   (authoring conventions), not the corp Futura bold of a Columns cell */
+body.news-detail main .columns.block:not(.large-headline) > div > div > p > strong:first-child:has(+ br) {
+  font-family: var(--body-font-family);
+}
+
+@media (width >= 600px) {
+  body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col:has(+ p) {
+    margin-bottom: calc(var(--space-section) + 3%);
+  }
+}
