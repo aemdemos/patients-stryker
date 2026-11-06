@@ -1553,6 +1553,19 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 
+  // two, three or four `spacer` sections in a row are one `spacer, large / xlarge / xxlarge`
+  // (one section for authors, the same height: template CSS)
+  const SIZES = ['', 'large', 'xlarge', 'xxlarge'];
+  for (let i = 0; i < sections.length; i += 1) {
+    let n = 1;
+    while (sections[i].kind === 'spacer' && sections[i].style === 'spacer'
+      && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer' && n < 4) n += 1;
+    if (n > 1) {
+      sections.splice(i + 1, n - 1);
+      sections[i].style = `spacer, ${SIZES[n - 1]}`;
+    }
+  }
+
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
   // `spacer` section is the metadata alone)
   const out = [];

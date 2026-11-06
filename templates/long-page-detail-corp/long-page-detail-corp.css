@@ -46,6 +46,21 @@ body.long-page-detail-corp main > .section.full-width-image.shadow img {
   box-shadow: var(--shadow-soft);
 }
 
+/* ---- the page content starts 20px lower than the corp default (30px from 600px), as on
+   stryker.com (its 15px header margin + the page section margins: the text of a title,
+   headline box or gold box 31px / 21px lower at 1440 / 375 on every long-page-detail page
+   measured: video detail, nse, endoscopy, joint replacement); a page that opens with a hero
+   keeps it against the header ---- */
+body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
+  padding-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
+    padding-top: var(--space-section);
+  }
+}
+
 /* ---- title section ---- */
 
 body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
@@ -480,6 +495,34 @@ body.long-page-detail-corp main > .section.spacer:not(.separator) {
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section.spacer:not(.separator) {
     height: var(--space-section);
+  }
+}
+
+/* `spacer, large / xlarge / xxlarge`: two, three or four rows' spacing (a source row nested in
+   other rows) */
+body.long-page-detail-corp main > .section.spacer.large:not(.separator) {
+  height: calc(2 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.spacer.xlarge:not(.separator) {
+  height: calc(3 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
+  height: calc(4 * var(--space-block-l));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.spacer.large:not(.separator) {
+    height: calc(2 * var(--space-section));
+  }
+
+  body.long-page-detail-corp main > .section.spacer.xlarge:not(.separator) {
+    height: calc(3 * var(--space-section));
+  }
+
+  body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
+    height: calc(4 * var(--space-section));
   }
 }
 

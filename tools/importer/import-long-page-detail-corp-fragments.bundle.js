@@ -1195,6 +1195,15 @@ var CustomImportScript = (() => {
     if (spacer && (title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
+    const SIZES = ["", "large", "xlarge", "xxlarge"];
+    for (let i = 0; i < sections.length; i += 1) {
+      let n = 1;
+      while (sections[i].kind === "spacer" && sections[i].style === "spacer" && sections[i + n] && sections[i + n].kind === "spacer" && sections[i + n].style === "spacer" && n < 4) n += 1;
+      if (n > 1) {
+        sections.splice(i + 1, n - 1);
+        sections[i].style = `spacer, ${SIZES[n - 1]}`;
+      }
+    }
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
