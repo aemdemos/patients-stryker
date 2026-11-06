@@ -102,16 +102,22 @@ function decorateBoldBodyLinks(doc) {
 /**
  * On `news-video` pages the video row's player takes the shape of its Scene7 video, as
  * the stryker.com viewer does (e.g. the 3:2 StrykerTalks ENT episode: 910 x 607px at
- * 1440px); news-detail-themes.css frames it 16:9 until the shape is known. Scene7's set
- * response for the adaptive video (`…/is/image/<asset>?req=set,json`) lists its
- * renditions with their size. The video's URL is the player's data-src (scripts/
- * dm-support.js), or the authored link if the player isn't built yet; the shape is set as
- * --news-video-aspect on the section.
+ * 1440px); news-detail-themes.css frames it 16:9 until the shape is known. On `full-width`
+ * pages a Video block's player does the same (e.g. the 1272 x 540 Delhi Township Fire
+ * video: 1380 x 586px at 1440px). Scene7's set response for the adaptive video
+ * (`…/is/image/<asset>?req=set,json`) lists its renditions with their size. The video's
+ * URL is the player's data-src (scripts/dm-support.js), or the authored link if the player
+ * isn't built yet; the shape is set as --news-video-aspect on the section.
  * @param {Document} doc The document
  */
 function sizeNewsVideos(doc) {
-  if (!doc.body.classList.contains('news-video')) return;
-  doc.querySelectorAll('main > .section.video-text').forEach((section) => {
+  const { classList } = doc.body;
+  const sections = [
+    classList.contains('news-video') && 'main > .section.video-text',
+    classList.contains('full-width') && 'main > .section.video-container',
+  ].filter(Boolean);
+  if (!sections.length) return;
+  doc.querySelectorAll(sections.join(', ')).forEach((section) => {
     const src = section.querySelector('video[data-src]')?.dataset.src
       || section.querySelector('a[href*="/is/content/"]')?.href;
     const asset = src?.match(/^(https:\/\/[^/]+)\/is\/content\/([^?#]+?)\.(?:m3u8|mpd)(?:[?#]|$)/);

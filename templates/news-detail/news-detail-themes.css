@@ -696,6 +696,15 @@ body.news-detail.news-video main > .section.video-text .dm-video {
   object-fit: cover;
 }
 
+/* full-width: a Video block's player in the frame of its own video file too, across the
+   container (stryker.com Scene7 viewer: 1380 x 586px for the 1272 x 540 Delhi Township Fire
+   video, 1380 x 776px for a 16:9 one at 1440px), not the poster's shape */
+body.news-detail.full-width main > .section.video-container .dm-video {
+  box-sizing: border-box;
+  aspect-ratio: var(--news-video-aspect, 16 / 9);
+  object-fit: cover;
+}
+
 /* a row of photos on a full-width page (every cell an image, e.g. the Smart Hospital Summit
    photos, stryker.com col-sm-6 col-md-4 standalone images): each photo centred in its cell
    with the source image component's 20px below it (20px apart and 40px to "Related" at
