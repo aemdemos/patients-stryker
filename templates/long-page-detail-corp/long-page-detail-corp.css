@@ -701,6 +701,7 @@ body.long-page-detail-corp main > .section.gray-gradient:not(.headline-box) {
 /* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
    34px gold bar the container width (edge to edge on phones) */
 body.long-page-detail-corp main > .section.gold-bar {
+  display: block; /* an empty section: corp styles hide empty sections other than spacers */
   max-width: var(--container-max);
   height: var(--long-page-detail-corp-gold-bar);
   margin-inline: auto;

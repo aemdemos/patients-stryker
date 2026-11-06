@@ -2278,15 +2278,6 @@ var CustomImportScript = (() => {
     }
     return BOX_VARIANTS.has(name) ? name : "";
   }
-  function imageLabel(col) {
-    const parts = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS));
-    if (parts.length !== 2) return null;
-    const [image2, label] = parts;
-    if (!image2.matches(".c-standalone-image") || linkedImage(image2) || image2.querySelector(".title-content :is(h2, h3, h4, h5)") || !label.matches(".c-rich-text-editor")) return null;
-    const lines = [...label.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6")].filter((el) => text4(el));
-    const bold = lines.length === 1 && [...lines[0].querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => text4(b)).join(" ") === text4(lines[0]);
-    return bold && lines[0].matches("p") ? [image2, label] : null;
-  }
   function cellNodes(col, doc) {
     const out = [];
     [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS)).forEach((c) => {
@@ -2440,28 +2431,6 @@ var CustomImportScript = (() => {
       }
       const variant = [COLUMN_VARIANTS[key], linked ? "media-pair" : "", stackRow(columns) ? "stack" : "", boxes].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
-      const items = columns.map(imageLabel);
-      if (filled.every((col) => items[columns.indexOf(col)])) {
-        const rowOf = (part) => columns.map((col, i) => {
-          if (!items[i]) return [];
-          const box = doc.createElement("div");
-          box.append(items[i][part].cloneNode(true));
-          return cellNodes(box, doc);
-        });
-        const blocks = [rowOf(0), rowOf(1)].map((cells2) => {
-          const style2 = [rowCopyStyle(cells2, doc), centred ? "center" : ""].filter(Boolean).join(", ");
-          const block2 = WebImporter.Blocks.createBlock(doc, {
-            name: variant ? `Columns (${variant})` : "Columns",
-            cells: [cells2]
-          });
-          block2.setAttribute("data-keep", "section");
-          if (style2) block2.setAttribute("data-section-style", style2);
-          return block2;
-        });
-        if (wrapper.hasAttribute("data-row-end")) blocks[1].setAttribute("data-row-end", wrapper.getAttribute("data-row-end"));
-        wrapper.replaceWith(...blocks);
-        return;
-      }
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
       const block = WebImporter.Blocks.createBlock(doc, {
@@ -2478,6 +2447,56 @@ var CustomImportScript = (() => {
       if (!form) return;
       form.setAttribute("data-keep", "section");
       (component.closest(".marketoform") || component).replaceWith(form);
+    });
+  }
+  function tableRows(table) {
+    return [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")];
+  }
+  var MEDIA = 'img, picture, video, iframe, [data-asset-path], a[href*="/is/content/"], a[href*="/is/image/"]';
+  var isMediaCell = (td) => !td.textContent.trim() || td.querySelector(MEDIA) && [...td.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].every((el) => el.querySelector(MEDIA) || !text4(el));
+  function gridRows(main) {
+    const isColumns = (el) => el && el.matches('table[data-keep="section"]') && /^Columns\b/.test(text4(tableRows(el)[0] || el));
+    const empty = (el) => !text4(el) && !el.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`) && !el.matches("[data-keep], .sectionseparator, hr");
+    const next = (el) => {
+      let n = el.nextElementSibling;
+      while (n && empty(n)) n = n.nextElementSibling;
+      return n;
+    };
+    const cellsOf = (table) => tableRows(table).slice(1).map((tr) => [...tr.children]);
+    const textOnly = (td) => !td.querySelector(MEDIA);
+    const sameBlock = (x, y) => isColumns(y) && text4(tableRows(y)[0]) === text4(tableRows(x)[0]);
+    const takeEnd = (into, from) => {
+      if (from.hasAttribute("data-row-end")) into.setAttribute("data-row-end", from.getAttribute("data-row-end"));
+      else into.removeAttribute("data-row-end");
+    };
+    const blocks = () => [...main.querySelectorAll('table[data-keep="section"]')].filter(isColumns);
+    blocks().forEach((first) => {
+      const b = next(first);
+      if (!first.isConnected || !sameBlock(first, b)) return;
+      const [rowA] = cellsOf(first);
+      const rowsB = cellsOf(b);
+      const pair = cellsOf(first).length === 1 && rowsB.length === 1 && rowsB[0].length === rowA.length;
+      const images = rowA.every(isMediaCell) && rowA.some((td) => td.querySelector(MEDIA));
+      if (!pair || !images || !rowsB[0].every(textOnly)) return;
+      rowA.forEach((td, i) => td.append(...rowsB[0][i].childNodes));
+      const style = b.getAttribute("data-section-style");
+      if (style) first.setAttribute("data-section-style", style);
+      else first.removeAttribute("data-section-style");
+      takeEnd(first, b);
+      b.remove();
+    });
+    blocks().forEach((first) => {
+      if (!first.isConnected) return;
+      const width = cellsOf(first)[0].length;
+      let b = next(first);
+      while (sameBlock(first, b) && cellsOf(b).every((r) => r.length === width) && (first.getAttribute("data-section-style") || "") === (b.getAttribute("data-section-style") || "")) {
+        const body = tableRows(first)[0].parentElement;
+        tableRows(b).slice(1).forEach((tr) => body.append(tr));
+        takeEnd(first, b);
+        const after = next(b);
+        b.remove();
+        b = after;
+      }
     });
   }
   function fullWidthImages(main, doc) {
@@ -2595,6 +2614,7 @@ var CustomImportScript = (() => {
     convertBeforeRows(main, doc, helpers);
     markRowEnds(main);
     columnRows(main, doc);
+    gridRows(main);
     convertAfterRows(main, doc, helpers);
     main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
       const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el) => !el.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text4(el) || el.querySelector("img, iframe, [data-asset-path]")));

@@ -275,7 +275,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
 }
 
-/* image caption: a fully Bold paragraph right under an image renders as a small,
+/* image caption (not in a `stack` grid, where it is the item's name, e.g. the nse product
+   tiles): a fully Bold paragraph right under an image renders as a small,
    bold, centred caption (stryker.com: Futura 700 11.2px, centred, its text 22px below
    the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
 body.corp .columns {
@@ -290,11 +291,11 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col:has(+ p > strong:only-child) {
   margin-bottom: var(--columns-corp-caption-gap);
 }
 
-body.corp .columns .columns-img-col + p:has(> strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col + p:has(> strong:only-child) {
   font-size: var(--footnote-font-size);
   line-height: var(--body-line-height-l);
   text-align: center;
@@ -619,25 +620,33 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
   margin-bottom: 0;
 }
 
-/* ---- stack (cells: above): two per row from 600px, four from 900px ---- */
+/* ---- stack (cells: above): two per row from 600px, four from 900px, on a grid whose
+   cells share their rows (subgrid), so the names of a row of tiles line up under the tallest
+   image as the stryker.com image row + name row do (nse grids) ---- */
 @media (width >= 600px) {
   body.corp .columns.stack.columns-4-cols > div {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: var(--space-block);
   }
 
   body.corp .columns.stack.columns-4-cols > div > div {
-    flex: 0 0 50%;
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    align-content: start;
+  }
+
+  /* the name 58px below the row's tallest image (stryker.com: the image row's margins) */
+  body.corp .columns.stack:not(.media-pair) .columns-img-col {
+    margin-bottom: calc(2 * var(--space-block) + var(--space-section));
   }
 }
 
 @media (width >= 900px) {
   body.corp .columns.stack.columns-4-cols > div {
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 0;
-  }
-
-  body.corp .columns.stack.columns-4-cols > div > div {
-    flex: 0 0 25%;
   }
 }

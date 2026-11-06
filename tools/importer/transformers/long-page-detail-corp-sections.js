@@ -380,24 +380,6 @@ function boxVariant(columns) {
 }
 
 /**
- * A column holding an unlinked image without a caption and, under it, a rich text that is
- * one fully bold line (an nse grid item: image, then its name): [image, text], else null.
- */
-function imageLabel(col) {
-  const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
-    .filter((c) => !c.parentElement.closest(CELL_COMPONENTS));
-  if (parts.length !== 2) return null;
-  const [image, label] = parts;
-  if (!image.matches('.c-standalone-image') || linkedImage(image)
-    || image.querySelector('.title-content :is(h2, h3, h4, h5)') || !label.matches('.c-rich-text-editor')) return null;
-  const lines = [...label.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6')].filter((el) => text(el));
-  const bold = lines.length === 1 && [...lines[0].querySelectorAll('.futura-bold, b, strong')]
-    .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
-    .map((b) => text(b)).join(' ') === text(lines[0]);
-  return bold && lines[0].matches('p') ? [image, label] : null;
-}
-
-/**
  * The content of one column of a source column row, cleaned as in the article builder.
  * The Large Headline marked `data-page-title` (the page's first, on a page without a
  * title) is the page H1.
@@ -625,31 +607,6 @@ function columnRows(main, doc) {
     const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes]
       .filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
-    // a grid row whose items are an image with its bold label under it (the nse grids' last
-    // row, e.g. "Flame dermabrader"; their other rows are an image row, then a label row):
-    // the same two rows, as a fully bold line right under an image is a caption (columns-corp)
-    const items = columns.map(imageLabel);
-    if (filled.every((col) => items[columns.indexOf(col)])) {
-      const rowOf = (part) => columns.map((col, i) => {
-        if (!items[i]) return [];
-        const box = doc.createElement('div');
-        box.append(items[i][part].cloneNode(true));
-        return cellNodes(box, doc);
-      });
-      const blocks = [rowOf(0), rowOf(1)].map((cells) => {
-        const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
-        const block = WebImporter.Blocks.createBlock(doc, {
-          name: variant ? `Columns (${variant})` : 'Columns',
-          cells: [cells],
-        });
-        block.setAttribute('data-keep', 'section');
-        if (style) block.setAttribute('data-section-style', style);
-        return block;
-      });
-      if (wrapper.hasAttribute('data-row-end')) blocks[1].setAttribute('data-row-end', wrapper.getAttribute('data-row-end'));
-      wrapper.replaceWith(...blocks);
-      return;
-    }
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
     const block = WebImporter.Blocks.createBlock(doc, {
@@ -667,6 +624,76 @@ function columnRows(main, doc) {
     if (!form) return;
     form.setAttribute('data-keep', 'section');
     (component.closest('.marketoform') || component).replaceWith(form);
+  });
+}
+
+/** The rows of a block table (its name row first). */
+function tableRows(table) {
+  return [...table.querySelectorAll(':scope > tbody > tr, :scope > tr')];
+}
+
+const MEDIA = 'img, picture, video, iframe, [data-asset-path], a[href*="/is/content/"], a[href*="/is/image/"]';
+const isMediaCell = (td) => !td.textContent.trim() || (td.querySelector(MEDIA)
+  && [...td.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].every((el) => el.querySelector(MEDIA) || !text(el)));
+
+/**
+ * Consecutive rows of one source grid become the rows of one Columns block, so authors edit a
+ * grid in one place (the nse grids: 10 blocks for 4 rows before): a Columns block followed by
+ * another with the same name and number of cells, with nothing between them but empty source
+ * components (an empty row: its spacing is not kept inside the grid). A row of images followed by
+ * a row of their names (the nse grids) first becomes one row of tiles, each image with its name
+ * (on phones each image then its own name). The rows also share the section style.
+ */
+function gridRows(main) {
+  const isColumns = (el) => el && el.matches('table[data-keep="section"]')
+    && /^Columns\b/.test(text(tableRows(el)[0] || el));
+  const empty = (el) => !text(el) && !el.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`)
+    && !el.matches('[data-keep], .sectionseparator, hr');
+  const next = (el) => {
+    let n = el.nextElementSibling;
+    while (n && empty(n)) n = n.nextElementSibling;
+    return n;
+  };
+  const cellsOf = (table) => tableRows(table).slice(1).map((tr) => [...tr.children]);
+  const textOnly = (td) => !td.querySelector(MEDIA);
+  const sameBlock = (x, y) => isColumns(y) && text(tableRows(y)[0]) === text(tableRows(x)[0]);
+  // the merged block ends where the last one ended (its source row spacing after it)
+  const takeEnd = (into, from) => {
+    if (from.hasAttribute('data-row-end')) into.setAttribute('data-row-end', from.getAttribute('data-row-end'));
+    else into.removeAttribute('data-row-end');
+  };
+  const blocks = () => [...main.querySelectorAll('table[data-keep="section"]')].filter(isColumns);
+  // 1. an image row and the row of names under it: one row of tiles
+  blocks().forEach((first) => {
+    const b = next(first);
+    if (!first.isConnected || !sameBlock(first, b)) return;
+    const [rowA] = cellsOf(first);
+    const rowsB = cellsOf(b);
+    const pair = cellsOf(first).length === 1 && rowsB.length === 1
+      && rowsB[0].length === rowA.length;
+    const images = rowA.every(isMediaCell) && rowA.some((td) => td.querySelector(MEDIA));
+    if (!pair || !images || !rowsB[0].every(textOnly)) return;
+    rowA.forEach((td, i) => td.append(...rowsB[0][i].childNodes));
+    const style = b.getAttribute('data-section-style');
+    if (style) first.setAttribute('data-section-style', style);
+    else first.removeAttribute('data-section-style');
+    takeEnd(first, b);
+    b.remove();
+  });
+  // 2. consecutive rows of one grid: one block
+  blocks().forEach((first) => {
+    if (!first.isConnected) return;
+    const width = cellsOf(first)[0].length;
+    let b = next(first);
+    while (sameBlock(first, b) && cellsOf(b).every((r) => r.length === width)
+      && (first.getAttribute('data-section-style') || '') === (b.getAttribute('data-section-style') || '')) {
+      const body = tableRows(first)[0].parentElement;
+      tableRows(b).slice(1).forEach((tr) => body.append(tr));
+      takeEnd(first, b);
+      const after = next(b);
+      b.remove();
+      b = after;
+    }
   });
 }
 
@@ -826,6 +853,7 @@ export default function transform(hookName, element, payload) {
   convertBeforeRows(main, doc, helpers);
   markRowEnds(main);
   columnRows(main, doc);
+  gridRows(main);
   convertAfterRows(main, doc, helpers);
   // a marked inner row that stays as its content (not Columns): its last component ends it
   main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
