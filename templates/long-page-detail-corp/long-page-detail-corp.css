@@ -391,6 +391,8 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
+  --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
   --long-page-detail-corp-copy-3-5: 49px; /* 1.75em of a 28px source H1 (Mako refreshers) */
   --long-page-detail-corp-gray-gradient: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* source .bg-gray-gradient */
   --long-page-detail-corp-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
@@ -795,4 +797,15 @@ body.long-page-detail-corp main > .section.gold-bar {
     margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
     width: 66.667%;
   }
+}
+
+/* `serif, p-1` copy in Columns (the source's Egyptienne span in a 14px Humanist paragraph,
+   nse intros, jr45 faculty): its lines 22.4px apart and its list item lines 23px, as the
+   mixed fonts set them on stryker.com (19.25px with the Egyptienne alone) */
+body.long-page-detail-corp main .section.serif.p-1 .columns :is(p) {
+  line-height: var(--long-page-detail-corp-serif-copy-line-height);
+}
+
+body.long-page-detail-corp main .section.serif.p-1 .columns :is(li) {
+  line-height: var(--long-page-detail-corp-serif-item-line-height);
 }
