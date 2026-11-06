@@ -1153,3 +1153,17 @@ body.news-detail main .columns.large-headline.block > div > .columns-img-col + d
 body.news-detail main .columns.large-headline.block > div > .columns-img-col + div:has(> h2:first-child) > p.button-wrapper {
   margin-top: calc(var(--space-section) + var(--space-block-xs));
 }
+
+/* Columns (columns-50-50) of article text beside a photo (stryker.com col-sm-6 rows, e.g.
+   each placement diagram of the AED pad placement guide): the photo keeps its image
+   component's 20px below it (30px from 600px) inside the row, so the next row starts the
+   source's 54px below it */
+body.news-detail main .columns.columns-50-50.block > div > div.columns-img-col:last-child {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail main .columns.columns-50-50.block > div > div.columns-img-col:last-child {
+    margin-bottom: var(--space-section);
+  }
+}
