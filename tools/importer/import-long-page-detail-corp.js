@@ -6,11 +6,12 @@
 // PARSER IMPORTS
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
+import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
 import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, edsLinkPaths,
+  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
@@ -27,6 +28,7 @@ const PAGE_TEMPLATE = {
   blocks: [
     { name: 'video', instances: ['.c-standalone-video'] },
     { name: 'cards-corp-resources', instances: ['.c-resourcesanddownload'] },
+    { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
     { name: 'hero-full-width-image', instances: ['.fullWidthImageHero'] },
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
   ],
@@ -36,6 +38,7 @@ const PAGE_TEMPLATE = {
 const parsers = {
   video: videoParser,
   'cards-corp-resources': cardsCorpResourcesParser,
+  'cards-corp-teaser': cardsCorpTeaserParser,
   'hero-full-width-image': heroFullWidthImageParser,
   'hero-image-slide': heroImageSlideParser,
 };
@@ -88,7 +91,10 @@ function publishedDate(document) {
 
 export default {
   // before the importer's own cleanup, which drops empty paragraphs
-  preprocess: ({ document }) => keepHeadlineBlankLines(document),
+  preprocess: ({ document, params }) => {
+    keepHeadlineBlankLines(document);
+    blankLineSpacers(document, params.originalURL);
+  },
 
   transform: (payload) => {
     const { document, url, params } = payload;

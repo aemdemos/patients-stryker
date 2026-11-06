@@ -77,7 +77,8 @@ const COMPONENTS = [
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = {
-  A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
+  // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
+  A: ['href', 'data-btn-style'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
 };
 
 function text(el) {
@@ -277,6 +278,13 @@ function tagTextSize(root) {
   SIZE_TAGS.forEach(([cls, tag]) => {
     [...root.querySelectorAll(`.${cls}`)].forEach((span) => {
       if (span.parentElement.closest(`.${cls}`) || !text(span)) return;
+      // a Heading 4 all in a 1.25em / 1.5em span (Mako surgeon campaign "Cut less", "For more
+      // procedural videos…"): the tag on the heading text (template CSS sizes it)
+      const h4 = span.closest('h4');
+      if (h4 && ['text-1-25', 'text-1-5'].includes(tag) && squash(h4.textContent) === squash(span.textContent)) {
+        bracketTag([span], tag, root);
+        return;
+      }
       const block = span.closest('p, li');
       if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
       if (squash(block.textContent) === squash(span.textContent)) return;
@@ -325,7 +333,9 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
     && !node.textContent.trim() && !node.querySelector('img, br');
   const trailingSpace = /[\s\u00a0]+$/;
-  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+  // A coloured span counts too: it becomes a bracket tag around the bold (the neurosurgical
+  // events card titles, "<span style=color:#ffb500>…Series<br></span>").
+  [...root.querySelectorAll('span.futura-bold, span[style*="color"], b, i, em, strong')].reverse().forEach((el) => {
     let last = el.lastChild;
     while (last && (last.nodeName === 'BR' || emptyElement(last)
       || (last.nodeType === 3 && !last.textContent.trim()))) {
@@ -362,6 +372,22 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const strong = doc.createElement('strong');
     a.replaceWith(strong);
     strong.append(a);
+  });
+
+  // a Futura bold link alone on its line (Mako refreshers "REGISTER": teal Futura bold
+  // text, not a button, no arrow) → bold + underline link, as the standalone links above (a
+  // bold link alone would become a button), in a section with the `no-arrow` style
+  const squashed = (el) => el.textContent.replace(/[\s\u00a0]+/g, '');
+  root.querySelectorAll('.futura-bold a[href], a[href] .futura-bold').forEach((el) => {
+    const a = el.closest('a[href]');
+    const block = a.closest('p, li');
+    if (standalone.has(a) || a.querySelector('u, img') || !block || !squashed(a)
+      || squashed(block) !== squashed(a)) return;
+    standalone.add(a);
+    a.setAttribute('data-btn-style', 'no-arrow');
+    const u = doc.createElement('u');
+    while (a.firstChild) u.append(a.firstChild);
+    a.append(u);
   });
 
   // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
@@ -711,11 +737,20 @@ function centredLine(el) {
 function headlineTag(el) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   // the size of the span holding most of the text (an empty sized span, e.g. around a line
-  // break, does not count)
+  // break, does not count); of nested size spans holding the same text the inner one sets
+  // the size (Mako refreshers: fontsize-1-5-vw > fontsize-2vw is 2vw)
+  const depth = (span) => {
+    let n = 0;
+    if (span === el) return n;
+    for (let p = span.parentElement; p && p !== el; p = p.parentElement) {
+      if (/\bfontsize-/.test(p.className || '')) n += 1;
+    }
+    return n;
+  };
   const size = [el, ...el.querySelectorAll('[class*="fontsize-"]')]
-    .map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || '') || [])[1], squash(span.textContent).length])
+    .map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || '') || [])[1], squash(span.textContent).length, depth(span)])
     .filter(([n, length]) => n && length)
-    .sort((a, b) => b[1] - a[1])
+    .sort((a, b) => b[1] - a[1] || b[2] - a[2])
     .map(([n]) => n)[0];
   const bold = [...el.querySelectorAll('.futura-bold, b, strong')]
     .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'))
@@ -839,6 +874,25 @@ function whiteBox(headline) {
 }
 
 /**
+ * The section styles of a Large Headline in a box: `headline-box`, with the box colour as
+ * the site's section colour style when it isn't white (bg-gold → `gold`, bg-blue → `blue`,
+ * dark gradients → `dark`; e.g. the nse "Attachments" gold boxes); '' when not in a box.
+ */
+function boxStyles(headline) {
+  if (whiteBox(headline)) return 'headline-box';
+  const box = headline.querySelector('.has-background');
+  const bg = ((box && box.className.match(/\bbg-([a-z-]+)\b/)) || [])[1] || '';
+  if (/^(gold|golden-gradient)$/.test(bg)) return 'headline-box, gold';
+  if (bg === 'gray-gradient') return 'headline-box, gray-gradient';
+  if (bg === 'purple') return 'headline-box, purple';
+  if (bg === 'dark-purple-gradient') return 'headline-box, purple-gradient';
+  if (/^(light-gray|gray)$/.test(bg)) return 'headline-box, light-gray';
+  if (/^blue$/.test(bg)) return 'headline-box, blue';
+  if (/^dark$/.test(bg) || /^dark-.*-gradient$/.test(bg)) return 'headline-box, dark';
+  return '';
+}
+
+/**
  * A Large Headline whose every line the source centres (an inline text-align: center on
  * the line, e.g. the endoscopy "Together with our customers…").
  */
@@ -849,7 +903,7 @@ function centredHeadline(headline) {
 
 /** The section styles of a Large Headline: `headline-box` (white box), `center` (centred). */
 function headlineStyles(headline) {
-  return [whiteBox(headline) ? 'headline-box' : '', centredHeadline(headline) ? 'center' : '']
+  return [boxStyles(headline), centredHeadline(headline) ? 'center' : '']
     .filter(Boolean).join(', ');
 }
 
@@ -1220,9 +1274,11 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
         current = null;
         return;
       }
-      // its content (paragraphs) in a section of its own, e.g. a full-width image
+      // its content (paragraphs) in a section of its own, e.g. a full-width image; with no
+      // content, a section of its style alone (OR staff `gold-bar`), as a spacer
       if (component.getAttribute('data-keep') === 'nodes') {
-        startSection('kept', component.getAttribute('data-section-style') || undefined)
+        const style = component.getAttribute('data-section-style') || undefined;
+        startSection(component.children.length || !style ? 'kept' : 'spacer', style)
           .nodes.push(...component.children);
         current = null;
         return;
@@ -1235,6 +1291,19 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       current.nodes.push(component);
       return;
     }
+    // an empty Large Headline outside a column row is 30px of space on the source (its
+    // bottom margin; Mako surgeon campaign: three before "CLINICAL STUDIES"): a `spacer`
+    // section (consecutive ones merge into `spacer, large / xlarge` below). Right after a
+    // rule, the rule with the space below it: a `separator, spacer` section (Mako surgeon
+    // campaign "INSIGHTFUL DATA ANALYTICS", Mako thank-you page)
+    if (component.matches('.c-largeheadline') && !isFirst && !text(component)
+      && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
+      && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      separatorNext = false;
+      current = null;
+      return;
+    }
     if (component.matches('.c-autocarousel')) {
       if (!component.querySelector('img')) return;
       startSection('hero').nodes.push(component);
@@ -1244,6 +1313,24 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-standalone-image')) {
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
+      // a linked image (TEACH thank-you: the FINISH button image, centred): its link alone
+      // on the next line, in a section of its own with the `image-link` style (scripts/corp.js
+      // makes the image clickable from it), `center` when the source centres it; the link
+      // text is the image's alt, else the address
+      const img = component.querySelector('img');
+      const link = img && img.closest('a[href]');
+      if (link && component.contains(link)) {
+        const a = doc.createElement('a');
+        a.setAttribute('href', newTabHref(link, absoluteAsset(link.getAttribute('href'))));
+        a.textContent = (img.getAttribute('alt') || '').trim() || a.getAttribute('href');
+        const p = doc.createElement('p');
+        p.append(a);
+        nodes.splice(1, 0, p);
+        const style = ['image-link', link.closest('.text-center') ? 'center' : ''].filter(Boolean).join(', ');
+        startSection('image', style).nodes.push(...nodes);
+        current = null;
+        return;
+      }
       // the lead image, or an image in a narrow source column, is a section of its own
       const columnStyle = imageColumnStyle(component);
       if (isFirst && !component.closest('.colctrl')) leadBelowDate = true;
@@ -1380,7 +1467,7 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-largeheadline') && (headlineStyles(component) || partlyCentred)) {
       const nodes = headlineNodes(component, doc);
       if (!nodes.length) return;
-      const box = whiteBox(component) ? 'headline-box' : '';
+      const box = boxStyles(component);
       const runs = [];
       nodes.forEach((node) => {
         const centred = !!node.centredLine;
@@ -1486,6 +1573,19 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   const opensWithHeadline = sections.some((section) => section.kind === 'headline');
   if (spacer && (title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline) && !leadBelowDate) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
+  }
+
+  // two, three or four `spacer` sections in a row are one `spacer, large / xlarge / xxlarge`
+  // (one section for authors, the same height: template CSS)
+  const SIZES = ['', 'large', 'xlarge', 'xxlarge'];
+  for (let i = 0; i < sections.length; i += 1) {
+    let n = 1;
+    while (sections[i].kind === 'spacer' && sections[i].style === 'spacer'
+      && sections[i + n] && sections[i + n].kind === 'spacer' && sections[i + n].style === 'spacer' && n < 4) n += 1;
+    if (n > 1) {
+      sections.splice(i + 1, n - 1);
+      sections[i].style = `spacer, ${SIZES[n - 1]}`;
+    }
   }
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a

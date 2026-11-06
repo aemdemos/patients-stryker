@@ -17,8 +17,9 @@ const INLINE_TAGS = new Set(['A', 'B', 'BR', 'DEL', 'EM', 'I', 'S', 'SPAN', 'STR
 // `[[classes]content]` within one text node; `[` is not allowed inside, so the
 // innermost expression of `[[x]…[[y]…]` is the one matched
 const SPAN_TAG_RE = /\[\[([^\][]+)\]([^\][]*)\]/g;
-// a `[[classes]` opener whose closing `]` is in a later text node
-const OPEN_TAG_RE = /\[\[([^\][]+)\]/g;
+// the brackets of expressions whose `[[classes]` and `]` are in different text nodes:
+// a `[[classes]` opener, any other `[` (so `[1]` keeps its own `]`) or a `]`
+const BRACKET_RE = /\[\[([^\][]+)\]|\[|\]/g;
 
 /**
  * Parses the comma-separated class list of a bracket expression.
@@ -101,35 +102,59 @@ function removeIfEmpty(node, container) {
 }
 
 /**
+ * The first bracket expression whose `[[classes]` and `]` are in different text nodes of
+ * the container. Each `]` closes the latest open bracket, so in nested expressions
+ * (`[[x]…[[y]…]…]`) the inner one comes first.
+ * @param {Text[]} nodes The text nodes of the container
+ * @returns {Object|undefined} The opener and closer nodes and offsets, and the classes
+ */
+function findMultiNodeTag(nodes) {
+  const open = [];
+  let found;
+  nodes.some((node) => [...node.nodeValue.matchAll(BRACKET_RE)].some((match) => {
+    if (match[0] !== ']') {
+      open.push({ node, match });
+      return false;
+    }
+    const opener = open.pop();
+    if (!opener?.match[1] || opener.node === node) return false;
+    const classes = parseClasses(opener.match[1]);
+    if (!classes.length) return false;
+    found = {
+      openNode: opener.node, open: opener.match, closeNode: node, closeIndex: match.index, classes,
+    };
+    return true;
+  }));
+  return found;
+}
+
+/**
  * Wraps the first bracket expression whose `[[classes]` and `]` are in different text
  * nodes of the container, i.e. whose content runs through formatting (bold, links, <br>).
  * @param {Element} container The container
  * @returns {boolean} Whether an expression was wrapped
  */
 function wrapMultiNodeTag(container) {
-  const nodes = getTextNodes(container);
-  return nodes.some((openNode, i) => {
-    const text = openNode.nodeValue;
-    const open = [...text.matchAll(OPEN_TAG_RE)].pop();
-    if (!open || text.slice(open.index + open[0].length).includes(']')) return false;
-    const classes = parseClasses(open[1]);
-    const closeNode = nodes.slice(i + 1).find((node) => node.nodeValue.includes(']'));
-    if (!classes.length || !closeNode) return false;
+  const tag = findMultiNodeTag(getTextNodes(container));
+  if (!tag) return false;
+  const {
+    openNode, open, closeNode, closeIndex, classes,
+  } = tag;
+  const text = openNode.nodeValue;
 
-    const range = document.createRange();
-    range.setStart(openNode, open.index + open[0].length);
-    range.setEnd(closeNode, closeNode.nodeValue.indexOf(']'));
-    // the extracted copy keeps formatting that the brackets cut through (e.g. a
-    // partially bracketed <strong>); the span lands where the content was
-    const span = createSpan(classes, range.extractContents());
-    range.insertNode(span);
+  const range = document.createRange();
+  range.setStart(openNode, open.index + open[0].length);
+  range.setEnd(closeNode, closeIndex);
+  // the extracted copy keeps formatting that the brackets cut through (e.g. a
+  // partially bracketed <strong>); the span lands where the content was
+  const span = createSpan(classes, range.extractContents());
+  range.insertNode(span);
 
-    openNode.nodeValue = text.slice(0, open.index);
-    closeNode.nodeValue = closeNode.nodeValue.slice(1);
-    removeIfEmpty(openNode, container);
-    removeIfEmpty(closeNode, container);
-    return true;
-  });
+  openNode.nodeValue = text.slice(0, open.index);
+  closeNode.nodeValue = closeNode.nodeValue.slice(1);
+  removeIfEmpty(openNode, container);
+  removeIfEmpty(closeNode, container);
+  return true;
 }
 
 /**

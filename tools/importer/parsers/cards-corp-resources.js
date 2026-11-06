@@ -6,8 +6,11 @@
  *
  * Two columns, one row per download (card):
  *   cell 1 (image): the PDF cover image, as the Library authors it: a link to its image
- *     URL (…/file.pdf.thumb.319.319.png), which the block renders as the cover picture
- *   cell 2 (text): a Heading 5 whose text is a plain link to the file (the source title)
+ *     URL (…/file.pdf.thumb.319.319.png), which the block renders as the cover picture;
+ *     the link text is the source image's alt text, exactly (the block makes it the
+ *     picture's alt); with no alt on the source the text is the URL (an empty alt)
+ *   cell 2 (text): a Heading 5 whose text is a plain link to the file (the source title;
+ *     plain text when the source download has no file link)
  * Files stay on www.stryker.com (absolute links); a link that opens in a new tab on the
  * source, or a PDF, gets the `#_blank` marker (as in the news-detail import).
  * The source grid shows 6 per row on desktop (col-md-2) → `six-up`; otherwise the
@@ -37,12 +40,19 @@ export default function parse(element, { document }) {
     const title = item.querySelector('.title, h5, h4');
     const link = (title && title.closest('a[href]')) || item.querySelector('a[href]');
     const img = item.querySelector('img');
-    if (!link || !img) return null;
+    if (!img || (!link && !text(title))) return null;
     const src = absolute(img.getAttribute('src'));
     const cover = document.createElement('a');
     cover.href = src;
-    cover.textContent = src;
+    const alt = img.getAttribute('alt') || '';
+    cover.textContent = alt.trim() ? alt : src;
     const h5 = document.createElement('h5');
+    // a download without a file link on the source (jr45 june "Triathlon Tritanium…"):
+    // its title as plain text, as shown there
+    if (!link) {
+      h5.textContent = text(title);
+      return [cover, h5];
+    }
     const a = document.createElement('a');
     a.href = newTab(link, absolute(link.getAttribute('href')));
     a.textContent = text(title) || text(link);

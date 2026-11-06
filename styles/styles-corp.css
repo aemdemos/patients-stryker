@@ -333,6 +333,13 @@ body:where(.corp):has(main .hero-carousel) header {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* section style `no-arrow`: bold + underline links without the trailing arrow (stryker.com
+   Futura bold links that are not standalone links, e.g. the Mako Refreshers "REGISTER" links:
+   teal Futura bold, uppercase) */
+:where(body.corp) main .section.no-arrow a.link-strong:any-link::after {
+  content: none;
+}
+
 /* section style `center`: centred text (stryker.com centred rich text, e.g. the About values) */
 :where(body.corp) main > .section.center,
 :where(body.corp) .tabs-panel > .section.center,
