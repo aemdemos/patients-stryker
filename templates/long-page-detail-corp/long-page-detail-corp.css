@@ -393,6 +393,7 @@ body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
   --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
   --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
+  --long-page-detail-corp-fast-facts-title: 27px; /* measured: the source band title (.c-fastfacts-title) from 840px, OR staff */
   --long-page-detail-corp-serif-1-75-line-height: 1.265; /* measured: a 24.5px Egyptienne span in a 14px source paragraph renders 31px lines (ispies intro) */
   --long-page-detail-corp-copy-3-5: 49px; /* 1.75em of a 28px source H1 (Mako refreshers) */
   --long-page-detail-corp-gray-gradient: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* source .bg-gray-gradient */
@@ -1023,4 +1024,38 @@ body.long-page-detail-corp main > :is(.section.separator.purple, .section.separa
    spacing in the 14px item, which puts the items 21px apart ---- */
 body.long-page-detail-corp main li > :is(span).text-1-25 {
   line-height: var(--heading-line-height-h4);
+}
+
+/* ---- a colour band holding only a heading (stryker.com Fast Facts title on a full-bleed
+   panel, OR staff "Mako Total Knee"): the source panel's 30px padding (60px / 10px from
+   600px), the title 20px (50px) above it, its rule white; 27px from 600px. The next
+   component follows right under the band ---- */
+body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple):has(> .default-content-wrapper > h2:only-child) {
+  margin-bottom: 0;
+  padding-block: var(--space-section);
+}
+
+body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: var(--space-block-xs);
+  border-bottom-color: var(--color-white);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple):has(> .default-content-wrapper > h2:only-child) {
+    padding-block: calc(2 * var(--space-section)) var(--space-block-s);
+  }
+
+  body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
+    margin-bottom: var(--space-section-l);
+    font-size: var(--long-page-detail-corp-fast-facts-title);
+  }
+}
+
+/* ---- a Heading 2 all in a `[[text-2]…]` tag: a source rich-text Heading 1 statement below
+   the page title (OR staff "In the OR is educational content…", the registration form
+   intro), which has no rule below it on stryker.com ---- */
+body.long-page-detail-corp main > .section > .default-content-wrapper :is(h2):has(> span.text-2:only-child) {
+  padding-bottom: 0;
+  border-bottom: 0;
 }

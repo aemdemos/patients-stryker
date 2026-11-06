@@ -2222,6 +2222,12 @@ var CustomImportScript = (() => {
       [...container.children].filter((el) => el !== heading && text4(el)).forEach((el) => {
         nodes.push(el.cloneNode(true));
       });
+      if (!nodes.length) {
+        const spacer = doc.createElement("div");
+        spacer.className = "c-largeheadline";
+        title.replaceWith(spacer);
+        return;
+      }
       title.replaceWith(richText(doc, nodes));
     });
   }

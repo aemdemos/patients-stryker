@@ -274,6 +274,15 @@ function sectionTitles(main, doc) {
     [...container.children].filter((el) => el !== heading && text(el)).forEach((el) => {
       nodes.push(el.cloneNode(true));
     });
+    // an empty section title (a jump bar anchor, OR staff: before each band) is its 30px
+    // bottom margin on the source, as an empty Large Headline: one for the article builder
+    // (a `spacer` section)
+    if (!nodes.length) {
+      const spacer = doc.createElement('div');
+      spacer.className = 'c-largeheadline';
+      title.replaceWith(spacer);
+      return;
+    }
     title.replaceWith(richText(doc, nodes));
   });
 }
