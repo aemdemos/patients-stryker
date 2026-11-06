@@ -1008,43 +1008,52 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
 
 /* section style `gold-boxes`: each cell of the section's Columns block is a plain gold box
    (stryker.com .has-background.bg-gold rich text in a col-sm-6 col-md-4 row, e.g. the three
-   workplace violence figures: 440 x 115px at 1440px, 5% padding on top and at the sides,
-   10px below the text, the text's 15px margin inside the box and 3% below it), its text
-   centred on 1.15 lines (22px apart for the 17.5px text); the boxes of a row are as tall as
-   the tallest; they stack on phones, go 2 per row from 600px and 3 per row from 900px */
+   workplace violence figures: 440 x 115px at 1440px), its text centred on 1.15 lines (22px
+   apart for the 17.5px text). The box's padding (5% on top and at the sides, 10px and the
+   text's 15px margin below) and the 3% below it are shares of the box width, so they are
+   worked out from the row width (EDS gives a one-paragraph cell no <p> to pad). The boxes
+   of a row are as tall as the tallest, 30px apart; they stack on phones, go 2 per row from
+   600px and 3 per row from 900px */
 body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+  --gold-box-width: 100%;
+
   align-items: stretch;
+  column-gap: var(--space-section);
+  margin-inline: 0;
 }
 
 body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0;
-}
-
-body.news-detail main > .section.gold-boxes .columns.block > div > div > p {
-  flex: 1 1 auto;
-  margin: 0 0 3%;
-  padding: 5% 5% calc(var(--space-block-s) + var(--space-block));
+  margin: 0 0 calc(var(--gold-box-width) * 3 / 100);
+  padding: calc(var(--gold-box-width) * 5 / 100) calc(var(--gold-box-width) * 5 / 100) calc(var(--space-block-s) + var(--space-block));
   background-color: var(--color-accent);
   text-align: center;
 }
 
-body.news-detail main > .section.gold-boxes .columns.block > div > div > p span.text-1-25 {
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p:last-child {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block span.text-1-25 {
   line-height: var(--heading-line-height-h4);
 }
 
 @media (width >= 600px) {
-  body.news-detail main > .section.gold-boxes .columns.block > div {
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+    --gold-box-width: (100% - var(--space-section)) / 2;
+
     flex-flow: row wrap;
   }
 
   body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
-    flex: 0 0 50%;
+    flex: 0 0 calc(var(--gold-box-width));
   }
 }
 
 @media (width >= 900px) {
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+    --gold-box-width: (100% - 2 * var(--space-section)) / 3;
+  }
+
   body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
     flex: 1 1 0;
   }
