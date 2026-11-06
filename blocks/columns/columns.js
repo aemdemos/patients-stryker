@@ -1,4 +1,5 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
+import decorateMapLinks from '../../scripts/map-embed.js';
 
 // YouTube link signatures (watch, short youtu.be and nocookie embeds)
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -52,6 +53,8 @@ export default function decorate(block) {
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);
   decorateYouTube(block);
+  // a lone Google Maps link (e.g. contact info | map) becomes an embedded map
+  decorateMapLinks(block);
 
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
