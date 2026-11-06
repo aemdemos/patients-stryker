@@ -822,6 +822,11 @@ body.long-page-detail-corp main .accordion .accordion-item {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
+/* a closed panel: the rule right under its label (the 15px gap is for the open content) */
+body.long-page-detail-corp main .accordion .accordion-item:not(.accordion-item-open) .accordion-item-label {
+  margin-bottom: 0;
+}
+
 /* the panel's last line (e.g. a button) 15px above that rule */
 body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:not(ul, ol) {
   margin-bottom: var(--space-block);
