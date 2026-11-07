@@ -193,6 +193,13 @@ body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
   font-size: var(--heading-font-size-xs);
 }
 
+/* the first-published date (news-detail.js) is the source's own date widget
+   (.c-publish-date), outside the title text: it stays at the start of the column when the
+   title is centred (`center`, e.g. the Sage IWD story and the VA hospital bed article) */
+body.news-detail main > .section > .default-content-wrapper > h5.first-published {
+  text-align: start;
+}
+
 /* section style `date-above` (news-detail.js): the date above the H1 sits as far above it
    as the source date widget above the article text (36px, 46px from 600px; e.g. the
    Spencer Stiles release) */
@@ -765,6 +772,24 @@ body.news-detail main > .section.line-above > .default-content-wrapper > :first-
   margin-top: 0;
 }
 
+/* section style `full-width-image` (as on long-page-detail-corp pages): a stryker.com Full
+   Width Image (.fullWidthImage .imgBoxId.full-width-img, e.g. the hero photo of Eli's osteoid
+   osteoma story: 1410 x 588px at 1440px): the container width, the column gutters included,
+   edge to edge on phones; with two images the second is the phone image, below 600px
+   (source 840px) */
+body.news-detail main > .section.full-width-image > .default-content-wrapper:nth-child(n) {
+  padding-inline: 0;
+}
+
+body.news-detail main > .section.full-width-image > .default-content-wrapper:nth-child(n) img {
+  display: block;
+  width: 100%;
+}
+
+body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p > picture) {
+  display: none;
+}
+
 /* section style `box-gap-5`: the section sits below the blank line the source authors typed
    at the end of the text box above (<p>&nbsp;</p>, which EDS drops) and the box's 5% bottom
    margin, instead of the section gap (e.g. "Resources" under "Learn more about ProCare" on
@@ -947,6 +972,14 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
 
   body.news-detail main > .section.line-above {
     padding-top: calc(var(--corp-blank-line) - var(--space-section));
+  }
+
+  body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p > picture) {
+    display: block;
+  }
+
+  body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child + p:has(> picture) {
+    display: none;
   }
 
   body.news-detail main > .section.box-gap-5 {
