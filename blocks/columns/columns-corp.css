@@ -554,3 +554,77 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     margin-bottom: var(--space-block-xs);
   }
 }
+
+/* icon-text: a small icon beside its text (stryker.com 1/12 image column + 11/12 rich
+   text, e.g. "83% of the help provided…" in "Following in her mother's footsteps"): the
+   icon cell a quarter of the row on phones (the source's 3/9 phone columns, 67px icon at
+   390px) and a twelfth from 600px (87px at 1440px), the text beside it starting 2% lower,
+   as the source text component's top margin */
+body.corp .columns.icon-text.block > div:nth-child(n) {
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+body.corp .columns.icon-text.block > div > div:first-child:nth-child(n) {
+  flex: 0 0 25%;
+}
+
+body.corp .columns.icon-text.block > div > div:last-child:nth-child(n) {
+  flex: 1 1 0;
+  margin-top: 2%;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.icon-text.block > div > div:first-child:nth-child(n) {
+    flex: 0 0 calc(100% / 12);
+  }
+}
+
+/* product-tiles: a row of product category tiles, each an image at its own size with a 1px
+   black border, centred in its cell, then its linked title and a line of text (stryker.com
+   standalone images with a title and text, e.g. "Bathing — Warm bath, without a tub or
+   shower" in "Following in her mother's footsteps": 193px images, the title 20px below,
+   Futura bold 14px on phones and 17.5px from 600px, black, not underlined; on phones one
+   tile per row, the source's 20px image component margin between them) */
+body.corp .columns.product-tiles.block > div > div:not(:last-child):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp .columns.product-tiles.block .columns-img-col {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+body.corp .columns.product-tiles.block .columns-img-col img {
+  box-sizing: content-box;
+  width: auto;
+  max-width: calc(100% - 2px);
+  height: auto;
+  border: 1px solid var(--color-black);
+}
+
+body.corp .columns.product-tiles.block h4 {
+  margin: 0 0 var(--space-block);
+  padding: var(--space-block-l) 0 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp .columns.product-tiles.block h4 a:any-link {
+  color: var(--text-color);
+  font: inherit;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.product-tiles.block > div > div:not(:last-child):nth-child(n) {
+    margin-bottom: 0;
+  }
+
+  body.corp .columns.product-tiles.block h4 {
+    font-size: var(--body-font-size-l);
+  }
+}
