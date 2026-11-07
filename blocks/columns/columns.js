@@ -170,8 +170,9 @@ export default function decorate(block) {
 
       // media-pair: each image sits in its own paragraph, and a link alone on the line
       // after it makes the image clickable (DM image links can't also carry the page
-      // href); the link text becomes the image link's name and the text line goes
-      if (block.classList.contains('media-pair')) {
+      // href); the link text becomes the image link's name and the text line goes. The
+      // product-tiles variant links its images the same way
+      if (block.classList.contains('media-pair') || block.classList.contains('product-tiles')) {
         col.querySelectorAll(':scope > p').forEach((p) => {
           const picture = p.querySelector(':scope > picture');
           if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
