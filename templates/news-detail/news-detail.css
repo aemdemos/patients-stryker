@@ -1167,3 +1167,47 @@ body.news-detail main .columns.columns-50-50.block > div > div.columns-img-col:l
     margin-bottom: var(--space-section);
   }
 }
+
+/* a Bold lead-in that opens a list item on a line of its own (then a line break and its
+   text, the source's plain <b>, e.g. "Skilled technicians you can count on" in the
+   emergency care equipment readiness article) is Humanist bold, as Bold is in news text
+   (authoring conventions); news-detail.js marks it standalone, which other bold labels on
+   a line of their own keep in Futura */
+body.news-detail main > .section > .default-content-wrapper li > strong.standalone:first-child:has(+ br) {
+  font-family: var(--body-font-family);
+}
+
+/* Panel (left) in an article: the source's dimensional box (white, soft shadow, 10px from
+   the column) with its 4% / 5% / 3% padding (e.g. the pull quotes of the incontinence
+   prevalence article: 55px above and 69px beside the quote at 1440px) */
+body.news-detail main .panel.left.block .panel-body {
+  padding: 4% 5% 3%;
+}
+
+/* section style `li-spaced`: every list item of the section but the last ends with a blank
+   17.5px line, as the source's items that end in a typed blank line (<br><br>, which EDS
+   drops; e.g. "Skilled technicians you can count on" in the emergency care equipment
+   readiness article: 63px from item to item instead of 42px) */
+body.news-detail main > .section.li-spaced > .default-content-wrapper li:not(:last-child) {
+  margin-bottom: var(--news-blank-line-l);
+}
+
+/* section style `h4-1-25`: every Heading 4 of the section at 1.25x the h4 size (stryker.com
+   h4 > span.fontsize-1-25em on whole headings, e.g. "Understanding HAP" in the patient oral
+   care article: 21.875px, 17.5px on phones) */
+body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
+  font-size: calc(var(--body-font-size-m) * var(--news-scale-1-25));
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
+    font-size: calc(var(--body-font-size-l) * var(--news-scale-1-25));
+  }
+}
+
+/* …in a `serif` section the panel's text is the light serif too, on the source's 1.06
+   lines (25.97px for the 24.5px pull quotes of the incontinence prevalence article) */
+body.news-detail main > .section.serif .panel.left.block .panel-body :is(p, li) {
+  font-family: var(--heading-font-family);
+  line-height: var(--heading-line-height);
+}
