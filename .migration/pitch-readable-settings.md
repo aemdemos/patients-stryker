@@ -73,6 +73,20 @@ Identical rendering (the same classes, section heights and every text run's styl
 - Exact before/after comparison (every section's classes and height, every text run's font, size, weight, line height, colour and position) at 1440 and 375 px on **11 pages** chosen for difficulty, including one page per new setting: **identical** (differences only from load timing, e.g. a lazy form, which the same page shows against itself).
 - The QA tool (live site against the current page, and against the converted page) on 5 of them: **identical scores and identical findings**.
 
+### Phones and tablets: no double authoring
+
+The source changes styles with the screen width; the news title, for example, is Futura bold on desktop and Egyptienne on phones. We measured where such differences come from (the site's stylesheets and the AEM exports):
+
+| Source | Measured | In EDS |
+|---|---|---|
+| The site stylesheet, per component | 2,335 rules in width media queries: grid, header and navigation, banners, carousels, heroes, tables; the 150 font rules are nearly all header, navigation, forms, banners, heading sizes and the page title | Block or template CSS, written once. Authors do nothing. |
+| The site stylesheet, per authored style | Only the vw text sizes (17 classes, ~3,600 uses): twice the size below 840px, a fixed size from 1439px. No media rule touches the other 41 text classes. | The value's definition: `[[5.5vw]…]` carries it. Authors write the value once. |
+| Set per device in AEM | Layout only: column widths per tablet and phone, mobile text position and mobile slides of carousels, 11 mobile tables, 1 hero hidden on phones. No dialog has per-device fonts, sizes, colours or spacing. | One row each, with up to three values in it (`Grid: desktop … · tablet … · phone …`, `Column`, the hero's mobile slides). |
+
+**Rule: a style's responsive behaviour belongs to the definition of its name or value, never to the author.** The exception is layout widths, which AEM authors already set per device; they stay one row.
+
+Unknown cases show up in a QA run at two widths: a style difference at 375 px with none at 1440 px on the same text. On 50 converted product-detail pages, that left one real case, a size lost inside tab panels, which is now fixed. The other 188 were measurement or a chart's labels.
+
 ## The conventions: short, named, shown
 
 All 27 are on one page, **Authoring rules on www.stryker.com**, each with the rendered result next to the same content as it looks in Document Authoring (tables, Section Metadata, formatting as typed):

@@ -336,7 +336,9 @@ function decorateSection(section) {
   const seconds = (autoplay || '').match(/^(\d+(?:\.\d+)?)\s*s/i);
   if (seconds) section.classList.add(`autoplay-${Math.round(Number(seconds[1]) * 1000)}`);
 
-  const content = section.querySelectorAll(':scope > .default-content-wrapper');
+  // the section's text, also in the panels of a `tabbed` section (scripts.js
+  // buildTabbedSections has moved it into the tabs block by now)
+  const content = section.querySelectorAll(':scope > .default-content-wrapper, .tabs [data-tabs-section]');
   if (headings) {
     const classes = styleClasses(headings.split(','));
     content.forEach((wrapper) => wrapper.querySelectorAll(':scope > :is(h1, h2, h3, h4, h5, h6)')
