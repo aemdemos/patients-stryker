@@ -1,6 +1,6 @@
 /*
- * Box spacing on www.stryker.com pages (lift and shift of the AEM text / Large Headline
- * padding and margin fields, tools/importer/decisions/property-map.json).
+ * Box spacing (and Columns cell colours) on www.stryker.com pages (lift and shift of the AEM
+ * text / Large Headline padding and margin fields, tools/importer/decisions/property-map.json).
  *
  * AEM sets each box's padding / margin as a % of its column width. Authors carry the
  * values as tokens: the property + the value (padding-top-4 = 4% of the column,
@@ -41,20 +41,33 @@ let observer = null;
  * padding; the values add to that padding (the gutter stays). Left / right margins are
  * added as padding: the element keeps its own (auto) margins, and the box has no
  * background of its own in our markup, so the text lands where AEM puts it.
+ * A coloured box (a Columns cell with a colour) is the coloured area itself: its left / right
+ * margins stay margins, outside the colour (CSS variables --cell-margin-left / -right, on top
+ * of the column gutter), and the % resolve against the column's inner width, i.e. the box
+ * with those margins.
  */
 function apply(el) {
   const box = boxes.get(el);
   if (!box) return;
-  const { spacing, base } = box;
-  const reference = el.getBoundingClientRect().width - base.paddingLeft - base.paddingRight;
+  const { spacing, base, coloured } = box;
+  const { width } = el.getBoundingClientRect();
+  const reference = coloured ? width + (box.sideMargins || 0)
+    : width - base.paddingLeft - base.paddingRight;
   const px = ({ value, unit }) => (unit === 'px' ? value : (value * reference) / 100);
   const extra = {};
   spacing.forEach((s) => {
-    const prop = s.prop.replace(/^margin(Left|Right)$/, 'padding$1');
+    const prop = coloured ? s.prop : s.prop.replace(/^margin(Left|Right)$/, 'padding$1');
     extra[prop] = (extra[prop] || 0) + px(s);
   });
+  const round = (v) => Math.round(v * 10) / 10;
+  box.sideMargins = 0;
   Object.entries(extra).forEach(([prop, value]) => {
-    el.style[prop] = `${Math.round((base[prop] + value) * 10) / 10}px`;
+    if (coloured && /^margin(Left|Right)$/.test(prop)) {
+      el.style.setProperty(prop === 'marginLeft' ? '--cell-margin-left' : '--cell-margin-right', `${round(value)}px`);
+      box.sideMargins += value;
+      return;
+    }
+    el.style[prop] = `${round(base[prop] + value)}px`;
   });
 }
 
@@ -66,17 +79,24 @@ const PROPS = ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight', 'ma
  * @param {object[]} spacing parseSpacing() result
  * @param {boolean} [replace] the element is the box itself (boxed section): the values replace
  *   its own padding instead of adding to it
+ * @param {boolean} [coloured] a coloured Columns cell: the box padding (10px, as AEM's
+ *   .has-background) on the sides without a value, the values replace it; see apply()
  */
-function setBox(el, spacing, replace = false) {
+function setBox(el, spacing, replace = false, coloured = false) {
   if (!spacing.length) return;
   const cs = getComputedStyle(el);
   const base = Object.fromEntries(PROPS.map((p) => [p, parseFloat(cs[p]) || 0]));
-  if (replace) {
+  if (coloured) {
+    // read from the token: the cell's own CSS (columns-corp.css) may not be loaded yet
+    const boxPadding = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--space-block-s')) || 0;
+    PROPS.filter((p) => p.startsWith('padding')).forEach((p) => { base[p] = boxPadding; });
+  }
+  if (replace || coloured) {
     spacing.forEach(({ prop }) => {
       if (prop.startsWith('padding')) base[prop] = 0;
     });
   }
-  boxes.set(el, { spacing, base });
+  boxes.set(el, { spacing, base, coloured });
   if (!observer && window.ResizeObserver) {
     observer = new ResizeObserver((entries) => entries.forEach((entry) => apply(entry.target)));
   }
@@ -128,12 +148,19 @@ export default function decorateSpacing(main) {
   });
   main.querySelectorAll('.columns').forEach((columns) => {
     const byCell = {};
+    // cell-<N>-bg-<colour> / cell-<N>-dark: the AEM box colour of column N (a coloured text box
+    // filling the column): the cell gets cell-bg + cell-<colour> (blocks/columns/columns-corp.css)
+    const colours = {};
     [...columns.classList].forEach((cls) => {
-      const m = cls.match(/^cell-(\d+)-(.+)$/);
-      if (m && TOKEN.test(m[2])) (byCell[m[1]] = byCell[m[1]] || []).push(m[2]);
+      const [, n, option] = cls.match(/^cell-(\d+)-(.+)$/) || [];
+      if (!n) return;
+      if (TOKEN.test(option)) (byCell[n] = byCell[n] || []).push(option);
+      else if (/^(bg-[a-z-]+|dark)$/.test(option)) colours[n] = option;
     });
     [...columns.children].forEach((row) => [...row.children].forEach((cell, i) => {
-      if (byCell[i + 1]) setBox(cell, parseSpacing(byCell[i + 1]));
+      const colour = colours[i + 1];
+      if (colour) cell.classList.add('cell-bg', `cell-${colour}`);
+      if (byCell[i + 1]) setBox(cell, parseSpacing(byCell[i + 1]), false, !!colour);
     }));
   });
   // [[spacing]] paragraphs wherever they are (default content, block cells, tab panels)

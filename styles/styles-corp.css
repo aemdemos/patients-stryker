@@ -577,6 +577,50 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
   padding: var(--space-block-s);
   background-color: var(--corp-box-bg, transparent);
+  background-image: var(--corp-box-bg-image, none);
+}
+
+/* boxed gradients: a text box with a gradient (stryker.com .has-background.bg-*-gradient, e.g.
+   the spinejack "Contact us" banner) paints the gradient on the box, not the band. Its
+   direction (AEM gradientDirection, rendered .top-to-bottom / .inverse): left to right by
+   default, gradient-top-to-bottom, gradient-inverse (both: bottom to top, as on spinejack) */
+:where(body.corp) main > .section:is(.boxed, .large-headline).bg-golden-gradient {
+  --corp-box-bg-image: linear-gradient(var(--corp-gradient-angle, 90deg), var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
+:where(body.corp) main > .section:is(.boxed, .large-headline).bg-dark-purple-gradient {
+  --corp-box-bg-image: linear-gradient(var(--corp-gradient-angle, 90deg), var(--color-secondary), var(--corp-color-purple-gray));
+
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section:is(.boxed, .large-headline).bg-dark-blue-gradient {
+  --corp-box-bg-image: linear-gradient(var(--corp-gradient-angle, 90deg), var(--color-secondary), var(--corp-color-blue-gray));
+
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section:is(.boxed, .large-headline).bg-dark-orange-gradient {
+  --corp-box-bg-image: linear-gradient(var(--corp-gradient-angle, 90deg), var(--color-secondary), var(--corp-color-orange-gray));
+
+  color: var(--color-white);
+}
+
+/* a Large Headline with a gradient: the gradient covers its box (the content), as a boxed one */
+:where(body.corp) main > .section.large-headline:where(.bg-golden-gradient, .bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) > .default-content-wrapper {
+  background-image: var(--corp-box-bg-image, none);
+}
+
+:where(body.corp) main > .section.gradient-top-to-bottom {
+  --corp-gradient-angle: 180deg;
+}
+
+:where(body.corp) main > .section.gradient-inverse {
+  --corp-gradient-angle: 270deg;
+}
+
+:where(body.corp) main > .section.gradient-top-to-bottom.gradient-inverse {
+  --corp-gradient-angle: 0deg;
 }
 
 /* shadow-box: the dimensional box (stryker.com .dimensional-box: 10px shadow at 30%, 10px
@@ -607,33 +651,33 @@ body:where(.corp):has(main .hero-carousel) header {
    www.stryker.com (nse, hoffmann-lrf-hexapod, sage oral-care-for-all, AlphaVent): the
    panel has no padding or margin of its own; the authored content keeps its margins
    inside the band (source clearfix rows) and the next component starts flush below it. */
-:where(body.corp) main > .section.bg-dark-purple-gradient,
-:where(body.corp) main > .section.bg-dark-blue-gradient,
-:where(body.corp) main > .section.bg-dark-orange-gradient,
-:where(body.corp) main > .section.bg-golden-gradient,
+:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed, .large-headline),
+:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed, .large-headline),
+:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed, .large-headline),
+:where(body.corp) main > .section.bg-golden-gradient:not(.boxed, .large-headline),
 :where(body.corp) main > .section.dark {
   display: flow-root;
   margin-bottom: 0;
 }
 
 /* the dark gradients carry light text and links; buttons and CTAs keep their own colours */
-:where(body.corp) main > .section.bg-dark-purple-gradient {
-  background: var(--corp-gradient-dark-purple);
+:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed, .large-headline) {
+  background-image: var(--corp-gradient-dark-purple);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-dark-blue-gradient {
-  background: var(--corp-gradient-dark-blue);
+:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed, .large-headline) {
+  background-image: var(--corp-gradient-dark-blue);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-dark-orange-gradient {
-  background: var(--corp-gradient-dark-orange);
+:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed, .large-headline) {
+  background-image: var(--corp-gradient-dark-orange);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-golden-gradient {
-  background: var(--corp-gradient-golden);
+:where(body.corp) main > .section.bg-golden-gradient:not(.boxed, .large-headline) {
+  background-image: var(--corp-gradient-golden);
 }
 
 /* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn

@@ -26,6 +26,7 @@ import {
 import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
+import decorateSettings, { rewriteSizeValues } from './corp-settings.js';
 import decorateTypeTags from './corp-type.js';
 import buildCarouselSections from './corp-carousel.js';
 import fetchPlainHtml from './plain-html.js';
@@ -124,6 +125,8 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  // readable settings (prototype): size values in bracket tags, before the tags are parsed
+  if (getMetadata('style-settings') === 'on') rewriteSizeValues(main);
   decorateModalTiles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
@@ -231,7 +234,9 @@ function joinSplitHeadingUnderlines(main) {
  */
 export function decorateSections(main) {
   // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
-  // before accordion panels take their sections' content
+  // before accordion panels take their sections' content; readable settings (prototype,
+  // `style-settings: on` pages) first, as the classes they stand for
+  if (getMetadata('style-settings') === 'on') decorateSettings(main);
   decorateSpacing(main);
   decorateTypeTags(main);
   buildAccordionSections(main);
