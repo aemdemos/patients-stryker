@@ -50,6 +50,7 @@
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
   --corp-qa-title-line-height: 23.25px; /* measured: a Q&A card question, a 17.5px span on 14px paragraph lines (46.5px for 2 lines) */
+  --corp-hero-line-strut: 30px; /* measured: the source Large Headline line (span.line, 21px with 30px lines on phones) around a hero title, e.g. "Following in her mother's footsteps": 70px for 2 lines at 390px */
 
   /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
@@ -383,6 +384,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.disclaimer.references-spaced ol > li {
   margin-bottom: var(--space-block);
   line-height: var(--paragraph-line-height);
+}
+
+/* section style `references-body-lines` (with `disclaimer`): small print the source set as
+   0.8em spans in 14px paragraphs (span.fontsize-8em, e.g. the references of "Following in
+   her mother's footsteps"), so its lines are the paragraph's 19.25px lines */
+:where(body.corp) main > .section.disclaimer.references-body-lines :is(p, li) {
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
 }
 
 :where(body.corp) main > .section.disclaimer p:last-child,

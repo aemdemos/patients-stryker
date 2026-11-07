@@ -96,6 +96,32 @@ body.news-detail main > .section.bg-light-gray > .default-content-wrapper > p {
 }
 
 
+/* section style `blue-box`: the section's text in the corp blue box across the text column,
+   white, 17.5px copy lines 1.15, padding 3% / 4% / 2% of the box width and the last
+   paragraph's 15px margin inside it (stryker.com .has-background.bg-blue rich text, e.g. the
+   quote of "Following in her mother's footsteps": 1379 x 132px at 1440px); with
+   `serif, p-1-25` for its Egyptienne */
+body.news-detail main > .section.blue-box > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-navy-bright);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :is(p, ul, ol, h2, h3, h4) {
+  padding-inline: 4%;
+  color: var(--color-white);
+  line-height: var(--body-line-height-l);
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :first-child {
+  padding-top: 3%;
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :last-child {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+}
+
 /* a gold Large Headline (`headline-2vw` with `background: bg-gold`): the source
    .c-largeheadline.bg-gold box pads its text 20px all round (e.g. the "Want to learn more?"
    box of the orthopaedic instruments exudate whitepaper release) */
@@ -586,7 +612,7 @@ body.news-detail main span.box-gold a:any-link > strong {
   padding: 0;
   border: 0;
   background: none;
-  color: inherit;
+  color: var(--link-color);
   font-size: inherit;
   font-weight: var(--font-weight-bold);
   line-height: inherit;
@@ -724,6 +750,18 @@ body.news-detail main > .section.blank-above {
 }
 
 body.news-detail main > .section.blank-above > .default-content-wrapper > :first-child {
+  margin-top: 0;
+}
+
+/* section style `line-above`: the blank line the source typed at the end of the text above
+   (<br>&nbsp;, which EDS drops): the section starts one blank 14px line and the paragraph
+   gap below that text (34px) instead of the section gap, e.g. "Evolving roles" in
+   "Following in her mother's footsteps" */
+body.news-detail main > .section.line-above {
+  padding-top: calc(var(--corp-blank-line) - var(--space-block-l));
+}
+
+body.news-detail main > .section.line-above > .default-content-wrapper > :first-child {
   margin-top: 0;
 }
 
@@ -905,6 +943,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
 
   body.news-detail main > .section.blank-above {
     padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-section));
+  }
+
+  body.news-detail main > .section.line-above {
+    padding-top: calc(var(--corp-blank-line) - var(--space-section));
   }
 
   body.news-detail main > .section.box-gap-5 {
@@ -1134,6 +1176,12 @@ body.news-detail main > .section.h2-spaced > .default-content-wrapper > h2:not(:
   margin-top: calc(var(--space-block) + var(--news-blank-line-l));
 }
 
+/* section style `h3-spaced`: the same blank 17.5px line above every Heading 3 of the section
+   after its first element (e.g. "How does a LUCAS device work?" in the LUCAS article) */
+body.news-detail main > .section.h3-spaced > .default-content-wrapper > h3:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--news-blank-line-l));
+}
+
 /* Columns (large-headline) of a photo and its headline (stryker.com Large Headline beside a
    standalone image, e.g. "Creating a better, healthier world" next to the 150M patients
    graphic): the headline starts 8% of its column down, as the source component's top
@@ -1210,4 +1258,65 @@ body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
 body.news-detail main > .section.serif .panel.left.block .panel-body :is(p, li) {
   font-family: var(--heading-font-family);
   line-height: var(--heading-line-height);
+}
+
+/* section style `link-list`: the section's list is a plain list of links (stryker.com
+   Curated Link List, e.g. "AED buying guide" / "Defibrillator 101" under "Learn more" in the
+   police car AED article): no bullets or indent, 14px teal links on their own lines, 34px
+   apart */
+body.news-detail main > .section.link-list > .default-content-wrapper :is(ul, ol) {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body.news-detail main > .section.link-list > .default-content-wrapper li:nth-child(n) {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section.link-list > .default-content-wrapper li:nth-child(n) + li {
+  margin-top: var(--space-block);
+}
+
+/* a Bold link inside running text (not alone on its line, where it is the corp text link,
+   nor in a colour tag) is a bold link in the text's own font and size, as Bold is in news
+   text (stryker.com <a><b>, e.g. "LIFEPAK CR2" in the police car AED article: 17.5px
+   Humanist bold, teal, inline) instead of the shared 14px uppercase Futura bold-link or
+   teal button style */
+body.news-detail main > .section > .default-content-wrapper :is(p:not(.button-wrapper), li) :is(a:any-link:has(> strong), a:any-link > strong, strong > a:any-link):not(span[class*="color-"] *, span.box-gold *, :has(u)) {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+}
+
+/* Hero Corp on a news article: from 600px the slide is at most the stryker.com news
+   carousel's 3:1 frame, so a taller desktop image keeps its top and loses its bottom (e.g.
+   the 1440 x 578px police car photo of "Why all police cars need AEDs": 480px shown at
+   1440px); a 3:1 or wider image shows whole */
+@media (width >= 600px) {
+  body.news-detail main .hero-corp.image-slide.block > div:first-child {
+    max-height: calc(100vw / 3);
+    overflow: hidden;
+  }
+}
+
+/* section style `gold-boxes-2` (with gold-boxes): the source's larger-figure gold box, its
+   Bold figure 28px (span.fontsize-2em, lines 1.06), the box padded 10px above and below
+   (and the text's 15px margin) and 2% of its width at the sides, with no margin below it
+   (stryker.com .has-background.bg-gold in a col-sm-6 col-md-4 row, e.g. "92% strongly
+   agree" on the Ease case study: 440 x 157px at 1440px) */
+body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block > div:nth-child(n) > div {
+  margin-bottom: 0;
+  padding: var(--space-block-s) calc(var(--gold-box-width) * 2 / 100) calc(var(--space-block-s) + var(--space-block));
+}
+
+body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block strong {
+  font-size: var(--heading-font-size-xxl);
 }

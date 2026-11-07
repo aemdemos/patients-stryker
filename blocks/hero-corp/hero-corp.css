@@ -67,6 +67,54 @@
   display: none;
 }
 
+/* gold-box: the same headline box in gold (stryker.com .c-largeheadline.bg-gold, e.g. "Why
+   all police cars need AEDs": 648 x 261px at 1440px, 20px padding; on phones the box alone,
+   20px in from the edges). A plain (not bold) line under the title is its subtitle, in
+   the light serif (weight 500, as the source h2) at 2/3 of the title size (the source's 2vw
+   line under the 3vw title) */
+.hero-corp.image-slide.gold-box > div:last-child {
+  position: static;
+  margin: 0 var(--space-block-l) calc(2 * var(--space-section));
+  padding: var(--space-block-l);
+  background-color: var(--color-accent);
+}
+
+.hero-corp.image-slide.gold-box > div:first-child {
+  display: none;
+}
+
+.hero-corp.image-slide.gold-box > div:last-child > :is(h2, h3, p):not(:has(strong)) {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-slide-text-size) * 2vw * 2 / 3);
+  font-weight: var(--font-weight-medium);
+}
+
+/* white-box: the headline in a white box (stryker.com .c-largeheadline.bg-white, e.g.
+   "Following in her mother's footsteps": 648 x 135px at 1440px, 20px padding); on phones
+   the box alone, 20px in from the edges, padded 20px at the sides only, its Bold title on
+   the source line's 21px Egyptienne line box (span.line; 2 lines: 70px at 390px) */
+.hero-corp.image-slide.white-box > div:last-child {
+  position: static;
+  margin: 0 var(--space-block-l) calc(2 * var(--space-section));
+  padding: 0 var(--space-block-l);
+  background-color: var(--color-white);
+}
+
+.hero-corp.image-slide.white-box > div:first-child {
+  display: none;
+}
+
+.hero-corp.image-slide.white-box > div:last-child > :has(> strong) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--corp-hero-line-strut);
+}
+
+.hero-corp.image-slide.white-box > div:last-child > * > strong {
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
+}
+
 .hero-corp.image-slide > div:last-child > * {
   max-width: none;
   margin: 0;
@@ -74,6 +122,23 @@
   font-size: calc(var(--hero-slide-text-size) * 2vw);
   line-height: var(--heading-line-height-hero);
   text-align: left;
+}
+
+/* …each line of the box keeps the source's 15px margin below it, inside the box; a Bold
+   title is the source's bold span inside its 28px/1.06 serif h1, whose line box spaces
+   the lines (2 lines: 115px at 1440px, 81px at 900px, 73px at 390px) */
+.hero-corp.image-slide.gold-box > div:last-child > * {
+  margin-bottom: var(--space-block);
+}
+
+.hero-corp.image-slide.gold-box > div:last-child > h1:has(> strong) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+.hero-corp.image-slide.gold-box > div:last-child > h1 > strong {
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
 }
 
 @media (width >= 600px) {
@@ -105,5 +170,46 @@
     inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
     margin: 0;
     padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide.gold-box > div:first-child {
+    display: block;
+  }
+
+  .hero-corp.image-slide.gold-box > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    margin: 0;
+    padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide.gold-box > div:last-child > :is(h2, h3, p):not(:has(strong)) {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw * 2 / 3), calc(var(--hero-slide-text-size) * var(--body-font-size-m) * 2 / 3));
+  }
+
+  .hero-corp.image-slide.white-box > div:first-child {
+    display: block;
+  }
+
+  .hero-corp.image-slide.white-box > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    margin: 0;
+    padding: var(--space-block-l);
+  }
+
+  /* …from 600px the line box is a 14px / 1.35 line, below the title's */
+  .hero-corp.image-slide.white-box > div:last-child > :has(> strong) {
+    font-family: var(--display-font-family);
+    font-size: var(--body-font-size-m);
+    line-height: var(--heading-line-height-hero);
+  }
+
+  .hero-corp.image-slide.white-box > div:last-child > * > strong {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide.gold-box > div:last-child > h1 > strong {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 }

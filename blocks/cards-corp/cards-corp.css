@@ -386,6 +386,13 @@
   margin-top: var(--space-block);
 }
 
+/* …the last card ends at its "Learn more" (the source action link has no margin), so the
+   section gap alone follows the cards (e.g. 30px to the document code under the "More like
+   this" cards of the Sage IWD story, 20px on phones) */
+.cards-corp.teaser > ul > li:last-child .cards-corp-card-body > p:last-child {
+  margin-bottom: 0;
+}
+
 @media (width >= 600px) {
   .cards-corp.people {
     margin-top: calc(var(--space-section) + var(--space-block));
@@ -406,6 +413,11 @@
   .cards-corp.teaser > ul > li:not(:last-child) .cards-corp-card-body {
     padding-bottom: 0;
     border-bottom: 0;
+  }
+
+  /* side by side, every card ends at its "Learn more" */
+  .cards-corp.teaser > ul > li:nth-child(n) .cards-corp-card-body > p:last-child {
+    margin-bottom: 0;
   }
 
   .cards-corp > ul {
