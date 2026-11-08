@@ -574,7 +574,8 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 :where(body.corp) main > .section.boxed > .default-content-wrapper {
-  margin-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
+  /* side margins outside the colour (scripts/corp-spacing.js --cell-margin-left / -right) */
+  margin-inline: calc(max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter))) + var(--cell-margin-left, 0px)) calc(max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter))) + var(--cell-margin-right, 0px));
   padding: var(--space-block-s);
   background-color: var(--corp-box-bg, transparent);
   background-image: var(--corp-box-bg-image, none);
@@ -624,10 +625,11 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* shadow-box: the dimensional box (stryker.com .dimensional-box: 10px shadow at 30%, 10px
-   margin in the column) */
+   margin in the column; an authored side margin replaces the 10px, scripts/corp-spacing.js
+   --cell-margin-left / -right: axs-universal 69px = 5% of the 1380px column) */
 :where(body.corp) main > .section.shadow-box > .default-content-wrapper {
   margin-block: var(--space-block-s);
-  margin-inline: max(calc(var(--container-gutter) + var(--space-block-s)), calc((100% - var(--container-max)) / 2 + var(--container-gutter) + var(--space-block-s)));
+  margin-inline: calc(max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter))) + var(--cell-margin-left, var(--space-block-s))) calc(max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter))) + var(--cell-margin-right, var(--space-block-s)));
   box-shadow: var(--shadow-soft);
 }
 
@@ -720,6 +722,15 @@ body:where(.corp):has(main .hero-carousel) header {
     box-sizing: border-box;
     max-width: calc(min(100%, var(--container-max)) * var(--corp-col-width));
     margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-col-start, 0));
+    margin-right: auto;
+  }
+
+  /* a boxed section in a column: the box is the column's content, one gutter in from each
+     edge, its side margins outside the colour (1788-platform "Contact us": live x 522,
+     396px wide at 1440px in the 1/3 column from 1/3) */
+  :where(body.corp) main > .section.boxed:is(.col-1-4, .col-1-3, .col-1-2, .col-2-3, .col-3-4, .col-5-6) > .default-content-wrapper {
+    max-width: calc(min(100%, var(--container-max)) * var(--corp-col-width) - 2 * var(--container-gutter) - var(--cell-margin-left, 0px) - var(--cell-margin-right, 0px));
+    margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-col-start, 0) + var(--container-gutter) + var(--cell-margin-left, 0px));
     margin-right: auto;
   }
 }
@@ -1736,14 +1747,27 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
-@media (width >= 900px) {
+/* corp flex sections side by side from 600px: a block or fragment beside content comes from a
+   column control (source col-sm-*, 841px), not the patients site's 900px (styles.css) */
+@media (width >= 600px) {
   :where(body.corp) main > .section.flex {
+    display: flex;
     align-items: center;
     gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
   }
 
   :where(body.corp) main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0;
     padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex > div:empty {
+    display: none;
   }
 }
 

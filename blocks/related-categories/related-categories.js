@@ -17,7 +17,9 @@ const GROUPS = ['portfolio', 'capability', 'specialty'];
 // preview) read it from there too
 function tagListUrl() {
   const { pathname } = window.location;
-  const locale = getLocalePrefix() || (pathname.match(/\/[a-z]{2}\/[a-z]{2}(?=\/)/i) || ['/us/en'])[0].toLowerCase();
+  // the locale after the local /content prefix and the readable-settings /rs root
+  const path = pathname.replace(/^\/content(?=\/)/, '').replace(/^\/rs(?=\/)/, '');
+  const locale = getLocalePrefix() || (path.match(/^\/[a-z]{2}\/[a-z]{2}(?=\/)/i) || ['/us/en'])[0].toLowerCase();
   return `${pathname.startsWith('/content/') ? '/content' : ''}${locale}/tags.json`;
 }
 

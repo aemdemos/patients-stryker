@@ -142,8 +142,13 @@ export default function decorateSpacing(main) {
     const spacing = parseSpacing([...section.classList]);
     // the section keeps its component gap; boxes of the same source component box stack flush
     // through the `continued` section style
+    // a boxed section with side margins is a coloured box as a coloured Columns cell: its side
+    // margins stay outside the colour and the % resolve against the column's inner width
+    // (1788-platform "Contact us": the gold box 5% in from its 1/3 column, live 396px in 440px)
+    const boxed = section.classList.contains('boxed');
+    const sideMargins = spacing.some(({ prop }) => /^margin(Left|Right)$/.test(prop));
     section.querySelectorAll(':scope > .default-content-wrapper').forEach((wrapper) => {
-      if (spacing.length) setBox(wrapper, spacing, section.classList.contains('boxed'));
+      if (spacing.length) setBox(wrapper, spacing, boxed, boxed && sideMargins);
     });
   });
   main.querySelectorAll('.columns').forEach((columns) => {
