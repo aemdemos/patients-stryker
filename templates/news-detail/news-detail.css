@@ -1353,3 +1353,57 @@ body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block > div:nt
 body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block strong {
   font-size: var(--heading-font-size-xxl);
 }
+
+/* section style `text-video`: a row of text and a video (stryker.com col-sm-6 text column
+   beside a col-sm-6 video, e.g. the top of the DE&I Summit 2023 feature): the section's text
+   and Panel in the left half, the video in the right half from 600px (source 840px), up to
+   three text parts beside it; on phones the video follows the text, 15px below. The Panel
+   quote is the source's 1.5em light serif (21px, lines 1.06) in its 2% / 3% / 1% box */
+body.news-detail main > .section.text-video > .video-wrapper:nth-child(n) {
+  margin-top: var(--space-block);
+}
+
+body.news-detail main > .section.text-video .panel.left.block .panel-body {
+  padding: 2% 3% 1%;
+}
+
+body.news-detail main > .section.text-video .panel.left.block .panel-body :is(p, li) {
+  margin-bottom: var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.text-video {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, calc(min(100vw, var(--container-max)) / 2)));
+    grid-template-rows: auto auto 1fr;
+    place-content: start center;
+  }
+
+  body.news-detail main > .section.text-video > div {
+    grid-column: 1;
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  body.news-detail main > .section.text-video > div.video-wrapper:nth-child(n) {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+    align-self: start;
+    margin-top: 0;
+  }
+}
+
+/* `full-bleed` with `background: light-gray`: the source's full-bleed light-grey panel
+   (c-full-bleed-panel bg-light-gray, e.g. the photo row of the DE&I Summit 2023 feature):
+   a blank text line plus 20px above and below its content inside the band (53px above the
+   photos at 1440px; the photo row brings its own 30px at the bottom), the section gap after
+   it */
+body.news-detail main > .section.full-bleed.light-gray {
+  margin-bottom: var(--space-section);
+  padding-top: calc(var(--corp-blank-line) + var(--space-block-l));
+  padding-bottom: calc(var(--corp-blank-line) + var(--space-block-l) - var(--space-section));
+}
