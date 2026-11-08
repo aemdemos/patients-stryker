@@ -179,10 +179,11 @@ export default function decorateSpacing(main) {
  * of their decoration.
  * @param {Element} block The block
  * @param {Element} target The element that is the AEM box
+ * @param {string[]} [skip] spacing properties the block places itself (e.g. marginBottom)
  */
-export function spaceBlock(block, target) {
+export function spaceBlock(block, target, skip = []) {
   if (!target) return;
-  const spacing = parseSpacing([...block.classList]);
+  const spacing = parseSpacing([...block.classList]).filter(({ prop }) => !skip.includes(prop));
   // a box with its own colour (box-*): the values replace its padding, as in AEM
   setBox(target, spacing, [...block.classList].some((c) => c.startsWith('box-')));
 }

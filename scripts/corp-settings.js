@@ -22,6 +22,8 @@
  *   [[Gold,Title]…]                             text styles by name, inside the text
  *   [[1.75×]…]  [[Gold,5.5vw]…]                 a size as a value: × the surrounding size, or vw
  *   Box: top 3%, sides 3%   …   Box end         a padded box inside text or a block cell
+ *   [[Blank line]]                              an empty line of text (its own paragraph)
+ *   Blank lines | 2                             a spacer section's blank lines (style spacer)
  * The name lists below are the registry: one place says what each name is.
  */
 
@@ -312,8 +314,11 @@ function decorateColumns(col, k, data, hero) {
 function decorateSection(section) {
   const {
     padding, margin, textBox, columnWidths, copySize, labelSize, headingSize, autoplay,
-    headings, text, column,
+    headings, text, column, blankLines,
   } = section.dataset;
+  // a spacer's blank lines: `Blank lines | 2` → lines-2 (styles-corp.css)
+  const lines = parseInt(blankLines, 10);
+  if (lines > 0) section.classList.add(`lines-${lines}`);
   const hero = section.querySelector('.hero-corp');
   const columns = section.querySelectorAll('.columns');
   const spacing = [...spacingTokens(padding || '', 'padding'), ...spacingTokens(margin || '', 'margin')];
@@ -353,6 +358,19 @@ function decorateSection(section) {
 }
 
 /**
+ * `[[Blank line]]` paragraphs: one empty line of text (the source's &nbsp; paragraphs that
+ * space text), a paragraph holding a no-break space (styles-corp.css p.blank-line).
+ * @param {Element} main The container
+ */
+function decorateBlankLines(main) {
+  main.querySelectorAll('p').forEach((p) => {
+    if (!/^\[\[\s*blank line\s*\]\]$/i.test(p.textContent.trim())) return;
+    p.textContent = '\u00a0';
+    p.classList.add('blank-line');
+  });
+}
+
+/**
  * Applies the readable style settings of a container (main, or a fragment): after the
  * section metadata, before the spacing and type decoration read the classes.
  * @param {Element} main The container
@@ -360,5 +378,6 @@ function decorateSection(section) {
 export default function decorateSettings(main) {
   decorateNamedTags(main);
   decorateBoxLines(main);
+  decorateBlankLines(main);
   main.querySelectorAll(':scope > .section').forEach(decorateSection);
 }

@@ -23,6 +23,13 @@
   min-height: 0;
 }
 
+/* contained: the banner sits in the page container (the source fullWidthImageHero's
+   .pDiv.container), within the gutters at every width; full bleed otherwise */
+.hero-corp.image-slide.contained {
+  width: calc(min(100%, var(--container-max)) - 2 * var(--container-gutter));
+  margin-inline: auto;
+}
+
 .hero-corp.image-slide picture {
   display: block;
   position: static;
@@ -162,9 +169,21 @@
 }
 
 /* the button is its own component on the source (curated CTA): the copy above it ends its
-   component (its 15px + the 20px / 30px component gap) */
+   component (its 15px + the 20px / 30px component gap); a product hero with a bottom margin
+   has that margin there instead (--hero-copy-gap, a % of the box width: hero-corp.js) */
 .hero-corp.image-slide:not(.text-above, [data-slide-anchor="bottom"]) > div:last-child > :not(.button-wrapper) + .button-wrapper {
-  margin-top: var(--corp-component-gap-after-text);
+  margin-top: var(--hero-copy-gap, var(--corp-component-gap-after-text));
+}
+
+/* that text-only slide: the source overlay has no top padding (its h1 at the slide top) and
+   its button follows the copy inside the overlay, no component gap (arise-1000-ex at 375px:
+   h1 at the hero top, hero 241px) */
+.hero-corp.image-slide.image-right.text-below:not(:has(.hero-image-mobile)) > div:last-child {
+  padding-top: 0;
+}
+
+.hero-corp.image-slide.image-right.text-below:not(:has(.hero-image-mobile)) > div:last-child > :not(.button-wrapper) + .button-wrapper {
+  margin-top: var(--hero-copy-gap, 0);
 }
 
 /* image-right copy without size-<n> (stryker.com product hero rich text): h1 and h2 at the
@@ -241,6 +260,35 @@
     font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
   }
 
+  /* a product hero (image-right, text-below): from 600px (source 841px) the desktop layout,
+     the desktop image in the right half at the slide top and the text box at its inset over
+     the left half; fitBox keeps the box at its inset and grows the slide when the text runs
+     past the image (arise-1000-ex at 860px: live image x430 y0 h249, h1 at x69 / 45px down,
+     361px wide; procuity: the desktop slide too, not its mobile image) */
+  .hero-corp.image-slide.image-right.text-below .hero-image-desktop {
+    display: block;
+  }
+
+  .hero-corp.image-slide.image-right.text-below .hero-image-mobile {
+    display: none;
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:first-child {
+    display: block;
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-corp.image-slide.image-right.text-below > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: var(--hero-box-padding, 0);
+  }
+
+  .hero-corp.image-slide.image-right.text-below:not(:has(.hero-image-mobile)) > div:last-child > :not(.button-wrapper) + .button-wrapper {
+    margin-top: var(--hero-copy-gap, var(--corp-component-gap-after-text));
+  }
+
   .hero-corp.image-slide.image-right:not(.text-below) > div:first-child {
     width: 50%;
     margin-left: 50%;
@@ -256,10 +304,8 @@
 
 }
 
-/* text-below slides (the source mobile_Bottom: text under the image below 841px) keep the
-   phone layout up to 900px: from 600px the image is too low for the box (product heroes'
-   fixed-size type, ambient-monitoring), which spilled over the next section and under the
-   sticky jump bar. From 900px: the desktop image and the box over it / beside it */
+/* other text-below slides (the source mobile_Bottom: text under the image below 841px) keep
+   the phone layout up to 900px. From 900px: the desktop image and the box over it / beside it */
 @media (width >= 900px) {
   .hero-corp.image-slide.text-below .hero-image-desktop {
     display: block;

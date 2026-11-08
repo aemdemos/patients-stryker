@@ -22,3 +22,16 @@ body.corp .tabs .tabs-tab:not(:last-child) p::after {
 body.corp .tabs .tabs-tab[aria-selected="true"] p {
   border-bottom-color: var(--color-accent);
 }
+
+/* the tab bar → panel gap is the component gap (the source nav.page-section margin: 20px,
+   30px from 600px) */
+body.corp .tabs .tabs-panel {
+  margin-top: var(--corp-component-gap);
+}
+
+/* a resources and downloads list in a tab keeps its own bottom spacing inside the tab, its last
+   row's 20px item margin and its 20px component margin (arise-1000-ex: the tab 390px at 1440px,
+   380px at 375px) */
+body.corp .tabs .tabs-panel > .section:last-child:has(.cards-corp.resources) {
+  padding-bottom: calc(2 * var(--space-block-l));
+}

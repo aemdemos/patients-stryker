@@ -4,7 +4,8 @@ import { getLocalePrefix } from '../../scripts/utils.js';
 /*
  * Related Categories: the page's categories, built from its `tags` metadata (stryker.com
  * product pages, the template's tag crumb; EDS publishes the field as article:tag metas). The
- * block holds its heading only; the tag list sheet (`/us/en/tags`: Tag | Label | Link) gives
+ * block holds its heading, after an optional row of links (the column's buttons, shown above
+ * the categories); the tag list sheet (`/us/en/tags`: Tag | Label | Link) gives
  * each tag its label and landing page. One line
  * per namespace, portfolio → capability → specialty, the page's tags in their metadata order;
  * tags without a row in the sheet are not shown (as on stryker.com). Without any, the block
@@ -38,7 +39,13 @@ function fetchTagList() {
  * @param {Element} block The block element
  */
 export default async function decorate(block) {
-  const title = block.textContent.trim() || 'Related categories';
+  // an optional row of links first: the column's button(s) above the categories (stryker.com
+  // product intro: "Request information" over the tag crumb, medpor-neurosurgery)
+  const rows = [...block.children];
+  const actionRows = rows.filter((row) => row.querySelector('a[href]'));
+  const titleRow = rows.find((row) => !actionRows.includes(row));
+  const title = (titleRow ? titleRow.textContent.trim() : '') || 'Related categories';
+  const actions = actionRows.flatMap((row) => [...row.querySelectorAll(':scope > div > *')]);
   // the `tags` metadata field: EDS writes it as one <meta property="article:tag"> per tag
   const tags = (getMetadata('article:tag') || getMetadata('tags')).split(',')
     .map((tag) => tag.trim().replace(/^[\w-]+:/, '').toLowerCase()).filter(Boolean);
@@ -46,7 +53,8 @@ export default async function decorate(block) {
   const groups = GROUPS.map((ns) => tags.filter((tag) => tag.split('/')[0] === ns)
     .map((tag) => list.get(tag)).filter(Boolean)).filter((group) => group.length);
   if (!groups.length) {
-    (block.parentElement || block).remove();
+    if (actions.length) block.replaceChildren(...actions);
+    else (block.parentElement || block).remove();
     return;
   }
 
@@ -65,5 +73,5 @@ export default async function decorate(block) {
     });
     return ul;
   });
-  block.replaceChildren(heading, ...lines);
+  block.replaceChildren(...actions, heading, ...lines);
 }

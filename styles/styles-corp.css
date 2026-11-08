@@ -142,6 +142,7 @@
   --corp-jump-box-height-pinned: 62px; /* its gold box (the item keeps 4px padding) */
   --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
   --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
+  --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block)); /* a blank paragraph: 19.25px + 15px */
   --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */
   --corp-heading-line-height-1-5: 1.3; /* h-1-5 headings on phones; 1.36 from 600px */
   --corp-hero-heading-line-height: 1.44; /* product hero h2 (35.2px lines at 24.5px) */
@@ -149,6 +150,7 @@
   /* Related Categories (stryker.com product tag crumb) */
   --corp-tag-group-gap: 6px; /* .c-tagcrumb-list-item-wrapper margin-bottom */
   --corp-tag-line-height: 21px; /* .c-tagcrumb-item lines */
+  --corp-tag-button-gap: 37px; /* measured: the product intro's button → "Related categories" (medpor-neurosurgery, 1440 / 860 / 375px) */
 
   /* Statistics (fast-facts): stryker.com Fast Facts (learn "Our impact") */
   --corp-facts-number-size: 56px; /* .c-fastfacts-number from 840px */
@@ -175,13 +177,13 @@
     --corp-heading-line-height-1-5: 1.36; /* h-1-5 headings from 600px (source 480px) */
     --corp-component-gap: var(--space-section);
     --corp-component-gap-after-text: calc(var(--space-section) + var(--space-block));
+    --corp-hcp-band-height: 95px; /* the notice on one line (arise-1000-ex at 860px: 89–184px) */
   }
 }
 
 @media (width >= 900px) {
   :where(body.corp) {
     --corp-chrome-height: 147px;
-    --corp-hcp-band-height: 95px;
   }
 }
 
@@ -194,8 +196,11 @@ body:where(.corp).hcp-banner {
   margin-bottom: var(--corp-header-gap);
 }
 
-/* a hero carousel sits flush under the header */
-body:where(.corp):has(main .hero-carousel) header {
+/* a hero carousel sits flush under the header, as a page's first slide (the product hero,
+   a carousel slide on the source: arise-1000-ex at 242px under a 242px header); a contained
+   banner (fullWidthImageHero) keeps the gap (spinejack-system) */
+body:where(.corp):has(main .hero-carousel) header,
+body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide:not(.contained)) header {
   margin-bottom: 0;
 }
 
@@ -460,6 +465,28 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-block: 0;
   padding: 0;
 }
+
+/* spacer: empty stryker.com components that only take their slot (an empty column control,
+   a hidden section title), one component gap each (20px, 30px from 600px): spacer, then
+   large / xlarge / xxlarge for 2 / 3 / 4 slots (arise-1000-ex: 31px per empty column control),
+   no-gap for none; plus the blank lines of blank-only text components, lines-<n> (one 14px
+   paragraph line + its 15px each: evolve-radial-head-system, two lines = 69px) */
+:where(body.corp) main > .section.spacer:is(*, .large, .xlarge, .xxlarge) {
+  height: calc(var(--corp-spacer-slots, 1) * var(--corp-component-gap) + var(--corp-spacer-lines, 0) * var(--corp-blank-line));
+}
+
+:where(body.corp) main > .section.spacer.no-gap { --corp-spacer-slots: 0; }
+:where(body.corp) main > .section.spacer.large { --corp-spacer-slots: 2; }
+:where(body.corp) main > .section.spacer.xlarge { --corp-spacer-slots: 3; }
+:where(body.corp) main > .section.spacer.xxlarge { --corp-spacer-slots: 4; }
+:where(body.corp) main > .section.spacer.lines-1 { --corp-spacer-lines: 1; }
+:where(body.corp) main > .section.spacer.lines-2 { --corp-spacer-lines: 2; }
+:where(body.corp) main > .section.spacer.lines-3 { --corp-spacer-lines: 3; }
+:where(body.corp) main > .section.spacer.lines-4 { --corp-spacer-lines: 4; }
+:where(body.corp) main > .section.spacer.lines-5 { --corp-spacer-lines: 5; }
+:where(body.corp) main > .section.spacer.lines-6 { --corp-spacer-lines: 6; }
+:where(body.corp) main > .section.spacer.lines-7 { --corp-spacer-lines: 7; }
+:where(body.corp) main > .section.spacer.lines-8 { --corp-spacer-lines: 8; }
 
 /* section styles: backgrounds */
 :where(body.corp) main > .section.bg-white {
@@ -1036,6 +1063,16 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--heading-line-height);
 }
 
+/* a `[[Blank line]]` paragraph (scripts/corp-settings.js): one line of the 14px paragraph
+   whatever the section's copy size, as the source's &nbsp; paragraphs (19.25px + 15px) */
+:where(body.corp) main > .section > div p.blank-line,
+:where(body.corp) .tabs-panel > .section > div p.blank-line,
+:where(body.corp) .accordion-item-body > .section > div p.blank-line,
+:where(body.corp) .fragment > .section > div p.blank-line {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 /* section style `serif`: Egyptienne copy in default content (stryker.com
    span.urw-egyptienne); the copy size comes from p-1 / p-1-25 (columns style their own
    serif sections, blocks/columns) */
@@ -1301,6 +1338,13 @@ body:where(.corp):has(main .hero-carousel) header {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* a section of only that hidden title (the transparent .hero-space h1 above a banner) still
+   takes its line on the source, 20px above the banner at every width (spinejack-system: title
+   252–282px, banner at 302px at 1440px) */
+:where(body.corp) main > .section:has(> .default-content-wrapper:only-child > :is(h1, h2):only-child > span.visually-hidden:only-child) {
+  margin-bottom: var(--space-block-l);
 }
 
 /* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body

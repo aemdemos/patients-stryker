@@ -329,9 +329,11 @@ body.corp .columns .columns-img-col {
   padding-bottom: 0;
 }
 
-/* a heading caption under an image (name + role) sits one column gutter lower */
+/* a heading caption under an image (name + role, a card title) is the next component on the
+   source: the component gap below the image (20px, 30px from 600px; arise-1000-ex feature
+   cards: 20px at 375px) */
 body.corp .columns .columns-img-col:has(+ h3) {
-  margin-bottom: var(--space-section);
+  margin-bottom: var(--corp-component-gap);
 }
 
 /* large-headline sets no paragraph gaps: an image keeps a column gutter below it */
