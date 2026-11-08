@@ -804,3 +804,43 @@ body.corp .columns.product-tiles.block h4 a:any-link {
     font-size: calc(var(--heading-font-size-xl) * 2.625);
   }
 }
+
+/* title-row: the page title beside a photo (stryker.com Large Headline in a white box in the
+   left col-sm-6, the standalone image in the right one, e.g. "One caregiver's journey to
+   help reduce surgical smoke"): the Bold Heading 1 (Futura 28px) and its subtitle paragraph
+   (the light serif 28px), lines 1.06, the box (inside the column gutter) padded 25% of its
+   width at the top (169px at 1440px, 90px at 390px) and 20px at the sides; on phones the
+   photo follows 20px below */
+body.corp main .columns.title-row.block > div:nth-child(n):nth-child(n) {
+  align-items: flex-start;
+}
+
+body.corp .columns.title-row.block > div > div:first-child:nth-child(n) {
+  margin-bottom: var(--space-block-l);
+  padding: calc(25% - var(--space-block) / 2) calc(var(--space-block) + var(--space-block-l)) 0;
+}
+
+body.corp .columns.title-row.block > div > div:first-child > :is(h1, p):nth-child(n) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns.title-row.block > div > div:first-child > h1:nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp main .columns.title-row.block > div > div:first-child:nth-child(n) > p:nth-child(n):nth-child(n) {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+@media (width >= 600px) {
+  /* side by side, the box is half the row: 25% of it is 12.5% of the row */
+  body.corp .columns.title-row.block > div > div:first-child:nth-child(n) {
+    margin-bottom: 0;
+    padding: calc(12.5% - var(--space-block) / 2) calc(var(--space-block) + var(--space-block-l)) var(--space-block-l);
+  }
+}
