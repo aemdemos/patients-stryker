@@ -393,6 +393,30 @@ body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
 }
 
+/* gold-last: the last cell is a gold box beside the text (stryker.com bg-gold rich text in
+   the col-sm-4 next to the article, e.g. "83% of a patient's stay…" on the ICU early
+   mobility article: padding 8% / 10% / 5% of the column, 440px wide at 1440px), its text
+   centred at 17.5px and its Bold figure 2.625x the h3 (64.3px from 600px, 55.1px on phones) */
+body.corp .columns.gold-last > div > div:last-child {
+  margin-inline: var(--space-block);
+  padding: 8% 10% 5%;
+  background-color: var(--color-accent);
+  text-align: center;
+}
+
+body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> strong:only-child) {
+  margin-bottom: 0;
+  font-family: var(--display-font-family);
+  font-size: calc(var(--heading-font-size-l) * 2.625);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
 /* gray-lead: the text cell starts level with the row top, its grey box (above) first */
 body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
   padding-top: 0;
@@ -492,6 +516,13 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   body.corp .columns.gold-first > div > div:first-child {
     flex: 1 1 0;
     align-self: flex-start;
+  }
+
+  /* gold-last: in the one-third column its padding is that share of the row's */
+  body.corp .columns.gold-last > div > div:last-child {
+    flex: 1 1 0;
+    align-self: flex-start;
+    padding: calc(8% / 3) calc(10% / 3) calc(5% / 3);
   }
 
   body.corp .columns.columns-75-25 > div > div:first-child {
@@ -764,5 +795,12 @@ body.corp .columns.product-tiles.block h4 a:any-link {
 
   body.corp .columns.product-tiles.block h4 {
     font-size: var(--body-font-size-l);
+  }
+}
+
+/* gold-last: the figure at 2.625x the 24.5px h2 size from 600px (64.3px) */
+@media (width >= 600px) {
+  body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> strong:only-child) {
+    font-size: calc(var(--heading-font-size-xl) * 2.625);
   }
 }
