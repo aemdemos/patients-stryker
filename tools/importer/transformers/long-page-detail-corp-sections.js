@@ -432,6 +432,14 @@ function boxVariant(columns) {
   const textCols = columns.filter((col) => text(col));
   let name = '';
   if (kinds[0] === 'lead' && used.length === textCols.length) name = `${colours[0]}-lead`;
+  // the last column alone opening with a box that a video or image follows (jr45 season 1
+  // faculty rows: "Watch …" in grey above the episode video): `-last` (columns.js ends the
+  // box at the media)
+  const last = columns[columns.length - 1];
+  if (kinds[0] === 'lead' && used.length === 1 && boxes[columns.length - 1]
+    && last.querySelector('.c-standalone-video, .c-standalone-image, [data-asset-path]')) {
+    name = `${colours[0]}-last`;
+  }
   if (kinds[0] === 'whole') {
     if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
     else if (used.length === 1) {

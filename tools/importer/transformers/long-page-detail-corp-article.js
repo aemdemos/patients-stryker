@@ -296,22 +296,28 @@ function tagTextSize(root) {
 function tagGoldText(root) {
   const tagged = new Set();
   const wrap = (nodes) => bracketTag(nodes, 'color-gold', root);
+  // `tagged`: the nodes already inside a gold tag (a gold element in them needs no tag of its own)
+  const wrapRun = (nodes) => {
+    nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
+    wrap(nodes);
+  };
   root.querySelectorAll('[style*="color"]').forEach((el) => {
     if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
-    tagged.add(el);
     if (!hasOtherColour(el)) {
-      wrap([el]);
+      wrapRun([el]);
       return;
     }
-    // mixed: each run of children without another colour
+    // mixed: each run of children without another colour; a gold element inside a child in
+    // another colour gets its own tag (jr45 season 3 February: gold "knee procedures" in a
+    // black span in a gold span)
     let run = [];
     [...el.childNodes].forEach((child) => {
       if (hasOtherColour(child)) {
-        wrap(run);
+        wrapRun(run);
         run = [];
       } else run.push(child);
     });
-    wrap(run);
+    wrapRun(run);
   });
 }
 

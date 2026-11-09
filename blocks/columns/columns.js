@@ -72,7 +72,10 @@ function decorateBoxes(block) {
       const content = [...cell.children];
       const start = content.findIndex((el) => !el.matches(MEDIA) && el.textContent.trim());
       if (start < 0) return;
-      const nodes = variant.endsWith('-lead') ? [content[start]] : content.slice(start);
+      // the box ends at the next image or video (jr45: the "Watch …" box above the episode video)
+      const isMedia = (el) => el.matches(MEDIA) || !!el.querySelector(MEDIA);
+      const end = content.findIndex((el, i) => i > start && isMedia(el));
+      const nodes = variant.endsWith('-lead') ? [content[start]] : content.slice(start, end < 0 ? undefined : end);
       const box = document.createElement('div');
       box.className = 'columns-box';
       nodes[0].before(box);
