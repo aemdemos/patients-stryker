@@ -391,6 +391,10 @@
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
+  .cards-corp.people .cards-corp-card-body p:first-child {
+    margin-top: 0;
+  }
+
   .cards-corp.text h3 {
     font-size: var(--heading-font-size-compact);
   }
@@ -489,6 +493,10 @@
 }
 
 @media (width >= 1200px) {
+  .cards-corp.people .cards-corp-card-body p:first-child {
+    margin-top: calc(var(--space-block-xs) + var(--space-block-xxs));
+  }
+
   .cards-corp.text > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
