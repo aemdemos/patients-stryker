@@ -26,6 +26,7 @@ import {
 import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
+import decorateSettings, { rewriteSizeValues } from './corp-settings.js';
 import decorateTypeTags from './corp-type.js';
 import buildCarouselSections from './corp-carousel.js';
 import fetchPlainHtml from './plain-html.js';
@@ -124,6 +125,8 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  // readable settings (prototype): size values in bracket tags, before the tags are parsed
+  if (getMetadata('style-settings') === 'on') rewriteSizeValues(main);
   decorateModalTiles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
@@ -225,13 +228,64 @@ function joinSplitHeadingUnderlines(main) {
 }
 
 /**
+ * Flex sections whose source columns hold several pieces each (`flex-cols-1-2`, readable
+ * `Columns | 1 + 2`: text | chart + footnote on surpass-evolve): the section's wrappers in one
+ * div per source column, so the flex layout and its widths (flex-33-67 …) see those columns.
+ * A `Column break` line ends a column's text where the next column starts with text (the two
+ * would be one wrapper): its wrapper is split there, the line removed.
+ * After the blocks are decorated (a wrapper moved into a column would read as a block).
+ * Left as is when the counts don't match the section's wrappers.
+ * @param {Element} main The container element
+ */
+function groupFlexColumns(main) {
+  main.querySelectorAll(':scope > .section.flex').forEach((section) => {
+    const cls = [...section.classList].find((c) => /^flex-cols-\d+(-\d+)+$/.test(c));
+    if (!cls) return;
+    section.querySelectorAll(':scope > .default-content-wrapper > p').forEach((line) => {
+      if (!/^column break$/i.test(line.textContent.trim())) return;
+      const rest = document.createElement('div');
+      rest.className = 'default-content-wrapper';
+      while (line.nextSibling) rest.append(line.nextSibling);
+      line.parentElement.after(rest);
+      line.remove();
+    });
+    const counts = cls.slice('flex-cols-'.length).split('-').map(Number);
+    // (an emptied wrapper, e.g. the section metadata's, is no piece)
+    const wrappers = [...section.children].filter((el) => el.tagName === 'DIV' && el.children.length);
+    if (counts.reduce((sum, n) => sum + n, 0) !== wrappers.length) return;
+    const empty = [...section.children].filter((el) => !wrappers.includes(el));
+    let at = 0;
+    counts.forEach((n) => {
+      const column = document.createElement('div');
+      column.className = 'flex-column';
+      column.append(...wrappers.slice(at, at + n));
+      at += n;
+      section.append(column);
+    });
+    // the columns first: the split widths count them from the start (flex-33-67)
+    section.append(...empty);
+  });
+}
+
+/**
+ * Corp layout that needs the decorated blocks. Runs on <main> and on fragments, after
+ * decorateBlocks.
+ * @param {Element} main The container element
+ */
+export function decorateBlockLayout(main) {
+  groupFlexColumns(main);
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
  */
 export function decorateSections(main) {
   // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
-  // before accordion panels take their sections' content
+  // before accordion panels take their sections' content; readable settings (prototype,
+  // `style-settings: on` pages) first, as the classes they stand for
+  if (getMetadata('style-settings') === 'on') decorateSettings(main);
   decorateSpacing(main);
   decorateTypeTags(main);
   buildAccordionSections(main);

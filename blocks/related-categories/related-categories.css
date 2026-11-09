@@ -34,9 +34,15 @@
   content: " | ";
 }
 
-.related-categories a:any-link {
+.related-categories li a:any-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+/* the column's button above the categories (optional first row; medpor-neurosurgery: 37px
+   from the button to the heading at every width) */
+.related-categories > .button-wrapper {
+  margin: 0 0 var(--corp-tag-button-gap);
 }
 
 @media (width >= 600px) {

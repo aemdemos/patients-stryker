@@ -10,7 +10,10 @@ import { toClassName, toCamelCase } from './aem.js';
  * @returns {string} e.g. '/gb/en', or '' when the page is not under a locale folder
  */
 export function getLocalePrefix() {
-  return window.location.pathname.match(/^\/[a-z]{2}\/[a-z]{2}(?=\/|$)/i)?.[0].toLowerCase() || '';
+  // pages of the readable-settings approach sit under /rs until it is approved
+  // (tools/importer/corp/root.js); their sheets are the locale's own. Remove with the root.
+  const path = window.location.pathname.replace(/^\/rs(?=\/)/, '');
+  return path.match(/^\/[a-z]{2}\/[a-z]{2}(?=\/|$)/i)?.[0].toLowerCase() || '';
 }
 
 /**

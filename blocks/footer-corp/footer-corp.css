@@ -164,10 +164,12 @@ footer.footer-corp-wrapper {
   }
 }
 
+/* from 900px (source desktop 1024px) the desktop footer: link columns beside the social
+   icons, the legal row's bottom gap as at 1440 (live at 1100px: 60px to TRADEMARKS) */
 @media (width >= 900px) {
   .footer-corp .footer-row-social {
     display: flex;
-    margin-bottom: var(--space-block-xs);
+    margin-bottom: var(--space-inset-l);
   }
 
   .footer-corp .footer-col-main {
@@ -193,6 +195,12 @@ footer.footer-corp-wrapper {
 
   .footer-corp .footer-legal > p::after {
     content: none;
+  }
+
+  /* the links flow on the copyright's line and wrap one by one, the wrapped one led by its
+     pipe (live at 1100px: "© Stryker | PRIVACY | … DISCLAIMER", then "| TERMS OF USE") */
+  .footer-corp .footer-legal ul {
+    display: contents;
   }
 
   .footer-corp .footer-legal li {
@@ -246,10 +254,6 @@ footer.footer-corp-wrapper {
 
   .footer-corp .footer-social li:last-child {
     padding-right: 8px;
-  }
-
-  .footer-corp .footer-row-social {
-    margin-bottom: var(--space-inset-l);
   }
 
   .footer-corp .footer-social ul {
