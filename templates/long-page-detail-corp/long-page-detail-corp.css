@@ -46,10 +46,85 @@ body.long-page-detail-corp main > .section.full-width-image.shadow img {
   box-shadow: var(--shadow-soft);
 }
 
+/* ---- the page content starts 20px lower than the corp default (30px from 600px), as on
+   stryker.com (its 15px header margin + the page section margins: the text of a title,
+   headline box or gold box 31px / 21px lower at 1440 / 375 on every long-page-detail page
+   measured: video detail, nse, endoscopy, joint replacement); a page that opens with a hero
+   keeps it against the header ---- */
+body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
+  padding-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
+    padding-top: var(--space-section);
+  }
+}
+
 /* ---- title section ---- */
 
 body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
   padding-bottom: 0;
+}
+
+/* `headline-box` with a colour section style (`gold`, `light-gray`, `blue`, `dark`; this
+   template's `purple`, `purple-gradient`, `gray-gradient`):
+   the source box in that colour (.largeheadline.has-background.bg-gold …, e.g. the nse
+   "Elite …" boxes): inside the content column (the gutter stays clear), 20px in on every
+   side at every width; white text on blue and dark (on gold and light grey the source's
+   black, its white words as `[[color-white]…]`). The colour is the box's, not the band's
+   (the site styles colour the whole section) */
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) {
+  background: none;
+}
+
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper {
+  border-inline: var(--container-gutter) solid transparent;
+  padding: var(--space-block-l);
+  background-clip: padding-box;
+}
+
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper {
+  background-color: var(--color-accent);
+}
+
+body.long-page-detail-corp main > .section.headline-box.light-gray > .default-content-wrapper {
+  background-color: var(--color-surface);
+}
+
+body.long-page-detail-corp main > .section.headline-box.blue > .default-content-wrapper {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.dark > .default-content-wrapper {
+  background-image: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.purple > .default-content-wrapper {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.purple-gradient > .default-content-wrapper {
+  background-image: var(--long-page-detail-corp-purple-gradient);
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.headline-box.gray-gradient > .default-content-wrapper {
+  background-image: var(--long-page-detail-corp-gray-gradient);
+  color: var(--color-white);
+}
+
+/* section style `gold` (the site's colour style, here for a stryker.com gold full-bleed
+   panel: `gold, full-bleed`): the gold band */
+body.long-page-detail-corp main > .section.gold:not(.headline-box) {
+  background-color: var(--color-accent);
 }
 
 /* ---- large headline paragraphs (the `headline-N` tags, below): the source sets the box in
@@ -145,6 +220,18 @@ body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
 
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section:has(> .columns-wrapper) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* the same below a column row in a tab (`tabbed` section: the rows share the tab's panel,
+   e.g. the nse product grids: image row, caption row) */
+body.long-page-detail-corp main .tabs-panel .columns-wrapper {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .tabs-panel .columns-wrapper {
     margin-bottom: var(--space-section);
   }
 }
@@ -304,6 +391,14 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
+  --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
+  --long-page-detail-corp-fast-facts-title: 27px; /* measured: the source band title (.c-fastfacts-title) from 840px, OR staff */
+  --long-page-detail-corp-serif-1-75-line-height: 1.265; /* measured: a 24.5px Egyptienne span in a 14px source paragraph renders 31px lines (ispies intro) */
+  --long-page-detail-corp-copy-3-5: 49px; /* 1.75em of a 28px source H1 (Mako refreshers) */
+  --long-page-detail-corp-gray-gradient: linear-gradient(90deg, var(--color-secondary), var(--color-surface-muted) 20%); /* source .bg-gray-gradient */
+  --long-page-detail-corp-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
+  --long-page-detail-corp-gold-bar: 34px; /* source empty gold panel (OR staff) */
   --long-page-detail-corp-video-frame: 1px; /* the .dm-video border (lazy-styles.css) */
   --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
   --long-page-detail-corp-download-box: 240px; /* a download cover's box outside the VLC column */
@@ -324,6 +419,11 @@ body.long-page-detail-corp main span.text-2 {
 
 body.long-page-detail-corp main span.text-2-5 {
   font-size: var(--long-page-detail-corp-copy-2-5);
+}
+
+/* `[[text-3-5]…]` 49px: a statement line (Mako refreshers "Together with our customers…") */
+body.long-page-detail-corp main span.text-3-5 {
+  font-size: var(--long-page-detail-corp-copy-3-5);
 }
 
 body.long-page-detail-corp main > .section.p-2 > div :is(p, li) {
@@ -402,6 +502,34 @@ body.long-page-detail-corp main > .section.spacer:not(.separator) {
   }
 }
 
+/* `spacer, large / xlarge / xxlarge`: two, three or four rows' spacing (a source row nested in
+   other rows) */
+body.long-page-detail-corp main > .section.spacer.large:not(.separator) {
+  height: calc(2 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.spacer.xlarge:not(.separator) {
+  height: calc(3 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
+  height: calc(4 * var(--space-block-l));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.spacer.large:not(.separator) {
+    height: calc(2 * var(--space-section));
+  }
+
+  body.long-page-detail-corp main > .section.spacer.xlarge:not(.separator) {
+    height: calc(3 * var(--space-section));
+  }
+
+  body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
+    height: calc(4 * var(--space-section));
+  }
+}
+
 body.long-page-detail-corp main > .section.spacer + .section.separator {
   margin-top: 0;
 }
@@ -431,6 +559,21 @@ body.long-page-detail-corp main > .section.separator.spacer {
   body.long-page-detail-corp main > .section.separator.spacer {
     height: calc(var(--space-section-xl) + var(--space-block-l));
     margin-top: calc(var(--space-section) + var(--space-block));
+  }
+}
+
+/* a rule with an empty large headline below it and content after (`separator, spacer`, Mako
+   surgeon campaign "INSIGHTFUL DATA ANALYTICS"): 20px above the rule (30px from 600px), then
+   the rule's own 20px (50px) and the headline's 20px (30px) before the next section */
+body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer, :empty)) {
+  height: calc(2 * var(--space-block-l));
+  margin-block: var(--space-block-l) 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.separator.spacer:has(~ .section:not(.spacer, :empty)) {
+    height: calc(var(--space-section-l) + var(--space-section));
+    margin-top: var(--space-section);
   }
 }
 
@@ -515,10 +658,10 @@ body.long-page-detail-corp main > .section .columns p.button-wrapper {
   margin-block: 0 var(--space-block);
 }
 
-/* the 21px / 28px / 35px size tags set their own line spacing, 1.06x as on the source
-   (22.26px at 21px: jr45 faculty names, endoscopy video titles; 37.1px at 35px), not the
-   copy's */
-body.long-page-detail-corp main span:is(.text-1-5, .text-2, .text-2-5) {
+/* the 21px / 24.5px / 28px / 35px / 49px size tags set their own line spacing, 1.06x as on
+   the source (22.26px at 21px: jr45 faculty names, endoscopy video titles; 25.97px at 24.5px:
+   jr45 season 3 March grey box, TEACH thank-you, webinars; 37.1px at 35px), not the copy's */
+body.long-page-detail-corp main span:is(.text-1-5, .text-1-75, .text-2, .text-2-5, .text-3-5) {
   line-height: var(--heading-line-height);
 }
 
@@ -596,4 +739,350 @@ body.long-page-detail-corp main span[class*="headline-"]:not(.serif) {
 body.long-page-detail-corp main span.serif {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-regular);
+}
+
+/* this template's colour section styles (stryker.com .bg-purple, .bg-dark-purple-gradient,
+   .bg-gray-gradient; Mako refreshers, ispies, OR staff): with `full-bleed` the band, with
+   `headline-box` the box (above); white text */
+body.long-page-detail-corp main > .section:is(.purple, .purple-gradient, .gray-gradient):not(.headline-box) {
+  color: var(--color-white);
+}
+
+body.long-page-detail-corp main > .section.purple:not(.headline-box) {
+  background-color: var(--color-purple);
+}
+
+body.long-page-detail-corp main > .section.purple-gradient:not(.headline-box) {
+  background-image: var(--long-page-detail-corp-purple-gradient);
+}
+
+body.long-page-detail-corp main > .section.gray-gradient:not(.headline-box) {
+  background-image: var(--long-page-detail-corp-gray-gradient);
+}
+
+/* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
+   34px gold bar the container width (edge to edge on phones) */
+body.long-page-detail-corp main > .section.gold-bar {
+  display: block; /* an empty section: corp styles hide empty sections other than spacers */
+  max-width: var(--container-max);
+  height: var(--long-page-detail-corp-gold-bar);
+  margin-inline: auto;
+  background-color: var(--color-accent);
+}
+
+/* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
+   tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
+   row (source col-sm-4 / col-sm-8, 840px); stacked on phones. The source accordion keeps its
+   labels 15px apart (the panel title's bottom margin) and 55px of its column's spacing below
+   the last one; from 600px the image column keeps 40px below the image (with its paragraph's
+   15px: 55px). The tab set keeps the source tabs' 30px bottom margin */
+body.long-page-detail-corp main > .section.image-aside {
+  margin-bottom: var(--space-section);
+}
+
+body.long-page-detail-corp main > .section.image-aside .accordion .accordion-item + :is(.accordion-item) {
+  margin-top: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section > .accordion-wrapper {
+  padding-bottom: calc(var(--space-section) + var(--space-inset-m));
+}
+
+@media (width >= 600px) {
+  /* each tab the full row (the tabs block sizes a tab to its content from 900px) */
+  body.long-page-detail-corp main > .section.image-aside .tabs .tabs-tab-row {
+    flex: 0 0 100%;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* the source column's gutters: the image centred in the third, 20px clear of the accordion,
+     which starts 10px further in */
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .default-content-wrapper {
+    flex: 0 0 33.333%;
+    box-sizing: border-box;
+    padding-inline-end: var(--space-block-l);
+    padding-bottom: calc(2 * var(--space-block-l));
+    text-align: center;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .default-content-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body.long-page-detail-corp main > .section.image-aside .tabs-panel > .section:has(> .accordion-wrapper) > .accordion-wrapper {
+    flex: 1 1 0;
+    box-sizing: border-box;
+    min-width: 0;
+    padding-inline-start: var(--space-block-s);
+  }
+}
+
+/* section style `column-8-12` (with a coloured `headline-box`; ispies event titles): the box
+   two thirds of the content width (source col-sm-8 beside an empty col-sm-4, 840px). The
+   source title is a Heading 3 with its 15px bottom margin inside the box (4% top padding on
+   phones), and the box is 5px (15px from 600px) further from the line below it (its margin
+   takes the place of the section's 15px) */
+body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper) {
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+  padding-top: 4%;
+  padding-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+    max-width: calc(var(--container-max) * 2 / 3);
+    margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
+    margin-bottom: calc(2 * var(--space-block));
+    width: 66.667%;
+  }
+}
+
+/* `serif, p-1` copy in Columns (the source's Egyptienne span in a 14px Humanist paragraph,
+   nse intros, jr45 faculty): its lines 22.4px apart and its list item lines 23px, as the
+   mixed fonts set them on stryker.com (19.25px with the Egyptienne alone) */
+body.long-page-detail-corp main .section.serif.p-1 .columns :is(p) {
+  line-height: var(--long-page-detail-corp-serif-copy-line-height);
+}
+
+body.long-page-detail-corp main .section.serif.p-1 .columns :is(li) {
+  line-height: var(--long-page-detail-corp-serif-item-line-height);
+}
+
+/* `p-1-75` paragraphs (24.5px Egyptienne spans in the source's 14px paragraphs, ispies intro):
+   the mixed fonts set their lines 31px apart and the paragraphs 15px on stryker.com */
+body.long-page-detail-corp main > .section.p-1-75 > .default-content-wrapper > :is(p) {
+  margin-bottom: var(--space-block);
+  line-height: var(--long-page-detail-corp-serif-1-75-line-height);
+}
+
+/* accordions: each panel ends with a 1px grey rule (stryker.com .panel border, under the
+   label when closed, under the content when open; ispies, Mako surgeon campaign) */
+body.long-page-detail-corp main .accordion .accordion-item {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* a closed panel: the rule right under its label (the 15px gap is for the open content) */
+body.long-page-detail-corp main .accordion .accordion-item:not(.accordion-item-open) .accordion-item-label {
+  margin-bottom: 0;
+}
+
+/* the panel's last line (e.g. a button) 15px above that rule */
+body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:not(ul, ol) {
+  margin-bottom: var(--space-block);
+}
+
+/* `column-8-12` title boxes (ispies): the source box's own padding, 4% at the top and 3% on
+   the left of its width (36 / 27px at 1440) from 600px */
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+    padding-block-start: 2.5vw;
+    padding-inline-start: 1.9vw;
+  }
+}
+
+/* ---- a headline beside an image in Columns 50-50 (ispies "Join us for iSPIES in
+   Charlotte!"): the source text box sits 15px in from its column and adds 20px on the left
+   and 15% of its width on top; its Futura lines are 1.35x the size apart, so they align to
+   the line top instead of the serif heading's baseline ---- */
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + :is(div):has(> h1:first-child) {
+  padding-inline-start: calc(var(--space-block) + var(--space-block-l));
+  padding-top: calc((100% - 2 * var(--space-block)) * 0.15);
+}
+
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child > :is(span) {
+  vertical-align: top;
+}
+
+/* the serif date line below them sits just under its baseline, which puts it as far below
+   them as on the source */
+body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child > :is(span).serif {
+  vertical-align: -0.1em;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + :is(div):has(> h1:first-child) {
+    padding-top: calc((50% - 2 * var(--space-block)) * 0.15);
+  }
+
+  body.long-page-detail-corp main .columns.columns-50-50 > div > div:has(picture) + div > h1:first-child {
+    margin-top: 0;
+  }
+}
+
+/* ---- a `blue, full-bleed` headline band (Mako surgeon campaign "Know more. Cut less."): the
+   source band's 20px padding, its lines as blocks (the second line a Heading 3 15px below
+   the first, then the copy, its empty first line only on phones) and its empty lines below
+   the copy; the video follows right under the band ---- */
+body.long-page-detail-corp main > .section.blue.full-bleed {
+  margin-bottom: 0;
+  padding-block: var(--space-block-l) calc(4 * var(--space-block-l));
+}
+
+body.long-page-detail-corp main > .section.blue.full-bleed h1 :is(strong) {
+  display: block;
+  margin-top: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 {
+  display: block;
+  margin-top: var(--space-inset-m);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 {
+    margin-top: var(--space-block-xs);
+  }
+
+  body.long-page-detail-corp main > .section.blue.full-bleed h1 > :is(span).headline-2 > br:first-child {
+    display: none;
+  }
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed {
+    padding-bottom: calc(3 * var(--space-block-l));
+  }
+}
+
+@media (width >= 1200px) {
+  body.long-page-detail-corp main > .section.blue.full-bleed {
+    padding-bottom: calc(4 * var(--space-block-l));
+  }
+}
+
+/* ---- size tags in a Heading 4 (stryker.com h4 > span.fontsize-1-25em / 1-5em, Mako surgeon
+   campaign "Cut less", "For more procedural videos…"): 1.25x / 1.5x the source heading, which
+   is 14px below 840px (17.5px / 21px) and 17.5px above it (21.875px / 26.25px) ---- */
+body.long-page-detail-corp main h4 :is(span).text-1-25 {
+  font-size: 1em;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main h4 :is(span).text-1-25 {
+    font-size: var(--corp-font-scale-1-25);
+  }
+
+  body.long-page-detail-corp main h4 :is(span).text-1-5 {
+    font-size: 1.5em;
+  }
+}
+
+/* ---- a section title alone in its section (stryker.com .c-section-title, 30px bottom margin
+   under its heading's 15px: Mako surgeon campaign "HOW IT WORKS", jr45 "E-learning", spine
+   resources "BioSkills"; a `separator` rule above it as well) ---- */
+body.long-page-detail-corp main > .section:has(> .default-content-wrapper:first-child > h2.underline:only-child):not(:has(> .default-content-wrapper ~ :not(:empty))) {
+  margin-bottom: calc(var(--space-block) + var(--space-section));
+}
+
+/* ---- list bullets in enlarged copy (`p-1-25`, `p-1-5`, `p-1-75`, `p-2`, `p-2-5`): on
+   stryker.com the size span sits inside a 14px list item, so the bullet keeps the 14px size
+   (Mako surgeon campaign "Enhance patient engagement…") ---- */
+body.long-page-detail-corp main .section:is(.p-1-25, .p-1-5, .p-1-75, .p-2, .p-2-5) > div li::marker {
+  font-size: var(--body-font-size-m);
+}
+
+/* ---- a `separator` on a colour band (`separator, purple, full-bleed`: Mako Refreshers
+   "Together with our customers"): the source rule is its own line in the white, 20px above
+   the band (50px from 600px), not the band's top edge; no rule spacing inside the band, and
+   on phones the source band's own 5px / 20px padding (30px from 600px) ---- */
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) {
+  position: relative;
+  border-top: calc(1px + var(--space-block-l)) solid transparent;
+  padding-block: var(--space-block-xs) var(--space-block-l);
+  background-clip: padding-box;
+}
+
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box)::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1px - var(--space-block-l)) 0 auto;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) > div:first-child {
+  padding-top: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box) {
+    border-top-width: calc(1px + var(--space-section-l));
+    padding-block: var(--space-section);
+  }
+
+  body.long-page-detail-corp main > :is(.section.separator.purple, .section.separator.purple-gradient, .section.separator.gray-gradient):not(.headline-box)::before {
+    top: calc(-1px - var(--space-section-l));
+  }
+}
+
+/* ---- a list item all in a `[[text-1-25]…]` tag (stryker.com li > span.fontsize-1-25em,
+   Mako Refreshers "Agenda", NeuroElite fellows): the size span keeps its own 1.15 line
+   spacing in the 14px item, which puts the items 21px apart ---- */
+body.long-page-detail-corp main li > :is(span).text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}
+
+/* ---- a colour band holding only a heading (stryker.com Fast Facts title on a full-bleed
+   panel, OR staff "Mako Total Knee"): the source panel's 30px padding (60px / 10px from
+   600px), the title 20px (50px) above it, its rule white; 27px from 600px. The next
+   component follows right under the band ---- */
+body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple):has(> .default-content-wrapper > h2:only-child) {
+  margin-bottom: 0;
+  padding-block: var(--space-section);
+}
+
+body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: var(--space-block-xs);
+  border-bottom-color: var(--color-white);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple):has(> .default-content-wrapper > h2:only-child) {
+    padding-block: calc(2 * var(--space-section)) var(--space-block-s);
+  }
+
+  body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
+    margin-bottom: var(--space-section-l);
+    font-size: var(--long-page-detail-corp-fast-facts-title);
+  }
+}
+
+/* ---- a Heading 2 all in a `[[text-2]…]` tag: a source rich-text Heading 1 statement below
+   the page title (OR staff "In the OR is educational content…", the registration form
+   intro), which has no rule below it on stryker.com ---- */
+body.long-page-detail-corp main > .section > .default-content-wrapper :is(h2):has(> span.text-2:only-child) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* ---- the gold bar under the title box (`headline-box` then `gold-bar`, OR staff): the source
+   title's 20px margin above it (50px from 600px: its 30px and the source box's empty second
+   line), the row spacing below it in the spacer that follows ---- */
+body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
+  margin-block: var(--space-block-l) 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
+    margin-top: var(--space-section-l);
+  }
+
+  /* the jump bar (Sticky Nav): the source navigation bar's 25px bottom margin */
+  body.long-page-detail-corp main > .section.sticky-nav-container {
+    margin-bottom: var(--space-inset-m);
+  }
+}
+
+/* ---- a large headline at the top of a Columns cell (`[[headline-N]…]`, jr45 "What would you
+   do?"): the source headline has no box, so its first line is not set lower (columns-corp
+   insets boxed headlines 10px) ---- */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns > div > div > h1:first-child:has(> span[class*="headline-"]) {
+    margin-top: 0;
+  }
 }

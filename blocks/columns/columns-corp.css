@@ -275,7 +275,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
 }
 
-/* image caption: a fully Bold paragraph right under an image renders as a small,
+/* image caption (not in a `stack` grid, where it is the item's name, e.g. the nse product
+   tiles): a fully Bold paragraph right under an image renders as a small,
    bold, centred caption (stryker.com: Futura 700 11.2px, centred, its text 22px below
    the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
 body.corp .columns {
@@ -290,11 +291,11 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col:has(+ p > strong:only-child) {
   margin-bottom: var(--columns-corp-caption-gap);
 }
 
-body.corp .columns .columns-img-col + p:has(> strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col + p:has(> strong:only-child) {
   font-size: var(--footnote-font-size);
   line-height: var(--body-line-height-l);
   text-align: center;
@@ -407,6 +408,27 @@ body.corp .columns.columns-20-80 > div > div:first-child {
 /* link-groups: four lists stack one per row on mobile (stryker.com col-xs-12) */
 body.corp .columns.link-groups.columns-4-cols > div > div {
   flex-basis: 100%;
+}
+
+/* stack: four cells one per row on phones, two per row from 600px, four from 900px
+   (stryker.com col-xs-12 col-sm-6 col-md-3: the nse grids, surgical videos); without it a
+   corp four-cell row is two per row on phones */
+body.corp .columns.stack.columns-4-cols > div > div {
+  flex-basis: 100%;
+}
+
+/* ---- left-border-bottom: a 1px grey rule under the first (left) cell's text, the cell's
+   full width with its gutters, not under the image beside it (stryker.com: a section
+   separator at the end of the text column; nse footed / heavy-duty attachments intros):
+   20px below the text on phones, 50px from 600px, and 50px above what follows ---- */
+body.corp .columns.left-border-bottom > div > div:first-child {
+  align-self: flex-start;
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.corp .columns.left-border-bottom > div > div:first-child > :last-child {
+  margin-bottom: 0;
 }
 
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
@@ -552,5 +574,121 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+}
+
+/* ---- box variants: a stryker.com coloured text box in a column row (a Large Headline or rich
+   text with a background, a dimensional box) is the cell's text (columns.js wraps it in
+   div.columns-box), below an image or video the cell opens with, as tall as its text, 20px in.
+   gray-last / gray-2 / gray-all: light grey (jr45 episodes, mis, clout); blue-all: blue
+   (instruments contact information, tech support); purple-last: purple (giving-back);
+   boxed-all: a white shadow box (clout); gold-lead / dark-lead: the text cell's first line
+   in a gold / dark grey bar, centred (SKILL, Mako refreshers). White text on blue, purple and
+   dark grey ---- */
+body.corp .columns .columns-box {
+  padding: var(--space-block-l);
+  background: var(--columns-corp-box-bg);
+  box-shadow: var(--columns-corp-box-shadow, none);
+  color: var(--columns-corp-box-color, inherit);
+}
+
+body.corp .columns .columns-box > :last-child {
+  margin-bottom: 0;
+}
+
+body.corp .columns:is(.gray-last, .gray-2, .gray-all) {
+  --columns-corp-box-bg: var(--color-surface);
+}
+
+body.corp .columns.blue-all {
+  --columns-corp-box-bg: var(--color-navy-bright);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns.purple-last {
+  --columns-corp-box-bg: var(--color-purple);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns.boxed-all {
+  --columns-corp-box-bg: var(--color-white);
+  --columns-corp-box-shadow: var(--shadow-soft);
+}
+
+body.corp .columns.gold-lead {
+  --columns-corp-box-bg: var(--color-accent);
+}
+
+body.corp .columns.dark-lead {
+  --columns-corp-box-bg: var(--color-secondary);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
+  margin-bottom: var(--space-block);
+  text-align: center;
+}
+
+/* an image right under a title bar touches it (Mako refreshers) */
+body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
+  margin-bottom: 0;
+}
+
+/* ---- stack (cells: above): two per row from 600px, four from 900px, on a grid whose
+   cells share their rows (subgrid), so the names of a row of tiles line up under the tallest
+   image as the stryker.com image row + name row do (nse grids) ---- */
+@media (width >= 600px) {
+  body.corp .columns.stack.columns-4-cols > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-block);
+  }
+
+  body.corp .columns.stack.columns-4-cols > div > div {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    align-content: start;
+  }
+
+  /* the name 58px below the row's tallest image (stryker.com: the image row's margins) */
+  body.corp .columns.stack:not(.media-pair) .columns-img-col {
+    margin-bottom: calc(2 * var(--space-block) + var(--space-section));
+  }
+
+  /* a cell that is a box alone (`gray-last` beside jr45 faculty) spans the cell's rows (at its
+     own height beside other cells), and its extra height goes to the last row, so the other
+     cells' names stay under their images */
+  body.corp .columns.stack.columns-4-cols > div > div > .columns-box:only-child {
+    grid-row: 1 / -1;
+  }
+
+  body.corp .columns.stack.gray-last > div > div > .columns-box:only-child {
+    align-self: start;
+  }
+
+  body.corp .columns.stack.columns-4-cols:has(> div > div > .columns-box:only-child) > div {
+    grid-auto-rows: auto auto 1fr;
+  }
+
+  /* jr45 faculty (`stack, gray-last`): the image and its text are one source column, the name
+     24px under the image */
+  body.corp .columns.stack.gray-last .columns-img-col {
+    margin-bottom: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.corp .columns.stack.columns-4-cols > div {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 0;
+  }
+}
+
+@media (width >= 600px) {
+  body.corp .columns.left-border-bottom > div > div:first-child {
+    margin-bottom: calc(var(--space-block-l) + var(--space-section));
+    padding-bottom: calc(var(--space-block-l) + var(--space-section));
   }
 }

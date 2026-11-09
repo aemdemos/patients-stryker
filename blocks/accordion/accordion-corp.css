@@ -11,6 +11,12 @@ body.corp .accordion .accordion-item-label {
   border: 0;
 }
 
+/* the label's paragraph keeps the label's line height: a 40px label as on stryker.com (corp
+   paragraphs would make it 44px) */
+body.corp .accordion .accordion-item-label p {
+  line-height: inherit;
+}
+
 body.corp .accordion .accordion-item-label::after {
   margin-right: var(--space-block-xs);
 }
@@ -24,4 +30,25 @@ body.corp .accordion .accordion-item-body {
   body.corp .accordion .accordion-item-label::after {
     margin-right: var(--space-block-l);
   }
+}
+
+/* gray-list: the list in each panel sits in a light-grey box, the panel's full width, 3% in,
+   35px above what follows (stryker.com: a .bg-light-gray rich text holding the list, then an
+   empty paragraph; ispies); text after it stays outside */
+body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+  padding: 3%;
+  padding-bottom: calc(3% + var(--space-block));
+  padding-inline-start: calc(3% + var(--space-block));
+  background-color: var(--color-surface);
+}
+
+/* the items a line apart (stryker.com: a blank line after each item) */
+body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li + li {
+  margin-top: var(--space-block-l);
+}
+
+/* their sized text (e.g. `[[text-1-25]…]`, 17.5px) on 21px lines, as in the source's 20px items */
+body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li span {
+  line-height: 1.2;
 }
