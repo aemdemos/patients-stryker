@@ -1086,3 +1086,16 @@ body.long-page-detail-corp main > .section.headline-box + .section.gold-bar {
     margin-top: 0;
   }
 }
+
+/* ---- a Columns box whose text is a large headline (`[[headline-N]…]`, jr45 November /
+   December / January "Watch …"): the source Large Headline keeps its 20px (30px from 600px)
+   above the video below it (a rich-text box keeps none: jr45 August, September) ---- */
+body.long-page-detail-corp main .columns .columns-box:has(span[class*="headline-"]):has(+ p .dm-video-wrapper) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns .columns-box:has(span[class*="headline-"]):has(+ p .dm-video-wrapper) {
+    margin-bottom: var(--space-section);
+  }
+}
