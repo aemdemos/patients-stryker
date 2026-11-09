@@ -61,6 +61,15 @@ body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container))
   }
 }
 
+/* ---- a rich-text Heading 2 (not a section title): no rule below it, as on stryker.com
+   (its .c-rich-text-editor headings have none; the corp rule is the news articles'): Mako
+   thank-you "You'll receive an event confirmation…". Section titles are underlined Heading 2s
+   and keep the rule (corp styles) ---- */
+body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.underline) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 /* ---- title section ---- */
 
 body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
@@ -1045,7 +1054,7 @@ body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple
 body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
   margin-bottom: var(--space-block-l);
   padding-bottom: var(--space-block-xs);
-  border-bottom-color: var(--color-white);
+  border-bottom: 1px solid var(--color-white);
 }
 
 @media (width >= 600px) {
