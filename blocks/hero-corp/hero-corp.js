@@ -81,11 +81,11 @@ function setupHero(block) {
 
   // a subtitle: one plain line (footnote marks allowed) right under a fully Bold title, and
   // nothing else (stryker.com "Look inside Stryker's iSuite" under "What does an operating
-  // room look like?")
+  // room look like?"); a colour run in the title (span-tags, e.g. a gold title) counts as Bold
   const [title, subtitle, ...rest] = contentDiv.children;
   const bold = title && title.matches('h1, h2') && title.children.length === 1
     && title.firstElementChild.matches('strong')
-    && !title.firstElementChild.querySelector(':scope > :not(br)')
+    && !title.firstElementChild.querySelector(':scope > :not(br, span[class^="color-"])')
     && title.textContent.trim() === title.firstElementChild.textContent.trim();
   if (bold && !rest.length && subtitle && subtitle.matches('p')
     && ![...subtitle.children].some((el) => !el.matches('sup, sub'))
