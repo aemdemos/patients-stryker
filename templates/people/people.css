@@ -4,7 +4,39 @@ body.people main > .section:first-child > .default-content-wrapper > h1:first-ch
   margin-top: var(--space-section);
 }
 
+body.people main > .section:first-child > .default-content-wrapper:has(> p.button-wrapper) {
+  padding-block: var(--space-block-l) var(--space-inset-m);
+}
+
+body.people main > .section:first-child > .default-content-wrapper > p.button-wrapper {
+  margin-block: 0;
+}
+
+body.people main > .section:first-child > .default-content-wrapper > p.button-wrapper > a.button.primary:any-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+body.people main > .section:first-child > .default-content-wrapper > p.button-wrapper > a.button.primary:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+body.people main > .section.disclaimer {
+  margin-top: var(--space-section-l);
+}
+
 @media (width >= 600px) {
+  body.people main > .section:first-child > .default-content-wrapper:has(> p.button-wrapper) {
+    padding-block-start: var(--space-section);
+  }
+
   body.people main > .section:first-child > .default-content-wrapper > h1:first-child {
     margin-top: calc(var(--space-section) + var(--space-block-s));
   }
@@ -15,5 +47,41 @@ body.people main > .section:first-child > .default-content-wrapper > h1:first-ch
 
   body.people .columns > div > div:last-child {
     flex: 0 0 41.667%;
+  }
+
+  body.people main:has(> .section > .columns-wrapper) {
+    display: grid;
+    grid-template-columns: 58.333% 41.667%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.people main:has(> .section > .columns-wrapper) > .section {
+    grid-column: 1 / -1;
+  }
+
+  body.people main:has(> .section > .columns-wrapper) > .section:has(> .default-content-wrapper > h1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  body.people main > .section > .columns-wrapper,
+  body.people main > .section > .columns-wrapper .columns,
+  body.people main > .section > .columns-wrapper .columns > div,
+  body.people main > .section.columns-container {
+    display: contents;
+  }
+
+  body.people main > .section > .columns-wrapper .columns > div > div:first-child {
+    grid-column: 1;
+    grid-row: 3;
+    margin-bottom: var(--space-section);
+  }
+
+  body.people main > .section > .columns-wrapper .columns > div > div:last-child {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: start;
+    margin-bottom: var(--space-section);
   }
 }
