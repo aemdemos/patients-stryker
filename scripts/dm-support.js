@@ -559,6 +559,9 @@ export default function decorateDMAssets(root) {
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
       if (render === renderPublishImage && (!isStandaloneLink(el) || isMediaPairTarget(el))) return;
+      // a video link in a heading is a title that opens the video (a download card's title,
+      // e.g. a JR45 "product feature video"), not an embedded player
+      if (render === renderVideo && el.closest('h1, h2, h3, h4, h5, h6')) return;
       const text = el.textContent.trim();
       if (text && text !== src) displayText = text;
     }
