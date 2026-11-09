@@ -13,6 +13,7 @@
  *   Grid | desktop: 3, 6, 3 · tablet: 4, 8 · phone: skip 1, 10, hidden    Columns grid options
  *     (units of 12, or `… of 6`; `skip N` an offset, `new line N`, `hidden`)
  *   Cell colours | 1: Purple, 2: Blue, 3: Teal  a column's box colour (Columns cells)
+ *   Image borders | 1: Black, 2: Teal  the 1px border of a column's images (Columns cells)
  *   Text box (2), Column widths (2), Grid (2), Cell colours (2)   the section's 2nd Columns block
  *   Column | width 5/6, from 1/6, phones too    a lone AEM column's width and start
  *   Copy size | Large       Label size | Large   by name, or as a multiple: Copy size | 1.75×
@@ -200,8 +201,14 @@ export function rewriteSizeValues(main) {
   });
 }
 
+// the box colours of Box lines and Cell colours (blocks/columns/columns-corp.css cell-bg-*)
+const BOX_COLOURS = ['white', 'gold', 'light-gray', 'gray', 'blue', 'purple', 'teal', 'silver',
+  'dark-gold', 'golden-gradient', 'dark-gray', 'dark-purple-gradient', 'dark-blue-gradient',
+  'dark-orange-gradient', 'dark'];
+
 /**
- * `Box: top 3%, sides 3%` and `Box end` lines: the `[[spacing,…]]` marker paragraphs the box
+ * `Box: top 3%, sides 3%` (`Box: Gold, all 3%` with the box colour) and `Box end` lines:
+ * the `[[spacing,…]]` marker paragraphs the box
  * spacing reads (corp-spacing.js), the box running from one line to the next.
  * @param {Element} main The container
  */
@@ -209,10 +216,18 @@ function decorateBoxLines(main) {
   main.querySelectorAll('p').forEach((p) => {
     const line = p.textContent.trim();
     const m = line.match(/^box:\s*(.+)$/i);
+    const entries = m ? m[1].split(',').map((e) => e.trim()) : [];
+    // a colour first (`Box: Gold, all 3%`, the Cell colours names)
+    const colour = entries.length && BOX_COLOURS.includes(entries[0].toLowerCase())
+      ? entries.shift().toLowerCase() : '';
     // every entry must read as spacing, so an ordinary sentence starting `Box:` stays text
-    const valid = m && m[1].split(',').every((entry) => spacingTokens(entry, 'padding').length);
+    const valid = m && (colour || entries.length)
+      && entries.every((entry) => spacingTokens(entry, 'padding').length);
     if (!/^box end$/i.test(line) && !valid) return;
-    const tokens = valid ? spacingTokens(m[1], 'padding') : [];
+    const tokens = valid ? [
+      ...(colour ? [colour === 'dark' ? 'dark' : `bg-${colour}`] : []),
+      ...spacingTokens(entries.join(','), 'padding'),
+    ] : [];
     const span = document.createElement('span');
     span.className = ['spacing', ...tokens].join(' ');
     p.replaceChildren(span);
@@ -272,6 +287,19 @@ function cellColourOptions(value) {
   });
 }
 
+/**
+ * `Image borders | 1: Black, 2: Teal` → cell-1-image-border-black cell-2-image-border (the
+ * images of those cells get the 1px border, styles-corp.css)
+ */
+function imageBorderOptions(value) {
+  return value.split(',').flatMap((part) => {
+    const m = part.trim().match(/^(\d+)\s*:\s*(teal|black|grey|blue|white)$/i);
+    if (!m) return [];
+    const name = m[2].toLowerCase();
+    return [`cell-${m[1]}-image-border${name === 'teal' ? '' : `-${name}`}`];
+  });
+}
+
 /** `Column | width 5/6, from 1/6, phones too` → col-5-6 col-at-1-6 col-phone */
 function columnStyles(value) {
   const v = value.toLowerCase();
@@ -314,6 +342,8 @@ function decorateColumns(col, k, data, hero) {
   if (grid) col.classList.add(...gridOptions(grid));
   const colours = row('cellColours');
   if (colours) col.classList.add(...cellColourOptions(colours));
+  const borders = row('imageBorders');
+  if (borders) col.classList.add(...imageBorderOptions(borders));
 }
 
 function decorateSection(section) {

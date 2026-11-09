@@ -121,12 +121,15 @@ function markerBoxes(container) {
       next = next.nextElementSibling;
     }
     const spacing = parseSpacing(tokens);
-    if (spacing.length && run.length) {
+    // a coloured box (Box: Gold …): the cell colours' classes (blocks/columns/columns-corp.css)
+    const colour = tokens.find((t) => /^(bg-[a-z-]+|dark)$/.test(t));
+    if ((spacing.length || colour) && run.length) {
       const box = document.createElement('div');
       box.className = 'corp-spacing-box';
+      if (colour) box.classList.add('cell-bg', `cell-${colour}`);
       marker.after(box);
       box.append(...run);
-      setBox(box, spacing);
+      if (spacing.length) setBox(box, spacing, false, !!colour);
     }
     marker.remove();
   });
@@ -155,16 +158,20 @@ export default function decorateSpacing(main) {
     const byCell = {};
     // cell-<N>-bg-<colour> / cell-<N>-dark: the AEM box colour of column N (a coloured text box
     // filling the column): the cell gets cell-bg + cell-<colour> (blocks/columns/columns-corp.css)
+    // (cell-<N>-image-border(-black / -grey): the 1px border of its images, styles-corp.css)
     const colours = {};
+    const borders = {};
     [...columns.classList].forEach((cls) => {
       const [, n, option] = cls.match(/^cell-(\d+)-(.+)$/) || [];
       if (!n) return;
       if (TOKEN.test(option)) (byCell[n] = byCell[n] || []).push(option);
       else if (/^(bg-[a-z-]+|dark)$/.test(option)) colours[n] = option;
+      else if (/^image-border(-[a-z]+)?$/.test(option)) borders[n] = option;
     });
     [...columns.children].forEach((row) => [...row.children].forEach((cell, i) => {
       const colour = colours[i + 1];
       if (colour) cell.classList.add('cell-bg', `cell-${colour}`);
+      if (borders[i + 1]) cell.classList.add(borders[i + 1]);
       if (byCell[i + 1]) setBox(cell, parseSpacing(byCell[i + 1]), false, !!colour);
     }));
   });

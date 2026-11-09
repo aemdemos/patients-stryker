@@ -677,14 +677,26 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 }
 
 /* image-border(-grey / -black): the image's 1px border (stryker.com img.bor-teal / bor-gray /
-   bor-black) */
-:where(body.corp) main > .section:is(.image-border, .image-border-grey, .image-border-black) picture img {
+   bor-black), on a Columns cell (Image borders | 1: Black) or on a section */
+:where(body.corp) main :where(.columns > div > div):is(.image-border, .image-border-grey, .image-border-black, .image-border-blue, .image-border-white) picture img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-primary);
+}
+
+:where(body.corp) main :where(.columns > div > div).image-border-grey picture img { border-color: var(--color-surface-muted); }
+:where(body.corp) main :where(.columns > div > div).image-border-black picture img { border-color: var(--color-black); }
+:where(body.corp) main :where(.columns > div > div).image-border-blue picture img { border-color: var(--color-navy-bright); }
+:where(body.corp) main :where(.columns > div > div).image-border-white picture img { border-color: var(--color-white); }
+
+:where(body.corp) main > .section:is(.image-border, .image-border-grey, .image-border-black, .image-border-blue, .image-border-white) picture img {
   box-sizing: border-box;
   border: 1px solid var(--color-primary);
 }
 
 :where(body.corp) main > .section.image-border-grey picture img { border-color: var(--color-surface-muted); }
 :where(body.corp) main > .section.image-border-black picture img { border-color: var(--color-black); }
+:where(body.corp) main > .section.image-border-blue picture img { border-color: var(--color-navy-bright); }
+:where(body.corp) main > .section.image-border-white picture img { border-color: var(--color-white); }
 
 /* Statistics (left): left-aligned counters (stryker.com numberCounterAlignment text-left) */
 :where(body.corp) .statistics.left .statistics-item {
@@ -1937,3 +1949,36 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
     max-width: var(--corp-tile-width-xl);
   }
 }
+
+/* a coloured box among other content (Box: Gold, all 3% … Box end; scripts/corp-spacing.js):
+   the Cell colours of blocks/columns/columns-corp.css, with the AEM .has-background 10px
+   padding unless the Box line sets it (target-xtra's gold "86%" box, sternalplate's tiles) */
+:where(body.corp) main .corp-spacing-box.cell-bg {
+  /* its side margins stay outside the colour (scripts/corp-spacing.js --cell-margin-*) */
+  margin-inline: var(--cell-margin-left, 0) var(--cell-margin-right, 0);
+  padding: var(--space-block-s);
+  background-color: var(--corp-cell-bg, transparent);
+  background-image: var(--corp-cell-bg-image, none);
+}
+
+:where(body.corp) main .corp-spacing-box.cell-bg-white { --corp-cell-bg: var(--color-white); }
+:where(body.corp) main .corp-spacing-box.cell-bg-gold { --corp-cell-bg: var(--color-accent); }
+:where(body.corp) main .corp-spacing-box.cell-bg-light-gray { --corp-cell-bg: var(--color-surface); }
+:where(body.corp) main .corp-spacing-box.cell-bg-gray { --corp-cell-bg: var(--color-surface-dim); }
+:where(body.corp) main .corp-spacing-box.cell-bg-silver { --corp-cell-bg: var(--color-surface-muted); }
+:where(body.corp) main .corp-spacing-box.cell-bg-dark-gold { --corp-cell-bg: var(--color-accent-link-hover); }
+:where(body.corp) main .corp-spacing-box.cell-bg-golden-gradient { --corp-cell-bg-image: var(--corp-gradient-golden); }
+
+/* dark boxes carry light text, as the dark cells */
+:where(body.corp) main .corp-spacing-box:is(.cell-bg-dark-gray, .cell-bg-dark-purple-gradient, .cell-bg-dark-blue-gradient, .cell-bg-dark-orange-gradient, .cell-dark) {
+  color: var(--color-white);
+}
+
+:where(body.corp) main .corp-spacing-box.cell-bg-blue { --corp-cell-bg: var(--color-navy-bright); }
+:where(body.corp) main .corp-spacing-box.cell-bg-purple { --corp-cell-bg: var(--color-purple); }
+:where(body.corp) main .corp-spacing-box.cell-bg-teal { --corp-cell-bg: var(--color-primary); }
+:where(body.corp) main .corp-spacing-box.cell-bg-dark-gray { --corp-cell-bg: var(--color-secondary); }
+:where(body.corp) main .corp-spacing-box.cell-bg-dark-purple-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-purple); }
+:where(body.corp) main .corp-spacing-box.cell-bg-dark-blue-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-blue); }
+:where(body.corp) main .corp-spacing-box.cell-bg-dark-orange-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-orange); }
+:where(body.corp) main .corp-spacing-box.cell-dark { --corp-cell-bg-image: var(--panel-dark-gradient); }
