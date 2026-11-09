@@ -594,7 +594,14 @@ body.long-page-detail-corp main > .section.headline-box + .section.headline-box:
 
 /* `separator-row`: a rule the source sets in an otherwise empty column row (endoscopy
    courses, jr45, room-design): the row's 20px (30px from 600px) below the rule as well,
-   whatever follows (1440: 80px from the rule to the next row, 50px for a rule on its own) */
+   whatever follows (1440: 80px from the rule to the next row, 50px for a rule on its own).
+   The rule is the width of the row: the full width up to the container width (1410px),
+   centred on wider screens (a rule not in a row stays full width) */
+body.long-page-detail-corp main > .section.separator.separator-row {
+  border-top-color: transparent;
+  background: linear-gradient(var(--color-surface-muted), var(--color-surface-muted)) top center / min(100%, var(--container-max)) 1px no-repeat border-box;
+}
+
 body.long-page-detail-corp main > .section.separator.separator-row > div:first-child {
   margin-top: var(--space-block-l);
 }
