@@ -166,15 +166,20 @@ function decorateImageLinks(main) {
 }
 
 /**
- * Columns (challenge-cards): a link alone on the line right after a card's image makes the
- * image clickable, as with the `image-link` section style. Runs on each block once it is
- * loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image paragraphs
- * while it decorates, so a link added before that would be lost.
+ * Columns (product-tiles, challenge-cards): a link alone on the line right after an image
+ * makes the image clickable, as with the `image-link` section style; each image paragraph
+ * is a .columns-img-col (columns.js tags only a cell's first one). Runs on each block once
+ * it is loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image
+ * paragraphs while it decorates, so a link added before that would be lost.
  * @param {Element} main The container element
  */
-function decorateChallengeCardLinks(main) {
-  const link = (block) => block.querySelectorAll(':scope > div > div > p.columns-img-col').forEach(linkImage);
-  main.querySelectorAll('.columns.challenge-cards').forEach((block) => {
+function decorateColumnsImageLinks(main) {
+  const link = (block) => block.querySelectorAll(':scope > div > div > p').forEach((p) => {
+    if (!p.querySelector(':scope > picture') || p.children.length !== 1 || p.textContent.trim()) return;
+    p.classList.add('columns-img-col');
+    linkImage(p);
+  });
+  main.querySelectorAll('.columns:is(.product-tiles, .challenge-cards)').forEach((block) => {
     if (block.dataset.blockStatus === 'loaded') {
       link(block);
       return;
@@ -374,7 +379,7 @@ function emitHomeJsonLd() {
  */
 export function loadLazy(doc) {
   emitHomeJsonLd();
-  decorateChallengeCardLinks(doc.querySelector('main'));
+  decorateColumnsImageLinks(doc.querySelector('main'));
 }
 
 /*
