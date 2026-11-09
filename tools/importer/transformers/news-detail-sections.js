@@ -1911,7 +1911,10 @@ export default function transform(hookName, element, payload) {
     // Columns (33-67 / 67-33 / 50-50), the photo and caption in one cell, the text in the
     // other, with plain formatting only (no tags; news-detail.css sizes a caption and keeps
     // Bold lead-ins in the body font); the section takes the text's copy style
-    const split = !isFirst && component.matches('.c-standalone-image, .c-rich-text-editor') && photoTextRow(component);
+    // (a photo right under the title counts too: left out, it was output on its own and
+    // again in the row its text then built, e.g. the Comprehensive Report cover — and so does
+    // the text, e.g. the Sage PrimaFit JWOCN study text beside its photo)
+    const split = component.matches('.c-standalone-image, .c-rich-text-editor') && photoTextRow(component);
     if (split) {
       [split.photo, split.caption, ...split.texts].filter(Boolean).forEach((c) => consumed.add(c));
       const textNodes = split.texts.flatMap((t) => richTextNodes(t, doc).nodes);

@@ -1805,7 +1805,7 @@ var CustomImportScript = (() => {
     components.forEach((component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
-      const split = !isFirst && component.matches(".c-standalone-image, .c-rich-text-editor") && photoTextRow(component);
+      const split = component.matches(".c-standalone-image, .c-rich-text-editor") && photoTextRow(component);
       if (split) {
         [split.photo, split.caption, ...split.texts].filter(Boolean).forEach((c) => consumed.add(c));
         const textNodes = split.texts.flatMap((t) => richTextNodes(t, doc).nodes);
@@ -2595,7 +2595,10 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
-    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
