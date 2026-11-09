@@ -876,3 +876,62 @@ body.corp main .columns.title-row.block > div > div:first-child:nth-child(n) > p
     padding: calc(12.5% - var(--space-block) / 2) calc(var(--space-block) + var(--space-block-l)) var(--space-block-l);
   }
 }
+
+/* color-cards: each cell a profile card — the photo (its round portrait on a band, one
+   image), then the text in a coloured box pulled up over the band's foot, the colours in
+   the source's order: teal, dark gold, purple, blue (2 cards a row: the first row teal and
+   dark gold, the next purple and blue). The box is padded 5% / 10% of the card; its first
+   line (the name, Bold) is 21px Futura bold, the second (the role) the 21px light serif,
+   the rest 14px body copy, all white; colour tags ([[color-gold]]) keep their colour
+   (stryker.com nurse profiles of "Nurses working at Stryker share how their experience
+   becomes innovation in nursing": 675px cards, 22px over the band at 1440px) */
+body.corp .columns.color-cards.block > div:nth-child(odd) > div:nth-child(odd) {
+  --columns-card-color: var(--color-primary);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(odd) > div:nth-child(even) {
+  --columns-card-color: var(--color-accent-link-hover);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(odd) {
+  --columns-card-color: var(--color-purple);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(even) {
+  --columns-card-color: var(--color-navy-bright);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n) {
+  margin-bottom: 0;
+}
+
+body.corp .columns.color-cards.block > div > div > :not(.columns-img-col) {
+  margin: 0;
+  padding: 0 10% var(--space-block);
+  background-color: var(--columns-card-color);
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  text-align: start;
+}
+
+body.corp main .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col + :is(p, h2, h3):nth-child(n) {
+  position: relative;
+  margin-top: -3.4%;
+  padding-top: 5%;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col + * + p:nth-child(n) {
+  padding-bottom: var(--space-block-l);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns.color-cards.block > div > div > :last-child:not(.columns-img-col) {
+  padding-bottom: 5%;
+}
