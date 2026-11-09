@@ -67,6 +67,16 @@
   display: none;
 }
 
+/* blue-box: the headline in the corp blue box with 20px padding, its text white (stryker.com
+   .c-largeheadline.bg-blue, e.g. "Stryker donates 22,500 Emergency Relief Bed Kits to Project
+   C.U.R.E.": 835 x 238px at 1440px); on phones over the top of the mobile image, 15px down
+   and 20px in from the sides (351px wide at 390px) */
+.hero-corp.image-slide.blue-box > div:last-child {
+  inset: var(--space-block) var(--space-block-l) auto;
+  padding: var(--space-block-l);
+  background-color: var(--color-navy-bright);
+}
+
 /* gold-box: the same headline box in gold (stryker.com .c-largeheadline.bg-gold, e.g. "Why
    all police cars need AEDs": 648 x 261px at 1440px, 20px padding; on phones the box alone,
    20px in from the edges). A plain (not bold) line under the title is its subtitle, in
@@ -124,6 +134,21 @@
   text-align: left;
 }
 
+/* subtitle (hero-corp.js .hero-corp-subtitle: one plain line under a fully Bold title): the
+   light serif at 3/5 of the title size (stryker.com 3vw Egyptienne under the 5vw title,
+   e.g. "Look inside Stryker's iSuite": 36px at 1200px, 23.5px at 390px); gold-box keeps
+   its own 2/3 */
+.hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-slide-text-size) * 2vw * 3 / 5);
+  font-weight: var(--font-weight-regular);
+}
+
+/* blue-box (above): its text white */
+.hero-corp.image-slide.blue-box > div:last-child > * {
+  color: var(--color-white);
+}
+
 /* …each line of the box keeps the source's 15px margin below it, inside the box; a Bold
    title is the source's bold span inside its 28px/1.06 serif h1, whose line box spaces
    the lines (2 lines: 115px at 1440px, 81px at 900px, 73px at 390px) */
@@ -161,6 +186,10 @@
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 
+  .hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw * 3 / 5), calc(var(--hero-slide-text-size) * var(--body-font-size-m) * 3 / 5));
+  }
+
   .hero-corp.image-slide.dark-box > div:first-child {
     display: block;
   }
@@ -169,6 +198,11 @@
     position: absolute;
     inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
     margin: 0;
+    padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide.blue-box > div:last-child {
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
     padding: var(--space-block-l);
   }
 

@@ -183,6 +183,27 @@ function joinSplitHeadingUnderlines(main) {
 }
 
 /**
+ * A Bold + Italic link alone on its line is the gold button even when its text ends in
+ * "!" (stryker.com "Nominate a hero for our Caregiver Stories series!"); scripts.js
+ * decorateButtons leaves links ending in punctuation as text links (sentences), so the
+ * button is built here, before it runs, the same way it builds the accent button.
+ * @param {Element} main The container element
+ */
+function decorateExclaimButtons(main) {
+  main.querySelectorAll('p > em > strong > a[href]:only-child, p > strong > em > a[href]:only-child').forEach((a) => {
+    const p = a.parentElement.parentElement.parentElement;
+    const text = a.textContent.trim();
+    const outer = a.parentElement.parentElement;
+    if (!text.endsWith('!') || p.children.length !== 1 || p.textContent.trim() !== text) return;
+    if (outer.childNodes.length !== 1 || a.parentElement.childNodes.length !== 1) return;
+    a.title = a.title || text;
+    p.className = 'button-wrapper';
+    a.className = 'button accent';
+    outer.replaceWith(a);
+  });
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
@@ -191,6 +212,7 @@ export function decorateSections(main) {
   buildAccordionSections(main);
   decorateImageLinks(main);
   joinSplitHeadingUnderlines(main);
+  decorateExclaimButtons(main);
 }
 
 /**

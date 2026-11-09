@@ -50,6 +50,7 @@
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
   --corp-qa-title-line-height: 23.25px; /* measured: a Q&A card question, a 17.5px span on 14px paragraph lines (46.5px for 2 lines) */
+  --corp-gold-band-height: 34px; /* measured: the source gold full-bleed panel under a hero slide (c-full-bleed-panel bg-gold), at every width */
   --corp-hero-line-strut: 30px; /* measured: the source Large Headline line (span.line, 21px with 30px lines on phones) around a hero title, e.g. "Following in her mother's footsteps": 70px for 2 lines at 390px */
 
   /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
@@ -303,6 +304,11 @@ body:where(.corp):has(main .hero-carousel) header {
   display: none;
 }
 
+/* the section above a `gold-band` (section style, below) runs straight into the band */
+:where(body.corp) main > .section:has(+ .section.gold-band) {
+  margin-bottom: 0;
+}
+
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
   margin-bottom: 0;
 }
@@ -318,6 +324,14 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) main > .section.bg-light-gray {
   background-color: var(--color-surface);
+}
+
+/* section style `gold-band`: the empty gold strip right under a Hero Corp slide, across the
+   page (stryker.com c-full-bleed-panel bg-gold below the carousel, e.g. the Mako
+   SmartRobotics and iSuite features: 34px at every width), then the section gap */
+:where(body.corp) main > .section.gold-band {
+  height: var(--corp-gold-band-height);
+  background-color: var(--color-accent);
 }
 
 :where(body.corp) main > .section.bg-dark-gray {

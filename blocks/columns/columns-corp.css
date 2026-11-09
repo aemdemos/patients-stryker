@@ -26,6 +26,13 @@ body.corp .columns p strong {
   font-family: var(--display-font-family);
 }
 
+/* …except a Bold lead-in of the text right under an image (a paragraph not Bold as a
+   whole, columns.js .columns-bold), which keeps the body font (stryker.com <b> in the
+   iSuite product tiles: "Surgical tables at Stryker are designed…") */
+body.corp .columns .columns-img-col + p:not(.columns-bold) strong {
+  font-family: var(--body-font-family);
+}
+
 body.corp .columns > div > div h2 {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
@@ -39,6 +46,14 @@ body.corp .columns h4 {
 /* icon + text (columns-20-80) titles: stryker.com 14px on phones, 16.8px from 840px */
 body.corp .columns.columns-20-80 h4 {
   font-size: var(--body-font-size-m);
+}
+
+/* image caption (a fully Bold paragraph right under an image): its text; the image's
+   caption gap is with the caption variables below */
+body.corp .columns .columns-img-col + p.columns-bold {
+  font-size: var(--footnote-font-size);
+  line-height: var(--body-line-height-l);
+  text-align: center;
 }
 
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
@@ -275,10 +290,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
 }
 
-/* image caption (not in a `stack` grid, where it is the item's name, e.g. the nse product
-   tiles): a fully Bold paragraph right under an image renders as a small,
-   bold, centred caption (stryker.com: Futura 700 11.2px, centred, its text 22px below
-   the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
+/* image caption: a fully Bold paragraph right under an image (columns.js .columns-bold;
+   a paragraph that only opens in Bold stays body copy), not a stack grid item's name */
 body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
   --columns-corp-display-size-s: 35px; /* stryker.com 2.5em / capped 2.5vw display text */
@@ -291,14 +304,8 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns:not(.stack) .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col:has(+ p.columns-bold) {
   margin-bottom: var(--columns-corp-caption-gap);
-}
-
-body.corp .columns:not(.stack) .columns-img-col + p:has(> strong:only-child) {
-  font-size: var(--footnote-font-size);
-  line-height: var(--body-line-height-l);
-  text-align: center;
 }
 
 body.corp .columns .columns-img-col img,
@@ -417,6 +424,26 @@ body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> s
   line-height: var(--heading-line-height);
 }
 
+/* gray-last: the last cell is a light-grey box beside the other one (stryker.com
+   .has-background.bg-light-gray Large Headline next to the article text, e.g. "Did you
+   know?" on "Is it a heart attack or sudden cardiac arrest?": 322px wide at 1440px, padded
+   16px / 20px / 20px), its text the headline's 1.5vw light serif (21px at 1440px, 3vw on
+   phones), a Bold line Futura bold */
+body.corp .columns.gray-last > div > div:last-child {
+  padding: var(--space-block) var(--space-block-l) var(--space-block-l);
+  background-color: var(--color-surface);
+}
+
+body.corp .columns.gray-last.block > div > div:last-child :is(p, li):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.gray-last.block > div > div:last-child > :last-child {
+  margin-bottom: 0;
+}
+
 /* gray-lead: the text cell starts level with the row top, its grey box (above) first */
 body.corp .columns.gray-lead > div > div:not(:has(video, iframe, .dm-video-wrapper, .columns-youtube)) {
   padding-top: 0;
@@ -515,6 +542,11 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   body.corp .columns.boxed-last > div > div:last-child,
   body.corp .columns.gold-first > div > div:first-child {
     flex: 1 1 0;
+    align-self: flex-start;
+  }
+
+  /* gray-last: the box hugs its content, level with the row top */
+  body.corp .columns.gray-last > div > div:last-child {
     align-self: flex-start;
   }
 

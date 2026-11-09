@@ -256,6 +256,14 @@ body.news-detail main > .section.serif > .default-content-wrapper :is(p, li)
   font-family: var(--heading-font-family);
 }
 
+/* a `serif, p-1-5` news intro keeps the 21px headline lines, 1.06 (stryker.com
+   span.fontsize-1-5em: 22.25px lines at 1440px, e.g. "What if joint replacement surgery…"
+   on the Mako SmartRobotics feature and the intro of "When Stryker employees and their
+   family members become patients"), not the corp nested-span 1.25 */
+body.news-detail main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+  line-height: var(--heading-line-height);
+}
+
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
   :is(strong em, em strong, b i, i b) {
   font-family: var(--display-font-family);
@@ -1406,4 +1414,62 @@ body.news-detail main > .section.full-bleed.light-gray {
   margin-bottom: var(--space-section);
   padding-top: calc(var(--corp-blank-line) + var(--space-block-l));
   padding-bottom: calc(var(--corp-blank-line) + var(--space-block-l) - var(--space-section));
+}
+
+/* section style `dark-gray-box`: the section's text in the dark-grey Large Headline box
+   across the text column (stryker.com .c-largeheadline .has-background.bg-dark-gray, e.g.
+   "To date, thousands of surgeons…" on "Mako SmartRobotics hits 500,000+ procedures":
+   909px wide at 1440px, padded 20px): white light-serif text at the headline's 1.5vw
+   (21px at 1440px, 3vw on phones), lines 1.35, its Bold words gold Futura bold; with `p-1`
+   the plain text is the unsized headline (the HPRC quote of "Packaging for a better
+   planet": 1vw from 600px, capped at 14px, and 21px on phones) and the Bold line keeps
+   1.5vw */
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) {
+  --corp-headline-vw: 2vw;
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-secondary);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n) {
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:first-child {
+  padding-top: var(--space-block-l);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:last-child {
+  padding-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n).p-1 > .default-content-wrapper > p {
+  font-size: var(--body-font-size-xl);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p strong {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) {
+    --corp-headline-vw: 1vw;
+  }
+
+  body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n).p-1 > .default-content-wrapper > p {
+    font-size: max(var(--body-font-size-xs), min(var(--body-font-size-m), var(--corp-headline-vw)));
+    line-height: var(--heading-line-height-hero);
+  }
 }

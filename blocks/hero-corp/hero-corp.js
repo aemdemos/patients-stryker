@@ -79,6 +79,20 @@ function setupHero(block) {
   const contentDiv = document.createElement('div');
   if (contentCell) while (contentCell.firstChild) contentDiv.append(contentCell.firstChild);
 
+  // a subtitle: one plain line (footnote marks allowed) right under a fully Bold title, and
+  // nothing else (stryker.com "Look inside Stryker's iSuite" under "What does an operating
+  // room look like?")
+  const [title, subtitle, ...rest] = contentDiv.children;
+  const bold = title && title.matches('h1, h2') && title.children.length === 1
+    && title.firstElementChild.matches('strong')
+    && !title.firstElementChild.querySelector(':scope > :not(br)')
+    && title.textContent.trim() === title.firstElementChild.textContent.trim();
+  if (bold && !rest.length && subtitle && subtitle.matches('p')
+    && ![...subtitle.children].some((el) => !el.matches('sup, sub'))
+    && subtitle.textContent.trim()) {
+    subtitle.classList.add('hero-corp-subtitle');
+  }
+
   block.replaceChildren(imageDiv, contentDiv);
 }
 
