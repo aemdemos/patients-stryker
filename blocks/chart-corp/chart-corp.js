@@ -540,7 +540,12 @@ export default function decorate(block) {
   } else {
     canvas.append(svgEl);
   }
-  figure.append(canvas, buildTable(data));
+  // (the table in a visually hidden box: a table is as wide as its content whatever its own
+  // width, so on its own it widened phone pages: clottriever-system 474px at 375px)
+  const hidden = document.createElement('div');
+  hidden.className = 'chart-corp-table-box';
+  hidden.append(buildTable(data));
+  figure.append(canvas, hidden);
   block.replaceChildren(figure);
   if (!items.length) return;
 

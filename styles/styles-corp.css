@@ -1499,6 +1499,14 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   --corp-scaled-heading-line-height: var(--corp-heading-line-height-1-5);
 }
 
+/* … except Egyptienne headings (h-serif, or Headings | Serif runs): their lines don't grow
+   past the text's own 1.06 (vocera-edge "Get more value…" 39px lines at 36.75px, inspace's
+   quote 33px at 31.5px; Futura 1.5x lines are 50px at 36.75px) */
+:where(body.corp) .section.h-1-5.h-serif,
+:where(body.corp) .section.h-1-5 :is(h2, h3):has(span.serif) {
+  --corp-scaled-heading-line-height: var(--heading-line-height);
+}
+
 :where(body.corp) :is(main, .tabs-panel, .accordion-item-body, .fragment) > .section:is(.h-0-8, .h-1-25, .h-1-5) > div:where(:not(.cards-wrapper, .cards-corp-wrapper)) h2 {
   font-size: calc(var(--corp-heading-scale) * var(--corp-h2-size, var(--heading-font-size-l)));
   line-height: var(--corp-scaled-heading-line-height, var(--heading-line-height));

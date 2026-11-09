@@ -175,8 +175,8 @@
   translate: 0 0.15em;
 }
 
-/* the numbers for screen readers (the SVG is aria-hidden) */
-.chart-corp .chart-corp-table {
+/* the numbers for screen readers (the SVG is aria-hidden), in a 1px box that clips them */
+.chart-corp .chart-corp-table-box {
   position: absolute;
   width: 1px;
   height: 1px;

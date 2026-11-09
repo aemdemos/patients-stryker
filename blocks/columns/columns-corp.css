@@ -42,6 +42,13 @@ body.corp .section.serif .columns :is(ul, a) {
   font-size: inherit;
 }
 
+/* … and no patients stroke-page spacing around its 50-50 rows (30px above and below the
+   block, the image 30px down from 900px): one row follows the next at the component gap, as
+   on the source (xpedition-powered-stair-chair feature rows: 419px apart on live, 533px) */
+body.corp .section.serif .columns.columns-50-50 {
+  margin-block: 0;
+}
+
 /* buttons keep the button type (Futura 14px) in a serif section, which sets every cell link
    in the serif copy (stryker.com flowtriever-system / artix "CONNECT WITH AN EXPERT") */
 body.corp .section.serif .columns p.button-wrapper a.button:any-link {
@@ -290,15 +297,13 @@ body.corp .columns > div > div h1.columns-number > :first-child {
   font-size: 2em;
 }
 
-/* a fully Bold Heading 1 in a Large Headline block with vw-sized words is a stat number
-   (stryker.com .fontsize-6vw); next to rich text it keeps the headline size (jr45/july: 4vw,
-   56px). Without a size it is the source's plain h1: 28px, lines 1.06 at every width
-   (exeter "Cementing our place in history", restoration-modular "Rest easy with") */
-body.corp .columns.large-headline > div > div h1.columns-bold:has(span.corp-vw) {
-  font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
-}
-
-body.corp .columns.large-headline > div > div h1.columns-bold:not(:has(span.corp-vw)) {
+/* a fully Bold Heading 1 in a Large Headline block is the source's plain h1: 28px, lines 1.06
+   at every width (exeter "Cementing our place in history", restoration-modular "Rest easy
+   with"). Its vw-sized words (stat numbers, product heroes: ankle-truss-system [[Gold,5vw]])
+   size themselves (span.corp-vw), so the line height stays theirs: at the source's 28px the
+   heading's own line box doesn't add to it (live 95px between two 70px lines; at 6vw it was
+   138px, 104 product heroes) */
+body.corp .columns.large-headline > div > div h1.columns-bold {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
 }
@@ -681,6 +686,17 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+
+  /* image + text rows stay top-aligned in a serif section, as the source's bootstrap columns
+     (the patients serif rows centre the text: xpedition-powered-stair-chair's feature rows,
+     heading 20px under the image top on live, 82px centred) */
+  body.corp .section.serif .columns.columns-50-50 > div {
+    align-items: flex-start;
+  }
+
+  body.corp .section.serif .columns.columns-50-50 .columns-img-col {
+    margin-block: 0;
   }
 }
 

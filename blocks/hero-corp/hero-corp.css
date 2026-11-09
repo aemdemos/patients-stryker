@@ -73,6 +73,30 @@
   padding: var(--space-block) var(--space-block-l) 0;
 }
 
+/* bottom-<n> (the source .bottom-text box): on phones its copy comes under the image, as on
+   stryker.com below 600px (multigen2, optablate-bvn, spinejack: the heading 13px under the
+   image, 28px in, with the box's own 4% padding) */
+.hero-corp.image-slide[data-slide-anchor="bottom"] > div:last-child {
+  position: static;
+  padding: 0 var(--space-block) var(--space-block-l);
+}
+
+/* no-phone-image: a slide whose phone version was never published shows only its copy below
+   600px, as stryker.com does below 841px (1788-platform) */
+.hero-corp.image-slide.no-phone-image > div:first-child {
+  display: none;
+}
+
+.hero-corp.image-slide.no-phone-image > div:last-child {
+  position: static;
+  padding: 0 var(--space-block);
+}
+
+/* shadow: the source banner card (.pDiv.bg-shadow), a 10px shadow at 30% around it */
+.hero-corp.shadow {
+  box-shadow: var(--shadow-soft);
+}
+
 /* dark-box: the headline in a dark grey box with 20px padding — on phones alone, 20px in
    from the edges, and from 600px over the image at the authored top/left/right
    (stryker.com .c-largeheadline.bg-dark-gray, e.g. the "Nurses: A key driver in advancing
@@ -229,7 +253,19 @@
 
   /* bottom-<n>: the source .bottom-text box ends 55px below its button (20px box padding,
      20px column margin, 15px button margin) */
+  .hero-corp.image-slide.no-phone-image > div:first-child {
+    display: block;
+  }
+
+  .hero-corp.image-slide.no-phone-image > div:last-child {
+    position: absolute;
+    padding: var(--hero-box-padding, 0);
+  }
+
   .hero-corp.image-slide[data-slide-anchor="bottom"] > div:last-child {
+    /* (the overlay again, after the phones' static box) */
+    position: absolute;
+    padding: var(--hero-box-padding, 0);
     padding-bottom: calc(2 * var(--space-block-l) + var(--space-block));
   }
 
