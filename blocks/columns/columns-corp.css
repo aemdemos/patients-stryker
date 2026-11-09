@@ -527,21 +527,25 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
     flex-wrap: nowrap;
   }
 
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
   body.corp .columns > div > div {
     flex: 1 1 0;
   }
 
-  body.corp .columns.columns-4-cols > div {
-    flex-wrap: nowrap;
-    row-gap: 0;
+  /* a 3 or 4 column control (cols3 / cols4) has half-width columns from 841px (EDS 600px) and
+     thirds / quarters from 1024px (EDS 900px): two per row up to 900px (stryker.com
+     col-sm-6 col-md-4 / col-md-3, all 843 in the page cache; arise-1000-ex features at 860px:
+     400px cards, two per row). Not grid rows (their own grid-… options) */
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div > div {
+    flex: 0 0 50%;
   }
 
   body.corp .columns.columns-50-50 > div > div {
     flex: 0 0 50%;
-  }
-
-  body.corp .columns.columns-4-cols > div > div {
-    flex: 0 0 25%;
   }
 
   /* columns-25-25-50: three image columns 25% / 25% / 50% wide, as the stryker.com image row
@@ -609,9 +613,9 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
     font-size: var(--heading-font-size-compact);
   }
 
-  /* link-groups: four lists side by side again (one per row on mobile) */
+  /* link-groups: four lists two per row (one per row on mobile) */
   body.corp .columns.link-groups.columns-4-cols > div > div {
-    flex-basis: 25%;
+    flex-basis: 50%;
   }
 
   body.corp .columns {
@@ -627,6 +631,24 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
 }
 
 @media (width >= 900px) {
+  /* 3 / 4 column controls: all their columns side by side (col-md-4 / col-md-3) */
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  body.corp .columns:where(.columns-3-cols):where(:not(.columns-grid, .columns-25-25-50)) > div > div {
+    flex: 1 1 0;
+  }
+
+  body.corp .columns.columns-4-cols:where(:not(.columns-grid)) > div > div {
+    flex: 0 0 25%;
+  }
+
+  body.corp .columns.link-groups.columns-4-cols > div > div {
+    flex-basis: 25%;
+  }
+
   /* link-groups: in a two-cell block each group's list runs in two columns (stryker.com
      col-md-6 lists inside col-md-6 groups) */
   body.corp .columns.link-groups.columns-2-cols ul {

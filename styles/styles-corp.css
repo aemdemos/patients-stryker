@@ -143,6 +143,8 @@
   --corp-component-gap: var(--space-block-l); /* .page-section margin-bottom (30px from 600px) */
   --corp-component-gap-after-text: calc(var(--space-block-l) + var(--space-block)); /* + the last line's 15px */
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block)); /* a blank paragraph: 19.25px + 15px */
+  --corp-indent: 40px; /* measured: the source's indented paragraphs (margin-left: 40px, 57 of 69) */
+  --corp-large-headline-line: 30px; /* measured: a Large Headline line box below 841px (inbone .line2: Egyptienne 21px / 30px) */
   --corp-heading-line-height-1-25: 1.46; /* h-1-25 headings, measured line pitch / size */
   --corp-heading-line-height-1-5: 1.3; /* h-1-5 headings on phones; 1.36 from 600px */
   --corp-hero-heading-line-height: 1.44; /* product hero h2 (35.2px lines at 24.5px) */
@@ -515,17 +517,31 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   background-color: var(--color-surface-dim);
 }
 
-/* large-headline: a standalone stryker.com Large Headline band (contact directory group
-   headings: Futura bold, 2.5vw at 1440px = 35px, 18.75px at 375px, 20px padding). The
-   band's background (bg-gold / bg-gray) covers the content column, not the full width */
-:where(body.corp) main > .section.large-headline {
-  background-clip: content-box;
+/* large-headline: a stryker.com Large Headline (contact directory group headings: Futura
+   bold, 2.5vw at 1440px = 35px, 18.75px at 375px). With a background of its own it is a box
+   in the content column (boxed, 20px padding, below); in a coloured full-bleed panel the
+   panel is the band (the section's background) and the headline has no padding of its own
+   but its spacing settings (inbone, anchorage-2: 3% / 2%) */
+:where(body.corp) main > .section.large-headline > .default-content-wrapper {
+  /* in line with the block wrappers (the card grid below starts 15px further in), in the
+     centred container at any width */
+  margin-inline: max(var(--space-block), calc((100% - var(--container-max)) / 2));
+  padding: 0;
 }
 
-:where(body.corp) main > .section.large-headline > .default-content-wrapper {
-  /* in line with the block wrappers (the card grid below starts 15px further in) */
-  margin-inline: var(--space-block);
-  padding: var(--space-block-l);
+/* its lines follow each other with no gap (the source .c-largeheadline .line spans: inbone
+   line 2 right under line 1, nothing after the last but the box spacing), on the source line's
+   own line box below 600px (21px / 30px Egyptienne under smaller text; from 600px it is no
+   taller than the paragraph's) */
+:where(body.corp) main > .section:where(.large-headline) > .default-content-wrapper > p:where(:not(.button-wrapper)) {
+  margin-block: 0;
+  line-height: var(--corp-large-headline-line);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section:where(.large-headline) > .default-content-wrapper > p:where(:not(.button-wrapper)) {
+    line-height: var(--paragraph-line-height);
+  }
 }
 
 :where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
@@ -634,9 +650,9 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   color: var(--color-white);
 }
 
-/* a Large Headline with a gradient: the gradient covers its box (the content), as a boxed one */
-:where(body.corp) main > .section.large-headline:where(.bg-golden-gradient, .bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) > .default-content-wrapper {
-  background-image: var(--corp-box-bg-image, none);
+/* a Large Headline box (boxed: its own .has-background) keeps the source's 20px padding */
+:where(body.corp) main > .section.boxed:where(.large-headline) > .default-content-wrapper {
+  padding: var(--space-block-l);
 }
 
 :where(body.corp) main > .section.gradient-top-to-bottom {
@@ -676,36 +692,42 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   text-align: left;
 }
 
+/* a divider above a band: the source separator line and its 50px stay above the panel's
+   colour (anchorage-2 at 1440px: the line at 6475px, the band from 6526px) */
+:where(body.corp) main > .section.divider:not(.boxed) {
+  background-clip: content-box;
+}
+
 /* section styles: full-bleed panel gradients (`dark` = the teal one). Measured on
    www.stryker.com (nse, hoffmann-lrf-hexapod, sage oral-care-for-all, AlphaVent): the
    panel has no padding or margin of its own; the authored content keeps its margins
    inside the band (source clearfix rows) and the next component starts flush below it. */
-:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed, .large-headline),
-:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed, .large-headline),
-:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed, .large-headline),
-:where(body.corp) main > .section.bg-golden-gradient:not(.boxed, .large-headline),
+:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed),
+:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed),
+:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed),
+:where(body.corp) main > .section.bg-golden-gradient:not(.boxed),
 :where(body.corp) main > .section.dark {
   display: flow-root;
   margin-bottom: 0;
 }
 
 /* the dark gradients carry light text and links; buttons and CTAs keep their own colours */
-:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed, .large-headline) {
+:where(body.corp) main > .section.bg-dark-purple-gradient:not(.boxed) {
   background-image: var(--corp-gradient-dark-purple);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed, .large-headline) {
+:where(body.corp) main > .section.bg-dark-blue-gradient:not(.boxed) {
   background-image: var(--corp-gradient-dark-blue);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed, .large-headline) {
+:where(body.corp) main > .section.bg-dark-orange-gradient:not(.boxed) {
   background-image: var(--corp-gradient-dark-orange);
   color: var(--color-white);
 }
 
-:where(body.corp) main > .section.bg-golden-gradient:not(.boxed, .large-headline) {
+:where(body.corp) main > .section.bg-golden-gradient:not(.boxed) {
   background-image: var(--corp-gradient-golden);
 }
 
@@ -1347,6 +1369,27 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   margin-bottom: var(--space-block-l);
 }
 
+/* whole-paragraph tags `[[Center]…]` / `[[Right]…]` / `[[Indent]…]` (class form align-center /
+   align-right / indent): a paragraph or heading aligned on its own, or indented, in a text that
+   is not (stryker.com inline text-align / margin-left on single paragraphs) */
+:where(body.corp) main :is(p, h1, h2, h3, h4, h5, h6):has(> span.align-center) {
+  text-align: center;
+}
+
+:where(body.corp) main :is(p, h1, h2, h3, h4, h5, h6):has(> span.align-right) {
+  text-align: right;
+}
+
+:where(body.corp) main :is(p, h1, h2, h3, h4, h5, h6):has(> span.indent) {
+  margin-left: var(--corp-indent);
+}
+
+/* an image alone on its line is centred, as the source's standalone images (.text-center
+   around 9,555 of 10,079; medpor-customized-implant: the 1200px image at x120 of 1440) */
+:where(body.corp) main .default-content-wrapper > p:has(> picture:only-child, > a:only-child > picture:only-child) {
+  text-align: center;
+}
+
 /* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
    font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
 :where(body.corp) main span.body-font,
@@ -1792,12 +1835,15 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 }
 
 /* corp flex sections side by side from 600px: a block or fragment beside content comes from a
-   column control (source col-sm-*, 841px), not the patients site's 900px (styles.css) */
+   column control (source col-sm-*, 841px), not the patients site's 900px (styles.css). The
+   source's bootstrap columns: top-aligned, 30px apart, content 30px in from the container edge
+   (bioprep-bone-preparation-system 50 / 50 at 1440px: x30 and x735, 675px wide; Pangea thirds:
+   440px wide) */
 @media (width >= 600px) {
   :where(body.corp) main > .section.flex {
     display: flex;
-    align-items: center;
-    gap: var(--container-gutter);
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
     box-sizing: border-box;
     max-width: var(--container-max);
     margin-inline: auto;
@@ -1807,11 +1853,34 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   :where(body.corp) main > .section.flex > div {
     flex: 1 1 0;
     min-width: 0;
-    padding-inline: var(--container-gutter);
+    padding-inline: 0;
   }
 
   :where(body.corp) main > .section.flex > div:empty {
     display: none;
+  }
+
+  /* three or four columns (a cols3 / cols4 control: col-sm-6 col-md-4 / col-md-3): two per row
+     up to 900px (Pangea plate groups at 860px: two 400px columns per row) */
+  :where(body.corp) main > .section.flex:has(> div:nth-child(3):not(:empty)) {
+    flex-wrap: wrap;
+    row-gap: var(--corp-component-gap);
+  }
+
+  :where(body.corp) main > .section.flex:has(> div:nth-child(3):not(:empty)) > div {
+    flex: 0 0 calc((100% - 2 * var(--container-gutter)) / 2);
+    margin-inline: 0;
+  }
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main > .section.flex:has(> div:nth-child(3):not(:empty)) {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  :where(body.corp) main > .section.flex:has(> div:nth-child(3):not(:empty)) > div {
+    flex: 1 1 0;
   }
 }
 

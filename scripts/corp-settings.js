@@ -24,6 +24,7 @@
  *   Box: top 3%, sides 3%   …   Box end         a padded box inside text or a block cell
  *   [[Blank line]]                              an empty line of text (its own paragraph)
  *   Blank lines | 2                             a spacer section's blank lines (style spacer)
+ *   Columns | 1 + 2                             a flex section's pieces per source column
  * The name lists below are the registry: one place says what each name is.
  */
 
@@ -38,6 +39,10 @@ export const TEXT_STYLES = {
   serif: 'serif',
   sans: 'body-font',
   futura: 'futura-bold',
+  // a whole paragraph or heading: its alignment, or a 40px indent (styles-corp.css)
+  center: 'align-center',
+  right: 'align-right',
+  indent: 'indent',
 };
 /* colours by their own name: Gold → color-gold */
 ['gold', 'white', 'light-gray', 'blue', 'purple', 'teal', 'grey', 'silver', 'dark-gold', 'black', 'navy']
@@ -314,7 +319,7 @@ function decorateColumns(col, k, data, hero) {
 function decorateSection(section) {
   const {
     padding, margin, textBox, columnWidths, copySize, labelSize, headingSize, autoplay,
-    headings, text, column, blankLines,
+    headings, text, column, blankLines, columns: pieces,
   } = section.dataset;
   // a spacer's blank lines: `Blank lines | 2` → lines-2 (styles-corp.css)
   const lines = parseInt(blankLines, 10);
@@ -330,6 +335,9 @@ function decorateSection(section) {
     section.classList.add(`flex-${columnWidths.split('/').map((w) => parseFloat(w)).filter((w) => w > 0).join('-')}`);
   }
   if (column) section.classList.add(...columnStyles(column));
+  // `Columns | 1 + 2`: how many of the section's pieces each source column holds (corp.js)
+  const counts = (pieces || '').split('+').map((n) => parseInt(n, 10));
+  if (counts.length > 1 && counts.every((n) => n > 0)) section.classList.add(`flex-cols-${counts.join('-')}`);
   // a size by name, or as a multiple (`1.75×`) → `<prefix>-1-75`
   const size = (map, prefix, value) => {
     const v = (value || '').trim().toLowerCase();

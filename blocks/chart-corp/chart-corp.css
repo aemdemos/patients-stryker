@@ -40,6 +40,12 @@
   fill: var(--text-color);
 }
 
+/* axis titles in italic, as the source's Google Charts (surpass-evolve "Push force",
+   clottriever-system) */
+.chart-corp .chart-corp-svg .chart-corp-axis-title {
+  font-style: italic;
+}
+
 .chart-corp .chart-corp-grid {
   fill: var(--color-surface);
 }

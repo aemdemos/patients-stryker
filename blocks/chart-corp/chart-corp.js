@@ -3,7 +3,8 @@
  * with Google Charts). Rendered here as inline SVG with DOM APIs, no chart library.
  *
  * Variants: column (default), bar, pie.
- * Content: key/value rows first (Title, Subtitle, Format, Max, Axis title, Labels), then one
+ * Content: key/value rows first (Title, Subtitle, Format, Max, Axis title, Labels, Height:
+ * the chart height in px, as the source's chartHeight), then one
  * row per data item: label | value | colour keyword (the Statistics palette).
  */
 
@@ -21,6 +22,7 @@ const CONFIG_KEYS = {
   max: 'max',
   'axis title': 'axisTitle',
   labels: 'labels',
+  height: 'height',
 };
 
 // geometry measured on the source Google Charts (14px text, 18px wrapped-label lines)
@@ -34,6 +36,9 @@ const BAR = {
   top: 58, slot: 62, thickness: 31, tickBaseline: 21, titleBaseline: 45, minTickSpacing: 80,
 };
 const PIE_MAX = 360; // source chart area: 90% of the 400px chart height
+// an authored chart height (source chartHeight, `Height` row): Google's default chart area,
+// the plot in the middle 62% of it with 19% above (surpass-evolve: 400px → plot 245px at 78px)
+const AREA = { top: 0.19, plot: 0.62 };
 const PIE_LABEL_RADIUS = 0.75;
 
 const NICE = [1, 2, 2.5, 5];
@@ -152,6 +157,9 @@ function readConfig(block) {
         if (Number.isFinite(max)) config.max = max;
       } else if (key === 'labels') {
         config.labels = !/^(false|no|off|0)$/i.test(text);
+      } else if (key === 'height') {
+        const height = parseInt(text, 10);
+        if (height > 0) config.height = height;
       } else if (text) {
         config[key] = text;
       }
@@ -207,7 +215,9 @@ function wrap(text, maxWidth, measure) {
 function renderColumn(svgEl, width, data, measure) {
   const { config, items, format } = data;
   const n = items.length;
-  const { top, plot } = COLUMN;
+  const { top, plot } = config.height
+    ? { top: Math.round(config.height * AREA.top), plot: Math.round(config.height * AREA.plot) }
+    : COLUMN;
   const dataMax = Math.max(config.max ?? 0, ...items.map((i) => i.value));
   const axis = axisTicks(dataMax, plot, COLUMN.minTickSpacing);
   const tickWidth = Math.max(...axis.ticks.map((t) => measure(`${t}`)));
@@ -221,7 +231,7 @@ function renderColumn(svgEl, width, data, measure) {
   const labelLines = items.map((item) => wrap(item.label, slot - 4, measure));
   const maxLines = Math.max(...labelLines.map((l) => l.length));
   const bottom = Math.max(COLUMN.minBottom, COLUMN.labelBaseline + (maxLines - 1) * LINE + 5);
-  const height = top + plot + bottom;
+  const height = Math.max(top + plot + bottom, config.height || 0);
   // the plot's 1px lines sit inside its height: lines at top … top + plot - 1
   const y = (v) => top + (plot - 1) * (1 - v / axis.top);
 
@@ -298,8 +308,22 @@ function renderBar(svgEl, width, data, measure) {
   const { config, items, format } = data;
   const longestWord = Math.max(...items.flatMap((i) => i.label.split(/\s+/).map(measure)));
   const side = Math.max(sideMargin(width, 33, 0.0956), Math.ceil(longestWord) + 4);
-  const labelLines = items.map((item) => wrap(item.label, side - 4, measure));
-  const slots = labelLines.map((l) => Math.max(BAR.slot, l.length * LINE + 8));
+  let labelLines = items.map((item) => wrap(item.label, side - 4, measure));
+  // an authored height: equal slots in its plot area, each label cut to the lines its slot holds
+  // ("…", as the source); else each slot grows with its label
+  const fixed = config.height ? Math.round(config.height * AREA.plot) / items.length : 0;
+  if (fixed) {
+    const fit = Math.max(Math.floor((fixed - 8) / LINE), 1);
+    // the last line holds what fits of the rest, then "…" ("4.5x25 w/ Excel…")
+    const cut = (rest) => {
+      let line = rest;
+      while (line && measure(`${line}…`) > side - 4) line = line.slice(0, -1);
+      return `${line.trimEnd()}…`;
+    };
+    labelLines = labelLines.map((lines) => (lines.length > fit
+      ? [...lines.slice(0, fit - 1), cut(lines.slice(fit - 1).join(' '))] : lines));
+  }
+  const slots = labelLines.map((l) => fixed || Math.max(BAR.slot, l.length * LINE + 8));
   const plot = slots.reduce((a, b) => a + b, 0);
   const valueWidth = config.labels
     ? Math.max(...items.map((i) => measure(`${i.value}`))) + STEM + TICK_GAP : 0;
@@ -307,9 +331,9 @@ function renderBar(svgEl, width, data, measure) {
   const plotWidth = Math.max(width - side - right, 1);
   const dataMax = Math.max(config.max ?? 0, ...items.map((i) => i.value));
   const axis = axisTicks(dataMax, plotWidth, BAR.minTickSpacing);
-  const { top } = BAR;
+  const top = config.height ? Math.round(config.height * AREA.top) : BAR.top;
   const bottom = config.axisTitle ? BAR.top : BAR.tickBaseline + 11;
-  const height = top + plot + bottom;
+  const height = Math.max(top + plot + bottom, config.height || 0);
   const x = (v) => side + (v / axis.top) * (plotWidth - 1);
 
   svgEl.setAttribute('viewBox', `0 0 ${width} ${height}`);
