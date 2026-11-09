@@ -145,19 +145,46 @@ function buildAccordionSections(main) {
  * new tab.
  * @param {Element} main The container element
  */
+function linkImage(p) {
+  const picture = p.querySelector(':scope > picture');
+  if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+  const next = p.nextElementSibling;
+  const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+  if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+  const a = document.createElement('a');
+  a.href = link.getAttribute('href');
+  if (link.target) a.target = link.target;
+  if (link.rel) a.rel = link.rel;
+  a.setAttribute('aria-label', link.textContent.trim());
+  a.append(picture);
+  p.append(a);
+  next.remove();
+}
+
 function decorateImageLinks(main) {
-  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach((p) => {
-    const picture = p.querySelector(':scope > picture');
-    if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
-    const next = p.nextElementSibling;
-    const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
-    if (!link || next.textContent.trim() !== link.textContent.trim()) return;
-    const a = document.createElement('a');
-    a.href = link.getAttribute('href');
-    a.setAttribute('aria-label', link.textContent.trim());
-    a.append(picture);
-    p.append(a);
-    next.remove();
+  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach(linkImage);
+}
+
+/**
+ * Columns (challenge-cards): a link alone on the line right after a card's image makes the
+ * image clickable, as with the `image-link` section style. Runs on each block once it is
+ * loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image paragraphs
+ * while it decorates, so a link added before that would be lost.
+ * @param {Element} main The container element
+ */
+function decorateChallengeCardLinks(main) {
+  const link = (block) => block.querySelectorAll(':scope > div > div > p.columns-img-col').forEach(linkImage);
+  main.querySelectorAll('.columns.challenge-cards').forEach((block) => {
+    if (block.dataset.blockStatus === 'loaded') {
+      link(block);
+      return;
+    }
+    const observer = new MutationObserver(() => {
+      if (block.dataset.blockStatus !== 'loaded') return;
+      observer.disconnect();
+      link(block);
+    });
+    observer.observe(block, { attributes: true, attributeFilter: ['data-block-status'] });
   });
 }
 
@@ -345,8 +372,9 @@ function emitHomeJsonLd() {
 /**
  * After LCP: head additions.
  */
-export function loadLazy() {
+export function loadLazy(doc) {
   emitHomeJsonLd();
+  decorateChallengeCardLinks(doc.querySelector('main'));
 }
 
 /*

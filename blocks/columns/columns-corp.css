@@ -935,3 +935,74 @@ body.corp main .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) 
 body.corp .columns.color-cards.block > div > div > :last-child:not(.columns-img-col) {
   padding-bottom: 5%;
 }
+
+/* challenge-cards: each cell a card — its bar line, the photo, the text (stryker.com Large
+   Headline in a bg-blue / bg-golden-gradient box over a standalone image and 1.25em copy,
+   e.g. "7 unique ways we partner for prevention"). A Bold first line is the blue bar
+   ("Challenge: [[color-gold]Infection]"), a Bold + Italic one the gold gradient bar
+   ("Prevention"): Futura bold white, 20px padding, the Large Headline 2.5vw size (5vw on
+   phones, at most 35px); the bar and the photo 20px above the next part (30px from
+   600px); the text 17.5px. A row of one cell is a wide card: from 600px its photo and
+   text side by side under the bar */
+body.corp .columns.challenge-cards {
+  --columns-challenge-bar-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--columns-corp-vw))));
+  --columns-challenge-gap: var(--space-block-l);
+  --columns-challenge-gold: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:nth-child(n):nth-child(n) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p.columns-img-col:nth-child(n):nth-child(n) {
+  margin-bottom: var(--columns-challenge-gap);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:first-child:is(.columns-bold, :has(> em:only-child > strong:only-child)) {
+  margin-bottom: var(--columns-challenge-gap);
+  padding: var(--space-block-l);
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--columns-challenge-bar-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:first-child:has(> em:only-child > strong:only-child) {
+  background: var(--columns-challenge-gold);
+}
+
+/* the bar's words stay white: Bold + Italic is gold text elsewhere (colour tags keep theirs) */
+body.corp main .columns.challenge-cards.block > div > div > p:first-child :is(em, strong) {
+  color: var(--color-white);
+  font-style: normal;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.challenge-cards {
+    --columns-challenge-gap: var(--space-section);
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    column-gap: var(--space-section);
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > * {
+    grid-column: 2;
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > p:first-child {
+    grid-column: 1 / -1;
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > .columns-img-col {
+    grid-row: 2 / span 9;
+    grid-column: 1;
+  }
+}

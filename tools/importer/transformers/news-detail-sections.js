@@ -59,6 +59,9 @@ const SOURCE_ORIGIN = 'https://www.stryker.com';
 
 const COMPONENTS = [
   '.c-autocarousel',
+  // a Full Width Image (.fullWidthImage: the container-wide image, e.g. Eli's osteoid
+  // osteoma story), before its parts are taken for components
+  '.fullWidthImage',
   '.c-standalone-image',
   '.c-rich-text-editor',
   '.c-standalone-video',
@@ -69,10 +72,18 @@ const COMPONENTS = [
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
+  // a Latest News list ("Related stories" cards, e.g. the DE&I Summit feature) imports like
+  // the related-content grid
+  '.c-latestnews',
   '.c-section-separator',
   '.sectionseparator',
   '.c-marketo-form',
   '.c-resourcesanddownload',
+  // an Accordion (e.g. the FAQs of the AED pad placement guide); its panels' rich texts
+  // are part of it, not article text of their own
+  '.c-accordion:not(.edit-header)',
+  // a Curated Link List (e.g. the "Learn more" links under the police car AED article)
+  '.c-curated-link-list',
   '.xf-fragment',
 ].join(', ');
 
@@ -87,6 +98,56 @@ const SHARED_XF_SIGNATURES = [
   ['Resources Explore Acute Care homepage', '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master'],
   ['Resources Explore Emergency Care homepage', '/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master'],
   ['Colonoscopy and colorectal cancer screening procedures are on the rise', '/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master'],
+  ['Research and development (R&D) play a crucial role in improving the health', '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/body-copy/master'],
+  ['2-minute read More than 350,000 people experience a sudden cardiac arrest', '/content/experience-fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/body'],
+  ['2-minute read When it comes to medical emergencies like sudden cardiac arrest', '/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body'],
+  ['Dr. Homer Stryker, an orthopaedic surgeon, established The O', '/content/experience-fragments/stryker/corporate/en/about/news/features/_80_years_together/test---body-copy/master'],
+  ['Back in 2021, we hosted our first global Diversity, Equity a', '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/employees_share_why_/body-copy/master'],
+  ['As a patient, preparing for surgery can bring up a mix of em', '/content/experience-fragments/stryker/communications/en/news/_2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite/body-copy/master'],
+  ["At Stryker, we care about every patient's journey. And throu", '/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy/master'],
+  ['These offerings are designed to help advance product and pro', '/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy-2/master'],
+  ['Whether it be a healthcare emergency, natural disaster or un', '/content/experience-fragments/stryker/corporate/en/about/news/features/putting_people_first/body-copy/master'],
+  ['What if joint replacement surgery could do more for surgeons', '/content/experience-fragments/stryker/corporate/en/about/news/features/mako_smartrobotics_h/body-text/master'],
+  ['No parent is prepared to hear that their newborn baby has a ', '/content/experience-fragments/stryker/corporate/en/about/news/features/mother_and_son_take_/body-copy/master'],
+  ['When Pam Mizerany, RN, learned that one of her best friends ', '/content/experience-fragments/stryker/corporate/en/about/news/features/some_people_say_they/body-copy/master'],
+  ['“I get to look back at all the things I’ve accomplished over', '/content/experience-fragments/stryker/corporate/en/patient/jordan_3_17_23/jordan/master'],
+  ['“I told Sue in person how very grateful I was that she’d mad', '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/springing_into_actio/body-copy/master'],
+  ['Boris was driving his grandson Benjamin to soccer practice w', '/content/experience-fragments/stryker/corporate/en/patient/boris_story_5_15_23/news-content/master'],
+  ['“In life there are hard things, and there are good things. A', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/katherine_s_catastro/body-copy/master'],
+  ['When Lin was diagnosed with stage 3 colon cancer, he was tol', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/defying_the_odds/body-content/master'],
+  ['Last year, we shared an ambitious carbon reduction goal that', '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/woman_holding_recycl/body-copy/master'],
+  ['Out-of-hospital sudden cardiac arrest can happen anywhere, w', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/why_aeds_belong_on_b/body-copy/master'],
+  ['In 2007, Emily began experiencing muscle spasms in her jaw.', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master'],
+  ['Heart attack and sudden cardiac arrest (SCA) are very differ', '/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master'],
+  ['Osteoarthritis is the most common form of arthritis, impacti', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/carolyn_s_mako_total/body-copy/master'],
+  ['When Janet fell to the floor after tripping on the stairs in', '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/focusing_on_her_mobi/body-copy/master'],
+  ['Our passionate employees are behind everything we do, includ', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/three_things_to_know/body-copy/master'],
+  ['Learn how Stryker incorporated the latest healthcare technol', '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/tour_the_amsterdam_s/body-copy/master'],
+  ['Bracing for the COVID-19 pandemic surges that have swelled a', '/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_donates_22_5/text/text/master'],
+  ['What are the symptoms and signs of stroke?', '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/what_are_the_symptom/body-copy/master'],
+  ['Day in and day out, healthcare workers navigate the complexi', '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master'],
+  ['3-minute read Sudden cardiac arrest (SCA) affects more than 347,000', '/content/experience-fragments/stryker/emergency-care/en/news/help-increase-patient-outcomes-both-in-and-out-of-the-hospital/body'],
+  ['Nurses are at the forefront of innovation within healthcare systems', '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1'],
+  ['Together, Stryker and Operation Smile are changing lives and strengthe', '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master'],
+  ["More about Stryker’s Mako SmartRobotics™ Our robotic surgery expertise", '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master'],
+  ["Values align for military members and veterans at Stryker", '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/military_members_on_/body-copy/master11'],
+  ["Humans are fallible and errors are unavoidable, even in the best organ", '/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/body-copy/master'],
+  ["Julie Greenhalgh, RN, BSN, CNOR, never smoked a day in her life", '/content/experience-fragments/stryker/surgical-technologies/en/news/protect_your_patient/body-copy/master'],
+  ["At Stryker, we believe that Pride is more than a single month or momen", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/a_safe_space_at_stry/body-copy/master'],
+  ["Victoria lived with back pain for years – impeding her ability to walk", '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/back_pain_and_scolio/body-copy/master'],
+  ["Knowing the warning signs of sudden cardiac arrest helped saved his li", '/content/experience-fragments/stryker/corporate/en/patient/derrick_10_2_23/derrick/master'],
+  ["2-minute read Sudden cardiac arrest is a life-threatening condition th", '/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body'],
+  ["Confined to a single operating room suite and the constant need to ada", '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_stryker_is_innov/body-copy/master'],
+  ["In the gastrointestinal (GI) suite, a focus on safety is often associa", '/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/how-technology-helps-address-gi-suite-challenges/master'],
+  ["Stryker's Global Volunteer Network highlights importance of volunteeri", '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_s_global_vol/body/master'],
+  ["According to the American Heart Association, many people who’ve had a", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/five_things_you_need/body-copy/master'],
+  ["Making healthcare better is our mission, but it doesn’t belong to us a", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/body-copy/master'],
+  ["Arthritis is a widespread health challenge, serving as the leading cau", '/content/experience-fragments/stryker/corporate/en/about/news/-2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/myths--realities-and-real-innovation--what-everyone-should-know/master'],
+  ["To help improve patient outcomes, Stryker provides extensive medical e", '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/body-copy/master'],
+  ["The facts are staggering. An estimated 1.3 million Americans are livin", '/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master'],
+  ["2-minute read If you’re a business owner or responsible for monitoring", '/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/blog'],
+  ["For under-resourced countries around the world, healthcare professionals", '/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/stryker_gets_medical/2-8-24-body-copy/master'],
+  ["When Amanda Baumann started at Mako Surgical Corp. in 2008, she was wor", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master'],
 ];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
@@ -127,8 +188,9 @@ function newTabHref(source, href) {
 
 // source copy spans → the corp section style that sets the same copy size / font
 const SIZE_STYLES = [
-  // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
-  ['fontsize-8em', 'disclaimer'],
+  // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph),
+  // on the paragraph's 14px lines (references-body-lines)
+  ['fontsize-8em', 'disclaimer, references-body-lines'],
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
@@ -439,7 +501,8 @@ function serifHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   return new Set([...root.querySelectorAll('h3')].filter((h) => {
     if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
-    if (!h.querySelector('[class]')) return true;
+    // a size span (e.g. span.fontsize-1-25em around Eli's subtitle) keeps the h3's own font
+    if (![...h.querySelectorAll('[class]')].some((el) => [...el.classList].some((c) => !c.startsWith('fontsize-')))) return true;
     const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
     return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
   }));
@@ -545,21 +608,43 @@ function richTextTitle(component, doc) {
   if (!leadText) return null;
   const box = doc.createElement('div');
   lead.forEach((node) => box.append(node.cloneNode(true)));
-  const large = squash([...box.querySelectorAll('.fontsize-1-5em')]
-    .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
-    .map((span) => span.textContent).join(''));
-  if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
-  const huge = squash([...box.querySelectorAll('.fontsize-2em')]
-    .filter((span) => !span.parentElement.closest('.fontsize-2em'))
-    .map((span) => span.textContent).join(''));
-  const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el))
-    && !hasOtherColour(el) && squash(el.textContent) === leadText);
+  const covered = (cls) => squash([...box.querySelectorAll(`.${cls}`)]
+    .filter((span) => !span.parentElement.closest(`.${cls}`))
+    .map((span) => span.textContent).join('')) === leadText;
+  // 1.5em → h1-21 (with a 2em span too → h1-42); 2.5em (35px, e.g. "Smart devices deliver
+  // actionable insights") → h1-2-5
+  let titleStyle = null;
+  if (covered('fontsize-1-5em')) titleStyle = covered('fontsize-2em') ? 'h1-42' : 'h1-21';
+  else if (covered('fontsize-2-5em')) titleStyle = 'h1-2-5';
+  if (!titleStyle || !box.querySelector('.futura-bold, b')) return null;
+  // gold words keep their colour tag: the whole title, or a part of it ("Smart devices")
+  const goldOf = (node) => {
+    const el = node.parentElement && node.parentElement.closest('[style*="color"]');
+    return !!el && box.contains(el) && GOLD.test(ownColour(el));
+  };
+  const runs = [];
+  const walker = doc.createTreeWalker(box, 4);
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    const gold = goldOf(t);
+    const last = runs[runs.length - 1];
+    if (last && last.gold === gold) last.text += t.textContent;
+    else runs.push({ gold, text: t.textContent });
+  }
+  const title = runs.map((run) => (run.gold && squash(run.text) ? `[[color-gold]${squash(run.text)}]` : run.text)).join('');
   lead.forEach((node) => node.remove());
   while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
   if (!text(p)) p.remove();
   const h1 = doc.createElement('h1');
-  h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
-  h1.titleStyle = huge === leadText ? 'h1-42' : 'h1-21';
+  // a 2.5em title is Futura bold on the source: Bold (the corp H1 is the light serif);
+  // h1-21 / h1-42 set the Futura bold themselves
+  if (titleStyle === 'h1-2-5') {
+    const strong = doc.createElement('strong');
+    strong.textContent = squash(title);
+    h1.append(strong);
+  } else {
+    h1.textContent = squash(title);
+  }
+  h1.titleStyle = titleStyle;
   return h1;
 }
 
@@ -635,6 +720,23 @@ function spacedSubheads(root) {
     || spacedSubheadTexts.has(squashText(h)));
 }
 
+/** The rich text of the source grid item right before the one holding `component`, or null. */
+function previousRichText(component) {
+  const item = component.closest('.text');
+  const prev = item && item.previousElementSibling;
+  return prev && prev.matches('.text') ? prev.querySelector('.c-rich-text-editor') : null;
+}
+
+/**
+ * True when the rich text's box sets no margin or padding on that side (the source's
+ * empty `margin-bottom: %;` inline values).
+ */
+function unspaced(component, side) {
+  const box = component && component.querySelector(':scope > div[style]');
+  const style = box ? box.getAttribute('style') : '';
+  return !new RegExp(`(margin|padding)-${side}:\\s*[\\d.]+`).test(style);
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -649,7 +751,18 @@ function richTextNodes(component, doc) {
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+  // a paragraph indented 40px per step (p style margin-left: 40px / 80px, e.g. the steps
+  // of the Sage bed bath guide): its text in one `[[indent]…]` tag per step, nested
+  // (news-detail.css), once its copy size is read
+  const indents = new Map([...box.querySelectorAll(':scope > p[style*="margin-left"]')].map((p) => {
+    const px = (p.getAttribute('style').match(/margin-left:\s*(\d+)px/) || [])[1];
+    return [p, Math.round(Number(px || 0) / 40)];
+  }).filter(([, level]) => level > 0));
   const { centred, size } = cleanRichText(box);
+  indents.forEach((level, p) => {
+    if (!box.contains(p)) return;
+    for (let i = 0; i < level; i += 1) bracketTag([...p.childNodes], 'indent', p);
+  });
   const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
@@ -674,9 +787,18 @@ function richTextNodes(component, doc) {
     if (node.copyStyle !== null) last = node.copyStyle;
   });
   const first = nodes.find((node) => node.copyStyle !== null);
+  // a rich text in the corp blue box (.has-background.bg-blue outside a column row, e.g.
+  // the quote of "Following in her mother's footsteps"): blue-box, serif when its copy is
+  // Egyptienne (span.urw-egyptienne beside a Futura bold phrase)
+  const blue = !component.closest('.colctrl') && source.matches('.has-background.bg-blue');
+  const boxStyles = blue ? [source.querySelector('.urw-egyptienne') ? 'serif' : '', 'blue-box'] : [];
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
     if (spaced) node.copyStyle = [node.copyStyle, 'h4-spaced'].filter(Boolean).join(', ');
+    if (blue) {
+      const styles = (node.copyStyle || '').split(', ').filter(Boolean);
+      node.copyStyle = [...new Set([...styles, ...boxStyles.filter(Boolean)])].join(', ');
+    }
   });
   return { nodes, centred, size };
 }
@@ -696,6 +818,42 @@ function imageColumnStyle(component) {
 }
 
 /**
+ * A source column row of two columns, one third + two thirds (col-sm-4 / col-sm-8, either
+ * order) or one half each (col-sm-6), where one column is a single standalone photo with at
+ * most one caption rich text below it and the other is rich text only (e.g. Darryl
+ * Conway's headshot and bio beside the ABCDEFG steps; the AED pad placement guide's text
+ * beside each placement diagram): { photo, caption, texts, photoFirst, name } with the
+ * Columns variant for the widths; null otherwise. `component` is any component of the row.
+ */
+function photoTextRow(component) {
+  const col = component.closest('.colctrl [class*="col-sm-"]');
+  const row = col && col.parentElement;
+  if (!row || !row.closest('.colctrl')) return null;
+  const cols = [...row.children];
+  if (cols.length !== 2) return null;
+  const widths = cols.map((c) => Number((c.className.match(/\bcol-sm-(\d+)\b/) || [])[1]));
+  const variants = { '4-8': 'columns-33-67', '8-4': 'columns-67-33', '6-6': 'columns-50-50' };
+  const variant = variants[widths.join('-')];
+  if (!variant) return null;
+  const media = 'img, video, iframe, .c-standalone-image, .c-standalone-video';
+  const photoCol = cols.find((c) => c.querySelectorAll('.c-standalone-image').length === 1
+    && c.querySelectorAll('img').length === 1 && c.querySelectorAll('.c-rich-text-editor').length <= 1);
+  const textCol = photoCol && cols.find((c) => c !== photoCol);
+  if (!textCol || textCol.querySelector(media)) return null;
+  const texts = [...textCol.querySelectorAll('.c-rich-text-editor')].filter((t) => text(t));
+  if (!texts.length) return null;
+  // the narrow column of a 1/3 + 2/3 row is the photo's
+  if (variant !== 'columns-50-50' && !/\bcol-sm-4\b/.test(photoCol.className)) return null;
+  return {
+    photo: photoCol.querySelector('.c-standalone-image'),
+    caption: photoCol.querySelector('.c-rich-text-editor'),
+    texts,
+    photoFirst: cols[0] === photoCol,
+    name: `Columns (${variant})`,
+  };
+}
+
+/**
  * The standalone images of a source column row (.colctrl) when every column of the row
  * holds exactly one image and nothing else (e.g. the three photos of the Smart Hospital
  * Summit, col-sm-6 col-md-4); null otherwise.
@@ -706,11 +864,124 @@ function imageRow(component) {
   if (!row || !row.closest('.colctrl')) return null;
   const cols = [...row.children];
   if (cols.length < 2) return null;
+  // each column one image (its caption title / line, inside the image component, may come
+  // with it, e.g. "ThermaClear" under the urology launch's product shots) or nothing at all
+  // (an empty column keeps the row's widths: an empty cell)
   const images = cols.map((c) => {
     const found = c.querySelectorAll('.c-standalone-image');
-    return found.length === 1 && !text(c) && c.querySelectorAll('img').length === 1 ? found[0] : null;
+    if (!found.length && !text(c) && !c.querySelector('img, video, iframe')) return 'empty';
+    const own = found.length === 1 && text(c) === text(found[0]);
+    return own && c.querySelectorAll('img').length === 1 ? found[0] : null;
   });
-  return images.every(Boolean) ? images : null;
+  const filledCount = images.filter((image) => image && image !== 'empty').length;
+  return images.every(Boolean) && filledCount >= 2 ? images : null;
+}
+
+/**
+ * A source column row (.colctrl) of equal columns where each column holds exactly one rich
+ * text (and nothing else) or nothing, at least two with text (e.g. the ProCuity key
+ * features); the rich texts, 'empty' for an empty column, or null.
+ */
+function textRow(component) {
+  const col = component.closest('.colctrl [class*="col-sm-"]');
+  const row = col && col.parentElement;
+  if (!row || !row.closest('.colctrl')) return null;
+  const cols = [...row.children];
+  if (cols.length < 2 || cols.some((c) => c.className !== cols[0].className)) return null;
+  const texts = cols.map((c) => {
+    if (!text(c) && !c.querySelector('img, video, iframe')) return 'empty';
+    const found = c.querySelectorAll('.c-rich-text-editor');
+    const only = found.length === 1 && !c.querySelector('img, video, iframe, .c-largeheadline, .c-curatedcta')
+      && text(c) === text(found[0]) && !found[0].querySelector('.has-background, .dimensional-box');
+    return only ? found[0] : null;
+  });
+  return texts.every(Boolean) && texts.filter((t) => t !== 'empty').length >= 2 ? texts : null;
+}
+
+/**
+ * The rich texts of a source column row (.colctrl) when every column holds exactly one
+ * rich text in a gold box (.has-background.bg-gold) and no media (e.g. the three
+ * workplace violence figures, col-sm-6 col-md-4); null otherwise.
+ */
+function goldBoxRow(component) {
+  const col = component.closest('.colctrl [class*="col-sm-"]');
+  const row = col && col.parentElement;
+  if (!row || !row.closest('.colctrl')) return null;
+  const cols = [...row.children];
+  if (cols.length < 2) return null;
+  const boxes = cols.map((c) => {
+    const found = c.querySelectorAll('.c-rich-text-editor');
+    return found.length === 1 && found[0].querySelector('.has-background.bg-gold')
+      && !c.querySelector('img, video, iframe') ? found[0] : null;
+  });
+  return boxes.every(Boolean) ? boxes : null;
+}
+
+/**
+ * Drops the `[[…]]` bracket tags from the text of `root` (an opening tag and the `]` that
+ * closes it), keeping the text: the section style sets the size instead.
+ */
+function dropBracketTags(root) {
+  const walker = root.ownerDocument.createTreeWalker(root, 4);
+  let open = 0;
+  let node = walker.nextNode();
+  while (node) {
+    let value = node.textContent.replace(/\[\[[a-z0-9,-]+\]/g, () => {
+      open += 1;
+      return '';
+    });
+    while (open > 0 && value.includes(']')) {
+      value = value.replace(']', '');
+      open -= 1;
+    }
+    node.textContent = value;
+    node = walker.nextNode();
+  }
+}
+
+/**
+ * The content of one gold box, authored with plain formatting only: the figure that opens
+ * a paragraph is Bold (stryker.com span.futura-bold, which the bold cleanup makes Bold +
+ * Italic) on a line of its own (the source's <br> after it, which that cleanup drops), and
+ * no size tags (the `gold-boxes` section style sets the 21px figure and 17.5px text).
+ */
+function goldBoxCell(component, doc) {
+  const { nodes } = richTextNodes(component, doc);
+  nodes.filter((node) => node.tagName === 'P').forEach((p) => {
+    dropBracketTags(p);
+    p.querySelectorAll('em > strong:only-child, strong > em:only-child').forEach((inner) => {
+      const outer = inner.parentElement;
+      const strong = doc.createElement('strong');
+      strong.append(...inner.childNodes);
+      outer.replaceWith(strong);
+    });
+    const lead = p.firstElementChild;
+    const first = [...p.childNodes].find((n) => n.nodeType !== 3 || n.textContent.trim());
+    if (!lead || first !== lead || lead.tagName !== 'STRONG') return;
+    while (lead.lastChild && lead.lastChild.nodeName === 'BR') lead.lastChild.remove();
+    const next = lead.nextSibling;
+    if (next && next.nodeName !== 'BR') next.before(doc.createElement('br'));
+    // no space at the start of a line
+    p.querySelectorAll('br').forEach((br) => {
+      const after = br.nextSibling;
+      if (after && after.nodeType === 3) after.textContent = after.textContent.replace(/^\s+/, '');
+    });
+  });
+  return nodes;
+}
+
+/**
+ * The caption under a standalone video (.desc-content): its paragraphs, taken out of the
+ * video component (the Video block parser keeps only the player); [] when it has none.
+ */
+function videoCaption(component) {
+  const caption = component.querySelector('.desc-content');
+  if (!caption) return [];
+  // its paragraphs, and a subheading (.m-c-subheading-description h3, e.g. "Learn more about
+  // the clinical and economic value of LATERA from Dr. Setzen." under the ENT study video)
+  const nodes = [...caption.querySelectorAll('p, h2, h3, h4')].filter((p) => text(p));
+  caption.remove();
+  return nodes;
 }
 
 function imageNodes(component, doc) {
@@ -741,6 +1012,12 @@ function imageNodes(component, doc) {
       if (!text(title)) return;
       const h4 = doc.createElement('h4');
       h4.textContent = text(title);
+      // a title linked like its image (a product category tile): the link, for xfColumns
+      const titleLink = title.querySelector('a[href]');
+      const imageLink = component.querySelector('a[href] img') && component.querySelector('a[href] img').closest('a');
+      if (titleLink && imageLink && titleLink.getAttribute('href') === imageLink.getAttribute('href')) {
+        h4.tileHref = newTabHref(titleLink, absoluteAsset(titleLink.getAttribute('href')));
+      }
       nodes.push(h4);
     });
     // a caption line under the image (p.u-white-space-pre, body text on the source, e.g.
@@ -878,6 +1155,9 @@ function videoTextAside(video) {
   const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
   const rte = aside && aside.querySelector('.c-rich-text-editor');
   if (!rte || !text(rte) || aside.querySelector('img, video, iframe, .c-standalone-video')) return null;
+  // only text after the video (video left, e.g. InsideOut): text before it (the DE&I Summit
+  // 2023 intro, quote box and text left of the video) is already in the article
+  if ([...row.children].indexOf(aside) < [...row.children].indexOf(col)) return null;
   return rte;
 }
 
@@ -888,10 +1168,13 @@ function videoTextColumns(video, rte, doc) {
   if (!link || !nodes.length) return null;
   const media = doc.createElement('p');
   media.append(link);
-  return WebImporter.Blocks.createBlock(doc, {
+  const block = WebImporter.Blocks.createBlock(doc, {
     name: 'Columns (columns-50-50)',
     cells: [[media, nodes]],
   });
+  // the text's copy style is the section's (e.g. the 1.25em copy beside the Ease video)
+  const copy = nodes.map((n) => n.copyStyle).find((c) => c);
+  return { block, copy };
 }
 
 /**
@@ -1102,7 +1385,10 @@ function markSharedFragments(main, doc) {
   main.querySelectorAll('.experiencefragment').forEach((xf) => {
     if (!xf.isConnected || xf.closest('header, footer, .modal')) return;
     const signature = text(xf);
-    const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+    // a signature opens the XF's text, or (a sentence of 40+ characters) sits anywhere in it:
+    // an article body XF can open with its title or a video player's text
+    const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start)
+      || (start.length >= 40 && signature.includes(start)));
     const path = match && xfFragmentPath(match[1]);
     if (!path) {
       if (signature) inlined.push(signature.slice(0, 80));
@@ -1138,6 +1424,8 @@ const SPAN_VARIANTS = {
   '3/9': 'columns-33-67',
   '9/3': 'columns-75-25',
   '9/2': 'columns-75-25',
+  // a small icon beside its text (e.g. the statistics of "Following in her mother's footsteps")
+  '1/11': 'icon-text',
 };
 
 function spanVariant(spans) {
@@ -1381,7 +1669,33 @@ function cellNodes(cell, doc) {
 function xfColumns(marker, doc) {
   const cells = [...marker.children].map((cell) => cellNodes(cell, doc));
   const nodes = cells.flat();
-  const variants = [marker.getAttribute('data-variant'), nodes.some((node) => node.imageLink) ? 'media-pair' : '']
+  // every cell a product category tile (a linked image and the same link on its title):
+  // product-tiles, the title keeping its link
+  const tiles = cells.length > 1 && cells.every((c) => c.some((node) => node.tileHref));
+  if (tiles) {
+    nodes.filter((node) => node.tileHref).forEach((h4) => {
+      const a = doc.createElement('a');
+      a.setAttribute('href', h4.tileHref);
+      a.append(...h4.childNodes);
+      h4.append(a);
+    });
+  }
+  // icon-text: the source's black Futura bold lead-in ("83%", "Half") is plain Bold in the
+  // cell (Bold + Italic there is the gold label), unless it sits in a colour tag
+  if (marker.getAttribute('data-variant') === 'icon-text') {
+    nodes.filter((node) => node.nodeType === 1).forEach((node) => {
+      node.querySelectorAll('em > strong:only-child, strong > em:only-child').forEach((inner) => {
+        const outer = inner.parentElement;
+        const before = outer.previousSibling;
+        if (before && before.nodeType === 3 && /\[\[color-[a-z]+\]$/.test(before.textContent)) return;
+        const strong = doc.createElement('strong');
+        strong.append(...inner.childNodes);
+        outer.replaceWith(strong);
+      });
+    });
+  }
+  const linkVariant = tiles ? 'product-tiles' : 'media-pair';
+  const variants = [marker.getAttribute('data-variant'), nodes.some((node) => node.imageLink) ? linkVariant : '']
     .filter(Boolean);
   const name = variants.length ? `Columns (${variants.join(', ')})` : 'Columns';
   const copy = nodes.filter((node) => node.copyStyle !== undefined && node.copyStyle !== null)
@@ -1416,11 +1730,14 @@ export default function transform(hookName, element, payload) {
   const sections = [];
   let current = null;
   let separatorNext = false;
+  // a blank line the source leaves under a component (e.g. the empty last list of a
+  // Curated Link List): the next section gets `blank-above`
+  let blankNext = false;
   const startSection = (kind, sectionStyle) => {
-    const style = separatorNext
-      ? ['separator', sectionStyle].filter(Boolean).join(', ')
-      : sectionStyle;
+    const style = [separatorNext ? 'separator' : '', sectionStyle, blankNext ? 'blank-above' : '']
+      .filter(Boolean).join(', ') || undefined;
     separatorNext = false;
+    blankNext = false;
     current = { kind, style, nodes: [] };
     sections.push(current);
     return current;
@@ -1586,9 +1903,41 @@ export default function transform(hookName, element, payload) {
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
+  let fullWidthLead = false;
   components.forEach((component) => {
     if (consumed.has(component)) return;
     const isFirst = current === title;
+    // a photo (and its caption) beside article text in a 1/3 + 2/3 or 1/2 + 1/2 row:
+    // Columns (33-67 / 67-33 / 50-50), the photo and caption in one cell, the text in the
+    // other, with plain formatting only (no tags; news-detail.css sizes a caption and keeps
+    // Bold lead-ins in the body font); the section takes the text's copy style
+    const split = !isFirst && component.matches('.c-standalone-image, .c-rich-text-editor') && photoTextRow(component);
+    if (split) {
+      [split.photo, split.caption, ...split.texts].filter(Boolean).forEach((c) => consumed.add(c));
+      const textNodes = split.texts.flatMap((t) => richTextNodes(t, doc).nodes);
+      // the copy style of the longest text (as in xfColumns): a serif bold label opening the
+      // column (e.g. "Help protect your patients and OR staff") does not set the body's font
+      const copy = textNodes.filter((n) => n.copyStyle !== undefined && n.copyStyle !== null)
+        .sort((a, b) => text(b).length - text(a).length).map((n) => n.copyStyle)[0];
+      const photo = [...imageNodes(split.photo, doc), ...(split.caption ? richTextNodes(split.caption, doc).nodes : [])];
+      [...photo, ...textNodes].forEach((n) => n.nodeType === 1 && dropBracketTags(n));
+      const cells = split.photoFirst ? [photo, textNodes] : [textNodes, photo];
+      startSection('columns', copy || undefined).nodes.push(WebImporter.Blocks.createBlock(doc, { name: split.name, cells: [cells] }));
+      current = null;
+      return;
+    }
+    // a row of equal text columns (each one rich text, or empty: e.g. the ProCuity key
+    // features, two per col-md-4 row): Columns, one text per cell, empty cells keeping widths
+    const texts = !isFirst && component.matches('.c-rich-text-editor') && textRow(component);
+    if (texts) {
+      texts.filter((t) => t !== 'empty').forEach((t) => consumed.add(t));
+      const cells = texts.map((t) => (t === 'empty' ? '' : richTextNodes(t, doc).nodes));
+      const copy = cells.flat().map((n) => n && n.copyStyle).find((c) => c);
+      cells.flat().forEach((n) => n && n.nodeType === 1 && dropBracketTags(n));
+      startSection('columns', copy || undefined).nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Columns', cells: [cells] }));
+      current = null;
+      return;
+    }
     if (component.matches('.xf-fragment')) {
       startSection('fragment').nodes.push(fragmentBlock(component.getAttribute('data-fragment'), doc));
       current = null;
@@ -1603,7 +1952,9 @@ export default function transform(hookName, element, payload) {
       current.nodes.push(block);
       return;
     }
-    if (xf && component.matches('.c-rich-text-editor') && component.querySelector('.dimensional-box')) {
+    // a rich text in a dimensional box (a white shadow box, e.g. the pull quotes of the
+    // incontinence prevalence article): Panel (left)
+    if (component.matches('.c-rich-text-editor') && component.querySelector('.dimensional-box')) {
       const { nodes } = richTextNodes(component, doc);
       if (!nodes.length) return;
       const copy = nodes.find((node) => node.copyStyle);
@@ -1619,14 +1970,43 @@ export default function transform(hookName, element, payload) {
       current = null;
       return;
     }
+    if (component.matches('.fullWidthImage')) {
+      // the desktop image (picture source ≥840px) then a different phone image (img src),
+      // in a `full-width-image` section (news-detail.css); its text box's text, if any,
+      // follows as a paragraph
+      const img = component.querySelector('img');
+      if (!img) return;
+      const source = component.querySelector('source[srcset]');
+      const desktop = (source && source.getAttribute('srcset')) || img.getAttribute('src');
+      const nodes = [...new Set([desktop, img.getAttribute('src')])].filter(Boolean).map((src) => {
+        const image = doc.createElement('img');
+        image.setAttribute('src', src);
+        image.setAttribute('alt', img.getAttribute('alt') || '');
+        const p = doc.createElement('p');
+        p.append(image);
+        return p;
+      });
+      const box = component.querySelector('.textBoxId');
+      if (box && text(box)) {
+        const p = doc.createElement('p');
+        p.textContent = text(box);
+        nodes.push(p);
+      }
+      // (the source keeps its empty lead image / text containers above it: a spacer under
+      // the date, e.g. Eli's photo 66px below the date at 1440px)
+      if (isFirst) fullWidthLead = true;
+      startSection('image', 'full-width-image').nodes.push(...nodes);
+      current = null;
+      return;
+    }
     if (component.matches('.c-standalone-image')) {
       // a row of photos (one image per column, nothing else): Columns, one image per cell,
       // in a section of its own (news-detail-themes.css lays it out as the source on
       // full-width pages)
       const row = !isFirst && imageRow(component);
       if (row) {
-        row.forEach((image) => consumed.add(image));
-        const cells = row.map((image) => imageNodes(image, doc));
+        row.filter((image) => image !== 'empty').forEach((image) => consumed.add(image));
+        const cells = row.map((image) => (image === 'empty' ? '' : imageNodes(image, doc)));
         startSection('columns').nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Columns', cells: [cells] }));
         current = null;
         return;
@@ -1661,7 +2041,19 @@ export default function transform(hookName, element, payload) {
       current = null;
       return;
     }
-    if (component.matches('.c-customizeable')) {
+    if (component.matches('.c-section-title') && text(component)) {
+      // a section title (.component-subheading, e.g. "This year's goal" on the DE&I Summit
+      // 2023 feature: Futura bold with the grey rule under it): an underlined Heading 2
+      // (authoring conventions), in the article text around it
+      const h2 = doc.createElement('h2');
+      const u = doc.createElement('u');
+      u.textContent = text(component.querySelector('h1, h2, h3, h4') || component);
+      h2.append(u);
+      if (!current || !current.kind.startsWith('body')) startSection('body');
+      current.nodes.push(h2);
+      return;
+    }
+    if (component.matches('.c-customizeable, .c-latestnews')) {
       // related-content cards: own full-width section — its heading as default
       // content, the grid left for the cards-corp-teaser parser
       if (!component.querySelector('.item img')) return;
@@ -1700,6 +2092,55 @@ export default function transform(hookName, element, payload) {
     // Mutual Aid ProCare case study) it is a section of its own: its heading underlined
     // (the grey rule, authoring conventions), the list left for the cards-corp-resources
     // parser (Cards Corp (resources): cover image + Heading 5 link per download)
+    // an Accordion: its heading (.component-subheading, e.g. "FAQs") as a Heading 3, then
+    // the Accordion block, one row per panel (title | its rich text), plain formatting
+    // only; the section takes the copy style of the panel text (e.g. `p-1-25`)
+    // a Curated Link List: its links as a list in a section of its own with the
+    // `link-list` style (news-detail.css: no bullets, plain links, 15px apart)
+    if (component.matches('.c-curated-link-list')) {
+      const links = [...component.querySelectorAll('li a[href]')].filter((a) => text(a));
+      if (!links.length) return;
+      const ul = doc.createElement('ul');
+      links.forEach((source) => {
+        const li = doc.createElement('li');
+        const a = doc.createElement('a');
+        a.setAttribute('href', newTabHref(source, absoluteAsset(source.getAttribute('href'))));
+        a.textContent = text(source);
+        li.append(a);
+        ul.append(li);
+      });
+      startSection('link-list', 'link-list').nodes.push(ul);
+      // an empty list item after the links (<li><a> </a></li>, e.g. under "Learn more" on
+      // the LUCAS article) is a blank line above whatever follows
+      blankNext = [...component.querySelectorAll('li')].some((li) => !text(li));
+      current = null;
+      return;
+    }
+    if (component.matches('.c-accordion')) {
+      const rows = [...component.querySelectorAll('.panel')].map((panel) => {
+        const title = text(panel.querySelector('.panel-title'));
+        const body = [...panel.querySelectorAll('.panel-body .c-rich-text-editor')]
+          .flatMap((rte) => richTextNodes(rte, doc).nodes);
+        body.forEach((n) => n.nodeType === 1 && dropBracketTags(n));
+        return title && body.length ? { title, body } : null;
+      }).filter(Boolean);
+      if (!rows.length) return;
+      const nodes = [];
+      const heading = component.querySelector('.component-subheading');
+      if (heading && text(heading)) {
+        const h3 = doc.createElement('h3');
+        h3.textContent = text(heading);
+        nodes.push(h3);
+      }
+      nodes.push(WebImporter.Blocks.createBlock(doc, {
+        name: 'Accordion',
+        cells: rows.map((row) => [row.title, row.body]),
+      }));
+      const copy = rows.flatMap((row) => row.body).map((n) => n.copyStyle).find((c) => c);
+      startSection('accordion', copy || undefined).nodes.push(...nodes);
+      current = null;
+      return;
+    }
     if (component.matches('.c-resourcesanddownload')) {
       if (!hasForm) {
         if (!component.querySelector('.item img')) return;
@@ -1766,20 +2207,32 @@ export default function transform(hookName, element, payload) {
         consumed.add(textAside.closest(COMPONENTS) || textAside);
         // the source row spans the whole container (e.g. InsideOut): full-width theme
         element.setAttribute('data-news-theme', 'full-width');
-        startSection('columns').nodes.push(textColumns);
+        startSection('columns', textColumns.copy || undefined).nodes.push(textColumns.block);
         current = null;
         return;
       }
       // a video in a narrow source column (the other column empty) is a section of its
       // own with the image column style, which caps the video block as well
-      const columnStyle = imageColumnStyle(component);
+      // the video's caption (.desc-content, e.g. Derrick Mosley's story under the survivor
+      // video) follows it in a section of its own with the `join` style: right under the
+      // player, not a section gap below it (the Video block parser keeps only the player)
+      const caption = videoCaption(component);
+      // …a video in a half / third column beside text that came before it (the DE&I Summit
+      // 2023 video right of its text) keeps its column width, stacked under the text
+      const besideText = component.closest('.colctrl [class*="col-sm-6"], .colctrl [class*="col-sm-4"]');
+      const columnStyle = imageColumnStyle(component)
+        || (besideText && (/\bcol-sm-6\b/.test(besideText.className) ? 'image-1-2' : 'image-1-3'));
       if (columnStyle) {
         startSection('video', columnStyle).nodes.push(component);
-        current = null;
-        return;
+      } else {
+        if (!current || current.kind !== 'body') startSection('body');
+        current.nodes.push(component);
       }
-      if (!current || current.kind !== 'body') startSection('body');
-      current.nodes.push(component);
+      // a caption heading not in Futura on the source (the plain h3 under the ENT study
+      // video: Egyptienne 21px) keeps the serif: `h-serif`
+      const serifCaption = caption.some((n) => /^H[2-4]$/.test(n.tagName) && !n.querySelector('.futura-bold, b, strong'));
+      if (caption.length) startSection('caption', serifCaption ? 'join, h-serif' : 'join').nodes.push(...caption);
+      if (columnStyle || caption.length) current = null;
       return;
     }
     // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
@@ -1796,6 +2249,20 @@ export default function transform(hookName, element, payload) {
         const heading = rename(lines[0], 'h1');
         heading.querySelectorAll('strong, em').forEach(unwrap);
         startSection('headline', headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
+        current = null;
+        return;
+      }
+    }
+    // a 2vw Large Headline in a gold box further down (e.g. "Stryker aims to improve
+    // healthcare with IoT solutions" under the Smart devices title): its lines in a
+    // `headline-2vw` section with `background: bg-gold` (the 20px gold box, news-detail.css)
+    if (component.matches('.c-largeheadline') && headlineStyle && headlineStyle[1] === 'headline-2vw'
+      && component.querySelector('.has-background.bg-gold') && text(component)) {
+      const lines = headlineNodes(component, doc);
+      if (lines.length) {
+        lines.forEach((line) => line.querySelectorAll('em').forEach(unwrap));
+        startSection('headline', 'headline-2vw').nodes.push(...lines);
+        current.background = 'bg-gold';
         current = null;
         return;
       }
@@ -1824,7 +2291,47 @@ export default function transform(hookName, element, payload) {
       } else if (!current || !current.kind.startsWith('body')) {
         startSection('body');
       }
+      // the CTA's subtitle line above its button (p.cta-subtitle, e.g. "Be educated on the
+      // warning signs of stroke" on Merryl's story: Futura bold 21px): a Bold-only paragraph
+      // in a `label-1-5` section (authoring conventions: the 21px label)
+      const subtitle = component.querySelector('.cta-subtitle, .cta-title');
+      if (subtitle && text(subtitle)) {
+        const p = doc.createElement('p');
+        const strong = doc.createElement('strong');
+        strong.textContent = text(subtitle);
+        p.append(strong);
+        nodes.unshift(p);
+        if (!(current.style || '').split(', ').includes('label-1-5')) {
+          current.style = [current.style, 'label-1-5'].filter(Boolean).join(', ');
+        }
+      }
       current.nodes.push(...nodes);
+      return;
+    }
+    // a row of gold boxes (one gold rich text per column, e.g. the three figures of the
+    // workplace violence article): Columns, one box per cell, in a `gold-boxes` section
+    // (news-detail.css); a lone heading just above the row (a rich text of its own) heads it
+    const boxes = component.matches('.c-rich-text-editor') && goldBoxRow(component);
+    if (boxes) {
+      boxes.forEach((box) => consumed.add(box));
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: 'Columns',
+        cells: [boxes.map((box) => goldBoxCell(box, doc))],
+      });
+      // 2em figures (span.fontsize-2em, e.g. "92% strongly agree"): the larger-figure box
+      const goldStyle = boxes.every((box) => box.querySelector('.futura-bold .fontsize-2em, .fontsize-2em .futura-bold'))
+        ? 'gold-boxes, gold-boxes-2' : 'gold-boxes';
+      const heading = current && current.nodes.length === 1 && /^H[2-4]$/.test(current.nodes[0].tagName || '');
+      if (heading && !current.style) {
+        // its size tag ([[text-1-25]…], a 1.25em heading) becomes the `h3-1-25` style
+        const sized = /\[\[text-1-25\]/.test(current.nodes[0].textContent);
+        dropBracketTags(current.nodes[0]);
+        current.style = sized && current.nodes[0].tagName === 'H3' ? `${goldStyle}, h3-1-25` : goldStyle;
+        current.nodes.push(block);
+      } else {
+        startSection('gold-boxes', goldStyle).nodes.push(block);
+      }
+      current = null;
       return;
     }
     const { nodes, centred, size } = component.matches('.c-rich-text-editor')
@@ -1836,6 +2343,11 @@ export default function transform(hookName, element, payload) {
     // paragraph (boldBody) gets a section of its own with `bold-body`; a Futura text link
     // after the copy of its rich text (followsText) keeps the paragraph gap above it, so
     // the section before it gets `ps-0`.
+    // a rich text right after the one the current section holds, neither spaced by its own
+    // margin or padding (e.g. "5-minute read" under "Results are from 4,955 families…"):
+    // the two sit one paragraph gap apart on the source, so a new section there is `join`
+    const stacked = !!current && current.lastRich === previousRichText(component)
+      && unspaced(current.lastRich, 'bottom') && unspaced(component, 'top');
     nodes.forEach((node, i) => {
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
@@ -1849,7 +2361,10 @@ export default function transform(hookName, element, payload) {
         if (node.followsText && current && i > 0) {
           current.style = [current.style, 'ps-0'].filter(Boolean).join(', ');
         }
-        startSection(kind, styles.join(', ') || undefined);
+        // a section split off the same rich text (e.g. the plain-bold "A week of
+        // celebration" in the IWD story) keeps its paragraph gap above it: `join`
+        const join = (i > 0 || stacked) && current && !node.followsText ? ['join'] : [];
+        startSection(kind, [...styles, ...join].join(', ') || undefined);
       }
       if (h3Font) {
         if (h3Font === 'serif' && current.h3Font !== 'serif') {
@@ -1859,6 +2374,7 @@ export default function transform(hookName, element, payload) {
       }
       current.nodes.push(node);
     });
+    if (component.matches('.c-rich-text-editor')) current.lastRich = component;
   });
 
   // a form page ends with exactly one H1: further ones (a campaign name under the title)
@@ -1901,7 +2417,7 @@ export default function transform(hookName, element, payload) {
   // article starts 46px below the date on the source (30px spacer + the 15px title gap) —
   // except a lead image placed directly below the date, 15px below it
   const opensWithHeadline = sections.some((section) => section.kind === 'headline');
-  if ((title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline) && !leadBelowDate) {
+  if ((title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline || fullWidthLead) && !leadBelowDate) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 

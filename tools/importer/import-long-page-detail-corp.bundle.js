@@ -317,6 +317,21 @@ var CustomImportScript = (() => {
       const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
       if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
+      const gold = overlay.querySelector(".has-background.bg-gold");
+      if (gold) {
+        variants.push("gold-box");
+        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
+        if (margin) {
+          const l = parseFloat((left || "0").replace("-", "."));
+          const r = parseFloat((right || "0").replace("-", "."));
+          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
+          const i = variants.findIndex((v) => v.startsWith("right-"));
+          const token = `right-${String(inset).replace(".", "-")}`;
+          if (i >= 0) variants[i] = token;
+          else variants.push(token);
+        }
+      }
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
