@@ -484,21 +484,24 @@ var CustomImportScript = (() => {
   function tagGoldText(root) {
     const tagged = /* @__PURE__ */ new Set();
     const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
+    const wrapRun = (nodes) => {
+      nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
+      wrap(nodes);
+    };
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
-      tagged.add(el);
       if (!hasOtherColour(el)) {
-        wrap([el]);
+        wrapRun([el]);
         return;
       }
       let run = [];
       [...el.childNodes].forEach((child) => {
         if (hasOtherColour(child)) {
-          wrap(run);
+          wrapRun(run);
           run = [];
         } else run.push(child);
       });
-      wrap(run);
+      wrapRun(run);
     });
   }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
