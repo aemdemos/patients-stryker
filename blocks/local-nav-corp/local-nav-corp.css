@@ -1,0 +1,165 @@
+/* local-nav-corp: the www.stryker.com local page navigation (measured on giving-back and the
+   TEACH talks pages at 375 / 1000 / 1440). Futura 14px uppercase. Phones: a card with the
+   page name and a dropdown arrow, 20px clear above and below, opening the list of the parent
+   and all the links. From
+   600px (stryker.com 840px): a 40px bar, the parent link (teal) on the left, the section's
+   links (grey) on the right, then the "⋮" more menu. `border`: a 1px rule under the bar. */
+
+.local-nav-corp .local-nav-corp-nav {
+  position: relative;
+  box-sizing: border-box;
+  margin-block: var(--space-block-l);
+  padding: var(--space-block-s);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.43;
+  text-transform: uppercase;
+}
+
+.local-nav-corp .local-nav-corp-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.local-nav-corp .local-nav-corp-nav a:any-link {
+  color: var(--corp-color-local-nav-item);
+  text-decoration: none;
+}
+
+.local-nav-corp .local-nav-corp-nav a:any-link:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+/* phones: the page name, the arrow on the right */
+.local-nav-corp .local-nav-corp-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-black);
+  font: inherit;
+  font-weight: var(--font-weight-bold);
+  text-align: start;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.local-nav-corp .local-nav-corp-toggle::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-block-s) + var(--space-block-xs));
+  right: var(--space-block-s);
+  width: var(--space-block-s);
+  height: var(--space-block-s);
+  border-inline-end: 2px solid var(--corp-color-local-nav-link);
+  border-block-end: 2px solid var(--corp-color-local-nav-link);
+  transform: rotate(45deg);
+}
+
+.local-nav-corp .local-nav-corp-toggle[aria-expanded="true"]::after {
+  top: calc(var(--space-block-s) + var(--space-block-s));
+  transform: rotate(-135deg);
+}
+
+.local-nav-corp .local-nav-corp-nav .local-nav-corp-list {
+  margin-block-start: var(--space-block-s);
+  background: var(--color-white);
+}
+
+.local-nav-corp .local-nav-corp-list li {
+  padding: var(--space-block-s);
+}
+
+/* the parent page first, in bold black */
+.local-nav-corp .local-nav-corp-list li:first-child a:any-link {
+  color: var(--color-black);
+  font-weight: var(--font-weight-bold);
+}
+
+/* the bar's parts are for 600px and up */
+.local-nav-corp .local-nav-corp-parent,
+.local-nav-corp .local-nav-corp-links,
+.local-nav-corp .local-nav-corp-more {
+  display: none;
+}
+
+@media (width >= 600px) {
+  /* the bar's text near its top, as on stryker.com (3px down, the rule 17px below it) */
+  .local-nav-corp .local-nav-corp-nav {
+    display: flex;
+    align-items: flex-start;
+    height: var(--corp-local-nav-height);
+    margin-block: 0;
+    padding: var(--space-block-xxs) 0 0;
+    box-shadow: none;
+  }
+
+  .local-nav-corp.border .local-nav-corp-nav {
+    border-bottom: 1px solid var(--color-surface-muted);
+  }
+
+  .local-nav-corp .local-nav-corp-toggle,
+  .local-nav-corp .local-nav-corp-list {
+    display: none;
+  }
+
+  .local-nav-corp .local-nav-corp-nav a.local-nav-corp-parent:any-link {
+    display: block;
+    flex: 0 0 30%;
+    color: var(--color-primary);
+  }
+
+  .local-nav-corp .local-nav-corp-nav .local-nav-corp-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-block);
+    margin-inline-start: auto;
+  }
+
+  .local-nav-corp .local-nav-corp-links a:any-link {
+    display: block;
+    padding-inline: var(--space-block-s);
+    color: var(--corp-color-local-nav-link);
+  }
+
+  /* "|" then "⋮": the more menu, grey, under the bar's right end */
+  .local-nav-corp .local-nav-corp-more {
+    display: block;
+    position: relative;
+    margin-inline-end: var(--space-block-s);
+  }
+
+  .local-nav-corp .local-nav-corp-more-button {
+    display: flex;
+    align-items: center;
+    padding-inline: var(--space-block-xs);
+    border: 0;
+    background: none;
+    color: var(--corp-color-local-nav-link);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .local-nav-corp .local-nav-corp-more-button::before {
+    content: "|";
+    margin-inline-end: var(--space-block-s);
+  }
+
+  .local-nav-corp .local-nav-corp-more-list {
+    position: absolute;
+    top: 100%;
+    right: calc(-1 * var(--space-block-s));
+    z-index: 2;
+    width: var(--corp-local-nav-menu-width);
+    background: var(--corp-color-local-nav-menu);
+  }
+
+  .local-nav-corp .local-nav-corp-more-list li {
+    padding: var(--space-block-s);
+  }
+}

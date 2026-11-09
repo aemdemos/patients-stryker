@@ -318,35 +318,43 @@ function videoCaptions(main, doc) {
 }
 
 /**
- * The source local navigation (.localpagenavigation nav: the parent page link, then the
- * links of its section) → `Local Nav` block: row 1 the parent link, row 2 the list of
- * links. Removed from the page; null when the page has none.
+ * The source local navigation (.localpagenavigation nav) → `Local Nav Corp` block: row 1 the
+ * parent page link, row 2 the links shown in the bar, row 3 (when the source has them) the
+ * links under its "⋮" more menu (.hidden-links: stryker.com fixes that split per page);
+ * `border` when the source draws the 1px rule under the bar (nav-border-bottom). The current
+ * page's name is not authored (local-nav-corp.js takes the page title). Removed from the
+ * page; null when the page has none.
  */
 function localNav(main, doc) {
   const nav = main.querySelector('.localpagenavigation nav');
   if (!nav) return null;
   const parent = nav.querySelector('a.parent-node');
   const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
+  const more = [...nav.querySelectorAll('ul.hidden-links > li > a[href]')];
+  const border = nav.classList.contains('nav-border-bottom');
   nav.closest('.localpagenavigation').remove();
-  if (!parent && !links.length) return null;
-  const rows = [];
-  if (parent) {
-    const a = doc.createElement('a');
-    a.href = parent.getAttribute('href');
-    a.textContent = text(parent);
-    rows.push([a]);
-  }
-  const ul = doc.createElement('ul');
-  links.forEach((source) => {
-    const li = doc.createElement('li');
+  if (!parent && !links.length && !more.length) return null;
+  const link = (source) => {
     const a = doc.createElement('a');
     a.href = source.getAttribute('href');
     a.textContent = text(source);
-    li.append(a);
-    ul.append(li);
+    return a;
+  };
+  const list = (sources) => {
+    const ul = doc.createElement('ul');
+    sources.forEach((source) => {
+      const li = doc.createElement('li');
+      li.append(link(source));
+      ul.append(li);
+    });
+    return ul;
+  };
+  const rows = [[parent ? link(parent) : ''], [list(links)]];
+  if (more.length) rows.push([list(more)]);
+  return WebImporter.Blocks.createBlock(doc, {
+    name: border ? 'Local Nav Corp (border)' : 'Local Nav Corp',
+    cells: rows,
   });
-  rows.push([ul]);
-  return WebImporter.Blocks.createBlock(doc, { name: 'Local Nav', cells: rows });
 }
 
 /** A source Marketo form (form[data-marketo-form-id]) → `Marketo Form` block, or null. */

@@ -2028,26 +2028,31 @@ var CustomImportScript = (() => {
     if (!nav) return null;
     const parent = nav.querySelector("a.parent-node");
     const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
+    const more = [...nav.querySelectorAll("ul.hidden-links > li > a[href]")];
+    const border = nav.classList.contains("nav-border-bottom");
     nav.closest(".localpagenavigation").remove();
-    if (!parent && !links.length) return null;
-    const rows = [];
-    if (parent) {
-      const a = doc.createElement("a");
-      a.href = parent.getAttribute("href");
-      a.textContent = text3(parent);
-      rows.push([a]);
-    }
-    const ul = doc.createElement("ul");
-    links.forEach((source) => {
-      const li = doc.createElement("li");
+    if (!parent && !links.length && !more.length) return null;
+    const link = (source) => {
       const a = doc.createElement("a");
       a.href = source.getAttribute("href");
       a.textContent = text3(source);
-      li.append(a);
-      ul.append(li);
+      return a;
+    };
+    const list = (sources) => {
+      const ul = doc.createElement("ul");
+      sources.forEach((source) => {
+        const li = doc.createElement("li");
+        li.append(link(source));
+        ul.append(li);
+      });
+      return ul;
+    };
+    const rows = [[parent ? link(parent) : ""], [list(links)]];
+    if (more.length) rows.push([list(more)]);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: border ? "Local Nav Corp (border)" : "Local Nav Corp",
+      cells: rows
     });
-    rows.push([ul]);
-    return WebImporter.Blocks.createBlock(doc, { name: "Local Nav", cells: rows });
   }
   function marketoBlock(container, doc) {
     const form = container.querySelector("form[data-marketo-form-id]");

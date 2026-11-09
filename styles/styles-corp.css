@@ -33,6 +33,13 @@
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
+  /* local-nav-corp: the local page navigation (measured: giving-back, TEACH talks) */
+  --corp-local-nav-height: 40px;
+  --corp-local-nav-menu-width: 300px;
+  --corp-color-local-nav-link: #9f9d9d; /* the section links in the bar */
+  --corp-color-local-nav-item: #404040; /* the links in the more menu and the phone list */
+  --corp-color-local-nav-menu: #d8d8d8; /* the more menu */
+
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
   --corp-color-linkedin: #0077b5;

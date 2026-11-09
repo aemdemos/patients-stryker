@@ -2271,26 +2271,31 @@ var CustomImportScript = (() => {
     if (!nav) return null;
     const parent = nav.querySelector("a.parent-node");
     const links = [...nav.querySelectorAll("ul.links > li > a[href]")];
+    const more = [...nav.querySelectorAll("ul.hidden-links > li > a[href]")];
+    const border = nav.classList.contains("nav-border-bottom");
     nav.closest(".localpagenavigation").remove();
-    if (!parent && !links.length) return null;
-    const rows = [];
-    if (parent) {
-      const a = doc.createElement("a");
-      a.href = parent.getAttribute("href");
-      a.textContent = text4(parent);
-      rows.push([a]);
-    }
-    const ul = doc.createElement("ul");
-    links.forEach((source) => {
-      const li = doc.createElement("li");
+    if (!parent && !links.length && !more.length) return null;
+    const link2 = (source) => {
       const a = doc.createElement("a");
       a.href = source.getAttribute("href");
       a.textContent = text4(source);
-      li.append(a);
-      ul.append(li);
+      return a;
+    };
+    const list = (sources) => {
+      const ul = doc.createElement("ul");
+      sources.forEach((source) => {
+        const li = doc.createElement("li");
+        li.append(link2(source));
+        ul.append(li);
+      });
+      return ul;
+    };
+    const rows = [[parent ? link2(parent) : ""], [list(links)]];
+    if (more.length) rows.push([list(more)]);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: border ? "Local Nav Corp (border)" : "Local Nav Corp",
+      cells: rows
     });
-    rows.push([ul]);
-    return WebImporter.Blocks.createBlock(doc, { name: "Local Nav", cells: rows });
   }
   function marketoBlock(container, doc) {
     const form = container.querySelector("form[data-marketo-form-id]");
@@ -3008,7 +3013,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-long-page-detail-corp.js
   var PAGE_TEMPLATE = {
     name: "long-page-detail-corp",
-    description: "www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).",
+    description: "www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav Corp, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).",
     urls: [
       "https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html",
       "https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html",
