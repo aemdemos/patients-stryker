@@ -901,6 +901,12 @@ body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(even)
   --columns-card-color: var(--color-navy-bright);
 }
 
+/* …and a third card in a row is blue: teal, dark gold, blue (stryker.com bg-teal, bg-gold-dark
+   and bg-blue boxes of "A building WELL done") */
+body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(3) {
+  --columns-card-color: var(--color-navy-bright);
+}
+
 body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n) {
   margin-bottom: 0;
 }
