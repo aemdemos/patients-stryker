@@ -2364,6 +2364,10 @@ var CustomImportScript = (() => {
     const textCols = columns.filter((col) => text4(col));
     let name = "";
     if (kinds[0] === "lead" && used.length === textCols.length) name = `${colours[0]}-lead`;
+    const last = columns[columns.length - 1];
+    if (kinds[0] === "lead" && used.length === 1 && boxes[columns.length - 1] && last.querySelector(".c-standalone-video, .c-standalone-image, [data-asset-path]")) {
+      name = `${colours[0]}-last`;
+    }
     if (kinds[0] === "whole") {
       if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
       else if (used.length === 1) {
