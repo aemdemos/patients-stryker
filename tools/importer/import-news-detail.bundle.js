@@ -226,12 +226,17 @@ var CustomImportScript = (() => {
       const title = item.querySelector(".title, h5, h4");
       const link2 = title && title.closest("a[href]") || item.querySelector("a[href]");
       const img = item.querySelector("img");
-      if (!link2 || !img) return null;
+      if (!img || !link2 && !text(title)) return null;
       const src = absolute(img.getAttribute("src"));
       const cover = document.createElement("a");
       cover.href = src;
-      cover.textContent = src;
+      const alt = img.getAttribute("alt") || "";
+      cover.textContent = alt.trim() ? alt : src;
       const h5 = document.createElement("h5");
+      if (!link2) {
+        h5.textContent = text(title);
+        return [cover, h5];
+      }
       const a = document.createElement("a");
       a.href = newTab(link2, absolute(link2.getAttribute("href")));
       a.textContent = text(title) || text(link2);
@@ -425,8 +430,11 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1": {
       name: 'Article body of "Nurses working at Stryker share how their experience becomes innovation in nursing"'
     },
-    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master": {
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/transforming_confide/body-copy/master": {
       name: 'Article body of "Stryker and Operation Smile transform confidence and care"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master": {
+      name: 'Article body of "Celebrating Hispanic Heritage: driving our mission forward"'
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master": {
       name: 'Article body of "Mako: Robotics driving innovation across specialties"'
@@ -484,6 +492,76 @@ var CustomImportScript = (() => {
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master": {
       name: 'Article body of "Women leading the charge for change"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/body/master": {
+      name: 'Article body of "A building WELL done | Earning Platinum for putting people first"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/nurses_a_key_driver_/body-content/master": {
+      name: 'Article body of "Nurses: A key driver in advancing global health"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/this_surgical_icu_te/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu/master": {
+      name: 'Article body of "This Surgical ICU team is bound by unspeakable trauma and miraculous healings"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/caregiver_klisa/body-copy/master": {
+      name: 'Article body of "This nurse turned tragic loss into inspiring hope"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master": {
+      name: 'Article body of "Stryker\u2019s Journey to Zero* harm continues with Neptune S"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master": {
+      name: 'Article body of "Three ways Stryker supports physicians in their pursuit of better patient outcomes"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/master": {
+      name: 'Article body of "Why every college campus needs accessible AEDs"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/the-role-of-defibrillation-during-sudden-cardiac-arrest/body": {
+      name: 'Article body of "The role of defibrillation during sudden cardiac arrest"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency/master": {
+      name: 'Article body of "How to prepare your workplace for a sudden cardiac emergency"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/a_winning_spirit/a-winning-spirit/master": {
+      name: 'Article body of "A winning spirit"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/five_things_to_know_/body-copy/master": {
+      name: 'Article body of "Five things to know about heart attacks and sudden cardiac arrests"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/body-copy/master": {
+      name: 'Article body of "What it\u2019s like being a caregiver to a loved one with Alzheimer\u2019s"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-1/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/mentors/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-2/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/body": {
+      name: 'Article body of "12-year-old girl experiences cardiac arrest, Stryker employee responds"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/master": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/body-copy-2": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-1/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master": {
+      name: 'Article body of "Stryker holds diversity, equity and inclusion summit"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body": {
+      name: 'Article body of "How the right equipment can help recruit and retain EMTs and paramedics"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master": {
+      fragment: "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body",
+      name: 'Article body of "Four reasons every school needs AEDs"'
     }
   };
 
@@ -564,7 +642,7 @@ var CustomImportScript = (() => {
     ["Last year, we shared an ambitious carbon reduction goal that", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/woman_holding_recycl/body-copy/master"],
     ["Out-of-hospital sudden cardiac arrest can happen anywhere, w", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/why_aeds_belong_on_b/body-copy/master"],
     ["In 2007, Emily began experiencing muscle spasms in her jaw.", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master"],
-    ["Heart attack and sudden cardiac arrest (SCA) are very differ", "/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master"],
+    ["Heart attack and sudden cardiac arrest (SCA) are very different events, requiring unique", "/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master"],
     ["Osteoarthritis is the most common form of arthritis, impacti", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/carolyn_s_mako_total/body-copy/master"],
     ["When Janet fell to the floor after tripping on the stairs in", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/focusing_on_her_mobi/body-copy/master"],
     ["Our passionate employees are behind everything we do, includ", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/three_things_to_know/body-copy/master"],
@@ -574,7 +652,8 @@ var CustomImportScript = (() => {
     ["Day in and day out, healthcare workers navigate the complexi", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master"],
     ["3-minute read Sudden cardiac arrest (SCA) affects more than 347,000", "/content/experience-fragments/stryker/emergency-care/en/news/help-increase-patient-outcomes-both-in-and-out-of-the-hospital/body"],
     ["Nurses are at the forefront of innovation within healthcare systems", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1"],
-    ["Together, Stryker and Operation Smile are changing lives and strengthe", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master"],
+    ["Together, Stryker and Operation Smile are changing lives and strengthe", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/transforming_confide/body-copy/master"],
+    ["Hispanic Heritage Month is celebrated between September 15 and October 15", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master"],
     ["More about Stryker\u2019s Mako SmartRobotics\u2122 Our robotic surgery expertise", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master"],
     ["Values align for military members and veterans at Stryker", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/military_members_on_/body-copy/master11"],
     ["Humans are fallible and errors are unavoidable, even in the best organ", "/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/body-copy/master"],
@@ -593,7 +672,30 @@ var CustomImportScript = (() => {
     ["The facts are staggering. An estimated 1.3 million Americans are livin", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master"],
     ["2-minute read If you\u2019re a business owner or responsible for monitoring", "/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/blog"],
     ["For under-resourced countries around the world, healthcare professionals", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/stryker_gets_medical/2-8-24-body-copy/master"],
-    ["When Amanda Baumann started at Mako Surgical Corp. in 2008, she was wor", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master"]
+    ["When Amanda Baumann started at Mako Surgical Corp. in 2008, she was wor", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master"],
+    ["Walk through the halls of 1941 Stryker Way in Portage, Michigan and", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/body/master"],
+    ["They are our advocates in times of need, and they account for 59% of", "/content/experience-fragments/stryker/corporate/en/about/news/features/nurses_a_key_driver_/body-content/master"],
+    ["The streets of north Philadelphia are no strangers to poverty and violence.", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/this_surgical_icu_te/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu/master"],
+    ["lost her mother to breast cancer in the middle of", "/content/experience-fragments/stryker/corporate/en/about/news/features/caregiver_klisa/body-copy/master"],
+    ["Alongside The Joint Commission, a nonprofit committed to quality imp", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master"],
+    ["To improve patient outcomes and make healthcare more accessible for everyone", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master"],
+    ["cardiac arrest is a life-threatening event when the heart", "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/master"],
+    ["on any T.V. medical drama and you're bound to hear the staff", "/content/experience-fragments/stryker/emergency-care/en/news/the-role-of-defibrillation-during-sudden-cardiac-arrest/body"],
+    ["workplace emergency is an unforeseen event that can endanger", "/content/experience-fragments/stryker/emergency-care/en/news/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency/master"],
+    ["a job, chasing around two goldendoodles at home and planning", "/content/experience-fragments/stryker/corporate/en/about/news/features/a_winning_spirit/a-winning-spirit/master"],
+    ["are very different events, each presenting specific signs and symptoms", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/five_things_to_know_/body-copy/master"],
+    ["Alzheimer\u2019s Association estimates that 6.5 million Americans", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/body-copy/master"],
+    ["Senior leaders from our South Pacific team are applying our people", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-1/master"],
+    ["Karen O\u2019Keeffe, Sean Maasburg, James Doyle, Jessica Mazzulo", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/mentors/master"],
+    ["The mentorship experience has proven invaluable to AIME's", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-2/master"],
+    ["Schanderl is head of a first responder unit in Munich, Germany", "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/body"],
+    ["and ambulatory surgery centers are facing a unique challenge", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/master"],
+    ["the OR of the Future Stryker\u2019s OR of the Future bridges", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/body-copy-2"],
+    ["up to one million patients experience a fall while being treated", "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-1/master"],
+    ["ProCuity by the numbers", "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master"],
+    ["recently held our first global diversity, equity and inclusion", "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master"],
+    ["an EMT is a demanding job, both physically and emotionally", "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body"],
+    ["sudden cardiac arrest is a leading cause of death in the", "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master"]
   ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
@@ -2332,7 +2434,8 @@ var CustomImportScript = (() => {
       "news-detail-xf",
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
-      "event-detail"
+      "event-detail",
+      "contact-division"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {

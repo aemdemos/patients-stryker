@@ -335,6 +335,13 @@ body:where(.corp):has(main .hero-carousel) header {
   background-color: var(--color-accent);
 }
 
+/* …with `gold-gradient` the strip runs from dark gold into gold over its first fifth
+   (stryker.com c-full-bleed-panel bg-golden-gradient under the slide of "Innovation
+   inspired by insights": linear-gradient(90deg, #af6d04, #ffb500 20%)) */
+:where(body.corp) main > .section.gold-band.gold-gradient {
+  background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
 :where(body.corp) main > .section.bg-dark-gray {
   background-color: var(--color-secondary);
   color: var(--color-white);
@@ -389,8 +396,9 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* a reference that quotes a long URL as plain text (no spaces to break at, e.g. a
-   "#:~:text=…" link) wraps anywhere instead of widening the page on phones */
-:where(body.corp) main > .section.disclaimer li {
+   "#:~:text=…" link, or the AHRQ toolkit URL of "Innovation inspired by insights") wraps
+   anywhere instead of widening the page on phones */
+:where(body.corp) main > .section.disclaimer :is(p, li) {
   overflow-wrap: anywhere;
 }
 
@@ -529,6 +537,30 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-2vw {
+    --corp-headline-vw: 1vw;
+  }
+}
+
+/* headline-3vw: a section headline the source sets as a Large Headline at 3vw (stryker.com
+   .c-largeheadline .fontsize-3vw .futura-bold, e.g. "ProCuity by the numbers" of "Innovation
+   inspired by insights": 42px at 1440px, 27px at 900px, 23.4px at 390px): a Bold Heading 2
+   or paragraph in Futura bold at 6vw, from 600px 3vw capped at 42px; lines 1.35. A Heading 2
+   keeps its rule below, the source's section-title rule 70px under the headline (35px on
+   phones; rules at the end of this file) */
+:where(body.corp) main > .section.headline-3vw {
+  --corp-headline-vw: 2vw;
+}
+
+:where(body.corp) main > .section.headline-3vw > .default-content-wrapper :is(h2, p) {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-3vw {
     --corp-headline-vw: 1vw;
   }
 }
@@ -1125,5 +1157,18 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
      column of the row (as in flex) */
   :where(body.corp) main > .section.video-text > div:empty {
     display: none;
+  }
+}
+
+/* headline-3vw (above): a Heading 2's rule below it, 30px under the headline (70px from
+   600px), as the source's section-title rule */
+:where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
+  padding-bottom: var(--space-inset-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
+    padding-bottom: calc(2 * var(--space-inset-l) + var(--space-block-s));
   }
 }

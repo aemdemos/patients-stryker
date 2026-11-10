@@ -10,6 +10,7 @@
  *   .item
  *     .img-cont a > img
  *     .desc-container h3 > a, p, a.action-link "Learn more"
+ * or a Latest News card (.c-latestnews): .item > img, h3, p.description, a.action-link
  *
  * Block table: 2 columns, one row per card —
  *   | <image> | <h3><a>title</a></h3> <p>description</p> <p><strong><a><u>Learn more</u></a></strong></p> |
@@ -31,6 +32,9 @@ function link(document, source, text) {
 
 function imageCell(item, document) {
   const source = item.querySelector('.img-cont img, img');
+  // a card without a picture (e.g. "Incontinence care" in the related products of the
+  // incontinence prevalence article) keeps an empty image cell
+  if (!source) return '';
   const img = document.createElement('img');
   img.setAttribute('src', source.getAttribute('src'));
   img.setAttribute('alt', source.getAttribute('alt') || '');
@@ -47,7 +51,9 @@ function textCell(item, document) {
     else h3.textContent = clean(title.textContent);
     body.push(h3);
   }
-  item.querySelectorAll('.desc-container > p').forEach((source) => {
+  // the description (a Latest News card's p.description, e.g. the DE&I Summit's "Related
+  // stories"; an empty one is skipped)
+  item.querySelectorAll('.desc-container > p, :scope > p.description').forEach((source) => {
     if (!clean(source.textContent)) return;
     const p = document.createElement('p');
     p.textContent = clean(source.textContent);
@@ -69,7 +75,7 @@ function textCell(item, document) {
 }
 
 export default function parse(element, { document }) {
-  const items = [...element.querySelectorAll('.item')].filter((item) => item.querySelector('img'));
+  const items = [...element.querySelectorAll('.item')].filter((item) => item.querySelector('img, h3'));
   if (!items.length) return;
   const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
   // the source grid's column width: 3 per row (col-sm-4, e.g. the pediatric virtual nursing

@@ -29,6 +29,23 @@ body.news-detail.full-width main > .section.col-8-centre > div {
   max-width: calc(var(--container-max) * 2 / 3);
 }
 
+/* section style `number-list` (news-detail.css) on full-width pages: the list in the source's
+   middle column (stryker.com cols3 col-xs-12 col-sm-6 col-md-4: full width on phones, the
+   right half from 600px, the centred third from 900px: 470px from x 485 at 1440px) */
+@media (width >= 600px) {
+  body.news-detail.full-width main > .section.number-list > div {
+    padding-inline-start: calc(50% + var(--container-gutter));
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.full-width main > .section.number-list > div {
+    width: calc(min(100%, var(--container-max)) / 3);
+    max-width: calc(var(--container-max) / 3);
+    padding-inline-start: var(--container-gutter);
+  }
+}
+
 /* …with `phone-full`, the section is full width on phones and in the 10/12 column from
    600px (stryker.com aem-GridColumn--phone--12, e.g. the article of "Protect your patients
    … and your OR staff": 344px at 375px, 553px at 700px, 1036px at 1280px) */

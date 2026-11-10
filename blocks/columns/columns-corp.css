@@ -1147,3 +1147,84 @@ body.corp main .columns.image-centre.block > div:nth-child(n) .columns-img-col:n
   width: auto;
   max-width: 100%;
 }
+
+/* dark-last / dark-all: the last cell / every cell is a dark grey Large Headline box
+   (stryker.com .c-largeheadline .has-background.bg-dark-gray beside the article text or two
+   side by side, e.g. the "79%", "97%" and "75%" figures of "Innovation inspired by
+   insights": 440px wide at 1440px, padded 20px): its text white light serif at the
+   headline's 1.5vw (21px at 1440px, 3vw on phones), lines 1.35, its Bold words (the figure)
+   gold Futura bold; the box hugs its text, level with the row top. Cells hold text only */
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  align-self: flex-start;
+  padding: var(--space-block-l);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n) :is(p, li):nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) :is(p, li):nth-child(n) {
+  margin-bottom: 0;
+  color: inherit;
+  font: inherit;
+}
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:nth-child(n) {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+/* number-quote: a numbered testimonial row (stryker.com 2/12 + 3/12 + 4/12 grid columns from
+   1/12 in, e.g. the four employees of "Stryker holds diversity, equity and inclusion
+   summit": 235 / 352 / 470px from x 133 at 1440px): cell 1 a big gold number (a fully Bold
+   paragraph, gold with [[color-gold]]) in Futura bold at 16vw, from 600px 8vw capped at
+   112px; cell 2 the photo with the name and role under it; cell 3 the quote, centred on the
+   row. Number and quote 20px in from their column (and from the edge on phones). With
+   `large-headline` for the 1.5vw type */
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:is(:first-child, :last-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-inline: var(--space-block-l);
+}
+
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:first-child:nth-child(n):nth-child(n):nth-child(n) p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(8 * var(--body-font-size-m)), calc(8 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:nth-child(2):nth-child(n):nth-child(n) .columns-img-col:nth-child(n) {
+  margin-bottom: var(--space-inset-m);
+}
+
+/* …the name under the photo is a fully Bold line in the 1.5vw type, not an image caption */
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:nth-child(2):nth-child(n):nth-child(n) .columns-img-col + p.columns-bold:nth-child(n):nth-child(n) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+  text-align: start;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.number-quote.block > div:nth-child(n) {
+    display: grid;
+    grid-template-columns: 2fr 3fr 4fr;
+    padding-inline: calc(100% / 12) calc(100% * 2 / 12);
+  }
+
+  body.corp main .columns.number-quote.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n) {
+    align-self: center;
+  }
+
+  /* dark boxes: inside their column's 15px gutters (440px boxes in 470px columns) */
+  body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n),
+  body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-inline: var(--space-block);
+  }
+}

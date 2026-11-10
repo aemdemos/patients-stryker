@@ -47,8 +47,11 @@ export function xfToFragmentPath(xf) {
 
 /**
  * @param {string} xf XF path or URL (with or without .html)
- * @returns {string|null} EDS fragment path, or null when the XF is not a shared fragment
+ * @returns {string|null} EDS fragment path (the map's `fragment` when set), or null when the
+ * XF is not a shared fragment
  */
 export default function xfFragmentPath(xf) {
-  return MAP[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+  const entry = MAP[xfKey(xf)];
+  if (!entry) return null;
+  return entry.fragment || xfToFragmentPath(xf);
 }
