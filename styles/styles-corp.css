@@ -18,6 +18,7 @@
   --map-embed-height: 300px;
   --map-embed-height-m: 400px;
   --corp-back-to-top-size: 40px;
+  --corp-figure-size-l: 35px; /* measured: stryker.com span.fontsize-2-5em Futura bold figure in a gold box */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */

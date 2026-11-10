@@ -1362,6 +1362,21 @@ body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block strong {
   font-size: var(--heading-font-size-xxl);
 }
 
+/* section style `gold-boxes-3` (with gold-boxes): the big-figure gold box, its Bold figure
+   35px (span.fontsize-2-5em .futura-bold) over 14px text, the box padded 22px above, 10px at
+   the sides and 25px below (stryker.com .has-background.bg-gold in a col-sm-4 row, e.g. "2.5
+   million" of "How one medical center reduced pressure ulcers and saved costs": 440 x 160px
+   at 1440px) */
+body.news-detail main > .section.gold-boxes.gold-boxes-3 .columns.block > div:nth-child(n) > div {
+  margin-bottom: 0;
+  padding: var(--space-block-l) var(--space-block-s) var(--space-inset-m);
+  font-size: var(--body-font-size-m);
+}
+
+body.news-detail main > .section.gold-boxes.gold-boxes-3 .columns.block strong {
+  font-size: var(--corp-figure-size-l);
+}
+
 /* section style `text-video`: a row of text and a video (stryker.com col-sm-6 text column
    beside a col-sm-6 video, e.g. the top of the DE&I Summit 2023 feature): the section's text
    and Panel in the left half, the video in the right half from 600px (source 840px), up to
@@ -1423,7 +1438,8 @@ body.news-detail main > .section.full-bleed.light-gray {
    (21px at 1440px, 3vw on phones), lines 1.35, its Bold words gold Futura bold; with `p-1`
    the plain text is the unsized headline (the HPRC quote of "Packaging for a better
    planet": 1vw from 600px, capped at 14px, and 21px on phones) and the Bold line keeps
-   1.5vw */
+   1.5vw; a colour tag keeps its colour on Bold words (white Futura bold in the Asian culture
+   feature's ACE quote: [[color-white]**…**]) */
 body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) {
   --corp-headline-vw: 2vw;
 }
@@ -1456,7 +1472,7 @@ body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n).p-1 > .
   font-size: var(--body-font-size-xl);
 }
 
-body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p strong {
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p strong:not(span[class*="color-"] *) {
   color: var(--color-accent);
   font-family: var(--display-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
@@ -1490,7 +1506,7 @@ body.news-detail main span.box-dark {
   line-height: var(--heading-line-height);
 }
 
-body.news-detail main span.box-dark:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong {
+body.news-detail main span.box-dark:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:not(span[class*="color-"] *) {
   color: var(--color-accent);
   font-family: var(--display-font-family);
   font-size: inherit;
