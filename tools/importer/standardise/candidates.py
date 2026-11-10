@@ -60,6 +60,10 @@ for i in instances:
         pages[to_std(page)]['instances'].append(entry)
         if c:
             used.setdefault(c['id'], set()).add(sid)
+# the two review halves (flow 1: page by page on A; flows 2 + 3: group boards then the pages on
+# B), alternating by number of blocks so both halves are alike
+for n, page in enumerate(sorted(pages, key=lambda p: (-len(pages[p]['instances']), p))):
+    pages[page]['half'] = 'AB'[n % 2]
 data = {
     'pages': pages,
     'clusters': {c['id']: {'label': label(c), 'size': len(c['members']), 'pilot': sorted(used.get(c['id'], []))}

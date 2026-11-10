@@ -100,6 +100,10 @@
   font-size: var(--body-font-size-xs);
 }
 
+.std-panel[hidden] {
+  display: none;
+}
+
 .std-panel-title {
   font-family: var(--ui-font-family);
   font-weight: var(--font-weight-bold);
@@ -118,11 +122,11 @@ main .std-compare-original {
   outline-offset: -2px;
 }
 
-/* the label floats over the block: it must not move the content being compared */
+/* the label sits just above the block: it must not move or cover the content being compared */
 main .std-candidate::before,
 main .std-compare-original::before {
   position: absolute;
-  inset: 0 auto auto 0;
+  inset: auto auto 100% 0;
   z-index: 2;
   padding: var(--space-block-xs) var(--space-block);
   background: var(--color-primary);

@@ -3,9 +3,12 @@
  * Tests of rules/columns.js on real instances: one example per cluster (clusters-columns.json),
  * transformed into every standard it is eligible for, against the invariants of a standard:
  * - the words and the media links of the block are kept (in order);
- * - no measured value is left: Text box / Grid / Column widths / Columns rows, size values
- *   ([[1.75×]], [[5vw]]), Box lines, blank lines inside the block;
- * - design names stay: Cell colours, Image borders, colour and named text tags;
+ * - no measured layout value is left: Text box / Grid / Column widths / Columns rows, Box lines,
+ *   blank lines inside the block;
+ * - design names stay: Cell colours, Image borders, colour and named text tags, coloured boxes
+ *   (by their colour only), boxed-last / gold-first;
+ * - the text sizes stay as authored (layout standards: [[1.75×]], [[5vw]], Copy / Heading / Label
+ *   size rows);
  * - the block carries the standard's class.
  * usage: node test/rules-columns.test.mjs --content <content dir> [--clusters <json>]
  */
@@ -56,12 +59,13 @@ const results = await page.evaluate(async ({ src, list }) => {
       if (!ok) fails.push('not ok');
       if (!after.classList.contains(std)) fails.push('no standard class');
       // (the words without the Box and blank lines, which a standard drops on purpose)
-      const keepWords = (el) => {
+      const kept = (el) => {
         const copy = el.cloneNode(true);
         [...copy.querySelectorAll('p')].filter((p) => /^box(:| end)/i.test(p.textContent.trim())
           || p.textContent.trim() === '[[Blank line]]').forEach((p) => p.remove());
-        return words(copy);
+        return copy;
       };
+      const keepWords = (el) => words(kept(el));
       const w1 = keepWords(block);
       const w2 = keepWords(after);
       if (w1.replace(/\s/g, '') !== w2.replace(/\s/g, '')) {
@@ -72,9 +76,23 @@ const results = await page.evaluate(async ({ src, list }) => {
         fails.push(`words changed at "${a.slice(Math.max(0, i - 20), i + 30)}" vs "${b.slice(Math.max(0, i - 20), i + 30)}"`);
       }
       if (media(block).join() !== media(after).join()) fails.push('media changed');
-      if (/\[\[[^\]]*\b[\d.]+(×|vw)\b/.test(after.textContent)) fails.push('size value left');
+      const sizeTags = (el) => (el.textContent.match(/\[\[[^\]]*\]/g) || []).join();
+      if (sizeTags(kept(block)) !== sizeTags(after)) fails.push('text tags changed');
+      // (a coloured box stays as its colour only, `Box: Gold` … `Box end`)
       const lines = [...after.querySelectorAll('p')].map((p) => p.textContent.trim());
-      if (lines.some((t) => /^box(:| end)/i.test(t) || t === '[[Blank line]]')) fails.push('box or blank line left');
+      const colourOnly = (t) => /^box: [a-z-]+$/i.test(t) && !/^box: white$/i.test(t);
+      if (lines.some((t) => (/^box:/i.test(t) && !colourOnly(t)) || t === '[[Blank line]]')) fails.push('measured box or blank line left');
+      const opens = lines.filter(colourOnly).length;
+      const colours = [...block.querySelectorAll('p')].map((p) => p.textContent.trim())
+        .filter((t) => /^box: ?(?!white)[a-z-]+(,|$)/i.test(t) && !/^box: ?(top|bottom|left|right|sides|all|margin)\b/i.test(t)).length;
+      // (+ the boxes of a coloured column, shown as boxes of its colour)
+      const split = changes.map((t) => t.match(/ shown as its (\d+) /)).filter(Boolean)
+        .reduce((sum, hit) => sum + Number(hit[1]), 0);
+      if (opens !== colours + split) fails.push(`coloured boxes ${colours + split} → ${opens}`);
+      // (gold-first goes when its column is shown as its gold boxes)
+      ['boxed-last', 'gold-first'].filter((name) => block.classList.contains(name) && !after.classList.contains(name)
+        && !(name === 'gold-first' && split))
+        .forEach((name) => fails.push(`${name} lost`));
       const rowKeys = (sec) => {
         const meta = sec.querySelector(':scope > .section-metadata');
         return meta ? [...meta.children].map((r) => r.firstElementChild.textContent.trim()) : [];
@@ -87,7 +105,11 @@ const results = await page.evaluate(async ({ src, list }) => {
       });
       const keysBefore = rowKeys(section);
       ['Cell colours', 'Image borders'].forEach((key) => {
-        if (keysBefore.includes(own(key)) && !keys.includes(own(key))) fails.push(`${key} lost`);
+        if (keysBefore.includes(own(key)) && !keys.includes(own(key))
+          && !(key === 'Cell colours' && split)) fails.push(`${key} lost`);
+      });
+      ['Copy size', 'Heading size', 'Label size'].forEach((key) => {
+        if (keysBefore.includes(key) && !keys.includes(key)) fails.push(`${key} lost`);
       });
       return {
         cluster: c.cluster, id: c.id, std, changes, fails,

@@ -67,30 +67,39 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 
 | Standard | Class | Fits | Options |
 |---|---|---|---|
-| Media + text | `std-media-text` | 2 cells: image/video and text, either order | `narrow-image` (1/3), `wide-image` (2/3) |
+| Media + text | `std-media-text` | 2 cells: image/video and text, either order | `narrow-image` (1/3), `wide-image` (2/3), `text-middle` (the text centred beside the image) |
 | Cards | `std-cards` | 2–4 cells, each image + text | — |
 | Text columns | `std-text` | 2–4 text cells | — |
+
+These are layout standards: the text sizes stay as authored. Typography is its own later step
+(a named type scale; `dropSizeTags` in `rules/columns.js` is ready for it).
 
 - **Kept (design names):**
   - section styles (serif, background colours);
   - `Cell colours` and `Image borders` by palette name;
-  - named text styles (Gold, Large …);
-  - the `large-headline` and `center` options.
+  - named text styles (Gold, Large …) and the text sizes (`[[1.75×]`, `[[5vw]`, Copy /
+    Heading / Label size);
+  - the `large-headline` and `center` options, and the design boxes `boxed-last` (a white
+    shadow card) and `gold-first` (a gold card);
+  - coloured Box lines, by their colour only (`Box: Gold, top 5%, left 5%` → `Box: Gold`), with
+    the standard's padding and gap. A coloured column holding several boxes (`Cell colours
+    1: Gold` + Box lines) becomes that many coloured boxes.
 - **Dropped (measured values):**
   - `Text box`, `Grid`, `Column widths` (except the media + text options) and `Columns`;
-  - size values (`[[1.75×]`, `[[5vw]`);
-  - Box lines and blank lines in cells;
-  - numeric Copy / Heading / Label sizes;
+  - measured and white Box lines, and blank lines in cells;
   - section padding / margin when the section holds only that block.
+- **Text in the middle:** a Media + text column set well down (top padding + margin from
+  `Text box` or an opening Box line, counted as a share of the block: 5% or more) is the AEM
+  way of centring the text beside a tall image; it takes `text-middle`.
 - **Already standard:** `page-intro` (the product intro) is never offered a standard.
 - CSS: `blocks/columns/columns-corp.css` (top of the file). The block's own layout carries the
-  standards; they only fix alignment and the media + text widths.
+  standards; they only fix alignment, the media + text widths and the box padding.
 
 ## Notes as "design" and "EDS team" (pilot roles)
 
-- Media + text loses the per-page text offsets (`Text box` 3–20% insets). That is the visible
-  change reviewers will notice most. The standard text column starts at the top, beside the
-  image.
+- Media + text loses the per-page text offsets (`Text box` 3–20% insets). The text starts at
+  the top beside the image, or in the middle when the source set it well down (flow 1 found
+  top-aligned text beside a tall image looks unfinished).
 - Cards and Text columns are what the block already does without settings. The EDS team would
   likely accept them as they are.
 - Large Headline and the colour palette are kept as names. The EDS team may still want fewer

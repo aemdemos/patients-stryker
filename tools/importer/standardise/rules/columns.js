@@ -5,18 +5,24 @@
  * the candidates in the browser (scripts/standardise-preview.js) and rewrites the documents in
  * Node (apply.mjs, on a Playwright page as the DOM).
  *
- * What a standard keeps: the cells and their content, design names (section styles such as
- * serif or a background, Cell colours and Image borders by their palette names, named text
- * styles such as [[Gold]] or [[Large]]). What it drops: the measured values (Text box
- * paddings, Grid, Column widths other than its own options, size values such as [[1.75×]] or
- * [[5vw]], Box lines, blank lines inside the cells). Every change is reported in plain words.
+ * The standards are layout standards. What a standard keeps: the cells and their content, design
+ * names (section styles such as serif or a background, Cell colours and Image borders by their
+ * palette names, text styles such as [[Gold]] or [[Large]]) and the authored text sizes
+ * ([[1.75×]], [[5vw]], Copy size): typography is its own standardisation step, a named type
+ * scale. Design boxes stay too: coloured Box lines (by their colour, with the standard's padding)
+ * and the boxed-last / gold-first cards. What it drops: the measured layout values (Text box
+ * paddings, Grid, Column widths other than its own options, the measured and white Box lines,
+ * blank lines inside the cells, the section's padding and margin when it holds only the block);
+ * a Media + text column set well down (centred beside the image) becomes Text in the middle.
+ * Every change is reported in plain words.
  */
 
 export const STANDARDS = {
   'std-media-text': {
     label: 'Media + text',
     description: 'An image or video beside its text, side by side from 600px, stacked on phones (image first). '
-      + 'Options: Narrow image (one third) or Wide image (two thirds).',
+      + 'Options: Narrow image (one third) or Wide image (two thirds); Text in the middle (the text '
+      + 'centred beside the image).',
   },
   'std-cards': {
     label: 'Cards',
@@ -29,8 +35,18 @@ export const STANDARDS = {
 };
 
 const MEDIA = /\/is\/image\/|\/is\/content\/|media-assets|\.m3u8|youtube\.com|youtu\.be|vimeo\.com|\.(png|jpe?g|gif|webp|svg)(\?|$)/i;
-// the named block options a standard keeps (type scale, alignment)
-const KEEP_OPTIONS = ['large-headline', 'center'];
+// the named block options a standard keeps (type scale, alignment, the design boxes: a white
+// shadow card last, a gold box first)
+const KEEP_OPTIONS = ['large-headline', 'center', 'boxed-last', 'gold-first'];
+// the box colours of Box lines (scripts/corp-settings.js BOX_COLOURS): a coloured box stays,
+// with the standard's padding; white (no colour on the page) goes with the measured boxes
+const BOX_COLOURS = ['white', 'gold', 'light-gray', 'gray', 'blue', 'purple', 'teal', 'silver',
+  'dark-gold', 'golden-gradient', 'dark-gray', 'dark-purple-gradient', 'dark-blue-gradient',
+  'dark-orange-gradient', 'dark'];
+// Media + text: a text column set this far down (top padding + margin; AEM gives them in % of
+// the column, so they count here as % of the block: 15% of a two-thirds column = 10%), the AEM
+// way of centring the text beside a tall image, takes the Text in the middle option
+const MIDDLE = 5;
 // settings rows that are design names (kept) and measured values (dropped)
 const KEEP_ROWS = ['Cell colours', 'Image borders'];
 const DROP_ROWS = ['Text box', 'Grid', 'Column widths', 'Columns'];
@@ -42,23 +58,32 @@ const SHARED_ROWS = ['style', 'id', 'Padding', 'Margin', 'Column widths', 'Colum
 
 const text = (el) => (el ? el.textContent.replace(/\s+/g, ' ').trim() : '');
 
+const isMediaLink = (a) => MEDIA.test(`${a.getAttribute('href') || ''} ${a.getAttribute('title') || ''}`);
+
+/** A cell's own words: its text without media links, Box lines, blank lines, column breaks. */
+function cellWords(cell) {
+  const copy = cell.cloneNode(true);
+  [...copy.querySelectorAll('a[href]')].filter(isMediaLink).forEach((a) => a.remove());
+  [...copy.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li')].filter((el) => {
+    const t = text(el);
+    return t === '[[Blank line]]' || /^box(:| end)/i.test(t) || t === 'Column break';
+  }).forEach((el) => el.remove());
+  // (text may sit right in the cell, without a paragraph)
+  return text(copy).replace(/\[\[[^\]]*\]|\]/g, '').trim();
+}
+
 /** The kind of a cell's content: media, text, media+text or empty. */
 export function cellKind(cell) {
-  const links = [...cell.querySelectorAll('a[href]')];
-  const media = cell.querySelector('img, picture')
-    || links.some((a) => MEDIA.test(a.getAttribute('href')) || MEDIA.test(a.getAttribute('title') || ''));
-  const words = [...cell.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li')]
-    .filter((el) => !el.querySelector('h1, h2, h3, h4, h5, h6, p, li'))
-    .some((el) => {
-      const t = text(el);
-      if (!t || t === '[[Blank line]]' || /^box(:| end)/i.test(t) || t === 'Column break') return false;
-      const a = el.querySelector('a[href]');
-      return !(a && text(a) === t && MEDIA.test(`${a.getAttribute('href')} ${a.getAttribute('title') || ''}`));
-    });
+  const media = cell.querySelector('img, picture') || [...cell.querySelectorAll('a[href]')].some(isMediaLink);
+  const words = cellWords(cell).length > 0;
   if (media && words) return 'media+text';
   if (media) return 'media';
   return words ? 'text' : 'empty';
 }
+
+/** A media cell with a short caption (a title or a line under the image or video). */
+const CAPTION = 120;
+const captioned = (cell) => cellKind(cell) === 'media+text' && cellWords(cell).length <= CAPTION;
 
 // named variants that are a standard already (the product intro under the hero: every
 // product page has it, the product-detail template owns it)
@@ -74,10 +99,13 @@ export function alreadyStandard(block) {
 export function eligible(block) {
   if (alreadyStandard(block)) return [];
   const row = block.firstElementChild;
-  const kinds = row ? [...row.children].map(cellKind) : [];
+  const cells = row ? [...row.children] : [];
+  const kinds = cells.map(cellKind);
   const filled = kinds.filter((k) => k !== 'empty');
   const out = [];
-  if (kinds.length === 2 && [...filled].sort().join() === 'media,text') out.push('std-media-text');
+  // media + text: one media cell (a short caption allowed) and one text cell
+  const mediaSide = cells.filter((c, i) => kinds[i] === 'media' || captioned(c));
+  if (kinds.length === 2 && mediaSide.length === 1 && kinds.includes('text')) out.push('std-media-text');
   if (filled.length >= 2 && filled.length <= 4 && filled.every((k) => k === 'media+text')) out.push('std-cards');
   if (filled.length >= 2 && filled.length <= 4 && filled.every((k) => k === 'text')) out.push('std-text');
   return out;
@@ -93,12 +121,13 @@ function settingsRows(section) {
 }
 
 /**
+ * (Not used by the layout standards: for the typography step, a named type scale.)
  * Drops the size values from the readable [[…]] tags inside an element: `[[Gold,1.75×]x]` →
  * `[[Gold]x]`, `[[1.75×]x]` → `x` (the opener and its closing bracket). Tags span elements
  * (`[[Gold]<em>…</em>]`), so the text nodes are read in order as one stream.
  * @returns {number} how many size values were dropped
  */
-function dropSizeTags(root) {
+export function dropSizeTags(root) {
   const walker = root.ownerDocument.createTreeWalker(root, 4);
   const nodes = [];
   for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
@@ -131,6 +160,61 @@ function dropSizeTags(root) {
     }
   });
   return dropped;
+}
+
+/**
+ * How far down a box setting starts its text: top padding + top margin, in % (`top 15%`,
+ * `all 5%, margin top 3%` → 8). Entries in other units or for other sides count 0.
+ */
+function topInset(spec) {
+  return spec.split(',').map((e) => e.trim().toLowerCase().match(/^(?:margin )?(?:top|all) (-?[\d.]+)%$/))
+    .filter(Boolean).reduce((sum, m) => sum + parseFloat(m[1]), 0);
+}
+
+/**
+ * The text column's top inset in a Media + text block: its `Text box` part (`column 2: top 15%`)
+ * plus a Box line that opens the cell (`Box: top 10%, bottom 10%`).
+ */
+function textInset(block, textBox, column) {
+  let inset = 0;
+  (textBox || '').split(';').forEach((part) => {
+    const m = part.trim().match(/^column (\d+):\s*(.+)$/i);
+    if (m && Number(m[1]) === column) inset += topInset(m[2]);
+  });
+  const cell = block.firstElementChild.children[column - 1];
+  const first = cell && [...cell.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li')]
+    .find((el) => text(el) && text(el) !== '[[Blank line]]');
+  const box = first && text(first).match(/^box:\s*(.+)$/i);
+  if (box) inset += topInset(box[1]);
+  return inset;
+}
+
+/**
+ * The Box lines of a block, standardised: a coloured box (`Box: Gold, top 5%, left 5%`) keeps
+ * its colour only (`Box: Gold`, the standard's padding); the other boxes go, and the line that
+ * closed a kept box becomes its `Box end`.
+ * @returns {{ removed: number, kept: string[] }}
+ */
+function standardBoxes(block) {
+  const open = new Set();
+  const kept = [];
+  let removed = 0;
+  [...block.querySelectorAll('p')].filter((p) => /^box(:| end)/i.test(text(p))).forEach((p) => {
+    const m = text(p).match(/^box:\s*([^,]+)/i);
+    const colour = m && BOX_COLOURS.includes(m[1].trim().toLowerCase()) ? m[1].trim() : '';
+    if (colour && colour.toLowerCase() !== 'white') {
+      p.textContent = `Box: ${colour}`;
+      open.add(p.parentElement);
+      kept.push(colour);
+    } else if (open.has(p.parentElement)) {
+      p.textContent = 'Box end';
+      open.delete(p.parentElement);
+    } else {
+      p.remove();
+      removed += 1;
+    }
+  });
+  return { removed, kept };
 }
 
 /** Removes the paragraphs of the given kinds (Box lines, blank lines) inside an element. */
@@ -203,13 +287,45 @@ export function transform(sectionEl, blockIndex, standard) {
 
   // settings rows: the block's measured ones go; Column widths becomes the media + text option
   const rows = settingsRows(section);
+  // Media + text: a text column set well down (centred beside a tall image) → Text in the middle
+  if (standard === 'std-media-text') {
+    const column = [...block.firstElementChild.children].findIndex((c) => cellKind(c) === 'text') + 1;
+    const textBox = rows.find(([key]) => mine(key) === 'Text box');
+    const widths = rows.find(([key]) => mine(key) === 'Column widths');
+    const share = (widths && parseFloat(widths[1].split('/')[column - 1]))
+      || 100 / block.firstElementChild.children.length;
+    const inset = textInset(block, textBox && textBox[1], column);
+    if ((inset * share) / 100 >= MIDDLE) {
+      block.classList.add('text-middle');
+      changes.push(`text set ${inset}% down → Text in the middle`);
+    }
+  }
+  // a coloured column holding several boxes (Cell colours 1: Gold + Box lines: the source's
+  // separate gold tiles) → that many coloured boxes, the column itself without colour
+  rows.filter(([key]) => mine(key) === 'Cell colours').forEach(([, value, row]) => {
+    const parts = value.split(',').map((p) => p.trim()).filter(Boolean);
+    const left = parts.filter((part) => {
+      const [n, colour] = part.split(':').map((x) => x.trim());
+      const cells = [...block.children].map((r) => r.children[Number(n) - 1]).filter(Boolean);
+      const lines = cells.flatMap((c) => [...c.querySelectorAll('p')]).filter((p) => /^box:/i.test(text(p)));
+      if (lines.length < 2 || !BOX_COLOURS.includes((colour || '').toLowerCase())) return true;
+      lines.forEach((p) => { p.textContent = `Box: ${colour}`; });
+      // (gold-first would colour the whole column again, behind the boxes)
+      if (n === '1') block.classList.remove('gold-first');
+      changes.push(`column ${n} (${colour}) shown as its ${lines.length} ${colour} boxes`);
+      return false;
+    });
+    if (left.length === parts.length) return;
+    if (left.length) row.lastElementChild.textContent = left.join(', ');
+    else row.remove();
+  });
   rows.forEach(([key, value, row]) => {
     const name = mine(key);
-    if (!name) return;
+    if (!name || !row.parentElement) return;
     if (name === 'Column widths' && standard === 'std-media-text') {
       const parts = value.split('/').map((p) => parseFloat(p));
       const cells = [...block.firstElementChild.children];
-      const image = cells.findIndex((c) => cellKind(c) === 'media');
+      const image = cells.findIndex((c) => cellKind(c) === 'media' || captioned(c));
       const share = parts[image];
       if (share && share < 45) block.classList.add('narrow-image');
       else if (share && share > 55) block.classList.add('wide-image');
@@ -222,24 +338,20 @@ export function transform(sectionEl, blockIndex, standard) {
     }
   });
 
-  // the cells' own measured formatting
-  const sizes = dropSizeTags(block);
-  if (sizes) changes.push(`${sizes} text size${sizes > 1 ? 's' : ''} set to the standard`);
-  const boxes = dropLines(block, (t) => /^box(:| end)/i.test(t));
-  if (boxes) changes.push('boxes inside the columns removed');
+  // the cells' own spacing (text sizes stay: typography is its own step, see the README)
+  const boxes = standardBoxes(block);
+  if (boxes.removed) changes.push('boxes inside the columns removed');
+  if (boxes.kept.length) changes.push(`${[...new Set(boxes.kept)].join(', ')} box${boxes.kept.length > 1 ? 'es' : ''} kept, standard padding`);
   const blanks = dropLines(block, (t) => t === '[[Blank line]]');
   if (blanks) changes.push(`${blanks} blank line${blanks > 1 ? 's' : ''} removed`);
 
-  // a section holding only this block: its own box numbers go too (padding, margin, number sizes)
+  // a section holding only this block: its own box numbers go too (padding, margin)
   const others = [...section.children].filter((el) => el !== block && !el.classList.contains('section-metadata'));
   // (with other content beside it, the section's rows stay: they are the neighbours' too)
   settingsRows(section).forEach(([key, value, row]) => {
     if (others.length) return;
     if (key === 'Padding' || key === 'Margin') {
       changes.push(`section ${key.toLowerCase()} (${value}) removed`);
-      row.remove();
-    } else if (/^(Copy size|Heading size|Label size)$/.test(key) && NUMBER.test(value)) {
-      changes.push(`${key.toLowerCase()} ${value} set to the standard`);
       row.remove();
     }
   });

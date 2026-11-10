@@ -198,7 +198,8 @@ async function pageMode(data, rules) {
     const candidates = {};
     const changes = el('ul', { class: 'std-changes' });
     const buttons = el('div', { class: 'std-buttons' });
-    const bar = el('div', { class: 'std-bar' });
+    const bar = el('div', { class: 'std-bar', 'data-std-id': instance.id });
+    row.original.dataset.stdId = instance.id;
 
     const show = async (choice, compare = false) => {
       Object.values(candidates).forEach((c) => { c.hidden = true; });
@@ -213,6 +214,8 @@ async function pageMode(data, rules) {
           : await render(rules.isolate(result, instance.block))
             .then((s) => s.querySelector('.columns-wrapper') || s.querySelector('.columns'));
         out.classList.add('std-candidate');
+        out.dataset.stdFor = instance.id;
+        out.dataset.stdChoice = choice;
         out.dataset.stdLabel = `${rules.STANDARDS[choice].label} (candidate)`;
         out.dataset.stdChanges = JSON.stringify(list);
         row.original.after(out);
@@ -353,6 +356,15 @@ async function boardMode(data, rules, clusterId) {
   const main = document.querySelector('main');
   const board = el('div', { class: 'section std-board' });
   main.prepend(board);
+  // (&half=B: only the blocks of that review half's pages; a block shared by both halves once)
+  const half = new URLSearchParams(window.location.search).get('half');
+  const keep = half ? `&half=${half}` : '';
+  const seen = new Set();
+  const scope = Object.values(data.pages)
+    .filter((p) => !half || p.half === half)
+    .flatMap((p) => p.instances.map((i) => ({ ...i, live: p.live })))
+    .filter((i) => !seen.has(i.id) && seen.add(i.id));
+  const count = (id) => scope.filter((i) => i.cluster === id).length;
   if (!clusterId) {
     board.append(el('h1', {}, 'Standardise: group boards'));
     board.append(el('p', {}, 'One board per group of Columns blocks that look alike, largest first. '
@@ -360,10 +372,10 @@ async function boardMode(data, rules, clusterId) {
     const state = store();
     const list = el('ol', {});
     // only the groups whose blocks fit a standard (pre-selection records what each block fits)
-    const fits = new Set(Object.values(data.pages).flatMap((p) => p.instances)
-      .filter((i) => !i.eligible || i.eligible.length).map((i) => i.cluster));
+    const fits = new Set(scope.filter((i) => !i.eligible || i.eligible.length)
+      .map((i) => i.cluster));
     const groups = Object.entries(data.clusters).filter(([id]) => fits.has(id));
-    const others = Object.keys(data.clusters).length - groups.length;
+    const others = new Set(scope.map((i) => i.cluster).filter(Boolean)).size - groups.length;
     if (others) {
       board.append(el('p', {}, `${others} other groups fit no standard: they stay as they are (decide on the pages if needed).`));
     }
@@ -372,8 +384,8 @@ async function boardMode(data, rules, clusterId) {
       list.append(el(
         'li',
         {},
-        el('a', { href: `?standardise=board&cluster=${id}` }, c.label),
-        ` · ${c.pilot.length} on the pilot pages, ${c.size} on the site${decided ? ` · decided: ${decided.choice}` : ''}`,
+        el('a', { href: `?standardise=board&cluster=${id}${keep}` }, c.label),
+        ` · ${count(id)} on the pilot pages, ${c.size} on the site${decided ? ` · decided: ${decided.choice}` : ''}`,
       ));
     });
     board.append(list);
@@ -381,10 +393,11 @@ async function boardMode(data, rules, clusterId) {
   }
   const cluster = data.clusters[clusterId];
   const started = Date.now();
-  board.append(el('h1', {}, `Group ${clusterId}`), el('p', {}, `${cluster.label} · ${cluster.size} blocks on the site, ${cluster.pilot.length} on the pilot pages`));
-  const instances = Object.values(data.pages)
-    .flatMap((p) => p.instances.map((i) => ({ ...i, live: p.live })))
-    .filter((i) => i.cluster === clusterId);
+  const instances = scope.filter((i) => i.cluster === clusterId);
+  board.append(
+    el('h1', {}, `Group ${clusterId}`),
+    el('p', {}, `${cluster.label} · ${cluster.size} blocks on the site, ${instances.length} on the pilot pages`),
+  );
   const state = store();
   const exceptions = new Set((state.clusters[clusterId] || {}).exceptions || []);
   let options = [];
@@ -393,7 +406,7 @@ async function boardMode(data, rules, clusterId) {
     if (!block) return;
     const eligible = rules.eligible(block);
     if (!options.length) options = eligible;
-    const row = el('div', { class: 'std-row' });
+    const row = el('div', { class: 'std-row', 'data-std-id': instance.id });
     const pageName = instance.id.split('#')[0].split('/').pop();
     row.append(el(
       'p',
@@ -439,6 +452,7 @@ async function boardMode(data, rules, clusterId) {
     { class: 'std-buttons' },
     [['legacy', 'Keep as is'], ...options.map((k) => [k, rules.STANDARDS[k].label])].map(([key, label]) => el('button', {
       type: 'button',
+      'data-choice': key,
       class: decided === key ? 'std-current' : '',
       onclick: (e) => {
         const s = store();
@@ -458,7 +472,7 @@ async function boardMode(data, rules, clusterId) {
     el('p', {}, 'Choice for the whole group:'),
     buttons,
     el('button', { type: 'button', onclick: exportDecisions }, 'Export decisions'),
-    el('a', { href: '?standardise=board' }, 'All groups'),
+    el('a', { href: `?standardise=board${keep}` }, 'All groups'),
   );
 }
 
