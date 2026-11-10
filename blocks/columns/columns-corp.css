@@ -1102,3 +1102,11 @@ body.corp main .columns.phone-image-2-3.image-left.block > div:nth-child(n) > di
     margin-inline: 0;
   }
 }
+
+/* cta-tiles: a row of Curated CTA tiles (stryker.com .c-curatedcta in a 4-column row, e.g.
+   "The right tools, for any kind of procedure" of the cutting blades patents article): the
+   tile name (a Bold Heading 3) 20px under its image at every width, as the source's
+   cta-img margin; with `stack` for the 1 / 2 / 4 per row layout */
+body.corp main .columns.cta-tiles.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+}
