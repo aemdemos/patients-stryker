@@ -30,6 +30,7 @@
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
   --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-heading-font-size-h1-1-5: 42px; /* measured: a 1.5em span in a 28px source h1 (AED buying guide) */
   --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
@@ -372,8 +373,9 @@ body:where(.corp):has(main .hero-carousel) header {
   text-align: center;
 }
 
-/* section style `disclaimer`: small print */
-:where(body.corp) main > .section.disclaimer > div {
+/* section style `disclaimer`: small print (also an accordion panel's references) */
+:where(body.corp) main > .section.disclaimer > div,
+:where(body.corp) .accordion-item-body > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
 }
@@ -386,6 +388,10 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.disclaimer p:has(code) {
   background-color: transparent;
   color: inherit;
+}
+
+:where(body.corp) .accordion-item-body > .section.disclaimer p {
+  line-height: var(--paragraph-line-height);
 }
 
 /* references: an ordered list (scripts.js decorateFootnotes links the citation
@@ -500,17 +506,20 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 /* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
    e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
    token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
-   (the h2's 15px), not a section gap */
+   (the h2's 15px), not a section gap; also a heading section of an accordion panel
+   (accordion-continue) */
 :where(body.corp) main > .section.h2-0-8 {
   margin-bottom: 0;
 }
 
+:where(body.corp) .accordion-item-body > .section.h2-0-8 > h2,
 :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
   font-size: var(--heading-font-size-compact);
   line-height: var(--corp-heading-line-height-s);
 }
 
 @media (width >= 600px) {
+  :where(body.corp) .accordion-item-body > .section.h2-0-8 > h2,
   :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-compact-m);
   }
@@ -666,9 +675,11 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
    span.fontsize-1-25em: 35px, lines 1.15, e.g. the "When Stryker employees…" feature;
    a title paragraph with span.fontsize-2-5em: 35px, lines 1.06 (37.1px), e.g. the
    BattleBots and "Restoring spines and hope" features; h2 > span.fontsize-1-5em: 1.5x the
-   h2, 31.5px and 36.75px from 600px with the h2 step, lines 1.06). Like h2-0-8, the
-   heading flows into the text below it: one heading gap, not a section gap */
+   h2, 31.5px and 36.75px from 600px with the h2 step, lines 1.06; h1-1-5: h1 >
+   span.fontsize-1-5em, 42px at every width, lines 1.06, e.g. "AED buying guide"). Like
+   h2-0-8, the heading flows into the text below it: one heading gap, not a section gap */
 :where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h1-1-5,
 :where(body.corp) main > .section.h1-2-5,
 :where(body.corp) main > .section.h2-1-5 {
   margin-bottom: 0;
@@ -681,6 +692,11 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
 :where(body.corp) main > .section.h1-2-5 > .default-content-wrapper h1 {
   font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h1-1-5 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-5);
   line-height: var(--heading-line-height);
 }
 

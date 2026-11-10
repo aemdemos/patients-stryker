@@ -279,6 +279,14 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
   font-style: italic;
 }
 
+/* …and in a `bold-italic` section the Bold + Italic Futura stays italic (stryker.com
+   <i><span class="futura-bold">, e.g. the blue "CPR is the single most important
+   intervention…" quote of "Help increase patient outcomes both in and out of the hospital") */
+body.news-detail main > .section.bold-italic > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b) {
+  font-style: italic;
+}
+
 /* body colour instead of the global gold label — except inside a bracket colour tag
    ([[color-gold]***text***], scripts/span-tags.js) or a link, whose color must win */
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
@@ -618,16 +626,16 @@ body.news-detail main span.box-gold a:any-link {
   color: inherit;
 }
 
-/* …its bold words are text in Futura bold, not the shared bold-link button, whether the
-   bold is inside the link or around it (DA saves a bold part of a link as its own
-   bold link) */
+/* …its bold words are text in Futura bold in the text colour (black on stryker.com, e.g.
+   "continuing education courses"), not the shared bold-link button, whether the bold is
+   inside the link or around it (DA saves a bold part of a link as its own bold link) */
 body.news-detail main span.box-gold strong > a:any-link,
 body.news-detail main span.box-gold a:any-link > strong {
   display: inline;
   padding: 0;
   border: 0;
   background: none;
-  color: var(--link-color);
+  color: inherit;
   font-size: inherit;
   font-weight: var(--font-weight-bold);
   line-height: inherit;
@@ -1592,11 +1600,139 @@ body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child
   }
 }
 
-/* section style `lead-1-5`: a Bold lead-in on a line of its own (Bold text, then a line break
-   and the paragraph's text) is 21px, on 1.06 lines (stryker.com .fontsize-1-5em bold label
-   over 1.25em text, e.g. "1. School-aged children are potential victims…" of "Four reasons
-   every school needs AEDs"); colour it with a tag ([[color-blue]]) */
-body.news-detail main > .section.lead-1-5:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) p > :is(strong, span[class*="color-"]):first-child:has(+ br) {
+/* section style `lead-1-5`: a Bold lead-in opening a paragraph — on a line of its own (Bold
+   text, then a line break and the paragraph's text) or running into the text — is 21px, on
+   1.06 lines (stryker.com .fontsize-1-5em bold label over 1.25em text, e.g. "1. School-aged
+   children are potential victims…" of "Four reasons every school needs AEDs"; the bold
+   "In February of 2020," opening "Going the distance for front-line heroes"); colour it with
+   a tag ([[color-blue]]) */
+body.news-detail main > .section.lead-1-5:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) p > :is(strong, span[class*="color-"]):first-child {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* a gold box in a `separator` section (e.g. "Stryker aims to improve healthcare with IoT
+   solutions" of "Smart devices deliver actionable insights"): the rule follows the text
+   above by one paragraph gap and the box starts the separator's gap below the rule (20px,
+   50px from 600px; source hr margin 50px), instead of the box's blank line above the
+   section and the gap inside the box */
+body.news-detail main > .section.separator.bg-gold {
+  margin-top: 0;
+}
+
+body.news-detail main > .section.separator.bg-gold > .default-content-wrapper:first-child {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.separator.bg-gold > .default-content-wrapper:first-child {
+    margin-top: var(--space-section-l);
+  }
+}
+
+/* section style `light-gray-box`: the section's text in the light-grey Large Headline box
+   across the text column (stryker.com .c-largeheadline .has-background.bg-light-gray, e.g.
+   the quotes of "Women leading the charge for change": 909px wide at 1440px, padded 20px):
+   black light-serif text at the headline's 1.5vw (21px at 1440px, 3vw on phones), lines
+   1.35, its Bold words Futura bold. The rich-text grey box is `background: bg-light-gray` */
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
+  --corp-headline-vw: 2vw;
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-surface);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-top: var(--space-block-l);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n):nth-child(n) strong:nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
+    --corp-headline-vw: 1vw;
+  }
+}
+
+/* Columns: a Bold + Italic lead-in on a line of its own (Bold + Italic text, then a line
+   break and the paragraph's text) is the news Bold + Italic — black upright Futura bold
+   (authoring conventions) — not the corp gold label (stryker.com span.futura-bold
+   questions, e.g. "When did you start running?" of "Going the distance for front-line
+   heroes") */
+body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n),
+body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n) > * {
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Columns 50/50 in a `serif` section: the text column beside an image keeps the cell's 15px
+   gutters, not the patients 83px inset (columns.css), as on stryker.com (e.g. the Brandon
+   Jominy intro of "Stryker's Journey to Zero harm continues with Neptune S": 675px of text
+   from x 30 at 1440px; the text right of the photo in "Stryker releases comprehensive
+   report…": 675px from x 735) */
+body.news-detail main .section.serif .columns.columns-50-50.block > div:has(picture) > div:not(:has(picture)):nth-child(n) {
+  padding-inline: var(--space-block);
+}
+
+/* `number-list` with Statistics figures: a Statistics block (`count-up`, colour navy) in the
+   list is one figure like the paragraphs around it — its number on its own line in the blue
+   Futura bold, counting up from 0, its text the light serif, both at the list's 2.5vw (the
+   stryker.com number counters "400 hours of customer research and input" and "4 years in
+   the making" between the static Large Headlines of "Innovation inspired by insights"); the
+   same 1px rule and gaps between the figures */
+body.news-detail main > .section.number-list .statistics.block ul.statistics-list {
+  display: block;
+}
+
+body.news-detail main > .section.number-list .statistics.block .statistics-item {
+  display: block;
+  padding: 0;
+  text-align: start;
+}
+
+body.news-detail main > .section.number-list .statistics.block :is(.statistics-value, .statistics-value p, .statistics-desc, .statistics-desc p) {
+  margin: 0;
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--corp-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.number-list .statistics.block :is(.statistics-desc, .statistics-desc p) {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+body.news-detail main > .section.number-list > .statistics-wrapper:has(+ .default-content-wrapper > p:first-child:not(.button-wrapper)),
+body.news-detail main > .section.number-list > .default-content-wrapper:has(+ .statistics-wrapper) > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: var(--space-block);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.number-list > .statistics-wrapper:has(+ .default-content-wrapper > p:first-child:not(.button-wrapper)),
+  body.news-detail main > .section.number-list > .default-content-wrapper:has(+ .statistics-wrapper) > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-bottom: var(--space-section-l);
+  }
 }

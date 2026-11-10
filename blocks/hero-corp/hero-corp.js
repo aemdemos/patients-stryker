@@ -98,11 +98,12 @@ function setupHero(block) {
 
 function readSlideOptions(block) {
   [...block.classList].forEach((name) => {
-    const match = name.match(/^(top|left|right|size)-(\d+)(?:-(\d+))?$/);
+    const match = name.match(/^(top|left|right|size|sub)-(\d+)(?:-(\d+))?$/);
     if (!match) return;
     const [, option, whole, fraction] = match;
     const value = Number(fraction ? `${whole}.${fraction}` : whole);
     if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
+    else if (option === 'sub') block.style.setProperty('--hero-slide-subtitle-size', value);
     else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
   });
 }

@@ -14,6 +14,7 @@
   --hero-slide-left: 5%;
   --hero-slide-right: 50%;
   --hero-slide-text-size: 2;
+  --hero-slide-subtitle: var(--hero-slide-subtitle-size, calc(var(--hero-slide-text-size) * 3 / 5)); /* subtitle size, below */
 
   display: block;
   position: relative;
@@ -166,13 +167,22 @@
   text-align: left;
 }
 
+/* align-right: the slide text right-aligned in its box (stryker.com Large Headline
+   text-align: right, e.g. "Going the distance for front-line heroes" ending 5% from the
+   right edge) */
+.hero-corp.image-slide.align-right > div:last-child > * {
+  text-align: right;
+}
+
 /* subtitle (hero-corp.js .hero-corp-subtitle: one plain line under a fully Bold title): the
    light serif at 3/5 of the title size (stryker.com 3vw Egyptienne under the 5vw title,
-   e.g. "Look inside Stryker's iSuite": 36px at 1200px, 23.5px at 390px); gold-box keeps
-   its own 2/3 */
+   e.g. "Look inside Stryker's iSuite": 36px at 1200px, 23.5px at 390px), or at its own
+   `sub-N` size (N vw from 600px, 2N vw on phones, capped at N x 14px; e.g. sub-1-5 for the
+   1.5vw line under the 2vw title of "Stryker's Journey to Zero harm continues with
+   Neptune S"); gold-box keeps its own 2/3 */
 .hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
   font-family: var(--heading-font-family);
-  font-size: calc(var(--hero-slide-text-size) * 2vw * 3 / 5);
+  font-size: calc(var(--hero-slide-subtitle) * 2vw);
   font-weight: var(--font-weight-regular);
 }
 
@@ -219,7 +229,7 @@
   }
 
   .hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
-    font-size: min(calc(var(--hero-slide-text-size) * 1vw * 3 / 5), calc(var(--hero-slide-text-size) * var(--body-font-size-m) * 3 / 5));
+    font-size: min(calc(var(--hero-slide-subtitle) * 1vw), calc(var(--hero-slide-subtitle) * var(--body-font-size-m)));
   }
 
   .hero-corp.image-slide.dark-box > div:first-child {

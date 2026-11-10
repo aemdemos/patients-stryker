@@ -12,8 +12,10 @@ body.corp .accordion .accordion-item-label {
 }
 
 /* the label's paragraph keeps the label's line height: a 40px label as on stryker.com (corp
-   paragraphs would make it 44px) */
+   paragraphs would make it 44px); and the label size when its section sets a copy size
+   (e.g. p-1-25 FAQs, accordion-continue panels) */
 body.corp .accordion .accordion-item-label p {
+  font-size: inherit;
   line-height: inherit;
 }
 
@@ -24,6 +26,23 @@ body.corp .accordion .accordion-item-label::after {
 body.corp .accordion .accordion-item-body {
   padding: 0;
   border: 0;
+}
+
+/* a panel made of several sections (`accordion-continue`): the corp section gap
+   between them, 20px (30px from 600px) */
+body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* …a heading section (`h2-0-8`) flows into the text below it: the heading's own gap only */
+body.corp .accordion .accordion-item-body > .section.h2-0-8:not(:last-child) {
+  margin-bottom: 0;
 }
 
 @media (width >= 900px) {
