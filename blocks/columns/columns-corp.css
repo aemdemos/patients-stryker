@@ -1082,3 +1082,23 @@ body.corp main .columns.serif-lead.block > div:nth-child(n) > div:not(:has(> .co
 body.corp main .columns.caption-tight.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):has(+ p) {
   margin-bottom: 0;
 }
+
+/* phone-image-2-3: on phones a photo's cell (the photo and a caption right under it) is two
+   thirds of the column, centred (stryker.com aem-GridColumn--phone--8, e.g. "A winning
+   spirit": 229px at 390px, 369px at 599px); image-left keeps it at the start of the column
+   (its "Keep reading" teaser). Side by side from 600px as usual */
+body.corp main .columns.phone-image-2-3.block > div:nth-child(n) > div:has(> .columns-img-col):nth-child(n):nth-child(n) {
+  width: calc(100% * 2 / 3);
+  margin-inline: auto;
+}
+
+body.corp main .columns.phone-image-2-3.image-left.block > div:nth-child(n) > div:has(> .columns-img-col):nth-child(n):nth-child(n) {
+  margin-inline: 0;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.phone-image-2-3.block > div:nth-child(n) > div:has(> .columns-img-col):nth-child(n):nth-child(n) {
+    width: auto;
+    margin-inline: 0;
+  }
+}
