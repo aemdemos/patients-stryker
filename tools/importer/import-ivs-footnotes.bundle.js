@@ -364,7 +364,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-ivs-footnotes.js
   var PAGE_TEMPLATE = {
     name: "ivs-footnotes",
-    description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "\u276E BACK" link as a Fragment block; the page hero (gold H1, document code subhead) then, in a `separator` section, each revision as a bold `[[text-1-25]\u2026]` label, a `[[body-font]**\u2026**]` date line and its numbered references. Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
+    description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "\u276E BACK" link as a Fragment block; the page hero (gold H1, document code subhead in an `h-serif` section) then each revision as a bold `[[text-1-25]\u2026]` label, a `[[body-font]**\u2026**]` date line and its numbered references (a `separator` section only when the hero has no subhead). Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
     urls: [
       "https://www.stryker.com/us/en/interventional-spine/footnotes.html",
       "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
@@ -477,9 +477,12 @@ var CustomImportScript = (() => {
       nodes.push(document.createElement("hr"));
     }
     const { nodes: heroNodes, rule } = hero(document, src);
-    nodes.push(...heroNodes, document.createElement("hr"));
+    const hasSubhead = heroNodes.some((n) => n.nodeName === "H2");
+    nodes.push(...heroNodes);
+    if (hasSubhead) nodes.push(sectionMetadata(document, "h-serif"));
+    nodes.push(document.createElement("hr"));
     richTexts(src).filter((box) => !box.closest(".experiencefragment, .c-page-hero")).forEach((box) => nodes.push(...footnoteNodes(document, box)));
-    if (rule) nodes.push(sectionMetadata(document, "separator"));
+    if (rule && !hasSubhead) nodes.push(sectionMetadata(document, "separator"));
     return nodes;
   }
   function buildIndex(document, src) {
