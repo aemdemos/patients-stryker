@@ -1065,3 +1065,20 @@ body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:n
     --columns-icon-card-gap: var(--space-section);
   }
 }
+
+/* serif-lead: the text cell opens with a lead paragraph in the light serif, 21px at every
+   width (stryker.com .fontsize-1-5em .urw-egyptienne, e.g. the intro of "A winning
+   spirit"); the rest of the cell is body copy */
+body.corp main .columns.serif-lead.block > div:nth-child(n) > div:not(:has(> .columns-img-col:first-child)):nth-child(n):nth-child(n) > p:first-child:nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* caption-tight: a caption sits right under its photo, no gap (stryker.com image
+   component followed by its rich-text caption, e.g. "Jillian recovers after rotationplasty
+   surgery") */
+body.corp main .columns.caption-tight.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):has(+ p) {
+  margin-bottom: 0;
+}

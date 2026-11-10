@@ -166,9 +166,10 @@ function decorateImageLinks(main) {
 }
 
 /**
- * Columns (product-tiles, challenge-cards): a link alone on the line right after an image
- * makes the image clickable, as with the `image-link` section style; each image paragraph
- * is a .columns-img-col (columns.js tags only a cell's first one). Runs on each block once
+ * Columns (product-tiles, challenge-cards, any Columns in an `image-link` section): a link
+ * alone on the line right after an image makes the image clickable, as with the
+ * `image-link` section style; each image paragraph is a .columns-img-col (columns.js tags
+ * only a cell's first one). Runs on each block once
  * it is loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image
  * paragraphs while it decorates, so a link added before that would be lost. Blocks of a
  * Fragment block arrive later (the fragment inserts its sections once they are loaded), so
@@ -176,7 +177,9 @@ function decorateImageLinks(main) {
  * @param {Element} main The container element
  */
 function decorateColumnsImageLinks(main) {
-  const selector = '.columns:is(.product-tiles, .challenge-cards)';
+  // also any Columns block of an `image-link` section (e.g. the "Keep reading" teaser of
+  // "A winning spirit": the image a third wide in a columns-33-67 row)
+  const selector = '.columns:is(.product-tiles, .challenge-cards), .section.image-link .columns';
   const link = (block) => block.querySelectorAll(':scope > div > div > p').forEach((p) => {
     if (!p.querySelector(':scope > picture') || p.children.length !== 1 || p.textContent.trim()) return;
     p.classList.add('columns-img-col');
