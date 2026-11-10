@@ -17,6 +17,7 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | File | What |
 |---|---|
 | `inventory.mjs` | Every block instance of the documents: settings, cell kinds, tags, ids and content hashes |
+| `lib/features.js` | The block features and content hash of an instance (shared by the inventory and apply) |
 | `cluster.py` | Columns instances → groups (structure + layout) → clusters (design options); report of what standardising drops |
 | `pick-pilot.py` | The pilot pages: every cluster of the 10 largest groups, 30 pages |
 | `copy-pilot.py` | Copies the pilot pages and their fragments `/rs` → `/std` |
@@ -25,6 +26,9 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | `gallery.mjs` | The standards gallery draft (`/std/drafts/standards`) |
 | `preselect.mjs` | Renders each pilot block as it is and in each standard it fits (1440 and 375 wide), compares boxes and styles; a standard with no difference is pre-selected |
 | `candidates.py` | `data/candidates.json`, what the review overlay reads: pilot pages (live URL, blocks, groups), groups (plain label, size), pre-selection |
+| `apply.mjs` | Applies the review decisions to the `/std` documents: the block's own decision > its group's choice > pre-selected; skips blocks changed since the review (content hash); rewrites only the changed sections; backs the originals up; writes the apply report |
+| `check-standardised.mjs` | The style coverage check in a standardised mode: runs it on the documents before and after apply; a style lost on purpose by a standard (blank lines, boxes of a standardised block) is expected, anything else is flagged |
+| `report.mjs` | The results as markdown: blocks on a standard, the legacy tail, effort per flow, checks, review notes |
 | `data/` | `clusters-columns.json` / `.md`, `pilot-pages.txt`, `candidates.json` |
 | `scripts/standardise-preview.js` / `.css` | The review overlay (loaded by `scripts.js` only on preview hosts with `?standardise`) |
 | `tools/sidekick/standardise.html` | The Sidekick "Standardise this page" button (opens the page with the overlay) |
@@ -127,4 +131,8 @@ python3 -I tools/importer/standardise/candidates.py /tmp/…/instances.jsonl too
 # local preview of this worktree on port 3001, then:
 node tools/importer/standardise/preselect.mjs --base http://localhost:3001/content --candidates tools/importer/standardise/data/candidates.json --out /tmp/…/preselect.json
 python3 -I tools/importer/standardise/candidates.py … tools/importer/standardise/data/candidates.json --preselect /tmp/…/preselect.json
+# after the review (the overlay's Export decisions):
+node tools/importer/standardise/apply.mjs --content content --candidates tools/importer/standardise/data/candidates.json --decisions <export.json> --backup /tmp/…/before --report /tmp/…/apply-report.json [--dry-run]
+node tools/importer/standardise/check-standardised.mjs --check tools/importer/migration-index/check-style-coverage.mjs --content content --backup /tmp/…/before --report /tmp/…/apply-report.json --candidates tools/importer/standardise/data/candidates.json --cache <page cache> --work /tmp/…/check
+node tools/importer/standardise/report.mjs --candidates … --decisions <export.json> --apply /tmp/…/apply-report.json --log <review log.jsonl> --check /tmp/…/check.json --out /tmp/…/report.md
 ```

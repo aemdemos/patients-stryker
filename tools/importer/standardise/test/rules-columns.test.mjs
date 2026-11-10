@@ -9,7 +9,7 @@
  *   (by their colour only), boxed-last / gold-first;
  * - the text sizes stay as authored (layout standards: [[1.75×]], [[5vw]], Copy / Heading / Label
  *   size rows);
- * - the block carries the standard's class.
+ * - the block carries the standard's class, and counts as a standard already (never offered one again).
  * usage: node test/rules-columns.test.mjs --content <content dir> [--clusters <json>]
  */
 import { readFileSync } from 'fs';
@@ -58,6 +58,8 @@ const results = await page.evaluate(async ({ src, list }) => {
       const fails = [];
       if (!ok) fails.push('not ok');
       if (!after.classList.contains(std)) fails.push('no standard class');
+      // (a standardised block is a standard already: never offered one again)
+      if (m.eligible(after).length || !m.alreadyStandard(after)) fails.push('standard block offered a standard again');
       // (the words without the Box and blank lines, which a standard drops on purpose)
       const kept = (el) => {
         const copy = el.cloneNode(true);

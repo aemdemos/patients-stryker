@@ -89,8 +89,13 @@ const captioned = (cell) => cellKind(cell) === 'media+text' && cellWords(cell).l
 // product page has it, the product-detail template owns it)
 export const ALREADY_STANDARD = { 'page-intro': 'Page intro' };
 
-/** The standard a block already is, or null. */
+/**
+ * The standard a block already is, or null: a named standard variant, or one of the standards
+ * (a block standardised before: its own options stay, it is not offered a standard again).
+ */
 export function alreadyStandard(block) {
+  const std = Object.keys(STANDARDS).find((c) => block.classList.contains(c));
+  if (std) return STANDARDS[std].label;
   const key = Object.keys(ALREADY_STANDARD).find((c) => block.classList.contains(c));
   return key ? ALREADY_STANDARD[key] : null;
 }
