@@ -407,7 +407,7 @@ function fastFacts(main, doc, h) {
  * image is the desktop one (the picture source from 480px). Its bottom rule
  * (.border-bottom-gold, a 1px grey line on stryker.com) is a separator before what follows.
  */
-function pageHeroes(main, doc, h) {
+export function pageHeroes(main, doc, h) {
   main.querySelectorAll('.c-page-hero').forEach((component) => {
     const columnNodes = (col) => [...col.querySelectorAll('h1, h2, p, img')].flatMap((el) => {
       if (el.matches('img')) {
