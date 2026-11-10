@@ -170,16 +170,21 @@ function decorateImageLinks(main) {
  * makes the image clickable, as with the `image-link` section style; each image paragraph
  * is a .columns-img-col (columns.js tags only a cell's first one). Runs on each block once
  * it is loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image
- * paragraphs while it decorates, so a link added before that would be lost.
+ * paragraphs while it decorates, so a link added before that would be lost. Blocks of a
+ * Fragment block arrive later (the fragment inserts its sections once they are loaded), so
+ * main is watched for them too.
  * @param {Element} main The container element
  */
 function decorateColumnsImageLinks(main) {
+  const selector = '.columns:is(.product-tiles, .challenge-cards)';
   const link = (block) => block.querySelectorAll(':scope > div > div > p').forEach((p) => {
     if (!p.querySelector(':scope > picture') || p.children.length !== 1 || p.textContent.trim()) return;
     p.classList.add('columns-img-col');
     linkImage(p);
   });
-  main.querySelectorAll('.columns:is(.product-tiles, .challenge-cards)').forEach((block) => {
+  const watch = (block) => {
+    if (block.dataset.imageLinks) return;
+    block.dataset.imageLinks = 'true';
     if (block.dataset.blockStatus === 'loaded') {
       link(block);
       return;
@@ -190,7 +195,15 @@ function decorateColumnsImageLinks(main) {
       link(block);
     });
     observer.observe(block, { attributes: true, attributeFilter: ['data-block-status'] });
-  });
+  };
+  main.querySelectorAll(selector).forEach(watch);
+  const added = (node) => {
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node.matches(selector)) watch(node);
+    node.querySelectorAll(selector).forEach(watch);
+  };
+  new MutationObserver((records) => records.forEach((record) => record.addedNodes.forEach(added)))
+    .observe(main, { childList: true, subtree: true });
 }
 
 /**

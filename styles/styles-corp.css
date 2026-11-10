@@ -387,6 +387,12 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: var(--space-block-l);
 }
 
+/* a reference that quotes a long URL as plain text (no spaces to break at, e.g. a
+   "#:~:text=…" link) wraps anywhere instead of widening the page on phones */
+:where(body.corp) main > .section.disclaimer li {
+  overflow-wrap: anywhere;
+}
+
 /* section style `references-spaced` (with `disclaimer`): references the source authored
    as numbered paragraphs ("1: Author…", "1. https://…") — the entries keep that number as
    text, so the list marker is hidden; flush left, 15px apart */
