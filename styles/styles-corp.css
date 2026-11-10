@@ -39,6 +39,7 @@
   --corp-color-local-nav-link: #9f9d9d; /* the section links in the bar */
   --corp-color-local-nav-item: #404040; /* the links in the more menu and the phone list */
   --corp-color-local-nav-menu: #d8d8d8; /* the more menu */
+  --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;

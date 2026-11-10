@@ -1115,3 +1115,22 @@ body.long-page-detail-corp main .columns .columns-box:has(span[class*="headline-
     margin-bottom: var(--space-section);
   }
 }
+
+/* ---- a bold + underline link inside a sentence or a list of links (stryker.com
+   span.standalone-link, always uppercase: TEACH talks "• TSA • RSA • REUNION S") ---- */
+body.long-page-detail-corp main strong > a:any-link:has(u) u {
+  text-transform: uppercase;
+}
+
+/* ---- the local navigation keeps the source's space below it, not this template's 15px
+   section gap: 20px under the phone card (it has its own 20px) and 30px under the bar from
+   600px (TEACH talks: 60px to the logo with the empty large headline after it) ---- */
+body.long-page-detail-corp main > .section.local-nav-corp-container {
+  margin-bottom: calc(2 * var(--space-block-l));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.local-nav-corp-container {
+    margin-bottom: var(--space-section);
+  }
+}

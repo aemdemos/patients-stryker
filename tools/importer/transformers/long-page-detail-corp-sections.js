@@ -389,6 +389,23 @@ function stackRow(columns) {
   return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
 }
 
+/**
+ * A `stack` row whose columns alternate media and text (TEACH talks chapters: video, text,
+ * video, text): `Columns (stack, media-text)`, each cell its own height and no gap between a
+ * video and its text (columns-corp). Empty columns (a last row of two) don't break it.
+ */
+function mediaTextRow(columns) {
+  const media = 'img, iframe, video, [data-asset-path]';
+  const isMedia = (col) => !text(col) && !!col.querySelector(media);
+  const isText = (col) => !!text(col) && !col.querySelector(media);
+  const isEmpty = (col) => !text(col) && !col.querySelector(media);
+  // at least one media column followed by its text (not a lone image in a row of empty
+  // columns: the nse grids' last row)
+  const pair = columns.some((col, i) => i % 2 === 0 && isMedia(col)
+    && !!columns[i + 1] && isText(columns[i + 1]));
+  return pair && columns.every((col, i) => isEmpty(col) || (i % 2 ? isText(col) : isMedia(col)));
+}
+
 // a source box colour (.has-background.bg-…, a .dimensional-box without a colour: `boxed`)
 // → its Columns variant colour
 const BOX_COLOURS = {
@@ -700,7 +717,8 @@ function columnRows(main, doc) {
     const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)]
       .filter((c) => c.closest('.colctrl') === colctrl && (text(c) || c.matches('.sectionseparator'))) : [];
     const firstRule = parts.length > 1 && parts[parts.length - 1].matches('.sectionseparator');
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '',
+      stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
       firstRule ? 'left-border-bottom' : ''].filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
     const cells = columns.map((col) => cellNodes(col, doc));
@@ -905,6 +923,16 @@ export default function transform(hookName, element, payload) {
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
+  // below the local nav, an empty Large Headline opening the page is its 30px of space
+  // (TEACH talks: before the logo): a spacer, as the empty Large Headlines further down
+  if (nav) {
+    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const first = [...main.querySelectorAll(COMPONENT)]
+      .find((c) => !c.parentElement.closest(COMPONENT));
+    const empty = first && first.matches('.c-largeheadline') && !text(first)
+      && !first.querySelector('img, picture, video, iframe, [data-asset-path]');
+    if (empty) first.setAttribute('data-spacer', '');
+  }
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);
   downloadTitles(main, doc);

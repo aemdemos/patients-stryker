@@ -331,6 +331,8 @@ function textBoxes(main, doc, h) {
     if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
     let variant = '';
     if (box.classList.contains('dimensional-box')) variant = 'left';
+    // the gold gradient box (TEACH talks "Course overview": dark gold to gold)
+    else if (box.classList.contains('bg-golden-gradient')) variant = 'gold-gradient';
     else {
       const colour = colourStyle(box);
       variant = {
@@ -340,6 +342,8 @@ function textBoxes(main, doc, h) {
     }
     const nodes = contentNodes(component, doc, h);
     if (!nodes.length) return;
+    // the box's copy sizes and font as tags (the Panel has no section style of its own)
+    tagPanelCopy(nodes, doc, h);
     const name = variant ? `Panel (${variant})` : 'Panel';
     (component.closest('.text') || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
   });

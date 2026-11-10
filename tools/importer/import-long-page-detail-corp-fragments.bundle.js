@@ -188,6 +188,14 @@ var CustomImportScript = (() => {
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
   ];
+  var SIZE_FACTORS = {
+    "fontsize-8em": 0.8,
+    "fontsize-1-25em": 1.25,
+    "fontsize-1-5em": 1.5,
+    "fontsize-1-75em": 1.75,
+    "fontsize-2em": 2,
+    "fontsize-2-5em": 2.5
+  };
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
     const copy = candidates.filter((el) => text2(el) && !el.querySelector("p, li"));
@@ -197,7 +205,13 @@ var CustomImportScript = (() => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
+    const covering = SIZE_STYLES.filter(([cls]) => covers(cls));
+    let size = covering[0];
+    if (covering.length > 1) {
+      const factor = covering.reduce((f, [cls]) => f * SIZE_FACTORS[cls], 1);
+      const nearest = SIZE_STYLES.reduce((best, entry) => Math.abs(SIZE_FACTORS[entry[0]] - factor) < Math.abs(SIZE_FACTORS[best[0]] - factor) ? entry : best);
+      size = Math.abs(factor - 1) < Math.abs(SIZE_FACTORS[nearest[0]] - factor) ? void 0 : nearest;
+    }
     const coversFont = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       const bold = [...el.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
@@ -207,20 +221,18 @@ var CustomImportScript = (() => {
     const font = FONT_STYLES.find(([cls]) => coversFont(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
-  function sameLineText(node, direction) {
-    let value = "";
-    let sibling = node[direction];
-    while (sibling && sibling.nodeName !== "BR") {
-      value += sibling.textContent;
-      sibling = sibling[direction];
-    }
-    return value.replace(/[\s\u00a0]+/g, "");
-  }
   function tagPlainBoldLabels(root, wholeParagraphs) {
     const doc = root.ownerDocument;
+    const futuraOnly = (node, direction) => {
+      for (let sibling = node[direction]; sibling && sibling.nodeName !== "BR"; sibling = sibling[direction]) {
+        const isFutura = sibling.nodeType === 1 && (sibling.matches(".futura-bold") || [...sibling.querySelectorAll(".futura-bold")].map(text2).join("") === text2(sibling));
+        if (!isFutura && sibling.textContent.replace(/[\s\u00a0]+/g, "")) return false;
+      }
+      return true;
+    };
     [...root.querySelectorAll("b")].forEach((b) => {
-      if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
-      if (!text2(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
+      if (b.closest(".futura-bold, .standalone-link") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
+      if (!text2(b) || !futuraOnly(b, "previousSibling") || !futuraOnly(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text2(block) === text2(b)) return;
@@ -330,8 +342,8 @@ var CustomImportScript = (() => {
     tagTextSize(root);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
-      const a = span.closest("a") || span.querySelector("a");
-      if (a) standalone.add(a);
+      const links = span.closest("a") ? [span.closest("a")] : [...span.querySelectorAll("a")];
+      links.forEach((a) => standalone.add(a));
     });
     standalone.forEach((a) => {
       const u = doc.createElement("u");
@@ -1002,7 +1014,7 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (component.matches(".c-largeheadline") && !isFirst && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
         sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
         separatorNext = false;
         current = null;
@@ -1465,6 +1477,7 @@ var CustomImportScript = (() => {
       if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
       let variant = "";
       if (box.classList.contains("dimensional-box")) variant = "left";
+      else if (box.classList.contains("bg-golden-gradient")) variant = "gold-gradient";
       else {
         const colour = colourStyle(box);
         variant = {
@@ -1477,6 +1490,7 @@ var CustomImportScript = (() => {
       }
       const nodes = contentNodes(component, doc, h);
       if (!nodes.length) return;
+      tagPanelCopy(nodes, doc, h);
       const name = variant ? `Panel (${variant})` : "Panel";
       (component.closest(".text") || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
     });
@@ -2081,6 +2095,14 @@ var CustomImportScript = (() => {
   function stackRow(columns) {
     return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
   }
+  function mediaTextRow(columns) {
+    const media = "img, iframe, video, [data-asset-path]";
+    const isMedia = (col) => !text3(col) && !!col.querySelector(media);
+    const isText = (col) => !!text3(col) && !col.querySelector(media);
+    const isEmpty = (col) => !text3(col) && !col.querySelector(media);
+    const pair = columns.some((col, i) => i % 2 === 0 && isMedia(col) && !!columns[i + 1] && isText(columns[i + 1]));
+    return pair && columns.every((col, i) => isEmpty(col) || (i % 2 ? isText(col) : isMedia(col)));
+  }
   var BOX_COLOURS = {
     "light-gray": "gray",
     blue: "blue",
@@ -2304,6 +2326,7 @@ var CustomImportScript = (() => {
         COLUMN_VARIANTS[key],
         linked ? "media-pair" : "",
         stackRow(columns) ? "stack" : "",
+        stackRow(columns) && mediaTextRow(columns) ? "media-text" : "",
         boxes,
         firstRule ? "left-border-bottom" : ""
       ].filter(Boolean).join(", ");
@@ -2457,6 +2480,12 @@ var CustomImportScript = (() => {
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);
+    if (nav) {
+      const COMPONENT2 = '[class^="c-"], [class*=" c-"]';
+      const first = [...main.querySelectorAll(COMPONENT2)].find((c) => !c.parentElement.closest(COMPONENT2));
+      const empty = first && first.matches(".c-largeheadline") && !text3(first) && !first.querySelector("img, picture, video, iframe, [data-asset-path]");
+      if (empty) first.setAttribute("data-spacer", "");
+    }
     experienceFragments(main, doc, long_page_detail_corp_xf_default[path] || [], long_page_detail_corp_xf_slots_default[path]);
     sectionTitles(main, doc);
     downloadTitles(main, doc);

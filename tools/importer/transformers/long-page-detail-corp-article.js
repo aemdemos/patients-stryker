@@ -138,6 +138,15 @@ const SIZE_TAGS = [
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
 ];
+// the size of each source size span, relative to the text around it
+const SIZE_FACTORS = {
+  'fontsize-8em': 0.8,
+  'fontsize-1-25em': 1.25,
+  'fontsize-1-5em': 1.5,
+  'fontsize-1-75em': 1.75,
+  'fontsize-2em': 2,
+  'fontsize-2-5em': 2.5,
+};
 
 /**
  * The copy section styles of a rich-text fragment: when the whole text of every
@@ -157,7 +166,16 @@ function copyStyles(root) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
     return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
   });
-  const size = SIZE_STYLES.find(([cls]) => covers(cls));
+  // nested size spans multiply, as on the source (TEACH talks "Course overview": a 1.5em
+  // span in a 1.75em span is 2.625em): the nearest size style; none when they cancel out
+  const covering = SIZE_STYLES.filter(([cls]) => covers(cls));
+  let size = covering[0];
+  if (covering.length > 1) {
+    const factor = covering.reduce((f, [cls]) => f * SIZE_FACTORS[cls], 1);
+    const nearest = SIZE_STYLES.reduce((best, entry) => (Math.abs(SIZE_FACTORS[entry[0]] - factor)
+      < Math.abs(SIZE_FACTORS[best[0]] - factor) ? entry : best));
+    size = Math.abs(factor - 1) < Math.abs(SIZE_FACTORS[nearest[0]] - factor) ? undefined : nearest;
+  }
   // the running font: Futura bold words (span.futura-bold → <strong>, Futura in any
   // section) don't count, e.g. room-design "Design your OR with Stryker and" (serif) + "see
   // the difference." (Futura bold) is a serif paragraph
@@ -179,22 +197,9 @@ function copyStyles(root) {
  * paragraph of the fragment is centred and its copy section styles (copyStyles).
  */
 /**
- * The text next to a node on its own line: its siblings up to the next <br> (or the
- * start / end of the parent) in one direction.
- */
-function sameLineText(node, direction) {
-  let value = '';
-  let sibling = node[direction];
-  while (sibling && sibling.nodeName !== 'BR') {
-    value += sibling.textContent;
-    sibling = sibling[direction];
-  }
-  return value.replace(/[\s\u00a0]+/g, '');
-}
-
-/**
- * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the
- * body font on the source, while bold labels are Futura on the site. Both become
+ * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:"), or beside
+ * Futura bold only (TEACH talks "Chapter 1: Positioning…"), are in the body font on the
+ * source, while bold labels are Futura on the site. Both become
  * <strong> on import, so these are wrapped in the `[[body-font]…]` bracket tag
  * (scripts/span-tags.js → span.body-font, styles-corp.css). A paragraph that is plain
  * bold as a whole gets the `bold-body` section style instead, unless wholeParagraphs is
@@ -202,9 +207,18 @@ function sameLineText(node, direction) {
  */
 function tagPlainBoldLabels(root, wholeParagraphs) {
   const doc = root.ownerDocument;
+  // only Futura bold beside it on its line (TEACH talks "Chapter 1: <b>Positioning…</b>")
+  const futuraOnly = (node, direction) => {
+    for (let sibling = node[direction]; sibling && sibling.nodeName !== 'BR'; sibling = sibling[direction]) {
+      const isFutura = sibling.nodeType === 1 && (sibling.matches('.futura-bold')
+        || [...sibling.querySelectorAll('.futura-bold')].map(text).join('') === text(sibling));
+      if (!isFutura && sibling.textContent.replace(/[\s\u00a0]+/g, '')) return false;
+    }
+    return true;
+  };
   [...root.querySelectorAll('b')].forEach((b) => {
-    if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
-    if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
+    if (b.closest('.futura-bold, .standalone-link') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+    if (!text(b) || !futuraOnly(b, 'previousSibling') || !futuraOnly(b, 'nextSibling')) return;
     const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
     if (!wholeParagraphs && text(block) === text(b)) return;
@@ -368,8 +382,9 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
-    const a = span.closest('a') || span.querySelector('a');
-    if (a) standalone.add(a);
+    // every link of the span (TEACH talks: "• TSA • RSA • ReUnion S" in one span)
+    const links = span.closest('a') ? [span.closest('a')] : [...span.querySelectorAll('a')];
+    links.forEach((a) => standalone.add(a));
   });
   standalone.forEach((a) => {
     const u = doc.createElement('u');
@@ -1302,7 +1317,8 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     // section (consecutive ones merge into `spacer, large / xlarge` below). Right after a
     // rule, the rule with the space below it: a `separator, spacer` section (Mako surgeon
     // campaign "INSIGHTFUL DATA ANALYTICS", Mako thank-you page)
-    if (component.matches('.c-largeheadline') && !isFirst && !text(component)
+    // (the page's first one too when it follows the local nav: data-spacer, sections.js)
+    if (component.matches('.c-largeheadline') && (!isFirst || component.hasAttribute('data-spacer')) && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
       && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
       sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
