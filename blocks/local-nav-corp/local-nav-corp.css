@@ -29,8 +29,10 @@
   text-decoration: none;
 }
 
-.local-nav-corp .local-nav-corp-nav a:any-link:is(:hover, :focus-visible) {
-  text-decoration: underline;
+/* no underline on hover (stryker.com); mouse clicks leave no focus ring on the buttons,
+   the keyboard focus ring stays */
+.local-nav-corp .local-nav-corp-nav button:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* phones: the page name, the arrow on the right */
@@ -178,7 +180,7 @@
     width: var(--corp-local-nav-more-icon);
     height: var(--corp-local-nav-more-dot);
     margin-block-start: var(--corp-local-nav-more-dot-top);
-    background: radial-gradient(circle, currentcolor 48%, transparent 52%) 0 0 / calc(var(--corp-local-nav-more-icon) / 3) 100% repeat-x;
+    background: radial-gradient(circle closest-side, currentcolor 85%, transparent) 0 0 / calc(var(--corp-local-nav-more-icon) / 3) 100% repeat-x;
   }
 
   .local-nav-corp .local-nav-corp-more-list {
