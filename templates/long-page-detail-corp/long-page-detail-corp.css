@@ -400,6 +400,9 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
    styles `p-2` / `p-2-5` for copy that is all 28px / 35px (e.g. room-design intro) ---- */
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
+  --long-page-detail-corp-scale-0-8: 0.8em; /* source span.fontsize-8em */
+  --long-page-detail-corp-arrow-0-8-height: 5px; /* half the link arrow in 11.2px text (stryker.com: a 9.52px icon, 9px tall, its top level with the capitals) */
+  --long-page-detail-corp-arrow-0-8-width: 5px;
   --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
   --long-page-detail-corp-serif-item-line-height: 1.643; /* the same in a 20px source list item: 23px */
   --long-page-detail-corp-fast-facts-title: 27px; /* measured: the source band title (.c-fastfacts-title) from 840px, OR staff */
@@ -412,6 +415,12 @@ body.long-page-detail-corp {
   --long-page-detail-corp-headline-unit: 2vw; /* 1 of a `headline-N` size, below 600px */
   --long-page-detail-corp-download-box: 240px; /* a download cover's box outside the VLC column */
   --long-page-detail-corp-download-cover: 238px; /* the cover's maximum height there */
+}
+
+/* `[[text-0-8]…]`: 0.8x the text around it (stryker.com span.fontsize-8em on part of a
+   paragraph, e.g. the TEACH talks "• TSA • RSA • ReUnion S" link groups: 11.2px) */
+body.long-page-detail-corp main span.text-0-8 {
+  font-size: var(--long-page-detail-corp-scale-0-8);
 }
 
 body.long-page-detail-corp main span.text-1-5 {
@@ -1133,4 +1142,17 @@ body.long-page-detail-corp main > .section.local-nav-corp-container {
   body.long-page-detail-corp main > .section.local-nav-corp-container {
     margin-bottom: var(--space-section);
   }
+}
+
+/* `[[text-0-8]…]`: its bold + underline links too (the standalone link look sets its own 14px) */
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link,
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link u {
+  font-size: inherit;
+}
+
+/* …and their arrow at the source's size for 11.2px text (9 × 5px, from the capitals' top to
+   0.5px below the baseline) */
+body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::after {
+  border-width: var(--long-page-detail-corp-arrow-0-8-height) 0 var(--long-page-detail-corp-arrow-0-8-height) var(--long-page-detail-corp-arrow-0-8-width);
+  vertical-align: -0.5px;
 }

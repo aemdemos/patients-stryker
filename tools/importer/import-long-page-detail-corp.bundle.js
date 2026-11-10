@@ -382,6 +382,8 @@ var CustomImportScript = (() => {
     ["fontsize-2-5em", "p-2-5"]
   ];
   var SIZE_TAGS = [
+    // 0.8em on part of a paragraph (TEACH talks: the 11.2px "• TSA • RSA" link groups)
+    ["fontsize-8em", "text-0-8"],
     ["fontsize-1-25em", "text-1-25"],
     ["fontsize-1-5em", "text-1-5"],
     ["fontsize-1-75em", "text-1-75"],
@@ -444,6 +446,7 @@ var CustomImportScript = (() => {
     });
   }
   var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+  var BLUE = /^(?:#1c5687|rgb\(\s*28\s*,\s*86\s*,\s*135\s*\))$/i;
   function ownColour(el) {
     const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
     return m ? m[1].trim() : "";
@@ -489,7 +492,11 @@ var CustomImportScript = (() => {
         const block = span.closest("p, li");
         if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
         if (squash(block.textContent) === squash(span.textContent)) return;
-        bracketTag([span], tag, root);
+        const nodes = [...span.childNodes];
+        const blank = (n) => !n.textContent.trim() && !(n.nodeType === 1 && n.querySelector("img"));
+        while (nodes.length && blank(nodes[0])) nodes.shift();
+        while (nodes.length && blank(nodes[nodes.length - 1])) nodes.pop();
+        bracketTag(nodes, tag, root);
       });
     });
   }
@@ -547,6 +554,22 @@ var CustomImportScript = (() => {
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const links = span.closest("a") ? [span.closest("a")] : [...span.querySelectorAll("a")];
       links.forEach((a) => standalone.add(a));
+    });
+    root.querySelectorAll(".standalone-link").forEach((span) => {
+      if (span.closest("a")) return;
+      const walker = doc.createTreeWalker(span, 4);
+      const bullets = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (!n.parentElement.closest("a") && n.textContent.includes("\u2022")) bullets.push(n);
+      }
+      let coloured = span;
+      while (coloured && coloured !== root && !ownColour(coloured)) coloured = coloured.parentElement;
+      const blue = coloured && coloured !== root && BLUE.test(ownColour(coloured));
+      bullets.forEach((n) => {
+        const bullet = n.splitText(n.textContent.indexOf("\u2022"));
+        bullet.splitText(1);
+        bracketTag([bullet], blue ? "color-blue,body-font" : "body-font", root);
+      });
     });
     standalone.forEach((a) => {
       const u = doc.createElement("u");

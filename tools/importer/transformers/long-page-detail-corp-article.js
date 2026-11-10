@@ -129,6 +129,8 @@ const SIZE_STYLES = [
 // source size spans on part of a line → the bracket size tags (styles-corp.css: text-1-25;
 // long-page-detail-corp template CSS: the larger sizes)
 const SIZE_TAGS = [
+  // 0.8em on part of a paragraph (TEACH talks: the 11.2px "• TSA • RSA" link groups)
+  ['fontsize-8em', 'text-0-8'],
   ['fontsize-1-25em', 'text-1-25'],
   ['fontsize-1-5em', 'text-1-5'],
   ['fontsize-1-75em', 'text-1-75'],
@@ -236,6 +238,8 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
  * `[[color-gold]***…***]`), not past a paragraph, heading, list item or link.
  */
 const GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+// the corp blue (#1c5687, `[[color-blue]…]`)
+const BLUE = /^(?:#1c5687|rgb\(\s*28\s*,\s*86\s*,\s*135\s*\))$/i;
 
 function ownColour(el) {
   const m = (el.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
@@ -302,7 +306,13 @@ function tagTextSize(root) {
       const block = span.closest('p, li');
       if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
       if (squash(block.textContent) === squash(span.textContent)) return;
-      bracketTag([span], tag, root);
+      // the span's content without the line breaks (alone or in formatting) at its ends, so they
+      // stay outside the tag (TEACH talks: "View more information<br>[[text-0-8]• TSA…]")
+      const nodes = [...span.childNodes];
+      const blank = (n) => !n.textContent.trim() && !(n.nodeType === 1 && n.querySelector('img'));
+      while (nodes.length && blank(nodes[0])) nodes.shift();
+      while (nodes.length && blank(nodes[nodes.length - 1])) nodes.pop();
+      bracketTag(nodes, tag, root);
     });
   });
 }
@@ -385,6 +395,24 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     // every link of the span (TEACH talks: "• TSA • RSA • ReUnion S" in one span)
     const links = span.closest('a') ? [span.closest('a')] : [...span.querySelectorAll('a')];
     links.forEach((a) => standalone.add(a));
+  });
+  // the bullets of a link group (TEACH talks "• TSA • RSA • ReUnion S"): plain bold on the
+  // source (<b>: Humanist bold, not Futura) in the span's colour (#1c5687: `color-blue`)
+  root.querySelectorAll('.standalone-link').forEach((span) => {
+    if (span.closest('a')) return;
+    const walker = doc.createTreeWalker(span, 4);
+    const bullets = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (!n.parentElement.closest('a') && n.textContent.includes('•')) bullets.push(n);
+    }
+    let coloured = span;
+    while (coloured && coloured !== root && !ownColour(coloured)) coloured = coloured.parentElement;
+    const blue = coloured && coloured !== root && BLUE.test(ownColour(coloured));
+    bullets.forEach((n) => {
+      const bullet = n.splitText(n.textContent.indexOf('•'));
+      bullet.splitText(1);
+      bracketTag([bullet], blue ? 'color-blue,body-font' : 'body-font', root);
+    });
   });
   standalone.forEach((a) => {
     const u = doc.createElement('u');
