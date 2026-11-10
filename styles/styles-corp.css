@@ -299,8 +299,8 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* a section left without content (metadata only, or moved by a block) paints nothing;
-   `spacer` sections are empty on purpose (shared styles.css gives them their height) */
-:where(body.corp) main .section:empty:not(.spacer) {
+   `spacer` and `gold-band` sections are empty on purpose (they paint their own height) */
+:where(body.corp) main .section:empty:not(.spacer, .gold-band) {
   display: none;
 }
 
