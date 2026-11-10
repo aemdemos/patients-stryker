@@ -901,12 +901,6 @@ body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(even)
   --columns-card-color: var(--color-navy-bright);
 }
 
-/* …and a third card in a row is blue: teal, dark gold, blue (stryker.com bg-teal, bg-gold-dark
-   and bg-blue boxes of "A building WELL done") */
-body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(3) {
-  --columns-card-color: var(--color-navy-bright);
-}
-
 body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n) {
   margin-bottom: 0;
 }
@@ -1010,5 +1004,64 @@ body.corp main .columns.challenge-cards.block > div > div > p:first-child :is(em
   body.corp main .columns.challenge-cards.block > div > div:only-child > .columns-img-col {
     grid-row: 2 / span 9;
     grid-column: 1;
+  }
+}
+
+/* icon-cards: each cell an icon card — the icon on its band (one image, the cell's width),
+   then 30px below it (20px on phones) the points in a coloured box: teal, dark gold and blue
+   in that order (stryker.com bg-teal / bg-gold-dark / bg-blue rich text under the icon
+   images of "A building WELL done": 440px cards at 1440px). Each point is a paragraph:
+   white Futura bold 21px on 1.06 lines, 15px apart; the box is padded 6% / 8% of the card
+   and hugs its points (the colour is the cell's, the icon on white above it). On phones the cards follow each other with no gap. (The selectors
+   outrank the news-detail template's 14px copy under a Columns image.) */
+body.corp .columns.icon-cards {
+  --columns-icon-card-gap: var(--space-block-l);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n + 1)) {
+  --columns-card-color: var(--color-primary);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n + 2)) {
+  --columns-card-color: var(--color-accent-link-hover);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n)) {
+  --columns-card-color: var(--color-navy-bright);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div) {
+  align-self: flex-start;
+  background-color: var(--columns-card-color);
+  background-clip: content-box;
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(.columns-img-col) {
+  margin: 0;
+  padding-bottom: var(--columns-icon-card-gap);
+  background-color: var(--color-white);
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(p:not(.columns-img-col)) {
+  margin: 0;
+  padding: 0 8% var(--space-block);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(.columns-img-col + p) {
+  padding-top: 6%;
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(p:last-child) {
+  padding-bottom: calc(var(--space-block-s) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.corp .columns.icon-cards {
+    --columns-icon-card-gap: var(--space-section);
   }
 }
