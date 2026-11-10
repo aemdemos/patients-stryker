@@ -131,8 +131,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 
   /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
      start of the full-width section, as on the source (the additive manufacturing lead
-     image), not centred like the template's article-column images */
-  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
+     image), not centred like the template's article-column images; `center` centres it
+     (styles/styles-corp.css) */
+  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3):not(.center) > .default-content-wrapper picture {
     margin-inline: 0 auto;
   }
 
