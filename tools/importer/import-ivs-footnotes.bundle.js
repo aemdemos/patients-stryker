@@ -364,7 +364,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-ivs-footnotes.js
   var PAGE_TEMPLATE = {
     name: "ivs-footnotes",
-    description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "\u276E BACK" link as a Fragment block; the page hero (gold H1, document code subhead) then, in a `separator` section, each revision as a bold `[[text-1-25]\u2026]` label, a `[[body-font]**\u2026**]` date line and its numbered references. Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button).',
+    description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "\u276E BACK" link as a Fragment block; the page hero (gold H1, document code subhead) then, in a `separator` section, each revision as a bold `[[text-1-25]\u2026]` label, a `[[body-font]**\u2026**]` date line and its numbered references. Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
     urls: [
       "https://www.stryker.com/us/en/interventional-spine/footnotes.html",
       "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
@@ -514,22 +514,33 @@ var CustomImportScript = (() => {
     if (rule) nodes.push(sectionMetadata(document, "separator"));
     return nodes;
   }
+  function disclaimerSection(document, src) {
+    const paras = [...src.querySelectorAll(".c-disclaimer p:not(#publishedDate)")].filter((p) => text(p)).map((p) => inlineCopy(document, p, document.createElement("p")));
+    if (!paras.length) return [];
+    return [document.createElement("hr"), ...paras, sectionMetadata(document, "disclaimer")];
+  }
   var import_ivs_footnotes_default = {
     transform: (payload) => {
       const { document, url, params } = payload;
       const source = new URL(params.originalURL || url);
       const published = publishedDate(document);
+      const dateLine = document.querySelector("#publishedDate");
+      const showDate = !!dateLine && !dateLine.classList.contains("hidden");
       const meta = WebImporter.Blocks.getMetadata(document);
       const src = document.querySelector('[role="main"]') || document.body;
       const isIndex = !!src.querySelector(".c-accordion .panel-group");
       const main = document.createElement("div");
-      main.append(...isIndex ? buildIndex(document, src) : buildDetail(document, src));
+      main.append(
+        ...isIndex ? buildIndex(document, src) : buildDetail(document, src),
+        ...disclaimerSection(document, document.body)
+      );
       document.body.replaceChildren(main);
       executeTransformers("afterTransform", main, payload);
       main.appendChild(document.createElement("hr"));
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
       meta.site = "corp";
       if (published) meta.published = published;
+      if (published && showDate) meta["last-updated"] = "show";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const rawPath = source.pathname.replace(/\/$/, "").replace(/\.html?$/, "");
@@ -540,7 +551,8 @@ var CustomImportScript = (() => {
         report: {
           title: meta.Title || document.title,
           template: PAGE_TEMPLATE.name,
-          kind: isIndex ? "index" : "detail"
+          kind: isIndex ? "index" : "detail",
+          "last-updated": published && showDate ? "show" : ""
         }
       }];
     }
