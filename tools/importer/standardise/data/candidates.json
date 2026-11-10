@@ -23,7 +23,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/variax-2-foot#s6b0",
@@ -158,7 +160,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/sports-medicine/products/pivot-guardian-distraction-system": {
    "live": "https://www.stryker.com/us/en/sports-medicine/products/pivot-guardian-distraction-system.html",
@@ -171,7 +174,9 @@
      "hash": "532114c833a9",
      "cluster": "columns-084",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/sports-medicine/products/pivot-guardian-distraction-system#s8b0",
@@ -217,7 +222,9 @@
      "hash": "a4ec5199829d",
      "cluster": "columns-098",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/sports-medicine/products/pivot-guardian-distraction-system#s18b0",
@@ -227,7 +234,9 @@
      "hash": "ca17d1e4b054",
      "cluster": "columns-029",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/sports-medicine/products/pivot-guardian-distraction-system#s20b0",
@@ -360,7 +369,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/nse/products/high-speed-drills": {
    "live": "https://www.stryker.com/us/en/nse/products/high-speed-drills.html",
@@ -592,7 +602,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/trauma-and-extremities/products/variax-2-distal-radius-and-distal-ulna": {
    "live": "https://www.stryker.com/us/en/trauma-and-extremities/products/variax-2-distal-radius-and-distal-ulna.html",
@@ -693,7 +704,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/variax-2-distal-radius-and-distal-ulna#s20b0",
@@ -718,7 +730,8 @@
      ],
      "preselect": "std-text"
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/spine/products/cranial-guidance-software": {
    "live": "https://www.stryker.com/us/en/spine/products/cranial-guidance-software.html",
@@ -743,7 +756,9 @@
      "hash": "4160daebfcfe",
      "cluster": "columns-080",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/spine/products/cranial-guidance-software#s5b0",
@@ -777,7 +792,9 @@
      "hash": "1cc02f9f027d",
      "cluster": "columns-119",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/spine/products/cranial-guidance-software#s9b0",
@@ -787,7 +804,9 @@
      "hash": "5a2c06466a5a",
      "cluster": "columns-080",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/spine/products/cranial-guidance-software#s10b0",
@@ -813,7 +832,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/communications/products/operon-d860": {
    "live": "https://www.stryker.com/us/en/communications/products/operon-d860.html",
@@ -828,7 +848,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/communications/products/operon-d860#s5b0",
@@ -1008,7 +1029,8 @@
       "std-text"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/foot-and-ankle/products/anchorage-2": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/anchorage-2.html",
@@ -1033,7 +1055,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/anchorage-2#s4b0",
@@ -1155,7 +1179,8 @@
      ],
      "preselect": "std-cards"
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/communications/products/s-series-equipment-management-system": {
    "live": "https://www.stryker.com/us/en/communications/products/s-series-equipment-management-system.html",
@@ -1178,7 +1203,9 @@
      "hash": "21bf6ff83046",
      "cluster": "columns-025",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/communications/products/s-series-equipment-management-system#s5b0",
@@ -1228,7 +1255,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/orthopaedic-instruments/products/ortho-q-guidance-system": {
    "live": "https://www.stryker.com/us/en/orthopaedic-instruments/products/ortho-q-guidance-system.html",
@@ -1291,7 +1319,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/interventional-spine/campaign/mild-procedure": {
    "live": "https://www.stryker.com/us/en/interventional-spine/campaign/mild-procedure.html",
@@ -1352,9 +1381,11 @@
      "fragment": false,
      "eligible": [
       "std-cards"
-     ]
+     ],
+     "preselect": "std-cards"
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/emergency-care/products/lucas-3": {
    "live": "https://www.stryker.com/us/en/emergency-care/products/lucas-3.html",
@@ -1418,7 +1449,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/emergency-care/products/lucas-3#s16b1",
@@ -1443,7 +1475,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/emergency-care/products/lucas-3#s16b3",
@@ -1468,7 +1501,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/emergency-care/products/lucas-3#s18b0",
@@ -1515,7 +1549,9 @@
      "hash": "f51c589e48ba",
      "cluster": "columns-084",
      "fragment": true,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/fragments/stryker/emergency-care/en/products/lucas/lucas-clinical-evidence/master#s4b0",
@@ -1552,7 +1588,8 @@
      "fragment": true,
      "eligible": [
       "std-text"
-     ]
+     ],
+     "preselect": "std-text"
     },
     {
      "id": "/std/us/en/fragments/stryker/emergency-care/en/products/lucas/lucas-product-specifications/master#s1b0",
@@ -1612,7 +1649,8 @@
      "fragment": true,
      "eligible": []
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/foot-and-ankle/products/prophecy": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/prophecy.html",
@@ -1637,7 +1675,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s9b0",
@@ -1647,7 +1687,9 @@
      "hash": "14bc0c0d5b77",
      "cluster": "columns-003",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s13b0",
@@ -1657,7 +1699,9 @@
      "hash": "6f2e59b9edfb",
      "cluster": "columns-005",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s14b0",
@@ -1667,7 +1711,9 @@
      "hash": "7fcbb4ea66f6",
      "cluster": "columns-005",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s15b0",
@@ -1677,7 +1723,9 @@
      "hash": "f7021a7ec9d8",
      "cluster": "columns-005",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s16b0",
@@ -1687,7 +1735,9 @@
      "hash": "1f6bb3f09666",
      "cluster": "columns-005",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s17b0",
@@ -1697,7 +1747,9 @@
      "hash": "aa2f01b046dc",
      "cluster": "columns-005",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s20b0",
@@ -1707,7 +1759,10 @@
      "hash": "36339dcf31ef",
      "cluster": "columns-072",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s21b0",
@@ -1729,7 +1784,10 @@
      "hash": "71c5c2e423df",
      "cluster": "columns-072",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/prophecy#s24b0",
@@ -1744,7 +1802,8 @@
      ],
      "preselect": "std-cards"
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/orthopaedic-instruments/products/system-9-power-tools": {
    "live": "https://www.stryker.com/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html",
@@ -1771,7 +1830,8 @@
      "fragment": false,
      "eligible": [
       "std-cards"
-     ]
+     ],
+     "preselect": "std-cards"
     },
     {
      "id": "/std/us/en/orthopaedic-instruments/products/system-9-power-tools#s10b0",
@@ -1858,7 +1918,8 @@
      ],
      "preselect": "std-cards"
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/joint-replacement/products/trident-ii": {
    "live": "https://www.stryker.com/us/en/joint-replacement/products/trident-ii.html",
@@ -1895,7 +1956,9 @@
      "hash": "9574fd399497",
      "cluster": "columns-077",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/trident-ii#s11b0",
@@ -1917,7 +1980,9 @@
      "hash": "ce9dc755ac2f",
      "cluster": "columns-004",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/trident-ii#s16b0",
@@ -1952,7 +2017,9 @@
      "hash": "0631d6baa642",
      "cluster": "columns-004",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/trident-ii#s25b0",
@@ -1962,9 +2029,12 @@
      "hash": "39d8666abafb",
      "cluster": "columns-004",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/foot-and-ankle/products/easyfuse": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/easyfuse.html",
@@ -1989,7 +2059,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/easyfuse#s11b0",
@@ -2001,7 +2073,8 @@
      "fragment": false,
      "eligible": [
       "std-text"
-     ]
+     ],
+     "preselect": "std-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/easyfuse#s13b0",
@@ -2112,7 +2185,8 @@
      "fragment": false,
      "eligible": []
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/joint-replacement/products/exeter": {
    "live": "https://www.stryker.com/us/en/joint-replacement/products/exeter.html",
@@ -2137,7 +2211,9 @@
      "hash": "f2ca1d1063ce",
      "cluster": "columns-027",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/exeter#s12b0",
@@ -2159,7 +2235,9 @@
      "hash": "554db61e6d1c",
      "cluster": "columns-027",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/exeter#s19b0",
@@ -2191,7 +2269,9 @@
      "hash": "e44e89310f81",
      "cluster": "columns-025",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/exeter#s27b0",
@@ -2217,7 +2297,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/foot-and-ankle/products/ortholoc-2-crosscheck": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/ortholoc-2-crosscheck.html",
@@ -2242,7 +2323,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-2-crosscheck#s5b0",
@@ -2254,7 +2337,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-2-crosscheck#s10b0",
@@ -2302,7 +2386,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump": {
    "live": "https://www.stryker.com/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump.html",
@@ -2403,7 +2488,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/nse/products/malis-disposable-non-stick-bipolar-forceps": {
    "live": "https://www.stryker.com/us/en/nse/products/malis-disposable-non-stick-bipolar-forceps.html",
@@ -2468,7 +2554,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip": {
    "live": "https://www.stryker.com/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip.html",
@@ -2517,7 +2604,9 @@
      "hash": "9e0c49a9615c",
      "cluster": "columns-054",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip#s9b0",
@@ -2531,7 +2620,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/foot-and-ankle/products/charlotte-lisfranc": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/charlotte-lisfranc.html",
@@ -2556,7 +2646,9 @@
      "hash": "d6a2b220906a",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/charlotte-lisfranc#s5b0",
@@ -2582,7 +2674,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/neurovascular/products/inzone-detachment-system": {
    "live": "https://www.stryker.com/us/en/neurovascular/products/inzone-detachment-system.html",
@@ -2621,7 +2714,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/neurovascular/products/inzone-detachment-system#s9b0",
@@ -2633,7 +2727,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/neurovascular/products/inzone-detachment-system#s10b0",
@@ -2645,9 +2740,11 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon": {
    "live": "https://www.stryker.com/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon.html",
@@ -2672,7 +2769,9 @@
      "hash": "c82459a36289",
      "cluster": "columns-049",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-text"
+     ]
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s5b0",
@@ -2684,7 +2783,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s8b0",
@@ -2720,7 +2820,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s11b0",
@@ -2732,7 +2833,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s12b0",
@@ -2742,7 +2844,10 @@
      "hash": "8e6cf680047b",
      "cluster": "columns-150",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s13b0",
@@ -2766,7 +2871,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s15b0",
@@ -2778,7 +2884,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s17b0",
@@ -2790,7 +2897,8 @@
      "fragment": false,
      "eligible": [
       "std-cards"
-     ]
+     ],
+     "preselect": "std-cards"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s18b0",
@@ -2802,7 +2910,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s19b0",
@@ -2814,7 +2923,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s21b0",
@@ -2826,7 +2936,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s22b0",
@@ -2850,7 +2961,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon#s27b0",
@@ -2864,7 +2976,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/surgical/services/smart-equipment-management": {
    "live": "https://www.stryker.com/us/en/surgical/services/smart-equipment-management.html",
@@ -3088,7 +3201,8 @@
      ],
      "preselect": "std-cards"
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/acute-care/products/prime-series": {
    "live": "https://www.stryker.com/us/en/acute-care/products/prime-series.html",
@@ -3127,7 +3241,8 @@
      "fragment": false,
      "eligible": [
       "std-cards"
-     ]
+     ],
+     "preselect": "std-cards"
     },
     {
      "id": "/std/us/en/acute-care/products/prime-series#s7b2",
@@ -3268,7 +3383,8 @@
      "fragment": false,
      "eligible": [
       "std-cards"
-     ]
+     ],
+     "preselect": "std-cards"
     },
     {
      "id": "/std/us/en/fragments/modals/procare/acute-care-equipment#s1b0",
@@ -3304,7 +3420,8 @@
      "fragment": true,
      "eligible": []
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/ent/products/instruments": {
    "live": "https://www.stryker.com/us/en/ent/products/instruments.html",
@@ -3451,7 +3568,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/smart-care/products/sync-badge": {
    "live": "https://www.stryker.com/us/en/smart-care/products/sync-badge.html",
@@ -3633,7 +3751,8 @@
      ],
      "preselect": "std-media-text"
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/emergency-care/products/lifepak-15": {
    "live": "https://www.stryker.com/us/en/emergency-care/products/lifepak-15.html",
@@ -3682,7 +3801,9 @@
      "hash": "e75585a0a335",
      "cluster": "columns-061",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/emergency-care/products/lifepak-15#s11b0",
@@ -3802,7 +3923,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "B"
   },
   "/std/us/en/joint-replacement/products/triathlon-cementless": {
    "live": "https://www.stryker.com/us/en/joint-replacement/products/triathlon-cementless.html",
@@ -3923,7 +4045,9 @@
      "hash": "f5fa72da29d7",
      "cluster": "columns-003",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ]
     },
     {
      "id": "/std/us/en/joint-replacement/products/triathlon-cementless#s15b0",
@@ -3961,7 +4085,8 @@
       "std-media-text"
      ]
     }
-   ]
+   ],
+   "half": "A"
   },
   "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system": {
    "live": "https://www.stryker.com/us/en/trauma-and-extremities/products/evolve-radial-head-system.html",
@@ -3998,7 +4123,10 @@
      "hash": "d326e08ad717",
      "cluster": "columns-020",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s11b0",
@@ -4008,7 +4136,10 @@
      "hash": "872728bfd519",
      "cluster": "columns-020",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s12b0",
@@ -4018,7 +4149,10 @@
      "hash": "92f275700c42",
      "cluster": "columns-020",
      "fragment": false,
-     "eligible": []
+     "eligible": [
+      "std-media-text"
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s15b0",
@@ -4030,7 +4164,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s16b0",
@@ -4042,7 +4177,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s17b0",
@@ -4054,7 +4190,8 @@
      "fragment": false,
      "eligible": [
       "std-media-text"
-     ]
+     ],
+     "preselect": "std-media-text"
     },
     {
      "id": "/std/us/en/trauma-and-extremities/products/evolve-radial-head-system#s18b0",
@@ -4080,7 +4217,8 @@
       "std-cards"
      ]
     }
-   ]
+   ],
+   "half": "B"
   }
  },
  "clusters": {
