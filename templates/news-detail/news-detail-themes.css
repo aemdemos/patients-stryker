@@ -79,10 +79,10 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   border-top: 0;
 }
 
-   @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
-   flex-direction: column;
-   }
+@media (width >= 600px) {
+  body.news-detail.full-width .columns > div {
+    flex-direction: column;
+  }
 
   /* the empty separator section: 50px to the next section from 600px (source 51px at
      1280px; 21px on phones, above) */
@@ -90,10 +90,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
     margin-bottom: var(--space-section-l);
   }
 
-  /* a 25/75 row (a cover beside its text) and a thumbnails row (text beside its download
-     thumbnails) stay side by side, as on the source (the 2022 Comprehensive Report
-     release: 145px cover beside the text at 700px; the leadership succession release) */
-  body.news-detail.full-width .columns:is(.columns-25-75, .thumbnails) > div {
+  /* 25/75, thumbnails, and gray-lead video rows stay side by side from the source tablet
+     breakpoint (600px here) */
+  body.news-detail.full-width .columns:is(.columns-25-75, .thumbnails, .gray-lead) > div {
     flex-direction: row;
   }
 
@@ -110,11 +109,11 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
   body.news-detail.full-width .columns > div > div:has(> .columns-youtube) {
     align-self: stretch;
   }
-  }
+}
 
-   @media (width >= 900px) {
-    body.news-detail.full-width .columns > div {
-     flex-flow: row wrap;
+@media (width >= 900px) {
+  body.news-detail.full-width .columns > div {
+    flex-flow: row wrap;
   }
 
   body.news-detail.full-width .columns > div > div:has(> .columns-youtube) {
