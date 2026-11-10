@@ -12,6 +12,40 @@
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
+/* Standard Columns variants (standardise pilot, branch standardise-v3): named, token-based,
+   no measured values. The block's default layout carries them (stacked on phones, 2 per row
+   from 600px, all in a row from 900px); a standard only fixes what the measured settings used
+   to vary: top-aligned cells, the default cell gutter, and the media + text widths options.
+   - std-media-text: an image or video beside its text (Narrow image: 1/3, Wide image: 2/3)
+   - std-cards: 2 to 4 equal columns, each an image above its text
+   - std-text: 2 to 4 equal text columns */
+body.corp .columns:where(.std-media-text, .std-cards, .std-text) > div {
+  align-items: flex-start;
+}
+
+body.corp .columns:where(.std-cards) .columns-img-col img {
+  width: 100%;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.std-media-text > div {
+    flex-wrap: nowrap;
+  }
+
+  body.corp .columns.std-media-text > div > div {
+    flex: 1 1 0;
+  }
+
+  body.corp .columns.std-media-text.narrow-image > div > div:has(picture, .dm-video-wrapper, video) {
+    flex: 0 0 33.333%;
+  }
+
+  body.corp .columns.std-media-text.wide-image > div > div:has(picture, .dm-video-wrapper, video) {
+    flex: 0 0 66.667%;
+  }
+}
+
+
 /* ---- corp text: the corp body style instead of the patients 17.5px column copy ---- */
 
 body.corp .columns p,
