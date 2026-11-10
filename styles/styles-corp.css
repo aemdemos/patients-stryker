@@ -18,6 +18,7 @@
   --map-embed-height: 300px;
   --map-embed-height-m: 400px;
   --corp-back-to-top-size: 40px;
+  --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
@@ -800,6 +801,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 :where(body.corp) main > .section.quote-1-75 > .default-content-wrapper p:has(> span.color-gold) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* section style `link-1-5`: a Bold + Underline link alone on its line (link-strong) at 21px
+   (stryker.com .fontsize-1-5em standalone link, e.g. "Read the full article here." of
+   "Stryker leaders share DE&I perspectives in Savoy Magazine"); the copy keeps its size */
+:where(body.corp) main > .section.link-1-5 > div p:has(> a.link-strong:only-child),
+:where(body.corp) .tabs-panel > .section.link-1-5 > div p:has(> a.link-strong:only-child),
+:where(body.corp) .accordion-item-body > .section.link-1-5 > div p:has(> a.link-strong:only-child) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--body-line-height-l);
 }
 
 :where(body.corp) main > div.section.ps-0,

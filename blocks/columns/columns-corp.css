@@ -1110,3 +1110,40 @@ body.corp main .columns.phone-image-2-3.image-left.block > div:nth-child(n) > di
 body.corp main .columns.cta-tiles.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):nth-child(n) {
   margin-bottom: var(--space-block-l);
 }
+
+/* quote-last: the last cell holds a pull quote (stryker.com dimensional box with a
+   .fontsize-1-75em .urw-egyptienne quote and a .fontsize-1-25em .futura-bold attribution, e.g.
+   "Stryker leaders share DE&I perspectives in Savoy Magazine"): the quote in the light serif,
+   24.5px on 1.06 lines; a fully Bold paragraph is the attribution, Futura bold 17.5px in the
+   dark gold; both indented 40px in a 30px inset. With `boxed-last` for the white box */
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) {
+  padding: var(--space-inset-l);
+}
+
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) > p:nth-child(n):nth-child(n):nth-child(n) {
+  margin-inline-start: var(--corp-quote-indent);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n) {
+  color: var(--color-accent-link-hover);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height-l);
+}
+
+/* image-centre: a photo or logo at its own size (no wider than its cell), centred in its
+   cell (stryker.com .c-standalone-image .text-center, e.g. the 209px award seal of "Stryker
+   receives the Don Clifton Strengths-Based Culture Award") */
+body.corp main .columns.image-centre.block > div:nth-child(n) .columns-img-col:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  text-align: center;
+}
+
+body.corp main .columns.image-centre.block > div:nth-child(n) .columns-img-col:nth-child(n) img:nth-child(n) {
+  width: auto;
+  max-width: 100%;
+}

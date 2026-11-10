@@ -116,12 +116,14 @@
 
 /* …with a mobile image (hero-corp.js .hero-image-mobile) phones show it, the box over its
    top 20px in from the edges (most white-box sources, e.g. "Reimagining nursing for the
-   future": 350px wide at 390px); with text-below the box sits under the image */
-.hero-corp.image-slide.white-box > div:first-child:where(:has(picture.hero-image-mobile)) {
+   future": 350px wide at 390px; the gold box of "Why AEDs belong on back-to-school
+   checklists"); with text-below the box sits under the image (the gold box of "The
+   importance of manufacturer maintenance plans for medical equipment") */
+.hero-corp.image-slide:is(.white-box, .gold-box) > div:first-child:where(:has(picture.hero-image-mobile)) {
   display: block;
 }
 
-.hero-corp.image-slide.white-box:where(:has(picture.hero-image-mobile):not(.text-below)) > div:last-child {
+.hero-corp.image-slide:is(.white-box, .gold-box):where(:has(picture.hero-image-mobile):not(.text-below)) > div:last-child {
   position: absolute;
   inset: var(--space-block-l) var(--space-block-l) auto;
   margin: 0;
