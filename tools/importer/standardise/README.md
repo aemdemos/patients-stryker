@@ -83,14 +83,18 @@ These are layout standards: the text sizes stay as authored. Typography is its o
     shadow card) and `gold-first` (a gold card);
   - coloured Box lines, by their colour only (`Box: Gold, top 5%, left 5%` → `Box: Gold`), with
     the standard's padding and gap. A coloured column holding several boxes (`Cell colours
-    1: Gold` + Box lines) becomes that many coloured boxes.
+    1: Gold` + Box lines) becomes that many coloured boxes; a coloured cell gets the same
+    standard padding;
+  - empty trailing columns (2 cards in a 3-column grid keep the width of the 3-up rows beside
+    them).
 - **Dropped (measured values):**
   - `Text box`, `Grid`, `Column widths` (except the media + text options) and `Columns`;
   - measured and white Box lines, and blank lines in cells;
   - section padding / margin when the section holds only that block.
 - **Text in the middle:** a Media + text column set well down (top padding + margin from
   `Text box` or an opening Box line, counted as a share of the block: 5% or more) is the AEM
-  way of centring the text beside a tall image; it takes `text-middle`.
+  way of centring the text beside a tall image; it takes `text-middle` (the text cell is
+  centred, the image stays at the top when the text is the taller).
 - **Already standard:** `page-intro` (the product intro) is never offered a standard.
 - CSS: `blocks/columns/columns-corp.css` (top of the file). The block's own layout carries the
   standards; they only fix alignment, the media + text widths and the box padding.

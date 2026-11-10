@@ -46,10 +46,6 @@ body.corp .columns:where(.std-media-text, .std-cards, .std-text) .corp-spacing-b
     flex: 1 1 0;
   }
 
-  /* Text in the middle: the text centred beside the image */
-  body.corp .columns.std-media-text.text-middle > div {
-    align-items: center;
-  }
 
   body.corp .columns.std-media-text.narrow-image > div > div:has(picture, .dm-video-wrapper, video) {
     flex: 0 0 33.333%;
@@ -57,6 +53,12 @@ body.corp .columns:where(.std-media-text, .std-cards, .std-text) .corp-spacing-b
 
   body.corp .columns.std-media-text.wide-image > div > div:has(picture, .dm-video-wrapper, video) {
     flex: 0 0 66.667%;
+  }
+
+  /* Text in the middle: the text centred beside the image (the image stays at the top when
+     the text is the taller) */
+  body.corp .columns.std-media-text.text-middle > div > div:not(:has(picture, .dm-video-wrapper, video)) {
+    align-self: center;
   }
 }
 
@@ -841,6 +843,11 @@ body.corp .columns > div > .cell-bg {
    overflowing the row (same structure as those rules, so this later one applies) */
 body.corp .columns > div > div.cell-bg {
   flex-shrink: 1;
+}
+
+/* a coloured cell in a standard: the standard's box padding (its measured box spacing goes) */
+body.corp .columns:where(.std-media-text, .std-cards, .std-text) > div > div.cell-bg {
+  padding: var(--space-block-l);
 }
 
 body.corp .columns > div > .cell-bg-white { --corp-cell-bg: var(--color-white); }

@@ -277,13 +277,8 @@ export function transform(sectionEl, blockIndex, standard) {
   block.className = ['columns', standard, ...kept].join(' ');
   if (lost.length) changes.push(`layout ${lost.join(', ')} replaced by ${STANDARDS[standard].label}`);
 
-  // the empty trailing cells of a row (a 4-column control with 2 cards) go
-  [...block.children].forEach((row) => {
-    while (row.children.length > 2 && row.lastElementChild && cellKind(row.lastElementChild) === 'empty') {
-      row.lastElementChild.remove();
-      changes.push('an empty column removed');
-    }
-  });
+  // (an empty trailing cell stays: 2 cards in a 3-column grid keep the width of the 3-up rows
+  // beside them, as on the source)
 
   // settings rows: the block's measured ones go; Column widths becomes the media + text option
   const rows = settingsRows(section);
