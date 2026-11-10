@@ -35,6 +35,7 @@
 
 import buildArticle, {
   richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
+  heroText, heroTextRows, heroImage,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
 import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-components.js';
@@ -812,6 +813,40 @@ function gridRows(main) {
 }
 
 /**
+ * A banner (stryker.com .pDiv or .fullWidthImageHero with a text box and its image: a text
+ * column over the image's top left from 840px, the text first on phones) → `Hero Corp
+ * (banner)` in a section of its own: rows the image (the desktop one, picture source
+ * ≥840px), then the text. The column width (col-sm-4 / 6 / 8) → the section's `Text width`
+ * (33 / 50 / 67; none for the full width).
+ */
+function banners(main, doc) {
+  main.querySelectorAll('.pDiv, .fullWidthImageHero').forEach((banner) => {
+    const box = banner.querySelector('.textBoxId');
+    const img = banner.querySelector('.imgBoxId img');
+    if (!box || !img || !text(box)) return;
+    const source = banner.querySelector('.imgBoxId source[srcset]');
+    const src = source ? source.getAttribute('srcset').split(/\s+/)[0] : img.getAttribute('src');
+    const heroRows = heroTextRows(heroText(box, doc));
+    if (!heroRows.rows.length) return;
+    // a phone image of its own (another asset than the desktop one, rep-portal): a second row
+    const asset = (url) => (url || '').split('?')[0];
+    const rows = [[heroImage(img, doc, src)]];
+    if (source && asset(img.getAttribute('src')) !== asset(src)) rows.push([heroImage(img, doc)]);
+    const block = WebImporter.Blocks.createBlock(doc, {
+      name: 'Hero Corp (banner)',
+      cells: [...rows, ...heroRows.rows],
+    });
+    block.setAttribute('data-keep', 'section');
+    const props = {};
+    const cols = Number((/\bcol-sm-(\d+)\b/.exec(box.className) || [])[1] || 12);
+    if (cols < 12) props['Text width'] = String(Math.round((cols / 12) * 100));
+    if (heroRows.box) props['Text box'] = heroRows.box;
+    if (Object.keys(props).length) block.setAttribute('data-section-props', JSON.stringify(props));
+    banner.replaceWith(block);
+  });
+}
+
+/**
  * A full-width image (stryker.com .imgBoxId.full-width-img, 22 boxes on 17 pages: the
  * container width, edge to edge on phones): its image in a section with the
  * `full-width-image` style, `shadow` for .bg-shadow (template CSS). The desktop image
@@ -918,8 +953,9 @@ export default function transform(hookName, element, payload) {
   const path = sourcePath(payload);
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
-  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   dropDamVideos(main);
+  banners(main, doc);
+  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);

@@ -46,6 +46,7 @@
   --corp-local-nav-more-dot: 5px;
   --corp-local-nav-more-dot-top: 7px; /* the dots' top below the button's top */
   --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
+  --corp-dark-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;

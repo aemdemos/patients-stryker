@@ -225,16 +225,9 @@ var CustomImportScript = (() => {
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
     const doc = root.ownerDocument;
-    const futuraOnly = (node, direction) => {
-      for (let sibling = node[direction]; sibling && sibling.nodeName !== "BR"; sibling = sibling[direction]) {
-        const isFutura = sibling.nodeType === 1 && (sibling.matches(".futura-bold") || [...sibling.querySelectorAll(".futura-bold")].map(text2).join("") === text2(sibling));
-        if (!isFutura && sibling.textContent.replace(/[\s\u00a0]+/g, "")) return false;
-      }
-      return true;
-    };
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold, .standalone-link") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
-      if (!text2(b) || !futuraOnly(b, "previousSibling") || !futuraOnly(b, "nextSibling")) return;
+      if (b.closest(".urw-egyptienne, a") || b.querySelector(".urw-egyptienne, a") || !text2(b)) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text2(block) === text2(b)) return;
@@ -934,6 +927,117 @@ var CustomImportScript = (() => {
     out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
+  var HERO_WHITE = /^(?:#fff|#ffffff|white|#edeeec|rgb\(\s*255\s*,\s*255\s*,\s*255\s*\)|rgb\(\s*237\s*,\s*238\s*,\s*236\s*\))$/i;
+  var HERO_HEADING_SIZE = 28;
+  var HERO_TEXT_SIZES = {
+    "text-1-5": 21,
+    "text-1-75": 24.5,
+    "text-2": 28,
+    "text-2-5": 35,
+    "text-3-5": 49
+  };
+  var HERO_BOXES = ["gold", "white", "purple", "teal", "blue", "dark-purple-gradient"];
+  function heroText(container, doc) {
+    if (!container) return [];
+    container.querySelectorAll('[style*="color"]').forEach((el) => {
+      if (!HERO_WHITE.test(ownColour(el)) || !text2(el)) return;
+      const outer = el.parentElement.closest('[style*="color"]');
+      if (outer && container.contains(outer) && HERO_WHITE.test(ownColour(outer))) return;
+      el.prepend(doc.createTextNode("[[color-white]"));
+      el.append(doc.createTextNode("]"));
+    });
+    const tagCopy2 = (n) => {
+      if (typeof n.copyStyle !== "string" || !n.copyStyle || !n.firstChild) return;
+      const own = n.copyStyle.split(",").map((v) => v.trim());
+      const size = own.find((v) => /^p-\d/.test(v));
+      const tags = [size ? `text-${size.slice(2)}` : "", own.includes("serif") ? "serif" : ""].filter(Boolean);
+      if (!tags.length || n.matches("ul, ol")) return;
+      n.prepend(doc.createTextNode(`[[${tags.join(",")}]`));
+      n.append(doc.createTextNode("]"));
+    };
+    const TEXT = ".c-largeheadline, .c-rich-text-editor, .buttonset, .c-curatedcta";
+    const boxColour = (c) => {
+      const box = c.matches('.has-background, [class*="bg-"]') ? c : c.querySelector(".has-background");
+      const name = box && (/\bbg-([a-z-]+)/.exec(box.className) || [])[1];
+      return HERO_BOXES.includes(name) ? name : "";
+    };
+    return [...container.querySelectorAll(TEXT)].filter((c) => !c.parentElement.closest(TEXT) && text2(c)).flatMap((c) => {
+      const colour = boxColour(c);
+      const mark = (nodes2) => {
+        nodes2.forEach((n) => {
+          if (colour) n.heroBox = colour;
+        });
+        return nodes2;
+      };
+      if (c.matches(".c-largeheadline")) return mark(headlineNodes(c, doc));
+      if (c.matches(".buttonset, .c-curatedcta")) return buttonNodes(c, doc);
+      c.querySelectorAll('[class*="fontsize-"]').forEach((span) => {
+        const vw = (/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className) || [])[1];
+        if (!vw || !text2(span) || span.parentElement.closest('[class*="-vw"], [class*="vw "]')) return;
+        span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith("fontsize-")));
+        bracketTag([...span.childNodes], `headline-${vw}`, c);
+      });
+      c.querySelectorAll("h1, h2, h3").forEach((h) => {
+        h.querySelectorAll('[class*="fontsize-"]').forEach((span) => {
+          const factor = SIZE_FACTORS[(/\bfontsize-[\d-]+em\b/.exec(span.className) || [])[0]];
+          if (!factor || !text2(span) || span.parentElement.closest('[class*="fontsize-"]')) return;
+          const px = factor * HERO_HEADING_SIZE;
+          const tag = Object.entries(HERO_TEXT_SIZES).sort((a, b) => Math.abs(a[1] - px) - Math.abs(b[1] - px))[0][0];
+          span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith("fontsize-")));
+          bracketTag([...span.childNodes], tag, c);
+        });
+      });
+      const { nodes } = richTextNodes(c, doc);
+      nodes.forEach(tagCopy2);
+      return mark(nodes);
+    });
+  }
+  function heroTextRows(nodes) {
+    const colour = nodes.length ? nodes[0].heroBox : "";
+    if (!colour) return { rows: nodes.length ? [[nodes]] : [], box: "" };
+    const end = nodes.findIndex((n) => n.heroBox !== colour);
+    const boxed = end < 0 ? nodes : nodes.slice(0, end);
+    const rest = end < 0 ? [] : nodes.slice(end);
+    return { rows: [[boxed], ...rest.length ? [[rest]] : []], box: colour };
+  }
+  function heroImage(img, doc, src) {
+    const out = doc.createElement("img");
+    out.setAttribute("src", src || img.getAttribute("src"));
+    out.setAttribute("alt", img.getAttribute("alt") || "");
+    return out;
+  }
+  function heroSlide(component, doc) {
+    const slide = component.querySelector(".carouselslide:not(.slick-cloned)") || component;
+    const desktop = slide.querySelector(".experienceFragment-ef img");
+    const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
+    const first = desktop || mobile || slide.querySelector("img");
+    const videoComponent = slide.querySelector(".c-standalone-video");
+    const video = !desktop && videoComponent ? videoLink(videoComponent, doc) : null;
+    const rows = [];
+    if (video) rows.push([video]);
+    if (first) rows.push([heroImage(first, doc)]);
+    if (first && desktop && mobile) rows.push([heroImage(mobile, doc)]);
+    if (!rows.length) return null;
+    const overlay = slide.querySelector(".overlayparsys");
+    const heroRows = heroTextRows(heroText(overlay, doc));
+    rows.push(...heroRows.rows);
+    const props = {};
+    const style = overlay ? overlay.getAttribute("style") || "" : "";
+    const pct = (re) => {
+      const found = style.match(re);
+      return found ? String(parseFloat(found[1])) : null;
+    };
+    const top = pct(/top:\s*(-?\d+(?:\.\d+)?)%/i);
+    const left = pct(/margin-left:\s*(-?\d+(?:\.\d+)?)%/i);
+    const right = pct(/width:\s*calc\(\s*100%\s*-\s*[\d.]+%\s*-\s*(-?\d+(?:\.\d+)?)%\s*\)/i);
+    if (top !== null || left !== null || right !== null) {
+      props["Text position"] = [top || 0, left || 0, right || 0].join(", ");
+    }
+    if (overlay && overlay.classList.contains("mobile_Bottom")) props["Text on phones"] = "below";
+    if (!mobile) props["Text on phones"] = "alone";
+    if (heroRows.box) props["Text box"] = heroRows.box;
+    return { block: WebImporter.Blocks.createBlock(doc, { name: "Hero Corp", cells: rows }), props };
+  }
   function buildArticle(element, { keep = "", spacer = true, componentStyle = null } = {}) {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
@@ -1017,8 +1121,13 @@ var CustomImportScript = (() => {
       }
       if (keep && component.matches(keep)) {
         if (component.getAttribute("data-keep") === "section") {
-          startSection("kept", component.getAttribute("data-section-style") || void 0).nodes.push(component);
+          const kept = startSection("kept", component.getAttribute("data-section-style") || void 0);
+          kept.nodes.push(component);
+          if (component.hasAttribute("data-section-props")) {
+            kept.props = JSON.parse(component.getAttribute("data-section-props"));
+          }
           component.removeAttribute("data-section-style");
+          component.removeAttribute("data-section-props");
           lastKept = sections[sections.length - 1];
           current = null;
           return;
@@ -1044,8 +1153,10 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-autocarousel")) {
-        if (!component.querySelector("img")) return;
-        startSection("hero").nodes.push(component);
+        const hero = heroSlide(component, doc);
+        if (!hero) return;
+        startSection("hero").props = hero.props;
+        current.nodes.push(hero.block);
         current = null;
         return;
       }
@@ -1267,10 +1378,11 @@ var CustomImportScript = (() => {
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
       });
-      if (section.style) {
+      const props = section.props || {};
+      if (section.style || Object.keys(props).length) {
         out.push(WebImporter.Blocks.createBlock(doc, {
           name: "Section Metadata",
-          cells: { style: section.style }
+          cells: __spreadValues(__spreadValues({}, section.style ? { style: section.style } : {}), props)
         }));
       }
     });
@@ -2422,6 +2534,31 @@ var CustomImportScript = (() => {
       }
     });
   }
+  function banners(main, doc) {
+    main.querySelectorAll(".pDiv, .fullWidthImageHero").forEach((banner) => {
+      const box = banner.querySelector(".textBoxId");
+      const img = banner.querySelector(".imgBoxId img");
+      if (!box || !img || !text3(box)) return;
+      const source = banner.querySelector(".imgBoxId source[srcset]");
+      const src = source ? source.getAttribute("srcset").split(/\s+/)[0] : img.getAttribute("src");
+      const heroRows = heroTextRows(heroText(box, doc));
+      if (!heroRows.rows.length) return;
+      const asset = (url) => (url || "").split("?")[0];
+      const rows = [[heroImage(img, doc, src)]];
+      if (source && asset(img.getAttribute("src")) !== asset(src)) rows.push([heroImage(img, doc)]);
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: "Hero Corp (banner)",
+        cells: [...rows, ...heroRows.rows]
+      });
+      block.setAttribute("data-keep", "section");
+      const props = {};
+      const cols = Number((/\bcol-sm-(\d+)\b/.exec(box.className) || [])[1] || 12);
+      if (cols < 12) props["Text width"] = String(Math.round(cols / 12 * 100));
+      if (heroRows.box) props["Text box"] = heroRows.box;
+      if (Object.keys(props).length) block.setAttribute("data-section-props", JSON.stringify(props));
+      banner.replaceWith(block);
+    });
+  }
   function fullWidthImages(main, doc) {
     main.querySelectorAll(".imgBoxId.full-width-img").forEach((box) => {
       var _a, _b;
@@ -2498,8 +2635,9 @@ var CustomImportScript = (() => {
     const main = doc.querySelector('[role="main"]') || element;
     const path = sourcePath(payload);
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
-    main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     dropDamVideos(main);
+    banners(main, doc);
+    main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
     const nav = localNav(main, doc);

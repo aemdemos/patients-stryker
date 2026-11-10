@@ -9,6 +9,63 @@
   padding: 0;
 }
 
+/* ---- banner: one image with a text column over its top left from 600px (stryker.com .pDiv
+   and .fullWidthImageHero, from 840px: the column 20px from the top, the Section Metadata
+   `Text width` wide, default the full width); on phones the text first, then the image */
+.hero-corp.banner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hero-corp.banner picture,
+.hero-corp.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-corp.banner picture.hero-image-desktop {
+  display: none;
+}
+
+.hero-corp.banner > div:last-child > :last-child {
+  margin-bottom: 0;
+}
+
+/* the column's text 15px in from the banner's edges (stryker.com column gutter) */
+.hero-corp.banner > div:last-child {
+  padding-inline: var(--space-block);
+}
+
+@media (width >= 600px) {
+  /* the banner in the page container, 15px from the edges (edge to edge on phones) */
+  .hero-corp-container .hero-corp-wrapper:has(> .hero-corp.banner) {
+    padding-inline: var(--space-block);
+  }
+
+  .hero-corp.banner {
+    display: block;
+    position: relative;
+  }
+
+  .hero-corp.banner picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero-corp.banner picture.hero-image-mobile {
+    display: none;
+  }
+
+  .hero-corp.banner > div:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: var(--hero-banner-text-width, 100%);
+    padding-block: var(--space-block-l);
+  }
+}
+
 .hero-corp.image-slide {
   --hero-slide-top: 15%;
   --hero-slide-left: 5%;
@@ -105,5 +162,61 @@
     inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
     margin: 0;
     padding: var(--space-block-l);
+  }
+}
+
+/* on phones a slide whose text goes below its image shows white text in the text colour, on
+   the page's white (stryker.com .mobile_Bottom with .mobile-text-black / dark_gray) */
+.hero-corp.image-slide.text-below span.color-white {
+  --span-color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  .hero-corp.image-slide.text-below span.color-white {
+    --span-color: var(--color-white);
+  }
+}
+
+/* `Text on phones: alone` (Section Metadata): on phones the slide's text without its image
+   (stryker.com slides that have no phone image) */
+.hero-corp.image-slide.text-alone > div:first-child {
+  display: none;
+}
+
+/* `Text box` (Section Metadata): the first text row in a coloured box (stryker.com
+   .has-background in a slide overlay: 20px padding; in a banner text column: 10px, 15px in
+   from the column) */
+.hero-corp[data-text-box="gold"] { --hero-text-box: var(--color-accent); }
+.hero-corp[data-text-box="white"] { --hero-text-box: var(--color-white); }
+.hero-corp[data-text-box="purple"] { --hero-text-box: var(--color-purple); }
+.hero-corp[data-text-box="teal"] { --hero-text-box: var(--color-primary); }
+.hero-corp[data-text-box="blue"] { --hero-text-box: var(--color-navy-bright); }
+.hero-corp[data-text-box="dark-purple-gradient"] { --hero-text-box: var(--corp-dark-purple-gradient); }
+
+.hero-corp .hero-corp-text-box {
+  box-sizing: border-box;
+  padding: var(--space-block-l);
+  background: var(--hero-text-box);
+}
+
+.hero-corp.banner .hero-corp-text-box {
+  margin-inline: var(--space-block);
+  padding: var(--space-block-s);
+}
+
+@media (width >= 600px) {
+  .hero-corp.image-slide.text-alone > div:first-child {
+    display: block;
+  }
+}
+
+/* a video slide: the video from 600px, its phone image (if any) below 600px */
+.hero-corp.image-slide .hero-video {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .hero-corp.image-slide .hero-video {
+    display: block;
   }
 }

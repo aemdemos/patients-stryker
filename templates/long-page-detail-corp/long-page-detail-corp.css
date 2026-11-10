@@ -401,6 +401,7 @@ body.long-page-detail-corp main .default-content-wrapper > h1:has(+ p > span[cla
 body.long-page-detail-corp {
   --long-page-detail-corp-copy-2-5: 35px;
   --long-page-detail-corp-scale-0-8: 0.8em; /* source span.fontsize-8em */
+  --long-page-detail-corp-hero-line-height: 1.35; /* measured: stryker.com hero headline lines (103.95px at 77px, 28.35px at 21px) */
   --long-page-detail-corp-arrow-0-8-height: 5px; /* half the link arrow in 11.2px text (stryker.com: a 9.52px icon, 9px tall, its top level with the capitals) */
   --long-page-detail-corp-arrow-0-8-width: 5px;
   --long-page-detail-corp-serif-copy-line-height: 1.6; /* measured: a 14px Egyptienne span in a 14px / 19.25px source paragraph renders 22.4px lines */
@@ -1155,4 +1156,27 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link u {
 body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::after {
   border-width: var(--long-page-detail-corp-arrow-0-8-height) 0 var(--long-page-detail-corp-arrow-0-8-height) var(--long-page-detail-corp-arrow-0-8-width);
   vertical-align: -0.5px;
+}
+
+/* ---- the hero (Hero Corp, slide and banner): its text sizes are the bracket tags of the
+   text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
+   the block's 2vw default (stryker.com hero overlays and banner text boxes) */
+body.long-page-detail-corp main .hero-corp > div:last-child > * {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* …the copy 20px under the headline, a button 30px (stryker.com: the Large Headline's 30px,
+   less the rich text's -2% for copy) */
+body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) + :not(:has(> span[class*="headline-"])) {
+  margin-top: var(--space-block-l);
+}
+
+body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) + .button-wrapper {
+  margin-top: var(--space-section);
+}
+
+/* …its headline lines 1.35x their size apart (stryker.com hero lines: 103.95px at 77px) */
+body.long-page-detail-corp main .hero-corp span[class*="headline-"] {
+  line-height: var(--long-page-detail-corp-hero-line-height);
 }

@@ -7,8 +7,6 @@
 import videoParser from './parsers/video.js';
 import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
-import heroFullWidthImageParser from './parsers/hero-full-width-image.js';
-import heroImageSlideParser from './parsers/hero-image-slide.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
@@ -19,7 +17,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
   name: 'long-page-detail-corp',
-  description: 'www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav Corp, full-width image hero / carousel as Hero Corp (image-slide), Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).',
+  description: 'www.stryker.com long-page-detail pages (#469): H1 title; Virtual Learning Center video section (underlined H2 title, Video block, H3 description, Cards Corp (resources) downloads) or a shared Experience Fragment as a Fragment block; video detail pages (Video + caption); text articles; medical-education and landing pages (source column rows as Columns, local navigation as Local Nav Corp, single-slide carousel as Hero Corp (the slide), .pDiv / full-width image hero as Hero Corp (banner), their layout as Section Metadata properties, Marketo Form with the contact-aside Fragment); small print and document code as a `disclaimer` section; `published` with `last-updated: false` (the corp Last Updated line is not shown for now).',
   urls: [
     'https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris.html',
     'https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed.html',
@@ -29,8 +27,6 @@ const PAGE_TEMPLATE = {
     { name: 'video', instances: ['.c-standalone-video'] },
     { name: 'cards-corp-resources', instances: ['.c-resourcesanddownload'] },
     { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
-    { name: 'hero-full-width-image', instances: ['.fullWidthImageHero'] },
-    { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
   ],
 };
 
@@ -39,8 +35,6 @@ const parsers = {
   video: videoParser,
   'cards-corp-resources': cardsCorpResourcesParser,
   'cards-corp-teaser': cardsCorpTeaserParser,
-  'hero-full-width-image': heroFullWidthImageParser,
-  'hero-image-slide': heroImageSlideParser,
 };
 
 // TRANSFORMER REGISTRY — the sections transformer rebuilds the body first; the shared
