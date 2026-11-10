@@ -1228,3 +1228,74 @@ body.corp main .columns.number-quote.block > div:nth-child(n) > div:nth-child(2)
     margin-inline: var(--space-block);
   }
 }
+
+/* caption-serif: photos captioned in the serif (stryker.com Curated CTA titles under
+   headshots, e.g. the 2024 ANA Innovation Award winners; the surgeon quotes under the
+   Sonopet iQ portraits), 20px below the photo: a Heading 4 is the Egyptienne bold caption
+   (17.5px from 600px, 14px on phones; also in a cell without a photo), a paragraph the 17.5px
+   light serif quote, a
+   paragraph opening with a Bold line the 14px serif name and role, the name Futura bold */
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):nth-child(n):nth-child(n):has(+ :is(h4, p)) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > h4:nth-child(n):nth-child(n) {
+  margin-block: 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:has(> strong:first-child + br):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:nth-child(n) > strong:first-child:has(+ br):nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > h4:nth-child(n):nth-child(n) {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+/* quote-3vw: the last cell is a Large Headline pull quote beside a photo (stryker.com
+   .fontsize-3vw urw-egyptienne quote and a .fontsize-2vw futura-bold attribution, e.g.
+   "Kwamane Liddell wins ANA Innovation award"): the quote centred in the light serif at 6vw,
+   from 600px 3vw capped at 42px, on 1.35 lines; a fully Bold paragraph is the attribution,
+   right-aligned Futura bold at 4vw, from 600px 2vw capped at 28px */
+body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+  text-align: center;
+}
+
+body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-top: var(--space-section);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  text-align: end;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) {
+    padding: calc(2 * var(--space-inset-l)) var(--space-block-l) 0;
+  }
+
+  body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-top: calc(var(--space-section) + var(--space-inset-m));
+  }
+}
