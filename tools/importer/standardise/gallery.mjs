@@ -23,7 +23,8 @@ const content = opt('--content');
 const out = opt('--out');
 const per = Number(opt('--per', 3));
 const instances = Object.fromEntries(readFileSync(opt('--instances'), 'utf8').split('\n').filter(Boolean)
-  .map((l) => JSON.parse(l)).map((i) => [i.id, i]));
+  .map((l) => JSON.parse(l))
+  .map((i) => [i.id, i]));
 const clusters = JSON.parse(readFileSync(opt('--clusters'), 'utf8'))
   .filter((c) => !c.tail).sort((a, b) => b.members.length - a.members.length);
 
@@ -79,13 +80,7 @@ const html = await page.evaluate(async ({ src, list, n }) => {
         + `Changes: ${changes.join('; ') || 'none'}.`));
       sections.push(note);
       // the block and its settings only (the section's other content is not part of the example)
-      [...result.children].forEach((child, i) => {
-        const kept = child.classList.contains('section-metadata') || i === [...result.children].indexOf(
-          [...result.querySelectorAll(':scope > div[class]')].filter((b) => !b.classList.contains('section-metadata'))[c.block],
-        );
-        if (!kept) child.remove();
-      });
-      sections.push(doc.importNode(result, true));
+      sections.push(doc.importNode(m.isolate(result, c.block), true));
     });
   });
   const meta = el('div');

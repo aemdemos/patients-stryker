@@ -1,0 +1,174 @@
+/* Standardise pilot (branch standardise-v3): the review overlay (scripts/standardise-preview.js),
+   preview hosts only. */
+.std-layer {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.std-bar {
+  position: absolute;
+  box-sizing: border-box;
+  max-width: 360px;
+  padding: var(--space-block-xs) var(--space-block-s);
+  border: 1px solid var(--color-primary);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-black);
+  font-family: var(--ui-font-family);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
+  pointer-events: auto;
+}
+
+.std-bar[data-choice] {
+  border-color: var(--color-success);
+}
+
+.std-bar[data-choice="legacy"] {
+  border-color: var(--color-secondary);
+}
+
+.std-bar p,
+.std-panel p {
+  margin: 0 0 var(--space-block-xs);
+}
+
+.std-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-block-xs);
+  margin-bottom: var(--space-block-xs);
+}
+
+.std-bar button,
+.std-panel button,
+.std-board button {
+  padding: var(--space-block-xs) var(--space-block-s);
+  border: 1px solid var(--color-primary);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.std-bar button.std-current,
+.std-panel button.std-current {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.std-badge {
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.std-cluster,
+.std-note {
+  color: var(--color-text-muted);
+}
+
+.std-details summary {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.std-live {
+  align-self: center;
+}
+
+.std-changes {
+  margin: var(--space-block-xs) 0 0;
+  padding-left: var(--space-block-l);
+}
+
+.std-panel {
+  position: fixed;
+  right: var(--space-block-l);
+  bottom: var(--space-block-l);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-block-xs);
+  max-width: 280px;
+  padding: var(--space-block);
+  border: 1px solid var(--color-primary);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--ui-font-family);
+  font-size: var(--body-font-size-xs);
+}
+
+.std-panel-title {
+  font-family: var(--ui-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+.std-reviewer input {
+  box-sizing: border-box;
+  width: 100%;
+  font: inherit;
+}
+
+main .std-candidate,
+main .std-compare-original {
+  position: relative;
+  outline: 2px dashed var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* the label floats over the block: it must not move the content being compared */
+main .std-candidate::before,
+main .std-compare-original::before {
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: 2;
+  padding: var(--space-block-xs) var(--space-block);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--ui-font-family);
+  font-size: var(--body-font-size-xs);
+  content: attr(data-std-label);
+}
+
+main .std-compare-original::before {
+  background: var(--color-secondary);
+  content: "As it is";
+}
+
+.std-board {
+  padding: var(--space-block-l);
+}
+
+.std-row {
+  margin-bottom: var(--space-block-l);
+  border-top: 1px solid var(--color-border);
+}
+
+.std-row-title label {
+  margin-left: var(--space-block);
+}
+
+.std-row-cells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-block-l);
+}
+
+.std-cell {
+  border: 1px solid var(--color-border);
+}
+
+.std-cell-title {
+  margin: 0;
+  padding: var(--space-block-xs) var(--space-block);
+  background: var(--color-surface);
+  font-weight: var(--font-weight-bold);
+}
+
+.std-cell-changes {
+  padding: 0 var(--space-block);
+  color: var(--color-text-muted);
+  font-size: var(--body-font-size-xs);
+}

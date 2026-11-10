@@ -793,9 +793,20 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+/**
+ * Standardise pilot (branch standardise-v3): the review overlay, with ?standardise on a
+ * preview host only (*.aem.page, localhost); never on production.
+ */
+function loadStandardise() {
+  const mode = new URLSearchParams(window.location.search).get('standardise');
+  if (!mode || !/(\.aem\.page|^localhost)$/.test(window.location.hostname)) return;
+  import('./standardise-preview.js').then(({ default: start }) => start(mode, decorateMain));
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  loadStandardise();
   loadDelayed();
 }
 

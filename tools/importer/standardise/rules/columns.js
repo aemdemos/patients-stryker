@@ -35,6 +35,10 @@ const KEEP_OPTIONS = ['large-headline', 'center'];
 const KEEP_ROWS = ['Cell colours', 'Image borders'];
 const DROP_ROWS = ['Text box', 'Grid', 'Column widths', 'Columns'];
 const NUMBER = /^[\d.]+(×|vw)$/;
+// rows of the whole section (the others are a Columns block's own: Text box, Grid, Cell colours,
+// Image borders, plain for the first block and `(k)` for the k-th)
+const SHARED_ROWS = ['style', 'id', 'Padding', 'Margin', 'Column widths', 'Column', 'Columns', 'Copy size',
+  'Label size', 'Heading size', 'Headings', 'Text', 'Blank lines', 'Autoplay'];
 
 const text = (el) => (el ? el.textContent.replace(/\s+/g, ' ').trim() : '');
 
@@ -158,11 +162,29 @@ export function transform(sectionEl, blockIndex, standard) {
   }
   // which of the section's Columns this is: its settings rows are the plain ones (1st) or `(k)`
   const k = blocks.filter((b) => b.classList.contains('columns')).indexOf(block) + 1;
+  const hero = !!section.querySelector(':scope > .hero-corp');
+  const numbered = settingsRows(section).map(([key]) => key.match(/^(.*?) \((\d+)\)$/)).filter(Boolean);
+  const ownKeys = new Set(numbered.filter((m) => Number(m[2]) === k).map((m) => m[1]));
+  const widthsShared = !numbered.some((m) => m[1] === 'Column widths');
+  // the rows this block reads, as corp-settings applies them (see isolate)
   const mine = (key) => {
     const m = key.match(/^(.*?) \((\d+)\)$/);
     if (m) return Number(m[2]) === k ? m[1] : null;
-    return k === 1 || key === 'Column widths' ? key : null;
+    if (ownKeys.has(key) || (hero && key === 'Text box')) return null;
+    if (key === 'Column widths') return widthsShared || k === 1 ? key : null;
+    return k === 1 ? key : null;
   };
+  // a shared Column widths row is the neighbours' too: each other Columns block gets its own copy
+  const columnsBlocks = blocks.filter((b) => b.classList.contains('columns'));
+  const sharedWidths = widthsShared && settingsRows(section).find(([key]) => key === 'Column widths');
+  if (sharedWidths && columnsBlocks.length > 1) {
+    columnsBlocks.forEach((b, i) => {
+      if (b === block) return;
+      const copy = sharedWidths[2].cloneNode(true);
+      copy.firstElementChild.textContent = `Column widths (${i + 1})`;
+      sharedWidths[2].before(copy);
+    });
+  }
 
   // the block's classes: columns + the standard + the named options it keeps
   const before = [...block.classList].slice(1);
@@ -210,8 +232,10 @@ export function transform(sectionEl, blockIndex, standard) {
 
   // a section holding only this block: its own box numbers go too (padding, margin, number sizes)
   const others = [...section.children].filter((el) => el !== block && !el.classList.contains('section-metadata'));
+  // (with other content beside it, the section's rows stay: they are the neighbours' too)
   settingsRows(section).forEach(([key, value, row]) => {
-    if (others.length === 0 && (key === 'Padding' || key === 'Margin')) {
+    if (others.length) return;
+    if (key === 'Padding' || key === 'Margin') {
       changes.push(`section ${key.toLowerCase()} (${value}) removed`);
       row.remove();
     } else if (/^(Copy size|Heading size|Label size)$/.test(key) && NUMBER.test(value)) {
@@ -222,4 +246,96 @@ export function transform(sectionEl, blockIndex, standard) {
   const meta = section.querySelector(':scope > .section-metadata');
   if (meta && !meta.children.length) meta.remove();
   return { section, changes, ok: true };
+}
+
+/**
+ * A block's text as a page shows it, letters and digits only: without Box lines, blank lines,
+ * the readable tags and the link text of media links (an image link's file name). For finding
+ * a document's block on the rendered page.
+ */
+const mediaLink = (a) => [a.getAttribute('href'), a.getAttribute('title')].find((u) => MEDIA.test(u || ''));
+const assetName = (url) => decodeURIComponent(String(url).split('?')[0].split('/').pop())
+  .replace(/\.\w+$/, '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
+
+function visibleCopy(block, rendered) {
+  const copy = block.cloneNode(true);
+  if (rendered) {
+    // the players' and widgets' own labels are not the author's text
+    copy.querySelectorAll('.dm-video-wrapper, button').forEach((e) => e.remove());
+  } else {
+    [...copy.querySelectorAll('a')].filter(mediaLink).forEach((a) => a.remove());
+    dropLines(copy, (t) => /^box(:| end)/i.test(t) || t === '[[Blank line]]');
+  }
+  return copy;
+}
+
+export function matchText(block, rendered = false) {
+  return visibleCopy(block, rendered).textContent.replace(/\[\[[^\]]*\]|\]/g, '')
+    .replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
+}
+
+/**
+ * A block's words and media names, for a looser match when the text differs (players, links
+ * a page turns into videos, image-only blocks): the Dice similarity of two token sets.
+ */
+export function matchTokens(block, rendered = false) {
+  const words = visibleCopy(block, rendered).textContent.replace(/\[\[[^\]]*\]|\]/g, ' ')
+    .toLowerCase().split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 1);
+  const media = rendered
+    ? [...block.querySelectorAll('img[src], [data-dm-src]')].map((e) => e.getAttribute('src') || e.dataset.dmSrc)
+    : [...block.querySelectorAll('a')].map(mediaLink).filter(Boolean);
+  return new Set([...words, ...media.map((u) => `media:${assetName(u)}`)]);
+}
+export function similarity(a, b) {
+  if (!a.size || !b.size) return 0;
+  let both = 0;
+  a.forEach((t) => { if (b.has(t)) both += 1; });
+  return (2 * both) / (a.size + b.size);
+}
+
+/** Whether the blockIndex-th block is the only content of its section (besides its settings). */
+export function aloneInSection(sectionEl, blockIndex) {
+  const blocks = [...sectionEl.querySelectorAll(':scope > div[class]')]
+    .filter((b) => !b.classList.contains('section-metadata'));
+  return [...sectionEl.children].every((c) => c === blocks[blockIndex] || c.classList.contains('section-metadata'));
+}
+
+/**
+ * A copy of the section holding only its blockIndex-th block and that block's settings: its
+ * `(k)` rows become the plain ones (it is the section's first Columns now), the other Columns'
+ * rows go, the section-wide rows (SHARED_ROWS) stay. For showing one block on its own (boards,
+ * the gallery).
+ */
+export function isolate(sectionEl, blockIndex) {
+  const section = sectionEl.cloneNode(true);
+  const blocks = [...section.querySelectorAll(':scope > div[class]')]
+    .filter((b) => !b.classList.contains('section-metadata'));
+  const block = blocks[blockIndex];
+  if (!block) return section;
+  const k = blocks.filter((b) => b.classList.contains('columns')).indexOf(block) + 1;
+  const hero = !!section.querySelector(':scope > .hero-corp');
+  [...section.children].forEach((c) => {
+    if (c !== block && !c.classList.contains('section-metadata')) c.remove();
+  });
+  const rows = settingsRows(section);
+  const numbered = rows.map(([key]) => key.match(/^(.*?) \((\d+)\)$/)).filter(Boolean);
+  const own = new Set(numbered.filter((m) => Number(m[2]) === k).map((m) => m[1]));
+  // (corp-settings: a plain Column widths is every block's only when no block has its own; a
+  // plain Text box is the hero's when the section has one)
+  const widthsShared = !numbered.some((m) => m[1] === 'Column widths');
+  const notMine = (key) => own.has(key)
+    || (hero && key === 'Text box')
+    || (k > 1 && !SHARED_ROWS.includes(key))
+    || (k > 1 && key === 'Column widths' && !widthsShared);
+  rows.forEach(([key, , row]) => {
+    const m = key.match(/^(.*?) \((\d+)\)$/);
+    if (m) {
+      const [, name, n] = m;
+      if (Number(n) === k) row.firstElementChild.textContent = name;
+      else row.remove();
+    } else if (notMine(key)) {
+      row.remove();
+    }
+  });
+  return section;
 }

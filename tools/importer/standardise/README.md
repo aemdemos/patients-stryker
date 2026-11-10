@@ -23,7 +23,29 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | `rules/columns.js` | The transfer rules: an instance → a standard (DOM only: browser and Node) |
 | `test/rules-columns.test.mjs` | The rules on one example per cluster, against the standard's invariants |
 | `gallery.mjs` | The standards gallery draft (`/std/drafts/standards`) |
-| `data/` | `clusters-columns.json` / `.md`, `pilot-pages.txt` |
+| `preselect.mjs` | Renders each pilot block as it is and in each standard it fits (1440 and 375 wide), compares boxes and styles; a standard with no difference is pre-selected |
+| `candidates.py` | `data/candidates.json`, what the review overlay reads: pilot pages (live URL, blocks, groups), groups (plain label, size), pre-selection |
+| `data/` | `clusters-columns.json` / `.md`, `pilot-pages.txt`, `candidates.json` |
+| `scripts/standardise-preview.js` / `.css` | The review overlay (loaded by `scripts.js` only on preview hosts with `?standardise`) |
+| `tools/sidekick/standardise.html` | The Sidekick "Standardise this page" button (opens the page with the overlay) |
+
+## Reviewing (the overlay)
+
+- **Page review:** a pilot page with `?standardise=1` (Sidekick: *Standardise this page*).
+  - Each Columns block gets a bar: *Keep as is*, the standards it fits (hover to compare, click to
+    choose), *Use this choice for the whole group*, *Live page* (stryker.com at the block's text)
+    and what the standard changes, in plain words.
+  - A block alone in its section swaps with its section; beside other content (or from a fragment)
+    only the block swaps. Blocks in closed tabs show their bar when the tab is open; blocks not
+    on the page (pop-ups) are counted in the panel and decided on the group boards.
+  - Badges: *decided for the whole group*, *looks the same as today* (pre-selected).
+- **Group boards:** `/std/drafts/standards?standardise=board` (Sidekick: *Standardise: group
+  boards*). Groups that fit a standard, largest first; per group every pilot block as it is next to
+  its standards, one choice for the group, exceptions to decide on their pages.
+- Choices stay in the browser and are exported with *Export decisions* (JSON: page choices, group
+  choices with exceptions, time per page / board).
+- Order of a block's choice: its page choice, else its group's (unless an exception), else the
+  pre-selection.
 
 ## What the data says (Columns, 2176 instances on 667 product pages)
 
@@ -88,4 +110,8 @@ python3 -I tools/importer/standardise/pick-pilot.py /tmp/…/clusters-columns.js
 python3 -I tools/importer/standardise/copy-pilot.py <content> /tmp/…/pilot-pages.txt
 node tools/importer/standardise/test/rules-columns.test.mjs --content <content>
 node tools/importer/standardise/gallery.mjs --content <content> --instances … --clusters … --out <content>/std/drafts/standards.plain.html
+python3 -I tools/importer/standardise/candidates.py /tmp/…/instances.jsonl tools/importer/standardise/data/clusters-columns.json tools/importer/standardise/data/pilot-pages.txt tools/importer/data/catalog/site.json tools/importer/standardise/data/candidates.json
+# local preview of this worktree on port 3001, then:
+node tools/importer/standardise/preselect.mjs --base http://localhost:3001/content --candidates tools/importer/standardise/data/candidates.json --out /tmp/…/preselect.json
+python3 -I tools/importer/standardise/candidates.py … tools/importer/standardise/data/candidates.json --preselect /tmp/…/preselect.json
 ```
