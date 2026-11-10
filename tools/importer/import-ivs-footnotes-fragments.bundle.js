@@ -286,7 +286,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-ivs-footnotes-fragments.js
   var PAGE_TEMPLATE = {
     name: "ivs-footnotes-fragments",
-    description: "Back link Experience Fragment of the Interventional Spine footnote pages, imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow` section.",
+    description: "Back link Experience Fragment of the Interventional Spine footnote pages, imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow, back-link` section.",
     urls: ["https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"],
     blocks: []
   };
@@ -311,7 +311,7 @@ var CustomImportScript = (() => {
       if (!main.children.length) throw new Error(`No Back link XF on ${params.originalURL || url}`);
       main.append(WebImporter.Blocks.createBlock(document, {
         name: "Section Metadata",
-        cells: { style: "no-arrow" }
+        cells: { style: "no-arrow, back-link" }
       }));
       document.body.replaceChildren(main);
       transform("afterTransform", main, __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE }));

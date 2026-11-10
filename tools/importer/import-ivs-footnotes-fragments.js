@@ -10,7 +10,7 @@ import { BACK_XF } from './import-ivs-footnotes.js';
 
 const PAGE_TEMPLATE = {
   name: 'ivs-footnotes-fragments',
-  description: 'Back link Experience Fragment of the Interventional Spine footnote pages, imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow` section.',
+  description: 'Back link Experience Fragment of the Interventional Spine footnote pages, imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow, back-link` section.',
   urls: ['https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html'],
   blocks: [],
 };
@@ -24,7 +24,8 @@ export default {
     const main = document.createElement('div');
     document.body.querySelectorAll('.experiencefragment .c-rich-text-editor a[href]').forEach((src) => {
       // the teal Futura bold "❮ BACK" text link: a bold + underlined link (a flat Futura
-      // bold teal link, a.link-strong) in a `no-arrow` section (no trailing chevron)
+      // bold teal link, a.link-strong) in a `no-arrow, back-link` section (no trailing
+      // chevron; source spacing below the header)
       const p = document.createElement('p');
       const strong = document.createElement('strong');
       const a = document.createElement('a');
@@ -38,7 +39,7 @@ export default {
     });
     if (!main.children.length) throw new Error(`No Back link XF on ${params.originalURL || url}`);
     main.append(WebImporter.Blocks.createBlock(document, {
-      name: 'Section Metadata', cells: { style: 'no-arrow' },
+      name: 'Section Metadata', cells: { style: 'no-arrow, back-link' },
     }));
     document.body.replaceChildren(main);
 
