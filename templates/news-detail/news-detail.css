@@ -1187,7 +1187,7 @@ body.news-detail main > .section.gold-boxes .columns.block strong {
    component in the same grid column, e.g. the bio under Darryl Conway's headshot) is body
    copy (14px, not the section's copy size) and sits the image component's 20px (30px from
    600px) and the caption's own 3% margin below the photo (44px at 1440px, 30px at 390px) */
-body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col:has(+ p) {
+body.news-detail main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
   margin-bottom: calc(var(--space-block-l) + 3%);
 }
 
@@ -1204,7 +1204,7 @@ body.news-detail main .columns.block:not(.large-headline) > div > div > p > stro
 }
 
 @media (width >= 600px) {
-  body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col:has(+ p) {
+  body.news-detail main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
     margin-bottom: calc(var(--space-section) + 3%);
   }
 }
@@ -1472,4 +1472,27 @@ body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .defa
     font-size: max(var(--body-font-size-xs), min(var(--body-font-size-m), var(--corp-headline-vw)));
     line-height: var(--heading-line-height-hero);
   }
+}
+
+/* bracket tag `[[box-dark]…]` around a whole paragraph: the paragraph in a dark-grey box
+   (stryker.com bg-dark-gray rich text, e.g. the two quotes of "A winning spirit": padding 6%
+   top, 4% sides and bottom), white light serif at 28px at every width (.fontsize-2em), its
+   Bold words gold Futura bold, in a Columns cell and in the article text (the :nth-child(n)
+   outrank the Columns cell Bold and the article text Bold, which keeps the body font) */
+body.news-detail main span.box-dark {
+  display: block;
+  padding: 6% 4% 4%;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail main span.box-dark:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
 }
