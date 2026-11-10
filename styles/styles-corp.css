@@ -39,6 +39,12 @@
   --corp-color-local-nav-link: #9f9d9d; /* the section links in the bar */
   --corp-color-local-nav-item: #404040; /* the links in the more menu and the phone list */
   --corp-color-local-nav-menu: #d8d8d8; /* the more menu */
+  --corp-color-local-nav-separator: #c2c2c2; /* the "|" between the bar links */
+  --corp-local-nav-link-gap: 4px; /* bar links: the space before and after each "|" (stryker.com: a word space) */
+  --corp-local-nav-more-padding: 6px; /* the more button's sides and the space after its "|" */
+  --corp-local-nav-more-icon: 19px; /* the "•••" icon: 3 dots 5px wide, 6.5px apart */
+  --corp-local-nav-more-dot: 5px;
+  --corp-local-nav-more-dot-top: 7px; /* the dots' top below the button's top */
   --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */

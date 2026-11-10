@@ -1,7 +1,7 @@
 /*
  * Local Nav Corp block: the www.stryker.com local page navigation.
  * Row 1: the parent page link. Row 2: the links shown in the bar. Row 3 (optional): the
- * links under the "⋮" more menu (stryker.com fixes that split per page).
+ * links under the "•••" more menu (stryker.com fixes that split per page).
  * From 600px: a bar, the parent link on the left, the links on the right, then the more
  * menu. Below 600px: a button with the current page's name (the page title) that opens the
  * list of the parent and all the links.
@@ -23,6 +23,11 @@ function pageName() {
 /** The links of a row. */
 function rowLinks(row) {
   return row ? [...row.querySelectorAll('a[href]')] : [];
+}
+
+/** A path without a trailing slash or .html, for comparing links with the current page. */
+function pagePath(href) {
+  return new URL(href, window.location.href).pathname.replace(/(\.html|\/)$/, '');
 }
 
 /** A list of links. */
@@ -74,6 +79,11 @@ export default function decorate(block) {
   const bar = rowLinks(barRow);
   const more = rowLinks(moreRow);
   const copy = (link) => link.cloneNode(true);
+  // the current page's link (stryker.com: black in the bar)
+  const here = pagePath(window.location.href);
+  [parent, ...bar, ...more].filter(Boolean).forEach((link) => {
+    if (pagePath(link.href) === here) link.setAttribute('aria-current', 'page');
+  });
 
   const nav = document.createElement('nav');
   nav.className = 'local-nav-corp-nav';
@@ -98,8 +108,8 @@ export default function decorate(block) {
     wrapper.className = 'local-nav-corp-more';
     const button = document.createElement('button');
     button.className = 'local-nav-corp-more-button';
+    // the "•••" icon is drawn in CSS; the label names the button
     button.setAttribute('aria-label', 'More pages');
-    button.textContent = '⋮';
     const menu = linkList(more, 'local-nav-corp-more-list');
     disclosure(button, menu, wrapper);
     wrapper.append(button, menu);

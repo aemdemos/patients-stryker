@@ -2,8 +2,9 @@
    TEACH talks pages at 375 / 1000 / 1440). Futura 14px uppercase. Phones: a card with the
    page name and a dropdown arrow, 20px clear above and below, opening the list of the parent
    and all the links. From
-   600px (stryker.com 840px): a 40px bar, the parent link (teal) on the left, the section's
-   links (grey) on the right, then the "⋮" more menu. `border`: a 1px rule under the bar. */
+   600px (stryker.com 840px): a 40px bar, the parent link (bold black, 17.5px) on the left,
+   the section's links (grey, "|" between them) on the right, then the "•••" more menu.
+   `border`: a 1px rule under the bar. */
 
 .local-nav-corp .local-nav-corp-nav {
   position: relative;
@@ -107,18 +108,38 @@
     display: none;
   }
 
+  /* the parent page: stryker.com's h4 in the parent link, 1px above the links */
   .local-nav-corp .local-nav-corp-nav a.local-nav-corp-parent:any-link {
     display: block;
     flex: 0 0 30%;
-    color: var(--color-primary);
+    margin-block-start: -1px;
+    color: var(--color-black);
+    font-size: var(--heading-font-size-m);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--body-line-height-l);
   }
 
   .local-nav-corp .local-nav-corp-nav .local-nav-corp-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: var(--space-block);
+    gap: var(--corp-local-nav-link-gap);
     margin-inline-start: auto;
+  }
+
+  .local-nav-corp .local-nav-corp-links a:any-link[aria-current="page"] {
+    color: var(--color-black);
+  }
+
+  /* a light grey "|" after each link but the last */
+  .local-nav-corp .local-nav-corp-links li {
+    display: flex;
+  }
+
+  .local-nav-corp .local-nav-corp-links li:not(:last-child)::after {
+    content: "|";
+    margin-inline-start: var(--corp-local-nav-link-gap);
+    color: var(--corp-color-local-nav-separator);
   }
 
   .local-nav-corp .local-nav-corp-links a:any-link {
@@ -127,17 +148,19 @@
     color: var(--corp-color-local-nav-link);
   }
 
-  /* "|" then "⋮": the more menu, grey, under the bar's right end */
+  /* "|" then "•••": the more menu, grey, under the bar's right end; the button sits at the
+     bar's top (3px above the links), the dots in the upper half of the "|" */
   .local-nav-corp .local-nav-corp-more {
     display: block;
     position: relative;
+    margin-block-start: calc(-1 * var(--space-block-xxs));
     margin-inline-end: var(--space-block-s);
   }
 
   .local-nav-corp .local-nav-corp-more-button {
     display: flex;
-    align-items: center;
-    padding-inline: var(--space-block-xs);
+    align-items: flex-start;
+    padding: 1px var(--corp-local-nav-more-padding);
     border: 0;
     background: none;
     color: var(--corp-color-local-nav-link);
@@ -147,7 +170,15 @@
 
   .local-nav-corp .local-nav-corp-more-button::before {
     content: "|";
-    margin-inline-end: var(--space-block-s);
+    margin-inline-end: var(--corp-local-nav-more-padding);
+  }
+
+  .local-nav-corp .local-nav-corp-more-button::after {
+    content: "";
+    width: var(--corp-local-nav-more-icon);
+    height: var(--corp-local-nav-more-dot);
+    margin-block-start: var(--corp-local-nav-more-dot-top);
+    background: radial-gradient(circle, currentcolor 48%, transparent 52%) 0 0 / calc(var(--corp-local-nav-more-icon) / 3) 100% repeat-x;
   }
 
   .local-nav-corp .local-nav-corp-more-list {
