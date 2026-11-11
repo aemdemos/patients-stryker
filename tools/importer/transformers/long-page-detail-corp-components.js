@@ -294,16 +294,41 @@ function fullBleedPanels(main, doc, h) {
     // campaign: `blue, full-bleed, tabbed`)
     const out = [];
     let run = [];
+    // the band keeps its headings' styles (CLOUT "Established safety outcomes": a centred
+    // 1.5em Egyptienne h2 → `center, h2-1-5, h-serif`), `center` when all its content is
+    // centred (rich text centred inline, rows with `center`)
+    let extras = [];
+    let centred = true;
+    const CENTRED = '[style*="text-align: center"], [style*="text-align:center"], .text-center';
     const flush = () => {
-      if (run.length) out.push(keepNodes(doc, run, style));
+      // (only a band centred as a whole: its heading styles; a left-aligned band keeps the
+      // section's own heading look)
+      const styles = [style, ...(centred && run.length ? ['center', ...new Set(extras)] : [])];
+      if (run.length) out.push(keepNodes(doc, run, styles.filter(Boolean).join(', ')));
       run = [];
+      extras = [];
+      centred = true;
     };
     contentUnits(component).forEach((unit) => {
       if (unit.getAttribute('data-keep') === 'nodes' && unit.hasAttribute('data-section-style')) {
         flush();
         unit.setAttribute('data-section-style', `${style}, ${unit.getAttribute('data-section-style')}`);
         out.push(unit);
-      } else run.push(...unitNodes(unit, doc, h));
+        return;
+      }
+      const rowStyle = (unit.getAttribute('data-section-style') || '').split(',').map((s) => s.trim());
+      const blocks = unit.matches('.c-rich-text-editor')
+        ? [...unit.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => h.text(el)) : [];
+      if (unit.matches('.c-rich-text-editor')) {
+        // (an empty rich text, CLOUT's "&nbsp;" after the figures, does not count)
+        if (!blocks.every((el) => el.closest(CENTRED))) centred = false;
+      } else if (!rowStyle.includes('center')) centred = false;
+      const nodes = unitNodes(unit, doc, h);
+      nodes.forEach((n) => {
+        if (n.headingStyle) extras.push(n.headingStyle);
+        if (n.nodeType === 1 && /^H[2-3]$/.test(n.tagName) && n.serifHeading) extras.push('h-serif');
+      });
+      run.push(...nodes);
     });
     flush();
     // an empty gold panel (OR staff: the 34px gold band under the page title): `gold-bar`
@@ -497,9 +522,10 @@ function interactiveImages(main, doc) {
 }
 
 /**
- * Number counters (.numbercounter, CLOUT: an animated figure and its label): the figure (as
- * stryker.com shows it once counted: type 3 = percent, 2 = currency) in bold, the label
- * below, as text.
+ * Number counters (.numbercounter, CLOUT: an animated figure and its label): one centred
+ * paragraph, as stryker.com shows it once counted (type 3 = percent, 2 = currency): the
+ * figure in its vw size, bold and in its colour (`[[headline-6-5][[color-purple]0.2%]]`), then
+ * the label in its own vw size (`[[headline-1-5]…]`, bold label, plain "(n=499)").
  */
 function numberCounters(main, doc, h) {
   main.querySelectorAll('.numbercounter').forEach((component) => {
@@ -511,22 +537,36 @@ function numberCounters(main, doc, h) {
     let figure = end;
     if (type === '3') figure = `${end}%`;
     else if (type === '2') figure = `${currency}${end}`;
-    const nodes = [];
+    const VW = /\bfontsize-(\d+(?:-\d+)?)-?vw\b/;
+    const p = doc.createElement('p');
+    p.setAttribute('style', 'text-align: center;');
+    const number = widget.querySelector('.numbercounter-number');
     if (end) {
-      const strong = doc.createElement('strong');
-      strong.textContent = figure;
-      const p = doc.createElement('p');
-      p.append(strong);
-      nodes.push(p);
+      const bold = doc.createElement('span');
+      bold.className = 'futura-bold';
+      const coloured = doc.createElement('span');
+      const colour = number && /(?:^|;)\s*color\s*:\s*([^;]+)/i.exec(number.getAttribute('style') || '');
+      if (colour) coloured.setAttribute('style', `color: ${colour[1].trim()};`);
+      coloured.textContent = figure;
+      bold.append(coloured);
+      const size = number && (VW.exec(number.className) || [])[1];
+      p.append(...(size ? [doc.createTextNode(`[[headline-${size}]`), bold, doc.createTextNode(']')] : [bold]));
     }
     const label = [...widget.children].find((el) => !el.querySelector('.numbercounter-number') && h.text(el));
     if (label) {
-      const p = doc.createElement('p');
-      label.querySelectorAll('br').forEach((br) => br.replaceWith(doc.createTextNode(' ')));
-      p.textContent = h.text(label);
-      nodes.push(p);
+      if (p.childNodes.length) p.append(doc.createElement('br'));
+      const sized = label.querySelector('[class*="fontsize-"]');
+      const size = sized && (VW.exec(sized.className) || [])[1];
+      const source = sized && size ? sized : (label.querySelector('[style*="text-align"]') || label);
+      const nodes = [...source.cloneNode(true).childNodes];
+      // the plain text of the label ("(n=499)") is in the body font (a headline tag is Futura)
+      nodes.forEach((n, i) => {
+        if (n.nodeType !== 3 || !n.textContent.trim()) return;
+        nodes[i] = doc.createTextNode(`[[body-font]${n.textContent.trim()}]`);
+      });
+      p.append(...(size ? [doc.createTextNode(`[[headline-${size}]`), ...nodes, doc.createTextNode(']')] : nodes));
     }
-    if (nodes.length) component.replaceWith(h.richText(doc, nodes));
+    if (p.childNodes.length) component.replaceWith(h.richText(doc, [p]));
   });
 }
 

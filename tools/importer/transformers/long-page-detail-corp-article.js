@@ -237,7 +237,8 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
       return;
     }
     if (b.closest('.urw-egyptienne, a') || b.querySelector('.urw-egyptienne, a') || !text(b)) return;
-    const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
+    // (small print authored in divs, CLOUT "Indications for Use" / "Caution": a label all the same)
+    const block = b.closest(wholeParagraphs ? 'p, li, div, h1, h2, h3, h4, h5, h6' : 'p, li, h1, h2, h3, h4, h5, h6');
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
     if (!wholeParagraphs && text(block) === text(b)) return;
     b.before(doc.createTextNode('[[body-font]'));

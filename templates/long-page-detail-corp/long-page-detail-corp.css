@@ -8,6 +8,13 @@
    - the content starts 15px below the H1, and the sections follow each other 15px apart
      (the source runs them as one column of components with 15px margins) */
 
+/* the paragraph of a `[[box-<colour>]…]` title bar (below): no space under it, the bar
+   filling it */
+body.long-page-detail-corp main .columns p:has(> span:is(.box-orange, .box-blue, .box-teal, .box-purple)) {
+  display: flex;
+  margin-bottom: 0;
+}
+
 /* ---- section style `headline-box`: a large headline the source sets in a white box
    (.largeheadline.has-background.bg-white, 31 pages, e.g. plastic-surgery "Resources",
    "Videos and animations"): its text 20px in at every width, 20px below the box top from
@@ -771,11 +778,23 @@ body.long-page-detail-corp main span.headline-6 {
   --long-page-detail-corp-headline-size: 6;
 }
 
+body.long-page-detail-corp main span.headline-6-5 {
+  --long-page-detail-corp-headline-size: 6.5;
+}
+
+body.long-page-detail-corp main span.headline-7 {
+  --long-page-detail-corp-headline-size: 7;
+}
+
+body.long-page-detail-corp main span.headline-8 {
+  --long-page-detail-corp-headline-size: 8;
+}
+
 body.long-page-detail-corp main span.headline-9 {
   --long-page-detail-corp-headline-size: 9;
 }
 
-body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-9) {
+body.long-page-detail-corp main span:is(.headline-1-5, .headline-2, .headline-2-5, .headline-3, .headline-3-5, .headline-4, .headline-4-5, .headline-5, .headline-5-5, .headline-6, .headline-6-5, .headline-7, .headline-8, .headline-9) {
   font-size: calc(var(--long-page-detail-corp-headline-size) * var(--long-page-detail-corp-headline-unit));
   line-height: var(--heading-line-height-hero);
 }
@@ -1302,4 +1321,58 @@ body.long-page-detail-corp main span.box-dark-orange-gradient { background: var(
    with padding-bottom 5%, build-your-asc phases: 22px at 440px) */
 body.long-page-detail-corp main > .section.cell-padding .columns > div > div > :last-child {
   padding-bottom: 5%;
+}
+
+/* the boxed cards of a row (`boxed-all`, CLOUT design cards): as tall as the row's tallest,
+   as stryker.com's dimensional boxes, from 600px where they sit side by side */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.boxed-all > div > div {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  body.long-page-detail-corp main .columns.boxed-all .columns-box {
+    flex: 1;
+  }
+}
+
+/* grey cards of a title and a link (`gray-all`, CLOUT clinical evidence "See results"): the
+   link at the card's bottom, level across the row (stryker.com pads the shorter cards) */
+body.long-page-detail-corp main > .section .columns.stack.gray-all .columns-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* `[[box-<colour>]…]`: a solid colour title bar over the rest of a column (stryker.com rich
+   text .has-background.bg-orange / -blue / -teal / -purple, giving-back tiles): white text,
+   10px in (5% on the left), the paragraph's 15px below the text inside the bar, the image
+   right under it; the bars of a row as tall as the tallest */
+
+body.long-page-detail-corp main span:is(.box-orange, .box-blue, .box-teal, .box-purple) {
+  flex: 1;
+  padding: var(--space-block-s) var(--space-block-s) calc(var(--space-block-s) + var(--space-block)) 5%;
+  color: var(--color-white);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp main span.box-orange { background: var(--color-accent-link-hover); }
+body.long-page-detail-corp main span.box-blue { background: var(--color-navy-bright); }
+body.long-page-detail-corp main span.box-teal { background: var(--color-primary); }
+body.long-page-detail-corp main span.box-purple { background: var(--color-purple); }
+
+/* line spacing in the boxed and purple-last rows (stryker.com: CLOUT design card lists 1.15;
+   giving-back partner titles and the purple stats 1.15, its lists 1.43) */
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns.purple-last.block .columns-box p {
+  line-height: var(--body-line-height-l);
+}
+
+body.long-page-detail-corp main > .section .columns-wrapper .columns.boxed-all > div > div li,
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns.purple-last.block > div > div p:has(> span.text-1-25) {
+  line-height: var(--body-line-height-l);
+}
+
+body.long-page-detail-corp main > .section .columns-wrapper .columns.purple-last > div > div li {
+  line-height: var(--body-line-height);
 }

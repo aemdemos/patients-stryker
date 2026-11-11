@@ -394,6 +394,29 @@ const CELL_BOXES = {
   'dark-orange-gradient': 'box-dark-orange-gradient',
 };
 
+// the solid colours a column's rich-text title bar can have → its `[[box-<colour>]…]` tag
+const SOLID_BOXES = {
+  orange: 'box-orange', blue: 'box-blue', teal: 'box-teal', purple: 'box-purple',
+};
+
+/**
+ * Marks the rich-text title bars of a row the Columns variants cannot draw (a different
+ * colour per column, giving-back "Advancing healthcare" orange, "Supporting education" blue…):
+ * a coloured rich text box with more content after it in its column gets `data-box-tag`.
+ */
+function markTitleBars(columns, colctrl) {
+  columns.forEach((col) => {
+    const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
+      .filter((c) => c.closest('.colctrl') === colctrl && !c.parentElement.closest(CELL_COMPONENTS));
+    parts.forEach((c, i) => {
+      if (!c.matches('.c-rich-text-editor') || i === parts.length - 1) return;
+      const box = c.querySelector(':scope > .has-background');
+      const name = box && (/\bbg-([a-z]+)\b/.exec(box.className) || [])[1];
+      if (SOLID_BOXES[name]) c.setAttribute('data-box-tag', SOLID_BOXES[name]);
+    });
+  });
+}
+
 /** The box tag of a Large Headline set in a gradient box inside a column, or ''. */
 function headlineBoxTag(component) {
   if (!component.closest('[class*="col-sm-"], [class*="col-md-"]')) return '';
@@ -494,7 +517,10 @@ function boxVariant(columns) {
     name = `${colours[0]}-last`;
   }
   if (kinds[0] === 'whole') {
-    if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
+    // (one boxed card in a row padded with empty columns, CLOUT's 9th evidence card: `-all`)
+    const padded = used.length === 1 && textCols.length === 1 && columns.length > 1
+      && columns.some((col) => !text(col) && !col.querySelector('img, [data-asset-path], iframe'));
+    if ((used.length > 1 || padded) && used.length === textCols.length) name = `${colours[0]}-all`;
     else if (used.length === 1) {
       const i = boxes.findIndex(Boolean);
       if (i === columns.length - 1) name = `${colours[0]}-last`;
@@ -515,8 +541,15 @@ function cellNodes(col, doc) {
   [...col.querySelectorAll(CELL_COMPONENTS)]
     .filter((c) => !c.parentElement.closest(CELL_COMPONENTS))
     .forEach((c) => {
-      if (c.matches('.c-rich-text-editor')) out.push(...richTextNodes(c, doc).nodes);
-      else if (c.matches('.c-standalone-image')) {
+      if (c.matches('.c-rich-text-editor')) {
+        const { nodes } = richTextNodes(c, doc);
+        // a title bar in a solid colour over the rest of the column (giving-back tiles): its
+        // paragraph gets the `[[box-<colour>]…]` tag, outermost, once the row's size tags are
+        // in (columnRows; template CSS draws the bar)
+        const tag = c.getAttribute('data-box-tag');
+        if (tag && nodes.length === 1 && nodes[0].tagName === 'P') nodes[0].boxTag = tag;
+        out.push(...nodes);
+      } else if (c.matches('.c-standalone-image')) {
         const nodes = imageNodes(c, doc);
         // a linked image (the endoscopy resources specialty tiles): the link alone on the
         // line after it makes the image clickable (`Columns (media-pair)`, columns.js), its
@@ -602,9 +635,10 @@ function paddedColumn(col, colctrl) {
  */
 function dropWholeTag(n, tag) {
   const texts = [];
+  // (a list item: its own text, not its nested list's)
   const walk = (node) => node.childNodes.forEach((c) => {
     if (c.nodeType === 3) texts.push(c);
-    else if (c.nodeType === 1) walk(c);
+    else if (c.nodeType === 1 && !(n.matches('li') && c.matches('ul, ol'))) walk(c);
   });
   walk(n);
   const open = `[[${tag}]`;
@@ -622,7 +656,9 @@ function dropWholeTag(n, tag) {
     return onlyTags(t.nodeValue);
   });
   const last = [...texts].reverse().find((t) => t.nodeValue.trim());
-  if (!first || first === last || !last.nodeValue.trimEnd().endsWith(']')) return;
+  // (the tag can open and close in one text: "[[text-1-25]Inclusion:]")
+  if (!first || !last.nodeValue.trimEnd().endsWith(']')) return;
+  if (first === last && first.nodeValue.trimEnd().length <= at + open.length) return;
   first.nodeValue = first.nodeValue.slice(0, at) + first.nodeValue.slice(at + open.length);
   const end = last.nodeValue.lastIndexOf(']');
   last.nodeValue = last.nodeValue.slice(0, end) + last.nodeValue.slice(end + 1);
@@ -685,7 +721,9 @@ function rowCopyStyle(cells, doc) {
   }
   // a paragraph all in 1.25x is sized by the row (the section style or its own tag below): no
   // 1.25x tag of its own as well (the tag is relative, the two would multiply)
-  copy.filter((n) => relative(n.copyStyle)).forEach((n) => dropWholeTag(n, 'text-1-25'));
+  copy.filter((n) => relative(n.copyStyle)).forEach((n) => {
+    dropWholeTag(n, 'text-1-25');
+  });
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
   // the Egyptienne 24.5px intro in the grey box beside the faculty)
   const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
@@ -801,6 +839,7 @@ function columnRows(main, doc) {
     const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')]
       .some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute('href'))));
     const boxes = boxVariant(columns);
+    if (!boxes) markTitleBars(columns, colctrl);
     // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
     // stays in the text colour, so it stays readable
     if (!boxes) {
@@ -810,7 +849,7 @@ function columnRows(main, doc) {
         if (!inBox || inBox.matches('.c-full-bleed-panel') || inBox.closest('.colctrl') !== colctrl) return;
         // a gradient box that becomes a box tag keeps its white text
         const headline = el.closest('.c-largeheadline');
-        if (headline && headlineBoxTag(headline)) return;
+        if ((headline && headlineBoxTag(headline)) || el.closest('[data-box-tag]')) return;
         if (el.firstChild && el.firstChild.nodeValue === '[[color-white]') el.firstChild.remove();
         if (el.lastChild && el.lastChild.nodeValue === ']') el.lastChild.remove();
         el.removeAttribute('data-white-tag');
@@ -829,6 +868,17 @@ function columnRows(main, doc) {
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = [rowCopyStyle(cells, doc), centred ? 'center' : '', padded ? 'cell-padding' : '']
       .filter(Boolean).join(', ');
+    cells.flat().filter((n) => n.boxTag).forEach((n) => {
+      // a blank last line the source keeps in the bar (giving-back "Advancing healthcare<br>
+      // &nbsp;": three lines, as the other bars) stays: a second break after the last one
+      const closing = (t) => t.nodeType === 3 && !t.textContent.split(']').join('').trim();
+      let last = n.lastChild;
+      while (last && closing(last)) last = last.previousSibling;
+      while (last && last.nodeType === 1 && last.nodeName !== 'BR' && last.lastChild) last = last.lastChild;
+      if (last && last.nodeName === 'BR') last.after(doc.createElement('br'));
+      n.prepend(doc.createTextNode(`[[${n.boxTag}]`));
+      n.append(doc.createTextNode(']'));
+    });
     const block = WebImporter.Blocks.createBlock(doc, {
       name: variant ? `Columns (${variant})` : 'Columns',
       cells: [cells],
