@@ -32,6 +32,7 @@
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
+  --corp-heading-font-size-h2-1-25: 30.625px; /* measured: a 1.25em span in a 24.5px source h2 (from 840px) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -297,9 +298,41 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* a section left without content (metadata only, or moved by a block) paints nothing;
-   `spacer` sections are empty on purpose (shared styles.css gives them their height) */
-:where(body.corp) main .section:empty:not(.spacer) {
+   `spacer` and `blank-line` sections are empty on purpose (they give their height) */
+:where(body.corp) main .section:empty:not(.spacer, .blank-line) {
   display: none;
+}
+
+/* section style `blank-line`: an empty section standing for the source's empty paragraph
+   (<p>&nbsp;</p>, e.g. before each product heading of EMS powered products): one 14px text
+   line, with a paragraph gap (not a section gap) above it; below it the section gap at the
+   end of a component, or a paragraph gap before more of the same text (`join`, news-detail) */
+:where(body.corp) main > .section.blank-line {
+  height: calc(var(--paragraph-line-height) * var(--body-font-size-m));
+}
+
+:where(body.corp) main > .section:has(+ .section.blank-line) {
+  margin-bottom: var(--space-block);
+}
+
+/* …in the small print, one 11.2px line */
+:where(body.corp) main > .section.disclaimer + .section.blank-line {
+  height: calc(var(--paragraph-line-height) * var(--footnote-font-size));
+}
+
+/* …a blank line that ends its paragraph (<br>&nbsp;, with `join`): the paragraph's own extra
+   line, so it sits right under the text (the paragraph gap above it is part of the line) */
+:where(body.corp) main > .section.blank-line.join {
+  height: calc(var(--paragraph-line-height) * var(--body-font-size-m) - var(--space-block));
+}
+
+:where(body.corp) main > .section.disclaimer + .section.blank-line.join {
+  height: calc(var(--paragraph-line-height) * var(--footnote-font-size) - var(--space-block));
+}
+
+/* the section before a `label-1-5` paragraph flows into it too (one paragraph gap) */
+:where(body.corp) main > .section:has(+ .section.label-1-5) {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
@@ -366,10 +399,10 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* references: an ordered list (scripts.js decorateFootnotes links the citation
    superscripts to it), shown like the stryker.com .c-disclaimer list — "1." markers,
-   20px indent, tight small-print lines — then a section gap (20px, 30px from 600px)
-   before the document code */
+   20px indent, tight small-print lines — then a paragraph gap before more small print of
+   the same source component (the document code, its own component, is a section of its own) */
 :where(body.corp) main > .section.disclaimer ol {
-  margin-bottom: var(--space-block-l);
+  margin-bottom: var(--space-block);
 }
 
 /* section style `references-spaced` (with `disclaimer`): references the source authored
@@ -475,6 +508,57 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 @media (width >= 600px) {
   :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-compact-m);
+  }
+}
+
+/* h3-0-8: an h3 the source sets at 0.8em (stryker.com h3 > span.fontsize-8em, e.g. the
+   "About Stryker" / "Media contact" labels of some press releases): Futura bold 14px, and
+   16.8px from 600px (source 840px) with the h3 step, lines 1.2. It flows into the text
+   below it: one paragraph gap, not a section gap */
+:where(body.corp) main > .section.h3-0-8 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h3-0-8 > .default-content-wrapper h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h3-0-8 > .default-content-wrapper h3 {
+    font-size: var(--heading-font-size-compact);
+  }
+}
+
+/* label-1-5: a paragraph that opens with a 1.5em Futura bold label on a line of its own
+   (stryker.com span.fontsize-1-5em "About Stryker" + line break, e.g. the T7 and Cerus
+   releases): the label — the paragraph's first Bold (+ Italic) run — at 21px with the
+   source span's 1.06 lines, at every width. It flows into the text around it: one
+   paragraph gap, not a section gap */
+:where(body.corp) main > .section.label-1-5 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.label-1-5 > .default-content-wrapper p > :is(strong, em):first-child {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* h2-1-25: an h2 the source enlarges with a 1.25em span (stryker.com h2 > span.fontsize-1-25em,
+   e.g. the AED buying guide): 26.25px, 30.625px from 600px (source 840px) with the h2 step,
+   lines 1.15. It flows into the text below it: one heading gap, not a section gap */
+:where(body.corp) main > .section.h2-1-25 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+    font-size: var(--corp-heading-font-size-h2-1-25);
   }
 }
 
@@ -1006,15 +1090,7 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
     margin-bottom: var(--space-section-l);
   }
 
-  :where(body.corp) main > .section.disclaimer ol {
-    margin-bottom: var(--space-section);
-  }
-
-  body.corp main > .section:not(.disclaimer):has(+ .last-modified-section, + .section:empty + .last-modified-section),
-  body.corp main > .section.last-modified-section {
-    margin-bottom: var(--space-section);
-  }
-
+  :where(body.corp) main > .section.last-modified-section,
   :where(body.corp) main > div.section.ps-1,
   :where(body.corp) .tabs-panel > .section.ps-1,
   :where(body.corp) .accordion-item-body > .section.ps-1 {
