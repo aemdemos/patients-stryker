@@ -2107,3 +2107,10 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp.type-standard) main :is(h1, h2, h3) :is(em strong, strong em) {
   font-size: inherit;
 }
+
+/* the statement's other lines: the light serif at the Lead step (the source's line 2) */
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > p:not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-type-lead);
+  line-height: var(--heading-line-height-hero);
+}

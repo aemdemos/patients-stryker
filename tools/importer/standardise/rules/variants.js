@@ -255,7 +255,7 @@ function markTitles(block, variant, skip = () => false) {
     }
     if (variant === 'product-hero') return;
     if (variant === 'statement') {
-      p.dataset.promote = 'H2';
+      if (max >= 28) p.dataset.promote = 'H2';
       return;
     }
     if (variant === 'default') {
@@ -444,6 +444,23 @@ function standardText(body, counts, page) {
       const copyRow = rows.find(([key]) => key === 'Copy size');
       const copyName = copyRow ? copyRow[1].trim().toLowerCase() : '';
       const copyPx = ({ large: 17.5, 'x-large': 21 })[copyName] || tokenPx(copyName) || 14;
+      // the section's colour rows: Gold is the convention's Bold + Italic (other colours go)
+      const rowValue = (key) => ((rows.find(([k]) => k === key) || [])[1] || '')
+        .split(',').map((x) => x.trim().toLowerCase());
+      const textGold = rowValue('Text').includes('gold');
+      const headingsGold = rowValue('Headings').includes('gold');
+      const goldWrap = (el) => {
+        if (el.querySelector('a, img, picture') || !plainText(el)) return;
+        if (el.querySelector(':scope > :is(strong, b):only-child > :is(em, i):only-child, :scope > :is(em, i):only-child > :is(strong, b):only-child')) return;
+        const strong = el.ownerDocument.createElement('strong');
+        const em = el.ownerDocument.createElement('em');
+        em.append(...el.childNodes);
+        strong.append(em);
+        el.append(strong);
+        counts.gold += 1;
+      };
+      if (headingsGold) loose.filter((el) => el.matches('h1, h2, h3, h4, h5, h6')).forEach(goldWrap);
+      const goldTitle = (p) => textGold || /\[\[[^\]]*\bgold\b/i.test(p.textContent);
       if (!styles.includes('disclaimer')) {
         counts.titles += splitTitles(section, inBlock, statement);
         markTitles(section, statement ? 'statement' : 'default', inBlock);
@@ -454,7 +471,8 @@ function standardText(body, counts, page) {
           const boldItalic = inner && ((only.matches('em, i') && inner.matches('strong, b')) || (only.matches('strong, b') && inner.matches('em, i')));
           const words = plainText(p);
           if (!boldItalic || words !== plainText(inner) || !words || words.length > CAPTION) return;
-          if (p.querySelector('a, img, picture')) return;
+          // (a black label, Bold + Italic in corp copy, stays a label: only gold lines are titles)
+          if (p.querySelector('a, img, picture') || !goldTitle(p)) return;
           p.dataset.promote = statement ? 'H2' : 'H3';
         });
         // in large copy (21px and up) a short wholly Bold line is the section's title
