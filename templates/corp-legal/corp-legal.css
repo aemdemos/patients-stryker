@@ -20,7 +20,7 @@ body.corp-legal main > .section:first-child h1 {
 
 /* underlined title-only sections: tighter source line-height on phones */
 body.corp-legal main > .section:first-child h1.underline {
-  line-height: var(--corp-title-line-height-s);
+  line-height: var(--corp-heading-line-height-title-underline);
 }
 
 body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :has(> u)) {
@@ -29,7 +29,7 @@ body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :ha
 
 @media (width >= 600px) {
   body.corp-legal main > .section:first-child h1.underline {
-    line-height: var(--corp-title-line-height);
+    line-height: var(--heading-line-height);
   }
 
   body.corp-legal main > .section:first-child:has(h1) {
@@ -43,14 +43,14 @@ body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :ha
 
 body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) {
   margin: 0;
-  padding-left: var(--corp-quote-indent);
+  padding-left: var(--list-indent-l);
   list-style: none;
 }
 
 body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul {
   margin: 0;
   list-style: none;
-  padding-left: var(--corp-quote-indent);
+  padding-left: var(--list-indent-l);
 }
 
 body.corp-legal main .accordion.divided {
