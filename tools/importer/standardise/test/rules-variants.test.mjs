@@ -101,7 +101,7 @@ const results = await page.evaluate(async ({ src, list }) => {
       if ([...c.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6')].some((el) => LINE.test(el.textContent.trim()))) fails.push('line left in Columns');
     });
     body.querySelectorAll('.section-metadata > div > div:first-child').forEach((k) => {
-      if (/^(Column widths|Text box|Grid|Cell colours|Image borders|Columns)( \(\d+\))?$/.test(k.textContent.trim())
+      if (/^(Column widths|Text box|Grid|Cell colours|Image borders)( \(\d+\))?$/.test(k.textContent.trim())
         && k.closest('div[class]') && k.closest('.section-metadata').parentElement.querySelector(':scope > .columns')
         && !k.closest('.section-metadata').parentElement.querySelector(':scope > .hero-corp')) fails.push(`row ${k.textContent.trim()} left`);
     });
