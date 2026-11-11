@@ -233,6 +233,14 @@ the 10-step scale by heading level; nothing presentational is authored.
 - Table (78 blocks): one design; `no-header` (12) says whether the first row is a header row
   (semantics, not styling) and stays; no tags inside. Unchanged.
 
+## Marketo forms (2026-11-11)
+
+The 544 `marketo-form` blocks (495 documents) are already one standard: configuration rows only
+(Base URL, Munchkin ID, Form ID, captcha), the form itself from Marketo, styled by the corp form
+CSS. Unchanged. Content gap for the client: 53 blocks have no Form ID and load no form
+(0 documents; by business unit: ):
+
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
