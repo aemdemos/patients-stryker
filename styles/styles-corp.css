@@ -2114,3 +2114,9 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-size: var(--corp-type-lead);
   line-height: var(--heading-line-height-hero);
 }
+
+/* the standard Video (standardisation; pages with `type-scale: standard`): no border on any
+   player (the corp Video draws the source's 1px frame unless no-border) */
+:where(body.corp.type-standard) main div.section .video:not(.no-border) :is(video, iframe) {
+  border: 0;
+}

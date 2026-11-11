@@ -552,6 +552,16 @@ export function transformDocument(body, { page = true } = {}) {
     const heroes = own.filter((c) => c.classList.contains('hero-corp'));
     const accordions = own.filter((c) => c.classList.contains('accordion'));
     const statistics = own.filter((c) => c.classList.contains('statistics'));
+    // Video: two variants, `video` (click to play) and `video autoplay` (a muted loop), no border
+    // option (the standard has none: styles-corp.css, type-scale: standard pages)
+    own.filter((c) => c.classList.contains('video')).forEach((block) => {
+      const from = block.className;
+      const variant = block.classList.contains('autoplay') ? 'video autoplay' : 'video';
+      block.className = variant;
+      blocks.push({
+        section: si, block: own.indexOf(block), type: 'video', from, variant,
+      });
+    });
     // Accordion: the one design, its text cleaned. Statistics: every figure gold (the colour
     // cell says gold), the column count from the figures (statistics.js), no left option
     accordions.forEach((block) => {
