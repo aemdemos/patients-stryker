@@ -42,7 +42,9 @@ import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
-const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
+const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments', 'corp-legal'];
+// templates whose rich-text title is only a source H1 (a lower heading keeps its level)
+const H1_TITLE_ONLY = ['corp-legal'];
 
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
@@ -906,7 +908,8 @@ export default function transform(hookName, element, payload) {
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
   // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1
-  let firstTitle = !hasTitle && [...main.querySelectorAll('.c-largeheadline, .c-rich-text-editor :is(h1, h2, h3, h4, h5, h6)')]
+  const titleHeadings = H1_TITLE_ONLY.includes(payload.template.name) ? 'h1' : ':is(h1, h2, h3, h4, h5, h6)';
+  let firstTitle = !hasTitle && [...main.querySelectorAll(`.c-largeheadline, .c-rich-text-editor ${titleHeadings}`)]
     .find((el) => text(el) && !el.closest('.h1-title'));
   const firstHeadline = firstTitle && firstTitle.matches('.c-largeheadline') ? firstTitle : null;
   if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);

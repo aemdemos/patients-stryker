@@ -64,6 +64,8 @@
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
+  --corp-color-table-stripe: #f5f5f5;
+  --corp-table-cell-padding: var(--space-block-s) 8px;
 
   /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
      .form-control field text: 18px/1.5 on phones, 14px/1.2 from 600px (Marketo's field line) */
