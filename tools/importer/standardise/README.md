@@ -210,8 +210,18 @@ the 10-step scale by heading level; nothing presentational is authored.
   Bold; title lines become headings: a paragraph wholly in size tags of 21px and up (h2 from
   28px, else h3; up to 120 characters), a short gold Bold + Italic line (h3), a short Bold line in
   21px+ copy (h3 / h2), a title line before a line break (split off). 1,666 titles in all passes.
-- Left on the pages: 301 tags, in the Accordion and Statistics blocks (not standardised yet) and
-  the visually hidden ones.
+
+## Accordion and Statistics (2026-11-11)
+
+- Accordion (61 blocks): already one design; it stays `accordion`, its questions and answers
+  cleaned like the other text (279 tags; gold → Bold + Italic; no title promotion inside).
+- Statistics (21 blocks, 32 figures): one standard, `statistics count-up count-once`. Every
+  figure is gold (the user's choice: the colour cell says `gold`; it was navy 14, gold 9, teal
+  7, purple 2); the `cols-N` and `left` options go: without `cols-N` the figures sit in one row
+  (up to 3, `statistics.js`), centred; the 103 size tags go.
+- A flex section's `Columns | 1 + 2` row (its pieces per source column) is structure and stays
+  (the default-content pass had dropped it: a figure and its text then sat side by side).
+- Left on the pages: only the 16 visually hidden tags.
 
 ### The first pilot: layout standards (superseded)
 
