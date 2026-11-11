@@ -767,6 +767,11 @@ body.long-page-detail-corp main span.serif {
   font-weight: var(--font-weight-regular);
 }
 
+/* `**[[serif]…]**`: bold Egyptienne (stryker.com plain bold in Egyptienne text) */
+body.long-page-detail-corp main :is(strong, b) > span.serif {
+  font-weight: inherit;
+}
+
 /* this template's colour section styles (stryker.com .bg-purple, .bg-dark-purple-gradient,
    .bg-gray-gradient; Mako refreshers, ispies, OR staff): with `full-bleed` the band, with
    `headline-box` the box (above); white text */

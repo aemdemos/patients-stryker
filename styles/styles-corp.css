@@ -1102,3 +1102,13 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
     display: none;
   }
 }
+
+/* bracket tag `[[color-light-gray]…]`: light grey text (stryker.com #b2b4ae, e.g. the BACS
+   banner lists), as the other colour tags (styles.css) */
+:where(body.corp) span.color-light-gray,
+:where(body.corp) span.color-light-gray :is(strong, b, em, i, a:any-link) {
+  --span-color: var(--color-surface-muted);
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}

@@ -212,6 +212,13 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
   const doc = root.ownerDocument;
   [...root.querySelectorAll('b')].forEach((b) => {
     if (b.closest('.futura-bold, .standalone-link') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+    // plain bold in Egyptienne text is Egyptienne bold on the source (foot & ankle toolkit "To
+    // learn more and request a copy…"): `[[serif]…]` inside the bold (the site's bold is Futura)
+    if (b.closest('.urw-egyptienne') && !b.closest('a') && text(b)) {
+      b.prepend(doc.createTextNode('[[serif]'));
+      b.append(doc.createTextNode(']'));
+      return;
+    }
     if (b.closest('.urw-egyptienne, a') || b.querySelector('.urw-egyptienne, a') || !text(b)) return;
     const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
@@ -238,11 +245,15 @@ function ownColour(el) {
   return m ? m[1].trim() : '';
 }
 
-/** Whether a node holds text in a colour other than gold. */
-function hasOtherColour(node) {
+// the corp purple (#85458a, `[[color-purple]…]`: CLOUT labels and figures, giving-back names)
+const PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+const LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
+
+/** Whether a node holds text in a colour other than the given one (default gold). */
+function hasOtherColour(node, own = GOLD) {
   if (node.nodeType !== 1) return false;
   const coloured = [node, ...node.querySelectorAll('[style*="color"]')]
-    .filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+    .filter((el) => ownColour(el) && !own.test(ownColour(el)));
   return coloured.some((el) => [...el.childNodes].some((child) => (child.nodeType === 3
     ? child.textContent.trim() : !ownColour(child) && text(child))));
 }
@@ -309,17 +320,17 @@ function tagTextSize(root) {
   });
 }
 
-function tagGoldText(root) {
+function tagColourText(root, own, tag) {
   const tagged = new Set();
-  const wrap = (nodes) => bracketTag(nodes, 'color-gold', root);
+  const wrap = (nodes) => bracketTag(nodes, tag, root);
   // `tagged`: the nodes already inside a gold tag (a gold element in them needs no tag of its own)
   const wrapRun = (nodes) => {
     nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
     wrap(nodes);
   };
   root.querySelectorAll('[style*="color"]').forEach((el) => {
-    if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
-    if (!hasOtherColour(el)) {
+    if (!own.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+    if (!hasOtherColour(el, own)) {
       wrapRun([el]);
       return;
     }
@@ -328,13 +339,19 @@ function tagGoldText(root) {
     // black span in a gold span)
     let run = [];
     [...el.childNodes].forEach((child) => {
-      if (hasOtherColour(child)) {
+      if (hasOtherColour(child, own)) {
         wrapRun(run);
         run = [];
       } else run.push(child);
     });
     wrapRun(run);
   });
+}
+
+/** Gold text → `[[color-gold]…]`, purple → `[[color-purple]…]`. */
+function tagGoldText(root) {
+  tagColourText(root, GOLD, 'color-gold');
+  tagColourText(root, PURPLE, 'color-purple');
 }
 
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
@@ -831,6 +848,23 @@ function headlineNodes(component, doc) {
     return blocks.length > 1 ? blocks : [line];
   });
   const tags = segments.map(headlineTag);
+  // another vw size inside a line (CLOUT figures: a 5vw "99.4%" over 1.5vw labels in one line):
+  // its own `headline-N` tag inside the line's tag (not a span inside another sized span)
+  const VW = /\bfontsize-(\d+(?:-\d+)?)-?vw\b/;
+  segments.forEach((segment, i) => {
+    const own = (/\bheadline-(\d+(?:-\d+)?)\b/.exec(tags[i] || '') || [])[1];
+    if (!own) return;
+    [...segment.querySelectorAll('[class*="fontsize-"]')].forEach((span) => {
+      const n = (VW.exec(span.className) || [])[1];
+      if (!n || n === own || !text(span)) return;
+      const outer = span.parentElement.closest('[class*="fontsize-"]');
+      if (outer && segment.contains(outer) && VW.test(outer.className)) return;
+      // a span around the line's own size (Mako refreshers: 1.5vw > 2vw is 2vw) keeps no tag
+      if ([...span.querySelectorAll('[class*="fontsize-"]')].some((inner) => (VW.exec(inner.className) || [])[1] === own)) return;
+      span.classList.remove(...[...span.classList].filter((cls) => cls.startsWith('fontsize-')));
+      bracketTag([...span.childNodes], `headline-${n}`, segment);
+    });
+  });
   const centredSegments = segments.map((segment) => segment !== box && centredLine(segment));
   // a heading other than h1 in the line (rep-portal "Rep portal" h2): marked, so a page
   // title keeps it as a heading of its own
@@ -1205,15 +1239,35 @@ const HERO_TEXT_SIZES = {
 // the source box colours a hero's `Text box` can take (stryker.com .bg-<colour>)
 const HERO_BOXES = ['gold', 'white', 'purple', 'teal', 'blue', 'dark-purple-gradient'];
 
+const HERO_BLACK = /^(?:#000|#000000|black|rgb\(\s*0\s*,\s*0\s*,\s*0\s*\))$/i;
+
 function heroText(container, doc) {
   if (!container) return [];
   // white text: the `[[color-white]…]` tag (the outermost white element of a run)
   container.querySelectorAll('[style*="color"]').forEach((el) => {
     if (!HERO_WHITE.test(ownColour(el)) || !text(el)) return;
+    // text a nested colour overrides is not white
+    const own = el.cloneNode(true);
+    own.querySelectorAll('[style*="color"]').forEach((c) => { if (HERO_BLACK.test(ownColour(c))) c.remove(); });
+    if (!text(own)) return;
     const outer = el.parentElement.closest('[style*="color"]');
     if (outer && container.contains(outer) && HERO_WHITE.test(ownColour(outer))) return;
-    el.prepend(doc.createTextNode('[[color-white]'));
-    el.append(doc.createTextNode(']'));
+    // links keep their own colour (teal on the source): the tag around the runs between them
+    if (!el.querySelector('a[href]')) {
+      el.prepend(doc.createTextNode('[[color-white]'));
+      el.append(doc.createTextNode(']'));
+      return;
+    }
+    let run = [];
+    const flush = () => {
+      if (run.some((n) => n.textContent.trim())) bracketTag(run, 'color-white', container);
+      run = [];
+    };
+    [...el.childNodes].forEach((child) => {
+      if (child.nodeType === 1 && (child.matches('a[href]') || child.querySelector('a[href]'))) flush();
+      else run.push(child);
+    });
+    flush();
   });
   const tagCopy = (n) => {
     if (typeof n.copyStyle !== 'string' || !n.copyStyle || !n.firstChild) return;
@@ -1234,6 +1288,8 @@ function heroText(container, doc) {
   return [...container.querySelectorAll(TEXT)]
     .filter((c) => !c.parentElement.closest(TEXT) && text(c))
     .flatMap((c) => {
+      // light grey hero text (#b2b4ae: the BACS banner lists, the 1788 urology slide)
+      tagColourText(c, LIGHT_GRAY, 'color-light-gray');
       const colour = boxColour(c);
       const mark = (nodes) => {
         nodes.forEach((n) => { if (colour) n.heroBox = colour; });

@@ -584,7 +584,12 @@ function rowCopyStyle(cells, doc) {
   const weight = {};
   copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
   let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
-  if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
+  // …and when some is 1.25x (the `text-1-25` tag is relative to the text around it: in a
+  // larger section copy it grows, ASC operating room "Advanced imaging modalities" 30.5px
+  // instead of 17.5px), each size gets its own tag
+  const relative = (style) => sizeTag(style) === 'text-1-25';
+  const ownTags = (n) => !sizeTag(n.copyStyle) || (relative(n.copyStyle) && !relative(dominant));
+  if (sizeTag(dominant) && copy.some(ownTags)) {
     dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
   }
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
@@ -828,6 +833,9 @@ function banners(main, doc) {
     const src = source ? source.getAttribute('srcset').split(/\s+/)[0] : img.getAttribute('src');
     const heroRows = heroTextRows(heroText(box, doc));
     if (!heroRows.rows.length) return;
+    // a banner H1 (SKILL "SKILL Centers of Excellence") is the page title: the headings below
+    // stay as they are
+    if (box.querySelector('h1')) main.setAttribute('data-banner-title', '');
     // a phone image of its own (another asset than the desktop one, rep-portal): a second row
     const asset = (url) => (url || '').split('?')[0];
     const rows = [[heroImage(img, doc, src)]];
@@ -919,6 +927,16 @@ function titleFromHeading(heading, doc) {
     h1.append(bold);
   }
   if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
+  // a rich-text Heading 2 keeps its source look as the page H1: the H2's 24.5px (21px on
+  // phones on the source), in Egyptienne unless it is all bold (SKILL e-Lab "A 24/7 online
+  // training platform"; the H1 is 28px Futura bold)
+  if (!size && level === 'H2') {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+    const bold = [...h1.querySelectorAll('.futura-bold, b, strong')]
+      .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'));
+    const serif = squash(bold.map((b) => b.textContent).join('')) !== squash(h1.textContent);
+    sizeTagged(h1, serif ? 'text-1-75,serif' : 'text-1-75', doc);
+  }
   return h1;
 }
 
@@ -974,7 +992,9 @@ export default function transform(hookName, element, payload) {
   downloadTitles(main, doc);
   videoCaptions(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
-    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
+    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1')
+    || main.hasAttribute('data-banner-title');
+  main.removeAttribute('data-banner-title');
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
   // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1
