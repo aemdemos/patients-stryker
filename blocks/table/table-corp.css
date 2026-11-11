@@ -1,0 +1,16 @@
+body.corp .table.block table {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+body.corp .table.block table tbody tr {
+  border: 0;
+}
+
+body.corp .table.block table td {
+  padding: var(--corp-table-cell-padding);
+}
+
+body.corp .table.block.striped table tbody tr:nth-child(odd) {
+  background-color: var(--corp-color-table-stripe);
+}
