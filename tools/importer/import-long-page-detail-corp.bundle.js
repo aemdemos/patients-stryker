@@ -2532,11 +2532,43 @@ var CustomImportScript = (() => {
     return out;
   }
   function centredColumn(col) {
-    const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+    const CENTRED = '.text-center, [style*="text-align: center"], [style*="text-align:center"]';
+    const centred = (el) => !!el.closest(CENTRED) || el.matches(".line") && !!el.querySelector(CENTRED) && [...el.querySelectorAll(":scope > *")].every((c) => c.matches(CENTRED));
     const images = [...col.querySelectorAll(".c-standalone-image img")];
     const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li), .c-standalone-image .title-content :is(h2, h3, h4, h5), .c-largeheadline .line")].filter((el) => text3(el));
     const items = [...images, ...paragraphs];
     return items.length > 0 && items.every(centred);
+  }
+  function paddedColumn(col, colctrl) {
+    const parts = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => c.closest(".colctrl") === colctrl && text3(c));
+    const last = parts[parts.length - 1];
+    const box = last && last.matches(".c-rich-text-editor") && last.querySelector(":scope > div");
+    return !!box && /padding-bottom:\s*5%/.test(box.getAttribute("style") || "");
+  }
+  function dropWholeTag(n, tag) {
+    const texts = [];
+    const walk = (node) => node.childNodes.forEach((c) => {
+      if (c.nodeType === 3) texts.push(c);
+      else if (c.nodeType === 1) walk(c);
+    });
+    walk(n);
+    const open = `[[${tag}]`;
+    const onlyTags = (value) => !value.replace(/\[\[[a-z0-9,-]+\]/g, "").trim();
+    let first = null;
+    let at = -1;
+    texts.every((t) => {
+      at = t.nodeValue.indexOf(open);
+      if (at >= 0) {
+        first = onlyTags(t.nodeValue.slice(0, at)) ? t : null;
+        return false;
+      }
+      return onlyTags(t.nodeValue);
+    });
+    const last = [...texts].reverse().find((t) => t.nodeValue.trim());
+    if (!first || first === last || !last.nodeValue.trimEnd().endsWith("]")) return;
+    first.nodeValue = first.nodeValue.slice(0, at) + first.nodeValue.slice(at + open.length);
+    const end = last.nodeValue.lastIndexOf("]");
+    last.nodeValue = last.nodeValue.slice(0, end) + last.nodeValue.slice(end + 1);
   }
   function sizeTag(copyStyle) {
     const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
@@ -2577,6 +2609,7 @@ var CustomImportScript = (() => {
     if (sizeTag(dominant) && copy.some(ownTags)) {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
     }
+    copy.filter((n) => relative(n.copyStyle)).forEach((n) => dropWholeTag(n, "text-1-25"));
     const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
     copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? "serif" : ""].filter(Boolean).join(","), doc));
     const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
@@ -2667,8 +2700,9 @@ var CustomImportScript = (() => {
         firstRule ? "left-border-bottom" : ""
       ].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
+      const padded = filled.every((col) => paddedColumn(col, colctrl));
       const cells = columns.map((col) => cellNodes(col, doc));
-      const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
+      const style = [rowCopyStyle(cells, doc), centred ? "center" : "", padded ? "cell-padding" : ""].filter(Boolean).join(", ");
       const block = WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]

@@ -569,7 +569,10 @@ function cellNodes(col, doc) {
  * with text-align: center; e.g. the rep-portal icon + link cells): the row gets `center`.
  */
 function centredColumn(col) {
-  const centred = (el) => !!el.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+  const CENTRED = '.text-center, [style*="text-align: center"], [style*="text-align:center"]';
+  // a Large Headline line is centred by the box inside it (build-your-asc phase boxes)
+  const centred = (el) => !!el.closest(CENTRED) || (el.matches('.line') && !!el.querySelector(CENTRED)
+    && [...el.querySelectorAll(':scope > *')].every((c) => c.matches(CENTRED)));
   const images = [...col.querySelectorAll('.c-standalone-image img')];
   // the text too: rich text, Large Headline lines and an image's title (OR staff tiles,
   // instruments contact information: centred images over left-aligned text, not centred)
@@ -577,6 +580,52 @@ function centredColumn(col) {
     .filter((el) => text(el));
   const items = [...images, ...paragraphs];
   return items.length > 0 && items.every(centred);
+}
+
+/**
+ * A source column whose last text is rich text with a 5% bottom padding (build-your-asc
+ * phases: the gold "… months prior to first cases" lines): with every column of the row so,
+ * the row gets `cell-padding`.
+ */
+function paddedColumn(col, colctrl) {
+  const parts = [...col.querySelectorAll(CELL_COMPONENTS)]
+    .filter((c) => c.closest('.colctrl') === colctrl && text(c));
+  const last = parts[parts.length - 1];
+  const box = last && last.matches('.c-rich-text-editor') && last.querySelector(':scope > div');
+  return !!box && /padding-bottom:\s*5%/.test(box.getAttribute('style') || '');
+}
+
+/**
+ * Drops a `[[<tag>]…]` around all the text of a paragraph (only other tags before it): the row
+ * sizes the paragraph already (build-your-asc gold "36-48+ months prior to first cases": a
+ * `text-1-25` tag in a `p-1-25` section, 21.9px instead of 17.5px).
+ */
+function dropWholeTag(n, tag) {
+  const texts = [];
+  const walk = (node) => node.childNodes.forEach((c) => {
+    if (c.nodeType === 3) texts.push(c);
+    else if (c.nodeType === 1) walk(c);
+  });
+  walk(n);
+  const open = `[[${tag}]`;
+  const onlyTags = (value) => !value.replace(/\[\[[a-z0-9,-]+\]/g, '').trim();
+  // the opening tag in the leading text (other tags' openings only before it; the tags can
+  // be separate text nodes: "[[color-gold]", "[[text-1-25]")
+  let first = null;
+  let at = -1;
+  texts.every((t) => {
+    at = t.nodeValue.indexOf(open);
+    if (at >= 0) {
+      first = onlyTags(t.nodeValue.slice(0, at)) ? t : null;
+      return false;
+    }
+    return onlyTags(t.nodeValue);
+  });
+  const last = [...texts].reverse().find((t) => t.nodeValue.trim());
+  if (!first || first === last || !last.nodeValue.trimEnd().endsWith(']')) return;
+  first.nodeValue = first.nodeValue.slice(0, at) + first.nodeValue.slice(at + open.length);
+  const end = last.nodeValue.lastIndexOf(']');
+  last.nodeValue = last.nodeValue.slice(0, end) + last.nodeValue.slice(end + 1);
 }
 
 /** The size tag of a copy style: 'p-1-25' → 'text-1-25', '' when it sets no size. */
@@ -634,6 +683,9 @@ function rowCopyStyle(cells, doc) {
   if (sizeTag(dominant) && copy.some(ownTags)) {
     dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
   }
+  // a paragraph all in 1.25x is sized by the row (the section style or its own tag below): no
+  // 1.25x tag of its own as well (the tag is relative, the two would multiply)
+  copy.filter((n) => relative(n.copyStyle)).forEach((n) => dropWholeTag(n, 'text-1-25'));
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
   // the Egyptienne 24.5px intro in the grey box beside the faculty)
   const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
@@ -773,8 +825,10 @@ function columnRows(main, doc) {
       stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
       firstRule ? 'left-border-bottom' : ''].filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
+    const padded = filled.every((col) => paddedColumn(col, colctrl));
     const cells = columns.map((col) => cellNodes(col, doc));
-    const style = [rowCopyStyle(cells, doc), centred ? 'center' : ''].filter(Boolean).join(', ');
+    const style = [rowCopyStyle(cells, doc), centred ? 'center' : '', padded ? 'cell-padding' : '']
+      .filter(Boolean).join(', ');
     const block = WebImporter.Blocks.createBlock(doc, {
       name: variant ? `Columns (${variant})` : 'Columns',
       cells: [cells],

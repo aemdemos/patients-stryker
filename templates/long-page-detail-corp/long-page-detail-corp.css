@@ -1274,14 +1274,17 @@ body.long-page-detail-corp main span:is(.box-gold-gradient, .box-gray-gradient, 
   display: block;
   padding: var(--space-block-l);
   font-size: var(--body-font-size-xl);
+  margin-bottom: var(--space-block-l);
   line-height: var(--long-page-detail-corp-box-line-height);
   text-align: center;
 }
 
 /* (on phones the lines sit on 21px lines, 32.5px apart as stryker.com's 35 + 30px line boxes,
-   a 105px box; 14px lines from 600px) */
+   a 105px box; 14px lines from 600px); 20px to what follows on phones, 30px from 600px (the
+   margin collapses with the paragraph's) */
 @media (width >= 600px) {
   body.long-page-detail-corp main span:is(.box-gold-gradient, .box-gray-gradient, .box-dark-purple-gradient, .box-dark-teal-gradient, .box-dark-blue-gradient, .box-dark-orange-gradient) {
+    margin-bottom: calc(2 * var(--space-block));
     font-size: var(--body-font-size-m);
     line-height: var(--paragraph-line-height);
   }
@@ -1293,3 +1296,10 @@ body.long-page-detail-corp main span.box-dark-purple-gradient { background: var(
 body.long-page-detail-corp main span.box-dark-teal-gradient { background: var(--long-page-detail-corp-box-dark-teal-gradient); }
 body.long-page-detail-corp main span.box-dark-blue-gradient { background: var(--long-page-detail-corp-box-dark-blue-gradient); }
 body.long-page-detail-corp main span.box-dark-orange-gradient { background: var(--long-page-detail-corp-box-dark-orange-gradient); }
+
+/* section style `cell-padding`: a 5% bottom padding in each column cell, of the cell's width
+   (on its last element, so the 5% is of the cell, not the row; stryker.com column rich text
+   with padding-bottom 5%, build-your-asc phases: 22px at 440px) */
+body.long-page-detail-corp main > .section.cell-padding .columns > div > div > :last-child {
+  padding-bottom: 5%;
+}
