@@ -76,6 +76,7 @@
   --corp-type-statement: clamp(31.5px, calc(31.5px + 24.5 * ((100vw - 375px) / 1065)), 56px);
   --corp-type-hero: clamp(37.5px, calc(37.5px + 32.5 * ((100vw - 375px) / 1065)), 70px);
   --corp-type-line-height-display: 1.15; /* Subtitle and up */
+  --corp-banner-scrim: linear-gradient(90deg, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 35%) 45%, rgb(0 0 0 / 0%) 65%); /* the standard light-text banner: its text side darkened */
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */

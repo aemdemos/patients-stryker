@@ -186,6 +186,8 @@ export function stripTags(root) {
   [...root.querySelectorAll(':is(p, li) :is(em, i)')].forEach((em) => {
     const bold = em.closest('strong, b') || em.querySelector('strong, b');
     if (!bold || bold.closest('[data-gold]') || bold.querySelector('[data-gold]') || em.closest('[data-gold]')) return;
+    // (a Bold + Italic link is the gold button / link of the conventions: it stays)
+    if (em.closest('a') || em.querySelector('a') || bold.closest('a') || bold.querySelector('a')) return;
     em.replaceWith(...em.childNodes);
     out.labels += 1;
   });

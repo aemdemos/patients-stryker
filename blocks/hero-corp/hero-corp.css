@@ -385,9 +385,11 @@
      down (51 of 86 product heroes); Display gold title, Title subtitle, Lead copy, light serif
      (sage-air-pump, sage-halfmats, arise-1000-ex)
    - banner: the image across the page, the text over its left half from 5% / 5% (the most
-     common text box); Hero headline, Statement second line, Title copy (gamma4, pangea,
-     pro-pelvis)
-   - banner-light: a banner on a dark image, its text light (blueprint, shoulder-id, tornier)
+     common text box); Display headline, Title second line, Lead copy: the middle of the 127
+     banners' headline sizes (a quarter each at 56px and up, 35-55px, under 35px, the 28px page
+     default; gamma4, pangea, pro-pelvis are the 70px end)
+   - banner-light: a banner on a dark image, its text light over a shade on the image's text
+     side (blueprint, shoulder-id, tornier; xpr-restraints had a dark box)
    Phones: the image (its phone crop when there is one), the text under it, dark; the product
    hero goes side by side from 600px, the banners put their text over the image from 900px. */
 main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) {
@@ -395,9 +397,9 @@ main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) {
   --hero-slide-left: 5%;
   --hero-slide-right: 45%;
   --hero-slide-bottom: auto;
-  --hero-std-title: var(--corp-type-hero);
-  --hero-std-subtitle: var(--corp-type-statement);
-  --hero-std-copy: var(--corp-type-title);
+  --hero-std-title: var(--corp-type-display);
+  --hero-std-subtitle: var(--corp-type-title);
+  --hero-std-copy: var(--corp-type-lead);
 }
 
 main .hero-corp.image-slide.product-hero {
@@ -513,8 +515,21 @@ main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light):not(:has(.
     padding: 0;
   }
 
-  /* banner-light: light text over the dark image (gold stays gold) */
+  /* banner-light: light text over the dark image (gold stays gold), a shade on the image's
+     text side so it stays readable on any photo */
   main .hero-corp.image-slide.banner-light > :last-child > * {
     color: var(--color-surface);
+  }
+
+  main .hero-corp.image-slide.banner-light > :first-child {
+    position: relative;
+  }
+
+  main .hero-corp.image-slide.banner-light > :first-child::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--corp-banner-scrim);
+    pointer-events: none;
   }
 }

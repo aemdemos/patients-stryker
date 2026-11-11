@@ -64,10 +64,15 @@ const results = await page.evaluate(async ({ src, list }) => {
     const goldRe = /\[\[[^\]]*\b(?:Gold|Dark-Gold)\b[^\]]*\]([^\][]+)\]/gi;
     const gold = [...body.querySelectorAll('.columns')].map((c) => [...c.textContent.matchAll(goldRe)]
       .map((x) => x[1].trim()).filter(Boolean));
+    const goldLinks = (b) => b.querySelectorAll(':is(strong em, em strong, b i, i b) a, a:is(:has(> strong > em), :has(> em > strong))').length;
+    const linksBefore = goldLinks(body);
     const before = facts(body);
     const out = m.transformDocument(body);
     const after = facts(body);
     const fails = [];
+    // the conventions' Bold + Italic links (gold buttons) stay Bold + Italic (a link in a gold tag
+    // becomes one)
+    if (goldLinks(body) < linksBefore) fails.push(`Bold + Italic links ${linksBefore} → ${goldLinks(body)}`);
     ['words', 'links', 'images'].forEach((k) => {
       if (before[k] !== after[k]) fails.push(`${k} changed`);
     });
