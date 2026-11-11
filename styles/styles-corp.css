@@ -1580,10 +1580,10 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   --corp-label-size: var(--heading-font-size-xxl);
 }
 
-:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }

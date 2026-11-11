@@ -34,11 +34,11 @@ body.corp .columns > div > div h2 {
 /* serif section (styles-corp.css): the cells' copy keeps the section's copy size
    (--corp-copy-size, 14px without a p-* style) instead of the patients 21px serif Columns
    copy (stryker.com nse footed-attachments: 14px Egyptienne list) */
-body.corp .section.serif .columns :is(p, li) {
+body.corp .section.serif .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li) {
   font-size: var(--corp-copy-size, var(--body-font-size-m));
 }
 
-body.corp .section.serif .columns :is(ul, a) {
+body.corp .section.serif .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(ul, a) {
   font-size: inherit;
 }
 
@@ -230,7 +230,7 @@ body.corp .columns.large-headline li + li {
    Futura 700 gold, 35px below 840px, 43.75px above). Its plain words are the light serif
    (two-tone, as "We build trust."); the gold marker keeps the heading size (columns.css
    sizes gold h2 markers). large-headline has its own heading scale. */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em) {
+body.corp .columns:not(.large-headline):where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) > div > div h2:has(> em > strong, > strong > em) {
   font-family: var(--heading-font-family);
   font-size: var(--columns-corp-display-size);
   font-weight: var(--font-weight-regular);
@@ -243,7 +243,7 @@ body.corp .columns.large-headline h2:is(.underline, :has(> u)) {
 }
 
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+body.corp .columns:not(.large-headline):where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
   line-height: 1.33;
 }
 
@@ -432,12 +432,12 @@ body.corp .columns.related-links p a:any-link:has(u) {
 
 /* section style serif with p-1 / p-1-25: 14px or 17.5px serif copy (stryker.com
    urw-egyptienne at 1em / .fontsize-1-25em); serif alone sets 21px */
-body.corp .section.serif.p-1 .columns :is(p, li, a) {
+body.corp .section.serif.p-1 .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li, a) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
+body.corp .section.serif.p-1-25 .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li, a) {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
