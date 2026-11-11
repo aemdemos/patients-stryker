@@ -146,6 +146,29 @@ cards' gold titles); gold is Bold + Italic (14). Resources is always six-up
 (`cards-corp.css`), and Bold + Italic copy in the two variants is gold: no existing card copy on
 the site uses Bold + Italic, so neither change reaches other pages.
 
+## The standard Hero variants (2026-11-11)
+
+213 `hero-corp` blocks (all `image-slide`, with a dozen option combinations and a measured
+`Text box` each). Three variants (the user's choice: contained banners become full-width; a
+light-text variant for banners on dark images):
+
+| Variant | Class | Blocks | Layout and type (1440px) |
+|---|---|---|---|
+| Product hero | `hero-corp image-slide product-hero` | 86 | image right half, text over the left half at 8% / 18% (51 of 86); Display title, Title subtitle, Lead copy |
+| Banner | `hero-corp image-slide banner` | 100 | image across the page, text over its left half from 5% / 5%; Display headline, Title subtitle, Lead copy |
+| Banner (light text) | `hero-corp image-slide banner-light` | 27 | a banner whose text was White / Light-Gray / Silver (or in a dark box): light text over a shade on the image's text side (`--corp-banner-scrim`) |
+
+- Phones: the image (its phone crop when there is one), then the text under it, dark; the
+  product hero goes side by side from 600px, banners overlay from 900px.
+- Banner sizes are the middle of the 127 banners' headline sizes (a quarter each at 56px and up,
+  35-55px, under 35px and the page default); the three first models (gamma4, pangea, pro-pelvis)
+  were the 70px end and made long titles run past the image.
+- Bold words of a headline are Futura bold, the others the light serif; gold is Bold + Italic.
+- The rules (`rules/variants.js`): options and the `Text box` row go (518 tags, 527 rows in
+  hero sections); a banner paragraph of 35px and up becomes its h2.
+- Fixed on the way (all three block types): a Bold + Italic link is the conventions' gold
+  button and stays as it is (the label rule had made 197 of them plain Bold); the test checks it.
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
