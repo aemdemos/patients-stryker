@@ -144,10 +144,23 @@ Ten named steps replace every measured size (`[[1.75×]`, `[[5vw]`, `Copy size |
 - `Heading size` rows go; the h2 / h3 they enlarged (not in cards) get their step as a tag.
   `Copy size` / `Label size` rows take a step name (Body: the row goes). `Text` / `Headings` rows:
   their sizes become step names.
+- The sizes are worked out per context, as the blocks render them: an h1 has the browser's 2em
+  (on the scale: Title, `styles-corp.css`); an h3 in Columns of a serif section is 1.5× (columns.css);
+  Columns with Large Headline have their own h2 / h4 / copy sizes; a superscript is 0.75× the text
+  around it. Checked against the rendered pages: 97% of the size tags within 1px (the rest match
+  a different text of the same words).
 - Effect on the 30 pilot pages: distinct text sizes site-wide 31 → 16 on desktop and 36 → 17 on
-  phones; per page a median of 10 → 9. Desktop sizes move little. Phones change most: the vw
-  sizes were twice their desktop share below 600px (an 11px caption under a 37px heading),
-  and now follow the steps.
+  phones; per page a median of 10 → 9.5 (desktop) and 11 → 9 (phones), at most 16 → 13. Desktop
+  sizes move little. Phones change most: the vw sizes were twice their desktop share below 600px
+  (an 11px caption under a 37px heading, headings smaller than their copy), and now follow the
+  steps.
+- What the scale gives up: three feature figures above the top step (98–119px: high-speed-drills
+  "One", pivot-guardian "Zero reported", "Expanding") are Hero (70px). Small print (references,
+  document IDs) stays at Small.
+- Checks: words, links, headings, blocks, images and sections the same in all 66 documents; 60
+  renders (1440 and 375) without errors, every block loaded, no tag left as text. Side findings
+  (not caused by the scale, already on /rs): pivot-guardian is 526px wide on phones; a long
+  operon-d860 heading and a prime-series reference URL do not wrap.
 
 ## Notes as "design" and "EDS team" (pilot roles)
 
