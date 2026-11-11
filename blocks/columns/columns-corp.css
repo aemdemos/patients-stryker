@@ -901,6 +901,7 @@ body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-stat
   font-family: var(--columns-std-copy-font, var(--body-font-family));
   font-size: var(--columns-std-copy-size);
   line-height: var(--paragraph-line-height);
+  overflow-wrap: anywhere;
 }
 
 /* type: the variant's, whatever the section around it sets */
