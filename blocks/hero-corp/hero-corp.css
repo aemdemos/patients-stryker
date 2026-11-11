@@ -220,3 +220,37 @@
     display: block;
   }
 }
+
+/* `Text colour on phones` (Section Metadata): below 600px all the text in one colour, the
+   colour tags and the button text too (stryker.com .mobile-text-dark_gray / -black); the
+   desktop colours from 600px */
+.hero-corp[data-phone-text="dark-gray"] { --hero-phone-text: var(--color-secondary); }
+.hero-corp[data-phone-text="black"] { --hero-phone-text: var(--color-black); }
+
+.hero-corp[data-phone-text] > div:last-child > *,
+.hero-corp[data-phone-text] > div:last-child a:any-link {
+  color: var(--hero-phone-text);
+}
+
+.hero-corp[data-phone-text] > div:last-child span[class*="color-"] {
+  --span-color: var(--hero-phone-text);
+}
+
+@media (width >= 600px) {
+  .hero-corp[data-phone-text] > div:last-child > * {
+    color: inherit;
+  }
+
+  .hero-corp[data-phone-text] > div:last-child a:any-link {
+    color: var(--hero-phone-link, var(--color-black));
+  }
+
+  .hero-corp[data-phone-text] > div:last-child span.color-gold { --span-color: var(--color-accent); }
+  .hero-corp[data-phone-text] > div:last-child span.color-white { --span-color: var(--color-white); }
+  .hero-corp[data-phone-text] > div:last-child span.color-blue { --span-color: var(--color-navy-bright); }
+  .hero-corp[data-phone-text] > div:last-child span.color-purple { --span-color: var(--color-purple); }
+  .hero-corp[data-phone-text] > div:last-child span.color-teal { --span-color: var(--color-primary); }
+  .hero-corp[data-phone-text] > div:last-child span.color-navy { --span-color: var(--color-navy); }
+  .hero-corp[data-phone-text] > div:last-child span.color-grey { --span-color: var(--color-secondary); }
+  .hero-corp[data-phone-text] > div:last-child span.color-light-gray { --span-color: var(--color-surface-muted); }
+}

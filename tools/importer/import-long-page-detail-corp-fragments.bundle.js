@@ -1081,6 +1081,8 @@ var CustomImportScript = (() => {
     if (overlay && overlay.classList.contains("mobile_Bottom")) props["Text on phones"] = "below";
     if (!mobile) props["Text on phones"] = "alone";
     if (heroRows.box) props["Text box"] = heroRows.box;
+    const phoneColour = overlay && (/\bmobile-text-(dark_gray|black)\b/.exec(overlay.className) || [])[1];
+    if (phoneColour) props["Text colour on phones"] = phoneColour.replace("_", "-");
     return { block: WebImporter.Blocks.createBlock(doc, { name: "Hero Corp", cells: rows }), props };
   }
   function buildArticle(element, { keep = "", spacer = true, componentStyle = null } = {}) {

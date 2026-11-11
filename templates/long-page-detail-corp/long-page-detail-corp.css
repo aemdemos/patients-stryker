@@ -1155,18 +1155,13 @@ body.long-page-detail-corp main > .section.local-nav-corp-container .local-nav-c
 }
 
 /* …above a slide hero (corporate responsibility, ASC, instruments, spine medical education):
-   the card 30px from the edges, 15px under the header and 20px above the hero */
-body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) {
-  margin-bottom: var(--space-block-l);
-}
-
+   the card 30px from the edges and 15px under the header (40px above the hero, as the others) */
 body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) .local-nav-corp-nav {
   margin: var(--space-block) var(--space-block) 0;
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.local-nav-corp-container,
-  body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) {
+  body.long-page-detail-corp main > .section.local-nav-corp-container {
     margin-bottom: var(--space-section);
   }
 
@@ -1195,6 +1190,39 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
 body.long-page-detail-corp main .hero-corp > div:last-child > * {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
+}
+
+/* …on phones its headline lines sit on 21px lines, as the large headline paragraphs above
+   (stryker.com: the line in 21px, 28.875px lines; build-your-asc "Expertise" 34px under the
+   11px line above it) */
+body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* …on phones a slide whose text goes below its image ends 15px under its text, and the page
+   goes on 30px below the hero (stryker.com: the button's 15px, the section's 30px) */
+body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-below > div:last-child {
+  padding-bottom: var(--space-block);
+}
+
+body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.text-below) {
+  margin-bottom: var(--space-section);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-below > div:last-child {
+    padding-bottom: 0;
+  }
+
+  body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.text-below) {
+    margin-bottom: var(--space-block);
+  }
 }
 
 /* …the copy 20px under the headline, a button 30px (stryker.com: the Large Headline's 30px,

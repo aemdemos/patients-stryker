@@ -137,6 +137,7 @@ function readSlideOptions(block) {
  *   Text on phones  `over` (default) or `below` the image, or `alone` (no image on phones)
  *   Text box        the colour of a box around the first text row (gold, white, purple, teal,
  *                   blue, dark-purple-gradient)
+ *   Text colour on phones  one colour for all the text below 600px (dark-gray, black)
  *   Text width      the banner's text column in % ("33", "50", "67", "100")
  * The block itself is `Hero Corp` (the slide) or `Hero Corp (banner)`; news pages set the same
  * slide layout with option classes instead (`image-slide, top-15, left-56, right-10, …`).
@@ -157,6 +158,9 @@ function readSectionOptions(block) {
   if (phones === 'alone') block.classList.add('text-below', 'text-alone');
   const box = (data.textBox || '').trim().toLowerCase().replace(/\s+/g, '-');
   if (box) block.dataset.textBox = box;
+  // `Text colour on phones`: one colour for all the text below 600px (dark-gray, black)
+  const phoneColour = (data.textColourOnPhones || '').trim().toLowerCase().replace(/\s+/g, '-');
+  if (phoneColour) block.dataset.phoneText = phoneColour;
   const width = parseFloat(data.textWidth);
   if (!Number.isNaN(width)) block.style.setProperty('--hero-banner-text-width', `${width}%`);
 }

@@ -1384,6 +1384,9 @@ function heroSlide(component, doc) {
   // no phone image: stryker.com shows the text alone on phones
   if (!mobile) props['Text on phones'] = 'alone';
   if (heroRows.box) props['Text box'] = heroRows.box;
+  // one text colour on phones (build-your-asc: dark grey; 1788 thoracic, ThermaClear: black)
+  const phoneColour = overlay && (/\bmobile-text-(dark_gray|black)\b/.exec(overlay.className) || [])[1];
+  if (phoneColour) props['Text colour on phones'] = phoneColour.replace('_', '-');
   return { block: WebImporter.Blocks.createBlock(doc, { name: 'Hero Corp', cells: rows }), props };
 }
 
