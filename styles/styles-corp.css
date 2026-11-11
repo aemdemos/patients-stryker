@@ -242,6 +242,12 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-size: var(--corp-h3-size, var(--heading-font-size-m));
 }
 
+/* a corp h1 has no size of its own (the browser's 2em); on the standard type scale it is the
+   Title step (--heading-font-size-xxl, see the type scale below) */
+:where(body.corp.type-standard) main h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
 /* h4: 14px on phones, 17.5px from 600px (stryker.com h4 14px, 17.5px from 480px: no EDS
    breakpoint, phones take the smallest size) */
 :where(body.corp) h4 {

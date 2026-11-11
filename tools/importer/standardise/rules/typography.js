@@ -140,11 +140,14 @@ export function transformDocument(body, { page = true } = {}) {
     const label = rowSize(get('Label size'), LABEL);
     const factor = Number(((get('Heading size') || '').match(MULTIPLE) || [])[1]) || 1;
     const scaled = (h) => /^H[23]$/.test(h.tagName) && !h.closest('.cards, .cards-corp');
+    // (blocks/columns/columns.css: an h3 in Columns of a serif section is 1.5× the h3)
+    const serif = (get('style') || '').split(',').map((t) => t.trim()).includes('serif');
+    const level = (h) => LEVEL[h.tagName] * (serif && h.tagName === 'H3' && h.closest('.columns') ? 1.5 : 1);
 
     // the base size of an element's text, before its tags (and after: the step it becomes)
     const baseOf = (el) => {
       if (!el) return copy;
-      if (/^H[1-6]$/.test(el.tagName)) return LEVEL[el.tagName] * (scaled(el) ? factor : 1);
+      if (/^H[1-6]$/.test(el.tagName)) return level(el) * (scaled(el) ? factor : 1);
       if (label && LABEL_P(el)) return label;
       return copy;
     };
@@ -189,7 +192,8 @@ export function transformDocument(body, { page = true } = {}) {
             sized.forEach((t) => { px = tokenSize(t, /^(\d|large$)/i.test(t) ? unit : px); });
             if (sized.length) {
               const step = stepFor(px);
-              const plain = stepFor(around);
+              // (without the tag, text in a superscript is 0.75 × the text around it)
+              const plain = stepFor(around * sup);
               if (write) {
                 const tagText = s.slice(i + m[0].length).split(']')[0];
                 sizes.push({ text: tagText, px: Math.round(px * 100) / 100, step });
@@ -220,8 +224,8 @@ export function transformDocument(body, { page = true } = {}) {
     if (rows.has('Heading size')) {
       content.forEach((root) => [...root.querySelectorAll('h2, h3')].concat(/^H[23]$/.test(root.tagName) ? [root] : [])
         .filter(scaled).forEach((h) => {
-          const step = stepOf(LEVEL[h.tagName] * factor);
-          if (step === stepOf(LEVEL[h.tagName]) || !text(h)) return;
+          const step = stepOf(level(h) * factor);
+          if (step === stepOf(level(h)) || !text(h)) return;
           const walker = h.ownerDocument.createTreeWalker(h, 4);
           const first = walker.nextNode();
           let last = first;
