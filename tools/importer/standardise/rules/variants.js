@@ -33,7 +33,8 @@ const LINE = /^(box(:| end)|column break$|\[\[blank line\]\]$)/i;
 const CAPTION = 120;
 const GOLD = ['gold', 'dark-gold'];
 // the Columns' own settings rows (plain, or `(k)` for the section's k-th Columns)
-const BLOCK_ROWS = ['Column widths', 'Text box', 'Grid', 'Cell colours', 'Image borders', 'Columns', 'Column'];
+// (a flex section's `Columns | 1 + 2`, its pieces per source column, is structure: it stays)
+const BLOCK_ROWS = ['Column widths', 'Text box', 'Grid', 'Cell colours', 'Image borders', 'Column'];
 // a section's type and spacing rows (go when the section holds only Columns)
 const SECTION_ROWS = ['Copy size', 'Label size', 'Heading size', 'Text', 'Headings', 'Blank lines', 'Padding', 'Margin'];
 // type styles (go when the section holds only Columns)
@@ -349,8 +350,8 @@ function cleanContent(block, variant, counts) {
     el.remove();
     counts.lines += 1;
   });
-  if (!['resources', 'product-hero'].includes(variant)) counts.titles += splitTitles(block, () => false, variant === 'feature-statement');
-  if (variant !== 'resources') markTitles(block, variant);
+  if (!['resources', 'product-hero', 'accordion', 'statistics'].includes(variant)) counts.titles += splitTitles(block, () => false, variant === 'feature-statement');
+  if (!['resources', 'accordion', 'statistics'].includes(variant)) markTitles(block, variant);
   const t = stripTags(block);
   ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
   counts.titles += promoteTitles(block);
@@ -408,7 +409,7 @@ const TEXT_DROP = ['serif', 'h-serif', 'bold-body', 'center', 'blue', 'btn-blue'
 const TEXT_DROP_RE = /^(p|h|label|ps)-[\d-]+$|^col-|^flex-\d/;
 // a text section's type, spacing and placement rows
 const TEXT_ROWS = ['Copy size', 'Label size', 'Heading size', 'Text', 'Headings', 'Blank lines', 'Padding',
-  'Margin', 'Column', 'Column widths', 'Columns'];
+  'Margin', 'Column', 'Column widths'];
 
 /**
  * The default content (text outside blocks) of every section on the standard: its lines and
@@ -549,6 +550,29 @@ export function transformDocument(body, { page = true } = {}) {
     const columns = own.filter((c) => c.classList.contains('columns'));
     const cards = own.filter((c) => c.classList.contains('cards-corp'));
     const heroes = own.filter((c) => c.classList.contains('hero-corp'));
+    const accordions = own.filter((c) => c.classList.contains('accordion'));
+    const statistics = own.filter((c) => c.classList.contains('statistics'));
+    // Accordion: the one design, its text cleaned. Statistics: every figure gold (the colour
+    // cell says gold), the column count from the figures (statistics.js), no left option
+    accordions.forEach((block) => {
+      cleanContent(block, 'accordion', counts);
+      blocks.push({
+        section: si, block: own.indexOf(block), type: 'accordion', from: block.className, variant: 'accordion',
+      });
+      block.className = 'accordion';
+    });
+    statistics.forEach((block) => {
+      const from = block.className;
+      cleanContent(block, 'statistics', counts);
+      [...block.children].forEach((row) => {
+        const cells = [...row.children];
+        if (cells.length >= 3) cells[0].textContent = 'gold';
+      });
+      block.className = 'statistics count-up count-once';
+      blocks.push({
+        section: si, block: own.indexOf(block), type: 'statistics', from, variant: 'statistics',
+      });
+    });
     if (!columns.length && !cards.length && !heroes.length) return;
     // (a section holding only standard blocks: its type rows and styles are theirs)
     const STANDARD = ['columns', 'cards-corp', 'hero-corp'];
