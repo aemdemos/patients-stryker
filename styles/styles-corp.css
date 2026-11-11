@@ -61,6 +61,21 @@
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
   --corp-std-band-space: 34px; /* standard Columns in a coloured band: band edge → content (median of 8 measured stryker.com band edges, 26–47px) */
+
+  /* the standard type scale (standardise pilot, pages with `type-scale: standard`): 10 named
+     steps, each from its phone size (375px) to its desktop size (1440px). Desktop sizes: the
+     sizes 97.5% of the pilot pages' text renders at (stryker.com 0.8em … 5vw at 1440px) */
+  --corp-type-small: 11.2px;
+  --corp-type-body: 14px;
+  --corp-type-large: 17.5px;
+  --corp-type-lead: 21px;
+  --corp-type-subtitle: clamp(22.75px, calc(22.75px + 1.75 * ((100vw - 375px) / 1065)), 24.5px);
+  --corp-type-title: clamp(24.5px, calc(24.5px + 3.5 * ((100vw - 375px) / 1065)), 28px);
+  --corp-type-headline: clamp(26.25px, calc(26.25px + 8.75 * ((100vw - 375px) / 1065)), 35px);
+  --corp-type-display: clamp(28px, calc(28px + 14 * ((100vw - 375px) / 1065)), 42px);
+  --corp-type-statement: clamp(31.5px, calc(31.5px + 24.5 * ((100vw - 375px) / 1065)), 56px);
+  --corp-type-hero: clamp(37.5px, calc(37.5px + 32.5 * ((100vw - 375px) / 1065)), 70px);
+  --corp-type-line-height-display: 1.15; /* Subtitle and up */
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
@@ -1131,6 +1146,32 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
     font-size: min(calc(var(--corp-vw) * 1vw), calc(var(--corp-vw) * var(--body-font-size-m)));
   }
 }
+
+/* the standard type scale (standardise pilot, pages with `type-scale: standard`): the heading
+   levels and the large copy / label sizes are steps of the scale (h1 Title, h2 Subtitle, panel
+   headings Headline), and a step name in the text ([[Statement]…]) is its step wherever it
+   is used */
+:where(body.corp.type-standard) {
+  --heading-font-size-xxl: var(--corp-type-title);
+  --heading-font-size-xl: var(--corp-type-subtitle);
+  --panel-heading-size: var(--corp-type-headline);
+}
+
+:where(body.corp.type-standard) main span.type-small { font-size: var(--corp-type-small); }
+:where(body.corp.type-standard) main span.type-body { font-size: var(--corp-type-body); }
+:where(body.corp.type-standard) main span.type-large { font-size: var(--corp-type-large); }
+:where(body.corp.type-standard) main span.type-lead { font-size: var(--corp-type-lead); }
+
+:where(body.corp.type-standard) main span:is(.type-subtitle, .type-title, .type-headline, .type-display, .type-statement, .type-hero) {
+  line-height: var(--corp-type-line-height-display);
+}
+
+:where(body.corp.type-standard) main span.type-subtitle { font-size: var(--corp-type-subtitle); }
+:where(body.corp.type-standard) main span.type-title { font-size: var(--corp-type-title); }
+:where(body.corp.type-standard) main span.type-headline { font-size: var(--corp-type-headline); }
+:where(body.corp.type-standard) main span.type-display { font-size: var(--corp-type-display); }
+:where(body.corp.type-standard) main span.type-statement { font-size: var(--corp-type-statement); }
+:where(body.corp.type-standard) main span.type-hero { font-size: var(--corp-type-hero); }
 
 /* bracket tag `[[futura-bold]…]` inside a link: a bold text link (stryker.com span.futura-bold
    around a link alone on its line, e.g. nailing-portfolio "Gamma4 Trochanteric Nail"), not a

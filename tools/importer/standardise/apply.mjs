@@ -26,6 +26,7 @@ import { createRequire } from 'module';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { features, hashOf } from './lib/features.js';
+import splitSections from './lib/sections.js';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
@@ -87,28 +88,6 @@ const reviewed = (doc) => readFileSync(existsSync(fileOf(backup, doc)) ? fileOf(
 // (the review hashed the /rs documents: /std fragment links count as their /rs links)
 const asReviewed = (html) => html.replace(/href="\/std\/([^"#?]*\/fragments\/)/g, 'href="/rs/$1')
   .replace(/>\/std\/([^<]*\/fragments\/)/g, '>/rs/$1');
-
-// the top-level sections of a document's source text, so unchanged ones stay byte for byte
-function splitSections(html) {
-  const parts = [];
-  let depth = 0;
-  let start = 0;
-  let last = 0;
-  [...html.matchAll(/<(\/?)div\b[^>]*>/g)].forEach((m) => {
-    if (!m[1]) {
-      if (!depth) start = m.index;
-      depth += 1;
-    } else {
-      depth -= 1;
-      if (!depth) {
-        const end = m.index + m[0].length;
-        parts.push({ before: html.slice(last, start), html: html.slice(start, end) });
-        last = end;
-      }
-    }
-  });
-  return { parts, tail: html.slice(last) };
-}
 
 const browser = await chromium.launch();
 const page = await browser.newPage();

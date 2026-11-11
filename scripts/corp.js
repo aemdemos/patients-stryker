@@ -284,7 +284,9 @@ export function decorateBlockLayout(main) {
 export function decorateSections(main) {
   // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
   // before accordion panels take their sections' content; readable settings (prototype,
-  // `style-settings: on` pages) first, as the classes they stand for
+  // `style-settings: on` pages) first, as the classes they stand for; a page on the standard
+  // type scale (`type-scale: standard`, standardise pilot) reads its step names as steps
+  if (getMetadata('type-scale') === 'standard') document.body.classList.add('type-standard');
   if (getMetadata('style-settings') === 'on') decorateSettings(main);
   decorateSpacing(main);
   decorateTypeTags(main);
