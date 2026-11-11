@@ -1253,6 +1253,67 @@
       "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
       "description": "Back link Experience Fragments of the People bio pages (#515), imported from their XF master URLs as fragment documents at the paths in tools/importer/xf-fragment-map.js. Script: tools/importer/import-people-fragments.js.",
       "blocks": []
+    },
+    {
+      "name": "ivs-footnotes",
+      "description": "www.stryker.com Interventional Spine footnotes (#516): index (hero, Accordion (divided) in a `separator` section, \"View past revisions\" gold buttons) and detail pages (Back link Fragment, hero with the document code subhead in an `h-serif` section, revisions with bold [[text-1-25]] labels, [[body-font]] dates and numbered references; a `separator` section only when the hero has no subhead); the source document code as a closing `disclaimer` section; `published`, `last-updated: show`, `site: corp`.",
+      "urls": [
+        "https://www.stryker.com/us/en/interventional-spine/footnotes.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-025-001.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-025-537.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-025-789.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-025-835.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/2019-ivs-portfolio-notebook.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/D0000023001.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/D0000061168.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/back-pain-rf-postcard-rep.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/back-pain-specialist-postcard.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/bta-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/bta-patient-poster.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/bvn-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/dek.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/discography-patient-brochure-1000-000-002.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/genicular-patient-postcard-customized.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/genicular-rf-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/living-with-back-pain-poster.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/mild-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/mild-patient-flip-chart.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/mild-patient-postcard.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/mild-patient-poster.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/mild-quick-reference-guide.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/pain-relief.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/rf-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/rf-treatment-postcard.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/spinejack-launch-slick.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/spinejack-patient-poster.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/spinejack-system-patient-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/suffering-from-back-pain-rf-poster.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/vcf-solutions-brochure.html",
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/vertebralaugmentationpatient.html"
+      ],
+      "blocks": [
+        {
+          "name": "accordion",
+          "instances": [
+            ".c-accordion .panel-group"
+          ]
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".experiencefragment"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ivs-footnotes-fragments",
+      "description": "Back link Experience Fragment of the Interventional Spine footnote detail pages (#516), imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow` section.",
+      "urls": [
+        "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
+      ],
+      "blocks": []
     }
   ]
 }
