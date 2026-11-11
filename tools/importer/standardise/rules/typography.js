@@ -70,6 +70,10 @@ const NAMED_VW = {
 const LEVEL = {
   H1: 28, H2: 24.5, H3: 21, H4: 17.5, H5: 15, H6: 14,
 };
+/** desktop sizes in Columns with Large Headline (blocks/columns/columns-corp.css) */
+const LARGE_HEADLINE = {
+  H2: 28, H4: 35, P: 14, LI: 17.5,
+};
 const COPY = { small: 11.2, large: 17.5, 'x-large': 21 };
 const LABEL = { large: 24.5 };
 const MULTIPLE = /^(\d+(?:\.\d+)?)\s*[×x]$/i;
@@ -142,12 +146,18 @@ export function transformDocument(body, { page = true } = {}) {
     const scaled = (h) => /^H[23]$/.test(h.tagName) && !h.closest('.cards, .cards-corp');
     // (blocks/columns/columns.css: an h3 in Columns of a serif section is 1.5× the h3)
     const serif = (get('style') || '').split(',').map((t) => t.trim()).includes('serif');
-    const level = (h) => LEVEL[h.tagName] * (serif && h.tagName === 'H3' && h.closest('.columns') ? 1.5 : 1);
+    // (blocks/columns/columns-corp.css: Columns with Large Headline have their own sizes)
+    const headline = (el) => !!el.closest('.columns.large-headline');
+    const level = (h) => {
+      if (headline(h) && LARGE_HEADLINE[h.tagName]) return LARGE_HEADLINE[h.tagName];
+      return LEVEL[h.tagName] * (serif && h.tagName === 'H3' && h.closest('.columns') ? 1.5 : 1);
+    };
 
     // the base size of an element's text, before its tags (and after: the step it becomes)
     const baseOf = (el) => {
       if (!el) return copy;
       if (/^H[1-6]$/.test(el.tagName)) return level(el) * (scaled(el) ? factor : 1);
+      if (headline(el) && LARGE_HEADLINE[el.tagName]) return LARGE_HEADLINE[el.tagName];
       if (label && LABEL_P(el)) return label;
       return copy;
     };
