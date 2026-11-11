@@ -266,6 +266,35 @@ function markTitles(block, variant, skip = () => false) {
   });
 }
 
+/**
+ * A title line joined to its copy by a line break (`<p><em><strong>T</strong></em><br>copy</p>`):
+ * when the line before the break is Bold + Italic (gold) or in size tags of 21px and up, it is
+ * split off as a heading (h2 from 28px or in a statement, else h3); a plain Bold lead-in stays.
+ * @returns {number} how many were split
+ */
+function splitTitles(root, skip = () => false, statement = false) {
+  let n = 0;
+  [...root.querySelectorAll('p')].filter((p) => !skip(p)).forEach((p) => {
+    const nodes = [...p.childNodes].filter((x) => !(x.nodeType === 3 && !x.nodeValue.trim()));
+    const [first, br, ...rest] = nodes;
+    if (!first || first.nodeType !== 1 || !br || br.nodeName !== 'BR' || !rest.length) return;
+    if (!first.matches('strong, b, em, i') || first.querySelector('a, img, picture')) return;
+    const inner = first.firstElementChild;
+    const boldItalic = !!inner && first.children.length === 1
+      && ((first.matches('em, i') && inner.matches('strong, b')) || (first.matches('strong, b') && inner.matches('em, i')));
+    const max = Math.max(0, ...[...first.textContent.matchAll(/\[\[([^\]]+)\]/g)]
+      .flatMap((m) => m[1].split(',').map(tokenPx)).filter(Boolean));
+    if (!boldItalic && max < 21) return;
+    if (plainText(first).length > CAPTION || !plainText(first)) return;
+    const h = p.ownerDocument.createElement(statement || max >= 28 ? 'H2' : 'H3');
+    p.before(h);
+    h.append(first);
+    br.remove();
+    n += 1;
+  });
+  return n;
+}
+
 function promoteTitles(block) {
   let n = 0;
   block.querySelectorAll('p[data-promote]').forEach((p) => {
@@ -320,6 +349,7 @@ function cleanContent(block, variant, counts) {
     el.remove();
     counts.lines += 1;
   });
+  if (!['resources', 'product-hero'].includes(variant)) counts.titles += splitTitles(block, () => false, variant === 'feature-statement');
   if (variant !== 'resources') markTitles(block, variant);
   const t = stripTags(block);
   ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
@@ -410,7 +440,12 @@ function standardText(body, counts, page) {
         counts.lines += 1;
       });
       const statement = styles.includes('large-headline');
+      // the section's copy size (its row goes below): large copy made its bold lines titles
+      const copyRow = rows.find(([key]) => key === 'Copy size');
+      const copyName = copyRow ? copyRow[1].trim().toLowerCase() : '';
+      const copyPx = ({ large: 17.5, 'x-large': 21 })[copyName] || tokenPx(copyName) || 14;
       if (!styles.includes('disclaimer')) {
+        counts.titles += splitTitles(section, inBlock, statement);
         markTitles(section, statement ? 'statement' : 'default', inBlock);
         // a short paragraph wholly Bold + Italic is a gold title (the source's gold label line)
         [...section.querySelectorAll('p:not([data-promote])')].filter((p) => !inBlock(p)).forEach((p) => {
@@ -422,6 +457,16 @@ function standardText(body, counts, page) {
           if (p.querySelector('a, img, picture')) return;
           p.dataset.promote = statement ? 'H2' : 'H3';
         });
+        // in large copy (21px and up) a short wholly Bold line is the section's title
+        if (copyPx >= 21) {
+          [...section.querySelectorAll('p:not([data-promote])')].filter((p) => !inBlock(p)).forEach((p) => {
+            const only = p.children.length === 1 && p.firstElementChild;
+            const words = plainText(p);
+            if (!only || !only.matches('strong, b') || plainText(only) !== words || !words) return;
+            if (words.length > CAPTION || p.querySelector('a, img, picture')) return;
+            p.dataset.promote = copyPx >= 28 || statement ? 'H2' : 'H3';
+          });
+        }
       }
       const t = stripTags(section, inBlock);
       ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });

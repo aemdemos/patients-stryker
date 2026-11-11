@@ -2091,7 +2091,7 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-style: normal;
 }
 
-:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
+:where(body.corp.type-standard) main > .section.large-headline:not(.h-serif) > .default-content-wrapper > :is(h1, h2, h3) {
   font-family: var(--heading-font-family);
   font-size: var(--corp-type-headline);
   font-weight: var(--font-weight-medium);
