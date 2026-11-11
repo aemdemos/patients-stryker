@@ -124,6 +124,8 @@ const SIZE_STYLES = [
   // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
   ['fontsize-2em', 'p-2'],
   ['fontsize-2-5em', 'p-2-5'],
+  // 49px: nested sizes only (1.75em in 2em, build-your-asc)
+  ['fontsize-3-5em', 'p-3-5'],
 ];
 
 // source size spans on part of a line → the bracket size tags (styles-corp.css: text-1-25;
@@ -148,6 +150,7 @@ const SIZE_FACTORS = {
   'fontsize-1-75em': 1.75,
   'fontsize-2em': 2,
   'fontsize-2-5em': 2.5,
+  'fontsize-3-5em': 3.5,
 };
 
 /**

@@ -461,6 +461,13 @@ body.long-page-detail-corp main > .section.p-2-5 > div :is(p, li) {
   line-height: var(--heading-line-height);
 }
 
+/* `p-3-5`: copy that is all 49px (stryker.com 1.75em in 2em: build-your-asc "You only get one
+   chance to launch your ASC. We help you do it right.", at every width) */
+body.long-page-detail-corp main > .section.p-3-5 > div :is(p, li) {
+  font-size: var(--long-page-detail-corp-copy-3-5);
+  line-height: var(--heading-line-height);
+}
+
 /* `full-width-image` with a phone image: the phone image (2nd) below 600px, the desktop
    image (1st) from 600px */
 body.long-page-detail-corp main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p) {

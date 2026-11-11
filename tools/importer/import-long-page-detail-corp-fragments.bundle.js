@@ -176,7 +176,9 @@ var CustomImportScript = (() => {
     ["fontsize-1-75em", "p-1-75"],
     // long-page-detail-corp: 28px and 35px copy (p-2 / p-2-5, template CSS)
     ["fontsize-2em", "p-2"],
-    ["fontsize-2-5em", "p-2-5"]
+    ["fontsize-2-5em", "p-2-5"],
+    // 49px: nested sizes only (1.75em in 2em, build-your-asc)
+    ["fontsize-3-5em", "p-3-5"]
   ];
   var SIZE_TAGS = [
     // 0.8em on part of a paragraph (TEACH talks: the 11.2px "• TSA • RSA" link groups)
@@ -196,7 +198,8 @@ var CustomImportScript = (() => {
     "fontsize-1-5em": 1.5,
     "fontsize-1-75em": 1.75,
     "fontsize-2em": 2,
-    "fontsize-2-5em": 2.5
+    "fontsize-2-5em": 2.5,
+    "fontsize-3-5em": 3.5
   };
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
