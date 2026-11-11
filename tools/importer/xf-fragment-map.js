@@ -267,4 +267,22 @@ export default {
     fragment: '/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body',
     name: 'Article body of "Four reasons every school needs AEDs"',
   },
+  '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master': {
+    name: 'Article body of "Advancing healthcare through Asian culture and collaboration"',
+  },
+  '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master': {
+    name: 'Article body of "More than able to make healthcare better"',
+  },
+  '/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master': {
+    name: 'Article body of "Technologies that promote safe care for mother and baby during childbirth"',
+  },
+  '/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body': {
+    name: 'Article body of "5 steps to convince decision makers to adopt an AED program"',
+  },
+  '/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body': {
+    name: 'Article body of "8 steps to a successful AED safety program"',
+  },
+  '/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master': {
+    name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"',
+  },
 };
