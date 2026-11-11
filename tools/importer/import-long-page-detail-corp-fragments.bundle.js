@@ -2068,6 +2068,9 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
+  var SOURCE_REDIRECTS = {
+    "/us/en/surgical-technologies/products/surgicount-safety-sponge-system/surgicount-index/badge-request---contact-us.html": "/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html"
+  };
   var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
     counts[xf] = (counts[xf] || 0) + 1;
     return counts;
@@ -2274,6 +2277,7 @@ var CustomImportScript = (() => {
     ".buttonset",
     "table"
   ].join(", ");
+  var YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
   function linkedImage(component) {
     const img = component.querySelector("img");
     const link = img && img.closest("a[href]");
@@ -2366,7 +2370,8 @@ var CustomImportScript = (() => {
           a.textContent = link.querySelector("img").getAttribute("alt") || text3(link) || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
-          nodes.splice(1, 0, p);
+          if (YOUTUBE_LINK.test(a.getAttribute("href"))) nodes.splice(0, 1, p);
+          else nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches(".c-standalone-video")) {
@@ -2498,7 +2503,7 @@ var CustomImportScript = (() => {
         return;
       }
       const key = columns.map(columnWidth).join(",");
-      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
+      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute("href"))));
       const boxes = boxVariant(columns);
       if (!boxes) {
         colctrl.querySelectorAll("[data-white-tag]").forEach((el) => {
@@ -2695,6 +2700,10 @@ var CustomImportScript = (() => {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const path = sourcePath(payload);
+    main.querySelectorAll("a[href]").forEach((a) => {
+      const href = a.getAttribute("href").replace(/^https:\/\/www\.stryker\.com/, "");
+      if (SOURCE_REDIRECTS[href]) a.setAttribute("href", SOURCE_REDIRECTS[href]);
+    });
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
     dropDamVideos(main);
     banners(main, doc);

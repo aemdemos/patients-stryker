@@ -45,6 +45,13 @@ import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
+// links whose stryker.com page redirects (301): the final page instead (AGENTS.md, link
+// rewriting), found by checking every site link of the pages
+const SOURCE_REDIRECTS = {
+  '/us/en/surgical-technologies/products/surgicount-safety-sponge-system/surgicount-index/badge-request---contact-us.html':
+    '/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html',
+};
+
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
   counts[xf] = (counts[xf] || 0) + 1;
@@ -375,6 +382,8 @@ const CELL_COMPONENTS = [
   '.c-curatedcta', '.buttonset', 'table',
 ].join(', ');
 
+const YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
+
 /** The link around a standalone image (a[href] > img), or null. */
 function linkedImage(component) {
   const img = component.querySelector('img');
@@ -501,7 +510,10 @@ function cellNodes(col, doc) {
           a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
           const p = doc.createElement('p');
           p.append(a);
-          nodes.splice(1, 0, p);
+          // an image opening a YouTube video (SKILL Assist MAX): the video alone, as a player
+          // (decided 2026-11-11; Columns makes a YouTube link a player, not an image link)
+          if (YOUTUBE_LINK.test(a.getAttribute('href'))) nodes.splice(0, 1, p);
+          else nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches('.c-standalone-video')) {
@@ -704,7 +716,8 @@ function columnRows(main, doc) {
     }
     const key = columns.map(columnWidth).join(',');
     // linked images (the endoscopy resources specialty tiles): `media-pair`
-    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
+    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')]
+      .some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute('href'))));
     const boxes = boxVariant(columns);
     // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
     // stays in the text colour, so it stays readable
@@ -969,6 +982,10 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const path = sourcePath(payload);
+  main.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href').replace(/^https:\/\/www\.stryker\.com/, '');
+    if (SOURCE_REDIRECTS[href]) a.setAttribute('href', SOURCE_REDIRECTS[href]);
+  });
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
   dropDamVideos(main);
