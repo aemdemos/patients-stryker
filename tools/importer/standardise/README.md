@@ -169,6 +169,29 @@ light-text variant for banners on dark images):
 - Fixed on the way (all three block types): a Bold + Italic link is the conventions' gold
   button and stays as it is (the label rule had made 197 of them plain Bold); the test checks it.
 
+## The standard section backgrounds (2026-11-11)
+
+About 950 of the 10,496 sections had one of 15 background styles (plus gradient direction,
+stripe, shadow and fade modifiers, and `boxed` for most white and gold ones). Four new section
+styles replace them (new names, so the original /rs pages keep their look); each owns its colour,
+shape and spacing, and the band / box spacing rows (Padding, Margin, Blank lines) go:
+
+| Style | Sections | Was | Look |
+|---|---|---|---|
+| `gold-box` | 211 | bg-gold, bg-golden-gradient (most of them boxed) | a gold box in the page width, 20px in |
+| `blue-band` | 163 | bg-dark-blue-gradient, `dark` (teal), bg-dark-gray, bg-blue, bg-teal | full-width dark blue gradient, light text |
+| `grey-band` | 109 | bg-light-gray, bg-silver | full-width light grey |
+| `purple-band` | 102 | bg-dark-purple-gradient, bg-purple, bg-dark-orange-gradient | full-width dark purple gradient, light text |
+
+`bg-white` (324, a white box on the white page) goes. Two dark tints at the user's choice
+(purple: mostly Foot and Ankle; blue: across 8 business units). Bands: the measured band space
+(`--corp-std-band-space`, 34px) above and below. CSS at the end of `styles/styles-corp.css`;
+the dark-band link and statistics colours include the new bands. Rules:
+`standardBackgrounds` in `rules/variants.js`.
+
+Not backgrounds, left for the default-content pass: spacer, divider, flex, large-headline,
+boxed (without a background), large / xlarge, serif / h-serif, center, bold-body …
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
