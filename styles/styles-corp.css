@@ -370,6 +370,20 @@ body:where(.corp):has(main .hero-carousel) header {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* section styles `width-50` / `width-67`: the content is 6/12 or 8/12 of the row from 900px (stryker.com
+   title and body columns of the California transparency disclosure) */
+@media (width >= 900px) {
+  :where(body.corp) main > .section.width-50 > .default-content-wrapper {
+    max-width: calc(50% - var(--space-block));
+    margin: 0 auto 0 var(--space-block);
+  }
+
+  :where(body.corp) main > .section.width-67 > .default-content-wrapper {
+    max-width: calc(66.667% - var(--space-block));
+    margin: 0 auto 0 var(--space-block);
+  }
+}
+
 /* section style `no-arrow`: bold + underline links without the trailing arrow (stryker.com
    Futura bold links that are not standalone links, e.g. the Mako Refreshers "REGISTER" links:
    teal Futura bold, uppercase) */

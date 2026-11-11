@@ -10,7 +10,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 const PAGE_TEMPLATE = {
   name: 'corp-legal',
-  description: 'www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: false`.',
+  description: 'www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show`.',
   urls: [
     'https://www.stryker.com/us/en/legal/terms-of-use.html',
     'https://www.stryker.com/us/en/about/governance/bylaws.html',
@@ -37,6 +37,62 @@ function executeTransformers(hookName, element, payload) {
 }
 
 const text = (el) => (el.textContent || '').replace(/[\s\u00a0]+/g, ' ').trim();
+
+// Runs of .buildingblock siblings (lifecycle support): phase heads → Columns (color-heads),
+// intro + product table per phase → Columns (striped).
+function buildingBlocks(main, document) {
+  const groups = [];
+  main.querySelectorAll('.buildingblock').forEach((bb) => {
+    const prev = bb.previousElementSibling;
+    const last = groups[groups.length - 1];
+    if (prev && last && last[last.length - 1] === prev) last.push(bb);
+    else groups.push([bb]);
+  });
+  let count = 0;
+  groups.filter((g) => g.length > 1).forEach((group) => {
+    const heads = group.every((bb) => bb.querySelector('.c-largeheadline'));
+    const cells = group.map((bb) => {
+      const nodes = [];
+      if (heads) {
+        const p = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = text(bb.querySelector('.c-largeheadline'));
+        p.append(strong);
+        nodes.push(p);
+      }
+      bb.querySelectorAll('.c-rich-text-editor p').forEach((src) => {
+        if (!text(src)) return;
+        const p = document.createElement('p');
+        p.append(...[...src.childNodes].map((n) => n.cloneNode(true)));
+        cleanRichText(p);
+        nodes.push(p);
+      });
+      const items = [...bb.querySelectorAll('.c-table td')].filter((td) => text(td));
+      if (items.length) {
+        const ul = document.createElement('ul');
+        items.forEach((td) => {
+          const li = document.createElement('li');
+          li.append(...[...td.childNodes].map((n) => n.cloneNode(true)));
+          cleanRichText(li);
+          const trailing = (n) => n && (n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim()));
+          while (trailing(li.lastChild)) li.lastChild.remove();
+          ul.append(li);
+        });
+        nodes.push(ul);
+      }
+      return nodes;
+    });
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: heads ? 'Columns (color-heads)' : 'Columns (striped)',
+      cells: [cells],
+    });
+    block.setAttribute('data-keep', 'flow');
+    group[0].before(block);
+    group.forEach((bb) => bb.remove());
+    count += 1;
+  });
+  return count;
+}
 
 // .c-table → Table (no-header, striped); columns empty in every row are dropped.
 function tables(main, document) {
@@ -78,6 +134,83 @@ function contacts(main, document, report) {
   });
 }
 
+// section styles that are not in the corp Library (the headline box and its colours)
+const DROPPED_STYLES = ['headline-box', 'blue', 'purple'];
+
+function dropUnlistedStyles(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    if (text(table.querySelector('th, tr')) !== 'Section Metadata') return;
+    [...table.querySelectorAll('tr')].slice(1).forEach((tr) => {
+      const [key, value] = tr.children;
+      if (!key || !value || text(key).toLowerCase() !== 'style') return;
+      const styles = text(value).split(',').map((v) => v.trim())
+        .filter((v) => v && !DROPPED_STYLES.includes(v));
+      if (styles.length) value.textContent = styles.join(', ');
+      else tr.remove();
+    });
+    if (table.querySelectorAll('tr').length < 2) table.remove();
+  });
+}
+
+// California transparency disclosure: the source title and body sit in 6/12 and 8/12 columns
+const WIDTH_STYLES = [['california-transparency', ['width-50', 'width-67']]];
+
+function widthStyles(main, document, url) {
+  const styles = WIDTH_STYLES.find(([key]) => url.includes(key))?.[1];
+  if (!styles) return;
+  const hrs = [...main.children].filter((n) => n.tagName === 'HR');
+  const ends = [...hrs, null];
+  styles.forEach((style, i) => {
+    const end = ends[i];
+    let table = null;
+    for (let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild; n && n !== end; n = n.nextElementSibling) {
+      if (n.tagName === 'TABLE' && text(n.querySelector('th, tr')) === 'Section Metadata') table = n;
+    }
+    if (table) {
+      const value = table.querySelector('tr:nth-child(2) td:nth-child(2)');
+      value.textContent = `${text(value)}, ${style}`;
+    } else {
+      const block = WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
+      if (end) end.before(block);
+      else main.append(block);
+    }
+  });
+}
+
+// Runs of paragraphs indented with margin-left (bylaws clauses (a), (i)) → nested lists,
+// one level per indent step; the clause marker stays in the item text.
+function indentedLists(main, document) {
+  const indent = (p) => parseInt((p.getAttribute('style') || '').match(/margin-left:\s*(\d+)px/)?.[1] || '0', 10);
+  main.querySelectorAll('p').forEach((first) => {
+    if (!first.isConnected || !indent(first) || first.previousElementSibling?.matches('p') && indent(first.previousElementSibling)) return;
+    const run = [];
+    for (let n = first; n && n.matches('p') && indent(n); n = n.nextElementSibling) run.push(n);
+    const steps = [...new Set(run.map(indent))].sort((a, b) => a - b);
+    const root = document.createElement('ul');
+    const stack = [{ ul: root, li: null }];
+    run.forEach((p) => {
+      const level = steps.indexOf(indent(p));
+      stack.length = Math.min(stack.length, level + 1);
+      while (stack.length <= level) {
+        const parent = stack[stack.length - 1];
+        const ul = document.createElement('ul');
+        if (!parent.li) {
+          parent.li = document.createElement('li');
+          parent.ul.append(parent.li);
+        }
+        parent.li.append(ul);
+        stack.push({ ul, li: null });
+      }
+      const li = document.createElement('li');
+      li.append(...p.childNodes);
+      stack[level].ul.append(li);
+      stack[level].li = li;
+    });
+    first.before(root);
+    run.forEach((p) => p.remove());
+  });
+}
+
 // #hiddenPublishedDate (MM/DD/YYYY) → `published` (YYYY-MM-DD).
 function publishedDate(document) {
   const value = document.querySelector('#hiddenPublishedDate')?.getAttribute('value') || '';
@@ -97,11 +230,15 @@ export default {
     const hcp = !!document.querySelector('.g-hcpbanner');
     const published = publishedDate(document);
 
+    indentedLists(main, document);
+    const columnCount = buildingBlocks(main, document);
     const tableCount = tables(main, document);
     const contactReport = { phones: [] };
     contacts(main, document, contactReport);
     executeTransformers('beforeTransform', main, payload);
     executeTransformers('afterTransform', main, payload);
+    dropUnlistedStyles(main);
+    widthStyles(main, document, url);
     edsLinkPaths(main);
 
     // site + template are repeated on the page so it renders the same without bulk metadata
@@ -115,7 +252,7 @@ export default {
     if (hcp) meta['hcp-banner'] = 'true';
     if (published) {
       meta.published = published;
-      meta['last-updated'] = 'false';
+      meta['last-updated'] = 'show';
     }
     main.removeAttribute('data-xf-unresolved');
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
@@ -133,7 +270,7 @@ export default {
       report: {
         title: document.title,
         template: PAGE_TEMPLATE.name,
-        blocks: Array(tableCount).fill('table'),
+        blocks: [...Array(tableCount).fill('table'), ...Array(columnCount).fill('columns')],
         phones: contactReport.phones,
       },
     }];
