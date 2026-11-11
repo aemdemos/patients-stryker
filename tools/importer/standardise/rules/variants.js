@@ -41,6 +41,8 @@ const TYPE_STYLES = ['serif', 'h-serif', 'bold-body', 'center', 'blue', 'btn-blu
 const TYPE_STYLE = /^(p|h|label|ps)-[\d-]+$/;
 
 const text = (el) => (el ? el.textContent.replace(/\s+/g, ' ').trim() : '');
+// an element's text without the readable tags
+const plainText = (el) => el.textContent.replace(/\[\[[^\]]*\]|\]/g, '').replace(/\s+/g, ' ').trim();
 const isMediaLink = (a) => MEDIA.test(`${a.getAttribute('href') || ''} ${a.getAttribute('title') || ''}`);
 
 function cellWords(cell) {
@@ -189,7 +191,7 @@ export function stripTags(root, skip = () => false) {
   });
   // Bold + Italic copy that was not gold (the corp Futura bold label: corp copy kept its colour)
   // is Bold: Bold + Italic is gold now, the authoring convention
-  [...root.querySelectorAll(':is(p, li) :is(em, i)')].filter((em) => !skip(em)).forEach((em) => {
+  [...root.querySelectorAll(':is(p, li) :is(em, i)')].filter((em) => !skip(em) && !em.closest('[data-promote]')).forEach((em) => {
     const bold = em.closest('strong, b') || em.querySelector('strong, b');
     if (!bold || bold.closest('[data-gold]') || bold.querySelector('[data-gold]') || em.closest('[data-gold]')) return;
     // (a Bold + Italic link is the gold button / link of the conventions: it stays)
@@ -244,13 +246,18 @@ function markTitles(block, variant, skip = () => false) {
       } else if (part === ']') depth = Math.max(0, depth - 1);
       else if (!depth) outside += part;
     });
-    if (outside.replace(/[\s.,:;!?*]/g, '') || max < 21) return;
+    // (a heading is short: a long sized paragraph stays copy)
+    if (outside.replace(/[\s.,:;!?*]/g, '') || max < 21 || plainText(p).length > CAPTION) return;
     // (a banner's statement lines: 35px and up are its h2; its copy stays copy)
     if (variant === 'banner' || variant === 'banner-light') {
       if (max >= 35) p.dataset.promote = 'H2';
       return;
     }
     if (variant === 'product-hero') return;
+    if (variant === 'statement') {
+      p.dataset.promote = 'H2';
+      return;
+    }
     if (variant === 'default') {
       p.dataset.promote = max >= 28 ? 'H2' : 'H3';
       return;
@@ -402,8 +409,20 @@ function standardText(body, counts, page) {
         el.remove();
         counts.lines += 1;
       });
-      const plainRole = !styles.includes('large-headline') && !styles.includes('disclaimer');
-      if (plainRole) markTitles(section, 'default', inBlock);
+      const statement = styles.includes('large-headline');
+      if (!styles.includes('disclaimer')) {
+        markTitles(section, statement ? 'statement' : 'default', inBlock);
+        // a short paragraph wholly Bold + Italic is a gold title (the source's gold label line)
+        [...section.querySelectorAll('p:not([data-promote])')].filter((p) => !inBlock(p)).forEach((p) => {
+          const only = p.children.length === 1 && p.firstElementChild;
+          const inner = only && only.children.length === 1 && only.firstElementChild;
+          const boldItalic = inner && ((only.matches('em, i') && inner.matches('strong, b')) || (only.matches('strong, b') && inner.matches('em, i')));
+          const words = plainText(p);
+          if (!boldItalic || words !== plainText(inner) || !words || words.length > CAPTION) return;
+          if (p.querySelector('a, img, picture')) return;
+          p.dataset.promote = statement ? 'H2' : 'H3';
+        });
+      }
       const t = stripTags(section, inBlock);
       ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
       counts.titles += promoteTitles(section);

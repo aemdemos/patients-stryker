@@ -2102,3 +2102,8 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }
+
+/* gold words keep their heading's size (styles.css sizes gold h2 / h3 markers on their own) */
+:where(body.corp.type-standard) main :is(h1, h2, h3) :is(em strong, strong em) {
+  font-size: inherit;
+}
