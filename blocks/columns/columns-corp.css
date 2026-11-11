@@ -863,7 +863,11 @@ body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-stat
 }
 
 body.corp main .columns.card-grid { --columns-std-title-size: var(--corp-type-subtitle); }
-body.corp main .columns.text-columns { --columns-std-title-size: var(--corp-type-headline); }
+
+body.corp main .columns.text-columns {
+  --columns-std-title-size: var(--corp-type-headline);
+  --columns-std-h3-size: var(--corp-type-subtitle);
+}
 
 /* feature-statement: the statement is a Heading 2 (Bold words in Futura bold, the other words in
    the light serif), a Heading 3 or 4 its subhead, the copy small serif text */
@@ -926,6 +930,13 @@ body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-stat
 body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2) :is(strong, b) {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
+}
+
+/* gold: Bold + Italic text (the authoring convention; corp copy elsewhere keeps its colour
+   for the source's Futura bold labels, which the variants author as Bold), upright */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, li, h4, h5, h6) :is(strong em, em strong, b i, i b):not(a *) {
+  color: var(--color-accent);
+  font-style: normal;
 }
 
 /* a heading after copy starts a new part of the cell */

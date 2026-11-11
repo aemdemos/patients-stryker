@@ -110,7 +110,7 @@ export function stripTags(root) {
   const stack = [];
   const pairs = [];
   const out = {
-    tags: 0, gold: 0, goldLost: 0, blanks: 0,
+    tags: 0, gold: 0, goldLost: 0, blanks: 0, labels: 0,
   };
   nodes.forEach((node) => {
     const s = node.nodeValue;
@@ -163,6 +163,7 @@ export function stripTags(root) {
       ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
     const within = (tag) => !!holder.closest(tag) && root.contains(holder.closest(tag));
     if ((within('strong') || within('b')) && (within('em') || within('i'))) {
+      (holder.closest('strong') || holder.closest('b')).dataset.gold = 'true';
       out.gold += 1;
       return;
     }
@@ -170,13 +171,79 @@ export function stripTags(root) {
     const em = doc.createElement('em');
     em.append(range.extractContents());
     strong.append(em);
+    strong.dataset.gold = 'true';
     range.insertNode(strong);
     out.gold += 1;
   });
+  // Bold + Italic copy that was not gold (the corp Futura bold label: corp copy kept its colour)
+  // is Bold: Bold + Italic is gold now, the authoring convention
+  [...root.querySelectorAll(':is(p, li) :is(em, i)')].forEach((em) => {
+    const bold = em.closest('strong, b') || em.querySelector('strong, b');
+    if (!bold || bold.closest('[data-gold]') || bold.querySelector('[data-gold]') || em.closest('[data-gold]')) return;
+    em.replaceWith(...em.childNodes);
+    out.labels += 1;
+  });
+  root.querySelectorAll('[data-gold]').forEach((e) => e.removeAttribute('data-gold'));
   // (wrapping can leave empty text nodes and empty inline elements behind)
   [...root.querySelectorAll('strong, em, b, i, span')].filter((e) => !e.textContent && !e.querySelector('img, picture, br'))
     .forEach((e) => e.remove());
   return out;
+}
+
+// the desktop size (px) of a size token in 14px copy (rules/typography.js has the full rule)
+const NAMED = {
+  small: 11.2,
+  body: 14,
+  large: 17.5,
+  lead: 21,
+  subtitle: 24.5,
+  title: 28,
+  headline: 35,
+  display: 42,
+  statement: 56,
+  hero: 70,
+  fluid: 14,
+};
+function tokenPx(token) {
+  const t = token.trim().toLowerCase();
+  const m = t.match(/^([\d.]+)\s*(×|x|vw)$/);
+  if (m) return Number(m[1]) * 14;
+  return NAMED[t] || null;
+}
+
+/**
+ * Paragraphs that are headings in all but name: the whole text in size tags of at least
+ * Lead (21px). Marked to become the variant's title (h3), or in a feature-statement its
+ * statement (h2, 28px and up). A paragraph that is only a link (a button) stays.
+ */
+function markTitles(block, variant) {
+  [...block.querySelectorAll('p')].forEach((p) => {
+    if (p.querySelector('img, picture') || (p.querySelector('a') && !p.textContent.replace(p.querySelector('a').textContent, '').replace(/\[\[[^\]]*\]|\]/g, '').trim())) return;
+    let depth = 0;
+    let outside = '';
+    let max = 0;
+    (p.textContent.match(/\[\[[^\]]+\]|\]|[^[\]]+|\[/g) || []).forEach((part) => {
+      if (part.startsWith('[[')) {
+        depth += 1;
+        part.slice(2, -1).split(',').map(tokenPx).filter(Boolean)
+          .forEach((px) => { max = Math.max(max, px); });
+      } else if (part === ']') depth = Math.max(0, depth - 1);
+      else if (!depth) outside += part;
+    });
+    if (outside.replace(/[\s.,:;!?*]/g, '') || max < 21) return;
+    p.dataset.promote = variant === 'feature-statement' && max >= 28 ? 'H2' : 'H3';
+  });
+}
+
+function promoteTitles(block) {
+  let n = 0;
+  block.querySelectorAll('p[data-promote]').forEach((p) => {
+    const h = p.ownerDocument.createElement(p.dataset.promote);
+    h.append(...p.childNodes);
+    p.replaceWith(h);
+    n += 1;
+  });
+  return n;
 }
 
 function settingsRows(section) {
@@ -196,7 +263,16 @@ function settingsRows(section) {
 export function transformDocument(body) {
   const blocks = [];
   const counts = {
-    tags: 0, gold: 0, goldLost: 0, blanks: 0, lines: 0, emptyCells: 0, rows: 0, styles: 0,
+    tags: 0,
+    gold: 0,
+    goldLost: 0,
+    labels: 0,
+    titles: 0,
+    blanks: 0,
+    lines: 0,
+    emptyCells: 0,
+    rows: 0,
+    styles: 0,
   };
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
@@ -212,8 +288,10 @@ export function transformDocument(body) {
         el.remove();
         counts.lines += 1;
       });
+      markTitles(block, variant);
       const t = stripTags(block);
-      ['tags', 'gold', 'goldLost', 'blanks'].forEach((k) => { counts[k] += t[k]; });
+      ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
+      counts.titles += promoteTitles(block);
       // empty cells go (a row keeps one)
       [...block.children].forEach((row) => {
         [...row.children].filter((c) => cellKind(c) === 'empty' && !c.querySelector('img, picture')).forEach((c) => {
@@ -253,6 +331,8 @@ export function transformDocument(body) {
   blocks.forEach((b) => { by[b.variant] = (by[b.variant] || 0) + 1; });
   if (blocks.length) changes.push(`${blocks.length} Columns → ${Object.entries(by).map(([k, n]) => `${VARIANTS[k]} ${n}`).join(', ')}`);
   if (counts.tags) changes.push(`${counts.tags} tags removed (${counts.gold} gold → Bold + Italic${counts.goldLost ? `, ${counts.goldLost} gold across paragraphs lost` : ''})`);
+  if (counts.titles) changes.push(`${counts.titles} title-sized paragraphs → headings`);
+  if (counts.labels) changes.push(`${counts.labels} Bold + Italic labels → Bold`);
   if (counts.lines + counts.blanks) changes.push(`${counts.lines + counts.blanks} box / blank lines removed`);
   if (counts.rows + counts.styles) changes.push(`${counts.rows} settings rows and ${counts.styles} type styles removed`);
   return { blocks, counts, changes };

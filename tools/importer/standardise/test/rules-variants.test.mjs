@@ -3,8 +3,8 @@
  * Tests of rules/variants.js on documents with Columns blocks (the /rs copies, as imported):
  * - every Columns block gets `columns <variant>` only, a key of VARIANTS;
  * - no readable tag is left inside a Columns block, and no Box / Blank line / Column break line;
- * - the words stay (tags and those lines aside), and the links, images and headings (level and
- *   text) stay, in order;
+ * - the words stay (tags and those lines aside), and the links and images; the headings stay
+ *   (level and text, in order; title-sized paragraphs may become headings);
  * - gold text is Bold + Italic afterwards (each `[[Gold]…]` text is inside <strong><em> or
  *   <em><strong>);
  * - the section's settings keep no Columns row (Column widths, Text box, Grid, Cell colours …).
@@ -68,8 +68,16 @@ const results = await page.evaluate(async ({ src, list }) => {
     const out = m.transformDocument(body);
     const after = facts(body);
     const fails = [];
-    ['words', 'links', 'images', 'heads'].forEach((k) => {
+    ['words', 'links', 'images'].forEach((k) => {
       if (before[k] !== after[k]) fails.push(`${k} changed`);
+    });
+    // the headings stay, in order (title-sized paragraphs may become headings between them)
+    const kept = after.heads.split('\n');
+    let at = 0;
+    before.heads.split('\n').filter(Boolean).forEach((h) => {
+      const i = kept.indexOf(h, at);
+      if (i < 0) fails.push(`heading lost: ${h.slice(0, 40)}`);
+      else at = i + 1;
     });
     body.querySelectorAll('.columns').forEach((c) => {
       const cls = [...c.classList];
