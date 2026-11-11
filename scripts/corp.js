@@ -97,10 +97,27 @@ export function decorateMain(main) {
  * tabs, fragments). Each section is one panel: a heading at the top of the section is
  * the panel label, the rest of the section (text, blocks) is the panel body, handed to
  * the accordion as an inline section. The other section styles of the panels stay on
- * the accordion's section.
+ * the accordion's section. `accordion-continue` sections right after a panel are more
+ * of that panel: each becomes another inline section of its body, keeping its own
+ * section styles (e.g. p-1-25, disclaimer), so a panel can mix copy styles.
  * @param {Element} main The container element
  */
 function buildAccordionSections(main) {
+  const continued = new Map();
+  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+    const parts = [];
+    while (section.nextElementSibling?.classList.contains('accordion-continue')) {
+      const next = section.nextElementSibling;
+      const part = document.createElement('div');
+      part.dataset.accordionSection = '';
+      part.classList.add(...[...next.classList].filter((cls) => !['section', 'accordion-continue'].includes(cls)));
+      part.append(...[...next.children].flatMap((wrapper) => [...wrapper.children]));
+      parts.push(part);
+      next.remove();
+    }
+    continued.set(section, parts);
+  });
+
   const runs = [];
   main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
     const run = runs[runs.length - 1];
@@ -119,7 +136,10 @@ function buildAccordionSections(main) {
       const panel = document.createElement('div');
       panel.dataset.accordionSection = '';
       panel.append(...nodes);
-      return [{ elems: label ? [label] : [] }, { elems: [panel] }];
+      const parts = continued.get(section);
+      // a label alone (its panel text all in `accordion-continue` sections) adds no section
+      const body = nodes.length || !parts.length ? [panel, ...parts] : parts;
+      return [{ elems: label ? [label] : [] }, { elems: body }];
     });
 
     const block = buildBlock('accordion', rows);
@@ -145,20 +165,68 @@ function buildAccordionSections(main) {
  * new tab.
  * @param {Element} main The container element
  */
+function linkImage(p) {
+  const picture = p.querySelector(':scope > picture');
+  if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+  const next = p.nextElementSibling;
+  const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+  if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+  const a = document.createElement('a');
+  a.href = link.getAttribute('href');
+  if (link.target) a.target = link.target;
+  if (link.rel) a.rel = link.rel;
+  a.setAttribute('aria-label', link.textContent.trim());
+  a.append(picture);
+  p.append(a);
+  next.remove();
+}
+
 function decorateImageLinks(main) {
-  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach((p) => {
-    const picture = p.querySelector(':scope > picture');
-    if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
-    const next = p.nextElementSibling;
-    const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
-    if (!link || next.textContent.trim() !== link.textContent.trim()) return;
-    const a = document.createElement('a');
-    a.href = link.getAttribute('href');
-    a.setAttribute('aria-label', link.textContent.trim());
-    a.append(picture);
-    p.append(a);
-    next.remove();
+  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach(linkImage);
+}
+
+/**
+ * Columns (product-tiles, challenge-cards, any Columns in an `image-link` section): a link
+ * alone on the line right after an image makes the image clickable, as with the
+ * `image-link` section style; each image paragraph is a .columns-img-col (columns.js tags
+ * only a cell's first one). Runs on each block once
+ * it is loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image
+ * paragraphs while it decorates, so a link added before that would be lost. Blocks of a
+ * Fragment block arrive later (the fragment inserts its sections once they are loaded), so
+ * main is watched for them too.
+ * @param {Element} main The container element
+ */
+function decorateColumnsImageLinks(main) {
+  // also any Columns block of an `image-link` section (e.g. the "Keep reading" teaser of
+  // "A winning spirit": the image a third wide in a columns-33-67 row)
+  const selector = '.columns:is(.product-tiles, .challenge-cards), .section.image-link .columns';
+  const link = (block) => block.querySelectorAll(':scope > div > div > p').forEach((p) => {
+    if (!p.querySelector(':scope > picture') || p.children.length !== 1 || p.textContent.trim()) return;
+    p.classList.add('columns-img-col');
+    linkImage(p);
   });
+  const watch = (block) => {
+    if (block.dataset.imageLinks) return;
+    block.dataset.imageLinks = 'true';
+    if (block.dataset.blockStatus === 'loaded') {
+      link(block);
+      return;
+    }
+    const observer = new MutationObserver(() => {
+      if (block.dataset.blockStatus !== 'loaded') return;
+      observer.disconnect();
+      link(block);
+    });
+    observer.observe(block, { attributes: true, attributeFilter: ['data-block-status'] });
+  };
+  main.querySelectorAll(selector).forEach(watch);
+  const added = (node) => {
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node.matches(selector)) watch(node);
+    node.querySelectorAll(selector).forEach(watch);
+  };
+  new MutationObserver((records) => records.forEach((record) => record.addedNodes.forEach(added)))
+    .observe(main, { childList: true, subtree: true });
 }
 
 /**
@@ -183,6 +251,27 @@ function joinSplitHeadingUnderlines(main) {
 }
 
 /**
+ * A Bold + Italic link alone on its line is the gold button even when its text ends in
+ * "!" (stryker.com "Nominate a hero for our Caregiver Stories series!"); scripts.js
+ * decorateButtons leaves links ending in punctuation as text links (sentences), so the
+ * button is built here, before it runs, the same way it builds the accent button.
+ * @param {Element} main The container element
+ */
+function decorateExclaimButtons(main) {
+  main.querySelectorAll('p > em > strong > a[href]:only-child, p > strong > em > a[href]:only-child').forEach((a) => {
+    const p = a.parentElement.parentElement.parentElement;
+    const text = a.textContent.trim();
+    const outer = a.parentElement.parentElement;
+    if (!text.endsWith('!') || p.children.length !== 1 || p.textContent.trim() !== text) return;
+    if (outer.childNodes.length !== 1 || a.parentElement.childNodes.length !== 1) return;
+    a.title = a.title || text;
+    p.className = 'button-wrapper';
+    a.className = 'button accent';
+    outer.replaceWith(a);
+  });
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
@@ -191,6 +280,7 @@ export function decorateSections(main) {
   buildAccordionSections(main);
   decorateImageLinks(main);
   joinSplitHeadingUnderlines(main);
+  decorateExclaimButtons(main);
 }
 
 /**
@@ -323,8 +413,9 @@ function emitHomeJsonLd() {
 /**
  * After LCP: head additions.
  */
-export function loadLazy() {
+export function loadLazy(doc) {
   emitHomeJsonLd();
+  decorateColumnsImageLinks(doc.querySelector('main'));
 }
 
 /*

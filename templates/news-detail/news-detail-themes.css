@@ -19,10 +19,37 @@ body.news-detail.full-width main > .section.col-10 > div {
   max-width: calc(var(--container-max) * 5 / 6);
 }
 
+/* section style `col-8-centre` on full-width pages: the section's content in the centred 8/12
+   grid column, at every width (stryker.com aem-GridColumn--default--8 offset 2, e.g. the
+   article of "80 years together": 909px from x 265 at 1440px, 229px at 390px); with
+   `phone-full` (below) full width on phones, as the article of "Mako SmartRobotics hits
+   500,000+ procedures" */
+body.news-detail.full-width main > .section.col-8-centre > div {
+  width: calc(min(100%, var(--container-max)) * 2 / 3);
+  max-width: calc(var(--container-max) * 2 / 3);
+}
+
+/* section style `number-list` (news-detail.css) on full-width pages: the list in the source's
+   middle column (stryker.com cols3 col-xs-12 col-sm-6 col-md-4: full width on phones, the
+   right half from 600px, the centred third from 900px: 470px from x 485 at 1440px) */
+@media (width >= 600px) {
+  body.news-detail.full-width main > .section.number-list > div {
+    padding-inline-start: calc(50% + var(--container-gutter));
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.full-width main > .section.number-list > div {
+    width: calc(min(100%, var(--container-max)) / 3);
+    max-width: calc(var(--container-max) / 3);
+    padding-inline-start: var(--container-gutter);
+  }
+}
+
 /* …with `phone-full`, the section is full width on phones and in the 10/12 column from
    600px (stryker.com aem-GridColumn--phone--12, e.g. the article of "Protect your patients
    … and your OR staff": 344px at 375px, 553px at 700px, 1036px at 1280px) */
-body.news-detail.full-width main > .section.col-10.phone-full > div {
+body.news-detail.full-width main > .section:is(.col-10, .col-8-centre).phone-full > div {
   width: auto;
   max-width: var(--container-max);
 }
@@ -31,6 +58,11 @@ body.news-detail.full-width main > .section.col-10.phone-full > div {
   body.news-detail.full-width main > .section.col-10.phone-full > div {
     width: calc(100% * 5 / 6);
     max-width: calc(var(--container-max) * 5 / 6);
+  }
+
+  body.news-detail.full-width main > .section.col-8-centre.phone-full > div {
+    width: calc(min(100%, var(--container-max)) * 2 / 3);
+    max-width: calc(var(--container-max) * 2 / 3);
   }
 
   /* an image in a grid-column section style inside the 10/12 column stays centred, as
@@ -99,8 +131,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 
   /* an image in a grid-column section style (image-1-3 / image-1-2 / image-2-3) sits at the
      start of the full-width section, as on the source (the additive manufacturing lead
-     image), not centred like the template's article-column images */
-  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3) > .default-content-wrapper picture {
+     image), not centred like the template's article-column images; `center` centres it
+     (styles/styles-corp.css) */
+  body.news-detail.full-width main > .section:is(.image-1-3, .image-1-2, .image-2-3):not(.center) > .default-content-wrapper picture {
     margin-inline: 0 auto;
   }
 
@@ -123,9 +156,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 
   /* every section spans the container, except a Hero Corp, which stays full-bleed
      (stryker.com full-width hero image: 1920px at 1920px, the nurses feature), and a
-     `col-10` section, which keeps its 10/12 column capped at 5/6 of the container (1144px
-     of text from 1440px) */
-  body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10) > div {
+     `col-10` / `col-8-centre` section, which keeps its 10/12 / 8/12 column capped at 5/6 /
+     2/3 of the container (1144px / 909px of text from 1440px) */
+  body.news-detail.full-width main > .section:not(.hero-corp-container, .col-10, .col-8-centre) > div {
     max-width: var(--container-max);
   }
 
@@ -654,8 +687,19 @@ body.news-detail.news-video main > .section.video-text.video-right > .video-wrap
   margin-top: 0;
 }
 
+/* …a button closing the text sits under the video (news-detail.js moves it), 20px below the
+   player, 30px from 600px (stryker.com: "Learn more about surgical visualization" of
+   "Defying the odds") */
+body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper > p.button-wrapper:nth-child(n):nth-child(n):nth-child(n) {
+  margin: var(--space-block-l) 0 0;
+}
+
 @media (width >= 600px) {
   body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper {
+    margin-top: var(--space-section);
+  }
+
+  body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper > p.button-wrapper:nth-child(n):nth-child(n):nth-child(n) {
     margin-top: var(--space-section);
   }
 }

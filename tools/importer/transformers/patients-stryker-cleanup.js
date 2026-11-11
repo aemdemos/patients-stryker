@@ -66,7 +66,16 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
 
   let edsPath = path.replace(/\.html?$/i, '');
-  if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
+  if (hostRe === CORP_HOST_RE) {
+    edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
+    // a www.stryker.com page is imported at its sanitised path (each folder and name
+    // lowercased, other characters and runs of them one `-`, none at the ends), and EDS
+    // serves only that path: link to it, e.g. .../2023/SEA-holds-3rd-annual-tree-planting-event
+    // → .../2023/sea-holds-3rd-annual-tree-planting-event, .../articles-/x → .../articles/x
+    edsPath = edsPath.split('/').map((seg) => seg.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')).join('/');
+  }
   if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
   return `${edsPath || '/'}${suffix}`;
 }

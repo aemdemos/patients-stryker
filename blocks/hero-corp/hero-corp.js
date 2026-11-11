@@ -79,16 +79,31 @@ function setupHero(block) {
   const contentDiv = document.createElement('div');
   if (contentCell) while (contentCell.firstChild) contentDiv.append(contentCell.firstChild);
 
+  // a subtitle: one plain line (footnote marks allowed) right under a fully Bold title, and
+  // nothing else (stryker.com "Look inside Stryker's iSuite" under "What does an operating
+  // room look like?"); a colour run in the title (span-tags, e.g. a gold title) counts as Bold
+  const [title, subtitle, ...rest] = contentDiv.children;
+  const bold = title && title.matches('h1, h2') && title.children.length === 1
+    && title.firstElementChild.matches('strong')
+    && !title.firstElementChild.querySelector(':scope > :not(br, span[class^="color-"])')
+    && title.textContent.trim() === title.firstElementChild.textContent.trim();
+  if (bold && !rest.length && subtitle && subtitle.matches('p')
+    && ![...subtitle.children].some((el) => !el.matches('sup, sub'))
+    && subtitle.textContent.trim()) {
+    subtitle.classList.add('hero-corp-subtitle');
+  }
+
   block.replaceChildren(imageDiv, contentDiv);
 }
 
 function readSlideOptions(block) {
   [...block.classList].forEach((name) => {
-    const match = name.match(/^(top|left|right|size)-(\d+)(?:-(\d+))?$/);
+    const match = name.match(/^(top|left|right|size|sub)-(\d+)(?:-(\d+))?$/);
     if (!match) return;
     const [, option, whole, fraction] = match;
     const value = Number(fraction ? `${whole}.${fraction}` : whole);
     if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
+    else if (option === 'sub') block.style.setProperty('--hero-slide-subtitle-size', value);
     else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
   });
 }

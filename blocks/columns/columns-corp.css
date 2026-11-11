@@ -26,6 +26,13 @@ body.corp .columns p strong {
   font-family: var(--display-font-family);
 }
 
+/* …except a Bold lead-in of the text right under an image (a paragraph not Bold as a
+   whole, columns.js .columns-bold), which keeps the body font (stryker.com <b> in the
+   iSuite product tiles: "Surgical tables at Stryker are designed…") */
+body.corp .columns .columns-img-col + p:not(.columns-bold) strong {
+  font-family: var(--body-font-family);
+}
+
 body.corp .columns > div > div h2 {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
@@ -39,6 +46,14 @@ body.corp .columns h4 {
 /* icon + text (columns-20-80) titles: stryker.com 14px on phones, 16.8px from 840px */
 body.corp .columns.columns-20-80 h4 {
   font-size: var(--body-font-size-m);
+}
+
+/* image caption (a fully Bold paragraph right under an image): its text; the image's
+   caption gap is with the caption variables below */
+body.corp .columns .columns-img-col + p.columns-bold {
+  font-size: var(--footnote-font-size);
+  line-height: var(--body-line-height-l);
+  text-align: center;
 }
 
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
@@ -275,10 +290,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
 }
 
-/* image caption (not in a `stack` grid, where it is the item's name, e.g. the nse product
-   tiles): a fully Bold paragraph right under an image renders as a small,
-   bold, centred caption (stryker.com: Futura 700 11.2px, centred, its text 22px below
-   the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
+/* image caption: a fully Bold paragraph right under an image (columns.js .columns-bold;
+   a paragraph that only opens in Bold stays body copy), not a stack grid item's name */
 body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
   --columns-corp-display-size-s: 35px; /* stryker.com 2.5em / capped 2.5vw display text */
@@ -291,14 +304,8 @@ body.corp .columns {
   --columns-corp-headline-gap: var(--space-section);
 }
 
-body.corp .columns:not(.stack) .columns-img-col:has(+ p > strong:only-child) {
+body.corp .columns:not(.stack) .columns-img-col:has(+ p.columns-bold) {
   margin-bottom: var(--columns-corp-caption-gap);
-}
-
-body.corp .columns:not(.stack) .columns-img-col + p:has(> strong:only-child) {
-  font-size: var(--footnote-font-size);
-  line-height: var(--body-line-height-l);
-  text-align: center;
 }
 
 body.corp .columns .columns-img-col img,
@@ -391,6 +398,50 @@ body.corp .columns.gold-first > div > div:first-child {
 
 body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
+}
+
+/* gold-last: the last cell is a gold box beside the text (stryker.com bg-gold rich text in
+   the col-sm-4 next to the article, e.g. "83% of a patient's stay…" on the ICU early
+   mobility article: padding 8% / 10% / 5% of the column, 440px wide at 1440px), its text
+   centred at 17.5px and its Bold figure 2.625x the h3 (64.3px from 600px, 55.1px on phones) */
+body.corp .columns.gold-last > div > div:last-child {
+  margin-inline: var(--space-block);
+  padding: 8% 10% 5%;
+  background-color: var(--color-accent);
+  text-align: center;
+}
+
+body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> strong:only-child) {
+  margin-bottom: 0;
+  font-family: var(--display-font-family);
+  font-size: calc(var(--heading-font-size-l) * 2.625);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* gray-last: the last cell is a light-grey box beside the other one (stryker.com
+   .has-background.bg-light-gray Large Headline next to the article text, e.g. "Did you
+   know?" on "Is it a heart attack or sudden cardiac arrest?": 322px wide at 1440px, padded
+   16px / 20px / 20px), its text the headline's 1.5vw light serif (21px at 1440px, 3vw on
+   phones), a Bold line Futura bold */
+body.corp .columns.gray-last > div > div:last-child {
+  padding: var(--space-block) var(--space-block-l) var(--space-block-l);
+  background-color: var(--color-surface);
+}
+
+body.corp .columns.gray-last.block > div > div:last-child :is(p, li):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.gray-last.block > div > div:last-child > :last-child {
+  margin-bottom: 0;
 }
 
 /* gray-lead: the text cell starts level with the row top, its grey box (above) first */
@@ -492,6 +543,18 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   body.corp .columns.gold-first > div > div:first-child {
     flex: 1 1 0;
     align-self: flex-start;
+  }
+
+  /* gray-last: the box hugs its content, level with the row top */
+  body.corp .columns.gray-last > div > div:last-child {
+    align-self: flex-start;
+  }
+
+  /* gold-last: in the one-third column its padding is that share of the row's */
+  body.corp .columns.gold-last > div > div:last-child {
+    flex: 1 1 0;
+    align-self: flex-start;
+    padding: calc(8% / 3) calc(10% / 3) calc(5% / 3);
   }
 
   body.corp .columns.columns-75-25 > div > div:first-child {
@@ -690,5 +753,549 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
   body.corp .columns.left-border-bottom > div > div:first-child {
     margin-bottom: calc(var(--space-block-l) + var(--space-section));
     padding-bottom: calc(var(--space-block-l) + var(--space-section));
+  }
+}
+
+/* icon-text: a small icon beside its text (stryker.com 1/12 image column + 11/12 rich
+   text, e.g. "83% of the help provided…" in "Following in her mother's footsteps"): the
+   icon cell a quarter of the row on phones (the source's 3/9 phone columns, 67px icon at
+   390px) and a twelfth from 600px (87px at 1440px), the text beside it starting 2% lower,
+   as the source text component's top margin */
+body.corp .columns.icon-text.block > div:nth-child(n) {
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+body.corp .columns.icon-text.block > div > div:first-child:nth-child(n) {
+  flex: 0 0 25%;
+}
+
+body.corp .columns.icon-text.block > div > div:last-child:nth-child(n) {
+  flex: 1 1 0;
+  margin-top: 2%;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.icon-text.block > div > div:first-child:nth-child(n) {
+    flex: 0 0 calc(100% / 12);
+  }
+}
+
+/* product-tiles: a row of product category tiles, each an image at its own size with a 1px
+   black border, centred in its cell, then its linked title and a line of text (stryker.com
+   standalone images with a title and text, e.g. "Bathing — Warm bath, without a tub or
+   shower" in "Following in her mother's footsteps": 193px images, the title 20px below,
+   Futura bold 14px on phones and 17.5px from 600px, black, not underlined; on phones one
+   tile per row, the source's 20px image component margin between them) */
+body.corp .columns.product-tiles.block > div > div:not(:last-child):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp .columns :where(.product-tiles) :where(.columns-img-col) {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+body.corp .columns.product-tiles.block .columns-img-col img {
+  box-sizing: content-box;
+  width: auto;
+  max-width: calc(100% - 2px);
+  height: auto;
+  border: 1px solid var(--color-black);
+}
+
+body.corp .columns.product-tiles.block h4 {
+  margin: 0 0 var(--space-block);
+  padding: var(--space-block-l) 0 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp .columns.product-tiles.block h4 a:any-link {
+  color: var(--text-color);
+  font: inherit;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.product-tiles.block > div > div:not(:last-child):nth-child(n) {
+    margin-bottom: 0;
+  }
+
+  body.corp .columns.product-tiles.block h4 {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+/* gold-last: the figure at 2.625x the 24.5px h2 size from 600px (64.3px) */
+@media (width >= 600px) {
+  body.corp .columns.gold-last.block > div > div:last-child p:nth-child(n):has(> strong:only-child) {
+    font-size: calc(var(--heading-font-size-xl) * 2.625);
+  }
+}
+
+/* title-row: the page title beside a photo (stryker.com Large Headline in a white box in the
+   left col-sm-6, the standalone image in the right one, e.g. "One caregiver's journey to
+   help reduce surgical smoke"): the Bold Heading 1 (Futura 28px) and its subtitle paragraph
+   (the light serif 28px), lines 1.06, the box (inside the column gutter) padded 25% of its
+   width at the top (169px at 1440px, 90px at 390px) and 20px at the sides; on phones the
+   photo follows 20px below */
+body.corp main .columns.title-row.block > div:nth-child(n):nth-child(n) {
+  align-items: flex-start;
+}
+
+body.corp .columns.title-row.block > div > div:first-child:nth-child(n) {
+  margin-bottom: var(--space-block-l);
+  padding: calc(25% - var(--space-block) / 2) calc(var(--space-block) + var(--space-block-l)) 0;
+}
+
+body.corp .columns.title-row.block > div > div:first-child > :is(h1, p):nth-child(n) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns.title-row.block > div > div:first-child > h1:nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp main .columns.title-row.block > div > div:first-child:nth-child(n) > p:nth-child(n):nth-child(n) {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+@media (width >= 600px) {
+  /* side by side, the box is half the row: 25% of it is 12.5% of the row */
+  body.corp .columns.title-row.block > div > div:first-child:nth-child(n) {
+    margin-bottom: 0;
+    padding: calc(12.5% - var(--space-block) / 2) calc(var(--space-block) + var(--space-block-l)) var(--space-block-l);
+  }
+}
+
+/* color-cards: each cell a profile card — the photo (its round portrait on a band, one
+   image), then the text in a coloured box pulled up over the band's foot, the colours in
+   the source's order: teal, dark gold, purple, blue (2 cards a row: the first row teal and
+   dark gold, the next purple and blue). The box is padded 5% / 10% of the card; its first
+   line (the name, Bold) is 21px Futura bold, the second (the role) the 21px light serif,
+   the rest 14px body copy, all white; colour tags ([[color-gold]]) keep their colour
+   (stryker.com nurse profiles of "Nurses working at Stryker share how their experience
+   becomes innovation in nursing": 675px cards, 22px over the band at 1440px) */
+body.corp .columns.color-cards.block > div:nth-child(odd) > div:nth-child(odd) {
+  --columns-card-color: var(--color-primary);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(odd) > div:nth-child(even) {
+  --columns-card-color: var(--color-accent-link-hover);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(odd) {
+  --columns-card-color: var(--color-purple);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(even) > div:nth-child(even) {
+  --columns-card-color: var(--color-navy-bright);
+}
+
+body.corp .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n) {
+  margin-bottom: 0;
+}
+
+body.corp .columns.color-cards.block > div > div > :not(.columns-img-col) {
+  margin: 0;
+  padding: 0 10% var(--space-block);
+  background-color: var(--columns-card-color);
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  text-align: start;
+}
+
+body.corp main .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col + :is(p, h2, h3):nth-child(n) {
+  position: relative;
+  margin-top: -3.4%;
+  padding-top: 5%;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.color-cards.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col + * + p:nth-child(n) {
+  padding-bottom: var(--space-block-l);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns.color-cards.block > div > div > :last-child:not(.columns-img-col) {
+  padding-bottom: 5%;
+}
+
+/* challenge-cards: each cell a card — its bar line, the photo, the text (stryker.com Large
+   Headline in a bg-blue / bg-golden-gradient box over a standalone image and 1.25em copy,
+   e.g. "7 unique ways we partner for prevention"). A Bold first line is the blue bar
+   ("Challenge: [[color-gold]Infection]"), a Bold + Italic one the gold gradient bar
+   ("Prevention"): Futura bold white, 20px padding, the Large Headline 2.5vw size (5vw on
+   phones, at most 35px); the bar and the photo 20px above the next part (30px from
+   600px); the text 17.5px. A row of one cell is a wide card: from 600px its photo and
+   text side by side under the bar */
+body.corp .columns.challenge-cards {
+  --columns-challenge-bar-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--columns-corp-vw))));
+  --columns-challenge-gap: var(--space-block-l);
+  --columns-challenge-gold: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:nth-child(n):nth-child(n) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p.columns-img-col:nth-child(n):nth-child(n) {
+  margin-bottom: var(--columns-challenge-gap);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:first-child:is(.columns-bold, :has(> em:only-child > strong:only-child)) {
+  margin-bottom: var(--columns-challenge-gap);
+  padding: var(--space-block-l);
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--columns-challenge-bar-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.challenge-cards.block > div:nth-child(n) > div:nth-child(n):nth-child(n) > p:first-child:has(> em:only-child > strong:only-child) {
+  background: var(--columns-challenge-gold);
+}
+
+/* the bar's words stay white: Bold + Italic is gold text elsewhere (colour tags keep theirs) */
+body.corp main .columns.challenge-cards.block > div > div > p:first-child :is(em, strong) {
+  color: var(--color-white);
+  font-style: normal;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.challenge-cards {
+    --columns-challenge-gap: var(--space-section);
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    column-gap: var(--space-section);
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > * {
+    grid-column: 2;
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > p:first-child {
+    grid-column: 1 / -1;
+  }
+
+  body.corp main .columns.challenge-cards.block > div > div:only-child > .columns-img-col {
+    grid-row: 2 / span 9;
+    grid-column: 1;
+  }
+}
+
+/* icon-cards: each cell an icon card — the icon on its band (one image, the cell's width),
+   then 30px below it (20px on phones) the points in a coloured box: teal, dark gold and blue
+   in that order (stryker.com bg-teal / bg-gold-dark / bg-blue rich text under the icon
+   images of "A building WELL done": 440px cards at 1440px). Each point is a paragraph:
+   white Futura bold 21px on 1.06 lines, 15px apart; the box is padded 6% / 8% of the card
+   and hugs its points (the colour is the cell's, the icon on white above it). On phones the cards follow each other with no gap. (The selectors
+   outrank the news-detail template's 14px copy under a Columns image.) */
+body.corp .columns.icon-cards {
+  --columns-icon-card-gap: var(--space-block-l);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n + 1)) {
+  --columns-card-color: var(--color-primary);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n + 2)) {
+  --columns-card-color: var(--color-accent-link-hover);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div:nth-child(3n)) {
+  --columns-card-color: var(--color-navy-bright);
+}
+
+body.corp .columns.icon-cards.block > div > :where(div) {
+  align-self: flex-start;
+  background-color: var(--columns-card-color);
+  background-clip: content-box;
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(.columns-img-col) {
+  margin: 0;
+  padding-bottom: var(--columns-icon-card-gap);
+  background-color: var(--color-white);
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(p:not(.columns-img-col)) {
+  margin: 0;
+  padding: 0 8% var(--space-block);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(.columns-img-col + p) {
+  padding-top: 6%;
+}
+
+body.corp main .columns.icon-cards.block:nth-child(n) > div:nth-child(n) > div:nth-child(n) > :where(p:last-child) {
+  padding-bottom: calc(var(--space-block-s) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.corp .columns.icon-cards {
+    --columns-icon-card-gap: var(--space-section);
+  }
+}
+
+/* serif-lead: the text cell opens with a lead paragraph in the light serif, 21px at every
+   width (stryker.com .fontsize-1-5em .urw-egyptienne, e.g. the intro of "A winning
+   spirit"); the rest of the cell is body copy */
+body.corp main .columns.serif-lead.block > div:nth-child(n) > div:not(:has(> .columns-img-col:first-child)):nth-child(n):nth-child(n) > p:first-child:nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* caption-tight: a caption sits right under its photo, no gap (stryker.com image
+   component followed by its rich-text caption, e.g. "Jillian recovers after rotationplasty
+   surgery") */
+body.corp main .columns.caption-tight.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):has(+ p) {
+  margin-bottom: 0;
+}
+
+/* phone-image-2-3: on phones a photo's cell (the photo alone, or with a caption right under
+   it) is two thirds of the column, centred (stryker.com aem-GridColumn--phone--8, e.g. "A
+   winning spirit": 229px at 390px, 369px at 599px); image-left keeps it at the start of the
+   column (its "Keep reading" teaser). Side by side from 600px as usual */
+body.corp main .columns.phone-image-2-3.block > div:nth-child(n) > div:is(.columns-img-col, :has(> .columns-img-col)):nth-child(n):nth-child(n) {
+  width: calc(100% * 2 / 3);
+  margin-inline: auto;
+}
+
+body.corp main .columns.phone-image-2-3.image-left.block > div:nth-child(n) > div:is(.columns-img-col, :has(> .columns-img-col)):nth-child(n):nth-child(n) {
+  margin-inline: 0;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.phone-image-2-3.block > div:nth-child(n) > div:is(.columns-img-col, :has(> .columns-img-col)):nth-child(n):nth-child(n) {
+    width: auto;
+    margin-inline: 0;
+  }
+}
+
+/* cta-tiles: a row of Curated CTA tiles (stryker.com .c-curatedcta in a 4-column row, e.g.
+   "The right tools, for any kind of procedure" of the cutting blades patents article): the
+   tile name (a Bold Heading 3) 20px under its image at every width, as the source's
+   cta-img margin; with `stack` for the 1 / 2 / 4 per row layout */
+body.corp main .columns.cta-tiles.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+}
+
+/* quote-last: the last cell holds a pull quote (stryker.com dimensional box with a
+   .fontsize-1-75em .urw-egyptienne quote and a .fontsize-1-25em .futura-bold attribution, e.g.
+   "Stryker leaders share DE&I perspectives in Savoy Magazine"): the quote in the light serif,
+   24.5px on 1.06 lines; a fully Bold paragraph is the attribution, Futura bold 17.5px in the
+   dark gold; both indented 40px in a 30px inset. With `boxed-last` for the white box */
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) {
+  padding: var(--space-inset-l);
+}
+
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) > p:nth-child(n):nth-child(n):nth-child(n) {
+  margin-inline-start: var(--corp-quote-indent);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+body.corp main .columns.quote-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n) {
+  color: var(--color-accent-link-hover);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height-l);
+}
+
+/* image-centre: a photo or logo at its own size (no wider than its cell), centred in its
+   cell (stryker.com .c-standalone-image .text-center, e.g. the 209px award seal of "Stryker
+   receives the Don Clifton Strengths-Based Culture Award") */
+body.corp main .columns.image-centre.block > div:nth-child(n) .columns-img-col:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  text-align: center;
+}
+
+body.corp main .columns.image-centre.block > div:nth-child(n) .columns-img-col:nth-child(n) img:nth-child(n) {
+  width: auto;
+  max-width: 100%;
+}
+
+/* dark-last / dark-all: the last cell / every cell is a dark grey Large Headline box
+   (stryker.com .c-largeheadline .has-background.bg-dark-gray beside the article text or two
+   side by side, e.g. the "79%", "97%" and "75%" figures of "Innovation inspired by
+   insights": 440px wide at 1440px, padded 20px): its text white light serif at the
+   headline's 1.5vw (21px at 1440px, 3vw on phones), lines 1.35, its Bold words (the figure)
+   gold Futura bold; the box hugs its text, level with the row top. Cells hold text only */
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  align-self: flex-start;
+  padding: var(--space-block-l);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n) :is(p, li):nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) :is(p, li):nth-child(n) {
+  margin-bottom: 0;
+  color: inherit;
+  font: inherit;
+}
+
+body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:nth-child(n),
+body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:nth-child(n) {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+/* number-quote: a numbered testimonial row (stryker.com 2/12 + 3/12 + 4/12 grid columns from
+   1/12 in, e.g. the four employees of "Stryker holds diversity, equity and inclusion
+   summit": 235 / 352 / 470px from x 133 at 1440px): cell 1 a big gold number (a fully Bold
+   paragraph, gold with [[color-gold]]) in Futura bold at 16vw, from 600px 8vw capped at
+   112px; cell 2 the photo with the name and role under it; cell 3 the quote, centred on the
+   row. Number and quote 20px in from their column (and from the edge on phones). With
+   `large-headline` for the 1.5vw type */
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:is(:first-child, :last-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-inline: var(--space-block-l);
+}
+
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:first-child:nth-child(n):nth-child(n):nth-child(n) p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(8 * var(--body-font-size-m)), calc(8 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:nth-child(2):nth-child(n):nth-child(n) .columns-img-col:nth-child(n) {
+  margin-bottom: var(--space-inset-m);
+}
+
+/* …the name under the photo is a fully Bold line in the 1.5vw type, not an image caption */
+body.corp main .columns.number-quote.block > div:nth-child(n) > div:nth-child(2):nth-child(n):nth-child(n) .columns-img-col + p.columns-bold:nth-child(n):nth-child(n) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+  text-align: start;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.number-quote.block > div:nth-child(n) {
+    display: grid;
+    grid-template-columns: 2fr 3fr 4fr;
+    padding-inline: calc(100% / 12) calc(100% * 2 / 12);
+  }
+
+  body.corp main .columns.number-quote.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n) {
+    align-self: center;
+  }
+
+  /* dark boxes: inside their column's 15px gutters (440px boxes in 470px columns) */
+  body.corp main .columns.dark-last.block > div:nth-child(n) > div:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n),
+  body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-inline: var(--space-block);
+  }
+}
+
+/* caption-serif: photos captioned in the serif (stryker.com Curated CTA titles under
+   headshots, e.g. the 2024 ANA Innovation Award winners; the surgeon quotes under the
+   Sonopet iQ portraits), 20px below the photo: a Heading 4 is the Egyptienne bold caption
+   (17.5px from 600px, 14px on phones; also in a cell without a photo), a paragraph the 17.5px
+   light serif quote, a
+   paragraph opening with a Bold line the 14px serif name and role, the name Futura bold */
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col:nth-child(n):nth-child(n):nth-child(n):has(+ :is(h4, p)) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > h4:nth-child(n):nth-child(n) {
+  margin-block: 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:has(> strong:first-child + br):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > .columns-img-col ~ p:nth-child(n) > strong:first-child:has(+ br):nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.caption-serif.block > div:nth-child(n) > div:nth-child(n) > h4:nth-child(n):nth-child(n) {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+/* quote-3vw: the last cell is a Large Headline pull quote beside a photo (stryker.com
+   .fontsize-3vw urw-egyptienne quote and a .fontsize-2vw futura-bold attribution, e.g.
+   "Kwamane Liddell wins ANA Innovation award"): the quote centred in the light serif at 6vw,
+   from 600px 3vw capped at 42px, on 1.35 lines; a fully Bold paragraph is the attribution,
+   right-aligned Futura bold at 4vw, from 600px 2vw capped at 28px */
+body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+  text-align: center;
+}
+
+body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-top: var(--space-section);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  text-align: end;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) {
+    padding: calc(2 * var(--space-inset-l)) var(--space-block-l) 0;
+  }
+
+  body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-top: calc(var(--space-section) + var(--space-inset-m));
   }
 }

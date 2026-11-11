@@ -118,10 +118,13 @@ function sizeNewsVideos(doc) {
   ].filter(Boolean);
   if (!sections.length) return;
   doc.querySelectorAll(sections.join(', ')).forEach((section) => {
+    // each section once (the template runs again for the sections a Fragment block adds)
+    if ('newsVideoSized' in section.dataset) return;
     const src = section.querySelector('video[data-src]')?.dataset.src
       || section.querySelector('a[href*="/is/content/"]')?.href;
     const asset = src?.match(/^(https:\/\/[^/]+)\/is\/content\/([^?#]+?)\.(?:m3u8|mpd)(?:[?#]|$)/);
     if (!asset) return;
+    section.dataset.newsVideoSized = '';
     fetch(`${asset[1]}/is/image/${asset[2]}?req=set,json`)
       .then((response) => (response.ok ? response.text() : ''))
       .then((text) => {
@@ -153,15 +156,33 @@ function markStandaloneBold(doc) {
   });
 }
 
+/**
+ * In a mirrored video row (`video-text, video-right`: the text column first, the video on
+ * the right) a button closing the text is the source's button under the video, in the
+ * video column at every width (stryker.com: 30px under the player, e.g. "Learn more about
+ * surgical visualization" of "Defying the odds" and the Jordan and Boris stories), so it
+ * moves after the video.
+ * @param {Document} doc The document
+ */
+function placeVideoRowButtons(doc) {
+  doc.querySelectorAll('main > .section.video-text.video-right').forEach((section) => {
+    const video = section.querySelector(':scope > .video-wrapper');
+    const button = section.querySelector(':scope > .default-content-wrapper > p.button-wrapper:last-child');
+    if (video && button) video.append(button);
+  });
+}
+
 export default function decorate(doc) {
   decorateFirstPublished(doc);
   decorateBoldBodyLinks(doc);
   sizeNewsVideos(doc);
+  placeVideoRowButtons(doc);
   markStandaloneBold(doc);
 
   // content that arrives after the template ran (the sections of a Fragment block, e.g.
   // the article body of "Technology helps improve colonoscopy…") gets the same bold
-  // handling once it is in the page
+  // handling once it is in the page, and its videos their frame (e.g. the wide video of
+  // "Katherine's catastrophic stroke survivor story", in its body fragment)
   const main = doc.querySelector('main');
   if (!main) return;
   new MutationObserver((mutations) => {
@@ -170,6 +191,8 @@ export default function decorate(doc) {
         && (node.matches('.default-content-wrapper') || node.querySelector('.default-content-wrapper'))));
     if (!content) return;
     decorateBoldBodyLinks(doc);
+    sizeNewsVideos(doc);
+    placeVideoRowButtons(doc);
     markStandaloneBold(doc);
   }).observe(main, { childList: true, subtree: true });
 }

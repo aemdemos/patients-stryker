@@ -18,6 +18,8 @@
   --map-embed-height: 300px;
   --map-embed-height-m: 400px;
   --corp-back-to-top-size: 40px;
+  --corp-figure-size-l: 35px; /* measured: stryker.com span.fontsize-2-5em Futura bold figure in a gold box */
+  --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
@@ -28,6 +30,7 @@
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
   --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-heading-font-size-h1-1-5: 42px; /* measured: a 1.5em span in a 28px source h1 (AED buying guide) */
   --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
@@ -50,6 +53,8 @@
   --corp-band-strut: 11px; /* measured: the same at 24.5px from 600px: a 50px line box for the 39px span line (1000px and 1440px) */
   --corp-band-gap: 1%; /* measured: the text after the source band starts after its block's 1% padding (13.8px at 1440px, 3.6px at 390px) */
   --corp-qa-title-line-height: 23.25px; /* measured: a Q&A card question, a 17.5px span on 14px paragraph lines (46.5px for 2 lines) */
+  --corp-gold-band-height: 34px; /* measured: the source gold full-bleed panel under a hero slide (c-full-bleed-panel bg-gold), at every width */
+  --corp-hero-line-strut: 30px; /* measured: the source Large Headline line (span.line, 21px with 30px lines on phones) around a hero title, e.g. "Following in her mother's footsteps": 70px for 2 lines at 390px */
 
   /* a blank line of copy (stryker.com <p>&nbsp;</p>: one 19.25px line + its 15px margin) */
   --corp-blank-line: calc(var(--body-font-size-m) * var(--paragraph-line-height) + var(--space-block));
@@ -297,9 +302,14 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* a section left without content (metadata only, or moved by a block) paints nothing;
-   `spacer` sections are empty on purpose (shared styles.css gives them their height) */
-:where(body.corp) main .section:empty:not(.spacer) {
+   `spacer` and `gold-band` sections are empty on purpose (they paint their own height) */
+:where(body.corp) main .section:empty:not(.spacer, .gold-band) {
   display: none;
+}
+
+/* the section above a `gold-band` (section style, below) runs straight into the band */
+:where(body.corp) main > .section:has(+ .section.gold-band) {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
@@ -317,6 +327,21 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) main > .section.bg-light-gray {
   background-color: var(--color-surface);
+}
+
+/* section style `gold-band`: the empty gold strip right under a Hero Corp slide, across the
+   page (stryker.com c-full-bleed-panel bg-gold below the carousel, e.g. the Mako
+   SmartRobotics and iSuite features: 34px at every width), then the section gap */
+:where(body.corp) main > .section.gold-band {
+  height: var(--corp-gold-band-height);
+  background-color: var(--color-accent);
+}
+
+/* …with `gold-gradient` the strip runs from dark gold into gold over its first fifth
+   (stryker.com c-full-bleed-panel bg-golden-gradient under the slide of "Innovation
+   inspired by insights": linear-gradient(90deg, #af6d04, #ffb500 20%)) */
+:where(body.corp) main > .section.gold-band.gold-gradient {
+  background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
 }
 
 :where(body.corp) main > .section.bg-dark-gray {
@@ -348,8 +373,9 @@ body:where(.corp):has(main .hero-carousel) header {
   text-align: center;
 }
 
-/* section style `disclaimer`: small print */
-:where(body.corp) main > .section.disclaimer > div {
+/* section style `disclaimer`: small print (also an accordion panel's references) */
+:where(body.corp) main > .section.disclaimer > div,
+:where(body.corp) .accordion-item-body > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
 }
@@ -364,12 +390,23 @@ body:where(.corp):has(main .hero-carousel) header {
   color: inherit;
 }
 
+:where(body.corp) .accordion-item-body > .section.disclaimer p {
+  line-height: var(--paragraph-line-height);
+}
+
 /* references: an ordered list (scripts.js decorateFootnotes links the citation
    superscripts to it), shown like the stryker.com .c-disclaimer list — "1." markers,
    20px indent, tight small-print lines — then a section gap (20px, 30px from 600px)
    before the document code */
 :where(body.corp) main > .section.disclaimer ol {
   margin-bottom: var(--space-block-l);
+}
+
+/* a reference that quotes a long URL as plain text (no spaces to break at, e.g. a
+   "#:~:text=…" link, or the AHRQ toolkit URL of "Innovation inspired by insights") wraps
+   anywhere instead of widening the page on phones */
+:where(body.corp) main > .section.disclaimer :is(p, li) {
+  overflow-wrap: anywhere;
 }
 
 /* section style `references-spaced` (with `disclaimer`): references the source authored
@@ -383,6 +420,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.disclaimer.references-spaced ol > li {
   margin-bottom: var(--space-block);
   line-height: var(--paragraph-line-height);
+}
+
+/* section style `references-body-lines` (with `disclaimer`): small print the source set as
+   0.8em spans in 14px paragraphs (span.fontsize-8em, e.g. the references of "Following in
+   her mother's footsteps"), so its lines are the paragraph's 19.25px lines */
+:where(body.corp) main > .section.disclaimer.references-body-lines :is(p, li) {
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
 }
 
 :where(body.corp) main > .section.disclaimer p:last-child,
@@ -462,17 +506,20 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 /* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
    e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
    token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
-   (the h2's 15px), not a section gap */
+   (the h2's 15px), not a section gap; also a heading section of an accordion panel
+   (accordion-continue) */
 :where(body.corp) main > .section.h2-0-8 {
   margin-bottom: 0;
 }
 
+:where(body.corp) .accordion-item-body > .section.h2-0-8 > h2,
 :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
   font-size: var(--heading-font-size-compact);
   line-height: var(--corp-heading-line-height-s);
 }
 
 @media (width >= 600px) {
+  :where(body.corp) .accordion-item-body > .section.h2-0-8 > h2,
   :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-compact-m);
   }
@@ -500,6 +547,30 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-2vw {
+    --corp-headline-vw: 1vw;
+  }
+}
+
+/* headline-3vw: a section headline the source sets as a Large Headline at 3vw (stryker.com
+   .c-largeheadline .fontsize-3vw .futura-bold, e.g. "ProCuity by the numbers" of "Innovation
+   inspired by insights": 42px at 1440px, 27px at 900px, 23.4px at 390px): a Bold Heading 2
+   or paragraph in Futura bold at 6vw, from 600px 3vw capped at 42px; lines 1.35. A Heading 2
+   keeps its rule below, the source's section-title rule 70px under the headline (35px on
+   phones; rules at the end of this file) */
+:where(body.corp) main > .section.headline-3vw {
+  --corp-headline-vw: 2vw;
+}
+
+:where(body.corp) main > .section.headline-3vw > .default-content-wrapper :is(h2, p) {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-3vw {
     --corp-headline-vw: 1vw;
   }
 }
@@ -604,9 +675,11 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
    span.fontsize-1-25em: 35px, lines 1.15, e.g. the "When Stryker employees…" feature;
    a title paragraph with span.fontsize-2-5em: 35px, lines 1.06 (37.1px), e.g. the
    BattleBots and "Restoring spines and hope" features; h2 > span.fontsize-1-5em: 1.5x the
-   h2, 31.5px and 36.75px from 600px with the h2 step, lines 1.06). Like h2-0-8, the
-   heading flows into the text below it: one heading gap, not a section gap */
+   h2, 31.5px and 36.75px from 600px with the h2 step, lines 1.06; h1-1-5: h1 >
+   span.fontsize-1-5em, 42px at every width, lines 1.06, e.g. "AED buying guide"). Like
+   h2-0-8, the heading flows into the text below it: one heading gap, not a section gap */
 :where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h1-1-5,
 :where(body.corp) main > .section.h1-2-5,
 :where(body.corp) main > .section.h2-1-5 {
   margin-bottom: 0;
@@ -619,6 +692,11 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
 :where(body.corp) main > .section.h1-2-5 > .default-content-wrapper h1 {
   font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h1-1-5 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-5);
   line-height: var(--heading-line-height);
 }
 
@@ -677,6 +755,15 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   :where(body.corp) main > .section.image-1-2 > .default-content-wrapper picture,
   :where(body.corp) main > .section.image-1-2 > .video-wrapper .video {
     max-width: calc(min(100vw, var(--container-max)) / 2 - 2 * var(--space-block));
+  }
+
+  /* …with `center` the column is centred in the section (stryker.com col-md-4 offset 4,
+     e.g. the LinkedIn "Stay informed" image of "Stryker holds diversity, equity and
+     inclusion summit": 440px from x 500 at 1440px), and so is a video block (the YouTube
+     video of "80 years together": 675px from x 383 at 1440px) */
+  :where(body.corp) main > .section.center:is(.image-1-3, .image-1-2) > .default-content-wrapper picture,
+  :where(body.corp) main > .section.center:is(.image-1-3, .image-1-2) > .video-wrapper .video {
+    margin-inline: auto;
   }
 }
 
@@ -772,6 +859,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 :where(body.corp) main > .section.quote-1-75 > .default-content-wrapper p:has(> span.color-gold) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* section style `link-1-5`: a Bold + Underline link alone on its line (link-strong) at 21px
+   (stryker.com .fontsize-1-5em standalone link, e.g. "Read the full article here." of
+   "Stryker leaders share DE&I perspectives in Savoy Magazine"); the copy keeps its size */
+:where(body.corp) main > .section.link-1-5 > div p:has(> a.link-strong:only-child),
+:where(body.corp) .tabs-panel > .section.link-1-5 > div p:has(> a.link-strong:only-child),
+:where(body.corp) .accordion-item-body > .section.link-1-5 > div p:has(> a.link-strong:only-child) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--body-line-height-l);
 }
 
 :where(body.corp) main > div.section.ps-0,
@@ -1086,5 +1183,18 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
      column of the row (as in flex) */
   :where(body.corp) main > .section.video-text > div:empty {
     display: none;
+  }
+}
+
+/* headline-3vw (above): a Heading 2's rule below it, 30px under the headline (70px from
+   600px), as the source's section-title rule */
+:where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
+  padding-bottom: var(--space-inset-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
+    padding-bottom: calc(2 * var(--space-inset-l) + var(--space-block-s));
   }
 }

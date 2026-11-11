@@ -31,7 +31,7 @@ const PAGE_TEMPLATE = {
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
     { name: 'video', instances: ['.c-standalone-video'] },
-    { name: 'cards-corp-teaser', instances: ['.c-customizeable'] },
+    { name: 'cards-corp-teaser', instances: ['.c-customizeable', '.c-latestnews'] },
     { name: 'cards-corp-resources', instances: ['.c-resourcesanddownload'] },
     { name: 'marketo-form', instances: ['.c-marketo-form'] },
   ],

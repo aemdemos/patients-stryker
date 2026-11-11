@@ -54,7 +54,11 @@ var CustomImportScript = (() => {
   function headline(overlay, document) {
     const out = [];
     const headings = [...overlay.querySelectorAll("h1, h2, h3, h4, h5, h6")];
-    const lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    const lineEls = [...overlay.querySelectorAll(".line")];
+    let lines = headings.length ? headings : [...overlay.querySelectorAll(".line, p")];
+    if (headings.length && lineEls.length) {
+      lines = lineEls.map((line) => line.querySelector("h1, h2, h3, h4, h5, h6") || line);
+    }
     lines.forEach((line) => {
       if (!clean(line.textContent)) return;
       const el = document.createElement(/^H[1-6]$/.test(line.tagName) ? line.tagName.toLowerCase() : "p");
@@ -66,6 +70,9 @@ var CustomImportScript = (() => {
         span.replaceWith(strong);
       });
       box.querySelectorAll("span").forEach((span) => span.replaceWith(...span.childNodes));
+      box.querySelectorAll("a").forEach((a) => {
+        if (!(a.getAttribute("href") || "").trim()) a.replaceWith(...a.childNodes);
+      });
       box.querySelectorAll("strong strong").forEach((s) => s.replaceWith(...s.childNodes));
       box.querySelectorAll("*").forEach((node) => {
         [...node.attributes].forEach((attr) => {
@@ -95,6 +102,16 @@ var CustomImportScript = (() => {
     if (desktop && mobile) cells.push([copyImage(mobile, document)]);
     if (overlay) {
       const lines = headline(overlay, document);
+      overlay.querySelectorAll(".curatedcta a.btn[href]").forEach((btn) => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        const a = document.createElement("a");
+        a.setAttribute("href", btn.getAttribute("href"));
+        a.textContent = clean(btn.textContent);
+        strong.append(a);
+        p.append(strong);
+        lines.push(p);
+      });
       if (lines.length) cells.push([lines]);
       const style = overlay.getAttribute("style") || "";
       const top = percent(style, /top:\s*(\d+(?:\.\d+)?)%/i);
@@ -107,6 +124,22 @@ var CustomImportScript = (() => {
       const size = sized && sized.className.match(/fontsize-(\d+)(?:-(5))?-?vw/);
       if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
+      if (overlay.querySelector(".has-background.bg-white")) variants.push("white-box");
+      if (overlay.querySelector(".has-background.bg-blue")) variants.push("blue-box");
+      const gold = overlay.querySelector(".has-background.bg-gold");
+      if (gold) {
+        variants.push("gold-box");
+        const margin = parseFloat(percent(gold.getAttribute("style") || "", /margin-right:\s*(\d+(?:\.\d+)?)%/i) || "0");
+        if (margin) {
+          const l = parseFloat((left || "0").replace("-", "."));
+          const r = parseFloat((right || "0").replace("-", "."));
+          const inset = Math.round((r + (100 - l - r) * margin / 100) * 10) / 10;
+          const i = variants.findIndex((v) => v.startsWith("right-"));
+          const token = `right-${String(inset).replace(".", "-")}`;
+          if (i >= 0) variants[i] = token;
+          else variants.push(token);
+        }
+      }
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
@@ -126,6 +159,7 @@ var CustomImportScript = (() => {
   }
   function imageCell(item, document) {
     const source = item.querySelector(".img-cont img, img");
+    if (!source) return "";
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
     img.setAttribute("alt", source.getAttribute("alt") || "");
@@ -141,7 +175,7 @@ var CustomImportScript = (() => {
       else h3.textContent = clean2(title.textContent);
       body.push(h3);
     }
-    item.querySelectorAll(".desc-container > p").forEach((source) => {
+    item.querySelectorAll(".desc-container > p, :scope > p.description").forEach((source) => {
       if (!clean2(source.textContent)) return;
       const p = document.createElement("p");
       p.textContent = clean2(source.textContent);
@@ -162,7 +196,7 @@ var CustomImportScript = (() => {
     return body;
   }
   function parse2(element, { document }) {
-    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img"));
+    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img, h3"));
     if (!items.length) return;
     const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
     const cols = items[0].className;
@@ -232,6 +266,247 @@ var CustomImportScript = (() => {
     // an article body kept as its own fragment document (the page's Fragment block)
     "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master": {
       name: 'Article body of "Technology helps improve colonoscopy safety and efficiency"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/body-copy/master": {
+      name: 'Article body of "Stryker boosts innovation: R&D expands with medical device testing facility"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/body": {
+      name: 'Article body of "Why all police cars need an AED"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body": {
+      name: 'Article body of "Understanding the basics of a LUCAS chest compression system"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/_80_years_together/test---body-copy/master": {
+      name: 'Article body of "80 years together"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/employees_share_why_/body-copy/master": {
+      name: 'Article body of "Employees share why DE&I matters at annual Summit"'
+    },
+    "/content/experience-fragments/stryker/communications/en/news/_2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite/body-copy/master": {
+      name: 'Article body of "What does an operating room look like? Look inside Stryker\u2019s iSuite"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy/master": {
+      name: 'Article body of "Breast Cancer Awareness Meets Breast Cancer Advancements"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy-2/master": {
+      name: 'Article body (second part) of "Breast Cancer Awareness Meets Breast Cancer Advancements"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/putting_people_first/body-copy/master": {
+      name: 'Article body of "Putting people first: how Stryker supports worldwide disaster relief efforts"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/mako_smartrobotics_h/body-text/master": {
+      name: 'Article body of "Mako SmartRobotics\u2122 hits 500,000+ procedures"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/mother_and_son_take_/body-copy/master": {
+      name: 'Article body of "Mother and son take on Goldenhar syndrome"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/some_people_say_they/body-copy/master": {
+      name: 'Article body of "Some people say they\u2019d give you their kidney. This nurse meant it."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/jordan_3_17_23/jordan/master": {
+      name: 'Article body of "Celebrating four years | Jordan\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/springing_into_actio/body-copy/master": {
+      name: 'Article body of "Springing into action | Andy\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/boris_story_5_15_23/news-content/master": {
+      name: 'Article body of "Taking action | Boris\u2019 stroke story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/katherine_s_catastro/body-copy/master": {
+      name: 'Article body of "Katherine\u2019s catastrophic stroke survivor story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/defying_the_odds/body-content/master": {
+      name: 'Article body of "Defying the odds"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/woman_holding_recycl/body-copy/master": {
+      name: 'Article body of "Packaging for a better planet"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/why_aeds_belong_on_b/body-copy/master": {
+      name: 'Article body of "Why AEDs belong on back-to-school checklists"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master": {
+      name: 'Article body of "Restoring form, function and hope | Emily\u2019s jaw replacement"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master": {
+      name: 'Article body of "Is it a heart attack or sudden cardiac arrest? Know the warning signs and what to do for both"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/carolyn_s_mako_total/body-copy/master": {
+      name: 'Article body of "Carolyn\u2019s Mako Total Hip surgery story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/focusing_on_her_mobi/body-copy/master": {
+      name: 'Article body of "How Janet  recovered from a vertebral (spine) compression fracture"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/three_things_to_know/body-copy/master": {
+      name: 'Article body of "Three things to know about Stryker\u2019s employee giving program"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/tour_the_amsterdam_s/body-copy/master": {
+      name: 'Article body of "Tour the Amsterdam Skills Centre, an international training centre for medical specialists"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_donates_22_5/text/text/master": {
+      name: 'Article body of "Stryker donates 22,500 Emergency Relief Bed Kits to Project C.U.R.E."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/what_are_the_symptom/body-copy/master": {
+      name: 'Article body of "What are the symptoms and signs of stroke?"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master": {
+      name: 'Article body of "A partnership promoting mental health for healthcare workers"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/help-increase-patient-outcomes-both-in-and-out-of-the-hospital/body": {
+      name: 'Article body of "Help increase patient outcomes both in and out of the hospital"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1": {
+      name: 'Article body of "Nurses working at Stryker share how their experience becomes innovation in nursing"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/transforming_confide/body-copy/master": {
+      name: 'Article body of "Stryker and Operation Smile transform confidence and care"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master": {
+      name: 'Article body of "Celebrating Hispanic Heritage: driving our mission forward"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master": {
+      name: 'Article body of "Mako: Robotics driving innovation across specialties"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/military_members_on_/body-copy/master11": {
+      name: 'Article body of "Military members on a mission to make healthcare better"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/body-copy/master": {
+      name: 'Article body of "The \u201CJourney to Zero Harm\u201D Starts with Communication, Protocols and Technology"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/protect_your_patient/body-copy/master": {
+      name: 'Article body of "Protect your patients \u2026 and your OR staff."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/a_safe_space_at_stry/body-copy/master": {
+      name: 'Article body of "A safe space at Stryker"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/back_pain_and_scolio/body-copy/master": {
+      name: 'Article body of "Back pain and scoliosis: Victoria finds relief"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/derrick_10_2_23/derrick/master": {
+      name: 'Article body of "Knowing the warning signs of sudden cardiac arrest helped saved his life | Derrick\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body": {
+      name: 'Article body of "Knowing when to use an AED: CPR and AED guidelines for sudden cardiac arrest"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_stryker_is_innov/body-copy/master": {
+      name: 'Article body of "How Stryker is innovating in operating room design"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/how-technology-helps-address-gi-suite-challenges/master": {
+      name: 'Article body of "How Technology Helps Address GI Suite Challenges"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_s_global_vol/body/master": {
+      name: 'Article body of "Stryker\u2019s Global Volunteer Network highlights importance of volunteerism"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/five_things_you_need/body-copy/master": {
+      name: 'Article body of "Five things you need to know about high blood pressure and stroke"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/body-copy/master": {
+      name: 'Article body of "Promoting high quality, inclusive healthcare in Latin America"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/-2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/myths--realities-and-real-innovation--what-everyone-should-know/master": {
+      name: 'Article body of "Myths, realities and real innovation: What everyone should know about arthritis"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/body-copy/master": {
+      name: 'Article body of "Advancing healthcare professionals\u2019 education with Stryker\u2019s Neurotech Mobile Experience"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master": {
+      name: 'Article body of "Advancing neurosurgery: Stryker supports brain tumor research through ongoing partnership"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/blog": {
+      name: 'Article body of "3 ways AED remote monitoring makes a difference"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/stryker_gets_medical/2-8-24-body-copy/master": {
+      name: 'Article body of "Stryker gets medical equipment to regions in need with Project C.U.R.E. partnership"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master": {
+      name: 'Article body of "Women leading the charge for change"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/body/master": {
+      name: 'Article body of "A building WELL done | Earning Platinum for putting people first"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/nurses_a_key_driver_/body-content/master": {
+      name: 'Article body of "Nurses: A key driver in advancing global health"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/this_surgical_icu_te/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu/master": {
+      name: 'Article body of "This Surgical ICU team is bound by unspeakable trauma and miraculous healings"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/caregiver_klisa/body-copy/master": {
+      name: 'Article body of "This nurse turned tragic loss into inspiring hope"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master": {
+      name: 'Article body of "Stryker\u2019s Journey to Zero* harm continues with Neptune S"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master": {
+      name: 'Article body of "Three ways Stryker supports physicians in their pursuit of better patient outcomes"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/master": {
+      name: 'Article body of "Why every college campus needs accessible AEDs"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/the-role-of-defibrillation-during-sudden-cardiac-arrest/body": {
+      name: 'Article body of "The role of defibrillation during sudden cardiac arrest"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency/master": {
+      name: 'Article body of "How to prepare your workplace for a sudden cardiac emergency"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/a_winning_spirit/a-winning-spirit/master": {
+      name: 'Article body of "A winning spirit"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/five_things_to_know_/body-copy/master": {
+      name: 'Article body of "Five things to know about heart attacks and sudden cardiac arrests"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/body-copy/master": {
+      name: 'Article body of "What it\u2019s like being a caregiver to a loved one with Alzheimer\u2019s"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-1/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/mentors/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-2/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/body": {
+      name: 'Article body of "12-year-old girl experiences cardiac arrest, Stryker employee responds"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/master": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/body-copy-2": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-1/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master": {
+      name: 'Article body of "Stryker holds diversity, equity and inclusion summit"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body": {
+      name: 'Article body of "How the right equipment can help recruit and retain EMTs and paramedics"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master": {
+      fragment: "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body",
+      name: 'Article body of "Four reasons every school needs AEDs"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master": {
+      name: 'Article body of "Advancing healthcare through Asian culture and collaboration"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master": {
+      name: 'Article body of "More than able to make healthcare better"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master": {
+      name: 'Article body of "Technologies that promote safe care for mother and baby during childbirth"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body": {
+      name: 'Article body of "5 steps to convince decision makers to adopt an AED program"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body": {
+      name: 'Article body of "8 steps to a successful AED safety program"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master": {
+      name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"'
     }
   };
 
@@ -257,6 +532,9 @@ var CustomImportScript = (() => {
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var COMPONENTS = [
     ".c-autocarousel",
+    // a Full Width Image (.fullWidthImage: the container-wide image, e.g. Eli's osteoid
+    // osteoma story), before its parts are taken for components
+    ".fullWidthImage",
     ".c-standalone-image",
     ".c-rich-text-editor",
     ".c-standalone-video",
@@ -267,10 +545,18 @@ var CustomImportScript = (() => {
     ".c-largeheadline",
     ".c-section-title",
     ".c-customizeable",
+    // a Latest News list ("Related stories" cards, e.g. the DE&I Summit feature) imports like
+    // the related-content grid
+    ".c-latestnews",
     ".c-section-separator",
     ".sectionseparator",
     ".c-marketo-form",
     ".c-resourcesanddownload",
+    // an Accordion (e.g. the FAQs of the AED pad placement guide); its panels' rich texts
+    // are part of it, not article text of their own
+    ".c-accordion:not(.edit-header)",
+    // a Curated Link List (e.g. the "Learn more" links under the police car AED article)
+    ".c-curated-link-list",
     ".xf-fragment"
   ].join(", ");
   var SHARED_XF_SIGNATURES = [
@@ -280,7 +566,87 @@ var CustomImportScript = (() => {
     ["Resources Explore Sage homepage", "/content/experience-fragments/stryker/sage/en/footer/footer/master"],
     ["Resources Explore Acute Care homepage", "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master"],
     ["Resources Explore Emergency Care homepage", "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"],
-    ["Colonoscopy and colorectal cancer screening procedures are on the rise", "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master"]
+    ["Colonoscopy and colorectal cancer screening procedures are on the rise", "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master"],
+    ["Research and development (R&D) play a crucial role in improving the health", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/body-copy/master"],
+    ["2-minute read More than 350,000 people experience a sudden cardiac arrest", "/content/experience-fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/body"],
+    ["2-minute read When it comes to medical emergencies like sudden cardiac arrest", "/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body"],
+    ["Dr. Homer Stryker, an orthopaedic surgeon, established The O", "/content/experience-fragments/stryker/corporate/en/about/news/features/_80_years_together/test---body-copy/master"],
+    ["Back in 2021, we hosted our first global Diversity, Equity a", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/employees_share_why_/body-copy/master"],
+    ["As a patient, preparing for surgery can bring up a mix of em", "/content/experience-fragments/stryker/communications/en/news/_2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite/body-copy/master"],
+    ["At Stryker, we care about every patient's journey. And throu", "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy/master"],
+    ["These offerings are designed to help advance product and pro", "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy-2/master"],
+    ["Whether it be a healthcare emergency, natural disaster or un", "/content/experience-fragments/stryker/corporate/en/about/news/features/putting_people_first/body-copy/master"],
+    ["What if joint replacement surgery could do more for surgeons", "/content/experience-fragments/stryker/corporate/en/about/news/features/mako_smartrobotics_h/body-text/master"],
+    ["No parent is prepared to hear that their newborn baby has a ", "/content/experience-fragments/stryker/corporate/en/about/news/features/mother_and_son_take_/body-copy/master"],
+    ["When Pam Mizerany, RN, learned that one of her best friends ", "/content/experience-fragments/stryker/corporate/en/about/news/features/some_people_say_they/body-copy/master"],
+    ["\u201CI get to look back at all the things I\u2019ve accomplished over", "/content/experience-fragments/stryker/corporate/en/patient/jordan_3_17_23/jordan/master"],
+    ["\u201CI told Sue in person how very grateful I was that she\u2019d mad", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/springing_into_actio/body-copy/master"],
+    ["Boris was driving his grandson Benjamin to soccer practice w", "/content/experience-fragments/stryker/corporate/en/patient/boris_story_5_15_23/news-content/master"],
+    ["\u201CIn life there are hard things, and there are good things. A", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/katherine_s_catastro/body-copy/master"],
+    ["When Lin was diagnosed with stage 3 colon cancer, he was tol", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/defying_the_odds/body-content/master"],
+    ["Last year, we shared an ambitious carbon reduction goal that", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/woman_holding_recycl/body-copy/master"],
+    ["Out-of-hospital sudden cardiac arrest can happen anywhere, w", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/why_aeds_belong_on_b/body-copy/master"],
+    ["In 2007, Emily began experiencing muscle spasms in her jaw.", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master"],
+    ["Heart attack and sudden cardiac arrest (SCA) are very different events, requiring unique", "/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master"],
+    ["Osteoarthritis is the most common form of arthritis, impacti", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/carolyn_s_mako_total/body-copy/master"],
+    ["When Janet fell to the floor after tripping on the stairs in", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/focusing_on_her_mobi/body-copy/master"],
+    ["Our passionate employees are behind everything we do, includ", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/three_things_to_know/body-copy/master"],
+    ["Learn how Stryker incorporated the latest healthcare technol", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/tour_the_amsterdam_s/body-copy/master"],
+    ["Bracing for the COVID-19 pandemic surges that have swelled a", "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_donates_22_5/text/text/master"],
+    ["What are the symptoms and signs of stroke?", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/what_are_the_symptom/body-copy/master"],
+    ["Day in and day out, healthcare workers navigate the complexi", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master"],
+    ["3-minute read Sudden cardiac arrest (SCA) affects more than 347,000", "/content/experience-fragments/stryker/emergency-care/en/news/help-increase-patient-outcomes-both-in-and-out-of-the-hospital/body"],
+    ["Nurses are at the forefront of innovation within healthcare systems", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1"],
+    ["Together, Stryker and Operation Smile are changing lives and strengthe", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/transforming_confide/body-copy/master"],
+    ["Hispanic Heritage Month is celebrated between September 15 and October 15", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master"],
+    ["More about Stryker\u2019s Mako SmartRobotics\u2122 Our robotic surgery expertise", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master"],
+    ["Values align for military members and veterans at Stryker", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/military_members_on_/body-copy/master11"],
+    ["Humans are fallible and errors are unavoidable, even in the best organ", "/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/body-copy/master"],
+    ["Julie Greenhalgh, RN, BSN, CNOR, never smoked a day in her life", "/content/experience-fragments/stryker/surgical-technologies/en/news/protect_your_patient/body-copy/master"],
+    ["At Stryker, we believe that Pride is more than a single month or momen", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/a_safe_space_at_stry/body-copy/master"],
+    ["Victoria lived with back pain for years \u2013 impeding her ability to walk", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/back_pain_and_scolio/body-copy/master"],
+    ["Knowing the warning signs of sudden cardiac arrest helped saved his li", "/content/experience-fragments/stryker/corporate/en/patient/derrick_10_2_23/derrick/master"],
+    ["2-minute read Sudden cardiac arrest is a life-threatening condition th", "/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body"],
+    ["Confined to a single operating room suite and the constant need to ada", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_stryker_is_innov/body-copy/master"],
+    ["In the gastrointestinal (GI) suite, a focus on safety is often associa", "/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/how-technology-helps-address-gi-suite-challenges/master"],
+    ["Stryker's Global Volunteer Network highlights importance of volunteeri", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_s_global_vol/body/master"],
+    ["According to the American Heart Association, many people who\u2019ve had a", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/five_things_you_need/body-copy/master"],
+    ["Making healthcare better is our mission, but it doesn\u2019t belong to us a", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/body-copy/master"],
+    ["Arthritis is a widespread health challenge, serving as the leading cau", "/content/experience-fragments/stryker/corporate/en/about/news/-2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/myths--realities-and-real-innovation--what-everyone-should-know/master"],
+    ["To help improve patient outcomes, Stryker provides extensive medical e", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/body-copy/master"],
+    ["The facts are staggering. An estimated 1.3 million Americans are livin", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master"],
+    ["2-minute read If you\u2019re a business owner or responsible for monitoring", "/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/blog"],
+    ["For under-resourced countries around the world, healthcare professionals", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/stryker_gets_medical/2-8-24-body-copy/master"],
+    ["When Amanda Baumann started at Mako Surgical Corp. in 2008, she was wor", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master"],
+    ["Walk through the halls of 1941 Stryker Way in Portage, Michigan and", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/body/master"],
+    ["They are our advocates in times of need, and they account for 59% of", "/content/experience-fragments/stryker/corporate/en/about/news/features/nurses_a_key_driver_/body-content/master"],
+    ["The streets of north Philadelphia are no strangers to poverty and violence.", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/this_surgical_icu_te/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu/master"],
+    ["lost her mother to breast cancer in the middle of", "/content/experience-fragments/stryker/corporate/en/about/news/features/caregiver_klisa/body-copy/master"],
+    ["Alongside The Joint Commission, a nonprofit committed to quality imp", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master"],
+    ["To improve patient outcomes and make healthcare more accessible for everyone", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master"],
+    ["cardiac arrest is a life-threatening event when the heart", "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/master"],
+    ["on any T.V. medical drama and you're bound to hear the staff", "/content/experience-fragments/stryker/emergency-care/en/news/the-role-of-defibrillation-during-sudden-cardiac-arrest/body"],
+    ["workplace emergency is an unforeseen event that can endanger", "/content/experience-fragments/stryker/emergency-care/en/news/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency/master"],
+    ["a job, chasing around two goldendoodles at home and planning", "/content/experience-fragments/stryker/corporate/en/about/news/features/a_winning_spirit/a-winning-spirit/master"],
+    ["are very different events, each presenting specific signs and symptoms", "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/five_things_to_know_/body-copy/master"],
+    ["Alzheimer\u2019s Association estimates that 6.5 million Americans", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/body-copy/master"],
+    ["Senior leaders from our South Pacific team are applying our people", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-1/master"],
+    ["Karen O\u2019Keeffe, Sean Maasburg, James Doyle, Jessica Mazzulo", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/mentors/master"],
+    ["The mentorship experience has proven invaluable to AIME's", "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-2/master"],
+    ["Schanderl is head of a first responder unit in Munich, Germany", "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/body"],
+    ["and ambulatory surgery centers are facing a unique challenge", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/master"],
+    ["the OR of the Future Stryker\u2019s OR of the Future bridges", "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/body-copy-2"],
+    ["up to one million patients experience a fall while being treated", "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-1/master"],
+    ["ProCuity by the numbers", "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master"],
+    ["recently held our first global diversity, equity and inclusion", "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master"],
+    ["an EMT is a demanding job, both physically and emotionally", "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body"],
+    ["sudden cardiac arrest is a leading cause of death in the", "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master"],
+    ["innovation in healthcare requires viewpoints that reflect", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master"],
+    ["Stryker employees promote and advance disability inclusion", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master"],
+    ["are few moments in life more important than the time a mother", "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master"],
+    ["believe that an automated external defibrillator (AED) program", "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body"],
+    ["than 350,000 people suffer from out-of-hospital sudden cardiac", "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body"],
+    ["and delivery departments and operating rooms are hectic", "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master"]
   ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
@@ -307,8 +673,9 @@ var CustomImportScript = (() => {
     return isPdf || newTab ? `${href}#_blank` : href;
   }
   var SIZE_STYLES = [
-    // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
-    ["fontsize-8em", "disclaimer"],
+    // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph),
+    // on the paragraph's 14px lines (references-body-lines)
+    ["fontsize-8em", "disclaimer, references-body-lines"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
     ["fontsize-1-75em", "p-1-75"],
@@ -515,7 +882,7 @@ var CustomImportScript = (() => {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("h3")].filter((h) => {
       if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
-      if (!h.querySelector("[class]")) return true;
+      if (![...h.querySelectorAll("[class]")].some((el) => [...el.classList].some((c) => !c.startsWith("fontsize-")))) return true;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
       return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
@@ -589,16 +956,36 @@ var CustomImportScript = (() => {
     if (!leadText) return null;
     const box = doc.createElement("div");
     lead.forEach((node) => box.append(node.cloneNode(true)));
-    const large = squash([...box.querySelectorAll(".fontsize-1-5em")].filter((span) => !span.parentElement.closest(".fontsize-1-5em")).map((span) => span.textContent).join(""));
-    if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
-    const huge = squash([...box.querySelectorAll(".fontsize-2em")].filter((span) => !span.parentElement.closest(".fontsize-2em")).map((span) => span.textContent).join(""));
-    const gold = [...box.querySelectorAll('[style*="color"]')].some((el) => GOLD.test(ownColour(el)) && !hasOtherColour(el) && squash(el.textContent) === leadText);
+    const covered = (cls) => squash([...box.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`)).map((span) => span.textContent).join("")) === leadText;
+    let titleStyle = null;
+    if (covered("fontsize-1-5em")) titleStyle = covered("fontsize-2em") ? "h1-42" : "h1-21";
+    else if (covered("fontsize-2-5em")) titleStyle = "h1-2-5";
+    if (!titleStyle || !box.querySelector(".futura-bold, b")) return null;
+    const goldOf = (node) => {
+      const el = node.parentElement && node.parentElement.closest('[style*="color"]');
+      return !!el && box.contains(el) && GOLD.test(ownColour(el));
+    };
+    const runs = [];
+    const walker = doc.createTreeWalker(box, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const gold = goldOf(t);
+      const last = runs[runs.length - 1];
+      if (last && last.gold === gold) last.text += t.textContent;
+      else runs.push({ gold, text: t.textContent });
+    }
+    const title = runs.map((run) => run.gold && squash(run.text) ? `[[color-gold]${squash(run.text)}]` : run.text).join("");
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
     if (!text(p)) p.remove();
     const h1 = doc.createElement("h1");
-    h1.textContent = gold ? `[[color-gold]${leadText}]` : leadText;
-    h1.titleStyle = huge === leadText ? "h1-42" : "h1-21";
+    if (titleStyle === "h1-2-5") {
+      const strong = doc.createElement("strong");
+      strong.textContent = squash(title);
+      h1.append(strong);
+    } else {
+      h1.textContent = squash(title);
+    }
+    h1.titleStyle = titleStyle;
     return h1;
   }
   function blockNodes(container, doc) {
@@ -648,6 +1035,16 @@ var CustomImportScript = (() => {
     const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
     return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
   }
+  function previousRichText(component) {
+    const item = component.closest(".text");
+    const prev = item && item.previousElementSibling;
+    return prev && prev.matches(".text") ? prev.querySelector(".c-rich-text-editor") : null;
+  }
+  function unspaced(component, side) {
+    const box = component && component.querySelector(":scope > div[style]");
+    const style = box ? box.getAttribute("style") : "";
+    return !new RegExp(`(margin|padding)-${side}:\\s*[\\d.]+`).test(style);
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
@@ -660,7 +1057,15 @@ var CustomImportScript = (() => {
     const smallHeads = smallHeadings(box);
     const spaced = spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
+    const indents = new Map([...box.querySelectorAll(':scope > p[style*="margin-left"]')].map((p) => {
+      const px = (p.getAttribute("style").match(/margin-left:\s*(\d+)px/) || [])[1];
+      return [p, Math.round(Number(px || 0) / 40)];
+    }).filter(([, level]) => level > 0));
     const { centred, size } = cleanRichText(box);
+    indents.forEach((level, p) => {
+      if (!box.contains(p)) return;
+      for (let i = 0; i < level; i += 1) bracketTag([...p.childNodes], "indent", p);
+    });
     const nodes = blockNodes(box, doc);
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
@@ -683,9 +1088,15 @@ var CustomImportScript = (() => {
       if (node.copyStyle !== null) last = node.copyStyle;
     });
     const first = nodes.find((node) => node.copyStyle !== null);
+    const blue = !component.closest(".colctrl") && source.matches(".has-background.bg-blue");
+    const boxStyles = blue ? [source.querySelector(".urw-egyptienne") ? "serif" : "", "blue-box"] : [];
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
       if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
+      if (blue) {
+        const styles = (node.copyStyle || "").split(", ").filter(Boolean);
+        node.copyStyle = [.../* @__PURE__ */ new Set([...styles, ...boxStyles.filter(Boolean)])].join(", ");
+      }
     });
     return { nodes, centred, size };
   }
@@ -697,6 +1108,31 @@ var CustomImportScript = (() => {
     if (others.some((el) => text(el) || el.querySelector("img, video, iframe"))) return "";
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
+  function photoTextRow(component) {
+    const col = component.closest('.colctrl [class*="col-sm-"]');
+    const row = col && col.parentElement;
+    if (!row || !row.closest(".colctrl")) return null;
+    const cols = [...row.children];
+    if (cols.length !== 2) return null;
+    const widths = cols.map((c) => Number((c.className.match(/\bcol-sm-(\d+)\b/) || [])[1]));
+    const variants = { "4-8": "columns-33-67", "8-4": "columns-67-33", "6-6": "columns-50-50" };
+    const variant = variants[widths.join("-")];
+    if (!variant) return null;
+    const media = "img, video, iframe, .c-standalone-image, .c-standalone-video";
+    const photoCol = cols.find((c) => c.querySelectorAll(".c-standalone-image").length === 1 && c.querySelectorAll("img").length === 1 && c.querySelectorAll(".c-rich-text-editor").length <= 1);
+    const textCol = photoCol && cols.find((c) => c !== photoCol);
+    if (!textCol || textCol.querySelector(media)) return null;
+    const texts = [...textCol.querySelectorAll(".c-rich-text-editor")].filter((t) => text(t));
+    if (!texts.length) return null;
+    if (variant !== "columns-50-50" && !/\bcol-sm-4\b/.test(photoCol.className)) return null;
+    return {
+      photo: photoCol.querySelector(".c-standalone-image"),
+      caption: photoCol.querySelector(".c-rich-text-editor"),
+      texts,
+      photoFirst: cols[0] === photoCol,
+      name: `Columns (${variant})`
+    };
+  }
   function imageRow(component) {
     const col = component.closest('.colctrl [class*="col-sm-"]');
     const row = col && col.parentElement;
@@ -705,9 +1141,85 @@ var CustomImportScript = (() => {
     if (cols.length < 2) return null;
     const images = cols.map((c) => {
       const found = c.querySelectorAll(".c-standalone-image");
-      return found.length === 1 && !text(c) && c.querySelectorAll("img").length === 1 ? found[0] : null;
+      if (!found.length && !text(c) && !c.querySelector("img, video, iframe")) return "empty";
+      const own = found.length === 1 && text(c) === text(found[0]);
+      return own && c.querySelectorAll("img").length === 1 ? found[0] : null;
     });
-    return images.every(Boolean) ? images : null;
+    const filledCount = images.filter((image) => image && image !== "empty").length;
+    return images.every(Boolean) && filledCount >= 2 ? images : null;
+  }
+  function textRow(component) {
+    const col = component.closest('.colctrl [class*="col-sm-"]');
+    const row = col && col.parentElement;
+    if (!row || !row.closest(".colctrl")) return null;
+    const cols = [...row.children];
+    if (cols.length < 2 || cols.some((c) => c.className !== cols[0].className)) return null;
+    const texts = cols.map((c) => {
+      if (!text(c) && !c.querySelector("img, video, iframe")) return "empty";
+      const found = c.querySelectorAll(".c-rich-text-editor");
+      const only = found.length === 1 && !c.querySelector("img, video, iframe, .c-largeheadline, .c-curatedcta") && text(c) === text(found[0]) && !found[0].querySelector(".has-background, .dimensional-box");
+      return only ? found[0] : null;
+    });
+    return texts.every(Boolean) && texts.filter((t) => t !== "empty").length >= 2 ? texts : null;
+  }
+  function goldBoxRow(component) {
+    const col = component.closest('.colctrl [class*="col-sm-"]');
+    const row = col && col.parentElement;
+    if (!row || !row.closest(".colctrl")) return null;
+    const cols = [...row.children];
+    if (cols.length < 2) return null;
+    const boxes = cols.map((c) => {
+      const found = c.querySelectorAll(".c-rich-text-editor");
+      return found.length === 1 && found[0].querySelector(".has-background.bg-gold") && !c.querySelector("img, video, iframe") ? found[0] : null;
+    });
+    return boxes.every(Boolean) ? boxes : null;
+  }
+  function dropBracketTags(root) {
+    const walker = root.ownerDocument.createTreeWalker(root, 4);
+    let open = 0;
+    let node = walker.nextNode();
+    while (node) {
+      let value = node.textContent.replace(/\[\[[a-z0-9,-]+\]/g, () => {
+        open += 1;
+        return "";
+      });
+      while (open > 0 && value.includes("]")) {
+        value = value.replace("]", "");
+        open -= 1;
+      }
+      node.textContent = value;
+      node = walker.nextNode();
+    }
+  }
+  function goldBoxCell(component, doc) {
+    const { nodes } = richTextNodes(component, doc);
+    nodes.filter((node) => node.tagName === "P").forEach((p) => {
+      dropBracketTags(p);
+      p.querySelectorAll("em > strong:only-child, strong > em:only-child").forEach((inner) => {
+        const outer = inner.parentElement;
+        const strong = doc.createElement("strong");
+        strong.append(...inner.childNodes);
+        outer.replaceWith(strong);
+      });
+      const lead = p.firstElementChild;
+      const first = [...p.childNodes].find((n) => n.nodeType !== 3 || n.textContent.trim());
+      if (!lead || first !== lead || lead.tagName !== "STRONG") return;
+      while (lead.lastChild && lead.lastChild.nodeName === "BR") lead.lastChild.remove();
+      const next = lead.nextSibling;
+      if (next && next.nodeName !== "BR") next.before(doc.createElement("br"));
+      p.querySelectorAll("br").forEach((br) => {
+        const after = br.nextSibling;
+        if (after && after.nodeType === 3) after.textContent = after.textContent.replace(/^\s+/, "");
+      });
+    });
+    return nodes;
+  }
+  function videoCaption(component) {
+    const caption = component.querySelector(".desc-content");
+    if (!caption) return [];
+    const nodes = [...caption.querySelectorAll("p, h2, h3, h4")].filter((p) => text(p));
+    caption.remove();
+    return nodes;
   }
   function imageNodes(component, doc) {
     const nodes = [...component.querySelectorAll("img")].flatMap((source) => {
@@ -732,6 +1244,11 @@ var CustomImportScript = (() => {
         if (!text(title)) return;
         const h4 = doc.createElement("h4");
         h4.textContent = text(title);
+        const titleLink = title.querySelector("a[href]");
+        const imageLink = component.querySelector("a[href] img") && component.querySelector("a[href] img").closest("a");
+        if (titleLink && imageLink && titleLink.getAttribute("href") === imageLink.getAttribute("href")) {
+          h4.tileHref = newTabHref(titleLink, absoluteAsset(titleLink.getAttribute("href")));
+        }
         nodes.push(h4);
       });
       component.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre").forEach((caption) => {
@@ -830,6 +1347,7 @@ var CustomImportScript = (() => {
     const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
     const rte = aside && aside.querySelector(".c-rich-text-editor");
     if (!rte || !text(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
+    if ([...row.children].indexOf(aside) < [...row.children].indexOf(col)) return null;
     return rte;
   }
   function videoTextColumns(video, rte, doc) {
@@ -838,10 +1356,12 @@ var CustomImportScript = (() => {
     if (!link2 || !nodes.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
-    return WebImporter.Blocks.createBlock(doc, {
+    const block = WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-50-50)",
       cells: [[media, nodes]]
     });
+    const copy = nodes.map((n) => n.copyStyle).find((c) => c);
+    return { block, copy };
   }
   function quoteNodes(headline2, doc, { sizes = false } = {}) {
     const box = doc.createElement("div");
@@ -1002,7 +1522,7 @@ var CustomImportScript = (() => {
     main.querySelectorAll(".experiencefragment").forEach((xf) => {
       if (!xf.isConnected || xf.closest("header, footer, .modal")) return;
       const signature = text(xf);
-      const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start));
+      const match = SHARED_XF_SIGNATURES.find(([start]) => signature.startsWith(start) || start.length >= 40 && signature.includes(start));
       const path = match && xfFragmentPath(match[1]);
       if (!path) {
         if (signature) inlined.push(signature.slice(0, 80));
@@ -1034,7 +1554,9 @@ var CustomImportScript = (() => {
     "4/8": "columns-33-67",
     "3/9": "columns-33-67",
     "9/3": "columns-75-25",
-    "9/2": "columns-75-25"
+    "9/2": "columns-75-25",
+    // a small icon beside its text (e.g. the statistics of "Following in her mother's footsteps")
+    "1/11": "icon-text"
   };
   function spanVariant(spans) {
     if (spans.length !== 2 || spans[0] === spans[1]) return "";
@@ -1222,7 +1744,29 @@ var CustomImportScript = (() => {
   function xfColumns(marker, doc) {
     const cells = [...marker.children].map((cell) => cellNodes(cell, doc));
     const nodes = cells.flat();
-    const variants = [marker.getAttribute("data-variant"), nodes.some((node) => node.imageLink) ? "media-pair" : ""].filter(Boolean);
+    const tiles = cells.length > 1 && cells.every((c) => c.some((node) => node.tileHref));
+    if (tiles) {
+      nodes.filter((node) => node.tileHref).forEach((h4) => {
+        const a = doc.createElement("a");
+        a.setAttribute("href", h4.tileHref);
+        a.append(...h4.childNodes);
+        h4.append(a);
+      });
+    }
+    if (marker.getAttribute("data-variant") === "icon-text") {
+      nodes.filter((node) => node.nodeType === 1).forEach((node) => {
+        node.querySelectorAll("em > strong:only-child, strong > em:only-child").forEach((inner) => {
+          const outer = inner.parentElement;
+          const before = outer.previousSibling;
+          if (before && before.nodeType === 3 && /\[\[color-[a-z]+\]$/.test(before.textContent)) return;
+          const strong = doc.createElement("strong");
+          strong.append(...inner.childNodes);
+          outer.replaceWith(strong);
+        });
+      });
+    }
+    const linkVariant = tiles ? "product-tiles" : "media-pair";
+    const variants = [marker.getAttribute("data-variant"), nodes.some((node) => node.imageLink) ? linkVariant : ""].filter(Boolean);
     const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
     const copy = nodes.filter((node) => node.copyStyle !== void 0 && node.copyStyle !== null).sort((a, b) => text(b).length - text(a).length)[0];
     const style = copy ? copy.copyStyle : "";
@@ -1251,9 +1795,11 @@ var CustomImportScript = (() => {
     const sections = [];
     let current = null;
     let separatorNext = false;
+    let blankNext = false;
     const startSection = (kind, sectionStyle) => {
-      const style = separatorNext ? ["separator", sectionStyle].filter(Boolean).join(", ") : sectionStyle;
+      const style = [separatorNext ? "separator" : "", sectionStyle, blankNext ? "blank-above" : ""].filter(Boolean).join(", ") || void 0;
       separatorNext = false;
+      blankNext = false;
       current = { kind, style, nodes: [] };
       sections.push(current);
       return current;
@@ -1376,9 +1922,32 @@ var CustomImportScript = (() => {
       }
     }
     let leadBelowDate = false;
+    let fullWidthLead = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
+      const split = component.matches(".c-standalone-image, .c-rich-text-editor") && photoTextRow(component);
+      if (split) {
+        [split.photo, split.caption, ...split.texts].filter(Boolean).forEach((c) => consumed.add(c));
+        const textNodes = split.texts.flatMap((t) => richTextNodes(t, doc).nodes);
+        const copy = textNodes.filter((n) => n.copyStyle !== void 0 && n.copyStyle !== null).sort((a, b) => text(b).length - text(a).length).map((n) => n.copyStyle)[0];
+        const photo = [...imageNodes(split.photo, doc), ...split.caption ? richTextNodes(split.caption, doc).nodes : []];
+        [...photo, ...textNodes].forEach((n) => n.nodeType === 1 && dropBracketTags(n));
+        const cells = split.photoFirst ? [photo, textNodes] : [textNodes, photo];
+        startSection("columns", copy || void 0).nodes.push(WebImporter.Blocks.createBlock(doc, { name: split.name, cells: [cells] }));
+        current = null;
+        return;
+      }
+      const texts = !isFirst && component.matches(".c-rich-text-editor") && textRow(component);
+      if (texts) {
+        texts.filter((t) => t !== "empty").forEach((t) => consumed.add(t));
+        const cells = texts.map((t) => t === "empty" ? "" : richTextNodes(t, doc).nodes);
+        const copy = cells.flat().map((n) => n && n.copyStyle).find((c) => c);
+        cells.flat().forEach((n) => n && n.nodeType === 1 && dropBracketTags(n));
+        startSection("columns", copy || void 0).nodes.push(WebImporter.Blocks.createBlock(doc, { name: "Columns", cells: [cells] }));
+        current = null;
+        return;
+      }
       if (component.matches(".xf-fragment")) {
         startSection("fragment").nodes.push(fragmentBlock(component.getAttribute("data-fragment"), doc));
         current = null;
@@ -1392,7 +1961,7 @@ var CustomImportScript = (() => {
         current.nodes.push(block);
         return;
       }
-      if (xf && component.matches(".c-rich-text-editor") && component.querySelector(".dimensional-box")) {
+      if (component.matches(".c-rich-text-editor") && component.querySelector(".dimensional-box")) {
         const { nodes: nodes2 } = richTextNodes(component, doc);
         if (!nodes2.length) return;
         const copy = nodes2.find((node) => node.copyStyle);
@@ -1408,11 +1977,35 @@ var CustomImportScript = (() => {
         current = null;
         return;
       }
+      if (component.matches(".fullWidthImage")) {
+        const img = component.querySelector("img");
+        if (!img) return;
+        const source = component.querySelector("source[srcset]");
+        const desktop = source && source.getAttribute("srcset") || img.getAttribute("src");
+        const nodes2 = [.../* @__PURE__ */ new Set([desktop, img.getAttribute("src")])].filter(Boolean).map((src) => {
+          const image = doc.createElement("img");
+          image.setAttribute("src", src);
+          image.setAttribute("alt", img.getAttribute("alt") || "");
+          const p = doc.createElement("p");
+          p.append(image);
+          return p;
+        });
+        const box = component.querySelector(".textBoxId");
+        if (box && text(box)) {
+          const p = doc.createElement("p");
+          p.textContent = text(box);
+          nodes2.push(p);
+        }
+        if (isFirst) fullWidthLead = true;
+        startSection("image", "full-width-image").nodes.push(...nodes2);
+        current = null;
+        return;
+      }
       if (component.matches(".c-standalone-image")) {
         const row = !isFirst && imageRow(component);
         if (row) {
-          row.forEach((image) => consumed.add(image));
-          const cells = row.map((image) => imageNodes(image, doc));
+          row.filter((image) => image !== "empty").forEach((image) => consumed.add(image));
+          const cells = row.map((image) => image === "empty" ? "" : imageNodes(image, doc));
           startSection("columns").nodes.push(WebImporter.Blocks.createBlock(doc, { name: "Columns", cells: [cells] }));
           current = null;
           return;
@@ -1440,7 +2033,16 @@ var CustomImportScript = (() => {
         current = null;
         return;
       }
-      if (component.matches(".c-customizeable")) {
+      if (component.matches(".c-section-title") && text(component)) {
+        const h2 = doc.createElement("h2");
+        const u = doc.createElement("u");
+        u.textContent = text(component.querySelector("h1, h2, h3, h4") || component);
+        h2.append(u);
+        if (!current || !current.kind.startsWith("body")) startSection("body");
+        current.nodes.push(h2);
+        return;
+      }
+      if (component.matches(".c-customizeable, .c-latestnews")) {
         if (!component.querySelector(".item img")) return;
         const section = startSection("cards");
         const heading = component.querySelector("h2");
@@ -1465,6 +2067,47 @@ var CustomImportScript = (() => {
           else if (aside.matches(".c-largeheadline")) nodes2.push(...headlineNodes(aside, doc));
         });
         startSection("form", nodes2.length > 1 ? "form-with-aside" : void 0).nodes.push(...nodes2);
+        current = null;
+        return;
+      }
+      if (component.matches(".c-curated-link-list")) {
+        const links = [...component.querySelectorAll("li a[href]")].filter((a) => text(a));
+        if (!links.length) return;
+        const ul = doc.createElement("ul");
+        links.forEach((source) => {
+          const li = doc.createElement("li");
+          const a = doc.createElement("a");
+          a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
+          a.textContent = text(source);
+          li.append(a);
+          ul.append(li);
+        });
+        startSection("link-list", "link-list").nodes.push(ul);
+        blankNext = [...component.querySelectorAll("li")].some((li) => !text(li));
+        current = null;
+        return;
+      }
+      if (component.matches(".c-accordion")) {
+        const rows = [...component.querySelectorAll(".panel")].map((panel) => {
+          const title2 = text(panel.querySelector(".panel-title"));
+          const body = [...panel.querySelectorAll(".panel-body .c-rich-text-editor")].flatMap((rte) => richTextNodes(rte, doc).nodes);
+          body.forEach((n) => n.nodeType === 1 && dropBracketTags(n));
+          return title2 && body.length ? { title: title2, body } : null;
+        }).filter(Boolean);
+        if (!rows.length) return;
+        const nodes2 = [];
+        const heading = component.querySelector(".component-subheading");
+        if (heading && text(heading)) {
+          const h3 = doc.createElement("h3");
+          h3.textContent = text(heading);
+          nodes2.push(h3);
+        }
+        nodes2.push(WebImporter.Blocks.createBlock(doc, {
+          name: "Accordion",
+          cells: rows.map((row) => [row.title, row.body])
+        }));
+        const copy = rows.flatMap((row) => row.body).map((n) => n.copyStyle).find((c) => c);
+        startSection("accordion", copy || void 0).nodes.push(...nodes2);
         current = null;
         return;
       }
@@ -1529,18 +2172,22 @@ var CustomImportScript = (() => {
         if (textColumns) {
           consumed.add(textAside.closest(COMPONENTS) || textAside);
           element.setAttribute("data-news-theme", "full-width");
-          startSection("columns").nodes.push(textColumns);
+          startSection("columns", textColumns.copy || void 0).nodes.push(textColumns.block);
           current = null;
           return;
         }
-        const columnStyle = imageColumnStyle(component);
+        const caption = videoCaption(component);
+        const besideText = component.closest('.colctrl [class*="col-sm-6"], .colctrl [class*="col-sm-4"]');
+        const columnStyle = imageColumnStyle(component) || besideText && (/\bcol-sm-6\b/.test(besideText.className) ? "image-1-2" : "image-1-3");
         if (columnStyle) {
           startSection("video", columnStyle).nodes.push(component);
-          current = null;
-          return;
+        } else {
+          if (!current || current.kind !== "body") startSection("body");
+          current.nodes.push(component);
         }
-        if (!current || current.kind !== "body") startSection("body");
-        current.nodes.push(component);
+        const serifCaption = caption.some((n) => /^H[2-4]$/.test(n.tagName) && !n.querySelector(".futura-bold, b, strong"));
+        if (caption.length) startSection("caption", serifCaption ? "join, h-serif" : "join").nodes.push(...caption);
+        if (columnStyle || caption.length) current = null;
         return;
       }
       const headlineStyle = component.matches(".c-largeheadline") && [
@@ -1553,6 +2200,16 @@ var CustomImportScript = (() => {
           const heading = rename(lines[0], "h1");
           heading.querySelectorAll("strong, em").forEach(unwrap);
           startSection("headline", headlineStyle[1]).nodes.push(heading, ...lines.slice(1));
+          current = null;
+          return;
+        }
+      }
+      if (component.matches(".c-largeheadline") && headlineStyle && headlineStyle[1] === "headline-2vw" && component.querySelector(".has-background.bg-gold") && text(component)) {
+        const lines = headlineNodes(component, doc);
+        if (lines.length) {
+          lines.forEach((line) => line.querySelectorAll("em").forEach(unwrap));
+          startSection("headline", "headline-2vw").nodes.push(...lines);
+          current.background = "bg-gold";
           current = null;
           return;
         }
@@ -1574,11 +2231,43 @@ var CustomImportScript = (() => {
         } else if (!current || !current.kind.startsWith("body")) {
           startSection("body");
         }
+        const subtitle = component.querySelector(".cta-subtitle, .cta-title");
+        if (subtitle && text(subtitle)) {
+          const p = doc.createElement("p");
+          const strong = doc.createElement("strong");
+          strong.textContent = text(subtitle);
+          p.append(strong);
+          nodes2.unshift(p);
+          if (!(current.style || "").split(", ").includes("label-1-5")) {
+            current.style = [current.style, "label-1-5"].filter(Boolean).join(", ");
+          }
+        }
         current.nodes.push(...nodes2);
+        return;
+      }
+      const boxes = component.matches(".c-rich-text-editor") && goldBoxRow(component);
+      if (boxes) {
+        boxes.forEach((box) => consumed.add(box));
+        const block = WebImporter.Blocks.createBlock(doc, {
+          name: "Columns",
+          cells: [boxes.map((box) => goldBoxCell(box, doc))]
+        });
+        const goldStyle = boxes.every((box) => box.querySelector(".futura-bold .fontsize-2em, .fontsize-2em .futura-bold")) ? "gold-boxes, gold-boxes-2" : "gold-boxes";
+        const heading = current && current.nodes.length === 1 && /^H[2-4]$/.test(current.nodes[0].tagName || "");
+        if (heading && !current.style) {
+          const sized = /\[\[text-1-25\]/.test(current.nodes[0].textContent);
+          dropBracketTags(current.nodes[0]);
+          current.style = sized && current.nodes[0].tagName === "H3" ? `${goldStyle}, h3-1-25` : goldStyle;
+          current.nodes.push(block);
+        } else {
+          startSection("gold-boxes", goldStyle).nodes.push(block);
+        }
+        current = null;
         return;
       }
       const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
+      const stacked = !!current && current.lastRich === previousRichText(component) && unspaced(current.lastRich, "bottom") && unspaced(component, "top");
       nodes.forEach((node, i) => {
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
@@ -1589,7 +2278,8 @@ var CustomImportScript = (() => {
           if (node.followsText && current && i > 0) {
             current.style = [current.style, "ps-0"].filter(Boolean).join(", ");
           }
-          startSection(kind, styles.join(", ") || void 0);
+          const join = (i > 0 || stacked) && current && !node.followsText ? ["join"] : [];
+          startSection(kind, [...styles, ...join].join(", ") || void 0);
         }
         if (h3Font) {
           if (h3Font === "serif" && current.h3Font !== "serif") {
@@ -1599,6 +2289,7 @@ var CustomImportScript = (() => {
         }
         current.nodes.push(node);
       });
+      if (component.matches(".c-rich-text-editor")) current.lastRich = component;
     });
     if (hasForm) {
       let seen = 0;
@@ -1627,7 +2318,7 @@ var CustomImportScript = (() => {
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
     const opensWithHeadline = sections.some((section) => section.kind === "headline");
-    if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
+    if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline || fullWidthLead) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
     const opening = sections.find((section) => section.nodes.length);
@@ -1937,7 +2628,7 @@ var CustomImportScript = (() => {
     });
   }
   function futuraBold(root) {
-    [...root.querySelectorAll("span.futura-bold")].filter((span) => !span.closest(`${HEADINGS}, h1`)).forEach((span) => {
+    [...root.querySelectorAll("span.futura-bold")].filter((span) => !span.closest(`${HEADINGS}, h1, .c-autocarousel`)).forEach((span) => {
       const outer = span.parentElement && span.parentElement.closest("strong, b");
       if (outer && norm(outer.textContent) === norm(span.textContent)) unwrap2(outer);
       span.querySelectorAll("strong, b, span.futura-bold").forEach(unwrap2);
@@ -1950,7 +2641,9 @@ var CustomImportScript = (() => {
     });
   }
   function dropStyleSpans(root) {
-    root.querySelectorAll('span[class*="fontsize-"], span.urw-egyptienne').forEach(unwrap2);
+    root.querySelectorAll('span[class*="fontsize-"], span.urw-egyptienne').forEach((span) => {
+      if (!span.closest(".c-autocarousel")) unwrap2(span);
+    });
   }
   function semanticInline(root) {
     root.querySelectorAll(`:is(${TEXT_BLOCKS}, ${HEADINGS}, h1) :is(b, i)`).forEach((el) => {
@@ -2023,7 +2716,10 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
-    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
@@ -2035,7 +2731,8 @@ var CustomImportScript = (() => {
       "news-detail-xf",
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
-      "event-detail"
+      "event-detail",
+      "contact-division"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook2.beforeTransform) {
@@ -2279,7 +2976,7 @@ var CustomImportScript = (() => {
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },
       { name: "video", instances: [".c-standalone-video"] },
-      { name: "cards-corp-teaser", instances: [".c-customizeable"] }
+      { name: "cards-corp-teaser", instances: [".c-customizeable", ".c-latestnews"] }
     ]
   };
   var parsers = {

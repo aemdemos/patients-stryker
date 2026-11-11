@@ -14,6 +14,7 @@
   --hero-slide-left: 5%;
   --hero-slide-right: 50%;
   --hero-slide-text-size: 2;
+  --hero-slide-subtitle: var(--hero-slide-subtitle-size, calc(var(--hero-slide-text-size) * 3 / 5)); /* subtitle size, below */
 
   display: block;
   position: relative;
@@ -67,6 +68,96 @@
   display: none;
 }
 
+/* blue-box: the headline in the corp blue box with 20px padding, its text white (stryker.com
+   .c-largeheadline.bg-blue, e.g. "Stryker donates 22,500 Emergency Relief Bed Kits to Project
+   C.U.R.E.": 835 x 238px at 1440px); on phones over the top of the mobile image, 15px down
+   and 20px in from the sides (351px wide at 390px) */
+.hero-corp.image-slide.blue-box > div:last-child {
+  inset: var(--space-block) var(--space-block-l) auto;
+  padding: var(--space-block-l);
+  background-color: var(--color-navy-bright);
+}
+
+/* gold-box: the same headline box in gold (stryker.com .c-largeheadline.bg-gold, e.g. "Why
+   all police cars need AEDs": 648 x 261px at 1440px, 20px padding; on phones the box alone,
+   20px in from the edges). A plain (not bold) line under the title is its subtitle, in
+   the light serif (weight 500, as the source h2) at 2/3 of the title size (the source's 2vw
+   line under the 3vw title) */
+.hero-corp.image-slide.gold-box > div:last-child {
+  position: static;
+  margin: 0 var(--space-block-l) calc(2 * var(--space-section));
+  padding: var(--space-block-l);
+  background-color: var(--color-accent);
+}
+
+.hero-corp.image-slide.gold-box > div:first-child {
+  display: none;
+}
+
+.hero-corp.image-slide:is(.gold-box, .dark-box) > div:last-child > :is(h2, h3, p):not(:has(strong)) {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-slide-text-size) * 2vw * 2 / 3);
+  font-weight: var(--font-weight-medium);
+}
+
+/* …and a second plain line under that subtitle is the small print of the box, at 1/3 of the
+   title size (never under 14px), a blank line below the subtitle (stryker.com 1vw line2 of
+   the Large Headline, e.g. "ProCuity bed series designed to address…" in the dark box of
+   "Innovation inspired by insights": 14px at 1440px, 27px under the 2vw line) */
+.hero-corp.image-slide:is(.gold-box, .dark-box) > div:last-child > :is(h2, h3, p):not(:has(strong)) + :is(h2, h3, p):not(:has(strong)) {
+  margin-top: var(--space-block-l);
+  font-size: max(var(--body-font-size-m), calc(var(--hero-slide-text-size) * 2vw / 3));
+}
+
+/* white-box: the headline in a white box (stryker.com .c-largeheadline.bg-white, e.g.
+   "Following in her mother's footsteps": 648 x 135px at 1440px, 20px padding); on phones
+   the box alone, 20px in from the edges, padded 20px at the sides only, its Bold title on
+   the source line's 21px Egyptienne line box (span.line; 2 lines: 70px at 390px) */
+.hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child {
+  position: static;
+  margin: 0 var(--space-block-l) calc(2 * var(--space-section));
+  padding: 0 var(--space-block-l);
+  background-color: var(--color-white);
+}
+
+/* gray-box: the white-box headline box in light grey (stryker.com .c-largeheadline
+   .bg-light-gray, e.g. "Stryker holds diversity, equity and inclusion summit": 576px wide at
+   1440px, padded 20px; on phones over the top of the mobile image, 20px in) */
+.hero-corp.image-slide.gray-box > div:last-child {
+  padding: var(--space-block-l);
+  background-color: var(--color-surface);
+}
+
+.hero-corp.image-slide:is(.white-box, .gray-box) > div:first-child {
+  display: none;
+}
+
+/* …with a mobile image (hero-corp.js .hero-image-mobile) phones show it, the box over its
+   top 20px in from the edges (most white-box sources, e.g. "Reimagining nursing for the
+   future": 350px wide at 390px; the gold box of "Why AEDs belong on back-to-school
+   checklists"); with text-below the box sits under the image (the gold box of "The
+   importance of manufacturer maintenance plans for medical equipment") */
+.hero-corp.image-slide:is(.white-box, .gray-box, .gold-box) > div:first-child:where(:has(picture.hero-image-mobile)) {
+  display: block;
+}
+
+.hero-corp.image-slide:is(.white-box, .gray-box, .gold-box):where(:has(picture.hero-image-mobile):not(.text-below)) > div:last-child {
+  position: absolute;
+  inset: var(--space-block-l) var(--space-block-l) auto;
+  margin: 0;
+}
+
+.hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child > :has(> strong) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--corp-hero-line-strut);
+}
+
+.hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child > * > strong {
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
+}
+
 .hero-corp.image-slide > div:last-child > * {
   max-width: none;
   margin: 0;
@@ -74,6 +165,47 @@
   font-size: calc(var(--hero-slide-text-size) * 2vw);
   line-height: var(--heading-line-height-hero);
   text-align: left;
+}
+
+/* align-right: the slide text right-aligned in its box (stryker.com Large Headline
+   text-align: right, e.g. "Going the distance for front-line heroes" ending 5% from the
+   right edge) */
+.hero-corp.image-slide.align-right > div:last-child > * {
+  text-align: right;
+}
+
+/* subtitle (hero-corp.js .hero-corp-subtitle: one plain line under a fully Bold title): the
+   light serif at 3/5 of the title size (stryker.com 3vw Egyptienne under the 5vw title,
+   e.g. "Look inside Stryker's iSuite": 36px at 1200px, 23.5px at 390px), or at its own
+   `sub-N` size (N vw from 600px, 2N vw on phones, capped at N x 14px; e.g. sub-1-5 for the
+   1.5vw line under the 2vw title of "Stryker's Journey to Zero harm continues with
+   Neptune S"); gold-box keeps its own 2/3 */
+.hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-slide-subtitle) * 2vw);
+  font-weight: var(--font-weight-regular);
+}
+
+/* blue-box (above): its text white */
+.hero-corp.image-slide.blue-box > div:last-child > * {
+  color: var(--color-white);
+}
+
+/* …each line of the box keeps the source's 15px margin below it, inside the box; a Bold
+   title is the source's bold span inside its 28px/1.06 serif h1, whose line box spaces
+   the lines (2 lines: 115px at 1440px, 81px at 900px, 73px at 390px) */
+.hero-corp.image-slide.gold-box > div:last-child > * {
+  margin-bottom: var(--space-block);
+}
+
+.hero-corp.image-slide.gold-box > div:last-child > h1:has(> strong) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+.hero-corp.image-slide.gold-box > div:last-child > h1 > strong {
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
 }
 
 @media (width >= 600px) {
@@ -96,6 +228,10 @@
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 
+  .hero-corp.image-slide > div:last-child > p.hero-corp-subtitle {
+    font-size: min(calc(var(--hero-slide-subtitle) * 1vw), calc(var(--hero-slide-subtitle) * var(--body-font-size-m)));
+  }
+
   .hero-corp.image-slide.dark-box > div:first-child {
     display: block;
   }
@@ -105,5 +241,55 @@
     inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
     margin: 0;
     padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide.blue-box > div:last-child {
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide.gold-box > div:first-child {
+    display: block;
+  }
+
+  .hero-corp.image-slide.gold-box > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    margin: 0;
+    padding: var(--space-block-l);
+  }
+
+  .hero-corp.image-slide:is(.gold-box, .dark-box) > div:last-child > :is(h2, h3, p):not(:has(strong)) {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw * 2 / 3), calc(var(--hero-slide-text-size) * var(--body-font-size-m) * 2 / 3));
+  }
+
+  .hero-corp.image-slide:is(.gold-box, .dark-box) > div:last-child > :is(h2, h3, p):not(:has(strong)) + :is(h2, h3, p):not(:has(strong)) {
+    font-size: max(var(--body-font-size-m), min(calc(var(--hero-slide-text-size) * 1vw / 3), calc(var(--hero-slide-text-size) * var(--body-font-size-m) / 3)));
+  }
+
+  .hero-corp.image-slide:is(.white-box, .gray-box) > div:first-child {
+    display: block;
+  }
+
+  .hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    margin: 0;
+    padding: var(--space-block-l);
+  }
+
+  /* …from 600px the line box is a 14px / 1.35 line, below the title's */
+  .hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child > :has(> strong) {
+    font-family: var(--display-font-family);
+    font-size: var(--body-font-size-m);
+    line-height: var(--heading-line-height-hero);
+  }
+
+  .hero-corp.image-slide:is(.white-box, .gray-box) > div:last-child > * > strong {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide.gold-box > div:last-child > h1 > strong {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
 }
