@@ -10,7 +10,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 const PAGE_TEMPLATE = {
   name: 'corp-legal',
-  description: 'www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show`.',
+  description: 'www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show` (false where the source hides the line).',
   urls: [
     'https://www.stryker.com/us/en/legal/terms-of-use.html',
     'https://www.stryker.com/us/en/about/governance/bylaws.html',
@@ -152,6 +152,23 @@ function dropUnlistedStyles(main) {
   });
 }
 
+// empty trailing cells of a Columns row (mri: 2 buttons in a 4-column source row) are not authored
+function trimEmptyCells(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    if (!/^Columns/.test(text(table.querySelector('th, tr')))) return;
+    table.querySelectorAll('tr').forEach((tr, i) => {
+      if (!i) return;
+      const cells = [...tr.children];
+      while (cells.length > 1) {
+        const last = cells[cells.length - 1];
+        if (text(last) || last.querySelector('img, picture, video, iframe')) break;
+        last.remove();
+        cells.pop();
+      }
+    });
+  });
+}
+
 // California transparency disclosure: the source title and body sit in 6/12 and 8/12 columns
 const WIDTH_STYLES = [['california-transparency', ['width-50', 'width-67']]];
 
@@ -163,7 +180,8 @@ function widthStyles(main, document, url) {
   styles.forEach((style, i) => {
     const end = ends[i];
     let table = null;
-    for (let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild; n && n !== end; n = n.nextElementSibling) {
+    let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;
+    for (; n && n !== end; n = n.nextElementSibling) {
       if (n.tagName === 'TABLE' && text(n.querySelector('th, tr')) === 'Section Metadata') table = n;
     }
     if (table) {
@@ -182,7 +200,8 @@ function widthStyles(main, document, url) {
 function indentedLists(main, document) {
   const indent = (p) => parseInt((p.getAttribute('style') || '').match(/margin-left:\s*(\d+)px/)?.[1] || '0', 10);
   main.querySelectorAll('p').forEach((first) => {
-    if (!first.isConnected || !indent(first) || first.previousElementSibling?.matches('p') && indent(first.previousElementSibling)) return;
+    const prev = first.previousElementSibling;
+    if (!first.isConnected || !indent(first) || (prev?.matches('p') && indent(prev))) return;
     const run = [];
     for (let n = first; n && n.matches('p') && indent(n); n = n.nextElementSibling) run.push(n);
     const steps = [...new Set(run.map(indent))].sort((a, b) => a - b);
@@ -222,6 +241,7 @@ export default {
   // before the importer's own cleanup, which drops empty paragraphs
   preprocess: ({ document }) => {
     keepHeadlineBlankLines(document);
+    if (document.querySelector('#publishedDate.hidden')) document.body.setAttribute('data-date-hidden', '');
   },
 
   transform: (payload) => {
@@ -230,6 +250,9 @@ export default {
     const hcp = !!document.querySelector('.g-hcpbanner');
     const published = publishedDate(document);
 
+    if (url.includes('/hemorrhagic-stroke/mri')) {
+      main.querySelectorAll('.panel-group').forEach((group) => group.setAttribute('data-divided', ''));
+    }
     indentedLists(main, document);
     const columnCount = buildingBlocks(main, document);
     const tableCount = tables(main, document);
@@ -238,6 +261,7 @@ export default {
     executeTransformers('beforeTransform', main, payload);
     executeTransformers('afterTransform', main, payload);
     dropUnlistedStyles(main);
+    trimEmptyCells(main);
     widthStyles(main, document, url);
     edsLinkPaths(main);
 
@@ -252,9 +276,11 @@ export default {
     if (hcp) meta['hcp-banner'] = 'true';
     if (published) {
       meta.published = published;
-      meta['last-updated'] = 'show';
+      // the source hides the "Last Updated" line on some pages (#publishedDate.hidden)
+      meta['last-updated'] = main.hasAttribute('data-date-hidden') ? 'false' : 'show';
     }
     main.removeAttribute('data-xf-unresolved');
+    main.removeAttribute('data-date-hidden');
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

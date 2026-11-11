@@ -1315,14 +1315,21 @@ var CustomImportScript = (() => {
       const panels = [...group.querySelectorAll(":scope > .panel")].filter((p) => p.querySelector(".panel-title"));
       if (!panels.length) return;
       const options = accordionOptions(panels);
-      const name = options ? `Accordion (${options})` : "Accordion";
+      const divided = group.hasAttribute("data-divided");
+      const variant = divided ? "divided" : options;
+      const name = variant ? `Accordion (${variant})` : "Accordion";
       const items = panels.map((panel) => ({
         label: h.text(panel.querySelector(".panel-title")),
         body: contentNodes(panel.querySelector(".panel-body") || panel, doc, h)
       }));
       items.forEach(({ body }) => tagPanelCopy(body, doc, h));
+      if (divided) {
+        items.forEach((item) => {
+          item.body = item.body.flatMap((n) => n.nodeType === 1 && n.matches("table") ? blockCells(n) : [n]);
+        });
+      }
       const target = group.closest(".c-accordion") || group;
-      const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))));
+      const nested = !divided && items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches("table") || n.querySelector("table"))));
       if (nested && target.closest(".tab-content")) {
         items.forEach((item) => {
           item.body = item.body.flatMap((n) => n.nodeType === 1 && n.matches("table") ? blockCells(n) : [n]);
@@ -2646,6 +2653,8 @@ var CustomImportScript = (() => {
       "contact-division",
       "people",
       "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments",
       "corp-legal"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
@@ -2871,7 +2880,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-corp-legal.js
   var PAGE_TEMPLATE = {
     name: "corp-legal",
-    description: "www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: false`.",
+    description: "www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show` (false where the source hides the line).",
     urls: [
       "https://www.stryker.com/us/en/legal/terms-of-use.html",
       "https://www.stryker.com/us/en/about/governance/bylaws.html",
@@ -2895,6 +2904,59 @@ var CustomImportScript = (() => {
     });
   }
   var text4 = (el2) => (el2.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
+  function buildingBlocks(main, document) {
+    const groups = [];
+    main.querySelectorAll(".buildingblock").forEach((bb) => {
+      const prev = bb.previousElementSibling;
+      const last = groups[groups.length - 1];
+      if (prev && last && last[last.length - 1] === prev) last.push(bb);
+      else groups.push([bb]);
+    });
+    let count = 0;
+    groups.filter((g) => g.length > 1).forEach((group) => {
+      const heads = group.every((bb) => bb.querySelector(".c-largeheadline"));
+      const cells = group.map((bb) => {
+        const nodes = [];
+        if (heads) {
+          const p = document.createElement("p");
+          const strong = document.createElement("strong");
+          strong.textContent = text4(bb.querySelector(".c-largeheadline"));
+          p.append(strong);
+          nodes.push(p);
+        }
+        bb.querySelectorAll(".c-rich-text-editor p").forEach((src) => {
+          if (!text4(src)) return;
+          const p = document.createElement("p");
+          p.append(...[...src.childNodes].map((n) => n.cloneNode(true)));
+          cleanRichText(p);
+          nodes.push(p);
+        });
+        const items = [...bb.querySelectorAll(".c-table td")].filter((td) => text4(td));
+        if (items.length) {
+          const ul = document.createElement("ul");
+          items.forEach((td) => {
+            const li = document.createElement("li");
+            li.append(...[...td.childNodes].map((n) => n.cloneNode(true)));
+            cleanRichText(li);
+            const trailing = (n) => n && (n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim());
+            while (trailing(li.lastChild)) li.lastChild.remove();
+            ul.append(li);
+          });
+          nodes.push(ul);
+        }
+        return nodes;
+      });
+      const block = WebImporter.Blocks.createBlock(document, {
+        name: heads ? "Columns (color-heads)" : "Columns (striped)",
+        cells: [cells]
+      });
+      block.setAttribute("data-keep", "flow");
+      group[0].before(block);
+      group.forEach((bb) => bb.remove());
+      count += 1;
+    });
+    return count;
+  }
   function tables(main, document) {
     let count = 0;
     main.querySelectorAll(".c-table").forEach((component) => {
@@ -2931,6 +2993,94 @@ var CustomImportScript = (() => {
       (component.closest(".contactus") || component).replaceWith(holder);
     });
   }
+  var DROPPED_STYLES = ["headline-box", "blue", "purple"];
+  function dropUnlistedStyles(main) {
+    main.querySelectorAll("table").forEach((table) => {
+      if (text4(table.querySelector("th, tr")) !== "Section Metadata") return;
+      [...table.querySelectorAll("tr")].slice(1).forEach((tr) => {
+        const [key, value] = tr.children;
+        if (!key || !value || text4(key).toLowerCase() !== "style") return;
+        const styles = text4(value).split(",").map((v) => v.trim()).filter((v) => v && !DROPPED_STYLES.includes(v));
+        if (styles.length) value.textContent = styles.join(", ");
+        else tr.remove();
+      });
+      if (table.querySelectorAll("tr").length < 2) table.remove();
+    });
+  }
+  function trimEmptyCells(main) {
+    main.querySelectorAll("table").forEach((table) => {
+      if (!/^Columns/.test(text4(table.querySelector("th, tr")))) return;
+      table.querySelectorAll("tr").forEach((tr, i) => {
+        if (!i) return;
+        const cells = [...tr.children];
+        while (cells.length > 1) {
+          const last = cells[cells.length - 1];
+          if (text4(last) || last.querySelector("img, picture, video, iframe")) break;
+          last.remove();
+          cells.pop();
+        }
+      });
+    });
+  }
+  var WIDTH_STYLES = [["california-transparency", ["width-50", "width-67"]]];
+  function widthStyles(main, document, url) {
+    var _a;
+    const styles = (_a = WIDTH_STYLES.find(([key]) => url.includes(key))) == null ? void 0 : _a[1];
+    if (!styles) return;
+    const hrs = [...main.children].filter((n) => n.tagName === "HR");
+    const ends = [...hrs, null];
+    styles.forEach((style, i) => {
+      const end = ends[i];
+      let table = null;
+      let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;
+      for (; n && n !== end; n = n.nextElementSibling) {
+        if (n.tagName === "TABLE" && text4(n.querySelector("th, tr")) === "Section Metadata") table = n;
+      }
+      if (table) {
+        const value = table.querySelector("tr:nth-child(2) td:nth-child(2)");
+        value.textContent = `${text4(value)}, ${style}`;
+      } else {
+        const block = WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+        if (end) end.before(block);
+        else main.append(block);
+      }
+    });
+  }
+  function indentedLists(main, document) {
+    const indent = (p) => {
+      var _a;
+      return parseInt(((_a = (p.getAttribute("style") || "").match(/margin-left:\s*(\d+)px/)) == null ? void 0 : _a[1]) || "0", 10);
+    };
+    main.querySelectorAll("p").forEach((first) => {
+      const prev = first.previousElementSibling;
+      if (!first.isConnected || !indent(first) || (prev == null ? void 0 : prev.matches("p")) && indent(prev)) return;
+      const run = [];
+      for (let n = first; n && n.matches("p") && indent(n); n = n.nextElementSibling) run.push(n);
+      const steps = [...new Set(run.map(indent))].sort((a, b) => a - b);
+      const root = document.createElement("ul");
+      const stack = [{ ul: root, li: null }];
+      run.forEach((p) => {
+        const level = steps.indexOf(indent(p));
+        stack.length = Math.min(stack.length, level + 1);
+        while (stack.length <= level) {
+          const parent = stack[stack.length - 1];
+          const ul = document.createElement("ul");
+          if (!parent.li) {
+            parent.li = document.createElement("li");
+            parent.ul.append(parent.li);
+          }
+          parent.li.append(ul);
+          stack.push({ ul, li: null });
+        }
+        const li = document.createElement("li");
+        li.append(...p.childNodes);
+        stack[level].ul.append(li);
+        stack[level].li = li;
+      });
+      first.before(root);
+      run.forEach((p) => p.remove());
+    });
+  }
   function publishedDate(document) {
     var _a;
     const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
@@ -2941,6 +3091,7 @@ var CustomImportScript = (() => {
     // before the importer's own cleanup, which drops empty paragraphs
     preprocess: ({ document }) => {
       keepHeadlineBlankLines(document);
+      if (document.querySelector("#publishedDate.hidden")) document.body.setAttribute("data-date-hidden", "");
     },
     transform: (payload) => {
       var _a, _b;
@@ -2948,11 +3099,19 @@ var CustomImportScript = (() => {
       const main = document.body;
       const hcp = !!document.querySelector(".g-hcpbanner");
       const published = publishedDate(document);
+      if (url.includes("/hemorrhagic-stroke/mri")) {
+        main.querySelectorAll(".panel-group").forEach((group) => group.setAttribute("data-divided", ""));
+      }
+      indentedLists(main, document);
+      const columnCount = buildingBlocks(main, document);
       const tableCount = tables(main, document);
       const contactReport = { phones: [] };
       contacts(main, document, contactReport);
       executeTransformers("beforeTransform", main, payload);
       executeTransformers("afterTransform", main, payload);
+      dropUnlistedStyles(main);
+      trimEmptyCells(main);
+      widthStyles(main, document, url);
       edsLinkPaths(main);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
@@ -2964,9 +3123,10 @@ var CustomImportScript = (() => {
       if (hcp) meta["hcp-banner"] = "true";
       if (published) {
         meta.published = published;
-        meta["last-updated"] = "false";
+        meta["last-updated"] = main.hasAttribute("data-date-hidden") ? "false" : "show";
       }
       main.removeAttribute("data-xf-unresolved");
+      main.removeAttribute("data-date-hidden");
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -2978,7 +3138,7 @@ var CustomImportScript = (() => {
         report: {
           title: document.title,
           template: PAGE_TEMPLATE.name,
-          blocks: Array(tableCount).fill("table"),
+          blocks: [...Array(tableCount).fill("table"), ...Array(columnCount).fill("columns")],
           phones: contactReport.phones
         }
       }];
