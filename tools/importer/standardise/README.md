@@ -1,11 +1,15 @@
-# Standardise while you QA (pilot, branch `standardise-v3`)
+# Standardisation (branch `standardise-v3`)
 
-An experiment, kept off the main line: can the migrated corp pages move from one-off measured
+An experiment, kept off the main line: the migrated corp pages move from one-off measured
 values (the readable settings: `Text box`, `Grid`, `Column widths`, size tags …) to a few
-named **standard variants**, chosen block by block while the pages are reviewed?
+**standard variants** per block type. Per block type: group every instance by similarity, make
+the largest N groups exactly N variants with their own CSS, and put every instance of the type
+on one of them, its content kept and its presentation dropped. The look changes; the content and
+EDS authoring practice stay. First block type: Columns (below). The first pilot (30 pages,
+block-by-block review, layout-only standards) is kept below for reference.
 
 - Code: this branch only (forked from `readable-settings-v3` at 48bac1b).
-- Content: `/std/…`, copies of 30 pilot product pages and their fragments (`/rs` is untouched).
+- Content: `/std/…`, copies of every product page (672) and their fragments (`/rs` is untouched).
 - Previews: `https://standardise-v3--stryker-com--strykerenterprise.aem.page/std/…` once the
   `/std` documents are uploaded (on request only); locally a second dev server on this
   worktree (`aem up --html-folder content --port 3001`).
@@ -21,7 +25,10 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | `cluster.py` | Columns instances → groups (structure + layout) → clusters (design options); report of what standardising drops |
 | `pick-pilot.py` | The pilot pages: every cluster of the 10 largest groups, 30 pages |
 | `copy-pilot.py` | Copies the pilot pages and their fragments `/rs` → `/std` |
-| `rules/columns.js` | The transfer rules: an instance → a standard (DOM only: browser and Node) |
+| `rules/variants.js` | Every Columns block → one of the six standard variants, content kept, presentation dropped (DOM only) |
+| `apply-variants.mjs` | Applies `rules/variants.js` to every `/std` document (backup, changed sections only, report) |
+| `test/rules-variants.test.mjs` | The variant rules on every `/rs` document with Columns, against their invariants |
+| `rules/columns.js` | First pilot: the transfer rules, an instance → a layout standard |
 | `test/rules-columns.test.mjs` | The rules on one example per cluster, against the standard's invariants |
 | `gallery.mjs` | The standards gallery draft (`/std/drafts/standards`) |
 | `preselect.mjs` | Renders each pilot block as it is and in each standard it fits (1440 and 375 wide), compares boxes and styles; a standard with no difference is pre-selected |
@@ -67,7 +74,63 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 - So the variety is in the numbers, not in the layouts: three standards (Media + text, Cards,
   Text columns) take the bulk.
 
-## The standard Columns variants (draft)
+## The standard Columns variants (current model, 2026-11-11)
+
+Every Columns block of the site becomes one of **six variants**. The variant owns the whole look
+(layout and type); the author owns only the content: heading levels, Bold, Italic, links. Nothing
+presentational is authored any more. The first pilot's block-by-block review (keep as is, layout
+standards with options, the overlay) is superseded by this model; its tools stay for reference.
+
+| Variant | Class | Content | Blocks (site) | Model on stryker.com |
+|---|---|---|---|---|
+| Media + text | `media-text` | an image or video beside text, either order | 905 | barimatt-plus, comfortgel-se |
+| Cards | `card-grid` | 2–4+ cells, each an image above its text | 489 | arise-1000-ex, bari-10a |
+| Product intro | `page-intro` | the product page's opening image + text | 298 | (the template's own, unchanged) |
+| Text columns | `text-columns` | 2–4 text cells | 272 | arise-1000-ex "at a glance" |
+| Feature statement | `feature-statement` | a statement beside an image (was Large Headline) | 160 | dermacell, spy-elite |
+| Image row | `image-row` | 2–5 images, no text | 52 | the media-pair grid |
+
+2176 blocks on 672 pages and their fragments, measured at 1440px on the models:
+- 30px gutter, equal cells, top aligned; phones one column, from 600px side by side (media +
+  text, feature) or two per row (cards, text, images), from 900px a row in one line.
+- Type from the 10-step scale: titles Title (media + text), Subtitle (cards), Headline (text
+  columns' h2, the feature statement), copy Large (17.5px); the feature statement's copy Body
+  serif, its Bold words Futura bold and other words the light serif.
+- Gold is Bold + Italic (the authoring convention). Corp copy elsewhere keeps its colour for
+  Bold + Italic (the source's black Futura bold labels); in the variants those labels are Bold.
+
+`rules/variants.js` (apply: `apply-variants.mjs`, tests: `test/rules-variants.test.mjs`):
+- the variant from the content's shape (page-intro stays; Large Headline with an image →
+  feature-statement; images only → image-row; an image beside text → media-text; cells of image +
+  text → card-grid; text only → text-columns; other mixes → the nearest);
+- the block's classes: `columns <variant>` only;
+- every readable tag inside the block goes (4472: sizes, fonts, colours, alignment); gold text
+  becomes Bold + Italic (837, none lost); Bold + Italic labels become Bold (1339);
+- a paragraph wholly in size tags of 21px and up becomes the variant's title (767: h3; in a
+  feature statement its statement h2 from 28px), so the hierarchy stays;
+- Box / Box end / Column break / blank lines (1031) and empty cells (125) go;
+- the Columns' settings rows go (Column widths, Text box, Grid, Cell colours, Image borders); in a
+  section holding only Columns (96% of them) its type and spacing rows and type styles (serif,
+  bold-body, center …) too: 3977 rows, 676 styles. **Kept for a later pass:** section backgrounds,
+  dividers, ids, structural styles (tabbed, accordion-panel, carousel).
+
+`blocks/columns/columns.js` adds no formatting markers (columns-bold / -gold / -number) to the
+variants, so the older formatting-driven Columns styles do not reach them.
+
+Checks (all documents): words, links, images, sections the same; headings the same in order
+(plus the promoted titles); no tag or box line left in a Columns block; gold kept. Renders of 30
+pages at 1440 and 375: no errors, every block loaded, no tag left as text.
+
+Open points for design / the EDS team:
+- 59 Columns rows on 58 pages are in-page jump links (Contact us / About / …): a navigation
+  pattern that probably wants its own block, not Text columns.
+- The feature statement is 35px (its models); hero-like statements (LMH, Endotrac EPF) were up
+  to 70px.
+- Text colours from tags (white on gold bands) are gone; the band's own text colour applies
+  until the section-style pass.
+- The Block Library needs one entry per variant (sample + authoring rules).
+
+### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
 |---|---|---|---|
@@ -194,7 +257,10 @@ python3 -I tools/importer/standardise/candidates.py … tools/importer/standardi
 node tools/importer/standardise/apply.mjs --content content --candidates tools/importer/standardise/data/candidates.json --decisions <export.json> --backup /tmp/…/before --report /tmp/…/apply-report.json [--dry-run]
 node tools/importer/standardise/check-standardised.mjs --check tools/importer/migration-index/check-style-coverage.mjs --content content --backup /tmp/…/before --report /tmp/…/apply-report.json --candidates tools/importer/standardise/data/candidates.json --cache <page cache> --work /tmp/…/check
 node tools/importer/standardise/report.mjs --candidates … --decisions <export.json> --apply /tmp/…/apply-report.json --log <review log.jsonl> --check /tmp/…/check.json --out /tmp/…/report.md
-# the type scale, on the layout-applied documents:
+# the six Columns variants, on a fresh copy of every page (copy-pilot.py with the full page list):
+node tools/importer/standardise/test/rules-variants.test.mjs --content content/ --root rs
+node tools/importer/standardise/apply-variants.mjs --content content --backup /tmp/…/before-variants --report /tmp/…/variants-report.json [--dry-run]
+# (first pilot) the type scale, on the layout-applied documents:
 node tools/importer/standardise/test/rules-typography.test.mjs --content content [--measured <type-measure runs at 1440>]
 node tools/importer/standardise/apply-typography.mjs --content content --backup /tmp/…/before-type --report /tmp/…/type-report.json [--dry-run]
 ```
