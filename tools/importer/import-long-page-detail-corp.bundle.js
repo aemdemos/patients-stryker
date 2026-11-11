@@ -1722,7 +1722,7 @@ var CustomImportScript = (() => {
         const blocks = unit.matches(".c-rich-text-editor") ? [...unit.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => h.text(el)) : [];
         if (unit.matches(".c-rich-text-editor")) {
           if (!blocks.every((el) => el.closest(CENTRED))) centred = false;
-        } else if (!rowStyle.includes("center")) centred = false;
+        } else if (!rowStyle.includes("center") && unit.getAttribute("data-centred") !== "true") centred = false;
         const nodes = unitNodes(unit, doc, h);
         nodes.forEach((n) => {
           if (n.headingStyle) extras.push(n.headingStyle);
@@ -1894,7 +1894,60 @@ var CustomImportScript = (() => {
       component.replaceWith(box);
     });
   }
+  var STAT_COLOURS = [
+    [/^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i, "purple"],
+    [/^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i, "gold"],
+    [/^(?:#4c7d7a|rgb\(\s*76\s*,\s*125\s*,\s*122\s*\))$/i, "teal"],
+    [/^(?:#1c5687|rgb\(\s*28\s*,\s*86\s*,\s*135\s*\))$/i, "navy"]
+  ];
+  function counterFigure(widget) {
+    const end = widget.getAttribute("data-numbercounter-end-number") || "";
+    const type = widget.getAttribute("data-numbercounter-number-type");
+    const currency = widget.getAttribute("data-numbercounter-currency-type") || "";
+    if (!end) return "";
+    if (type === "3") return `${end}%`;
+    if (type === "2") return `${currency}${end}`;
+    return end;
+  }
+  function counterRows(main, doc, h) {
+    main.querySelectorAll(".colctrl").forEach((colctrl) => {
+      const row = colctrl.querySelector(":scope > .row");
+      const cols = row ? [...row.children].filter((el) => /\bcol-(xs|sm|md)-\d+/.test(el.className)) : [];
+      const filled = cols.filter((col) => h.text(col) || col.querySelector("img, iframe, [data-widget]"));
+      const counters = filled.map((col) => col.querySelectorAll(".numbercounter"));
+      if (!filled.length || counters.some((list) => list.length !== 1)) return;
+      if (filled.some((col, i) => h.text(col) !== h.text(counters[i][0]))) return;
+      const rows = filled.map((col) => {
+        const widget = col.querySelector('[data-widget="numbercounter"]');
+        const number = widget && widget.querySelector(".numbercounter-number");
+        const colour = number && /(?:^|;)\s*color\s*:\s*([^;]+)/i.exec(number.getAttribute("style") || "");
+        const keyword = colour ? (STAT_COLOURS.find(([re]) => re.test(colour[1].trim())) || [])[1] : "";
+        const label = widget && [...widget.children].find((el) => !el.querySelector(".numbercounter-number") && h.text(el));
+        const desc = doc.createElement("p");
+        if (label) {
+          const source = label.querySelector('[class*="fontsize-"]') || label.querySelector('[style*="text-align"]') || label;
+          [...source.cloneNode(true).childNodes].forEach((n) => {
+            if (n.nodeType === 1 && n.matches(".futura-bold")) {
+              const strong = doc.createElement("strong");
+              strong.textContent = h.text(n);
+              desc.append(strong);
+            } else if (n.nodeType === 1 && n.matches("br")) desc.append(doc.createElement("br"));
+            else if (n.textContent.trim()) desc.append(doc.createTextNode(n.textContent.trim()));
+          });
+        }
+        return [keyword || "purple", widget ? counterFigure(widget) : "", desc];
+      });
+      const block = WebImporter.Blocks.createBlock(doc, {
+        name: `Statistics (count-up, cols-${rows.length})`,
+        cells: rows
+      });
+      block.setAttribute("data-centred", "true");
+      const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
+      wrapper.replaceWith(keepBlock(block, wrapper));
+    });
+  }
   function numberCounters(main, doc, h) {
+    counterRows(main, doc, h);
     main.querySelectorAll(".numbercounter").forEach((component) => {
       const widget = component.querySelector('[data-widget="numbercounter"]');
       if (!widget) return;

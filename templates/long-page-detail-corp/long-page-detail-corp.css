@@ -1376,3 +1376,41 @@ body.long-page-detail-corp main > .section.columns-container .columns-wrapper .c
 body.long-page-detail-corp main > .section .columns-wrapper .columns.purple-last > div > div li {
   line-height: var(--body-line-height);
 }
+
+/* the grey jump bar (Sticky Nav) right under a hero, as on stryker.com (CLOUT, CR hub, spine
+   medical education resources: no gap) */
+body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.sticky-nav-container) {
+  margin-bottom: 0;
+}
+
+/* a list label over its nested list in the CLOUT design cards (`boxed-all`: "Variables
+   Collected:", "Inclusion:", "Patients were assessed at") in the list's own 17.5px, as on
+   stryker.com (its 1.25em tag is relative to the 1.25x copy already) */
+body.long-page-detail-corp main .columns.boxed-all li > p > span.text-1-25 {
+  font-size: inherit;
+}
+
+/* Statistics (count-up): stryker.com number counters (CLOUT safety outcomes) in their source
+   sizes, as the Large Headline figures: the figure 6.5x the headline unit (91px at 1440px,
+   49px on phones; the lone 94% 7x), the label 1.5x (21px / 11.25px) in Futura bold, its
+   "(n=…)" in the body font */
+body.long-page-detail-corp main .statistics {
+  --statistics-number-size: calc(6.5 * var(--long-page-detail-corp-headline-unit));
+}
+
+body.long-page-detail-corp main .statistics.cols-1 {
+  --statistics-number-size: calc(7 * var(--long-page-detail-corp-headline-unit));
+}
+
+body.long-page-detail-corp main .statistics .statistics-value {
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp main .statistics .statistics-desc {
+  font-size: calc(1.5 * var(--long-page-detail-corp-headline-unit));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp main .statistics .statistics-desc strong {
+  font-family: var(--display-font-family);
+}
