@@ -38,6 +38,31 @@ export function stepOf(px) {
     Math.abs(Math.log(px / v)) < Math.abs(Math.log(px / STEPS[best])) ? name : best), 'Body');
 }
 
+const ORDER = Object.keys(STEPS);
+/** two sizes this far apart (ratio) stay at least one step apart */
+const CONTRAST = 1.25;
+/**
+ * The steps of a section's sizes (px): the nearest step each, but a size clearly smaller than
+ * the next larger one (by CONTRAST) gets a smaller step than it, so the scale's ends (above Hero,
+ * below Small) keep a section's hierarchy: a 115px figure over 63px text → Hero over Statement.
+ * @param {number[]} list the sizes
+ * @returns {Map<number, string>} size → step name
+ */
+export function contrastSteps(list) {
+  const map = new Map();
+  let prev = null;
+  [...new Set(list)].sort((a, b) => b - a).forEach((px) => {
+    let k = ORDER.indexOf(stepOf(px));
+    if (prev) {
+      k = Math.min(k, prev.k);
+      if (prev.px / px >= CONTRAST) k = Math.max(0, Math.min(k, prev.k - 1));
+    }
+    map.set(px, ORDER[k]);
+    prev = { px, k };
+  });
+  return map;
+}
+
 const BASE = 14;
 const NAMED_VW = {
   display: 3, headline: 2.5, title: 2, lead: 1.5, fluid: 1,
@@ -124,9 +149,16 @@ export function transformDocument(body, { page = true } = {}) {
       return copy;
     };
 
-    // inline size tags: a stream over the section's text (tags span elements)
+    // inline size tags: a stream over the section's text (tags span elements); run twice: first
+    // to collect the section's sizes (so sizes that differ clearly keep a step between them),
+    // then to write the steps
     const content = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
-    content.forEach((root) => {
+    const used = new Set();
+    let stepFor = (px) => {
+      used.add(Math.round(px * 100) / 100);
+      return stepOf(px);
+    };
+    const walk = (write) => content.forEach((root) => {
       const walker = root.ownerDocument.createTreeWalker(root, 4);
       const nodes = [];
       for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
@@ -156,12 +188,14 @@ export function transformDocument(body, { page = true } = {}) {
             let px = around;
             sized.forEach((t) => { px = tokenSize(t, /^(\d|large$)/i.test(t) ? unit : px); });
             if (sized.length) {
-              const step = stepOf(px);
-              const plain = stepOf(around);
-              const tagText = s.slice(i + m[0].length).split(']')[0];
-              sizes.push({ text: tagText, px: Math.round(px * 100) / 100, step });
+              const step = stepFor(px);
+              const plain = stepFor(around);
+              if (write) {
+                const tagText = s.slice(i + m[0].length).split(']')[0];
+                sizes.push({ text: tagText, px: Math.round(px * 100) / 100, step });
+                note(sized.join('+'), step === plain ? 'as the text around it' : step);
+              }
               if (step !== plain) kept.push(step);
-              note(sized.join('+'), step === plain ? 'as the text around it' : step);
             }
             stack.push({ px, sized: sized.length > 0, keep: kept.length > 0 });
             if (kept.length) out += `[[${kept.join(',')}]`;
@@ -174,9 +208,13 @@ export function transformDocument(body, { page = true } = {}) {
             i += 1;
           }
         }
-        if (out !== s) node.nodeValue = out;
+        if (write && out !== s) node.nodeValue = out;
       });
     });
+    walk(false);
+    const map = contrastSteps([...used]);
+    stepFor = (px) => map.get(Math.round(px * 100) / 100) || stepOf(px);
+    walk(true);
 
     // Heading size: the headings it enlarged get their step as a tag, the row goes
     if (rows.has('Heading size')) {

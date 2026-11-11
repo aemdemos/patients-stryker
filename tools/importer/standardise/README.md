@@ -75,8 +75,8 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | Cards | `std-cards` | 2–4 cells, each image + text | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
 | Text columns | `std-text` | 2–4 text cells | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
 
-These are layout standards: the text sizes stay as authored. Typography is its own later step
-(a named type scale; `dropSizeTags` in `rules/columns.js` is ready for it).
+These are layout standards: the text sizes stay as authored. Typography is its own step (the
+type scale, below).
 
 - **Kept (design names):**
   - section styles (serif, background colours);
@@ -111,6 +111,44 @@ These are layout standards: the text sizes stay as authored. Typography is its o
   standards; they only fix alignment, the media + text and wide-column widths, the box padding
   and the band space.
 
+## The type scale (draft)
+
+Ten named steps replace every measured size (`[[1.75×]`, `[[5vw]`, `Copy size | 2×`,
+`Heading size | 1.25×`). Each step is fluid between a 375px phone and a 1440px desktop
+(`--corp-type-*` in `styles/styles-corp.css`):
+
+| Step | Desktop | Phone |
+|---|---|---|
+| Small | 11.2 | 11.2 |
+| Body | 14 | 14 |
+| Large | 17.5 | 17.5 |
+| Lead | 21 | 21 |
+| Subtitle | 24.5 | 22.75 |
+| Title | 28 | 24.5 |
+| Headline | 35 | 26.25 |
+| Display | 42 | 28 |
+| Statement | 56 | 31.5 |
+| Hero | 70 | 37.5 |
+
+- A page on the scale has the metadata `type-scale | standard` (`body.type-standard`, set in
+  `scripts/corp.js`). There the step names are text styles (`[[Gold,Title]…]`) and Copy size /
+  Label size values; the template's heading sizes map onto the steps too. Other pages are
+  unchanged.
+- `rules/typography.js` works out each size's desktop size as `scripts/corp-type.js` renders it
+  (vw = N × 14px; a multiple of the text around it, or of the 14px copy / 28px h1), then takes
+  the nearest step by ratio. A size equal to the step the text has anyway goes. Colours, fonts and
+  alignment stay.
+- **Contrast kept:** two sizes of a section at least 1.25× apart keep at least one step between
+  them. Without it, everything above the top step became Hero (a 115px figure and its 63px line
+  the same size).
+- `Heading size` rows go; the h2 / h3 they enlarged (not in cards) get their step as a tag.
+  `Copy size` / `Label size` rows take a step name (Body: the row goes). `Text` / `Headings` rows:
+  their sizes become step names.
+- Effect on the 30 pilot pages: distinct text sizes site-wide 31 → 16 on desktop and 36 → 17 on
+  phones; per page a median of 10 → 9. Desktop sizes move little. Phones change most: the vw
+  sizes were twice their desktop share below 600px (an 11px caption under a 37px heading),
+  and now follow the steps.
+
 ## Notes as "design" and "EDS team" (pilot roles)
 
 - Media + text loses the per-page text offsets (`Text box` 3–20% insets). The text starts at
@@ -143,4 +181,7 @@ python3 -I tools/importer/standardise/candidates.py … tools/importer/standardi
 node tools/importer/standardise/apply.mjs --content content --candidates tools/importer/standardise/data/candidates.json --decisions <export.json> --backup /tmp/…/before --report /tmp/…/apply-report.json [--dry-run]
 node tools/importer/standardise/check-standardised.mjs --check tools/importer/migration-index/check-style-coverage.mjs --content content --backup /tmp/…/before --report /tmp/…/apply-report.json --candidates tools/importer/standardise/data/candidates.json --cache <page cache> --work /tmp/…/check
 node tools/importer/standardise/report.mjs --candidates … --decisions <export.json> --apply /tmp/…/apply-report.json --log <review log.jsonl> --check /tmp/…/check.json --out /tmp/…/report.md
+# the type scale, on the layout-applied documents:
+node tools/importer/standardise/test/rules-typography.test.mjs --content content [--measured <type-measure runs at 1440>]
+node tools/importer/standardise/apply-typography.mjs --content content --backup /tmp/…/before-type --report /tmp/…/type-report.json [--dry-run]
 ```
