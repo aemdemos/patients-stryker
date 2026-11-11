@@ -22,6 +22,7 @@ header nav {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   align-items: center;
   height: var(--nav-height);
   margin: 0 auto;
@@ -31,15 +32,27 @@ header nav {
   font-family: var(--display-font-family);
 }
 
-/* ---- Brand (logo) — full-width row 1 on mobile. The relative offset moves
-   only the logo down to the source position, without reflowing the
-   hamburger/magnifier row below it ---- */
+/* ---- Brand (logo) — full-width row 1 on mobile, above the hamburger row.
+   The logo is sized from the header height, not the other way round: its clear
+   zone (--nav-logo-zone, 4x tall) fills the space for the logo row, and the
+   padding is the brand clear space — 1.5x on every side of the wordmark, x = its
+   x-height (tokens in styles/styles.css). The image's tall letters (0.31x above
+   the x-height band) and "y" tail (0.24x below it) sit inside that space, so the
+   top/bottom padding is 1.5x minus those. The left padding counts the nav's
+   gutter, so the logo sits 1.5x from the header edge. ---- */
 header nav .nav-brand {
+  --nav-logo-zone: calc(var(--nav-height) - var(--nav-toggle-row-height));
+  --nav-logo-x: calc(var(--nav-logo-zone) / 4);
+  --nav-logo-width: calc(var(--nav-logo-x) / var(--nav-logo-x-ratio));
+
   grid-area: brand;
   flex: 0 0 100%;
-  position: relative;
-  top: var(--nav-brand-offset-mobile);
-  padding-top: 12px;
+  box-sizing: border-box;
+  padding:
+    calc(1.189 * var(--nav-logo-x))
+    calc(1.5 * var(--nav-logo-x))
+    calc(1.259 * var(--nav-logo-x))
+    calc(1.5 * var(--nav-logo-x) - var(--container-gutter));
 }
 
 header nav .nav-brand p { margin: 0; }
@@ -47,7 +60,7 @@ header nav .nav-brand p { margin: 0; }
 /* aspect-ratio reserves the logo box from its intrinsic ratio so the logo can't
    shift content when it loads (CLS: Lighthouse flags it as an unsized image) */
 header nav .nav-brand img {
-  width: 100px;
+  width: var(--nav-logo-width);
   height: auto;
   aspect-ratio: 192 / 48;
   display: block;
@@ -465,17 +478,16 @@ header nav.nav-variant-legal .nav-hamburger {
   display: none;
 }
 
-header nav.nav-variant-legal .nav-brand {
-  flex: 1 1 auto;
-  align-self: center;
-  top: 0;
-  padding-top: 0;
+header nav.nav-variant-legal {
+  align-content: center;
 }
 
-/* ~75% of the desktop logo (188px) — smaller than desktop so mobile doesn't feel
-   oversized, but larger than the cramped default to fill the freed hamburger space */
-header nav.nav-variant-legal .nav-brand img {
-  width: 140px;
+/* with no hamburger row the clear zone takes the whole bar (less its 1px bottom
+   border), so the logo grows to fill the freed space */
+header nav.nav-variant-legal .nav-brand {
+  --nav-logo-zone: calc(var(--nav-height) - 1px);
+
+  flex: 1 1 auto;
 }
 
 /* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
@@ -496,20 +508,13 @@ header nav.nav-variant-legal .nav-brand img {
     display: contents;
   }
 
-  header nav .nav-brand {
+  /* single-row white bar (no hamburger row, no border): the clear zone fills the
+     full bar height — the legal variant included */
+  header nav .nav-brand,
+  header nav.nav-variant-legal .nav-brand {
+    --nav-logo-zone: var(--nav-height);
+
     flex: none;
-    top: 0;
-    padding-top: 0;
-  }
-
-  header nav .nav-brand img {
-    width: 188px;
-  }
-
-  /* the legal logo enlargement is mobile-only (it reclaims the hidden hamburger's
-     space); desktop has no hamburger, so keep the standard logo size */
-  header nav.nav-variant-legal .nav-brand img {
-    width: 188px;
   }
 
   /* gold bar spans full page width; inner list stays aligned to the container.
