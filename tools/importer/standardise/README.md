@@ -235,11 +235,9 @@ the 10-step scale by heading level; nothing presentational is authored.
 
 ## Marketo forms (2026-11-11)
 
-The 544 `marketo-form` blocks (495 documents) are already one standard: configuration rows only
-(Base URL, Munchkin ID, Form ID, captcha), the form itself from Marketo, styled by the corp form
-CSS. Unchanged. Content gap for the client: 53 blocks have no Form ID and load no form
-(0 documents; by business unit: ):
-
+The 544 `marketo-form` blocks (495 documents, 31 distinct forms) are already one standard:
+configuration rows only (Base URL, Munchkin ID, Form ID, and the optional captcha rows, which 53
+of them leave out), the form itself from Marketo, styled by the corp form CSS. Unchanged.
 
 ### The first pilot: layout standards (superseded)
 
