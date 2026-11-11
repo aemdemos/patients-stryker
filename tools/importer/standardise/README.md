@@ -223,6 +223,16 @@ the 10-step scale by heading level; nothing presentational is authored.
   (the default-content pass had dropped it: a figure and its text then sat side by side).
 - Left on the pages: only the 16 visually hidden tags.
 
+## Video, Tabs and Table (2026-11-11)
+
+- Video (161 blocks): two variants, `video` (click to play, 126) and `video autoplay` (a muted
+  loop, 35); the `no-border` option goes: on standard pages (`type-scale: standard`) no player
+  has a border (`styles-corp.css`; the original pages keep the source's 1px frame).
+- Tabs: no Tabs block on these pages; tabs are built from `tabbed` sections (136), one design,
+  their text cleaned by the default-content pass. Unchanged.
+- Table (78 blocks): one design; `no-header` (12) says whether the first row is a header row
+  (semantics, not styling) and stays; no tags inside. Unchanged.
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
