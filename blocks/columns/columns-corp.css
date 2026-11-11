@@ -26,6 +26,11 @@ body.corp .columns p strong {
   font-family: var(--display-font-family);
 }
 
+/* …except bold the source sets in the body font (`[[body-font]…]`, TEACH talks chapter titles) */
+body.corp .columns p span.body-font strong {
+  font-family: var(--body-font-family);
+}
+
 body.corp .columns > div > div h2 {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
@@ -354,6 +359,13 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 body.corp .columns.columns-4-cols > div {
   flex-flow: row wrap;
   row-gap: var(--space-block);
+}
+
+/* media-text: cells that alternate media and text (TEACH talks chapters: video, text,
+   video, text). No gap between the cells, the video has its own space below it (stryker.com:
+   the text follows the video's 20px on phones) */
+body.corp .columns.media-text > div {
+  row-gap: 0;
 }
 
 /* ---- cells ---- */
@@ -690,5 +702,18 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
   body.corp .columns.left-border-bottom > div > div:first-child {
     margin-bottom: calc(var(--space-block-l) + var(--space-section));
     padding-bottom: calc(var(--space-block-l) + var(--space-section));
+  }
+}
+
+@media (width >= 600px) {
+  /* media-text: no gap between the rows of cells either (the stack rows' 15px), and each cell
+     keeps its own height; the shared rows are for tiles (an image and its name under it) */
+  body.corp .columns.stack.media-text > div {
+    row-gap: 0;
+  }
+
+  body.corp .columns.stack.media-text > div > div {
+    display: block;
+    grid-row: auto;
   }
 }

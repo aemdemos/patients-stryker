@@ -331,6 +331,8 @@ function textBoxes(main, doc, h) {
     if (row && [...row.children].filter((c) => c !== col && h.text(c)).length) return;
     let variant = '';
     if (box.classList.contains('dimensional-box')) variant = 'left';
+    // the gold gradient box (TEACH talks "Course overview": dark gold to gold)
+    else if (box.classList.contains('bg-golden-gradient')) variant = 'gold-gradient';
     else {
       const colour = colourStyle(box);
       variant = {
@@ -340,6 +342,8 @@ function textBoxes(main, doc, h) {
     }
     const nodes = contentNodes(component, doc, h);
     if (!nodes.length) return;
+    // the box's copy sizes and font as tags (the Panel has no section style of its own)
+    tagPanelCopy(nodes, doc, h);
     const name = variant ? `Panel (${variant})` : 'Panel';
     (component.closest('.text') || component).replaceWith(keepBlock(WebImporter.Blocks.createBlock(doc, { name, cells: [[nodes]] })));
   });
@@ -533,12 +537,20 @@ function numberCounters(main, doc, h) {
  * default (black) text.
  */
 const WHITE = /^(?:#fff|#ffffff|white|rgb\(\s*255\s*,\s*255\s*,\s*255\s*\))$/i;
+const BLACK = /^(?:#000|#000000|black|rgb\(\s*0\s*,\s*0\s*,\s*0\s*\))$/i;
 const COLOURED_BOX = '.has-background:not(.bg-white), .c-full-bleed-panel[class*="bg-"]';
 
 function whiteText(main, doc, h) {
   main.querySelectorAll('[style*="color"]').forEach((el) => {
     const m = (el.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
     if (!m || !WHITE.test(m[1].trim()) || !el.closest(COLOURED_BOX) || !h.text(el)) return;
+    // text a nested black overrides is not white (NeuroElite: a black span in the white one)
+    const own = el.cloneNode(true);
+    own.querySelectorAll('[style*="color"]').forEach((c) => {
+      const colour = ((c.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i) || [])[1];
+      if (colour && BLACK.test(colour.trim())) c.remove();
+    });
+    if (!h.text(own)) return;
     if (el.parentElement.closest('[style*="color"]') && WHITE.test((el.parentElement.closest('[style*="color"]').getAttribute('style') || '').replace(/.*color\s*:\s*([^;]+).*/i, '$1').trim())) return;
     el.prepend(doc.createTextNode('[[color-white]'));
     el.append(doc.createTextNode(']'));

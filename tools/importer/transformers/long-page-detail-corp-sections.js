@@ -35,6 +35,7 @@
 
 import buildArticle, {
   richTextNodes, imageNodes, buttonNodes, headlineNodes, titleHeading, absoluteAsset, newTabHref,
+  heroText, heroTextRows, heroImage,
 } from './long-page-detail-corp-article.js';
 import { videoLink } from '../parsers/video.js';
 import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-components.js';
@@ -43,6 +44,13 @@ import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
+
+// links whose stryker.com page redirects (301): the final page instead (AGENTS.md, link
+// rewriting), found by checking every site link of the pages
+const SOURCE_REDIRECTS = {
+  '/us/en/surgical-technologies/products/surgicount-safety-sponge-system/surgicount-index/badge-request---contact-us.html':
+    '/us/en/surgical-technologies/products/surgicount-safety-sponge-system.html',
+};
 
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {
@@ -318,35 +326,43 @@ function videoCaptions(main, doc) {
 }
 
 /**
- * The source local navigation (.localpagenavigation nav: the parent page link, then the
- * links of its section) → `Local Nav` block: row 1 the parent link, row 2 the list of
- * links. Removed from the page; null when the page has none.
+ * The source local navigation (.localpagenavigation nav) → `Local Nav Corp` block: row 1 the
+ * parent page link, row 2 the links shown in the bar, row 3 (when the source has them) the
+ * links under its "⋮" more menu (.hidden-links: stryker.com fixes that split per page);
+ * `border` when the source draws the 1px rule under the bar (nav-border-bottom). The current
+ * page's name is not authored (local-nav-corp.js takes the page title). Removed from the
+ * page; null when the page has none.
  */
 function localNav(main, doc) {
   const nav = main.querySelector('.localpagenavigation nav');
   if (!nav) return null;
   const parent = nav.querySelector('a.parent-node');
   const links = [...nav.querySelectorAll('ul.links > li > a[href]')];
+  const more = [...nav.querySelectorAll('ul.hidden-links > li > a[href]')];
+  const border = nav.classList.contains('nav-border-bottom');
   nav.closest('.localpagenavigation').remove();
-  if (!parent && !links.length) return null;
-  const rows = [];
-  if (parent) {
-    const a = doc.createElement('a');
-    a.href = parent.getAttribute('href');
-    a.textContent = text(parent);
-    rows.push([a]);
-  }
-  const ul = doc.createElement('ul');
-  links.forEach((source) => {
-    const li = doc.createElement('li');
+  if (!parent && !links.length && !more.length) return null;
+  const link = (source) => {
     const a = doc.createElement('a');
     a.href = source.getAttribute('href');
     a.textContent = text(source);
-    li.append(a);
-    ul.append(li);
+    return a;
+  };
+  const list = (sources) => {
+    const ul = doc.createElement('ul');
+    sources.forEach((source) => {
+      const li = doc.createElement('li');
+      li.append(link(source));
+      ul.append(li);
+    });
+    return ul;
+  };
+  const rows = [[parent ? link(parent) : ''], [list(links)]];
+  if (more.length) rows.push([list(more)]);
+  return WebImporter.Blocks.createBlock(doc, {
+    name: border ? 'Local Nav Corp (border)' : 'Local Nav Corp',
+    cells: rows,
   });
-  rows.push([ul]);
-  return WebImporter.Blocks.createBlock(doc, { name: 'Local Nav', cells: rows });
 }
 
 /** A source Marketo form (form[data-marketo-form-id]) → `Marketo Form` block, or null. */
@@ -366,6 +382,8 @@ const CELL_COMPONENTS = [
   '.c-curatedcta', '.buttonset', 'table',
 ].join(', ');
 
+const YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
+
 /** The link around a standalone image (a[href] > img), or null. */
 function linkedImage(component) {
   const img = component.querySelector('img');
@@ -379,6 +397,23 @@ function linkedImage(component) {
  */
 function stackRow(columns) {
   return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
+}
+
+/**
+ * A `stack` row whose columns alternate media and text (TEACH talks chapters: video, text,
+ * video, text): `Columns (stack, media-text)`, each cell its own height and no gap between a
+ * video and its text (columns-corp). Empty columns (a last row of two) don't break it.
+ */
+function mediaTextRow(columns) {
+  const media = 'img, iframe, video, [data-asset-path]';
+  const isMedia = (col) => !text(col) && !!col.querySelector(media);
+  const isText = (col) => !!text(col) && !col.querySelector(media);
+  const isEmpty = (col) => !text(col) && !col.querySelector(media);
+  // at least one media column followed by its text (not a lone image in a row of empty
+  // columns: the nse grids' last row)
+  const pair = columns.some((col, i) => i % 2 === 0 && isMedia(col)
+    && !!columns[i + 1] && isText(columns[i + 1]));
+  return pair && columns.every((col, i) => isEmpty(col) || (i % 2 ? isText(col) : isMedia(col)));
 }
 
 // a source box colour (.has-background.bg-…, a .dimensional-box without a colour: `boxed`)
@@ -475,7 +510,10 @@ function cellNodes(col, doc) {
           a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
           const p = doc.createElement('p');
           p.append(a);
-          nodes.splice(1, 0, p);
+          // an image opening a YouTube video (SKILL Assist MAX): the video alone, as a player
+          // (decided 2026-11-11; Columns makes a YouTube link a player, not an image link)
+          if (YOUTUBE_LINK.test(a.getAttribute('href'))) nodes.splice(0, 1, p);
+          else nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches('.c-standalone-video')) {
@@ -558,7 +596,12 @@ function rowCopyStyle(cells, doc) {
   const weight = {};
   copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
   let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
-  if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
+  // …and when some is 1.25x (the `text-1-25` tag is relative to the text around it: in a
+  // larger section copy it grows, ASC operating room "Advanced imaging modalities" 30.5px
+  // instead of 17.5px), each size gets its own tag
+  const relative = (style) => sizeTag(style) === 'text-1-25';
+  const ownTags = (n) => !sizeTag(n.copyStyle) || (relative(n.copyStyle) && !relative(dominant));
+  if (sizeTag(dominant) && copy.some(ownTags)) {
     dominant = dominant.split(',').map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(', ');
   }
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
@@ -673,7 +716,8 @@ function columnRows(main, doc) {
     }
     const key = columns.map(columnWidth).join(',');
     // linked images (the endoscopy resources specialty tiles): `media-pair`
-    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
+    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')]
+      .some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute('href'))));
     const boxes = boxVariant(columns);
     // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
     // stays in the text colour, so it stays readable
@@ -692,7 +736,8 @@ function columnRows(main, doc) {
     const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)]
       .filter((c) => c.closest('.colctrl') === colctrl && (text(c) || c.matches('.sectionseparator'))) : [];
     const firstRule = parts.length > 1 && parts[parts.length - 1].matches('.sectionseparator');
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '', boxes,
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '',
+      stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
       firstRule ? 'left-border-bottom' : ''].filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
     const cells = columns.map((col) => cellNodes(col, doc));
@@ -786,6 +831,43 @@ function gridRows(main) {
 }
 
 /**
+ * A banner (stryker.com .pDiv or .fullWidthImageHero with a text box and its image: a text
+ * column over the image's top left from 840px, the text first on phones) → `Hero Corp
+ * (banner)` in a section of its own: rows the image (the desktop one, picture source
+ * ≥840px), then the text. The column width (col-sm-4 / 6 / 8) → the section's `Text width`
+ * (33 / 50 / 67; none for the full width).
+ */
+function banners(main, doc) {
+  main.querySelectorAll('.pDiv, .fullWidthImageHero').forEach((banner) => {
+    const box = banner.querySelector('.textBoxId');
+    const img = banner.querySelector('.imgBoxId img');
+    if (!box || !img || !text(box)) return;
+    const source = banner.querySelector('.imgBoxId source[srcset]');
+    const src = source ? source.getAttribute('srcset').split(/\s+/)[0] : img.getAttribute('src');
+    const heroRows = heroTextRows(heroText(box, doc));
+    if (!heroRows.rows.length) return;
+    // a banner H1 (SKILL "SKILL Centers of Excellence") is the page title: the headings below
+    // stay as they are
+    if (box.querySelector('h1')) main.setAttribute('data-banner-title', '');
+    // a phone image of its own (another asset than the desktop one, rep-portal): a second row
+    const asset = (url) => (url || '').split('?')[0];
+    const rows = [[heroImage(img, doc, src)]];
+    if (source && asset(img.getAttribute('src')) !== asset(src)) rows.push([heroImage(img, doc)]);
+    const block = WebImporter.Blocks.createBlock(doc, {
+      name: 'Hero Corp (banner)',
+      cells: [...rows, ...heroRows.rows],
+    });
+    block.setAttribute('data-keep', 'section');
+    const props = {};
+    const cols = Number((/\bcol-sm-(\d+)\b/.exec(box.className) || [])[1] || 12);
+    if (cols < 12) props['Text width'] = String(Math.round((cols / 12) * 100));
+    if (heroRows.box) props['Text box'] = heroRows.box;
+    if (Object.keys(props).length) block.setAttribute('data-section-props', JSON.stringify(props));
+    banner.replaceWith(block);
+  });
+}
+
+/**
  * A full-width image (stryker.com .imgBoxId.full-width-img, 22 boxes on 17 pages: the
  * container width, edge to edge on phones): its image in a section with the
  * `full-width-image` style, `shadow` for .bg-shadow (template CSS). The desktop image
@@ -858,6 +940,16 @@ function titleFromHeading(heading, doc) {
     h1.append(bold);
   }
   if (size && !h4Enlarged) sizeTagged(h1, `text-${size}`, doc);
+  // a rich-text Heading 2 keeps its source look as the page H1: the H2's 24.5px (21px on
+  // phones on the source), in Egyptienne unless it is all bold (SKILL e-Lab "A 24/7 online
+  // training platform"; the H1 is 28px Futura bold)
+  if (!size && level === 'H2') {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+    const bold = [...h1.querySelectorAll('.futura-bold, b, strong')]
+      .filter((b) => !b.parentElement.closest('.futura-bold, b, strong'));
+    const serif = squash(bold.map((b) => b.textContent).join('')) !== squash(h1.textContent);
+    sizeTagged(h1, serif ? 'text-1-75,serif' : 'text-1-75', doc);
+  }
   return h1;
 }
 
@@ -890,19 +982,36 @@ export default function transform(hookName, element, payload) {
   const main = doc.querySelector('[role="main"]') || element;
 
   const path = sourcePath(payload);
+  main.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href').replace(/^https:\/\/www\.stryker\.com/, '');
+    if (SOURCE_REDIRECTS[href]) a.setAttribute('href', SOURCE_REDIRECTS[href]);
+  });
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
-  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   dropDamVideos(main);
+  banners(main, doc);
+  main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
   fullWidthImages(main, doc);
   spaceUrlColons(main, doc);
   const nav = localNav(main, doc);
+  // below the local nav, an empty Large Headline opening the page is its 30px of space
+  // (TEACH talks: before the logo): a spacer, as the empty Large Headlines further down
+  if (nav) {
+    const COMPONENT = '[class^="c-"], [class*=" c-"]';
+    const first = [...main.querySelectorAll(COMPONENT)]
+      .find((c) => !c.parentElement.closest(COMPONENT));
+    const empty = first && first.matches('.c-largeheadline') && !text(first)
+      && !first.querySelector('img, picture, video, iframe, [data-asset-path]');
+    if (empty) first.setAttribute('data-spacer', '');
+  }
   experienceFragments(main, doc, PAGE_XFS[path] || [], PAGE_XF_SLOTS[path]);
   sectionTitles(main, doc);
   downloadTitles(main, doc);
   videoCaptions(main, doc);
   const hasTitle = !!(main.querySelector('.h1-title h1') && text(main.querySelector('.h1-title h1')))
-    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1');
+    || !!main.querySelector('.fullWidthImageHero h1, .c-autocarousel h1')
+    || main.hasAttribute('data-banner-title');
+  main.removeAttribute('data-banner-title');
   // no title: the first non-empty Large Headline or rich-text heading (in source order) is
   // the page H1 (e.g. the Mako thank-you page's "Thank you for registering." H4); any other
   // rich-text H1 is an H2 (the OR staff form has two), so the page has one H1

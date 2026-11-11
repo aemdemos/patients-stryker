@@ -1,0 +1,198 @@
+/* local-nav-corp: the www.stryker.com local page navigation (measured on giving-back and the
+   TEACH talks pages at 375 / 1000 / 1440). Futura 14px uppercase. Phones: a card with the
+   page name and a dropdown arrow, 20px clear above and below, opening the list of the parent
+   and all the links. From
+   600px (stryker.com 840px): a 40px bar, the parent link (bold black, 17.5px) on the left,
+   the section's links (grey, "|" between them) on the right, then the "•••" more menu.
+   `border`: a 1px rule under the bar. */
+
+.local-nav-corp .local-nav-corp-nav {
+  position: relative;
+  box-sizing: border-box;
+  margin-block: var(--space-block-l);
+  padding: var(--space-block-s);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.43;
+  text-transform: uppercase;
+}
+
+.local-nav-corp .local-nav-corp-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.local-nav-corp .local-nav-corp-nav a:any-link {
+  color: var(--corp-color-local-nav-item);
+  text-decoration: none;
+}
+
+/* no underline on hover (stryker.com); mouse clicks leave no focus ring on the buttons,
+   the keyboard focus ring stays */
+.local-nav-corp .local-nav-corp-nav button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* phones: the page name, the arrow on the right */
+.local-nav-corp .local-nav-corp-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-black);
+  font: inherit;
+  font-weight: var(--font-weight-bold);
+  text-align: start;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.local-nav-corp .local-nav-corp-toggle::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-block-s) + var(--space-block-xs));
+  right: var(--space-block-s);
+  width: var(--space-block-s);
+  height: var(--space-block-s);
+  border-inline-end: 2px solid var(--corp-color-local-nav-link);
+  border-block-end: 2px solid var(--corp-color-local-nav-link);
+  transform: rotate(45deg);
+}
+
+.local-nav-corp .local-nav-corp-toggle[aria-expanded="true"]::after {
+  top: calc(var(--space-block-s) + var(--space-block-s));
+  transform: rotate(-135deg);
+}
+
+.local-nav-corp .local-nav-corp-nav .local-nav-corp-list {
+  margin-block-start: var(--space-block-s);
+  background: var(--color-white);
+}
+
+.local-nav-corp .local-nav-corp-list li {
+  padding: var(--space-block-s);
+}
+
+/* the parent page first, in bold black */
+.local-nav-corp .local-nav-corp-list li:first-child a:any-link {
+  color: var(--color-black);
+  font-weight: var(--font-weight-bold);
+}
+
+/* the bar's parts are for 600px and up */
+.local-nav-corp .local-nav-corp-parent,
+.local-nav-corp .local-nav-corp-links,
+.local-nav-corp .local-nav-corp-more {
+  display: none;
+}
+
+@media (width >= 600px) {
+  /* the bar's text near its top, as on stryker.com (3px down, the rule 17px below it) */
+  .local-nav-corp .local-nav-corp-nav {
+    display: flex;
+    align-items: flex-start;
+    height: var(--corp-local-nav-height);
+    margin-block: 0;
+    padding: var(--space-block-xxs) 0 0;
+    box-shadow: none;
+  }
+
+  .local-nav-corp.border .local-nav-corp-nav {
+    border-bottom: 1px solid var(--color-surface-muted);
+  }
+
+  .local-nav-corp .local-nav-corp-toggle,
+  .local-nav-corp .local-nav-corp-list {
+    display: none;
+  }
+
+  /* the parent page: stryker.com's h4 in the parent link, 1px above the links */
+  .local-nav-corp .local-nav-corp-nav a.local-nav-corp-parent:any-link {
+    display: block;
+    flex: 0 0 30%;
+    margin-block-start: -1px;
+    color: var(--color-black);
+    font-size: var(--heading-font-size-m);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--body-line-height-l);
+  }
+
+  .local-nav-corp .local-nav-corp-nav .local-nav-corp-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--corp-local-nav-link-gap);
+    margin-inline-start: auto;
+  }
+
+  .local-nav-corp .local-nav-corp-links a:any-link[aria-current="page"] {
+    color: var(--color-black);
+  }
+
+  /* a light grey "|" after each link but the last */
+  .local-nav-corp .local-nav-corp-links li {
+    display: flex;
+  }
+
+  .local-nav-corp .local-nav-corp-links li:not(:last-child)::after {
+    content: "|";
+    margin-inline-start: var(--corp-local-nav-link-gap);
+    color: var(--corp-color-local-nav-separator);
+  }
+
+  .local-nav-corp .local-nav-corp-links a:any-link {
+    display: block;
+    padding-inline: var(--space-block-s);
+    color: var(--corp-color-local-nav-link);
+  }
+
+  /* "|" then "•••": the more menu, grey, under the bar's right end; the button sits at the
+     bar's top (3px above the links), the dots in the upper half of the "|" */
+  .local-nav-corp .local-nav-corp-more {
+    display: block;
+    position: relative;
+    margin-block-start: calc(-1 * var(--space-block-xxs));
+    margin-inline-end: var(--space-block-s);
+  }
+
+  .local-nav-corp .local-nav-corp-more-button {
+    display: flex;
+    align-items: flex-start;
+    padding: 1px var(--corp-local-nav-more-padding);
+    border: 0;
+    background: none;
+    color: var(--corp-color-local-nav-link);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .local-nav-corp .local-nav-corp-more-button::before {
+    content: "|";
+    margin-inline-end: var(--corp-local-nav-more-padding);
+  }
+
+  .local-nav-corp .local-nav-corp-more-button::after {
+    content: "";
+    width: var(--corp-local-nav-more-icon);
+    height: var(--corp-local-nav-more-dot);
+    margin-block-start: var(--corp-local-nav-more-dot-top);
+    background: radial-gradient(circle closest-side, currentcolor 85%, transparent) 0 0 / calc(var(--corp-local-nav-more-icon) / 3) 100% repeat-x;
+  }
+
+  .local-nav-corp .local-nav-corp-more-list {
+    position: absolute;
+    top: 100%;
+    right: calc(-1 * var(--space-block-s));
+    z-index: 2;
+    width: var(--corp-local-nav-menu-width);
+    background: var(--corp-color-local-nav-menu);
+  }
+
+  .local-nav-corp .local-nav-corp-more-list li {
+    padding: var(--space-block-s);
+  }
+}

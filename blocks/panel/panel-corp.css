@@ -1,0 +1,40 @@
+/*
+ * Panel: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). The source boxes are rich text: the copy is the
+ * 14px corp copy and its sizes and fonts are bracket tags (`[[text-1-25,serif]…]`), so the
+ * panel sets no copy size of its own. Measured on stryker.com TEACH talks (Shoulder talks)
+ * and SKILL (e-Lab, NeuroElite) pages.
+ */
+
+/* the copy: 14px lines with 15px below, as any corp paragraph */
+body.corp .panel .panel-body p,
+body.corp .panel .panel-body p:last-child {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* the shadow box (.dimensional-box): no padding, 10px around it */
+body.corp .panel.left .panel-body {
+  padding: 0;
+}
+
+/* gold box (.bg-gold): 2% above the text, 10px on the other sides */
+body.corp .panel.gold .panel-body {
+  padding: 2% var(--space-block-s) var(--space-block-s);
+}
+
+/* gold-gradient: the gradient box (.bg-golden-gradient, TEACH talks "Course overview"):
+   dark gold to gold, 10px padding, text on the left */
+body.corp .panel.gold-gradient .panel-body {
+  margin: 0;
+  padding: var(--space-block-s);
+  background: var(--corp-gold-gradient);
+  box-shadow: none;
+  text-align: left;
+}
+
+/* the copy font of the gold boxes is the bracket tags', not the patients gold panel's serif */
+body.corp .panel:is(.gold, .gold-gradient) .panel-body p {
+  font-family: var(--body-font-family);
+}

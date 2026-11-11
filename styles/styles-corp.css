@@ -33,6 +33,21 @@
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
+  /* local-nav-corp: the local page navigation (measured: giving-back, TEACH talks) */
+  --corp-local-nav-height: 40px;
+  --corp-local-nav-menu-width: 300px;
+  --corp-color-local-nav-link: #9f9d9d; /* the section links in the bar */
+  --corp-color-local-nav-item: #404040; /* the links in the more menu and the phone list */
+  --corp-color-local-nav-menu: #d8d8d8; /* the more menu */
+  --corp-color-local-nav-separator: #c2c2c2; /* the "|" between the bar links */
+  --corp-local-nav-link-gap: 4px; /* bar links: the space before and after each "|" (stryker.com: a word space) */
+  --corp-local-nav-more-padding: 6px; /* the more button's sides and the space after its "|" */
+  --corp-local-nav-more-icon: 19px; /* the "•••" icon: 3 dots 5px wide, 6.5px apart */
+  --corp-local-nav-more-dot: 5px;
+  --corp-local-nav-more-dot-top: 7px; /* the dots' top below the button's top */
+  --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
+  --corp-dark-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
+
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
   --corp-color-linkedin: #0077b5;
@@ -1087,4 +1102,14 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   :where(body.corp) main > .section.video-text > div:empty {
     display: none;
   }
+}
+
+/* bracket tag `[[color-light-gray]…]`: light grey text (stryker.com #b2b4ae, e.g. the BACS
+   banner lists), as the other colour tags (styles.css) */
+:where(body.corp) span.color-light-gray,
+:where(body.corp) span.color-light-gray :is(strong, b, em, i, a:any-link) {
+  --span-color: var(--color-surface-muted);
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
 }
