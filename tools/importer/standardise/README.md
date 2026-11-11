@@ -130,6 +130,22 @@ Open points for design / the EDS team:
   until the section-style pass.
 - The Block Library needs one entry per variant (sample + authoring rules).
 
+## The standard Cards variants (2026-11-11)
+
+615 `cards-corp` blocks; 98% were already in the block's two designs. Two variants (the user's
+choice; the 11 three-up / two-up content cards become Teasers):
+
+| Variant | Class | Content | Blocks |
+|---|---|---|---|
+| Resources | `cards-corp resources` | document thumbnail + linked h5 title; 6 per row from 900px, 4 from 600px | 403 |
+| Teaser | `cards-corp teaser` | image + linked h3 title + short copy + link; 4 per row from 600px (no image: text card) | 212 |
+
+The same pass as Columns (`rules/variants.js`, `apply-variants.mjs`): classes `cards-corp
+<variant>` only; tags go (74); a title-sized paragraph becomes the card's h3 (29, the content
+cards' gold titles); gold is Bold + Italic (14). Resources is always six-up
+(`cards-corp.css`), and Bold + Italic copy in the two variants is gold: no existing card copy on
+the site uses Bold + Italic, so neither change reaches other pages.
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |
