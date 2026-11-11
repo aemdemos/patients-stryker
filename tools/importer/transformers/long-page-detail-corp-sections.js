@@ -384,6 +384,24 @@ const CELL_COMPONENTS = [
 
 const YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
 
+// the gradient boxes a column's Large Headline can sit in → its `[[box-<gradient>]…]` tag
+const CELL_BOXES = {
+  'golden-gradient': 'box-gold-gradient',
+  'gray-gradient': 'box-gray-gradient',
+  'dark-purple-gradient': 'box-dark-purple-gradient',
+  'dark-teal-gradient': 'box-dark-teal-gradient',
+  'dark-blue-gradient': 'box-dark-blue-gradient',
+  'dark-orange-gradient': 'box-dark-orange-gradient',
+};
+
+/** The box tag of a Large Headline set in a gradient box inside a column, or ''. */
+function headlineBoxTag(component) {
+  if (!component.closest('[class*="col-sm-"], [class*="col-md-"]')) return '';
+  const box = component.querySelector('.has-background[class*="-gradient"]') || (component.matches('.has-background') ? component : null);
+  const name = box && (/\bbg-([a-z-]+-gradient)\b/.exec(box.className) || [])[1];
+  return CELL_BOXES[name] || '';
+}
+
 /** The link around a standalone image (a[href] > img), or null. */
 function linkedImage(component) {
   const img = component.querySelector('img');
@@ -525,8 +543,20 @@ function cellNodes(col, doc) {
         }
       } else if (c.matches('.c-largeheadline')) {
         const lines = headlineNodes(c, doc);
+        const box = headlineBoxTag(c);
         if (c.hasAttribute('data-page-title') && lines.length) {
           out.push(titleHeading(lines, doc));
+        } else if (box && lines.length) {
+          // a Large Headline in a gradient box in a column (build-your-asc phases): its lines
+          // in one paragraph, in the `[[box-<gradient>]…]` tag (template CSS draws the box)
+          const p = doc.createElement('p');
+          lines.forEach((line, i) => {
+            if (i) p.append(doc.createElement('br'));
+            p.append(...line.childNodes);
+          });
+          p.prepend(doc.createTextNode(`[[${box}]`));
+          p.append(doc.createTextNode(']'));
+          out.push(p);
         } else out.push(...lines);
       } else if (c.matches('.c-curatedcta, .buttonset')) out.push(...buttonNodes(c, doc));
       else out.push(c);
@@ -726,6 +756,9 @@ function columnRows(main, doc) {
         // only the boxes of this row (not a band around it, not a nested row's)
         const inBox = el.closest('.has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel');
         if (!inBox || inBox.matches('.c-full-bleed-panel') || inBox.closest('.colctrl') !== colctrl) return;
+        // a gradient box that becomes a box tag keeps its white text
+        const headline = el.closest('.c-largeheadline');
+        if (headline && headlineBoxTag(headline)) return;
         if (el.firstChild && el.firstChild.nodeValue === '[[color-white]') el.firstChild.remove();
         if (el.lastChild && el.lastChild.nodeValue === ']') el.lastChild.remove();
         el.removeAttribute('data-white-tag');

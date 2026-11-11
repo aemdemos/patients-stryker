@@ -238,6 +238,17 @@ var CustomImportScript = (() => {
     // 49px: nested sizes only (1.75em in 2em, build-your-asc)
     ["fontsize-3-5em", "p-3-5"]
   ];
+  var HEADING_SIZES = [
+    ["H2", "fontsize-8em", "h2-0-8"],
+    ["H2", "fontsize-1-5em", "h2-1-5"],
+    ["H1", "fontsize-1-25em", "h1-1-25"],
+    // build-your-asc "ASC New Build Playbook" (an H3 in 1.25em, then 1.75em inside it)
+    ["H3", "fontsize-1-25em", "h3-1-25"],
+    // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+    // long-page-detail-corp-sections.js → titleFromHeading)
+    ["H1", "fontsize-h4-2-5", "h4-2-5"]
+  ];
+  var HEADING_TAGS = ["text-1-25", "text-1-5", "text-1-75", "text-2"];
   var SIZE_TAGS = [
     // 0.8em on part of a paragraph (TEACH talks: the 11.2px "• TSA • RSA" link groups)
     ["fontsize-8em", "text-0-8"],
@@ -308,6 +319,7 @@ var CustomImportScript = (() => {
     return m ? m[1].trim() : "";
   }
   var PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+  var DARK_GREY = /^(?:#545857|rgb\(\s*84\s*,\s*88\s*,\s*87\s*\))$/i;
   var LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
   function hasOtherColour(node, own = GOLD) {
     if (node.nodeType !== 1) return false;
@@ -347,6 +359,14 @@ var CustomImportScript = (() => {
           bracketTag([span], tag, root);
           return;
         }
+        const heading = span.closest("h2, h3");
+        if (heading) {
+          const own = HEADING_SIZES.filter(([t]) => t === heading.tagName).map(([, c]) => c);
+          if (!own.includes(cls) && HEADING_TAGS.includes(tag)) {
+            bracketTag([...span.childNodes], tag, root);
+          }
+          return;
+        }
         const block = span.closest("p, li");
         if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
         if (squash(block.textContent) === squash(span.textContent)) return;
@@ -384,6 +404,7 @@ var CustomImportScript = (() => {
   function tagGoldText(root) {
     tagColourText(root, GOLD, "color-gold");
     tagColourText(root, PURPLE, "color-purple");
+    tagColourText(root, DARK_GREY, "color-grey");
   }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text2(el));
@@ -517,18 +538,10 @@ var CustomImportScript = (() => {
       h.replaceWith(p);
     });
   }
-  var HEADING_SIZES = [
-    ["H2", "fontsize-8em", "h2-0-8"],
-    ["H2", "fontsize-1-5em", "h2-1-5"],
-    ["H1", "fontsize-1-25em", "h1-1-25"],
-    // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
-    // long-page-detail-corp-sections.js → titleFromHeading)
-    ["H1", "fontsize-h4-2-5", "h4-2-5"]
-  ];
   function smallHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const styles = /* @__PURE__ */ new Map();
-    root.querySelectorAll("h1, h2").forEach((h) => {
+    root.querySelectorAll("h1, h2, h3").forEach((h) => {
       if (!text2(h)) return;
       const match = HEADING_SIZES.find(([tag, cls]) => {
         if (h.tagName !== tag) return false;
@@ -2381,6 +2394,20 @@ var CustomImportScript = (() => {
     "table"
   ].join(", ");
   var YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
+  var CELL_BOXES = {
+    "golden-gradient": "box-gold-gradient",
+    "gray-gradient": "box-gray-gradient",
+    "dark-purple-gradient": "box-dark-purple-gradient",
+    "dark-teal-gradient": "box-dark-teal-gradient",
+    "dark-blue-gradient": "box-dark-blue-gradient",
+    "dark-orange-gradient": "box-dark-orange-gradient"
+  };
+  function headlineBoxTag(component) {
+    if (!component.closest('[class*="col-sm-"], [class*="col-md-"]')) return "";
+    const box = component.querySelector('.has-background[class*="-gradient"]') || (component.matches(".has-background") ? component : null);
+    const name = box && (/\bbg-([a-z-]+-gradient)\b/.exec(box.className) || [])[1];
+    return CELL_BOXES[name] || "";
+  }
   function linkedImage(component) {
     const img = component.querySelector("img");
     const link2 = img && img.closest("a[href]");
@@ -2486,8 +2513,18 @@ var CustomImportScript = (() => {
         }
       } else if (c.matches(".c-largeheadline")) {
         const lines = headlineNodes(c, doc);
+        const box = headlineBoxTag(c);
         if (c.hasAttribute("data-page-title") && lines.length) {
           out.push(titleHeading(lines, doc));
+        } else if (box && lines.length) {
+          const p = doc.createElement("p");
+          lines.forEach((line, i) => {
+            if (i) p.append(doc.createElement("br"));
+            p.append(...line.childNodes);
+          });
+          p.prepend(doc.createTextNode(`[[${box}]`));
+          p.append(doc.createTextNode("]"));
+          out.push(p);
         } else out.push(...lines);
       } else if (c.matches(".c-curatedcta, .buttonset")) out.push(...buttonNodes(c, doc));
       else out.push(c);
@@ -2612,6 +2649,8 @@ var CustomImportScript = (() => {
         colctrl.querySelectorAll("[data-white-tag]").forEach((el) => {
           const inBox = el.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
           if (!inBox || inBox.matches(".c-full-bleed-panel") || inBox.closest(".colctrl") !== colctrl) return;
+          const headline = el.closest(".c-largeheadline");
+          if (headline && headlineBoxTag(headline)) return;
           if (el.firstChild && el.firstChild.nodeValue === "[[color-white]") el.firstChild.remove();
           if (el.lastChild && el.lastChild.nodeValue === "]") el.lastChild.remove();
           el.removeAttribute("data-white-tag");

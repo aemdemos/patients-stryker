@@ -128,6 +128,20 @@ const SIZE_STYLES = [
   ['fontsize-3-5em', 'p-3-5'],
 ];
 
+// headings the source sizes with a span (the whole text in it): [tag, span class, style]
+const HEADING_SIZES = [
+  ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-5em', 'h2-1-5'],
+  ['H1', 'fontsize-1-25em', 'h1-1-25'],
+  // build-your-asc "ASC New Build Playbook" (an H3 in 1.25em, then 1.75em inside it)
+  ['H3', 'fontsize-1-25em', 'h3-1-25'],
+  // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
+  // long-page-detail-corp-sections.js → titleFromHeading)
+  ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
+];
+
+// the size tags a Heading 2 / 3 can hold (relative to the heading, template CSS)
+const HEADING_TAGS = ['text-1-25', 'text-1-5', 'text-1-75', 'text-2'];
 // source size spans on part of a line → the bracket size tags (styles-corp.css: text-1-25;
 // long-page-detail-corp template CSS: the larger sizes)
 const SIZE_TAGS = [
@@ -250,6 +264,8 @@ function ownColour(el) {
 
 // the corp purple (#85458a, `[[color-purple]…]`: CLOUT labels and figures, giving-back names)
 const PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+// the corp dark grey (#545857, `[[color-grey]…]`: build-your-asc icon titles)
+const DARK_GREY = /^(?:#545857|rgb\(\s*84\s*,\s*88\s*,\s*87\s*\))$/i;
 const LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
 
 /** Whether a node holds text in a colour other than the given one (default gold). */
@@ -309,6 +325,16 @@ function tagTextSize(root) {
         bracketTag([span], tag, root);
         return;
       }
+      // a size span inside a Heading 2 / 3 (not the heading's own size style): its tag, sized
+      // relative to the heading (template CSS; build-your-asc "ASC New Build Playbook" 1.75em)
+      const heading = span.closest('h2, h3');
+      if (heading) {
+        const own = HEADING_SIZES.filter(([t]) => t === heading.tagName).map(([, c]) => c);
+        if (!own.includes(cls) && HEADING_TAGS.includes(tag)) {
+          bracketTag([...span.childNodes], tag, root);
+        }
+        return;
+      }
       const block = span.closest('p, li');
       if (!block || span.closest('h1, h2, h3, h4, h5, h6')) return;
       if (squash(block.textContent) === squash(span.textContent)) return;
@@ -355,6 +381,7 @@ function tagColourText(root, own, tag) {
 function tagGoldText(root) {
   tagColourText(root, GOLD, 'color-gold');
   tagColourText(root, PURPLE, 'color-purple');
+  tagColourText(root, DARK_GREY, 'color-grey');
 }
 
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
@@ -553,20 +580,10 @@ function labelHeadingsToParagraphs(root) {
  * h2 headings the source sets at 0.8em (the whole text in span.fontsize-8em, e.g. a news
  * subtitle): their own section with the `h2-0-8` style (styles-corp.css).
  */
-// headings the source sizes with a span (the whole text in it): [tag, span class, style]
-const HEADING_SIZES = [
-  ['H2', 'fontsize-8em', 'h2-0-8'],
-  ['H2', 'fontsize-1-5em', 'h2-1-5'],
-  ['H1', 'fontsize-1-25em', 'h1-1-25'],
-  // a Heading 4 enlarged 2.5x that is the page title (Mako thank-you page; marked by
-  // long-page-detail-corp-sections.js → titleFromHeading)
-  ['H1', 'fontsize-h4-2-5', 'h4-2-5'],
-];
-
 function smallHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   const styles = new Map();
-  root.querySelectorAll('h1, h2').forEach((h) => {
+  root.querySelectorAll('h1, h2, h3').forEach((h) => {
     if (!text(h)) return;
     const match = HEADING_SIZES.find(([tag, cls]) => {
       if (h.tagName !== tag) return false;
