@@ -1,11 +1,72 @@
-/**
- * Set up the corp image-slide hero from its authored rows.
- * @param {Element} block The hero-corp block
+/*
+ * hero-corp — the stryker.com hero. Variants: image-slide, tagline-band, large-header,
+ * long-text (styles and authoring rules in hero-corp.css).
+ *
+ * Authoring model (single-column rows, in any order):
+ *   | <desktop image, or a Scene7 video link> |
+ *   | <mobile image> |                         (optional; or a | mobile | <image> | row)
+ *   | <headline / copy> |
+ * The block is rebuilt into [media][content]; the CSS lays the variants out from there.
+ * Scene7 video links are already native <video>s here: scripts.js runs dm-support over
+ * <main> before any block decorates.
  */
-function setupHero(block) {
+
+// image-slide swaps its desktop / mobile crops at 600px; the other variants have one image
+const CROSSOVER = '(width >= 600px)';
+
+const BOX_SPACING = {
+  mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft', pt: 'paddingTop', pr: 'paddingRight', pb: 'paddingBottom', pl: 'paddingLeft',
+};
+
+/**
+ * @param {Element} cell an authored cell
+ * @returns {boolean} true when the cell holds a rendered DM video and no copy (the video
+ *   wrapper's control labels and a leftover link text are not copy)
+ */
+function isVideoCell(cell) {
+  if (!cell.querySelector('.dm-video-wrapper, video')) return false;
+  const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+  let copy = '';
+  while (walker.nextNode()) {
+    if (!walker.currentNode.parentElement.closest('a, .dm-video-wrapper')) copy += walker.currentNode.textContent;
+  }
+  return copy.trim() === '';
+}
+
+/**
+ * Background video: muted autoplay loop without controls (dm-support adds controls and a
+ * play overlay to every DM video; they are removed here).
+ * @param {Element} wrapper the rendered video (or its .dm-video-wrapper)
+ */
+function playAsBackground(wrapper) {
+  const video = wrapper.tagName === 'VIDEO' ? wrapper : wrapper.querySelector('video');
+  if (!video) return;
+  video.controls = false;
+  video.removeAttribute('controls');
+  video.muted = true;
+  video.setAttribute('muted', '');
+  video.autoplay = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.setAttribute('playsinline', '');
+  video.preload = 'auto';
+  wrapper.querySelectorAll('.dm-video-overlay, .dm-video-controls').forEach((ui) => ui.remove());
+  const play = () => video.play().catch(() => { /* autoplay blocked: the poster stays */ });
+  video.addEventListener('canplay', play, { once: true });
+  play();
+}
+
+/**
+ * Sorts the authored rows into media (desktop picture or video, mobile picture) and the
+ * content cell, then rebuilds the block as [media][content]. Desktop and mobile stay
+ * separate pictures, each with its own alt.
+ * @param {Element} block the hero-corp block
+ */
+function setupRows(block) {
   let desktopPic = null;
   let mobilePic = null;
   let contentCell = null;
+  let video = null;
 
   [...block.children].forEach((row) => {
     const cells = [...row.children];
@@ -14,24 +75,29 @@ function setupHero(block) {
       const pic = cells[1].querySelector('picture');
       if (label === 'mobile') mobilePic = pic || mobilePic;
       else desktopPic = pic || desktopPic;
-    } else if (cells.length === 1) {
-      const cell = cells[0];
-      const pic = cell.querySelector('picture');
-      if (pic && !cell.querySelector('h1, h2, h3, p')) {
-        if (!desktopPic) desktopPic = pic;
-        else if (!mobilePic) mobilePic = pic;
-      } else if (cell.querySelector('h1, h2, h3, p')) {
-        contentCell = cell;
-      } else if (!pic && cell.textContent.trim()) {
-        const p = document.createElement('p');
-        p.append(...cell.childNodes);
-        cell.append(p);
-        contentCell = cell;
-      }
+      return;
+    }
+    const [cell] = cells;
+    if (!cell) return;
+    const pic = cell.querySelector('picture');
+    if (!video && isVideoCell(cell)) {
+      video = cell.querySelector('.dm-video-wrapper') || cell.querySelector('video');
+    } else if (pic && !cell.querySelector('h1, h2, h3, p')) {
+      if (!desktopPic) desktopPic = pic;
+      else if (!mobilePic) mobilePic = pic;
+    } else if (cell.querySelector('h1, h2, h3, p')) {
+      contentCell = cell;
+    } else if (!pic && cell.textContent.trim()) {
+      // a headline typed straight into the cell, without a paragraph
+      const p = document.createElement('p');
+      p.append(...cell.childNodes);
+      cell.append(p);
+      contentCell = cell;
     }
   });
 
-  if (!desktopPic && !mobilePic && contentCell) {
+  // DM images authored inside the copy cell (dm-support renders them where the link was)
+  if (!desktopPic && !mobilePic && !video && contentCell) {
     const pics = [...contentCell.querySelectorAll('picture')];
     [desktopPic, mobilePic] = pics;
     pics.forEach((pic) => {
@@ -41,63 +107,127 @@ function setupHero(block) {
     });
   }
 
-  if (!desktopPic && !mobilePic) {
-    const pics = [...block.querySelectorAll('picture')];
-    [desktopPic, mobilePic] = pics;
+  // next to a video, the one picture is the mobile image
+  if (video && desktopPic && !mobilePic) {
+    mobilePic = desktopPic;
+    desktopPic = null;
   }
 
-  const imageDiv = document.createElement('div');
+  const media = document.createElement('div');
+  if (video) {
+    playAsBackground(video);
+    media.append(video);
+  }
+  const desktopShown = window.matchMedia(CROSSOVER).matches;
+  const eager = (pic) => {
+    const img = pic && pic.querySelector('img');
+    if (img) { img.setAttribute('loading', 'eager'); img.setAttribute('fetchpriority', 'high'); }
+  };
+  const lazy = (pic) => {
+    const img = pic && pic.querySelector('img');
+    if (img) { img.setAttribute('loading', 'lazy'); img.removeAttribute('fetchpriority'); }
+  };
+  if (mobilePic) mobilePic.classList.add('hero-corp-image-mobile');
+  // the image shown at the current width is the LCP candidate: first in DOM order, eager and
+  // high priority; the hidden one is lazy, so it is never fetched. An image-slide hides its
+  // desktop image (or video) on phones, so a lone desktop image is lazy there.
+  const hidesDesktop = block.classList.contains('image-slide') && !desktopShown;
   if (desktopPic && mobilePic) {
-    desktopPic.classList.add('hero-image-desktop');
-    mobilePic.classList.add('hero-image-mobile');
-
-    // Put the visible crop first so the eager LCP image matches the current viewport.
-    const desktopShown = window.matchMedia('(width >= 600px)').matches;
-    const [lcpPic, otherPic] = desktopShown
-      ? [desktopPic, mobilePic] : [mobilePic, desktopPic];
-    const lcpImg = lcpPic.querySelector('img');
-    const otherImg = otherPic.querySelector('img');
-    if (lcpImg) {
-      lcpImg.setAttribute('loading', 'eager');
-      lcpImg.setAttribute('fetchpriority', 'high');
-    }
-    if (otherImg) {
-      otherImg.setAttribute('loading', 'lazy');
-      otherImg.removeAttribute('fetchpriority');
-    }
-    imageDiv.append(lcpPic, otherPic);
-  } else if (desktopPic || mobilePic) {
-    const only = desktopPic || mobilePic;
-    imageDiv.append(only);
-    const img = only.querySelector('img');
-    if (img) {
-      img.setAttribute('loading', 'eager');
-      img.setAttribute('fetchpriority', 'high');
-    }
+    const [shown, hidden] = hidesDesktop ? [mobilePic, desktopPic] : [desktopPic, mobilePic];
+    eager(shown);
+    lazy(hidden);
+    media.append(shown, hidden);
+  } else if (desktopPic) {
+    if (hidesDesktop) lazy(desktopPic);
+    else eager(desktopPic);
+    media.append(desktopPic);
+  } else if (mobilePic) {
+    if (desktopShown) lazy(mobilePic);
+    else eager(mobilePic);
+    media.append(mobilePic);
   }
 
-  const contentDiv = document.createElement('div');
-  if (contentCell) while (contentCell.firstChild) contentDiv.append(contentCell.firstChild);
-
-  block.replaceChildren(imageDiv, contentDiv);
+  const content = document.createElement('div');
+  if (contentCell) content.append(...contentCell.childNodes);
+  block.replaceChildren(media, content);
 }
 
-function readSlideOptions(block) {
-  [...block.classList].forEach((name) => {
-    const match = name.match(/^(top|left|right|size)-(\d+)(?:-(\d+))?$/);
-    if (!match) return;
-    const [, option, whole, fraction] = match;
-    const value = Number(fraction ? `${whole}.${fraction}` : whole);
-    if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
-    else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
+/**
+ * Headline text sizes come from the section (styles title-N / subline-N): bold text takes the
+ * title size, plain text the subline size. Each text run is wrapped in a span carrying its
+ * role; a space between runs keeps the role of the run before it (as on the source, where the
+ * space sits inside the preceding run). The bold element itself stays at the line's size.
+ * @param {Element} box the .hero-corp-headline box
+ */
+function markTextRoles(box) {
+  const walker = document.createTreeWalker(box, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  let last = 'subline';
+  nodes.forEach((node) => {
+    const space = !node.textContent.trim();
+    if (space && !node.textContent) return;
+    let role = last;
+    if (!space) role = node.parentElement.closest('strong, b') ? 'title' : 'subline';
+    last = role;
+    const span = document.createElement('span');
+    span.className = `hero-corp-${role}`;
+    node.replaceWith(span);
+    span.append(node);
   });
 }
 
-export default function decorate(block) {
-  readSlideOptions(block);
-  setupHero(block);
+/**
+ * Options of the earlier image-slide (the news-detail imports, tools/importer/parsers/
+ * hero-image-slide.js) read as their current equivalents: text-below = mobile-below,
+ * dark-box = box-dark, and size-N (N vw, `2-5` = 2.5) sets both text sizes to N in place of
+ * the section's title-N / subline-N.
+ * @param {Element} block the hero-corp block
+ */
+function readLegacyOptions(block) {
+  if (block.classList.contains('text-below')) block.classList.add('mobile-below');
+  if (block.classList.contains('dark-box')) block.classList.add('box-dark');
+  const size = [...block.classList].map((cls) => cls.match(/^size-(\d+)(?:-(\d+))?$/)).find(Boolean);
+  if (!size) return;
+  const step = size[2] ? `${size[1]}.${size[2]}` : size[1];
+  block.style.setProperty('--corp-image-slide-title-step', step);
+  block.style.setProperty('--corp-image-slide-subline-step', step);
+}
 
-  if (!block.querySelector(':scope > div:first-child picture')) {
-    block.classList.add('no-image');
+/**
+ * image-slide: the headline lines go in a box (`.hero-corp-headline`), the button
+ * paragraphs after it. Block options: box-white / -gold / -blue / -gray / -dark colour the
+ * box, box-mt-N … box-pl-N set its margin / padding in percent (`n` = negative: box-mt-n4)
+ * as the source's inline box styles, and top-N / left-N / right-N (percent of the slide,
+ * `7-5` = 7.5) place it.
+ * @param {Element} block the hero-corp block
+ */
+function setupImageSlide(block) {
+  readLegacyOptions(block);
+  const content = block.lastElementChild;
+  const lines = [...content.children].filter((el) => !el.classList.contains('button-wrapper'));
+  if (lines.length) {
+    const box = document.createElement('div');
+    box.className = 'hero-corp-headline';
+    box.append(...lines);
+    content.prepend(box);
+    markTextRoles(box);
+    [...block.classList].forEach((opt) => {
+      if (/^box-(white|gold|blue|gray|dark)$/.test(opt)) box.classList.add(opt);
+      const m = opt.match(/^box-(mt|mr|mb|ml|pt|pr|pb|pl)-(n?)(\d+)$/);
+      if (m) box.style[BOX_SPACING[m[1]]] = `${m[2] ? '-' : ''}${m[3]}%`;
+    });
   }
+  [...block.classList].forEach((cls) => {
+    const m = cls.match(/^(top|left|right)-(\d+)(?:-(\d+))?$/);
+    if (m) block.style.setProperty(`--hero-box-${m[1]}`, `${m[2]}${m[3] ? `.${m[3]}` : ''}%`);
+  });
+}
+
+/**
+ * @param {Element} block the hero-corp block
+ */
+export default function decorate(block) {
+  setupRows(block);
+  if (block.classList.contains('image-slide')) setupImageSlide(block);
 }
