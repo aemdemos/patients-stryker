@@ -2109,7 +2109,7 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 }
 
 /* the statement's other lines: the light serif at the Lead step (the source's line 2) */
-:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > p:not(.button-wrapper) {
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(p):not(.button-wrapper) {
   font-family: var(--heading-font-family);
   font-size: var(--corp-type-lead);
   line-height: var(--heading-line-height-hero);
