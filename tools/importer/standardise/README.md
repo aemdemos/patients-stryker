@@ -189,8 +189,29 @@ shape and spacing, and the band / box spacing rows (Padding, Margin, Blank lines
 the dark-band link and statistics colours include the new bands. Rules:
 `standardBackgrounds` in `rules/variants.js`.
 
-Not backgrounds, left for the default-content pass: spacer, divider, flex, large-headline,
-boxed (without a background), large / xlarge, serif / h-serif, center, bold-body …
+
+## The standard default content (2026-11-11)
+
+4,891 sections hold text outside blocks. The standard (the user's choice): headings and copy take
+the 10-step scale by heading level; nothing presentational is authored.
+
+- Pages get `type-scale | standard` (`body.type-standard`): h1 Title, h2 Subtitle (token remap in
+  `styles-corp.css`); Bold + Italic copy is gold there (on other corp pages corp copy keeps its
+  colour); gold words in a heading keep the heading's size.
+- Kept section styles: `divider`, the statement (`large-headline`: its 28px+ lines are its h2,
+  Bold words Futura bold, the others the light serif, at the Headline step; its other lines the
+  light serif at Lead), `disclaimer`, the four backgrounds and the structural styles (flex,
+  continued, tabbed, accordion-panel, carousel, contact-aside …).
+- Dropped: serif, h-serif, centred, bold copy, boxed, references-spaced, button colours, image
+  borders, spacer sizes; the Copy / Label / Heading size, Text, Headings, Padding, Margin, Blank
+  lines and Column (placement) rows; the 1,771 empty spacer sections (removed).
+- Text: tags go (visually hidden text stays: its `[[visually-hidden]]` tag is kept); gold
+  (tags, `Text | Gold`, `Headings | Gold`) becomes Bold + Italic; black Bold + Italic labels become
+  Bold; title lines become headings: a paragraph wholly in size tags of 21px and up (h2 from
+  28px, else h3; up to 120 characters), a short gold Bold + Italic line (h3), a short Bold line in
+  21px+ copy (h3 / h2), a title line before a line break (split off). 1,666 titles in all passes.
+- Left on the pages: 301 tags, in the Accordion and Statistics blocks (not standardised yet) and
+  the visually hidden ones.
 
 ### The first pilot: layout standards (superseded)
 
