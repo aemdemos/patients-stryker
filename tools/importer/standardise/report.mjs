@@ -74,11 +74,13 @@ Object.entries(tailPages).sort().forEach(([page, list]) => {
 out.push('');
 
 out.push('## Review effort per flow', '');
-const half = (h) => Object.entries(data.pages).filter(([, p]) => p.half === h).map(([page]) => page);
+const half = (h) => Object.entries(data.pages).filter(([, p]) => p.half === h)
+  .map(([page]) => page);
 const effort = decisions.effort || [];
 const sum = (list, key) => list.reduce((n, x) => n + (Number(x[key]) || 0), 0);
 const flow = (n) => log.filter((l) => l.flow === n);
-const blocksOf = (pages) => new Set(pages.flatMap((p) => data.pages[p].instances.map((i) => i.id))).size;
+const blocksOf = (pages) => new Set(pages.flatMap((p) => data.pages[p].instances
+  .map((i) => i.id))).size;
 const pageEffort = (pages) => effort.filter((e) => e.kind === 'page' && pages.includes(e.key));
 const a = half('A');
 const bPages = half('B');
@@ -90,10 +92,12 @@ out.push(`| Pages | ${a.length} | ${bPages.length} |`);
 out.push(`| Columns blocks on them | ${blocksOf(a)} | ${blocksOf(bPages)} |`);
 const boards = effort.filter((e) => e.kind === 'board');
 out.push(`| Group boards decided | – | ${boards.length} (${sum(f2, 'images')} board images) |`);
-// (flow "1b": a second look at flow 1's kept blocks once the standards improved)
-const f1b = flow('1b');
-const second = f1b.length ? ` + ${sum(f1b, 'images')} on a second look (${f1b.length} pages)` : '';
-out.push(`| Page comparisons looked at | ${sum(f1, 'images')} images${second} | ${sum(f3, 'images')} images |`);
+out.push(`| Page comparisons looked at | ${sum(f1, 'images')} images | ${sum(f3, 'images')} images |`);
+// (flows "1b", "1c" …: the kept blocks looked at again once the standards improved)
+const later = log.filter((l) => /^\d[a-z]$/.test(String(l.flow)));
+const laterOf = (h) => later.filter((l) => l.half === h);
+const looks = (list) => (list.length ? `${sum(list, 'images')} images on ${list.length} pages` : '–');
+if (later.length) out.push(`| Looked at again after the standards improved | ${looks(laterOf('A'))} | ${looks(laterOf('B'))} |`);
 out.push(`| Decisions made | ${sum(pageEffort(a), 'choices')} on the pages | ${sum(boards, 'choices')} on the boards`
   + ` + ${sum(pageEffort(bPages), 'choices')} on the pages |`);
 const overrides = f3.reduce((n, l) => n + Object.keys(l.overrides || {}).length, 0);
@@ -128,7 +132,9 @@ const keptNotes = latest.filter((l) => Number(l.legacy) > 0)
     + `${parts(l).filter((t) => !/side finding/i.test(t)).join('; ') || '–'}`);
 out.push('### Why blocks were kept as they are', '');
 keptNotes.forEach((s) => out.push(`- ${s}`));
-if (f2.length) (f2[0].legacy_groups || []).forEach((g) => out.push(`- group ${g}: kept on the board`));
+// (the groups kept as they are by their current choice)
+Object.entries(decisions.clusters || {}).filter(([, c]) => c.choice === 'legacy')
+  .forEach(([g]) => out.push(`- group ${g}: kept on the board`));
 out.push('');
 
 writeFileSync(opt('--out'), `${out.join('\n')}\n`);

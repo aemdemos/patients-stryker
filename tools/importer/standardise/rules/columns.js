@@ -26,11 +26,13 @@ export const STANDARDS = {
   },
   'std-cards': {
     label: 'Cards',
-    description: '2 to 4 equal columns, each an image above its text; 2 per row from 600px, all in a row from 900px.',
+    description: '2 to 4 equal columns, each an image above its text; 2 per row from 600px, all in a row from 900px. '
+      + 'Option for 2 columns: Wide first or Wide last column (two thirds).',
   },
   'std-text': {
     label: 'Text columns',
-    description: '2 to 4 equal text columns; 2 per row from 600px, all in a row from 900px.',
+    description: '2 to 4 equal text columns; 2 per row from 600px, all in a row from 900px. '
+      + 'Option for 2 columns: Wide first or Wide last column (two thirds).',
   },
 };
 
@@ -331,6 +333,17 @@ export function transform(sectionEl, blockIndex, standard) {
       else if (share && share > 55) block.classList.add('wide-image');
       if (share && (share < 45 || share > 55)) changes.push(`column widths ${value} → ${share < 45 ? 'Narrow image' : 'Wide image'}`);
       else if (parts.length && new Set(parts).size > 1) changes.push(`column widths ${value} → equal`);
+      row.remove();
+    } else if (name === 'Column widths') {
+      // text columns or cards: 2 columns of unequal width (the source's 2/3 + 1/3 column
+      // control) → Wide first / Wide last column; any other widths → equal columns
+      const parts = value.split('/').map((p) => parseFloat(p));
+      const filled = [...block.firstElementChild.children].filter((c) => cellKind(c) !== 'empty');
+      if (parts.length === 2 && filled.length === 2 && Math.max(...parts) > 55) {
+        const first = parts[0] > parts[1];
+        block.classList.add(first ? 'wide-first' : 'wide-last');
+        changes.push(`column widths ${value} → ${first ? 'Wide first column' : 'Wide last column'}`);
+      } else changes.push(`column widths (${value}) removed`);
       row.remove();
     } else if (DROP_ROWS.includes(name) && !KEEP_ROWS.includes(name)) {
       changes.push(`${name.toLowerCase()} (${value}) removed`);

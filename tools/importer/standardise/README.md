@@ -72,8 +72,8 @@ named **standard variants**, chosen block by block while the pages are reviewed?
 | Standard | Class | Fits | Options |
 |---|---|---|---|
 | Media + text | `std-media-text` | 2 cells: image/video and text, either order | `narrow-image` (1/3), `wide-image` (2/3), `text-middle` (the text centred beside the image) |
-| Cards | `std-cards` | 2–4 cells, each image + text | — |
-| Text columns | `std-text` | 2–4 text cells | — |
+| Cards | `std-cards` | 2–4 cells, each image + text | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
+| Text columns | `std-text` | 2–4 text cells | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
 
 These are layout standards: the text sizes stay as authored. Typography is its own later step
 (a named type scale; `dropSizeTags` in `rules/columns.js` is ready for it).
@@ -92,16 +92,24 @@ These are layout standards: the text sizes stay as authored. Typography is its o
   - empty trailing columns (2 cards in a 3-column grid keep the width of the 3-up rows beside
     them).
 - **Dropped (measured values):**
-  - `Text box`, `Grid`, `Column widths` (except the media + text options) and `Columns`;
+  - `Text box`, `Grid`, `Column widths` (except the media + text and wide-column options) and `Columns`;
   - measured and white Box lines, and blank lines in cells;
   - section padding / margin when the section holds only that block.
 - **Text in the middle:** a Media + text column set well down (top padding + margin from
   `Text box` or an opening Box line, counted as a share of the block: 5% or more) is the AEM
   way of centring the text beside a tall image; it takes `text-middle` (the text cell is
   centred, the image stays at the top when the text is the taller).
-- **Already standard:** `page-intro` (the product intro) is never offered a standard.
+- **Wide first / last column:** 2 cards or text columns of unequal width (one over 55%, the
+  source's 2/3 + 1/3 column control) keep the wide one as `wide-first` / `wide-last`.
+- **Coloured bands:** a standard in a section with a background style (`bg-…` except `bg-white`,
+  `dark`) gets the band's standard space above and below its content (`--corp-std-band-space`,
+  34px: the median of the measured stryker.com band edges, 26–47px), instead of the measured
+  margins and blank lines that gave it.
+- **Already standard:** `page-intro` (the product intro) and a block on a standard already
+  are never offered a standard (a standard block keeps its own options).
 - CSS: `blocks/columns/columns-corp.css` (top of the file). The block's own layout carries the
-  standards; they only fix alignment, the media + text widths and the box padding.
+  standards; they only fix alignment, the media + text and wide-column widths, the box padding
+  and the band space.
 
 ## Notes as "design" and "EDS team" (pilot roles)
 
