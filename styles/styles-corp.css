@@ -2079,3 +2079,26 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp) main > div.section:is(.purple-band, .blue-band) :is(h1, h2, h3, h4, h5, h6, p, li) {
   color: inherit;
 }
+
+/* ---- the standard default content (standardisation; pages with `type-scale: standard`) ----
+   Headings and copy take the scale by level (h1 Title, h2 Subtitle: the token remap above), no
+   authored sizes, fonts or colours. Gold is Bold + Italic in copy too (the authoring
+   convention; on the other corp pages Bold + Italic copy keeps its colour), upright. The
+   statement section (Large Headline): Bold words Futura bold, the other words the light serif,
+   at the Headline step at every width. */
+:where(body.corp.type-standard) main :is(p, li) :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-type-headline);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--corp-type-line-height-display);
+}
+
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}

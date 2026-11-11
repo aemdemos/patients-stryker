@@ -56,17 +56,18 @@ let written = 0;
 async function applyDoc(doc) {
   const html = source(doc);
   const { parts, tail } = splitSections(html);
-  const out = await page.evaluate((textIn) => {
+  const out = await page.evaluate(({ textIn, isPage }) => {
     const { body } = new DOMParser().parseFromString(`<body>${textIn}</body>`, 'text/html');
     const before = [...body.children].map((s) => s.outerHTML);
-    const result = window.variantRules.transformDocument(body);
-    const after = [...body.children].map((s) => s.outerHTML);
+    const result = window.variantRules.transformDocument(body, { page: isPage });
+    // (a section marked data-std-remove goes: an empty spacer section)
+    const after = [...body.children].map((s) => (s.dataset.stdRemove ? '' : s.outerHTML));
     return {
       count: before.length,
       changed: Object.fromEntries(after.map((h, i) => [i, h]).filter(([i, h]) => h !== before[i])),
       ...result,
     };
-  }, html);
+  }, { textIn: html, isPage: !doc.includes('/fragments/') });
   if (out.count !== parts.length) {
     report.documents[doc] = { skipped: 'the document could not be split into its sections' };
     return;

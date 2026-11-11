@@ -102,11 +102,11 @@ export function variantOf(block) {
  * Drops the readable tags inside an element; gold becomes Bold + Italic.
  * @returns {{tags: number, gold: number, goldLost: number, blanks: number}}
  */
-export function stripTags(root) {
+export function stripTags(root, skip = () => false) {
   const doc = root.ownerDocument;
   const walker = doc.createTreeWalker(root, 4);
   const nodes = [];
-  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) if (!skip(n)) nodes.push(n);
   const stack = [];
   const pairs = [];
   const out = {
@@ -127,12 +127,18 @@ export function stripTags(root) {
       } else if (m) {
         const tokens = m[1].split(',').map((t) => t.trim().toLowerCase());
         const gold = tokens.some((t) => GOLD.includes(t));
-        stack.push({ gold, node, offset: res.length });
-        out.tags += 1;
+        // (text for screen readers only: its tag stays, it is not presentation)
+        const keep = tokens.includes('visually-hidden');
+        stack.push({
+          gold, keep, node, offset: res.length,
+        });
+        if (keep) res += m[0];
+        else out.tags += 1;
         i += m[0].length;
         changed = true;
       } else if (s[i] === ']' && stack.length) {
         const open = stack.pop();
+        if (open.keep) res += ']';
         if (open.gold && !stack.some((x) => x.gold)) {
           pairs.push({
             startNode: open.node, startOffset: open.offset, endNode: node, endOffset: res.length,
@@ -183,7 +189,7 @@ export function stripTags(root) {
   });
   // Bold + Italic copy that was not gold (the corp Futura bold label: corp copy kept its colour)
   // is Bold: Bold + Italic is gold now, the authoring convention
-  [...root.querySelectorAll(':is(p, li) :is(em, i)')].forEach((em) => {
+  [...root.querySelectorAll(':is(p, li) :is(em, i)')].filter((em) => !skip(em)).forEach((em) => {
     const bold = em.closest('strong, b') || em.querySelector('strong, b');
     if (!bold || bold.closest('[data-gold]') || bold.querySelector('[data-gold]') || em.closest('[data-gold]')) return;
     // (a Bold + Italic link is the gold button / link of the conventions: it stays)
@@ -224,8 +230,8 @@ function tokenPx(token) {
  * Lead (21px). Marked to become the variant's title (h3), or in a feature-statement its
  * statement (h2, 28px and up). A paragraph that is only a link (a button) stays.
  */
-function markTitles(block, variant) {
-  [...block.querySelectorAll('p')].forEach((p) => {
+function markTitles(block, variant, skip = () => false) {
+  [...block.querySelectorAll('p')].filter((p) => !skip(p)).forEach((p) => {
     if (p.querySelector('img, picture') || (p.querySelector('a') && !p.textContent.replace(p.querySelector('a').textContent, '').replace(/\[\[[^\]]*\]|\]/g, '').trim())) return;
     let depth = 0;
     let outside = '';
@@ -245,6 +251,10 @@ function markTitles(block, variant) {
       return;
     }
     if (variant === 'product-hero') return;
+    if (variant === 'default') {
+      p.dataset.promote = max >= 28 ? 'H2' : 'H3';
+      return;
+    }
     p.dataset.promote = variant === 'feature-statement' && max >= 28 ? 'H2' : 'H3';
   });
 }
@@ -352,13 +362,90 @@ function standardBackgrounds(body, counts) {
   });
 }
 
+// section styles of the default content that go: sizes, fonts, alignment, box spacing, button
+// colours, image borders, spacer sizes (the standard keeps divider, the statement (Large
+// Headline), disclaimer, the four backgrounds and the structural styles)
+const TEXT_DROP = ['serif', 'h-serif', 'bold-body', 'center', 'blue', 'btn-blue', 'btn-purple', 'gray-lead',
+  'boxed', 'references-spaced', 'no-gap', 'shadow-box', 'fade', 'stripe', 'image-border-black',
+  'image-border-grey', 'large', 'xlarge', 'xxlarge', 'spacer'];
+const TEXT_DROP_RE = /^(p|h|label|ps)-[\d-]+$|^col-|^flex-\d/;
+// a text section's type, spacing and placement rows
+const TEXT_ROWS = ['Copy size', 'Label size', 'Heading size', 'Text', 'Headings', 'Blank lines', 'Padding',
+  'Margin', 'Column', 'Column widths', 'Columns'];
+
+/**
+ * The default content (text outside blocks) of every section on the standard: its lines and
+ * tags go (gold → Bold + Italic, labels → Bold, visually hidden text stays), a title-sized
+ * paragraph becomes a heading (h2 from 28px, else h3; not in a statement or disclaimer), the
+ * section's type / spacing / placement rows and styles go; an empty spacer section goes
+ * (marked data-std-remove). A page gets `type-scale: standard` (body.type-standard).
+ */
+function standardText(body, counts, page) {
+  [...body.children].forEach((section) => {
+    const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
+    const rows = settingsRows(section);
+    const style = rows.find(([key]) => key === 'style');
+    const styles = style ? style[1].split(',').map((x) => x.trim()).filter(Boolean) : [];
+    // an empty spacer section: the standard section spacing replaces it
+    if (styles.includes('spacer') && !own.some((c) => c.textContent.trim() || c.querySelector('img, picture, iframe'))) {
+      section.dataset.stdRemove = 'true';
+      counts.spacers += 1;
+      return;
+    }
+    const inBlock = (n) => {
+      const el = n.nodeType === 1 ? n : n.parentElement;
+      return !el || !!el.closest('div[class]:not(.section-metadata)') || !!el.closest('.section-metadata');
+    };
+    const loose = own.filter((c) => !c.matches('div[class]'));
+    if (loose.length) {
+      loose.filter((el) => LINE.test(el.textContent.replace(/\s+/g, ' ').trim())).forEach((el) => {
+        el.remove();
+        counts.lines += 1;
+      });
+      const plainRole = !styles.includes('large-headline') && !styles.includes('disclaimer');
+      if (plainRole) markTitles(section, 'default', inBlock);
+      const t = stripTags(section, inBlock);
+      ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
+      counts.titles += promoteTitles(section);
+      counts.textSections += 1;
+    }
+    // rows and styles (a Columns block's own rows are the block pass's)
+    rows.forEach(([key, , row]) => {
+      const name = key.replace(/ \(\d+\)$/, '');
+      if (TEXT_ROWS.includes(name) && row.parentElement) {
+        row.remove();
+        counts.rows += 1;
+      } else if (key === 'style') {
+        const kept = styles.filter((x) => !TEXT_DROP.includes(x) && !TEXT_DROP_RE.test(x));
+        if (kept.length === styles.length) return;
+        counts.styles += styles.length - kept.length;
+        if (kept.length) row.lastElementChild.textContent = kept.join(', ');
+        else row.remove();
+      }
+    });
+    const meta = section.querySelector(':scope > .section-metadata');
+    if (meta && !meta.children.length) meta.remove();
+  });
+  // the page on the standard type (fragments follow the page they are on)
+  const metadata = body.querySelector('.metadata');
+  if (page && metadata && ![...metadata.children].some((r) => r.firstElementChild?.textContent.trim() === 'type-scale')) {
+    const row = body.ownerDocument.createElement('div');
+    ['type-scale', 'standard'].forEach((v) => {
+      const cell = body.ownerDocument.createElement('div');
+      cell.textContent = v;
+      row.append(cell);
+    });
+    metadata.append(row);
+  }
+}
+
 /**
  * Every Columns and Cards block of the document on a standard variant.
  * @param {Element} body the document's body (sections as top-level divs), changed in place
  * @returns {{blocks: {section: number, block: number, type: string, from: string,
  *   variant: string}[], counts: object, changes: string[]}}
  */
-export function transformDocument(body) {
+export function transformDocument(body, { page = true } = {}) {
   const blocks = [];
   const counts = {
     tags: 0,
@@ -372,6 +459,8 @@ export function transformDocument(body) {
     rows: 0,
     styles: 0,
     backgrounds: {},
+    spacers: 0,
+    textSections: 0,
   };
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
@@ -444,6 +533,7 @@ export function transformDocument(body) {
     if (meta && !meta.children.length) meta.remove();
   });
   standardBackgrounds(body, counts);
+  standardText(body, counts, page);
   const changes = [];
   const by = {};
   blocks.forEach((b) => { by[b.variant] = (by[b.variant] || 0) + 1; });
@@ -454,6 +544,7 @@ export function transformDocument(body) {
   if (counts.labels) changes.push(`${counts.labels} Bold + Italic labels → Bold`);
   if (counts.lines + counts.blanks) changes.push(`${counts.lines + counts.blanks} box / blank lines removed`);
   if (counts.rows + counts.styles) changes.push(`${counts.rows} settings rows and ${counts.styles} type styles removed`);
+  if (counts.spacers) changes.push(`${counts.spacers} empty spacer sections removed`);
   const bgs = Object.entries(counts.backgrounds);
   if (bgs.length) changes.push(`backgrounds: ${bgs.map(([k, n]) => `${k} ${n}`).join(', ')}`);
   return { blocks, counts, changes };
