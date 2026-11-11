@@ -2,6 +2,12 @@ body.corp-legal main:has(> .section:first-child h1) {
   padding-top: calc(var(--space-section) - 2px);
 }
 
+/* a gold title with no size tag is the source's Large Headline: its offset below the header
+   scales with the viewport (2vw + 9.4px) instead of the fixed gap of sized titles */
+body.corp-legal main:has(> .section:first-child h1 > span.color-gold:only-child) {
+  padding-top: 2vw;
+}
+
 body.corp-legal main > .section:first-child:has(h1) {
   margin-bottom: calc(var(--space-block-l) + var(--space-block));
 }
