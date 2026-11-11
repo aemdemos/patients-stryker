@@ -687,8 +687,19 @@ body.news-detail.news-video main > .section.video-text.video-right > .video-wrap
   margin-top: 0;
 }
 
+/* …a button closing the text sits under the video (news-detail.js moves it), 20px below the
+   player, 30px from 600px (stryker.com: "Learn more about surgical visualization" of
+   "Defying the odds") */
+body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper > p.button-wrapper:nth-child(n):nth-child(n):nth-child(n) {
+  margin: var(--space-block-l) 0 0;
+}
+
 @media (width >= 600px) {
   body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper {
+    margin-top: var(--space-section);
+  }
+
+  body.news-detail.news-video main > .section.video-text.video-right > .video-wrapper > p.button-wrapper:nth-child(n):nth-child(n):nth-child(n) {
     margin-top: var(--space-section);
   }
 }

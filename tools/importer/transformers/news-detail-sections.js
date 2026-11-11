@@ -172,6 +172,12 @@ const SHARED_XF_SIGNATURES = [
   ["recently held our first global diversity, equity and inclusion", '/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master'],
   ["an EMT is a demanding job, both physically and emotionally", '/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body'],
   ["sudden cardiac arrest is a leading cause of death in the", '/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master'],
+  ["innovation in healthcare requires viewpoints that reflect", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master'],
+  ["Stryker employees promote and advance disability inclusion", '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master'],
+  ["are few moments in life more important than the time a mother", '/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master'],
+  ["believe that an automated external defibrillator (AED) program", '/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body'],
+  ["than 350,000 people suffer from out-of-hospital sudden cardiac", '/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body'],
+  ["and delivery departments and operating rooms are hectic", '/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master'],
 ];
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);

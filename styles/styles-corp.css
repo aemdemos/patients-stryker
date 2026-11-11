@@ -759,8 +759,10 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
   /* …with `center` the column is centred in the section (stryker.com col-md-4 offset 4,
      e.g. the LinkedIn "Stay informed" image of "Stryker holds diversity, equity and
-     inclusion summit": 440px from x 500 at 1440px) */
-  :where(body.corp) main > .section.center:is(.image-1-3, .image-1-2) > .default-content-wrapper picture {
+     inclusion summit": 440px from x 500 at 1440px), and so is a video block (the YouTube
+     video of "80 years together": 675px from x 383 at 1440px) */
+  :where(body.corp) main > .section.center:is(.image-1-3, .image-1-2) > .default-content-wrapper picture,
+  :where(body.corp) main > .section.center:is(.image-1-3, .image-1-2) > .video-wrapper .video {
     margin-inline: auto;
   }
 }

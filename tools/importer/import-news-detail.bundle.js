@@ -562,6 +562,24 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master": {
       fragment: "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body",
       name: 'Article body of "Four reasons every school needs AEDs"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master": {
+      name: 'Article body of "Advancing healthcare through Asian culture and collaboration"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master": {
+      name: 'Article body of "More than able to make healthcare better"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master": {
+      name: 'Article body of "Technologies that promote safe care for mother and baby during childbirth"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body": {
+      name: 'Article body of "5 steps to convince decision makers to adopt an AED program"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body": {
+      name: 'Article body of "8 steps to a successful AED safety program"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master": {
+      name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"'
     }
   };
 
@@ -695,7 +713,13 @@ var CustomImportScript = (() => {
     ["ProCuity by the numbers", "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master"],
     ["recently held our first global diversity, equity and inclusion", "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master"],
     ["an EMT is a demanding job, both physically and emotionally", "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body"],
-    ["sudden cardiac arrest is a leading cause of death in the", "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master"]
+    ["sudden cardiac arrest is a leading cause of death in the", "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master"],
+    ["innovation in healthcare requires viewpoints that reflect", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master"],
+    ["Stryker employees promote and advance disability inclusion", "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master"],
+    ["are few moments in life more important than the time a mother", "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master"],
+    ["believe that an automated external defibrillator (AED) program", "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body"],
+    ["than 350,000 people suffer from out-of-hospital sudden cardiac", "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body"],
+    ["and delivery departments and operating rooms are hectic", "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master"]
   ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
