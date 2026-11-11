@@ -1,5 +1,5 @@
 body.corp-legal main:has(> .section:first-child h1) {
-  padding-top: calc(var(--space-block-s) - 3px);
+  padding-top: calc(2 * var(--space-block-l) - 2px);
 }
 
 body.corp-legal main > .section:first-child:has(h1) {
@@ -14,8 +14,13 @@ body.corp-legal main > .section:first-child:has(h1) > .default-content-wrapper {
   padding-bottom: 0;
 }
 
-body.corp-legal main > .section:first-child:not(:has(+ .separator)) h1 {
+body.corp-legal main > .section:first-child h1 {
   line-height: var(--heading-line-height-hero);
+}
+
+/* underlined title-only sections: source line-height 0.795 (mobile) / 1.06 (≥600px) */
+body.corp-legal main > .section:first-child h1.underline {
+  line-height: 0.795;
 }
 
 body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :has(> u)) {
@@ -23,12 +28,16 @@ body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :ha
 }
 
 @media (width >= 600px) {
-  body.corp-legal main > .section:first-child:has(h1) {
-    margin-bottom: calc(var(--space-section) + var(--space-block));
+  body.corp-legal main > .section:first-child h1.underline {
+    line-height: 1.06;
   }
 
   body.corp-legal main:has(> .section:first-child h1) {
     padding-top: calc(var(--space-section) - 2px);
+  }
+
+  body.corp-legal main > .section:first-child:has(h1) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
   body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :has(> u)) {
@@ -48,16 +57,6 @@ body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first
   padding-left: calc(var(--space-block) * 2.67);
 }
 
-body.corp-legal main > .section:first-child:has(h1):has(+ .separator) {
-  margin-bottom: var(--space-block);
-}
-
-body.corp-legal main > .section.separator {
-  padding-top: var(--space-block-l);
-}
-
-@media (width >= 600px) {
-  body.corp-legal main > .section:first-child:has(h1):has(+ .separator) {
-    margin-bottom: var(--space-inset-m);
-  }
+body.corp-legal main .accordion.divided {
+  border-top: 1px solid var(--color-surface-muted);
 }

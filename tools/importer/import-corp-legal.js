@@ -134,8 +134,27 @@ function contacts(main, document, report) {
   });
 }
 
-// section styles that are not in the corp Library (the headline box and its colours)
-const DROPPED_STYLES = ['headline-box', 'blue', 'purple'];
+// section styles that are not in the corp Library (the headline box and its colours, the rule)
+const DROPPED_STYLES = ['headline-box', 'blue', 'purple', 'separator'];
+
+// the rule under a title-only section is the underlined Heading 1 (authoring convention)
+// instead of a `separator` section; the MRI rule above the Accordion is drawn
+// by the corp-legal template
+function underlineTitles(main, document) {
+  main.querySelectorAll('table').forEach((table) => {
+    if (text(table.querySelector('th, tr')) !== 'Section Metadata') return;
+    const styles = text(table.querySelector('tr:nth-child(2) td:nth-child(2)')).split(',').map((v) => v.trim());
+    if (!styles.includes('separator')) return;
+    let hr = table.previousElementSibling;
+    while (hr && hr.tagName !== 'HR') hr = hr.previousElementSibling;
+    let title = hr?.previousElementSibling;
+    while (title?.tagName === 'TABLE') title = title.previousElementSibling;
+    if (title?.tagName !== 'H1') return;
+    const u = document.createElement('u');
+    u.append(...title.childNodes);
+    title.append(u);
+  });
+}
 
 function dropUnlistedStyles(main) {
   main.querySelectorAll('table').forEach((table) => {
@@ -260,6 +279,7 @@ export default {
     contacts(main, document, contactReport);
     executeTransformers('beforeTransform', main, payload);
     executeTransformers('afterTransform', main, payload);
+    underlineTitles(main, document);
     dropUnlistedStyles(main);
     trimEmptyCells(main);
     widthStyles(main, document, url);
