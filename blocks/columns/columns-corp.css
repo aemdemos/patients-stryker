@@ -12,72 +12,6 @@
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
-/* Standard Columns variants (standardise pilot, branch standardise-v3): named, token-based,
-   no measured values. The block's default layout carries them (stacked on phones, 2 per row
-   from 600px, all in a row from 900px); a standard only fixes what the measured settings used
-   to vary: top-aligned cells, the default cell gutter, and the media + text widths options.
-   - std-media-text: an image or video beside its text (Narrow image: 1/3, Wide image: 2/3;
-     Text in the middle: the text centred beside the image)
-   - std-cards: 2 to 4 equal columns, each an image above its text
-   - std-text: 2 to 4 equal text columns
-   (2 cards or text columns: Wide first / Wide last column, the wide one 2/3)
-   A coloured box in a cell (Box: Gold … Box end) keeps its colour with one standard padding;
-   a standard in a coloured band (a bg-… or dark section style) keeps the band's space. */
-body.corp .columns:where(.std-media-text, .std-cards, .std-text) > div {
-  align-items: flex-start;
-}
-
-body.corp .columns:where(.std-cards) .columns-img-col img {
-  width: 100%;
-}
-
-body.corp .columns:where(.std-media-text, .std-cards, .std-text) .corp-spacing-box.cell-bg {
-  padding: var(--space-block-l);
-}
-
-body.corp .columns:where(.std-media-text, .std-cards, .std-text) .corp-spacing-box.cell-bg:not(:first-child) {
-  margin-top: var(--space-block-l);
-}
-
-@media (width >= 600px) {
-  /* Wide first / last column: 2 cards or text columns, the wide one two thirds */
-  body.corp .columns:where(.std-cards, .std-text):where(.wide-first, .wide-last) > div {
-    flex-wrap: nowrap;
-  }
-
-  body.corp .columns:where(.std-cards, .std-text):where(.wide-first, .wide-last) > div > div {
-    flex: 1 1 0;
-  }
-
-  body.corp .columns.std-media-text > div {
-    flex-wrap: nowrap;
-  }
-
-  body.corp .columns.std-media-text > div > div {
-    flex: 1 1 0;
-  }
-
-  body.corp .columns:where(.std-cards, .std-text).wide-first > div > div:first-child,
-  body.corp .columns:where(.std-cards, .std-text).wide-last > div > div:last-child {
-    flex: 0 0 66.667%;
-  }
-
-  body.corp .columns.std-media-text.narrow-image > div > div:has(picture, .dm-video-wrapper, video) {
-    flex: 0 0 33.333%;
-  }
-
-  body.corp .columns.std-media-text.wide-image > div > div:has(picture, .dm-video-wrapper, video) {
-    flex: 0 0 66.667%;
-  }
-
-  /* Text in the middle: the text centred beside the image (the image stays at the top when
-     the text is the taller) */
-  body.corp .columns.std-media-text.text-middle > div > div:not(:has(picture, .dm-video-wrapper, video)) {
-    align-self: center;
-  }
-}
-
-
 /* ---- corp text: the corp body style instead of the patients 17.5px column copy ---- */
 
 body.corp .columns p,
@@ -860,18 +794,6 @@ body.corp .columns > div > div.cell-bg {
   flex-shrink: 1;
 }
 
-/* a coloured cell in a standard: the standard's box padding (its measured box spacing goes) */
-body.corp .columns:where(.std-media-text, .std-cards, .std-text) > div > div.cell-bg {
-  padding: var(--space-block-l);
-}
-
-/* a standard in a coloured band (a bg-… or dark section style): the band's standard space
-   above and below the content (its measured margins and blank lines go); below, the last
-   paragraph's own margin is part of it */
-body.corp .section:where([class*=" bg-"]:not(.bg-white), .dark) .columns:where(.std-media-text, .std-cards, .std-text) {
-  padding-block: var(--corp-std-band-space) calc(var(--corp-std-band-space) - var(--space-block));
-}
-
 body.corp .columns > div > .cell-bg-white { --corp-cell-bg: var(--color-white); }
 body.corp .columns > div > .cell-bg-gold { --corp-cell-bg: var(--color-accent); }
 body.corp .columns > div > .cell-bg-light-gray { --corp-cell-bg: var(--color-surface); }
@@ -912,4 +834,147 @@ body.corp .columns > div > .cell-dark {
   --corp-cell-bg-image: var(--panel-dark-gradient);
 
   color: var(--color-white);
+}
+
+/* ---- the standard Columns variants (standardisation, branch standardise-v3) ----
+   Every Columns block of the site is one of six variants; the variant owns the whole look
+   (layout and type, from the 10-step scale --corp-type-* in styles-corp.css), the author only
+   the content: heading levels, Bold, Italic (Bold + Italic = gold), links. No sizes, widths,
+   boxes or colours are authored. Models measured on stryker.com at 1440px:
+   - media-text: an image or video beside its text, equal halves, in the order the author gives
+     (barimatt-plus, comfortgel-se: Futura bold 26px title, 17.5px copy, 30px gutter)
+   - card-grid: 2 to 4 cards in a row, each an image above its text (arise-1000-ex, bari-10a:
+     440px cards 30px apart, 30px image → title, Futura bold 21–26px titles, 17.5px copy)
+   - text-columns: 2 to 4 text columns (arise-1000-ex "at a glance": Futura bold 37px heading,
+     17.5px copy and lists)
+   - feature-statement: a large statement beside an image (dermacell, spy-elite: Futura bold
+     words with light serif words in one 35px headline, a 21px Futura bold subhead, 14px serif
+     copy, the text 20px in)
+   - image-row: 2 to 4 images in a row (the media-pair grid: one per row on phones, then a row)
+   - page-intro: the product intro (product-detail template), unchanged
+   Phones: one column; from 600px media-text and feature-statement sit side by side, cards,
+   text columns and images two per row; from 900px every cell of a row in one line.
+   (Rows and cells are `> *` and `> * > *`: the variants own them, whatever the decoration adds.) */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) {
+  --columns-std-gap: var(--space-section);
+  --columns-std-title-size: var(--corp-type-title);
+  --columns-std-heading-size: var(--corp-type-subtitle);
+  --columns-std-copy-size: var(--corp-type-large);
+}
+
+body.corp main .columns.card-grid { --columns-std-title-size: var(--corp-type-subtitle); }
+body.corp main .columns.text-columns { --columns-std-title-size: var(--corp-type-headline); }
+
+/* feature-statement: the statement is a Heading 2 (Bold words in Futura bold, the other words in
+   the light serif), a Heading 3 or 4 its subhead, the copy small serif text */
+body.corp main .columns.feature-statement {
+  --columns-std-title-size: var(--corp-type-headline);
+  --columns-std-h3-size: var(--corp-type-lead);
+  --columns-std-heading-size: var(--corp-type-lead);
+  --columns-std-copy-size: var(--corp-type-body);
+  --columns-std-copy-font: var(--heading-font-family);
+  --columns-std-statement-font: var(--heading-font-family);
+  --columns-std-statement-weight: var(--font-weight-regular);
+  --columns-std-text-inset: var(--space-block-l);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+  flex-flow: column nowrap;
+  align-items: stretch;
+  row-gap: var(--columns-std-gap);
+  margin-inline: calc(var(--columns-std-gap) / -2);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * + * {
+  margin-top: var(--columns-std-gap);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+  flex: 1 1 auto;
+  padding: 0 calc(var(--columns-std-gap) / 2);
+}
+
+/* type: the variant's, whatever the section around it sets */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, li) {
+  font-family: var(--columns-std-copy-font, var(--body-font-family));
+  font-size: var(--columns-std-copy-size);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-type-line-height-display);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2) {
+  font-family: var(--columns-std-statement-font, var(--display-font-family));
+  font-size: var(--columns-std-title-size);
+  font-weight: var(--columns-std-statement-weight, var(--font-weight-bold));
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h3) {
+  font-size: var(--columns-std-h3-size, var(--columns-std-title-size));
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h4, h5, h6) {
+  font-size: var(--columns-std-heading-size);
+}
+
+/* Bold words of a statement are Futura bold */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* a heading after copy starts a new part of the cell */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, ul, ol) + :is(h2, h3, h4, h5, h6) {
+  margin-top: var(--space-section);
+}
+
+/* images: the full width of their cell, one gutter above the text below them */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col {
+  margin: 0 0 var(--columns-std-gap);
+  padding: 0;
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col:last-child {
+  margin-bottom: 0;
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+    flex: 0 0 50%;
+  }
+
+  /* media-text, feature-statement: image and text side by side, the text level with the image top */
+  body.corp main .columns:is(.media-text, .feature-statement) > * > * .columns-img-col {
+    margin-bottom: 0;
+  }
+
+  body.corp main .columns:is(.media-text, .feature-statement) > * > :not(:has(.columns-img-col)) {
+    padding-inline: calc(var(--columns-std-gap) / 2 + var(--columns-std-text-inset, 0px));
+  }
+}
+
+@media (width >= 900px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    flex-wrap: nowrap;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+    flex: 1 1 0;
+  }
 }
