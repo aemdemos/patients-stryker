@@ -45,6 +45,10 @@
   --corp-local-nav-more-icon: 19px; /* the "•••" icon: 3 dots 5px wide, 6.5px apart */
   --corp-local-nav-more-dot: 5px;
   --corp-local-nav-more-dot-top: 7px; /* the dots' top below the button's top */
+  --corp-local-nav-arrow-half: 4px; /* the phone card's up / down arrow: half its 8px width */
+  --corp-local-nav-arrow-height: 4.5px;
+  --corp-local-nav-arrow-gap: 2px;
+  --corp-local-nav-arrow-top: 16px; /* the up arrow's top below the card's top */
   --corp-gold-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%); /* source .bg-golden-gradient */
   --corp-dark-purple-gradient: linear-gradient(90deg, var(--color-secondary), #594b61); /* source .bg-dark-purple-gradient */
 

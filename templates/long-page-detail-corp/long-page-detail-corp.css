@@ -55,6 +55,12 @@ body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container))
   padding-top: var(--space-block-l);
 }
 
+/* …on phones not above the local navigation card, which keeps the source's own space: 25px
+   under the header (SKILL, TEACH talks, foot & ankle toolkit) */
+body.long-page-detail-corp main:has(> .section:first-child.local-nav-corp-container) {
+  padding-top: 0;
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main:not(:has(> .section:first-child.hero-container)) {
     padding-top: var(--space-section);
@@ -1144,9 +1150,29 @@ body.long-page-detail-corp main > .section.local-nav-corp-container {
   margin-bottom: calc(2 * var(--space-block-l));
 }
 
+body.long-page-detail-corp main > .section.local-nav-corp-container .local-nav-corp-nav {
+  margin-top: calc(var(--space-block-l) + var(--space-block-xs));
+}
+
+/* …above a slide hero (corporate responsibility, ASC, instruments, spine medical education):
+   the card 30px from the edges, 15px under the header and 20px above the hero */
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) .local-nav-corp-nav {
+  margin: var(--space-block) var(--space-block) 0;
+}
+
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.local-nav-corp-container {
+  body.long-page-detail-corp main > .section.local-nav-corp-container,
+  body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) {
     margin-bottom: var(--space-section);
+  }
+
+  body.long-page-detail-corp main > .section.local-nav-corp-container .local-nav-corp-nav,
+  body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:not(.banner)) .local-nav-corp-nav {
+    margin: 0;
   }
 }
 

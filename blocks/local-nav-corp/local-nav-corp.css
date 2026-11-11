@@ -51,21 +51,26 @@
   cursor: pointer;
 }
 
+/* the stryker.com dropdown arrow: two gold triangles, up and down (8 x 4.5px, 2px apart),
+   10px in from the card's right edge, open or closed */
+.local-nav-corp .local-nav-corp-toggle::before,
 .local-nav-corp .local-nav-corp-toggle::after {
   content: "";
   position: absolute;
-  top: calc(var(--space-block-s) + var(--space-block-xs));
   right: var(--space-block-s);
-  width: var(--space-block-s);
-  height: var(--space-block-s);
-  border-inline-end: 2px solid var(--corp-color-local-nav-link);
-  border-block-end: 2px solid var(--corp-color-local-nav-link);
-  transform: rotate(45deg);
+  width: 0;
+  height: 0;
+  border-inline: var(--corp-local-nav-arrow-half) solid transparent;
 }
 
-.local-nav-corp .local-nav-corp-toggle[aria-expanded="true"]::after {
-  top: calc(var(--space-block-s) + var(--space-block-s));
-  transform: rotate(-135deg);
+.local-nav-corp .local-nav-corp-toggle::before {
+  top: var(--corp-local-nav-arrow-top);
+  border-block-end: var(--corp-local-nav-arrow-height) solid var(--color-accent);
+}
+
+.local-nav-corp .local-nav-corp-toggle::after {
+  top: calc(var(--corp-local-nav-arrow-top) + var(--corp-local-nav-arrow-height) + var(--corp-local-nav-arrow-gap));
+  border-block-start: var(--corp-local-nav-arrow-height) solid var(--color-accent);
 }
 
 .local-nav-corp .local-nav-corp-nav .local-nav-corp-list {
