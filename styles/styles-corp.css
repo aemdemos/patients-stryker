@@ -768,7 +768,7 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 
 /* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn
    "Our impact" panel: white numbers and text) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .purple-band, .blue-band) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
   color: inherit;
 }
 
@@ -1507,7 +1507,7 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 
 /* links on dark bands are white, except citation links: those keep the colour of the text
    they cite from (npseal, pidrive gold stat citations) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark, .purple-band, .blue-band) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
   color: var(--color-white);
 }
 
@@ -2039,3 +2039,43 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp) main .corp-spacing-box.cell-bg-dark-blue-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-blue); }
 :where(body.corp) main .corp-spacing-box.cell-bg-dark-orange-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-orange); }
 :where(body.corp) main .corp-spacing-box.cell-dark { --corp-cell-bg-image: var(--panel-dark-gradient); }
+
+/* ---- the standard section backgrounds (standardisation, branch standardise-v3) ----
+   Four backgrounds replace the 15 background styles and their modifiers; each owns its colour,
+   shape and spacing (no Padding / Margin / Blank lines rows):
+   - grey-band: a full-width light grey band (was bg-light-gray, bg-silver)
+   - gold-box: a gold box in the page width (was bg-gold, bg-golden-gradient; most were boxes)
+   - purple-band / blue-band: a full-width dark gradient band with light text (was the purple,
+     blue, teal `dark`, grey and orange dark styles; two tints at the user's choice)
+   The band space is the measured median of stryker.com band edges (--corp-std-band-space). */
+:where(body.corp) main > div.section:is(.grey-band, .purple-band, .blue-band) {
+  display: flow-root;
+  margin-bottom: 0;
+  padding-block: var(--corp-std-band-space) calc(var(--corp-std-band-space) - var(--space-block));
+}
+
+:where(body.corp) main > div.section.grey-band {
+  background-color: var(--color-surface);
+}
+
+:where(body.corp) main > div.section.purple-band {
+  background-image: var(--corp-gradient-dark-purple);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > div.section.blue-band {
+  background-image: var(--corp-gradient-dark-blue);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > div.section.gold-box {
+  width: calc(min(100%, var(--container-max)) - 2 * var(--container-gutter));
+  box-sizing: border-box;
+  margin-inline: auto;
+  padding-block: var(--space-block-l) calc(var(--space-block-l) - var(--space-block));
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main > div.section:is(.purple-band, .blue-band) :is(h1, h2, h3, h4, h5, h6, p, li) {
+  color: inherit;
+}

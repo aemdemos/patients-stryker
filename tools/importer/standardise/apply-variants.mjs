@@ -75,7 +75,12 @@ async function applyDoc(doc) {
   const { totals } = report;
   const { variants } = totals;
   out.blocks.forEach((b) => { variants[b.variant] = (variants[b.variant] || 0) + 1; });
-  Object.entries(out.counts).forEach(([k, v]) => { totals[k] = (totals[k] || 0) + v; });
+  Object.entries(out.counts).forEach(([k, v]) => {
+    if (typeof v === 'object') {
+      totals[k] = totals[k] || {};
+      Object.entries(v).forEach(([b, n]) => { totals[k][b] = (totals[k][b] || 0) + n; });
+    } else totals[k] = (totals[k] || 0) + v;
+  });
   if (!Object.keys(out.changed).length) return;
   const text = parts.map((s, i) => s.before + (out.changed[i] ?? s.html)).join('') + tail;
   if (!dryRun) {

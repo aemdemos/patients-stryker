@@ -309,6 +309,49 @@ function cleanContent(block, variant, counts) {
   counts.titles += promoteTitles(block);
 }
 
+/** the four standard section backgrounds (styles/styles-corp.css) and what becomes each */
+export const BACKGROUNDS = {
+  'grey-band': ['bg-light-gray', 'bg-silver'],
+  'gold-box': ['bg-gold', 'bg-golden-gradient'],
+  'purple-band': ['bg-dark-purple-gradient', 'bg-purple', 'bg-dark-orange-gradient'],
+  'blue-band': ['bg-dark-blue-gradient', 'dark', 'bg-dark-gray', 'bg-blue', 'bg-teal'],
+};
+// background modifiers that go with the old backgrounds (the standard ones have one look)
+const BG_MODIFIERS = ['gradient-inverse', 'gradient-top-to-bottom', 'stripe', 'shadow-box', 'fade'];
+// a band's / box's own spacing rows (the standard spacing replaces them)
+const BG_ROWS = ['Padding', 'Margin', 'Blank lines'];
+
+/**
+ * Every section's background on one of the four standard ones: bg-white goes (the page is
+ * white), the others map onto grey-band / gold-box / purple-band / blue-band; their modifiers,
+ * `boxed` (the gold box and the bands own their shape) and their spacing rows go.
+ */
+function standardBackgrounds(body, counts) {
+  [...body.children].forEach((section) => {
+    const rows = settingsRows(section);
+    const style = rows.find(([key]) => key === 'style');
+    if (!style) return;
+    const [, value, row] = style;
+    const styles = value.split(',').map((x) => x.trim()).filter(Boolean);
+    const old = styles.filter((x) => x === 'bg-white' || Object.values(BACKGROUNDS).flat().includes(x));
+    if (!old.length) return;
+    const target = Object.keys(BACKGROUNDS).find((k) => BACKGROUNDS[k].includes(old.find((x) => x !== 'bg-white')));
+    const kept = styles.filter((x) => !old.includes(x) && !BG_MODIFIERS.includes(x) && !(target && x === 'boxed'));
+    if (target) kept.push(target);
+    counts.backgrounds[target || 'none'] = (counts.backgrounds[target || 'none'] || 0) + 1;
+    if (kept.length) row.lastElementChild.textContent = kept.join(', ');
+    else row.remove();
+    if (target) {
+      rows.filter(([key]) => BG_ROWS.includes(key)).forEach(([, , r]) => {
+        r.remove();
+        counts.rows += 1;
+      });
+    }
+    const meta = section.querySelector(':scope > .section-metadata');
+    if (meta && !meta.children.length) meta.remove();
+  });
+}
+
 /**
  * Every Columns and Cards block of the document on a standard variant.
  * @param {Element} body the document's body (sections as top-level divs), changed in place
@@ -328,6 +371,7 @@ export function transformDocument(body) {
     emptyCells: 0,
     rows: 0,
     styles: 0,
+    backgrounds: {},
   };
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
@@ -399,6 +443,7 @@ export function transformDocument(body) {
     const meta = section.querySelector(':scope > .section-metadata');
     if (meta && !meta.children.length) meta.remove();
   });
+  standardBackgrounds(body, counts);
   const changes = [];
   const by = {};
   blocks.forEach((b) => { by[b.variant] = (by[b.variant] || 0) + 1; });
@@ -409,5 +454,7 @@ export function transformDocument(body) {
   if (counts.labels) changes.push(`${counts.labels} Bold + Italic labels → Bold`);
   if (counts.lines + counts.blanks) changes.push(`${counts.lines + counts.blanks} box / blank lines removed`);
   if (counts.rows + counts.styles) changes.push(`${counts.rows} settings rows and ${counts.styles} type styles removed`);
+  const bgs = Object.entries(counts.backgrounds);
+  if (bgs.length) changes.push(`backgrounds: ${bgs.map(([k, n]) => `${k} ${n}`).join(', ')}`);
   return { blocks, counts, changes };
 }
