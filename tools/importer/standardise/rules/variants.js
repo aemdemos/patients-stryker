@@ -237,6 +237,12 @@ function markTitles(block, variant) {
       else if (!depth) outside += part;
     });
     if (outside.replace(/[\s.,:;!?*]/g, '') || max < 21) return;
+    // (a banner's statement lines: 35px and up are its h2; its copy stays copy)
+    if (variant === 'banner' || variant === 'banner-light') {
+      if (max >= 35) p.dataset.promote = 'H2';
+      return;
+    }
+    if (variant === 'product-hero') return;
     p.dataset.promote = variant === 'feature-statement' && max >= 28 ? 'H2' : 'H3';
   });
 }
@@ -268,6 +274,25 @@ export const CARD_VARIANTS = {
 
 /** the Cards variant of a cards-corp block: Resources stay, everything else is a Teaser */
 export const cardVariantOf = (block) => (block.classList.contains('resources') ? 'resources' : 'teaser');
+
+/** the three standard Hero variants (blocks/hero-corp/hero-corp.css) */
+export const HERO_VARIANTS = {
+  'product-hero': 'Product hero',
+  banner: 'Banner',
+  'banner-light': 'Banner (light text)',
+};
+const LIGHT = ['white', 'light-gray', 'silver'];
+
+/**
+ * The Hero variant of a hero-corp block: the product hero (image right), else a banner; a
+ * banner whose text was light (a White / Light-Gray / Silver tag, a dark box) has light text.
+ */
+export function heroVariantOf(block) {
+  if (block.classList.contains('image-right')) return 'product-hero';
+  const tags = [...block.textContent.matchAll(/\[\[([^\]]+)\]/g)].flatMap((m) => m[1].split(',').map((t) => t.trim().toLowerCase()));
+  if (tags.some((t) => LIGHT.includes(t)) || block.classList.contains('box-dark-gray')) return 'banner-light';
+  return 'banner';
+}
 
 /** a block's content without its presentation (lines, tags; title paragraphs → headings) */
 function cleanContent(block, variant, counts) {
@@ -306,10 +331,12 @@ export function transformDocument(body) {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
     const columns = own.filter((c) => c.classList.contains('columns'));
     const cards = own.filter((c) => c.classList.contains('cards-corp'));
-    if (!columns.length && !cards.length) return;
+    const heroes = own.filter((c) => c.classList.contains('hero-corp'));
+    if (!columns.length && !cards.length && !heroes.length) return;
     // (a section holding only standard blocks: its type rows and styles are theirs)
-    const onlyStandard = own.every((c) => c.classList.contains('columns') || c.classList.contains('cards-corp'));
-    const hero = own.some((c) => c.classList.contains('hero-corp'));
+    const STANDARD = ['columns', 'cards-corp', 'hero-corp'];
+    const onlyStandard = own.every((c) => STANDARD.some((n) => c.classList.contains(n)));
+    const hero = heroes.length > 0;
     columns.forEach((block) => {
       const variant = variantOf(block);
       const from = block.className;
@@ -339,10 +366,22 @@ export function transformDocument(body) {
         section: si, block: own.indexOf(block), type: 'cards', from, variant,
       });
     });
-    // settings rows
+    // Hero: one slide (image rows, the text cell) as authored; its options go (text position,
+    // sizes, contained, shadow, boxes): `hero-corp image-slide <variant>`
+    heroes.forEach((block) => {
+      const variant = heroVariantOf(block);
+      const from = block.className;
+      cleanContent(block, variant, counts);
+      block.className = `hero-corp image-slide ${variant}`;
+      blocks.push({
+        section: si, block: own.indexOf(block), type: 'hero', from, variant,
+      });
+    });
+    // settings rows (a hero's Text box is its own, it goes with its options)
     settingsRows(section).forEach(([key, value, row]) => {
       const name = key.replace(/ \(\d+\)$/, '');
-      const blockRow = columns.length && BLOCK_ROWS.includes(name) && !(hero && name === 'Text box' && key === name);
+      const blockRow = (columns.length && BLOCK_ROWS.includes(name) && !(hero && name === 'Text box' && key === name))
+        || (hero && name === 'Text box');
       if (blockRow || (onlyStandard && SECTION_ROWS.includes(name))) {
         row.remove();
         counts.rows += 1;
@@ -361,7 +400,7 @@ export function transformDocument(body) {
   const changes = [];
   const by = {};
   blocks.forEach((b) => { by[b.variant] = (by[b.variant] || 0) + 1; });
-  const label = (k) => VARIANTS[k] || CARD_VARIANTS[k];
+  const label = (k) => VARIANTS[k] || CARD_VARIANTS[k] || HERO_VARIANTS[k];
   if (blocks.length) changes.push(`${blocks.length} blocks → ${Object.entries(by).map(([k, n]) => `${label(k)} ${n}`).join(', ')}`);
   if (counts.tags) changes.push(`${counts.tags} tags removed (${counts.gold} gold → Bold + Italic${counts.goldLost ? `, ${counts.goldLost} gold across paragraphs lost` : ''})`);
   if (counts.titles) changes.push(`${counts.titles} title-sized paragraphs → headings`);

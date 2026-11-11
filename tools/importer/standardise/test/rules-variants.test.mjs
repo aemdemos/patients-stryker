@@ -32,7 +32,7 @@ const walk = (dir) => readdirSync(dir).flatMap((n) => {
   return statSync(p).isDirectory() ? walk(p) : [p];
 });
 let files = walk(join(content, root)).filter((f) => f.endsWith('.plain.html') && !f.includes('/.da/'))
-  .filter((f) => /class="(columns|cards-corp)/.test(readFileSync(f, 'utf8')));
+  .filter((f) => /class="(columns|cards-corp|hero-corp)/.test(readFileSync(f, 'utf8')));
 if (limit) files = files.slice(0, limit);
 const docs = files.map((f) => ({ path: f.slice(content.length), html: readFileSync(f, 'utf8') }));
 
@@ -79,6 +79,11 @@ const results = await page.evaluate(async ({ src, list }) => {
       if (i < 0) fails.push(`heading lost: ${h.slice(0, 40)}`);
       else at = i + 1;
     });
+    body.querySelectorAll('.hero-corp').forEach((c) => {
+      const cls = [...c.classList];
+      if (cls.length !== 3 || cls[1] !== 'image-slide' || !m.HERO_VARIANTS[cls[2]]) fails.push(`class "${c.className}"`);
+      if (c.textContent.includes('[[')) fails.push('tag left in Hero');
+    });
     body.querySelectorAll('.cards-corp').forEach((c) => {
       const cls = [...c.classList];
       if (cls.length !== 2 || !m.CARD_VARIANTS[cls[1]]) fails.push(`class "${c.className}"`);
@@ -105,5 +110,5 @@ const results = await page.evaluate(async ({ src, list }) => {
 await browser.close();
 const failed = results.filter((r) => r.fails.length);
 failed.slice(0, 20).forEach((r) => console.log(`FAIL ${r.path}: ${r.fails.join('; ')}`));
-console.log(`${results.length} documents, ${results.reduce((n, r) => n + r.blocks, 0)} Columns and Cards blocks, ${failed.length} failed`);
+console.log(`${results.length} documents, ${results.reduce((n, r) => n + r.blocks, 0)} Columns, Cards and Hero blocks, ${failed.length} failed`);
 process.exit(failed.length ? 1 : 0);
