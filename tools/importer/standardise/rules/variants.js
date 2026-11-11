@@ -260,11 +260,33 @@ function settingsRows(section) {
   }) : [];
 }
 
+/** the two standard Cards variants (blocks/cards-corp/cards-corp.css) */
+export const CARD_VARIANTS = {
+  resources: 'Resources',
+  teaser: 'Teaser',
+};
+
+/** the Cards variant of a cards-corp block: Resources stay, everything else is a Teaser */
+export const cardVariantOf = (block) => (block.classList.contains('resources') ? 'resources' : 'teaser');
+
+/** a block's content without its presentation (lines, tags; title paragraphs → headings) */
+function cleanContent(block, variant, counts) {
+  // lines (Box, Box end, Column break, blank lines on their own) go
+  [...block.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => LINE.test(text(el))).forEach((el) => {
+    el.remove();
+    counts.lines += 1;
+  });
+  if (variant !== 'resources') markTitles(block, variant);
+  const t = stripTags(block);
+  ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
+  counts.titles += promoteTitles(block);
+}
+
 /**
- * Every Columns block of the document on a standard variant.
+ * Every Columns and Cards block of the document on a standard variant.
  * @param {Element} body the document's body (sections as top-level divs), changed in place
- * @returns {{blocks: {section: number, block: number, from: string, variant: string}[],
- *   counts: object, changes: string[]}}
+ * @returns {{blocks: {section: number, block: number, type: string, from: string,
+ *   variant: string}[], counts: object, changes: string[]}}
  */
 export function transformDocument(body) {
   const blocks = [];
@@ -283,21 +305,15 @@ export function transformDocument(body) {
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
     const columns = own.filter((c) => c.classList.contains('columns'));
-    if (!columns.length) return;
-    const onlyColumns = own.every((c) => c.classList.contains('columns'));
+    const cards = own.filter((c) => c.classList.contains('cards-corp'));
+    if (!columns.length && !cards.length) return;
+    // (a section holding only standard blocks: its type rows and styles are theirs)
+    const onlyStandard = own.every((c) => c.classList.contains('columns') || c.classList.contains('cards-corp'));
     const hero = own.some((c) => c.classList.contains('hero-corp'));
     columns.forEach((block) => {
       const variant = variantOf(block);
       const from = block.className;
-      // lines (Box, Box end, Column break, blank lines on their own) go
-      [...block.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => LINE.test(text(el))).forEach((el) => {
-        el.remove();
-        counts.lines += 1;
-      });
-      markTitles(block, variant);
-      const t = stripTags(block);
-      ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
-      counts.titles += promoteTitles(block);
+      cleanContent(block, variant, counts);
       // empty cells go (a row keeps one)
       [...block.children].forEach((row) => {
         [...row.children].filter((c) => cellKind(c) === 'empty' && !c.querySelector('img, picture')).forEach((c) => {
@@ -310,19 +326,29 @@ export function transformDocument(body) {
       });
       block.className = `columns ${variant}`;
       blocks.push({
-        section: si, block: own.indexOf(block), from, variant,
+        section: si, block: own.indexOf(block), type: 'columns', from, variant,
+      });
+    });
+    // Cards: one card per row (image cell, body cell) as authored; an empty image cell stays
+    cards.forEach((block) => {
+      const variant = cardVariantOf(block);
+      const from = block.className;
+      cleanContent(block, variant, counts);
+      block.className = `cards-corp ${variant}`;
+      blocks.push({
+        section: si, block: own.indexOf(block), type: 'cards', from, variant,
       });
     });
     // settings rows
     settingsRows(section).forEach(([key, value, row]) => {
       const name = key.replace(/ \(\d+\)$/, '');
-      const blockRow = BLOCK_ROWS.includes(name) && !(hero && name === 'Text box' && key === name);
-      if (blockRow || (onlyColumns && SECTION_ROWS.includes(name))) {
+      const blockRow = columns.length && BLOCK_ROWS.includes(name) && !(hero && name === 'Text box' && key === name);
+      if (blockRow || (onlyStandard && SECTION_ROWS.includes(name))) {
         row.remove();
         counts.rows += 1;
-      } else if (onlyColumns && key === 'style') {
-        const styles = value.split(',').map((s) => s.trim()).filter(Boolean);
-        const kept = styles.filter((s) => !TYPE_STYLES.includes(s) && !TYPE_STYLE.test(s));
+      } else if (onlyStandard && key === 'style') {
+        const styles = value.split(',').map((x) => x.trim()).filter(Boolean);
+        const kept = styles.filter((x) => !TYPE_STYLES.includes(x) && !TYPE_STYLE.test(x));
         if (kept.length === styles.length) return;
         counts.styles += styles.length - kept.length;
         if (kept.length) row.lastElementChild.textContent = kept.join(', ');
@@ -335,7 +361,8 @@ export function transformDocument(body) {
   const changes = [];
   const by = {};
   blocks.forEach((b) => { by[b.variant] = (by[b.variant] || 0) + 1; });
-  if (blocks.length) changes.push(`${blocks.length} Columns → ${Object.entries(by).map(([k, n]) => `${VARIANTS[k]} ${n}`).join(', ')}`);
+  const label = (k) => VARIANTS[k] || CARD_VARIANTS[k];
+  if (blocks.length) changes.push(`${blocks.length} blocks → ${Object.entries(by).map(([k, n]) => `${label(k)} ${n}`).join(', ')}`);
   if (counts.tags) changes.push(`${counts.tags} tags removed (${counts.gold} gold → Bold + Italic${counts.goldLost ? `, ${counts.goldLost} gold across paragraphs lost` : ''})`);
   if (counts.titles) changes.push(`${counts.titles} title-sized paragraphs → headings`);
   if (counts.labels) changes.push(`${counts.labels} Bold + Italic labels → Bold`);

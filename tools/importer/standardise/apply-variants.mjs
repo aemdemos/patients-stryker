@@ -92,6 +92,6 @@ await browser.close();
 writeFileSync(reportFile, JSON.stringify(report, null, 1));
 const v = report.totals.variants;
 const total = Object.values(v).reduce((a, b) => a + b, 0);
-console.log(`${docs.length} documents: ${total} Columns (${Object.entries(v).map(([k, n]) => `${k} ${n}`).join(', ')}); `
+console.log(`${docs.length} documents: ${total} standard blocks (${Object.entries(v).map(([k, n]) => `${k} ${n}`).join(', ')}); `
   + `${report.totals.tags || 0} tags, ${report.totals.lines || 0} lines, ${report.totals.rows || 0} rows removed; `
   + `${written} documents ${dryRun ? 'would be ' : ''}written → ${reportFile}`);
