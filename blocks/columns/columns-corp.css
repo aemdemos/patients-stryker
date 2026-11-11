@@ -898,6 +898,9 @@ body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-stat
 body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
   flex: 1 1 auto;
   padding: 0 calc(var(--columns-std-gap) / 2);
+  font-family: var(--columns-std-copy-font, var(--body-font-family));
+  font-size: var(--columns-std-copy-size);
+  line-height: var(--paragraph-line-height);
 }
 
 /* type: the variant's, whatever the section around it sets */

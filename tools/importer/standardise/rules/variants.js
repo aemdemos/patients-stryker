@@ -167,12 +167,18 @@ export function stripTags(root) {
       out.gold += 1;
       return;
     }
-    const strong = doc.createElement('strong');
-    const em = doc.createElement('em');
-    em.append(range.extractContents());
-    strong.append(em);
-    strong.dataset.gold = 'true';
-    range.insertNode(strong);
+    // (only what is missing: Italic inside Bold text, Bold inside Italic text, else both)
+    const bold = within('strong') || within('b');
+    const italic = within('em') || within('i');
+    const outer = doc.createElement(bold ? 'em' : 'strong');
+    let inner = outer;
+    if (!bold && !italic) {
+      inner = doc.createElement('em');
+      outer.append(inner);
+    }
+    inner.append(range.extractContents());
+    outer.dataset.gold = 'true';
+    range.insertNode(outer);
     out.gold += 1;
   });
   // Bold + Italic copy that was not gold (the corp Futura bold label: corp copy kept its colour)
