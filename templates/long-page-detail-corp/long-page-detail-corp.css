@@ -1438,3 +1438,13 @@ body.long-page-detail-corp main .hero-corp.banner span.text-1-75 {
     font-size: var(--heading-font-size-xl);
   }
 }
+
+/* link groups in a column (CR hub "Good business"): a group label 20px above its first link and
+   stryker.com's blank line above it after the group before (45px from the last link) */
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns p:is(:has(> span.text-1-25:only-child > strong:only-child), :has(> strong:only-child > span.text-1-25:only-child)):has(+ p > a.link-strong) {
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+}
+
+body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns p:has(> a.link-strong) + p:is(:has(> span.text-1-25:only-child > strong:only-child), :has(> strong:only-child > span.text-1-25:only-child)) {
+  margin-top: calc(var(--space-section) + var(--space-block));
+}

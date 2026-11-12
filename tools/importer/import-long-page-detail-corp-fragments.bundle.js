@@ -516,6 +516,20 @@ var CustomImportScript = (() => {
       p.before(lead);
     });
   }
+  function splitGroupLabels(root) {
+    const doc = root.ownerDocument;
+    [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
+      const first = p.firstElementChild;
+      if (!first || first !== p.firstChild || !first.matches(".futura-bold") || first.querySelector("a")) return;
+      const breaks = [...first.querySelectorAll("br")];
+      if (breaks.length < 2 || !text2(first)) return;
+      const rest = [...p.childNodes].slice(1);
+      if (!rest.some((n) => n.nodeType === 1 && (n.matches("a") || n.querySelector("a")))) return;
+      const label = doc.createElement("p");
+      label.append(first);
+      p.before(label);
+    });
+  }
   function richTextTitle(component, doc) {
     const p = component.querySelector("p");
     if (!p) return null;
@@ -577,6 +591,7 @@ var CustomImportScript = (() => {
     box.innerHTML = source.innerHTML;
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
+    splitGroupLabels(box);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);

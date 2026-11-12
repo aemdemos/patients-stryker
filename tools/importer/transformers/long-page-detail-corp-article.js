@@ -626,6 +626,26 @@ function splitStyledLeads(root) {
 }
 
 /**
+ * A link-group label that shares its paragraph with the group's first link (CR hub
+ * "Product quality<br><br>" in its bold span, then the "Global quality" link): the label is
+ * a paragraph of its own, as the other group labels ("Human Rights", "Supply Chain").
+ */
+function splitGroupLabels(root) {
+  const doc = root.ownerDocument;
+  [...root.children].filter((el) => el.tagName === 'P').forEach((p) => {
+    const first = p.firstElementChild;
+    if (!first || first !== p.firstChild || !first.matches('.futura-bold') || first.querySelector('a')) return;
+    const breaks = [...first.querySelectorAll('br')];
+    if (breaks.length < 2 || !text(first)) return;
+    const rest = [...p.childNodes].slice(1);
+    if (!rest.some((n) => n.nodeType === 1 && (n.matches('a') || n.querySelector('a')))) return;
+    const label = doc.createElement('p');
+    label.append(first);
+    p.before(label);
+  });
+}
+
+/**
  * The title line a rich text opens with when the page has no title: the run before the
  * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
  * bold 21px on the source). Taken out of the component (with the breaks after it) and
@@ -700,6 +720,7 @@ function richTextNodes(component, doc) {
   box.innerHTML = source.innerHTML;
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
+  splitGroupLabels(box);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
