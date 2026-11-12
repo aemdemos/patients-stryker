@@ -723,3 +723,10 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
 body.corp .columns.right-last > div > div:last-child:not(:first-child) {
   text-align: right;
 }
+
+/* `image-border`: a 1px grey line around the first image of each cell (stryker.com
+   img.bor-dark_gray_40T, environmental programs' location maps; not the icons under them) */
+body.corp .columns.image-border > div > div > :nth-child(1 of .columns-img-col) img {
+  box-sizing: border-box;
+  border: 1px solid var(--corp-color-image-border);
+}

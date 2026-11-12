@@ -261,6 +261,7 @@ var CustomImportScript = (() => {
     return m ? m[1].trim() : "";
   }
   var PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+  var TEAL = /^(?:#4c7d7a|rgb\(\s*76\s*,\s*125\s*,\s*122\s*\))$/i;
   var DARK_GREY = /^(?:#545857|rgb\(\s*84\s*,\s*88\s*,\s*87\s*\))$/i;
   var LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
   function hasOtherColour(node, own = GOLD) {
@@ -589,6 +590,13 @@ var CustomImportScript = (() => {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
+    const BLOCK = "p, div, ul, ol, table, h1, h2, h3, h4, h5, h6, blockquote";
+    [...box.children].filter((el) => el.tagName === "DIV" && !el.querySelector(BLOCK) && text2(el) && el.firstElementChild && el.firstElementChild === el.firstChild && el.firstElementChild.matches(".futura-bold")).forEach((div) => {
+      const p = doc.createElement("p");
+      p.append(...div.childNodes);
+      div.replaceWith(p);
+      tagColourText(p, TEAL, "color-teal");
+    });
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
     splitGroupLabels(box);
@@ -2599,6 +2607,10 @@ var CustomImportScript = (() => {
     const blocks = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)")].filter((el) => text3(el));
     return blocks.length > 0 && blocks.every((el) => !!el.closest(RIGHT));
   }
+  function borderedImages(columns, colctrl) {
+    const firsts = columns.map((col) => [...col.querySelectorAll(".c-standalone-image")].find((c) => c.closest(".colctrl") === colctrl && c.querySelector("img"))).filter(Boolean);
+    return firsts.length > 0 && firsts.every((c) => c.hasAttribute("data-image-border"));
+  }
   function sizeTag(copyStyle) {
     const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
     return size ? `text-${size.slice(2)}` : "";
@@ -2730,7 +2742,8 @@ var CustomImportScript = (() => {
         stackRow(columns) && mediaTextRow(columns) ? "media-text" : "",
         boxes,
         firstRule ? "left-border-bottom" : "",
-        filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? "right-last" : ""
+        filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? "right-last" : "",
+        borderedImages(columns, colctrl) ? "image-border" : ""
       ].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
       const padded = filled.every((col) => paddedColumn(col, colctrl));
@@ -2930,6 +2943,9 @@ var CustomImportScript = (() => {
       if (SOURCE_REDIRECTS[href]) a.setAttribute("href", SOURCE_REDIRECTS[href]);
     });
     main.querySelectorAll(".hero-space").forEach((el) => el.remove());
+    main.querySelectorAll('.c-standalone-image img[class*="bor-"]').forEach((img) => {
+      img.closest(".c-standalone-image").setAttribute("data-image-border", "");
+    });
     dropDamVideos(main);
     banners(main, doc);
     main.querySelectorAll(".fullWidthImageHero").forEach((el) => el.setAttribute("data-keep", "section"));

@@ -165,10 +165,46 @@ function readSectionOptions(block) {
   if (!Number.isNaN(width)) block.style.setProperty('--hero-banner-text-width', `${width}%`);
 }
 
+/**
+ * A hero's Dynamic Media video plays on its own, muted and looping, as the stryker.com slide
+ * viewer does (VideoPlayer.autoplay / mutevolume / loop: environmental programs, ThermaClear,
+ * 1788), once the hero is in view; not with reduced motion. The video may only be rendered
+ * after the block (dm-support), so it is looked for until it is there.
+ * @param {Element} block The hero-corp block
+ */
+function autoplayVideo(block) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const start = (video) => {
+    video.muted = true;
+    video.loop = true;
+    video.autoplay = true;
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      video.play().catch(() => {});
+    });
+    observer.observe(block);
+  };
+  const found = block.querySelector('.hero-video video, video.hero-video');
+  if (found) {
+    start(found);
+    return;
+  }
+  if (!block.querySelector('.hero-video')) return;
+  const watch = new MutationObserver(() => {
+    const video = block.querySelector('.hero-video video, video.hero-video');
+    if (!video) return;
+    watch.disconnect();
+    start(video);
+  });
+  watch.observe(block, { childList: true, subtree: true });
+}
+
 export default function decorate(block) {
   readSectionOptions(block);
   readSlideOptions(block);
   setupHero(block);
+  autoplayVideo(block);
 
   if (!block.querySelector(':scope > div:first-child picture')) {
     block.classList.add('no-image');

@@ -265,6 +265,8 @@ function ownColour(el) {
 
 // the corp purple (#85458a, `[[color-purple]…]`: CLOUT labels and figures, giving-back names)
 const PURPLE = /^(?:#85458a|rgb\(\s*133\s*,\s*69\s*,\s*138\s*\))$/i;
+// the corp teal (#4c7d7a, `[[color-teal]…]`: environmental programs title lines)
+const TEAL = /^(?:#4c7d7a|rgb\(\s*76\s*,\s*125\s*,\s*122\s*\))$/i;
 // the corp dark grey (#545857, `[[color-grey]…]`: build-your-asc icon titles)
 const DARK_GREY = /^(?:#545857|rgb\(\s*84\s*,\s*88\s*,\s*87\s*\))$/i;
 const LIGHT_GRAY = /^(?:#b2b4ae|rgb\(\s*178\s*,\s*180\s*,\s*174\s*\))$/i;
@@ -718,6 +720,18 @@ function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  // a bold title line authored as a div of inline text (environmental programs "Climate",
+  // "Stryker locations*"): a paragraph, so its size and colour tags apply as in the others
+  const BLOCK = 'p, div, ul, ol, table, h1, h2, h3, h4, h5, h6, blockquote';
+  [...box.children].filter((el) => el.tagName === 'DIV' && !el.querySelector(BLOCK) && text(el)
+    && el.firstElementChild && el.firstElementChild === el.firstChild && el.firstElementChild.matches('.futura-bold'))
+    .forEach((div) => {
+      const p = doc.createElement('p');
+      p.append(...div.childNodes);
+      div.replaceWith(p);
+      // the teal title text in it ("Stryker locations*", "Doing more with less…")
+      tagColourText(p, TEAL, 'color-teal');
+    });
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   splitGroupLabels(box);

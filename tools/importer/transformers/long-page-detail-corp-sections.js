@@ -675,6 +675,17 @@ function rightColumn(col) {
   return blocks.length > 0 && blocks.every((el) => !!el.closest(RIGHT));
 }
 
+/**
+ * A row whose columns open with an image with a stryker.com border class (img.bor-dark_gray_40T,
+ * bor-gray: environmental programs' location maps, the icons under them without): the row
+ * gets `image-border` (the first image of each cell framed).
+ */
+function borderedImages(columns, colctrl) {
+  const firsts = columns.map((col) => [...col.querySelectorAll('.c-standalone-image')]
+    .find((c) => c.closest('.colctrl') === colctrl && c.querySelector('img'))).filter(Boolean);
+  return firsts.length > 0 && firsts.every((c) => c.hasAttribute('data-image-border'));
+}
+
 /** The size tag of a copy style: 'p-1-25' → 'text-1-25', '' when it sets no size. */
 function sizeTag(copyStyle) {
   const size = (copyStyle || '').split(',').map((s) => s.trim()).find((s) => /^p-\d/.test(s));
@@ -874,7 +885,8 @@ function columnRows(main, doc) {
     const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '',
       stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
       firstRule ? 'left-border-bottom' : '',
-      filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? 'right-last' : '']
+      filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? 'right-last' : '',
+      borderedImages(columns, colctrl) ? 'image-border' : '']
       .filter(Boolean).join(', ');
     const centred = filled.every(centredColumn);
     const padded = filled.every((col) => paddedColumn(col, colctrl));
@@ -1150,6 +1162,11 @@ export default function transform(hookName, element, payload) {
   });
   // the second, white-on-white H1 below a full-width image hero is not visible content
   main.querySelectorAll('.hero-space').forEach((el) => el.remove());
+  // images with a border class (img.bor-dark_gray_40T: environmental programs' maps), marked
+  // on their component before the image classes go (borderedImages)
+  main.querySelectorAll('.c-standalone-image img[class*="bor-"]').forEach((img) => {
+    img.closest('.c-standalone-image').setAttribute('data-image-border', '');
+  });
   dropDamVideos(main);
   banners(main, doc);
   main.querySelectorAll('.fullWidthImageHero').forEach((el) => el.setAttribute('data-keep', 'section'));
