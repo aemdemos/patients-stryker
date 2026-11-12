@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
- * Tests of rules/variants.js on documents with Columns and Cards blocks (the /rs copies, as imported):
- * - every Columns block gets `columns <variant>` only, a key of VARIANTS;
+ * Tests of rules/variants.js on documents with Columns, Cards and Hero blocks (the /rs copies):
+ * - every Columns block gets `columns <variant>` (+ wide-first / wide-last), a key of VARIANTS;
  * - no readable tag is left inside a Columns block, and no Box / Blank line / Column break line;
  * - the words stay (tags and those lines aside), and the links and images; the headings stay
  *   (level and text, in order; title-sized paragraphs may become headings);
@@ -96,7 +96,8 @@ const results = await page.evaluate(async ({ src, list }) => {
     });
     body.querySelectorAll('.columns').forEach((c) => {
       const cls = [...c.classList];
-      if (cls.length !== 2 || !m.VARIANTS[cls[1]]) fails.push(`class "${c.className}"`);
+      const optionOk = cls.length === 2 || (cls.length === 3 && ['wide-first', 'wide-last'].includes(cls[2]));
+      if (!optionOk || !m.VARIANTS[cls[1]]) fails.push(`class "${c.className}"`);
       if (c.textContent.includes('[[')) fails.push('tag left in Columns');
       if ([...c.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6')].some((el) => LINE.test(el.textContent.trim()))) fails.push('line left in Columns');
     });

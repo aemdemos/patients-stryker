@@ -239,6 +239,25 @@ The 544 `marketo-form` blocks (495 documents, 31 distinct forms) are already one
 configuration rows only (Base URL, Munchkin ID, Form ID, and the optional captcha rows, which 53
 of them leave out), the form itself from Marketo, styled by the corp form CSS. Unchanged.
 
+## Section layouts (2026-11-12)
+
+A small set of layout presets instead of the measured placement and width rows (the user's
+choice over a free 12-part grid; the data showed no other widths):
+
+- Side by side (`flex`): equal by default; `wide-first` / `wide-last` make the first / last piece
+  two thirds (356 / 8 sections, from `Column widths` or flex-67-33 / flex-33-67).
+- Placement: the section's content in part of the width from 600px: `half-left` (80),
+  `half-right` (179), `third-left` (138), `two-thirds-left` (121), `quarter-left` (49),
+  `centre-third` (9), from the 580 `Column` rows (the source's lone column of a column control;
+  the nearest preset for the few other values). The text pass had dropped these rows.
+- Columns: two-cell variants take `wide-first` / `wide-last` from their `Column widths`
+  (124 / 231 blocks; 78% of two-cell blocks stay equal).
+- `middle`: the cells of the section's Columns block (or its pieces side by side) centred
+  vertically; set where the source set a media + text block's text well down (64 sections).
+- CSS: `styles-corp.css` (section layouts) and `columns-corp.css` (the Columns options).
+  Rules: `standardLayouts` and the Columns pass in `rules/variants.js`. Library entries: Side
+  by side, Placement, Vertically centred (and the options in the Columns descriptions).
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |

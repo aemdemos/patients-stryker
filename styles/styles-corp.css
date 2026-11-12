@@ -2120,3 +2120,82 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp.type-standard) main div.section .video:not(.no-border) :is(video, iframe) {
   border: 0;
 }
+
+/* ---- the standard section layouts (standardisation, branch standardise-v3) ----
+   Side by side (`flex`): equal by default; wide-first / wide-last make the first / last piece two
+   thirds (the source col-sm-8 + col-sm-4, one 30px gutter). Placement: the section's content in
+   part of the container from 600px (full width on phones): half-left, half-right, third-left,
+   two-thirds-left, quarter-left, centre-third (the source's lone column of a column control).
+   middle: pieces side by side centred vertically (default: top). */
+:where(body.corp) main > div.section.half-left {
+  --corp-place-width: 0.5;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.half-right {
+  --corp-place-width: 0.5;
+  --corp-place-start: 0.5;
+}
+
+:where(body.corp) main > div.section.third-left {
+  --corp-place-width: 0.3333;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.two-thirds-left {
+  --corp-place-width: 0.6667;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.quarter-left {
+  --corp-place-width: 0.25;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.centre-third {
+  --corp-place-width: 0.3333;
+  --corp-place-start: 0.3333;
+}
+
+:where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div:where(:not(:first-child, :empty)) {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > div.section:is(.half-left, .half-right, .third-left, .two-thirds-left, .quarter-left, .centre-third) > div {
+    box-sizing: border-box;
+    max-width: calc(min(100%, var(--container-max)) * var(--corp-place-width));
+    margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-place-start));
+    margin-right: auto;
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > div.section.flex.wide-first > div:first-child,
+  :where(body.corp) main > div.section.flex.wide-last > div:nth-child(2) {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div:empty {
+    display: none;
+  }
+
+  :where(body.corp) main > div.section.flex.middle {
+    align-items: center;
+  }
+}

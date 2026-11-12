@@ -72,16 +72,20 @@ def block_example(cls, min_len=60, max_len=900, need=None):
     return best
 
 
-def section_example(style, max_len=700, need=None):
-    """a real section whose styles include `style`, text only (no blocks), short"""
+def section_example(style, max_len=700, need=None, blocks=False):
+    """a real section whose styles include `style`, text only (no blocks, unless allowed), short"""
     best = None
     for p, s in TEXT.items():
+        if blocks and '/fragments/' in p:
+            continue
         for sec in sections(s):
             m = re.search(r'<div><div>style</div><div>([^<]*)</div></div>', sec)
             if not m or style not in [t.strip() for t in m.group(1).split(',')]:
                 continue
             body = re.sub(r'<div class="section-metadata">.*', '', sec, flags=re.S)
-            if re.search(r'<div class="(?!section-metadata)', body):
+            if not blocks and re.search(r'<div class="(?!section-metadata)', body):
+                continue
+            if blocks and re.search(r'<div class="(marketo-form|fragment)', body):
                 continue
             n = plain_len(body)
             if n < 40 or n > max_len or (need and not re.search(need, sec)):
@@ -113,7 +117,7 @@ BLOCKS = {
         ('columns media-text', 'Columns (media-text) – Media + text',
          'Two cells: an image or video (a Dynamic Media link, its text = alt text) and text; the order of '
          'the cells puts the image left or right. Text cell: a Heading 2 or 3 title, paragraphs, a list, '
-         'a link alone on its line as the button. Equal halves from 600px, stacked on phones.',
+         'a link alone on its line as the button. Equal halves from 600px, stacked on phones. Two cells can take the option wide-first or wide-last (that cell two thirds, the other one third); equal halves without it.',
          'columns, media, image, video, text, side by side'),
         ('columns card-grid', 'Columns (card-grid) – Cards',
          '2 to 4 cells in a row, each an image above its text: a Heading 3 title, a short paragraph, a '
@@ -121,7 +125,7 @@ BLOCKS = {
          'columns, cards, grid, features, image, three up, four up'),
         ('columns text-columns', 'Columns (text-columns) – Text columns',
          '2 to 4 text cells: a Heading 2 (section title) or Heading 3, paragraphs and lists. Two per row '
-         'from 600px, all in a row from 900px.',
+         'from 600px, all in a row from 900px. Two cells can take the option wide-first or wide-last (that cell two thirds, the other one third); equal halves without it.',
          'columns, text, two columns, at a glance'),
         ('columns feature-statement', 'Columns (feature-statement) – Feature statement',
          'A statement beside an image. Text cell: a Heading 2 statement (its Bold words in Futura bold, '
@@ -194,6 +198,18 @@ SECTIONS = [
      'A statement: its large lines as a Heading 2 (Bold words Futura bold, the others the light serif, '
      'at the Headline size), its other lines as paragraphs (the light serif).',
      'section, statement, large headline, two-tone'),
+    ('flex', 'Section (flex) – Side by side',
+     'The section\'s pieces (its text and each block) side by side from 600px, equal by default; add '
+     'wide-first or wide-last to make the first or the last piece two thirds (e.g. a form beside a '
+     'contact panel). Add middle to centre the pieces vertically (default: top).',
+     'section, layout, side by side, two columns, 67-33, 33-67'),
+    ('half-right', 'Section (half-right …) – Placement',
+     'The section\'s content in part of the page width from 600px (full width on phones): half-left, '
+     'half-right, third-left, two-thirds-left, quarter-left or centre-third.',
+     'section, layout, placement, half, third, narrow text'),
+    ('middle', 'Section (middle) – Vertically centred',
+     'In this section the cells of a Columns block (or the pieces side by side) are centred vertically '
+     'beside each other; default: top.', 'section, layout, middle, vertical, centre'),
     ('divider', 'Section (divider) – Divider',
      'A thin full-width line above the section.', 'section, divider, line, separator'),
     ('disclaimer', 'Section (disclaimer) – Disclaimer',
@@ -232,7 +248,9 @@ for block, variants in BLOCKS.items():
         index.append({'name': label, 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/{block}'})
 parts = []
 for style, name, desc, tags in SECTIONS:
-    ex = section_example(style, need=NEED.get(style)) or section_example(style)
+    with_blocks = style in ('flex', 'middle')
+    ex = (section_example(style, need=NEED.get(style), blocks=with_blocks, max_len=1500 if with_blocks else 700)
+          or section_example(style, blocks=with_blocks, max_len=3000 if with_blocks else 700))
     if not ex:
         report[style] = 'no example'
         continue
@@ -246,7 +264,9 @@ if parts:
     open(f'{OUT}/blocks/section-metadata.plain.html', 'w', encoding='utf8').write('\n'.join(parts) + '\n')
     index.append({'name': 'Section Metadata', 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/section-metadata'})
 styles = ' | '.join(['grey-band', 'gold-box', 'purple-band', 'blue-band', 'large-headline', 'divider', 'disclaimer',
-                     'divider, large-headline', 'flex', 'continued', 'tabbed', 'accordion-panel', 'contact-aside'])
+                     'divider, large-headline', 'flex', 'flex, wide-first', 'flex, wide-last', 'half-left', 'half-right',
+                     'third-left', 'two-thirds-left', 'quarter-left', 'centre-third', 'middle', 'continued', 'tabbed',
+                     'accordion-panel', 'contact-aside'])
 sheet = {
     'data': {'total': len(index), 'offset': 0, 'limit': len(index), 'data': index},
     'options': {'total': 1, 'offset': 0, 'limit': 1, 'data': [{'key': 'style', 'blocks': 'section-metadata', 'values': styles}]},

@@ -37,7 +37,9 @@ const walk = (dir) => readdirSync(dir).flatMap((n) => {
   const p = join(dir, n);
   return statSync(p).isDirectory() ? walk(p) : [p];
 });
-const docs = walk(join(content, 'std')).filter((f) => f.endsWith('.plain.html') && !f.includes('/drafts/'))
+// (not the drafts, nor the Standard Block Library under /std/.da: library.py writes it)
+const docs = walk(join(content, 'std'))
+  .filter((f) => f.endsWith('.plain.html') && !f.includes('/drafts/') && !f.includes('/.da/'))
   .map((f) => f.slice(content.replace(/\/$/, '').length + 1).replace(/\.plain\.html$/, ''));
 const fileOf = (dir, doc) => join(dir, `${doc}.plain.html`);
 const source = (doc) => readFileSync(existsSync(fileOf(backup, doc)) ? fileOf(backup, doc) : fileOf(content, doc), 'utf8');

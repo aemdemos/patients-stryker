@@ -357,6 +357,99 @@ function cleanContent(block, variant, counts) {
   counts.titles += promoteTitles(block);
 }
 
+/** the standard section placements (styles-corp.css): width and start, in container shares */
+export const PLACEMENTS = {
+  'half-left': [1 / 2, 0],
+  'half-right': [1 / 2, 1 / 2],
+  'third-left': [1 / 3, 0],
+  'two-thirds-left': [2 / 3, 0],
+  'quarter-left': [1 / 4, 0],
+  'centre-third': [1 / 3, 1 / 3],
+};
+const fraction = (t) => {
+  const m = String(t || '').match(/(\d+)\s*\/\s*(\d+)/);
+  return m ? Number(m[1]) / Number(m[2]) : null;
+};
+/** `Column | width 1/2, from 1/2` → the nearest placement */
+export function placementOf(value) {
+  const w = fraction((value.match(/width\s+([\d/ ]+)/i) || [])[1]);
+  const start = fraction((value.match(/from\s+([\d/ ]+)/i) || [])[1]) || 0;
+  if (!w || w >= 0.95) return null;
+  const distance = ([pw, ps]) => Math.abs(pw - w) + Math.abs(ps - start);
+  return Object.entries(PLACEMENTS).map(([k, v]) => [k, distance(v)])
+    .sort((a, b) => a[1] - b[1])[0][0];
+}
+/** `Column widths | 33% / 67%` of two parts → wide-first / wide-last (null: equal) */
+export function wideOf(value) {
+  const parts = String(value || '').split('/').map((x) => parseFloat(x)).filter((x) => !Number.isNaN(x));
+  if (parts.length !== 2 || Math.abs(parts[0] - parts[1]) < 10) return null;
+  return parts[0] > parts[1] ? 'wide-first' : 'wide-last';
+}
+const addStyle = (section, value) => {
+  let meta = section.querySelector(':scope > .section-metadata');
+  const doc = section.ownerDocument;
+  if (!meta) {
+    meta = doc.createElement('div');
+    meta.className = 'section-metadata';
+    section.append(meta);
+  }
+  let row = [...meta.children].find((r) => text(r.firstElementChild) === 'style');
+  if (!row) {
+    row = doc.createElement('div');
+    ['style', ''].forEach((t) => {
+      const c = doc.createElement('div');
+      c.textContent = t;
+      row.append(c);
+    });
+    meta.prepend(row);
+  }
+  const styles = text(row.lastElementChild).split(',').map((x) => x.trim()).filter(Boolean);
+  if (!styles.includes(value)) styles.push(value);
+  row.lastElementChild.textContent = styles.join(', ');
+};
+
+/**
+ * Section layouts before the other passes: a `Column` row (content in one column of an AEM
+ * column control) → a placement style; a flex section's `Column widths` (or its flex-67-33 /
+ * flex-33-67 style) → wide-first / wide-last. The rows go.
+ */
+function standardLayouts(body, counts) {
+  [...body.children].forEach((section) => {
+    const rows = settingsRows(section);
+    const columnsBlocks = [...section.children].filter((c) => c.classList.contains('columns'));
+    rows.forEach(([key, value, row]) => {
+      if (key === 'Column') {
+        const place = placementOf(value);
+        if (place) {
+          addStyle(section, place);
+          counts.layouts[place] = (counts.layouts[place] || 0) + 1;
+        }
+        row.remove();
+        counts.rows += 1;
+      }
+    });
+    const style = settingsRows(section).find(([key]) => key === 'style');
+    const styles = style ? style[1].split(',').map((x) => x.trim()) : [];
+    if (!styles.includes('flex')) return;
+    let wide = null;
+    if (styles.includes('flex-67-33')) wide = 'wide-first';
+    if (styles.includes('flex-33-67')) wide = 'wide-last';
+    const widths = settingsRows(section).find(([key]) => key === 'Column widths');
+    if (!wide && widths && !columnsBlocks.length) wide = wideOf(widths[1]);
+    if (widths && !columnsBlocks.length) {
+      widths[2].remove();
+      counts.rows += 1;
+    }
+    if (style && (styles.includes('flex-67-33') || styles.includes('flex-33-67'))) {
+      style[2].lastElementChild.textContent = styles.filter((x) => !/^flex-\d/.test(x)).join(', ');
+    }
+    if (wide) {
+      addStyle(section, wide);
+      counts.layouts[wide] = (counts.layouts[wide] || 0) + 1;
+    }
+  });
+}
+
 /** the four standard section backgrounds (styles/styles-corp.css) and what becomes each */
 export const BACKGROUNDS = {
   'grey-band': ['bg-light-gray', 'bg-silver'],
@@ -544,7 +637,9 @@ export function transformDocument(body, { page = true } = {}) {
     backgrounds: {},
     spacers: 0,
     textSections: 0,
+    layouts: {},
   };
+  standardLayouts(body, counts);
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
     const columns = own.filter((c) => c.classList.contains('columns'));
@@ -588,9 +683,23 @@ export function transformDocument(body, { page = true } = {}) {
     const STANDARD = ['columns', 'cards-corp', 'hero-corp'];
     const onlyStandard = own.every((c) => STANDARD.some((n) => c.classList.contains(n)));
     const hero = heroes.length > 0;
-    columns.forEach((block) => {
+    // a Columns block's own rows: plain for the first (Column widths: for all when no block has its
+    // own), `(k)` for the k-th
+    const ownRows = settingsRows(section);
+    const numbered = ownRows.some(([key]) => /^Column widths \(\d+\)$/.test(key));
+    const rowFor = (name, k) => (ownRows.find(([key]) => key === `${name} (${k})`)
+      || (k === 1 || (name === 'Column widths' && !numbered) ? ownRows.find(([key]) => key === name) : null) || [])[1];
+    columns.forEach((block, bi) => {
       const variant = variantOf(block);
       const from = block.className;
+      // two cells of unequal width keep the wide one; text set well down beside a tall image is
+      // centred (the AEM way: the text column's top inset)
+      const filled = [...(block.firstElementChild?.children || [])].filter((c) => cellKind(c) !== 'empty');
+      const wide = filled.length === 2 && variant !== 'page-intro' ? wideOf(rowFor('Column widths', bi + 1)) : null;
+      const box = rowFor('Text box', bi + 1) || '';
+      const textCol = filled.findIndex((c) => cellKind(c) === 'text') + 1;
+      const inset = (box.match(new RegExp(`column ${textCol}:[^;]*?top (\\d+(?:\\.\\d+)?)%`)) || [])[1];
+      const middle = variant === 'media-text' && columns.length === 1 && textCol && Number(inset) >= 10;
       cleanContent(block, variant, counts);
       // empty cells go (a row keeps one)
       [...block.children].forEach((row) => {
@@ -602,7 +711,12 @@ export function transformDocument(body, { page = true } = {}) {
         });
         if (!row.children.length || [...row.children].every((c) => cellKind(c) === 'empty')) row.remove();
       });
-      block.className = `columns ${variant}`;
+      block.className = `columns ${variant}${wide ? ` ${wide}` : ''}`;
+      if (wide) counts.layouts[`columns ${wide}`] = (counts.layouts[`columns ${wide}`] || 0) + 1;
+      if (middle) {
+        addStyle(section, 'middle');
+        counts.layouts.middle = (counts.layouts.middle || 0) + 1;
+      }
       blocks.push({
         section: si, block: own.indexOf(block), type: 'columns', from, variant,
       });

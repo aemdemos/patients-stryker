@@ -995,3 +995,20 @@ body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-stat
     flex: 1 1 0;
   }
 }
+
+/* the two-cell variants: wide-first / wide-last make that cell two thirds from 600px (the
+   source's 2/3 + 1/3 column control); in a `middle` section the cells are centred vertically */
+@media (width >= 600px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row):is(.wide-first, .wide-last) > * > * {
+    flex: 0 0 33.333%;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row).wide-first > * > :first-child,
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row).wide-last > * > :last-child {
+    flex: 0 0 66.667%;
+  }
+
+  body.corp main .section.middle .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    align-items: center;
+  }
+}
