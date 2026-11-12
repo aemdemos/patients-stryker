@@ -717,3 +717,9 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-co
     grid-row: auto;
   }
 }
+
+/* `right-last`: the last column's text right-aligned (stryker.com rep-portal "HOME ▸" beside
+   "BLUEPRINT 3D PLANNING", at every width) */
+body.corp .columns.right-last > div > div:last-child:not(:first-child) {
+  text-align: right;
+}

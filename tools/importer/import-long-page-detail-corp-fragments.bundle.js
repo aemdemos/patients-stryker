@@ -2579,6 +2579,11 @@ var CustomImportScript = (() => {
     const end = last.nodeValue.lastIndexOf("]");
     last.nodeValue = last.nodeValue.slice(0, end) + last.nodeValue.slice(end + 1);
   }
+  function rightColumn(col) {
+    const RIGHT = '[style*="text-align: right"], [style*="text-align:right"], .text-right';
+    const blocks = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li)")].filter((el) => text3(el));
+    return blocks.length > 0 && blocks.every((el) => !!el.closest(RIGHT));
+  }
   function sizeTag(copyStyle) {
     const size = (copyStyle || "").split(",").map((s) => s.trim()).find((s) => /^p-\d/.test(s));
     return size ? `text-${size.slice(2)}` : "";
@@ -2709,7 +2714,8 @@ var CustomImportScript = (() => {
         stackRow(columns) ? "stack" : "",
         stackRow(columns) && mediaTextRow(columns) ? "media-text" : "",
         boxes,
-        firstRule ? "left-border-bottom" : ""
+        firstRule ? "left-border-bottom" : "",
+        filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? "right-last" : ""
       ].filter(Boolean).join(", ");
       const centred = filled.every(centredColumn);
       const padded = filled.every((col) => paddedColumn(col, colctrl));
