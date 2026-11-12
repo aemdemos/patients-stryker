@@ -11,6 +11,8 @@
   /* header-corp: 90px chrome below 900px; 87px white row + 60px gold nav bar from 900px */
   --corp-chrome-height: 90px;
   --corp-header-gap: var(--space-block-s);
+  --corp-back-link-top: 2%; /* measured: stryker.com footnote Back link sits 2% of the page width (+ the header gap) below the header (15px @375, 36px @1440) */
+  --corp-back-link-bottom: 44px; /* measured: stryker.com footnote Back link → page title, 66-69px */
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
 
   /* embedded Google map (lone maps link, scripts/map-embed.js) — measured: www.stryker.com
@@ -371,6 +373,18 @@ body:where(.corp):has(main .hero-carousel) header {
    teal Futura bold, uppercase) */
 :where(body.corp) main .section.no-arrow a.link-strong:any-link::after {
   content: none;
+}
+
+/* section style `back-link`: a Back link section directly under the header (stryker.com
+   footnote pages "❮ BACK"): fluid gap above it, 66-69px from the link to the next heading
+   (the first-section rule below the wrapper is dropped) */
+:where(body.corp) main > .section.back-link {
+  margin-bottom: var(--corp-back-link-bottom);
+  padding-top: var(--corp-back-link-top);
+}
+
+:where(body.corp) main > .section.back-link > .default-content-wrapper {
+  padding-bottom: 0;
 }
 
 /* section style `center`: centred text (stryker.com centred rich text, e.g. the About values) */

@@ -285,4 +285,7 @@ export default {
   '/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master': {
     name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"',
   },
+  '/content/experience-fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master': {
+    name: 'Interventional Spine footnotes "❮ BACK" link (footnote detail pages)',
+  },
 };

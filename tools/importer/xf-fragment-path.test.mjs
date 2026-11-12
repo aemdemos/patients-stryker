@@ -18,6 +18,8 @@ const cases = [
   [xfFragmentPath, `${XF}/corporate/en/about/our_board_of_directo/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/back-button/master'],
   // an article body shared as its own fragment document
   [xfFragmentPath, '/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master.html', '/us/en/fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master'],
+  // Interventional Spine footnotes Back link (#516)
+  [xfFragmentPath, `${XF}/corporate/en/interventional-spine/footnotes/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master'],
   // not a shared XF: imported inline
   [xfFragmentPath, '/content/experience-fragments/stryker/corporate/en/about/news/features/some-article/body/master', null],
   // the rule itself works for any XF

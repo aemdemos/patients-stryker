@@ -71,3 +71,11 @@ body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li + li {
 body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li span {
   line-height: 1.2;
 }
+
+body.corp .accordion.divided .accordion-item-label {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.corp .accordion.divided .accordion-item-open .accordion-item-label {
+  border-bottom: 0;
+}
