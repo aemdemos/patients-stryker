@@ -188,8 +188,14 @@ function trimEmptyCells(main) {
   });
 }
 
-// California transparency disclosure: the source title and body sit in 6/12 and 8/12 columns
-const WIDTH_STYLES = [['california-transparency', ['width-50', 'width-67']]];
+// Section styles by page, one entry per section (null: none). California transparency: the source
+// title and body sit in 6/12 and 8/12 columns; mri: the title and its line sit in 6/12; bylaws:
+// two empty paragraphs above each Article heading
+const WIDTH_STYLES = [
+  ['california-transparency', ['width-50', 'width-67']],
+  ['hemorrhagic-stroke/mri', ['width-50']],
+  ['governance/bylaws', [null, null, 'heading-space-l']],
+];
 
 function widthStyles(main, document, url) {
   const styles = WIDTH_STYLES.find(([key]) => url.includes(key))?.[1];
@@ -197,6 +203,7 @@ function widthStyles(main, document, url) {
   const hrs = [...main.children].filter((n) => n.tagName === 'HR');
   const ends = [...hrs, null];
   styles.forEach((style, i) => {
+    if (!style) return;
     const end = ends[i];
     let table = null;
     let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;

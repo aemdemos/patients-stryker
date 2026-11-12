@@ -1226,6 +1226,13 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   }
 }
 
+/* section style `heading-space-l`: every Heading 2 of the section after the first has two blank
+   lines above it — stryker.com headings set after two empty <p>&nbsp;</p> spacers (legal bylaws
+   and charters: 84px from the text above to the next Article / heading, at every width) */
+:where(body.corp) main > .section.heading-space-l > .default-content-wrapper > h2:not(:first-child) {
+  margin-top: calc(var(--space-block) + 2 * var(--corp-blank-line));
+}
+
 /* headline-3vw (above): a Heading 2's rule below it, 30px under the headline (70px from
    600px), as the source's section-title rule */
 :where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
