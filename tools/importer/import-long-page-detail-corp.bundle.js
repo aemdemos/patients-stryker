@@ -1305,7 +1305,8 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer` : "spacer", nodes: [] });
+        const wide = component.hasAttribute("data-spacer-wide") ? ", wide" : "";
+        sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });
         separatorNext = false;
         current = null;
         return;
@@ -2314,7 +2315,35 @@ var CustomImportScript = (() => {
         } else if (prev) prev.push(node);
         else if (!blank(node) || items.length) items.push([node]);
       });
-      if (!items.includes(null)) return;
+      const lastP = [...box.children].filter((el) => el.tagName === "P").pop();
+      if (lastP && lastP === box.lastElementChild && items.length && items[items.length - 1]) {
+        const tail = [...lastP.childNodes];
+        const nbsp = tail.length > 1 && tail[tail.length - 1].nodeType === 3 && tail[tail.length - 1].textContent.includes("\xA0") && !tail[tail.length - 1].textContent.replace(/\u00a0/g, " ").trim();
+        if (nbsp && tail[tail.length - 2].nodeName === "BR") {
+          tail[tail.length - 1].remove();
+          tail[tail.length - 2].remove();
+          items.push(null);
+        }
+      }
+      const boxStyle = box.getAttribute("style") || "";
+      const pct = (prop) => Number((new RegExp(`(?:^|;)\\s*${prop}:\\s*(\\d+(?:\\.\\d+)?)%`).exec(boxStyle) || [])[1] || 0);
+      const wideSpacer = () => {
+        const spacer = document.createElement("div");
+        spacer.className = "largeheadline";
+        const headline = document.createElement("div");
+        headline.className = "c-largeheadline page-section container";
+        headline.setAttribute("data-spacer-wide", "");
+        spacer.append(headline);
+        return spacer;
+      };
+      if (pct("padding-top") >= 2) component.before(wideSpacer());
+      if (pct("margin-bottom") >= 2) {
+        component.setAttribute("data-wide-after", "");
+      }
+      if (!items.includes(null)) {
+        if (component.hasAttribute("data-wide-after")) component.after(wideSpacer());
+        return;
+      }
       const parts = items.filter(Boolean);
       box.replaceChildren(...parts[0]);
       let last = component;
@@ -2335,6 +2364,15 @@ var CustomImportScript = (() => {
         last.after(copy);
         last = copy;
       });
+      if (component.hasAttribute("data-wide-after")) {
+        const spacer = document.createElement("div");
+        spacer.className = "largeheadline";
+        const headline = document.createElement("div");
+        headline.className = "c-largeheadline page-section container";
+        headline.setAttribute("data-spacer-wide", "");
+        spacer.append(headline);
+        last.after(spacer);
+      }
     });
   }
   function edsLinkPaths(main) {

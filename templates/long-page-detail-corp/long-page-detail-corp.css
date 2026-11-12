@@ -581,6 +581,18 @@ body.long-page-detail-corp main > .section.spacer.xxlarge:not(.separator) {
   }
 }
 
+/* `spacer, wide`: a source percentage margin (environmental programs, 3% of the width):
+   30px from 600px, no space on phones */
+body.long-page-detail-corp main > .section.spacer.wide:not(.separator) {
+  height: 0;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.spacer.wide:not(.separator) {
+    height: var(--space-section);
+  }
+}
+
 body.long-page-detail-corp main > .section.spacer + .section.separator {
   margin-top: 0;
 }

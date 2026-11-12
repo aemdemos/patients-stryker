@@ -1618,7 +1618,9 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     if (component.matches('.c-largeheadline') && (!isFirst || component.hasAttribute('data-spacer')) && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
       && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
-      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer` : 'spacer', nodes: [] });
+      // (a percentage margin on the source, blankLineSpacers in sections.js: `spacer, wide`)
+      const wide = component.hasAttribute('data-spacer-wide') ? ', wide' : '';
+      sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });
       separatorNext = false;
       current = null;
       return;

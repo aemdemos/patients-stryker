@@ -125,7 +125,42 @@ export function blankLineSpacers(document, url) {
       } else if (prev) prev.push(node);
       else if (!blank(node) || items.length) items.push([node]);
     });
-    if (!items.includes(null)) return;
+    // a last paragraph closing on a line break and a no-break space (environmental programs
+    // "To achieve these carbon goals…<br>&nbsp;"): a blank line after the text as well
+    const lastP = [...box.children].filter((el) => el.tagName === 'P').pop();
+    if (lastP && lastP === box.lastElementChild && items.length && items[items.length - 1]) {
+      const tail = [...lastP.childNodes];
+      const nbsp = tail.length > 1 && tail[tail.length - 1].nodeType === 3
+        && tail[tail.length - 1].textContent.includes('\u00a0') && !tail[tail.length - 1].textContent.replace(/\u00a0/g, ' ').trim();
+      if (nbsp && tail[tail.length - 2].nodeName === 'BR') {
+        tail[tail.length - 1].remove();
+        tail[tail.length - 2].remove();
+        items.push(null);
+      }
+    }
+    // a percentage bottom margin / top padding on the text box (2% or more: "Energy
+    // efficiency" 3%, "Design for sustainability" padding 2%): space that scales with the width,
+    // about 30px on desktop and little on phones: a `spacer, wide` after / before it
+    const boxStyle = box.getAttribute('style') || '';
+    const pct = (prop) => Number((new RegExp(`(?:^|;)\\s*${prop}:\\s*(\\d+(?:\\.\\d+)?)%`).exec(boxStyle) || [])[1] || 0);
+    const wideSpacer = () => {
+      const spacer = document.createElement('div');
+      spacer.className = 'largeheadline';
+      const headline = document.createElement('div');
+      headline.className = 'c-largeheadline page-section container';
+      headline.setAttribute('data-spacer-wide', '');
+      spacer.append(headline);
+      return spacer;
+    };
+    if (pct('padding-top') >= 2) component.before(wideSpacer());
+    if (pct('margin-bottom') >= 2) {
+      // after the text (and its blank lines, below)
+      component.setAttribute('data-wide-after', '');
+    }
+    if (!items.includes(null)) {
+      if (component.hasAttribute('data-wide-after')) component.after(wideSpacer());
+      return;
+    }
     const parts = items.filter(Boolean);
     box.replaceChildren(...parts[0]);
     let last = component;
@@ -146,6 +181,15 @@ export function blankLineSpacers(document, url) {
       last.after(copy);
       last = copy;
     });
+    if (component.hasAttribute('data-wide-after')) {
+      const spacer = document.createElement('div');
+      spacer.className = 'largeheadline';
+      const headline = document.createElement('div');
+      headline.className = 'c-largeheadline page-section container';
+      headline.setAttribute('data-spacer-wide', '');
+      spacer.append(headline);
+      last.after(spacer);
+    }
   });
 }
 
