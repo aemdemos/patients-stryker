@@ -257,3 +257,10 @@
   .hero-corp[data-phone-text] > div:last-child span.color-grey { --span-color: var(--color-secondary); }
   .hero-corp[data-phone-text] > div:last-child span.color-light-gray { --span-color: var(--color-surface-muted); }
 }
+
+/* an autoplaying hero video (stryker.com slide viewer with autoplay): no control bar and no
+   play button over it, paused or playing */
+.hero-corp .hero-autoplay .dm-video-controls,
+.hero-corp .hero-autoplay .dm-video-overlay {
+  display: none;
+}

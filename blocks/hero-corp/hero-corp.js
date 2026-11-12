@@ -178,6 +178,10 @@ function autoplayVideo(block) {
     video.muted = true;
     video.loop = true;
     video.autoplay = true;
+    // a background video: no control bar or play button (CSS); a click still pauses / plays it
+    // (the player's own click toggle)
+    const wrapper = video.closest('.dm-video-wrapper');
+    if (wrapper) wrapper.classList.add('hero-autoplay');
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
       observer.disconnect();

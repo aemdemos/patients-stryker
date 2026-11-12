@@ -410,6 +410,7 @@ var CustomImportScript = (() => {
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text2(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
+    const right = blocks.length > 0 && blocks.every((el) => /text-align:\s*right/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
     const doc = root.ownerDocument;
     root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
@@ -497,7 +498,7 @@ var CustomImportScript = (() => {
       }
       if (!text2(el) && !el.querySelector("img")) el.remove();
     });
-    return { centred, size };
+    return { centred, right, size };
   }
   function plainBoldParagraphs(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
@@ -654,6 +655,14 @@ var CustomImportScript = (() => {
       p.append(...div.childNodes);
       div.replaceWith(p);
       tagColourText(p, TEAL, "color-teal");
+      const next = p.nextElementSibling;
+      if (next && next.tagName === "P" && /^_{5,}$/.test(text2(next))) {
+        const breaks = [...p.querySelectorAll("br")];
+        const last2 = breaks[breaks.length - 1];
+        if (last2 && !text2(p).endsWith("\n") && ![...p.childNodes].slice(-1)[0].textContent.trim()) last2.remove();
+        p.append(doc.createElement("br"), ...next.childNodes);
+        next.remove();
+      }
     });
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
@@ -662,7 +671,7 @@ var CustomImportScript = (() => {
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
-    const { centred, size } = cleanRichText(box);
+    const { centred, right, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
@@ -679,7 +688,12 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
     });
-    return { nodes, centred, size };
+    return {
+      nodes,
+      centred,
+      right,
+      size
+    };
   }
   function imageColumnStyle(component) {
     const col = component.closest('[class*="col-sm-"]');
@@ -1459,13 +1473,19 @@ var CustomImportScript = (() => {
         current.nodes.push(...nodes2);
         return;
       }
-      const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
+      const {
+        nodes,
+        centred,
+        right,
+        size
+      } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
+      const align = centred && "center" || right && "right" || "";
       if (!nodes.length) return;
       nodes.forEach((node) => {
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
-        const styles = [centred ? "center" : "", ...extra].filter(Boolean);
-        const kind = [centred ? "center" : "body", ...extra].join(" ");
+        const styles = [align, ...extra].filter(Boolean);
+        const kind = [align || "body", ...extra].join(" ");
         let h3Font = null;
         if (node.tagName === "H3" || node.tagName === "H2" && node.serifHeading) {
           h3Font = node.serifHeading ? "serif" : "futura";

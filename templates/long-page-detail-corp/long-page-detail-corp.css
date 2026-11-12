@@ -1448,3 +1448,9 @@ body.long-page-detail-corp main > .section.columns-container .columns-wrapper .c
 body.long-page-detail-corp main > .section.columns-container .columns-wrapper .columns p:has(> a.link-strong) + p:is(:has(> span.text-1-25:only-child > strong:only-child), :has(> strong:only-child > span.text-1-25:only-child)) {
   margin-top: calc(var(--space-section) + var(--space-block));
 }
+
+/* section style `right`: right-aligned text (stryker.com rich text set right, environmental
+   programs "*As of 12/31/24…") */
+body.long-page-detail-corp main > .section.right {
+  text-align: right;
+}

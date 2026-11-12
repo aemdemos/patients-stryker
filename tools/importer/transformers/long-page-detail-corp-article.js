@@ -391,6 +391,9 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
+  // all right-aligned (environmental programs "*As of 12/31/24…"): the section style `right`
+  const right = blocks.length > 0
+    && blocks.every((el) => /text-align:\s*right/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
   const doc = root.ownerDocument;
   // links without an address (<a> wrappers, e.g. a Large Headline title) are plain text
@@ -510,7 +513,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     }
     if (!text(el) && !el.querySelector('img')) el.remove();
   });
-  return { centred, size };
+  return { centred, right, size };
 }
 
 /** The rich-text content of a component as top-level block elements. */
@@ -731,6 +734,17 @@ function richTextNodes(component, doc) {
       div.replaceWith(p);
       // the teal title text in it ("Stryker locations*", "Doing more with less…")
       tagColourText(p, TEAL, 'color-teal');
+      // the gold rule paragraph under it ("________"): on the title's next line, 2px under it
+      // as on stryker.com (the title is a div there, without a paragraph's space below)
+      const next = p.nextElementSibling;
+      if (next && next.tagName === 'P' && /^_{5,}$/.test(text(next))) {
+        // (without the title's own closing break: `<span class="urw-egyptienne"><br></span>`)
+        const breaks = [...p.querySelectorAll('br')];
+        const last = breaks[breaks.length - 1];
+        if (last && !text(p).endsWith('\n') && ![...p.childNodes].slice(-1)[0].textContent.trim()) last.remove();
+        p.append(doc.createElement('br'), ...next.childNodes);
+        next.remove();
+      }
     });
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
@@ -741,7 +755,7 @@ function richTextNodes(component, doc) {
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
-  const { centred, size } = cleanRichText(box);
+  const { centred, right, size } = cleanRichText(box);
   const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
@@ -759,7 +773,9 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
   });
-  return { nodes, centred, size };
+  return {
+    nodes, centred, right, size,
+  };
 }
 
 /**
@@ -1816,9 +1832,12 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       current.nodes.push(...nodes);
       return;
     }
-    const { nodes, centred, size } = component.matches('.c-rich-text-editor')
+    const {
+      nodes, centred, right, size,
+    } = component.matches('.c-rich-text-editor')
       ? richTextNodes(component, doc)
       : { nodes: headlineNodes(component, doc), centred: false };
+    const align = (centred && 'center') || (right && 'right') || '';
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
@@ -1827,8 +1846,8 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
-      const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
-      const kind = [centred ? 'center' : 'body', ...extra].join(' ');
+      const styles = [align, ...extra].filter(Boolean);
+      const kind = [align || 'body', ...extra].join(' ');
       // an Egyptienne h3 (or h2) adds `h-serif` to its section (it stays with the copy around
       // it); a Futura h3 in the same run starts a new section
       let h3Font = null;
