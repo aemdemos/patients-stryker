@@ -3037,7 +3037,11 @@ var CustomImportScript = (() => {
       });
     });
   }
-  var WIDTH_STYLES = [["california-transparency", ["width-50", "width-67"]]];
+  var WIDTH_STYLES = [
+    ["california-transparency", ["width-50", "width-67"]],
+    ["hemorrhagic-stroke/mri", ["width-50"]],
+    ["governance/bylaws", [null, null, "heading-space-l"]]
+  ];
   function widthStyles(main, document, url) {
     var _a;
     const styles = (_a = WIDTH_STYLES.find(([key]) => url.includes(key))) == null ? void 0 : _a[1];
@@ -3045,6 +3049,7 @@ var CustomImportScript = (() => {
     const hrs = [...main.children].filter((n) => n.tagName === "HR");
     const ends = [...hrs, null];
     styles.forEach((style, i) => {
+      if (!style) return;
       const end = ends[i];
       let table = null;
       let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;

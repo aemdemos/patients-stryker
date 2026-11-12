@@ -12,8 +12,28 @@ body.corp-legal main > .section:first-child:has(h1) {
   margin-bottom: calc(var(--space-block-l) + var(--space-block));
 }
 
+/* source gap above a heading that follows copy: one empty paragraph (--corp-blank-line) plus the
+   paragraph margin; after a block the source also adds its column-control margin and 20px */
+:where(body.corp-legal) main > .section > .default-content-wrapper > :is(p, ul, ol) + h2 {
+  margin-top: calc(var(--space-block) + var(--corp-blank-line));
+}
+
 body.corp-legal main > .section > .columns-wrapper + .default-content-wrapper {
-  padding-top: var(--space-block);
+  padding-top: calc(var(--space-block) + var(--corp-blank-line) + 2 * var(--space-block-l));
+}
+
+/* a section that opens with a heading after a copy-only section (bylaws Article I) */
+body.corp-legal main > .section:not(:has(h1)) + .section > .default-content-wrapper:first-child > h2:first-child {
+  margin-top: calc(var(--corp-blank-line) + var(--space-block));
+}
+
+/* source headings sit 20px above their copy (H3) and tight to their data lines (H4 in columns) */
+body.corp-legal main > .section > .default-content-wrapper > h3:has(+ p) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.corp-legal main .columns h4:has(+ p) {
+  margin-bottom: 0;
 }
 
 body.corp-legal main > .section:first-child:has(h1) > .default-content-wrapper {
@@ -29,7 +49,11 @@ body.corp-legal main > .section:first-child h1.underline {
   line-height: var(--corp-heading-line-height-title-underline);
 }
 
-body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :has(> u)) {
+body.corp-legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
+  margin-bottom: var(--space-block-s);
+}
+
+body.corp-legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
   margin-bottom: calc(var(--space-block-l) + var(--space-block));
 }
 
@@ -42,8 +66,16 @@ body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :ha
     margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
-  body.corp-legal main > .section > .default-content-wrapper h2:is(.underline, :has(> u)) {
+  body.corp-legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
     margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.corp-legal main > .section > .columns-wrapper + .default-content-wrapper {
+    padding-top: calc(var(--space-block) + var(--corp-blank-line) + var(--space-section) + var(--space-block-l));
+  }
+
+  body.corp-legal main > .section > .default-content-wrapper > h3:has(+ p) {
+    margin-bottom: var(--space-section);
   }
 }
 
@@ -61,4 +93,15 @@ body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first
 
 body.corp-legal main .accordion.divided {
   border-top: 1px solid var(--color-surface-muted);
+}
+
+/* the source's column control adds its section gap below an open panel */
+body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-body {
+  padding-bottom: calc(2 * var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-body {
+    padding-bottom: calc(2 * var(--space-block) + var(--space-block-s));
+  }
 }
