@@ -22,6 +22,8 @@
   --corp-back-to-top-size: 40px;
   --corp-figure-size-l: 35px; /* measured: stryker.com span.fontsize-2-5em Futura bold figure in a gold box */
   --corp-heading-line-height-title-underline: 0.795; /* measured: a source underlined title-only legal page h1 (CA transparency), phones */
+  --corp-legal-title-offset-trim: 2px; /* measured: stryker.com legal title header-to-H1 gap is --space-section less 2px (CA, sms, mri, bylaws) */
+  --corp-large-headline-offset: 2vw; /* measured: stryker.com Large Headline header-to-title gap is 2vw + 9.4px; the 9.4px is the existing H1 top spacing */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
