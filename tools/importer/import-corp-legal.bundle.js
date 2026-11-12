@@ -3040,7 +3040,8 @@ var CustomImportScript = (() => {
   var WIDTH_STYLES = [
     ["california-transparency", ["width-50", "width-67"]],
     ["hemorrhagic-stroke/mri", ["width-50"]],
-    ["governance/bylaws", [null, null, "heading-space-l"]]
+    ["governance/bylaws", [null, null, "heading-space-l"]],
+    ["governance/charters", [...Array(11).fill(null), "heading-space-l", ...Array(9).fill(null), "heading-space-l"]]
   ];
   function widthStyles(main, document, url) {
     var _a;

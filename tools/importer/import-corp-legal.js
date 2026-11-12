@@ -190,11 +190,13 @@ function trimEmptyCells(main) {
 
 // Section styles by page, one entry per section (null: none). California transparency: the source
 // title and body sit in 6/12 and 8/12 columns; mri: the title and its line sit in 6/12; bylaws:
-// two empty paragraphs above each Article heading
+// two empty paragraphs above each Article heading; charters: above the 2nd and 3rd committee
+// heading
 const WIDTH_STYLES = [
   ['california-transparency', ['width-50', 'width-67']],
   ['hemorrhagic-stroke/mri', ['width-50']],
   ['governance/bylaws', [null, null, 'heading-space-l']],
+  ['governance/charters', [...Array(11).fill(null), 'heading-space-l', ...Array(9).fill(null), 'heading-space-l']],
 ];
 
 function widthStyles(main, document, url) {
