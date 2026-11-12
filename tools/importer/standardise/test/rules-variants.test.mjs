@@ -62,8 +62,12 @@ const results = await page.evaluate(async ({ src, list }) => {
     const { body } = new DOMParser().parseFromString(`<body>${d.html}</body>`, 'text/html');
     // the gold texts of each Columns block before (a tag and its text in one text node)
     const goldRe = /\[\[[^\]]*\b(?:Gold|Dark-Gold)\b[^\]]*\]([^\][]+)\]/gi;
-    const gold = [...body.querySelectorAll('.columns')].map((c) => [...c.textContent.matchAll(goldRe)]
-      .map((x) => x[1].trim()).filter(Boolean));
+    // (keyed by a marker on the block: a jump bar's Columns becomes a Page Nav, so the order
+    // shifts)
+    const gold = [...body.querySelectorAll('.columns')].map((c, i) => {
+      c.dataset.testBlock = String(i);
+      return [...c.textContent.matchAll(goldRe)].map((x) => x[1].trim()).filter(Boolean);
+    });
     const goldLinks = (b) => b.querySelectorAll(':is(strong em, em strong, b i, i b) a, a:is(:has(> strong > em), :has(> em > strong))').length;
     const linksBefore = goldLinks(body);
     const before = facts(body);
@@ -107,9 +111,19 @@ const results = await page.evaluate(async ({ src, list }) => {
         && !k.closest('.section-metadata').parentElement.querySelector(':scope > .hero-corp')) fails.push(`row ${k.textContent.trim()} left`);
     });
     // gold: each gold text of a Columns block is Bold + Italic now
-    const notGold = [...body.querySelectorAll('.columns')].flatMap((c, i) => (gold[i] || []).filter((g) => ![...c.querySelectorAll(':is(strong em, em strong, b i, i b)')]
+    const notGold = [...body.querySelectorAll('.columns')].flatMap((c) => (gold[Number(c.dataset.testBlock)] || []).filter((g) => ![...c.querySelectorAll(':is(strong em, em strong, b i, i b)')]
       .some((e) => e.textContent.includes(g) || g.includes(e.textContent.trim()))));
     if (notGold.length) fails.push(`gold not Bold + Italic: ${notGold.slice(0, 2).join(' | ')}`);
+    if (body.querySelector('.columns:not([data-test-block])')) fails.push('a Columns block without its marker (rebuilt: gold not checked)');
+    // navigation: Page Nav only, its variants, no tag left
+    if (body.querySelector('.sticky-nav')) fails.push('Sticky Nav left');
+    body.querySelectorAll('.page-nav').forEach((c) => {
+      const variant = [...c.classList].filter((x) => ['page-nav', 'sticky', 'local'].includes(x)).join(' ');
+      if (!m.NAV_VARIANTS[variant]) fails.push(`class "${c.className}"`);
+      if (c.textContent.includes('[[')) fails.push('tag left in Page Nav');
+    });
+    // no readable tag left anywhere
+    if (body.textContent.includes('[[')) fails.push('tag left');
     return { path: d.path, blocks: out.blocks.length, fails: [...new Set(fails)] };
   });
 }, { src: rules, list: docs });

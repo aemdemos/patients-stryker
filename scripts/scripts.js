@@ -618,6 +618,7 @@ export function decorateMain(main) {
   corp?.decorateBlockLayout(main);
   decorateLinkTargets(main);
   decorateButtons(main);
+  corp?.decorateTextLinks(main);
   decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
   decorateSymbolFootnotes(main);

@@ -258,6 +258,41 @@ choice over a free 12-part grid; the data showed no other widths):
   Rules: `standardLayouts` and the Columns pass in `rules/variants.js`. Library entries: Side
   by side, Placement, Vertically centred (and the options in the Columns descriptions).
 
+## Navigation, links and the last tags (2026-11-12)
+
+No readable tag is left on the standard pages (0 of ~7,800). Fonts come from the element
+(headings, copy, Bold, statement); the font tags were only left on links.
+
+- **Page Nav** (`blocks/page-nav`), navigation within the page or its page family, replaces the
+  Sticky Nav on these pages (the user's call: a bar that does not stick is not a sticky nav):
+  - `page-nav` – Jump links: the 59 product jump bars (CONTACT US | ABOUT | …, `[[Futura]]`
+    links in a one-row Columns block, 3–4 cells of one `#` link each) → one row per link, their
+    line breaks and tags gone, the Columns rows with them; in their `grey-band`. Centred Futura
+    bold at 21px in the link colour, one per row → two from 600px → all in one row from 900px
+    (source /us/en/foot-and-ankle/products/prophecy: 1 per row to 840px, 2 to 1024px, then 4).
+  - `page-nav sticky` (195) and `page-nav local` (2): the former Sticky Nav blocks, unchanged
+    in look and behaviour. Page Nav runs the Sticky Nav code and CSS for them, so the
+    code lives once and the Sticky Nav (patients, the `/rs` pages) renders as before. Both
+    variants also take the jump-link rows (a row of one link).
+  - The InSpace image buttons that jump to sections stay an Image row.
+- **Futura links** (100, resource and product link lists): Bold (Futura bold in the link colour),
+  Bold + Underline when alone in their paragraph (the conventions' text link, not a button).
+- **Hidden headings** (16, `[[visually-hidden]]` page titles above a banner hero, each alone in
+  its section): the tag goes, the section gets the `visually-hidden` style (read, not shown,
+  no room).
+- **Links on standard pages** (`corp.js` `decorateTextLinks`, after `decorateButtons`): a link
+  alone on its line is the conventions' button (a paragraph: decorateButtons; a cell: the shared
+  bold-link button); anywhere else (a list, a sentence, a heading) Bold is a text link, never a
+  button: `link-text` (Futura bold, link colour), `link-gold` (Bold + Italic), `link-heading` (the
+  heading's look); a Bold link around a citation is `link-citation` (no box, the citation colour).
+  Before, the shared `strong > a` fallback drew these as buttons (alternating buttons in the T2
+  Alpha Tibia resource list, gold boxes in Infinity headings, teal boxes around citation
+  numbers). On 25 pages, 66 of 748 links changed, all from a button to a text link.
+- Found, not fixed (import, not standardisation): 31 of the 237 jump links have no section `id`
+  in their document (16 "Specification overview"; a few "Resources" land on an accordion heading
+  id instead). Two hidden section titles in one source column kept only the first as the
+  section `id` (e.g. prophecy: about + specification; product-detail importer).
+
 ### The first pilot: layout standards (superseded)
 
 | Standard | Class | Fits | Options |

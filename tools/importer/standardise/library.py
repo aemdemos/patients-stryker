@@ -72,7 +72,7 @@ def block_example(cls, min_len=60, max_len=900, need=None):
     return best
 
 
-def section_example(style, max_len=700, need=None, blocks=False):
+def section_example(style, max_len=700, need=None, blocks=False, min_len=40):
     """a real section whose styles include `style`, text only (no blocks, unless allowed), short"""
     best = None
     for p, s in TEXT.items():
@@ -88,7 +88,7 @@ def section_example(style, max_len=700, need=None, blocks=False):
             if blocks and re.search(r'<div class="(marketo-form|fragment)', body):
                 continue
             n = plain_len(body)
-            if n < 40 or n > max_len or (need and not re.search(need, sec)):
+            if n < min_len or n > max_len or (need and not re.search(need, sec)):
                 continue
             if best is None or n < best[0]:
                 best = (n, sec, p)
@@ -110,8 +110,10 @@ def entry(sample, name, description, tags, section_style=None):
 
 
 COMMON = ('No sizes, fonts, colours, widths or boxes are authored: the variant owns the look. Use '
-          'heading levels, Bold, Italic and links only (Bold + Italic = gold). Pages on the standard '
-          'set the page metadata type-scale | standard.')
+          'heading levels, Bold, Italic and links only (Bold + Italic = gold). A link alone on its line '
+          'is a button (Bold, Italic or Bold + Italic); anywhere else (a list, a sentence, a heading) '
+          'Bold makes it a Futura bold link and Bold + Italic a gold link. Pages on the standard set '
+          'the page metadata type-scale | standard.')
 BLOCKS = {
     'columns': [
         ('columns media-text', 'Columns (media-text) – Media + text',
@@ -180,6 +182,24 @@ BLOCKS = {
          'One row per item: cell 1 the question or label (plain text), cell 2 the answer (paragraphs, '
          'lists, links).', 'accordion, faq, questions, resources'),
     ],
+    'page-nav': [
+        ('page-nav', 'Page Nav – Jump links',
+         'Links to the sections of the page, in the page: one row per link (its text = the label, its '
+         'address = #the section id, set with the id row of that section\'s Section Metadata). Centred '
+         'Futura bold links, side by side from 900px (two per row from 600px, one per row on phones). '
+         'Usually near the top of the page, in a grey-band section.',
+         'navigation, jump links, anchors, in-page, page sections, contact us, about, resources',
+         'grey-band'),
+        ('page-nav sticky', 'Page Nav (sticky) – Sticky bar',
+         'As Jump links, as a bar that sticks to the top of the window while the page scrolls and marks '
+         'the section in view; on phones a menu button opens the list. One row per item: the label, '
+         'and #the section id (or the link alone, as in Jump links).',
+         'navigation, sticky, anchor bar, in-page, scroll, sections'),
+        ('page-nav local', 'Page Nav (local) – Page family',
+         'Navigation between the pages of a family: row 1 the parent page link, then one row per '
+         'child page (label | page link); the current page is marked. On phones a button opens the '
+         'list.', 'navigation, local, page family, sub pages, parent, children'),
+    ],
 }
 SECTIONS = [
     ('grey-band', 'Section (grey-band) – Grey band',
@@ -215,6 +235,10 @@ SECTIONS = [
     ('disclaimer', 'Section (disclaimer) – Disclaimer',
      'Small print: references (a numbered list) and the document number.',
      'section, disclaimer, references, small print, legal'),
+    ('visually-hidden', 'Section (visually-hidden) – Hidden heading',
+     'The section is read by screen readers and search engines but not shown, and takes no room: for '
+     'the page title (Heading 1) when a banner hero shows the visible title. The section holds only '
+     'that heading.', 'section, hidden, screen reader, seo, page title, h1, accessibility'),
 ]
 
 # what a good example shows (its content model): a title heading and copy
@@ -233,24 +257,26 @@ index = []
 report = {}
 for block, variants in BLOCKS.items():
     parts = []
-    for cls, name, desc, tags in variants:
+    for cls, name, desc, tags, *style in variants:
         ex = block_example(cls, need=NEED.get(cls)) or block_example(cls) or block_example(cls, 1, 4000)
         if not ex:
             report[cls] = 'no example'
             continue
         _, sample, src = ex
         report[cls] = os.path.relpath(src, content)
-        parts.append(entry(sample, name, f'{desc} {COMMON}', tags))
+        parts.append(entry(sample, name, f'{desc} {COMMON}', tags, style[0] if style else None))
     if parts:
         open(f'{OUT}/blocks/{block}.plain.html', 'w', encoding='utf8').write('\n'.join(parts) + '\n')
         label = {'columns': 'Columns', 'cards-corp': 'Cards', 'hero-corp': 'Hero', 'statistics': 'Statistics',
-                 'video': 'Video', 'accordion': 'Accordion'}[block]
+                 'video': 'Video', 'accordion': 'Accordion', 'page-nav': 'Page Nav'}[block]
         index.append({'name': label, 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/{block}'})
 parts = []
 for style, name, desc, tags in SECTIONS:
     with_blocks = style in ('flex', 'middle')
-    ex = (section_example(style, need=NEED.get(style), blocks=with_blocks, max_len=1500 if with_blocks else 700)
-          or section_example(style, blocks=with_blocks, max_len=3000 if with_blocks else 700))
+    shortest = 1 if style == 'visually-hidden' else 40
+    ex = (section_example(style, need=NEED.get(style), blocks=with_blocks, max_len=1500 if with_blocks else 700,
+                          min_len=shortest)
+          or section_example(style, blocks=with_blocks, max_len=3000 if with_blocks else 700, min_len=shortest))
     if not ex:
         report[style] = 'no example'
         continue
@@ -265,8 +291,8 @@ if parts:
     index.append({'name': 'Section Metadata', 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/section-metadata'})
 styles = ' | '.join(['grey-band', 'gold-box', 'purple-band', 'blue-band', 'large-headline', 'divider', 'disclaimer',
                      'divider, large-headline', 'flex', 'flex, wide-first', 'flex, wide-last', 'half-left', 'half-right',
-                     'third-left', 'two-thirds-left', 'quarter-left', 'centre-third', 'middle', 'continued', 'tabbed',
-                     'accordion-panel', 'contact-aside'])
+                     'third-left', 'two-thirds-left', 'quarter-left', 'centre-third', 'middle', 'visually-hidden',
+                     'continued', 'tabbed', 'accordion-panel', 'contact-aside'])
 sheet = {
     'data': {'total': len(index), 'offset': 0, 'limit': len(index), 'data': index},
     'options': {'total': 1, 'offset': 0, 'limit': 1, 'data': [{'key': 'style', 'blocks': 'section-metadata', 'values': styles}]},

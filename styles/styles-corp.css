@@ -1506,8 +1506,9 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 }
 
 /* links on dark bands are white, except citation links: those keep the colour of the text
-   they cite from (npseal, pidrive gold stat citations) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark, .purple-band, .blue-band) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
+   they cite from (npseal, pidrive gold stat citations); gold (Bold + Italic) text links of the
+   standard pages stay gold */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark, .purple-band, .blue-band) a:any-link:not(.button, .link-strong, .link-gold, sup *, [href^="#fn-"]) {
   color: var(--color-white);
 }
 
@@ -2119,6 +2120,72 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
    player (the corp Video draws the source's 1px frame unless no-border) */
 :where(body.corp.type-standard) main div.section .video:not(.no-border) :is(video, iframe) {
   border: 0;
+}
+
+/* the standard text links (standardisation; pages with `type-scale: standard`): a Bold link
+   that is not alone on its line follows the text conventions, never a button (corp.js
+   decorateTextLinks): Futura bold in the link colour, Bold + Italic gold; in a heading the
+   link takes the heading's look. On dark bands the band's link colour stays */
+:where(body.corp.type-standard) main a.link-text:any-link,
+:where(body.corp.type-standard) main a.link-text:any-link > :is(strong, b, em, i) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+:where(body.corp.type-standard) main a.link-text:any-link > :is(strong, b, em, i) {
+  color: inherit;
+}
+
+:where(body.corp.type-standard) main a.link-text:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+:where(body.corp.type-standard) main a.link-text.link-gold:any-link {
+  color: var(--color-accent);
+}
+
+:where(body.corp.type-standard) main a.link-text.link-heading:any-link,
+:where(body.corp.type-standard) main a.link-text.link-heading:any-link > :is(strong, b, em, i) {
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+}
+
+/* a Bold link around a citation: the citation, no button box (its colour is the citation's) */
+:where(body.corp.type-standard) main a.link-citation:any-link,
+:where(body.corp.type-standard) main a.link-citation:any-link > :is(strong, b, em, i) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font: inherit;
+  text-transform: inherit;
+}
+
+/* the hidden heading section (`visually-hidden` style: the page title above a banner hero):
+   read by screen readers and search engines, not shown, and takes no room */
+:where(body.corp) main > div.section.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* ---- the standard section layouts (standardisation, branch standardise-v3) ----

@@ -615,6 +615,131 @@ function standardText(body, counts, page) {
   }
 }
 
+// Page Nav (blocks/page-nav): navigation within the page or its page family
+export const NAV_VARIANTS = {
+  'page-nav': 'Jump links',
+  'page-nav sticky': 'Sticky bar',
+  'page-nav local': 'Page family',
+};
+
+const anchorHref = (a) => {
+  const href = (a.getAttribute('href') || '').trim();
+  return /^#./.test(href) ? href : null;
+};
+
+/**
+ * A jump bar: a Columns block of one row whose every filled cell is one in-page (#) link and
+ * nothing else (the product pages' `[[Futura]]` CONTACT US | ABOUT | … bar).
+ * @returns {{label: string, href: string}[]|null} its links, else null
+ */
+export function jumpLinksOf(block) {
+  if (!block.classList.contains('columns') || block.children.length !== 1) return null;
+  const cells = [...block.firstElementChild.children]
+    .filter((c) => plainText(c) || c.querySelector('img, picture, iframe'));
+  if (cells.length < 2) return null;
+  const items = cells.map((cell) => {
+    const links = cell.querySelectorAll('a[href]');
+    if (links.length !== 1 || !anchorHref(links[0])) return null;
+    if (plainText(cell) !== plainText(links[0])) return null;
+    return { label: plainText(links[0]), href: anchorHref(links[0]) };
+  });
+  return items.every((i) => i && i.label) ? items : null;
+}
+
+/**
+ * Navigation on Page Nav: Sticky Nav → `page-nav sticky` / `page-nav local` (its other
+ * options kept), a jump bar → `page-nav`, one row per link (its tags and line breaks go), and
+ * the bar's Columns rows with it.
+ */
+function standardNavs(body, counts) {
+  const doc = body.ownerDocument;
+  [...body.children].forEach((section) => {
+    [...section.children].forEach((block) => {
+      if (block.classList.contains('sticky-nav')) {
+        const variant = block.classList.contains('local') ? 'page-nav local' : 'page-nav sticky';
+        const options = [...block.classList].filter((c) => !['sticky-nav', 'local', 'sticky'].includes(c));
+        block.className = [variant, ...options].join(' ');
+        counts.navs[variant] = (counts.navs[variant] || 0) + 1;
+        return;
+      }
+      const items = jumpLinksOf(block);
+      if (!items) return;
+      const nav = doc.createElement('div');
+      nav.className = 'page-nav';
+      items.forEach(({ label, href }) => {
+        const row = doc.createElement('div');
+        const cell = doc.createElement('div');
+        const a = doc.createElement('a');
+        a.setAttribute('href', href);
+        a.textContent = label;
+        cell.append(a);
+        row.append(cell);
+        nav.append(row);
+      });
+      counts.tags += (block.textContent.match(/\[\[[^\]]+\]/g) || []).length;
+      block.replaceWith(nav);
+      counts.navs['page-nav'] = (counts.navs['page-nav'] || 0) + 1;
+      if (section.querySelector(':scope > .columns')) return;
+      settingsRows(section).forEach(([key, , row]) => {
+        if (BLOCK_ROWS.includes(key.replace(/ \(\d+\)$/, ''))) {
+          row.remove();
+          counts.rows += 1;
+        }
+      });
+    });
+  });
+}
+
+/**
+ * `[[Futura]…]` links (resource and product link lists): the Futura bold link of the
+ * conventions — Bold, and Bold + Underline when the link is alone in its paragraph (Bold alone
+ * would make it a button there). The tag itself goes with the other tags.
+ */
+function futuraLinks(body, counts) {
+  const doc = body.ownerDocument;
+  [...body.querySelectorAll('a[href]')].forEach((a) => {
+    const tokens = [...a.textContent.matchAll(/\[\[([^\]]+)\]/g)]
+      .flatMap((m) => m[1].split(',').map((t) => t.trim().toLowerCase()));
+    if (!tokens.includes('futura')) return;
+    if (!a.closest('strong, b') && !a.querySelector('strong, b')) {
+      const strong = doc.createElement('strong');
+      a.replaceWith(strong);
+      strong.append(a);
+    }
+    const holder = a.closest('p, li, h1, h2, h3, h4, h5, h6, td, div');
+    const alone = holder && holder.matches('p') && plainText(holder) === plainText(a);
+    if (alone && !a.closest('u') && !a.querySelector('u')) {
+      const u = doc.createElement('u');
+      u.append(...a.childNodes);
+      a.append(u);
+    }
+    counts.futuraLinks += 1;
+  });
+}
+
+/**
+ * A section of only a visually hidden heading (`[[visually-hidden]…]`, the page title above a
+ * banner hero): the tag goes, the section gets the `visually-hidden` style.
+ */
+function hiddenHeadings(body, counts) {
+  [...body.children].forEach((section) => {
+    const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));
+    if (own.length !== 1 || !own[0].matches('h1, h2, h3, h4, h5, h6')) return;
+    const heading = own[0];
+    const raw = heading.textContent.trim();
+    if (!/^\[\[\s*visually-hidden\s*\]/i.test(raw) || !raw.endsWith(']')) return;
+    const walker = heading.ownerDocument.createTreeWalker(heading, 4);
+    const nodes = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+    const first = nodes.find((n) => n.nodeValue.trim());
+    const last = [...nodes].reverse().find((n) => n.nodeValue.trim());
+    first.nodeValue = first.nodeValue.replace(/\[\[\s*visually-hidden\s*\]/i, '');
+    last.nodeValue = last.nodeValue.replace(/\]\s*$/, '');
+    addStyle(section, 'visually-hidden');
+    counts.hidden += 1;
+  });
+}
+
 /**
  * Every Columns and Cards block of the document on a standard variant.
  * @param {Element} body the document's body (sections as top-level divs), changed in place
@@ -638,7 +763,13 @@ export function transformDocument(body, { page = true } = {}) {
     spacers: 0,
     textSections: 0,
     layouts: {},
+    navs: {},
+    futuraLinks: 0,
+    hidden: 0,
   };
+  standardNavs(body, counts);
+  futuraLinks(body, counts);
+  hiddenHeadings(body, counts);
   standardLayouts(body, counts);
   [...body.children].forEach((section, si) => {
     const own = [...section.children].filter((c) => !c.classList.contains('section-metadata'));

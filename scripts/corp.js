@@ -297,6 +297,38 @@ export function decorateSections(main) {
 }
 
 /**
+ * Standard pages (`type-scale: standard`): a Bold link that is not alone on its line (in a
+ * list item, a heading or a sentence) is a text link, not a button, as the text conventions
+ * say: `link-text` (Futura bold in the link colour), with `link-gold` for Bold + Italic and
+ * `link-heading` in a heading (the heading's look). Runs after decorateButtons(), which makes
+ * buttons of the links alone in their paragraph; a link alone in a cell stays the bold-link
+ * button, Bold + Underline links keep their convention and citations stay citations.
+ * @param {Element} main The container element
+ */
+export function decorateTextLinks(main) {
+  if (!document.body.classList.contains('type-standard')) return;
+  main.querySelectorAll('a[href]:not(.button, .link-strong)').forEach((a) => {
+    const holder = a.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6, td, th, div');
+    if (!holder || holder.matches('td, th, div')) return;
+    const within = (sel) => {
+      const outer = a.closest(sel);
+      return (outer && holder.contains(outer)) || !!a.querySelector(sel);
+    };
+    if (!within('strong, b') || within('u') || a.querySelector('img, picture')) return;
+    // (the footnote link itself is decorateFootnotes'; a link around a citation is no button
+    // either, and keeps the citation colour)
+    if (a.closest('sup') || /^#fn-/.test(a.getAttribute('href'))) return;
+    if (a.querySelector('sup')) {
+      a.classList.add('link-citation');
+      return;
+    }
+    a.classList.add('link-text');
+    if (within('em, i')) a.classList.add('link-gold');
+    if (holder.matches('h1, h2, h3, h4, h5, h6')) a.classList.add('link-heading');
+  });
+}
+
+/**
  * Loads a corp template (`template` metadata): `templates/<name>/<name>.css` and
  * `<name>.js` (its default export, if any, is called with the document). Themes of a
  * corp template live in the same folder (`<name>-themes.css`, scoped `body.<theme>`) and
