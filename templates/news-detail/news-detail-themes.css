@@ -112,7 +112,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 }
 
    @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
+   /* …except the business-unit Resources links (`bu-resources`, styles/styles-corp.css),
+      which stay three across from 600px, as on the source (203px at 700px) */
+   body.news-detail.full-width .columns:where(:not(.bu-resources .columns)) > div {
    flex-direction: column;
    }
 
