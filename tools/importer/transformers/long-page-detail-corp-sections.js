@@ -94,6 +94,8 @@ export function keepHeadlineBlankLines(document) {
 // pages whose blank rich-text paragraphs are kept as space (blankLineSpacers), page by page
 const BLANK_LINE_PAGES = new Set([
   '/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html',
+  // the blank lines around the climate goals and under "Stryker locations*"
+  '/us/en/about/corporate-responsibility/environmental-programs.html',
 ]);
 
 /**

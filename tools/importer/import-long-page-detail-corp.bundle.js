@@ -2296,7 +2296,9 @@ var CustomImportScript = (() => {
     });
   }
   var BLANK_LINE_PAGES = /* @__PURE__ */ new Set([
-    "/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html"
+    "/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign.html",
+    // the blank lines around the climate goals and under "Stryker locations*"
+    "/us/en/about/corporate-responsibility/environmental-programs.html"
   ]);
   function blankLineSpacers(document, url) {
     if (!BLANK_LINE_PAGES.has(new URL(url).pathname)) return;
