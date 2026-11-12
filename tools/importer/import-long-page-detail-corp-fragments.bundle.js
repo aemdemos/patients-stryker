@@ -1828,7 +1828,7 @@ var CustomImportScript = (() => {
         return;
       }
       const img = doc.createElement("img");
-      img.setAttribute("src", `https://media-assets.stryker.com/is/image/${path}`);
+      img.setAttribute("src", `https://media-assets.stryker.com/is/image/${path}?$max_width_1440$`);
       img.setAttribute("alt", "");
       const box = doc.createElement("div");
       box.className = "c-standalone-image";

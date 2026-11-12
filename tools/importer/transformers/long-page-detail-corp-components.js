@@ -512,7 +512,9 @@ function interactiveImages(main, doc) {
       return;
     }
     const img = doc.createElement('img');
-    img.setAttribute('src', `https://media-assets.stryker.com/is/image/${path}`);
+    // the Dynamic Media size preset the other stryker.com images use (without it Dynamic Media
+    // serves its small default rendition: ASC operating room's hotspot graphic 400px wide)
+    img.setAttribute('src', `https://media-assets.stryker.com/is/image/${path}?$max_width_1440$`);
     img.setAttribute('alt', '');
     const box = doc.createElement('div');
     box.className = 'c-standalone-image';
