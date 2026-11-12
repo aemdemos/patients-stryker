@@ -12,7 +12,8 @@
 /* ---- banner: one image with a text column over its top left from 600px (stryker.com .pDiv
    and .fullWidthImageHero, from 840px: the column 20px from the top, the Section Metadata
    `Text width` wide, default the full width); on phones the text first, then the image; at
-   most the page's content width (1410px), centred, as the source .pDiv.container */
+   most the page's content width (1410px), centred, as the source .pDiv.container; `Text
+   position` (top, left, right) moves the column in from the left (its left value) */
 .hero-corp.banner {
   display: flex;
   flex-direction: column-reverse;
@@ -62,7 +63,7 @@
   .hero-corp.banner > div:last-child {
     position: absolute;
     top: 0;
-    left: 0;
+    left: var(--hero-slide-left, 0);
     box-sizing: border-box;
     width: var(--hero-banner-text-width, 100%);
     padding-block: var(--space-block-l);

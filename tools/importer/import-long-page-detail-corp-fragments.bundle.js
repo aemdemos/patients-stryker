@@ -2872,6 +2872,19 @@ var CustomImportScript = (() => {
       const props = {};
       const cols = Number((/\bcol-sm-(\d+)\b/.exec(box.className) || [])[1] || 12);
       if (cols < 12) props["Text width"] = String(Math.round(cols / 12 * 100));
+      const row = box.querySelector(":scope > div > .colctrl > .row, :scope > .colctrl > .row");
+      if (row) {
+        const rowCols = [...row.children].filter((el) => /\bcol-sm-\d+/.test(el.className));
+        const width = (el) => Number((/\bcol-sm-(\d+)\b/.exec(el.className) || [])[1] || 12);
+        const firstText = rowCols.findIndex((el) => text3(el));
+        const alone = rowCols.slice(firstText + 1).every((el) => !text3(el));
+        if (firstText >= 0 && rowCols.length > 1 && alone) {
+          const before = rowCols.slice(0, firstText).reduce((sum, el) => sum + width(el), 0);
+          const share = (n) => String(Math.round(n / 12 * cols * 100 / 12));
+          if (before) props["Text position"] = `0, ${share(before)}, 0`;
+          props["Text width"] = share(width(rowCols[firstText]));
+        }
+      }
       if (heroRows.box) props["Text box"] = heroRows.box;
       if (Object.keys(props).length) block.setAttribute("data-section-props", JSON.stringify(props));
       if (banner.querySelector(".imgBoxId.bg-shadow")) block.setAttribute("data-section-style", "shadow");

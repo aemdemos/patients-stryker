@@ -1466,3 +1466,11 @@ body.long-page-detail-corp main > .section.columns-container .columns-wrapper .c
 body.long-page-detail-corp main > .section.right {
   text-align: right;
 }
+
+/* a standalone link (bold + underline) in a section with a copy size or serif style (bunion
+   "PATIENTS.STRYKER.COM ▸" under 17.5px Egyptienne copy): Futura bold 14px, as the stryker.com
+   action link, not the copy's font and size */
+body.long-page-detail-corp main > .section:is(.serif, .p-1-25, .p-1-5, .p-1-75, .p-2) a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}
