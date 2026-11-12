@@ -981,8 +981,18 @@ function banners(main, doc) {
     if (!box || !img || !text(box)) return;
     const source = banner.querySelector('.imgBoxId source[srcset]');
     const src = source ? source.getAttribute('srcset').split(/\s+/)[0] : img.getAttribute('src');
+    // a Heading 2 line in the banner's large headline (rep-portal "Rep portal", 24.5px):
+    // its text in `[[text-1-75]…]`, as the copy around it is 14px
+    const subheads = [...box.querySelectorAll('.c-largeheadline .line h2')].map((h2) => text(h2)).filter(Boolean);
     const heroRows = heroTextRows(heroText(box, doc));
     if (!heroRows.rows.length) return;
+    const untag = (value) => value.replace(/\[\[[a-z0-9,-]+\]/g, '').split(']').join('').trim();
+    heroRows.rows.flat(2).flatMap((cell) => (cell.querySelectorAll ? [cell, ...cell.querySelectorAll('p, h2')] : []))
+      .filter((p) => ['P', 'H2'].includes(p.tagName) && subheads.includes(untag(p.textContent)))
+      .forEach((p) => {
+        p.prepend(doc.createTextNode('[[text-1-75]'));
+        p.append(doc.createTextNode(']'));
+      });
     // a banner H1 (SKILL "SKILL Centers of Excellence") is the page title: the headings below
     // stay as they are
     if (box.querySelector('h1')) main.setAttribute('data-banner-title', '');
@@ -1000,6 +1010,8 @@ function banners(main, doc) {
     if (cols < 12) props['Text width'] = String(Math.round((cols / 12) * 100));
     if (heroRows.box) props['Text box'] = heroRows.box;
     if (Object.keys(props).length) block.setAttribute('data-section-props', JSON.stringify(props));
+    // the image box's soft shadow (.bg-shadow: rep-portal, e-Lab): the `shadow` section style
+    if (banner.querySelector('.imgBoxId.bg-shadow')) block.setAttribute('data-section-style', 'shadow');
     banner.replaceWith(block);
   });
 }

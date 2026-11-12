@@ -1414,3 +1414,27 @@ body.long-page-detail-corp main .statistics .statistics-desc {
 body.long-page-detail-corp main .statistics .statistics-desc strong {
   font-family: var(--display-font-family);
 }
+
+/* a banner with `shadow` (stryker.com .imgBoxId.bg-shadow: rep-portal, e-Lab): the soft
+   shadow around the banner, at every width */
+body.long-page-detail-corp main > .section.shadow .hero-corp.banner {
+  box-shadow: var(--shadow-soft);
+}
+
+/* buttons in a banner (rep-portal "Register" / "Sign in"): 25px in from the text, as the
+   stryker.com curated CTA box */
+body.long-page-detail-corp main .hero-corp.banner :is(p.button-wrapper, p.button-wrapper + p:has(> a.link-strong)) {
+  margin-left: calc(var(--space-block) + var(--space-block-s));
+}
+
+/* a banner subheading (`[[text-1-75]…]`, rep-portal "Rep portal"): 21px on phones, 24.5px from
+   600px, as the stryker.com large-headline h2 */
+body.long-page-detail-corp main .hero-corp.banner span.text-1-75 {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp.banner span.text-1-75 {
+    font-size: var(--heading-font-size-xl);
+  }
+}

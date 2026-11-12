@@ -2797,8 +2797,14 @@ var CustomImportScript = (() => {
       if (!box || !img || !text3(box)) return;
       const source = banner.querySelector(".imgBoxId source[srcset]");
       const src = source ? source.getAttribute("srcset").split(/\s+/)[0] : img.getAttribute("src");
+      const subheads = [...box.querySelectorAll(".c-largeheadline .line h2")].map((h2) => text3(h2)).filter(Boolean);
       const heroRows = heroTextRows(heroText(box, doc));
       if (!heroRows.rows.length) return;
+      const untag = (value) => value.replace(/\[\[[a-z0-9,-]+\]/g, "").split("]").join("").trim();
+      heroRows.rows.flat(2).flatMap((cell) => cell.querySelectorAll ? [cell, ...cell.querySelectorAll("p, h2")] : []).filter((p) => ["P", "H2"].includes(p.tagName) && subheads.includes(untag(p.textContent))).forEach((p) => {
+        p.prepend(doc.createTextNode("[[text-1-75]"));
+        p.append(doc.createTextNode("]"));
+      });
       if (box.querySelector("h1")) main.setAttribute("data-banner-title", "");
       const asset = (url) => (url || "").split("?")[0];
       const rows = [[heroImage(img, doc, src)]];
@@ -2813,6 +2819,7 @@ var CustomImportScript = (() => {
       if (cols < 12) props["Text width"] = String(Math.round(cols / 12 * 100));
       if (heroRows.box) props["Text box"] = heroRows.box;
       if (Object.keys(props).length) block.setAttribute("data-section-props", JSON.stringify(props));
+      if (banner.querySelector(".imgBoxId.bg-shadow")) block.setAttribute("data-section-style", "shadow");
       banner.replaceWith(block);
     });
   }
