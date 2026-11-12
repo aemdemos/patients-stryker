@@ -1313,6 +1313,15 @@ body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
   }
 }
 
+/* section style `h4-line-above`: every Heading 4 of the section after its first element opens
+   with one blank line of its own (stryker.com <h4><br>Subhead</h4>, e.g. the Sustainability
+   "Supply chain week" article: 48px Heading 4 boxes for a 16.1px line on phones, 40px for
+   20.1px lines from 600px); the text below keeps the paragraph gap. Padding, so the blank
+   line adds to the paragraph margin above instead of collapsing into it */
+body.news-detail main > .section.h4-line-above > .default-content-wrapper > h4:not(:first-child) {
+  padding-top: calc(1em * var(--heading-line-height-h4));
+}
+
 /* …in a `serif` section the panel's text is the light serif too, on the source's 1.06
    lines (25.97px for the 24.5px pull quotes of the incontinence prevalence article) */
 body.news-detail main > .section.serif .panel.left.block .panel-body :is(p, li) {
