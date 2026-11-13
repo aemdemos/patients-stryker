@@ -45,7 +45,7 @@ body.corp-legal main > .section:first-child h1 {
 }
 
 /* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
-body.corp-legal main > .section:first-child h1:has(strong) {
+body.corp-legal main > .section:first-child:not(.headline-3-5vw) h1:has(strong) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xxl);
   font-weight: var(--font-weight-bold);
@@ -54,7 +54,7 @@ body.corp-legal main > .section:first-child h1:has(strong) {
 }
 
 @media (width >= 900px) {
-  body.corp-legal main > .section:first-child h1:has(strong) {
+  body.corp-legal main > .section:first-child:not(.headline-3-5vw) h1:has(strong) {
     line-height: var(--heading-line-height);
   }
 }

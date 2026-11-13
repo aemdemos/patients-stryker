@@ -196,6 +196,7 @@ const WIDTH_STYLES = [
   ['california-transparency', ['width-50', 'width-67']],
   ['hemorrhagic-stroke/mri', ['width-50']],
   ['sms-terms-and-conditions', ['width-50']],
+  ['legal/icrc', ['headline-3-5vw']],
   ['governance/bylaws', [null, null, 'heading-space-l']],
   ['governance/charters', [...Array(11).fill(null), 'heading-space-l', ...Array(9).fill(null), 'heading-space-l']],
 ];
@@ -221,6 +222,7 @@ const DROP_STYLES = [
   ['legal/website-accessibility', ['p-1-25']],
   ['sage/disclosure-and-safety-information', ['p-1-25']],
   ['responsible-supply-chains/po-terms', ['disclaimer']],
+  ['legal/icrc', ['serif', 'p-1-5']],
 ];
 
 // Bracket tags (`[[tag]text]`, the span-tags.js runtime #542 removes) the builder emits become
@@ -340,7 +342,7 @@ function sectionStyles(main, document, url, extra) {
   const copyWidth = COPY_WIDTH.find(([key]) => url.includes(key))?.[1];
   const count = Math.max(widths.length, hrs.length + 1, ...[...extra.keys()].map((i) => i + 1));
   for (let i = 0; i < count; i += 1) {
-    const add = [...(extra.get(i) || [])];
+    const add = [...(extra.get(i) || [])].filter((v) => !drop.includes(v));
     if (widths[i]) add.push(widths[i]);
     if (copyWidth && !widths[i] && !add.some((a) => a.startsWith('headline'))) {
       let titled = false;
@@ -360,7 +362,9 @@ function sectionStyles(main, document, url, extra) {
       if (table) {
         const value = table.querySelector('tr:nth-child(2) td:nth-child(2)');
         const have = text(value).split(',').map((v) => v.trim()).filter((v) => !drop.includes(v));
-        value.textContent = [...have, ...add.filter((v) => !have.includes(v))].join(', ');
+        const added = add.filter((v) => !have.includes(v) && !drop.includes(v));
+        value.textContent = [...have, ...added].join(', ');
+        if (!value.textContent) table.remove();
       } else if (add.length) {
         const block = WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style: add.join(', ') } });
         if (end) end.before(block);
@@ -414,6 +418,24 @@ function publishedDate(document) {
 
 // board-committees: each committee (bold name, member lines) was a pair of sections; the
 // source shows the three side by side, so they become the cells of one Columns row.
+// icrc: the page's full-width hero image (desktop and phone crops, as two images) becomes a
+// Hero Corp block, which shows the crop that fits the viewport.
+function heroImage(main, document, url) {
+  if (!url.includes('legal/icrc')) return;
+  const imgs = [...main.querySelectorAll('p > a[href*="media-assets.stryker.com"]')]
+    .filter((a) => text(a) === a.getAttribute('href'));
+  if (!imgs.length) return;
+  const [first] = imgs;
+  const holder = first.parentElement;
+  imgs.slice(1).forEach((a) => a.parentElement.remove());
+  const cells = imgs.slice(0, 2).map((a) => [a]);
+  holder.replaceWith(WebImporter.Blocks.createBlock(document, { name: 'Hero Corp (image-slide)', cells }));
+  main.querySelectorAll('table').forEach((table) => {
+    if (text(table.querySelector('th, tr')) === 'Section Metadata'
+      && text(table).includes('full-width-image')) table.remove();
+  });
+}
+
 function committeeColumns(main, document, url) {
   if (!url.includes('governance/board-committees')) return;
   const hrs = [...main.children].filter((n) => n.tagName === 'HR');
@@ -458,6 +480,7 @@ export default {
     executeTransformers('afterTransform', main, payload);
     const bracketStyles = stripBrackets(main, document);
     committeeColumns(main, document, url);
+    heroImage(main, document, url);
     underlineTitles(main, document);
     dropUnlistedStyles(main);
     trimEmptyCells(main);
