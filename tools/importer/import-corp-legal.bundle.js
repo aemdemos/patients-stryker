@@ -3041,7 +3041,6 @@ var CustomImportScript = (() => {
     ["california-transparency", ["width-50", "width-67"]],
     ["hemorrhagic-stroke/mri", ["width-50"]],
     ["sms-terms-and-conditions", ["width-50"]],
-    ["legal/icrc", ["headline-3-5vw"]],
     ["governance/bylaws", [null, null, "heading-space-l"]],
     ["governance/charters", [...Array(11).fill(null), "heading-space-l", ...Array(9).fill(null), "heading-space-l"]]
   ];
@@ -3052,10 +3051,9 @@ var CustomImportScript = (() => {
     ["legal/surgeon-disclaimer", "width-67"],
     ["legal/website-accessibility", "width-67"],
     ["legal/privacy/privacy-notice-for-california-residents", "width-67"],
-    ["responsible-supply-chains/po-terms", "width-67"],
-    ["governance/bylaws", "width-75"],
-    ["governance/charters", "width-75"]
+    ["responsible-supply-chains/po-terms", "width-67"]
   ];
+  var WIDE_COPY = ["governance/bylaws", "governance/charters"];
   var DROP_STYLES = [
     ["legal/website-accessibility", ["p-1-25"]],
     ["sage/disclosure-and-safety-information", ["p-1-25"]],
@@ -3174,6 +3172,7 @@ var CustomImportScript = (() => {
         }
         if (!titled) add.push(copyWidth);
       }
+      if (WIDE_COPY.some((key) => url.includes(key)) && !add.some((a) => a.startsWith("headline")) && !add.includes("heading-space-l")) add.push("heading-space-l");
       if (add.length || drop.length) {
         const end = ends[i];
         let table = null;
@@ -3236,7 +3235,9 @@ var CustomImportScript = (() => {
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
   }
+  var HERO_OPTIONS = "image-slide, text-below, top-19, left-7-7, size-3-5";
   function heroImage(main, document, url) {
+    var _a;
     if (!url.includes("legal/icrc")) return;
     const imgs = [...main.querySelectorAll('p > a[href*="media-assets.stryker.com"]')].filter((a) => text4(a) === a.getAttribute("href"));
     if (!imgs.length) return;
@@ -3244,9 +3245,16 @@ var CustomImportScript = (() => {
     const holder = first.parentElement;
     imgs.slice(1).forEach((a) => a.parentElement.remove());
     const cells = imgs.slice(0, 2).map((a) => [a]);
-    holder.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Hero Corp (image-slide)", cells }));
+    const kids = [...main.children];
+    const hrIdx = kids.findIndex((n) => n.tagName === "HR");
+    const title = kids.filter((n, i) => n.matches("h1, p") && (hrIdx < 0 || i < hrIdx) && !n.contains(holder));
+    cells.push([title.slice(0, 2)]);
+    const hero = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
+    holder.replaceWith(hero);
+    hero.after(document.createElement("hr"), ...title.slice(2));
+    while (((_a = main.firstElementChild) == null ? void 0 : _a.tagName) === "HR") main.firstElementChild.remove();
     main.querySelectorAll("table").forEach((table) => {
-      if (text4(table.querySelector("th, tr")) === "Section Metadata" && text4(table).includes("full-width-image")) table.remove();
+      if (text4(table.querySelector("th, tr")) === "Section Metadata" && (text4(table).includes("full-width-image") || text4(table).includes("spacer") && !text4(table).includes("large"))) table.remove();
     });
   }
   function committeeColumns(main, document, url) {

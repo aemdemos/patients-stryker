@@ -196,13 +196,12 @@ const WIDTH_STYLES = [
   ['california-transparency', ['width-50', 'width-67']],
   ['hemorrhagic-stroke/mri', ['width-50']],
   ['sms-terms-and-conditions', ['width-50']],
-  ['legal/icrc', ['headline-3-5vw']],
   ['governance/bylaws', [null, null, 'heading-space-l']],
   ['governance/charters', [...Array(11).fill(null), 'heading-space-l', ...Array(9).fill(null), 'heading-space-l']],
 ];
 
 // Pages whose copy sits in 8/12 of the row (stryker.com `col-md-8`) from 900px, except the
-// sections that hold the page title; bylaws and charters use 9/12.
+// sections that hold the page title.
 const COPY_WIDTH = [
   ['governance/corporate-governance-guidelines', 'width-67'],
   ['governance/equity-based-compensation-awards', 'width-67'],
@@ -211,9 +210,11 @@ const COPY_WIDTH = [
   ['legal/website-accessibility', 'width-67'],
   ['legal/privacy/privacy-notice-for-california-residents', 'width-67'],
   ['responsible-supply-chains/po-terms', 'width-67'],
-  ['governance/bylaws', 'width-75'],
-  ['governance/charters', 'width-75'],
 ];
+
+// bylaws and charters: every section but the title one carries `heading-space-l`, which the
+// template also uses for these pages' 9/12 copy width
+const WIDE_COPY = ['governance/bylaws', 'governance/charters'];
 
 // Section styles the shared builder adds that the source does not show: the intro of the
 // accessibility and Sage pages is 14px (not 1.25em), the po-terms part number 14px
@@ -352,6 +353,8 @@ function sectionStyles(main, document, url, extra) {
       }
       if (!titled) add.push(copyWidth);
     }
+    if (WIDE_COPY.some((key) => url.includes(key)) && !add.some((a) => a.startsWith('headline'))
+      && !add.includes('heading-space-l')) add.push('heading-space-l');
     if (add.length || drop.length) {
       const end = ends[i];
       let table = null;
@@ -416,6 +419,9 @@ function publishedDate(document) {
   return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : '';
 }
 
+// Hero Corp options for the icrc band: title top-left over the image (source Large Headline 3.5vw)
+const HERO_OPTIONS = 'image-slide, text-below, top-19, left-7-7, size-3-5';
+
 // board-committees: each committee (bold name, member lines) was a pair of sections; the
 // source shows the three side by side, so they become the cells of one Columns row.
 // icrc: the page's full-width hero image (desktop and phone crops, as two images) becomes a
@@ -429,10 +435,21 @@ function heroImage(main, document, url) {
   const holder = first.parentElement;
   imgs.slice(1).forEach((a) => a.parentElement.remove());
   const cells = imgs.slice(0, 2).map((a) => [a]);
-  holder.replaceWith(WebImporter.Blocks.createBlock(document, { name: 'Hero Corp (image-slide)', cells }));
+  const kids = [...main.children];
+  const hrIdx = kids.findIndex((n) => n.tagName === 'HR');
+  const title = kids.filter((n, i) => n.matches('h1, p')
+    && (hrIdx < 0 || i < hrIdx)
+    && !n.contains(holder));
+  cells.push([title.slice(0, 2)]);
+  const hero = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
+  holder.replaceWith(hero);
+  // the rule and tagline keep their own size, which the Hero Corp text options cannot set
+  hero.after(document.createElement('hr'), ...title.slice(2));
+  while (main.firstElementChild?.tagName === 'HR') main.firstElementChild.remove();
   main.querySelectorAll('table').forEach((table) => {
     if (text(table.querySelector('th, tr')) === 'Section Metadata'
-      && text(table).includes('full-width-image')) table.remove();
+      && (text(table).includes('full-width-image')
+        || (text(table).includes('spacer') && !text(table).includes('large')))) table.remove();
   });
 }
 

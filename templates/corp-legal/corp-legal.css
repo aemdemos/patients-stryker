@@ -1,14 +1,14 @@
-body.corp-legal main:has(> .section:first-child h1) {
+body.corp-legal main:has(> .section:first-child > .default-content-wrapper > h1) {
   padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
 }
 
 /* a Large Headline title (`headline-2-5vw`): its offset below the header scales with the
    viewport (--corp-large-headline-offset) instead of the fixed gap of sized titles */
-body.corp-legal main:has(> .section:first-child.headline-2-5vw) {
+body.corp-legal main:has(> .section:first-child.headline-2-5vw > .default-content-wrapper > h1) {
   padding-top: var(--corp-large-headline-offset);
 }
 
-body.corp-legal main > .section:first-child:has(h1) {
+body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1) {
   margin-bottom: calc(var(--space-block-l) + var(--space-block));
 }
 
@@ -36,16 +36,20 @@ body.corp-legal main .columns h4:has(+ p) {
   margin-bottom: 0;
 }
 
-body.corp-legal main > .section:first-child:has(h1) > .default-content-wrapper {
+body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
   padding-bottom: 0;
 }
 
-body.corp-legal main > .section:first-child h1 {
+body.corp-legal main > .section:first-child > .default-content-wrapper > h1 {
   line-height: var(--heading-line-height-hero);
 }
 
+body.corp-legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
+  margin-bottom: var(--space-block-s);
+}
+
 /* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
-body.corp-legal main > .section:first-child:not(.headline-2-5vw, .headline-3-5vw) h1:has(strong) {
+body.corp-legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xxl);
   font-weight: var(--font-weight-bold);
@@ -54,8 +58,15 @@ body.corp-legal main > .section:first-child:not(.headline-2-5vw, .headline-3-5vw
 }
 
 @media (width >= 900px) {
-  body.corp-legal main > .section:first-child:not(.headline-2-5vw, .headline-3-5vw) h1:has(strong) {
+  body.corp-legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
     line-height: var(--heading-line-height);
+  }
+}
+
+/* bylaws and charters copy: 9/12 of the row from 900px (stryker.com col-md-9) */
+@media (width >= 900px) {
+  body.corp-legal main > .section.heading-space-l > .default-content-wrapper > * {
+    padding-right: calc(25% + var(--space-block));
   }
 }
 
@@ -71,12 +82,8 @@ body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
 }
 
 /* underlined title-only sections: tighter source line-height on phones */
-body.corp-legal main > .section:first-child h1.underline:not(:has(strong)) {
+body.corp-legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
   line-height: var(--corp-heading-line-height-title-underline);
-}
-
-body.corp-legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
-  margin-bottom: var(--space-block-s);
 }
 
 body.corp-legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
@@ -84,11 +91,11 @@ body.corp-legal main > .section > .default-content-wrapper:not(:has(+ .columns-w
 }
 
 @media (width >= 600px) {
-  body.corp-legal main > .section:first-child h1.underline:not(:has(strong)) {
+  body.corp-legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
     line-height: var(--heading-line-height);
   }
 
-  body.corp-legal main > .section:first-child:has(h1) {
+  body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1) {
     margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
