@@ -375,3 +375,161 @@
 .hero-corp.box-light-gray { --hero-box-bg: var(--color-surface); }
 .hero-corp.box-dark-gray { --hero-box-bg: var(--color-secondary); }
 .hero-corp.box-blue { --hero-box-bg: var(--color-navy-bright); }
+
+/* ---- the standard Hero variants (standardisation, branch standardise-v3) ----
+   Every hero is one of three variants; the variant owns the layout and the type (10-step
+   scale, --corp-type-*), the author only the content: the image rows and a text cell with a
+   Heading 1 (Bold words Futura bold, the others the light serif), a Heading 2, copy and a
+   button. Models measured on stryker.com at 1440px:
+   - product-hero: the image in the right half, the text over the left half, 8% in and 18%
+     down (51 of 86 product heroes); Display gold title, Title subtitle, Lead copy, light serif
+     (sage-air-pump, sage-halfmats, arise-1000-ex)
+   - banner: the image across the page, the text over its left half from 5% / 5% (the most
+     common text box); Display headline, Title second line, Lead copy: the middle of the 127
+     banners' headline sizes (a quarter each at 56px and up, 35-55px, under 35px, the 28px page
+     default; gamma4, pangea, pro-pelvis are the 70px end)
+   - banner-light: a banner on a dark image, its text light over a shade on the image's text
+     side (blueprint, shoulder-id, tornier; xpr-restraints had a dark box)
+   Phones: the image (its phone crop when there is one), the text under it, dark; the product
+   hero goes side by side from 600px, the banners put their text over the image from 900px. */
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) {
+  --hero-slide-top: 5%;
+  --hero-slide-left: 5%;
+  --hero-slide-right: 45%;
+  --hero-slide-bottom: auto;
+  --hero-std-title: var(--corp-type-display);
+  --hero-std-subtitle: var(--corp-type-title);
+  --hero-std-copy: var(--corp-type-lead);
+}
+
+main .hero-corp.image-slide.product-hero {
+  --hero-slide-top: 18%;
+  --hero-slide-left: 8%;
+  --hero-slide-right: 50%;
+  --hero-std-title: var(--corp-type-display);
+  --hero-std-subtitle: var(--corp-type-title);
+  --hero-std-copy: var(--corp-type-lead);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child {
+  position: static;
+  padding: var(--space-block-l) var(--space-block-l) 0;
+  background: none;
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > * {
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(h1, h2) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--corp-type-line-height-display);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(h1) {
+  font-size: var(--hero-std-title);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(h2) {
+  font-size: var(--hero-std-subtitle);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(h1, h2) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(p, ul, ol):not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-size: var(--hero-std-copy);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child > :is(.button-wrapper) {
+  margin-top: var(--corp-component-gap-after-text);
+}
+
+/* gold: Bold + Italic (the authoring convention), upright */
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light) > :last-child :is(strong em, em strong):not(a *) {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* phones: the phone crop when there is one, else the desktop image */
+main .hero-corp.image-slide:is(.product-hero, .banner, .banner-light):not(:has(.hero-image-mobile)) .hero-image-desktop {
+  display: block;
+}
+
+@media (width >= 600px) {
+  /* product hero: the image in the right half, the text over the left half */
+  main .hero-corp.image-slide.product-hero .hero-image-desktop {
+    display: block;
+  }
+
+  main .hero-corp.image-slide.product-hero .hero-image-mobile {
+    display: none;
+  }
+
+  main .hero-corp.image-slide.product-hero > :first-child {
+    display: block;
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  main .hero-corp.image-slide.product-hero > :last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: 0;
+  }
+
+  main .hero-corp.image-slide:is(.banner, .banner-light):has(.hero-image-mobile) .hero-image-desktop {
+    display: none;
+  }
+
+  main .hero-corp.image-slide:is(.banner, .banner-light) .hero-image-mobile {
+    display: block;
+  }
+
+  main .hero-corp.image-slide:is(.banner, .banner-light) > :last-child {
+    position: static;
+    padding: var(--space-block-l) var(--space-block-l) 0;
+  }
+}
+
+@media (width >= 900px) {
+  main .hero-corp.image-slide:is(.banner, .banner-light) .hero-image-desktop,
+  main .hero-corp.image-slide:is(.banner, .banner-light):has(.hero-image-mobile) .hero-image-desktop {
+    display: block;
+  }
+
+  main .hero-corp.image-slide:is(.banner, .banner-light) .hero-image-mobile {
+    display: none;
+  }
+
+  main .hero-corp.image-slide:is(.banner, .banner-light) > :last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
+    padding: 0;
+  }
+
+  /* banner-light: light text over the dark image (gold stays gold), a shade on the image's
+     text side so it stays readable on any photo */
+  main .hero-corp.image-slide.banner-light > :last-child > * {
+    color: var(--color-surface);
+  }
+
+  main .hero-corp.image-slide.banner-light > :first-child {
+    position: relative;
+  }
+
+  main .hero-corp.image-slide.banner-light > :first-child::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--corp-banner-scrim);
+    pointer-events: none;
+  }
+}

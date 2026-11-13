@@ -4,6 +4,9 @@ import decorateMapLinks from '../../scripts/map-embed.js';
 // YouTube link signatures (watch, short youtu.be and nocookie embeds)
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
 
+// the standard corp variants (columns-corp.css): their CSS owns the type
+const STANDARD_VARIANTS = ['media-text', 'card-grid', 'text-columns', 'feature-statement', 'image-row'];
+
 /**
  * Extracts the 11-character video id from a YouTube URL (watch?v=, youtu.be/ID,
  * /embed/ID, /shorts/ID).
@@ -217,6 +220,9 @@ export default function decorate(block) {
           next.remove();
         });
       }
+
+      // (a standard variant owns its type: no formatting markers for the older styles)
+      if (STANDARD_VARIANTS.some((v) => block.classList.contains(v))) return;
 
       // fully Bold paragraphs (labels, questions) and Heading 1/2s are tagged so styles can
       // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot

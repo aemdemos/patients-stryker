@@ -60,6 +60,23 @@
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
+  --corp-std-band-space: 34px; /* standard Columns in a coloured band: band edge → content (median of 8 measured stryker.com band edges, 26–47px) */
+
+  /* the standard type scale (standardise pilot, pages with `type-scale: standard`): 10 named
+     steps, each from its phone size (375px) to its desktop size (1440px). Desktop sizes: the
+     sizes 97.5% of the pilot pages' text renders at (stryker.com 0.8em … 5vw at 1440px) */
+  --corp-type-small: 11.2px;
+  --corp-type-body: 14px;
+  --corp-type-large: 17.5px;
+  --corp-type-lead: 21px;
+  --corp-type-subtitle: clamp(22.75px, calc(22.75px + 1.75 * ((100vw - 375px) / 1065)), 24.5px);
+  --corp-type-title: clamp(24.5px, calc(24.5px + 3.5 * ((100vw - 375px) / 1065)), 28px);
+  --corp-type-headline: clamp(26.25px, calc(26.25px + 8.75 * ((100vw - 375px) / 1065)), 35px);
+  --corp-type-display: clamp(28px, calc(28px + 14 * ((100vw - 375px) / 1065)), 42px);
+  --corp-type-statement: clamp(31.5px, calc(31.5px + 24.5 * ((100vw - 375px) / 1065)), 56px);
+  --corp-type-hero: clamp(37.5px, calc(37.5px + 32.5 * ((100vw - 375px) / 1065)), 70px);
+  --corp-type-line-height-display: 1.15; /* Subtitle and up */
+  --corp-banner-scrim: linear-gradient(90deg, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 35%) 45%, rgb(0 0 0 / 0%) 65%); /* the standard light-text banner: its text side darkened */
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
@@ -224,6 +241,12 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 
 :where(body.corp) h3 {
   font-size: var(--corp-h3-size, var(--heading-font-size-m));
+}
+
+/* a corp h1 has no size of its own (the browser's 2em); on the standard type scale it is the
+   Title step (--heading-font-size-xxl, see the type scale below) */
+:where(body.corp.type-standard) main h1 {
+  font-size: var(--heading-font-size-xxl);
 }
 
 /* h4: 14px on phones, 17.5px from 600px (stryker.com h4 14px, 17.5px from 480px: no EDS
@@ -745,7 +768,7 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 
 /* stats in the dark gradients take the light text (stryker.com fast facts, e.g. the Learn
    "Our impact" panel: white numbers and text) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .purple-band, .blue-band) .statistics :is(.statistics-value, .statistics-desc, .statistics-desc p) {
   color: inherit;
 }
 
@@ -1131,6 +1154,32 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   }
 }
 
+/* the standard type scale (standardise pilot, pages with `type-scale: standard`): the heading
+   levels and the large copy / label sizes are steps of the scale (h1 Title, h2 Subtitle, panel
+   headings Headline), and a step name in the text ([[Statement]…]) is its step wherever it
+   is used */
+:where(body.corp.type-standard) {
+  --heading-font-size-xxl: var(--corp-type-title);
+  --heading-font-size-xl: var(--corp-type-subtitle);
+  --panel-heading-size: var(--corp-type-headline);
+}
+
+:where(body.corp.type-standard) main span.type-small { font-size: var(--corp-type-small); }
+:where(body.corp.type-standard) main span.type-body { font-size: var(--corp-type-body); }
+:where(body.corp.type-standard) main span.type-large { font-size: var(--corp-type-large); }
+:where(body.corp.type-standard) main span.type-lead { font-size: var(--corp-type-lead); }
+
+:where(body.corp.type-standard) main span:is(.type-subtitle, .type-title, .type-headline, .type-display, .type-statement, .type-hero) {
+  line-height: var(--corp-type-line-height-display);
+}
+
+:where(body.corp.type-standard) main span.type-subtitle { font-size: var(--corp-type-subtitle); }
+:where(body.corp.type-standard) main span.type-title { font-size: var(--corp-type-title); }
+:where(body.corp.type-standard) main span.type-headline { font-size: var(--corp-type-headline); }
+:where(body.corp.type-standard) main span.type-display { font-size: var(--corp-type-display); }
+:where(body.corp.type-standard) main span.type-statement { font-size: var(--corp-type-statement); }
+:where(body.corp.type-standard) main span.type-hero { font-size: var(--corp-type-hero); }
+
 /* bracket tag `[[futura-bold]…]` inside a link: a bold text link (stryker.com span.futura-bold
    around a link alone on its line, e.g. nailing-portfolio "Gamma4 Trochanteric Nail"), not a
    button */
@@ -1457,8 +1506,9 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 }
 
 /* links on dark bands are white, except citation links: those keep the colour of the text
-   they cite from (npseal, pidrive gold stat citations) */
-:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark) a:any-link:not(.button, .link-strong, sup *, [href^="#fn-"]) {
+   they cite from (npseal, pidrive gold stat citations); gold (Bold + Italic) text links of the
+   standard pages stay gold */
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .bg-dark-orange-gradient, .dark, .purple-band, .blue-band) a:any-link:not(.button, .link-strong, .link-gold, sup *, [href^="#fn-"]) {
   color: var(--color-white);
 }
 
@@ -1532,10 +1582,10 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   --corp-label-size: var(--heading-font-size-xxl);
 }
 
-:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child):where(:not(.columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) p)) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }
@@ -1990,3 +2040,229 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp) main .corp-spacing-box.cell-bg-dark-blue-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-blue); }
 :where(body.corp) main .corp-spacing-box.cell-bg-dark-orange-gradient { --corp-cell-bg-image: var(--corp-gradient-dark-orange); }
 :where(body.corp) main .corp-spacing-box.cell-dark { --corp-cell-bg-image: var(--panel-dark-gradient); }
+
+/* ---- the standard section backgrounds (standardisation, branch standardise-v3) ----
+   Four backgrounds replace the 15 background styles and their modifiers; each owns its colour,
+   shape and spacing (no Padding / Margin / Blank lines rows):
+   - grey-band: a full-width light grey band (was bg-light-gray, bg-silver)
+   - gold-box: a gold box in the page width (was bg-gold, bg-golden-gradient; most were boxes)
+   - purple-band / blue-band: a full-width dark gradient band with light text (was the purple,
+     blue, teal `dark`, grey and orange dark styles; two tints at the user's choice)
+   The band space is the measured median of stryker.com band edges (--corp-std-band-space). */
+:where(body.corp) main > div.section:is(.grey-band, .purple-band, .blue-band) {
+  display: flow-root;
+  margin-bottom: 0;
+  padding-block: var(--corp-std-band-space) calc(var(--corp-std-band-space) - var(--space-block));
+}
+
+:where(body.corp) main > div.section.grey-band {
+  background-color: var(--color-surface);
+}
+
+:where(body.corp) main > div.section.purple-band {
+  background-image: var(--corp-gradient-dark-purple);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > div.section.blue-band {
+  background-image: var(--corp-gradient-dark-blue);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > div.section.gold-box {
+  width: calc(min(100%, var(--container-max)) - 2 * var(--container-gutter));
+  box-sizing: border-box;
+  margin-inline: auto;
+  padding-block: var(--space-block-l) calc(var(--space-block-l) - var(--space-block));
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main > div.section:is(.purple-band, .blue-band) :is(h1, h2, h3, h4, h5, h6, p, li) {
+  color: inherit;
+}
+
+/* ---- the standard default content (standardisation; pages with `type-scale: standard`) ----
+   Headings and copy take the scale by level (h1 Title, h2 Subtitle: the token remap above), no
+   authored sizes, fonts or colours. Gold is Bold + Italic in copy too (the authoring
+   convention; on the other corp pages Bold + Italic copy keeps its colour), upright. The
+   statement section (Large Headline): Bold words Futura bold, the other words the light serif,
+   at the Headline step at every width. */
+:where(body.corp.type-standard) main :is(p, li) :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+:where(body.corp.type-standard) main > .section.large-headline:not(.h-serif) > .default-content-wrapper > :is(h1, h2, h3) {
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-type-headline);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--corp-type-line-height-display);
+}
+
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* gold words keep their heading's size (styles.css sizes gold h2 / h3 markers on their own) */
+:where(body.corp.type-standard) main :is(h1, h2, h3) :is(em strong, strong em) {
+  font-size: inherit;
+}
+
+/* the statement's other lines: the light serif at the Lead step (the source's line 2) */
+:where(body.corp.type-standard) main > .section.large-headline > .default-content-wrapper > :is(p):not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-type-lead);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* the standard Video (standardisation; pages with `type-scale: standard`): no border on any
+   player (the corp Video draws the source's 1px frame unless no-border) */
+:where(body.corp.type-standard) main div.section .video:not(.no-border) :is(video, iframe) {
+  border: 0;
+}
+
+/* the standard text links (standardisation; pages with `type-scale: standard`): a Bold link
+   that is not alone on its line follows the text conventions, never a button (corp.js
+   decorateTextLinks): Futura bold in the link colour, Bold + Italic gold; in a heading the
+   link takes the heading's look. On dark bands the band's link colour stays */
+:where(body.corp.type-standard) main a.link-text:any-link,
+:where(body.corp.type-standard) main a.link-text:any-link > :is(strong, b, em, i) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+:where(body.corp.type-standard) main a.link-text:any-link > :is(strong, b, em, i) {
+  color: inherit;
+}
+
+:where(body.corp.type-standard) main a.link-text:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+:where(body.corp.type-standard) main a.link-text.link-gold:any-link {
+  color: var(--color-accent);
+}
+
+:where(body.corp.type-standard) main a.link-text.link-heading:any-link,
+:where(body.corp.type-standard) main a.link-text.link-heading:any-link > :is(strong, b, em, i) {
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+}
+
+/* a Bold link around a citation: the citation, no button box (its colour is the citation's) */
+:where(body.corp.type-standard) main a.link-citation:any-link,
+:where(body.corp.type-standard) main a.link-citation:any-link > :is(strong, b, em, i) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font: inherit;
+  text-transform: inherit;
+}
+
+/* the hidden heading section (`visually-hidden` style: the page title above a banner hero):
+   read by screen readers and search engines, not shown, and takes no room */
+:where(body.corp) main > div.section.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- the standard section layouts (standardisation, branch standardise-v3) ----
+   Side by side (`flex`): equal by default; wide-first / wide-last make the first / last piece two
+   thirds (the source col-sm-8 + col-sm-4, one 30px gutter). Placement: the section's content in
+   part of the container from 600px (full width on phones): half-left, half-right, third-left,
+   two-thirds-left, quarter-left, centre-third (the source's lone column of a column control).
+   middle: pieces side by side centred vertically (default: top). */
+:where(body.corp) main > div.section.half-left {
+  --corp-place-width: 0.5;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.half-right {
+  --corp-place-width: 0.5;
+  --corp-place-start: 0.5;
+}
+
+:where(body.corp) main > div.section.third-left {
+  --corp-place-width: 0.3333;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.two-thirds-left {
+  --corp-place-width: 0.6667;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.quarter-left {
+  --corp-place-width: 0.25;
+  --corp-place-start: 0;
+}
+
+:where(body.corp) main > div.section.centre-third {
+  --corp-place-width: 0.3333;
+  --corp-place-start: 0.3333;
+}
+
+:where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div:where(:not(:first-child, :empty)) {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > div.section:is(.half-left, .half-right, .third-left, .two-thirds-left, .quarter-left, .centre-third) > div {
+    box-sizing: border-box;
+    max-width: calc(min(100%, var(--container-max)) * var(--corp-place-width));
+    margin-left: calc((100% - min(100%, var(--container-max))) / 2 + min(100%, var(--container-max)) * var(--corp-place-start));
+    margin-right: auto;
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > div.section.flex.wide-first > div:first-child,
+  :where(body.corp) main > div.section.flex.wide-last > div:nth-child(2) {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main > div.section.flex:is(.wide-first, .wide-last) > div:empty {
+    display: none;
+  }
+
+  :where(body.corp) main > div.section.flex.middle {
+    align-items: center;
+  }
+}

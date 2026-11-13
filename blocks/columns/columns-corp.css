@@ -34,11 +34,11 @@ body.corp .columns > div > div h2 {
 /* serif section (styles-corp.css): the cells' copy keeps the section's copy size
    (--corp-copy-size, 14px without a p-* style) instead of the patients 21px serif Columns
    copy (stryker.com nse footed-attachments: 14px Egyptienne list) */
-body.corp .section.serif .columns :is(p, li) {
+body.corp .section.serif .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li) {
   font-size: var(--corp-copy-size, var(--body-font-size-m));
 }
 
-body.corp .section.serif .columns :is(ul, a) {
+body.corp .section.serif .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(ul, a) {
   font-size: inherit;
 }
 
@@ -230,7 +230,7 @@ body.corp .columns.large-headline li + li {
    Futura 700 gold, 35px below 840px, 43.75px above). Its plain words are the light serif
    (two-tone, as "We build trust."); the gold marker keeps the heading size (columns.css
    sizes gold h2 markers). large-headline has its own heading scale. */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em) {
+body.corp .columns:not(.large-headline):where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) > div > div h2:has(> em > strong, > strong > em) {
   font-family: var(--heading-font-family);
   font-size: var(--columns-corp-display-size);
   font-weight: var(--font-weight-regular);
@@ -243,7 +243,7 @@ body.corp .columns.large-headline h2:is(.underline, :has(> u)) {
 }
 
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+body.corp .columns:not(.large-headline):where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
   line-height: 1.33;
 }
 
@@ -432,12 +432,12 @@ body.corp .columns.related-links p a:any-link:has(u) {
 
 /* section style serif with p-1 / p-1-25: 14px or 17.5px serif copy (stryker.com
    urw-egyptienne at 1em / .fontsize-1-25em); serif alone sets 21px */
-body.corp .section.serif.p-1 .columns :is(p, li, a) {
+body.corp .section.serif.p-1 .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li, a) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
+body.corp .section.serif.p-1-25 .columns:where(:not(.media-text, .card-grid, .text-columns, .feature-statement, .image-row)) :is(p, li, a) {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
@@ -510,7 +510,7 @@ body.corp .columns.link-groups.columns-4-cols > div > div {
 }
 
 /* page-intro: cells keep the 15px column gutter at every width, level with the row top */
-body.corp .columns.columns-50-50.page-intro > div > div {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div {
   margin-top: 0;
   padding: 0 var(--space-block);
 }
@@ -521,7 +521,7 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
 }
 
 /* page-intro: the text before an image too (no patients 50-50 / compact 30px drop or 49px inset) */
-body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
   margin-top: 0;
   padding: 0 var(--space-block);
 }
@@ -701,35 +701,37 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
 }
 
 /* page-intro: the stryker.com page hero (pagehero, hero, longtexthero components), authored
-   as columns-50-50 page-intro (+ border-bottom for the source's grey rule): a Bold + Italic
+   as columns-50-50 page-intro (+ border-bottom for the source's grey rule; the standard
+   Product intro variant is page-intro alone, always with the rule): a Bold + Italic
    Heading 1 is the 28px gold Futura title, a plain Heading 1 the black Futura title of the
    long-text hero, a plain Heading 2 the 24.5px Egyptienne Light subhead and paragraphs the
    14px body copy | image. With no image the text cell alone takes half the row from 600px
    (source col-sm-6); the cell gutter is set in the cells section. The rule sits 15px under
    the text (paragraph gap) or 10px under the image. Placed last so it overrides the corp
    Large Headline h1 and the patients 50-50 / compact insets whatever the section. */
-body.corp .columns.columns-50-50.page-intro.border-bottom {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro:is(.border-bottom, :not(.columns-50-50)) {
+  border-bottom: 1px solid var(--color-surface-muted);
   padding-bottom: 0;
 }
 
-body.corp .columns.columns-50-50.page-intro > div > div.columns-img-col {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div.columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-body.corp .columns.columns-50-50.page-intro.border-bottom > div > div.columns-img-col {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro:is(.border-bottom, :not(.columns-50-50)) > div > div.columns-img-col {
   padding-bottom: var(--space-block-s);
 }
 
 /* the image keeps its rendition width (666px for the source preset_666_392), never wider
    than the cell, at the cell's start edge */
-body.corp .columns.columns-50-50.page-intro .columns-img-col img {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro .columns-img-col img {
   width: auto;
   margin: 0;
   padding-bottom: 0;
 }
 
-body.corp .columns.columns-50-50.page-intro > div > div h1 {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div h1 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
@@ -739,14 +741,14 @@ body.corp .columns.columns-50-50.page-intro > div > div h1 {
 
 /* gold title: 28px with 1em above it; below 600px its line box stays the 21px heading's
    (22.26px lines), as on stryker.com below 840px */
-body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div h1.columns-gold {
   margin: 1em 0 var(--space-block-s);
   font-size: var(--heading-font-size-xxl);
   line-height: calc(var(--heading-line-height) * var(--heading-font-size-l));
 }
 
 /* the subhead: a plain Heading 2 (not a gold or bold display heading) */
-body.corp .columns.columns-50-50.page-intro > div > div h2:not(.columns-gold, .columns-bold) {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div h2:not(.columns-gold, .columns-bold) {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-xl);
@@ -755,21 +757,21 @@ body.corp .columns.columns-50-50.page-intro > div > div h2:not(.columns-gold, .c
 }
 
 /* a Bold + Underline link (long-text hero "About us") stays a bold body-font text link */
-body.corp .columns.columns-50-50.page-intro a.link-strong:any-link {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro a.link-strong:any-link {
   font-family: var(--body-font-family);
   text-transform: none;
 }
 
-body.corp .columns.columns-50-50.page-intro a.link-strong:any-link::after {
+body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro a.link-strong:any-link::after {
   content: none;
 }
 
 @media (width >= 600px) {
-  body.corp .columns.columns-50-50.page-intro > div > div h1 {
+  body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div h1 {
     font-size: var(--heading-font-size-xl);
   }
 
-  body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+  body.corp .columns:is(.columns-50-50, .columns-2-cols).page-intro > div > div h1.columns-gold {
     line-height: var(--heading-line-height);
   }
 }
@@ -834,4 +836,179 @@ body.corp .columns > div > .cell-dark {
   --corp-cell-bg-image: var(--panel-dark-gradient);
 
   color: var(--color-white);
+}
+
+/* ---- the standard Columns variants (standardisation, branch standardise-v3) ----
+   Every Columns block of the site is one of six variants; the variant owns the whole look
+   (layout and type, from the 10-step scale --corp-type-* in styles-corp.css), the author only
+   the content: heading levels, Bold, Italic (Bold + Italic = gold), links. No sizes, widths,
+   boxes or colours are authored. Models measured on stryker.com at 1440px:
+   - media-text: an image or video beside its text, equal halves, in the order the author gives
+     (barimatt-plus, comfortgel-se: Futura bold 26px title, 17.5px copy, 30px gutter)
+   - card-grid: 2 to 4 cards in a row, each an image above its text (arise-1000-ex, bari-10a:
+     440px cards 30px apart, 30px image → title, Futura bold 21–26px titles, 17.5px copy)
+   - text-columns: 2 to 4 text columns (arise-1000-ex "at a glance": Futura bold 37px heading,
+     17.5px copy and lists)
+   - feature-statement: a large statement beside an image (dermacell, spy-elite: Futura bold
+     words with light serif words in one 35px headline, a 21px Futura bold subhead, 14px serif
+     copy, the text 20px in)
+   - image-row: 2 to 4 images in a row (the media-pair grid: one per row on phones, then a row)
+   - page-intro: the product intro (product-detail template), unchanged
+   Phones: one column; from 600px media-text and feature-statement sit side by side, cards,
+   text columns and images two per row; from 900px every cell of a row in one line.
+   (Rows and cells are `> *` and `> * > *`: the variants own them, whatever the decoration adds.) */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) {
+  --columns-std-gap: var(--space-section);
+  --columns-std-title-size: var(--corp-type-title);
+  --columns-std-heading-size: var(--corp-type-subtitle);
+  --columns-std-copy-size: var(--corp-type-large);
+}
+
+body.corp main .columns.card-grid { --columns-std-title-size: var(--corp-type-subtitle); }
+
+body.corp main .columns.text-columns {
+  --columns-std-title-size: var(--corp-type-headline);
+  --columns-std-h3-size: var(--corp-type-subtitle);
+}
+
+/* feature-statement: the statement is a Heading 2 (Bold words in Futura bold, the other words in
+   the light serif), a Heading 3 or 4 its subhead, the copy small serif text */
+body.corp main .columns.feature-statement {
+  --columns-std-title-size: var(--corp-type-headline);
+  --columns-std-h3-size: var(--corp-type-lead);
+  --columns-std-heading-size: var(--corp-type-lead);
+  --columns-std-copy-size: var(--corp-type-body);
+  --columns-std-copy-font: var(--heading-font-family);
+  --columns-std-statement-font: var(--heading-font-family);
+  --columns-std-statement-weight: var(--font-weight-regular);
+  --columns-std-text-inset: var(--space-block-l);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+  flex-flow: column nowrap;
+  align-items: stretch;
+  row-gap: var(--columns-std-gap);
+  margin-inline: calc(var(--columns-std-gap) / -2);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * + * {
+  margin-top: var(--columns-std-gap);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+  flex: 1 1 auto;
+  padding: 0 calc(var(--columns-std-gap) / 2);
+  font-family: var(--columns-std-copy-font, var(--body-font-family));
+  font-size: var(--columns-std-copy-size);
+  line-height: var(--paragraph-line-height);
+  overflow-wrap: anywhere;
+}
+
+/* type: the variant's, whatever the section around it sets */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, li) {
+  font-family: var(--columns-std-copy-font, var(--body-font-family));
+  font-size: var(--columns-std-copy-size);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-type-line-height-display);
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2) {
+  font-family: var(--columns-std-statement-font, var(--display-font-family));
+  font-size: var(--columns-std-title-size);
+  font-weight: var(--columns-std-statement-weight, var(--font-weight-bold));
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h3) {
+  font-size: var(--columns-std-h3-size, var(--columns-std-title-size));
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h4, h5, h6) {
+  font-size: var(--columns-std-heading-size);
+}
+
+/* Bold words of a statement are Futura bold */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(h1, h2) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* gold: Bold + Italic text (the authoring convention; corp copy elsewhere keeps its colour
+   for the source's Futura bold labels, which the variants author as Bold), upright */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, li, h4, h5, h6) :is(strong em, em strong, b i, i b):not(a *) {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* a heading after copy starts a new part of the cell */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * :is(p, ul, ol) + :is(h2, h3, h4, h5, h6) {
+  margin-top: var(--space-section);
+}
+
+/* images: the full width of their cell, one gutter above the text below them */
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col {
+  margin: 0 0 var(--columns-std-gap);
+  padding: 0;
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col:last-child {
+  margin-bottom: 0;
+}
+
+body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * .columns-img-col :is(img, video) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 600px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+    flex: 0 0 50%;
+  }
+
+  /* media-text, feature-statement: image and text side by side, the text level with the image top */
+  body.corp main .columns:is(.media-text, .feature-statement) > * > * .columns-img-col {
+    margin-bottom: 0;
+  }
+
+  body.corp main .columns:is(.media-text, .feature-statement) > * > :not(:has(.columns-img-col)) {
+    padding-inline: calc(var(--columns-std-gap) / 2 + var(--columns-std-text-inset, 0px));
+  }
+}
+
+@media (width >= 900px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    flex-wrap: nowrap;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * > * {
+    flex: 1 1 0;
+  }
+}
+
+/* the two-cell variants: wide-first / wide-last make that cell two thirds from 600px (the
+   source's 2/3 + 1/3 column control); in a `middle` section the cells are centred vertically */
+@media (width >= 600px) {
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row):is(.wide-first, .wide-last) > * > * {
+    flex: 0 0 33.333%;
+  }
+
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row).wide-first > * > :first-child,
+  body.corp main .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row).wide-last > * > :last-child {
+    flex: 0 0 66.667%;
+  }
+
+  body.corp main .section.middle .columns:is(.media-text, .card-grid, .text-columns, .feature-statement, .image-row) > * {
+    align-items: center;
+  }
 }

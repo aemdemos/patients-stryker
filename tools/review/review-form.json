@@ -1,0 +1,15 @@
+{
+  "total": 7,
+  "offset": 0,
+  "limit": 7,
+  "data": [
+    { "Name": "page", "Type": "text", "Label": "Page", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "item", "Type": "text", "Label": "Item", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "kind", "Type": "text", "Label": "Kind", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "value", "Type": "textarea", "Label": "Value", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "reviewer", "Type": "text", "Label": "Reviewer", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "time", "Type": "text", "Label": "Time", "Mandatory": "", "Value": "", "Action": "" },
+    { "Name": "submit", "Type": "submit", "Label": "Save", "Mandatory": "", "Value": "", "Action": "https://docs.google.com/spreadsheets/d/1YY_9uQPsvceiui3HQEqjeA8Gvf5JN-zq-eUTeAp0aso/edit" }
+  ],
+  ":type": "sheet"
+}

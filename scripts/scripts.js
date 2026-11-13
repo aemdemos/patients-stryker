@@ -618,6 +618,7 @@ export function decorateMain(main) {
   corp?.decorateBlockLayout(main);
   decorateLinkTargets(main);
   decorateButtons(main);
+  corp?.decorateTextLinks(main);
   decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
   decorateSymbolFootnotes(main);
@@ -793,9 +794,26 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+/**
+ * Standardise pilot (branch standardise-v3): the review overlay, with ?standardise on a
+ * preview host only (*.aem.page, the workspace preview); never on production. With ?review the
+ * page is a frame of the review tool (tools/review): its block switcher runs in the page.
+ */
+function loadStandardise() {
+  const search = new URLSearchParams(window.location.search);
+  if (!/(\.aem\.page|^localhost|^preview-aemcoder\.adobe\.io)$/.test(window.location.hostname)) return;
+  if (search.has('review')) {
+    import('../tools/review/frame.js').then(({ default: start }) => start(decorateMain));
+  }
+  const mode = search.get('standardise');
+  if (!mode) return;
+  import('./standardise-preview.js').then(({ default: start }) => start(mode, decorateMain));
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
+  loadStandardise();
   loadDelayed();
 }
 

@@ -431,8 +431,9 @@
   }
 
   /* six-up: 4 per row from 600px (default), 6 from 900px
-     (source col-xs-6 col-sm-3 col-md-2, e.g. ASC resource center "Newsletters") */
-  .cards-corp.six-up > ul {
+     (source col-xs-6 col-sm-3 col-md-2, e.g. ASC resource center "Newsletters"); the standard
+     Resources variant is always six-up */
+  .cards-corp:is(.six-up, .resources) > ul {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
@@ -461,4 +462,12 @@
   .cards-corp.five-up > ul {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+}
+
+/* the standard Cards variants (standardisation, branch standardise-v3): Resources and Teaser
+   own their look; gold is Bold + Italic (the authoring convention; corp copy elsewhere keeps
+   its colour for Bold + Italic), upright */
+body.corp main .cards-corp:is(.resources, .teaser) :is(p, li, h4, h5, h6) :is(strong em, em strong):not(a *) {
+  color: var(--color-accent);
+  font-style: normal;
 }
