@@ -374,7 +374,7 @@ body:where(.corp):has(main .hero-carousel) header {
   border-top: 1px solid var(--color-surface-muted);
 }
 
-/* section styles `width-50` / `width-67` / `width-75`: the text is 6/12, 8/12 or 9/12 of the row from 900px (stryker.com
+/* section styles `width-50` / `width-67`: the text is 6/12 or 8/12 of the row from 900px (stryker.com
    title and body columns of the California transparency disclosure); the padding leaves an
    underlined title's rule at the full width */
 @media (width >= 900px) {
@@ -384,10 +384,6 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.width-67 > .default-content-wrapper > * {
     padding-right: calc(33.333% + var(--space-block));
-  }
-
-  :where(body.corp) main > .section.width-75 > .default-content-wrapper > * {
-    padding-right: calc(25% + var(--space-block));
   }
 }
 
@@ -618,32 +614,6 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 
   :where(body.corp) main > .section.headline-2-5vw > .default-content-wrapper h1 {
     font-size: min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--corp-headline-vw)));
-  }
-}
-
-/* headline-3-5vw: a page title block the source sets as a Large Headline at 3.5vw with a
-   1.5vw line under it (stryker.com /content/m/legal/icrc: 53.8px / 23px at 768px, 42px / 18px
-   at 1200px): the H1 and the Bold first paragraph in Futura bold at 7vw, the last paragraph
-   at 3vw; from 900px 3.5vw and 1.5vw, capped at 3.5 and 1.5 body sizes */
-:where(body.corp) main > .section.headline-3-5vw {
-  --corp-headline-vw: 2vw;
-}
-
-:where(body.corp) main > .section.headline-3-5vw > .default-content-wrapper :is(h1, p:has(strong):not(:has(em))) {
-  margin: 0;
-  font-family: var(--display-font-family);
-  font-size: max(var(--body-font-size-xs), calc(3.5 * var(--corp-headline-vw)));
-  font-weight: var(--font-weight-bold);
-  line-height: var(--heading-line-height-hero);
-}
-
-@media (width >= 900px) {
-  :where(body.corp) main > .section.headline-3-5vw {
-    --corp-headline-vw: 1vw;
-  }
-
-  :where(body.corp) main > .section.headline-3-5vw > .default-content-wrapper :is(h1, p:has(strong):not(:has(em))) {
-    font-size: min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--corp-headline-vw)));
   }
 }
 
@@ -946,16 +916,6 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 :where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
-}
-
-:where(body.corp) main > .section.headline-3-5vw > .default-content-wrapper > p:last-child:has(strong) {
-  font-size: max(var(--body-font-size-xs), calc(1.5 * var(--corp-headline-vw)));
-}
-
-@media (width >= 900px) {
-  :where(body.corp) main > .section.headline-3-5vw > .default-content-wrapper > p:last-child:has(strong) {
-    font-size: min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw)));
-  }
 }
 
 /* section style `quote-1-75`: the gold-quote paragraph (the one with the gold quote marks)
