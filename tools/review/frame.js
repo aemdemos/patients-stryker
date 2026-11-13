@@ -6,7 +6,7 @@
  * The shell drives it through window.stdReview.
  */
 import { loadSections } from '../../scripts/aem.js';
-import { BACKGROUNDS } from '../importer/standardise/rules/variants.js';
+import { BACKGROUNDS, TEXT_SETS } from '../importer/standardise/rules/variants.js';
 import { variantsOf, groupKey } from './groups.js';
 
 const BG = Object.keys(BACKGROUNDS);
@@ -110,6 +110,34 @@ export default async function start(decorateMain) {
     });
   });
 
+  // the sections with text of their own (default content): their text set and background
+  const SETS = Object.keys(TEXT_SETS).filter(Boolean);
+  const texts = [];
+  const textEls = [...document.querySelectorAll('main .default-content-wrapper > *')];
+  sections.forEach((section, si) => {
+    const loose = [...section.children].filter((c) => !c.matches('div[class]') && c.textContent.trim().length > 8);
+    if (!loose.length) return;
+    const key = loose[0].textContent.replace(/\s+/g, ' ').trim().slice(0, 40);
+    const found = textEls.find((e) => e.textContent.replace(/\s+/g, ' ').trim().startsWith(key));
+    const dom = found && found.closest('.section');
+    if (!dom) return;
+    const styles = sectionStyles(section);
+    const set = SETS.find((k) => styles.includes(k)) || '';
+    const background = BG.find((b) => styles.includes(b)) || '';
+    texts.push({
+      id: `s${si}`,
+      si,
+      el: dom,
+      snippet: key,
+      set,
+      standard: set,
+      background,
+      standardBackground: background,
+      hasBlocks: own(section).length > 0,
+      group: `section|${set || 'default'}`,
+    });
+  });
+
   const render = async (section) => {
     const main = document.createElement('main');
     main.append(document.importNode(section, true));
@@ -169,6 +197,35 @@ export default async function start(decorateMain) {
       if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
     },
     backgrounds: ['', ...BG],
+    textSets: ['', ...SETS],
+    sections: () => texts.map(({ el, ...rest }) => ({
+      ...rest, hidden: !el.getClientRects().length,
+    })),
+    setTextSet(id, set) {
+      const t = texts.find((x) => x.id === id);
+      if (!t || (set && !SETS.includes(set))) return false;
+      t.el.classList.remove(...SETS);
+      if (set) t.el.classList.add(set);
+      t.set = set;
+      changed();
+      return true;
+    },
+    setSectionBackground(id, background) {
+      const t = texts.find((x) => x.id === id);
+      if (!t || (background && !BG.includes(background))) return false;
+      t.el.classList.remove(...BG);
+      if (background) t.el.classList.add(background);
+      t.background = background;
+      changed();
+      return true;
+    },
+    highlightSection(id, on) {
+      texts.find((x) => x.id === id)?.el.classList.toggle('rv-hl', on);
+    },
+    revealSection(id) {
+      const el = texts.find((x) => x.id === id)?.el;
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+    },
     /** rendered blocks not on the page's own document (fragments) or built by the page */
     others: () => rendered
       .filter((r) => !items.some((i) => i.el === r) && r.isConnected)

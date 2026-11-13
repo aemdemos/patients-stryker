@@ -315,6 +315,37 @@ No readable tag is left on the standard pages (0 of ~7,800). Fonts come from the
   modular-dual-mobility). They stay now; 2 more pages (omnicurve, transend) now group as their
   Columns row says, where the /rs original does not.
 
+## Text sets for default content (2026-11-13)
+
+Blocks were standardised by variant; the text outside blocks had gone to one look (Humanist 14),
+although the source sets it larger or in the serif on many pages (prophecy: Egyptienne 28).
+Measured from the /rs pages' settings and tags (4,128 paragraphs in 1,919 sections): 62% Humanist
+14, 7.5% Humanist 17.5, 3.7% Egyptienne 28, 2.9% Egyptienne 24.5, 2.4% Egyptienne 21, 1.4%
+Humanist 21; 90% of the sections use one look. Six text sets (the user's choice), section styles,
+measured on www.stryker.com (sizes, line heights, faces in `styles-corp.css` "the standard text
+sets"):
+
+| Set | Text | Italic accent line | Sections |
+|---|---|---|---|
+| default | Humanist 14 | Egyptienne 24.5 | 486 with copy |
+| `text-large` | Humanist 17.5 | Egyptienne 24.5 | 228 |
+| `text-x-large` | Humanist 21 | Egyptienne 28 | 36 |
+| `text-serif` | Egyptienne Light 21 | Egyptienne 28 | 80 |
+| `text-serif-subtitle` | Egyptienne Light 24.5 | Egyptienne 35 | 31 |
+| `text-serif-title` | Egyptienne Light 28 | Egyptienne 35 | 138 |
+
+- In every set Bold is Futura bold at the set's size and Bold + Italic is gold; a paragraph or
+  heading wholly in Italic is the set's accent line (corp.js marks it `text-accent`). The mixed
+  sections are mostly the Contact us panel (Humanist 17.5 + an Egyptienne 24.5 line + a gold
+  label: 76 pages) and statement pairs (the statement style).
+- Rule (`standardTextSet`): each paragraph's original look (section serif style and copy size,
+  its own font and size tags); the set of the most frequent look; a serif line in a sans set (or
+  a clearly larger serif line in a serif set) becomes the Italic accent line; 96 titles promoted
+  from serif lines are Italic headings (the user's choice: they stay headings). Fix on the way:
+  the text pass rewrote the style row from its old content and dropped the added set.
+- Review tool: a "Text" row per section with its own text (text style, background for sections
+  without blocks, "Use this text style for all", comment); the results list the choices.
+
 ## Fix: titles in large copy (2026-11-13)
 
 Found with the review tool (prophecy "The Prophecy process"): in a section with a large copy

@@ -6,7 +6,7 @@
  * first row; more rows flagged), the things that decide which variants fit.
  */
 import {
-  VARIANTS, CARD_VARIANTS, HERO_VARIANTS, cellKind,
+  VARIANTS, CARD_VARIANTS, HERO_VARIANTS, TEXT_SETS, cellKind,
 } from '../importer/standardise/rules/variants.js';
 
 /** the variants an authored block's content fits, its own variant first; widths for two cells */
@@ -67,9 +67,23 @@ export function groupKey(block) {
   return name === 'columns' ? `columns|${standard}|${shapeOf(block)}` : `${name}|${standard}`;
 }
 
+/** the group of an authored section with text of its own (its standard text set), else null */
+export function sectionGroupKey(section) {
+  const loose = [...section.children].filter((c) => !c.matches('div[class]') && c.textContent.trim().length > 8);
+  if (!loose.length) return null;
+  const row = [...section.querySelectorAll(':scope > .section-metadata > div')]
+    .find((r) => r.firstElementChild?.textContent.trim() === 'style');
+  const styles = row ? row.lastElementChild.textContent.split(',').map((x) => x.trim()) : [];
+  const set = Object.keys(TEXT_SETS).filter(Boolean).find((k) => styles.includes(k)) || 'default';
+  return `section|${set}`;
+}
+
 /** a group in plain words, e.g. "Columns now media text, image | text" */
 export function groupLabel(key) {
   const [name, standard, shape] = key.split('|');
+  if (name === 'section') {
+    return `Text sections now ${(TEXT_SETS[standard === 'default' ? '' : standard] || standard).replace(/ \(.*\)$/, '').toLowerCase()}`;
+  }
   const names = {
     columns: 'Columns', 'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', 'page-nav': 'Page Nav',
   };

@@ -180,6 +180,14 @@ const NAMES = {
   'gallery-corp': 'Gallery',
   fragment: 'Fragment',
 };
+const TEXT_LABELS = {
+  '': 'default (Humanist 14)',
+  'text-large': 'large (Humanist 17.5)',
+  'text-x-large': 'extra large (Humanist 21)',
+  'text-serif': 'serif (Egyptienne 21)',
+  'text-serif-subtitle': 'serif subtitle (Egyptienne 24.5)',
+  'text-serif-title': 'serif title (Egyptienne 28)',
+};
 const VARIANT_LABELS = { '': 'default', autoplay: 'autoplay', sticky: 'sticky' };
 const WIDTH_LABELS = { '': 'equal widths', 'wide-first': 'wide first', 'wide-last': 'wide last' };
 const BG_LABELS = {
@@ -227,6 +235,13 @@ function baseOf(item, kind) {
   if (s && s.value !== null) return s.value;
   if (kind === 'comment') return '';
   if (kind === 'reviewed') return false;
+  if (/^s\d+$/.test(item)) {
+    const sec = api()?.sections().find((x) => x.id === item);
+    if (!sec) return undefined;
+    const fromGroup = kind === 'text' ? groupValue(sec.group, 'text') : undefined;
+    if (fromGroup !== undefined) return fromGroup;
+    return kind === 'text' ? sec.standard : sec.standardBackground;
+  }
   const block = api()?.list().find((i) => i.id === item);
   if (!block) return undefined;
   // a block without its own choice follows its group's choice, else its own design
@@ -481,6 +496,110 @@ function groupParts(item, review, busy, li) {
   );
 }
 
+/** the group line of a text section: sections with the same standard text set */
+function sectionGroupParts(sec, review, busy, li) {
+  const info = GROUPS[sec.group];
+  if (!info || info.blocks < 2) return null;
+  const chosen = savedOf(`group:${sec.group}`, 'text');
+  const value = groupValue(sec.group, 'text');
+  const mine = ownValue(sec.id, 'text');
+  const others = () => review.sections().filter((o) => o.group === sec.group && o.id !== sec.id);
+  let text = `${info.blocks} sections like this on ${info.pages} pages`;
+  if (value !== undefined) {
+    const by = chosen.unsaved ? 'unsaved' : `${chosen.reviewer || 'someone'} · ${when(chosen.time)}`;
+    text = `All ${info.blocks} like this: ${label(value, TEXT_LABELS)} (${by})`;
+    if (mine !== undefined && mine !== value) text += ' · this section is an exception';
+  }
+  const useAll = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: `${info.label}: every section like this on every page gets this text style, unless it has its own choice`,
+    onclick: () => {
+      busy(li, true);
+      saveRow(`group:${sec.group}`, 'text', sec.set);
+      clearOwn(sec.id, 'text');
+      others().filter((o) => ownValue(o.id, 'text') === undefined).forEach((o) => review.setTextSet(o.id, sec.set));
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Use this text style for all');
+  const stop = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: 'Sections like this go back to their own text style (sections with their own choice keep it)',
+    onclick: () => {
+      saveRow(`group:${sec.group}`, 'text', null);
+      [sec, ...others()].filter((o) => ownValue(o.id, 'text') === undefined)
+        .forEach((o) => review.setTextSet(o.id, o.standard));
+      panelHooks.list();
+    },
+  }, 'Stop');
+  const allSame = value !== undefined && value === sec.set && mine === undefined;
+  return el(
+    'div',
+    { class: 'rv-group-row', title: info.label },
+    el('span', { class: 'rv-meta' }, text),
+    el('span', {}, allSame ? null : useAll, value !== undefined ? ' ' : null, value !== undefined ? stop : null),
+  );
+}
+
+/** a section with text of its own: its text style (instant), background, group, comment */
+function textRow(sec, review) {
+  const changed = sec.set !== sec.standard || sec.background !== sec.standardBackground;
+  const busy = (row, on) => row.classList.toggle('rv-busy', on);
+  const li = el('li', {
+    class: `rv-item rv-text-item${changed ? ' rv-changed' : ''}`,
+    onmouseenter: () => review.highlightSection(sec.id, true),
+    onmouseleave: () => review.highlightSection(sec.id, false),
+  });
+  li.append(el(
+    'div',
+    { class: 'rv-item-head' },
+    el('button', {
+      type: 'button', class: 'rv-name', title: sec.snippet, onclick: () => review.revealSection(sec.id),
+    }, 'Text'),
+    el('span', { class: 'rv-flags' }, changed ? 'changed' : '', sec.hidden ? ' hidden' : ''),
+  ));
+  li.append(el('div', { class: 'rv-snippet' }, `“${sec.snippet}…”`));
+  const sets = review.textSets;
+  const cycle = (dir) => {
+    const i = sets.indexOf(sec.set);
+    const next = sets[(i + dir + sets.length) % sets.length];
+    if (review.setTextSet(sec.id, next)) {
+      keepChoice(sec.id, { text: next });
+      panelHooks.list();
+    }
+  };
+  const controls = el('div', { class: 'rv-controls' }, el(
+    'div',
+    { class: 'rv-cycle' },
+    el('button', {
+      type: 'button', class: 'rv-step', 'aria-label': 'Previous text style', onclick: () => cycle(-1),
+    }, '‹'),
+    el('span', { class: 'rv-current' }, label(sec.set, TEXT_LABELS), el('small', {}, ` ${sets.indexOf(sec.set) + 1}/${sets.length}`)),
+    el('button', {
+      type: 'button', class: 'rv-step', 'aria-label': 'Next text style', onclick: () => cycle(1),
+    }, '›'),
+  ));
+  if (!sec.hasBlocks) {
+    const bg = el('select', {
+      onchange: (e) => {
+        if (review.setSectionBackground(sec.id, e.target.value)) {
+          keepChoice(sec.id, { background: e.target.value });
+          panelHooks.list();
+        }
+      },
+    }, ...review.backgrounds.map((v) => el('option', { value: v }, label(v, BG_LABELS))));
+    bg.value = sec.background;
+    controls.append(bg);
+  }
+  li.append(controls);
+  const group = sectionGroupParts(sec, review, busy, li);
+  if (group) li.append(group);
+  li.append(...commentParts(sec.id, 'Comment on this text (e.g. none of the text styles fit, because …)'));
+  return li;
+}
+
 function blockRow(item, review) {
   const changed = item.variant !== item.standard || item.width !== item.standardWidth
     || item.background !== item.standardBackground;
@@ -705,8 +824,12 @@ function listBlocks() {
     return;
   }
   const items = review.list();
-  if (!items.length) list.append(el('li', { class: 'rv-none' }, 'No blocks on this page itself'));
-  items.forEach((item) => list.append(blockRow(item, review)));
+  const texts = review.sections ? review.sections() : [];
+  if (!items.length && !texts.length) list.append(el('li', { class: 'rv-none' }, 'No blocks on this page itself'));
+  [...texts.map((t) => ({ si: t.si, at: 0, row: () => textRow(t, review) })),
+    ...items.map((i) => ({ si: i.si, at: 1, row: () => blockRow(i, review) }))]
+    .sort((a, b) => a.si - b.si || a.at - b.at)
+    .forEach((x) => list.append(x.row()));
   // blocks from fragments or built by the page (tabs, accordions): shown, not switchable here
   const why = {
     fragment: 'From a shared fragment: not switchable on this page yet',
@@ -743,6 +866,14 @@ async function applySaved(review) {
     }
     if (c.background !== undefined) review.setBackground(c.id, c.background);
   }), Promise.resolve());
+  // the text sections: their own text style, else their group's; their own background
+  (review.sections ? review.sections() : []).forEach((sec) => {
+    const own = ownValue(sec.id, 'text');
+    const set = own !== undefined ? own : groupValue(sec.group, 'text');
+    if (set !== undefined) review.setTextSet(sec.id, set);
+    const bg = ownValue(sec.id, 'background');
+    if (bg !== undefined) review.setSectionBackground(sec.id, bg);
+  });
 }
 
 /** the switcher in the standard frame: wait for it (it loads after the page) */

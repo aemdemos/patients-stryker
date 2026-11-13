@@ -307,6 +307,13 @@ export function decorateSections(main) {
  */
 export function decorateTextLinks(main) {
   if (!document.body.classList.contains('type-standard')) return;
+  // a section text's paragraph or heading wholly in Italic (not Bold + Italic: gold) is its text
+  // set's accent line (styles-corp.css "the standard text sets")
+  main.querySelectorAll('.default-content-wrapper > :is(p, h2, h3, h4, h5, h6)').forEach((p) => {
+    const only = p.children.length === 1 ? p.firstElementChild : null;
+    if (!only || !only.matches('em, i') || only.querySelector('strong, b, a, img')) return;
+    if (p.textContent.trim() === only.textContent.trim()) p.classList.add('text-accent');
+  });
   main.querySelectorAll('a[href]:not(.button, .link-strong)').forEach((a) => {
     const holder = a.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6, td, th, div');
     if (!holder || holder.matches('td, th, div')) return;

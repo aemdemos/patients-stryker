@@ -2116,6 +2116,80 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   line-height: var(--heading-line-height-hero);
 }
 
+/* ---- the standard text sets (standardisation; pages with `type-scale: standard`) ----
+   A section style sets the look of the section's own text (not the text of its blocks): its
+   paragraphs and list items, Bold = Futura bold at the set's size, Bold + Italic = gold (the
+   gold rule above), and a paragraph wholly in Italic = the set's accent line in the light serif
+   (corp.js marks it `text-accent`). Measured on www.stryker.com product pages: Humanist 17.5 /
+   1.15 (ankle-truss-system contact panel), Humanist 21 / 1.06 (smart-toe-ii), Egyptienne Light
+   21 / 1.06 (dartfire-edge), 24.5 / 1.06 and 28 / 1.06 (ankle-truss-system, prophecy).
+   default (no style): Humanist 14, accent 24.5. */
+:where(body.corp.type-standard) main {
+  --corp-set-size: var(--corp-type-body);
+  --corp-set-leading: var(--body-line-height);
+  --corp-set-font: var(--body-font-family);
+  --corp-set-accent: var(--corp-type-subtitle);
+}
+
+:where(body.corp.type-standard) main div.section.text-large {
+  --corp-set-size: var(--corp-type-large);
+  --corp-set-leading: var(--body-line-height-l);
+  --corp-set-accent: var(--corp-type-subtitle);
+}
+
+:where(body.corp.type-standard) main div.section.text-x-large {
+  --corp-set-size: var(--corp-type-lead);
+  --corp-set-leading: var(--heading-line-height);
+  --corp-set-accent: var(--corp-type-title);
+}
+
+:where(body.corp.type-standard) main div.section.text-serif {
+  --corp-set-size: var(--corp-type-lead);
+  --corp-set-leading: var(--heading-line-height);
+  --corp-set-font: var(--heading-font-family);
+  --corp-set-accent: var(--corp-type-title);
+}
+
+:where(body.corp.type-standard) main div.section.text-serif-subtitle {
+  --corp-set-size: var(--corp-type-subtitle);
+  --corp-set-leading: var(--heading-line-height);
+  --corp-set-font: var(--heading-font-family);
+  --corp-set-accent: var(--corp-type-headline);
+}
+
+:where(body.corp.type-standard) main div.section.text-serif-title {
+  --corp-set-size: var(--corp-type-title);
+  --corp-set-leading: var(--heading-line-height);
+  --corp-set-font: var(--heading-font-family);
+  --corp-set-accent: var(--corp-type-headline);
+}
+
+:where(body.corp.type-standard) main div.section:is(.text-large, .text-x-large, .text-serif, .text-serif-subtitle, .text-serif-title) > .default-content-wrapper > :is(p):not(.button-wrapper),
+:where(body.corp.type-standard) main div.section:is(.text-large, .text-x-large, .text-serif, .text-serif-subtitle, .text-serif-title) > .default-content-wrapper > :is(ul, ol) > li {
+  font-family: var(--corp-set-font);
+  font-size: var(--corp-set-size);
+  line-height: var(--corp-set-leading);
+}
+
+:where(body.corp.type-standard) main div.section:is(.text-large, .text-x-large, .text-serif, .text-serif-subtitle, .text-serif-title) > .default-content-wrapper > p strong,
+:where(body.corp.type-standard) main div.section:is(.text-large, .text-x-large, .text-serif, .text-serif-subtitle, .text-serif-title) > .default-content-wrapper > :is(ul, ol) > li strong {
+  font-family: var(--display-font-family);
+  font-size: inherit;
+}
+
+/* the accent line: a paragraph or heading wholly in Italic, the light serif at the set's accent
+   size (an Italic heading keeps its place in the page's structure) */
+:where(body.corp.type-standard) main div.section > .default-content-wrapper > :is(p, h2, h3, h4, h5, h6).text-accent {
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-set-accent);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp.type-standard) main div.section > .default-content-wrapper > :is(p, h2, h3, h4, h5, h6).text-accent > em {
+  font-style: normal;
+}
+
 /* the standard Video (standardisation; pages with `type-scale: standard`): no border on any
    player (the corp Video draws the source's 1px frame unless no-border) */
 :where(body.corp.type-standard) main div.section .video:not(.no-border) :is(video, iframe) {

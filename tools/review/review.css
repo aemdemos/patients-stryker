@@ -212,3 +212,7 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 /* groups */
 .rv-group-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 6px; margin-top: 4px; padding-top: 4px; border-top: 1px dashed #d0d7de; }
 .rv-group-row .rv-meta { text-align: left; }
+
+/* text sections */
+.rv-blocks li.rv-text-item { border-style: dashed; }
+.rv-snippet { margin-top: 2px; overflow: hidden; color: #57606a; font-size: 12px; white-space: nowrap; text-overflow: ellipsis; }

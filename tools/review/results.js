@@ -19,6 +19,14 @@ const CATEGORIES = {
   text: 'Text', layout: 'Layout', image: 'Image', link: 'Link', other: 'Other',
 };
 const WIDTHS = { 1440: 'desktop', 375: 'phone' };
+const TEXT_LABELS = {
+  '': 'default (Humanist 14)',
+  'text-large': 'large (Humanist 17.5)',
+  'text-x-large': 'extra large (Humanist 21)',
+  'text-serif': 'serif (Egyptienne 21)',
+  'text-serif-subtitle': 'serif subtitle (Egyptienne 24.5)',
+  'text-serif-title': 'serif title (Egyptienne 28)',
+};
 
 const $ = (sel) => document.querySelector(sel);
 function el(tag, attrs = {}, ...children) {
@@ -133,12 +141,14 @@ async function render(rows, pages) {
   );
 
   /* ---------- design decisions ---------- */
-  const groupRows = [...groups.values()].filter((e) => e.item.startsWith('group:') && e.kind === 'variant' && set(e.value))
+  const groupRows = [...groups.values()]
+    .filter((e) => e.item.startsWith('group:') && ['variant', 'text'].includes(e.kind) && set(e.value))
     .map((e) => {
       const key = e.item.slice('group:'.length);
       const width = groups.get(`${e.item}|width`)?.value;
       const info = groupInfo[key] || {};
-      return [groupLabel(key), `${design(e.value)}${set(width) && width ? `, ${design(width)}` : ''}`,
+      const chosen = e.kind === 'text' ? (TEXT_LABELS[e.value] || e.value) : design(e.value);
+      return [groupLabel(key), `${chosen}${set(width) && width ? `, ${design(width)}` : ''}`,
         `${info.blocks || '?'} blocks on ${info.pages || '?'} pages`, e.reviewer, when(e.time)];
     });
   const choiceRows = [];
@@ -151,6 +161,13 @@ async function render(rows, pages) {
     const blocks = blocksByPage.get(page);
     const per = new Map();
     m.forEach((e) => {
+      if (/^s\d+$/.test(e.item) && ['text', 'background'].includes(e.kind) && set(e.value)) {
+        const what = e.kind === 'text' ? `text style: ${TEXT_LABELS[e.value] || e.value}` : `background: ${design(e.value)}`;
+        choiceRows.push([pageName(page), `Text (${e.item})`, what, e.reviewer, when(e.time)]);
+      }
+      if (/^s\d+$/.test(e.item) && e.kind === 'comment' && e.value) {
+        commentRows.push({ type: 'Text', row: [pageName(page), `Text (${e.item})`, e.value, e.reviewer, when(e.time)] });
+      }
       if (/^s\d+b\d+$/.test(e.item)) {
         if (!per.has(e.item)) per.set(e.item, {});
         per.get(e.item)[e.kind] = e;

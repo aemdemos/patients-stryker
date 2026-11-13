@@ -23,13 +23,19 @@ const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.goto(`${base}/tools/review/pages.json`);
 const groups = await page.evaluate(async (paths) => {
-  const { groupKey, groupLabel } = await import('/tools/review/groups.js');
+  const { groupKey, groupLabel, sectionGroupKey } = await import('/tools/review/groups.js');
   const all = {};
   for (const path of paths) {
     const resp = await fetch(`/content/std${path}.plain.html`);
     if (resp.ok) {
       const doc = new DOMParser().parseFromString(`<body>${await resp.text()}</body>`, 'text/html');
       [...doc.body.children].forEach((section) => {
+        const skey = sectionGroupKey(section);
+        if (skey) {
+          all[skey] = all[skey] || { label: groupLabel(skey), blocks: 0, pages: new Set() };
+          all[skey].blocks += 1;
+          all[skey].pages.add(path);
+        }
         [...section.children].filter((c) => c.matches('div[class]') && !c.matches('.section-metadata, .metadata'))
           .forEach((block) => {
             const key = groupKey(block);

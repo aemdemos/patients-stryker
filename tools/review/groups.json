@@ -1,6 +1,11 @@
 {
  "generated": "tools/review/build-groups.mjs",
  "groups": {
+  "section|default": {
+   "label": "Text sections now default",
+   "blocks": 3513,
+   "pages": 672
+  },
   "cards-corp|resources": {
    "label": "Cards now resources",
    "blocks": 403,
@@ -26,6 +31,11 @@
    "blocks": 212,
    "pages": 190
   },
+  "section|text-large": {
+   "label": "Text sections now large",
+   "blocks": 210,
+   "pages": 147
+  },
   "page-nav|sticky": {
    "label": "Page Nav now sticky",
    "blocks": 192,
@@ -35,6 +45,11 @@
    "label": "Columns now card grid, image & text | image & text",
    "blocks": 137,
    "pages": 95
+  },
+  "section|text-serif-title": {
+   "label": "Text sections now serif title",
+   "blocks": 137,
+   "pages": 81
   },
   "columns|feature-statement|text,media": {
    "label": "Columns now feature statement, text | image",
@@ -61,10 +76,25 @@
    "blocks": 86,
    "pages": 84
   },
+  "section|text-serif": {
+   "label": "Text sections now serif",
+   "blocks": 77,
+   "pages": 65
+  },
   "page-nav|default": {
    "label": "Page Nav now default",
    "blocks": 59,
    "pages": 58
+  },
+  "section|text-x-large": {
+   "label": "Text sections now extra large",
+   "blocks": 33,
+   "pages": 27
+  },
+  "section|text-serif-subtitle": {
+   "label": "Text sections now serif subtitle",
+   "blocks": 31,
+   "pages": 21
   },
   "columns|feature-statement|media,text": {
    "label": "Columns now feature statement, image | text",

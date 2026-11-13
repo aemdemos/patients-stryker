@@ -112,8 +112,9 @@ def entry(sample, name, description, tags, section_style=None):
 COMMON = ('No sizes, fonts, colours, widths or boxes are authored: the variant owns the look. Use '
           'heading levels, Bold, Italic and links only (Bold + Italic = gold). A link alone on its line '
           'is a button (Bold, Italic or Bold + Italic); anywhere else (a list, a sentence, a heading) '
-          'Bold makes it a Futura bold link and Bold + Italic a gold link. Pages on the standard set '
-          'the page metadata type-scale | standard.')
+          'Bold makes it a Futura bold link and Bold + Italic a gold link. In a section\'s own text a '
+          'paragraph or heading wholly in Italic is the accent line of its text style (the light '
+          'serif). Pages on the standard set the page metadata type-scale | standard.')
 BLOCKS = {
     'columns': [
         ('columns media-text', 'Columns (media-text) – Media + text',
@@ -255,6 +256,22 @@ SECTIONS = [
     ('disclaimer', 'Section (disclaimer) – Disclaimer',
      'Small print: references (a numbered list) and the document number.',
      'section, disclaimer, references, small print, legal'),
+    ('text-large', 'Section (text-large) – Text style: large',
+     'The section\'s own text in Humanist 17.5 (Bold: Futura bold; Bold + Italic: gold); a paragraph or '
+     'heading wholly in Italic is its accent line, Egyptienne 24.5. Blocks keep their own type.',
+     'section, text style, large copy, contact panel'),
+    ('text-x-large', 'Section (text-x-large) – Text style: extra large',
+     'The section\'s own text in Humanist 21; the Italic accent line in Egyptienne 28.',
+     'section, text style, extra large copy'),
+    ('text-serif', 'Section (text-serif) – Text style: serif',
+     'The section\'s own text in Egyptienne Light 21; the Italic accent line in Egyptienne 28.',
+     'section, text style, serif copy'),
+    ('text-serif-subtitle', 'Section (text-serif-subtitle) – Text style: serif subtitle',
+     'The section\'s own text in Egyptienne Light 24.5; the Italic accent line in Egyptienne 35.',
+     'section, text style, serif, large copy'),
+    ('text-serif-title', 'Section (text-serif-title) – Text style: serif title',
+     'The section\'s own text in Egyptienne Light 28 (product intros, e.g. prophecy); the Italic accent '
+     'line in Egyptienne 35.', 'section, text style, serif, intro copy'),
     ('visually-hidden', 'Section (visually-hidden) – Hidden heading',
      'The section is read by screen readers and search engines but not shown, and takes no room: for '
      'the page title (Heading 1) when a banner hero shows the visible title. The section holds only '
@@ -313,7 +330,8 @@ if parts:
     index.append({'name': 'Section Metadata', 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/section-metadata'})
 styles = ' | '.join(['grey-band', 'gold-box', 'purple-band', 'blue-band', 'large-headline', 'divider', 'disclaimer',
                      'divider, large-headline', 'flex', 'flex, wide-first', 'flex, wide-last', 'half-left', 'half-right',
-                     'third-left', 'two-thirds-left', 'quarter-left', 'centre-third', 'middle', 'visually-hidden',
+                     'third-left', 'two-thirds-left', 'quarter-left', 'centre-third', 'middle', 'text-large',
+                     'text-x-large', 'text-serif', 'text-serif-subtitle', 'text-serif-title', 'visually-hidden',
                      'continued', 'tabbed', 'accordion-panel', 'contact-aside'])
 sheet = {
     'data': {'total': len(index), 'offset': 0, 'limit': len(index), 'data': index},

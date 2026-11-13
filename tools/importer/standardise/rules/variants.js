@@ -504,6 +504,85 @@ const TEXT_DROP_RE = /^(p|h|label|ps)-[\d-]+$|^col-|^flex-\d/;
 const TEXT_ROWS = ['Copy size', 'Label size', 'Heading size', 'Text', 'Headings', 'Blank lines', 'Padding',
   'Margin', 'Column', 'Column widths'];
 
+// the standard text sets of default content (section styles; styles-corp.css "the standard text
+// sets"): the set of a look (font family, size in px)
+export const TEXT_SETS = {
+  '': 'Default (Humanist 14)',
+  'text-large': 'Large (Humanist 17.5)',
+  'text-x-large': 'Extra large (Humanist 21)',
+  'text-serif': 'Serif (Egyptienne 21)',
+  'text-serif-subtitle': 'Serif subtitle (Egyptienne 24.5)',
+  'text-serif-title': 'Serif title (Egyptienne 28)',
+};
+export function textSetOf(font, size) {
+  if (font === 'serif') {
+    if (size <= 22.75) return 'text-serif';
+    return size <= 26.25 ? 'text-serif-subtitle' : 'text-serif-title';
+  }
+  if (size <= 15.75) return '';
+  return size <= 19.25 ? 'text-large' : 'text-x-large';
+}
+
+/**
+ * The text set of a section's own text, and its accent lines: each paragraph's original look
+ * (the section's serif style and copy size, the paragraph's own font and size tags); the set of
+ * the most frequent look; a serif line in a sans set, or a clearly larger serif line in a serif
+ * set, becomes the set's accent line (wholly Italic). Titles (promoted), labels, gold lines,
+ * buttons and short lines don't count. Before the tags go.
+ */
+function standardTextSet(section, { serif, copyPx }, skip, counts) {
+  const look = (el) => {
+    const tokens = [...el.textContent.matchAll(/\[\[([^\]]+)\]/g)]
+      .flatMap((m) => m[1].split(',').map((t) => t.trim().toLowerCase()));
+    let font = serif ? 'serif' : 'sans';
+    let size = copyPx;
+    tokens.forEach((t) => {
+      if (t === 'serif') font = 'serif';
+      else if (t === 'sans' || t === 'humanist') font = 'sans';
+      else if (tokenPx(t)) size = tokenPx(t);
+    });
+    return { font, size };
+  };
+  const paras = [...section.querySelectorAll('p, li')].filter((el) => !skip(el) && !el.closest('[data-promote]'))
+    .filter((el) => {
+      const words = plainText(el);
+      if (words.length < 25 || el.dataset.promote) return false;
+      const only = el.children.length === 1 && el.firstElementChild;
+      if (only && only.matches('strong, b, em, i') && plainText(only) === words) return false;
+      if (el.querySelector('a') && plainText(el.querySelector('a')) === words) return false;
+      return true;
+    })
+    .map((el) => ({ el, ...look(el) }));
+  // a title promoted from a serif line (light, not bold, on the source) is an Italic heading:
+  // the set's accent look (Bold + Italic would be gold, so not when it holds Bold)
+  [...section.querySelectorAll('p[data-promote]')].filter((el) => !skip(el))
+    .filter((el) => look(el).font === 'serif' && !el.querySelector('strong, b, a, img, picture'))
+    .forEach((el) => {
+      const em = el.ownerDocument.createElement('em');
+      em.append(...el.childNodes);
+      el.append(em);
+      counts.serifTitles += 1;
+    });
+  if (!paras.length) return;
+  const votes = {};
+  paras.forEach((q) => {
+    const set = textSetOf(q.font, q.size);
+    votes[set] = (votes[set] || 0) + 1;
+  });
+  const set = Object.entries(votes).sort((a, b) => b[1] - a[1])[0][0];
+  const base = paras.find((q) => textSetOf(q.font, q.size) === set);
+  paras.forEach((q) => {
+    const accent = q.font === 'serif' && (base.font === 'sans' || q.size > base.size + 3);
+    if (!accent || q.el.tagName !== 'P' || q.el.querySelector('strong, b, a, img, picture')) return;
+    const em = q.el.ownerDocument.createElement('em');
+    em.append(...q.el.childNodes);
+    q.el.append(em);
+    counts.accents += 1;
+  });
+  if (set) addStyle(section, set);
+  counts.textSets[set || 'default'] = (counts.textSets[set || 'default'] || 0) + 1;
+}
+
 /**
  * The default content (text outside blocks) of every section on the standard: its lines and
  * tags go (gold → Bold + Italic, labels → Bold, visually hidden text stays), a title-sized
@@ -593,6 +672,9 @@ function standardText(body, counts, page) {
           });
         }
       }
+      if (!statement && !styles.includes('disclaimer')) {
+        standardTextSet(section, { serif: styles.includes('serif'), copyPx }, inBlock, counts);
+      }
       const t = stripTags(section, inBlock);
       ['tags', 'gold', 'goldLost', 'blanks', 'labels'].forEach((k) => { counts[k] += t[k]; });
       counts.titles += promoteTitles(section);
@@ -605,9 +687,11 @@ function standardText(body, counts, page) {
         row.remove();
         counts.rows += 1;
       } else if (key === 'style') {
-        const kept = styles.filter((x) => !TEXT_DROP.includes(x) && !TEXT_DROP_RE.test(x));
-        if (kept.length === styles.length) return;
-        counts.styles += styles.length - kept.length;
+        // (the row as it is now: the text set was added to it above)
+        const now = row.lastElementChild.textContent.split(',').map((x) => x.trim()).filter(Boolean);
+        const kept = now.filter((x) => !TEXT_DROP.includes(x) && !TEXT_DROP_RE.test(x));
+        if (kept.length === now.length) return;
+        counts.styles += now.length - kept.length;
         if (kept.length) row.lastElementChild.textContent = kept.join(', ');
         else row.remove();
       }
@@ -835,6 +919,9 @@ export function transformDocument(body, { page = true } = {}) {
     futuraLinks: 0,
     hidden: 0,
     chartColours: 0,
+    textSets: {},
+    accents: 0,
+    serifTitles: 0,
   };
   standardNavs(body, counts);
   standardCharts(body, counts);
