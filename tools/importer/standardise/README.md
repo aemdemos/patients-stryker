@@ -29,6 +29,7 @@ block-by-block review, layout-only standards) is kept below for reference.
 | `apply-variants.mjs` | Applies `rules/variants.js` to every `/std` document (backup, changed sections only, report) |
 | `rebuild-backup.py` | Rebuilds apply's backup (the documents before standardisation) from `/rs` when `/tmp` was wiped |
 | `review-pages.py` | The page list of the review tool (`tools/review/pages.json`) |
+| `conventions.py` | The authors' conventions of the standard pages as a draft document (`/std/drafts/authoring-conventions`): every rule (gold, accent heading and line, buttons, text links, new tab, label) with how to author it and its live result, a sample section per text set, the hidden heading. The corp site had no conventions page; the patients one is not for these rules |
 | `test/rules-variants.test.mjs` | The variant rules on every `/rs` document with Columns, against their invariants |
 | `rules/columns.js` | First pilot: the transfer rules, an instance → a layout standard |
 | `test/rules-columns.test.mjs` | The rules on one example per cluster, against the standard's invariants |

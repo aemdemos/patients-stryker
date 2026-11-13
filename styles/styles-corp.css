@@ -2179,7 +2179,8 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 
 /* the accent line: a paragraph or heading wholly in Italic, the light serif at the set's accent
    size (an Italic heading keeps its place in the page's structure) */
-:where(body.corp.type-standard) main div.section > .default-content-wrapper > :is(p, h2, h3, h4, h5, h6).text-accent {
+:where(body.corp.type-standard) main div.section > .default-content-wrapper > :is(p, h2, h3, h4, h5, h6).text-accent,
+:where(body.corp.type-standard) main div.section:is(.text-large, .text-x-large, .text-serif, .text-serif-subtitle, .text-serif-title) > .default-content-wrapper > :is(p, h2, h3, h4, h5, h6).text-accent {
   font-family: var(--heading-font-family);
   font-size: var(--corp-set-accent);
   font-weight: var(--font-weight-regular);
