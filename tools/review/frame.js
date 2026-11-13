@@ -157,8 +157,19 @@ export default async function start(decorateMain) {
     if (!fresh) return false;
     const oldWrap = item.el.closest(`.${item.name}-wrapper`) || item.el;
     const newWrap = fresh.closest(`.${item.name}-wrapper`) || fresh;
+    // the block keeps its place on screen: its top where it was, now and while its images load
+    const topBefore = oldWrap.getBoundingClientRect().top;
+    const keepPlace = () => {
+      const shift = newWrap.getBoundingClientRect().top - topBefore;
+      if (Math.abs(shift) > 1) window.scrollBy(0, shift);
+    };
     oldWrap.replaceWith(newWrap);
     item.el = fresh;
+    keepPlace();
+    newWrap.querySelectorAll('img').forEach((img) => {
+      if (!img.complete) img.addEventListener('load', keepPlace, { once: true });
+    });
+    [100, 400, 1000].forEach((ms) => window.setTimeout(keepPlace, ms));
     if (item.name === 'page-nav') {
       fresh.closest('.section')?.classList.toggle('sticky-nav-container', item.variant === 'sticky');
     }

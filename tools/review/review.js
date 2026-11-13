@@ -815,8 +815,16 @@ function renderPageBox() {
 }
 
 function listBlocks() {
+  // (a redraw keeps the panel where it was: emptying the list would scroll it to the top)
+  const panel = $('.rv-panel');
+  const panelTop = panel.scrollTop;
   const list = $('.rv-blocks');
+  list.style.minHeight = `${list.offsetHeight}px`;
   list.replaceChildren();
+  window.requestAnimationFrame(() => {
+    list.style.minHeight = '';
+    panel.scrollTop = panelTop;
+  });
   if (!ready.std) return;
   const review = api();
   if (!review) {
