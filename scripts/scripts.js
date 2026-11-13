@@ -796,11 +796,17 @@ function loadDelayed() {
 
 /**
  * Standardise pilot (branch standardise-v3): the review overlay, with ?standardise on a
- * preview host only (*.aem.page, localhost); never on production.
+ * preview host only (*.aem.page, the workspace preview); never on production. With ?review the
+ * page is a frame of the review tool (tools/review): its block switcher runs in the page.
  */
 function loadStandardise() {
-  const mode = new URLSearchParams(window.location.search).get('standardise');
-  if (!mode || !/(\.aem\.page|^localhost)$/.test(window.location.hostname)) return;
+  const search = new URLSearchParams(window.location.search);
+  if (!/(\.aem\.page|^localhost|^preview-aemcoder\.adobe\.io)$/.test(window.location.hostname)) return;
+  if (search.has('review')) {
+    import('../tools/review/frame.js').then(({ default: start }) => start(decorateMain));
+  }
+  const mode = search.get('standardise');
+  if (!mode) return;
   import('./standardise-preview.js').then(({ default: start }) => start(mode, decorateMain));
 }
 

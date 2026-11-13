@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Standard pages review</title>
+  <link rel="stylesheet" href="./review.css">
+  <script type="module" src="./review.js"></script>
+</head>
+<body>
+  <header class="rv-bar">
+    <div class="rv-group rv-pages">
+      <button type="button" class="rv-btn" data-action="prev" title="Previous page (Alt+←)">‹</button>
+      <input class="rv-page" type="search" list="rv-page-list" aria-label="Page" placeholder="Find a page…">
+      <datalist id="rv-page-list"></datalist>
+      <button type="button" class="rv-btn" data-action="next" title="Next page (Alt+→)">›</button>
+      <span class="rv-count" aria-live="polite"></span>
+    </div>
+    <div class="rv-group" role="group" aria-label="Viewport">
+      <button type="button" class="rv-btn" data-vp="1440">Desktop</button>
+      <button type="button" class="rv-btn" data-vp="375">Phone</button>
+    </div>
+    <div class="rv-group" role="group" aria-label="Compare with">
+      <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the as-is page (Space)">Flip</button>
+      <button type="button" class="rv-btn" data-mode="opacity" title="The as-is page over the standard page">Overlay</button>
+      <button type="button" class="rv-btn" data-mode="side" title="Side by side">Side by side</button>
+      <label class="rv-opacity">As-is <input type="range" min="0" max="100" step="5" aria-label="As-is opacity"></label>
+      <label class="rv-check"><input type="checkbox" class="rv-sync" checked> Sync</label>
+    </div>
+    <div class="rv-group rv-showing" aria-live="polite"></div>
+    <div class="rv-group rv-end">
+      <span class="rv-status rv-saved" aria-live="polite"><span class="rv-status-text">All changes saved</span> <button type="button" class="rv-btn rv-retry" hidden>Retry</button></span>
+      <label class="rv-name">Your name <input type="text" class="rv-reviewer" autocomplete="name"></label>
+    </div>
+  </header>
+  <div class="rv-main">
+    <aside class="rv-panel" aria-label="Blocks on this page">
+      <section class="rv-pagebox">
+        <h2>This page</h2>
+        <div class="rv-pagebox-body"></div>
+      </section>
+      <h2>Blocks on this page</h2>
+      <p class="rv-hint">‹ › tries the other designs for a block; its section's background is below it. Click a block's name to scroll to it.</p>
+      <ol class="rv-blocks"></ol>
+      <h2>Compare</h2>
+      <ul class="rv-links"></ul>
+    </aside>
+    <main class="rv-stage">
+      <div class="rv-frame rv-std" data-side="std"><iframe title="Standard page"></iframe><span class="rv-tag">Standard</span></div>
+      <div class="rv-frame rv-rs" data-side="rs"><iframe title="As-is page"></iframe><span class="rv-tag">As-is</span></div>
+    </main>
+  </div>
+  <div class="rv-blocked" hidden>The review tool runs on the review preview only.</div>
+</body>
+</html>
