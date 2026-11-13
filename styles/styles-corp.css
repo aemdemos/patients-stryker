@@ -217,12 +217,6 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-l);
 }
 
-/* gold rule: [[rule-gold]…] inside an underlined heading draws its rule in gold while the
-   title keeps its own colour (live features titles: black Futura title over a gold rule) */
-:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u)):has(span.rule-gold) {
-  border-bottom-color: var(--color-accent);
-}
-
 /* an underlined h1 is still the page title: it keeps the h1 size (the underline size above
    comes from the h2 section headings) */
 :where(body.corp) main h1:is(.underline, :has(> u)) {
@@ -788,26 +782,6 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 :where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
   font-family: var(--heading-font-family);
-}
-
-/* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
-   font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
-:where(body.corp) main span.body-font,
-:where(body.corp) main span.body-font :is(strong, b) {
-  font-family: var(--body-font-family);
-}
-
-/* bracket tag `[[text-1-25]…]`: a run of text at 1.25x the paragraph around it — stryker.com
-   span.fontsize-1-25em on part of a line, e.g. a bold release dateline ("Kalamazoo,
-   Michigan, USA – Aug 24, 2020", 17.5px) or a small-print "References" label (14px) */
-:where(body.corp) main span.text-1-25 {
-  font-size: var(--corp-font-scale-1-25);
-}
-
-/* …in a heading it is the source h2 > span.fontsize-1-25em, lines 1.15 (e.g. the IP BRAVoE
-   article subheadings: 30.625px on 35.2px lines, 26.25px on 30.2px below 600px) */
-:where(body.corp) main :is(h1, h2, h3, h4, h5, h6) span.text-1-25 {
-  line-height: var(--heading-line-height-h4);
 }
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a

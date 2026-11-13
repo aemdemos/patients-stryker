@@ -882,7 +882,7 @@ body.corp main .columns.title-row.block > div > div:first-child:nth-child(n) > p
    the source's order: teal, dark gold, purple, blue (2 cards a row: the first row teal and
    dark gold, the next purple and blue). The box is padded 5% / 10% of the card; its first
    line (the name, Bold) is 21px Futura bold, the second (the role) the 21px light serif,
-   the rest 14px body copy, all white; colour tags ([[color-gold]]) keep their colour
+   the rest 14px body copy, all white
    (stryker.com nurse profiles of "Nurses working at Stryker share how their experience
    becomes innovation in nursing": 675px cards, 22px over the band at 1440px) */
 body.corp .columns.color-cards.block > div:nth-child(odd) > div:nth-child(odd) {
@@ -939,7 +939,7 @@ body.corp .columns.color-cards.block > div > div > :last-child:not(.columns-img-
 /* challenge-cards: each cell a card — its bar line, the photo, the text (stryker.com Large
    Headline in a bg-blue / bg-golden-gradient box over a standalone image and 1.25em copy,
    e.g. "7 unique ways we partner for prevention"). A Bold first line is the blue bar
-   ("Challenge: [[color-gold]Infection]"), a Bold + Italic one the gold gradient bar
+   ("Challenge: Infection"), a Bold + Italic one the gold gradient bar
    ("Prevention"): Futura bold white, 20px padding, the Large Headline 2.5vw size (5vw on
    phones, at most 35px); the bar and the photo 20px above the next part (30px from
    600px); the text 17.5px. A row of one cell is a wide card: from 600px its photo and
@@ -1184,8 +1184,8 @@ body.corp main .columns.dark-all.block > div:nth-child(n) > div:nth-child(n):nth
 
 /* number-quote: a numbered testimonial row (stryker.com 2/12 + 3/12 + 4/12 grid columns from
    1/12 in, e.g. the four employees of "Stryker holds diversity, equity and inclusion
-   summit": 235 / 352 / 470px from x 133 at 1440px): cell 1 a big gold number (a fully Bold
-   paragraph, gold with [[color-gold]]) in Futura bold at 16vw, from 600px 8vw capped at
+   summit": 235 / 352 / 470px from x 133 at 1440px): cell 1 a big number (a fully Bold
+   paragraph) in Futura bold at 16vw, from 600px 8vw capped at
    112px; cell 2 the photo with the name and role under it; cell 3 the quote, centred on the
    row. Number and quote 20px in from their column (and from the edge on phones). With
    `large-headline` for the 1.5vw type */
