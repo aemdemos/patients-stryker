@@ -16,6 +16,8 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `frame.js` | Runs inside the standard page (scripts.js loads it with `?review` on preview hosts): matches the page's authored blocks (its `.plain.html`) to the rendered ones (name + words incl. alt texts; a wordless block, e.g. a video player, by order), offers the variants the content fits (Columns by cell kinds, widths for two cells; Cards, Hero, Video, Page Nav jump / sticky), re-renders a block in another variant like the page (`decorateMain` + `loadSections`) and swaps it, switches section backgrounds; `window.stdReview` for the shell. Blocks from fragments and the ones the page builds (tabs, accordions) are listed, not switchable |
 | `pages.json` | The 672 standard pages (title, business unit); `python3 -I tools/importer/standardise/review-pages.py content tools/review/pages.json` |
 | `store.js` | Saving and loading the review state (below) |
+| `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
+| `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
 | `review-form.json` | The form definition the save route uses (form submission service → the review Google Sheet, `incoming` tab) |
 
 ## Saving (`store.js`)
@@ -32,8 +34,24 @@ value, reviewer, time`), appended by Adobe's form submission service; no sign-in
   so they count at once.
 - Items: a block id (`s<section>b<block>`) or `page`. Kinds: `variant`, `width`, `background`,
   `comment`, `reviewed`. Values JSON-encoded.
-- A name is needed to save; changes made before one is entered wait for it.
+- **Save button** (Ctrl+S / ⌘S): changes stay in the browser (`std-review-drafts`, per page)
+  until Save; a change back to the value it had before (the saved one, else the page's own) is no
+  change. Save writes one row per changed item, its final value. Leaving a page with unsaved
+  changes asks (save now / keep for later); closing the tab warns. A name is needed to save.
+- The form service can only append rows, so earlier saves stay in the sheet as history (who chose
+  what, when); the tool reads the newest row per item.
 - Tested end to end 2026-11-13: reviewer A's changes seen by a fresh browser after 22 s.
 
-Next: blocks in fragments, the group option ("all blocks like this"), source snapshots (1440 /
-375 with text boxes) with pinned QA notes, a results summary and export for `apply`.
+Note: the sheet's export lags up to about a minute, so another browser can briefly show a note's
+or choice's previous state (the reviewer who changed it sees the change at once).
+
+## Source snapshots
+
+"Compare with: Source" shows the snapshot of the page at the current width (tiles + anchors in
+`snapshots/<page>/<width>/`), synced by its recorded text positions. Locally `snapshots` is a
+git-ignored link to the capture folder on the local disk. For the branch preview the tiles go to
+Document Authoring under `/review-snapshots/…` (tested with one file 2026-11-13: the preview serves
+it after a redirect to its `media_<hash>.jpg` copy); the anchors with the tool.
+
+Next: blocks in fragments, the group option ("all blocks like this"), hosting the snapshots on
+the branch preview, a results summary and export for `apply`.

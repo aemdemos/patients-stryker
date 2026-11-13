@@ -6,10 +6,28 @@
  * maps between its neighbouring pairs, proportionally.
  */
 
-const TEXT = 'h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, blockquote';
+export const TEXT = 'h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, blockquote';
 const MIN_TEXT = 12;
 
 const norm = (s) => s.replace(/\s+/g, ' ').trim().toLowerCase();
+
+/** the anchor key of an element: its text (an innermost text holder) or its image's file name */
+export function keyOf(el) {
+  if (el.tagName === 'IMG') {
+    const file = (el.currentSrc || el.src || '').split('?')[0].split('/').pop();
+    return file ? `i:${file}` : null;
+  }
+  const text = norm(el.textContent);
+  return text ? `t:${text.slice(0, 90)}` : null;
+}
+
+/** the element of a document with an anchor key (the first one), or null */
+export function findKey(doc, key) {
+  const root = doc.querySelector('main') || doc.body;
+  const sel = key.startsWith('i:') ? 'img' : TEXT;
+  return [...root.querySelectorAll(sel)]
+    .find((el) => (sel === 'img' || !el.querySelector(TEXT)) && keyOf(el) === key) || null;
+}
 
 /**
  * The anchors of a document: innermost text holders (key = their text) and images (key = the

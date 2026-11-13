@@ -22,15 +22,24 @@
       <button type="button" class="rv-btn" data-vp="375">Phone</button>
     </div>
     <div class="rv-group" role="group" aria-label="Compare with">
-      <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the as-is page (Space)">Flip</button>
-      <button type="button" class="rv-btn" data-mode="opacity" title="The as-is page over the standard page">Overlay</button>
+      <span class="rv-label">Compare with</span>
+      <button type="button" class="rv-btn" data-cmp="rs" title="The page as migrated, before standardisation">As-is</button>
+      <button type="button" class="rv-btn" data-cmp="src" title="A snapshot of the live stryker.com page">Source</button>
+    </div>
+    <div class="rv-group" role="group" aria-label="View">
+      <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the other one (Space)">Flip</button>
+      <button type="button" class="rv-btn" data-mode="opacity" title="The other page over the standard page">Overlay</button>
       <button type="button" class="rv-btn" data-mode="side" title="Side by side">Side by side</button>
-      <label class="rv-opacity">As-is <input type="range" min="0" max="100" step="5" aria-label="As-is opacity"></label>
+      <label class="rv-opacity"><span class="rv-opacity-label">As-is</span> <input type="range" min="0" max="100" step="5" aria-label="Opacity"></label>
       <label class="rv-check"><input type="checkbox" class="rv-sync" checked> Sync</label>
+    </div>
+    <div class="rv-group">
+      <button type="button" class="rv-btn rv-note-btn" data-action="note" aria-pressed="false" title="Then click the spot on the standard page (N; Esc to stop)">+ Add QA note</button>
     </div>
     <div class="rv-group rv-showing" aria-live="polite"></div>
     <div class="rv-group rv-end">
       <span class="rv-status rv-saved" aria-live="polite"><span class="rv-status-text">All changes saved</span> <button type="button" class="rv-btn rv-retry" hidden>Retry</button></span>
+      <button type="button" class="rv-btn rv-save" disabled title="Save your changes (Ctrl+S / ⌘S)">Saved</button>
       <label class="rv-name">Your name <input type="text" class="rv-reviewer" autocomplete="name"></label>
     </div>
   </header>
@@ -39,6 +48,11 @@
       <section class="rv-pagebox">
         <h2>This page</h2>
         <div class="rv-pagebox-body"></div>
+      </section>
+      <section class="rv-notesbox">
+        <h2>QA notes <span class="rv-notes-count"></span></h2>
+        <div class="rv-note-editor" hidden></div>
+        <ol class="rv-notes"></ol>
       </section>
       <h2>Blocks on this page</h2>
       <p class="rv-hint">‹ › tries the other designs for a block; its section's background is below it. Click a block's name to scroll to it.</p>
@@ -49,6 +63,11 @@
     <main class="rv-stage">
       <div class="rv-frame rv-std" data-side="std"><iframe title="Standard page"></iframe><span class="rv-tag">Standard</span></div>
       <div class="rv-frame rv-rs" data-side="rs"><iframe title="As-is page"></iframe><span class="rv-tag">As-is</span></div>
+      <div class="rv-frame rv-src" data-side="src">
+        <div class="rv-src-scroller"><div class="rv-src-page"></div></div>
+        <span class="rv-tag">Source</span>
+        <p class="rv-src-none" hidden>No snapshot of this page at this width yet.</p>
+      </div>
     </main>
   </div>
   <div class="rv-blocked" hidden>The review tool runs on the review preview only.</div>
