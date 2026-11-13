@@ -1,0 +1,175 @@
+{
+ "generated": "tools/review/build-groups.mjs",
+ "groups": {
+  "cards-corp|resources": {
+   "label": "Cards now resources",
+   "blocks": 403,
+   "pages": 353
+  },
+  "columns|media-text|text,media": {
+   "label": "Columns now media text, text | image",
+   "blocks": 401,
+   "pages": 208
+  },
+  "columns|media-text|media,text": {
+   "label": "Columns now media text, image | text",
+   "blocks": 363,
+   "pages": 169
+  },
+  "columns|card-grid|media+text,media+text,media+text": {
+   "label": "Columns now card grid, image & text | image & text | image & text",
+   "blocks": 214,
+   "pages": 148
+  },
+  "cards-corp|teaser": {
+   "label": "Cards now teaser",
+   "blocks": 212,
+   "pages": 190
+  },
+  "page-nav|sticky": {
+   "label": "Page Nav now sticky",
+   "blocks": 192,
+   "pages": 192
+  },
+  "columns|card-grid|media+text,media+text": {
+   "label": "Columns now card grid, image & text | image & text",
+   "blocks": 137,
+   "pages": 95
+  },
+  "columns|feature-statement|text,media": {
+   "label": "Columns now feature statement, text | image",
+   "blocks": 126,
+   "pages": 123
+  },
+  "video|default": {
+   "label": "Video now default",
+   "blocks": 125,
+   "pages": 117
+  },
+  "hero-corp|banner": {
+   "label": "Hero now banner",
+   "blocks": 100,
+   "pages": 76
+  },
+  "columns|card-grid|media+text,media+text,media+text,media+text": {
+   "label": "Columns now card grid, image & text | image & text | image & text | image & text",
+   "blocks": 97,
+   "pages": 68
+  },
+  "hero-corp|product-hero": {
+   "label": "Hero now product hero",
+   "blocks": 86,
+   "pages": 84
+  },
+  "page-nav|default": {
+   "label": "Page Nav now default",
+   "blocks": 59,
+   "pages": 58
+  },
+  "columns|feature-statement|media,text": {
+   "label": "Columns now feature statement, image | text",
+   "blocks": 30,
+   "pages": 14
+  },
+  "hero-corp|banner-light": {
+   "label": "Hero now banner light",
+   "blocks": 27,
+   "pages": 19
+  },
+  "columns|media-text|media+text,text": {
+   "label": "Columns now media text, image & text | text",
+   "blocks": 24,
+   "pages": 11
+  },
+  "columns|image-row|media,media": {
+   "label": "Columns now image row, image | image",
+   "blocks": 23,
+   "pages": 23
+  },
+  "columns|image-row|media,media,media": {
+   "label": "Columns now image row, image | image | image",
+   "blocks": 19,
+   "pages": 14
+  },
+  "columns|media-text|text,media+text": {
+   "label": "Columns now media text, text | image & text",
+   "blocks": 16,
+   "pages": 14
+  },
+  "columns|media-text|media+text,media": {
+   "label": "Columns now media text, image & text | image",
+   "blocks": 11,
+   "pages": 11
+  },
+  "columns|media-text|media,media+text": {
+   "label": "Columns now media text, image | image & text",
+   "blocks": 8,
+   "pages": 8
+  },
+  "video|autoplay": {
+   "label": "Video now autoplay",
+   "blocks": 8,
+   "pages": 8
+  },
+  "columns|card-grid|text,media+text,media+text": {
+   "label": "Columns now card grid, text | image & text | image & text",
+   "blocks": 8,
+   "pages": 6
+  },
+  "columns|card-grid|media+text,text": {
+   "label": "Columns now card grid, image & text | text",
+   "blocks": 7,
+   "pages": 3
+  },
+  "columns|card-grid|media,text,media,text": {
+   "label": "Columns now card grid, image | text | image | text",
+   "blocks": 4,
+   "pages": 4
+  },
+  "columns|card-grid|text,media+text": {
+   "label": "Columns now card grid, text | image & text",
+   "blocks": 2,
+   "pages": 2
+  },
+  "columns|card-grid|text,media+text,media+text,media+text": {
+   "label": "Columns now card grid, text | image & text | image & text | image & text",
+   "blocks": 2,
+   "pages": 1
+  },
+  "columns|image-row|media,media,media,media": {
+   "label": "Columns now image row, image | image | image | image",
+   "blocks": 2,
+   "pages": 2
+  },
+  "columns|card-grid|media+text,media+text,text": {
+   "label": "Columns now card grid, image & text | image & text | text",
+   "blocks": 1,
+   "pages": 1
+  },
+  "columns|card-grid|media+text,media+text,media+text,text": {
+   "label": "Columns now card grid, image & text | image & text | image & text | text",
+   "blocks": 1,
+   "pages": 1
+  },
+  "columns|feature-statement|media+text,media+text,media+text": {
+   "label": "Columns now feature statement, image & text | image & text | image & text",
+   "blocks": 1,
+   "pages": 1
+  },
+  "columns|feature-statement|media+text,media+text": {
+   "label": "Columns now feature statement, image & text | image & text",
+   "blocks": 1,
+   "pages": 1
+  },
+  "columns|card-grid|text,text,media": {
+   "label": "Columns now card grid, text | text | image",
+   "blocks": 1,
+   "pages": 1
+  },
+  "columns|card-grid|text,media,media": {
+   "label": "Columns now card grid, text | image | image",
+   "blocks": 1,
+   "pages": 1
+  }
+ }
+}

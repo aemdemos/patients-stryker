@@ -15,6 +15,8 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `sync.js` | Text-matched sync: text runs and images found once on each side are paired, the longest same-order chain kept, the middle of the screen mapped between neighbouring pairs (the QA tool's Sync, simplified) |
 | `frame.js` | Runs inside the standard page (scripts.js loads it with `?review` on preview hosts): matches the page's authored blocks (its `.plain.html`) to the rendered ones (name + words incl. alt texts; a wordless block, e.g. a video player, by order), offers the variants the content fits (Columns by cell kinds, widths for two cells; Cards, Hero, Video, Page Nav jump / sticky), re-renders a block in another variant like the page (`decorateMain` + `loadSections`) and swaps it, switches section backgrounds; `window.stdReview` for the shell. Blocks from fragments and the ones the page builds (tabs, accordions) are listed, not switchable |
 | `pages.json` | The 672 standard pages (title, business unit); `python3 -I tools/importer/standardise/review-pages.py content tools/review/pages.json` |
+| `groups.js` | The variants a block's content fits and its group ("blocks like this": block type + standard variant + for Columns the cell kinds of its first row, more rows flagged); used by `frame.js` and `build-groups.mjs` |
+| `build-groups.mjs`, `groups.json` | The 34 groups over the 672 standard pages with their size (blocks, pages); `node tools/review/build-groups.mjs` against the workspace preview |
 | `store.js` | Saving and loading the review state (below) |
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
@@ -40,6 +42,11 @@ value, reviewer, time`), appended by Adobe's form submission service; no sign-in
   changes asks (save now / keep for later); closing the tab warns. A name is needed to save.
 - The form service can only append rows, so earlier saves stay in the sheet as history (who chose
   what, when); the tool reads the newest row per item.
+- **Groups:** "Use this design for all" saves the group's choice as item `group:<key>` (kinds
+  `variant`, `width`) on page `*` (read with every page). A block's design: its own choice, else
+  its group's, else its standard design; a block with its own choice that differs is shown as an
+  exception, "Stop" clears the group's choice (value null). Item keys may hold `|` (group keys):
+  split `item|kind` at the last `|`.
 - Tested end to end 2026-11-13: reviewer A's changes seen by a fresh browser after 22 s.
 
 Note: the sheet's export lags up to about a minute, so another browser can briefly show a note's

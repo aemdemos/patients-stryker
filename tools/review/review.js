@@ -194,23 +194,10 @@ let drafts = new Map();
 const DRAFTS_KEY = 'std-review-drafts';
 const reviewer = () => $('.rv-reviewer').value.trim();
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+// `item|kind`: the item may hold `|` itself (a group key), the kind never does
+const splitKey = (key) => [key.slice(0, key.lastIndexOf('|')), key.slice(key.lastIndexOf('|') + 1)];
 const when = (t) => (t ? new Date(t).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : '');
 let storeStatus = { kind: 'saved', text: 'All changes saved' };
-
-/** what a value was before this reviewer's unsaved changes: the saved one, else the page's own */
-function baseOf(item, kind) {
-  const s = saved.get(`${item}|${kind}`);
-  if (s) return s.value;
-  if (kind === 'comment') return '';
-  if (kind === 'reviewed') return false;
-  if (kind === 'note') return undefined;
-  const block = api()?.list().find((i) => i.id === item);
-  if (!block) return undefined;
-  const own = {
-    variant: block.standard, width: block.standardWidth, background: block.standardBackground,
-  };
-  return own[kind];
-}
 
 /** the current state of an item: this reviewer's unsaved change, else the saved one */
 function savedOf(item, kind) {
@@ -221,6 +208,30 @@ function savedOf(item, kind) {
     };
   }
   return saved.get(key);
+}
+
+/** a group's chosen value for a kind (variant, width), undefined when it has none */
+function groupValue(group, kind) {
+  const g = savedOf(`group:${group}`, kind);
+  return g && g.value !== null && g.value !== undefined ? g.value : undefined;
+}
+
+/** what a value was before this reviewer's unsaved changes: the saved one, else the page's own */
+function baseOf(item, kind) {
+  const s = saved.get(`${item}|${kind}`);
+  if (kind === 'note' || item.startsWith('group:')) return s ? s.value : undefined;
+  if (s && s.value !== null) return s.value;
+  if (kind === 'comment') return '';
+  if (kind === 'reviewed') return false;
+  const block = api()?.list().find((i) => i.id === item);
+  if (!block) return undefined;
+  // a block without its own choice follows its group's choice, else its own design
+  const group = kind !== 'background' && block.group ? groupValue(block.group, kind) : undefined;
+  if (group !== undefined) return group;
+  const own = {
+    variant: block.standard, width: block.standardWidth, background: block.standardBackground,
+  };
+  return own[kind];
 }
 
 function renderStatus() {
@@ -293,9 +304,10 @@ function saveAll() {
   }
   $('.rv-name').classList.remove('rv-need');
   drafts.forEach((value, key) => {
-    const [item, kind] = key.split('|');
+    const [item, kind] = splitKey(key);
+    // (a group's choice is for every page)
     saved.set(key, store.save({
-      page: state.page, item, kind, value, reviewer: reviewer(),
+      page: item.startsWith('group:') ? '*' : state.page, item, kind, value, reviewer: reviewer(),
     }));
   });
   drafts = new Map();
@@ -385,6 +397,86 @@ function commentParts(item, placeholder) {
   return [el('div', { class: 'rv-item-foot' }, toggle, meta), box];
 }
 
+/* ---------- groups: "blocks like this" (groups.js, counts in groups.json) ---------- */
+
+let GROUPS = {};
+// the block list is drawn further down; the group buttons redraw it through this
+const panelHooks = { list: () => {} };
+const ownValue = (id, kind) => {
+  const own = savedOf(id, kind);
+  return own && own.value !== null && own.value !== undefined ? own.value : undefined;
+};
+
+/** a block follows its group again: its saved own choice is cleared, its draft dropped */
+function clearOwn(id, kind) {
+  const key = `${id}|${kind}`;
+  if (saved.has(key) && saved.get(key).value !== null) saveRow(id, kind, null);
+  else {
+    drafts.delete(key);
+    keepDrafts();
+  }
+}
+
+/** the group line of a block: how many are like it, its group's choice, use / stop for all */
+function groupParts(item, review, busy, li) {
+  const info = item.group && GROUPS[item.group];
+  if (!info || info.blocks < 2) return null;
+  const chosen = savedOf(`group:${item.group}`, 'variant');
+  const value = groupValue(item.group, 'variant');
+  const mine = ownValue(item.id, 'variant');
+  const others = () => review.list().filter((o) => o.group === item.group && o.id !== item.id);
+  const setOthers = async (variant, width) => {
+    await others().filter((o) => ownValue(o.id, 'variant') === undefined)
+      .reduce((chain, o) => chain.then(() => review.set(o.id, {
+        variant, width: o.widths.length ? width : undefined,
+      })), Promise.resolve());
+  };
+  let text = `${info.blocks} blocks like this on ${info.pages} pages`;
+  if (value !== undefined) {
+    const by = chosen.unsaved ? 'unsaved' : `${chosen.reviewer || 'someone'} · ${when(chosen.time)}`;
+    text = `All ${info.blocks} like this: ${label(value)} (${by})`;
+    if (mine !== undefined && mine !== value) text += ' · this block is an exception';
+  }
+  const useAll = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: `${info.label}: every block like this on every page gets this design, unless it has its own choice`,
+    onclick: async () => {
+      busy(li, true);
+      saveRow(`group:${item.group}`, 'variant', item.variant);
+      if (item.widths.length) saveRow(`group:${item.group}`, 'width', item.width);
+      clearOwn(item.id, 'variant');
+      clearOwn(item.id, 'width');
+      await setOthers(item.variant, item.width);
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Use this design for all');
+  const stop = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: 'Blocks like this go back to their own design (blocks with their own choice keep it)',
+    onclick: async () => {
+      busy(li, true);
+      saveRow(`group:${item.group}`, 'variant', null);
+      saveRow(`group:${item.group}`, 'width', null);
+      const back = [item, ...others()].filter((o) => ownValue(o.id, 'variant') === undefined);
+      await back.reduce((chain, o) => chain.then(() => review.set(o.id, {
+        variant: o.standard, width: o.widths.length ? o.standardWidth : undefined,
+      })), Promise.resolve());
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Stop');
+  const allSame = value !== undefined && value === item.variant && mine === undefined;
+  return el(
+    'div',
+    { class: 'rv-group-row', title: info.label },
+    el('span', { class: 'rv-meta' }, text),
+    el('span', {}, allSame ? null : useAll, value !== undefined ? ' ' : null, value !== undefined ? stop : null),
+  );
+}
+
 function blockRow(item, review) {
   const changed = item.variant !== item.standard || item.width !== item.standardWidth
     || item.background !== item.standardBackground;
@@ -409,7 +501,10 @@ function blockRow(item, review) {
       const i = item.list.indexOf(item.variant);
       const next = item.list[(i + dir + item.list.length) % item.list.length];
       busy(li, true);
-      if (await review.set(item.id, { variant: next })) keepChoice(item.id, { variant: next });
+      if (await review.set(item.id, { variant: next })) {
+        keepChoice(item.id, { variant: next });
+        panelHooks.list();
+      }
       busy(li, false);
     };
     controls.append(el(
@@ -434,14 +529,22 @@ function blockRow(item, review) {
   if (item.widths.length) {
     controls.append(select(item.widths, item.width, WIDTH_LABELS, async (width) => {
       busy(li, true);
-      if (await review.set(item.id, { width })) keepChoice(item.id, { width });
+      if (await review.set(item.id, { width })) {
+        keepChoice(item.id, { width });
+        panelHooks.list();
+      }
       busy(li, false);
     }));
   }
   controls.append(select(review.backgrounds, item.background, BG_LABELS, (background) => {
-    if (review.setBackground(item.id, background)) keepChoice(item.id, { background });
+    if (review.setBackground(item.id, background)) {
+      keepChoice(item.id, { background });
+      panelHooks.list();
+    }
   }));
   li.append(controls);
+  const group = groupParts(item, review, busy, li);
+  if (group) li.append(group);
   li.append(...commentParts(item.id, 'Comment on this block (e.g. none of these fit, because …)'));
   return li;
 }
@@ -454,7 +557,8 @@ const noteId = () => (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.ran
 /** the page's notes from its saved state (the latest row of each note), deleted ones aside */
 function savedNotes() {
   const keys = new Set([...saved.keys(), ...drafts.keys()].filter((k) => k.endsWith('|note')));
-  return [...keys].map((k) => savedOf(...k.split('|'))).filter((e) => e && e.value && !e.value.deleted)
+  return [...keys].map((k) => savedOf(...splitKey(k)))
+    .filter((e) => e && e.value && !e.value.deleted)
     .map((e) => ({
       ...e.value, reviewer: e.reviewer, time: e.time, unsaved: !!e.unsaved,
     }));
@@ -612,21 +716,28 @@ function listBlocks() {
   )));
 }
 
+panelHooks.list = listBlocks;
+
 /** the page's saved choices (everyone's, latest per block), once its switcher is ready */
 async function applySaved(review) {
   await savedLoad;
-  const ids = new Set(review.list().map((i) => i.id));
-  const todo = [...ids].map((id) => ({
-    id,
-    variant: savedOf(id, 'variant'),
-    width: savedOf(id, 'width'),
-    background: savedOf(id, 'background'),
-  })).filter((c) => c.variant || c.width || c.background);
+  // a block's own choice, else its group's (variant, width); backgrounds are the block's own
+  const pick = (item, kind) => {
+    const own = savedOf(item.id, kind);
+    if (own && own.value !== null && own.value !== undefined) return own.value;
+    return kind !== 'background' && item.group ? groupValue(item.group, kind) : undefined;
+  };
+  const todo = review.list().map((item) => ({
+    id: item.id,
+    variant: pick(item, 'variant'),
+    width: pick(item, 'width'),
+    background: pick(item, 'background'),
+  })).filter((c) => c.variant !== undefined || c.width !== undefined || c.background !== undefined);
   await todo.reduce((chain, c) => chain.then(async () => {
-    if (c.variant || c.width) {
-      await review.set(c.id, { variant: c.variant?.value, width: c.width?.value });
+    if (c.variant !== undefined || c.width !== undefined) {
+      await review.set(c.id, { variant: c.variant, width: c.width });
     }
-    if (c.background) review.setBackground(c.id, c.background.value);
+    if (c.background !== undefined) review.setBackground(c.id, c.background);
   }), Promise.resolve());
 }
 
@@ -813,8 +924,9 @@ async function start() {
     return;
   }
   Object.keys(frames).forEach((side) => frames[side].addEventListener('load', () => onFrameLoad(side)));
-  const resp = await fetch('./pages.json');
+  const [resp, groupsResp] = await Promise.all([fetch('./pages.json'), fetch('./groups.json')]);
   pages = resp.ok ? (await resp.json()).pages : [];
+  GROUPS = groupsResp.ok ? (await groupsResp.json()).groups : {};
   $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
   if (!state.page && pages.length) state.page = pages[0].path;
 

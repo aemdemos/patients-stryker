@@ -6,9 +6,8 @@
  * The shell drives it through window.stdReview.
  */
 import { loadSections } from '../../scripts/aem.js';
-import {
-  VARIANTS, CARD_VARIANTS, HERO_VARIANTS, BACKGROUNDS, cellKind,
-} from '../importer/standardise/rules/variants.js';
+import { BACKGROUNDS } from '../importer/standardise/rules/variants.js';
+import { variantsOf, groupKey } from './groups.js';
 
 const BG = Object.keys(BACKGROUNDS);
 const words = (s) => new Set(s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').split(' ').filter((w) => w.length > 2));
@@ -28,40 +27,6 @@ const overlap = (a, b) => {
   a.forEach((w) => { if (b.has(w)) n += 1; });
   return n / Math.min(a.size, b.size);
 };
-
-/** the variants an authored block's content fits, and its own variant (first) */
-function variantsOf(block) {
-  const name = block.classList[0];
-  const cls = [...block.classList].slice(1);
-  if (name === 'columns') {
-    const cells = [...block.children].flatMap((r) => [...r.children]).filter((c) => cellKind(c) !== 'empty');
-    const kinds = cells.map(cellKind);
-    const media = kinds.some((k) => k !== 'text');
-    const text = kinds.some((k) => k !== 'media');
-    const current = cls.find((c) => VARIANTS[c]) || 'text-columns';
-    if (current === 'page-intro') return { list: ['page-intro'], widths: [] };
-    const fits = Object.keys(VARIANTS).filter((v) => {
-      if (v === 'page-intro') return false;
-      if (v === 'image-row') return media && !text;
-      if (v === 'text-columns') return text && !media;
-      if (v === 'media-text') return cells.length === 2 && media && text;
-      if (v === 'feature-statement') return media && text;
-      if (v === 'card-grid') return cells.length >= 2 && media;
-      return true;
-    });
-    const list = [current, ...fits.filter((v) => v !== current)];
-    return { list, widths: cells.length === 2 ? ['', 'wide-first', 'wide-last'] : [] };
-  }
-  const firstOf = (all, fallback) => {
-    const current = cls.find((c) => all[c]) || fallback;
-    return { list: [current, ...Object.keys(all).filter((v) => v !== current)], widths: [] };
-  };
-  if (name === 'cards-corp') return firstOf(CARD_VARIANTS, 'teaser');
-  if (name === 'hero-corp') return firstOf(HERO_VARIANTS, 'banner');
-  if (name === 'video') return { list: cls.includes('autoplay') ? ['autoplay', ''] : ['', 'autoplay'], widths: [] };
-  if (name === 'page-nav' && !cls.includes('local')) return { list: cls.includes('sticky') ? ['sticky', ''] : ['', 'sticky'], widths: [] };
-  return { list: [], widths: [] };
-}
 
 /** the class list of a block in a variant (and width) */
 function classesFor(name, variant, width) {
@@ -128,6 +93,7 @@ export default async function start(decorateMain) {
       items.push({
         id: `s${si}b${bi}`,
         name,
+        group: groupKey(block),
         si,
         nth: k,
         el: best,

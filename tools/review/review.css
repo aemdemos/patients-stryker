@@ -208,3 +208,7 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-dialog { max-width: 360px; padding: 16px; border: 1px solid #c9ced4; border-radius: 6px; font: inherit; }
 .rv-dialog::backdrop { background: rgb(31 35 40 / 40%); }
 .rv-dialog p { margin: 0 0 12px; }
+
+/* groups */
+.rv-group-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 6px; margin-top: 4px; padding-top: 4px; border-top: 1px dashed #d0d7de; }
+.rv-group-row .rv-meta { text-align: left; }

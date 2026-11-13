@@ -107,7 +107,8 @@ export function createStore(onStatus = () => {}) {
     keepPending(pending);
     failed = pending.filter((r) => r.failed).length;
     status();
-    return merge([...remote, ...pending].filter((r) => r.page === page));
+    // (`*`: rows for every page, e.g. a group's choice)
+    return merge([...remote, ...pending].filter((r) => r.page === page || r.page === '*'));
   }
 
   async function send(row) {
