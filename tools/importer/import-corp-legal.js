@@ -452,7 +452,7 @@ function committeeColumns(main, document, url) {
     n.remove();
     n = next;
   }
-  hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns', cells: [cells] }));
+  hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns (no-stack)', cells: [cells] }));
 }
 
 export default {
