@@ -3265,7 +3265,7 @@ var CustomImportScript = (() => {
       n.remove();
       n = next;
     }
-    hrs[0].after(WebImporter.Blocks.createBlock(document, { name: "Columns", cells: [cells] }));
+    hrs[0].after(WebImporter.Blocks.createBlock(document, { name: "Columns (no-stack)", cells: [cells] }));
   }
   var import_corp_legal_default = {
     // before the importer's own cleanup, which drops empty paragraphs

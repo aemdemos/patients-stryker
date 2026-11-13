@@ -7,7 +7,7 @@
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
  * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
- * large-headline (the stryker.com Large
+ * no-stack (cells stay side by side on phones), large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
@@ -357,6 +357,12 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 
 /* ---- rows ---- */
 
+/* no-stack: cells stay side by side on phones (stryker.com board committees, three columns
+   at 375px) */
+body.corp .columns.no-stack > div {
+  flex-flow: row nowrap;
+}
+
 /* 4 cells: two per row on mobile */
 body.corp .columns.columns-4-cols > div {
   flex-flow: row wrap;
@@ -364,6 +370,10 @@ body.corp .columns.columns-4-cols > div {
 }
 
 /* ---- cells ---- */
+
+body.corp .columns.no-stack > div > div {
+  flex: 1 1 0;
+}
 
 body.corp .columns.columns-4-cols > div > div {
   flex: 0 0 50%;
