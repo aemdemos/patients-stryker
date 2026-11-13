@@ -20,6 +20,7 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `results.html`, `results.js`, `results.css` | Review results from every row of the sheet: progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
 | `store.js` | Saving and loading the review state (below) |
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
+| `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
 | `review-form.json` | The form definition the save route uses (form submission service → the review Google Sheet, `incoming` tab) |
 
@@ -55,11 +56,18 @@ or choice's previous state (the reviewer who changed it sees the change at once)
 
 ## Source snapshots
 
-"Compare with: Source" shows the snapshot of the page at the current width (tiles + anchors in
-`snapshots/<page>/<width>/`), synced by its recorded text positions. Locally `snapshots` is a
-git-ignored link to the capture folder on the local disk. For the branch preview the tiles go to
-Document Authoring under `/review-snapshots/…` (tested with one file 2026-11-13: the preview serves
-it after a redirect to its `media_<hash>.jpg` copy); the anchors with the tool.
+"Compare with: Source" shows the snapshot of the page at the current width, synced by its
+recorded text positions.
+
+- Facts (tiles, size, anchors) per page, both widths: `snapshot-meta/<page>.json`, committed
+  (`pack-snapshot-meta.py`, 672 files, 5.9 MB).
+- Tiles: on the workspace preview from `snapshots/` (a git-ignored link to the capture folder on
+  the local disk); elsewhere from Document Authoring through the branch preview,
+  `/review-snapshots/<page>/<width>/<n>.jpg` (each redirects once to its `media_<hash>.jpg`).
+  `upload-snapshots.sh` uploads and previews them (resumable; never published).
+- Captured 2026-11-13: 1,344 snapshots (672 pages × 1440 / 375), 2,412 tiles, 382 MB; all
+  uploaded and previewed on standardise-v3 the same day. A copy of the capture folder:
+  `.cbr/review-snapshots-2026-11-13.tar` (local only).
 
 Next: blocks in fragments, the group option ("all blocks like this"), hosting the snapshots on
 the branch preview, a results summary and export for `apply`.

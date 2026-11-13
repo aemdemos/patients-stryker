@@ -15,6 +15,9 @@ const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcode
 const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
 // the workspace preview serves the imported documents under /content
 const CONTENT = LOCAL ? '/content' : '';
+// the snapshot tiles: on the workspace preview the local copy, else Document Authoring's copy
+// through the branch preview (upload-snapshots.sh)
+const SNAPSHOTS = LOCAL ? './snapshots' : '/review-snapshots';
 const READY_TIMEOUT = 8000;
 const NAME_KEY = 'std-review-reviewer';
 const MODES = ['flip', 'opacity', 'side'];
@@ -768,8 +771,9 @@ async function loadSnapshot() {
   const want = `${state.page}|${state.vp}`;
   let meta = null;
   try {
-    const resp = await fetch(`./snapshots${state.page}/${state.vp}/meta.json`);
-    if (resp.ok) meta = await resp.json();
+    // the page's snapshot facts (both widths, committed with the tool)
+    const resp = await fetch(`./snapshot-meta${state.page}.json`);
+    if (resp.ok) meta = (await resp.json())[state.vp] || null;
   } catch (e) {
     meta = null;
   }
@@ -785,7 +789,7 @@ async function loadSnapshot() {
   if (live) live.href = meta.url;
   pageEl.style.height = `${meta.height}px`;
   meta.tiles.forEach((t) => pageEl.append(el('img', {
-    src: `./snapshots${state.page}/${state.vp}/${t.file}`,
+    src: `${SNAPSHOTS}${state.page}/${state.vp}/${t.file}`,
     alt: '',
     loading: 'lazy',
     width: String(meta.width),
