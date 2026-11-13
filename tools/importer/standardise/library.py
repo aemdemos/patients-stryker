@@ -182,6 +182,26 @@ BLOCKS = {
          'One row per item: cell 1 the question or label (plain text), cell 2 the answer (paragraphs, '
          'lists, links).', 'accordion, faq, questions, resources'),
     ],
+    'related-categories': [
+        ('related-categories', 'Related Categories',
+         'The page\'s categories, from its tags (page metadata), with a heading: row 1 the heading '
+         '(Related categories); an optional row before it with action links shown above the '
+         'categories (a Bold link = button, Bold + Underline = text link). Beside the product intro, '
+         'in the first section after the hero.', 'related categories, tags, categories, contact, request information'),
+    ],
+    'chart-corp': [
+        ('chart-corp', 'Chart – Columns',
+         'Key | value rows first (Title, Subtitle, Format, Max, Axis title, Labels), then one row per '
+         'item: label | value | colour (teal, gold, dark-gold, navy, sage or purple). No height: every '
+         'chart has the standard height.', 'chart, graph, columns, data, comparison'),
+        ('chart-corp bar', 'Chart (bar) – Bars',
+         'As Columns, drawn as horizontal bars.', 'chart, graph, bars, horizontal, data, comparison'),
+    ],
+    'gallery-corp': [
+        ('gallery-corp', 'Gallery',
+         'One row per image or video: a Dynamic Media image link (its text = the alt text) or a video '
+         'link. A main image with a thumbnail strip below.', 'gallery, images, media set, thumbnails, carousel'),
+    ],
     'page-nav': [
         ('page-nav', 'Page Nav – Jump links',
          'Links to the sections of the page, in the page: one row per link (its text = the label, its '
@@ -248,6 +268,7 @@ NEED = {
     'columns text-columns': r'<h[23][^>]*>[^<]{4,}.*?<p>[^<]{40,}',
     'cards-corp teaser': r'<img|/is/image/',
     'hero-corp image-slide product-hero': r'<h2',
+    'chart-corp': r'<div>Title</div>',
     'grey-band': r'<h[23]',
     'blue-band': r'<p>[^<]{30,}',
     'purple-band': r'<p>[^<]{30,}',
@@ -268,7 +289,8 @@ for block, variants in BLOCKS.items():
     if parts:
         open(f'{OUT}/blocks/{block}.plain.html', 'w', encoding='utf8').write('\n'.join(parts) + '\n')
         label = {'columns': 'Columns', 'cards-corp': 'Cards', 'hero-corp': 'Hero', 'statistics': 'Statistics',
-                 'video': 'Video', 'accordion': 'Accordion', 'page-nav': 'Page Nav'}[block]
+                 'video': 'Video', 'accordion': 'Accordion', 'page-nav': 'Page Nav',
+                 'related-categories': 'Related Categories', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery'}[block]
         index.append({'name': label, 'path': f'https://content.da.live/{org}/{site}/std/.da/library/blocks/{block}'})
 parts = []
 for style, name, desc, tags in SECTIONS:

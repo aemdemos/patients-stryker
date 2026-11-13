@@ -32,7 +32,7 @@ const walk = (dir) => readdirSync(dir).flatMap((n) => {
   return statSync(p).isDirectory() ? walk(p) : [p];
 });
 let files = walk(join(content, root)).filter((f) => f.endsWith('.plain.html') && !f.includes('/.da/'))
-  .filter((f) => /class="(columns|cards-corp|hero-corp)/.test(readFileSync(f, 'utf8')));
+  .filter((f) => /class="(columns|cards-corp|hero-corp|chart-corp|sticky-nav)/.test(readFileSync(f, 'utf8')));
 if (limit) files = files.slice(0, limit);
 const docs = files.map((f) => ({ path: f.slice(content.length), html: readFileSync(f, 'utf8') }));
 
@@ -121,6 +121,14 @@ const results = await page.evaluate(async ({ src, list }) => {
       const variant = [...c.classList].filter((x) => ['page-nav', 'sticky', 'local'].includes(x)).join(' ');
       if (!m.NAV_VARIANTS[variant]) fails.push(`class "${c.className}"`);
       if (c.textContent.includes('[[')) fails.push('tag left in Page Nav');
+    });
+    // charts: palette keywords only, no authored height
+    body.querySelectorAll('.chart-corp').forEach((c) => {
+      [...c.children].forEach((row) => {
+        const cells = [...row.children].map((x) => x.textContent.trim());
+        if (cells.length === 2 && cells[0].toLowerCase() === 'height') fails.push('chart Height left');
+        if (cells.length >= 3 && cells[2] && !m.CHART_PALETTE[cells[2]]) fails.push(`chart colour "${cells[2]}"`);
+      });
     });
     // no readable tag left anywhere
     if (body.textContent.includes('[[')) fails.push('tag left');

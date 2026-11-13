@@ -529,7 +529,12 @@ function standardText(body, counts, page) {
     };
     const loose = own.filter((c) => !c.matches('div[class]'));
     if (loose.length) {
-      loose.filter((el) => LINE.test(el.textContent.replace(/\s+/g, ' ').trim())).forEach((el) => {
+      // (in a flex section with a `Columns` row a Column break line is structure: it ends a
+      // column's text, corp.js groupFlexColumns; it stays like the row)
+      const grouped = styles.includes('flex') && rows.some(([key]) => key === 'Columns');
+      const structural = (el) => grouped && /^column break$/i.test(el.textContent.trim());
+      const lineOnly = (el) => LINE.test(el.textContent.replace(/\s+/g, ' ').trim());
+      loose.filter((el) => lineOnly(el) && !structural(el)).forEach((el) => {
         el.remove();
         counts.lines += 1;
       });
@@ -569,13 +574,21 @@ function standardText(body, counts, page) {
           if (p.querySelector('a, img, picture') || !goldTitle(p)) return;
           p.dataset.promote = statement ? 'H2' : 'H3';
         });
-        // in large copy (21px and up) a short wholly Bold line is the section's title
+        // in large copy (21px and up) a short wholly Bold line is the section's title; a wholly
+        // Bold + Italic line too (the corp black label: gold lines were promoted above), its
+        // Italic dropped (Bold + Italic in a heading is gold)
         if (copyPx >= 21) {
           [...section.querySelectorAll('p:not([data-promote])')].filter((p) => !inBlock(p)).forEach((p) => {
             const only = p.children.length === 1 && p.firstElementChild;
+            const inner = only && only.children.length === 1 ? only.firstElementChild : null;
             const words = plainText(p);
-            if (!only || !only.matches('strong, b') || plainText(only) !== words || !words) return;
+            const bold = only && only.matches('strong, b');
+            const italic = only && only.matches('em, i') && inner && inner.matches('strong, b')
+              && plainText(inner) === words;
+            if (!(bold || italic) || plainText(only) !== words || !words) return;
             if (words.length > CAPTION || p.querySelector('a, img, picture')) return;
+            const em = italic ? only : [...only.querySelectorAll('em, i')].find((e) => plainText(e) === words);
+            if (em) em.replaceWith(...em.childNodes);
             p.dataset.promote = copyPx >= 28 || statement ? 'H2' : 'H3';
           });
         }
@@ -740,6 +753,61 @@ function hiddenHeadings(body, counts) {
   });
 }
 
+// the chart palette (blocks/chart-corp: the Statistics colour keywords) and its colours
+export const CHART_PALETTE = {
+  teal: [76, 125, 122],
+  gold: [255, 181, 0],
+  'dark-gold': [175, 109, 4],
+  navy: [28, 86, 135],
+  sage: [178, 180, 174],
+  purple: [133, 69, 138],
+};
+// source colours whose nearest palette colour is not their family (the light purple bars)
+const CHART_FAMILY = { '206,181,208': 'purple' };
+
+/** an authored chart colour (keyword, #rgb, #rrggbb, rgb(), rgba() on white) → palette keyword */
+export function chartKeyword(value) {
+  const v = value.trim().toLowerCase();
+  if (CHART_PALETTE[v]) return v;
+  let rgb = null;
+  const hex = v.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/);
+  const fn = v.match(/^rgba?\(\s*(\d{1,3})\s*[,\s]\s*(\d{1,3})\s*[,\s]\s*(\d{1,3})\s*(?:[,/]\s*(\d*\.?\d+)(%?)\s*)?\)$/);
+  if (hex) {
+    const h = hex[1].length === 3 ? hex[1].split('').map((c) => c + c).join('') : hex[1];
+    rgb = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+  } else if (fn) {
+    const alpha = fn[4] === undefined ? 1 : Number(fn[4]) / (fn[5] ? 100 : 1);
+    rgb = fn.slice(1, 4).map((c) => Math.round(Number(c) * alpha + 255 * (1 - alpha)));
+  }
+  if (!rgb) return null;
+  if (CHART_FAMILY[rgb.join(',')]) return CHART_FAMILY[rgb.join(',')];
+  const dist = (key) => CHART_PALETTE[key].reduce((n, x, i) => n + (x - rgb[i]) ** 2, 0);
+  return Object.keys(CHART_PALETTE).sort((a, b) => dist(a) - dist(b))[0];
+}
+
+/**
+ * Charts on the standard: every data colour a palette keyword, no authored height (the
+ * standard chart height). Chart type, title, format, max, axis title and labels are content.
+ */
+function standardCharts(body, counts) {
+  body.querySelectorAll('.chart-corp').forEach((block) => {
+    [...block.children].forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length === 2 && text(cells[0]).toLowerCase() === 'height') {
+        row.remove();
+        counts.rows += 1;
+        return;
+      }
+      if (cells.length < 3 || !text(cells[2])) return;
+      const keyword = chartKeyword(text(cells[2]));
+      if (keyword && keyword !== text(cells[2])) {
+        cells[2].textContent = keyword;
+        counts.chartColours += 1;
+      }
+    });
+  });
+}
+
 /**
  * Every Columns and Cards block of the document on a standard variant.
  * @param {Element} body the document's body (sections as top-level divs), changed in place
@@ -766,8 +834,10 @@ export function transformDocument(body, { page = true } = {}) {
     navs: {},
     futuraLinks: 0,
     hidden: 0,
+    chartColours: 0,
   };
   standardNavs(body, counts);
+  standardCharts(body, counts);
   futuraLinks(body, counts);
   hiddenHeadings(body, counts);
   standardLayouts(body, counts);
@@ -864,9 +934,30 @@ export function transformDocument(body, { page = true } = {}) {
     });
     // Hero: one slide (image rows, the text cell) as authored; its options go (text position,
     // sizes, contained, shadow, boxes): `hero-corp image-slide <variant>`
+    // (a slide without a heading in large copy, 21px and up: its wholly Bold or Bold + Italic
+    // lines are its title, as Heading 2; the Italic of a black line goes, gold stays gold)
+    const copyRow = ownRows.find(([key]) => key === 'Copy size');
+    const copyName = copyRow ? copyRow[1].trim().toLowerCase() : '';
+    const heroCopyPx = ({ large: 17.5, 'x-large': 21 })[copyName] || tokenPx(copyName) || 14;
     heroes.forEach((block) => {
       const variant = heroVariantOf(block);
       const from = block.className;
+      if (heroCopyPx >= 21 && !block.querySelector('h1, h2, h3, h4, h5, h6')) {
+        [...block.querySelectorAll('p')].forEach((p) => {
+          const words = plainText(p);
+          const only = p.children.length === 1 && p.firstElementChild;
+          if (!only || !only.matches('strong, b, em, i') || plainText(only) !== words || !words) return;
+          if (words.length > CAPTION || p.querySelector('a, img, picture')) return;
+          if (!p.querySelector('strong, b') && !only.matches('strong, b')) return;
+          if (!/\[\[[^\]]*\bgold\b/i.test(p.textContent)) {
+            [...p.querySelectorAll('em, i')].forEach((em) => em.replaceWith(...em.childNodes));
+          }
+          const h2 = p.ownerDocument.createElement('h2');
+          h2.append(...p.childNodes);
+          p.replaceWith(h2);
+          counts.titles += 1;
+        });
+      }
       cleanContent(block, variant, counts);
       block.className = `hero-corp image-slide ${variant}`;
       blocks.push({

@@ -27,6 +27,8 @@ block-by-block review, layout-only standards) is kept below for reference.
 | `copy-pilot.py` | Copies the pilot pages and their fragments `/rs` → `/std` |
 | `rules/variants.js` | Every Columns block → one of the six standard variants, content kept, presentation dropped (DOM only) |
 | `apply-variants.mjs` | Applies `rules/variants.js` to every `/std` document (backup, changed sections only, report) |
+| `rebuild-backup.py` | Rebuilds apply's backup (the documents before standardisation) from `/rs` when `/tmp` was wiped |
+| `review-pages.py` | The page list of the review tool (`tools/review/pages.json`) |
 | `test/rules-variants.test.mjs` | The variant rules on every `/rs` document with Columns, against their invariants |
 | `rules/columns.js` | First pilot: the transfer rules, an instance → a layout standard |
 | `test/rules-columns.test.mjs` | The rules on one example per cluster, against the standard's invariants |
@@ -292,6 +294,42 @@ No readable tag is left on the standard pages (0 of ~7,800). Fonts come from the
   in their document (16 "Specification overview"; a few "Resources" land on an accordion heading
   id instead). Two hidden section titles in one source column kept only the first as the
   section `id` (e.g. prophecy: about + specification; product-detail importer).
+
+## Related Categories, Gallery and Chart (2026-11-12)
+
+- **Related Categories** (349, one per product page): already one standard, unchanged. The
+  heading is "Related categories" in all; the categories come from the page tags; the only
+  content difference is the optional row of action links (none 198, a Bold button 135, a button
+  + a Bold + Underline link 10, a Bold + Underline link 6), which follow the conventions. Always
+  beside the product intro (flex 254, half-right 92). The four shapes render the same on /std
+  and /rs at 1440 and 375.
+- **Gallery** (6): media links only, unchanged.
+- **Chart** (8 on 6 pages): the data colours are palette keywords now (30 cells; the source
+  colours were the palette's: purple, navy, gold, sage exactly, light purple → purple,
+  #bf8a36 → dark-gold, black → navy; `chartKeyword` in `rules/variants.js`), and the 5 Height
+  rows went: every chart at the standard (source default) height, about 200px. Type, title,
+  format, max, axis title and labels stay.
+- **Fix, side by side:** in a flex section with a `Columns` row, a `Column break` line is
+  structure (corp.js groupFlexColumns ends a column's text there), like the row: the text pass
+  had removed the 16 of them, so 11 sections on 6 pages lost their columns (e.g.
+  modular-dual-mobility). They stay now; 2 more pages (omnicurve, transend) now group as their
+  Columns row says, where the /rs original does not.
+
+## Fix: titles in large copy (2026-11-13)
+
+Found with the review tool (prophecy "The Prophecy process"): in a section with a large copy
+size (`Copy size` 21px and up), a short wholly **Bold + Italic** line (the corp black label) was
+the section's title on the source, but only wholly Bold lines were promoted, so it became a plain
+Bold line at copy size. Now a wholly Bold + Italic line is promoted too, its Italic dropped (Bold +
+Italic in a heading is gold; gold lines are promoted by the gold rule): 115 more headings in
+default content (all 158 such lines are headings now), 2 lines that had been promoted with their
+Italic (so gold) are black again. Same rule in the hero pass for a slide without a heading (2
+lines, iconix). Inside Columns blocks these lines are labels at copy size on both sides (the
+variant owns the sizes), unchanged.
+
+Re-running needs the documents as they were before standardisation: `rebuild-backup.py`
+rebuilds them from the /rs originals with copy-pilot's fragment-link rewrite (checked: identical
+to all 737 archived ones; re-running the previous rules on them reproduced /std exactly).
 
 ### The first pilot: layout standards (superseded)
 
