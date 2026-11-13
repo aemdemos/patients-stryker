@@ -9,6 +9,7 @@ import videoParser from './parsers/video.js';
 import marketoFormParser from './parsers/news-detail/marketo-form.js';
 
 // TRANSFORMER IMPORTS
+import representativeNormaliseTransformer from './transformers/news-representative-normalise.js';
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
@@ -46,9 +47,12 @@ const parsers = {
   'marketo-form': marketoFormParser,
 };
 
-// TRANSFORMER REGISTRY — the sections transformer rebuilds the body first (it runs
-// only for news-detail); the shared cleanup and DM image rewrite run after it.
+// TRANSFORMER REGISTRY — pages normalised to a representative article get its markup
+// first (news-representative-normalise.js lists them); the sections transformer then
+// rebuilds the body (it runs only for news-detail); the shared cleanup and DM image
+// rewrite run after it.
 const transformers = [
+  representativeNormaliseTransformer,
   newsDetailSectionsTransformer,
   cleanupTransformer,
   dmImagesTransformer,
