@@ -55,13 +55,26 @@ export default function decorate(block) {
       .catch((e) => console.error('marketo-form: failed to load altcha.js', e));
   };
 
+  // Marketo sets each choice list's width inline (mktoHasWidth, e.g. a 580px opt-in), which
+  // the block CSS overrides (width: 100% !important) so forms never scroll sideways; keep the
+  // authored width on the list's column as --mkto-field-width for stylesheets that use it
+  const exposeChoiceWidths = (mktoForm) => {
+    const formEl = mktoForm.getFormElem ? mktoForm.getFormElem()[0] : form;
+    formEl.querySelectorAll('.mktoCheckboxList[style*="width"], .mktoRadioList[style*="width"]').forEach((list) => {
+      const col = list.closest('.mktoFormCol');
+      if (col && list.style.width) col.style.setProperty('--mkto-field-width', list.style.width);
+    });
+  };
+
   const loadForm = () => {
     loadScript(`${baseUrl}/js/forms2/js/forms2.min.js`)
       .then(() => {
         if (!window.MktoForms2) return;
         window.MktoForms2.loadForm(baseUrl, munchkinId, Number(formId));
         window.MktoForms2.whenReady((mktoForm) => {
-          if (mktoForm.getId() === Number(formId)) addCaptcha(mktoForm);
+          if (mktoForm.getId() !== Number(formId)) return;
+          exposeChoiceWidths(mktoForm);
+          addCaptcha(mktoForm);
         });
       })
       // eslint-disable-next-line no-console
