@@ -195,32 +195,179 @@ function trimEmptyCells(main) {
 const WIDTH_STYLES = [
   ['california-transparency', ['width-50', 'width-67']],
   ['hemorrhagic-stroke/mri', ['width-50']],
+  ['sms-terms-and-conditions', ['width-50']],
   ['governance/bylaws', [null, null, 'heading-space-l']],
   ['governance/charters', [...Array(11).fill(null), 'heading-space-l', ...Array(9).fill(null), 'heading-space-l']],
 ];
 
-function widthStyles(main, document, url) {
-  const styles = WIDTH_STYLES.find(([key]) => url.includes(key))?.[1];
-  if (!styles) return;
+// Pages whose copy sits in 8/12 of the row (stryker.com `col-md-8`) from 900px, except the
+// sections that hold the page title; bylaws and charters use 9/12.
+const COPY_WIDTH = [
+  ['governance/corporate-governance-guidelines', 'width-67'],
+  ['governance/equity-based-compensation-awards', 'width-67'],
+  ['legal/terms-of-use', 'width-67'],
+  ['legal/surgeon-disclaimer', 'width-67'],
+  ['legal/website-accessibility', 'width-67'],
+  ['legal/privacy/privacy-notice-for-california-residents', 'width-67'],
+  ['responsible-supply-chains/po-terms', 'width-67'],
+  ['governance/bylaws', 'width-75'],
+  ['governance/charters', 'width-75'],
+];
+
+// Section styles the shared builder adds that the source does not show: the intro of the
+// accessibility and Sage pages is 14px (not 1.25em), the po-terms part number 14px
+// (not small print)
+const DROP_STYLES = [
+  ['legal/website-accessibility', ['p-1-25']],
+  ['sage/disclosure-and-safety-information', ['p-1-25']],
+  ['responsible-supply-chains/po-terms', ['disclaimer']],
+];
+
+// Bracket tags (`[[tag]text]`, the span-tags.js runtime #542 removes) the builder emits become
+// semantic content or a section style: gold → Bold + Italic, `body-font` → `bold-body`, the
+// Large Headline sizes → their `headline-*vw` section style, the other size tags are dropped.
+const TAG_SECTION_STYLES = {
+  'body-font': 'bold-body',
+  'headline-2': 'headline-2vw',
+  'headline-2-5': 'headline-2-5vw',
+  serif: 'serif',
+};
+const BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
+
+function sectionIndex(main, node) {
+  let top = node;
+  while (top.parentElement && top.parentElement !== main) top = top.parentElement;
+  let count = 0;
+  for (let n = top.previousElementSibling; n; n = n.previousElementSibling) {
+    if (n.tagName === 'HR') count += 1;
+  }
+  return count;
+}
+
+// splits the text nodes of one element into text, open and close tokens next to its elements
+function bracketTokens(parent) {
+  const tokens = [];
+  [...parent.childNodes].forEach((node) => {
+    if (node.nodeType !== 3) {
+      tokens.push({ node });
+      return;
+    }
+    const value = node.nodeValue;
+    let last = 0;
+    [...value.matchAll(BRACKET)].forEach((m) => {
+      if (m.index > last) tokens.push({ text: value.slice(last, m.index) });
+      tokens.push(m[1] ? { open: m[1].split(',') } : { close: true });
+      last = m.index + m[0].length;
+    });
+    if (last < value.length) tokens.push({ text: value.slice(last) });
+  });
+  return tokens;
+}
+
+// Rebuilds the children of `parent` from its tokens: a matched pair is unwrapped, gold text
+// is wrapped in <em><strong>; an unmatched `]` stays text. Returns the tags removed.
+function stripBracketTokens(parent, document) {
+  const tokens = bracketTokens(parent);
+  const removed = [];
+  const build = (from, closes) => {
+    const nodes = [];
+    let i = from;
+    while (i < tokens.length) {
+      const t = tokens[i];
+      if (t.open) {
+        const inner = build(i + 1, true);
+        removed.push(...t.open);
+        i = inner.next;
+        let content = inner.nodes;
+        if (t.open.includes('color-gold')) {
+          const tail = [];
+          const isBlank = (n) => n.nodeName === 'BR'
+            || (n.nodeType === 3 && !n.nodeValue.trim());
+          while (content.length && isBlank(content[content.length - 1])) {
+            tail.unshift(content.pop());
+          }
+          if (content.some((n) => n.nodeType === 3 && n.nodeValue.trim())) {
+            const strong = document.createElement('strong');
+            strong.append(...content);
+            content = [strong];
+          }
+          const em = document.createElement('em');
+          em.append(...content);
+          content = [em, ...tail];
+        }
+        nodes.push(...content);
+      } else if (t.close) {
+        if (closes) return { nodes, next: i + 1 };
+        nodes.push(document.createTextNode(']'));
+        i += 1;
+      } else {
+        nodes.push(t.node || document.createTextNode(t.text));
+        i += 1;
+      }
+    }
+    return { nodes, next: i };
+  };
+  const { nodes } = build(0, false);
+  parent.replaceChildren(...nodes);
+  return removed;
+}
+
+// Every bracket tag of the page → semantic markup; returns { sectionIndex → styles }.
+function stripBrackets(main, document) {
+  const styles = new Map();
+  const parents = [...main.querySelectorAll('*')].filter((el) => [...el.childNodes]
+    .some((n) => n.nodeType === 3 && /\[\[[a-z0-9,-]+\]/.test(n.nodeValue)));
+  parents.forEach((parent) => {
+    if (!parent.isConnected) return;
+    const index = sectionIndex(main, parent);
+    stripBracketTokens(parent, document).forEach((tag) => {
+      const style = TAG_SECTION_STYLES[tag];
+      if (!style) return;
+      if (!styles.has(index)) styles.set(index, new Set());
+      styles.get(index).add(style);
+    });
+  });
+  return styles;
+}
+
+// Adds the page's section styles (WIDTH_STYLES and the ones bracket tags became) to the
+// Section Metadata of each section, creating it when the section has none.
+function sectionStyles(main, document, url, extra) {
+  const widths = WIDTH_STYLES.find(([key]) => url.includes(key))?.[1] || [];
   const hrs = [...main.children].filter((n) => n.tagName === 'HR');
   const ends = [...hrs, null];
-  styles.forEach((style, i) => {
-    if (!style) return;
-    const end = ends[i];
-    let table = null;
-    let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;
-    for (; n && n !== end; n = n.nextElementSibling) {
-      if (n.tagName === 'TABLE' && text(n.querySelector('th, tr')) === 'Section Metadata') table = n;
+  const drop = DROP_STYLES.find(([key]) => url.includes(key))?.[1] || [];
+  const copyWidth = COPY_WIDTH.find(([key]) => url.includes(key))?.[1];
+  const count = Math.max(widths.length, hrs.length + 1, ...[...extra.keys()].map((i) => i + 1));
+  for (let i = 0; i < count; i += 1) {
+    const add = [...(extra.get(i) || [])];
+    if (widths[i]) add.push(widths[i]);
+    if (copyWidth && !widths[i] && !add.some((a) => a.startsWith('headline'))) {
+      let titled = false;
+      let n = i ? hrs[i - 1]?.nextElementSibling : main.firstElementChild;
+      for (; n && n !== ends[i]; n = n.nextElementSibling) {
+        if (n.matches('h1, h2') || n.querySelector('h1, h2')) titled = true;
+      }
+      if (!titled) add.push(copyWidth);
     }
-    if (table) {
-      const value = table.querySelector('tr:nth-child(2) td:nth-child(2)');
-      value.textContent = `${text(value)}, ${style}`;
-    } else {
-      const block = WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
-      if (end) end.before(block);
-      else main.append(block);
+    if (add.length || drop.length) {
+      const end = ends[i];
+      let table = null;
+      let n = i ? hrs[i - 1].nextElementSibling : main.firstElementChild;
+      for (; n && n !== end; n = n.nextElementSibling) {
+        if (n.tagName === 'TABLE' && text(n.querySelector('th, tr')) === 'Section Metadata') table = n;
+      }
+      if (table) {
+        const value = table.querySelector('tr:nth-child(2) td:nth-child(2)');
+        const have = text(value).split(',').map((v) => v.trim()).filter((v) => !drop.includes(v));
+        value.textContent = [...have, ...add.filter((v) => !have.includes(v))].join(', ');
+      } else if (add.length) {
+        const block = WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style: add.join(', ') } });
+        if (end) end.before(block);
+        else main.append(block);
+      }
     }
-  });
+  }
 }
 
 // Runs of paragraphs indented with margin-left (bylaws clauses (a), (i)) → nested lists,
@@ -265,6 +412,27 @@ function publishedDate(document) {
   return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : '';
 }
 
+// board-committees: each committee (bold name, member lines) was a pair of sections; the
+// source shows the three side by side, so they become the cells of one Columns row.
+function committeeColumns(main, document, url) {
+  if (!url.includes('governance/board-committees')) return;
+  const hrs = [...main.children].filter((n) => n.tagName === 'HR');
+  if (hrs.length < 7) return;
+  const sections = hrs.slice(0, 6).map((hr, i) => {
+    const nodes = [];
+    let el = hr.nextElementSibling;
+    for (; el && el !== hrs[i + 1]; el = el.nextElementSibling) nodes.push(el);
+    return nodes.find((x) => x.tagName === 'P');
+  });
+  const cells = [0, 1, 2].map((k) => [sections[2 * k], sections[2 * k + 1]]);
+  for (let n = hrs[0].nextElementSibling; n && n !== hrs[6];) {
+    const next = n.nextElementSibling;
+    n.remove();
+    n = next;
+  }
+  hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns', cells: [cells] }));
+}
+
 export default {
   // before the importer's own cleanup, which drops empty paragraphs
   preprocess: ({ document }) => {
@@ -288,10 +456,12 @@ export default {
     contacts(main, document, contactReport);
     executeTransformers('beforeTransform', main, payload);
     executeTransformers('afterTransform', main, payload);
+    const bracketStyles = stripBrackets(main, document);
+    committeeColumns(main, document, url);
     underlineTitles(main, document);
     dropUnlistedStyles(main);
     trimEmptyCells(main);
-    widthStyles(main, document, url);
+    sectionStyles(main, document, url, bracketStyles);
     edsLinkPaths(main);
 
     // site + template are repeated on the page so it renders the same without bulk metadata
