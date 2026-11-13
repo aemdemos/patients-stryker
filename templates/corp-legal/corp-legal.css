@@ -2,9 +2,9 @@ body.corp-legal main:has(> .section:first-child h1) {
   padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
 }
 
-/* a gold title with no size tag is the source's Large Headline: its offset below the header
-   scales with the viewport (--corp-large-headline-offset) instead of the fixed gap of sized titles */
-body.corp-legal main:has(> .section:first-child h1 > span.color-gold:only-child) {
+/* a Large Headline title (`headline-2-5vw`): its offset below the header scales with the
+   viewport (--corp-large-headline-offset) instead of the fixed gap of sized titles */
+body.corp-legal main:has(> .section:first-child.headline-2-5vw) {
   padding-top: var(--corp-large-headline-offset);
 }
 
@@ -44,8 +44,34 @@ body.corp-legal main > .section:first-child h1 {
   line-height: var(--heading-line-height-hero);
 }
 
+/* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
+body.corp-legal main > .section:first-child h1:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-title-underline);
+  padding-bottom: 0;
+}
+
+@media (width >= 900px) {
+  body.corp-legal main > .section:first-child h1:has(strong) {
+    line-height: var(--heading-line-height);
+  }
+}
+
+/* po-terms headings: 14px on phones, then the default heading size */
+body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
+    font-size: var(--body-font-size-l);
+  }
+}
+
 /* underlined title-only sections: tighter source line-height on phones */
-body.corp-legal main > .section:first-child h1.underline {
+body.corp-legal main > .section:first-child h1.underline:not(:has(strong)) {
   line-height: var(--corp-heading-line-height-title-underline);
 }
 
@@ -58,7 +84,7 @@ body.corp-legal main > .section > .default-content-wrapper:not(:has(+ .columns-w
 }
 
 @media (width >= 600px) {
-  body.corp-legal main > .section:first-child h1.underline {
+  body.corp-legal main > .section:first-child h1.underline:not(:has(strong)) {
     line-height: var(--heading-line-height);
   }
 
