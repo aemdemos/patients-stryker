@@ -1292,6 +1292,18 @@ body.news-detail main .panel.left.block .panel-body {
   padding: 4% 5% 3%;
 }
 
+/* section style `footnote-list`: footnotes authored as a numbered list (so the citation
+   superscripts link to them, scripts.js decorateFootnotes) set as the source's footnote
+   paragraphs: 14px on 19.25px lines, one paragraph gap (15px) apart (e.g. the footnotes of
+   the Sustainability "Supply chain week" article: 34px from footnote to footnote) */
+body.news-detail main > .section.footnote-list > .default-content-wrapper li {
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail main > .section.footnote-list > .default-content-wrapper li:not(:last-child) {
+  margin-bottom: var(--space-block);
+}
+
 /* section style `li-spaced`: every list item of the section but the last ends with a blank
    17.5px line, as the source's items that end in a typed blank line (<br><br>, which EDS
    drops; e.g. "Skilled technicians you can count on" in the emergency care equipment
