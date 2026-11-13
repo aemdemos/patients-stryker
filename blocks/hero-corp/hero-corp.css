@@ -47,11 +47,6 @@
     padding-inline: var(--space-block);
   }
 
-  .hero-corp.banner {
-    display: block;
-    position: relative;
-  }
-
   .hero-corp.banner picture.hero-image-desktop {
     display: block;
   }
@@ -60,10 +55,43 @@
     display: none;
   }
 
-  .hero-corp.banner > div:last-child {
-    position: absolute;
-    top: 0;
-    left: var(--hero-slide-left, 0);
+  /* the image and the text column in one grid cell: the text over the image, and the banner
+     as tall as the taller of the two (a long text never runs into what follows) */
+  .hero-corp.banner:not(.half-text) {
+    display: grid;
+    position: relative;
+  }
+
+  .hero-corp.banner:not(.half-text) > div {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  .hero-corp.banner:not(.half-text) > div:last-child {
+    align-self: start;
+    margin-left: var(--hero-slide-left, 0);
+    box-sizing: border-box;
+    width: var(--hero-banner-text-width, 100%);
+    padding-block: var(--space-block-l);
+  }
+}
+
+/* a text column half the banner or narrower (bunion, total ankle replacement): over the image
+   from 900px only; below it the text above the image, as stryker.com shows it below 840px */
+@media (width >= 900px) {
+  .hero-corp.banner.half-text {
+    display: grid;
+    position: relative;
+  }
+
+  .hero-corp.banner.half-text > div {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  .hero-corp.banner.half-text > div:last-child {
+    align-self: start;
+    margin-left: var(--hero-slide-left, 0);
     box-sizing: border-box;
     width: var(--hero-banner-text-width, 100%);
     padding-block: var(--space-block-l);

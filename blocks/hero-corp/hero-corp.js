@@ -163,6 +163,8 @@ function readSectionOptions(block) {
   if (phoneColour) block.dataset.phoneText = phoneColour;
   const width = parseFloat(data.textWidth);
   if (!Number.isNaN(width)) block.style.setProperty('--hero-banner-text-width', `${width}%`);
+  // a half-width (or narrower) text column: over the image from 900px only (CSS)
+  if (!Number.isNaN(width) && width <= 50) block.classList.add('half-text');
 }
 
 /**

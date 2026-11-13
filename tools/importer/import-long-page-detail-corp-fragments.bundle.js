@@ -2882,7 +2882,10 @@ var CustomImportScript = (() => {
           const before = rowCols.slice(0, firstText).reduce((sum, el) => sum + width(el), 0);
           const share = (n) => String(Math.round(n / 12 * cols * 100 / 12));
           if (before) props["Text position"] = `0, ${share(before)}, 0`;
-          props["Text width"] = share(width(rowCols[firstText]));
+          const textBox = rowCols[firstText].querySelector(".c-rich-text-editor > div");
+          const padRight = Number((/padding-right:\s*(\d+(?:\.\d+)?)%/.exec(textBox ? textBox.getAttribute("style") || "" : "") || [])[1] || 0);
+          const colShare = width(rowCols[firstText]) / 12 * (1 - padRight / 100);
+          props["Text width"] = String(Math.round(colShare * cols * 100 / 12));
         }
       }
       if (heroRows.box) props["Text box"] = heroRows.box;
