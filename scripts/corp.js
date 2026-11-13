@@ -233,7 +233,7 @@ function decorateColumnsImageLinks(main) {
  * An underlined heading that DA stores with its underline split around a line break or
  * bold words (`<u>Improving safety</u><br><u>Spreading truth…</u>`) gets one `<u>` around
  * the whole heading again, so scripts.js decorateUnderlinedHeadings (which wants a single
- * `<u>`, and runs after decorateSections) still draws the heading rule (e.g. rule-gold).
+ * `<u>`, and runs after decorateSections) still draws the heading rule.
  * @param {Element} main The container element
  */
 function joinSplitHeadingUnderlines(main) {
