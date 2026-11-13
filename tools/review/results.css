@@ -1,0 +1,52 @@
+/* Review results page (not a site style: it never loads on the site itself) */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f6f7f8;
+  color: #1f2328;
+  font: 14px/1.45 system-ui, sans-serif;
+}
+
+.rs-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  padding: 10px 20px;
+  background: #1f2328;
+  color: #fff;
+}
+
+.rs-bar h1 { margin: 0 auto 0 0; font-size: 17px; }
+.rs-updated, .rs-check { color: #9aa4ae; }
+.rs-btn { padding: 5px 10px; border: 1px solid #444c56; border-radius: 4px; background: #2d333b; color: #fff; font: inherit; text-decoration: none; cursor: pointer; }
+.rs-btn:hover { border-color: #9aa4ae; }
+.rs-main { max-width: 1200px; margin: 0 auto; padding: 16px 20px 40px; }
+.rs-section { margin-bottom: 18px; padding: 14px 18px; border: 1px solid #d0d7de; border-radius: 6px; background: #fff; }
+.rs-section h2 { margin: 0 0 10px; font-size: 16px; }
+.rs-section h3 { margin: 14px 0 6px; font-size: 14px; color: #57606a; }
+.rs-tiles { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.rs-tile { min-width: 150px; padding: 8px 12px; border-radius: 6px; background: #f6f7f8; }
+.rs-tile b { display: block; font-size: 22px; }
+.rs-tile span { color: #57606a; }
+.rs-bar-meter { height: 8px; margin: 4px 0 12px; border-radius: 4px; background: #e7e9ec; overflow: hidden; }
+.rs-bar-meter > div { height: 100%; background: #4c7d7a; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 5px 8px; border-bottom: 1px solid #eaeef2; text-align: left; vertical-align: top; }
+th { color: #57606a; font-weight: 600; }
+td a { color: #4c7d7a; }
+.rs-muted { color: #8c959f; }
+.rs-none { color: #8c959f; font-style: italic; }
+.rs-tag { display: inline-block; padding: 0 6px; border-radius: 10px; background: #eaeef2; font-size: 12px; }
+.rs-tag.rs-open { background: #fff3d1; }
+.rs-tag.rs-resolved { background: #dff3ef; }
+.rs-tag.rs-exception { background: #ffe2e0; }
+.rs-download { margin-left: 8px; color: #4c7d7a; font-size: 13px; }
+
+.rs-blocked { position: fixed; inset: 0; display: grid; place-items: center; background: #fff; font-size: 18px; }
+.rs-blocked[hidden] { display: none; }

@@ -70,7 +70,7 @@ const decode = (v) => {
 };
 
 /** the latest row per item + kind (rows sorted by time; later wins) */
-function merge(rows) {
+export function merge(rows) {
   const state = new Map();
   [...rows].sort((a, b) => (a.time < b.time ? -1 : 1)).forEach((r) => {
     state.set(`${r.item}|${r.kind}`, {
@@ -78,6 +78,23 @@ function merge(rows) {
     });
   });
   return state;
+}
+
+/** every row of the review sheet (its CSV export) */
+export async function readSheet() {
+  const resp = await fetch(`https://docs.google.com/spreadsheets/d/${CONFIG.sheet}/export?format=csv&gid=${CONFIG.gid}&ck=${Date.now()}`);
+  if (!resp.ok) throw new Error(`sheet: ${resp.status}`);
+  const rows = parseCsv(await resp.text());
+  const head = rows.shift() || [];
+  const at = Object.fromEntries(FIELDS.map((f) => [f, head.indexOf(f)]));
+  return rows.filter((r) => r.length > 1).map((r) => Object.fromEntries(FIELDS.map((f) => [f, r[at[f]] ?? ''])));
+}
+
+/** every row: the sheet's and this browser's not yet in it */
+export async function readAll() {
+  const remote = await readSheet();
+  const seen = new Set(remote.map((r) => r[ID]));
+  return [...remote, ...pendingAll().filter((r) => !seen.has(r[ID]))];
 }
 
 export function createStore(onStatus = () => {}) {
@@ -93,11 +110,7 @@ export function createStore(onStatus = () => {}) {
   async function load(page) {
     let remote = [];
     try {
-      const resp = await fetch(`https://docs.google.com/spreadsheets/d/${CONFIG.sheet}/export?format=csv&gid=${CONFIG.gid}&ck=${Date.now()}`);
-      const rows = parseCsv(await resp.text());
-      const head = rows.shift() || [];
-      const at = Object.fromEntries(FIELDS.map((f) => [f, head.indexOf(f)]));
-      remote = rows.map((r) => Object.fromEntries(FIELDS.map((f) => [f, r[at[f]] ?? ''])));
+      remote = await readSheet();
     } catch (e) {
       onStatus('failed', 'Could not read the saved reviews');
     }

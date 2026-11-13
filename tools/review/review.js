@@ -45,6 +45,7 @@ let snapshot = null;
 const SOURCE = {};
 let pages = [];
 let rebuildTimer;
+let noteShown = false;
 
 function el(tag, attrs = {}, ...children) {
   const e = document.createElement(tag);
@@ -914,6 +915,13 @@ async function onFrameLoad(side) {
     await applySaved(review);
   }
   listBlocks();
+  // opened from the results at a note (?note=<id>): show its pin, once
+  const wanted = params.get('note');
+  if (wanted && !noteShown) {
+    noteShown = true;
+    await savedLoad;
+    window.setTimeout(() => noteHooks.select(wanted), 600);
+  }
 }
 
 /* ---------- start ---------- */
