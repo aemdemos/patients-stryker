@@ -750,6 +750,21 @@ function spacedSubheads(root) {
     || spacedSubheadTexts.has(squashText(h)));
 }
 
+/**
+ * Whether every Heading 4 of the rich text opens with a line break (<h4><br>Subhead</h4>):
+ * a blank line above each subhead, none below, e.g. the Sustainability "Supply chain week"
+ * article. The break is dropped with the other line breaks, so the section gets the
+ * `h4-line-above` style instead (news-detail.css); it wins over `h4-spaced`.
+ */
+function lineAboveSubheads(root) {
+  const subheads = [...root.children].filter((el) => el.tagName === 'H4' && squashText(el));
+  const opensWithBreak = (h) => {
+    const first = [...h.childNodes].find((n) => n.nodeType !== 3 || n.textContent.trim());
+    return !!first && first.nodeName === 'BR';
+  };
+  return subheads.length > 0 && subheads.every(opensWithBreak);
+}
+
 /** The rich text of the source grid item right before the one holding `component`, or null. */
 function previousRichText(component) {
   const item = component.closest('.text');
@@ -777,7 +792,8 @@ function richTextNodes(component, doc) {
   const futuraLinks = futuraLinkParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
-  const spaced = spacedSubheads(box);
+  const lineAbove = lineAboveSubheads(box);
+  const spaced = !lineAbove && spacedSubheads(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -825,6 +841,7 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
     if (spaced) node.copyStyle = [node.copyStyle, 'h4-spaced'].filter(Boolean).join(', ');
+    if (lineAbove) node.copyStyle = [node.copyStyle, 'h4-line-above'].filter(Boolean).join(', ');
     if (blue) {
       const styles = (node.copyStyle || '').split(', ').filter(Boolean);
       node.copyStyle = [...new Set([...styles, ...boxStyles.filter(Boolean)])].join(', ');
@@ -2175,7 +2192,9 @@ export default function transform(hookName, element, payload) {
       return;
     }
     if (component.matches('.c-resourcesanddownload')) {
-      if (!hasForm) {
+      // downloads with thumbnails are the Cards Corp (resources) block on form pages too
+      // (LCA0: the LCA report PDF card above the form, as on the source)
+      if (!hasForm || component.querySelector('.item img')) {
         if (!component.querySelector('.item img')) return;
         const section = startSection('cards');
         const heading = component.querySelector('.title-container :is(h2, h3, h4)');

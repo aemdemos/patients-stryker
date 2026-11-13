@@ -112,7 +112,9 @@ body.news-detail:is(.full-width, .mix-width) main > .section.separator > div:fir
 }
 
    @media (width >= 600px) {
-   body.news-detail.full-width .columns > div {
+   /* …except the business-unit Resources links (`bu-resources`, styles/styles-corp.css),
+      which stay three across from 600px, as on the source (203px at 700px) */
+   body.news-detail.full-width .columns:where(:not(.bu-resources .columns)) > div {
    flex-direction: column;
    }
 
@@ -773,5 +775,45 @@ body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.column
 @media (width >= 900px) {
   body.news-detail.full-width main .columns.block:not(:has(> div > div:not(.columns-img-col))) > div > div {
     flex: 1 1 0;
+  }
+}
+
+/* theme `sustainability` (news-detail): the Sustainability news articles' text styles in
+   one place instead of per-section styles (stryker.com /us/en/sustainability/news/, e.g.
+   "Healthcare supply chain management and SSS" — Supplychainweek):
+   - article copy 17.5px on the nested 1.25x lines, as section style `p-1-25` (small print
+     and the footnotes keep their own sizes, so does the shared connect-band);
+   - every Heading 4 after its section's first element opens with one blank Heading 4
+     line, as `h4-line-above` (40px subhead boxes from 600px, 48px for a 16.1px line on
+     phones);
+   - the footnotes — a section holding only a numbered list, so the citation superscripts
+     link to it — start one blank 14px line and the paragraph gap below the article, as
+     `line-above` (34px), with 14px items on 19.25px lines 15px apart, as `footnote-list`.
+   Combine with mix-width: `theme: mix-width, sustainability`. */
+body.news-detail.sustainability main > .section:not(.disclaimer, .connect-band, :has(> .default-content-wrapper > ol:only-child)) > .default-content-wrapper :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+body.news-detail.sustainability main > .section > .default-content-wrapper > h4:not(:first-child) {
+  padding-top: calc(1em * var(--heading-line-height-h4));
+}
+
+body.news-detail.sustainability main > .section > .default-content-wrapper > ol:only-child {
+  margin-top: 0;
+  padding-top: calc(var(--corp-blank-line) - var(--space-block-l));
+}
+
+body.news-detail.sustainability main > .section > .default-content-wrapper > ol:only-child > li {
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail.sustainability main > .section > .default-content-wrapper > ol:only-child > li:not(:last-child) {
+  margin-bottom: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.news-detail.sustainability main > .section > .default-content-wrapper > ol:only-child {
+    padding-top: calc(var(--corp-blank-line) - var(--space-section));
   }
 }

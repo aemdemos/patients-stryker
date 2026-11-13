@@ -207,6 +207,13 @@ body.news-detail main > .section.date-above > .default-content-wrapper > h5.firs
   margin-bottom: calc(var(--space-block-l) + var(--space-block));
 }
 
+/* a `spacer` section (the importer's, e.g. after the title) is the source component gap:
+   20px on phones, 30px from 600px — the article starts 36px / 46px below the date, as on
+   the source (the SHEA CAUTI article, Taking action, Caregiver James Bamber) */
+body.news-detail main > .section.spacer:not(.large, .xlarge, .xxlarge) {
+  height: var(--space-block-l);
+}
+
 /* ---- article column (66.66% from 600px, see the media query) ---- */
 
 body.news-detail main > .section > .default-content-wrapper picture {
@@ -894,6 +901,10 @@ body.news-detail main > .section.white-lead .columns > div > div:not(:has(.colum
     margin-bottom: calc(var(--space-section) + var(--space-block));
   }
 
+  body.news-detail main > .section.spacer:not(.large, .xlarge, .xxlarge) {
+    height: var(--space-section);
+  }
+
   body.news-detail main > .section.separator {
     margin-bottom: var(--space-section);
   }
@@ -1281,6 +1292,18 @@ body.news-detail main .panel.left.block .panel-body {
   padding: 4% 5% 3%;
 }
 
+/* section style `footnote-list`: footnotes authored as a numbered list (so the citation
+   superscripts link to them, scripts.js decorateFootnotes) set as the source's footnote
+   paragraphs: 14px on 19.25px lines, one paragraph gap (15px) apart (e.g. the footnotes of
+   the Sustainability "Supply chain week" article: 34px from footnote to footnote) */
+body.news-detail main > .section.footnote-list > .default-content-wrapper li {
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail main > .section.footnote-list > .default-content-wrapper li:not(:last-child) {
+  margin-bottom: var(--space-block);
+}
+
 /* section style `li-spaced`: every list item of the section but the last ends with a blank
    17.5px line, as the source's items that end in a typed blank line (<br><br>, which EDS
    drops; e.g. "Skilled technicians you can count on" in the emergency care equipment
@@ -1300,6 +1323,15 @@ body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
   body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
     font-size: calc(var(--body-font-size-l) * var(--news-scale-1-25));
   }
+}
+
+/* section style `h4-line-above`: every Heading 4 of the section after its first element opens
+   with one blank line of its own (stryker.com <h4><br>Subhead</h4>, e.g. the Sustainability
+   "Supply chain week" article: 48px Heading 4 boxes for a 16.1px line on phones, 40px for
+   20.1px lines from 600px); the text below keeps the paragraph gap. Padding, so the blank
+   line adds to the paragraph margin above instead of collapsing into it */
+body.news-detail main > .section.h4-line-above > .default-content-wrapper > h4:not(:first-child) {
+  padding-top: calc(1em * var(--heading-line-height-h4));
 }
 
 /* …in a `serif` section the panel's text is the light serif too, on the source's 1.06

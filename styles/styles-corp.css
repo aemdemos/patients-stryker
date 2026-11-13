@@ -79,10 +79,17 @@
   --corp-people-image-width: 300px;
 }
 
+/* the HCP notice band text fits on one line from 600px (stryker.com 95px band from 599px,
+   e.g. the SHEA CAUTI article: 114px at 390px) */
+@media (width >= 600px) {
+  :where(body.corp) {
+    --corp-hcp-band-height: 95px;
+  }
+}
+
 @media (width >= 900px) {
   :where(body.corp) {
     --corp-chrome-height: 147px;
-    --corp-hcp-band-height: 95px;
   }
 }
 
@@ -1210,5 +1217,47 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-3vw > .default-content-wrapper:nth-child(n):nth-child(n) > h2:nth-child(n):nth-child(n) {
     padding-bottom: calc(2 * var(--space-inset-l) + var(--space-block-s));
+  }
+}
+
+/* section style `bu-resources`: a business unit's "Resources" heading over its link columns
+   (stryker.com Sage XF footer, e.g. "Sage Heel Protector II" and the SHEA CAUTI article):
+   20px more below the heading (30px from 600px; padding, so it adds to the heading
+   margin), links on 23px lines (38px rows), two columns on phones (165px at 390px) and
+   three from 600px (203px at 700px, 440px at 1440px) — the template keeps the three from
+   600px too (news-detail-themes.css). The small print below follows the last link's
+   paragraph margin, not a section gap (stryker.com 16px at every width, e.g. "Reference:"
+   under "Product safety information") */
+:where(body.corp) main > .section.bu-resources {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.bu-resources > .default-content-wrapper:has(+ .columns-wrapper) {
+  padding-bottom: var(--space-block-l);
+}
+
+:where(body.corp) main > .section.bu-resources .columns {
+  --paragraph-line-height-l-nested: var(--related-links-line-height);
+}
+
+:where(body.corp) main > .section.bu-resources .columns > div {
+  flex-flow: row wrap;
+}
+
+:where(body.corp) main > .section.bu-resources .columns > div > div {
+  flex: 0 0 50%;
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.bu-resources > .default-content-wrapper:has(+ .columns-wrapper) {
+    padding-bottom: var(--space-section);
+  }
+
+  :where(body.corp) main > .section.bu-resources .columns > div {
+    flex-wrap: nowrap;
+  }
+
+  :where(body.corp) main > .section.bu-resources .columns > div > div {
+    flex: 1 1 0;
   }
 }

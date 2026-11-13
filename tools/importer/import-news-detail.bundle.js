@@ -313,6 +313,94 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "marketo-form", cells }));
   }
 
+  // tools/importer/transformers/news-representative-normalise.js
+  var GROUPS = [
+    {
+      name: "sustainability-news",
+      paths: [
+        "/us/en/sustainability/news/supplychainweek.html",
+        "/us/en/sustainability/news/asc.html",
+        "/us/en/sustainability/news/ep.html",
+        "/us/en/sustainability/news/expectmore.html",
+        "/us/en/sustainability/news/leader.html",
+        "/us/en/sustainability/news/lca0.html",
+        "/us/en/sustainability/news/say-yes-to-reprocessing.html",
+        "/us/en/sustainability/news/quality-you-can-count-on--five-quality-standards-in-medical-devi.html"
+      ]
+    }
+  ];
+  var SUBHEAD_MAX = 160;
+  var squash = (el) => (el.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
+  function unwrapFontSpans(el) {
+    el.querySelectorAll('span[class*="fontsize-"], span.urw-egyptienne, span.futura-bold, span.futura, span.humanist').forEach((span) => {
+      if (span.closest("sup")) return;
+      span.replaceWith(...span.childNodes);
+    });
+  }
+  function toSubhead(el, doc) {
+    const h4 = doc.createElement("h4");
+    h4.append(doc.createElement("br"), squash(el));
+    el.replaceWith(h4);
+    return h4;
+  }
+  function toCopy(el, doc) {
+    unwrapFontSpans(el);
+    const trim = (pick) => {
+      for (let n = pick(); n && (n.nodeType === 3 && !n.textContent.trim() || n.nodeName === "BR"); n = pick()) n.remove();
+    };
+    trim(() => el.firstChild);
+    trim(() => el.lastChild);
+    const lead = el.firstChild;
+    if (lead && lead.nodeType === 3) lead.textContent = lead.textContent.replace(/^(\s*\d+\.)[\s\u00a0]+/, "$1 ");
+    const p = doc.createElement("p");
+    const span = doc.createElement("span");
+    span.className = "fontsize-1-25em";
+    span.append(...el.childNodes);
+    p.append(span);
+    el.replaceWith(p);
+    return p;
+  }
+  function isBoldLine(p) {
+    const text3 = squash(p);
+    if (!text3 || text3.length > SUBHEAD_MAX || p.querySelector("a, img, picture")) return false;
+    const bold = [...p.querySelectorAll("b, strong, span.futura-bold")].filter((b) => !b.parentElement.closest("b, strong, span.futura-bold")).map(squash).join(" ").replace(/\s+/g, " ").trim();
+    return bold === text3;
+  }
+  function normaliseRichText(rte, doc) {
+    const box = rte.querySelector(":scope > div") || rte;
+    [...box.children].forEach((el) => {
+      const text3 = squash(el);
+      if (!text3) return;
+      if (el.tagName === "H3") {
+        if (el.querySelector('span[class*="fontsize-8em"]') || text3.length > SUBHEAD_MAX) toCopy(el, doc);
+        else toSubhead(el, doc);
+      } else if (el.tagName === "H4") {
+        toSubhead(el, doc);
+      } else if (el.tagName === "P" && isBoldLine(el)) {
+        toSubhead(el, doc);
+      } else if (el.tagName === "P" && el.querySelector('span[class*="fontsize-1-25em"], span.urw-egyptienne')) {
+        toCopy(el, doc);
+      }
+    });
+  }
+  function transform(hookName, element, payload) {
+    if (hookName !== "beforeTransform") return;
+    const url = payload.params && payload.params.originalURL || payload.url || "";
+    let path = "";
+    try {
+      path = new URL(url).pathname.toLowerCase();
+    } catch (e) {
+      return;
+    }
+    const group = GROUPS.find((g) => g.paths.includes(path));
+    if (!group) return;
+    const doc = element.ownerDocument;
+    element.querySelectorAll(".c-rich-text-editor").forEach((rte) => {
+      if (rte.closest(".experiencefragment, form, header, footer, .c-disclaimer")) return;
+      normaliseRichText(rte, doc);
+    });
+  }
+
   // tools/importer/xf-fragment-map.js
   var xf_fragment_map_default = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
@@ -335,6 +423,12 @@ var CustomImportScript = (() => {
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
       name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master": {
+      name: 'Our management "\u25C1 Back" link (leader bio pages)'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master": {
+      name: 'Board of directors "\u25C1 Back" link (director bio pages)'
     },
     // an article body kept as its own fragment document (the page's Fragment block)
     "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master": {
@@ -761,10 +855,10 @@ var CustomImportScript = (() => {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
     const copy = candidates.filter((el) => text2(el) && !el.querySelector("p, li"));
     if (!copy.length) return null;
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
     const covers = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
+      return squash2(spans.map((span) => span.textContent).join("")) === squash2(el.textContent);
     });
     const size = SIZE_STYLES.find(([cls]) => covers(cls));
     const font = FONT_STYLES.find(([cls]) => covers(cls));
@@ -825,14 +919,14 @@ var CustomImportScript = (() => {
     }
   }
   function tagTextSize(root) {
-    const squash = (value) => value.replace(/[\s ]+/g, "");
+    const squash2 = (value) => value.replace(/[\s ]+/g, "");
     [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
       if (span.parentElement.closest(".fontsize-1-25em") || !text2(span)) return;
       if (span.closest("h1")) return;
       const heading = span.closest("h2, h3, h4, h5, h6");
       const block = heading || span.closest("p, li");
       if (!block) return;
-      if (!heading && squash(block.textContent) === squash(span.textContent)) return;
+      if (!heading && squash2(block.textContent) === squash2(span.textContent)) return;
       bracketTag([span], "text-1-25", root);
     });
   }
@@ -931,33 +1025,33 @@ var CustomImportScript = (() => {
     return { centred, size };
   }
   function plainBoldParagraphs(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("p")].filter((p) => {
-      const all = squash(p.textContent);
+      const all = squash2(p.textContent);
       if (!all || p.querySelector(".futura-bold")) return false;
       const bold = [...p.querySelectorAll("b")].filter((b) => !b.parentElement.closest("b"));
-      return squash(bold.map((b) => b.textContent).join("")) === all;
+      return squash2(bold.map((b) => b.textContent).join("")) === all;
     }));
   }
   function futuraLinkParagraphs(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.children].filter((p) => {
       if (p.tagName !== "P") return false;
       const links = p.querySelectorAll("a[href]");
-      const all = squash(p.textContent);
-      if (links.length !== 1 || !all || squash(links[0].textContent) !== all) return false;
+      const all = squash2(p.textContent);
+      if (links.length !== 1 || !all || squash2(links[0].textContent) !== all) return false;
       if (/\bbtn\b/.test(links[0].className) || p.querySelector("img")) return false;
       const spans = [...p.querySelectorAll(".futura-bold")].filter((span) => !span.parentElement.closest(".futura-bold"));
-      return squash(spans.map((span) => span.textContent).join("")) === all;
+      return squash2(spans.map((span) => span.textContent).join("")) === all;
     }));
   }
   function serifHeadings(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("h3")].filter((h) => {
       if (!text2(h) || h.querySelector(".futura-bold, b, strong")) return false;
       if (![...h.querySelectorAll("[class]")].some((el) => [...el.classList].some((c) => !c.startsWith("fontsize-")))) return true;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
-      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+      return squash2(spans.map((span) => span.textContent).join("")) === squash2(h.textContent);
     }));
   }
   var LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
@@ -983,14 +1077,14 @@ var CustomImportScript = (() => {
     ["H1", "fontsize-1-25em", "h1-1-25"]
   ];
   function smallHeadings(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
     const styles = /* @__PURE__ */ new Map();
     root.querySelectorAll("h1, h2").forEach((h) => {
       if (!text2(h)) return;
       const match = HEADING_SIZES.find(([tag, cls]) => {
         if (h.tagName !== tag) return false;
         const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-        return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+        return squash2(spans.map((span) => span.textContent).join("")) === squash2(h.textContent);
       });
       if (match) styles.set(h, match[2]);
     });
@@ -1024,12 +1118,12 @@ var CustomImportScript = (() => {
     const nodes = [...p.childNodes];
     const at = nodes.findIndex((node) => node.nodeName === "BR");
     const lead = at < 0 ? nodes : nodes.slice(0, at);
-    const squash = (value) => value.replace(/[\s ]+/g, " ").trim();
-    const leadText = squash(lead.map((node) => node.textContent).join(""));
+    const squash2 = (value) => value.replace(/[\s ]+/g, " ").trim();
+    const leadText = squash2(lead.map((node) => node.textContent).join(""));
     if (!leadText) return null;
     const box = doc.createElement("div");
     lead.forEach((node) => box.append(node.cloneNode(true)));
-    const covered = (cls) => squash([...box.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`)).map((span) => span.textContent).join("")) === leadText;
+    const covered = (cls) => squash2([...box.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`)).map((span) => span.textContent).join("")) === leadText;
     let titleStyle = null;
     if (covered("fontsize-1-5em")) titleStyle = covered("fontsize-2em") ? "h1-42" : "h1-21";
     else if (covered("fontsize-2-5em")) titleStyle = "h1-2-5";
@@ -1046,17 +1140,17 @@ var CustomImportScript = (() => {
       if (last && last.gold === gold) last.text += t.textContent;
       else runs.push({ gold, text: t.textContent });
     }
-    const title = runs.map((run) => run.gold && squash(run.text) ? `[[color-gold]${squash(run.text)}]` : run.text).join("");
+    const title = runs.map((run) => run.gold && squash2(run.text) ? `[[color-gold]${squash2(run.text)}]` : run.text).join("");
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
     if (!text2(p)) p.remove();
     const h1 = doc.createElement("h1");
     if (titleStyle === "h1-2-5") {
       const strong = doc.createElement("strong");
-      strong.textContent = squash(title);
+      strong.textContent = squash2(title);
       h1.append(strong);
     } else {
-      h1.textContent = squash(title);
+      h1.textContent = squash2(title);
     }
     h1.titleStyle = titleStyle;
     return h1;
@@ -1108,6 +1202,14 @@ var CustomImportScript = (() => {
     const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
     return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
   }
+  function lineAboveSubheads(root) {
+    const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
+    const opensWithBreak = (h) => {
+      const first = [...h.childNodes].find((n) => n.nodeType !== 3 || n.textContent.trim());
+      return !!first && first.nodeName === "BR";
+    };
+    return subheads.length > 0 && subheads.every(opensWithBreak);
+  }
   function previousRichText(component) {
     const item = component.closest(".text");
     const prev = item && item.previousElementSibling;
@@ -1128,7 +1230,8 @@ var CustomImportScript = (() => {
     const futuraLinks = futuraLinkParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
-    const spaced = spacedSubheads(box);
+    const lineAbove = lineAboveSubheads(box);
+    const spaced = !lineAbove && spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const indents = new Map([...box.querySelectorAll(':scope > p[style*="margin-left"]')].map((p) => {
       const px = (p.getAttribute("style").match(/margin-left:\s*(\d+)px/) || [])[1];
@@ -1166,6 +1269,7 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
       if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
+      if (lineAbove) node.copyStyle = [node.copyStyle, "h4-line-above"].filter(Boolean).join(", ");
       if (blue) {
         const styles = (node.copyStyle || "").split(", ").filter(Boolean);
         node.copyStyle = [.../* @__PURE__ */ new Set([...styles, ...boxStyles.filter(Boolean)])].join(", ");
@@ -1783,11 +1887,11 @@ var CustomImportScript = (() => {
       after.remove();
     });
     main.querySelectorAll(".experiencefragment .c-rich-text-editor p").forEach((p) => {
-      const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+      const squash2 = (value) => value.replace(/[\s\u00a0]+/g, "");
       const sizes = new Set([...p.querySelectorAll('[class*="fontsize-"]')].flatMap((el) => [...el.classList].filter((c) => c.startsWith("fontsize-"))));
       sizes.forEach((size) => {
         const runs = [...p.querySelectorAll(`.${size}`)].filter((el) => !el.parentElement.closest(`.${size}`));
-        if (runs.length < 2 || squash(runs.map((el) => el.textContent).join("")) !== squash(p.textContent)) return;
+        if (runs.length < 2 || squash2(runs.map((el) => el.textContent).join("")) !== squash2(p.textContent)) return;
         runs.forEach((el) => el.classList.remove(size));
         const span = p.ownerDocument.createElement("span");
         span.className = size;
@@ -1854,7 +1958,7 @@ var CustomImportScript = (() => {
     const block = WebImporter.Blocks.createBlock(doc, { name, cells: [cells.map((c) => c.length ? c : "")] });
     return { block, style };
   }
-  function transform(hookName, element, payload) {
+  function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     const templateName = payload && payload.template && payload.template.name;
     if (templateName !== "news-detail" && templateName !== "news-detail-xf") return;
@@ -2185,7 +2289,7 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-resourcesanddownload")) {
-        if (!hasForm) {
+        if (!hasForm || component.querySelector(".item img")) {
           if (!component.querySelector(".item img")) return;
           const section = startSection("cards");
           const heading2 = component.querySelector(".title-container :is(h2, h3, h4)");
@@ -2450,7 +2554,7 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
-  function transform2(hookName, element, payload) {
+  function transform3(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
     const isNewsDetail = !!(payload && payload.template && [
@@ -2459,7 +2563,9 @@ var CustomImportScript = (() => {
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
-      "contact-division"
+      "contact-division",
+      "people",
+      "people-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
@@ -2656,7 +2762,7 @@ var CustomImportScript = (() => {
   function altToLinkText(alt, src) {
     return alt || src;
   }
-  function transform3(hookName, element, payload) {
+  function transform4(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
     element.querySelectorAll("img").forEach((img) => {
@@ -2714,7 +2820,8 @@ var CustomImportScript = (() => {
   var transformers = [
     transform,
     transform2,
-    transform3
+    transform3,
+    transform4
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
