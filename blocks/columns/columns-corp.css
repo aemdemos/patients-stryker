@@ -7,7 +7,7 @@
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
  * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
- * large-headline (the stryker.com Large
+ * no-stack (cells stay side by side on phones), large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
@@ -357,6 +357,12 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 
 /* ---- rows ---- */
 
+/* no-stack: cells stay side by side on phones (stryker.com board committees, three columns
+   at 375px) */
+body.corp .columns.no-stack > div {
+  flex-flow: row nowrap;
+}
+
 /* 4 cells: two per row on mobile */
 body.corp .columns.columns-4-cols > div {
   flex-flow: row wrap;
@@ -364,6 +370,10 @@ body.corp .columns.columns-4-cols > div {
 }
 
 /* ---- cells ---- */
+
+body.corp .columns.no-stack > div > div {
+  flex: 1 1 0;
+}
 
 body.corp .columns.columns-4-cols > div > div {
   flex: 0 0 50%;
@@ -1297,5 +1307,97 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
 
   body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
     margin-top: calc(var(--space-section) + var(--space-inset-m));
+  }
+}
+
+body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin: 0 0 var(--space-block-l);
+  padding: var(--space-block-l);
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  text-align: center;
+}
+
+body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: inherit;
+  font-weight: var(--font-weight-regular);
+}
+
+body.corp main .columns.color-heads.block > div > div:nth-child(2) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  background-color: var(--color-purple);
+}
+
+body.corp main .columns.color-heads.block > div > div:nth-child(3) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  background-color: var(--color-primary);
+}
+
+body.corp main .columns.striped.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  text-align: center;
+}
+
+body.corp main .columns.striped.block > div > div > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-size: calc(1.25 * var(--body-font-size-m));
+  color: var(--color-navy-bright);
+}
+
+body.corp main .columns.striped.block > div > div:nth-child(2) > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  color: var(--color-purple);
+}
+
+body.corp main .columns.striped.block > div > div:nth-child(3) > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  color: var(--color-primary);
+}
+
+body.corp main .columns.striped.block > div > div > ul {
+  margin-block: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.corp main .columns.striped.block > div > div > ul > li {
+  padding: var(--corp-table-cell-padding);
+}
+
+body.corp main .columns.striped.block > div > div > ul > li:nth-child(odd) {
+  background-color: var(--corp-color-table-stripe);
+}
+
+body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  font-family: var(--body-font-family);
+}
+
+@media (width >= 600px) {
+  body.corp main .columns.color-heads.block > div > div > p:first-child {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* stack with two cells (stryker.com col-md-6 col-lg-3, the MRI button pair): one per row below 900px,
+   half the row each from 900px, a quarter each from 1200px */
+@media (width >= 600px) {
+  body.corp .columns.stack.columns-2-cols > div {
+    flex-direction: column;
+  }
+
+  body.corp .columns.stack.columns-2-cols > div > div {
+    flex: 0 0 auto;
+  }
+}
+
+@media (width >= 900px) {
+  body.corp .columns.stack.columns-2-cols > div {
+    flex-direction: row;
+  }
+
+  body.corp .columns.stack.columns-2-cols > div > div {
+    flex-basis: 50%;
+  }
+}
+
+@media (width >= 1200px) {
+  body.corp .columns.stack.columns-2-cols > div > div {
+    flex-basis: 25%;
   }
 }

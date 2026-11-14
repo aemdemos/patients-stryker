@@ -21,6 +21,9 @@
   --map-embed-height-m: 400px;
   --corp-back-to-top-size: 40px;
   --corp-figure-size-l: 35px; /* measured: stryker.com span.fontsize-2-5em Futura bold figure in a gold box */
+  --corp-heading-line-height-title-underline: 0.795; /* measured: a source underlined title-only legal page h1 (CA transparency), phones */
+  --corp-legal-title-offset-trim: 2px; /* measured: stryker.com legal title header-to-H1 gap is --space-section less 2px (CA, sms, mri, bylaws) */
+  --corp-large-headline-offset: 2vw; /* measured: stryker.com Large Headline header-to-title gap is 2vw + 9.4px; the 9.4px is the existing H1 top spacing */
   --corp-quote-indent: 40px; /* measured: stryker.com rich-text indent (p margin-left 40px) of the Savoy pull quote */
   --corp-back-to-top-icon-size: 16px;
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
@@ -64,6 +67,8 @@
   --corp-social-icon-size-l: 48px;
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
+  --corp-color-table-stripe: #f5f5f5;
+  --corp-table-cell-padding: var(--space-block-s) 8px;
 
   /* stacked Marketo form fields (blocks/marketo-form, variant `stacked`): source Bootstrap
      .form-control field text: 18px/1.5 on phones, 14px/1.2 from 600px (Marketo's field line) */
@@ -203,6 +208,7 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) a.button:any-link,
 :where(body.corp) button.button {
   font-weight: 400;
+  white-space: normal; /* source .btn wraps its label inside the cell */
 }
 
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
@@ -366,6 +372,19 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.separator {
   margin: 0 0 var(--space-block-l);
   border-top: 1px solid var(--color-surface-muted);
+}
+
+/* section styles `width-50` / `width-67`: the text is 6/12 or 8/12 of the row from 900px (stryker.com
+   title and body columns of the California transparency disclosure); the padding leaves an
+   underlined title's rule at the full width */
+@media (width >= 900px) {
+  :where(body.corp) main > .section.width-50 > .default-content-wrapper > * {
+    padding-right: calc(50% + var(--space-block));
+  }
+
+  :where(body.corp) main > .section.width-67 > .default-content-wrapper > * {
+    padding-right: calc(33.333% + var(--space-block));
+  }
 }
 
 /* section style `no-arrow`: bold + underline links without the trailing arrow (stryker.com
@@ -569,6 +588,32 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-2vw {
     --corp-headline-vw: 1vw;
+  }
+}
+
+/* headline-2-5vw: a page title the source sets as a Large Headline at 2.5vw (stryker.com
+   .c-largeheadline, e.g. the bylaws and governance guideline pages: 18.75px at 375px, 38.4px
+   at 768px, 32px at 1280px): the page H1 in Futura bold at 5vw, from 900px 2.5vw capped at
+   35px */
+:where(body.corp) main > .section.headline-2-5vw {
+  --corp-headline-vw: 2vw;
+}
+
+:where(body.corp) main > .section.headline-2-5vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), calc(2.5 * var(--corp-headline-vw)));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main > .section.headline-2-5vw {
+    --corp-headline-vw: 1vw;
+  }
+
+  :where(body.corp) main > .section.headline-2-5vw > .default-content-wrapper h1 {
+    font-size: min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--corp-headline-vw)));
   }
 }
 
@@ -1205,6 +1250,13 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   :where(body.corp) main > .section.video-text > div:empty {
     display: none;
   }
+}
+
+/* section style `heading-space-l`: every Heading 2 of the section after the first has two blank
+   lines above it — stryker.com headings set after two empty <p>&nbsp;</p> spacers (legal bylaws
+   and charters: 84px from the text above to the next Article / heading, at every width) */
+:where(body.corp) main > .section.heading-space-l > .default-content-wrapper > h2:not(:first-child) {
+  margin-top: calc(var(--space-block) + 2 * var(--corp-blank-line));
 }
 
 /* headline-3vw (above): a Heading 2's rule below it, 30px under the headline (70px from

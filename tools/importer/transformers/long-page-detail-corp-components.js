@@ -214,14 +214,23 @@ function accordions(main, doc, h) {
     const panels = [...group.querySelectorAll(':scope > .panel')].filter((p) => p.querySelector('.panel-title'));
     if (!panels.length) return;
     const options = accordionOptions(panels);
-    const name = options ? `Accordion (${options})` : 'Accordion';
+    // a divided accordion (import-corp-legal.js marks it): the blocks in a panel give their
+    // cells' content, so the panels stay one Accordion with a rule under every title
+    const divided = group.hasAttribute('data-divided');
+    const variant = divided ? 'divided' : options;
+    const name = variant ? `Accordion (${variant})` : 'Accordion';
     const items = panels.map((panel) => ({
       label: h.text(panel.querySelector('.panel-title')),
       body: contentNodes(panel.querySelector('.panel-body') || panel, doc, h),
     }));
     items.forEach(({ body }) => tagPanelCopy(body, doc, h));
+    if (divided) {
+      items.forEach((item) => {
+        item.body = item.body.flatMap((n) => (n.nodeType === 1 && n.matches('table') ? blockCells(n) : [n]));
+      });
+    }
     const target = group.closest('.c-accordion') || group;
-    const nested = items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))));
+    const nested = !divided && items.some(({ body }) => body.some((n) => n.nodeType === 1 && (n.matches('table') || n.querySelector('table'))));
     // in a tab, panels can't be sections: the blocks in a panel (Columns rows, e.g. the Mako
     // surgeon campaign clinical studies: image | text) give their cells' content, so the
     // panels stay an Accordion (closed, as on the source)

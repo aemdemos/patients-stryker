@@ -1314,6 +1314,43 @@
         "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
       ],
       "blocks": []
+    },
+    {
+      "name": "corp-legal",
+      "urls": [
+        "https://www.stryker.com/us/en/about/corporate-responsibility/responsible-supply-chains/-disclosure-statement-re-california-transparency-in-supply-chain.html",
+        "https://www.stryker.com/us/en/about/corporate-responsibility/responsible-supply-chains/po-terms.html",
+        "https://www.stryker.com/us/en/about/governance/board-committees.html",
+        "https://www.stryker.com/us/en/about/governance/bylaws.html",
+        "https://www.stryker.com/us/en/about/governance/charters.html",
+        "https://www.stryker.com/us/en/about/governance/corporate-governance-guidelines.html",
+        "https://www.stryker.com/us/en/about/governance/equity-based-compensation-awards.html",
+        "https://www.stryker.com/us/en/about/governance/lifecycle-support.html",
+        "https://www.stryker.com/us/en/about/suppliers/supplier-code-of-conduct.html",
+        "https://www.stryker.com/us/en/emergency-care/terms/sms-terms-and-conditions.html",
+        "https://www.stryker.com/us/en/legal/convercent-global-privacy-statement.html",
+        "https://www.stryker.com/us/en/legal/cookie-disclaimer.html",
+        "https://www.stryker.com/us/en/legal/icrc.html",
+        "https://www.stryker.com/us/en/legal/privacy.html",
+        "https://www.stryker.com/us/en/legal/privacy/privacy-notice-for-california-residents.html",
+        "https://www.stryker.com/us/en/legal/surgeon-disclaimer.html",
+        "https://www.stryker.com/us/en/legal/terms-of-use.html",
+        "https://www.stryker.com/us/en/legal/website-accessibility.html",
+        "https://www.stryker.com/us/en/neurovascular/dfu.html",
+        "https://www.stryker.com/us/en/neurovascular/dfu/access-device-dfu.html",
+        "https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular/hemorrhagic-stroke/mri.html",
+        "https://www.stryker.com/us/en/sage/disclosure-and-safety-information.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/legal/terms-of-use.html",
+      "description": "www.stryker.com legal, governance and policy pages (#517): legal notices, governance bylaws and charters, policy and DFU pages, built as the long-page-detail-corp pages; source tables (.c-table) become `Table (no-header, striped)` blocks. Script: tools/importer/import-corp-legal.js.",
+      "blocks": [
+        {
+          "name": "table",
+          "instances": [
+            ".c-table table"
+          ]
+        }
+      ]
     }
   ]
 }
