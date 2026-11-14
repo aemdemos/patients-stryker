@@ -1351,6 +1351,41 @@
           ]
         }
       ]
+    },
+    {
+      "name": "patents",
+      "urls": [
+        "https://www.stryker.com/us/en/about/patents.html",
+        "https://www.stryker.com/us/en/about/patents/Craniomaxillofacial-Patents.html",
+        "https://www.stryker.com/us/en/about/patents/Spine-patents.html",
+        "https://www.stryker.com/us/en/about/patents/endoscopy-patents.html",
+        "https://www.stryker.com/us/en/about/patents/instruments-patents.html",
+        "https://www.stryker.com/us/en/about/patents/joint-replacement-patents.html",
+        "https://www.stryker.com/us/en/about/patents/mako-patents.html",
+        "https://www.stryker.com/us/en/about/patents/medical-patents.html",
+        "https://www.stryker.com/us/en/about/patents/medical-patents0.html",
+        "https://www.stryker.com/us/en/about/patents/neurovascular-intervention-patents.html",
+        "https://www.stryker.com/us/en/about/patents/orthobiologics-patents.html",
+        "https://www.stryker.com/us/en/about/patents/trauma-and-extremities-patents.html",
+        "https://www.stryker.com/us/en/about/trademarks.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/about/patents/Spine-patents.html",
+      "coverageGaps": [],
+      "description": "www.stryker.com patents and trademarks pages (#518): the patents index (Columns (columns-50-50) hero, product-line links, document code) and the patents tables and trademarks list, each source table as `Table (no-header, striped, stacked)`. Script: tools/importer/import-patents.js.",
+      "blocks": [
+        {
+          "name": "table",
+          "instances": [
+            ".c-patenttables table"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".c-page-hero"
+          ]
+        }
+      ]
     }
   ]
 }
