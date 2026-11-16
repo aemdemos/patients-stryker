@@ -3907,6 +3907,19 @@ var CustomImportScript = (() => {
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = PAGE_TEMPLATE.name;
+      if (!meta.Description) {
+        const wordCount = (t) => (t.match(/[A-Za-z0-9]+/g) || []).length;
+        const linkOnly = (p) => {
+          const a = p.querySelector("a");
+          return !!a && p.textContent.trim() === a.textContent.trim();
+        };
+        const fileName = (p) => linkOnly(p) && /^\S+$/.test(p.textContent.trim()) && !/^https?:/i.test(p.textContent.trim());
+        const long = [...main.querySelectorAll("p")].filter((p) => wordCount(p.textContent) >= 10);
+        if (long[0] && fileName(long[0])) {
+          const first = long.find((p) => !linkOnly(p));
+          if (first) meta.Description = first.textContent.replace(/\s+/g, " ").trim();
+        }
+      }
       if (semanticTheme) meta.theme = semanticTheme;
       if (hcp) meta["hcp-banner"] = "true";
       if (published) {

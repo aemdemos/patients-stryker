@@ -135,6 +135,25 @@ export default {
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
     meta.template = PAGE_TEMPLATE.name;
+    // no source description: EDS writes one from the first paragraph of 10+ words; when that is
+    // a link alone (a video / asset link named after its file, e.g. endoscopy plastic surgery
+    // "Dr_David_Weintritt_The_Ergonomics_and_Utility_of_SPY-PHI"), the description is the first
+    // text paragraph of 10+ words instead, as EDS gives the sibling pages
+    if (!meta.Description) {
+      const wordCount = (t) => (t.match(/[A-Za-z0-9]+/g) || []).length;
+      const linkOnly = (p) => {
+        const a = p.querySelector('a');
+        return !!a && p.textContent.trim() === a.textContent.trim();
+      };
+      // a link alone whose text is one file-name-like word (no spaces, not a web address)
+      const fileName = (p) => linkOnly(p) && /^\S+$/.test(p.textContent.trim())
+        && !/^https?:/i.test(p.textContent.trim());
+      const long = [...main.querySelectorAll('p')].filter((p) => wordCount(p.textContent) >= 10);
+      if (long[0] && fileName(long[0])) {
+        const first = long.find((p) => !linkOnly(p));
+        if (first) meta.Description = first.textContent.replace(/\s+/g, ' ').trim();
+      }
+    }
     if (semanticTheme) meta.theme = semanticTheme;
     if (hcp) meta['hcp-banner'] = 'true';
     // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
