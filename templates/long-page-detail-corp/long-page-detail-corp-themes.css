@@ -1,0 +1,17 @@
+/* long-page-detail-corp themes: loaded only on pages that set `theme` metadata
+   (scripts/corp.js loadTemplate). Each theme is a page group's default-content look. */
+
+/* ---- theme `large-copy`: the page's own text (default content) in 17.5px copy, lines
+   21.25px apart (stryker.com .fontsize-1-25em on the rich text of the SKILL and ASC care
+   setting pages; measured on centers-of-excellence and operating-room). Blocks keep their
+   own copy size (Columns / Accordion / Panel `large-copy` variants) ---- */
+body.long-page-detail-corp.large-copy main > .section > .default-content-wrapper :is(p, ul, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* a standalone link (bold + underline) stays the 14px Futura bold action link */
+body.long-page-detail-corp.large-copy main > .section > .default-content-wrapper a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}

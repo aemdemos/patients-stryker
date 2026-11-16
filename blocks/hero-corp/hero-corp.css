@@ -197,6 +197,31 @@
   }
 }
 
+/* ---- large / xlarge: the title (Heading 1) in the stryker.com Large Headline sizes, 4vw / 5.5vw
+   (span.fontsize-4vw, -5-5-vw: N% of the content width, 56px / 77px at 1440, twice the % below
+   600px: 30px / 41.25px at 375), lines 1.35 apart. Plain words are Egyptienne light, Bold
+   words Futura bold (measured: ASC pre-operative, operating room, spine events) ---- */
+.hero-corp {
+  --hero-corp-title-unit: 2vw;
+  --hero-corp-title-line-height: 1.35;
+}
+
+.hero-corp.large { --hero-corp-title-size: 4; }
+.hero-corp.xlarge { --hero-corp-title-size: 5.5; }
+
+.hero-corp:is(.large, .xlarge) > div:last-child h1 {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-corp-title-size) * var(--hero-corp-title-unit));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--hero-corp-title-line-height);
+}
+
+@media (width >= 600px) {
+  .hero-corp {
+    --hero-corp-title-unit: calc(min(100vw, var(--container-max)) / 100);
+  }
+}
+
 /* on phones a slide whose text goes below its image shows white text in the text colour, on
    the page's white (stryker.com .mobile_Bottom with .mobile-text-black / dark_gray) */
 .hero-corp.image-slide.text-below span.color-white {
@@ -285,6 +310,30 @@
   .hero-corp[data-phone-text] > div:last-child span.color-navy { --span-color: var(--color-navy); }
   .hero-corp[data-phone-text] > div:last-child span.color-grey { --span-color: var(--color-secondary); }
   .hero-corp[data-phone-text] > div:last-child span.color-light-gray { --span-color: var(--color-surface-muted); }
+}
+
+/* `Text colour` (Section Metadata): the hero's text in white or light grey (a slide over a dark
+   image, stryker.com white / .dark_gray_40T text: ASC, BACS banners, e-Lab's gold box); on phones
+   a slide whose text goes below its image keeps the text colour */
+.hero-corp[data-text-colour="white"] { --hero-text-colour: var(--color-white); }
+.hero-corp[data-text-colour="light-gray"] { --hero-text-colour: var(--color-surface-muted); }
+
+.hero-corp[data-text-colour]:not(.text-below) > div:last-child,
+.hero-corp[data-text-colour]:not(.text-below) > div:last-child > * {
+  color: var(--hero-text-colour);
+}
+
+@media (width >= 600px) {
+  .hero-corp[data-text-colour] > div:last-child,
+  .hero-corp[data-text-colour] > div:last-child > * {
+    color: var(--hero-text-colour);
+  }
+}
+
+/* a dark box's text is white (stryker.com: the purple, teal and blue BACS boxes); a gold or white
+   box keeps the text colour (black on the SKILL and instruments gold boxes) */
+.hero-corp:is([data-text-box="purple"], [data-text-box="teal"], [data-text-box="blue"], [data-text-box="dark-purple-gradient"]) > div:last-child > .hero-corp-text-box {
+  color: var(--color-white);
 }
 
 /* an autoplaying hero video (stryker.com slide viewer with autoplay): no control bar and no

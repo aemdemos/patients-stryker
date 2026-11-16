@@ -83,6 +83,15 @@ body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.un
   border-bottom: 0;
 }
 
+/* ---- heading + italic: Egyptienne light, upright (stryker.com span.urw-egyptienne lines at
+   heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px). A heading's plain words keep
+   the level's font, Bold is Futura bold, Bold + Italic the gold Futura accent ---- */
+body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+}
+
 /* ---- title section ---- */
 
 body.long-page-detail-corp main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
@@ -1236,8 +1245,10 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
 
 /* ---- the hero (Hero Corp, slide and banner): its text sizes are the bracket tags of the
    text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
-   the block's 2vw default (stryker.com hero overlays and banner text boxes) */
-body.long-page-detail-corp main .hero-corp > div:last-child > * {
+   the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
+   `large` / `xlarge` hero keeps the variant's size */
+body.long-page-detail-corp main .hero-corp > div:last-child > :not(h1),
+body.long-page-detail-corp main .hero-corp:not(.large, .xlarge) > div:last-child > h1 {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
@@ -1283,6 +1294,18 @@ body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*
 
 body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) + .button-wrapper {
   margin-top: var(--space-section);
+}
+
+/* ---- the hero title (Heading 1) of a `Hero Corp` without a size variant: 2.5vw, the most
+   common stryker.com hero size (span.fontsize-2-5-vw: 35px at 1440, 18.75px at 375; forms,
+   instruments, environmental programs, SKILL), Egyptienne light, Bold words Futura bold.
+   `large` / `xlarge` (blocks/hero-corp) set 4vw / 5.5vw. A title that still holds size tags
+   (pages not yet re-imported) keeps their sizes ---- */
+body.long-page-detail-corp main .hero-corp:not(.large, .xlarge) > div:last-child h1:not(:has(span[class*="text-"], span[class*="headline-"])) {
+  font-family: var(--heading-font-family);
+  font-size: calc(2.5 * var(--hero-corp-title-unit));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--hero-corp-title-line-height);
 }
 
 /* …its headline lines 1.35x their size apart (stryker.com hero lines: 103.95px at 77px) */

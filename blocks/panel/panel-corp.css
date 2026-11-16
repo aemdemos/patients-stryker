@@ -38,3 +38,11 @@ body.corp .panel.gold-gradient .panel-body {
 body.corp .panel:is(.gold, .gold-gradient) .panel-body p {
   font-family: var(--body-font-family);
 }
+
+/* large-copy: 17.5px copy (stryker.com .fontsize-1-25em on the box text: TEACH talks
+   "Course overview", SKILL), lines 21.25px apart */
+body.corp .panel.large-copy .panel-body :is(p, li),
+body.corp .panel.large-copy .panel-body p:last-child {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
