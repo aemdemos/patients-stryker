@@ -1401,3 +1401,9 @@ body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):
     flex-basis: 25%;
   }
 }
+
+@media (width >= 1200px) {
+  body.corp .columns.stack.columns-50-50.columns-2-cols > div > div {
+    flex-basis: 50%;
+  }
+}

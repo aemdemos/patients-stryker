@@ -3235,7 +3235,7 @@ var CustomImportScript = (() => {
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
   }
-  var HERO_OPTIONS = "image-slide, text-below, top-19, left-7-7, size-3-5";
+  var HERO_OPTIONS = "image-slide, text-above, framed, top-18, left-7-5, size-3-5";
   function heroImage(main, document, url) {
     var _a;
     if (!url.includes("legal/icrc")) return;
@@ -3248,13 +3248,21 @@ var CustomImportScript = (() => {
     const kids = [...main.children];
     const hrIdx = kids.findIndex((n) => n.tagName === "HR");
     const title = kids.filter((n, i) => n.matches("h1, p") && (hrIdx < 0 || i < hrIdx) && !n.contains(holder));
-    cells.push([title.slice(0, 2)]);
+    const [heading, second, ...rest] = title;
+    heading.append(document.createElement("br"), ...second.childNodes);
+    second.remove();
+    cells.push([[heading, ...rest]]);
     const hero = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
     holder.replaceWith(hero);
-    hero.after(document.createElement("hr"), ...title.slice(2));
     while (((_a = main.firstElementChild) == null ? void 0 : _a.tagName) === "HR") main.firstElementChild.remove();
     main.querySelectorAll("table").forEach((table) => {
       if (text4(table.querySelector("th, tr")) === "Section Metadata" && (text4(table).includes("full-width-image") || text4(table).includes("spacer") && !text4(table).includes("large"))) table.remove();
+    });
+  }
+  function stackContactMap(main) {
+    main.querySelectorAll("table").forEach((table) => {
+      const head = table.querySelector("th, td");
+      if (/^Columns \(columns[- ]50[- ]50\)$/.test(text4(head))) head.textContent = "Columns (columns 50 50, stack)";
     });
   }
   function committeeColumns(main, document, url) {
@@ -3287,7 +3295,7 @@ var CustomImportScript = (() => {
       const main = document.body;
       const hcp = !!document.querySelector(".g-hcpbanner");
       const published = publishedDate(document);
-      if (url.includes("/hemorrhagic-stroke/mri")) {
+      if (url.includes("/hemorrhagic-stroke/mri") || url.includes("/sage/disclosure")) {
         main.querySelectorAll(".panel-group").forEach((group) => group.setAttribute("data-divided", ""));
       }
       indentedLists(main, document);
@@ -3299,6 +3307,7 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       const bracketStyles = stripBrackets(main, document);
       committeeColumns(main, document, url);
+      stackContactMap(main);
       heroImage(main, document, url);
       underlineTitles(main, document);
       dropUnlistedStyles(main);

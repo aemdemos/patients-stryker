@@ -34,6 +34,9 @@ body.corp-legal main > .section > .default-content-wrapper > h3:has(+ p) {
 
 body.corp-legal main .columns h4:has(+ p) {
   margin-bottom: 0;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--body-font-size-m);
 }
 
 body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
@@ -124,8 +127,13 @@ body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first
   padding-left: var(--list-indent-l);
 }
 
-body.corp-legal main .accordion.divided {
+body.corp-legal main > .section.width-50:first-child + .section .accordion.divided {
+  padding-top: var(--space-block-l);
   border-top: 1px solid var(--color-surface-muted);
+}
+
+body.corp-legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block);
 }
 
 /* the source's column control adds its section gap below an open panel */
@@ -134,7 +142,35 @@ body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-bod
 }
 
 @media (width >= 600px) {
+  body.corp-legal main > .section.width-50:first-child + .section .accordion.divided {
+    padding-top: var(--space-section);
+  }
+
+  body.corp-legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+    margin-bottom: var(--space-block);
+  }
+
   body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-body {
     padding-bottom: calc(2 * var(--space-block) + var(--space-block-s));
+  }
+}
+
+body.corp-legal main .table.block table td strong {
+  font-family: inherit;
+}
+
+body.corp-legal main .table.block table td p {
+  line-height: var(--body-line-height);
+}
+
+body.corp-legal main .accordion.divided .accordion-item-label {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 600px) {
+  body.corp-legal main .accordion.divided .accordion-item-label {
+    font-size: var(--body-font-size-l);
   }
 }

@@ -419,8 +419,9 @@ function publishedDate(document) {
   return m ? `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : '';
 }
 
-// Hero Corp options for the icrc band: title top-left over the image (source Large Headline 3.5vw)
-const HERO_OPTIONS = 'image-slide, text-below, top-19, left-7-7, size-3-5';
+// Hero Corp options for the icrc band: title top-left over the image (source Large Headline 3.5vw),
+// above it on phones and tablets
+const HERO_OPTIONS = 'image-slide, text-above, framed, top-18, left-7-5, size-3-5';
 
 // board-committees: each committee (bold name, member lines) was a pair of sections; the
 // source shows the three side by side, so they become the cells of one Columns row.
@@ -440,16 +441,25 @@ function heroImage(main, document, url) {
   const title = kids.filter((n, i) => n.matches('h1, p')
     && (hrIdx < 0 || i < hrIdx)
     && !n.contains(holder));
-  cells.push([title.slice(0, 2)]);
+  const [heading, second, ...rest] = title;
+  heading.append(document.createElement('br'), ...second.childNodes);
+  second.remove();
+  cells.push([[heading, ...rest]]);
   const hero = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
   holder.replaceWith(hero);
-  // the rule and tagline keep their own size, which the Hero Corp text options cannot set
-  hero.after(document.createElement('hr'), ...title.slice(2));
   while (main.firstElementChild?.tagName === 'HR') main.firstElementChild.remove();
   main.querySelectorAll('table').forEach((table) => {
     if (text(table.querySelector('th, tr')) === 'Section Metadata'
       && (text(table).includes('full-width-image')
         || (text(table).includes('spacer') && !text(table).includes('large')))) table.remove();
+  });
+}
+
+// the contact details and map stack below 900px (stryker.com col-md-6)
+function stackContactMap(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    const head = table.querySelector('th, td');
+    if (/^Columns \(columns[- ]50[- ]50\)$/.test(text(head))) head.textContent = 'Columns (columns 50 50, stack)';
   });
 }
 
@@ -485,7 +495,7 @@ export default {
     const hcp = !!document.querySelector('.g-hcpbanner');
     const published = publishedDate(document);
 
-    if (url.includes('/hemorrhagic-stroke/mri')) {
+    if (url.includes('/hemorrhagic-stroke/mri') || url.includes('/sage/disclosure')) {
       main.querySelectorAll('.panel-group').forEach((group) => group.setAttribute('data-divided', ''));
     }
     indentedLists(main, document);
@@ -497,6 +507,7 @@ export default {
     executeTransformers('afterTransform', main, payload);
     const bracketStyles = stripBrackets(main, document);
     committeeColumns(main, document, url);
+    stackContactMap(main);
     heroImage(main, document, url);
     underlineTitles(main, document);
     dropUnlistedStyles(main);
