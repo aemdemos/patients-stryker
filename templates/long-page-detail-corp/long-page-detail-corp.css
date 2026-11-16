@@ -74,6 +74,19 @@ body.long-page-detail-corp main:has(> .section:first-child.local-nav-corp-contai
   }
 }
 
+/* ---- headings that stand for stryker.com's fixed em sizes keep them on phones (the corp
+   heading sizes step down below 600px, as the news pages' real headings do): a Heading 3 with
+   Bold words is 21px (1.5em Futura bold lines, e.g. the endoscopy video titles, webinars
+   "Check back for in-person programs later this year!"), a Heading 2 that is not an
+   underlined section title 24.5px (1.75em, e.g. courses "Webinars") ---- */
+body.long-page-detail-corp main h3:has(strong) {
+  font-size: var(--heading-font-size-l);
+}
+
+body.long-page-detail-corp main h2:not(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xl);
+}
+
 /* ---- a rich-text Heading 2 (not a section title): no rule below it, as on stryker.com
    (its .c-rich-text-editor headings have none; the corp rule is the news articles'): Mako
    thank-you "You'll receive an event confirmation…". Section titles are underlined Heading 2s

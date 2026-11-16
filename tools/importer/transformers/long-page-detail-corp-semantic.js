@@ -340,6 +340,8 @@ function finishSpans(doc, main, warn) {
 // the copy size / font section styles that become a variant of the section's blocks
 const BLOCK_VARIANT = { 'p-1-25': 'large-copy', 'p-1-5': 'xlarge-copy', serif: 'serif' };
 const VARIANT_BLOCKS = /^(columns|accordion|panel)\b/i;
+// the copy size section styles whose fully Bold lines are headings (the §4 size mapping)
+const SECTION_SIZE_HEADING = { 'p-1-75': 'h2', 'p-1-5': 'h3', 'p-1-25': 'h4' };
 
 /** adds a variant to a block table's name ("Columns (stack)" → "Columns (stack, large-copy)") */
 function addVariant(table, variant) {
@@ -378,6 +380,20 @@ function dropTypographyStyles(doc, main, warn) {
     if (emptied && prevEmptied && section.hr) section.hr.remove();
     prevEmptied = emptied;
     if (typo.includes('h-serif') || typo.includes('h2-1-5')) serifHeadings(doc, section);
+    // a fully Bold line of the section's own text at a heading size → that heading, as the
+    // size-tagged lines (webinars "Check back for in-person programs later this year!",
+    // Futura bold 1.5em → H3 + Bold)
+    const level = SECTION_SIZE_HEADING[typo.find((s) => SECTION_SIZE_HEADING[s])];
+    if (level) {
+      section.nodes.forEach((n, i) => {
+        if (n.tagName !== 'P' || !norm(n.textContent)) return;
+        const bold = norm([...n.querySelectorAll('strong, b')].map((b) => b.textContent).join(''));
+        if (bold !== norm(n.textContent)) return;
+        const h = rename(doc, n, level);
+        if (level === 'h2') h.querySelectorAll('strong, b').forEach(unwrap);
+        section.nodes[i] = h;
+      });
+    }
     const blocks = section.nodes.filter((n) => n.tagName === 'TABLE'
       && VARIANT_BLOCKS.test(norm(n.querySelector('tr')?.textContent || '')));
     typo.forEach((s) => {

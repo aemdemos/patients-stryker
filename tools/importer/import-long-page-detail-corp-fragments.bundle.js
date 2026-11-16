@@ -3599,6 +3599,7 @@ var CustomImportScript = (() => {
   }
   var BLOCK_VARIANT = { "p-1-25": "large-copy", "p-1-5": "xlarge-copy", serif: "serif" };
   var VARIANT_BLOCKS = /^(columns|accordion|panel)\b/i;
+  var SECTION_SIZE_HEADING = { "p-1-75": "h2", "p-1-5": "h3", "p-1-25": "h4" };
   function addVariant(table, variant) {
     const cell = table.querySelector("tr > th, tr > td");
     const name = norm(cell.textContent);
@@ -3630,6 +3631,17 @@ var CustomImportScript = (() => {
       if (emptied && prevEmptied && section.hr) section.hr.remove();
       prevEmptied = emptied;
       if (typo.includes("h-serif") || typo.includes("h2-1-5")) serifHeadings2(doc, section);
+      const level = SECTION_SIZE_HEADING[typo.find((s) => SECTION_SIZE_HEADING[s])];
+      if (level) {
+        section.nodes.forEach((n, i) => {
+          if (n.tagName !== "P" || !norm(n.textContent)) return;
+          const bold = norm([...n.querySelectorAll("strong, b")].map((b) => b.textContent).join(""));
+          if (bold !== norm(n.textContent)) return;
+          const h = rename2(doc, n, level);
+          if (level === "h2") h.querySelectorAll("strong, b").forEach(unwrap2);
+          section.nodes[i] = h;
+        });
+      }
       const blocks = section.nodes.filter((n) => {
         var _a;
         return n.tagName === "TABLE" && VARIANT_BLOCKS.test(norm(((_a = n.querySelector("tr")) == null ? void 0 : _a.textContent) || ""));
