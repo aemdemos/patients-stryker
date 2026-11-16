@@ -3683,10 +3683,13 @@ var CustomImportScript = (() => {
     sectionsOf(main).forEach((section) => {
       const styles = styleOf(section);
       const isBox = styles.includes("headline-box");
-      const isTitle = styles.includes("h4-2-5");
-      const lines = section.nodes.filter((n) => /^(P|H[1-6])$/.test(n.tagName) && (n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]') || isTitle && n.tagName === "H1"));
-      if (!lines.length || !(isBox || isTitle)) return;
-      const ctx = { title: isTitle, warn };
+      if (styles.includes("h4-2-5") && !isBox) {
+        main.setAttribute("data-semantic-theme", "thank-you-large");
+        return;
+      }
+      const lines = section.nodes.filter((n) => /^(P|H[1-6])$/.test(n.tagName) && n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]'));
+      if (!lines.length || !isBox) return;
+      const ctx = { title: false, warn };
       const first = section.nodes.find((n) => lines.includes(n));
       const out = section.nodes.filter((n) => lines.includes(n) || /^(P|H[1-6]|UL|OL)$/.test(n.tagName)).map((n) => lines.includes(n) ? headlineLine(doc, n, ctx) : n);
       const name = `Columns (large-headline${ctx.title ? ", title" : ""})`;
@@ -3895,6 +3898,8 @@ var CustomImportScript = (() => {
       });
       executeTransformers("afterTransform", main, payload);
       edsLinkPaths(main);
+      const semanticTheme = main.getAttribute("data-semantic-theme");
+      main.removeAttribute("data-semantic-theme");
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
@@ -3902,6 +3907,7 @@ var CustomImportScript = (() => {
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = PAGE_TEMPLATE.name;
+      if (semanticTheme) meta.theme = semanticTheme;
       if (hcp) meta["hcp-banner"] = "true";
       if (published) {
         meta.published = published;

@@ -15,3 +15,39 @@ body.long-page-detail-corp.large-copy main > .section > .default-content-wrapper
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
 }
+
+/* ---- theme `thank-you-large`: an enlarged page title and subtitle (stryker.com rich text: an h4
+   at 2.5em, Futura bold, and an h2 at 1.5em, Egyptienne medium; the Mako Live thank-you page,
+   measured at 375 / 1000 / 1440): the H1 35px, 43.75px from 900px (source 1024px), the H2
+   31.5px, 36.75px from 900px, both on lines 1.06 apart, the H2 15px under the H1. Authored as
+   plain page text: H1 with the gold words Bold + Italic, H2 in Italic ---- */
+body.long-page-detail-corp.thank-you-large {
+  --long-page-detail-corp-theme-title-size: var(--corp-heading-font-size-h1-1-25);
+  --long-page-detail-corp-theme-subtitle-size: var(--corp-heading-font-size-h2-1-5-s);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--long-page-detail-corp-theme-title-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--long-page-detail-corp-theme-subtitle-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h2 em:not(strong em) {
+  font-weight: var(--font-weight-medium);
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp.thank-you-large {
+    --long-page-detail-corp-theme-title-size: 43.75px; /* stryker.com 2.5em of the 17.5px h4 */
+    --long-page-detail-corp-theme-subtitle-size: 36.75px; /* 1.5em of the 24.5px h2 */
+  }
+}

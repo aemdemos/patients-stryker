@@ -99,7 +99,8 @@ body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.un
 /* ---- heading + italic: Egyptienne light, upright (stryker.com span.urw-egyptienne lines at
    heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px, the OR staff form statement).
    A heading's plain words keep the level's font, Bold is Futura bold, Bold + Italic the gold
-   Futura accent (also Bold words inside the Italic, as the markdown merges them) ---- */
+   Futura accent (also Bold words inside the Italic, as the markdown merges them; the DA
+   editor's Italic-around-Bold gold words are turned around by long-page-detail-corp.js) ---- */
 body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) em:not(strong em) {
   font-family: var(--heading-font-family);
   font-style: normal;

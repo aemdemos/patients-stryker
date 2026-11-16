@@ -10,9 +10,11 @@
  * - gold → Bold + Italic; white / light grey / other accents → the container's colour;
  * - a whole line in a size tag → a heading level (1.75em H2, 1.5em H3 + Bold, 1.25em Bold
  *   H4), an Egyptienne line in a heading → Italic (heading + italic = Egyptienne light);
- * - a Large Headline section (`headline-box`, or the `h4-2-5` title) → one
- *   `Columns (large-headline)` block: H1 4vw title (`title` option when fully Bold), H5 5vw
- *   Futura line, H2 Italic 4vw / H3 Italic 3.5vw Egyptienne lines, H2 Bold 2vw, 1.5vw text;
+ * - a Large Headline section (`headline-box`) → one `Columns (large-headline)` block: H1
+ *   4vw title (`title` option when fully Bold), H5 5vw Futura line, H2 Italic 4vw / H3 Italic
+ *   3.5vw Egyptienne lines, H2 Bold 2vw, 1.5vw text;
+ * - an enlarged rich-text title (`h4-2-5`) and subtitle stay page text, with the page theme
+ *   `thank-you-large` (body `data-semantic-theme`, read by the import script);
  * - the typography section styles (`p-*`, `serif`, `h-serif`, `h2-1-5`, `h3-1-25`,
  *   `h4-2-5`, `bold-body`) are dropped.
  * Anything not mapped is unwrapped (its text kept) and logged.
@@ -267,11 +269,16 @@ function largeHeadlines(doc, main, warn) {
   sectionsOf(main).forEach((section) => {
     const styles = styleOf(section);
     const isBox = styles.includes('headline-box');
-    const isTitle = styles.includes('h4-2-5');
+    // an enlarged rich-text title (`h4-2-5`: stryker.com h4 at 2.5em, the Mako Live thank-you
+    // page) stays plain page text; the page theme `thank-you-large` sets its size
+    if (styles.includes('h4-2-5') && !isBox) {
+      main.setAttribute('data-semantic-theme', 'thank-you-large');
+      return;
+    }
     const lines = section.nodes.filter((n) => /^(P|H[1-6])$/.test(n.tagName)
-      && (n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]') || (isTitle && n.tagName === 'H1')));
-    if (!lines.length || !(isBox || isTitle)) return;
-    const ctx = { title: isTitle, warn };
+      && n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]'));
+    if (!lines.length || !isBox) return;
+    const ctx = { title: false, warn };
     const first = section.nodes.find((n) => lines.includes(n));
     const out = section.nodes.filter((n) => lines.includes(n) || /^(P|H[1-6]|UL|OL)$/.test(n.tagName))
       .map((n) => (lines.includes(n) ? headlineLine(doc, n, ctx) : n));

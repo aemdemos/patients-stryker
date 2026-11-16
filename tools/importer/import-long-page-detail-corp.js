@@ -125,6 +125,9 @@ export default {
 
     // 4. metadata. `site: corp` and the " | Stryker" title suffix come from the corp bulk
     // metadata; site + template are repeated on the page so it renders the same anywhere.
+    // a page theme the semantic transformer chose (e.g. `thank-you-large`)
+    const semanticTheme = main.getAttribute('data-semantic-theme');
+    main.removeAttribute('data-semantic-theme');
     main.appendChild(document.createElement('hr'));
     const meta = WebImporter.Blocks.getMetadata(document);
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
@@ -132,6 +135,7 @@ export default {
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
     meta.template = PAGE_TEMPLATE.name;
+    if (semanticTheme) meta.theme = semanticTheme;
     if (hcp) meta['hcp-banner'] = 'true';
     // the Last Updated line is not shown for now (`show` turns it on, scripts/corp.js)
     if (published) {

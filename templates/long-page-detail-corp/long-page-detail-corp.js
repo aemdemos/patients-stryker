@@ -44,12 +44,36 @@ async function shapeVideo(video) {
 }
 
 /**
- * Shapes the video players on the page, including the ones the video block adds later.
+ * Gold words in headings: the DA editor writes them as Italic around Bold (`<em><strong>`),
+ * the importer as Bold around Italic; both are the gold marker. The template CSS sets a
+ * heading's Italic in Egyptienne (heading + italic), so an Italic that holds only Bold is turned
+ * around (`<strong><em>`) and the gold words keep the heading's font and line box (the Mako Live
+ * thank-you title after an editor save).
+ * @param {Element} main The main element
+ */
+function normaliseGoldMarkers(main) {
+  main.querySelectorAll(':is(h1, h2, h3, h4, h5, h6) em').forEach((em) => {
+    if (em.closest('strong')) return;
+    const kids = [...em.childNodes]
+      .filter((n) => n.nodeType !== Node.TEXT_NODE || n.textContent.trim());
+    if (kids.length !== 1 || kids[0].nodeName !== 'STRONG') return;
+    const strong = document.createElement('strong');
+    const italic = document.createElement('em');
+    italic.append(...kids[0].childNodes);
+    strong.append(italic);
+    em.replaceWith(strong);
+  });
+}
+
+/**
+ * Shapes the video players on the page, including the ones the video block adds later, and
+ * normalises the gold markers in headings.
  * @param {Document} doc The document
  */
 export default function decorate(doc) {
   const main = doc.querySelector('main');
   if (!main) return;
+  normaliseGoldMarkers(main);
   main.querySelectorAll('video.dm-video').forEach(shapeVideo);
   const observer = new MutationObserver((records) => {
     records.forEach((record) => record.addedNodes.forEach((node) => {
