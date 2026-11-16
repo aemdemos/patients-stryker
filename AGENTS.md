@@ -333,6 +333,7 @@ Authors style links, buttons, headings and text using **only font formatting** (
 - **When migrating, map source styles to conventions.** Measure the source element (e.g. button colour/shape, heading colour, underline/divider) and pick the convention that produces it.
 - **Verify the result.** The page shows what to author, not always what it renders as. Confirm the outcome in the preview (decorated classes, computed colours); use the decoration code in `scripts/scripts.js` only to understand how a rule is applied. If the page, the Block Library descriptions and the rendered result disagree, flag it to the user rather than guessing.
 - **Keep it current.** The page is owned by authors. If a code change adds or changes a formatting rule, tell the user the conventions page needs updating.
+- **No bracket span tags.** The `[[class]text]` bracket syntax (#428) was removed (#542): the site no longer turns it into styled spans, so it shows as plain text. Import scripts, parsers, transformers and `drafts/` content must never produce it. Express a style with the conventions above, or with the layers in **Style variation within a template** below (section styles, block variants, templates, themes).
 
 ### Link rewriting in import scripts (drop `.html`)
 

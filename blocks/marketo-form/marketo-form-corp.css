@@ -68,6 +68,14 @@ body.corp .marketo-form .mktoForm .mktoHtmlText {
     flex: 0 1 var(--form-field-max-width);
   }
 
+  /* …a checkbox list keeps the width the form gives it in Marketo (marketo-form.js
+     --mkto-field-width; stryker.com honours it from 480px, e.g. the 580px Endoscopy
+     Sustainability opt-in of the Sustainability news forms: 2 lines at 1440px), still
+     shrinking with a narrower row */
+  body.corp .marketo-form:not(.stacked) .mktoForm .mktoFormCol:has(.mktoCheckboxList) {
+    flex-basis: var(--mkto-field-width, var(--form-field-max-width));
+  }
+
   body.corp .marketo-form:not(.stacked) .mktoForm input[type="text"],
   body.corp .marketo-form:not(.stacked) .mktoForm input[type="email"],
   body.corp .marketo-form:not(.stacked) .mktoForm input[type="tel"],
@@ -98,6 +106,28 @@ body.corp .marketo-form .mktoForm .mktoHtmlText {
     font-size: var(--body-font-size-m);
     line-height: var(--corp-form-field-line-height);
   }
+}
+
+/* checkbox options: the box floats left and the label is a block beside it, so a label that
+   wraps keeps every line level with its first, clear of the box (stryker.com: box float
+   left, label 21px in on 1.2 lines, 0.1em down, 5px below; e.g. the "I would like to
+   receive information about Stryker's upcoming Endoscopy Sustainability products and
+   events." opt-in of the Sustainability news forms: lines at x 60 / 40 beside the box at
+   x 39 / 19, 1440px / 390px) */
+body.corp .marketo-form .mktoForm .mktoCheckboxList input[type="checkbox"] {
+  float: left;
+  display: block;
+  margin: 0;
+}
+
+body.corp .marketo-form .mktoForm .mktoCheckboxList label {
+  display: block;
+  margin: 0.1em 0 var(--space-block-xs) var(--space-block-l);
+  line-height: var(--corp-form-field-line-height);
+}
+
+body.corp .marketo-form .mktoForm .mktoCheckboxList label::after {
+  content: none;
 }
 
 /* stylelint-enable selector-class-pattern */

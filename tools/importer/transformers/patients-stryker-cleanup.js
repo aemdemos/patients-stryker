@@ -66,7 +66,16 @@ function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
 
   let edsPath = path.replace(/\.html?$/i, '');
-  if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
+  if (hostRe === CORP_HOST_RE) {
+    edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
+    // a www.stryker.com page is imported at its sanitised path (each folder and name
+    // lowercased, other characters and runs of them one `-`, none at the ends), and EDS
+    // serves only that path: link to it, e.g. .../2023/SEA-holds-3rd-annual-tree-planting-event
+    // → .../2023/sea-holds-3rd-annual-tree-planting-event, .../articles-/x → .../articles/x
+    edsPath = edsPath.split('/').map((seg) => seg.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')).join('/');
+  }
   if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
   return `${edsPath || '/'}${suffix}`;
 }
@@ -102,10 +111,14 @@ export default function transform(hookName, element, payload) {
   // the corp event-detail pages of import-event-detail.js rebuild their body the same way)
   // The corp long-page-detail-corp pages (and their shared fragments) are rebuilt the
   // same way (long-page-detail-corp-sections.js), so they get the same treatment, as do
-  // the corp division contact pages (contact-division-sections.js).
+  // the corp division contact pages (contact-division-sections.js), the corp People
+  // pages with their Back link fragments (import-people.js) and the corp Interventional
+  // Spine footnotes with their Back link fragment (import-ivs-footnotes.js).
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
     'event-detail', 'contact-division',
+    'people', 'people-fragments',
+    'ivs-footnotes', 'ivs-footnotes-fragments',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 

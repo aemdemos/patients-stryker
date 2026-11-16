@@ -13,6 +13,13 @@ const cases = [
   [xfFragmentPath, `${XF}/sage/en/business_unit/social-icons/master.html?wcmmode=disabled`, '/us/en/fragments/stryker/sage/en/business-unit/social-icons/master'],
   // "_2022" → "2022": aem.live drops leading dashes from folder names
   [xfFragmentPath, '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop.html', '/us/en/fragments/stryker/corporate/en/about/news/2022/features/advancing-healthcare/join-our-talent-network/join-our-talent-network-v2-desktop'],
+  // People bio Back links (#515)
+  [xfFragmentPath, `${XF}/corporate/en/about/our_management/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master'],
+  [xfFragmentPath, `${XF}/corporate/en/about/our_board_of_directo/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/back-button/master'],
+  // an article body shared as its own fragment document
+  [xfFragmentPath, '/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master.html', '/us/en/fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master'],
+  // Interventional Spine footnotes Back link (#516)
+  [xfFragmentPath, `${XF}/corporate/en/interventional-spine/footnotes/back-button/master.html`, '/us/en/fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master'],
   // not a shared XF: imported inline
   [xfFragmentPath, '/content/experience-fragments/stryker/corporate/en/about/news/features/some-article/body/master', null],
   // the rule itself works for any XF
@@ -30,7 +37,7 @@ cases.forEach(([fn, input, expected]) => {
 const json = JSON.parse(readFileSync(new URL('./xf-fragment-map.json', import.meta.url), 'utf8')).fragments;
 const keys = [...new Set([...Object.keys(MAP), ...Object.keys(json)])];
 keys.forEach((xf) => {
-  const want = MAP[xf] && { path: xfToFragmentPath(xf), name: MAP[xf].name };
+  const want = MAP[xf] && { path: MAP[xf].fragment || xfToFragmentPath(xf), name: MAP[xf].name };
   const ok = !!want && !!json[xf] && json[xf].path === want.path && json[xf].name === want.name;
   if (!ok) failed += 1;
   console.log(`${ok ? 'ok  ' : 'FAIL'} json in sync: ${xf}`);

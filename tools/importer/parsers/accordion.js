@@ -5,9 +5,9 @@
  * Parser: source .c-accordion / .panel-group (Bootstrap collapse) → EDS
  * `accordion` block. 2-column rows: [title cell, content cell]; first row is
  * the block name. The accordion block's decorate() reads row.children as
- * [label, content].
+ * [label, content]. `name` sets a variant, e.g. 'Accordion (divided)'.
  */
-export default function parse(element, { document }) {
+export default function parse(element, { document, name = 'Accordion' }) {
   const group = element.matches('.panel-group') ? element : element.querySelector('.panel-group');
   if (!group) return;
 
@@ -45,7 +45,7 @@ export default function parse(element, { document }) {
   if (!rows.length) return;
 
   const block = WebImporter.Blocks.createBlock(document, {
-    name: 'Accordion',
+    name,
     cells: rows,
   });
   element.replaceWith(block);

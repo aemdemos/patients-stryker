@@ -116,16 +116,31 @@ function setupHero(block) {
   });
   if (!textCells.length && contentCell) contentDiv.append(...contentCell.childNodes);
 
+  // a subtitle: one plain line (footnote marks allowed) right under a fully Bold title, and
+  // nothing else (stryker.com "Look inside Stryker's iSuite" under "What does an operating
+  // room look like?")
+  const [title, subtitle, ...rest] = contentDiv.children;
+  const bold = title && title.matches('h1, h2') && title.children.length === 1
+    && title.firstElementChild.matches('strong')
+    && !title.firstElementChild.querySelector(':scope > :not(br)')
+    && title.textContent.trim() === title.firstElementChild.textContent.trim();
+  if (bold && !rest.length && subtitle && subtitle.matches('p')
+    && ![...subtitle.children].some((el) => !el.matches('sup, sub'))
+    && subtitle.textContent.trim()) {
+    subtitle.classList.add('hero-corp-subtitle');
+  }
+
   block.replaceChildren(imageDiv, contentDiv);
 }
 
 function readSlideOptions(block) {
   [...block.classList].forEach((name) => {
-    const match = name.match(/^(top|left|right|size)-(\d+)(?:-(\d+))?$/);
+    const match = name.match(/^(top|left|right|size|sub)-(\d+)(?:-(\d+))?$/);
     if (!match) return;
     const [, option, whole, fraction] = match;
     const value = Number(fraction ? `${whole}.${fraction}` : whole);
     if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
+    else if (option === 'sub') block.style.setProperty('--hero-slide-subtitle-size', value);
     else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
   });
 }

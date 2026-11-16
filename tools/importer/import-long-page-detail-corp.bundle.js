@@ -133,6 +133,7 @@ var CustomImportScript = (() => {
   }
   function imageCell(item, document) {
     const source = item.querySelector(".img-cont img, img");
+    if (!source) return "";
     const img = document.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
     img.setAttribute("alt", source.getAttribute("alt") || "");
@@ -148,7 +149,7 @@ var CustomImportScript = (() => {
       else h3.textContent = clean(title.textContent);
       body.push(h3);
     }
-    item.querySelectorAll(".desc-container > p").forEach((source) => {
+    item.querySelectorAll(".desc-container > p, :scope > p.description").forEach((source) => {
       if (!clean(source.textContent)) return;
       const p = document.createElement("p");
       p.textContent = clean(source.textContent);
@@ -169,7 +170,7 @@ var CustomImportScript = (() => {
     return body;
   }
   function parse3(element, { document }) {
-    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img"));
+    const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img, h3"));
     if (!items.length) return;
     const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
     const cols = items[0].className;
@@ -3208,7 +3209,10 @@ var CustomImportScript = (() => {
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
-    if (hostRe === CORP_HOST_RE) edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
@@ -3221,7 +3225,11 @@ var CustomImportScript = (() => {
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
-      "contact-division"
+      "contact-division",
+      "people",
+      "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {

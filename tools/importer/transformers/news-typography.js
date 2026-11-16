@@ -403,10 +403,14 @@ function standaloneLinks(root) {
   });
 }
 
-/** span.futura-bold in running text → <strong><em>…</em></strong>. */
+/**
+ * span.futura-bold in running text → <strong><em>…</em></strong>. The lead carousel's
+ * headline lines are left to the hero-image-slide parser, which reads their Futura and
+ * vw size spans (e.g. "Following in her mother's footsteps": Bold, size-2-5).
+ */
 function futuraBold(root) {
   [...root.querySelectorAll('span.futura-bold')]
-    .filter((span) => !span.closest(`${HEADINGS}, h1`))
+    .filter((span) => !span.closest(`${HEADINGS}, h1, .c-autocarousel`))
     .forEach((span) => {
       // an outer Humanist bold around the Futura run would double the wrapper
       const outer = span.parentElement && span.parentElement.closest('strong, b');
@@ -426,7 +430,8 @@ function futuraBold(root) {
  * markSections(), or have no text-level EDS equivalent and are dropped.
  */
 function dropStyleSpans(root) {
-  root.querySelectorAll('span[class*="fontsize-"], span.urw-egyptienne').forEach(unwrap);
+  root.querySelectorAll('span[class*="fontsize-"], span.urw-egyptienne')
+    .forEach((span) => { if (!span.closest('.c-autocarousel')) unwrap(span); });
 }
 
 /**
