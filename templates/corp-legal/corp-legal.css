@@ -54,12 +54,12 @@ body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1)
   padding-bottom: 0;
 }
 
-body.corp-legal main > .section:first-child > .default-content-wrapper > h1 {
-  line-height: var(--heading-line-height-hero);
-}
-
 body.corp-legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
   margin-bottom: var(--space-block-s);
+}
+
+body.corp-legal main > .section:first-child:not([class*="headline-"]) > .default-content-wrapper > h1 {
+  line-height: var(--heading-line-height);
 }
 
 body.corp-legal main > .section > .columns-wrapper:has(> .columns.color-heads) + .default-content-wrapper {
