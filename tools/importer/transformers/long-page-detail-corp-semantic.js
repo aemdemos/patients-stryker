@@ -1,4 +1,3 @@
-/* global WebImporter */
 /**
  * long-page-detail-corp: semantic output (rework without bracket tags, 2026-11-16).
  *
@@ -265,6 +264,13 @@ function headlineLine(doc, el, ctx) {
   return line;
 }
 
+/** adds a page theme (body `data-semantic-theme`, comma-separated; read by the import script) */
+function addTheme(main, theme) {
+  const themes = (main.getAttribute('data-semantic-theme') || '').split(',').map((t) => t.trim()).filter(Boolean);
+  if (!themes.includes(theme)) themes.push(theme);
+  main.setAttribute('data-semantic-theme', themes.join(', '));
+}
+
 function largeHeadlines(doc, main, warn) {
   sectionsOf(main).forEach((section) => {
     const styles = styleOf(section);
@@ -272,21 +278,17 @@ function largeHeadlines(doc, main, warn) {
     // an enlarged rich-text title (`h4-2-5`: stryker.com h4 at 2.5em, the Mako Live thank-you
     // page) stays plain page text; the page theme `thank-you-large` sets its size
     if (styles.includes('h4-2-5') && !isBox) {
-      main.setAttribute('data-semantic-theme', 'thank-you-large');
+      addTheme(main, 'thank-you-large');
       return;
     }
+    // a Large Headline (`headline-box`) stays plain text in its section: each line becomes the
+    // heading level of its size, and the page theme `large-headlines` sizes them
     const lines = section.nodes.filter((n) => /^(P|H[1-6])$/.test(n.tagName)
       && n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]'));
     if (!lines.length || !isBox) return;
     const ctx = { title: false, warn };
-    const first = section.nodes.find((n) => lines.includes(n));
-    const out = section.nodes.filter((n) => lines.includes(n) || /^(P|H[1-6]|UL|OL)$/.test(n.tagName))
-      .map((n) => (lines.includes(n) ? headlineLine(doc, n, ctx) : n));
-    const name = `Columns (large-headline${ctx.title ? ', title' : ''})`;
-    const marker = doc.createComment('lh');
-    (first.isConnected ? first : out[0]).before(marker);
-    const block = WebImporter.Blocks.createBlock(doc, { name, cells: [[out]] });
-    marker.replaceWith(block);
+    lines.forEach((n) => headlineLine(doc, n, ctx));
+    addTheme(main, 'large-headlines');
   });
 }
 

@@ -51,3 +51,94 @@ body.long-page-detail-corp.thank-you-large main > .section > .default-content-wr
     --long-page-detail-corp-theme-subtitle-size: 36.75px; /* 1.5em of the 24.5px h2 */
   }
 }
+
+/* ---- theme `large-headlines`: the page's Large Headlines are plain text in its white `headline-box`
+   sections, sized like stryker.com's Large Headline (.c-largeheadline span.fontsize-Nvw: N% of
+   the content width, capped at N x 14px, twice the % below 600px; measured on the endoscopy
+   resources pages, courses, webinars, biologics at 390 / 1440). Formatting picks the line:
+   - Heading 1: the 4vw title (plain words Egyptienne light, Bold words Futura bold);
+   - Heading 2 in Italic: a 4vw Egyptienne light statement; a Heading 2: a 2vw line;
+   - Heading 3 in Italic: a 3.5vw Egyptienne light label; Heading 4: a 2.5vw Egyptienne line;
+   - Heading 5: a 5vw Futura bold line; a paragraph: 1.5vw Egyptienne light text.
+   Bold + Italic words are gold. The lines follow each other with no gap, 1.35 apart ---- */
+body.long-page-detail-corp.large-headlines {
+  --long-page-detail-corp-lh-unit: 2vw;
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5, p) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h1 {
+  font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h2:has(> em) {
+  font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h3 {
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h4 {
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h5 {
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--long-page-detail-corp-lh-unit))));
+  font-weight: var(--font-weight-bold);
+}
+
+/* the text lines: on phones on the source paragraph's 21px line boxes (28.875px apart) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > p {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--long-page-detail-corp-lh-unit))));
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5, p) :is(em, strong) {
+  font-style: normal;
+}
+
+/* a text paragraph below a headline line: one blank line above it, as the source's blank line
+   (courses "Every day, …" under "Your opportunity to learn is here."; biologics "We are
+   excited …" under "Coming soon!", in the next box of the run) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5) + p,
+body.long-page-detail-corp.large-headlines main > .section.headline-box + .section.headline-box:not(.separator) > .default-content-wrapper > p:first-child {
+  margin-top: 1lh;
+}
+
+/* below the box (the last of a run of boxes, not above a rule, which has its own spacing): the
+   source box's page-section gap, 20px below 600px; from 600px its 20px bottom padding and a 30px
+   gap (biologics, arthroscopy "Documents" 390 / 1440) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.large-headlines {
+    --long-page-detail-corp-lh-unit: 1vw;
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) {
+    margin-bottom: var(--space-section);
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) > .default-content-wrapper {
+    padding-bottom: var(--space-block-l);
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > p {
+    line-height: var(--heading-line-height-hero);
+  }
+}
