@@ -1235,3 +1235,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
     flex: 1 1 0;
   }
 }
+
+/* section style `body-font-bold`: plain bold in the section stays in the body font (Humanist
+   bold), as the stryker.com <b> labels on a line of their own ("About the decision", "For
+   investor inquiries:", "Strictly necessary cookies:", "Objective"), where the site would
+   otherwise set bold — and a bold line on its own (news-detail .standalone) — in Futura.
+   Covers default content, Columns cells, accordion panels and tables. Bold + italic (the
+   Futura bold convention) and headings keep their fonts. Replaces the removed
+   `[[body-font]` bracket tag (#542) */
+:where(body.corp) main > .section.body-font-bold :is(p, li, td, th) :is(strong, b):not(em strong, i b, :has(em, i)),
+:where(body.corp) .tabs-panel > .section.body-font-bold :is(p, li, td, th) :is(strong, b):not(em strong, i b, :has(em, i)),
+:where(body.corp) .accordion-item-body > .section.body-font-bold :is(p, li, td, th) :is(strong, b):not(em strong, i b, :has(em, i)) {
+  font-family: var(--body-font-family);
+}
