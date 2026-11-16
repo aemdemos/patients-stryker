@@ -216,16 +216,7 @@ const COPY_WIDTH = [
 // template also uses for these pages' 9/12 copy width
 const WIDE_COPY = ['governance/bylaws', 'governance/charters'];
 
-// Section styles the shared builder adds that the source does not show: the intro of the
-// accessibility and Sage pages is 14px (not 1.25em), the po-terms part number 14px
-// (not small print)
-const DROP_STYLES = [
-  ['legal/website-accessibility', ['p-1-25']],
-  ['sage/disclosure-and-safety-information', ['p-1-25']],
-  ['responsible-supply-chains/po-terms', ['disclaimer']],
-  ['governance/board-committees', ['disclaimer']],
-  ['legal/icrc', ['serif']],
-];
+const DROP_STYLES = [];
 
 // Bracket tags (`[[tag]text]`, the span-tags.js runtime #542 removes) the builder emits become
 // semantic content or a section style: gold → Bold + Italic, `body-font` → `bold-body`, the
@@ -236,6 +227,8 @@ const TAG_SECTION_STYLES = {
   'headline-2-5': 'headline-2-5vw',
   serif: 'serif',
 };
+// Pages whose bold is plain <b> throughout (body font, not Futura): every section is `bold-body`
+const BOLD_BODY = ['sms-terms-and-conditions', 'legal/terms-of-use', 'convercent-global-privacy-statement', 'hemorrhagic-stroke/mri'];
 const BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
 
 function sectionIndex(main, node) {
@@ -346,6 +339,7 @@ function sectionStyles(main, document, url, extra) {
   for (let i = 0; i < count; i += 1) {
     const add = [...(extra.get(i) || [])].filter((v) => !drop.includes(v));
     if (widths[i]) add.push(widths[i]);
+    if (BOLD_BODY.some((key) => url.includes(key)) && !add.includes('bold-body')) add.push('bold-body');
     if (copyWidth && !widths[i] && !add.some((a) => a.startsWith('headline'))) {
       let titled = false;
       let n = i ? hrs[i - 1]?.nextElementSibling : main.firstElementChild;

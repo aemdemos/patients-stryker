@@ -3054,19 +3054,14 @@ var CustomImportScript = (() => {
     ["responsible-supply-chains/po-terms", "width-67"]
   ];
   var WIDE_COPY = ["governance/bylaws", "governance/charters"];
-  var DROP_STYLES = [
-    ["legal/website-accessibility", ["p-1-25"]],
-    ["sage/disclosure-and-safety-information", ["p-1-25"]],
-    ["responsible-supply-chains/po-terms", ["disclaimer"]],
-    ["governance/board-committees", ["disclaimer"]],
-    ["legal/icrc", ["serif"]]
-  ];
+  var DROP_STYLES = [];
   var TAG_SECTION_STYLES = {
     "body-font": "bold-body",
     "headline-2": "headline-2vw",
     "headline-2-5": "headline-2-5vw",
     serif: "serif"
   };
+  var BOLD_BODY = ["sms-terms-and-conditions", "legal/terms-of-use", "convercent-global-privacy-statement", "hemorrhagic-stroke/mri"];
   var BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
   function sectionIndex(main, node) {
     let top = node;
@@ -3165,6 +3160,7 @@ var CustomImportScript = (() => {
     for (let i = 0; i < count; i += 1) {
       const add = [...extra.get(i) || []].filter((v) => !drop.includes(v));
       if (widths[i]) add.push(widths[i]);
+      if (BOLD_BODY.some((key) => url.includes(key)) && !add.includes("bold-body")) add.push("bold-body");
       if (copyWidth && !widths[i] && !add.some((a) => a.startsWith("headline"))) {
         let titled = false;
         let n = i ? (_d = hrs[i - 1]) == null ? void 0 : _d.nextElementSibling : main.firstElementChild;

@@ -22,11 +22,6 @@ body.corp-legal main > .section > .columns-wrapper + .default-content-wrapper {
   padding-top: calc(var(--space-block) + var(--corp-blank-line) + 2 * var(--space-block-l));
 }
 
-/* a page title set as an underlined H2 keeps the H2 size on phones (stryker.com c-title) */
-body.corp-legal main > .section:first-child > .default-content-wrapper > h2:first-child:is(.underline, :has(> u)) {
-  font-size: var(--heading-font-size-xl);
-}
-
 /* a section that opens with a heading after a copy-only section (bylaws Article I) */
 body.corp-legal main > .section:not(:has(h1)) + .section > .default-content-wrapper:first-child > h2:first-child {
   margin-top: calc(var(--corp-blank-line) + var(--space-block));
@@ -40,8 +35,19 @@ body.corp-legal main > .section > .default-content-wrapper > h3:has(+ p) {
 body.corp-legal main .columns h4:has(+ p) {
   margin-bottom: 0;
   font-family: var(--body-font-family);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
+}
+
+@media (width >= 900px) {
+  body.corp-legal main .columns h4:has(+ p) {
+    font-family: var(--display-font-family);
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+body.corp-legal main .columns a[href^="tel:"] {
+  color: inherit;
 }
 
 body.corp-legal main > .section:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
@@ -82,14 +88,25 @@ body.corp-legal main > .section:first-child:not(.headline-2-5vw) > .default-cont
   }
 }
 
-/* po-terms headings: 14px on phones, then the default heading size */
+/* po-terms: the title is a 1.5x span in the H4 and the intro a 0.8x serif span (14px headings on
+   phones, 17.5px from 600px) */
 body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
-  font-size: var(--body-font-size-m);
+  font-size: var(--heading-font-size-l);
+}
+
+body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--footnote-font-size);
+  font-weight: var(--font-weight-bold);
 }
 
 @media (width >= 600px) {
   body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
-    font-size: var(--body-font-size-l);
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+    font-size: var(--body-font-size-m);
   }
 }
 
