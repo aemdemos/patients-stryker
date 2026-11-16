@@ -51,6 +51,10 @@ body.corp-legal main > .section:first-child > .default-content-wrapper > h1:has(
   margin-bottom: var(--space-block-s);
 }
 
+body.corp-legal main > .section > .columns-wrapper:has(> .columns.color-heads) + .default-content-wrapper {
+  padding-top: var(--corp-blank-line);
+}
+
 /* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
 body.corp-legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
   font-family: var(--display-font-family);

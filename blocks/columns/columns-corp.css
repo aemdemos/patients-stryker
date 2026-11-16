@@ -1316,13 +1316,16 @@ body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(
   background-color: var(--color-navy-bright);
   color: var(--color-white);
   font-family: var(--heading-font-family);
-  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  font-size: calc(1.5 * var(--body-font-size-m));
+  line-height: normal;
   text-align: center;
 }
 
 body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
   font-family: inherit;
+  font-size: 3vw;
   font-weight: var(--font-weight-regular);
+  line-height: 1.35;
 }
 
 body.corp main .columns.color-heads.block > div > div:nth-child(2) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
@@ -1358,6 +1361,7 @@ body.corp main .columns.striped.block > div > div > ul {
 
 body.corp main .columns.striped.block > div > div > ul > li {
   padding: var(--corp-table-cell-padding);
+  line-height: var(--body-line-height);
 }
 
 body.corp main .columns.striped.block > div > div > ul > li:nth-child(odd) {
@@ -1369,8 +1373,20 @@ body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):
 }
 
 @media (width >= 600px) {
-  body.corp main .columns.color-heads.block > div > div > p:first-child {
+  body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
     margin-bottom: var(--space-section);
+  }
+}
+
+@media (width >= 900px) {
+  body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+    line-height: var(--paragraph-line-height);
+  }
+
+  body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    font-size: inherit;
+    line-height: inherit;
   }
 }
 
@@ -1405,5 +1421,28 @@ body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):
 @media (width >= 1200px) {
   body.corp .columns.stack.columns-50-50.columns-2-cols > div > div {
     flex-basis: 50%;
+  }
+}
+
+/* color-heads and striped: the stryker.com AEM grid keeps these three cells stacked up to 1200px */
+@media (width >= 600px) {
+  body.corp .columns:is(.color-heads, .striped) > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.corp .columns:is(.color-heads, .striped) > div > div {
+    flex: 0 0 auto;
+  }
+}
+
+@media (width >= 1200px) {
+  body.corp .columns:is(.color-heads, .striped) > div {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  body.corp .columns:is(.color-heads, .striped) > div > div {
+    flex: 1 1 0;
   }
 }
