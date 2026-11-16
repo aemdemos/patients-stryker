@@ -231,6 +231,21 @@ body.corp .columns.large-headline h3 > em:only-child:not(:has(strong)) {
   font-style: normal;
 }
 
+/* a Heading 5: a 5vw Futura bold line, Bold + Italic words gold (stryker.com .fontsize-5vw
+   futura-bold: "Coming soon!" on the VLC biologics and foot & ankle pages, 70px at 1440,
+   37.5px at 375) */
+body.corp .columns.large-headline h5 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.large-headline h5 :is(em, strong) {
+  font-style: normal;
+}
+
 /* lists: 17.5px serif items, a blank line apart (stryker.com .fontsize-1-25em
    urw-egyptienne items ending in two line breaks) */
 body.corp .columns.large-headline li {
@@ -265,6 +280,21 @@ body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > stro
 /* large-headline: an Underlined Heading 2 (title with a rule, stryker.com rich text 2em) stays 28px */
 body.corp .columns.large-headline h2:is(.underline, :has(> u)) {
   font-size: var(--heading-font-size-xxl);
+}
+
+/* a Heading 2 all in Italic: a 4vw Egyptienne light statement line, upright (stryker.com
+   .fontsize-4vw urw-egyptienne: the endoscopy pages' "Together with our customers, we are
+   driven to make healthcare better.", 56px at 1440, 30px at 375) */
+body.corp .columns.large-headline h2:has(> em:only-child):not(:has(strong)) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--columns-corp-headline-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.large-headline h2 > em:only-child:not(:has(strong)) {
+  font-style: normal;
 }
 
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
@@ -315,6 +345,15 @@ body.corp .columns > div > div h1.columns-number > :first-child {
 /* a fully Bold Heading 1 is a stat number (stryker.com .fontsize-6vw) */
 body.corp .columns > div > div h1.columns-bold {
   font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
+}
+
+/* large-headline, title: a fully Bold Heading 1 is the 4vw Futura bold page title, not a stat
+   number (stryker.com Large Headline titles in .fontsize-4vw futura-bold: endoscopy "Resources",
+   "Webinars", the Mako Live thank-you title; Bold + Italic words gold) */
+body.corp .columns.large-headline.title > div > div h1.columns-bold {
+  font-family: var(--display-font-family);
+  font-size: var(--columns-corp-headline-size);
+  font-weight: var(--font-weight-bold);
 }
 
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and

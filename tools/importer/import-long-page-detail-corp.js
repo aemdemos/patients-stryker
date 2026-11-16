@@ -13,6 +13,7 @@ import longPageDetailSectionsTransformer, {
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import semanticTransformer from './transformers/long-page-detail-corp-semantic.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -38,11 +39,14 @@ const parsers = {
 };
 
 // TRANSFORMER REGISTRY — the sections transformer rebuilds the body first; the shared
-// cleanup (link rewrite) and DM image rewrite run after it.
+// cleanup (link rewrite) and DM image rewrite run after it; the semantic transformer last
+// turns the structure transformers' intermediate size / font / colour tags into semantic
+// markup (no bracket syntax in the output).
 const transformers = [
   longPageDetailSectionsTransformer,
   cleanupTransformer,
   dmImagesTransformer,
+  semanticTransformer,
 ];
 
 function executeTransformers(hookName, element, payload) {
@@ -136,6 +140,8 @@ export default {
     }
     const unresolvedXfs = main.getAttribute('data-xf-unresolved');
     main.removeAttribute('data-xf-unresolved');
+    const semanticWarnings = main.getAttribute('data-semantic-warn');
+    main.removeAttribute('data-semantic-warn');
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -153,6 +159,7 @@ export default {
         template: PAGE_TEMPLATE.name,
         blocks: pageBlocks.map((b) => b.name),
         ...(unresolvedXfs ? { 'xf-unresolved': unresolvedXfs } : {}),
+        ...(semanticWarnings ? { 'semantic-warnings': semanticWarnings } : {}),
       },
     }];
   },

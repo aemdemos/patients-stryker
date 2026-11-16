@@ -19,12 +19,12 @@ body.long-page-detail-corp main .columns p:has(> span:is(.box-orange, .box-blue,
    (.largeheadline.has-background.bg-white, 31 pages, e.g. plastic-surgery "Resources",
    "Videos and animations"): its text 20px in at every width, 20px below the box top from
    600px (source padding 20px, top 0 below 840px; below a separator see `separator`) ---- */
-body.long-page-detail-corp main > .section.headline-box > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   padding-inline: calc(var(--container-gutter) + var(--space-block-l));
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     padding-top: var(--space-block-l);
   }
 }
@@ -84,9 +84,10 @@ body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.un
 }
 
 /* ---- heading + italic: Egyptienne light, upright (stryker.com span.urw-egyptienne lines at
-   heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px). A heading's plain words keep
-   the level's font, Bold is Futura bold, Bold + Italic the gold Futura accent ---- */
-body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+   heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px, the OR staff form statement).
+   A heading's plain words keep the level's font, Bold is Futura bold, Bold + Italic the gold
+   Futura accent (also Bold words inside the Italic, as the markdown merges them) ---- */
+body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) em:not(strong em) {
   font-family: var(--heading-font-family);
   font-style: normal;
   font-weight: var(--font-weight-regular);
@@ -109,45 +110,45 @@ body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .
   background: none;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   border-inline: var(--container-gutter) solid transparent;
   padding: var(--space-block-l);
   background-clip: padding-box;
 }
 
-body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > .default-content-wrapper > :last-child {
+body.long-page-detail-corp main > .section.headline-box:is(.gold, .light-gray, .blue, .dark, .purple, .purple-gradient, .gray-gradient) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) > :last-child {
   margin-bottom: 0;
 }
 
-body.long-page-detail-corp main > .section.headline-box.gold > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.gold > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-accent);
 }
 
-body.long-page-detail-corp main > .section.headline-box.light-gray > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.light-gray > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-surface);
 }
 
-body.long-page-detail-corp main > .section.headline-box.blue > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.blue > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-navy-bright);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.dark > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.dark > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--panel-dark-gradient);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.purple > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.purple > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-color: var(--color-purple);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.purple-gradient > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.purple-gradient > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--long-page-detail-corp-purple-gradient);
   color: var(--color-white);
 }
 
-body.long-page-detail-corp main > .section.headline-box.gray-gradient > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box.gray-gradient > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   background-image: var(--long-page-detail-corp-gray-gradient);
   color: var(--color-white);
 }
@@ -280,6 +281,24 @@ body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-w
 @media (width >= 600px) {
   body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-wrapper), .columns-youtube) {
     margin-bottom: var(--space-section);
+  }
+}
+
+/* ---- Large Headlines (`Columns (large-headline)`) in this template: the last line of a cell
+   ends the box (no heading gap under it: the Mako Live thank-you title 4px above its subtitle
+   on stryker.com); on phones the 1.5vw text lines sit on the source paragraph's 21px line
+   boxes, 28.875px apart (biologics, foot & ankle, courses intro: 11.25px text) ---- */
+body.long-page-detail-corp main .columns.large-headline > div > div > :last-child {
+  margin-bottom: 0;
+}
+
+body.long-page-detail-corp main .columns.large-headline > div > div > p {
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .columns.large-headline > div > div > p {
+    line-height: var(--heading-line-height-hero);
   }
 }
 
@@ -614,7 +633,7 @@ body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-
 
 /* a `headline-box` right below the rule: the box's 20px top on the rule's 50px (from 600px) */
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.separator.headline-box > .default-content-wrapper:first-child {
+  body.long-page-detail-corp main > .section.separator.headline-box > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)):first-child {
     padding-top: calc(var(--space-section-l) + var(--space-block-l));
   }
 }
@@ -660,7 +679,7 @@ body.long-page-detail-corp main > .section.headline-box:has(+ .section.headline-
   margin-bottom: 0;
 }
 
-body.long-page-detail-corp main > .section.headline-box + .section.headline-box:not(.separator) > .default-content-wrapper {
+body.long-page-detail-corp main > .section.headline-box + .section.headline-box:not(.separator) > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
   padding-top: 0;
 }
 
@@ -930,7 +949,7 @@ body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.defau
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     max-width: calc(var(--container-max) * 2 / 3);
     margin-inline: max(0px, calc((100% - var(--container-max)) / 2)) auto;
     margin-bottom: calc(2 * var(--space-block));
@@ -975,7 +994,7 @@ body.long-page-detail-corp main .accordion .accordion-item-body > :last-child:no
 /* `column-8-12` title boxes (ispies): the source box's own padding, 4% at the top and 3% on
    the left of its width (36 / 27px at 1440) from 600px */
 @media (width >= 600px) {
-  body.long-page-detail-corp main > .section.headline-box.column-8-12 > .default-content-wrapper {
+  body.long-page-detail-corp main > .section.headline-box.column-8-12 > :is(.default-content-wrapper, .columns-wrapper:has(> .large-headline)) {
     padding-block-start: 2.5vw;
     padding-inline-start: 1.9vw;
   }

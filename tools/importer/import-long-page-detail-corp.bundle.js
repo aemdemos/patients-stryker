@@ -1877,14 +1877,14 @@ var CustomImportScript = (() => {
         }
         if (!h.text(el)) return [];
         const copy = doc.createElement(el.tagName.toLowerCase());
-        const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
+        const gold2 = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
         if (el.matches("h1")) {
           const strong = doc.createElement("strong");
           strong.textContent = h.text(el);
-          copy.append(doc.createTextNode(gold ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold ? "]]" : "]"));
+          copy.append(doc.createTextNode(gold2 ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold2 ? "]]" : "]"));
         } else if (el.matches("h2")) {
           copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
-        } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
+        } else copy.textContent = gold2 ? `[[color-gold]${h.text(el)}]` : h.text(el);
         return [copy];
       });
       const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));
@@ -3451,6 +3451,355 @@ var CustomImportScript = (() => {
     });
   }
 
+  // tools/importer/transformers/long-page-detail-corp-semantic.js
+  var TYPO_STYLES = /* @__PURE__ */ new Set([
+    "p-1",
+    "p-1-25",
+    "p-1-5",
+    "p-1-75",
+    "p-2",
+    "p-2-5",
+    "p-3-5",
+    "serif",
+    "h-serif",
+    "h2-1-5",
+    "h3-1-25",
+    "h4-2-5",
+    "bold-body"
+  ]);
+  var INLINE = /^(A|B|BR|DEL|EM|I|S|SPAN|STRONG|SUB|SUP|U)$/;
+  var TAG_RE = /\[\[([^\][]+)\]([^\][]*)\]/g;
+  var BRACKET_RE = /\[\[([^\][]+)\]|\[|\]/g;
+  function parseTags(raw) {
+    const names = raw.split(",").map((n) => n.trim());
+    return names.every((n) => /^[\w-]+$/.test(n)) ? names : [];
+  }
+  function containerOf(node) {
+    let el = node.parentElement;
+    while (el && INLINE.test(el.tagName) && el.parentElement) el = el.parentElement;
+    return el;
+  }
+  function textNodes(doc, container) {
+    const out = [];
+    const w = doc.createTreeWalker(container, 4);
+    while (w.nextNode()) if (containerOf(w.currentNode) === container) out.push(w.currentNode);
+    return out;
+  }
+  function tagSpan(doc, tags, ...content) {
+    const span = doc.createElement("span");
+    span.dataset.tag = tags.join(" ");
+    span.append(...content);
+    return span;
+  }
+  function replaceInText(doc, node) {
+    const text4 = node.nodeValue;
+    const parts = [];
+    let last = 0;
+    [...text4.matchAll(TAG_RE)].forEach((m) => {
+      const tags = parseTags(m[1]);
+      if (!tags.length) return;
+      parts.push(text4.slice(last, m.index), tagSpan(doc, tags, m[2]));
+      last = m.index + m[0].length;
+    });
+    if (!last) return;
+    parts.push(text4.slice(last));
+    node.replaceWith(...parts.filter((p) => p !== ""));
+  }
+  function removeIfEmpty(node, container) {
+    let cur = node;
+    while (cur && cur !== container && !cur.textContent && !(cur.querySelector && cur.querySelector("br, img"))) {
+      const parent = cur.parentNode;
+      cur.remove();
+      cur = parent;
+    }
+  }
+  function wrapMultiNode(doc, container) {
+    const open = [];
+    let found;
+    textNodes(doc, container).some((node) => [...node.nodeValue.matchAll(BRACKET_RE)].some((m) => {
+      if (m[0] !== "]") {
+        open.push({ node, m });
+        return false;
+      }
+      const opener = open.pop();
+      if (!opener || !opener.m[1] || opener.node === node) return false;
+      const tags2 = parseTags(opener.m[1]);
+      if (!tags2.length) return false;
+      found = {
+        openNode: opener.node,
+        open: opener.m,
+        closeNode: node,
+        closeIndex: m.index,
+        tags: tags2
+      };
+      return true;
+    }));
+    if (!found) return false;
+    const {
+      openNode,
+      closeNode,
+      closeIndex,
+      tags
+    } = found;
+    const text4 = openNode.nodeValue;
+    const range = doc.createRange();
+    range.setStart(openNode, found.open.index + found.open[0].length);
+    range.setEnd(closeNode, closeIndex);
+    const span = tagSpan(doc, tags, range.extractContents());
+    range.insertNode(span);
+    openNode.nodeValue = text4.slice(0, found.open.index);
+    closeNode.nodeValue = closeNode.nodeValue.slice(1);
+    removeIfEmpty(openNode, container);
+    removeIfEmpty(closeNode, container);
+    return true;
+  }
+  function tagsToSpans(doc, main) {
+    const containers = /* @__PURE__ */ new Set();
+    const w = doc.createTreeWalker(main, 4);
+    while (w.nextNode()) if (w.currentNode.nodeValue.includes("[[")) containers.add(containerOf(w.currentNode));
+    containers.forEach((c) => {
+      textNodes(doc, c).filter((n) => n.nodeValue.includes("[[")).forEach((n) => replaceInText(doc, n));
+      while (wrapMultiNode(doc, c)) ;
+    });
+  }
+  var tagsOf = (el) => (el.dataset.tag || "").split(" ").filter(Boolean);
+  var norm = (t) => t.replace(/\s+/g, " ").trim();
+  var spansIn = (el) => [...el.querySelectorAll("span[data-tag]")];
+  function unwrap2(el) {
+    el.replaceWith(...el.childNodes);
+  }
+  function rename2(doc, el, tag) {
+    const out = doc.createElement(tag);
+    out.append(...el.childNodes);
+    el.replaceWith(out);
+    return out;
+  }
+  function headlineSize(tags) {
+    const t = tags.find((n) => /^headline-\d/.test(n));
+    return t ? Number(t.slice(9).replace("-", ".")) : 0;
+  }
+  function lineInfo(el) {
+    const spans = spansIn(el);
+    const size = Math.max(0, ...spans.map((s) => headlineSize(tagsOf(s))));
+    const serif = spans.some((s) => tagsOf(s).includes("serif"));
+    const bold = !!el.querySelector("strong, b") && norm([...el.querySelectorAll("strong, b")].map((b) => b.textContent).join("")) === norm(el.textContent);
+    return { size, serif, bold };
+  }
+  function wrapChildren(doc, node, tag) {
+    const w = doc.createElement(tag);
+    w.append(...node.childNodes);
+    node.append(w);
+    return w;
+  }
+  function gold(doc, span) {
+    const inBold = span.closest("strong, b");
+    const hasBold = span.querySelector("strong, b");
+    if (!inBold && !hasBold) wrapChildren(doc, span, "strong");
+    if (!span.closest("em, i")) {
+      const em = doc.createElement("em");
+      span.before(em);
+      em.append(span);
+    }
+  }
+  function serifInHeading(doc, span) {
+    const runs = [];
+    let run = [];
+    [...span.childNodes].forEach((n) => {
+      const isGold = n.nodeType === 1 && (n.matches("em, i") || n.matches("span[data-tag]") && tagsOf(n).some((t) => t === "color-gold"));
+      if (isGold) {
+        if (run.length) runs.push(run);
+        run = [];
+      } else run.push(n);
+    });
+    if (run.length) runs.push(run);
+    runs.forEach((r) => {
+      if (!norm(r.map((n) => n.textContent).join(""))) return;
+      const em = doc.createElement("em");
+      r[0].before(em);
+      em.append(...r);
+    });
+  }
+  function sectionsOf(main) {
+    const out = [];
+    let cur = { nodes: [], meta: null };
+    [...main.children].forEach((el) => {
+      var _a;
+      if (el.tagName === "HR") {
+        out.push(cur);
+        cur = { nodes: [], meta: null, hr: el };
+        return;
+      }
+      const head = el.tagName === "TABLE" && norm(((_a = el.querySelector("tr")) == null ? void 0 : _a.textContent) || "");
+      if (head && /^section metadata$/i.test(head)) cur.meta = el;
+      else cur.nodes.push(el);
+    });
+    out.push(cur);
+    return out;
+  }
+  function metaRow(meta, key) {
+    if (!meta) return null;
+    return [...meta.querySelectorAll("tr")].find((tr) => {
+      var _a;
+      return norm(((_a = tr.children[0]) == null ? void 0 : _a.textContent) || "").toLowerCase() === key;
+    });
+  }
+  function styleOf(section) {
+    const row = metaRow(section.meta, "style");
+    return row ? row.children[1].textContent.split(",").map((s) => s.trim()).filter(Boolean) : [];
+  }
+  function setStyle(section, styles) {
+    const row = metaRow(section.meta, "style");
+    if (!row) return;
+    if (styles.length) {
+      row.children[1].textContent = styles.join(", ");
+      return;
+    }
+    row.remove();
+    if (section.meta.querySelectorAll("tr").length <= 1) {
+      section.meta.remove();
+      section.meta = null;
+    }
+  }
+  function headlineLine(doc, el, ctx) {
+    const { size, serif, bold } = lineInfo(el);
+    let tag = "p";
+    if (el.tagName === "H1") {
+      tag = "h1";
+      if (bold && !serif) ctx.title = true;
+    } else if (size >= 4.75) tag = "h5";
+    else if (size >= 3.75 && serif) tag = "h2";
+    else if (size >= 2.75 && serif) tag = "h3";
+    else if (size >= 2.25 && serif) tag = "h4";
+    else if (size >= 1.75 && !serif) tag = "h2";
+    else if (size >= 2.75) ctx.warn.push(`large headline line ${size}vw Futura: "${norm(el.textContent).slice(0, 40)}"`);
+    const line = tag === el.tagName.toLowerCase() ? el : rename2(doc, el, tag);
+    if ((tag === "h2" || tag === "h3") && serif) {
+      spansIn(line).forEach((s) => unwrap2(s));
+      if (!line.querySelector(":scope > em:only-child")) wrapChildren(doc, line, "em");
+    }
+    return line;
+  }
+  function largeHeadlines(doc, main, warn) {
+    sectionsOf(main).forEach((section) => {
+      const styles = styleOf(section);
+      const isBox = styles.includes("headline-box");
+      const isTitle = styles.includes("h4-2-5");
+      const lines = section.nodes.filter((n) => /^(P|H[1-6])$/.test(n.tagName) && (n.querySelector('span[data-tag^="headline-"], span[data-tag*=" headline-"]') || isTitle && n.tagName === "H1"));
+      if (!lines.length || !(isBox || isTitle)) return;
+      const ctx = { title: isTitle, warn };
+      const first = section.nodes.find((n) => lines.includes(n));
+      const out = section.nodes.filter((n) => lines.includes(n) || /^(P|H[1-6]|UL|OL)$/.test(n.tagName)).map((n) => lines.includes(n) ? headlineLine(doc, n, ctx) : n);
+      const name = `Columns (large-headline${ctx.title ? ", title" : ""})`;
+      const marker = doc.createComment("lh");
+      (first.isConnected ? first : out[0]).before(marker);
+      const block = WebImporter.Blocks.createBlock(doc, { name, cells: [[out]] });
+      marker.replaceWith(block);
+    });
+  }
+  function wholeSize(el) {
+    const spans = spansIn(el).filter((s2) => tagsOf(s2).some((t) => /^text-\d/.test(t)));
+    const s = spans.find((sp) => norm(sp.textContent) === norm(el.textContent));
+    return s ? tagsOf(s).find((t) => /^text-\d/.test(t)) : "";
+  }
+  function sizeLines(doc, main) {
+    main.querySelectorAll("p").forEach((p) => {
+      const size = wholeSize(p);
+      if (!size) return;
+      const bold = norm([...p.querySelectorAll("strong, b")].map((b) => b.textContent).join("")) === norm(p.textContent);
+      if (!bold) return;
+      if (size === "text-1-5") rename2(doc, p, "h3");
+      else if (size === "text-1-25") rename2(doc, p, "h4");
+      else if (size === "text-1-75") {
+        const h2 = rename2(doc, p, "h2");
+        h2.querySelectorAll("strong, b").forEach(unwrap2);
+      }
+    });
+  }
+  function displayLines(doc, main) {
+    sectionsOf(main).forEach((section) => {
+      if (!styleOf(section).includes("p-2-5")) return;
+      section.nodes.filter((n) => n.tagName === "TABLE").forEach((t) => {
+        t.querySelectorAll("td p").forEach((p) => {
+          if (p.querySelector('span[data-tag~="color-gold"]')) rename2(doc, p, "h2");
+        });
+      });
+    });
+  }
+  function finishSpans(doc, main, warn) {
+    spansIn(main).reverse().forEach((span) => {
+      const tags = tagsOf(span);
+      if (tags.includes("color-gold")) gold(doc, span);
+      if (tags.includes("serif") && span.closest("h1, h2, h3, h4, h5, h6")) serifInHeading(doc, span);
+      const known = tags.every((t) => /^(color-|text-|headline-|serif$|body-font$|box-)/.test(t));
+      if (!known) warn.push(`unmapped tag ${tags.join(",")}: "${norm(span.textContent).slice(0, 40)}"`);
+    });
+    spansIn(main).forEach(unwrap2);
+  }
+  var BLOCK_VARIANT = { "p-1-25": "large-copy", "p-1-5": "xlarge-copy", serif: "serif" };
+  var VARIANT_BLOCKS = /^(columns|accordion|panel)\b/i;
+  function addVariant(table, variant) {
+    const cell = table.querySelector("tr > th, tr > td");
+    const name = norm(cell.textContent);
+    const m = name.match(/^([^(]+?)\s*(?:\((.*)\))?$/);
+    const opts = (m[2] || "").split(",").map((o) => o.trim()).filter(Boolean);
+    if (!opts.includes(variant)) opts.push(variant);
+    cell.textContent = `${m[1]} (${opts.join(", ")})`;
+  }
+  function serifHeadings2(doc, section) {
+    section.nodes.filter((n) => /^H[1-6]$/.test(n.tagName)).forEach((h) => {
+      if (h.querySelector(":scope > em:only-child") || norm(h.textContent) === norm([...h.querySelectorAll("strong")].map((s) => s.textContent).join(""))) return;
+      const span = doc.createElement("span");
+      span.append(...h.childNodes);
+      h.append(span);
+      serifInHeading(doc, span);
+      unwrap2(span);
+    });
+  }
+  function dropTypographyStyles(doc, main, warn) {
+    let prevEmptied = false;
+    sectionsOf(main).forEach((section) => {
+      const styles = styleOf(section);
+      const typo = styles.filter((s) => TYPO_STYLES.has(s));
+      if (!typo.length) {
+        prevEmptied = false;
+        return;
+      }
+      const emptied = typo.length === styles.length;
+      if (emptied && prevEmptied && section.hr) section.hr.remove();
+      prevEmptied = emptied;
+      if (typo.includes("h-serif") || typo.includes("h2-1-5")) serifHeadings2(doc, section);
+      const blocks = section.nodes.filter((n) => {
+        var _a;
+        return n.tagName === "TABLE" && VARIANT_BLOCKS.test(norm(((_a = n.querySelector("tr")) == null ? void 0 : _a.textContent) || ""));
+      });
+      typo.forEach((s) => {
+        const variant = BLOCK_VARIANT[s];
+        if (!variant) return;
+        blocks.filter((b) => !/large-headline/.test(b.querySelector("tr").textContent)).forEach((b) => addVariant(b, variant));
+        const copy = section.nodes.filter((n) => /^(P|UL|OL)$/.test(n.tagName) && norm(n.textContent));
+        if (copy.length) warn.push(`${s} on default content (theme?): "${norm(copy[0].textContent).slice(0, 40)}"`);
+      });
+      setStyle(section, styles.filter((s) => !TYPO_STYLES.has(s)));
+    });
+  }
+  function semanticMarkup(main, doc) {
+    const warn = [];
+    tagsToSpans(doc, main);
+    largeHeadlines(doc, main, warn);
+    sizeLines(doc, main);
+    displayLines(doc, main);
+    finishSpans(doc, main, warn);
+    dropTypographyStyles(doc, main, warn);
+    const left = main.textContent.match(/\[\[[^\]]*\]/g);
+    if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(" ")}`);
+    return warn;
+  }
+  function transform4(hookName, element, payload) {
+    if (hookName !== "afterTransform") return;
+    const warn = semanticMarkup(element, payload.document);
+    if (warn.length) element.setAttribute("data-semantic-warn", warn.join(" | "));
+  }
+
   // tools/importer/import-long-page-detail-corp.js
   var PAGE_TEMPLATE = {
     name: "long-page-detail-corp",
@@ -3474,7 +3823,8 @@ var CustomImportScript = (() => {
   var transformers = [
     transform,
     transform2,
-    transform3
+    transform3,
+    transform4
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
@@ -3547,6 +3897,8 @@ var CustomImportScript = (() => {
       }
       const unresolvedXfs = main.getAttribute("data-xf-unresolved");
       main.removeAttribute("data-xf-unresolved");
+      const semanticWarnings = main.getAttribute("data-semantic-warn");
+      main.removeAttribute("data-semantic-warn");
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -3555,11 +3907,11 @@ var CustomImportScript = (() => {
       return [{
         element: main,
         path,
-        report: __spreadValues({
+        report: __spreadValues(__spreadValues({
           title: document.title,
           template: PAGE_TEMPLATE.name,
           blocks: pageBlocks.map((b) => b.name)
-        }, unresolvedXfs ? { "xf-unresolved": unresolvedXfs } : {})
+        }, unresolvedXfs ? { "xf-unresolved": unresolvedXfs } : {}), semanticWarnings ? { "semantic-warnings": semanticWarnings } : {})
       }];
     }
   };
