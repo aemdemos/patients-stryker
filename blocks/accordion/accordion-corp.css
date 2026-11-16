@@ -67,7 +67,7 @@ body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li + li {
   margin-top: var(--space-block-l);
 }
 
-/* their sized text (e.g. `[[text-1-25]…]`, 17.5px) on 21px lines, as in the source's 20px items */
+/* sized text spans in the items (17.5px) on 21px lines, as in the source's 20px items */
 body.corp .accordion.gray-list .accordion-item-body > :is(ul, ol) > li span {
   line-height: 1.2;
 }
