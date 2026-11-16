@@ -168,6 +168,11 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-comment-toggle { padding: 0; border: 0; background: none; color: var(--rv-teal); font: inherit; font-size: 12px; cursor: pointer; }
 .rv-comment-toggle:hover { text-decoration: underline; }
 .rv-meta { color: #8c959f; font-size: 11px; text-align: right; }
+/* the AOE team's status of a comment or note */
+.rv-aoe { margin: 4px 0 0; padding: 4px 8px; border-left: 3px solid #8c959f; background: #f6f8fa; color: #1f2328; font-size: 12px; line-height: 1.4; }
+.rv-aoe-done { border-color: #1a7f37; background: #eef8f0; }
+.rv-aoe-progress { border-color: #bf8700; background: #fff8e5; }
+.rv-aoe-wontdo { border-color: #8c959f; }
 .rv-comment { display: block; width: 100%; margin-top: 4px; padding: 4px 6px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; font-size: 12px; resize: vertical; }
 .rv-comment[hidden] { display: none; }
 

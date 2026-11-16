@@ -49,6 +49,7 @@ const SOURCE = {};
 let pages = [];
 let rebuildTimer;
 let noteShown = false;
+let targetShown = false;
 
 function el(tag, attrs = {}, ...children) {
   const e = document.createElement(tag);
@@ -393,6 +394,19 @@ function lastBy(item) {
   return latest ? `${latest.reviewer || 'someone'} · ${when(latest.time)}` : '';
 }
 
+const AOE_STATES = { progress: 'in progress', done: 'done', wontdo: "won't do" };
+/**
+ * The AOE team's status of a reviewer's comment or note (rows by `AOE`, kind `status:<kind>`,
+ * written by set-status.mjs), shown under it; nothing while it is open
+ */
+function aoeLine(item, kind) {
+  const s = saved.get(`${item}|status:${kind}`);
+  const v = s?.value;
+  if (!v || !AOE_STATES[v.state]) return null;
+  const rest = [v.release && ` in ${v.release}`, v.reason && ` · ${v.reason}`].filter(Boolean).join('');
+  return el('p', { class: `rv-aoe rv-aoe-${v.state}`, title: `Status from the AOE team, ${when(s.time)}` }, el('b', {}, `AOE: ${AOE_STATES[v.state]}`), rest);
+}
+
 /** a comment toggle and box for an item (a block id or `page`), saved when it changes */
 function commentParts(item, placeholder) {
   const current = savedOf(item, 'comment')?.value || '';
@@ -404,7 +418,8 @@ function commentParts(item, placeholder) {
     saveRow(item, 'comment', box.value.trim());
     meta.textContent = lastBy(item);
   });
-  if (item === 'page') return [box, meta];
+  const aoe = aoeLine(item, 'comment');
+  if (item === 'page') return [box, meta, aoe].filter(Boolean);
   const toggle = el('button', {
     type: 'button',
     class: 'rv-comment-toggle',
@@ -413,7 +428,7 @@ function commentParts(item, placeholder) {
       if (!box.hidden) box.focus();
     },
   }, current ? 'Comment ✎' : 'Add a comment');
-  return [el('div', { class: 'rv-item-foot' }, toggle, meta), box];
+  return [el('div', { class: 'rv-item-foot' }, toggle, meta), aoe, box].filter(Boolean);
 }
 
 /* ---------- groups: "blocks like this" (groups.js, counts in groups.json) ---------- */
@@ -785,6 +800,7 @@ function renderNotes() {
         el('button', { type: 'button', class: 'rv-comment-toggle', onclick: () => openEditor(n) }, 'Edit'),
       ),
     ),
+    aoeLine(`note:${n.id}`, 'note'),
   )));
   if (!all.length) list.append(el('li', { class: 'rv-none' }, 'No QA notes yet. "Add QA note" (or N), then click the spot on the page.'));
 }
@@ -1064,6 +1080,29 @@ async function onFrameLoad(side) {
     noteShown = true;
     await savedLoad;
     window.setTimeout(() => noteHooks.select(wanted), 600);
+  }
+  // opened from the AOE summary at a block (?block=s1b0) or a text section (?section=s3): once
+  const block = params.get('block');
+  const section = params.get('section');
+  if (review && (block || section) && !targetShown) {
+    targetShown = true;
+    const on = (v) => (block ? review.highlight(block, v) : review.highlightSection(section, v));
+    // the page may still settle (late blocks, the first sync) and move back: scroll again until
+    // the target stays near the top, at most a few times
+    const show = (tries) => {
+      if (block) review.reveal(block);
+      else review.revealSection(section);
+      window.setTimeout(() => {
+        const target = d.querySelector('.rv-hl');
+        const top = target ? target.getBoundingClientRect().top : 0;
+        if ((top < 0 || top > win('std').innerHeight / 2) && tries > 1) show(tries - 1);
+        else window.setTimeout(() => on(false), 2500);
+      }, 1500);
+    };
+    window.setTimeout(() => {
+      on(true);
+      show(4);
+    }, 600);
   }
 }
 

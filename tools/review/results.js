@@ -92,7 +92,17 @@ async function blocksOf(page) {
   return blockCache.get(page);
 }
 
-async function render(rows, pages) {
+const AOE_STATES = { progress: 'in progress', done: 'done', wontdo: "won't do" };
+
+async function render(allRows, pages) {
+  // the AOE team's status rows (set-status.mjs) are no review: kept apart, shown per comment / note
+  const rows = allRows.filter((r) => r.reviewer !== 'AOE');
+  const aoeState = merge(allRows.filter((r) => r.reviewer === 'AOE')
+    .map((r) => ({ ...r, item: `${r.page}#${r.item}` })));
+  const aoeOf = (page, item, kind) => {
+    const v = aoeState.get(`${page}#${item}|status:${kind}`)?.value;
+    return v && AOE_STATES[v.state] ? [AOE_STATES[v.state], v.release && `in ${v.release}`, v.reason].filter(Boolean).join(', ') : '';
+  };
   const title = Object.fromEntries(pages.map((p) => [p.path, p.title]));
   const pageName = (p) => el('a', { href: toolLink(p) }, title[p] || p);
   const byPage = new Map();
@@ -166,16 +176,16 @@ async function render(rows, pages) {
         choiceRows.push([pageName(page), `Text (${e.item})`, what, e.reviewer, when(e.time)]);
       }
       if (/^s\d+$/.test(e.item) && e.kind === 'comment' && e.value) {
-        commentRows.push({ type: 'Text', row: [pageName(page), `Text (${e.item})`, e.value, e.reviewer, when(e.time)] });
+        commentRows.push({ type: 'Text', row: [pageName(page), `Text (${e.item})`, e.value, e.reviewer, when(e.time), aoeOf(page, e.item, 'comment')] });
       }
       if (/^s\d+b\d+$/.test(e.item)) {
         if (!per.has(e.item)) per.set(e.item, {});
         per.get(e.item)[e.kind] = e;
       }
-      if (e.item === 'page' && e.kind === 'comment' && e.value) pageCommentRows.push([pageName(page), e.value, e.reviewer, when(e.time)]);
+      if (e.item === 'page' && e.kind === 'comment' && e.value) pageCommentRows.push([pageName(page), e.value, e.reviewer, when(e.time), aoeOf(page, 'page', 'comment')]);
       if (e.kind === 'note' && e.value && !e.value.deleted) {
         noteRows.push({
-          page, ...e.value, reviewer: e.reviewer, time: e.time,
+          page, ...e.value, reviewer: e.reviewer, time: e.time, aoe: aoeOf(page, e.item, 'note'),
         });
       }
     });
@@ -193,7 +203,7 @@ async function render(rows, pages) {
       if (k.comment && k.comment.value) {
         commentRows.push({
           type: NAMES[b.name] || b.name,
-          row: [pageName(page), name, k.comment.value, k.comment.reviewer, when(k.comment.time)],
+          row: [pageName(page), name, k.comment.value, k.comment.reviewer, when(k.comment.time), aoeOf(page, id, 'comment')],
         });
       }
     });
@@ -208,13 +218,13 @@ async function render(rows, pages) {
 
   /* ---------- comments ---------- */
   commentRows.sort((a, b) => a.type.localeCompare(b.type));
-  const commentCsv = [...commentRows.map((c) => c.row), ...pageCommentRows.map((r) => [r[0], 'page', r[1], r[2], r[3]])]
-    .map((r) => [r[0].textContent || r[0], r[1], r[2], r[3], r[4]]);
+  const commentCsv = [...commentRows.map((c) => c.row), ...pageCommentRows.map((r) => [r[0], 'page', r[1], r[2], r[3], r[4]])]
+    .map((r) => [r[0].textContent || r[0], r[1], r[2], r[3], r[4], r[5]]);
   $('#comments .rs-body').replaceChildren(
-    el('h3', {}, `On blocks (${commentRows.length})`, commentRows.length || pageCommentRows.length ? csvLink('review-comments.csv', ['Page', 'Block', 'Comment', 'By', 'When'], commentCsv) : null),
-    table(['Page', 'Block', 'Comment', 'By', 'When'], commentRows.map((c) => c.row)),
+    el('h3', {}, `On blocks (${commentRows.length})`, commentRows.length || pageCommentRows.length ? csvLink('review-comments.csv', ['Page', 'Block', 'Comment', 'By', 'When', 'AOE'], commentCsv) : null),
+    table(['Page', 'Block', 'Comment', 'By', 'When', 'AOE'], commentRows.map((c) => c.row)),
     el('h3', {}, `On pages (${pageCommentRows.length})`),
-    table(['Page', 'Comment', 'By', 'When'], pageCommentRows),
+    table(['Page', 'Comment', 'By', 'When', 'AOE'], pageCommentRows),
   );
 
   /* ---------- QA notes ---------- */
@@ -239,8 +249,8 @@ async function render(rows, pages) {
       el('div', { class: 'rs-tile' }, el('b', {}, String(noteRows.length - open.length)), el('span', {}, 'resolved')),
       ...byCat.map(([name, list]) => el('div', { class: 'rs-tile' }, el('b', {}, String(list.length)), el('span', {}, name))),
     ),
-    noteRows.length ? csvLink('review-qa-notes.csv', ['Page', '#', 'Category', 'Note', 'Width', 'Status', 'By', 'When'], noteRows.map((n) => [title[n.page] || n.page, n.n, CATEGORIES[n.cat] || n.cat, n.text, WIDTHS[n.vp] || n.vp, n.status, n.reviewer, when(n.time)])) : null,
-    table(['Page', '#', 'Category', 'Note', 'Width', 'Status', 'By', 'When'], noteRows.map((n) => [
+    noteRows.length ? csvLink('review-qa-notes.csv', ['Page', '#', 'Category', 'Note', 'Width', 'Status', 'By', 'When', 'AOE'], noteRows.map((n) => [title[n.page] || n.page, n.n, CATEGORIES[n.cat] || n.cat, n.text, WIDTHS[n.vp] || n.vp, n.status, n.reviewer, when(n.time), n.aoe])) : null,
+    table(['Page', '#', 'Category', 'Note', 'Width', 'Status', 'By', 'When', 'AOE'], noteRows.map((n) => [
       pageName(n.page),
       el('a', { href: toolLink(n.page, `&vp=${n.vp}&note=${encodeURIComponent(n.id)}`), title: 'Open at the pin' }, String(n.n)),
       CATEGORIES[n.cat] || n.cat,
@@ -249,6 +259,7 @@ async function render(rows, pages) {
       el('span', { class: `rs-tag rs-${n.status === 'resolved' ? 'resolved' : 'open'}` }, n.status),
       n.reviewer,
       when(n.time),
+      n.aoe,
     ])),
   );
 }

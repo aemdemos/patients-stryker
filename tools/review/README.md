@@ -1,5 +1,14 @@
 # Standard pages review tool (branch `standardise-v3`)
 
+**Where the review's output goes (decided 2026-11-16):** the tool never changes documents; it
+shows `/std` and applies the saved choices in the browser. The decisions reach the pages through
+the conversion: an apply step (not built yet: it follows once real decisions come in) feeds the
+sheet's choices (variant, width, text set, background; per block or per group) into
+`tools/importer/standardise/apply-variants.mjs`, so `/std = rules(/rs) + decisions` and a re-run
+after any rule fix keeps them. Choices whose block moved (another section / block number after a
+rule fix) are flagged, not guessed. Comments and QA notes become a to-do list, never applied
+automatically. The real paths (`/us/en/…`) only at go-live, a separate promotion step.
+
 A review shell for the customer: the standard page (`/std/…`) as the base, its as-is version
 (`/rs/…`) to compare, scroll-synced by matched text. Not part of the site: it runs on preview
 hosts only (the branch preview, the local dev server) and never touches content. Plan and
@@ -23,6 +32,7 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
 | `review-form.json` | The form definition the save route uses (form submission service → the review Google Sheet, `incoming` tab) |
+| `summary.js`, `summarise.mjs`, `set-status.mjs`, `test/` | The feedback summary for the AOE team, the agent's readings and the status back to the reviewers (below) |
 
 ## Saving (`store.js`)
 
@@ -54,6 +64,69 @@ value, reviewer, time`), appended by Adobe's form submission service; no sign-in
 Note: the sheet's export lags up to about a minute, so another browser can briefly show a note's
 or choice's previous state (the reviewer who changed it sees the change at once).
 
+## Feedback summary for the AOE team (`summary.js`, `summarise.mjs`)
+
+The sheet's rows as **work items** for the engineers who implement them (AOE: Agentic Outcome
+Engineers), each with its target, reach and evidence (the reviewers' rows with links that open
+the tool at the block, text section or pin: `?block=s1b0`, `?section=s3`, `?note=<id>`).
+
+```
+node tools/review/summarise.mjs [--csv rows.csv] [--out migration-work/review-summary] [--themes …/themes.json]
+```
+
+Writes `report.md` (for people) and `work-items.json` (the same for agents) to the git-ignored
+`migration-work/review-summary/`. Rows are merged like the tool merges them (newest per item and
+kind); test reviewers are left out (`--include-tests` keeps them); every standard page is read for
+the blocks' designs and the reach of each design.
+
+| Kind | From | Who handles it |
+|---|---|---|
+| `decision` | group choices ("for all blocks like this", with the blocks that are exceptions); single-block and text-section choices, aggregated by block type and from → to | data for the apply step |
+| `variant` | comments on blocks and text sections, layout notes: per design the block shows (its own choice, else its group's, else its standard design), reach = every instance of that design | CSS of the design |
+| `conversion` | QA notes (text, image, link, other), located by their anchor in the authored page (text, `<img>` or Dynamic Media link) | conversion rules, then re-run |
+| `page` | page comments, notes on no block | that page |
+| `question` | reviewers disagree (their newest values differ); a choice that no longer fits its block (the page changed after it was saved, e.g. moved block numbers) | back to the reviewer, never applied |
+
+Resolved and deleted notes are left out. The kind is a first guess from the row type; the agent's
+reading (below) can split an item into themes with their own kind.
+
+**The agent's reading (themes).** Each run also writes `to-read.json`: the work items (not
+decisions) with no reading yet or a stale one, in short form. The agent (asked to "summarise the
+review feedback") reads them and writes its readings to the themes file (default
+`migration-work/review-summary/themes.json`), then runs the summary again:
+
+```json
+{ "items": { "variant:columns:media-text": {
+  "by": "agent (Claude)", "time": "<ISO>",
+  "summary": "what the feedback says, in one or two sentences",
+  "themes": [{ "title": "…", "kind": "variant | conversion | page | question | decision",
+               "refs": ["<page>#<item>|<kind>", "…"], "action": "what to do, where" }],
+  "questions": ["open questions for the customer"] } } }
+```
+
+The report shows it as **Agent reading**, the reviewers' rows stay below it as written. A reading
+is **stale** when the item has feedback newer than the reading, or a row it names is gone; stale
+items are listed in `to-read.json` again. Example: `test/sample-themes.json`.
+
+**Status back to the reviewers.** When a work item is in progress, done or won't be done:
+
+```
+node tools/review/set-status.mjs --item variant:columns:media-text --state done|progress|wontdo|open \
+  --release r1 --reason "image column widened" [--refs <ref>,<ref>] [--dry-run]
+```
+
+It appends one row per reviewer row of the item (or only `--refs`) to the sheet, the way the tool
+saves (posted from a page on the branch preview): reviewer `AOE`, kind `status:<kind>` on the
+reviewer's own item, value `{ state, release, reason, workItem, commit }`. The tool shows it under
+the comment or QA note ("AOE: done in r1 · image column widened"), the results page in an AOE
+column (AOE rows are no reviewer there), and the next summary per row (mixed states = "partly").
+`open` takes a status back. Decisions get no status here: the apply step will record what it
+applied. `release` is free text until the versioning of `/std` is decided (plan step 2); the
+commit is recorded with every status.
+
+Test: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.csv`, made-up feedback
+on real standard pages, from `test/sample-rows.mjs`).
+
 ## Source snapshots
 
 "Compare with: Source" shows the snapshot of the page at the current width, synced by its
@@ -69,5 +142,6 @@ recorded text positions.
   uploaded and previewed on standardise-v3 the same day. A copy of the capture folder:
   `.cbr/review-snapshots-2026-11-13.tar` (local only).
 
-Next: blocks in fragments, the group option ("all blocks like this"), hosting the snapshots on
-the branch preview, a results summary and export for `apply`.
+Next: blocks in fragments; the apply step (after the review); a release stamp and block
+fingerprint on saved rows (versioning of `/std`, parked 2026-11-16, see
+`tools/importer/standardise/README.md` → Plan).

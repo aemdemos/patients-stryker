@@ -16,6 +16,39 @@ block-by-block review, layout-only standards) is kept below for reference.
 - The review flow uses no internal tool (no QA tool, no blast radius): reviewers compare the
   page with stryker.com by eye, as the customer would.
 
+## Plan: where we are (2026-11-16)
+
+Done on the product-detail pages: every block type on standard variants, section backgrounds and
+layouts, Page Nav, six text sets with accent lines, the conventions page, the Standard Block
+Library, and the customer review tool (`tools/review/`) with Google Sheet saving, groups, QA
+notes, source snapshots and results.
+
+Still to do, in this order (agreed 2026-11-16, one at a time):
+1. **Feedback summary for the AOE team** (Agentic Outcome Engineers): the customer's review rows
+   (sheet) turned into an actionable summary for the engineers who implement them. *Built
+   2026-11-16:* `tools/review/summarise.mjs` (report + work items, the agent's readings) and
+   `set-status.mjs` (status back to the reviewers in the tool); see `tools/review/README.md`.
+2. **The apply step:** the sheet's decisions as input to `apply-variants.mjs` (see
+   `tools/review/README.md`), then the checks. Decide the versioning of `/std` here (reminder
+   below).
+3. **Block variants and default-content variants:** finish and refine them.
+4. **Variant approval pages for the customer:** per block type a full example page with a carousel
+   of each variant, how many instances it has and example pages where it is used, so the customer
+   approves the variants first.
+5. **The actual review**, started on the approved variants. Before it: upload the other ~980
+   `/std` documents; restrict the review sheet's sharing (Viewer for anyone with the link,
+   `forms@adobe.com` as Editor); re-upload the Standard Block Library.
+
+- **Reminder, parked 2026-11-16 (decide in step 2): versioning of `/std`.** Feedback is applied
+  while we keep changing variants and text sets, so `/std` drifts from what was reviewed. Direction
+  to assess: `/std` as a reproducible build of versioned inputs (rules + CSS in git, decisions in
+  the sheet); a release stamp per build; each saved decision tagged with its release and a block
+  fingerprint; a change log of renamed / merged / removed variants; a re-check queue for decisions
+  whose block or variant changed. Stamping saved rows matters before real reviewers start (step 5).
+- **Found, not fixed:** 31 jump links without a section id (product-detail importer); several H1s
+  on some pages; blocks in fragments not switchable in the review tool.
+- **Later:** the other corp templates, one at a time, the same way.
+
 ## Files
 
 | File | What |
