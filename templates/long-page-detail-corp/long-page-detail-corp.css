@@ -1152,6 +1152,19 @@ body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple
   padding-block: var(--space-section);
 }
 
+/* ---- the two-tone display heading in Columns (a Heading 2 with Egyptienne words and gold Bold +
+   Italic words): 35px at every width on lines 1.06 apart, as stryker.com's 2.5em rich text on
+   this template's pages (webinars "Check out past recordings on iSPIESOnDemand.", 37.1px lines
+   at 375 / 1000 / 1440); the corp news size from 600px (43.75px, lines 1.33) is the news
+   pages' ---- */
+body.long-page-detail-corp main .columns {
+  --columns-corp-display-size: var(--columns-corp-display-size-s);
+}
+
+body.long-page-detail-corp main .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+  line-height: var(--heading-line-height);
+}
+
 body.long-page-detail-corp main > .section.full-bleed:is(.gray-gradient, .purple-gradient, .purple) > .default-content-wrapper > h2:only-child {
   margin-bottom: var(--space-block-l);
   padding-bottom: var(--space-block-xs);
