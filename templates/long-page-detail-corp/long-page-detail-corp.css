@@ -96,6 +96,14 @@ body.long-page-detail-corp main > .section > .default-content-wrapper h2:not(.un
   border-bottom: 0;
 }
 
+/* ---- gold words (Bold + Italic) in a heading keep the heading's size: the shared styles.css
+   sets them to the patients site's compact gold label size in a Heading 2 (16.8 / 19.9px),
+   but on stryker.com they are the size of the words around them (OR staff form "In the OR"
+   in its 28px statement) ---- */
+body.long-page-detail-corp main :is(h1, h2, h3, h4, h5, h6) :is(em strong, strong em) {
+  font-size: inherit;
+}
+
 /* ---- heading + italic: Egyptienne light, upright (stryker.com span.urw-egyptienne lines at
    heading sizes, e.g. jr45 "Watch Darwin Chen, M.D. …" 24.5px, the OR staff form statement).
    A heading's plain words keep the level's font, Bold is Futura bold, Bold + Italic the gold
