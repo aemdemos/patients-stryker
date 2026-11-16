@@ -287,8 +287,10 @@ body.long-page-detail-corp main .columns :is(.columns-img-col, p:has(.dm-video-w
 /* ---- Large Headlines (`Columns (large-headline)`) in this template: the last line of a cell
    ends the box (no heading gap under it: the Mako Live thank-you title 4px above its subtitle
    on stryker.com); on phones the 1.5vw text lines sit on the source paragraph's 21px line
-   boxes, 28.875px apart (biologics, foot & ankle, courses intro: 11.25px text) ---- */
-body.long-page-detail-corp main .columns.large-headline > div > div > :last-child {
+   boxes, 28.875px apart (biologics, foot & ankle, courses intro: 11.25px text); a title line
+   (Heading 1) is followed by the next line with no gap either (courses "Events", 7px above
+   "Your opportunity to learn is here." on stryker.com, its 1.35 line box) ---- */
+body.long-page-detail-corp main .columns.large-headline > div > div > :is(:last-child, h1) {
   margin-bottom: 0;
 }
 

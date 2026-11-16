@@ -199,6 +199,24 @@ export default function decorate(block) {
         }
       });
 
+      // fully Italic Heading 2/3s too (Large Headline Egyptienne lines): every word in
+      // italic, however the italic is split (the DA editor ends an italic run at each line
+      // break)
+      col.querySelectorAll('h2, h3').forEach((el) => {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let italic = false;
+        let plain = false;
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.textContent.trim()) {
+            if (node.parentElement.closest('em, i') && el.contains(node.parentElement.closest('em, i'))) {
+              italic = true;
+            } else plain = true;
+          }
+        }
+        if (italic && !plain) el.classList.add('columns-italic');
+      });
+
       // Headings in one font: fully gold (Bold + Italic) Heading 1/2, or a Heading 1 with a
       // gold number alone on its first line (gold part, then a line break) - styles give
       // these their own line spacing and sizing
