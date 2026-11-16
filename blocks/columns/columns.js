@@ -194,7 +194,18 @@ export default function decorate(block) {
       // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot
       col.querySelectorAll('p, h1, h2').forEach((el) => {
         const strong = el.querySelector(':scope > strong:only-child');
-        if (strong && strong.textContent.trim() === el.textContent.trim()) {
+        // …or Bold line by line (one Bold per line around the line breaks, as the importer and
+        // the DA editor write it: ASC "**Mako SmartRobotics™**<br>**robotic-arm assisted
+        // surgery**"), with no plain and no Italic words; not a Heading 1 (a cell title, not
+        // a stat number: jr45 "Who, why and how?" over its Bold second line)
+        const boldLines = el.tagName !== 'H1' && el.querySelector(':scope > br')
+          && [...el.childNodes].every((n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim())
+            || (n.nodeName === 'STRONG' && !n.querySelector('em, i')));
+        // a Heading 1 all in gold with no digit is a cell title, not a stat number (jr45 "Who,
+        // why and how? Exploring partial knee procedures", 4vw)
+        const goldTitle = el.tagName === 'H1' && strong?.querySelector('em, i') && !/\d/.test(el.textContent);
+        const wholeBold = strong && strong.textContent.trim() === el.textContent.trim();
+        if (!goldTitle && (wholeBold || boldLines)) {
           el.classList.add('columns-bold');
         }
       });
@@ -217,8 +228,28 @@ export default function decorate(block) {
         if (italic && !plain) el.classList.add('columns-italic');
       });
 
+      // a Heading 2 all in Bold with a gold (Bold + Italic) part and no plain words (stryker.com
+      // ASC operating room "A. Mako": a Futura bold heading with a gold letter), not the
+      // two-tone display heading (gold words + plain serif words)
+      col.querySelectorAll('h2').forEach((el) => {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const found = { plain: false, bold: false, gold: false };
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (node.textContent.trim()) {
+            const inBold = el.contains(node.parentElement.closest('strong, b'));
+            const inItalic = el.contains(node.parentElement.closest('em, i'));
+            if (!inBold) found.plain = true;
+            else if (inItalic) found.gold = true;
+            else found.bold = true;
+          }
+        }
+        if (found.gold && found.bold && !found.plain) el.classList.add('columns-bold-gold');
+      });
+
       // Headings in one font: fully gold (Bold + Italic) Heading 1/2, or a Heading 1 with a
-      // gold number alone on its first line (gold part, then a line break) - styles give
+      // gold number alone on its first line (gold part with a digit, then a line break; a gold
+      // first line of words is a title line: jr45 "What would you do?") - styles give
       // these their own line spacing and sizing
       col.querySelectorAll('h1, h2').forEach((heading) => {
         const first = heading.firstElementChild;
@@ -228,7 +259,8 @@ export default function decorate(block) {
         if (!gold || !text.startsWith(first.textContent.trim())) return;
         if (heading.children.length === 1 && first.textContent.trim() === text) {
           heading.classList.add('columns-gold');
-        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR') {
+        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR'
+          && /\d/.test(first.textContent)) {
           heading.classList.add('columns-number');
         }
       });

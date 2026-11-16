@@ -28,16 +28,22 @@ body.corp .columns p strong {
 
 /* plain-bold: bold keeps the running font (stryker.com plain <b>: the jr45 faculty
    "Residency:" labels, TEACH talks "Course instructor:"), Humanist bold, Egyptienne bold
-   in `serif` cells */
-body.corp .columns.plain-bold p strong {
+   in `serif` cells; gold (Bold + Italic) stays Futura bold (TEACH "View more information") */
+body.corp .columns.plain-bold p strong:not(:where(em > strong, :has(> em))) {
   font-family: inherit;
 }
 
 /* …except a Bold lead-in of the text right under an image (a paragraph not Bold as a
    whole, columns.js .columns-bold), which keeps the body font (stryker.com <b> in the
    iSuite product tiles: "Surgical tables at Stryker are designed…") */
-body.corp .columns .columns-img-col + p:not(.columns-bold) strong {
+body.corp .columns .columns-img-col + p:not(.columns-bold) strong:not(:where(em > strong, :has(> em))) {
   font-family: var(--body-font-family);
+}
+
+/* label-bold: a line's first Bold before another Bold is a Futura bold label, the Bold after
+   it the row's (stryker.com TEACH talks "Chapter 1:" in Futura, its title in Humanist bold) */
+body.corp .columns.label-bold p > strong:first-child:has(~ strong) {
+  font-family: var(--display-font-family);
 }
 
 body.corp .columns > div > div h2 {
@@ -60,6 +66,14 @@ body.corp .columns.columns-20-80 h4 {
 
 /* large-copy: 17.5px copy (.fontsize-1-25em; ASC rows, jr45 intro rows, Mako refreshers
    lists), the source's lines 21.25px apart */
+body.corp .columns.large-copy {
+  --columns-corp-copy-size: var(--body-font-size-l);
+}
+
+body.corp .columns.xlarge-copy {
+  --columns-corp-copy-size: var(--body-font-size-xl);
+}
+
 body.corp .columns.large-copy :is(p, ul, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
@@ -104,6 +118,16 @@ body.corp .columns .columns-img-col + p.columns-bold {
   font-size: var(--footnote-font-size);
   line-height: var(--body-line-height-l);
   text-align: center;
+}
+
+/* product-names: that fully Bold line is the product's name, not a caption: Futura bold at the
+   row's copy size (14px; 17.5px / 21px with large-copy / xlarge-copy), left-aligned
+   (stryker.com nse attachments "440 Elite 7 cm straight attachment black"; corporate
+   responsibility employee benefits "Physical", 21px) */
+body.corp .columns.product-names .columns-img-col + p.columns-bold {
+  font-size: var(--columns-corp-copy-size, var(--body-font-size-m));
+  line-height: var(--paragraph-line-height);
+  text-align: start;
 }
 
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
@@ -210,6 +234,13 @@ body.corp .columns.large-headline p:has(> em:only-child) {
   font-size: var(--columns-corp-lh-small-size);
 }
 
+/* large-subtitles: the plain line right under a cell's Heading 3 at 17.5px (stryker.com
+   .fontsize-1-25em: the jr45 faculty cities "New York, NY" under the names) */
+body.corp .columns.large-subtitles.block > div > div h3 + p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
 body.corp .columns.large-headline p > em:only-child {
   font-family: var(--display-font-family);
   font-style: normal;
@@ -270,7 +301,7 @@ body.corp .columns.large-titles > div > div h2 {
    Futura 700 gold, 35px below 840px, 43.75px above). Its plain words are the light serif
    (two-tone, as "We build trust."); the gold marker keeps the heading size (columns.css
    sizes gold h2 markers). large-headline has its own heading scale. */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em) {
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(:where(.columns-bold-gold)) {
   font-family: var(--heading-font-family);
   font-size: var(--columns-corp-display-size);
   font-weight: var(--font-weight-regular);
@@ -298,7 +329,7 @@ body.corp .columns.large-headline h2.columns-italic:not(:has(strong)) em {
 }
 
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold, .columns-bold-gold) {
   line-height: 1.33;
 }
 
@@ -311,6 +342,17 @@ body.corp .columns h2 :is(em strong, strong em) {
 body.corp .columns:not(.large-headline) > div > div h2.columns-bold {
   margin-bottom: var(--space-inset-m);
   font-size: var(--columns-corp-display-size-s);
+  line-height: var(--heading-line-height);
+}
+
+/* a Bold Heading 2 with a gold marker (columns.js .columns-bold-gold: Bold words and a Bold +
+   Italic part, no plain words) is the 24.5px Futura bold heading, not a display line
+   (stryker.com ASC operating room "A. Mako": .fontsize-1-75em .futura-bold, 24.5px at
+   every width) */
+body.corp .columns:not(.large-headline) > div > div h2.columns-bold-gold {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
 }
 
@@ -428,6 +470,15 @@ body.corp .columns .columns-img-col video {
 /* large-headline: a Bold + Underline link on its own line (link-strong CTA) stays at the 14px corp size */
 body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
   font-size: var(--body-font-size-m);
+}
+
+/* headline-copy: a cell of one plain paragraph alone (no image, video, link or Bold: not a video
+   caption cell) at the Large Headline 1.5vw
+   size, 2N vw on phones, capped at 21px (stryker.com .fontsize-1-5-vw: jr45 "Watch Darwin
+   Chen, M.D., … as they discuss …": 21px at 1440, 11.7px at 390 → never under 12px here) */
+body.corp .columns.headline-copy.block > div > div > p:only-child:not(:has(strong)) {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
 }
 
 /* gray-lead: the text cell (the one without the video, last or first — a mirrored row
@@ -795,6 +846,14 @@ body.corp .columns.purple-last {
 body.corp .columns.boxed-all {
   --columns-corp-box-bg: var(--color-white);
   --columns-corp-box-shadow: var(--shadow-soft);
+}
+
+/* the purple titles of these rows (stryker.com purple Futura bold): the partner names
+   (Heading 4) in the text cell of the giving-back purple-last row, the design card titles
+   (Heading 3) of the CLOUT boxed-all row */
+body.corp .columns.purple-last > div > div:where(:not(:last-child)) h4,
+body.corp .columns.boxed-all.block > div > div h3 {
+  color: var(--color-purple);
 }
 
 body.corp .columns.gold-lead {

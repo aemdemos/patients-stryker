@@ -381,6 +381,12 @@ body.long-page-detail-corp main > .section.disclaimer.column-10-12 p {
   line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
 }
 
+/* Bold in the small print is the running font's bold (stryker.com Humanist bold: CLOUT
+   "References", "Caution", SKILL "This website is intended solely for…"), not Futura */
+body.long-page-detail-corp main > .section.disclaimer strong {
+  font-family: var(--body-font-family);
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section.column-10-12 > .video-wrapper + .default-content-wrapper,
   body.long-page-detail-corp main > .section.column-10-12 > .default-content-wrapper + .cards-corp-wrapper {
@@ -1302,8 +1308,8 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
 /* ---- the hero (Hero Corp, slide and banner): its text sizes are the bracket tags of the
    text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
    the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
-   `large` / `xlarge` hero keeps the variant's size */
-body.long-page-detail-corp main .hero-corp > div:last-child > :not(h1),
+   `large` / `xlarge` hero keeps the variant's size, the copy of a `large-copy` hero its 17.5px */
+body.long-page-detail-corp main .hero-corp:not(.large-copy, .xlarge-copy) > div:last-child > :not(h1),
 body.long-page-detail-corp main .hero-corp:not(.large, .xlarge) > div:last-child > h1 {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -1498,7 +1504,9 @@ body.long-page-detail-corp main .statistics .statistics-value {
 }
 
 body.long-page-detail-corp main .statistics .statistics-desc {
-  font-size: calc(1.5 * var(--long-page-detail-corp-headline-unit));
+  --statistics-desc-size: calc(1.5 * var(--long-page-detail-corp-headline-unit));
+
+  font-size: var(--statistics-desc-size);
   line-height: var(--heading-line-height-hero);
 }
 

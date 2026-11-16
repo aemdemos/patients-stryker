@@ -256,11 +256,55 @@
   text-align: left;
 }
 
-/* align-right: the slide text right-aligned in its box (stryker.com Large Headline
-   text-align: right, e.g. "Going the distance for front-line heroes" ending 5% from the
-   right edge) */
-.hero-corp.image-slide.align-right > div:last-child > * {
-  text-align: right;
+/* ---- large / xlarge: the title (Heading 1) in the stryker.com Large Headline sizes, 4vw / 5.5vw
+   (span.fontsize-4vw, -5-5-vw: N% of the content width, 56px / 77px at 1440, twice the % below
+   600px: 30px / 41.25px at 375), lines 1.35 apart. Plain words are Egyptienne light, Bold
+   words Futura bold (measured: ASC pre-operative, operating room, spine events) ---- */
+.hero-corp {
+  --hero-corp-title-unit: 2vw;
+  --hero-corp-title-line-height: 1.35;
+}
+
+.hero-corp.large { --hero-corp-title-size: 4; }
+.hero-corp.xlarge { --hero-corp-title-size: 5.5; }
+
+.hero-corp:is(.large, .xlarge) > div:last-child h1 {
+  font-family: var(--heading-font-family);
+  font-size: calc(var(--hero-corp-title-size) * var(--hero-corp-title-unit));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--hero-corp-title-line-height);
+}
+
+@media (width >= 600px) {
+  .hero-corp {
+    --hero-corp-title-unit: calc(min(100vw, var(--container-max)) / 100);
+  }
+}
+
+/* ---- serif / large-copy: the hero's copy (not its title, not a standalone link) in Egyptienne
+   light, its Bold Egyptienne bold / at 17.5px, lines 21.25px apart (stryker.com
+   .urw-egyptienne .fontsize-1-25em on the banner text: foot & ankle patient marketing
+   toolkit, bunion and total ankle replacement) ---- */
+.hero-corp.serif > div:last-child :is(p:not(.button-wrapper), li) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+.hero-corp.serif > div:last-child :is(p:not(.button-wrapper), li) strong {
+  font-family: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-corp.large-copy > div:last-child :is(p:not(.button-wrapper), li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* xlarge-copy: the copy at 21px (stryker.com .fontsize-1-5em: CLOUT "The largest prospective
+   mechanical thrombectomy study…", its trial number link) */
+.hero-corp.xlarge-copy > div:last-child :is(p, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
 }
 
 /* subtitle (hero-corp.js .hero-corp-subtitle: one plain line under a fully Bold title): the
@@ -273,6 +317,40 @@
   font-family: var(--heading-font-family);
   font-size: calc(var(--hero-slide-subtitle) * 2vw);
   font-weight: var(--font-weight-regular);
+}
+
+/* `Text colour on phones` (Section Metadata): below 600px all the text in one colour, the
+   colour tags and the button text too (stryker.com .mobile-text-dark_gray / -black); the
+   desktop colours from 600px */
+.hero-corp[data-phone-text="dark-gray"] { --hero-phone-text: var(--color-secondary); }
+.hero-corp[data-phone-text="black"] { --hero-phone-text: var(--color-black); }
+
+.hero-corp[data-phone-text] > div:last-child > *,
+.hero-corp[data-phone-text] > div:last-child a:any-link {
+  color: var(--hero-phone-text);
+}
+
+.hero-corp[data-phone-text] > div:last-child span[class*="color-"] {
+  --span-color: var(--hero-phone-text);
+}
+
+@media (width >= 600px) {
+  .hero-corp[data-phone-text] > div:last-child > * {
+    color: inherit;
+  }
+
+  .hero-corp[data-phone-text] > div:last-child a:any-link {
+    color: var(--hero-phone-link, var(--color-black));
+  }
+
+  .hero-corp[data-phone-text] > div:last-child span.color-gold { --span-color: var(--color-accent); }
+  .hero-corp[data-phone-text] > div:last-child span.color-white { --span-color: var(--color-white); }
+  .hero-corp[data-phone-text] > div:last-child span.color-blue { --span-color: var(--color-navy-bright); }
+  .hero-corp[data-phone-text] > div:last-child span.color-purple { --span-color: var(--color-purple); }
+  .hero-corp[data-phone-text] > div:last-child span.color-teal { --span-color: var(--color-primary); }
+  .hero-corp[data-phone-text] > div:last-child span.color-navy { --span-color: var(--color-navy); }
+  .hero-corp[data-phone-text] > div:last-child span.color-grey { --span-color: var(--color-secondary); }
+  .hero-corp[data-phone-text] > div:last-child span.color-light-gray { --span-color: var(--color-surface-muted); }
 }
 
 /* blue-box (above): its text white */
@@ -383,31 +461,6 @@
   }
 }
 
-/* ---- large / xlarge: the title (Heading 1) in the stryker.com Large Headline sizes, 4vw / 5.5vw
-   (span.fontsize-4vw, -5-5-vw: N% of the content width, 56px / 77px at 1440, twice the % below
-   600px: 30px / 41.25px at 375), lines 1.35 apart. Plain words are Egyptienne light, Bold
-   words Futura bold (measured: ASC pre-operative, operating room, spine events) ---- */
-.hero-corp {
-  --hero-corp-title-unit: 2vw;
-  --hero-corp-title-line-height: 1.35;
-}
-
-.hero-corp.large { --hero-corp-title-size: 4; }
-.hero-corp.xlarge { --hero-corp-title-size: 5.5; }
-
-.hero-corp:is(.large, .xlarge) > div:last-child h1 {
-  font-family: var(--heading-font-family);
-  font-size: calc(var(--hero-corp-title-size) * var(--hero-corp-title-unit));
-  font-weight: var(--font-weight-regular);
-  line-height: var(--hero-corp-title-line-height);
-}
-
-@media (width >= 600px) {
-  .hero-corp {
-    --hero-corp-title-unit: calc(min(100vw, var(--container-max)) / 100);
-  }
-}
-
 /* on phones a slide whose text goes below its image shows white text in the text colour, on
    the page's white (stryker.com .mobile_Bottom with .mobile-text-black / dark_gray) */
 .hero-corp.image-slide.text-below span.color-white {
@@ -464,40 +517,6 @@
   }
 }
 
-/* `Text colour on phones` (Section Metadata): below 600px all the text in one colour, the
-   colour tags and the button text too (stryker.com .mobile-text-dark_gray / -black); the
-   desktop colours from 600px */
-.hero-corp[data-phone-text="dark-gray"] { --hero-phone-text: var(--color-secondary); }
-.hero-corp[data-phone-text="black"] { --hero-phone-text: var(--color-black); }
-
-.hero-corp[data-phone-text] > div:last-child > *,
-.hero-corp[data-phone-text] > div:last-child a:any-link {
-  color: var(--hero-phone-text);
-}
-
-.hero-corp[data-phone-text] > div:last-child span[class*="color-"] {
-  --span-color: var(--hero-phone-text);
-}
-
-@media (width >= 600px) {
-  .hero-corp[data-phone-text] > div:last-child > * {
-    color: inherit;
-  }
-
-  .hero-corp[data-phone-text] > div:last-child a:any-link {
-    color: var(--hero-phone-link, var(--color-black));
-  }
-
-  .hero-corp[data-phone-text] > div:last-child span.color-gold { --span-color: var(--color-accent); }
-  .hero-corp[data-phone-text] > div:last-child span.color-white { --span-color: var(--color-white); }
-  .hero-corp[data-phone-text] > div:last-child span.color-blue { --span-color: var(--color-navy-bright); }
-  .hero-corp[data-phone-text] > div:last-child span.color-purple { --span-color: var(--color-purple); }
-  .hero-corp[data-phone-text] > div:last-child span.color-teal { --span-color: var(--color-primary); }
-  .hero-corp[data-phone-text] > div:last-child span.color-navy { --span-color: var(--color-navy); }
-  .hero-corp[data-phone-text] > div:last-child span.color-grey { --span-color: var(--color-secondary); }
-  .hero-corp[data-phone-text] > div:last-child span.color-light-gray { --span-color: var(--color-surface-muted); }
-}
-
 /* `Text colour` (Section Metadata): the hero's text in white or light grey (a slide over a dark
    image, stryker.com white / .dark_gray_40T text: ASC, BACS banners, e-Lab's gold box); on phones
    a slide whose text goes below its image keeps the text colour */
@@ -527,4 +546,11 @@
 .hero-corp .hero-autoplay .dm-video-controls,
 .hero-corp .hero-autoplay .dm-video-overlay {
   display: none;
+}
+
+/* align-right: the slide text right-aligned in its box (stryker.com Large Headline
+   text-align: right, e.g. "Going the distance for front-line heroes" ending 5% from the
+   right edge) */
+.hero-corp.image-slide.align-right > div:last-child > * {
+  text-align: right;
 }

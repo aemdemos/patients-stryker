@@ -39,6 +39,17 @@ body.corp .panel:is(.gold, .gold-gradient) .panel-body p {
   font-family: var(--body-font-family);
 }
 
+/* large-titles: the box's Heading 2 as the 36.75px two-tone title, plain (Italic) words
+   Egyptienne light, Bold words Futura bold, gold the Bold + Italic marker (stryker.com
+   .fontsize-2-5em urw-egyptienne on the box text: TEACH talks "TEACH Talks: Course
+   overview"), lines 1.06 */
+body.corp .panel.large-titles .panel-body h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxxl-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
 /* large-copy: 17.5px copy (stryker.com .fontsize-1-25em on the box text: TEACH talks
    "Course overview", SKILL), lines 21.25px apart */
 body.corp .panel.large-copy .panel-body :is(p, li),
