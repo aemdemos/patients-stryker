@@ -295,7 +295,7 @@
 }
 
 .hero-corp.image-slide.framed {
-  max-width: 1410px;
+  max-width: var(--container-max);
   margin-inline: auto;
   box-shadow: var(--shadow-soft);
 }

@@ -1323,9 +1323,9 @@ body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(
 
 body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
   font-family: inherit;
-  font-size: 3vw;
+  font-size: var(--corp-column-figure-size);
   font-weight: var(--font-weight-regular);
-  line-height: 1.35;
+  line-height: var(--heading-line-height-hero);
 }
 
 body.corp main .columns.color-heads.block > div > div:nth-child(2) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {

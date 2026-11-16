@@ -223,7 +223,8 @@ const DROP_STYLES = [
   ['legal/website-accessibility', ['p-1-25']],
   ['sage/disclosure-and-safety-information', ['p-1-25']],
   ['responsible-supply-chains/po-terms', ['disclaimer']],
-  ['legal/icrc', ['serif', 'p-1-5']],
+  ['governance/board-committees', ['disclaimer']],
+  ['legal/icrc', ['serif']],
 ];
 
 // Bracket tags (`[[tag]text]`, the span-tags.js runtime #542 removes) the builder emits become
@@ -455,8 +456,9 @@ function heroImage(main, document, url) {
   });
 }
 
-// the contact details and map stack below 900px (stryker.com col-md-6)
-function stackContactMap(main) {
+// the MRI contact details and map stack below 900px (stryker.com col-sm-6)
+function stackContactMap(main, url) {
+  if (!url.includes('/hemorrhagic-stroke/mri')) return;
   main.querySelectorAll('table').forEach((table) => {
     const head = table.querySelector('th, td');
     if (/^Columns \(columns[- ]50[- ]50\)$/.test(text(head))) head.textContent = 'Columns (columns 50 50, stack)';
@@ -507,7 +509,7 @@ export default {
     executeTransformers('afterTransform', main, payload);
     const bracketStyles = stripBrackets(main, document);
     committeeColumns(main, document, url);
-    stackContactMap(main);
+    stackContactMap(main, url);
     heroImage(main, document, url);
     underlineTitles(main, document);
     dropUnlistedStyles(main);

@@ -3058,7 +3058,8 @@ var CustomImportScript = (() => {
     ["legal/website-accessibility", ["p-1-25"]],
     ["sage/disclosure-and-safety-information", ["p-1-25"]],
     ["responsible-supply-chains/po-terms", ["disclaimer"]],
-    ["legal/icrc", ["serif", "p-1-5"]]
+    ["governance/board-committees", ["disclaimer"]],
+    ["legal/icrc", ["serif"]]
   ];
   var TAG_SECTION_STYLES = {
     "body-font": "bold-body",
@@ -3259,7 +3260,8 @@ var CustomImportScript = (() => {
       if (text4(table.querySelector("th, tr")) === "Section Metadata" && (text4(table).includes("full-width-image") || text4(table).includes("spacer") && !text4(table).includes("large"))) table.remove();
     });
   }
-  function stackContactMap(main) {
+  function stackContactMap(main, url) {
+    if (!url.includes("/hemorrhagic-stroke/mri")) return;
     main.querySelectorAll("table").forEach((table) => {
       const head = table.querySelector("th, td");
       if (/^Columns \(columns[- ]50[- ]50\)$/.test(text4(head))) head.textContent = "Columns (columns 50 50, stack)";
@@ -3307,7 +3309,7 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       const bracketStyles = stripBrackets(main, document);
       committeeColumns(main, document, url);
-      stackContactMap(main);
+      stackContactMap(main, url);
       heroImage(main, document, url);
       underlineTitles(main, document);
       dropUnlistedStyles(main);
