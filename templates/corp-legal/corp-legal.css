@@ -22,6 +22,11 @@ body.corp-legal main > .section > .columns-wrapper + .default-content-wrapper {
   padding-top: calc(var(--space-block) + var(--corp-blank-line) + 2 * var(--space-block-l));
 }
 
+/* a page title set as an underlined H2 keeps the H2 size on phones (stryker.com c-title) */
+body.corp-legal main > .section:first-child > .default-content-wrapper > h2:first-child:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xl);
+}
+
 /* a section that opens with a heading after a copy-only section (bylaws Article I) */
 body.corp-legal main > .section:not(:has(h1)) + .section > .default-content-wrapper:first-child > h2:first-child {
   margin-top: calc(var(--corp-blank-line) + var(--space-block));
@@ -177,4 +182,30 @@ body.corp-legal main .accordion.divided .accordion-item-label {
   body.corp-legal main .accordion.divided .accordion-item-label {
     font-size: var(--body-font-size-l);
   }
+}
+
+/* an H2 title followed straight by a block: the source leaves one empty row above it (convercent) */
+body.corp-legal main > .section:first-child > .default-content-wrapper:has(> h2:only-child):has(+ .table-wrapper) {
+  padding-top: var(--space-section);
+}
+
+/* title section above the committee columns: the source gap to the first label is 45px */
+body.corp-legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper {
+  padding-block: calc(2 * var(--space-section)) 0;
+}
+
+body.corp-legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper > h2 {
+  margin-bottom: calc(var(--space-section) + var(--space-block));
+}
+
+/* committee columns: Futura 21px label over 17.5px Egyptienne names (stryker.com fontsize-1-5em / 1-25em) */
+body.corp-legal main .columns.no-stack > div > div > p:first-child strong {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp-legal main .columns.no-stack > div > div > p:last-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
