@@ -595,8 +595,9 @@
   }
 }
 
-/* a video slide: the video from 600px, its phone image (if any) below 600px */
-.hero-corp.image-slide .hero-video {
+/* a video slide: the video from 600px, its phone image (if any) below 600px; with no phone
+   image the video on phones too (hero-corp.js `video-on-phones`) */
+.hero-corp.image-slide:not(.video-on-phones) .hero-video {
   display: none;
 }
 

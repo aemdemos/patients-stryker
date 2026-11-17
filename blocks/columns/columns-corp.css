@@ -901,7 +901,8 @@ body.corp .columns.boxed-all.block > div > div h3 {
 /* contact-boxes: the instruments contact boxes (with blue-all; stryker.com contact information,
    tech support): a Heading 2 title at 3vw, all gold (Bold words Futura bold, the rest
    Egyptienne light) with its text at 1.5vw Egyptienne; a gold (Bold + Italic) name at 28px Futura
-   bold; the contact lines at 28px Egyptienne light */
+   bold; the contact lines at 2vw Egyptienne light (28px at 1440, 15.6px at 390), an email on its
+   own line after them at 1.5vw */
 body.corp .columns.contact-boxes.block > div > div :where(h2) {
   margin: 0;
   color: var(--color-accent);
@@ -918,12 +919,12 @@ body.corp .columns.contact-boxes.block > div > div :where(h2) :is(em, strong) {
 
 body.corp .columns.contact-boxes.block > div > div :where(p) {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xxl);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
   font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height-hero);
 }
 
-body.corp .columns.contact-boxes.block > div > div :where(h2 + p) {
+body.corp .columns.contact-boxes.block > div > div :where(h2 + p, p:has(> em > strong) + p + p) {
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
 }
 

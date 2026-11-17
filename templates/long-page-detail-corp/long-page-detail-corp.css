@@ -457,9 +457,15 @@ body.long-page-detail-corp main .dm-video-wrapper:not(.is-playing) .dm-video {
 body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
   width: 100%;
   border: 0;
-  aspect-ratio: 3 / 1;
-  object-fit: cover;
-  object-position: top;
+}
+
+/* (on phones the video keeps its own shape, as stryker.com shows it there) */
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 /* ---- large headline in a Columns cell (medical-education pages, e.g. jr45 "What would you
@@ -1371,13 +1377,14 @@ body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.te
   margin-bottom: var(--space-section);
 }
 
-/* …a slide shown as its text alone on phones (no phone image: instruments) starts 20px under
-   the page's local nav, its text box at the top (stryker.com contact information) */
-body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp.text-alone) {
+/* …a slide shown as its text alone on phones, or with its video (instruments), starts 20px
+   under the page's local nav, its text box at the top (stryker.com contact information) */
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp:is(.text-alone, .video-on-phones)) {
   margin-bottom: var(--space-block-l);
 }
 
-body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-alone > div:last-child {
+/* (a video shown on phones: its text box right under it, as on stryker.com) */
+body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp:is(.text-alone, .video-on-phones) > div:last-child {
   padding-top: 0;
 }
 

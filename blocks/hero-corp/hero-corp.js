@@ -254,8 +254,8 @@ const OVER = { 'top-left-over': 'top-left', 'left-over': 'left' };
 
 /**
  * A slide with a placement variant lays its text out on phones by itself: under its image
- * (the phone image, else the desktop one: ASC post-op, decided 2026-11-17), alone only when
- * the slide has no image for phones (a video without a phone image: the video is desktop-only).
+ * (the phone image, else the desktop one: ASC post-op, decided 2026-11-17; a video without a phone
+ * image shows its video: instruments), alone only when the slide has no media.
  * @param {Element} block The hero-corp block
  */
 function phoneLayout(block) {
@@ -268,9 +268,13 @@ function phoneLayout(block) {
   }
   if (!PLACEMENTS.some((name) => block.classList.contains(name))) return;
   block.classList.add('text-below');
-  const phoneImage = block.querySelector('.hero-image-mobile')
-    || (!block.querySelector('.hero-video') && block.querySelector(':scope > div:first-child picture'));
-  if (!phoneImage) block.classList.add('text-alone');
+  // (a video without a phone image shows on phones too: stryker.com instruments pages)
+  const media = block.querySelector('.hero-image-mobile, .hero-video')
+    || block.querySelector(':scope > div:first-child picture');
+  if (!media) block.classList.add('text-alone');
+  if (block.querySelector('.hero-video') && !block.querySelector('.hero-image-mobile')) {
+    block.classList.add('video-on-phones');
+  }
 }
 
 /**
