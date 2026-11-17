@@ -78,7 +78,7 @@ body.news-detail.full-width main > .section:is(.col-10, .col-8-centre).phone-ful
   }
 
   body.news-detail.basic main > .section.separator {
-  padding-top: var(--space-block);
+  padding-top: var(--space-section);
   }
 }
 
