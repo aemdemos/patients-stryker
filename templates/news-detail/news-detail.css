@@ -316,6 +316,14 @@ body.news-detail main > .section > .default-content-wrapper > :is(h1, h2, h3, h4
   font-weight: var(--font-weight-medium);
 }
 
+/* an h3 authored in italic (not the gold Bold + Italic) is 21px from phones up (the plain
+   h3 reaches it from 600px); the h3 size section styles (h3-0-8, h3-1-25) still scale it */
+body.news-detail main > .section > .default-content-wrapper > h3:where(:has(em):not(:has(strong))) {
+  --news-h3-size: var(--heading-font-size-l);
+
+  font-size: var(--news-h3-size);
+}
+
 /* join: a section the importer split off the same live text component (a component that mixes
    text styles) sits at the 15px block margin, without the section gap (the last paragraph's
    margin above it; e.g. the document code under the references of the nurses feature) */
