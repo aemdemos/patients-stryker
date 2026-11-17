@@ -416,6 +416,12 @@ body.corp .columns.large-headline.title > div > div h1.columns-bold {
   font-weight: var(--font-weight-bold);
 }
 
+/* …and the line under the title 20px lower (stryker.com iSPIES "October 16th – 18th 2025",
+   13px under the title's text) */
+body.corp .columns.large-headline.title > div > div h1.columns-bold + h2 {
+  margin-top: var(--space-block-l);
+}
+
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
    wrap when the cell is too narrow (stryker.com horizontal button group) */
 body.corp .columns p.button-wrapper:has(+ p.button-wrapper),
