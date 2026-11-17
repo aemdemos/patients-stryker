@@ -355,6 +355,15 @@
   line-height: var(--heading-line-height);
 }
 
+/* headline-copy: the copy at 1.5vw, as the title's Large Headline lines (stryker.com
+   .fontsize-1-5-vw: the ASC gold labels "Implants and disposables", spine MedEd "You specialize
+   in your patients."): 21px at 1440, 11.7px at 390, lines 1.35 apart. Not a link alone (the
+   button keeps its size) */
+.hero-corp.headline-copy > div:last-child :is(p:not(.button-wrapper), li) {
+  font-size: calc(1.5 * var(--hero-corp-title-unit));
+  line-height: var(--hero-corp-title-line-height);
+}
+
 /* subtitle (hero-corp.js .hero-corp-subtitle: one plain line under a fully Bold title): the
    light serif at 3/5 of the title size (stryker.com 3vw Egyptienne under the 5vw title,
    e.g. "Look inside Stryker's iSuite": 36px at 1200px, 23.5px at 390px), or at its own

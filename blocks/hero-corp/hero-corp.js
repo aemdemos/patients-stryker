@@ -250,15 +250,18 @@ function autoplayVideo(block) {
 const PLACEMENTS = ['top-left', 'left', 'wide', 'bottom-left', 'right'];
 
 /**
- * A slide with a placement variant lays its text out on phones by itself: under the phone
- * image when it has one, alone (without the image) when it has none.
+ * A slide with a placement variant lays its text out on phones by itself: under its image
+ * (the phone image, else the desktop one: ASC post-op, decided 2026-11-17), alone only when
+ * the slide has no image for phones (a video without a phone image: the video is desktop-only).
  * @param {Element} block The hero-corp block
  */
 function phoneLayout(block) {
   if (!block.classList.contains('image-slide')) return;
   if (!PLACEMENTS.some((name) => block.classList.contains(name))) return;
   block.classList.add('text-below');
-  if (!block.querySelector('.hero-image-mobile')) block.classList.add('text-alone');
+  const phoneImage = block.querySelector('.hero-image-mobile')
+    || (!block.querySelector('.hero-video') && block.querySelector(':scope > div:first-child picture'));
+  if (!phoneImage) block.classList.add('text-alone');
 }
 
 /**

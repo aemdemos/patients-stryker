@@ -12,11 +12,12 @@ import { getMetadata } from '../../scripts/aem.js';
 let menuCount = 0;
 
 /**
- * The current page's name: the page title (og:title, else the document title without the
- * site suffix "… | Stryker"), without any bracket tags.
+ * The current page's name: the page title without the site suffix "… | Stryker" (as the
+ * stryker.com menu shows it: "Post-Op", where og:title is "Post-Operative"), else og:title,
+ * without any bracket tags.
  */
 function pageName() {
-  const title = getMetadata('og:title') || document.title.split('|')[0];
+  const title = document.title.split('|')[0].trim() || getMetadata('og:title');
   return title.replace(/\[\[[^\]]*\]|\]/g, '').replace(/\s+/g, ' ').trim();
 }
 

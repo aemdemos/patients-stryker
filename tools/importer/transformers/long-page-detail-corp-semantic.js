@@ -608,10 +608,11 @@ function heroes(doc, main) {
     const most = (test) => copy.length && copy.filter(test).length * 2 > copy.length;
     if (most((p) => wholeSize(p) === 'text-1-25')) addVariant(table, 'large-copy');
     // 1.5em copy (CLOUT "The largest prospective mechanical thrombectomy study…")
-    // (or a 1.5vw Large Headline line under the title: spine MedEd "You specialize in your
-    // patients. We specialize in you.", 21px at 1440)
-    else if (most((p) => wholeSize(p) === 'text-1-5' || spansIn(p).some((sp) => tagsOf(sp).includes('headline-1-5')
-      && norm(sp.textContent) === norm(p.textContent)))) addVariant(table, 'xlarge-copy');
+    else if (most((p) => wholeSize(p) === 'text-1-5')) addVariant(table, 'xlarge-copy');
+    // a 1.5vw Large Headline line (the ASC gold labels, spine MedEd "You specialize in your
+    // patients."): `headline-copy`, 21px at 1440 and 11.7px at 390 as on stryker.com
+    else if (most((p) => spansIn(p).some((sp) => tagsOf(sp).includes('headline-1-5')
+      && norm(sp.textContent) === norm(p.textContent)))) addVariant(table, 'headline-copy');
     if (most((p) => spansIn(p).some((s) => tagsOf(s).includes('serif') && norm(s.textContent) === norm(p.textContent)))) addVariant(table, 'serif');
     // text colour: white / light grey words (not in a dark text box, which is white anyway)
     // (the section's Section Metadata table is only created when a row is written)
@@ -922,6 +923,7 @@ function heroVariants(doc, main) {
 const BUNDLES = [
   [['large-copy', 'serif'], 'large-serif-copy'],
   [['xlarge-copy', 'serif'], 'xlarge-serif-copy'],
+  [['headline-copy', 'serif'], 'headline-serif-copy'],
   [['gray-last', 'large-subtitles', 'plain-bold'], 'faculty'],
   [['label-bold', 'plain-bold'], 'chapter-labels'],
   [['gray-all', 'plain-bold'], 'gray-cards'],

@@ -88,6 +88,7 @@ const VARIANT_BUNDLES = {
   'large-serif-copy': ['large-copy', 'serif'],
   'xlarge-serif-copy': ['xlarge-copy', 'serif'],
   'serif-copy': ['serif'],
+  'headline-serif-copy': ['headline-copy', 'serif'],
   faculty: ['gray-last', 'large-subtitles', 'plain-bold'],
   'chapter-labels': ['label-bold', 'plain-bold'],
   'gray-cards': ['gray-all', 'plain-bold'],
