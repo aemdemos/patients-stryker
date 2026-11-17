@@ -279,9 +279,11 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
 }
 
 /* …except in a `bold-body` section: a paragraph that is plain <b><i> as a whole on the
-   source (e.g. a press release subtitle) stays Humanist bold italic */
+   source (e.g. a press release subtitle) stays black Humanist bold italic, not the gold
+   Bold + Italic */
 body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
-  :is(strong em, em strong, b i, i b) {
+  :is(strong em, em strong, b i, i b):not(a *) {
+  color: var(--text-color);
   font-family: var(--body-font-family);
   font-style: italic;
 }
@@ -292,13 +294,6 @@ body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
 body.news-detail main > .section.bold-italic > .default-content-wrapper :is(p, li)
   :is(strong em, em strong, b i, i b) {
   font-style: italic;
-}
-
-/* body colour instead of the global gold label — except inside a bracket colour tag
-   ([[color-gold]***text***], scripts/span-tags.js) or a link, whose color must win */
-body.news-detail main > .section > .default-content-wrapper :is(p, li)
-  :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
-  color: var(--text-color);
 }
 
 /* article h3: Futura Bold (the live h3 wraps span.futura-bold on 16 of 19 pages); the h-serif
@@ -339,6 +334,15 @@ body.news-detail main > .section.disclaimer:has(+ .last-modified-section, + .sec
 body.news-detail main > .section.compact:has(+ .last-modified-section, + .section:empty + .last-modified-section),
 body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
   margin-bottom: 0;
+}
+
+/* bold small print stays in the body font, as the text around it — also a bold line on its
+   own (stryker.com .c-disclaimer <b>: Humanist 712 bold, e.g. the "DFHD 17934 Rev A" code
+   of the flexible ureteroscope release); buttons, bold + underline CTAs and the gold
+   Bold + Italic keep their own fonts */
+body.news-detail main > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)),
+body.news-detail .accordion-item-body > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)) {
+  font-family: var(--body-font-family);
 }
 
 /* `separator` section (source .c-section-separator, e.g. above "About AVS"): the section
@@ -1703,19 +1707,6 @@ body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .def
   body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
     --corp-headline-vw: 1vw;
   }
-}
-
-/* Columns: a Bold + Italic lead-in on a line of its own (Bold + Italic text, then a line
-   break and the paragraph's text) is the news Bold + Italic — black upright Futura bold
-   (authoring conventions) — not the corp gold label (stryker.com span.futura-bold
-   questions, e.g. "When did you start running?" of "Going the distance for front-line
-   heroes") */
-body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n),
-body.news-detail main .columns.block > div > div > p > :is(em:has(> strong:only-child), strong:has(> em:only-child)):first-child:has(+ br):nth-child(n):nth-child(n) > * {
-  color: var(--text-color);
-  font-family: var(--display-font-family);
-  font-style: normal;
-  font-weight: var(--font-weight-bold);
 }
 
 /* Columns 50/50 in a `serif` section: the text column beside an image keeps the cell's 15px
