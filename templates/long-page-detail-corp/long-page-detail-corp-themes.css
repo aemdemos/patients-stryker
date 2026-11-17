@@ -18,16 +18,37 @@ body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-ble
 }
 
 /* ---- theme `xlarge-copy`: the page's own text in 21px copy (stryker.com .fontsize-1-5em on
-   the rich text of the Mako surgeon campaign), as the Columns `xlarge-copy` variant; not the
-   small print ---- */
-body.long-page-detail-corp.xlarge-copy main > .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+   the rich text of the Mako surgeon campaign), as the Columns `xlarge-copy` variant; tab panels'
+   text too (nse heavy duty cutting accessories); not the small print ---- */
+body.long-page-detail-corp.xlarge-copy main .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
 
-body.long-page-detail-corp.xlarge-copy main > .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
+body.long-page-detail-corp.xlarge-copy main .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
+}
+
+/* ---- theme `xxlarge-copy`: the page's own text in 24.5px copy (stryker.com .fontsize-1-75em:
+   the iSPIES and foot & ankle toolkit intros); not the small print ---- */
+body.long-page-detail-corp.xxlarge-copy main .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.xxlarge-copy main .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+/* ---- theme `serif-copy`: the page's own text in Egyptienne light, Bold words Futura bold
+   (stryker.com .urw-egyptienne on the first paragraph; normalised to all the page text, decided
+   2026-11-17: CR employee benefits, iSPIES, foot & ankle toolkit, spine MedEd contact, nse heavy
+   duty cutting accessories), tab panels' text too; not the small print ---- */
+body.long-page-detail-corp.serif-copy main .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
 }
 
 /* ---- theme `asc`: the ASC care setting pages' own text (stryker.com /us/en/care-settings/asc/,
@@ -276,6 +297,21 @@ body.long-page-detail-corp.large-headlines main > .section.headline-box > .defau
   font-family: var(--display-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--long-page-detail-corp-lh-unit))));
   font-weight: var(--font-weight-bold);
+}
+
+/* a Heading 3 in Italic alone in a full-bleed colour band: the same 3.5vw Egyptienne light line
+   (stryker.com Mako refreshers "Together with our customers, we are driven to make healthcare
+   better.", 49px white on purple) */
+body.long-page-detail-corp.large-headlines main > .section.full-bleed > .default-content-wrapper > h3:has(> em:only-child) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--long-page-detail-corp-lh-unit))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.large-headlines main > .section.full-bleed > .default-content-wrapper > h3:has(> em:only-child) em {
+  font-style: normal;
 }
 
 /* the text lines: on phones on the source paragraph's 21px line boxes (28.875px apart) */

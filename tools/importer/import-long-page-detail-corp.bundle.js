@@ -4417,6 +4417,14 @@ var CustomImportScript = (() => {
     const group = ((_a = PAGE_THEMES.find(([re]) => re.test(url))) == null ? void 0 : _a[1]) || "";
     if (group) addTheme(main, group);
     tagsToSpans(doc, main);
+    blocksNamed(main, /^columns\b/).filter((t) => !/large-headline/.test(blockName(t))).forEach((t) => {
+      t.querySelectorAll("td h2").forEach((h) => {
+        const kids = [...h.childNodes].filter((n) => n.nodeType !== 3 || n.textContent.trim());
+        const plain = kids.some((n) => n.nodeType === 3);
+        const onlyBold = kids.every((n) => n.nodeType === 3 || n.nodeName === "STRONG" || n.nodeName === "B" || n.nodeName === "SPAN" && !n.querySelector("em, i") && !tagsOf(n).includes("color-gold"));
+        if (plain && onlyBold && h.querySelector("strong, b")) italicPlainWords(doc, h);
+      });
+    });
     if (group === "asc") ascHeadlines(doc, main, warn);
     largeHeadlines(doc, main, warn);
     heroes(doc, main);
