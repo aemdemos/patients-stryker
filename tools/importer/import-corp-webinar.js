@@ -97,13 +97,17 @@ function inline(document, source, tag = 'p') {
   return out;
 }
 
+/** whether the element or a descendant is styled gold (#ffb500) */
+function isGold(source) {
+  return GOLD.test(source.getAttribute('style') || '')
+    || [...source.querySelectorAll('[style]')].some((s) => GOLD.test(s.getAttribute('style')));
+}
+
 /** a heading; gold (#ffb500) → Bold + Italic, the gold heading convention; the page title
  * (Futura bold on stryker.com) → Bold, as the other corp page titles */
 function heading(document, source, tag) {
   const value = text(source);
-  const gold = GOLD.test(source.getAttribute('style') || '')
-    || [...source.querySelectorAll('[style]')].some((s) => GOLD.test(s.getAttribute('style')));
-  if (gold) return wrap(document, el(document, 'strong', value), tag, 'em');
+  if (isGold(source)) return wrap(document, el(document, 'strong', value), tag, 'em');
   return tag === 'h1' ? wrap(document, el(document, 'strong', value), tag) : el(document, tag, value);
 }
 
@@ -137,7 +141,7 @@ function layoutA(document, src) {
   const h1 = nodes.find((n) => n.matches('h1'));
   const rest = nodes.filter((n) => n !== h1);
   const out = [];
-  const thankYou = h1 && GOLD.test(h1.innerHTML);
+  const thankYou = h1 && isGold(h1);
   if (thankYou) {
     out.push(heading(document, h1, 'h1'));
     rest.filter((n) => /^H/.test(n.tagName)).forEach((n) => out.push(el(document, 'h2', text(n))));

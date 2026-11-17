@@ -411,9 +411,12 @@ var CustomImportScript = (() => {
     });
     return out;
   }
+  function isGold(source) {
+    return GOLD.test(source.getAttribute("style") || "") || [...source.querySelectorAll("[style]")].some((s) => GOLD.test(s.getAttribute("style")));
+  }
   function heading(document, source, tag) {
     const value = text(source);
-    const gold = GOLD.test(source.getAttribute("style") || "") || [...source.querySelectorAll("[style]")].some((s) => GOLD.test(s.getAttribute("style")));
+    const gold = isGold(source);
     if (gold) return wrap(document, el(document, "strong", value), tag, "em");
     return tag === "h1" ? wrap(document, el(document, "strong", value), tag) : el(document, tag, value);
   }
@@ -438,7 +441,7 @@ var CustomImportScript = (() => {
     const h1 = nodes.find((n) => n.matches("h1"));
     const rest = nodes.filter((n) => n !== h1);
     const out = [];
-    const thankYou = h1 && GOLD.test(h1.innerHTML);
+    const thankYou = h1 && isGold(h1);
     if (thankYou) {
       out.push(heading(document, h1, "h1"));
       rest.filter((n) => /^H/.test(n.tagName)).forEach((n) => out.push(el(document, "h2", text(n))));
