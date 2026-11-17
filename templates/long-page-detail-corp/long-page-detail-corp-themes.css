@@ -291,7 +291,7 @@ body.long-page-detail-corp.large-headlines main > .section.headline-box > .defau
 
 /* …a Heading 3 in a narrow `column-8-12` box: the 3vw event title (stryker.com iSPIES
    "iSPIES: Minimally Invasive Surgery", 42px at 1440, one line) */
-body.long-page-detail-corp.large-headlines main > .section.headline-box.column-8-12 > .default-content-wrapper > h3 {
+body.long-page-detail-corp.large-headlines main > .section.headline-box:is(.column-8-12, .gold-titles) > .default-content-wrapper > h3 {
   font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--long-page-detail-corp-lh-unit))));
 }
 

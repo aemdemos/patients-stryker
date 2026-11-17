@@ -455,6 +455,8 @@ body.long-page-detail-corp main .dm-video-wrapper:not(.is-playing) .dm-video {
    instruments 16:9 video: 1440x480 of it, under the gold bar; the 3:1 CR and endoscopy videos
    fill it as they are), not the video's own shape */
 body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+  width: 100%;
+  border: 0;
   aspect-ratio: 3 / 1;
   object-fit: cover;
   object-position: top;
@@ -927,6 +929,14 @@ body.long-page-detail-corp main > .section.teal-titles > .default-content-wrappe
   font-size: var(--body-font-size-l);
 }
 
+/* section style `gold-titles`: the section's headings gold in all their words (stryker.com
+   instruments new accounts "New Accounts" on blue: Futura bold and Egyptienne both gold); in a
+   `headline-box` its Heading 3 is the 3vw title (themes) */
+body.long-page-detail-corp main > .section.gold-titles > .default-content-wrapper > :is(h1, h2, h3, h4),
+body.long-page-detail-corp main > .section.gold-titles > .default-content-wrapper > :is(h1, h2, h3, h4) :is(em, strong) {
+  color: var(--color-accent);
+}
+
 /* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
    34px gold bar the container width (edge to edge on phones) */
 body.long-page-detail-corp main > .section.gold-bar {
@@ -937,10 +947,6 @@ body.long-page-detail-corp main > .section.gold-bar {
   background-color: var(--color-accent);
 }
 
-/* right under a hero (the instruments pages: the gold panel at the slide's bottom edge) */
-body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.gold-bar) {
-  margin-bottom: 0;
-}
 
 /* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
    tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
@@ -1365,6 +1371,16 @@ body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.te
   margin-bottom: var(--space-section);
 }
 
+/* …a slide shown as its text alone on phones (no phone image: instruments) starts 20px under
+   the page's local nav, its text box at the top (stryker.com contact information) */
+body.long-page-detail-corp main > .section.local-nav-corp-container:has(+ .section.hero-corp-container .hero-corp.text-alone) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-alone > div:last-child {
+  padding-top: 0;
+}
+
 @media (width >= 600px) {
   body.long-page-detail-corp main > .section > .hero-corp-wrapper > .hero-corp.text-below > div:last-child {
     padding-bottom: 0;
@@ -1372,6 +1388,12 @@ body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.te
 
   body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.text-below) {
     margin-bottom: var(--space-block);
+  }
+
+  /* right under a hero the gold panel touches the slide's bottom edge (stryker.com instruments
+     pages) */
+  body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.gold-bar) {
+    margin-bottom: 0;
   }
 }
 
