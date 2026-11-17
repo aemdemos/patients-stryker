@@ -6,6 +6,7 @@ body.corp-webinar {
   --corp-webinar-h2-thank-you: 30.625px; /* measured: the 1.25em "Thank you for registering" h2 from 600px */
   --corp-legal-title-offset-trim: 2px; /* as #538: the source header-to-title gap of a sized title is --space-section less 2px */
   --corp-large-headline-offset: 2vw; /* as #538: the source header-to-title gap of a Large Headline is 2vw + 9.4px; the 9.4px is the existing H1 top spacing */
+  --corp-webinar-title-offset: calc(2vw - 0.6px); /* measured: the webinar title sits 2% of the 30px-padded container (10px header gap added) under the header */
   --corp-webinar-thank-you-offset-s: 21px; /* measured: the thank-you title sits 31px (41px from 600px) under the header, less the 10px header gap */
   --corp-webinar-thank-you-offset: 31px;
   --corp-webinar-wordmark-width: 213px; /* measured: the FocusRN wordmark's natural width */
@@ -22,7 +23,7 @@ body.corp-webinar main:has(> .section:first-child > .default-content-wrapper > h
 }
 
 body.corp-webinar main:has(> .section.serif:first-child > .default-content-wrapper > h1) {
-  padding-top: var(--corp-large-headline-offset);
+  padding-top: var(--corp-webinar-title-offset);
 }
 
 body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
@@ -75,7 +76,7 @@ body.corp-webinar main > .section.separator > div:first-child {
 }
 
 /* index: the back link 11px under the header, the wordmark offset in its column from 972px
-   (the source centres it in a 25vw column, up to 1200px), the title 2vw + 29.3px under it */
+   (the source centres it in a 25vw column, up to 1200px; it fades to 0 by 1440px), the title 2vw + 29.3px under it */
 body.corp-webinar main > .section.back-link {
   margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap-s));
   padding-top: 0;
@@ -86,7 +87,7 @@ body.corp-webinar .accordion .columns h3 + p {
 }
 
 body.corp-webinar main > .section.back-link p:has(img) {
-  margin-inline-start: max(0px, calc((25vw - 30px - var(--corp-webinar-wordmark-width)) / 2));
+  margin-inline-start: max(0px, min(calc((25vw - 30px - var(--corp-webinar-wordmark-width)) / 2), calc((1440px - 100vw) / 8.4)));
 }
 
 /* index copy: the intro and the webinar copy 17.5px (the speaker in Egyptienne), the webinar
@@ -160,11 +161,5 @@ body.corp-webinar main > .section.separator + .section.serif p {
   body.corp-webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
     max-width: 50%;
     line-height: var(--heading-line-height);
-  }
-}
-
-@media (width > 1200px) {
-  body.corp-webinar main > .section.back-link p:has(img) {
-    margin-inline-start: 0;
   }
 }
