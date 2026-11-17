@@ -303,10 +303,13 @@ body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 {
   font-weight: var(--font-weight-bold);
 }
 
-/* italic inside an article heading stays italic (live <i> in h2); the global heading rule only
-   means to straighten the bold + italic gold marker */
-body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4) em:not(strong em, :has(strong)) {
-  font-style: italic;
+/* italic inside an article heading (live <i> in the heading, e.g. the "Stryker's navigation
+   system offers surgeons…" subtitle of the Q Guidance System release: Egyptienne Light,
+   weight 500) is the serif heading font, upright; the gold Bold + Italic keeps its Futura */
+body.news-detail main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
 }
 
 /* join: a section the importer split off the same live text component (a component that mixes
