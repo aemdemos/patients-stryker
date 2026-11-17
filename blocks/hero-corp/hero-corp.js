@@ -257,11 +257,48 @@ function phoneLayout(block) {
   if (!block.querySelector('.hero-image-mobile')) block.classList.add('text-alone');
 }
 
+/**
+ * A slide whose text over the image is taller than the image (build-your-ASC's title, subtitle
+ * and button at about 1280px wide: the button below the image) gets a taller image, cropped
+ * (`text-overflow`, `--hero-min-height`), so the text stays inside the hero with 30px below
+ * it. Slides whose text fits keep the image's own height. From 600px (below it the text is
+ * under or without the image).
+ * @param {Element} block The hero-corp block
+ */
+function keepTextInside(block) {
+  if (!block.classList.contains('image-slide')) return;
+  const [media, text] = block.children;
+  if (!media || !text || media === text) return;
+  const fit = () => {
+    // the image shown at this width (the desktop one, not the hidden phone crop)
+    const img = [...media.querySelectorAll('img')].find((i) => i.offsetParent);
+    if (!window.matchMedia('(width >= 600px)').matches || !img?.naturalWidth) {
+      block.classList.remove('text-overflow');
+      return;
+    }
+    // the image's own height at this width (not the stretched one)
+    const own = (media.clientWidth * img.naturalHeight) / img.naturalWidth;
+    // the text's top inset (% of the image's own height, kept when the image grows)
+    const top = (own * (parseFloat(getComputedStyle(block).getPropertyValue('--hero-slide-top')) || 0)) / 100;
+    const need = top + text.offsetHeight + 30;
+    if (need > own + 1) {
+      block.style.setProperty('--hero-min-height', `${Math.ceil(need)}px`);
+      block.style.setProperty('--hero-text-top', `${Math.round(top)}px`);
+      block.classList.add('text-overflow');
+    } else block.classList.remove('text-overflow');
+  };
+  // the text's size follows the block width only (it is over the image), so watching it does
+  // not loop when the image grows
+  new ResizeObserver(fit).observe(text);
+  media.querySelectorAll('img').forEach((img) => img.addEventListener('load', fit));
+}
+
 export default function decorate(block) {
   readSectionOptions(block);
   readSlideOptions(block);
   setupHero(block);
   phoneLayout(block);
+  keepTextInside(block);
   autoplayVideo(block);
 
   if (!block.querySelector(':scope > div:first-child picture')) {

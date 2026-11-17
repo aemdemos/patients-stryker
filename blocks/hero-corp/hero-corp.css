@@ -449,6 +449,18 @@
     padding: 0;
   }
 
+  /* text taller than the image (hero-corp.js keepTextInside): the image as tall as the text
+     needs, cropped, the text at its usual top */
+  .hero-corp.image-slide.text-overflow > div:first-child :is(img, video) {
+    height: var(--hero-min-height);
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+
+  .hero-corp.image-slide.text-overflow > div:last-child {
+    top: var(--hero-text-top);
+  }
+
   .hero-corp.image-slide > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
   }
