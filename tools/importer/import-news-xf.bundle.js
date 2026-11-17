@@ -263,6 +263,12 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
       name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
     },
+    "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master": {
+      name: 'Our management "\u25C1 Back" link (leader bio pages)'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master": {
+      name: 'Board of directors "\u25C1 Back" link (director bio pages)'
+    },
     // an article body kept as its own fragment document (the page's Fragment block)
     "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master": {
       name: 'Article body of "Technology helps improve colonoscopy safety and efficiency"'
@@ -507,6 +513,9 @@ var CustomImportScript = (() => {
     },
     "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master": {
       name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master": {
+      name: 'Interventional Spine footnotes "\u276E BACK" link (footnote detail pages)'
     }
   };
 
@@ -649,7 +658,14 @@ var CustomImportScript = (() => {
     ["and delivery departments and operating rooms are hectic", "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master"]
   ];
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
-  var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
+  var KEEP_ATTRS = {
+    A: ["href"],
+    IMG: ["src", "alt"],
+    TD: ["colspan", "rowspan"],
+    TH: ["colspan", "rowspan"],
+    P: ["data-section-style"],
+    LI: ["data-section-style"]
+  };
   function text(el) {
     return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -707,15 +723,13 @@ var CustomImportScript = (() => {
     return value.replace(/[\s\u00a0]+/g, "");
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
-    const doc = root.ownerDocument;
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text(block) === text(b)) return;
-      b.before(doc.createTextNode("[[body-font]"));
-      b.after(doc.createTextNode("]"));
+      block.setAttribute("data-section-style", "body-font-bold");
     });
   }
   var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
@@ -763,9 +777,46 @@ var CustomImportScript = (() => {
       bracketTag([span], "text-1-25", root);
     });
   }
+  function markGold(nodes, root) {
+    const run = [...nodes];
+    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const mark = root.ownerDocument.createElement("span");
+    mark.className = "gold-text";
+    run[0].before(mark);
+    mark.append(...run);
+  }
+  function goldBoldItalic(root) {
+    const doc = root.ownerDocument;
+    const inside = (node, tag) => {
+      for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+        if (el.tagName === tag) return true;
+      }
+      return false;
+    };
+    root.querySelectorAll("span.gold-text").forEach((mark) => {
+      const texts = [];
+      const walker = doc.createTreeWalker(mark, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (t.textContent.trim()) texts.push(t);
+      }
+      if (!texts.length || texts.every((t) => inside(t, "STRONG") && inside(t, "EM"))) return;
+      const em = doc.createElement("em");
+      em.append(...mark.childNodes);
+      if (inside(mark, "STRONG")) {
+        mark.append(em);
+        return;
+      }
+      const strong = doc.createElement("strong");
+      strong.append(em);
+      mark.append(strong);
+    });
+  }
   function tagGoldText(root) {
     const tagged = /* @__PURE__ */ new Set();
-    const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
+    const wrap = (nodes) => markGold(nodes, root);
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
       tagged.add(el);
@@ -823,18 +874,9 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    root.querySelectorAll("span.futura-bold").forEach((el) => {
-      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
-        rename(el, "strong");
-        return;
-      }
-      const strong = rename(el, "strong");
-      const em = root.ownerDocument.createElement("em");
-      while (strong.firstChild) em.append(strong.firstChild);
-      strong.append(em);
-    });
-    root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
+    root.querySelectorAll("span.futura-bold, b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
+    goldBoldItalic(root);
     root.querySelectorAll("span, font").forEach(unwrap);
     root.querySelectorAll("strong strong, em em").forEach(unwrap);
     root.querySelectorAll("strong, em").forEach((el) => {
@@ -973,18 +1015,33 @@ var CustomImportScript = (() => {
       if (last && last.gold === gold) last.text += t.textContent;
       else runs.push({ gold, text: t.textContent });
     }
-    const title = runs.map((run) => run.gold && squash(run.text) ? `[[color-gold]${squash(run.text)}]` : run.text).join("");
     lead.forEach((node) => node.remove());
     while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
     if (!text(p)) p.remove();
     const h1 = doc.createElement("h1");
-    if (titleStyle === "h1-2-5") {
-      const strong = doc.createElement("strong");
-      strong.textContent = squash(title);
-      h1.append(strong);
-    } else {
-      h1.textContent = squash(title);
-    }
+    const bold = titleStyle === "h1-2-5";
+    const holder = bold ? doc.createElement("strong") : h1;
+    if (bold) h1.append(holder);
+    runs.forEach((run, i) => {
+      let value = run.text.replace(/[\s ]+/g, " ");
+      if (i === 0) value = value.trimStart();
+      if (i === runs.length - 1) value = value.trimEnd();
+      if (!run.gold || !value.trim()) {
+        if (value) holder.append(value);
+        return;
+      }
+      const [, before, words, after] = value.match(/^(\s*)(.*?)(\s*)$/);
+      if (before) holder.append(before);
+      const em = doc.createElement("em");
+      em.textContent = words;
+      if (bold) holder.append(em);
+      else {
+        const strong = doc.createElement("strong");
+        strong.append(em);
+        holder.append(strong);
+      }
+      if (after) holder.append(after);
+    });
     h1.titleStyle = titleStyle;
     return h1;
   }
@@ -1035,6 +1092,14 @@ var CustomImportScript = (() => {
     const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
     return subheads.length > 0 && subheads.every((h) => isBlankLine(h.nextElementSibling) || spacedSubheadTexts.has(squashText(h)));
   }
+  function lineAboveSubheads(root) {
+    const subheads = [...root.children].filter((el) => el.tagName === "H4" && squashText(el));
+    const opensWithBreak = (h) => {
+      const first = [...h.childNodes].find((n) => n.nodeType !== 3 || n.textContent.trim());
+      return !!first && first.nodeName === "BR";
+    };
+    return subheads.length > 0 && subheads.every(opensWithBreak);
+  }
   function previousRichText(component) {
     const item = component.closest(".text");
     const prev = item && item.previousElementSibling;
@@ -1055,7 +1120,8 @@ var CustomImportScript = (() => {
     const futuraLinks = futuraLinkParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
-    const spaced = spacedSubheads(box);
+    const lineAbove = lineAboveSubheads(box);
+    const spaced = !lineAbove && spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const indents = new Map([...box.querySelectorAll(':scope > p[style*="margin-left"]')].map((p) => {
       const px = (p.getAttribute("style").match(/margin-left:\s*(\d+)px/) || [])[1];
@@ -1093,6 +1159,7 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
       if (spaced) node.copyStyle = [node.copyStyle, "h4-spaced"].filter(Boolean).join(", ");
+      if (lineAbove) node.copyStyle = [node.copyStyle, "h4-line-above"].filter(Boolean).join(", ");
       if (blue) {
         const styles = (node.copyStyle || "").split(", ").filter(Boolean);
         node.copyStyle = [.../* @__PURE__ */ new Set([...styles, ...boxStyles.filter(Boolean)])].join(", ");
@@ -1310,24 +1377,6 @@ var CustomImportScript = (() => {
     const box = first && first.querySelector('.has-background, [class*="bg-light-gray"]');
     return box && text(box) ? first : null;
   }
-  function boldInTextItalic(nodes, doc) {
-    nodes.forEach((node) => node.querySelectorAll("strong").forEach((strong) => {
-      if (strong.closest("em") || text(strong) === text(node)) return;
-      const em = doc.createElement("em");
-      strong.replaceWith(em);
-      em.append(strong);
-      const first = strong.firstChild;
-      const last = strong.lastChild;
-      if (first && first.nodeType === 3 && /^[\s ]/.test(first.textContent)) {
-        first.textContent = first.textContent.replace(/^[\s ]+/, "");
-        em.before(doc.createTextNode(" "));
-      }
-      if (last && last.nodeType === 3 && /[\s ]$/.test(last.textContent)) {
-        last.textContent = last.textContent.replace(/[\s ]+$/, "");
-        em.after(doc.createTextNode(" "));
-      }
-    }));
-  }
   function leadNodes(component) {
     const box = component.ownerDocument.createElement("div");
     box.innerHTML = component.innerHTML;
@@ -1390,12 +1439,13 @@ var CustomImportScript = (() => {
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
-      if (/^[“”"‘’']+$/.test(text(strong))) {
+      if (/^[“”"‘’']+$/.test(text(strong)) && strong.querySelector(".gold-text")) {
         const em = doc.createElement("em");
         em.append(strong);
         span.replaceWith(em);
       } else span.replaceWith(strong);
     });
+    goldBoldItalic(box);
     box.querySelectorAll("span, font").forEach(unwrap);
     box.querySelectorAll("strong strong").forEach(unwrap);
     [...box.querySelectorAll("strong")].forEach((strong) => {
@@ -1753,18 +1803,6 @@ var CustomImportScript = (() => {
         h4.append(a);
       });
     }
-    if (marker.getAttribute("data-variant") === "icon-text") {
-      nodes.filter((node) => node.nodeType === 1).forEach((node) => {
-        node.querySelectorAll("em > strong:only-child, strong > em:only-child").forEach((inner) => {
-          const outer = inner.parentElement;
-          const before = outer.previousSibling;
-          if (before && before.nodeType === 3 && /\[\[color-[a-z]+\]$/.test(before.textContent)) return;
-          const strong = doc.createElement("strong");
-          strong.append(...inner.childNodes);
-          outer.replaceWith(strong);
-        });
-      });
-    }
     const linkVariant = tiles ? "product-tiles" : "media-pair";
     const variants = [marker.getAttribute("data-variant"), nodes.some((node) => node.imageLink) ? linkVariant : ""].filter(Boolean);
     const name = variants.length ? `Columns (${variants.join(", ")})` : "Columns";
@@ -1853,7 +1891,6 @@ var CustomImportScript = (() => {
         ...(boxed ? quotes : [headline2, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
         ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
       ];
-      boldInTextItalic(nodes, doc);
       [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
       const section = startSection("video-text", "video-text, headline-1-5vw");
@@ -1890,7 +1927,6 @@ var CustomImportScript = (() => {
       const quotes = [...asideCol.querySelectorAll(".c-rich-text-editor")].filter((c) => c !== lead && text(c));
       const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
       if (!nodes.length) return false;
-      boldInTextItalic(nodes, doc);
       [lead, ...quotes].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
       const style = [
@@ -2112,7 +2148,7 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-resourcesanddownload")) {
-        if (!hasForm) {
+        if (!hasForm || component.querySelector(".item img")) {
           if (!component.querySelector(".item img")) return;
           const section = startSection("cards");
           const heading2 = component.querySelector(".title-container :is(h2, h3, h4)");
@@ -2329,11 +2365,15 @@ var CustomImportScript = (() => {
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
-      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
-      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
+      const MARKS = ["data-btn-style", "data-section-style"];
+      const selector = MARKS.map((m) => `[${m}]`).join(", ");
+      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches(selector) ? [node] : [], ...node.querySelectorAll(selector)] : []);
+      const markStyles = marked.flatMap((el) => MARKS.map((m) => el.getAttribute(m)).filter(Boolean));
+      [...new Set(markStyles)].forEach((style) => {
+        if ((section.style || "").split(", ").includes(style)) return;
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
-      marked.forEach((a) => a.removeAttribute("data-btn-style"));
+      marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
       if (section.style || section.background) {
         const cells = {};
         if (section.style) cells.style = section.style;
@@ -2357,6 +2397,7 @@ var CustomImportScript = (() => {
   var HEADINGS = "h2, h3, h4, h5, h6";
   var SIZE_STYLES2 = { "1-25": "lead", "1-75": "p-1-75" };
   var SIZES = ["1-25", "1-5", "1-75", "2", "2-5", "8"];
+  var GOLD_MARK = "gold-text";
   var COLOURS = {
     ffb500: "color-gold",
     "1c5687": "color-blue",
@@ -2569,8 +2610,47 @@ var CustomImportScript = (() => {
         last.textContent = last.textContent.slice(0, last.textContent.length - tail.length);
       }
     }
+    if (cls === "color-gold") {
+      const mark = doc.createElement(GOLD_MARK);
+      first.before(mark);
+      const run = [];
+      for (let n = first; n; n = n.nextSibling) {
+        run.push(n);
+        if (n === last) break;
+      }
+      mark.append(...run);
+      return;
+    }
     first.before(doc.createTextNode(`[[${cls}]`));
     last.after(doc.createTextNode("]"));
+  }
+  function goldBoldItalic2(root) {
+    const doc = root.ownerDocument;
+    const inside = (node, tag) => {
+      for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+        if (el.tagName === tag) return true;
+      }
+      return false;
+    };
+    [...root.querySelectorAll(GOLD_MARK)].reverse().forEach((mark) => {
+      const texts = [];
+      const walker = doc.createTreeWalker(mark, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (t.textContent.trim()) texts.push(t);
+      }
+      if (texts.length && !texts.every((t) => inside(t, "STRONG") && inside(t, "EM"))) {
+        const em = doc.createElement("em");
+        em.append(...mark.childNodes);
+        if (inside(mark, "STRONG")) mark.append(em);
+        else {
+          const strong = doc.createElement("strong");
+          strong.append(em);
+          mark.append(strong);
+        }
+      }
+      unwrap2(mark);
+    });
+    root.querySelectorAll("strong strong, em em").forEach(unwrap2);
   }
   function mapColours(root) {
     const coloured = [...root.querySelectorAll('.c-rich-text-editor [style*="color"], .c-largeheadline [style*="color"], font[color]')];
@@ -2632,12 +2712,7 @@ var CustomImportScript = (() => {
       const outer = span.parentElement && span.parentElement.closest("strong, b");
       if (outer && norm(outer.textContent) === norm(span.textContent)) unwrap2(outer);
       span.querySelectorAll("strong, b, span.futura-bold").forEach(unwrap2);
-      const doc = span.ownerDocument;
-      const strong = doc.createElement("strong");
-      const em = doc.createElement("em");
-      em.append(...span.childNodes);
-      strong.append(em);
-      span.replaceWith(strong);
+      rename2(span, "strong");
     });
   }
   function dropStyleSpans(root) {
@@ -2688,6 +2763,7 @@ var CustomImportScript = (() => {
       futuraBold(root);
       dropStyleSpans(root);
       semanticInline(root);
+      goldBoldItalic2(root);
     }
     if (hookName === TransformHook.afterTransform) {
       writeSections(root);
@@ -2732,7 +2808,11 @@ var CustomImportScript = (() => {
       "long-page-detail-corp",
       "long-page-detail-corp-fragments",
       "event-detail",
-      "contact-division"
+      "contact-division",
+      "people",
+      "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook2.beforeTransform) {

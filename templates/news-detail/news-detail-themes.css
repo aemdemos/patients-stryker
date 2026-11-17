@@ -1,6 +1,12 @@
 /* news-detail themes — loaded with the template only when the page sets `theme`
    metadata; scope every rule to body.news-detail.<theme> */
 
+/* basic: news pages whose `separator` sections (the grey rule opening the section) end with
+   20px of padding below their content */
+body.news-detail.basic main > .section.separator {
+  padding-bottom: var(--space-block-l);
+}
+
 /* full-width: news pages whose source runs the title, the small print and the "Last
    Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
    .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date

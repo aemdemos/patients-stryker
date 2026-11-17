@@ -44,13 +44,11 @@
  * fontsize-1-5em, fontsize-1-75em) or font span (urw-egyptienne) gets the matching section
  * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
  * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
- * `bold-body` style (bold in the body font); inline `span.futura-bold` becomes
- * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold)
- * become bold + italic links (the
- * authoring convention for the gold .button.accent), other buttons bold links, and
- * standalone links (span.standalone-link) bold + underline links (a.link-strong).
- * Gold text (colour #ffb500) is the `[[color-gold]…]` bracket tag around its formatting
- * (bold + italic alone renders black in news articles).
+ * `bold-body` style (bold in the body font); black `span.futura-bold` and `<b>` become
+ * <strong>, gold buttons (a.btn-gold) become bold + italic links (the authoring convention
+ * for the gold .button.accent), other buttons bold links, and standalone links
+ * (span.standalone-link) bold + underline links (a.link-strong). Gold text (colour
+ * #ffb500) is Bold + Italic (gold).
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
  * that open in a new tab on the source get the `#_blank` marker.
  */
@@ -77,8 +75,14 @@ const COMPONENTS = [
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = {
-  // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
-  A: ['href', 'data-btn-style'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
+  // data-btn-style / data-section-style: the section style a link / a paragraph asks for
+  // (buildArticle adds it to its section)
+  A: ['href', 'data-btn-style'],
+  IMG: ['src', 'alt'],
+  TD: ['colspan', 'rowspan'],
+  TH: ['colspan', 'rowspan'],
+  P: ['data-section-style'],
+  LI: ['data-section-style'],
 };
 
 function text(el) {
@@ -195,31 +199,29 @@ function sameLineText(node, direction) {
 /**
  * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the
  * body font on the source, while bold labels are Futura on the site. Both become
- * <strong> on import, so these are wrapped in the `[[body-font]…]` bracket tag
- * (scripts/span-tags.js → span.body-font, styles-corp.css). A paragraph that is plain
- * bold as a whole gets the `bold-body` section style instead, unless wholeParagraphs is
- * set (small print, which stays one section).
+ * <strong> on import, so the label's paragraph is marked (data-section-style) and its
+ * section gets the `body-font-bold` section style (styles-corp.css: plain bold in the
+ * section stays Humanist bold; it replaces the removed `[[body-font]` bracket tag). A
+ * paragraph that is plain bold as a whole gets the `bold-body` section style instead,
+ * unless wholeParagraphs is set (small print, which stays one section).
  */
 function tagPlainBoldLabels(root, wholeParagraphs) {
-  const doc = root.ownerDocument;
   [...root.querySelectorAll('b')].forEach((b) => {
     if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
     if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
     const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
     if (!wholeParagraphs && text(block) === text(b)) return;
-    b.before(doc.createTextNode('[[body-font]'));
-    b.after(doc.createTextNode(']'));
+    block.setAttribute('data-section-style', 'body-font-bold');
   });
 }
 
 /**
- * Gold text (inline colour #ffb500 / rgb(255,181,0)) is the `[[color-gold]…]` bracket tag
- * (corp authoring conventions: in news articles bold + italic alone is black, gold Futura
- * text is bold + italic inside the tag). A text is gold when its nearest colour is gold
- * (a gold span around a black one, e.g. a quote name, is not). The tag goes around the
- * formatting it fills (`[[color-gold]<span class=futura-bold>…</span>]` →
- * `[[color-gold]***…***]`), not past a paragraph, heading, list item or link.
+ * Gold text (inline colour #ffb500 / rgb(255,181,0)) is Bold + Italic (gold Futura bold, the
+ * corp authoring convention; black Futura bold is plain Bold). A text is gold when its
+ * nearest colour is gold (a gold span around a black one, e.g. a quote name, is not).
+ * tagGoldText marks each gold run with a `span.gold-text` wrapper; goldBoldItalic turns the
+ * marked runs into Bold + Italic once the source bold has become <strong>.
  */
 const GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
 
@@ -293,9 +295,57 @@ function tagTextSize(root) {
   });
 }
 
+/**
+ * Wraps a run of sibling nodes in a `span.gold-text` marker (line breaks and spaces at
+ * either end stay outside).
+ */
+function markGold(nodes, root) {
+  const run = [...nodes];
+  const loose = (n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim());
+  while (run.length && loose(run[0])) run.shift();
+  while (run.length && loose(run[run.length - 1])) run.pop();
+  if (!run.length || !run.some((n) => n.textContent.trim())) return;
+  const mark = root.ownerDocument.createElement('span');
+  mark.className = 'gold-text';
+  run[0].before(mark);
+  mark.append(...run);
+}
+
+/**
+ * The gold runs (span.gold-text, tagGoldText) as Bold + Italic: inside a bold run only the
+ * italic is added, elsewhere both (bold inside the run then merges into it). Runs already
+ * Bold + Italic throughout stay as they are. Call once the source bold is <strong>.
+ */
+function goldBoldItalic(root) {
+  const doc = root.ownerDocument;
+  const inside = (node, tag) => {
+    for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+      if (el.tagName === tag) return true;
+    }
+    return false;
+  };
+  root.querySelectorAll('span.gold-text').forEach((mark) => {
+    const texts = [];
+    const walker = doc.createTreeWalker(mark, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      if (t.textContent.trim()) texts.push(t);
+    }
+    if (!texts.length || texts.every((t) => inside(t, 'STRONG') && inside(t, 'EM'))) return;
+    const em = doc.createElement('em');
+    em.append(...mark.childNodes);
+    if (inside(mark, 'STRONG')) {
+      mark.append(em);
+      return;
+    }
+    const strong = doc.createElement('strong');
+    strong.append(em);
+    mark.append(strong);
+  });
+}
+
 function tagGoldText(root) {
   const tagged = new Set();
-  const wrap = (nodes) => bracketTag(nodes, 'color-gold', root);
+  const wrap = (nodes) => markGold(nodes, root);
   // `tagged`: the nodes already inside a gold tag (a gold element in them needs no tag of its own)
   const wrapRun = (nodes) => {
     nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
@@ -397,11 +447,12 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   });
 
   // span.futura-bold → <strong>: on corp pages <strong> is Futura bold in the text colour
-  // (styles-corp.css). (news-detail-sections.js makes it <strong><em> for its own template
-  // CSS; without it bold + italic renders gold, the authoring convention.) <b> → <strong>.
+  // (styles-corp.css); gold text → Bold + Italic (gold, the authoring convention).
+  // <b> → <strong>.
   root.querySelectorAll('span.futura-bold').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
+  goldBoldItalic(root);
   root.querySelectorAll('span, font').forEach(unwrap);
   // bold inside bold (e.g. <b><span class="futura-bold">) is one bold run
   root.querySelectorAll('strong strong, em em').forEach(unwrap);
@@ -986,8 +1037,8 @@ function videoTextColumns(video, rte, doc) {
 
 /**
  * A quote Large Headline under the grey box (survivor stories: the quote, a rule, the
- * name, the role) as the library's Video + quote cell: gold quote marks →
- * `[[color-gold]` Bold + Italic `]`, Futura words → Bold, one paragraph per line (the
+ * name, the role) as the library's Video + quote cell: gold quote marks → Bold + Italic
+ * (gold), Futura words → Bold, one paragraph per line (the
  * name a fully Bold paragraph).
  */
 function quoteNodes(headline, doc) {
@@ -995,7 +1046,7 @@ function quoteNodes(headline, doc) {
   box.innerHTML = headline.innerHTML;
   // a gold quote mark at the start or end of a longer bold run
   // (<span class=futura-bold><span style="color: rgb(255,181,0)">”</span>The first…</span>)
-  // is a bold run of its own, so it can take the gold tag
+  // is a bold run of its own, so it can be Bold + Italic
   box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
     const bold = span.closest('.futura-bold');
     if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
@@ -1010,12 +1061,13 @@ function quoteNodes(headline, doc) {
   box.querySelectorAll('.futura-bold').forEach((span) => {
     const strong = doc.createElement('strong');
     while (span.firstChild) strong.append(span.firstChild);
-    if (/^[“”"‘’']+$/.test(text(strong))) {
+    if (/^[“”"‘’']+$/.test(text(strong)) && strong.querySelector('.gold-text')) {
       const em = doc.createElement('em');
       em.append(strong);
       span.replaceWith(em);
     } else span.replaceWith(strong);
   });
+  goldBoldItalic(box);
   box.querySelectorAll('span, font').forEach(unwrap);
   box.querySelectorAll('strong strong').forEach(unwrap);
   // bold runs that touch are one run (two would merge on import and take the paragraph
@@ -1600,13 +1652,19 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
   sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
-    // a section holding purple / blue buttons gets the btn-purple / btn-blue style
+    // a section holding purple / blue buttons gets the btn-purple / btn-blue style, one
+    // holding a plain-bold label (tagPlainBoldLabels) the body-font-bold style
+    const MARKS = ['data-btn-style', 'data-section-style'];
+    const markSelector = MARKS.map((m) => `[${m}]`).join(', ');
     const marked = section.nodes.flatMap((node) => (node.nodeType === 1
-      ? [...(node.matches('[data-btn-style]') ? [node] : []), ...node.querySelectorAll('[data-btn-style]')] : []));
-    [...new Set(marked.map((a) => a.getAttribute('data-btn-style')))].forEach((style) => {
+      ? [...(node.matches(markSelector) ? [node] : []), ...node.querySelectorAll(markSelector)]
+      : []));
+    const markStyles = marked.flatMap((el) => MARKS.map((m) => el.getAttribute(m)).filter(Boolean));
+    [...new Set(markStyles)].forEach((style) => {
+      if ((section.style || '').split(', ').includes(style)) return;
       section.style = [section.style, style].filter(Boolean).join(', ');
     });
-    marked.forEach((a) => a.removeAttribute('data-btn-style'));
+    marked.forEach((el) => MARKS.forEach((m) => el.removeAttribute(m)));
     section.nodes.forEach((node) => { if (node.nodeType === 1) node.removeAttribute('data-keep'); });
     if (section.style) {
       out.push(WebImporter.Blocks.createBlock(doc, {
