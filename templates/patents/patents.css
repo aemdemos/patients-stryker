@@ -25,8 +25,15 @@ body.patents main > .section.columns-container:first-child {
   margin-bottom: var(--space-block-s);
 }
 
+/* stacked: the image sits one paragraph space (15px) under the notice, as on the source phone layout */
 body.patents main > .section.columns-container:first-child .columns .columns-img-col {
-  margin-bottom: 0;
+  margin: var(--space-block) 0 0;
+}
+
+@media (width >= 900px) {
+  body.patents main > .section.columns-container:first-child .columns .columns-img-col {
+    margin-top: 0;
+  }
 }
 
 @media (width >= 600px) {
