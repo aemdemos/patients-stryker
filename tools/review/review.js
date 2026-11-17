@@ -7,6 +7,7 @@
  */
 import { leaves, buildAnchors, mapY } from './sync.js';
 import { createStore } from './store.js';
+import { keysOfHtml, toPosition, toKey } from './blockkeys.js';
 import { createNotes, CATEGORIES } from './notes.js';
 
 const { hostname } = window.location;
@@ -199,8 +200,10 @@ const api = () => (ready.std ? win('std')?.stdReview : null);
 
 /* ---------- saving (store.js: the review backend) ---------- */
 
-// the page's saved state: `item|kind` → { value, reviewer, time }
+// the page's saved state: `item|kind` → { value, reviewer, time } (items as positions, `s14b0`)
 let saved = new Map();
+// the page's block keys (blockkeys.js): saved entries are stored under them, shown by position
+let pageKeys = { byId: {}, byKey: {} };
 let savedLoad = Promise.resolve();
 // this reviewer's unsaved changes on the page: `item|kind` → value; kept in the browser until Save
 let drafts = new Map();
@@ -268,6 +271,7 @@ function renderStatus() {
   const button = $('.rv-save');
   button.disabled = !n;
   button.textContent = n ? `Save (${n})` : 'Saved';
+  $('.rv-undo').disabled = !n;
 }
 
 const store = createStore((kind, text) => {
@@ -327,7 +331,7 @@ function saveAll() {
     const [item, kind] = splitKey(key);
     // (a group's choice is for every page)
     saved.set(key, store.save({
-      page: item.startsWith('group:') ? '*' : state.page, item, kind, value, reviewer: reviewer(),
+      page: item.startsWith('group:') ? '*' : state.page, item: toKey(item, pageKeys), kind, value, reviewer: reviewer(),
     }));
   });
   drafts = new Map();
@@ -985,14 +989,40 @@ function loadPage() {
   closeEditor();
   notes.setNotes([]);
   loadSnapshot();
-  savedLoad = store.load(loading).then((m) => {
+  pageKeys = { byId: {}, byKey: {} };
+  const keysLoad = fetch(`${CONTENT}/std${loading}.plain.html`)
+    .then((r) => (r.ok ? r.text() : ''))
+    .then((html) => keysOfHtml(html))
+    .catch(() => ({ byId: {}, byKey: {} }));
+  savedLoad = Promise.all([store.load(loading), keysLoad]).then(([m, keys]) => {
     if (state.page !== loading) return;
-    saved = m;
+    pageKeys = keys;
+    // entries saved under a block key → the block's position now (a key not on the page any
+    // more: its content changed; left out here, the summary lists it for a re-check)
+    saved = new Map([...m].map(([k, e]) => {
+      const at = k.lastIndexOf('|');
+      const pos = toPosition(k.slice(0, at), keys);
+      return pos ? [`${pos}|${k.slice(at + 1)}`, { ...e, item: pos }] : null;
+    }).filter(Boolean));
     renderPageBox();
     notes.setNotes(savedNotes());
     renderNotes();
   });
   writeUrl();
+}
+
+/** Undo changes: this page's unsaved changes go, the page shows its last saved state again */
+async function undoAll() {
+  const n = drafts.size;
+  if (!n) return;
+  const sure = await ask(
+    `Undo your ${n} unsaved change${n > 1 ? 's' : ''} on this page? It goes back to its last saved state.`,
+    [['Undo changes', true, 'rv-danger'], ['Keep them', false]],
+  );
+  if (!sure) return;
+  drafts = new Map();
+  keepDrafts();
+  loadPage();
 }
 
 async function step(delta) {
@@ -1082,8 +1112,10 @@ async function onFrameLoad(side) {
     window.setTimeout(() => noteHooks.select(wanted), 600);
   }
   // opened from the AOE summary at a block (?block=s1b0) or a text section (?section=s3): once
-  const block = params.get('block');
-  const section = params.get('section');
+  // (links from the summary may name a block or section by its key: known once the page loaded)
+  if (params.get('block') || params.get('section')) await savedLoad;
+  const block = params.get('block') && toPosition(params.get('block'), pageKeys);
+  const section = params.get('section') && toPosition(params.get('section'), pageKeys);
   if (review && (block || section) && !targetShown) {
     targetShown = true;
     const on = (v) => (block ? review.highlight(block, v) : review.highlightSection(section, v));
@@ -1188,11 +1220,13 @@ async function start() {
     }
   });
   window.addEventListener('beforeunload', (e) => {
-    if (!drafts.size) return;
+    // unsaved changes, or saved ones still on their way to the review service
+    if (!drafts.size && !store.busy()) return;
     e.preventDefault();
     e.returnValue = '';
   });
   $('.rv-retry').addEventListener('click', () => store.retry());
+  $('.rv-undo').addEventListener('click', undoAll);
   document.addEventListener('keydown', frameKeys);
   window.addEventListener('resize', () => {
     layout();

@@ -9,7 +9,7 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 | `state` | web | `GET ?page=` + header `x-review-invite` → `{ reviewer, scope, expires, rows }` (the page's entries and every group choice, AOE statuses among them) |
 | `save` | web | `POST { page, changes: [{ page?, item, kind, value, rev }] }` + header `x-review-invite` → per change saved / conflict |
 | `results` | web | `GET` + header `x-review-invite` (an invitation with the results right) → every entry in its scope and every group choice, for the results page |
-| `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `status`, `import`, `purge-invite`, `purge-test` (see the action's header) |
+| `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `status`, `import`, `rekey`, `audit`, `purge-invite`, `purge-test` (see the action's header) |
 
 - **Web actions** answer `https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/<name>`;
   CORS only for the branch previews, `preview-aemcoder.adobe.io` and localhost. Every call needs a
@@ -33,8 +33,10 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 node tools/review/backend/deploy.mjs [--only state,save,admin] [--dry-run]
 node tools/review/backend/admin.mjs invite --name "Jane Doe" --paths /us/en/foot-and-ankle --days 30 [--page /us/en/…] [--no-groups] [--results]
 node tools/review/backend/admin.mjs invites | revoke --id <id> | purge-invite --id <id> | export
+node tools/review/backend/admin.mjs audit --json '{"date":"2026-11-17","page":"/us/en/…"}'   # who changed what, before / after
 node tools/review/backend/test/backend.test.mjs     # the actions (test page /test/backend, cleaned up)
-node tools/review/backend/test/tool.test.mjs        # the whole loop in a browser (local preview): reviewer → summary → AOE status → reviewer, results
+node tools/review/backend/test/tool.test.mjs        # the whole loop in a browser (local preview): reviewer → summary → AOE status → reviewer, results;
+                                                    # only on a page nobody has saved anything on (it never touches a reviewer's entries)
 ```
 
 `deploy.mjs` bundles each action into one file with esbuild; the libraries (`package.json`) are

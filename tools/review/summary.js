@@ -17,6 +17,7 @@ import {
 } from './groups.js';
 import { merge, CONFIG } from './store.js';
 import { keyOf } from './sync.js';
+import { pageKeys, toPosition } from './blockkeys.js';
 
 export const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot|sample .*)$/i;
 export const AOE = 'AOE';
@@ -109,7 +110,9 @@ export function pageModel(html) {
         };
       });
   });
-  return { doc, blocks, sections };
+  return {
+    doc, blocks, sections, keys: pageKeys(doc.body),
+  };
 }
 
 /** where a note's anchor (sync.js key) is in the authored page: block id, section id or null */
@@ -176,8 +179,25 @@ export function summarise({
   rows, models, titles, groups, themes = { items: {} }, includeTests = false,
 }) {
   const real = rows.filter((r) => r.kind !== 'test' && (includeTests || !TEST_REVIEWERS.test(r.reviewer || '')));
-  const review = real.filter((r) => r.reviewer !== AOE);
-  const statusRows = real.filter((r) => r.reviewer === AOE && r.kind.startsWith('status:'));
+  // entries saved under a block key (blockkeys.js) → the block's position on the page now; a key
+  // not on the page any more (the block's content changed) is a re-check, below
+  const gone = [];
+  const located = real.map((r) => {
+    const model = models[r.page];
+    if (!model || !/^[bt]:/.test(r.item)) return r;
+    const pos = toPosition(r.item, model.keys);
+    if (!pos) {
+      gone.push(r);
+      return null;
+    }
+    return { ...r, item: pos };
+  }).filter(Boolean);
+  const review = located.filter((r) => r.reviewer !== AOE);
+  const statusRows = located.filter((r) => r.reviewer === AOE && r.kind.startsWith('status:'));
+  // the item a position is saved under (its key), for statuses and links
+  const stored = (page, pos) => models[page]?.keys.byId[pos] || pos;
+  const link = (page, extra = {}) => toolLink(page, Object.fromEntries(Object.entries(extra)
+    .map(([k, v]) => [k, k === 'block' || k === 'section' ? stored(page, v) : v])));
   const counts = designCounts(models);
   const items = new Map();
   const itemOf = (id, init) => {
@@ -190,10 +210,11 @@ export function summarise({
     return latest ? { ...decode(latest.value), time: latest.time } : null;
   };
   const evidence = (e, extra) => ({
-    ref: `${e.page}#${e.item}|${e.kind}`,
+    ref: `${e.page}#${stored(e.page, e.item)}|${e.kind}`,
     page: e.page,
     title: titles[e.page] || e.page,
-    item: e.item,
+    item: stored(e.page, e.item),
+    at: e.item,
     kind: e.kind,
     reviewer: e.reviewer,
     time: e.time,
@@ -237,8 +258,39 @@ export function summarise({
       }));
       byReviewer.forEach((r) => q.evidence.push(evidence(r, {
         text: `${r.reviewer}: ${design(decode(r.value))}`,
-        link: page === '*' ? null : toolLink(page, item.startsWith('s') ? { block: item } : {}),
+        link: page === '*' ? null : link(page, item.startsWith('s') ? { block: item } : {}),
       })));
+    });
+  });
+
+  /* ---------- questions: saved for a block whose content changed (key not found) ---------- */
+  const goneLatest = new Map();
+  gone.filter((r) => r.reviewer !== AOE && r.kind !== 'reviewed').forEach((r) => {
+    const k = `${r.page}|${r.item}|${r.kind}`;
+    if (!goneLatest.has(k) || goneLatest.get(k).time < r.time) goneLatest.set(k, r);
+  });
+  goneLatest.forEach((r) => {
+    const [, type] = r.item.split(':');
+    const what = r.item.startsWith('t:') ? 'a text section' : `a ${typeName(type)} block`;
+    const q = itemOf(`question:gone:${r.page}:${r.item}|${r.kind}`, () => ({
+      kind: 'question',
+      title: `Re-check: a ${r.kind} saved for ${what} on ${titles[r.page] || r.page} that is no longer there (its content changed)`,
+      target: {
+        page: r.page, item: r.item, choice: r.kind, gone: true,
+      },
+    }));
+    q.evidence.push({
+      ref: `${r.page}#${r.item}|${r.kind}`,
+      page: r.page,
+      title: titles[r.page] || r.page,
+      item: r.item,
+      kind: r.kind,
+      reviewer: r.reviewer,
+      time: r.time,
+      status: null,
+      where: what,
+      text: typeof decode(r.value) === 'string' ? decode(r.value) : JSON.stringify(decode(r.value)),
+      link: toolLink(r.page),
     });
   });
 
@@ -299,7 +351,7 @@ export function summarise({
           },
         }));
         q.evidence.push(evidence({ ...e, page }, {
-          where: `${typeName(block.name)} ${e.item}`, text: `${design(e.value)} (does not fit this block)`, link: toolLink(page, { block: e.item }),
+          where: `${typeName(block.name)} ${e.item}`, text: `${design(e.value)} (does not fit this block)`, link: link(page, { block: e.item }),
         }));
       }
       // single choices on a block (a value equal to its own design is no decision)
@@ -315,7 +367,7 @@ export function summarise({
           blocks: new Set(),
         }));
         d.blocks.add(`${page}#${e.item}`);
-        d.evidence.push(evidence({ ...e, page }, { where: `${typeName(block.name)} ${e.item}`, text: `${design(from)} → ${design(e.value)}`, link: toolLink(page, { block: e.item }) }));
+        d.evidence.push(evidence({ ...e, page }, { where: `${typeName(block.name)} ${e.item}`, text: `${design(from)} → ${design(e.value)}`, link: link(page, { block: e.item }) }));
         // a block whose group has another choice is an exception to it
         const g = block.group && groupChoice.get(block.group);
         if (g && set(g.value) && e.kind === 'variant' && g.value !== e.value) {
@@ -335,7 +387,7 @@ export function summarise({
           blocks: new Set(),
         }));
         d.blocks.add(`${page}#${e.item}`);
-        d.evidence.push(evidence({ ...e, page }, { where: `Text ${e.item}`, text: `${design(from)} → ${design(e.value)}`, link: toolLink(page, { section: e.item }) }));
+        d.evidence.push(evidence({ ...e, page }, { where: `Text ${e.item}`, text: `${design(from)} → ${design(e.value)}`, link: link(page, { section: e.item }) }));
       }
 
       // comments on a block or a text section → the design it shows
@@ -349,12 +401,12 @@ export function summarise({
           reach: counts[key],
         }));
         v.evidence.push(evidence({ ...e, page }, {
-          where: `${typeName(target.block)} ${e.item}`, text: e.value, link: toolLink(page, block ? { block: e.item } : { section: e.item }),
+          where: `${typeName(target.block)} ${e.item}`, text: e.value, link: link(page, block ? { block: e.item } : { section: e.item }),
         }));
       }
       if (e.item === 'page' && e.kind === 'comment' && e.value) {
         const p = itemOf(`page:${page}`, () => ({ kind: 'page', title: titles[page] || page, target: { page } }));
-        p.evidence.push(evidence({ ...e, page }, { where: 'page', text: e.value, link: toolLink(page) }));
+        p.evidence.push(evidence({ ...e, page }, { where: 'page', text: e.value, link: link(page) }));
       }
 
       // QA notes (open ones; resolved and deleted ones are counted only)
@@ -368,7 +420,7 @@ export function summarise({
           text: n.text,
           category: CATEGORIES[n.cat] || n.cat,
           width: n.vp === 375 ? 'phone' : 'desktop',
-          link: toolLink(page, { vp: n.vp, note: n.id }),
+          link: link(page, { vp: n.vp, note: n.id }),
         };
         if (!b && !s) {
           const p = itemOf(`page:${page}`, () => ({ kind: 'page', title: titles[page] || page, target: { page } }));
@@ -423,6 +475,8 @@ export function summarise({
     source: {
       rows: rows.length,
       used: review.length,
+      // saved for blocks whose content changed (their keys are not on the pages any more)
+      gone: gone.length,
       aoeStatusRows: statusRows.length,
       skipped: rows.length - real.length,
       reviewers,
@@ -448,7 +502,7 @@ export function toMarkdown(result) {
   const out = [];
   const { source } = result;
   out.push('# Review feedback: work items for the AOE team', '');
-  out.push(`Generated ${day(result.generated)} from ${source.used} review rows by ${source.reviewers.length} ${source.reviewers.length === 1 ? 'reviewer' : 'reviewers'} (${source.reviewers.join(', ') || 'none'}), latest ${day(source.latest)}; ${source.aoeStatusRows} AOE status rows; ${source.skipped} test rows left out.`, '');
+  out.push(`Generated ${day(result.generated)} from ${source.used} review rows by ${source.reviewers.length} ${source.reviewers.length === 1 ? 'reviewer' : 'reviewers'} (${source.reviewers.join(', ') || 'none'}), latest ${day(source.latest)}; ${source.aoeStatusRows} AOE status rows; ${source.skipped} test rows left out${source.gone ? `; ${source.gone} for blocks whose content changed (re-check questions)` : ''}.`, '');
   out.push('Kinds are a first guess from the row type; where the agent read the feedback, its reading (themes, suggested kind, open questions) is shown and marked as such. Links open the review tool at the block or pin.', '');
   out.push('| Kind | Items | Open |', '|---|---|---|');
   Object.entries(KINDS).forEach(([k, label]) => {

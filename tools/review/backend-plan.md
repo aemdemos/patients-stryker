@@ -110,9 +110,14 @@ What follows from it:
    tool uses the backend only (the sheet store removed); `summarise.mjs` reads `admin export`,
    `set-status.mjs` writes `admin status`; the results page reads the web action `results` (an
    invitation with the results right). Test: `backend/test/tool.test.mjs`, the whole loop.
-3. **Stable block keys**: the conversion writes a map per page (position → the block's position in
-   the as-is page + a fingerprint of its words); the tool saves the key; the summary and apply
-   find blocks by key; not found / not fitting = re-check (as now).
+3. **Stable block keys** (built 2026-11-17, `tools/review/blockkeys.js`): simpler than the map
+   first planned: a block's key is its type + a fingerprint of its own content (text and alt
+   texts, whitespace ignored), so no map file is needed and the key is the same on the branch
+   preview (DA) and in the workspace; twins named by their unique neighbour. The tool saves under
+   keys and maps them to positions on load; the summary and the results page do the same; a key
+   not on the page = re-check question. The two positional entries saved before (test_reviewer,
+   Prophecy) were moved to their keys (`admin rekey`, computed on the DA copy they were made on).
+   Also: Undo changes in the tool, an interrupted save sent again, `admin audit` and `rekey`.
 4. **Apply to DA**: the apply job writes choices into the `/std` documents (DA technical account;
    how its secret reaches the action is decided then); a dry run first; re-uploads only on request.
 5. **Retire the sheet** (done 2026-11-17, with phase 2): `review-form.json` removed, so the form

@@ -25,9 +25,9 @@ const check = (label, ok) => {
 };
 const where = (id) => (byId[id]?.evidence || []).map((e) => e.where).sort().join(', ');
 
-check('rows used: 27 review rows, 2 AOE status rows', result.source.used === 27 && result.source.aoeStatusRows === 2);
+check('rows used: 28 review rows on blocks, 1 for a block gone, 2 AOE status rows', result.source.used === 28 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
 check('counts per kind', JSON.stringify(result.counts) === JSON.stringify({
-  decision: 5, variant: 5, conversion: 4, page: 2, question: 3,
+  decision: 5, variant: 5, conversion: 4, page: 2, question: 4,
 }));
 // decisions
 check('group width choice', byId['decision:group:columns|media-text|text,media']?.target.width === 'wide-first');
@@ -36,7 +36,7 @@ check('single choices aggregated (2 blocks on 2 pages)', byId['decision:block:ca
 check('a choice equal to the standard is no decision', !result.items.some((it) => it.id.startsWith('decision:block:columns:variant:feature-statement')));
 check('section text set choice', !!byId['decision:section:text:default>text-large']);
 // variant changes: comments go to the design the block shows (its own choice first)
-check('media-text comments on 3 blocks', where('variant:columns:media-text') === 'Columns s11b0, Columns s3b0, Columns s9b0');
+check('media-text comments on 4 blocks', where('variant:columns:media-text') === 'Columns s11b0, Columns s16b0, Columns s3b0, Columns s9b0');
 check('a comment on a re-chosen block goes to its new design + layout note', where('variant:cards-corp:resources') === 'Cards s14b0, Cards s5b1');
 check('reach = every instance of the design', byId['variant:columns:media-text']?.reach.blocks > 500);
 check('text set comment', !!byId['variant:section:text-x-large']);
@@ -51,10 +51,14 @@ check('disagreement on a group', !!byId['question:*:group:section|text-serif-tit
 check('disagreement on a block', !!byId['question:/us/en/foot-and-ankle/products/prophecy:s0b0|variant']);
 check('a choice that no longer fits its block is a re-check, not a decision', !!byId['question:stale:/us/en/foot-and-ankle/products/prophecy:s4b0|variant']
   && !result.items.some((it) => it.kind === 'decision' && it.evidence.some((e) => e.item === 's4b0')));
+// block keys: an entry saved under a key lands on its block; a key no longer on the page is a re-check
+const keyed = (byId['variant:columns:media-text']?.evidence || []).find((e) => e.text?.startsWith('Saved under the block key'));
+check('an entry saved under a block key lands on its block (position now, key kept)', keyed?.at === 's16b0' && /^b:columns:[0-9a-f]{8}$/.test(keyed.item), JSON.stringify(keyed));
+check('a key no longer on the page: re-check question', !!byId['question:gone:/us/en/foot-and-ankle/products/prophecy:b:columns:00000000|variant']);
 // AOE status
 check('status: partly done', byId['variant:columns:media-text']?.state === 'partly');
 check("status: won't do", byId['conversion:columns:media-text']?.state === 'wontdo');
-check('links open the tool at the block', byId['variant:cards-corp:teaser']?.evidence[0].link.includes('block=s9b0'));
+check('links open the tool at the block, by its key', /[?&]block=b%3Acards-corp%3A[0-9a-f]{8}/.test(byId['variant:cards-corp:teaser']?.evidence[0].link || ''), byId['variant:cards-corp:teaser']?.evidence[0].link);
 
 // the agent's readings: shown, stale when older than the feedback, kept out of to-read when fresh
 check('reading attached with its themes', byId['variant:columns:media-text']?.reading?.themes.length === 2

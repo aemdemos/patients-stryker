@@ -29,6 +29,7 @@ browser keeps the token, later visits need no link (locally the frames read `/co
 | `build-groups.mjs`, `groups.json` | The 34 groups over the 672 standard pages with their size (blocks, pages); `node tools/review/build-groups.mjs` against the workspace preview |
 | `results.html`, `results.js`, `results.css` | Review results from every entry in the scope of an invitation with the results right (`results.html?invite=…`): progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
 | `store.js` | Saving and loading the review state (below) |
+| `blockkeys.js` | Stable keys for blocks and text sections (below): what choices are saved under |
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
 | `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
@@ -50,11 +51,13 @@ page and block, updated in place, with an audit file per save; no sign-in for re
 - **Save:** each change carries the `rev` it started from; a change someone else made meanwhile is
   a conflict: refused, dropped here, the tool asks to reload. Until the backend confirms a change
   it stays in the browser (`std-review-pending-backend`) and counts as saved here.
-- Items: a block id (`s<section>b<block>`), a section (`s<section>`), `page`, `note:<id>`,
-  `group:<key>`. Kinds: `variant`, `width`, `background`, `text`, `comment`, `reviewed`, `note`;
+- Items: a block or text section by its **key** (`b:<type>:<fingerprint>`, `t:<fingerprint>`,
+  below), `page`, `note:<id>`, `group:<key>`; entries saved by position before the keys
+  (`s<section>b<block>`, `s<section>`) are still read. Kinds: `variant`, `width`, `background`, `text`, `comment`, `reviewed`, `note`;
   values JSON-encoded.
 - **Save button** (Ctrl+S / ⌘S): changes stay in the browser (`std-review-drafts`, per page)
-  until Save; a change back to the value it had before (the saved one, else the page's own) is no
+  until Save; **Undo changes** drops this page's unsaved changes and shows it at its last saved
+  state again (after a confirmation); a change back to the value it had before (the saved one, else the page's own) is no
   change. Save sends the changes of one Save in one request. Leaving a page with unsaved changes
   asks (save now / keep for later); closing the tab warns.
 - **Groups:** "Use this design for all" saves the group's choice as item `group:<key>` (kinds
@@ -62,8 +65,33 @@ page and block, updated in place, with an audit file per save; no sign-in for re
   else its group's, else its standard design; a block with its own choice that differs is shown as
   an exception, "Stop" clears the group's choice (value null). Item keys may hold `|` (group keys):
   split `item|kind` at the last `|`.
+- **A save cut off** (the tab closed while it was sent): sent again on the next visit to the
+  page; closing the tab while changes are still being sent warns.
 - **History:** the pilot saved to a Google Sheet through Adobe's form submission service
   (2026-11-13 to 11-17, test data only); retired on 2026-11-17, its rows not imported.
+
+## Block keys (`blockkeys.js`)
+
+A choice is saved under its block's **key**, not its position: positions (`s14b0`) move when the
+conversion re-runs (sections removed, title lines in their own section), the content does not.
+
+- Key: block type + a fingerprint of its text and image alt texts, whitespace ignored
+  (`b:columns:3f2a9c1b`; text sections `t:<fingerprint>` of their own text). Not image or link
+  addresses: Document Authoring stores images under its own names and pages with line breaks
+  between elements, so only this gives the same key on the branch preview and in the workspace
+  (checked on the demo pages: every block of the DA copies has its workspace key).
+- A design choice changes classes, never content, so a block keeps its key.
+- **Twins** (identical content on one page, e.g. the same jump links twice): named by the nearest
+  unique block or section before them (`~<…>`), a number (`#1`) only when that is the same too
+  (4 of 10,915 keys on the 672 pages). A key not found exactly is looked up by its content alone
+  when exactly one block has it (a twin whose other twin is gone).
+- **A text fix** gives that block a new key: its saved choices are not found any more; the tool
+  leaves them out, the summary lists them as re-check questions; never guessed.
+- The tool, the results page and the summary compute keys from the page they show, map entries
+  to positions on load and save under keys; summary links name blocks by key (`?block=b:…`).
+- Tests: `test/blockkeys.test.mjs` (a page changed as a re-run would: every block keeps its key
+  while its position moves; a text fix changes one key); the loop test saves a design switch
+  under its key.
 
 ## Feedback summary for the AOE team (`summary.js`, `summarise.mjs`)
 

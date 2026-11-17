@@ -7,6 +7,7 @@
  */
 import { readAll, merge, inviteToken } from './store.js';
 import { variantsOf, groupLabel } from './groups.js';
+import { keysOfHtml, toPosition } from './blockkeys.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -65,10 +66,17 @@ function csvLink(name, head, rows) {
 }
 
 /** the switchable blocks of a standard page (id → type, standard design, group), from its source */
+const htmlCache = new Map();
+const htmlOf = (page) => {
+  if (!htmlCache.has(page)) htmlCache.set(page, fetch(`${CONTENT}/std${page}.plain.html`).then((r) => (r.ok ? r.text() : '')));
+  return htmlCache.get(page);
+};
+/** the page's block keys (blockkeys.js): entries are saved under them */
+const keysOf = async (page) => keysOfHtml(await htmlOf(page));
 const blockCache = new Map();
 async function blocksOf(page) {
   if (!blockCache.has(page)) {
-    blockCache.set(page, fetch(`${CONTENT}/std${page}.plain.html`).then((r) => (r.ok ? r.text() : '')).then((html) => {
+    blockCache.set(page, htmlOf(page).then((html) => {
       const doc = new DOMParser().parseFromString(`<body>${html}</body>`, 'text/html');
       const out = {};
       [...doc.body.children].forEach((section, si) => {
@@ -95,7 +103,16 @@ async function blocksOf(page) {
 
 const AOE_STATES = { progress: 'in progress', done: 'done', wontdo: "won't do" };
 
-async function render(allRows, pages) {
+async function render(savedRows, pages) {
+  // entries saved under a block key → the block's position on the page now (a key not on the page
+  // any more keeps its key and drops out of the block lists: the summary lists it for a re-check)
+  const keyed = [...new Set(savedRows.map((r) => r.page).filter((p) => p !== '*'))];
+  const keysBy = new Map(await Promise.all(keyed.map(async (p) => [p, await keysOf(p)])));
+  const allRows = savedRows.map((r) => {
+    const keys = keysBy.get(r.page);
+    const pos = keys ? toPosition(r.item, keys) : r.item;
+    return pos ? { ...r, item: pos } : r;
+  });
   // the AOE team's status rows (set-status.mjs) are no review: kept apart, shown per comment / note
   const rows = allRows.filter((r) => r.reviewer !== 'AOE');
   const aoeState = merge(allRows.filter((r) => r.reviewer === 'AOE')

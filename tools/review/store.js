@@ -113,6 +113,8 @@ export function createStore(onStatus = () => {}) {
   const keep = (rows) => window.localStorage.setItem(PENDING_KEY, JSON.stringify(rows));
   // the stored rev of every entry seen (`page|item|kind`), sent back with a change
   const revs = new Map();
+  // the changes this visit is sending (any other pending change was interrupted)
+  const inflight = new Set();
   let page = '';
   let sending = 0;
   let problem = '';
@@ -127,30 +129,9 @@ export function createStore(onStatus = () => {}) {
     else if (failed) onStatus('failed', `${failed} change${failed > 1 ? 's' : ''} not saved`);
     else onStatus('saved', 'All changes saved');
   };
-  async function load(path) {
-    page = path;
-    let rows = [];
-    try {
-      const { status: code, body } = await call(`state?page=${encodeURIComponent(path)}`);
-      if (code === 200) {
-        problem = '';
-        resolveIdentity({ name: body.reviewer, scope: body.scope, expires: body.expires });
-        rows = body.rows;
-        rows.forEach((r) => revs.set(`${r.page}|${r.item}|${r.kind}`, r.rev));
-      } else {
-        problem = MESSAGES[body?.error?.code] || 'Could not read the saved reviews';
-        if (code === 401) resolveIdentity(null);
-      }
-    } catch (e) {
-      problem = 'Could not reach the review service';
-    }
-    status();
-    const mine = pending().filter((r) => r.page === path || r.page === '*');
-    return merge([...rows, ...mine]);
-  }
-
   async function send(rows) {
     if (!rows.length) return;
+    rows.forEach((r) => inflight.add(r[ID]));
     sending += rows.length;
     status();
     let result = null;
@@ -192,6 +173,7 @@ export function createStore(onStatus = () => {}) {
       return true;
     });
     keep(rest);
+    rows.forEach((r) => inflight.delete(r[ID]));
     if (conflicts) problem = `${conflicts} change${conflicts > 1 ? 's were' : ' was'} changed by someone else meanwhile: reload the page to see it`;
     sending -= rows.length;
     status();
@@ -204,6 +186,32 @@ export function createStore(onStatus = () => {}) {
     queue = [];
     send(rows);
   };
+
+  async function load(path) {
+    page = path;
+    let rows = [];
+    try {
+      const { status: code, body } = await call(`state?page=${encodeURIComponent(path)}`);
+      if (code === 200) {
+        problem = '';
+        resolveIdentity({ name: body.reviewer, scope: body.scope, expires: body.expires });
+        rows = body.rows;
+        rows.forEach((r) => revs.set(`${r.page}|${r.item}|${r.kind}`, r.rev));
+        // changes of this page still waiting from an earlier visit (the tab was closed while they
+        // were sent, or sending failed): sent again, with the revs just read
+        const waiting = pending().filter((r) => r.sentFrom === path && !inflight.has(r[ID]));
+        if (waiting.length) send(waiting);
+      } else {
+        problem = MESSAGES[body?.error?.code] || 'Could not read the saved reviews';
+        if (code === 401) resolveIdentity(null);
+      }
+    } catch (e) {
+      problem = 'Could not reach the review service';
+    }
+    status();
+    const mine = pending().filter((r) => r.page === path || r.page === '*');
+    return merge([...rows, ...mine]);
+  }
 
   function save({
     page: rowPage, item, kind, value,
@@ -238,7 +246,7 @@ export function createStore(onStatus = () => {}) {
   }
 
   return {
-    load, save, retry, status, identity,
+    load, save, retry, status, identity, busy: () => sending > 0 || queue.length > 0,
   };
 }
 

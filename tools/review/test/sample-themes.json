@@ -9,17 +9,24 @@
     {
      "title": "Image column too narrow compared with the live page",
      "kind": "variant",
-     "refs": ["/us/en/foot-and-ankle/products/prophecy#s9b0|comment", "/us/en/foot-and-ankle/products/prophecy#s11b0|comment"],
+     "refs": [
+      "/us/en/foot-and-ankle/products/prophecy#b:columns:abb4f6c7|comment",
+      "/us/en/foot-and-ankle/products/prophecy#b:columns:e352e241|comment"
+     ],
      "action": "Measure the image share on the live pages and widen the image column of media-text (one rule for all 823 instances)."
     },
     {
      "title": "Gap between image and text too wide",
      "kind": "variant",
-     "refs": ["/us/en/foot-and-ankle/products/ankle-truss-system#s3b0|comment"],
+     "refs": [
+      "/us/en/foot-and-ankle/products/ankle-truss-system#b:columns:a8e14902|comment"
+     ],
      "action": "Check the column gap token of media-text together with the image width change."
     }
    ],
-   "questions": ["Should wide-first become the default split for media-text instead of a per-block choice?"]
+   "questions": [
+    "Should wide-first become the default split for media-text instead of a per-block choice?"
+   ]
   },
   "variant:cards-corp:resources": {
    "by": "agent (Claude)",
@@ -29,13 +36,17 @@
     {
      "title": "Card titles too heavy",
      "kind": "variant",
-     "refs": ["/us/en/foot-and-ankle/products/prophecy#s14b0|comment"],
+     "refs": [
+      "/us/en/foot-and-ankle/products/prophecy#b:cards-corp:c7b2c0fb|comment"
+     ],
      "action": "Compare the resources title weight with the conventions; Bold titles may need the regular weight in this design."
     },
     {
      "title": "Switched cards don't line up with the resources next to them",
      "kind": "variant",
-     "refs": ["/us/en/craniomaxillofacial/products/3d-systems#note:sample-4|note"],
+     "refs": [
+      "/us/en/craniomaxillofacial/products/3d-systems#note:sample-4|note"
+     ],
      "action": "Align the card grid of resources when teaser content (longer text, image) is in it."
     }
    ],
@@ -49,7 +60,9 @@
     {
      "title": "Serif title text set approved on this page",
      "kind": "decision",
-     "refs": ["/us/en/foot-and-ankle/products/prophecy#s3|comment"],
+     "refs": [
+      "/us/en/foot-and-ankle/products/prophecy#t:f3f1eae0|comment"
+     ],
      "action": "No change; note it against the open disagreement on the serif title group."
     }
    ],
@@ -63,7 +76,9 @@
     {
      "title": "Trademark sign missing after the product name",
      "kind": "conversion",
-     "refs": ["/us/en/foot-and-ankle/products/prophecy#note:sample-1|note"],
+     "refs": [
+      "/us/en/foot-and-ankle/products/prophecy#note:sample-1|note"
+     ],
      "action": "Check the text pass of rules/variants.js for dropped <sup> ™ / ®; count the affected pages before fixing."
     }
    ],

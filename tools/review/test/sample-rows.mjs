@@ -50,6 +50,9 @@ const spec = [
   [P.prophecy, 's0b0', 'variant', 'feature-statement', B],
   // a choice saved before the page changed: s4b0 is a Statistics block now
   [P.prophecy, 's4b0', 'variant', 'card-grid', A],
+  // saved under block keys (as the tool saves now): one on the page, one whose content changed
+  [P.prophecy, 'key:s16b0', 'comment', 'Saved under the block key: should land on the 3D Viewer block.', B],
+  [P.prophecy, 'b:columns:00000000', 'variant', 'image-row', B],
   // comments on blocks and text sections
   [P.prophecy, 's9b0', 'comment', 'The image is too small next to the text, the live page had it larger.', A],
   [P.prophecy, 's11b0', 'comment', 'Same as above: the image should be bigger.', A],
@@ -85,6 +88,7 @@ await page.goto(`${base}/tools/review/pages.json`);
 const pre = /localhost|127\.0\.0\.1/.test(base) ? '/content' : '';
 const rows = await page.evaluate(async ({ list, prefix }) => {
   const { keyOf } = await import('/tools/review/sync.js');
+  const blockKeys = await import('/tools/review/blockkeys.js');
   const docs = {};
   const docOf = async (path) => {
     if (!docs[path]) {
@@ -94,8 +98,14 @@ const rows = await page.evaluate(async ({ list, prefix }) => {
     return docs[path];
   };
   const result = [];
-  for (const [p, item, kind, value, reviewer] of list) {
+  for (const [p, given, kind, value, reviewer] of list) {
     let v = value;
+    let item = given;
+    // `key:<position>` → the block key of that position on the page
+    if (item.startsWith('key:')) {
+      const keys = blockKeys.keysOfHtml(await (await fetch(`${prefix}/std${p}.plain.html`)).text());
+      item = blockKeys.toKey(item.slice(4), keys);
+    }
     if (kind === 'note') {
       const { find, img, ...n } = value;
       let anchor = null;

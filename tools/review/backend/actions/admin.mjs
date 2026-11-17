@@ -8,7 +8,9 @@
  *   invites                                 every invitation (no tokens)
  *   export                                  every entry, as rows (summary, apply, results)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
- *   import { rows: [{ page, item, kind, value, reviewer, time }] }  rows from elsewhere (e.g. a CSV), as they were
+ *   import { rows: [{ page, item, kind, value, reviewer, time, inv? }] }  rows from elsewhere (e.g. a CSV), as they were
+ *   rekey { page, moves: [{ from, to }] }  entries moved to another item name (e.g. position → block key)
+ *   audit { date, page }                    the audit files of one day (default today), optionally one page
  *   purge-invite { id }                    removes every entry one invitation wrote (any page)
  *   purge-test { page }                     removes a test page's entries (pages under /test/ only)
  *                                           and test group choices (items group:test|…)
@@ -96,7 +98,7 @@ export async function main(params) {
           // (the newest row per entry wins)
           if (!current || current.at < r.time) {
             await state.put(key, JSON.stringify({
-              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: 'import',
+              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: r.inv || 'import',
             }), { ttl: TTL });
             n += 1;
           }
@@ -105,6 +107,45 @@ export async function main(params) {
       const at = new Date().toISOString();
       await files.write(`audit/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-import.json`, JSON.stringify({ at, by: 'import', rows }));
       return ok({ imported: n, of: rows.length });
+    }
+    if (op === 'rekey') {
+      // entries saved under one item name moved to another, every kind (e.g. a position → its
+      // block key); a newer entry already under the new name stays
+      const page = String(params.page || '');
+      const moves = Array.isArray(params.moves) ? params.moves : [];
+      if (!page.startsWith('/') || !moves.length) return bad('page and moves: [{ from, to }]');
+      const keys = [];
+      const it = state.list({ match: pagePattern(page) });
+      for (let r = await it.next(); !r.done; r = await it.next()) keys.push(...r.value.keys);
+      const done = [];
+      for (const key of keys) {
+        const e = parseKey(key);
+        const move = moves.find((m) => m.from === e?.item);
+        if (move && move.to && move.to !== move.from) {
+          const value = JSON.parse((await state.get(key)).value);
+          const target = entryKey(page, move.to, e.kind);
+          const there = await state.get(target);
+          if (!there || JSON.parse(there.value).at < value.at) await state.put(target, JSON.stringify(value), { ttl: TTL });
+          await state.delete(key);
+          done.push({ from: e.item, to: move.to, kind: e.kind });
+        }
+      }
+      const at = new Date().toISOString();
+      await files.write(`audit/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-rekey.json`, JSON.stringify({
+        at, by: 'rekey', page, moved: done,
+      }));
+      return ok({ moved: done });
+    }
+    if (op === 'audit') {
+      // the audit files of one day (UTC date, default today), oldest first; optionally one page
+      const day = /^\d{4}-\d{2}-\d{2}$/.test(params.date || '') ? params.date : new Date().toISOString().slice(0, 10);
+      const list = (await files.list(`audit/${day}/`)).map((f) => f.name).sort();
+      const out = [];
+      for (const name of list) {
+        const batch = JSON.parse((await files.read(name)).toString());
+        if (!params.page || (batch.changes || batch.rows || []).some((c) => c.page === params.page)) out.push({ file: name, ...batch });
+      }
+      return ok({ day, batches: out });
     }
     if (op === 'purge-invite') {
       // every entry written with one invitation (e.g. a test reviewer's), on any page
