@@ -181,8 +181,33 @@ body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-bod
   }
 }
 
-body.corp-legal main .columns p:has(> a.link-strong) > strong {
+body.corp-legal main .columns p:has(> strong > a > u) > strong:not(:has(a)) {
   color: var(--link-color);
+}
+
+body.corp-legal main .columns p:has(> strong > a > u) > strong > a:any-link {
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+}
+
+body.corp-legal main .columns p:has(> strong > a > u) > strong > a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+body.corp-legal main .columns p:has(> strong > a > u) > strong > a:any-link u {
+  text-decoration: none;
+}
+
+body.corp-legal main .columns p:has(> strong > a > u) > strong > a:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
 }
 
 body.corp-legal main .table.block table td strong {
