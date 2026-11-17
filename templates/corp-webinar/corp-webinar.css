@@ -4,8 +4,29 @@
 
 body.corp-webinar {
   --corp-webinar-h2-thank-you: 30.625px; /* measured: the 1.25em "Thank you for registering" h2 from 600px */
-  --corp-webinar-hero-top: 28px; /* measured: the page-hero title's top margin (h1.title) */
+  --corp-legal-title-offset-trim: 2px; /* as #538: the source header-to-title gap of a sized title is --space-section less 2px */
+  --corp-large-headline-offset: 2vw; /* as #538: the source header-to-title gap of a Large Headline is 2vw + 9.4px; the 9.4px is the existing H1 top spacing */
+  --corp-webinar-thank-you-offset-s: 21px; /* measured: the thank-you title sits 31px (41px from 600px) under the header, less the 10px header gap */
+  --corp-webinar-thank-you-offset: 31px;
+  --corp-webinar-wordmark-width: 213px; /* measured: the FocusRN wordmark's natural width */
+  --corp-webinar-index-title-gap-s: 14px; /* measured: wordmark to title is 2vw + 19.4px (2vw + 29.3px from 600px), less the 5.2px the wordmark's line adds */
+  --corp-webinar-index-title-gap: 24px;
   --corp-webinar-hero-title-line-height-s: 22.26px; /* measured: the page-hero title's lines below 1024px */
+}
+
+/* the page title under the header, as the source (#538 sets the same gaps for corp-legal): a sized
+   title (page hero) --space-section less 2px; a webinar title (`serif` first section) 2vw
+   (+ the 10px header gap, so 2vw + 9.4px as source); the thank-you title 31px (41px from 600px) */
+body.corp-webinar main:has(> .section:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
+}
+
+body.corp-webinar main:has(> .section.serif:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--corp-large-headline-offset);
+}
+
+body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--corp-webinar-thank-you-offset-s);
 }
 
 /* the title sits in one rich text with the text under it: no padded rule under the first
@@ -29,15 +50,10 @@ body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
   font-size: var(--heading-font-size-l-scaled);
 }
 
-/* page hero: the gold title 28px under the header and 10px above the subhead (24.5px at
-   every width); the hero ends in a content-width rule one heading gap under its text
+/* page hero: the gold title 10px above the subhead (24.5px at every width); the hero ends in a content-width rule one heading gap under its text
    (`separator`), with the video 20px (30px from 600px) under the rule */
 body.corp-webinar main > .section:first-child:has(+ .section.separator) {
   margin-bottom: 0;
-}
-
-body.corp-webinar main > .section:first-child:has(+ .section.separator) > .default-content-wrapper {
-  padding-top: var(--corp-webinar-hero-top);
 }
 
 body.corp-webinar main > .section:first-child:has(+ .section.separator) h1 {
@@ -58,6 +74,47 @@ body.corp-webinar main > .section.separator > div:first-child {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* index: the back link 11px under the header, the wordmark offset in its column from 972px
+   (the source centres it in a 25vw column, up to 1200px), the title 2vw + 29.3px under it */
+body.corp-webinar main > .section.back-link {
+  margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap-s));
+  padding-top: 0;
+}
+
+body.corp-webinar .accordion .columns h3 + p {
+  font-family: var(--heading-font-family);
+}
+
+body.corp-webinar main > .section.back-link p:has(img) {
+  margin-inline-start: max(0px, calc((25vw - 30px - var(--corp-webinar-wordmark-width)) / 2));
+}
+
+/* index copy: the intro and the webinar copy 17.5px (the speaker in Egyptienne), the webinar
+   titles under the panel labels (Bold h3, 14px; 17.5px from 600px) with a 1px black frame on
+   the thumbnails */
+body.corp-webinar main > .section.back-link + .section > .default-content-wrapper p,
+body.corp-webinar .accordion .columns :is(h3 + p, h3 + p + p) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp-webinar main > .section.back-link + .section > .default-content-wrapper p > a:any-link {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.corp-webinar .accordion .columns .columns-img-col img {
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+
+body.corp-webinar .accordion .columns h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
 /* …and under the video, the speaker byline (17.5px serif; 21px from 600px) one paragraph gap
    above the description */
 body.corp-webinar main > .section.separator + .section.serif {
@@ -68,13 +125,15 @@ body.corp-webinar main > .section.separator + .section.serif p {
   line-height: var(--heading-line-height);
 }
 
-/* index: the webinar titles under the panel labels (Bold h3, 14px; 17.5px from 600px) */
-body.corp-webinar .accordion .columns h3 {
-  font-size: var(--body-font-size-m);
-  line-height: var(--heading-line-height-h4);
-}
-
 @media (width >= 600px) {
+  body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+    padding-top: var(--corp-webinar-thank-you-offset);
+  }
+
+  body.corp-webinar main > .section.back-link {
+    margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap));
+  }
+
   body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
     font-size: var(--corp-webinar-h2-thank-you);
   }
@@ -101,5 +160,11 @@ body.corp-webinar .accordion .columns h3 {
   body.corp-webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
     max-width: 50%;
     line-height: var(--heading-line-height);
+  }
+}
+
+@media (width > 1200px) {
+  body.corp-webinar main > .section.back-link p:has(img) {
+    margin-inline-start: 0;
   }
 }

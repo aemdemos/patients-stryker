@@ -9,7 +9,7 @@ import { videoLink } from './parsers/video.js';
 
 const PAGE_TEMPLATE = {
   name: 'corp-webinar',
-  description: 'www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (bold, alone on its line), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.',
+  description: 'www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (a plain link, not bold, alone on its line), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.',
   urls: [
     'https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html',
     'https://www.stryker.com/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses/webinar.html',
@@ -220,12 +220,12 @@ function layoutC(document, src) {
     out.push(sectionMetadata(document, 'back-link, image-link'), el(document, 'hr'));
   }
 
-  // H1, intro and the register link (a standalone link → Bold link alone on its line)
+  // H1, intro and the register link (plain on the source: a bold link would become a button)
   richText(src).filter((n) => !n.closest('.experiencefragment')).forEach((n) => {
     if (n.matches('h1')) out.push(heading(document, n, 'h1'));
     else if (n.querySelector('.standalone-link') && n.querySelectorAll('a[href]').length === 1) {
       const p = document.createElement('p');
-      p.append(wrap(document, link(document, n.querySelector('a[href]')), 'strong'));
+      p.append(link(document, n.querySelector('a[href]')));
       out.push(p);
     } else if (/^H/.test(n.tagName)) out.push(el(document, n.tagName.toLowerCase(), text(n)));
     else out.push(inline(document, n));
