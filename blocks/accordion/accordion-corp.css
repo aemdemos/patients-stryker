@@ -35,6 +35,15 @@ body.corp .accordion.large-copy .accordion-item-body :is(p, ul, li) {
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* large-titles: a panel's Heading 2 at 28px, lines 1.06 apart, with a blank line under it
+   (stryker.com Mako surgeon campaign "Mako Total Knee key clinical studies / Soft tissue",
+   .fontsize-2em) */
+body.corp .accordion.large-titles .accordion-item-body h2 {
+  margin-bottom: var(--space-section-l);
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
 /* a panel made of several sections (`accordion-continue`): the corp section gap
    between them, 20px (30px from 600px) */
 body.corp .accordion .accordion-item-body > .section:not(:last-child) {
