@@ -663,6 +663,15 @@ function whiteText(main, doc, h) {
     el.append(doc.createTextNode(']'));
     // a box in a column row without a Columns box variant drops it again (columnRows)
     el.setAttribute('data-white-tag', '');
+    // the black words inside the white run (SKILL gold boxes: "…outstanding <black>educational
+    // opportunities</black>"): `[[color-black]…]`, so the semantic step keeps them black
+    el.querySelectorAll('[style*="color"]').forEach((c) => {
+      const colour = ((c.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i) || [])[1];
+      if (!colour || !BLACK.test(colour.trim()) || !h.text(c)) return;
+      if (c.parentElement.closest('[style*="color"]') !== el) return;
+      c.prepend(doc.createTextNode('[[color-black]'));
+      c.append(doc.createTextNode(']'));
+    });
   });
 }
 

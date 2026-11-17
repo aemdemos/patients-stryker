@@ -256,7 +256,7 @@
   text-align: left;
 }
 
-/* ---- large / xlarge: the title (Heading 1) in the stryker.com Large Headline sizes, 4vw / 5.5vw
+/* ---- medium / large / xlarge: the title (Heading 1) in the stryker.com Large Headline sizes, 3vw / 4vw / 5.5vw
    (span.fontsize-4vw, -5-5-vw: N% of the content width, 56px / 77px at 1440, twice the % below
    600px: 30px / 41.25px at 375), lines 1.35 apart. Plain words are Egyptienne light, Bold
    words Futura bold (measured: ASC pre-operative, operating room, spine events) ---- */
@@ -265,10 +265,13 @@
   --hero-corp-title-line-height: 1.35;
 }
 
+/* medium: 3vw (42px at 1440: stryker.com .fontsize-3vw on CR good business; the 1.25em x 2.5em
+   = 43.75px title of employee benefits) */
+.hero-corp.medium { --hero-corp-title-size: 3; }
 .hero-corp.large { --hero-corp-title-size: 4; }
 .hero-corp.xlarge { --hero-corp-title-size: 5.5; }
 
-.hero-corp:is(.large, .xlarge) > div:last-child h1 {
+.hero-corp:is(.medium, .large, .xlarge) > div:last-child :is(h1, h2) {
   font-family: var(--heading-font-family);
   font-size: calc(var(--hero-corp-title-size) * var(--hero-corp-title-unit));
   font-weight: var(--font-weight-regular);

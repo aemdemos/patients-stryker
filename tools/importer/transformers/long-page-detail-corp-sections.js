@@ -154,7 +154,6 @@ export function blankLineSpacers(document, url) {
       // only the blank lines between two text parts (a blank line closing a text may already
       // be the gap to what follows: build-your-ASC "Wherever you are…", 45px with none, 47px)
       while (items.length && items[items.length - 1] === null) items.pop();
-      if (!items.includes(null)) return;
     }
     // a last paragraph closing on a line break and a no-break space (environmental programs
     // "To achieve these carbon goals…<br>&nbsp;"): a blank line after the text as well
@@ -172,7 +171,9 @@ export function blankLineSpacers(document, url) {
     }
     // a percentage bottom margin / top padding on the text box (2% or more: "Energy
     // efficiency" 3%, "Design for sustainability" padding 2%): space that scales with the width,
-    // about 30px on desktop and little on phones: a `spacer, wide` after / before it
+    // about 30px on desktop and little on phones: a `spacer, wide` after / before it (on every
+    // page since 2026-11-17, for the page's own text: promoting global health "Addressing
+    // affordability" 3%, "Medical education" padding 2%)
     const boxStyle = box.getAttribute('style') || '';
     const pct = (prop) => Number((new RegExp(`(?:^|;)\\s*${prop}:\\s*(\\d+(?:\\.\\d+)?)%`).exec(boxStyle) || [])[1] || 0);
     const wideSpacer = () => {
@@ -184,8 +185,12 @@ export function blankLineSpacers(document, url) {
       spacer.append(headline);
       return spacer;
     };
-    if (listed && pct('padding-top') >= 2) component.before(wideSpacer());
-    if (listed && pct('margin-bottom') >= 2) {
+    // (on other pages than the listed ones: a plain text box, not a coloured one, whose padding
+    // is inside it, and not a hero's text)
+    const plain = listed || (!box.matches('.has-background, .dimensional-box')
+      && !component.closest('.c-autocarousel, .overlayparsys, .pDiv, .fullWidthImageHero, .c-full-bleed-panel'));
+    if (plain && pct('padding-top') >= 2) component.before(wideSpacer());
+    if (plain && pct('margin-bottom') >= 2) {
       // after the text (and its blank lines, below)
       component.setAttribute('data-wide-after', '');
     }

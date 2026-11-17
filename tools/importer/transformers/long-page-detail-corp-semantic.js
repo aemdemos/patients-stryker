@@ -315,14 +315,11 @@ const PAGE_THEMES = [
  * (20px, 30px from 600px) or `spacer, wide` (30px from 600px, none on phones) before the
  * top-level element that starts with the text
  */
+// (the spacers under the ASC heroes and the icon row come from the source's percentage
+// margins on every page now, sections.js blankLineSpacers)
 const PAGE_SPACERS = [
   [/\/care-settings\/asc\/build-your-asc(\.html)?$/i, [
-    ['You only get one chance', 'spacer, wide'], // under the hero: 58px (27px on phones)
-    ['ASC New Build Playbook', 'spacer, wide'], // under the icon row: 61px
     ['Phase 1', 'spacer'], // above the phase boxes: 59px (49px on phones)
-  ]],
-  [/\/care-settings\/asc\/implants-and-disposables(\.html)?$/i, [
-    ['Joint replacement', 'spacer, wide'], // under the hero: 58px (27px on phones)
   ]],
 ];
 
@@ -572,15 +569,37 @@ function heroes(doc, main) {
         if (i) h1.append(doc.createElement('br'));
         h1.append(...l.childNodes);
       });
+      // (a source heading's em size is of its 28px: CLOUT's 2.5em H1 is 70px)
+      const fromHeading = /^H\d$/.test(title[0].tagName);
       title[0].replaceWith(h1);
       title.slice(1).forEach((l) => l.remove());
       // leading and trailing line breaks of the source lines
       while (h1.firstChild && (h1.firstChild.nodeName === 'BR' || (h1.firstChild.nodeType === 3 && !h1.firstChild.textContent.trim()))) h1.firstChild.remove();
       while (h1.lastChild && (h1.lastChild.nodeName === 'BR' || (h1.lastChild.nodeType === 3 && !h1.lastChild.textContent.trim()))) h1.lastChild.remove();
-      // em sizes (CLOUT, employee benefits 3.5em) top out at `large`
-      const em = /^text-/.test(spansIn(h1).flatMap(tagsOf).find((t) => tagSize(t) === max) || '');
-      if (max >= 5 && !em) addVariant(table, 'xlarge');
-      else if (max >= 3) addVariant(table, 'large');
+      // the size the title renders at: a vw size inside another replaces it (good business:
+      // 3vw in 4vw is 3vw); nested em sizes are the largest of them (the importer's outer tag
+      // already holds their product: employee benefits 1.25em x 2.5em is `text-3-5` around
+      // `text-2-5`). 3 up to 3.5vw (a 3.5em paragraph included) is `medium`; em sizes top out
+      // at `large` (CLOUT's 70px H1)
+      const rendered = (n) => {
+        let emSize = 0;
+        for (let el = n.parentElement; el && el !== h1.parentElement; el = el.parentElement) {
+          // one tag list holds nested sizes outer first: from the innermost out
+          const list = tagsOf(el).filter((x) => tagSize(x)).reverse();
+          for (let i = 0; i < list.length; i += 1) {
+            if (/^headline-/.test(list[i])) return [(emSize || 1) * tagSize(list[i]), false];
+            emSize = Math.max(emSize, tagSize(list[i]));
+          }
+        }
+        return [emSize || 1, true];
+      };
+      const sizes = [];
+      const w = doc.createTreeWalker(h1, 4);
+      while (w.nextNode()) if (w.currentNode.nodeValue.trim()) sizes.push(rendered(w.currentNode));
+      const [size, em] = sizes.reduce((a, b) => (b[0] > a[0] ? b : a), [0, false]);
+      if (size >= 5 && !em) addVariant(table, 'xlarge');
+      else if (size >= 3 && (size < 3.5 || (em && size === 3.5 && !fromHeading))) addVariant(table, 'medium');
+      else if (size >= 3) addVariant(table, 'large');
     }
     // the copy (lines that are no title): 1.25em → `large-copy`, Egyptienne → `serif` (the
     // foot & ankle toolkit banners)
@@ -589,20 +608,26 @@ function heroes(doc, main) {
     const most = (test) => copy.length && copy.filter(test).length * 2 > copy.length;
     if (most((p) => wholeSize(p) === 'text-1-25')) addVariant(table, 'large-copy');
     // 1.5em copy (CLOUT "The largest prospective mechanical thrombectomy study…")
-    else if (most((p) => wholeSize(p) === 'text-1-5')) addVariant(table, 'xlarge-copy');
+    // (or a 1.5vw Large Headline line under the title: spine MedEd "You specialize in your
+    // patients. We specialize in you.", 21px at 1440)
+    else if (most((p) => wholeSize(p) === 'text-1-5' || spansIn(p).some((sp) => tagsOf(sp).includes('headline-1-5')
+      && norm(sp.textContent) === norm(p.textContent)))) addVariant(table, 'xlarge-copy');
     if (most((p) => spansIn(p).some((s) => tagsOf(s).includes('serif') && norm(s.textContent) === norm(p.textContent)))) addVariant(table, 'serif');
     // text colour: white / light grey words (not in a dark text box, which is white anyway)
     // (the section's Section Metadata table is only created when a row is written)
     const existing = sectionsOf(main).find((s) => s.nodes.includes(table))?.meta;
     const box = norm(metaRow(existing, 'text box')?.children[1]?.textContent || '').toLowerCase();
     const count = (tag) => cells.flatMap(spansIn).filter((s) => tagsOf(s).includes(tag) && !s.parentElement.closest(`span[data-tag~="${tag}"]`))
-      .reduce((n, s) => n + norm(s.textContent).length, 0);
+      .reduce((n, s) => n + norm(s.textContent).replace(/\s/g, '').length, 0);
     const white = count('color-white');
     const gray = count('color-light-gray');
     // light grey copy beside a dark text box (the 3 BACS heroes: the box text stays white)
+    // white when at least half the text is (not for a few white marks in black text: the
+    // spine MedEd banner's white "\\" around its black "MedEd Events")
+    const all = cells.reduce((n, c) => n + norm(c.textContent).replace(/\s/g, '').length, 0);
     let colour = '';
     if (gray) colour = 'light-gray';
-    else if (white && !/purple|teal|blue/.test(box)) colour = 'white';
+    else if (white * 2 >= all && !/purple|teal|blue/.test(box)) colour = 'white';
     const meta = colour ? metaTableOf(doc, main, table) : null;
     if (meta) setMetaRow(doc, meta, 'Text colour', colour);
   });
@@ -818,6 +843,33 @@ function displayLines(doc, main) {
 }
 
 /* ---- 5. the remaining tags: colours, serif in headings, then unwrap ---- */
+
+/**
+ * White words on a gold box (the SKILL gold panels and gold title bars: white and black Futura
+ * bold on .bg-gold) → Bold + Italic, which these boxes show white (gold on gold would not
+ * read); the black words stay plain Bold. A word is white when its nearest colour tag is
+ * `color-white`.
+ */
+// (not `gold-first` / `gold-last`: their whole cell is the box, whose Bold is white already)
+const GOLD_BOX = /^panel\b.*\bgold(-gradient)?\b|^columns\b.*\bgold-lead\b/;
+
+function whiteOnGold(doc, main) {
+  blocksNamed(main, GOLD_BOX).forEach((table) => {
+    const nodes = [];
+    const w = doc.createTreeWalker(table, 4);
+    while (w.nextNode()) if (w.currentNode.nodeValue.trim()) nodes.push(w.currentNode);
+    nodes.forEach((n) => {
+      let el = n.parentElement;
+      while (el && el !== table && !tagsOf(el).some((t) => /^color-(white|black)$/.test(t))) {
+        el = el.parentElement;
+      }
+      if (!el || el === table || !tagsOf(el).includes('color-white')) return;
+      const span = tagSpan(doc, ['color-gold']);
+      n.before(span);
+      span.append(n);
+    });
+  });
+}
 
 function finishSpans(doc, main, warn) {
   // innermost first
@@ -1035,6 +1087,7 @@ function semanticMarkup(main, doc, url = '') {
   pageCopy(main);
   sizeLines(doc, main);
   displayLines(doc, main);
+  whiteOnGold(doc, main);
   finishSpans(doc, main, warn);
   dropTypographyStyles(doc, main, warn, group);
   pageSpacers(doc, main, url);

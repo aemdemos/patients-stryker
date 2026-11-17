@@ -1273,6 +1273,7 @@ var CustomImportScript = (() => {
     };
     let rowEnds = 0;
     components.forEach((component) => {
+      var _a;
       if (consumed.has(component)) return;
       rowSpacers(rowEnds);
       rowEnds = Number(component.getAttribute("data-row-end") || 0);
@@ -1308,7 +1309,7 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
-      if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      if (component.matches(".c-largeheadline") && (!isFirst || component.hasAttribute("data-spacer")) && !text2(component) && !component.querySelector("img, picture, video, iframe, [data-asset-path]") && (!component.closest('[class*="col-sm-"], [class*="col-md-"]') || component.hasAttribute("data-spacer-wide") && ((_a = component.closest(".row").parentElement.closest(".row")) == null ? void 0 : _a.querySelectorAll(':scope > [class*="col-"]').length) === 1)) {
         const wide = component.hasAttribute("data-spacer-wide") ? ", wide" : "";
         sections.push({ kind: "spacer", style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });
         separatorNext = false;
@@ -2053,6 +2054,13 @@ var CustomImportScript = (() => {
       el.prepend(doc.createTextNode("[[color-white]"));
       el.append(doc.createTextNode("]"));
       el.setAttribute("data-white-tag", "");
+      el.querySelectorAll('[style*="color"]').forEach((c) => {
+        const colour = ((c.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i) || [])[1];
+        if (!colour || !BLACK.test(colour.trim()) || !h.text(c)) return;
+        if (c.parentElement.closest('[style*="color"]') !== el) return;
+        c.prepend(doc.createTextNode("[[color-black]"));
+        c.append(doc.createTextNode("]"));
+      });
     });
   }
   function eventCalendars(main) {
@@ -2334,7 +2342,6 @@ var CustomImportScript = (() => {
       });
       if (!listed) {
         while (items.length && items[items.length - 1] === null) items.pop();
-        if (!items.includes(null)) return;
       }
       const lastP = [...box.children].filter((el) => el.tagName === "P").pop();
       if (listed && lastP && lastP === box.lastElementChild && items.length && items[items.length - 1]) {
@@ -2357,8 +2364,9 @@ var CustomImportScript = (() => {
         spacer.append(headline);
         return spacer;
       };
-      if (listed && pct("padding-top") >= 2) component.before(wideSpacer());
-      if (listed && pct("margin-bottom") >= 2) {
+      const plain = listed || !box.matches(".has-background, .dimensional-box") && !component.closest(".c-autocarousel, .overlayparsys, .pDiv, .fullWidthImageHero, .c-full-bleed-panel");
+      if (plain && pct("padding-top") >= 2) component.before(wideSpacer());
+      if (plain && pct("margin-bottom") >= 2) {
         component.setAttribute("data-wide-after", "");
       }
       if (!items.includes(null)) {
@@ -3730,16 +3738,8 @@ var CustomImportScript = (() => {
   ];
   var PAGE_SPACERS = [
     [/\/care-settings\/asc\/build-your-asc(\.html)?$/i, [
-      ["You only get one chance", "spacer, wide"],
-      // under the hero: 58px (27px on phones)
-      ["ASC New Build Playbook", "spacer, wide"],
-      // under the icon row: 61px
       ["Phase 1", "spacer"]
       // above the phase boxes: 59px (49px on phones)
-    ]],
-    [/\/care-settings\/asc\/implants-and-disposables(\.html)?$/i, [
-      ["Joint replacement", "spacer, wide"]
-      // under the hero: 58px (27px on phones)
     ]]
   ];
   function pageSpacers(doc, main, url) {
@@ -3943,27 +3943,44 @@ var CustomImportScript = (() => {
           if (i) h1.append(doc.createElement("br"));
           h1.append(...l.childNodes);
         });
+        const fromHeading = /^H\d$/.test(title[0].tagName);
         title[0].replaceWith(h1);
         title.slice(1).forEach((l) => l.remove());
         while (h1.firstChild && (h1.firstChild.nodeName === "BR" || h1.firstChild.nodeType === 3 && !h1.firstChild.textContent.trim())) h1.firstChild.remove();
         while (h1.lastChild && (h1.lastChild.nodeName === "BR" || h1.lastChild.nodeType === 3 && !h1.lastChild.textContent.trim())) h1.lastChild.remove();
-        const em = /^text-/.test(spansIn(h1).flatMap(tagsOf).find((t) => tagSize(t) === max) || "");
-        if (max >= 5 && !em) addVariant(table, "xlarge");
-        else if (max >= 3) addVariant(table, "large");
+        const rendered = (n) => {
+          let emSize = 0;
+          for (let el = n.parentElement; el && el !== h1.parentElement; el = el.parentElement) {
+            const list = tagsOf(el).filter((x) => tagSize(x)).reverse();
+            for (let i = 0; i < list.length; i += 1) {
+              if (/^headline-/.test(list[i])) return [(emSize || 1) * tagSize(list[i]), false];
+              emSize = Math.max(emSize, tagSize(list[i]));
+            }
+          }
+          return [emSize || 1, true];
+        };
+        const sizes = [];
+        const w = doc.createTreeWalker(h1, 4);
+        while (w.nextNode()) if (w.currentNode.nodeValue.trim()) sizes.push(rendered(w.currentNode));
+        const [size, em] = sizes.reduce((a, b) => b[0] > a[0] ? b : a, [0, false]);
+        if (size >= 5 && !em) addVariant(table, "xlarge");
+        else if (size >= 3 && (size < 3.5 || em && size === 3.5 && !fromHeading)) addVariant(table, "medium");
+        else if (size >= 3) addVariant(table, "large");
       }
       const copy = cells.flatMap((c) => [...c.querySelectorAll(":scope > p")]).filter((p) => norm(p.textContent) && !(p.querySelector("a") && norm(p.textContent) === norm(p.querySelector("a").textContent)));
       const most = (test) => copy.length && copy.filter(test).length * 2 > copy.length;
       if (most((p) => wholeSize(p) === "text-1-25")) addVariant(table, "large-copy");
-      else if (most((p) => wholeSize(p) === "text-1-5")) addVariant(table, "xlarge-copy");
+      else if (most((p) => wholeSize(p) === "text-1-5" || spansIn(p).some((sp) => tagsOf(sp).includes("headline-1-5") && norm(sp.textContent) === norm(p.textContent)))) addVariant(table, "xlarge-copy");
       if (most((p) => spansIn(p).some((s) => tagsOf(s).includes("serif") && norm(s.textContent) === norm(p.textContent)))) addVariant(table, "serif");
       const existing = (_a = sectionsOf(main).find((s) => s.nodes.includes(table))) == null ? void 0 : _a.meta;
       const box = norm(((_c = (_b = metaRow(existing, "text box")) == null ? void 0 : _b.children[1]) == null ? void 0 : _c.textContent) || "").toLowerCase();
-      const count = (tag) => cells.flatMap(spansIn).filter((s) => tagsOf(s).includes(tag) && !s.parentElement.closest(`span[data-tag~="${tag}"]`)).reduce((n, s) => n + norm(s.textContent).length, 0);
+      const count = (tag) => cells.flatMap(spansIn).filter((s) => tagsOf(s).includes(tag) && !s.parentElement.closest(`span[data-tag~="${tag}"]`)).reduce((n, s) => n + norm(s.textContent).replace(/\s/g, "").length, 0);
       const white = count("color-white");
       const gray = count("color-light-gray");
+      const all = cells.reduce((n, c) => n + norm(c.textContent).replace(/\s/g, "").length, 0);
       let colour = "";
       if (gray) colour = "light-gray";
-      else if (white && !/purple|teal|blue/.test(box)) colour = "white";
+      else if (white * 2 >= all && !/purple|teal|blue/.test(box)) colour = "white";
       const meta = colour ? metaTableOf(doc, main, table) : null;
       if (meta) setMetaRow(doc, meta, "Text colour", colour);
     });
@@ -4116,6 +4133,24 @@ var CustomImportScript = (() => {
         t.querySelectorAll("td p").forEach((p) => {
           if (p.querySelector('span[data-tag~="color-gold"]')) rename2(doc, p, "h2");
         });
+      });
+    });
+  }
+  var GOLD_BOX = /^panel\b.*\bgold(-gradient)?\b|^columns\b.*\bgold-lead\b/;
+  function whiteOnGold(doc, main) {
+    blocksNamed(main, GOLD_BOX).forEach((table) => {
+      const nodes = [];
+      const w = doc.createTreeWalker(table, 4);
+      while (w.nextNode()) if (w.currentNode.nodeValue.trim()) nodes.push(w.currentNode);
+      nodes.forEach((n) => {
+        let el = n.parentElement;
+        while (el && el !== table && !tagsOf(el).some((t) => /^color-(white|black)$/.test(t))) {
+          el = el.parentElement;
+        }
+        if (!el || el === table || !tagsOf(el).includes("color-white")) return;
+        const span = tagSpan(doc, ["color-gold"]);
+        n.before(span);
+        span.append(n);
       });
     });
   }
@@ -4291,6 +4326,7 @@ var CustomImportScript = (() => {
     pageCopy(main);
     sizeLines(doc, main);
     displayLines(doc, main);
+    whiteOnGold(doc, main);
     finishSpans(doc, main, warn);
     dropTypographyStyles(doc, main, warn, group);
     pageSpacers(doc, main, url);

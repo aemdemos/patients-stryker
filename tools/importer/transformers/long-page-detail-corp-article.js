@@ -1622,7 +1622,11 @@ export default function buildArticle(element, { keep = '', spacer = true, compon
     // (the page's first one too when it follows the local nav: data-spacer, sections.js)
     if (component.matches('.c-largeheadline') && (!isFirst || component.hasAttribute('data-spacer')) && !text(component)
       && !component.querySelector('img, picture, video, iframe, [data-asset-path]')
-      && !component.closest('[class*="col-sm-"], [class*="col-md-"]')) {
+      && (!component.closest('[class*="col-sm-"], [class*="col-md-"]')
+        // a percentage margin's spacer may be in a row of one column (page text: promoting
+        // global health)
+        || (component.hasAttribute('data-spacer-wide')
+          && component.closest('.row').parentElement.closest('.row')?.querySelectorAll(':scope > [class*="col-"]').length === 1))) {
       // (a percentage margin on the source, blankLineSpacers in sections.js: `spacer, wide`)
       const wide = component.hasAttribute('data-spacer-wide') ? ', wide' : '';
       sections.push({ kind: 'spacer', style: separatorNext ? `${separatorNext}, spacer${wide}` : `spacer${wide}`, nodes: [] });

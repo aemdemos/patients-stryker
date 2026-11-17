@@ -906,9 +906,28 @@ body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
   text-align: center;
 }
 
+/* on the gold bar the Bold + Italic (accent) words are white (stryker.com white Futura bold
+   on .bg-gold: SKILL e-Lab "The SKILL e-Lab offers what you need") */
+body.corp .columns.gold-lead .columns-box :is(strong em, em strong) {
+  color: var(--color-white);
+}
+
 /* an image right under a title bar touches it (Mako refreshers) */
 body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
   margin-bottom: 0;
+}
+
+/* an empty cell (a source column left empty: the jr45 episodes' four-column video rows) takes
+   no place on phones, where the cells stack and each would add a row gap; from 600px it keeps
+   its column */
+body.corp .columns > div > :where(div:empty) {
+  display: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns > div > div:empty {
+    display: block;
+  }
 }
 
 /* ---- stack (cells: above): two per row from 600px, four from 900px, on a grid whose

@@ -451,6 +451,15 @@ body.long-page-detail-corp main .dm-video-wrapper:not(.is-playing) .dm-video {
   object-fit: cover;
 }
 
+/* a hero video slide keeps the stryker.com slide's 3:1 shape, the video's top showing (the
+   instruments 16:9 video: 1440x480 of it, under the gold bar; the 3:1 CR and endoscopy videos
+   fill it as they are), not the video's own shape */
+body.long-page-detail-corp main .hero-corp .dm-video-wrapper:not(.is-fullscreen) .dm-video {
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: top;
+}
+
 /* ---- large headline in a Columns cell (medical-education pages, e.g. jr45 "What would you
    do? / Complex revision total hip"): one font per line, 1.35x the size apart (75.6px at
    56px on the source; columns-corp spaces mixed-font news headlines 1.66x) ---- */
@@ -915,6 +924,11 @@ body.long-page-detail-corp main > .section.gold-bar {
   background-color: var(--color-accent);
 }
 
+/* right under a hero (the instruments pages: the gold panel at the slide's bottom edge) */
+body.long-page-detail-corp main > .section.hero-corp-container:has(+ .section.gold-bar) {
+  margin-bottom: 0;
+}
+
 /* section style `image-aside` (with `tabbed`; Mako surgeon campaign clinical studies / HRO
    tabs): in each tab, the image beside the accordion from 600px, a third and two thirds of the
    row (source col-sm-4 / col-sm-8, 840px); stacked on phones. The source accordion keeps its
@@ -1309,8 +1323,8 @@ body.long-page-detail-corp main span.text-0-8 strong > a:any-link:has(u) u::afte
    text (`[[headline-3-5,serif]…]`, `[[text-1-5]…]`), so its plain copy is the 14px copy, not
    the block's 2vw default (stryker.com hero overlays and banner text boxes); the title of a
    `large` / `xlarge` hero keeps the variant's size, the copy of a `large-copy` hero its 17.5px */
-body.long-page-detail-corp main .hero-corp:not(.large-copy, .xlarge-copy) > div:last-child > :not(h1),
-body.long-page-detail-corp main .hero-corp:not(.large, .xlarge) > div:last-child > h1 {
+body.long-page-detail-corp main .hero-corp:not(.large-copy, .xlarge-copy) > div:last-child > :not(h1, h2),
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge) > div:last-child > :is(h1, h2) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
@@ -1351,16 +1365,16 @@ body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.te
 /* …the copy 20px under the title (Heading 1), a button right under it 20px, 30px from 600px
    (stryker.com: the Large Headline's spacing; build-your-asc / implants-and-disposables "TALK
    WITH US" 30-45px under the title at 1440, 20-35px at 390) */
-body.long-page-detail-corp main .hero-corp > div:last-child > h1 + :not(.button-wrapper) {
+body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + :not(.button-wrapper) {
   margin-top: var(--space-block-l);
 }
 
-body.long-page-detail-corp main .hero-corp > div:last-child > h1 + .button-wrapper {
+body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + .button-wrapper {
   margin-top: var(--space-block-l);
 }
 
 @media (width >= 600px) {
-  body.long-page-detail-corp main .hero-corp > div:last-child > h1 + .button-wrapper {
+  body.long-page-detail-corp main .hero-corp > div:last-child > :is(h1, h2) + .button-wrapper {
     margin-top: var(--space-section);
   }
 }
@@ -1370,7 +1384,7 @@ body.long-page-detail-corp main .hero-corp > div:last-child > h1 + .button-wrapp
    instruments, environmental programs, SKILL), Egyptienne light, Bold words Futura bold.
    `large` / `xlarge` (blocks/hero-corp) set 4vw / 5.5vw. A title that still holds size tags
    (pages not yet re-imported) keeps their sizes ---- */
-body.long-page-detail-corp main .hero-corp:not(.large, .xlarge) > div:last-child h1:not(:has(span[class*="text-"], span[class*="headline-"])) {
+body.long-page-detail-corp main .hero-corp:not(.medium, .large, .xlarge) > div:last-child :is(h1, h2):not(:has(span[class*="text-"], span[class*="headline-"])) {
   font-family: var(--heading-font-family);
   font-size: calc(2.5 * var(--hero-corp-title-unit));
   font-weight: var(--font-weight-regular);
