@@ -914,6 +914,19 @@ body.long-page-detail-corp main > .section.gray-gradient:not(.headline-box) {
   background-image: var(--long-page-detail-corp-gray-gradient);
 }
 
+/* section style `teal-titles`: the section's titles teal (stryker.com #4c7d7a Futura bold on
+   environmental programs "Stryker's locations using renewable energy", the subtitle "Doing more
+   with less through additive manufacturing"): a Heading 3, or the Heading 4 under one (the
+   Heading 3 over a subtitle keeps the text colour); the subtitle at 17.5px right under it */
+body.long-page-detail-corp main > .section.teal-titles > .default-content-wrapper > :is(h3:not(:has(+ h4)), h4) {
+  color: var(--color-primary);
+}
+
+body.long-page-detail-corp main > .section.teal-titles > .default-content-wrapper > h3 + h4 {
+  margin-top: 0;
+  font-size: var(--body-font-size-l);
+}
+
 /* section style `gold-bar`: an empty stryker.com gold panel (OR staff, under the title), a
    34px gold bar the container width (edge to edge on phones) */
 body.long-page-detail-corp main > .section.gold-bar {
