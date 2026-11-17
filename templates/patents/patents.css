@@ -3,7 +3,8 @@
    the header (the shared 10px gap plus --space-section less 2px, as the corp-legal titles),
    10px above its text, the rule 11px below the image, and the product-line links 36px (46px
    from 600px) below the rule. Only the index opens with an H1 followed by a Columns block;
-   trademarks keeps the shared 10px title gap. */
+   trademarks keeps the shared 10px title gap. From 900px the hero is a two-column grid, so the
+   image top lines up with the title as on the source. */
 body.patents main:has(> .section.columns-container:first-child > .default-content-wrapper > h1) {
   padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
 }
@@ -31,7 +32,31 @@ body.patents main > .section.columns-container:first-child .columns .columns-img
 }
 
 @media (width >= 900px) {
-  body.patents main > .section.columns-container:first-child .columns .columns-img-col {
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .columns-wrapper,
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns,
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div {
+    display: contents;
+  }
+
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div > div:first-child {
+    grid-area: 2 / 1;
+  }
+
+  body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns .columns-img-col {
+    grid-area: 1 / 2 / span 2;
     margin-top: 0;
   }
 }
