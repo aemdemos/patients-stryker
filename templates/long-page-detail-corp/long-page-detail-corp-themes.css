@@ -351,6 +351,20 @@ body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > 
   font-style: normal;
 }
 
+/* …that fully Bold title is Egyptienne light on phones, Futura bold from 600px (stryker.com
+   "Bunion", "Total Ankle Replacement": the light serif below 840px) */
+body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1 > strong:only-child {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1 > strong:only-child {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
 /* a text paragraph below a headline line: one blank line above it, as the source's blank line
    (courses "Every day, …" under "Your opportunity to learn is here."; biologics "We are
    excited …" under "Coming soon!", in the next box of the run) */
