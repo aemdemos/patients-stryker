@@ -1,8 +1,8 @@
 /*
  * Review tool: the review feedback as work items for the AOE team (Agentic Outcome Engineers).
- * The review sheet's rows, merged like the tool merges them (newest per item + kind), turned into
- * items an engineer can act on, each with its target, its reach and its evidence (the reviewers'
- * rows, with links that open the tool at the block or pin):
+ * The review's entries (backend rows), merged like the tool merges them (newest per item +
+ * kind), turned into items an engineer can act on, each with its target, its reach and its
+ * evidence (the reviewers' rows, with links that open the tool at the block or pin):
  *   decision    a design choice (group or single blocks): data for the apply step
  *   variant     comments / layout notes on a design or text set: CSS of that design, all instances
  *   conversion  QA notes (text, image, link, other) on a design: the conversion rules
@@ -72,7 +72,7 @@ const splitKey = (key) => {
 /** a link that opens the review tool (branch preview) at a page, block, section or pin */
 export function toolLink(page, extra = {}) {
   const q = new URLSearchParams({ page, ...extra });
-  return `https://${CONFIG.formHost}/tools/review/index.html?${q}`;
+  return `https://${CONFIG.toolHost}/tools/review/index.html?${q}`;
 }
 
 const styleOf = (section) => {
@@ -162,9 +162,9 @@ const targetTitle = (t) => (t.block === 'section' ? `Text sections, ${design(t.d
 const reachText = (r) => (r ? `${r.blocks} ${r.blocks === 1 ? 'instance' : 'instances'} on ${r.pages} ${r.pages === 1 ? 'page' : 'pages'}` : 'unknown');
 
 /**
- * Sheet rows → work items.
+ * Review rows → work items.
  * @param {object} o
- * @param {object[]} o.rows the sheet's rows ({ page, item, kind, value, reviewer, time })
+ * @param {object[]} o.rows the review's rows ({ page, item, kind, value, reviewer, time })
  * @param {object} o.models path → pageModel() of every standard page
  * @param {object} o.titles path → page title
  * @param {object} o.groups groups.json `groups`

@@ -8,6 +8,7 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 |---|---|---|
 | `state` | web | `GET ?page=` + header `x-review-invite` → `{ reviewer, scope, expires, rows }` (the page's entries and every group choice, AOE statuses among them) |
 | `save` | web | `POST { page, changes: [{ page?, item, kind, value, rev }] }` + header `x-review-invite` → per change saved / conflict |
+| `results` | web | `GET` + header `x-review-invite` (an invitation with the results right) → every entry in its scope and every group choice, for the results page |
 | `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `status`, `import`, `purge-invite`, `purge-test` (see the action's header) |
 
 - **Web actions** answer `https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/<name>`;
@@ -30,14 +31,15 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 
 ```
 node tools/review/backend/deploy.mjs [--only state,save,admin] [--dry-run]
-node tools/review/backend/admin.mjs invite --name "Jane Doe" --paths /us/en/foot-and-ankle --days 30 [--page /us/en/…] [--no-groups]
+node tools/review/backend/admin.mjs invite --name "Jane Doe" --paths /us/en/foot-and-ankle --days 30 [--page /us/en/…] [--no-groups] [--results]
 node tools/review/backend/admin.mjs invites | revoke --id <id> | purge-invite --id <id> | export
 node tools/review/backend/test/backend.test.mjs     # the actions (test page /test/backend, cleaned up)
-node tools/review/backend/test/tool.test.mjs        # the tool with the backend in a browser (local preview)
+node tools/review/backend/test/tool.test.mjs        # the whole loop in a browser (local preview): reviewer → summary → AOE status → reviewer, results
 ```
 
 `deploy.mjs` bundles each action into one file with esbuild; the libraries (`package.json`) are
 installed outside the project, in `/tmp/run-outputs/review-backend-deps` (again after a workspace
 restart, automatically). The invitation link opens the tool on the branch preview; the tool keeps
-the token in the browser and removes it from the address bar. Without an invitation the tool still
-uses the Google Sheet (`?store=sheet` / `?store=backend` switch by hand).
+the token in the browser and removes it from the address bar. With the results right
+(`--results`) the invitation also gives a results page link. The backend is the tool's only store
+since 2026-11-17 (the pilot's Google Sheet route is retired).

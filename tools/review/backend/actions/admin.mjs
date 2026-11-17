@@ -2,12 +2,13 @@
  * Action `admin` (private: not a web action, only callable with the project's credential).
  * params.op:
  *   setup                                   creates the signing key once (Files, never returned)
- *   invite { name, paths: [...], days, groups }  → { id, token, link, expires }
+ *   invite { name, paths: [...], days, groups, results }  → { id, token, link, results link, expires }
+ *     (groups: choices for all blocks like this, default on; results: the results page, default off)
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
  *   export                                  every entry, as rows (summary, apply, results)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
- *   import { rows: [{ page, item, kind, value, reviewer, time }] }  rows from the sheet, as they were
+ *   import { rows: [{ page, item, kind, value, reviewer, time }] }  rows from elsewhere (e.g. a CSV), as they were
  *   purge-invite { id }                    removes every entry one invitation wrote (any page)
  *   purge-test { page }                     removes a test page's entries (pages under /test/ only)
  *                                           and test group choices (items group:test|…)
@@ -48,7 +49,7 @@ export async function main(params) {
       if (!name || !paths.length) return bad('name and paths (one or more path prefixes, e.g. /us/en/foot-and-ankle) are needed');
       const id = crypto.randomBytes(9).toString('base64url');
       const exp = new Date(Date.now() + days * 86400000).toISOString();
-      const scope = { paths, groups: params.groups !== false };
+      const scope = { paths, groups: params.groups !== false, results: params.results === true };
       const invite = {
         name, scope, exp, created: new Date().toISOString(), revoked: false,
       };
@@ -56,8 +57,9 @@ export async function main(params) {
       const token = sign({ id, exp }, await secretOf(files));
       const page = typeof params.page === 'string' ? params.page : '';
       const link = `${TOOL}?${new URLSearchParams({ ...(page ? { page } : {}), invite: token })}`;
+      const results = scope.results ? `${TOOL.replace('index.html', 'results.html')}?invite=${encodeURIComponent(token)}` : undefined;
       return ok({
-        id, name, scope, expires: exp, token, link,
+        id, name, scope, expires: exp, token, link, results,
       });
     }
     if (op === 'revoke') {
@@ -91,10 +93,10 @@ export async function main(params) {
           const key = entryKey(r.page, r.item, r.kind);
           const stored = await state.get(key);
           const current = stored ? JSON.parse(stored.value) : null;
-          // (the newest row per entry wins, as in the sheet)
+          // (the newest row per entry wins)
           if (!current || current.at < r.time) {
             await state.put(key, JSON.stringify({
-              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: 'sheet',
+              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: 'import',
             }), { ttl: TTL });
             n += 1;
           }
@@ -108,16 +110,32 @@ export async function main(params) {
       // every entry written with one invitation (e.g. a test reviewer's), on any page
       if (!params.id) return bad('id of the invitation');
       let deleted = 0;
+      const gone = new Set();
       for (const match of ['p.*', 'g.*']) {
         const it = state.list({ match });
         for (let r = await it.next(); !r.done; r = await it.next()) {
           const got = await Promise.all(r.value.keys.map((k) => state.get(k)));
           const mine = r.value.keys.filter((k, j) => got[j] && JSON.parse(got[j].value).inv === params.id);
+          mine.forEach((k) => {
+            const e = parseKey(k);
+            gone.add(`${e.page}|${e.item}|${e.kind}`);
+          });
           await Promise.all(mine.map((k) => state.delete(k)));
           deleted += mine.length;
         }
       }
-      return ok({ deleted, invite: params.id });
+      // and the AOE statuses on those entries
+      let statuses = 0;
+      const it = state.list({ match: 'p.*' });
+      for (let r = await it.next(); !r.done; r = await it.next()) {
+        const on = r.value.keys.filter((k) => {
+          const e = parseKey(k);
+          return e?.kind.startsWith('status:') && gone.has(`${e.page}|${e.item}|${e.kind.slice(7)}`);
+        });
+        await Promise.all(on.map((k) => state.delete(k)));
+        statuses += on.length;
+      }
+      return ok({ deleted, statuses, invite: params.id });
     }
     if (op === 'purge-test') {
       const page = String(params.page || '');

@@ -197,7 +197,7 @@ const BG_LABELS = {
 const label = (v, labels = VARIANT_LABELS) => (v in labels ? labels[v] : v.replace(/-/g, ' '));
 const api = () => (ready.std ? win('std')?.stdReview : null);
 
-/* ---------- saving (store.js: the review Google Sheet) ---------- */
+/* ---------- saving (store.js: the review backend) ---------- */
 
 // the page's saved state: `item|kind` → { value, reviewer, time }
 let saved = new Map();

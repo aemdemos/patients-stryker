@@ -1,10 +1,11 @@
 /*
- * Review results: where the customer review stands and what it decided, from every row of the
- * review sheet (store.js readAll). Progress (pages reviewed), design decisions (group choices
+ * Review results: where the customer review stands and what it decided, from every entry the
+ * invitation may see (store.js readAll: the review backend, an invitation with the results right,
+ * opened as results.html?invite=…). Progress (pages reviewed), design decisions (group choices
  * and their reach, the page choices with block type and design), comments, QA notes with links
  * to their pins; CSV downloads of the to-do lists. Test entries are hidden by default.
  */
-import { readAll, merge } from './store.js';
+import { readAll, merge, inviteToken } from './store.js';
 import { variantsOf, groupLabel } from './groups.js';
 
 const { hostname } = window.location;
@@ -283,9 +284,15 @@ async function start() {
       await draw();
       $('.rs-updated').textContent = `${all.length} saved changes · read ${when(new Date().toISOString())}`;
     } catch (e) {
-      $('.rs-updated').textContent = 'Could not read the reviews';
+      $('.rs-updated').textContent = e.code ? e.message : 'Could not read the reviews';
     }
   };
+  // the invitation is kept in the browser, not in the address bar
+  if (inviteToken() && new URLSearchParams(window.location.search).has('invite')) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('invite');
+    window.history.replaceState(null, '', url);
+  }
   $('.rs-hide-tests').addEventListener('change', draw);
   $('.rs-refresh').addEventListener('click', load);
   await load();

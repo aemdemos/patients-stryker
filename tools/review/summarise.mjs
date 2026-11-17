@@ -2,11 +2,11 @@
 /*
  * Review feedback → work items for the AOE team (summary.js): a readable report (report.md), the
  * same for agents (work-items.json) and the items the agent still has to read (to-read.json; its
- * readings go to the themes file, see tools/review/README.md). Reads the review sheet (or --csv),
+ * readings go to the themes file, see tools/review/README.md). Reads the review backend (or --csv),
  * every standard page from the preview (for the blocks' designs and the reach of each design) and
  * the agent's readings (--themes, kept next to the output by default). Runs against the workspace preview.
  * usage: node tools/review/summarise.mjs [--csv rows.csv] [--out migration-work/review-summary]
- *   [--themes <out>/themes.json] [--base http://localhost:3000] [--include-tests]
+ *   [--themes <out>/themes.json] [--base http://localhost:3000] [--include-tests] [--ns <workspace>]
  */
 import {
   readFileSync, writeFileSync, mkdirSync, existsSync,
@@ -27,9 +27,20 @@ const csvFile = opt('--csv', null);
 const includeTests = args.includes('--include-tests');
 const prefix = /localhost|127\.0\.0\.1|preview-aemcoder/.test(base) ? '/content' : '';
 
-const SHEET = '1YY_9uQPsvceiui3HQEqjeA8Gvf5JN-zq-eUTeAp0aso';
-const csv = csvFile ? readFileSync(csvFile, 'utf8')
-  : await (await fetch(`https://docs.google.com/spreadsheets/d/${SHEET}/export?format=csv&gid=0`, { redirect: 'follow' })).text();
+const ns = opt('--ns', '892544-strykerstdreview-stage');
+// the rows: a CSV file (tests: test/sample-rows.csv), else every entry of the review backend
+// (its private admin action; the workspace credential is added by the environment)
+let csv = null;
+let backendRows = null;
+if (csvFile) csv = readFileSync(csvFile, 'utf8');
+else {
+  const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'export' }),
+  });
+  const body = resp.ok ? (await resp.json()).body : null;
+  if (!body?.rows) throw new Error(`review backend export: ${resp.status} ${JSON.stringify(body?.error || '')}`);
+  backendRows = body.rows;
+}
 const themes = existsSync(themesFile) ? JSON.parse(readFileSync(themesFile, 'utf8')) : { items: {} };
 
 const browser = await chromium.launch();
@@ -37,15 +48,18 @@ const page = await browser.newPage();
 page.setDefaultTimeout(60000);
 await page.goto(`${base}/tools/review/pages.json`);
 const { result, markdown, missing } = await page.evaluate(async ({
-  text, themes: readings, prefix: pre, includeTests: tests,
+  text, given, themes: readings, prefix: pre, includeTests: tests,
 }) => {
   const s = await import('/tools/review/summary.js');
   const { parseCsv } = await import('/tools/review/store.js');
-  const table = parseCsv(text);
-  const head = table.shift() || [];
-  const fields = ['__id__', 'page', 'item', 'kind', 'value', 'reviewer', 'time'];
-  const at = Object.fromEntries(fields.map((f) => [f, head.indexOf(f)]));
-  const rows = table.filter((r) => r.length > 1).map((r) => Object.fromEntries(fields.map((f) => [f, r[at[f]] ?? ''])));
+  let rows = given;
+  if (!rows) {
+    const table = parseCsv(text);
+    const head = table.shift() || [];
+    const fields = ['__id__', 'page', 'item', 'kind', 'value', 'reviewer', 'time'];
+    const at = Object.fromEntries(fields.map((f) => [f, head.indexOf(f)]));
+    rows = table.filter((r) => r.length > 1).map((r) => Object.fromEntries(fields.map((f) => [f, r[at[f]] ?? ''])));
+  }
   const { pages } = await (await fetch('/tools/review/pages.json')).json();
   const { groups } = await (await fetch('/tools/review/groups.json')).json();
   const models = {};
@@ -65,7 +79,7 @@ const { result, markdown, missing } = await page.evaluate(async ({
   });
   return { result: res, markdown: s.toMarkdown(res), missing: lost };
 }, {
-  text: csv, themes, prefix, includeTests,
+  text: csv, given: backendRows, themes, prefix, includeTests,
 });
 await browser.close();
 

@@ -1,7 +1,7 @@
 /*
  * Web action `state`: a page's saved review state for the review tool.
  * GET ?page=/us/en/… with header x-review-invite: <token> → { reviewer, scope, rows }
- * rows like the sheet's: { page, item, kind, value (JSON string), reviewer, time, rev }, the
+ * rows: { page, item, kind, value (JSON string), reviewer, time, rev }, the
  * page's own and every group choice (page `*`), AOE statuses among them (kind `status:*`).
  */
 import {

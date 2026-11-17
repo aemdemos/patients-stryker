@@ -1,21 +1,22 @@
 # Standard pages review tool (branch `standardise-v3`)
 
-**Where the review's output goes (decided 2026-11-16):** the tool never changes documents; it
-shows `/std` and applies the saved choices in the browser. The decisions reach the pages through
-the conversion: an apply step (not built yet: it follows once real decisions come in) feeds the
-sheet's choices (variant, width, text set, background; per block or per group) into
-`tools/importer/standardise/apply-variants.mjs`, so `/std = rules(/rs) + decisions` and a re-run
-after any rule fix keeps them. Choices whose block moved (another section / block number after a
-rule fix) are flagged, not guessed. Comments and QA notes become a to-do list, never applied
-automatically. The real paths (`/us/en/…`) only at go-live, a separate promotion step.
+**Where the review's output goes:** the tool never changes documents; it shows `/std` and applies
+the saved choices in the browser. Since 2026-11-17 the choices are saved in the **review backend
+on App Builder** (`backend/`, plan `backend-plan.md`); reviewers open the tool with an
+**invitation link**, no Adobe ID needed. The apply step (plan phase 4) writes the choices into the
+`/std` documents in DA. Variants are additive (they only grow; changes to a variant are CSS/JS
+and apply everywhere), so no versioning of `/std`. Comments and QA notes become the AOE team's
+work items, never applied automatically. The real paths (`/us/en/…`) only at go-live.
 
 A review shell for the customer: the standard page (`/std/…`) as the base, its as-is version
 (`/rs/…`) to compare, scroll-synced by matched text. Not part of the site: it runs on preview
 hosts only (the branch preview, the local dev server) and never touches content. Plan and
 decisions: `tools/importer/standardise/README.md` and the review plan.
 
-Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
-(locally the frames read `/content/std/…` and `/content/rs/…`).
+Open with an invitation link (`node tools/review/backend/admin.mjs invite …`):
+`/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy&invite=<token>`; the
+browser keeps the token, later visits need no link (locally the frames read `/content/std/…` and
+`/content/rs/…`).
 
 | File | What |
 |---|---|
@@ -26,53 +27,47 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `pages.json` | The 672 standard pages (title, business unit); `python3 -I tools/importer/standardise/review-pages.py content tools/review/pages.json` |
 | `groups.js` | The variants a block's content fits and its group ("blocks like this": block type + standard variant + for Columns the cell kinds of its first row, more rows flagged); used by `frame.js` and `build-groups.mjs` |
 | `build-groups.mjs`, `groups.json` | The 34 groups over the 672 standard pages with their size (blocks, pages); `node tools/review/build-groups.mjs` against the workspace preview |
-| `results.html`, `results.js`, `results.css` | Review results from every row of the sheet: progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
+| `results.html`, `results.js`, `results.css` | Review results from every entry in the scope of an invitation with the results right (`results.html?invite=…`): progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
 | `store.js` | Saving and loading the review state (below) |
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
 | `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
-| `review-form.json` | The form definition the save route uses (form submission service → the review Google Sheet, `incoming` tab) |
 | `backend/`, `backend-plan.md` | The review backend on App Builder (invitation links, state per page and block, audit) and its plan |
 | `summary.js`, `summarise.mjs`, `set-status.mjs`, `test/` | The feedback summary for the AOE team, the agent's readings and the status back to the reviewers (below) |
 
 ## Saving (`store.js`)
 
-Two stores. **The review backend** (App Builder, `backend/README.md`): used when the tool is opened
-with an invitation link (`?invite=`); the reviewer's name comes from the link, changes are saved
-at once with conflict checks, no sheet involved. **The Google Sheet** (below): the default
-without an invitation, until the move-over (plan: `backend-plan.md`, phase 2).
+Every change is an entry in the review backend (App Builder, `backend/README.md`): the state per
+page and block, updated in place, with an audit file per save; no sign-in for reviewers.
 
-Every change is one row in the review Google Sheet (tab `incoming`: `__id__, page, item, kind,
-value, reviewer, time`), appended by Adobe's form submission service; no sign-in for reviewers.
-
-- Write: `POST https://forms.adobe.com/adobe/forms/af/submit/<btoa('/tools/review/review-form.json')>`
-  with `x-adobe-form-hostname` = the branch preview (the service reads the form definition from
-  there, so it must be a host anyone can read, not the workspace preview).
-- Read: the sheet's CSV export (`/export?format=csv&gid=0`, no type guessing; a row shows within
-  about a minute). Rows are merged per `item|kind`, newest wins, so reviewers don't overwrite each
-  other; a reviewer's own rows stay in the browser (`std-review-pending`) until the sheet has them,
-  so they count at once.
-- Items: a block id (`s<section>b<block>`) or `page`. Kinds: `variant`, `width`, `background`,
-  `comment`, `reviewed`. Values JSON-encoded.
+- **Invitation:** the link's token (`?invite=`) is kept in the browser (`std-review-invite`) and
+  removed from the address bar; every call sends it (header `x-review-invite`). The reviewer's
+  name comes from it (the name field is read only); its scope (path prefixes, the group right,
+  the results right) decides what can be read and saved. An expired or withdrawn link: the tool
+  says so.
+- **Load:** `state?page=…` gives the page's entries and every group choice (page `*`), AOE
+  statuses among them; merged per `item|kind`.
+- **Save:** each change carries the `rev` it started from; a change someone else made meanwhile is
+  a conflict: refused, dropped here, the tool asks to reload. Until the backend confirms a change
+  it stays in the browser (`std-review-pending-backend`) and counts as saved here.
+- Items: a block id (`s<section>b<block>`), a section (`s<section>`), `page`, `note:<id>`,
+  `group:<key>`. Kinds: `variant`, `width`, `background`, `text`, `comment`, `reviewed`, `note`;
+  values JSON-encoded.
 - **Save button** (Ctrl+S / ⌘S): changes stay in the browser (`std-review-drafts`, per page)
   until Save; a change back to the value it had before (the saved one, else the page's own) is no
-  change. Save writes one row per changed item, its final value. Leaving a page with unsaved
-  changes asks (save now / keep for later); closing the tab warns. A name is needed to save.
-- The form service can only append rows, so earlier saves stay in the sheet as history (who chose
-  what, when); the tool reads the newest row per item.
+  change. Save sends the changes of one Save in one request. Leaving a page with unsaved changes
+  asks (save now / keep for later); closing the tab warns.
 - **Groups:** "Use this design for all" saves the group's choice as item `group:<key>` (kinds
-  `variant`, `width`) on page `*` (read with every page). A block's design: its own choice, else
-  its group's, else its standard design; a block with its own choice that differs is shown as an
-  exception, "Stop" clears the group's choice (value null). Item keys may hold `|` (group keys):
+  `variant`, `width`, `text`) on page `*` (read with every page). A block's design: its own choice,
+  else its group's, else its standard design; a block with its own choice that differs is shown as
+  an exception, "Stop" clears the group's choice (value null). Item keys may hold `|` (group keys):
   split `item|kind` at the last `|`.
-- Tested end to end 2026-11-13: reviewer A's changes seen by a fresh browser after 22 s.
-
-Note: the sheet's export lags up to about a minute, so another browser can briefly show a note's
-or choice's previous state (the reviewer who changed it sees the change at once).
+- **History:** the pilot saved to a Google Sheet through Adobe's form submission service
+  (2026-11-13 to 11-17, test data only); retired on 2026-11-17, its rows not imported.
 
 ## Feedback summary for the AOE team (`summary.js`, `summarise.mjs`)
 
-The sheet's rows as **work items** for the engineers who implement them (AOE: Agentic Outcome
+The review's entries as **work items** for the engineers who implement them (AOE: Agentic Outcome
 Engineers), each with its target, reach and evidence (the reviewers' rows with links that open
 the tool at the block, text section or pin: `?block=s1b0`, `?section=s3`, `?note=<id>`).
 
@@ -80,9 +75,10 @@ the tool at the block, text section or pin: `?block=s1b0`, `?section=s3`, `?note
 node tools/review/summarise.mjs [--csv rows.csv] [--out migration-work/review-summary] [--themes …/themes.json]
 ```
 
-Writes `report.md` (for people) and `work-items.json` (the same for agents) to the git-ignored
-`migration-work/review-summary/`. Rows are merged like the tool merges them (newest per item and
-kind); test reviewers are left out (`--include-tests` keeps them); every standard page is read for
+Reads every entry from the review backend (its private `admin export`; `--csv` reads a file
+instead, for the tests). Writes `report.md` (for people) and `work-items.json` (the same for
+agents) to the git-ignored `migration-work/review-summary/`. Rows are merged like the tool merges
+them (newest per item and kind); test reviewers are left out (`--include-tests` keeps them); every standard page is read for
 the blocks' designs and the reach of each design.
 
 | Kind | From | Who handles it |
@@ -121,17 +117,17 @@ node tools/review/set-status.mjs --item variant:columns:media-text --state done|
   --release r1 --reason "image column widened" [--refs <ref>,<ref>] [--dry-run]
 ```
 
-It appends one row per reviewer row of the item (or only `--refs`) to the sheet, the way the tool
-saves (posted from a page on the branch preview): reviewer `AOE`, kind `status:<kind>` on the
+It saves one status per reviewer row of the item (or only `--refs`) in the review backend (its
+private `admin status`): reviewer `AOE`, kind `status:<kind>` on the
 reviewer's own item, value `{ state, release, reason, workItem, commit }`. The tool shows it under
 the comment or QA note ("AOE: done in r1 · image column widened"), the results page in an AOE
 column (AOE rows are no reviewer there), and the next summary per row (mixed states = "partly").
 `open` takes a status back. Decisions get no status here: the apply step will record what it
-applied. `release` is free text until the versioning of `/std` is decided (plan step 2); the
-commit is recorded with every status.
+applied. `release` is free text; the commit is recorded with every status.
 
-Test: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.csv`, made-up feedback
-on real standard pages, from `test/sample-rows.mjs`).
+Tests: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.csv`, made-up
+feedback on real standard pages, from `test/sample-rows.mjs`); the whole loop on the backend
+(reviewer → summary → AOE status → reviewer and results page): `backend/test/tool.test.mjs`.
 
 ## Source snapshots
 

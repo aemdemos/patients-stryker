@@ -6,7 +6,7 @@
  * libraries are installed outside the project (--deps, default /tmp/run-outputs/review-backend-deps)
  * from this folder's package.json.
  * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage] [--deps <dir>]
- *   [--only state,save,admin] [--dry-run]
+ *   [--only state,save,results,admin] [--dry-run]
  */
 import {
   existsSync, mkdirSync, copyFileSync, readFileSync,
@@ -33,6 +33,7 @@ const PACKAGE = 'std-review';
 const ACTIONS = {
   state: { web: true },
   save: { web: true },
+  results: { web: true, timeout: 120000 },
   admin: { web: false, timeout: 300000 },
 };
 

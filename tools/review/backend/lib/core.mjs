@@ -136,7 +136,7 @@ async function readKeys(state, keys) {
   return out;
 }
 
-/** a page's entries and every group choice, as rows like the sheet's (+ rev) */
+/** a page's entries and every group choice, as rows ({ page, item, kind, value, reviewer, time, rev }) */
 export async function readPage(state, page) {
   const [own, groups] = await Promise.all([keysOf(state, pagePattern(page)), keysOf(state, GROUP_PATTERN)]);
   return readKeys(state, [...own, ...groups]);

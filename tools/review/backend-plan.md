@@ -28,8 +28,7 @@ App Builder web actions (I/O Runtime) ── state store (App Builder State, key
 ```
 
 - The tool stays a static page on the branch preview (as now); only its store module changes
-  (`store.js` gets a second implementation, chosen by a setting, so the sheet keeps working until
-  the switch).
+  (`store.js` talks to the backend; the pilot's sheet route was retired on 2026-11-17).
 - Conversion, snapshot capture and the block index / groups per template stay in this workspace.
 
 ## Data model (State store, key → JSON)
@@ -76,7 +75,7 @@ What follows from it:
 | `GET state?page=` | reviewer | the page's entries + every group choice + AOE statuses |
 | `POST save` | reviewer | `{ page, changes: [{ item, key, kind, value, rev }] }` → per change saved / conflict |
 | `GET export?since=` | AOE | every entry (for `summarise.mjs` and the apply job) |
-| `POST status` | AOE | AOE statuses for a work item's rows (replaces the sheet rows of `set-status.mjs`) |
+| `POST status` | AOE | AOE statuses for a work item's rows (`set-status.mjs`) |
 | `POST bulk` | AOE | "these blocks → variant X" on N pages (the query runs here, against the block index) |
 | `POST invite`, `POST revoke`, `GET invites` | admin | invitation links |
 | `POST apply` | AOE | phase 4: choices into the `/std` documents in DA |
@@ -107,14 +106,17 @@ What follows from it:
    an invitation link (name from the link, read only; the link leaves the address bar), the sheet
    still the default. Tests: `backend/test/backend.test.mjs` (22 checks) and
    `backend/test/tool.test.mjs` (the tool in a browser), all passing on Stage.
-2. **Moving over**: the sheet's rows imported once; `summarise.mjs` and `set-status.mjs` read /
-   write the backend; the results page reads `export`.
+2. **Moving over** (done 2026-11-17): the sheet held only test data, so nothing was imported; the
+   tool uses the backend only (the sheet store removed); `summarise.mjs` reads `admin export`,
+   `set-status.mjs` writes `admin status`; the results page reads the web action `results` (an
+   invitation with the results right). Test: `backend/test/tool.test.mjs`, the whole loop.
 3. **Stable block keys**: the conversion writes a map per page (position → the block's position in
    the as-is page + a fingerprint of its words); the tool saves the key; the summary and apply
    find blocks by key; not found / not fitting = re-check (as now).
 4. **Apply to DA**: the apply job writes choices into the `/std` documents (DA technical account;
    how its secret reaches the action is decided then); a dry run first; re-uploads only on request.
-5. **Retire the sheet**: the form definition removed, the sheet's sharing closed.
+5. **Retire the sheet** (done 2026-11-17, with phase 2): `review-form.json` removed, so the form
+   service can no longer add rows; closing the sheet's sharing is the user's (Google Sheets).
 6. **Other templates**: block index, groups and snapshots per template; invitations scoped per
    template.
 

@@ -109,6 +109,17 @@ check('the status shows on load, by AOE', (r.json?.rows || []).some((x) => x.kin
 const ex = await admin({ op: 'export' });
 check('export has the entries', (ex.rows || []).some((x) => x.page === PAGE && x.item === 's1b0'));
 
+r = await web('results', { invite: T });
+check('results without the results right: 403', r.status === 403 && r.json?.error.code === 'no-results', r.status);
+const withResults = await admin({
+  op: 'invite', name: 'backend test (results)', paths: [PAGE], days: 1, results: true,
+});
+check('an invitation with the results right gets a results link', !!withResults.results && withResults.results.includes('results.html?invite='));
+r = await web('results', { invite: withResults.token });
+check('results: the entries in scope', r.status === 200 && r.json.rows.some((x) => x.page === PAGE && x.item === 's1b0')
+  && r.json.rows.every((x) => x.page === '*' || x.page === PAGE), r.status);
+await admin({ op: 'revoke', id: withResults.id });
+
 r = await web(`state?page=${encodeURIComponent(PAGE)}`, { method: 'OPTIONS' });
 check('CORS preflight from the review preview', r.status === 204 && r.headers.get('access-control-allow-origin') === ORIGIN, `${r.status} ${r.headers.get('access-control-allow-origin')}`);
 r = await web(`state?page=${encodeURIComponent(PAGE)}`, { method: 'OPTIONS', origin: 'https://example.com' });
