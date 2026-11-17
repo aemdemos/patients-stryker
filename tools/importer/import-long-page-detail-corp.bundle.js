@@ -4136,6 +4136,81 @@ var CustomImportScript = (() => {
       });
     });
   }
+  function variantsOf(table) {
+    var _a;
+    const m = norm(((_a = table.querySelector("tr")) == null ? void 0 : _a.textContent) || "").match(/^([^(]+?)\s*(?:\((.*)\))?$/);
+    return { name: m[1], list: (m[2] || "").split(",").map((o) => o.trim()).filter(Boolean) };
+  }
+  function setVariants(table, name, list) {
+    const cell = table.querySelector("tr").firstElementChild;
+    cell.textContent = list.length ? `${name} (${list.join(", ")})` : name;
+  }
+  function heroVariants(doc, main) {
+    blocksNamed(main, /^hero corp\b/).forEach((table) => {
+      const section = sectionsOf(main).find((s) => s.nodes.includes(table));
+      const meta = section == null ? void 0 : section.meta;
+      if (!meta) return;
+      const read = (key) => {
+        var _a;
+        const row = metaRow(meta, key);
+        if (!row) return "";
+        const value = norm(((_a = row.children[1]) == null ? void 0 : _a.textContent) || "");
+        row.remove();
+        return value;
+      };
+      const { name, list } = variantsOf(table);
+      const banner = list.includes("banner");
+      const [top, left, right] = read("text position").split(",").map((v) => parseFloat(v));
+      const width = parseFloat(read("text width"));
+      read("text on phones");
+      read("text colour on phones");
+      const colour = read("text colour").toLowerCase();
+      const box = read("text box").toLowerCase().replace(/\s+/g, "-");
+      let placement = "";
+      if (!Number.isNaN(left) && left >= 40) placement = "right";
+      else if (!banner && !Number.isNaN(top)) {
+        if (top >= 45) placement = "bottom-left";
+        else if (right <= 15) placement = "wide";
+        else if (top <= 12 || right <= 52) placement = "top-left";
+        else placement = "left";
+      }
+      if (placement) list.push(placement);
+      if (banner && placement !== "right" && !Number.isNaN(width) && width <= 50) list.push("half-text");
+      setVariants(table, name, list);
+      const styles = [colour && `${colour}-text`, box && `box-${box}`].filter(Boolean);
+      if (styles.length) {
+        const row = metaRow(meta, "style");
+        const now = row ? row.children[1].textContent.split(",").map((s) => s.trim()).filter(Boolean) : [];
+        setMetaRow(doc, meta, "style", [...now, ...styles].join(", "));
+      }
+      if (meta.querySelectorAll("tr").length <= 1) meta.remove();
+    });
+  }
+  var BUNDLES = [
+    [["large-copy", "serif"], "large-serif-copy"],
+    [["xlarge-copy", "serif"], "xlarge-serif-copy"],
+    [["gray-last", "large-subtitles", "plain-bold"], "faculty"],
+    [["label-bold", "plain-bold"], "chapter-labels"],
+    [["gray-all", "plain-bold"], "gray-cards"]
+  ];
+  function bundleVariants(main, warn) {
+    [...main.querySelectorAll("table")].forEach((table) => {
+      var _a;
+      const head = norm(((_a = table.querySelector("tr")) == null ? void 0 : _a.textContent) || "");
+      if (!/^[a-z][a-z -]*\([^()]*\)$/i.test(head) || /^(section )?metadata\b/i.test(head)) return;
+      const { name, list: raw } = variantsOf(table);
+      const list = raw.map((v) => v.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""));
+      let out = [...list];
+      BUNDLES.forEach(([parts, bundle]) => {
+        if (!parts.every((p) => out.includes(p))) return;
+        const at = out.indexOf(parts[0]);
+        out = out.filter((v) => !parts.includes(v));
+        out.splice(Math.min(at, out.length), 0, bundle);
+      });
+      if (out.join() !== list.join()) setVariants(table, name, out);
+      if (out.length > 3) warn.push(`more than 3 variants: ${name} (${out.join(", ")})`);
+    });
+  }
   var GOLD_BOX = /^panel\b.*\bgold(-gradient)?\b|^columns\b.*\bgold-lead\b/;
   function whiteOnGold(doc, main) {
     blocksNamed(main, GOLD_BOX).forEach((table) => {
@@ -4332,6 +4407,8 @@ var CustomImportScript = (() => {
     pageSpacers(doc, main, url);
     main.querySelectorAll("[data-blank-before]").forEach((a) => a.removeAttribute("data-blank-before"));
     tidyEmphasis(doc, main);
+    heroVariants(doc, main);
+    bundleVariants(main, warn);
     const left = main.textContent.match(/\[\[[^\]]*\]/g);
     if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(" ")}`);
     return warn;

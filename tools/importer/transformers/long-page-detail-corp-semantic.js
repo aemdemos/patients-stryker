@@ -844,6 +844,106 @@ function displayLines(doc, main) {
 
 /* ---- 5. the remaining tags: colours, serif in headings, then unwrap ---- */
 
+/* ---- 4b. variant-only rule (plan §1, §4.4, decided 2026-11-17) ---- */
+
+/** a block table's variants (from "Columns (a, b)") and a setter */
+function variantsOf(table) {
+  const m = norm(table.querySelector('tr')?.textContent || '').match(/^([^(]+?)\s*(?:\((.*)\))?$/);
+  return { name: m[1], list: (m[2] || '').split(',').map((o) => o.trim()).filter(Boolean) };
+}
+
+function setVariants(table, name, list) {
+  const cell = table.querySelector('tr').firstElementChild;
+  cell.textContent = list.length ? `${name} (${list.join(', ')})` : name;
+}
+
+/**
+ * The hero's layout rows in its Section Metadata become variants and section styles (no
+ * position in authoring):
+ * - `Text position` → one placement: `right` (text from the middle: operating room; on a
+ *   banner the right half, bunion), `bottom-left` (spine, environmental programs), `wide`
+ *   (1788, build-your-ASC), `top-left` (ASC, CR hub, CLOUT, upper extremities) or `left` (CR,
+ *   instruments);
+ * - `Text width` → `half-text` (50% or less; a wider column is the full width);
+ * - `Text colour` → section style `white-text` / `light-gray-text`, `Text box` → `box-<colour>`;
+ * - `Text on phones`, `Text colour on phones` → dropped (hero-corp.js: the text alone on phones
+ *   without a phone image, under it with one, in the page text colour).
+ */
+function heroVariants(doc, main) {
+  blocksNamed(main, /^hero corp\b/).forEach((table) => {
+    const section = sectionsOf(main).find((s) => s.nodes.includes(table));
+    const meta = section?.meta;
+    if (!meta) return;
+    const read = (key) => {
+      const row = metaRow(meta, key);
+      if (!row) return '';
+      const value = norm(row.children[1]?.textContent || '');
+      row.remove();
+      return value;
+    };
+    const { name, list } = variantsOf(table);
+    const banner = list.includes('banner');
+    const [top, left, right] = read('text position').split(',').map((v) => parseFloat(v));
+    const width = parseFloat(read('text width'));
+    read('text on phones');
+    read('text colour on phones');
+    const colour = read('text colour').toLowerCase();
+    const box = read('text box').toLowerCase().replace(/\s+/g, '-');
+    let placement = '';
+    if (!Number.isNaN(left) && left >= 40) placement = 'right';
+    else if (!banner && !Number.isNaN(top)) {
+      if (top >= 45) placement = 'bottom-left';
+      else if (right <= 15) placement = 'wide';
+      else if (top <= 12 || right <= 52) placement = 'top-left';
+      else placement = 'left';
+    }
+    if (placement) list.push(placement);
+    if (banner && placement !== 'right' && !Number.isNaN(width) && width <= 50) list.push('half-text');
+    setVariants(table, name, list);
+    const styles = [colour && `${colour}-text`, box && `box-${box}`].filter(Boolean);
+    if (styles.length) {
+      const row = metaRow(meta, 'style');
+      const now = row ? row.children[1].textContent.split(',').map((s) => s.trim()).filter(Boolean) : [];
+      setMetaRow(doc, meta, 'style', [...now, ...styles].join(', '));
+    }
+    if (meta.querySelectorAll('tr').length <= 1) meta.remove();
+  });
+}
+
+/**
+ * At most 3 variants per block: the combinations used together become one name (`serif` with
+ * a copy size → `large-serif-copy` / `xlarge-serif-copy`; jr45's grey faculty boxes `faculty`;
+ * TEACH's chapter labels `chapter-labels`; CLOUT's grey evidence cards `gray-cards`);
+ * scripts/corp.js expands them again.
+ */
+const BUNDLES = [
+  [['large-copy', 'serif'], 'large-serif-copy'],
+  [['xlarge-copy', 'serif'], 'xlarge-serif-copy'],
+  [['gray-last', 'large-subtitles', 'plain-bold'], 'faculty'],
+  [['label-bold', 'plain-bold'], 'chapter-labels'],
+  [['gray-all', 'plain-bold'], 'gray-cards'],
+];
+
+function bundleVariants(main, warn) {
+  [...main.querySelectorAll('table')].forEach((table) => {
+    const head = norm(table.querySelector('tr')?.textContent || '');
+    // (block tables only: "Name (variants)", not a cell table whose first line has brackets)
+    if (!/^[a-z][a-z -]*\([^()]*\)$/i.test(head) || /^(section )?metadata\b/i.test(head)) return;
+    const { name, list: raw } = variantsOf(table);
+    // the names as the classes they become ("gray Last" → `gray-last`, "columns 67 33")
+    const list = raw.map((v) => v.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''));
+    let out = [...list];
+    BUNDLES.forEach(([parts, bundle]) => {
+      if (!parts.every((p) => out.includes(p))) return;
+      const at = out.indexOf(parts[0]);
+      out = out.filter((v) => !parts.includes(v));
+      out.splice(Math.min(at, out.length), 0, bundle);
+    });
+    if (out.join() !== list.join()) setVariants(table, name, out);
+    if (out.length > 3) warn.push(`more than 3 variants: ${name} (${out.join(', ')})`);
+  });
+}
+
 /**
  * White words on a gold box (the SKILL gold panels and gold title bars: white and black Futura
  * bold on .bg-gold) → Bold + Italic, which these boxes show white (gold on gold would not
@@ -1093,6 +1193,8 @@ function semanticMarkup(main, doc, url = '') {
   pageSpacers(doc, main, url);
   main.querySelectorAll('[data-blank-before]').forEach((a) => a.removeAttribute('data-blank-before'));
   tidyEmphasis(doc, main);
+  heroVariants(doc, main);
+  bundleVariants(main, warn);
   const left = main.textContent.match(/\[\[[^\]]*\]/g);
   if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(' ')}`);
   return warn;

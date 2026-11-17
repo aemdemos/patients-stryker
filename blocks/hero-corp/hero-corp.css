@@ -111,6 +111,51 @@
   min-height: 0;
 }
 
+/* ---- placements (variants, no position in authoring): the text box's top, left and right
+   inset, % of the image, the value most stryker.com slides of a group use (measured
+   2026-11-17): top-left ASC, CR hub, CLOUT, upper extremities; left CR, instruments; wide
+   1788, build-your-ASC, Mako overview; bottom-left spine MedEd, environmental programs;
+   right operating room. On phones the text goes under the phone image, or alone (hero-corp.js) */
+.hero-corp.image-slide.top-left {
+  --hero-slide-top: 10%;
+  --hero-slide-left: 5%;
+  --hero-slide-right: 55%;
+}
+
+.hero-corp.image-slide.left {
+  --hero-slide-top: 25%;
+  --hero-slide-left: 10%;
+  --hero-slide-right: 60%;
+}
+
+.hero-corp.image-slide.wide {
+  --hero-slide-top: 20%;
+  --hero-slide-left: 5%;
+  --hero-slide-right: 5%;
+}
+
+.hero-corp.image-slide.bottom-left {
+  --hero-slide-top: 60%;
+  --hero-slide-left: 10%;
+  --hero-slide-right: 40%;
+}
+
+.hero-corp.image-slide.right {
+  --hero-slide-top: 10%;
+  --hero-slide-left: 55%;
+  --hero-slide-right: 3%;
+}
+
+/* `half-text`: a banner's text column half the banner; `right`: that column in the right half
+   (bunion, total ankle replacement) */
+.hero-corp.banner.half-text {
+  --hero-banner-text-width: 50%;
+}
+
+.hero-corp.banner.right {
+  --hero-slide-left: 50%;
+}
+
 .hero-corp.image-slide picture {
   display: block;
   position: static;

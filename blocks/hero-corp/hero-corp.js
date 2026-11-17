@@ -159,6 +159,10 @@ function readSlideOptions(block) {
  *   Text width      the banner's text column in % ("33", "50", "67", "100")
  * The block itself is `Hero Corp` (the slide) or `Hero Corp (banner)`; news pages set the same
  * slide layout with option classes instead (`image-slide, top-15, left-56, right-10, …`).
+ * Long-page-detail pages author none of these rows (variant-only rule, 2026-11-17): a placement
+ * variant (`top-left`, `left`, `wide`, `bottom-left`, `right`), `half-text`, and the section
+ * styles `white-text` / `light-gray-text` / `box-<colour>`; the rows stay readable for the
+ * other corp templates.
  */
 function readSectionOptions(block) {
   const section = block.closest('.section');
@@ -182,6 +186,17 @@ function readSectionOptions(block) {
   // `Text colour on phones`: one colour for all the text below 600px (dark-gray, black)
   const phoneColour = (data.textColourOnPhones || '').trim().toLowerCase().replace(/\s+/g, '-');
   if (phoneColour) block.dataset.phoneText = phoneColour;
+  // section styles (the variant-only rule, corp long-page-detail): `white-text` /
+  // `light-gray-text` for the text colour, `box-<colour>` for the box around the first text row
+  const styles = section ? [...section.classList] : [];
+  const boxStyle = styles.find((name) => /^box-[a-z-]+$/.test(name));
+  if (!box && boxStyle) block.dataset.textBox = boxStyle.slice(4);
+  const colourStyle = styles.find((name) => /^(white|light-gray)-text$/.test(name));
+  if (!colour && colourStyle) block.dataset.textColour = colourStyle.replace(/-text$/, '');
+  // a banner with its text in the right half (`right`: bunion, total ankle replacement)
+  if (block.classList.contains('banner') && block.classList.contains('right')) {
+    block.classList.add('half-text');
+  }
   const width = parseFloat(data.textWidth);
   if (!Number.isNaN(width)) block.style.setProperty('--hero-banner-text-width', `${width}%`);
   // a half-width (or narrower) text column: over the image from 900px only (CSS)
@@ -227,10 +242,26 @@ function autoplayVideo(block) {
   watch.observe(block, { childList: true, subtree: true });
 }
 
+// the slide's text placements (variants; the insets are in hero-corp.css)
+const PLACEMENTS = ['top-left', 'left', 'wide', 'bottom-left', 'right'];
+
+/**
+ * A slide with a placement variant lays its text out on phones by itself: under the phone
+ * image when it has one, alone (without the image) when it has none.
+ * @param {Element} block The hero-corp block
+ */
+function phoneLayout(block) {
+  if (!block.classList.contains('image-slide')) return;
+  if (!PLACEMENTS.some((name) => block.classList.contains(name))) return;
+  block.classList.add('text-below');
+  if (!block.querySelector('.hero-image-mobile')) block.classList.add('text-alone');
+}
+
 export default function decorate(block) {
   readSectionOptions(block);
   readSlideOptions(block);
   setupHero(block);
+  phoneLayout(block);
   autoplayVideo(block);
 
   if (!block.querySelector(':scope > div:first-child picture')) {

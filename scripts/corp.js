@@ -78,10 +78,33 @@ function decorateIconLinks(main) {
 }
 
 /**
+ * Bundled block variants (at most 3 variants per block, the variant-only rule of corp
+ * long-page-detail, 2026-11-17): one authored name stands for variants used together, so the
+ * blocks' CSS for the parts applies. `faculty`: jr45's grey faculty boxes; `chapter-labels`:
+ * TEACH's "Chapter N:" labels; `gray-cards`: CLOUT's grey evidence cards with plain Bold
+ * labels; `*-serif-copy`: a copy size with the Egyptienne copy.
+ */
+const VARIANT_BUNDLES = {
+  'large-serif-copy': ['large-copy', 'serif'],
+  'xlarge-serif-copy': ['xlarge-copy', 'serif'],
+  'serif-copy': ['serif'],
+  faculty: ['gray-last', 'large-subtitles', 'plain-bold'],
+  'chapter-labels': ['label-bold', 'plain-bold'],
+  'gray-cards': ['gray-all', 'plain-bold'],
+};
+
+function expandVariantBundles(main) {
+  Object.entries(VARIANT_BUNDLES).forEach(([bundle, parts]) => {
+    main.querySelectorAll(`div.${bundle}`).forEach((block) => block.classList.add(...parts));
+  });
+}
+
+/**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  expandVariantBundles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
