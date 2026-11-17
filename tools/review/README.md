@@ -27,6 +27,7 @@ browser keeps the token, later visits need no link (locally the frames read `/co
 | `pages.json` | The 672 standard pages (title, business unit); `python3 -I tools/importer/standardise/review-pages.py content tools/review/pages.json` |
 | `groups.js` | The variants a block's content fits and its group ("blocks like this": block type + standard variant + for Columns the cell kinds of its first row, more rows flagged); used by `frame.js` and `build-groups.mjs` |
 | `build-groups.mjs`, `groups.json` | The 34 groups over the 672 standard pages with their size (blocks, pages); `node tools/review/build-groups.mjs` against the workspace preview |
+| `status.html`, `status.js`, `status.css` | The status of every page: colour-coded states, filters, "waits for me" order (below) |
 | `results.html`, `results.js`, `results.css` | Review results from every entry in the scope of an invitation with the results right (`results.html?invite=…`): progress (pages marked reviewed, activity, reviewers), design decisions (group choices with their reach; single-block choices named by block type and design, values equal to the block's own design left out), comments by block type and per page, QA notes (open / resolved, by category) with links that open the tool at the pin (`index.html?page=…&vp=…&note=<id>`); CSV downloads of comments and QA notes; test entries hidden by default |
 | `store.js` | Saving and loading the review state (below) |
 | `blockkeys.js` | Stable keys for blocks and text sections (below): what choices are saved under |
@@ -91,6 +92,30 @@ opens it, replies come below it. The back and forth happens here, not in calls.
   team's latest status) and work items their thread counts; a reviewer's reply newer than the
   agent's reading makes the reading stale. The results page's AOE column: the thread state and the
   latest status.
+
+## Status of every page (`status.html`, `status.js`, `status.css`)
+
+Where each page stands in the back and forth, for the reviewers and the AOE team alike: every
+page of the invitation's scope (`pages.json`, now with each page's template), filtered by
+template, business unit, state, search and "only new since my last visit"; links into the tool.
+The states come from the web action `overview` (`backend/lib/states.mjs`), each a colour **and** a
+label, worded for the viewer:
+
+| State | Colour | When |
+|---|---|---|
+| Answered: waiting for the reviewers | yellow | every unresolved thread was answered by the AOE team |
+| Waiting for the AOE team | red | a thread waits for the AOE team |
+| In review | grey-blue | activity, not marked reviewed, nothing open |
+| Resolved | green | marked reviewed after feedback (threads, all closed, or design choices) |
+| Approved as is | light green | marked reviewed, never any feedback |
+| Not reviewed yet | black | nothing yet |
+
+Order "what waits for me first": reviewers see yellow, red, grey-blue, green, light green, black;
+the AOE team red first. "New": the latest activity is by someone else and after the viewer's last
+visit (kept in the browser). Counts per state on top (click to filter) and a bar in the state
+colours. Any invitation opens it (`status.html?invite=…`, or the tool's link once the browser has
+the invitation). Tests: `backend/test/states.test.mjs` (the state rules), `backend/test/status.test.mjs`
+(the page in a browser, one page per state, both views).
 
 ## Block keys (`blockkeys.js`)
 

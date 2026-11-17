@@ -1090,6 +1090,7 @@ function loadPage() {
     el('li', {}, el('a', { href: `${CONTENT}/std${state.page}`, target: '_blank', rel: 'noopener' }, 'Standard page')),
     el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')),
     el('li', {}, el('a', { href: SOURCE[state.page] || 'https://www.stryker.com/', target: '_blank', rel: 'noopener' }, 'Live stryker.com page')),
+    el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
   );
   $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
   $('.rv-pagebox-body').replaceChildren(el('p', { class: 'rv-none' }, 'Loading the saved reviews…'));

@@ -9,6 +9,7 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 | `state` | web | `GET ?page=` + header `x-review-invite` → `{ reviewer, scope, expires, rows }` (the page's entries and every group choice, AOE statuses among them) |
 | `save` | web | `POST { page, changes: [{ page?, item, kind, value, rev }] }` + header `x-review-invite` → per change saved / conflict |
 | `results` | web | `GET` + header `x-review-invite` (an invitation with the results right) → every entry in its scope and every group choice, for the results page |
+| `overview` | web | `GET` + header `x-review-invite` (any invitation) → every page with entries in its scope and its state (`lib/states.mjs`), for the status page |
 | `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `answer`, `status`, `import`, `rekey`, `audit`, `purge-invite`, `purge-test` (see the action's header) |
 
 - **Web actions** answer `https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/<name>`;
@@ -40,6 +41,8 @@ node tools/review/backend/admin.mjs invite --name "Iustin" --paths / --days 90 -
 node tools/review/backend/admin.mjs invites | revoke --id <id> | purge-invite --id <id> | export
 node tools/review/backend/admin.mjs audit --json '{"date":"2026-11-17","page":"/us/en/…"}'   # who changed what, before / after
 node tools/review/backend/test/backend.test.mjs     # the actions (test page /test/backend, cleaned up)
+node tools/review/backend/test/states.test.mjs      # the page states (no backend needed)
+node tools/review/backend/test/status.test.mjs      # the status page in a browser (pages without entries only)
 node tools/review/backend/test/tool.test.mjs        # the whole loop in a browser (local preview): reviewer → summary → AOE status → reviewer, results;
                                                     # only on a page nobody has saved anything on (it never touches a reviewer's entries)
 ```

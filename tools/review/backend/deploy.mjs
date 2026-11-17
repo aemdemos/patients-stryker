@@ -6,7 +6,7 @@
  * libraries are installed outside the project (--deps, default /tmp/run-outputs/review-backend-deps)
  * from this folder's package.json.
  * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage] [--deps <dir>]
- *   [--only state,save,results,admin] [--dry-run]
+ *   [--only state,save,results,overview,admin] [--dry-run]
  */
 import {
   existsSync, mkdirSync, copyFileSync, readFileSync,
@@ -34,6 +34,7 @@ const ACTIONS = {
   state: { web: true },
   save: { web: true },
   results: { web: true, timeout: 120000 },
+  overview: { web: true, timeout: 120000 },
   admin: { web: false, timeout: 300000 },
 };
 

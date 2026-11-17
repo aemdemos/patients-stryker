@@ -146,7 +146,8 @@ What follows from it:
      `set-status.mjs` stays as the bulk fallback.
    - *Built 2026-11-17: threads, AOE role (any reviewer of the page closes a thread, the user's
      choice), set-status as AOE answers, summary and results with thread states; loop test covers
-     the whole back and forth. Next: the status page.*
+     the whole back and forth. Status page built the same day: `tools/review/status.html`
+     (web action `overview`, states in `backend/lib/states.mjs`), templates in `pages.json`.*
    - Templates on the pages list (`pages.json`) for the filter.
 7. **Runbook for new sessions** (requested 2026-11-17): in the project, next to the code
    (`tools/review/RUNBOOK.md`, pointed to from AGENTS.md): the backstory (as-is → standard, the

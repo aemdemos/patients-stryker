@@ -11,7 +11,7 @@
  *   invites                                 every invitation (no tokens)
  *   export                                  every entry, as rows (summary, apply, results)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
- *   import { rows: [{ page, item, kind, value, reviewer, time, inv? }] }  rows from elsewhere (e.g. a CSV), as they were
+ *   import { rows: [{ page, item, kind, value, reviewer, time, inv?, role? }] }  rows from elsewhere (e.g. a CSV), as they were
  *   rekey { page, moves: [{ from, to }] }  entries moved to another item name (e.g. position → block key)
  *   audit { date, page }                    the audit files of one day (default today), optionally one page
  *   purge-invite { id }                    removes every entry one invitation wrote (any page)
@@ -104,7 +104,7 @@ export async function main(params) {
           // (the newest row per entry wins)
           if (!current || current.at < r.time) {
             await state.put(key, JSON.stringify({
-              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: r.inv || 'import',
+              v: r.value, by: r.reviewer, at: r.time, rev: (current?.rev || 0) + 1, inv: r.inv || 'import', role: r.role === 'aoe' ? 'aoe' : 'reviewer',
             }), { ttl: TTL });
             n += 1;
           }

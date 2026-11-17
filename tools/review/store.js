@@ -82,7 +82,8 @@ export function inviteToken() {
   return window.localStorage.getItem(INVITE_KEY) || '';
 }
 
-async function call(path, opts = {}) {
+/** a call to the review backend with the invitation (state, save, results, overview) */
+export async function call(path, opts = {}) {
   const resp = await fetch(`${CONFIG.backend}/${path}`, {
     ...opts,
     headers: { 'x-review-invite': inviteToken(), ...(opts.body ? { 'content-type': 'application/json' } : {}) },
