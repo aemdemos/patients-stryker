@@ -2903,6 +2903,16 @@ var CustomImportScript = (() => {
       }
     });
   }
+  function splitStandaloneLinks(main, document) {
+    main.querySelectorAll(".standalone-link").forEach((span) => {
+      [...span.querySelectorAll("a")].slice(1).forEach((a) => {
+        const own = document.createElement("span");
+        own.className = "standalone-link";
+        a.replaceWith(own);
+        own.append(a);
+      });
+    });
+  }
   var text4 = (el2) => (el2.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
   function buildingBlocks(main, document) {
     const groups = [];
@@ -3301,6 +3311,7 @@ var CustomImportScript = (() => {
       const tableCount = tables(main, document);
       const contactReport = { phones: [] };
       contacts(main, document, contactReport);
+      splitStandaloneLinks(main, document);
       executeTransformers("beforeTransform", main, payload);
       executeTransformers("afterTransform", main, payload);
       const bracketStyles = stripBrackets(main, document);

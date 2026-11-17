@@ -36,6 +36,19 @@ function executeTransformers(hookName, element, payload) {
   });
 }
 
+// A span.standalone-link that holds several links (icrc: the two Chinese links in one span):
+// each link gets its own span, so each becomes a bold + underline link.
+function splitStandaloneLinks(main, document) {
+  main.querySelectorAll('.standalone-link').forEach((span) => {
+    [...span.querySelectorAll('a')].slice(1).forEach((a) => {
+      const own = document.createElement('span');
+      own.className = 'standalone-link';
+      a.replaceWith(own);
+      own.append(a);
+    });
+  });
+}
+
 const text = (el) => (el.textContent || '').replace(/[\s\u00a0]+/g, ' ').trim();
 
 // Runs of .buildingblock siblings (lifecycle support): phase heads → Columns (color-heads),
@@ -499,6 +512,7 @@ export default {
     const tableCount = tables(main, document);
     const contactReport = { phones: [] };
     contacts(main, document, contactReport);
+    splitStandaloneLinks(main, document);
     executeTransformers('beforeTransform', main, payload);
     executeTransformers('afterTransform', main, payload);
     const bracketStyles = stripBrackets(main, document);

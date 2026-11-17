@@ -297,7 +297,22 @@
 .hero-corp.image-slide.framed {
   max-width: var(--container-max);
   margin-inline: auto;
+}
+
+.hero-corp.image-slide.framed > div:first-child {
   box-shadow: var(--shadow-soft);
+  clip-path: inset(-100vmax 0 0);
+}
+
+@media (width >= 900px) {
+  .hero-corp.image-slide.framed {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .hero-corp.image-slide.framed > div:first-child {
+    box-shadow: none;
+    clip-path: none;
+  }
 }
 
 .hero-corp.image-slide.text-above {
