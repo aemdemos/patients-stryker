@@ -41,7 +41,9 @@ const HEADINGS = 'h2, h3, h4, h5, h6';
 // live .fontsize-<s>em classes that map to an existing section style
 const SIZE_STYLES = { '1-25': 'lead', '1-75': 'p-1-75' };
 const SIZES = ['1-25', '1-5', '1-75', '2', '2-5', '8'];
-// bracket colour classes (styles/styles.css span.color-*) by their exact hex
+// the marker element around gold text until goldBoldItalic() makes it Bold + Italic
+const GOLD_MARK = 'gold-text';
+// colour classes by their exact hex (gold → Bold + Italic; the others are still bracket tags)
 const COLOURS = {
   ffb500: 'color-gold',
   '1c5687': 'color-blue',
@@ -326,8 +328,56 @@ function wrapInTag(first, last, cls) {
       last.textContent = last.textContent.slice(0, last.textContent.length - tail.length);
     }
   }
+  // gold: a <gold-text> marker around the run (no span, so the span cleanups keep it), made
+  // Bold + Italic by goldBoldItalic() at the end
+  if (cls === 'color-gold') {
+    const mark = doc.createElement(GOLD_MARK);
+    first.before(mark);
+    const run = [];
+    for (let n = first; n; n = n.nextSibling) {
+      run.push(n);
+      if (n === last) break;
+    }
+    mark.append(...run);
+    return;
+  }
   first.before(doc.createTextNode(`[[${cls}]`));
   last.after(doc.createTextNode(']'));
+}
+
+/**
+ * Gold text (<gold-text> runs, mapColours) → Bold + Italic, gold Futura bold as everywhere
+ * on the corp site: inside a bold run only the italic is added, elsewhere both (bold inside
+ * the run merges into it). Runs already Bold + Italic throughout stay as they are.
+ */
+function goldBoldItalic(root) {
+  const doc = root.ownerDocument;
+  const inside = (node, tag) => {
+    for (let el = node.parentElement; el && el !== root; el = el.parentElement) {
+      if (el.tagName === tag) return true;
+    }
+    return false;
+  };
+  [...root.querySelectorAll(GOLD_MARK)].reverse().forEach((mark) => {
+    const texts = [];
+    const walker = doc.createTreeWalker(mark, 4);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      if (t.textContent.trim()) texts.push(t);
+    }
+    if (texts.length && !texts.every((t) => inside(t, 'STRONG') && inside(t, 'EM'))) {
+      const em = doc.createElement('em');
+      em.append(...mark.childNodes);
+      if (inside(mark, 'STRONG')) mark.append(em);
+      else {
+        const strong = doc.createElement('strong');
+        strong.append(em);
+        mark.append(strong);
+      }
+    }
+    unwrap(mark);
+  });
+  // bold or italic inside the new run is one run
+  root.querySelectorAll('strong strong, em em').forEach(unwrap);
 }
 
 /**
@@ -404,9 +454,11 @@ function standaloneLinks(root) {
 }
 
 /**
- * span.futura-bold in running text → <strong><em>…</em></strong>. The lead carousel's
- * headline lines are left to the hero-image-slide parser, which reads their Futura and
- * vw size spans (e.g. "Following in her mother's footsteps": Bold, size-2-5).
+ * span.futura-bold in running text → <strong> (black: Futura bold on a line of its own,
+ * body-font bold in running text, news-detail.css; gold runs become Bold + Italic in
+ * goldBoldItalic). The lead carousel's headline lines are left to the hero-image-slide
+ * parser, which reads their Futura and vw size spans (e.g. "Following in her mother's
+ * footsteps": Bold, size-2-5).
  */
 function futuraBold(root) {
   [...root.querySelectorAll('span.futura-bold')]
@@ -416,12 +468,7 @@ function futuraBold(root) {
       const outer = span.parentElement && span.parentElement.closest('strong, b');
       if (outer && norm(outer.textContent) === norm(span.textContent)) unwrap(outer);
       span.querySelectorAll('strong, b, span.futura-bold').forEach(unwrap);
-      const doc = span.ownerDocument;
-      const strong = doc.createElement('strong');
-      const em = doc.createElement('em');
-      em.append(...span.childNodes);
-      strong.append(em);
-      span.replaceWith(strong);
+      rename(span, 'strong');
     });
 }
 
@@ -486,6 +533,7 @@ export default function transform(hookName, element, payload) {
     futuraBold(root);
     dropStyleSpans(root);
     semanticInline(root);
+    goldBoldItalic(root);
   }
   if (hookName === TransformHook.afterTransform) {
     writeSections(root);
