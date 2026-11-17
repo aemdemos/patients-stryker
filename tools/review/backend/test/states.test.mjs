@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /*
- * Test of the page states for the status page (lib/states.mjs): one page per state, the order of
- * precedence, threads (reviewer reply, AOE answer, close, an older AOE status row), notes.
+ * Test of the shared review rules (tools/review/threads.js): thread states from handovers (plain
+ * replies never change the turn), page states (in review, approve, skip) and their order of
+ * precedence, older data (reviewed mark, AOE status rows).
  * usage: node tools/review/backend/test/states.test.mjs
  */
-import { pageState } from '../lib/states.mjs';
+import { pageState, threadState } from '../../threads.js';
 
 let n = 0;
 const row = (item, kind, value, reviewer = 'Jane', role = 'reviewer') => {
@@ -14,33 +15,54 @@ const row = (item, kind, value, reviewer = 'Jane', role = 'reviewer') => {
   };
 };
 const aoe = (item, kind, value) => row(item, kind, value, 'Iustin', 'aoe');
+const B = 'b:columns:1';
+let failures = 0;
+const check = (label, ok, detail = '') => {
+  if (!ok) failures += 1;
+  console.log(`${ok ? 'ok  ' : 'FAIL'} ${label}${ok ? '' : ` ${detail}`}`);
+};
+
+// threads
+const opener = row(B, 'comment', 'too small');
+const internal = row(B, 'reply:comment:r1', { text: 'do you agree, Ann?' });
+const ann = row(B, 'reply:comment:r2', { text: 'yes' }, 'Ann');
+const sent = row(B, 'reply:comment:r3', { action: 'handover', text: 'please enlarge' });
+const aoeTalk = aoe(B, 'reply:comment:a1', { text: 'internal: which token?' });
+const back = aoe(B, 'reply:comment:a2', { action: 'handover', text: 'enlarged', status: { state: 'done', release: 'r2' } });
+const close = row(B, 'reply:comment:r4', { action: 'resolve' });
+check('a new comment and plain replies: internal', threadState([opener, internal, ann]).state === 'internal');
+check('… sent to the AOE team: waiting for the AOE team', threadState([opener, internal, ann, sent]).state === 'waiting-aoe');
+check('… AOE internal talk changes nothing', threadState([opener, sent, aoeTalk]).state === 'waiting-aoe');
+const handed = threadState([opener, sent, aoeTalk, back]);
+check('… sent back with a status: waiting for the reviewers, status kept', handed.state === 'waiting-reviewer' && handed.status?.state === 'done' && handed.status.release === 'r2', JSON.stringify(handed));
+check('… resolved', threadState([opener, sent, back, close]).state === 'resolved');
+check('an older AOE reply with a status counts as a handover', threadState([opener, aoe(B, 'reply:comment:a3', { text: 'x', status: { state: 'done' } })]).state === 'waiting-reviewer');
+check('an older status row counts as an AOE handover', threadState([opener, row(B, 'status:comment', { state: 'done' }, 'AOE', 'aoe')]).state === 'waiting-reviewer');
+
+// page states
 const cases = [
   ['nothing yet', [], 'unreviewed'],
-  ['a design choice only, not marked', [row('b:columns:1', 'variant', 'card-grid')], 'in-review'],
-  ['marked reviewed, nothing else', [row('page', 'reviewed', true)], 'approved'],
-  ['marked reviewed after a design choice', [row('b:columns:1', 'variant', 'card-grid'), row('page', 'reviewed', true)], 'resolved'],
-  ['a comment, no answer', [row('b:columns:1', 'comment', 'too small')], 'waiting-aoe'],
-  ['a comment the AOE team answered', [row('b:columns:1', 'comment', 'too small'), aoe('b:columns:1', 'reply:comment:a1', { text: 'done', status: { state: 'done' } })], 'waiting-reviewer'],
-  ['… then the reviewer replied', [row('b:columns:1', 'comment', 'too small'), aoe('b:columns:1', 'reply:comment:a1', { text: 'done' }), row('b:columns:1', 'reply:comment:r1', { text: 'not quite' })], 'waiting-aoe'],
-  ['… then closed and the page marked', [row('b:columns:1', 'comment', 'too small'), aoe('b:columns:1', 'reply:comment:a1', { text: 'done' }), row('b:columns:1', 'reply:comment:r2', { action: 'resolve' }), row('page', 'reviewed', true)], 'resolved'],
-  ['closed but the page not marked reviewed', [row('b:columns:1', 'comment', 'too small'), row('b:columns:1', 'reply:comment:r2', { action: 'resolve' })], 'in-review'],
-  ['one thread open beats one answered', [row('b:a:1', 'comment', 'x'), aoe('b:a:1', 'reply:comment:a1', { text: 'y' }), row('b:b:2', 'comment', 'z')], 'waiting-aoe'],
-  ['an older AOE status row counts as an answer', [row('s1b0', 'comment', 'x'), row('s1b0', 'status:comment', { state: 'done' }, 'AOE', 'aoe')], 'waiting-reviewer'],
-  ['a QA note, open', [row('note:n1', 'note', { id: 'n1', text: 'odd', status: 'open' })], 'waiting-aoe'],
-  ['a deleted QA note is no thread', [row('note:n1', 'note', { id: 'n1', text: 'odd', deleted: true })], 'in-review'],
-  ['a removed comment (empty) is no thread', [row('b:columns:1', 'comment', 'x'), row('b:columns:1', 'comment', ''), row('page', 'reviewed', true)], 'approved'],
-  ['the reviewed mark taken back', [row('page', 'reviewed', true), row('page', 'reviewed', false)], 'in-review'],
+  ['activity only (a design choice)', [row(B, 'variant', 'card-grid')], 'in-review'],
+  ['marked in review by hand', [row('page', 'state', 'in-review')], 'in-review'],
+  ['approved, never any feedback', [row('page', 'state', 'approved')], 'approved'],
+  ['approved after a design choice', [row(B, 'variant', 'card-grid'), row('page', 'state', 'approved')], 'resolved'],
+  ['an internal thread only', [opener, internal], 'in-review'],
+  ['a thread sent to the AOE team', [opener, sent], 'waiting-aoe'],
+  ['a thread sent back', [opener, sent, back], 'waiting-reviewer'],
+  ['waiting for the AOE team beats approved', [opener, sent, row('page', 'state', 'approved')], 'waiting-aoe'],
+  ['resolved threads + approved', [opener, sent, back, close, row('page', 'state', 'approved')], 'resolved'],
+  ['skip beats everything', [opener, sent, row('page', 'state', 'skip')], 'skipped'],
+  ['skip taken back', [row('page', 'state', 'skip'), row('page', 'state', '')], 'in-review'],
+  ['the older reviewed mark counts as approved', [row('page', 'reviewed', true)], 'approved'],
+  ['a deleted QA note is no thread', [row('note:n1', 'note', { id: 'n1', text: 'x', deleted: true })], 'in-review'],
+  ['a removed comment (empty) is no thread', [row(B, 'comment', 'x'), row(B, 'comment', ''), row('page', 'state', 'approved')], 'approved'],
 ];
-let failures = 0;
 cases.forEach(([label, rows, want]) => {
   const got = pageState(rows);
-  const ok = got.state === want;
-  if (!ok) failures += 1;
-  console.log(`${ok ? 'ok  ' : 'FAIL'} ${label}: ${got.state}${ok ? '' : ` (want ${want}) ${JSON.stringify(got.threads)}`}`);
+  check(`page: ${label}: ${got.state}`, got.state === want, `(want ${want}) ${JSON.stringify(got.threads)}`);
 });
-const mixed = pageState(cases[7][1]);
-const okCounts = JSON.stringify(mixed.threads) === JSON.stringify({ open: 0, answered: 0, resolved: 1 }) && mixed.reviewed?.by === 'Jane' && mixed.reviewers.join() === 'Jane';
-if (!okCounts) failures += 1;
-console.log(`${okCounts ? 'ok  ' : 'FAIL'} counts, reviewed mark and reviewers (AOE members not among them)`);
+const counts = pageState([opener, sent, back, close, row('page', 'state', 'approved')]);
+check('counts, approved by, reviewers (AOE members not among them)', counts.threads.resolved === 1 && counts.approved?.by === 'Jane'
+  && counts.reviewers.join() === 'Jane', JSON.stringify(counts));
 console.log(failures ? `${failures} failures` : 'all passed');
 process.exit(failures ? 1 : 0);

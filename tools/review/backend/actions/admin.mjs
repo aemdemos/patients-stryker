@@ -9,7 +9,7 @@
  *                                           AOE answers in threads (set-status.mjs), role aoe
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
- *   export                                  every entry, as rows (summary, apply, results)
+ *   export                                  every entry, as rows (summary, apply, tests)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
  *   import { rows: [{ page, item, kind, value, reviewer, time, inv?, role? }] }  rows from elsewhere (e.g. a CSV), as they were
  *   rekey { page, moves: [{ from, to }] }  entries moved to another item name (e.g. position → block key)
@@ -119,7 +119,8 @@ export async function main(params) {
       if (!rows.length) return bad('rows: [{ page, item, thread, text, status }]');
       const results = [];
       for (const r of rows) {
-        const value = JSON.stringify({ text: r.text || undefined, status: r.status || undefined });
+        // (an AOE answer hands the thread back to the reviewers, unless asked not to)
+        const value = JSON.stringify({ text: r.text || undefined, status: r.status || undefined, action: r.handover === false ? undefined : 'handover' });
         const problem = !r.page || !r.item || !['comment', 'note'].includes(r.thread) ? 'page, item and thread (comment or note)' : replyProblem(value, 'aoe');
         if (problem) results.push({ ...r, ok: false, error: problem });
         else {

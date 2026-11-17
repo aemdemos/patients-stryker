@@ -23,10 +23,11 @@ const STATES = {
   resolved: { reviewer: 'Resolved', aoe: 'Resolved' },
   approved: { reviewer: 'Approved as is', aoe: 'Approved as is' },
   unreviewed: { reviewer: 'Not reviewed yet', aoe: 'Not reviewed yet' },
+  skipped: { reviewer: 'Skipped: not migrated', aoe: 'Skipped: not migrated' },
 };
 const ORDER = {
-  reviewer: ['waiting-reviewer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed'],
-  aoe: ['waiting-aoe', 'waiting-reviewer', 'in-review', 'resolved', 'approved', 'unreviewed'],
+  reviewer: ['waiting-reviewer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
+  aoe: ['waiting-aoe', 'waiting-reviewer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -102,15 +103,20 @@ function tiles() {
 
 function threadsText(t) {
   if (!t) return '';
-  return [t.open && `${t.open} open`, t.answered && `${t.answered} answered`, t.resolved && `${t.resolved} resolved`]
-    .filter(Boolean).join(' · ');
+  const aoe = me.role === 'aoe';
+  return [
+    t['waiting-aoe'] && `${t['waiting-aoe']} ${aoe ? 'for you' : 'with the AOE team'}`,
+    t['waiting-reviewer'] && `${t['waiting-reviewer']} ${aoe ? 'with the reviewers' : 'for you'}`,
+    t.resolved && `${t.resolved} resolved`,
+    t.internal && `${t.internal} internal`,
+  ].filter(Boolean).join(' · ');
 }
 
 function draw() {
   tiles();
   const list = sorted(filtered());
   $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
-  const head = ['State', 'Page', 'Business unit', 'Template', 'Threads', 'Design choices', 'Marked reviewed', 'Latest activity'];
+  const head = ['State', 'Page', 'Business unit', 'Template', 'Threads', 'Design choices', 'Approved', 'Latest activity'];
   const rows = list.slice(0, shown).map((p) => el(
     'tr',
     { class: p.isNew ? 'st-row-new' : '' },
@@ -120,7 +126,7 @@ function draw() {
     el('td', {}, p.template),
     el('td', {}, threadsText(p.threads)),
     el('td', {}, p.choices ? String(p.choices) : ''),
-    el('td', {}, p.reviewed ? `${p.reviewed.by} · ${when(p.reviewed.at)}` : ''),
+    el('td', {}, p.approved ? `${p.approved.by} · ${when(p.approved.at)}` : ''),
     el('td', {}, p.last ? [`${p.last.by}${p.last.role === 'aoe' ? ' (AOE)' : ''} · ${when(p.last.at)}`, p.isNew ? el('span', { class: 'st-new-badge' }, 'new') : null] : ''),
   ));
   $('.st-table').replaceChildren(list.length

@@ -18,6 +18,9 @@ import {
 import { merge, CONFIG } from './store.js';
 import { keyOf } from './sync.js';
 import { pageKeys, toPosition } from './blockkeys.js';
+import {
+  threadState, roleOf, actionOf, threadKindOf,
+} from './threads.js';
 
 export const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot|sample .*)$/i;
 export const AOE = 'AOE';
@@ -31,7 +34,9 @@ export const KINDS = {
 export const STATES = {
   open: 'open', progress: 'in progress', done: 'done', wontdo: "won't do", resolved: 'resolved',
 };
-const THREAD_STATES = { open: 'waiting for the AOE team', answered: 'answered', resolved: 'resolved' };
+const THREAD_STATES = {
+  internal: 'in discussion, not sent to the AOE team yet', 'waiting-aoe': 'waiting for the AOE team', 'waiting-reviewer': 'sent back to the reviewers', resolved: 'resolved',
+};
 const NAMES = {
   columns: 'Columns',
   'cards-corp': 'Cards',
@@ -205,40 +210,26 @@ export function summarise({
     if (!items.has(id)) items.set(id, { id, ...init(), evidence: [] });
     return items.get(id);
   };
-  // threads: the replies on a comment or note (kind `reply:<comment|note>:<id>`), by reviewers and
-  // by the AOE team; an older AOE status row (`status:<kind>`) counts as an AOE reply
-  const isAoe = (r) => r.role === 'aoe' || r.reviewer === AOE;
-  const replyRows = located.filter((r) => /^reply:(comment|note):/.test(r.kind));
+  // threads (threads.js): the opener and its messages; the state from the handovers
+  const isAoe = (r) => roleOf(r) === 'aoe';
   const threadOf = (page, item, kind) => {
-    const msgs = replyRows.filter((r) => r.page === page && r.item === item && r.kind.startsWith(`reply:${kind}:`))
-      .map((r) => ({
-        by: r.reviewer, role: isAoe(r) ? 'aoe' : 'reviewer', time: r.time, value: decode(r.value) || {},
-      }));
-    statusRows.filter((r) => r.page === page && r.item === item && r.kind === `status:${kind}`).forEach((r) => {
-      const v = decode(r.value) || {};
-      msgs.push({
-        by: AOE, role: 'aoe', time: r.time, value: { text: v.reason, status: v },
-      });
-    });
-    msgs.sort((a, b) => (a.time < b.time ? -1 : 1));
-    const last = msgs[msgs.length - 1];
-    let st = 'open';
-    if (last?.value.action === 'resolve') st = 'resolved';
-    else if (last?.role === 'aoe') st = 'answered';
-    const answer = [...msgs].reverse().find((m) => m.role === 'aoe' && m.value.status);
+    const rowsOf = located
+      .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind);
+    const t = threadState(rowsOf);
     return {
-      state: st,
-      replies: msgs.length,
-      last: last ? { by: last.by, role: last.role, time: last.time } : null,
-      status: answer ? { ...answer.value.status, time: answer.time } : null,
-      messages: msgs.map((m) => ({
-        by: m.by,
-        role: m.role,
-        time: m.time,
-        text: m.value.text,
-        action: m.value.action,
-        status: m.value.status,
-      })),
+      ...t,
+      messages: rowsOf.filter((r) => r.kind !== kind)
+        .sort((a, b) => (a.time < b.time ? -1 : 1)).map((r) => {
+          const v = decode(r.value) || {};
+          return {
+            by: r.reviewer,
+            role: roleOf(r),
+            time: r.time,
+            text: r.kind.startsWith('status:') ? v.reason : v.text,
+            action: actionOf(r),
+            status: r.kind.startsWith('status:') ? v : v.status,
+          };
+        }),
     };
   };
   const statusOf = (page, item, kind) => threadOf(page, item, kind).status;
@@ -491,7 +482,7 @@ export function summarise({
     // the threads: how many wait for the AOE team, for the reviewers, are closed
     const threads = it.evidence.map((e) => e.thread).filter(Boolean);
     if (threads.length) {
-      out.threads = Object.fromEntries(['open', 'answered', 'resolved'].map((k) => [k, threads.filter((t) => t.state === k).length]));
+      out.threads = Object.fromEntries(['waiting-aoe', 'waiting-reviewer', 'resolved'].map((k) => [k, threads.filter((t) => t.state === k).length]));
     }
     const reading = themes.items?.[it.id];
     if (reading) {

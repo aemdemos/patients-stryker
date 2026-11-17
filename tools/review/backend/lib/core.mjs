@@ -7,21 +7,34 @@
  * parts base64url-encoded (keys allow letters, digits, - _ . only); value JSON
  * { v: <the tool's value, a JSON string>, by, at, rev, inv, role }. Invitations: `i.<id>`.
  * Threads: a comment or QA note opens one; every reply is its own entry, kind
- * `reply:<comment|note>:<id>`, value { text, action?: 'resolve', status?: { state, release } },
- * written once. Roles: `reviewer` (the customer) and `aoe` (the AOE team), from the invitation.
+ * `reply:<comment|note>:<id>`, value { text, action?: 'handover' | 'resolve', status? }, written
+ * once. Roles: `reviewer` (the customer) and `aoe` (the AOE team), from the invitation. The rules
+ * (thread states, handovers, page states) are tools/review/threads.js.
  */
 import crypto from 'crypto';
 import stateLib from '@adobe/aio-lib-state';
+import { PAGE_STATES, ANSWER_STATES } from '../../threads.js';
 import filesLib from '@adobe/aio-lib-files';
 
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
-export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note'];
+export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state'];
 export const MAX_VALUE = 20000;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
-const ANSWER_STATES = ['progress', 'done', 'wontdo', 'open'];
+
+/** a page state (kind `state`): reviewers only, one of the page states or '' (cleared) */
+export function stateProblem(value, role) {
+  if (role !== 'reviewer') return 'page states are set by reviewers';
+  let v;
+  try {
+    v = JSON.parse(value);
+  } catch (e) {
+    return 'a page state is JSON';
+  }
+  return v === '' || v === null || PAGE_STATES.includes(v) ? null : `state: ${PAGE_STATES.join(', ')}`;
+}
 
 /**
  * A reply's value, checked for the writer's role: reviewers may close a thread (`resolve`), only
@@ -36,7 +49,7 @@ export function replyProblem(value, role) {
   }
   if (!v || typeof v !== 'object' || Array.isArray(v)) return 'a reply is an object';
   if (v.text !== undefined && (typeof v.text !== 'string' || v.text.length > MAX_VALUE)) return 'text: a string';
-  if (v.action !== undefined && v.action !== 'resolve') return 'action: resolve only';
+  if (v.action !== undefined && !['handover', 'resolve'].includes(v.action)) return 'action: handover or resolve';
   if (v.action === 'resolve' && role !== 'reviewer') return 'only reviewers close a thread';
   if (v.status !== undefined) {
     if (role !== 'aoe') return 'only the AOE team gives a status';

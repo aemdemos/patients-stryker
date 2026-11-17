@@ -70,7 +70,26 @@ try {
     return { context, page };
   };
 
-  // 1. the reviewer: comment + reviewed mark, Save
+  const threadOn = (p) => p.evaluate(() => ({
+    state: document.querySelector('.rv-pagebox-body .rv-thread-state')?.textContent || '',
+    msgs: document.querySelectorAll('.rv-pagebox-body .rv-msg').length,
+  }));
+  // a thread action (Reply, Send to …, Resolve): an unsaved change until Save
+  const act = async (p, button, text) => {
+    if (text !== undefined) await p.fill('.rv-pagebox-body textarea.rv-reply', text);
+    await p.click(`.rv-pagebox-body .rv-reply-actions button:text-is("${button}")`);
+  };
+  const saveNow = async (p) => {
+    const done = p.waitForResponse((r) => r.url().includes('std-review/save') && r.request().method() === 'POST', { timeout: 30000 });
+    await p.click('.rv-save');
+    const code = (await done).status();
+    await p.waitForFunction(() => /All changes saved/.test(document.body.textContent), null, { timeout: 30000 }).catch(() => null);
+    return code;
+  };
+  const pressed = (p) => p.evaluate(() => [...document.querySelectorAll('.rv-page-state')].filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.textContent));
+
+  // 1. the reviewer: a comment discussed internally, sent to the AOE team, the page approved,
+  //    a design switch, all with Save
   let { context, page } = await open(link);
   const name = await page.evaluate(() => {
     const n = document.querySelector('.rv-reviewer');
@@ -79,14 +98,9 @@ try {
   check('the name comes from the link, read only', name.value === 'tool test backend' && name.readOnly, JSON.stringify(name));
   check('the link leaves the address bar', !(await page.evaluate(() => window.location.search)).includes('invite='));
   // Undo changes: unsaved changes go, the page is back at its saved state
-  await page.evaluate(() => {
-    const box = document.querySelector('.rv-pagebox-body textarea.rv-comment');
-    box.value = 'a change to undo';
-    box.dispatchEvent(new Event('change'));
-    const mark = document.querySelector('.rv-reviewed');
-    mark.checked = true;
-    mark.dispatchEvent(new Event('change'));
-  });
+  await page.fill('.rv-pagebox-body textarea.rv-comment', 'a change to undo');
+  await page.dispatchEvent('.rv-pagebox-body textarea.rv-comment', 'change');
+  await page.click('.rv-page-state-in-review');
   check('unsaved changes enable Undo changes', await page.evaluate(() => !document.querySelector('.rv-undo').disabled
     && /2 unsaved changes/.test(document.querySelector('.rv-status').textContent)));
   await page.click('.rv-undo');
@@ -95,106 +109,91 @@ try {
   await page.waitForTimeout(3000);
   const undone = await page.evaluate(() => ({
     comment: document.querySelector('.rv-pagebox-body textarea.rv-comment').value,
-    reviewed: document.querySelector('.rv-reviewed').checked,
     undo: document.querySelector('.rv-undo').disabled,
     save: document.querySelector('.rv-save').disabled,
     drafts: window.localStorage.getItem('std-review-drafts'),
   }));
-  check('after Undo: no comment, no mark, nothing to save', undone.comment === '' && !undone.reviewed && undone.undo && undone.save
+  check('after Undo: no comment, no page state, nothing to save', undone.comment === '' && (await pressed(page)).length === 0 && undone.undo && undone.save
     && !(undone.drafts || '').includes('a change to undo'), JSON.stringify(undone));
-  await page.evaluate((text) => {
-    const box = document.querySelector('.rv-pagebox-body textarea.rv-comment');
-    box.value = text;
-    box.dispatchEvent(new Event('change'));
-    const mark = document.querySelector('.rv-reviewed');
-    mark.checked = true;
-    mark.dispatchEvent(new Event('change'));
-  }, COMMENT);
-  // and a design switch on the first block with more than one design
+  await page.fill('.rv-pagebox-body textarea.rv-comment', COMMENT);
+  await page.dispatchEvent('.rv-pagebox-body textarea.rv-comment', 'change');
+  check('a new comment: its thread starts in discussion, not sent yet', /^In discussion · not sent to the AOE team yet/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await act(page, 'Reply', 'Ann, is this right?');
+  await act(page, 'Send to the AOE team', 'Please enlarge the image.');
+  check('messages wait for Save, marked unsaved', await page.evaluate(() => document.querySelectorAll('.rv-pagebox-body .rv-msg-unsaved').length === 2)
+    && /^Sent to the AOE team/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await page.click('.rv-page-state-approved');
   await page.waitForFunction(() => document.querySelector('.rv-item button.rv-step[aria-label="Next variant"]'), null, { timeout: 60000 });
   await page.click('.rv-item button.rv-step[aria-label="Next variant"]');
   await page.waitForFunction(() => document.querySelector('.rv-item.rv-changed'), null, { timeout: 30000 });
-  const answer = page.waitForResponse((r) => r.url().includes('std-review/save') && r.request().method() === 'POST', { timeout: 30000 });
-  await page.click('.rv-save');
-  const saveStatus = await answer.then((r) => r.status()).catch(() => 0);
-  const saved = await page.waitForFunction(() => /All changes saved/.test(document.body.textContent), null, { timeout: 30000 })
-    .then(() => true).catch(() => false);
-  check('Save: the backend answers and the tool reports all changes saved', saveStatus === 200 && saved, saveStatus);
+  check('Save: the backend takes everything', await saveNow(page) === 200);
   await context.close();
 
-  // 2. the backend has both, written as the invitation's reviewer
+  // 2. the backend has it all, written as the invitation's reviewer; the AOE side sees the thread
   const rows = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.reviewer === 'tool test backend');
   check('the backend has the comment', rows.some((r) => r.kind === 'comment' && JSON.parse(r.value) === COMMENT), JSON.stringify(rows).slice(0, 300));
-  check('the backend has the reviewed mark', rows.some((r) => r.kind === 'reviewed' && JSON.parse(r.value) === true));
+  check('… the internal reply and the handover', rows.filter((r) => r.kind.startsWith('reply:comment:')).length === 2
+    && rows.some((r) => r.kind.startsWith('reply:comment:') && JSON.parse(r.value).action === 'handover'));
+  check('… the page approved', rows.some((r) => r.kind === 'state' && JSON.parse(r.value) === 'approved'));
   const choice = rows.find((r) => r.kind === 'variant');
   check('the design switch is saved under the block key, not its position', !!choice && /^b:[a-z-]+:[0-9a-f]{8}(#\d+)?$/.test(choice.item), JSON.stringify(choice));
 
-  // 3. the AOE team: summary from the backend, then the status
+  // 3. the AOE team: summary from the backend (what was handed over), then a status
   execFileSync('node', ['tools/review/summarise.mjs', '--out', out, '--themes', join(out, 'none.json'), '--base', base, '--ns', ns], { stdio: 'pipe' });
   const items = JSON.parse(readFileSync(join(out, 'work-items.json'), 'utf8')).items;
   const item = items.find((it) => it.id === `page:${PAGE}`);
-  check('the summary has the comment as a page work item', !!item && item.evidence.some((e) => e.text === COMMENT), JSON.stringify(items.map((it) => it.id)));
+  check('the summary has the handed-over comment as a page work item', !!item && item.evidence.some((e) => e.text === COMMENT), JSON.stringify(items.map((it) => it.id)));
   const status = execFileSync('node', ['tools/review/set-status.mjs', '--work', join(out, 'work-items.json'), '--item', `page:${PAGE}`,
     '--state', 'done', '--release', 'r-test', '--reason', 'loop test', '--ns', ns], { encoding: 'utf8' });
-  check('set-status saves the status in the backend (an AOE answer)', /1 of 1 AOE answers saved/.test(status), status);
+  check('set-status sends it back with the status', /1 of 1 AOE answers saved/.test(status), status);
 
-  // 4. a fresh browser: the comment, the mark and the AOE status
+  // 4. a fresh browser: the comment, the page state, the design switch, the AOE status
   ({ context, page } = await open(link));
-  const again = await page.evaluate(() => ({
-    comment: document.querySelector('.rv-pagebox-body textarea.rv-comment').value,
-    reviewed: document.querySelector('.rv-reviewed').checked,
-    aoe: document.querySelector('.rv-pagebox-body .rv-aoe')?.textContent || '',
-  }));
   await page.waitForFunction(() => document.querySelector('.rv-item'), null, { timeout: 60000 });
   await page.waitForTimeout(2000);
-  check('… and the saved design switch, found by its key', await page.evaluate(() => document.querySelectorAll('.rv-item.rv-changed').length === 1));
-  check('a fresh browser shows the saved comment and mark', again.comment === COMMENT && again.reviewed, JSON.stringify(again));
-  check('… and the AOE status under the comment', /AOE: done in r-test/.test(again.aoe), again.aoe);
-  await context.close();
-
-  // 5. the back and forth in the tool: the reviewer replies, the AOE team answers, the reviewer closes
-  const threadOn = (p) => p.evaluate(() => ({
-    state: document.querySelector('.rv-pagebox-body .rv-thread-state')?.textContent || '',
-    msgs: document.querySelectorAll('.rv-pagebox-body .rv-msg').length,
+  const again = await page.evaluate(() => ({
+    comment: document.querySelector('.rv-pagebox-body textarea.rv-comment').value,
+    aoe: document.querySelector('.rv-pagebox-body .rv-aoe')?.textContent || '',
   }));
-  const send = async (p, button, text) => {
-    const done = p.waitForResponse((r) => r.url().includes('std-review/save') && r.request().method() === 'POST', { timeout: 30000 });
-    if (text !== undefined) await p.fill('.rv-pagebox-body textarea.rv-reply', text);
-    await p.click(`.rv-pagebox-body .rv-reply-actions button:text-is("${button}")`);
-    return (await done).status();
-  };
-  ({ context, page } = await open(link));
-  check('the reviewer sees the thread answered', /^Answered · waiting for you/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
-  check('the reviewer replies in the thread', await send(page, 'Reply', 'Not quite: the image is still small.') === 200);
-  check('… and the thread waits for the AOE team', /^Open · waiting for the AOE team/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  check('… and the saved design switch, found by its key', await page.evaluate(() => document.querySelectorAll('.rv-item.rv-changed').length === 1));
+  check('a fresh browser shows the comment and the approved page', again.comment === COMMENT && (await pressed(page)).join() === 'Approved', JSON.stringify({ ...again, pressed: await pressed(page) }));
+  check('… and the thread sent back with the AOE status', /^Answered · waiting for you/.test((await threadOn(page)).state) && /AOE: done in r-test/.test(again.aoe), JSON.stringify(await threadOn(page)));
+
+  // 5. the back and forth: a plain reply changes nothing, sending it on does
+  await act(page, 'Reply', 'Not quite: the image is still small.');
+  await saveNow(page);
+  check('a plain reply keeps the turn (still answered)', /^Answered/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await act(page, 'Send to the AOE team', 'Could you check again?');
+  await saveNow(page);
+  check('"Send to the AOE team" hands it over', /^Sent to the AOE team/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
   await context.close();
 
   aoeInv = await admin({
     op: 'invite', name: 'tool test AOE', paths: [PAGE], days: 1, role: 'aoe',
   });
   const aoeLink = `${base}/tools/review/index.html?page=${encodeURIComponent(PAGE)}&invite=${encodeURIComponent(aoeInv.token)}`;
-  {
-    ({ context, page } = await open(aoeLink));
-    check('the AOE member: name with (AOE), the thread waits for them', (await page.evaluate(() => document.querySelector('.rv-reviewer').value)) === 'tool test AOE (AOE)'
-      && /^Open · waiting for you/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
-    await page.selectOption('.rv-pagebox-body select.rv-reply-status', 'done');
-    await page.fill('.rv-pagebox-body input.rv-reply-release', 'r-ui');
-    check('the AOE member answers with a status in the tool', await send(page, 'Answer', 'Enlarged the image to the live page size.') === 200);
-    check('… shown as an AOE answer', await page.evaluate(() => {
-      const aoeMsgs = [...document.querySelectorAll('.rv-pagebox-body .rv-msg-aoe')];
-      return /AOE: done in r-ui · Enlarged/.test(aoeMsgs[aoeMsgs.length - 1]?.textContent || '');
-    }));
-    await context.close();
+  ({ context, page } = await open(aoeLink));
+  check('the AOE member: name with (AOE), the thread waits for them, page state read only', (await page.evaluate(() => document.querySelector('.rv-reviewer').value)) === 'tool test AOE (AOE)'
+    && /^Waiting for you/.test((await threadOn(page)).state) && await page.evaluate(() => !!document.querySelector('.rv-page-state-ro') && !document.querySelector('.rv-page-state')), JSON.stringify(await threadOn(page)));
+  await act(page, 'Reply', 'Internal: which token do we change?');
+  await page.selectOption('.rv-pagebox-body select.rv-reply-status', 'done');
+  await page.fill('.rv-pagebox-body input.rv-reply-release', 'r-ui');
+  await act(page, 'Send back to the reviewers', 'Enlarged the image to the live page size.');
+  check('the AOE member saves an internal reply and sends it back with a status', await saveNow(page) === 200
+    && /^Sent back to the reviewers/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await context.close();
 
-    ({ context, page } = await open(link));
-    check('the reviewer resolves the thread', await send(page, 'Resolve') === 200);
-    check('… and it shows resolved', /^Resolved · closed/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
-    await context.close();
-    const thread = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.item === 'page' && r.kind.startsWith('reply:comment:'));
-    check('the backend has the thread: AOE answers, a reply, the close, each with its author and role', thread.length === 4
-      && thread.some((r) => r.reviewer === 'tool test AOE' && r.role === 'aoe')
-      && thread.some((r) => r.reviewer === 'tool test backend' && JSON.parse(r.value).action === 'resolve'), JSON.stringify(thread.map((r) => [r.reviewer, r.role])));
-  }
+  ({ context, page } = await open(link));
+  const seen = await page.evaluate(() => document.querySelector('.rv-pagebox-body .rv-thread').textContent);
+  check('the reviewer sees the full thread, the AOE internal reply too, and the status', /Internal: which token/.test(seen) && /AOE: done in r-ui/.test(seen), seen.slice(0, 200));
+  await act(page, 'Resolve');
+  await saveNow(page);
+  check('the reviewer resolves the thread', /^Resolved · closed/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await context.close();
+  const thread = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.item === 'page' && r.kind.startsWith('reply:comment:'));
+  check('the backend has the whole thread, each message with its author and role', thread.length === 8
+    && thread.some((r) => r.reviewer === 'tool test AOE' && r.role === 'aoe')
+    && thread.some((r) => r.reviewer === 'tool test backend' && JSON.parse(r.value).action === 'resolve'), JSON.stringify(thread.map((r) => [r.reviewer, r.role, JSON.parse(r.value).action || 'reply'])));
 
   // 6. the results page with the results right
   ({ context, page } = await open(`${base}/tools/review/results.html?invite=${encodeURIComponent(inv.token)}`, '#comments table'));

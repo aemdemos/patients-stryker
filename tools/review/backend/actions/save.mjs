@@ -10,7 +10,7 @@
  */
 import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
-  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem,
+  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem,
 } from '../lib/core.mjs';
 
 export async function main(params) {
@@ -33,6 +33,10 @@ export async function main(params) {
       .map((c) => ({ c, problem: (c.rev ?? 0) !== 0 ? 'a reply is written once' : replyProblem(c.value, invite.role) }))
       .find((x) => x.problem);
     if (badReply) return fail(params, 400, 'bad-reply', badReply.problem);
+    const badState = changes.filter((c) => c.kind === 'state')
+      .map((c) => (c.item !== 'page' ? 'a page state is on item page' : stateProblem(c.value, invite.role)))
+      .find(Boolean);
+    if (badState) return fail(params, 400, 'bad-state', badState);
     const pages = [...new Set(changes.map((c) => c.page || page))];
     const outside = pages.find((p) => !inScope(invite.scope, p));
     if (outside) return fail(params, 403, 'out-of-scope', outside === '*' ? 'Choices for all pages are not part of your review.' : 'This page is not part of your review.');

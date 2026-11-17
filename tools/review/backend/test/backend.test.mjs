@@ -135,6 +135,36 @@ check('load: the thread with roles (aoe, reviewer)', thread.length === 3 && thre
   && thread.filter((x) => x.role === 'reviewer').length === 2, JSON.stringify(thread.map((x) => [x.reviewer, x.role])));
 const ans = await admin({ op: 'answer', rows: [{ page: PAGE, item: 's1b0', thread: 'comment', text: 'From the command line.', status: { state: 'progress' } }] });
 check('admin answer: an AOE reply in the thread', ans.results?.[0].ok === true && /^reply:comment:/.test(ans.results[0].kind), JSON.stringify(ans));
+// everyone sees every message; only handovers change whose turn it is
+const say = (token, item, id, value) => save(token, [{
+  item, kind: `reply:comment:${id}`, value: JSON.stringify(value), rev: 0,
+}]);
+await save(T, [{
+  item: 's2b0', kind: 'comment', value: JSON.stringify('internal question'), rev: 0,
+}]);
+await say(T, 's2b0', 'int00001', { text: 'Ann, do you agree?' });
+const seen = async (token) => ((await state(token)).json?.rows || []).filter((x) => x.item === 's2b0').length;
+check('the AOE team sees a thread still in discussion among the reviewers', await seen(aoe.token) === 2);
+check('so do the reviewers', await seen(T) === 2);
+r = await say(T, 's2b0', 'send0001', { action: 'handover', text: 'Please look at this.' });
+check('"send to the AOE team" is allowed for reviewers', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+check('… and the handover', await seen(aoe.token) === 3, await seen(aoe.token));
+r = await say(aoe.token, 's2b0', 'aoeint01', { text: 'internal: which token?' });
+check('the AOE team\'s own discussion is visible to the reviewers at once', r.json?.results?.[0].ok === true && await seen(T) === 4);
+r = await say(aoe.token, 's2b0', 'aoeback1', { action: 'handover', text: 'Fixed.', status: { state: 'done', release: 'r2' } });
+check('"send back" works', r.json?.results?.[0].ok === true && await seen(T) === 5, await seen(T));
+// page states: reviewers only
+const pageState = (token, value) => save(token, [{
+  item: 'page', kind: 'state', value: JSON.stringify(value), rev: 0,
+}]);
+r = await pageState(aoe.token, 'skip');
+check('the AOE team cannot set a page state', r.status === 400 && r.json?.error.code === 'bad-state', r.status);
+r = await pageState(T, 'maybe');
+check('an unknown page state is refused', r.status === 400, r.status);
+r = await pageState(T, 'approved');
+check('a reviewer approves the page', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+const ov = await web('overview', { invite: T });
+check('overview: the page waits for the reviewers (one thread sent back, one closed)', ov.json?.pages?.find((p) => p.page === PAGE)?.state === 'waiting-reviewer', JSON.stringify(ov.json?.pages));
 await admin({ op: 'revoke', id: aoe.id });
 
 r = await web('results', { invite: T });

@@ -148,6 +148,14 @@ What follows from it:
      choice), set-status as AOE answers, summary and results with thread states; loop test covers
      the whole back and forth. Status page built the same day: `tools/review/status.html`
      (web action `overview`, states in `backend/lib/states.mjs`), templates in `pages.json`.*
+   - *Changed 2026-11-17 (the user's model): explicit handovers (Reply never changes the turn;
+     Send to the AOE team / Send back to the reviewers / Resolve do), every message visible to both
+     sides at all times (the user's choice: to follow discussions and step in), page states set by
+     reviewers (In review, Approved, Skip: don't migrate; Skip black, Not reviewed yet gray), and
+     everything waits for Save. Rules in one shared module, `tools/review/threads.js`.*
+   - **Mentions** (open): `@name` in a message emails an invited person (invitations get an email
+     address; '@' suggests them) with a link to the thread; waits for an email service (App
+     Builder has none of its own).
    - Templates on the pages list (`pages.json`) for the filter.
 7. **Runbook for new sessions** (requested 2026-11-17): in the project, next to the code
    (`tools/review/RUNBOOK.md`, pointed to from AGENTS.md): the backstory (as-is → standard, the

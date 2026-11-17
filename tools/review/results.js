@@ -8,6 +8,7 @@
 import { readAll, merge, inviteToken } from './store.js';
 import { variantsOf, groupLabel } from './groups.js';
 import { keysOfHtml, toPosition } from './blockkeys.js';
+import { threadState, threadKindOf, roleOf } from './threads.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -127,25 +128,20 @@ async function render(savedRows, pages) {
       return null;
     }
   };
+  // a thread's state and the AOE team's latest status (threads.js)
+  const THREAD_WORDS = {
+    internal: 'internal', 'waiting-aoe': 'waiting for the AOE team', 'waiting-reviewer': 'sent back to the reviewers', resolved: 'resolved',
+  };
   const aoeOf = (page, item, kind) => {
-    const msgs = allRows.filter((r) => r.page === page && r.item === item
-      && (r.kind.startsWith(`reply:${kind}:`) || r.kind === `status:${kind}`))
-      .map((r) => {
-        const v = json(r.value) || {};
-        return r.kind.startsWith('status:')
-          ? {
-            aoe: true, time: r.time, status: v, text: v.reason,
-          } : { aoe: isAoe(r), time: r.time, ...v };
-      })
-      .sort((x, y) => (x.time < y.time ? -1 : 1));
-    if (!msgs.length) return '';
-    const last = msgs[msgs.length - 1];
-    let thread = 'waiting for the AOE team';
-    if (last.action === 'resolve') thread = 'resolved';
-    else if (last.aoe) thread = 'answered';
-    const answer = [...msgs].reverse().find((m) => m.aoe && m.status && AOE_STATES[m.status.state]);
-    const status = answer ? [AOE_STATES[answer.status.state], answer.status.release && `in ${answer.status.release}`, answer.text].filter(Boolean).join(', ') : '';
-    return [thread, status].filter(Boolean).join(' · ');
+    const own = allRows
+      .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind);
+    if (!own.some((r) => r.kind !== kind)) return '';
+    const t = threadState(own);
+    const answer = [...own].sort((x, y) => (x.time < y.time ? 1 : -1))
+      .find((r) => roleOf(r) === 'aoe' && !r.kind.startsWith('status:') && (json(r.value) || {}).text);
+    const status = t.status && AOE_STATES[t.status.state]
+      ? [AOE_STATES[t.status.state], t.status.release && `in ${t.status.release}`, t.status.reason || (answer ? json(answer.value).text : '')].filter(Boolean).join(', ') : '';
+    return [THREAD_WORDS[t.state], status].filter(Boolean).join(' · ');
   };
   const title = Object.fromEntries(pages.map((p) => [p.path, p.title]));
   const pageName = (p) => el('a', { href: toolLink(p) }, title[p] || p);
@@ -159,12 +155,19 @@ async function render(savedRows, pages) {
   const groupInfo = (await (await fetch('./groups.json')).json()).groups;
 
   /* ---------- progress ---------- */
-  const reviewed = [...state].filter(([, m]) => m.get('page|reviewed')?.value === true)
-    .map(([p, m]) => ({ page: p, ...m.get('page|reviewed') }));
+  // approved pages: the page state `approved`, or the older reviewed mark
+  const approvedOf = (m) => {
+    const chosen = m.get('page|state');
+    if (chosen) return chosen.value === 'approved' ? chosen : null;
+    return m.get('page|reviewed')?.value === true ? m.get('page|reviewed') : null;
+  };
+  const reviewed = [...state].filter(([, m]) => approvedOf(m))
+    .map(([p, m]) => ({ page: p, ...approvedOf(m) }));
   const touched = [...state].filter(([, m]) => [...m.values()].some((e) => {
     if (e.kind === 'note') return e.value && !e.value.deleted;
     if (e.kind === 'comment') return !!e.value;
     if (e.kind === 'reviewed') return e.value === true;
+    if (e.kind === 'state') return !!e.value;
     return set(e.value);
   })).map(([p]) => p);
   const reviewers = new Map();
@@ -180,7 +183,7 @@ async function render(savedRows, pages) {
     el(
       'div',
       { class: 'rs-tiles' },
-      el('div', { class: 'rs-tile' }, el('b', {}, `${reviewed.length} / ${pages.length}`), el('span', {}, 'pages marked reviewed')),
+      el('div', { class: 'rs-tile' }, el('b', {}, `${reviewed.length} / ${pages.length}`), el('span', {}, 'pages approved')),
       el('div', { class: 'rs-tile' }, el('b', {}, String(touched.length)), el('span', {}, 'pages with review activity')),
       el('div', { class: 'rs-tile' }, el('b', {}, String(pages.length - new Set([...touched, ...reviewed.map((r) => r.page)]).size)), el('span', {}, 'pages not opened for review')),
       el('div', { class: 'rs-tile' }, el('b', {}, String(reviewers.size)), el('span', {}, 'reviewers')),
@@ -189,7 +192,7 @@ async function render(savedRows, pages) {
     el('h3', {}, 'Reviewers'),
     table(['Reviewer', 'Saved changes', 'Pages', 'Last activity'], [...reviewers].sort((a, b) => (a[1].last < b[1].last ? 1 : -1))
       .map(([name, x]) => [name || 'someone', String(x.rows), String(x.pages.size), when(x.last)])),
-    el('h3', {}, 'Pages marked reviewed'),
+    el('h3', {}, 'Pages approved'),
     table(['Page', 'By', 'When'], reviewed.sort((a, b) => (a.time < b.time ? 1 : -1))
       .map((r) => [pageName(r.page), r.reviewer, when(r.time)])),
   );

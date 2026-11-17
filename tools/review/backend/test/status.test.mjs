@@ -36,8 +36,8 @@ const check = (label, ok, detail = '') => {
 // six pages nobody has saved anything on
 const used = new Set((await admin({ op: 'export' })).rows.map((r) => r.page));
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
-const P = pages.map((p) => p.path).filter((p) => !used.has(p)).slice(0, 6);
-if (P.length < 6) {
+const P = pages.map((p) => p.path).filter((p) => !used.has(p)).slice(0, 7);
+if (P.length < 7) {
   console.error('not enough pages without entries');
   process.exit(2);
 }
@@ -65,19 +65,25 @@ const WANT = {
   [P[3]]: 'approved',
   [P[4]]: 'in-review',
   [P[5]]: 'unreviewed',
+  [P[6]]: 'skipped',
 };
 await admin({
   op: 'import',
   rows: [
     r(P[0], 'page', 'comment', 'The hero is cropped.'),
+    r(P[0], 'page', 'reply:comment:st0000', { action: 'handover' }),
     r(P[1], 'page', 'comment', 'The table is too wide.'),
-    a(P[1], 'page', 'reply:comment:st0001', { text: 'Narrowed it.', status: { state: 'done', release: 'r1' } }),
+    r(P[1], 'page', 'reply:comment:st0010', { action: 'handover' }),
+    a(P[1], 'page', 'reply:comment:st0001', { action: 'handover', text: 'Narrowed it.', status: { state: 'done', release: 'r1' } }),
     r(P[2], 'page', 'comment', 'Wrong image.'),
-    a(P[2], 'page', 'reply:comment:st0002', { text: 'Replaced.', status: { state: 'done' } }),
+    r(P[2], 'page', 'reply:comment:st0020', { action: 'handover' }),
+    a(P[2], 'page', 'reply:comment:st0002', { action: 'handover', text: 'Replaced.', status: { state: 'done' } }),
     r(P[2], 'page', 'reply:comment:st0003', { action: 'resolve' }),
-    r(P[2], 'page', 'reviewed', true),
-    r(P[3], 'page', 'reviewed', true),
+    r(P[2], 'page', 'state', 'approved'),
+    r(P[3], 'page', 'state', 'approved'),
     r(P[4], 'b:columns:00000001', 'variant', 'card-grid'),
+    r(P[4], 'page', 'comment', 'Internal: Ann, what do you think?'),
+    r(P[6], 'page', 'state', 'skip'),
   ],
 });
 
@@ -101,12 +107,15 @@ try {
   let { context, page } = await open(reviewer.token);
   if (opt('--shot')) await page.screenshot({ path: opt('--shot'), fullPage: true });
   let rows = await rowsOf(page);
-  check('every page of the scope is listed', rows.length === 6, rows.length);
+  check('every page of the scope is listed', rows.length === 7, rows.length);
   check('each page has its state', rows.every((x) => WANT[x.path] === x.state), JSON.stringify(rows.map((x) => [x.path.split('/').pop(), x.state])));
-  check('the reviewer\'s order: answered (waiting for them) first, not reviewed last', rows[0].state === 'waiting-reviewer' && rows[1].state === 'waiting-aoe' && rows[5].state === 'unreviewed', JSON.stringify(rows.map((x) => x.state)));
+  check('the reviewer\'s order: answered (waiting for them) first, then not reviewed, skipped last', rows[0].state === 'waiting-reviewer' && rows[1].state === 'waiting-aoe'
+    && rows[5].state === 'unreviewed' && rows[6].state === 'skipped', JSON.stringify(rows.map((x) => x.state)));
+  const colours = await page.evaluate(() => Object.fromEntries(['st-skipped', 'st-unreviewed'].map((c) => [c, getComputedStyle(document.querySelector(`.st-chip.${c}`)).backgroundColor])));
+  check('skipped is black, not reviewed yet is gray', colours['st-skipped'] === 'rgb(31, 35, 40)' && colours['st-unreviewed'] === 'rgb(175, 184, 193)', JSON.stringify(colours));
   check('worded for the reviewer', rows[0].label === 'Answered: waiting for you' && rows[1].label === 'Waiting for the AOE team', JSON.stringify(rows.map((x) => x.label)));
   const tiles = await page.evaluate(() => [...document.querySelectorAll('.st-tile')].map((t) => t.textContent));
-  check('counts per state', tiles.length === 6 && tiles.every((t) => t.startsWith('1')), JSON.stringify(tiles));
+  check('counts per state', tiles.length === 7 && tiles.every((t) => t.startsWith('1')), JSON.stringify(tiles));
   await page.click('.st-tile.st-waiting-aoe');
   rows = await rowsOf(page);
   check('a state tile filters the list', rows.length === 1 && rows[0].state === 'waiting-aoe', JSON.stringify(rows));
@@ -132,7 +141,7 @@ try {
   // the AOE team's view
   ({ context, page } = await open(aoe.token));
   rows = await rowsOf(page);
-  check('the AOE view: waiting for the AOE team first, worded for them', rows.length === 6
+  check('the AOE view: waiting for the AOE team first, worded for them', rows.length === 7
     && (rows[0].state === 'waiting-aoe' || rows.every((x) => x.state !== 'waiting-aoe'))
     && rows.find((x) => x.state === 'waiting-reviewer')?.label === 'Waiting for the reviewers', JSON.stringify(rows.map((x) => [x.state, x.label])));
   check('the AOE view links the results page', await page.evaluate(() => !document.querySelector('.st-results').hidden));

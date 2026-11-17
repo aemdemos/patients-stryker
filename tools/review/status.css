@@ -6,7 +6,8 @@
 .st-in-review { --st: #6e7f99; --st-ink: #fff; }
 .st-resolved { --st: #1a7f37; --st-ink: #fff; }
 .st-approved { --st: #8fd19e; --st-ink: #1f2328; }
-.st-unreviewed { --st: #1f2328; --st-ink: #fff; }
+.st-unreviewed { --st: #afb8c1; --st-ink: #1f2328; }
+.st-skipped { --st: #1f2328; --st-ink: #fff; }
 
 .st-tiles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
 .st-tile { display: flex; flex-direction: column; align-items: flex-start; min-width: 150px; padding: 8px 12px; border: 2px solid transparent; border-left: 6px solid var(--st); border-radius: 6px; background: #f6f7f8; color: #1f2328; font: inherit; text-align: left; cursor: pointer; }

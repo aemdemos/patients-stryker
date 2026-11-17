@@ -8,6 +8,7 @@
 import { leaves, buildAnchors, mapY } from './sync.js';
 import { createStore } from './store.js';
 import { keysOfHtml, toPosition, toKey } from './blockkeys.js';
+import { threadState, actionOf, roleOf } from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
 
 const { hostname } = window.location;
@@ -202,6 +203,8 @@ const api = () => (ready.std ? win('std')?.stdReview : null);
 
 // the page's saved state: `item|kind` → { value, reviewer, time } (items as positions, `s14b0`)
 let saved = new Map();
+// who is reviewing: from the invitation (name, role reviewer or aoe)
+const me = { name: '', role: 'reviewer' };
 // the page's block keys (blockkeys.js): saved entries are stored under them, shown by position
 let pageKeys = { byId: {}, byKey: {} };
 let savedLoad = Promise.resolve();
@@ -330,9 +333,14 @@ function saveAll() {
   drafts.forEach((value, key) => {
     const [item, kind] = splitKey(key);
     // (a group's choice is for every page)
-    saved.set(key, store.save({
-      page: item.startsWith('group:') ? '*' : state.page, item: toKey(item, pageKeys), kind, value, reviewer: reviewer(),
-    }));
+    saved.set(key, {
+      ...store.save({
+        page: item.startsWith('group:') ? '*' : state.page, item: toKey(item, pageKeys), kind, value, reviewer: reviewer(),
+      }),
+      item,
+      reviewer: me.name || reviewer(),
+      role: me.role,
+    });
   });
   drafts = new Map();
   keepDrafts();
@@ -393,19 +401,18 @@ function listRendered(list) {
 /** the latest saved change of an item: "Name · date" */
 function lastBy(item) {
   if ([...drafts.keys()].some((k) => k.startsWith(`${item}|`))) return 'unsaved change';
-  const latest = ['variant', 'width', 'background', 'comment', 'reviewed']
+  const latest = ['variant', 'width', 'background', 'comment', 'reviewed', 'state']
     .map((k) => savedOf(item, k)).filter(Boolean).sort((a, b) => (a.time < b.time ? 1 : -1))[0];
   return latest ? `${latest.reviewer || 'someone'} · ${when(latest.time)}` : '';
 }
 
 /* ---------- threads: the back and forth on a comment or QA note ---------- */
 
+// the rules (thread states, handovers, page states) are shared: threads.js
 const AOE_STATES = {
   progress: 'in progress', done: 'done', wontdo: "won't do", open: 'open again',
 };
-// who is reviewing: from the invitation (name, role reviewer or aoe)
-const me = { name: '', role: 'reviewer' };
-// the panels a sent reply redraws (drawn further down)
+// the panels a new message redraws (drawn further down)
 const threadHooks = { redraw: () => {} };
 const replyId = () => {
   const bytes = window.crypto.getRandomValues(new Uint8Array(9));
@@ -413,76 +420,98 @@ const replyId = () => {
 };
 
 /**
- * A thread: its replies (entries `reply:<comment|note>:<id>`) in time order, an older AOE status
- * (set-status rows `status:<kind>`) as an AOE reply, and its state: resolved (the last message
- * closed it), answered (the AOE team wrote last), open (a reviewer wrote last, or no reply yet)
+ * A thread's entries: the opener (comment / note) and its messages, saved ones and this
+ * reviewer's unsaved ones (drafts), in time order (unsaved last); an older AOE status row too
  */
-function threadOf(item, kind) {
+function threadEntries(item, kind) {
   const prefix = `${item}|reply:${kind}:`;
-  const replies = [...saved.entries()]
-    .filter(([k, e]) => k.startsWith(prefix) && e.value).map(([, e]) => e);
-  const legacy = saved.get(`${item}|status:${kind}`);
-  if (legacy?.value?.state) {
-    replies.push({
-      reviewer: 'AOE', role: 'aoe', time: legacy.time, value: { text: legacy.value.reason, status: legacy.value },
-    });
-  }
-  replies.sort((a, b) => (a.time < b.time ? -1 : 1));
-  const last = replies[replies.length - 1];
-  let stateName = 'open';
-  if (last?.value.action === 'resolve') stateName = 'resolved';
-  else if (last?.role === 'aoe') stateName = 'answered';
-  return { replies, state: stateName };
+  const out = [];
+  const opener = savedOf(item, kind);
+  if (opener) out.push({ ...opener, item, kind });
+  saved.forEach((e, k) => {
+    if ((k.startsWith(prefix) || k === `${item}|status:${kind}`) && !drafts.has(k)) out.push(e);
+  });
+  drafts.forEach((value, k) => {
+    if (k.startsWith(prefix)) {
+      out.push({
+        item, kind: k.slice(item.length + 1), value, reviewer: me.name || 'you', role: me.role, time: null, unsaved: true,
+      });
+    }
+  });
+  return out.sort((a, b) => ((a.time || '9') < (b.time || '9') ? -1 : 1));
 }
 
-/** a reply, sent at once (not held for Save): written once, like a message */
-function sendReply(item, kind, value) {
-  const rkind = `reply:${kind}:${replyId()}`;
-  const time = new Date().toISOString();
-  store.save({
-    page: state.page, item: toKey(item, pageKeys), kind: rkind, value, reviewer: me.name,
-  });
-  saved.set(`${item}|${rkind}`, {
-    item, kind: rkind, value, reviewer: me.name || 'you', role: me.role, time,
-  });
+/** a message for the thread: an unsaved change, sent with Save (Undo changes takes it back) */
+function addMessage(item, kind, value) {
+  saveRow(item, `reply:${kind}:${replyId()}`, value);
   threadHooks.redraw();
 }
 
-const THREAD_LABELS = { open: 'Open', answered: 'Answered', resolved: 'Resolved' };
-/** whom a thread waits for, from where the viewer stands */
-function waitingFor(st) {
-  if (st === 'resolved') return 'closed';
-  const onAoe = st === 'open';
-  if ((me.role === 'aoe') === onAoe) return 'waiting for you';
-  return onAoe ? 'waiting for the AOE team' : 'waiting for the reviewers';
+/** the thread's state in words, from where the viewer stands */
+function threadWords(st, owner) {
+  const aoe = me.role === 'aoe';
+  if (st === 'internal') {
+    const by = owner === 'aoe' ? 'the AOE team' : 'the reviewers';
+    return ['In discussion', owner === me.role ? `not sent to ${aoe ? 'the reviewers' : 'the AOE team'} yet` : `among ${by}, not sent to you yet`];
+  }
+  if (st === 'waiting-aoe') return aoe ? ['Waiting for you', 'sent to the AOE team'] : ['Sent to the AOE team', 'waiting for their answer'];
+  if (st === 'waiting-reviewer') return aoe ? ['Sent back to the reviewers', 'waiting for them'] : ['Answered', 'waiting for you'];
+  return ['Resolved', 'closed'];
 }
 
-/** the thread under a comment or QA note: its messages and the reply box */
+/** the thread under a comment or QA note: its messages and what one can write or do next */
 function threadParts(item, kind) {
-  const { replies, state: st } = threadOf(item, kind);
-  const stateLabel = THREAD_LABELS[st];
+  const entries = threadEntries(item, kind);
+  // (an unsaved message counts for the state shown here, as it will once saved)
+  const timed = entries.map((e, i) => ({ ...e, time: e.time || `9${String(i).padStart(4, '0')}` }));
+  const { state: st, owner } = threadState(timed);
+  const [stateLabel, hint] = threadWords(st, owner);
   const box = el('div', { class: `rv-thread rv-thread-${st}` });
-  box.append(el('div', { class: 'rv-thread-state' }, el('b', {}, stateLabel), ` · ${waitingFor(st)}`));
-  replies.forEach((r) => {
-    const v = r.value || {};
-    const who = el('span', { class: 'rv-msg-who' }, r.reviewer || 'someone', r.role === 'aoe' ? el('span', { class: 'rv-badge' }, 'AOE') : null);
-    const status = v.status && AOE_STATES[v.status.state]
-      ? el('p', { class: `rv-aoe rv-aoe-${v.status.state}` }, el('b', {}, `AOE: ${AOE_STATES[v.status.state]}`), v.status.release ? ` in ${v.status.release}` : '', v.text ? ` · ${v.text}` : '')
-      : null;
+  box.append(el('div', { class: 'rv-thread-state' }, el('b', {}, stateLabel), hint ? ` · ${hint}` : ''));
+  timed.filter((e) => e.kind !== kind).forEach((r) => {
+    const v = (typeof r.value === 'object' && r.value) || {};
+    const action = actionOf(r);
+    const status = v.status && AOE_STATES[v.status.state];
+    const tags = [r.unsaved ? el('span', { class: 'rv-tag-msg rv-tag-unsaved' }, 'unsaved') : null];
+    const remove = r.unsaved ? el('button', {
+      type: 'button',
+      class: 'rv-msg-remove',
+      title: 'Remove this unsaved message',
+      onclick: () => {
+        drafts.delete(`${item}|${r.kind}`);
+        keepDrafts();
+        threadHooks.redraw();
+      },
+    }, '×') : null;
+    let what = null;
+    if (action === 'handover') what = roleOf(r) === 'aoe' ? 'sent it back to the reviewers' : 'sent it to the AOE team';
+    if (action === 'resolve') what = 'resolved the thread';
     box.append(el(
       'div',
-      { class: `rv-msg${r.role === 'aoe' ? ' rv-msg-aoe' : ''}` },
-      el('div', { class: 'rv-msg-head' }, who, el('span', { class: 'rv-meta' }, r.time ? when(r.time) : 'sending…')),
-      status,
-      !status && v.text ? el('p', { class: 'rv-msg-text' }, v.text) : null,
-      v.action === 'resolve' ? el('p', { class: 'rv-msg-action' }, 'closed the thread') : null,
+      { class: `rv-msg${roleOf(r) === 'aoe' ? ' rv-msg-aoe' : ''}${r.unsaved ? ' rv-msg-unsaved' : ''}` },
+      el(
+        'div',
+        { class: 'rv-msg-head' },
+        el('span', { class: 'rv-msg-who' }, r.reviewer || 'someone', roleOf(r) === 'aoe' ? el('span', { class: 'rv-badge' }, 'AOE') : null, ...tags),
+        el('span', { class: 'rv-meta' }, r.unsaved ? '' : when(r.time), remove),
+      ),
+      status ? el('p', { class: `rv-aoe rv-aoe-${v.status.state}` }, el('b', {}, `AOE: ${status}`), v.status.release ? ` in ${v.status.release}` : '') : null,
+      v.text ? el('p', { class: 'rv-msg-text' }, v.text) : null,
+      what ? el('p', { class: 'rv-msg-action' }, what) : null,
     ));
   });
-  // the reply box: reviewers reply or close; the AOE team answers, with a status if they like
-  const text = el('textarea', {
-    class: 'rv-reply', rows: '2', placeholder: me.role === 'aoe' ? 'Answer the reviewers…' : 'Reply…',
-  });
+  // what one can do: write (internal), hand over, (reviewers) resolve
+  const text = el('textarea', { class: 'rv-reply', rows: '2', placeholder: 'Write a message…' });
   const actions = el('div', { class: 'rv-reply-actions' });
+  const words = () => text.value.trim() || undefined;
+  actions.append(el('button', {
+    type: 'button',
+    class: 'rv-btn-light',
+    title: 'A message in the discussion (everyone sees it; whose turn it is does not change)',
+    onclick: () => {
+      if (words()) addMessage(item, kind, { text: words() });
+    },
+  }, 'Reply'));
   if (me.role === 'aoe') {
     const pick = el('select', { class: 'rv-reply-status', 'aria-label': 'Status' }, el('option', { value: '' }, 'no status'), ...Object.entries(AOE_STATES).map(([k, v]) => el('option', { value: k }, v)));
     const release = el('input', {
@@ -491,32 +520,30 @@ function threadParts(item, kind) {
     actions.append(pick, release, el('button', {
       type: 'button',
       class: 'rv-btn-light rv-primary',
+      title: 'Hand the thread back to the reviewers: their turn',
       onclick: () => {
-        const value = { text: text.value.trim() || undefined };
+        const value = { action: 'handover', text: words() };
         if (pick.value) {
           value.status = { state: pick.value, release: release.value.trim() || undefined };
         }
-        if (!value.text && !value.status) return;
-        sendReply(item, kind, value);
+        addMessage(item, kind, value);
       },
-    }, 'Answer'));
+    }, 'Send back to the reviewers'));
   } else {
-    actions.append(
-      el('button', {
-        type: 'button',
-        class: 'rv-btn-light rv-primary',
-        onclick: () => {
-          if (!text.value.trim()) return;
-          sendReply(item, kind, { text: text.value.trim() });
-        },
-      }, st === 'resolved' ? 'Reopen with this reply' : 'Reply'),
-      st === 'resolved' ? null : el('button', {
+    actions.append(el('button', {
+      type: 'button',
+      class: 'rv-btn-light rv-primary',
+      title: 'Hand the thread to the AOE team: their turn',
+      onclick: () => addMessage(item, kind, { action: 'handover', text: words() }),
+    }, 'Send to the AOE team'));
+    if (st !== 'resolved' && st !== 'internal') {
+      actions.append(el('button', {
         type: 'button',
         class: 'rv-btn-light',
         title: 'The answer settles it: close the thread',
-        onclick: () => sendReply(item, kind, { action: 'resolve', text: text.value.trim() || undefined }),
-      }, 'Resolve'),
-    );
+        onclick: () => addMessage(item, kind, { action: 'resolve', text: words() }),
+      }, 'Resolve'));
+    }
   }
   box.append(text, actions);
   return box;
@@ -530,8 +557,11 @@ function commentParts(item, placeholder) {
   box.value = current;
   box.hidden = !current && item !== 'page';
   box.addEventListener('change', () => {
+    const had = !!current;
     saveRow(item, 'comment', box.value.trim());
     meta.textContent = lastBy(item);
+    // a new comment: its thread appears below it (to discuss it, send it on)
+    if (!had && box.value.trim()) threadHooks.redraw();
   });
   const thread = current ? threadParts(item, 'comment') : null;
   if (item === 'page') return [box, meta, thread].filter(Boolean);
@@ -934,14 +964,36 @@ noteHooks.select = (id) => {
 };
 
 /** this page: reviewed mark and page comment */
+const PAGE_STATE_LABELS = {
+  '': 'Not reviewed yet', 'in-review': 'In review', approved: 'Approved', skip: "Skip: don't migrate",
+};
+
+/** the page's state as set by the reviewers (the older reviewed mark counts as approved) */
+function pageSetting() {
+  const set = savedOf('page', 'state');
+  if (set) return PAGE_STATE_LABELS[set.value] !== undefined ? set.value || '' : '';
+  return savedOf('page', 'reviewed')?.value === true ? 'approved' : '';
+}
+
 function renderPageBox() {
   const box = $('.rv-pagebox-body');
-  const reviewed = el('input', { type: 'checkbox', class: 'rv-reviewed' });
-  reviewed.checked = !!savedOf('page', 'reviewed')?.value;
-  reviewed.addEventListener('change', () => saveRow('page', 'reviewed', reviewed.checked));
+  const current = pageSetting();
+  // reviewers set the page's state (with Save); the AOE team sees it
+  const states = me.role === 'aoe'
+    ? el('p', { class: 'rv-page-state-ro' }, 'Set by the reviewers: ', el('b', {}, PAGE_STATE_LABELS[current]))
+    : el('div', { class: 'rv-page-states', role: 'group', 'aria-label': 'State of this page' }, ...['in-review', 'approved', 'skip'].map((value) => el('button', {
+      type: 'button',
+      class: `rv-page-state rv-page-state-${value}`,
+      'aria-pressed': String(current === value),
+      title: value === 'skip' ? 'This page is not to be migrated' : '',
+      onclick: () => {
+        saveRow('page', 'state', current === value ? '' : value);
+        renderPageBox();
+      },
+    }, PAGE_STATE_LABELS[value])));
   box.replaceChildren(
-    el('label', { class: 'rv-reviewed-label' }, reviewed, ' I have reviewed this page'),
-    ...commentParts('page', 'Comments on this page: layout, QA findings, anything else'),
+    states,
+    ...commentParts('page', 'A comment on this page as a whole: layout, QA findings, anything else'),
   );
 }
 
@@ -1253,6 +1305,21 @@ async function onFrameLoad(side) {
 /* ---------- start ---------- */
 
 async function start() {
+  // the two panels fold to a strip (kept per browser); the page view takes the space
+  document.querySelectorAll('.rv-collapse').forEach((button) => {
+    const panel = button.closest('.rv-panel');
+    const key = `std-review-panel-${button.dataset.panel}`;
+    const fold = (folded) => {
+      panel.classList.toggle('rv-collapsed', folded);
+      button.setAttribute('aria-expanded', String(!folded));
+      button.textContent = (button.dataset.panel === 'left') === folded ? '›' : '‹';
+      button.title = folded ? 'Show this panel' : 'Hide this panel';
+      window.localStorage.setItem(key, folded ? '1' : '');
+      layout();
+    };
+    fold(window.localStorage.getItem(key) === '1');
+    button.addEventListener('click', () => fold(!panel.classList.contains('rv-collapsed')));
+  });
   // a sent reply redraws the panels that show threads
   threadHooks.redraw = () => {
     listBlocks();

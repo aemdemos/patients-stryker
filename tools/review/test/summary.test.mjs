@@ -25,7 +25,9 @@ const check = (label, ok) => {
 };
 const where = (id) => (byId[id]?.evidence || []).map((e) => e.where).sort().join(', ');
 
-check('rows used: 31 (28 review rows + 3 thread replies), 1 for a block gone, 2 AOE status rows', result.source.used === 31 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
+check('rows used: 49 of 52 (the vanished block and the 2 AOE status rows aside)', result.source.rows === 52 && result.source.used === 49 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
+const discussed = result.items.flatMap((it) => it.evidence).find((e) => (e.text || '').startsWith('INTERNAL:'));
+check('a comment still in discussion is in the summary, marked as not sent yet', discussed?.thread?.state === 'internal', JSON.stringify(discussed?.thread));
 check('counts per kind', JSON.stringify(result.counts) === JSON.stringify({
   decision: 5, variant: 5, conversion: 4, page: 2, question: 4,
 }));
@@ -36,7 +38,7 @@ check('single choices aggregated (2 blocks on 2 pages)', byId['decision:block:ca
 check('a choice equal to the standard is no decision', !result.items.some((it) => it.id.startsWith('decision:block:columns:variant:feature-statement')));
 check('section text set choice', !!byId['decision:section:text:default>text-large']);
 // variant changes: comments go to the design the block shows (its own choice first)
-check('media-text comments on 4 blocks', where('variant:columns:media-text') === 'Columns s11b0, Columns s16b0, Columns s3b0, Columns s9b0');
+check('media-text comments on 5 blocks (one still in discussion)', where('variant:columns:media-text') === 'Columns s11b0, Columns s12b0, Columns s16b0, Columns s3b0, Columns s9b0');
 check('a comment on a re-chosen block goes to its new design + layout note', where('variant:cards-corp:resources') === 'Cards s14b0, Cards s5b1');
 check('reach = every instance of the design', byId['variant:columns:media-text']?.reach.blocks > 500);
 check('text set comment', !!byId['variant:section:text-x-large']);
@@ -58,13 +60,13 @@ check('a key no longer on the page: re-check question', !!byId['question:gone:/u
 // threads: an AOE answer in the tool and a reviewer closing it; an answer still open
 const gap = (byId['variant:columns:media-text']?.evidence || []).find((e) => e.text === 'The gap between the image and the text is too wide.');
 check('a thread answered by the AOE team and closed by the reviewer: resolved, with its status', gap?.thread?.state === 'resolved'
-  && gap.thread.replies === 2 && gap.status?.state === 'done' && gap.status.release === 'r2', JSON.stringify(gap?.thread));
+  && gap.thread.replies === 3 && gap.status?.state === 'done' && gap.status.release === 'r2', JSON.stringify(gap?.thread));
 const phone = byId['variant:cards-corp:teaser']?.evidence[0];
-check('a thread the AOE team answered: answered, in progress', phone?.thread?.state === 'answered' && phone.status?.state === 'progress', JSON.stringify(phone?.thread));
+check('a thread the AOE team sent back: waiting for the reviewers, in progress', phone?.thread?.state === 'waiting-reviewer' && phone.status?.state === 'progress', JSON.stringify(phone?.thread));
 check('AOE members are not counted as reviewers', !result.source.reviewers.includes('sample AOE member'), JSON.stringify(result.source.reviewers));
 // AOE status
 check('status: partly done', byId['variant:columns:media-text']?.state === 'partly');
-check('thread counts per work item', JSON.stringify(byId['variant:columns:media-text']?.threads) === JSON.stringify({ open: 2, answered: 1, resolved: 1 }), JSON.stringify(byId['variant:columns:media-text']?.threads));
+check('thread counts per work item', JSON.stringify(byId['variant:columns:media-text']?.threads) === JSON.stringify({ 'waiting-aoe': 2, 'waiting-reviewer': 1, resolved: 1 }), JSON.stringify(byId['variant:columns:media-text']?.threads));
 check("status: won't do", byId['conversion:columns:media-text']?.state === 'wontdo');
 check('links open the tool at the block, by its key', /[?&]block=b%3Acards-corp%3A[0-9a-f]{8}/.test(byId['variant:cards-corp:teaser']?.evidence[0].link || ''), byId['variant:cards-corp:teaser']?.evidence[0].link);
 
