@@ -7,7 +7,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 const PAGE_TEMPLATE = {
   name: 'patents',
-  description: 'www.stryker.com patents and trademarks pages (#518). Patents index: Columns (columns-50-50) hero [gold H1 (bold + italic) + notice | image], the product-line links as plain paragraphs in a `separator` section, the document code in a `disclaimer` section. Patents tables and trademarks: each source table as one `Table (no-header, striped, stacked)` (columns empty in every row dropped); trademarks first has its H1 and description in a `serif, p-1-5` section. `published` from the source date with `last-updated: show`.',
+  description: 'www.stryker.com patents and trademarks pages (#518). Patents index: Columns (columns-50-50, stack) hero [gold H1 (bold + italic) + notice | image], the product-line links as plain paragraphs in a `separator` section, the document code in a `disclaimer` section. Patents tables and trademarks: each source table as one `Table (no-header, striped, stacked)` (columns empty in every row dropped); trademarks first has its H1 and description in a `serif, p-1-5, width-50` section. `published` from the source date with `last-updated: show`.',
   urls: [
     'https://www.stryker.com/us/en/about/patents.html',
     'https://www.stryker.com/us/en/about/patents/Spine-patents.html',
@@ -86,7 +86,7 @@ function pageHero(document, src) {
     media.push(out);
   }
   const nodes = media.length
-    ? [...heading, WebImporter.Blocks.createBlock(document, { name: 'Columns (columns-50-50)', cells: [[copy, media]] })]
+    ? [...heading, WebImporter.Blocks.createBlock(document, { name: 'Columns (columns-50-50, stack)', cells: [[copy, media]] })]
     : [...heading, ...copy];
   return { nodes, rule: !!component.querySelector('.border-bottom-gold') };
 }
@@ -106,7 +106,7 @@ function linkList(document, src) {
   });
 }
 
-/** .c-longtexthero → bold H1 + description paragraphs in a `serif, p-1-5` section */
+/** .c-longtexthero → bold H1 + description paragraphs in a `serif, p-1-5, width-50` section */
 function longTextHero(document, src) {
   const component = src.querySelector('.c-longtexthero');
   if (!component) return [];
@@ -123,7 +123,7 @@ function longTextHero(document, src) {
     if (text(p)) nodes.push(para(document, text(p)));
   });
   if (!nodes.length) return [];
-  return [...nodes, sectionMetadata(document, 'serif, p-1-5'), document.createElement('hr')];
+  return [...nodes, sectionMetadata(document, 'serif, p-1-5, width-50'), document.createElement('hr')];
 }
 
 /** .c-patenttables → Table (no-header, striped, stacked); columns empty in every row are dropped */

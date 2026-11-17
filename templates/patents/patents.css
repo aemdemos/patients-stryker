@@ -1,0 +1,36 @@
+/* patents — www.stryker.com patents and trademarks pages (#518). CSS-only template.
+   Measured on /us/en/about/patents.html (375 / 768 / 1024 / 1440): the title sits 38px below
+   the header (the shared 10px gap plus --space-section less 2px, as the corp-legal titles),
+   10px above its text, the rule 11px below the image, and the product-line links 36px (46px
+   from 600px) below the rule. Only the index opens with an H1 followed by a Columns block;
+   trademarks keeps the shared 10px title gap. */
+body.patents main:has(> .section.columns-container:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
+}
+
+body.patents main > .section.separator > .default-content-wrapper {
+  padding-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+body.patents main > .section.columns-container:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-s);
+}
+
+/* the image cell's own bottom margin and the section gap are dropped */
+body.patents main > .section.columns-container:first-child {
+  margin-bottom: var(--space-block-s);
+}
+
+body.patents main > .section.columns-container:first-child .columns .columns-img-col {
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  body.patents main > .section.separator > .default-content-wrapper {
+    padding-top: calc(var(--space-section) + var(--space-block));
+  }
+}
