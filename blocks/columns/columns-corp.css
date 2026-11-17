@@ -241,6 +241,18 @@ body.corp .columns.large-subtitles.block > div > div h3 + p {
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* …right under the heading, as the next line of the source paragraph (build-your-ASC "that
+   simplies a complex process…" under "Step-by-step playbook") */
+body.corp .columns.large-subtitles.block > div > div h3:where(:has(+ p)) {
+  margin-bottom: 0;
+}
+
+/* gray-titles: the cells' headings in dark grey (stryker.com #545857: build-your-ASC
+   "Step-by-step playbook", "Best practices", "Peer-to-peer education") */
+body.corp .columns.gray-titles.block > div > div :is(h2, h3, h4) {
+  color: var(--color-secondary);
+}
+
 body.corp .columns.large-headline p > em:only-child {
   font-family: var(--display-font-family);
   font-style: normal;
@@ -295,6 +307,12 @@ body.corp .columns.large-headline li + li {
 body.corp .columns.large-titles > div > div h2 {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
+}
+
+/* …a title under other text keeps the blank line the source has above it (stryker.com jr45
+   "Product focus" 49px under the list above, "Program objectives" under the cell headline) */
+body.corp .columns.large-titles > div > div > :where(:not(:first-child, h2)) + h2 {
+  margin-top: var(--corp-blank-line);
 }
 
 /* gold display heading: a Heading 2 with Bold + Italic words (stryker.com .fontsize-2-5em:
@@ -415,6 +433,13 @@ body.corp .columns.large-headline .columns-img-col ~ p.button-wrapper {
 /* large-headline: a button right under a video keeps the source's 30px component gap */
 body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
   margin-top: var(--space-section);
+}
+
+/* button-gap: a button under the text of a cell keeps the blank line the source has above it
+   (stryker.com: an empty paragraph, then the Button Set: ASC operating room "Learn more" 49px
+   under the text) */
+body.corp .columns.button-gap.block > div > div > p:not(.button-wrapper) + p.button-wrapper {
+  margin-top: calc(1lh + var(--space-block));
 }
 
 /* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
@@ -608,6 +633,17 @@ body.corp .columns.gray-last.block > div > div:last-child :is(p, li):nth-child(n
   font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--heading-line-height-hero);
+}
+
+/* …except a video's caption under it in the box: the 14px copy (stryker.com jr45 December
+   "Mako SmartRobotics™ in my practice" Futura bold, "43:09 minutes" Egyptienne, 14px) */
+body.corp .columns.gray-last.block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp .columns.gray-last.block > div > div:last-child p:has(> .dm-video-wrapper) ~ p:nth-child(n) strong {
+  font-family: var(--display-font-family);
 }
 
 body.corp .columns.gray-last.block > div > div:last-child > :last-child {

@@ -74,6 +74,23 @@ export function sharedFragmentPath(xf) {
  * breaks (headlineNodes keeps them).
  * @param {Document} document
  */
+/**
+ * Run as the import's `preprocess` (before the importer's cleanup drops empty paragraphs): a
+ * Button Set right after a rich text that ends on a blank paragraph (stryker.com ASC operating
+ * room, pre- / post-operative "Learn more": `<p>&nbsp;</p>`, then the button, 49px under the
+ * text) is marked `data-blank-before`; its buttons carry it to the Columns `button-gap` variant
+ * (semantic transformer). SKILL Connect's buttons, with no blank line, are not marked.
+ */
+export function markBlankBeforeButtons(document) {
+  const blank = (p) => p && p.tagName === 'P' && !p.textContent.replace(/\u00a0/g, ' ').trim()
+    && !p.querySelector('img, picture, iframe');
+  document.querySelectorAll('.buttonset').forEach((set) => {
+    const prev = set.previousElementSibling;
+    const box = prev && prev.matches('.text, .parbase') && prev.querySelector('.c-rich-text-editor > div');
+    if (box && blank(box.lastElementChild)) set.setAttribute('data-blank-before', '');
+  });
+}
+
 export function keepHeadlineBlankLines(document) {
   const blank = (node) => !(node.textContent || '').replace(/\u00a0/g, ' ').trim()
     && !(node.nodeType === 1 && node.querySelector('img, picture, iframe'));
@@ -109,13 +126,21 @@ const BLANK_LINE_PAGES = new Set([
  * @param {string} url the source page URL
  */
 export function blankLineSpacers(document, url) {
-  if (!BLANK_LINE_PAGES.has(new URL(url).pathname)) return;
+  // on every page (decided 2026-11-17): a blank line between two parts of the page's own text;
+  // on the listed pages also the blank lines after a text and the percentage margins below
+  const listed = BLANK_LINE_PAGES.has(new URL(url).pathname);
   const blank = (node) => node.nodeType !== 1 || (node.tagName === 'P'
     && !node.textContent.replace(/\u00a0/g, ' ').trim() && !node.querySelector('img, picture, iframe'));
+  // text inside a block keeps its own spacing: a row of several columns (a Columns block)
+  const inBlock = (component) => {
+    const row = component.closest('.colctrl .row');
+    return !!row && row.querySelectorAll(':scope > [class*="col-"]').length > 1;
+  };
   document.querySelectorAll('.text.parbase > .c-rich-text-editor > div').forEach((box) => {
     const component = box.parentElement.parentElement;
     // text in tabs and accordion panels keeps its own spacing
     if (component.closest('.c-tabs, .panel, .c-accordion')) return;
+    if (!listed && inBlock(component)) return;
     // the text parts and blank lines in order (blank lines before the first text dropped)
     const items = [];
     [...box.childNodes].forEach((node) => {
@@ -125,10 +150,17 @@ export function blankLineSpacers(document, url) {
       } else if (prev) prev.push(node);
       else if (!blank(node) || items.length) items.push([node]);
     });
+    if (!listed) {
+      // only the blank lines between two text parts (a blank line closing a text may already
+      // be the gap to what follows: build-your-ASC "Wherever you are…", 45px with none, 47px)
+      while (items.length && items[items.length - 1] === null) items.pop();
+      if (!items.includes(null)) return;
+    }
     // a last paragraph closing on a line break and a no-break space (environmental programs
     // "To achieve these carbon goals…<br>&nbsp;"): a blank line after the text as well
     const lastP = [...box.children].filter((el) => el.tagName === 'P').pop();
-    if (lastP && lastP === box.lastElementChild && items.length && items[items.length - 1]) {
+    if (listed && lastP && lastP === box.lastElementChild
+      && items.length && items[items.length - 1]) {
       const tail = [...lastP.childNodes];
       const nbsp = tail.length > 1 && tail[tail.length - 1].nodeType === 3
         && tail[tail.length - 1].textContent.includes('\u00a0') && !tail[tail.length - 1].textContent.replace(/\u00a0/g, ' ').trim();
@@ -152,8 +184,8 @@ export function blankLineSpacers(document, url) {
       spacer.append(headline);
       return spacer;
     };
-    if (pct('padding-top') >= 2) component.before(wideSpacer());
-    if (pct('margin-bottom') >= 2) {
+    if (listed && pct('padding-top') >= 2) component.before(wideSpacer());
+    if (listed && pct('margin-bottom') >= 2) {
       // after the text (and its blank lines, below)
       component.setAttribute('data-wide-after', '');
     }

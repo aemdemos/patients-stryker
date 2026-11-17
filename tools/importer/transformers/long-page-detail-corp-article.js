@@ -77,8 +77,10 @@ const COMPONENTS = [
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = {
-  // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
-  A: ['href', 'data-btn-style'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
+  // data-btn-style: the section style a link asks for (buildArticle adds it to its section);
+  // data-blank-before: a blank line above its button on the source (the semantic transformer's
+  // Columns `button-gap`)
+  A: ['href', 'data-btn-style', 'data-blank-before'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'],
 };
 
 function text(el) {
@@ -838,6 +840,9 @@ function buttonNodes(component, doc) {
     // the btn-purple / btn-blue style (authoring conventions); marked here, set on the section
     const colour = ['btn-purple', 'btn-blue'].find((cls) => source.classList.contains(cls));
     if (colour) a.setAttribute('data-btn-style', colour);
+    // a blank line above the Button Set on the source (markBlankBeforeButtons): carried to the
+    // Columns `button-gap` variant by the semantic transformer
+    if (component.hasAttribute('data-blank-before')) a.setAttribute('data-blank-before', '');
     const strong = doc.createElement('strong');
     if (source.classList.contains('btn-gold')) {
       const em = doc.createElement('em');

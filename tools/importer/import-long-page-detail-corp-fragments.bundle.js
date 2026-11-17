@@ -140,8 +140,10 @@ var CustomImportScript = (() => {
   ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
-    // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
-    A: ["href", "data-btn-style"],
+    // data-btn-style: the section style a link asks for (buildArticle adds it to its section);
+    // data-blank-before: a blank line above its button on the source (the semantic transformer's
+    // Columns `button-gap`)
+    A: ["href", "data-btn-style", "data-blank-before"],
     IMG: ["src", "alt"],
     TD: ["colspan", "rowspan"],
     TH: ["colspan", "rowspan"]
@@ -682,6 +684,7 @@ var CustomImportScript = (() => {
       a.textContent = text2(source);
       const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
       if (colour) a.setAttribute("data-btn-style", colour);
+      if (component.hasAttribute("data-blank-before")) a.setAttribute("data-blank-before", "");
       const strong = doc.createElement("strong");
       if (source.classList.contains("btn-gold")) {
         const em = doc.createElement("em");
@@ -3570,6 +3573,45 @@ var CustomImportScript = (() => {
     [/\/care-settings\/asc\//i, "asc"],
     [/\/clinical\/clout(\.html)?$/i, "clout"]
   ];
+  var PAGE_SPACERS = [
+    [/\/care-settings\/asc\/build-your-asc(\.html)?$/i, [
+      ["You only get one chance", "spacer, wide"],
+      // under the hero: 58px (27px on phones)
+      ["ASC New Build Playbook", "spacer, wide"],
+      // under the icon row: 61px
+      ["Phase 1", "spacer"]
+      // above the phase boxes: 59px (49px on phones)
+    ]],
+    [/\/care-settings\/asc\/implants-and-disposables(\.html)?$/i, [
+      ["Joint replacement", "spacer, wide"]
+      // under the hero: 58px (27px on phones)
+    ]]
+  ];
+  function pageSpacers(doc, main, url) {
+    var _a;
+    const list = ((_a = PAGE_SPACERS.find(([re]) => re.test(url))) == null ? void 0 : _a[1]) || [];
+    list.forEach(([text5, style]) => {
+      var _a2;
+      const textOf = (n) => n.tagName === "TABLE" ? norm([...n.querySelectorAll("tr")].slice(1).map((r) => r.textContent).join(" ")) : norm(n.textContent);
+      const node = [...main.children].find((n) => textOf(n).startsWith(text5));
+      if (!node) return;
+      const meta = doc.createElement("table");
+      const head = doc.createElement("tr");
+      const th = doc.createElement("th");
+      th.setAttribute("colspan", "2");
+      th.textContent = "Section Metadata";
+      head.append(th);
+      const row = doc.createElement("tr");
+      ["style", style].forEach((v) => {
+        const td = doc.createElement("td");
+        td.textContent = v;
+        row.append(td);
+      });
+      meta.append(head, row);
+      if (((_a2 = node.previousElementSibling) == null ? void 0 : _a2.tagName) === "HR") node.before(meta, doc.createElement("hr"));
+      else node.before(doc.createElement("hr"), meta, doc.createElement("hr"));
+    });
+  }
   function dominantSize(el) {
     var _a, _b;
     const by = /* @__PURE__ */ new Map();
@@ -3841,6 +3883,9 @@ var CustomImportScript = (() => {
           return (first == null ? void 0 : first.matches("strong, b")) && !first.querySelector('span[data-tag~="body-font"]') && [...p.querySelectorAll('span[data-tag~="body-font"]')].some((s) => !first.contains(s) && (s.querySelector("strong, b") || s.closest("strong, b")));
         }));
         if (labelled) addVariant(table, "label-bold");
+        const grey = cells.some((td) => [...td.querySelectorAll("p, h2, h3, h4")].some((p) => fullyBold(p) && spansIn(p).some((s) => tagsOf(s).includes("color-grey") && norm(s.textContent) === norm(p.textContent))));
+        if (grey) addVariant(table, "gray-titles");
+        if (table.querySelector("a[data-blank-before]")) addVariant(table, "button-gap");
       }
       const imageLink = (p) => {
         const a = (p == null ? void 0 : p.tagName) === "P" && p.querySelector("a");
@@ -4093,6 +4138,8 @@ var CustomImportScript = (() => {
     displayLines(doc, main);
     finishSpans(doc, main, warn);
     dropTypographyStyles(doc, main, warn, group);
+    pageSpacers(doc, main, url);
+    main.querySelectorAll("[data-blank-before]").forEach((a) => a.removeAttribute("data-blank-before"));
     tidyEmphasis(doc, main);
     const left = main.textContent.match(/\[\[[^\]]*\]/g);
     if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(" ")}`);

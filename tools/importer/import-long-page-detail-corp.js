@@ -9,7 +9,7 @@ import cardsCorpResourcesParser from './parsers/cards-corp-resources.js';
 import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 // TRANSFORMER IMPORTS
 import longPageDetailSectionsTransformer, {
-  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths,
+  keepHeadlineBlankLines, blankLineSpacers, edsLinkPaths, markBlankBeforeButtons,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
@@ -91,6 +91,8 @@ export default {
   // before the importer's own cleanup, which drops empty paragraphs
   preprocess: ({ document, params }) => {
     keepHeadlineBlankLines(document);
+    // (the button marker first: the blank-line spacers rebuild the texts it reads)
+    markBlankBeforeButtons(document);
     blankLineSpacers(document, params.originalURL);
   },
 

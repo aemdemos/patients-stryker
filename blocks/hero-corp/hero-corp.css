@@ -334,6 +334,12 @@
   --span-color: var(--hero-phone-text);
 }
 
+/* …the gold words (Bold + Italic) as well (stryker.com build-your-asc "Expertise" dark grey on
+   phones), gold again from 600px */
+.hero-corp[data-phone-text] > div:last-child :is(em strong, strong em) {
+  color: var(--hero-phone-text);
+}
+
 @media (width >= 600px) {
   .hero-corp[data-phone-text] > div:last-child > * {
     color: inherit;
@@ -341,6 +347,10 @@
 
   .hero-corp[data-phone-text] > div:last-child a:any-link {
     color: var(--hero-phone-link, var(--color-black));
+  }
+
+  .hero-corp[data-phone-text] > div:last-child :is(em strong, strong em) {
+    color: var(--color-accent);
   }
 
   .hero-corp[data-phone-text] > div:last-child span.color-gold { --span-color: var(--color-accent); }

@@ -309,6 +309,52 @@ const PAGE_THEMES = [
   [/\/clinical\/clout(\.html)?$/i, 'clout'],
 ];
 
+/**
+ * Spacer sections stryker.com's component spacing needs, page by page (measured 2026-11-17 at
+ * 1440 / 1000 / 390; the gaps differ between pages, so no template rule): a `spacer` section
+ * (20px, 30px from 600px) or `spacer, wide` (30px from 600px, none on phones) before the
+ * top-level element that starts with the text
+ */
+const PAGE_SPACERS = [
+  [/\/care-settings\/asc\/build-your-asc(\.html)?$/i, [
+    ['You only get one chance', 'spacer, wide'], // under the hero: 58px (27px on phones)
+    ['ASC New Build Playbook', 'spacer, wide'], // under the icon row: 61px
+    ['Phase 1', 'spacer'], // above the phase boxes: 59px (49px on phones)
+  ]],
+  [/\/care-settings\/asc\/implants-and-disposables(\.html)?$/i, [
+    ['Joint replacement', 'spacer, wide'], // under the hero: 58px (27px on phones)
+  ]],
+];
+
+function pageSpacers(doc, main, url) {
+  const list = PAGE_SPACERS.find(([re]) => re.test(url))?.[1] || [];
+  list.forEach(([text, style]) => {
+    // (a block's text without its name row)
+    const textOf = (n) => (n.tagName === 'TABLE'
+      ? norm([...n.querySelectorAll('tr')].slice(1).map((r) => r.textContent).join(' '))
+      : norm(n.textContent));
+    const node = [...main.children].find((n) => textOf(n).startsWith(text));
+    if (!node) return;
+    const meta = doc.createElement('table');
+    const head = doc.createElement('tr');
+    const th = doc.createElement('th');
+    th.setAttribute('colspan', '2');
+    th.textContent = 'Section Metadata';
+    head.append(th);
+    const row = doc.createElement('tr');
+    ['style', style].forEach((v) => {
+      const td = doc.createElement('td');
+      td.textContent = v;
+      row.append(td);
+    });
+    meta.append(head, row);
+    // the spacer is its own section: right after the previous section break, or with breaks
+    // around it when the element sits inside a section
+    if (node.previousElementSibling?.tagName === 'HR') node.before(meta, doc.createElement('hr'));
+    else node.before(doc.createElement('hr'), meta, doc.createElement('hr'));
+  });
+}
+
 /** the size whose tags cover most of an element's text (a quote mark at 3vw in a 2.5vw line) */
 function dominantSize(el) {
   const by = new Map();
@@ -656,6 +702,14 @@ function columnsCells(doc, main) {
             .some((s) => !first.contains(s) && (s.querySelector('strong, b') || s.closest('strong, b')));
       }));
       if (labelled) addVariant(table, 'label-bold');
+      // a cell's Bold title line in dark grey: `gray-titles` (build-your-ASC "Step-by-step
+      // playbook", #545857)
+      const grey = cells.some((td) => [...td.querySelectorAll('p, h2, h3, h4')].some((p) => fullyBold(p)
+        && spansIn(p).some((s) => tagsOf(s).includes('color-grey') && norm(s.textContent) === norm(p.textContent))));
+      if (grey) addVariant(table, 'gray-titles');
+      // a button with a blank line above it on the source (sections transformer
+      // markBlankBeforeButtons): `button-gap` (ASC operating room "Learn more")
+      if (table.querySelector('a[data-blank-before]')) addVariant(table, 'button-gap');
     }
     // a fully Bold line under an image at the body size on stryker.com (no size tag, not
     // gold) is a product name, not a caption: `product-names` (nse attachments)
@@ -983,6 +1037,8 @@ function semanticMarkup(main, doc, url = '') {
   displayLines(doc, main);
   finishSpans(doc, main, warn);
   dropTypographyStyles(doc, main, warn, group);
+  pageSpacers(doc, main, url);
+  main.querySelectorAll('[data-blank-before]').forEach((a) => a.removeAttribute('data-blank-before'));
   tidyEmphasis(doc, main);
   const left = main.textContent.match(/\[\[[^\]]*\]/g);
   if (left) warn.push(`bracket text left: ${left.slice(0, 5).join(' ')}`);

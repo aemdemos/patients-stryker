@@ -4,15 +4,15 @@
 /* ---- theme `large-copy`: the page's own text (default content) in 17.5px copy, lines
    21.25px apart (stryker.com .fontsize-1-25em on the rich text of the SKILL and ASC care
    setting pages; measured on centers-of-excellence and operating-room). Blocks keep their
-   own copy size (Columns / Accordion / Panel `large-copy` variants), the small print (`disclaimer`) its
-   own ---- */
-body.long-page-detail-corp.large-copy main > .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+   own copy size (Columns / Accordion / Panel `large-copy` variants), the small print (`disclaimer`) and
+   the full-bleed bands (`asc` Large Headline bands) theirs ---- */
+body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-bleed) > .default-content-wrapper :is(p, ul, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
 /* a standalone link (bold + underline) stays the 14px Futura bold action link */
-body.long-page-detail-corp.large-copy main > .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
+body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-bleed) > .default-content-wrapper a.link-strong:any-link {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
 }
@@ -92,8 +92,33 @@ body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-con
 }
 
 body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) ~ p {
+  margin-top: 2lh;
+  font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--long-page-detail-corp-lh-unit))));
-  line-height: var(--heading-line-height-hero);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-font-size-xl);
+}
+
+/* the text under the "Let's get started." band's lines in light grey (stryker.com #edeeec), the
+   quote's attribution in white on the gold band ("- ASC Administrator") */
+body.long-page-detail-corp.asc main > .section:where(.purple-gradient.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) ~ p {
+  color: var(--color-surface);
+}
+
+/* the quote's attribution in white on the gold band ("- ASC Administrator") */
+body.long-page-detail-corp.asc main > .section:where(.gold.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) ~ p {
+  color: var(--color-white);
+}
+
+/* the band paddings (stryker.com full-bleed panel around a Large Headline: the "Let's get
+   started." band 36px above / 46px below its text at 1440, 7px / 19px on phones; the quote's
+   gold box 5% of the width above and below: 69px at 1440, 18px at 390) */
+body.long-page-detail-corp.asc main > .section:where(.purple-gradient.full-bleed):has(> .default-content-wrapper > h3) {
+  padding-block: var(--space-block-s) var(--space-block-xs);
+}
+
+body.long-page-detail-corp.asc main > .section:where(.gold.full-bleed):has(> .default-content-wrapper > h4) {
+  padding-block: 5%;
 }
 
 body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) :is(em, strong) {
@@ -103,6 +128,17 @@ body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-con
 @media (width >= 600px) {
   body.long-page-detail-corp.asc {
     --long-page-detail-corp-lh-unit: 1vw;
+  }
+
+  body.long-page-detail-corp.asc main > .section:where(.purple-gradient.full-bleed):has(> .default-content-wrapper > h3) {
+    padding-block: calc(var(--space-section) + var(--space-block-s)) var(--space-section);
+  }
+
+  /* the blank line above it and its line spacing: on phones stryker.com sets the 11.7px text on
+     the 21px body lines (two of them above it), from 600px on its own lines (one above) */
+  body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) ~ p {
+    margin-top: 1lh;
+    line-height: var(--heading-line-height-hero);
   }
 
   body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h3:where(:has(> strong:only-child)):where(:not(:has(> em > strong, > strong > em))) {
@@ -250,6 +286,12 @@ body.long-page-detail-corp.large-headlines main > .section.headline-box > .defau
 
 body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5, p) :is(em, strong) {
   font-style: normal;
+}
+
+/* in a gold box the title's Bold words are white (stryker.com: the nse product pages "Elite
+   Attachments", "Footed Cutting accessories": the first word white Futura bold, the rest black) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box.gold > .default-content-wrapper > h1 strong:not(:where(em strong, strong:has(em))) {
+  color: var(--color-white);
 }
 
 /* a Large Headline title as the page's Heading 1 outside a box (stryker.com TEACH talks

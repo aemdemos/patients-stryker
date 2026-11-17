@@ -1348,14 +1348,21 @@ body.long-page-detail-corp main > .section.hero-corp-container:has(.hero-corp.te
   }
 }
 
-/* …the copy 20px under the headline, a button 30px (stryker.com: the Large Headline's 30px,
-   less the rich text's -2% for copy) */
-body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) + :not(:has(> span[class*="headline-"])) {
+/* …the copy 20px under the title (Heading 1), a button right under it 20px, 30px from 600px
+   (stryker.com: the Large Headline's spacing; build-your-asc / implants-and-disposables "TALK
+   WITH US" 30-45px under the title at 1440, 20-35px at 390) */
+body.long-page-detail-corp main .hero-corp > div:last-child > h1 + :not(.button-wrapper) {
   margin-top: var(--space-block-l);
 }
 
-body.long-page-detail-corp main .hero-corp > div:last-child > :has(> span[class*="headline-"]) + .button-wrapper {
-  margin-top: var(--space-section);
+body.long-page-detail-corp main .hero-corp > div:last-child > h1 + .button-wrapper {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main .hero-corp > div:last-child > h1 + .button-wrapper {
+    margin-top: var(--space-section);
+  }
 }
 
 /* ---- the hero title (Heading 1) of a `Hero Corp` without a size variant: 2.5vw, the most
