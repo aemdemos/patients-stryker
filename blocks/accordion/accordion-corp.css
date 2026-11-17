@@ -28,6 +28,13 @@ body.corp .accordion .accordion-item-body {
   border: 0;
 }
 
+/* large-copy: 17.5px panel copy (stryker.com .fontsize-1-25em on the panel text: Mako
+   surgeon campaign, SKILL, ispies), lines 21.25px apart */
+body.corp .accordion.large-copy .accordion-item-body :is(p, ul, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
 /* a panel made of several sections (`accordion-continue`): the corp section gap
    between them, 20px (30px from 600px) */
 body.corp .accordion .accordion-item-body > .section:not(:last-child) {

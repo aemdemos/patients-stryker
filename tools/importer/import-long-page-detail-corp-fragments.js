@@ -19,6 +19,7 @@ import longPageDetailSectionsTransformer, {
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import semanticTransformer from './transformers/long-page-detail-corp-semantic.js';
 import { xfToFragmentPath, xfKey } from './xf-fragment-path.js';
 
 const PAGE_TEMPLATE = {
@@ -36,7 +37,10 @@ const parsers = {
   'cards-corp-resources': cardsCorpResourcesParser,
 };
 
-const transformers = [longPageDetailSectionsTransformer, cleanupTransformer, dmImagesTransformer];
+// the semantic transformer last: no bracket syntax in the output
+const transformers = [
+  longPageDetailSectionsTransformer, cleanupTransformer, dmImagesTransformer, semanticTransformer,
+];
 
 function executeTransformers(hookName, element, payload) {
   const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };

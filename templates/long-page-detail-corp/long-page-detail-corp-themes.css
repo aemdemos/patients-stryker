@@ -1,0 +1,300 @@
+/* long-page-detail-corp themes: loaded only on pages that set `theme` metadata
+   (scripts/corp.js loadTemplate). Each theme is a page group's default-content look. */
+
+/* ---- theme `large-copy`: the page's own text (default content) in 17.5px copy, lines
+   21.25px apart (stryker.com .fontsize-1-25em on the rich text of the SKILL and ASC care
+   setting pages; measured on centers-of-excellence and operating-room). Blocks keep their
+   own copy size (Columns / Accordion / Panel `large-copy` variants), the small print (`disclaimer`) its
+   own ---- */
+body.long-page-detail-corp.large-copy main > .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* a standalone link (bold + underline) stays the 14px Futura bold action link */
+body.long-page-detail-corp.large-copy main > .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+/* ---- theme `xlarge-copy`: the page's own text in 21px copy (stryker.com .fontsize-1-5em on
+   the rich text of the Mako surgeon campaign), as the Columns `xlarge-copy` variant; not the
+   small print ---- */
+body.long-page-detail-corp.xlarge-copy main > .section:not(.disclaimer) > .default-content-wrapper :is(p, ul, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.xlarge-copy main > .section:not(.disclaimer) > .default-content-wrapper a.link-strong:any-link {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+/* ---- theme `asc`: the ASC care setting pages' own text (stryker.com /us/en/care-settings/asc/,
+   measured at 390 / 1440 on build-your-asc, implants-and-disposables, resources). Blocks keep
+   their own styles ---- */
+body.long-page-detail-corp.asc {
+  --long-page-detail-corp-lh-unit: 2vw;
+}
+
+/* a fully Bold Heading 2: the 35px Futura bold product group title (.fontsize-2-5em:
+   "Joint replacement", "Payer Negotiations Video Library") */
+body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h2:where(:has(> strong:only-child)):where(:not(:has(> em > strong, > strong > em))) {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height);
+}
+
+/* a Heading 2 in Italic: the 49px Egyptienne light statement, its gold words Futura bold
+   (.fontsize-3-5em: "You only get one chance to launch your ASC. We help you do it right.") */
+body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h2:where(:has(> em)):where(:not(:has(> em:only-child > strong, > strong:only-child > em))) {
+  font-family: var(--heading-font-family);
+  font-size: calc(3.5 * var(--body-font-size-m));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* a Heading 3 in Italic: the 36.75px Egyptienne light label ("Stryker ASC program
+   offerings") */
+body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h3:where(:has(> em)):where(:not(:has(> em:only-child > strong, > strong:only-child > em))) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxxl-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+/* a fully Bold Heading 3: the Futura bold title at 1.75x the heading 3 (1.25em .fontsize-1-75em:
+   "ASC New Build Playbook", 38.28px on phones, 45.94px from 600px) */
+body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h3:where(:has(> strong:only-child)):where(:not(:has(> em > strong, > strong > em))) {
+  font-size: calc(2.1875 * var(--body-font-size-l));
+  line-height: var(--heading-line-height);
+}
+
+/* the Large Headline bands (full-bleed sections: the "Let's get started." band, the customer
+   quote) at the Large Headline sizes: Heading 3 3.5vw, Heading 4 2.5vw Egyptienne light,
+   Heading 2 2vw, the text under them 1.5vw (2N vw on phones, capped at N x 14px) */
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > h3 {
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > h4 {
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) ~ p {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--long-page-detail-corp-lh-unit))));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.asc main > .section:where(.full-bleed) > .default-content-wrapper > :is(h2, h3, h4) :is(em, strong) {
+  font-style: normal;
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.asc {
+    --long-page-detail-corp-lh-unit: 1vw;
+  }
+
+  body.long-page-detail-corp.asc main > .section > .default-content-wrapper > h3:where(:has(> strong:only-child)):where(:not(:has(> em > strong, > strong > em))) {
+    font-size: calc(2.1875 * var(--heading-font-size-l));
+  }
+}
+
+/* ---- theme `clout`: the CLOUT registry page (one-off; stryker.com
+   /us/en/peripheral-vascular/clinical/clout, measured at 390 / 1440). The source headings step
+   down on phones (h2 21px, 24.5px from 600px) ---- */
+
+/* a Heading 2 with gold words: 1.25x the heading ("CLOUT Outcomes", "Clinical evidence":
+   26.25px on phones, 30.625px from 600px) */
+body.long-page-detail-corp.clout main > .section > .default-content-wrapper > h2:where(:has(> em > strong, > strong > em)) {
+  font-size: calc(1.25 * var(--heading-font-size-l));
+}
+
+/* a Heading 2 all in Italic: the purple Egyptienne medium statement at 1.5x the heading
+   ("Significant clot removal in a single session": 31.5px on phones, 36.75px from 600px) */
+body.long-page-detail-corp.clout main > .section > .default-content-wrapper > h2:where(:has(> em)):where(:not(:has(> strong, > em > strong))) {
+  font-family: var(--heading-font-family);
+  font-size: calc(1.5 * var(--heading-font-size-l));
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+  color: var(--color-purple);
+}
+
+body.long-page-detail-corp.clout main > .section > .default-content-wrapper > h2:where(:has(> em)):where(:not(:has(> strong, > em > strong))) em {
+  font-weight: var(--font-weight-medium);
+}
+
+/* the stat numbers (a fully Bold Heading 2 in a cell) in purple at 5vw, their label under them
+   at 1.5vw (">90%" / "Complete or near-complete thrombus removal*") */
+body.long-page-detail-corp.clout main .columns > div > div > h2.columns-bold {
+  margin-bottom: 0;
+  font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+  color: var(--color-purple);
+}
+
+body.long-page-detail-corp.clout main .columns > div > div > h2.columns-bold ~ p {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.clout main > .section > .default-content-wrapper > h2:where(:has(> em > strong, > strong > em)) {
+    font-size: calc(1.25 * var(--heading-font-size-xl));
+  }
+
+  body.long-page-detail-corp.clout main > .section > .default-content-wrapper > h2:where(:has(> em)):where(:not(:has(> strong, > em > strong))) {
+    font-size: calc(1.5 * var(--heading-font-size-xl));
+  }
+}
+
+/* ---- theme `thank-you-large`: an enlarged page title and subtitle (stryker.com rich text: an h4
+   at 2.5em, Futura bold, and an h2 at 1.5em, Egyptienne medium; the Mako Live thank-you page,
+   measured at 375 / 1000 / 1440): the H1 35px, 43.75px from 900px (source 1024px), the H2
+   31.5px, 36.75px from 900px, both on lines 1.06 apart, the H2 15px under the H1. Authored as
+   plain page text: H1 with the gold words Bold + Italic, H2 in Italic ---- */
+body.long-page-detail-corp.thank-you-large {
+  --long-page-detail-corp-theme-title-size: var(--corp-heading-font-size-h1-1-25);
+  --long-page-detail-corp-theme-subtitle-size: var(--corp-heading-font-size-h2-1-5-s);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--long-page-detail-corp-theme-title-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--long-page-detail-corp-theme-subtitle-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+body.long-page-detail-corp.thank-you-large main > .section > .default-content-wrapper > h2 em:not(strong em) {
+  font-weight: var(--font-weight-medium);
+}
+
+@media (width >= 900px) {
+  body.long-page-detail-corp.thank-you-large {
+    --long-page-detail-corp-theme-title-size: 43.75px; /* stryker.com 2.5em of the 17.5px h4 */
+    --long-page-detail-corp-theme-subtitle-size: 36.75px; /* 1.5em of the 24.5px h2 */
+  }
+}
+
+/* ---- theme `large-headlines`: the page's Large Headlines are plain text in its white `headline-box`
+   sections, sized like stryker.com's Large Headline (.c-largeheadline span.fontsize-Nvw: N% of
+   the content width, capped at N x 14px, twice the % below 600px; measured on the endoscopy
+   resources pages, courses, webinars, biologics at 390 / 1440). Formatting picks the line:
+   - Heading 1: the 4vw title (plain words Egyptienne light, Bold words Futura bold);
+   - Heading 2 in Italic: a 4vw Egyptienne light statement; a Heading 2: a 2vw line;
+   - Heading 3 in Italic: a 3.5vw Egyptienne light label; Heading 4: a 2.5vw Egyptienne line;
+   - Heading 5: a 5vw Futura bold line; a paragraph: 1.5vw Egyptienne light text.
+   Bold + Italic words are gold. The lines follow each other with no gap, 1.35 apart ---- */
+body.long-page-detail-corp.large-headlines {
+  --long-page-detail-corp-lh-unit: 2vw;
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5, p) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h1 {
+  font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h2 {
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h2:has(> em) {
+  font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h3 {
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h4 {
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > h5 {
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(5 * var(--body-font-size-m)), calc(5 * var(--long-page-detail-corp-lh-unit))));
+  font-weight: var(--font-weight-bold);
+}
+
+/* the text lines: on phones on the source paragraph's 21px line boxes (28.875px apart) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > p {
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--long-page-detail-corp-lh-unit))));
+  line-height: calc(var(--body-font-size-xl) * var(--paragraph-line-height));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5, p) :is(em, strong) {
+  font-style: normal;
+}
+
+/* a Large Headline title as the page's Heading 1 outside a box (stryker.com TEACH talks
+   "Tips and tricks for glenoid exposure", .fontsize-3-5vw; 4vw as the other titles, §4.3):
+   the 4vw title, plain words Egyptienne light, Bold words Futura bold */
+body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1 {
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1 :is(em, strong) {
+  font-style: normal;
+}
+
+/* a text paragraph below a headline line: one blank line above it, as the source's blank line
+   (courses "Every day, …" under "Your opportunity to learn is here."; biologics "We are
+   excited …" under "Coming soon!", in the next box of the run) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > :is(h1, h2, h3, h4, h5) + p,
+body.long-page-detail-corp.large-headlines main > .section.headline-box + .section.headline-box:not(.separator) > .default-content-wrapper > p:first-child {
+  margin-top: 1lh;
+}
+
+/* below the box (the last of a run of boxes, not above a rule, which has its own spacing): the
+   source box's page-section gap, 20px below 600px; from 600px its 20px bottom padding and a 30px
+   gap (biologics, arthroscopy "Documents" 390 / 1440) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.large-headlines {
+    --long-page-detail-corp-lh-unit: 1vw;
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) {
+    margin-bottom: var(--space-section);
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box:not(:has(+ .section:is(.separator, .headline-box))) > .default-content-wrapper {
+    padding-bottom: var(--space-block-l);
+  }
+
+  body.long-page-detail-corp.large-headlines main > .section.headline-box > .default-content-wrapper > p {
+    line-height: var(--heading-line-height-hero);
+  }
+}
