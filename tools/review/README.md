@@ -34,6 +34,8 @@ browser keeps the token, later visits need no link (locally the frames read `/co
 | `notes.js` | Pinned QA notes: note mode (button or N, Esc), a click on the standard page drops a pin tied to the nearest text run or image (`sync.js` key + spot in its box, else the page position), so it keeps its place on reflow and variant switches; pins live in the frame; category, text, width, open / resolved, deleted. Saved as item `note:<id>`, kind `note` |
 | `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
+| `RUNBOOK.md` | **Start here in a new session**: backstory, where everything is, credentials, operations, writing into DA, recovery |
+| `da/` | Uploading `/std` documents to DA, checking them, previewing them on a branch (only on the user's request; RUNBOOK section 8) |
 | `backend/`, `backend-plan.md` | The review backend on App Builder (invitation links, state per page and block, audit) and its plan |
 | `summary.js`, `summarise.mjs`, `set-status.mjs`, `test/` | The feedback summary for the AOE team, the agent's readings and the status back to the reviewers (below) |
 
