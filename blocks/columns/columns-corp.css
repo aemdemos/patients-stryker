@@ -1410,22 +1410,28 @@ body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):
 @media (width >= 600px) {
   body.corp .columns.stack.columns-2-cols > div {
     flex-direction: column;
-    align-items: stretch;
   }
 
   body.corp .columns.stack.columns-2-cols > div > div {
     flex: 0 0 auto;
+  }
+
+  body.corp .columns.stack.columns-50-50.columns-2-cols > div {
+    align-items: stretch;
   }
 }
 
 @media (width >= 900px) {
   body.corp .columns.stack.columns-2-cols > div {
     flex-direction: row;
-    align-items: flex-start;
   }
 
   body.corp .columns.stack.columns-2-cols > div > div {
     flex-basis: 50%;
+  }
+
+  body.corp .columns.stack.columns-50-50.columns-2-cols > div {
+    align-items: flex-start;
   }
 }
 

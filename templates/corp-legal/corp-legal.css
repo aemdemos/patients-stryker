@@ -181,16 +181,8 @@ body.corp-legal main .accordion.divided .accordion-item-open .accordion-item-bod
   }
 }
 
-/* a line with several bold links (icrc "CHINESE | 中国 | 中國"): the plain bold words and the
-   separators take the link colour, and the links keep the line's size */
-body.corp-legal main .columns p:has(> strong > a > u) > strong:not(:has(a)) {
+body.corp-legal main .columns p:has(> a.link-strong) > strong {
   color: var(--link-color);
-}
-
-body.corp-legal main .columns p > strong > a:any-link:has(u),
-body.corp-legal main .columns p > strong > a:any-link:has(u) u {
-  font-size: inherit;
-  line-height: inherit;
 }
 
 body.corp-legal main .table.block table td strong {
