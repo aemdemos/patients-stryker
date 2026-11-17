@@ -3,7 +3,7 @@
  * Calls the review backend's private admin action (the project's credential is added by the
  * environment). Prints the JSON answer.
  * usage: node tools/review/backend/admin.mjs <op> [--name "…"] [--paths /us/en/a,/us/en/b]
- *   [--days 30] [--no-groups] [--results] [--page /us/en/…] [--id <invite id>] [--json '<params>']
+ *   [--days 30] [--no-groups] [--results] [--role aoe] [--page /us/en/…] [--id <invite id>] [--json '<params>']
  *   [--ns 892544-strykerstdreview-stage]
  * ops: setup | invite | revoke | invites | export | status | import | purge-invite | purge-test
  */
@@ -24,6 +24,7 @@ if (opt('--paths')) params.paths = opt('--paths').split(',').map((p) => p.trim()
 if (opt('--days')) params.days = Number(opt('--days'));
 if (args.includes('--no-groups')) params.groups = false;
 if (args.includes('--results')) params.results = true;
+if (opt('--role')) params.role = opt('--role');
 if (opt('--page')) params.page = opt('--page');
 if (opt('--id')) params.id = opt('--id');
 

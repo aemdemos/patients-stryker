@@ -70,6 +70,28 @@ page and block, updated in place, with an audit file per save; no sign-in for re
 - **History:** the pilot saved to a Google Sheet through Adobe's form submission service
   (2026-11-13 to 11-17, test data only); retired on 2026-11-17, its rows not imported.
 
+## Threads and the AOE team in the tool
+
+Every comment (block, text section, page) and QA note is a **thread**: the reviewer's comment
+opens it, replies come below it. The back and forth happens here, not in calls.
+
+- **Reviewers** reply, or **Resolve** (any reviewer of the page; a reply after that reopens it).
+- **The AOE team** opens the tool with an AOE invitation (`admin.mjs invite --role aoe`): the
+  name shows "(AOE)", their replies carry an AOE badge and may carry a status (in progress, done in
+  rN, won't do, open again) and a release. Their activity is recorded under their own names; they
+  can use everything else in the tool too (their choices are recorded with role `aoe`).
+- **State**, from the last message: *open* (waiting for the AOE team), *answered* (waiting for the
+  reviewers), *resolved*. The thread shows whom it waits for, from where the viewer stands.
+- Replies are sent at once (not held for Save) and written once (no edits); entries
+  `reply:<comment|note>:<id>`, value `{ text, action: 'resolve', status: { state, release } }`.
+  The backend checks the roles: only reviewers close, only the AOE team gives a status.
+- `set-status.mjs` (many rows at once) writes AOE answers into the threads (`admin answer`,
+  `--by` the name); older `status:<kind>` rows show as AOE answers.
+- The summary gives every piece of evidence its thread (state, replies, last writer, the AOE
+  team's latest status) and work items their thread counts; a reviewer's reply newer than the
+  agent's reading makes the reading stale. The results page's AOE column: the thread state and the
+  latest status.
+
 ## Block keys (`blockkeys.js`)
 
 A choice is saved under its block's **key**, not its position: positions (`s14b0`) move when the
@@ -155,7 +177,8 @@ applied. `release` is free text; the commit is recorded with every status.
 
 Tests: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.csv`, made-up
 feedback on real standard pages, from `test/sample-rows.mjs`); the whole loop on the backend
-(reviewer → summary → AOE status → reviewer and results page): `backend/test/tool.test.mjs`.
+(reviewer → summary → AOE status → reviewer replies → the AOE team answers in the tool → the
+reviewer resolves → results page): `backend/test/tool.test.mjs`.
 
 ## Source snapshots
 

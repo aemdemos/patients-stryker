@@ -29,8 +29,9 @@ export const KINDS = {
   question: 'Questions back to the customer',
 };
 export const STATES = {
-  open: 'open', progress: 'in progress', done: 'done', wontdo: "won't do",
+  open: 'open', progress: 'in progress', done: 'done', wontdo: "won't do", resolved: 'resolved',
 };
+const THREAD_STATES = { open: 'waiting for the AOE team', answered: 'answered', resolved: 'resolved' };
 const NAMES = {
   columns: 'Columns',
   'cards-corp': 'Cards',
@@ -204,11 +205,43 @@ export function summarise({
     if (!items.has(id)) items.set(id, { id, ...init(), evidence: [] });
     return items.get(id);
   };
-  const statusOf = (page, item, kind) => {
-    const latest = statusRows.filter((r) => r.page === page && r.item === item && r.kind === `status:${kind}`)
-      .sort((a, b) => (a.time < b.time ? 1 : -1))[0];
-    return latest ? { ...decode(latest.value), time: latest.time } : null;
+  // threads: the replies on a comment or note (kind `reply:<comment|note>:<id>`), by reviewers and
+  // by the AOE team; an older AOE status row (`status:<kind>`) counts as an AOE reply
+  const isAoe = (r) => r.role === 'aoe' || r.reviewer === AOE;
+  const replyRows = located.filter((r) => /^reply:(comment|note):/.test(r.kind));
+  const threadOf = (page, item, kind) => {
+    const msgs = replyRows.filter((r) => r.page === page && r.item === item && r.kind.startsWith(`reply:${kind}:`))
+      .map((r) => ({
+        by: r.reviewer, role: isAoe(r) ? 'aoe' : 'reviewer', time: r.time, value: decode(r.value) || {},
+      }));
+    statusRows.filter((r) => r.page === page && r.item === item && r.kind === `status:${kind}`).forEach((r) => {
+      const v = decode(r.value) || {};
+      msgs.push({
+        by: AOE, role: 'aoe', time: r.time, value: { text: v.reason, status: v },
+      });
+    });
+    msgs.sort((a, b) => (a.time < b.time ? -1 : 1));
+    const last = msgs[msgs.length - 1];
+    let st = 'open';
+    if (last?.value.action === 'resolve') st = 'resolved';
+    else if (last?.role === 'aoe') st = 'answered';
+    const answer = [...msgs].reverse().find((m) => m.role === 'aoe' && m.value.status);
+    return {
+      state: st,
+      replies: msgs.length,
+      last: last ? { by: last.by, role: last.role, time: last.time } : null,
+      status: answer ? { ...answer.value.status, time: answer.time } : null,
+      messages: msgs.map((m) => ({
+        by: m.by,
+        role: m.role,
+        time: m.time,
+        text: m.value.text,
+        action: m.value.action,
+        status: m.value.status,
+      })),
+    };
   };
+  const statusOf = (page, item, kind) => threadOf(page, item, kind).status;
   const evidence = (e, extra) => ({
     ref: `${e.page}#${stored(e.page, e.item)}|${e.kind}`,
     page: e.page,
@@ -219,6 +252,7 @@ export function summarise({
     reviewer: e.reviewer,
     time: e.time,
     status: statusOf(e.page, e.item, e.kind),
+    thread: ['comment', 'note'].includes(e.kind) ? threadOf(e.page, e.item, e.kind) : undefined,
     ...extra,
   });
 
@@ -451,16 +485,22 @@ export function summarise({
       delete out.blocks;
     }
     out.pages = [...new Set(it.evidence.map((e) => e.page))].filter((p) => p !== '*');
-    const states = it.evidence.map((e) => e.status?.state || 'open');
+    const states = it.evidence.map((e) => (e.thread?.state === 'resolved' ? 'resolved' : e.status?.state || 'open'));
     const uniq = [...new Set(states)];
     out.state = uniq.length === 1 ? uniq[0] : 'partly';
+    // the threads: how many wait for the AOE team, for the reviewers, are closed
+    const threads = it.evidence.map((e) => e.thread).filter(Boolean);
+    if (threads.length) {
+      out.threads = Object.fromEntries(['open', 'answered', 'resolved'].map((k) => [k, threads.filter((t) => t.state === k).length]));
+    }
     const reading = themes.items?.[it.id];
     if (reading) {
       const refs = new Set(it.evidence.map((e) => e.ref));
       out.reading = {
         ...reading,
         // newer evidence than the reading, or evidence it names that is gone: read again
-        stale: it.evidence.some((e) => e.time > (reading.time || ''))
+        stale: it.evidence.some((e) => e.time > (reading.time || '')
+          || (e.thread?.messages || []).some((m) => m.role === 'reviewer' && m.time > (reading.time || '')))
           || (reading.themes || []).some((t) => (t.refs || []).some((r) => !refs.has(r))),
       };
     }
@@ -469,7 +509,7 @@ export function summarise({
     || (b.reach?.blocks || 0) - (a.reach?.blocks || 0)
     || b.evidence.length - a.evidence.length);
 
-  const reviewers = [...new Set(review.map((r) => r.reviewer))];
+  const reviewers = [...new Set(review.filter((r) => !isAoe(r)).map((r) => r.reviewer))];
   return {
     generated: new Date().toISOString(),
     source: {
@@ -491,10 +531,11 @@ export function summarise({
 
 const cell = (v) => String(v ?? '').replace(/\|/g, '\\|').replace(/\s*\n\s*/g, ' ');
 const day = (t) => (t ? t.slice(0, 16).replace('T', ' ') : '');
-const stateText = (s) => {
-  if (!s) return 'open';
-  const label = STATES[s.state] || s.state;
-  return [label, s.release && `in ${s.release}`, s.reason].filter(Boolean).join(', ');
+const stateText = (s, thread) => {
+  const parts = [];
+  if (thread) parts.push(THREAD_STATES[thread.state]);
+  if (s) parts.push([STATES[s.state] || s.state, s.release && `in ${s.release}`, s.reason].filter(Boolean).join(', '));
+  return parts.join(' · ') || 'open';
 };
 
 /** the summary as Markdown (the report for people; work-items.json holds the same for agents) */
@@ -532,7 +573,7 @@ export function toMarkdown(result) {
       out.push('', '| Page | Where | Feedback | Category | Width | By | When | Status |', '|---|---|---|---|---|---|---|---|');
       it.evidence.forEach((e) => {
         const page = e.link ? `[${cell(e.title)}](${e.link})` : cell(e.title === '*' ? 'all pages' : e.title);
-        out.push(`| ${page} | ${cell(e.where || e.item)} | ${cell(e.text)} | ${cell(e.category)} | ${cell(e.width)} | ${cell(e.reviewer)} | ${day(e.time)} | ${cell(stateText(e.status))} |`);
+        out.push(`| ${page} | ${cell(e.where || e.item)} | ${cell(e.text)} | ${cell(e.category)} | ${cell(e.width)} | ${cell(e.reviewer)} | ${day(e.time)} | ${cell(stateText(e.status, e.thread))} |`);
       });
       out.push('');
     });

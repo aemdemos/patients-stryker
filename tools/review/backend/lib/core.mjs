@@ -5,7 +5,10 @@
  *
  * An entry: key `p.<page>.<item>.<kind>` (page `*`, a group's choice: `g.<item>.<kind>`), the
  * parts base64url-encoded (keys allow letters, digits, - _ . only); value JSON
- * { v: <the tool's value, a JSON string>, by, at, rev, inv }. Invitations: `i.<id>`.
+ * { v: <the tool's value, a JSON string>, by, at, rev, inv, role }. Invitations: `i.<id>`.
+ * Threads: a comment or QA note opens one; every reply is its own entry, kind
+ * `reply:<comment|note>:<id>`, value { text, action?: 'resolve', status?: { state, release } },
+ * written once. Roles: `reviewer` (the customer) and `aoe` (the AOE team), from the invitation.
  */
 import crypto from 'crypto';
 import stateLib from '@adobe/aio-lib-state';
@@ -16,6 +19,32 @@ export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
 export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note'];
 export const MAX_VALUE = 20000;
+export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
+export const ROLES = ['reviewer', 'aoe'];
+const ANSWER_STATES = ['progress', 'done', 'wontdo', 'open'];
+
+/**
+ * A reply's value, checked for the writer's role: reviewers may close a thread (`resolve`), only
+ * the AOE team gives a status; a reply has text, an action or a status. → error text or null
+ */
+export function replyProblem(value, role) {
+  let v;
+  try {
+    v = JSON.parse(value);
+  } catch (e) {
+    return 'a reply is JSON';
+  }
+  if (!v || typeof v !== 'object' || Array.isArray(v)) return 'a reply is an object';
+  if (v.text !== undefined && (typeof v.text !== 'string' || v.text.length > MAX_VALUE)) return 'text: a string';
+  if (v.action !== undefined && v.action !== 'resolve') return 'action: resolve only';
+  if (v.action === 'resolve' && role !== 'reviewer') return 'only reviewers close a thread';
+  if (v.status !== undefined) {
+    if (role !== 'aoe') return 'only the AOE team gives a status';
+    if (!v.status || !ANSWER_STATES.includes(v.status.state)) return `status.state: ${ANSWER_STATES.join(', ')}`;
+  }
+  if (!v.text && !v.action && !v.status) return 'a reply needs text, an action or a status';
+  return null;
+}
 export const MAX_CHANGES = 100;
 export const TOOL = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page/tools/review/index.html';
 const ORIGINS = [
@@ -102,7 +131,12 @@ export async function checkInvite({ state, files }, token) {
   const stored = await state.get(`i.${payload.id}`);
   const invite = stored && JSON.parse(stored.value);
   if (!invite || invite.revoked) return { error: 'revoked' };
-  return { invite: { id: payload.id, name: invite.name, scope: invite.scope, exp: invite.exp } };
+  const role = ROLES.includes(invite.scope?.role) ? invite.scope.role : 'reviewer';
+  return {
+    invite: {
+      id: payload.id, name: invite.name, scope: invite.scope, exp: invite.exp, role,
+    },
+  };
 }
 
 const decodeEntry = (key, stored) => {
@@ -110,7 +144,7 @@ const decodeEntry = (key, stored) => {
   if (!where || !stored) return null;
   const e = JSON.parse(stored.value);
   return {
-    ...where, value: e.v, reviewer: e.by, time: e.at, rev: e.rev,
+    ...where, value: e.v, reviewer: e.by, time: e.at, rev: e.rev, role: e.role || (e.by === 'AOE' ? 'aoe' : 'reviewer'),
   };
 };
 
@@ -153,7 +187,7 @@ export async function readAll(state) {
  * someone else changed it). One audit file per batch (the durable record).
  */
 export async function saveChanges({ state, files }, {
-  page, changes, by, inv,
+  page, changes, by, inv, role = 'reviewer',
 }) {
   const at = new Date().toISOString();
   const results = [];
@@ -170,7 +204,7 @@ export async function saveChanges({ state, files }, {
       });
     } else {
       const next = {
-        v: c.value, by, at, rev: rev + 1, inv,
+        v: c.value, by, at, rev: rev + 1, inv, role,
       };
       await state.put(key, JSON.stringify(next), { ttl: TTL });
       results.push({
@@ -184,7 +218,7 @@ export async function saveChanges({ state, files }, {
   if (audit.length) {
     const name = `audit/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-${crypto.randomBytes(4).toString('hex')}.json`;
     await files.write(name, JSON.stringify({
-      at, by, inv, changes: audit,
+      at, by, inv, role, changes: audit,
     }));
   }
   return { at, results };

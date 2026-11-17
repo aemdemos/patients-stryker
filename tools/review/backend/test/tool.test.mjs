@@ -57,6 +57,7 @@ const inv = await admin({
 });
 const link = `${base}/tools/review/index.html?page=${encodeURIComponent(PAGE)}&invite=${encodeURIComponent(inv.token)}`;
 const browser = await chromium.launch();
+let aoeInv = null;
 try {
   const open = async (url, ready = '.rv-pagebox-body textarea.rv-comment') => {
     const context = await browser.newContext({ viewport: { width: 1600, height: 1000 } });
@@ -135,7 +136,7 @@ try {
   check('the summary has the comment as a page work item', !!item && item.evidence.some((e) => e.text === COMMENT), JSON.stringify(items.map((it) => it.id)));
   const status = execFileSync('node', ['tools/review/set-status.mjs', '--work', join(out, 'work-items.json'), '--item', `page:${PAGE}`,
     '--state', 'done', '--release', 'r-test', '--reason', 'loop test', '--ns', ns], { encoding: 'utf8' });
-  check('set-status saves the status in the backend', /1 of 1 status rows saved/.test(status), status);
+  check('set-status saves the status in the backend (an AOE answer)', /1 of 1 AOE answers saved/.test(status), status);
 
   // 4. a fresh browser: the comment, the mark and the AOE status
   ({ context, page } = await open(link));
@@ -151,17 +152,61 @@ try {
   check('… and the AOE status under the comment', /AOE: done in r-test/.test(again.aoe), again.aoe);
   await context.close();
 
-  // 5. the results page with the results right
+  // 5. the back and forth in the tool: the reviewer replies, the AOE team answers, the reviewer closes
+  const threadOn = (p) => p.evaluate(() => ({
+    state: document.querySelector('.rv-pagebox-body .rv-thread-state')?.textContent || '',
+    msgs: document.querySelectorAll('.rv-pagebox-body .rv-msg').length,
+  }));
+  const send = async (p, button, text) => {
+    const done = p.waitForResponse((r) => r.url().includes('std-review/save') && r.request().method() === 'POST', { timeout: 30000 });
+    if (text !== undefined) await p.fill('.rv-pagebox-body textarea.rv-reply', text);
+    await p.click(`.rv-pagebox-body .rv-reply-actions button:text-is("${button}")`);
+    return (await done).status();
+  };
+  ({ context, page } = await open(link));
+  check('the reviewer sees the thread answered', /^Answered · waiting for you/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  check('the reviewer replies in the thread', await send(page, 'Reply', 'Not quite: the image is still small.') === 200);
+  check('… and the thread waits for the AOE team', /^Open · waiting for the AOE team/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+  await context.close();
+
+  aoeInv = await admin({
+    op: 'invite', name: 'tool test AOE', paths: [PAGE], days: 1, role: 'aoe',
+  });
+  const aoeLink = `${base}/tools/review/index.html?page=${encodeURIComponent(PAGE)}&invite=${encodeURIComponent(aoeInv.token)}`;
+  {
+    ({ context, page } = await open(aoeLink));
+    check('the AOE member: name with (AOE), the thread waits for them', (await page.evaluate(() => document.querySelector('.rv-reviewer').value)) === 'tool test AOE (AOE)'
+      && /^Open · waiting for you/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+    await page.selectOption('.rv-pagebox-body select.rv-reply-status', 'done');
+    await page.fill('.rv-pagebox-body input.rv-reply-release', 'r-ui');
+    check('the AOE member answers with a status in the tool', await send(page, 'Answer', 'Enlarged the image to the live page size.') === 200);
+    check('… shown as an AOE answer', await page.evaluate(() => {
+      const aoeMsgs = [...document.querySelectorAll('.rv-pagebox-body .rv-msg-aoe')];
+      return /AOE: done in r-ui · Enlarged/.test(aoeMsgs[aoeMsgs.length - 1]?.textContent || '');
+    }));
+    await context.close();
+
+    ({ context, page } = await open(link));
+    check('the reviewer resolves the thread', await send(page, 'Resolve') === 200);
+    check('… and it shows resolved', /^Resolved · closed/.test((await threadOn(page)).state), JSON.stringify(await threadOn(page)));
+    await context.close();
+    const thread = (await admin({ op: 'export' })).rows.filter((r) => r.page === PAGE && r.item === 'page' && r.kind.startsWith('reply:comment:'));
+    check('the backend has the thread: AOE answers, a reply, the close, each with its author and role', thread.length === 4
+      && thread.some((r) => r.reviewer === 'tool test AOE' && r.role === 'aoe')
+      && thread.some((r) => r.reviewer === 'tool test backend' && JSON.parse(r.value).action === 'resolve'), JSON.stringify(thread.map((r) => [r.reviewer, r.role])));
+  }
+
+  // 6. the results page with the results right
   ({ context, page } = await open(`${base}/tools/review/results.html?invite=${encodeURIComponent(inv.token)}`, '#comments table'));
   const res = await page.evaluate((text) => {
     const row = [...document.querySelectorAll('#comments tr')].find((tr) => tr.textContent.includes(text));
     return { found: !!row, aoe: row?.lastElementChild?.textContent || '', search: window.location.search };
   }, COMMENT);
-  check('the results page lists the comment with its AOE status', res.found && /done/.test(res.aoe), JSON.stringify(res));
+  check('the results page lists the comment: resolved, with the AOE status', res.found && /resolved · done, in r-ui/.test(res.aoe), JSON.stringify(res));
   check('… and keeps the link out of the address bar', !res.search.includes('invite='));
   await context.close();
 
-  // 6. a save cut off by closing the page at once: sent again on the next visit
+  // 7. a save cut off by closing the page at once: sent again on the next visit
   ({ context, page } = await open(link));
   const LATER = `${COMMENT} (sent again)`;
   await page.evaluate((text) => {
@@ -180,7 +225,7 @@ try {
   check('an interrupted save is sent again on the next visit', later && JSON.parse(later.value) === LATER, later?.value);
   await context.close();
 
-  // 7. after revoking, the tool says so
+  // 8. after revoking, the tool says so
   await admin({ op: 'revoke', id: inv.id });
   ({ context, page } = await open(link));
   check('a revoked link: the tool says it was withdrawn', await page.evaluate(() => document.body.textContent.includes('withdrawn')));
@@ -189,6 +234,10 @@ try {
   await browser.close();
   const purge = await admin({ op: 'purge-invite', id: inv.id });
   await admin({ op: 'revoke', id: inv.id });
+  if (aoeInv) {
+    await admin({ op: 'purge-invite', id: aoeInv.id });
+    await admin({ op: 'revoke', id: aoeInv.id });
+  }
   console.log(`clean-up: ${purge.deleted} test entries and ${purge.statuses} statuses removed, invitation revoked`);
 }
 console.log(failures ? `${failures} failures` : 'all passed');

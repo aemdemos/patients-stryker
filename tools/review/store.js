@@ -64,7 +64,12 @@ export function merge(rows) {
   const state = new Map();
   [...rows].sort((a, b) => (a.time < b.time ? -1 : 1)).forEach((r) => {
     state.set(`${r.item}|${r.kind}`, {
-      item: r.item, kind: r.kind, value: decode(r.value), reviewer: r.reviewer, time: r.time,
+      item: r.item,
+      kind: r.kind,
+      value: decode(r.value),
+      reviewer: r.reviewer,
+      time: r.time,
+      role: r.role,
     });
   });
   return state;
@@ -194,7 +199,9 @@ export function createStore(onStatus = () => {}) {
       const { status: code, body } = await call(`state?page=${encodeURIComponent(path)}`);
       if (code === 200) {
         problem = '';
-        resolveIdentity({ name: body.reviewer, scope: body.scope, expires: body.expires });
+        resolveIdentity({
+          name: body.reviewer, role: body.role || 'reviewer', scope: body.scope, expires: body.expires,
+        });
         rows = body.rows;
         rows.forEach((r) => revs.set(`${r.page}|${r.item}|${r.kind}`, r.rev));
         // changes of this page still waiting from an earlier visit (the tab was closed while they

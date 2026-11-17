@@ -173,6 +173,23 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-aoe-done { border-color: #1a7f37; background: #eef8f0; }
 .rv-aoe-progress { border-color: #bf8700; background: #fff8e5; }
 .rv-aoe-wontdo { border-color: #8c959f; }
+.rv-aoe-open { border-color: #cf222e; }
+/* threads: the back and forth on a comment or QA note */
+.rv-thread { margin-top: 6px; padding: 6px 8px; border-left: 3px solid #cf222e; border-radius: 0 4px 4px 0; background: #f6f8fa; color: #1f2328; font-size: 12px; }
+.rv-thread-answered { border-left-color: #bf8700; }
+.rv-thread-resolved { border-left-color: #1a7f37; }
+.rv-thread-state { margin-bottom: 4px; color: #57606a; }
+.rv-msg { margin: 4px 0; padding: 4px 6px; border-radius: 4px; background: #fff; }
+.rv-msg-aoe { background: #fff8e5; }
+.rv-msg-head { display: flex; justify-content: space-between; gap: 6px; }
+.rv-msg-who { font-weight: 600; }
+.rv-msg-text, .rv-msg-action { margin: 2px 0 0; white-space: pre-wrap; }
+.rv-msg-action { color: #1a7f37; font-style: italic; }
+.rv-msg .rv-aoe { margin: 2px 0 0; }
+.rv-badge { margin-left: 4px; padding: 0 4px; border-radius: 3px; background: #bf8700; color: #fff; font-size: 10px; font-weight: 700; vertical-align: 1px; }
+.rv-reply { display: block; width: 100%; margin-top: 4px; padding: 4px 6px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; font-size: 12px; resize: vertical; }
+.rv-reply-actions { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-top: 4px; }
+.rv-reply-status, .rv-reply-release { padding: 2px 4px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; font-size: 12px; }
 .rv-comment { display: block; width: 100%; margin-top: 4px; padding: 4px 6px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; font-size: 12px; resize: vertical; }
 .rv-comment[hidden] { display: none; }
 

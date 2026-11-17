@@ -56,7 +56,7 @@ const { result, markdown, missing } = await page.evaluate(async ({
   if (!rows) {
     const table = parseCsv(text);
     const head = table.shift() || [];
-    const fields = ['__id__', 'page', 'item', 'kind', 'value', 'reviewer', 'time'];
+    const fields = ['__id__', 'page', 'item', 'kind', 'value', 'reviewer', 'time', 'role'];
     const at = Object.fromEntries(fields.map((f) => [f, head.indexOf(f)]));
     rows = table.filter((r) => r.length > 1).map((r) => Object.fromEntries(fields.map((f) => [f, r[at[f]] ?? ''])));
   }

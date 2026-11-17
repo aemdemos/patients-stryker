@@ -9,7 +9,7 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
 | `state` | web | `GET ?page=` + header `x-review-invite` → `{ reviewer, scope, expires, rows }` (the page's entries and every group choice, AOE statuses among them) |
 | `save` | web | `POST { page, changes: [{ page?, item, kind, value, rev }] }` + header `x-review-invite` → per change saved / conflict |
 | `results` | web | `GET` + header `x-review-invite` (an invitation with the results right) → every entry in its scope and every group choice, for the results page |
-| `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `status`, `import`, `rekey`, `audit`, `purge-invite`, `purge-test` (see the action's header) |
+| `admin` | private | `setup`, `invite`, `revoke`, `invites`, `export`, `answer`, `status`, `import`, `rekey`, `audit`, `purge-invite`, `purge-test` (see the action's header) |
 
 - **Web actions** answer `https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review/<name>`;
   CORS only for the branch previews, `preview-aemcoder.adobe.io` and localhost. Every call needs a
@@ -24,14 +24,19 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
   rebuilt from.
 - **Conflicts:** a change carries the `rev` it started from; another stored `rev` = someone else
   changed it meanwhile: refused, the tool drops the change and asks to reload.
+- **Roles:** an invitation is for a reviewer (default) or the AOE team (`role: aoe`: answers
+  threads with a status, results on); every entry records its writer's role.
+- **Threads:** replies `reply:<comment|note>:<id>` are written once; reviewers may close a thread
+  (`action: resolve`), only the AOE role gives a status (`core.mjs replyProblem`).
 - **Limits:** reviewer kinds `variant`, `width`, `background`, `text`, `comment`, `reviewed`,
-  `note`; values up to 20 KB; 100 changes per save.
+  `note`, replies; values up to 20 KB; 100 changes per save.
 
 ## Use
 
 ```
 node tools/review/backend/deploy.mjs [--only state,save,admin] [--dry-run]
 node tools/review/backend/admin.mjs invite --name "Jane Doe" --paths /us/en/foot-and-ankle --days 30 [--page /us/en/…] [--no-groups] [--results]
+node tools/review/backend/admin.mjs invite --name "Iustin" --paths / --days 90 --role aoe      # an AOE team member
 node tools/review/backend/admin.mjs invites | revoke --id <id> | purge-invite --id <id> | export
 node tools/review/backend/admin.mjs audit --json '{"date":"2026-11-17","page":"/us/en/…"}'   # who changed what, before / after
 node tools/review/backend/test/backend.test.mjs     # the actions (test page /test/backend, cleaned up)

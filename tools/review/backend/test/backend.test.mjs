@@ -109,6 +109,34 @@ check('the status shows on load, by AOE', (r.json?.rows || []).some((x) => x.kin
 const ex = await admin({ op: 'export' });
 check('export has the entries', (ex.rows || []).some((x) => x.page === PAGE && x.item === 's1b0'));
 
+// threads: replies by a reviewer and by the AOE team, closing, role rules
+const aoe = await admin({
+  op: 'invite', name: 'backend test (AOE)', paths: [PAGE], days: 1, role: 'aoe',
+});
+check('an AOE invitation: role aoe, results on', aoe.scope?.role === 'aoe' && aoe.scope.results === true, JSON.stringify(aoe.scope));
+const rep = (token, id, value, rev = 0) => save(token, [{
+  item: 's1b0', kind: `reply:comment:${id}`, value: JSON.stringify(value), rev,
+}]);
+r = await rep(aoe.token, 'answer01', { text: 'Widened the image column.', status: { state: 'done', release: 'r1' } });
+check('the AOE team answers with a status', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await rep(T, 'reply001', { text: 'Thanks, looks better.' });
+check('a reviewer replies', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await rep(T, 'reply001', { text: 'edited' }, 1);
+check('a reply is written once (no edit)', r.status === 400 && r.json?.error.code === 'bad-reply', r.status);
+r = await rep(T, 'status01', { text: 'x', status: { state: 'done' } });
+check('a reviewer cannot give a status', r.status === 400, r.status);
+r = await rep(aoe.token, 'close001', { action: 'resolve' });
+check('the AOE team cannot close a thread', r.status === 400, r.status);
+r = await rep(T, 'close002', { action: 'resolve', text: 'Resolved.' });
+check('a reviewer closes the thread', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await state(T);
+const thread = (r.json?.rows || []).filter((x) => x.item === 's1b0' && x.kind.startsWith('reply:comment:'));
+check('load: the thread with roles (aoe, reviewer)', thread.length === 3 && thread.some((x) => x.role === 'aoe' && x.reviewer === 'backend test (AOE)')
+  && thread.filter((x) => x.role === 'reviewer').length === 2, JSON.stringify(thread.map((x) => [x.reviewer, x.role])));
+const ans = await admin({ op: 'answer', rows: [{ page: PAGE, item: 's1b0', thread: 'comment', text: 'From the command line.', status: { state: 'progress' } }] });
+check('admin answer: an AOE reply in the thread', ans.results?.[0].ok === true && /^reply:comment:/.test(ans.results[0].kind), JSON.stringify(ans));
+await admin({ op: 'revoke', id: aoe.id });
+
 r = await web('results', { invite: T });
 check('results without the results right: 403', r.status === 403 && r.json?.error.code === 'no-results', r.status);
 const withResults = await admin({

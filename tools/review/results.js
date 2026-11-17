@@ -101,7 +101,9 @@ async function blocksOf(page) {
   return blockCache.get(page);
 }
 
-const AOE_STATES = { progress: 'in progress', done: 'done', wontdo: "won't do" };
+const AOE_STATES = {
+  progress: 'in progress', done: 'done', wontdo: "won't do", open: 'open again',
+};
 
 async function render(savedRows, pages) {
   // entries saved under a block key → the block's position on the page now (a key not on the page
@@ -113,13 +115,37 @@ async function render(savedRows, pages) {
     const pos = keys ? toPosition(r.item, keys) : r.item;
     return pos ? { ...r, item: pos } : r;
   });
-  // the AOE team's status rows (set-status.mjs) are no review: kept apart, shown per comment / note
-  const rows = allRows.filter((r) => r.reviewer !== 'AOE');
-  const aoeState = merge(allRows.filter((r) => r.reviewer === 'AOE')
-    .map((r) => ({ ...r, item: `${r.page}#${r.item}` })));
+  // the AOE team (role aoe, or the command line's `AOE`) is no reviewer: its rows are kept apart;
+  // threads (replies `reply:<comment|note>:<id>`, older status rows `status:<kind>`) give the state
+  // and the AOE team's latest status of every comment and note
+  const isAoe = (r) => r.role === 'aoe' || r.reviewer === 'AOE';
+  const rows = allRows.filter((r) => !isAoe(r) && !/^(reply|status):/.test(r.kind));
+  const json = (v) => {
+    try {
+      return JSON.parse(v);
+    } catch (e) {
+      return null;
+    }
+  };
   const aoeOf = (page, item, kind) => {
-    const v = aoeState.get(`${page}#${item}|status:${kind}`)?.value;
-    return v && AOE_STATES[v.state] ? [AOE_STATES[v.state], v.release && `in ${v.release}`, v.reason].filter(Boolean).join(', ') : '';
+    const msgs = allRows.filter((r) => r.page === page && r.item === item
+      && (r.kind.startsWith(`reply:${kind}:`) || r.kind === `status:${kind}`))
+      .map((r) => {
+        const v = json(r.value) || {};
+        return r.kind.startsWith('status:')
+          ? {
+            aoe: true, time: r.time, status: v, text: v.reason,
+          } : { aoe: isAoe(r), time: r.time, ...v };
+      })
+      .sort((x, y) => (x.time < y.time ? -1 : 1));
+    if (!msgs.length) return '';
+    const last = msgs[msgs.length - 1];
+    let thread = 'waiting for the AOE team';
+    if (last.action === 'resolve') thread = 'resolved';
+    else if (last.aoe) thread = 'answered';
+    const answer = [...msgs].reverse().find((m) => m.aoe && m.status && AOE_STATES[m.status.state]);
+    const status = answer ? [AOE_STATES[answer.status.state], answer.status.release && `in ${answer.status.release}`, answer.text].filter(Boolean).join(', ') : '';
+    return [thread, status].filter(Boolean).join(' · ');
   };
   const title = Object.fromEntries(pages.map((p) => [p.path, p.title]));
   const pageName = (p) => el('a', { href: toolLink(p) }, title[p] || p);

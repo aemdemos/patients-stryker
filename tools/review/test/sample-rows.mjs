@@ -73,6 +73,10 @@ const spec = [
   [P.prophecy, 'note:sample-6', 'note', note(6, 'text', 'Wrong date in the citation.', 'Based on internal data', { status: 'resolved' }), A],
   [P.prophecy, 'note:sample-7', 'note', note(7, 'link', 'This link goes to the old brochure.', 'Discover a wealth of product resources'), B],
   [P.prophecy, 'page', 'reviewed', true, A],
+  // a thread: the AOE team answers in the tool, the reviewer closes it; another one answered only
+  [P.ankle, 'key:s3b0', 'reply:comment:sampleA1', { text: 'Narrowed the gap of media-text.', status: { state: 'done', release: 'r2' } }, 'sample AOE member', 'aoe'],
+  [P.ankle, 'key:s3b0', 'reply:comment:sampleR1', { action: 'resolve', text: 'Looks right now.' }, B],
+  [P.mask, 'key:s9b0', 'reply:comment:sampleA2', { text: 'Looking into the phone layout.', status: { state: 'progress' } }, 'sample AOE member', 'aoe'],
   // the AOE team's progress
   [P.prophecy, 's9b0', 'status:comment', {
     state: 'done', release: 'r1', reason: 'image column widened', workItem: 'variant:columns:media-text',
@@ -98,7 +102,7 @@ const rows = await page.evaluate(async ({ list, prefix }) => {
     return docs[path];
   };
   const result = [];
-  for (const [p, given, kind, value, reviewer] of list) {
+  for (const [p, given, kind, value, reviewer, role] of list) {
     let v = value;
     let item = given;
     // `key:<position>` → the block key of that position on the page
@@ -119,18 +123,18 @@ const rows = await page.evaluate(async ({ list, prefix }) => {
       }
       v = { ...n, anchor };
     }
-    result.push([p, item, kind, v, reviewer]);
+    result.push([p, item, kind, v, reviewer, role || (reviewer === 'AOE' ? 'aoe' : 'reviewer')]);
   }
   return result;
 }, { list: spec, prefix: pre });
 await browser.close();
 
 const q = (s) => `"${String(s).replace(/"/g, '""')}"`;
-const lines = ['__id__,page,item,kind,value,reviewer,time'];
-rows.forEach(([p, item, kind, value, reviewer], i) => {
+const lines = ['__id__,page,item,kind,value,reviewer,time,role'];
+rows.forEach(([p, item, kind, value, reviewer, role], i) => {
   const time = at();
   const v = kind === 'note' ? { ...value, created: time } : value;
-  lines.push([`sample-${i + 1}`, p, item, kind, JSON.stringify(v), reviewer, time].map(q).join(','));
+  lines.push([`sample-${i + 1}`, p, item, kind, JSON.stringify(v), reviewer, time, role].map(q).join(','));
 });
 writeFileSync(out, `${lines.join('\n')}\n`);
 console.log(`${rows.length} sample rows → ${out}`);

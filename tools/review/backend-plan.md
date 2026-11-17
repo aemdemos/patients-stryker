@@ -118,13 +118,45 @@ What follows from it:
    not on the page = re-check question. The two positional entries saved before (test_reviewer,
    Prophecy) were moved to their keys (`admin rekey`, computed on the DA copy they were made on).
    Also: Undo changes in the tool, an interrupted save sent again, `admin audit` and `rekey`.
-4. **Apply to DA**: the apply job writes choices into the `/std` documents (DA technical account;
-   how its secret reaches the action is decided then); a dry run first; re-uploads only on request.
+4. **Writing into DA** (changed 2026-11-17: not in the backend). During the review the tool shows
+   the choices on top of the standard pages, so DA keeps the converted base. Writes into DA are
+   rare and done by the agent on request, with the user's DA credentials (Settings), never by the
+   backend (no DA technical account): read the backend's export, apply the choices to the local
+   `/std` documents (block keys → blocks), run the checks, upload the changed documents to DA and
+   preview them on the branch. Same route for the ~980 documents not yet uploaded (before the review
+   starts) and for pages whose content is fixed from feedback. Step by step in the runbook (7).
 5. **Retire the sheet** (done 2026-11-17, with phase 2): `review-form.json` removed, so the form
    service can no longer add rows; closing the sheet's sharing is the user's (Google Sheets).
-6. **Other templates**: block index, groups and snapshots per template; invitations scoped per
+6. **Status page and conversations** (requested 2026-11-17): the back and forth between reviewers
+   and the AOE team happens in the tool, not in calls.
+   - **Status page for the customer** (and the AOE team): every page, filtered by template
+     (business unit, state, reviewer), with its state as a colour **and** a label, counts per state
+     on top, links into the tool. States: *waiting for the reviewer* (yellow: the AOE team answered
+     every open thread), *waiting for the AOE team* (red: open feedback without an answer),
+     *in review* (grey-blue: activity, not marked reviewed, no open feedback), *resolved* (green:
+     marked reviewed, every thread closed after a back and forth), *approved as is* (light green:
+     marked reviewed, never any feedback), *not reviewed yet* (black). Order: what waits on the
+     viewer first (customer: yellow, red, …; AOE team: red, yellow, …), then resolved / approved,
+     then not reviewed. "New since your last visit" markers.
+   - **Threads**: a comment or QA note is a thread: the reviewer opens it, the AOE team answers in
+     the tool (with a status: in progress / done in rN / won't do + reason), the reviewer confirms
+     (closed) or replies (open again). Every reply is an entry with its author and time.
+   - **AOE team in the tool**: their own invitations with an AOE role (all pages, answer threads,
+     statuses), their activity recorded under their names like the reviewers'.
+     `set-status.mjs` stays as the bulk fallback.
+   - *Built 2026-11-17: threads, AOE role (any reviewer of the page closes a thread, the user's
+     choice), set-status as AOE answers, summary and results with thread states; loop test covers
+     the whole back and forth. Next: the status page.*
+   - Templates on the pages list (`pages.json`) for the filter.
+7. **Runbook for new sessions** (requested 2026-11-17): in the project, next to the code
+   (`tools/review/RUNBOOK.md`, pointed to from AGENTS.md): the backstory (as-is → standard, the
+   variant model, the decisions and why), how the pieces fit, the Settings entries the credentials
+   need, everyday operations (invitations, summary, statuses), the DA write step by step with its
+   checks, recovery after a workspace restart and from the audit, the lessons learned.
+8. **Other templates**: block index, groups and snapshots per template; invitations scoped per
    template.
 
 ## Open
 
-- The DA technical account for phase 4 (who creates it, how its secret is set).
+- The ~980 standard documents not yet in DA (the DA copies are from 2026-11-13): upload before the
+  review starts (phase 4 route).

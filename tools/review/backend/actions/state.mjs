@@ -19,7 +19,7 @@ export async function main(params) {
     if (!inScope(invite.scope, page)) return fail(params, 403, 'out-of-scope', 'This page is not part of your review.');
     const rows = await readPage(stores.state, page);
     return reply(params, 200, {
-      reviewer: invite.name, scope: invite.scope, expires: invite.exp, rows,
+      reviewer: invite.name, role: invite.role, scope: invite.scope, expires: invite.exp, rows,
     });
   } catch (e) {
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));

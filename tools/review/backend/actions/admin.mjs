@@ -2,8 +2,11 @@
  * Action `admin` (private: not a web action, only callable with the project's credential).
  * params.op:
  *   setup                                   creates the signing key once (Files, never returned)
- *   invite { name, paths: [...], days, groups, results }  → { id, token, link, results link, expires }
- *     (groups: choices for all blocks like this, default on; results: the results page, default off)
+ *   invite { name, paths: [...], days, groups, results, role }  → { id, token, link, results link, expires }
+ *     (groups: choices for all blocks like this, default on; results: the results page, default off;
+ *     role: reviewer (default) or aoe: the AOE team, answers threads with a status, results on)
+ *   answer { rows: [{ page, item, thread: comment|note, text, status: { state, release, reason }, by }] }
+ *                                           AOE answers in threads (set-status.mjs), role aoe
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
  *   export                                  every entry, as rows (summary, apply, results)
@@ -17,7 +20,7 @@
  */
 import crypto from 'crypto';
 import {
-  open, secretOf, sign, readAll, saveChanges, entryKey, pagePattern, parseKey, TTL, TOOL,
+  open, secretOf, sign, readAll, saveChanges, entryKey, pagePattern, parseKey, TTL, TOOL, replyProblem,
 } from '../lib/core.mjs';
 
 const ok = (body) => ({ body });
@@ -51,7 +54,10 @@ export async function main(params) {
       if (!name || !paths.length) return bad('name and paths (one or more path prefixes, e.g. /us/en/foot-and-ankle) are needed');
       const id = crypto.randomBytes(9).toString('base64url');
       const exp = new Date(Date.now() + days * 86400000).toISOString();
-      const scope = { paths, groups: params.groups !== false, results: params.results === true };
+      const role = params.role === 'aoe' ? 'aoe' : 'reviewer';
+      const scope = {
+        paths, groups: params.groups !== false, results: params.results === true || role === 'aoe', role,
+      };
       const invite = {
         name, scope, exp, created: new Date().toISOString(), revoked: false,
       };
@@ -107,6 +113,24 @@ export async function main(params) {
       const at = new Date().toISOString();
       await files.write(`audit/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-import.json`, JSON.stringify({ at, by: 'import', rows }));
       return ok({ imported: n, of: rows.length });
+    }
+    if (op === 'answer') {
+      const rows = Array.isArray(params.rows) ? params.rows : [];
+      if (!rows.length) return bad('rows: [{ page, item, thread, text, status }]');
+      const results = [];
+      for (const r of rows) {
+        const value = JSON.stringify({ text: r.text || undefined, status: r.status || undefined });
+        const problem = !r.page || !r.item || !['comment', 'note'].includes(r.thread) ? 'page, item and thread (comment or note)' : replyProblem(value, 'aoe');
+        if (problem) results.push({ ...r, ok: false, error: problem });
+        else {
+          const kind = `reply:${r.thread}:${crypto.randomBytes(9).toString('base64url')}`;
+          const saved = await saveChanges(stores, {
+            page: r.page, changes: [{ item: r.item, kind, value, rev: 0 }], by: String(r.by || 'AOE').slice(0, 80), inv: 'admin', role: 'aoe',
+          });
+          results.push({ page: r.page, item: r.item, kind, ok: saved.results[0].ok });
+        }
+      }
+      return ok({ results });
     }
     if (op === 'rekey') {
       // entries saved under one item name moved to another, every kind (e.g. a position → its
@@ -165,13 +189,17 @@ export async function main(params) {
           deleted += mine.length;
         }
       }
-      // and the AOE statuses on those entries
+      // and the AOE statuses and thread replies on those entries
       let statuses = 0;
       const it = state.list({ match: 'p.*' });
       for (let r = await it.next(); !r.done; r = await it.next()) {
         const on = r.value.keys.filter((k) => {
           const e = parseKey(k);
-          return e?.kind.startsWith('status:') && gone.has(`${e.page}|${e.item}|${e.kind.slice(7)}`);
+          if (!e) return false;
+          // AOE statuses and every reply in the threads those entries opened
+          if (e.kind.startsWith('status:')) return gone.has(`${e.page}|${e.item}|${e.kind.slice(7)}`);
+          if (e.kind.startsWith('reply:')) return gone.has(`${e.page}|${e.item}|${e.kind.split(':')[1]}`);
+          return false;
         });
         await Promise.all(on.map((k) => state.delete(k)));
         statuses += on.length;

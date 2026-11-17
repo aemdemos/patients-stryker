@@ -25,7 +25,7 @@ const check = (label, ok) => {
 };
 const where = (id) => (byId[id]?.evidence || []).map((e) => e.where).sort().join(', ');
 
-check('rows used: 28 review rows on blocks, 1 for a block gone, 2 AOE status rows', result.source.used === 28 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
+check('rows used: 31 (28 review rows + 3 thread replies), 1 for a block gone, 2 AOE status rows', result.source.used === 31 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
 check('counts per kind', JSON.stringify(result.counts) === JSON.stringify({
   decision: 5, variant: 5, conversion: 4, page: 2, question: 4,
 }));
@@ -55,8 +55,16 @@ check('a choice that no longer fits its block is a re-check, not a decision', !!
 const keyed = (byId['variant:columns:media-text']?.evidence || []).find((e) => e.text?.startsWith('Saved under the block key'));
 check('an entry saved under a block key lands on its block (position now, key kept)', keyed?.at === 's16b0' && /^b:columns:[0-9a-f]{8}$/.test(keyed.item), JSON.stringify(keyed));
 check('a key no longer on the page: re-check question', !!byId['question:gone:/us/en/foot-and-ankle/products/prophecy:b:columns:00000000|variant']);
+// threads: an AOE answer in the tool and a reviewer closing it; an answer still open
+const gap = (byId['variant:columns:media-text']?.evidence || []).find((e) => e.text === 'The gap between the image and the text is too wide.');
+check('a thread answered by the AOE team and closed by the reviewer: resolved, with its status', gap?.thread?.state === 'resolved'
+  && gap.thread.replies === 2 && gap.status?.state === 'done' && gap.status.release === 'r2', JSON.stringify(gap?.thread));
+const phone = byId['variant:cards-corp:teaser']?.evidence[0];
+check('a thread the AOE team answered: answered, in progress', phone?.thread?.state === 'answered' && phone.status?.state === 'progress', JSON.stringify(phone?.thread));
+check('AOE members are not counted as reviewers', !result.source.reviewers.includes('sample AOE member'), JSON.stringify(result.source.reviewers));
 // AOE status
 check('status: partly done', byId['variant:columns:media-text']?.state === 'partly');
+check('thread counts per work item', JSON.stringify(byId['variant:columns:media-text']?.threads) === JSON.stringify({ open: 2, answered: 1, resolved: 1 }), JSON.stringify(byId['variant:columns:media-text']?.threads));
 check("status: won't do", byId['conversion:columns:media-text']?.state === 'wontdo');
 check('links open the tool at the block, by its key', /[?&]block=b%3Acards-corp%3A[0-9a-f]{8}/.test(byId['variant:cards-corp:teaser']?.evidence[0].link || ''), byId['variant:cards-corp:teaser']?.evidence[0].link);
 
