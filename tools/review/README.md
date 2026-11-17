@@ -32,9 +32,15 @@ Open: `/tools/review/index.html?page=/us/en/foot-and-ankle/products/prophecy`
 | `upload-snapshots.sh`, `pack-snapshot-meta.py`, `snapshot-meta/` | The tiles to Document Authoring + branch preview; the per-page snapshot facts the tool reads (below) |
 | `capture-snapshots.mjs` | Source snapshots: per page and width (1440, 375) JPEG tiles (4000 px) + text / image anchors of www.stryker.com, ALTCHA / cookie banner / trackers blocked; resumable. `--map` = EDS path → source URL (from `.migration/xf-mapping` file names) |
 | `review-form.json` | The form definition the save route uses (form submission service → the review Google Sheet, `incoming` tab) |
+| `backend/`, `backend-plan.md` | The review backend on App Builder (invitation links, state per page and block, audit) and its plan |
 | `summary.js`, `summarise.mjs`, `set-status.mjs`, `test/` | The feedback summary for the AOE team, the agent's readings and the status back to the reviewers (below) |
 
 ## Saving (`store.js`)
+
+Two stores. **The review backend** (App Builder, `backend/README.md`): used when the tool is opened
+with an invitation link (`?invite=`); the reviewer's name comes from the link, changes are saved
+at once with conflict checks, no sheet involved. **The Google Sheet** (below): the default
+without an invitation, until the move-over (plan: `backend-plan.md`, phase 2).
 
 Every change is one row in the review Google Sheet (tab `incoming`: `__id__, page, item, kind,
 value, reviewer, time`), appended by Adobe's form submission service; no sign-in for reviewers.

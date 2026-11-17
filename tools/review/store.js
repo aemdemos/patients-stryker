@@ -4,6 +4,9 @@
  * the sheet's CSV export (no sign-in; a new row shows within about a minute). Until a row shows
  * there, it stays in the browser (pending) and counts as saved for this reviewer.
  * Row: __id__, page, item (block id or `page`), kind, value (JSON), reviewer, time (ISO).
+ * The second store, the review backend on App Builder (tools/review/backend), is used when the
+ * tool is opened with an invitation link (`?invite=`) or `?store=backend`; `?store=sheet` goes
+ * back to the sheet.
  */
 
 export const CONFIG = {
@@ -13,6 +16,8 @@ export const CONFIG = {
   formPath: '/tools/review/review-form.json',
   formHost: 'standardise-v3--stryker-com--strykerenterprise.aem.page',
   submit: 'https://forms.adobe.com/adobe/forms/af/submit/',
+  // the review backend (App Builder web actions, Stage workspace)
+  backend: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
 };
 const PENDING_KEY = 'std-review-pending';
 // the sheet's row id column (the form service's own field name)
@@ -97,7 +102,7 @@ export async function readAll() {
   return [...remote, ...pendingAll().filter((r) => !seen.has(r[ID]))];
 }
 
-export function createStore(onStatus = () => {}) {
+function createSheetStore(onStatus = () => {}) {
   let sending = 0;
   let failed = 0;
   const status = () => {
@@ -178,4 +183,191 @@ export function createStore(onStatus = () => {}) {
   return {
     load, save, retry, status,
   };
+}
+
+/* ---------- the review backend (App Builder) ---------- */
+
+const INVITE_KEY = 'std-review-invite';
+const MODE_KEY = 'std-review-store';
+const BACKEND_PENDING_KEY = 'std-review-pending-backend';
+
+/** which store the tool uses: an invitation link (or ?store=backend) chooses the backend */
+export function storeMode() {
+  const q = new URLSearchParams(window.location.search);
+  const invite = q.get('invite');
+  if (invite) {
+    window.localStorage.setItem(INVITE_KEY, invite);
+    window.localStorage.setItem(MODE_KEY, 'backend');
+  }
+  const asked = q.get('store');
+  if (asked === 'backend' || asked === 'sheet') window.localStorage.setItem(MODE_KEY, asked);
+  return window.localStorage.getItem(MODE_KEY) === 'backend' ? 'backend' : 'sheet';
+}
+
+const MESSAGES = {
+  'no-invite': 'Open the tool with your review link to save',
+  'bad-invite': 'This review link is not valid: ask for a new one',
+  expired: 'Your review link has expired: ask for a new one',
+  revoked: 'Your review link was withdrawn: ask for a new one',
+  'out-of-scope': 'This page is not part of your review',
+};
+
+function createBackendStore(onStatus = () => {}) {
+  const invite = () => window.localStorage.getItem(INVITE_KEY) || '';
+  const pending = () => {
+    try {
+      return JSON.parse(window.localStorage.getItem(BACKEND_PENDING_KEY)) || [];
+    } catch (e) {
+      return [];
+    }
+  };
+  const keep = (rows) => window.localStorage.setItem(BACKEND_PENDING_KEY, JSON.stringify(rows));
+  // the stored rev of every entry seen (`page|item|kind`), sent back with a change
+  const revs = new Map();
+  let page = '';
+  let sending = 0;
+  let problem = '';
+  let resolveIdentity;
+  const identity = new Promise((resolve) => {
+    resolveIdentity = resolve;
+  });
+  const status = () => {
+    const failed = pending().filter((r) => r.failed).length;
+    if (sending) onStatus('saving', `Saving… (${sending})`);
+    else if (problem) onStatus('failed', problem);
+    else if (failed) onStatus('failed', `${failed} change${failed > 1 ? 's' : ''} not saved`);
+    else onStatus('saved', 'All changes saved');
+  };
+  const call = async (path, opts = {}) => {
+    const resp = await fetch(`${CONFIG.backend}/${path}`, {
+      ...opts,
+      headers: { 'x-review-invite': invite(), ...(opts.body ? { 'content-type': 'application/json' } : {}) },
+    });
+    let body = null;
+    try {
+      body = await resp.json();
+    } catch (e) {
+      body = null;
+    }
+    return { status: resp.status, body };
+  };
+
+  async function load(path) {
+    page = path;
+    let rows = [];
+    try {
+      const { status: code, body } = await call(`state?page=${encodeURIComponent(path)}`);
+      if (code === 200) {
+        problem = '';
+        resolveIdentity({ name: body.reviewer, scope: body.scope, expires: body.expires });
+        rows = body.rows;
+        rows.forEach((r) => revs.set(`${r.page}|${r.item}|${r.kind}`, r.rev));
+      } else {
+        problem = MESSAGES[body?.error?.code] || 'Could not read the saved reviews';
+        if (code === 401) resolveIdentity(null);
+      }
+    } catch (e) {
+      problem = 'Could not reach the review service';
+    }
+    status();
+    const mine = pending().filter((r) => r.page === path || r.page === '*');
+    return merge([...rows, ...mine]);
+  }
+
+  async function send(rows) {
+    if (!rows.length) return;
+    sending += rows.length;
+    status();
+    let result = null;
+    try {
+      const { status: code, body } = await call('save', {
+        method: 'POST',
+        body: JSON.stringify({
+          page: rows[0].sentFrom,
+          changes: rows.map((r) => ({
+            page: r.page === '*' ? '*' : undefined,
+            item: r.item,
+            kind: r.kind,
+            value: r.value,
+            rev: revs.get(`${r.page}|${r.item}|${r.kind}`) || 0,
+          })),
+        }),
+      });
+      if (code === 200) result = body.results;
+      else problem = MESSAGES[body?.error?.code] || `Could not save (${code})`;
+    } catch (e) {
+      problem = 'Could not reach the review service';
+    }
+    const ids = new Set(rows.map((r) => r[ID]));
+    let conflicts = 0;
+    const rest = pending().filter((r) => {
+      if (!ids.has(r[ID])) return true;
+      const i = rows.findIndex((x) => x[ID] === r[ID]);
+      const res = result?.[i];
+      if (res?.ok) {
+        revs.set(`${r.page}|${r.item}|${r.kind}`, res.rev);
+        return false;
+      }
+      // someone else changed it meanwhile: this change is dropped, the reload shows theirs
+      if (res?.conflict) {
+        conflicts += 1;
+        return false;
+      }
+      Object.assign(r, { failed: true });
+      return true;
+    });
+    keep(rest);
+    if (conflicts) problem = `${conflicts} change${conflicts > 1 ? 's were' : ' was'} changed by someone else meanwhile: reload the page to see it`;
+    sending -= rows.length;
+    status();
+  }
+
+  // the changes of one Save go out in one request
+  let queue = [];
+  const flush = () => {
+    const rows = queue;
+    queue = [];
+    send(rows);
+  };
+
+  function save({
+    page: rowPage, item, kind, value,
+  }) {
+    const row = {
+      [ID]: (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`),
+      page: rowPage,
+      item,
+      kind,
+      value: JSON.stringify(value),
+      time: new Date().toISOString(),
+      sentFrom: page,
+    };
+    keep([...pending(), row]);
+    if (!queue.length) window.setTimeout(flush, 0);
+    queue.push(row);
+    return {
+      item, kind, value, reviewer: 'you', time: row.time,
+    };
+  }
+
+  async function retry() {
+    problem = '';
+    const again = pending().filter((r) => r.failed);
+    const byPage = new Map();
+    again.forEach((r) => {
+      if (!byPage.has(r.sentFrom)) byPage.set(r.sentFrom, []);
+      byPage.get(r.sentFrom).push(r);
+    });
+    await [...byPage.values()]
+      .reduce((chain, rows) => chain.then(() => send(rows)), Promise.resolve());
+  }
+
+  return {
+    load, save, retry, status, identity, mode: 'backend',
+  };
+}
+
+/** the store the tool uses (see storeMode) */
+export function createStore(onStatus = () => {}) {
+  return storeMode() === 'backend' ? createBackendStore(onStatus) : { ...createSheetStore(onStatus), mode: 'sheet' };
 }

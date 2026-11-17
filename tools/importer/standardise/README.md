@@ -28,9 +28,11 @@ Still to do, in this order (agreed 2026-11-16, one at a time):
    (sheet) turned into an actionable summary for the engineers who implement them. *Built
    2026-11-16:* `tools/review/summarise.mjs` (report + work items, the agent's readings) and
    `set-status.mjs` (status back to the reviewers in the tool); see `tools/review/README.md`.
-2. **The apply step:** the sheet's decisions as input to `apply-variants.mjs` (see
-   `tools/review/README.md`), then the checks. Decide the versioning of `/std` here (reminder
-   below).
+2. **The apply step:** the review's choices into `/std`, then the checks. *Changed 2026-11-17:*
+   no versioning (additive variants: they only grow, changes to a variant are CSS/JS and apply
+   everywhere); the Google Sheet is replaced by an App Builder backend (reviewers without login,
+   invitation links, state per page and block, choices written into the `/std` documents in DA,
+   stable block keys). Plan: `tools/review/backend-plan.md`.
 3. **Block variants and default-content variants:** finish and refine them.
 4. **Variant approval pages for the customer:** per block type a full example page with a carousel
    of each variant, how many instances it has and example pages where it is used, so the customer
@@ -39,12 +41,9 @@ Still to do, in this order (agreed 2026-11-16, one at a time):
    `/std` documents; restrict the review sheet's sharing (Viewer for anyone with the link,
    `forms@adobe.com` as Editor); re-upload the Standard Block Library.
 
-- **Reminder, parked 2026-11-16 (decide in step 2): versioning of `/std`.** Feedback is applied
-  while we keep changing variants and text sets, so `/std` drifts from what was reviewed. Direction
-  to assess: `/std` as a reproducible build of versioned inputs (rules + CSS in git, decisions in
-  the sheet); a release stamp per build; each saved decision tagged with its release and a block
-  fingerprint; a change log of renamed / merged / removed variants; a re-check queue for decisions
-  whose block or variant changed. Stamping saved rows matters before real reviewers start (step 5).
+- **Versioning of `/std` (parked 2026-11-16): decided 2026-11-17, not needed.** Variants are
+  additive and changes to a variant apply everywhere; what remains is keeping choices on their
+  own block when the conversion re-runs (stable block keys, `tools/review/backend-plan.md`).
 - **Found, not fixed:** 31 jump links without a section id (product-detail importer); several H1s
   on some pages; blocks in fragments not switchable in the review tool.
 - **Later:** the other corp templates, one at a time, the same way.

@@ -1171,6 +1171,14 @@ async function start() {
     window.localStorage.setItem(NAME_KEY, name.value.trim());
     if (name.value.trim()) $('.rv-name').classList.remove('rv-need');
   });
+  // with the review backend the name is the one of the review link, not typed
+  store.identity?.then((who) => {
+    if (!who) return;
+    name.value = who.name;
+    name.readOnly = true;
+    name.title = `From your review link${who.expires ? `, valid until ${when(who.expires)}` : ''}`;
+    $('.rv-name').classList.remove('rv-need');
+  });
   $('.rv-save').addEventListener('click', () => {
     if (saveAll()) {
       listBlocks();
