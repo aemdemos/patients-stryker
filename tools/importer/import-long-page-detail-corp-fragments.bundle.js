@@ -3662,6 +3662,10 @@ var CustomImportScript = (() => {
   var lineSize = (el) => Math.max(0, ...spansIn(el).flatMap((s) => tagsOf(s).map(tagSize)));
   var hasTag = (el, re) => spansIn(el).some((s) => tagsOf(s).some((t) => re.test(t)));
   var fullyBold = (el) => !!norm(el.textContent) && norm([...el.querySelectorAll("strong, b")].map((b) => b.textContent).join("")) === norm(el.textContent);
+  var linkLine = (el) => {
+    const links = el.querySelectorAll("a");
+    return links.length === 1 && !!norm(el.textContent) && norm(links[0].textContent) === norm(el.textContent);
+  };
   function metaTableOf(doc, main, table) {
     const section = sectionsOf(main).find((s) => s.nodes.includes(table));
     if (!section) return null;
@@ -3803,7 +3807,7 @@ var CustomImportScript = (() => {
       });
       const ps = cells.flatMap((td) => [...td.querySelectorAll("p")]);
       ps.forEach((p) => {
-        if (!isColumns || !fullyBold(p)) return;
+        if (!isColumns || !fullyBold(p) || linkLine(p)) return;
         const size = wholeSize(p);
         if (size === "text-2") {
           const h = rename2(doc, p, "h2");
@@ -3895,7 +3899,7 @@ var CustomImportScript = (() => {
       const size = wholeSize(p);
       if (!size) return;
       const bold = norm([...p.querySelectorAll("strong, b")].map((b) => b.textContent).join("")) === norm(p.textContent);
-      if (!bold) return;
+      if (!bold || linkLine(p)) return;
       if (size === "text-1-5") rename2(doc, p, "h3");
       else if (size === "text-1-25") rename2(doc, p, "h4");
       else if (size === "text-1-75") {
@@ -4030,7 +4034,7 @@ var CustomImportScript = (() => {
         section.nodes.forEach((n, i) => {
           if (n.tagName !== "P" || !norm(n.textContent)) return;
           const bold = norm([...n.querySelectorAll("strong, b")].map((b) => b.textContent).join(""));
-          if (bold !== norm(n.textContent)) return;
+          if (bold !== norm(n.textContent) || linkLine(n)) return;
           const h = rename2(doc, n, level);
           if (level === "h2" && !typo.includes("p-2-5")) h.querySelectorAll("strong, b").forEach(unwrap2);
           section.nodes[i] = h;
@@ -4042,7 +4046,7 @@ var CustomImportScript = (() => {
           return n.tagName === "TABLE" && /^columns\b/i.test(norm(((_a = n.querySelector("tr")) == null ? void 0 : _a.textContent) || ""));
         }).forEach((t) => t.querySelectorAll("td > p").forEach((p) => {
           const bold = norm([...p.querySelectorAll("strong, b")].map((b) => b.textContent).join(""));
-          if (!norm(p.textContent) || bold !== norm(p.textContent)) return;
+          if (!norm(p.textContent) || bold !== norm(p.textContent) || linkLine(p)) return;
           const h = rename2(doc, p, "h2");
           if (!h.querySelector("em, i")) h.querySelectorAll("strong, b").forEach(unwrap2);
         }));

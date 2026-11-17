@@ -417,6 +417,13 @@ const lineSize = (el) => Math.max(0, ...spansIn(el).flatMap((s) => tagsOf(s).map
 const hasTag = (el, re) => spansIn(el).some((s) => tagsOf(s).some((t) => re.test(t)));
 const fullyBold = (el) => !!norm(el.textContent)
   && norm([...el.querySelectorAll('strong, b')].map((b) => b.textContent).join('')) === norm(el.textContent);
+/** a line that is a link alone: a button or action link (authoring conventions), never a heading
+ * (ASC implants-and-disposables "LEARN MORE", Bold + Italic: the gold button) */
+const linkLine = (el) => {
+  const links = el.querySelectorAll('a');
+  return links.length === 1 && !!norm(el.textContent)
+    && norm(links[0].textContent) === norm(el.textContent);
+};
 
 /** the section (its Section Metadata table, created when missing) of a block table */
 function metaTableOf(doc, main, table) {
@@ -604,7 +611,7 @@ function columnsCells(doc, main) {
     });
     const ps = cells.flatMap((td) => [...td.querySelectorAll('p')]);
     ps.forEach((p) => {
-      if (!isColumns || !fullyBold(p)) return;
+      if (!isColumns || !fullyBold(p) || linkLine(p)) return;
       const size = wholeSize(p);
       if (size === 'text-2') {
         const h = rename(doc, p, 'h2');
@@ -730,7 +737,7 @@ function sizeLines(doc, main) {
     const size = wholeSize(p);
     if (!size) return;
     const bold = norm([...p.querySelectorAll('strong, b')].map((b) => b.textContent).join('')) === norm(p.textContent);
-    if (!bold) return;
+    if (!bold || linkLine(p)) return;
     if (size === 'text-1-5') rename(doc, p, 'h3');
     else if (size === 'text-1-25') rename(doc, p, 'h4');
     else if (size === 'text-1-75') {
@@ -901,7 +908,7 @@ function dropTypographyStyles(doc, main, warn, group = '') {
       section.nodes.forEach((n, i) => {
         if (n.tagName !== 'P' || !norm(n.textContent)) return;
         const bold = norm([...n.querySelectorAll('strong, b')].map((b) => b.textContent).join(''));
-        if (bold !== norm(n.textContent)) return;
+        if (bold !== norm(n.textContent) || linkLine(n)) return;
         const h = rename(doc, n, level);
         // 1.75em: the 24.5px H2 without Bold; 2.5em (`p-2-5`): a fully Bold H2, the 35px
         // display line (ASC product groups "Joint replacement", theme `asc`)
@@ -915,7 +922,7 @@ function dropTypographyStyles(doc, main, warn, group = '') {
       section.nodes.filter((n) => n.tagName === 'TABLE' && /^columns\b/i.test(norm(n.querySelector('tr')?.textContent || '')))
         .forEach((t) => t.querySelectorAll('td > p').forEach((p) => {
           const bold = norm([...p.querySelectorAll('strong, b')].map((b) => b.textContent).join(''));
-          if (!norm(p.textContent) || bold !== norm(p.textContent)) return;
+          if (!norm(p.textContent) || bold !== norm(p.textContent) || linkLine(p)) return;
           const h = rename(doc, p, 'h2');
           if (!h.querySelector('em, i')) h.querySelectorAll('strong, b').forEach(unwrap);
         }));
