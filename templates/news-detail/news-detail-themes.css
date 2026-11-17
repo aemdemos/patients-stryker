@@ -4,7 +4,7 @@
 /* basic: news pages whose `separator` sections (the grey rule opening the section) end with
    20px of padding below their content */
 body.news-detail.basic main > .section.separator {
-  padding-bottom: var(--space-block-l);
+  padding-top: var(--space-block-l);
 }
 
 /* full-width: news pages whose source runs the title, the small print and the "Last
