@@ -338,8 +338,9 @@ body.long-page-detail-corp.large-headlines main > .section.headline-box.gold > .
 
 /* a Large Headline title as the page's Heading 1 outside a box (stryker.com TEACH talks
    "Tips and tricks for glenoid exposure", .fontsize-3-5vw; 4vw as the other titles, §4.3):
-   the 4vw title, plain words Egyptienne light, Bold words Futura bold */
-body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1 {
+   the 4vw title, plain words Egyptienne light, Bold words Futura bold; a fully Bold title is
+   the regular 28px Futura bold page title (stryker.com foot & ankle toolkit "Bunion") */
+body.long-page-detail-corp.large-headlines main > .section:not(.headline-box) > .default-content-wrapper > h1:where(:not(:has(> strong:only-child))) {
   font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--long-page-detail-corp-lh-unit))));
   font-weight: var(--font-weight-regular);
