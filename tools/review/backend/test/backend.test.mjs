@@ -109,7 +109,7 @@ check('the status shows on load, by AOE', (r.json?.rows || []).some((x) => x.kin
 const ex = await admin({ op: 'export' });
 check('export has the entries', (ex.rows || []).some((x) => x.page === PAGE && x.item === 's1b0'));
 
-// threads: replies by a reviewer and by the AOE team, closing, role rules
+// threads: plain chat messages from both sides, a Done mark; the page status says whose turn it is
 const aoe = await admin({
   op: 'invite', name: 'backend test (AOE)', paths: [PAGE], days: 1, role: 'aoe',
 });
@@ -118,53 +118,55 @@ const rep = (token, id, value, rev = 0) => save(token, [{
   item: 's1b0', kind: `reply:comment:${id}`, value: JSON.stringify(value), rev,
 }]);
 r = await rep(aoe.token, 'answer01', { text: 'Widened the image column.', status: { state: 'done', release: 'r1' } });
-check('the AOE team answers with a status', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+check('the AOE team writes a message with a status', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
 r = await rep(T, 'reply001', { text: 'Thanks, looks better.' });
-check('a reviewer replies', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+check('a reviewer writes a message', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
 r = await rep(T, 'reply001', { text: 'edited' }, 1);
-check('a reply is written once (no edit)', r.status === 400 && r.json?.error.code === 'bad-reply', r.status);
+check('a message is written once (no edit)', r.status === 400 && r.json?.error.code === 'bad-reply', r.status);
 r = await rep(T, 'status01', { text: 'x', status: { state: 'done' } });
 check('a reviewer cannot give a status', r.status === 400, r.status);
-r = await rep(aoe.token, 'close001', { action: 'resolve' });
-check('the AOE team cannot close a thread', r.status === 400, r.status);
-r = await rep(T, 'close002', { action: 'resolve', text: 'Resolved.' });
-check('a reviewer closes the thread', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await rep(T, 'move0001', { action: 'resolve' });
+check('a message cannot change whose turn it is (that is the page status)', r.status === 400, r.status);
+const tick = (token, value) => save(token, [{
+  item: 's1b0', kind: 'done:comment', value: JSON.stringify(value), rev: 0,
+}]);
+r = await tick(aoe.token, true);
+check('either side ticks a thread Done (the AOE team here)', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await save(T, [{
+  item: 's1b0', kind: 'done:comment', value: '"yes"', rev: 1,
+}]);
+check('a Done mark is true or false', r.status === 400 && r.json?.error.code === 'bad-done', r.status);
 r = await state(T);
 const thread = (r.json?.rows || []).filter((x) => x.item === 's1b0' && x.kind.startsWith('reply:comment:'));
-check('load: the thread with roles (aoe, reviewer)', thread.length === 3 && thread.some((x) => x.role === 'aoe' && x.reviewer === 'backend test (AOE)')
-  && thread.filter((x) => x.role === 'reviewer').length === 2, JSON.stringify(thread.map((x) => [x.reviewer, x.role])));
+check('load: the messages with roles, visible to both sides', thread.length === 2 && thread.some((x) => x.role === 'aoe' && x.reviewer === 'backend test (AOE)')
+  && thread.some((x) => x.role === 'reviewer'), JSON.stringify(thread.map((x) => [x.reviewer, x.role])));
+r = await state(aoe.token);
+check('the AOE team sees the reviewers\' messages too', (r.json?.rows || []).filter((x) => x.item === 's1b0' && x.kind.startsWith('reply:')).length === 2);
 const ans = await admin({ op: 'answer', rows: [{ page: PAGE, item: 's1b0', thread: 'comment', text: 'From the command line.', status: { state: 'progress' } }] });
-check('admin answer: an AOE reply in the thread', ans.results?.[0].ok === true && /^reply:comment:/.test(ans.results[0].kind), JSON.stringify(ans));
-// everyone sees every message; only handovers change whose turn it is
-const say = (token, item, id, value) => save(token, [{
-  item, kind: `reply:comment:${id}`, value: JSON.stringify(value), rev: 0,
+check('admin answer: an AOE message in the thread', ans.results?.[0].ok === true && /^reply:comment:/.test(ans.results[0].kind), JSON.stringify(ans));
+// page statuses: each side its own
+const status = (token, value, rev = 0) => save(token, [{
+  item: 'page', kind: 'state', value: JSON.stringify(value), rev,
 }]);
-await save(T, [{
-  item: 's2b0', kind: 'comment', value: JSON.stringify('internal question'), rev: 0,
-}]);
-await say(T, 's2b0', 'int00001', { text: 'Ann, do you agree?' });
-const seen = async (token) => ((await state(token)).json?.rows || []).filter((x) => x.item === 's2b0').length;
-check('the AOE team sees a thread still in discussion among the reviewers', await seen(aoe.token) === 2);
-check('so do the reviewers', await seen(T) === 2);
-r = await say(T, 's2b0', 'send0001', { action: 'handover', text: 'Please look at this.' });
-check('"send to the AOE team" is allowed for reviewers', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
-check('… and the handover', await seen(aoe.token) === 3, await seen(aoe.token));
-r = await say(aoe.token, 's2b0', 'aoeint01', { text: 'internal: which token?' });
-check('the AOE team\'s own discussion is visible to the reviewers at once', r.json?.results?.[0].ok === true && await seen(T) === 4);
-r = await say(aoe.token, 's2b0', 'aoeback1', { action: 'handover', text: 'Fixed.', status: { state: 'done', release: 'r2' } });
-check('"send back" works', r.json?.results?.[0].ok === true && await seen(T) === 5, await seen(T));
-// page states: reviewers only
-const pageState = (token, value) => save(token, [{
-  item: 'page', kind: 'state', value: JSON.stringify(value), rev: 0,
-}]);
-r = await pageState(aoe.token, 'skip');
-check('the AOE team cannot set a page state', r.status === 400 && r.json?.error.code === 'bad-state', r.status);
-r = await pageState(T, 'maybe');
-check('an unknown page state is refused', r.status === 400, r.status);
-r = await pageState(T, 'approved');
+r = await status(T, 'waiting-aoe');
+check('a reviewer sends the page to the AOE team', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+r = await status(T, 'waiting-customer', 1);
+check('a reviewer cannot send it to the customer', r.status === 400 && r.json?.error.code === 'bad-state', r.status);
+r = await status(aoe.token, 'approved', 1);
+check('the AOE team cannot approve or skip', r.status === 400, r.status);
+r = await status(aoe.token, 'waiting-customer', 1);
+check('the AOE team sends it back to the customer', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
+let ov = await web('overview', { invite: T });
+check('overview: waiting for the customer', ov.json?.pages?.find((p) => p.page === PAGE)?.state === 'waiting-customer', JSON.stringify(ov.json?.pages));
+const back = await admin({ op: 'answer', rows: [{ page: PAGE, item: 's1b0', thread: 'comment', text: 'Done, please check.', sendBack: true }] });
+check('admin answer with sendBack keeps it with the customer', back.results?.[0].ok === true, JSON.stringify(back));
+r = await status(T, 'maybe', 3);
+check('an unknown page status is refused', r.status === 400, r.status);
+r = await status(T, 'approved', 3);
 check('a reviewer approves the page', r.json?.results?.[0].ok === true, JSON.stringify(r.json));
-const ov = await web('overview', { invite: T });
-check('overview: the page waits for the reviewers (one thread sent back, one closed)', ov.json?.pages?.find((p) => p.page === PAGE)?.state === 'waiting-reviewer', JSON.stringify(ov.json?.pages));
+ov = await web('overview', { invite: T });
+const mine = ov.json?.pages?.find((p) => p.page === PAGE);
+check('overview: resolved (approved after feedback), threads counted', mine?.state === 'resolved' && mine.threads.open + mine.threads.done >= 1, JSON.stringify(mine));
 await admin({ op: 'revoke', id: aoe.id });
 
 r = await web('results', { invite: T });

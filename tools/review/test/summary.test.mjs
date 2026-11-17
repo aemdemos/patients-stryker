@@ -25,9 +25,9 @@ const check = (label, ok) => {
 };
 const where = (id) => (byId[id]?.evidence || []).map((e) => e.where).sort().join(', ');
 
-check('rows used: 49 of 52 (the vanished block and the 2 AOE status rows aside)', result.source.rows === 52 && result.source.used === 49 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
-const discussed = result.items.flatMap((it) => it.evidence).find((e) => (e.text || '').startsWith('INTERNAL:'));
-check('a comment still in discussion is in the summary, marked as not sent yet', discussed?.thread?.state === 'internal', JSON.stringify(discussed?.thread));
+check('rows used: 35 of 38 (the vanished block and the 2 AOE status rows aside)', result.source.rows === 38 && result.source.used === 35 && result.source.gone === 1 && result.source.aoeStatusRows === 2, JSON.stringify(result.source));
+const asked = result.items.flatMap((it) => it.evidence).find((e) => (e.text || '').startsWith('Ann, should we'));
+check('a question among the reviewers is in the summary, an open thread', asked?.thread?.done === false, JSON.stringify(asked?.thread));
 check('counts per kind', JSON.stringify(result.counts) === JSON.stringify({
   decision: 5, variant: 5, conversion: 4, page: 2, question: 4,
 }));
@@ -59,14 +59,14 @@ check('an entry saved under a block key lands on its block (position now, key ke
 check('a key no longer on the page: re-check question', !!byId['question:gone:/us/en/foot-and-ankle/products/prophecy:b:columns:00000000|variant']);
 // threads: an AOE answer in the tool and a reviewer closing it; an answer still open
 const gap = (byId['variant:columns:media-text']?.evidence || []).find((e) => e.text === 'The gap between the image and the text is too wide.');
-check('a thread answered by the AOE team and closed by the reviewer: resolved, with its status', gap?.thread?.state === 'resolved'
-  && gap.thread.replies === 3 && gap.status?.state === 'done' && gap.status.release === 'r2', JSON.stringify(gap?.thread));
+check('a thread answered by the AOE team and ticked Done: done, with its status', gap?.thread?.done === true
+  && gap.thread.replies === 2 && gap.status?.state === 'done' && gap.status.release === 'r2', JSON.stringify(gap?.thread));
 const phone = byId['variant:cards-corp:teaser']?.evidence[0];
-check('a thread the AOE team sent back: waiting for the reviewers, in progress', phone?.thread?.state === 'waiting-reviewer' && phone.status?.state === 'progress', JSON.stringify(phone?.thread));
+check('a thread with an AOE message in progress: open, its status kept', phone?.thread?.done === false && phone.status?.state === 'progress', JSON.stringify(phone?.thread));
 check('AOE members are not counted as reviewers', !result.source.reviewers.includes('sample AOE member'), JSON.stringify(result.source.reviewers));
 // AOE status
 check('status: partly done', byId['variant:columns:media-text']?.state === 'partly');
-check('thread counts per work item', JSON.stringify(byId['variant:columns:media-text']?.threads) === JSON.stringify({ 'waiting-aoe': 2, 'waiting-reviewer': 1, resolved: 1 }), JSON.stringify(byId['variant:columns:media-text']?.threads));
+check('thread counts per work item', JSON.stringify(byId['variant:columns:media-text']?.threads) === JSON.stringify({ open: 4, done: 1 }), JSON.stringify(byId['variant:columns:media-text']?.threads));
 check("status: won't do", byId['conversion:columns:media-text']?.state === 'wontdo');
 check('links open the tool at the block, by its key', /[?&]block=b%3Acards-corp%3A[0-9a-f]{8}/.test(byId['variant:cards-corp:teaser']?.evidence[0].link || ''), byId['variant:cards-corp:teaser']?.evidence[0].link);
 

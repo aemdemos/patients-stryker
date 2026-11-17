@@ -129,9 +129,6 @@ async function render(savedRows, pages) {
     }
   };
   // a thread's state and the AOE team's latest status (threads.js)
-  const THREAD_WORDS = {
-    internal: 'internal', 'waiting-aoe': 'waiting for the AOE team', 'waiting-reviewer': 'sent back to the reviewers', resolved: 'resolved',
-  };
   const aoeOf = (page, item, kind) => {
     const own = allRows
       .filter((r) => r.page === page && r.item === item && threadKindOf(r.kind) === kind);
@@ -141,7 +138,7 @@ async function render(savedRows, pages) {
       .find((r) => roleOf(r) === 'aoe' && !r.kind.startsWith('status:') && (json(r.value) || {}).text);
     const status = t.status && AOE_STATES[t.status.state]
       ? [AOE_STATES[t.status.state], t.status.release && `in ${t.status.release}`, t.status.reason || (answer ? json(answer.value).text : '')].filter(Boolean).join(', ') : '';
-    return [THREAD_WORDS[t.state], status].filter(Boolean).join(' · ');
+    return [t.done ? 'done' : 'open', status].filter(Boolean).join(' · ');
   };
   const title = Object.fromEntries(pages.map((p) => [p.path, p.title]));
   const pageName = (p) => el('a', { href: toolLink(p) }, title[p] || p);

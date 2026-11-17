@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
- * A realistic sample of review rows (made-up feedback on real standard pages, every comment and
- * note sent to the AOE team but one still in discussion, reviewers
+ * A realistic sample of review rows (made-up feedback on real standard pages, page statuses,
+ * a thread ticked Done, reviewers
  * "sample customer A / B", one AOE status row each kind) for testing summary.js: group and single
  * choices, a disagreement, a choice that no longer fits its block, block / section / page comments, QA notes on blocks, text and no anchor,
  * a resolved note. Note anchors are taken from the pages' own text, as the tool would save them.
@@ -62,9 +62,9 @@ const spec = [
   [P.mask, 's9b0', 'comment', 'The teaser text is cut off on the phone.', B],
   [P.toe, 's1', 'comment', 'This intro text is much larger than on the live page.', A],
   [P.prophecy, 's3', 'comment', 'Love the serif title here, keep it like this.', A],
-  // page comments (one still in discussion among the reviewers: never sent to the AOE team)
+  // page comments (one a question among the reviewers themselves)
   [P.cmf, 'page', 'comment', 'The two logos at the top of the live page are missing.', A],
-  [P.prophecy, 'key:s12b0', 'comment', 'INTERNAL: Ann, should we ask for a bigger image here?', A],
+  [P.prophecy, 'key:s12b0', 'comment', 'Ann, should we ask for a bigger image here?', A],
   [P.toe, 'page', 'comment', 'The hero image from the live page is missing.', B],
   // QA notes
   [P.prophecy, 'note:sample-1', 'note', note(1, 'text', 'The trademark sign after Prophecy is missing.', 'The first patient specific instrumentation'), A],
@@ -77,7 +77,11 @@ const spec = [
   [P.prophecy, 'page', 'reviewed', true, A],
   // a thread: the AOE team answers in the tool, the reviewer closes it; another one answered only
   [P.ankle, 'key:s3b0', 'reply:comment:sampleA1', { text: 'Narrowed the gap of media-text.', status: { state: 'done', release: 'r2' } }, 'sample AOE member', 'aoe'],
-  [P.ankle, 'key:s3b0', 'reply:comment:sampleR1', { action: 'resolve', text: 'Looks right now.' }, B],
+  [P.ankle, 'key:s3b0', 'reply:comment:sampleR1', { text: 'Looks right now.' }, B],
+  [P.ankle, 'key:s3b0', 'done:comment', true, B],
+  // page statuses: one sent to the AOE team, one sent back to the customer
+  [P.mask, 'page', 'state', 'waiting-aoe', B],
+  [P.ankle, 'page', 'state', 'waiting-customer', 'sample AOE member', 'aoe'],
   [P.mask, 'key:s9b0', 'reply:comment:sampleA2', { text: 'Looking into the phone layout.', status: { state: 'progress' } }, 'sample AOE member', 'aoe'],
   // the AOE team's progress
   [P.prophecy, 's9b0', 'status:comment', {
@@ -137,11 +141,6 @@ rows.forEach(([p, item, kind, value, reviewer, role], i) => {
   const time = at();
   const v = kind === 'note' ? { ...value, created: time } : value;
   lines.push([`sample-${i + 1}`, p, item, kind, JSON.stringify(v), reviewer, time, role].map(q).join(','));
-  // every comment and QA note is sent to the AOE team at once (threads.js), unless INTERNAL
-  const internal = typeof value === 'string' && value.startsWith('INTERNAL:');
-  if ((kind === 'comment' || kind === 'note') && !internal) {
-    lines.push([`sample-${i + 1}h`, p, item, `reply:${kind}:send${String(i + 1).padStart(4, '0')}`, JSON.stringify({ action: 'handover' }), reviewer, at(), role].map(q).join(','));
-  }
 });
 writeFileSync(out, `${lines.join('\n')}\n`);
 console.log(`${rows.length} sample rows → ${out}`);

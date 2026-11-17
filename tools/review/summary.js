@@ -19,7 +19,7 @@ import { merge, CONFIG } from './store.js';
 import { keyOf } from './sync.js';
 import { pageKeys, toPosition } from './blockkeys.js';
 import {
-  threadState, roleOf, actionOf, threadKindOf,
+  threadState, roleOf, threadKindOf,
 } from './threads.js';
 
 export const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot|sample .*)$/i;
@@ -34,9 +34,7 @@ export const KINDS = {
 export const STATES = {
   open: 'open', progress: 'in progress', done: 'done', wontdo: "won't do", resolved: 'resolved',
 };
-const THREAD_STATES = {
-  internal: 'in discussion, not sent to the AOE team yet', 'waiting-aoe': 'waiting for the AOE team', 'waiting-reviewer': 'sent back to the reviewers', resolved: 'resolved',
-};
+
 const NAMES = {
   columns: 'Columns',
   'cards-corp': 'Cards',
@@ -226,7 +224,6 @@ export function summarise({
             role: roleOf(r),
             time: r.time,
             text: r.kind.startsWith('status:') ? v.reason : v.text,
-            action: actionOf(r),
             status: r.kind.startsWith('status:') ? v : v.status,
           };
         }),
@@ -476,13 +473,14 @@ export function summarise({
       delete out.blocks;
     }
     out.pages = [...new Set(it.evidence.map((e) => e.page))].filter((p) => p !== '*');
-    const states = it.evidence.map((e) => (e.thread?.state === 'resolved' ? 'resolved' : e.status?.state || 'open'));
+    const states = it.evidence.map((e) => (e.thread?.done ? 'resolved' : e.status?.state || 'open'));
     const uniq = [...new Set(states)];
     out.state = uniq.length === 1 ? uniq[0] : 'partly';
     // the threads: how many wait for the AOE team, for the reviewers, are closed
     const threads = it.evidence.map((e) => e.thread).filter(Boolean);
     if (threads.length) {
-      out.threads = Object.fromEntries(['waiting-aoe', 'waiting-reviewer', 'resolved'].map((k) => [k, threads.filter((t) => t.state === k).length]));
+      const done = threads.filter((t) => t.done).length;
+      out.threads = { open: threads.length - done, done };
     }
     const reading = themes.items?.[it.id];
     if (reading) {
@@ -524,7 +522,7 @@ const cell = (v) => String(v ?? '').replace(/\|/g, '\\|').replace(/\s*\n\s*/g, '
 const day = (t) => (t ? t.slice(0, 16).replace('T', ' ') : '');
 const stateText = (s, thread) => {
   const parts = [];
-  if (thread) parts.push(THREAD_STATES[thread.state]);
+  if (thread) parts.push(thread.done ? 'done' : 'open');
   if (s) parts.push([STATES[s.state] || s.state, s.release && `in ${s.release}`, s.reason].filter(Boolean).join(', '));
   return parts.join(' · ') || 'open';
 };

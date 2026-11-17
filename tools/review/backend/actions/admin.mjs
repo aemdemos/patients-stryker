@@ -5,8 +5,9 @@
  *   invite { name, paths: [...], days, groups, results, role }  → { id, token, link, results link, expires }
  *     (groups: choices for all blocks like this, default on; results: the results page, default off;
  *     role: reviewer (default) or aoe: the AOE team, answers threads with a status, results on)
- *   answer { rows: [{ page, item, thread: comment|note, text, status: { state, release, reason }, by }] }
- *                                           AOE answers in threads (set-status.mjs), role aoe
+ *   answer { rows: [{ page, item, thread: comment|note, text, status: { state, release, reason }, by, sendBack }] }
+ *                                           AOE messages in threads (set-status.mjs), role aoe;
+ *                                           sendBack: also the page status "waiting for the customer"
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
  *   export                                  every entry, as rows (summary, apply, tests)
@@ -15,6 +16,7 @@
  *   rekey { page, moves: [{ from, to }] }  entries moved to another item name (e.g. position → block key)
  *   audit { date, page }                    the audit files of one day (default today), optionally one page
  *   purge-invite { id }                    removes every entry one invitation wrote (any page)
+ *   purge-by { by }                         removes every entry written under a test name (status test …)
  *   purge-test { page }                     removes a test page's entries (pages under /test/ only)
  *                                           and test group choices (items group:test|…)
  */
@@ -119,16 +121,22 @@ export async function main(params) {
       if (!rows.length) return bad('rows: [{ page, item, thread, text, status }]');
       const results = [];
       for (const r of rows) {
-        // (an AOE answer hands the thread back to the reviewers, unless asked not to)
-        const value = JSON.stringify({ text: r.text || undefined, status: r.status || undefined, action: r.handover === false ? undefined : 'handover' });
+        const value = JSON.stringify({ text: r.text || undefined, status: r.status || undefined });
         const problem = !r.page || !r.item || !['comment', 'note'].includes(r.thread) ? 'page, item and thread (comment or note)' : replyProblem(value, 'aoe');
         if (problem) results.push({ ...r, ok: false, error: problem });
         else {
           const kind = `reply:${r.thread}:${crypto.randomBytes(9).toString('base64url')}`;
+          const changes = [{ item: r.item, kind, value, rev: 0 }];
+          if (r.sendBack) {
+            const stored = await state.get(entryKey(r.page, 'page', 'state'));
+            changes.push({
+              item: 'page', kind: 'state', value: JSON.stringify('waiting-customer'), rev: stored ? JSON.parse(stored.value).rev : 0,
+            });
+          }
           const saved = await saveChanges(stores, {
-            page: r.page, changes: [{ item: r.item, kind, value, rev: 0 }], by: String(r.by || 'AOE').slice(0, 80), inv: 'admin', role: 'aoe',
+            page: r.page, changes, by: String(r.by || 'AOE').slice(0, 80), inv: 'admin', role: 'aoe',
           });
-          results.push({ page: r.page, item: r.item, kind, ok: saved.results[0].ok });
+          results.push({ page: r.page, item: r.item, kind, ok: saved.results.every((x) => x.ok) });
         }
       }
       return ok({ results });
@@ -206,6 +214,21 @@ export async function main(params) {
         statuses += on.length;
       }
       return ok({ deleted, statuses, invite: params.id });
+    }
+    if (op === 'purge-by') {
+      // every entry written under a test name (written by the admin action, so no invitation of
+      // their own): names that start with one of the tests' prefixes only
+      const by = String(params.by || '');
+      if (!/^(status test|tool test|backend test) /.test(by)) return bad('test writer names only (status test …, tool test …, backend test …)');
+      let deleted = 0;
+      const it = state.list({ match: 'p.*' });
+      for (let r = await it.next(); !r.done; r = await it.next()) {
+        const got = await Promise.all(r.value.keys.map((k) => state.get(k)));
+        const theirs = r.value.keys.filter((k, j) => got[j] && JSON.parse(got[j].value).by === by);
+        await Promise.all(theirs.map((k) => state.delete(k)));
+        deleted += theirs.length;
+      }
+      return ok({ deleted, by });
     }
     if (op === 'purge-test') {
       const page = String(params.page || '');

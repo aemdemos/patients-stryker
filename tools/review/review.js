@@ -8,7 +8,9 @@
 import { leaves, buildAnchors, mapY } from './sync.js';
 import { createStore } from './store.js';
 import { keysOfHtml, toPosition, toKey } from './blockkeys.js';
-import { threadState, actionOf, roleOf } from './threads.js';
+import {
+  threadState, roleOf, pageState, STATES_BY_ROLE,
+} from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
 
 const { hostname } = window.location;
@@ -260,6 +262,9 @@ function baseOf(item, kind) {
   return own[kind];
 }
 
+// the page status follows every change (drawn further down)
+const statusHooks = { render: () => {} };
+
 function renderStatus() {
   const box = $('.rv-status');
   const n = drafts.size;
@@ -275,6 +280,7 @@ function renderStatus() {
   button.disabled = !n;
   button.textContent = n ? `Save (${n})` : 'Saved';
   $('.rv-undo').disabled = !n;
+  statusHooks.render();
 }
 
 const store = createStore((kind, text) => {
@@ -398,14 +404,6 @@ function listRendered(list) {
   });
 }
 
-/** the latest saved change of an item: "Name · date" */
-function lastBy(item) {
-  if ([...drafts.keys()].some((k) => k.startsWith(`${item}|`))) return 'unsaved change';
-  const latest = ['variant', 'width', 'background', 'comment', 'reviewed', 'state']
-    .map((k) => savedOf(item, k)).filter(Boolean).sort((a, b) => (a.time < b.time ? 1 : -1))[0];
-  return latest ? `${latest.reviewer || 'someone'} · ${when(latest.time)}` : '';
-}
-
 /* ---------- threads: the back and forth on a comment or QA note ---------- */
 
 // the rules (thread states, handovers, page states) are shared: threads.js
@@ -447,32 +445,64 @@ function addMessage(item, kind, value) {
   threadHooks.redraw();
 }
 
-/** the thread's state in words, from where the viewer stands */
-function threadWords(st, owner) {
-  const aoe = me.role === 'aoe';
-  if (st === 'internal') {
-    const by = owner === 'aoe' ? 'the AOE team' : 'the reviewers';
-    return ['In discussion', owner === me.role ? `not sent to ${aoe ? 'the reviewers' : 'the AOE team'} yet` : `among ${by}, not sent to you yet`];
-  }
-  if (st === 'waiting-aoe') return aoe ? ['Waiting for you', 'sent to the AOE team'] : ['Sent to the AOE team', 'waiting for their answer'];
-  if (st === 'waiting-reviewer') return aoe ? ['Sent back to the reviewers', 'waiting for them'] : ['Answered', 'waiting for you'];
-  return ['Resolved', 'closed'];
+// the chats shown open (kept across redraws; the page's own chat is always open)
+const openChats = new Set();
+
+/** the message box of a chat, once its panel is drawn again (the block list redraws late) */
+function focusChat(key, tries = 20) {
+  const area = document.querySelector(`[data-chat="${CSS.escape(key)}"] textarea`);
+  if (area) area.focus();
+  else if (tries > 0) window.setTimeout(() => focusChat(key, tries - 1), 50);
 }
 
-/** the thread under a comment or QA note: its messages and what one can write or do next */
-function threadParts(item, kind) {
+/** is this entry mine (the viewer's) */
+const isMine = (e) => e.unsaved || ((e.reviewer || '') === me.name && roleOf(e) === me.role);
+
+/**
+ * A chat under a block, text section, the page or a QA note: its messages (newest at the bottom,
+ * mine on the right), the message box, a Done tick. For comments the first message is the comment
+ * itself; for QA notes the note is shown above, the chat holds the messages about it.
+ */
+function chatParts(item, kind) {
+  const key = `${item}|${kind}`;
+  const always = item === 'page';
   const entries = threadEntries(item, kind);
-  // (an unsaved message counts for the state shown here, as it will once saved)
-  const timed = entries.map((e, i) => ({ ...e, time: e.time || `9${String(i).padStart(4, '0')}` }));
-  const { state: st, owner } = threadState(timed);
-  const [stateLabel, hint] = threadWords(st, owner);
-  const box = el('div', { class: `rv-thread rv-thread-${st}` });
-  box.append(el('div', { class: 'rv-thread-state' }, el('b', {}, stateLabel), hint ? ` · ${hint}` : ''));
-  timed.filter((e) => e.kind !== kind).forEach((r) => {
+  const messages = entries.filter((e) => e.kind !== kind || (kind === 'comment' && e.value));
+  const doneMark = savedOf(item, `done:${kind}`);
+  const done = doneMark ? doneMark.value === true : threadState(entries.map((e, i) => ({ ...e, time: e.time || `9${i}` }))).done;
+  const count = messages.length;
+  const open = always || openChats.has(key);
+  const tick = el('input', { type: 'checkbox', class: 'rv-done', 'aria-label': 'Done' });
+  tick.checked = done;
+  tick.addEventListener('change', () => {
+    saveRow(item, `done:${kind}`, tick.checked);
+    threadHooks.redraw();
+  });
+  let toggleLabel = open ? 'Hide comment box' : 'Comment';
+  if (count) toggleLabel = `${open ? 'Hide' : 'Show'} comments (${count})`;
+  const head = el(
+    'div',
+    { class: 'rv-chat-head' },
+    always ? el('span', { class: 'rv-meta' }, count ? `${count} message${count > 1 ? 's' : ''}` : '') : el('button', {
+      type: 'button',
+      class: 'rv-comment-toggle',
+      'aria-expanded': String(open),
+      onclick: () => {
+        if (open) openChats.delete(key);
+        else openChats.add(key);
+        threadHooks.redraw();
+        if (!open) focusChat(key);
+      },
+    }, toggleLabel),
+    count ? el('label', { class: 'rv-done-label', title: 'This is dealt with (either side can tick it)' }, tick, ' Done') : null,
+  );
+  if (!open) return [head];
+  const list = el('div', { class: 'rv-chat' });
+  messages.forEach((r) => {
     const v = (typeof r.value === 'object' && r.value) || {};
-    const action = actionOf(r);
-    const status = v.status && AOE_STATES[v.status.state];
-    const tags = [r.unsaved ? el('span', { class: 'rv-tag-msg rv-tag-unsaved' }, 'unsaved') : null];
+    const text = r.kind === kind ? r.value : (v.text || (r.kind.startsWith('status:') ? v.reason : ''));
+    const statusOf = r.kind.startsWith('status:') ? v : v.status;
+    const status = statusOf && AOE_STATES[statusOf.state];
     const remove = r.unsaved ? el('button', {
       type: 'button',
       class: 'rv-msg-remove',
@@ -483,97 +513,62 @@ function threadParts(item, kind) {
         threadHooks.redraw();
       },
     }, '×') : null;
-    let what = null;
-    if (action === 'handover') what = roleOf(r) === 'aoe' ? 'sent it back to the reviewers' : 'sent it to the AOE team';
-    if (action === 'resolve') what = 'resolved the thread';
-    box.append(el(
+    list.append(el(
       'div',
-      { class: `rv-msg${roleOf(r) === 'aoe' ? ' rv-msg-aoe' : ''}${r.unsaved ? ' rv-msg-unsaved' : ''}` },
+      { class: `rv-bubble${isMine(r) ? ' rv-mine' : ''}${roleOf(r) === 'aoe' ? ' rv-msg-aoe' : ''}${r.unsaved ? ' rv-msg-unsaved' : ''}` },
       el(
         'div',
-        { class: 'rv-msg-head' },
-        el('span', { class: 'rv-msg-who' }, r.reviewer || 'someone', roleOf(r) === 'aoe' ? el('span', { class: 'rv-badge' }, 'AOE') : null, ...tags),
-        el('span', { class: 'rv-meta' }, r.unsaved ? '' : when(r.time), remove),
+        { class: 'rv-bubble-head' },
+        el('span', { class: 'rv-msg-who' }, r.unsaved ? (me.name || 'you') : (r.reviewer || 'someone'), roleOf(r) === 'aoe' ? el('span', { class: 'rv-badge' }, 'AOE') : null),
+        el('span', { class: 'rv-meta' }, r.unsaved ? el('span', { class: 'rv-tag-msg rv-tag-unsaved' }, 'unsaved') : when(r.time), remove),
       ),
-      status ? el('p', { class: `rv-aoe rv-aoe-${v.status.state}` }, el('b', {}, `AOE: ${status}`), v.status.release ? ` in ${v.status.release}` : '') : null,
-      v.text ? el('p', { class: 'rv-msg-text' }, v.text) : null,
-      what ? el('p', { class: 'rv-msg-action' }, what) : null,
+      status ? el('p', { class: `rv-aoe rv-aoe-${statusOf.state}` }, el('b', {}, `AOE: ${status}`), statusOf.release ? ` in ${statusOf.release}` : '') : null,
+      text ? el('p', { class: 'rv-msg-text' }, text) : null,
     ));
   });
-  // what one can do: write (internal), hand over, (reviewers) resolve
-  const text = el('textarea', { class: 'rv-reply', rows: '2', placeholder: 'Write a message…' });
-  const actions = el('div', { class: 'rv-reply-actions' });
-  const words = () => text.value.trim() || undefined;
-  actions.append(el('button', {
-    type: 'button',
-    class: 'rv-btn-light',
-    title: 'A message in the discussion (everyone sees it; whose turn it is does not change)',
-    onclick: () => {
-      if (words()) addMessage(item, kind, { text: words() });
-    },
-  }, 'Reply'));
-  if (me.role === 'aoe') {
-    const pick = el('select', { class: 'rv-reply-status', 'aria-label': 'Status' }, el('option', { value: '' }, 'no status'), ...Object.entries(AOE_STATES).map(([k, v]) => el('option', { value: k }, v)));
-    const release = el('input', {
-      class: 'rv-reply-release', placeholder: 'release, e.g. r3', 'aria-label': 'Release', size: '9',
-    });
-    actions.append(pick, release, el('button', {
-      type: 'button',
-      class: 'rv-btn-light rv-primary',
-      title: 'Hand the thread back to the reviewers: their turn',
-      onclick: () => {
-        const value = { action: 'handover', text: words() };
-        if (pick.value) {
-          value.status = { state: pick.value, release: release.value.trim() || undefined };
-        }
-        addMessage(item, kind, value);
-      },
-    }, 'Send back to the reviewers'));
-  } else {
-    actions.append(el('button', {
-      type: 'button',
-      class: 'rv-btn-light rv-primary',
-      title: 'Hand the thread to the AOE team: their turn',
-      onclick: () => addMessage(item, kind, { action: 'handover', text: words() }),
-    }, 'Send to the AOE team'));
-    if (st !== 'resolved' && st !== 'internal') {
-      actions.append(el('button', {
-        type: 'button',
-        class: 'rv-btn-light',
-        title: 'The answer settles it: close the thread',
-        onclick: () => addMessage(item, kind, { action: 'resolve', text: words() }),
-      }, 'Resolve'));
+  if (!messages.length) list.append(el('p', { class: 'rv-chat-empty' }, kind === 'note' ? 'No messages about this note yet.' : 'No comments yet: write the first one below.'));
+  // the message box: Send (Ctrl+Enter); the AOE team may add a status
+  const area = el('textarea', { class: 'rv-reply', rows: '2', placeholder: 'Write a message… (Ctrl+Enter sends)' });
+  const pick = me.role === 'aoe' ? el('select', { class: 'rv-reply-status', 'aria-label': 'Status' }, el('option', { value: '' }, 'no status'), ...Object.entries(AOE_STATES).map(([k, v]) => el('option', { value: k }, v))) : null;
+  const release = me.role === 'aoe' ? el('input', {
+    class: 'rv-reply-release', placeholder: 'release', 'aria-label': 'Release', size: '7',
+  }) : null;
+  const send = () => {
+    const words = area.value.trim();
+    if (!words && !pick?.value) return;
+    // (the first message on a block, section or the page is the comment itself)
+    if (kind === 'comment' && !savedOf(item, 'comment')?.value) saveRow(item, 'comment', words);
+    else {
+      const value = { text: words || undefined };
+      if (pick?.value) {
+        value.status = { state: pick.value, release: release.value.trim() || undefined };
+      }
+      addMessage(item, kind, value);
     }
-  }
-  box.append(text, actions);
-  return box;
+    openChats.add(key);
+    threadHooks.redraw();
+    focusChat(key);
+  };
+  area.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      send();
+    }
+  });
+  const composer = el('div', { class: 'rv-composer' }, area, el('div', { class: 'rv-reply-actions' }, pick, release, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send')));
+  return [head, el('div', { class: 'rv-chat-box', 'data-chat': key }, list, composer)];
 }
 
-/** a comment toggle and box for an item (a block id or `page`), saved when it changes */
-function commentParts(item, placeholder) {
-  const current = savedOf(item, 'comment')?.value || '';
-  const meta = el('span', { class: 'rv-meta' }, lastBy(item));
-  const box = el('textarea', { class: 'rv-comment', rows: '3', placeholder });
-  box.value = current;
-  box.hidden = !current && item !== 'page';
-  box.addEventListener('change', () => {
-    const had = !!current;
-    saveRow(item, 'comment', box.value.trim());
-    meta.textContent = lastBy(item);
-    // a new comment: its thread appears below it (to discuss it, send it on)
-    if (!had && box.value.trim()) threadHooks.redraw();
-  });
-  const thread = current ? threadParts(item, 'comment') : null;
-  if (item === 'page') return [box, meta, thread].filter(Boolean);
-  const toggle = el('button', {
-    type: 'button',
-    class: 'rv-comment-toggle',
-    onclick: () => {
-      box.hidden = !box.hidden;
-      if (!box.hidden) box.focus();
-    },
-  }, current ? 'Comment ✎' : 'Add a comment');
-  return [el('div', { class: 'rv-item-foot' }, toggle, meta), box, thread].filter(Boolean);
+/** the chat of a block, text section or the page (comments) */
+function commentParts(item) {
+  return chatParts(item, 'comment');
+}
+
+/** every chat shows its newest message (they scroll to the bottom) */
+function settleChats() {
+  window.requestAnimationFrame(() => document.querySelectorAll('.rv-chat').forEach((c) => {
+    c.scrollTop = c.scrollHeight;
+  }));
 }
 
 /* ---------- groups: "blocks like this" (groups.js, counts in groups.json) ---------- */
@@ -842,9 +837,13 @@ function savedNotes() {
   const keys = new Set([...saved.keys(), ...drafts.keys()].filter((k) => k.endsWith('|note')));
   return [...keys].map((k) => savedOf(...splitKey(k)))
     .filter((e) => e && e.value && !e.value.deleted)
-    .map((e) => ({
-      ...e.value, reviewer: e.reviewer, time: e.time, unsaved: !!e.unsaved,
-    }));
+    .map((e) => {
+      // (a note is resolved when its thread is ticked Done; before Done marks: its own status)
+      const mark = savedOf(`note:${e.value.id}`, 'done:note');
+      return {
+        ...e.value, status: mark ? (mark.value === true && 'resolved') || 'open' : e.value.status, reviewer: e.reviewer, time: e.time, unsaved: !!e.unsaved,
+      };
+    });
 }
 
 function saveNote(note) {
@@ -923,30 +922,26 @@ function renderNotes() {
     el('button', {
       type: 'button',
       class: 'rv-note-main',
-      title: n.vp === state.vp ? 'Show on the page' : `Found at ${WIDTH_NAMES[n.vp]} width: switch to see its pin`,
+      title: n.vp === state.vp ? 'Show on the page' : `Found at ${WIDTH_NAMES[n.vp]} width: switches to it and shows the pin`,
       onclick: () => {
-        if (n.vp !== state.vp) return;
-        notes.select(n.id);
+        if (n.vp === state.vp) {
+          notes.select(n.id);
+          return;
+        }
+        // a note from the other width: switch to it, then show the pin once the page reflowed
+        document.querySelector(`[data-vp="${n.vp}"]`)?.click();
+        window.setTimeout(() => notes.select(n.id), 900);
       },
     }, el('span', { class: 'rv-note-n' }, n.n), el('span', { class: 'rv-note-text' }, `${CATEGORIES[n.cat] || ''} · ${n.text}`)),
     el(
       'div',
       { class: 'rv-item-foot' },
       el('span', { class: 'rv-meta' }, `${WIDTH_NAMES[n.vp] || n.vp} · ${n.unsaved ? 'unsaved' : `${n.reviewer || 'someone'} · ${when(n.time)}`}`),
-      el(
-        'span',
-        {},
-        el('button', {
-          type: 'button',
-          class: 'rv-comment-toggle',
-          onclick: () => saveNote({ ...n, status: n.status === 'resolved' ? 'open' : 'resolved' }),
-        }, n.status === 'resolved' ? 'Reopen' : 'Resolve'),
-        ' ',
-        el('button', { type: 'button', class: 'rv-comment-toggle', onclick: () => openEditor(n) }, 'Edit'),
-      ),
+      el('button', { type: 'button', class: 'rv-comment-toggle', onclick: () => openEditor(n) }, 'Edit'),
     ),
-    n.unsaved ? null : threadParts(`note:${n.id}`, 'note'),
+    ...(n.unsaved ? [] : chatParts(`note:${n.id}`, 'note')),
   )));
+  settleChats();
   if (!all.length) list.append(el('li', { class: 'rv-none' }, 'No QA notes yet. "Add QA note" (or N), then click the spot on the page.'));
 }
 
@@ -964,37 +959,66 @@ noteHooks.select = (id) => {
 };
 
 /** this page: reviewed mark and page comment */
-const PAGE_STATE_LABELS = {
-  '': 'Not reviewed yet', 'in-review': 'In review', approved: 'Approved', skip: "Skip: don't migrate",
+const STATUS_LABELS = {
+  unreviewed: 'Not reviewed yet',
+  'in-review': 'In review',
+  'waiting-aoe': 'Waiting for the AOE team',
+  'waiting-customer': 'Waiting for the customer',
+  approved: 'Approved as is',
+  resolved: 'Resolved',
+  skipped: 'Skipped: not migrated',
+};
+const STATUS_BUTTONS = {
+  'in-review': 'In review',
+  'waiting-aoe': 'Send to the AOE team',
+  'waiting-customer': 'Send back to the customer',
+  approved: 'Approve',
+  skip: "Skip: don't migrate",
 };
 
-/** the page's state as set by the reviewers (the older reviewed mark counts as approved) */
-function pageSetting() {
-  const set = savedOf('page', 'state');
-  if (set) return PAGE_STATE_LABELS[set.value] !== undefined ? set.value || '' : '';
-  return savedOf('page', 'reviewed')?.value === true ? 'approved' : '';
+/** the page's entries as rows, this reviewer's unsaved changes included (threads.js reads them) */
+function currentRows() {
+  const rows = new Map(saved);
+  drafts.forEach((value, k) => {
+    const [item, kind] = splitKey(k);
+    rows.set(k, {
+      item, kind, value, reviewer: me.name || 'you', role: me.role, time: '9999', unsaved: true,
+    });
+  });
+  return [...rows.values()].filter((e) => e && e.kind);
+}
+
+/** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
+function renderPageStatus() {
+  const st = pageState(currentRows());
+  const pending = drafts.has('page|state');
+  const by = st.set && !pending ? `set by ${st.set.by}${st.set.role === 'aoe' ? ' (AOE)' : ''} · ${when(st.set.at)}` : '';
+  $('.rv-status-banner').className = `rv-status-banner st-${st.state}`;
+  $('.rv-status-banner').replaceChildren(
+    el('span', { class: 'rv-status-kicker' }, 'Status of this page'),
+    el('strong', {}, STATUS_LABELS[st.state]),
+    el('span', { class: 'rv-status-by' }, pending ? 'unsaved: Save to apply it' : by),
+  );
+  const badge = $('.rv-page-badge');
+  badge.className = `rv-page-badge st-${st.state}`;
+  badge.textContent = STATUS_LABELS[st.state];
+  badge.title = `Status of this page${by ? `, ${by}` : ''}`;
+  // the buttons: each side its own statuses (threads.js); pressing the current one clears it
+  $('.rv-status-actions').replaceChildren(...STATES_BY_ROLE[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((value) => el('button', {
+    type: 'button',
+    class: `rv-page-state rv-page-state-${value}`,
+    'aria-pressed': String(st.pageState === value),
+    onclick: () => {
+      saveRow('page', 'state', st.pageState === value ? '' : value);
+      renderPageStatus();
+    },
+  }, STATUS_BUTTONS[value])));
 }
 
 function renderPageBox() {
-  const box = $('.rv-pagebox-body');
-  const current = pageSetting();
-  // reviewers set the page's state (with Save); the AOE team sees it
-  const states = me.role === 'aoe'
-    ? el('p', { class: 'rv-page-state-ro' }, 'Set by the reviewers: ', el('b', {}, PAGE_STATE_LABELS[current]))
-    : el('div', { class: 'rv-page-states', role: 'group', 'aria-label': 'State of this page' }, ...['in-review', 'approved', 'skip'].map((value) => el('button', {
-      type: 'button',
-      class: `rv-page-state rv-page-state-${value}`,
-      'aria-pressed': String(current === value),
-      title: value === 'skip' ? 'This page is not to be migrated' : '',
-      onclick: () => {
-        saveRow('page', 'state', current === value ? '' : value);
-        renderPageBox();
-      },
-    }, PAGE_STATE_LABELS[value])));
-  box.replaceChildren(
-    states,
-    ...commentParts('page', 'A comment on this page as a whole: layout, QA findings, anything else'),
-  );
+  $('.rv-pagebox-body').replaceChildren(...commentParts('page'));
+  renderPageStatus();
+  settleChats();
 }
 
 function listBlocks() {
@@ -1320,12 +1344,44 @@ async function start() {
     fold(window.localStorage.getItem(key) === '1');
     button.addEventListener('click', () => fold(!panel.classList.contains('rv-collapsed')));
   });
-  // a sent reply redraws the panels that show threads
+  // the right panel's width: drag its left edge (kept per browser)
+  const rightPanel = $('.rv-panel-right');
+  const WIDTH_KEY = 'std-review-panel-right-width';
+  const keptWidth = Number(window.localStorage.getItem(WIDTH_KEY));
+  if (keptWidth) rightPanel.style.setProperty('--rv-panel-right', `${keptWidth}px`);
+  $('.rv-resize').addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    document.body.classList.add('rv-resizing');
+    let { width } = rightPanel.getBoundingClientRect();
+    const move = (ev) => {
+      // (between 260 px and what leaves the page view 480 px)
+      const most = Math.max(260, window.innerWidth - 480);
+      width = Math.round(Math.min(Math.max(window.innerWidth - ev.clientX, 260), most));
+      rightPanel.style.setProperty('--rv-panel-right', `${width}px`);
+      layout();
+    };
+    const up = () => {
+      document.body.classList.remove('rv-resizing');
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+      window.localStorage.setItem(WIDTH_KEY, String(width));
+      layout();
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  });
+  // a new message redraws the panels that show chats; the panels keep their place
   threadHooks.redraw = () => {
+    const right = $('.rv-panel-right');
+    const top = right.scrollTop;
     listBlocks();
     renderPageBox();
+    notes.setNotes(savedNotes());
     renderNotes();
+    right.scrollTop = top;
+    settleChats();
   };
+  statusHooks.render = renderPageStatus;
   if (!PREVIEW) {
     $('.rv-blocked').hidden = false;
     return;

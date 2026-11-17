@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /*
- * Test of the shared review rules (tools/review/threads.js): thread states from handovers (plain
- * replies never change the turn), page states (in review, approve, skip) and their order of
- * precedence, older data (reviewed mark, AOE status rows).
+ * Test of the shared review rules (tools/review/threads.js): page statuses (who may set which,
+ * precedence, older reviewed mark), threads as plain chats with a Done mark (older resolve moves,
+ * AOE status rows), thread counts.
  * usage: node tools/review/backend/test/states.test.mjs
  */
-import { pageState, threadState } from '../../threads.js';
+import { pageState, threadState, stateAllowed } from '../../threads.js';
 
 let n = 0;
 const row = (item, kind, value, reviewer = 'Jane', role = 'reviewer') => {
@@ -22,47 +22,45 @@ const check = (label, ok, detail = '') => {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${label}${ok ? '' : ` ${detail}`}`);
 };
 
+// who may set which status
+check('reviewers: in review, send to the AOE team, approve, skip, clear', ['in-review', 'waiting-aoe', 'approved', 'skip', ''].every((s) => stateAllowed(s, 'reviewer')));
+check('reviewers cannot send to the customer', !stateAllowed('waiting-customer', 'reviewer'));
+check('the AOE team: send back to the customer only', stateAllowed('waiting-customer', 'aoe') && !['in-review', 'waiting-aoe', 'approved', 'skip'].some((s) => stateAllowed(s, 'aoe')));
+
 // threads
 const opener = row(B, 'comment', 'too small');
-const internal = row(B, 'reply:comment:r1', { text: 'do you agree, Ann?' });
-const ann = row(B, 'reply:comment:r2', { text: 'yes' }, 'Ann');
-const sent = row(B, 'reply:comment:r3', { action: 'handover', text: 'please enlarge' });
-const aoeTalk = aoe(B, 'reply:comment:a1', { text: 'internal: which token?' });
-const back = aoe(B, 'reply:comment:a2', { action: 'handover', text: 'enlarged', status: { state: 'done', release: 'r2' } });
-const close = row(B, 'reply:comment:r4', { action: 'resolve' });
-check('a new comment and plain replies: internal', threadState([opener, internal, ann]).state === 'internal');
-check('… sent to the AOE team: waiting for the AOE team', threadState([opener, internal, ann, sent]).state === 'waiting-aoe');
-check('… AOE internal talk changes nothing', threadState([opener, sent, aoeTalk]).state === 'waiting-aoe');
-const handed = threadState([opener, sent, aoeTalk, back]);
-check('… sent back with a status: waiting for the reviewers, status kept', handed.state === 'waiting-reviewer' && handed.status?.state === 'done' && handed.status.release === 'r2', JSON.stringify(handed));
-check('… resolved', threadState([opener, sent, back, close]).state === 'resolved');
-check('an older AOE reply with a status counts as a handover', threadState([opener, aoe(B, 'reply:comment:a3', { text: 'x', status: { state: 'done' } })]).state === 'waiting-reviewer');
-check('an older status row counts as an AOE handover', threadState([opener, row(B, 'status:comment', { state: 'done' }, 'AOE', 'aoe')]).state === 'waiting-reviewer');
+const msg = row(B, 'reply:comment:r1', { text: 'Ann, do you agree?' });
+const answer = aoe(B, 'reply:comment:a1', { text: 'enlarged', status: { state: 'done', release: 'r2' } });
+const t1 = threadState([opener, msg, answer]);
+check('a thread: open, its messages counted, the AOE status kept', !t1.done && t1.replies === 2 && t1.status?.state === 'done' && t1.status.release === 'r2', JSON.stringify(t1));
+check('ticked Done', threadState([opener, msg, row(B, 'done:comment', true)]).done === true);
+check('unticked again', threadState([opener, row(B, 'done:comment', true), aoe(B, 'done:comment', false)]).done === false);
+check('older data: a thread closed with resolve is done', threadState([opener, row(B, 'reply:comment:r9', { action: 'resolve' })]).done === true);
+check('older data: a status row is an AOE status', threadState([opener, row(B, 'status:comment', { state: 'wontdo' }, 'AOE', 'aoe')]).status?.state === 'wontdo');
 
-// page states
+// page statuses
 const cases = [
   ['nothing yet', [], 'unreviewed'],
   ['activity only (a design choice)', [row(B, 'variant', 'card-grid')], 'in-review'],
-  ['marked in review by hand', [row('page', 'state', 'in-review')], 'in-review'],
+  ['a comment only', [opener], 'in-review'],
+  ['marked in review', [row('page', 'state', 'in-review')], 'in-review'],
+  ['sent to the AOE team', [opener, row('page', 'state', 'waiting-aoe')], 'waiting-aoe'],
+  ['sent back to the customer', [opener, row('page', 'state', 'waiting-aoe'), aoe('page', 'state', 'waiting-customer')], 'waiting-customer'],
   ['approved, never any feedback', [row('page', 'state', 'approved')], 'approved'],
+  ['approved after a comment', [opener, row('page', 'state', 'approved')], 'resolved'],
   ['approved after a design choice', [row(B, 'variant', 'card-grid'), row('page', 'state', 'approved')], 'resolved'],
-  ['an internal thread only', [opener, internal], 'in-review'],
-  ['a thread sent to the AOE team', [opener, sent], 'waiting-aoe'],
-  ['a thread sent back', [opener, sent, back], 'waiting-reviewer'],
-  ['waiting for the AOE team beats approved', [opener, sent, row('page', 'state', 'approved')], 'waiting-aoe'],
-  ['resolved threads + approved', [opener, sent, back, close, row('page', 'state', 'approved')], 'resolved'],
-  ['skip beats everything', [opener, sent, row('page', 'state', 'skip')], 'skipped'],
+  ['skip', [opener, row('page', 'state', 'skip')], 'skipped'],
   ['skip taken back', [row('page', 'state', 'skip'), row('page', 'state', '')], 'in-review'],
   ['the older reviewed mark counts as approved', [row('page', 'reviewed', true)], 'approved'],
-  ['a deleted QA note is no thread', [row('note:n1', 'note', { id: 'n1', text: 'x', deleted: true })], 'in-review'],
+  ['a deleted QA note is no thread', [row('note:n1', 'note', { id: 'n1', text: 'x', deleted: true }), row('page', 'state', 'approved')], 'approved'],
   ['a removed comment (empty) is no thread', [row(B, 'comment', 'x'), row(B, 'comment', ''), row('page', 'state', 'approved')], 'approved'],
 ];
 cases.forEach(([label, rows, want]) => {
   const got = pageState(rows);
-  check(`page: ${label}: ${got.state}`, got.state === want, `(want ${want}) ${JSON.stringify(got.threads)}`);
+  check(`page: ${label}: ${got.state}`, got.state === want, `(want ${want}) ${JSON.stringify(got)}`);
 });
-const counts = pageState([opener, sent, back, close, row('page', 'state', 'approved')]);
-check('counts, approved by, reviewers (AOE members not among them)', counts.threads.resolved === 1 && counts.approved?.by === 'Jane'
-  && counts.reviewers.join() === 'Jane', JSON.stringify(counts));
+const p = pageState([opener, msg, row(B, 'done:comment', true), row('note:n1', 'note', { id: 'n1', text: 'odd' }), aoe('page', 'state', 'waiting-customer')]);
+check('counts open / done threads; who set the status', p.threads.open === 1 && p.threads.done === 1 && p.set?.by === 'Iustin' && p.set.role === 'aoe'
+  && p.reviewers.join() === 'Jane', JSON.stringify(p));
 console.log(failures ? `${failures} failures` : 'all passed');
 process.exit(failures ? 1 : 0);

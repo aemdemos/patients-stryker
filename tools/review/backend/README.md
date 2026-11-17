@@ -27,11 +27,11 @@ Project "Stryker std review", Stage workspace `892544-strykerstdreview-stage` (P
   changed it meanwhile: refused, the tool drops the change and asks to reload.
 - **Roles:** an invitation is for a reviewer (default) or the AOE team (`role: aoe`: answers
   threads with a status, results on); every entry records its writer's role.
-- **Threads:** replies `reply:<comment|note>:<id>` are written once; `action: handover` hands the
-  thread to the other side, reviewers may close it (`action: resolve`), only the AOE role gives a
-  status (`core.mjs replyProblem`). Page states (kind `state`): reviewers only.
-- **Everyone sees every message** (both sides follow discussions); only handovers decide whose
-  turn it is (`../threads.js`).
+- **Chats:** messages `reply:<comment|note>:<id>` are written once; only the AOE role gives a
+  status (`core.mjs replyProblem`); either side ticks Done (`done:<comment|note>`, true / false).
+- **Page status** (kind `state` on item `page`): reviewers in-review / waiting-aoe / approved /
+  skip, the AOE team waiting-customer (`threads.js` STATES_BY_ROLE, `core.mjs stateProblem`).
+- **Everyone sees every message**; the page status decides whose turn it is (`../threads.js`).
 - **Limits:** reviewer kinds `variant`, `width`, `background`, `text`, `comment`, `reviewed`,
   `note`, replies; values up to 20 KB; 100 changes per save.
 
@@ -44,7 +44,7 @@ node tools/review/backend/admin.mjs invite --name "Iustin" --paths / --days 90 -
 node tools/review/backend/admin.mjs invites | revoke --id <id> | purge-invite --id <id> | export
 node tools/review/backend/admin.mjs audit --json '{"date":"2026-11-17","page":"/us/en/…"}'   # who changed what, before / after
 node tools/review/backend/test/backend.test.mjs     # the actions (test page /test/backend, cleaned up)
-node tools/review/backend/test/states.test.mjs      # the shared rules: threads, handovers, page states
+node tools/review/backend/test/states.test.mjs      # the shared rules: page statuses, chats, Done
 node tools/review/backend/test/status.test.mjs      # the status page in a browser (pages without entries only)
 node tools/review/backend/test/tool.test.mjs        # the whole loop in a browser (local preview): reviewer → summary → AOE status → reviewer, results;
                                                     # only on a page nobody has saved anything on (it never touches a reviewer's entries)

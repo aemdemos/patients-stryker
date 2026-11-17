@@ -5,12 +5,12 @@
  * The reviewer's name comes from the invitation, never from the request. A change whose stored
  * rev differs from the one it started from is refused (conflict: someone else changed it).
  * A change's own `page` is `*` for a group choice (needs the invitation's group right).
- * Replies (kind `reply:<comment|note>:<id>`) are written once (rev 0); their value is checked for
- * the writer's role (core.mjs replyProblem). The AOE role may also save every review kind.
+ * Messages (kind `reply:<comment|note>:<id>`) are written once (rev 0); their value is checked for
+ * the writer's role (core.mjs replyProblem); page statuses per side (stateProblem); Done marks.
  */
 import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
-  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem,
+  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem,
 } from '../lib/core.mjs';
 
 export async function main(params) {
@@ -37,6 +37,8 @@ export async function main(params) {
       .map((c) => (c.item !== 'page' ? 'a page state is on item page' : stateProblem(c.value, invite.role)))
       .find(Boolean);
     if (badState) return fail(params, 400, 'bad-state', badState);
+    const badDone = changes.filter((c) => c.kind.startsWith('done:')).map((c) => doneProblem(c.value)).find(Boolean);
+    if (badDone) return fail(params, 400, 'bad-done', badDone);
     const pages = [...new Set(changes.map((c) => c.page || page))];
     const outside = pages.find((p) => !inScope(invite.scope, p));
     if (outside) return fail(params, 403, 'out-of-scope', outside === '*' ? 'Choices for all pages are not part of your review.' : 'This page is not part of your review.');

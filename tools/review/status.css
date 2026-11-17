@@ -1,9 +1,9 @@
 /* Review status of every page (not a site style: it never loads on the site itself) */
 
 /* the states: a colour and a label each (labels carry the meaning, the colour helps the eye) */
-.st-waiting-reviewer { --st: #d4a72c; --st-ink: #1f2328; }
+.st-waiting-customer { --st: #0969da; --st-ink: #fff; }
 .st-waiting-aoe { --st: #cf222e; --st-ink: #fff; }
-.st-in-review { --st: #6e7f99; --st-ink: #fff; }
+.st-in-review { --st: #d4a72c; --st-ink: #1f2328; }
 .st-resolved { --st: #1a7f37; --st-ink: #fff; }
 .st-approved { --st: #8fd19e; --st-ink: #1f2328; }
 .st-unreviewed { --st: #afb8c1; --st-ink: #1f2328; }

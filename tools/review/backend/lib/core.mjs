@@ -6,34 +6,39 @@
  * An entry: key `p.<page>.<item>.<kind>` (page `*`, a group's choice: `g.<item>.<kind>`), the
  * parts base64url-encoded (keys allow letters, digits, - _ . only); value JSON
  * { v: <the tool's value, a JSON string>, by, at, rev, inv, role }. Invitations: `i.<id>`.
- * Threads: a comment or QA note opens one; every reply is its own entry, kind
- * `reply:<comment|note>:<id>`, value { text, action?: 'handover' | 'resolve', status? }, written
- * once. Roles: `reviewer` (the customer) and `aoe` (the AOE team), from the invitation. The rules
- * (thread states, handovers, page states) are tools/review/threads.js.
+ * Threads: a comment or QA note opens one; every message is its own entry, kind
+ * `reply:<comment|note>:<id>`, value { text, status? }, written once; `done:<comment|note>` ticks a
+ * thread done. The page status (kind `state` on item `page`) says whose turn it is. Roles:
+ * `reviewer` (the customer) and `aoe` (the AOE team), from the invitation. The rules are
+ * tools/review/threads.js.
  */
 import crypto from 'crypto';
 import stateLib from '@adobe/aio-lib-state';
-import { PAGE_STATES, ANSWER_STATES } from '../../threads.js';
+import { STATES_BY_ROLE, ANSWER_STATES, stateAllowed } from '../../threads.js';
 import filesLib from '@adobe/aio-lib-files';
 
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
-export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state'];
+export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note'];
 export const MAX_VALUE = 20000;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
 
-/** a page state (kind `state`): reviewers only, one of the page states or '' (cleared) */
+/** a page status (kind `state`): each side its own statuses (threads.js), or '' (cleared) */
 export function stateProblem(value, role) {
-  if (role !== 'reviewer') return 'page states are set by reviewers';
   let v;
   try {
     v = JSON.parse(value);
   } catch (e) {
-    return 'a page state is JSON';
+    return 'a page status is JSON';
   }
-  return v === '' || v === null || PAGE_STATES.includes(v) ? null : `state: ${PAGE_STATES.join(', ')}`;
+  return stateAllowed(v, role) ? null : `this side sets: ${(STATES_BY_ROLE[role] || []).join(', ')}`;
+}
+
+/** a Done mark (kind `done:<comment|note>`): true or false */
+export function doneProblem(value) {
+  return value === 'true' || value === 'false' ? null : 'a Done mark is true or false';
 }
 
 /**
@@ -49,13 +54,12 @@ export function replyProblem(value, role) {
   }
   if (!v || typeof v !== 'object' || Array.isArray(v)) return 'a reply is an object';
   if (v.text !== undefined && (typeof v.text !== 'string' || v.text.length > MAX_VALUE)) return 'text: a string';
-  if (v.action !== undefined && !['handover', 'resolve'].includes(v.action)) return 'action: handover or resolve';
-  if (v.action === 'resolve' && role !== 'reviewer') return 'only reviewers close a thread';
+  if (v.action !== undefined) return 'whose turn it is is the page status now, not a message';
   if (v.status !== undefined) {
     if (role !== 'aoe') return 'only the AOE team gives a status';
     if (!v.status || !ANSWER_STATES.includes(v.status.state)) return `status.state: ${ANSWER_STATES.join(', ')}`;
   }
-  if (!v.text && !v.action && !v.status) return 'a reply needs text, an action or a status';
+  if (!v.text && !v.status) return 'a message needs text or a status';
   return null;
 }
 export const MAX_CHANGES = 100;

@@ -17,8 +17,8 @@ const $ = (sel) => document.querySelector(sel);
 
 /** the states, worded for the viewer's side */
 const STATES = {
-  'waiting-reviewer': { reviewer: 'Answered: waiting for you', aoe: 'Waiting for the reviewers' },
-  'waiting-aoe': { reviewer: 'Waiting for the AOE team', aoe: 'Waiting for you' },
+  'waiting-customer': { reviewer: 'Waiting for the customer', aoe: 'Waiting for the customer' },
+  'waiting-aoe': { reviewer: 'Waiting for the AOE team', aoe: 'Waiting for the AOE team' },
   'in-review': { reviewer: 'In review', aoe: 'In review' },
   resolved: { reviewer: 'Resolved', aoe: 'Resolved' },
   approved: { reviewer: 'Approved as is', aoe: 'Approved as is' },
@@ -26,8 +26,8 @@ const STATES = {
   skipped: { reviewer: 'Skipped: not migrated', aoe: 'Skipped: not migrated' },
 };
 const ORDER = {
-  reviewer: ['waiting-reviewer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
-  aoe: ['waiting-aoe', 'waiting-reviewer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
+  reviewer: ['waiting-customer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
+  aoe: ['waiting-aoe', 'waiting-customer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -103,13 +103,7 @@ function tiles() {
 
 function threadsText(t) {
   if (!t) return '';
-  const aoe = me.role === 'aoe';
-  return [
-    t['waiting-aoe'] && `${t['waiting-aoe']} ${aoe ? 'for you' : 'with the AOE team'}`,
-    t['waiting-reviewer'] && `${t['waiting-reviewer']} ${aoe ? 'with the reviewers' : 'for you'}`,
-    t.resolved && `${t.resolved} resolved`,
-    t.internal && `${t.internal} internal`,
-  ].filter(Boolean).join(' · ');
+  return [t.open && `${t.open} open`, t.done && `${t.done} done`].filter(Boolean).join(' · ');
 }
 
 function draw() {

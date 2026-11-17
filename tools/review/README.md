@@ -20,7 +20,7 @@ browser keeps the token, later visits need no link (locally the frames read `/co
 
 | File | What |
 |---|---|
-| `index.html`, `review.css` | The shell: toolbar (page, desktop / phone, flip / overlay / side by side, sync, reviewer name), the page view, two panels that fold to a strip (kept per browser): **Designs on this page** on the left (blocks and text sections with their design switches, links that open the page versions in a new tab) and **Feedback** on the right (Your review of this page: the page state and the page comment; QA notes; their threads) |
+| `index.html`, `review.css` | The shell: toolbar (page, desktop / phone, flip / overlay / side by side, sync, reviewer name), the page view, two panels that fold to a strip (kept per browser): **Designs on this page** on the left (blocks and text sections with their design switches, links that open the page versions in a new tab) and **Feedback** on the right (the page status banner and its buttons, Comments on this page, QA notes, their chats; resizable) |
 | `review.js` | Frames, layout and scaling, readiness, sync wiring, flip (Space), page stepping (Alt+← / →), block list; state in the URL (`page`, `vp`, `mode`, `show`, `op`) |
 | `sync.js` | Text-matched sync: text runs and images found once on each side are paired, the longest same-order chain kept, the middle of the screen mapped between neighbouring pairs (the QA tool's Sync, simplified) |
 | `frame.js` | Runs inside the standard page (scripts.js loads it with `?review` on preview hosts): matches the page's authored blocks (its `.plain.html`) to the rendered ones (name + words incl. alt texts; a wordless block, e.g. a video player, by order), offers the variants the content fits (Columns by cell kinds, widths for two cells; Cards, Hero, Video, Page Nav jump / sticky), re-renders a block in another variant like the page (`decorateMain` + `loadSections`) and swaps it, switches section backgrounds; `window.stdReview` for the shell. Blocks from fragments and the ones the page builds (tabs, accordions) are listed, not switchable |
@@ -71,34 +71,38 @@ page and block, updated in place, with an audit file per save; no sign-in for re
 - **History:** the pilot saved to a Google Sheet through Adobe's form submission service
   (2026-11-13 to 11-17, test data only); retired on 2026-11-17, its rows not imported.
 
-## Threads, handovers and page states (`threads.js`)
+## Page status and chats (`threads.js`)
 
 The back and forth between the customer's reviewers and the AOE team happens in the tool, not in
 calls. The rules are one shared module, `threads.js`, used by the backend, the tool, the results
 page and the summary.
 
-- **Threads:** every comment (block, text section, page) and QA note opens one. It starts **in
-  discussion** (not sent to the other side yet). **Reply** adds a message and never changes whose
-  turn it is. **Everyone sees every message**, so either side can follow a discussion and step in
-  before it is handed over.
-- **Handovers are explicit:** reviewers **Send to the AOE team** or **Resolve** (any reviewer of the
-  page); the AOE team **Sends back to the reviewers**, optionally with a status (in progress, done,
-  won't do, open again) and a release. State: *in discussion*, *waiting for the AOE team*, *sent back /
-  answered*, *resolved*, from the latest handover or resolve only (plain replies never flip it).
-- **Page states** ("Your review of this page", reviewers only): **In review**, **Approved**,
-  **Skip: don't migrate**; the AOE team sees them. The older reviewed mark counts as Approved.
-- **Everything waits for Save**: messages, handovers, page states, comments, notes and design
-  choices are unsaved changes (marked "unsaved", × removes a message) until Save; Undo changes
-  takes them back.
-- **The AOE team** opens the tool with an AOE invitation (`admin.mjs invite --role aoe`): the name
-  shows "(AOE)", their messages carry an AOE badge; their activity is recorded under their names.
-- Entries: replies `reply:<comment|note>:<id>` (written once), value `{ text, action: 'handover' |
-  'resolve', status: { state, release } }`; page states kind `state` on item `page`. Older data:
-  an AOE reply with a status and the command line's `status:<kind>` rows count as AOE handovers.
-- `set-status.mjs` (many rows at once) sends threads back with a status (`admin answer`,
-  `--by` the name). The summary gives every piece of evidence its thread (state, messages, last
-  writer, latest status; threads still in discussion are marked "not sent to the AOE team yet"); a
-  reviewer's message newer than the agent's reading makes the reading stale.
+- **The page status says whose turn it is**, shown as a coloured banner at the top of the Feedback
+  panel (with who set it) and as a badge in the toolbar. Reviewers set **In review**, **Send to the
+  AOE team** (Waiting for the AOE team), **Approve** and **Skip: don't migrate**; the AOE team sets
+  **Send back to the customer** (Waiting for the customer). Pressing the current one clears it.
+  Shown: Not reviewed yet (gray, nothing yet), In review (yellow, also any activity), Waiting for
+  the AOE team (red), Waiting for the customer (blue), Approved as is (light green, never any
+  feedback) / Resolved (green, after feedback), Skipped (black). The older reviewed mark counts as
+  approved.
+- **Chats**: every comment (block, text section, page) and QA note is a chat, WhatsApp-like: the
+  newest message at the bottom, mine on the right, everyone else's on the left, each with its
+  author (AOE badge); everyone sees every message. The first message on a block, section or the
+  page is the comment itself. A block's chat opens with one click, its message box focused; Send
+  or Ctrl+Enter. The AOE team may add a status to a message (in progress, done, won't do, open
+  again; a release) for the summary's work items.
+- **Done**: either side ticks a chat Done when it is dealt with (unticks it again); a QA note's
+  Done is its resolved pin. The status page counts open and done chats.
+- **Everything waits for Save**: messages, the page status, Done ticks, notes and design choices
+  are unsaved changes (marked "unsaved", × removes a message) until Save; Undo changes takes them
+  back. The panels keep their place when a chat redraws; the right panel resizes by dragging its
+  left edge.
+- Entries: messages `reply:<comment|note>:<id>` (written once), value `{ text, status }`; Done
+  `done:<comment|note>` (true / false); the page status `state` on item `page`. Older data: a
+  chat closed with `action: resolve` counts as done; `status:<kind>` rows as AOE statuses.
+- `set-status.mjs` (many rows at once) writes AOE messages with a status (`admin answer`, `--by`
+  the name; `--send-back` also sets those pages to Waiting for the customer). The summary gives
+  every piece of evidence its chat (done, messages, last writer, latest status).
 - **Mentions** (`@name` emails to invited people): planned, waiting for an email service.
 
 ## Status of every page (`status.html`, `status.js`, `status.css`)
@@ -111,16 +115,16 @@ worded for the viewer:
 
 | State | Colour | When |
 |---|---|---|
-| Answered: waiting for the reviewers | yellow | the AOE team sent every open thread back |
-| Waiting for the AOE team | red | a thread was sent to the AOE team |
-| In review | grey-blue | marked In review, or any activity (threads in discussion too), nothing waiting |
-| Resolved | green | approved after feedback (threads, all closed, or design choices) |
+| Waiting for the customer | blue | the AOE team sent the page back to the customer |
+| Waiting for the AOE team | red | a reviewer sent the page to the AOE team |
+| In review | yellow | marked In review, or any activity |
+| Resolved | green | approved after feedback (chats or design choices) |
 | Approved as is | light green | approved, never any feedback |
 | Not reviewed yet | gray | nothing yet |
-| Skipped: not migrated | black | a reviewer chose "Skip: don't migrate" (beats everything) |
+| Skipped: not migrated | black | a reviewer chose "Skip: don't migrate" |
 
-Order "what waits for me first": reviewers see yellow, red, grey-blue, green, light green, gray,
-black; the AOE team red first. "New": the latest activity is by someone else and after the viewer's last
+Order "what waits for me first": reviewers see blue, red, yellow, green, light green, gray, black;
+the AOE team red first. "New": the latest activity is by someone else and after the viewer's last
 visit (kept in the browser). Counts per state on top (click to filter) and a bar in the state
 colours. Any invitation opens it (`status.html?invite=…`, or the tool's link once the browser has
 the invitation). Tests: `backend/test/states.test.mjs` (the state rules), `backend/test/status.test.mjs`
@@ -211,9 +215,9 @@ applied. `release` is free text; the commit is recorded with every status.
 
 Tests: `node tools/review/test/summary.test.mjs` (the sample `test/sample-rows.csv`, made-up
 feedback on real standard pages, from `test/sample-rows.mjs`); the whole loop on the backend
-(reviewer: comment, a reply in discussion, send to the AOE team, approve → summary → sent back with a
-status → a plain reply keeps the turn → sent again → the AOE team: a reply, send back with a
-status → the reviewer sees it all, resolves → results page): `backend/test/tool.test.mjs`;
+(reviewer: page chat, Send to the AOE team, a design switch → summary → set-status sends it back
+with a status → the reviewer answers and sends it again → the AOE team writes with a status and
+sends it back in the tool → the reviewer ticks Done and approves: resolved → results page): `backend/test/tool.test.mjs`;
 the shared rules: `backend/test/states.test.mjs`.
 
 ## Source snapshots

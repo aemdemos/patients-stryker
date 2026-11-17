@@ -153,6 +153,10 @@ What follows from it:
      sides at all times (the user's choice: to follow discussions and step in), page states set by
      reviewers (In review, Approved, Skip: don't migrate; Skip black, Not reviewed yet gray), and
      everything waits for Save. Rules in one shared module, `tools/review/threads.js`.*
+   - *Changed again 2026-11-17 (the user's call): whose turn it is is the **page status** (Send to
+     the AOE team / Send back to the customer, In review, Approve, Skip), a banner + toolbar badge;
+     chats are plain, WhatsApp-like, with a Done tick for either side; In review yellow, Waiting for
+     the customer blue; the right panel resizable.*
    - **Mentions** (open): `@name` in a message emails an invited person (invitations get an email
      address; '@' suggests them) with a link to the thread; waits for an email service (App
      Builder has none of its own).

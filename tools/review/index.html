@@ -16,6 +16,7 @@
       <datalist id="rv-page-list"></datalist>
       <button type="button" class="rv-btn" data-action="next" title="Next page (Alt+→)">›</button>
       <span class="rv-count" aria-live="polite"></span>
+      <span class="rv-page-badge" aria-live="polite"></span>
     </div>
     <div class="rv-group" role="group" aria-label="Viewport">
       <button type="button" class="rv-btn" data-vp="1440">Desktop</button>
@@ -67,13 +68,18 @@
       </div>
     </main>
     <aside class="rv-panel rv-panel-right" aria-label="Feedback on this page">
+      <div class="rv-resize" title="Drag to resize this panel" aria-hidden="true"></div>
       <div class="rv-panel-head">
         <h2>Feedback</h2>
         <button type="button" class="rv-collapse" data-panel="right" aria-expanded="true" title="Hide this panel">›</button>
       </div>
       <div class="rv-panel-body">
+        <section class="rv-statusbox" aria-label="Status of this page">
+          <div class="rv-status-banner"></div>
+          <div class="rv-status-actions" role="group" aria-label="Change the status"></div>
+        </section>
         <section class="rv-pagebox">
-          <h3>Your review of this page</h3>
+          <h3>Comments on this page</h3>
           <div class="rv-pagebox-body"></div>
         </section>
         <section class="rv-notesbox">

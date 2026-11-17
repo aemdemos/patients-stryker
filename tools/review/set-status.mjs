@@ -8,7 +8,8 @@
  * the thread, the results page in its AOE column, the next summary per row ("partly" when mixed).
  * usage: node tools/review/set-status.mjs --item <work item id> --state done|progress|wontdo|open
  *   [--release r1] [--reason "…"] [--refs <ref>,<ref>] [--work migration-work/review-summary/work-items.json]
- *   [--by "name"] [--dry-run] [--ns 892544-strykerstdreview-stage]
+ *   [--by "name"] [--send-back] [--dry-run] [--ns 892544-strykerstdreview-stage]
+ * --send-back: also set those pages' status to "Waiting for the customer".
  * --refs: only these rows of the item (refs as in work-items.json: <page>#<item>|<kind>).
  * Decisions are not given a status here: the apply step records what it applied.
  */
@@ -58,7 +59,7 @@ const value = {
 };
 const by = opt('--by', 'AOE');
 const rows = evidence.filter((e) => ['comment', 'note'].includes(e.kind)).map((e) => ({
-  page: e.page, item: e.item, thread: e.kind, text: value.reason || undefined, status: value, by,
+  page: e.page, item: e.item, thread: e.kind, text: value.reason || undefined, status: value, by, sendBack: args.includes('--send-back'),
 }));
 rows.forEach((r) => console.log(`${dry ? '(dry run) ' : ''}${r.page} ${r.item} ${r.thread} thread → ${state}${value.release ? ` in ${value.release}` : ''}`));
 if (dry || !rows.length) process.exit(0);
