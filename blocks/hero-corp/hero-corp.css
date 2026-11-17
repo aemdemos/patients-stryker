@@ -316,11 +316,21 @@
 .hero-corp.large { --hero-corp-title-size: 4; }
 .hero-corp.xlarge { --hero-corp-title-size: 5.5; }
 
-.hero-corp:is(.medium, .large, .xlarge) > div:last-child :is(h1, h2) {
+/* serif-gold-title: 3.5vw (49px at 1440, 27.3px at 390) with the gold words (Bold + Italic) in
+   Egyptienne light, not Futura bold (stryker.com CR hub "Corporate responsibility" over
+   "reports and resources") */
+.hero-corp.serif-gold-title { --hero-corp-title-size: 3.5; }
+
+.hero-corp:is(.medium, .large, .xlarge, .serif-gold-title) > div:last-child :is(h1, h2) {
   font-family: var(--heading-font-family);
   font-size: calc(var(--hero-corp-title-size) * var(--hero-corp-title-unit));
   font-weight: var(--font-weight-regular);
   line-height: var(--hero-corp-title-line-height);
+}
+
+.hero-corp.serif-gold-title > div:last-child :is(h1, h2) :is(em strong, strong em) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
 }
 
 @media (width >= 600px) {

@@ -597,7 +597,22 @@ function heroes(doc, main) {
       const w = doc.createTreeWalker(h1, 4);
       while (w.nextNode()) if (w.currentNode.nodeValue.trim()) sizes.push(rendered(w.currentNode));
       const [size, em] = sizes.reduce((a, b) => (b[0] > a[0] ? b : a), [0, false]);
-      if (size >= 5 && !em) addVariant(table, 'xlarge');
+      // a 3.5vw title whose gold words are Egyptienne (CR hub "Corporate responsibility"):
+      // `serif-gold-title` (gold Bold + Italic shown in Egyptienne light)
+      const tagged = (n, tag) => {
+        for (let el = n.parentElement; el && el !== h1.parentElement; el = el.parentElement) {
+          if (tagsOf(el).includes(tag)) return true;
+        }
+        return false;
+      };
+      const goldSerif = [];
+      const gw = doc.createTreeWalker(h1, 4);
+      while (gw.nextNode()) {
+        const n = gw.currentNode;
+        if (n.nodeValue.trim() && tagged(n, 'color-gold')) goldSerif.push(tagged(n, 'serif'));
+      }
+      if (!em && size === 3.5 && goldSerif.length && goldSerif.every(Boolean)) addVariant(table, 'serif-gold-title');
+      else if (size >= 5 && !em) addVariant(table, 'xlarge');
       else if (size >= 3 && (size < 3.5 || (em && size === 3.5 && !fromHeading))) addVariant(table, 'medium');
       else if (size >= 3) addVariant(table, 'large');
     }
@@ -887,7 +902,14 @@ function heroVariants(doc, main) {
     const banner = list.includes('banner');
     const [top, left, right] = read('text position').split(',').map((v) => parseFloat(v));
     const width = parseFloat(read('text width'));
-    read('text on phones');
+    const phones = read('text on phones').toLowerCase();
+    // a phone image (a second image row) with the text over it on stryker.com (no `Text on
+    // phones` row: CR hub, CLOUT, giving back)
+    const imageRow = (tr) => {
+      const a = tr.querySelector('a');
+      return !!a && /\/is\/image\//.test(a.getAttribute('href') || '') && norm(tr.textContent) === norm(a.textContent);
+    };
+    const over = !phones && [...table.querySelectorAll('tr')].slice(1).filter(imageRow).length >= 2;
     const phoneColour = read('text colour on phones').toLowerCase().replace(/[\s_]+/g, '-');
     const colour = read('text colour').toLowerCase();
     const box = read('text box').toLowerCase().replace(/\s+/g, '-');
@@ -899,7 +921,9 @@ function heroVariants(doc, main) {
       else if (top <= 12 || right <= 52) placement = 'top-left';
       else placement = 'left';
     }
-    if (placement) list.push(placement);
+    // (`top-left-over` / `left-over`: the text stays over the phone image: CR hub, CLOUT,
+    // giving back)
+    if (placement) list.push(over && ['top-left', 'left'].includes(placement) ? `${placement}-over` : placement);
     if (banner && placement !== 'right' && !Number.isNaN(width) && width <= 50) list.push('half-text');
     setVariants(table, name, list);
     // (the phone colour only where it differs from the page text: dark grey, build-your-ASC)

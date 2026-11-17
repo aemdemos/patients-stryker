@@ -246,8 +246,11 @@ function autoplayVideo(block) {
   watch.observe(block, { childList: true, subtree: true });
 }
 
-// the slide's text placements (variants; the insets are in hero-corp.css)
+// the slide's text placements (variants; the insets are in hero-corp.css); the `-over` forms
+// keep the text over the phone image on phones too (CR hub, CLOUT, giving back: a phone image
+// with room for the text)
 const PLACEMENTS = ['top-left', 'left', 'wide', 'bottom-left', 'right'];
+const OVER = { 'top-left-over': 'top-left', 'left-over': 'left' };
 
 /**
  * A slide with a placement variant lays its text out on phones by itself: under its image
@@ -257,6 +260,12 @@ const PLACEMENTS = ['top-left', 'left', 'wide', 'bottom-left', 'right'];
  */
 function phoneLayout(block) {
   if (!block.classList.contains('image-slide')) return;
+  const over = Object.keys(OVER).find((name) => block.classList.contains(name));
+  if (over) {
+    // the placement's insets on all widths, the text over the image on phones as well
+    block.classList.add(OVER[over]);
+    return;
+  }
   if (!PLACEMENTS.some((name) => block.classList.contains(name))) return;
   block.classList.add('text-below');
   const phoneImage = block.querySelector('.hero-image-mobile')
