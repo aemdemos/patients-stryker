@@ -1,0 +1,105 @@
+/* corp-webinar — www.stryker.com webinars and on-demand videos (#519). CSS-only template.
+   Measured on the webinar, thank-you, page-hero video and on-demand index pages of the
+   template at 375 / 600 / 768 / 1024 / 1440. */
+
+body.corp-webinar {
+  --corp-webinar-h2-thank-you: 30.625px; /* measured: the 1.25em "Thank you for registering" h2 from 600px */
+  --corp-webinar-hero-top: 28px; /* measured: the page-hero title's top margin (h1.title) */
+  --corp-webinar-hero-title-line-height-s: 22.26px; /* measured: the page-hero title's lines below 1024px */
+}
+
+/* the title sits in one rich text with the text under it: no padded rule under the first
+   section, and the title, speaker and description one paragraph gap apart */
+body.corp-webinar main > .section:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.corp-webinar main > .section.serif:has(+ .section.p-1-25) {
+  margin-bottom: 0;
+}
+
+/* headings have no rule under them (the corp h2 default) */
+body.corp-webinar main > .section > .default-content-wrapper h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* thank-you: the h2 is 1.25x the h2 (26.25px, 30.625px from 600px) */
+body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-l-scaled);
+}
+
+/* page hero: the gold title 28px under the header and 10px above the subhead (24.5px at
+   every width); the hero ends in a content-width rule one heading gap under its text
+   (`separator`), with the video 20px (30px from 600px) under the rule */
+body.corp-webinar main > .section:first-child:has(+ .section.separator) {
+  margin-bottom: 0;
+}
+
+body.corp-webinar main > .section:first-child:has(+ .section.separator) > .default-content-wrapper {
+  padding-top: var(--corp-webinar-hero-top);
+}
+
+body.corp-webinar main > .section:first-child:has(+ .section.separator) h1 {
+  margin-bottom: var(--space-block-s);
+  line-height: var(--corp-webinar-hero-title-line-height-s);
+}
+
+body.corp-webinar main > .section:first-child:has(+ .section.separator) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+body.corp-webinar main > .section.separator {
+  border-top: 0;
+}
+
+body.corp-webinar main > .section.separator > div:first-child {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* …and under the video, the speaker byline (17.5px serif; 21px from 600px) one paragraph gap
+   above the description */
+body.corp-webinar main > .section.separator + .section.serif {
+  margin-bottom: 0;
+}
+
+body.corp-webinar main > .section.separator + .section.serif p {
+  line-height: var(--heading-line-height);
+}
+
+/* index: the webinar titles under the panel labels (Bold h3, 14px; 17.5px from 600px) */
+body.corp-webinar .accordion .columns h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+    font-size: var(--corp-webinar-h2-thank-you);
+  }
+
+  body.corp-webinar main > .section.separator {
+    margin-bottom: var(--space-section);
+  }
+
+  body.corp-webinar main > .section.separator > div:first-child {
+    padding-top: var(--space-section);
+  }
+
+  body.corp-webinar main > .section.separator + .section.serif p {
+    font-size: var(--body-font-size-xl);
+  }
+
+  body.corp-webinar .accordion .columns h3 {
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+@media (width >= 900px) {
+  /* the hero text wraps in the left half (col-sm-6) */
+  body.corp-webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
+    max-width: 50%;
+    line-height: var(--heading-line-height);
+  }
+}

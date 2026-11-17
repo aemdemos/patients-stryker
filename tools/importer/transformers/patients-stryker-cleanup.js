@@ -113,12 +113,14 @@ export default function transform(hookName, element, payload) {
   // same way (long-page-detail-corp-sections.js), so they get the same treatment, as do
   // the corp division contact pages (contact-division-sections.js), the corp People
   // pages with their Back link fragments (import-people.js) and the corp Interventional
-  // Spine footnotes with their Back link fragment (import-ivs-footnotes.js).
+  // Spine footnotes with their Back link fragment (import-ivs-footnotes.js), and the corp
+  // webinar pages (import-corp-webinar.js).
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
     'event-detail', 'contact-division',
     'people', 'people-fragments',
     'ivs-footnotes', 'ivs-footnotes-fragments',
+    'corp-webinar',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 

@@ -1314,6 +1314,40 @@
         "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
       ],
       "blocks": []
+    },
+    {
+      "name": "corp-webinar",
+      "urls": [
+        "https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html",
+        "https://www.stryker.com/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses/webinar.html",
+        "https://www.stryker.com/us/en/sage/videos/sage-mp-mats-2-demo.html",
+        "https://www.stryker.com/us/en/sage/webinars.html",
+        "https://www.stryker.com/us/en/sage/webinars/guidelines-practice-pip-fireside-chat.html",
+        "https://www.stryker.com/us/en/sage/webinars/hap-human-financial-cost.html",
+        "https://www.stryker.com/us/en/sage/webinars/managing-urinary-incontinence-webinar.html",
+        "https://www.stryker.com/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization.html",
+        "https://www.stryker.com/us/en/sage/webinars/nv-hap-hidden-plain-sight.html",
+        "https://www.stryker.com/us/en/sage/webinars/risk-of-pip-procedural-operational-areas.html",
+        "https://www.stryker.com/us/en/sage/webinars/safe-patient-handling-mobility-webinar.html",
+        "https://www.stryker.com/us/en/sage/webinars/sepsis-hospital-acquired-pneumonia.html",
+        "https://www.stryker.com/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/us/en/sage/webinars/hap-human-financial-cost.html",
+      "description": "www.stryker.com webinars and on-demand videos (#519): webinar pages (H1 + speaker, description, Video), webinar thank-you pages, page-hero video pages and the FocusRN on-demand webinars index (an Accordion of Columns 3-up rows). Script: tools/importer/import-corp-webinar.js.",
+      "blocks": [
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".c-accordion .panel-body .cols3"
+          ]
+        }
+      ]
     }
   ]
 }
