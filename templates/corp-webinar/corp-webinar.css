@@ -10,6 +10,8 @@ body.corp-webinar {
   --corp-webinar-thank-you-offset-s: 21px; /* measured: the thank-you title sits 31px (41px from 600px) under the header, less the 10px header gap */
   --corp-webinar-thank-you-offset: 31px;
   --corp-webinar-wordmark-width: 213px; /* measured: the FocusRN wordmark's natural width */
+  --corp-webinar-wordmark-column: calc(41.667vw - 30.25px); /* measured: the source's 5/12 column less its 30px gutter; the wordmark fills it up to its natural width */
+  --corp-webinar-wordmark-width-fluid: min(var(--corp-webinar-wordmark-width), var(--corp-webinar-wordmark-column));
   --corp-webinar-index-title-gap-s: 14px; /* measured: wordmark to title is 2vw + 19.4px (2vw + 29.3px from 600px), less the 5.2px the wordmark's line adds */
   --corp-webinar-index-title-gap: 24px;
   --corp-webinar-hero-title-line-height-s: 22.26px; /* measured: the page-hero title's lines below 1024px */
@@ -75,8 +77,8 @@ body.corp-webinar main > .section.separator > div:first-child {
   border-top: 1px solid var(--color-surface-muted);
 }
 
-/* index: the back link 11px under the header, the wordmark offset in its column from 972px
-   (the source centres it in a 25vw column, up to 1200px; it fades to 0 by 1440px), the title 2vw + 29.3px under it */
+/* index: the back link 11px under the header, the wordmark centred in its column and
+   scaled to it (the source column is 5/12, 3/12 from 600px, 2/12 above 1200px of the viewport), the title 2vw + 29.3px under it */
 body.corp-webinar main > .section.back-link {
   margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap-s));
   padding-top: 0;
@@ -87,7 +89,12 @@ body.corp-webinar .accordion .columns h3 + p {
 }
 
 body.corp-webinar main > .section.back-link p:has(img) {
-  margin-inline-start: max(0px, min(calc((25vw - 30px - var(--corp-webinar-wordmark-width)) / 2), calc((1440px - 100vw) / 8.4)));
+  margin-inline-start: max(0px, calc((var(--corp-webinar-wordmark-column) - var(--corp-webinar-wordmark-width-fluid)) / 2));
+}
+
+body.corp-webinar main > .section.back-link p img {
+  width: var(--corp-webinar-wordmark-width-fluid);
+  height: auto;
 }
 
 /* index copy: the intro and the webinar copy 17.5px (the speaker in Egyptienne), the webinar
@@ -127,6 +134,10 @@ body.corp-webinar main > .section.separator + .section.serif p {
 }
 
 @media (width >= 600px) {
+  body.corp-webinar {
+    --corp-webinar-wordmark-column: calc(25vw - 30.25px);
+  }
+
   body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
     padding-top: var(--corp-webinar-thank-you-offset);
   }
@@ -161,5 +172,11 @@ body.corp-webinar main > .section.separator + .section.serif p {
   body.corp-webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
     max-width: 50%;
     line-height: var(--heading-line-height);
+  }
+}
+
+@media (width >= 1200px) {
+  body.corp-webinar {
+    --corp-webinar-wordmark-column: calc(min(16.667vw - 30.25px, 204.8px) + max(0px, calc((1201px - 100vw) * 100))); /* the source column is 2/12 above 1200px and 3/12 at 1200px: the ramp keeps the 3/12 column at exactly 1200px */
   }
 }
