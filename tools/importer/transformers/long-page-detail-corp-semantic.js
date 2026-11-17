@@ -866,8 +866,9 @@ function setVariants(table, name, list) {
  *   instruments);
  * - `Text width` → `half-text` (50% or less; a wider column is the full width);
  * - `Text colour` → section style `white-text` / `light-gray-text`, `Text box` → `box-<colour>`;
- * - `Text on phones`, `Text colour on phones` → dropped (hero-corp.js: the text alone on phones
- *   without a phone image, under it with one, in the page text colour).
+ * - `Text on phones` → dropped (hero-corp.js: the text alone on phones without a phone image,
+ *   under it with one); `Text colour on phones` dark grey → section style `phone-dark-gray-text`
+ *   (black is the page text colour already).
  */
 function heroVariants(doc, main) {
   blocksNamed(main, /^hero corp\b/).forEach((table) => {
@@ -886,7 +887,7 @@ function heroVariants(doc, main) {
     const [top, left, right] = read('text position').split(',').map((v) => parseFloat(v));
     const width = parseFloat(read('text width'));
     read('text on phones');
-    read('text colour on phones');
+    const phoneColour = read('text colour on phones').toLowerCase().replace(/[\s_]+/g, '-');
     const colour = read('text colour').toLowerCase();
     const box = read('text box').toLowerCase().replace(/\s+/g, '-');
     let placement = '';
@@ -900,7 +901,9 @@ function heroVariants(doc, main) {
     if (placement) list.push(placement);
     if (banner && placement !== 'right' && !Number.isNaN(width) && width <= 50) list.push('half-text');
     setVariants(table, name, list);
-    const styles = [colour && `${colour}-text`, box && `box-${box}`].filter(Boolean);
+    // (the phone colour only where it differs from the page text: dark grey, build-your-ASC)
+    const styles = [colour && `${colour}-text`, box && `box-${box}`,
+      phoneColour === 'dark-gray' && 'phone-dark-gray-text'].filter(Boolean);
     if (styles.length) {
       const row = metaRow(meta, 'style');
       const now = row ? row.children[1].textContent.split(',').map((s) => s.trim()).filter(Boolean) : [];
