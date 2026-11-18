@@ -320,12 +320,9 @@ try {
 } catch (e) {
   decisions = { merge: [] };
 }
-(decisions.merge || []).forEach((rule) => {
-  const fits = (g) => g.list.every((x) => x.classes.join(' ') === rule.match.classes)
-    && Object.entries(rule.match.parts || {}).every(([k, v]) => g.parts[k] === v);
-  const chosen = merged.filter(fits).sort((a, c) => c.list.length - a.list.length);
-  if (chosen.length < 2) return;
-  const [home, ...rest] = chosen;
+/** the groups of `chosen` join the largest of them, which takes the decision's name and reason */
+function mergeInto(chosen, decision) {
+  const [home, ...rest] = [...chosen].sort((a, c) => c.list.length - a.list.length);
   rest.forEach((g) => {
     g.list.forEach((it) => {
       const lacks = lacking(home.parts, it.parts);
@@ -334,15 +331,33 @@ try {
         .map((k) => [k, it.parts[k]]);
       home.list.push({
         ...it,
-        missing: [...new Set([...(it.missing || []), ...lacking(home.parts, it.parts)])],
+        missing: [...new Set([...(it.missing || []), ...lacks])],
         extra: [...new Set([...(it.extra || []), ...lacking(it.parts, home.parts)])],
         differs,
-        decision: rule.name,
+        decision: decision.name,
       });
     });
     merged.splice(merged.indexOf(g), 1);
   });
-  home.decision = rule;
+  home.decision = decision;
+}
+(decisions.merge || []).forEach((rule) => {
+  // (by: one group per combination of the named parts, e.g. Hero by layout; names per combination)
+  if (rule.by) {
+    const keyOfParts = (g) => rule.by.map((k) => g.parts[k] || '').join(' | ');
+    const keys = [...new Set(merged.map(keyOfParts))];
+    keys.forEach((key) => {
+      mergeInto(merged.filter((g) => keyOfParts(g) === key), {
+        name: rule.names?.[key] || key, why: rule.why,
+      });
+    });
+    return;
+  }
+  const fits = (g) => g.list.every((x) => x.classes.join(' ') === rule.match.classes)
+    && Object.entries(rule.match.parts || {}).every(([k, v]) => g.parts[k] === v);
+  const chosen = merged.filter(fits);
+  if (chosen.length < 2) return;
+  mergeInto(chosen, rule);
 });
 const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map((list, i) => ({
   id: i + 1,
