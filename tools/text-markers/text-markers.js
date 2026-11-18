@@ -147,9 +147,11 @@ function updatePreview() {
   const main = previewFrame.contentDocument.querySelector('main');
   const height = Math.ceil(main.getBoundingClientRect().bottom) + 12;
   previewFrame.style.height = `${Math.min(Math.max(height, 80), 360)}px`;
-  previewNote.textContent = previewLine
-    ? `Previewing your selection (${previewLine.tag === 'P' ? 'paragraph' : `heading ${previewLine.tag.slice(1)}`}).`
-    : 'Select words in the document to preview them here.';
+  const kind = previewLine && (previewLine.tag === 'P' ? 'paragraph' : `heading ${previewLine.tag.slice(1)}`);
+  let note = 'Select words in the document to preview them here.';
+  if (previewLine) note = `Previewing your selection (${kind}).`;
+  if (previewLine?.old) note = `Previewing your selection (${kind}), now styled :start-${previewLine.old}:.`;
+  previewNote.textContent = note;
 }
 
 /** colour swatches take their colour from the site's own color-* classes */
@@ -285,6 +287,46 @@ function analyseSelection(inner) {
   return { text, ok: formats.size <= 1 };
 }
 
+// the markers as authors see them in the document text
+const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
+
+// the document's text, when the editor shares it (Experience Workspace's live document)
+let liveText = '';
+
+/**
+ * The style already around the selected words on the page, when they sit right inside a
+ * marker pair (`:start-gold:words:end:`) and the editor shares the document.
+ * @param {string} words The selected words
+ * @returns {string} The existing marker words, or ''
+ */
+function styleAround(words, text = liveText) {
+  if (!text || !words.trim()) return '';
+  const escaped = words.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = text.match(new RegExp(`:start-([a-z0-9-]+):${escaped}:end:`));
+  return m ? m[1] : '';
+}
+
+/**
+ * The document's text: Experience Workspace shares it live; the DA editor does not, so it is
+ * read from the document's saved source (the editor saves as the author types).
+ * @returns {Promise<string>} The text, or '' when it cannot be read
+ */
+async function documentText() {
+  if (liveText) return liveText;
+  const ctx = sdk.context || sdk.project || {};
+  if (!ctx.org || !ctx.repo || !ctx.path || typeof sdk.actions.daFetch !== 'function') return '';
+  try {
+    const resp = await Promise.race([
+      sdk.actions.daFetch(`https://admin.da.live/source/${ctx.org}/${ctx.repo}${ctx.path}.html`),
+      new Promise((resolve) => { setTimeout(() => resolve(null), 3000); }),
+    ]);
+    if (!resp?.ok) return '';
+    return new DOMParser().parseFromString(await resp.text(), 'text/html').body.textContent;
+  } catch {
+    return '';
+  }
+}
+
 async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
@@ -304,10 +346,26 @@ async function applyToSelection() {
     setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead.', 'error');
     return;
   }
+  // a restyle: the selection includes the old markers, which the new ones replace
+  const old = text.match(/:start-([a-z0-9-]+):/);
+  const words = text.replace(MARKER_TEXT, '');
+  if (!words.trim()) {
+    setStatus('Only markers are selected. Select the words too.', 'error');
+    return;
+  }
+  // the words alone, but already inside markers on the page: wrapping them again would
+  // stack a second style on the first, so ask for the markers to be selected too
+  const around = !old && styleAround(words, await documentText());
+  if (around) {
+    setStatus(`These words already have the style :start-${around}:. To change it, select them together with their markers — from “:start-${around}:” to “:end:” — then click again.`, 'error');
+    return;
+  }
   // plain text replaces the selection inside its line (HTML would be inserted as a new
   // paragraph); bold / italic covering the whole selection is kept by the editor
-  sdk.actions.sendText(`${marker}${text}${END_MARKER}`);
-  setStatus(`Styled “${text.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
+  sdk.actions.sendText(`${marker}${words}${END_MARKER}`);
+  setStatus(old
+    ? `Changed the style of “${words.trim()}” from :start-${old[1]}: to ${marker}`
+    : `Styled “${words.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
   previewLine = null;
   lastSelection = '';
   updatePreview();
@@ -412,6 +470,11 @@ function watchSelection() {
     if (html === lastSelection) return;
     lastSelection = html;
     const line = html ? readLine(html) : null;
+    if (line) {
+      // a selection that includes old markers is previewed without them
+      line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1] || styleAround(line.html.replace(/<[^>]+>/g, '')) || '';
+      line.html = line.html.replace(MARKER_TEXT, '');
+    }
     previewLine = line && line.html.replace(/<[^>]+>/g, '').trim() ? line : null;
     updatePreview();
   };
@@ -434,6 +497,12 @@ async function connect() {
       return;
     }
     sdk = resolved;
+    // Experience Workspace shares the document: used to spot words that already have a style
+    if (sdk.capabilities?.liveDocument === 1 && typeof sdk.actions.subscribeLiveDocument === 'function') {
+      sdk.actions.subscribeLiveDocument(({ html }) => {
+        liveText = new DOMParser().parseFromString(html || '', 'text/html').body.textContent;
+      });
+    }
     watchSelection();
     setStatus('Select words in the document, pick a style, then “Style selected text”.');
     updatePreview();

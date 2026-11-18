@@ -18,7 +18,9 @@
  * Bold and italic stay plain editor formatting (authoring conventions), not marker words.
  * When the markers hold the whole line, the spacing goes on the line itself (the paragraph
  * or heading), so top / bottom spacing takes effect; inside a line only left / right spacing
- * shows. Unknown words are ignored; a marker without its partner is removed.
+ * shows. Unknown words are ignored; a marker without its partner is removed. Markers stacked
+ * directly around each other (`:start-gold::start-purple:text:end::end:`) keep only the
+ * inner, newer style.
  */
 
 // formatting a marker pair may run through (and may itself sit in)
@@ -125,6 +127,18 @@ function wrapPair(start, end, container) {
   const range = document.createRange();
   range.setStartAfter(start);
   range.setEndBefore(end);
+
+  // a pair holding nothing but another styled run (`:start-a::start-b:text:end::end:`, a
+  // restyle that wrapped the old markers): the inner, newer style wins, the outer is dropped
+  const inside = range.cloneContents();
+  const only = [...inside.childNodes]
+    .filter((n) => n.nodeType !== Node.TEXT_NODE || n.textContent.trim());
+  if (only.length === 1 && only[0].matches?.('span.text-marker')) {
+    removeMarker(start, container);
+    removeMarker(end, container);
+    return;
+  }
+
   const span = document.createElement('span');
   span.className = ['text-marker', ...classes].join(' ');
   // the extracted copy keeps formatting the markers cut through (e.g. a partly marked <strong>)

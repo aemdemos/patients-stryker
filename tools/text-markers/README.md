@@ -26,6 +26,7 @@ Use `main` as `<branch>` once the code is merged; before that, the feature branc
 | --- | --- |
 | Style words | Select the words in the document, pick the style, click **Style selected text**. The selection becomes `:start-…:words:end:` in the same line. Bold or italic covering all the selected words is kept. |
 | Style words with a link or mixed formatting | Click before the words (nothing selected) and use **Insert start**, then after them and use **Insert end**. The words and their formatting are not touched. |
+| Change a style | Select the words **together with their markers** (from `:start-…:` to `:end:`), pick the new style, click **Style selected text**: the old markers are replaced. Selecting only the words of a styled run is refused when the panel can see the page (Experience Workspace's live document, or the DA editor's saved source); otherwise the page still shows only the newer style, as stacked markers keep the inner one. |
 | Start fresh | Put the caret where the text goes, pick the style, click **Insert at caret**, then replace “Your text”. |
 | Use the code elsewhere | **Copy code** copies `:start-…:Your text:end:`. |
 
