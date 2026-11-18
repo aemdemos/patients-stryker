@@ -29,6 +29,8 @@
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
   --corp-font-scale-1-5: 1.5em; /* source span.fontsize-1-5em */
   --corp-font-scale-1-75: 1.75em; /* source span.fontsize-1-75em */
+  --corp-font-scale-2: 2em; /* source span.fontsize-2em */
+  --corp-font-scale-2-5: 2.5em; /* source span.fontsize-2-5em */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
@@ -241,6 +243,17 @@ body:where(.corp):has(main .hero-carousel) header {
 /* words added in the Block Library sheet panel-options (panel text-style) get the class
    ts-<word>: add one rule here per new word, with a token, e.g. for a new colour "orange":
    :where(body.corp) span.text-marker.ts-orange { --span-color: var(--corp-color-orange); color: var(--span-color); } */
+
+/* added in panel-options: black (stryker.com rgb(0 0 0) runs that keep text black inside a
+   coloured area; links inside follow it), 2x and 2.5x sizes (fontsize-2em / fontsize-2-5em) */
+:where(body.corp) span.text-marker.ts-black {
+  --link-color: var(--color-black);
+
+  color: var(--color-black);
+}
+
+:where(body.corp) span.text-marker.ts-xxxl { font-size: var(--corp-font-scale-2); }
+:where(body.corp) span.text-marker.ts-xxxxl { font-size: var(--corp-font-scale-2-5); }
 
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
 :where(body.corp) main > .section > .default-content-wrapper h2 {

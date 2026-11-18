@@ -129,8 +129,8 @@ export function knownOptions(def) {
 /**
  * The built-in block options with the library sheet's rows merged in: rows for an existing
  * group replace that group's choices (its "none" choice and its rules stay); rows for any other
- * group add a single-choice group (shown for every layout); a block name the panel doesn't know
- * adds that block.
+ * group add a group (shown for every layout): one choice, or on / off switches when the row's
+ * type is "switches"; a block name the panel doesn't know adds that block.
  * @param {object} defs The built-in options (BLOCK_OPTIONS)
  * @param {Map<string, Map<string, Array<[string, string]>>>} sheet The sheet rows per panel
  * @returns {object} The merged options
@@ -142,19 +142,27 @@ export function withLibrary(defs, sheet) {
   });
   sheet.forEach((groups, name) => {
     if (name === 'text-style') return;
-    if (!merged[name]) merged[name] = { label: labelOf(name), groups: [] };
+    // a block the panel doesn't know: "cards-corp" → "Cards (corp)"
+    const title = name.endsWith('-corp') ? `${labelOf(name.slice(0, -5))} (corp)` : labelOf(name);
+    if (!merged[name]) merged[name] = { label: title, groups: [] };
     groups.forEach((values, key) => {
       const group = merged[name].groups.find((g) => g.id === key);
       const choices = values.filter(([v]) => v);
       const named = (list) => choices
         .map(([v, l]) => [v, l || list.find(([x]) => x === v)?.[1] || labelOf(v)]);
+      if (group && values.label) group.label = values.label;
       if (group?.flags) {
         group.flags = named(group.flags);
       } else if (group) {
         const none = group.options.find(([v]) => v === '');
         group.options = [...(none ? [none] : []), ...named(group.options)];
+      } else if (values.switches) {
+        const label = values.label || labelOf(key);
+        merged[name].groups.push({ id: key, label, flags: named([]) });
       } else {
-        merged[name].groups.push({ id: key, label: labelOf(key), options: [['', 'None'], ...named([])] });
+        merged[name].groups.push({
+          id: key, label: values.label || labelOf(key), options: [['', 'None'], ...named([])],
+        });
       }
     });
   });

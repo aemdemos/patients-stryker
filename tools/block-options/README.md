@@ -33,13 +33,18 @@ styles). One row per group; **values** lists its choices in the order the panel 
 separated by `|`, each optionally followed by `=` and its button label (without one the panel
 shows the name with a capital, "orange" → "Orange"):
 
-| panel | group | values |
-| --- | --- | --- |
-| hero-corp | box | box-white = White \| box-gold = Gold \| box-orange = Orange |
-| hero-corp, cards | corner | round \| square = Square corners |
+| panel | group | values | type |
+| --- | --- | --- | --- |
+| hero-corp | box | box-white = White \| box-gold = Gold \| box-orange = Orange | |
+| columns | lower-last = Last column lower | lower-last-s = S \| lower-last-m = M \| lower-last-l = L | |
+| accordion | extras = Options | divided = Divider lines \| open = All items start open | switches |
 
 - **panel** is the block name; several blocks with commas when they share the group. A block the
   panel doesn't know yet gets the panel too.
+- **group** may be followed by `=` and the title the panel shows for it (without one: the
+  built-in title, or the id with a capital).
+- **type** `switches` makes the group on / off checkboxes that can be combined; empty means one
+  choice of the group (with "None").
 - **group** is an existing group id from `options.js` (e.g. `box`, `column`, `title-colour`,
   `phone`): its row replaces that group's choices (add, reorder or hide them; the group's
   "none" choice and its rules stay). Any other group name adds a single-choice group, shown for
