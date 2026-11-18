@@ -33,6 +33,7 @@ export const BLOCK_OPTIONS = {
           ['box-blue', 'Blue'],
           ['box-gray', 'Light grey'],
           ['box-dark', 'Dark grey'],
+          ['box-gold-gradient', 'Gold gradient'],
         ],
         replaces: /^box-(mt|mr|mb|ml|pt|pr|pb|pl)-n?\d+$/,
       },
@@ -69,6 +70,15 @@ export const BLOCK_OPTIONS = {
           ['', 'None'],
           ['stripe-gold', 'Gold'],
           ['stripe-gradient', 'Gold gradient'],
+        ],
+      },
+      {
+        id: 'band',
+        label: 'Band colour',
+        when: 'tagline-band',
+        options: [
+          ['', 'Gold'],
+          ['purple-gradient', 'Purple gradient'],
         ],
       },
       {

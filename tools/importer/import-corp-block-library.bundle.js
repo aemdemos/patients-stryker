@@ -246,6 +246,7 @@ var CustomImportScript = (() => {
     row.append(cell);
     const block = document.createElement("div");
     block.className = "tagline-band";
+    block.dataset.variants = banner.classList.contains("bg-dark-purple-gradient") ? "tagline-band,purple-gradient" : "tagline-band";
     block.append(row);
     return block;
   }
@@ -410,7 +411,10 @@ var CustomImportScript = (() => {
     "bg-gold": "box-gold",
     "bg-blue": "box-blue",
     "bg-light-gray": "box-gray",
-    "bg-dark-gray": "box-dark"
+    "bg-dark-gray": "box-dark",
+    "bg-golden-gradient": "box-gold-gradient",
+    "bg-dark-purple-gradient": "box-dark",
+    "bg-dark-blue-gradient": "box-dark"
   };
   function slideRunStyle(textNode, line) {
     const el = textNode.parentElement;

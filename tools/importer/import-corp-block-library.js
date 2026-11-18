@@ -131,6 +131,9 @@ function extractTaglineBand(doc, document) {
   row.append(cell);
   const block = document.createElement('div');
   block.className = 'tagline-band';
+  // the live band: gold, or the purple gradient (e.g. Recall); other colours take gold
+  block.dataset.variants = banner.classList.contains('bg-dark-purple-gradient')
+    ? 'tagline-band,purple-gradient' : 'tagline-band';
   block.append(row);
   return block;
 }
@@ -330,8 +333,17 @@ const SLIDE_COLORS = [
   [/rgba?\(\s*237\s*,\s*238\s*,\s*236\b|#edeeec\b/i, 'color-light-gray'],
   [/rgba?\(\s*0\s*,\s*0\s*,\s*0\s*\)|#000(000)?\b/i, null],
 ];
+// the live box background → the box option. The rare purple and blue gradient boxes (one slide
+// each on stryker.com) take the dark grey box: fewer options, a close look.
 const SLIDE_BOXES = {
-  'bg-white': 'box-white', 'bg-gold': 'box-gold', 'bg-blue': 'box-blue', 'bg-light-gray': 'box-gray', 'bg-dark-gray': 'box-dark',
+  'bg-white': 'box-white',
+  'bg-gold': 'box-gold',
+  'bg-blue': 'box-blue',
+  'bg-light-gray': 'box-gray',
+  'bg-dark-gray': 'box-dark',
+  'bg-golden-gradient': 'box-gold-gradient',
+  'bg-dark-purple-gradient': 'box-dark',
+  'bg-dark-blue-gradient': 'box-dark',
 };
 /** one slide text run's look: Futura bold?, colour tag (sizes go to the section: slideTextSizes) */
 function slideRunStyle(textNode, line) {

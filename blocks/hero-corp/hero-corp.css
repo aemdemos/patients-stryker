@@ -14,8 +14,8 @@
  * Text sizes come from the section, not the author's text: bold text takes the title size,
  * plain text the subline size, set with the section styles title-N / subline-N (N = px at
  * 1440; default title-42 / subline-28).
- * Options: box-white / -gold / -blue / -gray / -dark (a coloured box takes the standard
- * inset); headline position, named: text-left / text-right / text-wide (the column) and
+ * Options: box-white / -gold / -blue / -gray / -dark / -gold-gradient (a coloured box takes
+ * the standard inset); headline position, named: text-left / text-right / text-wide (the column) and
  * text-top / text-upper / text-middle / text-lower (how far down it starts) — the three
  * columns and four heights stryker.com's 478 slides use (tools/importer/slide-position.js);
  * mobile-below
@@ -28,7 +28,8 @@
  * converted.
  *
  * tagline-band: a gold band in the page container holding a Futura bold h1 title and a
- * serif light h2 message. Authored as one row: h1 + h2.
+ * serif light h2 message. Authored as one row: h1 + h2. Option purple-gradient: the purple
+ * band instead of gold.
  *
  * large-header: the page title in Futura bold above the hero carousel, flush under the
  * header. Authored as one row holding an h1.
@@ -68,7 +69,7 @@
   --corp-image-slide-video-bleed: 12px;
   --corp-image-slide-stripe-height: 34px;
   --corp-image-slide-max-height: 33.33vw; /* the slide window from 600px */
-  --corp-image-slide-stripe-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+  --corp-image-slide-stripe-gradient: var(--corp-gradient-gold);
 
   /* tagline-band */
   --corp-tagline-band-inset: 9%;
@@ -105,6 +106,11 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   margin-bottom: var(--space-block-l);
   padding: var(--space-block-s) var(--corp-tagline-band-inset);
   background: var(--color-accent);
+}
+
+/* purple-gradient: the purple band (stryker.com bg-dark-purple-gradient tagline, e.g. Recall) */
+.hero-corp.tagline-band.purple-gradient {
+  background: var(--corp-gradient-purple);
 }
 
 .hero-corp.tagline-band h1 {
@@ -263,7 +269,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 }
 
 /* the headline box: transparent, or coloured by box-* with a 20px inset */
-.hero-corp.image-slide .hero-corp-headline:is(.box-white, .box-gold, .box-blue, .box-gray, .box-dark) {
+.hero-corp.image-slide .hero-corp-headline:is(.box-white, .box-gold, .box-blue, .box-gray, .box-dark, .box-gold-gradient) {
   padding: var(--space-block-l);
 }
 
@@ -276,6 +282,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 .hero-corp.image-slide .hero-corp-headline.box-blue { background: var(--color-navy-bright); }
 .hero-corp.image-slide .hero-corp-headline.box-gray { background: var(--color-surface); }
 .hero-corp.image-slide .hero-corp-headline.box-dark { background: var(--color-secondary); }
+.hero-corp.image-slide .hero-corp-headline.box-gold-gradient { background: var(--corp-gradient-gold); }
 
 /* headline position, named (from 600px, where the headline sits over the slide): the column … */
 .hero-corp.image-slide.text-left {
