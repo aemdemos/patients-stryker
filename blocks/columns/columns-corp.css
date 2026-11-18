@@ -257,11 +257,20 @@ body.corp .columns.event-cards.block > div > div h3 + p {
   line-height: var(--heading-line-height);
 }
 
-/* lowered-text: the text beside the image starts lower, by a fifth of its column's width
-   (stryker.com rich text margin-top 20%: SKILL Centers of Excellence "A unique global training
-   experience") */
+/* lowered-text / slightly-lowered-text: the text beside the image starts lower, by a fifth
+   (7%) of its column's width (stryker.com rich text margin-top 20% / 7%: SKILL Centers of
+   Excellence "A unique global training experience", e-Lab "A platform for all stakeholders…"),
+   the cells the source's full column width, no 50-50 inset between text and image */
+body.corp .columns:where(.lowered-text, .slightly-lowered-text) {
+  --col-5050-inset: var(--space-block);
+}
+
 body.corp .columns.lowered-text > div > div:not(:has(img, picture, video, iframe)) > :first-child {
   margin-top: 20%;
+}
+
+body.corp .columns.slightly-lowered-text > div > div:not(:has(img, picture, video, iframe)) > :first-child {
+  margin-top: 7%;
 }
 
 /* gray-titles: the cells' headings in dark grey (stryker.com #545857: build-your-ASC
@@ -1006,6 +1015,7 @@ body.corp .columns.goal-cards.block > div > div :where(p) {
 
 body.corp .columns.gold-lead {
   --columns-corp-box-bg: var(--color-accent);
+  --col-5050-inset: var(--space-block);
 }
 
 body.corp .columns.dark-lead {
@@ -1016,6 +1026,14 @@ body.corp .columns.dark-lead {
 body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
   margin-bottom: var(--space-block);
   text-align: center;
+}
+
+/* gold-lead: the bar 4% of the cell width above its line, 10px at the sides and 25px below
+   (10px + the source line's paragraph margin), and the
+   cells the source's full column width, no 50-50 inset (stryker.com SKILL e-Lab "The SKILL
+   e-Lab offers what you need": .bg-gold padding-top 4%; the inset with the bar colour above) */
+body.corp .columns.gold-lead .columns-box {
+  padding: 4% var(--space-block-s) calc(var(--space-block-s) + var(--space-block));
 }
 
 /* on the gold bar the Bold + Italic (accent) words are white (stryker.com white Futura bold
