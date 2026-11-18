@@ -247,6 +247,10 @@ body.corp-legal main > .section:first-child:has(+ .section > .columns-wrapper > 
 }
 
 /* committee columns: Futura 21px label over 17.5px Egyptienne names (stryker.com fontsize-1-5em / 1-25em) */
+body.corp-legal main > .section.bold-body > .default-content-wrapper :is(p, li) em > strong {
+  font-family: var(--display-font-family);
+}
+
 body.corp-legal main .columns.no-stack > div > div > p:first-child strong {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);

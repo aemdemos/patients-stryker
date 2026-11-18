@@ -3071,7 +3071,14 @@ var CustomImportScript = (() => {
     "headline-2-5": "headline-2-5vw",
     serif: "serif"
   };
-  var BOLD_BODY = ["sms-terms-and-conditions", "legal/terms-of-use", "convercent-global-privacy-statement", "hemorrhagic-stroke/mri"];
+  var BOLD_BODY = [
+    "sms-terms-and-conditions",
+    "legal/terms-of-use",
+    "convercent-global-privacy-statement",
+    "hemorrhagic-stroke/mri",
+    "privacy-notice-for-california-residents",
+    "neurovascular/dfu"
+  ];
   var BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
   function sectionIndex(main, node) {
     let top = node;

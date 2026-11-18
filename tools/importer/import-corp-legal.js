@@ -241,7 +241,8 @@ const TAG_SECTION_STYLES = {
   serif: 'serif',
 };
 // Pages whose bold is plain <b> throughout (body font, not Futura): every section is `bold-body`
-const BOLD_BODY = ['sms-terms-and-conditions', 'legal/terms-of-use', 'convercent-global-privacy-statement', 'hemorrhagic-stroke/mri'];
+const BOLD_BODY = ['sms-terms-and-conditions', 'legal/terms-of-use', 'convercent-global-privacy-statement', 'hemorrhagic-stroke/mri',
+  'privacy-notice-for-california-residents', 'neurovascular/dfu'];
 const BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
 
 function sectionIndex(main, node) {
