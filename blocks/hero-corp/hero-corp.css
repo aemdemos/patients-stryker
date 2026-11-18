@@ -341,6 +341,11 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   font-weight: var(--font-weight-bold);
 }
 
+/* a text marker's font word (serif / sans / body) wins over the bold = Futura rule */
+.hero-corp.image-slide .hero-corp-headline .text-marker:is(.ts-serif, .ts-sans, .ts-body) :is(strong, b) {
+  font-family: inherit;
+}
+
 /* text sizes: bold = title size, plain = subline size (hero-corp.js markTextRoles), chosen per
    section with the styles title-N / subline-N (N = px at 1440). Like the source fontsize-Nvw
    classes: twice the step in vw below 600px, the step in vw from 600px up to N px. */

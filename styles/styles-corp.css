@@ -193,6 +193,11 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: var(--body-font-family);
 }
 
+/* the marker's font also covers bold / italic inside the run, which otherwise take Futura */
+:where(body.corp) span.text-marker:is(.ts-serif, .ts-sans, .ts-body) :is(strong, b, em, i) {
+  font-family: inherit;
+}
+
 :where(body.corp) span.text-marker.ts-upper {
   text-transform: uppercase;
 }
