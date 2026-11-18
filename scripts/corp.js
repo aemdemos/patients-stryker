@@ -83,7 +83,7 @@ function decorateIconLinks(main) {
  * blocks' CSS for the parts applies. `faculty`: jr45's grey faculty boxes; `chapter-labels`:
  * TEACH's "Chapter N:" labels; `gray-cards`: CLOUT's grey evidence cards with plain Bold
  * labels; `course-cards`: the Mako refreshers course cards (their action links 21px,
- * columns-corp.css);
+ * columns-corp.css); `product-intro`: nse product rows, the Egyptienne copy with a 2vw title.
  * `*-serif-copy`: a copy size with the Egyptienne copy.
  */
 const VARIANT_BUNDLES = {
@@ -95,6 +95,7 @@ const VARIANT_BUNDLES = {
   'chapter-labels': ['label-bold', 'plain-bold'],
   'gray-cards': ['gray-all', 'plain-bold'],
   'course-cards': ['large-titles', 'large-subtitles', 'large-copy'],
+  'product-intro': ['serif'],
 };
 
 function expandVariantBundles(main) {

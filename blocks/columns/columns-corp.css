@@ -928,6 +928,27 @@ body.corp .columns.contact-boxes.block > div > div :where(h2 + p, p:has(> em > s
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
 }
 
+/* product-intro (bundles serif: scripts/corp.js): the nse product rows, a cell's Heading 2 the
+   2vw Futura bold title (stryker.com heavy duty accessories "Heritage Heavy Duty": 28px at 1440,
+   15.6px at 390) over its Egyptienne copy, 21px on phones and 14px from 600px */
+body.corp .columns.product-intro.block > div > div :where(h2).columns-bold {
+  margin-bottom: var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.corp .columns.product-intro.block > div > div :where(p) {
+  font-size: var(--body-font-size-xl);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.product-intro.block > div > div :where(p) {
+    font-size: var(--body-font-size-m);
+  }
+}
+
 /* course-cards (bundles large-titles, large-subtitles, large-copy: scripts/corp.js): the
    Mako refreshers course cards; their action links ("REGISTER") at 21px (stryker.com) */
 body.corp .columns.course-cards.block a.link-strong:any-link {
