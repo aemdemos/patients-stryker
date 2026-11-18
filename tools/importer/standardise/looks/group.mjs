@@ -15,6 +15,7 @@
  *            colour, capitals
  *   buttons  filled / outline and colour
  *   panels   (accordions) whether the items start closed or open (the panels are measured open)
+ *   tabs     (tab bars) how the selected tab is marked against the others
  * A look that only lacks a part (no description, link or image) joins the largest group that
  * agrees on everything both have (its instances keep what they lack). Groups are sorted by size;
  * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
@@ -96,7 +97,8 @@ const typeOf = (st, sizes = SIZES) => [
   `${st.color}${st.upper ? ' caps' : ''}${st.italic ? ' italic' : ''}`,
 ].join(' ');
 /** the role styles with their exact sizes (shown per group when sizes are grouped in bands) */
-const exactTypeOf = (b) => Object.fromEntries(['title', 'body', 'link', 'button']
+const ROLES = ['tab', 'title', 'body', 'link', 'button'];
+const exactTypeOf = (b) => Object.fromEntries(ROLES
   .filter((r) => b.typography[r])
   .map((r) => [r, b.typography[r].styles.filter((x) => x.share >= 0.2).slice(0, 2)
     .map((x) => typeOf(x, 'exact')).sort()
@@ -109,6 +111,17 @@ const ratio = (a) => {
   return a > 1.85 ? 'wider than 16:9' : 'taller than 16:9';
 };
 
+const tabMarkOf = ({ selected, other }) => {
+  const o = other || {};
+  const marks = [
+    selected.underline && selected.underline !== o.underline ? `underline ${selected.underline}` : '',
+    selected.overline && selected.overline !== o.overline ? `line above ${selected.overline}` : '',
+    selected.bg !== (o.bg || 'transparent') ? `background ${selected.bg}` : '',
+    selected.color !== (o.color || selected.color) ? `text ${selected.color}` : '',
+    selected.weight !== (o.weight || selected.weight) ? 'bold' : '',
+  ].filter(Boolean);
+  return `selected tab: ${marks.join(', ') || 'not marked'}`;
+};
 const panelsOf = ({ count, openAtStart }) => {
   if (!openAtStart) return 'all start closed';
   if (openAtStart === count) return count > 1 ? 'all start open' : 'starts open';
@@ -124,7 +137,7 @@ function partsOf(b) {
   const slots = Math.max(1, Math.round((b.box.width + g) / (Math.max(unitW, 1) + g)));
   // (a video player's own time display, "0:00 / 0:00", is the player's, not authored text)
   const playerOnly = b.image?.tag === 'video' && /^(\d+:\d+\s*\/\s*\d+:\d+\s*)?$/.test(b.text || '');
-  const roles = playerOnly ? [] : ['title', 'body', 'link', 'button'].filter((r) => b.typography[r]);
+  const roles = playerOnly ? [] : ROLES.filter((r) => b.typography[r]);
   const styles = Object.fromEntries(roles.map((r) => {
     // (the order of a role's two main styles doesn't matter)
     const st = b.typography[r].styles.filter((x) => x.share >= 0.2).slice(0, 2);
@@ -153,6 +166,8 @@ function partsOf(b) {
     buttons: btn ? `${btn.kind} ${btn.kind === 'filled' ? btn.bg : btn.border}${btn.upper ? ' caps' : ''}` : 'none',
     // (an accordion: whether its items start closed or open; how many there are is content)
     ...(b.panels ? { panels: panelsOf(b.panels) } : {}),
+    // (a tab bar: how the selected tab is marked)
+    ...(b.tabs ? { tabs: tabMarkOf(b.tabs) } : {}),
   };
 }
 
@@ -208,7 +223,9 @@ exact.forEach((list) => {
   const home = merged.find((g) => compatible(g.parts, parts) && g.list.length >= list.length);
   if (home) {
     const missing = lacking(home.parts, parts);
-    list.forEach((it) => home.list.push({ ...it, missing }));
+    // (and what it has that the group's look doesn't: a title or text the others lack)
+    const extra = lacking(parts, home.parts);
+    list.forEach((it) => home.list.push({ ...it, missing, extra }));
   } else merged.push({ parts, list: [...list] });
 });
 const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map((list, i) => ({
@@ -226,11 +243,15 @@ const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map
     return m;
   }, {})),
   // (with size bands: the exact styles behind each role, counted)
-  exactTypes: SIZES === 'bands' ? Object.fromEntries(['title', 'body', 'link', 'button'].map((r) => [r,
+  exactTypes: SIZES === 'bands' ? Object.fromEntries(ROLES.map((r) => [r,
     Object.entries(list.reduce((m, x) => {
       const t = x.exactType[r];
       return t ? { ...m, [t]: (m[t] || 0) + 1 } : m;
     }, {})).sort((a, c) => c[1] - a[1])]).filter(([, v]) => v.length)) : undefined,
+  extras: Object.entries(list.reduce((m, x) => {
+    (x.extra || []).forEach((k) => { m[k] = (m[k] || 0) + 1; });
+    return m;
+  }, {})),
   items: list.map(({ parts, exactType, ...rest }) => rest),
 }));
 // groups that differ in one part only: candidates to merge

@@ -111,6 +111,8 @@ function measureBlock(el) {
     return a.classList.contains('button') || hex(s.backgroundColor) !== 'transparent' || Number.parseFloat(s.borderTopWidth) > 0;
   };
   const roleOf = (x) => {
+    // (a tab's label: its own role, the tab bar is a look of its own)
+    if (x.closest('[role="tab"]')) return 'tab';
     const a = x.closest('a');
     if (a) return isButton(a) ? 'button' : 'link';
     // (an accordion item's label is its title, whether it sits in a heading or only in the toggle)
@@ -206,6 +208,34 @@ function measureBlock(el) {
       upper: s.textTransform === 'uppercase',
     };
   });
+  // a tab bar: how the selected tab is marked against the others (colour, underline, background)
+  const tabsOf = () => {
+    const tabs = [...el.querySelectorAll('[role="tab"]')].filter(own).filter(visible);
+    if (!tabs.length) return null;
+    // (the mark may sit on the tab or on the label inside it: the first visible line counts; the
+    // text's colour and weight are the label's own)
+    const mark = (t) => {
+      const all = [t, ...t.querySelectorAll('*')];
+      const line = (side) => all.map((x) => getComputedStyle(x))
+        .filter((st) => Number.parseFloat(st[`border${side}Width`]) > 0)
+        .map((st) => hex(st[`border${side}Color`]))
+        .find((c) => c && c !== 'transparent') || '';
+      const label = leavesOf(t)[0] || t;
+      const ls = getComputedStyle(label);
+      const bg = all.map((x) => hex(getComputedStyle(x).backgroundColor))
+        .find((c) => c && c !== 'transparent') || 'transparent';
+      return {
+        color: hex(ls.color),
+        bg,
+        underline: line('Bottom'),
+        overline: line('Top'),
+        weight: Number(ls.fontWeight) || 400,
+      };
+    };
+    const selected = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+    const other = tabs.find((t) => t !== selected);
+    return { count: tabs.length, selected: mark(selected), other: other ? mark(other) : null };
+  };
   // the content's box: everything visible in the block (the screenshot is cropped to it)
   const inner = [...el.querySelectorAll('img, picture, video, iframe, svg, a, button, input, select, textarea, table, canvas'), ...allLeavesOf(el), ...units]
     .filter(visible).map(box);
@@ -246,6 +276,7 @@ function measureBlock(el) {
     },
     text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 160),
     nested: [...el.querySelectorAll('.block')].map((x) => x.dataset.blockName).filter(Boolean),
+    tabs: tabsOf(),
   };
 }
 

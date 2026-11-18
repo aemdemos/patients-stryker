@@ -11,15 +11,18 @@ const params = new URLSearchParams(window.location.search);
 const LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname) || /^preview-aemcoder\.adobe\.io$/.test(window.location.hostname);
 const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
 const NAMES = {
-  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
+  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
 };
 // (what a merged instance lacks, in words)
 const LACK_NAMES = {
-  image: 'without image', 'type title': 'without titles', 'type body': 'without body text', 'type link': 'without links', 'type button': 'without button text', buttons: 'without buttons',
+  image: 'without image', 'type tab': 'without tab labels', 'type title': 'without titles', 'type body': 'without body text', 'type link': 'without links', 'type button': 'without button text', buttons: 'without buttons',
 };
 const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${k}`).join(', ');
+// (what a merged instance has on top of the group's look)
+const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
+const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0);
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs',
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -65,7 +68,8 @@ function groupBox(g) {
     ])) : null,
     g.lacking?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part missing: ${g.lacking.map(([k, n]) => `${n} ${lackOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
     // (complete instances first, then the ones lacking a part)
-    el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => (a.missing?.length || 0) - (c.missing?.length || 0)).map((it) => {
+    g.extras?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part more: ${g.extras.map(([k, n]) => `${n} ${extraOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
+    el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => odd(a) - odd(c)).map((it) => {
       const shot = vp === 'm' ? it.phoneShot : it.shot;
       const tip = `${it.title} · ${it.text.slice(0, 120)}`;
       // (the screenshot and the title open the page as it is now; the source link the live
@@ -91,6 +95,7 @@ function groupBox(g) {
           }, 'stryker.com ↗') : null,
         ),
         it.missing?.length ? el('span', { class: 'lk-tag' }, lackOf(it.missing)) : null,
+        it.extra?.length ? el('span', { class: 'lk-tag' }, extraOf(it.extra)) : null,
       );
     })),
   );
@@ -103,7 +108,8 @@ function render() {
     return;
   }
   const families = data.families || [];
-  $('.lk-summary').textContent = `${data.instances} instances in ${data.groups.length} groups${families.length ? ` (${families.length} layouts)` : ''} · ${data.measuredPages} pages measured`;
+  const n = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`;
+  $('.lk-summary').textContent = `${n(data.instances, 'instance')} in ${n(data.groups.length, 'group')}${families.length ? ` (${n(families.length, 'layout')})` : ''} · ${data.measuredPages} pages measured`;
   const note = data.sizes === 'bands' ? el('p', { class: 'lk-meta lk-note' }, SIZE_NOTE) : null;
   if (view !== 'layout' || !families.length) {
     main.replaceChildren(...[note, ...data.groups.map(groupBox)].filter(Boolean));
