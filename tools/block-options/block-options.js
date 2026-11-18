@@ -2,7 +2,7 @@
  * Block options — an Experience Workspace / DA sidebar extension. Authors pick a block's
  * options (e.g. hero-corp's headline box, column, height) from named choices instead of
  * typing option names into the block's name row. The choices come from options.js and the
- * Block Library options sheet (tools/library-options.js); a preview
+ * Block Library sheet panel-options (tools/library-options.js); a preview
  * renders the block with the new options using the site's own code (the Text style panel's
  * preview page).
  *
@@ -31,7 +31,7 @@ const el = (tag, attrs = {}, ...children) => {
   return node;
 };
 
-// the built-in options with the Block Library options sheet merged in (set before render)
+// the built-in options with the Block Library sheet panel-options merged in (set before render)
 let blockOptions = BLOCK_OPTIONS;
 let sdk = null;
 let live = null; // Experience Workspace: { html, selection: { blockIndex }, editable }

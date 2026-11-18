@@ -55,25 +55,26 @@ Insert end. The insert buttons refuse to run while words are selected (they woul
 ## Adding choices in the Block Library sheet
 
 The choices can be extended without a code change to the panel, in the Block Library workbook
-(`/.da/library/blocks`), sheet **options** (where the section styles are listed). One row per
-group of choices:
+(`/.da/library/blocks`), sheet **panel-options** (the `options` sheet stays for the section
+styles). One row per choice, in the order the panel shows them:
 
-| key | blocks | values |
-| --- | --- | --- |
-| colour | text-style | gold \| blue \| purple \| teal \| navy \| grey \| white \| light-gray \| orange (Orange) |
-| look | text-style | rule-gold \| box-dark |
+| panel | group | value | label |
+| --- | --- | --- | --- |
+| text-style | colour | blue | Blue |
+| text-style | colour | orange | Orange |
+| text-style | look | rule-gold | Gold rule (underlined heading) |
 
-- **key** is `colour`, `font`, `size` or `look`; **blocks** is `text-style`.
-- **values** are the marker words, in order, separated by `|`; a label may follow in brackets.
-  A row replaces the built-in list of its group, so it can also reorder or hide words (hidden
-  words keep working on pages that already use them).
+- **panel** is `text-style`; **group** is `colour`, `font`, `size` or `look`.
+- **value** is the marker word; **label** is what the button says (optional). The rows of a
+  group replace its built-in list, so they can also reorder or hide words (hidden words keep
+  working on pages that already use them).
 - A new word must be one word of letters and digits, and not a spacing word (`p`, `pt`, `m` …);
   other values are skipped.
 - **A new word only adds the choice.** The page gives it the class `ts-<word>`; add one rule in
   `styles/styles-corp.css` (where the comment shows an example), with a token, e.g.
   `span.text-marker.ts-orange` for "orange". Until then the word changes nothing and its colour
   swatch is black.
-- Without a row, or when the sheet can't be read, the panel uses the built-in lists.
+- Without rows for a group, or when the sheet can't be read, the panel uses the built-in lists.
 
 ## Limitations
 

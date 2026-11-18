@@ -46,8 +46,9 @@ const BUILT_IN = {
 };
 
 /**
- * Reads the library sheet's text-style rows. A new word must be one word (letters and digits)
- * that is not a spacing word: the site gives it the class ts-<word>, styled in styles-corp.css.
+ * Reads the library sheet's text-style rows (sheet panel-options). A new word must be one word
+ * (letters and digits) that is not a spacing word: the site gives it the class ts-<word>,
+ * styled in styles-corp.css.
  */
 async function loadLists() {
   const groups = await libraryOptions('text-style');

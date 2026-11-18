@@ -5,8 +5,8 @@
  * older free-value options a group supersedes, which are removed when the author picks in it.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
- * entry. The Block Library options sheet can replace a group's choices, add groups, or add
- * blocks (tools/library-options.js); `withLibrary` merges those rows in.
+ * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
+ * add blocks (tools/library-options.js); `withLibrary` merges those rows in.
  */
 import { labelOf } from '../library-options.js';
 
@@ -127,12 +127,12 @@ export function knownOptions(def) {
 }
 
 /**
- * The built-in block options with the library sheet's rows merged in: a row whose key is a
- * group id replaces that group's choices (its "none" choice and its rules stay); any other key
- * adds a single-choice group (shown for every layout); a block name the panel doesn't know adds
- * that block.
+ * The built-in block options with the library sheet's rows merged in: rows for an existing
+ * group replace that group's choices (its "none" choice and its rules stay); rows for any other
+ * group add a single-choice group (shown for every layout); a block name the panel doesn't know
+ * adds that block.
  * @param {object} defs The built-in options (BLOCK_OPTIONS)
- * @param {Map<string, Map<string, Array<[string, string]>>>} sheet The sheet rows per owner
+ * @param {Map<string, Map<string, Array<[string, string]>>>} sheet The sheet rows per panel
  * @returns {object} The merged options
  */
 export function withLibrary(defs, sheet) {
@@ -141,7 +141,7 @@ export function withLibrary(defs, sheet) {
     merged[name] = { ...block, groups: block.groups.map((g) => ({ ...g })) };
   });
   sheet.forEach((groups, name) => {
-    if (name === 'text-style' || name === 'section-metadata' || !/^[a-z0-9-]+$/.test(name)) return;
+    if (name === 'text-style') return;
     if (!merged[name]) merged[name] = { label: labelOf(name), groups: [] };
     groups.forEach((values, key) => {
       const group = merged[name].groups.find((g) => g.id === key);

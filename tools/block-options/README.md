@@ -28,23 +28,23 @@ Add the panel URL as a sidebar extension in the `library` sheet of the site conf
 ## Adding choices in the Block Library sheet
 
 The choices can be extended without a code change to the panel, in the Block Library workbook
-(`/.da/library/blocks`), sheet **options** (where the section styles are listed). One row per
-group of choices:
+(`/.da/library/blocks`), sheet **panel-options** (the `options` sheet stays for the section
+styles). One row per choice, in the order the panel shows them:
 
-| key | blocks | values |
-| --- | --- | --- |
-| box | hero-corp | box-white \| box-gold \| box-orange (Orange) |
-| corner | hero-corp, cards | round \| square (Square corners) |
+| panel | group | value | label |
+| --- | --- | --- | --- |
+| hero-corp | box | box-gold | Gold |
+| hero-corp | box | box-orange | Orange |
+| cards | corner | square | Square corners |
 
-- **key** is the group: an existing group id from `options.js` (e.g. `box`, `column`,
-  `title-colour`, `phone`) replaces that group's choices (it can add, reorder or hide them; the
-  group's "none" choice and its rules stay). Any other key adds a single-choice group, shown for
+- **panel** is the block name. A block the panel doesn't know yet gets the panel too.
+- **group** is an existing group id from `options.js` (e.g. `box`, `column`, `title-colour`,
+  `phone`): its rows replace that group's choices (add, reorder or hide them; the group's
+  "none" choice and its rules stay). Any other group name adds a single-choice group, shown for
   every layout.
-- **blocks** is the block name; several blocks with commas. A block the panel doesn't know yet
-  gets the panel too.
-- **values** are the option names, in order, separated by `|`. A label may follow in brackets;
-  without one the panel shows the name ("box-orange" → "Box orange") or its built-in label.
-- Without a row, or when the sheet can't be read, the panel uses `options.js`.
+- **value** is the option name; **label** is what the button says (optional: without it the
+  panel's own label, or the name, "box-orange" → "Box orange").
+- Without rows for a group, or when the sheet can't be read, the panel uses `options.js`.
 - **A new value only adds the choice.** What it does comes from the block: add the matching
   rule to the block's CSS (or JS), e.g. `.hero-corp.image-slide .hero-corp-headline.box-orange`,
   with a colour token. Until then the option is saved on the block but changes nothing.

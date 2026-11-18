@@ -16,7 +16,7 @@
  *   look     rule-gold (gold rule of an underlined heading), box-dark (dark quote box)
  *   spacing  p, pt, pr, pb, pl, px, py (padding) or m, mt, mr, mb, ml, mx, my (margin),
  *            each followed by a step: xs, s, m, l, xl (the spacing tokens)
- *   added    words added in the Block Library options sheet (tools/library-options.js) get
+ *   added    words added in the Block Library sheet panel-options (tools/library-options.js) get
  *            the class ts-<word>; their look is a ts-<word> rule in styles/styles-corp.css
  * Bold and italic stay plain editor formatting (authoring conventions), not marker words.
  * When the markers hold the whole line, the spacing goes on the line itself (the paragraph
@@ -91,7 +91,7 @@ export function parseMarker(name) {
     } else if (COLOURS.includes(COLOUR_ALIASES[word] || word)) {
       classes.push(`color-${COLOUR_ALIASES[word] || word}`);
     } else if (/^[a-z0-9]+$/.test(word)) {
-      // fonts, sizes, and words added in the Block Library options sheet (styled as ts-<word>)
+      // fonts, sizes, and words added in the Block Library sheet panel-options (ts-<word>)
       classes.push(`ts-${word}`);
     }
   }

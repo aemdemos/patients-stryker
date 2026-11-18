@@ -238,8 +238,8 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) span.text-marker.ts-xl { font-size: var(--corp-font-scale-1-5); }
 :where(body.corp) span.text-marker.ts-xxl { font-size: var(--corp-font-scale-1-75); }
 
-/* words added in the Block Library options sheet (blocks: text-style) get the class ts-<word>:
-   add one rule here per new word, with a token, e.g. for a new colour "orange":
+/* words added in the Block Library sheet panel-options (panel text-style) get the class
+   ts-<word>: add one rule here per new word, with a token, e.g. for a new colour "orange":
    :where(body.corp) span.text-marker.ts-orange { --span-color: var(--corp-color-orange); color: var(--span-color); } */
 
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
