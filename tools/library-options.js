@@ -1,24 +1,26 @@
 /*
  * The choices the authoring panels (Text style, Block options) offer can be extended in the
  * Block Library workbook (/.da/library/blocks), in its own sheet `panel-options` (the `options`
- * sheet stays for the section styles DA offers). One row per choice, in the order the panel
- * shows them:
+ * sheet stays for the section styles DA offers). One row per group of choices:
  *
- *   panel    text-style, or the block name (e.g. hero-corp)
+ *   panel    text-style, or the block name (e.g. hero-corp); several blocks with commas
  *   group    for text-style: colour, font, size or look; for a block: the group id (e.g. box,
  *            title-colour) or a new one
- *   value    the marker word or option name (e.g. blue, box-gold)
- *   label    what the button says (optional; without it the panel's own label or the value)
+ *   values   the choices in the order the panel shows them, separated by "|"; each is the marker
+ *            word or option name, optionally followed by "=" and its button label:
+ *            "blue | gold | light-gray = Light grey". Without a label the panel shows the
+ *            name with a capital ("blue" → "Blue").
  *
- * The rows of a group replace its built-in list (so they can also reorder or hide choices);
- * groups without rows keep the built-in list, as do all groups when the sheet can't be read. A
- * new value only adds the choice: what it looks like comes from the site's styles (see the
- * README of each panel).
+ * A row replaces the built-in list of its group (so it can also reorder or hide choices); groups
+ * without a row keep the built-in list, as do all groups when the sheet can't be read. A new
+ * value only adds the choice: what it looks like comes from the site's styles (see the README
+ * of each panel).
  */
 
 const SHEET = '/.da/library/blocks.json';
 const TAB = 'panel-options';
 const NAME = /^[a-z0-9][a-z0-9-]*$/;
+const VALUE = /^([a-z0-9][a-z0-9-]*)\s*(?:=\s*(.+))?$/i;
 
 let rows;
 
@@ -54,14 +56,17 @@ export async function allLibraryOptions() {
   if (!rows) rows = readSheet();
   const panels = new Map();
   (await rows).forEach((row) => {
-    const panel = cell(row, 'panel').toLowerCase();
     const group = cell(row, 'group').toLowerCase();
-    const value = cell(row, 'value').toLowerCase();
-    if (![panel, group, value].every((v) => NAME.test(v))) return;
-    if (!panels.has(panel)) panels.set(panel, new Map());
-    const groups = panels.get(panel);
-    if (!groups.has(group)) groups.set(group, []);
-    if (!groups.get(group).some(([v]) => v === value)) groups.get(group).push([value, cell(row, 'label')]);
+    const values = cell(row, 'values').split('|').map((v) => v.trim().match(VALUE)).filter(Boolean)
+      .map(([, value, label]) => [value.toLowerCase(), (label || '').trim()])
+      .filter(([value], i, list) => list.findIndex(([v]) => v === value) === i);
+    if (!NAME.test(group) || !values.length) return;
+    cell(row, 'panel').toLowerCase().split(',').map((p) => p.trim())
+      .filter((p) => NAME.test(p))
+      .forEach((panel) => {
+        if (!panels.has(panel)) panels.set(panel, new Map());
+        panels.get(panel).set(group, values);
+      });
   });
   return panels;
 }

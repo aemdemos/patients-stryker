@@ -29,22 +29,22 @@ Add the panel URL as a sidebar extension in the `library` sheet of the site conf
 
 The choices can be extended without a code change to the panel, in the Block Library workbook
 (`/.da/library/blocks`), sheet **panel-options** (the `options` sheet stays for the section
-styles). One row per choice, in the order the panel shows them:
+styles). One row per group; **values** lists its choices in the order the panel shows them,
+separated by `|`, each optionally followed by `=` and its button label (without one the panel
+shows the name with a capital, "orange" → "Orange"):
 
-| panel | group | value | label |
-| --- | --- | --- | --- |
-| hero-corp | box | box-gold | Gold |
-| hero-corp | box | box-orange | Orange |
-| cards | corner | square | Square corners |
+| panel | group | values |
+| --- | --- | --- |
+| hero-corp | box | box-white = White \| box-gold = Gold \| box-orange = Orange |
+| hero-corp, cards | corner | round \| square = Square corners |
 
-- **panel** is the block name. A block the panel doesn't know yet gets the panel too.
+- **panel** is the block name; several blocks with commas when they share the group. A block the
+  panel doesn't know yet gets the panel too.
 - **group** is an existing group id from `options.js` (e.g. `box`, `column`, `title-colour`,
-  `phone`): its rows replace that group's choices (add, reorder or hide them; the group's
+  `phone`): its row replaces that group's choices (add, reorder or hide them; the group's
   "none" choice and its rules stay). Any other group name adds a single-choice group, shown for
   every layout.
-- **value** is the option name; **label** is what the button says (optional: without it the
-  panel's own label, or the name, "box-orange" → "Box orange").
-- Without rows for a group, or when the sheet can't be read, the panel uses `options.js`.
+- Without a row for a group, or when the sheet can't be read, the panel uses `options.js`.
 - **A new value only adds the choice.** What it does comes from the block: add the matching
   rule to the block's CSS (or JS), e.g. `.hero-corp.image-slide .hero-corp-headline.box-orange`,
   with a colour token. Until then the option is saved on the block but changes nothing.

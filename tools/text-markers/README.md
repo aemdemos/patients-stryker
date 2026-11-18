@@ -56,25 +56,25 @@ Insert end. The insert buttons refuse to run while words are selected (they woul
 
 The choices can be extended without a code change to the panel, in the Block Library workbook
 (`/.da/library/blocks`), sheet **panel-options** (the `options` sheet stays for the section
-styles). One row per choice, in the order the panel shows them:
+styles). One row per group; **values** lists its choices in the order the panel shows them,
+separated by `|`, each optionally followed by `=` and its button label (without one the panel
+shows the name with a capital, "orange" → "Orange"):
 
-| panel | group | value | label |
-| --- | --- | --- | --- |
-| text-style | colour | blue | Blue |
-| text-style | colour | orange | Orange |
-| text-style | look | rule-gold | Gold rule (underlined heading) |
+| panel | group | values |
+| --- | --- | --- |
+| text-style | colour | blue \| gold \| light-gray = Light grey \| orange |
+| text-style | look | rule-gold = Gold rule (underlined heading) \| box-dark |
 
 - **panel** is `text-style`; **group** is `colour`, `font`, `size` or `look`.
-- **value** is the marker word; **label** is what the button says (optional). The rows of a
-  group replace its built-in list, so they can also reorder or hide words (hidden words keep
-  working on pages that already use them).
+- A row replaces the built-in list of its group, so it can also reorder or hide words (hidden
+  words keep working on pages that already use them).
 - A new word must be one word of letters and digits, and not a spacing word (`p`, `pt`, `m` …);
   other values are skipped.
 - **A new word only adds the choice.** The page gives it the class `ts-<word>`; add one rule in
   `styles/styles-corp.css` (where the comment shows an example), with a token, e.g.
   `span.text-marker.ts-orange` for "orange". Until then the word changes nothing and its colour
   swatch is black.
-- Without rows for a group, or when the sheet can't be read, the panel uses the built-in lists.
+- Without a row for a group, or when the sheet can't be read, the panel uses the built-in lists.
 
 ## Limitations
 
