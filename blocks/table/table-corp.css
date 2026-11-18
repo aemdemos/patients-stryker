@@ -19,7 +19,11 @@ body.corp .table.block.stacked :is(table, tbody, tr, td) {
   display: block;
 }
 
-@media (width >= 600px) {
+body.corp .table.block.stacked td > p {
+  line-height: inherit;
+}
+
+@media (width >= 900px) {
   body.corp .table.block.stacked table {
     display: table;
   }

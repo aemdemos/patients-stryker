@@ -10,7 +10,7 @@ body.patents main:has(> .section.columns-container:first-child > .default-conten
 }
 
 body.patents main > .section.separator > .default-content-wrapper {
-  padding-top: calc(var(--space-block-l) + var(--space-block));
+  padding-block: calc(var(--space-block-l) + var(--space-block)) calc(var(--space-block-l) + var(--space-block-s) - 2px);
 }
 
 body.patents main > .section.columns-container:first-child > .default-content-wrapper {
@@ -19,6 +19,9 @@ body.patents main > .section.columns-container:first-child > .default-content-wr
 
 body.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
   margin-bottom: var(--space-block-s);
+  padding-bottom: 0;
+  font-family: var(--display-font-family);
+  line-height: var(--corp-heading-line-height-title-underline);
 }
 
 /* the image cell's own bottom margin and the section gap are dropped */
@@ -26,12 +29,21 @@ body.patents main > .section.columns-container:first-child {
   margin-bottom: var(--space-block-s);
 }
 
-/* stacked: the image sits one paragraph space (15px) under the notice, as on the source phone layout */
+/* stacked: the image sits one paragraph space (15px) under the notice, as on the source phone layout; the
+   cover is capped at its natural width (the 666px source preset) */
 body.patents main > .section.columns-container:first-child .columns .columns-img-col {
-  margin: var(--space-block) 0 0;
+  margin: 0;
+}
+
+body.patents main > .section.columns-container:first-child .columns .columns-img-col img {
+  max-width: var(--corp-patents-cover-width);
 }
 
 @media (width >= 900px) {
+  body.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+    line-height: var(--heading-line-height);
+  }
+
   body.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -61,7 +73,52 @@ body.patents main > .section.columns-container:first-child .columns .columns-img
   }
 }
 
+/* trademarks: the title is an H1 set as the source H2 (Futura 21px, 24.5px from 600px), the intro is
+   Egyptienne w500 17.5px (21px from 600px) at 1.375, and the table follows 15px closer than the shared
+   section gap; "Last Updated" sits 60px below the table */
+body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper {
+  padding-bottom: var(--space-block);
+}
+
+body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-l);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+  margin-bottom: var(--corp-patents-intro-gap);
+  font-size: var(--body-font-size-l);
+  font-weight: 500;
+  line-height: var(--paragraph-line-height);
+}
+
+body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:last-child {
+  margin-bottom: 0;
+}
+
+body.patents main > .section.table-container {
+  padding-bottom: calc(2 * var(--space-section));
+}
+
+body.patents {
+  --corp-patents-cover-width: 666px; /* measured: the stryker.com patents cover image is not scaled past its 666px preset */
+  --corp-patents-intro-gap: 34px; /* measured: stryker.com trademarks intro paragraph gap, phones */
+}
+
 @media (width >= 600px) {
+  body.patents {
+    --corp-patents-intro-gap: 39px; /* measured: the same gap from 768px */
+  }
+
+  body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+    font-size: var(--body-font-size-xl);
+  }
+
   body.patents main > .section.separator > .default-content-wrapper {
     padding-top: calc(var(--space-section) + var(--space-block));
   }
