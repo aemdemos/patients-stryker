@@ -84,6 +84,27 @@ body {
   color: #fff;
 }
 
+.tm-more {
+  display: grid;
+  gap: 8px;
+}
+
+.tm-more[open] {
+  padding: 8px;
+  border: 1px solid var(--s2-gray-200, #dadada);
+  border-radius: 8px;
+}
+
+.tm-more summary {
+  color: var(--s2-blue-900, #3b63fb);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tm-more > :not(summary) + :not(summary) {
+  margin-top: 8px;
+}
+
 .tm-status {
   margin: 0;
   font-size: 13px;

@@ -82,6 +82,7 @@ let previewFrame;
 let applyButtons = [];
 let endButton;
 let previewNote;
+let moreOptions;
 
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
@@ -373,12 +374,14 @@ async function applyToSelection() {
     return;
   }
   if (!inner || !inner.replace(/<[^>]+>/g, '').trim()) {
-    setStatus('Nothing is selected. Select the words to style, or use “Insert at caret”.', 'error');
+    setStatus('Nothing is selected. Select the words to style, or use “Insert at caret” (More options).', 'error');
+    moreOptions.open = true;
     return;
   }
   const { text, ok } = analyseSelection(inner);
   if (!ok) {
-    setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead.', 'error');
+    setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead (More options).', 'error');
+    moreOptions.open = true;
     return;
   }
   // a restyle: the selection includes the old markers, which the new ones replace
@@ -488,14 +491,23 @@ function render() {
   const copy = el('button', { type: 'button', onclick: copyCode }, 'Copy code');
   applyButtons = [apply, insert, start];
   endButton = end;
+  // the less common ways in: opened by the panel when it points the author to one of them
+  moreOptions = el(
+    'details',
+    { class: 'tm-more' },
+    el('summary', {}, 'More options'),
+    el('div', { class: 'tm-actions' }, insert, copy),
+    el('p', { class: 'tm-hint' }, '“Insert at caret” adds :start-…:Your text:end: where the cursor is (nothing selected); type over “Your text”. “Copy code” copies it to paste yourself.'),
+    el('div', { class: 'tm-actions' }, start, end),
+    el('p', { class: 'tm-hint' }, 'Words with a link or mixed formatting: click before them and use “Insert start”, then after them and use “Insert end”. Their formatting stays as it is.'),
+  );
 
   root.append(
     el('h1', {}, 'Text style'),
     el('div', { class: 'tm-result' }, codeEl, previewNote, viewToggle, frameBox),
-    el('div', { class: 'tm-actions' }, apply, insert, copy),
-    el('div', { class: 'tm-actions' }, start, end),
-    el('p', { class: 'tm-hint' }, 'Words with a link or mixed formatting: click before them and use “Insert start”, then after them and use “Insert end”. Their formatting stays as it is.'),
+    el('div', { class: 'tm-actions' }, apply),
     statusEl,
+    moreOptions,
     choices,
   );
   listenToPreview(choices);
