@@ -84,7 +84,8 @@ function decorateIconLinks(main) {
  * TEACH's "Chapter N:" labels; `gray-cards`: CLOUT's grey evidence cards with plain Bold
  * labels; `course-cards`: the Mako refreshers course cards (their action links 21px,
  * columns-corp.css); `product-intro`: nse product rows, the Egyptienne copy with a 2vw title;
- * `product-details`: an nse product's intro beside a grey box of 14px details.
+ * `product-details`: an nse product's intro beside a grey box of 14px details; `event-cards`:
+ * neurosurgical events, a 21px Egyptienne subtitle under each title.
  * `*-serif-copy`: a copy size with the Egyptienne copy.
  */
 const VARIANT_BUNDLES = {
@@ -98,6 +99,7 @@ const VARIANT_BUNDLES = {
   'course-cards': ['large-titles', 'large-subtitles', 'large-copy'],
   'product-intro': ['serif'],
   'product-details': ['gray-last', 'plain-bold'],
+  'event-cards': ['large-subtitles'],
 };
 
 function expandVariantBundles(main) {

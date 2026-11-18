@@ -133,8 +133,8 @@ body.corp .columns.product-names .columns-img-col + p.columns-bold {
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
    stryker.com puts there (not a lead-in line right before a button); large-headline
-   keeps its own rhythm */
-body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
+   and event-cards keep their own rhythm */
+body.corp .columns:not(.large-headline, .event-cards) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
   margin-top: calc(1lh + var(--space-block));
 }
 
@@ -245,6 +245,16 @@ body.corp .columns.large-subtitles.block > div > div h3 + p {
    simplies a complex process…" under "Step-by-step playbook") */
 body.corp .columns.large-subtitles.block > div > div h3:where(:has(+ p)) {
   margin-bottom: 0;
+}
+
+/* event-cards (bundles large-subtitles: scripts/corp.js): the event title (Heading 3) over its
+   subject in the 21px Egyptienne light (stryker.com neurosurgical events "Fundamentals in Open
+   Skull Base Surgery"), the date a paragraph gap below it */
+body.corp .columns.event-cards.block > div > div h3 + p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
 }
 
 /* gray-titles: the cells' headings in dark grey (stryker.com #545857: build-your-ASC
