@@ -21,6 +21,7 @@
  * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
  * and image form a layout family (the inspection page can show the groups by family).
  * usage: node tools/importer/standardise/looks/group.mjs <block type> [--sizes exact|bands]
+ *   [--name <page name>] [--extra <groups file>]
  *   [--in /tmp/run-outputs/looks-v2]
  *   [--out tools/looks/data]
  */
@@ -38,6 +39,10 @@ const opt = (name, fallback) => {
 const IN = opt('--in', '/tmp/run-outputs/looks-v2');
 const OUT = opt('--out', 'tools/looks/data');
 const SIZES = opt('--sizes', 'exact');
+// (--name: the page's name when it holds more than the block, e.g. forms = Marketo + stryker.com
+// forms; --extra: a file of groups measured elsewhere)
+const NAME = opt('--name', type);
+const EXTRA = opt('--extra', '');
 if (!type) {
   console.error('usage: group.mjs <block type>');
   process.exit(2);
@@ -254,6 +259,13 @@ const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map
   }, {})),
   items: list.map(({ parts, exactType, ...rest }) => rest),
 }));
+// groups measured elsewhere (a form that is only on stryker.com, source-forms.mjs) join as they
+// are, and all groups are numbered again by size
+if (EXTRA) {
+  groups.push(...JSON.parse(readFileSync(EXTRA, 'utf8')).groups.map((g) => ({ ...g, fromSource: true })));
+  groups.sort((a, c) => c.instances - a.instances).forEach((g, i) => { g.id = i + 1; });
+}
+const total = groups.reduce((n, g) => n + g.instances, 0);
 // groups that differ in one part only: candidates to merge
 groups.forEach((g) => {
   g.close = groups.filter((o) => o !== g).map((o) => {
@@ -282,15 +294,16 @@ const families = [...groups.reduce((m, g) => {
   .map((f, i) => ({ id: i + 1, ...f }));
 mkdirSync(OUT, { recursive: true });
 const result = {
-  type,
+  type: NAME,
+  blocks: [type],
   generated: new Date().toISOString(),
   sizes: SIZES,
   measuredPages: readdirSync(join(IN, 'pages')).length,
-  instances: instances.length,
+  instances: total,
   groups,
   families,
 };
-writeFileSync(join(OUT, `${type}.json`), JSON.stringify(result));
+writeFileSync(join(OUT, `${NAME}.json`), JSON.stringify(result));
 // the index of the block types grouped so far (the inspection page's menu)
 let index = { types: [] };
 try {
@@ -299,13 +312,13 @@ try {
   index = { types: [] };
 }
 index.types = [
-  ...index.types.filter((t) => t.type !== type),
-  { type, instances: instances.length, groups: groups.length },
+  ...index.types.filter((t) => t.type !== NAME),
+  { type: NAME, instances: total, groups: groups.length },
 ]
   .sort((a, c) => c.instances - a.instances);
 writeFileSync(join(OUT, 'index.json'), JSON.stringify(index, null, 1));
 // the page's screenshots: a real copy next to the page (git-ignored), not a link to the measuring
 // folder, which the review preview can't reach
 cpSync(join(IN, 'shots', type), join(OUT, '..', 'shots', type), { recursive: true });
-console.log(`${type}: ${instances.length} instances on ${result.measuredPages} measured pages, ${groups.length} groups`);
+console.log(`${NAME}: ${total} instances on ${result.measuredPages} measured pages, ${groups.length} groups`);
 groups.slice(0, 15).forEach((g) => console.log(`  #${g.id} ${g.instances} on ${g.pages} pages · ${Object.values(g.parts).join(' | ')}`));

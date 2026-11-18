@@ -333,7 +333,7 @@ async function session() {
 await session();
 
 /** a screenshot cropped to the block's content (at most 2400 px tall) */
-async function shotOf(m, path) {
+async function shotOf(m, path, h) {
   const c = m.content;
   const x = Math.max(0, c.left - 8);
   const y = Math.max(0, c.top - 8);
@@ -367,7 +367,11 @@ async function shotOf(m, path) {
       },
     });
   };
-  await take().catch(inWindow);
+  // (and when both time out, the block element itself)
+  const ofElement = () => h.screenshot({
+    path, type: 'jpeg', quality: 62, timeout: 20000,
+  });
+  await take().catch(inWindow).catch((e) => (h ? ofElement() : Promise.reject(e)));
   return true;
 }
 
@@ -477,7 +481,7 @@ async function desktop(path, url, result) {
     const shot = join('shots', m.type, `${slug(path)}__${n}-d.jpg`);
     mkdirSync(join(out, 'shots', m.type), { recursive: true });
     if (m.box.width > 1 && m.box.height > 1) {
-      await shotOf(m, join(out, shot))
+      await shotOf(m, join(out, shot), h)
         .then((ok) => { if (ok) m.shot = shot; })
         .catch((e) => result.errors.push(`shot ${n}: ${e.message.slice(0, 80)}`));
     } else m.hidden = true;
@@ -506,7 +510,7 @@ async function phone(path, url, result) {
     };
     if (p.box.width > 1 && p.box.height > 1) {
       const shot = join('shots', m.type, `${slug(path)}__${k}-m.jpg`);
-      await shotOf(p, join(out, shot))
+      await shotOf(p, join(out, shot), h)
         .then((ok) => { if (ok) m.phone.shot = shot; })
         .catch(() => null);
     }
