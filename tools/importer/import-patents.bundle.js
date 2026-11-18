@@ -335,7 +335,6 @@ var CustomImportScript = (() => {
   }
   var clean = (s) => (s || "").replace(/[\s\u00a0]+/g, " ").trim();
   var text = (el) => el ? clean(el.textContent) : "";
-  var cellText = (el) => el.textContent.replace(/[ \t\r\n\f]+/g, " ").trim();
   function sectionMetadata(document, style) {
     return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
   }
@@ -416,7 +415,7 @@ var CustomImportScript = (() => {
   }
   function tables(document, src) {
     return [...src.querySelectorAll(".c-patenttables table")].map((table) => {
-      const rows = [...table.querySelectorAll("tbody tr")].map((tr) => [...tr.children].map((td) => cellText(td.querySelector(".cell-content") || td))).filter((r) => r.some(Boolean));
+      const rows = [...table.querySelectorAll("tbody tr")].map((tr) => [...tr.children].map((td) => text(td.querySelector(".cell-content") || td))).filter((r) => r.some(Boolean));
       const width = Math.max(0, ...rows.map((r) => r.length));
       const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i]));
       if (!rows.length || !used.length) return null;

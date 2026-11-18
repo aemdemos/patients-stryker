@@ -37,8 +37,6 @@ function executeTransformers(hookName, element, payload) {
 
 const clean = (s) => (s || '').replace(/[\s\u00a0]+/g, ' ').trim();
 const text = (el) => (el ? clean(el.textContent) : '');
-// table cells keep the source non-breaking spaces (they set the column width)
-const cellText = (el) => el.textContent.replace(/[ \t\r\n\f]+/g, ' ').trim();
 
 function sectionMetadata(document, style) {
   return WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
@@ -132,7 +130,7 @@ function longTextHero(document, src) {
 function tables(document, src) {
   return [...src.querySelectorAll('.c-patenttables table')].map((table) => {
     const rows = [...table.querySelectorAll('tbody tr')]
-      .map((tr) => [...tr.children].map((td) => cellText(td.querySelector('.cell-content') || td)))
+      .map((tr) => [...tr.children].map((td) => text(td.querySelector('.cell-content') || td)))
       .filter((r) => r.some(Boolean));
     const width = Math.max(0, ...rows.map((r) => r.length));
     const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i]));
