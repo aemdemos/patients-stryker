@@ -99,6 +99,7 @@ body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
   font-family: var(--heading-font-family);
   font-size: var(--footnote-font-size);
   font-weight: var(--font-weight-bold);
+  line-height: var(--footnote-line-height);
 }
 
 @media (width >= 600px) {
