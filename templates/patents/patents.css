@@ -10,7 +10,7 @@ body.patents main:has(> .section.columns-container:first-child > .default-conten
 }
 
 body.patents main > .section.separator > .default-content-wrapper {
-  padding-block: calc(var(--space-block-l) + var(--space-block)) calc(var(--space-block-l) + var(--space-block-s) - 2px);
+  padding-block: calc(var(--space-block-l) + var(--space-block)) calc(var(--space-block-l) + var(--space-block-s) - var(--corp-legal-title-offset-trim));
 }
 
 body.patents main > .section.columns-container:first-child > .default-content-wrapper {
@@ -87,10 +87,13 @@ body.patents main > .section:first-child:not(.columns-container) > .default-cont
 }
 
 body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
-  margin-bottom: var(--corp-patents-intro-gap);
   font-size: var(--body-font-size-l);
   font-weight: 500;
   line-height: var(--paragraph-line-height);
+}
+
+body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+  margin-bottom: var(--corp-patents-intro-gap-s);
 }
 
 body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:last-child {
@@ -101,22 +104,17 @@ body.patents main > .section.table-container {
   padding-bottom: calc(2 * var(--space-section));
 }
 
-body.patents {
-  --corp-patents-cover-width: 666px; /* measured: the stryker.com patents cover image is not scaled past its 666px preset */
-  --corp-patents-intro-gap: 34px; /* measured: stryker.com trademarks intro paragraph gap, phones */
-}
-
 @media (width >= 600px) {
-  body.patents {
-    --corp-patents-intro-gap: 39px; /* measured: the same gap from 768px */
-  }
-
   body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
     font-size: var(--heading-font-size-xl);
   }
 
   body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
     font-size: var(--body-font-size-xl);
+  }
+
+  body.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+    margin-bottom: var(--corp-patents-intro-gap);
   }
 
   body.patents main > .section.separator > .default-content-wrapper {
