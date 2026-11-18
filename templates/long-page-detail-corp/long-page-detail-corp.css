@@ -588,6 +588,18 @@ body.long-page-detail-corp main > .section.light-gray-titles .default-content-wr
   line-height: var(--heading-line-height);
 }
 
+/* …right under a heading (the underlined "Distal" / "Proximal" title): the source title's own
+   gap below it too, 35px under the heading (45px from 600px) */
+body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) + p:has(> strong:only-child) {
+  margin-top: calc(var(--space-block) + var(--space-block-l));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) + p:has(> strong:only-child) {
+    margin-top: calc(var(--space-block) + var(--space-section));
+  }
+}
+
 /* a fully bold caption under an image in a Columns row (columns-corp: 11.2px) keeps the
    row's copy size on these pages (room-design steps: Futura bold 21px, centred) */
 body.long-page-detail-corp main > .section.p-1-5 .columns .columns-img-col + p:has(> strong:only-child) {
