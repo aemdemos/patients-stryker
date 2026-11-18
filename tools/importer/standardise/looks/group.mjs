@@ -177,8 +177,25 @@ function statisticsPartsOf(b) {
 const numberColours = (b) => [...new Set(Object.values(b.typography).flatMap((r) => r.styles)
   .filter((x) => x.size >= 40).map((x) => x.color))].sort().join(' / ');
 
+/**
+ * a spacing box's look (the wrapper that carries authored padding and margins around default
+ * content, scripts/corp-spacing.js): only the box, its width, background and padding; the text in
+ * it is default content, listed per group but not grouped
+ */
+function spacingPartsOf(b) {
+  const pad = Math.max(...(b.frame.padding || [0]));
+  let room = 'large padding';
+  if (pad === 0) room = 'no padding';
+  else if (pad <= 12) room = 'small padding';
+  return {
+    frame: `${width(b.frame.widthShare)}; ${surface({ ...b.frame, padding: undefined })}${b.frame.section && b.frame.section.bg !== 'transparent' ? `; section ${b.frame.section.bg}` : ''}`,
+    box: room,
+  };
+}
+
 function partsOf(b) {
   if (b.type === 'table') return tablePartsOf(b);
+  if (b.type === 'corp-spacing-box') return spacingPartsOf(b);
   if (b.type === 'statistics') return statisticsPartsOf(b);
   const u = b.units;
   // units per row the grid holds: (block width + gap) / (unit width + gap)
@@ -294,7 +311,7 @@ const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map
     return m;
   }, {})),
   // (with size bands: the exact styles behind each role, counted)
-  exactTypes: SIZES === 'bands' ? Object.fromEntries(ROLES.map((r) => [r,
+  exactTypes: SIZES === 'bands' || type === 'corp-spacing-box' ? Object.fromEntries(ROLES.map((r) => [r,
     Object.entries(list.reduce((m, x) => {
       const t = x.exactType[r];
       return t ? { ...m, [t]: (m[t] || 0) + 1 } : m;

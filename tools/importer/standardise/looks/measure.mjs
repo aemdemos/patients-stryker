@@ -237,7 +237,10 @@ function measureBlock(el) {
     return { count: tabs.length, selected: mark(selected), other: other ? mark(other) : null };
   };
   // the content's box: everything visible in the block (the screenshot is cropped to it)
-  const inner = [...el.querySelectorAll('img, picture, video, iframe, svg, a, button, input, select, textarea, table, canvas'), ...allLeavesOf(el), ...units]
+  // (a block with a surface of its own, a background, border or shadow, is shown whole)
+  const own0 = surface(cs);
+  const framed = own0.bg !== 'transparent' || own0.bgImage || own0.border || own0.shadow;
+  const inner = [...el.querySelectorAll('img, picture, video, iframe, svg, a, button, input, select, textarea, table, canvas'), ...allLeavesOf(el), ...units, ...(framed ? [el] : [])]
     .filter(visible).map(box);
   const content = inner.length ? {
     left: Math.min(...inner.map((x) => x.left)),
