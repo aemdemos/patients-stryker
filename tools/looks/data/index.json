@@ -59,6 +59,11 @@
    "type": "chart-corp",
    "instances": 8,
    "groups": 3
+  },
+  {
+   "type": "gallery-corp",
+   "instances": 6,
+   "groups": 2
   }
  ]
 }
