@@ -24,13 +24,14 @@
 // formatting a marker pair may run through (and may itself sit in)
 const INLINE_TAGS = new Set(['A', 'B', 'BR', 'DEL', 'EM', 'I', 'S', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U']);
 
-const COLOURS = ['blue', 'gold', 'purple', 'teal', 'navy', 'grey', 'white', 'light-gray'];
+// the marker words (also read by the authoring panel, tools/text-markers)
+export const COLOURS = ['blue', 'gold', 'purple', 'teal', 'navy', 'grey', 'white', 'light-gray'];
 const COLOUR_ALIASES = { gray: 'grey' };
-const FONTS = ['serif', 'sans', 'body', 'upper'];
-const SIZES = ['s', 'l', 'xl', 'xxl'];
+export const FONTS = ['serif', 'sans', 'body', 'upper'];
+export const SIZES = ['s', 'l', 'xl', 'xxl'];
 
 // spacing word → CSS properties; step → spacing token
-const SPACING = {
+export const SPACING = {
   p: ['padding'],
   pt: ['paddingTop'],
   pr: ['paddingRight'],
@@ -46,7 +47,7 @@ const SPACING = {
   mx: ['marginLeft', 'marginRight'],
   my: ['marginTop', 'marginBottom'],
 };
-const STEPS = {
+export const STEPS = {
   xs: 'var(--space-block-xs)',
   s: 'var(--space-block-s)',
   m: 'var(--space-block)',
