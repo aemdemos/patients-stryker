@@ -601,6 +601,12 @@ body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
 }
 
+/* …and the Bold name that opens the text under an image, its sizes on the next line (stryker.com
+   MIS cutting accessories "Precision round" / "2.0 mm, 3.0 mm…"): Futura bold */
+body.corp .columns.product-names .columns-img-col + p:not(.columns-bold) > strong:first-child {
+  font-family: var(--display-font-family);
+}
+
 /* gold-last: the last cell is a gold box beside the text (stryker.com bg-gold rich text in
    the col-sm-4 next to the article, e.g. "83% of a patient's stay…" on the ICU early
    mobility article: padding 8% / 10% / 5% of the column, 440px wide at 1440px), its text
@@ -635,7 +641,7 @@ body.corp .columns.gray-last > div > div:last-child {
   background-color: var(--color-surface);
 }
 
-body.corp .columns.gray-last.block > div > div:last-child :is(p, li):nth-child(n) {
+body.corp .columns.gray-last:not(.product-details).block > div > div:last-child :is(p, li):nth-child(n) {
   font-family: var(--heading-font-family);
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
   line-height: var(--heading-line-height-hero);
@@ -947,6 +953,17 @@ body.corp .columns.product-intro.block > div > div :where(p) {
   body.corp .columns.product-intro.block > div > div :where(p) {
     font-size: var(--body-font-size-m);
   }
+}
+
+/* product-details (bundles gray-last, plain-bold: scripts/corp.js): an nse product's intro
+   beside a grey box of details (stryker.com MIS cutting accessories "Choose from more than 50…"
+   / "Expandable options"): the first cell's paragraphs 17.5px Egyptienne light, its list and
+   the box's text the 14px body copy, the box's Bold label Humanist bold */
+body.corp .columns.product-details.block > div > div:first-child :where(p) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height-l);
 }
 
 /* course-cards (bundles large-titles, large-subtitles, large-copy: scripts/corp.js): the

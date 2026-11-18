@@ -578,6 +578,16 @@ body.long-page-detail-corp main > .section.full-width-image > .default-content-w
   }
 }
 
+/* section style `light-gray-titles`: a fully Bold paragraph of the section (in its tab panels
+   too) is a light-grey 21px Futura bold title (stryker.com nse MIS attachments accessories
+   "Precision Match Head" #b2b4ae over each product row); Bold paragraphs inside blocks keep
+   their look. Bold paragraphs, not headings: in a `tabbed` section headings become tabs */
+body.long-page-detail-corp main > .section.light-gray-titles .default-content-wrapper > p:has(> strong:only-child) {
+  color: var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
 /* a fully bold caption under an image in a Columns row (columns-corp: 11.2px) keeps the
    row's copy size on these pages (room-design steps: Futura bold 21px, centred) */
 body.long-page-detail-corp main > .section.p-1-5 .columns .columns-img-col + p:has(> strong:only-child) {
