@@ -30,10 +30,14 @@ Use `main` as `<branch>` once the code is merged; before that, the feature branc
 | Start fresh | Put the caret where the text goes, pick the style, click **Insert at caret**, then replace “Your text”. |
 | Use the code elsewhere | **Copy code** copies `:start-…:Your text:end:`. |
 
-**Preview.** While the panel is open it reads the selection about once a second and shows
-the selected words in the preview, in the same kind of line they sit in (paragraph or
-heading level), with the chosen style on white and on a dark background. With nothing
-selected it shows a sample.
+**Preview.** While the panel is open it reads the selection about once a second.
+- Words **inside a block** are shown in that block, rebuilt from the page's markup and
+  decorated by the block's own script and styles (`preview.html` / `block-preview.js`): a
+  hero's image and gold box, its fonts and sizes. **Desktop** renders at 1200px and
+  **Phone** at 375px, scaled to the panel. The page markup comes from Experience
+  Workspace's live document, or from the DA editor's saved source.
+- Other words are shown in their line (paragraph or heading level), on white and on a dark
+  background. With nothing selected the preview shows a sample.
 
 **Style selected text** rewrites the selection as text: the editor inserts HTML from an
 extension as a new paragraph, which would split the line. A selection with a link, a line

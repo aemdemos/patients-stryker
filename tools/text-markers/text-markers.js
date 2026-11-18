@@ -9,7 +9,7 @@
  * words the site understands.
  */
 import {
-  COLOURS, FONTS, SIZES, STEPS, parseMarker,
+  COLOURS, FONTS, SIZES, STEPS,
 } from '../../scripts/span-markers.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
@@ -88,51 +88,32 @@ function setStatus(text, kind = 'info') {
   statusEl.dataset.kind = kind;
 }
 
-/* preview: an isolated frame with the site's styles, so the sample looks as on the page */
-function previewDocument() {
-  const { origin } = window.location;
-  return `<!DOCTYPE html><html><head>
-    <link rel="stylesheet" href="${origin}/styles/styles.css">
-    <link rel="stylesheet" href="${origin}/styles/fonts.css">
-    <link rel="stylesheet" href="${origin}/styles/styles-corp.css">
-    <style>body{margin:0;padding:12px;background:#fff}main{padding:0}
-    #stage > *, #stage-dark > *{margin:0}
-    .tm-dark{background:#1f1f1f;padding:12px;margin-top:8px;color:#fff}</style>
-    </head><body class="corp appear"><main><div id="stage"></div>
-    <div class="tm-dark"><div id="stage-dark"></div></div>
-    </main></body></html>`;
-}
+/*
+ * Preview: tools/text-markers/preview.html in a frame, rendering with the site's own code.
+ * Words inside a block are shown in that block (its background, image, box …) at desktop or
+ * phone width, scaled to the panel; other words in their line.
+ */
+const VIEWS = { desktop: 1200, phone: 375 };
+let view = 'desktop';
+let previewReady = false;
+let previewHeight = 160;
+let viewToggle;
 
-// the line being previewed: the author's selection in its paragraph / heading, or a sample
+// the selection being previewed: its line { tag, html, words, old } and, when it sits in a
+// block, that block { block: HTML, sectionStyles, name }
 let previewLine = null;
+let previewBlock = null;
 let lastSelection = '';
 
-/**
- * Renders the preview: the selected words (or a sample) styled with the current choice,
- * inside the same kind of line (paragraph or heading level) they sit in on the page.
- */
-function renderPreview(classes, spacing) {
-  const doc = previewFrame.contentDocument;
-  ['stage', 'stage-dark'].forEach((id) => {
-    const stage = doc.getElementById(id);
-    if (!stage) return;
-    const tag = previewLine ? previewLine.tag.toLowerCase() : 'p';
-    const line = doc.createElement(tag);
-    const span = doc.createElement('span');
-    span.className = ['text-marker', ...classes].join(' ');
-    spacing.forEach(([prop, value]) => { span.style[prop] = value; });
-    if (previewLine) {
-      // the selection's own inline markup (bold, italic, links), parsed inertly and imported
-      const parsed = new DOMParser().parseFromString(`<p>${previewLine.html}</p>`, 'text/html');
-      const nodes = [...parsed.body.firstElementChild.childNodes];
-      span.append(...nodes.map((n) => doc.importNode(n, true)));
-      line.append(span);
-    } else {
-      line.append('Preview: ', span, ' next to plain text.');
-      span.textContent = 'Your styled text';
-    }
-    stage.replaceChildren(line);
-  });
+function sizePreview() {
+  const box = previewFrame.parentElement;
+  const width = previewBlock ? VIEWS[view] : box.clientWidth;
+  const scale = Math.min(1, box.clientWidth / width);
+  previewFrame.style.width = `${width}px`;
+  previewFrame.style.height = `${previewHeight}px`;
+  previewFrame.style.transform = `scale(${scale})`;
+  box.style.height = `${Math.ceil(previewHeight * scale)}px`;
+  viewToggle.hidden = !previewBlock;
 }
 
 function updatePreview() {
@@ -140,18 +121,17 @@ function updatePreview() {
   codeEl.textContent = marker ? `${marker}Your text${END_MARKER}` : 'Pick a style below';
   applyButtons.forEach((b) => { b.disabled = !marker || !sdk; });
   if (endButton) endButton.disabled = !sdk;
-  if (!previewFrame.contentDocument?.getElementById('stage')) return;
-  const { classes, spacing } = parseMarker(markerWords().join('-'));
-  renderPreview(classes, spacing);
-  // the frame grows with the previewed line (a large heading wraps onto several lines)
-  const main = previewFrame.contentDocument.querySelector('main');
-  const height = Math.ceil(main.getBoundingClientRect().bottom) + 12;
-  previewFrame.style.height = `${Math.min(Math.max(height, 80), 360)}px`;
   const kind = previewLine && (previewLine.tag === 'P' ? 'paragraph' : `heading ${previewLine.tag.slice(1)}`);
   let note = 'Select words in the document to preview them here.';
-  if (previewLine) note = `Previewing your selection (${kind}).`;
-  if (previewLine?.old) note = `Previewing your selection (${kind}), now styled :start-${previewLine.old}:.`;
+  if (previewLine) note = `Previewing your selection (${kind}${previewBlock ? ` in ${previewBlock.name}` : ''}).`;
+  if (previewLine?.old) note = `${note.slice(0, -1)}, now styled :start-${previewLine.old}:.`;
   previewNote.textContent = note;
+  if (!previewReady) return;
+  const message = { action: 'tm-preview-render', marker, words: previewLine?.words || '' };
+  if (previewLine && previewBlock) Object.assign(message, previewBlock, { tag: previewLine.tag });
+  else if (previewLine) Object.assign(message, { tag: previewLine.tag, html: previewLine.html });
+  sizePreview();
+  previewFrame.contentWindow.postMessage(message, window.location.origin);
 }
 
 /** colour swatches take their colour from the site's own color-* classes */
@@ -165,6 +145,22 @@ function paintSwatches(container) {
     doc.querySelector('main').append(probe);
     button.style.setProperty('--swatch', doc.defaultView.getComputedStyle(probe).color);
     probe.remove();
+  });
+}
+
+/** the preview page reports when it is ready and the height of each render */
+function listenToPreview(choices) {
+  window.addEventListener('message', (e) => {
+    if (e.origin !== window.location.origin || e.source !== previewFrame.contentWindow) return;
+    if (e.data?.action === 'tm-preview-ready') {
+      previewReady = true;
+      paintSwatches(choices);
+      updatePreview();
+    }
+    if (e.data?.action === 'tm-preview-rendered') {
+      previewHeight = Math.max(60, Math.min(e.data.height, 1600));
+      sizePreview();
+    }
   });
 }
 
@@ -290,8 +286,11 @@ function analyseSelection(inner) {
 // the markers as authors see them in the document text
 const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
 
-// the document's text, when the editor shares it (Experience Workspace's live document)
+// the document, when the editor shares it (Experience Workspace's live document)
+let liveHtml = '';
 let liveText = '';
+// the DA editor's saved source, read at most every few seconds
+let sourceCache = { at: 0, html: '' };
 
 /**
  * The style already around the selected words on the page, when they sit right inside a
@@ -307,24 +306,60 @@ function styleAround(words, text = liveText) {
 }
 
 /**
- * The document's text: Experience Workspace shares it live; the DA editor does not, so it is
+ * The document's HTML: Experience Workspace shares it live; the DA editor does not, so it is
  * read from the document's saved source (the editor saves as the author types).
- * @returns {Promise<string>} The text, or '' when it cannot be read
+ * @returns {Promise<string>} The HTML, or '' when it cannot be read
  */
-async function documentText() {
-  if (liveText) return liveText;
+async function documentHtml() {
+  if (liveHtml) return liveHtml;
+  if (Date.now() - sourceCache.at < 4000) return sourceCache.html;
   const ctx = sdk.context || sdk.project || {};
   if (!ctx.org || !ctx.repo || !ctx.path || typeof sdk.actions.daFetch !== 'function') return '';
+  let html = '';
   try {
     const resp = await Promise.race([
       sdk.actions.daFetch(`https://admin.da.live/source/${ctx.org}/${ctx.repo}${ctx.path}.html`),
       new Promise((resolve) => { setTimeout(() => resolve(null), 3000); }),
     ]);
-    if (!resp?.ok) return '';
-    return new DOMParser().parseFromString(await resp.text(), 'text/html').body.textContent;
+    if (resp?.ok) html = await resp.text();
   } catch {
-    return '';
+    html = '';
   }
+  sourceCache = { at: Date.now(), html };
+  return html;
+}
+
+async function documentText() {
+  if (liveText) return liveText;
+  const html = await documentHtml();
+  return html ? new DOMParser().parseFromString(html, 'text/html').body.textContent : '';
+}
+
+const plain = (text) => text.replace(MARKER_TEXT, '').replace(/\s+/g, ' ').trim();
+const toClassName = (s) => s.trim().toLowerCase().replace(/[^0-9a-z]+/g, '-').replace(/^-|-$/g, '');
+
+/**
+ * The block the selected words sit in, from the document's markup (sections hold blocks as
+ * <div class="name options">), with its section's styles (Section Metadata "style").
+ * @param {string} words The selected words
+ * @returns {Promise<{block: string, sectionStyles: string[], name: string}|null>} The block
+ */
+async function findBlock(words) {
+  const html = await documentHtml();
+  const target = plain(words);
+  if (!html || !target) return null;
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const root = doc.querySelector('main') || doc.body;
+  const blocks = [...root.querySelectorAll(':scope > div > div[class]')]
+    .filter((b) => !/^(section-metadata|metadata)$/.test(b.classList[0]));
+  const block = blocks.find((b) => plain(b.textContent).includes(target));
+  if (!block) return null;
+  const meta = block.parentElement.querySelector(':scope > .section-metadata');
+  const styleRow = meta && [...meta.children]
+    .find((row) => row.children[0]?.textContent.trim().toLowerCase() === 'style');
+  const sectionStyles = styleRow
+    ? styleRow.children[1].textContent.split(',').map(toClassName).filter(Boolean) : [];
+  return { block: block.outerHTML, sectionStyles, name: block.classList[0] };
 }
 
 async function applyToSelection() {
@@ -367,6 +402,7 @@ async function applyToSelection() {
     ? `Changed the style of “${words.trim()}” from :start-${old[1]}: to ${marker}`
     : `Styled “${words.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
   previewLine = null;
+  previewBlock = null;
   lastSelection = '';
   updatePreview();
 }
@@ -418,7 +454,20 @@ function render() {
   statusEl = el('p', { class: 'tm-status', role: 'status' });
   codeEl = el('code', { class: 'tm-code' });
   previewNote = el('p', { class: 'tm-hint' });
-  previewFrame = el('iframe', { class: 'tm-preview', title: 'Preview', srcdoc: previewDocument() });
+  previewFrame = el('iframe', { class: 'tm-preview', title: 'Preview', src: `/tools/text-markers/preview.html?v=${Date.now()}` });
+  const frameBox = el('div', { class: 'tm-frame' }, previewFrame);
+  const viewButtons = Object.keys(VIEWS).map((name) => el('button', {
+    type: 'button',
+    class: 'tm-choice',
+    role: 'radio',
+    'aria-checked': String(name === view),
+    onclick: () => {
+      view = name;
+      viewButtons.forEach((b) => b.setAttribute('aria-checked', String(b.textContent.toLowerCase() === name)));
+      updatePreview();
+    },
+  }, name === 'desktop' ? 'Desktop' : 'Phone'));
+  viewToggle = el('div', { class: 'tm-choices', role: 'radiogroup', 'aria-label': 'Preview width' }, ...viewButtons);
 
   const choices = el(
     'div',
@@ -442,17 +491,15 @@ function render() {
 
   root.append(
     el('h1', {}, 'Text style'),
-    el('div', { class: 'tm-result' }, codeEl, previewNote, previewFrame),
+    el('div', { class: 'tm-result' }, codeEl, previewNote, viewToggle, frameBox),
     el('div', { class: 'tm-actions' }, apply, insert, copy),
     el('div', { class: 'tm-actions' }, start, end),
     el('p', { class: 'tm-hint' }, 'Words with a link or mixed formatting: click before them and use “Insert start”, then after them and use “Insert end”. Their formatting stays as it is.'),
     statusEl,
     choices,
   );
-  previewFrame.addEventListener('load', () => {
-    paintSwatches(choices);
-    updatePreview();
-  });
+  listenToPreview(choices);
+  window.addEventListener('resize', sizePreview);
   updatePreview();
 }
 
@@ -474,8 +521,11 @@ function watchSelection() {
       // a selection that includes old markers is previewed without them
       line.old = (line.html.match(/:start-([a-z0-9-]+):/) || [])[1] || styleAround(line.html.replace(/<[^>]+>/g, '')) || '';
       line.html = line.html.replace(MARKER_TEXT, '');
+      line.words = new DOMParser().parseFromString(`<p>${line.html}</p>`, 'text/html').body.textContent;
     }
-    previewLine = line && line.html.replace(/<[^>]+>/g, '').trim() ? line : null;
+    previewLine = line && line.words.trim() ? line : null;
+    previewBlock = previewLine ? await findBlock(previewLine.words) : null;
+    if (html !== lastSelection) return; // the selection moved on while the block was read
     updatePreview();
   };
   setInterval(check, 1000);
@@ -500,7 +550,8 @@ async function connect() {
     // Experience Workspace shares the document: used to spot words that already have a style
     if (sdk.capabilities?.liveDocument === 1 && typeof sdk.actions.subscribeLiveDocument === 'function') {
       sdk.actions.subscribeLiveDocument(({ html }) => {
-        liveText = new DOMParser().parseFromString(html || '', 'text/html').body.textContent;
+        liveHtml = html || '';
+        liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
       });
     }
     watchSelection();
