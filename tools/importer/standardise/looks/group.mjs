@@ -14,6 +14,7 @@
  *            XXL above; each group then lists the exact styles it holds), bold or regular,
  *            colour, capitals
  *   buttons  filled / outline and colour
+ *   panels   (accordions) whether the items start closed or open (the panels are measured open)
  * A look that only lacks a part (no description, link or image) joins the largest group that
  * agrees on everything both have (its instances keep what they lack). Groups are sorted by size;
  * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
@@ -108,6 +109,12 @@ const ratio = (a) => {
   return a > 1.85 ? 'wider than 16:9' : 'taller than 16:9';
 };
 
+const panelsOf = ({ count, openAtStart }) => {
+  if (!openAtStart) return 'all start closed';
+  if (openAtStart === count) return count > 1 ? 'all start open' : 'starts open';
+  return openAtStart === 1 ? 'one starts open' : 'some start open';
+};
+
 /** the parts of an instance's look (each part a short text; together the fingerprint) */
 function partsOf(b) {
   const u = b.units;
@@ -144,6 +151,8 @@ function partsOf(b) {
       .filter(Boolean).join(', ') : 'no image',
     ...Object.fromEntries(roles.map((r) => [`type ${r}`, styles[r]])),
     buttons: btn ? `${btn.kind} ${btn.kind === 'filled' ? btn.bg : btn.border}${btn.upper ? ' caps' : ''}` : 'none',
+    // (an accordion: whether its items start closed or open; how many there are is content)
+    ...(b.panels ? { panels: panelsOf(b.panels) } : {}),
   };
 }
 

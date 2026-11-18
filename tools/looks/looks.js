@@ -19,7 +19,7 @@ const LACK_NAMES = {
 };
 const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${k}`).join(', ');
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels',
 };
 
 function el(tag, attrs = {}, ...children) {

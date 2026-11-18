@@ -59,6 +59,9 @@ function measureBlock(el) {
     const s = getComputedStyle(x);
     return r.width > 1 && r.height > 1 && s.visibility !== 'hidden' && s.display !== 'none';
   };
+  // the block's own content: a block nested in it (cards in an accordion panel) is measured as a
+  // block of its own, and doesn't make this block's look (the screenshot still shows it)
+  const own = (x) => x.closest('.block') === el;
   const cs = getComputedStyle(el);
   const sec = el.closest('.section');
   const scs = sec ? getComputedStyle(sec) : null;
@@ -76,8 +79,8 @@ function measureBlock(el) {
   // the repeating unit: the container whose visible children are the most numerous and alike
   let units = [el];
   let best = 1;
-  [...el.querySelectorAll('*')].forEach((c) => {
-    const kids = [...c.children].filter(visible);
+  [...el.querySelectorAll('*')].filter(own).forEach((c) => {
+    const kids = [...c.children].filter(visible).filter(own);
     if (kids.length < 2) return;
     const tag = kids[0].tagName;
     if (!kids.every((k) => k.tagName === tag)) return;
@@ -90,7 +93,7 @@ function measureBlock(el) {
   });
   // (a list of cards, slides or items comes first, even with one item: otherwise a single card's
   // halves, image and text, would be taken for units)
-  const cardList = [...el.querySelectorAll('ul, ol')].find((l) => [...l.children]
+  const cardList = [...el.querySelectorAll('ul, ol')].filter(own).find((l) => [...l.children]
     .some((li) => visible(li) && li.querySelector('img, picture, video, iframe')));
   if (cardList) units = [...cardList.children].filter(visible);
   const ub = units.map(box);
@@ -99,8 +102,9 @@ function measureBlock(el) {
     ? ub[1].left - (ub[0].left + ub[0].width) : null;
   const unit = units[0];
   // text leaves: elements with their own visible text
-  const leavesOf = (root) => [...root.querySelectorAll('*')].filter((x) => visible(x)
+  const allLeavesOf = (root) => [...root.querySelectorAll('*')].filter((x) => visible(x)
     && [...x.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1));
+  const leavesOf = (root) => allLeavesOf(root).filter(own);
   const isButton = (a) => {
     if (!a) return false;
     const s = getComputedStyle(a);
@@ -109,7 +113,8 @@ function measureBlock(el) {
   const roleOf = (x) => {
     const a = x.closest('a');
     if (a) return isButton(a) ? 'button' : 'link';
-    if (x.closest('h1, h2, h3, h4, h5, h6')) return 'title';
+    // (an accordion item's label is its title, whether it sits in a heading or only in the toggle)
+    if (x.closest('h1, h2, h3, h4, h5, h6, [aria-expanded]')) return 'title';
     return 'body';
   };
   const styleOf = (x) => {
@@ -146,7 +151,7 @@ function measureBlock(el) {
     }));
   };
   // the image of the unit: the largest visible one, its share, shape and place against the text
-  const imgs = [...unit.querySelectorAll('img, video, iframe')].filter(visible);
+  const imgs = [...unit.querySelectorAll('img, video, iframe')].filter(visible).filter(own);
   const img = imgs.sort((a, c) => box(c).width * box(c).height - box(a).width * box(a).height)[0];
   let image = null;
   if (img) {
@@ -189,7 +194,7 @@ function measureBlock(el) {
       fit: getComputedStyle(img).objectFit,
     };
   }
-  const anchors = [...el.querySelectorAll('a')].filter(visible);
+  const anchors = [...el.querySelectorAll('a')].filter(visible).filter(own);
   const buttons = anchors.filter(isButton).map((a) => {
     const s = getComputedStyle(a);
     return {
@@ -202,7 +207,7 @@ function measureBlock(el) {
     };
   });
   // the content's box: everything visible in the block (the screenshot is cropped to it)
-  const inner = [...el.querySelectorAll('img, picture, video, iframe, svg, a, button, input, select, textarea, table, canvas'), ...leavesOf(el), ...units]
+  const inner = [...el.querySelectorAll('img, picture, video, iframe, svg, a, button, input, select, textarea, table, canvas'), ...allLeavesOf(el), ...units]
     .filter(visible).map(box);
   const content = inner.length ? {
     left: Math.min(...inner.map((x) => x.left)),
@@ -237,9 +242,10 @@ function measureBlock(el) {
     typography: typography(el),
     buttons,
     counts: {
-      units: units.length, images: [...el.querySelectorAll('img, video, iframe')].filter(visible).length, texts: leavesOf(el).length, links: anchors.length, buttons: buttons.length,
+      units: units.length, images: [...el.querySelectorAll('img, video, iframe')].filter(visible).filter(own).length, texts: leavesOf(el).length, links: anchors.length, buttons: buttons.length,
     },
     text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 160),
+    nested: [...el.querySelectorAll('.block')].map((x) => x.dataset.blockName).filter(Boolean),
   };
 }
 
@@ -303,15 +309,34 @@ async function shotOf(m, path) {
   const width = Math.min(c.right - c.left + 16, page.viewportSize().width - x);
   const height = Math.min(c.bottom - c.top + 16, 2400);
   if (width < 4 || height < 4) return false;
-  await page.screenshot({
+  const take = () => page.screenshot({
     path,
     type: 'jpeg',
     quality: 62,
     fullPage: true,
+    timeout: 20000,
     clip: {
       x, y, width, height,
     },
   });
+  // (a full-page screenshot now and then times out on a page with a playing video: then the
+  // block is scrolled to the top of the window and taken from what the window shows)
+  const inWindow = async () => {
+    const vh = page.viewportSize().height;
+    await page.evaluate((top) => window.scrollTo(0, top), y);
+    const scrolled = await page.evaluate(() => window.scrollY);
+    await page.waitForTimeout(300);
+    return page.screenshot({
+      path,
+      type: 'jpeg',
+      quality: 62,
+      timeout: 20000,
+      clip: {
+        x, y: y - scrolled, width, height: Math.min(height, vh - (y - scrolled)),
+      },
+    });
+  };
+  await take().catch(inWindow);
   return true;
 }
 
@@ -329,9 +354,33 @@ async function reveal(h) {
       details.open = true;
       did = true;
     }
+    // (a block in a closed accordion panel)
+    const item = e.parentElement?.closest('.accordion-item');
+    const button = item?.querySelector('[aria-expanded="false"]');
+    if (button && !item.classList.contains('accordion-item-open')) {
+      button.click();
+      did = true;
+    }
     return did;
   });
   if (opened) await page.waitForTimeout(400);
+}
+
+/**
+ * a block with panels of its own (an accordion): which start open is part of its look, and its
+ * panels are opened so what they hold is measured and shown
+ */
+async function openPanels(h) {
+  const panels = await h.evaluate((e) => {
+    const buttons = [...e.querySelectorAll('.accordion-item [aria-expanded]')]
+      .filter((b) => b.closest('.block') === e);
+    if (!buttons.length) return null;
+    const open = buttons.filter((b) => b.getAttribute('aria-expanded') === 'true').length;
+    buttons.filter((b) => b.getAttribute('aria-expanded') === 'false').forEach((b) => b.click());
+    return { count: buttons.length, openAtStart: open };
+  });
+  if (panels) await page.waitForTimeout(500);
+  return panels;
 }
 
 /**
@@ -344,6 +393,17 @@ async function showImages(h) {
     e.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
     e.scrollIntoView({ block: 'center' });
   });
+  // (a block that loads when it comes into view, like a Marketo form, may still be empty: it gets
+  // up to 8 s to appear; a block that is hidden on purpose doesn't wait)
+  await h.evaluate((e) => new Promise((resolve) => {
+    const end = Date.now() + 8000;
+    const check = () => {
+      const shown = !e.checkVisibility() || e.getBoundingClientRect().height > 1;
+      if (shown || Date.now() > end) resolve();
+      else setTimeout(check, 200);
+    };
+    check();
+  }));
   await h.evaluate((e) => new Promise((resolve) => {
     const end = Date.now() + 10000;
     const check = () => {
@@ -377,10 +437,12 @@ async function desktop(path, url, result) {
     if (!name || SKIP.includes(name)) return;
     const n = result.blocks.length;
     await reveal(h);
+    const panels = await openPanels(h);
     const images = await showImages(h);
     const m = await h.evaluate(measureBlock);
     m.n = n;
     m.imagesShown = images;
+    if (panels) m.panels = panels;
     const shot = join('shots', m.type, `${slug(path)}__${n}-d.jpg`);
     mkdirSync(join(out, 'shots', m.type), { recursive: true });
     if (m.box.width > 1 && m.box.height > 1) {
@@ -405,6 +467,7 @@ async function phone(path, url, result) {
     const m = result.blocks[k];
     if (!m || m.type !== keptNames[k]) return;
     await reveal(h);
+    await openPanels(h);
     const images = await showImages(h);
     const p = await h.evaluate(measureBlock);
     m.phone = {
