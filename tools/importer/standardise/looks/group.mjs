@@ -101,6 +101,13 @@ const exactTypeOf = (b) => Object.fromEntries(['title', 'body', 'link', 'button'
     .map((x) => typeOf(x, 'exact')).sort()
     .join(' + ')]));
 
+const PLAYERS = { video: 'video player (Dynamic Media)', iframe: 'embedded player (YouTube)' };
+const ratio = (a) => {
+  if (!a) return '';
+  if (a >= 1.7 && a <= 1.85) return '16:9';
+  return a > 1.85 ? 'wider than 16:9' : 'taller than 16:9';
+};
+
 /** the parts of an instance's look (each part a short text; together the fingerprint) */
 function partsOf(b) {
   const u = b.units;
@@ -108,7 +115,9 @@ function partsOf(b) {
   const unitW = u.widthShare * b.box.width;
   const g = u.gap ?? u.gapCss ?? 0;
   const slots = Math.max(1, Math.round((b.box.width + g) / (Math.max(unitW, 1) + g)));
-  const roles = ['title', 'body', 'link', 'button'].filter((r) => b.typography[r]);
+  // (a video player's own time display, "0:00 / 0:00", is the player's, not authored text)
+  const playerOnly = b.image?.tag === 'video' && /^(\d+:\d+\s*\/\s*\d+:\d+\s*)?$/.test(b.text || '');
+  const roles = playerOnly ? [] : ['title', 'body', 'link', 'button'].filter((r) => b.typography[r]);
   const styles = Object.fromEntries(roles.map((r) => {
     // (the order of a role's two main styles doesn't matter)
     const st = b.typography[r].styles.filter((x) => x.share >= 0.2).slice(0, 2);
@@ -126,9 +135,11 @@ function partsOf(b) {
     // only a design that crops images to a shape (cover / contain) makes the shape part of the
     // look)
     image: b.image ? [
-      b.image.place,
+      // (a video or an embed: the kind of player and its proportions; an image: where it sits)
+      ...(PLAYERS[b.image.tag] ? [PLAYERS[b.image.tag], ratio(b.image.aspect)] : []),
+      PLAYERS[b.image.tag] ? '' : b.image.place,
       `${share(b.image.share)} width`,
-      ['cover', 'contain'].includes(b.image.fit) ? `${shape(b.image.aspect)} (cropped)` : '',
+      !PLAYERS[b.image.tag] && ['cover', 'contain'].includes(b.image.fit) ? `${shape(b.image.aspect)} (cropped)` : '',
     ]
       .filter(Boolean).join(', ') : 'no image',
     ...Object.fromEntries(roles.map((r) => [`type ${r}`, styles[r]])),
