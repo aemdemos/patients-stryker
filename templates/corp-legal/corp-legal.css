@@ -269,3 +269,7 @@ body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first
 body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul > li {
   margin-bottom: var(--space-block);
 }
+
+body.corp.corp-legal main > .section.disclaimer:has(+ .section:empty + .last-modified-section) {
+  margin-bottom: var(--space-block);
+}
