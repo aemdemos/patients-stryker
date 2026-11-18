@@ -255,3 +255,15 @@ body.corp-legal main .columns.no-stack > div > div > p:last-child {
   font-size: var(--body-font-size-l);
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
+
+body.corp-legal main > .section:has(+ .section > .default-content-wrapper:first-child > p:first-child):has(> .default-content-wrapper:last-child > :is(p, ul, ol):last-child) {
+  margin-bottom: var(--space-block);
+}
+
+body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) li > p {
+  margin-bottom: var(--space-block);
+}
+
+body.corp-legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul > li {
+  margin-bottom: var(--space-block);
+}
