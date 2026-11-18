@@ -18,6 +18,7 @@ import {
 
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
 import decorateSpanTags from './span-tags.js';
+import decorateSpanMarkers from './span-markers.js';
 import { applySectionBackgrounds } from './utils.js';
 
 /*
@@ -598,6 +599,9 @@ export function decorateMain(main) {
   decorateDMAssets(main);
   liftDefaultContentDMMedia(main);
   corp?.decorateMain(main);
+  // :start-…: text :end: markers → styled spans; before decorateIcons, which would
+  // otherwise request /icons/start-….svg and /icons/end.svg for them
+  decorateSpanMarkers(main);
   decorateIcons(main);
   // [[class]text] → span, before anything reads the text (tab labels, buttons, aria-labels)
   decorateSpanTags(main);
