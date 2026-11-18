@@ -123,11 +123,16 @@ stripe, phone behaviour) without remembering option names.
 
 ![Before and after: the three banners that move most](img/before-after-positions.jpg)
 
-- **Top:** the box was unusually wide; in the right column it wraps onto one more line.
+- **Top:** the box was unusually wide; in the right column it wraps onto one more line. A
+  headline that would run past the bottom of the banner now moves up so it always stays
+  inside the banner.
 - **Middle:** wide text now sits in the left column, on two lines.
-- **Bottom:** the old extra margin pushed the headline off the bottom; it now fits.
+- **Bottom:** the old extra margin pushed the headline off the bottom; it now fits. The
+  standard left column is a little wider than this banner's, so the text comes closer to
+  the photo.
 
-These are the cases to review. If wider columns are wanted, one more column choice can be added.
+These are the cases to review. If wider or narrower columns are wanted, one more column
+choice can be added.
 
 ---
 

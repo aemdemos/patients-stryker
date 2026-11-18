@@ -471,15 +471,29 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
     display: none;
   }
 
-  /* the headline over the image: top-N / left-N / right-N percent of the slide */
+  /* the headline over the image, in its column (left / right inset) and starting the height's
+     distance down. The distance is a shrinkable spacer, so a headline too tall for the space
+     left below it moves up and stays inside the slide instead of running over the edge. */
   .hero-corp.image-slide > div:last-child,
   .hero-corp.image-slide:has(.hero-corp-image-mobile):not(.mobile-below) > div:last-child {
     position: absolute;
     grid-area: 1 / 1 / 2 / 2; /* row 1 only (an absolute item's auto end is the block edge) */
-    inset: var(--hero-box-top) auto auto 0;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
     width: calc(100% - var(--hero-box-left) - var(--hero-box-right));
     margin-left: var(--hero-box-left);
     padding: 0;
+  }
+
+  .hero-corp.image-slide > div:last-child::before {
+    content: "";
+    flex: 0 1 var(--hero-box-top);
+    min-height: 0;
+  }
+
+  .hero-corp.image-slide > div:last-child > * {
+    flex: none;
   }
 
   .hero-corp.image-slide .hero-corp-headline.box-white {
