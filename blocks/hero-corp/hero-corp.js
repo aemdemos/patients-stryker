@@ -34,6 +34,21 @@ function isVideoCell(cell) {
 }
 
 /**
+ * @param {Element} cell an authored cell
+ * @returns {boolean} true when the cell holds only pictures: no text and no heading outside
+ *   them. The delivered page drops the <p> around a lone image, but an editor (Experience
+ *   Workspace, the DA preview) keeps it, so a paragraph alone does not make a text cell.
+ */
+function isImageCell(cell) {
+  if (!cell.querySelector('picture') || cell.querySelector('h1, h2, h3, h4, h5, h6')) return false;
+  const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    if (walker.currentNode.textContent.trim() && !walker.currentNode.parentElement.closest('picture')) return false;
+  }
+  return true;
+}
+
+/**
  * Background video: muted autoplay loop without controls (dm-support adds controls and a
  * play overlay to every DM video; they are removed here).
  * @param {Element} wrapper the rendered video (or its .dm-video-wrapper)
@@ -82,7 +97,7 @@ function setupRows(block) {
     const pic = cell.querySelector('picture');
     if (!video && isVideoCell(cell)) {
       video = cell.querySelector('.dm-video-wrapper') || cell.querySelector('video');
-    } else if (pic && !cell.querySelector('h1, h2, h3, p')) {
+    } else if (pic && isImageCell(cell)) {
       if (!desktopPic) desktopPic = pic;
       else if (!mobilePic) mobilePic = pic;
     } else if (cell.querySelector('h1, h2, h3, p')) {
