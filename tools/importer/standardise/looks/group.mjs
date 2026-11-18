@@ -21,7 +21,8 @@
  * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
  * and image form a layout family (the inspection page can show the groups by family).
  * usage: node tools/importer/standardise/looks/group.mjs <block type> [--sizes exact|bands]
- *   [--name <page name>] [--extra <groups file>]
+ *   [--name <page name>] [--extra <groups file>] [--decisions <file>]
+ *   (decisions: merges decided on inspection, default tools/looks/decisions/<type>.json)
  *   [--in /tmp/run-outputs/looks-v2]
  *   [--out tools/looks/data]
  */
@@ -309,11 +310,47 @@ exact.forEach((list) => {
     list.forEach((it) => home.list.push({ ...it, missing, extra }));
   } else merged.push({ parts, list: [...list] });
 });
+// merges decided while inspecting the looks (tools/looks/decisions/<type>.json): every group
+// whose instances all have the rule's authored classes and whose look has the rule's parts joins
+// the largest of them; the instances that move keep what differs (and what they lack or add)
+const DECISIONS = opt('--decisions', join(OUT, '..', 'decisions', `${type}.json`));
+let decisions = { merge: [] };
+try {
+  decisions = JSON.parse(readFileSync(DECISIONS, 'utf8'));
+} catch (e) {
+  decisions = { merge: [] };
+}
+(decisions.merge || []).forEach((rule) => {
+  const fits = (g) => g.list.every((x) => x.classes.join(' ') === rule.match.classes)
+    && Object.entries(rule.match.parts || {}).every(([k, v]) => g.parts[k] === v);
+  const chosen = merged.filter(fits).sort((a, c) => c.list.length - a.list.length);
+  if (chosen.length < 2) return;
+  const [home, ...rest] = chosen;
+  rest.forEach((g) => {
+    g.list.forEach((it) => {
+      const lacks = lacking(home.parts, it.parts);
+      const differs = Object.keys(home.parts)
+        .filter((k) => k in it.parts && it.parts[k] !== home.parts[k] && !lacks.includes(k))
+        .map((k) => [k, it.parts[k]]);
+      home.list.push({
+        ...it,
+        missing: [...new Set([...(it.missing || []), ...lacking(home.parts, it.parts)])],
+        extra: [...new Set([...(it.extra || []), ...lacking(it.parts, home.parts)])],
+        differs,
+        decision: rule.name,
+      });
+    });
+    merged.splice(merged.indexOf(g), 1);
+  });
+  home.decision = rule;
+});
 const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map((list, i) => ({
   id: i + 1,
   instances: list.length,
   pages: new Set(list.map((x) => x.page)).size,
-  parts: (list.find((x) => !x.missing?.length) || list[0]).parts,
+  parts: (list.find((x) => !x.missing?.length && !x.differs?.length) || list[0]).parts,
+  // (a merge decided by the user: its name and reason)
+  decision: (merged.find((g) => g.list === list)?.decision) || undefined,
   classes: Object.entries(list.reduce((m, x) => {
     const c = x.classes.join(' ') || '(none)';
     return { ...m, [c]: (m[c] || 0) + 1 };

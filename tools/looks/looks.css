@@ -223,3 +223,7 @@ body {
 .lk-source:hover {
   text-decoration: underline;
 }
+
+.lk-decision {
+  color: #1a7f37;
+}
