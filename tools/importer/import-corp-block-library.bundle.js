@@ -442,7 +442,7 @@ var CustomImportScript = (() => {
       href: link ? link.getAttribute("href") : null
     };
   }
-  function slideLineNodes(line, document) {
+  function slideLineNodes(line, document, roles = { title: "", subline: "" }, heading = false) {
     const runs = [];
     const walker = line.ownerDocument.createTreeWalker(line, 5);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
@@ -472,20 +472,49 @@ var CustomImportScript = (() => {
         b.append(...nodes);
         return b;
       };
-      const text1 = document.createTextNode(core);
+      let colour = run.tags;
+      if (colour && colour === (run.bold ? roles.title : roles.subline)) colour = "";
+      let text1 = document.createTextNode(core);
+      if (colour === "color-gold" && heading) {
+        const em = document.createElement("em");
+        em.append(text1);
+        text1 = em;
+        colour = "";
+      }
       const inner = run.bold && !run.boldOuter ? bold(text1) : text1;
-      let parts = run.tags ? [document.createTextNode(`[[${run.tags}]${lead}`), inner, document.createTextNode(`${tail}]`)] : [inner];
+      const marker = colour.replace(/^color-/, "");
+      let parts = colour ? [document.createTextNode(`:start-${marker}:${lead}`), inner, document.createTextNode(`${tail}:end:`)] : [inner];
       if (run.bold && run.boldOuter) parts = [bold(...parts)];
-      if (lead && !run.tags) out.push(document.createTextNode(lead));
+      if (lead && !colour) out.push(document.createTextNode(lead));
       if (run.href) {
         const a = document.createElement("a");
         a.href = run.href;
         a.append(...parts);
         out.push(a);
       } else out.push(...parts);
-      if (tail && !run.tags) out.push(document.createTextNode(tail));
+      if (tail && !colour) out.push(document.createTextNode(tail));
     });
     return out;
+  }
+  function slideRoleColours(box) {
+    const tally = { title: {}, subline: {} };
+    box.querySelectorAll("span.line").forEach((line) => {
+      const walker = line.ownerDocument.createTreeWalker(line, 4);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const chars = n.textContent.trim().length;
+        if (chars) {
+          const style = slideRunStyle(n, line);
+          const t = tally[style.bold ? "title" : "subline"];
+          t[style.tags || ""] = (t[style.tags || ""] || 0) + chars;
+        }
+      }
+    });
+    const main = (t) => {
+      const total = Object.values(t).reduce((s, n) => s + n, 0);
+      const [colour, chars] = Object.entries(t).sort((a, b) => b[1] - a[1])[0] || ["", 0];
+      return colour && chars * 2 >= total ? colour : "";
+    };
+    return { title: main(tally.title), subline: main(tally.subline) };
   }
   var SLIDE_TITLE_SIZES = [28, 35, 42, 49, 56, 70];
   var SLIDE_SUBLINE_SIZES = [21, 28, 35, 42, 49, 56, 70];
@@ -516,11 +545,11 @@ var CustomImportScript = (() => {
     if (bg) opts.push(SLIDE_BOXES[bg]);
     return opts;
   }
-  function slideBoxLines(box, document) {
+  function slideBoxLines(box, document, roles) {
     return [...box.querySelectorAll("span.line")].map((line) => {
       const heading = line.querySelector("h1, h2, h3");
       const el = document.createElement(heading ? heading.tagName.toLowerCase() : "p");
-      el.append(...slideLineNodes(line, document));
+      el.append(...slideLineNodes(line, document, roles, !!heading));
       return el;
     }).filter((el) => el.textContent.trim());
   }
@@ -549,10 +578,13 @@ var CustomImportScript = (() => {
     const box = overlay && overlay.querySelector(".c-largeheadline > div.largeheadline");
     const ctas = overlay ? [...overlay.querySelectorAll("a.btn")] : [];
     const first = cell();
-    const lines = box ? slideBoxLines(box, document) : [];
+    const roles = box ? slideRoleColours(box) : { title: "", subline: "" };
+    const lines = box ? slideBoxLines(box, document, roles) : [];
     if (lines.length) {
       first.append(...lines);
       variants.push(...slideBoxOptions(box));
+      if (roles.title) variants.push(`title-${roles.title.replace(/^color-/, "")}`);
+      if (roles.subline) variants.push(`subline-${roles.subline.replace(/^color-/, "")}`);
       styles.push(...slideTextSizes(box));
     }
     ctas.forEach((a) => {

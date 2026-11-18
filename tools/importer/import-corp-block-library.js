@@ -376,11 +376,13 @@ function slideRunStyle(textNode, line) {
 }
 
 /**
- * A live slide line → its nodes: runs with the same look are merged and written as
- * `[[color-x]text]`, bold (Futura) runs in <b>, links kept; <br>s kept. Text sizes are not
- * authored in the text: they become section styles (slideTextSizes).
+ * A live slide line → its nodes: runs with the same look are merged; bold (Futura) runs in
+ * <b>, links kept; <br>s kept. A run's colour goes in the first layer that carries it: the
+ * headline's title / subline colour (block option, `roles`), gold in a heading = italic, any
+ * other colour = a `:start-<colour>:` … `:end:` text marker. Text sizes are not authored in
+ * the text: they become section styles (slideTextSizes).
  */
-function slideLineNodes(line, document) {
+function slideLineNodes(line, document, roles = { title: '', subline: '' }, heading = false) {
   const runs = [];
   const walker = line.ownerDocument.createTreeWalker(line, 5); // SHOW_ELEMENT | SHOW_TEXT
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
@@ -414,22 +416,63 @@ function slideLineNodes(line, document) {
       b.append(...nodes);
       return b;
     };
-    const text1 = document.createTextNode(core);
+    // the run's colour, in the first layer that can carry it (docs/standardisation): the
+    // headline's title / subline colour (a block option, nothing in the text); gold in a
+    // heading = italic (authoring convention); any other colour = a text marker
+    let colour = run.tags;
+    if (colour && colour === (run.bold ? roles.title : roles.subline)) colour = '';
+    let text1 = document.createTextNode(core);
+    if (colour === 'color-gold' && heading) {
+      const em = document.createElement('em');
+      em.append(text1);
+      text1 = em;
+      colour = '';
+    }
     const inner = run.bold && !run.boldOuter ? bold(text1) : text1;
-    let parts = run.tags
-      ? [document.createTextNode(`[[${run.tags}]${lead}`), inner, document.createTextNode(`${tail}]`)]
+    const marker = colour.replace(/^color-/, '');
+    let parts = colour
+      ? [document.createTextNode(`:start-${marker}:${lead}`), inner, document.createTextNode(`${tail}:end:`)]
       : [inner];
     if (run.bold && run.boldOuter) parts = [bold(...parts)];
-    if (lead && !run.tags) out.push(document.createTextNode(lead));
+    if (lead && !colour) out.push(document.createTextNode(lead));
     if (run.href) {
       const a = document.createElement('a');
       a.href = run.href;
       a.append(...parts);
       out.push(a);
     } else out.push(...parts);
-    if (tail && !run.tags) out.push(document.createTextNode(tail));
+    if (tail && !colour) out.push(document.createTextNode(tail));
   });
   return out;
+}
+
+/**
+ * The colour shared by all title runs (bold) and by all subline runs (plain) of a live
+ * headline box, when each role has exactly one: it becomes the block's title-<colour> /
+ * subline-<colour> option, so those runs need no colour in the text.
+ * @returns {{title: string, subline: string}} the colour tags ('' = none shared)
+ */
+function slideRoleColours(box) {
+  // characters per colour, per role; the colour of most of a role's text (at least half)
+  // becomes the option, the other runs keep their own colour (a marker)
+  const tally = { title: {}, subline: {} };
+  box.querySelectorAll('span.line').forEach((line) => {
+    const walker = line.ownerDocument.createTreeWalker(line, 4); // SHOW_TEXT
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      const chars = n.textContent.trim().length;
+      if (chars) {
+        const style = slideRunStyle(n, line);
+        const t = tally[style.bold ? 'title' : 'subline'];
+        t[style.tags || ''] = (t[style.tags || ''] || 0) + chars;
+      }
+    }
+  });
+  const main = (t) => {
+    const total = Object.values(t).reduce((s, n) => s + n, 0);
+    const [colour, chars] = Object.entries(t).sort((a, b) => b[1] - a[1])[0] || ['', 0];
+    return colour && chars * 2 >= total ? colour : '';
+  };
+  return { title: main(tally.title), subline: main(tally.subline) };
 }
 
 // title-N / subline-N section styles (N = px at 1440 = the fontsize-Nvw step x 14) and defaults
@@ -475,11 +518,11 @@ function slideBoxOptions(box) {
 }
 
 /** a live headline box → its lines (a line holding a heading keeps that heading level) */
-function slideBoxLines(box, document) {
+function slideBoxLines(box, document, roles) {
   return [...box.querySelectorAll('span.line')].map((line) => {
     const heading = line.querySelector('h1, h2, h3');
     const el = document.createElement(heading ? heading.tagName.toLowerCase() : 'p');
-    el.append(...slideLineNodes(line, document));
+    el.append(...slideLineNodes(line, document, roles, !!heading));
     return el;
   }).filter((el) => el.textContent.trim());
 }
@@ -490,7 +533,8 @@ function slideBoxLines(box, document) {
  * mobile fragment, then the headline: one cell with the box's lines (+ CTA buttons as bold
  * links). Block options from the slide: box colour, the named position nearest to the
  * overlay's inline one (text-left / -right / -wide + text-top / -upper / -middle / -lower,
- * slide-position.js), mobile-below (mobile_Bottom with a mobile image), stripe-gold /
+ * slide-position.js), title-<colour> / subline-<colour> (a colour shared by all title / subline
+ * runs), mobile-below (mobile_Bottom with a mobile image), stripe-gold /
  * stripe-gradient (the empty full-bleed panel under the carousel). A btn-blue CTA asks for
  * the btn-blue section style.
  */
@@ -521,10 +565,14 @@ function extractImageSlide(doc, document, v = {}) {
   const box = overlay && overlay.querySelector('.c-largeheadline > div.largeheadline');
   const ctas = overlay ? [...overlay.querySelectorAll('a.btn')] : [];
   const first = cell();
-  const lines = box ? slideBoxLines(box, document) : [];
+  // a colour shared by every title (bold) or subline (plain) run is a block option
+  const roles = box ? slideRoleColours(box) : { title: '', subline: '' };
+  const lines = box ? slideBoxLines(box, document, roles) : [];
   if (lines.length) {
     first.append(...lines);
     variants.push(...slideBoxOptions(box));
+    if (roles.title) variants.push(`title-${roles.title.replace(/^color-/, '')}`);
+    if (roles.subline) variants.push(`subline-${roles.subline.replace(/^color-/, '')}`);
     styles.push(...slideTextSizes(box));
   }
   ctas.forEach((a) => {

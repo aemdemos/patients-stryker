@@ -18,7 +18,8 @@
  * the standard inset); headline position, named: text-left / text-right / text-wide (the column) and
  * text-top / text-upper / text-middle / text-lower (how far down it starts) — the three
  * columns and four heights stryker.com's 478 slides use (tools/importer/slide-position.js);
- * mobile-below
+ * title-gold / -white / -light-gray / -blue and subline-… (the colour of all title / subline
+ * runs, so the text needs no colour codes); mobile-below
  * (phones: mobile image, then the headline); mobile-text-black; stripe-gold /
  * stripe-gradient (34px band under the slide). Phones hide the desktop image or video; the
  * headline sits over the mobile image, or alone when there is none.
@@ -384,6 +385,26 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   border-image: var(--corp-image-slide-stripe-gradient) 1;
 }
 
+/* title-<colour> / subline-<colour>: the colour of the title runs (bold) and of the subline runs
+   (plain) of the whole headline — so banner lines need no colour codes in their text. On phones
+   mobile-text-black still wins (black text), as for colour codes; from 600px they apply. */
+.hero-corp.image-slide.title-gold { --corp-title-colour: var(--color-accent); }
+.hero-corp.image-slide.title-white { --corp-title-colour: var(--color-white); }
+.hero-corp.image-slide.title-light-gray { --corp-title-colour: var(--color-surface); }
+.hero-corp.image-slide.title-blue { --corp-title-colour: var(--color-navy-bright); }
+.hero-corp.image-slide.subline-gold { --corp-subline-colour: var(--color-accent); }
+.hero-corp.image-slide.subline-white { --corp-subline-colour: var(--color-white); }
+.hero-corp.image-slide.subline-light-gray { --corp-subline-colour: var(--color-surface); }
+.hero-corp.image-slide.subline-blue { --corp-subline-colour: var(--color-navy-bright); }
+
+.hero-corp.image-slide:is(.title-gold, .title-white, .title-light-gray, .title-blue):not(.mobile-text-black) .hero-corp-title:not(:is(.text-marker, [class*="color-"], h1 em, h2 em, h3 em, h1 i, h2 i, h3 i) *) {
+  color: var(--corp-title-colour);
+}
+
+.hero-corp.image-slide:is(.subline-gold, .subline-white, .subline-light-gray, .subline-blue):not(.mobile-text-black) .hero-corp-subline:not(:is(.text-marker, [class*="color-"], h1 em, h2 em, h3 em, h1 i, h2 i, h3 i) *) {
+  color: var(--corp-subline-colour);
+}
+
 /* the section styles title-N / subline-N set the two text sizes (N = px at 1440) */
 .section.title-28 .hero-corp.image-slide { --corp-image-slide-title-step: 2; }
 .section.title-35 .hero-corp.image-slide { --corp-image-slide-title-step: 2.5; }
@@ -514,6 +535,14 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
     --link-color: var(--span-color);
 
     color: var(--span-color);
+  }
+
+  .hero-corp.image-slide.mobile-text-black:is(.title-gold, .title-white, .title-light-gray, .title-blue) .hero-corp-headline .hero-corp-title:not(:is(.text-marker, [class*="color-"], h1 em, h2 em, h3 em, h1 i, h2 i, h3 i) *) {
+    color: var(--corp-title-colour);
+  }
+
+  .hero-corp.image-slide.mobile-text-black:is(.subline-gold, .subline-white, .subline-light-gray, .subline-blue) .hero-corp-headline .hero-corp-subline:not(:is(.text-marker, [class*="color-"], h1 em, h2 em, h3 em, h1 i, h2 i, h3 i) *) {
+    color: var(--corp-subline-colour);
   }
 
   .hero-corp.image-slide .hero-corp-headline p,

@@ -105,8 +105,47 @@ stripe, phone behaviour) without remembering option names.
 | Headline column | Left, Right, Wide | Left column (about 45% wide), right column (about 40%), or almost full width |
 | Headline height | Top, Upper, Middle, Lower | How far down the headline starts (5%, 18%, 30%, 45%) |
 | Stripe under the banner | None, Gold, Gold gradient | The coloured band under the image |
+| Title colour | Gold, White, Light grey, Blue | The colour of the bold headline lines |
+| Subline colour | Gold, White, Light grey, Blue | The colour of the plain headline lines |
 | On phones | Text below the image, Black text | How the banner behaves on a phone |
 | Tagline band colour | Gold, Purple gradient | The title band at the top of a page |
+
+---
+
+## 5b. Where each style goes: three layers, so we never run out of options
+
+Authors on stryker.com styled **50,437 runs of text** (a colour, font or size on some words or
+a whole line). We measured them all:
+
+- **73% style a whole line**, not a few words.
+- The most common word-level looks are **Futura bold** (always used with bold) and **gold**.
+- **Italic is used for real italics** (journal names, quotes, "2-minute read") on 153 pages, so
+  it cannot simply mean "gold" everywhere.
+
+So every style goes in the first of three layers that can carry it:
+
+| Layer | For | Examples | Authors see codes while editing? |
+|---|---|---|---|
+| **1. Formatting** | The few most common word looks, the same on every page of the site | **Bold** = Futura bold · **Heading + italic** = gold · **Bold + italic** = gold bold | No: it is normal bold / italic |
+| **2. Settings of the line's container** | Whole-line looks | Banner **title / subline colour** · paragraph size or serif (section style) | No: chosen in a panel |
+| **3. Text style markers** | The rare word looks that are left | A blue word in a paragraph, one larger word | Only while that field is being edited |
+
+**The rules are site-wide**, not block by block: italic in any heading is gold, italic in a
+paragraph is a real italic, on every page.
+
+**Why we never run out:** layer 1 deliberately has only two or three meanings, so formatting
+stays predictable. Layer 2 grows with blocks and sections, not with formatting combinations.
+Layer 3 has no limit: any new look becomes one more choice in the Text style panel.
+
+**Effect on the banner samples:** of 14 imported banners, **12 have no codes at all**; only two
+words (a gold "Project C.U.R.E." in a white title, a light grey line in a gold one) keep a
+Text style marker.
+
+| Gold text across the site (not counting banners) | Uses | Pages | Layer |
+|---|---|---|---|
+| In headings | 950 | 419 | 1: heading + italic |
+| Whole banner lines | (in banners) | | 2: title / subline colour |
+| Words inside body paragraphs | 1,726 | 388 | 3: Text style panel |
 
 ---
 
@@ -179,6 +218,8 @@ Pages already on the new site keep rendering as they are; new and re-imported pa
 1. **Approve the banner choices** (section 5) and the outliers (section 6).
 2. **Healthcare-professional notice:** use the page-top band everywhere (section 7)?
 3. **Approve the font-size and spacing scale** (section 8).
+4. **Confirm the formatting rule** "heading + italic = gold" (section 5b), to be added to the
+   authors' formatting conventions page.
 
 ---
 

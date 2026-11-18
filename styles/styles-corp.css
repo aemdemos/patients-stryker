@@ -173,6 +173,13 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
+/* authoring convention, site-wide: italic inside a heading is gold, upright (stryker.com's gold
+   heading words); italic in paragraphs stays a real italic (citations, quotes) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6) :is(em, i) {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
 /* [[color-light-gray]…]: light grey text (#edeeec), next to the [[color-…]] tags in styles.css */
 :where(body.corp) span.color-light-gray,
 :where(body.corp) span.color-light-gray :is(strong, b, em, i, a:any-link) {

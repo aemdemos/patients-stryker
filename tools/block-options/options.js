@@ -63,6 +63,30 @@ export const BLOCK_OPTIONS = {
         replaces: /^top-\d+(-\d+)?$/,
       },
       {
+        id: 'title-colour',
+        label: 'Title colour (bold lines)',
+        when: 'image-slide',
+        options: [
+          ['', 'As set in the text'],
+          ['title-gold', 'Gold'],
+          ['title-white', 'White'],
+          ['title-light-gray', 'Light grey'],
+          ['title-blue', 'Blue'],
+        ],
+      },
+      {
+        id: 'subline-colour',
+        label: 'Subline colour (plain lines)',
+        when: 'image-slide',
+        options: [
+          ['', 'As set in the text'],
+          ['subline-gold', 'Gold'],
+          ['subline-white', 'White'],
+          ['subline-light-gray', 'Light grey'],
+          ['subline-blue', 'Blue'],
+        ],
+      },
+      {
         id: 'stripe',
         label: 'Stripe under the slide',
         when: 'image-slide',
