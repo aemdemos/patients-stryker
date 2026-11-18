@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="/tools/text-markers/text-markers.css">
     <!-- the SDK listens for the editor's hand-shake from the start (it is sent once, on load) -->
     <script src="https://da.live/nx/utils/sdk.js" type="module"></script>
-    <script src="/tools/text-markers/text-markers.js" type="module"></script>
+    <!-- loaded fresh each time the panel opens (browsers keep the site's code for 2 hours),
+         so authors get panel fixes straight away -->
+    <script type="module">
+      import(`/tools/text-markers/text-markers.js?v=${Date.now()}`);
+    </script>
   </head>
   <body>
     <div class="tm"></div>

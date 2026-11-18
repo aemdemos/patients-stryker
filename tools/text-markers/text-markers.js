@@ -81,6 +81,7 @@ let codeEl;
 let previewFrame;
 let applyButtons = [];
 let endButton;
+let previewNote;
 
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
@@ -94,11 +95,44 @@ function previewDocument() {
     <link rel="stylesheet" href="${origin}/styles/styles.css">
     <link rel="stylesheet" href="${origin}/styles/fonts.css">
     <link rel="stylesheet" href="${origin}/styles/styles-corp.css">
-    <style>body{margin:0;padding:12px;background:#fff}main{padding:0}p{margin:0}
-    .tm-dark{background:#545857;padding:12px;margin-top:8px}</style>
-    </head><body class="corp appear"><main><p id="line">Preview: <span id="sample">Your styled text</span> next to plain text.</p>
-    <div class="tm-dark"><p id="line-dark">On a dark background: <span id="sample-dark">Your styled text</span></p></div>
+    <style>body{margin:0;padding:12px;background:#fff}main{padding:0}
+    #stage > *, #stage-dark > *{margin:0}
+    .tm-dark{background:#1f1f1f;padding:12px;margin-top:8px;color:#fff}</style>
+    </head><body class="corp appear"><main><div id="stage"></div>
+    <div class="tm-dark"><div id="stage-dark"></div></div>
     </main></body></html>`;
+}
+
+// the line being previewed: the author's selection in its paragraph / heading, or a sample
+let previewLine = null;
+let lastSelection = '';
+
+/**
+ * Renders the preview: the selected words (or a sample) styled with the current choice,
+ * inside the same kind of line (paragraph or heading level) they sit in on the page.
+ */
+function renderPreview(classes, spacing) {
+  const doc = previewFrame.contentDocument;
+  ['stage', 'stage-dark'].forEach((id) => {
+    const stage = doc.getElementById(id);
+    if (!stage) return;
+    const tag = previewLine ? previewLine.tag.toLowerCase() : 'p';
+    const line = doc.createElement(tag);
+    const span = doc.createElement('span');
+    span.className = ['text-marker', ...classes].join(' ');
+    spacing.forEach(([prop, value]) => { span.style[prop] = value; });
+    if (previewLine) {
+      // the selection's own inline markup (bold, italic, links), parsed inertly and imported
+      const parsed = new DOMParser().parseFromString(`<p>${previewLine.html}</p>`, 'text/html');
+      const nodes = [...parsed.body.firstElementChild.childNodes];
+      span.append(...nodes.map((n) => doc.importNode(n, true)));
+      line.append(span);
+    } else {
+      line.append('Preview: ', span, ' next to plain text.');
+      span.textContent = 'Your styled text';
+    }
+    stage.replaceChildren(line);
+  });
 }
 
 function updatePreview() {
@@ -106,15 +140,16 @@ function updatePreview() {
   codeEl.textContent = marker ? `${marker}Your text${END_MARKER}` : 'Pick a style below';
   applyButtons.forEach((b) => { b.disabled = !marker || !sdk; });
   if (endButton) endButton.disabled = !sdk;
-  const doc = previewFrame.contentDocument;
-  if (!doc || !doc.getElementById('sample')) return;
+  if (!previewFrame.contentDocument?.getElementById('stage')) return;
   const { classes, spacing } = parseMarker(markerWords().join('-'));
-  ['sample', 'sample-dark'].forEach((id) => {
-    const span = doc.getElementById(id);
-    span.className = ['text-marker', ...classes].join(' ');
-    span.removeAttribute('style');
-    spacing.forEach(([prop, value]) => { span.style[prop] = value; });
-  });
+  renderPreview(classes, spacing);
+  // the frame grows with the previewed line (a large heading wraps onto several lines)
+  const main = previewFrame.contentDocument.querySelector('main');
+  const height = Math.ceil(main.getBoundingClientRect().bottom) + 12;
+  previewFrame.style.height = `${Math.min(Math.max(height, 80), 360)}px`;
+  previewNote.textContent = previewLine
+    ? `Previewing your selection (${previewLine.tag === 'P' ? 'paragraph' : `heading ${previewLine.tag.slice(1)}`}).`
+    : 'Select words in the document to preview them here.';
 }
 
 /** colour swatches take their colour from the site's own color-* classes */
@@ -168,19 +203,37 @@ function spacingGroup(title, kind) {
   return el('fieldset', { class: 'tm-group' }, el('legend', {}, title), el('div', { class: 'tm-row' }, sideSelect, stepSelect));
 }
 
+// containers the editor wraps a selection in (a selection inside a block comes back inside
+// its table, row and cell) and the lines that hold text
+const WRAPPERS = /^(TABLE|THEAD|TBODY|TR|TD|TH|DIV|UL|OL|BLOCKQUOTE)$/;
+const LINES = /^(P|H[1-6]|LI)$/;
+
 /**
- * The selected text's HTML without a single wrapping paragraph / heading; null when the
+ * The line a selection sits in: its tag (P, H1 … H6, LI) and the selected inline HTML,
+ * found below the table / cell / list wrappers the editor returns around it. Null when the
  * selection spans several lines (markers style part of one line).
  * @param {string} html The selection as the editor returns it
- * @returns {string|null} The inline HTML to wrap
+ * @returns {{tag: string, html: string}|null} The line
  */
-function unwrapSelection(html) {
+function readLine(html) {
   // parsed in an inert document: nothing is rendered or run
   const { body } = new DOMParser().parseFromString(html.trim(), 'text/html');
-  const blocks = [...body.children].filter((c) => /^(P|H[1-6]|LI|UL|OL|DIV|TABLE)$/.test(c.tagName));
-  if (blocks.length > 1) return null;
-  if (blocks.length === 1 && body.children.length === 1) return blocks[0].innerHTML;
-  return body.innerHTML;
+  let node = body;
+  for (;;) {
+    const elements = [...node.children];
+    const loose = [...node.childNodes]
+      .some((c) => c.nodeType === Node.TEXT_NODE && c.textContent.trim());
+    if (elements.length === 1 && !loose && WRAPPERS.test(elements[0].tagName)) {
+      [node] = elements;
+    } else break;
+  }
+  const lines = [...node.children].filter((c) => LINES.test(c.tagName) || WRAPPERS.test(c.tagName));
+  if (lines.length > 1) return null;
+  if (lines.length === 1 && node.children.length === 1 && LINES.test(lines[0].tagName)) {
+    return { tag: lines[0].tagName, html: lines[0].innerHTML };
+  }
+  if (lines.length === 1) return null;
+  return { tag: 'P', html: node.innerHTML };
 }
 
 // inline formatting the editor keeps on text it inserts in place of a selection: only
@@ -236,8 +289,9 @@ async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
   const selected = await readSelection();
-  const inner = selected ? unwrapSelection(selected) : '';
-  if (inner === null) {
+  const line = selected ? readLine(selected) : { tag: 'P', html: '' };
+  const inner = line && line.html;
+  if (line === null) {
     setStatus('Select text within one paragraph or heading: markers style part of a single line.', 'error');
     return;
   }
@@ -254,6 +308,9 @@ async function applyToSelection() {
   // paragraph); bold / italic covering the whole selection is kept by the editor
   sdk.actions.sendText(`${marker}${text}${END_MARKER}`);
   setStatus(`Styled “${text.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
+  previewLine = null;
+  lastSelection = '';
+  updatePreview();
 }
 
 /**
@@ -302,6 +359,7 @@ function render() {
   const root = document.querySelector('.tm');
   statusEl = el('p', { class: 'tm-status', role: 'status' });
   codeEl = el('code', { class: 'tm-code' });
+  previewNote = el('p', { class: 'tm-hint' });
   previewFrame = el('iframe', { class: 'tm-preview', title: 'Preview', srcdoc: previewDocument() });
 
   const choices = el(
@@ -326,7 +384,7 @@ function render() {
 
   root.append(
     el('h1', {}, 'Text style'),
-    el('div', { class: 'tm-result' }, codeEl, previewFrame),
+    el('div', { class: 'tm-result' }, codeEl, previewNote, previewFrame),
     el('div', { class: 'tm-actions' }, apply, insert, copy),
     el('div', { class: 'tm-actions' }, start, end),
     el('p', { class: 'tm-hint' }, 'Words with a link or mixed formatting: click before them and use “Insert start”, then after them and use “Insert end”. Their formatting stays as it is.'),
@@ -338,6 +396,29 @@ function render() {
     updatePreview();
   });
   updatePreview();
+}
+
+/**
+ * Keeps the preview on the author's selection: the editor has no selection-change event for
+ * extensions, so the panel asks for the selection about once a second while it is visible.
+ */
+function watchSelection() {
+  let busy = false;
+  const check = async () => {
+    if (busy || document.hidden || !sdk) return;
+    busy = true;
+    const html = await readSelection();
+    busy = false;
+    if (html === lastSelection) return;
+    lastSelection = html;
+    const line = html ? readLine(html) : null;
+    previewLine = line && line.html.replace(/<[^>]+>/g, '').trim() ? line : null;
+    updatePreview();
+  };
+  setInterval(check, 1000);
+  window.addEventListener('focus', check);
+  document.addEventListener('pointerenter', check);
+  check();
 }
 
 async function connect() {
@@ -353,6 +434,7 @@ async function connect() {
       return;
     }
     sdk = resolved;
+    watchSelection();
     setStatus('Select words in the document, pick a style, then “Style selected text”.');
     updatePreview();
   } catch (error) {
