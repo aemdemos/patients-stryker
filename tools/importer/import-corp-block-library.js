@@ -1,4 +1,5 @@
 /* global WebImporter */
+import { slidePosition } from './slide-position.js';
 
 // Block-library drafts for the stryker.com (corp) site. The source is the
 // sdt-stryker EDS site, so its `.plain.html` documents already carry EDS block markup
@@ -332,10 +333,6 @@ const SLIDE_COLORS = [
 const SLIDE_BOXES = {
   'bg-white': 'box-white', 'bg-gold': 'box-gold', 'bg-blue': 'box-blue', 'bg-light-gray': 'box-gray', 'bg-dark-gray': 'box-dark',
 };
-const SLIDE_SPACING = {
-  'margin-top': 'mt', 'margin-right': 'mr', 'margin-bottom': 'mb', 'margin-left': 'ml', 'padding-top': 'pt', 'padding-right': 'pr', 'padding-bottom': 'pb', 'padding-left': 'pl',
-};
-
 /** one slide text run's look: Futura bold?, colour tag (sizes go to the section: slideTextSizes) */
 function slideRunStyle(textNode, line) {
   const el = textNode.parentElement;
@@ -460,10 +457,8 @@ function slideBoxOptions(box) {
   const opts = [];
   const bg = [...box.classList].find((c) => SLIDE_BOXES[c]);
   if (bg) opts.push(SLIDE_BOXES[bg]);
-  (box.getAttribute('style') || '').split(';').forEach((decl) => {
-    const m = decl.match(/^\s*([a-z-]+)\s*:\s*(-?)(\d+)%\s*$/);
-    if (m && SLIDE_SPACING[m[1]]) opts.push(`box-${SLIDE_SPACING[m[1]]}-${m[2] ? 'n' : ''}${m[3]}`);
-  });
+  // the box's own margin / padding (free % values on the source) is not carried over: a
+  // coloured box takes the block's standard inset (hero-corp.css)
   return opts;
 }
 
@@ -481,8 +476,9 @@ function slideBoxLines(box, document) {
  * Live single-slide c-autocarousel (`v.index`, default the first) → `hero (image-slide)`.
  * Rows: the desktop image (or DM video) link, the mobile image link when the slide has a
  * mobile fragment, then the headline: one cell with the box's lines (+ CTA buttons as bold
- * links). Block options from the slide: box colour / spacing, top-N / left-N / right-N
- * (the overlay's inline position), mobile-below (mobile_Bottom with a mobile image), stripe-gold /
+ * links). Block options from the slide: box colour, the named position nearest to the
+ * overlay's inline one (text-left / -right / -wide + text-top / -upper / -middle / -lower,
+ * slide-position.js), mobile-below (mobile_Bottom with a mobile image), stripe-gold /
  * stripe-gradient (the empty full-bleed panel under the carousel). A btn-blue CTA asks for
  * the btn-blue section style.
  */
@@ -534,11 +530,18 @@ function extractImageSlide(doc, document, v = {}) {
   if (first.children.length) rows.splice(mobileImg ? 2 : 1, 0, [first]);
 
   if (overlay) {
+    // the headline position as the named options (text-left / -right / -wide, text-top …
+    // -lower): the nearest to the overlay's inline top / margin-left / width
     const style = overlay.getAttribute('style') || '';
     const top = style.match(/top\s*:\s*(\d+)%/);
     const pos = style.match(/margin-left\s*:\s*(\d+)%\s*;\s*width\s*:\s*calc\(100%\s*-\s*\d+%\s*-\s*(\d+)%\)/);
-    if (top) variants.push(`top-${top[1]}`);
-    if (pos) variants.push(`left-${pos[1]}`, `right-${pos[2]}`);
+    const { options, shift } = slidePosition(
+      pos ? Number(pos[1]) : null,
+      pos ? Number(pos[2]) : null,
+      top ? Number(top[1]) : null,
+    );
+    variants.push(...options);
+    if (shift > 10) console.warn(`image-slide: headline moved ${shift} points to ${options.join(' ')} — check visually`);
     if (mobileImg && overlay.classList.contains('mobile_Bottom')) variants.push('mobile-below');
     if (overlay.classList.contains('mobile-text-black')) variants.push('mobile-text-black');
   }

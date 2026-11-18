@@ -14,13 +14,18 @@
  * Text sizes come from the section, not the author's text: bold text takes the title size,
  * plain text the subline size, set with the section styles title-N / subline-N (N = px at
  * 1440; default title-42 / subline-28).
- * Options: box-white / -gold / -blue / -gray / -dark; box-mt-N … box-pl-N (box margin /
- * padding %); top-N / left-N / right-N (headline position, % of the slide); mobile-below
+ * Options: box-white / -gold / -blue / -gray / -dark (a coloured box takes the standard
+ * inset); headline position, named: text-left / text-right / text-wide (the column) and
+ * text-top / text-upper / text-middle / text-lower (how far down it starts) — the three
+ * columns and four heights stryker.com's 478 slides use (tools/importer/slide-position.js);
+ * mobile-below
  * (phones: mobile image, then the headline); mobile-text-black; stripe-gold /
  * stripe-gradient (34px band under the slide). Phones hide the desktop image or video; the
  * headline sits over the mobile image, or alone when there is none.
  * Earlier imports' options still work (hero-corp.js readLegacyOptions): text-below,
- * dark-box and size-N (both text sizes at N vw).
+ * dark-box and size-N (both text sizes at N vw); the numeric top-N / left-N / right-N
+ * position and box-mt-N … box-pl-N box spacing (hero-corp.js) until that content is
+ * converted.
  *
  * tagline-band: a gold band in the page container holding a Futura bold h1 title and a
  * serif light h2 message. Authored as one row: h1 + h2.
@@ -41,6 +46,17 @@
   --hero-box-top: 35%;
   --hero-box-left: 10%;
   --hero-box-right: 10%;
+
+  /* the named headline positions (% of the slide; stryker.com's common values) */
+  --corp-slide-left-col-left: 6%;
+  --corp-slide-left-col-right: 50%;
+  --corp-slide-right-col-left: 55%;
+  --corp-slide-right-col-right: 5%;
+  --corp-slide-wide-inset: 5%;
+  --corp-slide-top: 5%;
+  --corp-slide-upper: 18%;
+  --corp-slide-middle: 30%;
+  --corp-slide-lower: 45%;
   --corp-image-slide-line-size-s: 21px; /* an untagged line below 600px */
   --corp-image-slide-line-size: 14px; /* an untagged line from 1400px; 1vw below */
   --corp-image-slide-line-height-s: normal; /* the first line below 600px */
@@ -260,6 +276,28 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 .hero-corp.image-slide .hero-corp-headline.box-blue { background: var(--color-navy-bright); }
 .hero-corp.image-slide .hero-corp-headline.box-gray { background: var(--color-surface); }
 .hero-corp.image-slide .hero-corp-headline.box-dark { background: var(--color-secondary); }
+
+/* headline position, named (from 600px, where the headline sits over the slide): the column … */
+.hero-corp.image-slide.text-left {
+  --hero-box-left: var(--corp-slide-left-col-left);
+  --hero-box-right: var(--corp-slide-left-col-right);
+}
+
+.hero-corp.image-slide.text-right {
+  --hero-box-left: var(--corp-slide-right-col-left);
+  --hero-box-right: var(--corp-slide-right-col-right);
+}
+
+.hero-corp.image-slide.text-wide {
+  --hero-box-left: var(--corp-slide-wide-inset);
+  --hero-box-right: var(--corp-slide-wide-inset);
+}
+
+/* … and how far down it starts */
+.hero-corp.image-slide.text-top { --hero-box-top: var(--corp-slide-top); }
+.hero-corp.image-slide.text-upper { --hero-box-top: var(--corp-slide-upper); }
+.hero-corp.image-slide.text-middle { --hero-box-top: var(--corp-slide-middle); }
+.hero-corp.image-slide.text-lower { --hero-box-top: var(--corp-slide-lower); }
 
 /* headline lines: Egyptienne light, bold = Futura bold (sizes below) */
 .hero-corp.image-slide .hero-corp-headline :is(h1, h2, h3, p) {

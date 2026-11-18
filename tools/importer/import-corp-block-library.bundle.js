@@ -60,6 +60,32 @@ var CustomImportScript = (() => {
   __export(import_corp_block_library_exports, {
     default: () => import_corp_block_library_default
   });
+
+  // tools/importer/slide-position.js
+  var SLIDE_SIDES = { "text-left": [6, 50], "text-right": [55, 5], "text-wide": [5, 5] };
+  var SLIDE_HEIGHTS = {
+    "text-top": 5,
+    "text-upper": 18,
+    "text-middle": 30,
+    "text-lower": 45
+  };
+  function slidePosition(left, right, top) {
+    const options = [];
+    let shift = 0;
+    if (left !== null && right !== null) {
+      const [side, [l, r]] = Object.entries(SLIDE_SIDES).map((entry) => [entry, Math.abs(entry[1][0] - left) + Math.abs(entry[1][1] - right)]).sort((a, b) => a[1] - b[1])[0][0];
+      options.push(side);
+      shift = Math.max(shift, Math.abs(l - left), Math.abs(r - right));
+    }
+    if (top !== null) {
+      const [height, t] = Object.entries(SLIDE_HEIGHTS).sort((a, b) => Math.abs(a[1] - top) - Math.abs(b[1] - top))[0];
+      options.push(height);
+      shift = Math.max(shift, Math.abs(t - top));
+    }
+    return { options, shift };
+  }
+
+  // tools/importer/import-corp-block-library.js
   var PAGE_TEMPLATE = {
     name: "corp-block-library",
     description: "One corp block per document, copied from the sdt-stryker EDS pages, for the stryker.com block library."
@@ -386,16 +412,6 @@ var CustomImportScript = (() => {
     "bg-light-gray": "box-gray",
     "bg-dark-gray": "box-dark"
   };
-  var SLIDE_SPACING = {
-    "margin-top": "mt",
-    "margin-right": "mr",
-    "margin-bottom": "mb",
-    "margin-left": "ml",
-    "padding-top": "pt",
-    "padding-right": "pr",
-    "padding-bottom": "pb",
-    "padding-left": "pl"
-  };
   function slideRunStyle(textNode, line) {
     const el = textNode.parentElement;
     const within = (sel) => {
@@ -494,10 +510,6 @@ var CustomImportScript = (() => {
     const opts = [];
     const bg = [...box.classList].find((c) => SLIDE_BOXES[c]);
     if (bg) opts.push(SLIDE_BOXES[bg]);
-    (box.getAttribute("style") || "").split(";").forEach((decl) => {
-      const m = decl.match(/^\s*([a-z-]+)\s*:\s*(-?)(\d+)%\s*$/);
-      if (m && SLIDE_SPACING[m[1]]) opts.push(`box-${SLIDE_SPACING[m[1]]}-${m[2] ? "n" : ""}${m[3]}`);
-    });
     return opts;
   }
   function slideBoxLines(box, document) {
@@ -555,8 +567,13 @@ var CustomImportScript = (() => {
       const style = overlay.getAttribute("style") || "";
       const top = style.match(/top\s*:\s*(\d+)%/);
       const pos = style.match(/margin-left\s*:\s*(\d+)%\s*;\s*width\s*:\s*calc\(100%\s*-\s*\d+%\s*-\s*(\d+)%\)/);
-      if (top) variants.push(`top-${top[1]}`);
-      if (pos) variants.push(`left-${pos[1]}`, `right-${pos[2]}`);
+      const { options, shift } = slidePosition(
+        pos ? Number(pos[1]) : null,
+        pos ? Number(pos[2]) : null,
+        top ? Number(top[1]) : null
+      );
+      variants.push(...options);
+      if (shift > 10) console.warn(`image-slide: headline moved ${shift} points to ${options.join(" ")} \u2014 check visually`);
       if (mobileImg && overlay.classList.contains("mobile_Bottom")) variants.push("mobile-below");
       if (overlay.classList.contains("mobile-text-black")) variants.push("mobile-text-black");
     }
