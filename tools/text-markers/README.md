@@ -50,6 +50,7 @@ Insert end. The insert buttons refuse to run while words are selected (they woul
 | Font | `serif`, `sans`, `body`; `upper` for capitals | Egyptienne, Futura, Humanist |
 | Size | `s`, `l`, `xl`, `xxl` | 0.8×, 1.25×, 1.5×, 1.75× the text around it |
 | Padding / margin | `p`, `pt` … `py` / `m`, `mt` … `my`, then `xs`, `s`, `m`, `l`, `xl` | 5, 10, 15, 20, 30px (spacing tokens) |
+| Special look | `rule-gold`, `box-dark` | gold rule of an underlined heading; dark quote box (news) |
 
 ## Limitations
 
@@ -57,6 +58,8 @@ Insert end. The insert buttons refuse to run while words are selected (they woul
 - Top and bottom spacing applies when the whole line is styled; inside a line only left
   and right spacing show.
 - Bold and italic stay normal editor formatting, not marker words.
+- Type markers as plain text: don't apply code formatting to them. Code-formatted markers are
+  not read and would show as text on the page.
 - In hero-corp image-slides the text size comes from the section styles
   (`title-N` / `subline-N`); colour and font words still apply there.
 - Opened outside the editor, the panel can still build and copy the code.
