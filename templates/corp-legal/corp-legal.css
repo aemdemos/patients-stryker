@@ -92,6 +92,7 @@ body.corp-legal main > .section:first-child:not(.headline-2-5vw) > .default-cont
    phones, 17.5px from 600px) */
 body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 {
   font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
 }
 
 body.corp-legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
