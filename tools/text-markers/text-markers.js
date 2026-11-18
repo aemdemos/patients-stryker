@@ -80,6 +80,7 @@ let statusEl;
 let codeEl;
 let previewFrame;
 let applyButtons = [];
+let endButton;
 
 function setStatus(text, kind = 'info') {
   statusEl.textContent = text;
@@ -104,6 +105,7 @@ function updatePreview() {
   const marker = startMarker();
   codeEl.textContent = marker ? `${marker}Your text${END_MARKER}` : 'Pick a style below';
   applyButtons.forEach((b) => { b.disabled = !marker || !sdk; });
+  if (endButton) endButton.disabled = !sdk;
   const doc = previewFrame.contentDocument;
   if (!doc || !doc.getElementById('sample')) return;
   const { classes, spacing } = parseMarker(markerWords().join('-'));
@@ -181,16 +183,59 @@ function unwrapSelection(html) {
   return body.innerHTML;
 }
 
+// inline formatting the editor keeps on text it inserts in place of a selection: only
+// formatting that covers the whole selection survives (it is taken from where it starts)
+const FORMATTING = 'strong, b, em, i, u, s, sub, sup';
+
+/**
+ * The selection as the editor returns it, or '' when nothing is selected. The DA editor
+ * answers an empty selection with an error; a host without selection support may not answer
+ * at all, so the wait is short.
+ * @returns {Promise<string>} The selected HTML
+ */
+async function readSelection() {
+  try {
+    const html = await Promise.race([
+      sdk.actions.getSelection(),
+      new Promise((resolve) => { setTimeout(() => resolve(''), 1500); }),
+    ]);
+    return html || '';
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Whether the selection can be rewritten as plain text without losing anything: no links or
+ * line breaks, and any bold / italic covering all of it.
+ * @param {string} inner The selection's inline HTML
+ * @returns {{text: string, ok: boolean}} Its text, and whether rewriting it is safe
+ */
+function analyseSelection(inner) {
+  const { body } = new DOMParser().parseFromString(`<p>${inner}</p>`, 'text/html');
+  const line = body.firstElementChild;
+  const text = line.textContent;
+  if (line.querySelector('a, br, img')) return { text, ok: false };
+  const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
+  const formats = new Set();
+  while (walker.nextNode()) {
+    if (walker.currentNode.textContent.trim()) {
+      const marks = [];
+      let node = walker.currentNode.parentElement;
+      while (node && node !== line) {
+        if (node.matches(FORMATTING)) marks.push(node.tagName.replace(/^B$/, 'STRONG').replace(/^I$/, 'EM'));
+        node = node.parentElement;
+      }
+      formats.add(marks.sort().join(','));
+    }
+  }
+  return { text, ok: formats.size <= 1 };
+}
+
 async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
-  let selected = '';
-  try {
-    selected = await sdk.actions.getSelection();
-  } catch {
-    setStatus('Could not read the selection. Select text in the document, or use “Insert at caret”.', 'error');
-    return;
-  }
+  const selected = await readSelection();
   const inner = selected ? unwrapSelection(selected) : '';
   if (inner === null) {
     setStatus('Select text within one paragraph or heading: markers style part of a single line.', 'error');
@@ -200,15 +245,46 @@ async function applyToSelection() {
     setStatus('Nothing is selected. Select the words to style, or use “Insert at caret”.', 'error');
     return;
   }
-  sdk.actions.sendHTML(`${marker}${inner}${END_MARKER}`);
-  setStatus(`Styled the selection with ${marker} … ${END_MARKER}`, 'ok');
+  const { text, ok } = analyseSelection(inner);
+  if (!ok) {
+    setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead.', 'error');
+    return;
+  }
+  // plain text replaces the selection inside its line (HTML would be inserted as a new
+  // paragraph); bold / italic covering the whole selection is kept by the editor
+  sdk.actions.sendText(`${marker}${text}${END_MARKER}`);
+  setStatus(`Styled “${text.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
+}
+
+/**
+ * Inserts text at the caret, refusing when words are selected (they would be replaced).
+ * @param {string} text The text to insert
+ * @param {string} done The status message on success
+ */
+async function insertText(text, done) {
+  if (!sdk) return;
+  if ((await readSelection()).replace(/<[^>]+>/g, '').trim()) {
+    setStatus('Words are selected and would be replaced. Click where the markers go, with nothing selected.', 'error');
+    return;
+  }
+  sdk.actions.sendText(text);
+  setStatus(done, 'ok');
 }
 
 function insertAtCaret() {
   const marker = startMarker();
-  if (!marker || !sdk) return;
-  sdk.actions.sendText(`${marker}Your text${END_MARKER}`);
-  setStatus('Inserted the markers at the caret: replace “Your text” with your words.', 'ok');
+  if (!marker) return;
+  insertText(`${marker}Your text${END_MARKER}`, 'Inserted the markers at the caret: replace “Your text” with your words.');
+}
+
+function insertStart() {
+  const marker = startMarker();
+  if (!marker) return;
+  insertText(marker, `Inserted ${marker}. Now click after the words and use “Insert end”.`);
+}
+
+function insertEnd() {
+  insertText(END_MARKER, `Inserted ${END_MARKER}. The words between the markers are styled on the page.`);
 }
 
 async function copyCode() {
@@ -242,13 +318,18 @@ function render() {
 
   const apply = el('button', { type: 'button', class: 'tm-primary', onclick: applyToSelection }, 'Style selected text');
   const insert = el('button', { type: 'button', onclick: insertAtCaret }, 'Insert at caret');
+  const start = el('button', { type: 'button', onclick: insertStart }, 'Insert start');
+  const end = el('button', { type: 'button', onclick: insertEnd }, 'Insert end');
   const copy = el('button', { type: 'button', onclick: copyCode }, 'Copy code');
-  applyButtons = [apply, insert];
+  applyButtons = [apply, insert, start];
+  endButton = end;
 
   root.append(
     el('h1', {}, 'Text style'),
     el('div', { class: 'tm-result' }, codeEl, previewFrame),
     el('div', { class: 'tm-actions' }, apply, insert, copy),
+    el('div', { class: 'tm-actions' }, start, end),
+    el('p', { class: 'tm-hint' }, 'Words with a link or mixed formatting: click before them and use “Insert start”, then after them and use “Insert end”. Their formatting stays as it is.'),
     statusEl,
     choices,
   );
