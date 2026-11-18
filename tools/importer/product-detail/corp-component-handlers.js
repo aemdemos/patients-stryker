@@ -1000,9 +1000,15 @@ function carousel(el, ctx) {
     // no size-<n> / copy-size-<n> options: each line carries its own size (a line without a
     // vw size keeps the page type, as live: inspace "A breakthrough in the shoulder…" h1 28px)
     const variants = [];
-    // the slide image in the right half of the slide XF's grid (offset 6 / width 6): the
-    // product hero layout
-    if (slide.querySelector('.experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6')) variants.push('image-right');
+    // the slide image in the right half of the slide XF's grid: the product hero layout
+    // (any column that starts in the grid's right half: offset 6 / width 6, and offset 7 / width 5
+    // on Bari10A, Prime TC and Prime Series, which otherwise became a full-width image behind the
+    // text)
+    const startsRight = (col) => Number(
+      /aem-GridColumn--offset--default--(\d+)/.exec(col.className)?.[1],
+    ) >= 6;
+    if ([...slide.querySelectorAll('.experienceFragment-ef [class*="aem-GridColumn--offset--default--"]')]
+      .some(startsRight)) variants.push('image-right');
     if (heroBox(overlay)) variants.push(heroBox(overlay));
     // the text box's own spacing (Hero Corp options, scripts/corp-spacing.js)
     variants.push(...itemsSpacing(overlayItems));
