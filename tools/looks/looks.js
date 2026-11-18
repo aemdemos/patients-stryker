@@ -3,12 +3,17 @@
  * (tools/importer/standardise/looks/group.mjs → data/<type>.json), largest group first; per group
  * the look in words, the authored variants it holds, groups that are nearly the same, and every
  * instance's screenshot in one long row (desktop or phone), linked to its page.
- * Screenshots come from shots/<type>/, copied there (git-ignored) by group.mjs.
+ * Screenshots come from shots/<type>/, copied there (git-ignored) by group.mjs; on the branch
+ * preview from Document Authoring (/looks-shots/..., uploaded by upload-shots.sh).
  * Open: /tools/looks/index.html?type=cards-corp
  */
 const $ = (sel) => document.querySelector(sel);
 const params = new URLSearchParams(window.location.search);
 const LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname) || /^preview-aemcoder\.adobe\.io$/.test(window.location.hostname);
+// (the local folder on the workspace preview; elsewhere the copies in Document Authoring, where
+// the page path's ~ and the block number's __ are folders: upload-shots.sh)
+const shotSrc = (shot) => (LOCAL ? `./${shot}`
+  : `/looks-shots/${shot.replace(/^shots\//, '').replace(/~/g, '/').replace(/__/g, '/')}`);
 const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
 const NAMES = {
   'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
@@ -83,7 +88,7 @@ function groupBox(g) {
           {
             class: 'lk-shot-img', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: tip,
           },
-          shot ? el('img', { src: `./${shot}`, loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
+          shot ? el('img', { src: shotSrc(shot), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
         ),
         el(
           'span',
