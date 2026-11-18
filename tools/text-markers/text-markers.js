@@ -9,7 +9,7 @@
  * words the site understands.
  */
 import {
-  COLOURS, FONTS, SIZES, STEPS,
+  COLOURS, FONTS, SIZES, STEPS, DECORATIONS,
 } from '../../scripts/span-markers.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
@@ -30,6 +30,8 @@ const LABELS = {
   l: 'Large (1.25×)',
   xl: 'X-large (1.5×)',
   xxl: 'XX-large (1.75×)',
+  'rule-gold': 'Gold rule (underlined heading)',
+  'box-dark': 'Dark quote box (whole paragraph)',
 };
 const STEP_LABELS = {
   xs: 'XS (5px)', s: 'S (10px)', m: 'M (15px)', l: 'L (20px)', xl: 'XL (30px)',
@@ -45,7 +47,7 @@ const SIDES = [
 ];
 
 const state = {
-  colour: '', font: '', upper: false, size: '', padding: { side: 'x', step: '' }, margin: { side: 'y', step: '' },
+  colour: '', font: '', upper: false, size: '', look: '', padding: { side: 'x', step: '' }, margin: { side: 'y', step: '' },
 };
 
 const el = (tag, attrs = {}, ...children) => {
@@ -66,6 +68,7 @@ function markerWords() {
   if (state.font) words.push(state.font);
   if (state.upper) words.push('upper');
   if (state.size) words.push(state.size);
+  if (state.look) words.push(state.look);
   [['p', state.padding], ['m', state.margin]].forEach(([kind, { side, step }]) => {
     if (step) words.push(`${kind}${side}`, step);
   });
@@ -479,6 +482,7 @@ function render() {
     choiceGroup('Font', FONTS.filter((f) => f !== 'upper'), state.font, (v) => { state.font = v; }),
     el('label', { class: 'tm-check' }, el('input', { type: 'checkbox', onchange: (e) => { state.upper = e.target.checked; updatePreview(); } }), 'Capitals (word “upper”)'),
     choiceGroup('Size (relative to the text around it)', SIZES, state.size, (v) => { state.size = v; }),
+    choiceGroup('Special look', DECORATIONS, state.look, (v) => { state.look = v; }),
     spacingGroup('Padding', 'padding'),
     spacingGroup('Margin', 'margin'),
     el('p', { class: 'tm-hint' }, 'Top and bottom spacing applies when the whole line is styled; inside a line only left and right show. Bold and italic stay normal editor formatting.'),

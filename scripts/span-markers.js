@@ -13,6 +13,7 @@
  *   colour   blue, gold, purple, teal, navy, grey / gray, white, light-gray (the color-* classes)
  *   font     serif (Egyptienne), sans (Futura), body (Humanist), upper (capitals)
  *   size     s, l, xl, xxl: 0.8 / 1.25 / 1.5 / 1.75 times the surrounding text
+ *   look     rule-gold (gold rule of an underlined heading), box-dark (dark quote box)
  *   spacing  p, pt, pr, pb, pl, px, py (padding) or m, mt, mr, mb, ml, mx, my (margin),
  *            each followed by a step: xs, s, m, l, xl (the spacing tokens)
  * Bold and italic stay plain editor formatting (authoring conventions), not marker words.
@@ -31,6 +32,9 @@ export const COLOURS = ['blue', 'gold', 'purple', 'teal', 'navy', 'grey', 'white
 const COLOUR_ALIASES = { gray: 'grey' };
 export const FONTS = ['serif', 'sans', 'body', 'upper'];
 export const SIZES = ['s', 'l', 'xl', 'xxl'];
+// looks the corp styles already define for a class of the same name (formerly bracket tags):
+// rule-gold (the gold rule of an underlined heading), box-dark (the dark quote box)
+export const DECORATIONS = ['rule-gold', 'box-dark'];
 
 // spacing word → CSS properties; step → spacing token
 export const SPACING = {
@@ -73,7 +77,10 @@ export function parseMarker(name) {
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
     const pair = `${word}-${words[i + 1]}`;
-    if (COLOURS.includes(pair)) {
+    if (DECORATIONS.includes(pair)) {
+      classes.push(pair);
+      i += 1;
+    } else if (COLOURS.includes(pair)) {
       classes.push(`color-${pair}`);
       i += 1;
     } else if (SPACING[word] && STEPS[words[i + 1]]) {

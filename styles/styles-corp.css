@@ -105,6 +105,25 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-m);
 }
 
+/* authoring conventions, site-wide, in text (not links: links keep the button conventions):
+   underline = serif (Egyptienne) words, shown without an underline; italic + underline = gold
+   words, upright (stryker.com gold text in paragraphs) */
+:where(body.corp) main :is(p, li, td) u:not(a u, :has(a), :is(em, i) > u, :has(> :is(em, i))) {
+  font-family: var(--heading-font-family);
+  text-decoration: none;
+}
+
+:where(body.corp) main :is(p, li, td) :is(:is(em, i):has(> u), u:has(> :is(em, i))):not(a *, :has(a)) {
+  color: var(--color-accent);
+  font-style: normal;
+  text-decoration: none;
+}
+
+:where(body.corp) main :is(p, li, td) :is(:is(em, i) > u, u > :is(em, i)):not(a *, :has(a)) {
+  font-style: normal;
+  text-decoration: none;
+}
+
 /* bold: <strong> is Futura bold, <b> keeps the running font */
 :where(body.corp) strong {
   font-weight: 700;
@@ -238,7 +257,7 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-l);
 }
 
-/* gold rule: [[rule-gold]…] inside an underlined heading draws its rule in gold while the
+/* gold rule: :start-rule-gold:…:end: inside an underlined heading draws its rule in gold while the
    title keeps its own colour (live features titles: black Futura title over a gold rule) */
 :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u)):has(span.rule-gold) {
   border-bottom-color: var(--color-accent);
