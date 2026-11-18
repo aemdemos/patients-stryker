@@ -694,6 +694,19 @@ body.long-page-detail-corp main > .section.spacer + .section.separator {
   margin-top: 0;
 }
 
+/* a separator under a headline box that ends in a Heading 2: the box keeps the heading's 15px
+   margin and its own 20px bottom padding under it, 35px from the heading to the rule (65px from
+   600px; stryker.com SKILL "Contact your local representative to find out more!") */
+body.long-page-detail-corp main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+    margin-top: calc(var(--space-section) + var(--space-block) + var(--space-block-l));
+  }
+}
+
 /* a separator right after downloads: 55px from the last titles, as on the source (its top
    margin + the titles' own 15px; arthroscopy, plastic-surgery at 375 / 1440) */
 body.long-page-detail-corp main > .section:not(.column-10-12):has(> .cards-corp-wrapper:nth-last-child(1 of :not(:empty)) .cards-corp.resources) + .section.separator {

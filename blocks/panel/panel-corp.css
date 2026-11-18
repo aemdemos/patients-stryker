@@ -49,6 +49,35 @@ body.corp .panel.gold .panel-body h3 {
   font-size: var(--heading-font-size-l);
 }
 
+/* quote: a testimonial in the gold box (stryker.com SKILL Centers of Excellence "These days,
+   young neurointerventionalists…"), set in 8% of the box width at the sides with 5% above and
+   below it (the 5% below in place of the section gap); the speaker (Heading 3 lines) right-aligned, the lines together as one source
+   paragraph */
+body.corp .panel.quote .panel-body {
+  margin-block: 5% calc(5% - var(--space-block-l));
+  padding-inline: 8%;
+}
+
+@media (width >= 600px) {
+  body.corp .panel.quote .panel-body {
+    margin-bottom: calc(5% - var(--space-section));
+  }
+}
+
+/* the quote and speaker lines 1.22 apart (the source's 1.75em / 1.5em text in a 20px-line
+   paragraph: 29.9px / 25.6px) */
+body.corp .panel.quote .panel-body :is(h2, h3) {
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+body.corp .panel.quote .panel-body h3 {
+  text-align: right;
+}
+
+body.corp .panel.quote .panel-body h3:has(+ h3) {
+  margin-bottom: 0;
+}
+
 /* on a gold box the Bold + Italic (accent) words are white, the Bold ones black (stryker.com
    white and black Futura bold on .bg-gold: SKILL Centers of Excellence, e-Lab, NeuroElite) */
 body.corp .panel:is(.gold, .gold-gradient) .panel-body :is(strong em, em strong) {

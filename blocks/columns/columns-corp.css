@@ -257,6 +257,13 @@ body.corp .columns.event-cards.block > div > div h3 + p {
   line-height: var(--heading-line-height);
 }
 
+/* lowered-text: the text beside the image starts lower, by a fifth of its column's width
+   (stryker.com rich text margin-top 20%: SKILL Centers of Excellence "A unique global training
+   experience") */
+body.corp .columns.lowered-text > div > div:not(:has(img, picture, video, iframe)) > :first-child {
+  margin-top: 20%;
+}
+
 /* gray-titles: the cells' headings in dark grey (stryker.com #545857: build-your-ASC
    "Step-by-step playbook", "Best practices", "Peer-to-peer education") */
 body.corp .columns.gray-titles.block > div > div :is(h2, h3, h4) {
