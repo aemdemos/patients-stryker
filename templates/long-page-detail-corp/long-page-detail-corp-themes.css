@@ -360,6 +360,16 @@ body.long-page-detail-corp.large-headlines main > .section.headline-box > .defau
   font-weight: var(--font-weight-bold);
 }
 
+/* a gold box title at 3.5vw, its Italic (Egyptienne) line at 3vw (stryker.com nse "Elite" /
+   "Attachments": 49 / 42px at 1440, 27.3 / 23.4px at 390) */
+body.long-page-detail-corp.large-headlines main > .section.headline-box:where(.gold) > .default-content-wrapper > h1 {
+  font-size: max(var(--body-font-size-xs), min(calc(3.5 * var(--body-font-size-m)), calc(3.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+body.long-page-detail-corp.large-headlines main > .section.headline-box:where(.gold) > .default-content-wrapper > h1 em {
+  font-size: max(var(--body-font-size-xs), min(calc(3 * var(--body-font-size-m)), calc(3 * var(--long-page-detail-corp-lh-unit))));
+}
+
 /* a Heading 3 in Italic alone in a full-bleed colour band: the same 3.5vw Egyptienne light line
    (stryker.com Mako refreshers "Together with our customers, we are driven to make healthcare
    better.", 49px white on purple at every width: its 3.5em) */
