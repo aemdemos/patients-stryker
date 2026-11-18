@@ -82,7 +82,9 @@ function decorateIconLinks(main) {
  * long-page-detail, 2026-11-17): one authored name stands for variants used together, so the
  * blocks' CSS for the parts applies. `faculty`: jr45's grey faculty boxes; `chapter-labels`:
  * TEACH's "Chapter N:" labels; `gray-cards`: CLOUT's grey evidence cards with plain Bold
- * labels; `*-serif-copy`: a copy size with the Egyptienne copy.
+ * labels; `course-cards`: the Mako refreshers course cards (their action links 21px,
+ * columns-corp.css);
+ * `*-serif-copy`: a copy size with the Egyptienne copy.
  */
 const VARIANT_BUNDLES = {
   'large-serif-copy': ['large-copy', 'serif'],
@@ -92,6 +94,7 @@ const VARIANT_BUNDLES = {
   faculty: ['gray-last', 'large-subtitles', 'plain-bold'],
   'chapter-labels': ['label-bold', 'plain-bold'],
   'gray-cards': ['gray-all', 'plain-bold'],
+  'course-cards': ['large-titles', 'large-subtitles', 'large-copy'],
 };
 
 function expandVariantBundles(main) {

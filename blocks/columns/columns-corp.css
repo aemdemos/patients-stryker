@@ -928,6 +928,12 @@ body.corp .columns.contact-boxes.block > div > div :where(h2 + p, p:has(> em > s
   font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
 }
 
+/* course-cards (bundles large-titles, large-subtitles, large-copy: scripts/corp.js): the
+   Mako refreshers course cards; their action links ("REGISTER") at 21px (stryker.com) */
+body.corp .columns.course-cards.block a.link-strong:any-link {
+  font-size: var(--heading-font-size-l);
+}
+
 /* goal-cards: the cards' labels (Heading 3) teal Futura bold 21px and their values 28px
    Egyptienne light (stryker.com environmental programs "Goal" / "Progress") */
 body.corp .columns.goal-cards.block > div > div h3 {

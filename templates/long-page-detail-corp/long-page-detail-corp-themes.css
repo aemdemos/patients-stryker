@@ -279,7 +279,8 @@ body.long-page-detail-corp:is(.mako-campaign, .mako-refreshers) main > .section.
   line-height: var(--heading-line-height-hero);
 }
 
-/* mako-campaign: a page-text Heading 2 21px on phones ("For more procedural videos…") */
+/* mako-campaign: a page-text Heading 2 21px on phones, 26.25px from 600px ("For more procedural
+   videos…", stryker.com .fontsize-1-875em) */
 body.long-page-detail-corp.mako-campaign main > .section:not(.full-bleed) > .default-content-wrapper > h2 {
   font-size: var(--heading-font-size-l);
 }
@@ -301,7 +302,7 @@ body.long-page-detail-corp.mako-campaign main > .section:has(+ .section.disclaim
   }
 
   body.long-page-detail-corp.mako-campaign main > .section:not(.full-bleed) > .default-content-wrapper > h2 {
-    font-size: var(--heading-font-size-xl);
+    font-size: calc(1.875 * var(--body-font-size-m));
   }
 }
 
