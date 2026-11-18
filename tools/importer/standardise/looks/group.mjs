@@ -9,13 +9,16 @@
  *            are), the unit's surface (background, border, shadow, radius, inner spacing)
  *   image    where it sits against the text, its share of the unit, its shape (only when the
  *            design crops it to one: otherwise the shape is the picture's, not the design's)
- *   type     per role (title, body, link, button) the main styles: family, size (2 px steps),
- *            bold or regular, colour, capitals
+ *   type     per role (title, body, link, button) the main styles: family, size (2 px steps, or
+ *            with --sizes bands a size band: S up to 16, M up to 26, L up to 38, XL up to 56,
+ *            XXL above; each group then lists the exact styles it holds), bold or regular,
+ *            colour, capitals
  *   buttons  filled / outline and colour
  * A look that only lacks a part (no description, link or image) joins the largest group that
  * agrees on everything both have (its instances keep what they lack). Groups are sorted by size;
- * groups that differ in one part only are listed as "close to".
- * usage: node tools/importer/standardise/looks/group.mjs <block type>
+ * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
+ * and image form a layout family (the inspection page can show the groups by family).
+ * usage: node tools/importer/standardise/looks/group.mjs <block type> [--sizes exact|bands]
  *   [--in /tmp/run-outputs/looks-v2]
  *   [--out tools/looks/data]
  */
@@ -32,12 +35,22 @@ const opt = (name, fallback) => {
 };
 const IN = opt('--in', '/tmp/run-outputs/looks-v2');
 const OUT = opt('--out', 'tools/looks/data');
+const SIZES = opt('--sizes', 'exact');
 if (!type) {
   console.error('usage: group.mjs <block type>');
   process.exit(2);
 }
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
 const titles = Object.fromEntries(pages.map((p) => [p.path, p.title]));
+// the live stryker.com page of each page (the review tool's snapshot facts hold its URL)
+const sourceOf = (path) => {
+  try {
+    const meta = JSON.parse(readFileSync(`tools/review/snapshot-meta${path}.json`, 'utf8'));
+    return meta['1440']?.url || meta['375']?.url || null;
+  } catch (e) {
+    return null;
+  }
+};
 
 const FAMILY = (f) => (f || '').replace(/ for stryker/, '').replace(/ 712/, '').trim();
 const size2 = (s) => Math.round((s || 0) / 2) * 2;
@@ -67,7 +80,26 @@ const padding = (p) => {
 };
 const surface = (s) => [s.bg !== 'transparent' ? `bg ${s.bg}` : '', s.bgImage ? 'bg image' : '', s.border ? 'border' : '',
   s.shadow ? 'shadow' : '', s.radius > 0 ? 'rounded' : ''].filter(Boolean).join(', ') || 'plain';
-const typeOf = (st) => `${FAMILY(st.family)} ${size2(st.size)} ${st.weight >= 600 ? 'bold' : 'regular'} ${st.color}${st.upper ? ' caps' : ''}${st.italic ? ' italic' : ''}`;
+// (authored sizes differ by a few pixels from block to block: bands group what looks alike)
+const band = (px) => {
+  if (px <= 16) return 'S';
+  if (px <= 26) return 'M';
+  if (px <= 38) return 'L';
+  if (px <= 56) return 'XL';
+  return 'XXL';
+};
+const typeOf = (st, sizes = SIZES) => [
+  FAMILY(st.family),
+  sizes === 'bands' ? band(size2(st.size)) : size2(st.size),
+  st.weight >= 600 ? 'bold' : 'regular',
+  `${st.color}${st.upper ? ' caps' : ''}${st.italic ? ' italic' : ''}`,
+].join(' ');
+/** the role styles with their exact sizes (shown per group when sizes are grouped in bands) */
+const exactTypeOf = (b) => Object.fromEntries(['title', 'body', 'link', 'button']
+  .filter((r) => b.typography[r])
+  .map((r) => [r, b.typography[r].styles.filter((x) => x.share >= 0.2).slice(0, 2)
+    .map((x) => typeOf(x, 'exact')).sort()
+    .join(' + ')]));
 
 /** the parts of an instance's look (each part a short text; together the fingerprint) */
 function partsOf(b) {
@@ -80,7 +112,7 @@ function partsOf(b) {
   const styles = Object.fromEntries(roles.map((r) => {
     // (the order of a role's two main styles doesn't matter)
     const st = b.typography[r].styles.filter((x) => x.share >= 0.2).slice(0, 2);
-    return [r, st.map(typeOf).sort().join(' + ')];
+    return [r, st.map((x) => typeOf(x)).sort().join(' + ')];
   }));
   const btn = b.buttons[0];
   return {
@@ -110,6 +142,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
   d.blocks.filter((b) => b.type === type && !b.hidden).forEach((b) => instances.push({
     page: d.page,
     title: titles[d.page] || d.page,
+    source: sourceOf(d.page),
     n: b.n,
     classes: b.classes,
     inFragment: b.inFragment,
@@ -118,6 +151,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     counts: b.counts,
     text: b.text,
     parts: partsOf(b),
+    exactType: exactTypeOf(b),
   }));
 });
 const keyOf = (parts) => JSON.stringify(Object.entries(parts)
@@ -171,7 +205,13 @@ const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map
     (x.missing || []).forEach((k) => { m[k] = (m[k] || 0) + 1; });
     return m;
   }, {})),
-  items: list.map(({ parts, ...rest }) => rest),
+  // (with size bands: the exact styles behind each role, counted)
+  exactTypes: SIZES === 'bands' ? Object.fromEntries(['title', 'body', 'link', 'button'].map((r) => [r,
+    Object.entries(list.reduce((m, x) => {
+      const t = x.exactType[r];
+      return t ? { ...m, [t]: (m[t] || 0) + 1 } : m;
+    }, {})).sort((a, c) => c[1] - a[1])]).filter(([, v]) => v.length)) : undefined,
+  items: list.map(({ parts, exactType, ...rest }) => rest),
 }));
 // groups that differ in one part only: candidates to merge
 groups.forEach((g) => {
@@ -181,9 +221,33 @@ groups.forEach((g) => {
     return diff.length === 1 ? { id: o.id, part: diff[0], theirs: o.parts[diff[0]] || '(none)' } : null;
   }).filter(Boolean).slice(0, 6);
 });
+// layout families: the groups that share frame, layout and image (they differ in text styles or
+// buttons only), largest first
+const LAYOUT_PARTS = ['frame', 'layout', 'image'];
+const familyKey = (parts) => LAYOUT_PARTS.map((k) => parts[k]).join(' | ');
+const families = [...groups.reduce((m, g) => {
+  const k = familyKey(g.parts);
+  if (!m.has(k)) {
+    m.set(k, {
+      parts: Object.fromEntries(LAYOUT_PARTS.map((x) => [x, g.parts[x]])), instances: 0, groups: [],
+    });
+  }
+  const f = m.get(k);
+  f.instances += g.instances;
+  f.groups.push(g.id);
+  return m;
+}, new Map()).values()]
+  .sort((a, c) => c.instances - a.instances)
+  .map((f, i) => ({ id: i + 1, ...f }));
 mkdirSync(OUT, { recursive: true });
 const result = {
-  type, generated: new Date().toISOString(), measuredPages: readdirSync(join(IN, 'pages')).length, instances: instances.length, groups,
+  type,
+  generated: new Date().toISOString(),
+  sizes: SIZES,
+  measuredPages: readdirSync(join(IN, 'pages')).length,
+  instances: instances.length,
+  groups,
+  families,
 };
 writeFileSync(join(OUT, `${type}.json`), JSON.stringify(result));
 // the index of the block types grouped so far (the inspection page's menu)

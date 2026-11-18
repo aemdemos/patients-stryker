@@ -143,7 +143,7 @@ body {
   background: #fff;
 }
 
-.lk-shot span {
+.lk-shot > span {
   max-width: 260px;
   overflow: hidden;
   color: #57606a;
@@ -171,4 +171,55 @@ body {
   border-radius: 8px;
   background: #fff8c5;
   color: #7d4e00;
+}
+
+.lk-family {
+  margin-bottom: 28px;
+}
+
+.lk-family-head {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.lk-note {
+  margin: 0 0 10px;
+}
+
+.lk-exact summary {
+  color: #57606a;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lk-shot-img {
+  display: block;
+}
+
+.lk-caption {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  max-width: 320px;
+  font-size: 11px;
+}
+
+.lk-caption a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lk-page {
+  color: #0969da;
+}
+
+.lk-source {
+  flex: 0 0 auto;
+  color: #57606a;
+}
+
+.lk-page:hover,
+.lk-source:hover {
+  text-decoration: underline;
 }

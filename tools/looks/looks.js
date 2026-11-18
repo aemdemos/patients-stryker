@@ -37,15 +37,12 @@ function el(tag, attrs = {}, ...children) {
 
 let data = null;
 let vp = 'd';
+let view = params.get('view') === 'layout' ? 'layout' : 'size';
 
-function render() {
-  const main = $('.lk-main');
-  if (!data) {
-    main.replaceChildren(el('p', { class: 'lk-none' }, 'No data for this block type yet.'));
-    return;
-  }
-  $('.lk-summary').textContent = `${data.instances} instances in ${data.groups.length} groups · ${data.measuredPages} pages measured`;
-  main.replaceChildren(...data.groups.map((g) => el(
+const SIZE_NOTE = 'Text sizes in bands: S up to 16 px, M up to 26, L up to 38, XL up to 56, XXL above.';
+
+function groupBox(g) {
+  return el(
     'section',
     { class: 'lk-groupbox', id: `g${g.id}` },
     el(
@@ -56,6 +53,11 @@ function render() {
       el('span', { class: 'lk-meta' }, `authored as: ${g.classes.map(([c, n]) => `${c} (${n})`).join(', ')}`),
     ),
     el('dl', { class: 'lk-parts' }, ...Object.entries(g.parts).flatMap(([k, v]) => [el('dt', {}, PART_NAMES[k] || k), el('dd', {}, v)])),
+    // (with sizes in bands: the exact styles the group holds)
+    g.exactTypes ? el('details', { class: 'lk-exact' }, el('summary', {}, 'Exact text styles in this group'), el('dl', { class: 'lk-parts' }, ...Object.entries(g.exactTypes).flatMap(([r, list]) => [
+      el('dt', {}, PART_NAMES[`type ${r}`] || r),
+      el('dd', {}, list.map(([t, n]) => `${t} (${n})`).join(' · ')),
+    ]))) : null,
     g.close.length ? el('p', { class: 'lk-meta lk-close' }, 'Nearly the same as: ', ...g.close.flatMap((c, i) => [
       i ? ' · ' : '',
       el('a', { href: `#g${c.id}` }, `#${c.id}`),
@@ -65,17 +67,61 @@ function render() {
     // (complete instances first, then the ones lacking a part)
     el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => (a.missing?.length || 0) - (c.missing?.length || 0)).map((it) => {
       const shot = vp === 'm' ? it.phoneShot : it.shot;
+      const tip = `${it.title} · ${it.text.slice(0, 120)}`;
+      // (the screenshot and the title open the page as it is now; the source link the live
+      // stryker.com page)
       return el(
-        'a',
-        {
-          class: 'lk-shot', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: `${it.title} · ${it.text.slice(0, 120)}`,
-        },
-        shot ? el('img', { src: `./${shot}`, loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
-        el('span', {}, `${it.title}${it.inFragment ? ' (fragment)' : ''}`),
+        'div',
+        { class: 'lk-shot' },
+        el(
+          'a',
+          {
+            class: 'lk-shot-img', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: tip,
+          },
+          shot ? el('img', { src: `./${shot}`, loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
+        ),
+        el(
+          'span',
+          { class: 'lk-caption' },
+          el('a', {
+            class: 'lk-page', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: `Open ${it.title} (as-is page)`,
+          }, `${it.title}${it.inFragment ? ' (fragment)' : ''}`),
+          it.source ? el('a', {
+            class: 'lk-source', href: it.source, target: '_blank', rel: 'noopener', title: 'Open the live stryker.com page',
+          }, 'stryker.com ↗') : null,
+        ),
         it.missing?.length ? el('span', { class: 'lk-tag' }, lackOf(it.missing)) : null,
       );
     })),
-  )));
+  );
+}
+
+function render() {
+  const main = $('.lk-main');
+  if (!data) {
+    main.replaceChildren(el('p', { class: 'lk-none' }, 'No data for this block type yet.'));
+    return;
+  }
+  const families = data.families || [];
+  $('.lk-summary').textContent = `${data.instances} instances in ${data.groups.length} groups${families.length ? ` (${families.length} layouts)` : ''} · ${data.measuredPages} pages measured`;
+  const note = data.sizes === 'bands' ? el('p', { class: 'lk-meta lk-note' }, SIZE_NOTE) : null;
+  if (view !== 'layout' || !families.length) {
+    main.replaceChildren(...[note, ...data.groups.map(groupBox)].filter(Boolean));
+    return;
+  }
+  // by layout: each layout family (same frame, layout and image) with its groups, largest first
+  const byId = Object.fromEntries(data.groups.map((g) => [g.id, g]));
+  main.replaceChildren(...[note, ...families.map((f) => el(
+    'section',
+    { class: 'lk-family', id: `f${f.id}` },
+    el(
+      'h2',
+      { class: 'lk-family-head' },
+      `Layout ${f.id}: ${f.instances} instance${f.instances > 1 ? 's' : ''} in ${f.groups.length} group${f.groups.length > 1 ? 's' : ''}`,
+      el('span', { class: 'lk-meta' }, ` · ${Object.entries(f.parts).map(([k, v]) => `${PART_NAMES[k] || k}: ${v}`).join(' · ')}`),
+    ),
+    ...f.groups.map((id) => groupBox(byId[id])),
+  ))].filter(Boolean));
 }
 
 async function load(type) {
@@ -97,6 +143,17 @@ async function start() {
     p.set('type', e.target.value);
     window.history.replaceState(null, '', `?${p}`);
     load(e.target.value);
+  });
+  document.querySelectorAll('[data-view]').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.view === view));
+    b.addEventListener('click', () => {
+      view = b.dataset.view;
+      document.querySelectorAll('[data-view]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      const p = new URLSearchParams(window.location.search);
+      p.set('view', view);
+      window.history.replaceState(null, '', `?${p}`);
+      render();
+    });
   });
   document.querySelectorAll('[data-vp]').forEach((b) => b.addEventListener('click', () => {
     vp = b.dataset.vp;
