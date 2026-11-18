@@ -149,8 +149,37 @@ function tablePartsOf(b) {
   };
 }
 
+/**
+ * a statistics block's look: how many per row, the alignment, the numbers' style (size in bands)
+ * and colours, and the descriptions' style (numbers are the large text, 40 px and up; each number
+ * may have its own colour, so the colours are a set)
+ */
+function statisticsPartsOf(b) {
+  const styles = Object.values(b.typography).flatMap((r) => r.styles);
+  const numbers = styles.filter((x) => x.size >= 40);
+  // (footnote marks are small runs: only styles carrying a fifth of a role's text count)
+  const texts = styles.filter((x) => x.size < 40 && x.share >= 0.2);
+  const look = (x) => (x ? `${FAMILY(x.family)} ${band(size2(x.size))} ${x.weight >= 600 ? 'bold' : 'regular'}` : 'none');
+  const u = b.units;
+  const unitW = u.widthShare * b.box.width;
+  const g = u.gap ?? u.gapCss ?? 0;
+  const slots = Math.max(1, Math.round((b.box.width + g) / (Math.max(unitW, 1) + g)));
+  return {
+    frame: `${width(b.frame.widthShare)}; ${surface(b.frame)}${b.frame.section && b.frame.section.bg !== 'transparent' ? `; section ${b.frame.section.bg}` : ''}`,
+    layout: `${Math.min(slots, 8)} per row; ${(numbers[0] || texts[0])?.align === 'left' ? 'left' : 'centred'}`,
+    numbers: numbers.length ? look(numbers[0]) : 'none',
+    // (no description: left out, so the block joins the same look with descriptions, tagged)
+    ...(texts.length ? { 'type body': [...new Set(texts.map((x) => `${look(x)} ${x.color}`))].sort().join(' + ') } : {}),
+  };
+}
+
+/** the colours of a statistics block's numbers (shown, not grouped: each number has its own) */
+const numberColours = (b) => [...new Set(Object.values(b.typography).flatMap((r) => r.styles)
+  .filter((x) => x.size >= 40).map((x) => x.color))].sort().join(' / ');
+
 function partsOf(b) {
   if (b.type === 'table') return tablePartsOf(b);
+  if (b.type === 'statistics') return statisticsPartsOf(b);
   const u = b.units;
   // units per row the grid holds: (block width + gap) / (unit width + gap)
   const unitW = u.widthShare * b.box.width;
@@ -208,6 +237,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     text: b.text,
     parts: partsOf(b),
     exactType: exactTypeOf(b),
+    ...(b.type === 'statistics' ? { colours: numberColours(b) } : {}),
   }));
 });
 const keyOf = (parts) => JSON.stringify(Object.entries(parts)
@@ -273,6 +303,10 @@ const groups = merged.map((g) => g.list).sort((a, c) => c.length - a.length).map
     (x.extra || []).forEach((k) => { m[k] = (m[k] || 0) + 1; });
     return m;
   }, {})),
+  // (statistics: the number colours the group's instances use)
+  colours: list.some((x) => x.colours) ? Object.entries(list.reduce((m, x) => (x.colours
+    ? { ...m, [x.colours]: (m[x.colours] || 0) + 1 } : m), {}))
+    .sort((a, c) => c[1] - a[1]) : undefined,
   items: list.map(({ parts, exactType, ...rest }) => rest),
 }));
 // groups measured elsewhere (a form that is only on stryker.com, source-forms.mjs) join as they

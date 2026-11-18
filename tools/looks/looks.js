@@ -22,7 +22,7 @@ const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${
 const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
 const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0);
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers',
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -56,6 +56,7 @@ function groupBox(g) {
       el('span', { class: 'lk-meta' }, `authored as: ${g.classes.map(([c, n]) => `${c} (${n})`).join(', ')}`),
     ),
     el('dl', { class: 'lk-parts' }, ...Object.entries(g.parts).flatMap(([k, v]) => [el('dt', {}, PART_NAMES[k] || k), el('dd', {}, v)])),
+    g.colours ? el('p', { class: 'lk-meta' }, `Number colours: ${g.colours.map(([c, n]) => `${c} (${n})`).join(' · ')}`) : null,
     // (with sizes in bands: the exact styles the group holds)
     g.exactTypes ? el('details', { class: 'lk-exact' }, el('summary', {}, 'Exact text styles in this group'), el('dl', { class: 'lk-parts' }, ...Object.entries(g.exactTypes).flatMap(([r, list]) => [
       el('dt', {}, PART_NAMES[`type ${r}`] || r),

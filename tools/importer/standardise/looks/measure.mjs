@@ -428,6 +428,23 @@ async function showImages(h) {
     e.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; });
     e.scrollIntoView({ block: 'center' });
   });
+  // (numbers that count up when they come into view: the block is measured once its text and size
+  // have stood still for 0.6 s, at most 5 s)
+  await h.evaluate((e) => new Promise((resolve) => {
+    const end = Date.now() + 5000;
+    let last = '';
+    let since = Date.now();
+    const check = () => {
+      const now = `${e.textContent}|${Math.round(e.getBoundingClientRect().height)}`;
+      if (now !== last) {
+        last = now;
+        since = Date.now();
+      }
+      if (Date.now() - since >= 600 || Date.now() > end) resolve();
+      else setTimeout(check, 150);
+    };
+    check();
+  }));
   // (a block that loads when it comes into view, like a Marketo form, may still be empty: it gets
   // up to 8 s to appear; a block that is hidden on purpose doesn't wait)
   await h.evaluate((e) => new Promise((resolve) => {
