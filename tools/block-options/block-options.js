@@ -1,7 +1,8 @@
 /*
  * Block options — an Experience Workspace / DA sidebar extension. Authors pick a block's
  * options (e.g. hero-corp's headline box, column, height) from named choices instead of
- * typing option names into the block's name row. The choices come from options.js; a preview
+ * typing option names into the block's name row. The choices come from options.js and the
+ * Block Library options sheet (tools/library-options.js); a preview
  * renders the block with the new options using the site's own code (the Text style panel's
  * preview page).
  *
@@ -10,7 +11,8 @@
  * DA editor: it shares no document, so the author selects the block's name row
  * ("hero-corp (image-slide, …)") and the panel rewrites that text.
  */
-import { BLOCK_OPTIONS, knownOptions } from './options.js';
+import { BLOCK_OPTIONS, knownOptions, withLibrary } from './options.js';
+import { allLibraryOptions } from '../library-options.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 const PREVIEW = '/tools/text-markers/preview.html';
@@ -29,6 +31,8 @@ const el = (tag, attrs = {}, ...children) => {
   return node;
 };
 
+// the built-in options with the Block Library options sheet merged in (set before render)
+let blockOptions = BLOCK_OPTIONS;
 let sdk = null;
 let live = null; // Experience Workspace: { html, selection: { blockIndex }, editable }
 let sourceCache = { at: 0, html: '' };
@@ -91,7 +95,7 @@ async function daSource() {
 
 /* ---------------------------------------------------------------- options */
 
-const def = () => current && BLOCK_OPTIONS[current.name];
+const def = () => current && blockOptions[current.name];
 const layoutOf = (options) => {
   const layout = def()?.groups.find((g) => g.required);
   return layout && layout.options.map(([v]) => v).find((v) => options.includes(v));
@@ -247,7 +251,7 @@ async function readHeaderSelection() {
   } catch { html = ''; }
   const text = html ? new DOMParser().parseFromString(html, 'text/html').body.textContent : '';
   const header = text && parseHeader(text);
-  if (!header || !BLOCK_OPTIONS[header.name]) {
+  if (!header || !blockOptions[header.name]) {
     if (current?.from === 'header') setBlock(null);
     return;
   }
@@ -369,5 +373,6 @@ async function connect() {
   }
 }
 
+blockOptions = withLibrary(BLOCK_OPTIONS, await allLibraryOptions());
 render();
 connect();

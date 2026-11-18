@@ -5,8 +5,11 @@
  * older free-value options a group supersedes, which are removed when the author picks in it.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
- * entry.
+ * entry. The Block Library options sheet can replace a group's choices, add groups, or add
+ * blocks (tools/library-options.js); `withLibrary` merges those rows in.
  */
+import { labelOf } from '../library-options.js';
+
 export const BLOCK_OPTIONS = {
   'hero-corp': {
     label: 'Hero (corp)',
@@ -121,4 +124,39 @@ export const BLOCK_OPTIONS = {
 /** every option name a block's groups know, so the rest can be kept as "other options" */
 export function knownOptions(def) {
   return new Set(def.groups.flatMap((g) => (g.options || g.flags).map(([v]) => v)).filter(Boolean));
+}
+
+/**
+ * The built-in block options with the library sheet's rows merged in: a row whose key is a
+ * group id replaces that group's choices (its "none" choice and its rules stay); any other key
+ * adds a single-choice group (shown for every layout); a block name the panel doesn't know adds
+ * that block.
+ * @param {object} defs The built-in options (BLOCK_OPTIONS)
+ * @param {Map<string, Map<string, Array<[string, string]>>>} sheet The sheet rows per owner
+ * @returns {object} The merged options
+ */
+export function withLibrary(defs, sheet) {
+  const merged = {};
+  Object.entries(defs).forEach(([name, block]) => {
+    merged[name] = { ...block, groups: block.groups.map((g) => ({ ...g })) };
+  });
+  sheet.forEach((groups, name) => {
+    if (name === 'text-style' || name === 'section-metadata' || !/^[a-z0-9-]+$/.test(name)) return;
+    if (!merged[name]) merged[name] = { label: labelOf(name), groups: [] };
+    groups.forEach((values, key) => {
+      const group = merged[name].groups.find((g) => g.id === key);
+      const choices = values.filter(([v]) => v);
+      const named = (list) => choices
+        .map(([v, l]) => [v, l || list.find(([x]) => x === v)?.[1] || labelOf(v)]);
+      if (group?.flags) {
+        group.flags = named(group.flags);
+      } else if (group) {
+        const none = group.options.find(([v]) => v === '');
+        group.options = [...(none ? [none] : []), ...named(group.options)];
+      } else {
+        merged[name].groups.push({ id: key, label: labelOf(key), options: [['', 'None'], ...named([])] });
+      }
+    });
+  });
+  return merged;
 }

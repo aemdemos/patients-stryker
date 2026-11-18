@@ -9,8 +9,9 @@
  * words the site understands.
  */
 import {
-  COLOURS, FONTS, SIZES, STEPS, DECORATIONS,
+  COLOURS, FONTS, SIZES, STEPS, DECORATIONS, SPACING,
 } from '../../scripts/span-markers.js';
+import libraryOptions, { labelOf } from '../library-options.js';
 
 const SDK_URL = 'https://da.live/nx/utils/sdk.js';
 
@@ -33,6 +34,33 @@ const LABELS = {
   'rule-gold': 'Gold rule (underlined heading)',
   'box-dark': 'Dark quote box (whole paragraph)',
 };
+// the choices per group: built in, or set by the library sheet (tools/library-options.js)
+const lists = {
+  colour: [...COLOURS],
+  font: FONTS.filter((f) => f !== 'upper'),
+  size: [...SIZES],
+  look: [...DECORATIONS],
+};
+const BUILT_IN = {
+  colour: COLOURS, font: FONTS, size: SIZES, look: DECORATIONS,
+};
+
+/**
+ * Reads the library sheet's text-style rows. A new word must be one word (letters and digits)
+ * that is not a spacing word: the site gives it the class ts-<word>, styled in styles-corp.css.
+ */
+async function loadLists() {
+  const groups = await libraryOptions('text-style');
+  Object.keys(lists).forEach((key) => {
+    if (!groups.has(key)) return;
+    const words = groups.get(key).filter(([word]) => BUILT_IN[key].includes(word)
+      || (/^[a-z0-9]+$/.test(word) && !SPACING[word]));
+    if (!words.length) return;
+    lists[key] = words.map(([word]) => word);
+    words.forEach(([word, label]) => { if (label) LABELS[word] = label; });
+  });
+}
+
 const STEP_LABELS = {
   xs: 'XS (5px)', s: 'S (10px)', m: 'M (15px)', l: 'L (20px)', xl: 'XL (30px)',
 };
@@ -144,7 +172,8 @@ function paintSwatches(container) {
   if (!doc?.body) return;
   container.querySelectorAll('[data-colour]').forEach((button) => {
     const probe = doc.createElement('span');
-    probe.className = `color-${button.dataset.colour}`;
+    const { colour } = button.dataset;
+    probe.className = COLOURS.includes(colour) ? `color-${colour}` : `text-marker ts-${colour}`;
     probe.textContent = 'x';
     doc.querySelector('main').append(probe);
     button.style.setProperty('--swatch', doc.defaultView.getComputedStyle(probe).color);
@@ -177,7 +206,7 @@ function choiceGroup(title, options, current, onPick, { swatch = false } = {}) {
     buttons.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.value === value)));
     updatePreview();
   };
-  [['', 'None'], ...options.map((o) => [o, LABELS[o] || o])].forEach(([value, label]) => {
+  [['', 'None'], ...options.map((o) => [o, LABELS[o] || labelOf(o)])].forEach(([value, label]) => {
     const button = el('button', {
       type: 'button',
       role: 'radio',
@@ -478,11 +507,11 @@ function render() {
   const choices = el(
     'div',
     { class: 'tm-choices-wrap' },
-    choiceGroup('Colour', COLOURS, state.colour, (v) => { state.colour = v; }, { swatch: true }),
-    choiceGroup('Font', FONTS.filter((f) => f !== 'upper'), state.font, (v) => { state.font = v; }),
+    choiceGroup('Colour', lists.colour, state.colour, (v) => { state.colour = v; }, { swatch: true }),
+    choiceGroup('Font', lists.font.filter((f) => f !== 'upper'), state.font, (v) => { state.font = v; }),
     el('label', { class: 'tm-check' }, el('input', { type: 'checkbox', onchange: (e) => { state.upper = e.target.checked; updatePreview(); } }), 'Capitals (word “upper”)'),
-    choiceGroup('Size (relative to the text around it)', SIZES, state.size, (v) => { state.size = v; }),
-    choiceGroup('Special look', DECORATIONS, state.look, (v) => { state.look = v; }),
+    choiceGroup('Size (relative to the text around it)', lists.size, state.size, (v) => { state.size = v; }),
+    choiceGroup('Special look', lists.look, state.look, (v) => { state.look = v; }),
     spacingGroup('Padding', 'padding'),
     spacingGroup('Margin', 'margin'),
     el('p', { class: 'tm-hint' }, 'Top and bottom spacing applies when the whole line is styled; inside a line only left and right show. Bold and italic stay normal editor formatting.'),
@@ -578,5 +607,6 @@ async function connect() {
   }
 }
 
+await loadLists();
 render();
 connect();

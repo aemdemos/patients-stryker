@@ -16,12 +16,14 @@
  *   look     rule-gold (gold rule of an underlined heading), box-dark (dark quote box)
  *   spacing  p, pt, pr, pb, pl, px, py (padding) or m, mt, mr, mb, ml, mx, my (margin),
  *            each followed by a step: xs, s, m, l, xl (the spacing tokens)
+ *   added    words added in the Block Library options sheet (tools/library-options.js) get
+ *            the class ts-<word>; their look is a ts-<word> rule in styles/styles-corp.css
  * Bold and italic stay plain editor formatting (authoring conventions), not marker words.
  * When the markers hold the whole line, the spacing goes on the line itself (the paragraph
  * or heading), so top / bottom spacing takes effect; inside a line only left / right spacing
- * shows. Unknown words are ignored; a marker without its partner is removed. Markers stacked
- * directly around each other (`:start-gold::start-purple:text:end::end:`) keep only the
- * inner, newer style.
+ * shows. Words without a style change nothing; a marker without its partner is removed.
+ * Markers stacked directly around each other (`:start-gold::start-purple:text:end::end:`)
+ * keep only the inner, newer style.
  */
 
 // formatting a marker pair may run through (and may itself sit in)
@@ -88,7 +90,8 @@ export function parseMarker(name) {
       i += 1;
     } else if (COLOURS.includes(COLOUR_ALIASES[word] || word)) {
       classes.push(`color-${COLOUR_ALIASES[word] || word}`);
-    } else if (FONTS.includes(word) || SIZES.includes(word)) {
+    } else if (/^[a-z0-9]+$/.test(word)) {
+      // fonts, sizes, and words added in the Block Library options sheet (styled as ts-<word>)
       classes.push(`ts-${word}`);
     }
   }
