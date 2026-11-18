@@ -134,7 +134,23 @@ const panelsOf = ({ count, openAtStart }) => {
 };
 
 /** the parts of an instance's look (each part a short text; together the fingerprint) */
+/**
+ * a table's look: its width, whether it has a bold header row, and the cells' main text style (a
+ * header row holds little text: in a short table it would fall below the share the other blocks
+ * count, so it is named on its own)
+ */
+function tablePartsOf(b) {
+  const styles = b.typography.body?.styles || [];
+  const cells = styles.find((x) => x.weight < 600) || styles[0];
+  return {
+    frame: `${width(b.frame.widthShare)}; ${surface(b.frame)}`,
+    header: styles.some((x) => x.weight >= 600) ? 'bold header row' : 'no header row',
+    'type body': cells ? typeOf(cells) : 'none',
+  };
+}
+
 function partsOf(b) {
+  if (b.type === 'table') return tablePartsOf(b);
   const u = b.units;
   // units per row the grid holds: (block width + gap) / (unit width + gap)
   const unitW = u.widthShare * b.box.width;
