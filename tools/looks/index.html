@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Block looks: groups by how they look</title>
+  <link rel="stylesheet" href="./looks.css">
+  <script type="module" src="./looks.js"></script>
+</head>
+<body>
+  <header class="lk-bar">
+    <h1 class="lk-title">Block looks</h1>
+    <label>Block <select class="lk-type" aria-label="Block type"></select></label>
+    <div class="lk-group" role="group" aria-label="Width">
+      <button type="button" class="lk-btn" data-vp="d" aria-pressed="true">Desktop</button>
+      <button type="button" class="lk-btn" data-vp="m" aria-pressed="false">Phone</button>
+    </div>
+    <label>Size <input type="range" class="lk-size" min="80" max="420" step="20" value="180" aria-label="Screenshot height"></label>
+    <span class="lk-summary" aria-live="polite"></span>
+  </header>
+  <main class="lk-main"></main>
+</body>
+</html>

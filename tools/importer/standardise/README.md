@@ -16,6 +16,30 @@ block-by-block review, layout-only standards) is kept below for reference.
 - The review flow uses no internal tool (no QA tool, no blast radius): reviewers compare the
   page with stryker.com by eye, as the customer would.
 
+## Roadmap from 2026-11-17 (the user's): base variants from measured looks
+
+The `/std` pages don't yet cut it on styling; the authoring approach stays. In this order:
+
+1. **Base variants per block type** (Columns left out for now, below), one block type at a time:
+   group every instance by how it **looks** (text styling, image size against the block, the
+   placement of things against each other: measured on the rendered as-is pages, not read from
+   the markup); count each group; order by count; an inspection page per block type with every
+   instance's screenshot in long rows, largest group first (also to show the customer why these
+   variants); the top 5 to 10 groups become the base variants; every other group is assigned to
+   one of them (where it appears, the base variant is used); element-count mismatches handled
+   case by case.
+2. **Columns, separately:** probably treated as default text and media inside flex sections (like
+   the section-level options that turn sections into accordions or tabs, here into columns that
+   can hold anything), to get closer to the customer's design. To be discussed at length first.
+3. **Default text again**, the same way (the text sets didn't capture the user's full vision).
+4. **Authoring Manual:** the block library with the base variants and the authoring conventions
+   with their variants.
+5. **Customer approval** of the block and text variants, with amendments, in parallel.
+6. **The review tool's Design panel** offers only the base variants (nothing more until the
+   customer asks for it).
+7. **The review and QA** with the review tool, on `/std` as close to the customer's design as
+   possible. The apply step (writing the review's choices into the documents) builds on this.
+
 ## Plan: where we are (2026-11-16)
 
 Done on the product-detail pages: every block type on standard variants, section backgrounds and
