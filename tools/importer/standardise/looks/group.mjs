@@ -193,8 +193,21 @@ function spacingPartsOf(b) {
   };
 }
 
+/**
+ * a chart's look: its kind (column, the default, bar or pie: the block's variants) and width (it is
+ * drawn as a graphic: its text is axis labels, not a look)
+ */
+function chartPartsOf(b) {
+  const kind = ['bar', 'pie'].find((k) => b.classes.includes(k)) || 'column';
+  return {
+    frame: `${width(b.frame.widthShare)}; ${surface(b.frame)}`,
+    chart: `${kind} chart`,
+  };
+}
+
 function partsOf(b) {
   if (b.type === 'table') return tablePartsOf(b);
+  if (b.type === 'chart-corp') return chartPartsOf(b);
   if (b.type === 'corp-spacing-box') return spacingPartsOf(b);
   if (b.type === 'statistics') return statisticsPartsOf(b);
   const u = b.units;

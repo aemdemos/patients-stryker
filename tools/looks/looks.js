@@ -22,7 +22,7 @@ const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${
 const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
 const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0);
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart',
 };
 
 function el(tag, attrs = {}, ...children) {
