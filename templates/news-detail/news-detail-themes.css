@@ -7,6 +7,32 @@ body.news-detail.basic main > .section.separator {
   padding-top: var(--space-block-l);
 }
 
+/* full-width + basic (both themes on one page, e.g. the emergency care articles "EMS powered
+   products" and "AED buying guide", and the Sage "Multi-Position MATS 2.0" article): the
+   sizes come with the theme pair, not with text tags. Measured on stryker.com: the copy is
+   17.5px Humanist on 20.125px lines at every width (small print stays 11.2px); the title
+   42px Futura bold; an Egyptienne h2 (authored in italic) 26.25px, 30.625px from 600px.
+   Bold: Futura on a line of its own, the copy font in a sentence (the template rule), also
+   for a bold label opening a list item (the template keeps that one in the copy font,
+   below), e.g. "Air-assisted lateral transfer" */
+body.news-detail.full-width.basic main > .section:not(.disclaimer) > .default-content-wrapper :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.news-detail.full-width.basic main > .section > .default-content-wrapper > h1 {
+  font-size: var(--corp-heading-font-size-h1-1-5);
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail.full-width.basic main > .section > .default-content-wrapper > h2:has(em):not(:has(strong)) {
+  font-size: calc(var(--news-h2-size) * var(--news-scale-1-25));
+}
+
+body.news-detail.full-width.basic main > .section > .default-content-wrapper li > strong.standalone {
+  font-family: var(--display-font-family);
+}
+
 /* full-width: news pages whose source runs the title, the small print and the "Last
    Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
    .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date
