@@ -206,9 +206,11 @@ body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 {
   font-weight: var(--font-weight-bold);
 }
 
-/* italic inside an article heading stays italic (live <i> in h2); the global heading rule only
-   means to straighten the bold + italic gold marker */
+/* italic inside an article heading stays a real italic in the heading colour (live <i> in h2,
+   e.g. press release subtitles); elsewhere on corp an italic heading word is gold. Gold words in
+   an article heading take the Text style gold marker */
 body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4) em:not(strong em, :has(strong)) {
+  color: inherit;
   font-style: italic;
 }
 
