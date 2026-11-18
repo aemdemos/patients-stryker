@@ -50,14 +50,6 @@ Insert end. The insert buttons refuse to run while words are selected (they woul
 | Font | `serif`, `sans`, `body`; `upper` for capitals | Egyptienne, Futura, Humanist |
 | Size | `s`, `l`, `xl`, `xxl` | 0.8×, 1.25×, 1.5×, 1.75× the text around it |
 | Padding / margin | `p`, `pt` … `py` / `m`, `mt` … `my`, then `xs`, `s`, `m`, `l`, `xl` | 5, 10, 15, 20, 30px (spacing tokens) |
-| Special look | `rule-gold`, `box-dark` | gold rule of an underlined heading; dark quote box (news) |
-
-**Making markers stand out while editing (optional):** select a marker (or the whole run from
-start to end marker) and apply the editor's inline code format. The markers then show as grey
-code chips, apart from the text, and work the same on the page; the code format is removed
-there. Other inline code is not affected. Plain markers stay the better default for search
-engines: they arrive as empty spans, while code-formatted ones arrive as text that the site
-removes in the browser.
 
 ## Limitations
 

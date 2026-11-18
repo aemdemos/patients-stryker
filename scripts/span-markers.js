@@ -22,12 +22,6 @@
  * shows. Unknown words are ignored; a marker without its partner is removed. Markers stacked
  * directly around each other (`:start-gold::start-purple:text:end::end:`) keep only the
  * inner, newer style.
- *
- * Markers may also be formatted as inline code (`:start-blue:` and `:end:` each as code, or the
- * whole run `:start-blue:text:end:` as code) so they stand out in the editor; the code
- * formatting is dropped on the page. Note: EDS leaves code-formatted markers as text in the
- * delivered HTML (this script removes them in the browser), while plain markers arrive as
- * empty spans.
  */
 
 // formatting a marker pair may run through (and may itself sit in)
@@ -69,52 +63,6 @@ export const STEPS = {
 
 const START = 'icon-start-';
 const END = 'icon-end';
-
-// a marker typed as text: `:start-<words>:` or `:end:`
-const MARKER_TEXT = /(:(?:start-[a-z0-9-]+|end):)/i;
-// inline code that holds markers only: one marker, or a whole styled run (start … end)
-const CODE_MARKERS = /^(:start-[a-z0-9-]+:(.*:end:)?|:end:)$/is;
-
-/**
- * The text of an inline code element, with marker spans written back as `:name:`.
- * @param {Element} code A code element
- * @returns {string} Its text
- */
-function codeText(code) {
-  return [...code.childNodes].map((node) => {
-    const icon = node.nodeType === Node.ELEMENT_NODE && node.matches('span.icon')
-      && [...node.classList].find((c) => c.startsWith('icon-'));
-    return icon ? `:${icon.slice('icon-'.length)}:` : node.textContent;
-  }).join('').trim();
-}
-
-/**
- * Markers authored with inline code formatting (so they stand out from the text in the
- * editor) work like plain ones: the code formatting is removed and the marker text becomes
- * a marker span. Only code that holds markers alone, or a whole styled run from a start to
- * an end marker, is read; any other inline code, and code blocks, stay as they are.
- * @param {Element} main The container element
- */
-function unwrapCodeMarkers(main) {
-  main.querySelectorAll('code').forEach((code) => {
-    if (code.closest('pre') || !CODE_MARKERS.test(codeText(code))) return;
-    const walker = document.createTreeWalker(code, NodeFilter.SHOW_TEXT);
-    const texts = [];
-    while (walker.nextNode()) texts.push(walker.currentNode);
-    texts.forEach((text) => {
-      const parts = text.textContent.split(MARKER_TEXT);
-      if (parts.length === 1) return;
-      const nodes = parts.map((part, i) => {
-        if (i % 2 === 0) return part;
-        const span = document.createElement('span');
-        span.className = `icon icon-${part.slice(1, -1).toLowerCase()}`;
-        return span;
-      }).filter((part) => part !== '');
-      text.replaceWith(...nodes);
-    });
-    code.replaceWith(...code.childNodes);
-  });
-}
 
 /**
  * Reads the words of a start marker.
@@ -219,7 +167,6 @@ function wrapPair(start, end, container) {
  * @param {Element} main The container element
  */
 export default function decorateSpanMarkers(main) {
-  unwrapCodeMarkers(main);
   const markers = [...main.querySelectorAll(`span.icon[class*="${START}"], span.icon.${END}`)]
     .filter((marker) => !marker.closest('code, pre'));
   const byContainer = new Map();
