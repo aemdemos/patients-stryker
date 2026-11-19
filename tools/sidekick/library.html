@@ -26,7 +26,8 @@
      * - The sheet stores content.da.live URLs (they need a login); the same
      *   documents are served by this site, so paths are rewritten to it. Any
      *   DA org/site prefix is dropped, so the patients and corp (stryker-com)
-     *   libraries both work, each from its own sheet.
+     *   libraries both work, each from its own sheet. The DA site in those URLs
+     *   also names the site in the page title.
      * - The sheet's rows live in `data` (plus a DA-only `options` sheet); the
      *   Sidekick Library expects a `blocks` list, so it gets just the rows.
      * - library-container-start/end markers only matter to the DA library; they
@@ -37,7 +38,12 @@
      */
     const SHEET = '/.da/library/blocks.json';
     // https://content.da.live/<org>/<site>/<path> → /<path>
-    const DA_SOURCE = /^https:\/\/content\.da\.live\/[^/]+\/[^/]+(?=\/)/;
+    const DA_SOURCE = /^https:\/\/content\.da\.live\/[^/]+\/([^/]+)(?=\/)/;
+    // page title per DA site; anything else keeps the title in <head>
+    const SITE_NAMES = {
+      'patients-stryker': 'Stryker Patients',
+      'stryker-com': 'Stryker.com',
+    };
     const DOCS = '/.da/library/blocks/';
     const MARKERS = '.library-container-start, .library-container-end';
 
@@ -86,9 +92,11 @@
     };
 
     const sheet = await (await nativeFetch(SHEET)).json();
-    const rows = (sheet.data?.data ?? sheet.data ?? [])
-      .filter((row) => row.name && row.path)
-      .map((row) => ({ ...row, path: toSiteUrl(row.path) }));
+    const sheetRows = (sheet.data?.data ?? sheet.data ?? [])
+      .filter((row) => row.name && row.path);
+    const [, daSite] = sheetRows.map((row) => row.path.match(DA_SOURCE)).find(Boolean) ?? [];
+    if (SITE_NAMES[daSite]) document.title = `Block Library | ${SITE_NAMES[daSite]}`;
+    const rows = sheetRows.map((row) => ({ ...row, path: toSiteUrl(row.path) }));
     const base = URL.createObjectURL(new Blob([JSON.stringify({ data: rows })], { type: 'application/json' }));
 
     const library = document.createElement('sidekick-library');
