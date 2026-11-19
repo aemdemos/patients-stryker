@@ -16,6 +16,28 @@ block-by-block review, layout-only standards) is kept below for reference.
 - The review flow uses no internal tool (no QA tool, no blast radius): reviewers compare the
   page with stryker.com by eye, as the customer would.
 
+## Direction from 2026-11-19: source → standard
+
+The as-is pages (`/rs`) are an incomplete migration (heroes with the picture in the wrong place,
+heroes imported as Columns, tabs guessed from headings, unfinished styling): looks measured on
+them carry those gaps into the base variants. So (the user's decision):
+
+- **The looks and base variants come from the original:** the AEM export (what each component is
+  and its authored options) and the rendered stryker.com pages, saved at 1440 and 375
+  (`looks/save-source.mjs`; the fast import's copies were saved at 1920 and scripts freeze their
+  carousels at that width) and measured offline.
+- **The rules translate the source directly into the standard pages:** the importer keeps its
+  reading side (the component handlers) and gets a standard output (base variants, the containers
+  model, named text styles) instead of lift-and-shift settings. `/rs` stays as history and
+  reference; the `/rs` → `/std` conversion (`apply-variants.mjs`) is set aside.
+- Kept: the review tool and its backend, the looks tooling, the containers model, the standard
+  CSS, the source snapshots, the decisions made so far (to be checked again on the original).
+
+Order: a Hero spike on the original (against the as-is Hero groups); the original's looks for
+every component type and the text styles; the standard importer output on the shared import
+library (to be committed to a branch of its own first); checks (export coverage, the original vs
+the standard pages); the customer review.
+
 ## Roadmap from 2026-11-17 (the user's): base variants from measured looks
 
 The `/std` pages don't yet cut it on styling; the authoring approach stays. In this order:
@@ -28,9 +50,7 @@ The `/std` pages don't yet cut it on styling; the authoring approach stays. In t
    variants); the top 5 to 10 groups become the base variants; every other group is assigned to
    one of them (where it appears, the base variant is used); element-count mismatches handled
    case by case.
-2. **Columns, separately:** probably treated as default text and media inside flex sections (like
-   the section-level options that turn sections into accordions or tabs, here into columns that
-   can hold anything), to get closer to the customer's design. To be discussed at length first.
+2. **Columns, separately: the containers model** (discussed and decided 2026-11-19, below).
 3. **Default text again**, the same way (the text sets didn't capture the user's full vision).
 4. **Authoring Manual:** the block library with the base variants and the authoring conventions
    with their variants.
@@ -39,6 +59,48 @@ The `/std` pages don't yet cut it on styling; the authoring approach stays. In t
    customer asks for it).
 7. **The review and QA** with the review tool, on `/std` as close to the customer's design as
    possible. The apply step (writing the review's choices into the documents) builds on this.
+
+## The containers model (decided 2026-11-19)
+
+Tabs, accordions and columns are sections of "stuff" (blocks and default content) arranged by a
+section style; their only variants are the chrome (the tab bar, the accordion's line and +/−, the
+column presets and their behaviour on phones). Code: `scripts/containers.js` (prototype).
+
+- **Tabs and accordions are runs of sections:** one section per tab or item (`tab` /
+  `accordion-panel`), its first heading the label; the `continued` sections after it belong to it,
+  so an item can hold text, then columns, then text. A tab's label is explicit: the heading-split
+  `tabbed` sections guess tabs from heading levels and make wrong tabs when a panel holds a heading
+  of that level (high-speed-drills: 8 tabs, 4 of them "For use with"; the real titles come from the
+  stryker.com export's tabsGrid). Tabs stay a tab bar on phones, as on stryker.com.
+- **Columns are a layout inside one section:** `layout` with a preset (`halves`, `thirds`,
+  `quarters`, `fifths`, `sixths`, `wide-first`, `wide-last`, `middle`); a `Column break` line ends a
+  column; a column holds text and blocks. Measured on all 3,117 Columns blocks and flex sections of
+  the as-is pages (`measure.mjs --columns`, page `tools/looks/?type=layouts`): 6+6 49%, 8+4 15%,
+  4+4+4 11%, 4+8 8%, 3+3+3+3 7% (five presets 90%; narrow columns that don't fill the row 7%, a
+  grid with fewer columns than slots); 93% stack on phones.
+- **Decided:** the existing flex sections become `layout` sections too (one model); the Columns
+  block is retired on the standard pages (it stays for the patients site and the as-is pages); the
+  Columns variants' own text styles are replaced through the default-text step, done first.
+- **Prototype** (2026-11-19, local drafts `content/std/drafts/containers/{procuity-icu,
+  pro-pelvis,high-speed-drills}`, converter `containers.mjs`): words, links and images identical;
+  layouts and positions match at 1440 and 375; text in former Columns cells takes the default
+  styles (the trade: the variants carried typography).
+
+Migration, in this order (not started):
+
+1. **Text styles first** (the roadmap's default-text step): measure the text in today's Columns
+   cells and default content, group it like the block looks, the user picks a few text styles;
+   each former Columns variant gets the matching one through its section.
+2. **Rules and checks:** the converter for every document (fragments too; every measured width
+   onto a preset; flex sections with Column breaks between their pieces; tab titles from the
+   export, after a rendered check of all 136 tabbed sections); checks on every page: words, links,
+   images unchanged, text positions against the current `/std` at 1440 and 375 (ranked report),
+   tabs and accordions against the export.
+3. **Code:** the prototype to production (final names), Block Library and Authoring Manual entries
+   for the containers, the review tool (Design panel offers the presets; block keys from Columns
+   to sections, rekey of existing entries).
+4. **Run and review:** all 985 documents locally, the check report, the worst pages looked at;
+   uploads to DA and previews only when the user asks. `/rs` stays as it is.
 
 ## Plan: where we are (2026-11-16)
 

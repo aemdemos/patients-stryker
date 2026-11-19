@@ -27,9 +27,9 @@
  *   [--out tools/looks/data]
  */
 import {
-  readFileSync, writeFileSync, readdirSync, mkdirSync, cpSync,
+  readFileSync, writeFileSync, readdirSync, mkdirSync, copyFileSync, existsSync,
 } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
 
 const args = process.argv.slice(2);
 const type = args[0];
@@ -48,6 +48,9 @@ const SIZES = opt('--sizes', 'exact');
 const NAME = opt('--name', type);
 const EXTRA = opt('--extra', '');
 const REMOTE_SHOTS = args.includes('--remote-shots');
+// (--shots-prefix: a folder of their own for the screenshots, e.g. source/ for the original's,
+// which have the as-is ones' names)
+const SHOTS_PREFIX = opt('--shots-prefix', '') ? `${opt('--shots-prefix').replace(/\/$/, '')}/` : '';
 if (!type) {
   console.error('usage: group.mjs <block type>');
   process.exit(2);
@@ -303,8 +306,8 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     n: b.n,
     classes: b.classes,
     inFragment: b.inFragment,
-    shot: b.shot,
-    phoneShot: b.phone?.shot,
+    shot: b.shot && b.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`),
+    phoneShot: b.phone?.shot && b.phone.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`),
     counts: b.counts,
     text: b.text,
     ...(b.rows ? { container: b.type, context: [b.inTabs && 'in tabs', b.inAccordion && 'in accordion'].filter(Boolean) } : {}),
@@ -497,8 +500,16 @@ writeFileSync(join(OUT, 'index.json'), JSON.stringify(index, null, 1));
 // folder, which the review preview can't reach
 // (--remote-shots: the screenshots live only in Document Authoring, upload-shots.sh, so the page
 // reads them from there everywhere; nothing is copied)
+// (only the screenshots the groups show: the measuring folder may hold others, from earlier runs)
 if (!REMOTE_SHOTS) {
-  TYPES.forEach((t) => cpSync(join(IN, 'shots', t), join(OUT, '..', 'shots', t), { recursive: true }));
+  groups.flatMap((g) => g.items || []).flatMap((it) => [it.shot, it.phoneShot]).filter(Boolean)
+    .forEach((rel) => {
+      const src = join(IN, rel.replace(`shots/${SHOTS_PREFIX}`, 'shots/'));
+      if (!existsSync(src)) return;
+      const dest = join(OUT, '..', rel);
+      mkdirSync(dirname(dest), { recursive: true });
+      copyFileSync(src, dest);
+    });
 }
 console.log(`${NAME}: ${total} instances on ${result.measuredPages} measured pages, ${groups.length} groups`);
 groups.slice(0, 15).forEach((g) => console.log(`  #${g.id} ${g.instances} on ${g.pages} pages · ${Object.values(g.parts).join(' | ')}`));

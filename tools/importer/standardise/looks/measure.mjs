@@ -8,7 +8,8 @@
  * at both widths. Raw values are kept (group.mjs buckets them), so the grouping can change without
  * rendering again. One page at a time; resumable (pages already measured are skipped).
  * usage: node tools/importer/standardise/looks/measure.mjs [--base http://localhost:3000]
- *   [--out /tmp/run-outputs/looks-v2] [--columns] [--only <path>,<path>] [--limit n] [--reverse]
+ *   [--out /tmp/run-outputs/looks-v2] [--columns | --text] [--only <path>,<path>] [--limit n]
+ *   [--reverse]
  *   [--force]
  * Blocks in closed tabs or accordions are measured after opening them.
  */
@@ -17,10 +18,12 @@ import {
 } from 'fs';
 import { createRequire } from 'module';
 import { join } from 'path';
+import { createHash } from 'crypto';
 
 const S = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts';
 const { chromium } = createRequire(`${S}/package.json`)('playwright');
 const args = process.argv.slice(2);
+const sha1 = (x) => createHash('sha1').update(x).digest('hex');
 const opt = (name, fallback) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : fallback;
@@ -29,7 +32,27 @@ const base = opt('--base', 'http://localhost:3000');
 // (--columns: the layout containers instead of the blocks: every Columns block and flex section,
 // cell by cell, in their own output folder)
 const COLUMNS = args.includes('--columns');
-const out = opt('--out', COLUMNS ? '/tmp/run-outputs/looks-columns' : '/tmp/run-outputs/looks-v2');
+// (--text: the page's text instead of its blocks: every run of default content and every Columns
+// cell, its text styles per role; one pass over the whole page, no screenshots)
+const TEXT = args.includes('--text');
+// (--source: the original instead of the as-is pages: the saved stryker.com copies of
+// save-source.mjs at the width being measured, scripts off, their saved stylesheets, live images
+// and fonts; the components of SOURCE_TYPES are marked as blocks of the matching type, so they
+// are measured and grouped as the as-is blocks are)
+const SOURCE = args.includes('--source');
+const SOURCE_PAGES = opt('--source-pages', '/tmp/run-outputs/source-pages');
+const SCRIPT_TAGS = /<script\b[\s\S]*?<\/script>/gi;
+const SOURCE_TYPES = {
+  // the hero: every component of the page's hero area (the first area of the main content, before
+  // the customizable area), whatever its type (pagehero, carouselslidegroup, fullWidthImageHero,
+  // hero, an experience fragment …); of a carousel, the slide on show
+  'hero-corp': 'hero-area',
+};
+let defaultOut = '/tmp/run-outputs/looks-v2';
+if (COLUMNS) defaultOut = '/tmp/run-outputs/looks-columns';
+if (TEXT) defaultOut = '/tmp/run-outputs/looks-text';
+if (SOURCE) defaultOut = '/tmp/run-outputs/looks-source';
+const out = opt('--out', defaultOut);
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const limit = Number(opt('--limit', 0)) || Infinity;
 const SKIP = ['columns', 'fragment', 'header', 'footer', 'header-corp', 'footer-corp'];
@@ -198,6 +221,9 @@ function measureBlock(el) {
   const cardList = [...el.querySelectorAll('ul, ol')].filter(own).find((l) => [...l.children]
     .some((li) => visible(li) && li.querySelector('img, picture, video, iframe')));
   if (cardList) units = [...cardList.children].filter(visible);
+  // (a hero on the original is one unit: its picture sits in a grid column of its own, which the
+  // rule above would take for the unit)
+  if (el.dataset.source && el.dataset.blockName === 'hero-corp') units = [el];
   const ub = units.map(box);
   const perRow = ub.filter((u) => Math.abs(u.top - ub[0].top) < 6).length;
   const gap = ub.length > 1 && Math.abs(ub[1].top - ub[0].top) < 6
@@ -355,6 +381,8 @@ function measureBlock(el) {
   return {
     content,
     type: el.dataset.blockName,
+    // (on the original: the AEM component it is)
+    ...(el.dataset.component ? { component: el.dataset.component } : {}),
     classes: [...el.classList].filter((c) => !['block', el.dataset.blockName].includes(c) && !c.endsWith('-block')),
     inFragment: !!el.closest('.fragment, .fragment-wrapper'),
     box: b,
@@ -386,10 +414,57 @@ function measureBlock(el) {
 }
 
 const settle = async (page) => {
-  await page.waitForFunction(() => {
-    const s = [...document.querySelectorAll('main .section')];
-    return s.length && s.every((x) => x.dataset.sectionStatus === 'loaded');
-  }, null, { timeout: 20000 }).catch(() => null);
+  // (the original: its components marked as blocks; no EDS sections to wait for)
+  if (SOURCE) {
+    await page.evaluate((types) => {
+      const GRID = /(^|\s)(parsys|aem-Grid|responsivegrid|row|page-section)(\s|$)/;
+      // the components of an area: its children, through the parsys / grid wrappers
+      const componentsOf = (el) => [...el.children].flatMap((c) => {
+        const cls = String(c.className);
+        // (plain divs without a class are wrappers too: the hero and customizable areas)
+        if ((!cls.trim() || GRID.test(cls)) && !/aem-GridColumn/.test(cls)) return componentsOf(c);
+        return [c];
+      });
+      const mark = (el, name, component) => {
+        el.classList.add('block');
+        el.dataset.blockName = name;
+        el.dataset.source = '1';
+        el.dataset.component = component;
+      };
+      Object.entries(types).forEach(([name, sel]) => {
+        if (sel !== 'hero-area') {
+          document.querySelectorAll(sel).forEach((el) => mark(el, name, sel));
+          return;
+        }
+        const main = document.querySelector('.main.content');
+        if (!main) return;
+        // the leading run of hero components at the top of the content (in the hero area, or the
+        // first of the customizable area on pages without one); an experience fragment counts
+        // only first; the run stops at the first other component
+        const HEROES = ['pagehero', 'carouselslidegroup', 'fullWidthImageHero', 'hero', 'longtexthero',
+          'hero-large-carousel', 'fullWidthImage'];
+        const all = componentsOf(main).filter((c) => c.getBoundingClientRect().height > 1
+          && !/breadcrumb/.test(c.className));
+        const lead = [];
+        all.every((c, i) => {
+          const component = String(c.className).trim().split(/\s+/)[0];
+          const isHero = HEROES.includes(component) || (i === 0 && component === 'experienceFragment');
+          if (isHero) lead.push([c, component]);
+          return isHero;
+        });
+        lead.forEach(([c, component]) => {
+          const slide = c.querySelector('.carouselslide.slick-current') || c.querySelector('.carouselslide');
+          mark(slide || c, name, component);
+        });
+      });
+    }, SOURCE_TYPES);
+  }
+  if (!SOURCE) {
+    await page.waitForFunction(() => {
+      const s = [...document.querySelectorAll('main .section')];
+      return s.length && s.every((x) => x.dataset.sectionStatus === 'loaded');
+    }, null, { timeout: 20000 }).catch(() => null);
+  }
   // scroll through, so lazy images load, then back to the top
   await page.evaluate(() => new Promise((resolve) => {
     const step = (y) => {
@@ -422,10 +497,39 @@ let page;
 async function session() {
   if (browser) await browser.close().catch(() => null);
   browser = await chromium.launch();
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  const context = await browser.newContext({
+    viewport: { width: 1440, height: 1000 }, bypassCSP: SOURCE,
+  });
   page = await context.newPage();
   page.setDefaultTimeout(30000);
   await page.route(BLOCKED, (r) => r.abort());
+  if (SOURCE) {
+    // the saved copy for the current width, its saved stylesheets; the rest live (images, fonts)
+    await page.route('**/*', (route) => {
+      const req = route.request();
+      const u = new URL(req.url());
+      if (BLOCKED(u)) return route.abort();
+      if (req.isNavigationRequest() && req.frame() === page.mainFrame()) {
+        const file = join(SOURCE_PAGES, String(page.viewportSize().width), 'pages', `${sha1(u.href.split('#')[0])}.html`);
+        if (!existsSync(file)) return route.fulfill({ status: 404, body: 'not saved' });
+        // (the page as rendered, without its own scripts: only the measuring runs; scripts off
+        // altogether would stop the measuring's own timers)
+        const html = readFileSync(file, 'utf8').replace(SCRIPT_TAGS, '');
+        return route.fulfill({ status: 200, contentType: 'text/html; charset=utf-8', body: html });
+      }
+      if (req.resourceType() === 'script') return route.abort();
+      if (req.resourceType() === 'stylesheet') {
+        const file = join(SOURCE_PAGES, 'assets', sha1(u.href));
+        if (existsSync(file)) {
+          const meta = JSON.parse(readFileSync(`${file}.json`, 'utf8'));
+          return route.fulfill({
+            status: meta.status, contentType: meta.contentType, body: readFileSync(file),
+          });
+        }
+      }
+      return route.continue();
+    });
+  }
   // (the local preview serves content pages without a doctype: quirks mode measures line heights
   // wrong; the page is served with one)
   await page.route(/\/content\/rs\/.*[^.]{4}$|\/content\/rs\/[^.]*$/, async (r) => {
@@ -577,6 +681,118 @@ async function showImages(h) {
   });
 }
 
+/**
+ * the page's text units: every default-content run (in sections, tab and accordion panels, flex
+ * sections) and every Columns cell; per unit its text styles by role (h1 … h6, body, list, link,
+ * button), each style with the share of the role's text it carries. Hidden text (closed tabs and
+ * accordions) is measured too: its computed style is there. Runs in the page.
+ */
+function measureText() {
+  const hex = (c) => {
+    const m = /rgba?\(([^)]+)\)/.exec(c || '');
+    if (!m) return c || '';
+    const [r, g, b, a = '1'] = m[1].split(/[ ,/]+/).filter(Boolean);
+    if (Number(a) === 0) return 'transparent';
+    return `#${[r, g, b].map((x) => Number(x).toString(16).padStart(2, '0')).join('')}`;
+  };
+  const OWNERS = ['columns', 'tabs', 'accordion', 'fragment'];
+  // a unit belongs to the page's text unless it sits in a block other than a container
+  const inOtherBlock = (x) => {
+    let b = x.closest('.block');
+    while (b) {
+      if (!OWNERS.includes(b.dataset.blockName)) return true;
+      b = b.parentElement?.closest('.block');
+    }
+    return false;
+  };
+  const roleOf = (x) => {
+    const a = x.closest('a');
+    if (a) return a.classList.contains('button') || a.closest('.button-container, .button-wrapper') ? 'button' : 'link';
+    const h = x.closest('h1, h2, h3, h4, h5, h6');
+    if (h) return h.tagName.toLowerCase();
+    if (x.closest('li')) return 'list';
+    return 'body';
+  };
+  const styleOf = (x) => {
+    const st = getComputedStyle(x);
+    return {
+      family: st.fontFamily.split(',')[0].replace(/["']/g, '').trim().toLowerCase(),
+      size: Math.round(Number.parseFloat(st.fontSize) * 10) / 10,
+      weight: Number(st.fontWeight) || 400,
+      color: hex(st.color),
+      upper: st.textTransform === 'uppercase',
+      italic: st.fontStyle === 'italic',
+      lineHeight: Math.round(Number.parseFloat(st.lineHeight) || 0),
+      letterSpacing: Number.parseFloat(st.letterSpacing) || 0,
+    };
+  };
+  const unitsOf = () => {
+    const wrappers = [...document.querySelectorAll('main .default-content-wrapper')]
+      .filter((w) => !w.closest('header, footer') && !inOtherBlock(w));
+    const cells = [...document.querySelectorAll('main .columns.block > div > div')]
+      .filter((c) => !c.closest('header, footer') && !inOtherBlock(c));
+    return [...wrappers.map((w) => ['default', w]), ...cells.map((c) => ['cell', c])];
+  };
+  return unitsOf().map(([kind, el], n) => {
+    // (the unit's number on the element: the sample screenshots find it by it, --shots-for)
+    el.dataset.textUnit = String(n);
+    const roles = {};
+    let chars = 0;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+      const len = t.textContent.trim().length;
+      // the leaf: the element holding the text itself (not a block nested in a cell)
+      const leaf = t.parentElement;
+      if (len > 1 && leaf && leaf.closest('.block') === el.closest('.block')) {
+        const role = roleOf(leaf);
+        const key = JSON.stringify(styleOf(leaf));
+        roles[role] = roles[role] || {};
+        roles[role][key] = (roles[role][key] || 0) + len;
+        chars += len;
+      }
+    }
+    const typography = Object.fromEntries(Object.entries(roles).map(([role, styles]) => {
+      const total = Object.values(styles).reduce((a, c) => a + c, 0);
+      const top = Object.entries(styles).sort((a, c) => c[1] - a[1]).slice(0, 3)
+        .map(([key, len]) => ({
+          ...JSON.parse(key), share: Math.round((len / total) * 100) / 100,
+        }));
+      return [role, { styles: top, chars: total }];
+    }));
+    const block = kind === 'cell' ? el.closest('.columns') : null;
+    const sec = el.closest('.section');
+    const r = el.getBoundingClientRect();
+    return {
+      n,
+      kind,
+      container: block ? 'columns' : (sec?.classList.contains('flex') && 'flex') || 'section',
+      variant: block ? [...block.classList].filter((c) => !['columns', 'block'].includes(c) && !c.startsWith('columns-')) : [],
+      section: sec ? [...sec.classList].filter((c) => c !== 'section' && !c.endsWith('-container')) : [],
+      inTabs: !!el.closest('.tabs, [role="tabpanel"]'),
+      inAccordion: !!el.closest('.accordion'),
+      inFragment: !!el.closest('.fragment, .fragment-wrapper'),
+      hidden: !el.checkVisibility(),
+      box: {
+        left: Math.round(r.left + window.scrollX),
+        top: Math.round(r.top + window.scrollY),
+        width: Math.round(r.width),
+        height: Math.round(r.height),
+      },
+      chars,
+      typography,
+      text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120),
+    };
+  }).filter((u) => u.chars > 0);
+}
+
+/** the text mode: the whole page at one width, all units in one pass */
+async function textPass(url, width, height) {
+  await page.setViewportSize({ width, height });
+  await page.goto(url, { waitUntil: 'domcontentloaded' });
+  await settle(page);
+  return page.evaluate(measureText);
+}
+
 /** runs fn on each item, one after the other (each waits for the one before) */
 const inOrder = (items, fn) => items
   .reduce((prev, x, i) => prev.then(() => fn(x, i)), Promise.resolve());
@@ -587,8 +803,13 @@ const nameOf = (h) => h.evaluate((e) => {
   return e.dataset.blockName;
 });
 // (the containers in --columns mode, the blocks otherwise)
-const SELECTOR = COLUMNS ? 'main .columns.block, main .section.flex' : 'main .block';
-const keep = (name) => name && (COLUMNS ? ['columns', 'flex-section'].includes(name) : !SKIP.includes(name));
+let SELECTOR = COLUMNS ? 'main .columns.block, main .section.flex' : 'main .block';
+if (SOURCE) SELECTOR = '.block';
+const keep = (name) => {
+  if (!name) return false;
+  if (SOURCE) return name in SOURCE_TYPES;
+  return COLUMNS ? ['columns', 'flex-section'].includes(name) : !SKIP.includes(name);
+};
 const measureOf = COLUMNS ? measureColumns : measureBlock;
 
 /** the desktop look: every block measured, with a screenshot */
@@ -647,6 +868,46 @@ async function phone(path, url, result) {
   });
 }
 
+// (--shots-for <file>: the text mode's sample screenshots only: the listed units of each page,
+// [{page, n}], at 1440 and 375, into <out>/shots/text; nothing is measured)
+const SHOTS_FOR = opt('--shots-for', '');
+if (SHOTS_FOR) {
+  const wanted = JSON.parse(readFileSync(SHOTS_FOR, 'utf8'));
+  const byPage = wanted.reduce((m, x) => ({ ...m, [x.page]: [...(m[x.page] || []), x.n] }), {});
+  mkdirSync(join(out, 'shots', 'text'), { recursive: true });
+  let k = 0;
+  await inOrder(Object.entries(byPage), async ([path, ns]) => {
+    const url = `${base}/content/rs${path}`;
+    await inOrder([[1440, 1000, 'd'], [375, 800, 'm']], async ([w, hgt, tag]) => {
+      try {
+        await textPass(url, w, hgt);
+        await inOrder(ns, async (n) => {
+          const h = await page.$(`[data-text-unit="${n}"]`);
+          if (!h) return;
+          await h.scrollIntoViewIfNeeded().catch(() => null);
+          await h.screenshot({
+            path: join(out, 'shots', 'text', `${slug(path)}__${n}-${tag}.jpg`), type: 'jpeg', quality: 62, timeout: 20000,
+          }).catch(() => null);
+        });
+      } catch (e) {
+        console.log(`${path} ${tag}: ${e.message.slice(0, 80)}`);
+      }
+    });
+    k += 1;
+    if (k % 20 === 0) console.log(`${new Date().toISOString().slice(11, 19)} ${k}/${Object.keys(byPage).length} pages`);
+  });
+  await browser.close();
+  process.exit(0);
+}
+
+/** the stryker.com address of a page (the review tool's snapshot facts hold it) */
+function sourceUrlOf(path) {
+  const file = `tools/review/snapshot-meta${path}.json`;
+  if (!existsSync(file)) return null;
+  const meta = JSON.parse(readFileSync(file, 'utf8'));
+  return meta['1440']?.url || meta['375']?.url || null;
+}
+
 let done = 0;
 const started = Date.now();
 const todo = list.filter((path) => args.includes('--force') || !existsSync(join(out, 'pages', `${slug(path)}.json`)));
@@ -658,13 +919,27 @@ await inOrder(todo, async (path) => {
     done += 1;
     return;
   }
-  const url = `${base}/content/rs${path}`;
+  const url = SOURCE ? sourceUrlOf(path) : `${base}/content/rs${path}`;
+  if (!url) {
+    done += 1;
+    return;
+  }
   const result = {
     page: path, measured: new Date().toISOString(), blocks: [], errors: [],
   };
   try {
-    await desktop(path, url, result);
-    await phone(path, url, result);
+    if (TEXT) {
+      result.units = await textPass(url, 1440, 1000);
+      const phoneUnits = await textPass(url, 375, 800);
+      // (the same units in the same order on phones: their styles there)
+      result.units.forEach((u, i) => {
+        const p = phoneUnits[i];
+        if (p && p.text === u.text) u.phone = { typography: p.typography, box: p.box };
+      });
+    } else {
+      await desktop(path, url, result);
+      await phone(path, url, result);
+    }
   } catch (e) {
     result.errors.push(e.message.slice(0, 200));
   }

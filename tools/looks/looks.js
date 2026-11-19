@@ -16,7 +16,7 @@ const shotSrc = (shot, remote) => (LOCAL && !remote ? `./${shot}`
   : `/looks-shots/${shot.replace(/^shots\//, '').replace(/~/g, '/').replace(/__/g, '/')}`);
 const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
 const NAMES = {
-  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', layouts: 'Columns and flex sections', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
+  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', layouts: 'Columns and flex sections', 'hero-source': 'Hero (original)', 'text-styles': 'Text styles', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
 };
 // (what a merged instance lacks, in words)
 const LACK_NAMES = {
