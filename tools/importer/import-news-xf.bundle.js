@@ -1848,7 +1848,9 @@ var CustomImportScript = (() => {
       const firstLine = headline2.querySelector(".line") || headline2;
       const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
       const sourceH3 = headline2.querySelector("h3");
-      const h3Statement = boxed && lead.length > 0 && !!sourceH3 && !!sourceH3.querySelector('[class*="fontsize-2vw"]') && text(sourceH3) === text(lead[0]);
+      const serif2vw = [...headline2.querySelectorAll(".urw-egyptienne")].find((span) => span.querySelector('[class*="fontsize-2vw"]') || span.closest('[class*="fontsize-2vw"]'));
+      const statementSource = sourceH3 && sourceH3.querySelector('[class*="fontsize-2vw"]') && sourceH3 || serif2vw;
+      const h3Statement = boxed && lead.length > 0 && !!statementSource && text(statementSource) === text(lead[0]);
       let statement = lead;
       if (h3Statement) {
         const h3 = rename(lead[0], "h3");

@@ -1824,10 +1824,16 @@ export default function transform(hookName, element, payload) {
     // innovations help…" page) stays a Heading 3, in italic (the news Egyptienne heading),
     // in a plain `video-text` section, sized by the news-video theme; a 2vw statement set
     // any other way is a Heading 2 at the Large Headline sizes (headline-1-5vw)
-    // (headlineNodes returns paragraphs: the source heading is read from the component)
+    // (headlineNodes returns paragraphs: the source heading is read from the component). The
+    // same statement typed as an Egyptienne span instead of a heading (span.urw-egyptienne
+    // around span.fontsize-2vw, e.g. "Endoscopy's Rosales shares how we continue innovating…")
+    // looks the same on the source and imports the same: the Pierce page is the
+    // representative of these StrykerTalks pages
     const sourceH3 = headline.querySelector('h3');
-    const h3Statement = boxed && lead.length > 0 && !!sourceH3
-      && !!sourceH3.querySelector('[class*="fontsize-2vw"]') && text(sourceH3) === text(lead[0]);
+    const serif2vw = [...headline.querySelectorAll('.urw-egyptienne')]
+      .find((span) => span.querySelector('[class*="fontsize-2vw"]') || span.closest('[class*="fontsize-2vw"]'));
+    const statementSource = (sourceH3 && sourceH3.querySelector('[class*="fontsize-2vw"]') && sourceH3) || serif2vw;
+    const h3Statement = boxed && lead.length > 0 && !!statementSource && text(statementSource) === text(lead[0]);
     let statement = lead;
     if (h3Statement) {
       const h3 = rename(lead[0], 'h3');
