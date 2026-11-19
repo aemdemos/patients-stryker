@@ -996,6 +996,11 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
+/* smaller spacer variant — 20px at every width, no margins. Authored as `spacer, small`. */
+main > .section.spacer.small {
+  height: var(--space-block-l);
+}
+
 /* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
 main > .section.spacer.large {
   height: calc(2 * var(--space-section));
