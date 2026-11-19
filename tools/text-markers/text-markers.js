@@ -323,6 +323,9 @@ const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
 // the document, when the editor shares it (Experience Workspace's live document)
 let liveHtml = '';
 let liveText = '';
+// the block holding the cursor in that document (null outside a block) and whether it's editable
+let liveBlockIndex = null;
+let liveEditable = true;
 // the DA editor's saved source, read at most every few seconds
 let sourceCache = { at: 0, html: '' };
 
@@ -396,6 +399,90 @@ async function findBlock(words) {
   return { block: block.outerHTML, sectionStyles, name: block.classList[0] };
 }
 
+/*
+ * Experience Workspace: the markers go in through a guarded replace of the block holding the
+ * selection (outside blocks: its paragraph, heading or list), the way Block options changes a
+ * block, so the canvas re-renders the styled text at once. Typed text (sendText) changes the
+ * document but leaves the canvas as it was.
+ */
+const LIVE_LINES = ':scope > div > :is(p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote)';
+const LIVE_SKIP = /^(section-metadata|metadata|da-metadata|library-metadata)$/;
+
+/** the text nodes of an element that hold `text` */
+function textNodesWith(root, text) {
+  const walker = root.ownerDocument.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const hits = [];
+  while (walker.nextNode()) {
+    if (walker.currentNode.textContent.includes(text)) hits.push(walker.currentNode);
+  }
+  return hits;
+}
+
+/**
+ * Puts the markers around the one occurrence of `find` in the target: when the words fill
+ * their bold / italic / underline, the markers go outside it (EDS then reads both markers).
+ * @returns {boolean} false when the words are not exactly once in one text node
+ */
+function markInTarget(target, find, words, marker) {
+  const count = target.textContent.split(find).length - 1;
+  const hits = textNodesWith(target, find);
+  if (count !== 1 || hits.length !== 1) return false;
+  const [node] = hits;
+  const doc = target.ownerDocument;
+  if (node.textContent === find) {
+    let outer = node;
+    while (outer.parentElement !== target && outer.parentElement.matches(FORMATTING)
+      && outer.parentElement.childNodes.length === 1) outer = outer.parentElement;
+    node.textContent = words;
+    outer.before(doc.createTextNode(marker));
+    outer.after(doc.createTextNode(END_MARKER));
+    return true;
+  }
+  const at = node.textContent.indexOf(find);
+  const before = node.textContent.slice(0, at);
+  const after = node.textContent.slice(at + find.length);
+  node.textContent = `${before}${marker}${words}${END_MARKER}${after}`;
+  return true;
+}
+
+/**
+ * Applies the markers through the live document.
+ * @param {string} find The selected text as it is in the document (with any old markers)
+ * @param {string} words The words to style
+ * @param {string} marker The start marker
+ * @returns {Promise<boolean>} true when the canvas took the change
+ */
+async function replaceInLive(find, words, marker) {
+  if (!liveHtml || !liveEditable || sdk.capabilities?.sendHTMLReplace !== 1) return false;
+  const html = liveHtml;
+  const blockIndex = liveBlockIndex;
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const root = doc.querySelector('main') || doc.body;
+  let target;
+  if (blockIndex !== null) {
+    target = [...root.querySelectorAll(':scope > div > div[class]')]
+      .filter((b) => !LIVE_SKIP.test(b.classList[0]))[blockIndex];
+  } else {
+    const lines = [...root.querySelectorAll(LIVE_LINES)]
+      .filter((l) => l.textContent.includes(find));
+    if (lines.length === 1) [target] = lines;
+  }
+  if (!target || !markInTarget(target, find, words, marker)) return false;
+  let result;
+  try {
+    const expected = { html, blockIndex };
+    result = await sdk.actions.sendHTML(target.outerHTML, { replace: true, expected });
+  } catch {
+    return false;
+  }
+  if (!result?.ok) return false;
+  if (typeof result.html === 'string') {
+    liveHtml = result.html;
+    liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
+  }
+  return true;
+}
+
 async function applyToSelection() {
   const marker = startMarker();
   if (!marker || !sdk) return;
@@ -431,9 +518,11 @@ async function applyToSelection() {
     setStatus(`These words already have the style :start-${around}:. To change it, select them together with their markers — from “:start-${around}:” to “:end:” — then click again.`, 'error');
     return;
   }
-  // plain text replaces the selection inside its line (HTML would be inserted as a new
-  // paragraph); bold / italic covering the whole selection is kept by the editor
-  sdk.actions.sendText(`${marker}${words}${END_MARKER}`);
+  // Experience Workspace: a guarded replace of the block / line, so the canvas re-renders;
+  // otherwise plain text replaces the selection inside its line (HTML would be inserted as a
+  // new paragraph); bold / italic covering the whole selection is kept by the editor
+  const live = await replaceInLive(text, words, marker);
+  if (!live) sdk.actions.sendText(`${marker}${words}${END_MARKER}`);
   setStatus(old
     ? `Changed the style of “${words.trim()}” from :start-${old[1]}: to ${marker}`
     : `Styled “${words.trim()}” with ${marker} … ${END_MARKER}`, 'ok');
@@ -595,9 +684,11 @@ async function connect() {
     sdk = resolved;
     // Experience Workspace shares the document: used to spot words that already have a style
     if (sdk.capabilities?.liveDocument === 1 && typeof sdk.actions.subscribeLiveDocument === 'function') {
-      sdk.actions.subscribeLiveDocument(({ html }) => {
+      sdk.actions.subscribeLiveDocument(({ html, selection, editable }) => {
         liveHtml = html || '';
         liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
+        liveBlockIndex = Number.isInteger(selection?.blockIndex) ? selection.blockIndex : null;
+        liveEditable = editable !== false;
       });
     }
     watchSelection();
