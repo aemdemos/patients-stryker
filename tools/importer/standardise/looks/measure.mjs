@@ -981,7 +981,9 @@ if (SHOTS_FOR) {
           const names = await Promise.all(all.map(nameOf));
           const handles = all.filter((h, i) => keep(names[i]));
           const keys = await Promise.all(handles.map(keyOf));
-          find = (x) => (tag === 'd' ? handles[x.n] : handles[keys.indexOf(x.key)]);
+          // (on phones: the same occurrence of the key, components without text share one)
+          find = (x) => (tag === 'd' ? handles[x.n]
+            : handles.filter((h, i) => keys[i] === x.key)[x.occ || 0]);
         } else {
           await textPass(url, w, hgt);
           find = () => null;
@@ -990,9 +992,15 @@ if (SHOTS_FOR) {
           const { n } = x;
           const h = COMPONENTS ? find(x) : await page.$(`[data-text-unit="${n}"]`);
           if (!h) return;
+          // (a hidden one has nothing to show: no waiting for it)
+          const box = await h.boundingBox();
+          if (!box || box.width < 2 || box.height < 2) return;
           await h.scrollIntoViewIfNeeded().catch(() => null);
+          // (a sample of another component type goes to that type's folder)
+          const dir = x.type || folder;
+          mkdirSync(join(out, 'shots', dir), { recursive: true });
           await h.screenshot({
-            path: join(out, 'shots', folder, `${slug(path)}__${n}-${tag}.jpg`), type: 'jpeg', quality: 62, timeout: 20000,
+            path: join(out, 'shots', dir, `${slug(path)}__${n}-${tag}.jpg`), type: 'jpeg', quality: 62, timeout: 20000,
           }).catch(() => null);
         });
       } catch (e) {

@@ -93,6 +93,7 @@ function groupBox(g) {
     ),
     el('dl', { class: 'lk-parts' }, ...Object.entries(g.parts).flatMap(([k, v]) => [el('dt', {}, PART_NAMES[k] || k), el('dd', {}, v)])),
     g.decision ? el('p', { class: 'lk-meta lk-decision' }, `Merged on inspection: ${g.decision.why}`) : null,
+    g.sampled ? el('p', { class: 'lk-meta' }, `Showing ${g.sampled[0]} of ${g.sampled[1]}, from different pages`) : null,
     g.colours ? el('p', { class: 'lk-meta' }, `Number colours: ${g.colours.map(([c, n]) => `${c} (${n})`).join(' · ')}`) : null,
     // (with sizes in bands: the exact styles the group holds)
     g.exactTypes ? el('details', { class: 'lk-exact' }, el('summary', {}, data.sizes === 'bands' ? 'Exact text styles in this group' : 'Text styles in this group'), el('dl', { class: 'lk-parts' }, ...Object.entries(g.exactTypes).flatMap(([r, list]) => [
