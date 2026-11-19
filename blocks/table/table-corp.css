@@ -40,3 +40,12 @@ body.corp .table.block.stacked td > p {
     display: table-cell;
   }
 }
+
+/* body-bold: bold text in the body font, on the body line height (stryker.com legal tables) */
+body.corp .table.block.body-bold table td strong {
+  font-family: inherit;
+}
+
+body.corp .table.block.body-bold table td p {
+  line-height: var(--body-line-height);
+}

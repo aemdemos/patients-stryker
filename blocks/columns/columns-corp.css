@@ -5,7 +5,7 @@
  * pages: cells keep the 15px side padding (30px gutter), body copy is 14px Humanist
  * and every split goes side by side from 600px.
  *
- * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
+ * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50, columns-58-42, contact-lines, arrow-links, names, thumb-list
  * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
  * no-stack (cells stay side by side on phones), large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
@@ -1467,5 +1467,102 @@ body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):
 
   body.corp .columns:is(.color-heads, .striped) > div > div {
     flex: 1 1 0;
+  }
+}
+
+/* contact-lines: a bold body-font label over its data lines (Futura from 900px), phone links
+   in the text colour */
+body.corp .columns.contact-lines h4:has(+ p) {
+  margin-bottom: 0;
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size-m);
+}
+
+body.corp .columns.contact-lines a[href^="tel:"] {
+  color: inherit;
+}
+
+@media (width >= 900px) {
+  body.corp .columns.contact-lines h4:has(+ p) {
+    font-family: var(--display-font-family);
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+/* arrow-links: an underlined bold link is an uppercase Futura text link with a trailing arrow */
+body.corp .columns.arrow-links p:has(> strong > a > u) > strong:not(:has(a)) {
+  color: var(--link-color);
+}
+
+body.corp .columns.arrow-links p:has(> strong > a > u) > strong > a:any-link {
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+}
+
+body.corp .columns.arrow-links p:has(> strong > a > u) > strong > a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+body.corp .columns.arrow-links p:has(> strong > a > u) > strong > a:any-link u {
+  text-decoration: none;
+}
+
+body.corp .columns.arrow-links p:has(> strong > a > u) > strong > a:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+/* names (with no-stack): a Futura 21px label over 17.5px Egyptienne names (committee lists) */
+body.corp .columns.no-stack.names > div > div > p:first-child strong {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns.no-stack.names > div > div > p:last-child {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+/* thumb-list: a thumbnail with a 1px frame, its Bold H3 title and the copy under it (webinar
+   panels) */
+body.corp .columns.thumb-list .columns-img-col img {
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+
+body.corp .columns.thumb-list h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+body.corp .columns.thumb-list h3 + p {
+  font-family: var(--heading-font-family);
+}
+
+body.corp .columns.thumb-list :is(h3 + p, h3 + p + p) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.thumb-list h3 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  body.corp .columns.columns-58-42 > div > div:first-child {
+    flex: 0 0 58.333%;
+  }
+
+  body.corp .columns.columns-58-42 > div > div:last-child {
+    flex: 0 0 41.667%;
   }
 }

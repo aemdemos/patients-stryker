@@ -1,14 +1,16 @@
 /* global WebImporter */
-// www.stryker.com webinar and on-demand video pages → template corp-webinar (#519): the
+// www.stryker.com webinar and on-demand video pages → template base, webinar theme (#519): the
 // webinar pages (title, speaker, description, video), the webinar thank-you pages, the
 // page-hero video pages and the FocusRN on-demand webinars index.
 
-import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
-import { videoLink } from './parsers/video.js';
+import cleanupTransformer from '../transformers/patients-stryker-cleanup.js';
+import { applyBaseMeta } from './shared.js';
+import dmImagesTransformer from '../transformers/patients-stryker-dm-images.js';
+import { videoLink } from '../parsers/video.js';
 
 const PAGE_TEMPLATE = {
-  name: 'corp-webinar',
+  name: 'base',
+  group: 'webinar',
   description: 'www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (a plain link, not bold, alone on its line), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.',
   urls: [
     'https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html',
@@ -266,7 +268,7 @@ function layoutC(document, src) {
     }).filter((cell) => cell.length);
     out.push(el(document, 'hr'));
     if (label) out.push(el(document, 'h2', label));
-    if (cells.length) out.push(WebImporter.Blocks.createBlock(document, { name: 'Columns', cells: [cells] }));
+    if (cells.length) out.push(WebImporter.Blocks.createBlock(document, { name: 'Columns (thumb-list)', cells: [cells] }));
     out.push(sectionMetadata(document, 'accordion-panel, image-link, large-labels'));
   });
   return out;
@@ -314,7 +316,7 @@ export default {
     main.appendChild(document.createElement('hr'));
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.site = 'corp';
-    meta.template = PAGE_TEMPLATE.name;
+    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
     if (published) meta.published = published;
     if (published && showDate) meta['last-updated'] = 'show';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

@@ -42,9 +42,9 @@ import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
 
-const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments', 'corp-legal'];
+const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments', 'base'];
 // templates whose rich-text title is only a source H1 (a lower heading keeps its level)
-const H1_TITLE_ONLY = ['corp-legal'];
+const H1_TITLE_ONLY = ['base'];
 
 // the shared XFs: on 2 or more long-page-detail pages in the export
 const XF_PAGES = Object.values(PAGE_XFS).flat().reduce((counts, xf) => {

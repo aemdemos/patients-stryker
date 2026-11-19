@@ -1,0 +1,10 @@
+/* base — www.stryker.com pages on the AEM `base` template: legal, patents, webinar, people and
+   Interventional Spine footnotes. The look of each group is its theme (base-themes.css). */
+
+/* italic inside a heading (a live <i> in the heading) is the serif heading font, upright; the
+   gold Bold + Italic keeps its Futura */
+body.base main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+}

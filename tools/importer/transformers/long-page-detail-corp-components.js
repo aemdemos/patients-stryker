@@ -214,7 +214,7 @@ function accordions(main, doc, h) {
     const panels = [...group.querySelectorAll(':scope > .panel')].filter((p) => p.querySelector('.panel-title'));
     if (!panels.length) return;
     const options = accordionOptions(panels);
-    // a divided accordion (import-corp-legal.js marks it): the blocks in a panel give their
+    // a divided accordion (base/legal.js marks it): the blocks in a panel give their
     // cells' content, so the panels stay one Accordion with a rule under every title
     const divided = group.hasAttribute('data-divided');
     const variant = divided ? 'divided' : options;

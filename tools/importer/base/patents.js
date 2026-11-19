@@ -2,11 +2,13 @@
 // www.stryker.com patents and trademarks pages → template patents (#518): the patents index,
 // the patents tables per business and the trademarks list.
 
-import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import cleanupTransformer from '../transformers/patients-stryker-cleanup.js';
+import { applyBaseMeta } from './shared.js';
+import dmImagesTransformer from '../transformers/patients-stryker-dm-images.js';
 
 const PAGE_TEMPLATE = {
-  name: 'patents',
+  name: 'base',
+  group: 'patents',
   description: 'www.stryker.com patents and trademarks pages (#518). Patents index: Columns (columns-50-50, stack) hero [gold H1 (bold + italic) + notice | image], the product-line links as plain paragraphs in a `separator` section, the document code in a `disclaimer` section. Patents tables and trademarks: each source table as one `Table (no-header, striped, stacked)` (columns empty in every row dropped); trademarks first has its H1 and description in a `serif, p-1-5, width-50` section. `published` from the source date with `last-updated: show`.',
   urls: [
     'https://www.stryker.com/us/en/about/patents.html',
@@ -183,7 +185,7 @@ export default {
     main.appendChild(document.createElement('hr'));
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.site = 'corp';
-    meta.template = PAGE_TEMPLATE.name;
+    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
     if (published) meta.published = published;
     if (published && showDate) meta['last-updated'] = 'show';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

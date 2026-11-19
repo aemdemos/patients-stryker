@@ -1,26 +1,9 @@
 /* eslint-disable */
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
-  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __propIsEnum = Object.prototype.propertyIsEnumerable;
-  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __spreadValues = (a, b) => {
-    for (var prop in b || (b = {}))
-      if (__hasOwnProp.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    if (__getOwnPropSymbols)
-      for (var prop of __getOwnPropSymbols(b)) {
-        if (__propIsEnum.call(b, prop))
-          __defNormalProp(a, prop, b[prop]);
-      }
-    return a;
-  };
-  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -35,11 +18,176 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-corp-legal.js
-  var import_corp_legal_exports = {};
-  __export(import_corp_legal_exports, {
-    default: () => import_corp_legal_default
+  // tools/importer/import-base.js
+  var import_base_exports = {};
+  __export(import_base_exports, {
+    default: () => import_base_default
   });
+
+  // tools/importer/page-tags.js
+  var page_tags_default = {
+    "/us/en/about/patents/Spine-patents": [
+      "spine"
+    ],
+    "/us/en/sage/disclosure-and-safety-information": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/videos/sage-mp-mats-2-demo": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/guidelines-practice-pip-fireside-chat": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/hap-human-financial-cost": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/nv-hap-hidden-plain-sight": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/risk-of-pip-procedural-operational-areas": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/safe-patient-handling-mobility-webinar": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/sepsis-hospital-acquired-pneumonia": [
+      "stryker:business-unit/ems",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition": [
+      "stryker:business-unit/SAGE"
+    ]
+  };
+
+  // tools/importer/base/shared.js
+  var pathOf = (url) => new URL(url, "https://www.stryker.com").pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+  function groupOf(url) {
+    const path = pathOf(url);
+    if (/^\/us\/en\/about\/(patents|trademarks)(\/|$)/.test(path)) return "patents";
+    if (/^\/us\/en\/(sage\/webinars|emergency-care\/webinars|sage\/videos\/sage-mp-mats-2-demo)/.test(path)) return "webinar";
+    if (/^\/us\/en\/about\/(our-management\/leaders|our-board-of-directors\/directors)/.test(path)) return "people";
+    if (path.startsWith("/us/en/interventional-spine/footnotes")) return "footnotes";
+    return "legal";
+  }
+  var PAGE_THEME = { legal: "legal", footnotes: "" };
+  function applyBaseMeta(meta, url, group) {
+    meta.template = "base";
+    const path = pathOf(url);
+    const theme = group === "webinar" && path === "/us/en/sage/videos/sage-mp-mats-2-demo" ? "webinar" : PAGE_THEME[group];
+    if (theme) meta.theme = theme;
+    const tags = page_tags_default[path];
+    if (tags?.length) meta.tags = tags.join(", ");
+  }
+  var TAG_SECTION_STYLES = {
+    "body-font": "bold-body",
+    "headline-2": "headline-2vw",
+    "headline-2-5": "headline-2-5vw",
+    serif: "serif"
+  };
+  var BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
+  function sectionIndex(main, node) {
+    let top = node;
+    while (top.parentElement && top.parentElement !== main) top = top.parentElement;
+    let count = 0;
+    for (let n = top.previousElementSibling; n; n = n.previousElementSibling) {
+      if (n.tagName === "HR") count += 1;
+    }
+    return count;
+  }
+  function bracketTokens(parent) {
+    const tokens = [];
+    [...parent.childNodes].forEach((node) => {
+      if (node.nodeType !== 3) {
+        tokens.push({ node });
+        return;
+      }
+      const value = node.nodeValue;
+      let last = 0;
+      [...value.matchAll(BRACKET)].forEach((m) => {
+        if (m.index > last) tokens.push({ text: value.slice(last, m.index) });
+        tokens.push(m[1] ? { open: m[1].split(",") } : { close: true });
+        last = m.index + m[0].length;
+      });
+      if (last < value.length) tokens.push({ text: value.slice(last) });
+    });
+    return tokens;
+  }
+  function stripBracketTokens(parent, document) {
+    const tokens = bracketTokens(parent);
+    const removed = [];
+    const build = (from, closes) => {
+      const nodes2 = [];
+      let i = from;
+      while (i < tokens.length) {
+        const t = tokens[i];
+        if (t.open) {
+          const inner = build(i + 1, true);
+          removed.push(...t.open);
+          i = inner.next;
+          let content = inner.nodes;
+          if (t.open.includes("color-gold")) {
+            const tail = [];
+            const isBlank = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.nodeValue.trim();
+            while (content.length && isBlank(content[content.length - 1])) {
+              tail.unshift(content.pop());
+            }
+            if (content.some((n) => n.nodeType === 3 && n.nodeValue.trim())) {
+              const strong = document.createElement("strong");
+              strong.append(...content);
+              content = [strong];
+            }
+            const em = document.createElement("em");
+            em.append(...content);
+            content = [em, ...tail];
+          }
+          nodes2.push(...content);
+        } else if (t.close) {
+          if (closes) return { nodes: nodes2, next: i + 1 };
+          nodes2.push(document.createTextNode("]"));
+          i += 1;
+        } else {
+          nodes2.push(t.node || document.createTextNode(t.text));
+          i += 1;
+        }
+      }
+      return { nodes: nodes2, next: i };
+    };
+    const { nodes } = build(0, false);
+    parent.replaceChildren(...nodes);
+    return removed;
+  }
+  function stripBrackets(main, document) {
+    const styles = /* @__PURE__ */ new Map();
+    const parents = [...main.querySelectorAll("*")].filter((el3) => [...el3.childNodes].some((n) => n.nodeType === 3 && /\[\[[a-z0-9,-]+\]/.test(n.nodeValue)));
+    parents.forEach((parent) => {
+      if (!parent.isConnected) return;
+      const index = sectionIndex(main, parent);
+      stripBracketTokens(parent, document).forEach((tag) => {
+        const style = TAG_SECTION_STYLES[tag];
+        if (!style) return;
+        if (!styles.has(index)) styles.set(index, /* @__PURE__ */ new Set());
+        styles.get(index).add(style);
+      });
+    });
+    return styles;
+  }
+  function addVariant(table, variant) {
+    const head = table.querySelector("th") || table.querySelector("tr > *");
+    if (!head) return;
+    const [, name, variants] = head.textContent.trim().match(/^([^(]*?)\s*(?:\((.*)\))?$/);
+    const list = (variants || "").split(",").map((v) => v.trim()).filter(Boolean);
+    if (!list.includes(variant)) list.push(variant);
+    head.textContent = `${name} (${list.join(", ")})`;
+  }
+  function blockTables(main, name) {
+    return [...main.querySelectorAll("table")].filter((t) => (t.querySelector("th") || t.querySelector("tr > *"))?.textContent.trim().startsWith(name));
+  }
 
   // tools/importer/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
@@ -88,24 +236,27 @@ var CustomImportScript = (() => {
   ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = {
-    // data-btn-style: the section style a link asks for (buildArticle adds it to its section)
+    // data-btn-style / data-section-style: the section style a link / a paragraph asks for
+    // (buildArticle adds it to its section)
     A: ["href", "data-btn-style"],
     IMG: ["src", "alt"],
     TD: ["colspan", "rowspan"],
-    TH: ["colspan", "rowspan"]
+    TH: ["colspan", "rowspan"],
+    P: ["data-section-style"],
+    LI: ["data-section-style"]
   };
-  function text(el2) {
-    return (el2.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  function text(el3) {
+    return (el3.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
   }
-  function rename(el2, tagName) {
-    const doc = el2.ownerDocument;
+  function rename(el3, tagName) {
+    const doc = el3.ownerDocument;
     const next = doc.createElement(tagName);
-    while (el2.firstChild) next.append(el2.firstChild);
-    el2.replaceWith(next);
+    while (el3.firstChild) next.append(el3.firstChild);
+    el3.replaceWith(next);
     return next;
   }
-  function unwrap(el2) {
-    el2.replaceWith(...el2.childNodes);
+  function unwrap(el3) {
+    el3.replaceWith(...el3.childNodes);
   }
   function absoluteAsset(href) {
     return href && href.startsWith("/content/dam/") ? `${SOURCE_ORIGIN}${href}` : href;
@@ -138,19 +289,19 @@ var CustomImportScript = (() => {
   ];
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
-    const copy = candidates.filter((el2) => text(el2) && !el2.querySelector("p, li"));
+    const copy = candidates.filter((el3) => text(el3) && !el3.querySelector("p, li"));
     if (!copy.length) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    const covers = (cls) => copy.every((el2) => {
-      const spans = [...el2.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      return squash(spans.map((span) => span.textContent).join("")) === squash(el2.textContent);
+    const covers = (cls) => copy.every((el3) => {
+      const spans = [...el3.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(el3.textContent);
     });
     const size = SIZE_STYLES.find(([cls]) => covers(cls));
-    const coversFont = (cls) => copy.every((el2) => {
-      const spans = [...el2.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      const bold = [...el2.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
+    const coversFont = (cls) => copy.every((el3) => {
+      const spans = [...el3.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      const bold = [...el3.querySelectorAll(".futura-bold")].filter((span) => !span.closest(`.${cls}`) && !span.parentElement.closest(".futura-bold"));
       const covered = squash(spans.map((span) => span.textContent).join("")) + squash(bold.map((span) => span.textContent).join(""));
-      return spans.length > 0 && covered.length === squash(el2.textContent).length;
+      return spans.length > 0 && covered.length === squash(el3.textContent).length;
     });
     const font = FONT_STYLES.find(([cls]) => coversFont(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
@@ -165,26 +316,24 @@ var CustomImportScript = (() => {
     return value.replace(/[\s\u00a0]+/g, "");
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
-    const doc = root.ownerDocument;
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text(block) === text(b)) return;
-      b.before(doc.createTextNode("[[body-font]"));
-      b.after(doc.createTextNode("]"));
+      block.setAttribute("data-section-style", "body-font-bold");
     });
   }
   var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
-  function ownColour(el2) {
-    const m = (el2.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+  function ownColour(el3) {
+    const m = (el3.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
     return m ? m[1].trim() : "";
   }
   function hasOtherColour(node) {
     if (node.nodeType !== 1) return false;
-    const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el2) => ownColour(el2) && !GOLD.test(ownColour(el2)));
-    return coloured.some((el2) => [...el2.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text(child)));
+    const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el3) => ownColour(el3) && !GOLD.test(ownColour(el3)));
+    return coloured.some((el3) => [...el3.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text(child)));
   }
   function bracketTag(nodes, classes, root) {
     const doc = root.ownerDocument;
@@ -226,21 +375,58 @@ var CustomImportScript = (() => {
       });
     });
   }
+  function markGold(nodes, root) {
+    const run = [...nodes];
+    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const mark = root.ownerDocument.createElement("span");
+    mark.className = "gold-text";
+    run[0].before(mark);
+    mark.append(...run);
+  }
+  function goldBoldItalic(root) {
+    const doc = root.ownerDocument;
+    const inside = (node, tag) => {
+      for (let el3 = node.parentElement; el3 && el3 !== root; el3 = el3.parentElement) {
+        if (el3.tagName === tag) return true;
+      }
+      return false;
+    };
+    root.querySelectorAll("span.gold-text").forEach((mark) => {
+      const texts = [];
+      const walker = doc.createTreeWalker(mark, 4);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if (t.textContent.trim()) texts.push(t);
+      }
+      if (!texts.length || texts.every((t) => inside(t, "STRONG") && inside(t, "EM"))) return;
+      const em = doc.createElement("em");
+      em.append(...mark.childNodes);
+      if (inside(mark, "STRONG")) {
+        mark.append(em);
+        return;
+      }
+      const strong = doc.createElement("strong");
+      strong.append(em);
+      mark.append(strong);
+    });
+  }
   function tagGoldText(root) {
     const tagged = /* @__PURE__ */ new Set();
-    const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
+    const wrap2 = (nodes) => markGold(nodes, root);
     const wrapRun = (nodes) => {
       nodes.filter((n) => n.nodeType === 1).forEach((n) => tagged.add(n));
-      wrap(nodes);
+      wrap2(nodes);
     };
-    root.querySelectorAll('[style*="color"]').forEach((el2) => {
-      if (!GOLD.test(ownColour(el2)) || [...tagged].some((t) => t.contains(el2))) return;
-      if (!hasOtherColour(el2)) {
-        wrapRun([el2]);
+    root.querySelectorAll('[style*="color"]').forEach((el3) => {
+      if (!GOLD.test(ownColour(el3)) || [...tagged].some((t) => t.contains(el3))) return;
+      if (!hasOtherColour(el3)) {
+        wrapRun([el3]);
         return;
       }
       let run = [];
-      [...el2.childNodes].forEach((child) => {
+      [...el3.childNodes].forEach((child) => {
         if (hasOtherColour(child)) {
           wrapRun(run);
           run = [];
@@ -250,27 +436,27 @@ var CustomImportScript = (() => {
     });
   }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
-    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el2) => text(el2));
-    const centred = blocks.length > 0 && blocks.every((el2) => /text-align:\s*center/i.test(el2.getAttribute("style") || ""));
+    const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el3) => text(el3));
+    const centred = blocks.length > 0 && blocks.every((el3) => /text-align:\s*center/i.test(el3.getAttribute("style") || ""));
     const size = copyStyles(root);
     const doc = root.ownerDocument;
     root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     const trailingSpace = /[\s\u00a0]+$/;
-    [...root.querySelectorAll('span.futura-bold, span[style*="color"], b, i, em, strong')].reverse().forEach((el2) => {
-      let last = el2.lastChild;
+    [...root.querySelectorAll('span.futura-bold, span[style*="color"], b, i, em, strong')].reverse().forEach((el3) => {
+      let last = el3.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
         if (emptyElement(last)) {
-          if (/[\s\u00a0]/.test(last.textContent) && !(el2.nextSibling && /^[\s\u00a0]/.test(el2.nextSibling.textContent))) {
-            el2.after(doc.createTextNode(" "));
+          if (/[\s\u00a0]/.test(last.textContent) && !(el3.nextSibling && /^[\s\u00a0]/.test(el3.nextSibling.textContent))) {
+            el3.after(doc.createTextNode(" "));
           }
           last.remove();
-        } else el2.after(last);
-        last = el2.lastChild;
+        } else el3.after(last);
+        last = el3.lastChild;
       }
       if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
         last.textContent = last.textContent.replace(trailingSpace, "");
-        el2.after(doc.createTextNode(" "));
+        el3.after(doc.createTextNode(" "));
       }
     });
     tagPlainBoldLabels(root, wholeParagraphs);
@@ -289,9 +475,9 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
-    const squashed = (el2) => el2.textContent.replace(/[\s\u00a0]+/g, "");
-    root.querySelectorAll(".futura-bold a[href], a[href] .futura-bold").forEach((el2) => {
-      const a = el2.closest("a[href]");
+    const squashed = (el3) => el3.textContent.replace(/[\s\u00a0]+/g, "");
+    root.querySelectorAll(".futura-bold a[href], a[href] .futura-bold").forEach((el3) => {
+      const a = el3.closest("a[href]");
       const block = a.closest("p, li");
       if (standalone.has(a) || a.querySelector("u, img") || !block || !squashed(a) || squashed(block) !== squashed(a)) return;
       standalone.add(a);
@@ -300,28 +486,29 @@ var CustomImportScript = (() => {
       while (a.firstChild) u.append(a.firstChild);
       a.append(u);
     });
-    root.querySelectorAll("span.futura-bold").forEach((el2) => rename(el2, "strong"));
-    root.querySelectorAll("b").forEach((el2) => rename(el2, "strong"));
-    root.querySelectorAll("i").forEach((el2) => rename(el2, "em"));
+    root.querySelectorAll("span.futura-bold").forEach((el3) => rename(el3, "strong"));
+    root.querySelectorAll("b").forEach((el3) => rename(el3, "strong"));
+    root.querySelectorAll("i").forEach((el3) => rename(el3, "em"));
+    goldBoldItalic(root);
     root.querySelectorAll("span, font").forEach(unwrap);
     root.querySelectorAll("strong strong, em em").forEach(unwrap);
-    root.querySelectorAll("strong, em").forEach((el2) => {
-      if (!el2.textContent.trim() && !el2.querySelector("img, br")) el2.remove();
+    root.querySelectorAll("strong, em").forEach((el3) => {
+      if (!el3.textContent.trim() && !el3.querySelector("img, br")) el3.remove();
     });
     root.querySelectorAll("a[href]").forEach((a) => {
       a.setAttribute("href", newTabHref(a, absoluteAsset(a.getAttribute("href"))));
     });
-    root.querySelectorAll("*").forEach((el2) => {
-      const keep = KEEP_ATTRS[el2.tagName] || [];
-      [...el2.attributes].forEach((attr) => {
-        if (!keep.includes(attr.name)) el2.removeAttribute(attr.name);
+    root.querySelectorAll("*").forEach((el3) => {
+      const keep = KEEP_ATTRS[el3.tagName] || [];
+      [...el3.attributes].forEach((attr) => {
+        if (!keep.includes(attr.name)) el3.removeAttribute(attr.name);
       });
     });
-    root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").forEach((el2) => {
-      while (el2.lastChild && (el2.lastChild.nodeName === "BR" || el2.lastChild.nodeType === 3 && !el2.lastChild.textContent.trim())) {
-        el2.lastChild.remove();
+    root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").forEach((el3) => {
+      while (el3.lastChild && (el3.lastChild.nodeName === "BR" || el3.lastChild.nodeType === 3 && !el3.lastChild.textContent.trim())) {
+        el3.lastChild.remove();
       }
-      if (!text(el2) && !el2.querySelector("img")) el2.remove();
+      if (!text(el3) && !el3.querySelector("img")) el3.remove();
     });
     return { centred, size };
   }
@@ -390,12 +577,9 @@ var CustomImportScript = (() => {
   function splitStyledLeads(root) {
     const doc = root.ownerDocument;
     const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
-    [...root.children].filter((el2) => el2.tagName === "P").forEach((p) => {
+    [...root.children].filter((el3) => el3.tagName === "P").forEach((p) => {
       const nodes = [...p.childNodes];
-      const at = nodes.findIndex((node, i) => {
-        var _a;
-        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
-      });
+      const at = nodes.findIndex((node, i) => node.nodeName === "BR" && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === "BR");
       if (at < 1) return;
       const lead = doc.createElement("p");
       nodes.slice(0, at).forEach((node) => lead.append(node));
@@ -433,10 +617,7 @@ var CustomImportScript = (() => {
     const nodes = [];
     let run = [];
     const flush = () => {
-      if (run.some((n) => {
-        var _a;
-        return n.nodeType === 3 ? n.textContent.trim() : text(n) || ((_a = n.querySelector) == null ? void 0 : _a.call(n, "img"));
-      })) {
+      if (run.some((n) => n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.("img"))) {
         const p = doc.createElement("p");
         p.append(...run);
         while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
@@ -473,7 +654,7 @@ var CustomImportScript = (() => {
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
-    const elementStyles = new Map([...box.children].map((el2) => [el2, copyStyles(el2)]));
+    const elementStyles = new Map([...box.children].map((el3) => [el3, copyStyles(el3)]));
     const { centred, size } = cleanRichText(box);
     const nodes = blockNodes(box, doc);
     nodes.forEach((node) => {
@@ -497,8 +678,8 @@ var CustomImportScript = (() => {
     const col = component.closest('[class*="col-sm-"]');
     const match = col && col.className.match(/\bcol-sm-(4|6)\b/);
     if (!match) return "";
-    const others = [...col.parentElement.children].filter((el2) => el2 !== col);
-    if (others.some((el2) => text(el2) || el2.querySelector("img, video, iframe"))) return "";
+    const others = [...col.parentElement.children].filter((el3) => el3 !== col);
+    if (others.some((el3) => text(el3) || el3.querySelector("img, video, iframe"))) return "";
     if (/\bcol-md-3\b/.test(col.className)) return "image-1-4";
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
@@ -551,22 +732,22 @@ var CustomImportScript = (() => {
       return p;
     });
   }
-  function centredLine(el2) {
-    return /text-align:\s*center/.test(el2.getAttribute("style") || "") || !!el2.querySelector('[style*="text-align: center"], [style*="text-align:center"]');
+  function centredLine(el3) {
+    return /text-align:\s*center/.test(el3.getAttribute("style") || "") || !!el3.querySelector('[style*="text-align: center"], [style*="text-align:center"]');
   }
-  function headlineTag(el2) {
+  function headlineTag(el3) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const depth = (span) => {
       let n = 0;
-      if (span === el2) return n;
-      for (let p = span.parentElement; p && p !== el2; p = p.parentElement) {
+      if (span === el3) return n;
+      for (let p = span.parentElement; p && p !== el3; p = p.parentElement) {
         if (/\bfontsize-/.test(p.className || "")) n += 1;
       }
       return n;
     };
-    const size = [el2, ...el2.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
-    const bold = [...el2.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
-    const serif = squash(bold) !== squash(el2.textContent);
+    const size = [el3, ...el3.querySelectorAll('[class*="fontsize-"]')].map((span) => [(/\bfontsize-(\d+(?:-\d+)?)-?vw\b/.exec(span.className || "") || [])[1], squash(span.textContent).length, depth(span)]).filter(([n, length]) => n && length).sort((a, b) => b[1] - a[1] || b[2] - a[2]).map(([n]) => n)[0];
+    const bold = [...el3.querySelectorAll(".futura-bold, b, strong")].filter((b) => !b.parentElement.closest(".futura-bold, b, strong")).map((b) => b.textContent).join("");
+    const serif = squash(bold) !== squash(el3.textContent);
     return [size ? `headline-${size}` : "", serif ? "serif" : ""].filter(Boolean).join(",");
   }
   function blankLineAfter(p, doc) {
@@ -676,45 +857,45 @@ var CustomImportScript = (() => {
       if (i) h1.append(doc.createElement("br"));
       h1.append(...line.childNodes);
     });
-    [...h1.querySelectorAll("strong, em")].reverse().forEach((el2) => {
-      let last = el2.lastChild;
+    [...h1.querySelectorAll("strong, em")].reverse().forEach((el3) => {
+      let last = el3.lastChild;
       while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
-        if (last.nodeName === "BR") el2.after(last);
+        if (last.nodeName === "BR") el3.after(last);
         else last.remove();
-        last = el2.lastChild;
+        last = el3.lastChild;
       }
     });
     return h1;
   }
-  function videoAside(video) {
-    const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
+  function videoAside(video2) {
+    const col = video2.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
     const row = col && col.parentElement;
     const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
-    const aside = row && [...row.children].find((el2) => el2 !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el2.className));
+    const aside = row && [...row.children].find((el3) => el3 !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el3.className));
     const headline = aside && aside.querySelector(".c-largeheadline");
     return headline && text(headline) ? headline : null;
   }
   function headlineVideo(headline) {
     const col = headline.closest('[class*="col-sm-6"]');
     const row = col && col.parentElement;
-    const videoCol = row && [...row.children].find((el2) => el2 !== col && /\bcol-sm-6\b/.test(el2.className));
-    const video = videoCol && videoCol.querySelector(".c-standalone-video");
-    return video && video.querySelector("[data-asset-path], iframe[src]") ? video : null;
+    const videoCol = row && [...row.children].find((el3) => el3 !== col && /\bcol-sm-6\b/.test(el3.className));
+    const video2 = videoCol && videoCol.querySelector(".c-standalone-video");
+    return video2 && video2.querySelector("[data-asset-path], iframe[src]") ? video2 : null;
   }
-  function videoTextAside(video) {
-    const col = video.closest('[class*="col-sm-6"]');
+  function videoTextAside(video2) {
+    const col = video2.closest('[class*="col-sm-6"]');
     const row = col && col.parentElement;
-    const aside = row && [...row.children].find((el2) => el2 !== col && /\bcol-sm-6\b/.test(el2.className));
+    const aside = row && [...row.children].find((el3) => el3 !== col && /\bcol-sm-6\b/.test(el3.className));
     const rte = aside && aside.querySelector(".c-rich-text-editor");
     if (!rte || !text(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
     return rte;
   }
-  function videoTextColumns(video, rte, doc) {
-    const link2 = videoLink(video, doc);
+  function videoTextColumns(video2, rte, doc) {
+    const link3 = videoLink(video2, doc);
     const { nodes } = richTextNodes(rte, doc);
-    if (!link2 || !nodes.length) return null;
+    if (!link3 || !nodes.length) return null;
     const media = doc.createElement("p");
-    media.append(link2);
+    media.append(link3);
     return WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-50-50)",
       cells: [[media, nodes]]
@@ -737,12 +918,13 @@ var CustomImportScript = (() => {
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
-      if (/^[“”"‘’']+$/.test(text(strong))) {
+      if (/^[“”"‘’']+$/.test(text(strong)) && strong.querySelector(".gold-text")) {
         const em = doc.createElement("em");
         em.append(strong);
         span.replaceWith(em);
       } else span.replaceWith(strong);
     });
+    goldBoldItalic(box);
     box.querySelectorAll("span, font").forEach(unwrap);
     box.querySelectorAll("strong strong").forEach(unwrap);
     [...box.querySelectorAll("strong")].forEach((strong) => {
@@ -774,9 +956,9 @@ var CustomImportScript = (() => {
         mark.append(...inner.childNodes);
       }
     });
-    [...box.querySelectorAll("em, strong")].reverse().forEach((el2) => {
-      while (el2.lastChild && (el2.lastChild.nodeName === "BR" || el2.lastChild.nodeType === 3 && !el2.lastChild.textContent.trim())) {
-        el2.after(el2.lastChild);
+    [...box.querySelectorAll("em, strong")].reverse().forEach((el3) => {
+      while (el3.lastChild && (el3.lastChild.nodeName === "BR" || el3.lastChild.nodeType === 3 && !el3.lastChild.textContent.trim())) {
+        el3.after(el3.lastChild);
       }
     });
     const out = [];
@@ -793,24 +975,24 @@ var CustomImportScript = (() => {
       });
       flush();
     });
-    out.forEach((p) => p.querySelectorAll("*").forEach((el2) => {
-      [...el2.attributes].forEach((attr) => el2.removeAttribute(attr.name));
+    out.forEach((p) => p.querySelectorAll("*").forEach((el3) => {
+      [...el3.attributes].forEach((attr) => el3.removeAttribute(attr.name));
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
-    const link2 = videoLink(video, doc);
+  function videoHeadlineColumns(video2, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
+    const link3 = videoLink(video2, doc);
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
     const lines = boxed ? headlineNodes(headline, doc) : [];
-    if (!link2 || boxed && !lines.length) return null;
+    if (!link3 || boxed && !lines.length) return null;
     const media = doc.createElement("p");
-    media.append(link2);
+    media.append(link3);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const firstLine = headline.querySelector(".line") || headline;
     const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
-    const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
+    const half = /\bcol-sm-6\b/.test((video2.closest('[class*="col-sm-"]') || video2).className);
     return WebImporter.Blocks.createBlock(doc, {
       name: `Columns (${half ? "columns-50-50" : "columns-67-33"}, large-headline${boxed ? ", gray-lead" : ""})`,
       cells: [/* @__PURE__ */ ((mediaCell, textCell) => mirrored ? [textCell, mediaCell] : [mediaCell, textCell])(
@@ -872,10 +1054,10 @@ var CustomImportScript = (() => {
     const h1 = main.querySelector(".h1-title h1");
     const hasTitle = !!(h1 && text(h1));
     if (hasTitle) {
-      const heading = doc.createElement("h1");
-      heading.innerHTML = h1.innerHTML;
-      cleanRichText(heading);
-      title.nodes.push(heading);
+      const heading2 = doc.createElement("h1");
+      heading2.innerHTML = h1.innerHTML;
+      cleanRichText(heading2);
+      title.nodes.push(heading2);
     }
     const date = main.querySelector(".c-publish-date h5");
     if (date && text(date)) {
@@ -890,22 +1072,22 @@ var CustomImportScript = (() => {
       h5.textContent = location.textContent.replace(/[\s\u00a0]+/g, " ").replace(/\s+,/g, ",").trim();
       title.nodes.push(h5);
     }
-    const components = [...main.querySelectorAll(selector)].filter((el2) => {
-      const parent = el2.parentElement && el2.parentElement.closest(selector);
-      return !parent && !el2.closest("header, footer, .modal");
+    const components = [...main.querySelectorAll(selector)].filter((el3) => {
+      const parent = el3.parentElement && el3.parentElement.closest(selector);
+      return !parent && !el3.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
-    const videoRowColumns = (video) => {
-      const aside = videoAside(video);
+    const videoRowColumns = (video2) => {
+      const aside = videoAside(video2);
       if (!aside) return false;
       const asideCol = aside.closest('[class*="col-sm-"]');
       const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h));
-      const videoCol = video.closest('[class*="col-sm-"]');
+      const videoCol = video2.closest('[class*="col-sm-"]');
       const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
       const cols = [...asideCol.parentElement.children];
       const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
-      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+      const columns = videoHeadlineColumns(video2, aside, doc, quotes, ctas, asideCtas, mirrored);
       if (!columns) return false;
       [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
       element.setAttribute("data-news-theme", "full-width");
@@ -966,15 +1148,15 @@ var CustomImportScript = (() => {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
         const img = component.querySelector("img");
-        const link2 = img && img.closest("a[href]");
-        if (link2 && component.contains(link2)) {
+        const link3 = img && img.closest("a[href]");
+        if (link3 && component.contains(link3)) {
           const a = doc.createElement("a");
-          a.setAttribute("href", newTabHref(link2, absoluteAsset(link2.getAttribute("href"))));
+          a.setAttribute("href", newTabHref(link3, absoluteAsset(link3.getAttribute("href"))));
           a.textContent = (img.getAttribute("alt") || "").trim() || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
           nodes2.splice(1, 0, p);
-          const style = ["image-link", link2.closest(".text-center") ? "center" : ""].filter(Boolean).join(", ");
+          const style = ["image-link", link3.closest(".text-center") ? "center" : ""].filter(Boolean).join(", ");
           startSection("image", style).nodes.push(...nodes2);
           current = null;
           return;
@@ -1000,21 +1182,21 @@ var CustomImportScript = (() => {
       if (component.matches(".c-customizeable")) {
         if (!component.querySelector(".item img")) return;
         const section = startSection("cards");
-        const heading = component.querySelector("h2");
-        if (heading && text(heading)) {
+        const heading2 = component.querySelector("h2");
+        if (heading2 && text(heading2)) {
           const h2 = doc.createElement("h2");
-          h2.textContent = text(heading);
+          h2.textContent = text(heading2);
           section.nodes.push(h2);
-          heading.remove();
+          heading2.remove();
         }
         section.nodes.push(component);
         current = null;
         return;
       }
       if (component.matches(".c-largeheadline") && headlineVideo(component) && !consumed.has(headlineVideo(component))) {
-        const video = headlineVideo(component);
-        if (videoRowColumns(video)) {
-          consumed.add(video);
+        const video2 = headlineVideo(component);
+        if (videoRowColumns(video2)) {
+          consumed.add(video2);
           return;
         }
       }
@@ -1061,17 +1243,17 @@ var CustomImportScript = (() => {
       if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
-          const heading = rename(lines[0], "h1");
-          heading.querySelectorAll("strong, em").forEach(unwrap);
-          startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
+          const heading2 = rename(lines[0], "h1");
+          heading2.querySelectorAll("strong, em").forEach(unwrap);
+          startSection("headline", "headline-2vw").nodes.push(heading2, ...lines.slice(1));
           current = null;
           return;
         }
       }
       if (isFirst && !hasTitle && component.matches(".c-rich-text-editor")) {
-        const heading = richTextTitle(component, doc);
-        if (heading) {
-          startSection("headline", "h1-21").nodes.push(heading);
+        const heading2 = richTextTitle(component, doc);
+        if (heading2) {
+          startSection("headline", "h1-21").nodes.push(heading2);
           current = null;
         }
       }
@@ -1142,7 +1324,7 @@ var CustomImportScript = (() => {
       });
     });
     extraStyle = "";
-    const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el2) => !el2.querySelector("#publishedDate") && !el2.parentElement.closest(".c-disclaimer") && text(el2));
+    const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el3) => !el3.querySelector("#publishedDate") && !el3.parentElement.closest(".c-disclaimer") && text(el3));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
@@ -1172,11 +1354,15 @@ var CustomImportScript = (() => {
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
-      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
-      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
+      const MARKS = ["data-btn-style", "data-section-style"];
+      const markSelector = MARKS.map((m) => `[${m}]`).join(", ");
+      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches(markSelector) ? [node] : [], ...node.querySelectorAll(markSelector)] : []);
+      const markStyles = marked.flatMap((el3) => MARKS.map((m) => el3.getAttribute(m)).filter(Boolean));
+      [...new Set(markStyles)].forEach((style) => {
+        if ((section.style || "").split(", ").includes(style)) return;
         section.style = [section.style, style].filter(Boolean).join(", ");
       });
-      marked.forEach((a) => a.removeAttribute("data-btn-style"));
+      marked.forEach((el3) => MARKS.forEach((m) => el3.removeAttribute(m)));
       section.nodes.forEach((node) => {
         if (node.nodeType === 1) node.removeAttribute("data-keep");
       });
@@ -1194,8 +1380,8 @@ var CustomImportScript = (() => {
   var COMPONENT = '[class^="c-"], [class*=" c-"]';
   var UNIT = `[data-keep], ${COMPONENT}, .buttonset, table`;
   var PARSED = ".c-resourcesanddownload, .c-customizeable, .c-autocarousel";
-  function colourStyle(el2) {
-    const m = (el2.className || "").match(/\bbg-([a-z-]+)\b/);
+  function colourStyle(el3) {
+    const m = (el3.className || "").match(/\bbg-([a-z-]+)\b/);
     if (!m) return "";
     const bg = m[1];
     if (/^(gold|golden-gradient|yellow)$/.test(bg)) return "gold";
@@ -1208,8 +1394,8 @@ var CustomImportScript = (() => {
     return "";
   }
   function contentUnits(container) {
-    const units = [...container.querySelectorAll(UNIT)].filter((el2) => {
-      const outer = el2.parentElement.closest(UNIT);
+    const units = [...container.querySelectorAll(UNIT)].filter((el3) => {
+      const outer = el3.parentElement.closest(UNIT);
       return !outer || outer === container || !container.contains(outer);
     });
     if (!units.length && container.matches(COMPONENT)) return [container];
@@ -1268,9 +1454,9 @@ var CustomImportScript = (() => {
       const nodes = [];
       contents.forEach((content, i) => {
         if (!content.length) return;
-        const heading = doc.createElement(`h${level}`);
-        heading.textContent = labels[i] || `Tab ${i + 1}`;
-        nodes.push(heading, ...content);
+        const heading2 = doc.createElement(`h${level}`);
+        heading2.textContent = labels[i] || `Tab ${i + 1}`;
+        nodes.push(heading2, ...content);
       });
       if (!nodes.length) return;
       const style = component.hasAttribute("data-image-aside") ? "tabbed, image-aside" : "tabbed";
@@ -1346,9 +1532,9 @@ var CustomImportScript = (() => {
       }
       if (nested) {
         items.forEach(({ label, body }) => {
-          const heading = doc.createElement("h4");
-          heading.textContent = label;
-          target.before(keepNodes(doc, [heading, ...body], "accordion-panel"));
+          const heading2 = doc.createElement("h4");
+          heading2.textContent = label;
+          target.before(keepNodes(doc, [heading2, ...body], "accordion-panel"));
         });
         target.remove();
         return;
@@ -1441,18 +1627,18 @@ var CustomImportScript = (() => {
       const title = component.querySelector(":scope > h2");
       const cells = [...component.querySelectorAll(".list-container")].map((group) => {
         const nodes = [];
-        const heading = group.querySelector("h3");
-        if (heading && h.text(heading)) {
+        const heading2 = group.querySelector("h3");
+        if (heading2 && h.text(heading2)) {
           const h3 = doc.createElement("h3");
-          h3.textContent = h.text(heading);
+          h3.textContent = h.text(heading2);
           nodes.push(h3);
         }
         const ul = doc.createElement("ul");
-        group.querySelectorAll("li a[href]").forEach((link2) => {
+        group.querySelectorAll("li a[href]").forEach((link3) => {
           const li = doc.createElement("li");
           const a = doc.createElement("a");
-          a.href = link2.getAttribute("href");
-          a.textContent = h.text(link2);
+          a.href = link3.getAttribute("href");
+          a.textContent = h.text(link3);
           li.append(a);
           ul.append(li);
         });
@@ -1472,9 +1658,9 @@ var CustomImportScript = (() => {
   }
   function fastFacts(main, doc, h) {
     main.querySelectorAll(".c-fastfacts").forEach((component) => {
-      const nodes = [...component.querySelectorAll("h2, h3, h4, p, li")].filter((el2) => h.text(el2) && !el2.querySelector("h2, h3, h4, p, li")).map((el2) => {
-        const copy = doc.createElement(el2.matches(".c-fastfacts-title") ? "h2" : "p");
-        copy.textContent = h.text(el2);
+      const nodes = [...component.querySelectorAll("h2, h3, h4, p, li")].filter((el3) => h.text(el3) && !el3.querySelector("h2, h3, h4, p, li")).map((el3) => {
+        const copy = doc.createElement(el3.matches(".c-fastfacts-title") ? "h2" : "p");
+        copy.textContent = h.text(el3);
         return copy;
       });
       if (!nodes.length) {
@@ -1486,27 +1672,26 @@ var CustomImportScript = (() => {
   }
   function pageHeroes(main, doc, h) {
     main.querySelectorAll(".c-page-hero").forEach((component) => {
-      const columnNodes = (col) => [...col.querySelectorAll("h1, h2, p, img")].flatMap((el2) => {
-        var _a;
-        if (el2.matches("img")) {
-          const source = el2.closest("picture") && el2.closest("picture").querySelector("source[srcset]");
+      const columnNodes = (col) => [...col.querySelectorAll("h1, h2, p, img")].flatMap((el3) => {
+        if (el3.matches("img")) {
+          const source = el3.closest("picture") && el3.closest("picture").querySelector("source[srcset]");
           const img = doc.createElement("img");
-          img.setAttribute("src", source ? source.getAttribute("srcset").split(/\s+/)[0] : el2.getAttribute("src"));
-          img.setAttribute("alt", el2.getAttribute("alt") || "");
+          img.setAttribute("src", source ? source.getAttribute("srcset").split(/\s+/)[0] : el3.getAttribute("src"));
+          img.setAttribute("alt", el3.getAttribute("alt") || "");
           const p = doc.createElement("p");
           p.append(img);
           return [p];
         }
-        if (!h.text(el2)) return [];
-        const copy = doc.createElement(el2.tagName.toLowerCase());
-        const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el2.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
-        if (el2.matches("h1")) {
+        if (!h.text(el3)) return [];
+        const copy = doc.createElement(el3.tagName.toLowerCase());
+        const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((el3.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]?.trim() || "");
+        if (el3.matches("h1")) {
           const strong = doc.createElement("strong");
-          strong.textContent = h.text(el2);
+          strong.textContent = h.text(el3);
           copy.append(doc.createTextNode(gold ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold ? "]]" : "]"));
-        } else if (el2.matches("h2")) {
-          copy.textContent = `[[text-1-75,serif]${h.text(el2)}]`;
-        } else copy.textContent = gold ? `[[color-gold]${h.text(el2)}]` : h.text(el2);
+        } else if (el3.matches("h2")) {
+          copy.textContent = `[[text-1-75,serif]${h.text(el3)}]`;
+        } else copy.textContent = gold ? `[[color-gold]${h.text(el3)}]` : h.text(el3);
         return [copy];
       });
       const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));
@@ -1526,13 +1711,13 @@ var CustomImportScript = (() => {
       const nodes = [];
       const desc = component.querySelector(".m-c-subheading-description");
       if (desc && h.text(desc)) {
-        [...desc.children].filter((el2) => h.text(el2)).forEach((el2) => nodes.push(el2.cloneNode(true)));
+        [...desc.children].filter((el3) => h.text(el3)).forEach((el3) => nodes.push(el3.cloneNode(true)));
       }
-      component.querySelectorAll(".btn-container a[href]").forEach((link2) => {
-        const img = link2.querySelector("img");
-        const label = h.text(link2) || img && (img.getAttribute("alt") || "").trim() || link2.getAttribute("href");
+      component.querySelectorAll(".btn-container a[href]").forEach((link3) => {
+        const img = link3.querySelector("img");
+        const label = h.text(link3) || img && (img.getAttribute("alt") || "").trim() || link3.getAttribute("href");
         const a = doc.createElement("a");
-        a.href = link2.getAttribute("href");
+        a.href = link3.getAttribute("href");
         a.textContent = label;
         const strong = doc.createElement("strong");
         strong.append(a);
@@ -1579,7 +1764,7 @@ var CustomImportScript = (() => {
         p.append(strong);
         nodes.push(p);
       }
-      const label = [...widget.children].find((el2) => !el2.querySelector(".numbercounter-number") && h.text(el2));
+      const label = [...widget.children].find((el3) => !el3.querySelector(".numbercounter-number") && h.text(el3));
       if (label) {
         const p = doc.createElement("p");
         label.querySelectorAll("br").forEach((br) => br.replaceWith(doc.createTextNode(" ")));
@@ -1592,13 +1777,13 @@ var CustomImportScript = (() => {
   var WHITE = /^(?:#fff|#ffffff|white|rgb\(\s*255\s*,\s*255\s*,\s*255\s*\))$/i;
   var COLOURED_BOX = '.has-background:not(.bg-white), .c-full-bleed-panel[class*="bg-"]';
   function whiteText(main, doc, h) {
-    main.querySelectorAll('[style*="color"]').forEach((el2) => {
-      const m = (el2.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
-      if (!m || !WHITE.test(m[1].trim()) || !el2.closest(COLOURED_BOX) || !h.text(el2)) return;
-      if (el2.parentElement.closest('[style*="color"]') && WHITE.test((el2.parentElement.closest('[style*="color"]').getAttribute("style") || "").replace(/.*color\s*:\s*([^;]+).*/i, "$1").trim())) return;
-      el2.prepend(doc.createTextNode("[[color-white]"));
-      el2.append(doc.createTextNode("]"));
-      el2.setAttribute("data-white-tag", "");
+    main.querySelectorAll('[style*="color"]').forEach((el3) => {
+      const m = (el3.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+      if (!m || !WHITE.test(m[1].trim()) || !el3.closest(COLOURED_BOX) || !h.text(el3)) return;
+      if (el3.parentElement.closest('[style*="color"]') && WHITE.test((el3.parentElement.closest('[style*="color"]').getAttribute("style") || "").replace(/.*color\s*:\s*([^;]+).*/i, "$1").trim())) return;
+      el3.prepend(doc.createTextNode("[[color-white]"));
+      el3.append(doc.createTextNode("]"));
+      el3.setAttribute("data-white-tag", "");
     });
   }
   function eventCalendars(main) {
@@ -1660,6 +1845,285 @@ var CustomImportScript = (() => {
     }
   };
 
+  // tools/importer/xf-fragment-map.js
+  var xf_fragment_map_default = {
+    "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
+      name: 'Acute Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
+      name: 'Emergency Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
+      name: 'Sage "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
+      name: 'Sustainability "Connect with us" band (above the form)'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
+      name: "Sustainability contact aside (next to the form)"
+    },
+    "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
+      name: "Sage contact aside (LinkedIn / Facebook icons)"
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
+      name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master": {
+      name: 'Our management "\u25C1 Back" link (leader bio pages)'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master": {
+      name: 'Board of directors "\u25C1 Back" link (director bio pages)'
+    },
+    // an article body kept as its own fragment document (the page's Fragment block)
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/technology-helps-imp/body-copy/master": {
+      name: 'Article body of "Technology helps improve colonoscopy safety and efficiency"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker-boosts-innovation-r-and-d-expands-with-medical-device-testing-facility/body-copy/master": {
+      name: 'Article body of "Stryker boosts innovation: R&D expands with medical device testing facility"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/why-all-police-cars-need-aeds/body": {
+      name: 'Article body of "Why all police cars need an AED"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body": {
+      name: 'Article body of "Understanding the basics of a LUCAS chest compression system"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/_80_years_together/test---body-copy/master": {
+      name: 'Article body of "80 years together"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/employees_share_why_/body-copy/master": {
+      name: 'Article body of "Employees share why DE&I matters at annual Summit"'
+    },
+    "/content/experience-fragments/stryker/communications/en/news/_2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite/body-copy/master": {
+      name: 'Article body of "What does an operating room look like? Look inside Stryker\u2019s iSuite"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy/master": {
+      name: 'Article body of "Breast Cancer Awareness Meets Breast Cancer Advancements"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/breast_cancer_awaren/body-copy-2/master": {
+      name: 'Article body (second part) of "Breast Cancer Awareness Meets Breast Cancer Advancements"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/putting_people_first/body-copy/master": {
+      name: 'Article body of "Putting people first: how Stryker supports worldwide disaster relief efforts"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/mako_smartrobotics_h/body-text/master": {
+      name: 'Article body of "Mako SmartRobotics\u2122 hits 500,000+ procedures"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/mother_and_son_take_/body-copy/master": {
+      name: 'Article body of "Mother and son take on Goldenhar syndrome"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/some_people_say_they/body-copy/master": {
+      name: 'Article body of "Some people say they\u2019d give you their kidney. This nurse meant it."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/jordan_3_17_23/jordan/master": {
+      name: 'Article body of "Celebrating four years | Jordan\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/springing_into_actio/body-copy/master": {
+      name: 'Article body of "Springing into action | Andy\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/boris_story_5_15_23/news-content/master": {
+      name: 'Article body of "Taking action | Boris\u2019 stroke story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/katherine_s_catastro/body-copy/master": {
+      name: 'Article body of "Katherine\u2019s catastrophic stroke survivor story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/defying_the_odds/body-content/master": {
+      name: 'Article body of "Defying the odds"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/woman_holding_recycl/body-copy/master": {
+      name: 'Article body of "Packaging for a better planet"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/why_aeds_belong_on_b/body-copy/master": {
+      name: 'Article body of "Why AEDs belong on back-to-school checklists"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master": {
+      name: 'Article body of "Restoring form, function and hope | Emily\u2019s jaw replacement"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/is_it_a_heart_attack/body-copy/master": {
+      name: 'Article body of "Is it a heart attack or sudden cardiac arrest? Know the warning signs and what to do for both"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/carolyn_s_mako_total/body-copy/master": {
+      name: 'Article body of "Carolyn\u2019s Mako Total Hip surgery story"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/focusing_on_her_mobi/body-copy/master": {
+      name: 'Article body of "How Janet  recovered from a vertebral (spine) compression fracture"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/three_things_to_know/body-copy/master": {
+      name: 'Article body of "Three things to know about Stryker\u2019s employee giving program"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/tour_the_amsterdam_s/body-copy/master": {
+      name: 'Article body of "Tour the Amsterdam Skills Centre, an international training centre for medical specialists"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_donates_22_5/text/text/master": {
+      name: 'Article body of "Stryker donates 22,500 Emergency Relief Bed Kits to Project C.U.R.E."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/what_are_the_symptom/body-copy/master": {
+      name: 'Article body of "What are the symptoms and signs of stroke?"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master": {
+      name: 'Article body of "A partnership promoting mental health for healthcare workers"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/help-increase-patient-outcomes-both-in-and-out-of-the-hospital/body": {
+      name: 'Article body of "Help increase patient outcomes both in and out of the hospital"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/these_nurses_share_h/body-copy/master1": {
+      name: 'Article body of "Nurses working at Stryker share how their experience becomes innovation in nursing"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/transforming_confide/body-copy/master": {
+      name: 'Article body of "Stryker and Operation Smile transform confidence and care"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/celebrating_hispanic/body-copy/master": {
+      name: 'Article body of "Celebrating Hispanic Heritage: driving our mission forward"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master": {
+      name: 'Article body of "Mako: Robotics driving innovation across specialties"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/military_members_on_/body-copy/master11": {
+      name: 'Article body of "Military members on a mission to make healthcare better"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/the_journey_to_zero_/body-copy/master": {
+      name: 'Article body of "The \u201CJourney to Zero Harm\u201D Starts with Communication, Protocols and Technology"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/protect_your_patient/body-copy/master": {
+      name: 'Article body of "Protect your patients \u2026 and your OR staff."'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/a_safe_space_at_stry/body-copy/master": {
+      name: 'Article body of "A safe space at Stryker"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/back_pain_and_scolio/body-copy/master": {
+      name: 'Article body of "Back pain and scoliosis: Victoria finds relief"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/patient/derrick_10_2_23/derrick/master": {
+      name: 'Article body of "Knowing the warning signs of sudden cardiac arrest helped saved his life | Derrick\u2019s sudden cardiac arrest story"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body": {
+      name: 'Article body of "Knowing when to use an AED: CPR and AED guidelines for sudden cardiac arrest"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_stryker_is_innov/body-copy/master": {
+      name: 'Article body of "How Stryker is innovating in operating room design"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/how-technology-helps-address-gi-suite-challenges/master": {
+      name: 'Article body of "How Technology Helps Address GI Suite Challenges"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_s_global_vol/body/master": {
+      name: 'Article body of "Stryker\u2019s Global Volunteer Network highlights importance of volunteerism"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/five_things_you_need/body-copy/master": {
+      name: 'Article body of "Five things you need to know about high blood pressure and stroke"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/body-copy/master": {
+      name: 'Article body of "Promoting high quality, inclusive healthcare in Latin America"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/-2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/myths--realities-and-real-innovation--what-everyone-should-know/master": {
+      name: 'Article body of "Myths, realities and real innovation: What everyone should know about arthritis"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/advancing_healthcare/body-copy/master": {
+      name: 'Article body of "Advancing healthcare professionals\u2019 education with Stryker\u2019s Neurotech Mobile Experience"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master": {
+      name: 'Article body of "Advancing neurosurgery: Stryker supports brain tumor research through ongoing partnership"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/3-ways-aed-remote-monitoring-makes-a-difference/blog": {
+      name: 'Article body of "3 ways AED remote monitoring makes a difference"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/stryker_gets_medical/2-8-24-body-copy/master": {
+      name: 'Article body of "Stryker gets medical equipment to regions in need with Project C.U.R.E. partnership"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/women_leading_the_ch/body/master": {
+      name: 'Article body of "Women leading the charge for change"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/a_building_well_done/body/master": {
+      name: 'Article body of "A building WELL done | Earning Platinum for putting people first"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/nurses_a_key_driver_/body-content/master": {
+      name: 'Article body of "Nurses: A key driver in advancing global health"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/this_surgical_icu_te/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu/master": {
+      name: 'Article body of "This Surgical ICU team is bound by unspeakable trauma and miraculous healings"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/caregiver_klisa/body-copy/master": {
+      name: 'Article body of "This nurse turned tragic loss into inspiring hope"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master": {
+      name: 'Article body of "Stryker\u2019s Journey to Zero* harm continues with Neptune S"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master": {
+      name: 'Article body of "Three ways Stryker supports physicians in their pursuit of better patient outcomes"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/why-every-college-campus-needs-accessible-aeds/master": {
+      name: 'Article body of "Why every college campus needs accessible AEDs"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/the-role-of-defibrillation-during-sudden-cardiac-arrest/body": {
+      name: 'Article body of "The role of defibrillation during sudden cardiac arrest"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency/master": {
+      name: 'Article body of "How to prepare your workplace for a sudden cardiac emergency"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/a_winning_spirit/a-winning-spirit/master": {
+      name: 'Article body of "A winning spirit"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/five_things_to_know_/body-copy/master": {
+      name: 'Article body of "Five things to know about heart attacks and sudden cardiac arrests"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/what_it_s_like_being/body-copy/master": {
+      name: 'Article body of "What it\u2019s like being a caregiver to a loved one with Alzheimer\u2019s"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-1/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/mentors/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/making_a_difference_/text-2/master": {
+      name: 'Article body part of "Making a difference through mentorship"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-re/body": {
+      name: 'Article body of "12-year-old girl experiences cardiac arrest, Stryker employee responds"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/master": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/how_augmented_realit/body-copy/body-copy-2": {
+      name: 'Article body part of "How augmented reality can help care teams plan, design and construct new operating rooms"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-1/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/innovation_inspired_/text/body-copy-2/master": {
+      name: 'Article body part of "Innovation inspired by insights: the next generation, first completely wireless hospital bed is here"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/stryker_holds_divers/body-copy/master": {
+      name: 'Article body of "Stryker holds diversity, equity and inclusion summit"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/how-the-right-equipment-can-help-recruit-and-retain-emts-and-par/body": {
+      name: 'Article body of "How the right equipment can help recruit and retain EMTs and paramedics"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master": {
+      fragment: "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body",
+      name: 'Article body of "Four reasons every school needs AEDs"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/body-copy/master": {
+      name: 'Article body of "Advancing healthcare through Asian culture and collaboration"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/more_than_able_to_ma/body-copy/master": {
+      name: 'Article body of "More than able to make healthcare better"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/features/technologies_that_pr/body-copy/master": {
+      name: 'Article body of "Technologies that promote safe care for mother and baby during childbirth"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/5-steps-to-convince-decision-makers-to-adopt-an-aed-program/body": {
+      name: 'Article body of "5 steps to convince decision makers to adopt an AED program"'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body": {
+      name: 'Article body of "8 steps to a successful AED safety program"'
+    },
+    "/content/experience-fragments/stryker/surgical-technologies/en/news/addressing_or_and_l_/carousel/master": {
+      name: 'Article body of "Addressing OR and L&D Challenges with Adjunct Technology"'
+    },
+    "/content/experience-fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master": {
+      name: 'Interventional Spine footnotes "\u276E BACK" link (footnote detail pages)'
+    }
+  };
+
   // tools/importer/xf-fragment-path.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
@@ -1671,6 +2135,11 @@ var CustomImportScript = (() => {
     if (!key.startsWith(XF_ROOT)) return null;
     const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+  function xfFragmentPath(xf) {
+    const entry = xf_fragment_map_default[xfKey(xf)];
+    if (!entry) return null;
+    return entry.fragment || xfToFragmentPath(xf);
   }
 
   // tools/importer/long-page-detail-corp-xf.js
@@ -1821,8 +2290,8 @@ var CustomImportScript = (() => {
   };
 
   // tools/importer/transformers/long-page-detail-corp-sections.js
-  var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments", "corp-legal"];
-  var H1_TITLE_ONLY = ["corp-legal"];
+  var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments", "base"];
+  var H1_TITLE_ONLY = ["base"];
   var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
     counts[xf] = (counts[xf] || 0) + 1;
     return counts;
@@ -1852,8 +2321,8 @@ var CustomImportScript = (() => {
       const slash = path.length > 1 && path.endsWith("/") ? "/" : "";
       const bare = path.replace(/\/$/, "");
       if (!bare) return;
-      const clean = WebImporter.FileUtils.sanitizePath(bare);
-      if (clean && clean !== bare) a.setAttribute("href", `${clean}${slash}${suffix}`);
+      const clean5 = WebImporter.FileUtils.sanitizePath(bare);
+      if (clean5 && clean5 !== bare) a.setAttribute("href", `${clean5}${slash}${suffix}`);
     });
   }
   var CENTRED_COLUMN = ":is(.aem-GridColumn--default--10, .aem-GridColumn--default--11).aem-GridColumn--offset--default--1";
@@ -1867,13 +2336,13 @@ var CustomImportScript = (() => {
     }
     return "";
   }
-  function text2(el2) {
-    return (el2.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+  function text2(el3) {
+    return (el3.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
   }
   function sourcePath(payload) {
     try {
       return new URL(payload.params.originalURL).pathname;
-    } catch (e) {
+    } catch {
       return "";
     }
   }
@@ -1887,7 +2356,7 @@ var CustomImportScript = (() => {
   }
   function rowColumns(colctrl) {
     const row = colctrl.querySelector(":scope > .row");
-    return row ? [...row.children].filter((el2) => /\bcol-(xs|sm|md)-\d+/.test(el2.className)) : [];
+    return row ? [...row.children].filter((el3) => /\bcol-(xs|sm|md)-\d+/.test(el3.className)) : [];
   }
   function slotSignature(slot) {
     const colctrl = slot.closest(".colctrl");
@@ -1935,17 +2404,17 @@ var CustomImportScript = (() => {
   function sectionTitles(main, doc) {
     main.querySelectorAll(".c-section-title, .c-title").forEach((title) => {
       const nodes = [];
-      const heading = title.querySelector("h2");
-      if (heading && text2(heading)) {
+      const heading2 = title.querySelector("h2");
+      if (heading2 && text2(heading2)) {
         const h2 = doc.createElement("h2");
         const u = doc.createElement("u");
-        u.textContent = text2(heading);
+        u.textContent = text2(heading2);
         h2.append(u);
         nodes.push(h2);
       }
       const container = title.querySelector(".title-container") || title;
-      [...container.children].filter((el2) => el2 !== heading && text2(el2)).forEach((el2) => {
-        nodes.push(el2.cloneNode(true));
+      [...container.children].filter((el3) => el3 !== heading2 && text2(el3)).forEach((el3) => {
+        nodes.push(el3.cloneNode(true));
       });
       if (!nodes.length) {
         const spacer = doc.createElement("div");
@@ -1969,12 +2438,12 @@ var CustomImportScript = (() => {
     });
   }
   function videoCaptions(main, doc) {
-    main.querySelectorAll(".c-standalone-video").forEach((video) => {
-      const caption = video.querySelector(".desc-content");
+    main.querySelectorAll(".c-standalone-video").forEach((video2) => {
+      const caption = video2.querySelector(".desc-content");
       if (!caption) return;
       if (text2(caption)) {
         const copy = caption.cloneNode(true);
-        (video.closest(".standalonevideo") || video).after(richText(doc, [...copy.childNodes]));
+        (video2.closest(".standalonevideo") || video2).after(richText(doc, [...copy.childNodes]));
       }
       caption.remove();
     });
@@ -2026,8 +2495,8 @@ var CustomImportScript = (() => {
   ].join(", ");
   function linkedImage(component) {
     const img = component.querySelector("img");
-    const link2 = img && img.closest("a[href]");
-    return link2 && component.contains(link2) ? link2 : null;
+    const link3 = img && img.closest("a[href]");
+    return link3 && component.contains(link3) ? link3 : null;
   }
   function stackRow(columns) {
     return columns.length === 4 && columns.every((col) => !/\bcol-xs-([1-9]|1[01])\b/.test(col.className));
@@ -2101,11 +2570,11 @@ var CustomImportScript = (() => {
       if (c.matches(".c-rich-text-editor")) out.push(...richTextNodes(c, doc).nodes);
       else if (c.matches(".c-standalone-image")) {
         const nodes = imageNodes(c, doc);
-        const link2 = linkedImage(c);
-        if (link2 && nodes.length) {
+        const link3 = linkedImage(c);
+        if (link3 && nodes.length) {
           const a = doc.createElement("a");
-          a.setAttribute("href", newTabHref(link2, absoluteAsset(link2.getAttribute("href"))));
-          a.textContent = link2.querySelector("img").getAttribute("alt") || text2(link2) || a.getAttribute("href");
+          a.setAttribute("href", newTabHref(link3, absoluteAsset(link3.getAttribute("href"))));
+          a.textContent = link3.querySelector("img").getAttribute("alt") || text2(link3) || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
           nodes.splice(1, 0, p);
@@ -2129,9 +2598,9 @@ var CustomImportScript = (() => {
     return out;
   }
   function centredColumn(col) {
-    const centred = (el2) => !!el2.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
+    const centred = (el3) => !!el3.closest('.text-center, [style*="text-align: center"], [style*="text-align:center"]');
     const images = [...col.querySelectorAll(".c-standalone-image img")];
-    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li), .c-standalone-image .title-content :is(h2, h3, h4, h5), .c-largeheadline .line")].filter((el2) => text2(el2));
+    const paragraphs = [...col.querySelectorAll(".c-rich-text-editor :is(p, h1, h2, h3, h4, h5, h6, li), .c-standalone-image .title-content :is(h2, h3, h4, h5), .c-largeheadline .line")].filter((el3) => text2(el3));
     const items = [...images, ...paragraphs];
     return items.length > 0 && items.every(centred);
   }
@@ -2140,26 +2609,26 @@ var CustomImportScript = (() => {
     return size ? `text-${size.slice(2)}` : "";
   }
   function tagCopy(n, tag, doc) {
-    const wrap = (first, last) => {
+    const wrap2 = (first, last) => {
       if (first.nodeType === 3 && first.textContent.trimStart().startsWith(`[[${tag}]`)) return;
       first.before(doc.createTextNode(`[[${tag}]`));
       last.after(doc.createTextNode("]"));
     };
     if (!n.matches("ul, ol")) {
-      if (n.firstChild) wrap(n.firstChild, n.lastChild);
+      if (n.firstChild) wrap2(n.firstChild, n.lastChild);
       return;
     }
     n.querySelectorAll("li").forEach((li) => {
       const paragraphs = li.querySelectorAll(":scope > p");
       if (paragraphs.length) {
         paragraphs.forEach((p) => {
-          if (p.firstChild) wrap(p.firstChild, p.lastChild);
+          if (p.firstChild) wrap2(p.firstChild, p.lastChild);
         });
         return;
       }
-      const inline = [];
-      for (let c = li.firstChild; c && !(c.nodeType === 1 && c.matches("ul, ol")); c = c.nextSibling) inline.push(c);
-      if (inline.some((c) => c.textContent.trim())) wrap(inline[0], inline[inline.length - 1]);
+      const inline2 = [];
+      for (let c = li.firstChild; c && !(c.nodeType === 1 && c.matches("ul, ol")); c = c.nextSibling) inline2.push(c);
+      if (inline2.some((c) => c.textContent.trim())) wrap2(inline2[0], inline2[inline2.length - 1]);
     });
   }
   function rowCopyStyle(cells, doc) {
@@ -2185,22 +2654,22 @@ var CustomImportScript = (() => {
   }
   function markRowEnds(main) {
     const COMPONENT2 = '[class^="c-"], [class*=" c-"]';
-    const hasContent = (el2) => text2(el2) || el2.querySelector("img, iframe, [data-asset-path]");
+    const hasContent = (el3) => text2(el3) || el3.querySelector("img, iframe, [data-asset-path]");
     main.querySelectorAll(".colctrl").forEach((colctrl) => {
       const row = colctrl.querySelector(":scope > .row");
       const all = row ? [...row.children] : [];
       const cols = all.filter(hasContent);
       if (cols.length !== 1 || all.length > 2) return;
-      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT2}`)].filter((el2) => {
-        const outer = el2.parentElement.closest(`.colctrl, ${COMPONENT2}`);
-        return (!outer || outer === colctrl) && (text2(el2) || el2.querySelector("img, iframe, [data-asset-path]") || el2.matches('.c-full-bleed-panel[class*="bg-"]'));
+      const units = [...cols[0].querySelectorAll(`.colctrl, ${COMPONENT2}`)].filter((el3) => {
+        const outer = el3.parentElement.closest(`.colctrl, ${COMPONENT2}`);
+        return (!outer || outer === colctrl) && (text2(el3) || el3.querySelector("img, iframe, [data-asset-path]") || el3.matches('.c-full-bleed-panel[class*="bg-"]'));
       });
       const last = units[units.length - 1];
       if (!last) return;
       const unit = last.matches(".colctrl") && last.parentElement && /\bcols/.test(last.parentElement.className) ? last.parentElement : last;
       unit.setAttribute("data-row-end", String(Number(unit.getAttribute("data-row-end") || 0) + 1));
     });
-    const mark = (el2) => el2.setAttribute("data-row-end", String(Number(el2.getAttribute("data-row-end") || 0) + 1));
+    const mark = (el3) => el3.setAttribute("data-row-end", String(Number(el3.getAttribute("data-row-end") || 0) + 1));
     main.querySelectorAll(".colctrl").forEach((colctrl) => {
       if (hasContent(colctrl) || colctrl.querySelector(".c-section-separator, .sectionseparator, hr")) return;
       const wrapper = colctrl.parentElement && /\bcols/.test(colctrl.parentElement.className) ? colctrl.parentElement : colctrl;
@@ -2211,7 +2680,7 @@ var CustomImportScript = (() => {
         mark(prev);
         return;
       }
-      const parts = [...prev.querySelectorAll(COMPONENT2)].filter((el2) => !el2.parentElement.closest(COMPONENT2) && hasContent(el2));
+      const parts = [...prev.querySelectorAll(COMPONENT2)].filter((el3) => !el3.parentElement.closest(COMPONENT2) && hasContent(el3));
       const last = parts[parts.length - 1] || (prev.matches(COMPONENT2) ? prev : null);
       if (last) mark(last);
     });
@@ -2241,12 +2710,12 @@ var CustomImportScript = (() => {
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
       const boxes = boxVariant(columns);
       if (!boxes) {
-        colctrl.querySelectorAll("[data-white-tag]").forEach((el2) => {
-          const inBox = el2.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
+        colctrl.querySelectorAll("[data-white-tag]").forEach((el3) => {
+          const inBox = el3.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
           if (!inBox || inBox.matches(".c-full-bleed-panel") || inBox.closest(".colctrl") !== colctrl) return;
-          if (el2.firstChild && el2.firstChild.nodeValue === "[[color-white]") el2.firstChild.remove();
-          if (el2.lastChild && el2.lastChild.nodeValue === "]") el2.lastChild.remove();
-          el2.removeAttribute("data-white-tag");
+          if (el3.firstChild && el3.firstChild.nodeValue === "[[color-white]") el3.firstChild.remove();
+          if (el3.lastChild && el3.lastChild.nodeValue === "]") el3.lastChild.remove();
+          el3.removeAttribute("data-white-tag");
         });
       }
       const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)].filter((c) => c.closest(".colctrl") === colctrl && (text2(c) || c.matches(".sectionseparator"))) : [];
@@ -2281,12 +2750,12 @@ var CustomImportScript = (() => {
     return [...table.querySelectorAll(":scope > tbody > tr, :scope > tr")];
   }
   var MEDIA = 'img, picture, video, iframe, [data-asset-path], a[href*="/is/content/"], a[href*="/is/image/"]';
-  var isMediaCell = (td) => !td.textContent.trim() || td.querySelector(MEDIA) && [...td.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].every((el2) => el2.querySelector(MEDIA) || !text2(el2));
+  var isMediaCell = (td) => !td.textContent.trim() || td.querySelector(MEDIA) && [...td.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].every((el3) => el3.querySelector(MEDIA) || !text2(el3));
   function gridRows(main) {
-    const isColumns = (el2) => el2 && el2.matches('table[data-keep="section"]') && /^Columns\b/.test(text2(tableRows(el2)[0] || el2));
-    const empty = (el2) => !text2(el2) && !el2.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`) && !el2.matches("[data-keep], .sectionseparator, hr");
-    const next = (el2) => {
-      let n = el2.nextElementSibling;
+    const isColumns = (el3) => el3 && el3.matches('table[data-keep="section"]') && /^Columns\b/.test(text2(tableRows(el3)[0] || el3));
+    const empty = (el3) => !text2(el3) && !el3.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`) && !el3.matches("[data-keep], .sectionseparator, hr");
+    const next = (el3) => {
+      let n = el3.nextElementSibling;
       while (n && empty(n)) n = n.nextElementSibling;
       return n;
     };
@@ -2329,10 +2798,9 @@ var CustomImportScript = (() => {
   }
   function fullWidthImages(main, doc) {
     main.querySelectorAll(".imgBoxId.full-width-img").forEach((box) => {
-      var _a, _b;
       const img = box.querySelector("img");
       if (!img) return;
-      const desktop = ((_b = (_a = box.querySelector("source[srcset]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "srcset")) || img.getAttribute("src");
+      const desktop = (box.querySelector("source[srcset]") || {}).getAttribute?.("srcset") || img.getAttribute("src");
       const phone = img.getAttribute("src");
       const alt = img.getAttribute("alt") || "";
       const holder = doc.createElement("div");
@@ -2340,31 +2808,31 @@ var CustomImportScript = (() => {
       holder.setAttribute("data-section-style", box.classList.contains("bg-shadow") ? "full-width-image, shadow" : "full-width-image");
       [.../* @__PURE__ */ new Set([desktop, phone])].filter(Boolean).forEach((src) => {
         const p = doc.createElement("p");
-        const image = doc.createElement("img");
-        image.setAttribute("src", src);
-        image.setAttribute("alt", alt);
-        p.append(image);
+        const image3 = doc.createElement("img");
+        image3.setAttribute("src", src);
+        image3.setAttribute("alt", alt);
+        p.append(image3);
         holder.append(p);
       });
       box.replaceWith(holder);
     });
   }
-  function renameTo(el2, tag, doc) {
-    if (el2.tagName.toLowerCase() === tag) return el2;
+  function renameTo(el3, tag, doc) {
+    if (el3.tagName.toLowerCase() === tag) return el3;
     const out = doc.createElement(tag);
-    out.append(...el2.childNodes);
-    el2.replaceWith(out);
+    out.append(...el3.childNodes);
+    el3.replaceWith(out);
     return out;
   }
-  function sizeTagged(el2, tag, doc) {
-    el2.prepend(doc.createTextNode(`[[${tag}]`));
-    el2.append(doc.createTextNode("]"));
-    return el2;
+  function sizeTagged(el3, tag, doc) {
+    el3.prepend(doc.createTextNode(`[[${tag}]`));
+    el3.append(doc.createTextNode("]"));
+    return el3;
   }
   var TITLE_SIZES = ["1-25", "1-5", "1-75", "2", "2-5"];
-  function titleFromHeading(heading, doc) {
-    const level = heading.tagName;
-    const h1 = renameTo(heading, "h1", doc);
+  function titleFromHeading(heading2, doc) {
+    const level = heading2.tagName;
+    const h1 = renameTo(heading2, "h1", doc);
     const spans = [...h1.querySelectorAll('[class*="fontsize-"]')].filter((span) => text2(span) === text2(h1));
     const size = spans.map((span) => (/\bfontsize-([\d-]+)em\b/.exec(span.className) || [])[1]).find((n) => TITLE_SIZES.includes(n));
     const h4Enlarged = level === "H4" && size === "2-5";
@@ -2380,10 +2848,10 @@ var CustomImportScript = (() => {
     return h1;
   }
   function dropDamVideos(main) {
-    main.querySelectorAll(".c-standalone-video").forEach((video) => {
-      const asset = video.querySelector("[data-asset-path]");
+    main.querySelectorAll(".c-standalone-video").forEach((video2) => {
+      const asset = video2.querySelector("[data-asset-path]");
       if (asset && asset.getAttribute("data-asset-path").startsWith("/content/dam/")) {
-        (video.closest(".standalonevideo") || video).remove();
+        (video2.closest(".standalonevideo") || video2).remove();
       }
     });
   }
@@ -2402,8 +2870,8 @@ var CustomImportScript = (() => {
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
     const path = sourcePath(payload);
-    main.querySelectorAll(".hero-space").forEach((el2) => el2.remove());
-    main.querySelectorAll(".fullWidthImageHero").forEach((el2) => el2.setAttribute("data-keep", "section"));
+    main.querySelectorAll(".hero-space").forEach((el3) => el3.remove());
+    main.querySelectorAll(".fullWidthImageHero").forEach((el3) => el3.setAttribute("data-keep", "section"));
     dropDamVideos(main);
     fullWidthImages(main, doc);
     spaceUrlColons(main, doc);
@@ -2414,7 +2882,7 @@ var CustomImportScript = (() => {
     videoCaptions(main, doc);
     const hasTitle = !!(main.querySelector(".h1-title h1") && text2(main.querySelector(".h1-title h1"))) || !!main.querySelector(".fullWidthImageHero h1, .c-autocarousel h1");
     const titleHeadings = H1_TITLE_ONLY.includes(payload.template.name) ? "h1" : ":is(h1, h2, h3, h4, h5, h6)";
-    let firstTitle = !hasTitle && [...main.querySelectorAll(`.c-largeheadline, .c-rich-text-editor ${titleHeadings}`)].find((el2) => text2(el2) && !el2.closest(".h1-title"));
+    let firstTitle = !hasTitle && [...main.querySelectorAll(`.c-largeheadline, .c-rich-text-editor ${titleHeadings}`)].find((el3) => text2(el3) && !el3.closest(".h1-title"));
     const firstHeadline = firstTitle && firstTitle.matches(".c-largeheadline") ? firstTitle : null;
     if (firstTitle && !firstHeadline) firstTitle = titleFromHeading(firstTitle, doc);
     main.querySelectorAll(".c-rich-text-editor h1").forEach((h) => {
@@ -2446,7 +2914,7 @@ var CustomImportScript = (() => {
     gridRows(main);
     convertAfterRows(main, doc, helpers);
     main.querySelectorAll('[data-row-end]:not([data-keep], [class^="c-"], [class*=" c-"])').forEach((wrapper) => {
-      const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el2) => !el2.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text2(el2) || el2.querySelector("img, iframe, [data-asset-path]")));
+      const parts = [...wrapper.querySelectorAll('[data-keep], [class^="c-"], [class*=" c-"]')].filter((el3) => !el3.parentElement.closest('[data-keep], [class^="c-"], [class*=" c-"]') && (text2(el3) || el3.querySelector("img, iframe, [data-asset-path]")));
       const last = parts[parts.length - 1];
       if (last) {
         const count = Number(wrapper.getAttribute("data-row-end")) + Number(last.getAttribute("data-row-end") || 0);
@@ -2556,10 +3024,10 @@ var CustomImportScript = (() => {
       });
       lines.push(line);
     });
-    const clean = lines.map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean);
-    if (!clean.length) return null;
+    const clean5 = lines.map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean);
+    if (!clean5.length) return null;
     const p = doc.createElement("p");
-    clean.forEach((line, i) => {
+    clean5.forEach((line, i) => {
       if (i) p.append(doc.createElement("br"));
       p.append(line);
     });
@@ -2569,16 +3037,16 @@ var CustomImportScript = (() => {
   function mapLink(contactus, doc) {
     const map = contactus.querySelector("[data-address]");
     if (!map) return null;
-    const clean = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
-    const lines = map.getAttribute("data-address").split(/<\/p>/i).filter((paragraph) => !CONTACT_LINE.test(clean(paragraph))).flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i)).map((line) => clean(line).replace(/[\s,]+$/, "")).filter(Boolean);
+    const clean5 = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+    const lines = map.getAttribute("data-address").split(/<\/p>/i).filter((paragraph) => !CONTACT_LINE.test(clean5(paragraph))).flatMap((paragraph) => paragraph.split(/<br\s*\/?>/i)).map((line) => clean5(line).replace(/[\s,]+$/, "")).filter(Boolean);
     if (!lines.length) return null;
     const address = lines.join(", ");
     return el(doc, "p", link(doc, `https://www.google.com/maps?q=${encodeURIComponent(address)}`, address));
   }
   function contactUs(contactus, doc, report) {
     const nodes = [];
-    const heading = contactus.querySelector("h2.component-subheading");
-    if (text3(heading)) nodes.push(underlined(doc, "h2", text3(heading)));
+    const heading2 = contactus.querySelector("h2.component-subheading");
+    if (text3(heading2)) nodes.push(underlined(doc, "h2", text3(heading2)));
     const details = [];
     const parts = contactus.querySelectorAll([
       ".info h3.component-subheading",
@@ -2620,7 +3088,7 @@ var CustomImportScript = (() => {
     try {
       const { hostname } = new URL(payload.params.originalURL);
       if (hostname === "www.stryker.com") return CORP_HOST_RE;
-    } catch (e) {
+    } catch {
     }
     return PATIENTS_HOST_RE;
   }
@@ -2651,11 +3119,8 @@ var CustomImportScript = (() => {
       "long-page-detail-corp-fragments",
       "event-detail",
       "contact-division",
-      "people",
-      "people-fragments",
-      "ivs-footnotes",
-      "ivs-footnotes-fragments",
-      "corp-legal"
+      "base",
+      "base-fragments"
     ].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
@@ -2663,10 +3128,10 @@ var CustomImportScript = (() => {
       if (isNewsDetail) return;
       if (isIvsTreatment) {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
-        element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
-          heading.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-            const text5 = span.textContent.replace(/ /g, " ").trim();
-            if (!text5) return;
+        element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading2) => {
+          heading2.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
+            const text9 = span.textContent.replace(/ /g, " ").trim();
+            if (!text9) return;
             const em = element.ownerDocument.createElement("em");
             const strong = element.ownerDocument.createElement("strong");
             while (span.firstChild) strong.appendChild(span.firstChild);
@@ -2704,15 +3169,15 @@ var CustomImportScript = (() => {
         return;
       }
       element.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-        const text5 = span.textContent.replace(/ /g, " ").trim();
-        if (!text5) return;
+        const text9 = span.textContent.replace(/ /g, " ").trim();
+        if (!text9) return;
         const strong = element.ownerDocument.createElement("strong");
         const em = element.ownerDocument.createElement("em");
-        em.textContent = text5;
+        em.textContent = text9;
         strong.appendChild(em);
         let target = span;
         let parent = span.parentElement;
-        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text5) {
+        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text9) {
           target = parent;
           parent = parent.parentElement;
         }
@@ -2814,7 +3279,7 @@ var CustomImportScript = (() => {
     let u;
     try {
       u = new URL(urlStr, "https://x/");
-    } catch (e) {
+    } catch {
       return false;
     }
     if (u.pathname.startsWith("/is/image/")) {
@@ -2877,9 +3342,10 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/import-corp-legal.js
+  // tools/importer/base/legal.js
   var PAGE_TEMPLATE = {
-    name: "corp-legal",
+    name: "base",
+    group: "legal",
     description: "www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show` (false where the source hides the line).",
     urls: [
       "https://www.stryker.com/us/en/legal/terms-of-use.html",
@@ -2894,7 +3360,7 @@ var CustomImportScript = (() => {
     transform3
   ];
   function executeTransformers(hookName, element, payload) {
-    const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
     transformers.forEach((fn) => {
       try {
         fn.call(null, hookName, element, enhancedPayload);
@@ -2913,7 +3379,7 @@ var CustomImportScript = (() => {
       });
     });
   }
-  var text4 = (el2) => (el2.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
+  var text4 = (el3) => (el3.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
   function buildingBlocks(main, document) {
     const groups = [];
     main.querySelectorAll(".buildingblock").forEach((bb) => {
@@ -2985,7 +3451,7 @@ var CustomImportScript = (() => {
       }));
       if (!cells.length) return;
       const block = WebImporter.Blocks.createBlock(document, {
-        name: "Table (no-header, striped)",
+        name: "Table (no-header, striped, body-bold)",
         cells
       });
       block.setAttribute("data-keep", "flow");
@@ -3011,9 +3477,9 @@ var CustomImportScript = (() => {
       if (!styles.includes("separator")) return;
       let hr = table.previousElementSibling;
       while (hr && hr.tagName !== "HR") hr = hr.previousElementSibling;
-      let title = hr == null ? void 0 : hr.previousElementSibling;
-      while ((title == null ? void 0 : title.tagName) === "TABLE") title = title.previousElementSibling;
-      if ((title == null ? void 0 : title.tagName) !== "H1") return;
+      let title = hr?.previousElementSibling;
+      while (title?.tagName === "TABLE") title = title.previousElementSibling;
+      if (title?.tagName !== "H1") return;
       const u = document.createElement("u");
       u.append(...title.childNodes);
       title.append(u);
@@ -3031,6 +3497,13 @@ var CustomImportScript = (() => {
       });
       if (table.querySelectorAll("tr").length < 2) table.remove();
     });
+  }
+  function blockVariants(main) {
+    blockTables(main, "Columns").forEach((table) => {
+      if (table.querySelector('a[href^="tel:"], h4 + p')) addVariant(table, "contact-lines");
+      if (table.querySelector("p > strong > a > u")) addVariant(table, "arrow-links");
+    });
+    blockTables(main, "Accordion (divided").forEach((table) => addVariant(table, "futura-labels"));
   }
   function trimEmptyCells(main) {
     main.querySelectorAll("table").forEach((table) => {
@@ -3065,12 +3538,6 @@ var CustomImportScript = (() => {
   ];
   var WIDE_COPY = ["governance/bylaws", "governance/charters"];
   var DROP_STYLES = [];
-  var TAG_SECTION_STYLES = {
-    "body-font": "bold-body",
-    "headline-2": "headline-2vw",
-    "headline-2-5": "headline-2-5vw",
-    serif: "serif"
-  };
   var BOLD_BODY = [
     "sms-terms-and-conditions",
     "legal/terms-of-use",
@@ -3079,100 +3546,12 @@ var CustomImportScript = (() => {
     "privacy-notice-for-california-residents",
     "neurovascular/dfu"
   ];
-  var BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
-  function sectionIndex(main, node) {
-    let top = node;
-    while (top.parentElement && top.parentElement !== main) top = top.parentElement;
-    let count = 0;
-    for (let n = top.previousElementSibling; n; n = n.previousElementSibling) {
-      if (n.tagName === "HR") count += 1;
-    }
-    return count;
-  }
-  function bracketTokens(parent) {
-    const tokens = [];
-    [...parent.childNodes].forEach((node) => {
-      if (node.nodeType !== 3) {
-        tokens.push({ node });
-        return;
-      }
-      const value = node.nodeValue;
-      let last = 0;
-      [...value.matchAll(BRACKET)].forEach((m) => {
-        if (m.index > last) tokens.push({ text: value.slice(last, m.index) });
-        tokens.push(m[1] ? { open: m[1].split(",") } : { close: true });
-        last = m.index + m[0].length;
-      });
-      if (last < value.length) tokens.push({ text: value.slice(last) });
-    });
-    return tokens;
-  }
-  function stripBracketTokens(parent, document) {
-    const tokens = bracketTokens(parent);
-    const removed = [];
-    const build = (from, closes) => {
-      const nodes2 = [];
-      let i = from;
-      while (i < tokens.length) {
-        const t = tokens[i];
-        if (t.open) {
-          const inner = build(i + 1, true);
-          removed.push(...t.open);
-          i = inner.next;
-          let content = inner.nodes;
-          if (t.open.includes("color-gold")) {
-            const tail = [];
-            const isBlank = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.nodeValue.trim();
-            while (content.length && isBlank(content[content.length - 1])) {
-              tail.unshift(content.pop());
-            }
-            if (content.some((n) => n.nodeType === 3 && n.nodeValue.trim())) {
-              const strong = document.createElement("strong");
-              strong.append(...content);
-              content = [strong];
-            }
-            const em = document.createElement("em");
-            em.append(...content);
-            content = [em, ...tail];
-          }
-          nodes2.push(...content);
-        } else if (t.close) {
-          if (closes) return { nodes: nodes2, next: i + 1 };
-          nodes2.push(document.createTextNode("]"));
-          i += 1;
-        } else {
-          nodes2.push(t.node || document.createTextNode(t.text));
-          i += 1;
-        }
-      }
-      return { nodes: nodes2, next: i };
-    };
-    const { nodes } = build(0, false);
-    parent.replaceChildren(...nodes);
-    return removed;
-  }
-  function stripBrackets(main, document) {
-    const styles = /* @__PURE__ */ new Map();
-    const parents = [...main.querySelectorAll("*")].filter((el2) => [...el2.childNodes].some((n) => n.nodeType === 3 && /\[\[[a-z0-9,-]+\]/.test(n.nodeValue)));
-    parents.forEach((parent) => {
-      if (!parent.isConnected) return;
-      const index = sectionIndex(main, parent);
-      stripBracketTokens(parent, document).forEach((tag) => {
-        const style = TAG_SECTION_STYLES[tag];
-        if (!style) return;
-        if (!styles.has(index)) styles.set(index, /* @__PURE__ */ new Set());
-        styles.get(index).add(style);
-      });
-    });
-    return styles;
-  }
   function sectionStyles(main, document, url, extra) {
-    var _a, _b, _c, _d;
-    const widths = ((_a = WIDTH_STYLES.find(([key]) => url.includes(key))) == null ? void 0 : _a[1]) || [];
+    const widths = WIDTH_STYLES.find(([key]) => url.includes(key))?.[1] || [];
     const hrs = [...main.children].filter((n) => n.tagName === "HR");
     const ends = [...hrs, null];
-    const drop = ((_b = DROP_STYLES.find(([key]) => url.includes(key))) == null ? void 0 : _b[1]) || [];
-    const copyWidth = (_c = COPY_WIDTH.find(([key]) => url.includes(key))) == null ? void 0 : _c[1];
+    const drop = DROP_STYLES.find(([key]) => url.includes(key))?.[1] || [];
+    const copyWidth = COPY_WIDTH.find(([key]) => url.includes(key))?.[1];
     const count = Math.max(widths.length, hrs.length + 1, ...[...extra.keys()].map((i) => i + 1));
     for (let i = 0; i < count; i += 1) {
       const add = [...extra.get(i) || []].filter((v) => !drop.includes(v));
@@ -3180,7 +3559,7 @@ var CustomImportScript = (() => {
       if (BOLD_BODY.some((key) => url.includes(key)) && !add.includes("bold-body")) add.push("bold-body");
       if (copyWidth && !widths[i] && !add.some((a) => a.startsWith("headline"))) {
         let titled = false;
-        let n = i ? (_d = hrs[i - 1]) == null ? void 0 : _d.nextElementSibling : main.firstElementChild;
+        let n = i ? hrs[i - 1]?.nextElementSibling : main.firstElementChild;
         for (; n && n !== ends[i]; n = n.nextElementSibling) {
           if (n.matches("h1, h2") || n.querySelector("h1, h2")) titled = true;
         }
@@ -3209,13 +3588,10 @@ var CustomImportScript = (() => {
     }
   }
   function indentedLists(main, document) {
-    const indent = (p) => {
-      var _a;
-      return parseInt(((_a = (p.getAttribute("style") || "").match(/margin-left:\s*(\d+)px/)) == null ? void 0 : _a[1]) || "0", 10);
-    };
+    const indent = (p) => parseInt((p.getAttribute("style") || "").match(/margin-left:\s*(\d+)px/)?.[1] || "0", 10);
     main.querySelectorAll("p").forEach((first) => {
       const prev = first.previousElementSibling;
-      if (!first.isConnected || !indent(first) || (prev == null ? void 0 : prev.matches("p")) && indent(prev)) return;
+      if (!first.isConnected || !indent(first) || prev?.matches("p") && indent(prev)) return;
       const run = [];
       for (let n = first; n && n.matches("p") && indent(n); n = n.nextElementSibling) run.push(n);
       const steps = [...new Set(run.map(indent))].sort((a, b) => a - b);
@@ -3244,14 +3620,12 @@ var CustomImportScript = (() => {
     });
   }
   function publishedDate(document) {
-    var _a;
-    const value = ((_a = document.querySelector("#hiddenPublishedDate")) == null ? void 0 : _a.getAttribute("value")) || "";
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
     const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
   }
   var HERO_OPTIONS = "image-slide, text-above, framed, top-18, left-7-5, size-3-5";
   function heroImage(main, document, url) {
-    var _a;
     if (!url.includes("legal/icrc")) return;
     const imgs = [...main.querySelectorAll('p > a[href*="media-assets.stryker.com"]')].filter((a) => text4(a) === a.getAttribute("href"));
     if (!imgs.length) return;
@@ -3262,13 +3636,13 @@ var CustomImportScript = (() => {
     const kids = [...main.children];
     const hrIdx = kids.findIndex((n) => n.tagName === "HR");
     const title = kids.filter((n, i) => n.matches("h1, p") && (hrIdx < 0 || i < hrIdx) && !n.contains(holder));
-    const [heading, second, ...rest] = title;
-    heading.append(document.createElement("br"), ...second.childNodes);
+    const [heading2, second, ...rest] = title;
+    heading2.append(document.createElement("br"), ...second.childNodes);
     second.remove();
-    cells.push([[heading, ...rest]]);
-    const hero = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
-    holder.replaceWith(hero);
-    while (((_a = main.firstElementChild) == null ? void 0 : _a.tagName) === "HR") main.firstElementChild.remove();
+    cells.push([[heading2, ...rest]]);
+    const hero2 = WebImporter.Blocks.createBlock(document, { name: `Hero Corp (${HERO_OPTIONS})`, cells });
+    holder.replaceWith(hero2);
+    while (main.firstElementChild?.tagName === "HR") main.firstElementChild.remove();
     main.querySelectorAll("table").forEach((table) => {
       if (text4(table.querySelector("th, tr")) === "Section Metadata" && (text4(table).includes("full-width-image") || text4(table).includes("spacer") && !text4(table).includes("large"))) table.remove();
     });
@@ -3286,8 +3660,8 @@ var CustomImportScript = (() => {
     if (hrs.length < 7) return;
     const sections = hrs.slice(0, 6).map((hr, i) => {
       const nodes = [];
-      let el2 = hr.nextElementSibling;
-      for (; el2 && el2 !== hrs[i + 1]; el2 = el2.nextElementSibling) nodes.push(el2);
+      let el3 = hr.nextElementSibling;
+      for (; el3 && el3 !== hrs[i + 1]; el3 = el3.nextElementSibling) nodes.push(el3);
       return nodes.find((x) => x.tagName === "P");
     });
     const cells = [0, 1, 2].map((k) => [sections[2 * k], sections[2 * k + 1]]);
@@ -3296,16 +3670,15 @@ var CustomImportScript = (() => {
       n.remove();
       n = next;
     }
-    hrs[0].after(WebImporter.Blocks.createBlock(document, { name: "Columns (no-stack)", cells: [cells] }));
+    hrs[0].after(WebImporter.Blocks.createBlock(document, { name: "Columns (no-stack, names)", cells: [cells] }));
   }
-  var import_corp_legal_default = {
+  var legal_default = {
     // before the importer's own cleanup, which drops empty paragraphs
     preprocess: ({ document }) => {
       keepHeadlineBlankLines(document);
       if (document.querySelector("#publishedDate.hidden")) document.body.setAttribute("data-date-hidden", "");
     },
     transform: (payload) => {
-      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const hcp = !!document.querySelector(".g-hcpbanner");
@@ -3327,16 +3700,17 @@ var CustomImportScript = (() => {
       heroImage(main, document, url);
       underlineTitles(main, document);
       dropUnlistedStyles(main);
+      blockVariants(main);
       trimEmptyCells(main);
       sectionStyles(main, document, url, bracketStyles);
       edsLinkPaths(main);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
+      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
-      meta.template = PAGE_TEMPLATE.name;
+      applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
       if (hcp) meta["hcp-banner"] = "true";
       if (published) {
         meta.published = published;
@@ -3361,5 +3735,931 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_corp_legal_exports);
+
+  // tools/importer/base/patents.js
+  var PAGE_TEMPLATE2 = {
+    name: "base",
+    group: "patents",
+    description: "www.stryker.com patents and trademarks pages (#518). Patents index: Columns (columns-50-50, stack) hero [gold H1 (bold + italic) + notice | image], the product-line links as plain paragraphs in a `separator` section, the document code in a `disclaimer` section. Patents tables and trademarks: each source table as one `Table (no-header, striped, stacked)` (columns empty in every row dropped); trademarks first has its H1 and description in a `serif, p-1-5, width-50` section. `published` from the source date with `last-updated: show`.",
+    urls: [
+      "https://www.stryker.com/us/en/about/patents.html",
+      "https://www.stryker.com/us/en/about/patents/Spine-patents.html",
+      "https://www.stryker.com/us/en/about/trademarks.html"
+    ],
+    blocks: []
+  };
+  var AUTHOR_LINKS = [[
+    /^https:\/\/author-stryker-prod\.adobecqms\.net\/editor\.html\/content\/stryker(\/us\/en\/about\/patents\/peripheral-vascular\.html)$/,
+    "https://www.stryker.com$1"
+  ]];
+  var transformers2 = [transform2, transform3];
+  function executeTransformers2(hookName, element, payload) {
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE2 };
+    transformers2.forEach((fn) => {
+      try {
+        fn.call(null, hookName, element, enhancedPayload);
+      } catch (e) {
+        console.error(`Transformer failed at ${hookName}:`, e);
+      }
+    });
+  }
+  var clean = (s) => (s || "").replace(/[\s\u00a0]+/g, " ").trim();
+  var text5 = (el3) => el3 ? clean(el3.textContent) : "";
+  function sectionMetadata(document, style) {
+    return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+  }
+  function para(document, value) {
+    const p = document.createElement("p");
+    p.textContent = value;
+    return p;
+  }
+  function publishedDate2(document) {
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
+  }
+  function pageHero(document, src) {
+    const component = src.querySelector(".c-page-hero");
+    if (!component) return { nodes: [], rule: false };
+    const heading2 = [];
+    const copy = [];
+    component.querySelectorAll("h1, p").forEach((el3) => {
+      if (!text5(el3)) return;
+      if (el3.matches("h1")) {
+        const h1 = document.createElement("h1");
+        const strong = document.createElement("strong");
+        strong.textContent = text5(el3);
+        const gold = /255\s*,\s*181\s*,\s*0|#ffb500/i.test(el3.getAttribute("style") || "");
+        if (gold) {
+          const em = document.createElement("em");
+          em.append(strong);
+          h1.append(em);
+        } else h1.append(strong);
+        heading2.push(h1);
+      } else copy.push(para(document, text5(el3)));
+    });
+    const media = [];
+    const img = component.querySelector("img");
+    if (img) {
+      const source = img.closest("picture")?.querySelector("source[srcset]");
+      const out = document.createElement("img");
+      out.src = source ? source.getAttribute("srcset").split(/\s+/)[0] : img.getAttribute("src");
+      out.alt = img.getAttribute("alt") || "";
+      media.push(out);
+    }
+    const nodes = media.length ? [...heading2, WebImporter.Blocks.createBlock(document, { name: "Columns (columns-50-50, stack)", cells: [[copy, media]] })] : [...heading2, ...copy];
+    return { nodes, rule: !!component.querySelector(".border-bottom-gold") };
+  }
+  function linkList(document, src) {
+    return [...src.querySelectorAll(".c-curated-link-list a[href]")].filter((a) => text5(a)).map((link3) => {
+      const href = link3.getAttribute("href");
+      const live = AUTHOR_LINKS.reduce((v, [re, to]) => v.replace(re, to), href);
+      const a = document.createElement("a");
+      a.href = href;
+      if (live !== href) a.setAttribute("data-live", live);
+      a.textContent = text5(link3);
+      const p = document.createElement("p");
+      p.append(a);
+      return p;
+    });
+  }
+  function longTextHero(document, src) {
+    const component = src.querySelector(".c-longtexthero");
+    if (!component) return [];
+    const title = component.querySelector("h1");
+    const nodes = [];
+    if (text5(title)) {
+      const h1 = document.createElement("h1");
+      const strong = document.createElement("strong");
+      strong.textContent = text5(title);
+      h1.append(strong);
+      nodes.push(h1);
+    }
+    component.querySelectorAll(".description p").forEach((p) => {
+      if (text5(p)) nodes.push(para(document, text5(p)));
+    });
+    if (!nodes.length) return [];
+    return [...nodes, sectionMetadata(document, "serif, p-1-5, width-50"), document.createElement("hr")];
+  }
+  function tables2(document, src) {
+    return [...src.querySelectorAll(".c-patenttables table")].map((table) => {
+      const rows = [...table.querySelectorAll("tbody tr")].map((tr) => [...tr.children].map((td) => text5(td.querySelector(".cell-content") || td))).filter((r) => r.some(Boolean));
+      const width = Math.max(0, ...rows.map((r) => r.length));
+      const used = [...Array(width).keys()].filter((i) => rows.some((r) => r[i]));
+      if (!rows.length || !used.length) return null;
+      return WebImporter.Blocks.createBlock(document, {
+        name: "Table (no-header, striped, stacked)",
+        cells: rows.map((r) => used.map((i) => r[i] || ""))
+      });
+    }).filter(Boolean);
+  }
+  function disclaimerSection(document, src) {
+    const paras = [...src.querySelectorAll(".c-disclaimer p:not(#publishedDate)")].filter((p) => text5(p)).map((p) => para(document, text5(p)));
+    if (!paras.length) return [];
+    return [document.createElement("hr"), ...paras, sectionMetadata(document, "disclaimer")];
+  }
+  var patents_default = {
+    transform: (payload) => {
+      const { document, url, params } = payload;
+      const source = new URL(params.originalURL || url);
+      const published = publishedDate2(document);
+      const dateLine = document.querySelector("#publishedDate");
+      const showDate = !!dateLine && !dateLine.classList.contains("hidden");
+      const meta = WebImporter.Blocks.getMetadata(document);
+      const src = document.querySelector('[role="main"]') || document.body;
+      const main = document.createElement("div");
+      const { nodes: hero2, rule } = pageHero(document, src);
+      const links = linkList(document, src);
+      const blocks = tables2(document, src);
+      if (hero2.length) main.append(...hero2, document.createElement("hr"));
+      if (links.length) main.append(...links);
+      if (rule && links.length) main.append(sectionMetadata(document, "separator"));
+      main.append(...longTextHero(document, src), ...blocks);
+      main.append(...disclaimerSection(document, document.body));
+      document.body.replaceChildren(main);
+      executeTransformers2("afterTransform", main, payload);
+      main.querySelectorAll("a[data-live]").forEach((a) => {
+        a.setAttribute("href", a.getAttribute("data-live"));
+        a.removeAttribute("data-live");
+      });
+      main.appendChild(document.createElement("hr"));
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      meta.site = "corp";
+      applyBaseMeta(meta, url, PAGE_TEMPLATE2.group);
+      if (published) meta.published = published;
+      if (published && showDate) meta["last-updated"] = "show";
+      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      const rawPath = source.pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+      const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
+      return [{
+        element: main,
+        path,
+        report: {
+          title: meta.Title || document.title,
+          template: PAGE_TEMPLATE2.name,
+          blocks: blocks.length ? Array(blocks.length).fill("table") : [],
+          rows: blocks.map((b) => b.querySelectorAll("tr").length - 1)
+        }
+      }];
+    }
+  };
+
+  // tools/importer/base/webinar.js
+  var PAGE_TEMPLATE3 = {
+    name: "base",
+    group: "webinar",
+    description: "www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (a plain link, not bold, alone on its line), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.",
+    urls: [
+      "https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html",
+      "https://www.stryker.com/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses/webinar.html",
+      "https://www.stryker.com/us/en/sage/videos/sage-mp-mats-2-demo.html",
+      "https://www.stryker.com/us/en/sage/webinars.html",
+      "https://www.stryker.com/us/en/sage/webinars/guidelines-practice-pip-fireside-chat.html",
+      "https://www.stryker.com/us/en/sage/webinars/hap-human-financial-cost.html",
+      "https://www.stryker.com/us/en/sage/webinars/managing-urinary-incontinence-webinar.html",
+      "https://www.stryker.com/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization.html",
+      "https://www.stryker.com/us/en/sage/webinars/nv-hap-hidden-plain-sight.html",
+      "https://www.stryker.com/us/en/sage/webinars/risk-of-pip-procedural-operational-areas.html",
+      "https://www.stryker.com/us/en/sage/webinars/safe-patient-handling-mobility-webinar.html",
+      "https://www.stryker.com/us/en/sage/webinars/sepsis-hospital-acquired-pneumonia.html",
+      "https://www.stryker.com/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition.html"
+    ],
+    blocks: []
+  };
+  var LIVE_PAGES = /^\/us\/en\/training-and-education\/medical-and-surgical-equipment--\/sage\/focusrn(\/upcoming-events)?\.html$/;
+  var transformers3 = [transform2, transform3];
+  function executeTransformers3(hookName, element, payload) {
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE3 };
+    transformers3.forEach((fn) => {
+      try {
+        fn.call(null, hookName, element, enhancedPayload);
+      } catch (e) {
+        console.error(`Transformer failed at ${hookName}:`, e);
+      }
+    });
+  }
+  var clean2 = (s) => (s || "").replace(/[\s\u00a0]+/g, " ").trim();
+  var text6 = (node) => node ? clean2(node.textContent) : "";
+  var GOLD2 = /255\s*,\s*181\s*,\s*0|#ffb500/i;
+  function sectionMetadata2(document, style) {
+    return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+  }
+  function el2(document, tag, value) {
+    const node = document.createElement(tag);
+    if (value) node.textContent = value;
+    return node;
+  }
+  function wrap(document, node, ...tags) {
+    return tags.reduceRight((inner, tag) => {
+      const outer = document.createElement(tag);
+      outer.append(inner);
+      return outer;
+    }, node);
+  }
+  function link2(document, source, label) {
+    const a = document.createElement("a");
+    const href = source.getAttribute("href").trim();
+    if (LIVE_PAGES.test(href)) a.setAttribute("data-live", `https://www.stryker.com${href}`);
+    const newTab = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    a.href = newTab ? `${href}#_blank` : href;
+    a.textContent = label ?? text6(source);
+    return a;
+  }
+  function inline(document, source, tag = "p") {
+    const out = document.createElement(tag);
+    const walk = (node, into) => node.childNodes.forEach((child) => {
+      if (child.nodeType === 3) into.append(child.textContent.replace(/\u00a0/g, " "));
+      else if (child.nodeType === 1 && child.matches("a[href]")) into.append(link2(document, child));
+      else if (child.nodeType === 1 && !child.matches("br")) walk(child, into);
+    });
+    walk(source, out);
+    out.normalize();
+    const { firstChild, lastChild } = out;
+    if (firstChild?.nodeType === 3) firstChild.textContent = firstChild.textContent.trimStart();
+    if (lastChild?.nodeType === 3) lastChild.textContent = lastChild.textContent.trimEnd();
+    out.childNodes.forEach((child) => {
+      if (child.nodeType === 3) child.textContent = child.textContent.replace(/\s+/g, " ");
+    });
+    return out;
+  }
+  function isGold(source) {
+    return GOLD2.test(source.getAttribute("style") || "") || [...source.querySelectorAll("[style]")].some((s) => GOLD2.test(s.getAttribute("style")));
+  }
+  function heading(document, source, tag) {
+    const value = text6(source);
+    if (isGold(source)) return wrap(document, el2(document, "strong", value), tag, "em");
+    return tag === "h1" ? wrap(document, el2(document, "strong", value), tag) : el2(document, tag, value);
+  }
+  function publishedDate3(document) {
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
+  }
+  function video(document, src) {
+    const component = src.querySelector(".c-standalone-video");
+    const a = component && videoLink(component, document);
+    if (!a) return null;
+    const name = component.classList.contains("hide-border") ? "Video" : "Video (border)";
+    return WebImporter.Blocks.createBlock(document, { name, cells: [[a]] });
+  }
+  function richText2(src) {
+    return [...src.querySelectorAll(".c-rich-text-editor")].filter((rte) => !rte.closest(".c-disclaimer, .c-accordion")).flatMap((rte) => [...rte.querySelectorAll("h1, h2, h3, h4, h5, h6, p")]).filter((node) => text6(node));
+  }
+  function layoutA(document, src) {
+    const nodes = richText2(src);
+    const h1 = nodes.find((n) => n.matches("h1"));
+    const rest = nodes.filter((n) => n !== h1);
+    const out = [];
+    const thankYou = h1 && isGold(h1);
+    if (thankYou) {
+      out.push(heading(document, h1, "h1"));
+      rest.filter((n) => /^H/.test(n.tagName)).forEach((n) => out.push(el2(document, "h2", text6(n))));
+      out.push(sectionMetadata2(document, "h1-1-5, h-serif"), el2(document, "hr"));
+      rest.filter((n) => n.matches("p")).forEach((n) => out.push(inline(document, n)));
+      out.push(sectionMetadata2(document, "p-1-25"), el2(document, "hr"));
+    } else {
+      const [speaker, ...copy] = rest;
+      if (h1) out.push(heading(document, h1, "h1"));
+      if (speaker) out.push(inline(document, speaker));
+      out.push(sectionMetadata2(document, "serif"), el2(document, "hr"));
+      copy.forEach((n) => out.push(inline(document, n)));
+      if (copy.length) out.push(sectionMetadata2(document, "p-1-25"), el2(document, "hr"));
+    }
+    const block = video(document, src);
+    if (block) out.push(block);
+    return out;
+  }
+  function layoutB(document, src) {
+    const hero2 = src.querySelector(".c-page-hero");
+    const out = [];
+    hero2.querySelectorAll("h1, h2").forEach((h) => {
+      if (text6(h)) out.push(heading(document, h, h.tagName.toLowerCase()));
+    });
+    out.push(sectionMetadata2(document, "h-serif"), el2(document, "hr"));
+    const block = video(document, src);
+    if (block) out.push(block);
+    if (hero2.querySelector(".border-bottom-gold")) out.push(sectionMetadata2(document, "separator"));
+    const desc = [...src.querySelectorAll(".c-standalone-video .desc-content :is(h1, h2, h3, h4, h5, h6, p)")].filter((n) => text6(n));
+    const speakers = desc.filter((n) => /^H/.test(n.tagName));
+    const copy = desc.filter((n) => !/^H/.test(n.tagName));
+    if (speakers.length) {
+      out.push(el2(document, "hr"), ...speakers.map((n) => inline(document, n)));
+      out.push(sectionMetadata2(document, "serif, p-1-25"));
+    }
+    if (copy.length) out.push(el2(document, "hr"), ...copy.map((n) => inline(document, n)));
+    return out;
+  }
+  function image(document, source) {
+    const img = document.createElement("img");
+    img.src = source.getAttribute("src");
+    img.alt = clean2(source.getAttribute("alt"));
+    return img;
+  }
+  function imageTarget(document, source, label) {
+    const anchor = source.closest("a[href]");
+    if (!anchor) return null;
+    const p = document.createElement("p");
+    p.append(link2(document, anchor, label));
+    return p;
+  }
+  function layoutC(document, src) {
+    const out = [];
+    const xf = src.querySelector(".experiencefragment");
+    if (xf) {
+      xf.querySelectorAll(".c-rich-text-editor p a[href]").forEach((a) => {
+        const p = document.createElement("p");
+        p.append(link2(document, a));
+        out.push(p);
+      });
+      xf.querySelectorAll(".c-standalone-image img").forEach((img) => {
+        const p = document.createElement("p");
+        p.append(image(document, img));
+        out.push(p);
+        const target = imageTarget(document, img, clean2(img.getAttribute("alt")));
+        if (target) out.push(target);
+      });
+      out.push(sectionMetadata2(document, "back-link, image-link"), el2(document, "hr"));
+    }
+    richText2(src).filter((n) => !n.closest(".experiencefragment")).forEach((n) => {
+      if (n.matches("h1")) out.push(heading(document, n, "h1"));
+      else if (n.querySelector(".standalone-link") && n.querySelectorAll("a[href]").length === 1) {
+        const p = document.createElement("p");
+        p.append(link2(document, n.querySelector("a[href]")));
+        out.push(p);
+      } else if (/^H/.test(n.tagName)) out.push(el2(document, n.tagName.toLowerCase(), text6(n)));
+      else out.push(inline(document, n));
+    });
+    out.push(sectionMetadata2(document, "h1-1-5"));
+    src.querySelectorAll(".c-accordion .panel").forEach((panel) => {
+      const label = text6(panel.querySelector(".panel-title"));
+      const cells = [...panel.querySelectorAll('.panel-body [class*="col-md-"]')].map((col) => {
+        const cell = [];
+        const img = col.querySelector(".c-standalone-image img");
+        const title = text6(col.querySelector(".c-rich-text-editor h4"));
+        if (img) {
+          const p = document.createElement("p");
+          p.append(image(document, img));
+          cell.push(p);
+          const target = imageTarget(document, img, title || clean2(img.getAttribute("alt")));
+          if (target) cell.push(target);
+        }
+        col.querySelectorAll(".c-rich-text-editor :is(h1, h2, h3, h4, h5, h6, p)").forEach((n) => {
+          if (!text6(n)) return;
+          if (/^H/.test(n.tagName)) cell.push(wrap(document, el2(document, "strong", text6(n)), "h3"));
+          else if (n.querySelector(".standalone-link") && n.querySelectorAll("a[href]").length === 1) {
+            const p = document.createElement("p");
+            p.append(wrap(document, link2(document, n.querySelector("a[href]")), "strong", "u"));
+            cell.push(p);
+          } else cell.push(inline(document, n));
+        });
+        return cell;
+      }).filter((cell) => cell.length);
+      out.push(el2(document, "hr"));
+      if (label) out.push(el2(document, "h2", label));
+      if (cells.length) out.push(WebImporter.Blocks.createBlock(document, { name: "Columns (thumb-list)", cells: [cells] }));
+      out.push(sectionMetadata2(document, "accordion-panel, image-link, large-labels"));
+    });
+    return out;
+  }
+  function disclaimerSection2(document, src) {
+    const paras = [...src.querySelectorAll(".c-disclaimer p:not(#publishedDate)")].filter((p) => text6(p)).map((p) => el2(document, "p", text6(p)));
+    if (!paras.length) return [];
+    return [el2(document, "hr"), ...paras, sectionMetadata2(document, "disclaimer")];
+  }
+  var webinar_default = {
+    transform: (payload) => {
+      const { document, url, params } = payload;
+      const source = new URL(params.originalURL || url);
+      const published = publishedDate3(document);
+      const dateLine = document.querySelector("#publishedDate");
+      const showDate = !!dateLine && !dateLine.classList.contains("hidden");
+      const meta = WebImporter.Blocks.getMetadata(document);
+      const src = document.querySelector('[role="main"]') || document.querySelector(".main.content") || document.body;
+      let layout = "A";
+      if (src.querySelector(".c-accordion")) layout = "C";
+      else if (src.querySelector(".c-page-hero")) layout = "B";
+      const content = { A: layoutA, B: layoutB, C: layoutC }[layout](document, src);
+      const main = document.createElement("div");
+      main.append(...content, ...disclaimerSection2(document, document.body));
+      while (main.lastElementChild?.matches("hr")) main.lastElementChild.remove();
+      document.body.replaceChildren(main);
+      executeTransformers3("afterTransform", main, payload);
+      main.querySelectorAll("a[data-live]").forEach((a) => {
+        const hash = a.getAttribute("href").endsWith("#_blank") ? "#_blank" : "";
+        a.setAttribute("href", `${a.getAttribute("data-live")}${hash}`);
+        a.removeAttribute("data-live");
+      });
+      main.appendChild(document.createElement("hr"));
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      meta.site = "corp";
+      applyBaseMeta(meta, url, PAGE_TEMPLATE3.group);
+      if (published) meta.published = published;
+      if (published && showDate) meta["last-updated"] = "show";
+      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      const rawPath = source.pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+      const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
+      const blocks = [...main.querySelectorAll("table")].map((t) => text6(t.querySelector("tr")).toLowerCase()).filter((name) => !/^(section metadata|metadata)$/.test(name));
+      return [{
+        element: main,
+        path,
+        report: {
+          title: meta.Title || document.title,
+          template: PAGE_TEMPLATE3.name,
+          layout,
+          blocks
+        }
+      }];
+    }
+  };
+
+  // tools/importer/base/people.js
+  var PAGE_TEMPLATE4 = {
+    name: "base",
+    group: "people",
+    description: "www.stryker.com People pages (#515). Bio pages: the shared Back link as a Fragment block; H1 (gold first name) + role in a `serif, p-1-75, h1-1-25` section; Columns [bio | portrait]. Leaders index: H1 + intro (`serif, p-2`), then per group an H2 (corp draws its grey rule) and a Cards Corp (people) block of [portrait | name / role / Meet link] tiles. `published` from the source date; `last-updated: show` where the source shows its Last Updated line.",
+    urls: [
+      "https://www.stryker.com/us/en/about/our-management/leaders.html",
+      "https://www.stryker.com/us/en/about/our-management/leaders/1004.html",
+      "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1064.html"
+    ],
+    blocks: []
+  };
+  var BACK_XFS = {
+    leaders: "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+    directors: "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master"
+  };
+  var transformers4 = [transform2, transform3];
+  function executeTransformers4(hookName, element, payload) {
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE4 };
+    transformers4.forEach((fn) => {
+      try {
+        fn.call(null, hookName, element, enhancedPayload);
+      } catch (e) {
+        console.error(`Transformer failed at ${hookName}:`, e);
+      }
+    });
+  }
+  var clean3 = (s) => (s || "").replace(/[\s\u00a0]+/g, " ").trim();
+  var text7 = (el3) => el3 ? clean3(el3.textContent) : "";
+  function publishedDate4(document) {
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
+  }
+  function splitName(el3) {
+    const full = text7(el3);
+    const gold = el3.querySelector('[style*="ffb500" i]');
+    if (!gold) return { first: "", last: full };
+    const copy = gold.cloneNode(true);
+    copy.querySelectorAll('[style*="color"]').forEach((n) => n.remove());
+    const first = text7(copy);
+    if (!first || !full.startsWith(first)) return { first: "", last: full };
+    return { first, last: clean3(full.slice(first.length)) };
+  }
+  function appendName(document, parent, { first, last }) {
+    const strong = document.createElement("strong");
+    if (first) {
+      const em = document.createElement("em");
+      em.textContent = first;
+      strong.append(em, last ? " " : "");
+    }
+    strong.append(last);
+    parent.append(strong);
+  }
+  function sectionMetadata3(document, style) {
+    return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+  }
+  function image2(document, img) {
+    const out = document.createElement("img");
+    out.src = img.getAttribute("src");
+    out.alt = img.getAttribute("alt") || "";
+    return out;
+  }
+  function bioParagraph(document, p) {
+    const out = document.createElement("p");
+    const copy = (from, to) => from.childNodes.forEach((n) => {
+      if (n.nodeType === 3) to.append(document.createTextNode(n.textContent.replace(/\u00a0/g, " ")));
+      else if (n.nodeName === "BR") to.append(document.createElement("br"));
+      else if (["A", "STRONG", "B", "EM", "I", "SUP", "SUB"].includes(n.nodeName)) {
+        const el3 = document.createElement(n.nodeName === "B" ? "strong" : n.nodeName.toLowerCase());
+        if (n.nodeName === "A") el3.href = n.getAttribute("href");
+        copy(n, el3);
+        to.append(el3);
+      } else if (n.nodeType === 1) copy(n, to);
+    });
+    copy(p, out);
+    const blank = (n) => n && (n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim());
+    while (blank(out.lastChild)) out.lastChild.remove();
+    while (blank(out.firstChild)) out.firstChild.remove();
+    const { firstChild: first, lastChild: last } = out;
+    if (first && first.nodeType === 3) first.textContent = first.textContent.trimStart();
+    if (last && last.nodeType === 3) last.textContent = last.textContent.trimEnd();
+    return out.textContent.trim() ? out : null;
+  }
+  function isDocCode(p) {
+    const span = p.querySelector(".fontsize-8em");
+    return !!span && !!text7(p) && text7(span) === text7(p);
+  }
+  function disclaimerSection3(document, src) {
+    const paras = [
+      ...[...src.querySelectorAll(".c-rich-text-editor p")].filter(isDocCode),
+      ...src.querySelectorAll(".c-disclaimer p:not(#publishedDate)")
+    ].map((p) => bioParagraph(document, p)).filter(Boolean);
+    if (!paras.length) return [];
+    return [document.createElement("hr"), ...paras, sectionMetadata3(document, "disclaimer")];
+  }
+  function buildBio(document, src, kind) {
+    const nodes = [];
+    const fragment = xfFragmentPath(BACK_XFS[kind]);
+    if (fragment) {
+      const a = document.createElement("a");
+      a.href = fragment;
+      a.textContent = fragment;
+      nodes.push(WebImporter.Blocks.createBlock(document, { name: "Fragment", cells: [[a]] }));
+      nodes.push(document.createElement("hr"));
+    }
+    const h1Src = src.querySelector("h1");
+    const rte = h1Src.closest(".c-rich-text-editor");
+    const h1 = document.createElement("h1");
+    appendName(document, h1, splitName(h1Src));
+    nodes.push(h1);
+    const paras = [...rte.querySelectorAll("p")];
+    const roleP = paras.shift();
+    const roleSpan = roleP && roleP.querySelector(".fontsize-1-75em");
+    const bio = [];
+    if (roleP) {
+      const role = document.createElement("p");
+      role.textContent = text7(roleSpan || roleP);
+      nodes.push(role);
+      if (roleSpan) {
+        const rest = roleP.cloneNode(true);
+        rest.querySelector(".fontsize-1-75em").remove();
+        const extra = bioParagraph(document, rest);
+        if (extra) bio.push(extra);
+      }
+    }
+    nodes.push(sectionMetadata3(document, "serif, p-1-75, h1-1-25"));
+    nodes.push(document.createElement("hr"));
+    paras.filter((p) => !isDocCode(p)).forEach((p) => {
+      const out = bioParagraph(document, p);
+      if (out) bio.push(out);
+    });
+    const imgSrc = rte.closest(".aem-Grid")?.querySelector(".c-standalone-image img") || src.querySelector(".c-standalone-image img");
+    const imgCell = imgSrc ? [image2(document, imgSrc)] : [];
+    nodes.push(WebImporter.Blocks.createBlock(document, { name: "Columns (columns-58-42)", cells: [[bio, imgCell]] }));
+    return nodes;
+  }
+  function buildTile(document, tile) {
+    const img = tile.querySelector(".c-standalone-image img");
+    const link3 = tile.querySelector(".standalone-link a[href]") || [...tile.querySelectorAll(".c-rich-text-editor a[href]")].pop();
+    const nameEl = tile.querySelector(".c-rich-text-editor .futura-bold");
+    const nameP = nameEl && nameEl.closest("p");
+    const body = [];
+    if (nameEl) {
+      const p = document.createElement("p");
+      appendName(document, p, splitName(nameEl));
+      body.push(p);
+    }
+    const role = nameP && nameP.querySelector(".urw-egyptienne");
+    if (role && text7(role)) {
+      const p = document.createElement("p");
+      p.textContent = text7(role);
+      body.push(p);
+    }
+    if (link3) {
+      const p = document.createElement("p");
+      const strong = document.createElement("strong");
+      const a = document.createElement("a");
+      const u = document.createElement("u");
+      a.href = link3.getAttribute("href");
+      u.textContent = text7(link3).replace(/^(\S+\s+)(\S)(\S*)/, (m, w, c, r) => `${w}${c.toUpperCase()}${r.toLowerCase()}`);
+      a.append(u);
+      strong.append(a);
+      p.append(strong);
+      body.push(p);
+    }
+    return [img ? [image2(document, img)] : [], body];
+  }
+  function buildIndex(document, src) {
+    const nodes = [];
+    const h1Src = src.querySelector("h1");
+    const h1 = document.createElement("h1");
+    const strong = document.createElement("strong");
+    strong.textContent = text7(h1Src);
+    h1.append(strong);
+    nodes.push(h1);
+    h1Src.closest(".c-rich-text-editor").querySelectorAll("p").forEach((p) => {
+      if (!text7(p)) return;
+      const out = document.createElement("p");
+      out.textContent = text7(p);
+      nodes.push(out);
+    });
+    nodes.push(sectionMetadata3(document, "serif, p-2"));
+    const items = [...src.querySelectorAll(".c-section-title h2, .buildingblock")];
+    const groups = [];
+    items.forEach((el3) => {
+      if (el3.tagName === "H2") groups.push({ title: text7(el3), tiles: [] });
+      else if (groups.length && el3.querySelector(".c-standalone-image img")) {
+        groups[groups.length - 1].tiles.push(el3);
+      }
+    });
+    groups.forEach(({ title, tiles }, i) => {
+      if (i) nodes.push(document.createElement("hr"), sectionMetadata3(document, "spacer, xxlarge"));
+      nodes.push(document.createElement("hr"));
+      const h2 = document.createElement("h2");
+      h2.textContent = title;
+      nodes.push(h2);
+      nodes.push(WebImporter.Blocks.createBlock(document, {
+        name: "Cards Corp (people)",
+        cells: tiles.map((tile) => buildTile(document, tile))
+      }));
+    });
+    return nodes;
+  }
+  var people_default = {
+    transform: (payload) => {
+      const { document, url, params } = payload;
+      const source = new URL(params.originalURL || url);
+      const published = publishedDate4(document);
+      const dateLine = document.querySelector("#publishedDate");
+      const showDate = !!dateLine && !dateLine.classList.contains("hidden");
+      const meta = WebImporter.Blocks.getMetadata(document);
+      const kind = (source.pathname.match(/\/(leaders|directors)\/[^/]+$/) || [])[1];
+      const main = document.createElement("div");
+      main.append(...kind ? buildBio(document, document.body, kind) : buildIndex(document, document.body), ...disclaimerSection3(document, document.body));
+      document.body.replaceChildren(main);
+      executeTransformers4("afterTransform", main, payload);
+      main.appendChild(document.createElement("hr"));
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      meta.site = "corp";
+      applyBaseMeta(meta, url, PAGE_TEMPLATE4.group);
+      if (published) meta.published = published;
+      if (published && showDate) meta["last-updated"] = "show";
+      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      const rawPath = source.pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+      const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
+      return [{
+        element: main,
+        path,
+        report: {
+          title: meta.Title || document.title,
+          template: PAGE_TEMPLATE4.name,
+          kind: kind || "index",
+          "last-updated": published && showDate ? "show" : ""
+        }
+      }];
+    }
+  };
+
+  // tools/importer/parsers/accordion.js
+  function parse2(element, { document, name = "Accordion" }) {
+    const group = element.matches(".panel-group") ? element : element.querySelector(".panel-group");
+    if (!group) return;
+    const rows = [];
+    group.querySelectorAll(":scope > .panel, :scope > .panel-default").forEach((panel) => {
+      const titleEl = panel.querySelector(".panel-title a, .panel-title");
+      const body = panel.querySelector(".panel-body");
+      if (!titleEl || !body) return;
+      const title = document.createElement("p");
+      title.textContent = titleEl.textContent.trim();
+      const content = document.createElement("div");
+      const pick = (node) => {
+        [...node.childNodes].forEach((child) => {
+          if (child.nodeType === 1) {
+            const el3 = child;
+            if (el3.matches("p, ul, ol, h1, h2, h3, h4, h5, h6, picture, img, a")) {
+              content.append(el3);
+            } else {
+              pick(el3);
+            }
+          } else if (child.nodeType === 3 && child.textContent.trim()) {
+            content.append(child);
+          }
+        });
+      };
+      pick(body);
+      rows.push([title, [...content.childNodes]]);
+    });
+    if (!rows.length) return;
+    const block = WebImporter.Blocks.createBlock(document, {
+      name,
+      cells: rows
+    });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/base/footnotes.js
+  var PAGE_TEMPLATE5 = {
+    name: "base",
+    group: "footnotes",
+    description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "\u276E BACK" link as a Fragment block; the page hero (gold H1, document code subhead in an `h-serif` section) then each revision as a bold label, a bold date line and its numbered references (a `separator` section only when the hero has no subhead). Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
+    urls: [
+      "https://www.stryker.com/us/en/interventional-spine/footnotes.html",
+      "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
+    ],
+    blocks: [
+      { name: "accordion", instances: [".c-accordion .panel-group"] }
+    ]
+  };
+  var BACK_XF = "/content/experience-fragments/stryker/corporate/en/interventional-spine/footnotes/back-button/master";
+  var transformers5 = [transform2];
+  function executeTransformers5(hookName, element, payload) {
+    const enhancedPayload = { ...payload, template: PAGE_TEMPLATE5 };
+    transformers5.forEach((fn) => {
+      try {
+        fn.call(null, hookName, element, enhancedPayload);
+      } catch (e) {
+        console.error(`Transformer failed at ${hookName}:`, e);
+      }
+    });
+  }
+  var clean4 = (s) => (s || "").replace(/[\s\u00a0]+/g, " ").trim();
+  var text8 = (el3) => el3 ? clean4(el3.textContent) : "";
+  function publishedDate5(document) {
+    const value = document.querySelector("#hiddenPublishedDate")?.getAttribute("value") || "";
+    const m = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : "";
+  }
+  function sectionMetadata4(document, style) {
+    return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
+  }
+  function inlineCopy(document, from, to) {
+    const copy = (src, dst) => src.childNodes.forEach((n) => {
+      if (n.nodeType === 3) dst.append(document.createTextNode(n.textContent.replace(/\u00a0/g, " ")));
+      else if (n.nodeName === "BR") dst.append(document.createElement("br"));
+      else if (["A", "STRONG", "B", "EM", "I", "SUP", "SUB"].includes(n.nodeName)) {
+        const tag = { B: "strong", I: "em" }[n.nodeName] || n.nodeName.toLowerCase();
+        const el3 = document.createElement(tag);
+        if (n.nodeName === "A") el3.href = n.getAttribute("href");
+        copy(n, el3);
+        dst.append(el3);
+      } else if (n.nodeType === 1) copy(n, dst);
+    });
+    copy(from, to);
+    const blank = (n) => n && (n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim());
+    while (blank(to.lastChild)) to.lastChild.remove();
+    while (blank(to.firstChild)) to.firstChild.remove();
+    const { firstChild: first, lastChild: last } = to;
+    if (first && first.nodeType === 3) first.textContent = first.textContent.trimStart();
+    if (last && last.nodeType === 3) last.textContent = last.textContent.trimEnd();
+    return to;
+  }
+  var isBoldLine = (p) => {
+    const b = p.querySelector("b, strong");
+    return !!b && !p.querySelector(".futura-bold") && text8(b) === text8(p);
+  };
+  function footnoteNodes(document, container) {
+    const out = [];
+    container.querySelectorAll(":scope > p, :scope > ol, :scope > ul").forEach((src) => {
+      if (!text8(src)) return;
+      if (src.matches("ol, ul")) {
+        const list = document.createElement(src.tagName.toLowerCase());
+        src.querySelectorAll(":scope > li").forEach((li) => {
+          if (text8(li)) list.append(inlineCopy(document, li, document.createElement("li")));
+        });
+        out.push(list);
+        return;
+      }
+      const p = document.createElement("p");
+      const label = src.querySelector(".futura-bold");
+      if (label && text8(label) === text8(src) || isBoldLine(src)) {
+        const strong = document.createElement("strong");
+        strong.textContent = text8(src);
+        p.append(strong);
+      } else inlineCopy(document, src, p);
+      out.push(p);
+    });
+    return out;
+  }
+  var richTexts = (root) => [...root.querySelectorAll(".c-rich-text-editor")].map((rte) => rte.querySelector(":scope > div") || rte);
+  function hero(document, src) {
+    const component = src.querySelector(".c-page-hero");
+    if (!component) return { nodes: [], rule: false };
+    const box = document.createElement("div");
+    box.append(component.cloneNode(true));
+    pageHeroes(box, document, {
+      text: text8,
+      richText: (doc, nodes2) => {
+        const wrap2 = doc.createElement("div");
+        wrap2.setAttribute("data-hero", "");
+        wrap2.append(...nodes2);
+        return wrap2;
+      }
+    });
+    const nodes = [...box.querySelectorAll("[data-hero] > *")];
+    return { nodes, rule: !!box.querySelector(".sectionseparator") };
+  }
+  function buildDetail(document, src) {
+    const nodes = [];
+    const fragment = xfFragmentPath(BACK_XF);
+    if (fragment && src.querySelector(".experiencefragment a[href]")) {
+      const a = document.createElement("a");
+      a.href = fragment;
+      a.textContent = fragment;
+      nodes.push(WebImporter.Blocks.createBlock(document, { name: "Fragment", cells: [[a]] }));
+      nodes.push(document.createElement("hr"));
+    }
+    const { nodes: heroNodes, rule } = hero(document, src);
+    const hasSubhead = heroNodes.some((n) => n.nodeName === "H2");
+    nodes.push(...heroNodes);
+    if (hasSubhead) nodes.push(sectionMetadata4(document, "h-serif"));
+    nodes.push(document.createElement("hr"));
+    richTexts(src).filter((box) => !box.closest(".experiencefragment, .c-page-hero")).forEach((box) => nodes.push(...footnoteNodes(document, box)));
+    if (rule && !hasSubhead) nodes.push(sectionMetadata4(document, "separator"));
+    return nodes;
+  }
+  function buildIndex2(document, src) {
+    const { nodes: heroNodes, rule } = hero(document, src);
+    const nodes = [...heroNodes, document.createElement("hr")];
+    const group = src.querySelector(".panel-group");
+    if (group) {
+      group.querySelectorAll(":scope > .panel").forEach((panel) => {
+        const body = panel.querySelector(".panel-body");
+        if (!body) return;
+        const content = document.createElement("div");
+        richTexts(body).forEach((box) => content.append(...footnoteNodes(document, box)));
+        body.querySelectorAll("a.btn-gold[href]").forEach((btn) => {
+          const p = document.createElement("p");
+          const strong = document.createElement("strong");
+          const em = document.createElement("em");
+          const a = document.createElement("a");
+          a.href = btn.getAttribute("href");
+          a.textContent = text8(btn);
+          em.append(a);
+          strong.append(em);
+          p.append(strong);
+          content.append(p);
+        });
+        body.replaceChildren(content);
+      });
+      const holder = document.createElement("div");
+      holder.append(group);
+      parse2(group, { document, name: "Accordion (divided)" });
+      nodes.push(...holder.childNodes);
+    }
+    if (rule) nodes.push(sectionMetadata4(document, "separator"));
+    return nodes;
+  }
+  function disclaimerSection4(document, src) {
+    const paras = [...src.querySelectorAll(".c-disclaimer p:not(#publishedDate)")].filter((p) => text8(p)).map((p) => inlineCopy(document, p, document.createElement("p")));
+    if (!paras.length) return [];
+    return [document.createElement("hr"), ...paras, sectionMetadata4(document, "disclaimer")];
+  }
+  var footnotes_default = {
+    transform: (payload) => {
+      const { document, url, params } = payload;
+      const source = new URL(params.originalURL || url);
+      const published = publishedDate5(document);
+      const dateLine = document.querySelector("#publishedDate");
+      const showDate = !!dateLine && !dateLine.classList.contains("hidden");
+      const meta = WebImporter.Blocks.getMetadata(document);
+      const src = document.querySelector('[role="main"]') || document.body;
+      const isIndex = !!src.querySelector(".c-accordion .panel-group");
+      const main = document.createElement("div");
+      main.append(
+        ...isIndex ? buildIndex2(document, src) : buildDetail(document, src),
+        ...disclaimerSection4(document, document.body)
+      );
+      document.body.replaceChildren(main);
+      executeTransformers5("afterTransform", main, payload);
+      stripBrackets(main, document);
+      main.appendChild(document.createElement("hr"));
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      meta.site = "corp";
+      applyBaseMeta(meta, url, PAGE_TEMPLATE5.group);
+      if (published) meta.published = published;
+      if (published && showDate) meta["last-updated"] = "show";
+      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      const rawPath = source.pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+      const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
+      return [{
+        element: main,
+        path,
+        report: {
+          title: meta.Title || document.title,
+          template: PAGE_TEMPLATE5.name,
+          kind: isIndex ? "index" : "detail",
+          "last-updated": published && showDate ? "show" : ""
+        }
+      }];
+    }
+  };
+
+  // tools/importer/import-base.js
+  var BUILDERS = {
+    legal: legal_default,
+    patents: patents_default,
+    webinar: webinar_default,
+    people: people_default,
+    footnotes: footnotes_default
+  };
+  var import_base_default = {
+    preprocess: (payload) => BUILDERS[groupOf(payload.url)].preprocess?.(payload),
+    transform: (payload) => BUILDERS[groupOf(payload.url)].transform(payload)
+  };
+  return __toCommonJS(import_base_exports);
 })();

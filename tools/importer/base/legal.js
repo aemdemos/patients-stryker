@@ -2,14 +2,18 @@
 // www.stryker.com legal, governance and policy pages, built by the long-page-detail-corp builder.
 import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, edsLinkPaths,
-} from './transformers/long-page-detail-corp-sections.js';
-import { cleanRichText } from './transformers/long-page-detail-corp-article.js';
-import { contactUs } from './transformers/contact-division-sections.js';
-import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+} from '../transformers/long-page-detail-corp-sections.js';
+import { cleanRichText } from '../transformers/long-page-detail-corp-article.js';
+import { contactUs } from '../transformers/contact-division-sections.js';
+import cleanupTransformer from '../transformers/patients-stryker-cleanup.js';
+import {
+  addVariant, applyBaseMeta, blockTables, stripBrackets,
+} from './shared.js';
+import dmImagesTransformer from '../transformers/patients-stryker-dm-images.js';
 
 const PAGE_TEMPLATE = {
-  name: 'corp-legal',
+  name: 'base',
+  group: 'legal',
   description: 'www.stryker.com legal, governance and policy pages (#517): built as the long-page-detail-corp pages (H1 or underlined H2 title, rich text, section titles as underlined H2 with their ids, Accordion, conventions buttons, Columns, small print as a `disclaimer` section); source tables as `Table (no-header, striped)` blocks; `published` with `last-updated: show` (false where the source hides the line).',
   urls: [
     'https://www.stryker.com/us/en/legal/terms-of-use.html',
@@ -126,7 +130,7 @@ function tables(main, document) {
     }));
     if (!cells.length) return;
     const block = WebImporter.Blocks.createBlock(document, {
-      name: 'Table (no-header, striped)',
+      name: 'Table (no-header, striped, body-bold)',
       cells,
     });
     block.setAttribute('data-keep', 'flow');
@@ -152,7 +156,7 @@ const DROPPED_STYLES = ['headline-box', 'blue', 'purple', 'separator'];
 
 // the rule under a title-only section is the underlined Heading 1 (authoring convention)
 // instead of a `separator` section; the MRI rule above the Accordion is drawn
-// by the corp-legal template
+// by the base template (legal theme)
 function underlineTitles(main, document) {
   main.querySelectorAll('table').forEach((table) => {
     if (text(table.querySelector('th, tr')) !== 'Section Metadata') return;
@@ -182,6 +186,15 @@ function dropUnlistedStyles(main) {
     });
     if (table.querySelectorAll('tr').length < 2) table.remove();
   });
+}
+
+// block variants of the legal look: contact lines, arrow links, divided Accordion labels
+function blockVariants(main) {
+  blockTables(main, 'Columns').forEach((table) => {
+    if (table.querySelector('a[href^="tel:"], h4 + p')) addVariant(table, 'contact-lines');
+    if (table.querySelector('p > strong > a > u')) addVariant(table, 'arrow-links');
+  });
+  blockTables(main, 'Accordion (divided').forEach((table) => addVariant(table, 'futura-labels'));
 }
 
 // empty trailing cells of a Columns row (mri: 2 buttons in a 4-column source row) are not authored
@@ -231,115 +244,9 @@ const WIDE_COPY = ['governance/bylaws', 'governance/charters'];
 
 const DROP_STYLES = [];
 
-// Bracket tags (`[[tag]text]`, the span-tags.js runtime #542 removes) the builder emits become
-// semantic content or a section style: gold → Bold + Italic, `body-font` → `bold-body`, the
-// Large Headline sizes → their `headline-*vw` section style, the other size tags are dropped.
-const TAG_SECTION_STYLES = {
-  'body-font': 'bold-body',
-  'headline-2': 'headline-2vw',
-  'headline-2-5': 'headline-2-5vw',
-  serif: 'serif',
-};
 // Pages whose bold is plain <b> throughout (body font, not Futura): every section is `bold-body`
 const BOLD_BODY = ['sms-terms-and-conditions', 'legal/terms-of-use', 'convercent-global-privacy-statement', 'hemorrhagic-stroke/mri',
   'privacy-notice-for-california-residents', 'neurovascular/dfu'];
-const BRACKET = /\[\[([a-z0-9,-]+)\]|\]/g;
-
-function sectionIndex(main, node) {
-  let top = node;
-  while (top.parentElement && top.parentElement !== main) top = top.parentElement;
-  let count = 0;
-  for (let n = top.previousElementSibling; n; n = n.previousElementSibling) {
-    if (n.tagName === 'HR') count += 1;
-  }
-  return count;
-}
-
-// splits the text nodes of one element into text, open and close tokens next to its elements
-function bracketTokens(parent) {
-  const tokens = [];
-  [...parent.childNodes].forEach((node) => {
-    if (node.nodeType !== 3) {
-      tokens.push({ node });
-      return;
-    }
-    const value = node.nodeValue;
-    let last = 0;
-    [...value.matchAll(BRACKET)].forEach((m) => {
-      if (m.index > last) tokens.push({ text: value.slice(last, m.index) });
-      tokens.push(m[1] ? { open: m[1].split(',') } : { close: true });
-      last = m.index + m[0].length;
-    });
-    if (last < value.length) tokens.push({ text: value.slice(last) });
-  });
-  return tokens;
-}
-
-// Rebuilds the children of `parent` from its tokens: a matched pair is unwrapped, gold text
-// is wrapped in <em><strong>; an unmatched `]` stays text. Returns the tags removed.
-function stripBracketTokens(parent, document) {
-  const tokens = bracketTokens(parent);
-  const removed = [];
-  const build = (from, closes) => {
-    const nodes = [];
-    let i = from;
-    while (i < tokens.length) {
-      const t = tokens[i];
-      if (t.open) {
-        const inner = build(i + 1, true);
-        removed.push(...t.open);
-        i = inner.next;
-        let content = inner.nodes;
-        if (t.open.includes('color-gold')) {
-          const tail = [];
-          const isBlank = (n) => n.nodeName === 'BR'
-            || (n.nodeType === 3 && !n.nodeValue.trim());
-          while (content.length && isBlank(content[content.length - 1])) {
-            tail.unshift(content.pop());
-          }
-          if (content.some((n) => n.nodeType === 3 && n.nodeValue.trim())) {
-            const strong = document.createElement('strong');
-            strong.append(...content);
-            content = [strong];
-          }
-          const em = document.createElement('em');
-          em.append(...content);
-          content = [em, ...tail];
-        }
-        nodes.push(...content);
-      } else if (t.close) {
-        if (closes) return { nodes, next: i + 1 };
-        nodes.push(document.createTextNode(']'));
-        i += 1;
-      } else {
-        nodes.push(t.node || document.createTextNode(t.text));
-        i += 1;
-      }
-    }
-    return { nodes, next: i };
-  };
-  const { nodes } = build(0, false);
-  parent.replaceChildren(...nodes);
-  return removed;
-}
-
-// Every bracket tag of the page → semantic markup; returns { sectionIndex → styles }.
-function stripBrackets(main, document) {
-  const styles = new Map();
-  const parents = [...main.querySelectorAll('*')].filter((el) => [...el.childNodes]
-    .some((n) => n.nodeType === 3 && /\[\[[a-z0-9,-]+\]/.test(n.nodeValue)));
-  parents.forEach((parent) => {
-    if (!parent.isConnected) return;
-    const index = sectionIndex(main, parent);
-    stripBracketTokens(parent, document).forEach((tag) => {
-      const style = TAG_SECTION_STYLES[tag];
-      if (!style) return;
-      if (!styles.has(index)) styles.set(index, new Set());
-      styles.get(index).add(style);
-    });
-  });
-  return styles;
-}
 
 // Adds the page's section styles (WIDTH_STYLES and the ones bracket tags became) to the
 // Section Metadata of each section, creating it when the section has none.
@@ -489,7 +396,7 @@ function committeeColumns(main, document, url) {
     n.remove();
     n = next;
   }
-  hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns (no-stack)', cells: [cells] }));
+  hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns (no-stack, names)', cells: [cells] }));
 }
 
 export default {
@@ -522,6 +429,7 @@ export default {
     heroImage(main, document, url);
     underlineTitles(main, document);
     dropUnlistedStyles(main);
+    blockVariants(main);
     trimEmptyCells(main);
     sectionStyles(main, document, url, bracketStyles);
     edsLinkPaths(main);
@@ -533,7 +441,7 @@ export default {
     const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
     if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
-    meta.template = PAGE_TEMPLATE.name;
+    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
     if (hcp) meta['hcp-banner'] = 'true';
     if (published) {
       meta.published = published;
