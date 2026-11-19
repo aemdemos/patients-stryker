@@ -2341,3 +2341,72 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
     align-items: center;
   }
 }
+
+/* ---- containers prototype (standardise-v3, scripts/containers.js): layout sections ----
+   The section's content in columns from 600px (one column on phones), each column its text and
+   blocks: halves, thirds, quarters, fifths, sixths (equal), wide-first / wide-last (two thirds
+   + one third: the source col-sm-8 + col-sm-4), middle (centred vertically). The source's
+   bootstrap columns, as the flex sections: top-aligned, 30px apart, in the container */
+:where(body.corp) main .section.layout > .layout-column {
+  box-sizing: border-box;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+:where(body.corp) main .section.layout > .layout-column + .layout-column {
+  margin-top: var(--corp-component-gap);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .section.layout {
+    --layout-cols: 2;
+
+    display: grid;
+    grid-template-columns: repeat(var(--layout-cols), minmax(0, 1fr));
+    align-items: start;
+    gap: var(--corp-component-gap) calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main .section.layout > .layout-column + .layout-column {
+    margin-top: 0;
+  }
+
+  :where(body.corp) main .section.layout.thirds {
+    --layout-cols: 3;
+  }
+
+  :where(body.corp) main .section.layout.quarters {
+    --layout-cols: 4;
+  }
+
+  :where(body.corp) main .section.layout.fifths {
+    --layout-cols: 5;
+  }
+
+  :where(body.corp) main .section.layout.sixths {
+    --layout-cols: 6;
+  }
+
+  :where(body.corp) main .section.layout.wide-first {
+    grid-template-columns: calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter)) minmax(0, 1fr);
+  }
+
+  :where(body.corp) main .section.layout.wide-last {
+    grid-template-columns: minmax(0, 1fr) calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main .section.layout.middle {
+    align-items: center;
+  }
+
+  /* in a tab or accordion panel: the panel is the container already */
+  :where(body.corp) main .section .section.layout {
+    max-width: none;
+    padding-inline: 0;
+  }
+}

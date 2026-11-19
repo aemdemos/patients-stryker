@@ -14,6 +14,7 @@
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
  */
+import { LAYOUT_STYLES } from './containers.js';
 import {
   buildBlock,
   decorateBlock,
@@ -147,13 +148,21 @@ export function decorateMain(main) {
  */
 function buildAccordionSections(main) {
   const runs = [];
-  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+  // (containers prototype: a `continued` section right after a panel joins that panel, its
+  // own inline section keeping its layout styles, scripts/containers.js)
+  const parts = new Map();
+  main.querySelectorAll(':scope > .section.accordion-panel, :scope > .section.continued').forEach((section) => {
     const run = runs[runs.length - 1];
-    // a Block Library variant (tools/da-library-preview) is always its own accordion
-    const joins = run && run[run.length - 1].nextElementSibling === section
-      && !section.classList.contains('library-variant-start');
-    if (joins) run.push(section);
-    else runs.push([section]);
+    const last = run?.[run.length - 1];
+    const lastPart = last && parts.get(last);
+    const follows = lastPart && lastPart[lastPart.length - 1].nextElementSibling === section;
+    if (section.classList.contains('accordion-panel')) {
+      // a Block Library variant (tools/da-library-preview) is always its own accordion
+      const joins = follows && !section.classList.contains('library-variant-start');
+      if (joins) run.push(section);
+      else runs.push([section]);
+      parts.set(section, [section]);
+    } else if (follows) lastPart.push(section);
   });
 
   runs.forEach((run) => {
@@ -161,9 +170,22 @@ function buildAccordionSections(main) {
       // unwrap default content and (still undecorated) blocks, in authored order
       const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
       const label = /^H[1-6]$/.test(nodes[0]?.tagName) ? nodes.shift() : null;
+      const part = parts.get(section);
       const panel = document.createElement('div');
-      panel.dataset.accordionSection = '';
-      panel.append(...nodes);
+      if (part.length === 1) {
+        panel.dataset.accordionSection = '';
+        panel.append(...nodes);
+      } else {
+        // several sections: one inline section each, with its layout styles
+        part.forEach((piece, i) => {
+          const inline = document.createElement('div');
+          inline.dataset.accordionSection = '';
+          inline.classList.add(...LAYOUT_STYLES.filter((c) => piece.classList.contains(c)));
+          inline.append(...(i ? [...piece.children].flatMap((w) => [...w.children]) : nodes));
+          panel.append(inline);
+          if (i) piece.remove();
+        });
+      }
       return [{ elems: label ? [label] : [] }, { elems: [panel] }];
     });
 

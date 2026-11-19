@@ -15,6 +15,7 @@ import {
   toCamelCase,
   getMetadata,
 } from './aem.js';
+import { buildTabRuns, decorateLayouts } from './containers.js';
 
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
 import decorateSpanTags from './span-tags.js';
@@ -613,9 +614,11 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateSectionMetadata(main);
   buildTabbedSections(main);
+  buildTabRuns(main);
   corp?.decorateSections(main);
   decorateBlocks(main);
   corp?.decorateBlockLayout(main);
+  decorateLayouts(main);
   decorateLinkTargets(main);
   decorateButtons(main);
   corp?.decorateTextLinks(main);
