@@ -563,12 +563,6 @@ body.news-detail.news-video main > .section.video-text.light-gray > .video-wrapp
   font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
 }
 
-@media (width >= 600px) {
-  body.news-detail.news-video main > .section.video-text.light-gray > .video-wrapper + .default-content-wrapper > h3:first-child {
-    --corp-headline-vw: 1vw;
-  }
-}
-
 /* section style `lead-plain`: a grey intro without a size of its own (stryker.com Large
    Headline text without a fontsize span, e.g. Rose's spine surgery story) at the column's
    own size, as the rule line: 21px on 25px lines below 900px, from 900px 1vw capped at
