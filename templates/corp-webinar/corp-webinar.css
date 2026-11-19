@@ -1,0 +1,182 @@
+/* corp-webinar — www.stryker.com webinars and on-demand videos (#519). CSS-only template.
+   Measured on the webinar, thank-you, page-hero video and on-demand index pages of the
+   template at 375 / 600 / 768 / 1024 / 1440. */
+
+body.corp-webinar {
+  --corp-webinar-h2-thank-you: 30.625px; /* measured: the 1.25em "Thank you for registering" h2 from 600px */
+  --corp-legal-title-offset-trim: 2px; /* as #538: the source header-to-title gap of a sized title is --space-section less 2px */
+  --corp-large-headline-offset: 2vw; /* as #538: the source header-to-title gap of a Large Headline is 2vw + 9.4px; the 9.4px is the existing H1 top spacing */
+  --corp-webinar-title-offset: calc(2vw - 0.6px); /* measured: the webinar title sits 2% of the 30px-padded container (10px header gap added) under the header */
+  --corp-webinar-thank-you-offset-s: 21px; /* measured: the thank-you title sits 31px (41px from 600px) under the header, less the 10px header gap */
+  --corp-webinar-thank-you-offset: 31px;
+  --corp-webinar-wordmark-width: 213px; /* measured: the FocusRN wordmark's natural width */
+  --corp-webinar-wordmark-column: calc(41.667vw - 30.25px); /* measured: the source's 5/12 column less its 30px gutter; the wordmark fills it up to its natural width */
+  --corp-webinar-wordmark-width-fluid: min(var(--corp-webinar-wordmark-width), var(--corp-webinar-wordmark-column));
+  --corp-webinar-index-title-gap-s: 14px; /* measured: wordmark to title is 2vw + 19.4px (2vw + 29.3px from 600px), less the 5.2px the wordmark's line adds */
+  --corp-webinar-index-title-gap: 24px;
+  --corp-webinar-hero-title-line-height-s: 22.26px; /* measured: the page-hero title's lines below 1024px */
+}
+
+/* the page title under the header, as the source (#538 sets the same gaps for corp-legal): a sized
+   title (page hero) --space-section less 2px; a webinar title (`serif` first section) 2vw
+   (+ the 10px header gap, so 2vw + 9.4px as source); the thank-you title 31px (41px from 600px) */
+body.corp-webinar main:has(> .section:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-legal-title-offset-trim));
+}
+
+body.corp-webinar main:has(> .section.serif:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--corp-webinar-title-offset);
+}
+
+body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+  padding-top: var(--corp-webinar-thank-you-offset-s);
+}
+
+/* the title sits in one rich text with the text under it: no padded rule under the first
+   section, and the title, speaker and description one paragraph gap apart */
+body.corp-webinar main > .section:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.corp-webinar main > .section.serif:has(+ .section.p-1-25) {
+  margin-bottom: 0;
+}
+
+/* headings have no rule under them (the corp h2 default) */
+body.corp-webinar main > .section > .default-content-wrapper h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* thank-you: the h2 is 1.25x the h2 (26.25px, 30.625px from 600px) */
+body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-l-scaled);
+}
+
+/* page hero: the gold title 10px above the subhead (24.5px at every width); the hero ends in a content-width rule one heading gap under its text
+   (`separator`), with the video 20px (30px from 600px) under the rule */
+body.corp-webinar main > .section:first-child:has(+ .section.separator) {
+  margin-bottom: 0;
+}
+
+body.corp-webinar main > .section:first-child:has(+ .section.separator) h1 {
+  margin-bottom: var(--space-block-s);
+  line-height: var(--corp-webinar-hero-title-line-height-s);
+}
+
+body.corp-webinar main > .section:first-child:has(+ .section.separator) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+body.corp-webinar main > .section.separator {
+  border-top: 0;
+}
+
+body.corp-webinar main > .section.separator > div:first-child {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* index: the back link 11px under the header, the wordmark centred in its column and
+   scaled to it (the source column is 5/12, 3/12 from 600px, 2/12 above 1200px of the viewport), the title 2vw + 29.3px under it */
+body.corp-webinar main > .section.back-link {
+  margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap-s));
+  padding-top: 0;
+}
+
+body.corp-webinar .accordion .columns h3 + p {
+  font-family: var(--heading-font-family);
+}
+
+body.corp-webinar main > .section.back-link p:has(img) {
+  margin-inline-start: max(0px, calc((var(--corp-webinar-wordmark-column) - var(--corp-webinar-wordmark-width-fluid)) / 2));
+}
+
+body.corp-webinar main > .section.back-link p img {
+  width: var(--corp-webinar-wordmark-width-fluid);
+  height: auto;
+}
+
+/* index copy: the intro and the webinar copy 17.5px (the speaker in Egyptienne), the webinar
+   titles under the panel labels (Bold h3, 14px; 17.5px from 600px) with a 1px black frame on
+   the thumbnails */
+body.corp-webinar main > .section.back-link + .section > .default-content-wrapper p,
+body.corp-webinar .accordion .columns :is(h3 + p, h3 + p + p) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp-webinar main > .section.back-link + .section > .default-content-wrapper p > a:any-link {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.corp-webinar .accordion .columns .columns-img-col img {
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+
+body.corp-webinar .accordion .columns h3 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* …and under the video, the speaker byline (17.5px serif; 21px from 600px) one paragraph gap
+   above the description */
+body.corp-webinar main > .section.separator + .section.serif {
+  margin-bottom: 0;
+}
+
+body.corp-webinar main > .section.separator + .section.serif p {
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.corp-webinar {
+    --corp-webinar-wordmark-column: calc(25vw - 30.25px);
+  }
+
+  body.corp-webinar main:has(> .section.h1-1-5:first-child > .default-content-wrapper > h1) {
+    padding-top: var(--corp-webinar-thank-you-offset);
+  }
+
+  body.corp-webinar main > .section.back-link {
+    margin-bottom: calc(var(--corp-large-headline-offset) + var(--corp-webinar-index-title-gap));
+  }
+
+  body.corp-webinar main > .section.h1-1-5 > .default-content-wrapper h2 {
+    font-size: var(--corp-webinar-h2-thank-you);
+  }
+
+  body.corp-webinar main > .section.separator {
+    margin-bottom: var(--space-section);
+  }
+
+  body.corp-webinar main > .section.separator > div:first-child {
+    padding-top: var(--space-section);
+  }
+
+  body.corp-webinar main > .section.separator + .section.serif p {
+    font-size: var(--body-font-size-xl);
+  }
+
+  body.corp-webinar .accordion .columns h3 {
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+@media (width >= 900px) {
+  /* the hero text wraps in the left half (col-sm-6) */
+  body.corp-webinar main > .section:first-child:has(+ .section.separator) :is(h1, h2) {
+    max-width: 50%;
+    line-height: var(--heading-line-height);
+  }
+}
+
+@media (width >= 1200px) {
+  body.corp-webinar {
+    --corp-webinar-wordmark-column: calc(min(16.667vw - 30.25px, 204.8px) + max(0px, calc((1201px - 100vw) * 100))); /* the source column is 2/12 above 1200px and 3/12 at 1200px: the ramp keeps the 3/12 column at exactly 1200px */
+  }
+}
