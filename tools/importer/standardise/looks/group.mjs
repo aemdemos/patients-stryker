@@ -21,7 +21,7 @@
  * groups that differ in one part only are listed as "close to". Groups with the same frame, layout
  * and image form a layout family (the inspection page can show the groups by family).
  * usage: node tools/importer/standardise/looks/group.mjs <block type> [--sizes exact|bands]
- *   [--name <page name>] [--extra <groups file>] [--decisions <file>]
+ *   [--name <page name>] [--extra <groups file>] [--decisions <file>] [--remote-shots]
  *   (decisions: merges decided on inspection, default tools/looks/decisions/<type>.json)
  *   [--in /tmp/run-outputs/looks-v2]
  *   [--out tools/looks/data]
@@ -33,6 +33,9 @@ import { join } from 'path';
 
 const args = process.argv.slice(2);
 const type = args[0];
+// (several types in one page: columns,flex-section — the layout containers of measure.mjs
+// --columns)
+const TYPES = type ? type.split(',') : [];
 const opt = (name, fallback) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : fallback;
@@ -44,6 +47,7 @@ const SIZES = opt('--sizes', 'exact');
 // forms; --extra: a file of groups measured elsewhere)
 const NAME = opt('--name', type);
 const EXTRA = opt('--extra', '');
+const REMOTE_SHOTS = args.includes('--remote-shots');
 if (!type) {
   console.error('usage: group.mjs <block type>');
   process.exit(2);
@@ -206,7 +210,44 @@ function chartPartsOf(b) {
   };
 }
 
+/**
+ * a layout container's look (a Columns block or a flex section, measure.mjs --columns): the
+ * column widths of its rows in twelfths (6+6, 4+4+4, 8+4), what the columns hold, the vertical
+ * alignment, whether the columns stack on phones, and the frame; how many rows is content
+ */
+function layoutPartsOf(b) {
+  const kind = (c) => {
+    const x = c.content;
+    const media = x.images + x.videos > 0;
+    const text = x.texts > 0;
+    if (x.blocks.length) return `blocks (${[...new Set(x.blocks)].join(', ')})${text ? ' + text' : ''}`;
+    if (media && text) return 'image + text';
+    if (media) return x.videos ? 'video' : 'image';
+    if (text) return 'text';
+    return 'empty';
+  };
+  const twelfths = (r) => r.cells.map((c) => Math.max(1, Math.round(c.share * 12))).join('+');
+  const rows = b.rows.filter((r) => r.cells.length);
+  const layouts = [...new Set(rows.map(twelfths))];
+  const holds = [...new Set(rows.map((r) => r.cells.map(kind).join(' | ')))];
+  const phoneRows = (b.phone?.rows || []).filter((r) => r.cells.length > 1);
+  let phone = 'one column';
+  if (phoneRows.length) phone = phoneRows.every((r) => r.stacked) ? 'stacked' : 'side by side';
+  return {
+    frame: [
+      `${width(b.frame.widthShare)}`,
+      b.frame.section && b.frame.section.bg !== 'transparent' ? `section ${b.frame.section.bg}` : '',
+      b.frame.section?.bgImage ? 'section image' : '',
+    ].filter(Boolean).join('; '),
+    columns: layouts.length > 2 ? 'mixed rows' : layouts.join(' / '),
+    holds: holds.length > 2 ? 'mixed' : holds.join(' / '),
+    align: rows.some((r) => r.align === 'center') ? 'middle' : 'top',
+    phone,
+  };
+}
+
 function partsOf(b) {
+  if (b.rows) return layoutPartsOf(b);
   if (b.type === 'table') return tablePartsOf(b);
   if (b.type === 'chart-corp') return chartPartsOf(b);
   if (b.type === 'corp-spacing-box') return spacingPartsOf(b);
@@ -255,7 +296,7 @@ function partsOf(b) {
 const instances = [];
 readdirSync(join(IN, 'pages')).forEach((f) => {
   const d = JSON.parse(readFileSync(join(IN, 'pages', f), 'utf8'));
-  d.blocks.filter((b) => b.type === type && !b.hidden).forEach((b) => instances.push({
+  d.blocks.filter((b) => TYPES.includes(b.type) && !b.hidden).forEach((b) => instances.push({
     page: d.page,
     title: titles[d.page] || d.page,
     source: sourceOf(d.page),
@@ -266,8 +307,9 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     phoneShot: b.phone?.shot,
     counts: b.counts,
     text: b.text,
+    ...(b.rows ? { container: b.type, context: [b.inTabs && 'in tabs', b.inAccordion && 'in accordion'].filter(Boolean) } : {}),
     parts: partsOf(b),
-    exactType: exactTypeOf(b),
+    exactType: b.typography ? exactTypeOf(b) : {},
     ...(b.type === 'statistics' ? { colours: numberColours(b) } : {}),
   }));
 });
@@ -408,7 +450,8 @@ groups.forEach((g) => {
 });
 // layout families: the groups that share frame, layout and image (they differ in text styles or
 // buttons only), largest first
-const LAYOUT_PARTS = ['frame', 'layout', 'image'];
+// (layout containers: by their column widths)
+const LAYOUT_PARTS = instances[0]?.container ? ['columns'] : ['frame', 'layout', 'image'];
 const familyKey = (parts) => LAYOUT_PARTS.map((k) => parts[k]).join(' | ');
 const families = [...groups.reduce((m, g) => {
   const k = familyKey(g.parts);
@@ -427,7 +470,8 @@ const families = [...groups.reduce((m, g) => {
 mkdirSync(OUT, { recursive: true });
 const result = {
   type: NAME,
-  blocks: [type],
+  blocks: TYPES,
+  ...(REMOTE_SHOTS ? { remoteShots: true } : {}),
   generated: new Date().toISOString(),
   sizes: SIZES,
   measuredPages: readdirSync(join(IN, 'pages')).length,
@@ -451,6 +495,10 @@ index.types = [
 writeFileSync(join(OUT, 'index.json'), JSON.stringify(index, null, 1));
 // the page's screenshots: a real copy next to the page (git-ignored), not a link to the measuring
 // folder, which the review preview can't reach
-cpSync(join(IN, 'shots', type), join(OUT, '..', 'shots', type), { recursive: true });
+// (--remote-shots: the screenshots live only in Document Authoring, upload-shots.sh, so the page
+// reads them from there everywhere; nothing is copied)
+if (!REMOTE_SHOTS) {
+  TYPES.forEach((t) => cpSync(join(IN, 'shots', t), join(OUT, '..', 'shots', t), { recursive: true }));
+}
 console.log(`${NAME}: ${total} instances on ${result.measuredPages} measured pages, ${groups.length} groups`);
 groups.slice(0, 15).forEach((g) => console.log(`  #${g.id} ${g.instances} on ${g.pages} pages · ${Object.values(g.parts).join(' | ')}`));

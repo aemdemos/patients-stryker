@@ -8,7 +8,8 @@
  * at both widths. Raw values are kept (group.mjs buckets them), so the grouping can change without
  * rendering again. One page at a time; resumable (pages already measured are skipped).
  * usage: node tools/importer/standardise/looks/measure.mjs [--base http://localhost:3000]
- *   [--out /tmp/run-outputs/looks-v2] [--only <path>,<path>] [--limit n] [--reverse] [--force]
+ *   [--out /tmp/run-outputs/looks-v2] [--columns] [--only <path>,<path>] [--limit n] [--reverse]
+ *   [--force]
  * Blocks in closed tabs or accordions are measured after opening them.
  */
 import {
@@ -25,11 +26,18 @@ const opt = (name, fallback) => {
   return i >= 0 ? args[i + 1] : fallback;
 };
 const base = opt('--base', 'http://localhost:3000');
-const out = opt('--out', '/tmp/run-outputs/looks-v2');
+// (--columns: the layout containers instead of the blocks: every Columns block and flex section,
+// cell by cell, in their own output folder)
+const COLUMNS = args.includes('--columns');
+const out = opt('--out', COLUMNS ? '/tmp/run-outputs/looks-columns' : '/tmp/run-outputs/looks-v2');
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const limit = Number(opt('--limit', 0)) || Infinity;
 const SKIP = ['columns', 'fragment', 'header', 'footer', 'header-corp', 'footer-corp'];
-const BLOCKED = /altcha|captcha|googletagmanager|google-analytics|adobedtm|demdex|omtrdc|doubleclick|facebook|linkedin|hotjar|onetrust|cookielaw|qualtrics/;
+// (ALTCHA and the captcha by their paths, anywhere; trackers by their servers only: a page's own
+// image named facebook_logo is no tracker)
+const CAPTCHA = /altcha|captcha/i;
+const TRACKERS = /googletagmanager|google-analytics|adobedtm|demdex|omtrdc|doubleclick|facebook|linkedin|hotjar|onetrust|cookielaw|qualtrics/i;
+const BLOCKED = (url) => CAPTCHA.test(url.href) || TRACKERS.test(url.hostname);
 
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
 let list = pages.map((p) => p.path).filter((p) => !only || only.includes(p)).slice(0, limit);
@@ -38,6 +46,100 @@ if (args.includes('--reverse')) list = list.reverse();
 mkdirSync(join(out, 'pages'), { recursive: true });
 mkdirSync(join(out, 'shots'), { recursive: true });
 const slug = (p) => p.replace(/^\//, '').replace(/\//g, '~');
+
+/**
+ * a layout container (a Columns block or a flex section): its rows and their cells, each cell's
+ * share of the width, place and content, the gaps and the alignment. Runs in the page.
+ */
+function measureColumns(el) {
+  const hex = (c) => {
+    const m = /rgba?\(([^)]+)\)/.exec(c || '');
+    if (!m) return c || '';
+    const [r, g, b, a = '1'] = m[1].split(/[ ,/]+/).filter(Boolean);
+    if (Number(a) === 0) return 'transparent';
+    return `#${[r, g, b].map((x) => Number(x).toString(16).padStart(2, '0')).join('')}`;
+  };
+  const box = (x) => {
+    const r = x.getBoundingClientRect();
+    return {
+      left: r.left + window.scrollX, top: r.top + window.scrollY, width: r.width, height: r.height,
+    };
+  };
+  const visible = (x) => {
+    const r = x.getBoundingClientRect();
+    const st = getComputedStyle(x);
+    return r.width > 1 && r.height > 1 && st.visibility !== 'hidden' && st.display !== 'none';
+  };
+  const isSection = el.classList.contains('section');
+  const b = box(el);
+  // a cell's content: its media, the blocks in it, its text (headings, paragraphs, lists), buttons
+  const contentOf = (cell) => {
+    const blocks = [...cell.querySelectorAll('.block')].filter(visible)
+      .map((x) => x.dataset.blockName).filter(Boolean);
+    const inBlock = (x) => x.closest('.block') && x.closest('.block') !== el;
+    const own = (sel) => [...cell.querySelectorAll(sel)].filter(visible).filter((x) => !inBlock(x));
+    const text = own('p, li, h1, h2, h3, h4, h5, h6').filter((x) => x.textContent.trim().length > 1);
+    const st = getComputedStyle(cell);
+    return {
+      images: own('img').length,
+      videos: own('video, iframe').length,
+      blocks,
+      headings: own('h1, h2, h3, h4, h5, h6').length,
+      texts: text.length,
+      chars: text.reduce((n, x) => n + x.textContent.trim().length, 0),
+      buttons: own('a.button, .button-container a').length,
+      bg: hex(st.backgroundColor),
+      border: Number.parseFloat(st.borderTopWidth) > 0 || Number.parseFloat(st.borderLeftWidth) > 0,
+    };
+  };
+  // rows: a Columns block's rows; a flex section is one row of its wrappers
+  const rowEls = isSection ? [el] : [...el.children].filter(visible);
+  const rows = rowEls.map((row) => {
+    const cells = [...row.children].filter(visible).filter((c) => !c.classList.contains('section-metadata'));
+    const cb = cells.map(box);
+    // (shares of the row: a Columns row can be wider than its block, by its negative margins)
+    const rb = box(row);
+    return {
+      align: getComputedStyle(row).alignItems,
+      cells: cells.map((c, i) => ({
+        share: Math.round((cb[i].width / Math.max(rb.width, 1)) * 100) / 100,
+        left: Math.round(cb[i].left - rb.left),
+        top: Math.round(cb[i].top - rb.top),
+        height: Math.round(cb[i].height),
+        content: contentOf(c),
+      })),
+      // the space between cells side by side (same top)
+      gaps: cb.slice(1).map((x, i) => (Math.abs(x.top - cb[i].top) < 6
+        ? Math.round(x.left - (cb[i].left + cb[i].width)) : null)),
+      stacked: cb.length > 1
+        && cb.every((x, i) => i === 0 || x.top >= cb[i - 1].top + cb[i - 1].height - 6),
+    };
+  });
+  const sec = isSection ? el : el.closest('.section');
+  const scs = sec ? getComputedStyle(sec) : null;
+  return {
+    content: {
+      left: b.left, top: b.top, right: b.left + b.width, bottom: b.top + b.height,
+    },
+    type: isSection ? 'flex-section' : 'columns',
+    classes: [...el.classList].filter((c) => !['block', 'section', 'columns'].includes(c)
+      && !c.endsWith('-container') && !c.endsWith('-wrapper')),
+    inFragment: !!el.parentElement?.closest('.fragment, .fragment-wrapper'),
+    inTabs: !!el.closest('.tabs, [role="tabpanel"]'),
+    inAccordion: !!el.closest('.accordion'),
+    box: b,
+    frame: {
+      widthShare: Math.round((b.width / window.innerWidth) * 100) / 100,
+      section: scs ? {
+        bg: hex(scs.backgroundColor),
+        bgImage: scs.backgroundImage !== 'none',
+        classes: [...sec.classList].filter((c) => c !== 'section'),
+      } : null,
+    },
+    rows,
+    text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 160),
+  };
+}
 
 /** what a block looks like: runs in the page, on the block element */
 function measureBlock(el) {
@@ -479,22 +581,30 @@ async function showImages(h) {
 const inOrder = (items, fn) => items
   .reduce((prev, x, i) => prev.then(() => fn(x, i)), Promise.resolve());
 
-const nameOf = (h) => h.evaluate((e) => (e.closest('header, footer') ? null : e.dataset.blockName));
+const nameOf = (h) => h.evaluate((e) => {
+  if (e.closest('header, footer')) return null;
+  if (e.classList.contains('section')) return 'flex-section';
+  return e.dataset.blockName;
+});
+// (the containers in --columns mode, the blocks otherwise)
+const SELECTOR = COLUMNS ? 'main .columns.block, main .section.flex' : 'main .block';
+const keep = (name) => name && (COLUMNS ? ['columns', 'flex-section'].includes(name) : !SKIP.includes(name));
+const measureOf = COLUMNS ? measureColumns : measureBlock;
 
 /** the desktop look: every block measured, with a screenshot */
 async function desktop(path, url, result) {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await settle(page);
-  const handles = await page.$$('main .block');
+  const handles = await page.$$(SELECTOR);
   await inOrder(handles, async (h) => {
     const name = await nameOf(h);
-    if (!name || SKIP.includes(name)) return;
+    if (!keep(name)) return;
     const n = result.blocks.length;
     await reveal(h);
     const panels = await openPanels(h);
     const images = await showImages(h);
-    const m = await h.evaluate(measureBlock);
+    const m = await h.evaluate(measureOf);
     m.n = n;
     m.imagesShown = images;
     if (panels) m.panels = panels;
@@ -514,18 +624,18 @@ async function phone(path, url, result) {
   await page.setViewportSize({ width: 375, height: 800 });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await settle(page);
-  const handles = await page.$$('main .block');
+  const handles = await page.$$(SELECTOR);
   const names = await Promise.all(handles.map(nameOf));
-  const kept = handles.filter((h, i) => names[i] && !SKIP.includes(names[i]));
-  const keptNames = names.filter((x) => x && !SKIP.includes(x));
+  const kept = handles.filter((h, i) => keep(names[i]));
+  const keptNames = names.filter(keep);
   await inOrder(kept, async (h, k) => {
     const m = result.blocks[k];
     if (!m || m.type !== keptNames[k]) return;
     await reveal(h);
     await openPanels(h);
     const images = await showImages(h);
-    const p = await h.evaluate(measureBlock);
-    m.phone = {
+    const p = await h.evaluate(measureOf);
+    m.phone = COLUMNS ? { rows: p.rows, box: p.box, imagesShown: images } : {
       units: p.units, image: p.image, typography: p.typography, box: p.box, imagesShown: images,
     };
     if (p.box.width > 1 && p.box.height > 1) {
@@ -543,6 +653,11 @@ const todo = list.filter((path) => args.includes('--force') || !existsSync(join(
 done = list.length - todo.length;
 await inOrder(todo, async (path) => {
   const file = join(out, 'pages', `${slug(path)}.json`);
+  // (a second runner may have measured it meanwhile: checked again now, not only at the start)
+  if (!args.includes('--force') && existsSync(file)) {
+    done += 1;
+    return;
+  }
   const url = `${base}/content/rs${path}`;
   const result = {
     page: path, measured: new Date().toISOString(), blocks: [], errors: [],

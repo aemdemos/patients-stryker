@@ -12,11 +12,11 @@ const params = new URLSearchParams(window.location.search);
 const LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname) || /^preview-aemcoder\.adobe\.io$/.test(window.location.hostname);
 // (the local folder on the workspace preview; elsewhere the copies in Document Authoring, where
 // the page path's ~ and the block number's __ are folders: upload-shots.sh)
-const shotSrc = (shot) => (LOCAL ? `./${shot}`
+const shotSrc = (shot, remote) => (LOCAL && !remote ? `./${shot}`
   : `/looks-shots/${shot.replace(/^shots\//, '').replace(/~/g, '/').replace(/__/g, '/')}`);
 const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
 const NAMES = {
-  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
+  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', layouts: 'Columns and flex sections', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
 };
 // (what a merged instance lacks, in words)
 const LACK_NAMES = {
@@ -27,7 +27,7 @@ const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${
 const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
 const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0) + (it.differs?.length || 0);
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart', columns: 'Columns (twelfths)', holds: 'Columns hold', align: 'Alignment', phone: 'On phones',
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -89,7 +89,7 @@ function groupBox(g) {
           {
             class: 'lk-shot-img', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: tip,
           },
-          shot ? el('img', { src: shotSrc(shot), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
+          shot ? el('img', { src: shotSrc(shot, data.remoteShots), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
         ),
         el(
           'span',
