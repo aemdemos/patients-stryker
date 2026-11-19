@@ -146,9 +146,35 @@ function sizeNewsVideos(doc) {
  * @param {Document} doc The document
  */
 function markStandaloneBold(doc) {
-  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong:not(.standalone)').forEach((strong) => {
+  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong:not(.standalone, .body-bold)').forEach((strong) => {
     if (!lineText(strong, 'previousSibling') && !lineText(strong, 'nextSibling')) {
       strong.classList.add('standalone');
+    }
+  });
+}
+
+/**
+ * Authoring convention (news articles): underlined text in a paragraph or list item — not a
+ * link, nor around one — is bold in the body font (Humanist bold, no underline), also on a
+ * line of its own, where plain Bold is Futura: e.g. the "For investor inquiries please
+ * contact:" label of the Vocera acquisition release, Humanist bold on stryker.com. The <u>
+ * becomes <strong class="body-bold"> (news-detail.css), its own bold merged into it.
+ * Underlined headings (the heading rule) and bold + underline links (the CTA) are unchanged.
+ * @param {Document} doc The document
+ */
+function decorateUnderlineBold(doc) {
+  doc.querySelectorAll('main :is(p, li) u').forEach((u) => {
+    if (u.closest('a, h1, h2, h3, h4, h5, h6') || u.querySelector('a')) return;
+    const strong = doc.createElement('strong');
+    strong.className = 'body-bold';
+    strong.append(...u.childNodes);
+    strong.querySelectorAll('strong, b').forEach((b) => b.replaceWith(...b.childNodes));
+    // inside a bold run the underline is the whole run's body font
+    const outer = u.parentElement.closest('strong, b');
+    if (outer && outer.textContent.trim() === u.textContent.trim()) {
+      outer.replaceWith(strong);
+    } else {
+      u.replaceWith(strong);
     }
   });
 }
@@ -174,6 +200,7 @@ export default function decorate(doc) {
   decorateBoldBodyLinks(doc);
   sizeNewsVideos(doc);
   placeVideoRowButtons(doc);
+  decorateUnderlineBold(doc);
   markStandaloneBold(doc);
 
   // content that arrives after the template ran (the sections of a Fragment block, e.g.
@@ -190,6 +217,7 @@ export default function decorate(doc) {
     decorateBoldBodyLinks(doc);
     sizeNewsVideos(doc);
     placeVideoRowButtons(doc);
+    decorateUnderlineBold(doc);
     markStandaloneBold(doc);
   }).observe(main, { childList: true, subtree: true });
 }
