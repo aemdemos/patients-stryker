@@ -851,8 +851,9 @@ body.news-detail.sustainability main > .section > .default-content-wrapper > ol:
      e.g. the Vocera acquisition release: 52px below the text at every width; the band
      starts 21px below the rule, 51px from 600px on the supply chain week article): a 50px
      top margin, which takes in the 15px gap of the section above (the margins collapse),
-     then no padding and no empty content box, and 20px (50px from 600px) to the band */
-body.news-detail.sustainability main > .section.separator:has(> div:only-child:empty) {
+     then no padding and no empty content box, and 20px (50px from 600px) to the band; the
+     section is empty on aem.page / aem.live, or holds one empty box in a local preview */
+body.news-detail.sustainability main > .section.separator:is(:empty, :has(> div:only-child:empty)) {
   margin-top: calc(2 * var(--space-block) + var(--space-block-l));
   margin-bottom: var(--space-block-l);
   padding-top: 0;
@@ -867,7 +868,7 @@ body.news-detail.sustainability main > .section.separator > div:only-child:empty
     padding-top: calc(var(--corp-blank-line) - var(--space-section));
   }
 
-  body.news-detail.sustainability main > .section.separator:has(> div:only-child:empty) {
+  body.news-detail.sustainability main > .section.separator:is(:empty, :has(> div:only-child:empty)) {
     margin-bottom: var(--space-section-l);
   }
 }
