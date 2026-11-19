@@ -35,15 +35,6 @@ body.news-detail.full-width.basic main > .section > .default-content-wrapper li 
   font-family: var(--display-font-family);
 }
 
-/* basic: bold lines one after the other in a paragraph (each on a line of its own, then a
-   line break): the last one is in the copy font, the ones before it stay Futura, e.g.
-   "Contacts" (Futura) then "For investor inquiries please contact:" (Humanist bold) in the
-   Vocera acquisition release */
-body.news-detail.basic main > .section > .default-content-wrapper :is(p, li)
-  > strong.standalone + br + strong.standalone:not(:has(+ br + strong.standalone)) {
-  font-family: var(--body-font-family);
-}
-
 /* full-width: news pages whose source runs the title, the small print and the "Last
    Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
    .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date
