@@ -80,6 +80,35 @@ let view = params.get('view') === 'layout' ? 'layout' : 'size';
 
 const SIZE_NOTE = 'Text sizes in bands: S up to 16 px, M up to 26, L up to 38, XL up to 56, XXL above.';
 
+// the full-page tiles of the original's pages (measure.mjs --tiles): per page and width the page
+// height, the tile height and the number of tiles; in Document Authoring under /looks-shots/pages
+let tiles = {};
+const tileSrc = (page, width, i) => `/looks-shots/pages/${width}${page}/${i}.jpg`;
+
+/** an instance as its clip of the page's tiles (8px around its box), scaled to the size slider */
+function sprite(it, at, label) {
+  const width = at === 'm' ? 375 : 1440;
+  const c = it.clip?.[at];
+  const t = tiles[it.page]?.[width];
+  if (!c || !t || c[2] < 2 || c[3] < 2) return el('span', { class: 'lk-none' }, 'no screenshot');
+  const x = Math.max(0, c[0] - 8);
+  const y = Math.max(0, c[1] - 8);
+  const w = Math.min(c[2] + 16, width - x);
+  const h = Math.min(c[3] + 16, 2400, t.height - y);
+  const box = el('span', {
+    class: 'lk-sprite', role: 'img', 'aria-label': label, style: `--r: ${w / h}`,
+  });
+  for (let i = Math.floor(y / t.tile); i < t.tiles && i * t.tile < y + h; i += 1) {
+    box.append(el('img', {
+      src: tileSrc(it.page, width, i),
+      loading: 'lazy',
+      alt: '',
+      style: `--tx: ${-x / h}; --ty: ${(i * t.tile - y) / h}; --tw: ${width / h}`,
+    }));
+  }
+  return box;
+}
+
 function groupBox(g) {
   return el(
     'section',
@@ -121,7 +150,9 @@ function groupBox(g) {
           {
             class: 'lk-shot-img', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: tip,
           },
-          shot ? el('img', { src: shotSrc(shot, data.remoteShots), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot'),
+          // (a clip of the page's tiles when the data has them, else the instance's own screenshot)
+          (data.sprites ? sprite(it, vp, `${it.title}, block ${it.n + 1}`) : null)
+          || (shot ? el('img', { src: shotSrc(shot, data.remoteShots), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot')),
         ),
         el(
           'span',
@@ -174,6 +205,10 @@ function render() {
 async function load(type) {
   const resp = await fetch(`./data/${type}.json`);
   data = resp.ok ? await resp.json() : null;
+  if (data?.sprites && !Object.keys(tiles).length) {
+    const t = await fetch('./data/tiles.json');
+    tiles = t.ok ? await t.json() : {};
+  }
   document.title = `${NAMES[type] || type}: looks`;
   render();
   if (window.location.hash) document.querySelector(window.location.hash)?.scrollIntoView();

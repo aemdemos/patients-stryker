@@ -48,6 +48,12 @@ const SIZES = opt('--sizes', 'exact');
 const NAME = opt('--name', type);
 const EXTRA = opt('--extra', '');
 const REMOTE_SHOTS = args.includes('--remote-shots');
+// (--sprites: no screenshots of their own; the looks page clips each instance out of its page's
+// full-page tiles, measure.mjs --tiles)
+const SPRITES = args.includes('--sprites');
+const rect = (r) => (r ? [r.left, r.top, (r.right ?? r.left + r.width) - r.left,
+  (r.bottom ?? r.top + r.height) - r.top].map((v) => Math.round(v)) : null);
+const clipOf = (b) => ({ d: rect(b.content || b.box), m: rect(b.phone?.content || b.phone?.box) });
 // (--shots-prefix: a folder of their own for the screenshots, e.g. source/ for the original's,
 // which have the as-is ones' names)
 const SHOTS_PREFIX = opt('--shots-prefix', '') ? `${opt('--shots-prefix').replace(/\/$/, '')}/` : '';
@@ -306,8 +312,11 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     n: b.n,
     classes: b.classes,
     inFragment: b.inFragment,
-    shot: b.shot && b.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`),
-    phoneShot: b.phone?.shot && b.phone.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`),
+    shot: !SPRITES && b.shot ? b.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`) : undefined,
+    // (--sprites: the measured boxes, shown as clips of the page's full-page tiles)
+    ...(SPRITES ? { clip: clipOf(b) } : {}),
+    phoneShot: !SPRITES && b.phone?.shot
+      ? b.phone.shot.replace(/^shots\//, `shots/${SHOTS_PREFIX}`) : undefined,
     counts: b.counts,
     text: b.text,
     ...(b.rows ? { container: b.type, context: [b.inTabs && 'in tabs', b.inAccordion && 'in accordion'].filter(Boolean) } : {}),
@@ -475,6 +484,7 @@ const result = {
   type: NAME,
   blocks: TYPES,
   ...(REMOTE_SHOTS ? { remoteShots: true } : {}),
+  ...(SPRITES ? { sprites: true } : {}),
   generated: new Date().toISOString(),
   sizes: SIZES,
   measuredPages: readdirSync(join(IN, 'pages')).length,

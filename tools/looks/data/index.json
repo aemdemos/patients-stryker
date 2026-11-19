@@ -1,79 +1,9 @@
 {
  "types": [
   {
-   "type": "layouts-source",
-   "instances": 3612,
-   "groups": 326
-  },
-  {
-   "type": "src-standaloneimage",
-   "instances": 2879,
-   "groups": 13
-  },
-  {
-   "type": "src-curatedcta",
-   "instances": 719,
-   "groups": 12
-  },
-  {
-   "type": "src-marketoform",
-   "instances": 543,
-   "groups": 4
-  },
-  {
    "type": "hero-source",
    "instances": 489,
    "groups": 11
-  },
-  {
-   "type": "src-standalonevideo",
-   "instances": 425,
-   "groups": 14
-  },
-  {
-   "type": "src-resourcesanddownload",
-   "instances": 403,
-   "groups": 4
-  },
-  {
-   "type": "src-fullbleedpanel",
-   "instances": 326,
-   "groups": 55
-  },
-  {
-   "type": "src-customizable",
-   "instances": 202,
-   "groups": 6
-  },
-  {
-   "type": "src-experienceFragment",
-   "instances": 196,
-   "groups": 2
-  },
-  {
-   "type": "src-tabs",
-   "instances": 126,
-   "groups": 1
-  },
-  {
-   "type": "src-table",
-   "instances": 72,
-   "groups": 6
-  },
-  {
-   "type": "src-accordion",
-   "instances": 68,
-   "groups": 4
-  },
-  {
-   "type": "src-numbercounter",
-   "instances": 25,
-   "groups": 11
-  },
-  {
-   "type": "text-styles-source",
-   "instances": 6820,
-   "groups": 76
   }
  ]
 }

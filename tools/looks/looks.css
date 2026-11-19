@@ -227,3 +227,27 @@ body {
 .lk-decision {
   color: #1a7f37;
 }
+
+.lk-sprite {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: calc(var(--lk-h, 180px) * var(--r));
+  max-width: 900px;
+  height: var(--lk-h, 180px);
+  border: 1px solid #d0d7de;
+  background: #fff;
+}
+
+.lk-shot .lk-sprite img {
+  position: absolute;
+  top: calc(var(--lk-h, 180px) * var(--ty));
+  left: calc(var(--lk-h, 180px) * var(--tx));
+  width: calc(var(--lk-h, 180px) * var(--tw));
+  max-width: none;
+  height: auto;
+}
+
+.lk-shot:hover .lk-sprite {
+  border-color: #ffb500;
+}

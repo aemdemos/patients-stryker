@@ -28,6 +28,10 @@ const SAMPLES = Number(opt('--samples', 12));
 const COMPONENTS = args.includes('--components');
 const TEXT_TYPES = ['text', 'largeheadline', 'title', 'section-title', 'pageshortdescription'];
 const SHOTS = COMPONENTS ? 'shots/text-source' : 'shots/text';
+// (the original's units as clips of their page's full-page tiles: their measured boxes)
+const rect = (r) => (r ? [r.left, r.top, (r.right ?? r.left + r.width) - r.left,
+  (r.bottom ?? r.top + r.height) - r.top].map((v) => Math.round(v)) : null);
+const clipOf = (u) => ({ d: rect(u.content || u.box), m: rect(u.phone?.content || u.phone?.box) });
 const NAME = opt('--name', COMPONENTS ? 'text-styles-source' : 'text-styles');
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
 const titles = Object.fromEntries(pages.map((p) => [p.path, p.title]));
@@ -101,6 +105,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
             role,
             text: u.text,
             context: contextOf(u),
+            clip: clipOf(u),
           });
         }
       });
@@ -128,10 +133,11 @@ const groups = [...styles.values()].sort((a, c) => c.units - a.units).map((s, i)
     title: titles[x.page] || x.page,
     n: x.n,
     key: x.key,
+    ...(COMPONENTS ? { clip: x.clip } : {}),
     classes: [],
     inFragment: false,
-    shot: `${SHOTS}/${slug(x.page)}__${x.n}-d.jpg`,
-    phoneShot: `${SHOTS}/${slug(x.page)}__${x.n}-m.jpg`,
+    shot: COMPONENTS ? undefined : `${SHOTS}/${slug(x.page)}__${x.n}-d.jpg`,
+    phoneShot: COMPONENTS ? undefined : `${SHOTS}/${slug(x.page)}__${x.n}-m.jpg`,
     text: x.text,
     context: x.context,
   })),
@@ -142,6 +148,7 @@ const result = {
   blocks: ['text'],
   generated: new Date().toISOString(),
   remoteShots: true,
+  ...(COMPONENTS ? { sprites: true } : {}),
   measuredPages: measured,
   instances: unitsTotal,
   groups,

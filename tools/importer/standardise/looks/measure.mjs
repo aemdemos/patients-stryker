@@ -61,6 +61,12 @@ if (COLUMNS) defaultOut = '/tmp/run-outputs/looks-columns';
 if (TEXT) defaultOut = '/tmp/run-outputs/looks-text';
 if (SOURCE) defaultOut = '/tmp/run-outputs/looks-source';
 if (COMPONENTS) defaultOut = '/tmp/run-outputs/looks-components';
+// (--tiles, with --source: full-page screenshots of the saved pages, in tiles (4000 px high on
+// desktop, 8000 on phones), rendered as the measuring left them (every closed tab pane and
+// accordion panel open), so the measured boxes are clips of them: the looks page shows each
+// component as its part of the page's tiles. Into <out>/tiles/<width>/<page>/<n>.jpg + tiles.json)
+const TILES = SOURCE && args.includes('--tiles');
+if (TILES) defaultOut = '/tmp/run-outputs/looks-tiles';
 const out = opt('--out', defaultOut);
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const limit = Number(opt('--limit', 0)) || Infinity;
@@ -1010,6 +1016,68 @@ if (SHOTS_FOR) {
     k += 1;
     if (k % 20 === 0) console.log(`${new Date().toISOString().slice(11, 19)} ${k}/${Object.keys(byPage).length} pages`);
   });
+  await browser.close();
+  process.exit(0);
+}
+
+if (TILES) {
+  const index = {};
+  let k = 0;
+  await inOrder(list, async (path) => {
+    const url = sourceUrlOf(path);
+    if (!url) return;
+    index[path] = {};
+    await inOrder([[1440, 1000, 4000], [375, 800, 8000]], async ([w, hgt, tile]) => {
+      try {
+        await page.setViewportSize({ width: w, height: hgt });
+        await page.goto(url, { waitUntil: 'domcontentloaded' });
+        await settle(page);
+        // the state the measuring left: the original's closed panes and panels open
+        await page.evaluate(() => {
+          document.querySelectorAll('.tab-content').forEach((x) => {
+            if (!x.checkVisibility()) {
+              x.classList.add('default-open');
+              x.style.setProperty('display', 'block', 'important');
+            }
+          });
+          document.querySelectorAll('.panel-collapse.collapse:not(.in)').forEach((x) => {
+            x.classList.add('in');
+            x.style.setProperty('display', 'block', 'important');
+            x.style.setProperty('height', 'auto', 'important');
+          });
+        });
+        await page.waitForTimeout(400);
+        const height = await page.evaluate(() => Math.ceil(document.documentElement.scrollHeight));
+        const dir = join(out, 'tiles', String(w), slug(path));
+        mkdirSync(dir, { recursive: true });
+        const tiles = [];
+        for (let y = 0; y < height; y += tile) tiles.push({ y, h: Math.min(tile, height - y) });
+        await inOrder(tiles, async (t, i) => {
+          await page.screenshot({
+            path: join(dir, `${i}.jpg`),
+            type: 'jpeg',
+            quality: 60,
+            fullPage: true,
+            timeout: 30000,
+            clip: {
+              x: 0, y: t.y, width: w, height: t.h,
+            },
+          });
+        });
+        index[path][w] = {
+          width: w, height, tile, tiles: tiles.length,
+        };
+      } catch (e) {
+        console.log(`${path} ${w}: ${e.message.slice(0, 80)}`);
+      }
+    });
+    k += 1;
+    if (k % 20 === 0) console.log(`${new Date().toISOString().slice(11, 19)} ${k}/${list.length} pages`);
+  });
+  mkdirSync(out, { recursive: true });
+  const file = join(out, `tiles-${process.pid}.json`);
+  writeFileSync(file, JSON.stringify(index));
+  console.log(`done: ${Object.keys(index).length} pages → ${file}`);
   await browser.close();
   process.exit(0);
 }
