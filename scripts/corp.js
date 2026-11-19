@@ -23,6 +23,7 @@ import {
   waitForFirstImage,
 } from './aem.js';
 import { previewDMLinkEditors } from './dm-support.js';
+import previewTextMarkers from './span-markers-canvas.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
@@ -54,6 +55,7 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  previewTextMarkers();
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
     block.classList.replace('hero', 'hero-corp');
     block.closest('.section')?.classList.add('hero-container');

@@ -246,6 +246,12 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) span.text-marker.ts-xl { font-size: var(--corp-font-scale-1-5); }
 :where(body.corp) span.text-marker.ts-xxl { font-size: var(--corp-font-scale-1-75); }
 
+/* Experience Workspace only (span-markers-canvas.js): an editor whose text holds markers is
+   shown as its styled copy until the author clicks it */
+:where(body.corp) main .prosemirror-editor.tm-qe-hidden {
+  display: none;
+}
+
 /* words added in the Block Library sheet panel-options (panel text-style) get the class
    ts-<word>: add one rule here per new word, with a token, e.g. for a new colour "orange":
    :where(body.corp) span.text-marker.ts-orange { --span-color: var(--corp-color-orange); color: var(--span-color); } */
