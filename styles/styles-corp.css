@@ -28,6 +28,7 @@
   --corp-icon-font-family: strykericons;
   --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
+  --corp-shadow-box: 0 0 10px rgb(0 0 0 / 30%); /* source .dimensional-box (text in a shadow frame) */
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
@@ -36,6 +37,7 @@
   --corp-heading-font-size-h1-0-8: 22.4px; /* measured: a 0.8em span in a 28px source h1 (subtitle line) */
   --corp-heading-line-height-h1-0-8: 37.7px; /* measured: that h1's lines, 37.7px apart at every width */
   --corp-font-scale-1-25: 1.25em; /* source span.fontsize-1-25em: 1.25x the text around it (17.5px in 14px copy, 14px in 11.2px small print) */
+  --corp-font-scale-1-5: 1.5em; /* source span.fontsize-1-5em: 1.5x the text around it (21px in 14px copy) */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */

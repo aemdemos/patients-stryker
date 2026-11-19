@@ -393,6 +393,75 @@
   margin-bottom: 0;
 }
 
+/* gray-box: text cards in a light grey box (source .bg-light-gray text components in a 4-column
+   control, e.g. the CLOUT results list): 1 per row, 2 from 600px, 4 from 900px. The box padding
+   is 5% of the box width at the top and sides (container units of the card), 10px at the foot;
+   the first paragraph is the 1.5x title, the link sits at the foot of every box of a row.
+   white-box: an image over text in a shadow frame (source .dimensional-box, e.g. the CLOUT
+   objective / design boxes): 1 per row, 2 from 600px, 3 from 900px; the frame is pulled up
+   over the image by 10% of its width, with 7% / 5% / 3% padding, a purple 1.5x Futura
+   title and 1.25x labels over nested lists. */
+.cards-corp:is(.gray-box, .white-box) > ul {
+  row-gap: var(--space-block-s);
+}
+
+.cards-corp:is(.gray-box, .white-box) > ul > li {
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+}
+
+.cards-corp.gray-box :where(.cards-corp-card-body) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 5cqi 5cqi var(--space-block-s);
+  background-color: var(--color-surface);
+}
+
+.cards-corp:is(.gray-box, .white-box) .cards-corp-card-body :where(p) {
+  margin: 0 0 var(--space-block);
+}
+
+.cards-corp:is(.gray-box, .white-box) .cards-corp-card-body > :where(p:first-child) {
+  font-size: var(--corp-font-scale-1-5);
+  line-height: var(--heading-line-height);
+}
+
+.cards-corp.gray-box .cards-corp-card-body > :where(p:last-child:not(:first-child)) {
+  margin-top: auto;
+}
+
+.cards-corp.white-box .cards-corp-card-image img {
+  margin-bottom: 0;
+}
+
+.cards-corp.gray-box .cards-corp-card-body > :where(p:first-child) :where(strong, b) {
+  font-family: inherit;
+}
+
+.cards-corp.white-box .cards-corp-card-body :where(li > p) {
+  margin: 0;
+  font-size: var(--corp-font-scale-1-25);
+  line-height: var(--heading-line-height-h4);
+}
+
+.cards-corp.white-box :where(.cards-corp-card-body) {
+  margin: calc(var(--space-block-l) - 10cqi) 0 var(--space-block-s);
+  padding: 7cqi 5cqi 3cqi;
+  box-shadow: var(--corp-shadow-box);
+}
+
+.cards-corp.white-box .cards-corp-card-body > :where(p:first-child) {
+  color: var(--color-purple);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+.cards-corp.white-box .cards-corp-card-body > :where(ul) {
+  margin: 0 0 var(--space-block);
+}
+
 @media (width >= 600px) {
   .cards-corp.people {
     margin-top: calc(var(--space-section) + var(--space-block));
@@ -515,5 +584,28 @@
 
   .cards-corp.five-up > ul {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 600px) {
+  .cards-corp:is(.gray-box, .white-box) > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* the source's 30px component gap from 841px (20px on phones), less the 10% pull */
+  .cards-corp.white-box :where(.cards-corp-card-body) {
+    margin-top: calc(var(--space-section) - 10cqi);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-corp.gray-box > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: calc(var(--space-block-s) + var(--space-section));
+  }
+
+  .cards-corp.white-box > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
   }
 }
