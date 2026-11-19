@@ -188,7 +188,7 @@ header.header-corp-wrapper {
   padding: 0;
   border: 0;
   background: none;
-  color: var(--color-primary);
+  color: var(--color-black); /* black below 900px; teal from 900px (below) */
   font-size: 20px;
   line-height: 34px;
   text-align: start; /* live: the glyph sits at the box's left edge */
@@ -410,7 +410,7 @@ body.hcp-banner .header-corp .hcp-band {
 
 .header-corp .secondary-nav .back {
   display: block;
-  padding: var(--space-block-l) var(--space-block) var(--space-block-l) var(--space-inset-l);
+  padding: var(--space-block-l) var(--space-block);
   border-bottom: 1px solid var(--color-white);
   background: var(--color-secondary);
   color: var(--color-white);
@@ -482,6 +482,7 @@ body.hcp-banner .header-corp .hcp-band {
 
   .header-corp .search-submit {
     display: block;
+    color: var(--color-primary);
   }
 
   .header-corp .language-country-select {
