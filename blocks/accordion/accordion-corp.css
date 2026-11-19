@@ -79,3 +79,9 @@ body.corp .accordion.divided .accordion-item-label {
 body.corp .accordion.divided .accordion-item-open .accordion-item-label {
   border-bottom: 0;
 }
+
+/* an open panel keeps a paragraph gap and its own rule above the next item (stryker.com) */
+body.corp .accordion.divided .accordion-item-open .accordion-item-body {
+  padding-bottom: var(--space-block);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
