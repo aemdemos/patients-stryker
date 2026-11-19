@@ -1819,24 +1819,12 @@ export default function transform(hookName, element, payload) {
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const lead = boxed ? headlineNodes(headline, doc) : [];
     if (boxed && !lead.length) return false;
-    const firstLine = headline.querySelector('.line') || headline;
-    const big = firstLine.querySelector('[class*="fontsize-2vw"]')
-      || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-    // a statement the source sets as a Heading 3 in a 2vw span (the Egyptienne Large
-    // Headline, e.g. the StrykerTalks "Stryker's Pierce shares how our latest digital
-    // innovations help…" page) stays a Heading 3, in italic (the news Egyptienne heading),
-    // in a plain `video-text` section, sized by the news-video theme; a 2vw statement set
-    // any other way is a Heading 2 at the Large Headline sizes (headline-1-5vw)
-    // (headlineNodes returns paragraphs: the source heading is read from the component). The
-    // same statement typed as an Egyptienne span instead of a heading (span.urw-egyptienne
-    // around span.fontsize-2vw, e.g. "Endoscopy's Rosales shares how we continue innovating…")
-    // looks the same on the source and imports the same: the Pierce page is the
-    // representative of these StrykerTalks pages
-    const sourceH3 = headline.querySelector('h3');
-    const serif2vw = [...headline.querySelectorAll('.urw-egyptienne')]
-      .find((span) => span.querySelector('[class*="fontsize-2vw"]') || span.closest('[class*="fontsize-2vw"]'));
-    const statementSource = (sourceH3 && sourceH3.querySelector('[class*="fontsize-2vw"]') && sourceH3) || serif2vw;
-    const h3Statement = boxed && lead.length > 0 && !!statementSource && text(statementSource) === text(lead[0]);
+    // the grey-box statement beside the video follows the representative StrykerTalks page
+    // ("Stryker's Pierce shares how our latest digital innovations help…"), whatever the
+    // source's heading level or size (2vw H3, Egyptienne span, 1.5vw H2): a Heading 3 in
+    // italic (the news Egyptienne heading) in a plain `video-text` section, sized by the
+    // news-video theme
+    const h3Statement = boxed && lead.length > 0;
     let statement = lead;
     if (h3Statement) {
       const h3 = rename(lead[0], 'h3');
@@ -1846,8 +1834,6 @@ export default function transform(hookName, element, payload) {
         h3.append(em);
       }
       statement = [h3, ...lead.slice(1)];
-    } else if (big && lead.length) {
-      statement = [rename(lead[0], 'h2'), ...lead.slice(1)];
     }
     const nodes = [
       ...statement,
@@ -2249,6 +2235,26 @@ export default function transform(hookName, element, payload) {
       if (videoRichTextRow(component)) return;
       // a video with article text in the other half of the row: Columns (columns-50-50)
       const textAside = videoTextAside(component);
+      // …in a light-grey box (e.g. Kevin on the InsideOut podcast): the representative
+      // StrykerTalks structure — the Video block, the text as an italic Heading 3 in a plain
+      // `video-text` section (light-gray), theme `full-width, news-video`
+      const boxedText = textAside && textAside.querySelector('.has-background, [class*="bg-light-gray"]')
+        && richTextNodes(textAside, doc).nodes;
+      if (boxedText && boxedText.length) {
+        consumed.add(textAside.closest(COMPONENTS) || textAside);
+        const h3 = rename(boxedText[0], 'h3');
+        if (!h3.querySelector('em')) {
+          const em = doc.createElement('em');
+          em.append(...h3.childNodes);
+          h3.append(em);
+        }
+        element.setAttribute('data-news-theme', 'full-width, news-video');
+        const section = startSection('video-text', 'video-text');
+        section.background = 'light-gray';
+        section.nodes.push(component, h3, ...boxedText.slice(1));
+        current = null;
+        return;
+      }
       const textColumns = textAside && videoTextColumns(component, textAside, doc);
       if (textColumns) {
         consumed.add(textAside.closest(COMPONENTS) || textAside);

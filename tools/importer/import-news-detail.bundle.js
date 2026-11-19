@@ -2030,12 +2030,7 @@ var CustomImportScript = (() => {
       const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
       const lead = boxed ? headlineNodes(headline2, doc) : [];
       if (boxed && !lead.length) return false;
-      const firstLine = headline2.querySelector(".line") || headline2;
-      const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-      const sourceH3 = headline2.querySelector("h3");
-      const serif2vw = [...headline2.querySelectorAll(".urw-egyptienne")].find((span) => span.querySelector('[class*="fontsize-2vw"]') || span.closest('[class*="fontsize-2vw"]'));
-      const statementSource = sourceH3 && sourceH3.querySelector('[class*="fontsize-2vw"]') && sourceH3 || serif2vw;
-      const h3Statement = boxed && lead.length > 0 && !!statementSource && text2(statementSource) === text2(lead[0]);
+      const h3Statement = boxed && lead.length > 0;
       let statement = lead;
       if (h3Statement) {
         const h3 = rename(lead[0], "h3");
@@ -2045,8 +2040,6 @@ var CustomImportScript = (() => {
           h3.append(em);
         }
         statement = [h3, ...lead.slice(1)];
-      } else if (big && lead.length) {
-        statement = [rename(lead[0], "h2"), ...lead.slice(1)];
       }
       const nodes = [
         ...statement,
@@ -2366,6 +2359,22 @@ var CustomImportScript = (() => {
         if (videoRowColumns(component)) return;
         if (videoRichTextRow(component)) return;
         const textAside = videoTextAside(component);
+        const boxedText = textAside && textAside.querySelector('.has-background, [class*="bg-light-gray"]') && richTextNodes(textAside, doc).nodes;
+        if (boxedText && boxedText.length) {
+          consumed.add(textAside.closest(COMPONENTS) || textAside);
+          const h3 = rename(boxedText[0], "h3");
+          if (!h3.querySelector("em")) {
+            const em = doc.createElement("em");
+            em.append(...h3.childNodes);
+            h3.append(em);
+          }
+          element.setAttribute("data-news-theme", "full-width, news-video");
+          const section = startSection("video-text", "video-text");
+          section.background = "light-gray";
+          section.nodes.push(component, h3, ...boxedText.slice(1));
+          current = null;
+          return;
+        }
         const textColumns = textAside && videoTextColumns(component, textAside, doc);
         if (textColumns) {
           consumed.add(textAside.closest(COMPONENTS) || textAside);
