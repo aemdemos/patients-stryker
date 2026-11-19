@@ -124,7 +124,7 @@ header.header-corp-wrapper {
   margin-top: 8px;
   font-size: 20px;
   line-height: 32px;
-  color: var(--color-primary);
+  color: var(--color-black); /* black below 900px; teal from 900px (below) */
 }
 
 .header-corp .icon-search::before {
@@ -445,6 +445,10 @@ body.hcp-banner .header-corp .hcp-band {
   .header-corp .menu-btn,
   .header-corp .search-btn {
     display: none;
+  }
+
+  .header-corp .search-toggle {
+    color: var(--color-primary);
   }
 
   .header-corp .logo {
