@@ -561,7 +561,6 @@ body.news-detail.news-video main > .section.video-text.light-gray > .video-wrapp
   padding: var(--space-block-l) var(--space-block-l) calc(var(--space-block-l) + var(--space-block));
   background-color: var(--color-surface);
   font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
-  line-height: var(--heading-line-height-hero);
 }
 
 @media (width >= 600px) {
