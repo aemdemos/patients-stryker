@@ -846,8 +846,28 @@ body.news-detail.sustainability main > .section > .default-content-wrapper > ol:
   margin-bottom: var(--space-block);
 }
 
+/* - the separator before the shared "Connect with us" band (an empty `separator` section:
+     the rule is its top edge, mix-width) sits as the press releases' rule does (stryker.com,
+     e.g. the Vocera acquisition release: 52px below the text at every width; the band
+     starts 21px below the rule, 51px from 600px on the supply chain week article): a 50px
+     top margin, which takes in the 15px gap of the section above (the margins collapse),
+     then no padding and no empty content box, and 20px (50px from 600px) to the band */
+body.news-detail.sustainability main > .section.separator:has(> div:only-child:empty) {
+  margin-top: calc(2 * var(--space-block) + var(--space-block-l));
+  margin-bottom: var(--space-block-l);
+  padding-top: 0;
+}
+
+body.news-detail.sustainability main > .section.separator > div:only-child:empty {
+  display: none;
+}
+
 @media (width >= 600px) {
   body.news-detail.sustainability main > .section > .default-content-wrapper > ol:only-child {
     padding-top: calc(var(--corp-blank-line) - var(--space-section));
+  }
+
+  body.news-detail.sustainability main > .section.separator:has(> div:only-child:empty) {
+    margin-bottom: var(--space-section-l);
   }
 }
