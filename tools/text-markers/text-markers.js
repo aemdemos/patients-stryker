@@ -290,6 +290,9 @@ async function readSelection() {
   }
 }
 
+// the markers as authors see them in the document text
+const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
+
 /**
  * Whether the selection can be rewritten as plain text without losing anything: no links or
  * line breaks, and any bold / italic covering all of it.
@@ -303,8 +306,11 @@ function analyseSelection(inner) {
   if (line.querySelector('a, br, img')) return { text, ok: false };
   const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
   const formats = new Set();
+  let markersApart = false;
   while (walker.nextNode()) {
-    if (walker.currentNode.textContent.trim()) {
+    const markersOnly = !walker.currentNode.textContent.replace(MARKER_TEXT, '').trim();
+    if (markersOnly && walker.currentNode.textContent.trim()) markersApart = true;
+    if (!markersOnly) {
       const marks = [];
       let node = walker.currentNode.parentElement;
       while (node && node !== line) {
@@ -314,11 +320,8 @@ function analyseSelection(inner) {
       formats.add(marks.sort().join(','));
     }
   }
-  return { text, ok: formats.size <= 1 };
+  return { text, ok: formats.size <= 1, markersApart };
 }
-
-// the markers as authors see them in the document text
-const MARKER_TEXT = /:(?:start-[a-z0-9-]+|end):/g;
 
 // the document, when the editor shares it (Experience Workspace's live document)
 let liveHtml = '';
@@ -452,8 +455,13 @@ function markInTarget(target, find, words, marker) {
  * @param {string} marker The start marker
  * @returns {Promise<boolean>} true when the canvas took the change
  */
-async function replaceInLive(find, words, marker) {
-  if (!liveHtml || !liveEditable || sdk.capabilities?.sendHTMLReplace !== 1) return false;
+/**
+ * The live document and the element a replace targets: the block holding the cursor, or
+ * outside blocks the one paragraph / heading / list whose text holds `find`.
+ * @returns {{html: string, blockIndex: number|null, target: Element}|null}
+ */
+function liveTarget(find) {
+  if (!liveHtml || !liveEditable || sdk.capabilities?.sendHTMLReplace !== 1) return null;
   const html = liveHtml;
   const blockIndex = liveBlockIndex;
   const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -467,7 +475,23 @@ async function replaceInLive(find, words, marker) {
       .filter((l) => l.textContent.includes(find));
     if (lines.length === 1) [target] = lines;
   }
-  if (!target || !markInTarget(target, find, words, marker)) return false;
+  return target ? { html, blockIndex, target } : null;
+}
+
+/** the text node and offset at a character position of an element's text */
+function textAt(root, pos) {
+  const walker = root.ownerDocument.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let start = 0;
+  while (walker.nextNode()) {
+    const { length } = walker.currentNode.textContent;
+    if (pos < start + length) return { node: walker.currentNode, offset: pos - start };
+    start += length;
+  }
+  return null;
+}
+
+/** sends the changed target as a guarded replace; true when the canvas took it */
+async function sendLive({ html, blockIndex, target }) {
   let result;
   try {
     const expected = { html, blockIndex };
@@ -481,6 +505,35 @@ async function replaceInLive(find, words, marker) {
     liveText = new DOMParser().parseFromString(liveHtml, 'text/html').body.textContent;
   }
   return true;
+}
+
+/**
+ * A restyle through the live document: only the start marker of the styled run changes, so
+ * the words keep their formatting wherever the old markers sit (inside or outside it).
+ * @param {string} oldName The marker words of the current style
+ * @param {string} words The styled words, or '' when only the start marker is selected
+ * @param {string} marker The new start marker
+ * @returns {Promise<boolean>} true when the canvas took the change
+ */
+async function swapInLive(oldName, words, marker) {
+  const oldMarker = `:start-${oldName}:`;
+  const run = words ? `${oldMarker}${words}${END_MARKER}` : oldMarker;
+  const live = liveTarget(run);
+  if (!live) return false;
+  const text = live.target.textContent;
+  const pos = text.indexOf(run);
+  if (pos < 0 || text.indexOf(run, pos + 1) >= 0) return false;
+  const hit = textAt(live.target, pos);
+  if (!hit || !hit.node.textContent.startsWith(oldMarker, hit.offset)) return false;
+  const value = hit.node.textContent;
+  hit.node.textContent = `${value.slice(0, hit.offset)}${marker}${value.slice(hit.offset + oldMarker.length)}`;
+  return sendLive(live);
+}
+
+async function replaceInLive(find, words, marker) {
+  const live = liveTarget(find);
+  if (!live || !markInTarget(live.target, find, words, marker)) return false;
+  return sendLive(live);
 }
 
 async function applyToSelection() {
@@ -498,7 +551,7 @@ async function applyToSelection() {
     moreOptions.open = true;
     return;
   }
-  const { text, ok } = analyseSelection(inner);
+  const { text, ok, markersApart } = analyseSelection(inner);
   if (!ok) {
     setStatus('The selection has a link, a line break or mixed formatting, which rewriting it would lose. Use “Insert start” before the words and “Insert end” after them instead (More options).', 'error');
     moreOptions.open = true;
@@ -507,16 +560,45 @@ async function applyToSelection() {
   // a restyle: the selection includes the old markers, which the new ones replace
   const old = text.match(/:start-([a-z0-9-]+):/);
   const words = text.replace(MARKER_TEXT, '');
+  const done = (from) => {
+    setStatus(`Changed the style${words.trim() ? ` of “${words.trim()}”` : ''} from :start-${from}: to ${marker}`, 'ok');
+    previewLine = null;
+    previewBlock = null;
+    lastSelection = '';
+    updatePreview();
+  };
+  // only the start marker selected: it is swapped for the new one
+  if (old && !words.trim() && /^\s*:start-[a-z0-9-]+:\s*$/.test(text)) {
+    if (!(await swapInLive(old[1], '', marker))) sdk.actions.sendText(marker);
+    done(old[1]);
+    return;
+  }
   if (!words.trim()) {
     setStatus('Only markers are selected. Select the words too.', 'error');
     return;
   }
-  // the words alone, but already inside markers on the page: wrapping them again would
-  // stack a second style on the first, so ask for the markers to be selected too
+  // the words alone, but already inside markers on the page: in Experience Workspace their
+  // start marker is swapped; elsewhere wrapping them again would stack a second style
   const around = !old && styleAround(words, await documentText());
   if (around) {
+    if (await swapInLive(around, words, marker)) {
+      done(around);
+      return;
+    }
     setStatus(`These words already have the style :start-${around}:. To change it, select them together with their markers — from “:start-${around}:” to “:end:” — then click again.`, 'error');
     return;
+  }
+  if (old) {
+    if (await swapInLive(old[1], words, marker)) {
+      done(old[1]);
+      return;
+    }
+    // markers outside the words' bold / italic: typing over the run would drop that
+    // formatting, so only the start marker is swapped
+    if (markersApart) {
+      setStatus(`To change this style, select only its start marker “:start-${old[1]}:”, then click again.`, 'error');
+      return;
+    }
   }
   // Experience Workspace: a guarded replace of the block / line, so the canvas re-renders;
   // otherwise plain text replaces the selection inside its line (HTML would be inserted as a

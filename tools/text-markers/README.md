@@ -82,6 +82,10 @@ shows the name with a capital, "orange" → "Orange"):
 - Top and bottom spacing applies when the whole line is styled; inside a line only left
   and right spacing show.
 - Bold and italic stay normal editor formatting, not marker words.
+- **Changing a style:** select the styled words (with or without their markers) and pick the new
+  style. In Experience Workspace only the start marker is swapped, so bold / italic stays. In
+  the DA editor, select just the start marker (e.g. `:start-gold:`) when the markers sit outside
+  the bold / italic; the panel says so.
 - Type markers as plain text: don't apply code formatting to them. Code-formatted markers are
   not read and would show as text on the page.
 - In hero-corp image-slides the text size comes from the section styles
