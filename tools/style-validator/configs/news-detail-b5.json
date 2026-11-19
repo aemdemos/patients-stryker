@@ -1,0 +1,72 @@
+{
+  "_comment": "Corp news-detail batch (police AEDs, LUCAS, Following, Ease, Women's network). Migrated pages are the local test copies (port 3001, /qa mount) whose fragment links point at the new local fragments.",
+  "previewBase": "http://localhost:3001",
+  "excludeContexts": [
+    "marketo-form"
+  ],
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [
+    390,
+    1200
+  ],
+  "blockClasses": [
+    "hero-corp",
+    "columns",
+    "cards-corp",
+    "fragment",
+    "video",
+    "panel",
+    "accordion"
+  ],
+  "variantClasses": [
+    "image-slide",
+    "gold-box",
+    "text-below",
+    "icon-text",
+    "product-tiles",
+    "media-pair",
+    "columns-50-50",
+    "columns-33-67",
+    "columns-67-33",
+    "teaser",
+    "three-up",
+    "two-up"
+  ],
+  "importScript": null,
+  "fontFamilyAliases": {
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab",
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Egyptienne for Stryker Light": "egyptienne-light",
+    "URWEgyptienneW01-Light": "egyptienne-light"
+  },
+  "pairs": [
+    {
+      "name": "stryker-womens-network-intl-womens-day-s",
+      "source": "https://www.stryker.com/us/en/sage/news/2024/stryker-womens-network-intl-womens-day-sage.html",
+      "migrated": "/qa/b5-stryker-womens-network-intl-womens-day-saged"
+    },
+    {
+      "name": "following-in-her-mother-s-footsteps",
+      "source": "https://www.stryker.com/us/en/about/news/2021/following-in-her-mother-s-footsteps.html",
+      "migrated": "/qa/b5-following-in-her-mother-s-footstepsd"
+    },
+    {
+      "name": "enhancing-hospital-communication-patient",
+      "source": "https://www.stryker.com/us/en/smart-care/news/enhancing-hospital-communication-patient-family-satisfaction.html",
+      "migrated": "/qa/b5-enhancing-hospital-communication-patient-family-satisfactiond"
+    },
+    {
+      "name": "why-all-police-cars-need-automated-exter",
+      "source": "https://www.stryker.com/us/en/emergency-care/news/2022/why-all-police-cars-need-automated-external-defibrillator.html",
+      "migrated": "/qa/b5-why-all-police-cars-need-automated-external-defibrillatord"
+    },
+    {
+      "name": "understanding-the-basics-of-a-lucas-ches",
+      "source": "https://www.stryker.com/us/en/emergency-care/news/2023/understanding-the-basics-of-a-lucas-chest-compression-system.html",
+      "migrated": "/qa/b5-understanding-the-basics-of-a-lucas-chest-compression-systemd"
+    }
+  ]
+}

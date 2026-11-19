@@ -1,0 +1,78 @@
+{
+  "_comment": "Corp news-detail batch b29 (6 pages with article-body fragments: iSuite, 80 years together, Putting people first, Mako 500,000+, Some people say, Packaging). Migrated pages are the local test copies (port 3001, /qa mount) whose fragment links point at the local fragment copies; they match the published DA content and render with the uncommitted branch CSS.",
+  "previewBase": "http://localhost:3001",
+  "excludeContexts": [
+    "marketo-form"
+  ],
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [
+    390,
+    1200
+  ],
+  "blockClasses": [
+    "hero-corp",
+    "columns",
+    "cards-corp",
+    "fragment",
+    "video",
+    "panel",
+    "accordion"
+  ],
+  "variantClasses": [
+    "image-slide",
+    "gold-box",
+    "text-below",
+    "icon-text",
+    "product-tiles",
+    "media-pair",
+    "columns-50-50",
+    "columns-33-67",
+    "columns-67-33",
+    "teaser",
+    "three-up",
+    "two-up",
+    "white-box"
+  ],
+  "importScript": null,
+  "fontFamilyAliases": {
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab",
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Egyptienne for Stryker Light": "egyptienne-light",
+    "URWEgyptienneW01-Light": "egyptienne-light"
+  },
+  "pairs": [
+    {
+      "name": "isuite",
+      "source": "https://www.stryker.com/us/en/communications/news/2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite.html",
+      "migrated": "/qa/b29-isuited"
+    },
+    {
+      "name": "80-years",
+      "source": "https://www.stryker.com/us/en/about/news/features/80-years-together.html",
+      "migrated": "/qa/b29-80-yearsd"
+    },
+    {
+      "name": "putting",
+      "source": "https://www.stryker.com/us/en/about/news/features/putting-people-first-how-stryker-supports-worldwide-disaster-relief-efforts.html",
+      "migrated": "/qa/b29-puttingd"
+    },
+    {
+      "name": "mako",
+      "source": "https://www.stryker.com/us/en/about/news/features/mako-smartrobotics--hits-500-000--procedures.html",
+      "migrated": "/qa/b29-makod"
+    },
+    {
+      "name": "some-people",
+      "source": "https://www.stryker.com/us/en/about/news/2021/some-people-say-they-d-give-you-their-kidney--this-nurse-meant-i.html",
+      "migrated": "/qa/b29-some-peopled"
+    },
+    {
+      "name": "packaging",
+      "source": "https://www.stryker.com/us/en/about/news/features/packaging-for-a-better-planet.html",
+      "migrated": "/qa/b29-packagingd"
+    }
+  ]
+}

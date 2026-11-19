@@ -89,7 +89,6 @@ header.header-corp-wrapper {
   padding: 0;
   border: 0;
   background: none;
-  outline: 0;
   cursor: pointer;
 }
 
@@ -133,8 +132,6 @@ header.header-corp-wrapper {
   font-family: var(--corp-icon-font-family);
   font-style: normal;
   font-weight: 400;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
 }
 
 .header-corp .utility-links {
@@ -167,7 +164,7 @@ header.header-corp-wrapper {
   height: 40px;
   padding: 8px 11px;
   border: 0;
-  outline: 0;
+  outline: 0; /* as on www.stryker.com: no ring on the search box, focused it shows its text cursor */
   color: var(--color-surface-muted);
   background: var(--color-surface);
   font: inherit;
@@ -194,7 +191,7 @@ header.header-corp-wrapper {
   color: var(--color-primary);
   font-size: 20px;
   line-height: 34px;
-  text-align: center;
+  text-align: start; /* live: the glyph sits at the box's left edge */
   cursor: pointer;
 }
 
@@ -208,6 +205,11 @@ header.header-corp-wrapper {
   clear: right;
   margin: -20px 0 var(--space-block) var(--space-block-xs);
   padding-top: 0;
+  line-height: var(--body-line-height); /* live 14px/20px, 17.14px on the 12px label */
+}
+
+.header-corp .language-country-select p {
+  line-height: inherit;
 }
 
 .header-corp .language-country-select a:any-link {
@@ -354,7 +356,6 @@ body.hcp-banner .header-corp .hcp-band {
 .header-corp .secondary-nav li.label {
   display: block;
   padding: var(--space-block-l) var(--space-inset-l) var(--space-block-l) var(--space-block);
-  outline: 0;
   color: var(--color-black);
   font-family: var(--display-font-family);
   font-weight: 400;
@@ -517,7 +518,10 @@ body.hcp-banner .header-corp .hcp-band {
     padding: 0 var(--space-block-xs);
   }
 
+  /* inline-block wraps the floated .text, so the link has a box for its focus ring */
   .header-corp .utility-links a:any-link {
+    display: inline-block;
+    vertical-align: top;
     color: var(--color-black);
   }
 
@@ -657,4 +661,24 @@ body.hcp-banner .header-corp .hcp-band {
   .header-corp .secondary-nav li.label {
     font-size: var(--body-font-size-m);
   }
+}
+
+/* ---- keyboard focus ---- */
+
+/* keyboard focus: every header link and button shows a ring while it has keyboard focus (mouse
+   clicks don't; the search box has none, see .search-control). Drawn inside the box, so the clipped drawer, gold bar and fly-outs don't cut it off,
+   in the control's text colour, so it shows on white, gold, grey and the dark open item alike */
+.header-corp :is(a, button):focus-visible {
+  outline: var(--corp-focus-ring) solid currentcolor;
+  outline-offset: calc(-1 * var(--corp-focus-ring));
+}
+
+/* the globe link is a zero-width box around its floated icon, and the logo link the 24px icon
+   box its wider image overflows: their focus ring goes on the image */
+.header-corp :is(.locale-icon, .logo a):focus-visible {
+  outline: 0;
+}
+
+.header-corp :is(.locale-icon, .logo a):focus-visible img {
+  outline: var(--corp-focus-ring) solid currentcolor;
 }

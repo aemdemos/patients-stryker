@@ -1,9 +1,96 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
+import decorateMapLinks from '../../scripts/map-embed.js';
+
+// YouTube link signatures (watch, short youtu.be and nocookie embeds)
+const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
+
+/**
+ * Extracts the 11-character video id from a YouTube URL (watch?v=, youtu.be/ID,
+ * /embed/ID, /shorts/ID).
+ * @param {string} href the authored YouTube URL
+ * @returns {string} the id, or '' when there is none
+ */
+function youTubeId(href) {
+  try {
+    const url = new URL(href, window.location.href);
+    if (url.searchParams.get('v')) return url.searchParams.get('v');
+    const m = url.pathname.match(/\/(?:embed|shorts|v)\/([\w-]{11})|^\/([\w-]{11})$/);
+    return (m && (m[1] || m[2])) || '';
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Renders a YouTube link that stands alone in its paragraph as a 16:9 nocookie player,
+ * the embed the video block uses (blocks cannot nest, so columns renders its own).
+ * Descriptive link text becomes the player title.
+ * @param {Element} block The columns block
+ */
+function decorateYouTube(block) {
+  block.querySelectorAll('p > a[href]').forEach((a) => {
+    const p = a.parentElement;
+    const text = a.textContent.trim();
+    if (!YOUTUBE.test(a.href) || p.textContent.trim() !== text) return;
+    const id = youTubeId(a.href);
+    if (!id) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'columns-youtube';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+    iframe.title = /^https?:\/\//i.test(text) ? 'YouTube video player' : text;
+    iframe.loading = 'lazy';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    wrapper.append(iframe);
+    p.replaceWith(wrapper);
+  });
+}
+
+// the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
+// box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
+const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark)-lead)\b/;
+const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
+
+/**
+ * Box variants: the boxed part of a cell, its text below any image or video it opens with
+ * (or, for `-lead`, its first line of text), goes in a div.columns-box, as the source's
+ * coloured text box. Cells without text are left as they are.
+ * @param {Element} block The columns block
+ */
+function decorateBoxes(block) {
+  const match = block.className.match(BOX_VARIANT);
+  if (!match) return;
+  const variant = match[0];
+  [...block.children].forEach((row) => {
+    const cells = [...row.children];
+    let targets = cells;
+    if (variant.endsWith('-last')) targets = cells.slice(-1);
+    else if (variant.endsWith('-2')) targets = cells.slice(1, 2);
+    targets.filter((cell) => cell.textContent.trim()).forEach((cell) => {
+      const content = [...cell.children];
+      const start = content.findIndex((el) => !el.matches(MEDIA) && el.textContent.trim());
+      if (start < 0) return;
+      // the box ends at the next image or video (jr45: the "Watch …" box above the episode video)
+      const isMedia = (el) => el.matches(MEDIA) || !!el.querySelector(MEDIA);
+      const end = content.findIndex((el, i) => i > start && isMedia(el));
+      const nodes = variant.endsWith('-lead') ? [content[start]] : content.slice(start, end < 0 ? undefined : end);
+      const box = document.createElement('div');
+      box.className = 'columns-box';
+      nodes[0].before(box);
+      box.append(...nodes);
+    });
+  });
+}
 
 export default function decorate(block) {
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);
+  decorateYouTube(block);
+  // a lone Google Maps link (e.g. contact info | map) becomes an embedded map
+  decorateMapLinks(block);
 
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
@@ -80,6 +167,55 @@ export default function decorate(block) {
           picWrapper.classList.add('columns-img-col');
         }
       }
+
+      // media-pair: each image sits in its own paragraph, and a link alone on the line
+      // after it makes the image clickable (DM image links can't also carry the page
+      // href); the link text becomes the image link's name and the text line goes
+      if (block.classList.contains('media-pair')) {
+        col.querySelectorAll(':scope > p').forEach((p) => {
+          const picture = p.querySelector(':scope > picture');
+          if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+          p.classList.add('columns-img-col');
+          const next = p.nextElementSibling;
+          const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+          if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+          const a = document.createElement('a');
+          a.href = link.href;
+          if (link.target) a.target = link.target;
+          if (link.rel) a.rel = link.rel;
+          a.setAttribute('aria-label', link.textContent.trim());
+          a.append(picture);
+          p.append(a);
+          next.remove();
+        });
+      }
+
+      // fully Bold paragraphs (labels, questions) and Heading 1/2s are tagged so styles can
+      // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot
+      col.querySelectorAll('p, h1, h2').forEach((el) => {
+        const strong = el.querySelector(':scope > strong:only-child');
+        if (strong && strong.textContent.trim() === el.textContent.trim()) {
+          el.classList.add('columns-bold');
+        }
+      });
+
+      // Headings in one font: fully gold (Bold + Italic) Heading 1/2, or a Heading 1 with a
+      // gold number alone on its first line (gold part, then a line break) - styles give
+      // these their own line spacing and sizing
+      col.querySelectorAll('h1, h2').forEach((heading) => {
+        const first = heading.firstElementChild;
+        const gold = first && first.matches('em, strong')
+          && first.querySelector(':scope > :is(em, strong):only-child');
+        const text = heading.textContent.trim();
+        if (!gold || !text.startsWith(first.textContent.trim())) return;
+        if (heading.children.length === 1 && first.textContent.trim() === text) {
+          heading.classList.add('columns-gold');
+        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR') {
+          heading.classList.add('columns-number');
+        }
+      });
     });
   });
+
+  decorateBoxes(block);
 }

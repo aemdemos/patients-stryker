@@ -1,0 +1,69 @@
+/* contact-division — corp division contact pages (`template: contact-division`, #509), e.g.
+   /us/en/acute-care/contact, /us/en/ent/ent, /us/en/sage/sage.
+
+   Measured on the stryker.com c-contactus component (acute-care, emergency-care,
+   trauma-and-extremities, sage) at 375 / 1000 / 1440:
+   - H1: Futura bold from 600px (source 841px), the light serif on phones; 30px above the
+     "Contact us" heading (15px H1 margin + 15px component margin) at every width
+   - the contact column (first cell of the Columns block) starts 15px below the "Contact us"
+     heading, without the first-section padding
+   - H3 group titles (Address, Customer support…): Futura bold; each group after the first
+     starts 20px (phones) / 30px (from 600px) below the one above it
+   - H4 labels (Toll free, Fax, Email…): bold, 14px Humanist on phones, 17.5px Futura from
+     600px, 14px above the label and its value line right under it (source margin 14px / 1px)
+   - value paragraphs follow each other without a gap (source 19.25px line pitch)
+   The map embed (scripts/map-embed.js) and the form beside the intro text (`flex-33-67`) come
+   from the shared Columns and section styles, not this template. */
+
+body.contact-division main h1 {
+  margin-bottom: var(--space-section);
+}
+
+body.contact-division main > .section > .default-content-wrapper:has(+ .columns-wrapper .map-embed) {
+  padding-bottom: 0;
+}
+
+body.contact-division main .columns:has(.map-embed) > div > div:first-child {
+  padding-bottom: var(--space-block-l);
+}
+
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > p {
+  margin-bottom: 0;
+}
+
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > h3 {
+  margin-top: var(--space-block-l);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > h4 {
+  margin: var(--space-block) 0 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+body.contact-division main .columns:has(.map-embed) > div > div:first-child > :is(h3, h4):first-child {
+  margin-top: 0;
+}
+
+@media (width >= 600px) {
+  body.contact-division main h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child {
+    padding-bottom: var(--space-section);
+  }
+
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child > h3 {
+    margin-top: var(--space-section);
+  }
+
+  body.contact-division main .columns:has(.map-embed) > div > div:first-child > h4 {
+    font-family: var(--display-font-family);
+    font-size: var(--heading-font-size-m);
+  }
+}

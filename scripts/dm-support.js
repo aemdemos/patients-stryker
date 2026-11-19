@@ -424,10 +424,12 @@ export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
   let poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
-  // a poster URL with its own query (`…/image?fit=constrain,1&wid=909&hei=511`) is
-  // authored unencoded, so its `&wid…` params split off as video params: when the
-  // poster value has a `?`, everything after `poster=` belongs to the poster
-  if (poster?.includes('?')) {
+  // www.stryker.com (corp) only: a poster URL with its own query
+  // (`…/image?fit=constrain,1&wid=909&hei=511`) is authored unencoded, so its `&wid…`
+  // params split off as video params: when the poster value has a `?`, everything after
+  // `poster=` belongs to the poster. Other pages encode the poster's query (`%26wid…`)
+  // and keep the decoded searchParams value.
+  if (poster?.includes('?') && isCorpPage()) {
     const at = src.search(/[?&]poster=/);
     poster = src.slice(src.indexOf('=', at) + 1);
     const rest = new URL(src.slice(0, at), window.location.href);
@@ -445,6 +447,10 @@ export function renderVideo(src, label) {
   // can be adjusted without touching this script
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
+  // the media URL, for page code that needs the asset before playback (e.g. the corp
+  // news-detail template reads the Scene7 video's shape); the source itself is attached
+  // lazily
+  video.dataset.src = mediaSrc;
 
   const hlsSrc = preferHls(mediaSrc);
   let startMedia = () => Promise.resolve();
@@ -509,6 +515,24 @@ function dmRendererFor(src) {
 }
 
 /**
+ * True when a standalone publish-path image link is the link target of the image on the
+ * line above it in a Columns `media-pair` cell (blocks/columns makes that image clickable
+ * with the link alone on the next line), e.g. a thumbnail linking to its full-size JPG
+ * download on the leadership succession release: that link stays a link.
+ * @param {HTMLAnchorElement} a the link
+ * @returns {boolean}
+ */
+function isMediaPairTarget(a) {
+  const line = a.closest('p');
+  if (!line || !line.closest('.columns.media-pair')) return false;
+  const prev = line.previousElementSibling;
+  if (!prev || !prev.matches('p') || prev.children.length !== 1) return false;
+  const media = prev.firstElementChild;
+  if (media.tagName === 'PICTURE') return true;
+  return media.tagName === 'A' && dmRendererFor(media.getAttribute('href')) !== null;
+}
+
+/**
  * Replace authored DM links/images within `root` with the matching native
  * element (<picture> for images, <video> for videos). Idempotent, so blocks can
  * re-run it on their own subtree (decorateMain runs it once page-wide).
@@ -534,7 +558,10 @@ export default function decorateDMAssets(root) {
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
-      if (render === renderPublishImage && !isStandaloneLink(el)) return;
+      if (render === renderPublishImage && (!isStandaloneLink(el) || isMediaPairTarget(el))) return;
+      // a video link in a heading is a title that opens the video (a download card's title,
+      // e.g. a JR45 "product feature video"), not an embedded player
+      if (render === renderVideo && el.closest('h1, h2, h3, h4, h5, h6')) return;
       const text = el.textContent.trim();
       if (text && text !== src) displayText = text;
     }

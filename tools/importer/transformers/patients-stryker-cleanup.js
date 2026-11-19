@@ -19,9 +19,24 @@
 
 const TransformHook = { beforeTransform: 'beforeTransform', afterTransform: 'afterTransform' };
 
-// Customer (source) site host. Absolute links on this host are rewritten to
+// Customer (source) site hosts: patients.stryker.com, and www.stryker.com for the corp
+// templates. Absolute links on the host of the page being imported are rewritten to
 // root-relative EDS paths; links to any other host are left untouched.
-const SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+const PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+const CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
+
+/**
+ * The source-host pattern for the page being imported.
+ * @param {Object} payload transformer payload ({ params: { originalURL } })
+ * @returns {RegExp}
+ */
+function sourceHostFor(payload) {
+  try {
+    const { hostname } = new URL(payload.params.originalURL);
+    if (hostname === 'www.stryker.com') return CORP_HOST_RE;
+  } catch { /* fall back to the patients host */ }
+  return PATIENTS_HOST_RE;
+}
 
 /**
  * Rewrite a link to a customer page into its EDS path (AGENTS.md → "Link
@@ -30,24 +45,37 @@ const SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
  *   https://patients.stryker.com/us/en/ivs/index.html → /us/en/ivs/   (index pages keep the trailing slash; /index 404s)
  *   /index.html                              → /
  *   .../back-pain.html#disclaimer            → .../back-pain#disclaimer (query + hash kept)
+ *   https://www.stryker.com/content/stryker/us/en/x.html → /us/en/x (the AEM repository path
+ *     of a www.stryker.com page, which redirects to /us/en/x.html, e.g. the SPS blog BACK link)
  * Returns null for anything that must stay as-is: other hosts, protocol-relative
  * URLs, mailto:/tel:, in-page #anchors, and non-page links such as assets and
  * downloads (/content/dam/..., .pdf, images) — only .html/.htm page links change.
  * @param {string} href raw href attribute value
+ * @param {RegExp} hostRe the source host of the imported page (sourceHostFor)
  * @returns {string|null} rewritten href, or null to leave the link unchanged
  */
-function rewriteSourceLink(href) {
+function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
   if (!href) return null;
   const value = href.trim();
   let rest;
   if (value.startsWith('/') && !value.startsWith('//')) rest = value;
-  else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, '') || '/';
+  else if (hostRe.test(value)) rest = value.replace(hostRe, '') || '/';
   else return null;
 
   const [, path, suffix = ''] = rest.match(/^([^?#]*)([?#].*)?$/);
   if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
 
   let edsPath = path.replace(/\.html?$/i, '');
+  if (hostRe === CORP_HOST_RE) {
+    edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, '');
+    // a www.stryker.com page is imported at its sanitised path (each folder and name
+    // lowercased, other characters and runs of them one `-`, none at the ends), and EDS
+    // serves only that path: link to it, e.g. .../2023/SEA-holds-3rd-annual-tree-planting-event
+    // → .../2023/sea-holds-3rd-annual-tree-planting-event, .../articles-/x → .../articles/x
+    edsPath = edsPath.split('/').map((seg) => seg.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')).join('/');
+  }
   if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
   return `${edsPath || '/'}${suffix}`;
 }
@@ -76,11 +104,28 @@ export default function transform(hookName, element, payload) {
   // same treatment.
   const isIvsTreatment = !!(payload && payload.template
     && ['ivs-treatment', 'ivs-get-the-facts', 'ivs-contact'].includes(payload.template.name));
-  const isSkinnedContent = isSaResources || isIvsTreatment;
+  // The corp news-detail template (www.stryker.com news articles) rebuilds its own
+  // content (news-detail-sections.js): it keeps its <h1> and its authorable
+  // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
+  // (news-detail-xf, the XF-bodied articles of import-news-xf.js, is the same template;
+  // the corp event-detail pages of import-event-detail.js rebuild their body the same way)
+  // The corp long-page-detail-corp pages (and their shared fragments) are rebuilt the
+  // same way (long-page-detail-corp-sections.js), so they get the same treatment, as do
+  // the corp division contact pages (contact-division-sections.js), the corp People
+  // pages with their Back link fragments (import-people.js) and the corp Interventional
+  // Spine footnotes with their Back link fragment (import-ivs-footnotes.js).
+  const isNewsDetail = !!(payload && payload.template && [
+    'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
+    'event-detail', 'contact-division',
+    'people', 'people-fragments',
+    'ivs-footnotes', 'ivs-footnotes-fragments',
+  ].includes(payload.template.name));
+  const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 
   if (hookName === TransformHook.beforeTransform) {
     // Cookie consent SDK / preference center - third-party chrome (cleaned.html line 307).
     WebImporter.DOMUtils.remove(element, ['#onetrust-consent-sdk']);
+    if (isNewsDetail) return;
 
     if (isIvsTreatment) {
       // ivs-treatment: its block parsers handle their own gold/CTA/heading encoding,
@@ -361,8 +406,9 @@ export default function transform(hookName, element, payload) {
 
     // Customer page links → EDS paths (drop .html; index.html → trailing slash).
     // Runs for every template, after the block parsers, so block cells are covered.
+    const hostRe = sourceHostFor(payload);
     element.querySelectorAll('a[href]').forEach((a) => {
-      const rewritten = rewriteSourceLink(a.getAttribute('href'));
+      const rewritten = rewriteSourceLink(a.getAttribute('href'), hostRe);
       if (rewritten !== null) a.setAttribute('href', rewritten);
     });
 

@@ -7,6 +7,8 @@
  *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/styles-corp.css
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
+ *   decorateSections(main)  after the section metadata is applied, before the blocks are
+ *                           decorated: builds blocks from section styles (accordion-panel)
  *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
@@ -21,12 +23,13 @@ import {
   waitForFirstImage,
 } from './aem.js';
 import { previewDMLinkEditors } from './dm-support.js';
+import decorateMapLinks from './map-embed.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = [];
+const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
@@ -47,11 +50,237 @@ export async function loadEager(doc) {
   ]);
 }
 
+/* brand spellings for icon names that title-casing gets wrong */
+const ICON_LINK_LABELS = {
+  linkedin: 'LinkedIn',
+  youtube: 'YouTube',
+  x: 'X',
+};
+
+/**
+ * Gives links that hold only `:icon:` images an accessible name (e.g. the Sage contact
+ * LinkedIn / Facebook links): the icon images are decorative (empty alt), so the link is
+ * labelled from its authored title, else from the icon name (`:linkedin:` → "LinkedIn",
+ * `:facebook-logo:` → "Facebook"). Runs before scripts.js decorateLinkTargets(), which
+ * appends "(opens in a new tab)" to the label.
+ * @param {Element} main The container element
+ */
+function decorateIconLinks(main) {
+  main.querySelectorAll('a:not([aria-label]):has(> .icon)').forEach((a) => {
+    if (a.textContent.trim()) return;
+    const icon = [...a.querySelector(':scope > .icon').classList]
+      .find((c) => c.startsWith('icon-'))?.substring(5);
+    const name = icon && icon.replace(/-logo$/, '');
+    const label = a.title.trim() || ICON_LINK_LABELS[name]
+      || (name && name.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()));
+    if (label) a.setAttribute('aria-label', label);
+  });
+}
+
 /**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
-export function decorateMain() {
+export function decorateMain(main) {
   previewDMLinkEditors();
+  // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
+  decorateMapLinks(main, ':scope > div > p');
+  main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
+    block.classList.replace('hero', 'hero-corp');
+    block.closest('.section')?.classList.add('hero-container');
+  });
+  decorateIconLinks(main);
+}
+
+/**
+ * Turns each run of consecutive `accordion-panel` sections into one
+ * `accordion with-nested-blocks` block, so panels can hold blocks (columns, cards,
+ * tabs, fragments). Each section is one panel: a heading at the top of the section is
+ * the panel label, the rest of the section (text, blocks) is the panel body, handed to
+ * the accordion as an inline section. The other section styles of the panels stay on
+ * the accordion's section. `accordion-continue` sections right after a panel are more
+ * of that panel: each becomes another inline section of its body, keeping its own
+ * section styles (e.g. p-1-25, disclaimer), so a panel can mix copy styles.
+ * @param {Element} main The container element
+ */
+function buildAccordionSections(main) {
+  const continued = new Map();
+  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+    const parts = [];
+    while (section.nextElementSibling?.classList.contains('accordion-continue')) {
+      const next = section.nextElementSibling;
+      const part = document.createElement('div');
+      part.dataset.accordionSection = '';
+      part.classList.add(...[...next.classList].filter((cls) => !['section', 'accordion-continue'].includes(cls)));
+      part.append(...[...next.children].flatMap((wrapper) => [...wrapper.children]));
+      parts.push(part);
+      next.remove();
+    }
+    continued.set(section, parts);
+  });
+
+  const runs = [];
+  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+    const run = runs[runs.length - 1];
+    // a Block Library variant (tools/da-library-preview) is always its own accordion
+    const joins = run && run[run.length - 1].nextElementSibling === section
+      && !section.classList.contains('library-variant-start');
+    if (joins) run.push(section);
+    else runs.push([section]);
+  });
+
+  runs.forEach((run) => {
+    const rows = run.map((section) => {
+      // unwrap default content and (still undecorated) blocks, in authored order
+      const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
+      const label = /^H[1-6]$/.test(nodes[0]?.tagName) ? nodes.shift() : null;
+      const panel = document.createElement('div');
+      panel.dataset.accordionSection = '';
+      panel.append(...nodes);
+      const parts = continued.get(section);
+      // a label alone (its panel text all in `accordion-continue` sections) adds no section
+      const body = nodes.length || !parts.length ? [panel, ...parts] : parts;
+      return [{ elems: label ? [label] : [] }, { elems: body }];
+    });
+
+    const block = buildBlock('accordion', rows);
+    block.classList.add('with-nested-blocks');
+    const wrapper = document.createElement('div');
+    wrapper.append(block);
+
+    const [host, ...rest] = run;
+    rest.forEach((section) => {
+      host.classList.add(...section.classList);
+      section.remove();
+    });
+    host.classList.remove('accordion-panel');
+    host.replaceChildren(wrapper);
+  });
+}
+
+/**
+ * `image-link` section style: a plain link alone on the line right after an image makes
+ * the image clickable (a DM image link can't also carry the target address; the same rule
+ * as the Columns media-pair variant). The link text becomes the image link's name and the
+ * link line goes. Runs before decorateLinkTargets(), so a `#_blank` link still opens in a
+ * new tab.
+ * @param {Element} main The container element
+ */
+function linkImage(p) {
+  const picture = p.querySelector(':scope > picture');
+  if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+  const next = p.nextElementSibling;
+  const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+  if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+  const a = document.createElement('a');
+  a.href = link.getAttribute('href');
+  if (link.target) a.target = link.target;
+  if (link.rel) a.rel = link.rel;
+  a.setAttribute('aria-label', link.textContent.trim());
+  a.append(picture);
+  p.append(a);
+  next.remove();
+}
+
+function decorateImageLinks(main) {
+  main.querySelectorAll(':scope > .section.image-link > .default-content-wrapper > p').forEach(linkImage);
+}
+
+/**
+ * Columns (product-tiles, challenge-cards, any Columns in an `image-link` section): a link
+ * alone on the line right after an image makes the image clickable, as with the
+ * `image-link` section style; each image paragraph is a .columns-img-col (columns.js tags
+ * only a cell's first one). Runs on each block once
+ * it is loaded (aem.js data-block-status="loaded"): columns.js rebuilds the image
+ * paragraphs while it decorates, so a link added before that would be lost. Blocks of a
+ * Fragment block arrive later (the fragment inserts its sections once they are loaded), so
+ * main is watched for them too.
+ * @param {Element} main The container element
+ */
+function decorateColumnsImageLinks(main) {
+  // also any Columns block of an `image-link` section (e.g. the "Keep reading" teaser of
+  // "A winning spirit": the image a third wide in a columns-33-67 row)
+  const selector = '.columns:is(.product-tiles, .challenge-cards), .section.image-link .columns';
+  const link = (block) => block.querySelectorAll(':scope > div > div > p').forEach((p) => {
+    if (!p.querySelector(':scope > picture') || p.children.length !== 1 || p.textContent.trim()) return;
+    p.classList.add('columns-img-col');
+    linkImage(p);
+  });
+  const watch = (block) => {
+    if (block.dataset.imageLinks) return;
+    block.dataset.imageLinks = 'true';
+    if (block.dataset.blockStatus === 'loaded') {
+      link(block);
+      return;
+    }
+    const observer = new MutationObserver(() => {
+      if (block.dataset.blockStatus !== 'loaded') return;
+      observer.disconnect();
+      link(block);
+    });
+    observer.observe(block, { attributes: true, attributeFilter: ['data-block-status'] });
+  };
+  main.querySelectorAll(selector).forEach(watch);
+  const added = (node) => {
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node.matches(selector)) watch(node);
+    node.querySelectorAll(selector).forEach(watch);
+  };
+  new MutationObserver((records) => records.forEach((record) => record.addedNodes.forEach(added)))
+    .observe(main, { childList: true, subtree: true });
+}
+
+/**
+ * An underlined heading that DA stores with its underline split around a line break or
+ * bold words (`<u>Improving safety</u><br><u>Spreading truth…</u>`) gets one `<u>` around
+ * the whole heading again, so scripts.js decorateUnderlinedHeadings (which wants a single
+ * `<u>`, and runs after decorateSections) still draws the heading rule.
+ * @param {Element} main The container element
+ */
+function joinSplitHeadingUnderlines(main) {
+  const squash = (value) => value.replace(/\s+/g, '');
+  main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+    const us = [...heading.querySelectorAll('u')].filter((u) => !u.parentElement.closest('u'));
+    if (us.length < 2) return;
+    const text = squash(heading.textContent);
+    if (!text || squash(us.map((u) => u.textContent).join('')) !== text) return;
+    us.forEach((u) => u.replaceWith(...u.childNodes));
+    const u = document.createElement('u');
+    u.append(...heading.childNodes);
+    heading.append(u);
+  });
+}
+
+/**
+ * A Bold + Italic link alone on its line is the gold button even when its text ends in
+ * "!" (stryker.com "Nominate a hero for our Caregiver Stories series!"); scripts.js
+ * decorateButtons leaves links ending in punctuation as text links (sentences), so the
+ * button is built here, before it runs, the same way it builds the accent button.
+ * @param {Element} main The container element
+ */
+function decorateExclaimButtons(main) {
+  main.querySelectorAll('p > em > strong > a[href]:only-child, p > strong > em > a[href]:only-child').forEach((a) => {
+    const p = a.parentElement.parentElement.parentElement;
+    const text = a.textContent.trim();
+    const outer = a.parentElement.parentElement;
+    if (!text.endsWith('!') || p.children.length !== 1 || p.textContent.trim() !== text) return;
+    if (outer.childNodes.length !== 1 || a.parentElement.childNodes.length !== 1) return;
+    a.title = a.title || text;
+    p.className = 'button-wrapper';
+    a.className = 'button accent';
+    outer.replaceWith(a);
+  });
+}
+
+/**
+ * Corp blocks built from section styles. Runs on <main> and on fragments, after the
+ * section metadata is applied and before the blocks are decorated.
+ * @param {Element} main The container element
+ */
+export function decorateSections(main) {
+  buildAccordionSections(main);
+  decorateImageLinks(main);
+  joinSplitHeadingUnderlines(main);
+  decorateExclaimButtons(main);
 }
 
 /**
@@ -103,14 +332,18 @@ export async function loadFirstSections(main) {
 /**
  * Builds, decorates and loads a chrome block (header-corp / footer-corp) into its
  * landmark, in place of aem.js loadHeader / loadFooter. The blocks read the `nav` /
- * `footer` metadata themselves (defaults /nav, /footer).
+ * `footer` metadata themselves (defaults /nav, /footer). Like aem.js loadHeader /
+ * loadFooter, a block already in the landmark is replaced, not added to: the EW canvas
+ * loads the chrome again, which showed the header and footer twice.
  * @param {Element} parent The <header> or <footer> landmark
  * @param {string} name The block name
  */
 async function loadChrome(parent, name) {
   if (!parent) return null;
   const block = buildBlock(name, '');
-  parent.append(block);
+  const existing = parent.querySelector(`:scope > .${name}`);
+  if (existing) existing.replaceWith(block);
+  else parent.append(block);
   decorateBlock(block);
   return loadBlock(block);
 }
@@ -180,8 +413,9 @@ function emitHomeJsonLd() {
 /**
  * After LCP: head additions.
  */
-export function loadLazy() {
+export function loadLazy(doc) {
   emitHomeJsonLd();
+  decorateColumnsImageLinks(doc.querySelector('main'));
 }
 
 /*

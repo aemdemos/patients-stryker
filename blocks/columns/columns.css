@@ -20,6 +20,19 @@
   height: auto;
 }
 
+/* YouTube player (columns.js decorateYouTube): 16:9 at the full cell width */
+.columns .columns-youtube {
+  margin-bottom: var(--space-block);
+}
+
+.columns .columns-youtube iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
 .columns > div > div {
   box-sizing: border-box;
   min-width: 0; 
@@ -330,7 +343,10 @@
   line-height: var(--heading-line-height);
 }
 
+/* the bold cell heading is Futura like the source — overrides the columns-wide
+   rule that keeps inline bold in the body font */
 .columns.columns-icon-grid .columns-img-col ~ p strong {
+  font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }
 
