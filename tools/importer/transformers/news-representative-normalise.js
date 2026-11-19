@@ -13,12 +13,18 @@
  *     subhead, a paragraph that is all bold / span.futura-bold, or a Heading 4 in another
  *     size becomes that Heading 4
  * Content outside the article (shared Experience Fragments, forms, small print without a
- * size span) is left as it is.
+ * size span) is left as it is. The group's pages get the theme `mix-width, sustainability`
+ * (the theme carries the copy / subhead sizes and the footnote list), so the sections
+ * transformer drops their size section styles and writes the footnotes as a numbered list.
  */
 
 const GROUPS = [
   {
     name: 'sustainability-news',
+    // the group's page theme (templates/news-detail/news-detail-themes.css): it sets the
+    // copy / subhead sizes and the footnote list, so the pages carry no size section styles
+    // (news-detail-sections.js reads data-representative-theme)
+    theme: 'mix-width, sustainability',
     paths: [
       '/us/en/sustainability/news/supplychainweek.html',
       '/us/en/sustainability/news/asc.html',
@@ -28,6 +34,7 @@ const GROUPS = [
       '/us/en/sustainability/news/lca0.html',
       '/us/en/sustainability/news/say-yes-to-reprocessing.html',
       '/us/en/sustainability/news/quality-you-can-count-on--five-quality-standards-in-medical-devi.html',
+      '/us/en/sustainability/news/world-environment-day-2025-.html',
     ],
   },
 ];
@@ -44,10 +51,33 @@ function unwrapFontSpans(el) {
   });
 }
 
-/** The text of a heading-like element as the representative's <h4><br>Subhead</h4>. */
+/**
+ * The text of a heading-like element as the representative's <h4><br>Subhead</h4>: its
+ * font / size spans, bold and line breaks go, its inline content stays (a footnote
+ * superscript, e.g. "Saving the environment yields big savings for hospitals²" in the World
+ * Environment Day 2025 article, or a link)
+ */
 function toSubhead(el, doc) {
   const h4 = doc.createElement('h4');
-  h4.append(doc.createElement('br'), squash(el));
+  unwrapFontSpans(el);
+  el.querySelectorAll('b, strong').forEach((b) => b.replaceWith(...b.childNodes));
+  el.querySelectorAll('br').forEach((br) => br.remove());
+  // a superscript is kept as a footnote marker only (digits, commas, * † ‡); words in one
+  // are a typing slip (e.g. the whole "Strong focus on sustainability" subhead of Expect more)
+  el.querySelectorAll('sup').forEach((sup) => {
+    if (!/^[\s\d,*†‡-]*$/.test(sup.textContent)) sup.replaceWith(...sup.childNodes);
+  });
+  el.normalize();
+  // runs of spaces (typed &nbsp;) are one space; none at either end
+  const texts = [];
+  const walker = doc.createTreeWalker(el, 4);
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) texts.push(n);
+  texts.forEach((n) => { n.textContent = n.textContent.replace(/[\s\u00a0]+/g, ' '); });
+  if (texts.length) {
+    texts[0].textContent = texts[0].textContent.replace(/^ /, '');
+    texts[texts.length - 1].textContent = texts[texts.length - 1].textContent.replace(/ $/, '');
+  }
+  h4.append(doc.createElement('br'), ...el.childNodes);
   el.replaceWith(h4);
   return h4;
 }
@@ -118,6 +148,7 @@ export default function transform(hookName, element, payload) {
   }
   const group = GROUPS.find((g) => g.paths.includes(path));
   if (!group) return;
+  if (group.theme) element.setAttribute('data-representative-theme', group.theme);
   const doc = element.ownerDocument;
   element.querySelectorAll('.c-rich-text-editor').forEach((rte) => {
     // shared Experience Fragments (the contact header / form) and forms keep their markup
