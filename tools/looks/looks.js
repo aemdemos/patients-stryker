@@ -16,7 +16,38 @@ const shotSrc = (shot, remote) => (LOCAL && !remote ? `./${shot}`
   : `/looks-shots/${shot.replace(/^shots\//, '').replace(/~/g, '/').replace(/__/g, '/')}`);
 const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
 const NAMES = {
-  'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', tabs: 'Tabs', forms: 'Forms', layouts: 'Columns and flex sections', 'hero-source': 'Hero (original)', 'text-styles': 'Text styles', 'corp-spacing-box': 'Spacing box', 'sticky-nav': 'Sticky Nav', 'related-categories': 'Related Categories', 'marketo-form': 'Marketo form', table: 'Table', accordion: 'Accordion', statistics: 'Statistics', 'chart-corp': 'Chart', 'gallery-corp': 'Gallery',
+  'cards-corp': 'Cards',
+  'hero-corp': 'Hero',
+  video: 'Video',
+  tabs: 'Tabs',
+  forms: 'Forms',
+  layouts: 'Columns and flex sections',
+  // (the original's components, measure.mjs --source --components)
+  'hero-source': 'Hero',
+  'layouts-source': 'Column controls',
+  'src-standaloneimage': 'Images',
+  'src-curatedcta': 'Buttons (curated CTA)',
+  'src-marketoform': 'Marketo forms',
+  'src-standalonevideo': 'Videos',
+  'src-resourcesanddownload': 'Resources',
+  'src-fullbleedpanel': 'Background bands (full-bleed panel)',
+  'src-customizable': 'Teasers (customizable)',
+  'src-experienceFragment': 'Experience fragments',
+  'src-tabs': 'Tabs',
+  'src-table': 'Tables',
+  'src-accordion': 'Accordions',
+  'src-numbercounter': 'Counters',
+  'text-styles': 'Text styles',
+  'text-styles-source': 'Text styles',
+  'corp-spacing-box': 'Spacing box',
+  'sticky-nav': 'Sticky Nav',
+  'related-categories': 'Related Categories',
+  'marketo-form': 'Marketo form',
+  table: 'Table',
+  accordion: 'Accordion',
+  statistics: 'Statistics',
+  'chart-corp': 'Chart',
+  'gallery-corp': 'Gallery',
 };
 // (what a merged instance lacks, in words)
 const LACK_NAMES = {

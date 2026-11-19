@@ -42,6 +42,14 @@ const TEXT = args.includes('--text');
 const SOURCE = args.includes('--source');
 const SOURCE_PAGES = opt('--source-pages', '/tmp/run-outputs/source-pages');
 const SCRIPT_TAGS = /<script\b[\s\S]*?<\/script>/gi;
+// (--components, with --source: every component of the original, at every depth (in column
+// cells, fragments, tabs, accordions, panels), each marked with its AEM name and measured as what
+// it is: column controls cell by cell, the others as blocks; page-level waits only; screenshots
+// of the layouts, blocks and bands, not of text and small pieces)
+const COMPONENTS = SOURCE && args.includes('--components');
+const NO_SHOTS = ['text', 'section-title', 'sectionseparator', 'title', 'largeheadline', 'standaloneimage',
+  'curatedcta', 'secondarycta', 'contactbutton', 'buttonset', 'pageshortdescription', 'tagcrumb',
+  'disclaimer', 'publishdate', 'localpagenavigation', 'h1-title', 'tagline'];
 const SOURCE_TYPES = {
   // the hero: every component of the page's hero area (the first area of the main content, before
   // the customizable area), whatever its type (pagehero, carouselslidegroup, fullWidthImageHero,
@@ -52,6 +60,7 @@ let defaultOut = '/tmp/run-outputs/looks-v2';
 if (COLUMNS) defaultOut = '/tmp/run-outputs/looks-columns';
 if (TEXT) defaultOut = '/tmp/run-outputs/looks-text';
 if (SOURCE) defaultOut = '/tmp/run-outputs/looks-source';
+if (COMPONENTS) defaultOut = '/tmp/run-outputs/looks-components';
 const out = opt('--out', defaultOut);
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const limit = Number(opt('--limit', 0)) || Infinity;
@@ -94,6 +103,8 @@ function measureColumns(el) {
     return r.width > 1 && r.height > 1 && st.visibility !== 'hidden' && st.display !== 'none';
   };
   const isSection = el.classList.contains('section');
+  // (a column control of the original: its rows are in the element holding its .row)
+  const host = (el.dataset.component && el.querySelector(':scope .row')?.parentElement) || el;
   const b = box(el);
   // a cell's content: its media, the blocks in it, its text (headings, paragraphs, lists), buttons
   const contentOf = (cell) => {
@@ -116,7 +127,7 @@ function measureColumns(el) {
     };
   };
   // rows: a Columns block's rows; a flex section is one row of its wrappers
-  const rowEls = isSection ? [el] : [...el.children].filter(visible);
+  const rowEls = isSection ? [el] : [...host.children].filter(visible);
   const rows = rowEls.map((row) => {
     const cells = [...row.children].filter(visible).filter((c) => !c.classList.contains('section-metadata'));
     const cb = cells.map(box);
@@ -144,7 +155,8 @@ function measureColumns(el) {
     content: {
       left: b.left, top: b.top, right: b.left + b.width, bottom: b.top + b.height,
     },
-    type: isSection ? 'flex-section' : 'columns',
+    type: el.dataset.component || (isSection ? 'flex-section' : 'columns'),
+    ...(el.dataset.component ? { component: el.dataset.component } : {}),
     classes: [...el.classList].filter((c) => !['block', 'section', 'columns'].includes(c)
       && !c.endsWith('-container') && !c.endsWith('-wrapper')),
     inFragment: !!el.parentElement?.closest('.fragment, .fragment-wrapper'),
@@ -431,6 +443,30 @@ const settle = async (page) => {
         el.dataset.source = '1';
         el.dataset.component = component;
       };
+      if (types === 'components') {
+        const AREAS = '.parsys, .aem-Grid, .responsivegrid';
+        const markIn = (root) => componentsOf(root).forEach((c) => {
+          if (!c.textContent.trim() && !c.querySelector('img, video, iframe, svg, canvas')) return;
+          const component = String(c.className).trim().split(/\s+/)[0];
+          if (!component) return;
+          mark(c, component, component);
+          // the component's own areas (not those of a component inside it)
+          c.querySelectorAll(AREAS).forEach((a) => {
+            let x = a.parentElement;
+            while (x && x !== c && !x.matches(AREAS) && !x.dataset.component) x = x.parentElement;
+            if (x === c) markIn(a);
+          });
+          // a column control's cells hold their components directly
+          if (/^cols/.test(component)) {
+            c.querySelectorAll(':scope .row > [class*="col-"]').forEach((cell) => {
+              if (cell.closest('[data-component]') === c && !cell.querySelector(AREAS)) markIn(cell);
+            });
+          }
+        });
+        const main = document.querySelector('.main.content');
+        if (main) markIn(main);
+        return;
+      }
       Object.entries(types).forEach(([name, sel]) => {
         if (sel !== 'hero-area') {
           document.querySelectorAll(sel).forEach((el) => mark(el, name, sel));
@@ -457,7 +493,7 @@ const settle = async (page) => {
           mark(slide || c, name, component);
         });
       });
-    }, SOURCE_TYPES);
+    }, COMPONENTS ? 'components' : SOURCE_TYPES);
   }
   if (!SOURCE) {
     await page.waitForFunction(() => {
@@ -598,6 +634,20 @@ async function reveal(h) {
       details.open = true;
       did = true;
     }
+    // (on the original: a closed tab pane, a collapsed accordion panel)
+    const pane = e.closest('.tab-content');
+    if (pane && !pane.checkVisibility()) {
+      pane.classList.add('default-open');
+      pane.style.setProperty('display', 'block', 'important');
+      did = true;
+    }
+    const collapsed = e.closest('.panel-collapse.collapse:not(.in)');
+    if (collapsed) {
+      collapsed.classList.add('in');
+      collapsed.style.setProperty('display', 'block', 'important');
+      collapsed.style.setProperty('height', 'auto', 'important');
+      did = true;
+    }
     // (a block in a closed accordion panel)
     const item = e.parentElement?.closest('.accordion-item');
     const button = item?.querySelector('[aria-expanded="false"]');
@@ -616,6 +666,18 @@ async function reveal(h) {
  */
 async function openPanels(h) {
   const panels = await h.evaluate((e) => {
+    // (the original's accordion: Bootstrap panels, `in` when open)
+    const collapses = [...e.querySelectorAll('.panel-collapse.collapse')]
+      .filter((x) => x.closest('[data-component]') === e);
+    if (collapses.length) {
+      const open = collapses.filter((x) => x.classList.contains('in')).length;
+      collapses.forEach((x) => {
+        x.classList.add('in');
+        x.style.setProperty('display', 'block', 'important');
+        x.style.setProperty('height', 'auto', 'important');
+      });
+      return { count: collapses.length, openAtStart: open };
+    }
     const buttons = [...e.querySelectorAll('.accordion-item [aria-expanded]')]
       .filter((b) => b.closest('.block') === e);
     if (!buttons.length) return null;
@@ -807,10 +869,20 @@ let SELECTOR = COLUMNS ? 'main .columns.block, main .section.flex' : 'main .bloc
 if (SOURCE) SELECTOR = '.block';
 const keep = (name) => {
   if (!name) return false;
+  if (COMPONENTS) return true;
   if (SOURCE) return name in SOURCE_TYPES;
   return COLUMNS ? ['columns', 'flex-section'].includes(name) : !SKIP.includes(name);
 };
 const measureOf = COLUMNS ? measureColumns : measureBlock;
+/** a component's key: its type and the start of its text (the phone copy can hold other pieces) */
+const keyOf = (h) => h.evaluate((e) => `${e.dataset.component || e.dataset.blockName}|${(e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60)}`);
+
+/** what measures a component of the original: column controls cell by cell, the others as blocks */
+const measureFor = async (h) => {
+  if (!COMPONENTS) return h.evaluate(measureOf);
+  const component = await h.evaluate((e) => e.dataset.component || '');
+  return h.evaluate(/^cols/.test(component) ? measureColumns : measureBlock);
+};
 
 /** the desktop look: every block measured, with a screenshot */
 async function desktop(path, url, result) {
@@ -824,18 +896,22 @@ async function desktop(path, url, result) {
     const n = result.blocks.length;
     await reveal(h);
     const panels = await openPanels(h);
-    const images = await showImages(h);
-    const m = await h.evaluate(measureOf);
+    // (all components of the original: the page-level waits only, its images are in the copy)
+    const images = COMPONENTS ? null : await showImages(h);
+    const m = await measureFor(h);
     m.n = n;
-    m.imagesShown = images;
+    if (COMPONENTS) m.key = await keyOf(h);
+    if (images) m.imagesShown = images;
     if (panels) m.panels = panels;
     const shot = join('shots', m.type, `${slug(path)}__${n}-d.jpg`);
-    mkdirSync(join(out, 'shots', m.type), { recursive: true });
-    if (m.box.width > 1 && m.box.height > 1) {
+    const shoot = !(COMPONENTS && NO_SHOTS.includes(m.type));
+    if (shoot) mkdirSync(join(out, 'shots', m.type), { recursive: true });
+    if (m.box.width <= 1 || m.box.height <= 1) m.hidden = true;
+    else if (shoot) {
       await shotOf(m, join(out, shot), h)
         .then((ok) => { if (ok) m.shot = shot; })
         .catch((e) => result.errors.push(`shot ${n}: ${e.message.slice(0, 80)}`));
-    } else m.hidden = true;
+    }
     result.blocks.push(m);
   });
 }
@@ -849,18 +925,21 @@ async function phone(path, url, result) {
   const names = await Promise.all(handles.map(nameOf));
   const kept = handles.filter((h, i) => keep(names[i]));
   const keptNames = names.filter(keep);
+  // (all components of the original: matched by key, each desktop measurement once)
+  const byKey = {};
+  if (COMPONENTS) result.blocks.forEach((b) => { (byKey[b.key] = byKey[b.key] || []).push(b); });
   await inOrder(kept, async (h, k) => {
-    const m = result.blocks[k];
-    if (!m || m.type !== keptNames[k]) return;
+    const m = COMPONENTS ? (byKey[await keyOf(h)] || []).shift() : result.blocks[k];
+    if (!m || (!COMPONENTS && m.type !== keptNames[k])) return;
     await reveal(h);
     await openPanels(h);
-    const images = await showImages(h);
-    const p = await h.evaluate(measureOf);
-    m.phone = COLUMNS ? { rows: p.rows, box: p.box, imagesShown: images } : {
+    const images = COMPONENTS ? null : await showImages(h);
+    const p = await measureFor(h);
+    m.phone = (COLUMNS || p.rows) ? { rows: p.rows, box: p.box, imagesShown: images } : {
       units: p.units, image: p.image, typography: p.typography, box: p.box, imagesShown: images,
     };
-    if (p.box.width > 1 && p.box.height > 1) {
-      const shot = join('shots', m.type, `${slug(path)}__${k}-m.jpg`);
+    if (p.box.width > 1 && p.box.height > 1 && !(COMPONENTS && NO_SHOTS.includes(m.type))) {
+      const shot = join('shots', m.type, `${slug(path)}__${m.n}-m.jpg`);
       await shotOf(p, join(out, shot), h)
         .then((ok) => { if (ok) m.phone.shot = shot; })
         .catch(() => null);
@@ -868,25 +947,52 @@ async function phone(path, url, result) {
   });
 }
 
+/** the stryker.com address of a page (the review tool's snapshot facts hold it) */
+function sourceUrlOf(path) {
+  const file = `tools/review/snapshot-meta${path}.json`;
+  if (!existsSync(file)) return null;
+  const meta = JSON.parse(readFileSync(file, 'utf8'));
+  return meta['1440']?.url || meta['375']?.url || null;
+}
+
 // (--shots-for <file>: the text mode's sample screenshots only: the listed units of each page,
 // [{page, n}], at 1440 and 375, into <out>/shots/text; nothing is measured)
 const SHOTS_FOR = opt('--shots-for', '');
 if (SHOTS_FOR) {
   const wanted = JSON.parse(readFileSync(SHOTS_FOR, 'utf8'));
-  const byPage = wanted.reduce((m, x) => ({ ...m, [x.page]: [...(m[x.page] || []), x.n] }), {});
-  mkdirSync(join(out, 'shots', 'text'), { recursive: true });
+  const byPage = wanted.reduce((m, x) => ({ ...m, [x.page]: [...(m[x.page] || []), x] }), {});
+  // (the original's components: into shots/text-source, found by their number on desktop and by
+  // their key on phones, as measured)
+  const folder = COMPONENTS ? 'text-source' : 'text';
+  mkdirSync(join(out, 'shots', folder), { recursive: true });
   let k = 0;
-  await inOrder(Object.entries(byPage), async ([path, ns]) => {
-    const url = `${base}/content/rs${path}`;
+  await inOrder(Object.entries(byPage), async ([path, xs]) => {
+    const url = COMPONENTS ? sourceUrlOf(path) : `${base}/content/rs${path}`;
+    if (!url) return;
     await inOrder([[1440, 1000, 'd'], [375, 800, 'm']], async ([w, hgt, tag]) => {
       try {
-        await textPass(url, w, hgt);
-        await inOrder(ns, async (n) => {
-          const h = await page.$(`[data-text-unit="${n}"]`);
+        let find;
+        if (COMPONENTS) {
+          await page.setViewportSize({ width: w, height: hgt });
+          await page.goto(url, { waitUntil: 'domcontentloaded' });
+          await settle(page);
+          // (the kept ones, as measured: the components outside header and footer)
+          const all = await page.$$(SELECTOR);
+          const names = await Promise.all(all.map(nameOf));
+          const handles = all.filter((h, i) => keep(names[i]));
+          const keys = await Promise.all(handles.map(keyOf));
+          find = (x) => (tag === 'd' ? handles[x.n] : handles[keys.indexOf(x.key)]);
+        } else {
+          await textPass(url, w, hgt);
+          find = () => null;
+        }
+        await inOrder(xs, async (x) => {
+          const { n } = x;
+          const h = COMPONENTS ? find(x) : await page.$(`[data-text-unit="${n}"]`);
           if (!h) return;
           await h.scrollIntoViewIfNeeded().catch(() => null);
           await h.screenshot({
-            path: join(out, 'shots', 'text', `${slug(path)}__${n}-${tag}.jpg`), type: 'jpeg', quality: 62, timeout: 20000,
+            path: join(out, 'shots', folder, `${slug(path)}__${n}-${tag}.jpg`), type: 'jpeg', quality: 62, timeout: 20000,
           }).catch(() => null);
         });
       } catch (e) {
@@ -898,14 +1004,6 @@ if (SHOTS_FOR) {
   });
   await browser.close();
   process.exit(0);
-}
-
-/** the stryker.com address of a page (the review tool's snapshot facts hold it) */
-function sourceUrlOf(path) {
-  const file = `tools/review/snapshot-meta${path}.json`;
-  if (!existsSync(file)) return null;
-  const meta = JSON.parse(readFileSync(file, 'utf8'));
-  return meta['1440']?.url || meta['375']?.url || null;
 }
 
 let done = 0;

@@ -23,6 +23,12 @@ const opt = (name, fallback) => {
 const IN = opt('--in', '/tmp/run-outputs/looks-text');
 const OUT = opt('--out', 'tools/looks/data');
 const SAMPLES = Number(opt('--samples', 12));
+// (--components: the original's text components, measure.mjs --source --components: each text,
+// large headline, title or section title is a unit; the shots in their own folder)
+const COMPONENTS = args.includes('--components');
+const TEXT_TYPES = ['text', 'largeheadline', 'title', 'section-title', 'pageshortdescription'];
+const SHOTS = COMPONENTS ? 'shots/text-source' : 'shots/text';
+const NAME = opt('--name', COMPONENTS ? 'text-styles-source' : 'text-styles');
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
 const titles = Object.fromEntries(pages.map((p) => [p.path, p.title]));
 const slug = (p) => p.replace(/^\//, '').replace(/\//g, '~');
@@ -38,7 +44,8 @@ const TAGS = {
 };
 const contextOf = (u) => {
   let where = 'page text';
-  if (u.container === 'columns') where = `Columns ${u.variant.join(' ') || '(default)'}`;
+  if (COMPONENTS) where = u.type;
+  else if (u.container === 'columns') where = `Columns ${u.variant.join(' ') || '(default)'}`;
   else if (u.container === 'flex') where = 'flex section';
   return [where, u.inTabs && 'in tabs', u.inAccordion && 'in accordion', u.inFragment && 'in a fragment']
     .filter(Boolean).join(', ');
@@ -52,7 +59,12 @@ let unitsTotal = 0;
 readdirSync(join(IN, 'pages')).forEach((f) => {
   const d = JSON.parse(readFileSync(join(IN, 'pages', f), 'utf8'));
   measured += 1;
-  (d.units || []).forEach((u) => {
+  const units = COMPONENTS
+    ? (d.blocks || []).filter((b) => TEXT_TYPES.includes(b.type) && !b.hidden).map((b) => ({
+      ...b, kind: b.type, container: 'section', variant: [], inTabs: false, inAccordion: false,
+    }))
+    : (d.units || []);
+  units.forEach((u) => {
     unitsTotal += 1;
     Object.entries(u.typography).forEach(([role, v]) => {
       v.styles.filter((st) => st.share >= 0.2).forEach((st, i) => {
@@ -82,7 +94,13 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
         // (samples from different pages, visible ones first)
         if (!u.hidden && s.samples.length < SAMPLES && !s.samples.some((x) => x.page === d.page)) {
           s.samples.push({
-            page: d.page, n: u.n, kind: u.kind, role, text: u.text, context: contextOf(u),
+            page: d.page,
+            n: u.n,
+            key: u.key,
+            kind: u.kind,
+            role,
+            text: u.text,
+            context: contextOf(u),
           });
         }
       });
@@ -109,17 +127,18 @@ const groups = [...styles.values()].sort((a, c) => c.units - a.units).map((s, i)
     page: x.page,
     title: titles[x.page] || x.page,
     n: x.n,
+    key: x.key,
     classes: [],
     inFragment: false,
-    shot: `shots/text/${slug(x.page)}__${x.n}-d.jpg`,
-    phoneShot: `shots/text/${slug(x.page)}__${x.n}-m.jpg`,
+    shot: `${SHOTS}/${slug(x.page)}__${x.n}-d.jpg`,
+    phoneShot: `${SHOTS}/${slug(x.page)}__${x.n}-m.jpg`,
     text: x.text,
     context: x.context,
   })),
 }));
 mkdirSync(OUT, { recursive: true });
 const result = {
-  type: 'text-styles',
+  type: NAME,
   blocks: ['text'],
   generated: new Date().toISOString(),
   remoteShots: true,
@@ -128,7 +147,7 @@ const result = {
   groups,
   families: [],
 };
-writeFileSync(join(OUT, 'text-styles.json'), JSON.stringify(result));
+writeFileSync(join(OUT, `${NAME}.json`), JSON.stringify(result));
 let index = { types: [] };
 try {
   index = JSON.parse(readFileSync(join(OUT, 'index.json'), 'utf8'));
@@ -136,8 +155,8 @@ try {
   index = { types: [] };
 }
 index.types = [
-  ...index.types.filter((t) => t.type !== 'text-styles'),
-  { type: 'text-styles', instances: unitsTotal, groups: groups.length },
+  ...index.types.filter((t) => t.type !== NAME),
+  { type: NAME, instances: unitsTotal, groups: groups.length },
 ];
 writeFileSync(join(OUT, 'index.json'), JSON.stringify(index, null, 1));
 console.log(`text styles: ${groups.length} styles in ${unitsTotal} text units on ${measured} pages`);
