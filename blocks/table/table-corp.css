@@ -14,3 +14,29 @@ body.corp .table.block table td {
 body.corp .table.block.striped table tbody tr:nth-child(odd) {
   background-color: var(--corp-color-table-stripe);
 }
+
+body.corp .table.block.stacked :is(table, tbody, tr, td) {
+  display: block;
+}
+
+body.corp .table.block.stacked td > p {
+  line-height: inherit;
+}
+
+@media (width >= 900px) {
+  body.corp .table.block.stacked table {
+    display: table;
+  }
+
+  body.corp .table.block.stacked tbody {
+    display: table-row-group;
+  }
+
+  body.corp .table.block.stacked tr {
+    display: table-row;
+  }
+
+  body.corp .table.block.stacked td {
+    display: table-cell;
+  }
+}

@@ -114,13 +114,14 @@ export default function transform(hookName, element, payload) {
   // the corp division contact pages (contact-division-sections.js), the corp People
   // pages with their Back link fragments (import-people.js), the corp Interventional
   // Spine footnotes with their Back link fragment (import-ivs-footnotes.js) and the corp
-  // legal pages (import-corp-legal.js, built by long-page-detail-corp-sections.js).
+  // legal pages (import-corp-legal.js, built by long-page-detail-corp-sections.js) and the
+  // corp patents and trademarks pages (import-patents.js).
   const isNewsDetail = !!(payload && payload.template && [
     'news-detail', 'news-detail-xf', 'long-page-detail-corp', 'long-page-detail-corp-fragments',
     'event-detail', 'contact-division',
     'people', 'people-fragments',
     'ivs-footnotes', 'ivs-footnotes-fragments',
-    'corp-legal',
+    'corp-legal', 'patents',
   ].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
 
