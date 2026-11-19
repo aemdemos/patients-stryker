@@ -2031,15 +2031,28 @@ var CustomImportScript = (() => {
       if (boxed && !lead.length) return false;
       const firstLine = headline2.querySelector(".line") || headline2;
       const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-      const statement = big && lead.length ? [rename(lead[0], "h2"), ...lead.slice(1)] : lead;
+      const sourceH3 = headline2.querySelector("h3");
+      const h3Statement = boxed && lead.length > 0 && !!sourceH3 && !!sourceH3.querySelector('[class*="fontsize-2vw"]') && text2(sourceH3) === text2(lead[0]);
+      let statement = lead;
+      if (h3Statement) {
+        const h3 = rename(lead[0], "h3");
+        if (!h3.querySelector("em")) {
+          const em = doc.createElement("em");
+          em.append(...h3.childNodes);
+          h3.append(em);
+        }
+        statement = [h3, ...lead.slice(1)];
+      } else if (big && lead.length) {
+        statement = [rename(lead[0], "h2"), ...lead.slice(1)];
+      }
       const nodes = [
         ...statement,
         ...(boxed ? quotes : [headline2, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
         ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
       ];
       [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-      element.setAttribute("data-news-theme", "full-width");
-      const section = startSection("video-text", "video-text, headline-1-5vw");
+      element.setAttribute("data-news-theme", "full-width, news-video");
+      const section = startSection("video-text", h3Statement ? "video-text" : "video-text, headline-1-5vw");
       if (boxed) section.background = "light-gray";
       section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
       current = null;
@@ -2074,7 +2087,7 @@ var CustomImportScript = (() => {
       const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
       if (!nodes.length) return false;
       [lead, ...quotes].forEach((c) => consumed.add(c));
-      element.setAttribute("data-news-theme", "full-width");
+      element.setAttribute("data-news-theme", "full-width, news-video");
       const style = [
         "video-text",
         asideCol.querySelector(".urw-egyptienne") && "serif",

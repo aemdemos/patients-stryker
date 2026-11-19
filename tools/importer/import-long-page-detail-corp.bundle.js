@@ -1826,24 +1826,13 @@ var CustomImportScript = (() => {
         if (!h.text(el)) return [];
         const copy = doc.createElement(el.tagName.toLowerCase());
         const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i.test(((_a = ((el.getAttribute("style") || "").match(/color\s*:\s*([^;]+)/i) || [])[1]) == null ? void 0 : _a.trim()) || "");
-        const goldText = () => {
-          const strong = doc.createElement("strong");
-          const em = doc.createElement("em");
-          em.textContent = h.text(el);
-          strong.append(em);
-          return strong;
-        };
         if (el.matches("h1")) {
-          let strong = goldText();
-          if (!gold) {
-            strong = doc.createElement("strong");
-            strong.textContent = h.text(el);
-          }
-          copy.append(doc.createTextNode("[[text-2]"), strong, doc.createTextNode("]"));
+          const strong = doc.createElement("strong");
+          strong.textContent = h.text(el);
+          copy.append(doc.createTextNode(gold ? "[[text-2][[color-gold]" : "[[text-2]"), strong, doc.createTextNode(gold ? "]]" : "]"));
         } else if (el.matches("h2")) {
           copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
-        } else if (gold) copy.append(goldText());
-        else copy.textContent = h.text(el);
+        } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
         return [copy];
       });
       const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector("img"));

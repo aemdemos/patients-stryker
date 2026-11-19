@@ -546,6 +546,30 @@ body.news-detail.news-video main > .section.video-text.light-gray.headline-1-5vw
   margin-bottom: calc(var(--news-video-gap) + var(--news-video-line));
 }
 
+/* a Heading 3 opening the grey box beside the video (`video-text` with `background:
+   light-gray`, the statement a Heading 3 in italic — the Egyptienne heading) is the source's
+   2vw Large Headline statement, measured on the StrykerTalks "Stryker's Pierce shares how
+   our latest digital innovations help…" page (stryker.com .largeheadline.bg-light-gray >
+   h3 > span.fontsize-2vw): Egyptienne Light at 4vw, from 600px (source 840px) 2vw capped
+   at 28px (15px at 375px, 25.6px at 1280px), on 1.35 lines; the box padded 20px, 35px
+   below the text (the source's padding and the heading's 15px gap), its top level with
+   the video */
+body.news-detail.news-video main > .section.video-text.light-gray > .video-wrapper + .default-content-wrapper > h3:first-child {
+  --corp-headline-vw: 2vw;
+
+  margin: 0;
+  padding: var(--space-block-l) var(--space-block-l) calc(var(--space-block-l) + var(--space-block));
+  background-color: var(--color-surface);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  body.news-detail.news-video main > .section.video-text.light-gray > .video-wrapper + .default-content-wrapper > h3:first-child {
+    --corp-headline-vw: 1vw;
+  }
+}
+
 /* section style `lead-plain`: a grey intro without a size of its own (stryker.com Large
    Headline text without a fontsize span, e.g. Rose's spine surgery story) at the column's
    own size, as the rule line: 21px on 25px lines below 900px, from 900px 1vw capped at

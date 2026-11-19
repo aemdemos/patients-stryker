@@ -1819,15 +1819,36 @@ export default function transform(hookName, element, payload) {
     const firstLine = headline.querySelector('.line') || headline;
     const big = firstLine.querySelector('[class*="fontsize-2vw"]')
       || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-    const statement = big && lead.length ? [rename(lead[0], 'h2'), ...lead.slice(1)] : lead;
+    // a statement the source sets as a Heading 3 in a 2vw span (the Egyptienne Large
+    // Headline, e.g. the StrykerTalks "Stryker's Pierce shares how our latest digital
+    // innovations help…" page) stays a Heading 3, in italic (the news Egyptienne heading),
+    // in a plain `video-text` section, sized by the news-video theme; a 2vw statement set
+    // any other way is a Heading 2 at the Large Headline sizes (headline-1-5vw)
+    // (headlineNodes returns paragraphs: the source heading is read from the component)
+    const sourceH3 = headline.querySelector('h3');
+    const h3Statement = boxed && lead.length > 0 && !!sourceH3
+      && !!sourceH3.querySelector('[class*="fontsize-2vw"]') && text(sourceH3) === text(lead[0]);
+    let statement = lead;
+    if (h3Statement) {
+      const h3 = rename(lead[0], 'h3');
+      if (!h3.querySelector('em')) {
+        const em = doc.createElement('em');
+        em.append(...h3.childNodes);
+        h3.append(em);
+      }
+      statement = [h3, ...lead.slice(1)];
+    } else if (big && lead.length) {
+      statement = [rename(lead[0], 'h2'), ...lead.slice(1)];
+    }
     const nodes = [
       ...statement,
       ...(boxed ? quotes : [headline, ...quotes]).flatMap((q) => quoteNodes(q, doc)),
       ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
     ];
     [headline, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-    element.setAttribute('data-news-theme', 'full-width');
-    const section = startSection('video-text', 'video-text, headline-1-5vw');
+    // the Large Headline text beside the video is set by the news-video theme
+    element.setAttribute('data-news-theme', 'full-width, news-video');
+    const section = startSection('video-text', h3Statement ? 'video-text' : 'video-text, headline-1-5vw');
     if (boxed) section.background = 'light-gray';
     // a button under the video comes right after it, before the text (source order: on
     // phones video, button, text; from 900px the template keeps it under the video)
@@ -1877,7 +1898,7 @@ export default function transform(hookName, element, payload) {
     const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
     if (!nodes.length) return false;
     [lead, ...quotes].forEach((c) => consumed.add(c));
-    element.setAttribute('data-news-theme', 'full-width');
+    element.setAttribute('data-news-theme', 'full-width, news-video');
     const style = [
       'video-text',
       asideCol.querySelector('.urw-egyptienne') && 'serif',
