@@ -23,9 +23,14 @@ heroes imported as Columns, tabs guessed from headings, unfinished styling): loo
 them carry those gaps into the base variants. So (the user's decision):
 
 - **The looks and base variants come from the original:** the AEM export (what each component is
-  and its authored options) and the rendered stryker.com pages, saved at 1440 and 375
+  and its authored options) and the rendered stryker.com pages, saved at 1440, 860 and 375
   (`looks/save-source.mjs`; the fast import's copies were saved at 1920 and scripts freeze their
   carousels at that width) and measured offline.
+- **Tablet (2026-11-19, the user's):** the customer wants the in-between too, so the original is
+  also measured and shown at 860 px. stryker.com's own tablet layout only renders from 841 to
+  1023 px (its CSS switches at 841 and 1024), our tablet range is 600–899: 860 is tablet on both.
+  (A real tablet held upright, 768–834 px, gets stryker.com's phone layout.) `measure.mjs --add t`
+  adds the width to pages measured before; the looks pages have a Tablet view.
 - **The rules translate the source directly into the standard pages:** the importer keeps its
   reading side (the component handlers) and gets a standard output (base variants, the containers
   model, named text styles) instead of lift-and-shift settings. `/rs` stays as history and

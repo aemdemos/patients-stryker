@@ -31,7 +31,11 @@ const SHOTS = COMPONENTS ? 'shots/text-source' : 'shots/text';
 // (the original's units as clips of their page's full-page tiles: their measured boxes)
 const rect = (r) => (r ? [r.left, r.top, (r.right ?? r.left + r.width) - r.left,
   (r.bottom ?? r.top + r.height) - r.top].map((v) => Math.round(v)) : null);
-const clipOf = (u) => ({ d: rect(u.content || u.box), m: rect(u.phone?.content || u.phone?.box) });
+const clipOf = (u) => ({
+  d: rect(u.content || u.box),
+  t: rect(u.tablet?.content || u.tablet?.box),
+  m: rect(u.phone?.content || u.phone?.box),
+});
 const NAME = opt('--name', COMPONENTS ? 'text-styles-source' : 'text-styles');
 const { pages } = JSON.parse(readFileSync('tools/review/pages.json', 'utf8'));
 const titles = Object.fromEntries(pages.map((p) => [p.path, p.title]));
@@ -82,6 +86,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
             tags: {},
             contexts: {},
             colours: {},
+            tablet: {},
             phone: {},
             samples: [],
           });
@@ -95,6 +100,8 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
         count(s.colours, st.color);
         const ph = u.phone?.typography?.[role]?.styles?.[i];
         if (ph) count(s.phone, `${size2(ph.size)}px`);
+        const tb = u.tablet?.typography?.[role]?.styles?.[i];
+        if (tb) count(s.tablet, `${size2(tb.size)}px`);
         // (samples from different pages, visible ones first)
         if (!u.hidden && s.samples.length < SAMPLES && !s.samples.some((x) => x.page === d.page)) {
           s.samples.push({
@@ -121,6 +128,7 @@ const groups = [...styles.values()].sort((a, c) => c.units - a.units).map((s, i)
     style: s.key,
     'used as': top(s.tags).map(([k, n]) => `${k} ${Math.round((n / s.units) * 100)}%`).join(' · '),
     where: top(s.contexts, 4).map(([k, n]) => `${k} (${n})`).join(' · '),
+    ...(Object.keys(s.tablet).length ? { tablet: top(s.tablet, 3).map(([k, n]) => `${k} (${n})`).join(' · ') } : {}),
     phone: top(s.phone, 3).map(([k, n]) => `${k} (${n})`).join(' · ') || '—',
   },
   colours: top(s.colours, 8),

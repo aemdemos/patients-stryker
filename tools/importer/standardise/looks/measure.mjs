@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /*
  * Base variants from measured looks (roadmap step 1): renders every as-is page (/rs) on the local
- * preview at desktop (1440) and phone (375) width and records, for every block on it (Columns and
- * the Fragment wrapper aside; the blocks inside fragments are measured), how it LOOKS: its frame,
+ * preview (or, --source, the saved stryker.com pages) at desktop (1440), tablet (860) and phone
+ * (375) width and records, for every block on it (Columns and the Fragment wrapper aside; the
+ * blocks inside fragments are measured), how it LOOKS: its frame,
  * its repeating unit (card, slide, item), the image's share, shape and place against the text,
  * the typography per role (title, body, link, button), its buttons, its counts, and a screenshot
  * at both widths. Raw values are kept (group.mjs buckets them), so the grouping can change without
@@ -10,7 +11,7 @@
  * usage: node tools/importer/standardise/looks/measure.mjs [--base http://localhost:3000]
  *   [--out /tmp/run-outputs/looks-v2] [--columns | --text] [--only <path>,<path>] [--limit n]
  *   [--reverse]
- *   [--force]
+ *   [--force] [--widths d,t,m (some widths only)] [--add t (a width added to measured pages)]
  * Blocks in closed tabs or accordions are measured after opening them.
  */
 import {
@@ -45,11 +46,8 @@ const SCRIPT_TAGS = /<script\b[\s\S]*?<\/script>/gi;
 // (--components, with --source: every component of the original, at every depth (in column
 // cells, fragments, tabs, accordions, panels), each marked with its AEM name and measured as what
 // it is: column controls cell by cell, the others as blocks; page-level waits only; screenshots
-// of the layouts, blocks and bands, not of text and small pieces)
+// of none: the looks page shows them as clips of the page's tiles, --tiles)
 const COMPONENTS = SOURCE && args.includes('--components');
-const NO_SHOTS = ['text', 'section-title', 'sectionseparator', 'title', 'largeheadline', 'standaloneimage',
-  'curatedcta', 'secondarycta', 'contactbutton', 'buttonset', 'pageshortdescription', 'tagcrumb',
-  'disclaimer', 'publishdate', 'localpagenavigation', 'h1-title', 'tagline'];
 const SOURCE_TYPES = {
   // the hero: every component of the page's hero area (the first area of the main content, before
   // the customizable area), whatever its type (pagehero, carouselslidegroup, fullWidthImageHero,
@@ -67,6 +65,25 @@ if (COMPONENTS) defaultOut = '/tmp/run-outputs/looks-components';
 // component as its part of the page's tiles. Into <out>/tiles/<width>/<page>/<n>.jpg + tiles.json)
 const TILES = SOURCE && args.includes('--tiles');
 if (TILES) defaultOut = '/tmp/run-outputs/looks-tiles';
+// the widths measured: desktop, tablet (inside the original's tablet layout, 841–1023, and ours,
+// 600–899) and phone; viewport height and the tiles' height at each; the key each measurement is
+// stored under (desktop at the top level of a block, tablet / phone under their key)
+const WIDTHS = [
+  {
+    tag: 'd', key: null, w: 1440, h: 1000, tile: 4000,
+  },
+  {
+    tag: 't', key: 'tablet', w: 860, h: 1000, tile: 6000,
+  },
+  {
+    tag: 'm', key: 'phone', w: 375, h: 800, tile: 8000,
+  },
+];
+// (--widths d,t,m: only some of them; --add t: pages measured before get that width added, the
+// rest of their measurement kept)
+const ADD = opt('--add', '') ? opt('--add').split(',') : null;
+const ONLY_WIDTHS = opt('--widths', '') ? opt('--widths').split(',') : null;
+const widthsOf = (wanted) => WIDTHS.filter((x) => !wanted || wanted.includes(x.tag));
 const out = opt('--out', defaultOut);
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const limit = Number(opt('--limit', 0)) || Infinity;
@@ -910,7 +927,8 @@ async function desktop(path, url, result) {
     if (images) m.imagesShown = images;
     if (panels) m.panels = panels;
     const shot = join('shots', m.type, `${slug(path)}__${n}-d.jpg`);
-    const shoot = !(COMPONENTS && NO_SHOTS.includes(m.type));
+    // (the original's components are shown as clips of the page's tiles: no screenshots)
+    const shoot = !SOURCE;
     if (shoot) mkdirSync(join(out, 'shots', m.type), { recursive: true });
     if (m.box.width <= 1 || m.box.height <= 1) m.hidden = true;
     else if (shoot) {
@@ -922,9 +940,13 @@ async function desktop(path, url, result) {
   });
 }
 
-/** the phone look: the same blocks in the same order, a screenshot and the unit layout */
-async function phone(path, url, result) {
-  await page.setViewportSize({ width: 375, height: 800 });
+/**
+ * the look at a smaller width (tablet or phone): the same blocks in the same order (the original's
+ * components matched by key), the unit layout and, without sprites, a screenshot; stored under
+ * the width's key
+ */
+async function smaller(path, url, result, at) {
+  await page.setViewportSize({ width: at.w, height: at.h });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await settle(page);
   const handles = await page.$$(SELECTOR);
@@ -941,16 +963,19 @@ async function phone(path, url, result) {
     await openPanels(h);
     const images = COMPONENTS ? null : await showImages(h);
     const p = await measureFor(h);
-    m.phone = (COLUMNS || p.rows) ? { rows: p.rows, box: p.box, imagesShown: images } : {
+    const x = (COLUMNS || p.rows) ? { rows: p.rows, box: p.box, imagesShown: images } : {
       units: p.units, image: p.image, typography: p.typography, box: p.box, imagesShown: images,
     };
-    if (p.box.width > 1 && p.box.height > 1 && !(COMPONENTS && NO_SHOTS.includes(m.type))) {
-      const shot = join('shots', m.type, `${slug(path)}__${m.n}-m.jpg`);
+    m[at.key] = x;
+    // (the original's components are shown as clips of the page's tiles: no screenshots)
+    if (p.box.width > 1 && p.box.height > 1 && !COMPONENTS && !SOURCE) {
+      const shot = join('shots', m.type, `${slug(path)}__${m.n}-${at.tag}.jpg`);
       await shotOf(p, join(out, shot), h)
-        .then((ok) => { if (ok) m.phone.shot = shot; })
+        .then((ok) => { if (ok) x.shot = shot; })
         .catch(() => null);
     }
   });
+  result.widths = [...new Set([...(result.widths || ['d']), at.tag])];
 }
 
 /** the stryker.com address of a page (the review tool's snapshot facts hold it) */
@@ -1027,7 +1052,7 @@ if (TILES) {
     const url = sourceUrlOf(path);
     if (!url) return;
     index[path] = {};
-    await inOrder([[1440, 1000, 4000], [375, 800, 8000]], async ([w, hgt, tile]) => {
+    await inOrder(widthsOf(ONLY_WIDTHS).map((x) => [x.w, x.h, x.tile]), async ([w, hgt, tile]) => {
       try {
         await page.setViewportSize({ width: w, height: hgt });
         await page.goto(url, { waitUntil: 'domcontentloaded' });
@@ -1084,12 +1109,22 @@ if (TILES) {
 
 let done = 0;
 const started = Date.now();
-const todo = list.filter((path) => args.includes('--force') || !existsSync(join(out, 'pages', `${slug(path)}.json`)));
+const fileOf = (path) => join(out, 'pages', `${slug(path)}.json`);
+// (--add: a measured page still lacking one of the widths)
+const lacks = (path) => {
+  const d = JSON.parse(readFileSync(fileOf(path), 'utf8'));
+  return ADD.some((tag) => !(d.widths || ['d', 'm']).includes(tag));
+};
+const due = (path) => {
+  if (ADD) return existsSync(fileOf(path)) && lacks(path);
+  return args.includes('--force') || !existsSync(fileOf(path));
+};
+const todo = list.filter(due);
 done = list.length - todo.length;
 await inOrder(todo, async (path) => {
-  const file = join(out, 'pages', `${slug(path)}.json`);
+  const file = fileOf(path);
   // (a second runner may have measured it meanwhile: checked again now, not only at the start)
-  if (!args.includes('--force') && existsSync(file)) {
+  if (!due(path)) {
     done += 1;
     return;
   }
@@ -1098,11 +1133,16 @@ await inOrder(todo, async (path) => {
     done += 1;
     return;
   }
-  const result = {
+  const result = ADD ? JSON.parse(readFileSync(file, 'utf8')) : {
     page: path, measured: new Date().toISOString(), blocks: [], errors: [],
   };
   try {
-    if (TEXT) {
+    if (ADD) {
+      // (the widths added to the page's measurement: its desktop blocks matched as before)
+      result.widths = result.widths || ['d', 'm'];
+      const adding = widthsOf(ADD).filter((x) => x.key && !result.widths.includes(x.tag));
+      await inOrder(adding, (at) => smaller(path, url, result, at));
+    } else if (TEXT) {
       result.units = await textPass(url, 1440, 1000);
       const phoneUnits = await textPass(url, 375, 800);
       // (the same units in the same order on phones: their styles there)
@@ -1112,7 +1152,9 @@ await inOrder(todo, async (path) => {
       });
     } else {
       await desktop(path, url, result);
-      await phone(path, url, result);
+      result.widths = ['d'];
+      const others = widthsOf(ONLY_WIDTHS).filter((x) => x.key);
+      await inOrder(others, (at) => smaller(path, url, result, at));
     }
   } catch (e) {
     result.errors.push(e.message.slice(0, 200));

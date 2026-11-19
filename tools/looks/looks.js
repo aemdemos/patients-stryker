@@ -58,7 +58,7 @@ const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${
 const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
 const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0) + (it.differs?.length || 0);
 const PART_NAMES = {
-  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart', columns: 'Columns (twelfths)', holds: 'Columns hold', align: 'Alignment', phone: 'On phones',
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart', columns: 'Columns (twelfths)', holds: 'Columns hold', align: 'Alignment', tablet: 'On tablets', phone: 'On phones',
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -83,11 +83,13 @@ const SIZE_NOTE = 'Text sizes in bands: S up to 16 px, M up to 26, L up to 38, X
 // the full-page tiles of the original's pages (measure.mjs --tiles): per page and width the page
 // height, the tile height and the number of tiles; in Document Authoring under /looks-shots/pages
 let tiles = {};
+// (the widths the original was saved and measured at: desktop, tablet, phone)
+const VIEWPORTS = { d: 1440, t: 860, m: 375 };
 const tileSrc = (page, width, i) => `/looks-shots/pages/${width}${page}/${i}.jpg`;
 
 /** an instance as its clip of the page's tiles (8px around its box), scaled to the size slider */
 function sprite(it, at, label) {
-  const width = at === 'm' ? 375 : 1440;
+  const width = VIEWPORTS[at];
   const c = it.clip?.[at];
   const t = tiles[it.page]?.[width];
   if (!c || !t || c[2] < 2 || c[3] < 2) return el('span', { class: 'lk-none' }, 'no screenshot');
@@ -138,7 +140,7 @@ function groupBox(g) {
     // (complete instances first, then the ones lacking a part)
     g.extras?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part more: ${g.extras.map(([k, n]) => `${n} ${extraOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
     el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => odd(a) - odd(c)).map((it) => {
-      const shot = vp === 'm' ? it.phoneShot : it.shot;
+      const shot = { d: it.shot, m: it.phoneShot }[vp];
       const tip = `${it.title} · ${it.text.slice(0, 120)}`;
       // (the screenshot and the title open the page as it is now; the source link the live
       // stryker.com page)

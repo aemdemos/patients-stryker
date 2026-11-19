@@ -53,7 +53,11 @@ const REMOTE_SHOTS = args.includes('--remote-shots');
 const SPRITES = args.includes('--sprites');
 const rect = (r) => (r ? [r.left, r.top, (r.right ?? r.left + r.width) - r.left,
   (r.bottom ?? r.top + r.height) - r.top].map((v) => Math.round(v)) : null);
-const clipOf = (b) => ({ d: rect(b.content || b.box), m: rect(b.phone?.content || b.phone?.box) });
+const clipOf = (b) => ({
+  d: rect(b.content || b.box),
+  t: rect(b.tablet?.content || b.tablet?.box),
+  m: rect(b.phone?.content || b.phone?.box),
+});
 // (--shots-prefix: a folder of their own for the screenshots, e.g. source/ for the original's,
 // which have the as-is ones' names)
 const SHOTS_PREFIX = opt('--shots-prefix', '') ? `${opt('--shots-prefix').replace(/\/$/, '')}/` : '';
@@ -239,9 +243,12 @@ function layoutPartsOf(b) {
   const rows = b.rows.filter((r) => r.cells.length);
   const layouts = [...new Set(rows.map(twelfths))];
   const holds = [...new Set(rows.map((r) => r.cells.map(kind).join(' | ')))];
-  const phoneRows = (b.phone?.rows || []).filter((r) => r.cells.length > 1);
-  let phone = 'one column';
-  if (phoneRows.length) phone = phoneRows.every((r) => r.stacked) ? 'stacked' : 'side by side';
+  // (on phones and tablets: whether the columns stack)
+  const stacking = (at) => {
+    const many = (at?.rows || []).filter((r) => r.cells.length > 1);
+    if (!many.length) return 'one column';
+    return many.every((r) => r.stacked) ? 'stacked' : 'side by side';
+  };
   return {
     frame: [
       `${width(b.frame.widthShare)}`,
@@ -251,7 +258,8 @@ function layoutPartsOf(b) {
     columns: layouts.length > 2 ? 'mixed rows' : layouts.join(' / '),
     holds: holds.length > 2 ? 'mixed' : holds.join(' / '),
     align: rows.some((r) => r.align === 'center') ? 'middle' : 'top',
-    phone,
+    ...(b.tablet ? { tablet: stacking(b.tablet) } : {}),
+    phone: stacking(b.phone),
   };
 }
 
