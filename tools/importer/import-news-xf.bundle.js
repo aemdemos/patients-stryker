@@ -663,8 +663,9 @@ var CustomImportScript = (() => {
     IMG: ["src", "alt"],
     TD: ["colspan", "rowspan"],
     TH: ["colspan", "rowspan"],
-    P: ["data-section-style"],
-    LI: ["data-section-style"]
+    H2: ["data-section-style"],
+    H3: ["data-section-style"],
+    H4: ["data-section-style"]
   };
   function text(el) {
     return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
@@ -713,25 +714,6 @@ var CustomImportScript = (() => {
     const font = FONT_STYLES.find(([cls]) => covers2(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
-  function sameLineText(node, direction) {
-    let value = "";
-    let sibling = node[direction];
-    while (sibling && sibling.nodeName !== "BR") {
-      value += sibling.textContent;
-      sibling = sibling[direction];
-    }
-    return value.replace(/[\s\u00a0]+/g, "");
-  }
-  function tagPlainBoldLabels(root, wholeParagraphs) {
-    [...root.querySelectorAll("b")].forEach((b) => {
-      if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
-      if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
-      const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
-      if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
-      if (!wholeParagraphs && text(block) === text(b)) return;
-      block.setAttribute("data-section-style", "body-font-bold");
-    });
-  }
   var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
   function ownColour(el) {
     const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
@@ -742,39 +724,13 @@ var CustomImportScript = (() => {
     const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
     return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text(child)));
   }
-  function bracketTag(nodes, classes, root) {
-    const doc = root.ownerDocument;
-    const run = [...nodes];
-    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
-    while (run.length && loose(run[0])) run.shift();
-    while (run.length && loose(run[run.length - 1])) run.pop();
-    if (!run.length || !run.some((n) => n.textContent.trim())) return;
-    const open = doc.createTextNode(`[[${classes}]`);
-    const close = doc.createTextNode("]");
-    run[0].before(open);
-    run[run.length - 1].after(close);
-    const edge = (n, dir) => {
-      let s = n[dir];
-      while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
-      return s;
-    };
-    let parent = open.parentElement;
-    while (parent && parent !== root && parent === close.parentElement && !parent.matches("p, li, h1, h2, h3, h4, h5, h6, a, div") && !edge(open, "previousSibling") && !edge(close, "nextSibling")) {
-      parent.before(open);
-      parent.after(close);
-      parent = open.parentElement;
-    }
-  }
   function tagTextSize(root) {
-    const squash = (value) => value.replace(/[\s ]+/g, "");
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
       if (span.parentElement.closest(".fontsize-1-25em") || !text(span)) return;
-      if (span.closest("h1")) return;
-      const heading = span.closest("h2, h3, h4, h5, h6");
-      const block = heading || span.closest("p, li");
-      if (!block) return;
-      if (!heading && squash(block.textContent) === squash(span.textContent)) return;
-      bracketTag([span], "text-1-25", root);
+      const heading = span.closest("h2, h3, h4");
+      if (!heading || squash(heading.textContent) !== squash(span.textContent)) return;
+      heading.setAttribute("data-section-style", `${heading.tagName.toLowerCase()}-1-25`);
     });
   }
   function markGold(nodes, root) {
@@ -834,7 +790,7 @@ var CustomImportScript = (() => {
       wrap(run);
     });
   }
-  function cleanRichText(root, { wholeParagraphs = false } = {}) {
+  function cleanRichText(root) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
@@ -858,7 +814,6 @@ var CustomImportScript = (() => {
         el.after(doc.createTextNode(" "));
       }
     });
-    tagPlainBoldLabels(root, wholeParagraphs);
     tagGoldText(root);
     tagTextSize(root);
     const standalone = /* @__PURE__ */ new Set();
@@ -922,7 +877,7 @@ var CustomImportScript = (() => {
   }
   function serifHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    return new Set([...root.querySelectorAll("h3")].filter((h) => {
+    return new Set([...root.querySelectorAll("h2, h3")].filter((h) => {
       if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
       if (![...h.querySelectorAll("[class]")].some((el) => [...el.classList].some((c) => !c.startsWith("fontsize-")))) return true;
       const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
@@ -1123,14 +1078,17 @@ var CustomImportScript = (() => {
     const lineAbove = lineAboveSubheads(box);
     const spaced = !lineAbove && spacedSubheads(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
-    const indents = new Map([...box.querySelectorAll(':scope > p[style*="margin-left"]')].map((p) => {
+    const indents = [...box.querySelectorAll(':scope > p[style*="margin-left"]')].filter((p) => {
       const px = (p.getAttribute("style").match(/margin-left:\s*(\d+)px/) || [])[1];
-      return [p, Math.round(Number(px || 0) / 40)];
-    }).filter(([, level]) => level > 0));
+      return Math.round(Number(px || 0) / 40) > 0;
+    });
     const { centred, size } = cleanRichText(box);
-    indents.forEach((level, p) => {
-      if (!box.contains(p)) return;
-      for (let i = 0; i < level; i += 1) bracketTag([...p.childNodes], "indent", p);
+    indents.forEach((p) => {
+      const list = p.previousElementSibling;
+      const item = list && list.matches("ul, ol") && list.lastElementChild;
+      if (!box.contains(p) || !item || !text(p)) return;
+      item.append(doc.createElement("br"), ...p.childNodes);
+      p.remove();
     });
     const nodes = blockNodes(box, doc);
     nodes.forEach((node) => {
@@ -1144,7 +1102,11 @@ var CustomImportScript = (() => {
         node.boldBody = true;
         node.followsText = true;
       }
-      if (serifHeads.has(node)) node.serifHeading = true;
+      if (serifHeads.has(node) && !node.querySelector("em")) {
+        const em = doc.createElement("em");
+        em.append(...node.childNodes);
+        node.append(em);
+      }
       if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
     });
     let last = null;
@@ -2291,9 +2253,8 @@ var CustomImportScript = (() => {
         const goldStyle = boxes.every((box) => box.querySelector(".futura-bold .fontsize-2em, .fontsize-2em .futura-bold")) ? "gold-boxes, gold-boxes-2" : "gold-boxes";
         const heading = current && current.nodes.length === 1 && /^H[2-4]$/.test(current.nodes[0].tagName || "");
         if (heading && !current.style) {
-          const sized = /\[\[text-1-25\]/.test(current.nodes[0].textContent);
           dropBracketTags(current.nodes[0]);
-          current.style = sized && current.nodes[0].tagName === "H3" ? `${goldStyle}, h3-1-25` : goldStyle;
+          current.style = goldStyle;
           current.nodes.push(block);
         } else {
           startSection("gold-boxes", goldStyle).nodes.push(block);
@@ -2309,19 +2270,12 @@ var CustomImportScript = (() => {
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
-        const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
-        if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
+        if (!current || current.kind !== kind) {
           if (node.followsText && current && i > 0) {
             current.style = [current.style, "ps-0"].filter(Boolean).join(", ");
           }
           const join = (i > 0 || stacked) && current && !node.followsText ? ["join"] : [];
           startSection(kind, [...styles, ...join].join(", ") || void 0);
-        }
-        if (h3Font) {
-          if (h3Font === "serif" && current.h3Font !== "serif") {
-            current.style = [current.style, "h-serif"].filter(Boolean).join(", ");
-          }
-          current.h3Font = h3Font;
         }
         current.nodes.push(node);
       });
@@ -2348,7 +2302,7 @@ var CustomImportScript = (() => {
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
-      cleanRichText(box, { wholeParagraphs: true });
+      cleanRichText(box);
       return blockNodes(box, doc);
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
@@ -2360,6 +2314,45 @@ var CustomImportScript = (() => {
     const opening = sections.find((section) => section.nodes.length);
     if (element.hasAttribute("data-first-published") && !title.nodes.length && opening && opening.nodes[0].tagName === "H1") {
       opening.style = [opening.style, "date-above"].filter(Boolean).join(", ");
+    }
+    const representativeTheme = element.getAttribute("data-representative-theme");
+    if (representativeTheme) {
+      element.removeAttribute("data-representative-theme");
+      element.setAttribute("data-news-theme", representativeTheme);
+      const THEME_SIZES = /* @__PURE__ */ new Set(["p-1", "p-1-25", "p-1-5", "p-1-75", "h2-1-25", "h3-1-25", "h4-1-25", "h4-line-above", "join"]);
+      const footnoteNumber = (p) => {
+        const first = p.firstChild;
+        if (first && first.nodeName === "SUP" && /^\s*\d+\s*$/.test(first.textContent)) {
+          return { n: Number(first.textContent.trim()), strip: () => first.remove() };
+        }
+        const m = first && first.nodeType === 3 && first.textContent.match(/^[\s .]*(\d+)\.[\s ]*/);
+        return m ? { n: Number(m[1]), strip: () => {
+          first.textContent = first.textContent.slice(m[0].length);
+        } } : null;
+      };
+      sections.forEach((section) => {
+        section.style = (section.style || "").split(", ").filter((s) => s && !THEME_SIZES.has(s)).join(", ") || void 0;
+        section.nodes.filter((node) => node.nodeType === 1).forEach((node) => {
+          [node, ...node.querySelectorAll("[data-section-style]")].forEach((el) => {
+            if (THEME_SIZES.has(el.getAttribute("data-section-style"))) el.removeAttribute("data-section-style");
+          });
+        });
+        const paragraphs = section.nodes.filter((node) => node.nodeType === 1);
+        if (!paragraphs.length || !paragraphs.every((p) => p.tagName === "P")) return;
+        const numbers = paragraphs.map(footnoteNumber);
+        if (numbers.some((num, i) => !num || num.n !== i + 1)) return;
+        const ol = doc.createElement("ol");
+        paragraphs.forEach((p, i) => {
+          numbers[i].strip();
+          p.querySelectorAll("br").forEach((br) => br.replaceWith(" "));
+          const li = doc.createElement("li");
+          li.append(...p.childNodes);
+          li.normalize();
+          if (li.firstChild && li.firstChild.nodeType === 3) li.firstChild.textContent = li.firstChild.textContent.replace(/^[\s ]+/, "");
+          ol.append(li);
+        });
+        section.nodes = [ol];
+      });
     }
     const out = [];
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {

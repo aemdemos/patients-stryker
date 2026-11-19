@@ -319,6 +319,21 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: 0;
 }
 
+/* section style `spacer, small`: a 20px gap at every width and the whole gap between the
+   two sections it separates — no margins of its own, and the section above it runs
+   straight into it (its bottom margin is cancelled) */
+:where(body.corp) main > .section.spacer.small {
+  height: var(--space-block-l);
+  margin: 0;
+  padding: 0;
+}
+
+/* (body.corp, not :where(): it also outranks the templates' own section gaps, e.g. the
+   news-detail title section's 15px) */
+body.corp main > .section:has(+ .section.spacer.small) {
+  margin-bottom: 0;
+}
+
 /* section styles: backgrounds */
 :where(body.corp) main > .section.bg-white {
   background-color: var(--color-white);
