@@ -1188,15 +1188,18 @@ function videoTextAside(video) {
   return rte;
 }
 
-/** The video + text row as `Columns (columns-50-50)` (the library's Video + text). */
+/** The video + text row as `Columns (columns-50-50)`, `gray-lead` for a grey box (the library's Video + text). */
 function videoTextColumns(video, rte, doc) {
   const link = videoLink(video, doc);
   const { nodes } = richTextNodes(rte, doc);
   if (!link || !nodes.length) return null;
   const media = doc.createElement('p');
   media.append(link);
+  // the text in a light-grey box on the source (e.g. InsideOut: .has-background.bg-light-gray
+  // around the 14px text): the `gray-lead` variant
+  const boxed = !!rte.querySelector('.has-background, [class*="bg-light-gray"]');
   const block = WebImporter.Blocks.createBlock(doc, {
-    name: 'Columns (columns-50-50)',
+    name: `Columns (columns-50-50${boxed ? ', gray-lead' : ''})`,
     cells: [[media, nodes]],
   });
   // the text's copy style is the section's (e.g. the 1.25em copy beside the Ease video)

@@ -1551,8 +1551,9 @@ var CustomImportScript = (() => {
     if (!link2 || !nodes.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
+    const boxed = !!rte.querySelector('.has-background, [class*="bg-light-gray"]');
     const block = WebImporter.Blocks.createBlock(doc, {
-      name: "Columns (columns-50-50)",
+      name: `Columns (columns-50-50${boxed ? ", gray-lead" : ""})`,
       cells: [[media, nodes]]
     });
     const copy = nodes.map((n) => n.copyStyle).find((c) => c);
