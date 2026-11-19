@@ -62,10 +62,16 @@
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
   --corp-color-plum: #594b61; /* stryker.com bg-dark-purple-gradient end colour */
+  --corp-color-slate: #425361; /* stryker.com bg-dark-blue-gradient end colour */
+  --corp-color-charcoal: #323232; /* stryker.com inline text colour #323232 */
 
   /* stryker.com gradient backgrounds (bg-golden-gradient, bg-dark-purple-gradient) */
   --corp-gradient-gold: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
   --corp-gradient-purple: linear-gradient(-90deg, var(--color-secondary), var(--corp-color-plum));
+
+  /* the same source gradients in their default direction (left to right, as .bg-…-gradient) */
+  --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-plum));
+  --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-slate));
 }
 
 @media (width >= 900px) {
@@ -251,6 +257,19 @@ body:where(.corp):has(main .hero-carousel) header {
 
   color: var(--color-black);
 }
+
+:where(body.corp) span.text-marker:is(.ts-midgrey, .ts-darkgold, .ts-charcoal, .ts-palegrey) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
+/* the other stryker.com inline text colours, at their exact source values: #b2b4ae, #af6d04,
+   #323232, #dfe1de */
+:where(body.corp) span.text-marker.ts-midgrey { --span-color: var(--color-surface-muted); }
+:where(body.corp) span.text-marker.ts-darkgold { --span-color: var(--color-accent-link-hover); }
+:where(body.corp) span.text-marker.ts-charcoal { --span-color: var(--corp-color-charcoal); }
+:where(body.corp) span.text-marker.ts-palegrey { --span-color: var(--color-surface-dim); }
 
 :where(body.corp) span.text-marker.ts-xxxl { font-size: var(--corp-font-scale-2); }
 :where(body.corp) span.text-marker.ts-xxxxl { font-size: var(--corp-font-scale-2-5); }

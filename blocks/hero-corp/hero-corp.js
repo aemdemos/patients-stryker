@@ -212,7 +212,8 @@ function readLegacyOptions(block) {
 /**
  * image-slide: the headline lines go in a box (`.hero-corp-headline`), the button
  * paragraphs after it. Block options: box-white / -gold / -blue / -gray / -dark /
- * -gold-gradient colour the box, box-mt-N … box-pl-N set its margin / padding in percent
+ * -gold-gradient / -purple-gradient / -blue-gradient colour the box, box-mt-N … box-pl-N
+ * set its margin / padding in percent
  * (`n` = negative: box-mt-n4) as the source's inline box styles, and top-N / left-N /
  * right-N (percent of the slide, `7-5` = 7.5) place it — older imports; the named
  * text-left … text-lower positions (CSS) replace them.
@@ -229,7 +230,7 @@ function setupImageSlide(block) {
     content.prepend(box);
     markTextRoles(box);
     [...block.classList].forEach((opt) => {
-      if (/^box-(white|gold|blue|gray|dark|gold-gradient)$/.test(opt)) box.classList.add(opt);
+      if (/^box-(white|gold|blue|gray|dark|(gold|purple|blue)-gradient)$/.test(opt)) box.classList.add(opt);
       const m = opt.match(/^box-(mt|mr|mb|ml|pt|pr|pb|pl)-(n?)(\d+)$/);
       if (m) box.style[BOX_SPACING[m[1]]] = `${m[2] ? '-' : ''}${m[3]}%`;
     });

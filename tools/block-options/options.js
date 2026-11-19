@@ -37,6 +37,8 @@ export const BLOCK_OPTIONS = {
           ['box-gray', 'Light grey'],
           ['box-dark', 'Dark grey'],
           ['box-gold-gradient', 'Gold gradient'],
+          ['box-purple-gradient', 'Purple gradient'],
+          ['box-blue-gradient', 'Blue gradient'],
         ],
         replaces: /^box-(mt|mr|mb|ml|pt|pr|pb|pl)-n?\d+$/,
       },

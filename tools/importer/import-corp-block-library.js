@@ -326,15 +326,37 @@ function videoLink(dm, document) {
 }
 
 // live slide text colours (inline `color:`) → bracket colour tags
-const SLIDE_COLORS = [
-  [GOLD, 'color-gold'],
-  [/rgba?\(\s*255\s*,\s*255\s*,\s*255\b|#fff(fff)?\b/i, 'color-white'],
-  [/rgba?\(\s*28\s*,\s*86\s*,\s*135\b|#1c5687\b/i, 'color-blue'],
-  [/rgba?\(\s*237\s*,\s*238\s*,\s*236\b|#edeeec\b/i, 'color-light-gray'],
-  [/rgba?\(\s*0\s*,\s*0\s*,\s*0\s*\)|#000(000)?\b/i, null],
-];
-// the live box background → the box option. The rare purple and blue gradient boxes (one slide
-// each on stryker.com) take the dark grey box: fewer options, a close look.
+// every stryker.com inline text colour at its exact value → the colour word of its marker (black
+// is the default text colour: no marker). Brand colours are never swapped for a close one: a
+// colour not listed here is left without a marker and named in the import report
+const SLIDE_COLORS = {
+  ffb500: 'color-gold',
+  ffffff: 'color-white',
+  '1c5687': 'color-blue',
+  edeeec: 'color-light-gray',
+  '85458a': 'color-purple',
+  '4c7d7a': 'color-teal',
+  '27455c': 'color-navy',
+  545857: 'color-grey',
+  b2b4ae: 'color-midgrey',
+  af6d04: 'color-darkgold',
+  323232: 'color-charcoal',
+  dfe1de: 'color-palegrey',
+  '000000': null,
+};
+const unlistedColours = new Set();
+
+/** a CSS colour (#abc, #aabbcc, rgb(), opaque rgba()) → 'aabbcc'; '' when it isn't one of those */
+function hexOf(value) {
+  const v = value.trim().toLowerCase();
+  let m = v.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/);
+  if (m) return m[1].length === 3 ? m[1].replace(/./g, '$&$&') : m[1];
+  m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)$/);
+  if (!m || (m[4] !== undefined && parseFloat(m[4]) !== 1)) return '';
+  return m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, '0')).join('');
+}
+// the live box background → the box option, each at the source's exact colours (brand colours
+// are never swapped for a close one)
 const SLIDE_BOXES = {
   'bg-white': 'box-white',
   'bg-gold': 'box-gold',
@@ -342,8 +364,8 @@ const SLIDE_BOXES = {
   'bg-light-gray': 'box-gray',
   'bg-dark-gray': 'box-dark',
   'bg-golden-gradient': 'box-gold-gradient',
-  'bg-dark-purple-gradient': 'box-dark',
-  'bg-dark-blue-gradient': 'box-dark',
+  'bg-dark-purple-gradient': 'box-purple-gradient',
+  'bg-dark-blue-gradient': 'box-blue-gradient',
 };
 /** one slide text run's look: Futura bold?, colour tag (sizes go to the section: slideTextSizes) */
 function slideRunStyle(textNode, line) {
@@ -357,8 +379,9 @@ function slideRunStyle(textNode, line) {
   for (let e = el; e && line.contains(e); e = e.parentElement) {
     const m = (e.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
     if (m) {
-      const hit = SLIDE_COLORS.find(([re]) => re.test(m[1]));
-      color = hit ? hit[1] : null;
+      const hex = hexOf(m[1]);
+      if (hex in SLIDE_COLORS) color = SLIDE_COLORS[hex];
+      else unlistedColours.add(m[1].trim());
       break;
     }
   }
@@ -837,6 +860,7 @@ export default {
   },
 
   transform: (payload) => {
+    unlistedColours.clear();
     const { document, url, params } = payload;
     const source = new URL(params.originalURL || url);
     const blockName = source.searchParams.get('block');
@@ -893,6 +917,8 @@ export default {
         template: PAGE_TEMPLATE.name,
         blocks: found,
         missing,
+        // inline text colours with no exact colour word: left unmarked, to be added (never swapped)
+        unlistedColours: [...unlistedColours].join(', '),
       },
     }];
   },
