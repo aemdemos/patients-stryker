@@ -26,8 +26,9 @@
  * opens with a lead image directly below the date (outside a column layout).
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
- *   3c. purple / blue buttons (a.btn-purple, a.btn-blue) → their section gets the
- *       btn-purple / btn-blue style (the authoring conventions' button colours)
+ *   3c. purple buttons (a.btn-purple) → an Italic + Underline link (the authoring
+ *       conventions' purple button); blue buttons (a.btn-blue) → their section gets the
+ *       btn-blue style
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
  *      the cards-corp-teaser parser, in a section of their own (full width)
  *   5. `.c-disclaimer` references (numbered paragraphs → an ordered list, so the
@@ -1089,10 +1090,20 @@ function buttonNodes(component, doc) {
     const a = doc.createElement('a');
     a.setAttribute('href', newTabHref(source, absoluteAsset(source.getAttribute('href'))));
     a.textContent = text(source);
-    // purple / blue source buttons (a.btn-purple, a.btn-blue): a bold link in a section with
-    // the btn-purple / btn-blue style (authoring conventions); marked here, set on the section
-    const colour = ['btn-purple', 'btn-blue'].find((cls) => source.classList.contains(cls));
-    if (colour) a.setAttribute('data-btn-style', colour);
+    // a purple source button (a.btn-purple): an Italic + Underline link, the purple button
+    // of the authoring conventions (corp.js), no section style
+    if (source.classList.contains('btn-purple')) {
+      const u = doc.createElement('u');
+      u.append(a);
+      const em = doc.createElement('em');
+      em.append(u);
+      const p = doc.createElement('p');
+      p.append(em);
+      return p;
+    }
+    // a blue source button (a.btn-blue): a bold link in a section with the btn-blue style;
+    // marked here, set on the section
+    if (source.classList.contains('btn-blue')) a.setAttribute('data-btn-style', 'btn-blue');
     const strong = doc.createElement('strong');
     if (source.classList.contains('btn-gold')) {
       const em = doc.createElement('em');
@@ -1841,8 +1852,11 @@ export default function transform(hookName, element, payload) {
       ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
     ];
     [headline, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-    // the Large Headline text beside the video is set by the news-video theme
-    element.setAttribute('data-news-theme', 'full-width, news-video');
+    // the Large Headline text beside the video is set by the news-video theme; a grey box
+    // with a quote and sign-off under it (a patient story, e.g. "Life after leukemia -
+    // Jesse's Zip skin closure story") by the news-video-quote theme
+    const quoteTheme = boxed && quotes.length > 0;
+    element.setAttribute('data-news-theme', `full-width, ${quoteTheme ? 'news-video-quote' : 'news-video'}`);
     const section = startSection('video-text', h3Statement ? 'video-text' : 'video-text, headline-1-5vw');
     if (boxed) section.background = 'light-gray';
     // a button under the video comes right after it, before the text (source order: on
@@ -2528,7 +2542,7 @@ export default function transform(hookName, element, payload) {
   sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
-    // a section holding purple / blue buttons gets the btn-purple / btn-blue style, one
+    // a section holding blue buttons gets the btn-blue style, one
     // holding a sized heading (tagTextSize) its h2-1-25 / h3-1-25 / h4-1-25 style
     const MARKS = ['data-btn-style', 'data-section-style'];
     const selector = MARKS.map((m) => `[${m}]`).join(', ');

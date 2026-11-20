@@ -1001,8 +1001,9 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
 }
 
 /* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue;
-   the talent banner's button is the blue one */
-:where(body.corp) main .section.btn-purple a.button.primary:any-link {
+   the talent banner's button is the blue one. An Italic + Underline link alone on its line
+   is the purple button anywhere (corp.js, authoring conventions) */
+:where(body.corp) main :is(.section.btn-purple a.button.primary, a.button.primary.purple):any-link {
   border-color: var(--corp-color-purple-dark);
   background-color: var(--color-purple);
 }
@@ -1012,7 +1013,7 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   background-color: var(--color-navy-bright);
 }
 
-:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
+:where(body.corp) main :is(.section.btn-purple a.button.primary, a.button.primary.purple):any-link:is(:hover, :focus-visible) {
   border-color: var(--corp-color-purple-pressed);
   background-color: var(--corp-color-purple-pressed);
 }

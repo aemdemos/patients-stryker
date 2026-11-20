@@ -1478,8 +1478,16 @@ var CustomImportScript = (() => {
       const a = doc.createElement("a");
       a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
       a.textContent = text2(source);
-      const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
-      if (colour) a.setAttribute("data-btn-style", colour);
+      if (source.classList.contains("btn-purple")) {
+        const u = doc.createElement("u");
+        u.append(a);
+        const em = doc.createElement("em");
+        em.append(u);
+        const p2 = doc.createElement("p");
+        p2.append(em);
+        return p2;
+      }
+      if (source.classList.contains("btn-blue")) a.setAttribute("data-btn-style", "btn-blue");
       const strong = doc.createElement("strong");
       if (source.classList.contains("btn-gold")) {
         const em = doc.createElement("em");
@@ -2047,7 +2055,8 @@ var CustomImportScript = (() => {
         ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
       ];
       [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-      element.setAttribute("data-news-theme", "full-width, news-video");
+      const quoteTheme = boxed && quotes.length > 0;
+      element.setAttribute("data-news-theme", `full-width, ${quoteTheme ? "news-video-quote" : "news-video"}`);
       const section = startSection("video-text", h3Statement ? "video-text" : "video-text, headline-1-5vw");
       if (boxed) section.background = "light-gray";
       section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
