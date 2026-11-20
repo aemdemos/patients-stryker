@@ -1,0 +1,94 @@
+/* event-detail — corp event template (`template: event-detail`, set on
+   /us/en/global-events/** pages).
+
+   Measured on the stryker.com event pages: the title is Futura bold at the h2 size, and the
+   field headings (Meeting time, Location, …) are 14px Futura bold. The underlined Details /
+   Registration headings draw their rule right under the text (no gap). */
+
+/* the title sits 15px above the event fields (its own margin), no padded title rule */
+body.event-detail main > .section:first-child > .default-content-wrapper {
+  padding-block: var(--space-block-l) 0;
+}
+
+body.event-detail main h1 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+}
+
+body.event-detail main h5,
+body.event-detail main h5:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xs);
+}
+
+body.event-detail main h5:is(.underline, :has(> u)) {
+  padding-bottom: 0;
+}
+
+body.event-detail {
+  --event-map-height: 362px;
+}
+
+body.event-detail main .columns h5:is(.underline, :has(> u)) ~ h5:is(.underline, :has(> u)) {
+  margin-top: calc(var(--space-section-l) + var(--space-section));
+}
+
+body.event-detail main .columns h5:is(.underline, :has(> u)):not(h5:is(.underline, :has(> u)) ~ h5) {
+  margin-top: calc(var(--space-section-xl) + var(--space-section));
+}
+
+body.event-detail main .columns h5:is(.underline, :has(> u)) + p.button-wrapper {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+body.event-detail main .columns p:has(> strong:first-child):has(+ h5:is(.underline, :has(> u))) {
+  font-size: var(--footnote-font-size);
+}
+
+body.event-detail.corp main .columns.columns-67-33 > div {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+body.event-detail main .columns.columns-67-33 > div > div:nth-child(2) {
+  margin-top: var(--space-block-l);
+}
+
+body.event-detail.corp main .columns.columns-67-33 > div > div {
+  flex: 0 0 auto;
+}
+
+body.event-detail .event-map iframe {
+  display: block;
+  width: 100%;
+  height: var(--event-map-height);
+  border: 0;
+}
+
+body.event-detail .event-map:not(:last-child) {
+  margin-block-end: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.event-detail {
+    --event-map-height: 400px;
+  }
+
+  body.event-detail main h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@media (width >= 1200px) {
+  body.event-detail.corp main .columns.columns-67-33 > div {
+    flex-direction: row;
+  }
+
+  body.event-detail.corp main .columns.columns-67-33 > div > div:first-child {
+    flex: 0 0 58%;
+  }
+
+  body.event-detail.corp main .columns.columns-67-33 > div > div:last-child {
+    flex: 0 0 42%;
+  }
+}

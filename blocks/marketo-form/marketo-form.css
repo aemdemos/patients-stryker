@@ -33,7 +33,7 @@
 }
 
 .marketo-form .mktoForm .mktoFormCol {
-  flex: 1 1;
+  flex: 1 1 auto; /* stacked rows size to their content (a textarea keeps its rows) */
   float: none !important;
   width: auto !important;
   min-width: 0;
@@ -193,8 +193,9 @@
 }
 
 /* submit — Stryker teal, white uppercase Futura. Matches Marketo's Simple-theme
-   selector specificity (and resets background-image) so the teal overrides its green. */
-.marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+   selector specificity (and resets background-image) so the teal overrides its green;
+   forms on the plain theme (mktoNative wrap, e.g. the nurses nomination form) get it too */
+.marketo-form .mktoForm .mktoButtonWrap:is(.mktoSimple, .mktoNative) .mktoButton {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-regular);
@@ -208,8 +209,8 @@
   cursor: pointer;
 }
 
-.marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover,
-.marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:focus {
+.marketo-form .mktoForm .mktoButtonWrap:is(.mktoSimple, .mktoNative) .mktoButton:hover,
+.marketo-form .mktoForm .mktoButtonWrap:is(.mktoSimple, .mktoNative) .mktoButton:focus {
   background-color: var(--color-primary-hover);
   background-image: none;
   border: 1px solid transparent;
@@ -222,8 +223,30 @@
 }
 
 /* reset Marketo's Simple-theme button-wrap indent so the button sits flush left */
-.marketo-form .mktoForm .mktoButtonWrap.mktoSimple {
+.marketo-form .mktoForm .mktoButtonWrap:is(.mktoSimple, .mktoNative) {
   margin-left: 0 !important;
+}
+
+/* stacked variant: every label above its field and every field the full width of the
+   form, at every width, with 18px field text (stryker.com c-stryker-form .form-control as
+   it renders on phones, e.g. the nurses nomination form: 40px fields, 288px story box) */
+.marketo-form.stacked .mktoForm .mktoLabel {
+  display: block;
+  float: none;
+  padding-top: var(--space-block-xs);
+}
+
+.marketo-form.stacked .mktoForm input[type="text"],
+.marketo-form.stacked .mktoForm input[type="email"],
+.marketo-form.stacked .mktoForm input[type="tel"],
+.marketo-form.stacked .mktoForm input[type="number"],
+.marketo-form.stacked .mktoForm input[type="url"],
+.marketo-form.stacked .mktoForm select.mktoField,
+.marketo-form.stacked .mktoForm textarea.mktoField {
+  float: none;
+  max-width: none;
+  font-size: var(--corp-form-field-font-size-l);
+  line-height: var(--corp-form-field-line-height-l);
 }
 
 /* Altcha captcha widget — give it room above the submit row */
@@ -283,6 +306,14 @@
   
   .marketo-form .mktoForm .mktoFormRow {
     flex-direction: row;
+  }
+
+  .marketo-form.stacked .mktoForm .mktoFormRow {
+    flex-direction: column;
+  }
+
+  .marketo-form.stacked .mktoForm .mktoFormCol {
+    flex: 1 1 auto;
   }
 }
 

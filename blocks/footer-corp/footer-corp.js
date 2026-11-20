@@ -1,7 +1,8 @@
 /*
  * footer-corp — the www.stryker.com footer rendered from the authored /footer document.
  * Authored sections, in order:
- *   1 copyright line + legal links <ul> · 2 social icon image links <ul> · 3 secondary links <ul>
+ *   1 copyright line + legal links <ul> · 2 social icons <ul> (each item: DM icon link +
+ *   destination link) · 3 secondary links <ul>
  * EW contract: authored nodes are MOVED (append); this file adds only wrappers and the
  * " | " separator the live footer paints between the copyright and the legal links.
  */
@@ -23,6 +24,27 @@ function moveChildren(from, to) {
 function contentOf(section) {
   if (!section) return null;
   return section.querySelector(':scope > .default-content-wrapper') || section;
+}
+
+/**
+ * Social items are authored as the DM icon link followed by the destination link
+ * (`[YouTube](<icon url>) [YouTube](https://www.youtube.com/...)`). The icon renders as
+ * a <picture>; move it into the destination link, which opens in a new tab (live).
+ * @param {Element} social The social icons wrapper
+ */
+function linkSocialIcons(social) {
+  social.querySelectorAll('li').forEach((li) => {
+    const picture = li.querySelector('picture');
+    const link = li.querySelector('a');
+    if (!picture || !link) return;
+    const name = picture.querySelector('img')?.alt || link.textContent.trim();
+    link.textContent = '';
+    link.append(picture);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    if (name) link.setAttribute('aria-label', `${name} (opens in a new tab)`);
+    li.replaceChildren(link);
+  });
 }
 
 /**
@@ -57,7 +79,9 @@ export default async function decorate(block) {
   }
   legalCol.append(legalWrap);
   const socialCol = el('div', 'footer-col footer-col-side');
-  socialCol.append(moveChildren(social, el('div', 'footer-social')));
+  const socialWrap = moveChildren(social, el('div', 'footer-social'));
+  linkSocialIcons(socialWrap);
+  socialCol.append(socialWrap);
   row1.append(legalCol, socialCol);
 
   // row 2: secondary (recall) links stacked

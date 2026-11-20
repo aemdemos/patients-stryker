@@ -43,9 +43,23 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
+  var SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  function rewriteSourceLink(href) {
+    if (!href) return null;
+    const value = href.trim();
+    let rest;
+    if (value.startsWith("/") && !value.startsWith("//")) rest = value;
+    else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, "") || "/";
+    else return null;
+    const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
+    if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
+    let edsPath = path.replace(/\.html?$/i, "");
+    if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
+    return `${edsPath || "/"}${suffix}`;
+  }
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
-    const isIvsTreatment = !!(payload && payload.template && payload.template.name === "ivs-treatment");
+    const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
@@ -83,6 +97,11 @@ var CustomImportScript = (() => {
           a.replaceWith(strong);
           strong.appendChild(em);
           em.appendChild(a);
+        });
+        element.querySelectorAll('a[target="_blank" i][href]').forEach((a) => {
+          const href = a.getAttribute("href").trim();
+          if (!href || href.endsWith("#_blank") || /^(mailto|tel):/i.test(href)) return;
+          a.setAttribute("href", `${href.replace(/#$/, "")}#_blank`);
         });
         return;
       }
@@ -177,6 +196,10 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
+      element.querySelectorAll("a[href]").forEach((a) => {
+        const rewritten = rewriteSourceLink(a.getAttribute("href"));
+        if (rewritten !== null) a.setAttribute("href", rewritten);
+      });
       if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
         const h2 = element.ownerDocument.createElement("h2");
@@ -195,7 +218,8 @@ var CustomImportScript = (() => {
     name: "search",
     description: "ENT site search page \u2014 SINGLETON. Default content plus one block: h1 'Search Results', h2 'Showing results for:', a Search block (placeholder text only \u2014 the block builds the form), the no-results message and suggestions list. Hidden inputs and the Load more button are dropped. Styled via the `search` theme.",
     urls: [
-      "https://patients.stryker.com/us/en/ent/search.html"
+      "https://patients.stryker.com/us/en/ent/search.html",
+      "https://www.stryker.com/us/en/search.html"
     ],
     blocks: [
       { name: "search", instances: [".search-header .search-bar"] }
@@ -277,6 +301,8 @@ var CustomImportScript = (() => {
     transform: (payload) => {
       const { document, url, params } = payload;
       const main = document.body;
+      const isCorp = new URL(params.originalURL).hostname === "www.stryker.com";
+      const updated = isCorp && document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
       executeTransformers("beforeTransform", main, payload);
       buildSearchContent(document, main);
       executeTransformers("afterTransform", main, payload);
@@ -302,6 +328,10 @@ var CustomImportScript = (() => {
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
       meta.theme = "search";
+      if (updated) {
+        const month = (/* @__PURE__ */ new Date(`${updated[1]} 1, 2000`)).getMonth() + 1;
+        meta.published = `${updated[2]}-${String(month).padStart(2, "0")}`;
+      }
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

@@ -45,10 +45,6 @@ body.procedure-detail main > .section.flex > .panel-wrapper {
   padding-top: var(--space-block);
 }
 
-body.procedure-detail main .panel.wide .panel-body {
-        padding: 3%;
-}
-
 body.procedure-detail main > .columns.block.columns-3-cols ol,ul {
   padding-left: 32px;
 }
@@ -157,7 +153,6 @@ body.procedure-detail main .columns .columns-img-col ~ h4 {
 
     body.procedure-detail main > .section .hero.banner > div:last-child {
     align-self: end;
-    padding: 20px 40px;
     max-width: 50%;
   }
 
@@ -219,39 +214,11 @@ body.procedure-detail main .panel.dark .panel-body p {
   line-height: var(--heading-line-height);
 }
 
-body.procedure-detail main .section.flex .panel.wide .panel-body p {
-    font-size: var(--panel-body-size-ss);
-  }
-
 body.procedure-detail main .panel.dark .panel-body p:last-child {
   margin-bottom: 15px;
 }
 
-/* Benefits card (cta, wide) — disc bullets, 17.5px. */
-body.procedure-detail main .panel.cta.wide .panel-body ul {
-  display: block;
-  list-style: disc;
-  margin: 0 0 var(--space-block);
-  padding-left: var(--list-indent);
-}
-
-body.procedure-detail main .panel.cta.wide .panel-body ul > li {
-  list-style: disc;
-  margin-bottom: 0;
-  font-size: var(--panel-cta-body-size);
-  line-height: var(--panel-cta-body-line-height);
-}
-
-/* EW authoring canvas wraps each <li>'s inline content in a <p>, which then
-   picks up the .panel.wide .panel-body p rule (21px, serif heading font) instead
-   of the bullet styling above — the benefits list renders oversized in EW. Match
-   the bullet <p> back to the <li>. No-op on the live site (no such <p> exists). */
-body.procedure-detail main .panel.cta.wide .panel-body ul > li > p {
-  margin: 0;
-  font-family: var(--body-font-family);
-  font-size: var(--panel-cta-body-size);
-  line-height: var(--panel-cta-body-line-height);
-}
+/* The Benefits card (panel cta wide) is styled by blocks/panel/panel.css only. */
 
 /* Gold mid-page CTA link — Futura display face. */
 body.procedure-detail main .panel.gold .panel-body p strong {
@@ -275,33 +242,11 @@ body.procedure-detail main a[href="#disclaimer"]:any-link {
    style/decoration) auto-applied; font-size only with --include-size. Re-run
    apply-css-fixes.js to regenerate; edit clusters/source, not this block. */
 
-body.pd-vertebroplasty main .panel.cta.wide a[href="#potential-risks"],
-body.pd-spinejack-system main .panel.cta.wide a[href="#potential-risks"],
-body.pd-radiofrequency-ablation main .panel.cta.wide a[href="#potential-risks"],
-body.pd-sacroplasty main .panel.cta.wide a[href="#potential-risks"] {
-  /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:17.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
-  font-family: var(--body-font-family);
-  text-decoration: none;
-}
-
-body.pd-disc-decompression main .panel.cta.wide a[href="#fn-3"],
-body.pd-sacroplasty main .panel.cta.wide a[href="#fn-3"] {
-  /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
-  font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-medium);
-}
-
 body.pd-spinejack-system main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"],
 body.pd-sacroplasty main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"] {
   /* fontFamily:Futura LT W01→URWEgyptienneW01-Light | fontWeight:700→500 — e.g. "1" */
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
-}
-
-body.pd-balloon-kyphoplasty main .panel.cta.wide a[href="#potential-risks"] {
-  /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:19.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
-  font-family: var(--body-font-family);
-  text-decoration: none;
 }
 
 /* === END AUTO-FIX === */

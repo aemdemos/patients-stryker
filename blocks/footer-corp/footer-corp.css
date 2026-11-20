@@ -118,6 +118,12 @@ footer.footer-corp-wrapper {
   line-height: 0;
 }
 
+.footer-corp .footer-social .icon {
+  display: block;
+  width: var(--space-section-l);
+  height: var(--space-section-l);
+}
+
 .footer-corp .footer-social img {
   display: block;
   width: 50px;
