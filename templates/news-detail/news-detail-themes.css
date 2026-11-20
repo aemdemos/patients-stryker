@@ -14,7 +14,6 @@
    - spacing: below */
 body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(h1) {
   font-size: var(--corp-heading-font-size-h1-1-25);
-  line-height: var(--heading-line-height-hero);
 }
 
 body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(h2) {
