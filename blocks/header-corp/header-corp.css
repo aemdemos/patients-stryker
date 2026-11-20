@@ -96,7 +96,7 @@ header.header-corp-wrapper {
   display: block;
   width: 26px;
   height: 26px;
-  margin-top: 17px;
+  margin-top: 12px;
 }
 
 .header-corp .icon-bar {
@@ -124,7 +124,7 @@ header.header-corp-wrapper {
   margin-top: 8px;
   font-size: 20px;
   line-height: 32px;
-  color: var(--color-primary);
+  color: var(--color-black); /* black below 900px; teal from 900px (below) */
 }
 
 .header-corp .icon-search::before {
@@ -188,7 +188,7 @@ header.header-corp-wrapper {
   padding: 0;
   border: 0;
   background: none;
-  color: var(--color-primary);
+  color: var(--color-black); /* black below 900px; teal from 900px (below) */
   font-size: 20px;
   line-height: 34px;
   text-align: start; /* live: the glyph sits at the box's left edge */
@@ -410,7 +410,7 @@ body.hcp-banner .header-corp .hcp-band {
 
 .header-corp .secondary-nav .back {
   display: block;
-  padding: var(--space-block-l) var(--space-block) var(--space-block-l) var(--space-inset-l);
+  padding: var(--space-block-l) var(--space-block);
   border-bottom: 1px solid var(--color-white);
   background: var(--color-secondary);
   color: var(--color-white);
@@ -445,6 +445,10 @@ body.hcp-banner .header-corp .hcp-band {
   .header-corp .menu-btn,
   .header-corp .search-btn {
     display: none;
+  }
+
+  .header-corp .search-toggle {
+    color: var(--color-primary);
   }
 
   .header-corp .logo {
@@ -482,6 +486,7 @@ body.hcp-banner .header-corp .hcp-band {
 
   .header-corp .search-submit {
     display: block;
+    color: var(--color-primary);
   }
 
   .header-corp .language-country-select {

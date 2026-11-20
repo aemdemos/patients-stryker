@@ -272,6 +272,31 @@ function decorateExclaimButtons(main) {
 }
 
 /**
+ * An Italic + Underline link alone on its line (not Bold) is the purple button (authoring
+ * conventions; stryker.com a.btn.btn-purple, e.g. "Learn more about Zip Skin Closure" of
+ * "Life after leukemia - Jesse's Zip skin closure story"). Built here, before scripts.js
+ * decorateButtons, which would make an Italic link the secondary button. Either nesting
+ * works: the formatting around the link or inside it.
+ * @param {Element} main The container element
+ */
+function decoratePurpleButtons(main) {
+  main.querySelectorAll('p a[href]').forEach((a) => {
+    const p = a.closest('p');
+    const text = a.textContent.trim();
+    if (!text || a.querySelector('img') || p.textContent.trim() !== text) return;
+    const has = (tag) => !!(a.closest(tag) && p.contains(a.closest(tag))) || !!a.querySelector(tag);
+    if (!has('em') || !has('u') || has('strong')) return;
+    a.querySelectorAll('em, u').forEach((el) => el.replaceWith(...el.childNodes));
+    let outer = a;
+    while (outer.parentElement !== p) outer = outer.parentElement;
+    if (outer !== a) outer.replaceWith(a);
+    a.title = a.title || text;
+    p.className = 'button-wrapper';
+    a.className = 'button primary purple';
+  });
+}
+
+/**
  * Corp blocks built from section styles. Runs on <main> and on fragments, after the
  * section metadata is applied and before the blocks are decorated.
  * @param {Element} main The container element
@@ -281,6 +306,7 @@ export function decorateSections(main) {
   decorateImageLinks(main);
   joinSplitHeadingUnderlines(main);
   decorateExclaimButtons(main);
+  decoratePurpleButtons(main);
 }
 
 /**
