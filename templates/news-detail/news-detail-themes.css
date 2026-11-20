@@ -32,6 +32,8 @@ body.news-detail.full-width.basic main > .section > .default-content-wrapper > h
 }
 
 body.news-detail.full-width.basic main > .section > .default-content-wrapper li > strong.standalone {
+  display: inline-block;
+  margin-bottom: var(--space-block);
   font-family: var(--display-font-family);
 }
 
