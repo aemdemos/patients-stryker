@@ -462,6 +462,54 @@ a "Principles for a fresh run" section to read before acting on clusters.
 - Test with screen readers
 - Follow WCAG 2.1 AA guidelines
 
+#### Automated accessibility testing (opt-in)
+
+**Agent guidance: run only when explicitly requested.** Automated a11y scans are
+not a mandatory development, migration or task-completion step. Do not start
+scans or install their browser dependencies automatically.
+
+When requested, use the project's Playwright + axe-core runner. Installing
+project dependencies with `npm install` also downloads Chromium through the
+reference `postinstall` script. To reinstall the browser separately:
+
+```sh
+npx playwright install chromium
+```
+
+```sh
+# One page using local code; requires the local AEM server
+npm run test:a11y -- http://localhost:3000/us/en/ivs/
+
+# All configured paths on localhost
+npm run test:a11y
+
+# All configured paths on a preview host
+A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y
+```
+
+The single-URL command also accepts patients or corp feature-preview URLs. Use
+localhost to test uncommitted code, or the feature preview after pushing; scanning
+`main` does not validate local changes. The path-list mode uses
+[`tests/a11y/a11y.config.js`](tests/a11y/a11y.config.js); its paths must exist on
+the selected host.
+
+The runner checks WCAG 2.0 through 2.2 Level A/AA rules after waiting for
+`networkidle`, following the boilerplate reference.
+Critical/serious violations produce a non-zero exit code; moderate/minor
+violations do not fail the scan. The reference reporter replays detailed output
+only for failed scans; warning-only passing scans show a pass summary.
+Report the tested URLs, findings and execution errors
+to the user. A request to scan is not permission to fix findings: do not
+automatically remediate issues, suppress rules or weaken thresholds to pass.
+Agree on any remediation scope separately. Automated results do not establish
+full WCAG conformance or replace manual keyboard/screen-reader checks.
+
+This opt-in policy governs agent-initiated runs. The existing **A11y / a11y** PR
+workflow still runs automatically against the first `After` URL; whether it
+blocks merging depends on repository branch protection/rulesets, not this guide.
+See [README accessibility testing](README.md#accessibility-testing) for runtime
+requirements, configuration and CI usage.
+
 ## Deployment
 
 ### Environments
