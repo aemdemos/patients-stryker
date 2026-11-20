@@ -183,7 +183,7 @@ function mapLink(contactus, doc) {
 }
 
 /** The contact component: underlined heading + Columns (contact details | map link). */
-function contactUs(contactus, doc, report) {
+export function contactUs(contactus, doc, report) {
   const nodes = [];
   const heading = contactus.querySelector('h2.component-subheading');
   if (text(heading)) nodes.push(underlined(doc, 'h2', text(heading)));

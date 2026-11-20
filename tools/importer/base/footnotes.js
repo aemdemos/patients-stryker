@@ -4,17 +4,19 @@
 // (/us/en/interventional-spine/footnotes/<slug>), base template.
 
 // PARSER IMPORTS
-import accordionParser from './parsers/accordion.js';
+import accordionParser from '../parsers/accordion.js';
 
 // TRANSFORMER IMPORTS
-import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import { pageHeroes } from './transformers/long-page-detail-corp-components.js';
-import xfFragmentPath from './xf-fragment-path.js';
+import cleanupTransformer from '../transformers/patients-stryker-cleanup.js';
+import { applyBaseMeta, stripBrackets } from './shared.js';
+import { pageHeroes } from '../transformers/long-page-detail-corp-components.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
-  name: 'ivs-footnotes',
-  description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "❮ BACK" link as a Fragment block; the page hero (gold H1, document code subhead in an `h-serif` section) then each revision as a bold `[[text-1-25]…]` label, a `[[body-font]**…**]` date line and its numbered references (a `separator` section only when the hero has no subhead). Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
+  name: 'base',
+  group: 'footnotes',
+  description: 'www.stryker.com Interventional Spine footnotes (#516), base template. Detail pages: the shared "❮ BACK" link as a Fragment block; the page hero (gold H1, document code subhead in an `h-serif` section) then each revision as a bold label, a bold date line and its numbered references (a `separator` section only when the hero has no subhead). Index: the hero, then an Accordion (divided) in a `separator` section, one row per document (label "<code> <title>"; body: the current-revision lines, references, disclaimer and a bold + italic "View past revisions" link, the gold button). The source document code (.c-disclaimer) closes the page as a `disclaimer` section; `published` and `last-updated: show` give the "Last Updated" line.',
   urls: [
     'https://www.stryker.com/us/en/interventional-spine/footnotes.html',
     'https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html',
@@ -89,8 +91,8 @@ const isBoldLine = (p) => {
 
 /**
  * The footnote copy of a rich-text component, as default content: a revision label
- * (Futura bold, 1.25em) as a bold `[[text-1-25]…]` paragraph, a bold line (Humanist bold:
- * "Revision Date: …") as `[[body-font]**…**]`, paragraphs and numbered references as they
+ * (Futura bold, 1.25em) as a bold paragraph, a bold line (Humanist bold:
+ * "Revision Date: …") as a bold paragraph, paragraphs and numbered references as they
  * are. Empty spacer paragraphs are dropped.
  */
 function footnoteNodes(document, container) {
@@ -107,14 +109,10 @@ function footnoteNodes(document, container) {
     }
     const p = document.createElement('p');
     const label = src.querySelector('.futura-bold');
-    if (label && text(label) === text(src)) {
-      const strong = document.createElement('strong');
-      strong.textContent = src.querySelector('.fontsize-1-25em') ? `[[text-1-25]${text(src)}]` : text(src);
-      p.append(strong);
-    } else if (isBoldLine(src)) {
+    if ((label && text(label) === text(src)) || isBoldLine(src)) {
       const strong = document.createElement('strong');
       strong.textContent = text(src);
-      p.append(document.createTextNode('[[body-font]'), strong, document.createTextNode(']'));
+      p.append(strong);
     } else inlineCopy(document, src, p);
     out.push(p);
   });
@@ -232,10 +230,12 @@ export default {
     document.body.replaceChildren(main);
 
     executeTransformers('afterTransform', main, payload);
+    stripBrackets(main, document);
 
     main.appendChild(document.createElement('hr'));
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.site = 'corp';
+    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
     if (published) meta.published = published;
     if (published && showDate) meta['last-updated'] = 'show';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

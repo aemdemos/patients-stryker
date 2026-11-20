@@ -253,29 +253,199 @@
       "coverageGaps": [],
       "description": "IVS patient homepage (standalone singleton, styled via the `ivs-home` theme in styles/themes.css). Zones top-to-bottom: (1) hero (banner) 'Pain doesn't hold the power. You do.' + Find a doctor CTA; (2) a sticky-nav in-page anchor bar (Overview/Testimonials/Find a Doctor/Resources/Disclaimer); (3) a 'flex' intro section — default 'Making every moment matter.' text left + a video block right; (4) a gold panel band 'There's hope ahead'; (5) a 4-up cards (linked) pain-type grid (back/neck, knee, hip, shoulder); (6) a statistics dashboard (6 metrics, two 3-up rows); (7) a 'flex' section of two panel (cta) spotlights (VCF; radiofrequency ablation); (8) two testimonial columns (Janet; Lynn) on a dark-teal band — text left + video right; (9) a gold panel band 'Tired of living in pain?'; (10) a marketo-form doctor-finder; (11) a 'Resources' heading + tabs block whose six tabs reference the brochure card fragments under /fragments/resources/ (preceded by a spacer section, same as the conditions pages); (12) a 'compact' disclaimer/references section. Header/footer and the runtime Scene7 video chrome are stripped on import; all mapped blocks reuse existing project blocks — no new block code.",
       "blocks": [
-        { "name": "hero", "section": "hero", "instances": [".fullWidthImageHero"] },
-        { "name": "sticky-nav", "section": "anchor-nav", "instances": [".c-navigation-bar .nav-wrap"] },
-        { "name": "columns", "instances": [".cols2:has(.standalonevideo)"] },
-        { "name": "panel-gold", "section": "hope", "instances": [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
-        { "name": "cards", "section": "pain-cards", "instances": [".cols4:not(.tabs .cols4) > .colctrl"] },
-        { "name": "statistics", "section": "statistics", "instances": [".cols3 > .colctrl"] },
-        { "name": "panel-cta", "section": "spotlights", "instances": [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
-        { "name": "panel-gold-cta", "section": "find-doctor", "instances": [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] },
-        { "name": "tabs", "section": "resources", "instances": [".tabs:has(.c-tabs)"] }
+        {
+          "name": "hero",
+          "section": "hero",
+          "instances": [
+            ".fullWidthImageHero"
+          ]
+        },
+        {
+          "name": "sticky-nav",
+          "section": "anchor-nav",
+          "instances": [
+            ".c-navigation-bar .nav-wrap"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".cols2:has(.standalonevideo)"
+          ]
+        },
+        {
+          "name": "panel-gold",
+          "section": "hope",
+          "instances": [
+            ".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"
+          ]
+        },
+        {
+          "name": "cards",
+          "section": "pain-cards",
+          "instances": [
+            ".cols4:not(.tabs .cols4) > .colctrl"
+          ]
+        },
+        {
+          "name": "statistics",
+          "section": "statistics",
+          "instances": [
+            ".cols3 > .colctrl"
+          ]
+        },
+        {
+          "name": "panel-cta",
+          "section": "spotlights",
+          "instances": [
+            ".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"
+          ]
+        },
+        {
+          "name": "panel-gold-cta",
+          "section": "find-doctor",
+          "instances": [
+            ".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"
+          ]
+        },
+        {
+          "name": "tabs",
+          "section": "resources",
+          "instances": [
+            ".tabs:has(.c-tabs)"
+          ]
+        }
       ],
       "sections": [
-        { "id": "hero", "name": "Hero banner", "selector": ".fullWidthImageHero", "style": null, "blocks": ["hero"], "defaultContent": [] },
-        { "id": "anchor-nav", "name": "Sticky anchor bar", "selector": ".c-navigation-bar", "style": null, "blocks": ["sticky-nav"], "defaultContent": [] },
-        { "id": "intro-video", "name": "Intro: text + video", "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)", "style": "flex", "anchor": "overview", "blocks": ["columns"], "defaultContent": [] },
-        { "id": "hope", "name": "There's hope ahead (gold)", "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)", "style": null, "blocks": ["panel-gold"], "defaultContent": [] },
-        { "id": "pain-cards", "name": "Pain-type cards", "selector": ".cols4", "style": null, "blocks": ["cards"], "defaultContent": [] },
-        { "id": "statistics", "name": "Statistics dashboard", "selector": ".cols3", "style": "divider", "spacerBefore": true, "blocks": ["statistics"], "defaultContent": [] },
-        { "id": "spotlights", "name": "Condition/treatment spotlights", "selector": ".cols2:has(.dimensional-box)", "style": "flex", "blocks": ["panel-cta"], "defaultContent": [] },
-        { "id": "testimonials", "name": "Patient testimonials (dark teal)", "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)", "style": "dark", "anchor": "testimonials", "blocks": ["columns"], "defaultContent": [] },
-        { "id": "find-doctor", "name": "Find a doctor (gold)", "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", "style": null, "anchor": "find-a-doctor", "blocks": ["panel-gold-cta"], "defaultContent": [] },
-        { "id": "marketo", "name": "Doctor-finder form", "selector": ".marketoform", "style": null, "anchor": "resources", "blocks": ["marketo-form"], "defaultContent": [] },
-        { "id": "resources", "name": "Resources brochure tabs", "selector": ".tabs:has(.c-tabs)", "style": null, "spacerBefore": true, "blocks": ["tabs"], "defaultContent": [".tabs .c-tabs h2.component-subheading"] },
-        { "id": "disclaimer", "name": "Disclaimer + references", "selector": ".c-disclaimer.page-section:not(.container)", "style": "compact", "anchor": "disclaimer", "blocks": [], "defaultContent": [".c-disclaimer.page-section:not(.container)"] }
+        {
+          "id": "hero",
+          "name": "Hero banner",
+          "selector": ".fullWidthImageHero",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "anchor-nav",
+          "name": "Sticky anchor bar",
+          "selector": ".c-navigation-bar",
+          "style": null,
+          "blocks": [
+            "sticky-nav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "intro-video",
+          "name": "Intro: text + video",
+          "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)",
+          "style": "flex",
+          "anchor": "overview",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "hope",
+          "name": "There's hope ahead (gold)",
+          "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)",
+          "style": null,
+          "blocks": [
+            "panel-gold"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "pain-cards",
+          "name": "Pain-type cards",
+          "selector": ".cols4",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "statistics",
+          "name": "Statistics dashboard",
+          "selector": ".cols3",
+          "style": "divider",
+          "spacerBefore": true,
+          "blocks": [
+            "statistics"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "spotlights",
+          "name": "Condition/treatment spotlights",
+          "selector": ".cols2:has(.dimensional-box)",
+          "style": "flex",
+          "blocks": [
+            "panel-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "testimonials",
+          "name": "Patient testimonials (dark teal)",
+          "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)",
+          "style": "dark",
+          "anchor": "testimonials",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "find-doctor",
+          "name": "Find a doctor (gold)",
+          "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])",
+          "style": null,
+          "anchor": "find-a-doctor",
+          "blocks": [
+            "panel-gold-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "marketo",
+          "name": "Doctor-finder form",
+          "selector": ".marketoform",
+          "style": null,
+          "anchor": "resources",
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "resources",
+          "name": "Resources brochure tabs",
+          "selector": ".tabs:has(.c-tabs)",
+          "style": null,
+          "spacerBefore": true,
+          "blocks": [
+            "tabs"
+          ],
+          "defaultContent": [
+            ".tabs .c-tabs h2.component-subheading"
+          ]
+        },
+        {
+          "id": "disclaimer",
+          "name": "Disclaimer + references",
+          "selector": ".c-disclaimer.page-section:not(.container)",
+          "style": "compact",
+          "anchor": "disclaimer",
+          "blocks": [],
+          "defaultContent": [
+            ".c-disclaimer.page-section:not(.container)"
+          ]
+        }
       ]
     },
     {
@@ -700,7 +870,7 @@
           "blocks": [],
           "defaultContent": [
             ".c-disclaimer p"
-            ]
+          ]
         }
       ]
     },
@@ -1188,8 +1358,57 @@
       ]
     },
     {
-      "name": "people",
+      "name": "base",
+      "description": "www.stryker.com pages on the AEM `base` template (#514), one EDS template `base` with a theme per group: legal, patents, webinar, people; Interventional Spine footnotes have no theme. Import script import-base.js picks the group builder (tools/importer/base/*.js) from the URL and writes template, theme and tags metadata. [legal] www.stryker.com legal, governance and policy pages (#517): legal notices, governance bylaws and charters, policy and DFU pages, built as the long-page-detail-corp pages; source tables (.c-table) become `Table (no-header, striped, body-bold)` blocks. Builder: tools/importer/base/legal.js. [patents] www.stryker.com patents and trademarks pages (#518): the patents index (Columns (columns-50-50) hero, product-line links, document code) and the patents tables and trademarks list, each source table as `Table (no-header, striped, stacked)`. Builder: tools/importer/base/patents.js. [webinar] www.stryker.com webinars and on-demand videos (#519): webinar pages (H1 + speaker, description, Video), webinar thank-you pages, page-hero video pages and the FocusRN on-demand webinars index (an Accordion of Columns 3-up rows). Builder: tools/importer/base/webinar.js. [people] www.stryker.com People pages (#515): 19 leader and 10 director bios (Back link Fragment, H1 with gold first name + role in a `serif, p-1-75, h1-1-25` section, Columns [bio | portrait]) and the leaders index (H1 + intro in `serif, p-2`, an H2 per group, Cards Corp (people) tiles). Builder: tools/importer/base/people.js. [footnotes] www.stryker.com Interventional Spine footnotes (#516): index (hero, Accordion (divided) in a `separator` section, \"View past revisions\" gold buttons) and detail pages (Back link Fragment, hero with the document code subhead in an `h-serif` section, revisions with bold labels, plain dates and numbered references; a `separator` section only when the hero has no subhead); the source document code as a closing `disclaimer` section; `published`, `last-updated: show`, `site: corp`.",
       "urls": [
+        "https://www.stryker.com/us/en/about/corporate-responsibility/responsible-supply-chains/-disclosure-statement-re-california-transparency-in-supply-chain.html",
+        "https://www.stryker.com/us/en/about/corporate-responsibility/responsible-supply-chains/po-terms.html",
+        "https://www.stryker.com/us/en/about/governance/board-committees.html",
+        "https://www.stryker.com/us/en/about/governance/bylaws.html",
+        "https://www.stryker.com/us/en/about/governance/charters.html",
+        "https://www.stryker.com/us/en/about/governance/corporate-governance-guidelines.html",
+        "https://www.stryker.com/us/en/about/governance/equity-based-compensation-awards.html",
+        "https://www.stryker.com/us/en/about/governance/lifecycle-support.html",
+        "https://www.stryker.com/us/en/about/suppliers/supplier-code-of-conduct.html",
+        "https://www.stryker.com/us/en/emergency-care/terms/sms-terms-and-conditions.html",
+        "https://www.stryker.com/us/en/legal/convercent-global-privacy-statement.html",
+        "https://www.stryker.com/us/en/legal/cookie-disclaimer.html",
+        "https://www.stryker.com/us/en/legal/icrc.html",
+        "https://www.stryker.com/us/en/legal/privacy.html",
+        "https://www.stryker.com/us/en/legal/privacy/privacy-notice-for-california-residents.html",
+        "https://www.stryker.com/us/en/legal/surgeon-disclaimer.html",
+        "https://www.stryker.com/us/en/legal/terms-of-use.html",
+        "https://www.stryker.com/us/en/legal/website-accessibility.html",
+        "https://www.stryker.com/us/en/neurovascular/dfu.html",
+        "https://www.stryker.com/us/en/neurovascular/dfu/access-device-dfu.html",
+        "https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular/hemorrhagic-stroke/mri.html",
+        "https://www.stryker.com/us/en/sage/disclosure-and-safety-information.html",
+        "https://www.stryker.com/us/en/about/patents.html",
+        "https://www.stryker.com/us/en/about/patents/Craniomaxillofacial-Patents.html",
+        "https://www.stryker.com/us/en/about/patents/Spine-patents.html",
+        "https://www.stryker.com/us/en/about/patents/endoscopy-patents.html",
+        "https://www.stryker.com/us/en/about/patents/instruments-patents.html",
+        "https://www.stryker.com/us/en/about/patents/joint-replacement-patents.html",
+        "https://www.stryker.com/us/en/about/patents/mako-patents.html",
+        "https://www.stryker.com/us/en/about/patents/medical-patents.html",
+        "https://www.stryker.com/us/en/about/patents/medical-patents0.html",
+        "https://www.stryker.com/us/en/about/patents/neurovascular-intervention-patents.html",
+        "https://www.stryker.com/us/en/about/patents/orthobiologics-patents.html",
+        "https://www.stryker.com/us/en/about/patents/trauma-and-extremities-patents.html",
+        "https://www.stryker.com/us/en/about/trademarks.html",
+        "https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html",
+        "https://www.stryker.com/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses/webinar.html",
+        "https://www.stryker.com/us/en/sage/videos/sage-mp-mats-2-demo.html",
+        "https://www.stryker.com/us/en/sage/webinars.html",
+        "https://www.stryker.com/us/en/sage/webinars/guidelines-practice-pip-fireside-chat.html",
+        "https://www.stryker.com/us/en/sage/webinars/hap-human-financial-cost.html",
+        "https://www.stryker.com/us/en/sage/webinars/managing-urinary-incontinence-webinar.html",
+        "https://www.stryker.com/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization.html",
+        "https://www.stryker.com/us/en/sage/webinars/nv-hap-hidden-plain-sight.html",
+        "https://www.stryker.com/us/en/sage/webinars/risk-of-pip-procedural-operational-areas.html",
+        "https://www.stryker.com/us/en/sage/webinars/safe-patient-handling-mobility-webinar.html",
+        "https://www.stryker.com/us/en/sage/webinars/sepsis-hospital-acquired-pneumonia.html",
+        "https://www.stryker.com/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition.html",
         "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1064.html",
         "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1346.html",
         "https://www.stryker.com/us/en/about/our-board-of-directors/directors/1652.html",
@@ -1219,45 +1438,7 @@
         "https://www.stryker.com/us/en/about/our-management/leaders/8540.html",
         "https://www.stryker.com/us/en/about/our-management/leaders/8739.html",
         "https://www.stryker.com/us/en/about/our-management/leaders/9122.html",
-        "https://www.stryker.com/us/en/about/our-management/leaders/9569.html"
-      ],
-      "representativeUrl": "https://www.stryker.com/us/en/about/our-management/leaders/1004.html",
-      "description": "www.stryker.com People pages (#515): 19 leader and 10 director bios (Back link Fragment, H1 with gold first name + role in a `serif, p-1-75, h1-1-25` section, Columns [bio | portrait]) and the leaders index (H1 + intro in `serif, p-2`, an H2 per group, Cards Corp (people) tiles). Script: tools/importer/import-people.js.",
-      "blocks": [
-        {
-          "name": "fragment",
-          "instances": [
-            ".experienceFragment"
-          ]
-        },
-        {
-          "name": "columns",
-          "instances": [
-            ".c-rich-text-editor:has(h1)"
-          ]
-        },
-        {
-          "name": "cards-corp-people",
-          "instances": [
-            ".buildingblock"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "people-fragments",
-      "urls": [
-        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
-        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master.html"
-      ],
-      "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
-      "description": "Back link Experience Fragments of the People bio pages (#515), imported from their XF master URLs as fragment documents at the paths in tools/importer/xf-fragment-map.js. Script: tools/importer/import-people-fragments.js.",
-      "blocks": []
-    },
-    {
-      "name": "ivs-footnotes",
-      "description": "www.stryker.com Interventional Spine footnotes (#516): index (hero, Accordion (divided) in a `separator` section, \"View past revisions\" gold buttons) and detail pages (Back link Fragment, hero with the document code subhead in an `h-serif` section, revisions with bold [[text-1-25]] labels, [[body-font]] dates and numbered references; a `separator` section only when the hero has no subhead); the source document code as a closing `disclaimer` section; `published`, `last-updated: show`, `site: corp`.",
-      "urls": [
+        "https://www.stryker.com/us/en/about/our-management/leaders/9569.html",
         "https://www.stryker.com/us/en/interventional-spine/footnotes.html",
         "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html",
         "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-025-001.html",
@@ -1292,27 +1473,59 @@
         "https://www.stryker.com/us/en/interventional-spine/footnotes/vcf-solutions-brochure.html",
         "https://www.stryker.com/us/en/interventional-spine/footnotes/vertebralaugmentationpatient.html"
       ],
+      "representativeUrl": "https://www.stryker.com/us/en/legal/terms-of-use.html",
       "blocks": [
         {
-          "name": "accordion",
+          "name": "table",
           "instances": [
-            ".c-accordion .panel-group"
+            ".c-table table",
+            ".c-patenttables table"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".c-page-hero",
+            ".c-accordion .panel-body .cols3",
+            ".c-rich-text-editor:has(h1)"
+          ]
+        },
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
           ]
         },
         {
           "name": "fragment",
           "instances": [
+            ".experienceFragment",
             ".experiencefragment"
+          ]
+        },
+        {
+          "name": "cards-corp-people",
+          "instances": [
+            ".buildingblock"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            ".c-accordion .panel-group"
           ]
         }
       ]
     },
     {
-      "name": "ivs-footnotes-fragments",
-      "description": "Back link Experience Fragment of the Interventional Spine footnote detail pages (#516), imported as a fragment document from a detail page: a bold + underlined link in a `no-arrow` section.",
+      "name": "base-fragments",
+      "description": "Back link Experience Fragments of the base template pages (People bios, Interventional Spine footnotes), imported as fragment documents.",
       "urls": [
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master.html",
         "https://www.stryker.com/us/en/interventional-spine/footnotes/1000-001-358.html"
       ],
+      "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master.html",
       "blocks": []
     }
   ]
