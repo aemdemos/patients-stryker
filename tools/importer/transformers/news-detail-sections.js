@@ -1832,6 +1832,13 @@ export default function transform(hookName, element, payload) {
     if (element.getAttribute('data-news-theme') === 'full-width, news-video-quote') return;
     element.setAttribute('data-news-theme', `full-width, ${theme}`);
   };
+  // a line's typed line breaks and spaces before its text go (a title's <br> before its
+  // second part, the space after it)
+  const trimLeading = (el) => {
+    el.normalize();
+    while (el.firstChild && (el.firstChild.nodeName === 'BR' || (el.firstChild.nodeType === 3 && !el.firstChild.textContent.trim()))) el.firstChild.remove();
+    if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.textContent = el.firstChild.textContent.replace(/^\s+/, '');
+  };
   const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas) => {
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const lead = boxed ? headlineNodes(headline, doc) : [];
@@ -1843,14 +1850,35 @@ export default function transform(hookName, element, payload) {
     // news-video theme
     const h3Statement = boxed && lead.length > 0;
     let statement = lead;
+    // a grey box opening with a two-part title at the 2vw title size (span.futura-bold, a line
+    // break, the Egyptienne rest; e.g. "Getting her life back" / "Christina's bunionectomy
+    // story") and an intro line under it: the title a Heading 2 (Futura bold), the rest an
+    // italic Heading 2 (Egyptienne), the intro the italic Heading 3 of the other pages
+    const titleBold = lead.length > 1 && headline.querySelector('.line1 [class*="fontsize-2vw"] .futura-bold');
+    const titleRun = titleBold && lead[0].firstElementChild;
+    if (titleRun && titleRun.nodeName === 'STRONG' && text(titleRun) === text(titleBold)
+      && text(lead[0]).length > text(titleRun).length) {
+      const title = doc.createElement('h2');
+      title.append(...titleRun.childNodes);
+      titleRun.remove();
+      const subtitle = doc.createElement('h2');
+      const em = doc.createElement('em');
+      em.append(...lead[0].childNodes);
+      trimLeading(em);
+      subtitle.append(em);
+      lead.splice(0, 1, title, subtitle);
+    }
     if (h3Statement) {
-      const h3 = rename(lead[0], 'h3');
+      // the statement: the first line, or the intro after a two-part title
+      const at = Math.max(0, lead.findIndex((n) => n.nodeName !== 'H2'));
+      const h3 = rename(lead[at], 'h3');
       if (!h3.querySelector('em')) {
         const em = doc.createElement('em');
         em.append(...h3.childNodes);
         h3.append(em);
       }
-      statement = [h3, ...lead.slice(1)];
+      trimLeading(h3.querySelector('em'));
+      statement = [...lead.slice(0, at), h3, ...lead.slice(at + 1)];
     }
     const nodes = [
       ...statement,

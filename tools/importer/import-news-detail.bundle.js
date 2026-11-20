@@ -2057,20 +2057,40 @@ var CustomImportScript = (() => {
       if (element.getAttribute("data-news-theme") === "full-width, news-video-quote") return;
       element.setAttribute("data-news-theme", `full-width, ${theme}`);
     };
+    const trimLeading = (el) => {
+      el.normalize();
+      while (el.firstChild && (el.firstChild.nodeName === "BR" || el.firstChild.nodeType === 3 && !el.firstChild.textContent.trim())) el.firstChild.remove();
+      if (el.firstChild && el.firstChild.nodeType === 3) el.firstChild.textContent = el.firstChild.textContent.replace(/^\s+/, "");
+    };
     const videoHeadlineRow = (video, headline2, quotes, ctas, asideCtas) => {
       const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
       const lead = boxed ? headlineNodes(headline2, doc) : [];
       if (boxed && !lead.length) return false;
       const h3Statement = boxed && lead.length > 0;
       let statement = lead;
+      const titleBold = lead.length > 1 && headline2.querySelector('.line1 [class*="fontsize-2vw"] .futura-bold');
+      const titleRun = titleBold && lead[0].firstElementChild;
+      if (titleRun && titleRun.nodeName === "STRONG" && text2(titleRun) === text2(titleBold) && text2(lead[0]).length > text2(titleRun).length) {
+        const title2 = doc.createElement("h2");
+        title2.append(...titleRun.childNodes);
+        titleRun.remove();
+        const subtitle = doc.createElement("h2");
+        const em = doc.createElement("em");
+        em.append(...lead[0].childNodes);
+        trimLeading(em);
+        subtitle.append(em);
+        lead.splice(0, 1, title2, subtitle);
+      }
       if (h3Statement) {
-        const h3 = rename(lead[0], "h3");
+        const at = Math.max(0, lead.findIndex((n) => n.nodeName !== "H2"));
+        const h3 = rename(lead[at], "h3");
         if (!h3.querySelector("em")) {
           const em = doc.createElement("em");
           em.append(...h3.childNodes);
           h3.append(em);
         }
-        statement = [h3, ...lead.slice(1)];
+        trimLeading(h3.querySelector("em"));
+        statement = [...lead.slice(0, at), h3, ...lead.slice(at + 1)];
       }
       const nodes = [
         ...statement,
