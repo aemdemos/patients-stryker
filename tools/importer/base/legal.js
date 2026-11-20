@@ -293,7 +293,7 @@ function sectionStyles(main, document, url, extra) {
   }
 }
 
-// the article transformer names plain bold `body-font-bold`; the stylesheet's section style is `bold-body`
+// the article transformer's `body-font-bold` is `bold-body` in the stylesheet
 function boldBodyName(main) {
   main.querySelectorAll('table').forEach((table) => {
     if (text(table.querySelector('th, tr')) !== 'Section Metadata') return;

@@ -100,7 +100,8 @@ function main() {
     if (tags.length) map[path] = tags;
   });
   const sorted = Object.fromEntries(Object.entries(map).sort(([a], [b]) => a.localeCompare(b)));
-  writeFileSync(out, `export default ${JSON.stringify(sorted, null, 2)};\n`);
+  const body = Object.entries(sorted).map(([path, list]) => `  '${path}': [\n${list.map((t) => `    '${t}',`).join('\n')}\n  ],`);
+  writeFileSync(out, `export default {\n${body.join('\n')}\n};\n`);
   console.log(`${Object.keys(sorted).length} tagged pages → ${out}`);
 }
 
