@@ -14,7 +14,7 @@ body.base main > .section.h-serif > .default-content-wrapper > :is(h2, h3) {
 
 /* italic inside a heading (a live <i> in the heading) is the serif heading font, upright; the
    gold Bold + Italic keeps its Futura */
-body.base main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+body.base main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em) {
   font-family: var(--heading-font-family);
   font-style: normal;
   font-weight: var(--font-weight-medium);
