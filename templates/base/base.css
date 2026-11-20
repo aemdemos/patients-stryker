@@ -8,3 +8,8 @@ body.base main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h
   font-style: normal;
   font-weight: var(--font-weight-medium);
 }
+
+/* a reference that quotes a long URL as plain text wraps instead of widening the page on phones */
+body.base main > .section > .default-content-wrapper :is(p, li) {
+  overflow-wrap: break-word;
+}
