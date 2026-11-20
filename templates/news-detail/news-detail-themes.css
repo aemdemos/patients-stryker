@@ -489,6 +489,13 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
   line-height: var(--news-video-name-line-height);
 }
 
+/* a button after the sign-off (e.g. Esley's "Watch more survivor stories") is the source's
+   separate button component: a section gap below the name or caption (20px, 30px from 600px,
+   plus the caption's 3px below 900px) */
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p ~ p.button-wrapper) {
+  margin-top: calc(var(--news-video-gap) + var(--news-video-caption-gap));
+}
+
 /* news-video: patient-story news pages whose text beside the video (the `video-text`
    section) is set as on the source — the serif text of e.g. Ellys' story, the Large
    Headline text of e.g. Matt's story (below) */
