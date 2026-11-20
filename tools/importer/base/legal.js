@@ -238,6 +238,18 @@ const COPY_WIDTH = [
   ['responsible-supply-chains/po-terms', 'width-67'],
 ];
 
+// bylaws: the source sets its H3 subtitles in the serif heading font, which stryker.com does not
+// author; they are italic heading text (`<em>`), the serif run of base.css
+function serifSubtitles(main, document, url) {
+  if (!url.includes('governance/bylaws')) return;
+  main.querySelectorAll('h3').forEach((h3) => {
+    if (!text(h3) || h3.querySelector('em')) return;
+    const em = document.createElement('em');
+    em.append(...h3.childNodes);
+    h3.append(em);
+  });
+}
+
 // bylaws and charters: every section but the title one carries `heading-space-l`, which the
 // template also uses for these pages' 9/12 copy width
 const WIDE_COPY = ['governance/bylaws', 'governance/charters'];
@@ -437,6 +449,7 @@ export default {
     executeTransformers('afterTransform', main, payload);
     const bracketStyles = stripBrackets(main, document);
     committeeColumns(main, document, url);
+    serifSubtitles(main, document, url);
     stackContactMap(main, url);
     heroImage(main, document, url);
     underlineTitles(main, document);

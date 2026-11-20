@@ -19072,6 +19072,15 @@ var CustomImportScript = (() => {
     ["legal/privacy/privacy-notice-for-california-residents", "width-67"],
     ["responsible-supply-chains/po-terms", "width-67"]
   ];
+  function serifSubtitles(main, document, url) {
+    if (!url.includes("governance/bylaws")) return;
+    main.querySelectorAll("h3").forEach((h3) => {
+      if (!text4(h3) || h3.querySelector("em")) return;
+      const em = document.createElement("em");
+      em.append(...h3.childNodes);
+      h3.append(em);
+    });
+  }
   var WIDE_COPY = ["governance/bylaws", "governance/charters"];
   var DROP_STYLES = [];
   var BOLD_BODY = [
@@ -19242,6 +19251,7 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       const bracketStyles = stripBrackets(main, document);
       committeeColumns(main, document, url);
+      serifSubtitles(main, document, url);
       stackContactMap(main, url);
       heroImage(main, document, url);
       underlineTitles(main, document);
@@ -19456,7 +19466,7 @@ var CustomImportScript = (() => {
   var PAGE_TEMPLATE3 = {
     name: "base",
     group: "webinar",
-    description: "www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (a plain link, not bold, alone on its line), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.",
+    description: "www.stryker.com webinars and on-demand videos (#519). Webinar: H1 + speaker in a `serif` section, the description in a `p-1-25` section, then the Video block (`Video (border)` unless the source hides the border). Thank-you: gold H1 (bold + italic) + H2 in a `h1-1-5, h-serif` section, the paragraph in `p-1-25`, then the Video. Page hero: gold H1 (+ H2) in a `h-serif` section, `Video (border)` in a `separator` section, the speaker byline in a `serif, p-1-25` section, then the description as body copy. Index: Back link + linked FocusRN wordmark in a `back-link, image-link` section, H1 + intro + register link (a bold underlined link, the link-strong convention), then one `accordion-panel, image-link, large-labels` section per accordion panel (H2 label + one Columns 3-up row, Bold H3 webinar titles). The source document code closes the page as a `disclaimer` section; `published` and `last-updated: show` from the source date.",
     urls: [
       "https://www.stryker.com/us/en/emergency-care/webinars/ems1-webinar_with-or-without-capnography/webinar.html",
       "https://www.stryker.com/us/en/emergency-care/webinars/improving-cognitive-offloading-for-nurses/webinar.html",
