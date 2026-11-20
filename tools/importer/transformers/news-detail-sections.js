@@ -56,6 +56,7 @@
 
 import { videoLink } from '../parsers/video.js';
 import xfFragmentPath from '../xf-fragment-path.js';
+import { basicRules, basicPageCorrections } from './news-basic-pages.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -2565,9 +2566,20 @@ export default function transform(hookName, element, payload) {
     // theme's h1-1-25, h2-1-5, serif)
     const groupSizes = (element.getAttribute('data-representative-sizes') || '').split(',').filter(Boolean);
     element.removeAttribute('data-representative-sizes');
-    const THEME_SIZES = new Set(['p-1', 'p-1-25', 'p-1-5', 'p-1-75', 'h2-1-25', 'h3-1-25', 'h4-1-25', 'h4-line-above', 'join', ...groupSizes]);
-    // a group that merges: a text section split off the same source component (`join`)
-    // goes back into the text section before it (one section per source component)
+    // a group that keeps its pages' section styles and footnotes as authored (the
+    // `full-width, basic` pair) drops none
+    const keepStyles = element.hasAttribute('data-representative-keep');
+    element.removeAttribute('data-representative-keep');
+    const THEME_SIZES = keepStyles ? new Set(groupSizes)
+      : new Set(['p-1', 'p-1-25', 'p-1-5', 'p-1-75', 'h2-1-25', 'h3-1-25', 'h4-1-25', 'h4-line-above', 'join', ...groupSizes]);
+    // a group with its own markup rules (news-basic-pages.js: the `basic` news releases),
+    // read before the size styles go (the serif subtitle is found by them)
+    const groupRules = element.getAttribute('data-representative-rules');
+    element.removeAttribute('data-representative-rules');
+    if (groupRules === 'basic') basicRules(sections, doc);
+    // a group that merges: a text section split off the same source component (`join`, and
+    // only size styles besides it) goes back into the text section before it (one section
+    // per source component)
     if (element.hasAttribute('data-representative-merge')) {
       element.removeAttribute('data-representative-merge');
       const isText = (section) => section && section.kind !== 'spacer'
@@ -2575,7 +2587,8 @@ export default function transform(hookName, element, payload) {
       for (let i = sections.length - 1; i > 0; i -= 1) {
         const section = sections[i];
         const prev = sections[i - 1];
-        if ((section.style || '').split(', ').includes('join') && isText(section) && isText(prev) && !section.background) {
+        const list = (section.style || '').split(', ').filter(Boolean);
+        if (list.includes('join') && list.every((s) => THEME_SIZES.has(s)) && isText(section) && isText(prev) && !section.background) {
           prev.nodes.push(...section.nodes);
           sections.splice(i, 1);
         }
@@ -2598,7 +2611,7 @@ export default function transform(hookName, element, payload) {
         });
       });
       const paragraphs = section.nodes.filter((node) => node.nodeType === 1);
-      if (!paragraphs.length || !paragraphs.every((p) => p.tagName === 'P')) return;
+      if (keepStyles || !paragraphs.length || !paragraphs.every((p) => p.tagName === 'P')) return;
       const numbers = paragraphs.map(footnoteNumber);
       if (numbers.some((num, i) => !num || num.n !== i + 1)) return;
       const ol = doc.createElement('ol');
@@ -2614,6 +2627,16 @@ export default function transform(hookName, element, payload) {
       });
       section.nodes = [ol];
     });
+    // …and each `basic` page's reviewed DA corrections
+    if (groupRules === 'basic') {
+      let path = '';
+      try {
+        path = new URL(payload.params.originalURL).pathname.toLowerCase();
+      } catch (e) {
+        path = '';
+      }
+      basicPageCorrections(sections, path, doc);
+    }
   }
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata (a

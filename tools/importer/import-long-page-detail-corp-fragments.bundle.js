@@ -2568,6 +2568,7 @@ var CustomImportScript = (() => {
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
     else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
+    rest = rest.replace(/^\/{2,}/, "/");
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
