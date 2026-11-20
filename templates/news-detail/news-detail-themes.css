@@ -395,9 +395,8 @@ body.news-detail.app-blog main li > :is(ul, ol) {
    - the intro box, the name and the caption at the Large Headline size: 3vw, from 900px
      (source 840px) 1.5vw capped at 21px (11.25px at 375px, 19.2px at 1280px), Egyptienne
      Light on 1.35 lines, at least the column's 25px line below 900px; the box padded 20px
-   - the quote at 21px on 1.375 lines at every width, its bold in Futura, a line holding
-     Futura 1.635x the text (34.3px, the source's mixed-font lines); a section gap and one
-     empty Large Headline line below the box
+   - the quote at 21px on 1.375 lines at every width, its bold in Futura; a section gap and
+     one empty Large Headline line below the box
    - the rule line at 21px, from 900px 1vw capped at 14px; the name one empty rule line
      below it, the caption right under the name */
 body.news-detail.news-video-quote main > .section.video-text {
@@ -411,7 +410,6 @@ body.news-detail.news-video-quote main > .section.video-text {
   --news-video-name-line-height: max(var(--news-video-rule-line), calc(var(--heading-line-height-hero) * 1em));
   --news-video-name-strut: var(--body-font-size-xl);
   --news-video-caption-gap: var(--space-block-xxs);
-  --news-video-quote-ratio: 1.635; /* measured: a source quote line holding Futura, 34.3px for 21px text */
 }
 
 @media (width >= 600px) {
