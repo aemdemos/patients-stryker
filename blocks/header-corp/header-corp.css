@@ -365,6 +365,11 @@ body.hcp-banner .header-corp .hcp-band {
   text-transform: uppercase;
 }
 
+/* source drop-down links: 15px 30px 15px 15px (51px rows); group labels keep 20px (61px) */
+.header-corp .secondary-nav li a:any-link {
+  padding-block: var(--space-block);
+}
+
 .header-corp .main-nav li p,
 .header-corp .secondary-nav li p {
   margin: 0;
