@@ -3587,6 +3587,16 @@ var CustomImportScript = (() => {
       }
     }
   }
+  function boldBodyName(main) {
+    main.querySelectorAll("table").forEach((table) => {
+      if (text4(table.querySelector("th, tr")) !== "Section Metadata") return;
+      table.querySelectorAll("td").forEach((td) => {
+        if (/\bbody-font-bold\b/.test(td.textContent)) {
+          td.textContent = td.textContent.replace(/\bbody-font-bold\b/g, "bold-body");
+        }
+      });
+    });
+  }
   function indentedLists(main, document) {
     const indent = (p) => parseInt((p.getAttribute("style") || "").match(/margin-left:\s*(\d+)px/)?.[1] || "0", 10);
     main.querySelectorAll("p").forEach((first) => {
@@ -3703,6 +3713,7 @@ var CustomImportScript = (() => {
       blockVariants(main);
       trimEmptyCells(main);
       sectionStyles(main, document, url, bracketStyles);
+      boldBodyName(main);
       edsLinkPaths(main);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);

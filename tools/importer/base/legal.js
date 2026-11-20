@@ -293,6 +293,18 @@ function sectionStyles(main, document, url, extra) {
   }
 }
 
+// the article transformer names plain bold `body-font-bold`; the stylesheet's section style is `bold-body`
+function boldBodyName(main) {
+  main.querySelectorAll('table').forEach((table) => {
+    if (text(table.querySelector('th, tr')) !== 'Section Metadata') return;
+    table.querySelectorAll('td').forEach((td) => {
+      if (/\bbody-font-bold\b/.test(td.textContent)) {
+        td.textContent = td.textContent.replace(/\bbody-font-bold\b/g, 'bold-body');
+      }
+    });
+  });
+}
+
 // Runs of paragraphs indented with margin-left (bylaws clauses (a), (i)) → nested lists,
 // one level per indent step; the clause marker stays in the item text.
 function indentedLists(main, document) {
@@ -432,6 +444,7 @@ export default {
     blockVariants(main);
     trimEmptyCells(main);
     sectionStyles(main, document, url, bracketStyles);
+    boldBodyName(main);
     edsLinkPaths(main);
 
     // site + template are repeated on the page so it renders the same without bulk metadata
