@@ -490,7 +490,6 @@ body.news-detail.app-blog main li > :is(ul, ol) {
 body.news-detail.news-video-quote main > .section.video-text {
   --corp-headline-vw: 1.5vw;
   --news-video-title-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(8 * var(--corp-headline-vw) / 3)));
-  --news-video-intro-line-height: 30px; /* measured: a source Large Headline second line below 840px */
   --news-video-intro-gap: 30px;
   --news-video-copy-size: calc(2 * var(--corp-headline-vw));
   --news-video-gap: var(--space-block-l);
@@ -519,7 +518,6 @@ body.news-detail.news-video-quote main > .section.video-text {
     --news-video-name-line-height: var(--heading-line-height-hero);
     --news-video-name-strut: var(--news-video-copy-size);
     --news-video-caption-gap: 0px;
-    --news-video-intro-line-height: var(--heading-line-height-hero);
     --news-video-intro-gap: calc(var(--news-video-rule-size) * var(--heading-line-height-hero));
   }
 }
@@ -544,8 +542,8 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
    bold), the rest an italic Heading 2 (Egyptienne Light), both at the Large Headline title
    size (4vw, 2vw from 900px, capped at 28px: 15px at 375px, 25.6px at 1280px) on 1.35 lines
    and 10px apart; one empty column line below them (30px, the rule line from 900px), the
-   intro (an italic Heading 3) at the column's own size (21px on 30px lines, from 900px 1vw
-   capped at 14px on 1.35 lines); one box padded 20px */
+   intro (an italic Heading 3) at the grey-box H3 size of the other quote pages (3vw, 1.5vw
+   from 900px capped at 21px: 11.25px at 375px, 19.2px at 1280px); one box padded 20px */
 body.news-detail.news-video-quote main > .section.video-text.light-gray > .video-wrapper + .default-content-wrapper > :is(h2:first-child, p.button-wrapper:first-child + h2) {
   margin: 0;
   padding: var(--space-block-l) var(--space-block-l) 0;
@@ -568,8 +566,8 @@ body.news-detail.news-video-quote main > .section.video-text.light-gray > .video
   margin-bottom: calc(var(--news-video-gap) + var(--news-video-line));
   padding: var(--news-video-intro-gap) var(--space-block-l) var(--space-block-l);
   background-color: var(--color-surface);
-  font-size: var(--news-video-rule-size);
-  line-height: var(--news-video-intro-line-height);
+  font-size: var(--news-video-copy-size);
+  line-height: var(--news-video-copy-line-height);
 }
 
 body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > h3 em {
