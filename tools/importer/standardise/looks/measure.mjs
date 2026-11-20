@@ -505,10 +505,55 @@ const settle = async (page) => {
         const all = componentsOf(main).filter((c) => c.getBoundingClientRect().height > 1
           && !/breadcrumb/.test(c.className));
         const lead = [];
+        const AREAS = '.parsys, .aem-Grid, .responsivegrid';
+        // (an experience fragment at the top: its hero is its first row, the components side by
+        // side at its top (a building block of text and the product image next to it), not what
+        // follows when the fragment holds the page's content too. A row of several is wrapped in
+        // a full-width grid of its own, which changes nothing in the layout, to be measured as one)
+        const firstOf = (xf) => {
+          const inner = xf.querySelector(AREAS);
+          const parts = (inner ? componentsOf(inner) : [])
+            .filter((c) => c.getBoundingClientRect().height > 1
+              && (c.textContent.trim() || c.querySelector('img, video, iframe, picture')));
+          if (!parts.length) return xf;
+          // (the row by the grid's desktop columns, so it is the same row at every width: the
+          // components until their columns and offsets pass 12)
+          const cols = (c) => {
+            const n = (re) => Number((String(c.className).match(re) || [])[1] || 0);
+            return (n(/aem-GridColumn--default--(\d+)/) || 12) + n(/aem-GridColumn--offset--default--(\d+)/);
+          };
+          const row = [parts[0]];
+          let used = cols(parts[0]);
+          parts.slice(1).every((c) => {
+            used += cols(c);
+            if (used > 12) return false;
+            row.push(c);
+            return true;
+          });
+          if (parts.length === row.length) return xf;
+          if (row.length === 1) return row[0];
+          if (row.some((c) => c.parentElement !== row[0].parentElement)) return xf;
+          const wrap = document.createElement('div');
+          wrap.className = 'aem-Grid aem-Grid--12';
+          row[0].before(wrap);
+          wrap.append(...row);
+          return wrap;
+        };
         all.every((c, i) => {
           const component = String(c.className).trim().split(/\s+/)[0];
           const isHero = HEROES.includes(component) || (i === 0 && component === 'experienceFragment');
-          if (isHero) lead.push([c, component]);
+          // (a hero component with nothing to show, e.g. a title strip in transparent text under
+          // the hero: no hero, but the run goes on)
+          const shown = (e) => {
+            const s = getComputedStyle(e);
+            return s.visibility !== 'hidden' && !/^(transparent|rgba\(.*,\s*0\))$/.test(s.color);
+          };
+          // (and a carousel without slides)
+          const empty = (component === 'carouselslidegroup' && !c.querySelector('.carouselslide'))
+            || (!c.querySelector('img, video, iframe, picture')
+            && ![...c.querySelectorAll('*')].some((e) => [...e.childNodes]
+              .some((n) => n.nodeType === 3 && n.textContent.trim()) && shown(e)));
+          if (isHero && !empty) lead.push([component === 'experienceFragment' ? firstOf(c) : c, component]);
           return isHero;
         });
         lead.forEach(([c, component]) => {

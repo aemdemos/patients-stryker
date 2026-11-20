@@ -56,6 +56,10 @@ const LACK_NAMES = {
 const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${k}`).join(', ');
 // (what a merged instance has on top of the group's look)
 const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
+// (how light an instance's background is, backgrounds.mjs: half or more near-white is light)
+const LIGHT = 50;
+const lightOf = (it) => (it.light >= LIGHT ? `light background (${it.light}% white)` : `photo or dark background (${it.light}% white)`);
+const dark = (it) => (it.light !== undefined && it.light < LIGHT ? 1 : 0);
 const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0) + (it.differs?.length || 0);
 const PART_NAMES = {
   frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart', columns: 'Columns (twelfths)', holds: 'Columns hold', align: 'Alignment', tablet: 'On tablets', phone: 'On phones',
@@ -139,7 +143,8 @@ function groupBox(g) {
     g.lacking?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part missing: ${g.lacking.map(([k, n]) => `${n} ${lackOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
     // (complete instances first, then the ones lacking a part)
     g.extras?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part more: ${g.extras.map(([k, n]) => `${n} ${extraOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
-    el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => odd(a) - odd(c)).map((it) => {
+    g.items.some((it) => it.light !== undefined) ? el('p', { class: 'lk-meta' }, `Backgrounds: ${g.items.filter((it) => it.light >= LIGHT).length} light (half or more near-white, shown first), ${g.items.filter((it) => it.light < LIGHT).length} photo or dark`) : null,
+    el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => dark(a) - dark(c) || odd(a) - odd(c)).map((it) => {
       const shot = { d: it.shot, m: it.phoneShot }[vp];
       const tip = `${it.title} · ${it.text.slice(0, 120)}`;
       // (the screenshot and the title open the page as it is now; the source link the live
@@ -166,6 +171,7 @@ function groupBox(g) {
             class: 'lk-source', href: it.source, target: '_blank', rel: 'noopener', title: 'Open the live stryker.com page',
           }, 'stryker.com ↗') : null,
         ),
+        it.light !== undefined ? el('span', { class: 'lk-tag' }, lightOf(it)) : null,
         it.notMigrated ? el('span', { class: 'lk-tag' }, 'stryker.com only: not on the as-is page') : null,
         it.missing?.length ? el('span', { class: 'lk-tag' }, lackOf(it.missing)) : null,
         it.extra?.length ? el('span', { class: 'lk-tag' }, extraOf(it.extra)) : null,

@@ -31,6 +31,15 @@ them carry those gaps into the base variants. So (the user's decision):
   1023 px (its CSS switches at 841 and 1024), our tablet range is 600–899: 860 is tablet on both.
   (A real tablet held upright, 768–834 px, gets stryker.com's phone layout.) `measure.mjs --add t`
   adds the width to pages measured before; the looks pages have a Tablet view.
+- **Hero on the original (2026-11-20):** an experience fragment at the top gives its first row as
+  the hero (the components side by side by the grid's desktop columns; neurovascular pages hold
+  the whole page in one fragment); hero pieces with nothing visible (a title strip in transparent
+  text, a carousel without slides) are skipped. Grouped by frame and where the image sits (not
+  its share of the width, nor the inner spacing of fragment heroes); title bands without a
+  picture are the product hero without it (the user). `looks/backgrounds.mjs` measures how light
+  each hero's background is (near-white share of its clip), shown on the looks page: about 30 of
+  the "image behind the text" heroes are a product picture on a light background, i.e. look like
+  the product hero (the user decides after looking).
 - **The rules translate the source directly into the standard pages:** the importer keeps its
   reading side (the component handlers) and gets a standard output (base variants, the containers
   model, named text styles) instead of lift-and-shift settings. `/rs` stays as history and

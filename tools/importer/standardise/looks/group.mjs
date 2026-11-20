@@ -51,6 +51,9 @@ const REMOTE_SHOTS = args.includes('--remote-shots');
 // (--sprites: no screenshots of their own; the looks page clips each instance out of its page's
 // full-page tiles, measure.mjs --tiles)
 const SPRITES = args.includes('--sprites');
+// (--notes <file>: what was measured on the instances' clips, e.g. how light their background is,
+// backgrounds.mjs: { "<page>#<n>": { light } })
+const NOTES = opt('--notes', '') ? JSON.parse(readFileSync(opt('--notes'), 'utf8')) : {};
 const rect = (r) => (r ? [r.left, r.top, (r.right ?? r.left + r.width) - r.left,
   (r.bottom ?? r.top + r.height) - r.top].map((v) => Math.round(v)) : null);
 const clipOf = (b) => ({
@@ -330,6 +333,7 @@ readdirSync(join(IN, 'pages')).forEach((f) => {
     ...(b.rows ? { container: b.type, context: [b.inTabs && 'in tabs', b.inAccordion && 'in accordion'].filter(Boolean) } : {}),
     parts: partsOf(b),
     exactType: b.typography ? exactTypeOf(b) : {},
+    ...(NOTES[`${d.page}#${b.n}`] ?? {}),
     ...(b.type === 'statistics' ? { colours: numberColours(b) } : {}),
   }));
 });
@@ -341,6 +345,18 @@ instances.forEach((it) => {
   if (!byKey.has(k)) byKey.set(k, []);
   byKey.get(k).push(it);
 });
+// merges decided while inspecting the looks (tools/looks/decisions/<type>.json): every group
+// whose instances all have the rule's authored classes and whose look has the rule's parts joins
+// the largest of them; the instances that move keep what differs (and what they lack or add)
+const DECISIONS = opt('--decisions', join(OUT, '..', 'decisions', `${type}.json`));
+let decisions = { merge: [] };
+try {
+  decisions = JSON.parse(readFileSync(DECISIONS, 'utf8'));
+} catch (e) {
+  decisions = { merge: [] };
+}
+// (apart: parts whose absence is a look of its own, e.g. a hero without image is a title band)
+const APART = decisions.apart || [];
 // a look that only lacks a part (no description, no link, no image) is the same look with less
 // content: it joins the largest group that agrees on everything both have; its instances keep
 // what they lack, so the page can show it
@@ -349,6 +365,7 @@ const compatible = (big, small) => {
   const keys = new Set([...Object.keys(big), ...Object.keys(small)]);
   return [...keys].every((k) => {
     if (big[k] === small[k]) return true;
+    if (APART.includes(k)) return false;
     if (k.startsWith('type ') && (!(k in big) || !(k in small))) return true;
     // (a role with fewer styles: e.g. titles as links but no "Learn more" link)
     if (k.startsWith('type ')) {
@@ -372,16 +389,6 @@ exact.forEach((list) => {
     list.forEach((it) => home.list.push({ ...it, missing, extra }));
   } else merged.push({ parts, list: [...list] });
 });
-// merges decided while inspecting the looks (tools/looks/decisions/<type>.json): every group
-// whose instances all have the rule's authored classes and whose look has the rule's parts joins
-// the largest of them; the instances that move keep what differs (and what they lack or add)
-const DECISIONS = opt('--decisions', join(OUT, '..', 'decisions', `${type}.json`));
-let decisions = { merge: [] };
-try {
-  decisions = JSON.parse(readFileSync(DECISIONS, 'utf8'));
-} catch (e) {
-  decisions = { merge: [] };
-}
 /** the groups of `chosen` join the largest of them, which takes the decision's name and reason */
 function mergeInto(chosen, decision) {
   const [home, ...rest] = [...chosen].sort((a, c) => c.list.length - a.list.length);
@@ -406,7 +413,14 @@ function mergeInto(chosen, decision) {
 (decisions.merge || []).forEach((rule) => {
   // (by: one group per combination of the named parts, e.g. Hero by layout; names per combination)
   if (rule.by) {
-    const keyOfParts = (g) => rule.by.map((k) => g.parts[k] || '').join(' | ');
+    // (a part, or { part, take }: only what the regular expression takes of it, e.g. where the
+    // image sits without its share of the width)
+    const pick = (g, k) => {
+      if (typeof k === 'string') return g.parts[k] || '';
+      const m = (g.parts[k.part] || '').match(new RegExp(k.take));
+      return m ? m[1] || m[0] : g.parts[k.part] || '';
+    };
+    const keyOfParts = (g) => rule.by.map((k) => pick(g, k)).join(' | ');
     const keys = [...new Set(merged.map(keyOfParts))];
     keys.forEach((key) => {
       mergeInto(merged.filter((g) => keyOfParts(g) === key), {
