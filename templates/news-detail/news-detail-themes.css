@@ -465,7 +465,6 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
 
 body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p) strong {
   font-family: var(--display-font-family);
-  line-height: var(--news-video-quote-ratio);
 }
 
 /* the rule line, the name (Futura bold) and the caption */
