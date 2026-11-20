@@ -366,6 +366,11 @@ body.hcp-banner .header-corp .hcp-band {
   text-transform: uppercase;
 }
 
+/* source drop-down links: 15px 30px 15px 15px (51px rows); group labels keep 20px (61px) */
+.header-corp .secondary-nav li a:any-link {
+  padding-block: var(--space-block);
+}
+
 .header-corp .main-nav li p,
 .header-corp .secondary-nav li p {
   margin: 0;
@@ -408,7 +413,9 @@ body.hcp-banner .header-corp .hcp-band {
   color: var(--color-white);
 }
 
+/* source: 8x12 arrow image at `15px center`, text indented to 30px */
 .header-corp .secondary-nav .back {
+  position: relative;
   display: block;
   padding: var(--space-block-l) var(--space-block);
   border-bottom: 1px solid var(--color-white);
@@ -419,12 +426,15 @@ body.hcp-banner .header-corp .hcp-band {
 }
 
 .header-corp .secondary-nav .back::before {
-  content: "\e250";
-  display: inline-block;
-  margin-right: 8px;
-  font-family: var(--corp-icon-font-family);
-  font-size: 0.85em;
-  transform: scaleX(-1);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--space-block);
+  border-style: solid;
+  border-color: transparent currentcolor transparent transparent;
+  border-width: var(--corp-back-arrow-half-height) var(--corp-back-arrow-width)
+    var(--corp-back-arrow-half-height) 0;
+  transform: translateY(-50%);
 }
 
 /* ---- desktop: 87px white row, utility links, search field, 60px gold bar ---- */
