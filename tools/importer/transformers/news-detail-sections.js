@@ -1826,6 +1826,12 @@ export default function transform(hookName, element, payload) {
   // section — `headline-1-5vw` (the Large Headline text sizes), `background: light-gray`
   // for the grey box (its first line a Heading 2 statement when the source sets it at
   // 2vw); a button under the video opens the text, right after the video
+  // the page theme of a video row: `full-width, news-video` or `full-width, news-video-quote`;
+  // news-video-quote, once set, stays (its rows would lose their sizes under news-video)
+  const setVideoTheme = (theme) => {
+    if (element.getAttribute('data-news-theme') === 'full-width, news-video-quote') return;
+    element.setAttribute('data-news-theme', `full-width, ${theme}`);
+  };
   const videoHeadlineRow = (video, headline, quotes, ctas, asideCtas) => {
     const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
     const lead = boxed ? headlineNodes(headline, doc) : [];
@@ -1852,12 +1858,18 @@ export default function transform(hookName, element, payload) {
       ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
     ];
     [headline, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    // a bold run inside a bold run (the source's <b> around span.futura-bold, e.g. "Emily" on
+    // "When Stryker employees and their family members become patients") is one Bold
+    nodes.forEach((node) => node.querySelectorAll(':is(strong, b) :is(strong, b)').forEach(unwrap));
     // the Large Headline text beside the video is set by the news-video theme; a grey box
     // with a quote and sign-off under it (a patient story, e.g. "Life after leukemia -
-    // Jesse's Zip skin closure story") by the news-video-quote theme
-    const quoteTheme = boxed && quotes.length > 0;
-    element.setAttribute('data-news-theme', `full-width, ${quoteTheme ? 'news-video-quote' : 'news-video'}`);
-    const section = startSection('video-text', h3Statement ? 'video-text' : 'video-text, headline-1-5vw');
+    // Jesse's Zip skin closure story"), or a column opening with the quote (no grey box, e.g.
+    // Carolyn's row of "When Stryker employees and their family members become patients"),
+    // by the news-video-quote theme, in a plain `video-text` section. A page with one such
+    // row keeps that theme for all its video rows
+    const quoteRow = boxed ? quotes.length > 0 : /^[“”"]/.test(text(nodes[0] || doc.createElement('p')));
+    setVideoTheme(quoteRow ? 'news-video-quote' : 'news-video');
+    const section = startSection('video-text', h3Statement || quoteRow ? 'video-text' : 'video-text, headline-1-5vw');
     if (boxed) section.background = 'light-gray';
     // a button under the video comes right after it, before the text (source order: on
     // phones video, button, text; from 900px the template keeps it under the video)
@@ -1921,14 +1933,14 @@ export default function transform(hookName, element, payload) {
       nodes[0] = h3;
       nodes.filter((n) => n.nodeName === 'P' && /^_{5,}$/.test(text(n)))
         .forEach((rule) => rule.querySelectorAll('strong, em').forEach(unwrap));
-      element.setAttribute('data-news-theme', 'full-width, news-video-quote');
+      setVideoTheme('news-video-quote');
       const section = startSection('video-text', 'video-text');
       section.background = 'light-gray';
       section.nodes.push(video, ...nodes);
       current = null;
       return true;
     }
-    element.setAttribute('data-news-theme', 'full-width, news-video');
+    setVideoTheme('news-video');
     const style = [
       'video-text',
       asideCol.querySelector('.urw-egyptienne') && 'serif',
@@ -2283,7 +2295,7 @@ export default function transform(hookName, element, payload) {
           em.append(...h3.childNodes);
           h3.append(em);
         }
-        element.setAttribute('data-news-theme', 'full-width, news-video');
+        setVideoTheme('news-video');
         const section = startSection('video-text', 'video-text');
         section.background = 'light-gray';
         section.nodes.push(component, h3, ...boxedText.slice(1));
@@ -2521,7 +2533,26 @@ export default function transform(hookName, element, payload) {
   if (representativeTheme) {
     element.removeAttribute('data-representative-theme');
     element.setAttribute('data-news-theme', representativeTheme);
-    const THEME_SIZES = new Set(['p-1', 'p-1-25', 'p-1-5', 'p-1-75', 'h2-1-25', 'h3-1-25', 'h4-1-25', 'h4-line-above', 'join']);
+    // …plus the group's own (news-representative-normalise.js: e.g. the multiple-video
+    // theme's h1-1-25, h2-1-5, serif)
+    const groupSizes = (element.getAttribute('data-representative-sizes') || '').split(',').filter(Boolean);
+    element.removeAttribute('data-representative-sizes');
+    const THEME_SIZES = new Set(['p-1', 'p-1-25', 'p-1-5', 'p-1-75', 'h2-1-25', 'h3-1-25', 'h4-1-25', 'h4-line-above', 'join', ...groupSizes]);
+    // a group that merges: a text section split off the same source component (`join`)
+    // goes back into the text section before it (one section per source component)
+    if (element.hasAttribute('data-representative-merge')) {
+      element.removeAttribute('data-representative-merge');
+      const isText = (section) => section && section.kind !== 'spacer'
+        && section.nodes.every((node) => node.nodeType !== 1 || /^(P|H[1-6]|UL|OL)$/.test(node.tagName));
+      for (let i = sections.length - 1; i > 0; i -= 1) {
+        const section = sections[i];
+        const prev = sections[i - 1];
+        if ((section.style || '').split(', ').includes('join') && isText(section) && isText(prev) && !section.background) {
+          prev.nodes.push(...section.nodes);
+          sections.splice(i, 1);
+        }
+      }
+    }
     const footnoteNumber = (p) => {
       const first = p.firstChild;
       if (first && first.nodeName === 'SUP' && /^\s*\d+\s*$/.test(first.textContent)) {

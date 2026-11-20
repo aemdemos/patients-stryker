@@ -1850,6 +1850,10 @@ var CustomImportScript = (() => {
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
+    const setVideoTheme = (theme) => {
+      if (element.getAttribute("data-news-theme") === "full-width, news-video-quote") return;
+      element.setAttribute("data-news-theme", `full-width, ${theme}`);
+    };
     const videoHeadlineRow = (video, headline2, quotes, ctas, asideCtas) => {
       const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
       const lead = boxed ? headlineNodes(headline2, doc) : [];
@@ -1871,9 +1875,10 @@ var CustomImportScript = (() => {
         ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
       ];
       [headline2, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-      const quoteTheme = boxed && quotes.length > 0;
-      element.setAttribute("data-news-theme", `full-width, ${quoteTheme ? "news-video-quote" : "news-video"}`);
-      const section = startSection("video-text", h3Statement ? "video-text" : "video-text, headline-1-5vw");
+      nodes.forEach((node) => node.querySelectorAll(":is(strong, b) :is(strong, b)").forEach(unwrap));
+      const quoteRow = boxed ? quotes.length > 0 : /^[“”"]/.test(text(nodes[0] || doc.createElement("p")));
+      setVideoTheme(quoteRow ? "news-video-quote" : "news-video");
+      const section = startSection("video-text", h3Statement || quoteRow ? "video-text" : "video-text, headline-1-5vw");
       if (boxed) section.background = "light-gray";
       section.nodes.push(video, ...ctas.flatMap((cta) => buttonNodes(cta, doc)), ...nodes);
       current = null;
@@ -1917,14 +1922,14 @@ var CustomImportScript = (() => {
         }
         nodes[0] = h3;
         nodes.filter((n) => n.nodeName === "P" && /^_{5,}$/.test(text(n))).forEach((rule) => rule.querySelectorAll("strong, em").forEach(unwrap));
-        element.setAttribute("data-news-theme", "full-width, news-video-quote");
+        setVideoTheme("news-video-quote");
         const section2 = startSection("video-text", "video-text");
         section2.background = "light-gray";
         section2.nodes.push(video, ...nodes);
         current = null;
         return true;
       }
-      element.setAttribute("data-news-theme", "full-width, news-video");
+      setVideoTheme("news-video");
       const style = [
         "video-text",
         asideCol.querySelector(".urw-egyptienne") && "serif",
@@ -2209,7 +2214,7 @@ var CustomImportScript = (() => {
             em.append(...h3.childNodes);
             h3.append(em);
           }
-          element.setAttribute("data-news-theme", "full-width, news-video");
+          setVideoTheme("news-video");
           const section = startSection("video-text", "video-text");
           section.background = "light-gray";
           section.nodes.push(component, h3, ...boxedText.slice(1));
@@ -2369,7 +2374,21 @@ var CustomImportScript = (() => {
     if (representativeTheme) {
       element.removeAttribute("data-representative-theme");
       element.setAttribute("data-news-theme", representativeTheme);
-      const THEME_SIZES = /* @__PURE__ */ new Set(["p-1", "p-1-25", "p-1-5", "p-1-75", "h2-1-25", "h3-1-25", "h4-1-25", "h4-line-above", "join"]);
+      const groupSizes = (element.getAttribute("data-representative-sizes") || "").split(",").filter(Boolean);
+      element.removeAttribute("data-representative-sizes");
+      const THEME_SIZES = /* @__PURE__ */ new Set(["p-1", "p-1-25", "p-1-5", "p-1-75", "h2-1-25", "h3-1-25", "h4-1-25", "h4-line-above", "join", ...groupSizes]);
+      if (element.hasAttribute("data-representative-merge")) {
+        element.removeAttribute("data-representative-merge");
+        const isText = (section) => section && section.kind !== "spacer" && section.nodes.every((node) => node.nodeType !== 1 || /^(P|H[1-6]|UL|OL)$/.test(node.tagName));
+        for (let i = sections.length - 1; i > 0; i -= 1) {
+          const section = sections[i];
+          const prev = sections[i - 1];
+          if ((section.style || "").split(", ").includes("join") && isText(section) && isText(prev) && !section.background) {
+            prev.nodes.push(...section.nodes);
+            sections.splice(i, 1);
+          }
+        }
+      }
       const footnoteNumber = (p) => {
         const first = p.firstChild;
         if (first && first.nodeName === "SUP" && /^\s*\d+\s*$/.test(first.textContent)) {

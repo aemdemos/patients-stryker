@@ -1,6 +1,95 @@
 /* news-detail themes — loaded with the template only when the page sets `theme`
    metadata; scope every rule to body.news-detail.<theme> */
 
+/* multiple-video: a feature with several patient-story video rows (theme `full-width,
+   news-video-quote, multiple-video`; the rows are news-video-quote), its title, intro, story
+   headings and copy measured on "When Stryker employees and their family members become
+   patients" (.../2023/features/when-stryker-employees-and-their-family-members-become-
+   patients.html). Authored without size section styles: the title a Heading 1, the intro
+   paragraphs, a Bold + Italic (gold) lead-in line, each story a Heading 2 and its copy:
+   - title 35px Futura bold, on 1.35 lines (the source's 1.25em span in a 28px h1: 47px)
+   - story headings 31.5px, 36.75px from 600px, on 1.35 lines (42px, 50px on the source)
+   - copy 21px Egyptienne Light on 1.06 lines (22.26px), its bold Egyptienne bold
+   - the gold lead-in line 24.5px Futura bold on 1.35 lines (32px on the source)
+   - spacing: below */
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(h1) {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(h2) {
+  margin-bottom: var(--space-block-l);
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper :where(p, li) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper :where(p, li) strong:not(.standalone, .body-bold, em strong, :has(em)) {
+  font-family: var(--heading-font-family);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(p:has(> em:only-child > strong:only-child), p:has(> strong:only-child > em:only-child)) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* spacing, as the source's components:
+   - each text block is padded as its rich text component, 5% of the column (17.25px at
+     375px, 62.5px at 1280px): the title below the date, a story block (its heading and copy)
+     above and below; after a separator on top of the rule's own gap (20px, 50px from 600px)
+   - the story copy sits one paragraph gap and that padding above its video row (no section
+     gap); the heading 20px above its copy (the source's taller heading lines)
+   - the intro a section gap above the gold lead-in line (the source's empty line after it)
+   - a video row above a separator: at the end of the file */
+body.news-detail.multiple-video main {
+  --multiple-video-pad: calc(5% - var(--container-gutter) / 10);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper {
+  padding-top: var(--multiple-video-pad);
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper:where(:has(> h2)) {
+  padding-bottom: var(--multiple-video-pad);
+}
+
+body.news-detail.multiple-video main > .section.date-above > .default-content-wrapper {
+  padding-top: 0;
+}
+
+body.news-detail.multiple-video main > .section.date-above > .default-content-wrapper > :where(h1) {
+  padding-top: var(--multiple-video-pad);
+}
+
+body.news-detail.multiple-video main > .section:where(.separator:not(.video-text, .disclaimer)) > div:first-child {
+  padding-top: calc(var(--space-block-l) + var(--multiple-video-pad));
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer):has(> .default-content-wrapper > h2):has(+ .section.video-text)) {
+  margin-bottom: 0;
+}
+
+body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(p:has(+ p > em:only-child > strong:only-child), p:has(+ p > strong:only-child > em:only-child)) {
+  margin-bottom: var(--space-section);
+}
+
+
+@media (width >= 600px) {
+  body.news-detail.multiple-video main > .section:where(:not(.video-text, .disclaimer)) > .default-content-wrapper > :where(h2) {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  body.news-detail.multiple-video main > .section:where(.separator:not(.video-text, .disclaimer)) > div:first-child {
+    padding-top: calc(var(--space-section-l) + var(--multiple-video-pad));
+  }
+}
+
+
 /* basic: the grey rule of a `separator` section sits 51–52px below the text above it at
    every width, as on stryker.com (.c-section-separator, e.g. the Mako RPS release "Stryker
    expands Mako robotics portfolio": 52px at 375px, 51px at 700 / 1280px): the text's 15px
@@ -450,41 +539,47 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
   font-weight: inherit;
 }
 
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p, h3 + p + p + p + p) {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p, p:first-child:not(.button-wrapper) + p + p, p.button-wrapper:first-child + p + p + p, h3 + p + p + p + p, p:first-child:not(.button-wrapper) + p + p + p, p.button-wrapper:first-child + p + p + p + p) {
   font-size: var(--news-video-copy-size);
   line-height: var(--news-video-copy-line-height);
 }
 
-/* the quote, its bold in Futura */
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p) {
+/* the quote, its bold in Futura; a quote opening the column (no grey intro, e.g. Carolyn's
+   row of "When Stryker employees and their family members become patients") one empty
+   Large Headline line below its top, as on the source */
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p, p:first-child:not(.button-wrapper), p.button-wrapper:first-child + p) {
   font-size: var(--body-font-size-xl);
   line-height: var(--paragraph-line-height);
 }
 
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p) strong {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(p:first-child:not(.button-wrapper), p.button-wrapper:first-child + p) {
+  padding-top: var(--news-video-line);
+}
+
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p, p:first-child:not(.button-wrapper), p.button-wrapper:first-child + p) strong {
   font-family: var(--display-font-family);
 }
 
 /* the rule line, the name (Futura bold) and the caption */
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p) {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p, p:first-child:not(.button-wrapper) + p, p.button-wrapper:first-child + p + p) {
   font-size: var(--news-video-rule-size);
   line-height: var(--paragraph-line-height);
 }
 
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p) {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p, p:first-child:not(.button-wrapper) + p + p, p.button-wrapper:first-child + p + p + p) {
   margin-top: var(--news-video-rule-line);
   font-family: var(--body-font-family);
   font-size: var(--news-video-name-strut);
   line-height: var(--news-video-name-line-height);
 }
 
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p) > strong {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p, p:first-child:not(.button-wrapper) + p + p, p.button-wrapper:first-child + p + p + p) > strong {
   font-family: var(--display-font-family);
   font-size: var(--news-video-copy-size);
   line-height: var(--news-video-name-line-height);
 }
 
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p + p) {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p + p + p + p, p:first-child:not(.button-wrapper) + p + p + p, p.button-wrapper:first-child + p + p + p + p) {
   margin-top: var(--news-video-caption-gap);
   line-height: var(--news-video-name-line-height);
 }
@@ -492,7 +587,7 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
 /* a button after the sign-off (e.g. Esley's "Watch more survivor stories") is the source's
    separate button component: a section gap below the name or caption (20px, 30px from 600px,
    plus the caption's 3px below 900px) */
-body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p ~ p.button-wrapper) {
+body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + .default-content-wrapper > :where(h3 + p ~ p.button-wrapper, p:first-child:not(.button-wrapper) ~ p.button-wrapper, p.button-wrapper:first-child + p ~ p.button-wrapper) {
   margin-top: calc(var(--news-video-gap) + var(--news-video-caption-gap));
 }
 
@@ -1006,5 +1101,37 @@ body.news-detail.sustainability main > .section.separator > div:only-child:empty
 
   body.news-detail.sustainability main > .section.separator:is(:empty, :has(> div:only-child:empty)) {
     margin-bottom: var(--space-section-l);
+  }
+}
+
+/* multiple-video (above): the source leaves 5% and 10px (20px from 900px) under each video
+   (its video column's empty component): stacked, the text column starts that much lower; a
+   video row ends a paragraph gap and that space above the next separator. Last in the file:
+   these outrank the news-video layout and the template's gap above a separator */
+body.news-detail.multiple-video main > .section.video-text {
+  --multiple-video-after: calc(var(--multiple-video-pad) + var(--space-block-s));
+}
+
+body.news-detail.multiple-video main > .section.video-text:not(.video-right) > .video-wrapper + .default-content-wrapper {
+  margin-top: calc(var(--space-block-l) + var(--multiple-video-after));
+}
+
+body.news-detail.multiple-video main > .section.video-text:has(+ .section.separator) {
+  margin-bottom: calc(var(--space-block) + var(--multiple-video-after));
+}
+
+@media (width >= 600px) {
+  body.news-detail.multiple-video main > .section.video-text:not(.video-right) > .video-wrapper + .default-content-wrapper {
+    margin-top: calc(var(--space-section) + var(--multiple-video-after));
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail.multiple-video main > .section.video-text {
+    --multiple-video-after: calc(var(--multiple-video-pad) + var(--space-block-l));
+  }
+
+  body.news-detail.multiple-video main > .section.video-text:not(.video-right) > .video-wrapper + .default-content-wrapper {
+    margin-top: 0;
   }
 }

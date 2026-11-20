@@ -37,6 +37,22 @@ const GROUPS = [
       '/us/en/sustainability/news/world-environment-day-2025-.html',
     ],
   },
+  {
+    // a feature with several patient-story video rows, its title, intro and story headings
+    // and copy set by the multiple-video theme (measured on "When Stryker employees and their
+    // family members become patients"); the video rows keep the news-video-quote structure.
+    // Only the theme: the source text is not rewritten. The size and serif section styles
+    // the theme replaces go, and the text split off one source component (`join`) is one
+    // section again
+    name: 'multiple-video',
+    theme: 'full-width, news-video-quote, multiple-video',
+    rewrite: false,
+    sizes: ['h1-1-25', 'h2-1-5', 'serif'],
+    mergeJoined: true,
+    paths: [
+      '/us/en/about/news/2023/features/when-stryker-employees-and-their-family-members-become-patients.html',
+    ],
+  },
 ];
 
 // a subhead is a short line; longer bold text stays copy
@@ -149,6 +165,9 @@ export default function transform(hookName, element, payload) {
   const group = GROUPS.find((g) => g.paths.includes(path));
   if (!group) return;
   if (group.theme) element.setAttribute('data-representative-theme', group.theme);
+  if (group.sizes) element.setAttribute('data-representative-sizes', group.sizes.join(','));
+  if (group.mergeJoined) element.setAttribute('data-representative-merge', '');
+  if (group.rewrite === false) return;
   const doc = element.ownerDocument;
   element.querySelectorAll('.c-rich-text-editor').forEach((rte) => {
     // shared Experience Fragments (the contact header / form) and forms keep their markup
