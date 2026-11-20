@@ -735,7 +735,8 @@ const isMediaCell = (td) => !td.textContent.trim() || (td.querySelector(MEDIA)
  * (on phones each image then its own name). The rows also share the section style.
  */
 function gridRows(main) {
-  const isColumns = (el) => el && el.matches('table[data-keep="section"]')
+  // `data-no-merge`: a block that stays on its own (one hero carousel slide per section)
+  const isColumns = (el) => el && el.matches('table[data-keep="section"]:not([data-no-merge])')
     && /^Columns\b/.test(text(tableRows(el)[0] || el));
   const empty = (el) => !text(el) && !el.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`)
     && !el.matches('[data-keep], .sectionseparator, hr');

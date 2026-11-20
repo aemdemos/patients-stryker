@@ -15583,6 +15583,29 @@ var CustomImportScript = (() => {
   };
 
   // tools/importer/base/shared.js
+  var EVENT_PAGES = /* @__PURE__ */ new Set([
+    ...["2011", "2012", "2013", "2014", "2015", "2016", "2017", "features", "press-kit"].map((n) => `/us/en/about/news/${n}`),
+    ...[
+      "2018/acfas",
+      "2018/aofas2018",
+      "2018/ormanagers",
+      "2019/2019-post-ota-newsletter-page",
+      "2019/acfas",
+      "2019/asbrs-2019",
+      "2019/assh",
+      "2019/global-power-tools",
+      "2019/iahcsmm-2019",
+      "2019/rebuild-lives"
+    ].map((n) => `/us/en/c/${n}`),
+    "/us/en/global-events",
+    "/us/en/global-events/sports-medicine",
+    "/us/en/global-events/sports-medicine/association-meetings",
+    "/us/en/global-events/sports-medicine/training",
+    "/us/en/global-events/trauma-and-extremities/association-meetings/2018/ota-2018",
+    "/us/en/neurovascular/c/linnc-paris",
+    "/us/en/neurovascular/c/linnc-paris/index",
+    "/us/en/training-and-education/orthopaedics/trauma-extremities"
+  ]);
   var pathOf = (url) => new URL(url, "https://www.stryker.com").pathname.replace(/\/$/, "").replace(/\.html?$/, "");
   function groupOf(url) {
     const path = pathOf(url);
@@ -15590,9 +15613,10 @@ var CustomImportScript = (() => {
     if (/^\/us\/en\/(sage\/webinars|emergency-care\/webinars|sage\/videos\/sage-mp-mats-2-demo)/.test(path)) return "webinar";
     if (/^\/us\/en\/about\/(our-management\/leaders|our-board-of-directors\/directors)/.test(path)) return "people";
     if (path.startsWith("/us/en/interventional-spine/footnotes")) return "footnotes";
+    if (EVENT_PAGES.has(path.toLowerCase())) return "events";
     return "legal";
   }
-  var PAGE_THEME = { legal: "legal", footnotes: "" };
+  var PAGE_THEME = { legal: "legal", footnotes: "", events: "" };
   function applyBaseMeta(meta, url, group) {
     meta.template = "base";
     const path = pathOf(url);
@@ -18288,7 +18312,7 @@ var CustomImportScript = (() => {
   var MEDIA = 'img, picture, video, iframe, [data-asset-path], a[href*="/is/content/"], a[href*="/is/image/"]';
   var isMediaCell = (td) => !td.textContent.trim() || td.querySelector(MEDIA) && [...td.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].every((el3) => el3.querySelector(MEDIA) || !text2(el3));
   function gridRows(main) {
-    const isColumns = (el3) => el3 && el3.matches('table[data-keep="section"]') && /^Columns\b/.test(text2(tableRows(el3)[0] || el3));
+    const isColumns = (el3) => el3 && el3.matches('table[data-keep="section"]:not([data-no-merge])') && /^Columns\b/.test(text2(tableRows(el3)[0] || el3));
     const empty = (el3) => !text2(el3) && !el3.querySelector(`${MEDIA}, table, form, hr, .sectionseparator`) && !el3.matches("[data-keep], .sectionseparator, hr");
     const next = (el3) => {
       let n = el3.nextElementSibling;
@@ -18666,8 +18690,8 @@ var CustomImportScript = (() => {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading2) => {
           heading2.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-            const text9 = span.textContent.replace(/ /g, " ").trim();
-            if (!text9) return;
+            const text10 = span.textContent.replace(/ /g, " ").trim();
+            if (!text10) return;
             const em = element.ownerDocument.createElement("em");
             const strong = element.ownerDocument.createElement("strong");
             while (span.firstChild) strong.appendChild(span.firstChild);
@@ -18705,15 +18729,15 @@ var CustomImportScript = (() => {
         return;
       }
       element.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
-        const text9 = span.textContent.replace(/ /g, " ").trim();
-        if (!text9) return;
+        const text10 = span.textContent.replace(/ /g, " ").trim();
+        if (!text10) return;
         const strong = element.ownerDocument.createElement("strong");
         const em = element.ownerDocument.createElement("em");
-        em.textContent = text9;
+        em.textContent = text10;
         strong.appendChild(em);
         let target = span;
         let parent = span.parentElement;
-        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text9) {
+        while (parent && (parent.tagName === "B" || parent.tagName === "STRONG" || parent.classList && parent.classList.contains("futura-bold")) && parent.textContent.replace(/ /g, " ").trim() === text10) {
           target = parent;
           parent = parent.parentElement;
         }
@@ -19227,70 +19251,71 @@ var CustomImportScript = (() => {
     }
     hrs[0].after(WebImporter.Blocks.createBlock(document, { name: "Columns (no-stack, names)", cells: [cells] }));
   }
-  var legal_default = {
-    // before the importer's own cleanup, which drops empty paragraphs
-    preprocess: ({ document }) => {
-      keepHeadlineBlankLines(document);
-      if (document.querySelector("#publishedDate.hidden")) document.body.setAttribute("data-date-hidden", "");
-    },
-    transform: (payload) => {
-      const { document, url, params } = payload;
-      const main = document.body;
-      const hcp = !!document.querySelector(".g-hcpbanner");
-      const published = publishedDate(document);
-      if (url.includes("/hemorrhagic-stroke/mri") || url.includes("/sage/disclosure")) {
-        main.querySelectorAll(".panel-group").forEach((group) => group.setAttribute("data-divided", ""));
-      }
-      indentedLists(main, document);
-      const columnCount = buildingBlocks(main, document);
-      const tableCount = tables(main, document);
-      const contactReport = { phones: [] };
-      contacts(main, document, contactReport);
-      splitStandaloneLinks(main, document);
-      executeTransformers("beforeTransform", main, payload);
-      executeTransformers("afterTransform", main, payload);
-      const bracketStyles = stripBrackets(main, document);
-      committeeColumns(main, document, url);
-      serifSubtitles(main, document, url);
-      stackContactMap(main, url);
-      heroImage(main, document, url);
-      underlineTitles(main, document);
-      dropUnlistedStyles(main);
-      blockVariants(main);
-      trimEmptyCells(main);
-      sectionStyles(main, document, url, bracketStyles);
-      boldBodyName(main);
-      edsLinkPaths(main);
-      main.appendChild(document.createElement("hr"));
-      const meta = WebImporter.Blocks.getMetadata(document);
-      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
-      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
-      if (keywords) meta.Keywords = keywords;
-      meta.site = "corp";
-      applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
-      if (hcp) meta["hcp-banner"] = "true";
-      if (published) {
-        meta.published = published;
-        meta["last-updated"] = main.hasAttribute("data-date-hidden") ? "false" : "show";
-      }
-      main.removeAttribute("data-xf-unresolved");
-      main.removeAttribute("data-date-hidden");
-      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
-      WebImporter.rules.transformBackgroundImages(main, document);
-      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
-      const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
-      const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
-      return [{
-        element: main,
-        path,
-        report: {
-          title: document.title,
-          template: PAGE_TEMPLATE.name,
-          blocks: [...Array(tableCount).fill("table"), ...Array(columnCount).fill("columns")],
-          phones: contactReport.phones
-        }
-      }];
+  function preprocess({ document }) {
+    keepHeadlineBlankLines(document);
+    if (document.querySelector("#publishedDate.hidden")) document.body.setAttribute("data-date-hidden", "");
+  }
+  function transformPage(payload, group) {
+    const { document, url, params } = payload;
+    const main = document.body;
+    const hcp = !!document.querySelector(".g-hcpbanner");
+    const published = publishedDate(document);
+    if (url.includes("/hemorrhagic-stroke/mri") || url.includes("/sage/disclosure")) {
+      main.querySelectorAll(".panel-group").forEach((panel) => panel.setAttribute("data-divided", ""));
     }
+    indentedLists(main, document);
+    const columnCount = buildingBlocks(main, document);
+    const tableCount = tables(main, document);
+    const contactReport = { phones: [] };
+    contacts(main, document, contactReport);
+    splitStandaloneLinks(main, document);
+    executeTransformers("beforeTransform", main, payload);
+    executeTransformers("afterTransform", main, payload);
+    const bracketStyles = stripBrackets(main, document);
+    committeeColumns(main, document, url);
+    serifSubtitles(main, document, url);
+    stackContactMap(main, url);
+    heroImage(main, document, url);
+    underlineTitles(main, document);
+    dropUnlistedStyles(main);
+    blockVariants(main);
+    trimEmptyCells(main);
+    sectionStyles(main, document, url, bracketStyles);
+    boldBodyName(main);
+    edsLinkPaths(main);
+    main.appendChild(document.createElement("hr"));
+    const meta = WebImporter.Blocks.getMetadata(document);
+    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+    const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute("content")?.trim();
+    if (keywords) meta.Keywords = keywords;
+    meta.site = "corp";
+    applyBaseMeta(meta, url, group);
+    if (hcp) meta["hcp-banner"] = "true";
+    if (published) {
+      meta.published = published;
+      meta["last-updated"] = main.hasAttribute("data-date-hidden") ? "false" : "show";
+    }
+    main.removeAttribute("data-xf-unresolved");
+    main.removeAttribute("data-date-hidden");
+    main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+    WebImporter.rules.transformBackgroundImages(main, document);
+    WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+    const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
+    const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
+    return [{
+      element: main,
+      path,
+      report: {
+        title: document.title,
+        template: PAGE_TEMPLATE.name,
+        blocks: [...Array(tableCount).fill("table"), ...Array(columnCount).fill("columns")],
+        phones: contactReport.phones
+      }
+    }];
+  }
+  var legal_default = {
+    preprocess,
+    transform: (payload) => transformPage(payload, PAGE_TEMPLATE.group)
   };
 
   // tools/importer/base/patents.js
@@ -20212,13 +20237,94 @@ var CustomImportScript = (() => {
     }
   };
 
+  // tools/importer/base/events.js
+  var text9 = (el3) => (el3.textContent || "").replace(/[\s\u00a0]+/g, " ").trim();
+  function heroTitle(document) {
+    document.querySelectorAll(".c-hero-large-header").forEach((header) => {
+      const h1 = header.querySelector("h1");
+      const title = document.createElement("div");
+      title.className = "h1-title";
+      if (h1 && text9(h1)) {
+        const heading2 = document.createElement("h1");
+        heading2.textContent = text9(h1);
+        title.append(heading2);
+      }
+      (header.closest(".hero-large-carousel") || header).before(title);
+      if (!header.closest(".hero-large-carousel")) header.remove();
+    });
+  }
+  function linkOf(source, document) {
+    const a = document.createElement("a");
+    const href = source.getAttribute("href") || "";
+    const newTab = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    a.href = newTab && !href.includes("#") ? `${href}#_blank` : href;
+    return a;
+  }
+  function carousel(document) {
+    document.querySelectorAll(".c-hero-large-carousel").forEach((component) => {
+      const slides = [...component.querySelectorAll(".slide-container")].map((slide) => {
+        const image3 = slide.querySelector(".slide-image img");
+        const imageLink = slide.querySelector(".slide-image a");
+        const title = slide.querySelector(".slide-title");
+        const link3 = slide.querySelector("a.slide-link");
+        const first = [];
+        if (image3) {
+          const img = image3.cloneNode(true);
+          if (imageLink) {
+            const a = linkOf(imageLink, document);
+            a.append(img);
+            first.push(a);
+          } else {
+            first.push(img);
+          }
+        }
+        const second = [];
+        if (title && text9(title)) {
+          const h2 = document.createElement("h2");
+          h2.textContent = text9(title);
+          second.push(h2);
+        }
+        if (link3 && text9(link3)) {
+          const a = linkOf(link3, document);
+          a.textContent = text9(link3);
+          const strong = document.createElement("strong");
+          const u = document.createElement("u");
+          u.append(a);
+          strong.append(u);
+          const p = document.createElement("p");
+          p.append(strong);
+          second.push(p);
+        }
+        const block = WebImporter.Blocks.createBlock(document, {
+          name: "Columns (columns-50-50)",
+          cells: [[first, second]]
+        });
+        block.setAttribute("data-keep", "section");
+        block.setAttribute("data-no-merge", "");
+        block.setAttribute("data-section-style", "bg-dark-gray");
+        return block;
+      });
+      const holder = component.closest(".hero-large-carousel") || component;
+      holder.replaceWith(...slides);
+    });
+  }
+  var events_default = {
+    preprocess,
+    transform: (payload) => {
+      heroTitle(payload.document);
+      carousel(payload.document);
+      return transformPage(payload, "events");
+    }
+  };
+
   // tools/importer/import-base.js
   var BUILDERS = {
     legal: legal_default,
     patents: patents_default,
     webinar: webinar_default,
     people: people_default,
-    footnotes: footnotes_default
+    footnotes: footnotes_default,
+    events: events_default
   };
   var import_base_default = {
     preprocess: (payload) => BUILDERS[groupOf(payload.url)].preprocess?.(payload),

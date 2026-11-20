@@ -4,7 +4,23 @@
  */
 import PAGE_TAGS from '../page-tags.json';
 
-export const GROUPS = ['legal', 'patents', 'webinar', 'people', 'footnotes'];
+export const GROUPS = ['legal', 'patents', 'webinar', 'people', 'footnotes', 'events'];
+
+// The empty news-archive and global-events pages and the 2018/2019 event and LINNC pages (#527),
+// scattered over the site, so listed one by one (lower case: the EDS path)
+const EVENT_PAGES = new Set([
+  ...['2011', '2012', '2013', '2014', '2015', '2016', '2017', 'features', 'press-kit'].map((n) => `/us/en/about/news/${n}`),
+  ...['2018/acfas', '2018/aofas2018', '2018/ormanagers', '2019/2019-post-ota-newsletter-page', '2019/acfas',
+    '2019/asbrs-2019', '2019/assh', '2019/global-power-tools', '2019/iahcsmm-2019', '2019/rebuild-lives'].map((n) => `/us/en/c/${n}`),
+  '/us/en/global-events',
+  '/us/en/global-events/sports-medicine',
+  '/us/en/global-events/sports-medicine/association-meetings',
+  '/us/en/global-events/sports-medicine/training',
+  '/us/en/global-events/trauma-and-extremities/association-meetings/2018/ota-2018',
+  '/us/en/neurovascular/c/linnc-paris',
+  '/us/en/neurovascular/c/linnc-paris/index',
+  '/us/en/training-and-education/orthopaedics/trauma-extremities',
+]);
 
 const pathOf = (url) => new URL(url, 'https://www.stryker.com').pathname
   .replace(/\/$/, '').replace(/\.html?$/, '');
@@ -20,11 +36,12 @@ export function groupOf(url) {
   if (/^\/us\/en\/(sage\/webinars|emergency-care\/webinars|sage\/videos\/sage-mp-mats-2-demo)/.test(path)) return 'webinar';
   if (/^\/us\/en\/about\/(our-management\/leaders|our-board-of-directors\/directors)/.test(path)) return 'people';
   if (path.startsWith('/us/en/interventional-spine/footnotes')) return 'footnotes';
+  if (EVENT_PAGES.has(path.toLowerCase())) return 'events';
   return 'legal';
 }
 
 // Pages whose theme the bulk metadata sheet does not assign (see the PR): legal pages and one video
-const PAGE_THEME = { legal: 'legal', footnotes: '' };
+const PAGE_THEME = { legal: 'legal', footnotes: '', events: '' };
 
 /** Page metadata of every `base` page: template, theme (when the sheet has none) and tags. */
 export function applyBaseMeta(meta, url, group) {

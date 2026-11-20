@@ -423,77 +423,81 @@ function committeeColumns(main, document, url) {
   hrs[0].after(WebImporter.Blocks.createBlock(document, { name: 'Columns (no-stack, names)', cells: [cells] }));
 }
 
+// before the importer's own cleanup, which drops empty paragraphs
+export function preprocess({ document }) {
+  keepHeadlineBlankLines(document);
+  if (document.querySelector('#publishedDate.hidden')) document.body.setAttribute('data-date-hidden', '');
+}
+
+// the page of `group` (legal, or events: the same builder, no legal theme)
+export function transformPage(payload, group) {
+  const { document, url, params } = payload;
+  const main = document.body;
+  const hcp = !!document.querySelector('.g-hcpbanner');
+  const published = publishedDate(document);
+
+  if (url.includes('/hemorrhagic-stroke/mri') || url.includes('/sage/disclosure')) {
+    main.querySelectorAll('.panel-group').forEach((panel) => panel.setAttribute('data-divided', ''));
+  }
+  indentedLists(main, document);
+  const columnCount = buildingBlocks(main, document);
+  const tableCount = tables(main, document);
+  const contactReport = { phones: [] };
+  contacts(main, document, contactReport);
+  splitStandaloneLinks(main, document);
+  executeTransformers('beforeTransform', main, payload);
+  executeTransformers('afterTransform', main, payload);
+  const bracketStyles = stripBrackets(main, document);
+  committeeColumns(main, document, url);
+  serifSubtitles(main, document, url);
+  stackContactMap(main, url);
+  heroImage(main, document, url);
+  underlineTitles(main, document);
+  dropUnlistedStyles(main);
+  blockVariants(main);
+  trimEmptyCells(main);
+  sectionStyles(main, document, url, bracketStyles);
+  boldBodyName(main);
+  edsLinkPaths(main);
+
+  // site + template are repeated on the page so it renders the same without bulk metadata
+  main.appendChild(document.createElement('hr'));
+  const meta = WebImporter.Blocks.getMetadata(document);
+  if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
+  const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
+  if (keywords) meta.Keywords = keywords;
+  meta.site = 'corp';
+  applyBaseMeta(meta, url, group);
+  if (hcp) meta['hcp-banner'] = 'true';
+  if (published) {
+    meta.published = published;
+    // the source hides the "Last Updated" line on some pages (#publishedDate.hidden)
+    meta['last-updated'] = main.hasAttribute('data-date-hidden') ? 'false' : 'show';
+  }
+  main.removeAttribute('data-xf-unresolved');
+  main.removeAttribute('data-date-hidden');
+  main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
+  WebImporter.rules.transformBackgroundImages(main, document);
+  WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+
+  const rawPath = new URL(params.originalURL).pathname
+    .replace(/\/$/, '')
+    .replace(/\.html?$/, '');
+  const path = WebImporter.FileUtils.sanitizePath(rawPath === '' ? '/index' : rawPath);
+
+  return [{
+    element: main,
+    path,
+    report: {
+      title: document.title,
+      template: PAGE_TEMPLATE.name,
+      blocks: [...Array(tableCount).fill('table'), ...Array(columnCount).fill('columns')],
+      phones: contactReport.phones,
+    },
+  }];
+}
+
 export default {
-  // before the importer's own cleanup, which drops empty paragraphs
-  preprocess: ({ document }) => {
-    keepHeadlineBlankLines(document);
-    if (document.querySelector('#publishedDate.hidden')) document.body.setAttribute('data-date-hidden', '');
-  },
-
-  transform: (payload) => {
-    const { document, url, params } = payload;
-    const main = document.body;
-    const hcp = !!document.querySelector('.g-hcpbanner');
-    const published = publishedDate(document);
-
-    if (url.includes('/hemorrhagic-stroke/mri') || url.includes('/sage/disclosure')) {
-      main.querySelectorAll('.panel-group').forEach((group) => group.setAttribute('data-divided', ''));
-    }
-    indentedLists(main, document);
-    const columnCount = buildingBlocks(main, document);
-    const tableCount = tables(main, document);
-    const contactReport = { phones: [] };
-    contacts(main, document, contactReport);
-    splitStandaloneLinks(main, document);
-    executeTransformers('beforeTransform', main, payload);
-    executeTransformers('afterTransform', main, payload);
-    const bracketStyles = stripBrackets(main, document);
-    committeeColumns(main, document, url);
-    serifSubtitles(main, document, url);
-    stackContactMap(main, url);
-    heroImage(main, document, url);
-    underlineTitles(main, document);
-    dropUnlistedStyles(main);
-    blockVariants(main);
-    trimEmptyCells(main);
-    sectionStyles(main, document, url, bracketStyles);
-    boldBodyName(main);
-    edsLinkPaths(main);
-
-    // site + template are repeated on the page so it renders the same without bulk metadata
-    main.appendChild(document.createElement('hr'));
-    const meta = WebImporter.Blocks.getMetadata(document);
-    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
-    const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
-    if (keywords) meta.Keywords = keywords;
-    meta.site = 'corp';
-    applyBaseMeta(meta, url, PAGE_TEMPLATE.group);
-    if (hcp) meta['hcp-banner'] = 'true';
-    if (published) {
-      meta.published = published;
-      // the source hides the "Last Updated" line on some pages (#publishedDate.hidden)
-      meta['last-updated'] = main.hasAttribute('data-date-hidden') ? 'false' : 'show';
-    }
-    main.removeAttribute('data-xf-unresolved');
-    main.removeAttribute('data-date-hidden');
-    main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
-    WebImporter.rules.transformBackgroundImages(main, document);
-    WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
-
-    const rawPath = new URL(params.originalURL).pathname
-      .replace(/\/$/, '')
-      .replace(/\.html?$/, '');
-    const path = WebImporter.FileUtils.sanitizePath(rawPath === '' ? '/index' : rawPath);
-
-    return [{
-      element: main,
-      path,
-      report: {
-        title: document.title,
-        template: PAGE_TEMPLATE.name,
-        blocks: [...Array(tableCount).fill('table'), ...Array(columnCount).fill('columns')],
-        phones: contactReport.phones,
-      },
-    }];
-  },
+  preprocess,
+  transform: (payload) => transformPage(payload, PAGE_TEMPLATE.group),
 };
