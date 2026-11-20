@@ -1907,6 +1907,27 @@ export default function transform(hookName, element, payload) {
     const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
     if (!nodes.length) return false;
     [lead, ...quotes].forEach((c) => consumed.add(c));
+    // a grey intro with a quote and sign-off under it (a patient story, e.g. Ellys'
+    // maxillofacial surgery story) follows the news-video-quote representative ("Life after
+    // leukemia - Jesse's Zip skin closure story"): the intro an italic Heading 3, the rule
+    // line plain text, a plain `video-text` section; the sizes come from the theme
+    if (quotes.length && nodes[0].nodeName === 'P') {
+      const h3 = rename(nodes[0], 'h3');
+      if (!h3.querySelector('em')) {
+        const em = doc.createElement('em');
+        em.append(...h3.childNodes);
+        h3.append(em);
+      }
+      nodes[0] = h3;
+      nodes.filter((n) => n.nodeName === 'P' && /^_{5,}$/.test(text(n)))
+        .forEach((rule) => rule.querySelectorAll('strong, em').forEach(unwrap));
+      element.setAttribute('data-news-theme', 'full-width, news-video-quote');
+      const section = startSection('video-text', 'video-text');
+      section.background = 'light-gray';
+      section.nodes.push(video, ...nodes);
+      current = null;
+      return true;
+    }
     element.setAttribute('data-news-theme', 'full-width, news-video');
     const style = [
       'video-text',

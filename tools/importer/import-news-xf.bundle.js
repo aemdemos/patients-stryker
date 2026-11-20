@@ -1908,6 +1908,22 @@ var CustomImportScript = (() => {
       const nodes = [...leadNodes(lead), ...quotes.flatMap((q) => quoteNodes(q, doc, { sizes: true }))];
       if (!nodes.length) return false;
       [lead, ...quotes].forEach((c) => consumed.add(c));
+      if (quotes.length && nodes[0].nodeName === "P") {
+        const h3 = rename(nodes[0], "h3");
+        if (!h3.querySelector("em")) {
+          const em = doc.createElement("em");
+          em.append(...h3.childNodes);
+          h3.append(em);
+        }
+        nodes[0] = h3;
+        nodes.filter((n) => n.nodeName === "P" && /^_{5,}$/.test(text(n))).forEach((rule) => rule.querySelectorAll("strong, em").forEach(unwrap));
+        element.setAttribute("data-news-theme", "full-width, news-video-quote");
+        const section2 = startSection("video-text", "video-text");
+        section2.background = "light-gray";
+        section2.nodes.push(video, ...nodes);
+        current = null;
+        return true;
+      }
       element.setAttribute("data-news-theme", "full-width, news-video");
       const style = [
         "video-text",
