@@ -1,5 +1,16 @@
 /* base — www.stryker.com pages on the AEM `base` template: legal, patents, webinar, people and
-   Interventional Spine footnotes. The look of each group is its theme (base-<theme>.css). */
+   Interventional Spine footnotes. The look of each group is its theme (base-themes.css). */
+
+/* headings: Futura Bold by default (h2–h6), as on stryker.com; the h-serif section keeps the serif h2 / h3 */
+body.base main > .section > .default-content-wrapper > :is(h2, h3, h4, h5, h6) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.base main > .section.h-serif > .default-content-wrapper > :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
 
 /* italic inside a heading (a live <i> in the heading) is the serif heading font, upright; the
    gold Bold + Italic keeps its Futura */

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /*
  * Page tags generator: the AEM `cq:tags` of every page on the scope sheet tab "Pages to migrate"
- * → page-tags.js (`export default` { "/us/en/...": ["stryker:business-unit/SAGE", ...] }, pages with tags only).
+ * → page-tags.json ({ "/us/en/...": ["stryker:business-unit/SAGE", ...] }, pages with tags only).
  * The importers read the map and write the `tags` metadata row.
  *
- *   node tools/importer/page-tags.mjs [--export <dir>] [--sheet <xlsx>] [--urls <txt>] [--out <json>]
+ *   node tools/importer/page-tags.mjs [--export <dir>] [--sheet <xlsx>] [--out <json>]
  *
- * Only the pages of the `base` template (urls-base.txt) are listed.
+ * Every page of the sheet is listed, whatever its template.
  * <dir> is the AEM export's `xf-mapping` folder: <AEM page path>.json is the page's jcr:content.
  * AEM page names can differ from the published URL (a leading `-` or `_`, `_` for `-`), so every
  * URL segment is matched with the names normalised (see `normalise`). The xlsx is read with the
@@ -82,27 +82,29 @@ export function sheetPaths(xlsx, tab = SHEET_TAB) {
   return paths;
 }
 
+/** The tags of every page path that has any: { path: [tags] }, sorted by path. */
+export function buildTagMap(root, paths) {
+  const map = {};
+  paths.forEach((path) => {
+    const tags = tagsFor(root, path);
+    if (tags.length) map[path] = tags;
+  });
+  return Object.fromEntries(Object.entries(map).sort(([a], [b]) => a.localeCompare(b)));
+}
+
 function main() {
   const args = process.argv.slice(2);
   const opt = (n, d) => { const i = args.indexOf(`--${n}`); return i > -1 ? args[i + 1] : d; };
   const root = opt('export', join(STRYKER, 'aem-export/x/export-anon/xf-mapping'));
   const sheet = opt('sheet', join(STRYKER, 'Stryker-com-EDS-migration-scope.xlsx'));
-  const out = opt('out', join(HERE, 'page-tags.js'));
+  const out = opt('out', join(HERE, 'page-tags.json'));
   [root, sheet].forEach((p) => {
     if (!existsSync(p)) throw new Error(`Not found: ${p}`);
   });
-  const urls = readFileSync(opt('urls', join(HERE, 'urls-base.txt')), 'utf8');
-  const wanted = new Set(urls.split('\n').filter(Boolean)
-    .map((u) => new URL(u).pathname.replace(/\.html?$/, '')));
-  const map = {};
-  sheetPaths(sheet).filter((path) => wanted.has(path)).forEach((path) => {
-    const tags = tagsFor(root, path);
-    if (tags.length) map[path] = tags;
-  });
-  const sorted = Object.fromEntries(Object.entries(map).sort(([a], [b]) => a.localeCompare(b)));
-  const body = Object.entries(sorted).map(([path, list]) => `  '${path}': [\n${list.map((t) => `    '${t}',`).join('\n')}\n  ],`);
-  writeFileSync(out, `export default {\n${body.join('\n')}\n};\n`);
-  console.log(`${Object.keys(sorted).length} tagged pages → ${out}`);
+  const paths = sheetPaths(sheet);
+  const map = buildTagMap(root, paths);
+  writeFileSync(out, `${JSON.stringify(map, null, 2)}\n`);
+  console.log(`${Object.keys(map).length} tagged of ${paths.length} sheet pages → ${out}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

@@ -24,15 +24,10627 @@ var CustomImportScript = (() => {
     default: () => import_base_default
   });
 
-  // tools/importer/page-tags.js
+  // tools/importer/page-tags.json
   var page_tags_default = {
+    "/us/en/about": [
+      "stryker:Stryker-SEO-Tags/Medical-technology-company"
+    ],
+    "/us/en/about/corporate-responsibility": [
+      "environment",
+      "societal",
+      "sustainability",
+      "energy",
+      "governance",
+      "esg",
+      "giving",
+      "supply_chains",
+      "donations",
+      "volunteering"
+    ],
+    "/us/en/about/corporate-responsibility/cr-hub": [
+      "guide",
+      "resources",
+      "hub",
+      "annual_reports",
+      "redirect",
+      "sustainability_reports",
+      "esg"
+    ],
+    "/us/en/about/corporate-responsibility/employee-benefits-and-resources": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/about/corporate-responsibility/environmental-programs": [
+      "environment",
+      "efficiency",
+      "energy",
+      "sustainability",
+      "carbon",
+      "climate",
+      "renewable",
+      "sustainable"
+    ],
+    "/us/en/about/corporate-responsibility/overview": [
+      "environment",
+      "strategy",
+      "responsible",
+      "framework",
+      "commitments",
+      "goals",
+      "sustainability",
+      "corporate",
+      "governance",
+      "esg"
+    ],
+    "/us/en/about/corporate-responsibility/promoting-global-health": [
+      "training",
+      "nonprofit",
+      "partnerships",
+      "meded",
+      "operation_smile"
+    ],
+    "/us/en/about/global-quality": [
+      "quality",
+      "product_quality",
+      "supply_chain",
+      "manufacturing",
+      "regulatory",
+      "policy",
+      "supplier",
+      "certification",
+      "labeling"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/-sweyntooth--ble-vulnerabilities--icsa--20-063-01-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/apache--log4j--open-source-logging-library": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/microsoft-print-spooler-vulnerabilities--cve-2021-34527-and-cve-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/microsoft-windows-rdp-vulnerability--cve-2019-0708--bulletin": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/product-security-notification-for-meltdown-and-spectre": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/ripple20-treck-tcp-ip-stack-vulnerabilities-icsa-20-168-01": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/stryker-responds-to-krack-vulnerability-for-ibed-wireless-enable": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/urgent-11-vulnerabilities---wind-river-vxworks-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/vocera-report-server-vulnerabilities--cve-2022-46898--cve-2022-4": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/governance/cyber-security/product-security/wannacry-vulnerability": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-advisories-"
+    ],
+    "/us/en/about/news/2016/constellation-senior-players-next-stop-for-stryker-orthopaedics-on-2016-pga-tour-champions": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/innovative-product-and-service-offering-for-the-future-of-spinal-surgery-to-be-introduced-at-nass-2016": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/jerome-bettis-interview-during-round-1-of-bridgestone-invitational": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/jerome-bettis-tees-off-stryker-presence-at-2016-world-golf-championships-bridgestone-invitational": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/kevin-lobo-chairman-and-ceo-cnbc-squawk-box-edical-tax-is-a-job-and-innovation-killer": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-announces-definitive-agreement-to-acquire-the-assets-of-instratek": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-announces-multi-year-partnership-with-indo-uk-institute-of-health": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-announces-multi-year-partnership-with-indo-uk-institute-of-health-to-deliver-affordable-orthopaedic-care-in-india": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-declares-a-038-per-share-quarterly-dividend": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-increases-2017-annual-dividend-by-12-percent": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-mobility-zone-heads-to-inaugural-powershares-qqq-championship-for-schwab-cup-playoffs": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-mobility-zone-makes-eighth-tour-stop-of-2016-at-dicks-sporting-goods-open": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/stryker-mobility-zone-makes-first-ever-appearance-at-american-family-insurance-championship": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/stryker-orthopaedic-to-honor-veteran-with-donation-of-fourth-service-dog": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/stryker-orthopaedics-to-compensate-additional-eligible-us-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-reports-second-quarter-2016-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-reports-third-quarter-2016-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-returns-to-the-barclays-to-educate-golf-fans-about-importance-of-joint-health-and-staying-active": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2016/stryker-surgicount-safety-sponge-system-surpasses-10-million-procedures": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-to-participate-in-11th-annual-wells-fargo-securities-healthcare-conference": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-to-participate-in-morgan-stanley-global-healthcare-conference": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-to-participate-in-stifel-2016-healthcare-conference": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/stryker-unveils-game-changing-soft-tissue-technology-with-sonicanchor": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/strykers-endoscopy-division-acquires-ivy-sports-medicine": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/strykers-spine-division-announces-launch-of-new-lite-bio-delivery-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/strykers-surgicount-safety-sponge-system-announces-its-risk-sharing-and-indemnification-program": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/strykers-trevo-retriever-is-the-first-therapy-in-20-years-to-be-declared-a-front-line-treatment": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/study-to-be-presented-at-nass-2016-evaluating-bone-in-growth-for-strykers-3d-printed-tritanium-pl-cage": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2016/tritanium-posterior-lumbar-cage-to-be-demonstrated-at-nass-2016": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/-stryker_s-spine-division-to-launch-tritanium--c-anterior-cervic0": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/-stryker-to-acquire-vexim": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2017/100-000th-robotic-arm-assisted-joint-replacement-procedure-perfo": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2017/annual-review-2016-back-in-the-saddle-again": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/avaflex-balloon-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/dawn-trial-results-demonstrate-a-73-percent-reduction-in-disability-in-stroke-patients-treated-up-to-24-hours": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/healthcare-institute-of-new-jersey-hosts-life-sciences-celebrati1": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/intermountain-healthcare-names-2017-supplier-award-winners": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/join-us-at-hard-rock-hotel-on-october-24--2017": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/people-magazine-names-stryker-a-company-that-cares": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/physio-control-launches-heartsine-samaritan-pad-360p-automated-external-defibrillator-in-united-states": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker_s-serrato-pedicle-screws-implanted-by-more-than-100-surg": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2017/stryker_s-spine-division-receives-fda-clearance-for-3d-printed-t": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker_s-spine-division-receives-fda-clearance-for-serrato-pedi": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker_s-spine-division-to-commercially-launch-serrato-pedicle-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-and-allosource-announce-collaboration": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-announces-an-early-stop-to-enrollment-in-the-dawn-trial-due-to-the-high-probability-of-trial-success": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-announces-annual-meeting-of-hareholders": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-announces-definitive-agreement-to-acquire-entellus": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2017/stryker-announces-definitive-agreement-to-acquire-novadaq-techno": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2017/stryker-announces-nomination-of-two-new-directors--sheri-s--mcco": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2017/stryker-announces-publication-of-the-dawn-trial-results-in-the-n": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2017/stryker-brings-mobility-zone-to-farmers-insurance-open-to-kick-off-2017-tournament-schedule": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-ceo--for-us-it-s-always-about-innovation-in-medical-tech": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-chooses-microsoft-hololens-to-bring-operating-room-design-into-the-future-with-3d": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-completes-acquisition-of-novadaq-technologies-inc-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2017/Stryker-declares-a-0425-per-share-quarterly-dividend": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-earns-a-top-score-on-the-human-rights-campaign-foundatio": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/stryker-enabling-surgeons-to-have-a-more-predictable-surgical-experience": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-enters-agreement-with-philips-to-help-health-systems-dri": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-heads-to-the-midwest-for-first-pga-tour-champions-stop-o": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-increases-2017-annual-dividend-by-12-percent": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-named-one-of-glassdoors-best-places-to-work-in-2018": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/stryker-named-one-of-great-place-to-works-best-companies-to-work": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/stryker-orthopaedics-announces-road-trip-to-a-healthier-lifestyle-digital-content-series": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-orthopaedics-debuts-final-episode-of-its-three-part-seri": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2017/stryker-orthopaedics-debuts-first-episode-of-video-series": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-presents-first-k9s-for-warriors-donation-at-the-honda-classic": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-provides-2016-preliminary-net-sales-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-receives-fda-clearance-for-cementless-mako-total-knee-wi": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-receives-us-fda-hde-approval-for-the-neuroform-atlastm-s": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-recognized-by-gartner-as-a-top-25-healthcare-supply-chai": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2017/stryker-reports-2016-results-and-2017-outlook": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/Stryker-reports-first-quarter-2017-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-returns-to-3m-championship-for-its-third-year-by-welcomi": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-returns-to-dean-and-deluca-invitational-for-second-conse": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-s-multigen--2-radiofrequency-generator-receives-fda-510-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2017/stryker-to-make-its-fourth-k9s-for-warriors-donation-of-2017-at-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/stryker-to-participate-in-cowen-company-37th-annual-health-care-conference": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/stryker-to-present-fifth-k9s-for-warriors-donation-of-2017-at-th": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2017/stryker-unveils-hoffmann-lrf-hexapod-with-pre-and-post-operative": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2017/strykers-medical-division-announces-launch-of-altrix-precision-temperature-management-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/strykers-spine-division-to-exhibit-key-technologies-at-aaos-2017": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/strykers-spine-division-to-feature-comprehensive-product-portfolio-at-aans-2017-conference": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/strykers-spine-division-to-feature-novel-3d-printed-spinal-implants-at-aaos-conference": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2017/strykers-system-8-power-tools-bring-increased-reliability-broadened-offering-to-orthopaedic-market": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2017/the-mobility-zone-closes-out-2017-season-with-return-tour-champi": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/3d-systems-and-stryker-team-up-to-advance-personalized-surgery-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/advamed-congratulates-strykers-bronwen-taylor-on-receiving-2018-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/advamed-congratulates-strykers-bronwen-taylor-on-receiving-2018-/stryker-declares-a--0-47-per-share-quarterly-dividend": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/allosource-and-stryker-launch-prochondrix-cr-cryopreserved-osteo": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/newly-published-data-demonstrate-bone-in-growth-potential-of-str": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker_s-dawn-trial-results-contribute-to-updated-acute-ischemi": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker_s-spine-division-receives-fda-clearance-for-3d-printed-t": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/stryker_s-trevo--retriever-becomes-first-and-only-device-indicat": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker_s-weave-trial-demonstrates-positive-results-of-endovascu": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/stryker--the-official-joint-replacement-products-of-the-pga-tour": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-acquires-hygia-health-services": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/stryker-acquires-hyperbranch-medical-technology--inc-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker-and-fred-funk-host-second--get-on-the-bus--contest-winne": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/stryker-and-jerome-bettis-host-first-ever--get-on-the-bus--conte": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-announces-510-k--clearance-of-spinejack--implantable-fra": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker-announces-annual-meeting-of-shareholders": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-announces-definitive-agreement-to-acquire-invuity--inc-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-announces-definitive-agreement-to-acquire-k2m": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-announces-definitive-agreement-to-acquire-safeair-ag": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-announces-organizational-changes": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-announces-organizational-changes--lonny-j--carpenter-to-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-announces-pricing-of--2-25-billion-senior-notes-offering": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-brings-the-mobility-zone--and-joint-health-education-to-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-brings-the-mobility-zone--to-constellation-senior-player": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-brings-the-mobility-zone-and-joint-health-education-to-h": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-brings-the-mobility-zone-and-k9s-for-warriors-ceremony-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-completes-acquisition-of-entellus-medical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-completes-acquisition-of-invuity--inc-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-completes-acquisition-of-k2m": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker-corporation-announces-pricing-of--600-million-senior-not0": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-crosses-the-95--thresholds-in-vexim-and-announces-its-in": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-declares-a--0-47-per-share-quarterly-dividend": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-declares-a--0-47-per-share-quarterly-dividend0": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-earns-two-spots-in-the-ten-best-sports-medicine-technolo": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker-educates-golf-fans-about-joint-health-at-the-sanford-int": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-f1_-small-bone-power-system-brings-fresh-innovation-to-t": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/stryker-featured-in-linkedins-top-companies-to-work-for-video-se": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/stryker-introduces-groundbreaking--post-free-distraction-system-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-is-a-gallup-great-workplace-for-the-11th-year": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/stryker-is-a-gallup-great-workplace-for-the-11th-year/stryker-reports-first-quarter-2018-operating-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-launches-campaign-challenging-those-suffering-from-joint": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-launches-next-generation-trident--ii-acetabular-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2018/stryker-named-a-great-place-to-work-in-australia-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/stryker-named-to-2019-military-friendly--employers-list-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2018/stryker-provides-2017-preliminary-net-sales-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-receives-us-fda-pre-market-approval-for-the-surpass-stre": [
+      "stryker:content-type/news",
+      "stryker:content-type/product"
+    ],
+    "/us/en/about/news/2018/stryker-reports-2017-results-and-2018-outlook": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-reports-second-quarter-2018-operating-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-reports-third-quarter-2018-operating-results": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-s-advanced-guidance-technologies-announces-partnerships-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-s-mobility-zone-makes-final-stop-of-2018-at-charles-schw": [
+      "stryker:event-type",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2018/stryker-spine-divisions-tritanium-c-anterior-cervical-cage-gains": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-supports-veterans--brings-mission-of-making-healthcare-b": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-teams-up-with-jerome-bettis-and-fred-funk-to-celebrate-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-to-highlight-expanding-line-of-3d-printed-tritanium--cag": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-to-host-conference-call-on-april-26--2018": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-host-conference-call-on-july-24--2018": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-host-conference-call-on-october-25--2018": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-make-its-sixth-k9s-for-warriors-donation-of-2018-at-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/stryker-to-participate-in-2018-wells-fargo-securities-healthcare": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-participate-in-36th-annual-j-p--morgan-healthcare-con": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-participate-in-deutsche-bank-s-43rd-annual-health-car": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-participate-in-evercore-isi-healthconx-conference": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-participate-in-morgan-stanley-16th-annual-global-heal": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2018/stryker-to-showcase-its-groundbreaking-target-guided-surgery-nav": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/stryker-unveils-market-s-first-reusable-suture-passer-for-arthro": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2018/thinking-inside-the-box--stryker-sponsors-entrepreneurial-hackat": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/transforming-patient-care-with-additive-manufacturing": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2018/tryker-s-spine-division-to-showcase-tritanium--in-growth-technol": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2019/-stryker-to-host-conference-call-on-april-23--2019": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/at-aana-2019--stryker-hosts-a-lunch-and-learn-presentation-featu": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2019/comparably-lists-kevin-lobo-among-2019-best-ceos": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/forbes-ranks-kevin-lobo-as-one-of-america-s-most-innovative-lead": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2019/kevin-lobo-named-chairman-of-advamed-board-of-directors": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/kevin-lobo-named-executive-of-the-year-by-medtech-dive": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-acquires-arrinex": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/stryker-acquires-orthospace--ltd-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/stryker-and-rcsi-collaborate-to-drive-digital-healthcare-innovat": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2019/stryker-announces-33-000-patients-have-been-treated-with-latera-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2019/stryker-announces-annual-meeting-of-shareholders": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/stryker-announces-clinical-evidence-demonstrating-improved-early": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-announces-commercial-structure-realignment": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/stryker-announces-definitive-agreement-to-acquire-mobius-imaging": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-announces-definitive-agreement-to-acquire-wright-medical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-announces-latest-mako-clinical-evidence": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-announces-newly-designed-reunion--s-humeral-stem": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-announces-sakos-pivotal-trial-results-for-spinejack-syst": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2019/stryker-awarded-pro-patria-award-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-completes-acquisition-of-mobius-imaging-and-cardan-robot": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-earns-100-percent-on-hrc-equality-index": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-features-new-spinemap-go-software-at-the-american-associ": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-honored-by-women-s-forum-for-work-toward-gender-parity-i": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-introduces-new-visualization-platform-designed-to-enhanc": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-launches-lifepak--cr2-defibrillator-with-lifelinkcentral": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2019/stryker-launches-voluntary-field-action-for-specific-units-of-th": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2019/stryker-named-a-best-workplace-in-europe": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-named-among-best-places-to-work-by-glassdoor": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2019/stryker-receives-fda-clearance-for-sahara-lateral-3d-expandable-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-redefines-nailing-with-t2-alpha-and-adapt-for-gamma3": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-showcases-new-sonopet-iq-ultrasonic-aspirator-system-at-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2019/stryker-to-host-conference-call-on-july-25--2019": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir"
+    ],
+    "/us/en/about/news/2019/watch-kevin-lobo--chairman-and-ceo--on-fox-business-network": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/awareness-campaign-launched-to-support-world-restart-a-heart-day": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/cms-grants-new-technology-add-on-payment--ntap--for-stryker-s-sp": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/cms-grants-transitional-pass-through-payment--tpt--for-stryker-s": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/fda-authorizes-production-of-non-sterile-hoods-and-togas": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/2020/kevin-lobo-joins-the-constellation-forum-2020": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/stryker-announces-mako-system-s-1-000th-install": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-completes-acquisition-of-wright-medical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-is-a-gallup-exceptional-workplace-for-the-13th-year": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-joins-leading-executives-and-employers-in-forming-oneten": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2020/stryker-launches-ambulatory-surgery-center-focused-business": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/stryker-launches-first-64-wire-cobalt-chromium-flow-diverter-in-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-launches-industry-s-first-completely-wireless-hospital-b": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-marks-one-million-mesa-pedicle-screw-implantations-globa": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-named-a-best-workplace-in-asia": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/stryker-named-a-best-workplace-in-europe-for-second-consecutive-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/stryker-receives-gallup-s--don-clifton-strengths-based-culture--": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/stryker-releases-emergency-relief-bed": [
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:content-type/news",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/2020/stryker-releases-mako--total-hip-4-0-software": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-s-axsos-3--ankle-fusion-system-offers-innovative-plates-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/stryker-s-exeter-hip-stem-turns-50": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2020/stryker-s-neuroform-atlas--stent-system-granted-an-expanded-indi": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-s-t2-icf-nail-system-offers-surgeons-new-option-for-pati": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2020/stryker-unveils-niagara-lateral-access-system-at-nass-2020": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2020/watch-kevin-lobo-on-cnbc-s-mad-money": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/watch-kevin-lobo-on-cnbc-s-squawk-alley": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2020/watch-kevin-lobo-on-fox-business-network-s-mornings-with-maria": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/facing-the-future-with-confidence-ellys--maxillofacial-surgery-s": [
+      "stryker:content-type/patients",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2021/following-in-her-mother-s-footsteps": [
+      "stryker:content-type/patients",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2021/glassdoor-lists-kevin-lobo-among-2021-top-ceos": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2021/john-brown-profiled-in-investor-s-business-daily": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2021/kevin-lobo--andy-pierce-share-company-updates-on-devicetalks-pod": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2021/kevin-lobo-joins-the-bloomberg-equality-summit": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2021/kevin-lobo-shares-leadership-strategies-with-medical-design---ou": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2021/people-magazine-names-stryker-as-one-of-its-companies-that-care-": [
+      "stryker:content-type/awards",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/2021/some-people-say-they-d-give-you-their-kidney--this-nurse-meant-i": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2021/Stryker_Launches_New_Prophecy_Infinity_Resect_Through_Guides": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-announced-as-new-partner-for-the-ana-innovation-awards": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-announces-the-acquisition-of-gauss-surgical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2021/stryker-announces-the-fda-clearance-of-the-first-biodegradable-s": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-enters-national-partnership-with-minor-league-baseball-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-highlights-commitment-to-advanced-digital-healthcare": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2021/stryker-honored-for-advancing-gender-balance-on-board-": [
+      "stryker:content-type/news",
+      "gender_equity",
+      "board_of_directors",
+      "women_in_leadership",
+      "equity_and_inclusion",
+      "female_leaders",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/2021/stryker-introduces-market-leading-tornier-shoulder-arthroplasty-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-launches-new-tendon-fixation-device-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-launches-surgicount-plus-safety-sponge-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-launches-t2-alpha-femur-retrograde-nailing-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-launches-t7--personal-protection-system": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-leaders-share-de-i-perspectives-in-savoy-magazine": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2021/stryker-named-one-of-the-best-workplaces-for-parents": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-named-one-of-the-best-workplaces-in-texas-for-4th-year": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-a": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/stryker-receives-the-don-clifton-strengths-based-culture-award-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2021/stryker-sponsors-pga-2021-world-golf-championships-fedex-st--jud": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/events"
+    ],
+    "/us/en/about/news/2021/stryker-to-showcase-new--combined-foot-and-ankle-portfolio-at--2": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2021/watch-kevin-lobo-on-yahoo-finance-live": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/2022-ana-innovation-award-winners-address-gaps-in-health-equity-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/acute-care-s-mathieson-explains-how-vocera-fits-into-stryker-s-g": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/bobs-sudden-cardiac-arrest-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/cms-grants-outpatient-facility-code-for-insertion-of-stryker-s-i": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2022/ent-s-stewart-shares-views-on-leadership--stryker-s-women-s-netw": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/esg-lead-buckley-explains-how-stryker-operates-sustainably-and-r": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/features/a-safe-space-at-stryker": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/advancing-healthcare-through-asian-culture-and-collaboration": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/celebrating-hispanic-heritage---driving-our-mission-forward": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/five-things-you-need-to-know-about-high-blood-pressure-and-strok": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/focusing-on-her-mobility-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/game-changing-innovations": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/patient-stories"
+    ],
+    "/us/en/about/news/2022/features/hiking-back-to-health---rose-s-spine-surgery-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/his-family-saved-his-life---esley-s-sudden-cardiac-arrest-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/life-after-leukemia---jesse-s-zip-skin-closure-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/military-members-on-a-mission-to-make-healthcare-better": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2022/features/more-than-able-to-make-healthcare-better": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/promoting-high-quality--inclusive-healthcare-in-latin-america": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2022/features/sparking-curiosity-at-stryker-s-second-annual-de-i-summit": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2022/features/springing-into-action---andy-s-sudden-cardiac-arrest-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/stryker-releases-comprehensive-report-highlighting-2021-performa": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/2022/features/these-nurses-share-how-they-re-turning-experience-into-innovatio": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/features/tour-the-amsterdam-skills-centre--an-international-training-cent": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2022/features/women-leading-the-charge-for-change": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/diversity-equity-inclusion"
+    ],
+    "/us/en/about/news/2022/fueling-her-softball-career-with-the-help-of-sports-medicine-tec": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/getting-her-life-back-christina-s-bunionectomy-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/how-stryker-built-its-trauma-and-extremities-business-through-in": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2022/john-collings-named-chair-of-asia-pacific-medical-technology-ass": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/kevin-lobo-joins-fortune-s-on-leading-series": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/people-magazine-names-stryker-as-one-of-its-companies-that-care-2022": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/reimagining-nursing-for-the-future": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/spine-s-robinson-looks-to-help-division-reach-new-heights-after-": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2022/stryker-advances-its-global-additive-manufacturing-leadership-wi": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-announces-definitive-agreement-to-acquire-vocera-communi": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-announces-first-patient-case-using--new-tornier-perform-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/events",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-completes-acquisition-of-vocera-communications": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ir",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-donates-to-k9s-for-warriors-to-conclude-2022-minor-leagu": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-earns-100-percent-on-hrc-equality-index": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2022/stryker-fulfills-carbon-reduction-goal-early--commits-to-100--re": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches--free-your-feet--campaign-to-raise-awareness-ab": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-launches-citrefix--suture-anchor-system--featuring-award": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-easyfuse-dynamic-compression-system-for-high-de": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-insignia--femoral-hip-stem-at-the-american-acad": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-launches-monterey-al-interbody-system-with-new-pre-clini": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-prostep--mica-solo-guide--to-simplify-minimally": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/events",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-launches-pulse-intelligent-delivery-platform-at-2022-aof": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-q-guidance-system-with-spine-guidance-software": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-launches-the-connected-power-pro-2-powered-ambulance-cot": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-opens-the-or-of-the-future-for-customers-to-experience-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-receives-fda-clearance-for-optablatetm-bone-tumor-ablati": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-receives-fda-clearance-for-q-guidance-system-for-spine-a": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-s-inspace-subacromial-balloon-spacer-two-year--level-1-r": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-s-pierce-highlights-how-we-continue-innovating-toward-sa": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/strykertalks-podcast"
+    ],
+    "/us/en/about/news/2022/stryker-s-stiles-shares-the-art-and-science-used-in-integrating-": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/stryker-strengthens-its-r-d-capabilities-with-advanced-global-te": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-to-showcase-innovative-portfolio-of-spine-solutions--at-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/stryker-works-with-red-cross-to-direct-resources-to-humanitarian": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/vocera--now-part-of-stryker--introduces-latest-evolution-in-hand": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2022/what-it-s-like-being-a-caregiver-to-a-loved-one-with-alzheimer-s": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2022/why-mark-paul-believes-we-re-entering-into--golden-era--of-neuro": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2022/working-together-to-save-lives-garry-s-sudden-cardiac-arrest-sto": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2023/a-clearer-vision-of-surgery-stryker-releases-its-next-generation-of-advanced-surgical-cameras": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2023/cd-nxt-power-tool-system-empowers-surgeons-through-real-time-dep": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/cerus-endovascular": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews",
+      "stryker:custom/neurovascular/neurovascular-bu-news"
+    ],
+    "/us/en/about/news/2023/endoscopys-rosales-shares-how-we-continue-innovating-in-surgical-visualization": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/features/a-building-well-done-earning-platinum-for-putting-people-first": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/advancing-healthcare-professionals--education-with-stryker-s-neu": [
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2023/features/carolyn-s-mako-total-hip-surgery-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/celebrating-four-years-jordans-sudden-cardiac-arrest-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/changing-the-way-you-see-your-colorectal-cancer-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2023/features/defying-the-odds": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/delivering-a-more-efficient-experience-for-surgeons-and-patients-in-ambulatory-surgery-centers": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/features/five-things-to-know-about-heart-attacks-and-sudden-cardiac-arrests": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/how-stryker-supports-the-red-cross-lifesaving-mission": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/improving-her-happiness-and-confidence-carolyns-bunionectomy-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/katherine-s-catastrophic-stroke-survivor-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/knowing-the-warning-signs-of-sudden-cardiac-arrest-helped-saved-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/mako--robotics-driving-innovation-across-specialties": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins"
+    ],
+    "/us/en/about/news/2023/features/new-spy-phi-technology--to-help-breast-cancer-surgeons-see-more-": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/features/paving-the-way-forward-for-black-professionals": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/prime-connect-tomorrows-tech-for-todays-conflict-confident-care": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/features/restoring-form--function-and-hope---emily-s-jaw-replacement": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/stryker-employees-making-global-impact-with-the-2023-volunteer-c": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/2023/features/stryker-gets-medical-equipment-to-regions-in-need-with-project-c": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/stryker-releases-comprehensive-report-highlighting-2022-performa": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/stryker-s-third-annual-de-i-summit--ensuring-every-employee-is-s": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/taking-action": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/three-ways-stryker-works-to-support-physicians-in-their-pursuit-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/when-stryker-employees-and-their-family-members-become-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/features/why-aeds-belong-on-back-to-school-checklists": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2023/kevin-lobo-receives-ellis-island-medal-of-honor": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/kevin-on-gallup-s-leading-with-strengths": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/kevin-on-insideout-podcast-with-mike-alkire--premier-inc": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/neurovasculars-marucci-shares-how-were-advancing-stroke-care-globally": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/over-2400-surgical-cases-completed-using-strykers-q-guidance-system-with-spine-guidance-software-in-first-year": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-announces-commercial-launch-of-q-guidance-system-with-cr": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-announces-intent-to-acquire-serf-sas-enhancing-its-global-joint-replacement-leadership": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-awarded-transparency-partner-distinction-by-the-healthca": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-celebrates-wind-power-milestone-on-our-way-to-become-carbon-neutral": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-launches-industry-s-only-fully-autonomous-guidance-syste": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-launches-national-direct-to-patient-marketing-campaign": [
+      "stryker:content-type/news/advanced-digital-healthcare",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-launches-prostep--mis-lapidus--a-new-minimally-invasive-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2023/stryker-launches-the-xpedition-powered-stair-chair": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-named-2023-best-place-to-work-for-disability-inclusion-f": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2023/stryker-now-offers-the-only-fda-cleared-pyrocarbon-bearing-mater": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-receives-the-don-clifton-strengths-based-culture-award": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-s-cohen-delves-into-transformative-nature-of-surgical-ro": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/stryker-s-heath-shares-three-commitments-to-building-diversity-i": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/stryker-s-lobo-discusses-outlook-for-our-business--m-a-strategy-": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-s-q-guidance-system-for-cranial-applications-receives-fd": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/strykers-corporate-responsibility-vp-talks-social-environmental-strategy-in-medtech-on-the-impact-podcast": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/2023/strykers-journey-to-zero-harm-continues-with-neptune-s": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2023/strykers-triathlon-tritanium-baseplate-marks-a-decade-of-positive-patient-impact": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/surgeons-successfully-complete-first-surgical-cases-using-stryke": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2023/watch-chair-and-ceo-kevin-lobo-discuss-corporate-responsibility-": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2023/watch-chair-and-ceo-kevin-lobo-on-cnbcs-squawk-on-the-street": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "artificial_intelligence",
+      "cnbc_squawk_on_thestreet",
+      "stryker:custom/annual-review/kevin-lobo",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2023/watch-kevin-lobo-on-fox-business-network-s-claman-countdown": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2024/features/-benefits-of-early-mobility-in-the-icu": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2024/features/a-partnership-promoting-mental-health-for-healthcare-workers": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/back-pain-and-scoliosis--victoria-finds-relief": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/employees-share-why-dei-matters-at-annual-summit": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/how-augmented-reality-can-help-care-teams-plan--design-and-const": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/advanced-digital-healthcare"
+    ],
+    "/us/en/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally": [
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2024/features/how-stryker-is-innovating-in-operating-room-design": [
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2024/features/stryker-boots-innovation-r-and-d-expands-with-medical-device-testing-facility": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/stryker-global-volunteer-network-highlights-importance-volunteerism": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/stryker-is-doubling-down-in-the-fight-against-brain-tumors": [
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news",
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2024/features/stryker-releases-comprehensive-report-highlighting-2023-performance-and-progress-towards-environmental-social-and-governance-esg-commitments": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/features/what-are-the-symptoms-and-signs-of-stroke": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2024/first-shoulder-arthroplasty-surgeries-using-strykers-blueprint-mixed-reality-guidance-system-completed-at-mayo-clinic-in-minnesota-and-at-st-josephs-health-care-london-in-canada": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2024/for-third-consecutive-year--stryker-named-2024-best-place-to-wor": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/listen-to-stryker-chair-and-ceo-kevin-lobo-on-ellig-group-s-lead": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/new-intermediate-nail-and-rc-lag-screw-expand-gamma4-portfolio-to-meet-the-needs-of-surgeons-and-their-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-artelon--inc--": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-care-ai--a-lea": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-announces-definitive-agreement-to-acquire-vertos-medical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-announces-launch-of-pangea-plating-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-artelon-inc": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-care-ai": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-mfphd": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-molli-surgical": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-nico-corporation--expanding-min": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-serf-sas": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-completes-acquisition-of-vertos-medical-inc-expanding-interventional-pain-management-solutions": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-earns-highest-rating-on-hrc-equality-index": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-expands-foot---ankle-portfolio-with-specialized-offering": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-expands-prophecy-surgical-planning-system-to-include-the": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-honored-with-hirc-gold-badge-for-resiliency": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-receives-don-clifton-strengths-based-culture-award-for-f": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-releases-lifepak-35-monitor-defibrillator": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/advanced-digital-healthcare",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-s-spine-guidance-5-software-featuring-copilot-receives-5": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-s-stiles-shares-how-our-latest-orthopaedic-innovations-d": [
+      "stryker:content-type/news/strykertalks-podcast",
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-showcases-commitment-to-innovation-at-aaos-2024-annual-m": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/stryker-unveils-oculan-lighting-platform": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/watch-chair-and-ceo-kevin-lobo-on-cnbc-s-money-movers": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2024/watch-chair-and-ceo-kevin-lobo-on-cnbcs-money-movers": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2025/features/meet-merryl-a-resilient-stroke-survivor": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2025/features/stryker-releases-2024-comprehensive-report": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/about/news/2025/inari-medical-stryker-launches-all-new-inthrill-thrombectomy-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/inari-medical-stryker-launches-artix-thrombectomy-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-announces-definitive-agreement-to-acquire-inari-medical-inc": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-completes-acquisition-of-inari-medical-inc": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-completes-sale-of-us-spinal-implants-business": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-launches-incompass-total-ankle-system-at-aofas-2025": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-launches-steri-shield-8-personal-protection-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-launches-surpass-elite-flow-diverter": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-launches-sync-badge": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/news/advanced-digital-healthcare",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-names-spencer-stiles-president-and-chief-operating-officer": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-receives-fda-clearance-for-incompass-total-ankle-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/stryker-receives-fda-clearance-for-optablate-bvn-ablation-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2025/stryker-showcases-next-generation-of-mako-smartrobotics--at-aaos": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/advanced-digital-healthcare"
+    ],
+    "/us/en/about/news/2025/stryker-unveils-new-intracranial-base-catheter": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2025/watch-chair-and-ceo-kevin-lobo-on-cnbc-mad-money": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/a-message-to-our-customers-03-2026": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/in-the-news"
+    ],
+    "/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/2026/features/what-everyone-should-know-about-arthritis": [
+      "stryker:content-type/news/product-bulletins",
+      "stryker:content-type/news/featured",
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/2026/glassdoor-names-kevin-lobo-one-of-the-best-ceos-of-2026": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/hirc-enterprise-gold-resiliency-badge": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/kevin-lobo-spencer-stiles-bloomberg-intelligence-vanguards-of-healthcare-podcast": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/listen-to-stryker-chair-and-ceo-kevin-lobo-on-bain-and-companys-founders-mentality-podcast": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-announces-leadership-succession": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-cmr-surgical-announce-strategic-alliance-advance-robotic-assisted-surgery": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-completes-acquisition-of-amplitude-vascular-systems": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-launches-sonopet-3-delivering-greater-power-and-precision": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-launches-t2-alpha-humerus-nailing-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-launches-tpx-hd-power-tool": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-partners-professional-golfer-shane-lowry-caregiver-journey": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-st": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/in-the-news",
+      "stryker:content-type/corporatenews"
+    ],
+    "/us/en/about/news/features/7_unique_ways_we_partner_for_prevention": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/80-years-together": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/a-humbling-exchange": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/a-winning-spirit": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/features/being-in-the-right-place-at-the-right-time--matt-s-sudden-cardia": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/breast-cancer-awareness-meets-breast-cancer-advancements": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/caregiver-story-judy": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/changing-the-course-of-healthcare-in-under-resourced-communities": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/committed-to-advancing-care-for-sarcoma": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/features/driven-to-give--three-ways-stryker-employees-are-giving-back": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/during-covid-19--their-selflessness-and-sacrifice-has-never-been": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/employees-inspire-a-new-generation-of-robotics-engineers-through": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/from-behind-the-scenes-to-the-front-line": [
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:content-type/news",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/from-concept-to-launch-in-7-days--new-emergency-relief-bed": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/going-the-distance-for-front-line-heroes": [
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:content-type/news",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:content-type/news/covid-19",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/hana-finds-her-passion-after-advanced-scoliosis-surgery": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/honor--celebrate--appreciate-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/improving-safety--spreading-truth-about-surgical-smoke": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/features/improving-surgical-recovery---elizabeth-s-zip-skin-closure-story": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/innovation--design--and-a-look-to-the-future-of-stroke-technolog": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/innovation-inspired-by-insights--the-next-generation--first-comp": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/about/news/features/living-life-under-130-beats-per-minute": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/making-a-difference-through-mentorship": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/mako-smartrobotics--hits-500-000--procedures": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/mother-and-son-take-on-goldenhar-syndrome": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/national-doctors--day": [
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/national-ems-week-campaign": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/nurses-a-key-driver-in-advancing-global-health": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/features/packaging-for-a-better-planet": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/cr"
+    ],
+    "/us/en/about/news/features/patient-story-olivia": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/people-helping-people": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features",
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/putting-people-first-how-stryker-supports-worldwide-disaster-relief-efforts": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/rebuilding-what-s-been-broken-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/restoring-spines-and-hope": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/revealing-character--rebuilding-lives-": [
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:content-type/news",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/s-it-a-heart-attack-or-sudden-cardiac-arrest--know-the-warning-s": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/smart-devices-deliver-actionable-insights": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/sonopet-iq--a-collaboration-from-r-d-to-the-or": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/stryker-donates-22-500-emergency-relief-bed-kits-to-project-c-u-": [
+      "stryker:Stryker-SEO-Tags/covid19",
+      "stryker:content-type/news",
+      "stryker:Stryker-SEO-Tags/coronavirus",
+      "stryker:Stryker-SEO-Tags/covid-19",
+      "stryker:content-type/news/Features",
+      "stryker:content-type/news/covid-19"
+    ],
+    "/us/en/about/news/features/stryker-holds-diversity--equity-and-inclusion-summit": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/diversity-equity-inclusion",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/technologies-that-promote-safe-care-for-mother-and-baby-during-c": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/this-nurse-turned-tragic-loss-into-inspiring-hope": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/features/trees--landfills-and-the-environment": [
+      "stryker:content-type/news/Features"
+    ],
+    "/us/en/about/news/stryker-orthopaedics-2016-settlement-program-reaches-milestone": [
+      "stryker:content-type/news",
+      "stryker:content-type/corporatenews",
+      "stryker:content-type/news/ir"
+    ],
     "/us/en/about/patents/Spine-patents": [
       "spine"
+    ],
+    "/us/en/acute-care": [
+      "stryker:content-type/business-unit",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/c/emergency-nursing-trade-show": [
+      "stryker:business-unit/ems",
+      "stryker:business-unit/smart-care",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/c/empowered-to-care-safe-patient-handling-and-nurse-protection": [
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/c/leading-the-digital-shift-nurse-executives-driving-future-care": [
+      "stryker:business-unit/acute-care",
+      "stryker:business-unit/smart-care"
+    ],
+    "/us/en/acute-care/c/magnet-trade-show": [
+      "stryker:business-unit/acute-care",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/acute-care/c/nti-trade-show": [
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/c/the-science-behind-support-surfaces": [
+      "stryker:custom/acute-care"
+    ],
+    "/us/en/acute-care/c/the-science-behind-support-surfaces/webinar": [
+      "stryker:custom/acute-care"
+    ],
+    "/us/en/acute-care/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/dynamic-clinical-workflow": [
+      "stryker:capability/clinical-communication-and-workflow",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/news/2024-ana-innovation-award-winners": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/acute-care/news/a-thank-you-letter-to-nurses-everywhere": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/acute-care/news/abstract-powered-gel-support-surface-reduces-hapis": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/acute-care/news/acute-care-training-and-education-resources": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news",
+      "stryker:business-unit/acute-care/news/articles"
+    ],
+    "/us/en/acute-care/news/ana-nurse-led-team-innovation-award": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/acute-care/news/caregiver-james-bamber": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/caregiver-stories"
+    ],
+    "/us/en/acute-care/news/caregiver-judy-gay": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/caregiver-stories"
+    ],
+    "/us/en/acute-care/news/caregiver-klisa-hargrove-loper": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/caregiver-stories"
+    ],
+    "/us/en/acute-care/news/caregiver-pam-mizerany": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/caregiver-stories"
+    ],
+    "/us/en/acute-care/news/caregiver-temple-university-intensive-care-unit": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/caregiver-stories"
+    ],
+    "/us/en/acute-care/news/celebrating-nurses-month-peloton-nyc-studio": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/acute-care/news/early-mobility-benefits-icu": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/acute-care/news/hospital-bed-standardization-va": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/articles"
+    ],
+    "/us/en/acute-care/news/hospital-fall-prevention-with-smart-stretchers": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/acute-care/news/how-one-medical-center-reduced-pressure-ulcers-and-saved-costs": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/acute-care/news/ibed-fall-prevention-clinical-outcome": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/acute-care/news/innovation-in-hospital-fall-prevention": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/articles"
+    ],
+    "/us/en/acute-care/news/kwamane-liddell-wins-ana-innovation-award": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/acute-care/news/nurse-led-innovation-and-the-power-of-partnership": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/acute-care/news/smart-hospital-stretchers-supporting-patient-care-and-safety": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/acute-care/news/the-importance-of-manufacturer-maintenance-plans-for-medical-equ": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/acute-care/products/arise-1000-ex": [
+      "stryker:content-type/product",
+      "stryker:product/acute-care/arize-1000-ex",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/bari-10a": [
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/department/bariatric",
+      "stryker:product/acute-care/bari-10a",
+      "stryker:specialty/specialty-beds",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/barimatt-plus": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:product/acute-care/barimatt-plus",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/bedside-stands": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:custom/acute-care/furniture-type/bedside-stand",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/bedside-stands",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/comfortgel": [
+      "stryker:content-type/product",
+      "stryker:product/acute-care/comfortgel",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/surface-types/gel-technology",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:custom/acute-care/surface-types/basic-foam",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/comfortgel-se": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/stretcher-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/comfortgel-se",
+      "stryker:custom/acute-care/surface-types/gel-technology",
+      "stryker:specialty/stretcher-support-surfaces",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/cub": [
+      "stryker:content-type/product",
+      "stryker:product/acute-care/cub",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:custom/acute-care/stretcher-departments/pediatric",
+      "stryker:specialty/specialty-stretchers",
+      "stryker:capability/stretchers",
+      "stryker:custom/acute-care/stretcher-types/pediatric-crib",
+      "stryker:custom/acute-care/department/pediatric",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:product/acute-care"
+    ],
+    "/us/en/acute-care/products/eye-surgery": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/stretcher-departments/operating-room",
+      "stryker:specialty/procedural-stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:product/acute-care/eye-surgery",
+      "stryker:custom/acute-care/stretcher-types/eye-surgery",
+      "stryker:capability/stretchers",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/fall-prevention-solutions": [
+      "stryker:product/acute-care/fall-prevention-solutions"
+    ],
+    "/us/en/acute-care/products/fluoroscopy-stretcher": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/stretcher-departments/operating-room",
+      "stryker:product/acute-care/fluoroscopy-stretcher",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:specialty/specialty-stretchers",
+      "stryker:capability/stretchers",
+      "stryker:custom/acute-care/stretcher-departments/imaging",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/gynnie": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:custom/acute-care/stretcher-departments/emergency-department",
+      "stryker:custom/acute-care/stretcher-departments/maternity",
+      "stryker:specialty/specialty-stretchers",
+      "stryker:capability/stretchers",
+      "stryker:custom/acute-care/stretcher-departments/imaging",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:product/acute-care/gynnie"
+    ],
+    "/us/en/acute-care/products/ibed-wireless": [
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:capability/advanced-digital-healthcare",
+      "stryker:product/acute-care/ibed-wireless",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio",
+      "stryker:custom/acute-care/department/postpartum",
+      "stryker:custom/acute-care/department/pediatric",
+      "stryker:content-type/hcp_content",
+      "medical_and_surgicalequipment",
+      "stryker:business-unit/acute-care",
+      "stryker:custom/acute-care/department/icu-critical-care"
+    ],
+    "/us/en/acute-care/products/intouch": [
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/icu-critical-care-beds",
+      "stryker:product/acute-care/intouch",
+      "stryker:specialty/increased-census",
+      "stryker:capability/covid-19-products",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:custom/acute-care/department/icu-critical-care"
+    ],
+    "/us/en/acute-care/products/isoair": [
+      "stryker:custom/acute-care/surface-types/air",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:custom/acute-care/surface-types/low-air-loss",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:services/procare/acute-care/surfaces"
+    ],
+    "/us/en/acute-care/products/isoflex-lal": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:custom/acute-care/surface-types/low-air-loss",
+      "stryker:services/procare/acute-care/surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/surface-types/gel-technology",
+      "stryker:specialty/bed-support-surfaces",
+      "medical_and_surgicalequipment",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:product/acute-care/isoflex-lal"
+    ],
+    "/us/en/acute-care/products/isoflex-se": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/stretcher-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:services/procare/acute-care/surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/surface-types/gel-technology",
+      "stryker:specialty/stretcher-support-surfaces",
+      "stryker:product/acute-care/isoflex-se",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/isolibrium": [
+      "stryker:custom/acute-care/surface-types/air",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:custom/acute-care/surface-types/low-air-loss",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/icu-critical-care-beds",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:product/acute-care/isolibrium",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/isotour": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:services/procare/acute-care/surfaces",
+      "stryker:custom/acute-care/surface-types/low-air-loss",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/surface-types/gel-technology",
+      "stryker:product/acute-care/isotour",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/ld-304": [
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:product/acute-care/ld-304",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/department/labor-and-delivery",
+      "stryker:specialty/specialty-beds",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/maternity-solutions": [
+      "stryker:specialty/patient-room-furniture",
+      "stryker:capability/patient-room-furniture",
+      "stryker:capability/bedframes",
+      "stryker:specialty/medical-surgical-beds",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/maternity-furnishings",
+      "stryker:specialty/specialty-beds",
+      "stryker:content-type/hcp_content",
+      "stryker:product/acute-care",
+      "stryker:product/acute-care/gynnie",
+      "stryker:product/acute-care/ld-304",
+      "stryker:product/acute-care/nara-bassinet",
+      "stryker:product/acute-care/unity",
+      "stryker:product/acute-care/procuity"
+    ],
+    "/us/en/acute-care/products/michael-graves-with-stryker": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:custom/acute-care/furniture-type/michael-graves-patient-room-furniture",
+      "stryker:custom/acute-care/furniture-type/bedside-stand",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/furniture-type/overbed-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/michael-graves",
+      "stryker:product/acute-care/michael-graves-with-stryker",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/mv3": [
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/department/bariatric",
+      "stryker:specialty/specialty-beds",
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:business-unit/acute-care",
+      "stryker:product/acute-care/mv3"
+    ],
+    "/us/en/acute-care/products/nara-bassinet": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/nara-bassinet",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:services/procare/acute-care/hospital-furniture",
+      "stryker:custom/acute-care/furniture-type/bassinets"
+    ],
+    "/us/en/acute-care/products/prime-series": [
+      "stryker:custom/acute-care/stretcher-departments/transport",
+      "stryker:custom/acute-care/stretcher-types/transport",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:custom/acute-care/stretcher-departments/emergency-department",
+      "stryker:custom/acute-care/stretcher-departments/intensive-care-unit",
+      "stryker:specialty/emergency-transport-stretchers",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/stretcher-departments/operating-room",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:specialty/increased-census",
+      "stryker:custom/acute-care/stretcher-departments/maternity",
+      "stryker:specialty/connected-infrastructure",
+      "stryker:capability/stretchers",
+      "stryker:product/acute-care/prime-series",
+      "stryker:custom/acute-care/stretcher-departments/imaging",
+      "stryker:custom/smart-care/product-type/connected-infrastructure",
+      "stryker:custom/smart-care/care-space/smarted"
+    ],
+    "/us/en/acute-care/products/prime-tc": [
+      "stryker:capability/clinical-seating-and-transport-chairs",
+      "stryker:custom/acute-care/stretcher-departments/transport",
+      "stryker:services/procare/acute-care/clinical-seating",
+      "stryker:custom/acute-care/stretcher-types/transport",
+      "stryker:product/acute-care/prime-tc",
+      "stryker:custom/acute-care/stretcher-departments/emergency-department",
+      "stryker:custom/acute-care/stretcher-departments/intensive-care-unit",
+      "stryker:specialty/emergency-transport-stretchers",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/stretcher-types/transport-chair",
+      "stryker:custom/acute-care/stretcher-departments/operating-room",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/stretcher-departments/pediatric",
+      "stryker:custom/acute-care/stretcher-departments/maternity",
+      "stryker:capability/stretchers",
+      "stryker:specialty/transport-chair",
+      "stryker:custom/acute-care/stretcher-departments/imaging"
+    ],
+    "/us/en/acute-care/products/primex-x-ray": [
+      "stryker:content-type/product",
+      "stryker:product/acute-care/primex-x-ray",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:custom/acute-care/stretcher-departments/emergency-department",
+      "stryker:capability/stretchers",
+      "stryker:specialty/emergency-transport-stretchers",
+      "stryker:custom/acute-care/stretcher-departments/imaging",
+      "stryker:custom/acute-care/stretcher-types/x-ray",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/procuity": [
+      "stryker:capability/bedframes",
+      "stryker:product/acute-care/procuity",
+      "stryker:content-type/product",
+      "stryker:specialty/medical-surgical-beds",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/icu-critical-care-beds",
+      "stryker:capability/smart-hospital",
+      "stryker:specialty/connected-infrastructure",
+      "stryker:specialty/specialty-beds",
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:product/acute-care",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/product-type/connected-infrastructure"
+    ],
+    "/us/en/acute-care/products/procuity-icu": [
+      "stryker:product/acute-care/procuity-icu",
+      "stryker:capability/bedframes",
+      "stryker:content-type/product",
+      "stryker:specialty/medical-surgical-beds",
+      "stryker:specialty/icu-critical-care-beds",
+      "stryker:capability/smart-hospital",
+      "stryker:specialty/connected-infrastructure",
+      "stryker:specialty/specialty-beds",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:content-type/hcp_content",
+      "stryker:product/acute-care",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/product-type/connected-infrastructure"
+    ],
+    "/us/en/acute-care/products/proform": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:custom/acute-care/surface-types/basic-foam",
+      "stryker:product/acute-care/proform",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/s3": [
+      "stryker:capability/bedframes",
+      "stryker:capability/covid-19-products",
+      "stryker:product/acute-care/s3",
+      "stryker:services/procare/acute-care/beds",
+      "stryker:custom/acute-care/department/pediatric",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:content-type/product",
+      "stryker:specialty/medical-surgical-beds",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/increased-census",
+      "stryker:custom/acute-care/department/medsurg",
+      "stryker:custom/acute-care/department/postpartum"
+    ],
+    "/us/en/acute-care/products/side-seating": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:product/acute-care/side-seating",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/acute-care/furniture-type/chairs",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/sofcare-chair-cushion": [
+      "stryker:content-type/product",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/sofcare-chair-cushion",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:specialty/pressure-injury-prevention-disposables"
+    ],
+    "/us/en/acute-care/products/sofcare-overlay": [
+      "stryker:content-type/product",
+      "stryker:product/acute-care/sofcare-overlay",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/stretcher-support-surfaces",
+      "stryker:specialty/increased-census",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/pressure-injury-prevention-disposables",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/spr-plus": [
+      "stryker:content-type/product",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/spr-plus",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:specialty/pressure-injury-prevention-disposables"
+    ],
+    "/us/en/acute-care/products/stretcher-chairs": [
+      "stryker:content-type/product",
+      "stryker:specialty/procedural-stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:product/acute-care/stretcher-chairs",
+      "stryker:custom/acute-care/stretcher-departments/emergency-department",
+      "stryker:capability/stretchers",
+      "stryker:custom/acute-care/stretcher-departments/intensive-care-unit",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/surgistool": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/stretcher-departments/operating-room",
+      "stryker:specialty/procedural-stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:capability/stretchers",
+      "stryker:custom/acute-care/stretcher-types/surgical-seating",
+      "stryker:product/acute-care/surgistool",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/symmetry-plus": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:custom/acute-care/furniture-type/recliners",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/recliners",
+      "stryker:custom/acute-care/furniture-type/chairs",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/transport": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/transport",
+      "stryker:services/procare/acute-care/transport",
+      "stryker:specialty/specialty-stretchers",
+      "stryker:capability/stretchers",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/tru-fit": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/furniture-type/overbed-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/tru-fit",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/trurize": [
+      "stryker:specialty/clinical-chair",
+      "stryker:capability/clinical-seating-and-transport-chairs",
+      "stryker:product/acute-care/trurize",
+      "stryker:content-type/product",
+      "stryker:services/procare/acute-care/clinical-seating",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/increased-census",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:capability/clinical-seating"
+    ],
+    "/us/en/acute-care/products/ultracomfort--se": [
+      "stryker:content-type/product",
+      "stryker:custom/acute-care/surfaces---beds-vs-stretchers/stretcher-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/stretcher-support-surfaces",
+      "stryker:custom/acute-care/surface-types/basic-foam",
+      "stryker:product/acute-care/ultracomfort-se",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/products/unity-furniture": [
+      "stryker:capability/patient-room-furniture",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/acute-care/unity",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:services/procare/acute-care/hospital-furniture"
+    ],
+    "/us/en/acute-care/products/vocera-analytics": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/resources": [
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/services/lifenet-dashboard": [
+      "stryker:business-unit/ems",
+      "stryker:content-type/service",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/acute-care/services/procare": [
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/acute-care",
+      "stryker:services/procare"
+    ],
+    "/us/en/c/2018/guaranteeprograms": [
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/c/2018/guaranteeprograms/form-3--guarantees--learn-more-from-clinical-nurse-consultant": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/c/2018/guaranteeprograms/form-4--guarantees---learn-more-from-a-stryker-product-expert": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/c/2018/guaranteeprograms/thank-you": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/c/2018/guaranteeprograms/thank-you0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/c/2018/more-power-to-you/thank-you": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/build-your-asc": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/events/aahks-2025": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/implants-and-disposables": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/operating-room": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/post-operative": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/pre-operative": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/care-settings/asc/resources": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications": [
+      "stryker:content-type/business-unit",
+      "stryker:business-unit/communications"
+    ],
+    "/us/en/communications/contact": [
+      "stryker:customer-support-centers/USA",
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-unit/communications",
+      "stryker:business-function/hq/usa",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/communications/news/2025/what-does-an-operating-room-look-like-look-inside-strykers-isuite": [
+      "stryker:content-type/news/communications/innovation-and-research",
+      "stryker:content-type/news",
+      "stryker:content-type/news/featured"
+    ],
+    "/us/en/communications/news/2026/inside-stryker-s-ibuild-workshop": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/communications/products/accend-surgical-light": [
+      "stryker:content-type/product",
+      "stryker:capability/asc",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/lighting",
+      "stryker:product/communications/accend-surgical-light"
+    ],
+    "/us/en/communications/products/berchtold-led-f-gen": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/lights",
+      "stryker:product/communications/berchtold-led-f-generation",
+      "stryker:specialty/ed",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/connected-or-ip": [
+      "stryker:content-type/product",
+      "stryker:product/communications",
+      "stryker:specialty/OR-integration",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/connected-or-ip",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/communications/products/connected-or-lite": [
+      "stryker:content-type/product",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:specialty/OR-integration",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/communications/products/customized-suspension-solutions": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/customized-suspension-solutions",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/customized-suspension-solutions",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/lighting",
+      "stryker:specialty/booms"
+    ],
+    "/us/en/communications/products/equipment-management-accessories": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/customized-suspension-solutions",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/ICU",
+      "stryker:product/communications/equipment-management-accessories",
+      "stryker:specialty/ed",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/monitor-and-accessory-support-arms"
+    ],
+    "/us/en/communications/products/Fortress-wall-system": [
+      "stryker:content-type/product",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/or-walls"
+    ],
+    "/us/en/communications/products/hospital-status": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:business-unit/communications",
+      "stryker:specialty/camera-systems",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/communications/products/isuite-diagnostic-4k-large-monitor-systems": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/isuite-diagnostic-4k-large-monitor-systems",
+      "stryker:specialty/displays",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/isuite-ehr-connectivity": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:business-unit/communications",
+      "stryker:product/communications/isuite-ehr-connectivity",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/isuite-live-video": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:business-unit/communications",
+      "stryker:product/communications/isuite-live-video",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/isuite-media-management": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/media-management",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:product/communications/isuite-media-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/nurse-documentation-stations": [
+      "stryker:content-type/product",
+      "stryker:product/communications/nurse-documentation-stations",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/or-design-and-construction-resources"
+    ],
+    "/us/en/communications/products/oculan": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/operon-accessories": [
+      "stryker:content-type/product",
+      "stryker:specialty/surgical-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/operon-accessories",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/operon-d770": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/surgical-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:product/communications/operon-d770",
+      "stryker:specialty/surgical-tables"
+    ],
+    "/us/en/communications/products/operon-d830": [
+      "stryker:product/communications/operon-d830",
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/surgical-tables",
+      "stryker:specialty/surgical-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/operon-d860": [
+      "stryker:content-type/product",
+      "stryker:specialty/surgical-tables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/operon-d8600",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:product/communications/operon-d860",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/or-renovation-services": [
+      "stryker:content-type/product",
+      "stryker:specialty/room-design",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:services",
+      "stryker:product/communications/or-renovation-services",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/or-design-and-construction-resources"
+    ],
+    "/us/en/communications/products/project-services": [
+      "stryker:content-type/product",
+      "stryker:specialty/room-design",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/project-services",
+      "stryker:business-unit/communications",
+      "stryker:services",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/or-design-and-construction-resources"
+    ],
+    "/us/en/communications/products/room-cameras": [
+      "stryker:content-type/product",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:specialty/camera-systems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/room-cameras",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/s-series-equipment-management-system": [
+      "stryker:specialty/ed",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/monitor-and-accessory-support-arms",
+      "stryker:product/communications/s-series-equipment-management-system",
+      "stryker:content-type/product",
+      "stryker:specialty/booms",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/ICU",
+      "stryker:specialty/asc",
+      "stryker:specialty/infrastructure-and-room-design"
+    ],
+    "/us/en/communications/products/slx-surgical-light": [
+      "stryker:content-type/product",
+      "stryker:product/communications/slx-surgical-light",
+      "stryker:services/procare/communications/lights",
+      "stryker:business-unit/communications",
+      "stryker:portfolio",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/sterile-control--": [
+      "stryker:content-type/product",
+      "stryker:product/communications/sterile-control-+",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/strykecam-4k": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/lights",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:specialty/camera-systems",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/surgical-monitor-mounting": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/lights",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/surgical-monitor-mounting",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/monitor-and-accessory-support-arms"
+    ],
+    "/us/en/communications/products/teletom": [
+      "stryker:content-type/product",
+      "stryker:product/communications/teletom",
+      "stryker:services/procare/communications/customized-suspension-solutions",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/ICU",
+      "stryker:specialty/ed",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/universal-device-connection": [
+      "stryker:content-type/product",
+      "stryker:product/communications",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:product/communications/universal-device-connection",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/universal-display-mount": [
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/monitor-and-accessory-support-arms",
+      "stryker:specialty/surgical-visualization",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/displays",
+      "stryker:specialty/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/visum-blade-led": [
+      "stryker:content-type/product",
+      "stryker:product/communications/visum-blade-led",
+      "stryker:services/procare/communications/lights",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:specialty/asc",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/products/visum-led-ii": [
+      "stryker:content-type/product",
+      "stryker:services/procare/communications/lights",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/communications/visum-led-ii",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/wall-control": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/communications/products/wall-control/sirca-exam-light": [
+      "stryker:content-type/product",
+      "stryker:product/communications",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/communications",
+      "stryker:product/communications/sirca-exam-light",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/communications/products/wall-mounted-lcd-displays": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/communications/wall-mounted-lcd-displays",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/displays",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/services/customized-suspension-solutions": [
+      "stryker:content-type/system",
+      "stryker:business-unit/communications",
+      "stryker:system/communications",
+      "stryker:services/procare/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/services/or-integration-and-connectivity-": [
+      "stryker:content-type/system",
+      "stryker:business-unit/communications",
+      "stryker:system/communications",
+      "stryker:services/procare/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/services/procare": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/services/surgical-lights---monitor-suspension": [
+      "stryker:content-type/system",
+      "stryker:services/procare/communications",
+      "stryker:business-unit/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/services/surgical-tables": [
+      "stryker:content-type/system",
+      "stryker:business-unit/communications",
+      "stryker:services/procare/communications",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/communications/systems/-isuite-experience": [
+      "stryker:system/communications/isuite-experience",
+      "stryker:services/procare/communications/or-integration-and-connectivity",
+      "stryker:specialty/room-design",
+      "stryker:specialty/ed",
+      "stryker:content-type/system",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:business-unit/communications",
+      "stryker:specialty/or",
+      "stryker:specialty/or-design-and-construction-resources",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/monitor-and-accessory-support-arms",
+      "stryker:specialty/integration-and-connectivity",
+      "stryker:specialty/OR-integration",
+      "stryker:specialty/ICU",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/emr-connectivity",
+      "stryker:specialty/asc",
+      "stryker:specialty/infrastructure-and-room-design",
+      "stryker:specialty/or-walls"
+    ],
+    "/us/en/communications/systems/-isuite-experience/connected-or-operating-system": [
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/communications",
+      "stryker:system/communications",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/communications/systems/-isuite-experience/procare-services": [
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare",
+      "stryker:services/onsite-services"
+    ],
+    "/us/en/communications/systems/-isuite-experience/room-design": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/craniomaxillofacial/contact": [
+      "stryker:customer-support-centers/USA",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-function/hq/usa",
+      "stryker:geography/north-america",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/craniomaxillofacial/products/2d-and-3d-mesh": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/3d-systems": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/adherus": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/adherus-autospray-and-adherus-autospray-et",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/advanced-midface-distractor": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/advanced-midface-distractor",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/allograft-bio-implants": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:product/craniomaxillofacial/bio-allograft-implants",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/aesthetics",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/anatomical-models": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:product/craniomaxillofacial/medical-models",
+      "stryker:content-type/product",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/axs-neuro-driver": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/closure",
+      "stryker:specialty/cmf",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/colorado-microdissection-needle": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/colorado-microdissection-needle",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/cranial-id": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/craniomaxillofacial/cranial-id",
+      "stryker:specialty/closure",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/delta-resorbable-fixation": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/delta-resorbable-fixation",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/cmf",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/directinject": [
+      "stryker:specialty/trauma",
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/craniomaxillofacial/directinject-on-demand-ha-cement",
+      "stryker:specialty/cranial-bioresorbables",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/duramatrix-portfolio": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:specialty/closure",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial",
+      "stryker:content-type/hcp_content",
+      "stryker:product/craniomaxillofacial/duramatrix-portfolio"
+    ],
+    "/us/en/craniomaxillofacial/products/facial-id": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/facial-id",
+      "stryker:system/craniomaxillofacial/id-solutions",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/facial-id-mandible-reconstruction": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/facial-id-mandible-reconstruction",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/facial-id-orbital": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:product/craniomaxillofacial/facial-id-orbital",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/hydroset": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/craniomaxillofacial/hydroset-injectable-bone-substitute",
+      "stryker:specialty/cranial-bioresorbables",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-customized-implant": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/medpor-customized-implant",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-ent": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/medpor-ent-surgery",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-neurosurgery": [
+      "stryker:specialty/closure",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/medpor-neurosurgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-oculoplastic": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-oral": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/medpor-titan-3d-orbital-floor",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:system/craniomaxillofacial/medpor"
+    ],
+    "/us/en/craniomaxillofacial/products/medpor-plastic-surgery": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/medpor-plastic-surgery",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/multi-guide-ii-mandibular-distractor": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:product/craniomaxillofacial/multi-guide-ii-mandibular-distractor",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/pediatric-mandibular-distractor": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/Paediatric_Mandibular_Distractor",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/peek-customized-implant": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/closure",
+      "stryker:product/craniomaxillofacial/peek-customized-implant",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/right-angled-screwdriver": [
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/right-angled-screwdriver",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/skeletal-anchorage": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/skeletal-anchorage",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/smartlock-hybrid-mmf": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/smartlock-hybrid-mmf",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/sternalplate": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/titanium-palatal-splints": [
+      "stryker:product/craniomaxillofacial/titanium-palatal-splints",
+      "stryker:specialty/trauma",
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/tmj-concepts": [
+      "stryker:specialty/reconstruction",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/craniomaxillofacial/tmj-concepts",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/universal-mandible": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/universal-mandible-fracture",
+      "stryker:capability/cmf-implants",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:system/craniomaxillofacial/universal-2-system"
+    ],
+    "/us/en/craniomaxillofacial/products/universal-neuro-3": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/closure",
+      "stryker:product/craniomaxillofacial/universal-neuro-3",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/universal-orthognathic": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/orthognathic",
+      "stryker:system/craniomaxillofacial/universal-2-system",
+      "stryker:product/craniomaxillofacial/universal-orthognathic",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/universal-trauma": [
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:system/craniomaxillofacial/universal-2-system",
+      "stryker:product/craniomaxillofacial/universal-trauma",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/varispeed": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:product/craniomaxillofacial/varispeed"
+    ],
+    "/us/en/craniomaxillofacial/products/vsp-cranial": [
+      "stryker:specialty/reconstruction",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:product/craniomaxillofacial/vsp-cranial",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/craniomaxillofacial/vsp",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/products/vsp-guides": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:content-type/product",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/products/vsp-orthognathic": [
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/cmf",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/craniomaxillofacial/vsp",
+      "stryker:product/craniomaxillofacial/vsp-orthognathic",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/craniomaxillofacial/products/vsp-reconstruction": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/cmf",
+      "stryker:system/craniomaxillofacial/vsp",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:product/craniomaxillofacial/vsp-reconstruction",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/craniomaxillofacial/products/vsp-trauma": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/closure",
+      "stryker:specialty/cmf",
+      "stryker:system/craniomaxillofacial/vsp",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/craniomaxillofacial/systems/id-solutions": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:system/craniomaxillofacial/medpor",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:specialty/aesthetics",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/craniomaxillofacial/id-solutions"
+    ],
+    "/us/en/craniomaxillofacial/systems/medpor": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:system/craniomaxillofacial/medpor",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:specialty/aesthetics",
+      "stryker:specialty/closure",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/craniomaxillofacial/systems/universal-select": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:system/craniomaxillofacial/universal-select",
+      "stryker:specialty/cmf",
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:system/craniomaxillofacial",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/craniomaxillofacial/systems/virtual-surgical-planning--vsp-": [
+      "stryker:specialty/reconstruction",
+      "stryker:specialty/trauma",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:capability/cmf-implants",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/closure",
+      "stryker:content-type/system",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/craniomaxillofacial/vsp",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/orthognathic"
+    ],
+    "/us/en/emergency-care": [
+      "stryker:business-unit/ems",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/emergency-care/c/ems-world-trade-show": [
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/c/fdic-trade-show": [
+      "stryker:business-unit/ems",
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/emergency-care/c/mini-pro-pediatric-restraints": [
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/c/naemsp-2023-annual-meeting": [
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/celebrate-survivors": [
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-unit/ems",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa"
+    ],
+    "/us/en/emergency-care/disclosure-and-safety-information": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/hospitals-clinics": [
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/news/2022/12-year-old-girl-experiences-cardiac-arrest-stryker-employee-responds": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/3-ways-aed-remote-monitoring-makes-a-difference": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/5-steps-to-convince-decision-makers-to-adopt-an-aed-program": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/8-steps-to-a-successful-aed-safety-program": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/defibrillator-101": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/help-increase-patient-outcomes-both-in-and-out-of-the-hospital": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/how-the-right-equipment-can-help-recruit-and-retain-emts-and-paramedics": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2022/the-role-of-defibrillation-during-sudden-cardiac-arrest": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2022/why-all-police-cars-need-automated-external-defibrillator": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2023/four-reasons-every-school-needs-aed": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2023/understanding-the-basics-of-a-lucas-chest-compression-system": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2023/why-every-college-campus-needs-accessible-aed": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/a-letter-to-emergency-nurses": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/articles"
+    ],
+    "/us/en/emergency-care/news/2024/aed-buying-guide": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/aed-pad-placement-guide": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/articles"
+    ],
+    "/us/en/emergency-care/news/2024/aeds-role-in-athletics": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/emergency-preparedness-darryl-conway-sudden-cardiac-arrest": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/ems-powered-products": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/articles"
+    ],
+    "/us/en/emergency-care/news/2024/life-saving-journey-inspires-community": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2024/saving-young-hearts-aed-placement-strategies-schools": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/stryker-releases-lifepak-35-monitor-defibrillator": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/articles"
+    ],
+    "/us/en/emergency-care/news/2024/sudden-cardiac-arrest-vs-heart-attack-what-you-need-to-know": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2024/survivor-derrick-mosley": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2024/when-to-use-AED-sudden-cardiac-arrest": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/bennetts-heart-15yo-survives-sudden-cardiac-arrest-at-school": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/delhi-township-fire-department-stays-ready-for-any-call": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/enhancing-pediatric-advanced-life-support": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/keep-your-emergency-care-equipment-ready-to-save-lives": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/stryker-lifepak-35-recieves-design-award": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/sudden-cardiac-arrest-awareness-and-preparation": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2025/vernon-township-fd-empowering-first-responders-for-every-call": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news",
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/news/2025/westland-fire-department-powered-solutions": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/why-powered-fleet-is-key-ems-fire-departments": [
+      "stryker:business-unit/ems/news/articles",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2025/xpedition-powered-stair-chair-wins-two-prestigious-idea-awards": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/2026/lifepak35-15-lead-ecg-integration": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news",
+      "stryker:business-unit/ems",
+      "stryker:business-unit/ems/news/case-studies"
+    ],
+    "/us/en/emergency-care/news/2026/mutual-aid-pro-care-partnership": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/2026/streamlining-hospital-workflows-with-data-and-devices": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-anchorage-area-wide-ems": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-community-ambulance-las-vegas": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-liverpool-pa": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-memphis-fire-department": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-provo-fire-and-rescue": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/ems-stories-rescue-on-mount-marmolada": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-andy-hannan": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-bennett-hart": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-bill-krueger": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-bob-whetton": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-bob-zollner": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-denis-legault": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-derrick-mosley": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news"
+    ],
+    "/us/en/emergency-care/news/video/survivor-esley-thorton": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-finn-whittacre": [
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/video/survivor-garry-vandenberg": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-jim-valenti": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news",
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/news/video/survivor-jim-valenti/survivor-scott-vanacore": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news",
+      "stryker:business-unit/ems"
+    ],
+    "/us/en/emergency-care/news/video/survivor-john-jimenez": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos",
+      "stryker:business-unit/ems/news"
+    ],
+    "/us/en/emergency-care/news/video/survivor-jordan-schoen": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-mark-dundore": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-matt-cass": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-rick-ahrens": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/news/video/survivor-roger-hildwein": [
+      "stryker:business-unit/ems/news/survivor-stories",
+      "stryker:content-type/news",
+      "stryker:business-unit/ems/news/videos"
+    ],
+    "/us/en/emergency-care/products/code-stat": [
+      "stryker:content-type/product",
+      "stryker:specialty/data-solutions",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-data-solutions",
+      "stryker:specialty/Data-review-software-and-service",
+      "stryker:capability/covid-19-products",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ems/code-stat"
+    ],
+    "/us/en/emergency-care/products/data-professional-services": [
+      "stryker:content-type/product",
+      "stryker:business-unit/ems",
+      "stryker:product/ems/data-professional-services",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-data-solutions",
+      "product-advisories:",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/evacuation-chair": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/public-access",
+      "stryker:product/ems/evacuation-chair",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/Evacuation-Chairs",
+      "stryker:custom/ems/product-type/evacuation-equipment"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-360p": [
+      "stryker:capability/public-access",
+      "stryker:content-type/product",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:business-unit/ems",
+      "stryker:specialty/AEDs",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ems/heartsine-samaritan-pad-360p"
+    ],
+    "/us/en/emergency-care/products/heartsine-samaritan-pad-450p": [
+      "stryker:capability/public-access",
+      "stryker:content-type/product",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:business-unit/ems",
+      "stryker:specialty/AEDs",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ems/heartsine-samaritan-pad-450p"
+    ],
+    "/us/en/emergency-care/products/lifelink-central": [
+      "stryker:content-type/product",
+      "stryker:business-unit/ems",
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare",
+      "stryker:capability/emergency-data-solutions",
+      "stryker:product/ems/lifelink-central"
+    ],
+    "/us/en/emergency-care/products/lifenet-care": [
+      "stryker:content-type/product",
+      "stryker:specialty/data-solutions",
+      "stryker:business-unit/ems",
+      "stryker:capability/emergency-data-solutions",
+      "stryker:product/ems/lifenet-care",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Data-and-asset-management",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/lifenet-system": [
+      "stryker:content-type/product",
+      "stryker:capability/advanced-digital-healthcare",
+      "stryker:specialty/data-solutions",
+      "stryker:product/ems/lifenet-system",
+      "stryker:business-unit/ems",
+      "stryker:capability/emergency-data-solutions",
+      "stryker:capability/covid-19-products",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Data-and-asset-management",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/lifepak-1000-defibrillator": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:content-type/product",
+      "stryker:business-unit/ems",
+      "stryker:specialty/AEDs",
+      "stryker:capability/public-access",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ems/lifepak-1000"
+    ],
+    "/us/en/emergency-care/products/lifepak-15": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:content-type/product",
+      "stryker:product/ems/lifepak-15",
+      "stryker:specialty/Monitor-Defibrillators",
+      "stryker:business-unit/ems",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/lifepak-35": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:product/ems/lifepak-35",
+      "stryker:content-type/product",
+      "stryker:specialty/Monitor-Defibrillators",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/lifepak-cr2": [
+      "stryker:product/ems/lifepak-cr2",
+      "stryker:content-type/product",
+      "stryker:business-unit/ems",
+      "stryker:specialty/AEDs",
+      "stryker:specialty/increased-census",
+      "stryker:capability/public-access",
+      "stryker:capability/emergency-response-and-resuscitation"
+    ],
+    "/us/en/emergency-care/products/lithium-ion-battery": [
+      "stryker:content-type/product",
+      "stryker:product/ems/lithium-ion",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-patient-transport",
+      "stryker:custom/ems/product-type/accessories",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:specialty/hybrid-system",
+      "stryker:specialty/powered-system"
+    ],
+    "/us/en/emergency-care/products/lucas-3": [
+      "stryker:content-type/product",
+      "stryker:specialty/caregiver-safety",
+      "stryker:business-unit/ems",
+      "stryker:capability/covid-19-products",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/CPR-Devices",
+      "stryker:product/ems/lucas-3",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/mcgrath-mac-ems": [
+      "stryker:content-type/product",
+      "stryker:product/ems/mcgrath",
+      "stryker:specialty/Airway-Management",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/mx-pro-bariatric-transport": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:custom/ems/product-type/cots",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/ems",
+      "stryker:product/ems/mx-pro-bariatric-transport",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/performance-load": [
+      "stryker:specialty/manual-system",
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:specialty/hybrid-system",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/ems/performance-load",
+      "stryker:services/procare/ems",
+      "stryker:custom/ems/product-type/fasteners",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/performance-pro-xt": [
+      "stryker:specialty/manual-system",
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:custom/ems/product-type/cots",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/ems/performance-pro-xt",
+      "stryker:services/procare/ems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/power-load": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/covid-19-products",
+      "stryker:specialty/powered-system",
+      "stryker:services/procare/ems",
+      "stryker:custom/ems/product-type/fasteners",
+      "stryker:product/ems/power-load",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/caregiver-safety"
+    ],
+    "/us/en/emergency-care/products/power-pro-2": [
+      "stryker:product/ems",
+      "stryker:content-type/product",
+      "stryker:specialty/caregiver-safety",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:specialty/hybrid-system",
+      "stryker:business-unit/ems",
+      "stryker:custom/ems/product-type/cots",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/ems/power-pro-2",
+      "stryker:specialty/powered-system",
+      "stryker:services/procare/ems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/stair-pro": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/ems/stair-pro",
+      "stryker:services/procare/ems",
+      "stryker:custom/ems/product-type/stair-chairs",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/xpedition-powered-stair-chair": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:product/ems/xpedition",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/ems",
+      "stryker:specialty/powered-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/xpr-restraints": [
+      "stryker:product/ems",
+      "stryker:content-type/product",
+      "stryker:specialty/hybrid-system",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare",
+      "stryker:capability/emergency-patient-transport",
+      "stryker:specialty/powered-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/products/xps-siderails": [
+      "stryker:content-type/product",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:business-unit/ems",
+      "stryker:product/ems/xps-siderails",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/powered-system",
+      "stryker:custom/ems/product-type/accessories",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/emergency-care/services/procare": [
+      "stryker:business-unit/ems",
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/endoscopy/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa",
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/news": [
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/news/advancing-surgical-education-highlights-from-ispies-at-ircad": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/news"
+    ],
+    "/us/en/endoscopy/news/introducing-ip-bravoe-a-new-standard-in-or-integration": [
+      "stryker:content-type/news",
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/news/stryker-advances-urology-portfolio-launch-flexible-ureteroscope": [
+      "stryker:content-type/news",
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/news/stryker-isuite-industry-supplement-future-connected-or-efficiency": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/news"
+    ],
+    "/us/en/endoscopy/products/10-0-mm-laparoscopic-instruments": [
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/10-0mm-laparoscopic-instruments",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1488-hd-3-chip-camera-system": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/1488-hd-3-chip-camera-system",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:services/procare/endoscopy/surgical-visualization/camera-systems",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1588-aim-camera-system": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:services/procare/endoscopy/surgical-visualization/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:product/endoscopy/1588-aim-camera-system"
+    ],
+    "/us/en/endoscopy/products/1588-aim-laproscopes": [
+      "stryker:product/endoscopy/1588-aim-laproscopes",
+      "stryker:content-type/product",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:specialty/scopes",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1588-sterilization-trays": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/1588-sterilization-trays",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1688-camera-head-with-4k-image-resolution0": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/camera-systems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1788-platform": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/1788-platform",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/integration-and-connectivity"
+    ],
+    "/us/en/endoscopy/products/1788-platform/general-surgery": [
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/endoscopy/products/1788-platform/thoracic": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/1788-platform/urology": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-display": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/endoscopy/surgical-visualization/displays",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/displays",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content",
+      "stryker:product/endoscopy/4k-32-surgical-displays",
+      "stryker:specialty/monitor-and-accessory-support-arms"
+    ],
+    "/us/en/endoscopy/products/4k-32--surgical-monitor-": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/displays",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/monitor-and-accessory-support-arms"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-laparoscopic-instruments": [
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/5-0mm-laparoscopic-instruments",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/5-0-mm-sliding-lock-graspers": [
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/5-0mm-sliding-lock-graspers",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/ahto-pump": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/endoscopy/surgical-visualization/laparoscopy",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/ahto-pump",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/aim-4k-autoclavable-camera": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/arthroscopic-instrument-trays": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/breisky-adapt-and-deaver-adapt": [
+      "stryker:specialty/Illuminated_Suction",
+      "stryker:capability/plastic-surgery",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:product/endoscopy/breisky-and-deaver",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content",
+      "medical_and_surgicalequipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/Illuminated_Retractors",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Illuminated_Advanced_Energy",
+      "stryker:specialty/plastic-surgery",
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/products/connected-or-hub0": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/emr-connectivity",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/OR-integration"
+    ],
+    "/us/en/endoscopy/products/cystoscope-hardware": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cystoscopy",
+      "stryker:product/endoscopy/cystoscope-hardware",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/cystoscope-instrumentation": [
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/cystoscope-instrumentation",
+      "stryker:product/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/cystoscopy",
+      "stryker:specialty/scopes",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/dermacell": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/eikon-lt": [
+      "stryker:content-type/product",
+      "stryker:specialty/breast",
+      "stryker:specialty/Illuminated_Retractors",
+      "stryker:specialty/Illuminated_Advanced_Energy",
+      "stryker:specialty/plastic-surgery",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/eikon-lt-adapt-se": [
+      "stryker:capability/plastic-surgery",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/Illuminated_Retractors",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:specialty/Illuminated_Advanced_Energy",
+      "stryker:product",
+      "stryker:specialty/plastic-surgery",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/eikon-lt-adapt-se"
+    ],
+    "/us/en/endoscopy/products/flexible-instruments": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/flexible-instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hysteroscopy",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/gynecologic-laparscopy-instruments": [
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/hysteroscopy",
+      "stryker:product/endoscopy/gynecologic-laparscopy-instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/hardware": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/hardware",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/ideal-eyes-hd-autocalvable-eyepiece-arthroscopes": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/scopes",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/ideal-eyes-hd-autoclavable-eyepiece-arthroscopes",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/insufflator-accessories": [
+      "stryker:capability/surgical-visualization",
+      "stryker:product/endoscopy/insufflator-accessories",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/iris-u-kits": [
+      "stryker:capability/surgical-visualization",
+      "stryker:product/endoscopy/iris",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/l-11-light-source-and-auto-light-technology0": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy"
+    ],
+    "/us/en/endoscopy/products/l10-aim-light-source": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/l10-aim-light-source",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:services/procare/endoscopy/surgical-visualization/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/laparoscope-accessories": [
+      "stryker:capability/surgical-visualization",
+      "stryker:product/endoscopy/laparoscope-accessories",
+      "stryker:content-type/product",
+      "stryker:specialty/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-accessories": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/laparoscopic-instrument-accessories",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/endoscopy/surgical-visualization/laparoscopy",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/laparoscopic-instrument-trays": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/instrument-trays",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/laser-cystoscope-system": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/laser-cytoscope-system",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/microcart": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/media-management",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/microcart",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/molli": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/molli",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/endoscopy/products/or-control--device-voice-": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/media-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:product/endoscopy/or-control-device-voice",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/OR-integration"
+    ],
+    "/us/en/endoscopy/products/photonguide-and-photonguide-adapt": [
+      "stryker:content-type/product",
+      "stryker:capability/plastic-surgery",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:specialty/plastic-surgery",
+      "stryker:business-unit/endoscopy",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/pinpoint": [
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-visualization"
+    ],
+    "/us/en/endoscopy/products/pneumoclear": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:specialty/caregiver-safety",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:capability/surgical-suction",
+      "stryker:services/procare/endoscopy/surgical-visualization/laparoscopy",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/pneumoclear",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/pneumosurexl": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/endoscopy/surgical-visualization/laparoscopy",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/pneumosurexl",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/precision-ac": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/precision-ac",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:services/procare/endoscopy/surgical-visualization/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autocalvable-c-mount-arthorscopes": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/precision-ideal-eyes-hd-autoclavable-c-mount-arthorscopes",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/scopes",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/precision-ideal-eyes-hd-autoclavable-laparoscopes": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/precision-ideal-eyes-hd-autoclavable-laparoscopes",
+      "stryker:specialty/scopes",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/precision-light-source": [
+      "stryker:capability/surgical-visualization",
+      "stryker:product/endoscopy/precision-light-source",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:services/procare/endoscopy/surgical-visualization/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/printers": [
+      "stryker:capability/surgical-visualization",
+      "stryker:services/procare/endoscopy/surgical-visualization/media-management",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/printers",
+      "stryker:specialty/media-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/pump-accessories": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/pump-accessories",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/small-joints",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/reposable-electro-surgical-tips": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/reposable-electro-surgical-tips",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/resectoscope": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/resectoscope",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:specialty/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/resectoscope-accessories": [
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/resectoscope-accessories",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/rev360-22-24-fr-resection-products": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/rev-360-22-24-fr-resection-products",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/rev360-ideal-eyes-autocalvable-hysteroscopes": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/hysteroscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/rev360-ideal-eyes-autoclavable-hysteroscopes",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/rev360-kits": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/rev-360-kits",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/hysteroscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/rev360-semi-flexible-instrumentation": [
+      "stryker:capability/surgical-visualization",
+      "stryker:product/endoscopy/rev-360-semi-flexible-instrumentation",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/semi-rigid-autoclavable-uretroscopes": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/endoscopy/surgical-visualization/scopes",
+      "stryker:product/endoscopy/semi-rigid-autoclavable-uretroscopes",
+      "stryker:specialty/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/cystoscopy",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/serfas": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/serfas",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/shavers": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/endoscopy/surgical-visualization/arthroscopy",
+      "stryker:product/endoscopy/shavers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/soloassist-ii-robotic-scope-holder": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/hysteroscopy",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cystoscopy"
+    ],
+    "/us/en/endoscopy/products/spy-elite": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/spy-phi": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/sterilization-trays": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/sterilization-trays",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/strykeflow2-pump": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/strykeflow2-pump",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation": [
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/suction-irrigation",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/suction-irrigation-tips": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/endoscopy/suction-irrigation-tips",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/synk-wireless-platform": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:services/procare/endoscopy/surgical-visualization/displays",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:specialty/displays",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:product/endoscopy/sync-wireless-platform",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/thermaclear": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/endoscopy",
+      "stryker:product/endoscopy/thermaclear",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cystoscopy",
+      "stryker:specialty/uro-gyn-fluid-management"
+    ],
+    "/us/en/endoscopy/products/thermedx-fluidsmart-fluid-management-system": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:specialty/fluid-waste-management",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/hysteroscopy",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cystoscopy"
+    ],
+    "/us/en/endoscopy/products/ureteroscope-accessories": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/uretoscope-accessories",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/cystoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/urology-gynecology-sterilization-trays": [
+      "stryker:content-type/product",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/hysteroscopy",
+      "stryker:product/endoscopy/urology-gynecology-sterilization-trays",
+      "stryker:product/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/video-carts": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/video-carts",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/products/vip-package": [
+      "stryker:content-type/product",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:specialty/emr-connectivity",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/or-design-and-construction-resources",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/endoscopy/products/visual-urethrotome": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:product/endoscopy/visual-uretotome",
+      "stryker:business-unit/endoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/endoscopy/services/procare": [
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/system",
+      "stryker:services/procare"
+    ],
+    "/us/en/endoscopy/systems/1688-aim-platform": [
+      "stryker:specialty/media-management",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:content-type/system",
+      "stryker:specialty/camera-systems",
+      "stryker:specialty/hysteroscopy",
+      "stryker:specialty/or",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:system/endoscopy/1688-aim-platform",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/laparoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/displays",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/scopes",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/cystoscopy"
+    ],
+    "/us/en/endoscopy/systems/breast-surgery": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/surgical-visualization",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/system",
+      "stryker:business-unit/endoscopy",
+      "stryker:specialty/camera-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:system/endoscopy"
+    ],
+    "/us/en/ent": [
+      "stryker:business-unit/ent",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/ent/ent": [
+      "stryker:business-unit/ent",
+      "stryker:content-type/business-unit-contact"
+    ],
+    "/us/en/ent/news/Cigna-Coverage-Policy-Update-ClariFix": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/ent/news/new-real-world-health-economic-study-demonstrates-substantial-healthcare-savings": [
+      "stryker:content-type/news/ent/clinical-information",
+      "stryker:content-type/news"
+    ],
+    "/us/en/ent/news/stryker-announces-creation-new-nasal-valve-collapse-1CD-10-CM-codes": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/ent/news/stryker-announces-creation-of-new-category-1-cpt-codes-for-repor": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/ent/clinical-information"
+    ],
+    "/us/en/ent/news/united-healthcare-medicare-advantage-policy-update-for-clarifix-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/ent/products/audion": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:product/ent/audion",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/bioresorbable-dressing": [
+      "stryker:capability/ent",
+      "stryker:product/ent/bioresorbable-dressing",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/clarifix-cryotherapy-device": [
+      "stryker:capability/ent",
+      "stryker:product/ent/clarifix",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/cyclone-sinonasal-suction-and-irrigation-system": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ent/cyclone"
+    ],
+    "/us/en/ent/products/hydro-irrigation-system": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ent/hydro-irrigation-system"
+    ],
+    "/us/en/ent/products/instruments": [
+      "stryker:capability/ent",
+      "stryker:product/ent/instruments",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/latera-absorbable-nasal-implant-system": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:product/ent/latera",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/pello-microdebrider": [
+      "stryker:content-type/product",
+      "stryker:product/ent/pello-microdebrider",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/ent"
+    ],
+    "/us/en/ent/products/reinforced-anesthesia-needle": [
+      "stryker:capability/ent",
+      "stryker:product/ent/reinforced-anesthesia-needle",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/seekers": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/ent"
+    ],
+    "/us/en/ent/products/stryker-ent-navigation-system": [
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/navigation",
+      "stryker:capability/ent",
+      "stryker:specialty/ent-navigation",
+      "stryker:product/ent/stryker-ent-navigation-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/suction": [
+      "stryker:capability/ent",
+      "stryker:product/ent/cliq-suction-pump",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/ent/products/xpress": [
+      "stryker:capability/ent",
+      "stryker:content-type/product",
+      "stryker:business-unit/ent",
+      "stryker:content-type/hcp_content",
+      "stryker:product/ent/xpress"
+    ],
+    "/us/en/foot-and-ankle": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/foot-and-ankle/contact": [
+      "stryker:customer-support-centers/USA",
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-function/hq/usa",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:geography/north-america",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/foot-and-ankle/procedures/1st-metatarso-phalangeal--mtp--arthrodesis": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/ankle-distraction": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/ankle-fracture": [
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/brachymetatarsia": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/bunionette--tailor-s-bunion-": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/calcaneal-fracture": [
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/calcaneal-sliding-osteotomy": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/calcaneo-cuboid-arthrodesis": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/charcot-neuroarthropathy": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/closing-wedge-osteotomy": [
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/cuboid-fracture": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/first-tarsometatarsal-joint-arthrodesis--lapidus-": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/hallux-interphalangeal-joint--ipj--arthrodesis": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/hallux-valgus-correction": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/hammertoe-correction--pip-dip-joint-": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/lateral-column-lengthening--evans-osteotomy-": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/lisfranc": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/lisfranc",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/medial-closing-wedge-osteotomy--akin-": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/medial-column-arthrodesis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/midfoot",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/medial-cuneiform-dorsal-opening-wedge--cotton--osteotomy": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/metatarsal-shortening--weil--osteotomy": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/mortons-neuroma": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/mortons-neuroma",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/navicular-cuneiform-arthrodesis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/navicular-fracture": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/navicular-fracture",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/opening-wedge-osteotomy": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/proximal-5th-metatarsal-fracture--jones-fracture-": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/subtalar-arthroeresis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/-subtalar-arthroeresis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/subtalar-joint-arthrodesis--talocalcaneal-arthrodesis-": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/talonavicular-joint-arthrodesis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/talus-fracture": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/talus-fracture",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/tibio-talo-calcaneal--ttc--arthrodesis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/total-ankle-replacement": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/procedures/triple-arthrodesis": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/anchorage": [
+      "stryker:product/foot-and-ankle/anchorage",
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/plating-platforms",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/plating-platforms",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/anchorage-2": [
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:product/foot-and-ankle/anchorage-2",
+      "stryker:procedure/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates"
+    ],
+    "/us/en/foot-and-ankle/products/anchorage-2/anchorage2-video-library": [
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/foot-and-ankle/products/ankle-truss-system": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/artelon": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:capability/sports-medicine",
+      "stryker:capability/foot-and-ankle",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/asnis-iii-cannulated-screw-system": [
+      "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/screw-systems",
+      "stryker:product/foot-and-ankle/asnis-iii-cannulated-screw-system",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/screw-systems",
+      "stryker:procedure/foot-and-ankle/tibiotalar-arthrodesis/screw-systems",
+      "stryker:business-unit/craniomaxillofacial",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/talus-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/screw-systems",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/screw-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems"
+    ],
+    "/us/en/foot-and-ankle/products/asnis-jfx": [
+      "stryker:product/foot-and-ankle/asnis-jfx",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/screw-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/asnis-micro": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/screw-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/screw-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:product/foot-and-ankle/asnis-micro",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/screw-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screw-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)/screw-systems"
+    ],
+    "/us/en/foot-and-ankle/products/augment": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/recombinant-growth-factors",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/biologics",
+      "stryker:capability/biologics",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/biologics",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/biologics",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/biologics",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/biologics",
+      "stryker:specialty/bone-grafting",
+      "stryker:product/foot-and-ankle/augment",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-recombinant-growth-factors"
+    ],
+    "/us/en/foot-and-ankle/products/AxSOS-3": [
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:procedure/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/AxSOS-3-Ti-Ankle-Fusion": [
+      "stryker:product/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/tibiotalar-arthrodesis/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/biofoam": [
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/wedges",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+      "stryker:product/foot-and-ankle/biofoam",
+      "stryker:custom/foot-and-ankle/product-type/titanium-implants",
+      "stryker:capability/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/wedges",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)"
+    ],
+    "/us/en/foot-and-ankle/products/charlotte-lisfranc": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/charlotte-screw-systems": [
+      "stryker:product/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/citrefix": [
+      "stryker:procedure/foot-and-ankle/ankle-stabilization/soft-tissue",
+      "stryker:content-type/product",
+      "stryker:specialty/hindfoot",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:content-type/hcp_content",
+      "stryker:product/foot-and-ankle/citrefix",
+      "stryker:procedure/foot-and-ankle/tendon-repair/soft-tissue",
+      "stryker:procedure/foot-and-ankle/tendon-transfer/soft-tissue",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/foot-and-ankle/products/citrelock": [
+      "stryker:procedure/foot-and-ankle/ankle-stabilization/soft-tissue",
+      "stryker:content-type/product",
+      "stryker:product/foot-and-ankle/citrelock",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/tendon-repair/soft-tissue",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/tendon-transfer/soft-tissue"
+    ],
+    "/us/en/foot-and-ankle/products/claw-ii": [
+      "stryker:product/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/plates",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/coretrak": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/darco": [
+      "stryker:product/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/screw-systems",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis"
+    ],
+    "/us/en/foot-and-ankle/products/dart-fire": [
+      "stryker:product/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:custom/foot-and-ankle/product-type/hammertoe-solutions",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/screw-systems",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/screws",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems"
+    ],
+    "/us/en/foot-and-ankle/products/dartfire-edge": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screw-systems",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screws"
+    ],
+    "/us/en/foot-and-ankle/products/easyclip": [
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/staple-solutions",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/staple-solutions",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/staples",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/staple-solutions",
+      "stryker:custom/foot-and-ankle/product-type/staple-solutions",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/staples",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/staple-solutions",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)/staples",
+      "stryker:procedure/foot-and-ankle/talus-fracture/staples",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/staple-solutions",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/staple-solutions",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/staple-solutions",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staple-solutions",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/staples",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/lisfranc/staple-solutions",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/staple-solutions",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/staple-solutions",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staple-solutions",
+      "stryker:product/foot-and-ankle/easyclip",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/staple-solutions",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/staples",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/staples",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/staple-solutions",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/staples",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/staples"
+    ],
+    "/us/en/foot-and-ankle/products/easyfuse": [
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/staples",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/staple-solutions",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/lisfranc/staples",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/staples",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/staples",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/talus-fracture/staples",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staple-solutions",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staples",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/staples",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/staples",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/staples",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/staples",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/staples",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/staples",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/staples",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/staples",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/staples"
+    ],
+    "/us/en/foot-and-ankle/products/easystep": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/staple-solutions",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staple-solutions",
+      "stryker:product/foot-and-ankle/easystep",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/egr": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-joint-replacement",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/foot-and-ankle/egr",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/epf": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-joint-replacement",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/foot-and-ankle/epf",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/epf-xpress": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:product/foot-and-ankle/epf-xpress",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/fixos-2-headless-compression-screws": [
+      "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/screw-systems",
+      "stryker:procedure/foot-and-ankle/tibiotalar-arthrodesis/screw-systems",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/talus-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/screw-systems",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/screw-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:product/foot-and-ankle/fixos-2-headless-compression-screws",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screw-systems",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screws"
+    ],
+    "/us/en/foot-and-ankle/products/fixos-headless-compression-screws": [
+      "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/screw-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/screw-systems",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/screw-systems",
+      "stryker:product/foot-and-ankle/fixos-headless-compression-screws",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/screw-systems",
+      "stryker:custom/trauma-and-extremities/product-type/screws",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)/screw-systems"
+    ],
+    "/us/en/foot-and-ankle/products/fuseforce": [
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/staples",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/lisfranc/staples",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)/staples",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/staples",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/talus-fracture/staples",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/staples",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/staples",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/staples",
+      "stryker:product/foot-and-ankle",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/staples",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/staples",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staples",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/staples",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/staples",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/staples",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/staples",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/staples",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/staples",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/staples"
+    ],
+    "/us/en/foot-and-ankle/products/futura-csi": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/-subtalar-arthroeresis/titanium-implants",
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/gravity-plantar-plate": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/tendon-repair/plates",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/syndesmosis-injury/plates",
+      "stryker:specialty/hindfoot",
+      "stryker:specialty/ankle-foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/gravitysynchfix": [
+      "stryker:product/foot-and-ankle",
+      "stryker:product/foot-and-ankle/gravity-synchfix",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plates",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/midfoot"
+    ],
+    "/us/en/foot-and-ankle/products/Hoffmann-II-MRI": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia",
+      "stryker:procedure/foot-and-ankle/navicular-fracture",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction",
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/hoffmann-lrf": [
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation",
+      "stryker:system/trauma-and-extremities/external-fixation",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:product/foot-and-ankle/hoffmann-lrf",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/external-fixation",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/external-fixation-systems",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:procedure/foot-and-ankle/tibiotalar-arthrodesis/external-fixation"
+    ],
+    "/us/en/foot-and-ankle/products/hoffmann-lrf-bone-transport": [
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:system/trauma-and-extremities/external-fixation",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/external-fixation-systems"
+    ],
+    "/us/en/foot-and-ankle/products/hoffmann-lrf-circular-external-fixation": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:system/trauma-and-extremities/external-fixation"
+    ],
+    "/us/en/foot-and-ankle/products/hoffmann-lrf-gradual-correction": [
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/system",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/external-fixation-systems",
+      "stryker:specialty/forefoot",
+      "stryker:specialty/hindfoot",
+      "stryker:specialty/midfoot"
+    ],
+    "/us/en/foot-and-ankle/products/hoffmann-lrf-hexapod": [
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation",
+      "stryker:system/trauma-and-extremities/external-fixation",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/external-fixation-systems",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:product/foot-and-ankle/hoffmann-lrf-hexapod",
+      "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/external-fixation",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia"
+    ],
+    "/us/en/foot-and-ankle/products/Hoffmann-Micro-Lengthener": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:system/trauma-and-extremities/external-fixation",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/navicular-fracture",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation"
+    ],
+    "/us/en/foot-and-ankle/products/inbone": [
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement/total-ankle-replacements",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/Incompass": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/infinity": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle/infinity",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/total-ankle-replacement",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement/total-ankle-replacements"
+    ],
+    "/us/en/foot-and-ankle/products/invision": [
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement/total-ankle-replacements",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/total-ankle-replacement",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/lmh-lesser-metatarsal-head": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/toe-arthroplasty/foot-arthroplasty",
+      "stryker:specialty/forefoot"
+    ],
+    "/us/en/foot-and-ankle/products/lpt-great-toe-implant": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/toe-arthroplasty/foot-arthroplasty"
+    ],
+    "/us/en/foot-and-ankle/products/maxtorque": [
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/screw-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/screw-systems",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/screws",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/screw-systems",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)/screw-systems"
+    ],
+    "/us/en/foot-and-ankle/products/mdi-metatarsal-decompression-implant": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/mini": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:product/foot-and-ankle/mini",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/NeuroMend": [
+      "stryker:product/foot-and-ankle",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/biologics"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system": [
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/talus-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:product/foot-and-ankle/ortholoc-2-ankle-fracture"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-2-crosscheck": [
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/plating-platforms",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/plating-platforms",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-2-jones-fracture-system": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:product/foot-and-ankle/ortholoc-2-jones-fracture",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/forefoot",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/screw-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-2-lapifuse": [
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-2-small-bones": [
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/plating-platforms",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/plating",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/plating",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-3di-ankle-fracture": [
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/plating-platforms",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plates",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plates",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/plating-platforms",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/plates"
+    ],
+    "/us/en/foot-and-ankle/products/ortholoc-3di-foot-recon": [
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/plating-platforms",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plates",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/plating",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/plates",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/plating-platforms",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/osteoset": [
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:content-type/product",
+      "stryker:specialty/hindfoot",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:specialty/midfoot",
+      "stryker:specialty/forefoot",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/foot-and-ankle/products/osteotomy-truss-system": [
+      "stryker:product/foot-and-ankle",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/wedges",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/wedges",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/hindfoot",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/wedges",
+      "stryker:specialty/forefoot",
+      "stryker:specialty/midfoot",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/phalinx": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/pro-toe-c2": [
+      "stryker:product/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/prophecy": [
+      "stryker:product/foot-and-ankle",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement/total-ankle-replacements",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/prostep": [
+      "stryker:content-type/product",
+      "stryker:product/foot-and-ankle/prostep",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates"
+    ],
+    "/us/en/foot-and-ankle/products/pulse": [
+      "stryker:product/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/hammertoe",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/hammertoe",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/staple-solutions",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screws",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/screws",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:custom/foot-and-ankle/product-type/hammertoe-solutions",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plates",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/screws",
+      "stryker:custom/foot-and-ankle/product-type/asc-solutions",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/screws",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/staples",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/staples",
+      "stryker:specialty/forefoot"
+    ],
+    "/us/en/foot-and-ankle/products/salvation-bolts-beams": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/nailing-systems"
+    ],
+    "/us/en/foot-and-ankle/products/salvation-ex-fix": [
+      "stryker:product/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/external-fixation-systems"
+    ],
+    "/us/en/foot-and-ankle/products/salvation-midfoot-nail": [
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/nailing-systems"
+    ],
+    "/us/en/foot-and-ankle/products/salvation-plating": [
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:audience/medical_professionals",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/smart-toe-ii": [
+      "stryker:content-type/product",
+      "stryker:product/foot-and-ankle/smart-toe-ii",
+      "stryker:custom/foot-and-ankle/product-type/hammertoe-solutions",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/hammertoe-solutions",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/sonic-pin": [
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/soft-tissue",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/foot-and-ankle/sonic-pin",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/sonicanchor": [
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:specialty/ankle-joint-replacement",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:product/foot-and-ankle/sonicanchor"
+    ],
+    "/us/en/foot-and-ankle/products/swanson": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/synchfix-evt": [
+      "stryker:specialty/soft-tissue",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/syndesmosis-injury/soft-tissue",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/T2-Ankle": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/foot-and-ankle",
+      "stryker:system/foot-and-ankle/t2",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+      "stryker:business-unit/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/t2-icf": [
+      "stryker:product/foot-and-ankle",
+      "stryker:system/foot-and-ankle/t2",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/nailing-systems",
+      "stryker:specialty/hindfoot",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/nailing-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/nailing-systems",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/nailing-systems",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/nailing-systems",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/nailing-systems",
+      "stryker:custom/foot-and-ankle/product-type/nailing-systems",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/nailing-systems",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/nailing-systems",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/nailing-systems",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/nailing-systems",
+      "stryker:specialty/midfoot",
+      "stryker:procedure/foot-and-ankle/lisfranc/nailing",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/nailing-system",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/nailing-systems"
+    ],
+    "/us/en/foot-and-ankle/products/tenfuse": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/toetac-xpress": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:custom/foot-and-ankle/product-type/hammertoe-solutions",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/hammertoe-solutions",
+      "stryker:product/foot-and-ankle/toetac",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/truaim": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/foot-and-ankle/products/valor": [
+      "stryker:product/foot-and-ankle",
+      "stryker:content-type/product",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/nailing-systems"
+    ],
+    "/us/en/foot-and-ankle/products/variax-2": [
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/plating-platforms",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talus-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:product/foot-and-ankle/variax",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/plating-platforms",
+      "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/plating-platforms",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/variax-2-foot": [
+      "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+      "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/talus-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/plating-platforms",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plates",
+      "stryker:procedure/foot-and-ankle/talus-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/screw-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screws",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/plating-platforms",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staple-solutions",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/plating-platforms",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture/screws",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems",
+      "stryker:procedure/foot-and-ankle/navicular-fracture/plating-platforms"
+    ],
+    "/us/en/foot-and-ankle/products/variax-2-mis-calcaneus": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture/plating-platforms",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/foot-and-ankle/products/variax-2-small-fragment": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plates",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle"
+    ],
+    "/us/en/foot-and-ankle/products/viaflow": [
+      "stryker:specialty/hindfoot",
+      "stryker:capability/foot-and-ankle",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/amniotics/flowables",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/soft-tissue",
+      "stryker:content-type/product",
+      "stryker:specialty/amniotics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-flowables",
+      "stryker:specialty/midfoot",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/global-events/acute-care/training/ed-prevention-is-in-reducing-falls-and-saving-skin-pro": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/acute-care/training/patient-temperature-management": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/association-meetings/innovations---updates-in-cardiac-resuscitation-symposium": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/association-meetings/nti-2019-in-booth-education": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/association-meetings/refractory-cardiac-arrest-symposium": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/training/high-performance-cpr--the-insider-s-insights": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/training/the-code-whisperer--nurse-driven-resuscitation0": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/emergency-care/training/virtual-cardiac-arrest-symposium": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/sage/training/safe-patient-handling--reducing-risk-through-evidence-based-inte0": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/aaos--american-academy-of-orthopaedic-surgeons-": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/aaos-aossm-aana-sports-medicine-course": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/aorn--association-of-perioperative-registered-nurses----arthrosc": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/aossm--american-orthopaedic-society-for-sports-medicine-": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/isha--international-society-for-hip-arthroscopy-": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/orthopedics-today": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/spring-aana--arthroscopy-association-of-north-america-": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/association-meetings/winter-sks--shoulder--knee---sports-meeting": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/training/chicago-sports-medicine-symposium--fore-": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/training/international-fellows-course-ismf": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/sports-medicine/training/st--louis-hip-skills-course--hip-arthroscopy-and-preservation-pr": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i1": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r--safety-series--protecting-patients-from-retained-surgical-i2": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-2": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-3": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-4": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-5": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/o-r-safety-series--journey-to-zero-smoke-6": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical-technologies/training/protecting-the-air-your-breathe": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:event-type/medical_education"
+    ],
+    "/us/en/global-events/surgical-technologies/training/smoke-evacuation-dangers-of-smoke-plume": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content",
+      "stryker:event-type/medical_education"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-patients-from-retained-surgical-i0": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-april-pm-2": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/global-events/surgical/training/o-r--safety-series--protecting-the-air-you-breathe-march-pm": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/index": [
+      "stryker:Stryker-SEO-Tags/Medical-technology-company",
+      "stryker:Stryker-SEO-Tags/Medical-device-company"
+    ],
+    "/us/en/interventional-spine": [
+      "stryker:business-unit/ivs",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers/blogs/downside-of-repeat-epidural-steroid-injection-treatments-for-lum": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers/blogs/identifying-and-educating-mild-patients": [
+      "stryker:content-type/news",
+      "stryker:custom/ivs"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers/blogs/insights-into-imaging-review": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers/blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudicatio": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/interventional-spine/advanced-practice-providers/mild-procedure": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/campaign/mild-procedure": [
+      "stryker:product/ivs/mild-procedure",
+      "stryker:content-type/product",
+      "stryker:business-unit/ivs",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/campaign/vertebral-compression-fractures": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-unit/ivs",
+      "stryker:business-function/hq/usa"
+    ],
+    "/us/en/interventional-spine/news/2026/more-than-growing-pains--eli-s-journey-to-osteoid-osteoma-relief": [
+      "stryker:content-type/news",
+      "stryker:product/ivs/optablate"
+    ],
+    "/us/en/interventional-spine/products/bone-cements-and-mixer-and-delivery-systems": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/ivs",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/ivs",
+      "stryker:product/ivs/autoplex-mixer-delivery-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/dekompressor-disc-removal-system": [
+      "stryker:product/ivs/dekompressor",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/disc",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:specialty/advanced-pain-therapies",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:services/procare/ivs",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/interventional-spine/products/ivas-elite-balloon-system": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/ivs",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/ivs",
+      "stryker:product/ivs/ivas-balloon-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/mild-procedure": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/advanced-pain-therapies",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:product/ivs/mild-procedure",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/multigen2-rf-generator-and-venom-cannula-and-electrode-system": [
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:specialty/advanced-pain-therapies",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:services/procare/ivs",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/ivs/radiofrequency-generator",
+      "stryker:product/ivs/multigen2-rf-generator"
+    ],
+    "/us/en/interventional-spine/products/omnicurve-curved-balloon-system": [
+      "stryker:content-type/product",
+      "stryker:product/ivs/omnicurve",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/optablate-bone-tumor-ablation-system": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-tumor-ablation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/optablate-bvn": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:specialty/advanced-pain-therapies",
+      "stryker:product/ivs/optablate",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/spinejack-system": [
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:business-unit/ivs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/products/vcf-accessories": [
+      "stryker:product/ivs/curette",
+      "stryker:content-type/product",
+      "stryker:capability/image-guided-therapies",
+      "stryker:capability/spine-ortho",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/ivs",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/ivs",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/risk-and-safety-information": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/interventional-spine/services/procare-services-image-guided-therapies": [
+      "stryker:content-type/system",
+      "stryker:business-unit/ivs",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement": [
+      "stryker:business-unit/joint-replacement",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/joint-replacement/c/fluoro-free": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/joint-replacement",
+      "stryker:product/joint-replacement/mako-system"
+    ],
+    "/us/en/joint-replacement/c/we-move-lives": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-unit/joint-replacement",
+      "stryker:business-function/hq",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/joint-replacement/ifu": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/procedures/dart-direct-anterior-reconstructive-technology": [
+      "stryker:custom/joint-replacements/procedure",
+      "stryker:business-unit/joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/procedures/direct-superior-approach": [
+      "stryker:business-unit/joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:procedure/joint-replacements/direct-superior-approach",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/accolade-ii": [
+      "stryker:custom/joint-replacements/product-type/cementless",
+      "stryker:system/joint-replacements",
+      "stryker:system/joint-replacements/mako-total-hip",
+      "stryker:business-unit/joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:product/joint-replacement/accolade-ii",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:procedure/joint-replacements/direct-superior-approach"
+    ],
+    "/us/en/joint-replacement/products/anato": [
+      "stryker:content-type/product",
+      "stryker:custom/joint-replacements/product-type/cementless",
+      "stryker:system/joint-replacements/mako-total-hip",
+      "stryker:business-unit/joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:product/joint-replacement/anato",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/dual-mobility": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:product/joint-replacement/dual-mobility",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/exeter": [
+      "stryker:content-type/product",
+      "stryker:custom/joint-replacements/product-type/cementless",
+      "stryker:custom/joint-replacements/product-type/cemented",
+      "stryker:system/joint-replacements",
+      "stryker:business-unit/joint-replacement",
+      "stryker:product/joint-replacement/exeter",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/gmrs": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:specialty/limb-salvage",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:product/joint-replacement/gmrs",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/Insignia": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:product/joint-replacement/insignia",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/modular-dual-mobility": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:product/joint-replacement/modular-dual-mobility",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/novae-dual-mobility": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/joint-replacement/novae-dual-mobility",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:business-unit/joint-replacement",
+      "stryker:content-type/product",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/restoration-modular": [
+      "stryker:product/joint-replacement/restoration-modular",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/product",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/restoris-mck": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:product/joint-replacement/mako-mck-partial-kneee-implant-system",
+      "stryker:specialty/mako-robotic-arm-assisted-surgery",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/secur-fit-advanced": [
+      "stryker:content-type/product",
+      "stryker:custom/joint-replacements/product-type/cementless",
+      "stryker:system/joint-replacements/mako-total-hip",
+      "stryker:business-unit/joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:product/joint-replacement/secur-fit-advanced",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/Triathlon_Revision": [
+      "stryker:product/joint-replacement/triathlon-revision",
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:custom/joint-replacements/procedure/revision",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/triathlon-cementless": [
+      "stryker:content-type/product",
+      "stryker:custom/joint-replacements/product-type/cementless",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/triathlon-gold": [
+      "stryker:content-type/product",
+      "stryker:product/joint-replacement/triathlon-gold",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:business-unit/joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/triathlon-hinge": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:product/joint-replacement/triathlon-hinge",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/triathlon-total-knee-system": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:product/joint-replacement/triathlon-total-knee-system",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:specialty/mako-robotic-arm-assisted-surgery",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/joint-replacements/product-type/implants",
+      "stryker:custom/joint-replacements/mako-type",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/triathlon-ts": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/joint-replacement/triathlon-ts",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/trident": [
+      "stryker:content-type/product",
+      "stryker:system/joint-replacements/mako-total-hip",
+      "stryker:business-unit/joint-replacement",
+      "stryker:custom/joint-replacements/procedure/primary",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/joint-replacement/trident",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/products/trident-ii": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content",
+      "stryker:product/joint-replacement/trident-ii"
+    ],
+    "/us/en/joint-replacement/products/x3": [
+      "stryker:content-type/product",
+      "stryker:business-unit/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:product/joint-replacement/x3",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/_bpci_-a-team-_-last-but-not-least-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/bpci-advanced-calendar--updated-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-four-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/meet-the-_bpci_-a-team--take-three-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/meet-the--bpci--a-team---take-two-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/update-from-cms--what-to-expect-may--september-2018": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/will-your-practice-qualify-for-mips-exemption-under-bpci-advance": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/sps-blog/2018/you-have-applied-with-a-convener--now-what-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview": [
+      "stryker:system/joint-replacements/mako-robotic-arm-assisted-surgery",
+      "stryker:specialty/mako-robotic-arm-assisted-surgery",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/system",
+      "stryker:business-unit/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/systems/mako-partial-knee": [
+      "stryker:custom/joint-replacements/product-type/application",
+      "stryker:content-type/specialty",
+      "stryker:system/joint-replacements/mako-technology-overview",
+      "stryker:content-type/product",
+      "stryker:content-type/system",
+      "stryker:custom/joint-replacements/mako-type",
+      "stryker:system/joint-replacements/mako-partial-knee",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/joint-replacements/mako-type/mako-partial-knee"
+    ],
+    "/us/en/joint-replacement/systems/mako-rps": [
+      "stryker:system/joint-replacements/mako-robotic-arm-assisted-surgery",
+      "stryker:business-unit/orthopaedics",
+      "stryker:content-type/system",
+      "stryker:business-unit/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/systems/mako-shoulder": [
+      "stryker:business-unit/orthopaedics",
+      "stryker:business-unit/joint-replacement",
+      "stryker:system/joint-replacements/mako-shoulder",
+      "stryker:product/joint-replacement/mako-system",
+      "stryker:product/joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content",
+      "mrm:products/jr/met/MAKSH"
+    ],
+    "/us/en/joint-replacement/systems/mako-spine": [
+      "stryker:product/joint-replacement/mako-system"
+    ],
+    "/us/en/joint-replacement/systems/mako-total-hip": [
+      "stryker:content-type/specialty",
+      "stryker:system/joint-replacements/mako-technology-overview",
+      "stryker:content-type/product",
+      "stryker:system/joint-replacements/mako-total-hip",
+      "stryker:custom/joint-replacements/mako-type/mako-total-hip",
+      "stryker:content-type/system",
+      "stryker:custom/joint-replacements/mako-type",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/systems/mako-total-knee": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/product",
+      "stryker:system/joint-replacements/mako-technology-overview",
+      "stryker:system/joint-replacements/mako-total-knee",
+      "stryker:content-type/system",
+      "stryker:custom/joint-replacements/mako-type",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/joint-replacement/systems/my-mako": [
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular": [
+      "stryker:content-type/business-unit",
+      "stryker:business-unit/neurovascular"
+    ],
+    "/us/en/neurovascular/c/driven-by-evidence": [
+      "stryker:business-unit/neurovascular"
+    ],
+    "/us/en/neurovascular/c/driven-by-evidence/assist-registry": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/c/innovating-through-generations": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/neurovascular"
+    ],
+    "/us/en/neurovascular/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:business-unit/neurovascular",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa"
+    ],
+    "/us/en/neurovascular/news/target-tetra-gets-510k-clearance": [
+      "stryker:content-type/news",
+      "stryker:custom/neurovascular/neurovascular-bu-news"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst--6": [
+      "stryker:product/neurovascular/axs-catalyst-6",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-5": [
+      "stryker:product/neurovascular/axs-catalyst-5",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/axs-catalyst-7": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:product/neurovascular/axs-catalyst-7",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-ls": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular/axs-infinity-ls",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/axs-infinity-plus": [
+      "stryker:capability/neurovascular",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:content-type/hcp_content",
+      "stryker:product/neurovascular/axs-infinity-ls-plus",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/acute-ischemic-stroke-ais"
+    ],
+    "/us/en/neurovascular/products/axs-lift": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:content-type/hcp_content",
+      "stryker:product/neurovascular/axs-lift"
+    ],
+    "/us/en/neurovascular/products/axs-offset": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:product/neurovascular/axs-offset",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/axs-universal": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/axs-universal-aspiration-system",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/thrombectomy"
+    ],
+    "/us/en/neurovascular/products/axs-vecta-46": [
+      "stryker:content-type/product",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/axs-vecta-intermediate-catheter": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/axs-vecta-74",
+      "stryker:product/neurovascular/axs-vecta",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:product/neurovascular/axs-vecta-71",
+      "stryker:product/neurovascular/axs-vectra-intermediate-catheter",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/broadway-system": [
+      "stryker:content-type/product",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular/broadway-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/excelsior--1018--microcatheter": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular/excelsior-1018-microcatheter",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/excelsior--sl-10--microcatheter": [
+      "stryker:product/neurovascular/excelsior-sl-10-microcatheter",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-17-microcatheter": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/excelsior-xt-17-microcatheter",
+      "stryker:specialty/access",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/excelsior--xt-27--microcatheter": [
+      "stryker:product/neurovascular/excelsior-xt-27-microcatheter",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/flowgate2--balloon-guide-catheter": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/flowgate2-balloon-guide-catheter",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/guider-softip-xf": [
+      "stryker:product/neurovascular/guider-softip-xf",
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/inzone-detachment-system": [
+      "stryker:content-type/product",
+      "stryker:custom/neurovascular/hemorrhagic-stroke/accessories",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/merci-balloon-guide-catheter": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular/merci-balloon-guide-catheter",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/neuroform-atlas-stent-system": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/angioplasty-and-stenting",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:product/neurovascular/neuroform-atlas-stent-system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/neuroform-ez-stent-system": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/angioplasty-and-stenting",
+      "stryker:product/neurovascular/neuroform-ez-stent-system",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/surpass-elite": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular",
+      "stryker:product/neurovascular/surpass-elite",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/neurovascular/hemorrhagic-stroke"
+    ],
+    "/us/en/neurovascular/products/surpass-evolve": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/surpass-evolve",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/angioplasty-and-stenting",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/surpass-streamline-flow-diverter": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/surpass-streamline-flow-diverter",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/angioplasty-and-stenting",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/synchro-select-guidewires": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/synchro2": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:product/neurovascular/synchro-guidewires",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/target--360-detachable-coils": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:product/neurovascular/target-360-detachable-coils",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/target--3d-detachable-coils": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:product/neurovascular/target-3d-detachale-coils",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:specialty/embolization",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/target-helical-detachable-coils": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:product/neurovascular/target-helical-detachable-coils",
+      "stryker:specialty/embolization",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/target-tetra": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:product/neurovascular",
+      "stryker:specialty/embolization",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/neurovascular/hemorrhagic-stroke/intrasaccular-devices"
+    ],
+    "/us/en/neurovascular/products/target-tetra-detachable-coil-landing": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/target-xtra": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:product/neurovascular/target-xtra",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/products/trak-21": [
+      "stryker:content-type/product",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/neurovascular/trak-21",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/thrombectomy"
+    ],
+    "/us/en/neurovascular/products/transend--guidewires": [
+      "stryker:content-type/product",
+      "stryker:specialty/access",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/neurovascular/transend-guidewires",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/transform-occlusion-balloon-catheter": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:product/neurovascular/transform-occlusion-balloon-catheter",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/embolization",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hemorrhagic-stroke-hem"
+    ],
+    "/us/en/neurovascular/products/trevo--xp-provue-retriever-": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:product/neurovascular/trevo-xp-provue-retriever",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/thrombectomy",
+      "stryker:specialty/acute-ischemic-stroke-ais"
+    ],
+    "/us/en/neurovascular/products/trevo-nxt": [
+      "stryker:content-type/product",
+      "stryker:product/neurovascular/trevo-nxt",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/thrombectomy",
+      "stryker:specialty/acute-ischemic-stroke-ais"
+    ],
+    "/us/en/neurovascular/products/wingspan-stent-system": [
+      "stryker:product/neurovascular/wingspan-stent-system",
+      "stryker:content-type/product",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/neurovascular",
+      "stryker:specialty/angioplasty-and-stenting",
+      "stryker:capability/neurovascular",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/neurovascular/services/strokenomics": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse": [
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/nse/campaigns/nico-technologies": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa"
+    ],
+    "/us/en/nse/news/2025/the-new-england-journal-of-medicine-publishes-complete-data-from": [
+      "stryker:custom/nav-nse/neurosurgical-news",
+      "stryker:content-type/news"
+    ],
+    "/us/en/nse/products/bone-mill": [
+      "stryker:product/nav-nse/bone-mill",
+      "stryker:content-type/product",
+      "stryker:services/procare/nse/bone-mill",
+      "stryker:capability/spine-ortho",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/bone-vac": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:capability/spine-ortho",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:product/nav-nse/bone-vac",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/nse/products/bone-vac/bone-dust-viability": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/core-2-console": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:product/nav-nse/core2",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/nse/products/elite-attachments/attachments0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/elite-attachments/cutting-accessories0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/footed-attachments/attachments": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/footed-attachments/cutting-accessories": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/heavy-duty-attachments/accessories": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/heavy-duty-attachments/cutting-accessories": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/high-speed-drills": [
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial",
+      "stryker:capability/power-tools",
+      "stryker:specialty/access-and-decompression"
+    ],
+    "/us/en/nse/products/malis-disposable-non-stick-bipolar-forceps": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:product/nav-nse/spetzler-malis-bipolar-forceps",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:services/procare/nse/forceps",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/nse/products/mis-attachments/accessories": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/mis-attachments/cutting-accessories": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/products/pidrive": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:product/nav-nse/pidrivemotor",
+      "stryker:content-type/product",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/spine",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial",
+      "stryker:capability/power-tools",
+      "stryker:product/nav-nse/pi-drive",
+      "stryker:product/nav-nse/pi-drive-2"
+    ],
+    "/us/en/nse/products/qosmic-led-headlight": [
+      "stryker:content-type/product",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:capability/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-headlights",
+      "stryker:product/nav-nse/qosmic-led-headlight",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/neurotechnology"
+    ],
+    "/us/en/nse/products/silverglide": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:capability/spine",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/cranial",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/neurotechnology",
+      "stryker:product/nav-nse/silverglide-bipolar-forceps"
+    ],
+    "/us/en/nse/products/sonopet-iq": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/product",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/neurotechnology",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/hcp_content",
+      "stryker:product/nav-nse/sonopetiq",
+      "stryker:capability/cranial"
+    ],
+    "/us/en/nse/products/spine-guidance-software-copilot": [
+      "stryker:content-type/product",
+      "stryker:capability/spine-ortho",
+      "stryker:specialty/spine-navigation",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/nav-nse/copilot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/nse/services/procare-services": [
+      "stryker:content-type/system",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare"
+    ],
+    "/us/en/orthopaedic-instruments": [
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/orthopaedic-instruments/c/Ortho-Q-Guidance": [
+      "stryker:specialty/orthopaedic-navigation",
+      "stryker:business-unit/orthopaedic_instruments"
+    ],
+    "/us/en/orthopaedic-instruments/news": [
+      "stryker:custom/orthopaedic_instruments/news"
+    ],
+    "/us/en/orthopaedic-instruments/news/2025/not-all-ppe-is-created-equal--why-the-small-details-matter": [
+      "stryker:content-type/news",
+      "stryker:custom/orthopaedic_instruments/news"
+    ],
+    "/us/en/orthopaedic-instruments/news/2025/the-importance-of-ergonomics-with-ppe--dr--seann-willson": [
+      "stryker:content-type/news",
+      "stryker:custom/orthopaedic_instruments/news"
+    ],
+    "/us/en/orthopaedic-instruments/news/2026/exudate-management-for-closed-surgical-incisions": [
+      "stryker:content-type/news",
+      "stryker:custom/orthopaedic_instruments/news",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/orthopaedic-instruments": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-unit/orthopaedic_instruments"
+    ],
+    "/us/en/orthopaedic-instruments/products/auto62-cleaning-chemistries": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/sterile-processing",
+      "stryker:capability/cleaners-and-disinfectants",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/cleaners-and-detergents",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/Auto62"
+    ],
+    "/us/en/orthopaedic-instruments/products/bioprep-bone-preparation-system": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:services/procare/surgical",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cement-mixing-systems",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/BioPrep"
+    ],
+    "/us/en/orthopaedic-instruments/products/blu62-pretreatment-foam-and-instrument-detergent": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/sterile-processing",
+      "stryker:capability/cleaners-and-disinfectants",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/cleaners-and-detergents",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/Blu62"
+    ],
+    "/us/en/orthopaedic-instruments/products/blu62-pretreatment-foam-and-instrument-detergent/speed-spray62": [
+      "stryker:content-type/product",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare",
+      "stryker:capability/sterile-processing",
+      "stryker:capability/cleaners-and-disinfectants",
+      "stryker:procedure/orthopaedic_instruments",
+      "stryker:specialty/cleaners-and-detergents",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/products/bpx": [
+      "stryker:product/orthopaedic_instruments/bpx",
+      "stryker:content-type/product",
+      "stryker:specialty/small-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/cd-nxt": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/power-tools",
+      "stryker:product/orthopaedic_instruments/System_8",
+      "stryker:product/orthopaedic_instruments/System_8_Cordless_Driver_and_SABO",
+      "stryker:product/orthopaedic_instruments/system-9",
+      "stryker:specialty/medium-bone"
+    ],
+    "/us/en/orthopaedic-instruments/products/e62-enzymatic-detergent": [
+      "stryker:capability/sterile-processing",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/cleaners-and-disinfectants"
+    ],
+    "/us/en/orthopaedic-instruments/products/interpulse-pulsed-lavage-system": [
+      "stryker:content-type/product",
+      "stryker:specialty/irrigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:product/orthopaedic_instruments/InterPulse",
+      "stryker:services/procare/surgical",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/products/mixevac-iii-bone-cement-mixer": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:services/procare/surgical",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cement-mixing-systems",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/MixeVac_III"
+    ],
+    "/us/en/orthopaedic-instruments/products/npseal": [
+      "stryker:product/orthopaedic_instruments/npseal",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/orthopedic-disposables"
+    ],
+    "/us/en/orthopaedic-instruments/products/ortho-q-guidance-system": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/navigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/orthopaedic-guidance"
+    ],
+    "/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-express-knee": [
+      "stryker:specialty/orthopaedic-guidance",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/ortho-guidance-express-knee-software",
+      "stryker:capability/navigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-precision-knee": [
+      "stryker:product/orthopaedic_instruments/ortho-guidance-precision-knee-software",
+      "stryker:specialty/orthopaedic-guidance",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/navigation",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip": [
+      "stryker:product/orthopaedic_instruments/ortho-guidance-versatile-hip-software",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:specialty/orthopaedic-guidance",
+      "stryker:capability/navigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/products/performance-series-blades": [
+      "stryker:content-type/product",
+      "stryker:system/orthopaedic_instruments",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/precision-falcon": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/resurfacing-tool": [
+      "stryker:content-type/product",
+      "stryker:product/surgical",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/Resurfacing_tool",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/revolution-cement-mixer-system": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:services/procare/surgical",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/cement-mixing-systems",
+      "stryker:product/orthopaedic_instruments/Revolution"
+    ],
+    "/us/en/orthopaedic-instruments/products/smartpump-tourniquet": [
+      "stryker:product/orthopaedic_instruments/Smartpump",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/tourniquet",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:specialty/pump",
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare/surgical/orthopaedic-disposables"
+    ],
+    "/us/en/orthopaedic-instruments/products/steri-shield-8": [
+      "stryker:product/orthopaedic_instruments/steri-shield-8",
+      "stryker:content-type/product",
+      "stryker:capability/personal-protection-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/orthopaedic-instruments/products/stryker-f1-system-cordless-small-bone-power-tool-system": [
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:specialty/small-bone",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/Stryker_F1"
+    ],
+    "/us/en/orthopaedic-instruments/products/system-8": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:product/orthopaedic_instruments/System_8",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/system-8-cordless-driver-and-sabo": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/sports-medicine",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:product/orthopaedic_instruments/System_8_Cordless_Driver_and_SABO",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/system-8-ezout": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/System-9-Power-Tools": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:product/orthopaedic_instruments/System_8",
+      "stryker:specialty/medium-bone",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/System-9-Power-Tools/system-9-ezout": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/System-9-Power-Tools/system-9-precision": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/power-tools",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:product/orthopaedic_instruments/system-9",
+      "stryker:portfolio/orthopaedics",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/large-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/tpx": [
+      "stryker:content-type/product",
+      "stryker:specialty/small-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/tpx-hd": [
+      "stryker:product/orthopaedic_instruments/tpx-hd",
+      "stryker:content-type/product",
+      "stryker:specialty/small-bone",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/orthopaedic-instruments/products/zip-skin-closure": [
+      "stryker:content-type/product",
+      "stryker:capability/skin-closure",
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/orthopaedic_instruments"
+    ],
+    "/us/en/orthopaedic-instruments/systems": [
+      "stryker:content-type/system",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/orthopaedic-instruments/systems/orthopaedic/articles-/ezout-powered-acetabular-revision-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/cutting-accessories",
+      "stryker:content-type/news/CA-Latest-news"
+    ],
+    "/us/en/orthopaedic-instruments/systems/orthopaedic/articles-/patented-technology": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/orthopaedic-instruments/systems/orthopaedic/articles-/the-history-of-cutting-blades": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/cutting-accessories",
+      "stryker:content-type/news/CA-Latest-news"
+    ],
+    "/us/en/peripheral-vascular": [
+      "stryker:business-unit/peripheral-vascular",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/peripheral-vascular/c/upgrade-your-solutions": [
+      "stryker:business-unit/peripheral-vascular",
+      "stryker:product/peripheral-vascular/clottriever",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/peripheral-vascular/clinical/clout": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/peripheral-vascular/products/artix-thrombectomy-system": [
+      "stryker:business-unit/peripheral-vascular",
+      "stryker:product/peripheral-vascular/artix",
+      "stryker:content-type/product",
+      "stryker:specialty/arterial-thrombectomy",
+      "stryker:portfolio/vascular",
+      "stryker:capability/arterial-disease",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/peripheral-vascular/products/clottriever-system": [
+      "stryker:business-unit/peripheral-vascular",
+      "stryker:content-type/product",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:capability/venous-disease",
+      "stryker:specialty/deep-vein-thrombosis-thrombectomy-dvt",
+      "stryker:content-type/hcp_content",
+      "stryker:product/peripheral-vascular/clottriever"
+    ],
+    "/us/en/peripheral-vascular/products/flowtriever-system": [
+      "stryker:business-unit/peripheral-vascular",
+      "stryker:content-type/product",
+      "stryker:specialty/pulmonary-embolism-thrombectomy-pe",
+      "stryker:portfolio/vascular",
+      "stryker:capability/venous-disease",
+      "stryker:content-type/hcp_content",
+      "stryker:product/peripheral-vascular/flowtriever"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment": [
+      "stryker:content-type/portfolio",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare": [
+      "stryker:content-type/capability",
+      "stryker:capability",
+      "stryker:capability/advanced-digital-healthcare",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/ibed-wireless": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/isuite": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/rise": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/the-lifenet-system": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/airway-management": [
+      "stryker:content-type/capability",
+      "stryker:capability/airway-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/bedframes": [
+      "stryker:content-type/capability",
+      "stryker:capability/bedframes",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/bedframes/icu-critical-care-beds": [
+      "stryker:content-type/specialty",
+      "stryker:capability/bedframes",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/icu-critical-care-beds",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/bedframes/medical-and-surgical-beds": [
+      "stryker:content-type/specialty",
+      "stryker:capability/bedframes",
+      "stryker:specialty/medical-surgical-beds",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/bedframes/specialty-beds": [
+      "stryker:content-type/specialty",
+      "stryker:capability/bedframes",
+      "stryker:specialty/specialty-beds",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/cleaners-and-disinfectants": [
+      "stryker:content-type/capability",
+      "stryker:capability/cleaners-and-disinfectants",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/clinical-seating": [
+      "stryker:content-type/capability",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/clinical-seating"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-data-solutions": [
+      "stryker:content-type/capability",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-data-solutions"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-data-solutions/data-and-asset-management": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/Data-and-asset-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/emergency-data-solutions"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-data-solutions/data-review-software-and-service": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Data-review-software-and-service",
+      "stryker:capability/emergency-data-solutions"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport": [
+      "stryker:content-type/capability",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/hybrid-system": [
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:specialty/hybrid-system",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/manual-system": [
+      "stryker:specialty/manual-system",
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/powered-system": [
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-medical-equipment",
+      "stryker:specialty/powered-system",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-response-and-resuscitation": [
+      "stryker:content-type/capability",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-response-and-resuscitation/aeds": [
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/AEDs"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-response-and-resuscitation/cpr-devices": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/CPR-Devices",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-response-and-resuscitation/data": [
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/emergency-response-and-resuscitation/monitor-defibrillators": [
+      "stryker:content-type/specialty",
+      "stryker:capability/emergency-response-and-resuscitation",
+      "stryker:specialty/Monitor-Defibrillators",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/ent": [
+      "stryker:content-type/capability",
+      "stryker:capability/ent",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/ent/bioresorbables": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/bioreabsorbables"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/ent/ent-navigation": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ent-navigation"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/fluid-management": [
+      "stryker:content-type/capability",
+      "stryker:capability/fluid-management-medsurg",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/illuminated-instruments": [
+      "stryker:content-type/capability",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/image-guided-therapies": [
+      "stryker:content-type/capability",
+      "stryker:capability/image-guided-therapies",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/image-guided-therapies/advanced-pain-therapies": [
+      "stryker:content-type/specialty",
+      "stryker:capability/image-guided-therapies",
+      "stryker:specialty/advanced-pain-therapies",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/image-guided-therapies/bone-tumor-ablation": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/bone-tumor-ablation",
+      "stryker:capability/image-guided-therapies",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/image-guided-therapies/vertebral-augmentation": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/vertebral-augmentation",
+      "stryker:capability/image-guided-therapies",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/incontinence-management": [
+      "stryker:content-type/capability",
+      "stryker:capability/incontinence-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/incontinence-management/barrier-care": [
+      "stryker:specialty/barrier-care",
+      "stryker:content-type/specialty",
+      "stryker:capability/incontinence-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/incontinence-management/fecal-management": [
+      "stryker:content-type/specialty",
+      "stryker:capability/incontinence-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/fecal-management"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/incontinence-management/patient-cleansing": [
+      "stryker:content-type/specialty",
+      "stryker:capability/incontinence-management",
+      "stryker:specialty/patient-cleansing",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/incontinence-management/urine-management": [
+      "stryker:specialty/urine-management",
+      "stryker:content-type/specialty",
+      "stryker:capability/incontinence-management",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design": [
+      "stryker:content-type/capability",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/booms": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/booms",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/lighting": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/lighting"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/monitor-and-accessory-support-arms": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/monitor-and-accessory-support-arms",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/or-design-and-construction-resources": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/or-design-and-construction-resources",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/or-walls": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design",
+      "stryker:specialty/or-walls"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/surgical-tables": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/surgical-tables",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/infrastructure-and-room-design"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity": [
+      "stryker:content-type/capability",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/camera-systems": [
+      "stryker:content-type/specialty",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/camera-systems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/displays": [
+      "stryker:specialty/displays",
+      "stryker:content-type/specialty",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/hospital-enterprise-software": [
+      "stryker:content-type/specialty",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/hospital-enterprise-software",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration": [
+      "stryker:content-type/specialty",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:specialty/OR-integration",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise": [
+      "stryker:specialty/OR-integration",
+      "stryker:content-type",
+      "stryker:business-unit/Navigation-NSE",
+      "stryker:business-unit/ent",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/integration-and-connectivity",
+      "stryker:content-type/system",
+      "stryker:business-unit/endoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/navigation": [
+      "stryker:content-type/capability",
+      "stryker:capability/navigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/navigation/cranial": [
+      "stryker:specialty/cranial",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/navigation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/navigation/ent": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ent-navigation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/navigation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/navigation/orthopaedic-guidance": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/orthopaedic-guidance",
+      "properties:style/monochrome",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/navigation",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/navigation/spine": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/spine",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/navigation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/oral-hygiene": [
+      "stryker:content-type/capability",
+      "stryker:capability/Oral_hygiene",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/oral-hygiene/non-ventilator-patients": [
+      "stryker:content-type/specialty",
+      "stryker:capability/Oral_hygiene",
+      "stryker:specialty/Non_ventilator_patients",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/oral-hygiene/ventilator-patients": [
+      "stryker:specialty/Ventilator_patients",
+      "stryker:content-type/specialty",
+      "stryker:capability/Oral_hygiene",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/orthopaedic-disposables": [
+      "stryker:content-type/capability",
+      "stryker:capability/orthopedic-disposables",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/orthopaedic-disposables/cement-mixing": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cement-mixing-systems"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-hygiene": [
+      "stryker:content-type/capability",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/patient-hygiene"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-hygiene/plumbing-protection": [
+      "stryker:specialty/Plumbing_protection",
+      "stryker:content-type/specialty",
+      "stryker:business-unit/SAGE",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/patient-hygiene"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-hygiene/prepackaged-bathing": [
+      "stryker:specialty/Prepackaged_bathing",
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/patient-hygiene",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning": [
+      "stryker:content-type/capability",
+      "stryker:capability/Patient_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning/heel-protection": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/Heel_protection",
+      "stryker:capability/Patient_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning/lateral-transfer": [
+      "stryker:content-type/specialty",
+      "stryker:capability/Patient_positioning",
+      "stryker:specialty/Lateral_transfer",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning/patient-positioning-hardware-and-accessories": [
+      "stryker:specialty/Patient_positioning_hardware_and_accessories",
+      "stryker:content-type/specialty",
+      "stryker:capability/Patient_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning/seated-positioning": [
+      "stryker:content-type/specialty",
+      "stryker:capability/Patient_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Seated_positioning"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-positioning/turning-and-positioning": [
+      "stryker:content-type/specialty",
+      "stryker:capability/Patient_positioning",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/patient-room-furniture": [
+      "stryker:content-type/capability",
+      "stryker:capability/patient-room-furniture",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/personal-protection-equipment": [
+      "stryker:content-type/capability",
+      "stryker:capability/personal-protection-equipment",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/pharmaceutical-waste": [
+      "stryker:content-type/capability",
+      "stryker:capability/pharmaceutical-waste",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/large-bone": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/large-bone",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/medium-bone": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/medium-bone",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/power-tools",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/neuro-and-spine": [
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/small-bone": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/small-bone",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/power-tools"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/pre-op-prep": [
+      "stryker:content-type/capability",
+      "stryker:capability/Pre_op_prep",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/pre-op-prep/nose-mouth-and-skin-prep": [
+      "stryker:content-type/specialty",
+      "stryker:capability/Pre_op_prep",
+      "stryker:specialty/Nose_mouth_and_skin_prep",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/pre-op-prep/skin-prep": [
+      "stryker:specialty/Skin_prep",
+      "stryker:content-type/specialty",
+      "stryker:capability/Pre_op_prep",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/public-access": [
+      "stryker:content-type/capability",
+      "stryker:capability/public-access",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/public-access/aeds": [
+      "stryker:content-type/specialty",
+      "stryker:capability/public-access",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/AEDs"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/public-access/data": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/Data",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/public-access/evacuation-chairs": [
+      "stryker:content-type/specialty",
+      "stryker:capability/public-access",
+      "stryker:product/ems/evacuation-chair",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Evacuation-Chairs"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/public-access/monitor-defibrillators": [
+      "stryker:content-type/specialty",
+      "properties:style/monochrome",
+      "stryker:specialty/Monitor-Defibrillators",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reconstructive-surgery": [
+      "stryker:content-type/capability",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reconstructive-surgery/breast": [
+      "stryker:content-type/specialty",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reconstructive-surgery/cmf": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/cmf",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products": [
+      "stryker:content-type/capability",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/bipolar-energy": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/bipolar-energy",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/ep-cables": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products",
+      "stryker:specialty/ep-cables"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/ep-catheters": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/ep-catheters",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/hysteroscopic-tissue-removal": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/hysteroscopic-tissue-removal",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/ice-catheters": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ice-catheters",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/intravascular-imaging": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/intravascular-imaging",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/introducer-sheaths": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/introducer-sheaths",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/reprocessed-ecg-leads-cables-and-adaptors": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ecg-leads,-cables-and-adaptors",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/reprocessed-pulse-oximeter-sensors": [
+      "stryker:content-type/specialty",
+      "stryker:business-unit/public-access",
+      "stryker:specialty/pulse-oximeter-sensors",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/save-simply-blended-offerings": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/save-simply-blended-offerings",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/reprocessed-products/ultrasonic-energy": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ultrasonic-energy",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/skin-closure": [
+      "stryker:content-type/capability",
+      "stryker:capability/skin-closure",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital": [
+      "stryker:content-type/capability",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/smart-hospital",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital/ambient-intelligence": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/ambient-intelligence",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital/clinical-communication": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:specialty/clinical-communication"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital/connected-infrastructure": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/connected-infrastructure",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital/virtual-care": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/virtual-care",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/smart-hospital/workflow-engine": [
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:specialty/workflow-engine"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/sponge-management": [
+      "stryker:content-type/capability",
+      "stryker:capability/sponge-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/sterile-processing": [
+      "stryker:content-type/capability",
+      "stryker:capability/sterile-processing",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/sterile-processing/cleaners-and-detergents": [
+      "stryker:content-type/specialty",
+      "stryker:capability/sterile-processing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cleaners-and-detergents"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/stretchers": [
+      "stryker:content-type/capability",
+      "stryker:capability/stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/stretchers/emergency-and-transport-stretchers": [
+      "stryker:content-type/specialty",
+      "stryker:capability/stretchers",
+      "stryker:specialty/emergency-transport-stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/stretchers/procedural-stretchers": [
+      "stryker:content-type/specialty",
+      "stryker:capability/stretchers",
+      "stryker:specialty/procedural-stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/stretchers/specialty-stretchers": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/specialty-stretchers",
+      "stryker:capability/stretchers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/support-surfaces": [
+      "stryker:content-type/capability",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/support-surfaces/bed-support-surfaces": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/bed-support-surfaces",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/support-surfaces/pressure-injury-prevention-disposables": [
+      "stryker:content-type/specialty",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/pressure-injury-prevention-disposables",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/support-surfaces/stretcher-support-surfaces": [
+      "stryker:content-type/specialty",
+      "stryker:capability/support-surfaces",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/stretcher-support-surfaces",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-headlights": [
+      "stryker:content-type/capability",
+      "stryker:capability/surgical-headlights",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-suction": [
+      "stryker:content-type/capability",
+      "stryker:capability/surgical-suction",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-suction/fluid-waste-management": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/fluid-waste-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/fluid-management-medsurg"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-suction/surgical-smoke-evacuation": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization": [
+      "stryker:content-type/capability",
+      "stryker:capability/surgical-visualization",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/camera-systems": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/camera-systems",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/displays": [
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/displays",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/gynecology": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/hysteroscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/laparoscopy": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/laparoscopy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/media-management": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/media-management",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/scopes": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/scopes",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/uro-gyn-fluid-management": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:specialty/uro-gyn-fluid-management",
+      "stryker:capability/fluid-management-medsurg",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/medical-surgical-equipment/surgical-visualization/urology": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/cystoscopy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine": [
+      "stryker:content-type/portfolio",
+      "stryker:portfolio/neurotechnology"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/cranial": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/cranial",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/cranial/access-and-decompression": [
+      "stryker:specialty/access-and-decompression-cranial",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/cranial",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/cranial/bioreabsorbables": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/cranial",
+      "stryker:specialty/cranial-bioresorbables",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/cranial/closure": [
+      "stryker:specialty/closure",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/cranial",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/cranial/cranial-navigation": [
+      "stryker:specialty/cranial-navigation",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/cranial",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/neurovascular": [
+      "stryker:content-type/capability",
+      "stryker:capability/neurovascular",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/neurovascular/acute-ischemic-stroke": [
+      "stryker:content-type/specialty",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/acute-ischemic-stroke-ais",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/neurotechnology-spine/neurovascular/hemorrhagic-stroke": [
+      "stryker:content-type/specialty",
+      "stryker:capability/neurovascular",
+      "stryker:specialty/hemorrhagic-stroke-hem",
+      "stryker:portfolio/neurotechnology",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics": [
+      "stryker:content-type/portfolio",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/portfolios/orthopaedics/craniomaxillofacial": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/craniomaxillofacial/aesthetics": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/aesthetics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/craniomaxillofacial/orthognathic": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:specialty/orthognathic",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/craniomaxillofacial/reconstruction": [
+      "stryker:specialty/reconstruction",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/craniomaxillofacial/trauma": [
+      "stryker:specialty/trauma",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/cmf-implants",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle": [
+      "stryker:content-type/capability",
+      "stryker:capability/foot-and-ankle",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle/ankle": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle/biologics": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/biologics-(foot-and-ankle)",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle/forefoot": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/forefoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle/hindfoot": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hindfoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/foot-and-ankle/midfoot": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/midfoot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/joint-replacement": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/joint-replacement/hip": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hip-joint-replacement",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/joint-replacement/knee": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/joint-replacement",
+      "stryker:specialty/knee-joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/joint-replacement/limb-salvage": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/limb-salvage",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/joint-replacement",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/spine--ortho-": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/spine-ortho",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/spine--ortho-/access-and-decompression": [
+      "stryker:specialty/access-and-decompression",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/spine-ortho",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/spine--ortho-/neuro-and-spine": [
+      "stryker:specialty/neuro-and-spine",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/spine-ortho",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/spine--ortho-/spine-navigation": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/spine-ortho",
+      "stryker:specialty/spine-navigation",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/arthroscopic-resection": [
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/fluid-management"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/fluid-management": [
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/specialty",
+      "stryker:capability/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/fluid-management-medsurg",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/fluid-management"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/hip": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/knee": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/shoulder": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/small-joints": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/sports-medicine/sports-biologics": [
+      "stryker:specialty/sports-biologics",
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics": [
+      "stryker:content-type/capability",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/acellular-dermis": [
+      "stryker:specialty/acellular-dermis",
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/amniotics": [
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:specialty/amniotics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/autologous-systems": [
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:specialty/autologous-systems",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/bone-grafting": [
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:specialty/bone-grafting",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/cartilage-repair": [
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:specialty/cartilage-repair",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/foot-and-ankle-wedges": [
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/foot-and-ankle-wedges"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/biologics/nerve-repair": [
+      "stryker:specialty/nerve-repair",
+      "stryker:capability/biologics",
+      "stryker:content-type/specialty",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/elbow--hand-and-wrist": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/hip-fracture": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/shoulder": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/trauma-and-extremities/tibia-and-femur": [
+      "stryker:content-type/specialty",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/upper-extremities": [
+      "stryker:content-type/capability",
+      "stryker:capability/upper-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/upper-extremities/elbow": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/elbow",
+      "stryker:capability/upper-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/upper-extremities/hand-and-wrist": [
+      "stryker:content-type/specialty",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:capability/upper-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/orthopaedics/upper-extremities/shoulder": [
+      "stryker:content-type/specialty",
+      "stryker:capability/upper-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/portfolios/vascular": [
+      "stryker:content-type/portfolio",
+      "stryker:portfolio/vascular"
+    ],
+    "/us/en/portfolios/vascular/arterial-disease": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/vascular",
+      "stryker:capability/arterial-disease",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/vascular/arterial-disease/arterial-thrombectomy": [
+      "stryker:content-type/specialty",
+      "stryker:capability/arterial-disease",
+      "stryker:specialty/arterial-thrombectomy",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/vascular/venous-disease": [
+      "stryker:content-type/capability",
+      "stryker:portfolio/vascular",
+      "stryker:capability/venous-disease",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/vascular/venous-disease/deep-vein-thrombosis-thrombectomy": [
+      "stryker:content-type/specialty",
+      "stryker:capability/venous-disease",
+      "stryker:portfolio/vascular",
+      "stryker:specialty/deep-vein-thrombosis-thrombectomy-dvt",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/portfolios/vascular/venous-disease/pulmonary-embolism-thrombectomy": [
+      "stryker:content-type/specialty",
+      "stryker:capability/venous-disease",
+      "stryker:portfolio/vascular",
+      "stryker:specialty/pulmonary-embolism-thrombectomy-pe",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage": [
+      "stryker:content-type/business-unit",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/c/hygh-tec-fecal-management": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/SAGE"
     ],
     "/us/en/sage/disclosure-and-safety-information": [
       "stryker:business-unit/SAGE"
     ],
+    "/us/en/sage/news/2021/cns-impact-through-innovation-and-implementation-of-primafit-external-urine-management-system-for-females": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2021/new-safety-advisory-from-the-joint-commission": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2021/primafit-device-updates": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2021/sage-supports-the-family-health-partnership-clinic-in-mchenry-co": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3"
+    ],
+    "/us/en/sage/news/2022/can-brushing-your-teeth-keep-you-healthy-in-the-hospital": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2022/ecri-reports-nvhap-as-a-top-threat-to-patient-safety-in-2022": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2022/evergreen-medical-uses-a-kinder-gentler-presurgical-skin-prep": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/4"
+    ],
+    "/us/en/sage/news/2022/focusrn-website-is-now-available": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2022/health-affairs-urges-policy-makers-to-confront-pneumonia-threat": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2022/infection-control-today-article-about-waterborne-pathogens": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2022/joint-commission-barbara-quinn-interview-nv-hap-prevention": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2022/poster-presented-at-wocn-shows-comfort-shield-reduces-iad": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2022/preoperative-strategy-to-reduce-the-risk-of-surgical-site-infect": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2022/sage-launches-journey-to-zero-to-help-reduce-nurse-injury": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2022/sage-launches-new-multi-position-mats-to-help-or-nurses-safely-t": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2022/sage-primofit-redesign": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2022/sea-promotes-social-responsibility-with-tree-planting-event-": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3"
+    ],
+    "/us/en/sage/news/2022/stryker-sea-and-mccd-help-clean-up-hickory-grove-highlands": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3"
+    ],
+    "/us/en/sage/news/2022/stryker-womens-network-at-sage-supports-international-womens-day": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3"
+    ],
+    "/us/en/sage/news/2022/the-journey-to-zero-program-supports-nurse-safety": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2023/a-magical-celebration-in-cary": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3"
+    ],
+    "/us/en/sage/news/2023/external-urine-collection-device-JWOCN-study": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2023/hospital_improves_outcomes_with_early_mobility_program": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2023/iu-health-decreases-urinary-catheter-usage-and-cauti-rates": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/4"
+    ],
+    "/us/en/sage/news/2023/journey-to-zero-program-helps-protect-healthcare-workers": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2023/nyc-medical-center-implementation-of-external-female-catheter-av": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2023/SEA-holds-3rd-annual-tree-planting-event": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2023/shea-oral-care-reduction-in-non-ventilator-associated-pneumonia": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2023/Strategies_to_help_prevent_pneumonia_in_hospitals_2022_update": [
+      "stryker:content-type/news",
+      "stryker:product/sage/Sage-oral-hygiene-tools"
+    ],
+    "/us/en/sage/news/2023/stryker-warehouse-expansion-is-underway-in-cary-il": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sage/news/2023/study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2023/study-validates-the-value-of-mobilty-for-older-patients": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2023/the-clinical-impact-of-PrimaFit-for-female-patients": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:product/sage/Sage-PrimaFit"
+    ],
+    "/us/en/sage/news/2024/2-percent-chlorhexidine-gluconate-cloth-ssi-prevention": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/association-between-daily-toothbrushing-and-hap": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/critical-connection-nv-hap-sepsis": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/history-of-making-healthcare-better-home": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/1",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/honoring-frontline-heroes-journey-to-zero": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/jan-schakowsky-tours-stryker-learns-about-HAP": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/prevent-hap-reduce-risk-patient-oral-care": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2024/reduce-cauti-icu-primafit": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/reduce-cauti-risk": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage"
+    ],
+    "/us/en/sage/news/2024/safe-patient-handling-and-mobility-benefits": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2024/sea-fourth-annual-tree-planting": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3",
+      "stryker:content-type/news/sage"
+    ],
+    "/us/en/sage/news/2024/shea-cauti-prevention-practice-updates": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/news/2024/stryker-womens-network-intl-womens-day-sage": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage/3",
+      "stryker:content-type/news/sage"
+    ],
+    "/us/en/sage/news/2024/surgical-site-infections-safety-savings": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/examining-prevalence-incontinence-older-adults": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/hospital-acquired-infection-prevention-strategies": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/hospital-acquired-pressure-injuries-protocols-and-prevention": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/how-to-give-bed-bath-guide": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/oral-care-helps-reduce-risk-factor-hospital-acquired-pneumonia": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2025/patient-skin-integrity-a-critical-factor-in-infection-prevention": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2"
+    ],
+    "/us/en/sage/news/2026/close-the-gap-in-fecal-management": [
+      "stryker:content-type/news",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2026/hygh-tec-drainage-fecal-management-system-for-critical-care": [
+      "stryker:content-type/news/sage/4",
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/news/2026/perioperative-care-air-assisted-patient-transfer-system": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:business-unit/SAGE",
+      "stryker:content-type/news/sage/1"
+    ],
+    "/us/en/sage/news/2026/primofit-flow-advances-urinary-management-performance": [
+      "stryker:content-type/news",
+      "stryker:content-type/news/sage",
+      "stryker:content-type/news/sage/2",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/products/hygh-tec": [
+      "stryker:content-type/product",
+      "stryker:capability/incontinence-management",
+      "stryker:business-unit/SAGE",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/fecal-management",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sage/hygh-tec"
+    ],
+    "/us/en/sage/products/sage-air-pump": [
+      "stryker:specialty/Patient_positioning_hardware_and_accessories",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:product/sage/Sage-Air-Pump",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-airtap": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-AirTAP",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-airtap-lc": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:product/sage/Sage-AirTAP-LC",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-airtap-xxl": [
+      "stryker:product/sage/Sage-AirTAP-XXL",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-barrier-cream-cloths": [
+      "stryker:specialty/barrier-care",
+      "stryker:product/sage/Sage-Barrier-Cream-Cloths",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/urine-management",
+      "stryker:capability/patient-hygiene",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/incontinence-management"
+    ],
+    "/us/en/sage/products/sage-bath-cloths": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Prepackaged_bathing",
+      "stryker:product/sage/Sage-Bath-Cloths",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/patient-hygiene"
+    ],
+    "/us/en/sage/products/sage-chg-cloths": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:capability/Pre_op_prep",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:product/sage/Sage-CHG-Cloths",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Skin_prep",
+      "stryker:capability/covid-19-products",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge": [
+      "stryker:specialty/Heel_protection",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-Foot-and-Leg-Stabilizer-Wedge",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-halfmats": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:product/sage/Sage-HalfMATS",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Lateral_transfer",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-heel-protector-i": [
+      "stryker:product/sage/Sage-Heel-Protector-I",
+      "stryker:specialty/Heel_protection",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-heel-protector-ii": [
+      "stryker:specialty/Heel_protection",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-Heel-Protector-II",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-heel-protector-iii": [
+      "stryker:specialty/Heel_protection",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:product/sage/Sage-Heel-Protector-III",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-heel-protector-or": [
+      "stryker:content-type/product",
+      "stryker:product/sage/Sage-Heel-Protector-OR",
+      "stryker:business-unit/SAGE",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-incontinence-clean-up-cloths": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:specialty/patient-cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Incontinence_care",
+      "stryker:product/sage/Sage-Incontinence-Clean-up-Cloths",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/incontinence-management"
+    ],
+    "/us/en/sage/products/sage-m--microclimate-body-pads": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:specialty/patient-cleansing",
+      "stryker:product/sage/Sage-M2-Microclimate-Body-Pads",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/urine-management",
+      "stryker:specialty/Incontinence_care",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/incontinence-management"
+    ],
+    "/us/en/sage/products/sage-m-care": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/patient-hygiene",
+      "stryker:specialty/Prepackaged_bathing",
+      "stryker:product/sage/Sage-M-Care",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/incontinence-management",
+      "stryker:specialty/patient-cleansing"
+    ],
+    "/us/en/sage/products/sage-mats": [
+      "stryker:product/sage/Sage-MATS",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Lateral_transfer",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-multi-position-mats": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/sage-multi-position-mats",
+      "stryker:specialty/Lateral_transfer",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-nose-to-toes": [
+      "stryker:product/sage/Sage-Nose-to-Toes",
+      "stryker:capability/Pre_op_prep",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:specialty/Nose_mouth_and_skin_prep",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Oral_hygiene",
+      "stryker:product/sage/Sage-oral-hygiene-systems-for-non-ventilated-patients",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Non_ventilator_patients",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients": [
+      "stryker:specialty/Ventilator_patients",
+      "stryker:specialty/patient-outcomes",
+      "stryker:product/sage/Sage-oral-hygiene-systems-for-ventilated-patients",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Oral_hygiene",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-oral-hygiene-tools": [
+      "stryker:product/sage/Sage-oral-hygiene-tools",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Oral_hygiene",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Non_ventilator_patients",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-oral-solutions-and-moisturizers": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Oral_hygiene",
+      "stryker:product/sage/Sage-oral-antiseptics-and-moisturizers",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Non_ventilator_patients",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-primafit": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:specialty/urine-management",
+      "stryker:content-type/product",
+      "stryker:product/sage/Sage-PrimaFit",
+      "stryker:capability/incontinence-management",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/urine-management",
+      "stryker:specialty/Incontinence_care",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-primofit": [
+      "stryker:specialty/patient-outcomes",
+      "stryker:specialty/urine-management",
+      "stryker:content-type/product",
+      "stryker:product/sage/Sage_PrimoFit",
+      "stryker:capability/incontinence-management",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/urine-management",
+      "stryker:specialty/Incontinence_care",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-rinse-free-shampoo-caps": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Prepackaged_bathing",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sage/Sage-Rinse-Free-Shampoo-Caps",
+      "stryker:capability/patient-hygiene"
+    ],
+    "/us/en/sage/products/sage-self-oral-care": [
+      "stryker:content-type/product",
+      "stryker:capability/Oral_hygiene",
+      "stryker:business-unit/SAGE",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-Self-Oral-Care",
+      "stryker:specialty/Non_ventilator_patients",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-sps": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Seated_positioning",
+      "stryker:product/sage/Sage-SPS",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-tap-1-0": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-TAP-1",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-tap-2-0": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-TAP-2",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-tap-lc": [
+      "stryker:content-type/product",
+      "stryker:capability/Patient_positioning",
+      "stryker:business-unit/SAGE",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sage/sage-tap-lc"
+    ],
+    "/us/en/sage/products/sage-tap-xl-xxl": [
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_positioning",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/sage/Sage-TAP-XL-XXL",
+      "stryker:specialty/Turning_and_positioning",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sage/products/sage-traptex": [
+      "stryker:specialty/Plumbing_protection",
+      "stryker:capability/Pre_op_prep",
+      "stryker:content-type/product",
+      "stryker:business-unit/SAGE",
+      "stryker:capability/Patient_cleansing",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sage/Sage-Traptex",
+      "stryker:capability/patient-hygiene"
+    ],
+    "/us/en/sage/sage": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/urine-management": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/urine-management/stop-urinary-incontinence-device-leaks": [
+      "stryker:product/sage/Sage-PrimaFit",
+      "stryker:product/sage/Sage_PrimoFit",
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/videos/multi-position-mats-2-in-service-video": [
+      "stryker:business-unit/SAGE"
+    ],
     "/us/en/sage/videos/sage-mp-mats-2-demo": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/videos/sage-q-care-rx-with-perox-a-mint-training-video": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/videos/sage-q-care-with-perox-a-mint-training-video": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/sage/videos/sage-tap-lc-in-service-video": [
       "stryker:business-unit/SAGE"
     ],
     "/us/en/sage/webinars": [
@@ -62,6 +10674,4911 @@ var CustomImportScript = (() => {
     ],
     "/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition": [
       "stryker:business-unit/SAGE"
+    ],
+    "/us/en/services-and-solutions/flex-financial": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/services-and-solutions/flex-financial/flex-financial": [
+      "stryker:content-type/business-unit-contact"
+    ],
+    "/us/en/services-and-solutions/onsite": [
+      "stryker:content-type/hcp_content",
+      "stryker:services/onsite"
+    ],
+    "/us/en/services-and-solutions/procare": [
+      "stryker:content-type/hcp_content",
+      "stryker:services/procare"
+    ],
+    "/us/en/services-and-solutions/procare/medical": [
+      "stryker:business-unit/ems",
+      "stryker:business-unit/acute-care",
+      "stryker:services/procare",
+      "stryker:services/procare/ems",
+      "stryker:services/procare/acute-care"
+    ],
+    "/us/en/services-and-solutions/reprocessing-and-remanufacturing": [
+      "stryker:services/reprocessing-and-remanufacturing",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/smart-care": [
+      "stryker:business-unit/smart-care",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/smart-care/c/care-ai-human-centered-care": [
+      "stryker:business-unit/acute-care"
+    ],
+    "/us/en/smart-care/c/himss-tradeshow": [
+      "stryker:business-unit/smart-care"
+    ],
+    "/us/en/smart-care/contact": [
+      "stryker:content-type/business-unit-contact"
+    ],
+    "/us/en/smart-care/news/2025-smart-hospital-summit": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/smart-care/news/3-ways-proassure-help-keep-your-platform-performing": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/alyssas-law-panic-buttons-and-school-safety-communication": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/beyond-panic-buttons-enhance-communications-school-safety": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/building-a-connected-smart-hospital": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/enabling-smart-connected-care-with-careai": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/enhancing-hospital-communication-patient-family-satisfaction": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/handoff-communication-and-patient-safety": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/help-protect-healthcare-staff-from-workplace-violence": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news/articles"
+    ],
+    "/us/en/smart-care/news/pediatric-virtual-nursing-pilot": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/roadmap-to-the-smart-hospital-vision": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/school-safety-staff-communication": [
+      "stryker:content-type/news",
+      "stryker:business-unit/acute-care/news"
+    ],
+    "/us/en/smart-care/news/stryker-launches-smarthospital-platform": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/news/stryker-releases-sync-badge-communication-device": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/stryker-sync-badge-hands-free-hospital-communication-device": [
+      "stryker:content-type/news",
+      "stryker:custom/acute-care/acute-care-bu-news"
+    ],
+    "/us/en/smart-care/news/successful-virtual-care-partnership-in-hospitals": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/smart-care/products/ambient-monitoring": [
+      "stryker:custom/smart-care/care-space/smartor",
+      "stryker:content-type/product",
+      "stryker:custom/smart-care/product-type/ambient-intelligence",
+      "stryker:specialty/ambient-intelligence",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:capability/smart-hospital",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/smart-care/products/sync-badge": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:product/smart-care/sync-badge",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/care-space/smartor",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/virtual-monitoring": [
+      "stryker:content-type/product",
+      "stryker:specialty/virtual-care",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:capability/smart-hospital",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/virtual-care"
+    ],
+    "/us/en/smart-care/products/virtual-nursing": [
+      "stryker:content-type/product",
+      "stryker:specialty/virtual-care",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/virtual-care"
+    ],
+    "/us/en/smart-care/products/vocera-accessories": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:product/smart-care/vocera-accessories",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/vocera-collaboration-suite": [
+      "stryker:product/smart-care/vocera-collaboration-suite",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:specialty/applications",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/vocera-ease": [
+      "stryker:content-type/product",
+      "stryker:product/smart-care/vocera-ease",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/vocera-edge": [
+      "stryker:product/smart-care/vocera-edge",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/care-space/smartor",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/vocera-engage": [
+      "stryker:content-type/product",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/workflow-engine",
+      "stryker:product/smart-care/vocera-engage",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/workflow-engine",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/care-space/smartor"
+    ],
+    "/us/en/smart-care/products/vocera-smartbadge": [
+      "stryker:product/smart-care/vocera-smartbadge",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/care-space/smarted",
+      "stryker:custom/smart-care/care-space/smartroom",
+      "stryker:custom/smart-care/care-space/smartor",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/smart-care/products/vocera-vina": [
+      "stryker:content-type/product",
+      "stryker:product/smart-care/vocera-vina",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/smart-hospital",
+      "stryker:business-unit/smart-care",
+      "stryker:specialty/clinical-communication",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/smart-care/product-type/clinical-communication"
+    ],
+    "/us/en/spine": [
+      "stryker:business-unit/spine",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/spine/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-unit/spine",
+      "stryker:business-function/hq",
+      "stryker:business-function/sales/usa",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa",
+      "stryker:business-unit/Navigation-NSE"
+    ],
+    "/us/en/spine/products/bacs-balance-acs/index": [
+      "stryker:custom/spine/procedures/tlif",
+      "stryker:custom/spine/procedures/alif",
+      "stryker:custom/spine/anatomy/thoracic",
+      "stryker:custom/spine/InnovativeTechnology/total-body-balance",
+      "stryker:custom/spine/procedures/plif",
+      "stryker:custom/spine/brand-keywords/bacs",
+      "stryker:custom/spine/pathology/deformity",
+      "stryker:content-type/product",
+      "stryker:custom/spine/anatomy/pelvic",
+      "stryker:custom/spine/brand-keywords/total-body-balance",
+      "stryker:custom/spine/anatomy/sacral",
+      "stryker:custom/spine/procedures/OCT",
+      "stryker:custom/spine/pathology/degen",
+      "stryker:custom/spine/pathology/tumor-trauma",
+      "stryker:custom/spine/anatomy/cervical",
+      "stryker:custom/spine/InnovativeTechnology/balanceacs",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/spine/procedures/acdf",
+      "stryker:custom/spine/procedures/pcf",
+      "stryker:custom/spine/anatomy/lumbar",
+      "stryker:custom/spine/InnovativeTechnology/bacs",
+      "stryker:custom/spine/procedures/vertebral-column-reconstruction",
+      "stryker:custom/spine/procedures/deformity-correction",
+      "stryker:custom/spine/brand-keywords/balanceacs",
+      "stryker:custom/spine/procedures/OccipitalFixation",
+      "stryker:custom/spine/procedures/BoneVoidFiller"
+    ],
+    "/us/en/spine/products/bacs-balance-acs/index/accelerate": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/spine/products/bacs-balance-acs/index/assist": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/spine/products/bacs-balance-acs/index/assure": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/spine/products/cranial-guidance-software": [
+      "stryker:specialty/cranial",
+      "stryker:specialty/cranial-navigation",
+      "stryker:content-type/product",
+      "stryker:procedure/spine",
+      "stryker:portfolio/neurotechnology",
+      "stryker:business-unit/spine",
+      "stryker:capability/spine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/orthopaedic-navigation",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/neurotechnology",
+      "stryker:capability/navigation"
+    ],
+    "/us/en/spine/products/q-guidance-system": [
+      "stryker:specialty/cranial-navigation",
+      "stryker:specialty/cranial",
+      "stryker:content-type/product",
+      "stryker:capability/spine-ortho",
+      "stryker:specialty/spine-navigation",
+      "stryker:capability/navigation",
+      "stryker:specialty/spine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/spine/systems/niagara": [
+      "stryker:content-type/product",
+      "stryker:business-unit/spine",
+      "stryker:system/spine/niagara",
+      "stryker:custom/spine/vb-spine-tags/now-sold-by-vb-spine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine": [
+      "stryker:content-type/business-unit",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/sports-medicine/c/rotator_cuff_repair_solutions": [
+      "stryker:procedure/sports-medicine",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/calendar": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/sports-medicine/contact": [
+      "stryker:customer-support-centers/USA",
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-unit/sports-medicine",
+      "stryker:business-function/hq/usa",
+      "stryker:geography/north-america",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/sports-medicine/procedures/achilles-tendon-repair": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/peek-zip-anchor",
+      "stryker:product/sports-medicine/iconix-all-suture-anchor",
+      "stryker:custom/sports-medicine/procedure-(small-joints)",
+      "stryker:product/sports-medicine/force-fiber-surgical-suture",
+      "stryker:capability/sports-medicine",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/procedure",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sports-medicine/alphavent",
+      "stryker:product/sports-medicine/reelx-stt-knotless-peek-anchor",
+      "stryker:product/sports-medicine/gravity",
+      "stryker:product/sports-medicine/biosteon-intraline-ha-plla-composite-anchors",
+      "stryker:custom/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/achilles-tendon-repair",
+      "stryker:custom/sports-medicine/procedure/achilles-tendon-repair",
+      "stryker:product/sports-medicine/xbraid-tt-surgical-suture-tape",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/sports-medicine"
+    ],
+    "/us/en/sports-medicine/procedures/ACL-reconstruction": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:business-unit/sports-medicine",
+      "stryker:event-speciailty/knee",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/procedure",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:procedure/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:event-speciailty/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(knee)",
+      "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:system/sports-medicine",
+      "stryker:system/endoscopy"
+    ],
+    "/us/en/sports-medicine/procedures/Biceps-Tenodesis": [
+      "stryker:product/sports-medicine/serfas-energy-probes",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:product/sports-medicine/crossblade-diamond-burs",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/force-fiber-surgical-suture",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:product/sports-medicine/crossblade-series-cutters",
+      "stryker:product/sports-medicine/champion-shoulder-instrumentation-set",
+      "stryker:content-type/procedure",
+      "stryker:product/sports-medicine/biosteon-ha-plla-interference-screws",
+      "stryker:product/sports-medicine/dri-lok-cannula-",
+      "stryker:product/sports-medicine/crossfire-2-integrated-resection-and-energy-system",
+      "stryker:procedure/sports-medicine",
+      "stryker:product/sports-medicine/reelx-stt-knotless-peek-anchor",
+      "stryker:product/sports-medicine/cobra",
+      "stryker:custom/sports-medicine",
+      "stryker:product/sports-medicine/xbraid-tt-surgical-suture-tape",
+      "stryker:system/sports-medicine",
+      "stryker:product/sports-medicine/champion-slingshot-single-portal-suture-passing-system",
+      "stryker:procedure/sports-medicine/bicep-tenodesis",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/iconix-all-suture-anchor",
+      "stryker:product/sports-medicine/crossflow-integrated-arthroscopy-pump",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:product/sports-medicine/g-lok-suspensory-fixation-system",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder",
+      "stryker:product/sports-medicine/crossflow-tubing",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure"
+    ],
+    "/us/en/sports-medicine/procedures/complex-instability": [
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure"
+    ],
+    "/us/en/sports-medicine/procedures/instability": [
+      "stryker:product/sports-medicine/serfas-energy-probes",
+      "stryker:custom/sports-medicine/product-type/cannulas",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:product/sports-medicine/crossblade-series-cutters",
+      "stryker:product/sports-medicine/champion-shoulder-instrumentation-set",
+      "stryker:content-type/procedure",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:product/sports-medicine/dri-lok-cannula-",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:product/sports-medicine/crossfire-2-integrated-resection-and-energy-system",
+      "stryker:product/sports-medicine/nano-tack-peek-anchor",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:system/sports-medicine",
+      "stryker:product/sports-medicine/champion-slingshot-single-portal-suture-passing-system",
+      "stryker:audience/medical_professionals",
+      "stryker:product/sports-medicine/twinlop-flex-anchor-system",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/iconix-all-suture-anchor",
+      "stryker:product/sports-medicine/crossflow-integrated-arthroscopy-pump",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:product/sports-medicine/transport-&-flowport-cannulas",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sports-medicine/crossflow-tubing",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:event-speciailty/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:audience",
+      "stryker:procedure/sports-medicine/instability",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure"
+    ],
+    "/us/en/sports-medicine/procedures/meniscal-repair": [
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/procedure",
+      "stryker:business-unit/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine",
+      "stryker:procedure/meniscal-repair"
+    ],
+    "/us/en/sports-medicine/procedures/Rotator_Cuff_Repair": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:content-type/procedure",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/2-0-knot-pusher-suture-cutter-and-slotted-cannula-set": [
+      "stryker:product/sports-medicine/2-0-knot-pusher---suture-cutter-and-slotted-cannula-set",
+      "stryker:business-unit/sports-medicine",
+      "stryker:Stryker-SEO-Tags",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:event-speciailty/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:system/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair"
+    ],
+    "/us/en/sports-medicine/products/Adaptable-Arm-Positioner": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/positioning",
+      "stryker:procedure/sports-medicine/instability",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/All-inside-meniscal-repair-system": [
+      "stryker:procedure/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:system/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant"
+    ],
+    "/us/en/sports-medicine/products/allosource-tissue-bank": [
+      "stryker:specialty/sports-biologics",
+      "stryker:custom/sports-medicine/procedure/cartilage-replacement",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/allosource-tissue-bank",
+      "stryker:custom/sports-medicine/product-type/human-tissue-allografts",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/anatomy/sports-biologics",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(sports-biologics)/cartilage-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure-(sports-biologics)/cartilage-replacement",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:specialty/small-joints"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent_Knotless": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:procedure/sports-medicine/achilles-tendon-repair",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure/foot-and-ankle-tendon-repairs",
+      "stryker:procedure/sports-medicine/foot-and-ankle-tendon-repairs",
+      "stryker:custom/sports-medicine",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/soft-tissue-repair",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/foot-and-ankle-tendon-repairs",
+      "stryker:specialty/shoulder",
+      "stryker:custom/sports-medicine/procedure/ankle-instability",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure/achilles-tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/achilles-tendon-repair",
+      "stryker:specialty/small-joints",
+      "stryker:product/sports-medicine",
+      "stryker:procedure/sports-medicine/ankle-instability",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/ankle-instability",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/AlphaVent-hard-body-screw-in-anchor-platform": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:procedure/sports-medicine/medial-ligament-stabilization-repair",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)",
+      "stryker:procedure/sports-medicine/foot-and-ankle-tendon-repairs",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:procedure/sports-medicine/bicep-tenodesis",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/foot-and-ankle-tendon-repairs",
+      "stryker:procedure/sports-medicine/instability",
+      "stryker:product/sports-medicine",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/medial-ligament-stabilization-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/big-dog": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:event-type",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:system/sports-medicine",
+      "stryker:audience/medical_professionals",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscal-root-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/mpfl",
+      "stryker:custom/sports-medicine/procedure-(knee)/plc"
+    ],
+    "/us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/biosteon-intraline-ha-plla-composite-anchors",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis"
+    ],
+    "/us/en/sports-medicine/products/champion-shoulder-instrumentation-set": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:product/sports-medicine/champion-shoulder-instrumentation-set",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis"
+    ],
+    "/us/en/sports-medicine/products/champion-sliders": [
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/sports-medicine",
+      "stryker:system/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/champion-slingshot-single-portal-suture-passing-system": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:product/sports-medicine/champion-slingshot-single-portal-suture-passing-system",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis"
+    ],
+    "/us/en/sports-medicine/products/champion-suture-passer": [
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs"
+    ],
+    "/us/en/sports-medicine/products/cobra": [
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:product/sports-medicine/cobra",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/conquest-manual-instruments": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:business-unit/sports-medicine",
+      "stryker:event-speciailty/knee",
+      "stryker:product/sports-medicine/conquest-manual-instruments",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:capability/surgical-visualization",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/crossblade-series-cutters": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:product/sports-medicine/crossblade-series-cutters",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:capability/surgical-visualization",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/crossblade-xl-diamond-burs": [
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/crossblade-diamond-burs",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai"
+    ],
+    "/us/en/sports-medicine/products/crossfire-2-integrated-resection-and-energy-system": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/product-type/rf-tissue-resection",
+      "stryker:capability/surgical-visualization",
+      "stryker:product/sports-medicine/crossfire-2-integrated-resection-and-energy-system",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:services/procare/endoscopy/surgical-visualization/arthroscopy",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:product/sports-medicine/crossflow-integrated-arthroscopy-pump",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:services/procare/endoscopy/surgical-visualization/arthroscopy",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:specialty/fluid-management"
+    ],
+    "/us/en/sports-medicine/products/crossflow-tubing": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sports-medicine/crossflow-tubing",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/soft-tissue-repair",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:specialty/fluid-management"
+    ],
+    "/us/en/sports-medicine/products/cutter-cannula-set": [
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:capability/surgical-visualization",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/cutter-cannula-set",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair"
+    ],
+    "/us/en/sports-medicine/products/dri-lok-cannula": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/product-type/cannulas",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:product/sports-medicine/dri-lok-cannula-",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:specialty/fluid-management",
+      "stryker:business-unit/sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/flosteady-select": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:specialty/surgical-visualization",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:product/sports-medicine/flosteady-select",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:specialty/fluid-management",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair"
+    ],
+    "/us/en/sports-medicine/products/flosteady-tubing": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:product/sports-medicine/flosteady-tubing",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:specialty/fluid-management",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair"
+    ],
+    "/us/en/sports-medicine/products/FlowPort-Touch-cannula-system": [
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:custom/sports-medicine/product-type/cannulas",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)",
+      "stryker:custom/sports-medicine",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:system/sports-medicine",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/formula-series-cutters-and-burs": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:product/sports-medicine/formula-series-cutters-and-burs",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair"
+    ],
+    "/us/en/sports-medicine/products/formula-shaver-handpieces": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:product/sports-medicine/formula-shaver-handpieces",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/g--force-tenodesis-system": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/g-force",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/gateway": [
+      "stryker:custom/sports-medicine/product-type/cannulas",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair"
+    ],
+    "/us/en/sports-medicine/products/GraftJacket-Now-Ultra-Thick": [
+      "stryker:specialty/sports-biologics",
+      "stryker:custom/sports-medicine/product-type/human-acellular-dermis",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/soft-tissue-repair",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:product/sports-medicine/allosource-tissue-bank",
+      "stryker:custom/sports-medicine/procedure-(sports-biologics)/soft-tissue-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/sports-medicine",
+      "stryker:specialty/shoulder",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:custom/sports-medicine/anatomy/sports-biologics",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/gravity": [
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/gravity",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/hip-check": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/surgical-planning",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:product/sports-medicine/hip-check",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai"
+    ],
+    "/us/en/sports-medicine/products/iconix-all-suture-anchor": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure/foot-and-ankle-tendon-repairs",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:procedure/sports-medicine/foot-and-ankle-tendon-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/product-type",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:product/sports-medicine/iconix-all-suture-anchor",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/foot-and-ankle-tendon-repairs",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure"
+    ],
+    "/us/en/sports-medicine/products/Iconix-HA-plus": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)",
+      "stryker:custom/sports-medicine/procedure-(small-joints)",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:procedure/sports-medicine",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(shoulder)",
+      "stryker:custom/sports-medicine/procedure-(knee)",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:procedure/sports-medicine/bicep-tenodesis",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/iconix-all-suture-anchor",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder",
+      "stryker:procedure/sports-medicine/instability",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/Iconix-Knotless": [
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)",
+      "stryker:custom/sports-medicine/procedure-(shoulder)",
+      "stryker:product/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/product-type/implant"
+    ],
+    "/us/en/sports-medicine/products/iconix-speed": [
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:capability/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/injector-ii-capsule-closure": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/injector-ii-capsule-closure",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/capsular-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsular-repair"
+    ],
+    "/us/en/sports-medicine/products/inspace": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/massive-irreperable-rotator-cuff-tear",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/inspace",
+      "stryker:custom/sports-medicine/procedure/massive-irreperable-rotator-cuff-tear",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/sports-medicine",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/knotilus-knotless-anchor-system": [
+      "stryker:product/sports-medicine/knotilus-knotless-anchor-system",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/knotilus-plus": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/microfx-osteochondral-drilling-system": [
+      "stryker:product/sports-medicine/microfx-ocd-osteochondral-drilling-system",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair"
+    ],
+    "/us/en/sports-medicine/products/nano-tack-peek-anchor": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/nano-tack-peek-anchor",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/nanopass-suture-management-system": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/nanopass-suture-management-system",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction"
+    ],
+    "/us/en/sports-medicine/products/nanotack-tt": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/omega": [
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/meniscal-root-repair",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:specialty/small-joints",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:capability/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscal-root-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/knee"
+    ],
+    "/us/en/sports-medicine/products/peek-intraline": [
+      "stryker:procedure/sports-medicine",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/peek-zip-anchor": [
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:product/sports-medicine/peek-zip-anchor",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/phoenix-microfracture-system": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/phoenix-microfracture-system",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/sports-medicine/products/pivot-complete-hip-arthroscopy-access-and-instrumentation-kit": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/pivot-complete-hip-arthroscopy-access-and-instrumentation-kit",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/sports-medicine/products/pivot-guardian-distraction-system": [
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:specialty/asc",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:specialty/or",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/positioning",
+      "stryker:specialty/surgical-tables",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:product/sports-medicine/pivot-guardian-distraction-system",
+      "stryker:custom/sports-medicine/procedure/capsular-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsular-repair"
+    ],
+    "/us/en/sports-medicine/products/portal-entry-kit": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:product/sports-medicine/portal-entry-kit",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy"
+    ],
+    "/us/en/sports-medicine/products/ProCinch-adjustable-suspensory-fixation-system": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(knee)/plc",
+      "stryker:custom/sports-medicine/procedure-(knee)/mpfl",
+      "stryker:custom/sports-medicine/procedure/mpfl",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:system/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/plc",
+      "stryker:product/sports-medicine/procinch-suspensory-fixation-adjustable-loop"
+    ],
+    "/us/en/sports-medicine/products/procinch-suspensory-fixation-adjustable-loop": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(knee)/plc",
+      "stryker:custom/sports-medicine/procedure-(knee)/mpfl",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/mpfl",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure/plc",
+      "stryker:product/sports-medicine/procinch-suspensory-fixation-adjustable-loop"
+    ],
+    "/us/en/sports-medicine/products/prozip-knotless-all-suture-implant": [
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)",
+      "stryker:custom/sports-medicine",
+      "stryker:product/sports-medicine",
+      "stryker:product/sports-medicine/prozip",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sports-medicine/products/reelx-stt-reelx-knotless-peek-anchor": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine/reelx-stt-knotless-peek-anchor",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/samurai-blade": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:product/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:product/sports-medicine/samurai-blade"
+    ],
+    "/us/en/sports-medicine/products/serfas-energy-platform": [
+      "stryker:product/sports-medicine/serfas-energy-probes",
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/product-type/rf-tissue-resection",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:capability/surgical-visualization",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection"
+    ],
+    "/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system": [
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:product/sports-medicine/sharpshooter-inside-out-meniscal-repair-system",
+      "stryker:capability/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/slingshot-capsule-restoration-system": [
+      "stryker:business-unit/sports-medicine",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:product/sports-medicine/slingshot-capsule-restoration-system",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/capsular-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsular-repair"
+    ],
+    "/us/en/sports-medicine/products/slot-meniscal-transplantation-set": [
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/slot-meniscal-transplantation-set",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/speed": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/product-type/rf-tissue-resection",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:system/sports-medicine",
+      "stryker:audience/medical_professionals",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/sportsuite-vision": [
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:product/sports-medicine",
+      "stryker:business-unit/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/suture-and-tape-offerings": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:capability/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:custom/sports-medicine/procedure/meniscus-repair",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:custom/sports-medicine/procedure/tendon-repair",
+      "stryker:procedure/sports-medicine/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+      "stryker:business-unit/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+      "stryker:specialty/small-joints",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+      "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair"
+    ],
+    "/us/en/sports-medicine/products/tps-small-joint-series-cutters-and-burs": [
+      "stryker:product/sports-medicine/tps-small-joint-series-cutters",
+      "stryker:specialty/arthroscopic-resection",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/arthroscopy-instrumentation",
+      "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+      "stryker:custom/sports-medicine/anatomy/small-joints",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/procedure/elbow-repairs",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+      "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/small-joints",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+      "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair"
+    ],
+    "/us/en/sports-medicine/products/transport-and-flowport-cannulas": [
+      "stryker:custom/sports-medicine/product-type/cannulas",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+      "stryker:capability/sports-medicine",
+      "stryker:product/sports-medicine/transport-&-flowport-cannulas",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+      "stryker:custom/sports-medicine/anatomy/fluid-management",
+      "stryker:custom/sports-medicine/anatomy/hip",
+      "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+      "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+      "stryker:custom/sports-medicine/procedure/tissue-resection",
+      "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+      "stryker:custom/sports-medicine/procedure/labral-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/procedure/capsulotomy",
+      "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+      "stryker:specialty/fluid-management"
+    ],
+    "/us/en/sports-medicine/products/twinloop-flex-anchor-system": [
+      "stryker:product/sports-medicine/twinlop-flex-anchor-system",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/shoulder",
+      "stryker:capability/sports-medicine",
+      "stryker:specialty/shoulder-sports-med",
+      "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+      "stryker:custom/sports-medicine/procedure/instability-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/sports-medicine/product-type/implant",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+      "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+    ],
+    "/us/en/sports-medicine/products/versipass": [
+      "stryker:specialty/knee-sports-medicine",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/sports-medicine",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/sports-medicine",
+      "stryker:product/versipass"
+    ],
+    "/us/en/sports-medicine/products/versitomic-flexible-reaming-system": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:custom/sports-medicine/procedure-(knee)/meniscal-root-repair",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:capability/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/sports-medicine/versitomic-flexible-reaming-system",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:custom/sports-medicine/procedure/meniscal-root-repair",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/sports-medicine/products/versitomic-isi": [
+      "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+      "stryker:product/sports-medicine/versitomic-isi",
+      "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+      "stryker:content-type/product",
+      "stryker:business-unit/sports-medicine",
+      "stryker:custom/sports-medicine/product-type/instrumentation",
+      "stryker:capability/sports-medicine",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/sports-medicine",
+      "stryker:custom/sports-medicine/anatomy/knee",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/knee-sports-medicine"
+    ],
+    "/us/en/surgical-technologies": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/surgical-technologies/news": [
+      "stryker:business-unit/surgical_technologies"
+    ],
+    "/us/en/surgical-technologies/news/addressing-or-and-l-and-d-challenges-with-adjunct-technology": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/how-technology-helps-address-gi-suite-challenges": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/nurses-in-the-or": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/one-caregivers-journey-to-help-reduce-surgical-smoke": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/protect-your-patients-and-your-or-staff": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/technology-helps-improve-colonoscopy-safety-and-efficiency": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/news/the-journey-to-zero-harm-starts-with-communication-and-technology": [
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/news"
+    ],
+    "/us/en/surgical-technologies/products/cactus-controlled-substance-waste-management-system": [
+      "stryker:content-type/product",
+      "stryker:product/surgical_technologies/Cactus",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:services/procare/surgical/pharmaceutical-waste-management",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:capability/pharmaceutical-waste",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/surgical-technologies/products/floor-fluid-disposables": [
+      "stryker:product/surgical_technologies/Floor_fluid_disposables",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:services/procare/surgical",
+      "stryker:specialty/fluid-waste-management",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/floor-fluid-disposables"
+    ],
+    "/us/en/surgical-technologies/products/neptune-s": [
+      "stryker:content-type/product",
+      "stryker:specialty/fluid-waste-management",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-suction"
+    ],
+    "/us/en/surgical-technologies/products/neptune-waste-management-system": [
+      "stryker:content-type/product",
+      "stryker:services/procare/surgical/surgical-suction",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:capability/covid-19-products",
+      "stryker:specialty/fluid-waste-management",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content",
+      "stryker:product/surgical_technologies/Neptune_3"
+    ],
+    "/us/en/surgical-technologies/products/photonblade": [
+      "stryker:specialty/Illuminated_Suction",
+      "stryker:capability/plastic-surgery",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:content-type",
+      "stryker:specialty/breast",
+      "stryker:product/surgical_technologies/PhotonBlade",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:specialty/Illuminated_Retractors",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:capability/surgical-suction",
+      "stryker:specialty/Illuminated_Advanced_Energy",
+      "stryker:specialty/plastic-surgery"
+    ],
+    "/us/en/surgical-technologies/products/photonblade-3-se": [
+      "stryker:specialty/Illuminated_Suction",
+      "stryker:capability/plastic-surgery",
+      "stryker:capability/reconstructive-surgery",
+      "stryker:specialty/breast",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:capability/Illuminated_instruments",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/surgical-visualization",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:capability/surgical-suction",
+      "stryker:specialty/Illuminated_Advanced_Energy",
+      "stryker:specialty/plastic-surgery"
+    ],
+    "/us/en/surgical-technologies/products/procedural-oxygen-mask": [
+      "stryker:content-type/product",
+      "stryker:capability/airway-management",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:product/surgical_technologies/procedural-oxygen-mask"
+    ],
+    "/us/en/surgical-technologies/products/safeair-smoke-evacuation": [
+      "stryker:product/surgical_technologies/neptune_e-sep_smoke_evacuation_pencil",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/surgical-suction",
+      "stryker:specialty/surgical-smoke-evacuation",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/surgical-technologies/products/surgicount-safety-sponge-system": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/sponge-management",
+      "stryker:product/surgical/surgicount-safety-sponge-system",
+      "stryker:product/surgical_technologies/Surgicount",
+      "stryker:business-unit/surgical_technologies",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/surgical-technologies/services/instruments": [
+      "stryker:custom/instruments/landing-page/instruments",
+      "stryker:custom/instruments/landing-page/new-accounts",
+      "stryker:custom/instruments/landing-page/technical-support",
+      "stryker:custom/instruments/landing-page/customer-service",
+      "stryker:custom/instruments/landing-page/contact-information",
+      "stryker:custom/instruments/landing-page/stryker-instruments",
+      "stryker:custom/instruments/landing-page/depot-repairs",
+      "stryker:custom/instruments/landing-page/field-repairs",
+      "stryker:custom/instruments/landing-page/field-service",
+      "stryker:custom/instruments/landing-page/procare-service",
+      "stryker:custom/instruments/landing-page/system-7",
+      "stryker:custom/instruments/landing-page/system-8",
+      "stryker:custom/instruments/landing-page/rem-b",
+      "stryker:custom/instruments/landing-page/core",
+      "stryker:custom/instruments/landing-page/tpx",
+      "stryker:custom/instruments/landing-page/neptune",
+      "stryker:custom/instruments/landing-page/smart-pump",
+      "stryker:custom/instruments/landing-page/smart-sink",
+      "stryker:custom/instruments/landing-page/surgi-count",
+      "stryker:custom/instruments/landing-page/vp4",
+      "stryker:custom/instruments/landing-page/tso3",
+      "stryker:custom/instruments/landing-page/navigation",
+      "stryker:custom/instruments/landing-page/scopis",
+      "stryker:custom/instruments/landing-page/rf-generator",
+      "stryker:custom/instruments/landing-page/sonopet",
+      "stryker:custom/instruments/landing-page/safe-air",
+      "stryker:custom/instruments/landing-page/neptune-mini",
+      "stryker:custom/instruments/landing-page/rover",
+      "stryker:custom/instruments/landing-page/docker",
+      "stryker:custom/instruments/landing-page/compact-smoke-evacuator",
+      "stryker:custom/instruments/landing-page/pharma-lock",
+      "stryker:custom/instruments/landing-page/stryker-power",
+      "stryker:custom/instruments/landing-page/stryker-drill",
+      "stryker:custom/instruments/landing-page/stryker-saw"
+    ],
+    "/us/en/surgical-technologies/services/instruments/contact-information": [
+      "stryker:content-type/hcp_content",
+      "stryker:custom/instruments/contact-information/contact-information",
+      "stryker:custom/instruments/contact-information/contact-number",
+      "stryker:custom/instruments/contact-information/customer-service",
+      "stryker:custom/instruments/contact-information/depot-repairs",
+      "stryker:custom/instruments/contact-information/technical-support",
+      "stryker:custom/instruments/contact-information/rep-contact-information",
+      "stryker:custom/instruments/contact-information/stryker-instruments-phone-numbers",
+      "stryker:custom/instruments/contact-information/stryker-instruments-emails",
+      "stryker:custom/instruments/contact-information/customer-service-email",
+      "stryker:custom/instruments/contact-information/tech-support-email",
+      "stryker:custom/instruments/contact-information/depot-repairs-email",
+      "stryker:custom/instruments/contact-information/help-with-orders",
+      "stryker:custom/instruments/contact-information/help-with-repairs",
+      "stryker:custom/instruments/contact-information/help-with-dispatches"
+    ],
+    "/us/en/surgical-technologies/services/instruments/new-accounts": [
+      "stryker:content-type/hcp_content",
+      "stryker:custom/instruments/new-accounts/customer-service",
+      "stryker:custom/instruments/new-accounts/new-account",
+      "stryker:custom/instruments/new-accounts/account-changes",
+      "stryker:custom/instruments/new-accounts/biller",
+      "stryker:custom/instruments/new-accounts/payer",
+      "stryker:custom/instruments/new-accounts/ship-too",
+      "stryker:custom/instruments/new-accounts/address",
+      "stryker:custom/instruments/new-accounts/account-name-change",
+      "stryker:custom/instruments/new-accounts/add-a-3rd-party-provider",
+      "stryker:custom/instruments/new-accounts/trimedx",
+      "stryker:custom/instruments/new-accounts/ge",
+      "stryker:custom/instruments/new-accounts/contact-email",
+      "stryker:custom/instruments/new-accounts/change-request"
+    ],
+    "/us/en/surgical-technologies/services/instruments/tech-support": [
+      "stryker:content-type/hcp_content",
+      "stryker:custom/instruments/tech-support/stryker-instruments-products",
+      "stryker:custom/instruments/tech-support/customer-documents",
+      "stryker:custom/instruments/tech-support/manuals",
+      "stryker:custom/instruments/tech-support/instructions-for-use",
+      "stryker:custom/instruments/tech-support/medical-safety-data-sheets",
+      "stryker:custom/instruments/tech-support/letters-of-obsolescence",
+      "stryker:custom/instruments/tech-support/care-instructions",
+      "stryker:custom/instruments/tech-support/connect",
+      "stryker:custom/instruments/tech-support/tech-support",
+      "stryker:custom/instruments/tech-support/neptune",
+      "stryker:custom/instruments/tech-support/navigation",
+      "stryker:custom/instruments/tech-support/smart-sink",
+      "stryker:custom/instruments/tech-support/stryker-malis",
+      "stryker:custom/instruments/tech-support/vp4",
+      "stryker:custom/instruments/tech-support/sterizone",
+      "stryker:custom/instruments/tech-support/core-console",
+      "stryker:custom/instruments/tech-support/surgi-count",
+      "stryker:custom/instruments/tech-support/training",
+      "stryker:custom/instruments/tech-support/repairs",
+      "stryker:custom/instruments/tech-support/field-service",
+      "stryker:custom/instruments/tech-support/procare-service",
+      "stryker:custom/instruments/tech-support/protocols",
+      "stryker:custom/instruments/tech-support/cybersecurity",
+      "stryker:custom/instruments/tech-support/waste-management",
+      "stryker:custom/instruments/tech-support/operational-manual",
+      "stryker:custom/instruments/tech-support/performance",
+      "stryker:custom/instruments/tech-support/preventive-maintenance",
+      "stryker:custom/instruments/tech-support/blue-62",
+      "stryker:custom/instruments/tech-support/enzymatic-detergent",
+      "stryker:custom/instruments/tech-support/ortho-instruments",
+      "stryker:custom/instruments/tech-support/surgical-technologies",
+      "stryker:custom/instruments/tech-support/f1",
+      "stryker:custom/instruments/tech-support/zip-line"
+    ],
+    "/us/en/surgical-technologies/surgical-technologies": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-unit/surgical_technologies"
+    ],
+    "/us/en/surgical/services/smart-equipment-management": [
+      "stryker:content-type/product",
+      "stryker:business-unit/surgical",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sustainability": [
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/sustainability/contact": [
+      "stryker:content-type/business-unit-contact",
+      "stryker:geography/north-america",
+      "stryker:business-function/manufacturing/usa",
+      "stryker:business-function/hq",
+      "stryker:business-unit/sustainability",
+      "stryker:customer-support-centers/USA",
+      "stryker:business-function/hq/usa",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/sustainability/events": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sustainability/ifus/sss-storefront-redirect": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sustainability/sss-storefront-redirect"
+    ],
+    "/us/en/sustainability/news/ASC": [
+      "stryker:content-type/news",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/news/EP": [
+      "stryker:content-type/news",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/news/ExpectMore": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sustainability/news/LCA0": [
+      "stryker:content-type/news",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/news/leader": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sustainability/news/quality-you-can-count-on--five-quality-standards-in-medical-devi": [
+      "stryker:content-type/news",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/news/say-yes-to-reprocessing": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sustainability/news/Supplychainweek": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sustainability/news/world-environment-day-2025-": [
+      "stryker:content-type/news"
+    ],
+    "/us/en/sustainability/products/acunav": [
+      "stryker:specialty/ice-catheters",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/acunav",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/agilis": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/introducer-sheaths",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/agilis",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/Conference": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/sustainability/products/covidien-kendall": [
+      "stryker:specialty/ecg-leads,-cables-and-adaptors",
+      "stryker:content-type/product",
+      "stryker:product/sustainability/kendall-dl",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/ensite-x": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/ep-cables",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/ensite-x",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/ep-sustainability": [
+      "stryker:business-unit/sustainability"
+    ],
+    "/us/en/sustainability/products/harmonic": [
+      "stryker:content-type/product",
+      "stryker:specialty/ultrasonic-energy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/harmonic",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/inquiry": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/inquiry",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/ep-catheters",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/ivus": [
+      "stryker:business-unit/sustainability",
+      "stryker:specialty/intravascular-imaging",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/ligasure": [
+      "stryker:content-type/product",
+      "stryker:specialty/bipolar-energy",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/ligasure",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/masimo-lncs": [
+      "stryker:content-type/product",
+      "stryker:product/sustainability/lncs",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:specialty/pulse-oximeter-sensors",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/myosure": [
+      "stryker:specialty/hysteroscopic-tissue-removal",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sustainability/myosure",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/nellcor-oximax": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:specialty/pulse-oximeter-sensors",
+      "stryker:content-type/hcp_content",
+      "stryker:product/sustainability/oximax",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/rd-set": [
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/product",
+      "stryker:specialty/pulse-oximeter-sensors",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/ReprocessedSoundStar": [
+      "stryker:business-unit/sustainability",
+      "stryker:specialty/ice-catheters",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/save-simply-philips-ecg": [
+      "stryker:specialty/ecg-leads,-cables-and-adaptors",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/save-simply-blended-offerings",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/philips",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/save-simply-sage-prevalon-mats": [
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:specialty/save-simply-blended-offerings",
+      "stryker:product/sustainability/prevalon",
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/sustainability/products/sss-impact": [
+      "stryker:business-unit/sustainability",
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/products/sss-impact/Supplychain": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content",
+      "sustainability:"
+    ],
+    "/us/en/sustainability/products/viewflex": [
+      "stryker:specialty/ice-catheters",
+      "stryker:content-type/product",
+      "stryker:portfolio/medical-and-surgical-equipment",
+      "stryker:business-unit/sustainability",
+      "stryker:product/sustainability/viewflex",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/reprocessed-products"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/3d-biphasic-defibrillation-animation": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/5-ways-to-improve-cath-lab-activation-accuracy": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/after-a-disaster--ems-response-recovery-and-opportunities": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/beyond-st-elevation--uncovering-cath-lab-candidates": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/capnography--reading-the-waves-and-why-it-matters-from-ems-throu": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-one-introduction": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-three-annotation-tools": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/code-stat-training-video-part-two-waveform-viewer-navigation-and-tools": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/cracking-complex-pediatric-airway-cases": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/high-performance-cpr--the-insider-s-insights": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/improving-your-stemi-recognition-and-treatment-using-18-lead-ecg": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/insight-into-cprinsight-analysis-technology": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifelinkcentral-aed-program-manager": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifenet-15--noninvasive-pacing": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifenet-asset-demo": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-1000--in-service-video": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--acquiring-a-12-lead-ecg": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--aed-mode": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--manual-defibrillation": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-etco2": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-invasive-pressure": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-noninvasive-blood-pressure": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-spo2--spco-and-spmet": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-temperature": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--monitoring-the-ecg": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--power-supply": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--synchronized-cardioversion": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-15--vital-sign-and-st-segment-trends": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--aed-mode": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--connecting-to-power": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--data-management": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--general-maintenance-and-testing": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--introduction": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--manual-defibrillation": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-etco2": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-spo2": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--monitoring-the-ecg": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--noninvasive-pacing": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--switching-from-aed-to-manual-mode": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-20e--synchronized-cardioversion": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--lifenet-aed-event-viewer": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--maintaining-readiness": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--replacing-electrodes-and-battery": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-a-child--30-2-cpr": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-a-child--30-2-cpr-wi": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--30-2-cpr": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--hands-only": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-fully-automatic-aed-on-an-adult--hands-only0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-a-child--30-2-cpr": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-a-child--30-2-cpr-wit": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult--30-2-cpr": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--using-a-semi-automatic-aed-on-an-adult--30-2-cpr-wi": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2--wireless-setup": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifepak-cr2-aed": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lifesaving-partnerships--implementing-aeds-in-law-enforcement": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lucas-3--v3-1---setup-option-ventilation-alert": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/lucas-3--v3-1-chest-compression-system": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/public-access-defibrillation-pad-program-webinar-with-west-hartf": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/reducing-time-to-treatment-for-stemi-patients": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care/video/stair-chair--safe-medic-training": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/courses": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/ASCRS": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-/iris-course0": [
+      "stryker:content-type/event",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/ispies": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/arthroscopy": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/colorectal-surgery": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/ent": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/general-surgery": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/gynecology": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/plastic-surgery": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/trauma": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/webinars": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/neurosurgical/medical-education/events": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/upcoming-events": [
+      "stryker:business-unit/SAGE"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-1": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-management-of-fluid-waste-in-the-or--what-you-need-to-11": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/effective-team--from-diversity-to-collective-teamwork": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/ImprovedSurgicalOutcomesThroughAdvancedAccessandVisualization": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/powered-instruments-and-caregiver-safety": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/preventing-drug-diversion-in-healthcare": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards1": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards11": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards12": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards121": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards13": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/smoke-evacuation--a-review-of-the-standards131": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/the-dangers-of-third-party-service-agreements": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/medical-and-surgical-equipment--/surgical/learn/what-do-i-need-to-know-about-low-temperature-sterilization": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/centers-of-excellence": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/e-lab": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/neuroelite-fellows-program": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/skill-assist-max": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/skill-connect": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/neurotechnology/neurovascular/skill/training-centers": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/craniomaxillofacial/medical-education/surgical-videos": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/foot-and-ankle/patient-marketing-toolkit/bunion": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/foot-and-ankle/patient-marketing-toolkit/total-ankle-replacement": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/a-commitment-to-surgeon-education/vso": [
+      "stryker:content-type/hcp_content",
+      "stryker:portfolio/orthopaedics"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/april": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/august": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/december": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/february": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/january": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/july": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/june": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/march": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/may": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/november": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/october": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-2/december": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-2/february": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-2/november": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-2/october": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-2/september": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/april": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/february": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/january": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/july": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/june": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/season-3/march": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/jr45/september": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/Mako_surgeon_campaign": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/Medical_Education_Landing_Page/Mako_Live_Thank_You_Page": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/Medical_Education_Landing_Page/Mako_Refreshers_Page": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/OR_Staff": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/joint-replacement/OR_Staff/OR_staff_registration_form": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/spine/spine-medical-education/contact": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/spine/spine-medical-education/events": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/spine/spine-medical-education/on-demand-webinars": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/spine/spine-medical-education/resources": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/biologics": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/foot-and-ankle": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/b2-glenoid-critical-assessment---virtual-implantation-using-blue": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/b2-glenoid-critical-assessment---virtual-implantation-using-blue0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--complex-case-debate--pre-operative-planning-and-decis": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--complex-case-debate--pre-operative-planning-for-an-au": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--the-experts--perspective": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/how-blueprint-works---from-ct-to-3d": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/pre-operative-planning---virtual-surgery--augmented-anatomic-com": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/primary-anatomic-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/primary-reversed-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/shoulder-arthroplasty-featuring-blueprint--planning---surgery---": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/humeral-fracture-management/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/humeral-fracture-management/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/3d-virtual-planning-for-a-severely-retroverted-glenoid-with-bren": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/abcs-of-the-gilles-walch-classification--asap-meeting-2020": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/aequalis-trade--shoulder-system-extraction-instrument-overview": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--alternative-retractor-uses-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--back-table-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--mayo-stand-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--operating-room-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--or-staff-roles---responsibilities": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--patient-positioning": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--staff-positioning": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--sterile-prep-and-draping": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/approach--tips-and-pearls": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/are-you-kidding--the-only-solution-is-revising-to-a-reverse-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2--is-bone-grafting-still-an-option--dr--keener---asap-meeting-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2-glenoid-critical-assessment---virtual-implantation-using-blue": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/b2-glenoid-critical-assessment---virtual-implantation-using-blue0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bio-rsa-for-a2-glenoid-erosion-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--complex-case-debate--pre-operative-planning-and-decis": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--complex-case-debate--pre-operative-planning-for-an-au": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--plan-optimization-for-a-b2-deformity-featuring-dr--sh": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--the-experts--perspective": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/bone-preserving-tsa-with-simpliciti--and-perform---featuring-dr-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--george-athwal-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--jay-keener-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--keith-m--baumgarten-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--r--sean-churchill-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series---dr--robert-tashjian-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--brent-morris": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--dr--greg-nicholson": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--pascal-boileau--md--phd": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series--what-i-ve-learned---dr--gilles-walch": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series-dr-gilles-walch": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-corner-series-dr-r-sean-churchill-tornier-simpliciti": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---part-1-case-plannin": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---part-2-surgery-and-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/clinical-use-of-blueprint--on-a-b3-glenoid---parts-1---2---armod": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/dr--moen-delto-pectoral-technique-surgical-video-approach--": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/fractures-about-the-prosthesis--glenoid-and-humerus--what-do-you": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/glenoid-morphology--how-does-it-affect-my-plan--how-important-is": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/how-blueprint-works---from-ct-to-3d": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/humeral-osteotomy-technique": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/introducing-blueprint--mixed-reality": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/making-sense-of-all-our-measures---inclination--version--subluxa": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/my-10-tips-and-tricks-to-glenoid-exposure-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/pre-operative-planning---virtual-surgery--augmented-anatomic-com": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-anatomic-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-reversed": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/primary-reversed-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--glenoid-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision--humerus--": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/revision-arthroplasty-5-humeral-tips-to-remember-featuring-aequa": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--aequalis--perform-sho": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-blueprint--planning---surgery---": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform---reamer-instrument-asse": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-perform-reversed--surgical-video": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-simpliciti--simpliciti--user-exp": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex---gill": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--glenoid-implants": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/shoulder-revision-tools-and-techniques--humeral-implants": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial---richard": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---john-b": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-patient-testimonial-video---tommie-h": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/simpliciti--shoulder-system-surgical-case---armodios-hatzidakis-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgeon-interview-with-dr--george-athwal--bone-preserving-tsa-us0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/tips---pearls--use-of-niceloop-trade--non-absorbable-braided-sut": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty/what-s-new-with-the-b2-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--alternative-retractor-uses-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--back-table-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--mayo-stand-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--operating-room-set-up-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--or-staff-rules---responsibilities-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--patient-positioning": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--staff-positioning": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--sterile-prep-and-draping": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/approach--tips-and-pearls": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/ases-shoulder-arthroplasty--exposure--humerus-and-glenoid": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/dr--moen-delto-pectoral-technique-surgical-video-approach--": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever0": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex--rever1": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/surgical-exposure-for-treating-walch-b3-glenoids-with-augmented-": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-Landing-Page": [
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-Landing-Page/TEACH-Thank-You": [
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Foot-Ankle-Talks": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Infection-in-Shoulder-Arthroplasty": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Reverse-Shoulder-Replacements-2020": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Shoulder-talks": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Subscapularis-Management-in-shoulder-arthroplasty": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/training-and-education-calendar": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/training-and-education/vascular/peripheral-vascular/medical-education": [
+      "stryker:content-type/hcp_content",
+      "stryker:business-unit/peripheral-vascular"
+    ],
+    "/us/en/trauma-and-extremities": [
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/business-unit"
+    ],
+    "/us/en/trauma-and-extremities/contact": [
+      "stryker:customer-support-centers/USA",
+      "stryker:content-type/business-unit-contact",
+      "stryker:business-function/hq/usa",
+      "stryker:geography/north-america",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:business-function/sales/usa"
+    ],
+    "/us/en/trauma-and-extremities/products/actishield": [
+      "stryker:content-type/product",
+      "stryker:specialty/amniotics",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/amniotics/membranes",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-membrane",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/trauma-and-extremities/actishield",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/aequalis--reversed-ii": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/aequalis-fx-shoulder-system": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:product/trauma-and-extremities/aequalis-fx",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/aequalis-reversed-fx-shoulder-prosthesis": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:product/trauma-and-extremities/aequalis-reversed-fx",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/allofiber": [
+      "stryker:product/trauma-and-extremities/allofiber",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:capability/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle"
+    ],
+    "/us/en/trauma-and-extremities/products/allograft-wedges": [
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/foot-&-ankle-wedges-f&a-wedges",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+      "stryker:capability/foot-and-ankle",
+      "stryker:capability/biologics",
+      "stryker:product/trauma-and-extremities/allograft-wedges",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/foot-and-ankle-wedges",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis"
+    ],
+    "/us/en/trauma-and-extremities/products/allomatrix": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/allomatrix",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm"
+    ],
+    "/us/en/trauma-and-extremities/products/allopure-wedges": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/foot-&-ankle-wedges-f&a-wedges",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/trauma-and-extremities/allopure-wedges",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/foot-and-ankle-wedges"
+    ],
+    "/us/en/trauma-and-extremities/products/allowrap-ds-amniotic-membrane": [
+      "stryker:product/trauma-and-extremities/allowrap",
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-membrane",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:specialty/amniotics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/amniotics/membranes",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/asnis-iii": [
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:content-type/hcp_content",
+      "stryker:product/trauma-and-extremities/asnis-iii",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/screws",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/asnis-micro-cannulated-screw-system": [
+      "stryker:custom/trauma-and-extremities/Indications/foot",
+      "stryker:custom/trauma-and-extremities/Indications/Ankle",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/foot-and-ankle/asnis-micro",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/screws",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/autofix": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/autofix",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/screws",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/axsos-3-compression": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/axsos-3",
+      "stryker:product/trauma-and-extremities/axsos-3-compression",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/axsos-3-distal-femur": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/axsos-3",
+      "stryker:product/trauma-and-extremities/axsos-3-distal-femur",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/axsos-3-distal-tibia": [
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/axsos-3",
+      "stryker:product/trauma-and-extremities/axsos-3-distal-tibia",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/axsos-3-proximal-humerus": [
+      "stryker:product/trauma-and-extremities/axsos-3-proximal-humerus",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/humerus",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/axsos-3",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/axsos-3-proximal-tibia": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/axsos-3",
+      "stryker:product/trauma-and-extremities/axsos-3-proximal-tibia",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/bio4": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:product/trauma-and-extremities/bio4",
+      "stryker:capability/foot-and-ankle",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/cellular-allografts",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-cellular-allografts",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/bioskin": [
+      "stryker:content-type/product",
+      "stryker:specialty/amniotics",
+      "stryker:product/trauma-and-extremities/bioskin",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/amniotics/membranes",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-membrane",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/blueprint": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/trauma-and-extremities/blueprint",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/blueprint/rep-portal": [
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/cablefix-xpress-carpometacarpal-fixation-system": [
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities/small-joints",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:product/trauma-and-extremities/cablefix",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/CoNextions-TR": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/dbm": [
+      "stryker:capability/foot-and-ankle",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/dbm",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm"
+    ],
+    "/us/en/trauma-and-extremities/products/endotrac-ectr": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/endotrac-ectr",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/epk-kit": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/epk-kit-(disposable)",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/evolve-eps": [
+      "stryker:specialty/elbow",
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:product/trauma-and-extremities/evolve-eps",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/elbow",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow"
+    ],
+    "/us/en/trauma-and-extremities/products/evolve-radial-head-system": [
+      "stryker:product/trauma-and-extremities/evolve-proline",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/small-joints",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:product/trauma-and-extremities/evolve-triad",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/elbow",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/fusionflex": [
+      "stryker:content-type/product",
+      "stryker:capability/biologics",
+      "stryker:product/trauma-and-extremities/fusionflex",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/gamma3": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:custom/trauma-and-extremities/Procedures",
+      "stryker:product/trauma-and-extremities/gamma3",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/gamma4": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/gamma4",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:custom/trauma-and-extremities/Procedures",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/hip-fracture"
+    ],
+    "/us/en/trauma-and-extremities/products/graftjacket-now": [
+      "stryker:specialty/acellular-dermis",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/acellular-dermis-allograft",
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/graftjacket-now",
+      "stryker:custom/trauma-and-extremities/biologics/acellular-dermis/allografts",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/hoffmann-3-external-fixation-system": [
+      "stryker:custom/trauma-and-extremities/Indications/foot",
+      "stryker:custom/trauma-and-extremities/Indications/Ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+      "stryker:product/trauma-and-extremities/hoffman3",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:specialty/foot-&-ankle",
+      "stryker:system/trauma-and-extremities/external-fixation",
+      "stryker:procedure/foot-and-ankle/navicular-fracture",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation"
+    ],
+    "/us/en/trauma-and-extremities/products/hoffmann-compact": [
+      "stryker:product/trauma-and-extremities/hoffmann-compact",
+      "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/foot-and-ankle",
+      "stryker:custom/foot-and-ankle/product-type/external-fixation-systems"
+    ],
+    "/us/en/trauma-and-extremities/products/hunter": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/hunter-tendon-rods",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/hydroset": [
+      "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)",
+      "stryker:procedure/foot-and-ankle/cuboid-fracture",
+      "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:procedure/foot-and-ankle/ankle-fracture",
+      "stryker:procedure/foot-and-ankle/total-ankle-replacement",
+      "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)",
+      "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis",
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)",
+      "stryker:system/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis",
+      "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis",
+      "stryker:procedure/foot-and-ankle/-subtalar-arthroeresis",
+      "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)",
+      "stryker:procedure/foot-and-ankle/-ankle-distraction",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:procedure/foot-and-ankle/mortons-neuroma",
+      "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)",
+      "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy",
+      "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)",
+      "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:specialty/bone-grafting",
+      "stryker:procedure/foot-and-ankle/triple-arthrodesis",
+      "stryker:product/foot-and-ankle",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+      "stryker:procedure/foot-and-ankle/bunionette",
+      "stryker:procedure/foot-and-ankle/talus-fracture",
+      "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+      "stryker:procedure/foot-and-ankle/navicular-fracture",
+      "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy",
+      "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy",
+      "stryker:procedure/foot-and-ankle/lisfranc",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+      "stryker:product/trauma-and-extremities/hyrdoset",
+      "stryker:portfolio/orthopaedics",
+      "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+      "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)",
+      "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy",
+      "stryker:procedure/foot-and-ankle/brachymetatarsia/biologics"
+    ],
+    "/us/en/trauma-and-extremities/products/ignite": [
+      "stryker:product/trauma-and-extremities/ignite",
+      "stryker:content-type/product",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/imbibe": [
+      "stryker:product/spine/imbibe",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/autologous-systems-bma",
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:portfolio/neurotechnology",
+      "stryker:capability/biologics",
+      "stryker:specialty/biomaterials",
+      "stryker:product/trauma-and-extremities/imbibe",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:specialty/autologous-systems",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers"
+    ],
+    "/us/en/trauma-and-extremities/products/Instrumentation/G2": [
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:procedure/trauma-and-extremities",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/knifelight": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:product/trauma-and-extremities/knifelight",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/latitude-ev-total-elbow-arthroplasty": [
+      "stryker:product/trauma-and-extremities/latitude-ev",
+      "stryker:specialty/elbow",
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow"
+    ],
+    "/us/en/trauma-and-extremities/products/Linear-Reduction-Clamp": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:product/trauma-and-extremities/linear-reduction-clamp"
+    ],
+    "/us/en/trauma-and-extremities/products/nerve-repair": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/nerve-repair",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/neuroflex": [
+      "stryker:product/trauma-and-extremities/neuroflex",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/nerve-repair-connectors",
+      "stryker:capability/biologics",
+      "stryker:specialty/nerve-repair",
+      "stryker:custom/trauma-and-extremities/biologics/nerve-repair/connectors",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/neuromatrix": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/nerve-repair-connectors",
+      "stryker:product/trauma-and-extremities/neuromatrix",
+      "stryker:capability/biologics",
+      "stryker:specialty/nerve-repair",
+      "stryker:custom/trauma-and-extremities/biologics/nerve-repair/connectors",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/neuromend": [
+      "stryker:product/trauma-and-extremities/neuromend",
+      "stryker:content-type/product",
+      "stryker:capability/biologics",
+      "stryker:specialty/nerve-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/biologics/nerve-repair/protectors",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/nerve-repair-protectors",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/omega-3-hip-screw": [
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:product/trauma-and-extremities/omega-3-hip-screw",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/Ortholoc-SPS": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:product/trauma-and-extremities/ortholoc-sps",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/osteolysis-kit": [
+      "stryker:content-type/product",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:product/trauma-and-extremities/osteolysis-kit-(disposable)",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/Pangea": [
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/humerus",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/pangea-femur-reconstruction": [
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:procedure/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:product/trauma-and-extremities/t2-alpha-retrograde-femur",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/pro-dense-lovisc": [
+      "stryker:product/foot-and-ankle",
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/ankle-foot-and-ankle",
+      "stryker:product/trauma-and-extremities/prodense",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:capability/biologics"
+    ],
+    "/us/en/trauma-and-extremities/products/pro-pelvis": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/pro-pelvis",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/pelvis",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/prochondrix-cr": [
+      "stryker:product/trauma-and-extremities/prochondrix-cr",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:system/foot-and-ankle/biologics",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/cartilage-repair-osteochondral-allografts",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:specialty/cartilage-repair",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/prodense": [
+      "stryker:business-unit/foot-and-ankle",
+      "stryker:",
+      "stryker:capability/biologics",
+      "stryker:capability/foot-and-ankle",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/prodense",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/foot-and-ankle/product-type/biologics"
+    ],
+    "/us/en/trauma-and-extremities/products/prolayer": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:custom/trauma-and-extremities/biologics/acellular-dermis/allografts",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/acellular-dermis",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/acellular-dermis-allograft",
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/prolayer",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/prolayer-xenograft0": [
+      "stryker:specialty/acellular-dermis",
+      "stryker:content-type/product",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/biologics/acellular-dermis/xenografts",
+      "stryker:product/trauma-and-extremities/prolayer-xenograft",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/acellular-dermis-xenograft",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/prostim": [
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/prostim",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/Rayhack-Ulnar-Shortening": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/rayhack-ulnar-shortening",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/remotion-total-wrist": [
+      "stryker:capability/upper-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/small-joints",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities/small-joints",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/remotion-total-wrist"
+    ],
+    "/us/en/trauma-and-extremities/products/reunion-rfx": [
+      "stryker:capability/upper-extremities",
+      "stryker:product/trauma-and-extremities/reunion-rfx",
+      "stryker:system/trauma-and-extremities/shoulder-arthroplasty",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/shoulder-arthroplasty"
+    ],
+    "/us/en/trauma-and-extremities/products/reunion-rsa": [
+      "stryker:product/trauma-and-extremities/reunion-rsa",
+      "stryker:capability/upper-extremities",
+      "stryker:system/trauma-and-extremities/shoulder-arthroplasty",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/shoulder-arthroplasty"
+    ],
+    "/us/en/trauma-and-extremities/products/ReUnion-S": [
+      "stryker:capability/upper-extremities",
+      "stryker:business-unit/joint-replacement",
+      "stryker:procedure/trauma-and-extremities",
+      "stryker:content-type/portfolio",
+      "stryker:system/trauma-and-extremities/shoulder-arthroplasty",
+      "stryker:specialty/shoulder-arthroplasty",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/shoulder-arthroplasty"
+    ],
+    "/us/en/trauma-and-extremities/products/reunion-tsa": [
+      "stryker:product/trauma-and-extremities/reunion-tsa",
+      "stryker:capability/upper-extremities",
+      "stryker:system/trauma-and-extremities/shoulder-arthroplasty",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/shoulder-arthroplasty"
+    ],
+    "/us/en/trauma-and-extremities/products/rhead-plating-system": [
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities/small-joints",
+      "stryker:custom/trauma-and-extremities/product-type/small-joints",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/elbow",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+      "stryker:product/trauma-and-extremities/rhead-plating-and-extended",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/shoulder-id": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/swanson": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/small-joints",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/swanson-fingers",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-femur-antegrade-gt-pf": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:product/trauma-and-extremities/t2-alpha-femur-pf",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-femur-retrograde": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/intramedullary-nailing",
+      "stryker:procedure/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:product/trauma-and-extremities/t2-alpha-retrograde-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/T2-Alpha-Humeral-Nail": [
+      "stryker:specialty/proximal-humerus",
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/humerus",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-alpha-tibia": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:product/trauma-and-extremities/t2-alpha-tibia",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/intramedullary-nailing",
+      "stryker:procedure/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-ankle-arthrodesis": [
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:custom/trauma-and-extremities/Indications/Ankle",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/t2-ankle-arthrodesis",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-femur-ar": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-femur-ar",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-gtn": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-gtn",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-kids": [
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities/pediatrics",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/t2-kids",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-knee-arthrodesis": [
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:content-type/product",
+      "stryker:portfolio/orthopaedics",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-knee-arthrodesis",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-proximal-humeral-nailing-system": [
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:product/trauma-and-extremities/t2-phn",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/humerus",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-recon": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:specialty/hip-and-pelvis",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-recon",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-scn": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-scn",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-standard-humeral-nail": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/t2-standard-humeral-nail",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/t2-tibia": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/product-type/nailing",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/tibia-&-femur",
+      "stryker:system/trauma-and-extremities/nailing",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:system/trauma-and-extremities/t2",
+      "stryker:product/trauma-and-extremities/t2-tibia",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/tensix": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/tensix",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-dbm",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/dbm",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-approach": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:product/trauma-and-extremities/approach",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-bio-rsa": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/bio-rsa",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-flex": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/aequalis-ascend-flex",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-hrs": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:product/trauma-and-extremities/aequalis-flex-revive",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-humeral-nail": [
+      "stryker:content-type/product",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-perform": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-perform-anatomic-glenoid-anatomic-augmented-glenoid": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-perform-humeral-fracture": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-perform-humeral-stemless": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-perform-reversed-glenoid-reversed-augmented-glenoid": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/trauma-and-extremities/aequalis-perform-reversed",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-pyrocarbon-humeral-head": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/tornier-pyrocarbon-humeral-head",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/tornier-simpliciti": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/simpliciti",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder"
+    ],
+    "/us/en/trauma-and-extremities/products/traditional-allograft": [
+      "stryker:content-type/product",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/traditional-allografts",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-traditional-allografts",
+      "stryker:capability/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/twinfix-cannulated-compression-screw": [
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:system/trauma-and-extremities/cannulated-screws",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/screws",
+      "stryker:content-type/hcp_content",
+      "stryker:product/trauma-and-extremities/twinfix",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-clavicle-plating-system": [
+      "stryker:product/trauma-and-extremities/variax-clavicle",
+      "stryker:capability/upper-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:specialty/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-compression-plating-system": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:product/trauma-and-extremities/variax-compression",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-distal-fibula-plating-system": [
+      "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+      "stryker:product/trauma-and-extremities/variax-fibula",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-distal-radius-and-distal-ulna": [
+      "stryker:content-type/product",
+      "stryker:capability/upper-extremities",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:product/trauma-and-extremities/variax-distal-radius",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-elbow-plating-system": [
+      "stryker:specialty/elbow",
+      "stryker:capability/upper-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:product/trauma-and-extremities/variax-elbow",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:content-type/hcp_content",
+      "stryker:specialty/shoulder-and-elbow",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:custom/trauma-and-extremities/Indications/elbow",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-foot-plating-system": [
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:product/trauma-and-extremities/variax-foot",
+      "stryker:content-type/hcp_content"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-mini-fragment": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:custom/trauma-and-extremities/Indications/foot",
+      "stryker:custom/trauma-and-extremities/Indications/Ankle",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:custom/trauma-and-extremities/Indications/femur",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:custom/trauma-and-extremities/Indications/tibia",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/Indications/shoulder",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Indications/humerus",
+      "stryker:portfolio/orthopaedics",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-speedguide": [
+      "stryker:specialty/foot-&-ankle",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:product/trauma-and-extremities/viriax-2-speedguide",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:capability/upper-extremities",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-2-wrist-fusion-plating-system": [
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:custom/trauma-and-extremities/Indications/wrist",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:system/trauma-and-extremities/small-joints",
+      "stryker:product/trauma-and-extremities/variax-wrist-fusion",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/variax-hand": [
+      "stryker:capability/upper-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/plating",
+      "stryker:custom/trauma-and-extremities/Indications/hand",
+      "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+      "stryker:specialty/hand-and-wrist-(upper-exremities)",
+      "stryker:system/trauma-and-extremities/plating",
+      "stryker:content-type/hcp_content",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:specialty/hand-and-wrist",
+      "stryker:product/trauma-and-extremities/variax-hand",
+      "stryker:portfolio/orthopaedics",
+      "stryker:system/trauma-and-extremities/variax-2",
+      "stryker:business-unit/trauma-and-extremities"
+    ],
+    "/us/en/trauma-and-extremities/products/vitoss": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:capability/biologics",
+      "stryker:product/trauma-and-extremities/vitoss",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers"
+    ],
+    "/us/en/trauma-and-extremities/products/vitoss-ba": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:product/trauma-and-extremities/vitoss-ba",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers"
+    ],
+    "/us/en/trauma-and-extremities/products/vitoss-ba2x": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:product/trauma-and-extremities/vitoss-ba2x",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers"
+    ],
+    "/us/en/trauma-and-extremities/products/vitoss-bbtrauma": [
+      "stryker:custom/trauma-and-extremities/Indications/Biologics",
+      "stryker:capability/biologics",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+      "stryker:custom/foot-and-ankle/product-type/biologics",
+      "stryker:content-type/product",
+      "stryker:capability/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+      "stryker:system/trauma-and-extremities/biologics",
+      "stryker:portfolio/orthopaedics",
+      "stryker:product/trauma-and-extremities/vitoss-bbtrauma",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers"
+    ],
+    "/us/en/trauma-and-extremities/products/x-ream": [
+      "stryker:content-type/product",
+      "stryker:product/trauma-and-extremities/x-ream",
+      "stryker:capability/biologics",
+      "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits",
+      "stryker:portfolio/orthopaedics",
+      "stryker:specialty/bone-grafting",
+      "stryker:business-unit/trauma-and-extremities",
+      "stryker:content-type/hcp_content",
+      "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits",
+      "stryker:capability/trauma-and-extremities"
     ]
   };
 
@@ -121,6 +15638,7 @@ var CustomImportScript = (() => {
   function stripBracketTokens(parent, document) {
     const tokens = bracketTokens(parent);
     const removed = [];
+    const isHeading = /^H[1-6]$/.test(parent.tagName);
     const build = (from, closes) => {
       const nodes2 = [];
       let i = from;
@@ -128,9 +15646,27 @@ var CustomImportScript = (() => {
         const t = tokens[i];
         if (t.open) {
           const inner = build(i + 1, true);
-          removed.push(...t.open);
           i = inner.next;
           let content = inner.nodes;
+          const asEm = isHeading && t.open.includes("serif") && !t.open.includes("color-gold");
+          removed.push(...t.open.filter((tag) => !(asEm && tag === "serif")));
+          if (asEm) {
+            const wrapped = [];
+            let run = null;
+            content.forEach((n) => {
+              if (n.nodeType === 1) {
+                run = null;
+                wrapped.push(n);
+                return;
+              }
+              if (!run) {
+                run = document.createElement("em");
+                wrapped.push(run);
+              }
+              run.append(n);
+            });
+            content = wrapped;
+          }
           if (t.open.includes("color-gold")) {
             const tail = [];
             const isBlank = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.nodeValue.trim();
@@ -4096,7 +19632,13 @@ var CustomImportScript = (() => {
       if (n.matches("h1")) out.push(heading(document, n, "h1"));
       else if (n.querySelector(".standalone-link") && n.querySelectorAll("a[href]").length === 1) {
         const p = document.createElement("p");
-        p.append(link2(document, n.querySelector("a[href]")));
+        const a = link2(document, n.querySelector("a[href]"));
+        const u = document.createElement("u");
+        u.append(...a.childNodes);
+        a.append(u);
+        const strong = document.createElement("strong");
+        strong.append(a);
+        p.append(strong);
         out.push(p);
       } else if (/^H/.test(n.tagName)) out.push(el2(document, n.tagName.toLowerCase(), text6(n)));
       else out.push(inline(document, n));

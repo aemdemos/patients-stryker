@@ -27,21 +27,9 @@ const PAGE_TEMPLATE = {
 
 const text = (el) => (el ? el.textContent.replace(/[\s\u00a0]+/g, ' ').trim() : '');
 
-function peopleBack(document, main) {
-  document.body.querySelectorAll('.c-rich-text-editor a[href]').forEach((src) => {
-    const p = document.createElement('p');
-    const strong = document.createElement('strong');
-    const a = document.createElement('a');
-    a.href = src.getAttribute('href');
-    a.textContent = text(src);
-    strong.append(a);
-    p.append(strong);
-    main.append(p);
-  });
-}
-
-function footnotesBack(document, main) {
-  document.body.querySelectorAll('.experiencefragment .c-rich-text-editor a[href]').forEach((src) => {
+function backLink(document, main, footnotes) {
+  const scope = footnotes ? '.experiencefragment .c-rich-text-editor' : '.c-rich-text-editor';
+  document.body.querySelectorAll(`${scope} a[href]`).forEach((src) => {
     const p = document.createElement('p');
     const strong = document.createElement('strong');
     const a = document.createElement('a');
@@ -71,7 +59,7 @@ export default {
     const path = xfFragmentPath(xf);
 
     const main = document.createElement('div');
-    (footnotes ? footnotesBack : peopleBack)(document, main);
+    backLink(document, main, footnotes);
     if (!main.children.length) throw new Error(`No Back link XF on ${source}`);
     document.body.replaceChildren(main);
 

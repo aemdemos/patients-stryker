@@ -1423,7 +1423,7 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
   }
 }
 
-body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.color-heads.block > div > div > p:first-child {
   margin: 0 0 var(--space-block-l);
   padding: var(--space-block-l);
   background-color: var(--color-navy-bright);
@@ -1434,35 +1434,35 @@ body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(
   text-align: center;
 }
 
-body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.color-heads.block > div > div > p:first-child strong {
   font-family: inherit;
   font-size: var(--corp-column-figure-size);
   font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height-hero);
 }
 
-body.corp main .columns.color-heads.block > div > div:nth-child(2) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.color-heads.block > div > div:nth-child(2) > p:first-child {
   background-color: var(--color-purple);
 }
 
-body.corp main .columns.color-heads.block > div > div:nth-child(3) > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.color-heads.block > div > div:nth-child(3) > p:first-child {
   background-color: var(--color-primary);
 }
 
-body.corp main .columns.striped.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.striped.block > div > div > p:first-child {
   text-align: center;
 }
 
-body.corp main .columns.striped.block > div > div > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.striped.block > div > div > p strong {
   font-size: calc(1.25 * var(--body-font-size-m));
   color: var(--color-navy-bright);
 }
 
-body.corp main .columns.striped.block > div > div:nth-child(2) > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.striped.block > div > div:nth-child(2) > p strong {
   color: var(--color-purple);
 }
 
-body.corp main .columns.striped.block > div > div:nth-child(3) > p strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.striped.block > div > div:nth-child(3) > p strong {
   color: var(--color-primary);
 }
 
@@ -1481,23 +1481,23 @@ body.corp main .columns.striped.block > div > div > ul > li:nth-child(odd) {
   background-color: var(--corp-color-table-stripe);
 }
 
-body.corp main .columns.striped.block > div > div > ul > li strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+body.corp main .columns.striped.block > div > div > ul > li strong {
   font-family: var(--body-font-family);
 }
 
 @media (width >= 600px) {
-  body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  body.corp main .columns.color-heads.block > div > div > p:first-child {
     margin-bottom: var(--space-section);
   }
 }
 
 @media (width >= 900px) {
-  body.corp main .columns.color-heads.block > div > div > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  body.corp main .columns.color-heads.block > div > div > p:first-child {
     font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
     line-height: var(--paragraph-line-height);
   }
 
-  body.corp main .columns.color-heads.block > div > div > p:first-child strong:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  body.corp main .columns.color-heads.block > div > div > p:first-child strong {
     font-size: inherit;
     line-height: inherit;
   }

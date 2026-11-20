@@ -2,7 +2,7 @@
  * Shared by the `base` template importers (legal, patents, webinar, people, footnotes):
  * the group of a page, its page metadata and the bracket-tag cleanup of the builder's text.
  */
-import PAGE_TAGS from '../page-tags.js';
+import PAGE_TAGS from '../page-tags.json';
 
 export const GROUPS = ['legal', 'patents', 'webinar', 'people', 'footnotes'];
 
@@ -83,6 +83,7 @@ function bracketTokens(parent) {
 function stripBracketTokens(parent, document) {
   const tokens = bracketTokens(parent);
   const removed = [];
+  const isHeading = /^H[1-6]$/.test(parent.tagName);
   const build = (from, closes) => {
     const nodes = [];
     let i = from;
@@ -90,9 +91,29 @@ function stripBracketTokens(parent, document) {
       const t = tokens[i];
       if (t.open) {
         const inner = build(i + 1, true);
-        removed.push(...t.open);
         i = inner.next;
         let content = inner.nodes;
+        // a serif run inside a heading is italic text (<em>), not a serif section
+        const asEm = isHeading && t.open.includes('serif') && !t.open.includes('color-gold');
+        removed.push(...t.open.filter((tag) => !(asEm && tag === 'serif')));
+        if (asEm) {
+          // only the plain runs: a nested gold (<em><strong>) run keeps its own markup
+          const wrapped = [];
+          let run = null;
+          content.forEach((n) => {
+            if (n.nodeType === 1) {
+              run = null;
+              wrapped.push(n);
+              return;
+            }
+            if (!run) {
+              run = document.createElement('em');
+              wrapped.push(run);
+            }
+            run.append(n);
+          });
+          content = wrapped;
+        }
         if (t.open.includes('color-gold')) {
           const tail = [];
           const isBlank = (n) => n.nodeName === 'BR'

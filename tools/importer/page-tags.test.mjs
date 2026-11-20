@@ -3,7 +3,9 @@ import assert from 'node:assert';
 import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { findExportFile, normalise, tagsFor } from './page-tags.mjs';
+import {
+  buildTagMap, findExportFile, normalise, tagsFor,
+} from './page-tags.mjs';
 
 const root = mkdtempSync(join(tmpdir(), 'page-tags-'));
 const page = (rel, content) => {
@@ -28,5 +30,11 @@ assert.deepEqual(tagsFor(root, '/us/en/sage/webinars/hap'), ['stryker:business-u
 assert.deepEqual(tagsFor(root, '/us/en/legal/privacy'), []);
 assert.equal(findExportFile(root, '/us/en/legal/missing'), null);
 assert.equal(findExportFile(root, '/us/en/sage'), null);
+
+// every tagged sheet page is kept, also one that no base import list names
+assert.deepEqual(
+  buildTagMap(root, ['/us/en/legal/privacy', '/us/en/about/2022/lead-page', '/us/en/sage/webinars/hap']),
+  { '/us/en/about/2022/lead-page': ['news'], '/us/en/sage/webinars/hap': ['stryker:business-unit/SAGE'] },
+);
 
 console.log('page-tags: all cases passed');
