@@ -14,6 +14,8 @@
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
+  --corp-back-arrow-width: 8px; /* source mobile-menu BACK arrow image is 8x12 */
+  --corp-back-arrow-half-height: 6px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
   --nav-height: var(--corp-chrome-height);
