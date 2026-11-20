@@ -1,0 +1,193 @@
+/* legal theme: www.stryker.com legal, governance and policy pages (#517) */
+body.base.legal main:has(> .section:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-title-offset-trim));
+}
+
+/* a Large Headline title (`headline-2-5vw`): its offset below the header scales with the
+   viewport (--corp-large-headline-offset) instead of the fixed gap of sized titles */
+body.base.legal main:has(> .section:first-child.headline-2-5vw > .default-content-wrapper > h1) {
+  padding-top: var(--corp-large-headline-offset);
+}
+
+body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* source gap above a heading that follows copy: one empty paragraph (--corp-blank-line) plus the
+   paragraph margin; after a block the source also adds its column-control margin and 20px */
+:where(body.base.legal) main > .section > .default-content-wrapper > :is(p, ul, ol) + h2 {
+  margin-top: calc(var(--space-block) + var(--corp-blank-line));
+}
+
+body.base.legal main > .section > .columns-wrapper + .default-content-wrapper {
+  padding-top: calc(var(--space-block) + var(--corp-blank-line) + 2 * var(--space-block-l));
+}
+
+/* a section that opens with a heading after a copy-only section (bylaws Article I) */
+body.base.legal main > .section:not(:has(h1)) + .section > .default-content-wrapper:first-child > h2:first-child {
+  margin-top: calc(var(--corp-blank-line) + var(--space-block));
+}
+
+/* source headings sit 20px above their copy (H3) */
+body.base.legal main > .section > .default-content-wrapper > h3:has(+ p) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.base.legal main > .section:first-child > .default-content-wrapper > h1:has(+ p) {
+  margin-bottom: var(--space-block-s);
+}
+
+body.base.legal main > .section:first-child:not([class*="headline-"]) > .default-content-wrapper > h1 {
+  line-height: var(--heading-line-height);
+}
+
+body.base.legal main > .section > .columns-wrapper:has(> .columns.color-heads) + .default-content-wrapper {
+  padding-top: var(--corp-blank-line);
+}
+
+/* a bold page title with no Large Headline size (source Futura bold 28px, gold when also italic) */
+body.base.legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-title-underline);
+  padding-bottom: 0;
+}
+
+@media (width >= 900px) {
+  body.base.legal main > .section:first-child:not(.headline-2-5vw) > .default-content-wrapper > h1:has(strong) {
+    line-height: var(--heading-line-height);
+  }
+}
+
+/* bylaws and charters copy: 9/12 of the row from 900px (stryker.com col-md-9) */
+@media (width >= 900px) {
+  body.base.legal main > .section.heading-space-l > .default-content-wrapper > * {
+    padding-right: calc(25% + var(--space-block));
+  }
+}
+
+/* po-terms: the title is a 1.5x span in the H4 and the intro a 0.8x serif span (14px headings on
+   phones, 17.5px from 600px) */
+body.base.legal main > .section.width-67 > .default-content-wrapper > h4 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.base.legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--footnote-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--footnote-line-height);
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section.width-67 > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.base.legal main > .section.width-67 > .default-content-wrapper > h4 + h4 {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+/* underlined title-only sections: tighter source line-height on phones */
+body.base.legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
+  line-height: var(--corp-heading-line-height-title-underline);
+}
+
+body.base.legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section:first-child > .default-content-wrapper > h1.underline:not(:has(strong)) {
+    line-height: var(--heading-line-height);
+  }
+
+  body.base.legal main > .section:first-child:has(> .default-content-wrapper > h1) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.base.legal main > .section > .default-content-wrapper:not(:has(+ .columns-wrapper h4:first-child)) h2:is(.underline, :has(> u)):not(:has(+ :is(h3, h4))) {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.base.legal main > .section > .columns-wrapper + .default-content-wrapper {
+    padding-top: calc(var(--space-block) + var(--corp-blank-line) + var(--space-section) + var(--space-block-l));
+  }
+
+  body.base.legal main > .section > .default-content-wrapper > h3:has(+ p) {
+    margin-bottom: var(--space-section);
+  }
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) {
+  margin: 0;
+  padding-left: var(--list-indent-l);
+  list-style: none;
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul {
+  margin: 0;
+  list-style: none;
+  padding-left: var(--list-indent-l);
+}
+
+body.base.legal main > .section.width-50:first-child + .section .accordion.divided {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.base.legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block);
+}
+
+@media (width >= 600px) {
+  body.base.legal main > .section.width-50:first-child + .section .accordion.divided {
+    padding-top: var(--space-section);
+  }
+
+  body.base.legal main > .section.width-50:first-child:has(+ .section .accordion.divided):nth-child(n):nth-child(n) {
+    margin-bottom: var(--space-block);
+  }
+}
+
+/* an H2 title followed straight by a block: the source leaves one empty row above it (convercent) */
+body.base.legal main > .section:first-child > .default-content-wrapper:has(> h2:only-child):has(+ .table-wrapper) {
+  padding-top: var(--space-section);
+}
+
+/* title section above the committee columns: the source gap to the first label is 45px */
+body.base.legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper {
+  padding-block: calc(2 * var(--space-section)) 0;
+}
+
+body.base.legal main > .section:first-child:has(+ .section > .columns-wrapper > .columns.no-stack) > .default-content-wrapper > h2 {
+  margin-bottom: calc(var(--space-section) + var(--space-block));
+}
+
+/* committee columns: Futura 21px label over 17.5px Egyptienne names (stryker.com fontsize-1-5em / 1-25em) */
+body.base.legal main > .section.bold-body > .default-content-wrapper :is(p, li) em > strong {
+  font-family: var(--display-font-family);
+}
+
+body.base.legal main > .section:has(+ .section > .default-content-wrapper:first-child > p:first-child):has(> .default-content-wrapper:last-child > :is(p, ul, ol):last-child) {
+  margin-bottom: var(--space-block);
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) li > p {
+  margin-bottom: var(--space-block);
+}
+
+body.base.legal main > .section > .default-content-wrapper ul:has(> li > p:first-child) ul > li {
+  margin-bottom: var(--space-block);
+}
+
+body.corp.base.legal main > .section.disclaimer:has(+ .section:empty + .last-modified-section) {
+  margin-bottom: var(--space-block);
+}

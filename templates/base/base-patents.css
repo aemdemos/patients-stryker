@@ -1,0 +1,117 @@
+/* patents theme: patents and trademarks pages (#518) */
+body.base.patents main:has(> .section.columns-container:first-child > .default-content-wrapper > h1) {
+  padding-top: calc(var(--space-section) - var(--corp-title-offset-trim));
+}
+
+body.base.patents main > .section.separator > .default-content-wrapper {
+  padding-block: calc(var(--space-block-l) + var(--space-block)) calc(var(--space-block-l) + var(--space-block-s) - var(--corp-title-offset-trim));
+}
+
+body.base.patents main > .section.columns-container:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.base.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-s);
+  padding-bottom: 0;
+  font-family: var(--display-font-family);
+  line-height: var(--corp-heading-line-height-title-underline);
+}
+
+/* the image cell's own bottom margin and the section gap are dropped */
+body.base.patents main > .section.columns-container:first-child {
+  margin-bottom: var(--space-block-s);
+}
+
+/* stacked: the image sits one paragraph space (15px) under the notice, as on the source phone layout; the
+   cover is capped at its natural width (the 666px source preset) */
+body.base.patents main > .section.columns-container:first-child .columns .columns-img-col {
+  margin: 0;
+}
+
+body.base.patents main > .section.columns-container:first-child .columns .columns-img-col img {
+  max-width: var(--corp-patents-cover-width);
+}
+
+@media (width >= 900px) {
+  body.base.patents main > .section.columns-container:first-child > .default-content-wrapper > h1 {
+    line-height: var(--heading-line-height);
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .default-content-wrapper {
+    grid-column: 1;
+    margin: 0;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) > .columns-wrapper,
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns,
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div {
+    display: contents;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns > div > div:first-child {
+    grid-area: 2 / 1;
+  }
+
+  body.base.patents main > .section.columns-container:first-child:has(> .default-content-wrapper > h1) .columns .columns-img-col {
+    grid-area: 1 / 2 / span 2;
+    margin-top: 0;
+  }
+}
+
+/* trademarks: the title is an H1 set as the source H2 (Futura 21px, 24.5px from 600px), the intro is
+   Egyptienne w500 17.5px (21px from 600px) at 1.375, and the table follows 15px closer than the shared
+   section gap; "Last Updated" sits 60px below the table */
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper {
+  padding-bottom: var(--space-block);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+  margin-bottom: var(--space-block-l);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+  font-size: var(--body-font-size-l);
+  font-weight: 500;
+  line-height: var(--paragraph-line-height);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+  margin-bottom: var(--corp-patents-intro-gap-s);
+}
+
+body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:last-child {
+  margin-bottom: 0;
+}
+
+body.base.patents main > .section.table-container {
+  padding-bottom: calc(2 * var(--space-section));
+}
+
+@media (width >= 600px) {
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p {
+    font-size: var(--body-font-size-xl);
+  }
+
+  body.base.patents main > .section:first-child:not(.columns-container) > .default-content-wrapper > p:not(:last-child) {
+    margin-bottom: var(--corp-patents-intro-gap);
+  }
+
+  body.base.patents main > .section.separator > .default-content-wrapper {
+    padding-top: calc(var(--space-section) + var(--space-block));
+  }
+}

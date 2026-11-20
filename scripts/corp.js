@@ -287,13 +287,17 @@ export function decorateSections(main) {
  * Loads a corp template (`template` metadata): `templates/<name>/<name>.css` and
  * `<name>.js` (its default export, if any, is called with the document). Themes of a
  * corp template live in the same folder (`<name>-themes.css`, scoped `body.<theme>`) and
- * load only on pages that set `theme` metadata.
+ * load only on pages that set `theme` metadata. The `base` template keeps one stylesheet
+ * per theme (`base-<theme>.css`) so only the page's own theme is loaded.
  * @param {string} templateName The template name
  */
 export async function loadTemplate(templateName) {
   const dir = `${window.hlx.codeBasePath}/templates/${templateName}`;
   const files = [`${dir}/${templateName}.css`];
-  if (getMetadata('theme')) files.push(`${dir}/${templateName}-themes.css`);
+  const theme = getMetadata('theme');
+  if (theme) {
+    files.push(`${dir}/${templateName}-${templateName === 'base' ? theme : 'themes'}.css`);
+  }
   const styles = files.map(async (href) => {
     try {
       await loadCSS(href);

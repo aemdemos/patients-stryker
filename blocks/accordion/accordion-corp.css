@@ -107,22 +107,22 @@ body.corp :is(.accordion.large-labels, .section.large-labels .accordion.with-nes
 
 /* futura-labels (with divided): Futura bold labels at 17.5px (21px from 600px) and the gap the
    source's column control adds below an open panel (stryker.com legal pages) */
-body.corp .accordion.divided.futura-labels .accordion-item-label {
+body.corp .accordion.divided.futura-labels.block .accordion-item-label {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
 }
 
-body.corp .accordion.divided.futura-labels .accordion-item-open .accordion-item-body {
+body.corp .accordion.divided.futura-labels.block .accordion-item-open .accordion-item-body {
   padding-bottom: calc(2 * var(--space-block));
 }
 
 @media (width >= 600px) {
-  body.corp .accordion.divided.futura-labels .accordion-item-label {
+  body.corp .accordion.divided.futura-labels.block .accordion-item-label {
     font-size: var(--body-font-size-l);
   }
 
-  body.corp .accordion.divided.futura-labels .accordion-item-open .accordion-item-body {
+  body.corp .accordion.divided.futura-labels.block .accordion-item-open .accordion-item-body {
     padding-bottom: calc(2 * var(--space-block) + var(--space-block-s));
   }
 }
