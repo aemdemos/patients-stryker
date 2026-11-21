@@ -3085,6 +3085,59 @@ var CustomImportScript = (() => {
     h5.textContent = text(line);
     return [{ type: "flow", role: "text", nodes: [h5] }];
   }
+  function filteredGrid(el, ctx) {
+    const { doc } = ctx;
+    const grid = el.matches(".c-filtered-content-type-grid") ? el : el.querySelector(".c-filtered-content-type-grid") || el;
+    const items = [...grid.querySelectorAll(".product-item")].filter((item) => text(item));
+    if (!items.length) return [];
+    const out = [];
+    const title = grid.querySelector(".c-section-title");
+    if (title && text(title)) {
+      const h2 = doc.createElement("h2");
+      h2.textContent = text(title);
+      out.push({ type: "flow", role: "text", nodes: [h2] });
+    }
+    const rows = items.map((item) => {
+      const link2 = item.querySelector("a[href]");
+      const href = link2 ? link2.getAttribute("href") : "";
+      const heading = item.querySelector("h4, .component-subheading");
+      const label = text(heading || link2 || item);
+      const h4 = doc.createElement("h4");
+      h4.append(href ? linkTo(doc, href, label) : doc.createTextNode(label));
+      const img = item.querySelector("img");
+      if (!img || !img.getAttribute("src")) return ["", [h4]];
+      const image = doc.createElement("img");
+      image.setAttribute("src", img.getAttribute("src"));
+      image.setAttribute("alt", img.getAttribute("alt") || "");
+      if (!img.getAttribute("alt")) ctx.report.notes.push(`product tile image without alt text: ${img.getAttribute("src")}`);
+      return [para(doc, image), [h4]];
+    });
+    out.push({ type: "block", block: block(doc, "Cards Corp (product-item, five-up)", rows) });
+    return out;
+  }
+  function backgroundImage(el) {
+    const m = (el && el.getAttribute("style") || "").match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
+    if (!m) return "";
+    return m[2].replace(/\\([0-9a-f]{1,6})\s?/gi, (s, hex) => String.fromCodePoint(parseInt(hex, 16))).replace(/\\(.)/g, "$1").trim();
+  }
+  function highLevelCta(el, ctx) {
+    const { doc } = ctx;
+    const tiles = [...el.querySelectorAll(".c-high-level-cta-container")].filter((t) => text(t));
+    if (!tiles.length) return [];
+    const rows = tiles.map((tile) => {
+      const label = tile.querySelector(".c-high-level-cta-label") || tile.querySelector("a[href]");
+      const href = label && label.getAttribute("href");
+      const name = text(label || tile);
+      const body = para(doc, href ? linkTo(doc, href, name) : doc.createTextNode(name));
+      const src = backgroundImage(tile.querySelector(".c-high-level-cta-link"));
+      if (!src) return ["", [body]];
+      const image = doc.createElement("img");
+      image.setAttribute("src", src);
+      image.setAttribute("alt", "");
+      return [para(doc, image), [body]];
+    });
+    return [{ type: "block", block: block(doc, "Cards Corp (category)", rows) }];
+  }
   var COMPONENTS = {
     carouselslidegroup: carousel,
     "hero-large-carousel": heroLargeCarousel,
@@ -3150,7 +3203,13 @@ var CustomImportScript = (() => {
     "c-rich-text-editor": inTemplateColumn(textComponent),
     "c-publish-date": publishDate,
     "c-event-location-properties": eventLocation,
-    "c-back-button": skip
+    "c-back-button": skip,
+    // specialty, capability, portfolio and news-landing template slots: the page hero (the same
+    // markup as the product page hero) and the filtered product grid
+    "c-page-hero": pageHero,
+    "c-filtered-content-type-grid": filteredGrid,
+    filteredcontenttypegrid: filteredGrid,
+    "c-high-level-cta": highLevelCta
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
@@ -3418,10 +3477,10 @@ var CustomImportScript = (() => {
         return at >= 0 && !t.slice(at + id.length).replace(PLACE, "").trim();
       }).map((e) => e.id));
       ends.filter(({ id, parent }) => !parent.textContent.includes(id)).forEach(() => errors.push(`cross: ${container.textContent.slice(0, 80)}`));
+      const AFTER_URL = /(\S*?)(:[a-z_-]+[a-z\d]*:)/gi;
       nodes.forEach((n) => {
-        n.nodeValue = n.nodeValue.replace(PLACE, (id) => drop.has(id) ? "" : ":end:");
+        n.nodeValue = n.nodeValue.replace(PLACE, (id) => drop.has(id) ? "" : ":end:").replace(AFTER_URL, (m, run, mark) => /https?|urn/i.test(run) ? `${run}\uFEFF${mark}` : m);
       });
-      if (/(?:https?|urn)\S*:[a-z_-]+[a-z\d]*:/i.test(container.textContent)) errors.push(`url: ${container.textContent.slice(0, 80)}`);
     });
     root.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]").forEach((h) => {
       if (!h.textContent.includes(":")) return;

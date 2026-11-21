@@ -2460,6 +2460,79 @@ function eventLocation(el, ctx) {
   return [{ type: 'flow', role: 'text', nodes: [h5] }];
 }
 
+/**
+ * Filtered content type grid (the product grid of the specialty, capability and portfolio
+ * templates, c-filtered-content-type-grid; its AEM wrapper filteredcontenttypegrid) → its
+ * section title, then Cards Corp (product-item, five-up): one card per product tile, the tile's
+ * image and its title as a linked Heading 4, as the source's .product-item (image over a grey
+ * rule, Egyptienne Light title, five per row on desktop: 252px tiles at 1440). The tag filters
+ * and the "No items were found" line are the live page's script, not content.
+ */
+function filteredGrid(el, ctx) {
+  const { doc } = ctx;
+  const grid = el.matches('.c-filtered-content-type-grid') ? el
+    : el.querySelector('.c-filtered-content-type-grid') || el;
+  const items = [...grid.querySelectorAll('.product-item')].filter((item) => text(item));
+  if (!items.length) return [];
+  const out = [];
+  const title = grid.querySelector('.c-section-title');
+  if (title && text(title)) {
+    const h2 = doc.createElement('h2');
+    h2.textContent = text(title);
+    out.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  const rows = items.map((item) => {
+    const link = item.querySelector('a[href]');
+    const href = link ? link.getAttribute('href') : '';
+    const heading = item.querySelector('h4, .component-subheading');
+    const label = text(heading || link || item);
+    const h4 = doc.createElement('h4');
+    h4.append(href ? linkTo(doc, href, label) : doc.createTextNode(label));
+    const img = item.querySelector('img');
+    if (!img || !img.getAttribute('src')) return ['', [h4]];
+    const image = doc.createElement('img');
+    image.setAttribute('src', img.getAttribute('src'));
+    image.setAttribute('alt', img.getAttribute('alt') || '');
+    if (!img.getAttribute('alt')) ctx.report.notes.push(`product tile image without alt text: ${img.getAttribute('src')}`);
+    return [para(doc, image), [h4]];
+  });
+  out.push({ type: 'block', block: block(doc, 'Cards Corp (product-item, five-up)', rows) });
+  return out;
+}
+
+/** A CSS url() of an inline background image, its CSS escapes (`\2f ` for `/`) decoded. */
+function backgroundImage(el) {
+  const m = ((el && el.getAttribute('style')) || '').match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
+  if (!m) return '';
+  return m[2].replace(/\\([0-9a-f]{1,6})\s?/gi, (s, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/\\(.)/g, '$1').trim();
+}
+
+/**
+ * High-level CTA (category tiles of the capability template, c-high-level-cta) → Cards Corp
+ * (category): per tile its image (the link's background image) and its label as the card link,
+ * as the source (a shadowed 442:293 image, the teal label bar; 2 / 3 per row). Empty ones (most
+ * capability pages carry the slot without tiles) give nothing.
+ */
+function highLevelCta(el, ctx) {
+  const { doc } = ctx;
+  const tiles = [...el.querySelectorAll('.c-high-level-cta-container')].filter((t) => text(t));
+  if (!tiles.length) return [];
+  const rows = tiles.map((tile) => {
+    const label = tile.querySelector('.c-high-level-cta-label') || tile.querySelector('a[href]');
+    const href = label && label.getAttribute('href');
+    const name = text(label || tile);
+    const body = para(doc, href ? linkTo(doc, href, name) : doc.createTextNode(name));
+    const src = backgroundImage(tile.querySelector('.c-high-level-cta-link'));
+    if (!src) return ['', [body]];
+    const image = doc.createElement('img');
+    image.setAttribute('src', src);
+    image.setAttribute('alt', '');
+    return [para(doc, image), [body]];
+  });
+  return [{ type: 'block', block: block(doc, 'Cards Corp (category)', rows) }];
+}
+
 // AEM components by wrapper class (or #id)
 export const COMPONENTS = {
   carouselslidegroup: carousel,
@@ -2527,6 +2600,12 @@ export const COMPONENTS = {
   'c-publish-date': publishDate,
   'c-event-location-properties': eventLocation,
   'c-back-button': skip,
+  // specialty, capability, portfolio and news-landing template slots: the page hero (the same
+  // markup as the product page hero) and the filtered product grid
+  'c-page-hero': pageHero,
+  'c-filtered-content-type-grid': filteredGrid,
+  filteredcontenttypegrid: filteredGrid,
+  'c-high-level-cta': highLevelCta,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */
