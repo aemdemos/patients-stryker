@@ -6,6 +6,23 @@
 
 The migrated stryker.com pages were rejected because they rely on many cryptic classes and hidden conventions. That concern is right, and it is fixable without redesigning the site. stryker.com is not random: it is the values authors set in AEM component dialogs (padding, widths, colours, font sizes). We moved those values out of class names into **readable settings rows** and **named text styles**, kept the 77 design names (44 section styles, 33 block variants) as normal EDS section styles and variants, and listed every remaining convention on one page with live examples. A converter turns the existing pages into this form automatically: **98.6% of all 2,023 imported pages and fragments convert completely, and the converted pages render identically.**
 
+## Update 2026-11-21: colon markers instead of bracket tags (SEO)
+
+Bracket tags (`[[Gold]…]`) stay in the HTML the server delivers until the page's script rewrites them, so search engines read them as part of the text. Text styles are now written the way EDS writes icons, as colon markers, which the server itself turns into empty spans before it sends the page: the delivered text is clean.
+
+| Written | Means |
+|---|---|
+| `:Gold:Whole heading` | Gold to the end of the heading (or paragraph, bold text, link it is typed in) |
+| `before :Gold:styled:end: after` | Gold up to `:end:` |
+| `:Gold::Large:…` | markers in a row combine |
+| `:x1p75:` · `:vw5p5:` | a size as a value: 1.75 × the surrounding size · 5.5vw (`p` for the decimal point) |
+| `:blank-line:` | alone in a paragraph: an empty line of text |
+
+- Names follow the server's icon rule: letters and hyphens, digits only at the end (`:x-1-75:` or `:1x:` would stay text). Markers inside code, URLs, times and ratios are left alone.
+- The code turns the style markers into the bracket tags the decoration already reads (`scripts/colon-tags.js`); markers of other names stay icons. Heading anchors, which the server builds from the text with the marker names in it, get the visible text's.
+- Every page needs a Title and a Description in its Metadata block: without them the server builds them from the first heading and paragraph, markers (and brackets, today) included. The converter adds the Description the server derives now, cleaned, to the 75 converted documents without one (16 of them carry brackets in their description today).
+- Converted: the 707 readable drafts (672 product pages, the rules pages, the authoring rules, five demo pages), 474 of them with text styles: 10,459 markers, no bracket tags left. Rendering against the bracket form: the decorated page is identical on 570 documents; the other 137 differ only in how spans are nested (an outer style split around a superscript, `[[Gold][[Large]…]` written as one run) or in the anchors of repeated headings, and render identically: computed style, position and section height of every text run at 1440px, and at 375px on five of them (page heights vary by up to 20px between loads either way, from the footer). The authoring rules page itself differs where it now explains the markers.
+
 ## Before and after, on all 2,023 imported pages and fragments
 
 | | **Before** (today's migration) | **After** (readable settings) |

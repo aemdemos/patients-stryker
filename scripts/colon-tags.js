@@ -17,7 +17,8 @@
  */
 import { TEXT_STYLES } from './corp-settings.js';
 
-const OTHER_NAMES = ['visually-hidden'];
+// (class names that are no text style but are written the same way: kept as they are)
+const OTHER_NAMES = ['visually-hidden', 'rule-gold'];
 const SIZE = /^(x|vw)(\d+)(?:p(\d+))?$/;
 
 /** a marker's name: `icon icon-Gold` → gold */
