@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-tier2-landing-page.js
+  // import-lib-tier2-landing-page.js
   var import_lib_tier2_landing_page_exports = {};
   __export(import_lib_tier2_landing_page_exports, {
     default: () => import_lib_tier2_landing_page_default
   });
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/corp-sections.js
+  // corp/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-cleanup.js
+  // corp/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-dm-images.js
+  // corp/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
+  // corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -911,7 +911,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
+  // corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1002,7 +1002,13 @@ var CustomImportScript = (() => {
         return [];
       }
       const name = componentName(el);
-      if (name) return components[name === "cols*" ? "cols" : name](el, ctx) || [];
+      if (name) {
+        try {
+          return components[name === "cols*" ? "cols" : name](el, ctx) || [];
+        } catch (e) {
+          return ctx.unknown(el, `handler failed: ${String(e && e.message).slice(0, 60)}`);
+        }
+      }
       if (isComponent(el)) return ctx.unknown(el);
       if (/^(P|H[1-6]|UL|OL|TABLE|IMG|A)$/.test(el.tagName) && text(el)) return ctx.unknown(el, "loose content");
       return ctx.collect(el);
@@ -1227,7 +1233,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/xf-index.js
+  // data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3376,7 +3382,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-path-rule.js
+  // xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3392,7 +3398,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-fragment-path.js
+  // xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3433,7 +3439,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
+  // corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3537,7 +3543,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
+  // corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3629,7 +3635,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
+  // corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3688,7 +3694,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
+  // corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3716,14 +3722,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
+  // corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
+  // data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3742,7 +3748,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
+  // corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4260,7 +4266,7 @@ var CustomImportScript = (() => {
     if (last.length && last[0].box === "bg-light-gray") modifiers.push("gray-lead");
     if (last.length && last.every((it) => it.box === "dimensional")) modifiers.push("boxed-last");
     if (cols.every((items) => flows(items).every((it) => it.role === "image"))) modifiers.push("media-pair");
-    const boxes = cols.flatMap((items) => flows(items)).filter((it) => it.box);
+    const boxes = cols.flatMap((items) => flows(items)).filter((it) => typeof it.box === "string");
     const used = { "bg-gold": "gold-first", "bg-light-gray": "gray-lead", dimensional: "boxed-last" };
     boxes.filter((it) => !modifiers.includes(used[it.box])).forEach((it) => {
       ctx.report.notes.push(`Columns: ${it.box} box not reproduced (no variant for it in that cell): ${text(it.nodes[0] || doc.createElement("p")).slice(0, 40)}`);
@@ -5327,7 +5333,7 @@ var CustomImportScript = (() => {
       nodes: [block(doc, `Columns (${variants.join(", ")})`, [cells])]
     }];
   }
-  function table(el, ctx) {
+  function table(el, ctx, extra = []) {
     const { doc } = ctx;
     const source = el.querySelector("table");
     if (!source) return [];
@@ -5352,8 +5358,91 @@ var CustomImportScript = (() => {
       h.textContent = text(caption);
       out.push({ type: "flow", role: "text", nodes: [h] });
     }
-    out.push({ type: "block", block: block(doc, header ? "Table" : "Table (no-header)", rows) });
+    const variants = [...header ? [] : ["no-header"], ...extra];
+    out.push({ type: "block", block: block(doc, variants.length ? `Table (${variants.join(", ")})` : "Table", rows) });
     return out;
+  }
+  function patentTables(el, ctx) {
+    el.querySelectorAll(".cell-mobile-title").forEach((n) => n.remove());
+    return table(el, ctx, ["striped"]);
+  }
+  function curatedLinkList(el, ctx) {
+    const { doc } = ctx;
+    const links = [...el.querySelectorAll("li a[href]")].filter((a) => text(a));
+    if (!links.length) return [];
+    const cell = links.map((a) => para(doc, linkTo(doc, a.getAttribute("href"), text(a))));
+    links.filter((a) => /author-[^/]*adobecqms\.net/.test(a.getAttribute("href"))).forEach((a) => ctx.report.notes.push(`curated link list: link to the AEM author kept as on live: ${text(a)}`));
+    return [{ type: "block", block: block(doc, "Columns (related-links)", [[cell]]) }];
+  }
+  var pageTitle = (doc) => text(doc.querySelector("title") || doc.createElement("p")).replace(/\s*\|\s*Stryker\s*$/i, "");
+  function adobeSignForm(el, ctx) {
+    const { doc } = ctx;
+    const frame = el.querySelector('iframe[src*="esignWidget"]');
+    if (!frame) return [];
+    const wid = new URL(frame.getAttribute("src"), SOURCE).searchParams.get("wid");
+    if (!wid) return [];
+    const height = ((frame.getAttribute("style") || "").match(/min-height:\s*(\d+)px/) || [])[1];
+    const query = new URLSearchParams(__spreadValues({ wid }, height ? { height } : {})).toString();
+    return [{
+      type: "own",
+      kind: "widget",
+      styles: [],
+      nodes: [para(doc, linkTo(doc, `/widgets/adobe-sign?${query}`, pageTitle(doc) || "Adobe Sign form"))]
+    }];
+  }
+  var CVENT_NAMES = { "01eecf27-dc87-4879-b868-6acf7d84ac51": "Med Ed Events Calendar - External US" };
+  function cventCalendar(el, ctx) {
+    const { doc } = ctx;
+    const box = el.querySelector("[data-widget-id][data-calendar-id]");
+    if (!box) return [];
+    const calendarId = box.getAttribute("data-calendar-id");
+    const query = new URLSearchParams({ "widget-id": box.getAttribute("data-widget-id"), "calendar-id": calendarId }).toString();
+    return [{
+      type: "own",
+      kind: "widget",
+      styles: [],
+      nodes: [para(doc, linkTo(doc, `/widgets/cvent?${query}`, CVENT_NAMES[calendarId] || pageTitle(doc) || "Events calendar"))]
+    }];
+  }
+  function newsList(el, ctx) {
+    const { doc } = ctx;
+    const root = el.matches('[data-widget="stryker-news"]') ? el : el.querySelector('[data-widget="stryker-news"]');
+    if (!root) return [];
+    const out = [];
+    const title = root.querySelector(".title-container h2, .title-container h3");
+    if (title && text(title)) {
+      const h = doc.createElement("h2");
+      h.textContent = text(title);
+      out.push({ type: "flow", role: "text", nodes: [h] });
+    }
+    const filterTabs = [...root.querySelectorAll(".stryker-tabs span.tab-link[data-tags]")].filter((s) => s.getAttribute("data-tags") !== "show-all-news" && text(s)).map((s) => `${text(s)} (${s.getAttribute("data-tags").trim().replace(/^\/etc\/tags\/([^/]+)\//, "$1:")})`);
+    const filters = doc.createElement("div");
+    if (filterTabs.length) {
+      const ul = doc.createElement("ul");
+      filterTabs.forEach((t) => {
+        const li = doc.createElement("li");
+        li.textContent = t;
+        ul.append(li);
+      });
+      filters.append(ul);
+    } else filters.textContent = "none";
+    const path = WebImporter.FileUtils.sanitizePath(new URL(ctx.source, SOURCE).pathname.replace(/\.html?$/, "")).replace(/\/index$/, "");
+    const dated = [...root.querySelectorAll(".news h5")].some((h) => text(h));
+    out.push({
+      type: "block",
+      block: block(doc, "News List Corp", [
+        ["Path", path],
+        ["Filters", filters],
+        ["Page size", root.getAttribute("data-list-size") || "20"],
+        ["Show dates", dated ? "true" : "false"]
+      ])
+    });
+    return out;
+  }
+  function legacyImage(el, ctx) {
+    const img = el.querySelector("img[src]");
+    if (img && !img.getAttribute("alt")) ctx.report.notes.push(`image without alt text: ${img.getAttribute("src")}`);
+    return fallback(el, ctx);
   }
   function localNav(el, ctx) {
     const { doc } = ctx;
@@ -5436,6 +5525,8 @@ var CustomImportScript = (() => {
       return [image, body];
     });
     out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+    const more = root.querySelector(".c-latestnews-btn a[href]");
+    if (more && text(more)) out.push({ type: "flow", role: "cta", nodes: [buttonNode(doc, more, text(more))] });
     return out;
   }
   function titleComponent(el, ctx) {
@@ -5691,6 +5782,156 @@ var CustomImportScript = (() => {
     out.push({ type: "block", block: block(doc, "Cards Corp (product-item, five-up)", rows) });
     return out;
   }
+  function productTileRow(item, ctx, bold = false) {
+    const { doc } = ctx;
+    const link2 = item.querySelector("a[href]");
+    const href = link2 ? link2.getAttribute("href") : "";
+    const heading = item.querySelector("h4, .component-subheading");
+    const label = text(heading || link2 || item);
+    const h4 = doc.createElement("h4");
+    const title = href ? linkTo(doc, href, label) : doc.createTextNode(label);
+    if (bold) {
+      const strong = doc.createElement("strong");
+      strong.append(title);
+      h4.append(strong);
+    } else h4.append(title);
+    const img = item.querySelector("img");
+    if (!img || !img.getAttribute("src")) return ["", [h4]];
+    const image = doc.createElement("img");
+    image.setAttribute("src", img.getAttribute("src"));
+    image.setAttribute("alt", img.getAttribute("alt") || "");
+    if (!img.getAttribute("alt")) ctx.report.notes.push(`product tile image without alt text: ${img.getAttribute("src")}`);
+    return [para(doc, image), [h4]];
+  }
+  function productGroups(el, ctx) {
+    const { doc } = ctx;
+    const root = el.matches(".c-productgroups") ? el : el.querySelector(".c-productgroups") || el;
+    const groups = [...root.querySelectorAll(".clearfix")].filter((g) => g.querySelector("a[href]"));
+    if (!groups.length) return [];
+    const out = [];
+    const title = root.querySelector("h2");
+    if (title && text(title)) out.push({ type: "flow", role: "text", nodes: [componentTitle(title, doc)] });
+    groups.forEach((group) => {
+      const sub = group.querySelector("h3");
+      if (sub && text(sub)) {
+        const h3 = doc.createElement("h3");
+        const u = doc.createElement("u");
+        u.textContent = text(sub);
+        h3.append(u);
+        out.push({ type: "flow", role: "text", nodes: [h3] });
+      }
+      const items = [...group.querySelectorAll(".filtered, .product-item")].filter((item) => text(item));
+      if (items.length) {
+        const rows = items.map((item) => productTileRow(item, ctx, true));
+        out.push({ type: "block", block: block(doc, "Cards Corp (product-item)", rows) });
+      }
+    });
+    return out;
+  }
+  function tagline(el, ctx) {
+    const { doc } = ctx;
+    const title = el.querySelector(".c-tagline-title");
+    const message = el.querySelector(".c-tagline-message");
+    const has = (node) => !!node && !!text(node);
+    if (!has(title) && !has(message)) return [];
+    const nodes = [];
+    if (has(title)) {
+      const h1 = doc.createElement("h1");
+      h1.textContent = text(title);
+      nodes.push(h1);
+      ctx.h1 = true;
+    }
+    if (has(message)) {
+      const h2 = doc.createElement("h2");
+      h2.textContent = text(message);
+      nodes.push(h2);
+    }
+    const banner = el.querySelector(".m-banner-simple");
+    const bg = banner && [...banner.classList].find((c) => /^bg-/.test(c));
+    return [{
+      type: "own",
+      kind: "tagline",
+      styles: bg ? [bg] : [],
+      nodes
+    }];
+  }
+  function productListing(el, ctx) {
+    const { doc } = ctx;
+    const products = [...el.querySelectorAll(".product")].filter((p) => text(p) || p.querySelector("img"));
+    if (!products.length) return [];
+    const rows = products.map((product) => {
+      const [first, second] = product.querySelectorAll(":scope > .cell");
+      const img = (first || product).querySelector("img");
+      const media = [];
+      if (img && img.getAttribute("src")) {
+        const image = doc.createElement("img");
+        image.setAttribute("src", img.getAttribute("src"));
+        image.setAttribute("alt", img.getAttribute("alt") || "");
+        media.push(para(doc, image));
+      }
+      const body = [];
+      const heading = (second || product).querySelector("h2, h3");
+      const link2 = heading && heading.querySelector("a[href]");
+      if (heading && text(heading)) {
+        const h2 = doc.createElement("h2");
+        h2.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(heading)) : doc.createTextNode(text(heading)));
+        body.push(h2);
+      }
+      const description = (second || product).querySelector(".description");
+      if (description && text(description)) {
+        body.push(para(doc, doc.createTextNode(text(description))));
+      }
+      return [media, body];
+    });
+    return [{ type: "block", block: block(doc, "Columns (columns-50-50)", rows) }];
+  }
+  function eventDetail(el, ctx) {
+    const { doc } = ctx;
+    const left = [];
+    const title = el.querySelector("h2");
+    if (title && text(title)) {
+      const h2 = doc.createElement("h2");
+      h2.textContent = text(title);
+      left.push(h2);
+    }
+    const blank2 = (node) => !text(node).replace(/\u00a0/g, "").trim();
+    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-details-wrap").forEach((wrap) => {
+      [...wrap.children].forEach((node) => {
+        if (/^H[1-6]$/.test(node.tagName)) {
+          if (!text(node)) return;
+          const h5 = doc.createElement("h5");
+          if (node.classList.contains("border-bottom-gold")) {
+            const u = doc.createElement("u");
+            u.textContent = text(node);
+            h5.append(u);
+          } else h5.textContent = text(node);
+          left.push(h5);
+          return;
+        }
+        const btns = [...node.querySelectorAll("a.btn[href]")];
+        if (btns.length) {
+          btns.forEach((a) => {
+            const strong = doc.createElement("strong");
+            strong.append(linkTo(doc, newTabHref(a, a.getAttribute("href")), text(a)));
+            left.push(para(doc, strong));
+          });
+          return;
+        }
+        if (node.tagName !== "P" || blank2(node)) return;
+        const p = doc.createElement("p");
+        p.append(...contentCopy(node, doc).childNodes);
+        left.push(p);
+      });
+    });
+    if (!left.length) return [];
+    const cells = [left];
+    const map = el.querySelector(".map[data-address]");
+    const address = map ? map.getAttribute("data-address").replace(/&nbsp;|\u00a0/g, " ").split(",").map((s) => s.trim()).filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s)).join(", ") : "";
+    if (!address.includes(",")) return [{ type: "flow", role: "text", nodes: left }];
+    const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+    cells.push([para(doc, linkTo(doc, href, address))]);
+    return [{ type: "block", block: block(doc, "Columns (columns-67-33)", [cells]) }];
+  }
   function backgroundImage(el) {
     const m = (el && el.getAttribute("style") || "").match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
     if (!m) return "";
@@ -5838,11 +6079,31 @@ var CustomImportScript = (() => {
     filteredcontenttypegrid: filteredGrid,
     "c-high-level-cta": highLevelCta,
     // base, tier2 landing and contact-division pages: the contact details with their map
-    "c-contactus": contactUs
+    "c-contactus": contactUs,
+    // the event-detail template's event
+    "c-event-detail-component": eventDetail,
+    // procedure and package pages: related products in groups
+    "c-productgroups": productGroups,
+    "c-productlisting": productListing,
+    // the title strip of package, portfolio and tier-1 pages
+    "c-tagline": tagline,
+    // base pages: patent tables, link lists, the Adobe Sign forms, the Cvent calendar, the news
+    // lists (and news-landing pages), the legacy image component
+    patenttables: patentTables,
+    "c-patenttables": patentTables,
+    curatedlinklist: curatedLinkList,
+    "c-curated-link-list": curatedLinkList,
+    adobesignwebform: adobeSignForm,
+    "c-adobesignwebform-content": adobeSignForm,
+    cventcomponent: cventCalendar,
+    "c-cventComponent": cventCalendar,
+    newsandannouncements: newsList,
+    "c-newsandannouncements": newsList,
+    image: legacyImage
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
+  // corp/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -5926,7 +6187,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
+  // ../../scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -6036,7 +6297,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
+  // ../../scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -6059,7 +6320,7 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
+  // corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -6218,7 +6479,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
+  // corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -6607,7 +6868,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
+  // corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -6620,7 +6881,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
+  // corp/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document2) {
@@ -6708,7 +6969,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/page-facts/tier2-landing-page.js
+  // data/page-facts/tier2-landing-page.js
   var tier2_landing_page_default = {
     "/us/en/about/awards/awards": { "template": "tier2-landing-page", "metadata": { "title": "Awards", "pageTitle": "Awards ", "description": "Here are a few honors we\u2019ve received for our business results, workplace culture and philanthropic activities.", "image": "/content/dam/stryker/about/Awards/2020/FranceTeam.png", "imageAlt": null, "tags": [], "originallyPublished": "2023-02-06T20:43:45.000Z", "lastPublished": "2025-12-08T20:43:45.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/about/corporate-responsibility": { "template": "tier2-landing-page", "metadata": { "title": "Corporate Responsibility at Stryker", "pageTitle": "Corporate Responsibility", "description": "Learn how Stryker is creating a better, healthier world through our environmental, social and governance commitments", "image": null, "imageAlt": null, "tags": ["environment", "societal", "sustainability", "energy", "governance", "esg", "giving", "supply_chains", "donations", "volunteering"], "originallyPublished": "2023-02-06T20:22:46.000Z", "lastPublished": "2026-02-27T20:56:16.000Z", "contentID": "COMM-GSNPS-SYK-764297_Rev-4" }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": ["/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/overview-and-approach/JOR_2019_Madaba_Guest_David-OSullivan_edit.png", "/content/dam/m/2020-comprehensive-report/homepage/gif/Windmill_Image.jpg"] },
@@ -7002,7 +7263,7 @@ var CustomImportScript = (() => {
     "/us/en/trauma-and-extremities/c/west-point": { "template": "tier2-landing-page", "metadata": { "title": "Army West Point Athletics", "pageTitle": "Army West Point Athletics", "description": null, "image": null, "imageAlt": null, "tags": [], "originallyPublished": "2023-02-06T16:50:16.000Z", "lastPublished": "2026-07-14T16:50:16.000Z", "contentID": "AP-016894" }, "anchors": [], "disclaimer": "<p>Individual results and activity levels after surgery vary and depend on many factors including age, weight and prior activity level. There are risks and recovery times associated with surgery and there are certain individuals who should not undergo surgery. Only a physician can tell you if this product and associated procedure are right for you and your unique circumstances. Please consult with a physician for complete information regarding benefits, risks, anticipated implant duration and possible outcomes.</p>", "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-tier2-landing-page.js
+  // import-lib-tier2-landing-page.js
   var import_lib_tier2_landing_page_default = createCorpImport({
     name: "tier2-landing-page",
     description: "www.stryker.com tier2-landing-page pages, first pass with the corp rule library.",

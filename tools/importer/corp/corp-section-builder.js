@@ -150,7 +150,15 @@ export function createBuilder({
       return [];
     }
     const name = componentName(el);
-    if (name) return components[name === 'cols*' ? 'cols' : name](el, ctx) || [];
+    if (name) {
+      // (a handler that fails keeps its component as default content, reported, instead of
+      // leaving the whole page to the cleanup's plain body)
+      try {
+        return components[name === 'cols*' ? 'cols' : name](el, ctx) || [];
+      } catch (e) {
+        return ctx.unknown(el, `handler failed: ${String(e && e.message).slice(0, 60)}`);
+      }
+    }
     if (isComponent(el)) return ctx.unknown(el);
     // content authored straight in a layout wrapper (rare): kept, reported
     if (/^(P|H[1-6]|UL|OL|TABLE|IMG|A)$/.test(el.tagName) && text(el)) return ctx.unknown(el, 'loose content');

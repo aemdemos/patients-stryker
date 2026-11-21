@@ -721,7 +721,8 @@ export function columnItems(columns, split, ctx, widths = null, starts = null) {
   if (last.length && last[0].box === 'bg-light-gray') modifiers.push('gray-lead');
   if (last.length && last.every((it) => it.box === 'dimensional')) modifiers.push('boxed-last');
   if (cols.every((items) => flows(items).every((it) => it.role === 'image'))) modifiers.push('media-pair');
-  const boxes = cols.flatMap((items) => flows(items)).filter((it) => it.box);
+  // (named boxes only: the builder also keeps each item's source .page-section in `box`)
+  const boxes = cols.flatMap((items) => flows(items)).filter((it) => typeof it.box === 'string');
   const used = { 'bg-gold': 'gold-first', 'bg-light-gray': 'gray-lead', dimensional: 'boxed-last' };
   boxes.filter((it) => !modifiers.includes(used[it.box])).forEach((it) => {
     ctx.report.notes.push(`Columns: ${it.box} box not reproduced (no variant for it in that cell): ${text(it.nodes[0] || doc.createElement('p')).slice(0, 40)}`);
@@ -2007,8 +2008,11 @@ function longTextHero(el, ctx) {
   }];
 }
 
-/** Table → Table block; a first row that is bold throughout is the header, else no-header. */
-function table(el, ctx) {
+/**
+ * Table → Table block; a first row that is bold throughout is the header, else no-header.
+ * @param {string[]} [extra] more variants (striped)
+ */
+function table(el, ctx, extra = []) {
   const { doc } = ctx;
   const source = el.querySelector('table');
   if (!source) return [];
@@ -2033,8 +2037,127 @@ function table(el, ctx) {
     h.textContent = text(caption);
     out.push({ type: 'flow', role: 'text', nodes: [h] });
   }
-  out.push({ type: 'block', block: block(doc, header ? 'Table' : 'Table (no-header)', rows) });
+  const variants = [...(header ? [] : ['no-header']), ...extra];
+  out.push({ type: 'block', block: block(doc, variants.length ? `Table (${variants.join(', ')})` : 'Table', rows) });
   return out;
+}
+
+/**
+ * Patent tables (base: /us/en/about/patents/*, trademarks) → the Table block (component-map):
+ * the cells' content without the empty, aria-hidden phone labels (.cell-mobile-title). No
+ * table has a header (the thead is empty), so Table (no-header) keeps every row; striped as
+ * the source (grey odd rows, no rules).
+ */
+function patentTables(el, ctx) {
+  el.querySelectorAll('.cell-mobile-title').forEach((n) => n.remove());
+  return table(el, ctx, ['striped']);
+}
+
+/**
+ * Curated link list → Columns (related-links) (component-map): one link per paragraph, the
+ * source's unbulleted list at its line rhythm (/us/en/about/patents); empty items left out.
+ */
+function curatedLinkList(el, ctx) {
+  const { doc } = ctx;
+  const links = [...el.querySelectorAll('li a[href]')].filter((a) => text(a));
+  if (!links.length) return [];
+  const cell = links.map((a) => para(doc, linkTo(doc, a.getAttribute('href'), text(a))));
+  links.filter((a) => /author-[^/]*adobecqms\.net/.test(a.getAttribute('href')))
+    .forEach((a) => ctx.report.notes.push(`curated link list: link to the AEM author kept as on live: ${text(a)}`));
+  return [{ type: 'block', block: block(doc, 'Columns (related-links)', [[cell]]) }];
+}
+
+/** The page's title for a widget's link text: the document title without " | Stryker". */
+const pageTitle = (doc) => text(doc.querySelector('title') || doc.createElement('p')).replace(/\s*\|\s*Stryker\s*$/i, '');
+
+/**
+ * Adobe Sign web form → /widgets/adobe-sign?wid=<widgetID>&height=<min height> in its own
+ * section (component-map; the widget frames the esignWidget at that height). The link text
+ * is the page title. A form without its frame (an empty instance) is left out.
+ */
+function adobeSignForm(el, ctx) {
+  const { doc } = ctx;
+  const frame = el.querySelector('iframe[src*="esignWidget"]');
+  if (!frame) return [];
+  const wid = new URL(frame.getAttribute('src'), SOURCE).searchParams.get('wid');
+  if (!wid) return [];
+  const height = ((frame.getAttribute('style') || '').match(/min-height:\s*(\d+)px/) || [])[1];
+  const query = new URLSearchParams({ wid, ...(height ? { height } : {}) }).toString();
+  return [{
+    type: 'own', kind: 'widget', styles: [], nodes: [para(doc, linkTo(doc, `/widgets/adobe-sign?${query}`, pageTitle(doc) || 'Adobe Sign form'))],
+  }];
+}
+
+/* Cvent calendar names by calendar id (export selectedCventName; the rendered page does not
+   carry it, component-map cventcomponent) */
+const CVENT_NAMES = { '01eecf27-dc87-4879-b868-6acf7d84ac51': 'Med Ed Events Calendar - External US' };
+
+/**
+ * Cvent events calendar → /widgets/cvent?widget-id=<id>&calendar-id=<id> in its own section
+ * (component-map; the widget links to Cvent's calendar page, which refuses framing).
+ */
+function cventCalendar(el, ctx) {
+  const { doc } = ctx;
+  const box = el.querySelector('[data-widget-id][data-calendar-id]');
+  if (!box) return [];
+  const calendarId = box.getAttribute('data-calendar-id');
+  const query = new URLSearchParams({ 'widget-id': box.getAttribute('data-widget-id'), 'calendar-id': calendarId }).toString();
+  return [{
+    type: 'own', kind: 'widget', styles: [], nodes: [para(doc, linkTo(doc, `/widgets/cvent?${query}`, CVENT_NAMES[calendarId] || pageTitle(doc) || 'Events calendar'))],
+  }];
+}
+
+/**
+ * News and announcements → News List Corp (component-map: generated from the query index, no
+ * static snapshot): its title (Heading 2, "Filter by:"), then the rows Path (the page itself:
+ * every source list searches its own page), Filters (the rendered tabs, `Label (tag)`, or
+ * none), Page size (the rendered list size) and Show dates (true when the items show a date).
+ */
+function newsList(el, ctx) {
+  const { doc } = ctx;
+  const root = el.matches('[data-widget="stryker-news"]') ? el : el.querySelector('[data-widget="stryker-news"]');
+  if (!root) return [];
+  const out = [];
+  const title = root.querySelector('.title-container h2, .title-container h3');
+  if (title && text(title)) {
+    const h = doc.createElement('h2');
+    h.textContent = text(title);
+    out.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  const filterTabs = [...root.querySelectorAll('.stryker-tabs span.tab-link[data-tags]')]
+    .filter((s) => s.getAttribute('data-tags') !== 'show-all-news' && text(s))
+    .map((s) => `${text(s)} (${s.getAttribute('data-tags').trim().replace(/^\/etc\/tags\/([^/]+)\//, '$1:')})`);
+  const filters = doc.createElement('div');
+  if (filterTabs.length) {
+    const ul = doc.createElement('ul');
+    filterTabs.forEach((t) => {
+      const li = doc.createElement('li');
+      li.textContent = t;
+      ul.append(li);
+    });
+    filters.append(ul);
+  } else filters.textContent = 'none';
+  // (the page's document name, not under our root: the list reads the locale's query index)
+  const path = WebImporter.FileUtils.sanitizePath(new URL(ctx.source, SOURCE).pathname.replace(/\.html?$/, ''))
+    .replace(/\/index$/, '');
+  const dated = [...root.querySelectorAll('.news h5')].some((h) => text(h));
+  out.push({
+    type: 'block',
+    block: block(doc, 'News List Corp', [
+      ['Path', path],
+      ['Filters', filters],
+      ['Page size', root.getAttribute('data-list-size') || '20'],
+      ['Show dates', dated ? 'true' : 'false'],
+    ]),
+  });
+  return out;
+}
+
+/** The legacy image component (image parbase): its image as default content, alt as authored. */
+function legacyImage(el, ctx) {
+  const img = el.querySelector('img[src]');
+  if (img && !img.getAttribute('alt')) ctx.report.notes.push(`image without alt text: ${img.getAttribute('src')}`);
+  return fallback(el, ctx);
 }
 
 /** Local page navigation → Sticky Nav (local): parent link, then label | page link. */
@@ -2137,6 +2260,10 @@ function latestNews(el, ctx) {
     return [image, body];
   });
   out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  // the component's own button under the cards (about/governance/product-security "VIEW ALL
+  // ARTICLES", portfolios/…/advanced-digital-healthcare)
+  const more = root.querySelector('.c-latestnews-btn a[href]');
+  if (more && text(more)) out.push({ type: 'flow', role: 'cta', nodes: [buttonNode(doc, more, text(more))] });
   return out;
 }
 
@@ -2500,6 +2627,189 @@ function filteredGrid(el, ctx) {
   return out;
 }
 
+/**
+ * One product tile (image over a rule, linked title) as a Cards Corp (product-item) row; `bold`:
+ * the title in Futura bold (Bold), as the product groups show it.
+ */
+function productTileRow(item, ctx, bold = false) {
+  const { doc } = ctx;
+  const link = item.querySelector('a[href]');
+  const href = link ? link.getAttribute('href') : '';
+  const heading = item.querySelector('h4, .component-subheading');
+  const label = text(heading || link || item);
+  const h4 = doc.createElement('h4');
+  const title = href ? linkTo(doc, href, label) : doc.createTextNode(label);
+  if (bold) {
+    const strong = doc.createElement('strong');
+    strong.append(title);
+    h4.append(strong);
+  } else h4.append(title);
+  const img = item.querySelector('img');
+  if (!img || !img.getAttribute('src')) return ['', [h4]];
+  const image = doc.createElement('img');
+  image.setAttribute('src', img.getAttribute('src'));
+  image.setAttribute('alt', img.getAttribute('alt') || '');
+  if (!img.getAttribute('alt')) ctx.report.notes.push(`product tile image without alt text: ${img.getAttribute('src')}`);
+  return [para(doc, image), [h4]];
+}
+
+/**
+ * Product groups (c-productgroups: procedure and package pages' "Related products") → its title,
+ * then per group its subheading (the light grey rule: Underline) and Cards Corp (product-item):
+ * one card per product, four per row as the source (col-md-3). Empty ones give nothing.
+ */
+function productGroups(el, ctx) {
+  const { doc } = ctx;
+  const root = el.matches('.c-productgroups') ? el : el.querySelector('.c-productgroups') || el;
+  const groups = [...root.querySelectorAll('.clearfix')].filter((g) => g.querySelector('a[href]'));
+  if (!groups.length) return [];
+  const out = [];
+  const title = root.querySelector('h2');
+  if (title && text(title)) out.push({ type: 'flow', role: 'text', nodes: [componentTitle(title, doc)] });
+  groups.forEach((group) => {
+    const sub = group.querySelector('h3');
+    if (sub && text(sub)) {
+      const h3 = doc.createElement('h3');
+      const u = doc.createElement('u');
+      u.textContent = text(sub);
+      h3.append(u);
+      out.push({ type: 'flow', role: 'text', nodes: [h3] });
+    }
+    const items = [...group.querySelectorAll('.filtered, .product-item')].filter((item) => text(item));
+    if (items.length) {
+      const rows = items.map((item) => productTileRow(item, ctx, true));
+      out.push({ type: 'block', block: block(doc, 'Cards Corp (product-item)', rows) });
+    }
+  });
+  return out;
+}
+
+/**
+ * Banner title and tagline (c-tagline: the page title strip of package, portfolio and tier-1
+ * pages, .m-banner-simple) → a section of its own with its banner colour (bg-gold …): the title
+ * as the Heading 1, the message as a Heading 2. Empty ones give nothing.
+ */
+function tagline(el, ctx) {
+  const { doc } = ctx;
+  const title = el.querySelector('.c-tagline-title');
+  const message = el.querySelector('.c-tagline-message');
+  const has = (node) => !!node && !!text(node);
+  if (!has(title) && !has(message)) return [];
+  const nodes = [];
+  if (has(title)) {
+    const h1 = doc.createElement('h1');
+    h1.textContent = text(title);
+    nodes.push(h1);
+    ctx.h1 = true;
+  }
+  if (has(message)) {
+    const h2 = doc.createElement('h2');
+    h2.textContent = text(message);
+    nodes.push(h2);
+  }
+  const banner = el.querySelector('.m-banner-simple');
+  const bg = banner && [...banner.classList].find((c) => /^bg-/.test(c));
+  return [{
+    type: 'own', kind: 'tagline', styles: bg ? [bg] : [], nodes,
+  }];
+}
+
+/**
+ * Product listing (c-productlisting, package pages) → Columns (columns-50-50), one row per
+ * product: its image (linked) | its title as a linked Heading 2 and its description.
+ */
+function productListing(el, ctx) {
+  const { doc } = ctx;
+  const products = [...el.querySelectorAll('.product')].filter((p) => text(p) || p.querySelector('img'));
+  if (!products.length) return [];
+  const rows = products.map((product) => {
+    const [first, second] = product.querySelectorAll(':scope > .cell');
+    const img = (first || product).querySelector('img');
+    const media = [];
+    if (img && img.getAttribute('src')) {
+      const image = doc.createElement('img');
+      image.setAttribute('src', img.getAttribute('src'));
+      image.setAttribute('alt', img.getAttribute('alt') || '');
+      media.push(para(doc, image));
+    }
+    const body = [];
+    const heading = (second || product).querySelector('h2, h3');
+    const link = heading && heading.querySelector('a[href]');
+    if (heading && text(heading)) {
+      const h2 = doc.createElement('h2');
+      h2.append(link ? linkTo(doc, link.getAttribute('href'), text(heading)) : doc.createTextNode(text(heading)));
+      body.push(h2);
+    }
+    const description = (second || product).querySelector('.description');
+    if (description && text(description)) {
+      body.push(para(doc, doc.createTextNode(text(description))));
+    }
+    return [media, body];
+  });
+  return [{ type: 'block', block: block(doc, 'Columns (columns-50-50)', rows) }];
+}
+
+/**
+ * Event details (c-event-detail-component, the event-detail template) → Columns (columns-67-33):
+ * the title (Heading 2), the meeting time, location and country (Heading 5 + their lines), the
+ * details and registration (Heading 5 with the gold rule: Underline; the register link as the
+ * primary button: Bold, alone on its line) | the event's map (a Google Maps link, which the site
+ * embeds) when the address is a place: virtual events (Online, Virtual, N/A) get no map, where
+ * the source shows Google's guess. The print button is the page's script, not content.
+ */
+function eventDetail(el, ctx) {
+  const { doc } = ctx;
+  const left = [];
+  const title = el.querySelector('h2');
+  if (title && text(title)) {
+    const h2 = doc.createElement('h2');
+    h2.textContent = text(title);
+    left.push(h2);
+  }
+  const blank = (node) => !text(node).replace(/\u00a0/g, '').trim();
+  el.querySelectorAll('.event-datetime-wrap, .event-location-wrap, .event-details-wrap').forEach((wrap) => {
+    [...wrap.children].forEach((node) => {
+      if (/^H[1-6]$/.test(node.tagName)) {
+        if (!text(node)) return;
+        const h5 = doc.createElement('h5');
+        if (node.classList.contains('border-bottom-gold')) {
+          const u = doc.createElement('u');
+          u.textContent = text(node);
+          h5.append(u);
+        } else h5.textContent = text(node);
+        left.push(h5);
+        return;
+      }
+      const btns = [...node.querySelectorAll('a.btn[href]')];
+      if (btns.length) {
+        btns.forEach((a) => {
+          const strong = doc.createElement('strong');
+          strong.append(linkTo(doc, newTabHref(a, a.getAttribute('href')), text(a)));
+          left.push(para(doc, strong));
+        });
+        return;
+      }
+      if (node.tagName !== 'P' || blank(node)) return;
+      const p = doc.createElement('p');
+      p.append(...contentCopy(node, doc).childNodes);
+      left.push(p);
+    });
+  });
+  if (!left.length) return [];
+  const cells = [left];
+  const map = el.querySelector('.map[data-address]');
+  const address = map ? map.getAttribute('data-address').replace(/&nbsp;|\u00a0/g, ' ')
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s))
+    .join(', ') : '';
+  // (a place: more than the country)
+  if (!address.includes(',')) return [{ type: 'flow', role: 'text', nodes: left }];
+  const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+  cells.push([para(doc, linkTo(doc, href, address))]);
+  return [{ type: 'block', block: block(doc, 'Columns (columns-67-33)', [cells]) }];
+}
+
 /** A CSS url() of an inline background image, its CSS escapes (`\2f ` for `/`) decoded. */
 function backgroundImage(el) {
   const m = ((el && el.getAttribute('style')) || '').match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
@@ -2672,6 +2982,26 @@ export const COMPONENTS = {
   'c-high-level-cta': highLevelCta,
   // base, tier2 landing and contact-division pages: the contact details with their map
   'c-contactus': contactUs,
+  // the event-detail template's event
+  'c-event-detail-component': eventDetail,
+  // procedure and package pages: related products in groups
+  'c-productgroups': productGroups,
+  'c-productlisting': productListing,
+  // the title strip of package, portfolio and tier-1 pages
+  'c-tagline': tagline,
+  // base pages: patent tables, link lists, the Adobe Sign forms, the Cvent calendar, the news
+  // lists (and news-landing pages), the legacy image component
+  patenttables: patentTables,
+  'c-patenttables': patentTables,
+  curatedlinklist: curatedLinkList,
+  'c-curated-link-list': curatedLinkList,
+  adobesignwebform: adobeSignForm,
+  'c-adobesignwebform-content': adobeSignForm,
+  cventcomponent: cventCalendar,
+  'c-cventComponent': cventCalendar,
+  newsandannouncements: newsList,
+  'c-newsandannouncements': newsList,
+  image: legacyImage,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */
