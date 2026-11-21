@@ -4,7 +4,10 @@
  * delivers a page, so search engines never read them as text (scripts/colon-tags.js on the
  * readable-settings branch turns them back into the bracket tags). The same rules as the
  * drafts' converter (.cbr/local-scripts/colons-convert.mjs):
- * - a marker runs to :end:, or to the end of the element it is typed in (no :end: then);
+ * - a marker runs to :end:, or to the end of the heading, paragraph or cell it is typed in
+ *   (no :end: then; inside bold text or a link only when no formatting follows it right away,
+ *   which the import's markdown step could merge in; a marker after a word holding http or
+ *   urn would stay text on the server, so ends there are left out where they can be);
  * - tags opened one right after the other are one run of markers; when the inner one closes
  *   first, the outer ones open again before the next text of their element;
  * - sizes: 1.75× → x1p75, 5.5vw → vw5p5; a paragraph that is only [[Blank line]] → :blank-line:;
@@ -132,7 +135,13 @@ export function writeColonMarkers(root) {
     // closes at the end of the element it was opened in (the heading, the bold text …):
     // no :end: needed, the marker runs to there
     const PLACE = /\uE000E\d+\uE000/g;
+    // (inside bold text or a link only when no formatting follows it right away: the import's
+    // markdown step afterwards merges neighbouring bold text and superscripts, which would move
+    // the end of the bold text a marker runs to)
+    const MERGES = /^(A|B|EM|I|S|SPAN|STRONG|SUB|SUP|U)$/;
     const drop = new Set(ends.filter(({ id, parent }) => {
+      const next = parent.nextSibling;
+      if (parent !== container && next?.nodeType === 1 && MERGES.test(next.tagName)) return false;
       const t = parent.textContent;
       const at = t.indexOf(id);
       return at >= 0 && !t.slice(at + id.length).replace(PLACE, '').trim();

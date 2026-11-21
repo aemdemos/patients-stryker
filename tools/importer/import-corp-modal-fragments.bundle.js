@@ -3404,7 +3404,10 @@ var CustomImportScript = (() => {
         n.nodeValue = after[k];
       });
       const PLACE = /\uE000E\d+\uE000/g;
+      const MERGES = /^(A|B|EM|I|S|SPAN|STRONG|SUB|SUP|U)$/;
       const drop = new Set(ends.filter(({ id, parent }) => {
+        const next = parent.nextSibling;
+        if (parent !== container && (next == null ? void 0 : next.nodeType) === 1 && MERGES.test(next.tagName)) return false;
         const t = parent.textContent;
         const at = t.indexOf(id);
         return at >= 0 && !t.slice(at + id.length).replace(PLACE, "").trim();
