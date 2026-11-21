@@ -135,13 +135,19 @@ export function writeColonMarkers(root) {
     // closes at the end of the element it was opened in (the heading, the bold text …):
     // no :end: needed, the marker runs to there
     const PLACE = /\uE000E\d+\uE000/g;
-    // (inside bold text or a link only when no formatting follows it right away: the import's
-    // markdown step afterwards merges neighbouring bold text and superscripts, which would move
-    // the end of the bold text a marker runs to)
+    // (inside bold text or a link only when no formatting follows it right away, at any level up
+    // to the paragraph: the import's markdown step afterwards merges neighbouring bold text,
+    // italics and superscripts, `<strong><em>a</em></strong><strong><em>b</em></strong>`, which
+    // would move the end of the element a marker runs to)
     const MERGES = /^(A|B|EM|I|S|SPAN|STRONG|SUB|SUP|U)$/;
+    const followed = (el) => {
+      let x = el;
+      while (x !== container && !x.nextSibling) x = x.parentElement;
+      const next = x === container ? null : x.nextSibling;
+      return next?.nodeType === 1 && MERGES.test(next.tagName);
+    };
     const drop = new Set(ends.filter(({ id, parent }) => {
-      const next = parent.nextSibling;
-      if (parent !== container && next?.nodeType === 1 && MERGES.test(next.tagName)) return false;
+      if (parent !== container && followed(parent)) return false;
       const t = parent.textContent;
       const at = t.indexOf(id);
       return at >= 0 && !t.slice(at + id.length).replace(PLACE, '').trim();

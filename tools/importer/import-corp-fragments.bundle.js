@@ -6347,9 +6347,14 @@ var CustomImportScript = (() => {
       });
       const PLACE = /\uE000E\d+\uE000/g;
       const MERGES = /^(A|B|EM|I|S|SPAN|STRONG|SUB|SUP|U)$/;
+      const followed = (el) => {
+        let x = el;
+        while (x !== container && !x.nextSibling) x = x.parentElement;
+        const next = x === container ? null : x.nextSibling;
+        return (next == null ? void 0 : next.nodeType) === 1 && MERGES.test(next.tagName);
+      };
       const drop = new Set(ends.filter(({ id, parent }) => {
-        const next = parent.nextSibling;
-        if (parent !== container && (next == null ? void 0 : next.nodeType) === 1 && MERGES.test(next.tagName)) return false;
+        if (parent !== container && followed(parent)) return false;
         const t = parent.textContent;
         const at = t.indexOf(id);
         return at >= 0 && !t.slice(at + id.length).replace(PLACE, "").trim();
