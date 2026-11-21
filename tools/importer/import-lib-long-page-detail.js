@@ -1,7 +1,8 @@
 /*
- * www.stryker.com pages of the AEM template long-page-detail (291 pages) → EDS pages (template
- * long-page-detail-corp-engine), through the corp rule library (corp/), first pass: the library's handlers as they
- * are, no template-specific rules yet. This file is the template's profile.
+ * www.stryker.com pages of the AEM template long-page-detail (291 pages)
+ * → EDS pages of the template long-page-detail-corp-engine,
+ * through the corp rule library (corp/). First pass: the library's handlers as they are, no
+ * template-specific rules yet. This file is the template's profile.
  */
 import { createCorpImport } from './corp/corp-import.js';
 import PAGE_FACTS from './data/page-facts/long-page-detail.js';
