@@ -5714,6 +5714,57 @@ var CustomImportScript = (() => {
     });
     return [{ type: "block", block: block(doc, "Cards Corp (category)", rows) }];
   }
+  function contactUs(el, ctx) {
+    const { doc } = ctx;
+    const root = el.matches(".c-contactus") ? el : el.querySelector(".c-contactus") || el;
+    const info = root.querySelector(".info") || root;
+    const details = [];
+    info.querySelectorAll(".contact-label").forEach((label) => {
+      if (!text(label)) return;
+      const h4 = doc.createElement("h4");
+      h4.textContent = text(label);
+      details.push(h4);
+      const p = doc.createElement("p");
+      const group = label.closest(".contact-group");
+      const lines = [];
+      let started = false;
+      group.querySelectorAll(".contact-label, p").forEach((node) => {
+        if (node === label) {
+          started = true;
+          return;
+        }
+        if (!started) return;
+        if (node.matches(".contact-label")) {
+          started = false;
+          return;
+        }
+        lines.push(node);
+      });
+      lines.forEach((line, i) => {
+        if (i) p.append(doc.createElement("br"));
+        const link2 = line.querySelector("a[href]");
+        if (link2 && text(line) === text(link2)) {
+          const href = link2.getAttribute("href");
+          const tel = href.match(/^tel:(.*)$/i);
+          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, text(link2)));
+        } else p.append(...contentCopy(line, doc).childNodes);
+      });
+      if (text(p)) details.push(p);
+    });
+    if (!details.length) return [];
+    const out = [];
+    const title = root.querySelector("h2");
+    if (title && text(title)) out.push({ type: "flow", role: "text", nodes: [componentTitle(title, doc)] });
+    const map = root.querySelector(".map[data-address]");
+    const address = map ? map.getAttribute("data-address").replace(/<br\s*\/?>/gi, ", ").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s*,\s*/g, ", ").replace(/\s+/g, " ").trim().replace(/,$/, "") : "";
+    const cells = [details];
+    if (address) {
+      const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+      cells.push([para(doc, linkTo(doc, href, address))]);
+    }
+    out.push({ type: "block", block: block(doc, "Columns (columns-50-50)", [cells]) });
+    return out;
+  }
   var COMPONENTS = {
     carouselslidegroup: carousel,
     "hero-large-carousel": heroLargeCarousel,
@@ -5785,7 +5836,9 @@ var CustomImportScript = (() => {
     "c-page-hero": pageHero,
     "c-filtered-content-type-grid": filteredGrid,
     filteredcontenttypegrid: filteredGrid,
-    "c-high-level-cta": highLevelCta
+    "c-high-level-cta": highLevelCta,
+    // base, tier2 landing and contact-division pages: the contact details with their map
+    "c-contactus": contactUs
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 

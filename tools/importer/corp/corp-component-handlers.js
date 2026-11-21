@@ -2533,6 +2533,70 @@ function highLevelCta(el, ctx) {
   return [{ type: 'block', block: block(doc, 'Cards Corp (category)', rows) }];
 }
 
+/**
+ * Contact us (c-contactus: base, tier2 landing and contact-division pages) → its title (the gold
+ * rule: Underline), then Columns (columns-50-50): the contact details | the map. Each contact
+ * group is its label as a Heading 4 and its lines in one paragraph (the phone numbers as
+ * links, one per line, as live); the map is a Google Maps link alone in its paragraph, which the
+ * site embeds (scripts/map-embed.js, the source's Maps embed at zoom 15). A component with no
+ * details gives nothing (some pages carry it empty).
+ */
+function contactUs(el, ctx) {
+  const { doc } = ctx;
+  const root = el.matches('.c-contactus') ? el : el.querySelector('.c-contactus') || el;
+  const info = root.querySelector('.info') || root;
+  const details = [];
+  info.querySelectorAll('.contact-label').forEach((label) => {
+    if (!text(label)) return;
+    const h4 = doc.createElement('h4');
+    h4.textContent = text(label);
+    details.push(h4);
+    // the label's lines: the paragraphs after it, up to the next label
+    const p = doc.createElement('p');
+    const group = label.closest('.contact-group');
+    const lines = [];
+    let started = false;
+    group.querySelectorAll('.contact-label, p').forEach((node) => {
+      if (node === label) { started = true; return; }
+      if (!started) return;
+      if (node.matches('.contact-label')) { started = false; return; }
+      lines.push(node);
+    });
+    lines.forEach((line, i) => {
+      if (i) p.append(doc.createElement('br'));
+      const link = line.querySelector('a[href]');
+      if (link && text(line) === text(link)) {
+        // (a phone link's number only: tel:269%20488%207419%20%20Fax → tel:2694887419)
+        const href = link.getAttribute('href');
+        const tel = href.match(/^tel:(.*)$/i);
+        p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, text(link)));
+      } else p.append(...contentCopy(line, doc).childNodes);
+    });
+    if (text(p)) details.push(p);
+  });
+  if (!details.length) return [];
+  const out = [];
+  const title = root.querySelector('h2');
+  if (title && text(title)) out.push({ type: 'flow', role: 'text', nodes: [componentTitle(title, doc)] });
+  const map = root.querySelector('.map[data-address]');
+  // (the map's address attribute is HTML: its lines joined as the source's embed query does)
+  const address = map ? map.getAttribute('data-address')
+    .replace(/<br\s*\/?>/gi, ', ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s*,\s*/g, ', ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/,$/, '') : '';
+  const cells = [details];
+  if (address) {
+    const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+    cells.push([para(doc, linkTo(doc, href, address))]);
+  }
+  out.push({ type: 'block', block: block(doc, 'Columns (columns-50-50)', [cells]) });
+  return out;
+}
+
 // AEM components by wrapper class (or #id)
 export const COMPONENTS = {
   carouselslidegroup: carousel,
@@ -2606,6 +2670,8 @@ export const COMPONENTS = {
   'c-filtered-content-type-grid': filteredGrid,
   filteredcontenttypegrid: filteredGrid,
   'c-high-level-cta': highLevelCta,
+  // base, tier2 landing and contact-division pages: the contact details with their map
+  'c-contactus': contactUs,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */

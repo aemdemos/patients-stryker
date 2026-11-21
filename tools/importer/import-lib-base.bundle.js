@@ -5661,6 +5661,110 @@ var CustomImportScript = (() => {
     h5.textContent = text(line);
     return [{ type: "flow", role: "text", nodes: [h5] }];
   }
+  function filteredGrid(el, ctx) {
+    const { doc } = ctx;
+    const grid = el.matches(".c-filtered-content-type-grid") ? el : el.querySelector(".c-filtered-content-type-grid") || el;
+    const items = [...grid.querySelectorAll(".product-item")].filter((item) => text(item));
+    if (!items.length) return [];
+    const out = [];
+    const title = grid.querySelector(".c-section-title");
+    if (title && text(title)) {
+      const h2 = doc.createElement("h2");
+      h2.textContent = text(title);
+      out.push({ type: "flow", role: "text", nodes: [h2] });
+    }
+    const rows = items.map((item) => {
+      const link2 = item.querySelector("a[href]");
+      const href = link2 ? link2.getAttribute("href") : "";
+      const heading = item.querySelector("h4, .component-subheading");
+      const label = text(heading || link2 || item);
+      const h4 = doc.createElement("h4");
+      h4.append(href ? linkTo(doc, href, label) : doc.createTextNode(label));
+      const img = item.querySelector("img");
+      if (!img || !img.getAttribute("src")) return ["", [h4]];
+      const image = doc.createElement("img");
+      image.setAttribute("src", img.getAttribute("src"));
+      image.setAttribute("alt", img.getAttribute("alt") || "");
+      if (!img.getAttribute("alt")) ctx.report.notes.push(`product tile image without alt text: ${img.getAttribute("src")}`);
+      return [para(doc, image), [h4]];
+    });
+    out.push({ type: "block", block: block(doc, "Cards Corp (product-item, five-up)", rows) });
+    return out;
+  }
+  function backgroundImage(el) {
+    const m = (el && el.getAttribute("style") || "").match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
+    if (!m) return "";
+    return m[2].replace(/\\([0-9a-f]{1,6})\s?/gi, (s, hex) => String.fromCodePoint(parseInt(hex, 16))).replace(/\\(.)/g, "$1").trim();
+  }
+  function highLevelCta(el, ctx) {
+    const { doc } = ctx;
+    const tiles = [...el.querySelectorAll(".c-high-level-cta-container")].filter((t) => text(t));
+    if (!tiles.length) return [];
+    const rows = tiles.map((tile) => {
+      const label = tile.querySelector(".c-high-level-cta-label") || tile.querySelector("a[href]");
+      const href = label && label.getAttribute("href");
+      const name = text(label || tile);
+      const body = para(doc, href ? linkTo(doc, href, name) : doc.createTextNode(name));
+      const src = backgroundImage(tile.querySelector(".c-high-level-cta-link"));
+      if (!src) return ["", [body]];
+      const image = doc.createElement("img");
+      image.setAttribute("src", src);
+      image.setAttribute("alt", "");
+      return [para(doc, image), [body]];
+    });
+    return [{ type: "block", block: block(doc, "Cards Corp (category)", rows) }];
+  }
+  function contactUs(el, ctx) {
+    const { doc } = ctx;
+    const root = el.matches(".c-contactus") ? el : el.querySelector(".c-contactus") || el;
+    const info = root.querySelector(".info") || root;
+    const details = [];
+    info.querySelectorAll(".contact-label").forEach((label) => {
+      if (!text(label)) return;
+      const h4 = doc.createElement("h4");
+      h4.textContent = text(label);
+      details.push(h4);
+      const p = doc.createElement("p");
+      const group = label.closest(".contact-group");
+      const lines = [];
+      let started = false;
+      group.querySelectorAll(".contact-label, p").forEach((node) => {
+        if (node === label) {
+          started = true;
+          return;
+        }
+        if (!started) return;
+        if (node.matches(".contact-label")) {
+          started = false;
+          return;
+        }
+        lines.push(node);
+      });
+      lines.forEach((line, i) => {
+        if (i) p.append(doc.createElement("br"));
+        const link2 = line.querySelector("a[href]");
+        if (link2 && text(line) === text(link2)) {
+          const href = link2.getAttribute("href");
+          const tel = href.match(/^tel:(.*)$/i);
+          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, text(link2)));
+        } else p.append(...contentCopy(line, doc).childNodes);
+      });
+      if (text(p)) details.push(p);
+    });
+    if (!details.length) return [];
+    const out = [];
+    const title = root.querySelector("h2");
+    if (title && text(title)) out.push({ type: "flow", role: "text", nodes: [componentTitle(title, doc)] });
+    const map = root.querySelector(".map[data-address]");
+    const address = map ? map.getAttribute("data-address").replace(/<br\s*\/?>/gi, ", ").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s*,\s*/g, ", ").replace(/\s+/g, " ").trim().replace(/,$/, "") : "";
+    const cells = [details];
+    if (address) {
+      const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
+      cells.push([para(doc, linkTo(doc, href, address))]);
+    }
+    out.push({ type: "block", block: block(doc, "Columns (columns-50-50)", [cells]) });
+    return out;
+  }
   var COMPONENTS = {
     carouselslidegroup: carousel,
     "hero-large-carousel": heroLargeCarousel,
@@ -5726,7 +5830,15 @@ var CustomImportScript = (() => {
     "c-rich-text-editor": inTemplateColumn(textComponent),
     "c-publish-date": publishDate,
     "c-event-location-properties": eventLocation,
-    "c-back-button": skip
+    "c-back-button": skip,
+    // specialty, capability, portfolio and news-landing template slots: the page hero (the same
+    // markup as the product page hero) and the filtered product grid
+    "c-page-hero": pageHero,
+    "c-filtered-content-type-grid": filteredGrid,
+    filteredcontenttypegrid: filteredGrid,
+    "c-high-level-cta": highLevelCta,
+    // base, tier2 landing and contact-division pages: the contact details with their map
+    "c-contactus": contactUs
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
