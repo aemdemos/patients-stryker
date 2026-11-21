@@ -155,11 +155,14 @@ export function writeColonMarkers(root) {
     // a tag closing outside the element it was opened in (`**[[Gold]a** b]`): a marker can't
     ends.filter(({ id, parent }) => !parent.textContent.includes(id))
       .forEach(() => errors.push(`cross: ${container.textContent.slice(0, 80)}`));
+    // a marker right after a word holding "http" or "urn" (burns:end:, journey:end:) stays text
+    // on the server (its rule skips markers inside URLs): a zero-width no-break space before
+    // the marker ends the word for that rule and shows nothing
+    const AFTER_URL = /(\S*?)(:[a-z_-]+[a-z\d]*:)/gi;
     nodes.forEach((n) => {
-      n.nodeValue = n.nodeValue.replace(PLACE, (id) => (drop.has(id) ? '' : ':end:'));
+      n.nodeValue = n.nodeValue.replace(PLACE, (id) => (drop.has(id) ? '' : ':end:'))
+        .replace(AFTER_URL, (m, run, mark) => (/https?|urn/i.test(run) ? `${run}\uFEFF${mark}` : m));
     });
-    // a marker after `http…` in the same word: the server would leave it as text
-    if (/(?:https?|urn)\S*:[a-z_-]+[a-z\d]*:/i.test(container.textContent)) errors.push(`url: ${container.textContent.slice(0, 80)}`);
   });
   root.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').forEach((h) => {
     if (!h.textContent.includes(':')) return;
