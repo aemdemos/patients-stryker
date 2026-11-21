@@ -466,6 +466,15 @@ export function renderVideo(src, label, { background = false } = {}) {
   // sizing/appearance lives in CSS (.dm-video in styles/lazy-styles.css) so it
   // can be adjusted without touching this script
   if (poster) video.poster = poster;
+  // corp: the frame takes the poster's shape (`fit=constrain` keeps the video's own ratio), as
+  // the Scene7 viewer sizes to the video (isolibrium's 2.4:1 video: 1380 x 575 at 1440px)
+  if (poster && isCorpPage()) {
+    const probe = new Image();
+    probe.addEventListener('load', () => {
+      if (probe.naturalWidth && probe.naturalHeight) video.style.aspectRatio = `${probe.naturalWidth} / ${probe.naturalHeight}`;
+    });
+    probe.src = poster;
+  }
   if (label) video.setAttribute('aria-label', label);
 
   const hlsSrc = preferHls(mediaSrc);

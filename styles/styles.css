@@ -66,6 +66,9 @@
   --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
   --icon-font-family: strykericons, sans-serif;
 
+  /* plain interface font (an editor-like document view, e.g. blocks/authoring-example) */
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", roboto, arial, sans-serif;
+
   /* font weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;   /* light serif (Egyptienne) headings */

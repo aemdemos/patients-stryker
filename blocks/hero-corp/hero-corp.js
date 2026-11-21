@@ -1,5 +1,5 @@
 import decorateDMAssets, { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
-import { spaceBlock } from '../../scripts/corp-spacing.js';
+import { parseSpacing, spaceBlock } from '../../scripts/corp-spacing.js';
 import fetchPlainHtml from '../../scripts/plain-html.js';
 
 // a slide's media: its picture, or its background video (a video slide)
@@ -207,9 +207,17 @@ function fitBox(block) {
     block.style.minHeight = '';
     const style = getComputedStyle(box);
     if (style.position !== 'absolute') return;
+    // its top-<n> inset is a % of the slide's height, the image's on the source: in px of the
+    // slide before it grows, so the text stays where the source puts it (arise-1000-ex at 860px:
+    // the h1 45px down, 18% of the 249px image). Not for a box anchored at the bottom. (Written
+    // only when it changes: this runs on the box's style changes)
+    const inset = getComputedStyle(block).getPropertyValue('--hero-slide-top').trim();
+    if (block.dataset.slideAnchor !== 'bottom' && inset.endsWith('%')) {
+      const top = `${Math.round((parseFloat(inset) * block.clientHeight) / 10) / 10}px`;
+      if (box.style.top !== top) box.style.top = top;
+    }
     // the box's own bottom margin (its margin-bottom-<n> spacing) is room it keeps below it;
-    // its top-<n> inset is a % of the hero's height, so a taller hero moves it down: a few
-    // passes until it fits
+    // a few passes until it fits
     for (let pass = 0; pass < 4; pass += 1) {
       const below = parseFloat(getComputedStyle(box).marginBottom) || 0;
       const needed = box.offsetTop + box.offsetHeight + below;
@@ -236,7 +244,15 @@ export default async function decorate(block) {
   if (!block.querySelector(':scope > div:first-child :is(picture, .dm-video-background)')) {
     block.classList.add('no-image');
   }
-  // the text box's AEM padding / margin (spacing options, e.g. padding-top-4)
-  spaceBlock(block, block.lastElementChild);
+  // the text box's AEM padding / margin (spacing options, e.g. padding-top-4). A product
+  // hero's bottom margin is its rich text's on the source, above the button (a CTA of its own
+  // in the slide overlay): the button's top margin, in % of the box width (arise-1000-ex
+  // margin-bottom-7: 24 / 26 / 43px at 375 / 860 / 1440px, collapsing with the copy's 15px)
+  const box = block.lastElementChild;
+  const copyGap = block.classList.contains('image-right')
+    && box?.lastElementChild?.classList.contains('button-wrapper')
+    && parseSpacing([...block.classList]).find((s) => s.prop === 'marginBottom' && s.unit === '%');
+  if (copyGap) block.style.setProperty('--hero-copy-gap', `${copyGap.value}%`);
+  spaceBlock(block, box, copyGap ? ['marginBottom'] : []);
   fitBox(block);
 }

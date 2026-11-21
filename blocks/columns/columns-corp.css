@@ -42,6 +42,13 @@ body.corp .section.serif .columns :is(ul, a) {
   font-size: inherit;
 }
 
+/* … and no patients stroke-page spacing around its 50-50 rows (30px above and below the
+   block, the image 30px down from 900px): one row follows the next at the component gap, as
+   on the source (xpedition-powered-stair-chair feature rows: 419px apart on live, 533px) */
+body.corp .section.serif .columns.columns-50-50 {
+  margin-block: 0;
+}
+
 /* buttons keep the button type (Futura 14px) in a serif section, which sets every cell link
    in the serif copy (stryker.com flowtriever-system / artix "CONNECT WITH AN EXPERT") */
 body.corp .section.serif .columns p.button-wrapper a.button:any-link {
@@ -290,15 +297,13 @@ body.corp .columns > div > div h1.columns-number > :first-child {
   font-size: 2em;
 }
 
-/* a fully Bold Heading 1 in a Large Headline block with vw-sized words is a stat number
-   (stryker.com .fontsize-6vw); next to rich text it keeps the headline size (jr45/july: 4vw,
-   56px). Without a size it is the source's plain h1: 28px, lines 1.06 at every width
-   (exeter "Cementing our place in history", restoration-modular "Rest easy with") */
-body.corp .columns.large-headline > div > div h1.columns-bold:has(span.corp-vw) {
-  font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
-}
-
-body.corp .columns.large-headline > div > div h1.columns-bold:not(:has(span.corp-vw)) {
+/* a fully Bold Heading 1 in a Large Headline block is the source's plain h1: 28px, lines 1.06
+   at every width (exeter "Cementing our place in history", restoration-modular "Rest easy
+   with"). Its vw-sized words (stat numbers, product heroes: ankle-truss-system [[Gold,5vw]])
+   size themselves (span.corp-vw), so the line height stays theirs: at the source's 28px the
+   heading's own line box doesn't add to it (live 95px between two 70px lines; at 6vw it was
+   138px, 104 product heroes) */
+body.corp .columns.large-headline > div > div h1.columns-bold {
   font-size: var(--heading-font-size-xxl);
   line-height: var(--heading-line-height);
 }
@@ -329,9 +334,11 @@ body.corp .columns .columns-img-col {
   padding-bottom: 0;
 }
 
-/* a heading caption under an image (name + role) sits one column gutter lower */
+/* a heading caption under an image (name + role, a card title) is the next component on the
+   source: the component gap below the image (20px, 30px from 600px; arise-1000-ex feature
+   cards: 20px at 375px) */
 body.corp .columns .columns-img-col:has(+ h3) {
-  margin-bottom: var(--space-section);
+  margin-bottom: var(--corp-component-gap);
 }
 
 /* large-headline sets no paragraph gaps: an image keeps a column gutter below it */
@@ -525,21 +532,25 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
     flex-wrap: nowrap;
   }
 
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
   body.corp .columns > div > div {
     flex: 1 1 0;
   }
 
-  body.corp .columns.columns-4-cols > div {
-    flex-wrap: nowrap;
-    row-gap: 0;
+  /* a 3 or 4 column control (cols3 / cols4) has half-width columns from 841px (EDS 600px) and
+     thirds / quarters from 1024px (EDS 900px): two per row up to 900px (stryker.com
+     col-sm-6 col-md-4 / col-md-3, all 843 in the page cache; arise-1000-ex features at 860px:
+     400px cards, two per row). Not grid rows (their own grid-… options) */
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div > div {
+    flex: 0 0 50%;
   }
 
   body.corp .columns.columns-50-50 > div > div {
     flex: 0 0 50%;
-  }
-
-  body.corp .columns.columns-4-cols > div > div {
-    flex: 0 0 25%;
   }
 
   /* columns-25-25-50: three image columns 25% / 25% / 50% wide, as the stryker.com image row
@@ -607,9 +618,9 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
     font-size: var(--heading-font-size-compact);
   }
 
-  /* link-groups: four lists side by side again (one per row on mobile) */
+  /* link-groups: four lists two per row (one per row on mobile) */
   body.corp .columns.link-groups.columns-4-cols > div > div {
-    flex-basis: 25%;
+    flex-basis: 50%;
   }
 
   body.corp .columns {
@@ -625,6 +636,24 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
 }
 
 @media (width >= 900px) {
+  /* 3 / 4 column controls: all their columns side by side (col-md-4 / col-md-3) */
+  body.corp .columns:where(.columns-3-cols, .columns-4-cols):where(:not(.columns-grid, .columns-25-25-50)) > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  body.corp .columns:where(.columns-3-cols):where(:not(.columns-grid, .columns-25-25-50)) > div > div {
+    flex: 1 1 0;
+  }
+
+  body.corp .columns.columns-4-cols:where(:not(.columns-grid)) > div > div {
+    flex: 0 0 25%;
+  }
+
+  body.corp .columns.link-groups.columns-4-cols > div > div {
+    flex-basis: 25%;
+  }
+
   /* link-groups: in a two-cell block each group's list runs in two columns (stryker.com
      col-md-6 lists inside col-md-6 groups) */
   body.corp .columns.link-groups.columns-2-cols ul {
@@ -657,6 +686,17 @@ body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) 
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+
+  /* image + text rows stay top-aligned in a serif section, as the source's bootstrap columns
+     (the patients serif rows centre the text: xpedition-powered-stair-chair's feature rows,
+     heading 20px under the image top on live, 82px centred) */
+  body.corp .section.serif .columns.columns-50-50 > div {
+    align-items: flex-start;
+  }
+
+  body.corp .section.serif .columns.columns-50-50 .columns-img-col {
+    margin-block: 0;
   }
 }
 
@@ -732,4 +772,66 @@ body.corp .columns.columns-50-50.page-intro a.link-strong:any-link::after {
   body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
     line-height: var(--heading-line-height);
   }
+}
+
+/* cell colours: the Columns option cell-<N>-<colour> (the AEM box colour of column N, e.g.
+   insignia's purple / blue / teal key benefit tiles, flowtriever's light gray evidence cards);
+   scripts/corp-spacing.js marks the cell, the box spacing options give the padding */
+body.corp .columns > div > .cell-bg {
+  /* the AEM column gutter (15px each side) plus the box's own side margins: the coloured box
+     sits inside them (insignia: 440px tiles 30px apart at 1440px; flowtriever: 5% margins,
+     290px cards); the box padding is 10px (AEM .has-background) unless the box sets it.
+     The margins and the % padding come from scripts/corp-spacing.js */
+  margin-inline: calc(var(--space-block) + var(--cell-margin-left, 0px)) calc(var(--space-block) + var(--cell-margin-right, 0px));
+  padding: var(--space-block-s);
+  background-color: var(--corp-cell-bg, transparent);
+  background-image: var(--corp-cell-bg-image, none);
+}
+
+/* fixed-width cells (columns-4-cols: flex 0 0 25%) shrink by their margins instead of
+   overflowing the row (same structure as those rules, so this later one applies) */
+body.corp .columns > div > div.cell-bg {
+  flex-shrink: 1;
+}
+
+body.corp .columns > div > .cell-bg-white { --corp-cell-bg: var(--color-white); }
+body.corp .columns > div > .cell-bg-gold { --corp-cell-bg: var(--color-accent); }
+body.corp .columns > div > .cell-bg-light-gray { --corp-cell-bg: var(--color-surface); }
+body.corp .columns > div > .cell-bg-gray { --corp-cell-bg: var(--color-surface-dim); }
+body.corp .columns > div > .cell-bg-blue { --corp-cell-bg: var(--color-navy-bright); }
+body.corp .columns > div > .cell-bg-purple { --corp-cell-bg: var(--color-purple); }
+body.corp .columns > div > .cell-bg-teal { --corp-cell-bg: var(--color-primary); }
+body.corp .columns > div > .cell-bg-silver { --corp-cell-bg: var(--color-surface-muted); }
+body.corp .columns > div > .cell-bg-dark-gold { --corp-cell-bg: var(--color-accent-link-hover); }
+body.corp .columns > div > .cell-bg-golden-gradient { --corp-cell-bg-image: var(--corp-gradient-golden); }
+
+/* dark cells carry light text, as the dark section styles */
+body.corp .columns > div > .cell-bg-dark-gray {
+  --corp-cell-bg: var(--color-secondary);
+
+  color: var(--color-white);
+}
+
+body.corp .columns > div > .cell-bg-dark-purple-gradient {
+  --corp-cell-bg-image: var(--corp-gradient-dark-purple);
+
+  color: var(--color-white);
+}
+
+body.corp .columns > div > .cell-bg-dark-blue-gradient {
+  --corp-cell-bg-image: var(--corp-gradient-dark-blue);
+
+  color: var(--color-white);
+}
+
+body.corp .columns > div > .cell-bg-dark-orange-gradient {
+  --corp-cell-bg-image: var(--corp-gradient-dark-orange);
+
+  color: var(--color-white);
+}
+
+body.corp .columns > div > .cell-dark {
+  --corp-cell-bg-image: var(--panel-dark-gradient);
+
+  color: var(--color-white);
 }
