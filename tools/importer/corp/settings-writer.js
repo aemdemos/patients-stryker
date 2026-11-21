@@ -13,6 +13,7 @@
  */
 import decorateSpanTags from '../../../scripts/span-tags.js';
 import * as S from '../../../scripts/corp-settings.js';
+import { writeColonMarkers, ensureDescription } from './colon-writer.js';
 
 const toClassName = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-')
   .replace(/^-|-$/g, '');
@@ -454,6 +455,8 @@ export function writeReadableSettings(main, document) {
   // icon span becomes its :icon: code), so they go before the bracket tags become spans
   root.querySelectorAll('span:not(.icon)').forEach((span) => span.replaceWith(...span.childNodes));
   const report = convertReadable(root);
+  // the text styles as colon markers, and a Description the server needn't derive (colon-writer)
+  report.push(...writeColonMarkers(root), ...ensureDescription(root));
   toImport(main, document, root, blocks);
   return report;
 }

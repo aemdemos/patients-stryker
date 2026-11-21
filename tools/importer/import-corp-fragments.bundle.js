@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-corp-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-fragments.js
   var import_corp_fragments_exports = {};
   __export(import_corp_fragments_exports, {
     default: () => import_corp_fragments_default
   });
 
-  // tools/importer/corp/transformers/corp-sections.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/corp/transformers/patients-stryker-cleanup.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/corp/transformers/patients-stryker-dm-images.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/corp-richtext.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -911,7 +911,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/corp-section-builder.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1227,7 +1227,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3376,7 +3376,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var CF_ROOT = "/content/dam/stryker/content-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
@@ -3399,7 +3399,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}content-fragments/${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3440,7 +3440,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/corp-components.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3596,7 +3596,7 @@ var CustomImportScript = (() => {
     return { sections, unknown };
   }
 
-  // tools/importer/corp/parsers/hero-image-slide.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3688,7 +3688,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/parsers/cards-corp-teaser.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text3) {
     return (text3 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3747,7 +3747,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/corp/parsers/video.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3775,14 +3775,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-modal-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // tools/importer/data/dm-sets.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3801,7 +3801,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // tools/importer/corp/corp-component-handlers.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4791,7 +4791,13 @@ var CustomImportScript = (() => {
       const overlayNodes = overlay ? cellContent(inlineNodes(overlayItems, ctx, { marks: false }), doc) : void 0;
       if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
       const variants = [];
-      if (slide.querySelector(".experienceFragment-ef .aem-GridColumn--offset--default--6.aem-GridColumn--default--6")) variants.push("image-right");
+      const startsRight = (col) => {
+        var _a;
+        return Number(
+          (_a = /aem-GridColumn--offset--default--(\d+)/.exec(col.className)) == null ? void 0 : _a[1]
+        ) >= 6;
+      };
+      if ([...slide.querySelectorAll('.experienceFragment-ef [class*="aem-GridColumn--offset--default--"]')].some(startsRight)) variants.push("image-right");
       if (heroBox(overlay)) variants.push(heroBox(overlay));
       if (phoneSlideMissing && !slideStyles().length) variants.push("no-phone-image");
       variants.push(...itemsSpacing(overlayItems));
@@ -5783,7 +5789,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp/corp-page.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -5867,7 +5873,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // tools/importer/corp/news-shared-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/news-shared-fragments.js
   var FRAGMENTS2 = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
       type: "resources",
@@ -6099,7 +6105,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // scripts/span-tags.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -6209,7 +6215,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // scripts/corp-settings.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -6232,7 +6238,158 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // tools/importer/corp/settings-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
+  function writeColonMarkers(root) {
+    const doc = root.ownerDocument;
+    root.normalize();
+    const INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
+    const containerOf = (node) => {
+      let el = node.parentElement;
+      while (INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
+      return el;
+    };
+    const textNodes = (container) => {
+      const out = [];
+      const w = doc.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+      while (w.nextNode()) if (containerOf(w.currentNode) === container) out.push(w.currentNode);
+      return out;
+    };
+    const NAME = /^[a-z_-]+[a-z\d]*$/i;
+    const marker = (token) => {
+      const t = token.trim();
+      const size = t.match(/^(\d+)(?:\.(\d+))?\s*(×|x|vw)$/i);
+      if (size) return `${size[3].toLowerCase() === "vw" ? "vw" : "x"}${size[1]}${size[2] ? `p${size[2]}` : ""}`;
+      return NAME.test(t) ? t : null;
+    };
+    const errors = [];
+    let markers = 0;
+    root.querySelectorAll("p").forEach((p) => {
+      if (/^\[\[\s*blank line\s*\]\]$/i.test(p.textContent.trim())) {
+        p.textContent = ":blank-line:";
+        markers += 1;
+      }
+    });
+    const containers = /* @__PURE__ */ new Set();
+    const all = doc.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (all.nextNode()) {
+      const n = all.currentNode;
+      if (n.nodeValue.includes("[[") && !n.parentElement.closest("code, pre")) containers.add(containerOf(n));
+    }
+    containers.forEach((container) => {
+      const nodes = textNodes(container);
+      const before = nodes.map((n) => n.nodeValue);
+      const stack = [];
+      const ends = [];
+      let ok = true;
+      let pending = null;
+      const after = [];
+      const reopen = (k) => {
+        if (!pending) return;
+        const runOf2 = pending.frames.flat().map((x) => `:${x}:`).join("");
+        markers += pending.frames.flat().length;
+        const here = nodes[k].parentElement === pending.parent;
+        if (here) after[k] += runOf2;
+        else after[pending.k] += runOf2;
+        stack.push({ frames: pending.frames, parent: pending.parent });
+        pending = null;
+      };
+      before.forEach((text3, k) => {
+        after[k] = "";
+        let i = 0;
+        let lastWasOpen = false;
+        while (i < text3.length) {
+          const open = text3.slice(i).match(/^\[\[([^\][]+)\]/);
+          const literal = text3.slice(i).match(/^\[[^\][]*\]/);
+          if (text3[i] === "]" && pending) {
+            pending.frames.pop();
+            if (!pending.frames.length) pending = null;
+            i += 1;
+          } else if (open) {
+            reopen(k);
+            const names = open[1].split(",").map(marker);
+            if (names.some((x) => !x)) ok = false;
+            after[k] += names.map((x) => `:${x}:`).join("");
+            markers += names.length;
+            if (lastWasOpen && stack.length) stack[stack.length - 1].frames.push(names);
+            else stack.push({ frames: [names], parent: nodes[k].parentElement });
+            lastWasOpen = true;
+            i += open[0].length;
+          } else if (literal && !text3.startsWith("[[", i)) {
+            reopen(k);
+            after[k] += literal[0];
+            lastWasOpen = false;
+            i += literal[0].length;
+          } else if (text3[i] === "]" && stack.length) {
+            const group = stack.pop();
+            group.frames.pop();
+            const id = `\uE000E${ends.length}\uE000`;
+            ends.push({ id, parent: group.parent });
+            after[k] += id;
+            i += 1;
+            if (group.frames.length) {
+              pending = { frames: group.frames, k, parent: nodes[k].parentElement };
+            }
+            lastWasOpen = false;
+          } else {
+            reopen(k);
+            after[k] += text3[i];
+            lastWasOpen = false;
+            i += 1;
+          }
+        }
+      });
+      if (!ok || stack.length) {
+        errors.push(container.textContent.slice(0, 80));
+        return;
+      }
+      nodes.forEach((n, k) => {
+        n.nodeValue = after[k];
+      });
+      const PLACE = /\uE000E\d+\uE000/g;
+      const drop = new Set(ends.filter(({ id, parent }) => {
+        const t = parent.textContent;
+        const at = t.indexOf(id);
+        return at >= 0 && !t.slice(at + id.length).replace(PLACE, "").trim();
+      }).map((e) => e.id));
+      ends.filter(({ id, parent }) => !parent.textContent.includes(id)).forEach(() => errors.push(`cross: ${container.textContent.slice(0, 80)}`));
+      nodes.forEach((n) => {
+        n.nodeValue = n.nodeValue.replace(PLACE, (id) => drop.has(id) ? "" : ":end:");
+      });
+      if (/(?:https?|urn)\S*:[a-z_-]+[a-z\d]*:/i.test(container.textContent)) errors.push(`url: ${container.textContent.slice(0, 80)}`);
+    });
+    root.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]").forEach((h) => {
+      if (!h.textContent.includes(":")) return;
+      h.id = h.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, "").replace(/\s/g, "-");
+    });
+    const left = errors.length ? `; left as bracket tags: ${errors.length} (${errors.slice(0, 3).join(" | ")})` : "";
+    return [`colon markers: ${markers}${left}`];
+  }
+  var isRow = (row, name) => {
+    var _a;
+    return new RegExp(`^${name}$`, "i").test(((_a = row.firstElementChild) == null ? void 0 : _a.textContent.trim()) || "");
+  };
+  var MARKER = new RegExp("(?<!(?:https?|urn)[^\\s]*):(#?[a-z_-]+[a-z\\d]*):", "gi");
+  function ensureDescription(root) {
+    const meta = root.querySelector(".metadata");
+    if (!meta || [...meta.children].some((r) => isRow(r, "description"))) return [];
+    const clean3 = (t) => t.replace(MARKER, "").replace(/\s+/g, " ").trim();
+    const text3 = [...root.querySelectorAll("p")].filter((x) => !x.closest(".metadata, .section-metadata")).map((x) => clean3(x.textContent)).find((t) => !/^box(:| end)/i.test(t) && t.split(" ").length > 10);
+    if (!text3) return ["description: none found"];
+    const words = text3.split(" ");
+    const doc = root.ownerDocument;
+    const row = doc.createElement("div");
+    const k = doc.createElement("div");
+    const v = doc.createElement("div");
+    k.textContent = "Description";
+    v.textContent = words.length > 25 ? `${words.slice(0, 25).join(" ")} ...` : text3;
+    row.append(k, v);
+    const title = [...meta.children].find((r) => isRow(r, "title"));
+    if (title) title.after(row);
+    else meta.prepend(row);
+    return ["description: added"];
+  }
+
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -6616,11 +6773,12 @@ var CustomImportScript = (() => {
     const { root, blocks } = toPlain(main, document2);
     root.querySelectorAll("span:not(.icon)").forEach((span) => span.replaceWith(...span.childNodes));
     const report = convertReadable(root);
+    report.push(...writeColonMarkers(root), ...ensureDescription(root));
     toImport(main, document2, root, blocks);
     return report;
   }
 
-  // tools/importer/corp/root.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -6633,7 +6791,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/xf-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var corpTransformers = [transform, transform2, transform3];
   function hostedContent(document2, host, xf) {
@@ -6743,7 +6901,7 @@ var CustomImportScript = (() => {
     })
   };
 
-  // tools/importer/import-corp-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-fragments.js
   var import_corp_fragments_default = xf_fragments_default;
   return __toCommonJS(import_corp_fragments_exports);
 })();
