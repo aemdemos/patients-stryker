@@ -14,6 +14,8 @@
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
+  --corp-table-stripe: #f5f5f5; /* source .c-table odd rows (patents, trademarks, lifecycle-support) */
+  --corp-table-cell-padding: 10px 8px; /* source .c-table td */
   --corp-focus-ring: 2px; /* keyboard focus outline width (drawn inside the control) */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;

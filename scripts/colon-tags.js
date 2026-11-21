@@ -71,9 +71,11 @@ function convert(container) {
   // (the open ones: where each was typed, so one left open closes at the end of that element,
   // e.g. inside the bold text it was typed in)
   const open = [];
+  // (the later markers of a run go with its first; not `isConnected`: a fragment is decorated
+  // before it is in the page)
+  const merged = new Set();
   markers.forEach((m) => {
-    // (the later markers of a run went with its first)
-    if (!m.isConnected) return;
+    if (merged.has(m)) return;
     // (the ones typed in an element this marker is past, e.g. a superscript: closed at its end)
     while (open.length && !open[open.length - 1].contains(m)) open.pop().append(']');
     if (isEnd(m)) {
@@ -87,7 +89,10 @@ function convert(container) {
     const run = [m];
     while (isStyle(run[run.length - 1].nextSibling)) run.push(run[run.length - 1].nextSibling);
     const tokens = run.map((x) => tokenOf(nameOf(x)));
-    run.slice(1).forEach((x) => x.remove());
+    run.slice(1).forEach((x) => {
+      merged.add(x);
+      x.remove();
+    });
     open.push(m.parentElement);
     m.replaceWith(`[[${tokens.join(',')}]`);
   });

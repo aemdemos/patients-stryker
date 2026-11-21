@@ -429,6 +429,12 @@ body.corp .columns.related-links p a:any-link:has(u) {
   line-height: var(--paragraph-line-height);
 }
 
+/* a list of plain links (stryker.com curated link list, measured: about/patents,
+   emergency-care/news/2022/8-steps-to-a-successful-aed-safety-program): the body font too */
+body.corp .columns.related-links p > a:any-link:only-child:not(:has(u)) {
+  font-family: var(--body-font-family);
+}
+
 
 /* section style serif with p-1 / p-1-25: 14px or 17.5px serif copy (stryker.com
    urw-egyptienne at 1em / .fontsize-1-25em); serif alone sets 21px */
