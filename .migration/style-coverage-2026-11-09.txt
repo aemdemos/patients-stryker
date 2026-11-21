@@ -1,0 +1,28 @@
+672 pages, 8 with styles missing in the output
+
+rule              styled  ok      wrong   missing  not found (text)  pages
+align-center      732     715     0       0        17                0
+align-right       16      15      0       0        1                 0
+blank-line        251     246     5       0        0                 5
+box-colour        493     483     0       0        10                0
+heading           2117    2086    2       0        29                2
+image             5009    5007    0       2        0                 2
+image-border      180     180     0       0        0                 0
+indent            5       5       0       0        0                 0
+list              2859    2796    0       0        63                0
+new-tab           3367    3363    0       0        4                 0
+
+## blank-line: 5 on 5 pages, e.g.
+  /rs/us/en/ent/products/instruments: "2 in the source" → wrong: 1 in the output
+  /rs/us/en/neurovascular/products/trak-21: "2 in the source" → wrong: 1 in the output
+  /rs/us/en/sports-medicine/products/flowport-touch-cannula-system: "1 in the source" → wrong: 0 in the output
+  /rs/us/en/trauma-and-extremities/products/tornier-hrs: "21 in the source" → wrong: 18 in the output
+  /rs/us/en/trauma-and-extremities/products/tornier-pyrocarbon-humeral-head: "13 in the source" → wrong: 12 in the output
+
+## heading: 2 on 2 pages, e.g.
+  /rs/us/en/joint-replacement/products/triathlon-hinge: "hinge" (h1) → wrong: a p
+  /rs/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump: "crossflow integrated arthroscopy pump" (h1) → wrong: a a
+
+## image: 2 on 2 pages, e.g.
+  /rs/us/en/sports-medicine/products/flowport-touch-cannula-system: "flowport-lp-10" → missing
+  /rs/us/en/sports-medicine/products/procinch-suspensory-fixation-adjustable-loop: "message" → missing

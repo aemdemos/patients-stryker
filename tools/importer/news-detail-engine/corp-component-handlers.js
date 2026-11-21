@@ -57,7 +57,13 @@ const BOXES = [
   ['bg-dark-gray', 'bg-dark-gray'], ['bg-white', 'bg-white'], ['bg-blue', 'bg-blue'],
   ['bg-purple', 'bg-purple'], ['bg-teal', 'bg-teal'], ['bg-gray', 'bg-silver'],
   ['bg-orange', 'bg-dark-gold'],
+  // gradient boxes (stryker.com .bg-*-gradient on .has-background, e.g. the spinejack "Contact
+  // us" banner): the panel gradient styles, `dark` for the teal one (approved 2026-11-05)
+  ['bg-golden-gradient', 'bg-golden-gradient'], ['bg-dark-purple-gradient', 'bg-dark-purple-gradient'],
+  ['bg-dark-blue-gradient', 'bg-dark-blue-gradient'], ['bg-dark-orange-gradient', 'bg-dark-orange-gradient'],
+  ['bg-dark-teal-gradient', 'dark'],
 ];
+const isGradient = (style) => /-gradient$|^dark$/.test(style || '');
 const boxOf = (el) => (BOXES.find(([cls]) => el && el.classList.contains(cls)) || [])[1] || null;
 /** The background colour style of a box (the dimensional box's own colour included). */
 const boxColour = (el) => (BOXES.slice(1)
@@ -70,7 +76,8 @@ const boxColour = (el) => (BOXES.slice(1)
 const heroBox = (overlay) => {
   const box = overlay && overlay.querySelector('.c-largeheadline > .has-background, .c-rich-text-editor > .has-background');
   const colour = boxColour(box);
-  return colour ? `box-${colour.replace(/^bg-/, '')}` : null;
+  // Hero Corp box options are solid colours only
+  return colour && !isGradient(colour) ? `box-${colour.replace(/^bg-/, '')}` : null;
 };
 
 /**
@@ -81,7 +88,12 @@ const heroBox = (overlay) => {
 const boxStyles = (el) => {
   const colour = boxColour(el);
   const shadow = !!(el && el.classList.contains('dimensional-box'));
-  return [colour || '', colour || shadow ? 'boxed' : '', shadow ? 'shadow-box' : ''].filter(Boolean);
+  // a gradient's direction (AEM gradientDirection: left-to-right by default, top-to-bottom;
+  // gradientDirectionInverse), as rendered: .top-to-bottom / .inverse
+  const gradient = isGradient(colour);
+  return [colour || '', colour || shadow ? 'boxed' : '', shadow ? 'shadow-box' : '',
+    gradient && el.classList.contains('top-to-bottom') ? 'gradient-top-to-bottom' : '',
+    gradient && el.classList.contains('inverse') ? 'gradient-inverse' : ''].filter(Boolean);
 };
 
 /** The largest fontsize-<n>-vw / fontsize-<n>vw size in an element (3-5 → 3.5), or 0. */
@@ -498,6 +510,10 @@ export function columnItems(columns, split, ctx, widths = null, starts = null) {
   const cells = cols.map((items, i) => {
     const content = items.filter((it) => (it.type === 'flow' && it.nodes.length) || (it.type === 'block' && it.cellNodes));
     const spaced = content.filter((it) => (it.spacing || []).length);
+    // the column's box colour (every box in it the same colour): cell-<N>-<colour>, e.g.
+    // cell-1-bg-purple (insignia key benefits, flowtriever clinical evidence), approved 2026-11-05
+    const colours = content.map((it) => ((it.styles || []).includes('boxed') && it.styles[0] !== 'boxed' ? it.styles[0] : null));
+    if (colours.length && colours[0] && colours.every((c) => c === colours[0])) modifiers.push(`cell-${i + 1}-${colours[0]}`);
     if (!spaced.length) return cellNodes(items, ctx);
     const same = new Set(spaced.map((it) => it.spacing.join(' '))).size === 1;
     if (same && spaced.length === content.length) {

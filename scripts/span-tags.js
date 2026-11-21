@@ -9,7 +9,12 @@
  *   [[color-blue]**Bold title**]   **[[color-blue]Bold title]**   [[color-blue]one<br>two]
  * Malformed expressions (empty or invalid class names, no closing `]`) are left as typed.
  */
-import { toClassName } from './aem.js';
+
+// aem.js toClassName, local: the corp import scripts bundle this module
+// (tools/importer/corp/settings-writer.js), and aem.js runs its page init when loaded
+const toClassName = (name) => (typeof name === 'string'
+  ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+  : '');
 
 // formatting a bracket expression may run through (and may itself be wrapped in)
 const INLINE_TAGS = new Set(['A', 'B', 'BR', 'DEL', 'EM', 'I', 'S', 'SPAN', 'STRONG', 'SUB', 'SUP', 'U']);

@@ -63,6 +63,8 @@ const cacheUrl = (url) => {
   const u = new URL(url);
   u.searchParams.delete('xf');
   u.searchParams.delete('cf');
+  // a modal (?modal=procare) is in its product page's DOM: the page's snapshot
+  u.searchParams.delete('modal');
   return u.href;
 };
 const pageFile = (url) => join(cache, 'pages', `${hash(cacheUrl(url))}.html`);

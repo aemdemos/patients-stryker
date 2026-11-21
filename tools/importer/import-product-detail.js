@@ -1,14 +1,13 @@
 /*
  * www.stryker.com product pages (AEM template product-detail, 677 pages) → EDS pages, through
- * the template's own copy of the corp import rules (product-detail/: section builder,
- * handlers, rich text, cleanup; forked 2026-11-03). Changes there affect only this template.
+ * the corp rule library (corp/: section builder, handlers, rich text, cleanup), shared by every
+ * template of the readable-settings approach. This file is the template's profile.
  *
  * Import: run with the product-detail URLs taken from the export file names
  * (.migration/xf-mapping/…/<Page>.json → https://www.stryker.com/…/<Page>.html), together
- * with the template's XFs: its own ones with import-product-detail-fragments.js, the ones
- * other templates show too with import-xf-fragments.js.
+ * with their XFs (import-corp-fragments.js).
  */
-import { createCorpImport } from './product-detail/corp-import.js';
+import { createCorpImport } from './corp/corp-import.js';
 import PAGE_FACTS from './data/page-facts/product-detail.js';
 
 export default createCorpImport({

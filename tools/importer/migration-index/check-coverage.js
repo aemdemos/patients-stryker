@@ -139,7 +139,8 @@ const results = files.map(async (file) => {
     failed += 1;
     return `404      ${page} (the import fetched the source's 404 page — check the source URL)`;
   }
-  const output = norm(html).replace(/\[\[[a-z0-9,-]+\]|\]/g, ' ').replace(/\s+/g, ' ');
+  // bracket tags, class names or readable names and values ([[gold,1.75×]…], [[5.5vw]…])
+  const output = norm(html).replace(/\[\[[a-z0-9,.×-]+\]|\]/g, ' ').replace(/\s+/g, ' ');
   const texts = source.cf ? cfTexts(readJson(source.file)) : authoredTexts(readJson(source.file));
   // a snippet counts as present when its first 60 characters appear in the output
   const absent = texts.filter((t) => !output.includes(core(t.text).slice(0, 60)));
