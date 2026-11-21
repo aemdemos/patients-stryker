@@ -20,10 +20,13 @@
  *   Heading size | 1.25×                        Autoplay | 5 s   (carousel)
  *   Headings | Display, Gold                    every heading of the section's default content
  *   Text | Large                                its paragraphs and list items, accordion answers
- *   [[Gold,Title]…]                             text styles by name, inside the text
- *   [[1.75×]…]  [[Gold,5.5vw]…]                 a size as a value: × the surrounding size, or vw
+ *   :Gold::Title:…:end:                         text styles by name, inside the text, as colon
+ *                                               markers (colon-tags.js turns them into the
+ *                                               bracket tags below, which they replace)
+ *   :x1p75:…  :Gold::vw5p5:…                    a size as a value: × the surrounding size, or vw
+ *   [[Gold,Title]…]  [[1.75×]…]                 the same as bracket tags (before the markers)
  *   Box: top 3%, sides 3%   …   Box end         a padded box inside text or a block cell
- *   [[Blank line]]                              an empty line of text (its own paragraph)
+ *   :blank-line:  ([[Blank line]])              an empty line of text (its own paragraph)
  *   Blank lines | 2                             a spacer section's blank lines (style spacer)
  *   Columns | 1 + 2                             a flex section's pieces per source column
  * The name lists below are the registry: one place says what each name is.

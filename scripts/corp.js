@@ -27,6 +27,7 @@ import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
 import decorateSpacing from './corp-spacing.js';
 import decorateSettings, { rewriteSizeValues } from './corp-settings.js';
+import decorateColonTags from './colon-tags.js';
 import decorateTypeTags from './corp-type.js';
 import buildCarouselSections from './corp-carousel.js';
 import fetchPlainHtml from './plain-html.js';
@@ -125,8 +126,12 @@ export async function loadEager(doc) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
-  // readable settings (prototype): size values in bracket tags, before the tags are parsed
-  if (getMetadata('style-settings') === 'on') rewriteSizeValues(main);
+  // readable settings (prototype): colon markers as bracket tags (before the icons are
+  // decorated), size values in bracket tags, before the tags are parsed
+  if (getMetadata('style-settings') === 'on') {
+    decorateColonTags(main);
+    rewriteSizeValues(main);
+  }
   decorateModalTiles(main);
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
