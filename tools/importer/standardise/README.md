@@ -1,0 +1,631 @@
+# Standardisation (branch `standardise-v3`)
+
+An experiment, kept off the main line: the migrated corp pages move from one-off measured
+values (the readable settings: `Text box`, `Grid`, `Column widths`, size tags …) to a few
+**standard variants** per block type. Per block type: group every instance by similarity, make
+the largest N groups exactly N variants with their own CSS, and put every instance of the type
+on one of them, its content kept and its presentation dropped. The look changes; the content and
+EDS authoring practice stay. First block type: Columns (below). The first pilot (30 pages,
+block-by-block review, layout-only standards) is kept below for reference.
+
+- Code: this branch only (forked from `readable-settings-v3` at 48bac1b).
+- Content: `/std/…`, copies of every product page (672) and their fragments (`/rs` is untouched).
+- Previews: `https://standardise-v3--stryker-com--strykerenterprise.aem.page/std/…` once the
+  `/std` documents are uploaded (on request only); locally a second dev server on this
+  worktree (`aem up --html-folder content --port 3001`).
+- The review flow uses no internal tool (no QA tool, no blast radius): reviewers compare the
+  page with stryker.com by eye, as the customer would.
+
+## Direction from 2026-11-19: source → standard
+
+The as-is pages (`/rs`) are an incomplete migration (heroes with the picture in the wrong place,
+heroes imported as Columns, tabs guessed from headings, unfinished styling): looks measured on
+them carry those gaps into the base variants. So (the user's decision):
+
+- **The looks and base variants come from the original:** the AEM export (what each component is
+  and its authored options) and the rendered stryker.com pages, saved at 1440, 860 and 375
+  (`looks/save-source.mjs`; the fast import's copies were saved at 1920 and scripts freeze their
+  carousels at that width) and measured offline.
+- **Tablet (2026-11-19, the user's):** the customer wants the in-between too, so the original is
+  also measured and shown at 860 px. stryker.com's own tablet layout only renders from 841 to
+  1023 px (its CSS switches at 841 and 1024), our tablet range is 600–899: 860 is tablet on both.
+  (A real tablet held upright, 768–834 px, gets stryker.com's phone layout.) `measure.mjs --add t`
+  adds the width to pages measured before; the looks pages have a Tablet view.
+- **Hero on the original (2026-11-20):** an experience fragment at the top gives its first row as
+  the hero (the components side by side by the grid's desktop columns; neurovascular pages hold
+  the whole page in one fragment); hero pieces with nothing visible (a title strip in transparent
+  text, a carousel without slides) are skipped. Grouped by frame and where the image sits (not
+  its share of the width, nor the inner spacing of fragment heroes); title bands without a
+  picture are the product hero without it (the user). `looks/backgrounds.mjs` measures how light
+  each hero's background is (near-white share of its clip), shown on the looks page: about 30 of
+  the "image behind the text" heroes are a product picture on a light background, i.e. look like
+  the product hero (the user decides after looking).
+- **The rules translate the source directly into the standard pages:** the importer keeps its
+  reading side (the component handlers) and gets a standard output (base variants, the containers
+  model, named text styles) instead of lift-and-shift settings. `/rs` stays as history and
+  reference; the `/rs` → `/std` conversion (`apply-variants.mjs`) is set aside.
+- Kept: the review tool and its backend, the looks tooling, the containers model, the standard
+  CSS, the source snapshots, the decisions made so far (to be checked again on the original).
+
+Order: a Hero spike on the original (against the as-is Hero groups); the original's looks for
+every component type and the text styles; the standard importer output on the shared import
+library (to be committed to a branch of its own first); checks (export coverage, the original vs
+the standard pages); the customer review.
+
+## Roadmap from 2026-11-17 (the user's): base variants from measured looks
+
+The `/std` pages don't yet cut it on styling; the authoring approach stays. In this order:
+
+1. **Base variants per block type** (Columns left out for now, below), one block type at a time:
+   group every instance by how it **looks** (text styling, image size against the block, the
+   placement of things against each other: measured on the rendered as-is pages, not read from
+   the markup); count each group; order by count; an inspection page per block type with every
+   instance's screenshot in long rows, largest group first (also to show the customer why these
+   variants); the top 5 to 10 groups become the base variants; every other group is assigned to
+   one of them (where it appears, the base variant is used); element-count mismatches handled
+   case by case.
+2. **Columns, separately: the containers model** (discussed and decided 2026-11-19, below).
+3. **Default text again**, the same way (the text sets didn't capture the user's full vision).
+4. **Authoring Manual:** the block library with the base variants and the authoring conventions
+   with their variants.
+5. **Customer approval** of the block and text variants, with amendments, in parallel.
+6. **The review tool's Design panel** offers only the base variants (nothing more until the
+   customer asks for it).
+7. **The review and QA** with the review tool, on `/std` as close to the customer's design as
+   possible. The apply step (writing the review's choices into the documents) builds on this.
+
+## The containers model (decided 2026-11-19)
+
+Tabs, accordions and columns are sections of "stuff" (blocks and default content) arranged by a
+section style; their only variants are the chrome (the tab bar, the accordion's line and +/−, the
+column presets and their behaviour on phones). Code: `scripts/containers.js` (prototype).
+
+- **Tabs and accordions are runs of sections:** one section per tab or item (`tab` /
+  `accordion-panel`), its first heading the label; the `continued` sections after it belong to it,
+  so an item can hold text, then columns, then text. A tab's label is explicit: the heading-split
+  `tabbed` sections guess tabs from heading levels and make wrong tabs when a panel holds a heading
+  of that level (high-speed-drills: 8 tabs, 4 of them "For use with"; the real titles come from the
+  stryker.com export's tabsGrid). Tabs stay a tab bar on phones, as on stryker.com.
+- **Columns are a layout inside one section:** `layout` with a preset (`halves`, `thirds`,
+  `quarters`, `fifths`, `sixths`, `wide-first`, `wide-last`, `middle`); a `Column break` line ends a
+  column; a column holds text and blocks. Measured on all 3,117 Columns blocks and flex sections of
+  the as-is pages (`measure.mjs --columns`, page `tools/looks/?type=layouts`): 6+6 49%, 8+4 15%,
+  4+4+4 11%, 4+8 8%, 3+3+3+3 7% (five presets 90%; narrow columns that don't fill the row 7%, a
+  grid with fewer columns than slots); 93% stack on phones.
+- **Decided:** the existing flex sections become `layout` sections too (one model); the Columns
+  block is retired on the standard pages (it stays for the patients site and the as-is pages); the
+  Columns variants' own text styles are replaced through the default-text step, done first.
+- **Prototype** (2026-11-19, local drafts `content/std/drafts/containers/{procuity-icu,
+  pro-pelvis,high-speed-drills}`, converter `containers.mjs`): words, links and images identical;
+  layouts and positions match at 1440 and 375; text in former Columns cells takes the default
+  styles (the trade: the variants carried typography).
+
+Migration, in this order (not started):
+
+1. **Text styles first** (the roadmap's default-text step): measure the text in today's Columns
+   cells and default content, group it like the block looks, the user picks a few text styles;
+   each former Columns variant gets the matching one through its section.
+2. **Rules and checks:** the converter for every document (fragments too; every measured width
+   onto a preset; flex sections with Column breaks between their pieces; tab titles from the
+   export, after a rendered check of all 136 tabbed sections); checks on every page: words, links,
+   images unchanged, text positions against the current `/std` at 1440 and 375 (ranked report),
+   tabs and accordions against the export.
+3. **Code:** the prototype to production (final names), Block Library and Authoring Manual entries
+   for the containers, the review tool (Design panel offers the presets; block keys from Columns
+   to sections, rekey of existing entries).
+4. **Run and review:** all 985 documents locally, the check report, the worst pages looked at;
+   uploads to DA and previews only when the user asks. `/rs` stays as it is.
+
+## Plan: where we are (2026-11-16)
+
+Done on the product-detail pages: every block type on standard variants, section backgrounds and
+layouts, Page Nav, six text sets with accent lines, the conventions page, the Standard Block
+Library, and the customer review tool (`tools/review/`) with Google Sheet saving, groups, QA
+notes, source snapshots and results.
+
+Still to do, in this order (agreed 2026-11-16, one at a time):
+1. **Feedback summary for the AOE team** (Agentic Outcome Engineers): the customer's review rows
+   (sheet) turned into an actionable summary for the engineers who implement them. *Built
+   2026-11-16:* `tools/review/summarise.mjs` (report + work items, the agent's readings) and
+   `set-status.mjs` (status back to the reviewers in the tool); see `tools/review/README.md`.
+2. **The apply step:** the review's choices into `/std`, then the checks. *Changed 2026-11-17:*
+   no versioning (additive variants: they only grow, changes to a variant are CSS/JS and apply
+   everywhere); the Google Sheet is replaced by an App Builder backend (reviewers without login,
+   invitation links, state per page and block, choices written into the `/std` documents in DA,
+   stable block keys). Plan: `tools/review/backend-plan.md`.
+3. **Block variants and default-content variants:** finish and refine them.
+4. **Variant approval pages for the customer:** per block type a full example page with a carousel
+   of each variant, how many instances it has and example pages where it is used, so the customer
+   approves the variants first.
+5. **The actual review**, started on the approved variants. Before it: upload the other ~980
+   `/std` documents; restrict the review sheet's sharing (Viewer for anyone with the link,
+   `forms@adobe.com` as Editor); re-upload the Standard Block Library.
+
+- **Versioning of `/std` (parked 2026-11-16): decided 2026-11-17, not needed.** Variants are
+  additive and changes to a variant apply everywhere; what remains is keeping choices on their
+  own block when the conversion re-runs (stable block keys, `tools/review/backend-plan.md`).
+- **Found, not fixed:** 31 jump links without a section id (product-detail importer); several H1s
+  on some pages; blocks in fragments not switchable in the review tool.
+- **Later:** the other corp templates, one at a time, the same way.
+
+## Files
+
+| File | What |
+|---|---|
+| `inventory.mjs` | Every block instance of the documents: settings, cell kinds, tags, ids and content hashes |
+| `lib/features.js` | The block features and content hash of an instance (shared by the inventory and apply) |
+| `cluster.py` | Columns instances → groups (structure + layout) → clusters (design options); report of what standardising drops |
+| `pick-pilot.py` | The pilot pages: every cluster of the 10 largest groups, 30 pages |
+| `copy-pilot.py` | Copies the pilot pages and their fragments `/rs` → `/std` |
+| `rules/variants.js` | Every Columns block → one of the six standard variants, content kept, presentation dropped (DOM only) |
+| `apply-variants.mjs` | Applies `rules/variants.js` to every `/std` document (backup, changed sections only, report) |
+| `rebuild-backup.py` | Rebuilds apply's backup (the documents before standardisation) from `/rs` when `/tmp` was wiped |
+| `review-pages.py` | The page list of the review tool (`tools/review/pages.json`) |
+| `conventions.py` | The authors' conventions of the standard pages as a draft document (`/std/drafts/authoring-conventions`): every rule (gold, accent heading and line, buttons, text links, new tab, label) with how to author it and its live result, a sample section per text set, the hidden heading. The corp site had no conventions page; the patients one is not for these rules |
+| `test/rules-variants.test.mjs` | The variant rules on every `/rs` document with Columns, against their invariants |
+| `rules/columns.js` | First pilot: the transfer rules, an instance → a layout standard |
+| `test/rules-columns.test.mjs` | The rules on one example per cluster, against the standard's invariants |
+| `gallery.mjs` | The standards gallery draft (`/std/drafts/standards`) |
+| `preselect.mjs` | Renders each pilot block as it is and in each standard it fits (1440 and 375 wide), compares boxes and styles; a standard with no difference is pre-selected |
+| `candidates.py` | `data/candidates.json`, what the review overlay reads: pilot pages (live URL, blocks, groups), groups (plain label, size), pre-selection |
+| `apply.mjs` | Applies the review decisions to the `/std` documents: the block's own decision > its group's choice > pre-selected; skips blocks changed since the review (content hash); rewrites only the changed sections; backs the originals up; writes the apply report |
+| `check-standardised.mjs` | The style coverage check in a standardised mode: runs it on the documents before and after apply; a style lost on purpose by a standard (blank lines, boxes of a standardised block) is expected, anything else is flagged |
+| `report.mjs` | The results as markdown: blocks on a standard, the legacy tail, effort per flow, checks, review notes |
+| `data/` | `clusters-columns.json` / `.md`, `pilot-pages.txt`, `candidates.json` |
+| `scripts/standardise-preview.js` / `.css` | The review overlay (loaded by `scripts.js` only on preview hosts with `?standardise`) |
+| `tools/sidekick/standardise.html` | The Sidekick "Standardise this page" button (opens the page with the overlay) |
+
+## Reviewing (the overlay)
+
+- **Page review:** a pilot page with `?standardise=1` (Sidekick: *Standardise this page*).
+  - Each Columns block gets a bar: *Keep as is*, the standards it fits (hover to compare, click to
+    choose), *Use this choice for the whole group*, *Live page* (stryker.com at the block's text)
+    and what the standard changes, in plain words.
+  - A block alone in its section swaps with its section; beside other content (or from a fragment)
+    only the block swaps. Blocks in closed tabs show their bar when the tab is open; blocks not
+    on the page (pop-ups) are counted in the panel and decided on the group boards.
+  - Badges: *decided for the whole group*, *looks the same as today* (pre-selected).
+- **Group boards:** `/std/drafts/standards?standardise=board` (Sidekick: *Standardise: group
+  boards*). Groups that fit a standard, largest first; per group every pilot block as it is next to
+  its standards, one choice for the group, exceptions to decide on their pages.
+- Choices stay in the browser and are exported with *Export decisions* (JSON: page choices, group
+  choices with exceptions, time per page / board).
+- Order of a block's choice: its page choice, else its group's (unless an exception), else the
+  pre-selection.
+
+## What the data says (Columns, 2176 instances on 667 product pages)
+
+- 144 structure + layout groups. The 10 largest cover **76%** of the instances, and the 3
+  largest 42%. Exact look (with every measured value) is far more scattered: the top 10 of those
+  clusters cover only 35%.
+- The largest groups are:
+  - an image beside its text (left or right, equal widths: 465);
+  - the product intro (276, the template's own, already a named variant);
+  - 3 image + text columns (193);
+  - image + text at 1/3 : 2/3 (181);
+  - image + text with the Large Headline type (129);
+  - two text columns (103);
+  - 4 image + text columns (91).
+- So the variety is in the numbers, not in the layouts: three standards (Media + text, Cards,
+  Text columns) take the bulk.
+
+## The standard Columns variants (current model, 2026-11-11)
+
+Every Columns block of the site becomes one of **six variants**. The variant owns the whole look
+(layout and type); the author owns only the content: heading levels, Bold, Italic, links. Nothing
+presentational is authored any more. The first pilot's block-by-block review (keep as is, layout
+standards with options, the overlay) is superseded by this model; its tools stay for reference.
+
+| Variant | Class | Content | Blocks (site) | Model on stryker.com |
+|---|---|---|---|---|
+| Media + text | `media-text` | an image or video beside text, either order | 905 | barimatt-plus, comfortgel-se |
+| Cards | `card-grid` | 2–4+ cells, each an image above its text | 489 | arise-1000-ex, bari-10a |
+| Product intro | `page-intro` | the product page's opening image + text | 298 | (the template's own, unchanged) |
+| Text columns | `text-columns` | 2–4 text cells | 272 | arise-1000-ex "at a glance" |
+| Feature statement | `feature-statement` | a statement beside an image (was Large Headline) | 160 | dermacell, spy-elite |
+| Image row | `image-row` | 2–5 images, no text | 52 | the media-pair grid |
+
+2176 blocks on 672 pages and their fragments, measured at 1440px on the models:
+- 30px gutter, equal cells, top aligned; phones one column, from 600px side by side (media +
+  text, feature) or two per row (cards, text, images), from 900px a row in one line.
+- Type from the 10-step scale: titles Title (media + text), Subtitle (cards), Headline (text
+  columns' h2, the feature statement), copy Large (17.5px); the feature statement's copy Body
+  serif, its Bold words Futura bold and other words the light serif.
+- Gold is Bold + Italic (the authoring convention). Corp copy elsewhere keeps its colour for
+  Bold + Italic (the source's black Futura bold labels); in the variants those labels are Bold.
+
+`rules/variants.js` (apply: `apply-variants.mjs`, tests: `test/rules-variants.test.mjs`):
+- the variant from the content's shape (page-intro stays; Large Headline with an image →
+  feature-statement; images only → image-row; an image beside text → media-text; cells of image +
+  text → card-grid; text only → text-columns; other mixes → the nearest);
+- the block's classes: `columns <variant>` only;
+- every readable tag inside the block goes (4472: sizes, fonts, colours, alignment); gold text
+  becomes Bold + Italic (837, none lost); Bold + Italic labels become Bold (1339);
+- a paragraph wholly in size tags of 21px and up becomes the variant's title (767: h3; in a
+  feature statement its statement h2 from 28px), so the hierarchy stays;
+- Box / Box end / Column break / blank lines (1031) and empty cells (125) go;
+- the Columns' settings rows go (Column widths, Text box, Grid, Cell colours, Image borders); in a
+  section holding only Columns (96% of them) its type and spacing rows and type styles (serif,
+  bold-body, center …) too: 3977 rows, 676 styles. **Kept for a later pass:** section backgrounds,
+  dividers, ids, structural styles (tabbed, accordion-panel, carousel).
+
+`blocks/columns/columns.js` adds no formatting markers (columns-bold / -gold / -number) to the
+variants, so the older formatting-driven Columns styles do not reach them.
+
+Checks (all documents): words, links, images, sections the same; headings the same in order
+(plus the promoted titles); no tag or box line left in a Columns block; gold kept. Renders of 30
+pages at 1440 and 375: no errors, every block loaded, no tag left as text.
+
+Open points for design / the EDS team:
+- 59 Columns rows on 58 pages are in-page jump links (Contact us / About / …): a navigation
+  pattern that probably wants its own block, not Text columns.
+- The feature statement is 35px (its models); hero-like statements (LMH, Endotrac EPF) were up
+  to 70px.
+- Text colours from tags (white on gold bands) are gone; the band's own text colour applies
+  until the section-style pass.
+- The Block Library needs one entry per variant (sample + authoring rules).
+
+## The standard Cards variants (2026-11-11)
+
+615 `cards-corp` blocks; 98% were already in the block's two designs. Two variants (the user's
+choice; the 11 three-up / two-up content cards become Teasers):
+
+| Variant | Class | Content | Blocks |
+|---|---|---|---|
+| Resources | `cards-corp resources` | document thumbnail + linked h5 title; 6 per row from 900px, 4 from 600px | 403 |
+| Teaser | `cards-corp teaser` | image + linked h3 title + short copy + link; 4 per row from 600px (no image: text card) | 212 |
+
+The same pass as Columns (`rules/variants.js`, `apply-variants.mjs`): classes `cards-corp
+<variant>` only; tags go (74); a title-sized paragraph becomes the card's h3 (29, the content
+cards' gold titles); gold is Bold + Italic (14). Resources is always six-up
+(`cards-corp.css`), and Bold + Italic copy in the two variants is gold: no existing card copy on
+the site uses Bold + Italic, so neither change reaches other pages.
+
+## The standard Hero variants (2026-11-11)
+
+213 `hero-corp` blocks (all `image-slide`, with a dozen option combinations and a measured
+`Text box` each). Three variants (the user's choice: contained banners become full-width; a
+light-text variant for banners on dark images):
+
+| Variant | Class | Blocks | Layout and type (1440px) |
+|---|---|---|---|
+| Product hero | `hero-corp image-slide product-hero` | 86 | image right half, text over the left half at 8% / 18% (51 of 86); Display title, Title subtitle, Lead copy |
+| Banner | `hero-corp image-slide banner` | 100 | image across the page, text over its left half from 5% / 5%; Display headline, Title subtitle, Lead copy |
+| Banner (light text) | `hero-corp image-slide banner-light` | 27 | a banner whose text was White / Light-Gray / Silver (or in a dark box): light text over a shade on the image's text side (`--corp-banner-scrim`) |
+
+- Phones: the image (its phone crop when there is one), then the text under it, dark; the
+  product hero goes side by side from 600px, banners overlay from 900px.
+- Banner sizes are the middle of the 127 banners' headline sizes (a quarter each at 56px and up,
+  35-55px, under 35px and the page default); the three first models (gamma4, pangea, pro-pelvis)
+  were the 70px end and made long titles run past the image.
+- Bold words of a headline are Futura bold, the others the light serif; gold is Bold + Italic.
+- The rules (`rules/variants.js`): options and the `Text box` row go (518 tags, 527 rows in
+  hero sections); a banner paragraph of 35px and up becomes its h2.
+- Fixed on the way (all three block types): a Bold + Italic link is the conventions' gold
+  button and stays as it is (the label rule had made 197 of them plain Bold); the test checks it.
+
+## The standard section backgrounds (2026-11-11)
+
+About 950 of the 10,496 sections had one of 15 background styles (plus gradient direction,
+stripe, shadow and fade modifiers, and `boxed` for most white and gold ones). Four new section
+styles replace them (new names, so the original /rs pages keep their look); each owns its colour,
+shape and spacing, and the band / box spacing rows (Padding, Margin, Blank lines) go:
+
+| Style | Sections | Was | Look |
+|---|---|---|---|
+| `gold-box` | 211 | bg-gold, bg-golden-gradient (most of them boxed) | a gold box in the page width, 20px in |
+| `blue-band` | 163 | bg-dark-blue-gradient, `dark` (teal), bg-dark-gray, bg-blue, bg-teal | full-width dark blue gradient, light text |
+| `grey-band` | 109 | bg-light-gray, bg-silver | full-width light grey |
+| `purple-band` | 102 | bg-dark-purple-gradient, bg-purple, bg-dark-orange-gradient | full-width dark purple gradient, light text |
+
+`bg-white` (324, a white box on the white page) goes. Two dark tints at the user's choice
+(purple: mostly Foot and Ankle; blue: across 8 business units). Bands: the measured band space
+(`--corp-std-band-space`, 34px) above and below. CSS at the end of `styles/styles-corp.css`;
+the dark-band link and statistics colours include the new bands. Rules:
+`standardBackgrounds` in `rules/variants.js`.
+
+
+## The standard default content (2026-11-11)
+
+4,891 sections hold text outside blocks. The standard (the user's choice): headings and copy take
+the 10-step scale by heading level; nothing presentational is authored.
+
+- Pages get `type-scale | standard` (`body.type-standard`): h1 Title, h2 Subtitle (token remap in
+  `styles-corp.css`); Bold + Italic copy is gold there (on other corp pages corp copy keeps its
+  colour); gold words in a heading keep the heading's size.
+- Kept section styles: `divider`, the statement (`large-headline`: its 28px+ lines are its h2,
+  Bold words Futura bold, the others the light serif, at the Headline step; its other lines the
+  light serif at Lead), `disclaimer`, the four backgrounds and the structural styles (flex,
+  continued, tabbed, accordion-panel, carousel, contact-aside …).
+- Dropped: serif, h-serif, centred, bold copy, boxed, references-spaced, button colours, image
+  borders, spacer sizes; the Copy / Label / Heading size, Text, Headings, Padding, Margin, Blank
+  lines and Column (placement) rows; the 1,771 empty spacer sections (removed).
+- Text: tags go (visually hidden text stays: its `[[visually-hidden]]` tag is kept); gold
+  (tags, `Text | Gold`, `Headings | Gold`) becomes Bold + Italic; black Bold + Italic labels become
+  Bold; title lines become headings: a paragraph wholly in size tags of 21px and up (h2 from
+  28px, else h3; up to 120 characters), a short gold Bold + Italic line (h3), a short Bold line in
+  21px+ copy (h3 / h2), a title line before a line break (split off). 1,666 titles in all passes.
+
+## Accordion and Statistics (2026-11-11)
+
+- Accordion (61 blocks): already one design; it stays `accordion`, its questions and answers
+  cleaned like the other text (279 tags; gold → Bold + Italic; no title promotion inside).
+- Statistics (21 blocks, 32 figures): one standard, `statistics count-up count-once`. Every
+  figure is gold (the user's choice: the colour cell says `gold`; it was navy 14, gold 9, teal
+  7, purple 2); the `cols-N` and `left` options go: without `cols-N` the figures sit in one row
+  (up to 3, `statistics.js`), centred; the 103 size tags go.
+- A flex section's `Columns | 1 + 2` row (its pieces per source column) is structure and stays
+  (the default-content pass had dropped it: a figure and its text then sat side by side).
+- Left on the pages: only the 16 visually hidden tags.
+
+## Video, Tabs and Table (2026-11-11)
+
+- Video (161 blocks): two variants, `video` (click to play, 126) and `video autoplay` (a muted
+  loop, 35); the `no-border` option goes: on standard pages (`type-scale: standard`) no player
+  has a border (`styles-corp.css`; the original pages keep the source's 1px frame).
+- Tabs: no Tabs block on these pages; tabs are built from `tabbed` sections (136), one design,
+  their text cleaned by the default-content pass. Unchanged.
+- Table (78 blocks): one design; `no-header` (12) says whether the first row is a header row
+  (semantics, not styling) and stays; no tags inside. Unchanged.
+
+## Marketo forms (2026-11-11)
+
+The 544 `marketo-form` blocks (495 documents, 31 distinct forms) are already one standard:
+configuration rows only (Base URL, Munchkin ID, Form ID, and the optional captcha rows, which 53
+of them leave out), the form itself from Marketo, styled by the corp form CSS. Unchanged.
+
+## Section layouts (2026-11-12)
+
+A small set of layout presets instead of the measured placement and width rows (the user's
+choice over a free 12-part grid; the data showed no other widths):
+
+- Side by side (`flex`): equal by default; `wide-first` / `wide-last` make the first / last piece
+  two thirds (356 / 8 sections, from `Column widths` or flex-67-33 / flex-33-67).
+- Placement: the section's content in part of the width from 600px: `half-left` (80),
+  `half-right` (179), `third-left` (138), `two-thirds-left` (121), `quarter-left` (49),
+  `centre-third` (9), from the 580 `Column` rows (the source's lone column of a column control;
+  the nearest preset for the few other values). The text pass had dropped these rows.
+- Columns: two-cell variants take `wide-first` / `wide-last` from their `Column widths`
+  (124 / 231 blocks; 78% of two-cell blocks stay equal).
+- `middle`: the cells of the section's Columns block (or its pieces side by side) centred
+  vertically; set where the source set a media + text block's text well down (64 sections).
+- CSS: `styles-corp.css` (section layouts) and `columns-corp.css` (the Columns options).
+  Rules: `standardLayouts` and the Columns pass in `rules/variants.js`. Library entries: Side
+  by side, Placement, Vertically centred (and the options in the Columns descriptions).
+
+## Navigation, links and the last tags (2026-11-12)
+
+No readable tag is left on the standard pages (0 of ~7,800). Fonts come from the element
+(headings, copy, Bold, statement); the font tags were only left on links.
+
+- **Page Nav** (`blocks/page-nav`), navigation within the page or its page family, replaces the
+  Sticky Nav on these pages (the user's call: a bar that does not stick is not a sticky nav):
+  - `page-nav` – Jump links: the 59 product jump bars (CONTACT US | ABOUT | …, `[[Futura]]`
+    links in a one-row Columns block, 3–4 cells of one `#` link each) → one row per link, their
+    line breaks and tags gone, the Columns rows with them; in their `grey-band`. Centred Futura
+    bold at 21px in the link colour, one per row → two from 600px → all in one row from 900px
+    (source /us/en/foot-and-ankle/products/prophecy: 1 per row to 840px, 2 to 1024px, then 4).
+  - `page-nav sticky` (195) and `page-nav local` (2): the former Sticky Nav blocks, unchanged
+    in look and behaviour. Page Nav runs the Sticky Nav code and CSS for them, so the
+    code lives once and the Sticky Nav (patients, the `/rs` pages) renders as before. Both
+    variants also take the jump-link rows (a row of one link).
+  - The InSpace image buttons that jump to sections stay an Image row.
+- **Futura links** (100, resource and product link lists): Bold (Futura bold in the link colour),
+  Bold + Underline when alone in their paragraph (the conventions' text link, not a button).
+- **Hidden headings** (16, `[[visually-hidden]]` page titles above a banner hero, each alone in
+  its section): the tag goes, the section gets the `visually-hidden` style (read, not shown,
+  no room).
+- **Links on standard pages** (`corp.js` `decorateTextLinks`, after `decorateButtons`): a link
+  alone on its line is the conventions' button (a paragraph: decorateButtons; a cell: the shared
+  bold-link button); anywhere else (a list, a sentence, a heading) Bold is a text link, never a
+  button: `link-text` (Futura bold, link colour), `link-gold` (Bold + Italic), `link-heading` (the
+  heading's look); a Bold link around a citation is `link-citation` (no box, the citation colour).
+  Before, the shared `strong > a` fallback drew these as buttons (alternating buttons in the T2
+  Alpha Tibia resource list, gold boxes in Infinity headings, teal boxes around citation
+  numbers). On 25 pages, 66 of 748 links changed, all from a button to a text link.
+- Found, not fixed (import, not standardisation): 31 of the 237 jump links have no section `id`
+  in their document (16 "Specification overview"; a few "Resources" land on an accordion heading
+  id instead). Two hidden section titles in one source column kept only the first as the
+  section `id` (e.g. prophecy: about + specification; product-detail importer).
+
+## Related Categories, Gallery and Chart (2026-11-12)
+
+- **Related Categories** (349, one per product page): already one standard, unchanged. The
+  heading is "Related categories" in all; the categories come from the page tags; the only
+  content difference is the optional row of action links (none 198, a Bold button 135, a button
+  + a Bold + Underline link 10, a Bold + Underline link 6), which follow the conventions. Always
+  beside the product intro (flex 254, half-right 92). The four shapes render the same on /std
+  and /rs at 1440 and 375.
+- **Gallery** (6): media links only, unchanged.
+- **Chart** (8 on 6 pages): the data colours are palette keywords now (30 cells; the source
+  colours were the palette's: purple, navy, gold, sage exactly, light purple → purple,
+  #bf8a36 → dark-gold, black → navy; `chartKeyword` in `rules/variants.js`), and the 5 Height
+  rows went: every chart at the standard (source default) height, about 200px. Type, title,
+  format, max, axis title and labels stay.
+- **Fix, side by side:** in a flex section with a `Columns` row, a `Column break` line is
+  structure (corp.js groupFlexColumns ends a column's text there), like the row: the text pass
+  had removed the 16 of them, so 11 sections on 6 pages lost their columns (e.g.
+  modular-dual-mobility). They stay now; 2 more pages (omnicurve, transend) now group as their
+  Columns row says, where the /rs original does not.
+
+## Text sets for default content (2026-11-13)
+
+Blocks were standardised by variant; the text outside blocks had gone to one look (Humanist 14),
+although the source sets it larger or in the serif on many pages (prophecy: Egyptienne 28).
+Measured from the /rs pages' settings and tags (4,128 paragraphs in 1,919 sections): 62% Humanist
+14, 7.5% Humanist 17.5, 3.7% Egyptienne 28, 2.9% Egyptienne 24.5, 2.4% Egyptienne 21, 1.4%
+Humanist 21; 90% of the sections use one look. Six text sets (the user's choice), section styles,
+measured on www.stryker.com (sizes, line heights, faces in `styles-corp.css` "the standard text
+sets"):
+
+| Set | Text | Italic accent line | Sections |
+|---|---|---|---|
+| default | Humanist 14 | Egyptienne 24.5 | 486 with copy |
+| `text-large` | Humanist 17.5 | Egyptienne 24.5 | 228 |
+| `text-x-large` | Humanist 21 | Egyptienne 28 | 36 |
+| `text-serif` | Egyptienne Light 21 | Egyptienne 28 | 80 |
+| `text-serif-subtitle` | Egyptienne Light 24.5 | Egyptienne 35 | 31 |
+| `text-serif-title` | Egyptienne Light 28 | Egyptienne 35 | 138 |
+
+- In every set Bold is Futura bold at the set's size and Bold + Italic is gold; a paragraph or
+  heading wholly in Italic is the set's accent line (corp.js marks it `text-accent`). The mixed
+  sections are mostly the Contact us panel (Humanist 17.5 + an Egyptienne 24.5 line + a gold
+  label: 76 pages) and statement pairs (the statement style).
+- Rule (`standardTextSet`): each paragraph's original look (section serif style and copy size,
+  its own font and size tags); the set of the most frequent look; a serif line in a sans set (or
+  a clearly larger serif line in a serif set) becomes the Italic accent line; 96 titles promoted
+  from serif lines are Italic headings (the user's choice: they stay headings). Fix on the way:
+  the text pass rewrote the style row from its old content and dropped the added set.
+- Review tool: a "Text" row per section with its own text (text style, background for sections
+  without blocks, "Use this text style for all", comment); the results list the choices.
+
+## Fix: titles in large copy (2026-11-13)
+
+Found with the review tool (prophecy "The Prophecy process"): in a section with a large copy
+size (`Copy size` 21px and up), a short wholly **Bold + Italic** line (the corp black label) was
+the section's title on the source, but only wholly Bold lines were promoted, so it became a plain
+Bold line at copy size. Now a wholly Bold + Italic line is promoted too, its Italic dropped (Bold +
+Italic in a heading is gold; gold lines are promoted by the gold rule): 115 more headings in
+default content (all 158 such lines are headings now), 2 lines that had been promoted with their
+Italic (so gold) are black again. Same rule in the hero pass for a slide without a heading (2
+lines, iconix). Inside Columns blocks these lines are labels at copy size on both sides (the
+variant owns the sizes), unchanged.
+
+Re-running needs the documents as they were before standardisation: `rebuild-backup.py`
+rebuilds them from the /rs originals with copy-pilot's fragment-link rewrite (checked: identical
+to all 737 archived ones; re-running the previous rules on them reproduced /std exactly).
+
+### The first pilot: layout standards (superseded)
+
+| Standard | Class | Fits | Options |
+|---|---|---|---|
+| Media + text | `std-media-text` | 2 cells: image/video and text, either order | `narrow-image` (1/3), `wide-image` (2/3), `text-middle` (the text centred beside the image) |
+| Cards | `std-cards` | 2–4 cells, each image + text | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
+| Text columns | `std-text` | 2–4 text cells | 2 cells: `wide-first` / `wide-last` (the wide one 2/3) |
+
+These are layout standards: the text sizes stay as authored. Typography is its own step (the
+type scale, below).
+
+- **Kept (design names):**
+  - section styles (serif, background colours);
+  - `Cell colours` and `Image borders` by palette name;
+  - named text styles (Gold, Large …) and the text sizes (`[[1.75×]`, `[[5vw]`, Copy /
+    Heading / Label size);
+  - the `large-headline` and `center` options, and the design boxes `boxed-last` (a white
+    shadow card) and `gold-first` (a gold card);
+  - coloured Box lines, by their colour only (`Box: Gold, top 5%, left 5%` → `Box: Gold`), with
+    the standard's padding and gap. A coloured column holding several boxes (`Cell colours
+    1: Gold` + Box lines) becomes that many coloured boxes; a coloured cell gets the same
+    standard padding;
+  - empty trailing columns (2 cards in a 3-column grid keep the width of the 3-up rows beside
+    them).
+- **Dropped (measured values):**
+  - `Text box`, `Grid`, `Column widths` (except the media + text and wide-column options) and `Columns`;
+  - measured and white Box lines, and blank lines in cells;
+  - section padding / margin when the section holds only that block.
+- **Text in the middle:** a Media + text column set well down (top padding + margin from
+  `Text box` or an opening Box line, counted as a share of the block: 5% or more) is the AEM
+  way of centring the text beside a tall image; it takes `text-middle` (the text cell is
+  centred, the image stays at the top when the text is the taller).
+- **Wide first / last column:** 2 cards or text columns of unequal width (one over 55%, the
+  source's 2/3 + 1/3 column control) keep the wide one as `wide-first` / `wide-last`.
+- **Coloured bands:** a standard in a section with a background style (`bg-…` except `bg-white`,
+  `dark`) gets the band's standard space above and below its content (`--corp-std-band-space`,
+  34px: the median of the measured stryker.com band edges, 26–47px), instead of the measured
+  margins and blank lines that gave it.
+- **Already standard:** `page-intro` (the product intro) and a block on a standard already
+  are never offered a standard (a standard block keeps its own options).
+- CSS: `blocks/columns/columns-corp.css` (top of the file). The block's own layout carries the
+  standards; they only fix alignment, the media + text and wide-column widths, the box padding
+  and the band space.
+
+## The type scale (draft)
+
+Ten named steps replace every measured size (`[[1.75×]`, `[[5vw]`, `Copy size | 2×`,
+`Heading size | 1.25×`). Each step is fluid between a 375px phone and a 1440px desktop
+(`--corp-type-*` in `styles/styles-corp.css`):
+
+| Step | Desktop | Phone |
+|---|---|---|
+| Small | 11.2 | 11.2 |
+| Body | 14 | 14 |
+| Large | 17.5 | 17.5 |
+| Lead | 21 | 21 |
+| Subtitle | 24.5 | 22.75 |
+| Title | 28 | 24.5 |
+| Headline | 35 | 26.25 |
+| Display | 42 | 28 |
+| Statement | 56 | 31.5 |
+| Hero | 70 | 37.5 |
+
+- A page on the scale has the metadata `type-scale | standard` (`body.type-standard`, set in
+  `scripts/corp.js`). There the step names are text styles (`[[Gold,Title]…]`) and Copy size /
+  Label size values; the template's heading sizes map onto the steps too. Other pages are
+  unchanged.
+- `rules/typography.js` works out each size's desktop size as `scripts/corp-type.js` renders it
+  (vw = N × 14px; a multiple of the text around it, or of the 14px copy / 28px h1), then takes
+  the nearest step by ratio. A size equal to the step the text has anyway goes. Colours, fonts and
+  alignment stay.
+- **Contrast kept:** two sizes of a section at least 1.25× apart keep at least one step between
+  them. Without it, everything above the top step became Hero (a 115px figure and its 63px line
+  the same size).
+- `Heading size` rows go; the h2 / h3 they enlarged (not in cards) get their step as a tag.
+  `Copy size` / `Label size` rows take a step name (Body: the row goes). `Text` / `Headings` rows:
+  their sizes become step names.
+- The sizes are worked out per context, as the blocks render them: an h1 has the browser's 2em
+  (on the scale: Title, `styles-corp.css`); an h3 in Columns of a serif section is 1.5× (columns.css);
+  Columns with Large Headline have their own h2 / h4 / copy sizes; a superscript is 0.75× the text
+  around it. Checked against the rendered pages: 97% of the size tags within 1px (the rest match
+  a different text of the same words).
+- Effect on the 30 pilot pages: distinct text sizes site-wide 31 → 16 on desktop and 36 → 17 on
+  phones; per page a median of 10 → 9.5 (desktop) and 11 → 9 (phones), at most 16 → 13. Desktop
+  sizes move little. Phones change most: the vw sizes were twice their desktop share below 600px
+  (an 11px caption under a 37px heading, headings smaller than their copy), and now follow the
+  steps.
+- What the scale gives up: three feature figures above the top step (98–119px: high-speed-drills
+  "One", pivot-guardian "Zero reported", "Expanding") are Hero (70px). Small print (references,
+  document IDs) stays at Small.
+- Checks: words, links, headings, blocks, images and sections the same in all 66 documents; 60
+  renders (1440 and 375) without errors, every block loaded, no tag left as text. Side findings
+  (not caused by the scale, already on /rs): pivot-guardian is 526px wide on phones; a long
+  operon-d860 heading and a prime-series reference URL do not wrap.
+
+## Notes as "design" and "EDS team" (pilot roles)
+
+- Media + text loses the per-page text offsets (`Text box` 3–20% insets). The text starts at
+  the top beside the image, or in the middle when the source set it well down (flow 1 found
+  top-aligned text beside a tall image looks unfinished).
+- Cards and Text columns are what the block already does without settings. The EDS team would
+  likely accept them as they are.
+- Large Headline and the colour palette are kept as names. The EDS team may still want fewer
+  colours; out of scope for the pilot.
+- **Legacy tier (proposal to put to the EDS team):**
+  - allowed on migrated pages only;
+  - kept as the readable settings, with the page flagged `legacy`;
+  - counted in the report;
+  - removed when the page is next edited, or by an agreed date.
+
+## Run
+
+```
+node tools/importer/standardise/inventory.mjs --content <content> --root rs --out /tmp/…/instances.jsonl
+python3 -I tools/importer/standardise/cluster.py /tmp/…/instances.jsonl /tmp/… --block columns --min 3
+python3 -I tools/importer/standardise/pick-pilot.py /tmp/…/clusters-columns.json /tmp/…/instances.jsonl /tmp/…/pilot-pages.txt
+python3 -I tools/importer/standardise/copy-pilot.py <content> /tmp/…/pilot-pages.txt
+node tools/importer/standardise/test/rules-columns.test.mjs --content <content>
+node tools/importer/standardise/gallery.mjs --content <content> --instances … --clusters … --out <content>/std/drafts/standards.plain.html
+python3 -I tools/importer/standardise/candidates.py /tmp/…/instances.jsonl tools/importer/standardise/data/clusters-columns.json tools/importer/standardise/data/pilot-pages.txt tools/importer/data/catalog/site.json tools/importer/standardise/data/candidates.json
+# local preview of this worktree on port 3001, then:
+node tools/importer/standardise/preselect.mjs --base http://localhost:3001/content --candidates tools/importer/standardise/data/candidates.json --out /tmp/…/preselect.json
+python3 -I tools/importer/standardise/candidates.py … tools/importer/standardise/data/candidates.json --preselect /tmp/…/preselect.json
+# after the review (the overlay's Export decisions):
+node tools/importer/standardise/apply.mjs --content content --candidates tools/importer/standardise/data/candidates.json --decisions <export.json> --backup /tmp/…/before --report /tmp/…/apply-report.json [--dry-run]
+node tools/importer/standardise/check-standardised.mjs --check tools/importer/migration-index/check-style-coverage.mjs --content content --backup /tmp/…/before --report /tmp/…/apply-report.json --candidates tools/importer/standardise/data/candidates.json --cache <page cache> --work /tmp/…/check
+node tools/importer/standardise/report.mjs --candidates … --decisions <export.json> --apply /tmp/…/apply-report.json --log <review log.jsonl> --check /tmp/…/check.json --out /tmp/…/report.md
+# the six Columns variants, on a fresh copy of every page (copy-pilot.py with the full page list):
+node tools/importer/standardise/test/rules-variants.test.mjs --content content/ --root rs
+node tools/importer/standardise/apply-variants.mjs --content content --backup /tmp/…/before-variants --report /tmp/…/variants-report.json [--dry-run]
+# (first pilot) the type scale, on the layout-applied documents:
+node tools/importer/standardise/test/rules-typography.test.mjs --content content [--measured <type-measure runs at 1440>]
+node tools/importer/standardise/apply-typography.mjs --content content --backup /tmp/…/before-type --report /tmp/…/type-report.json [--dry-run]
+```

@@ -1,0 +1,23 @@
+{
+  "about": "Merges decided while inspecting the Hero looks (2026-11-18, on the original 2026-11-19): the heroes are grouped by layout (frame and where the image sits); their text styles are authored per hero and are left to the base variant. group.mjs applies them after grouping; merged instances keep tags for what differs.",
+  "merge": [
+    {
+      "by": [
+        "frame",
+        {
+          "part": "image",
+          "take": "^(video player|[a-z ]+?)(,| \\(|$)"
+        }
+      ],
+      "why": "One group per layout: the heroes of a layout differ in their authored title and text sizes and colours, which the base variant will set, in the picture's share of the width (it follows the picture's proportions) and in the inner spacing of heroes in experience fragments. Title bands without a picture are the product hero with the picture left out (the user, 2026-11-20).",
+      "names": {
+        "full; plain | right": "Image on the right (product hero)",
+        "full; plain | behind": "Image behind the text",
+        "full; plain | video player": "Background video",
+        "full; shadow | behind": "Image behind the text, in a box with a shadow",
+        "full; plain | alone": "Image only, no text",
+        "full; plain | above": "Banner image, text under it"
+      }
+    }
+  ]
+}

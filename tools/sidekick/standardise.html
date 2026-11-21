@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Standardise this page</title>
+  <meta name="robots" content="noindex, nofollow">
+  <!--
+    Standardise pilot (branch standardise-v3): the Sidekick "Standardise this page" button.
+    The Sidekick opens this page with the current page as ?referrer=; it opens that page with
+    the review overlay (?standardise=1). Preview hosts only (*.aem.page, localhost).
+  -->
+  <script>
+    const referrer = new URLSearchParams(window.location.search).get('referrer');
+    let target = null;
+    try {
+      target = referrer ? new URL(referrer) : null;
+    } catch (e) {
+      target = null;
+    }
+    if (target && /(\.aem\.page|^localhost)$/.test(target.hostname)) {
+      target.searchParams.set('standardise', '1');
+      window.location.replace(target.href);
+    } else {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.textContent = 'Open a page on the preview (aem.page) to standardise it.';
+      });
+    }
+  </script>
+</head>
+<body></body>
+</html>

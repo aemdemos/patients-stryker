@@ -20,6 +20,7 @@ import {
   toClassName,
 } from '../../scripts/aem.js';
 import { loadFragment, mergeSectionCards } from '../fragment/fragment.js';
+import { decorateLayouts } from '../../scripts/containers.js';
 
 async function decoratePanel(panel) {
   // panels built from a `tabbed` section hold inline sections (text + blocks
@@ -35,6 +36,7 @@ async function decoratePanel(panel) {
     inline.forEach((section) => section.removeAttribute('data-tabs-section'));
     decorateSections(main);
     decorateBlocks(main);
+    decorateLayouts(main);
     await loadSections(main);
     panel.prepend(...main.childNodes);
   }

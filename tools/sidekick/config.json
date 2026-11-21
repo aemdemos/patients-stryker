@@ -8,6 +8,19 @@
       "url": "/tools/sidekick/library.html",
       "isPalette": true,
       "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 520px; width: 420px;"
+    },
+    {
+      "id": "standardise",
+      "title": "Standardise this page",
+      "environments": ["preview", "dev"],
+      "url": "/tools/sidekick/standardise.html",
+      "passReferrer": true
+    },
+    {
+      "id": "standardise-boards",
+      "title": "Standardise: group boards",
+      "environments": ["preview", "dev"],
+      "url": "/std/drafts/standards?standardise=board"
     }
   ]
 }

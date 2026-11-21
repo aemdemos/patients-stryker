@@ -49,11 +49,26 @@ export const TEXT_STYLES = {
 ['gold', 'white', 'light-gray', 'blue', 'purple', 'teal', 'grey', 'silver', 'dark-gold', 'black', 'navy']
   .forEach((color) => { TEXT_STYLES[color] = `color-${color}`; });
 
-/** Copy size → section style */
-export const COPY_SIZES = { small: 'p-0-8', large: 'p-1-25', 'x-large': 'p-1-5' };
+/**
+ * The standard type scale (standardise pilot): on pages with `type-scale: standard` metadata
+ * (body.type-standard) a step name is the step's size wherever it is used, between its phone
+ * and desktop size (styles-corp.css --corp-type-<step>), instead of a size relative to the text
+ * around it.
+ */
+export const TYPE_STEPS = ['small', 'body', 'large', 'lead', 'subtitle', 'title', 'headline', 'display', 'statement', 'hero'];
+const standardType = () => document.body.classList.contains('type-standard');
+/** a text style name → its class (a step of the standard scale on a standard page) */
+const styleClass = (name) => (standardType() && TYPE_STEPS.includes(name) ? `type-${name}` : TEXT_STYLES[name]);
 
-/** Label size → section style */
-export const LABEL_SIZES = { large: 'label-1-75' };
+/** Copy size → section style (by name: the scale's steps too) */
+export const COPY_SIZES = {
+  small: 'p-0-8', large: 'p-1-25', 'x-large': 'p-1-5', lead: 'p-1-5', subtitle: 'p-1-75', title: 'p-2', headline: 'p-2-5',
+};
+
+/** Label size → section style (by name: the scale's steps too) */
+export const LABEL_SIZES = {
+  large: 'label-1-75', lead: 'label-1-5', subtitle: 'label-1-75', title: 'label-2',
+};
 
 /** `Text box | boxed`: the box the source gives a Columns text column */
 export const BOXED = ['padding-top-3', 'padding-bottom-3', 'padding-left-3', 'padding-right-3'];
@@ -95,7 +110,7 @@ function insetTokens(value) {
 
 /** The classes a list of text style names stands for (unknown names are skipped). */
 const styleClasses = (names) => names
-  .map((n) => TEXT_STYLES[n.trim().toLowerCase()])
+  .map((n) => styleClass(n.trim().toLowerCase()))
   .filter(Boolean);
 
 /**
@@ -150,12 +165,12 @@ function wrapRuns(el, classes) {
  * @param {Element} main The container
  */
 function decorateNamedTags(main) {
-  const names = Object.keys(TEXT_STYLES);
+  const names = [...Object.keys(TEXT_STYLES), ...(standardType() ? TYPE_STEPS : [])];
   const known = (c) => names.includes(c) || c.startsWith('value-');
   main.querySelectorAll('span').forEach((span) => {
     const own = [...span.classList];
     if (!own.length || !own.every(known)) return;
-    const classes = own.map((c) => (c.startsWith('value-') ? c.slice(6) : TEXT_STYLES[c]));
+    const classes = own.map((c) => (c.startsWith('value-') ? c.slice(6) : styleClass(c)));
     const { outer, inner } = styleSpans(classes);
     inner.append(...span.childNodes);
     span.replaceWith(outer);

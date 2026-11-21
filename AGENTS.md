@@ -537,6 +537,14 @@ Each corp template has its **own copy of the import rules**, so the people worki
 
 The site-wide decisions built from these catalogs (typography, component → block mapping, templates and import order) live next to them as decision tables. Apply those tables in importers instead of deciding per page.
 
+### Standardisation and the customer review (branch `standardise-v3`)
+
+The corp product pages are being moved onto a few standard designs (`/std`) and reviewed by the
+customer in a review tool with an App Builder backend. **Before any work on the standardisation,
+the review tool, its backend, the review feedback or uploads of `/std` pages, read
+`tools/review/RUNBOOK.md`**: the backstory, where everything is, the credentials (Settings only),
+everyday operations, writing into DA, recovery and the rules that are easy to miss.
+
 ## Testing & Quality Assurance
 
 ### Style & spacing fidelity validator (OPTIONAL post-migration QA)

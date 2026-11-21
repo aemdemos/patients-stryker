@@ -1,0 +1,257 @@
+/*
+ * Block looks inspection page: every instance of a block type, grouped by how it looks
+ * (tools/importer/standardise/looks/group.mjs → data/<type>.json), largest group first; per group
+ * the look in words, the authored variants it holds, groups that are nearly the same, and every
+ * instance's screenshot in one long row (desktop or phone), linked to its page.
+ * Screenshots come from shots/<type>/, copied there (git-ignored) by group.mjs; on the branch
+ * preview from Document Authoring (/looks-shots/..., uploaded by upload-shots.sh).
+ * Open: /tools/looks/index.html?type=cards-corp
+ */
+const $ = (sel) => document.querySelector(sel);
+const params = new URLSearchParams(window.location.search);
+const LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname) || /^preview-aemcoder\.adobe\.io$/.test(window.location.hostname);
+// (the local folder on the workspace preview; elsewhere the copies in Document Authoring, where
+// the page path's ~ and the block number's __ are folders: upload-shots.sh)
+const shotSrc = (shot, remote) => (LOCAL && !remote ? `./${shot}`
+  : `/looks-shots/${shot.replace(/^shots\//, '').replace(/~/g, '/').replace(/__/g, '/')}`);
+const pageLink = (path) => (LOCAL ? `/content/rs${path}` : `/rs${path}`);
+const NAMES = {
+  'cards-corp': 'Cards',
+  'hero-corp': 'Hero',
+  video: 'Video',
+  tabs: 'Tabs',
+  forms: 'Forms',
+  layouts: 'Columns and flex sections',
+  // (the original's components, measure.mjs --source --components)
+  'hero-source': 'Hero',
+  'layouts-source': 'Column controls',
+  'src-standaloneimage': 'Images',
+  'src-curatedcta': 'Buttons (curated CTA)',
+  'src-marketoform': 'Marketo forms',
+  'src-standalonevideo': 'Videos',
+  'src-resourcesanddownload': 'Resources',
+  'src-fullbleedpanel': 'Background bands (full-bleed panel)',
+  'src-customizable': 'Teasers (customizable)',
+  'src-experienceFragment': 'Experience fragments',
+  'src-tabs': 'Tabs',
+  'src-table': 'Tables',
+  'src-accordion': 'Accordions',
+  'src-numbercounter': 'Counters',
+  'text-styles': 'Text styles',
+  'text-styles-source': 'Text styles',
+  'corp-spacing-box': 'Spacing box',
+  'sticky-nav': 'Sticky Nav',
+  'related-categories': 'Related Categories',
+  'marketo-form': 'Marketo form',
+  table: 'Table',
+  accordion: 'Accordion',
+  statistics: 'Statistics',
+  'chart-corp': 'Chart',
+  'gallery-corp': 'Gallery',
+};
+// (what a merged instance lacks, in words)
+const LACK_NAMES = {
+  image: 'without image', 'type tab': 'without tab labels', 'type title': 'without titles', 'type body': 'without body text', 'type link': 'without links', 'type button': 'without button text', buttons: 'without buttons',
+};
+const lackOf = (missing = []) => missing.map((k) => LACK_NAMES[k] || `without ${k}`).join(', ');
+// (what a merged instance has on top of the group's look)
+const extraOf = (extra = []) => extra.map((k) => (LACK_NAMES[k] || `without ${k}`).replace(/^without/, 'with')).join(', ');
+// (how light an instance's background is, backgrounds.mjs: half or more near-white is light)
+const LIGHT = 50;
+const lightOf = (it) => (it.light >= LIGHT ? `light background (${it.light}% white)` : `photo or dark background (${it.light}% white)`);
+const dark = (it) => (it.light !== undefined && it.light < LIGHT ? 1 : 0);
+const odd = (it) => (it.missing?.length || 0) + (it.extra?.length || 0) + (it.differs?.length || 0);
+const PART_NAMES = {
+  frame: 'Frame', layout: 'Layout', image: 'Image', 'type title': 'Titles', 'type body': 'Body text', 'type link': 'Links', 'type button': 'Button text', buttons: 'Buttons', panels: 'Panels', 'type tab': 'Tab labels', tabs: 'Tabs', fields: 'Fields', header: 'Header', numbers: 'Numbers', box: 'Box', chart: 'Chart', columns: 'Columns (twelfths)', holds: 'Columns hold', align: 'Alignment', tablet: 'On tablets', phone: 'On phones',
+};
+
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => {
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  });
+  children.flat()
+    .filter((c) => c !== null && c !== undefined && c !== false)
+    .forEach((c) => e.append(c));
+  return e;
+}
+
+let data = null;
+let vp = 'd';
+let view = params.get('view') === 'layout' ? 'layout' : 'size';
+
+const SIZE_NOTE = 'Text sizes in bands: S up to 16 px, M up to 26, L up to 38, XL up to 56, XXL above.';
+
+// the full-page tiles of the original's pages (measure.mjs --tiles): per page and width the page
+// height, the tile height and the number of tiles; in Document Authoring under /looks-shots/pages
+let tiles = {};
+// (the widths the original was saved and measured at: desktop, tablet, phone)
+const VIEWPORTS = { d: 1440, t: 860, m: 375 };
+const tileSrc = (page, width, i) => `/looks-shots/pages/${width}${page}/${i}.jpg`;
+
+/** an instance as its clip of the page's tiles (8px around its box), scaled to the size slider */
+function sprite(it, at, label) {
+  const width = VIEWPORTS[at];
+  const c = it.clip?.[at];
+  const t = tiles[it.page]?.[width];
+  if (!c || !t || c[2] < 2 || c[3] < 2) return el('span', { class: 'lk-none' }, 'no screenshot');
+  const x = Math.max(0, c[0] - 8);
+  const y = Math.max(0, c[1] - 8);
+  const w = Math.min(c[2] + 16, width - x);
+  const h = Math.min(c[3] + 16, 2400, t.height - y);
+  const box = el('span', {
+    class: 'lk-sprite', role: 'img', 'aria-label': label, style: `--r: ${w / h}`,
+  });
+  for (let i = Math.floor(y / t.tile); i < t.tiles && i * t.tile < y + h; i += 1) {
+    box.append(el('img', {
+      src: tileSrc(it.page, width, i),
+      loading: 'lazy',
+      alt: '',
+      style: `--tx: ${-x / h}; --ty: ${(i * t.tile - y) / h}; --tw: ${width / h}`,
+    }));
+  }
+  return box;
+}
+
+function groupBox(g) {
+  return el(
+    'section',
+    { class: 'lk-groupbox', id: `g${g.id}` },
+    el(
+      'div',
+      { class: 'lk-head' },
+      el('h2', {}, `#${g.id}${g.label ? `: ${g.label}` : ''}${g.decision ? `: ${g.decision.name}` : ''}`),
+      el('span', { class: 'lk-count' }, `${g.instances} instance${g.instances > 1 ? 's' : ''} on ${g.pages} page${g.pages > 1 ? 's' : ''}`),
+      el('span', { class: 'lk-meta' }, `authored as: ${g.classes.map(([c, n]) => `${c} (${n})`).join(', ')}`),
+    ),
+    el('dl', { class: 'lk-parts' }, ...Object.entries(g.parts).flatMap(([k, v]) => [el('dt', {}, PART_NAMES[k] || k), el('dd', {}, v)])),
+    g.decision ? el('p', { class: 'lk-meta lk-decision' }, `Merged on inspection: ${g.decision.why}`) : null,
+    g.sampled ? el('p', { class: 'lk-meta' }, `Showing ${g.sampled[0]} of ${g.sampled[1]}, from different pages`) : null,
+    g.colours ? el('p', { class: 'lk-meta' }, `Number colours: ${g.colours.map(([c, n]) => `${c} (${n})`).join(' · ')}`) : null,
+    // (with sizes in bands: the exact styles the group holds)
+    g.exactTypes ? el('details', { class: 'lk-exact' }, el('summary', {}, data.sizes === 'bands' ? 'Exact text styles in this group' : 'Text styles in this group'), el('dl', { class: 'lk-parts' }, ...Object.entries(g.exactTypes).flatMap(([r, list]) => [
+      el('dt', {}, PART_NAMES[`type ${r}`] || r),
+      el('dd', {}, list.map(([t, n]) => `${t} (${n})`).join(' · ')),
+    ]))) : null,
+    g.close.length ? el('p', { class: 'lk-meta lk-close' }, 'Nearly the same as: ', ...g.close.flatMap((c, i) => [
+      i ? ' · ' : '',
+      el('a', { href: `#g${c.id}` }, `#${c.id}`),
+      ` (${PART_NAMES[c.part] || c.part}: ${c.theirs})`,
+    ])) : null,
+    g.lacking?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part missing: ${g.lacking.map(([k, n]) => `${n} ${lackOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
+    // (complete instances first, then the ones lacking a part)
+    g.extras?.length ? el('p', { class: 'lk-meta lk-lacking' }, `Includes the same look with a part more: ${g.extras.map(([k, n]) => `${n} ${extraOf([k])}`).join(' · ')} (tagged below, after the complete ones)`) : null,
+    g.items.some((it) => it.light !== undefined) ? el('p', { class: 'lk-meta' }, `Backgrounds: ${g.items.filter((it) => it.light >= LIGHT).length} light (half or more near-white, shown first), ${g.items.filter((it) => it.light < LIGHT).length} photo or dark`) : null,
+    el('div', { class: 'lk-strip' }, ...[...g.items].sort((a, c) => dark(a) - dark(c) || odd(a) - odd(c)).map((it) => {
+      const shot = { d: it.shot, m: it.phoneShot }[vp];
+      const tip = `${it.title} · ${it.text.slice(0, 120)}`;
+      // (the screenshot and the title open the page as it is now; the source link the live
+      // stryker.com page)
+      return el(
+        'div',
+        { class: 'lk-shot' },
+        el(
+          'a',
+          {
+            class: 'lk-shot-img', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: tip,
+          },
+          // (a clip of the page's tiles when the data has them, else the instance's own screenshot)
+          (data.sprites ? sprite(it, vp, `${it.title}, block ${it.n + 1}`) : null)
+          || (shot ? el('img', { src: shotSrc(shot, data.remoteShots), loading: 'lazy', alt: `${it.title}, block ${it.n + 1}` }) : el('span', { class: 'lk-none' }, 'no screenshot')),
+        ),
+        el(
+          'span',
+          { class: 'lk-caption' },
+          el('a', {
+            class: 'lk-page', href: pageLink(it.page), target: '_blank', rel: 'noopener', title: `Open ${it.title} (as-is page)`,
+          }, `${it.title}${it.inFragment ? ' (fragment)' : ''}`),
+          it.source ? el('a', {
+            class: 'lk-source', href: it.source, target: '_blank', rel: 'noopener', title: 'Open the live stryker.com page',
+          }, 'stryker.com ↗') : null,
+        ),
+        it.light !== undefined ? el('span', { class: 'lk-tag' }, lightOf(it)) : null,
+        it.notMigrated ? el('span', { class: 'lk-tag' }, 'stryker.com only: not on the as-is page') : null,
+        it.missing?.length ? el('span', { class: 'lk-tag' }, lackOf(it.missing)) : null,
+        it.extra?.length ? el('span', { class: 'lk-tag' }, extraOf(it.extra)) : null,
+        it.differs?.length ? el('span', { class: 'lk-tag' }, it.differs.map(([k, v]) => `${(PART_NAMES[k] || k).toLowerCase()}: ${v}`).join('; ')) : null,
+      );
+    })),
+  );
+}
+
+function render() {
+  const main = $('.lk-main');
+  if (!data) {
+    main.replaceChildren(el('p', { class: 'lk-none' }, 'No data for this block type yet.'));
+    return;
+  }
+  const families = data.families || [];
+  const n = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`;
+  $('.lk-summary').textContent = `${n(data.instances, 'instance')} in ${n(data.groups.length, 'group')}${families.length ? ` (${n(families.length, 'layout')})` : ''} · ${data.measuredPages} pages measured`;
+  const note = data.sizes === 'bands' ? el('p', { class: 'lk-meta lk-note' }, SIZE_NOTE) : null;
+  if (view !== 'layout' || !families.length) {
+    main.replaceChildren(...[note, ...data.groups.map(groupBox)].filter(Boolean));
+    return;
+  }
+  // by layout: each layout family (same frame, layout and image) with its groups, largest first
+  const byId = Object.fromEntries(data.groups.map((g) => [g.id, g]));
+  main.replaceChildren(...[note, ...families.map((f) => el(
+    'section',
+    { class: 'lk-family', id: `f${f.id}` },
+    el(
+      'h2',
+      { class: 'lk-family-head' },
+      `Layout ${f.id}: ${f.instances} instance${f.instances > 1 ? 's' : ''} in ${f.groups.length} group${f.groups.length > 1 ? 's' : ''}`,
+      el('span', { class: 'lk-meta' }, ` · ${Object.entries(f.parts).map(([k, v]) => `${PART_NAMES[k] || k}: ${v}`).join(' · ')}`),
+    ),
+    ...f.groups.map((id) => groupBox(byId[id])),
+  ))].filter(Boolean));
+}
+
+async function load(type) {
+  const resp = await fetch(`./data/${type}.json`);
+  data = resp.ok ? await resp.json() : null;
+  if (data?.sprites && !Object.keys(tiles).length) {
+    const t = await fetch('./data/tiles.json');
+    tiles = t.ok ? await t.json() : {};
+  }
+  document.title = `${NAMES[type] || type}: looks`;
+  render();
+  if (window.location.hash) document.querySelector(window.location.hash)?.scrollIntoView();
+}
+
+async function start() {
+  const resp = await fetch('./data/index.json');
+  const index = resp.ok ? await resp.json() : { types: [] };
+  const type = params.get('type') || index.types[0]?.type || 'cards-corp';
+  $('.lk-type').replaceChildren(...index.types.map((t) => el('option', { value: t.type }, `${NAMES[t.type] || t.type} (${t.instances})`)));
+  $('.lk-type').value = type;
+  $('.lk-type').addEventListener('change', (e) => {
+    const p = new URLSearchParams(window.location.search);
+    p.set('type', e.target.value);
+    window.history.replaceState(null, '', `?${p}`);
+    load(e.target.value);
+  });
+  document.querySelectorAll('[data-view]').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.view === view));
+    b.addEventListener('click', () => {
+      view = b.dataset.view;
+      document.querySelectorAll('[data-view]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      const p = new URLSearchParams(window.location.search);
+      p.set('view', view);
+      window.history.replaceState(null, '', `?${p}`);
+      render();
+    });
+  });
+  document.querySelectorAll('[data-vp]').forEach((b) => b.addEventListener('click', () => {
+    vp = b.dataset.vp;
+    document.querySelectorAll('[data-vp]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  }));
+  $('.lk-size').addEventListener('input', (e) => document.body.style.setProperty('--lk-h', `${e.target.value}px`));
+  await load(type);
+}
+
+start();

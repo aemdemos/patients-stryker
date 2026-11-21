@@ -1,0 +1,46 @@
+/* Page Nav — default: jump links in the page. Each link centred in an equal share of the row:
+   one per row on phones, two from 600px, all in one row from 900px (source www.stryker.com
+   product jump bar, /us/en/foot-and-ankle/products/prophecy: 1 per row to 840px, 2 to 1024px,
+   then all four), Futura bold in the link colour at 21px. `sticky` and `local` use the
+   Sticky Nav styles (blocks/sticky-nav). */
+
+.page-nav.block:not(.sticky, .local) .page-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-block-l) var(--space-block);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.page-nav.block:not(.sticky, .local) .page-nav-links li {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.page-nav.block:not(.sticky, .local) .page-nav-links a:any-link {
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.page-nav.block:not(.sticky, .local) .page-nav-links a:any-link:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .page-nav.block:not(.sticky, .local) .page-nav-links li {
+    flex-basis: calc(50% - var(--space-block));
+  }
+}
+
+@media (width >= 900px) {
+  .page-nav.block:not(.sticky, .local) .page-nav-links li {
+    flex-basis: 0;
+  }
+}

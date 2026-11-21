@@ -10,6 +10,7 @@
  */
 
 import { decorateBlocks, decorateSections, loadSections } from '../../scripts/aem.js';
+import { decorateLayouts } from '../../scripts/containers.js';
 
 /**
  * Decorates and loads the blocks of a with-nested-blocks panel, in place. The page
@@ -28,6 +29,7 @@ function decorateNestedBlocks(body) {
   inline.forEach((section) => section.removeAttribute('data-accordion-section'));
   decorateSections(body);
   decorateBlocks(body);
+  decorateLayouts(body);
   loadSections(body);
 }
 

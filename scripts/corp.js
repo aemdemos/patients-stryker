@@ -14,6 +14,7 @@
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
  */
+import { LAYOUT_STYLES } from './containers.js';
 import {
   buildBlock,
   decorateBlock,
@@ -147,13 +148,21 @@ export function decorateMain(main) {
  */
 function buildAccordionSections(main) {
   const runs = [];
-  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+  // (containers prototype: a `continued` section right after a panel joins that panel, its
+  // own inline section keeping its layout styles, scripts/containers.js)
+  const parts = new Map();
+  main.querySelectorAll(':scope > .section.accordion-panel, :scope > .section.continued').forEach((section) => {
     const run = runs[runs.length - 1];
-    // a Block Library variant (tools/da-library-preview) is always its own accordion
-    const joins = run && run[run.length - 1].nextElementSibling === section
-      && !section.classList.contains('library-variant-start');
-    if (joins) run.push(section);
-    else runs.push([section]);
+    const last = run?.[run.length - 1];
+    const lastPart = last && parts.get(last);
+    const follows = lastPart && lastPart[lastPart.length - 1].nextElementSibling === section;
+    if (section.classList.contains('accordion-panel')) {
+      // a Block Library variant (tools/da-library-preview) is always its own accordion
+      const joins = follows && !section.classList.contains('library-variant-start');
+      if (joins) run.push(section);
+      else runs.push([section]);
+      parts.set(section, [section]);
+    } else if (follows) lastPart.push(section);
   });
 
   runs.forEach((run) => {
@@ -161,9 +170,22 @@ function buildAccordionSections(main) {
       // unwrap default content and (still undecorated) blocks, in authored order
       const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
       const label = /^H[1-6]$/.test(nodes[0]?.tagName) ? nodes.shift() : null;
+      const part = parts.get(section);
       const panel = document.createElement('div');
-      panel.dataset.accordionSection = '';
-      panel.append(...nodes);
+      if (part.length === 1) {
+        panel.dataset.accordionSection = '';
+        panel.append(...nodes);
+      } else {
+        // several sections: one inline section each, with its layout styles
+        part.forEach((piece, i) => {
+          const inline = document.createElement('div');
+          inline.dataset.accordionSection = '';
+          inline.classList.add(...LAYOUT_STYLES.filter((c) => piece.classList.contains(c)));
+          inline.append(...(i ? [...piece.children].flatMap((w) => [...w.children]) : nodes));
+          panel.append(inline);
+          if (i) piece.remove();
+        });
+      }
       return [{ elems: label ? [label] : [] }, { elems: [panel] }];
     });
 
@@ -284,7 +306,9 @@ export function decorateBlockLayout(main) {
 export function decorateSections(main) {
   // the AEM boxes' padding / margin (section styles, Columns cell-<N>- options, [[spacing]]),
   // before accordion panels take their sections' content; readable settings (prototype,
-  // `style-settings: on` pages) first, as the classes they stand for
+  // `style-settings: on` pages) first, as the classes they stand for; a page on the standard
+  // type scale (`type-scale: standard`, standardise pilot) reads its step names as steps
+  if (getMetadata('type-scale') === 'standard') document.body.classList.add('type-standard');
   if (getMetadata('style-settings') === 'on') decorateSettings(main);
   decorateSpacing(main);
   decorateTypeTags(main);
@@ -292,6 +316,45 @@ export function decorateSections(main) {
   decorateImageLinks(main);
   buildCarouselSections(main);
   joinSplitHeadingUnderlines(main);
+}
+
+/**
+ * Standard pages (`type-scale: standard`): a Bold link that is not alone on its line (in a
+ * list item, a heading or a sentence) is a text link, not a button, as the text conventions
+ * say: `link-text` (Futura bold in the link colour), with `link-gold` for Bold + Italic and
+ * `link-heading` in a heading (the heading's look). Runs after decorateButtons(), which makes
+ * buttons of the links alone in their paragraph; a link alone in a cell stays the bold-link
+ * button, Bold + Underline links keep their convention and citations stay citations.
+ * @param {Element} main The container element
+ */
+export function decorateTextLinks(main) {
+  if (!document.body.classList.contains('type-standard')) return;
+  // a section text's paragraph or heading wholly in Italic (not Bold + Italic: gold) is its text
+  // set's accent line (styles-corp.css "the standard text sets")
+  main.querySelectorAll('.default-content-wrapper > :is(p, h2, h3, h4, h5, h6)').forEach((p) => {
+    const only = p.children.length === 1 ? p.firstElementChild : null;
+    if (!only || !only.matches('em, i') || only.querySelector('strong, b, a, img')) return;
+    if (p.textContent.trim() === only.textContent.trim()) p.classList.add('text-accent');
+  });
+  main.querySelectorAll('a[href]:not(.button, .link-strong)').forEach((a) => {
+    const holder = a.parentElement.closest('p, li, h1, h2, h3, h4, h5, h6, td, th, div');
+    if (!holder || holder.matches('td, th, div')) return;
+    const within = (sel) => {
+      const outer = a.closest(sel);
+      return (outer && holder.contains(outer)) || !!a.querySelector(sel);
+    };
+    if (!within('strong, b') || within('u') || a.querySelector('img, picture')) return;
+    // (the footnote link itself is decorateFootnotes'; a link around a citation is no button
+    // either, and keeps the citation colour)
+    if (a.closest('sup') || /^#fn-/.test(a.getAttribute('href'))) return;
+    if (a.querySelector('sup')) {
+      a.classList.add('link-citation');
+      return;
+    }
+    a.classList.add('link-text');
+    if (within('em, i')) a.classList.add('link-gold');
+    if (holder.matches('h1, h2, h3, h4, h5, h6')) a.classList.add('link-heading');
+  });
 }
 
 /**

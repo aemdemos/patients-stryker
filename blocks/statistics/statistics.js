@@ -14,13 +14,14 @@ const COLOR_CLASSES = {
 // author typed it wrong in DA); mirrors the model's default option
 const DEFAULT_COLOR_CLASS = 'statistics-teal';
 
-// read the authored column count from the `cols-N` variant class (default 3);
-// rows are not set — the grid flows them automatically from the item count
+// read the authored column count from the `cols-N` variant class; without one (the standard
+// Statistics block) the figures sit in one row, up to 3 per row. Rows are not set — the grid
+// flows them automatically from the item count
 function readColumns(block) {
   const match = [...block.classList]
     .map((c) => c.match(/^cols-(\d+)$/))
     .find(Boolean);
-  return match ? Number(match[1]) : 3;
+  return match ? Number(match[1]) : Math.max(1, Math.min(3, block.children.length));
 }
 
 // count-up animation duration in ms (from 0 to each stat's authored value)

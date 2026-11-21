@@ -1,0 +1,15 @@
+{
+  "about": "Merges decided while inspecting the Cards looks (2026-11-18): groups that measure apart but are the same variant. group.mjs applies them after grouping; merged instances keep tags for what differs.",
+  "merge": [
+    {
+      "name": "Resources (six-up)",
+      "why": "One variant: the picture's width follows its proportions (portrait brochure covers vs landscape photos, never cropped), and blocks in a tab panel are a little narrower.",
+      "match": { "classes": "resources six-up" }
+    },
+    {
+      "name": "Teaser",
+      "why": "Teaser cards with only a heading and a Learn more link (no image, no description) are the same variant as the full teasers.",
+      "match": { "classes": "teaser", "parts": { "buttons": "none" } }
+    }
+  ]
+}
