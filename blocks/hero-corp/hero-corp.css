@@ -54,6 +54,12 @@
   display: block;
 }
 
+/* … unless it is the desktop media of a slide with its own phone image: hidden below 600px as
+   a desktop picture is (home carousel: the 125px video sat under the 453px phone image) */
+.hero-corp.image-slide:has(.hero-image-mobile) .dm-video-background.hero-image-desktop {
+  display: none;
+}
+
 .hero-corp.image-slide .dm-video-background .dm-video {
   aspect-ratio: 3 / 1;
   object-fit: cover;
@@ -71,6 +77,14 @@
 .hero-corp.image-slide.text-below > div:last-child {
   position: static;
   padding: var(--space-block) var(--space-block-l) 0;
+}
+
+/* on phones the copy sits under the image on the page background: stryker.com sets it black
+   there (mobile_Bottom mobile-text-black, smart-care slides "Your partner in digital
+   transformation"), so white text tags read as black until the box is over the image; gold
+   stays gold (smart-care "Smart Care", sage "Address the #1 CAUTI risk factor") */
+.hero-corp.image-slide.text-below:not([class*="box-"]) > div:last-child span.color-white {
+  --span-color: var(--color-black);
 }
 
 /* bottom-<n> (the source .bottom-text box): on phones its copy comes under the image, as on
@@ -232,7 +246,8 @@
 }
 
 @media (width >= 600px) {
-  .hero-corp.image-slide:not(.text-below) .hero-image-desktop {
+  .hero-corp.image-slide:not(.text-below) .hero-image-desktop,
+  .hero-corp.image-slide:not(.text-below):has(.hero-image-mobile) .dm-video-background.hero-image-desktop {
     display: block;
   }
 
@@ -355,6 +370,10 @@
     position: absolute;
     inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
     padding: var(--hero-box-padding, 0);
+  }
+
+  .hero-corp.image-slide.text-below:not([class*="box-"]) > div:last-child span.color-white {
+    --span-color: var(--color-white);
   }
 
   .hero-corp.image-slide.image-right.text-below > div:first-child {

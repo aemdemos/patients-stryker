@@ -1170,11 +1170,12 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
    [[color-dark-gold]…] #af6d04 (stryker.com inline colours) */
 :where(body.corp) main span.color-black { --span-color: var(--color-black); }
 :where(body.corp) main span.color-light-gray { --span-color: var(--color-surface); }
+:where(body.corp) main span.color-gray { --span-color: var(--color-surface-dim); }
 :where(body.corp) main span.color-silver { --span-color: var(--color-surface-muted); }
 :where(body.corp) main span.color-dark-gold { --span-color: var(--color-accent-link-hover); }
 
-:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold),
-:where(body.corp) main span:is(.color-black, .color-light-gray, .color-silver, .color-dark-gold) :is(strong, b, em, i, a:any-link) {
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-gray, .color-silver, .color-dark-gold),
+:where(body.corp) main span:is(.color-black, .color-light-gray, .color-gray, .color-silver, .color-dark-gold) :is(strong, b, em, i, a:any-link) {
   --link-color: var(--span-color);
 
   color: var(--span-color);
@@ -1565,10 +1566,10 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   --corp-label-size: var(--heading-font-size-xxl);
 }
 
-:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child),
-:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child) {
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }

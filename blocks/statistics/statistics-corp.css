@@ -85,3 +85,9 @@ body.corp .statistics .statistics-desc p {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
+
+/* citation superscripts stay at the global 75% (stryker.com 10.5px on the 14px copy,
+   isuite-experience); the patients block's 13px is its own source's size */
+body.corp .statistics .statistics-desc sup {
+  font-size: 75%;
+}

@@ -1,6 +1,7 @@
 import decorateDMAssets, { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
 import { parseSpacing, spaceBlock } from '../../scripts/corp-spacing.js';
 import fetchPlainHtml from '../../scripts/plain-html.js';
+import { loadFragment } from '../fragment/fragment.js';
 
 // a slide's media: its picture, or its background video (a video slide)
 const MEDIA = 'picture, .dm-video-background';
@@ -44,14 +45,25 @@ async function resolveFragmentImages(block) {
       decorateDMAssets(doc.body);
       const image = doc.body.querySelector('picture') || doc.body.querySelector('img');
       if (image) return { image: document.importNode(image, true) };
-      return video ? { video: video.getAttribute('href'), label: video.textContent.trim() } : {};
+      if (video) return { video: video.getAttribute('href'), label: video.textContent.trim() };
+      // a fragment with neither: the slide's text (home page "Corporate responsibility",
+      // …/corporate-responsibility/text-for-slide), decorated as a fragment block's content
+      const fragment = await loadFragment(path);
+      const wrap = fragment && fragment.querySelector('.default-content-wrapper');
+      return wrap ? { content: [...wrap.childNodes] } : {};
     } catch {
       return {};
     }
   }));
   const videos = new Set();
   cells.forEach((cell, i) => {
-    const { image, video, label } = found[i];
+    const {
+      image, video, label, content,
+    } = found[i];
+    if (content) {
+      cell.replaceChildren(...content);
+      return;
+    }
     let media = image || null;
     if (media && media.tagName === 'IMG') {
       media = document.createElement('picture');
