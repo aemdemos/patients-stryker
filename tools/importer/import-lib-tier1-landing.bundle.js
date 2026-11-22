@@ -1206,6 +1206,7 @@ var CustomImportScript = (() => {
             if (last && last.kind === "spacer") {
               last.slots += item.slots;
               last.lines += item.lines || 0;
+              last.pull = [...last.pull || [], ...item.pull || []];
             } else {
               const flush = !!last && last.box === null && (!!last.key || last.kind === "accordion");
               sections.push({
@@ -1215,7 +1216,8 @@ var CustomImportScript = (() => {
                 nodes: [],
                 slots: item.slots,
                 lines: item.lines || 0,
-                continued: flush
+                continued: flush,
+                pull: item.pull || []
               });
             }
             break;
@@ -1265,7 +1267,8 @@ var CustomImportScript = (() => {
           const first = !parts.length;
           const lines = first && s.lines ? `lines-${Math.min(s.lines, 8)}` : "";
           if (first && s.lines > 8) report.notes.push(`${s.lines} blank lines in a row: 8 kept`);
-          parts.push(__spreadProps(__spreadValues({}, s), { styles: ["spacer", size, lines, first && s.continued ? "continued" : ""].filter(Boolean) }));
+          const pull = first ? s.pull || [] : [];
+          parts.push(__spreadProps(__spreadValues({}, s), { styles: ["spacer", size, lines, first && s.continued ? "continued" : "", ...pull].filter(Boolean) }));
         }
         return parts;
       });
@@ -4437,14 +4440,25 @@ var CustomImportScript = (() => {
   function textComponent(el, ctx) {
     const source = el.querySelector(".c-rich-text-editor > div") || el.querySelector(".c-rich-text-editor") || el;
     const { nodes, centred } = richTextNodes(source, ctx.doc);
-    if (!nodes.length) return [];
+    if (!nodes.length) {
+      const gap = spacingOf(source).filter((t) => /^(padding|margin)-(top|bottom)-/.test(t));
+      return gap.length ? [{
+        type: "spacer",
+        slots: 0,
+        lines: 0,
+        box: boxOf(source),
+        pull: gap
+      }] : [];
+    }
     const box = boxOf(source);
     if (nodes.every((n) => text(n) === BLANK_LINE)) {
+      const pull = spacingOf(source).filter((t) => /^margin-bottom-minus-/.test(t));
       return [{
         type: "spacer",
         slots: 0,
         lines: nodes.length,
-        box
+        box,
+        pull
       }];
     }
     const item = {
@@ -5135,6 +5149,7 @@ var CustomImportScript = (() => {
       return target ? absoluteAsset(encodeURI(target.image)) : "";
     };
     const sources = items.map(imageSrc);
+    const name = items.some((item) => item.classList.contains("col-sm-4")) ? "Cards Corp (teaser, three-up)" : "Cards Corp (teaser)";
     if (sources.every(Boolean)) {
       const holder = doc.createElement("div");
       const copy = grid.cloneNode(true);
@@ -5142,6 +5157,13 @@ var CustomImportScript = (() => {
       [...copy.querySelectorAll(".item")].filter((item) => text(item)).forEach((item, i) => item.querySelector("img").setAttribute("src", sources[i]));
       holder.append(copy);
       parse2(copy, { document: doc });
+      const walker = doc.createTreeWalker(holder, 4);
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        if (n.textContent.trim() === "Cards Corp (teaser)") {
+          n.textContent = name;
+          break;
+        }
+      }
       out.push({ type: "block", block: holder.firstElementChild });
       return out;
     }
@@ -5155,7 +5177,10 @@ var CustomImportScript = (() => {
         body.push(h3);
       }
       item.querySelectorAll(".desc-container > p").forEach((p) => {
-        if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+        if (!text(p)) return;
+        const box = contentCopy(p, doc);
+        cleanRichText(box);
+        body.push(rename(box, "p"));
       });
       const cta = item.querySelector("a.action-link[href]");
       if (cta && text(cta)) {
@@ -5173,7 +5198,7 @@ var CustomImportScript = (() => {
       img.setAttribute("alt", (item.querySelector("img") || { getAttribute: () => "" }).getAttribute("alt") || "");
       return [img, body];
     });
-    out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+    out.push({ type: "block", block: block(doc, name, rows) });
     return out;
   }
   function tabs(el, ctx) {
@@ -5414,7 +5439,11 @@ var CustomImportScript = (() => {
     const caption = [...el.querySelectorAll(".title-container h2, .title-container h3, .table-title, h2.component-subheading, h3.component-subheading")].find((h) => !h.closest("table"));
     if (caption && text(caption)) {
       const h = doc.createElement("h3");
-      h.textContent = text(caption);
+      if (caption.matches(".component-subheading")) {
+        const strong = doc.createElement("strong");
+        strong.textContent = text(caption);
+        h.append(strong);
+      } else h.textContent = text(caption);
       out.push({ type: "flow", role: "text", nodes: [h] });
     }
     const striped = el.matches(".c-table") || !!el.querySelector(".c-table") || !!el.closest(".c-table");

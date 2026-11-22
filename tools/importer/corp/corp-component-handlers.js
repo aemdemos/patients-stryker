@@ -881,12 +881,22 @@ function gridRow(columns, widths, ctx, { specs = [], total = 12 } = {}) {
 function textComponent(el, ctx) {
   const source = el.querySelector('.c-rich-text-editor > div') || el.querySelector('.c-rich-text-editor') || el;
   const { nodes, centred } = richTextNodes(source, ctx.doc);
-  if (!nodes.length) return [];
+  if (!nodes.length) {
+    // (an empty box with vertical padding / margin: the authors' spacer — sage/urine-management,
+    // padding-top 7% and 5% before the PrimoFit video, ~170px on live)
+    const gap = spacingOf(source).filter((t) => /^(padding|margin)-(top|bottom)-/.test(t));
+    return gap.length ? [{
+      type: 'spacer', slots: 0, lines: 0, box: boxOf(source), pull: gap,
+    }] : [];
+  }
   const box = boxOf(source);
   // only blank lines: an empty slot of that many lines (a spacer, or blank lines in a cell)
   if (nodes.every((n) => text(n) === BLANK_LINE)) {
+    // (a negative bottom margin on them pulls what follows up: the home page awards, two
+    // blank lines at margin-bottom -10% before "View all awards"; the spacer keeps it)
+    const pull = spacingOf(source).filter((t) => /^margin-bottom-minus-/.test(t));
     return [{
-      type: 'spacer', slots: 0, lines: nodes.length, box,
+      type: 'spacer', slots: 0, lines: nodes.length, box, pull,
     }];
   }
   const item = {
@@ -1714,6 +1724,7 @@ function cardList(el, ctx) {
     return target ? absoluteAsset(encodeURI(target.image)) : '';
   };
   const sources = items.map(imageSrc);
+  const name = items.some((item) => item.classList.contains('col-sm-4')) ? 'Cards Corp (teaser, three-up)' : 'Cards Corp (teaser)';
   if (sources.every(Boolean)) {
     const holder = doc.createElement('div');
     const copy = grid.cloneNode(true);
@@ -1722,6 +1733,14 @@ function cardList(el, ctx) {
       .forEach((item, i) => item.querySelector('img').setAttribute('src', sources[i]));
     holder.append(copy);
     cardsCorpTeaserParser(copy, { document: doc });
+    // (the parser names the block Cards Corp (teaser): the option goes into its name cell)
+    const walker = doc.createTreeWalker(holder, 4); // NodeFilter.SHOW_TEXT
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (n.textContent.trim() === 'Cards Corp (teaser)') {
+        n.textContent = name;
+        break;
+      }
+    }
     out.push({ type: 'block', block: holder.firstElementChild });
     return out;
   }
@@ -1736,7 +1755,14 @@ function cardList(el, ctx) {
       h3.append(link ? linkTo(doc, link.getAttribute('href'), text(link)) : doc.createTextNode(text(title)));
       body.push(h3);
     }
-    item.querySelectorAll('.desc-container > p').forEach((p) => { if (text(p)) body.push(para(doc, doc.createTextNode(text(p)))); });
+    // the description as rich text: its links and line breaks stay (services-and-solutions
+    // OnSite "Contact your local Endoscopy Sales Representative", a link on its own line)
+    item.querySelectorAll('.desc-container > p').forEach((p) => {
+      if (!text(p)) return;
+      const box = contentCopy(p, doc);
+      cleanRichText(box);
+      body.push(rename(box, 'p'));
+    });
     const cta = item.querySelector('a.action-link[href]');
     if (cta && text(cta)) {
       const u = doc.createElement('u');
@@ -1753,7 +1779,7 @@ function cardList(el, ctx) {
     img.setAttribute('alt', (item.querySelector('img') || { getAttribute: () => '' }).getAttribute('alt') || '');
     return [img, body];
   });
-  out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+  out.push({ type: 'block', block: block(doc, name, rows) });
   return out;
 }
 
@@ -2051,7 +2077,13 @@ function table(el, ctx, extra = []) {
     .find((h) => !h.closest('table'));
   if (caption && text(caption)) {
     const h = doc.createElement('h3');
-    h.textContent = text(caption);
+    // the subheading is Futura bold on live (procare "Choosing your plan"): the Bold heading
+    // convention; the other captions are the serif heading
+    if (caption.matches('.component-subheading')) {
+      const strong = doc.createElement('strong');
+      strong.textContent = text(caption);
+      h.append(strong);
+    } else h.textContent = text(caption);
     out.push({ type: 'flow', role: 'text', nodes: [h] });
   }
   // the stryker.com table component (.c-table) is striped everywhere (measured: patents,

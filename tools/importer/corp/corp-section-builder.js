@@ -395,6 +395,7 @@ export function createBuilder({
           if (last && last.kind === 'spacer') {
             last.slots += item.slots;
             last.lines += item.lines || 0;
+            last.pull = [...(last.pull || []), ...(item.pull || [])];
           } else {
             // text and accordions outside any component box have no component gap of their
             // own on the source: the content before the slots ends flush (spacer, continued;
@@ -402,7 +403,7 @@ export function createBuilder({
             // accordion, another, Related: 15 + 31px and 0 + 31px)
             const flush = !!last && last.box === null && (!!last.key || last.kind === 'accordion');
             sections.push({
-              kind: 'spacer', styles: [], id: null, nodes: [], slots: item.slots, lines: item.lines || 0, continued: flush,
+              kind: 'spacer', styles: [], id: null, nodes: [], slots: item.slots, lines: item.lines || 0, continued: flush, pull: item.pull || [],
             });
           }
           break;
@@ -459,7 +460,8 @@ export function createBuilder({
         const first = !parts.length;
         const lines = first && s.lines ? `lines-${Math.min(s.lines, 8)}` : '';
         if (first && s.lines > 8) report.notes.push(`${s.lines} blank lines in a row: 8 kept`);
-        parts.push({ ...s, styles: ['spacer', size, lines, first && s.continued ? 'continued' : ''].filter(Boolean) });
+        const pull = first ? s.pull || [] : [];
+        parts.push({ ...s, styles: ['spacer', size, lines, first && s.continued ? 'continued' : '', ...pull].filter(Boolean) });
       }
       return parts;
     });
