@@ -586,6 +586,12 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-weight: var(--font-weight-bold);
 }
 
+/* …a headline with a bold run: only that run is bold, the rest Futura medium (stryker.com
+   span.futura-bold in the plain line: ent "Connect with an expert", live 500 / 700) */
+:where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3):has(> strong) {
+  font-weight: var(--font-weight-medium);
+}
+
 @media (width >= 900px) {
   :where(body.corp) main > .section.large-headline > .default-content-wrapper > :is(h1, h2, h3) {
     font-size: min(2.5vw, var(--panel-heading-size));
@@ -1566,10 +1572,10 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   --corp-label-size: var(--heading-font-size-xxl);
 }
 
-:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
-:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
-:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child),
-:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child) {
+:where(body.corp) main > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child, > a.link-strong:only-child),
+:where(body.corp) .tabs-panel > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child, > a.link-strong:only-child),
+:where(body.corp) .accordion-item-body > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child, > a.link-strong:only-child),
+:where(body.corp) .fragment > .section:is(.label-1-5, .label-1-75, .label-2) > div p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child, > a.link-strong:only-child) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }

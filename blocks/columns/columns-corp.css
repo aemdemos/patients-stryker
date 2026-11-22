@@ -455,7 +455,7 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 
 /* a label line (bold or bold-italic alone) keeps the section's label size over the serif
    copy size (trauma-and-extremities "Medical education", "Alliance": 21px, label-1-5) */
-body.corp .section:is(.label-1-5, .label-1-75, .label-2) .columns p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child) {
+body.corp .section:is(.label-1-5, .label-1-75, .label-2) .columns p:has(> strong:only-child, > em:only-child > strong:only-child, > :where(span:only-child) > em:only-child > strong:only-child, > a.link-strong:only-child) {
   font-size: var(--corp-label-size);
   line-height: var(--heading-line-height);
 }
