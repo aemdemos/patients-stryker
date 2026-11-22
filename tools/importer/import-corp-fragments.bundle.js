@@ -7435,6 +7435,38 @@ var CustomImportScript = (() => {
     });
   }
 
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/oversized-images.js
+  var oversized_images_default = {
+    "https://media-assets.stryker.com/is/content/stryker/AdobeStock_443793332-v3?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/AdobeStock_443793332-v3?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/ProCuity-scale?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/ProCuity-scale?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_1410$": "https://media-assets.stryker.com/is/image/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_1410$",
+    "https://media-assets.stryker.com/is/content/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_720$": "https://media-assets.stryker.com/is/image/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_720$",
+    "https://media-assets.stryker.com/is/content/stryker/globe-ar-sm?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/globe-ar-sm?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/reel%20for%20website_1?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/reel%20for%20website_1?$max_width_1440$",
+    "https://www.stryker.com/content/dam/stryker/about/news/2021/images/T7%20helmet.png": "https://www.stryker.com/content/dam/stryker/about/news/2021/images/T7%20helmet.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/about/news/2022/stryker-opens-the-or-of-the-future-for-customers-to-experience-tomorrow%E2%80%99s-or-today/OR%20of%20the%20Future%20-%20Feature%20Image.png": "https://www.stryker.com/content/dam/stryker/about/news/2022/stryker-opens-the-or-of-the-future-for-customers-to-experience-tomorrow%E2%80%99s-or-today/OR%20of%20the%20Future%20-%20Feature%20Image.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/ent/products/bioresorbable-dressings/images/XeroGel%20product%20copy.psd": "https://www.stryker.com/content/dam/stryker/ent/products/bioresorbable-dressings/images/XeroGel%20product%20copy.psd/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+    "https://www.stryker.com/content/dam/stryker/navigation/products/quantum/images/Quantum_grey%20cable_battery.psd": "https://www.stryker.com/content/dam/stryker/navigation/products/quantum/images/Quantum_grey%20cable_battery.psd/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+    "https://www.stryker.com/content/dam/stryker/portfolios/medical-surgical/personal-protection-equipment/images/Andrae-Full-Toga.png": "https://www.stryker.com/content/dam/stryker/portfolios/medical-surgical/personal-protection-equipment/images/Andrae-Full-Toga.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/portfolios/vascular/venous-disease/images/vascular-disease-thumbnail-2026.png": "https://www.stryker.com/content/dam/stryker/portfolios/vascular/venous-disease/images/vascular-disease-thumbnail-2026.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/spine/products/q-guidance-system/images/Q%20Guidance%20with%20SG5%20Screw%20Planning%20Screen.png": "https://www.stryker.com/content/dam/stryker/spine/products/q-guidance-system/images/Q%20Guidance%20with%20SG5%20Screw%20Planning%20Screen.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/surgical/products/sterizone-vp4/images/sterizone_cut_out_open.png": "https://www.stryker.com/content/dam/stryker/surgical/products/sterizone-vp4/images/sterizone_cut_out_open.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png": "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png/jcr:content/renditions/cq5dam.web.1280.1280.png"
+  };
+
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/swap-oversized.js
+  function swapOversizedImages(root) {
+    const notes = [];
+    root.querySelectorAll("img[src]").forEach((img) => {
+      const smaller = oversized_images_default[img.getAttribute("src")];
+      if (!smaller) return;
+      img.setAttribute("src", smaller);
+      notes.push(`image over 20 MB \u2192 smaller version${smaller.includes("/is/image/") ? " (a still, if it was animated)" : ""}: ${smaller.split("?")[0].split("/").pop()}`);
+    });
+    return notes;
+  }
+
   // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/xf-fragments.js
   var CORP_XF_TEMPLATE = { name: "corp-xf", site: "corp" };
   var corpTransformers = [transform, transform2, transform3];
@@ -7539,9 +7571,11 @@ var CustomImportScript = (() => {
   var xf_fragments_default = {
     onLoad: classImport.onLoad,
     transform: (payload) => classImport.transform(payload).map((result) => {
+      const swapped = swapOversizedImages(result.element);
+      const report = swapped.length ? __spreadProps(__spreadValues({}, result.report), { notes: [result.report && result.report.notes, ...swapped].filter(Boolean).join(" | ") }) : result.report;
       writeReadableSettings(result.element, payload.document);
       rootFragmentLinks(result.element);
-      return __spreadProps(__spreadValues({}, result), { path: rooted(result.path) });
+      return __spreadProps(__spreadValues({}, result), { report, path: rooted(result.path) });
     })
   };
 

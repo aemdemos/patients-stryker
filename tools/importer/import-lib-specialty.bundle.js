@@ -7164,17 +7164,21 @@ var CustomImportScript = (() => {
     "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png": "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png/jcr:content/renditions/cq5dam.web.1280.1280.png"
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
-  var transformers = [transform, transform2, transform3];
-  var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
-  function swapOversizedImages(main, report) {
-    main.querySelectorAll("img[src]").forEach((img) => {
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/swap-oversized.js
+  function swapOversizedImages(root) {
+    const notes = [];
+    root.querySelectorAll("img[src]").forEach((img) => {
       const smaller = oversized_images_default[img.getAttribute("src")];
       if (!smaller) return;
       img.setAttribute("src", smaller);
-      (report.notes || (report.notes = [])).push(`image over 20 MB \u2192 smaller version${smaller.includes("/is/image/") ? " (a still, if it was animated)" : ""}: ${smaller.split("?")[0].split("/").pop()}`);
+      notes.push(`image over 20 MB \u2192 smaller version${smaller.includes("/is/image/") ? " (a still, if it was animated)" : ""}: ${smaller.split("?")[0].split("/").pop()}`);
     });
+    return notes;
   }
+
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
+  var transformers = [transform, transform2, transform3];
+  var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document2) {
     const input = document2.querySelector("#hiddenPublishedDate");
     const m = (input && input.getAttribute("value") || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
@@ -7244,7 +7248,7 @@ var CustomImportScript = (() => {
         main.append(WebImporter.Blocks.getMetadataBlock(document2, meta));
         WebImporter.rules.transformBackgroundImages(main, document2);
         WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
-        swapOversizedImages(main, report);
+        (report.notes || (report.notes = [])).push(...swapOversizedImages(main));
         writeReadableSettings(main, document2);
         rootFragmentLinks(main);
         const path = rooted(WebImporter.FileUtils.sanitizePath(pagePath(params.originalURL)));

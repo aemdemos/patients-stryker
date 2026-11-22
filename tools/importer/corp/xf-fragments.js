@@ -22,6 +22,7 @@ import { xfKey, xfInfo, hostedFragmentPath } from '../xf-fragment-path.js';
 import { contactDirectorySections, matchXfWrappers, markXfSlides } from './corp-components.js';
 import { writeReadableSettings } from './settings-writer.js';
 import { rooted, rootFragmentLinks } from './root.js';
+import swapOversizedImages from './swap-oversized.js';
 
 // every XF: the corp section builder, as the page importers (corp-import.js)
 const CORP_XF_TEMPLATE = { name: 'corp-xf', site: 'corp' };
@@ -143,8 +144,13 @@ const classImport = {
 export default {
   onLoad: classImport.onLoad,
   transform: (payload) => classImport.transform(payload).map((result) => {
+    // (images over 20 MB → the smaller version: news feature fragments, globe-ar-sm, ProCuity)
+    const swapped = swapOversizedImages(result.element);
+    const report = swapped.length
+      ? { ...result.report, notes: [result.report && result.report.notes, ...swapped].filter(Boolean).join(' | ') }
+      : result.report;
     writeReadableSettings(result.element, payload.document);
     rootFragmentLinks(result.element);
-    return { ...result, path: rooted(result.path) };
+    return { ...result, report, path: rooted(result.path) };
   }),
 };
