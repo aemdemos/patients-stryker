@@ -287,7 +287,7 @@ var CustomImportScript = (() => {
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
-      const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
+      const block = b.closest("p, li, h1, h2, h3, h4, h5, h6") || (wholeParagraphs && root.contains(b) ? root : null);
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text(block) === text(b)) return;
       b.before(doc.createTextNode("[[body-font]"));

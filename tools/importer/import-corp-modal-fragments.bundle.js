@@ -411,7 +411,7 @@ var CustomImportScript = (() => {
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
-      const block2 = b.closest("p, li, h1, h2, h3, h4, h5, h6");
+      const block2 = b.closest("p, li, h1, h2, h3, h4, h5, h6") || (wholeParagraphs && root.contains(b) ? root : null);
       if (!block2 || block2.matches("h1, h2, h3, h4, h5, h6")) return;
       if (!wholeParagraphs && text(block2) === text(b)) return;
       b.before(doc.createTextNode("[[body-font]"));
@@ -1377,6 +1377,9 @@ var CustomImportScript = (() => {
   function richTextNodes(source, doc) {
     const box = contentCopy(source, doc);
     wrapInlineRuns(box, doc);
+    [...box.querySelectorAll("div")].reverse().forEach((div) => {
+      if (text(div) && !div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table")) rename(div, "p");
+    });
     const blanks = [...box.querySelectorAll("p")].filter(isBlankParagraph);
     blanks.forEach((p) => {
       p.textContent = BLANK_LINE;
@@ -1405,6 +1408,10 @@ var CustomImportScript = (() => {
       if (plainBold.has(node)) node.boldBody = true;
       if (inlineBold.has(node)) node.inlineBold = true;
       if (serifHeads.has(node)) node.serifHeading = true;
+      if (serifHeads.has(node) && /^H[4-6]$/.test(node.tagName) && !/\[\[[^\]]*\bserif\b/.test(node.textContent)) {
+        node.prepend(doc.createTextNode("[[serif]"));
+        node.append(doc.createTextNode("]"));
+      }
       if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
     });
     let last = null;
@@ -2072,6 +2079,14 @@ var CustomImportScript = (() => {
     const img = el.querySelector(".imgBoxId img") || el.querySelector("img");
     const box = el.querySelector(".textBoxId");
     const boxItems = box ? ctx.collect(box) : [];
+    boxItems.filter((it) => it.type === "flow" && it.role === "text").forEach((it) => it.nodes.forEach((n) => {
+      const lines = n.tagName === "P" ? [n] : [...n.querySelectorAll(":scope > li")];
+      lines.forEach((line) => {
+        if (!text(line) || text(line) === BLANK_LINE || line.querySelector("img, picture")) return;
+        line.prepend(doc.createTextNode(line.querySelector("strong") ? "[[size-1em]" : "[[body-font,size-1em]"));
+        line.append(doc.createTextNode("]"));
+      });
+    }));
     const overlay = boxItems.length ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
     if (!img && !overlay.length) return [];
     const source = img && img.closest("picture") && img.closest("picture").querySelector('source[media*="min-width"]');
@@ -2832,14 +2847,22 @@ var CustomImportScript = (() => {
     const { doc } = ctx;
     const source = el.querySelector("table");
     if (!source) return [];
-    const rows = [...source.querySelectorAll("tr")].map((tr) => [...tr.children].map((td) => {
+    const first = source.querySelector("tr");
+    if (!first) return [];
+    const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll("b, strong, th")].some((b) => text(b) === text(td)) || td.tagName === "TH");
+    const rows = [...source.querySelectorAll("tr")].map((tr, i) => [...tr.children].map((td) => {
       const box = contentCopy(td, doc);
+      if (!(header && i === 0)) {
+        box.querySelectorAll("b").forEach((b) => {
+          if (!text(b) || b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
+          b.before(doc.createTextNode("[[body-font]"));
+          b.after(doc.createTextNode("]"));
+          rename(b, "strong");
+        });
+      }
       cleanRichText(box);
       return [...box.childNodes];
     }));
-    if (!rows.length) return [];
-    const first = source.querySelector("tr");
-    const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll("b, strong, th")].some((b) => text(b) === text(td)) || td.tagName === "TH");
     if (header) {
       rows[0] = rows[0].map((nodes) => nodes.map((n) => {
         if (n.nodeType === 1) n.querySelectorAll("strong").forEach(unwrap);
@@ -3292,7 +3315,7 @@ var CustomImportScript = (() => {
     const out = [];
     const title = grid.querySelector(".c-section-title");
     if (title && text(title)) {
-      out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === "flow"));
+      out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === "flow").map((it) => __spreadProps(__spreadValues({}, it), { styles: [...it.styles || [], "h-serif"] })));
     }
     const rows = items.map((item) => {
       const link2 = item.querySelector("a[href]");
@@ -3532,7 +3555,7 @@ var CustomImportScript = (() => {
       const linkText = link2.classList.contains("tel") ? `[[color-black]${text(link2)}]` : text(link2);
       return [linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, linkText)];
     };
-    info.querySelectorAll("h3.component-subheading, .contact-label, .contact-group p").forEach((node) => {
+    info.querySelectorAll("h3.component-subheading, .contact-description, .contact-label, .contact-group p").forEach((node) => {
       if (!text(node)) return;
       if (node.tagName === "H3") {
         flush();

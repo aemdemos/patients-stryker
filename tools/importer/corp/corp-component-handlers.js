@@ -242,6 +242,11 @@ const blankLines = (doc, n) => Array.from({ length: n }, () => {
 export function richTextNodes(source, doc) {
   const box = contentCopy(source, doc);
   wrapInlineRuns(box, doc);
+  // text-only <div> lines as paragraphs first (the cleaner does it too), so the checks below
+  // see them: a plain-bold "References" typed in a <div> (news features) is Humanist on live
+  [...box.querySelectorAll('div')].reverse().forEach((div) => {
+    if (text(div) && !div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table')) rename(div, 'p');
+  });
   // blank lines are kept where they are (the cleaner drops empty paragraphs)
   const blanks = [...box.querySelectorAll('p')].filter(isBlankParagraph);
   blanks.forEach((p) => { p.textContent = BLANK_LINE; });
@@ -275,6 +280,12 @@ export function richTextNodes(source, doc) {
     if (plainBold.has(node)) node.boldBody = true;
     if (inlineBold.has(node)) node.inlineBold = true;
     if (serifHeads.has(node)) node.serifHeading = true;
+    // (an h4-h6 in Egyptienne throughout: the serif tag, h-serif styles h2 / h3 only)
+    // (unless a tag in it already sets the serif; a colour or size tag can stand first)
+    if (serifHeads.has(node) && /^H[4-6]$/.test(node.tagName) && !/\[\[[^\]]*\bserif\b/.test(node.textContent)) {
+      node.prepend(doc.createTextNode('[[serif]'));
+      node.append(doc.createTextNode(']'));
+    }
     if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
   });
   // elements without copy of their own (headings, images) follow the copy around them
@@ -1146,6 +1157,19 @@ function fullWidthImage(el, ctx) {
   const box = el.querySelector('.textBoxId');
   // the text box's own spacing goes on the block (Hero Corp options, scripts/corp-spacing.js)
   const boxItems = box ? ctx.collect(box) : [];
+  // rich text in the box (a text component, not a Large Headline) is body copy on live:
+  // Humanist at the paragraph size (bacs-balance-acs/index/assure "Everyone knows the value of
+  // data", 14px at every width), where the hero styles the lines after its first as Large
+  // Headline copy; tags inside a line (sizes, Egyptienne) still win. A line with bold keeps its
+  // font (span.futura-bold labels are Futura)
+  boxItems.filter((it) => it.type === 'flow' && it.role === 'text').forEach((it) => it.nodes.forEach((n) => {
+    const lines = n.tagName === 'P' ? [n] : [...n.querySelectorAll(':scope > li')];
+    lines.forEach((line) => {
+      if (!text(line) || text(line) === BLANK_LINE || line.querySelector('img, picture')) return;
+      line.prepend(doc.createTextNode(line.querySelector('strong') ? '[[size-1em]' : '[[body-font,size-1em]'));
+      line.append(doc.createTextNode(']'));
+    });
+  }));
   const overlay = boxItems.length
     ? cellContent(inlineNodes(boxItems, ctx, { marks: false }), doc) : [];
   if (!img && !overlay.length) return [];
@@ -1231,7 +1255,9 @@ function fullWidthImageHero(el, ctx) {
 
 /**
  * h1-title (component-map: h1): the page title, a plain h1 — Egyptienne 28px on phones, Futura
- * bold from 600px as live (styles-corp.css, the default-content h1).
+ * bold from 600px as live (styles-corp.css, the default-content h1). (A plain h1 typed in rich
+ * text is Futura medium from 600px on live, mako-total-hip "From primary to revision": the two
+ * can't be told apart, the page title is the common one.)
  */
 function h1Title(el, ctx) {
   const source = el.querySelector('h1');
@@ -2057,14 +2083,26 @@ function table(el, ctx, extra = []) {
   const { doc } = ctx;
   const source = el.querySelector('table');
   if (!source) return [];
-  const rows = [...source.querySelectorAll('tr')].map((tr) => [...tr.children].map((td) => {
+  const first = source.querySelector('tr');
+  if (!first) return [];
+  const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll('b, strong, th')].some((b) => text(b) === text(td)) || td.tagName === 'TH');
+  const rows = [...source.querySelectorAll('tr')].map((tr, i) => [...tr.children].map((td) => {
     const box = contentCopy(td, doc);
+    // a cell is no section: its plain bold (<b>, not span.futura-bold) keeps the body font
+    // through the tag, whole or inline (procedure-detail "Traditional Hip Replacement",
+    // ankle-truss-system "Preop:", Humanist bold on live); not the header row, whose bold is
+    // the header
+    if (!(header && i === 0)) {
+      box.querySelectorAll('b').forEach((b) => {
+        if (!text(b) || b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+        b.before(doc.createTextNode('[[body-font]'));
+        b.after(doc.createTextNode(']'));
+        rename(b, 'strong');
+      });
+    }
     cleanRichText(box);
     return [...box.childNodes];
   }));
-  if (!rows.length) return [];
-  const first = source.querySelector('tr');
-  const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll('b, strong, th')].some((b) => text(b) === text(td)) || td.tagName === 'TH');
   if (header) {
     rows[0] = rows[0].map((nodes) => nodes.map((n) => {
       if (n.nodeType === 1) n.querySelectorAll('strong').forEach(unwrap);
@@ -2656,7 +2694,10 @@ function filteredGrid(el, ctx) {
   const out = [];
   const title = grid.querySelector('.c-section-title');
   if (title && text(title)) {
-    out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === 'flow'));
+    // (in Egyptienne Light on live, as the grid's own heading: public-access "Public Access
+    // products", ultrasonic-energy: the h-serif style)
+    out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === 'flow')
+      .map((it) => ({ ...it, styles: [...(it.styles || []), 'h-serif'] })));
   }
   const rows = items.map((item) => {
     const link = item.querySelector('a[href]');
@@ -2963,7 +3004,7 @@ function contactUs(el, ctx) {
     const linkText = link.classList.contains('tel') ? `[[color-black]${text(link)}]` : text(link);
     return [linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, linkText)];
   };
-  info.querySelectorAll('h3.component-subheading, .contact-label, .contact-group p').forEach((node) => {
+  info.querySelectorAll('h3.component-subheading, .contact-description, .contact-label, .contact-group p').forEach((node) => {
     if (!text(node)) return;
     if (node.tagName === 'H3') {
       flush();
