@@ -52,6 +52,52 @@ export function gridSpec(el) {
 /** The number of columns of a responsive grid (aem-Grid--N; a nested grid has its column's). */
 const gridTotal = (el) => Number((String(el.className).match(/\baem-Grid--(\d+)\b/) || [])[1]) || 12;
 
+/** A grid's columns at a breakpoint (aem-Grid--<bp>--N), its default else. */
+const gridTotalAt = (el, bp) => Number((String(el.className).match(new RegExp(`\\baem-Grid--${bp}--(\\d+)\\b`)) || [])[1]) || gridTotal(el);
+
+/**
+ * A grid column that is only a nested grid filling one line (the stryker.com building block:
+ * about "Fast facts", each fact a 3/12 block after a 1/12 offset holding icon 1/3 + text 2/3):
+ * its columns placed in the outer grid instead — widths and offsets scaled from the nested
+ * grid to the outer column's width at each breakpoint, the outer offset before the first —
+ * so the outer row is one row of all of them (skip 1, 1, 2, skip 1, 1, 2 …). Null when the
+ * column holds anything else, or a width does not scale to whole grid units.
+ * @param {Element} col the outer grid column
+ * @param {object} spec its gridSpec
+ * @returns {{el: Element, spec: object}[]|null}
+ */
+function nestedColumns(col, spec) {
+  const grids = [...col.querySelectorAll('.aem-Grid')];
+  const inner = grids[0];
+  if (!inner || grids.some((g) => g !== inner && !inner.contains(g))) return null;
+  // (nothing beside the nested grid)
+  const squash = (el) => (el.textContent || '').replace(/\s+/g, '');
+  if (squash(col) !== squash(inner) || col.querySelectorAll('img').length !== inner.querySelectorAll('img').length) return null;
+  const cols = [...inner.children].filter((c) => c.getAttribute('data-corp-hidden') !== 'true');
+  const specs = cols.map(gridSpec);
+  if (cols.length < 2 || specs.some((s) => !s)) return null;
+  const BPS = { d: 'default', t: 'tablet', m: 'phone' };
+  const val = (s, bp, key) => s[bp][key] ?? s.d[key];
+  const totals = Object.fromEntries(Object.entries(BPS)
+    .map(([bp, name]) => [bp, gridTotalAt(inner, name)]));
+  // (one line at the default breakpoint)
+  if (specs.reduce((sum, s) => sum + (s.d.o || 0) + s.d.w, 0) !== totals.d) return null;
+  const scale = (n, bp) => (n * (val(spec, bp, 'w') || 0)) / totals[bp];
+  const out = cols.map((c, i) => {
+    const combined = {};
+    Object.keys(BPS).forEach((bp) => {
+      const w = scale(val(specs[i], bp, 'w') || 0, bp);
+      const o = scale(val(specs[i], bp, 'o') || 0, bp) + (i === 0 ? (val(spec, bp, 'o') || 0) : 0);
+      combined[bp] = { w, o, beh: specs[i][bp].beh ?? (bp === 'd' ? null : specs[i].d.beh) };
+    });
+    return { el: c, spec: combined };
+  });
+  const whole = out.every(({ spec: s }) => Object.values(s)
+    .every((v) => Number.isInteger(v.w) && v.w > 0
+    && (v.o === null || Number.isInteger(v.o))));
+  return whole ? out : null;
+}
+
 /** An element the page hides (marked in onLoad from the live page's computed style). */
 export const isHidden = (el) => el.getAttribute('data-corp-hidden') === 'true';
 
@@ -221,11 +267,16 @@ export function createBuilder({
           report.hidden += 1;
           return;
         }
-        const room = (spec.d.o || 0) + spec.d.w;
-        if (run.length && (used + room > total || spec.d.beh === 'newline')) flush();
-        run.push({ el: child, spec });
-        used += room;
-        if (used >= total) flush();
+        // (a building block: its nested grid's columns take its place in this row)
+        const parts = total === 12 ? nestedColumns(child, spec) : null;
+        (parts || [{ el: child, spec }]).forEach((part, k) => {
+          const room = (part.spec.d.o || 0) + part.spec.d.w;
+          const newline = k === 0 && spec.d.beh === 'newline';
+          if (run.length && (used + room > total || newline)) flush();
+          run.push(part);
+          used += room;
+          if (used >= total) flush();
+        });
         return;
       }
       flush();

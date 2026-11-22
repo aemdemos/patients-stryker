@@ -132,6 +132,7 @@ var CustomImportScript = (() => {
   function effectiveSize(el) {
     const sizes = /* @__PURE__ */ new Set();
     const copySizes = /* @__PURE__ */ new Set();
+    const labelSizes = /* @__PURE__ */ new Set();
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (squash(n.textContent)) {
@@ -143,10 +144,14 @@ var CustomImportScript = (() => {
         sizes.add(size);
         const label = n.parentElement.closest(".futura-bold, b, strong");
         if (!label || !el.contains(label) || label === el) copySizes.add(size);
+        else labelSizes.add(size);
       }
     }
     const counted = copySizes.size ? copySizes : sizes;
-    return counted.size === 1 ? [...counted][0] : null;
+    if (counted.size !== 1) return null;
+    const [copy] = counted;
+    if (copy > 1 && [...labelSizes].some((s) => s > copy)) return null;
+    return copy;
   }
   function coveredBy(el, cls) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));

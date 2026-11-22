@@ -413,6 +413,7 @@ var CustomImportScript = (() => {
   function effectiveSize(el) {
     const sizes = /* @__PURE__ */ new Set();
     const copySizes = /* @__PURE__ */ new Set();
+    const labelSizes = /* @__PURE__ */ new Set();
     const walker = el.ownerDocument.createTreeWalker(el, 4);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       if (squash(n.textContent)) {
@@ -424,10 +425,14 @@ var CustomImportScript = (() => {
         sizes.add(size);
         const label = n.parentElement.closest(".futura-bold, b, strong");
         if (!label || !el.contains(label) || label === el) copySizes.add(size);
+        else labelSizes.add(size);
       }
     }
     const counted = copySizes.size ? copySizes : sizes;
-    return counted.size === 1 ? [...counted][0] : null;
+    if (counted.size !== 1) return null;
+    const [copy] = counted;
+    if (copy > 1 && [...labelSizes].some((s) => s > copy)) return null;
+    return copy;
   }
   function coveredBy(el, cls) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -932,6 +937,37 @@ var CustomImportScript = (() => {
     return spec.d.w ? spec : null;
   }
   var gridTotal = (el) => Number((String(el.className).match(/\baem-Grid--(\d+)\b/) || [])[1]) || 12;
+  var gridTotalAt = (el, bp) => Number((String(el.className).match(new RegExp(`\\baem-Grid--${bp}--(\\d+)\\b`)) || [])[1]) || gridTotal(el);
+  function nestedColumns(col, spec) {
+    const grids = [...col.querySelectorAll(".aem-Grid")];
+    const inner = grids[0];
+    if (!inner || grids.some((g) => g !== inner && !inner.contains(g))) return null;
+    const squash3 = (el) => (el.textContent || "").replace(/\s+/g, "");
+    if (squash3(col) !== squash3(inner) || col.querySelectorAll("img").length !== inner.querySelectorAll("img").length) return null;
+    const cols = [...inner.children].filter((c) => c.getAttribute("data-corp-hidden") !== "true");
+    const specs = cols.map(gridSpec);
+    if (cols.length < 2 || specs.some((s) => !s)) return null;
+    const BPS = { d: "default", t: "tablet", m: "phone" };
+    const val = (s, bp, key) => {
+      var _a;
+      return (_a = s[bp][key]) != null ? _a : s.d[key];
+    };
+    const totals = Object.fromEntries(Object.entries(BPS).map(([bp, name]) => [bp, gridTotalAt(inner, name)]));
+    if (specs.reduce((sum, s) => sum + (s.d.o || 0) + s.d.w, 0) !== totals.d) return null;
+    const scale = (n, bp) => n * (val(spec, bp, "w") || 0) / totals[bp];
+    const out = cols.map((c, i) => {
+      const combined = {};
+      Object.keys(BPS).forEach((bp) => {
+        var _a;
+        const w = scale(val(specs[i], bp, "w") || 0, bp);
+        const o = scale(val(specs[i], bp, "o") || 0, bp) + (i === 0 ? val(spec, bp, "o") || 0 : 0);
+        combined[bp] = { w, o, beh: (_a = specs[i][bp].beh) != null ? _a : bp === "d" ? null : specs[i].d.beh };
+      });
+      return { el: c, spec: combined };
+    });
+    const whole = out.every(({ spec: s }) => Object.values(s).every((v) => Number.isInteger(v.w) && v.w > 0 && (v.o === null || Number.isInteger(v.o))));
+    return whole ? out : null;
+  }
   var isHidden = (el) => el.getAttribute("data-corp-hidden") === "true";
   function markLivePage(document2) {
     const root = document2.querySelector("#aem-specific-data") || document2.body;
@@ -1047,11 +1083,15 @@ var CustomImportScript = (() => {
             report.hidden += 1;
             return;
           }
-          const room = (spec.d.o || 0) + spec.d.w;
-          if (run.length && (used + room > total || spec.d.beh === "newline")) flush();
-          run.push({ el: child, spec });
-          used += room;
-          if (used >= total) flush();
+          const parts = total === 12 ? nestedColumns(child, spec) : null;
+          (parts || [{ el: child, spec }]).forEach((part, k) => {
+            const room = (part.spec.d.o || 0) + part.spec.d.w;
+            const newline = k === 0 && spec.d.beh === "newline";
+            if (run.length && (used + room > total || newline)) flush();
+            run.push(part);
+            used += room;
+            if (used >= total) flush();
+          });
           return;
         }
         flush();

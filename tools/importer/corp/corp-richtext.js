@@ -129,11 +129,16 @@ function sizeStyle(factor) {
  * over all of its text, when every text node has the same one; null when sizes are mixed.
  * A bold label at its own size in front of the copy (a "References" heading line in 0.8em
  * small print, news national-direct-to-patient-marketing-campaign) does not count: the
- * copy's size is the paragraph's.
+ * copy's size is the paragraph's. Unless the label is larger than copy that is itself above
+ * the base size (about "Values": a 1.75em title over 1.5em copy): as a paragraph size the
+ * copy would set the paragraph's own lines too (21px at 1.06 instead of the source's 14px
+ * paragraph lines, the title then overlaps its copy), so the sizes count as mixed and stay
+ * inline.
  */
 function effectiveSize(el) {
   const sizes = new Set();
   const copySizes = new Set();
+  const labelSizes = new Set();
   const walker = el.ownerDocument.createTreeWalker(el, 4); // NodeFilter.SHOW_TEXT
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     if (squash(n.textContent)) {
@@ -145,10 +150,14 @@ function effectiveSize(el) {
       sizes.add(size);
       const label = n.parentElement.closest('.futura-bold, b, strong');
       if (!label || !el.contains(label) || label === el) copySizes.add(size);
+      else labelSizes.add(size);
     }
   }
   const counted = copySizes.size ? copySizes : sizes;
-  return counted.size === 1 ? [...counted][0] : null;
+  if (counted.size !== 1) return null;
+  const [copy] = counted;
+  if (copy > 1 && [...labelSizes].some((s) => s > copy)) return null;
+  return copy;
 }
 
 /** True when the outermost `.cls` spans of `el` hold all of its text. */
