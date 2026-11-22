@@ -46,7 +46,7 @@ export const TEXT_STYLES = {
   indent: 'indent',
 };
 /* colours by their own name: Gold → color-gold */
-['gold', 'white', 'light-gray', 'blue', 'purple', 'teal', 'grey', 'silver', 'dark-gold', 'black', 'navy']
+['gold', 'white', 'light-gray', 'gray', 'blue', 'purple', 'teal', 'grey', 'silver', 'dark-gold', 'black', 'navy']
   .forEach((color) => { TEXT_STYLES[color] = `color-${color}`; });
 
 /** Copy size → section style */

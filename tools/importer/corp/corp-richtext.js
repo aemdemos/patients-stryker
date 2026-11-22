@@ -46,6 +46,11 @@ export function unwrap(el) {
 export function contentCopy(source, doc = source.ownerDocument) {
   const box = doc.createElement('div');
   source.childNodes.forEach((node) => box.append(doc.importNode(node, true)));
+  // Egyptienne set as an inline font (annual-review 2024 "Year in Review": style="font-family:
+  // URWEgyptienneW01-Light, …") reads as the font class the rules know
+  box.querySelectorAll('[style*="font-family"]').forEach((el) => {
+    if (/font-family:[^;]*egyptienne/i.test(el.getAttribute('style'))) el.classList.add('urw-egyptienne');
+  });
   return box;
 }
 
@@ -452,10 +457,13 @@ const COLOURS = {
   // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
   // practice…", "CONTACT US" links), silver (107) and dark gold (58)
   edeeec: 'color-light-gray',
+  // the darker grey (#dfe1de, the bg-gray surface; 55 uses on 19 pages, west-point "in the
+  // game") — was taken for light grey
+  dfe1de: 'color-gray',
   b2b4ae: 'color-silver',
   af6d04: 'color-dark-gold',
 };
-const NEUTRAL = new Set(['color-white', 'color-light-gray', 'color-silver', 'color-grey', '']);
+const NEUTRAL = new Set(['color-white', 'color-light-gray', 'color-gray', 'color-silver', 'color-grey', '']);
 
 /** A CSS colour value as 6-digit lowercase hex (no #), or '' when it cannot be read. */
 function toHex(value) {

@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-contactdivision.js
+  // tools/importer/import-lib-contactdivision.js
   var import_lib_contactdivision_exports = {};
   __export(import_lib_contactdivision_exports, {
     default: () => import_lib_contactdivision_default
   });
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/corp-sections.js
+  // tools/importer/corp/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-cleanup.js
+  // tools/importer/corp/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-dm-images.js
+  // tools/importer/corp/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
+  // tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -362,6 +362,9 @@ var CustomImportScript = (() => {
   function contentCopy(source, doc = source.ownerDocument) {
     const box = doc.createElement("div");
     source.childNodes.forEach((node) => box.append(doc.importNode(node, true)));
+    box.querySelectorAll('[style*="font-family"]').forEach((el) => {
+      if (/font-family:[^;]*egyptienne/i.test(el.getAttribute("style"))) el.classList.add("urw-egyptienne");
+    });
     return box;
   }
   function footnoteList(nodes, doc) {
@@ -623,10 +626,13 @@ var CustomImportScript = (() => {
     // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
     // practice…", "CONTACT US" links), silver (107) and dark gold (58)
     edeeec: "color-light-gray",
+    // the darker grey (#dfe1de, the bg-gray surface; 55 uses on 19 pages, west-point "in the
+    // game") — was taken for light grey
+    dfe1de: "color-gray",
     b2b4ae: "color-silver",
     af6d04: "color-dark-gold"
   };
-  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-silver", "color-grey", ""]);
+  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-gray", "color-silver", "color-grey", ""]);
   function toHex(value) {
     const v = (value || "").trim().toLowerCase();
     if (v === "white") return "ffffff";
@@ -923,7 +929,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
+  // tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1280,7 +1286,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/xf-index.js
+  // tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3429,7 +3435,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-path-rule.js
+  // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3445,7 +3451,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-fragment-path.js
+  // tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3486,7 +3492,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
+  // tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3590,7 +3596,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
+  // tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3682,7 +3688,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
+  // tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3741,7 +3747,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
+  // tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3769,14 +3775,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
+  // tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
+  // tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3795,7 +3801,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
+  // tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -4495,9 +4501,11 @@ var CustomImportScript = (() => {
     }
     el.querySelectorAll(".cta-subtitle").forEach((d) => {
       if (!text(d)) return;
+      const h3 = doc.createElement("h3");
       const strong = doc.createElement("strong");
-      strong.textContent = `[[size-1-5em]${text(d)}]`;
-      head.push(para(doc, strong));
+      strong.textContent = text(d);
+      h3.append(strong);
+      head.push(h3);
     });
     el.querySelectorAll(".cta-description").forEach((d) => {
       if (text(d)) head.push(para(doc, doc.createTextNode(text(d))));
@@ -4696,7 +4704,10 @@ var CustomImportScript = (() => {
       if (title.tagName === "H1") ctx.h1 = true;
       items.push({ type: "flow", role: "text", nodes: [rename(box, title.tagName.toLowerCase())] });
     }
-    return [...items, ...fullWidthImage(el.querySelector(".pDiv") || el, ctx)];
+    const banner = el.querySelector(".pDiv");
+    const after = !!(title && banner && banner.compareDocumentPosition(title) === 4);
+    const hero = fullWidthImage(banner || el, ctx);
+    return after ? [...hero, ...items] : [...items, ...hero];
   }
   function h1Title(el, ctx) {
     const source = el.querySelector("h1");
@@ -5809,9 +5820,7 @@ var CustomImportScript = (() => {
     const out = [];
     const title = grid.querySelector(".c-section-title");
     if (title && text(title)) {
-      const h2 = doc.createElement("h2");
-      h2.textContent = text(title);
-      out.push({ type: "flow", role: "text", nodes: [h2] });
+      out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === "flow"));
     }
     const rows = items.map((item) => {
       const link2 = item.querySelector("a[href]");
@@ -5884,15 +5893,19 @@ var CustomImportScript = (() => {
     const has = (node) => !!node && !!text(node);
     if (!has(title) && !has(message)) return [];
     const nodes = [];
+    const black = !!el.querySelector(".m-banner-simple.text-black");
+    const colour = black ? ",color-black" : "";
     if (has(title)) {
       const h1 = doc.createElement("h1");
-      h1.textContent = text(title);
+      const strong = doc.createElement("strong");
+      strong.textContent = text(title);
+      h1.append(doc.createTextNode(`[[size-0-75em${colour}]`), strong, doc.createTextNode("]"));
       nodes.push(h1);
       ctx.h1 = true;
     }
     if (has(message)) {
       const h2 = doc.createElement("h2");
-      h2.textContent = text(message);
+      h2.textContent = `[[size-4vw${colour}]${text(message)}]`;
       nodes.push(h2);
     }
     const banner = el.querySelector(".m-banner-simple");
@@ -5900,7 +5913,7 @@ var CustomImportScript = (() => {
     return [{
       type: "own",
       kind: "tagline",
-      styles: bg ? [bg] : [],
+      styles: [...bg ? [bg] : [], ...has(message) ? ["h-serif"] : []],
       nodes
     }];
   }
@@ -5944,8 +5957,8 @@ var CustomImportScript = (() => {
       left.push(h2);
     }
     const blank2 = (node) => !text(node).replace(/\u00a0/g, "").trim();
-    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap").forEach((wrap) => {
-      [...wrap.children].forEach((node) => {
+    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap").forEach((wrap2) => {
+      [...wrap2.children].forEach((node) => {
         if (node.closest('[data-corp-hidden="true"]')) return;
         if (/^H[1-6]$/.test(node.tagName)) {
           if (!text(node)) return;
@@ -5975,13 +5988,26 @@ var CustomImportScript = (() => {
       });
     });
     if (!left.length) return [];
+    const side = [];
+    el.querySelectorAll(".event-sidebar h1, .event-sidebar h2, .event-sidebar h3, .event-sidebar h4, .event-sidebar h5, .event-sidebar a[href]").forEach((node) => {
+      if (!text(node) || node.closest('.map, [data-corp-hidden="true"]')) return;
+      if (node.tagName === "A") {
+        side.push(para(doc, linkTo(doc, newTabHref(node, node.getAttribute("href")), text(node))));
+        return;
+      }
+      const h5 = doc.createElement("h5");
+      h5.textContent = text(node);
+      side.push(h5);
+    });
     const cells = [left];
     const map = el.querySelector(".map[data-address]");
     const address = map ? map.getAttribute("data-address").replace(/&nbsp;|\u00a0/g, " ").split(",").map((s) => s.trim()).filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s)).join(", ") : "";
-    if (!address.includes(",")) return [{ type: "flow", role: "text", nodes: left }];
+    const wrap = el.querySelector(".event-disclaimer-wrap");
+    const disclaimer = wrap && text(wrap) ? [{ type: "group", styles: ["disclaimer", "bold-body"], items: textComponent(wrap, ctx) }] : [];
+    if (!address.includes(",")) return [{ type: "flow", role: "text", nodes: [...left, ...side] }, ...disclaimer];
     const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
-    cells.push([para(doc, linkTo(doc, href, address))]);
-    return [{ type: "block", block: block(doc, "Columns (columns-67-33)", [cells]) }];
+    cells.push([para(doc, linkTo(doc, href, address)), ...side]);
+    return [{ type: "block", block: block(doc, "Columns (columns-67-33)", [cells]) }, ...disclaimer];
   }
   function backgroundImage(el) {
     const m = (el && el.getAttribute("style") || "").match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);
@@ -6011,39 +6037,50 @@ var CustomImportScript = (() => {
     const root = el.matches(".c-contactus") ? el : el.querySelector(".c-contactus") || el;
     const info = root.querySelector(".info") || root;
     const details = [];
-    info.querySelectorAll(".contact-label").forEach((label) => {
-      if (!text(label)) return;
-      const h4 = doc.createElement("h4");
-      h4.textContent = text(label);
-      details.push(h4);
-      const p = doc.createElement("p");
-      const group = label.closest(".contact-group");
-      const lines = [];
-      let started = false;
-      group.querySelectorAll(".contact-label, p").forEach((node) => {
-        if (node === label) {
-          started = true;
-          return;
-        }
-        if (!started) return;
-        if (node.matches(".contact-label")) {
-          started = false;
-          return;
-        }
-        lines.push(node);
-      });
-      lines.forEach((line, i) => {
-        if (i) p.append(doc.createElement("br"));
-        const link2 = line.querySelector("a[href]");
-        if (link2 && text(line) === text(link2)) {
-          const href = link2.getAttribute("href");
-          const tel = href.match(/^tel:(.*)$/i);
-          const linkText = link2.classList.contains("tel") ? `[[color-black]${text(link2)}]` : text(link2);
-          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, linkText));
-        } else p.append(...contentCopy(line, doc).childNodes);
-      });
-      if (text(p)) details.push(p);
+    let lines = null;
+    let labelGroup = null;
+    const flush = () => {
+      if (lines && text(lines)) details.push(lines);
+      lines = null;
+      labelGroup = null;
+    };
+    const lineNodes = (line) => {
+      const link2 = line.querySelector("a[href]");
+      if (!(link2 && text(line) === text(link2))) return [...contentCopy(line, doc).childNodes];
+      const href = link2.getAttribute("href");
+      const tel = href.match(/^tel:(.*)$/i);
+      const linkText = link2.classList.contains("tel") ? `[[color-black]${text(link2)}]` : text(link2);
+      return [linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, linkText)];
+    };
+    info.querySelectorAll("h3.component-subheading, .contact-label, .contact-group p").forEach((node) => {
+      if (!text(node)) return;
+      if (node.tagName === "H3") {
+        flush();
+        const h3 = doc.createElement("h3");
+        const strong = doc.createElement("strong");
+        strong.textContent = text(node);
+        h3.append(strong);
+        details.push(h3);
+        return;
+      }
+      if (node.matches(".contact-label")) {
+        flush();
+        const h4 = doc.createElement("h4");
+        h4.textContent = text(node);
+        details.push(h4);
+        lines = doc.createElement("p");
+        labelGroup = node.closest(".contact-group");
+        return;
+      }
+      if (lines && node.closest(".contact-group") === labelGroup) {
+        if (lines.childNodes.length) lines.append(doc.createElement("br"));
+        lines.append(...lineNodes(node));
+        return;
+      }
+      flush();
+      details.push(para(doc, ...lineNodes(node)));
     });
+    flush();
     if (!details.length) return [];
     const out = [];
     const title = root.querySelector("h2");
@@ -6055,8 +6092,13 @@ var CustomImportScript = (() => {
       const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
       cells.push([para(doc, linkTo(doc, href, address))]);
     }
-    out.push({ type: "block", block: block(doc, "Columns (columns-50-50)", [cells]) });
-    return out;
+    const nodes = [...out.flatMap((it) => it.nodes), block(doc, "Columns (columns-50-50)", [cells])];
+    return [{
+      type: "own",
+      kind: "contact",
+      styles: [],
+      nodes
+    }];
   }
   function groupList(el, ctx) {
     const { doc } = ctx;
@@ -6115,7 +6157,7 @@ var CustomImportScript = (() => {
     };
     const nodes = [];
     if (heading && text(heading)) nodes.push(tagged("h2", "size-1-14em", heading));
-    if (message && text(message)) nodes.push(tagged("p", "serif,size-4em", message));
+    if (message && text(message)) nodes.push(tagged("p", "serif,size-4vw", message));
     const out = [{ type: "flow", role: "text", nodes }];
     const cta = el.querySelector(".btn-container a.btn[href]");
     if (cta && text(cta)) out.push({ type: "flow", role: "cta", nodes: [buttonNode(doc, cta, text(cta))] });
@@ -6365,7 +6407,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
+  // tools/importer/corp/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -6386,7 +6428,7 @@ var CustomImportScript = (() => {
           type: "own",
           kind: "statistics",
           styles: [],
-          nodes: inlineNodes(run, ctx)
+          nodes: [statistics(run, ctx, 1)]
         });
       }
       run = [];
@@ -6449,7 +6491,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
+  // scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -6559,7 +6601,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
+  // scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -6575,14 +6617,14 @@ var CustomImportScript = (() => {
     right: "align-right",
     indent: "indent"
   };
-  ["gold", "white", "light-gray", "blue", "purple", "teal", "grey", "silver", "dark-gold", "black", "navy"].forEach((color) => {
+  ["gold", "white", "light-gray", "gray", "blue", "purple", "teal", "grey", "silver", "dark-gold", "black", "navy"].forEach((color) => {
     TEXT_STYLES[color] = `color-${color}`;
   });
   var COPY_SIZES = { small: "p-0-8", large: "p-1-25", "x-large": "p-1-5" };
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
+  // tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -6741,7 +6783,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
+  // tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -7131,7 +7173,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
+  // tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -7144,7 +7186,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/oversized-images.js
+  // tools/importer/corp/oversized-images.js
   var oversized_images_default = {
     "https://media-assets.stryker.com/is/content/stryker/AdobeStock_443793332-v3?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/AdobeStock_443793332-v3?$max_width_1440$",
     "https://media-assets.stryker.com/is/content/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$",
@@ -7164,7 +7206,7 @@ var CustomImportScript = (() => {
     "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png": "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png/jcr:content/renditions/cq5dam.web.1280.1280.png"
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/swap-oversized.js
+  // tools/importer/corp/swap-oversized.js
   function swapOversizedImages(root) {
     const notes = [];
     root.querySelectorAll("img[src]").forEach((img) => {
@@ -7176,7 +7218,7 @@ var CustomImportScript = (() => {
     return notes;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
+  // tools/importer/corp/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document2) {
@@ -7267,7 +7309,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/page-facts/contactdivision.js
+  // tools/importer/data/page-facts/contactdivision.js
   var contactdivision_default = {
     "/us/en/acute-care/contact": { "template": "contactdivision", "metadata": { "title": "Acute Care", "pageTitle": "Acute Care Contact", "description": "Stryker\u2019s Medical division develops innovative medical equipment focused on improving outcomes for patients and caregivers.  We are focused on safety, prevention, and ease of use - bringing caregivers confidence and delivering proven outcomes.", "image": null, "imageAlt": null, "tags": ["stryker:content-type/business-unit-contact", "stryker:geography/north-america", "stryker:business-function/manufacturing/usa", "stryker:business-function/hq", "stryker:business-function/sales/usa", "stryker:customer-support-centers/USA", "stryker:business-unit/acute-care"], "originallyPublished": "2023-02-06T19:23:45.000Z", "lastPublished": "2026-08-19T19:23:45.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [{ "formId": "1320", "afterSubmitAction": "showMessage", "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.", "useProduction": true }], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/communications/contact": { "template": "contactdivision", "metadata": { "title": "Communications", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:customer-support-centers/USA", "stryker:content-type/business-unit-contact", "stryker:business-unit/communications", "stryker:business-function/hq/usa", "stryker:geography/north-america", "stryker:business-function/manufacturing/usa", "stryker:business-function/sales/usa"], "originallyPublished": "2023-02-06T18:32:07.000Z", "lastPublished": "2026-06-29T19:31:13.000Z", "contentID": null }, "anchors": [{ "id": "contact", "title": "Connect with us", "hidden": false, "type": "section-title", "area": "customizablearea_parsys" }], "disclaimer": null, "forms": [{ "formId": "2951", "afterSubmitAction": "showMessage", "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.", "useProduction": true }], "tabs": [], "cardLists": [], "missingAlt": [] },
@@ -7292,7 +7334,7 @@ var CustomImportScript = (() => {
     "/us/en/trauma-and-extremities/contact": { "template": "contactdivision", "metadata": { "title": "Trauma and Extremities", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:customer-support-centers/USA", "stryker:content-type/business-unit-contact", "stryker:business-function/hq/usa", "stryker:geography/north-america", "stryker:business-unit/trauma-and-extremities", "stryker:business-function/sales/usa"], "originallyPublished": "2023-02-06T15:25:54.000Z", "lastPublished": "2025-10-14T15:25:54.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-contactdivision.js
+  // tools/importer/import-lib-contactdivision.js
   var import_lib_contactdivision_default = createCorpImport({
     name: "contactdivision-engine",
     description: "www.stryker.com contactdivision pages, first pass with the corp rule library.",

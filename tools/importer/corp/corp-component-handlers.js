@@ -293,7 +293,7 @@ export function richTextNodes(source, doc) {
 
 /** Counters → one Statistics (count-up, count-once, cols-N) block: stryker.com counters
  * count up once and keep their numbers (the block's default recounts on every view). */
-function statistics(counters, ctx, columns = counters.length, countUp = true) {
+export function statistics(counters, ctx, columns = counters.length, countUp = true) {
   const rows = counters.map((c) => (c.colour ? [c.colour, c.value, c.desc] : [c.value, c.desc]));
   const cols = `cols-${Math.min(Math.max(columns, 1), 4)}`;
   // left-aligned counters (numberCounterAlignment text-left): the left option (approved)
@@ -944,13 +944,17 @@ function buttons(el, ctx) {
     h.append(a ? linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), label(text(a), true)) : doc.createTextNode(label(text(title))));
     head.push(h);
   }
-  // a subtitle above the button (p.cta-subtitle.subheading: Futura bold 21px, black;
-  // performance-series-blades "Stryker Precision Saw") → a Bold line, 1.5 × the copy
+  // a subtitle above the button (p.cta-subtitle.subheading: Futura bold, black, 17.5px on
+  // phones and 21px from 480px; performance-series-blades "Stryker Precision Saw",
+  // 1st-metatarso-phalangeal-mtp-arthrodesis "Anchorage CP MTP plate") → a Bold Heading 3,
+  // whose corp sizes are those (17.5px, 21px from 600px)
   el.querySelectorAll('.cta-subtitle').forEach((d) => {
     if (!text(d)) return;
+    const h3 = doc.createElement('h3');
     const strong = doc.createElement('strong');
-    strong.textContent = `[[size-1-5em]${text(d)}]`;
-    head.push(para(doc, strong));
+    strong.textContent = text(d);
+    h3.append(strong);
+    head.push(h3);
   });
   el.querySelectorAll('.cta-description').forEach((d) => { if (text(d)) head.push(para(doc, doc.createTextNode(text(d)))); });
   const nodes = [...el.querySelectorAll('a[href]')].filter((a) => !a.closest('.cta-title, .cta-description')).map((a) => {
@@ -1206,10 +1210,19 @@ function fullWidthImageHero(el, ctx) {
     if (title.tagName === 'H1') ctx.h1 = true;
     items.push({ type: 'flow', role: 'text', nodes: [rename(box, title.tagName.toLowerCase())] });
   }
-  return [...items, ...fullWidthImage(el.querySelector('.pDiv') || el, ctx)];
+  // (in the source's order: the title area after the banner on some pages — meniscal-repair,
+  // live y707 under the 273–687 banner — before it on others, suture-and-tape-offerings)
+  const banner = el.querySelector('.pDiv');
+  // (4: DOCUMENT_POSITION_FOLLOWING alone, the title after the banner and not inside it)
+  const after = !!(title && banner && banner.compareDocumentPosition(title) === 4);
+  const hero = fullWidthImage(banner || el, ctx);
+  return after ? [...hero, ...items] : [...items, ...hero];
 }
 
-/** h1-title (component-map: h1): the page title, a plain h1 (black Futura 28px, as live). */
+/**
+ * h1-title (component-map: h1): the page title, a plain h1 — Egyptienne 28px on phones, Futura
+ * bold from 600px as live (styles-corp.css, the default-content h1).
+ */
 function h1Title(el, ctx) {
   const source = el.querySelector('h1');
   if (!source || !text(source)) return [];
@@ -2609,9 +2622,7 @@ function filteredGrid(el, ctx) {
   const out = [];
   const title = grid.querySelector('.c-section-title');
   if (title && text(title)) {
-    const h2 = doc.createElement('h2');
-    h2.textContent = text(title);
-    out.push({ type: 'flow', role: 'text', nodes: [h2] });
+    out.push(...sectionTitle(title.parentElement, ctx).filter((it) => it.type === 'flow'));
   }
   const rows = items.map((item) => {
     const link = item.querySelector('a[href]');
@@ -2692,7 +2703,8 @@ function productGroups(el, ctx) {
 /**
  * Banner title and tagline (c-tagline: the page title strip of package, portfolio and tier-1
  * pages, .m-banner-simple) → a section of its own with its banner colour (bg-gold …): the title
- * as the Heading 1, the message as a Heading 2. Empty ones give nothing.
+ * as the Heading 1 (Bold, 0.75 × the h1: Futura bold 21px, as live), the message as a Heading 2
+ * in the serif (h-serif) at 4vw (live 28px on phones, 56px from 1440px). Empty ones give nothing.
  */
 function tagline(el, ctx) {
   const { doc } = ctx;
@@ -2701,21 +2713,26 @@ function tagline(el, ctx) {
   const has = (node) => !!node && !!text(node);
   if (!has(title) && !has(message)) return [];
   const nodes = [];
+  // a banner set to black text (text-black, e.g. about/contact/recall on the purple gradient)
+  const black = !!el.querySelector('.m-banner-simple.text-black');
+  const colour = black ? ',color-black' : '';
   if (has(title)) {
     const h1 = doc.createElement('h1');
-    h1.textContent = text(title);
+    const strong = doc.createElement('strong');
+    strong.textContent = text(title);
+    h1.append(doc.createTextNode(`[[size-0-75em${colour}]`), strong, doc.createTextNode(']'));
     nodes.push(h1);
     ctx.h1 = true;
   }
   if (has(message)) {
     const h2 = doc.createElement('h2');
-    h2.textContent = text(message);
+    h2.textContent = `[[size-4vw${colour}]${text(message)}]`;
     nodes.push(h2);
   }
   const banner = el.querySelector('.m-banner-simple');
   const bg = banner && [...banner.classList].find((c) => /^bg-/.test(c));
   return [{
-    type: 'own', kind: 'tagline', styles: bg ? [bg] : [], nodes,
+    type: 'own', kind: 'tagline', styles: [...(bg ? [bg] : []), ...(has(message) ? ['h-serif'] : [])], nodes,
   }];
 }
 
@@ -2808,6 +2825,18 @@ function eventDetail(el, ctx) {
     });
   });
   if (!left.length) return [];
+  // the sidebar under the map: its headings ("Related links": Heading 5) and links, one a line
+  const side = [];
+  el.querySelectorAll('.event-sidebar h1, .event-sidebar h2, .event-sidebar h3, .event-sidebar h4, .event-sidebar h5, .event-sidebar a[href]').forEach((node) => {
+    if (!text(node) || node.closest('.map, [data-corp-hidden="true"]')) return;
+    if (node.tagName === 'A') {
+      side.push(para(doc, linkTo(doc, newTabHref(node, node.getAttribute('href')), text(node))));
+      return;
+    }
+    const h5 = doc.createElement('h5');
+    h5.textContent = text(node);
+    side.push(h5);
+  });
   const cells = [left];
   const map = el.querySelector('.map[data-address]');
   const address = map ? map.getAttribute('data-address').replace(/&nbsp;|\u00a0/g, ' ')
@@ -2815,11 +2844,16 @@ function eventDetail(el, ctx) {
     .map((s) => s.trim())
     .filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s))
     .join(', ') : '';
+  // the disclaimer (small print with a bold body-font label, live 11.2px): through the rich-text
+  // rules, after the event (the last part of its column)
+  const wrap = el.querySelector('.event-disclaimer-wrap');
+  const disclaimer = wrap && text(wrap)
+    ? [{ type: 'group', styles: ['disclaimer', 'bold-body'], items: textComponent(wrap, ctx) }] : [];
   // (a place: more than the country)
-  if (!address.includes(',')) return [{ type: 'flow', role: 'text', nodes: left }];
+  if (!address.includes(',')) return [{ type: 'flow', role: 'text', nodes: [...left, ...side] }, ...disclaimer];
   const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
-  cells.push([para(doc, linkTo(doc, href, address))]);
-  return [{ type: 'block', block: block(doc, 'Columns (columns-67-33)', [cells]) }];
+  cells.push([para(doc, linkTo(doc, href, address)), ...side]);
+  return [{ type: 'block', block: block(doc, 'Columns (columns-67-33)', [cells]) }, ...disclaimer];
 }
 
 /** A CSS url() of an inline background image, its CSS escapes (`\2f ` for `/`) decoded. */
@@ -2868,37 +2902,59 @@ function contactUs(el, ctx) {
   const root = el.matches('.c-contactus') ? el : el.querySelector('.c-contactus') || el;
   const info = root.querySelector('.info') || root;
   const details = [];
-  info.querySelectorAll('.contact-label').forEach((label) => {
-    if (!text(label)) return;
-    const h4 = doc.createElement('h4');
-    h4.textContent = text(label);
-    details.push(h4);
-    // the label's lines: the paragraphs after it, up to the next label
-    const p = doc.createElement('p');
-    const group = label.closest('.contact-group');
-    const lines = [];
-    let started = false;
-    group.querySelectorAll('.contact-label, p').forEach((node) => {
-      if (node === label) { started = true; return; }
-      if (!started) return;
-      if (node.matches('.contact-label')) { started = false; return; }
-      lines.push(node);
-    });
-    lines.forEach((line, i) => {
-      if (i) p.append(doc.createElement('br'));
-      const link = line.querySelector('a[href]');
-      if (link && text(line) === text(link)) {
-        // (a phone link's number only: tel:269%20488%207419%20%20Fax → tel:2694887419)
-        const href = link.getAttribute('href');
-        const tel = href.match(/^tel:(.*)$/i);
-        // (the contact phone links are black on the source: .c-contactus .contact-group a.tel;
-        // the black-link colour tag, as the rich-text rules write it)
-        const linkText = link.classList.contains('tel') ? `[[color-black]${text(link)}]` : text(link);
-        p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, linkText));
-      } else p.append(...contentCopy(line, doc).childNodes);
-    });
-    if (text(p)) details.push(p);
+  // the contact groups in source order: a group's heading ("Address", "Customer support":
+  // Heading 3), lines without a label as they are (the address), each label (Heading 4) with
+  // its lines in one paragraph (the phone numbers as links, one per line, as live)
+  let lines = null;
+  let labelGroup = null;
+  const flush = () => {
+    if (lines && text(lines)) details.push(lines);
+    lines = null;
+    labelGroup = null;
+  };
+  const lineNodes = (line) => {
+    const link = line.querySelector('a[href]');
+    if (!(link && text(line) === text(link))) return [...contentCopy(line, doc).childNodes];
+    // (a phone link's number only: tel:269%20488%207419%20%20Fax → tel:2694887419)
+    const href = link.getAttribute('href');
+    const tel = href.match(/^tel:(.*)$/i);
+    // (the contact phone links are black on the source: .c-contactus .contact-group a.tel;
+    // the black-link colour tag, as the rich-text rules write it)
+    const linkText = link.classList.contains('tel') ? `[[color-black]${text(link)}]` : text(link);
+    return [linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, linkText)];
+  };
+  info.querySelectorAll('h3.component-subheading, .contact-label, .contact-group p').forEach((node) => {
+    if (!text(node)) return;
+    if (node.tagName === 'H3') {
+      flush();
+      // (Bold: Futura bold, as live h3.component-subheading)
+      const h3 = doc.createElement('h3');
+      const strong = doc.createElement('strong');
+      strong.textContent = text(node);
+      h3.append(strong);
+      details.push(h3);
+      return;
+    }
+    if (node.matches('.contact-label')) {
+      flush();
+      // (Heading 4: Futura bold, 14px on phones, 17.5px from 600px, as live h4.contact-label on
+      // desktop; live sets it in the body font below 480px)
+      const h4 = doc.createElement('h4');
+      h4.textContent = text(node);
+      details.push(h4);
+      lines = doc.createElement('p');
+      labelGroup = node.closest('.contact-group');
+      return;
+    }
+    if (lines && node.closest('.contact-group') === labelGroup) {
+      if (lines.childNodes.length) lines.append(doc.createElement('br'));
+      lines.append(...lineNodes(node));
+      return;
+    }
+    flush();
+    details.push(para(doc, ...lineNodes(node)));
   });
+  flush();
   if (!details.length) return [];
   const out = [];
   const title = root.querySelector('h2');
@@ -2918,8 +2974,12 @@ function contactUs(el, ctx) {
     const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
     cells.push([para(doc, linkTo(doc, href, address))]);
   }
-  out.push({ type: 'block', block: block(doc, 'Columns (columns-50-50)', [cells]) });
-  return out;
+  // its own section: a heading size set by the copy after it (smart-care "Contact a Stryker
+  // Smart Care representative", 1.25x) must not scale the contact headings (live 21px)
+  const nodes = [...out.flatMap((it) => it.nodes), block(doc, 'Columns (columns-50-50)', [cells])];
+  return [{
+    type: 'own', kind: 'contact', styles: [], nodes,
+  }];
 }
 
 /**
@@ -2978,8 +3038,9 @@ function groupList(el, ctx) {
 /**
  * Testimonial (c-testimonial, e.g. /us/en/about "History") → default content (component-map):
  * the heading as a Heading 2 at 28px (1.14 × the corp 24.5px Heading 2), the banner message in
- * the serif at 56px (4 × the copy) as inline size tags (a paragraph's copy size stops at 2.5×),
- * then the button. Its band colour is the section's (the full-bleed panel around it).
+ * the serif at 4vw (live 28px on phones, 56px from 840px) as inline size tags (a paragraph's
+ * copy size stops at 2.5×), then the button. Its band colour is the section's (the full-bleed
+ * panel around it).
  */
 function testimonial(el, ctx) {
   const { doc } = ctx;
@@ -2994,7 +3055,7 @@ function testimonial(el, ctx) {
   };
   const nodes = [];
   if (heading && text(heading)) nodes.push(tagged('h2', 'size-1-14em', heading));
-  if (message && text(message)) nodes.push(tagged('p', 'serif,size-4em', message));
+  if (message && text(message)) nodes.push(tagged('p', 'serif,size-4vw', message));
   const out = [{ type: 'flow', role: 'text', nodes }];
   const cta = el.querySelector('.btn-container a.btn[href]');
   if (cta && text(cta)) out.push({ type: 'flow', role: 'cta', nodes: [buttonNode(doc, cta, text(cta))] });

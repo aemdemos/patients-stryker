@@ -13,7 +13,7 @@
  * functions in its payload (payload.corp = CORP_PAGE): transformers import nothing.
  */
 import { createBuilder } from './corp-section-builder.js';
-import { CORP_HANDLERS, inlineNodes } from './corp-component-handlers.js';
+import { CORP_HANDLERS, statistics } from './corp-component-handlers.js';
 import { matchXfWrappers, markXfSlides, corpLinkHref } from './corp-components.js';
 import { pageXfRefs } from '../xf-fragment-path.js';
 import {
@@ -40,7 +40,8 @@ function disclaimerNodes(main, root, doc) {
 /**
  * Number counters outside a column control (foot-and-ankle/products/prophecy "65000 + cases…
  * and counting", on its own in the content area) were dropped by the builder, which places
- * counters only in columns: each run of them becomes a Statistics block of its own.
+ * counters only in columns: each run of them becomes a Statistics block of its own, one
+ * counter per row (stacked on live: -isuite-experience "93% / 0.8 / 11", full-width components).
  */
 function counterSections(items, ctx) {
   const out = [];
@@ -48,7 +49,7 @@ function counterSections(items, ctx) {
   const flush = () => {
     if (run.length) {
       out.push({
-        type: 'own', kind: 'statistics', styles: [], nodes: inlineNodes(run, ctx),
+        type: 'own', kind: 'statistics', styles: [], nodes: [statistics(run, ctx, 1)],
       });
     }
     run = [];

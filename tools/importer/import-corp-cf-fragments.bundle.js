@@ -19,13 +19,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-cf-fragments.js
+  // tools/importer/import-corp-cf-fragments.js
   var import_corp_cf_fragments_exports = {};
   __export(import_corp_cf_fragments_exports, {
     default: () => import_corp_cf_fragments_default
   });
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/cf-index.js
+  // tools/importer/data/cf-index.js
   var CONTENT_FRAGMENTS = {
     "/content/dam/stryker/content-fragments/corporate/en/contact-information/global-headquarters": { "eds": "/us/en/fragments/content-fragments/corporate/en/contact-information/global-headquarters", "fields": { "addressBlock1": "<p>1941 Stryker Way<br>\nPortage, MI 49002<br>\nUSA</p>\n", "BusinessHomePage": '<p><a href="https://www.stryker.com/us/en/about/contact.html">Learn More</a></p>\n', "locationName": "Global Headquarters", "PhoneNumberLabel": "Phone and Fax", "AddressLabel": "Address", "PhoneNumbers": "<p><b>Phone:</b> +1 269 385 2600<br>\n</p>\n", "BusinessHomePageLabel": "Global Headquarters Homepage" }, "title": "Global Headquarters", "uses": [{ "elementNames": ["addressBlock1", "PhoneNumbers"], "displayMode": "multi", "variationName": "master", "text": "Address 1941 Stryker Way Portage, MI 49002 USA Phone Numbers Phone: +1 269 385 2600", "xf": "/content/experience-fragments/stryker/corporate/en/contact_information/corporate-contact-information/master" }, { "elementNames": ["locationName", "ShortDesc", "addressBlock1", "BusinessHomePage"], "displayMode": "multi", "variationName": "master", "text": "Location Name Global Headquarters Short Description Address 1941 Stryker Way Portage, MI 49002 USA Business Home Page Learn More", "xf": "/content/experience-fragments/stryker/corporate/en/contact_information/directory---us-manufacturing-business/master" }], "model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model" },
     "/content/dam/stryker/content-fragments/corporate/en/contact-information/shared-services": { "eds": "/us/en/fragments/content-fragments/corporate/en/contact-information/shared-services", "fields": { "addressBlock1": "<p>1941 Stryker Way<br>\nPortage, MI 49002<br>\nUSA</p>\n", "locationName": "Shared Services", "PhoneNumberLabel": "Phone", "AddressLabel": "Address", "PhoneNumbers": "<p><b>Phone:</b>&nbsp;+1 269 389 2300</p>\n" }, "title": "Shared Services", "uses": [{ "elementNames": ["locationName", "addressBlock1", "PhoneNumbers"], "displayMode": "multi", "variationName": "master", "text": "Location Name Shared Services Address 1941 Stryker Way Portage, MI 49002 USA Phone Numbers Phone: +1 269 389 2300", "xf": "/content/experience-fragments/stryker/corporate/en/contact_information/corporate-contact-information/master" }], "model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model" },
@@ -84,7 +84,7 @@ var CustomImportScript = (() => {
     "/content/dam/stryker/content-fragments/trauma-and-extremities/en/contact-information/primary-contact": { "eds": "/us/en/fragments/content-fragments/trauma-and-extremities/en/contact-information/primary-contact", "fields": { "addressBlock1": "<p>325 Corporate Drive<br>\nMahwah, NJ 07430<br>\nUSA</p>\n", "BusinessHomePage": '<p><a href="https://www.stryker.com/us/en/trauma-and-extremities/contact.html">Learn More</a></p>\n', "locationName": "Trauma & Extremities", "ShortDesc": "<p>Our trauma and extremities portfolio offers you market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements.</p>\n", "PhoneNumberLabel": "Customer support", "AddressLabel": "Address", "PhoneNumbers": "<p>201 831 5000</p>\n", "BusinessHomePageLabel": "Trauma & Extremities Homepage" }, "title": "Primary Contact", "uses": [{ "elementNames": ["locationName", "ShortDesc", "BusinessHomePage"], "displayMode": "multi", "variationName": "master", "text": "Location Name Trauma & Extremities Short Description Our trauma and extremities portfolio offers you market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements. Business Home Page Learn More", "xf": "/content/experience-fragments/stryker/corporate/en/contact_information/directory---us-manufacturing-business/master" }], "model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model" }
   };
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
+  // tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var KEEP_ATTRS = {
     A: ["href"],
@@ -186,10 +186,13 @@ var CustomImportScript = (() => {
     // corp-only (styles-corp.css): the light grey surface (613 uses, e.g. orthopaedic "In my
     // practice…", "CONTACT US" links), silver (107) and dark gold (58)
     edeeec: "color-light-gray",
+    // the darker grey (#dfe1de, the bg-gray surface; 55 uses on 19 pages, west-point "in the
+    // game") — was taken for light grey
+    dfe1de: "color-gray",
     b2b4ae: "color-silver",
     af6d04: "color-dark-gold"
   };
-  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-silver", "color-grey", ""]);
+  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-light-gray", "color-gray", "color-silver", "color-grey", ""]);
   function toHex(value) {
     const v = (value || "").trim().toLowerCase();
     if (v === "white") return "ffffff";
@@ -457,7 +460,7 @@ var CustomImportScript = (() => {
     return { centred, size };
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
+  // tools/importer/corp/corp-components.js
   function corpLinkHref(href) {
     const value = String(href || "").trim();
     if (!value || /^(mailto|tel):|^#/i.test(value)) return value;
@@ -527,7 +530,7 @@ var CustomImportScript = (() => {
     return blocks;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
+  // scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -637,7 +640,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
+  // scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -653,14 +656,14 @@ var CustomImportScript = (() => {
     right: "align-right",
     indent: "indent"
   };
-  ["gold", "white", "light-gray", "blue", "purple", "teal", "grey", "silver", "dark-gold", "black", "navy"].forEach((color) => {
+  ["gold", "white", "light-gray", "gray", "blue", "purple", "teal", "grey", "silver", "dark-gold", "black", "navy"].forEach((color) => {
     TEXT_STYLES[color] = `color-${color}`;
   });
   var COPY_SIZES = { small: "p-0-8", large: "p-1-25", "x-large": "p-1-5" };
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
+  // tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -819,7 +822,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
+  // tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -1209,7 +1212,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
+  // tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -1222,7 +1225,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-cf-fragments.js
+  // tools/importer/import-corp-cf-fragments.js
   var import_corp_cf_fragments_default = {
     transform: (payload) => {
       const { document: document2, url, params } = payload;
