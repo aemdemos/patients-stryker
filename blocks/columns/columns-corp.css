@@ -487,7 +487,9 @@ body.corp .columns.boxed-last > div > div:last-child {
 }
 
 /* gold-first: the first cell is a gold box (stryker.com bg-gold component: 20px
-   padding inside its 15px column gutter); Bold text in it is white */
+   padding inside its 15px column gutter); Bold text in it keeps the text colour, black
+   (measured: neurovascular "Patient impact", crossflow-integrated-arthroscopy-pump, medpor,
+   help-protect-healthcare-staff-from-workplace-violence) */
 body.corp .columns.gold-first > div > div:first-child {
   margin-inline: var(--space-block);
   padding: var(--space-block-l);
@@ -495,7 +497,7 @@ body.corp .columns.gold-first > div > div:first-child {
 }
 
 body.corp .columns.gold-first > div > div:first-child strong {
-  color: var(--color-white);
+  color: inherit;
 }
 
 /* gray-lead: the text cell starts level with the row top, its grey box (above) first */
