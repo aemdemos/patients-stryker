@@ -348,8 +348,15 @@ var CustomImportScript = (() => {
     tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
-      const a = span.closest("a") || span.querySelector("a");
-      if (a) standalone.add(a);
+      const own = span.closest("a");
+      (own ? [own] : [...span.querySelectorAll("a[href]")]).forEach((a) => {
+        let wrapper = a.parentElement;
+        while (wrapper && wrapper !== span && wrapper.tagName === "SPAN" && squash(wrapper.textContent) === squash(a.textContent)) {
+          unwrap(wrapper);
+          wrapper = a.parentElement;
+        }
+        standalone.add(a);
+      });
     });
     const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
     root.querySelectorAll("a[href]").forEach((a) => {

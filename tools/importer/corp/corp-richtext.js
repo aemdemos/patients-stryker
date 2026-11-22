@@ -696,8 +696,20 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
-    const a = span.closest('a') || span.querySelector('a');
-    if (a) standalone.add(a);
+    // (the class inside a link, or around one link or several: select-your-location
+    // "Chile | ESPAÑOL", one span for both)
+    const own = span.closest('a');
+    (own ? [own] : [...span.querySelectorAll('a[href]')]).forEach((a) => {
+      // the font spans around the link alone are the standalone look (dropped): "SPAIN |
+      // ESPAÑOL" has a futura-bold span around each link, which would make them Bold + Italic
+      let wrapper = a.parentElement;
+      while (wrapper && wrapper !== span && wrapper.tagName === 'SPAN'
+        && squash(wrapper.textContent) === squash(a.textContent)) {
+        unwrap(wrapper);
+        wrapper = a.parentElement;
+      }
+      standalone.add(a);
+    });
   });
   // the same CTA typed by hand: a Futura bold link ending in a triangle ("READ MORE ON OUR
   // INVESTOR RELATIONS SITE HERE \u25ba", news press releases); the triangle comes from the CSS,

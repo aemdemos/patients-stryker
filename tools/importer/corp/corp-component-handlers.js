@@ -2772,8 +2772,11 @@ function eventDetail(el, ctx) {
     left.push(h2);
   }
   const blank = (node) => !text(node).replace(/\u00a0/g, '').trim();
-  el.querySelectorAll('.event-datetime-wrap, .event-location-wrap, .event-details-wrap').forEach((wrap) => {
+  // (the contact and the registration too, as on live: o-r-safety-series-journey-to-zero-smoke-5
+  // "Contact" with its name and e-mail, "Registration" with Register here)
+  el.querySelectorAll('.event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap').forEach((wrap) => {
     [...wrap.children].forEach((node) => {
+      if (node.closest('[data-corp-hidden="true"]')) return;
       if (/^H[1-6]$/.test(node.tagName)) {
         if (!text(node)) return;
         const h5 = doc.createElement('h5');
@@ -2785,7 +2788,11 @@ function eventDetail(el, ctx) {
         left.push(h5);
         return;
       }
-      const btns = [...node.querySelectorAll('a.btn[href]')];
+      // (not the page's own buttons: Print event details is a script, Add to calendar an AEM
+      // servlet, /bin/stryker/ical)
+      const btns = [...node.querySelectorAll('a.btn[href]')]
+        .filter((a) => !/^(#|\/bin\/)/.test(a.getAttribute('href')) && !a.closest('[data-corp-hidden="true"]'));
+      if (node.querySelector('a.btn[href]') && !btns.length) return;
       if (btns.length) {
         btns.forEach((a) => {
           const strong = doc.createElement('strong');

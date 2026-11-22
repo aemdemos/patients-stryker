@@ -785,8 +785,15 @@ var CustomImportScript = (() => {
     tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
-      const a = span.closest("a") || span.querySelector("a");
-      if (a) standalone.add(a);
+      const own = span.closest("a");
+      (own ? [own] : [...span.querySelectorAll("a[href]")]).forEach((a) => {
+        let wrapper = a.parentElement;
+        while (wrapper && wrapper !== span && wrapper.tagName === "SPAN" && squash(wrapper.textContent) === squash(a.textContent)) {
+          unwrap(wrapper);
+          wrapper = a.parentElement;
+        }
+        standalone.add(a);
+      });
     });
     const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
     root.querySelectorAll("a[href]").forEach((a) => {
@@ -5996,8 +6003,9 @@ var CustomImportScript = (() => {
       left.push(h2);
     }
     const blank2 = (node) => !text(node).replace(/\u00a0/g, "").trim();
-    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-details-wrap").forEach((wrap) => {
+    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap").forEach((wrap) => {
       [...wrap.children].forEach((node) => {
+        if (node.closest('[data-corp-hidden="true"]')) return;
         if (/^H[1-6]$/.test(node.tagName)) {
           if (!text(node)) return;
           const h5 = doc.createElement("h5");
@@ -6009,7 +6017,8 @@ var CustomImportScript = (() => {
           left.push(h5);
           return;
         }
-        const btns = [...node.querySelectorAll("a.btn[href]")];
+        const btns = [...node.querySelectorAll("a.btn[href]")].filter((a) => !/^(#|\/bin\/)/.test(a.getAttribute("href")) && !a.closest('[data-corp-hidden="true"]'));
+        if (node.querySelector("a.btn[href]") && !btns.length) return;
         if (btns.length) {
           btns.forEach((a) => {
             const strong = doc.createElement("strong");
