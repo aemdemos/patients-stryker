@@ -123,10 +123,13 @@ function markerBoxes(container) {
     const spacing = parseSpacing(tokens);
     // a coloured box (Box: Gold …): the cell colours' classes (blocks/columns/columns-corp.css)
     const colour = tokens.find((t) => /^(bg-[a-z-]+|dark)$/.test(t));
-    if ((spacing.length || colour) && run.length) {
+    // (Box: …, Shadow: the dimensional box's shadow)
+    const shadow = tokens.includes('shadow');
+    if ((spacing.length || colour || shadow) && run.length) {
       const box = document.createElement('div');
       box.className = 'corp-spacing-box';
       if (colour) box.classList.add('cell-bg', `cell-${colour}`);
+      if (shadow) box.classList.add('shadow-box');
       marker.after(box);
       box.append(...run);
       if (spacing.length) setBox(box, spacing, false, !!colour);

@@ -26,6 +26,7 @@
  *   :x1p75:…  :Gold::vw5p5:…                    a size as a value: × the surrounding size, or vw
  *   [[Gold,Title]…]  [[1.75×]…]                 the same as bracket tags (before the markers)
  *   Box: top 3%, sides 3%   …   Box end         a padded box inside text or a block cell
+ *   Box: White, Shadow, all 3%                  the same with a box colour and/or a shadow
  *   :blank-line:  ([[Blank line]])              an empty line of text (its own paragraph)
  *   Blank lines | 2                             a spacer section's blank lines (style spacer)
  *   Columns | 1 + 2                             a flex section's pieces per source column
@@ -223,12 +224,15 @@ function decorateBoxLines(main) {
     // a colour first (`Box: Gold, all 3%`, the Cell colours names)
     const colour = entries.length && BOX_COLOURS.includes(entries[0].toLowerCase())
       ? entries.shift().toLowerCase() : '';
+    // then `Shadow`: the dimensional box's shadow (`Box: White, Shadow, top 3%`)
+    const shadow = entries.length && entries[0].toLowerCase() === 'shadow' && !!entries.shift();
     // every entry must read as spacing, so an ordinary sentence starting `Box:` stays text
-    const valid = m && (colour || entries.length)
+    const valid = m && (colour || shadow || entries.length)
       && entries.every((entry) => spacingTokens(entry, 'padding').length);
     if (!/^box end$/i.test(line) && !valid) return;
     const tokens = valid ? [
       ...(colour ? [colour === 'dark' ? 'dark' : `bg-${colour}`] : []),
+      ...(shadow ? ['shadow'] : []),
       ...spacingTokens(entries.join(','), 'padding'),
     ] : [];
     const span = document.createElement('span');

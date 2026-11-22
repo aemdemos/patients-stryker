@@ -1979,6 +1979,13 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
 :where(body.corp) main .corp-spacing-box.cell-bg-dark-gold { --corp-cell-bg: var(--color-accent-link-hover); }
 :where(body.corp) main .corp-spacing-box.cell-bg-golden-gradient { --corp-cell-bg-image: var(--corp-gradient-golden); }
 
+/* a dimensional box among other content (Box: White, Shadow …): the shadow-box section style's
+   look (10px shadow at 30%, 10px margin; measured: about/governance/product-security CVD tabs) */
+:where(body.corp) main .corp-spacing-box.shadow-box {
+  margin: var(--space-block-s) var(--cell-margin-right, var(--space-block-s)) var(--space-block-s) var(--cell-margin-left, var(--space-block-s));
+  box-shadow: var(--shadow-soft);
+}
+
 /* dark boxes carry light text, as the dark cells */
 :where(body.corp) main .corp-spacing-box:is(.cell-bg-dark-gray, .cell-bg-dark-purple-gradient, .cell-bg-dark-blue-gradient, .cell-bg-dark-orange-gradient, .cell-dark) {
   color: var(--color-white);

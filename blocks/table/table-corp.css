@@ -5,13 +5,19 @@ body.corp .table.block table {
 
 /* striped: the www.stryker.com table component (.c-table, measured: about/patents/*,
    trademarks, governance/lifecycle-support, legal/convercent-global-privacy-statement) —
-   light grey odd rows, no rules, 10px / 8px cells, 20px lines */
-body.corp .table.block.striped table tbody tr {
+   light grey odd rows, no rules, 10px / 8px cells, 20px lines; a header row is the first
+   grey row (acute-care/products/symmetry-plus), so the body rows under it start white */
+body.corp .table.block.striped table :is(thead, tbody) tr {
   border: 0;
 }
 
-body.corp .table.block.striped tbody tr:nth-child(odd) {
+body.corp .table.block.striped.no-header tbody tr:nth-child(odd),
+body.corp .table.block.striped:not(.no-header) :is(thead tr, tbody tr:nth-child(even)) {
   background-color: var(--corp-table-stripe);
+}
+
+body.corp .table.block.striped:not(.no-header) tbody tr:nth-child(odd) {
+  background-color: transparent;
 }
 
 body.corp .table.block.striped table td {
