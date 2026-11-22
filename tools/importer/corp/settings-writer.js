@@ -328,12 +328,14 @@ export function convertReadable(root) {
     if (classes[0] === 'spacing' && p?.tagName === 'P' && p.childNodes.length === 1 && !span.textContent.trim()) {
       // (a box colour first: bg-gold → Gold, dark → Dark)
       const colour = /^(bg-[a-z-]+|dark)$/.test(classes[1] || '') ? classes[1] : '';
-      const tokens = classes.slice(colour ? 2 : 1);
+      // (then `shadow`: the dimensional box's shadow → Shadow)
+      const shadow = classes.includes('shadow');
+      const tokens = classes.slice(colour ? 2 : 1).filter((tk) => tk !== 'shadow');
       if (tokens.every((tk) => SPACING.test(tk))) {
         const f = formatSpacing(tokens, true);
-        const value = [colour ? label(colour.replace(/^bg-/, '')) : '', f.padding, f.margin]
+        const value = [colour ? label(colour.replace(/^bg-/, '')) : '', shadow ? 'Shadow' : '', f.padding, f.margin]
           .filter(Boolean).join(', ').replace(/padding /g, '');
-        p.textContent = tokens.length || colour ? `Box: ${value}` : 'Box end';
+        p.textContent = tokens.length || colour || shadow ? `Box: ${value}` : 'Box end';
         boxes += 1;
         return;
       }

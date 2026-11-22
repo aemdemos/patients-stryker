@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-lib-specialty.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-specialty.js
   var import_lib_specialty_exports = {};
   __export(import_lib_specialty_exports, {
     default: () => import_lib_specialty_default
   });
 
-  // corp/transformers/corp-sections.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // corp/transformers/patients-stryker-cleanup.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // corp/transformers/patients-stryker-dm-images.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp/corp-richtext.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -911,7 +911,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp/corp-section-builder.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1233,7 +1233,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // data/xf-index.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3382,7 +3382,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // xf-path-rule.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3398,7 +3398,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // xf-fragment-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3439,7 +3439,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp/corp-components.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3543,7 +3543,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // corp/parsers/hero-image-slide.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3635,7 +3635,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp/parsers/cards-corp-teaser.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3694,7 +3694,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // corp/parsers/video.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3722,14 +3722,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // corp-modal-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // data/dm-sets.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3748,7 +3748,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // corp/corp-component-handlers.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -3847,7 +3847,8 @@ var CustomImportScript = (() => {
     let open = false;
     return items.flatMap((it) => {
       const colour = colours ? ownColour(it) : "";
-      const tokens = it.type === "flow" ? [...colour ? [colour] : [], ...it.spacing || []] : [];
+      const shadow = colour && (it.styles || []).includes("shadow-box") ? ["shadow"] : [];
+      const tokens = it.type === "flow" ? [...colour ? [colour] : [], ...shadow, ...it.spacing || []] : [];
       const nodes = nodesOf(it);
       if (!nodes.length) return [];
       if (tokens.length) {
@@ -5358,7 +5359,8 @@ var CustomImportScript = (() => {
       h.textContent = text(caption);
       out.push({ type: "flow", role: "text", nodes: [h] });
     }
-    const variants = [...header ? [] : ["no-header"], ...extra];
+    const striped = el.matches(".c-table") || !!el.querySelector(".c-table") || !!el.closest(".c-table");
+    const variants = [.../* @__PURE__ */ new Set([...header ? [] : ["no-header"], ...extra, ...striped ? ["striped"] : []])];
     out.push({ type: "block", block: block(doc, variants.length ? `Table (${variants.join(", ")})` : "Table", rows) });
     return out;
   }
@@ -5987,7 +5989,8 @@ var CustomImportScript = (() => {
         if (link2 && text(line) === text(link2)) {
           const href = link2.getAttribute("href");
           const tel = href.match(/^tel:(.*)$/i);
-          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, text(link2)));
+          const linkText = link2.classList.contains("tel") ? `[[color-black]${text(link2)}]` : text(link2);
+          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, linkText));
         } else p.append(...contentCopy(line, doc).childNodes);
       });
       if (text(p)) details.push(p);
@@ -6005,6 +6008,187 @@ var CustomImportScript = (() => {
     }
     out.push({ type: "block", block: block(doc, "Columns (columns-50-50)", [cells]) });
     return out;
+  }
+  function groupList(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-grouplist") || el;
+    const linkList = (scope) => {
+      const links = [...scope.querySelectorAll("li a[href]")].filter((a) => text(a));
+      if (!links.length) return null;
+      const ul = doc.createElement("ul");
+      links.forEach((a) => {
+        const li = doc.createElement("li");
+        li.append(linkTo(doc, a.getAttribute("href"), text(a)));
+        ul.append(li);
+      });
+      return ul;
+    };
+    const lists = [...root.querySelectorAll(".list-container")];
+    const split = lists.length === 1 && !lists[0].querySelector("h3") && lists[0].querySelectorAll("ul").length > 1;
+    const out = [];
+    const title = root.querySelector(":scope > h2");
+    if (title && text(title)) out.push({ type: "flow", role: "text", nodes: [componentTitle(title, doc)] });
+    if (split) {
+      const cells2 = [...lists[0].querySelectorAll("ul")].map(linkList).filter(Boolean).map((ul) => [ul]);
+      if (!cells2.length) return [];
+      out.push({ type: "block", block: block(doc, "Columns (link-groups)", [cells2]) });
+      return out;
+    }
+    const cells = lists.map((list) => {
+      const nodes = [];
+      const h = list.querySelector("h3");
+      if (h && text(h)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text(h);
+        nodes.push(h3);
+      }
+      const ul = linkList(list);
+      if (ul) nodes.push(ul);
+      return nodes;
+    }).filter((nodes) => nodes.length);
+    if (!cells.length) return [];
+    const rows = [];
+    for (let i = 0; i < cells.length; i += 2) rows.push(cells.slice(i, i + 2));
+    if (rows[rows.length - 1].length < 2) rows[rows.length - 1].push("");
+    out.push({ type: "block", block: block(doc, "Columns (columns-50-50, link-groups)", rows) });
+    return out;
+  }
+  function testimonial(el, ctx) {
+    const { doc } = ctx;
+    const heading = el.querySelector(".testimonial-heading");
+    const message = el.querySelector(".banner-message");
+    if (!(heading && text(heading)) && !(message && text(message))) return [];
+    const tagged = (tag, tokens, from) => {
+      const node = doc.createElement(tag);
+      node.append(doc.createTextNode(`[[${tokens}]`), ...contentCopy(from, doc).childNodes, doc.createTextNode("]"));
+      node.normalize();
+      return node;
+    };
+    const nodes = [];
+    if (heading && text(heading)) nodes.push(tagged("h2", "size-1-14em", heading));
+    if (message && text(message)) nodes.push(tagged("p", "serif,size-4em", message));
+    const out = [{ type: "flow", role: "text", nodes }];
+    const cta = el.querySelector(".btn-container a.btn[href]");
+    if (cta && text(cta)) out.push({ type: "flow", role: "cta", nodes: [buttonNode(doc, cta, text(cta))] });
+    return out;
+  }
+  var SHARE_ICONS = {
+    facebook: "facebook",
+    linkedin: "linkedin",
+    email: "email",
+    "copy-url": "copy-link"
+  };
+  function socialSharing(el, ctx) {
+    const root = el.querySelector(".c-socialsharing") || el;
+    const icons = [...root.querySelectorAll("[data-platform]")].map((a) => SHARE_ICONS[a.getAttribute("data-platform")]).filter(Boolean);
+    if (!icons.length) return [];
+    const variants = [
+      ...root.classList.contains("syk-social-share-g") ? ["gray"] : [],
+      ...root.classList.contains("syk-social-share-ra") ? ["right"] : []
+    ];
+    const name = variants.length ? `Social Share Corp (${variants.join(", ")})` : "Social Share Corp";
+    return [{ type: "block", block: block(ctx.doc, name, [...new Set(icons)].map((i) => [`:${i}:`])) }];
+  }
+  var emptySlot = (el, ctx) => text(el) || el.querySelector("img, iframe, video") ? ctx.unknown(el) : [];
+  var EVENT_CALENDAR_PATHS = {
+    "/us/en/sports-medicine/calendar": "/us/en/global-events/sports-medicine",
+    "/us/en/training-and-education/training-and-education-calendar": "/us/en/global-events"
+  };
+  function eventCalendar(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-event") || el;
+    if (!root.querySelector("#eventCalendarWrap")) return emptySlot(el, ctx);
+    const page = new URL(ctx.source, SOURCE).pathname.replace(/\.html?$/, "");
+    const path = WebImporter.FileUtils.sanitizePath(EVENT_CALENDAR_PATHS[page] || page).replace(/\/index$/, "");
+    const title = root.querySelector(".title-container h2");
+    const rows = [["Path", path]];
+    if (title && text(title)) rows.push(["Title", text(title)]);
+    return [{ type: "block", block: block(doc, "Event Calendar Corp", rows) }];
+  }
+  function corporateContactUs(el, ctx) {
+    const { doc } = ctx;
+    const form = el.querySelector("form");
+    if (!form) return [];
+    const nodes = [];
+    const title = form.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    form.querySelectorAll("h4, h3").forEach((h) => {
+      if (!text(h)) return;
+      const copy = doc.createElement(h.tagName.toLowerCase());
+      copy.textContent = text(h);
+      nodes.push(copy);
+    });
+    ctx.report.notes.push("corporate contact form left out: needs its Marketo form ID");
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function pieChart(el, ctx) {
+    const value = (cls) => (el.querySelector(`input.${cls}`) || { value: "" }).value.trim();
+    const slices = [...el.querySelectorAll("select.chartData option")].map((option) => {
+      const [label, , colour] = text(option).split(/\s*\+\s*/);
+      return { label: (label || "").trim(), value: option.getAttribute("value"), colour: (colour || "").trim() };
+    }).filter((s) => s.label && s.value !== null);
+    if (!slices.length) return [];
+    const rows = [
+      ["Labels", value("dataLabel") && value("dataLabel") !== "none" ? "true" : "false"],
+      ["Height", Number(value("chartHeight")) > 0 ? value("chartHeight") : ""]
+    ].filter(([, v]) => v);
+    slices.forEach((s) => rows.push([s.label, s.value, s.colour]));
+    return [{
+      type: "own",
+      kind: "chart",
+      styles: [],
+      nodes: [block(ctx.doc, "Chart Corp (pie)", rows)]
+    }];
+  }
+  function searchPage(el, ctx) {
+    const { doc } = ctx;
+    const header = el.querySelector(".search-header");
+    if (!header) return [];
+    const nodes = [];
+    const h1 = header.querySelector("h1");
+    if (h1 && text(h1)) {
+      const h = doc.createElement("h1");
+      h.textContent = text(h1);
+      nodes.push(h);
+      ctx.h1 = true;
+    }
+    const h2 = header.querySelector("h2");
+    if (h2 && text(h2)) {
+      const h = doc.createElement("h2");
+      h.textContent = text(h2);
+      nodes.push(h);
+    }
+    const input = header.querySelector("input.search-control");
+    nodes.push(block(doc, "Search", [[input && input.getAttribute("placeholder") || "Search this site"]]));
+    const message = [...header.children].find((c) => c.tagName === "DIV" && c.querySelector("ul"));
+    if (message) {
+      [...message.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).forEach((n) => nodes.push(para(doc, doc.createTextNode(n.textContent.trim()))));
+      const ul = doc.createElement("ul");
+      message.querySelectorAll("li").forEach((li) => {
+        const item = doc.createElement("li");
+        item.textContent = text(li).replace(/^•\s*/, "");
+        ul.append(item);
+      });
+      nodes.push(ul);
+    }
+    return [
+      { type: "spacer", slots: 1 },
+      {
+        type: "own",
+        kind: "search",
+        styles: [],
+        nodes
+      },
+      { type: "spacer", slots: 1 }
+    ];
+  }
+  function geolocation(el, ctx) {
+    const a = el.querySelector("a.btn[href]");
+    return a && text(a) ? [{ type: "flow", role: "cta", nodes: [buttonNode(ctx.doc, a, text(a))] }] : [];
+  }
+  function siteMap(el, ctx) {
+    if (!el.querySelector("a[href]")) return [];
+    return [{ type: "block", block: block(ctx.doc, "Sitemap Corp", [["Path", "/us/en"]]) }];
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
@@ -6099,11 +6283,40 @@ var CustomImportScript = (() => {
     "c-cventComponent": cventCalendar,
     newsandannouncements: newsList,
     "c-newsandannouncements": newsList,
-    image: legacyImage
+    image: legacyImage,
+    // round 7: components seen without their AEM wrapper (or a _v1 one), group lists,
+    // testimonials, the featured content item (component-map: skip) and empty template slots
+    "c-resourcesanddownload": resources,
+    resourcesanddownload_v1: resources,
+    grouplist: groupList,
+    "c-grouplist": groupList,
+    testimonial,
+    "c-testimonial": testimonial,
+    featuredcontentitem: skip,
+    "c-featured-content-item": skip,
+    "c-title": (el, ctx) => text(el) ? titleComponent(el, ctx) : [],
+    "c-tabs": (el, ctx) => el.querySelector(".tabs-nav .tab-link") ? tabs(el, ctx) : emptySlot(el, ctx),
+    "c-banner-campaign": (el, ctx) => el.querySelector("img") ? bannerCampaign(el, ctx) : emptySlot(el, ctx),
+    eventcalendar: eventCalendar,
+    "c-event": eventCalendar,
+    corporatecontactus: corporateContactUs,
+    "c-corporate-contact-us": corporateContactUs,
+    geolocation,
+    "c-geolocation": geolocation,
+    "c-ourcompany": emptySlot,
+    "c-carousel-item": emptySlot,
+    pieChart,
+    "search-page": searchPage,
+    sitemap: siteMap,
+    "c-map": siteMap,
+    socialsharing: socialSharing,
+    "c-socialsharing": socialSharing,
+    featuredcontentcontext: emptySlot,
+    "c-feature-content-context": emptySlot
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // corp/corp-page.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -6187,7 +6400,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // ../../scripts/span-tags.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -6297,7 +6510,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../scripts/corp-settings.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -6320,7 +6533,7 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // corp/colon-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -6479,7 +6692,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // corp/settings-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -6762,11 +6975,12 @@ var CustomImportScript = (() => {
       const p = span.parentElement;
       if (classes[0] === "spacing" && (p == null ? void 0 : p.tagName) === "P" && p.childNodes.length === 1 && !span.textContent.trim()) {
         const colour = /^(bg-[a-z-]+|dark)$/.test(classes[1] || "") ? classes[1] : "";
-        const tokens = classes.slice(colour ? 2 : 1);
+        const shadow = classes.includes("shadow");
+        const tokens = classes.slice(colour ? 2 : 1).filter((tk) => tk !== "shadow");
         if (tokens.every((tk) => SPACING.test(tk))) {
           const f = formatSpacing(tokens, true);
-          const value = [colour ? label(colour.replace(/^bg-/, "")) : "", f.padding, f.margin].filter(Boolean).join(", ").replace(/padding /g, "");
-          p.textContent = tokens.length || colour ? `Box: ${value}` : "Box end";
+          const value = [colour ? label(colour.replace(/^bg-/, "")) : "", shadow ? "Shadow" : "", f.padding, f.margin].filter(Boolean).join(", ").replace(/padding /g, "");
+          p.textContent = tokens.length || colour || shadow ? `Box: ${value}` : "Box end";
           boxes += 1;
           return;
         }
@@ -6868,7 +7082,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // corp/root.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -6881,9 +7095,37 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp/corp-import.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/oversized-images.js
+  var oversized_images_default = {
+    "https://media-assets.stryker.com/is/content/stryker/AdobeStock_443793332-v3?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/AdobeStock_443793332-v3?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/ProCuity-scale?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/ProCuity-scale?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_1410$": "https://media-assets.stryker.com/is/image/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_1410$",
+    "https://media-assets.stryker.com/is/content/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_720$": "https://media-assets.stryker.com/is/image/stryker/STI68%20-%20NAV%20Q%204K%20Looping%2010-4-21_1?$max_width_720$",
+    "https://media-assets.stryker.com/is/content/stryker/globe-ar-sm?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/globe-ar-sm?$max_width_1440$",
+    "https://media-assets.stryker.com/is/content/stryker/reel%20for%20website_1?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/reel%20for%20website_1?$max_width_1440$",
+    "https://www.stryker.com/content/dam/stryker/about/news/2021/images/T7%20helmet.png": "https://www.stryker.com/content/dam/stryker/about/news/2021/images/T7%20helmet.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/about/news/2022/stryker-opens-the-or-of-the-future-for-customers-to-experience-tomorrow%E2%80%99s-or-today/OR%20of%20the%20Future%20-%20Feature%20Image.png": "https://www.stryker.com/content/dam/stryker/about/news/2022/stryker-opens-the-or-of-the-future-for-customers-to-experience-tomorrow%E2%80%99s-or-today/OR%20of%20the%20Future%20-%20Feature%20Image.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/ent/products/bioresorbable-dressings/images/XeroGel%20product%20copy.psd": "https://www.stryker.com/content/dam/stryker/ent/products/bioresorbable-dressings/images/XeroGel%20product%20copy.psd/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+    "https://www.stryker.com/content/dam/stryker/navigation/products/quantum/images/Quantum_grey%20cable_battery.psd": "https://www.stryker.com/content/dam/stryker/navigation/products/quantum/images/Quantum_grey%20cable_battery.psd/jcr:content/renditions/cq5dam.web.1280.1280.jpeg",
+    "https://www.stryker.com/content/dam/stryker/portfolios/medical-surgical/personal-protection-equipment/images/Andrae-Full-Toga.png": "https://www.stryker.com/content/dam/stryker/portfolios/medical-surgical/personal-protection-equipment/images/Andrae-Full-Toga.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/portfolios/vascular/venous-disease/images/vascular-disease-thumbnail-2026.png": "https://www.stryker.com/content/dam/stryker/portfolios/vascular/venous-disease/images/vascular-disease-thumbnail-2026.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/spine/products/q-guidance-system/images/Q%20Guidance%20with%20SG5%20Screw%20Planning%20Screen.png": "https://www.stryker.com/content/dam/stryker/spine/products/q-guidance-system/images/Q%20Guidance%20with%20SG5%20Screw%20Planning%20Screen.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/surgical/products/sterizone-vp4/images/sterizone_cut_out_open.png": "https://www.stryker.com/content/dam/stryker/surgical/products/sterizone-vp4/images/sterizone_cut_out_open.png/jcr:content/renditions/cq5dam.web.1280.1280.png",
+    "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png": "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png/jcr:content/renditions/cq5dam.web.1280.1280.png"
+  };
+
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
+  function swapOversizedImages(main, report) {
+    main.querySelectorAll("img[src]").forEach((img) => {
+      const smaller = oversized_images_default[img.getAttribute("src")];
+      if (!smaller) return;
+      img.setAttribute("src", smaller);
+      (report.notes || (report.notes = [])).push(`image over 20 MB \u2192 smaller version${smaller.includes("/is/image/") ? " (a still, if it was animated)" : ""}: ${smaller.split("?")[0].split("/").pop()}`);
+    });
+  }
   function publishedDate(document2) {
     const input = document2.querySelector("#hiddenPublishedDate");
     const m = (input && input.getAttribute("value") || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
@@ -6893,7 +7135,8 @@ var CustomImportScript = (() => {
     name,
     description,
     urls,
-    facts: PAGE_FACTS
+    facts: PAGE_FACTS,
+    metadata: extraMetadata = {}
   }) {
     const PAGE_TEMPLATE = {
       name,
@@ -6935,6 +7178,7 @@ var CustomImportScript = (() => {
         if (keywords) meta.Keywords = keywords;
         meta.site = "corp";
         meta.template = name;
+        Object.assign(meta, extraMetadata);
         if (published) meta.published = published;
         if (hcp) meta["hcp-banner"] = "true";
         const facts = PAGE_FACTS[pagePath(params.originalURL)];
@@ -6951,6 +7195,7 @@ var CustomImportScript = (() => {
         main.append(WebImporter.Blocks.getMetadataBlock(document2, meta));
         WebImporter.rules.transformBackgroundImages(main, document2);
         WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+        swapOversizedImages(main, report);
         writeReadableSettings(main, document2);
         rootFragmentLinks(main);
         const path = rooted(WebImporter.FileUtils.sanitizePath(pagePath(params.originalURL)));
@@ -6969,7 +7214,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // data/page-facts/specialty.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/page-facts/specialty.js
   var specialty_default = {
     "/us/en/portfolios/medical-surgical-equipment/bedframes/icu-critical-care-beds": { "template": "specialty", "metadata": { "title": "ICU Critical Care beds", "pageTitle": null, "description": "Helping patients who need immediate interventions.", "image": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouchBed.jpg", "imageAlt": null, "tags": ["stryker:content-type/specialty", "stryker:capability/bedframes", "stryker:portfolio/medical-and-surgical-equipment", "stryker:specialty/icu-critical-care-beds", "stryker:content-type/hcp_content"], "originallyPublished": null, "lastPublished": "2018-11-19T15:30:52.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
     "/us/en/portfolios/medical-surgical-equipment/bedframes/medical-and-surgical-beds": { "template": "specialty", "metadata": { "title": "Medical and surgical beds", "pageTitle": null, "description": null, "image": "/content/dam/stryker/acute-care/products/s3/images/Thumbnail_S3Bed.jpg", "imageAlt": null, "tags": ["stryker:content-type/specialty", "stryker:capability/bedframes", "stryker:specialty/medical-surgical-beds", "stryker:portfolio/medical-and-surgical-equipment", "stryker:content-type/hcp_content"], "originallyPublished": null, "lastPublished": "2018-11-19T15:30:52.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] },
@@ -7108,7 +7353,7 @@ var CustomImportScript = (() => {
     "/us/en/portfolios/vascular/venous-disease/pulmonary-embolism-thrombectomy": { "template": "specialty", "metadata": { "title": "Pulmonary Embolism (PE) Thrombectomy", "pageTitle": null, "description": "Products designed to quickly remove life-threatening clots when minutes matter most.", "image": "/content/dam/stryker/portfolios/vascular/venous-disease/images/Pulmonary-embolism-666x450.jpg", "imageAlt": null, "tags": ["stryker:content-type/specialty", "stryker:capability/venous-disease", "stryker:portfolio/vascular", "stryker:specialty/pulmonary-embolism-thrombectomy-pe", "stryker:content-type/hcp_content"], "originallyPublished": "2026-07-29T21:07:31.000Z", "lastPublished": "2026-07-29T21:16:32.000Z", "contentID": "PRO-3806-USA-EN-v1" }, "anchors": [{ "id": "title", "title": null, "hidden": true, "type": "section-title", "area": "filteredcontenttypegrid" }], "disclaimer": "<p><b>Indications For Use</b></p>\r\n<p>The FlowTriever Retrieval/Aspiration System is indicated for (1) The non-surgical removal of emboli and thrombi from blood vessels. (2) Injection, infusion and/or aspiration of contrast media and other \uFB02uids into or from a blood vessel. The FlowTriever Retrieval/Aspiration System is intended for use in the peripheral vasculature and for the treatment of pulmonary embolism. The Triever Catheters are indicated for (1) The non-surgical removal of emboli and thrombi from blood vessels. (2) Injection, infusion, and/or aspiration of contrast media and other \uFB02uids into or from a blood vessel. The Triever Catheters are intended for use in the peripheral vasculature and for the treatment of pulmonary embolism. The Triever Catheters are also intended for use in treating clot in transit in the right atrium, but not in conjunction with the FlowTriever Catheters. The FlowTriever2 Catheter is indicated for (1) The non-surgical removal of emboli and thrombi from peripheral blood vessels. (2) Injection, infusion and/or aspiration of contrast media and other \uFB02uids into or from a blood vessel. The FlowTriever2 Catheter is intended for use in the peripheral vasculature and for the treatment of pulmonary embolism (PE). The Triever20 Curve Catheter is used coaxially within the Triever24 Catheter for (1) The non-surgical removal of emboli and thrombi from blood vessels. (2) Injection, infusion, and/ or aspiration of contrast media and other \uFB02uids into or from a blood vessel. The Triever20 Curve Catheter is intended for use in the peripheral vasculature and for the treatment of pulmonary embolism. The Triever20 Curve Catheter is not indicated for use with the FlowTriever Catheters. The Triever20 Curve Catheter is also intended for use in treating clot in transit in the right atrium, but not in conjunction with the FlowTriever Catheters. The Triever20 Curve Catheter must be used within the Triever24 Catheter. The Triever16 Curve Catheter is indicated for (1) The non-surgical removal of emboli and thrombi from blood vessels. (2) Injection, infusion, and/or aspiration of contrast media and other \uFB02uids into or from a blood vessel. The Triever16 Curve Catheter is intended for use in the peripheral vasculature and for the treatment of pulmonary embolism. The Triever16 Curve Catheter is not indicated for use with the FlowTriever Catheters. The Triever16 Curve Catheter is also intended for use in treating clot in transit in the right atrium but not in conjunction with the FlowTriever Catheters. The FlowSaver Blood Return System is used with Inari Medical catheters and sheaths for autologous blood transfusion.</p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and Contraindications prior to use of the product.&nbsp;</p>\r\n<p>Caution: Federal (USA) law restricts this device to sale by or on the order of a physician.</p>", "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // import-lib-specialty.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-specialty.js
   var import_lib_specialty_default = createCorpImport({
     name: "specialty",
     description: "www.stryker.com specialty pages, first pass with the corp rule library.",

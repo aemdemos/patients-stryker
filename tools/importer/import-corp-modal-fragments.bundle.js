@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-corp-modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-modal-fragments.js
   var import_corp_modal_fragments_exports = {};
   __export(import_corp_modal_fragments_exports, {
     default: () => import_corp_modal_fragments_default
   });
 
-  // corp/corp-richtext.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -595,7 +595,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp/corp-section-builder.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -883,7 +883,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // corp/corp-components.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -935,7 +935,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // corp/parsers/hero-image-slide.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -1027,7 +1027,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // corp/parsers/cards-corp-teaser.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -1086,7 +1086,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // corp/parsers/video.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -1114,14 +1114,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // corp-modal-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
   var documentName = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // data/dm-sets.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -1140,7 +1140,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // corp/corp-component-handlers.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -1239,7 +1239,8 @@ var CustomImportScript = (() => {
     let open = false;
     return items.flatMap((it) => {
       const colour = colours ? ownColour(it) : "";
-      const tokens = it.type === "flow" ? [...colour ? [colour] : [], ...it.spacing || []] : [];
+      const shadow = colour && (it.styles || []).includes("shadow-box") ? ["shadow"] : [];
+      const tokens = it.type === "flow" ? [...colour ? [colour] : [], ...shadow, ...it.spacing || []] : [];
       const nodes = nodesOf(it);
       if (!nodes.length) return [];
       if (tokens.length) {
@@ -2750,7 +2751,8 @@ var CustomImportScript = (() => {
       h.textContent = text(caption);
       out.push({ type: "flow", role: "text", nodes: [h] });
     }
-    const variants = [...header ? [] : ["no-header"], ...extra];
+    const striped = el.matches(".c-table") || !!el.querySelector(".c-table") || !!el.closest(".c-table");
+    const variants = [.../* @__PURE__ */ new Set([...header ? [] : ["no-header"], ...extra, ...striped ? ["striped"] : []])];
     out.push({ type: "block", block: block(doc, variants.length ? `Table (${variants.join(", ")})` : "Table", rows) });
     return out;
   }
@@ -3411,7 +3413,8 @@ var CustomImportScript = (() => {
         if (link2 && text(line) === text(link2)) {
           const href = link2.getAttribute("href");
           const tel = href.match(/^tel:(.*)$/i);
-          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, text(link2)));
+          const linkText = link2.classList.contains("tel") ? `[[color-black]${text(link2)}]` : text(link2);
+          p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, "")}` : href, linkText));
         } else p.append(...contentCopy(line, doc).childNodes);
       });
       if (text(p)) details.push(p);
@@ -3429,6 +3432,187 @@ var CustomImportScript = (() => {
     }
     out.push({ type: "block", block: block(doc, "Columns (columns-50-50)", [cells]) });
     return out;
+  }
+  function groupList(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-grouplist") || el;
+    const linkList = (scope) => {
+      const links = [...scope.querySelectorAll("li a[href]")].filter((a) => text(a));
+      if (!links.length) return null;
+      const ul = doc.createElement("ul");
+      links.forEach((a) => {
+        const li = doc.createElement("li");
+        li.append(linkTo(doc, a.getAttribute("href"), text(a)));
+        ul.append(li);
+      });
+      return ul;
+    };
+    const lists = [...root.querySelectorAll(".list-container")];
+    const split = lists.length === 1 && !lists[0].querySelector("h3") && lists[0].querySelectorAll("ul").length > 1;
+    const out = [];
+    const title = root.querySelector(":scope > h2");
+    if (title && text(title)) out.push({ type: "flow", role: "text", nodes: [componentTitle(title, doc)] });
+    if (split) {
+      const cells2 = [...lists[0].querySelectorAll("ul")].map(linkList).filter(Boolean).map((ul) => [ul]);
+      if (!cells2.length) return [];
+      out.push({ type: "block", block: block(doc, "Columns (link-groups)", [cells2]) });
+      return out;
+    }
+    const cells = lists.map((list) => {
+      const nodes = [];
+      const h = list.querySelector("h3");
+      if (h && text(h)) {
+        const h3 = doc.createElement("h3");
+        h3.textContent = text(h);
+        nodes.push(h3);
+      }
+      const ul = linkList(list);
+      if (ul) nodes.push(ul);
+      return nodes;
+    }).filter((nodes) => nodes.length);
+    if (!cells.length) return [];
+    const rows = [];
+    for (let i = 0; i < cells.length; i += 2) rows.push(cells.slice(i, i + 2));
+    if (rows[rows.length - 1].length < 2) rows[rows.length - 1].push("");
+    out.push({ type: "block", block: block(doc, "Columns (columns-50-50, link-groups)", rows) });
+    return out;
+  }
+  function testimonial(el, ctx) {
+    const { doc } = ctx;
+    const heading = el.querySelector(".testimonial-heading");
+    const message = el.querySelector(".banner-message");
+    if (!(heading && text(heading)) && !(message && text(message))) return [];
+    const tagged = (tag, tokens, from) => {
+      const node = doc.createElement(tag);
+      node.append(doc.createTextNode(`[[${tokens}]`), ...contentCopy(from, doc).childNodes, doc.createTextNode("]"));
+      node.normalize();
+      return node;
+    };
+    const nodes = [];
+    if (heading && text(heading)) nodes.push(tagged("h2", "size-1-14em", heading));
+    if (message && text(message)) nodes.push(tagged("p", "serif,size-4em", message));
+    const out = [{ type: "flow", role: "text", nodes }];
+    const cta = el.querySelector(".btn-container a.btn[href]");
+    if (cta && text(cta)) out.push({ type: "flow", role: "cta", nodes: [buttonNode(doc, cta, text(cta))] });
+    return out;
+  }
+  var SHARE_ICONS = {
+    facebook: "facebook",
+    linkedin: "linkedin",
+    email: "email",
+    "copy-url": "copy-link"
+  };
+  function socialSharing(el, ctx) {
+    const root = el.querySelector(".c-socialsharing") || el;
+    const icons = [...root.querySelectorAll("[data-platform]")].map((a) => SHARE_ICONS[a.getAttribute("data-platform")]).filter(Boolean);
+    if (!icons.length) return [];
+    const variants = [
+      ...root.classList.contains("syk-social-share-g") ? ["gray"] : [],
+      ...root.classList.contains("syk-social-share-ra") ? ["right"] : []
+    ];
+    const name = variants.length ? `Social Share Corp (${variants.join(", ")})` : "Social Share Corp";
+    return [{ type: "block", block: block(ctx.doc, name, [...new Set(icons)].map((i) => [`:${i}:`])) }];
+  }
+  var emptySlot = (el, ctx) => text(el) || el.querySelector("img, iframe, video") ? ctx.unknown(el) : [];
+  var EVENT_CALENDAR_PATHS = {
+    "/us/en/sports-medicine/calendar": "/us/en/global-events/sports-medicine",
+    "/us/en/training-and-education/training-and-education-calendar": "/us/en/global-events"
+  };
+  function eventCalendar(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-event") || el;
+    if (!root.querySelector("#eventCalendarWrap")) return emptySlot(el, ctx);
+    const page = new URL(ctx.source, SOURCE).pathname.replace(/\.html?$/, "");
+    const path = WebImporter.FileUtils.sanitizePath(EVENT_CALENDAR_PATHS[page] || page).replace(/\/index$/, "");
+    const title = root.querySelector(".title-container h2");
+    const rows = [["Path", path]];
+    if (title && text(title)) rows.push(["Title", text(title)]);
+    return [{ type: "block", block: block(doc, "Event Calendar Corp", rows) }];
+  }
+  function corporateContactUs(el, ctx) {
+    const { doc } = ctx;
+    const form = el.querySelector("form");
+    if (!form) return [];
+    const nodes = [];
+    const title = form.querySelector("h2");
+    if (title && text(title)) nodes.push(componentTitle(title, doc));
+    form.querySelectorAll("h4, h3").forEach((h) => {
+      if (!text(h)) return;
+      const copy = doc.createElement(h.tagName.toLowerCase());
+      copy.textContent = text(h);
+      nodes.push(copy);
+    });
+    ctx.report.notes.push("corporate contact form left out: needs its Marketo form ID");
+    return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
+  }
+  function pieChart(el, ctx) {
+    const value = (cls) => (el.querySelector(`input.${cls}`) || { value: "" }).value.trim();
+    const slices = [...el.querySelectorAll("select.chartData option")].map((option) => {
+      const [label, , colour] = text(option).split(/\s*\+\s*/);
+      return { label: (label || "").trim(), value: option.getAttribute("value"), colour: (colour || "").trim() };
+    }).filter((s) => s.label && s.value !== null);
+    if (!slices.length) return [];
+    const rows = [
+      ["Labels", value("dataLabel") && value("dataLabel") !== "none" ? "true" : "false"],
+      ["Height", Number(value("chartHeight")) > 0 ? value("chartHeight") : ""]
+    ].filter(([, v]) => v);
+    slices.forEach((s) => rows.push([s.label, s.value, s.colour]));
+    return [{
+      type: "own",
+      kind: "chart",
+      styles: [],
+      nodes: [block(ctx.doc, "Chart Corp (pie)", rows)]
+    }];
+  }
+  function searchPage(el, ctx) {
+    const { doc } = ctx;
+    const header = el.querySelector(".search-header");
+    if (!header) return [];
+    const nodes = [];
+    const h1 = header.querySelector("h1");
+    if (h1 && text(h1)) {
+      const h = doc.createElement("h1");
+      h.textContent = text(h1);
+      nodes.push(h);
+      ctx.h1 = true;
+    }
+    const h2 = header.querySelector("h2");
+    if (h2 && text(h2)) {
+      const h = doc.createElement("h2");
+      h.textContent = text(h2);
+      nodes.push(h);
+    }
+    const input = header.querySelector("input.search-control");
+    nodes.push(block(doc, "Search", [[input && input.getAttribute("placeholder") || "Search this site"]]));
+    const message = [...header.children].find((c) => c.tagName === "DIV" && c.querySelector("ul"));
+    if (message) {
+      [...message.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim()).forEach((n) => nodes.push(para(doc, doc.createTextNode(n.textContent.trim()))));
+      const ul = doc.createElement("ul");
+      message.querySelectorAll("li").forEach((li) => {
+        const item = doc.createElement("li");
+        item.textContent = text(li).replace(/^•\s*/, "");
+        ul.append(item);
+      });
+      nodes.push(ul);
+    }
+    return [
+      { type: "spacer", slots: 1 },
+      {
+        type: "own",
+        kind: "search",
+        styles: [],
+        nodes
+      },
+      { type: "spacer", slots: 1 }
+    ];
+  }
+  function geolocation(el, ctx) {
+    const a = el.querySelector("a.btn[href]");
+    return a && text(a) ? [{ type: "flow", role: "cta", nodes: [buttonNode(ctx.doc, a, text(a))] }] : [];
+  }
+  function siteMap(el, ctx) {
+    if (!el.querySelector("a[href]")) return [];
+    return [{ type: "block", block: block(ctx.doc, "Sitemap Corp", [["Path", "/us/en"]]) }];
   }
   var COMPONENTS = {
     carouselslidegroup: carousel,
@@ -3523,11 +3707,40 @@ var CustomImportScript = (() => {
     "c-cventComponent": cventCalendar,
     newsandannouncements: newsList,
     "c-newsandannouncements": newsList,
-    image: legacyImage
+    image: legacyImage,
+    // round 7: components seen without their AEM wrapper (or a _v1 one), group lists,
+    // testimonials, the featured content item (component-map: skip) and empty template slots
+    "c-resourcesanddownload": resources,
+    resourcesanddownload_v1: resources,
+    grouplist: groupList,
+    "c-grouplist": groupList,
+    testimonial,
+    "c-testimonial": testimonial,
+    featuredcontentitem: skip,
+    "c-featured-content-item": skip,
+    "c-title": (el, ctx) => text(el) ? titleComponent(el, ctx) : [],
+    "c-tabs": (el, ctx) => el.querySelector(".tabs-nav .tab-link") ? tabs(el, ctx) : emptySlot(el, ctx),
+    "c-banner-campaign": (el, ctx) => el.querySelector("img") ? bannerCampaign(el, ctx) : emptySlot(el, ctx),
+    eventcalendar: eventCalendar,
+    "c-event": eventCalendar,
+    corporatecontactus: corporateContactUs,
+    "c-corporate-contact-us": corporateContactUs,
+    geolocation,
+    "c-geolocation": geolocation,
+    "c-ourcompany": emptySlot,
+    "c-carousel-item": emptySlot,
+    pieChart,
+    "search-page": searchPage,
+    sitemap: siteMap,
+    "c-map": siteMap,
+    socialsharing: socialSharing,
+    "c-socialsharing": socialSharing,
+    featuredcontentcontext: emptySlot,
+    "c-feature-content-context": emptySlot
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // corp/corp-page.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
   function rewriteCorpLinks(element) {
     element.querySelectorAll("a[href]").forEach((a) => {
       const href = a.getAttribute("href");
@@ -3536,7 +3749,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../scripts/span-tags.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -3646,7 +3859,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // ../../scripts/corp-settings.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -3669,7 +3882,7 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // corp/colon-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -3828,7 +4041,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // corp/settings-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -4111,11 +4324,12 @@ var CustomImportScript = (() => {
       const p = span.parentElement;
       if (classes[0] === "spacing" && (p == null ? void 0 : p.tagName) === "P" && p.childNodes.length === 1 && !span.textContent.trim()) {
         const colour = /^(bg-[a-z-]+|dark)$/.test(classes[1] || "") ? classes[1] : "";
-        const tokens = classes.slice(colour ? 2 : 1);
+        const shadow = classes.includes("shadow");
+        const tokens = classes.slice(colour ? 2 : 1).filter((tk) => tk !== "shadow");
         if (tokens.every((tk) => SPACING.test(tk))) {
           const f = formatSpacing(tokens, true);
-          const value = [colour ? label(colour.replace(/^bg-/, "")) : "", f.padding, f.margin].filter(Boolean).join(", ").replace(/padding /g, "");
-          p.textContent = tokens.length || colour ? `Box: ${value}` : "Box end";
+          const value = [colour ? label(colour.replace(/^bg-/, "")) : "", shadow ? "Shadow" : "", f.padding, f.margin].filter(Boolean).join(", ").replace(/padding /g, "");
+          p.textContent = tokens.length || colour || shadow ? `Box: ${value}` : "Box end";
           boxes += 1;
           return;
         }
@@ -4217,7 +4431,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // corp/root.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -4230,7 +4444,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // corp/modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/modal-fragments.js
   var modal_fragments_default = {
     transform: (payload) => {
       const { document: document2, url, params } = payload;
@@ -4262,7 +4476,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // import-corp-modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-modal-fragments.js
   var import_corp_modal_fragments_default = modal_fragments_default;
   return __toCommonJS(import_corp_modal_fragments_exports);
 })();

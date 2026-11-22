@@ -14,4 +14,6 @@ export default createCorpImport({
     'https://www.stryker.com/us/en/search.html',
   ],
   facts: PAGE_FACTS,
+  // the search page reuses the patients search page's theme (AGENTS.md, corp templates)
+  metadata: { theme: 'search' },
 });

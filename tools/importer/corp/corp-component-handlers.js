@@ -155,7 +155,9 @@ function markedNodes(items, nodesOf, doc, { colours = false } = {}) {
   let open = false;
   return items.flatMap((it) => {
     const colour = colours ? ownColour(it) : '';
-    const tokens = it.type === 'flow' ? [...(colour ? [colour] : []), ...(it.spacing || [])] : [];
+    // (a dimensional box keeps its shadow: Box: White, Shadow … — product-security's CVD tabs)
+    const shadow = colour && (it.styles || []).includes('shadow-box') ? ['shadow'] : [];
+    const tokens = it.type === 'flow' ? [...(colour ? [colour] : []), ...shadow, ...(it.spacing || [])] : [];
     const nodes = nodesOf(it);
     if (!nodes.length) return [];
     if (tokens.length) {
@@ -2037,7 +2039,10 @@ function table(el, ctx, extra = []) {
     h.textContent = text(caption);
     out.push({ type: 'flow', role: 'text', nodes: [h] });
   }
-  const variants = [...(header ? [] : ['no-header']), ...extra];
+  // the stryker.com table component (.c-table) is striped everywhere (measured: patents,
+  // lifecycle-support, symmetry-plus, tmj-concepts, lp15-acpa)
+  const striped = el.matches('.c-table') || !!el.querySelector('.c-table') || !!el.closest('.c-table');
+  const variants = [...new Set([...(header ? [] : ['no-header']), ...extra, ...(striped ? ['striped'] : [])])];
   out.push({ type: 'block', block: block(doc, variants.length ? `Table (${variants.join(', ')})` : 'Table', rows) });
   return out;
 }
@@ -2879,7 +2884,10 @@ function contactUs(el, ctx) {
         // (a phone link's number only: tel:269%20488%207419%20%20Fax → tel:2694887419)
         const href = link.getAttribute('href');
         const tel = href.match(/^tel:(.*)$/i);
-        p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, text(link)));
+        // (the contact phone links are black on the source: .c-contactus .contact-group a.tel;
+        // the black-link colour tag, as the rich-text rules write it)
+        const linkText = link.classList.contains('tel') ? `[[color-black]${text(link)}]` : text(link);
+        p.append(linkTo(doc, tel ? `tel:${decodeURIComponent(tel[1]).replace(/[^\d+]/g, '')}` : href, linkText));
       } else p.append(...contentCopy(line, doc).childNodes);
     });
     if (text(p)) details.push(p);
@@ -2905,6 +2913,236 @@ function contactUs(el, ctx) {
   }
   out.push({ type: 'block', block: block(doc, 'Columns (columns-50-50)', [cells]) });
   return out;
+}
+
+/**
+ * Group list (c-grouplist) → its title (Heading 2, Underline), then Columns (link-groups) as
+ * the component-map says. Titled lists (.list-container with a Heading 3, half width on the
+ * source: tech-support): one cell per list, its Heading 3 and its links, two cells a row
+ * (columns-50-50). An untitled list split in columns on the source (one full-width container
+ * with 4 col-md-3 lists, /us/en/about "Our businesses"): one cell per column, one row.
+ */
+function groupList(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-grouplist') || el;
+  const linkList = (scope) => {
+    const links = [...scope.querySelectorAll('li a[href]')].filter((a) => text(a));
+    if (!links.length) return null;
+    const ul = doc.createElement('ul');
+    links.forEach((a) => {
+      const li = doc.createElement('li');
+      li.append(linkTo(doc, a.getAttribute('href'), text(a)));
+      ul.append(li);
+    });
+    return ul;
+  };
+  const lists = [...root.querySelectorAll('.list-container')];
+  const split = lists.length === 1 && !lists[0].querySelector('h3')
+    && lists[0].querySelectorAll('ul').length > 1;
+  const out = [];
+  const title = root.querySelector(':scope > h2');
+  if (title && text(title)) out.push({ type: 'flow', role: 'text', nodes: [componentTitle(title, doc)] });
+  if (split) {
+    const cells = [...lists[0].querySelectorAll('ul')].map(linkList).filter(Boolean).map((ul) => [ul]);
+    if (!cells.length) return [];
+    out.push({ type: 'block', block: block(doc, 'Columns (link-groups)', [cells]) });
+    return out;
+  }
+  const cells = lists.map((list) => {
+    const nodes = [];
+    const h = list.querySelector('h3');
+    if (h && text(h)) {
+      const h3 = doc.createElement('h3');
+      h3.textContent = text(h);
+      nodes.push(h3);
+    }
+    const ul = linkList(list);
+    if (ul) nodes.push(ul);
+    return nodes;
+  }).filter((nodes) => nodes.length);
+  if (!cells.length) return [];
+  const rows = [];
+  for (let i = 0; i < cells.length; i += 2) rows.push(cells.slice(i, i + 2));
+  if (rows[rows.length - 1].length < 2) rows[rows.length - 1].push('');
+  out.push({ type: 'block', block: block(doc, 'Columns (columns-50-50, link-groups)', rows) });
+  return out;
+}
+
+/**
+ * Testimonial (c-testimonial, e.g. /us/en/about "History") → default content (component-map):
+ * the heading as a Heading 2 at 28px (1.14 × the corp 24.5px Heading 2), the banner message in
+ * the serif at 56px (4 × the copy) as inline size tags (a paragraph's copy size stops at 2.5×),
+ * then the button. Its band colour is the section's (the full-bleed panel around it).
+ */
+function testimonial(el, ctx) {
+  const { doc } = ctx;
+  const heading = el.querySelector('.testimonial-heading');
+  const message = el.querySelector('.banner-message');
+  if (!(heading && text(heading)) && !(message && text(message))) return [];
+  const tagged = (tag, tokens, from) => {
+    const node = doc.createElement(tag);
+    node.append(doc.createTextNode(`[[${tokens}]`), ...contentCopy(from, doc).childNodes, doc.createTextNode(']'));
+    node.normalize();
+    return node;
+  };
+  const nodes = [];
+  if (heading && text(heading)) nodes.push(tagged('h2', 'size-1-14em', heading));
+  if (message && text(message)) nodes.push(tagged('p', 'serif,size-4em', message));
+  const out = [{ type: 'flow', role: 'text', nodes }];
+  const cta = el.querySelector('.btn-container a.btn[href]');
+  if (cta && text(cta)) out.push({ type: 'flow', role: 'cta', nodes: [buttonNode(doc, cta, text(cta))] });
+  return out;
+}
+
+/* share platforms (data-platform) → the Social Share Corp icons */
+const SHARE_ICONS = {
+  facebook: 'facebook', linkedin: 'linkedin', email: 'email', 'copy-url': 'copy-link',
+};
+
+/**
+ * Social sharing (c-socialsharing, news articles) → Social Share Corp (component-map): one
+ * `:icon:` row per platform in the source order; syk-social-share-g → gray,
+ * syk-social-share-ra → right.
+ */
+function socialSharing(el, ctx) {
+  const root = el.querySelector('.c-socialsharing') || el;
+  const icons = [...root.querySelectorAll('[data-platform]')]
+    .map((a) => SHARE_ICONS[a.getAttribute('data-platform')]).filter(Boolean);
+  if (!icons.length) return [];
+  const variants = [
+    ...(root.classList.contains('syk-social-share-g') ? ['gray'] : []),
+    ...(root.classList.contains('syk-social-share-ra') ? ['right'] : []),
+  ];
+  const name = variants.length ? `Social Share Corp (${variants.join(', ')})` : 'Social Share Corp';
+  return [{ type: 'block', block: block(ctx.doc, name, [...new Set(icons)].map((i) => [`:${i}:`])) }];
+}
+
+/** A template slot that renders nothing when unset; any content left is reported as usual. */
+const emptySlot = (el, ctx) => (text(el) || el.querySelector('img, iframe, video') ? ctx.unknown(el) : []);
+
+/* event calendars: the folder each one lists (export eventcalendar searchPath; the rendered
+   page does not carry it), by source page */
+const EVENT_CALENDAR_PATHS = {
+  '/us/en/sports-medicine/calendar': '/us/en/global-events/sports-medicine',
+  '/us/en/training-and-education/training-and-education-calendar': '/us/en/global-events',
+};
+
+/**
+ * Event calendar (c-event) → Event Calendar Corp (component-map eventcalendar): the rows Path
+ * (the folder it lists, the page itself when unset) and Title (the rendered heading).
+ */
+function eventCalendar(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-event') || el;
+  if (!root.querySelector('#eventCalendarWrap')) return emptySlot(el, ctx);
+  const page = new URL(ctx.source, SOURCE).pathname.replace(/\.html?$/, '');
+  const path = WebImporter.FileUtils.sanitizePath(EVENT_CALENDAR_PATHS[page] || page).replace(/\/index$/, '');
+  const title = root.querySelector('.title-container h2');
+  const rows = [['Path', path]];
+  if (title && text(title)) rows.push(['Title', text(title)]);
+  return [{ type: 'block', block: block(doc, 'Event Calendar Corp', rows) }];
+}
+
+/**
+ * Corporate contact us (an AEM email form, /us/en/about/contact/recall) → its title (Heading 2,
+ * Underline), the topic sub-heading (Heading 4) and the form intro (Heading 3), as on the
+ * source; the form itself waits for the client's Marketo form ID (component-map
+ * corporatecontactus: Marketo Form; as the division contact form), reported.
+ */
+function corporateContactUs(el, ctx) {
+  const { doc } = ctx;
+  const form = el.querySelector('form');
+  if (!form) return [];
+  const nodes = [];
+  const title = form.querySelector('h2');
+  if (title && text(title)) nodes.push(componentTitle(title, doc));
+  form.querySelectorAll('h4, h3').forEach((h) => {
+    if (!text(h)) return;
+    const copy = doc.createElement(h.tagName.toLowerCase());
+    copy.textContent = text(h);
+    nodes.push(copy);
+  });
+  ctx.report.notes.push('corporate contact form left out: needs its Marketo form ID');
+  return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
+}
+
+/**
+ * Pie chart (component-map pieChart, approved: Chart Corp (pie)): Labels and Height rows, then
+ * one row per slice: label | value | the source colour (option text "label + value + rgba").
+ */
+function pieChart(el, ctx) {
+  const value = (cls) => (el.querySelector(`input.${cls}`) || { value: '' }).value.trim();
+  const slices = [...el.querySelectorAll('select.chartData option')].map((option) => {
+    const [label, , colour] = text(option).split(/\s*\+\s*/);
+    return { label: (label || '').trim(), value: option.getAttribute('value'), colour: (colour || '').trim() };
+  }).filter((s) => s.label && s.value !== null);
+  if (!slices.length) return [];
+  const rows = [
+    ['Labels', value('dataLabel') && value('dataLabel') !== 'none' ? 'true' : 'false'],
+    ['Height', Number(value('chartHeight')) > 0 ? value('chartHeight') : ''],
+  ].filter(([, v]) => v);
+  slices.forEach((s) => rows.push([s.label, s.value, s.colour]));
+  return [{
+    type: 'own', kind: 'chart', styles: [], nodes: [block(ctx.doc, 'Chart Corp (pie)', rows)],
+  }];
+}
+
+/**
+ * The search page (div.search-page, /us/en/search) → as the corp search page before it (theme
+ * search): spacer, the title (Heading 1), "Showing results for:" (Heading 2), the Search block
+ * and the no-results copy with its suggestions, spacer.
+ */
+function searchPage(el, ctx) {
+  const { doc } = ctx;
+  const header = el.querySelector('.search-header');
+  if (!header) return [];
+  const nodes = [];
+  const h1 = header.querySelector('h1');
+  if (h1 && text(h1)) {
+    const h = doc.createElement('h1');
+    h.textContent = text(h1);
+    nodes.push(h);
+    ctx.h1 = true;
+  }
+  const h2 = header.querySelector('h2');
+  if (h2 && text(h2)) {
+    const h = doc.createElement('h2');
+    h.textContent = text(h2);
+    nodes.push(h);
+  }
+  const input = header.querySelector('input.search-control');
+  nodes.push(block(doc, 'Search', [[(input && input.getAttribute('placeholder')) || 'Search this site']]));
+  const message = [...header.children].find((c) => c.tagName === 'DIV' && c.querySelector('ul'));
+  if (message) {
+    [...message.childNodes].filter((n) => n.nodeType === 3 && n.textContent.trim())
+      .forEach((n) => nodes.push(para(doc, doc.createTextNode(n.textContent.trim()))));
+    const ul = doc.createElement('ul');
+    message.querySelectorAll('li').forEach((li) => {
+      const item = doc.createElement('li');
+      item.textContent = text(li).replace(/^•\s*/, '');
+      ul.append(item);
+    });
+    nodes.push(ul);
+  }
+  return [
+    { type: 'spacer', slots: 1 },
+    {
+      type: 'own', kind: 'search', styles: [], nodes,
+    },
+    { type: 'spacer', slots: 1 },
+  ];
+}
+
+/** Geolocation (select-your-location): its "United States" button as a button. */
+function geolocation(el, ctx) {
+  const a = el.querySelector('a.btn[href]');
+  return a && text(a) ? [{ type: 'flow', role: 'cta', nodes: [buttonNode(ctx.doc, a, text(a))] }] : [];
+}
+
+/** Site map (c-map, /us/en/site-map) → Sitemap Corp (component-map sitemap): Path /us/en. */
+function siteMap(el, ctx) {
+  if (!el.querySelector('a[href]')) return [];
+  return [{ type: 'block', block: block(ctx.doc, 'Sitemap Corp', [['Path', '/us/en']]) }];
 }
 
 // AEM components by wrapper class (or #id)
@@ -3002,6 +3240,35 @@ export const COMPONENTS = {
   newsandannouncements: newsList,
   'c-newsandannouncements': newsList,
   image: legacyImage,
+  // round 7: components seen without their AEM wrapper (or a _v1 one), group lists,
+  // testimonials, the featured content item (component-map: skip) and empty template slots
+  'c-resourcesanddownload': resources,
+  resourcesanddownload_v1: resources,
+  grouplist: groupList,
+  'c-grouplist': groupList,
+  testimonial,
+  'c-testimonial': testimonial,
+  featuredcontentitem: skip,
+  'c-featured-content-item': skip,
+  'c-title': (el, ctx) => (text(el) ? titleComponent(el, ctx) : []),
+  'c-tabs': (el, ctx) => (el.querySelector('.tabs-nav .tab-link') ? tabs(el, ctx) : emptySlot(el, ctx)),
+  'c-banner-campaign': (el, ctx) => (el.querySelector('img') ? bannerCampaign(el, ctx) : emptySlot(el, ctx)),
+  eventcalendar: eventCalendar,
+  'c-event': eventCalendar,
+  corporatecontactus: corporateContactUs,
+  'c-corporate-contact-us': corporateContactUs,
+  geolocation,
+  'c-geolocation': geolocation,
+  'c-ourcompany': emptySlot,
+  'c-carousel-item': emptySlot,
+  pieChart,
+  'search-page': searchPage,
+  sitemap: siteMap,
+  'c-map': siteMap,
+  socialsharing: socialSharing,
+  'c-socialsharing': socialSharing,
+  featuredcontentcontext: emptySlot,
+  'c-feature-content-context': emptySlot,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */

@@ -18,11 +18,26 @@ import { CORP_PAGE } from './corp-page.js';
 import { markLivePage } from './corp-section-builder.js';
 import { writeReadableSettings } from './settings-writer.js';
 import { rooted, rootFragmentLinks } from './root.js';
+import OVERSIZED_IMAGES from './oversized-images.js';
 
 // corp-sections rebuilds the body first; the shared cleanup and the DM image rewrite follow
 const transformers = [corpSectionsTransformer, cleanupTransformer, dmImagesTransformer];
 
 const pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, '');
+
+/**
+ * Images over 20 MB, which Edge Delivery cannot preview → the smaller version the source has
+ * (oversized-images.js, from scan-oversized-images.mjs); reported, as a Dynamic Media raw
+ * file (an animated GIF) becomes a still.
+ */
+function swapOversizedImages(main, report) {
+  main.querySelectorAll('img[src]').forEach((img) => {
+    const smaller = OVERSIZED_IMAGES[img.getAttribute('src')];
+    if (!smaller) return;
+    img.setAttribute('src', smaller);
+    (report.notes ||= []).push(`image over 20 MB → smaller version${smaller.includes('/is/image/') ? ' (a still, if it was animated)' : ''}: ${smaller.split('?')[0].split('/').pop()}`);
+  });
+}
 
 /** The source "Last Updated" date (#hiddenPublishedDate, MM/DD/YYYY) as YYYY-MM-DD. */
 function publishedDate(document) {
@@ -37,9 +52,10 @@ function publishedDate(document) {
  * @param {string} template.description what the template's pages hold
  * @param {string[]} template.urls example source URLs
  * @param {object} template.facts the template's page facts (data/page-facts/<aem template>.js)
+ * @param {object} [template.metadata] more page metadata of every page (e.g. theme: search)
  */
 export function createCorpImport({
-  name, description, urls, facts: PAGE_FACTS,
+  name, description, urls, facts: PAGE_FACTS, metadata: extraMetadata = {},
 }) {
   const PAGE_TEMPLATE = {
     name, site: 'corp', description, urls,
@@ -82,6 +98,7 @@ export function createCorpImport({
       if (keywords) meta.Keywords = keywords;
       meta.site = 'corp';
       meta.template = name;
+      Object.assign(meta, extraMetadata);
       if (published) meta.published = published;
       if (hcp) meta['hcp-banner'] = 'true';
       const facts = PAGE_FACTS[pagePath(params.originalURL)];
@@ -98,6 +115,7 @@ export function createCorpImport({
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      swapOversizedImages(main, report);
       // the library's last steps: the readable-settings form (style-settings: on), our
       // fragments under our root, the page under it too (root.js)
       writeReadableSettings(main, document);
