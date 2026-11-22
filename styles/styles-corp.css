@@ -284,6 +284,14 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
   font-weight: 700;
 }
 
+/* a bold + underline link among other text (two in a line: select-your-location "Chile |
+   ESPAÑOL") is the stryker.com standalone link there too: uppercase, as a.action-link /
+   .standalone-link a on the source (the patients inline CTA keeps its case) */
+:where(body.corp) strong > a:any-link:has(u) u,
+:where(body.corp) a:any-link > strong:has(u) u {
+  text-transform: uppercase;
+}
+
 /* bold links that decorateButtons() left as links are text, not the shared button fallback,
    on stryker.com: a bold link in a default-content heading (e.g. the "Business Wire" heading
    after "Read the full article:") keeps the heading's font, size and colour; a bold link in a
