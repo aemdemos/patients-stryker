@@ -54,10 +54,32 @@ function textCell(item, document) {
     }
     body.push(h3);
   }
+  // the description with its links and line breaks (services-and-solutions OnSite "Contact your
+  // local Endoscopy Sales Representative", a link on its own line); other markup as its text
   item.querySelectorAll('.desc-container > p').forEach((source) => {
     if (!clean(source.textContent)) return;
     const p = document.createElement('p');
-    p.textContent = clean(source.textContent);
+    const copy = (node) => {
+      if (node.nodeType === 3) {
+        p.append(document.createTextNode(node.textContent.replace(/\s+/g, ' ')));
+      } else if (node.nodeName === 'BR') {
+        p.append(document.createElement('br'));
+      } else if (node.nodeName === 'A' && node.getAttribute('href') && clean(node.textContent)) {
+        p.append(link(document, node, clean(node.textContent)));
+      } else if (node.nodeType === 1) {
+        node.childNodes.forEach(copy);
+      }
+    };
+    source.childNodes.forEach(copy);
+    // (no spaces at the ends, nor around the line breaks)
+    p.normalize();
+    if (p.firstChild && p.firstChild.nodeType === 3) p.firstChild.textContent = p.firstChild.textContent.trimStart();
+    if (p.lastChild && p.lastChild.nodeType === 3) p.lastChild.textContent = p.lastChild.textContent.trimEnd();
+    p.querySelectorAll('br').forEach((br) => {
+      [br.previousSibling, br.nextSibling].forEach((n, i) => {
+        if (n && n.nodeType === 3) n.textContent = i ? n.textContent.trimStart() : n.textContent.trimEnd();
+      });
+    });
     body.push(p);
   });
   const cta = item.querySelector('a.action-link[href]');

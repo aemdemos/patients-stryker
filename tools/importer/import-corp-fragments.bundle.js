@@ -3785,7 +3785,26 @@ var CustomImportScript = (() => {
     item.querySelectorAll(".desc-container > p").forEach((source) => {
       if (!clean2(source.textContent)) return;
       const p = document2.createElement("p");
-      p.textContent = clean2(source.textContent);
+      const copy = (node) => {
+        if (node.nodeType === 3) {
+          p.append(document2.createTextNode(node.textContent.replace(/\s+/g, " ")));
+        } else if (node.nodeName === "BR") {
+          p.append(document2.createElement("br"));
+        } else if (node.nodeName === "A" && node.getAttribute("href") && clean2(node.textContent)) {
+          p.append(link(document2, node, clean2(node.textContent)));
+        } else if (node.nodeType === 1) {
+          node.childNodes.forEach(copy);
+        }
+      };
+      source.childNodes.forEach(copy);
+      p.normalize();
+      if (p.firstChild && p.firstChild.nodeType === 3) p.firstChild.textContent = p.firstChild.textContent.trimStart();
+      if (p.lastChild && p.lastChild.nodeType === 3) p.lastChild.textContent = p.lastChild.textContent.trimEnd();
+      p.querySelectorAll("br").forEach((br) => {
+        [br.previousSibling, br.nextSibling].forEach((n, i) => {
+          if (n && n.nodeType === 3) n.textContent = i ? n.textContent.trimStart() : n.textContent.trimEnd();
+        });
+      });
       body.push(p);
     });
     const cta = item.querySelector("a.action-link[href]");
@@ -6045,8 +6064,9 @@ var CustomImportScript = (() => {
       left.push(h2);
     }
     const blank2 = (node) => !text(node).replace(/\u00a0/g, "").trim();
-    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap").forEach((wrap2) => {
-      [...wrap2.children].forEach((node) => {
+    el.querySelectorAll(".event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-disclaimer-wrap, .event-registration-wrap").forEach((wrap) => {
+      const small = wrap.matches(".event-disclaimer-wrap");
+      [...wrap.children].forEach((node) => {
         if (node.closest('[data-corp-hidden="true"]')) return;
         if (/^H[1-6]$/.test(node.tagName)) {
           if (!text(node)) return;
@@ -6072,6 +6092,15 @@ var CustomImportScript = (() => {
         if (node.tagName !== "P" || blank2(node)) return;
         const p = doc.createElement("p");
         p.append(...contentCopy(node, doc).childNodes);
+        if (small) {
+          p.querySelectorAll("b").forEach((b) => rename(b, "strong"));
+          p.querySelectorAll("strong").forEach((b) => {
+            b.before(doc.createTextNode("[[body-font]"));
+            b.after(doc.createTextNode("]"));
+          });
+          p.prepend(doc.createTextNode("[[size-0-8em]"));
+          p.append(doc.createTextNode("]"));
+        }
         left.push(p);
       });
     });
@@ -6090,12 +6119,10 @@ var CustomImportScript = (() => {
     const cells = [left];
     const map = el.querySelector(".map[data-address]");
     const address = map ? map.getAttribute("data-address").replace(/&nbsp;|\u00a0/g, " ").split(",").map((s) => s.trim()).filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s)).join(", ") : "";
-    const wrap = el.querySelector(".event-disclaimer-wrap");
-    const disclaimer = wrap && text(wrap) ? [{ type: "group", styles: ["disclaimer", "bold-body"], items: textComponent(wrap, ctx) }] : [];
-    if (!address.includes(",")) return [{ type: "flow", role: "text", nodes: [...left, ...side] }, ...disclaimer];
+    if (!address.includes(",")) return [{ type: "flow", role: "text", nodes: [...left, ...side] }];
     const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
     cells.push([para(doc, linkTo(doc, href, address)), ...side]);
-    return [{ type: "block", block: block(doc, "Columns (columns-67-33)", [cells]) }, ...disclaimer];
+    return [{ type: "block", block: block(doc, "Columns (columns-67-33)", [cells]) }];
   }
   function backgroundImage(el) {
     const m = (el && el.getAttribute("style") || "").match(/background-image:\s*url\((['"]?)(.*?)\1\)/i);

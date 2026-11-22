@@ -2825,7 +2825,8 @@ function eventDetail(el, ctx) {
   const blank = (node) => !text(node).replace(/\u00a0/g, '').trim();
   // (the contact and the registration too, as on live: o-r-safety-series-journey-to-zero-smoke-5
   // "Contact" with its name and e-mail, "Registration" with Register here)
-  el.querySelectorAll('.event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-registration-wrap').forEach((wrap) => {
+  el.querySelectorAll('.event-datetime-wrap, .event-location-wrap, .event-contact-wrap, .event-details-wrap, .event-disclaimer-wrap, .event-registration-wrap').forEach((wrap) => {
+    const small = wrap.matches('.event-disclaimer-wrap');
     [...wrap.children].forEach((node) => {
       if (node.closest('[data-corp-hidden="true"]')) return;
       if (/^H[1-6]$/.test(node.tagName)) {
@@ -2855,6 +2856,16 @@ function eventDetail(el, ctx) {
       if (node.tagName !== 'P' || blank(node)) return;
       const p = doc.createElement('p');
       p.append(...contentCopy(node, doc).childNodes);
+      if (small) {
+        // the disclaimer: small print (live 11.2px), its bold label in the body font
+        p.querySelectorAll('b').forEach((b) => rename(b, 'strong'));
+        p.querySelectorAll('strong').forEach((b) => {
+          b.before(doc.createTextNode('[[body-font]'));
+          b.after(doc.createTextNode(']'));
+        });
+        p.prepend(doc.createTextNode('[[size-0-8em]'));
+        p.append(doc.createTextNode(']'));
+      }
       left.push(p);
     });
   });
@@ -2878,16 +2889,11 @@ function eventDetail(el, ctx) {
     .map((s) => s.trim())
     .filter((s) => s && !/^(n\/a|online|virtual( event)?)$/i.test(s))
     .join(', ') : '';
-  // the disclaimer (small print with a bold body-font label, live 11.2px): through the rich-text
-  // rules, after the event (the last part of its column)
-  const wrap = el.querySelector('.event-disclaimer-wrap');
-  const disclaimer = wrap && text(wrap)
-    ? [{ type: 'group', styles: ['disclaimer', 'bold-body'], items: textComponent(wrap, ctx) }] : [];
   // (a place: more than the country)
-  if (!address.includes(',')) return [{ type: 'flow', role: 'text', nodes: [...left, ...side] }, ...disclaimer];
+  if (!address.includes(',')) return [{ type: 'flow', role: 'text', nodes: [...left, ...side] }];
   const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
   cells.push([para(doc, linkTo(doc, href, address)), ...side]);
-  return [{ type: 'block', block: block(doc, 'Columns (columns-67-33)', [cells]) }, ...disclaimer];
+  return [{ type: 'block', block: block(doc, 'Columns (columns-67-33)', [cells]) }];
 }
 
 /** A CSS url() of an inline background image, its CSS escapes (`\2f ` for `/`) decoded. */
