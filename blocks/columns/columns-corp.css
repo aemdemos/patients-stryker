@@ -26,6 +26,11 @@ body.corp .columns p strong {
   font-family: var(--display-font-family);
 }
 
+/* …unless tagged body font (`[[body-font]…]`: the event disclaimer label, live Humanist bold) */
+body.corp .columns p span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
 body.corp .columns > div > div h2 {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
@@ -849,4 +854,18 @@ body.corp .columns > div > .cell-dark {
   --corp-cell-bg-image: var(--panel-dark-gradient);
 
   color: var(--color-white);
+}
+
+/* contact: the division Contact Us details (stryker.com .c-contactus, measured on
+   /us/en/smart-care/contact, /us/en/acute-care/contact, /us/en/endoscopy/contact): the field
+   labels (h4 "Toll free (USA only):", "Email:") are Humanist bold on phones and Futura bold from
+   600px (source 841px) */
+body.corp .columns.contact h4 {
+  font-family: var(--body-font-family);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.contact h4 {
+    font-family: var(--display-font-family);
+  }
 }

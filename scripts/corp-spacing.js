@@ -156,6 +156,11 @@ export default function decorateSpacing(main) {
     section.querySelectorAll(':scope > .default-content-wrapper').forEach((wrapper) => {
       if (spacing.length) setBox(wrapper, spacing, boxed, boxed && sideMargins);
     });
+    // a spacer has no content to carry it: the section itself (the authors' empty spacing boxes,
+    // sage/urine-management padding-top 7%; blank lines pulling the next part up, home page
+    // awards margin-bottom -10%)
+    if (spacing.length && section.classList.contains('spacer')
+      && !section.querySelector(':scope > .default-content-wrapper')) setBox(section, spacing);
   });
   main.querySelectorAll('.columns').forEach((columns) => {
     const byCell = {};
