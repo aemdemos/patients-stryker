@@ -2046,7 +2046,9 @@ function table(el, ctx, extra = []) {
     }));
   }
   const out = [];
-  const caption = el.querySelector('.title-container h2, .title-container h3, .table-title');
+  // (or the component's own subheading above the table: procare "Choosing your plan")
+  const caption = [...el.querySelectorAll('.title-container h2, .title-container h3, .table-title, h2.component-subheading, h3.component-subheading')]
+    .find((h) => !h.closest('table'));
   if (caption && text(caption)) {
     const h = doc.createElement('h3');
     h.textContent = text(caption);
@@ -2976,7 +2978,7 @@ function contactUs(el, ctx) {
   }
   // its own section: a heading size set by the copy after it (smart-care "Contact a Stryker
   // Smart Care representative", 1.25x) must not scale the contact headings (live 21px)
-  const nodes = [...out.flatMap((it) => it.nodes), block(doc, 'Columns (columns-50-50)', [cells])];
+  const nodes = [...out.flatMap((it) => it.nodes), block(doc, 'Columns (columns-50-50, contact)', [cells])];
   return [{
     type: 'own', kind: 'contact', styles: [], nodes,
   }];

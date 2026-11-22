@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-lib-packagedetail.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-packagedetail.js
   var import_lib_packagedetail_exports = {};
   __export(import_lib_packagedetail_exports, {
     default: () => import_lib_packagedetail_default
   });
 
-  // tools/importer/corp/transformers/corp-sections.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/corp-sections.js
   function transform(hookName, element, payload) {
     const corp = payload && payload.corp;
     if (!corp) return;
@@ -53,7 +53,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/corp/transformers/patients-stryker-cleanup.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
   var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
@@ -267,7 +267,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/corp/transformers/patients-stryker-dm-images.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
     try {
@@ -335,7 +335,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/corp-richtext.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -929,7 +929,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/corp-section-builder.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -1286,7 +1286,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/data/xf-index.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/xf-index.js
   var FRAGMENTS = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Vocera Resources Links", "master": true, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 14, "parents": [], "templates": ["product-detail", "tier2-landing-page"] },
     "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/canada": { "eds": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/canada", "xf": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links", "title": "Canada Vocera Resource Links", "master": false, "siblings": ["master", "canada", "uk-ie"], "status": "published", "refs": [], "cfs": [], "assets": [], "pages": 0, "parents": [], "templates": [] },
@@ -3435,7 +3435,7 @@ var CustomImportScript = (() => {
     "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series---dr--jay-keener/master": { "status": "redirect", "pages": ["/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint/clinical-corner-series---dr--jay-keener-"] }
   };
 
-  // tools/importer/xf-path-rule.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
@@ -3451,7 +3451,7 @@ var CustomImportScript = (() => {
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
   }
 
-  // tools/importer/xf-fragment-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/xf-fragment-path.js
   function xfStatus(xf) {
     const key = xfKey(xf);
     if (FRAGMENTS[key]) return "published";
@@ -3492,7 +3492,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/corp-components.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -3596,7 +3596,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // tools/importer/corp/parsers/hero-image-slide.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -3688,7 +3688,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/parsers/cards-corp-teaser.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -3747,7 +3747,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/corp/parsers/video.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -3775,14 +3775,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-modal-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
   var documentName2 = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName2(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // tools/importer/data/dm-sets.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -3801,7 +3801,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // tools/importer/corp/corp-component-handlers.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -5411,7 +5411,7 @@ var CustomImportScript = (() => {
       }));
     }
     const out = [];
-    const caption = el.querySelector(".title-container h2, .title-container h3, .table-title");
+    const caption = [...el.querySelectorAll(".title-container h2, .title-container h3, .table-title, h2.component-subheading, h3.component-subheading")].find((h) => !h.closest("table"));
     if (caption && text(caption)) {
       const h = doc.createElement("h3");
       h.textContent = text(caption);
@@ -6092,7 +6092,7 @@ var CustomImportScript = (() => {
       const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
       cells.push([para(doc, linkTo(doc, href, address))]);
     }
-    const nodes = [...out.flatMap((it) => it.nodes), block(doc, "Columns (columns-50-50)", [cells])];
+    const nodes = [...out.flatMap((it) => it.nodes), block(doc, "Columns (columns-50-50, contact)", [cells])];
     return [{
       type: "own",
       kind: "contact",
@@ -6407,7 +6407,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp/corp-page.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
   function disclaimerNodes(main, root, doc) {
     const boxes = [...main.querySelectorAll(".c-disclaimer")].filter((el) => !root.contains(el) && !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const plainBold = boxes.some((box) => [...box.querySelectorAll("b")].some((b) => !b.closest(".futura-bold") && !b.querySelector(".futura-bold") && text(b)));
@@ -6491,7 +6491,7 @@ var CustomImportScript = (() => {
   }
   var CORP_PAGE = { buildBody: buildCorpBody, rewriteLinks: rewriteCorpLinks };
 
-  // scripts/span-tags.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -6601,7 +6601,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // scripts/corp-settings.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -6624,7 +6624,7 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // tools/importer/corp/colon-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -6783,7 +6783,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // tools/importer/corp/settings-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -7173,7 +7173,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // tools/importer/corp/root.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -7186,7 +7186,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/oversized-images.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/oversized-images.js
   var oversized_images_default = {
     "https://media-assets.stryker.com/is/content/stryker/AdobeStock_443793332-v3?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/AdobeStock_443793332-v3?$max_width_1440$",
     "https://media-assets.stryker.com/is/content/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$": "https://media-assets.stryker.com/is/image/stryker/FA-Artelon-Flexband-Twist?$max_width_1440$",
@@ -7206,7 +7206,7 @@ var CustomImportScript = (() => {
     "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png": "https://www.stryker.com/content/dam/stryker/sustainability/products/ivus-catheters/IVUS%202.png/jcr:content/renditions/cq5dam.web.1280.1280.png"
   };
 
-  // tools/importer/corp/swap-oversized.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/swap-oversized.js
   function swapOversizedImages(root) {
     const notes = [];
     root.querySelectorAll("img[src]").forEach((img) => {
@@ -7218,7 +7218,7 @@ var CustomImportScript = (() => {
     return notes;
   }
 
-  // tools/importer/corp/corp-import.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-import.js
   var transformers = [transform, transform2, transform3];
   var pagePath = (url) => new URL(url).pathname.replace(/\.html?$/, "");
   function publishedDate(document2) {
@@ -7309,7 +7309,7 @@ var CustomImportScript = (() => {
     };
   }
 
-  // tools/importer/data/page-facts/packagedetail.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/page-facts/packagedetail.js
   var packagedetail_default = {
     "/us/en/acute-care/services/procare": { "template": "packagedetail", "metadata": { "title": "ProCare Services | Acute Care", "pageTitle": "ProCare Services | Acute Care", "description": "You focus on patient care. We'll focus on medical equipment repairs. Choose the medical equipment service package that best meets your needs.", "image": "/content/dam/stryker/acute-care/Services/ProCare/Images/600x300_ProCare_Main.png", "imageAlt": "Stryker ProCare services provide medical device equipment repair and medical device services by trained biomedical repair technicians", "tags": ["stryker:content-type/system", "stryker:content-type/hcp_content", "stryker:business-unit/acute-care", "stryker:services/procare"], "originallyPublished": "2023-02-06T19:41:00.000Z", "lastPublished": "2026-08-19T19:24:21.000Z", "contentID": "AC-GSNPS-SYK-2033021_REV-0_en_us" }, "anchors": [{ "id": "overview", "title": "Overview", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "contact", "title": "contact", "hidden": true, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "covered-products", "title": "Covered products", "hidden": false, "type": "section-title", "area": "customizablearea_parsys" }, { "id": "related", "title": "Related", "hidden": false, "type": "section-title", "area": "customizablearea_parsys" }], "disclaimer": "<p>1. Stryker ProCare customer Engagement Study. 2014 Gallup Inc. Published August 2014&nbsp;</p>", "forms": [{ "formId": "1320", "afterSubmitAction": "showMessage", "message": "Thank you for reaching out! A Stryker representative will contact you shortly.", "useProduction": true }], "tabs": [["Beds", "Stretchers", "Clinical Seating", "Patient Room Furniture", "Transport"], ["Product Information", "Videos"]], "cardLists": [{ "component": "customizable_copy", "title": null, "items": [{ "path": "/us/en/acute-care/products/bari-10a", "resolved": true, "title": "Bari10A", "description": "Large-capacity patient care.", "image": "/content/dam/stryker/acute-care/products/bari10a/images/Thumbnail_Bari10ABed.jpg", "alt": "Bari10A" }, { "path": "/us/en/acute-care/products/intouch", "resolved": true, "title": "InTouch", "description": "Basic needs. Simplified care. Exceptional outcomes.", "image": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouch_SYK_2.jpg", "alt": "Stryker's InTouch Critical Care Bed" }, { "path": "/us/en/acute-care/products/ld-304", "resolved": true, "title": "LD304", "description": "Designed to support both mom and caregiver throughout labor and delivery.", "image": "/content/dam/stryker/acute-care/products/ld304/images/Thumbnail_LD304Bed.jpg", "alt": "LD304 Birthing Bed" }, { "path": "/us/en/acute-care/products/mv3", "resolved": true, "title": "MV3 | Bariatric hospital bed", "description": "As the obese and morbidly obese population has risen, the need for providing bariatric patient care in a safe and dignified manner has become increasingly important.", "image": "/content/dam/stryker/acute-care/products/mv3/images/2019_MV3-Website-product-page-layout.jpg", "alt": "MV3 bariatric hospital bed can accommodate up to 1,102 pounds safe working load" }, { "path": "/us/en/acute-care/products/procuity", "resolved": true, "title": "ProCuity LEX / ZX", "description": "Designed to enhance safety and outcomes in MedSurg while delivering a better experience for care teams, with a focus on supporting fall prevention protocols.", "image": "/content/dam/stryker/acute-care/products/procuity/images/lex-and-zx/ProCuity_LEX_ZX_twin_Hero.jpg", "alt": "Stryker's ProCuity hospital bed series is designed to prevent falls and pressure injuries" }, { "path": "/us/en/acute-care/products/procuity-icu", "resolved": true, "title": "ProCuity ZMX", "description": "Designed to enhance safety and outcomes in the ICU while delivering a better experience for nurses and medical teams, with a focus on helping to reduce pressure injuries and supporting early mobility.", "image": "/content/dam/stryker/acute-care/products/procuity/images/ZM-model-thumb-trim.png", "alt": "Stryker's ProCuity bed series" }, { "path": "/us/en/acute-care/products/s3", "resolved": true, "title": "S3", "description": "Safe. Simple. Secure.", "image": "/content/dam/stryker/acute-care/products/s3/images/Thumbnail_S3_SYK.jpg", "alt": "S3 Bed" }] }, { "component": "customizable_copy", "title": null, "items": [{ "path": "/us/en/acute-care/products/isoflex-lal", "resolved": true, "title": "IsoFlex LAL", "description": "IsoFlex LAL hospital support surface helps isolate the three key contributors of skin breakdown including pressure, shear and micro-climate imbalance.", "image": "/content/dam/stryker/acute-care/products/isoflexlal/images/Thumbnail_IsoFlexLALSurface.jpg", "alt": "IsoFlex LAL Surface" }, { "path": "/us/en/acute-care/products/isoflex-se", "resolved": true, "title": "IsoFlex SE", "description": "Our premier stretcher surface, IsoFlex SE, addresses the key risk factors to skin breakdown: pressure and shear while enhancing patient comfort by aiding in the treatment and prevention of pressure injuries.", "image": "/content/dam/stryker/acute-care/products/isoflexse/images/Thumbnail_IsoFlexSE.jpg", "alt": "IsoFlex SE Surface" }, { "path": "/us/en/acute-care/products/isolibrium", "resolved": true, "title": "Isolibrium/Isolibrium PE", "description": "The ICU support surface designed to help reduce pressure injuries.", "image": "/content/dam/stryker/acute-care/products/isolibrium/images/Thumbnail_IsolibriumSurface.jpg", "alt": "Stryker's Isolibrium Surface" }] }, { "component": "customizable", "title": null, "items": [{ "path": "/us/en/acute-care/products/isotour", "resolved": true, "title": "IsoTour", "description": "Helping with pressure injury prevention.", "image": "/content/dam/stryker/acute-care/products/isotour/images/Thumbnail_IsoTour_SYK.jpg", "alt": "Gel mattress for hospital pressure injury prevention" }, { "path": "/us/en/acute-care/products/isoair", "resolved": true, "title": "IsoAir", "description": "Our IsoAir support surface is a deep cell, low air loss (LAL) support surface that assists in the prevention and treatment of pressure injuries (stages 1-4, unstageable and DTI) and is intended to aid in the moisture management of patient skin.", "image": "/content/dam/stryker/acute-care/products/isoair/images/Isoair-with-pump_exploded-view_no-bed_1440x1280.jpg", "alt": "IsoAir air powered hospital mattress" }] }, { "component": "customizable_copy_co", "title": null, "items": [{ "path": "/us/en/acute-care/products/prime-tc", "resolved": true, "title": "Prime TC", "description": "Every aspect of the Prime TC seated transport chair is designed to help create a welcoming and safe environment. Prime TC is not your ordinary wheelchair and redesigned the way we think about seated patient transport. The BackSmart ergonomics have been incorporated into the design to help reduce the bending and reaching that may be associated with caregiver injury. A rigid frame helps enhance dura", "image": "/content/dam/stryker/acute-care/products/primetc/images/Thumbnail_PrimeTC.jpg", "alt": "Prime TC - patient transport chair " }, { "path": "/us/en/acute-care/products/trurize", "resolved": true, "title": "TruRize", "description": "The next step in mobility.", "image": "/content/dam/stryker/acute-care/products/trurize/images/Thumbnail_TruRize.jpg", "alt": "TruRize Clinical Chair" }] }, { "component": "customizable_copy_co", "title": null, "items": [{ "path": "/us/en/acute-care/products/nara-bassinet", "resolved": true, "title": "N\xE4ra", "description": "Bringing mothers close to their newborns, during the time when closeness matters most.", "image": "/content/dam/stryker/acute-care/products/narabassinet/images/nara-hero-shot-3x2.jpg", "alt": "Nara hospital bassinet" }, { "path": "/us/en/acute-care/products/unity-furniture", "resolved": true, "title": "Unity furniture line", "description": null, "image": "/content/dam/stryker/acute-care/products/unity-furniture/RAAPTOR-banner-1.png", "alt": "Unity Furniture Line for hospitals " }, { "path": "/us/en/acute-care/products/michael-graves-with-stryker", "resolved": true, "title": "Michael Graves\xA0with Stryker", "description": "Working together to redefine the healthcare environment.", "image": "/content/dam/stryker/acute-care/products/michaelgraveswithstryker/images/Thumbnail_Michael Graves.jpg", "alt": "Michael Graves" }, { "path": "/us/en/acute-care/products/tru-fit", "resolved": true, "title": "Tru-Fit", "description": "A sleek and versatile award-winning design.", "image": "/content/dam/stryker/acute-care/products/tru-fit/images/Thumbnail_Tru-Fit_Overbed_Table_2.jpg", "alt": "Tru-Fit Overbed Tables" }, { "path": "/us/en/acute-care/products/bedside-stands", "resolved": true, "title": "Bedside Stands", "description": "A lasting piece for patient rooms.", "image": "/content/dam/stryker/acute-care/products/bedsidestands/images/Thumbnail_BedsideStands_16x9.jpg", "alt": "Thumbnail_BedsideStands_16x9" }, { "path": "/us/en/acute-care/products/symmetry-plus", "resolved": true, "title": "Symmetry Plus", "description": "Versatile recliners for a healing environment.", "image": "/content/dam/stryker/acute-care/products/recliners/images/Thumbnail_Recliners.jpg", "alt": "Stryker's Symmetry Plus Patient Room Recliners" }, { "path": "/us/en/acute-care/products/side-seating", "resolved": true, "title": "Side seating", "description": "Simple, flexible seating solutions for your patient care areas.", "image": "/content/dam/stryker/acute-care/products/sideseating/images/Thumbnail_SideSeating.jpg", "alt": "Side Seating" }] }, { "component": "customizable_copy_co", "title": null, "items": [{ "path": "/us/en/acute-care/products/cub", "resolved": true, "title": "Cub", "description": "Visually communicates a comforting environment for small children and their families.", "image": "/content/dam/stryker/acute-care/products/cub/images/Thumbnail_CubCrib.jpg", "alt": "Cub Pediatric Crib" }, { "path": "/us/en/acute-care/products/eye-surgery", "resolved": true, "title": "Eye Surgery", "description": "Simplicity and access for surgical precision.", "image": "/content/dam/stryker/acute-care/products/eyesurgery/images/Thumbnail_EyeSurgeryStretcher.jpg", "alt": "Eye Surgery Stretcher" }, { "path": "/us/en/acute-care/products/fluoroscopy-stretcher", "resolved": true, "title": "Fluoroscopy", "description": "Designed for access, functionality and safety.", "image": "/content/dam/stryker/acute-care/products/fluoroscopystretcher/images/Thumbnail_FluoroscopyStretcher.jpg", "alt": "Fluoroscopy Stretcher" }] }, { "component": "customizable_copy_co_449889097", "title": null, "items": [{ "path": "/us/en/acute-care/products/gynnie", "resolved": true, "title": "Gynnie", "description": "Intuitive patient positioning and simple OB/GYN functionality.", "image": "/content/dam/stryker/acute-care/products/gynnie/images/Thumbnail_GynnieStretcher.jpg", "alt": null }, { "path": "/us/en/acute-care/products/prime-series", "resolved": true, "title": "Prime Series", "description": "Our Prime Series stretchers are designed to reduce physical strain on clinicians, enhance comfort during patient transport and drive hospital efficiency.", "image": "/content/dam/stryker/acute-care/products/primeseries/images/20200708-Stryker_Surfaces-31.png", "alt": "Prime electric hospital transport gurney" }, { "path": "/us/en/acute-care/products/primex-x-ray", "resolved": true, "title": "Prime X", "description": "The simplicity, safety and efficiency of a Prime Series Stretcher with X-ray capability.", "image": "/content/dam/stryker/acute-care/products/ultracomfortse/images/Thumbnail_UltraComfortSE.jpg", "alt": "PrimeX Xray Stretcher" }] }, { "component": "customizable_copy_co_1545291825", "title": null, "items": [{ "path": "/us/en/acute-care/products/stretcher-chairs", "resolved": true, "title": "Stretcher Chair", "description": "Clinical performance and patient comfort in a compact form.", "image": "/content/dam/stryker/acute-care/products/stretcherchairs/images/Thumbnail_StretcherChair.jpg", "alt": "Stretcher Chairs" }, { "path": "/us/en/acute-care/products/surgistool", "resolved": true, "title": "Surgistool Chair", "description": "Optimal support for surgeon comfort.", "image": "/content/dam/stryker/acute-care/products/surgistool/images/Thumbnail_Surgistool.jpg", "alt": "Surgistool" }, { "path": "/us/en/acute-care/products/transport", "resolved": true, "title": "Transport", "description": null, "image": "/content/dam/stryker/acute-care/products/transport/images/Thumbnail_TransportStretcher.jpg", "alt": "Transport Stretchers" }] }], "missingAlt": [] },
     "/us/en/communications/services/customized-suspension-solutions": { "template": "packagedetail", "metadata": { "title": "Equipment management systems", "pageTitle": null, "description": "Stryker\u2019s ProCare service programs are committed to helping you perform your job more efficiently while enhancing patient care delivery. We provide solutions intended to maximize the life and value of your investments and to create opportunities for better patient outcomes.", "image": null, "imageAlt": null, "tags": ["stryker:content-type/system", "stryker:business-unit/communications", "stryker:system/communications", "stryker:services/procare/communications", "stryker:content-type/hcp_content"], "originallyPublished": "2023-02-06T19:33:23.000Z", "lastPublished": "2026-06-29T19:33:23.000Z", "contentID": "Literature Number: 1000902502, Rev. A" }, "anchors": [], "disclaimer": null, "forms": [{ "formId": "2951", "afterSubmitAction": "showMessage", "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.", "useProduction": true }], "tabs": [], "cardLists": [], "missingAlt": ["/content/dam/stryker/endoscopy/services/procare/images/ProCare-2thirdTitles-Noperiod.jpg"] },
@@ -7356,7 +7356,7 @@ data from a prospective, randomized controlled study. J Bone Joint Surg Am. 2016
     "/us/en/orthopaedic-instruments/systems": { "template": "packagedetail", "metadata": { "title": "Systems", "pageTitle": null, "description": null, "image": null, "imageAlt": null, "tags": ["stryker:content-type/system", "stryker:content-type/hcp_content"], "originallyPublished": null, "lastPublished": "2022-03-29T18:16:55.000Z", "contentID": null }, "anchors": [], "disclaimer": null, "forms": [], "tabs": [], "cardLists": [], "missingAlt": [] }
   };
 
-  // tools/importer/import-lib-packagedetail.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-lib-packagedetail.js
   var import_lib_packagedetail_default = createCorpImport({
     name: "packagedetail",
     description: "www.stryker.com packagedetail pages, first pass with the corp rule library.",

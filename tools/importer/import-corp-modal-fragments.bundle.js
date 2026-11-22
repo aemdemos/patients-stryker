@@ -36,13 +36,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-corp-modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-modal-fragments.js
   var import_corp_modal_fragments_exports = {};
   __export(import_corp_modal_fragments_exports, {
     default: () => import_corp_modal_fragments_default
   });
 
-  // tools/importer/corp/corp-richtext.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var BLANK_LINE = "[[Blank line]]";
@@ -613,7 +613,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/corp-section-builder.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-section-builder.js
   var NOT_CONTENT = /* @__PURE__ */ new Set(["SCRIPT", "STYLE", "LINK", "NOSCRIPT", "INPUT", "TEMPLATE", "META", "BUTTON"]);
   function gridSpec(el) {
     const cls = String(el.className);
@@ -936,7 +936,7 @@ var CustomImportScript = (() => {
     return ctx;
   }
 
-  // tools/importer/corp/corp-components.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-components.js
   function standaloneImageNodes(component, doc) {
     const nodes = [];
     [...component.querySelectorAll("img")].forEach((source) => {
@@ -988,7 +988,7 @@ var CustomImportScript = (() => {
     return `https://www.stryker.com${path}${rest}`;
   }
 
-  // tools/importer/corp/parsers/hero-image-slide.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/hero-image-slide.js
   function copyImage(source, document2) {
     const img = document2.createElement("img");
     img.setAttribute("src", source.getAttribute("src"));
@@ -1080,7 +1080,7 @@ var CustomImportScript = (() => {
     }));
   }
 
-  // tools/importer/corp/parsers/cards-corp-teaser.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/cards-corp-teaser.js
   function clean2(text2) {
     return (text2 || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
   }
@@ -1139,7 +1139,7 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document2, { name: "Cards Corp (teaser)", cells }));
   }
 
-  // tools/importer/corp/parsers/video.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/parsers/video.js
   var DM_HOST = "https://media-assets.stryker.com";
   function encodePath(path) {
     return path.split("/").map((part) => encodeURIComponent(part)).join("/");
@@ -1167,14 +1167,14 @@ var CustomImportScript = (() => {
     return a;
   }
 
-  // tools/importer/corp-modal-path.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp-modal-path.js
   var documentName = (name) => String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   function procareModalPath(title) {
     const name = documentName(String(title || "").trim().replace(/^ProCare\s+(for\s+)?/i, ""));
     return name ? `/us/en/fragments/modals/procare/${name}` : null;
   }
 
-  // tools/importer/data/dm-sets.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/data/dm-sets.js
   var SETS = {
     "stryker/Adherus_AutosprayDuralSealantAdherusAutosprayETDuralSealant": { "type": "media_set", "members": [{ "name": "stryker/Adherus Autospray Dural Sealant 2", "type": "image", "width": 600, "height": 220 }, { "name": "stryker/Adherus Autospray ET Dural Sealant 2", "type": "image", "width": 600, "height": 220 }] },
     "stryker/CMF_Allograft_BioImplants": { "type": "media_set", "members": [{ "name": "stryker/1528485467_LifeNet-Products-Pics-061", "type": "image", "width": 2816, "height": 2112 }, { "name": "stryker/1528485783_Unison_20120713_001a", "type": "image", "width": 3004, "height": 2407 }, { "name": "stryker/1528486030_Unison_20120713_010a-CUBE", "type": "image", "width": 3005, "height": 2407 }, { "name": "stryker/1528486072_Unison_20130403_056", "type": "image", "width": 3e3, "height": 2400 }] },
@@ -1193,7 +1193,7 @@ var CustomImportScript = (() => {
     "stryker/vsp_trauma_media": { "type": "media_set", "members": [{ "name": "stryker/1699886738_VSP-T-1", "type": "image", "width": 1026, "height": 957 }, { "name": "stryker/1699886771_VSP-T-2", "type": "image", "width": 1021, "height": 958 }, { "name": "stryker/1699886797_VSP-T-3", "type": "image", "width": 1021, "height": 956 }] }
   };
 
-  // tools/importer/corp/corp-component-handlers.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-component-handlers.js
   var SOURCE = "https://www.stryker.com";
   var block = (doc, name, cells) => WebImporter.Blocks.createBlock(doc, { name, cells });
   var linkTo = (doc, href, label = href) => {
@@ -2803,7 +2803,7 @@ var CustomImportScript = (() => {
       }));
     }
     const out = [];
-    const caption = el.querySelector(".title-container h2, .title-container h3, .table-title");
+    const caption = [...el.querySelectorAll(".title-container h2, .title-container h3, .table-title, h2.component-subheading, h3.component-subheading")].find((h) => !h.closest("table"));
     if (caption && text(caption)) {
       const h = doc.createElement("h3");
       h.textContent = text(caption);
@@ -3516,7 +3516,7 @@ var CustomImportScript = (() => {
       const href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
       cells.push([para(doc, linkTo(doc, href, address))]);
     }
-    const nodes = [...out.flatMap((it) => it.nodes), block(doc, "Columns (columns-50-50)", [cells])];
+    const nodes = [...out.flatMap((it) => it.nodes), block(doc, "Columns (columns-50-50, contact)", [cells])];
     return [{
       type: "own",
       kind: "contact",
@@ -3831,7 +3831,7 @@ var CustomImportScript = (() => {
   };
   var CORP_HANDLERS = { components: COMPONENTS, row: gridRow, fallback };
 
-  // tools/importer/corp/corp-page.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/corp-page.js
   function rewriteCorpLinks(element) {
     element.querySelectorAll("a[href]").forEach((a) => {
       const href = a.getAttribute("href");
@@ -3840,7 +3840,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // scripts/span-tags.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/span-tags.js
   var toClassName = (name) => typeof name === "string" ? name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "") : "";
   var INLINE_TAGS = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
   var SPAN_TAG_RE = /\[\[([^\][]+)\]((?:[^\][]|\[[^\][]*\])*)\]/g;
@@ -3950,7 +3950,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // scripts/corp-settings.js
+  // ../../../../tmp/run-outputs/lib-wt/scripts/corp-settings.js
   var TEXT_STYLES = {
     display: "size-3vw",
     headline: "size-2-5vw",
@@ -3973,7 +3973,7 @@ var CustomImportScript = (() => {
   var LABEL_SIZES = { large: "label-1-75" };
   var BOXED = ["padding-top-3", "padding-bottom-3", "padding-left-3", "padding-right-3"];
 
-  // tools/importer/corp/colon-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/colon-writer.js
   function writeColonMarkers(root) {
     const doc = root.ownerDocument;
     root.normalize();
@@ -4132,7 +4132,7 @@ var CustomImportScript = (() => {
     return ["description: added"];
   }
 
-  // tools/importer/corp/settings-writer.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/settings-writer.js
   var toClassName2 = (name) => name.toLowerCase().replace(/[^0-9a-z]/gi, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   function convertReadable(root) {
     const doc = root.ownerDocument;
@@ -4522,7 +4522,7 @@ var CustomImportScript = (() => {
     return report;
   }
 
-  // tools/importer/corp/root.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/root.js
   var ROOT = "/rs";
   var rooted = (path) => path.startsWith(`${ROOT}/`) ? path : `${ROOT}${path}`;
   var FRAGMENT = /^\/us\/en\/fragments\//;
@@ -4535,7 +4535,7 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/corp/modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/corp/modal-fragments.js
   var modal_fragments_default = {
     transform: (payload) => {
       const { document: document2, url, params } = payload;
@@ -4567,7 +4567,7 @@ var CustomImportScript = (() => {
     }
   };
 
-  // tools/importer/import-corp-modal-fragments.js
+  // ../../../../tmp/run-outputs/lib-wt/tools/importer/import-corp-modal-fragments.js
   var import_corp_modal_fragments_default = modal_fragments_default;
   return __toCommonJS(import_corp_modal_fragments_exports);
 })();
