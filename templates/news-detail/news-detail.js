@@ -228,14 +228,18 @@ export default function decorate(doc) {
   // content that arrives after the template ran (the sections of a Fragment block, e.g.
   // the article body of "Technology helps improve colonoscopy…") gets the same bold
   // handling once it is in the page, and its videos their frame (e.g. the wide video of
-  // "Katherine's catastrophic stroke survivor story", in its body fragment)
+  // "Katherine's catastrophic stroke survivor story", in its body fragment). A fragment
+  // section that holds only a block (e.g. the Columns with the Bold + Underline contact
+  // labels of "Stryker announces leadership succession") arrives as a section without
+  // default content, so added sections count too
   const main = doc.querySelector('main');
   if (!main) return;
+  const content = '.section, .default-content-wrapper';
   new MutationObserver((mutations) => {
-    const content = mutations.some((mutation) => [...mutation.addedNodes]
+    const added = mutations.some((mutation) => [...mutation.addedNodes]
       .some((node) => node.nodeType === Node.ELEMENT_NODE
-        && (node.matches('.default-content-wrapper') || node.querySelector('.default-content-wrapper'))));
-    if (!content) return;
+        && (node.matches(content) || node.querySelector(content))));
+    if (!added) return;
     decorateBoldBodyLinks(doc);
     sizeNewsVideos(doc);
     placeVideoRowButtons(doc);
