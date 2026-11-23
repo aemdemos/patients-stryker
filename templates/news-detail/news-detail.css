@@ -269,6 +269,15 @@ body.news-detail main :is(p, li) strong.body-bold {
   font-weight: var(--font-weight-bold);
 }
 
+/* authoring convention: italic + underlined text (not a link) is navy and upright; with
+   bold too it stays the bold + italic Futura bold (news-detail.js turns the <u> into
+   span.text-navy), e.g. "AM, also known as 3D printing," of the additive manufacturing
+   feature (stryker.com #1c5687) */
+body.news-detail main :is(p, li) span.text-navy {
+  color: var(--color-navy-bright);
+  font-style: normal;
+}
+
 /* a `serif, p-1-5` news intro keeps the 21px headline lines, 1.06 (stryker.com
    span.fontsize-1-5em: 22.25px lines at 1440px, e.g. "What if joint replacement surgery…"
    on the Mako SmartRobotics feature and the intro of "When Stryker employees and their

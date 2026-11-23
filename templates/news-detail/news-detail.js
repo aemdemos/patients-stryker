@@ -155,6 +155,26 @@ function markStandaloneBold(doc) {
 }
 
 /**
+ * Authoring convention (news articles): italic + underlined text in a paragraph or list item
+ * — not a link, nor around one — is navy (--color-navy-bright) and upright; with bold too it
+ * is navy Futura bold (bold + italic is Futura in news text), e.g. "AM, also known as 3D
+ * printing," of the additive manufacturing feature (stryker.com span.futura-bold in
+ * #1c5687). The <u> becomes <span class="text-navy"> (news-detail.css), so the underline
+ * rule below no longer sees it; the italic and bold around it stay.
+ * @param {Document} doc The document
+ */
+function decorateItalicUnderlineNavy(doc) {
+  doc.querySelectorAll('main :is(p, li) u').forEach((u) => {
+    if (u.closest('a, h1, h2, h3, h4, h5, h6') || u.querySelector('a')) return;
+    if (!u.closest('em, i') && !u.querySelector('em, i')) return;
+    const span = doc.createElement('span');
+    span.className = 'text-navy';
+    span.append(...u.childNodes);
+    u.replaceWith(span);
+  });
+}
+
+/**
  * Authoring convention (news articles): underlined text in a paragraph or list item — not a
  * link, nor around one — is bold in the body font (Humanist bold, no underline), also on a
  * line of its own, where plain Bold is Futura: e.g. the "For investor inquiries please
@@ -201,6 +221,7 @@ export default function decorate(doc) {
   decorateBoldBodyLinks(doc);
   sizeNewsVideos(doc);
   placeVideoRowButtons(doc);
+  decorateItalicUnderlineNavy(doc);
   decorateUnderlineBold(doc);
   markStandaloneBold(doc);
 
@@ -218,6 +239,7 @@ export default function decorate(doc) {
     decorateBoldBodyLinks(doc);
     sizeNewsVideos(doc);
     placeVideoRowButtons(doc);
+    decorateItalicUnderlineNavy(doc);
     decorateUnderlineBold(doc);
     markStandaloneBold(doc);
   }).observe(main, { childList: true, subtree: true });
