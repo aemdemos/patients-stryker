@@ -41,9 +41,9 @@ that day), then the design, then what is still to decide.
 - Checked on every read, problems listed for the AOE team in the admin pages: a source or EDS
   page in two rows, a source not on `www.stryker.com/….html`, an EDS path that isn't the
   source's cleaned name (allowed, but shown: a renamed page).
-- **Initial content** (see *Still to decide*): the 568 pairs we have, plus the other catalog
-  pages with their EDS path by the importer's rule and their template; the AOE team removes what
-  is out of scope.
+- **Initial content** (user, 23 Nov): **all 2,553 catalog pages**. The 568 published pages
+  keep their known pairs; the others get their EDS path by the importer's rule and their AEM
+  template; the AOE team removes what is out of scope. Written to DA when this is built.
 
 ### 2. Organising the scope (admin pages, AOE team)
 - The status page lists **every page of the scope table**, published or not, with its state
@@ -96,6 +96,4 @@ that day), then the design, then what is still to decide.
 - `refresh-shots.mjs` and the DA uploads stay for the first shots of 23 Nov only.
 
 ## Still to decide
-- **The scope table's first content** (it is written to DA): the 568 published pairs only (the
-  AOE team adds the rest), or all 2,553 catalog pages with their EDS path by the importer's rule
-  and their template (the AOE team removes what is out of scope).
+Nothing for the design. Building it is the next step: the scope table goes to DA then.
