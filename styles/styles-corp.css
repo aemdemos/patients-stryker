@@ -76,6 +76,10 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
+  --corp-color-slate: #425361; /* stryker.com bg-dark-blue-gradient end colour */
+  --corp-color-plum: #594b61; /* stryker.com bg-dark-purple-gradient end colour */
+  --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-slate)); /* bg-dark-blue-gradient */
+  --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-plum)); /* bg-dark-purple-gradient */
   --corp-people-image-width: 300px;
 }
 

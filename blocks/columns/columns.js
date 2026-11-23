@@ -51,22 +51,31 @@ function decorateYouTube(block) {
 // the box variants (columns-corp.css): which cells hold a coloured text box, and whether the
 // box is the cell's text (`-last`, `-2`, `-all`) or only its first line (`-lead`)
 const BOX_VARIANT = /\b(?:(?:gray|purple)-last|gray-2|(?:gray|boxed|blue)-all|(?:gold|dark)-lead)\b/;
+// the standard choices (Block options panel): a box colour, in the last cell unless box-first /
+// box-all says otherwise
+const BOX_COLOUR = /\bbox-(?:white|gray|gold|blue|purple|teal|dark|dark-blue-gradient|dark-purple-gradient)\b/;
 const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
 
 /**
  * Box variants: the boxed part of a cell, its text below any image or video it opens with
  * (or, for `-lead`, its first line of text), goes in a div.columns-box, as the source's
- * coloured text box. Cells without text are left as they are.
+ * coloured text box. Cells without text are left as they are. The standard choices
+ * (box-white … box-dark-purple-gradient, with box-first / box-all) box the cell's text the same
+ * way; the older combined names (gray-last, boxed-all …) keep working.
  * @param {Element} block The columns block
  */
 function decorateBoxes(block) {
   const match = block.className.match(BOX_VARIANT);
-  if (!match) return;
-  const variant = match[0];
+  let variant = match && match[0];
+  if (!variant && BOX_COLOUR.test(block.className)) {
+    variant = ['box-all', 'box-first'].find((c) => block.classList.contains(c)) || 'box-last';
+  }
+  if (!variant) return;
   [...block.children].forEach((row) => {
     const cells = [...row.children];
     let targets = cells;
     if (variant.endsWith('-last')) targets = cells.slice(-1);
+    else if (variant === 'box-first') targets = cells.slice(0, 1);
     else if (variant.endsWith('-2')) targets = cells.slice(1, 2);
     targets.filter((cell) => cell.textContent.trim()).forEach((cell) => {
       const content = [...cell.children];

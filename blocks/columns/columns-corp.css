@@ -649,7 +649,7 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
    in a gold / dark grey bar, centred (SKILL, Mako refreshers). White text on blue, purple and
    dark grey ---- */
 body.corp .columns .columns-box {
-  padding: var(--space-block-l);
+  padding: var(--columns-corp-box-padding, var(--space-block-l));
   background: var(--columns-corp-box-bg);
   box-shadow: var(--columns-corp-box-shadow, none);
   color: var(--columns-corp-box-color, inherit);
@@ -1298,4 +1298,50 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
   body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-child(n) > p:has(> strong:only-child):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
     margin-top: calc(var(--space-section) + var(--space-inset-m));
   }
+}
+
+/* ---- standard choices (Block options panel, docs/standardisation/columns.md): a cell box in
+   one of the stryker.com colours (the bg-* component backgrounds; the two gradients are
+   bg-dark-blue-gradient / bg-dark-purple-gradient), in the last cell (default), the first
+   (box-first) or every cell (box-all), its inner spacing in steps of the cell width (the
+   source's padding %: none, 3%, 5% default, 10%), a soft shadow (stryker.com dimensional box:
+   10px outside), a 1px image border (grey, teal, black) and centred text. The text keeps its
+   own colour (text layer); the older combined names above stay as they are ---- */
+body.corp .columns:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient) {
+  --columns-corp-box-padding: 5%;
+}
+
+body.corp .columns.box-white { --columns-corp-box-bg: var(--color-white); }
+body.corp .columns.box-gray { --columns-corp-box-bg: var(--color-surface); }
+body.corp .columns.box-gold { --columns-corp-box-bg: var(--color-accent); }
+body.corp .columns.box-blue { --columns-corp-box-bg: var(--color-navy-bright); }
+body.corp .columns.box-purple { --columns-corp-box-bg: var(--color-purple); }
+body.corp .columns.box-teal { --columns-corp-box-bg: var(--color-primary); }
+body.corp .columns.box-dark { --columns-corp-box-bg: var(--color-secondary); }
+body.corp .columns.box-dark-blue-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-blue); }
+body.corp .columns.box-dark-purple-gradient { --columns-corp-box-bg: var(--corp-gradient-dark-purple); }
+body.corp .columns.space-none { --columns-corp-box-padding: 0; }
+body.corp .columns.space-s { --columns-corp-box-padding: 3%; }
+body.corp .columns.space-m { --columns-corp-box-padding: 5%; }
+body.corp .columns.space-l { --columns-corp-box-padding: 10%; }
+
+body.corp .columns.shadow {
+  --columns-corp-box-shadow: var(--shadow-soft);
+}
+
+body.corp .columns.shadow :where(.columns-box) {
+  margin: var(--space-block-s);
+}
+
+body.corp .columns:is(.image-border, .image-border-teal, .image-border-black) :where(img) {
+  box-sizing: border-box;
+  border: 1px solid var(--columns-corp-image-border);
+}
+
+body.corp .columns.image-border { --columns-corp-image-border: var(--color-surface-muted); }
+body.corp .columns.image-border-teal { --columns-corp-image-border: var(--color-primary); }
+body.corp .columns.image-border-black { --columns-corp-image-border: var(--color-black); }
+
+body.corp .columns.text-center > div > :where(div) {
+  text-align: center;
 }
