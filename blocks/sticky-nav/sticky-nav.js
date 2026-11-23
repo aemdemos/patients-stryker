@@ -117,8 +117,10 @@ export default function decorate(block) {
     return cachedTargets;
   };
 
+  // jumps stop below the bar; on phones the bar is hidden, so sections land at the top
   const applyScrollOffset = () => {
-    const bar = `${block.getBoundingClientRect().height || 70}px`;
+    const hidden = section && getComputedStyle(section).display === 'none';
+    const bar = hidden ? '0px' : `${block.getBoundingClientRect().height || 70}px`;
     currentTargets().forEach(({ region, anchor }) => {
       region.style.scrollMarginTop = bar;
       if (anchor && anchor !== region) anchor.style.scrollMarginTop = bar;
@@ -130,8 +132,66 @@ export default function decorate(block) {
     applyScrollOffset();
   }, { passive: true });
 
+  // Phones: the bar is hidden, so (as on the source) a floating "⋮" button opens the same
+  // sections in a slide-in panel. Built at the end of <body> because the block's section
+  // is display:none on phones; CSS shows it below 600px only. Wired to goTo() below.
+  const mobile = document.createElement('div');
+  mobile.className = 'sticky-nav-mobile';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'sticky-nav-mobile-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Page sections');
+  const dots = document.createElement('span');
+  dots.className = 'sticky-nav-mobile-dots';
+  const close = document.createElement('span');
+  close.className = 'sticky-nav-mobile-close';
+  close.textContent = 'X';
+  [dots, close].forEach((s) => s.setAttribute('aria-hidden', 'true'));
+  toggle.append(dots, close);
+  const panel = document.createElement('nav');
+  panel.className = 'sticky-nav-mobile-panel';
+  panel.id = `sticky-nav-mobile-${Math.random().toString(36).slice(2, 8)}`;
+  panel.setAttribute('aria-label', 'Page sections');
+  panel.hidden = true;
+  toggle.setAttribute('aria-controls', panel.id);
+  const mobileItems = new Map();
+  items.forEach(({ item, href }) => {
+    const entry = document.createElement('a');
+    entry.className = 'sticky-nav-mobile-item';
+    entry.setAttribute('role', 'link');
+    entry.setAttribute('tabindex', '0');
+    entry.dataset.target = href;
+    entry.textContent = item.textContent.trim();
+    panel.append(entry);
+    mobileItems.set(item, entry);
+  });
+  mobile.append(panel, toggle);
+  if (items.length) document.body.append(mobile);
+
+  const setMenuOpen = (open, { focus = true } = {}) => {
+    mobile.classList.toggle('sticky-nav-mobile-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close page sections' : 'Page sections');
+    panel.hidden = !open;
+    if (!focus) return;
+    if (open) panel.querySelector('.sticky-nav-mobile-item')?.focus({ preventScroll: true });
+    else toggle.focus({ preventScroll: true });
+  };
+  toggle.addEventListener('click', () => setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  // close on Escape, and on a tap outside the panel (the uncovered strip on the left)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenuOpen(false);
+  });
+  document.addEventListener('click', (e) => {
+    if (toggle.getAttribute('aria-expanded') === 'true' && !mobile.contains(e.target)) setMenuOpen(false, { focus: false });
+  });
+
   const setCurrent = (activeItem) => {
-    items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
+    items.forEach(({ item }) => {
+      item.classList.toggle('sticky-nav-item-current', item === activeItem);
+      mobileItems.get(item)?.classList.toggle('sticky-nav-mobile-item-current', item === activeItem);
+    });
   };
 
   // Shared-region items: active state follows the last-clicked item, not the last in the bar.
@@ -159,6 +219,17 @@ export default function decorate(block) {
         e.preventDefault();
         goTo(item, href);
       }
+    });
+    // phone menu entry: jump to the same section, then close the panel (as on the source)
+    const entry = mobileItems.get(item);
+    const pick = (e) => {
+      e.preventDefault();
+      setMenuOpen(false, { focus: false });
+      goTo(item, href);
+    };
+    entry.addEventListener('click', pick);
+    entry.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') pick(e);
     });
   });
 

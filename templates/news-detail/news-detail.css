@@ -1,0 +1,1782 @@
+/* news-detail — corp news article template (`template: news-detail`, set on
+   /us/en/about/news/** by the corp bulk metadata).
+
+   Layout measured on the stryker.com feature articles:
+   - title section (the first section with content): optional H1 and the H5 publish date,
+     in the article column, aligned with the H1
+   - lead media: a full-bleed `hero image-slide`, or a standalone image centred in the
+     article column
+   - every section except the hero and Cards Corp spans the 66.66% article column, centred
+     from 600px (source col-sm-8 from 840px); full width on phones. This includes the
+     small-print `compact`/`disclaimer` sections and the "Last Updated" line below them
+   - Cards Corp (e.g. the "Related" teasers) and Columns (e.g. a video with a Large Headline
+     beside it, source col-sm-8 + col-sm-4) span the full container width */
+
+/* Accordion in an article: the label's 1.15 lines (stryker.com panel-title: 17.5px Futura
+   bold on 20.1px lines, 41px with its padding, e.g. "READ THE FULL STORY" of the SGTC lab
+   feature), and Bold in the panel text is Humanist bold, as Bold is in news text
+   (authoring conventions; the source's plain <b> lead-ins, e.g. "Prototyping and product
+   assurance hub") */
+body.news-detail main .accordion.block .accordion-item-label,
+body.news-detail main .accordion.block .accordion-item-label > p {
+  line-height: var(--heading-line-height-h4);
+}
+
+/* …its grey rule under the label and the component's 20px below the label's 15px margin
+   (35px to the next component; the block margin collapses with them) */
+body.news-detail main .accordion.block .accordion-item-label {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail main .accordion.block {
+  margin-bottom: calc(var(--space-block) + var(--space-block-l));
+}
+
+body.news-detail main :where(.accordion .accordion-item-body) :is(p, li) strong:not(em strong, :has(em)) {
+  font-family: var(--body-font-family);
+}
+
+/* section style `form-right` (layout from 900px, below): stacked, the text comes before the
+   form, as on the source. Text and form span the container (no auto margins, which would
+   shrink the form to Marketo's intrinsic width); the text is indented 17% (stryker.com
+   rich text .left-to-right, the nurses nomination form: 58px at 375px, 114px at 700px) */
+body.news-detail main > .section.form-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(2 * var(--space-section));
+}
+
+body.news-detail main > .section.form-right > div {
+  margin-inline: 0;
+}
+
+body.news-detail main > .section.form-right > .default-content-wrapper {
+  order: -1;
+  padding-inline-start: calc(var(--container-gutter) + (100% - 2 * var(--container-gutter)) * var(--news-form-text-indent));
+}
+
+/* Section Metadata `background: bg-gold`: a gold box around the section's text, inside the
+   container gutters rather than a page-wide band (stryker.com rich text
+   .has-background.bg-gold, e.g. the "Want to learn more?" heading above the Sage webinar
+   form: padding 4% top, 10px right, 3% bottom, 2% left of the box, 2% below it). The box
+   keeps a blank line's space above it, as on the source (49px from the text above, at
+   every width: the source leaves an empty paragraph before the box) */
+body.news-detail main > .section.bg-gold {
+  margin-top: var(--space-section-l);
+  background-color: transparent;
+}
+
+/* the box's own 2% bottom margin is the whole gap to the next section (the form below
+   it), as on the source; a gold Large Headline (`headline-2vw`, below) keeps the section
+   gap of the source .c-largeheadline */
+body.news-detail main > .section.bg-gold:not(.headline-2vw) {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section.bg-gold > .default-content-wrapper {
+  width: calc(100% - 2 * var(--container-gutter));
+  max-width: calc(var(--container-max) - 2 * var(--container-gutter));
+  margin-bottom: min(2%, var(--container-max) * 0.02);
+  padding: min(4%, var(--container-max) * 0.04) var(--space-block-s) min(3%, var(--container-max) * 0.03) min(2%, var(--container-max) * 0.02);
+  background-color: var(--color-accent);
+}
+
+/* Section Metadata `background: bg-light-gray`: the section's paragraph in a light grey box
+   inside the column, not a page-wide band (stryker.com rich text .has-background
+   .bg-light-gray, e.g. the "Together, we can make surgical smoke…" quote of "Protect your
+   patients … and your OR staff": 3% margin, padding 5% top and sides, 4% bottom) */
+body.news-detail main > .section.bg-light-gray {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bg-light-gray > .default-content-wrapper > p {
+  margin: 3%;
+  padding: 5% 5% 4%;
+  background-color: var(--color-surface);
+}
+
+
+/* section style `blue-box`: the section's text in the corp blue box across the text column,
+   white, 17.5px copy lines 1.15, padding 3% / 4% / 2% of the box width and the last
+   paragraph's 15px margin inside it (stryker.com .has-background.bg-blue rich text, e.g. the
+   quote of "Following in her mother's footsteps": 1379 x 132px at 1440px); with
+   `serif, p-1-25` for its Egyptienne */
+body.news-detail main > .section.blue-box > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-navy-bright);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :is(p, ul, ol, h2, h3, h4) {
+  padding-inline: 4%;
+  color: var(--color-white);
+  line-height: var(--body-line-height-l);
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :first-child {
+  padding-top: 3%;
+}
+
+body.news-detail main > .section.blue-box > .default-content-wrapper > :last-child {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+}
+
+/* a gold Large Headline (`headline-2vw` with `background: bg-gold`): the source
+   .c-largeheadline.bg-gold box pads its text 20px all round (e.g. the "Want to learn more?"
+   box of the orthopaedic instruments exudate whitepaper release) */
+body.news-detail main > .section.bg-gold.headline-2vw > .default-content-wrapper {
+  padding: var(--space-block-l);
+}
+
+/* a paragraph in a `headline-2vw` section: the Large Headline text in the light serif, its
+   bold part in Futura bold, at the headline's 4vw, from 600px 2vw capped at 28px (source
+   span.fontsize-2vw: 15px at 375px, 25.6px at 1280px, 28px from 1400px), lines 1.35 */
+body.news-detail main > .section.headline-2vw > .default-content-wrapper p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+/* the heading of a `bg-dark-blue-gradient` band (the background is defined with the bracket
+   tags, below): the Large Headline at 2.5vw (5vw on phones), capped at 35px, white Futura
+   bold (source span.fontsize-2-5-vw: 18.75px at 375px, 32px at 1280px, 35px from 1400px) */
+body.news-detail main > .section.bg-dark-blue-gradient > .default-content-wrapper > h2 {
+  margin-bottom: 0;
+  color: var(--color-white);
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2 * var(--news-band-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+/* the full-bleed slide sits further below the date than a column image (source 36px,
+   46px from 600px; the margin collapses with the title section's) */
+body.news-detail main > .section:is(.hero-container, .hero-corp-container) {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* a Hero Corp slide is full-bleed at every width, like the hero above: not in the article
+   column nor the page container (stryker.com hero image 1920px wide at 1920px, e.g. "Nurses
+   in the OR" and the features with a slide) */
+body.news-detail main > .section.hero-corp-container > div {
+  max-width: none;
+}
+
+/* a Columns block of gold boxes: one section gap below the heading above it (20px on
+   phones), and its rows follow each other with only the boxes' 10px margins between them
+   (stryker.com: 55px from "Resources for nurses" to the boxes, 20px between box rows) */
+body.news-detail main .columns-wrapper:has(span.box-gold) {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+body.news-detail main .columns:has(span.box-gold) > div {
+  align-items: stretch;
+}
+
+body.news-detail main .columns:has(span.box-gold) > div + div {
+  margin-top: 0;
+}
+
+/* ---- title section ---- */
+
+body.news-detail main > .section:nth-child(1 of :not(:empty)) {
+  margin-bottom: var(--space-block);
+}
+
+/* no title rule here (styles.css pads the first section above its sage rule) */
+body.news-detail main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
+  margin-bottom: 0;
+  font-size: var(--heading-font-size-xs);
+}
+
+/* the first-published date (news-detail.js) is the source's own date widget
+   (.c-publish-date), outside the title text: it stays at the start of the column when the
+   title is centred (`center`, e.g. the Sage IWD story and the VA hospital bed article) */
+body.news-detail main > .section > .default-content-wrapper > h5.first-published {
+  text-align: start;
+}
+
+/* section style `date-above` (news-detail.js): the date above the H1 sits as far above it
+   as the source date widget above the article text (36px, 46px from 600px; e.g. the
+   Spencer Stiles release) */
+body.news-detail main > .section.date-above > .default-content-wrapper > h5.first-published {
+  margin-bottom: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* a `spacer` section (the importer's, e.g. after the title) is the source component gap:
+   20px on phones, 30px from 600px — the article starts 36px / 46px below the date, as on
+   the source (the SHEA CAUTI article, Taking action, Caregiver James Bamber) */
+body.news-detail main > .section.spacer:not(.small, .large, .xlarge, .xxlarge) {
+  height: var(--space-block-l);
+}
+
+/* ---- article column (66.66% from 600px, see the media query) ---- */
+
+body.news-detail main > .section > .default-content-wrapper picture {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+body.news-detail main > .section > .default-content-wrapper picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* section style `h2-1-25`: every Heading 2 of the section at 1.25x the h2 size (stryker.com
+   h2 > span.fontsize-1-25em on whole headings, e.g. the bold subheads of the Sage "100%
+   CAUTI reduction" release: 30.625px, 26.25px on phones) */
+body.news-detail main > .section.h2-1-25 > .default-content-wrapper > h2 {
+  font-size: calc(var(--news-h2-size) * var(--news-scale-1-25));
+  line-height: var(--heading-line-height);
+}
+
+/* article headings: light serif, no rule below (corp default content draws one). These
+   keep the corp Futura bold heading with its rule (stryker.com section titles): the
+   heading over the cards, the business-unit "Resources" heading (`bu-resources`
+   fragment), the gold "Connect with us" band (`connect-band` fragment: Futura bold in a
+   padded band, styles-corp.css), and an underlined heading — grey rule (e.g. "Driven by
+   gratitude" on the life-saving journey story) or gold with [[rule-gold]] (e.g. the story
+   headings of "From behind the scenes to the front line") */
+body.news-detail main > .section:not(.cards-corp-container, .bu-resources, .connect-band) > .default-content-wrapper h2:not(.underline) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* bold inside running text keeps the body font; a bold line on its own stays Futura
+   (news-detail.js marks it .standalone), and so does bold + italic (the rule below) */
+body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))) {
+  font-family: var(--body-font-family);
+}
+
+/* …in a `serif` section the running font is Egyptienne, so its bold is too (stryker.com
+   <b> inside span.urw-egyptienne) — except underlined text, below */
+body.news-detail main > .section.serif > .default-content-wrapper :is(p, li)
+  :is(strong:not(.standalone, .body-bold, em strong, :has(em)), b:not(i b, :has(i))) {
+  font-family: var(--heading-font-family);
+}
+
+/* authoring convention: underlined text (not a link) is Humanist bold, also on a line of its
+   own and in blocks (news-detail.js turns the <u> into strong.body-bold), e.g. the "For
+   investor inquiries please contact:" label of the Vocera acquisition release */
+body.news-detail main :is(p, li) strong.body-bold {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* a `serif, p-1-5` news intro keeps the 21px headline lines, 1.06 (stryker.com
+   span.fontsize-1-5em: 22.25px lines at 1440px, e.g. "What if joint replacement surgery…"
+   on the Mako SmartRobotics feature and the intro of "When Stryker employees and their
+   family members become patients"), not the corp nested-span 1.25 */
+body.news-detail main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b) {
+  font-family: var(--display-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+}
+
+/* …except in a `bold-body` section: a paragraph that is plain <b><i> as a whole on the
+   source (e.g. a press release subtitle) stays black Humanist bold italic, not the gold
+   Bold + Italic */
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b):not(a *) {
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-style: italic;
+}
+
+/* …and in a `bold-italic` section the Bold + Italic Futura stays italic (stryker.com
+   <i><span class="futura-bold">, e.g. the blue "CPR is the single most important
+   intervention…" quote of "Help increase patient outcomes both in and out of the hospital") */
+body.news-detail main > .section.bold-italic > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b) {
+  font-style: italic;
+}
+
+/* article headings: Futura Bold by default (h2–h6; the h1 is the corp light serif on phones,
+   Futura Bold from 600px, below); words authored in italic are the Egyptienne serif (the
+   rule below), and the h-serif section style (styles/styles-corp.css) keeps its Egyptienne
+   h2 / h3 */
+body.news-detail main > .section > .default-content-wrapper > :is(h2, h3, h4, h5, h6) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.news-detail main > .section.h-serif > .default-content-wrapper > :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+/* italic inside an article heading (live <i> in the heading, e.g. the "Stryker's navigation
+   system offers surgeons…" subtitle of the Q Guidance System release: Egyptienne Light,
+   weight 500) is the serif heading font, upright; the gold Bold + Italic keeps its Futura */
+body.news-detail main > .section > .default-content-wrapper > :is(h1, h2, h3, h4, h5, h6) em:not(strong em, :has(strong)) {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+}
+
+/* an h3 authored in italic (not the gold Bold + Italic) is 21px from phones up (the plain
+   h3 reaches it from 600px); the h3 size section styles (h3-0-8, h3-1-25) still scale it */
+body.news-detail main > .section > .default-content-wrapper > h3:where(:has(em):not(:has(strong))) {
+  --news-h3-size: var(--heading-font-size-l);
+
+  font-size: var(--news-h3-size);
+}
+
+/* join: a section the importer split off the same live text component (a component that mixes
+   text styles) sits at the 15px block margin, without the section gap (the last paragraph's
+   margin above it; e.g. the document code under the references of the nurses feature) */
+body.news-detail main > .section:has(+ .section.join) {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section:has(+ .section.join) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+/* h4: live Futura Bold, 14px below 480 (mapped to the 600 breakpoint), 17.5px above */
+body.news-detail main > .section > .default-content-wrapper > h4 {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+/* …an h4 authored in italic (not the gold Bold + Italic) is 17.5px from phones up, the size
+   the plain h4 reaches from 600px; the `h4-1-25` section style keeps its own sizes */
+body.news-detail main > .section > .default-content-wrapper > h4:where(:has(em):not(:has(strong))) {
+  font-size: var(--heading-font-size-m);
+}
+
+/* the small-print section (`disclaimer`: references and document code) sits directly
+   above the "Last Updated" line, as on the source — also across the empty (hidden) section
+   the page metadata leaves between them */
+body.news-detail main > .section.disclaimer:has(+ .last-modified-section, + .section:empty + .last-modified-section),
+body.news-detail main > .section.compact:has(+ .last-modified-section, + .section:empty + .last-modified-section),
+body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
+  margin-bottom: 0;
+}
+
+/* bold small print stays in the body font, as the text around it — also a bold line on its
+   own (stryker.com .c-disclaimer <b>: Humanist 712 bold, e.g. the "DFHD 17934 Rev A" code
+   of the flexible ureteroscope release); buttons, bold + underline CTAs and the gold
+   Bold + Italic keep their own fonts */
+body.news-detail main > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)),
+body.news-detail .accordion-item-body > .section.disclaimer :is(p, li) :is(strong, b):not(em strong, i b, :has(em, i, a.link-strong)) {
+  font-family: var(--body-font-family);
+}
+
+/* `separator` section (source .c-section-separator, e.g. above "About AVS"): the section
+   opens with the 1px rule, which spans the article column (not the page) and follows the
+   text above it by one paragraph gap (15px); the text starts 20px below it (50px from
+   600px), and the section ends with the usual section gap */
+body.news-detail main > .section:has(+ .section.separator) {
+  margin-bottom: var(--space-block);
+}
+
+/* a page whose title is in a Hero Corp slide opens with the date alone (the authored H5 or
+   the first-published one, news-detail.js): it sits right under the header, without the
+   header's 10px gap (stryker.com: 0px, e.g. the nurses and mental health features) */
+body.news-detail main > .section:has(> .default-content-wrapper > h5:only-child):has(+ .section.hero-corp-container) {
+  margin-top: calc(-1 * var(--space-block-s));
+}
+
+body.news-detail main > .section.separator {
+  margin-bottom: var(--space-block-l);
+  border-top: 0;
+}
+
+body.news-detail main > .section.separator > div:first-child {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* a `bold-body` paragraph (e.g. the bold subtitle) flows into the article text below it:
+   one paragraph gap, not a section gap */
+body.news-detail main > .section.bold-body {
+  margin-bottom: 0;
+}
+
+body.news-detail main .dm-video {
+  aspect-ratio: auto;
+}
+
+/* a Video block between paragraphs of the article keeps the source video component's gap
+   below it, 20px (30px from 600px), not the paragraph gap (stryker.com standalone video
+   page-section, e.g. the Steri-Shield 8 launch release: 31px from the video to "The
+   Steri-Shield 8 personal protection system includes…" at 1440px, 21px at 390px) */
+body.news-detail main > .section:not(.video-text) > .video-wrapper:has(+ .default-content-wrapper) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.news-detail main a:any-link {
+  text-decoration: none;
+}
+
+/* Columns `dark-last`: the last cell is a dark-grey pull quote box (stryker.com
+   bg-dark-gray rich text: 5% padding inside its 15px column gutter) in white 21px light
+   serif; Bold + Italic words keep the Futura bold (gold with [[color-gold]], e.g. the
+   surgical smoke feature) */
+body.news-detail main .columns.dark-last > div > div:last-child {
+  margin-inline: var(--space-block);
+  padding: var(--space-block);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+body.news-detail main .columns.dark-last > div > div:last-child p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* the lead line of a form-right section (e.g. "…Nominate a heroic healer today") is followed
+   by a blank 28px line on the source (<br>&nbsp; in span.fontsize-2em): 38px more space
+   before the next paragraph */
+body.news-detail main > .section.form-right > .default-content-wrapper > p:first-child {
+  margin-bottom: calc(var(--space-block) + var(--news-blank-line-2));
+}
+
+/* section style `curated-cta`: a Columns row of Curated CTAs (stryker.com .c-curatedcta,
+   e.g. "Key Resources" of the APP lumbar spinal stenosis blog): a document thumbnail 200px
+   wide at every width, its bold title (a fully Bold paragraph) 20px below in the body font
+   at 16.25px (source span), left aligned; a video cell takes the cell's full width with the
+   same title under the player. The cells keep the 15px gutter, without the 50-50 text
+   inset */
+body.news-detail main > .section.curated-cta .columns {
+  --col-5050-inset: var(--container-gutter);
+  --columns-corp-caption-gap: var(--space-block-l);
+  --news-cta-title-size: 16.25px; /* stryker.com curated CTA title span */
+}
+
+/* the video player's paragraph: the video component's gap under the player (20px, 30px
+   from 480px); the title takes no label gap of its own above it */
+body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) {
+  margin-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) + p.columns-bold {
+  margin-top: 0;
+}
+
+body.news-detail main > .section.curated-cta .columns p:has(> strong:only-child) {
+  font-size: var(--news-cta-title-size);
+  line-height: var(--paragraph-line-height);
+  text-align: start;
+}
+
+body.news-detail main > :where(.section.curated-cta) .columns p > strong:only-child {
+  font-family: var(--body-font-family);
+}
+
+/* Columns `label-right`: Q&A rows, the question in the first cell right-aligned in Futura
+   bold 21px, lines 1.06, at every width (stryker.com right-aligned futura-bold 1.5em
+   question beside its answer, e.g. the BattleBots feature); outranks the serif / p-1-25
+   copy size of the row's section. Each row keeps the source's room around the rule of its
+   `separator` section (an empty subheading and paragraph there): about 70px (80px from
+   600px, where the separator pads 50px instead of 20px) from the rule to the question,
+   and 80px from the answer to the next rule */
+body.news-detail main .columns.label-right {
+  padding-block: var(--space-section-l);
+}
+
+body.news-detail main > .section .columns.label-right > div > div:first-child p {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+  text-align: right;
+}
+
+/* Columns `image-border`: the block's images get a 1px black border (stryker.com
+   img.bor-black, e.g. the report cover of the 2022 Comprehensive Report release) */
+body.news-detail main .columns.image-border .columns-img-col img {
+  border: 1px solid var(--color-black);
+}
+
+/* Columns `thumbnails` (with columns-75-25 media-pair): the last cell is a column of
+   download thumbnails with a 1px gold border (stryker.com img.bor-gold beside a press
+   release, e.g. the leadership succession infographics); on phones they sit two per row,
+   a last odd one across the row */
+body.news-detail main .columns.thumbnails > div > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--space-section);
+}
+
+body.news-detail main .columns.thumbnails > div > div:last-child > .columns-img-col:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+body.news-detail main .columns.thumbnails > div > div:last-child img {
+  border: 1px solid var(--color-accent);
+}
+
+/* section style `curated-cta` (above): the thumbnail */
+body.news-detail main > .section.curated-cta .columns .columns-img-col img {
+  width: 200px;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+/* bracket tag `[[body-font]…]` in a Columns cell: its bold keeps the body font, as in
+   default content (the corp Columns set <strong> in Futura), e.g. "Forward-Looking
+   Statements" / "Contacts" in the leadership succession release */
+body.news-detail main .columns span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+/* bracket tag `[[indent]…]` around a whole paragraph: the paragraph is indented 40px
+   (stryker.com rich-text indent, p style margin-left: 40px — e.g. the description under
+   each bold list label of the Sage air-assisted transfer system release) */
+body.news-detail {
+  --news-indent: 40px;
+  --news-font-scale-0-8: 0.8em; /* [[text-0-8]], below */
+  --news-scale-0-8: 0.8; /* h3-0-8 section style, below */
+  --news-scale-1-25: 1.25; /* h3-1-25 section style, below */
+  --news-gold-box-line-height: 1.25; /* gold-boxes text: 22px lines for 17.5px, below */
+  --news-blank-line-l: calc(var(--body-font-size-l) * 1.2); /* a blank 17.5px line: h2-spaced, below */
+  --news-h3-size: var(--heading-font-size-m); /* the corp h3 size; 21px from 600px */
+  --news-h2-size: var(--heading-font-size-l); /* the corp h2 size; 24.5px from 600px */
+  --news-font-scale-1-5: 1.5em; /* [[text-1-5]], below */
+  --news-font-scale-2: 2em; /* [[text-2]], below */
+  --news-band-headline-vw: 2.5vw; /* bg-dark-blue-gradient band heading, below; 1.25vw from 600px */
+  --news-form-text-indent: 0.17; /* form-right text indent below 900px, a share of the column (top) */
+  --news-blank-line-2: 38px; /* a blank line in 28px [[text-2]] text: form-right lead (top) */
+
+  /* stryker.com bg-dark-blue-g full-bleed panel: grey to slate blue, left to right */
+  --news-color-dark-blue-gradient-end: #425361;
+  --news-dark-blue-gradient: linear-gradient(90deg, var(--color-secondary), var(--news-color-dark-blue-gradient-end));
+}
+
+body.news-detail main span.indent {
+  display: block;
+  margin-inline-start: var(--news-indent);
+}
+
+/* bracket tag `[[serif]…]`: text in the light serif (stryker.com span.urw-egyptienne on part
+   of a cell, e.g. the pull quotes beside the photos of the "From behind the scenes…"
+   feature, whose story text stays in the body font); bold text in it keeps the corp Futura.
+   With `text-1-25` (a 17.5px quote) the lines are 1.15, the source's 20.1px */
+body.news-detail main span.serif {
+  font-family: var(--heading-font-family);
+}
+
+body.news-detail main span.serif.text-1-25,
+body.news-detail main > .section.serif span.text-1-25 {
+  line-height: var(--heading-line-height-h4);
+}
+
+/* bracket tag `[[text-0-8]…]`: text at 0.8x the size around it (stryker.com
+   span.fontsize-8em, e.g. the body copy the EP lab release writes inside Heading 3s: 16.8px
+   in a 21px h3, 14px on phones; token with the indent one above) */
+body.news-detail main span.text-0-8 {
+  font-size: var(--news-font-scale-0-8);
+}
+
+/* bracket tag `[[text-1-5]…]`: text at 1.5x the size around it (stryker.com
+   span.fontsize-1-5em, e.g. the 21px stat lines and, with text-1-25 inside, the 26.25px chart
+   titles of the ENRICH release band); lines 1.06, as the source span */
+body.news-detail main span.text-1-5 {
+  font-size: var(--news-font-scale-1-5);
+  line-height: var(--heading-line-height);
+}
+
+/* bracket tag `[[text-2]…]`: text at twice the size around it, lines 1.06 (stryker.com
+   span.fontsize-2em, e.g. the 28px "Do you know a nurse…?" question of the nurses feature) */
+body.news-detail main span.text-2 {
+  font-size: var(--news-font-scale-2);
+  line-height: var(--heading-line-height);
+}
+
+/* bracket tag `[[center]…]` around a whole paragraph: the paragraph is centred in its cell
+   (stryker.com centred rich text in one grid column, e.g. the 88% / 3% stats of the ENRICH
+   release) */
+body.news-detail main span.center {
+  display: block;
+  text-align: center;
+}
+
+/* Section Metadata `background: bg-dark-blue-gradient`: a full-bleed band, grey to slate
+   blue, with white text (stryker.com c-full-bleed-panel bg-dark-blue-g, e.g. the ENRICH
+   results band of the NEJM release: the heading one Large Headline line below the band top,
+   the charts at its bottom edge) */
+body.news-detail main > .section.bg-dark-blue-gradient {
+  padding-top: calc(var(--space-section) + var(--space-block-s));
+  background: var(--news-dark-blue-gradient);
+  color: var(--color-white);
+}
+
+/* …its Columns rows follow each other directly, as the source grid rows (no row gap) */
+body.news-detail main > .section.bg-dark-blue-gradient .columns > div + div {
+  margin-top: 0;
+}
+
+/* section styles `h3-0-8` / `h3-1-25`: every Heading 3 of the section at 0.8x / 1.25x the
+   h3 size (stryker.com h3 > span.fontsize-8em / fontsize-1-25em on whole headings, e.g. the
+   body copy the EP lab and LCA releases write as Heading 3s: 16.8px, 14px on phones; the
+   World Environment Day 2025 subheads: 26.25px, 21.875px on phones). The text keeps the
+   h3's line box, as the source span does inside it */
+body.news-detail main > .section.h3-0-8 > .default-content-wrapper > h3 {
+  font-size: calc(var(--news-h3-size) * var(--news-scale-0-8));
+  line-height: calc(var(--news-h3-size) * var(--heading-line-height));
+}
+
+body.news-detail main > .section.h3-1-25 > .default-content-wrapper > h3 {
+  font-size: calc(var(--news-h3-size) * var(--news-scale-1-25));
+  line-height: calc(var(--news-h3-size) * var(--news-scale-1-25) * var(--heading-line-height));
+}
+
+/* section style `h-serif-bold` (with `h-serif`): bold in the section's h2 / h3 keeps the
+   Egyptienne heading font, in bold (stryker.com bold serif subheads, e.g. ExpectMore),
+   instead of the corp Futura bold */
+body.news-detail main > .section.h-serif-bold > div :is(h2, h3) :is(strong, b) {
+  font-family: var(--heading-font-family);
+}
+
+/* bracket tag `[[box]…]` around a whole paragraph: the paragraph's text sits in a white
+   soft-shadow box (stryker.com dimensional box: 3% padding, 2% plus the 15px paragraph gap
+   below; e.g. the "AM, also known as 3D printing" lead of the additive manufacturing feature) */
+body.news-detail main span.box {
+  display: block;
+  padding: 3% 3% calc(2% + var(--space-block));
+  box-shadow: var(--shadow-soft);
+}
+
+/* bracket tag `[[box-gold]…]` around a whole paragraph: the paragraph in a gold soft-shadow
+   box, centred, its link in the text colour (stryker.com dimensional-box bg-gold, e.g. the
+   "Resources for nurses" links of the nurses feature: 10px margin, padding 5% top and
+   right, 4% bottom, 10px left) */
+body.news-detail main span.box-gold {
+  display: block;
+  margin: var(--space-block-s);
+  padding: 5% 5% 4% var(--space-block-s);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+body.news-detail main span.box-gold a:any-link {
+  color: inherit;
+}
+
+/* …its bold words are text in Futura bold in the text colour (black on stryker.com, e.g.
+   "continuing education courses"), not the shared bold-link button, whether the bold is
+   inside the link or around it (DA saves a bold part of a link as its own bold link) */
+body.news-detail main span.box-gold strong > a:any-link,
+body.news-detail main span.box-gold a:any-link > strong {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* …the boxes side by side in a row are as tall as the tallest: the row's cells stretch to
+   the same height, the paragraph and its box fill the cell (stryker.com: 122px and 122px at
+   1440px, "Register for free" and "Follow @strykerfornurses") */
+body.news-detail main .columns:has(span.box-gold) > div > div > :has(> span.box-gold) {
+  height: 100%;
+  margin: 0;
+}
+
+body.news-detail main .columns:has(span.box-gold) span.box-gold {
+  box-sizing: border-box;
+  height: calc(100% - 2 * var(--space-block-s));
+}
+
+/* …a box alone in its row keeps 10px more below its text (stryker.com: 173px for the
+   "Watch our Nurses Week special" box at 1440px) */
+body.news-detail main .columns:has(span.box-gold) > div > div:only-child span.box-gold {
+  padding-bottom: calc(4% + var(--space-block-s));
+}
+
+/* contact-aside (the contact links beside a news form, e.g. Sustainability "Contact
+   Information"): the social buttons sit one paragraph gap further below the links, as on
+   the source (31px from "Product feedback" to the LinkedIn / X / YouTube buttons) */
+body.news-detail main .section.contact-aside > .default-content-wrapper p.button-wrapper {
+  margin-top: var(--space-block);
+}
+
+/* the form of a form-with-aside section starts at the top of the section, level with its
+   contact links, as on the source (stryker.com c-marketo-form has no space above the form:
+   the Sage webinar and Sustainability EP releases) */
+body.news-detail main > .section:is(.form-with-aside, .form-right) .marketo-form {
+  padding-top: 0;
+}
+
+/* section style `separator-wide` (with `separator`): the rule spans the page container
+   (1410px less the 15px gutters), not the article column, e.g. the first rule of the
+   BattleBots Q&A (source full-width .component-subheading). The section content keeps its
+   article column; the rule is drawn on the section */
+body.news-detail main > .section.separator.separator-wide {
+  position: relative;
+}
+
+body.news-detail main > .section.separator.separator-wide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline: max(var(--container-gutter), calc((100% - var(--container-max)) / 2 + var(--container-gutter)));
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail main > .section.separator.separator-wide > div:first-child {
+  border-top: 0;
+}
+
+/* Section Metadata `background: light-gray` on a `video-text` section: the light-grey box
+   that opens the text beside the video, around its first paragraph — not a band behind the
+   row (stryker.com rich text .has-background.bg-light-gray at the top of the one-third
+   column, e.g. Ellys' maxillofacial surgery story: 20px padding) */
+body.news-detail main > .section.video-text.light-gray {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.video-text.light-gray > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
+  padding: var(--space-block-l);
+  background-color: var(--color-surface);
+}
+
+/* …in a Large Headline column (headline-1-5vw: no paragraph gaps) the quote starts a
+   section gap below the box, as the source Large Headline components (Columns gray-lead) */
+body.news-detail main > .section.video-text.light-gray.headline-1-5vw > .default-content-wrapper > :is(:is(p, h2):not(.button-wrapper):first-child, p.button-wrapper:first-child + :is(p, h2)) {
+  margin-bottom: var(--space-section-l);
+}
+
+/* video-text: a button right after the video (a Bold link on its own line opening the
+   text, e.g. Matt's "Learn more about the LUCAS…") is the source's button under the video:
+   on phones video, button, text, 20px / 15px apart; from 900px under the video (below) */
+body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child {
+  margin: var(--space-block-l) 0 var(--space-block);
+}
+
+/* a bold link in a colour tag alone on its line in a `bold-body` section (news-detail.js
+   puts it back from a button) is Futura bold text in the tag's colour, like bold text in a
+   colour tag: stryker.com <a><span class="futura-bold">, e.g. the [[color-teal]…] BACK link
+   that ends the SPS blog posts (teal 14px, darker teal on hover) */
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span[class*="color-"] strong > a:any-link:is(:hover, :focus-visible) {
+  background-color: transparent;
+}
+
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  span.color-teal strong > a:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+
+/* section style `blank-above`: the empty paragraph the source authors typed above it
+   (<p>&nbsp;</p>, which EDS drops): the section starts one blank 14px line plus the
+   paragraph gap below the text above (49px) instead of the section gap, e.g. the NEPTUNE S
+   button under "Begin your Journey to Zero* harm today at Neptune S." */
+body.news-detail main > .section.blank-above {
+  padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-block-l));
+}
+
+body.news-detail main > .section.blank-above > .default-content-wrapper > :first-child {
+  margin-top: 0;
+}
+
+/* section style `line-above`: the blank line the source typed at the end of the text above
+   (<br>&nbsp;, which EDS drops): the section starts one blank 14px line and the paragraph
+   gap below that text (34px) instead of the section gap, e.g. "Evolving roles" in
+   "Following in her mother's footsteps" */
+body.news-detail main > .section.line-above {
+  padding-top: calc(var(--corp-blank-line) - var(--space-block-l));
+}
+
+body.news-detail main > .section.line-above > .default-content-wrapper > :first-child {
+  margin-top: 0;
+}
+
+/* section style `full-width-image` (as on long-page-detail-corp pages): a stryker.com Full
+   Width Image (.fullWidthImage .imgBoxId.full-width-img, e.g. the hero photo of Eli's osteoid
+   osteoma story: 1410 x 588px at 1440px): the container width, the column gutters included,
+   edge to edge on phones; with two images the second is the phone image, below 600px
+   (source 840px) */
+body.news-detail main > .section.full-width-image > .default-content-wrapper:nth-child(n) {
+  padding-inline: 0;
+}
+
+body.news-detail main > .section.full-width-image > .default-content-wrapper:nth-child(n) img {
+  display: block;
+  width: 100%;
+}
+
+body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p > picture) {
+  display: none;
+}
+
+/* section style `box-gap-5`: the section sits below the blank line the source authors typed
+   at the end of the text box above (<p>&nbsp;</p>, which EDS drops) and the box's 5% bottom
+   margin, instead of the section gap (e.g. "Resources" under "Learn more about ProCare" on
+   the Mutual Aid case study: 103px at 1440px, 78px at 900px, 52px at 390px) */
+body.news-detail main > .section.box-gap-5 {
+  --news-box-gap: calc(5 * (min(100%, var(--container-max)) - 2 * var(--container-gutter)) / 100);
+
+  padding-top: calc(var(--corp-blank-line) + var(--news-box-gap) - var(--space-block-l));
+}
+
+/* Cards Corp (resources) in an article: the PDF cover keeps its size in a 240px high
+   cell, centred, at every width (stryker.com .c-resourcesanddownload: max-height 238px,
+   184 x 238px, e.g. the Mutual Aid case study) instead of the card width */
+body.news-detail main .cards-corp.resources .cards-corp-card-image {
+  display: flex;
+  align-items: center;
+  height: 240px;
+}
+
+body.news-detail main .cards-corp.resources.block > ul > li .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 238px;
+}
+
+/* …and the list ends the source's 20px item margin and 20px component margin below the
+   last title (55px from the title to the next section at every width, e.g. "Related"
+   under the white paper of the pediatric virtual nursing pilot), with the section gap */
+body.news-detail main .cards-corp.resources {
+  padding-bottom: var(--space-block-l);
+}
+
+/* a button right after the references of a `disclaimer` section (e.g. "Back to trending
+   topics" closing the colonoscopy article's small print) sits a paragraph gap below
+   them, as on the source, not the references' section gap */
+body.news-detail main > .section.disclaimer > .default-content-wrapper > :is(ol, ul):has(+ p.button-wrapper) {
+  margin-bottom: var(--space-block);
+}
+
+/* section style `white-lead`: a Columns (…, large-headline) video row whose text sits in a
+   white Large Headline box below a blank line (stryker.com .has-background.bg-white after
+   a `<p>&nbsp;</p>`, e.g. "Watch Kevin Lobo on CNBC's Squawk Alley"): the video at the row
+   top, the text 20px in from both sides of the box; on phones the text starts the video
+   component's 20px gap and the blank line under the video (54px), from 600px (840px on
+   the source) the blank line and the box's 20px top inset below the row top (54px) */
+body.news-detail main > .section.white-lead .columns > div > div:has(.columns-youtube, iframe, video, .dm-video-wrapper) {
+  padding-top: 0;
+}
+
+body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) {
+  padding-top: calc(var(--space-block-l) - var(--space-block) + var(--corp-blank-line));
+}
+
+body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) > * {
+  padding-inline: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail {
+    --news-h3-size: var(--heading-font-size-l);
+    --news-h2-size: var(--heading-font-size-xl);
+    --news-band-headline-vw: 1.25vw;
+  }
+
+  body.news-detail main > .section:not(.video-text) > .video-wrapper:has(+ .default-content-wrapper) {
+    margin-bottom: var(--space-section);
+  }
+
+  /* the article h1: Futura Bold from 600px (the corp light serif on phones) */
+  body.news-detail main > .section > .default-content-wrapper > h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+
+  body.news-detail main > .section > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  body.news-detail main > .section:is(.hero-container, .hero-corp-container) {
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section.date-above > .default-content-wrapper > h5.first-published {
+    margin-bottom: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section.spacer:not(.small, .large, .xlarge, .xxlarge) {
+    height: var(--space-section);
+  }
+
+  body.news-detail main > .section.separator {
+    margin-bottom: var(--space-section);
+  }
+
+  body.news-detail main > .section.separator > div:first-child {
+    padding-top: var(--space-section-l);
+  }
+
+  /* teaser cards in the article column: 1 per row until 900px (the block's default
+     4 per row from 600px is too narrow in the 66.66% column) */
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* …stacked, they keep the block's phone rule between them (source gold
+     .desc-container border at 700px, e.g. "SHEA CAUTI prevention practice updates") */
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: var(--space-block-xs);
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  /* Columns dark-last: the quote box takes what the text cell leaves (its margins sit
+     inside the column) and hugs its content */
+  body.news-detail main .columns.dark-last > div > div:last-child {
+    flex: 1 1 0;
+    align-self: flex-start;
+  }
+
+  /* Columns label-right: 30px above the question (+ the separator's 50px) */
+  body.news-detail main .columns.label-right {
+    padding-top: var(--space-section);
+  }
+
+  /* Columns `columns-25-75`: a narrow first cell (25%) beside the text (75%), the mirror of
+     the corp columns-75-25 (stryker.com col-sm-3 + col-sm-9, e.g. the report cover beside
+     the 2022 Comprehensive Report release) */
+  body.news-detail main .columns.columns-25-75 > div > div:first-child {
+    flex: 0 0 25%;
+  }
+
+  body.news-detail main .columns.columns-25-75 > div > div:last-child {
+    flex: 0 0 75%;
+  }
+
+  /* Columns thumbnails: one per row in the side column, as wide as the column (source
+     col-sm-3 until 1024px) */
+  body.news-detail main .columns.thumbnails > div > div:last-child {
+    display: block;
+  }
+
+  /* image-2-3: an image the source sets in a two-thirds grid column with the other column
+     empty (stryker.com col-sm-8, e.g. the additive manufacturing lead image on a
+     full-width page): two thirds of the container less the column padding (930px at
+     1440px), like the corp image-1-3 / image-1-2; full width below 600px */
+  body.news-detail main > .section.image-2-3 > .default-content-wrapper picture,
+  body.news-detail main > .section.image-2-3 > .video-wrapper .video {
+    max-width: calc(min(100vw, var(--container-max)) * 2 / 3 - 2 * var(--space-block));
+  }
+
+  body.news-detail main > .section.curated-cta .columns p:not(.columns-img-col):has(video) {
+    margin-bottom: var(--space-section);
+  }
+
+  body.news-detail main > .section.white-lead .columns > div > div:not(:has(.columns-youtube, iframe, video, .dm-video-wrapper)) {
+    padding-top: calc(var(--corp-blank-line) + var(--space-block-l));
+  }
+
+  /* Columns `columns-75-25` with a portrait and its quote in the narrow cell (the quote
+     column of "From behind-the-scenes to the front line"): from 600px (source ~660px) to
+     900px the text runs across the row and the portrait sits under it, a third of the row
+     wide, the quote beside it a column gutter (30px) away (stryker.com col-sm-9 + col-sm-3
+     stacked, the portrait's col-xs-4); side by side again from 900px */
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) {
+    flex-wrap: wrap;
+  }
+
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) > div {
+    flex: 0 0 100%;
+  }
+
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) > div:last-child {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: calc(2 * var(--container-gutter));
+    align-items: start;
+    margin-top: calc(var(--space-section) + var(--space-block-xs)); /* the source's 49px from the text to the portrait, with the 15px paragraph gap */
+  }
+
+  body.news-detail main > .section.blank-above {
+    padding-top: calc(var(--corp-blank-line) + var(--space-block) - var(--space-section));
+  }
+
+  body.news-detail main > .section.line-above {
+    padding-top: calc(var(--corp-blank-line) - var(--space-section));
+  }
+
+  body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child:has(+ p > picture) {
+    display: block;
+  }
+
+  body.news-detail main > .section.full-width-image > .default-content-wrapper > p:first-child + p:has(> picture) {
+    display: none;
+  }
+
+  body.news-detail main > .section.box-gap-5 {
+    padding-top: calc(var(--corp-blank-line) + var(--news-box-gap) - var(--space-section));
+  }
+
+  body.news-detail main .cards-corp.resources {
+    padding-bottom: var(--space-block-s);
+  }
+}
+
+@media (width >= 900px) {
+  /* section style `form-right`: the section's text in the left 5/12 column after a 1/12
+     offset and its form in the right half (stryker.com col-sm-5 offset-1 + col-sm-6, e.g.
+     the "Nominate a heroic healer" form of the nurses feature); stacked below 900px, the
+     text first */
+  body.news-detail main .columns-wrapper:has(span.box-gold) {
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section.form-right {
+    margin-top: calc(3 * var(--space-section));
+    margin-bottom: calc(var(--space-section) + var(--space-block-s));
+    display: grid;
+    grid-template-columns: 1fr 5fr 6fr;
+    align-items: start;
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  body.news-detail main > .section.form-right > div {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* the 1fr grid column is the text's indent from here */
+  body.news-detail main > .section.form-right > .default-content-wrapper {
+    grid-area: 1 / 2;
+    padding-inline-start: var(--container-gutter);
+  }
+
+  body.news-detail main > .section.form-right > .marketo-form-wrapper {
+    grid-area: 1 / 3;
+  }
+
+  /* video-text (styles.css): the stryker.com 8 + 4 grid row — the video in the two-thirds
+     column, the text in the one-third column, a column gutter (30px) apart and without
+     inner padding (e.g. Ellys' maxillofacial surgery story: 910px + 440px at 1440px) */
+  body.news-detail main > .section.video-text {
+    gap: calc(2 * var(--container-gutter));
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper {
+    flex-basis: calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    padding-inline: 0;
+  }
+
+  /* …with a button under the video: the video and the button in the two-thirds column
+     (floats, a section gap apart), the text beside them in the one-third column */
+  body.news-detail main > .section.video-text:has(> .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child) {
+    --news-video-column: calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+
+    display: flow-root;
+  }
+
+  body.news-detail main > .section.video-text:has(> .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child) > .video-wrapper {
+    float: left;
+    width: var(--news-video-column);
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper > p.button-wrapper:first-child {
+    float: left;
+    clear: left;
+    width: var(--news-video-column);
+
+    /* 30px below the player, as the source: the video wrapper ends 15px below it */
+    margin: var(--space-block) 0 0;
+  }
+
+  body.news-detail main > .section.video-text > .video-wrapper + .default-content-wrapper:has(> p.button-wrapper:first-child) > :not(:first-child) {
+    margin-left: calc(var(--news-video-column) + 2 * var(--container-gutter));
+  }
+
+    body.news-detail main > .section:not(.hero-container, .hero-corp-container) > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+  }
+  
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul > li:not(:last-child) .cards-corp-card-body {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  /* Columns thumbnails: a sixth of the container less the column padding (source
+     col-md-2 from 1024px: 183px at 1280px) */
+  body.news-detail main .columns.thumbnails > div > div:last-child .columns-img-col {
+    max-width: calc(min(100vw, var(--container-max)) / 6 - 2 * var(--space-block));
+  }
+
+  body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) {
+    flex-wrap: nowrap;
+  }
+
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) > div:first-child {
+    flex: 0 0 75%;
+  }
+
+  body.news-detail main .columns.columns-75-25 > div:has(> div:last-child > .columns-img-col + p) > div:last-child {
+    display: block;
+    flex: 0 0 25%;
+    margin-top: 0;
+  }
+}
+
+
+/* section style `gold-boxes`: each cell of the section's Columns block is a plain gold box
+   (stryker.com .has-background.bg-gold rich text in a col-sm-6 col-md-4 row, e.g. the three
+   workplace violence figures: 440 x 115px at 1440px), its text centred on 1.15 lines (22px
+   apart for the 17.5px text). The box's padding (5% on top and at the sides, 10px and the
+   text's 15px margin below) and the 3% below it are shares of the box width, so they are
+   worked out from the row width (EDS gives a one-paragraph cell no <p> to pad). The boxes
+   of a row are as tall as the tallest, 30px apart; they stack on phones, go 2 per row from
+   600px and 3 per row from 900px */
+body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+  --gold-box-width: 100%;
+
+  align-items: stretch;
+  column-gap: var(--space-section);
+  margin-inline: 0;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+  margin: 0 0 calc(var(--gold-box-width) * 3 / 100);
+  padding: calc(var(--gold-box-width) * 5 / 100) calc(var(--gold-box-width) * 5 / 100) calc(var(--space-block-s) + var(--space-block));
+  background-color: var(--color-accent);
+  font-size: var(--body-font-size-l);
+  line-height: var(--news-gold-box-line-height);
+  text-align: center;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body.news-detail main > .section.gold-boxes .columns.block > div > div > p:last-child {
+  margin-bottom: 0;
+}
+
+/* …the box text is 17.5px, 22px apart (stryker.com span.fontsize-1-25em), and its Bold
+   figure on the first line is 21px black Futura bold (span.futura-bold > span.fontsize-1-5em,
+   e.g. "$62,100 to $67,100"): the sizes come with the section style, the text is authored
+   with plain Bold only */
+body.news-detail main > .section.gold-boxes .columns.block strong {
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+    --gold-box-width: (100% - var(--space-section)) / 2;
+
+    flex-flow: row wrap;
+  }
+
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+    flex: 0 0 calc(var(--gold-box-width));
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) {
+    --gold-box-width: (100% - 2 * var(--space-section)) / 3;
+  }
+
+  body.news-detail main > .section.gold-boxes .columns.block > div:nth-child(n) > div {
+    flex: 1 1 0;
+  }
+}
+
+/* Columns: a caption under the photo of a cell (stryker.com: a rich text below the image
+   component in the same grid column, e.g. the bio under Darryl Conway's headshot) is body
+   copy (14px, not the section's copy size) and sits the image component's 20px (30px from
+   600px) and the caption's own 3% margin below the photo (44px at 1440px, 30px at 390px) */
+body.news-detail main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
+  margin-bottom: calc(var(--space-block-l) + 3%);
+}
+
+body.news-detail main .columns.block:not(.large-headline) > div > div > p.columns-img-col ~ p:nth-child(n) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* …a Bold lead-in on a line of its own, then a line break and its text (the source's plain
+   <b>, e.g. "A – Airway" and the bio's name), is Humanist bold, as Bold is in news text
+   (authoring conventions), not the corp Futura bold of a Columns cell */
+body.news-detail main .columns.block:not(.large-headline) > div > div > p > strong:first-child:has(+ br) {
+  font-family: var(--body-font-family);
+}
+
+@media (width >= 600px) {
+  body.news-detail main .columns.block:not(.large-headline, .caption-tight) > div > div > p.columns-img-col:has(+ p) {
+    margin-bottom: calc(var(--space-section) + 3%);
+  }
+}
+
+/* section style `h2-spaced`: every Heading 2 of the section after its first element has a
+   blank 17.5px line above it, as the source's subheads after a typed blank line
+   (<br>&nbsp; at the end of the paragraph above, which EDS drops; e.g. "What is CAUTI?" and
+   "Proactive steps to reduce the risk of CAUTI": 21px more than the paragraph gap) */
+body.news-detail main > .section.h2-spaced > .default-content-wrapper > h2:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--news-blank-line-l));
+}
+
+/* section style `h3-spaced`: the same blank 17.5px line above every Heading 3 of the section
+   after its first element (e.g. "How does a LUCAS device work?" in the LUCAS article) */
+body.news-detail main > .section.h3-spaced > .default-content-wrapper > h3:not(:first-child) {
+  margin-top: calc(var(--space-block) + var(--news-blank-line-l));
+}
+
+/* Columns (large-headline) of a photo and its headline (stryker.com Large Headline beside a
+   standalone image, e.g. "Creating a better, healthier world" next to the 150M patients
+   graphic): the headline starts 8% of its column down, as the source component's top
+   margin (31px at 1440px, 21px at 900px), with the 17px gap to its text; a Bold headline
+   keeps the source's Futura lines (37.8px apart at 1440px, not the serif heading's) */
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div:has(> h2:first-child) {
+  padding-top: 0;
+}
+
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div > h2:first-child {
+  margin-top: 8%;
+  margin-bottom: calc(var(--space-block) + var(--space-block-xs));
+  font-family: var(--display-font-family);
+}
+
+/* …its button 34px below the text (the source's Curated CTA under the headline) */
+body.news-detail main .columns.large-headline.block > div > .columns-img-col + div:has(> h2:first-child) > p.button-wrapper {
+  margin-top: calc(var(--space-section) + var(--space-block-xs));
+}
+
+/* Columns (columns-50-50) of article text beside a photo (stryker.com col-sm-6 rows, e.g.
+   each placement diagram of the AED pad placement guide): the photo keeps its image
+   component's 20px below it (30px from 600px) inside the row, so the next row starts the
+   source's 54px below it */
+body.news-detail main .columns.columns-50-50.block > div > div.columns-img-col:last-child {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail main .columns.columns-50-50.block > div > div.columns-img-col:last-child {
+    margin-bottom: var(--space-section);
+  }
+}
+
+/* a Bold lead-in that opens a list item on a line of its own (then a line break and its
+   text, the source's plain <b>, e.g. "Skilled technicians you can count on" in the
+   emergency care equipment readiness article) is Humanist bold, as Bold is in news text
+   (authoring conventions); news-detail.js marks it standalone, which other bold labels on
+   a line of their own keep in Futura */
+body.news-detail main > .section > .default-content-wrapper li > strong.standalone:first-child:has(+ br) {
+  font-family: var(--body-font-family);
+}
+
+/* Panel (left) in an article: the source's dimensional box (white, soft shadow, 10px from
+   the column) with its 4% / 5% / 3% padding (e.g. the pull quotes of the incontinence
+   prevalence article: 55px above and 69px beside the quote at 1440px) */
+body.news-detail main .panel.left.block .panel-body {
+  padding: 4% 5% 3%;
+}
+
+/* section style `footnote-list`: footnotes authored as a numbered list (so the citation
+   superscripts link to them, scripts.js decorateFootnotes) set as the source's footnote
+   paragraphs: 14px on 19.25px lines, one paragraph gap (15px) apart (e.g. the footnotes of
+   the Sustainability "Supply chain week" article: 34px from footnote to footnote) */
+body.news-detail main > .section.footnote-list > .default-content-wrapper li {
+  line-height: var(--paragraph-line-height);
+}
+
+body.news-detail main > .section.footnote-list > .default-content-wrapper li:not(:last-child) {
+  margin-bottom: var(--space-block);
+}
+
+/* section style `li-spaced`: every list item of the section but the last ends with a blank
+   17.5px line, as the source's items that end in a typed blank line (<br><br>, which EDS
+   drops; e.g. "Skilled technicians you can count on" in the emergency care equipment
+   readiness article: 63px from item to item instead of 42px) */
+body.news-detail main > .section.li-spaced > .default-content-wrapper li:not(:last-child) {
+  margin-bottom: var(--news-blank-line-l);
+}
+
+/* section style `h4-1-25`: every Heading 4 of the section at 1.25x the h4 size (stryker.com
+   h4 > span.fontsize-1-25em on whole headings, e.g. "Understanding HAP" in the patient oral
+   care article: 21.875px, 17.5px on phones) */
+body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
+  font-size: calc(var(--body-font-size-m) * var(--news-scale-1-25));
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.h4-1-25 > .default-content-wrapper > h4 {
+    font-size: calc(var(--body-font-size-l) * var(--news-scale-1-25));
+  }
+}
+
+/* section style `h4-line-above`: every Heading 4 of the section after its first element opens
+   with one blank line of its own (stryker.com <h4><br>Subhead</h4>, e.g. the Sustainability
+   "Supply chain week" article: 48px Heading 4 boxes for a 16.1px line on phones, 40px for
+   20.1px lines from 600px); the text below keeps the paragraph gap. Padding, so the blank
+   line adds to the paragraph margin above instead of collapsing into it */
+body.news-detail main > .section.h4-line-above > .default-content-wrapper > h4:not(:first-child) {
+  padding-top: calc(1em * var(--heading-line-height-h4));
+}
+
+/* …in a `serif` section the panel's text is the light serif too, on the source's 1.06
+   lines (25.97px for the 24.5px pull quotes of the incontinence prevalence article) */
+body.news-detail main > .section.serif .panel.left.block .panel-body :is(p, li) {
+  font-family: var(--heading-font-family);
+  line-height: var(--heading-line-height);
+}
+
+/* section style `link-list`: the section's list is a plain list of links (stryker.com
+   Curated Link List, e.g. "AED buying guide" / "Defibrillator 101" under "Learn more" in the
+   police car AED article): no bullets or indent, 14px teal links on their own lines, 34px
+   apart */
+body.news-detail main > .section.link-list > .default-content-wrapper :is(ul, ol) {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body.news-detail main > .section.link-list > .default-content-wrapper li:nth-child(n) {
+  margin-bottom: 0;
+}
+
+body.news-detail main > .section.link-list > .default-content-wrapper li:nth-child(n) + li {
+  margin-top: var(--space-block);
+}
+
+/* a Bold link inside running text (not alone on its line, where it is the corp text link,
+   nor in a colour tag) is a bold link in the text's own font and size, as Bold is in news
+   text (stryker.com <a><b>, e.g. "LIFEPAK CR2" in the police car AED article: 17.5px
+   Humanist bold, teal, inline) instead of the shared 14px uppercase Futura bold-link or
+   teal button style */
+body.news-detail main > .section > .default-content-wrapper :is(p:not(.button-wrapper), li) :is(a:any-link:has(> strong), a:any-link > strong, strong > a:any-link):not(span[class*="color-"] *, span.box-gold *, :has(u)) {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+}
+
+/* Hero Corp on a news article: from 600px the slide is at most the stryker.com news
+   carousel's 3:1 frame, so a taller desktop image keeps its top and loses its bottom (e.g.
+   the 1440 x 578px police car photo of "Why all police cars need AEDs": 480px shown at
+   1440px); a 3:1 or wider image shows whole */
+@media (width >= 600px) {
+  body.news-detail main .hero-corp.image-slide.block > div:first-child {
+    max-height: calc(100vw / 3);
+    overflow: hidden;
+  }
+}
+
+/* section style `gold-boxes-2` (with gold-boxes): the source's larger-figure gold box, its
+   Bold figure 28px (span.fontsize-2em, lines 1.06), the box padded 10px above and below
+   (and the text's 15px margin) and 2% of its width at the sides, with no margin below it
+   (stryker.com .has-background.bg-gold in a col-sm-6 col-md-4 row, e.g. "92% strongly
+   agree" on the Ease case study: 440 x 157px at 1440px) */
+body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block > div:nth-child(n) > div {
+  margin-bottom: 0;
+  padding: var(--space-block-s) calc(var(--gold-box-width) * 2 / 100) calc(var(--space-block-s) + var(--space-block));
+}
+
+body.news-detail main > .section.gold-boxes.gold-boxes-2 .columns.block strong {
+  font-size: var(--heading-font-size-xxl);
+}
+
+/* section style `gold-boxes-3` (with gold-boxes): the big-figure gold box, its Bold figure
+   35px (span.fontsize-2-5em .futura-bold) over 14px text, the box padded 22px above, 10px at
+   the sides and 25px below (stryker.com .has-background.bg-gold in a col-sm-4 row, e.g. "2.5
+   million" of "How one medical center reduced pressure ulcers and saved costs": 440 x 160px
+   at 1440px) */
+body.news-detail main > .section.gold-boxes.gold-boxes-3 .columns.block > div:nth-child(n) > div {
+  margin-bottom: 0;
+  padding: var(--space-block-l) var(--space-block-s) var(--space-inset-m);
+  font-size: var(--body-font-size-m);
+}
+
+body.news-detail main > .section.gold-boxes.gold-boxes-3 .columns.block strong {
+  font-size: var(--corp-figure-size-l);
+}
+
+/* section style `text-video`: a row of text and a video (stryker.com col-sm-6 text column
+   beside a col-sm-6 video, e.g. the top of the DE&I Summit 2023 feature): the section's text
+   and Panel in the left half, the video in the right half from 600px (source 840px), up to
+   three text parts beside it; on phones the video follows the text, 15px below. The Panel
+   quote is the source's 1.5em light serif (21px, lines 1.06) in its 2% / 3% / 1% box */
+body.news-detail main > .section.text-video > .video-wrapper:nth-child(n) {
+  margin-top: var(--space-block);
+}
+
+body.news-detail main > .section.text-video .panel.left.block .panel-body {
+  padding: 2% 3% 1%;
+}
+
+body.news-detail main > .section.text-video .panel.left.block .panel-body :is(p, li) {
+  margin-bottom: var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.text-video {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, calc(min(100vw, var(--container-max)) / 2)));
+    grid-template-rows: auto auto 1fr;
+    place-content: start center;
+  }
+
+  body.news-detail main > .section.text-video > div {
+    grid-column: 1;
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  body.news-detail main > .section.text-video > div.video-wrapper:nth-child(n) {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+    align-self: start;
+    margin-top: 0;
+  }
+}
+
+/* `full-bleed` with `background: light-gray`: the source's full-bleed light-grey panel
+   (c-full-bleed-panel bg-light-gray, e.g. the photo row of the DE&I Summit 2023 feature):
+   a blank text line plus 20px above and below its content inside the band (53px above the
+   photos at 1440px; the photo row brings its own 30px at the bottom), the section gap after
+   it */
+body.news-detail main > .section.full-bleed.light-gray {
+  margin-bottom: var(--space-section);
+  padding-top: calc(var(--corp-blank-line) + var(--space-block-l));
+  padding-bottom: calc(var(--corp-blank-line) + var(--space-block-l) - var(--space-section));
+}
+
+/* section style `dark-gray-box`: the section's text in the dark-grey Large Headline box
+   across the text column (stryker.com .c-largeheadline .has-background.bg-dark-gray, e.g.
+   "To date, thousands of surgeons…" on "Mako SmartRobotics hits 500,000+ procedures":
+   909px wide at 1440px, padded 20px): white light-serif text at the headline's 1.5vw
+   (21px at 1440px, 3vw on phones), lines 1.35, its Bold words gold Futura bold; with `p-1`
+   the plain text is the unsized headline (the HPRC quote of "Packaging for a better
+   planet": 1vw from 600px, capped at 14px, and 21px on phones) and the Bold line keeps
+   1.5vw; a colour tag keeps its colour on Bold words (white Futura bold in the Asian culture
+   feature's ACE quote: [[color-white]**…**]) */
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) {
+  --corp-headline-vw: 2vw;
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-secondary);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n) {
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:first-child {
+  padding-top: var(--space-block-l);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:last-child {
+  padding-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n).p-1 > .default-content-wrapper > p {
+  font-size: var(--body-font-size-xl);
+}
+
+body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p strong:not(span[class*="color-"] *) {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) {
+    --corp-headline-vw: 1vw;
+  }
+
+  body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n).p-1 > .default-content-wrapper > p {
+    font-size: max(var(--body-font-size-xs), min(var(--body-font-size-m), var(--corp-headline-vw)));
+    line-height: var(--heading-line-height-hero);
+  }
+}
+
+/* bracket tag `[[box-dark]…]` around a whole paragraph: the paragraph in a dark-grey box
+   (stryker.com bg-dark-gray rich text, e.g. the two quotes of "A winning spirit": padding 6%
+   top, 4% sides and bottom), white light serif at 28px at every width (.fontsize-2em), its
+   Bold words gold Futura bold, in a Columns cell and in the article text (the :nth-child(n)
+   outrank the Columns cell Bold and the article text Bold, which keeps the body font) */
+body.news-detail main span.box-dark {
+  display: block;
+  padding: 6% 4% 4%;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height);
+}
+
+body.news-detail main span.box-dark:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:not(span[class*="color-"] *) {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+/* the 14px Columns captions (the text under a photo, above) keep the 21px standalone link
+   of a `link-1-5` section (styles/styles-corp.css), e.g. the "Read the full article here."
+   under the Savoy Magazine article's photo and copy */
+body.news-detail main > .section.link-1-5 .columns.block > div > div > p.columns-img-col ~ p:has(> a.link-strong:only-child):nth-child(n) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--body-line-height-l);
+}
+
+/* section style `number-list`: a list of key figures (stryker.com number counters and Large
+   Headlines at 2.5vw in the middle column under "ProCuity by the numbers" of "Innovation
+   inspired by insights"): each paragraph is one figure, the light serif at 5vw, from 600px
+   2.5vw capped at 35px (19.5px at 390px, 22.5px at 900px), lines 1.35, its Bold words Futura
+   bold (a colour tag, e.g. [[color-blue]], for the source's blue figures); a 1px grey rule
+   15px under each figure but the last, the next figure 20px (50px from 600px) below it. A
+   Bold link alone on its line closing the list is the source's teal shadow box (420px wide
+   in the 470px column, 21px Futura bold white text), 30px under the last figure (85px from
+   600px); the list starts 60px (75px from 600px) under the rule of the headline above. The
+   column itself is set on full-width pages (news-detail-themes.css) */
+body.news-detail main > .section.number-list {
+  --corp-headline-vw: 2vw;
+
+  padding-top: var(--space-section);
+}
+
+body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p:not(.button-wrapper) {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p:not(.button-wrapper) strong {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p:not(.button-wrapper):has(+ p:not(.button-wrapper)) {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: var(--space-block);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p.button-wrapper {
+  margin: var(--space-section) var(--space-block-s) 0;
+}
+
+body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p.button-wrapper > a.button:any-link {
+  display: block;
+  margin: 0;
+  padding: var(--space-inset-m) var(--space-block-s);
+  border: 0;
+  border-radius: 0;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.number-list {
+    --corp-headline-vw: 1vw;
+
+    padding-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p:not(.button-wrapper):has(+ p:not(.button-wrapper)) {
+    margin-bottom: var(--space-section-l);
+  }
+
+  body.news-detail main > .section.number-list:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) > p.button-wrapper {
+    margin-top: calc(var(--space-section-l) + var(--space-inset-l) + var(--space-block-xs));
+  }
+}
+
+/* section style `lead-1-5`: a Bold lead-in opening a paragraph — on a line of its own (Bold
+   text, then a line break and the paragraph's text) or running into the text — is 21px, on
+   1.06 lines (stryker.com .fontsize-1-5em bold label over 1.25em text, e.g. "1. School-aged
+   children are potential victims…" of "Four reasons every school needs AEDs"; the bold
+   "In February of 2020," opening "Going the distance for front-line heroes"); colour it with
+   a tag ([[color-blue]]) */
+body.news-detail main > .section.lead-1-5:nth-child(n):nth-child(n):nth-child(n):nth-child(n) > .default-content-wrapper:nth-child(n) p > :is(strong, span[class*="color-"]):first-child {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* a gold box in a `separator` section (e.g. "Stryker aims to improve healthcare with IoT
+   solutions" of "Smart devices deliver actionable insights"): the rule follows the text
+   above by one paragraph gap and the box starts the separator's gap below the rule (20px,
+   50px from 600px; source hr margin 50px), instead of the box's blank line above the
+   section and the gap inside the box */
+body.news-detail main > .section.separator.bg-gold {
+  margin-top: 0;
+}
+
+body.news-detail main > .section.separator.bg-gold > .default-content-wrapper:first-child {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.separator.bg-gold > .default-content-wrapper:first-child {
+    margin-top: var(--space-section-l);
+  }
+}
+
+/* section style `light-gray-box`: the section's text in the light-grey Large Headline box
+   across the text column (stryker.com .c-largeheadline .has-background.bg-light-gray, e.g.
+   the quotes of "Women leading the charge for change": 909px wide at 1440px, padded 20px):
+   black light-serif text at the headline's 1.5vw (21px at 1440px, 3vw on phones), lines
+   1.35, its Bold words Futura bold. The rich-text grey box is `background: bg-light-gray` */
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
+  --corp-headline-vw: 2vw;
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper {
+  display: flow-root;
+  background-color: var(--color-surface);
+  background-clip: content-box;
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  font-family: var(--heading-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:first-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-top: var(--space-block-l);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  padding-bottom: var(--space-block-l);
+}
+
+body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) > .default-content-wrapper > p:nth-child(n):nth-child(n) strong:nth-child(n):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.light-gray-box:nth-child(n):nth-child(n) {
+    --corp-headline-vw: 1vw;
+  }
+}
+
+/* Columns 50/50 in a `serif` section: the text column beside an image keeps the cell's 15px
+   gutters, not the patients 83px inset (columns.css), as on stryker.com (e.g. the Brandon
+   Jominy intro of "Stryker's Journey to Zero harm continues with Neptune S": 675px of text
+   from x 30 at 1440px; the text right of the photo in "Stryker releases comprehensive
+   report…": 675px from x 735) */
+body.news-detail main .section.serif .columns.columns-50-50.block > div:has(picture) > div:not(:has(picture)):nth-child(n) {
+  padding-inline: var(--space-block);
+}
+
+/* `number-list` with Statistics figures: a Statistics block (`count-up`, colour navy) in the
+   list is one figure like the paragraphs around it — its number on its own line in the blue
+   Futura bold, counting up from 0, its text the light serif, both at the list's 2.5vw (the
+   stryker.com number counters "400 hours of customer research and input" and "4 years in
+   the making" between the static Large Headlines of "Innovation inspired by insights"); the
+   same 1px rule and gaps between the figures */
+body.news-detail main > .section.number-list .statistics.block ul.statistics-list {
+  display: block;
+}
+
+body.news-detail main > .section.number-list .statistics.block .statistics-item {
+  display: block;
+  padding: 0;
+  text-align: start;
+}
+
+body.news-detail main > .section.number-list .statistics.block :is(.statistics-value, .statistics-value p, .statistics-desc, .statistics-desc p) {
+  margin: 0;
+  font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--corp-headline-vw))));
+  line-height: var(--heading-line-height-hero);
+}
+
+body.news-detail main > .section.number-list .statistics.block :is(.statistics-desc, .statistics-desc p) {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+body.news-detail main > .section.number-list > .statistics-wrapper:has(+ .default-content-wrapper > p:first-child:not(.button-wrapper)),
+body.news-detail main > .section.number-list > .default-content-wrapper:has(+ .statistics-wrapper) > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: var(--space-block);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section.number-list > .statistics-wrapper:has(+ .default-content-wrapper > p:first-child:not(.button-wrapper)),
+  body.news-detail main > .section.number-list > .default-content-wrapper:has(+ .statistics-wrapper) > p:last-child:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    margin-bottom: var(--space-section-l);
+  }
+}
