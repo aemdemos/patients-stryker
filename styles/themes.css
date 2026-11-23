@@ -63,6 +63,31 @@ body.search main .section ul {
 }
 
 /* =====================================================================
+   Theme: search-corp (www.stryker.com search page — as `search`, and the H2
+   "Showing results for:" has no corp rule below it: stryker.com shows none)
+   ===================================================================== */
+
+body.search-corp main .section h1 {
+  margin-bottom: 0;
+}
+
+body.search-corp main .section h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+body.search-corp main .section p {
+  margin-bottom: 0;
+  line-height: var(--body-line-height);
+}
+
+body.search-corp main .section ul {
+  padding-left: var(--list-indent-l);
+}
+
+/* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
 

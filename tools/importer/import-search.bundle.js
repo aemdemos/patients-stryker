@@ -43,26 +43,53 @@ var CustomImportScript = (() => {
 
   // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
-  var SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
-  function rewriteSourceLink(href) {
+  var PATIENTS_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  var CORP_HOST_RE = /^https?:\/\/www\.stryker\.com(?=[/?#]|$)/i;
+  function sourceHostFor(payload) {
+    try {
+      const { hostname } = new URL(payload.params.originalURL);
+      if (hostname === "www.stryker.com") return CORP_HOST_RE;
+    } catch (e) {
+    }
+    return PATIENTS_HOST_RE;
+  }
+  function rewriteSourceLink(href, hostRe = PATIENTS_HOST_RE) {
     if (!href) return null;
     const value = href.trim();
     let rest;
     if (value.startsWith("/") && !value.startsWith("//")) rest = value;
-    else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, "") || "/";
+    else if (hostRe.test(value)) rest = value.replace(hostRe, "") || "/";
     else return null;
+    rest = rest.replace(/^\/{2,}/, "/");
     const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
     if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
     let edsPath = path.replace(/\.html?$/i, "");
+    if (hostRe === CORP_HOST_RE) {
+      edsPath = edsPath.replace(/^\/content\/stryker(?=\/)/, "");
+      edsPath = edsPath.split("/").map((seg) => seg.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")).join("/");
+    }
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
-    const isSkinnedContent = isSaResources || isIvsTreatment;
+    const isNewsDetail = !!(payload && payload.template && [
+      "news-detail",
+      "news-detail-xf",
+      "long-page-detail-corp",
+      "long-page-detail-corp-fragments",
+      "event-detail",
+      "contact-division",
+      "people",
+      "people-fragments",
+      "ivs-footnotes",
+      "ivs-footnotes-fragments"
+    ].includes(payload.template.name));
+    const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      if (isNewsDetail) return;
       if (isIvsTreatment) {
         WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
         element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
@@ -196,8 +223,9 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
+      const hostRe = sourceHostFor(payload);
       element.querySelectorAll("a[href]").forEach((a) => {
-        const rewritten = rewriteSourceLink(a.getAttribute("href"));
+        const rewritten = rewriteSourceLink(a.getAttribute("href"), hostRe);
         if (rewritten !== null) a.setAttribute("href", rewritten);
       });
       if (isSkinnedContent) return;
@@ -299,6 +327,7 @@ var CustomImportScript = (() => {
   }
   var import_search_default = {
     transform: (payload) => {
+      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const isCorp = new URL(params.originalURL).hostname === "www.stryker.com";
@@ -312,6 +341,14 @@ var CustomImportScript = (() => {
         [...title.attributes].forEach((attr) => h1.setAttribute(attr.name, attr.value));
         while (title.firstChild) h1.appendChild(title.firstChild);
         title.replaceWith(h1);
+      }
+      if (isCorp) {
+        main.querySelectorAll("h1, h2").forEach((heading) => {
+          if (heading.querySelector("em")) return;
+          const em = document.createElement("em");
+          em.append(...heading.childNodes);
+          heading.append(em);
+        });
       }
       const spacerMeta = WebImporter.Blocks.createBlock(document, {
         name: "Section Metadata",
@@ -327,7 +364,13 @@ var CustomImportScript = (() => {
       const hr = document.createElement("hr");
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
-      meta.theme = "search";
+      if (isCorp) {
+        if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+        const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
+        if (keywords) meta.Keywords = keywords;
+        meta.site = "corp";
+      }
+      meta.theme = isCorp ? "search-corp" : "search";
       if (updated) {
         const month = (/* @__PURE__ */ new Date(`${updated[1]} 1, 2000`)).getMonth() + 1;
         meta.published = `${updated[2]}-${String(month).padStart(2, "0")}`;
