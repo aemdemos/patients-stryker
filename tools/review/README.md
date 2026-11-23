@@ -43,7 +43,7 @@ keeps the invitation, later visits need no link.
 | `threads.js` | The shared rules: page statuses, chats, Done |
 | `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
-| `NEW-PAGES.md` | Design: first source shots for newly published pages (not built yet) |
+| `NEW-PAGES.md` | Design: the migration scope table, published pages in the review, first shots by the backend (not built yet) |
 | `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
@@ -203,7 +203,7 @@ The source URLs come from the export file names (letter case kept), never from E
 
 ## Planned
 
-- **Newly published pages:** designed in [`NEW-PAGES.md`](NEW-PAGES.md) (facts, design,
+- **Migration scope, published pages, first shots:** designed in [`NEW-PAGES.md`](NEW-PAGES.md) (facts, design,
   the decisions it needs); not built yet.
 - Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
   spaces yet: never deploy the backend from there before that).
