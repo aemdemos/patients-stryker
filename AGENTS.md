@@ -510,6 +510,37 @@ blocks merging depends on repository branch protection/rulesets, not this guide.
 See [README accessibility testing](README.md#accessibility-testing) for runtime
 requirements, configuration and CI usage.
 
+#### Keyboard accessibility tests (opt-in)
+
+The same opt-in policy applies: run keyboard tests only when explicitly asked, and
+do not fix findings unless asked. They compare a source page with its EDS page:
+
+```sh
+# One pair; the source URL is optional
+npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/ https://patients.stryker.com/us/en/ivs/index.html
+
+# Configured pairs (tests/a11y/keyboard.config.js)
+npm run test:a11y:keyboard
+```
+
+- Take source URLs from the migration (`.migration/`, import scripts) or the
+  user. Never guess them.
+- Keep `A11Y_SOURCE_CONCURRENCY` at its default (2) or lower. The source is
+  usually a live production site.
+- Fit `A11Y_WORKERS` (default 2) to the machine. Each worker starts its own
+  browser. Use `A11Y_VIEWPORTS=desktop` to halve the run.
+- Report per page (source and EDS) and the differences from the reporter output or
+  `test-results/keyboard/*.compare.json`: **Regression**, **Improvement**,
+  **Both fail**, and checks found on one site only. Name the URLs tested.
+- Source results are information only. An EDS page fails on a keyboard trap, no
+  visible focus, a component that doesn't respond to its keys, or a missing skip
+  link the source has.
+- When a new block adds an interactive pattern (menu, dialog, carousel, tabs),
+  add a pair with a demo page to `keyboard.config.js`.
+
+See [README keyboard tests](README.md#keyboard-tests-source-page-vs-eds-page)
+for the checks, options and limits.
+
 ## Deployment
 
 ### Environments

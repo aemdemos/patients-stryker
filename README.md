@@ -77,6 +77,71 @@ This implements local and PR testing, following
 Scheduled scans, sitemap crawling and additional artifact uploads are not
 included.
 
+### Keyboard tests (source page vs EDS page)
+
+Keyboard tests press real keys in Chromium on an original (source) page and its
+matching EDS page, then compare the two. They run separately from the axe scan and
+are not part of the PR workflow.
+
+```sh
+# Configured pairs (tests/a11y/keyboard.config.js); EDS paths use the local AEM server
+npm run test:a11y:keyboard
+
+# Configured pairs, EDS paths on a preview host
+A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y:keyboard
+
+# One pair (the source URL is optional: without it only the EDS page is tested)
+npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/ https://patients.stryker.com/us/en/ivs/index.html
+
+# Only one viewport, more workers, one source page at a time
+A11Y_VIEWPORTS=desktop A11Y_WORKERS=4 A11Y_SOURCE_CONCURRENCY=1 npm run test:a11y:keyboard
+```
+
+Each page is tested once per viewport (desktop 1280px, mobile 390px). Checks:
+
+| Check | How |
+|---|---|
+| Tab order | Tab until focus returns to the start, then walk back with Shift+Tab. Reports the stops, positive `tabindex`, focusable elements that are hidden, off-screen or inside `aria-hidden`, and jumps back up the page. |
+| Visible focus | Each stop is captured unfocused, then focused; identical pixels mean no visible focus. Elements fully covered when focused (e.g. by a sticky header) also count. |
+| Keyboard traps | Focus that does not move, or loops, within part of the page. An open modal may hold focus only if Escape releases it. |
+| Skip link | One of the first three stops links to a target on the page, and Enter moves focus there. |
+| Menus, disclosures, accordions | Elements with `aria-expanded` and `details`/`summary`: Enter and Space toggle, Escape closes and returns focus, arrow keys for `role=menu`, Tab moves into an opened panel. Navigation submenus without `aria-expanded` must open on focus or with ArrowDown. |
+| Tabs | `role=tablist` (including `aria-owns`): arrow keys, Home/End, Enter/Space select, Tab moves into the panel. |
+| Carousels | `aria-roledescription=carousel` or common slider class names: previous/next/slide picker with Enter and Space; a pause control if it autoplays. |
+| Modals | Openers (`aria-haspopup=dialog`, `data-(bs-)toggle=modal`, controls pointing at a dialog): focus moves in, stays inside, Escape closes, focus returns. |
+| Forms | Fields are reachable and named; typing works; Space ticks checkboxes; arrow keys work on radios and selects. |
+| Cookie banner | Reached by Tab and dismissed with Enter; then dismissed for the rest of the run. |
+
+**Results.** The terminal shows a line per page, the EDS failures and the
+differences per pair. JSON files are written to `test-results/keyboard/`: one per
+page (`<pair>__<viewport>__<site>.json`) and one comparison per pair
+(`<pair>__<viewport>.compare.json`). Differences are labelled **Regression**
+(passes on source, fails on EDS), **Improvement** (fails on source, passes on EDS)
+and **Both fail**; checks found on one site only are listed separately.
+
+**Pass/fail.** Source results are information only. An EDS page fails on a keyboard
+trap, a stop without visible focus, a component that does not respond to its keys,
+or a missing skip link when the source page has one. Everything else is a warning.
+
+**Parallel runs.** Tests are split by page, site and viewport, each in its own
+browser context; the comparison runs once all tests have finished. `A11Y_WORKERS`
+(default 2) sets the worker count. Each worker starts its own browser, so fit the
+count to the machine or CI runner and use fewer workers against `aem up` than
+against a hosted preview. `A11Y_SOURCE_CONCURRENCY` (default 2) caps how many pages
+are open at once on each source host, so a live site is not loaded heavily. Use
+`A11Y_WORKERS=1` when debugging.
+
+**Read-only.** Off-page link clicks and form submission are cancelled in the page,
+Enter is never pressed in form fields, and a page that navigates away anyway is
+reloaded (the check fails). Before the checks, each page is scrolled through once
+so lazy-loaded content (forms, embeds) is present.
+
+**Limits.** Any visible change near the element counts as focus (e.g. a validation
+message shown on focus), so a pass is not proof of a good focus indicator.
+Controls that fade in and out on a timer (e.g. video player controls) can give
+different counts between runs. Focus-indicator contrast (WCAG 2.4.11 / 2.4.13), whether the tab order makes sense
+and screen reader output still need a manual review.
+
 ## Local development
 
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
