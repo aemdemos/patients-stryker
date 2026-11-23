@@ -1185,7 +1185,9 @@ function renderShotBox() {
     },
   }, req?.status === 'failed' ? 'Ask again' : 'Refresh source shot');
   box.replaceChildren(
-    n ? pick : el('p', { class: 'rv-none' }, 'No source shot of this page yet: the backend takes the first one within 15 minutes of the page being published (with its source in the migration scope table).'),
+    n ? pick : el('p', { class: 'rv-none' }, REVIEW.pages.scope
+      ? 'No source shot of this page yet: the backend takes the first one within 15 minutes of the page being published (with its source in the migration scope table).'
+      : 'No shot history for this page yet: the source shown is the first shot kept with the tool (no Refresh until the first shots are in the history).'),
     n ? el('p', { class: 'rv-shot-info' }, `Taken ${when(shown.captured)} of `, el('a', { href: shown.url, target: '_blank', rel: 'noopener' }, shown.url.replace(/^https:\/\//, '')), `. ${n > 1 ? `${n} shots` : 'One shot'} so far, all kept with the date taken and a fingerprint (SHA-256) of every image.`) : null,
     reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
     n ? refresh : null,
@@ -1602,13 +1604,12 @@ function setUpShell() {
     b.title = b.title.replace(/the standard page/g, `the ${BASE_WORD} page`);
   });
   $('[data-action="note"]').title = `Then click the spot on the ${BASE_WORD} page (N; Esc to stop)`;
+  // the source shot box (its history, Refresh), in the feedback panel
+  $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-shotbox' }, el('h3', {}, 'Source shot'), el('div', { class: 'rv-shotbox-body' })));
   // no design panel: its links go to the feedback panel
   if (!REVIEW.design) {
     const links = $('.rv-links');
-    $('.rv-panel-right .rv-panel-body').append(
-      el('section', { class: 'rv-shotbox' }, el('h3', {}, 'Source shot'), el('div', { class: 'rv-shotbox-body' })),
-      el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links),
-    );
+    $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links));
     $('.rv-panel-left').remove();
   }
 }

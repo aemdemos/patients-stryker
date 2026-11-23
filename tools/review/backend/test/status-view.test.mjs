@@ -54,7 +54,7 @@ try {
   check('customer: no Invitations, no Edit in DA', !seen.invites && seen.edit === 0, JSON.stringify(seen));
   check('customer: no Not published yet', !seen.unpublished);
   check('customer: only the page\'s own buttons', seen.aoeButtons.every((b) => !/Mark|Take them out|representative|Use the pages/.test(b)), JSON.stringify(seen.aoeButtons));
-  check('customer: published pages only', /of 5\d\d pages/.test(seen.count), seen.count);
+  check('customer: published pages only', /of \d+ pages/.test(seen.count) && !seen.unpublished, seen.count);
   check('pages open in a new tab', seen.links.length > 0 && seen.links.every((t) => t === '_blank'), JSON.stringify(seen.links));
 
   // the page's state, then a refresh

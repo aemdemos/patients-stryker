@@ -331,9 +331,10 @@ async function start() {
     window.history.replaceState(null, '', url);
   }
   document.title = `${REVIEW.title}: status of every page`;
+  // (a first visit ever has none: its own time counts from the next load on)
   previousVisit = window.sessionStorage.getItem(TAB_VISIT_KEY)
-    ?? (window.localStorage.getItem(VISIT_KEY) || '');
-  window.sessionStorage.setItem(TAB_VISIT_KEY, previousVisit);
+    || window.localStorage.getItem(VISIT_KEY) || '';
+  if (previousVisit) window.sessionStorage.setItem(TAB_VISIT_KEY, previousVisit);
   // the page as it was: search, order, only new, the picked status tiles
   const view = savedView();
   $('.st-search').value = view.search || '';
