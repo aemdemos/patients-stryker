@@ -4,6 +4,8 @@
 # review's (config.js snapshots.preview): review-snapshots-main for the migrated pages,
 # review-snapshots (the default) for the standard pages.
 # Four at a time; every tile's result is logged, tiles already done are skipped (resumable).
+# Never over a file that is in Document Authoring already (the shots are evidence): such a tile
+# is only previewed.
 # usage: bash tools/review/upload-snapshots.sh <snapshots dir> <branch> <log file> [folder]
 SNAP=${1:?snapshots dir}
 REF=${2:?branch}
@@ -18,9 +20,14 @@ one() {
   rel=${file#"$SNAP"/}
   path="$FOLDER/$rel"
   if grep -qxF "ok $path" "$LOG"; then return; fi
-  up=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 -X POST -F "data=@$file;type=image/jpeg" \
-    "https://admin.da.live/source/$ORG/$SITE/$path")
-  if [ "$up" != 200 ] && [ "$up" != 201 ]; then echo "fail upload $up $path" >> "$LOG"; return; fi
+  there=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 -I "https://admin.da.live/source/$ORG/$SITE/$path")
+  if [ "$there" != 404 ]; then
+    if [ "$there" != 200 ]; then echo "fail check $there $path" >> "$LOG"; return; fi
+  else
+    up=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 -X POST -F "data=@$file;type=image/jpeg" \
+      "https://admin.da.live/source/$ORG/$SITE/$path")
+    if [ "$up" != 200 ] && [ "$up" != 201 ]; then echo "fail upload $up $path" >> "$LOG"; return; fi
+  fi
   pv=$(curl -s -o /dev/null -w '%{http_code}' --max-time 120 -X POST \
     "https://admin.hlx.page/preview/$ORG/$SITE/$REF/$path")
   if [ "$pv" != 200 ]; then echo "fail preview $pv $path" >> "$LOG"; return; fi

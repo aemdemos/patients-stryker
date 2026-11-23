@@ -17,6 +17,9 @@ import { createNotes, CATEGORIES } from './notes.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
 import {
+  loadShots, loadVersion, requestShot, shotTag,
+} from './shots.js';
+import {
   loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
 } from './batches.js';
 
@@ -61,6 +64,13 @@ const quietUntil = { std: 0, rs: 0, src: 0 };
 let anchors = [];
 // the source snapshot of the page at the current width (meta.json of capture-snapshots.mjs)
 let snapshot = null;
+// the page's source shots (shots.js): its history, the full versions read so far, the one shown
+// (null: the newest)
+const shots = {
+  page: null, data: null, full: new Map(), chosen: null,
+};
+// (the shot box reloads the snapshot, defined after it)
+const shotHooks = { reload: () => {} };
 // live source URLs of the pages with a snapshot (the meta's url)
 const SOURCE = {};
 // every page of the review, and the ones the batch / area filters let through (picker, stepping)
@@ -1124,6 +1134,92 @@ function whenSwitcher() {
 
 /* ---------- frames ---------- */
 
+/** the Source shot box (Feedback panel): the history, the shot's details, Refresh (AOE team) */
+function renderShotBox() {
+  const box = $('.rv-shotbox-body');
+  if (!box) return;
+  const { data } = shots;
+  if (!data) {
+    box.replaceChildren(el('p', { class: 'rv-none' }, 'The history of source shots shows with your review link.'));
+    return;
+  }
+  const n = data.versions.length;
+  const newestFirst = [...data.versions].map((v, i) => ({ v, i })).reverse();
+  const shown = data.versions.find((x) => x.id === shots.chosen) || data.versions[n - 1];
+  const pick = n ? el('select', {
+    class: 'rv-shot-pick',
+    'aria-label': 'Source shot',
+    onchange: (e) => {
+      shots.chosen = e.target.value;
+      shotHooks.reload();
+      renderShotBox();
+    },
+  }, ...newestFirst.map(({ v, i }) => el('option', { value: v.id }, `${when(v.captured)}${shotTag(i, n) ? ` (${shotTag(i, n)})` : ''}`))) : null;
+  if (pick) pick.value = shown.id;
+  const req = data.request;
+  let reqText = '';
+  if (req?.status === 'pending') reqText = `New shot asked for by ${req.by}, ${when(req.at)}: it shows here once it has been taken.`;
+  if (req?.status === 'failed') reqText = `The new shot asked for by ${req.by} could not be taken: ${req.reason}`;
+  const refresh = el('button', {
+    type: 'button',
+    class: 'rv-shot-refresh rv-aoe-only',
+    ...(req?.status === 'pending' ? { disabled: '' } : {}),
+    title: 'Take a new shot of the source page at every width; every earlier shot is kept',
+    onclick: async (e) => {
+      e.target.disabled = true;
+      const { page } = state;
+      const r = await requestShot(page);
+      if (state.page !== page) return;
+      if (r.error) {
+        e.target.disabled = false;
+        $('.rv-shot-msg').textContent = r.error;
+        return;
+      }
+      shots.data = { ...shots.data, request: r.request };
+      renderShotBox();
+    },
+  }, req?.status === 'failed' ? 'Ask again' : 'Refresh source shot');
+  box.replaceChildren(
+    n ? pick : el('p', { class: 'rv-none' }, 'No source shot of this page yet.'),
+    n ? el('p', { class: 'rv-shot-info' }, `Taken ${when(shown.captured)} of `, el('a', { href: shown.url, target: '_blank', rel: 'noopener' }, shown.url.replace(/^https:\/\//, '')), `. ${n > 1 ? `${n} shots` : 'One shot'} so far, all kept with the date taken and a fingerprint (SHA-256) of every image.`) : null,
+    reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
+    n ? refresh : null,
+    el('p', { class: 'rv-shot-msg', 'aria-live': 'polite' }),
+  );
+}
+
+/** the page's shot history (read once per page) */
+async function shotHistory() {
+  const { page } = state;
+  if (shots.page !== page) {
+    shots.page = page;
+    shots.data = null;
+    shots.full = new Map();
+    shots.chosen = null;
+    const data = await loadShots(page);
+    if (state.page !== page) return null;
+    shots.data = data;
+    renderShotBox();
+  }
+  return shots.data;
+}
+
+/** the version shown (the chosen one, else the newest) with its anchors, or null */
+async function shownVersion() {
+  const { page } = state;
+  const data = await shotHistory();
+  if (!data || !data.versions.length || state.page !== page) return null;
+  const newest = data.versions[data.versions.length - 1];
+  const v = data.versions.find((x) => x.id === shots.chosen) || newest;
+  if (!Object.values(v.widths).some((s) => typeof s.leaves === 'number')) return v;
+  if (!shots.full.has(v.id)) {
+    const full = await loadVersion(page, v.id);
+    if (!full) return v;
+    shots.full.set(v.id, full);
+  }
+  return shots.full.get(v.id);
+}
+
 /** the source snapshot of the page at the current width: its tiles and its anchors */
 async function loadSnapshot() {
   ready.src = false;
@@ -1134,12 +1230,21 @@ async function loadSnapshot() {
   pageEl.style.height = '0';
   const want = `${state.page}|${state.vp}`;
   let meta = null;
-  try {
-    // the page's snapshot facts (both widths, committed with the tool)
-    const resp = await fetch(`./snapshot-meta${state.page}.json`);
-    if (resp.ok) meta = (await resp.json())[state.vp] || null;
-  } catch (e) {
-    meta = null;
+  const version = await shownVersion();
+  if (version) {
+    // a shot of the page's history (the backend): its folder, the first shots at the old place
+    const s = version.widths[state.vp];
+    meta = s ? {
+      ...s, url: version.url, dir: version.dir, captured: s.captured,
+    } : null;
+  } else if (!shots.data?.versions.length) {
+    try {
+      // no history (no backend): the first shots' facts, committed with the tool
+      const resp = await fetch(`./snapshot-meta${state.page}.json`);
+      if (resp.ok) meta = (await resp.json())[state.vp] || null;
+    } catch (e) {
+      meta = null;
+    }
   }
   if (`${state.page}|${state.vp}` !== want) return;
   none.hidden = !!meta;
@@ -1152,8 +1257,10 @@ async function loadSnapshot() {
   const live = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
   if (live) live.href = meta.url;
   pageEl.style.height = `${meta.height}px`;
+  // (newer shots only in Document Authoring: through the preview, also on the workspace)
+  const tilesAt = meta.dir ? `${REVIEW.snapshots.preview}${state.page}${meta.dir}` : `${SNAPSHOTS}${state.page}`;
   meta.tiles.forEach((t) => pageEl.append(el('img', {
-    src: `${SNAPSHOTS}${state.page}/${state.vp}/${t.file}`,
+    src: `${tilesAt}/${state.vp}/${t.file}`,
     alt: '',
     loading: 'lazy',
     width: String(meta.width),
@@ -1161,12 +1268,15 @@ async function loadSnapshot() {
     style: `top: ${t.y}px`,
   })));
   const day = new Date(meta.captured).toLocaleDateString([], { dateStyle: 'medium' });
-  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})`;
+  const older = version && shots.data.versions[shots.data.versions.length - 1].id !== version.id;
+  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})${older ? ', an earlier shot' : ''}`;
   scroller.scrollTop = 0;
   ready.src = true;
   rebuildAnchors();
   syncFrom('std');
 }
+
+shotHooks.reload = loadSnapshot;
 
 function loadPage() {
   if (!state.page) return;
@@ -1459,7 +1569,10 @@ function setUpShell() {
   // no design panel: its links go to the feedback panel
   if (!REVIEW.design) {
     const links = $('.rv-links');
-    $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links));
+    $('.rv-panel-right .rv-panel-body').append(
+      el('section', { class: 'rv-shotbox' }, el('h3', {}, 'Source shot'), el('div', { class: 'rv-shotbox-body' })),
+      el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links),
+    );
     $('.rv-panel-left').remove();
   }
 }

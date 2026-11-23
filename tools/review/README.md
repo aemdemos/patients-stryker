@@ -26,7 +26,7 @@ keeps the invitation, later visits need no link.
 | `widths` | Desktop 1440, Tablet 860 (source and EDS both in their tablet layouts), Phone 375 |
 | `mode` | side by side (flip and overlay stay available) |
 | `pages` | the site's query index `/us/en/query-index.json`, read on every visit: new pages appear at once; fragments left out |
-| `snapshots` | Document Authoring `/review-snapshots-main/<page>/<width>/<n>.jpg` through the branch preview; locally `./snapshots` (a git-ignored link to the capture folder) |
+| `snapshots` | Document Authoring `/review-snapshots-main/<page>/<width>/<n>.jpg` (the first shots; later ones `<page>/<shot id>/<width>/…`) through the preview; locally `./snapshots` (a git-ignored link to the capture folder) |
 | `edit` | the DA editor of the site's content source (`https://da.live/edit#/strykerenterprise/stryker-com`): the AOE team's "Edit in Document Authoring" links (below) |
 
 ## Files
@@ -45,7 +45,8 @@ keeps the invitation, later visits need no link.
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
-| `snapshot-map.py`, `capture-snapshots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/`, `upload-snapshots.sh` | Source snapshots (below) |
+| `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
+| `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
 | `backend/` | The review backend on App Builder (`backend/README.md`): invitations, state per page, audit; spaces |
 
 ## Review batches and filters (`batches.js`)
@@ -119,24 +120,77 @@ node tools/review/backend/admin.mjs export --space main
 passwords. Deploy after backend changes: `node tools/review/backend/deploy.mjs` (both reviews use
 it: keep std's keys and behaviour unchanged).
 
-## Source snapshots
+## Source shots and their history
 
-Per page and width (1440, 860, 375): JPEG tiles (4000 px) and the text / image anchors of the
-live page, ALTCHA, the cookie banner and trackers blocked; resumable.
+A **shot** is a snapshot of the source page (www.stryker.com) at one width (1440, 860, 375):
+JPEG tiles (4000 px) and the text / image anchors of the live page (`shoot.mjs`; ALTCHA, the
+cookie banner and trackers blocked). One capture of a page at every width is a **version** of
+its shot history.
+
+**The history is evidence: kept back to the first shot, never changed, never removed.**
+- Every version is kept with the date and time each width was taken, the source URL, the HTTP
+  status and final URL (from the second version on), who asked for it and when, when it was
+  recorded, and the **SHA-256 of every tile**.
+- It lives in the backend's file store (`backend/lib/shots.mjs`, `<space>/shots/<page>.json`),
+  not in its entry store (entries there expire after a year at most). The backend refuses a
+  version whose id is there already, and has no operation that removes a real page's shots
+  (`purge-test` removes `/test/…` pages only).
+- The tiles are in Document Authoring: the first shots at `<folder><page>/<width>/<n>.jpg`, later
+  ones at `<folder><page>/<shot id>/<width>/<n>.jpg` (id `s-YYYYMMDD-HHMMSS`, UTC). Uploads never
+  go over a file that is there already. **To check a tile**, compare the SHA-256 of the
+  original in Document Authoring (`admin.da.live/source/…`) with the history: the preview serves
+  a re-optimised copy, whose hash differs.
+- The first shots (23 Nov 2026, 568 pages × 3 widths, 1,964 tiles) were recorded with
+  `record-shots.mjs` after every tile was checked against its original in Document Authoring
+  (all identical).
+
+**In the tool** (Feedback panel, "Source shot"): the history, newest first (first shot and
+newest marked), the shot's date and source URL; an earlier shot can be shown (the source tag
+says so). The AOE team's **Refresh source shot** asks for a new shot (backend action `shots`,
+one open request per page, kept in the backend's audit). The request shows in the box until the
+new shot is there, or with the reason it failed (then **Ask again**). Pages without a first shot
+can't be refreshed (see *Planned*).
+
+**Taking the requested shots** (writes to Document Authoring: only when asked to):
+
+```
+node tools/review/refresh-shots.mjs --out <dir> --space main --ref <branch>   # every pending request
+node tools/review/refresh-shots.mjs --out <dir> --dry-run                     # capture only, nothing written
+```
+
+Per request: a new shot at every width from the newest version's source URL, the tiles to DA
+(each read back and its hash compared), previewed on the branch, the version into the history
+(closing the request); a failure is recorded on the request with its reason.
+
+**The first shots** (a new review, or pages added to it):
 
 ```
 python3 -I tools/review/snapshot-map.py <query-index.json> .migration/xf-mapping <map.json>   # page → source URL (export file names)
-node tools/review/capture-snapshots.mjs --map <map.json> --out <dir> --widths 1440,860,375
-python3 -I tools/review/pack-snapshot-meta.py <dir> tools/review/snapshot-meta                          # the facts the tool reads (committed)
-bash tools/review/upload-snapshots.sh <dir> <branch> <log> review-snapshots-main                       # tiles to DA + branch preview, only on request
+node tools/review/capture-snapshots.mjs --map <map.json> --out <dir>                            # 1440, 860, 375
+bash tools/review/upload-snapshots.sh <dir> <branch> <log> review-snapshots-main               # tiles to DA + preview, only on request
+node tools/review/record-shots.mjs --dir <dir> --space main [--verify <path → sha256 of DA originals>]  # the first versions
+python3 -I tools/review/pack-snapshot-meta.py <dir> tools/review/snapshot-meta                  # the tool's fallback without the backend
 ```
 
-The source URLs come from the export file names (letter case kept), never from EDS paths. New
-pages in the index: capture them, pack, upload (on request).
+The source URLs come from the export file names (letter case kept), never from EDS paths.
 
 ## Planned
 
-- **Refresh a source shot:** capture one page's source snapshot again from the tool.
+- **Newly published pages** (to be designed with care before building): the query index
+  brings every newly published page into the review at once, but such a page has no source shot,
+  so the comparison and the evidence start late or never. To settle first:
+  - **The source URL.** It can't be derived from the EDS path (letter case, `---` → `-`,
+    trailing `-`, renamed pages) and new pages may have no export file. Options: the AOE team
+    gives it when adding the page (checked: answers 200 on www.stryker.com, its cleaned name is
+    the EDS path), or a source → EDS mapping kept with the migration.
+  - **When the first shot is taken.** As soon as the page is published, so the evidence shows
+    the source as it was when the page was migrated, not weeks later: a check of the query index
+    for pages without a history (on request, or regularly), listed for the AOE team.
+  - **Pages that have no source** (new on EDS only), source pages that are gone or redirect:
+    shown as such, never compared with a wrong page.
+  - **Who may add a page**, and whether a page waits for its first shot before it is put in a
+    batch or a group.
+  - The first shot of an added page is evidence like the others: same rules, history, hashes.
 - **Invitations admin (AOE team):** a page where the AOE team creates, lists and revokes
   invitations itself (name, role, pages, days; the link to copy), instead of `backend/admin.mjs`
   run by the developers. Needs an `invites` right on AOE invitations in the backend's admin
@@ -151,6 +205,8 @@ node tools/review/backend/test/states.test.mjs        # the shared rules
 node tools/review/backend/test/spaces.test.mjs        # the space keys (link backend/node_modules first, see the file)
 node tools/review/backend/test/spaces-live.test.mjs   # deployed: a main invitation sees only main (test page, cleans up)
 node tools/review/backend/test/backend.test.mjs       # the actions (std space, test page)
+node tools/review/backend/test/shots-live.test.mjs    # deployed: shot history and requests (test page, cleans up)
+node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page)
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its

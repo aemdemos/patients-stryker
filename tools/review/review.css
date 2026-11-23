@@ -337,3 +337,11 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 
 /* the AOE team's links (Edit in Document Authoring) */
 body:not(.rv-role-aoe) .rv-aoe-only { display: none; }
+
+/* the source shot box: the history, the details, the AOE team's refresh */
+.rv-shotbox { margin-bottom: 12px; }
+.rv-shot-pick { width: 100%; }
+.rv-shot-info, .rv-shot-req, .rv-shot-msg { margin: 6px 0; font-size: 12px; }
+.rv-shot-msg:empty { display: none; }
+.rv-shot-pending { color: #9a6700; }
+.rv-shot-failed { color: #cf222e; }

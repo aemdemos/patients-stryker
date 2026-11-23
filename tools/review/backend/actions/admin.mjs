@@ -17,6 +17,11 @@
  *   audit { date, page }                    the audit files of one day (default today), optionally one page
  *   purge-invite { id }                    removes every entry one invitation wrote (any page)
  *   purge-by { by }                         removes every entry written under a test name (status test …)
+ *   shot-requests                           the open requests for new source shots (pending, failed)
+ *   shot-history { page }                   a page's source shots (every version, with anchors)
+ *   shot-add { items: [{ page, version }] } versions into the history (never replaced; closes the
+ *                                           request a version names in version.request)
+ *   shot-fail { page, reason }              a request that could not be done (shown in the tool)
  *   purge-test { page }                     removes a test page's entries (pages under /test/ only)
  *                                           and test group choices (items group:test|…)
  */
@@ -24,6 +29,9 @@ import crypto from 'crypto';
 import {
   open, secretOf, sign, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, TTL, replyProblem, SPACES,
 } from '../lib/core.mjs';
+import {
+  listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
+} from '../lib/shots.mjs';
 
 const ok = (body) => ({ body });
 const bad = (message) => ({ body: { error: { code: 'bad-request', message } } });
@@ -244,6 +252,21 @@ export async function main(params) {
       }
       return ok({ deleted, by });
     }
+    if (op === 'shot-requests') return ok({ space, requests: await listRequests(files, space) });
+    if (op === 'shot-history') {
+      if (!String(params.page || '').startsWith('/')) return bad('page');
+      return ok(await readHistory(files, space, params.page));
+    }
+    if (op === 'shot-add') {
+      const items = Array.isArray(params.items) ? params.items : [];
+      if (!items.length || items.length > 100) return bad('items: 1 to 100 { page, version }');
+      return ok(await addVersions(files, space, items));
+    }
+    if (op === 'shot-fail') {
+      if (!String(params.page || '').startsWith('/')) return bad('page');
+      const failed = await failRequest(files, space, params.page, params.reason);
+      return failed ? ok({ request: failed }) : bad('no open request for this page');
+    }
     if (op === 'purge-test') {
       const page = String(params.page || '');
       if (!page.startsWith('/test/')) return bad('only pages under /test/');
@@ -256,6 +279,9 @@ export async function main(params) {
         await Promise.all(test.map((k) => state.delete(k)));
         groups += test.length;
       }
+      // and its source shots and request (test pages only: real pages' shots are never removed)
+      const shots = [historyFile(space, page), requestFile(space, page)];
+      await Promise.all(shots.map((f) => files.delete(f).catch(() => null)));
       return ok({ deleted: r.keys, groups, page });
     }
     return bad(`unknown op "${op}"`);
