@@ -101,6 +101,14 @@ const layoutOf = (options) => {
   return layout && layout.options.map(([v]) => v).find((v) => options.includes(v));
 };
 
+/** the block's options with older names read as their new choices (the block's `aliases`) */
+function normalised(name, options) {
+  const aliases = blockOptions[name]?.aliases;
+  if (!aliases) return [...options];
+  const out = options.flatMap((o) => aliases[o] || [o]);
+  return out.filter((o, i) => out.indexOf(o) === i);
+}
+
 /** a choice may set several classes ("box-white shadow"): the class names it adds */
 const tokensOf = (value) => value.split(/\s+/).filter(Boolean);
 
@@ -233,7 +241,7 @@ function renderGroups() {
     }, `${o} ✕`)));
     otherEl.append(row);
   }
-  const changed = ordered(draft).join(',') !== ordered(current.options).join(',');
+  const changed = ordered(draft).join(',') !== ordered(normalised(current.name, current.options)).join(',');
   applyButton.disabled = !changed;
   applyButton.textContent = changed ? 'Apply options' : 'No changes';
 }
@@ -246,7 +254,7 @@ function setBlock(next) {
     return;
   }
   current = next;
-  draft = next ? [...next.options] : [];
+  draft = next ? normalised(next.name, next.options) : [];
   touched.clear();
   renderGroups();
   updatePreview();

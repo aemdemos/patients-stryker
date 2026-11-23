@@ -55,6 +55,17 @@ shows the name with a capital, "orange" → "Orange"):
   with a colour token. Until then the option is saved on the block but changes nothing.
 - Preview the sheet after editing it; the panel reads it when it opens.
 
+## Choices with several classes, dependent groups, older names
+
+- **Several classes:** a choice may set more than one class, separated by a space (e.g.
+  `['box-white shadow', 'White with soft shadow']`). The panel adds and removes them together and
+  shows the choice as selected when all of them are on the block.
+- **Dependent group:** `when` may name another group instead of a layout (e.g. `when: 'box'`): the
+  group shows only while that group has a choice, and its option goes when that choice is cleared.
+- **Older names:** a block's `aliases` map an old class to its new choices (e.g.
+  `'gray-last': ['box-gray']`). The panel shows the new choices; the block is rewritten with them
+  when the author changes something.
+
 ## Adding a block in code
 
 Add an entry to `BLOCK_OPTIONS` in `options.js` with the block's option groups, using the

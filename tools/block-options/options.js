@@ -127,6 +127,25 @@ export const BLOCK_OPTIONS = {
   // gold-first …) are replaced when the author picks a box; columns.js reads them as the new pair.
   columns: {
     label: 'Columns',
+    // the older combined box names imported pages carry, read as the new pair (the panel shows
+    // the pair and writes it when the author changes the block); the -lead names colour a first
+    // line, not a cell, and stay as they are
+    aliases: {
+      'boxed-last': ['box-white', 'shadow'],
+      'boxed-all': ['box-white', 'shadow', 'box-all'],
+      'gray-last': ['box-gray'],
+      'gray-2': ['box-gray'],
+      'gray-all': ['box-gray', 'box-all'],
+      'gold-first': ['box-gold', 'box-first'],
+      'gold-last': ['box-gold'],
+      'dark-first': ['box-dark', 'box-first'],
+      'dark-last': ['box-dark'],
+      'dark-all': ['box-dark', 'box-all'],
+      'blue-last': ['box-blue'],
+      'blue-all': ['box-blue', 'box-all'],
+      'purple-last': ['box-purple'],
+      'columns-70-30': ['columns-67-33'],
+    },
     groups: [
       {
         id: 'layout',
