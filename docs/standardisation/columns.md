@@ -209,6 +209,33 @@ values stay within 2 points (section 2).
 
 Left is the default (3,430 cells).
 
+### 5.6 Other looks, kept as columns choices
+
+Besides the package's choices, imported stryker.com pages use more columns looks. They are kept as
+choices in the Block options panel, without new variants. *The counts below are rows on the imported
+pages (not package numbers).*
+
+| Group | Choices | Rows on imported pages |
+|---|---|---|
+| More widths (Layout) | three quarters + quarter, quarter + three quarters, 70 / 30, icon + text (1/5, 4/5), quarter + quarter + half | 8, 8, 1, 0, 1 |
+| First line of the text | in a light grey box, a gold bar, a dark grey bar, a **blue bar** (stryker.com coloured heads), serif lead paragraph | 79, 2, 1, 1, 1 |
+| Row looks (switches) | large headline type, linked images, one per row on phones, related links, link groups, icon beside text, numbered quotes, page title beside a photo, pull quote in the last cell, large pull quote beside a photo, serif captions, caption right under the photo, images centred at their size, photo two thirds wide on phones, rule under the first cell, **line below the row**, **first cell right-aligned (labels)** | 479, 315, 72, 11, 1, 4, 4, 1, 1, 1, 3, 1, 1, 3, 3, **750**, **7** |
+| Tile look | challenge cards, icon cards, colour profile cards, product tiles, CTA tiles, icon grid | 7, 1, 1, 3, 2, 0 |
+
+**Imported names that are existing choices** (no new variant; the panel shows them as these choices):
+
+| Imported name | Rows | Is |
+|---|---|---|
+| `page-intro` | 801 | Two equal + **Line below the row**; the title is Heading 1 (bold + italic: gold), the subtitle Heading 2 (text layer) |
+| `color-heads` | 1 | First line of the text: **in a blue bar** |
+| `media-text` | 5 | the cell content (video or image with text); nothing to choose |
+| `image-left`, `thumbnails` | 1 each | the authoring order and *Three quarters + quarter* with *Linked images*; nothing to choose |
+| `striped` | 1 | a stryker.com table (rows striped #f5f5f5): the **Table** block, not columns |
+
+**Not carried over:** `text-columns`, `card-grid`, `feature-statement`, `wide-first`, `wide-last` and
+`image-row`, and 19 of the 24 `media-text` rows, appear only in the `std/` trial copy of 17 pages
+whose normal imports use the standard names.
+
 ---
 
 ## 6. How close is it to stryker.com?
