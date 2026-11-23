@@ -29,7 +29,12 @@ if (limit) pages = pages.slice(0, limit);
 
 const TILE = 4000;
 const QUALITY = 60;
-const BLOCK = /altcha|captcha|cookielaw|onetrust|googletagmanager|google-analytics|doubleclick|facebook|licdn|linkedin|qualtrics|zoominfo|zi-scripts|stackadapt|demdex|omtrdc|serving-sys|tribalfusion|quantserve|mathtag|intentsify|dpmsrv|usbrowserspeed|contextweb|smtrk|domdex|quantcount/;
+// blocked: ALTCHA / captcha by their path (on any host), the cookie banner and trackers by their
+// host. Hosts only, not whole URLs: a page whose own path names a tracker (2018 news "stryker-
+// featured-in-linkedins-top-companies…") must still load
+const BLOCK_PATH = /altcha|captcha/i;
+const BLOCK_HOST = /altcha|captcha|cookielaw|onetrust|googletagmanager|google-analytics|doubleclick|facebook|licdn|linkedin|qualtrics|zoominfo|zi-scripts|stackadapt|demdex|omtrdc|serving-sys|tribalfusion|quantserve|mathtag|intentsify|dpmsrv|usbrowserspeed|contextweb|smtrk|domdex|quantcount/;
+const BLOCK = (url) => BLOCK_PATH.test(url.pathname) || BLOCK_HOST.test(url.hostname);
 
 // the anchors: the same rules as tools/review/sync.js leaves(), on the whole page
 function anchors() {
