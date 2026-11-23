@@ -1836,10 +1836,13 @@ body:where(.corp):has(main > .section:first-child > div > .hero-corp.image-slide
     font-weight: var(--font-weight-bold);
   }
 
-  /* section style `h1-medium`: a plain h1 typed in rich text is Futura medium (stryker.com
-     rich-text h1 without span.futura-bold: mako-total-hip "From primary to revision",
-     universal-select "… mandible screws"; approved 2026-11-23); the page title stays bold */
+  /* section style `h1-medium`: a plain h1 typed in rich text keeps the heading's Egyptienne
+     Light (stryker.com rich-text h1 without span.futura-bold, measured live at 1440: mako-
+     total-hip "From primary to revision", sage disclosure-and-safety-information "Sage Products
+     Safety information" 28px w500; approved 2026-11-23); its bold runs stay Futura bold; the
+     page title stays Futura bold */
   :where(body.corp) main > .section.h1-medium > .default-content-wrapper > h1 {
+    font-family: var(--heading-font-family);
     font-weight: var(--font-weight-medium);
   }
 
