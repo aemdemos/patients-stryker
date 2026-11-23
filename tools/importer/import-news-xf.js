@@ -10,6 +10,7 @@ import videoParser from './parsers/video.js';
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
 import newsTypographyTransformer from './transformers/news-typography.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
+import corpTextMarkersTransformer from './transformers/corp-text-markers.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
@@ -53,6 +54,8 @@ const transformers = [
   newsTypographyTransformer,
   cleanupTransformer,
   dmImagesTransformer,
+  // last: the bracket text tags → Text style markers
+  corpTextMarkersTransformer,
 ];
 
 function executeTransformers(hookName, element, payload) {

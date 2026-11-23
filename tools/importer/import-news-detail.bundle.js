@@ -2745,6 +2745,153 @@ var CustomImportScript = (() => {
     }
   }
 
+  // tools/importer/transformers/corp-text-markers.js
+  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  var SIZE_WORDS = {
+    "0-8": "s",
+    "1-25": "l",
+    "1-5": "xl",
+    "1-75": "xxl",
+    2: "xxxl",
+    "2-5": "xxxxl",
+    "3-5": "xxxxxl"
+  };
+  var COLOURS = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
+  var LOOKS = [
+    "rule-gold",
+    "box-white",
+    "box-gray",
+    "box-gold",
+    "box-blue",
+    "box-purple",
+    "box-teal",
+    "box-dark",
+    "box-dark-blue-gradient",
+    "box-dark-purple-gradient"
+  ];
+  var HEADLINE_SIZES = ["1-5", "2", "2-5", "3", "3-5", "4", "4-5", "5", "5-5", "6", "6-5", "9"];
+  function markerWords(raw, dropped) {
+    return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
+      let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
+      if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
+      if (m && m[1] === "1") return [];
+      m = c.match(/^(?:headline|size)-(\d+(?:-\d+)?)(?:-?vw)?$/);
+      if (m && HEADLINE_SIZES.includes(m[1])) return [`hl${m[1].replace("-", "")}`];
+      m = c.match(/^color-([a-z-]+)$/);
+      if (m && COLOURS.includes(m[1])) return [m[1]];
+      if (c === "serif") return ["serif"];
+      if (c === "body-font") return ["body"];
+      if (c === "futura-bold") return ["sans"];
+      if (LOOKS.includes(c)) return [c];
+      dropped.add(c);
+      return [];
+    });
+  }
+  var INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
+  var TOKEN = /\[\[([^\][]+)\]|\]/g;
+  var containerOf = (node) => {
+    let el = node.parentElement;
+    while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
+    return el;
+  };
+  function convertContainer(nodes, dropped) {
+    const tokens = [];
+    let offset = 0;
+    let all = "";
+    nodes.forEach((node) => {
+      const value = node.nodeValue;
+      TOKEN.lastIndex = 0;
+      let m = TOKEN.exec(value);
+      while (m) {
+        const end = m.index + m[0].length;
+        tokens.push({
+          node,
+          start: m.index,
+          end,
+          at: offset + m.index,
+          to: offset + end,
+          raw: m[1]
+        });
+        m = TOKEN.exec(value);
+      }
+      offset += value.length;
+      all += value;
+    });
+    const stack = [];
+    const pairs = [];
+    tokens.forEach((t) => {
+      if (t.raw !== void 0) {
+        stack.push(t);
+      } else if (stack.length) {
+        const open = stack.pop();
+        open.close = t;
+        t.pair = open;
+        pairs.push(open);
+      } else {
+        t.literal = true;
+      }
+    });
+    stack.forEach((t) => {
+      t.literal = true;
+    });
+    const gap = (a, b) => all.slice(a.to, b.at).trim() === "";
+    pairs.sort((a, b) => a.at - b.at).forEach((p) => {
+      p.words = markerWords(p.raw, dropped);
+    });
+    pairs.forEach((inner) => {
+      const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
+      if (!outer) return;
+      let target = outer;
+      while (target.into) target = target.into;
+      target.words.push(...inner.words);
+      inner.merged = true;
+      inner.into = target;
+    });
+    tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
+      const open = t.raw !== void 0 ? t : t.pair;
+      const words = [...new Set(open.words)];
+      let out = "";
+      if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
+      t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);
+    });
+  }
+  function bracketsToMarkers(main) {
+    const doc = main.ownerDocument;
+    const walker = doc.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    const byContainer = /* @__PURE__ */ new Map();
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeValue.includes("[") || node.nodeValue.includes("]")) {
+        const container = containerOf(node);
+        if (container && !container.closest("code, pre, script, style")) {
+          if (!byContainer.has(container)) byContainer.set(container, []);
+        }
+      }
+      node = walker.nextNode();
+    }
+    const dropped = /* @__PURE__ */ new Set();
+    byContainer.forEach((_, container) => {
+      const texts = [];
+      const tw = doc.createTreeWalker(container, 4);
+      let t = tw.nextNode();
+      while (t) {
+        if (containerOf(t) === container) texts.push(t);
+        t = tw.nextNode();
+      }
+      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
+    });
+    return [...dropped];
+  }
+  function transform4(hookName, element, payload) {
+    if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
+    const dropped = bracketsToMarkers(element);
+    if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
   // tools/importer/transformers/patients-stryker-dm-images.js
   function detectDynamicMediaUrl(urlStr) {
     let u;
@@ -2788,7 +2935,7 @@ var CustomImportScript = (() => {
   function altToLinkText(alt, src) {
     return alt || src;
   }
-  function transform4(hookName, element, payload) {
+  function transform5(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
     element.querySelectorAll("img").forEach((img) => {
@@ -2847,6 +2994,8 @@ var CustomImportScript = (() => {
     transform,
     transform2,
     transform3,
+    transform5,
+    // last: the bracket text tags → Text style markers
     transform4
   ];
   function executeTransformers(hookName, element, payload) {

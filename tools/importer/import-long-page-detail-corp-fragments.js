@@ -18,6 +18,7 @@ import longPageDetailSectionsTransformer, {
   keepHeadlineBlankLines, edsLinkPaths,
 } from './transformers/long-page-detail-corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
+import corpTextMarkersTransformer from './transformers/corp-text-markers.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 import { xfToFragmentPath, xfKey } from './xf-fragment-path.js';
 
@@ -36,7 +37,9 @@ const parsers = {
   'cards-corp-resources': cardsCorpResourcesParser,
 };
 
-const transformers = [longPageDetailSectionsTransformer, cleanupTransformer, dmImagesTransformer];
+// last: the bracket text tags → Text style markers
+const transformers = [longPageDetailSectionsTransformer, cleanupTransformer, dmImagesTransformer,
+  corpTextMarkersTransformer];
 
 function executeTransformers(hookName, element, payload) {
   const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };

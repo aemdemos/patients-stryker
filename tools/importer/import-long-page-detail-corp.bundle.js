@@ -2157,6 +2157,153 @@ var CustomImportScript = (() => {
     "/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge.html": ["/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/treating-walch-b3-glenoids-with-augmented-reverse-tsas-by-dr--ge/master"]
   };
 
+  // tools/importer/transformers/corp-text-markers.js
+  var STD_DRAFT_IMPORT = typeof STD_DRAFT !== "undefined" && STD_DRAFT === true;
+  var SIZE_WORDS = {
+    "0-8": "s",
+    "1-25": "l",
+    "1-5": "xl",
+    "1-75": "xxl",
+    2: "xxxl",
+    "2-5": "xxxxl",
+    "3-5": "xxxxxl"
+  };
+  var COLOURS = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
+  var LOOKS = [
+    "rule-gold",
+    "box-white",
+    "box-gray",
+    "box-gold",
+    "box-blue",
+    "box-purple",
+    "box-teal",
+    "box-dark",
+    "box-dark-blue-gradient",
+    "box-dark-purple-gradient"
+  ];
+  var HEADLINE_SIZES = ["1-5", "2", "2-5", "3", "3-5", "4", "4-5", "5", "5-5", "6", "6-5", "9"];
+  function markerWords(raw, dropped) {
+    return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
+      let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
+      if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
+      if (m && m[1] === "1") return [];
+      m = c.match(/^(?:headline|size)-(\d+(?:-\d+)?)(?:-?vw)?$/);
+      if (m && HEADLINE_SIZES.includes(m[1])) return [`hl${m[1].replace("-", "")}`];
+      m = c.match(/^color-([a-z-]+)$/);
+      if (m && COLOURS.includes(m[1])) return [m[1]];
+      if (c === "serif") return ["serif"];
+      if (c === "body-font") return ["body"];
+      if (c === "futura-bold") return ["sans"];
+      if (LOOKS.includes(c)) return [c];
+      dropped.add(c);
+      return [];
+    });
+  }
+  var INLINE = /* @__PURE__ */ new Set(["A", "B", "BR", "DEL", "EM", "I", "S", "SPAN", "STRONG", "SUB", "SUP", "U"]);
+  var TOKEN = /\[\[([^\][]+)\]|\]/g;
+  var containerOf = (node) => {
+    let el = node.parentElement;
+    while (el && INLINE.has(el.tagName) && el.parentElement) el = el.parentElement;
+    return el;
+  };
+  function convertContainer(nodes, dropped) {
+    const tokens = [];
+    let offset = 0;
+    let all = "";
+    nodes.forEach((node) => {
+      const value = node.nodeValue;
+      TOKEN.lastIndex = 0;
+      let m = TOKEN.exec(value);
+      while (m) {
+        const end = m.index + m[0].length;
+        tokens.push({
+          node,
+          start: m.index,
+          end,
+          at: offset + m.index,
+          to: offset + end,
+          raw: m[1]
+        });
+        m = TOKEN.exec(value);
+      }
+      offset += value.length;
+      all += value;
+    });
+    const stack = [];
+    const pairs = [];
+    tokens.forEach((t) => {
+      if (t.raw !== void 0) {
+        stack.push(t);
+      } else if (stack.length) {
+        const open = stack.pop();
+        open.close = t;
+        t.pair = open;
+        pairs.push(open);
+      } else {
+        t.literal = true;
+      }
+    });
+    stack.forEach((t) => {
+      t.literal = true;
+    });
+    const gap = (a, b) => all.slice(a.to, b.at).trim() === "";
+    pairs.sort((a, b) => a.at - b.at).forEach((p) => {
+      p.words = markerWords(p.raw, dropped);
+    });
+    pairs.forEach((inner) => {
+      const outer = pairs.find((o) => o !== inner && !o.merged && o.at < inner.at && o.close.at > inner.close.at && gap(o, inner) && gap(inner.close, o.close));
+      if (!outer) return;
+      let target = outer;
+      while (target.into) target = target.into;
+      target.words.push(...inner.words);
+      inner.merged = true;
+      inner.into = target;
+    });
+    tokens.filter((t) => !t.literal).sort((a, b) => b.at - a.at).forEach((t) => {
+      const open = t.raw !== void 0 ? t : t.pair;
+      const words = [...new Set(open.words)];
+      let out = "";
+      if (!open.merged && words.length) out = t.raw !== void 0 ? `:start-${words.join("-")}:` : ":end:";
+      t.node.nodeValue = t.node.nodeValue.slice(0, t.start) + out + t.node.nodeValue.slice(t.end);
+    });
+  }
+  function bracketsToMarkers(main) {
+    const doc = main.ownerDocument;
+    const walker = doc.createTreeWalker(
+      main,
+      4
+      /* NodeFilter.SHOW_TEXT */
+    );
+    const byContainer = /* @__PURE__ */ new Map();
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeValue.includes("[") || node.nodeValue.includes("]")) {
+        const container = containerOf(node);
+        if (container && !container.closest("code, pre, script, style")) {
+          if (!byContainer.has(container)) byContainer.set(container, []);
+        }
+      }
+      node = walker.nextNode();
+    }
+    const dropped = /* @__PURE__ */ new Set();
+    byContainer.forEach((_, container) => {
+      const texts = [];
+      const tw = doc.createTreeWalker(container, 4);
+      let t = tw.nextNode();
+      while (t) {
+        if (containerOf(t) === container) texts.push(t);
+        t = tw.nextNode();
+      }
+      if (texts.some((x) => x.nodeValue.includes("[["))) convertContainer(texts, dropped);
+    });
+    return [...dropped];
+  }
+  function transform(hookName, element, payload) {
+    if (hookName !== "afterTransform" || !STD_DRAFT_IMPORT) return;
+    const dropped = bracketsToMarkers(element);
+    if (payload && dropped.length) payload.textMarkersDropped = dropped;
+  }
+
   // tools/importer/transformers/long-page-detail-corp-sections.js
   var TEMPLATES = ["long-page-detail-corp", "long-page-detail-corp-fragments"];
   var XF_PAGES = Object.values(long_page_detail_corp_xf_default).flat().reduce((counts, xf) => {
@@ -2560,6 +2707,12 @@ var CustomImportScript = (() => {
   }
   function rowCopyStyle(cells, doc) {
     const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== void 0 && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
+    if (STD_DRAFT_IMPORT) {
+      copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? "serif" : ""].filter(Boolean).join(","), doc));
+      const rest = new Set(copy.flatMap((n) => (n.copyStyle || "").split(",").map((x) => x.trim())).filter((x) => x && x !== "serif" && !/^p-\d/.test(x)));
+      return [...rest].join(", ");
+    }
     const weight = {};
     copy.forEach((n) => {
       weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text4(n).length;
@@ -2568,7 +2721,6 @@ var CustomImportScript = (() => {
     if (sizeTag(dominant) && copy.some((n) => !sizeTag(n.copyStyle))) {
       dominant = dominant.split(",").map((s) => s.trim()).filter((s) => !/^p-\d/.test(s)).join(", ");
     }
-    const serif = (style) => (style || "").split(",").map((x) => x.trim()).includes("serif");
     copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant)).forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? "serif" : ""].filter(Boolean).join(","), doc));
     const parts = dominant.split(",").map((s) => s.trim()).filter(Boolean);
     if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
@@ -2646,10 +2798,24 @@ var CustomImportScript = (() => {
       const key = columns.map(columnWidth).join(",");
       const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some(linkedImage));
       const boxes = boxVariant(columns);
+      const lineBoxed = /* @__PURE__ */ new Set();
+      if (!boxes && STD_DRAFT_IMPORT) {
+        columns.flatMap((col) => [...col.querySelectorAll(".has-background:not(.bg-white)")]).filter((b) => b.closest(".colctrl") === colctrl && text4(b) && !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box")).forEach((b) => {
+          const colour = BOX_COLOURS[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
+          if (!colour) return;
+          b.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li").forEach((line) => {
+            if (!text4(line) || line.parentElement.closest("p, h1, h2, h3, h4, h5, h6, li")) return;
+            line.prepend(doc.createTextNode(`[[box-${colour}]`));
+            line.append(doc.createTextNode("]"));
+          });
+          lineBoxed.add(b);
+        });
+      }
       if (!boxes) {
         colctrl.querySelectorAll("[data-white-tag]").forEach((el) => {
           const inBox = el.closest(".has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel");
           if (!inBox || inBox.matches(".c-full-bleed-panel") || inBox.closest(".colctrl") !== colctrl) return;
+          if (lineBoxed.has(inBox)) return;
           if (el.firstChild && el.firstChild.nodeValue === "[[color-white]") el.firstChild.remove();
           if (el.lastChild && el.lastChild.nodeValue === "]") el.lastChild.remove();
           el.removeAttribute("data-white-tag");
@@ -2805,7 +2971,7 @@ var CustomImportScript = (() => {
       }
     }
   }
-  function transform(hookName, element, payload) {
+  function transform2(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     if (!payload || !payload.template || !TEMPLATES.includes(payload.template.name)) return;
     const doc = element.ownerDocument;
@@ -2899,7 +3065,7 @@ var CustomImportScript = (() => {
     if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
     return `${edsPath || "/"}${suffix}`;
   }
-  function transform2(hookName, element, payload) {
+  function transform3(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
     const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
     const isNewsDetail = !!(payload && payload.template && [
@@ -3109,7 +3275,7 @@ var CustomImportScript = (() => {
   function altToLinkText(alt, src) {
     return alt || src;
   }
-  function transform3(hookName, element, payload) {
+  function transform4(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const doc = element.ownerDocument;
     element.querySelectorAll("img").forEach((img) => {
@@ -3159,9 +3325,11 @@ var CustomImportScript = (() => {
     "hero-image-slide": parse5
   };
   var transformers = [
-    transform,
     transform2,
-    transform3
+    transform3,
+    transform4,
+    // last: the bracket text tags → Text style markers
+    transform
   ];
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), { template: PAGE_TEMPLATE });

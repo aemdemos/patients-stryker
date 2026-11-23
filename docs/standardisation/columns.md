@@ -226,7 +226,7 @@ pages (not package numbers).*
 
 | Imported name | Rows | Is |
 |---|---|---|
-| `page-intro` | 801 | Two equal + **Line below the row**; the title is Heading 1 (bold + italic: gold), the subtitle Heading 2 (text layer) |
+| `page-intro` | 801 | not a Columns row: the product page intro (title, subhead, copy, image, line below) is the **Hero page intro** layout of the package (hero walkthrough, 493 rows); until that session the rows keep `page-intro` and render as today |
 | `color-heads` | 1 | First line of the text: **in a blue bar** |
 | `media-text` | 5 | the cell content (video or image with text); nothing to choose |
 | `image-left`, `thumbnails` | 1 each | the authoring order and *Three quarters + quarter* with *Linked images*; nothing to choose |
@@ -277,7 +277,8 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 
 | Not carried over as a Columns option | Where it goes instead |
 |---|---|
-| Font size, font and text colour inside the cells | the site-wide **text layer** (formatting and the Text style panel). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). |
+| Font size, font and text colour inside the cells | the site-wide **text layer** (formatting and the Text style panel). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). The importer writes them as Text style markers (`:start-xxxl-serif:…:end:`, tools/importer/transformers/corp-text-markers.js). |
+| A coloured box around one line in the middle of a cell (TEACH "Trauma & Extremities", the quotes of "A winning spirit") | a Text style **line box** in the same colour names as the cell boxes (`box-dark-purple-gradient` …), 10px inside as the source default |
 | Outer spacing (margins) around a cell | **no setting**: the block's standard gap (section 6) |
 | Backgrounds behind a whole row (full-width panels) | a **section style** |
 | Image on the left or the right | the **order** in which the author places the cells (image first in 76% of rows) |
@@ -317,3 +318,12 @@ asks otherwise.
 | Section style | a choice for a whole section of the page, such as a full-width background |
 | Cards | the block for rows of the same unit (tiles, boxes, image rows) |
 | Side-by-side section | a section that places a block next to other content (`flex`) |
+
+## Review status (draft pages only)
+
+While the standardisation is reviewed, the new rendering applies **only on draft pages** (`/drafts/…`)
+and in the authoring panels' previews (`body.std-draft`, scripts/corp.js): the Text style markers and
+the Columns rules for class names that real pages already carry (`image-border`, `border-bottom`,
+`label-right`, `columns-25-75`, the related-links titles). Every other page renders exactly as on the
+branch's starting code (checked element by element on product, news, fragment and trial pages).
+Removing the gate is one line in scripts/corp.js once the business approves.

@@ -3,6 +3,7 @@
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
+import corpTextMarkersTransformer from './transformers/corp-text-markers.js';
 // XF → EDS fragment path lookup (xf-fragment-map.js, shared by every importer)
 import xfFragmentPath from './xf-fragment-path.js';
 
@@ -60,7 +61,8 @@ const PAGE_TEMPLATE = {
   blocks: [],
 };
 
-const transformers = [cleanupTransformer];
+// last: the bracket text tags → Text style markers
+const transformers = [cleanupTransformer, corpTextMarkersTransformer];
 
 function executeTransformers(hookName, element, payload) {
   const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };

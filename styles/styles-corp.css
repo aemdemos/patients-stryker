@@ -179,7 +179,7 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) span.text-marker.ts-serif {
   font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular); /* stryker.com span.urw-egyptienne: 400 */
 }
 
 :where(body.corp) span.text-marker.ts-sans {

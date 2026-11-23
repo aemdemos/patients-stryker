@@ -41,6 +41,7 @@ import { convertBeforeRows, convertAfterRows } from './long-page-detail-corp-com
 import PAGE_XF_SLOTS from '../long-page-detail-corp-xf-slots.js';
 import { xfToFragmentPath } from '../xf-fragment-path.js';
 import PAGE_XFS from '../long-page-detail-corp-xf.js';
+import { STD_DRAFT_IMPORT } from './corp-text-markers.js';
 
 const TEMPLATES = ['long-page-detail-corp', 'long-page-detail-corp-fragments'];
 
@@ -597,6 +598,18 @@ function tagCopy(n, tag, doc) {
 function rowCopyStyle(cells, doc) {
   const copy = cells.flat().filter((n) => n.nodeType === 1 && n.copyStyle !== undefined
     && n.copyStyle !== null && !/^H\d$/.test(n.tagName));
+  const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
+  // staging build (draft pages): each paragraph carries its own size and font as Text style
+  // markers, so the row looks the same on any page (no section style, no template rule);
+  // other copy styles stay the section's
+  if (STD_DRAFT_IMPORT) {
+    copy.filter((n) => sizeTag(n.copyStyle) || serif(n.copyStyle))
+      .forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) ? 'serif' : '']
+        .filter(Boolean).join(','), doc));
+    const rest = new Set(copy.flatMap((n) => (n.copyStyle || '').split(',').map((x) => x.trim()))
+      .filter((x) => x && x !== 'serif' && !/^p-\d/.test(x)));
+    return [...rest].join(', ');
+  }
   const weight = {};
   copy.forEach((n) => { weight[n.copyStyle] = (weight[n.copyStyle] || 0) + text(n).length; });
   let dominant = Object.keys(weight).sort((a, b) => weight[b] - weight[a])[0] || '';
@@ -605,7 +618,6 @@ function rowCopyStyle(cells, doc) {
   }
   // a serif cell in a row that is not serif keeps the font in its tag (jr45 season 3 March:
   // the Egyptienne 24.5px intro in the grey box beside the faculty)
-  const serif = (style) => (style || '').split(',').map((x) => x.trim()).includes('serif');
   copy.filter((n) => sizeTag(n.copyStyle) && sizeTag(n.copyStyle) !== sizeTag(dominant))
     .forEach((n) => tagCopy(n, [sizeTag(n.copyStyle), serif(n.copyStyle) && !serif(dominant) ? 'serif' : '']
       .filter(Boolean).join(','), doc));
@@ -729,13 +741,33 @@ function columnRows(main, doc) {
     // linked images (the endoscopy resources specialty tiles): `media-pair`
     const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')].some(linkedImage));
     const boxes = boxVariant(columns);
-    // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
-    // stays in the text colour, so it stays readable
+    // a coloured box the row's box options can't carry (around part of a cell, a colour per
+    // cell): each of its lines in a Text style line box of its colour (`[[box-<colour>]…]`, the
+    // Text style markers, corp-text-markers.js), its white text kept
+    const lineBoxed = new Set();
+    if (!boxes && STD_DRAFT_IMPORT) {
+      columns.flatMap((col) => [...col.querySelectorAll('.has-background:not(.bg-white)')])
+        .filter((b) => b.closest('.colctrl') === colctrl && text(b)
+          && !b.parentElement.closest('.has-background:not(.bg-white), .dimensional-box'))
+        .forEach((b) => {
+          const colour = BOX_COLOURS[(b.className.match(/\bbg-([a-z-]+)/) || [])[1]];
+          if (!colour) return;
+          b.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li').forEach((line) => {
+            if (!text(line) || line.parentElement.closest('p, h1, h2, h3, h4, h5, h6, li')) return;
+            line.prepend(doc.createTextNode(`[[box-${colour}]`));
+            line.append(doc.createTextNode(']'));
+          });
+          lineBoxed.add(b);
+        });
+    }
+    // white text in any other coloured box the row has no option for stays in the text colour,
+    // so it stays readable
     if (!boxes) {
       colctrl.querySelectorAll('[data-white-tag]').forEach((el) => {
         // only the boxes of this row (not a band around it, not a nested row's)
         const inBox = el.closest('.has-background:not(.bg-white), .dimensional-box, .c-full-bleed-panel');
         if (!inBox || inBox.matches('.c-full-bleed-panel') || inBox.closest('.colctrl') !== colctrl) return;
+        if (lineBoxed.has(inBox)) return;
         if (el.firstChild && el.firstChild.nodeValue === '[[color-white]') el.firstChild.remove();
         if (el.lastChild && el.lastChild.nodeValue === ']') el.lastChild.remove();
         el.removeAttribute('data-white-tag');
