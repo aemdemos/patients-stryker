@@ -12,7 +12,7 @@ a11y-results/keyboard/                       (git-ignored, local to the machine 
   index.json                                 every run, newest first
   latest.json                                the newest run
   2026-11-24_140512_neuroelite/              one folder per run, never overwritten
-    report.html                              open in a browser
+    report.html                              open in a browser; self-contained, share it on its own
     run.json                                 the run: when, options, git, pairs, totals, results
     pages/<name>__<viewport>__<site>.json    one page (site = source or eds)
     compare/<name>__<viewport>.json          source vs EDS for one pair at one viewport

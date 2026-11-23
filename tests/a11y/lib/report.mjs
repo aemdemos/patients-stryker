@@ -82,6 +82,46 @@ function findingsList(items, cls) {
 
 const statusCell = (x) => `<span class="${x.status === 'pass' ? 'pass' : 'fail'}">${esc(x.status)}</span>${x.detail ? ` <span class="muted">— ${esc(x.detail)}</span>` : ''}`;
 
+const KIND = {
+  menu: 'Menu',
+  disclosure: 'Disclosure',
+  accordion: 'Accordion',
+  'hidden-submenu': 'Submenu',
+  tabs: 'Tabs',
+  carousel: 'Carousel',
+  modal: 'Modal',
+  'open-dialog': 'Dialog',
+  field: 'Form field',
+};
+
+/** Every tab stop in order, with hidden/focus notes. */
+function tabOrderTable(label, p) {
+  const t = p.tabOrder;
+  const noFocus = new Map(((p.focusVisible && p.focusVisible.missing) || []).map((m) => [m.i, m.reason]));
+  const notChecked = new Map(((p.focusVisible && p.focusVisible.notChecked) || []).map((m) => [m.i, m.reason]));
+  const rows = t.stops.map((s) => {
+    const notes = [];
+    if (noFocus.has(s.i)) notes.push(`<span class="fail">No visible focus: ${esc(noFocus.get(s.i))}</span>`);
+    else if (notChecked.has(s.i)) notes.push(`<span class="muted">Focus not checked: ${esc(notChecked.get(s.i))}</span>`);
+    if (s.hidden && s.hidden.length && !noFocus.has(s.i)) notes.push(`<span class="warn">Hidden: ${esc(s.hidden.join(', '))}</span>`);
+    return `<tr><td class="num">${s.i + 1}</td><td>${esc(s.role)}</td><td>${esc(s.name || '(no name)')}</td><td>${esc(s.container)}</td><td>${notes.join('<br>')}</td></tr>`;
+  }).join('');
+  const missing = noFocus.size;
+  return `<details><summary>Tab order — ${esc(label)} (${t.count} stops${missing ? `, ${missing} without visible focus` : ''})</summary>
+    <table><thead><tr><th scope="col">#</th><th scope="col">Role</th><th scope="col">Name</th><th scope="col">Where</th><th scope="col">Notes</th></tr></thead>
+    <tbody>${rows || '<tr><td colspan="5" class="muted">No tab stops.</td></tr>'}</tbody></table></details>`;
+}
+
+/** Every component found and the result of each key or check. */
+function componentsTable(label, p) {
+  const comps = Object.values(p.components || {}).flat();
+  const rows = comps.flatMap((c) => Object.entries(c.keys).map(([key, k], n) => `<tr>${
+    n === 0 ? `<td rowspan="${Object.keys(c.keys).length}">${esc(KIND[c.kind] || c.kind)}</td><td rowspan="${Object.keys(c.keys).length}">${esc(c.name || '(no name)')}<br><span class="muted">${esc(c.where)}</span></td>` : ''
+  }<td>${esc(key)}</td><td><span class="${{ pass: 'pass', fail: k.severity === 'failure' ? 'fail' : 'warn' }[k.result] || 'na'}">${esc(k.result)}</span>${k.result === 'fail' && k.severity === 'warning' ? ' <span class="muted">(warning)</span>' : ''}</td><td>${esc(k.note || '')}</td></tr>`)).join('');
+  return `<details><summary>Components and keys — ${esc(label)} (${comps.length} components)</summary>
+    ${comps.length ? `<table><thead><tr><th scope="col">Type</th><th scope="col">Component</th><th scope="col">Key or check</th><th scope="col">Result</th><th scope="col">Note</th></tr></thead><tbody>${rows}</tbody></table>` : '<p class="muted">No menus, tabs, carousels, modals or form fields found.</p>'}</details>`;
+}
+
 function viewportSection(pair, viewport, source, eds, compare) {
   const edsStats = eds ? pageStats(eds) : null;
   let edsState = 'not tested';
@@ -134,12 +174,11 @@ function viewportSection(pair, viewport, source, eds, compare) {
     parts.push(`<details><summary>Source issues, for information (${sourceVerdict.failures.length} failure-level, ${sourceVerdict.warnings.length} warnings)</summary>
       ${findingsList(sourceVerdict.failures, 'fail')}${findingsList(sourceVerdict.warnings, 'warn')}</details>`);
   }
-  const files = [
-    source && `pages/${pair}__${viewport}__source.json`,
-    eds && `pages/${pair}__${viewport}__eds.json`,
-    compare && `compare/${pair}__${viewport}.json`,
-  ].filter(Boolean);
-  parts.push(`<p class="muted">Full data: ${files.map((f) => `<a href="${esc(f)}">${esc(f)}</a>`).join(' · ')}</p>`);
+  // the detailed data, written into the report (no links to the JSON files, so the
+  // report reads the same wherever it is opened or shared)
+  [['EDS', eds], ['Source', source]].forEach(([label, p]) => {
+    if (p && !p.error) parts.push(tabOrderTable(label, p), componentsTable(label, p));
+  });
 
   return `<details${edsState === 'fail' || edsState === 'error' ? ' open' : ''}><summary>${esc(summaryText)}</summary>${parts.join('\n')}</details>`;
 }
@@ -229,6 +268,8 @@ export default function buildReport(runDir) {
 no visible focus, a component that does not respond to its keys, or a missing skip link when the source has one.</p>
 ${sections.join('\n')}
 <footer class="muted">
+<p>This report is a single file: everything above is included, so it can be shared on its own.
+The same results as JSON (for tools) are in the run folder <code>${esc(run.runId)}</code>: run.json, pages/, compare/.</p>
 <p>Result format version ${esc(run.schemaVersion)} (tests/a11y/RESULTS.md). Checks, pass/fail rules and limits:
 README.md, section "Keyboard tests (source page vs EDS page)". Automated checks do not replace a manual review
 of focus contrast, tab order logic and screen reader output.</p>

@@ -182,12 +182,17 @@ a11y-results/keyboard/
   [`tests/a11y/RESULTS.md`](tests/a11y/RESULTS.md), for building other reports
   or tools on top of it.
 
-**The HTML report** (`report.html`) is one file that works offline:
+**The HTML report** (`report.html`) is one self-contained file. It has no scripts,
+loads no styles, images or fonts, and doesn't link to the JSON files, so it reads
+the same wherever it's opened. To share a run, send this one file.
 - **Totals:** pairs, pages, EDS results failing, regressions, improvements, both fail.
 - **Overview:** one row per pair and viewport.
-- **Per pair:** expandable sections with each site's summary, the EDS failures,
-  the differences, checks and tab stops found on one site only, warnings, and
-  links to the JSON files.
+- **Per pair:** expandable sections with:
+  - each site's summary and the EDS failures
+  - the differences, and checks and tab stops found on one site only
+  - warnings and source issues
+  - the full tab order of each site, with the stops that are hidden or show no visible focus
+  - every component with the result of each key
 
 To rebuild a report from the JSON files:
 `npm run test:a11y:keyboard:report -- [run-folder]`. Without a folder, it rebuilds
