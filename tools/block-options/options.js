@@ -3,6 +3,8 @@
  * (radio) or a set of switches (flags), with the authored option names the block's CSS / JS
  * reads. `when` limits a group to one layout (the first option group); `replaces` lists the
  * older free-value options a group supersedes, which are removed when the author picks in it.
+ * `clears` lists another group's options that can't go with this group's choice (all its
+ * choices, or only those in `clearsWhen`): picking one removes them.
  *
  * Keep in step with the block (its header comment lists the options) and its Block Library
  * entry. The Block Library sheet `panel-options` can replace a group's choices, add groups, or
@@ -191,6 +193,8 @@ export const BLOCK_OPTIONS = {
           ['box-dark-purple-gradient', 'Dark purple gradient'],
         ],
         replaces: /^(boxed|gold|gray|dark|blue|purple)-(first|last|all|\d+)$/,
+        // a cell has one box: a box colour and a bar on the first line can't go together
+        clears: /^(gray|gold|dark|blue)-lead$/,
       },
       {
         id: 'box-cell',
@@ -240,6 +244,9 @@ export const BLOCK_OPTIONS = {
           ['blue-lead', 'In a blue bar'],
           ['serif-lead', 'Serif lead paragraph'],
         ],
+        // the bars are the cell's box, so they clear a cell box (the serif paragraph doesn't)
+        clears: /^(box-.+|shadow)$/,
+        clearsWhen: ['gray-lead', 'gold-lead', 'dark-lead', 'blue-lead'],
       },
       {
         id: 'looks',

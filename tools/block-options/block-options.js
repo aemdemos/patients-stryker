@@ -139,6 +139,10 @@ function pick(group, value) {
   touched.add(group.id);
   draft = draft.filter((o) => !values.includes(o) && !(group.replaces && group.replaces.test(o)));
   if (value) draft.push(...tokensOf(value));
+  // a choice that can't go with another group's (both draw the cell's one box) clears it
+  if (value && group.clears && (!group.clearsWhen || group.clearsWhen.includes(value))) {
+    draft = draft.filter((o) => !group.clears.test(o));
+  }
   // a group shown only with this one's choice (e.g. which cell has the box) goes with it
   if (!value) {
     def().groups.filter((g) => g.when === group.id && g.options).forEach((g) => {
