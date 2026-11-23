@@ -43,6 +43,7 @@ keeps the invitation, later visits need no link.
 | `threads.js` | The shared rules: page statuses, chats, Done |
 | `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
+| `NEW-PAGES.md` | Design: first source shots for newly published pages (not built yet) |
 | `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
@@ -202,21 +203,8 @@ The source URLs come from the export file names (letter case kept), never from E
 
 ## Planned
 
-- **Newly published pages** (to be designed with care before building): the query index
-  brings every newly published page into the review at once, but such a page has no source shot,
-  so the comparison and the evidence start late or never. To settle first:
-  - **The source URL.** It can't be derived from the EDS path (letter case, `---` → `-`,
-    trailing `-`, renamed pages) and new pages may have no export file. Options: the AOE team
-    gives it when adding the page (checked: answers 200 on www.stryker.com, its cleaned name is
-    the EDS path), or a source → EDS mapping kept with the migration.
-  - **When the first shot is taken.** As soon as the page is published, so the evidence shows
-    the source as it was when the page was migrated, not weeks later: a check of the query index
-    for pages without a history (on request, or regularly), listed for the AOE team.
-  - **Pages that have no source** (new on EDS only), source pages that are gone or redirect:
-    shown as such, never compared with a wrong page.
-  - **Who may add a page**, and whether a page waits for its first shot before it is put in a
-    batch or a group.
-  - The first shot of an added page is evidence like the others: same rules, history, hashes.
+- **Newly published pages:** designed in [`NEW-PAGES.md`](NEW-PAGES.md) (facts, design,
+  the decisions it needs); not built yet.
 - Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
   spaces yet: never deploy the backend from there before that).
 
