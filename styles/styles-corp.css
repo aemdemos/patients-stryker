@@ -820,6 +820,13 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
 
+/* …and its Heading 1 at 35px (stryker.com h1 > span.fontsize-1-25em) */
+:where(body.corp) main > .section.serif-futura-bold > .default-content-wrapper h1,
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > .default-content-wrapper h1,
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+}
+
 :where(body.corp) main > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
 :where(body.corp) .tabs-panel > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
 :where(body.corp) .accordion-item-body > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n) {
