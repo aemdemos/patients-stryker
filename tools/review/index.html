@@ -26,6 +26,7 @@
       <span class="rv-label">Compare with</span>
       <button type="button" class="rv-btn" data-cmp="rs" title="The page as migrated, before standardisation">As-is</button>
       <button type="button" class="rv-btn" data-cmp="src" title="A snapshot of the live stryker.com page">Source</button>
+      <button type="button" class="rv-btn" data-cmp="live" title="The live stryker.com page, rendered now by the review backend at this width (as rendered: menus, tabs and carousels don't move; links open the real page in a new tab)">Live</button>
     </div>
     <div class="rv-group" role="group" aria-label="View">
       <button type="button" class="rv-btn" data-mode="flip" title="Flip between the standard page and the other one (Space)">Flip</button>
@@ -65,6 +66,12 @@
         <div class="rv-src-scroller"><div class="rv-src-page"></div></div>
         <span class="rv-tag">Source</span>
         <p class="rv-src-none" hidden>No snapshot of this page at this width yet.</p>
+      </div>
+      <div class="rv-frame rv-live" data-side="live">
+        <iframe sandbox="allow-same-origin" title="Live stryker.com page"></iframe>
+        <span class="rv-tag">Live stryker.com</span>
+        <p class="rv-live-msg" hidden></p>
+        <button type="button" class="rv-live-again" hidden title="Render the live page again now">Render again</button>
       </div>
     </main>
     <aside class="rv-panel rv-panel-right" aria-label="Feedback on this page">

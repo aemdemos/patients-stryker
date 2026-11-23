@@ -21,7 +21,7 @@ keeps the invitation, later visits need no link.
 |---|---|
 | `space` | `main`: its entries and invitations in the review backend are its own (the standard-pages review is `std`; never mixed) |
 | `base` | the page at its final path on the same host (prefix `''`; the workspace preview proxies those paths to main) |
-| `compare` | `src` only: the source snapshot (as-is `rs` hidden) |
+| `compare` | `src`: the source snapshot, `live`: a live copy of the source page (as-is `rs` hidden) |
 | `design` | off: no design panel (variants, widths, backgrounds, text sets, groups); its "Open in a new tab" links are in the Feedback panel |
 | `widths` | Desktop 1440, Tablet 860 (source and EDS both in their tablet layouts), Phone 375 |
 | `mode` | side by side (flip and overlay stay available) |
@@ -86,6 +86,29 @@ pages). The backend's `pages` action reads both (the previewed sheet: edit it in
   (`scope-sheet.py`): the 568 pages with a first shot keep their known pair, the others have
   their EDS path by the importer's rule (renamed pages: change the row). The AOE team removes
   what is out of scope. A local copy is in the workspace (`content/review/migration-scope.json`).
+
+## Live: the source page, rendered now
+
+**Live** (next to Source) shows a **live copy of the stryker.com page**, rendered on request by
+the backend's browser (action `live`) at the width being viewed, next to the page under review,
+synced by text like the as-is page.
+
+- **Why a copy:** stryker.com refuses to be shown inside another site (`X-Frame-Options:
+  SAMEORIGIN`, a strict CSP) and answers 404 to every request that isn't a real browser, so the
+  page can't be framed or fetched directly. The backend's browser (which loads it as for the
+  shots) gives its rendered page with **every script removed** and a `<base>` to stryker.com;
+  the reviewer's browser loads its stylesheets, images and fonts from stryker.com (its fonts
+  allow any site). Shown in a same-origin frame (a blob URL, sandboxed, no scripts), so the sync
+  reads it like the as-is page.
+- **What it is not:** not clickable as on stryker.com (menus, tabs, carousels stay as rendered;
+  a link opens the real page in a new tab), and **not evidence**: the dated shots are. No
+  analytics, trackers or ALTCHA run, so the copy leaves no traces on stryker.com's statistics.
+- **Per width:** stryker.com builds some parts with its scripts for each width (the main menu at
+  1024 px), so each width is its own copy. A copy is kept 10 minutes (the tag says when it was
+  rendered; **Render again** makes a fresh one). Measured: ~5 s the first time (the browser
+  starts), ~3 s with a warm browser, instant when kept.
+- The source: the migration scope table's (client review), else the newest shot's, else the
+  tool's snapshot facts (standard review).
 
 ## Source shots taken by the backend
 
@@ -289,6 +312,7 @@ node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitati
 node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a capture by the backend, tiles, group approval (test pages)
 node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
 node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
+node tools/review/backend/test/live-tool.test.mjs <dev server> [page] [space]   # the Live comparison: the copy, fonts, no scripts, sync, links, widths
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its

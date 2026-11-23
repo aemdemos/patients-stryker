@@ -8,7 +8,7 @@
  * preview); the frames are on the same host, so the shell reads and scrolls them directly.
  */
 import { leaves, buildAnchors, mapY } from './sync.js';
-import { createStore } from './store.js';
+import { createStore, call } from './store.js';
 import { keysOfHtml, toPosition, toKey } from './blockkeys.js';
 import {
   threadState, roleOf, pageState, STATES_BY_ROLE,
@@ -40,7 +40,7 @@ const SNAPSHOTS = LOCAL ? REVIEW.snapshots.local : REVIEW.snapshots.preview;
 const READY_TIMEOUT = 8000;
 const NAME_KEY = storageKey('reviewer');
 const MODES = ['flip', 'opacity', 'side'];
-const COMPARE = { rs: 'as-is', src: 'source' };
+const COMPARE = { rs: 'as-is', src: 'source', live: 'live source' };
 const WIDTHS = REVIEW.widths.map((w) => w.vp);
 
 const params = new URLSearchParams(window.location.search);
@@ -56,11 +56,21 @@ const state = {
 
 const $ = (sel) => document.querySelector(sel);
 const stage = $('.rv-stage');
-const panes = { std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src') };
-const frames = { std: panes.std.querySelector('iframe'), rs: panes.rs.querySelector('iframe') };
+const panes = {
+  std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src'), live: $('.rv-live'),
+};
+const frames = {
+  std: panes.std.querySelector('iframe'), rs: panes.rs.querySelector('iframe'), live: panes.live.querySelector('iframe'),
+};
 const scroller = panes.src.querySelector('.rv-src-scroller');
-const ready = { std: false, rs: false, src: false };
-const quietUntil = { std: 0, rs: 0, src: 0 };
+const ready = {
+  std: false, rs: false, src: false, live: false,
+};
+const quietUntil = {
+  std: 0, rs: 0, src: 0, live: 0,
+};
+// the live copy of the source page (backend action live): what it was rendered for, its blob URL
+const live = { key: '', url: '' };
 let anchors = [];
 // the source snapshot of the page at the current width (meta.json of capture-snapshots.mjs)
 let snapshot = null;
@@ -165,7 +175,7 @@ const notes = createNotes({
 function rebuildAnchors() {
   if (!ready.std || !ready[state.cmp]) return;
   try {
-    const other = state.cmp === 'src' ? snapshot.leaves : leaves(doc('rs'));
+    const other = state.cmp === 'src' ? snapshot.leaves : leaves(doc(state.cmp));
     anchors = buildAnchors(leaves(doc('std')), other);
   } catch (e) {
     anchors = [];
@@ -1024,12 +1034,12 @@ function renderPageStatus() {
   const pending = drafts.has('page|state');
   const by = st.set && !pending ? `set by ${st.set.by}${st.set.role === 'aoe' ? ' (AOE)' : ''} · ${when(st.set.at)}` : '';
   $('.rv-status-banner').className = `rv-status-banner st-${st.state}`;
-  $('.rv-status-banner').replaceChildren(
+  $('.rv-status-banner').replaceChildren(...[
     el('span', { class: 'rv-status-kicker' }, 'Status of this page'),
     el('strong', {}, STATUS_LABELS[st.state]),
     el('span', { class: 'rv-status-by' }, pending ? 'unsaved: Save to apply it' : by),
     g ? el('span', { class: 'rv-status-group' }, `Approved with its group: ${g.page} approved by ${g.by}, ${when(g.at)}`) : null,
-  );
+  ].filter(Boolean));
   const badge = $('.rv-page-badge');
   badge.className = `rv-page-badge st-${st.state}`;
   badge.textContent = STATUS_LABELS[st.state];
@@ -1184,7 +1194,7 @@ function renderShotBox() {
       shotHooks.wait(page, shots.data.versions.length);
     },
   }, req?.status === 'failed' ? 'Ask again' : 'Refresh source shot');
-  box.replaceChildren(
+  box.replaceChildren(...[
     n ? pick : el('p', { class: 'rv-none' }, REVIEW.pages.scope
       ? 'No source shot of this page yet: the backend takes the first one within 15 minutes of the page being published (with its source in the migration scope table).'
       : 'No shot history for this page yet: the source shown is the first shot kept with the tool (no Refresh until the first shots are in the history).'),
@@ -1192,7 +1202,7 @@ function renderShotBox() {
     reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
     n ? refresh : null,
     el('p', { class: 'rv-shot-msg', 'aria-live': 'polite' }),
-  );
+  ].filter(Boolean));
 }
 
 /** the page's shot history (read once per page) */
@@ -1266,8 +1276,8 @@ async function loadSnapshot() {
   }
   snapshot = meta;
   SOURCE[state.page] = meta.url;
-  const live = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
-  if (live) live.href = meta.url;
+  const liveLink = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
+  if (liveLink) liveLink.href = meta.url;
   pageEl.style.height = `${meta.height}px`;
   // (newer shots only in Document Authoring: through the preview, also on the workspace)
   const tilesAt = meta.dir ? `${REVIEW.snapshots.preview}${state.page}${meta.dir}` : `${SNAPSHOTS}${state.page}`;
@@ -1295,6 +1305,42 @@ async function loadSnapshot() {
 }
 
 shotHooks.reload = loadSnapshot;
+
+/**
+ * the live copy of the source page, when Live is the comparison: rendered by the backend at the
+ * current width (stryker.com builds some parts with its scripts per width), kept there 10
+ * minutes; fresh: render again now
+ */
+async function loadLive(fresh = false) {
+  if (!REVIEW.compare.includes('live') || state.cmp !== 'live' || !state.page) return;
+  const key = `${state.page}|${state.vp}`;
+  if (!fresh && live.key === key) return;
+  live.key = key;
+  ready.live = false;
+  const msg = panes.live.querySelector('.rv-live-msg');
+  const tag = panes.live.querySelector('.rv-tag');
+  const again = panes.live.querySelector('.rv-live-again');
+  msg.hidden = false;
+  msg.textContent = 'Rendering the live stryker.com page… (a few seconds)';
+  again.hidden = true;
+  tag.textContent = 'Live stryker.com';
+  const q = new URLSearchParams({
+    page: state.page, vp: String(state.vp), ...(SOURCE[state.page] ? { source: SOURCE[state.page] } : {}), ...(fresh ? { fresh: '1' } : {}),
+  });
+  const { status, body } = await call(`live?${q}`).catch(() => ({ status: 0, body: null }));
+  if (live.key !== key) return;
+  again.hidden = false;
+  if (status !== 200 || !body?.html) {
+    msg.textContent = body?.error?.message ? `No live copy: ${body.error.message}` : 'The live copy could not be made (the review backend did not answer).';
+    return;
+  }
+  if (live.url) URL.revokeObjectURL(live.url);
+  live.url = URL.createObjectURL(new Blob([body.html], { type: 'text/html' }));
+  frames.live.src = live.url;
+  msg.hidden = true;
+  const at = new Date(body.at).toLocaleTimeString([], { timeStyle: 'short' });
+  tag.textContent = `Live stryker.com, rendered ${at}${body.cached ? '' : ' (now)'}`;
+}
 // after a Refresh: the backend takes the shot within minutes; look every 20 s for 8 minutes
 shotHooks.wait = (page, had) => {
   let tries = 0;
@@ -1347,6 +1393,9 @@ function loadPage() {
   closeEditor();
   notes.setNotes([]);
   loadSnapshot();
+  // (a new page: its live copy when Live is the comparison)
+  live.key = '';
+  loadLive();
   pageKeys = { byId: {}, byKey: {} };
   const keysLoad = fetch(`${BASE}${loading}.plain.html`)
     .then((r) => (r.ok ? r.text() : ''))
@@ -1417,6 +1466,8 @@ function frameKeys(e) {
 }
 
 function whenReady(side) {
+  // (the live copy is a finished page: nothing loads in it)
+  if (side === 'live') return Promise.resolve();
   const d = doc(side);
   const started = Date.now();
   return new Promise((resolve) => {
@@ -1434,6 +1485,8 @@ async function onFrameLoad(side) {
   ready[side] = false;
   const d = doc(side);
   if (!d) return;
+  // (the live frame before its first copy is an empty page)
+  if (side === 'live' && !live.url) return;
   await whenReady(side);
   const style = d.createElement('style');
   style.textContent = '.rv-hl { outline: 3px solid #ffb500 !important; outline-offset: 2px; }';
@@ -1443,6 +1496,14 @@ async function onFrameLoad(side) {
     window.requestAnimationFrame(() => syncFrom(side));
   }, { passive: true });
   d.addEventListener('keydown', frameKeys);
+  // the live copy's links: the real page, in a new tab (the copy itself can't navigate)
+  if (side === 'live') {
+    d.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      e.preventDefault();
+      if (a && /^https?:/.test(a.href)) window.open(a.href, '_blank', 'noopener');
+    });
+  }
   new ResizeObserver(scheduleRebuild).observe(d.body);
   ready[side] = true;
   rebuildAnchors();
@@ -1560,7 +1621,7 @@ function filterPanel() {
       applyFilters();
     },
   }), 'Representative pages only');
-  $('.rv-filter-body').replaceChildren(
+  $('.rv-filter-body').replaceChildren(...[
     el('p', { class: 'rv-filter-head' }, 'Batches (none ticked: all)'),
     ...numbers.map((b) => box(b, `Batch ${b} (${count(b)})`)),
     count('none') ? box('none', `No batch (${count('none')})`) : null,
@@ -1570,7 +1631,7 @@ function filterPanel() {
     reps,
     el('p', { class: 'rv-filter-head' }, 'Area'),
     area,
-  );
+  ].filter(Boolean));
 }
 
 /** the toolbar and the panels of this review (config.js) */
@@ -1598,6 +1659,7 @@ function setUpShell() {
     if (!REVIEW.compare.includes(b.dataset.cmp)) b.remove();
   });
   if (!REVIEW.compare.includes('rs')) panes.rs.remove();
+  if (!REVIEW.compare.includes('live')) panes.live.remove();
   panes.std.querySelector('.rv-tag').textContent = BASE_LABEL;
   panes.std.querySelector('iframe').title = `${BASE_LABEL} page`;
   document.querySelectorAll('[data-mode]').forEach((b) => {
@@ -1707,13 +1769,16 @@ async function start() {
     layout();
     scheduleRebuild();
     loadSnapshot();
+    loadLive();
   }));
   document.querySelectorAll('[data-cmp]').forEach((b) => b.addEventListener('click', () => {
     state.cmp = b.dataset.cmp;
     layout();
     rebuildAnchors();
     syncFrom('std');
+    loadLive();
   }));
+  panes.live?.querySelector('.rv-live-again').addEventListener('click', () => loadLive(true));
   scroller.addEventListener('scroll', () => {
     if (Date.now() < quietUntil.src) return;
     window.requestAnimationFrame(() => syncFrom('src'));

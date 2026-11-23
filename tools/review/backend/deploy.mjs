@@ -48,6 +48,10 @@ const ACTIONS = {
   capture: {
     web: false, timeout: 300000, memory: 2048, browser: true,
   },
+  // a live copy of a source page for the tool (the browser; a web action answers within 60 s)
+  live: {
+    web: true, timeout: 60000, memory: 2048, browser: true,
+  },
 };
 
 if (!existsSync(join(deps, 'node_modules', '@adobe', 'aio-lib-state'))) {

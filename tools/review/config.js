@@ -16,9 +16,10 @@ export const REVIEW = {
   // the page under review: at its final path on this host (the workspace preview proxies those
   // paths to the main branch's content)
   base: { label: 'Migrated', prefix: '', localPrefix: '' },
-  // what it is compared with, the first one by default: src = the source page's snapshot
+  // what it is compared with, the first one by default: src = the source page's snapshot, live
+  // = a live copy of the source page rendered now by the backend
   // (as = the as-is copy under /rs, standard-pages review only)
-  compare: ['src'],
+  compare: ['src', 'live'],
   // the design panel (variants, widths, backgrounds, text sets, groups): standard pages only
   design: false,
   // the widths offered, the first one by default (tablet 860: source and EDS both in their
