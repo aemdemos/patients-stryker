@@ -4,9 +4,10 @@
 /* ---- theme `large-copy`: the page's own text (default content) in 17.5px copy, lines
    21.25px apart (stryker.com .fontsize-1-25em on the rich text of the SKILL and ASC care
    setting pages; measured on centers-of-excellence and operating-room). Blocks keep their
-   own copy size (Columns / Accordion / Panel `large-copy` variants), the small print (`disclaimer`) and
-   the full-bleed bands (`asc` Large Headline bands) theirs ---- */
-body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-bleed) > .default-content-wrapper :is(p, ul, li) {
+   own copy size (Columns / Accordion / Panel `large-copy` variants), the small print (`disclaimer`),
+   the full-bleed bands (`asc` Large Headline bands) and a `p-1-5` section (21px: SKILL training
+   centers "With the shared and ultimate goal…") theirs ---- */
+body.long-page-detail-corp.large-copy main > .section:not(.disclaimer, .full-bleed, .p-1-5) > .default-content-wrapper :is(p, ul, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
@@ -482,4 +483,57 @@ body.long-page-detail-corp.mako-campaign main > .section.full-bleed > .default-c
 
 body.long-page-detail-corp.mako-refreshers main > .section.full-bleed > .default-content-wrapper > h1 {
   font-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--long-page-detail-corp-lh-unit))));
+}
+
+/* ---- theme `skill`: the SKILL pages (centers of excellence, training centers, NeuroElite,
+   e-Lab, Assist MAX, Connect). Their headings are plain stryker.com h2s: 21px on phones, 24.5px
+   from 600px (not this template's 1.75em headings), a fully Bold one in a Columns cell too (not
+   the 35px display line); the accordion panels 15px apart. Headline boxes and size section
+   styles (`h2-1-25`) keep their own sizes ---- */
+body.long-page-detail-corp.skill main > .section:not(.headline-box, .h2-1-25) :is(.default-content-wrapper, .columns > div > div) > h2:not(.underline, :has(> u)) {
+  margin-bottom: var(--space-block);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.skill main > .section:not(.headline-box, .h2-1-25) :is(.default-content-wrapper, .columns > div > div) > h2:not(.underline, :has(> u)) {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* a headline box's Heading 2 (not a large headline) the same: 21px on phones (Centers of
+   Excellence "Contact your local representative…"); large headlines keep their sizes */
+body.long-page-detail-corp.skill:not(.large-headlines) main > .section.headline-box > .default-content-wrapper > h2:not(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.skill:not(.large-headlines) main > .section.headline-box > .default-content-wrapper > h2:not(.underline, :has(> u)) {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* with large headlines the box's Heading 2 is the 28px large headline: 20px from it to the
+   rule under the box (50px from 600px), its 15px margin not kept (SKILL NeuroElite, training
+   centers "Contact your local representative…") */
+body.long-page-detail-corp.skill.large-headlines main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.long-page-detail-corp.skill.large-headlines main > .section.headline-box:has(> .default-content-wrapper > h2:last-child) + .section.separator {
+    margin-top: calc(var(--space-section) + var(--space-block-l));
+  }
+}
+
+/* the banner's gold text box: a blank line above the title (the source's empty 17.5px line, 35px
+   with its margin), 10% of the box in on the left, 2.5% below the title's own 15px margin
+   (stryker.com SKILL banners .bg-gold: padding-left 10%, padding-bottom 2.5%) */
+body.long-page-detail-corp.skill main .hero-corp.banner .hero-corp-text-box {
+  padding: calc(var(--space-block) + var(--space-block-l)) var(--space-block-s) 2.5% 10%;
+}
+
+body.long-page-detail-corp.skill main .accordion-item + .accordion-item {
+  margin-top: var(--space-block);
 }

@@ -748,6 +748,20 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   }
 }
 
+/* h2-1-25: an h2 the source enlarges with h2 > span.fontsize-1-25em (26.25px on phones,
+   30.625px from 600px: 1.25 x the h2 step, lines 1.06; SKILL NeuroElite "Outstanding
+   educational opportunities") */
+:where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+  font-size: calc(1.25 * var(--heading-font-size-l));
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-25 > .default-content-wrapper h2 {
+    font-size: calc(1.25 * var(--heading-font-size-xl));
+  }
+}
+
 /* h3-1-25: an h3 the source enlarges with h3 > span.fontsize-1-25em (21.9px on mobile,
    26.25px from 600px with the h3 step, lines 1.15, e.g. the "Contact a Stryker Smart Care
    representative" form title). Like h1-1-25 it flows into the text below it: one heading

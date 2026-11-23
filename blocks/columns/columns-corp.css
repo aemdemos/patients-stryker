@@ -257,19 +257,24 @@ body.corp .columns.event-cards.block > div > div h3 + p {
   line-height: var(--heading-line-height);
 }
 
-/* lowered-text / slightly-lowered-text: the text beside the image starts lower, by a fifth
-   (7%) of its column's width (stryker.com rich text margin-top 20% / 7%: SKILL Centers of
-   Excellence "A unique global training experience", e-Lab "A platform for all stakeholders…"),
-   the cells the source's full column width, no 50-50 inset between text and image */
-body.corp .columns:where(.lowered-text, .slightly-lowered-text) {
+/* lowered-text / lowered-text-m / lowered-text-s: the text beside the image starts lower, by
+   20% / 15% / 7% of its column's width (stryker.com rich text margin-top 20% / 15% / 7%: SKILL
+   Centers of Excellence, Connect, NeuroElite; training centers; e-Lab); under a lead bar
+   (`gold-lead`) the text after the bar does. The cells keep the source's full column width,
+   no 50-50 inset between text and image */
+body.corp .columns:where(.lowered-text, .lowered-text-m, .lowered-text-s) {
   --col-5050-inset: var(--space-block);
 }
 
-body.corp .columns.lowered-text > div > div:not(:has(img, picture, video, iframe)) > :first-child {
+body.corp .columns.lowered-text > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
   margin-top: 20%;
 }
 
-body.corp .columns.slightly-lowered-text > div > div:not(:has(img, picture, video, iframe)) > :first-child {
+body.corp .columns.lowered-text-m > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
+  margin-top: 15%;
+}
+
+body.corp .columns.lowered-text-s > div > div:not(:has(img, picture, video, iframe)) > :is(:first-child:not(.columns-box), .columns-box:first-child + *) {
   margin-top: 7%;
 }
 

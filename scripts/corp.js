@@ -85,7 +85,8 @@ function decorateIconLinks(main) {
  * labels; `course-cards`: the Mako refreshers course cards (their action links 21px,
  * columns-corp.css); `product-intro`: nse product rows, the Egyptienne copy with a 2vw title;
  * `product-details`: an nse product's intro beside a grey box of 14px details; `event-cards`:
- * neurosurgical events, a 21px Egyptienne subtitle under each title.
+ * neurosurgical events, a 21px Egyptienne subtitle under each title; `gold-lead-copy`: SKILL
+ * NeuroElite, a gold lead bar over 17.5px copy.
  * `*-serif-copy`: a copy size with the Egyptienne copy.
  */
 const VARIANT_BUNDLES = {
@@ -100,6 +101,7 @@ const VARIANT_BUNDLES = {
   'product-intro': ['serif'],
   'product-details': ['gray-last', 'plain-bold'],
   'event-cards': ['large-subtitles'],
+  'gold-lead-copy': ['gold-lead', 'large-copy'],
 };
 
 function expandVariantBundles(main) {

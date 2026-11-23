@@ -49,17 +49,22 @@ body.corp .panel.gold .panel-body h3 {
   font-size: var(--heading-font-size-l);
 }
 
-/* quote: a testimonial in the gold box (stryker.com SKILL Centers of Excellence "These days,
-   young neurointerventionalists…"), set in 8% of the box width at the sides with 5% above and
-   below it (the 5% below in place of the section gap); the speaker (Heading 3 lines) right-aligned, the lines together as one source
-   paragraph */
-body.corp .panel.quote .panel-body {
+/* spaced: the gold box 5% of its width away from what is above and below it (the 5% below in
+   place of the section gap; stryker.com SKILL NeuroElite "When you partner with a Stryker
+   program…", Assist MAX "We are living in a global world…"). quote: the same for a
+   testimonial (SKILL Centers of Excellence "These days, young neurointerventionalists…"), set
+   in 8% of the box width at the sides; the speaker (Heading 3 lines) right-aligned, the lines
+   together as one source paragraph */
+body.corp .panel:is(.quote, .spaced) .panel-body {
   margin-block: 5% calc(5% - var(--space-block-l));
+}
+
+body.corp .panel.quote .panel-body {
   padding-inline: 8%;
 }
 
 @media (width >= 600px) {
-  body.corp .panel.quote .panel-body {
+  body.corp .panel:is(.quote, .spaced) .panel-body {
     margin-bottom: calc(5% - var(--space-section));
   }
 }

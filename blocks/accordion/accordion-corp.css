@@ -44,6 +44,19 @@ body.corp .accordion.large-titles .accordion-item-body h2 {
   line-height: var(--heading-line-height);
 }
 
+/* blue-titles: the panels' Bold headings in the body font, Humanist bold; a Heading 3 navy
+   (stryker.com SKILL Assist MAX "Intuitive", "Autonomous": 21px #1c5687; "Invite your
+   guest/viewers": a 17.5px Heading 4, black) */
+body.corp .accordion.blue-titles .accordion-item-body :is(h3, h4),
+body.corp .accordion.blue-titles .accordion-item-body :is(h3, h4) strong {
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .accordion.blue-titles .accordion-item-body h3 {
+  color: var(--color-navy-bright);
+}
+
 /* a panel made of several sections (`accordion-continue`): the corp section gap
    between them, 20px (30px from 600px) */
 body.corp .accordion .accordion-item-body > .section:not(:last-child) {
