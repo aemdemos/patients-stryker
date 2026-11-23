@@ -21,9 +21,9 @@ async function admin(p, namespace = '892544-strykerstdreview-stage') {
 
 const PAGE = '/test/client-review-space';
 let failed = 0;
-const check = (what, ok) => {
+const check = (what, ok, detail = '') => {
   if (!ok) failed += 1;
-  console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}`);
+  console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}${ok ? '' : ` ${detail}`}`);
 };
 const call = async (path, token, body) => {
   const resp = await fetch(`${REVIEW.backend}/${path}`, {
@@ -76,11 +76,21 @@ try {
     const bad = await call('save', aoeInv.token, {
       page: PAGE, changes: [{ item: 'page', kind: 'batch', value: '"x"', rev: 0 }],
     });
-    check('batch: only numbers', bad.status === 400);
+    check('batch: only numbers', bad.status === 400 && bad.body.error.code === 'bad-org');
+    const grouped = await call('save', aoeInv.token, {
+      page: PAGE,
+      changes: [{ item: 'page', kind: 'group', value: '7', rev: 0 }, { item: 'page', kind: 'representative', value: 'true', rev: 0 }],
+    });
+    check('group + representative saved', grouped.status === 200 && grouped.body.results.every((r) => r.ok));
+    const badRep = await call('save', aoeInv.token, {
+      page: PAGE, changes: [{ item: 'page', kind: 'representative', value: '1', rev: 0 }],
+    });
+    check('representative: only true / false', badRep.status === 400);
     const over = await call('overview', aoeInv.token);
     const two = over.body.pages.find((x) => x.page === `${PAGE}-2`);
     const one = over.body.pages.find((x) => x.page === PAGE);
     check('overview: the batch per page, not activity', two?.batch === 3 && two.state === 'unreviewed' && one?.batch === 4, JSON.stringify([one, two]));
+    check('overview: group and representative (the page has a test comment: in review)', one?.group === 7 && one.representative === true && one.state === 'in-review', JSON.stringify(one));
   } finally {
     await admin({ op: 'purge-invite', id: aoeInv.id, space: 'main' });
     await admin({ op: 'revoke', id: aoeInv.id });

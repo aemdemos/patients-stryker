@@ -26,6 +26,8 @@
         <label>Search <input type="search" class="st-search" placeholder="Title or path"></label>
         <label>Template <select class="st-template"><option value="">All</option></select></label>
         <label>Area <select class="st-unit"><option value="">All</option></select></label>
+        <label>Group <select class="st-group"><option value="">All</option></select></label>
+        <label class="st-check"><input type="checkbox" class="st-reps"> Representative pages only</label>
         <label>State <select class="st-state"><option value="">All</option></select></label>
         <label>Order <select class="st-order">
           <option value="waiting">What waits for me first</option>
@@ -35,13 +37,15 @@
         <label class="st-check"><input type="checkbox" class="st-new"> Only new since my last visit</label>
       </div>
       <details class="st-mark" hidden>
-        <summary>Mark pages for a batch</summary>
-        <p class="rs-muted">Paste the pages (client URLs such as https://www.stryker.com/us/en/….html, one per line; paths work too). Marking moves a page out of any other batch.</p>
+        <summary>Organise pages: batches and groups</summary>
+        <p class="rs-muted">Paste the pages (client URLs such as https://www.stryker.com/us/en/….html, one per line; paths work too). A page is in one batch and one group: marking moves it. Groups are pages of exactly the same structure; each group's representative page is the one the customer reviews for the whole group.</p>
         <textarea class="st-mark-list" rows="6" aria-label="Pages to mark"></textarea>
         <div class="st-mark-row">
-          <label>Batch <input type="number" class="st-mark-batch" min="1" max="999" step="1"></label>
-          <button type="button" class="rs-btn st-mark-go">Mark for this batch</button>
-          <button type="button" class="rs-btn st-mark-clear">Take them out of their batch</button>
+          <label><select class="st-mark-kind" aria-label="Batch or group"><option value="batch">Batch</option><option value="group">Group</option></select>
+            <input type="number" class="st-mark-batch" min="1" max="999" step="1" aria-label="Number"></label>
+          <button type="button" class="rs-btn st-mark-go">Mark</button>
+          <button type="button" class="rs-btn st-mark-clear">Take them out</button>
+          <button type="button" class="rs-btn st-mark-rep" title="Each pasted page becomes its group's representative (one per group)">Make the representative of its group</button>
           <button type="button" class="rs-btn st-mark-shown" title="Fill the list with the pages the filters show">Use the pages shown</button>
         </div>
         <p class="st-mark-result" aria-live="polite"></p>

@@ -17,7 +17,7 @@ import { createNotes, CATEGORIES } from './notes.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages from './pages.js';
 import {
-  loadBatches, getFilters, setFilters, passes, areaOf, areaLabel,
+  loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
 } from './batches.js';
 
 const { hostname } = window.location;
@@ -66,7 +66,8 @@ const SOURCE = {};
 // every page of the review, and the ones the batch / area filters let through (picker, stepping)
 let allPages = [];
 let pages = [];
-let batchOf = new Map();
+// every page's organisation: path → { batch, group, representative } (batches.js)
+let orgOf = new Map();
 let rebuildTimer;
 let noteShown = false;
 let targetShown = false;
@@ -1179,7 +1180,7 @@ function loadPage() {
   const page = pages[i];
   $('.rv-page').value = page ? `${page.title} — ${page.path}` : state.page;
   $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
-  $('.rv-batch-badge').textContent = batchOf.get(state.page) ? `Batch ${batchOf.get(state.page)}` : '';
+  $('.rv-batch-badge').textContent = orgLabel(orgOf.get(state.page));
   document.title = `Review: ${page ? page.title : state.page}`;
   $('.rv-links').replaceChildren(...[
     el('li', {}, el('a', { href: `${BASE}${state.page}`, target: '_blank', rel: 'noopener' }, `${BASE_LABEL} page`)),
@@ -1350,10 +1351,12 @@ async function onFrameLoad(side) {
 /** the pages the filters let through, the picker's list and the filter's summary */
 function applyFilters() {
   const f = getFilters();
-  pages = allPages.filter((p) => passes(p.path, batchOf.get(p.path), f));
+  pages = allPages.filter((p) => passes(p.path, orgOf.get(p.path), f));
   $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
   const parts = [
     f.batches.length ? f.batches.map((b) => (b === 'none' ? 'no batch' : `batch ${b}`)).join(', ') : '',
+    f.group === 'none' ? 'no group' : (f.group && `group ${f.group}`) || '',
+    f.reps ? 'representatives' : '',
     f.area ? areaLabel(f.area) : '',
   ].filter(Boolean);
   $('.rv-filter summary').textContent = parts.length ? `Showing: ${parts.join(' · ')}` : 'All pages';
@@ -1364,9 +1367,9 @@ function applyFilters() {
 /** the filter popover: batches (several at once, as on the status page) and an area */
 function filterPanel() {
   const f = getFilters();
-  const numbers = [...new Set(allPages.map((p) => batchOf.get(p.path)).filter(Boolean))]
+  const numbers = [...new Set(allPages.map((p) => orgOf.get(p.path)?.batch).filter(Boolean))]
     .sort((a, b) => a - b);
-  const count = (b) => allPages.filter((p) => (batchOf.get(p.path) || 'none') === b).length;
+  const count = (b) => allPages.filter((p) => (orgOf.get(p.path)?.batch || 'none') === b).length;
   const box = (b, text) => el('label', { class: 'rv-check' }, el('input', {
     type: 'checkbox',
     ...(f.batches.includes(b) ? { checked: '' } : {}),
@@ -1386,11 +1389,35 @@ function filterPanel() {
     },
   }, el('option', { value: '' }, 'All areas'), ...areas.map((a) => el('option', { value: a }, areaLabel(a))));
   area.value = f.area;
+  // groups: one at a time, or the pages in none; representatives only
+  const groups = [...new Set(allPages.map((p) => orgOf.get(p.path)?.group).filter(Boolean))]
+    .sort((a, b) => a - b);
+  const inGroup = (g) => allPages.filter((p) => orgOf.get(p.path)?.group === g).length;
+  const group = el('select', {
+    'aria-label': 'Group',
+    onchange: (e) => {
+      const v = e.target.value;
+      setFilters({ ...getFilters(), group: v === '' || v === 'none' ? v : Number(v) });
+      applyFilters();
+    },
+  }, el('option', { value: '' }, 'All groups'), ...groups.map((g) => el('option', { value: String(g) }, `Group ${g} (${inGroup(g)})`)), el('option', { value: 'none' }, 'In no group'));
+  group.value = String(f.group);
+  const reps = el('label', { class: 'rv-check' }, el('input', {
+    type: 'checkbox',
+    ...(f.reps ? { checked: '' } : {}),
+    onchange: (e) => {
+      setFilters({ ...getFilters(), reps: e.target.checked });
+      applyFilters();
+    },
+  }), 'Representative pages only');
   $('.rv-filter-body').replaceChildren(
     el('p', { class: 'rv-filter-head' }, 'Batches (none ticked: all)'),
     ...numbers.map((b) => box(b, `Batch ${b} (${count(b)})`)),
     count('none') ? box('none', `No batch (${count('none')})`) : null,
     numbers.length ? null : el('p', { class: 'rv-none' }, 'No batches yet.'),
+    el('p', { class: 'rv-filter-head' }, 'Group'),
+    group,
+    reps,
     el('p', { class: 'rv-filter-head' }, 'Area'),
     area,
   );
@@ -1498,7 +1525,7 @@ async function start() {
     if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
   });
   allPages = await loadPages();
-  batchOf = (await loadBatches()).batches;
+  orgOf = (await loadOrganisation()).org;
   applyFilters();
   if (REVIEW.design) {
     const groupsResp = await fetch('./groups.json');

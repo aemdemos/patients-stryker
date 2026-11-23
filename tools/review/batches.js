@@ -1,10 +1,13 @@
 /*
- * Review tool: review batches and the page filters shared by the status page and the tool.
- * The AOE team splits the pages into numbered batches (one per page) and works through them one
- * by one; everyone filters by batch and by area. A batch is organisation data in the review
- * backend (kind `batch` on the page item, the AOE team's, threads.js ORG_KINDS): it is no review
- * activity. The chosen filters are kept in the browser, the same for the status page and the
- * tool.
+ * Review tool: how the AOE team organises the pages, and the page filters shared by the status
+ * page and the tool.
+ * - Review batches: numbered, one per page; the AOE team works through them one by one.
+ * - Groups: the pages of exactly the same structure, numbered, one per page; each group has one
+ *   representative page, the only one the customer reviews to approve the whole group.
+ * Everyone filters by batch, group, representatives only and area. Organisation data in the
+ * review backend (kinds batch, group, representative on the page item, the AOE team's,
+ * threads.js ORG_KINDS): no review activity. The chosen filters are kept in the browser, the same
+ * for the status page and the tool.
  */
 import { call } from './store.js';
 import { storageKey } from './config.js';
@@ -13,12 +16,14 @@ const FILTER_KEY = storageKey('filters');
 // (a save takes at most this many changes: backend MAX_CHANGES)
 const CHUNK = 100;
 
-/** every page's batch (path → number), from the backend's overview */
-export async function loadBatches() {
+/** every page's organisation (path → { batch, group, representative }), from the overview */
+export async function loadOrganisation() {
   const { status, body } = await call('overview');
-  if (status !== 200) return { batches: new Map(), body, status };
+  if (status !== 200) return { org: new Map(), body, status };
   return {
-    batches: new Map((body.pages || []).filter((p) => p.batch).map((p) => [p.page, p.batch])),
+    org: new Map((body.pages || []).filter((p) => p.batch || p.group).map((p) => [p.page, {
+      batch: p.batch || null, group: p.group || null, representative: !!p.representative,
+    }])),
     body,
     status,
   };
@@ -32,27 +37,42 @@ export const areaLabel = (area) => {
 };
 
 /**
- * The chosen filters: batches (numbers, and 'none' for pages in no batch; empty = all) and an
- * area ('' = all).
+ * The chosen filters: batches (numbers, and 'none' for pages in no batch; empty = all), a group
+ * (a number, 'none' or '' = all), representatives only, an area ('' = all).
  */
 export function getFilters() {
+  let f = {};
   try {
-    const f = JSON.parse(window.localStorage.getItem(FILTER_KEY)) || {};
-    return { batches: Array.isArray(f.batches) ? f.batches : [], area: typeof f.area === 'string' ? f.area : '' };
+    f = JSON.parse(window.localStorage.getItem(FILTER_KEY)) || {};
   } catch (e) {
-    return { batches: [], area: '' };
+    f = {};
   }
+  return {
+    batches: Array.isArray(f.batches) ? f.batches : [],
+    group: Number.isInteger(f.group) || f.group === 'none' ? f.group : '',
+    reps: f.reps === true,
+    area: typeof f.area === 'string' ? f.area : '',
+  };
 }
 export function setFilters(filters) {
   window.localStorage.setItem(FILTER_KEY, JSON.stringify(filters));
 }
 
-/** does a page pass the filters (its batch from loadBatches) */
-export function passes(path, batch, filters = getFilters()) {
+/** does a page pass the filters (its organisation from loadOrganisation, or undefined) */
+export function passes(path, info, filters = getFilters()) {
+  const o = info || {};
   if (filters.area && areaOf(path) !== filters.area) return false;
-  if (!filters.batches.length) return true;
-  return filters.batches.includes(batch || 'none');
+  if (filters.batches.length && !filters.batches.includes(o.batch || 'none')) return false;
+  if (filters.group !== '' && (o.group || 'none') !== filters.group) return false;
+  if (filters.reps && !o.representative) return false;
+  return true;
 }
+
+/** a page's organisation as a label: "Batch 2 · Group 5 ★" (★ = the group's representative) */
+export const orgLabel = (o) => [
+  o?.batch ? `Batch ${o.batch}` : '',
+  o?.group ? `Group ${o.group}${o.representative ? ' ★' : ''}` : '',
+].filter(Boolean).join(' · ');
 
 /** a segment as the importer names it (lowercase, other characters one '-', none at the ends) */
 const clean = (seg) => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -82,29 +102,64 @@ export function pagesOf(text, paths) {
   return { found, missing };
 }
 
-/** pages → batch (a number, or null to take them out of their batch); the AOE team only */
-export async function markBatch(pages, batch) {
-  let done = 0;
+/** organisation changes ({ page, kind, value }) saved in chunks; the AOE team only */
+async function saveOrg(changes) {
   const failed = [];
+  const okPages = new Set();
   const chunks = [];
-  for (let i = 0; i < pages.length; i += CHUNK) chunks.push(pages.slice(i, i + CHUNK));
-  // one save per chunk (the batches of many pages in one request), one chunk after the other
+  for (let i = 0; i < changes.length; i += CHUNK) chunks.push(changes.slice(i, i + CHUNK));
+  // one save per chunk (many pages in one request), one chunk after the other
   await chunks.reduce((chain, part) => chain.then(async () => {
     const { status, body } = await call('save', {
       method: 'POST',
       body: JSON.stringify({
-        page: part[0],
-        changes: part.map((page) => ({
-          page, item: 'page', kind: 'batch', value: JSON.stringify(batch), rev: 0,
+        page: part[0].page,
+        changes: part.map((c) => ({
+          page: c.page, item: 'page', kind: c.kind, value: JSON.stringify(c.value), rev: 0,
         })),
       }),
     });
     if (status === 200) {
       body.results.forEach((r) => {
-        if (r.ok) done += 1;
+        if (r.ok) okPages.add(r.page);
         else failed.push(r.page);
       });
-    } else failed.push(...part.map((p) => `${p} (${body?.error?.message || status})`));
+    } else failed.push(...part.map((c) => `${c.page} (${body?.error?.message || status})`));
   }), Promise.resolve());
-  return { done, failed };
+  return { done: okPages.size, failed: [...new Set(failed)] };
+}
+
+/**
+ * pages → a batch or a group (kind, a number, or null to take them out); a page moved to another
+ * group (or out of it) is no representative any more
+ */
+export async function markOrg(pages, kind, value) {
+  const changes = pages.map((page) => ({ page, kind, value }));
+  if (kind === 'group') changes.push(...pages.map((page) => ({ page, kind: 'representative', value: false })));
+  return saveOrg(changes);
+}
+export const markBatch = (pages, batch) => markOrg(pages, 'batch', batch);
+
+/**
+ * pages → the representatives of their groups (one per group: the group's earlier one is one no
+ * more). Pages in no group, or two pages of one group, are refused: { done, failed, refused }.
+ */
+export async function makeRepresentatives(pages, org) {
+  const refused = [];
+  const byGroup = new Map();
+  pages.forEach((page) => {
+    const group = org.get(page)?.group;
+    if (!group) refused.push(`${page} (in no group)`);
+    else if (byGroup.has(group)) refused.push(`${page} (group ${group} has ${byGroup.get(group)} already in this list)`);
+    else byGroup.set(group, page);
+  });
+  const changes = [];
+  byGroup.forEach((page, group) => {
+    [...org].filter(([p, o]) => o.group === group && o.representative && p !== page)
+      .forEach(([p]) => changes.push({ page: p, kind: 'representative', value: false }));
+    changes.push({ page, kind: 'representative', value: true });
+  });
+  const { failed } = changes.length ? await saveOrg(changes) : { failed: [] };
+  const chosen = [...byGroup.values()];
+  return { done: chosen.length - failed.filter((f) => chosen.includes(f)).length, failed, refused };
 }

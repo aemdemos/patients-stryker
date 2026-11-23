@@ -12,7 +12,7 @@ import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
   REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem, spaceOf,
 } from '../lib/core.mjs';
-import { ORG_KINDS, batchProblem } from '../../threads.js';
+import { ORG_KINDS, orgProblem } from '../../threads.js';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -43,11 +43,11 @@ export async function main(params) {
     if (badState) return fail(params, 400, 'bad-state', badState);
     const badDone = changes.filter((c) => c.kind.startsWith('done:')).map((c) => doneProblem(c.value)).find(Boolean);
     if (badDone) return fail(params, 400, 'bad-done', badDone);
-    // batches: the AOE team's, on the page item, a number or null
+    // batches, groups, representatives: the AOE team's, on the page item
     const orgChanges = changes.filter(org);
     if (orgChanges.length && invite.role !== 'aoe') return fail(params, 403, 'aoe-only', 'Only the AOE team organises the pages.');
-    const badOrg = orgChanges.map((c) => (c.item !== 'page' ? 'a batch is on item page' : batchProblem(c.value))).find(Boolean);
-    if (badOrg) return fail(params, 400, 'bad-batch', badOrg);
+    const badOrg = orgChanges.map((c) => (c.item !== 'page' ? `a ${c.kind} is on item page` : orgProblem(c.kind, c.value))).find(Boolean);
+    if (badOrg) return fail(params, 400, 'bad-org', badOrg);
     orgChanges.forEach((c) => Object.assign(c, { org: true }));
     const pages = [...new Set(changes.map((c) => c.page || page))];
     const outside = pages.find((p) => !inScope(invite.scope, p));

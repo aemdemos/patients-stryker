@@ -10,7 +10,7 @@ import { call, inviteToken } from './store.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages from './pages.js';
 import {
-  getFilters, setFilters, pagesOf, markBatch, areaLabel,
+  getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel, passes,
 } from './batches.js';
 
 const { hostname } = window.location;
@@ -68,11 +68,12 @@ function filtered() {
   const unit = $('.st-unit').value;
   const state = $('.st-state').value;
   const onlyNew = $('.st-new').checked;
-  const { batches } = getFilters();
+  // batches, group, representatives only (the area is the select's own, below)
+  const org = { ...getFilters(), area: '' };
   return all.filter((p) => (!q || p.title.toLowerCase().includes(q) || p.path.includes(q))
     && (!template || p.template === template)
     && (!unit || p.unit === unit)
-    && (!batches.length || batches.includes(p.batch || 'none'))
+    && passes(p.path, p, org)
     && (!state || p.state === state)
     && (!picked.size || picked.has(p.state))
     && (!onlyNew || p.isNew));
@@ -151,13 +152,13 @@ function draw() {
   $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
   // (template and design choices: only where the pages have them)
   const templates = all.some((p) => p.template);
-  const head = ['State', 'Page', 'Batch', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
+  const head = ['State', 'Page', 'Batch / group', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
   const rows = list.slice(0, shown).map((p) => el(
     'tr',
     { class: p.isNew ? 'st-row-new' : '' },
     el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
     el('td', {}, el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}` }, p.title), el('br'), el('small', { class: 'rs-muted' }, p.path)),
-    el('td', {}, p.batch ? el('span', { class: 'st-batch-tag' }, `Batch ${p.batch}`) : ''),
+    el('td', {}, orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative ? ' st-rep' : ''}`, title: p.representative ? 'The representative page of its group: the customer reviews it for the whole group' : '' }, orgLabel(p)) : ''),
     el('td', {}, areaLabel(p.unit || '')),
     templates ? el('td', {}, p.template) : null,
     el('td', {}, threadsText(p.threads)),
@@ -202,8 +203,16 @@ async function load() {
   $('.st-template').closest('label').hidden = !all.some((p) => p.template);
   options($('.st-unit'), [...new Set(all.map((p) => p.unit).filter(Boolean))].sort()
     .map((u) => ({ value: u, label: areaLabel(u) })));
-  // the area kept with the tool's filters
+  // the area, group and representatives only, kept with the tool's filters
   $('.st-unit').value = getFilters().area;
+  const groups = [...new Set(all.map((p) => p.group).filter(Boolean))].sort((a, b) => a - b);
+  const groupCount = (g) => all.filter((p) => p.group === g).length;
+  options($('.st-group'), [
+    ...groups.map((g) => ({ value: String(g), label: `Group ${g} (${groupCount(g)})` })),
+    { value: 'none', label: 'In no group' },
+  ]);
+  $('.st-group').value = String(getFilters().group);
+  $('.st-reps').checked = getFilters().reps;
   // the AOE team marks pages for a batch
   $('.st-mark').hidden = me.role !== 'aoe';
   options($('.st-state'), ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((s) => ({ value: s, label: label(s) })));
@@ -227,37 +236,61 @@ async function start() {
   document.title = `${REVIEW.title}: status of every page`;
   previousVisit = window.localStorage.getItem(VISIT_KEY) || '';
   $('.st-unit').addEventListener('change', () => setFilters({ ...getFilters(), area: $('.st-unit').value }));
+  $('.st-group').addEventListener('change', () => {
+    const v = $('.st-group').value;
+    setFilters({ ...getFilters(), group: v === '' || v === 'none' ? v : Number(v) });
+  });
+  $('.st-reps').addEventListener('change', () => setFilters({ ...getFilters(), reps: $('.st-reps').checked }));
   const result = (text) => {
     $('.st-mark-result').textContent = text;
   };
-  const mark = async (batch) => {
+  const pasted = () => {
     const { found, missing } = pagesOf($('.st-mark-list').value, all.map((p) => p.path));
     if (!found.length) {
       result(missing.length ? `None of these is a page of this review:\n${missing.join('\n')}` : 'Paste the pages first.');
-      return;
     }
+    return { found, missing };
+  };
+  const report = (lines, missing) => result([...lines, missing.length ? `Not pages of this review (${missing.length}), left out:\n${missing.join('\n')}` : '']
+    .filter(Boolean).join('\n\n'));
+  const mark = async (value) => {
+    const kind = $('.st-mark-kind').value;
+    const { found, missing } = pasted();
+    if (!found.length) return;
     result(`Saving ${found.length} page${found.length > 1 ? 's' : ''}…`);
-    const { done, failed } = await markBatch(found, batch);
-    result([
-      `${done} page${done === 1 ? '' : 's'} ${batch ? `marked for batch ${batch}` : 'taken out of their batch'}.`,
+    const { done, failed } = await markOrg(found, kind, value);
+    report([
+      `${done} page${done === 1 ? '' : 's'} ${value ? `marked for ${kind} ${value}` : `taken out of their ${kind}`}.`,
       failed.length ? `Not saved (${failed.length}):\n${failed.join('\n')}` : '',
-      missing.length ? `Not pages of this review (${missing.length}), left out:\n${missing.join('\n')}` : '',
-    ].filter(Boolean).join('\n\n'));
+    ], missing);
     await load();
   };
   $('.st-mark-go').addEventListener('click', () => {
     const n = Number($('.st-mark-batch').value);
     if (!Number.isInteger(n) || n < 1 || n > 999) {
-      result('Give the batch number (1 to 999).');
+      result(`Give the ${$('.st-mark-kind').value} number (1 to 999).`);
       return;
     }
     mark(n);
   });
   $('.st-mark-clear').addEventListener('click', () => mark(null));
+  $('.st-mark-rep').addEventListener('click', async () => {
+    const { found, missing } = pasted();
+    if (!found.length) return;
+    result('Saving…');
+    const org = new Map(all.filter((p) => p.group).map((p) => [p.path, p]));
+    const { done, failed, refused } = await makeRepresentatives(found, org);
+    report([
+      `${done} page${done === 1 ? ' is now the representative of its group' : 's are now the representatives of their groups'}.`,
+      refused.length ? `Not made representatives (${refused.length}):\n${refused.join('\n')}` : '',
+      failed.length ? `Not saved (${failed.length}):\n${failed.join('\n')}` : '',
+    ], missing);
+    await load();
+  });
   $('.st-mark-shown').addEventListener('click', () => {
     $('.st-mark-list').value = sorted(filtered()).map((p) => `https://www.stryker.com${p.path}.html`).join('\n');
   });
-  ['.st-search', '.st-template', '.st-unit', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
+  ['.st-search', '.st-template', '.st-unit', '.st-group', '.st-reps', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
     $(sel).addEventListener(sel === '.st-search' ? 'input' : 'change', () => {
       shown = PAGE_SIZE;
       draw();

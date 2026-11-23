@@ -35,13 +35,13 @@ keeps the invitation, later visits need no link.
 | `config.js` | What this copy of the tool reviews (above) and the browser storage keys (`main-review-…`) |
 | `index.html`, `review.css`, `review.js` | The shell: page, widths, compare, flip / overlay / side by side, sync; the Feedback panel (page status banner and buttons, comments on this page, QA notes, links); Save / Undo changes |
 | `pages.js` | The pages of the review (the query index, else `pages.json`) for the tool, the status page and the results |
-| `batches.js` | Review batches and the batch / area filters, shared by the status page and the tool (below) |
+| `batches.js` | Review batches, groups and representative pages, and the filters (batch, group, representatives, area) shared by the status page and the tool (below) |
 | `sync.js` | Text-matched scroll sync between the page and the snapshot |
 | `notes.js` | Pinned QA notes: a click on the page drops a pin tied to the nearest text run or image, so it keeps its place on reflow; category, text, width, open / resolved |
 | `store.js` | Saving and loading through the review backend (invitation in the browser, `rev` per change, conflicts refused, pending changes kept until confirmed) |
 | `threads.js` | The shared rules: page statuses, chats, Done |
 | `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
-| `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch marking |
+| `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `snapshot-map.py`, `capture-snapshots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/`, `upload-snapshots.sh` | Source snapshots (below) |
@@ -67,6 +67,24 @@ through them one by one; everyone filters by batch and by area.
   (the backend refuses reviewers), several pages in one save, the newest wins (no rev check).
   Organisation data, not review activity (`threads.js` ORG_KINDS): it never changes a page's
   state, threads, latest activity or "new". The overview action returns each page's batch.
+
+## Groups and representative pages
+
+**Groups** are pages of exactly the same structure (called groups, not templates: "template"
+means something else here), numbered, one group per page. Each group has one **representative
+page**: the only page the customer reviews, to approve the whole group. Set by hand, like batches:
+
+- **Marking** (AOE, status page, "Organise pages: batches and groups"): choose **Group**, give the
+  number, paste the pages, **Mark** (or **Take them out**). A page moved to another group (or
+  out) is no representative any more. **Make the representative of its group**: each pasted page
+  becomes its group's representative and the group's earlier one is one no more; pages in no
+  group, or two pages of one group in the list, are refused with the reason.
+- **Filters:** Group (one group, or "In no group") and **Representative pages only** on the status
+  page and in the tool's Filter popover (kept with the batch and area filters). The status page's
+  Batch / group column and the tool's badge show "Batch 2 · Group 5 ★" (★ = the representative).
+- **Data:** kinds `group` (a number 1–999 or null) and `representative` (true / false) on item
+  `page`, AOE only, newest wins; organisation data, no review activity. A page is only a
+  representative while it is in a group. The overview action returns `group` and `representative`.
 
 ## The review backend and its spaces
 

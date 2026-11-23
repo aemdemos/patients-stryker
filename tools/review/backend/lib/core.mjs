@@ -20,7 +20,7 @@ import filesLib from '@adobe/aio-lib-files';
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
-export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch'];
+export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch', 'group', 'representative'];
 export const MAX_VALUE = 20000;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
