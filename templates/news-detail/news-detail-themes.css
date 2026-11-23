@@ -630,6 +630,18 @@ body.news-detail.news-video-quote main > .section.video-text > .video-wrapper + 
   margin-top: calc(var(--news-video-gap) + var(--news-video-caption-gap));
 }
 
+/* news-xf-body: in a Columns block, authored Bold is Futura bold — also a lead-in on a line
+   of its own or under an image, which the template otherwise sets in Humanist bold — and
+   Bold + Underline (not a link; news-detail.js strong.body-bold) is Humanist bold
+   (:nth-child(n) outranks the template's lead-in rules) */
+body.news-detail.news-xf-body main .columns.block > div:nth-child(n) > div:nth-child(n) :is(p, li) strong:not(.body-bold) {
+  font-family: var(--display-font-family);
+}
+
+body.news-detail.news-xf-body main .columns.block > div:nth-child(n) > div:nth-child(n) :is(p, li) strong.body-bold {
+  font-family: var(--body-font-family);
+}
+
 /* news-video: patient-story news pages whose text beside the video (the `video-text`
    section) is set as on the source — the serif text of e.g. Ellys' story, the Large
    Headline text of e.g. Matt's story (below) */
