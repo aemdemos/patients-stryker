@@ -18,6 +18,10 @@ const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
 const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
 const VISIT_KEY = storageKey('status-visit');
+// the page's own state, kept on refresh (the filters shared with the tool are batches.js's)
+const VIEW_KEY = storageKey('status-view');
+// the "last visit" of this tab: kept for its reloads, so a refresh is no new visit
+const TAB_VISIT_KEY = storageKey('status-tab-visit');
 const PAGE_SIZE = 300;
 const $ = (sel) => document.querySelector(sel);
 
@@ -60,6 +64,29 @@ let shown = PAGE_SIZE;
 const picked = new Set();
 // the table is drawn further down; the state tiles redraw it through this
 const hooks = { draw: () => {} };
+
+/** the saved state of the page: { search, template, state, order, onlyNew, picked, scroll } */
+function savedView() {
+  try {
+    return JSON.parse(window.localStorage.getItem(VIEW_KEY)) || {};
+  } catch (e) {
+    return {};
+  }
+}
+function saveView(extra = {}) {
+  window.localStorage.setItem(VIEW_KEY, JSON.stringify({
+    ...savedView(),
+    search: $('.st-search').value,
+    template: $('.st-template').value,
+    state: $('.st-state').value,
+    order: $('.st-order').value,
+    onlyNew: $('.st-new').checked,
+    picked: [...picked],
+    ...extra,
+  }));
+}
+// the selects filled from the pages (template, state) get their saved value on the first load
+let restoredSelects = false;
 
 function label(state) {
   return STATES[state][me.role === 'aoe' ? 'aoe' : 'reviewer'];
@@ -104,6 +131,7 @@ function tiles() {
     onclick: () => {
       if (picked.has(s)) picked.delete(s);
       else picked.add(s);
+      saveView();
       shown = PAGE_SIZE;
       hooks.draw();
     },
@@ -144,7 +172,7 @@ function drawScope() {
   $('.st-scope-sum').textContent = `Migration scope: ${all.length} pages, ${published} published${issues ? ` · ${issues} to look at` : ''}`;
   $('.st-scope-body').replaceChildren(
     el('p', { class: 'rs-muted' }, 'The scope is the table review/migration-scope in Document Authoring (source, eds, template; preview it after a change). Reviewers see the published pages of the scope; a page joins when it is published, and the backend takes its first source shot within 15 minutes.'),
-    ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}` }, i.path), ` ${i.title}`]),
+    ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}`, target: '_blank', rel: 'noopener' }, i.path), ` ${i.title}`]),
     ...list('Rows of the scope table to correct', f.problems, (i) => `Row ${i.row}: ${i.eds || ''} ${i.source || ''}: ${i.detail}`),
     ...list('Sources to correct (the first shot failed)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
     ...list('Waiting for their first shot', waiting.filter((w) => !w.problem), (i) => `${i.path} (published, seen ${when(i.since)})`),
@@ -206,7 +234,7 @@ function draw() {
     el(
       'td',
       {},
-      el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}` }, p.title),
+      el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}`, target: '_blank', rel: 'noopener' }, p.title),
       el('br'),
       el('small', { class: 'rs-muted' }, p.path),
       // (the AOE team's: open the page's document to edit)
@@ -279,6 +307,12 @@ async function load() {
   // the AOE team marks pages for a batch
   $('.st-mark').hidden = me.role !== 'aoe';
   options($('.st-state'), ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((s) => ({ value: s, label: label(s) })));
+  if (!restoredSelects) {
+    restoredSelects = true;
+    const v = savedView();
+    if (v.template) $('.st-template').value = v.template;
+    if (v.state) $('.st-state').value = v.state;
+  }
   $('.rs-updated').textContent = `${me.name}${me.role === 'aoe' ? ' (AOE)' : ''} · read ${when(body.at)}`;
   draw();
   window.localStorage.setItem(VISIT_KEY, body.at);
@@ -297,7 +331,15 @@ async function start() {
     window.history.replaceState(null, '', url);
   }
   document.title = `${REVIEW.title}: status of every page`;
-  previousVisit = window.localStorage.getItem(VISIT_KEY) || '';
+  previousVisit = window.sessionStorage.getItem(TAB_VISIT_KEY)
+    ?? (window.localStorage.getItem(VISIT_KEY) || '');
+  window.sessionStorage.setItem(TAB_VISIT_KEY, previousVisit);
+  // the page as it was: search, order, only new, the picked status tiles
+  const view = savedView();
+  $('.st-search').value = view.search || '';
+  if (view.order) $('.st-order').value = view.order;
+  $('.st-new').checked = !!view.onlyNew;
+  (view.picked || []).forEach((st) => picked.add(st));
   $('.st-unit').addEventListener('change', () => setFilters({ ...getFilters(), area: $('.st-unit').value }));
   $('.st-group').addEventListener('change', () => {
     const v = $('.st-group').value;
@@ -308,7 +350,10 @@ async function start() {
     $('.st-mark-result').textContent = text;
   };
   const pasted = () => {
-    const { found, missing } = pagesOf($('.st-mark-list').value, all.map((p) => p.path));
+    // (the scope table's pairs first: source path → EDS path)
+    const bySource = new Map(all.filter((p) => p.source)
+      .map((p) => [new URL(p.source).pathname, p.path]));
+    const { found, missing } = pagesOf($('.st-mark-list').value, all.map((p) => p.path), bySource);
     if (!found.length) {
       result(missing.length ? `None of these is a page of this review:\n${missing.join('\n')}` : 'Paste the pages first.');
     }
@@ -351,20 +396,32 @@ async function start() {
     await load();
   });
   $('.st-mark-shown').addEventListener('click', () => {
-    $('.st-mark-list').value = sorted(filtered()).map((p) => `https://www.stryker.com${p.path}.html`).join('\n');
+    // (the source of the scope table: the EDS path doesn't give it back)
+    $('.st-mark-list').value = sorted(filtered()).map((p) => p.source || `https://www.stryker.com${p.path}.html`).join('\n');
   });
   ['.st-search', '.st-template', '.st-unit', '.st-group', '.st-reps', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
     $(sel).addEventListener(sel === '.st-search' ? 'input' : 'change', () => {
       shown = PAGE_SIZE;
+      saveView();
       draw();
     });
   });
+  // the scroll position, kept too (put back once the table is there)
+  let scrollTimer = 0;
+  window.addEventListener('scroll', () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      saveView({ scroll: Math.round(window.scrollY), shown });
+    }, 200);
+  });
+  if (view.shown > PAGE_SIZE) shown = view.shown;
   $('.st-more').addEventListener('click', () => {
     shown += PAGE_SIZE;
     draw();
   });
   $('.st-refresh').addEventListener('click', load);
   await load();
+  if (view.scroll) window.scrollTo(0, view.scroll);
 }
 
 start();

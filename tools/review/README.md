@@ -52,6 +52,19 @@ keeps the invitation, later visits need no link.
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
 | `backend/` | The review backend on App Builder (`backend/README.md`): invitations, state per page, audit; spaces |
 
+## The status page (customer and AOE team)
+
+One page for both sides (`status.html`, opened with the review link, or from the tool's
+"Review status of every page"): what it shows depends on the invitation. **The customer**
+(reviewer invitations) sees the published pages of its review with their states, batches,
+groups and filters, worded for its side; **the AOE team** also gets the organising box, the
+Migration scope box, "Not published yet", Edit in DA and Invitations. The backend refuses the
+AOE team's operations to reviewers anyway. Pages open in a new tab. **The page keeps its state
+on refresh** (in the browser): the picked status tiles, search, template, state, order, "only
+new", how many rows are shown and the scroll position; the batch, group, representatives and
+area filters are shared with the tool; "new since my last visit" counts from the tab's first
+load, so a refresh isn't a new visit.
+
 ## Migration scope and published pages
 
 The review's pages come from the **migration scope table** in Document Authoring,
@@ -275,6 +288,7 @@ node tools/review/backend/test/invites-live.test.mjs  # deployed: the AOE team's
 node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitations page and its links
 node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a capture by the backend, tiles, group approval (test pages)
 node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
+node tools/review/backend/test/status-view.test.mjs <dev server>  # the customer's status page (no AOE parts), new tabs, state kept on refresh
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its

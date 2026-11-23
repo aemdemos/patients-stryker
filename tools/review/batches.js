@@ -118,9 +118,10 @@ const clean = (seg) => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-
 
 /**
  * Pasted lines (client URLs https://www.stryker.com/us/en/….html, this site's URLs or paths) →
- * the pages they name: { found: [path], missing: [line] }; never guessed.
+ * the pages they name: { found: [path], missing: [line] }; never guessed. bySource: the scope
+ * table's pairs (source path → EDS path), used first (renamed pages too).
  */
-export function pagesOf(text, paths) {
+export function pagesOf(text, paths, bySource = new Map()) {
   const known = new Set(paths);
   const found = [];
   const missing = [];
@@ -130,6 +131,11 @@ export function pagesOf(text, paths) {
       path = new URL(line, 'https://www.stryker.com').pathname;
     } catch (e) {
       path = line;
+    }
+    const paired = bySource.get(path);
+    if (paired && known.has(paired)) {
+      if (!found.includes(paired)) found.push(paired);
+      return;
     }
     path = path.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '');
     const eds = `/${path.split('/').filter(Boolean).map(clean).join('/')}`;
