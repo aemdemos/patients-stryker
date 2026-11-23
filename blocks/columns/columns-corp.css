@@ -334,6 +334,13 @@ body.corp .columns.related-links :is(p, ul, li) {
   font-family: var(--body-font-family);
 }
 
+/* the linked titles keep the heading's Futura bold in black (stryker.com related products:
+   h4.text-black > a, e.g. Artelon); the patients rule sets links in the heading font */
+body.corp .columns.related-links h4 a:any-link {
+  font-family: inherit;
+  color: var(--text-color);
+}
+
 body.corp .columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only-child) {
   line-height: var(--paragraph-line-height);
 }
