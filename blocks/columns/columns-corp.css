@@ -696,13 +696,20 @@ body.corp .columns.dark-lead {
   --columns-corp-box-color: var(--color-white);
 }
 
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box {
+/* blue-lead: the coloured heads of stryker.com cells (a bg-blue Large Headline, centred, over the
+   cell's text, e.g. the three support phases of Lifecycle support) */
+body.corp .columns.blue-lead {
+  --columns-corp-box-bg: var(--color-navy-bright);
+  --columns-corp-box-color: var(--color-white);
+}
+
+body.corp .columns:is(.gold-lead, .dark-lead, .blue-lead) .columns-box {
   margin-bottom: var(--space-block);
   text-align: center;
 }
 
 /* an image right under a title bar touches it (Mako refreshers) */
-body.corp .columns:is(.gold-lead, .dark-lead) .columns-box:has(+ .columns-img-col) {
+body.corp .columns:is(.gold-lead, .dark-lead, .blue-lead) .columns-box:has(+ .columns-img-col) {
   margin-bottom: 0;
 }
 
@@ -1353,4 +1360,17 @@ body.corp .columns.image-border-black { --columns-corp-image-border: var(--color
 
 body.corp .columns.text-center > div > :where(div) {
   text-align: center;
+}
+
+/* border-bottom: a 1px grey rule under the whole row, 10px below its content (stryker.com page
+   hero .border-bottom-gold: #b2b4ae, e.g. the product page intros) */
+body.corp .columns.border-bottom {
+  padding-bottom: var(--space-block-s);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* label-right: the first cell's text is right-aligned beside the second (stryker.com interview
+   rows: the question, right-aligned in its 3/12 column, beside the answer) */
+body.corp .columns.label-right > div > :where(div:first-child) {
+  text-align: right;
 }

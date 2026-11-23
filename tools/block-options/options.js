@@ -146,6 +146,16 @@ export const BLOCK_OPTIONS = {
       'blue-last': ['box-blue'],
       'blue-all': ['box-blue', 'box-all'],
       'purple-last': ['box-purple'],
+      // imported looks that are existing choices: the page intro is the two equal layout with the
+      // line below (its title and subtitle are the text layer), the coloured heads the blue first
+      // line; image side, media + text and thumbnails are the authoring; striped rows are the
+      // Table block's
+      'page-intro': [],
+      'color-heads': ['blue-lead'],
+      'media-text': [],
+      'image-left': [],
+      thumbnails: [],
+      striped: [],
     },
     groups: [
       {
@@ -227,6 +237,7 @@ export const BLOCK_OPTIONS = {
           ['gray-lead', 'In a light grey box'],
           ['gold-lead', 'In a gold bar'],
           ['dark-lead', 'In a dark grey bar'],
+          ['blue-lead', 'In a blue bar'],
           ['serif-lead', 'Serif lead paragraph'],
         ],
       },
@@ -249,6 +260,8 @@ export const BLOCK_OPTIONS = {
           ['image-centre', 'Images centred at their size'],
           ['phone-image-2-3', 'Photo two thirds wide on phones'],
           ['left-border-bottom', 'Rule under the first cell'],
+          ['border-bottom', 'Line below the row'],
+          ['label-right', 'First cell right-aligned (labels)'],
         ],
       },
       {
