@@ -426,7 +426,7 @@ body.hcp-banner .header-corp .hcp-band {
 .header-corp .secondary-nav .back {
   position: relative;
   display: block;
-  padding: var(--space-block-l) var(--space-block);
+  padding: var(--space-block-l) var(--space-block) var(--space-block-l) var(--space-inset-l);
   border-bottom: 1px solid var(--color-white);
   background: var(--color-secondary);
   color: var(--color-white);
