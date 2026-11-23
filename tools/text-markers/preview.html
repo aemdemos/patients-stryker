@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Text style preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/styles-corp.css">
+    <style>
+      body { margin: 0; background: #fff; }
+      main { padding: 12px 0; }
+      .tm-line > div > :first-child { margin-top: 0; }
+      .tm-line > div > :last-child { margin-bottom: 0; }
+      .tm-line.tm-dark { margin-top: 8px; padding: 12px 0; background: #1f1f1f; color: #fff; }
+    </style>
+    <script type="module">
+      import(`/tools/text-markers/block-preview.js?v=${Date.now()}`);
+    </script>
+  </head>
+  <body class="corp appear">
+    <main></main>
+  </body>
+</html>

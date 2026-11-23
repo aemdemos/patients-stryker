@@ -1,0 +1,170 @@
+/* Text style panel (tools/text-markers): DA / Experience Workspace sidebar. Spectrum 2
+   values come from the da.live nx2 styles loaded by the page, with fallbacks. */
+body {
+  margin: 0;
+  background: var(--s2-gray-25, #fff);
+  color: var(--s2-gray-900, #131313);
+  font-family: var(--s2-font-family, sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tm {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.tm h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tm-result {
+  display: grid;
+  gap: 8px;
+}
+
+.tm-code {
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--s2-gray-75, #f3f3f3);
+  font-size: 13px;
+  word-break: break-all;
+}
+
+/* the preview page renders at desktop / phone width and is scaled to the panel */
+.tm-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--s2-gray-200, #dadada);
+  border-radius: 8px;
+}
+
+.tm-preview {
+  display: block;
+  border: 0;
+  transform-origin: 0 0;
+}
+
+.tm [hidden] {
+  display: none;
+}
+
+.tm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tm button,
+.tm select {
+  padding: 4px 12px;
+  border: 1px solid var(--s2-gray-300, #c6c6c6);
+  border-radius: 16px;
+  background: var(--s2-gray-25, #fff);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tm select {
+  border-radius: 8px;
+}
+
+.tm button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.tm button.tm-primary {
+  border-color: var(--s2-blue-900, #3b63fb);
+  background: var(--s2-blue-900, #3b63fb);
+  color: #fff;
+}
+
+.tm-more {
+  display: grid;
+  gap: 8px;
+}
+
+.tm-more[open] {
+  padding: 8px;
+  border: 1px solid var(--s2-gray-200, #dadada);
+  border-radius: 8px;
+}
+
+.tm-more summary {
+  color: var(--s2-blue-900, #3b63fb);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tm-more > :not(summary) + :not(summary) {
+  margin-top: 8px;
+}
+
+.tm-status {
+  margin: 0;
+  font-size: 13px;
+}
+
+.tm-status[data-kind="error"] { color: var(--s2-red-900, #d73220); }
+.tm-status[data-kind="ok"] { color: var(--s2-green-900, #07814f); }
+
+.tm-choices-wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.tm-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tm-group legend {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.tm-choices,
+.tm-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tm button.tm-choice[aria-checked="true"] {
+  border-color: var(--s2-blue-900, #3b63fb);
+  box-shadow: inset 0 0 0 1px var(--s2-blue-900, #3b63fb);
+}
+
+.tm-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  border: 1px solid var(--s2-gray-300, #c6c6c6);
+  border-radius: 50%;
+  background: var(--swatch, transparent);
+  vertical-align: -1px;
+}
+
+.tm-check {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.tm-hint {
+  margin: 0;
+  color: var(--s2-gray-700, #505050);
+  font-size: 12px;
+}
+
+.tm-block-name {
+  margin: 0;
+  font-weight: 700;
+}
