@@ -122,9 +122,11 @@ export const BLOCK_OPTIONS = {
     ],
   },
   // stryker.com column rows (stryker-aemcoder-package, docs/standardisation/columns.md): the five
-  // source layouts, a cell box (one colour list for every block) in the first / last / every cell,
-  // the spacing inside it, image borders and centred text. Old combined names (boxed-last,
-  // gold-first …) are replaced when the author picks a box; columns.js reads them as the new pair.
+  // source layouts (and the other widths the corp styles have), a cell box (one colour list for
+  // every block) in the first / last / every cell, the spacing inside it, image borders, centred
+  // text, and the other corp looks imported pages use (first-line bars, row looks, tile looks).
+  // Old combined names (boxed-last, gold-first …) show as the new pair in the panel and are
+  // replaced when the author picks a box; pages that keep them render as before.
   columns: {
     label: 'Columns',
     // the older combined box names imported pages carry, read as the new pair (the panel shows
@@ -144,7 +146,6 @@ export const BLOCK_OPTIONS = {
       'blue-last': ['box-blue'],
       'blue-all': ['box-blue', 'box-all'],
       'purple-last': ['box-purple'],
-      'columns-70-30': ['columns-67-33'],
     },
     groups: [
       {
@@ -157,8 +158,12 @@ export const BLOCK_OPTIONS = {
           ['columns-67-33', 'Wide + narrow'],
           ['columns-3-cols', 'Three equal'],
           ['columns-4-cols', 'Four equal'],
+          ['columns-75-25', 'Three quarters + quarter'],
+          ['columns-25-75', 'Quarter + three quarters'],
+          ['columns-70-30', 'Wide + narrow (70 / 30)'],
+          ['columns-20-80', 'Icon + text (1/5, 4/5)'],
+          ['columns-25-25-50', 'Quarter + quarter + half'],
         ],
-        replaces: /^columns-70-30$/,
       },
       {
         id: 'box',
@@ -175,7 +180,7 @@ export const BLOCK_OPTIONS = {
           ['box-dark', 'Dark grey'],
           ['box-dark-purple-gradient', 'Dark purple gradient'],
         ],
-        replaces: /^(boxed|gold|gray|dark|blue|purple)-(first|last|all|lead|\d+)$/,
+        replaces: /^(boxed|gold|gray|dark|blue|purple)-(first|last|all|\d+)$/,
       },
       {
         id: 'box-cell',
@@ -212,6 +217,51 @@ export const BLOCK_OPTIONS = {
         label: 'Text',
         flags: [
           ['text-center', 'Centred'],
+        ],
+      },
+      {
+        id: 'lead',
+        label: 'First line of the text',
+        options: [
+          ['', 'As written'],
+          ['gray-lead', 'In a light grey box'],
+          ['gold-lead', 'In a gold bar'],
+          ['dark-lead', 'In a dark grey bar'],
+          ['serif-lead', 'Serif lead paragraph'],
+        ],
+      },
+      {
+        id: 'looks',
+        label: 'Row looks',
+        flags: [
+          ['large-headline', 'Large headline type'],
+          ['media-pair', 'Linked images'],
+          ['stack', 'One per row on phones'],
+          ['related-links', 'Related links'],
+          ['link-groups', 'Link groups'],
+          ['icon-text', 'Icon beside text'],
+          ['number-quote', 'Numbered quotes'],
+          ['title-row', 'Page title beside a photo'],
+          ['quote-last', 'Pull quote in the last cell'],
+          ['quote-3vw', 'Large pull quote beside a photo'],
+          ['caption-serif', 'Serif captions'],
+          ['caption-tight', 'Caption right under the photo'],
+          ['image-centre', 'Images centred at their size'],
+          ['phone-image-2-3', 'Photo two thirds wide on phones'],
+          ['left-border-bottom', 'Rule under the first cell'],
+        ],
+      },
+      {
+        id: 'tiles',
+        label: 'Tile look',
+        options: [
+          ['', 'None'],
+          ['challenge-cards', 'Challenge cards'],
+          ['icon-cards', 'Icon cards'],
+          ['color-cards', 'Colour profile cards'],
+          ['product-tiles', 'Product tiles'],
+          ['cta-tiles', 'CTA tiles'],
+          ['columns-icon-grid', 'Icon grid'],
         ],
       },
     ],

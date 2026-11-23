@@ -5,7 +5,7 @@
  * pages: cells keep the 15px side padding (30px gutter), body copy is 14px Humanist
  * and every split goes side by side from 600px.
  *
- * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-25-50
+ * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25, columns-25-75, columns-25-25-50
  * (image row 25% / 25% / 50%), columns-20-80 (icon + text), media-pair (image grid),
  * large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
@@ -563,6 +563,15 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
 
   body.corp .columns.columns-75-25 > div > div:last-child {
     flex: 0 0 25%;
+  }
+
+  /* columns-25-75: the mirror of 75-25 (stryker.com 3 / 9 grid columns) */
+  body.corp .columns.columns-25-75 > div > div:first-child {
+    flex: 0 0 25%;
+  }
+
+  body.corp .columns.columns-25-75 > div > div:last-child {
+    flex: 0 0 75%;
   }
 
   body.corp .columns.columns-20-80 > div > div:first-child {
