@@ -158,6 +158,17 @@ export default {
       title.replaceWith(h1);
     }
 
+    // corp: the two headings are italic, as authored in DA (black Egyptienne Light on
+    // stryker.com; the `search-corp` theme sets the H2's serif, corp H1s are serif already)
+    if (isCorp) {
+      main.querySelectorAll('h1, h2').forEach((heading) => {
+        if (heading.querySelector('em')) return;
+        const em = document.createElement('em');
+        em.append(...heading.childNodes);
+        heading.append(em);
+      });
+    }
+
     // Empty `spacer` section (30px) above the h1 — the source leaves 30px (mobile)
     // to 40px (desktop) between the header and the title; without it the h1 sits
     // flush under the nav.
@@ -180,9 +191,20 @@ export default {
     const hr = document.createElement('hr');
     main.appendChild(hr);
     // `theme = search` adds a `search` class to <body> so any page-specific
-    // styling in styles/themes.css is scoped to body.search.
+    // styling in styles/themes.css is scoped to body.search (body.search-corp on corp).
     const meta = WebImporter.Blocks.getMetadata(document);
-    meta.theme = 'search';
+    if (isCorp) {
+      // as the other corp importers: no " | Stryker" title suffix (the corp bulk metadata
+      // adds it), the source keywords when it has any, and `site: corp` on the page so it
+      // renders the corp chrome anywhere. Tags come from the local AEM-export step after
+      // the import (none for this page).
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
+      const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
+      if (keywords) meta.Keywords = keywords;
+      meta.site = 'corp';
+    }
+    // corp: `search-corp` (styles/themes.css) — the `search` layout without the corp H2 rule
+    meta.theme = isCorp ? 'search-corp' : 'search';
     if (updated) {
       const month = new Date(`${updated[1]} 1, 2000`).getMonth() + 1;
       meta.published = `${updated[2]}-${String(month).padStart(2, '0')}`;
