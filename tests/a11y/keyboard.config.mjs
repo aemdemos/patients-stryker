@@ -1,23 +1,23 @@
 /**
- * Keyboard test configuration (npm run test:a11y:keyboard).
+ * Keyboard test configuration. Usage and all options:
+ *   npm run test:a11y:keyboard -- --help
  *
- * pairs — the pages to compare. Each pair is tested on both sites.
+ * pairs — the pages to compare when no URL is passed. Each pair is tested on both sites.
  *   name   — short id used in test titles and result file names
- *   eds    — EDS path (joined with A11Y_BASE_URL, default http://localhost:3000)
+ *   eds    — EDS path (joined with --base-url, default http://localhost:3000)
  *            or a full URL
  *   source — full URL of the original page
- *   A single pair can be passed instead: npm run test:a11y:keyboard -- <source-url> <eds-url>
+ *   One pair can be passed instead: npm run test:a11y:keyboard -- <source-url> <eds-url>
  *   (one URL alone is tested as an EDS page, without comparison)
  *
- * viewports — every page is tested once per viewport. Filter with
- *   A11Y_VIEWPORTS=desktop (comma-separated names).
+ * viewports — every page is tested once per viewport (--viewport desktop to pick one).
  *
- * workers — parallel test workers (override with A11Y_WORKERS). Each worker starts
+ * workers — pages tested in parallel (--workers / A11Y_WORKERS). Each worker starts
  *   its own browser: fit it to the machine or CI runner, and use fewer workers
  *   against a local dev server than against a hosted preview.
  *
  * sourceConcurrency — most pages open at the same time on one source host
- *   (override with A11Y_SOURCE_CONCURRENCY). Keeps load on a live site low.
+ *   (--source-concurrency / A11Y_SOURCE_CONCURRENCY). Keeps load on a live site low.
  *
  * cookieBanner — optional per-site override { banner, dismiss } (CSS selectors).
  *   Without it, common consent banners (OneTrust, Cookiebot, TrustArc) are detected.

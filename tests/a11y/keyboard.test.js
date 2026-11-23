@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
-import config from './keyboard.config.js';
+import config from './keyboard.config.mjs';
 import installPageHelpers from './lib/page-helpers.js';
 import acquireHostSlot from './lib/host-slots.js';
 import {
@@ -18,10 +18,21 @@ import { pageVerdict } from './lib/compare.js';
 
 const BASE_URL = (process.env.A11Y_BASE_URL || 'http://localhost:3000').replace(/\/$/, '');
 const absolute = (u) => (/^https?:\/\//i.test(u) ? u : `${BASE_URL}${u.startsWith('/') ? '' : '/'}${u}`);
-const slug = (u) => new URL(absolute(u)).pathname.replace(/\.html$/, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'home';
+const safeName = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// default pair name: the last part of the EDS path ("/us/en/ivs/" → "ivs",
+// ".../neuroelite-fellows-program" → "neuroelite-fellows-program")
+const shortName = (u) => {
+  const parts = new URL(absolute(u)).pathname.replace(/\.html$/, '').split('/').filter(Boolean);
+  if (parts[parts.length - 1] === 'index') parts.pop();
+  return safeName(parts[parts.length - 1] || 'home') || 'home';
+};
 
 const pairs = process.env.A11Y_KBD_EDS
-  ? [{ name: slug(process.env.A11Y_KBD_EDS), eds: process.env.A11Y_KBD_EDS, source: process.env.A11Y_KBD_SOURCE || null }]
+  ? [{
+    name: safeName(process.env.A11Y_KBD_NAME || '') || shortName(process.env.A11Y_KBD_EDS),
+    eds: process.env.A11Y_KBD_EDS,
+    source: process.env.A11Y_KBD_SOURCE || null,
+  }]
   : config.pairs;
 const viewportFilter = (process.env.A11Y_VIEWPORTS || '').split(',').map((v) => v.trim()).filter(Boolean);
 const viewports = viewportFilter.length

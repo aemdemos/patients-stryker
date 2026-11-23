@@ -519,16 +519,21 @@ do not fix findings unless asked. They compare a source page with its EDS page:
 # One pair: source URL first, then the EDS URL (one URL alone = EDS page only)
 npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
 
-# Configured pairs (tests/a11y/keyboard.config.js)
+# Configured pairs (tests/a11y/keyboard.config.mjs)
 npm run test:a11y:keyboard
+
+# Options, defaults and examples ("--" is required, or npm shows its own help)
+npm run test:a11y:keyboard -- --help
 ```
 
 - Take source URLs from the migration (`.migration/`, import scripts) or the
   user. Never guess them.
-- Keep `A11Y_SOURCE_CONCURRENCY` at its default (2) or lower. The source is
+- Keep `--source-concurrency` at its default (2) or lower. The source is
   usually a live production site.
-- Fit `A11Y_WORKERS` (default 2) to the machine. Each worker starts its own
-  browser. Use `A11Y_VIEWPORTS=desktop` to halve the run.
+- Fit `--workers` (default 2) to the machine. Each worker starts its own
+  browser: use `--workers 1` on small machines. `--viewport desktop` halves the run.
+- Use `--name` for a short pair name when the default (last part of the EDS
+  path) is unclear.
 - Report per page (source and EDS) and the differences from the reporter output or
   `test-results/keyboard/*.compare.json`: **Regression**, **Improvement**,
   **Both fail**, and checks found on one site only. Name the URLs tested.
@@ -536,7 +541,7 @@ npm run test:a11y:keyboard
   visible focus, a component that doesn't respond to its keys, or a missing skip
   link the source has.
 - When a new block adds an interactive pattern (menu, dialog, carousel, tabs),
-  add a pair with a demo page to `keyboard.config.js`.
+  add a pair with a demo page to `keyboard.config.mjs`.
 
 See [README keyboard tests](README.md#keyboard-tests-source-page-vs-eds-page)
 for the checks, options and limits.

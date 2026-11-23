@@ -38,10 +38,13 @@ class KeyboardReporter {
     return true;
   }
 
-  onBegin(config) {
+  onBegin(config, suite) {
     this.started = Date.now();
     const project = config.projects.find((p) => p.name === 'keyboard');
     if (project) this.dir = project.outputDir;
+    const n = suite.allTests().length;
+    console.log(`\nKeyboard tests: ${n} page test(s) (each page × site × viewport), ${config.workers} worker(s)`);
+    console.log('Options and docs: npm run test:a11y:keyboard -- --help\n');
   }
 
   onTestEnd(test, result) {
@@ -66,6 +69,17 @@ class KeyboardReporter {
       byGroup.get(k).push(p);
     });
     let escalated = 0;
+    const urls = new Map();
+    pages.forEach((p) => {
+      if (!urls.has(p.pair)) urls.set(p.pair, {});
+      urls.get(p.pair)[p.site] = p.url;
+    });
+    console.log('\nPages tested');
+    urls.forEach((u, name) => {
+      console.log(`  ${name}`);
+      if (u.source) console.log(`    source  ${u.source}`);
+      if (u.eds) console.log(`    eds     ${u.eds}`);
+    });
     byGroup.forEach((list, k) => {
       console.log(`\n${k}`);
       list.sort((a, b) => a.site.localeCompare(b.site)).reverse().forEach((p) => {
@@ -93,7 +107,7 @@ class KeyboardReporter {
           + ` only on eds: ${c.onlyEds.length} check(s), ${failingOnly(c.onlyEds)} failing`);
       }
     });
-    console.log(`\nResults: ${this.dir}`);
+    console.log(`\nResult files (JSON): ${path.relative(process.cwd(), this.dir) || this.dir}`);
     const total = this.failed + escalated;
     console.log(`${total ? `${this.failed} failed${escalated ? ` (+${escalated} from comparison)` : ''}, ` : ''}${this.passed} passed in ${fmt(Date.now() - this.started)}`);
     return escalated ? { status: 'failed' } : undefined;

@@ -83,24 +83,77 @@ Keyboard tests press real keys in Chromium on an original (source) page and its
 matching EDS page, then compare the two. They run separately from the axe scan and
 are not part of the PR workflow.
 
+#### Quick start
+
 ```sh
-# Configured pairs (tests/a11y/keyboard.config.js); EDS paths use the local AEM server
-npm run test:a11y:keyboard
-
-# Configured pairs, EDS paths on a preview host
-A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y:keyboard
-
-# One pair: source URL first, then the EDS URL
+# Compare one page: source URL first, then the EDS URL
 npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
 
-# One EDS page only, without comparison
-npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/
-
-# Only one viewport, more workers, one source page at a time
-A11Y_VIEWPORTS=desktop A11Y_WORKERS=4 A11Y_SOURCE_CONCURRENCY=1 npm run test:a11y:keyboard
+# All options, defaults and examples
+npm run test:a11y:keyboard -- --help
 ```
 
-Each page is tested once per viewport (desktop 1280px, mobile 390px). Checks:
+Put `--` before any argument or option. Without it, npm reads them itself:
+`npm run test:a11y:keyboard --help` shows npm's own help, not the test's.
+
+#### Usage and options
+
+```text
+npm run test:a11y:keyboard -- [options] <source-url> <eds-url>   compare one pair
+npm run test:a11y:keyboard -- [options] <eds-url>                one EDS page, no comparison
+npm run test:a11y:keyboard -- [options]                          pairs in tests/a11y/keyboard.config.mjs
+```
+
+| Option | Environment variable | Default | What it does |
+|---|---|---|---|
+| `--name <name>` | `A11Y_KBD_NAME` | last part of the EDS path (e.g. `ivs`) | Short name for the pair in the output and result file names |
+| `--viewport <names>` | `A11Y_VIEWPORTS` | all (`desktop` 1280px, `mobile` 390px) | Viewports to test, comma-separated |
+| `--workers <n>` | `A11Y_WORKERS` | `2` | Pages tested in parallel. Each worker starts its own browser |
+| `--source-concurrency <n>` | `A11Y_SOURCE_CONCURRENCY` | `2` | Most pages open at once on one source host |
+| `--base-url <url>` | `A11Y_BASE_URL` | `http://localhost:3000` | Host for EDS paths (configured pairs, or an EDS path instead of a URL) |
+| `-h`, `--help` | | | Show usage, options, examples and where results go |
+
+The environment variables do the same as the options (useful in CI); an option
+given on the command line wins. Defaults for workers, concurrency and viewports
+come from `tests/a11y/keyboard.config.mjs`.
+
+```sh
+# Desktop only, one worker, a custom name
+npm run test:a11y:keyboard -- --name neuroelite --viewport desktop --workers 1 <source-url> <eds-url>
+
+# Configured pairs, EDS paths on a preview host instead of the local server
+npm run test:a11y:keyboard -- --base-url https://main--patients-stryker--aemdemos.aem.page
+```
+
+#### Reading the results
+
+The terminal shows, in order:
+
+1. One line per page test as it finishes: `✓` / `✘`, then pair, site and viewport.
+2. **Pages tested**: the source and EDS URL of each pair.
+3. Per pair and viewport: one summary line per site (tab stops, traps, stops
+   without visible focus, skip link, component key checks), the EDS failures
+   (`✘`), and the differences between the two sites.
+
+Differences are labelled **Regression** (passes on source, fails on EDS),
+**Improvement** (fails on source, passes on EDS) and **Both fail**. Checks found on
+one site only (e.g. a menu that exists only on EDS) are counted separately.
+
+The details are in JSON files in `test-results/keyboard/` (replaced on every run):
+
+| File | Content |
+|---|---|
+| `<name>__<viewport>__source.json`, `<name>__<viewport>__eds.json` | One page: every tab stop, focus results, traps, skip link, each component and key |
+| `<name>__<viewport>.compare.json` | One pair: differences, checks on one site only, tab stops found on one site only |
+
+**Pass/fail.** Source results are information only. An EDS page fails on a keyboard
+trap, a stop without visible focus, a component that does not respond to its keys,
+or a missing skip link when the source page has one. Everything else is a warning.
+The command exits with a non-zero code when an EDS page fails.
+
+#### What is checked
+
+Each page is tested once per viewport.
 
 | Check | How |
 |---|---|
@@ -108,42 +161,47 @@ Each page is tested once per viewport (desktop 1280px, mobile 390px). Checks:
 | Visible focus | Each stop is captured unfocused, then focused; identical pixels mean no visible focus. Elements fully covered when focused (e.g. by a sticky header) also count. |
 | Keyboard traps | Focus that does not move, or loops, within part of the page. An open modal may hold focus only if Escape releases it. |
 | Skip link | One of the first three stops links to a target on the page, and Enter moves focus there. |
-| Menus, disclosures, accordions | Elements with `aria-expanded` and `details`/`summary`: Enter and Space toggle, Escape closes and returns focus, arrow keys for `role=menu`, Tab moves into an opened panel. Navigation submenus without `aria-expanded` must open on focus or with ArrowDown. |
+| Menus, disclosures, accordions | Elements with `aria-expanded` and `details`/`summary`: Enter and Space toggle, Escape closes and returns focus, arrow keys for `role=menu`, Tab moves into an opened panel. Navigation submenus without `aria-expanded` must open on focus or with ArrowDown. Toggles in the header or nav count as menus. |
 | Tabs | `role=tablist` (including `aria-owns`): arrow keys, Home/End, Enter/Space select, Tab moves into the panel. |
 | Carousels | `aria-roledescription=carousel` or common slider class names: previous/next/slide picker with Enter and Space; a pause control if it autoplays. |
 | Modals | Openers (`aria-haspopup=dialog`, `data-(bs-)toggle=modal`, controls pointing at a dialog): focus moves in, stays inside, Escape closes, focus returns. |
 | Forms | Fields are reachable and named; typing works; Space ticks checkboxes; arrow keys work on radios and selects. |
 | Cookie banner | Reached by Tab and dismissed with Enter; then dismissed for the rest of the run. |
 
-**Results.** The terminal shows a line per page, the EDS failures and the
-differences per pair. JSON files are written to `test-results/keyboard/`: one per
-page (`<pair>__<viewport>__<site>.json`) and one comparison per pair
-(`<pair>__<viewport>.compare.json`). Differences are labelled **Regression**
-(passes on source, fails on EDS), **Improvement** (fails on source, passes on EDS)
-and **Both fail**; checks found on one site only are listed separately.
+#### Running pages in parallel
 
-**Pass/fail.** Source results are information only. An EDS page fails on a keyboard
-trap, a stop without visible focus, a component that does not respond to its keys,
-or a missing skip link when the source page has one. Everything else is a warning.
+Tests are split by page, site and viewport, each in its own browser context; the
+comparison runs once all tests have finished, so the order does not matter. Each
+worker starts its own browser: fit `--workers` to the machine or CI runner (use `1`
+on small machines, e.g. 2 CPUs / 5 GB, and when debugging), and use fewer workers
+against `aem up` than against a hosted preview. `--source-concurrency` keeps the
+load on a live source site low.
 
-**Parallel runs.** Tests are split by page, site and viewport, each in its own
-browser context; the comparison runs once all tests have finished. `A11Y_WORKERS`
-(default 2) sets the worker count. Each worker starts its own browser, so fit the
-count to the machine or CI runner and use fewer workers against `aem up` than
-against a hosted preview. `A11Y_SOURCE_CONCURRENCY` (default 2) caps how many pages
-are open at once on each source host, so a live site is not loaded heavily. Use
-`A11Y_WORKERS=1` when debugging.
+#### Safety on the source site
 
-**Read-only.** Off-page link clicks and form submission are cancelled in the page,
-Enter is never pressed in form fields, and a page that navigates away anyway is
-reloaded (the check fails). Before the checks, each page is scrolled through once
-so lazy-loaded content (forms, embeds) is present.
+Off-page link clicks and form submission are cancelled in the page, Enter is never
+pressed in form fields, and a page that navigates away anyway is reloaded (the
+check fails). Before the checks, each page is scrolled through once so lazy-loaded
+content (forms, embeds) is present.
 
-**Limits.** Any visible change near the element counts as focus (e.g. a validation
-message shown on focus), so a pass is not proof of a good focus indicator.
-Controls that fade in and out on a timer (e.g. video player controls) can give
-different counts between runs. Focus-indicator contrast (WCAG 2.4.11 / 2.4.13), whether the tab order makes sense
-and screen reader output still need a manual review.
+#### Limits
+
+- Any visible change near the element counts as focus (e.g. a validation message
+  shown on focus), so a pass is not proof of a good focus indicator.
+- Controls that fade in and out on a timer (e.g. video player controls) can give
+  different counts between runs.
+- Focus-indicator contrast (WCAG 2.4.11 / 2.4.13), whether the tab order makes
+  sense and screen reader output still need a manual review.
+
+#### Configuration and code
+
+| File | Purpose |
+|---|---|
+| `tests/a11y/keyboard.config.mjs` | Pairs, viewports, defaults and limits (each setting is commented) |
+| `tests/a11y/run-keyboard.js` | Command line: options, `--help`, starts Playwright |
+| `tests/a11y/keyboard.test.js` | One test per page, site and viewport |
+| `tests/a11y/keyboard.reporter.js` | Terminal output and the source vs EDS comparison |
+| `tests/a11y/lib/` | The checks: `tab-walk.js`, `focus-visible.js`, `components.js`, `compare.js`, plus `page-helpers.js` (in-page helpers, read-only guard) and `host-slots.js` (per-host page limit) |
 
 ## Local development
 
