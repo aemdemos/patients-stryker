@@ -90,8 +90,11 @@ npm run test:a11y:keyboard
 # Configured pairs, EDS paths on a preview host
 A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y:keyboard
 
-# One pair (the source URL is optional: without it only the EDS page is tested)
-npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/ https://patients.stryker.com/us/en/ivs/index.html
+# One pair: source URL first, then the EDS URL
+npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
+
+# One EDS page only, without comparison
+npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/
 
 # Only one viewport, more workers, one source page at a time
 A11Y_VIEWPORTS=desktop A11Y_WORKERS=4 A11Y_SOURCE_CONCURRENCY=1 npm run test:a11y:keyboard

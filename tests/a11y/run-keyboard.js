@@ -1,10 +1,16 @@
 const { spawn } = require('child_process');
 const { resolve } = require('path');
 
-// npm run test:a11y:keyboard                           → configured pairs
-// npm run test:a11y:keyboard -- <eds-url> [source-url] → a single pair
+// npm run test:a11y:keyboard                             → configured pairs
+// npm run test:a11y:keyboard -- <source-url> <eds-url>   → one pair (source vs EDS)
+// npm run test:a11y:keyboard -- <eds-url>                → one EDS page, no comparison
 // A11Y_WORKERS sets the number of parallel workers (default: workers in keyboard.config.js)
-const [eds, source] = process.argv.slice(2);
+const urls = process.argv.slice(2);
+if (urls.length > 2) {
+  console.error('Usage: npm run test:a11y:keyboard -- [<source-url>] <eds-url>');
+  process.exit(1);
+}
+const [source, eds] = urls.length === 2 ? urls : [null, urls[0]];
 const env = { ...process.env, A11Y_KEYBOARD_RUN: '1' };
 if (eds) env.A11Y_KBD_EDS = eds;
 if (source) env.A11Y_KBD_SOURCE = source;

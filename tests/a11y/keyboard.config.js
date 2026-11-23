@@ -6,7 +6,8 @@
  *   eds    — EDS path (joined with A11Y_BASE_URL, default http://localhost:3000)
  *            or a full URL
  *   source — full URL of the original page
- *   A single pair can be passed instead: npm run test:a11y:keyboard -- <eds-url> [source-url]
+ *   A single pair can be passed instead: npm run test:a11y:keyboard -- <source-url> <eds-url>
+ *   (one URL alone is tested as an EDS page, without comparison)
  *
  * viewports — every page is tested once per viewport. Filter with
  *   A11Y_VIEWPORTS=desktop (comma-separated names).

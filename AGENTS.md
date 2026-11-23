@@ -516,8 +516,8 @@ The same opt-in policy applies: run keyboard tests only when explicitly asked, a
 do not fix findings unless asked. They compare a source page with its EDS page:
 
 ```sh
-# One pair; the source URL is optional
-npm run test:a11y:keyboard -- http://localhost:3000/us/en/ivs/ https://patients.stryker.com/us/en/ivs/index.html
+# One pair: source URL first, then the EDS URL (one URL alone = EDS page only)
+npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
 
 # Configured pairs (tests/a11y/keyboard.config.js)
 npm run test:a11y:keyboard
