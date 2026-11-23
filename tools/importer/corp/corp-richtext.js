@@ -436,7 +436,9 @@ export function finishRuns(nodes, styles) {
           tags.push('body-font');
         }
       }
-      if (tags.length) {
+      // (no tag around a run without visible text: a lone &nbsp; in a bold, teach-talks, gave an
+      // empty body-font tag whose colon form opened a colour run over the paragraph)
+      if (tags.length && squash(run.textContent)) {
         run.before(doc.createTextNode(`[[${tags.join(',')}]`));
         run.after(doc.createTextNode(']'));
       }
@@ -575,8 +577,14 @@ export function mapColours(root) {
     const holdsLink = (node) => skipLinks && node.nodeType === 1 && (node.matches('a[href]') || !!node.querySelector('a[href]'));
     const wrapFree = (parent) => {
       let run = [];
+      // (the tag neither starts nor ends on blank nodes: the cleaner moves the spaces at a bold's
+      // edges out of it, which would split the tag across the bold — teach-talks "&nbsp; • TSA",
+      // whose colour then ran over the whole paragraph)
+      const blank = (n) => !squash(freeText(n)) && !(n.nodeType === 1 && n.querySelector('img'));
       const flush = () => {
-        if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+        while (run.length && blank(run[0])) run.shift();
+        while (run.length && blank(run[run.length - 1])) run.pop();
+        if (run.length) wrapInTag(run[0], run[run.length - 1], cls);
         run = [];
       };
       [...parent.childNodes].forEach((child) => {
@@ -609,6 +617,9 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
   const doc = root.ownerDocument;
   [...root.querySelectorAll('b')].forEach((b) => {
     if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+    // (a bold holding standalone links is their CTA look, not a label: teach-talks "• TSA •
+    // …", whose tag the cleaner split at the bold's leading &nbsp;)
+    if (b.closest('.standalone-link') || b.querySelector('.standalone-link')) return;
     if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
     // (whole paragraphs: a bold typed straight into a table cell has the cell as its line)
     const block = b.closest('p, li, h1, h2, h3, h4, h5, h6') || (wholeParagraphs && root.contains(b) ? root : null);
@@ -735,7 +746,7 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
   // the same CTA typed by hand: a Futura bold link ending in a triangle ("READ MORE ON OUR
   // INVESTOR RELATIONS SITE HERE \u25ba", news press releases); the triangle comes from the CSS,
   // and the font and colour spans around the link alone are the CTA's own look (dropped)
-  const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
+  const triangle = /[\s\u00a0]*[\u25ba\u25b6\u25b8][\s\u00a0]*$/;
   root.querySelectorAll('a[href]').forEach((a) => {
     if (!triangle.test(a.textContent)) return;
     if (!(a.closest('.futura-bold') || a.querySelector('.futura-bold'))) return;
@@ -750,7 +761,9 @@ export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = t
       unwrap(span);
       span = a.parentElement;
     }
-    a.querySelectorAll('span').forEach(unwrap);
+    // (a colour set inside the link stays: it colours the link on live, craniomaxillofacial
+    // "LEARN MORE ▸" in gold)
+    a.querySelectorAll('span').forEach((s) => { if (!inlineColour(s)) unwrap(s); });
     standalone.add(a);
   });
   standalone.forEach((a) => {

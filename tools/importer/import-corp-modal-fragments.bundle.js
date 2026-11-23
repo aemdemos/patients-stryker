@@ -291,7 +291,7 @@ var CustomImportScript = (() => {
             tags.push("body-font");
           }
         }
-        if (tags.length) {
+        if (tags.length && squash(run.textContent)) {
           run.before(doc.createTextNode(`[[${tags.join(",")}]`));
           run.after(doc.createTextNode("]"));
         }
@@ -393,8 +393,11 @@ var CustomImportScript = (() => {
       const holdsLink = (node) => skipLinks && node.nodeType === 1 && (node.matches("a[href]") || !!node.querySelector("a[href]"));
       const wrapFree = (parent) => {
         let run = [];
+        const blank2 = (n) => !squash(freeText(n)) && !(n.nodeType === 1 && n.querySelector("img"));
         const flush = () => {
-          if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+          while (run.length && blank2(run[0])) run.shift();
+          while (run.length && blank2(run[run.length - 1])) run.pop();
+          if (run.length) wrapInTag(run[0], run[run.length - 1], cls);
           run = [];
         };
         [...parent.childNodes].forEach((child) => {
@@ -416,6 +419,7 @@ var CustomImportScript = (() => {
     const doc = root.ownerDocument;
     [...root.querySelectorAll("b")].forEach((b) => {
       if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
+      if (b.closest(".standalone-link") || b.querySelector(".standalone-link")) return;
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block2 = b.closest("p, li, h1, h2, h3, h4, h5, h6") || (wholeParagraphs && root.contains(b) ? root : null);
       if (!block2 || block2.matches("h1, h2, h3, h4, h5, h6")) return;
@@ -491,7 +495,7 @@ var CustomImportScript = (() => {
         standalone.add(a);
       });
     });
-    const triangle = /[\s\u00a0]*[\u25ba\u25b6][\s\u00a0]*$/;
+    const triangle = /[\s\u00a0]*[\u25ba\u25b6\u25b8][\s\u00a0]*$/;
     root.querySelectorAll("a[href]").forEach((a) => {
       if (!triangle.test(a.textContent)) return;
       if (!(a.closest(".futura-bold") || a.querySelector(".futura-bold"))) return;
@@ -506,7 +510,9 @@ var CustomImportScript = (() => {
         unwrap(span);
         span = a.parentElement;
       }
-      a.querySelectorAll("span").forEach(unwrap);
+      a.querySelectorAll("span").forEach((s) => {
+        if (!inlineColour(s)) unwrap(s);
+      });
       standalone.add(a);
     });
     standalone.forEach((a) => {
