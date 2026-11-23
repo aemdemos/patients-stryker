@@ -219,6 +219,25 @@ function placeTitle(main) {
   marker.removeAttribute('data-title-before');
 }
 
+// A hoisted row of linked icons only (the social links) keeps the icons at their own size
+// instead of filling the cells. By now each image is a link line, followed by its own link.
+const IMAGE_LINK = /\/is\/image\/|\.(png|jpe?g|gif|svg|webp)([?#]|$)/i;
+
+function keepIconSize(table) {
+  const head = table.querySelector('th');
+  if (!head || head.textContent.trim().toLowerCase() !== 'columns (media pair)') return;
+  const cells = [...table.querySelectorAll('tr:not(:first-child) > td')];
+  const iconsOnly = cells.length && cells.every((cell) => {
+    const links = [...cell.querySelectorAll('a')];
+    if (links.length !== 2 || !IMAGE_LINK.test(links[0].getAttribute('href'))
+      || IMAGE_LINK.test(links[1].getAttribute('href'))) return false;
+    const clone = cell.cloneNode(true);
+    clone.querySelectorAll('a').forEach((el) => el.remove());
+    return !clone.textContent.trim();
+  });
+  if (iconsOnly) head.textContent = 'Columns (media Pair, image-centre)';
+}
+
 // Blocks are decorated only at the top level of a section, so a Columns row nested in a cell
 // (the related products and the video row beside a bio) would stack unstyled: each follows its
 // outer block in the same section instead.
@@ -229,6 +248,7 @@ function hoistNestedBlocks(main) {
     while (outer.parentElement.closest('table')) outer = outer.parentElement.closest('table');
     (tail.get(outer) || outer).after(nested);
     tail.set(outer, nested);
+    keepIconSize(nested);
   });
 }
 

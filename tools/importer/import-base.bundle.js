@@ -20426,6 +20426,20 @@ var CustomImportScript = (() => {
     title.forEach((n) => main.insertBefore(n, start));
     marker.removeAttribute("data-title-before");
   }
+  var IMAGE_LINK = /\/is\/image\/|\.(png|jpe?g|gif|svg|webp)([?#]|$)/i;
+  function keepIconSize(table) {
+    const head = table.querySelector("th");
+    if (!head || head.textContent.trim().toLowerCase() !== "columns (media pair)") return;
+    const cells = [...table.querySelectorAll("tr:not(:first-child) > td")];
+    const iconsOnly = cells.length && cells.every((cell) => {
+      const links = [...cell.querySelectorAll("a")];
+      if (links.length !== 2 || !IMAGE_LINK.test(links[0].getAttribute("href")) || IMAGE_LINK.test(links[1].getAttribute("href"))) return false;
+      const clone = cell.cloneNode(true);
+      clone.querySelectorAll("a").forEach((el3) => el3.remove());
+      return !clone.textContent.trim();
+    });
+    if (iconsOnly) head.textContent = "Columns (media Pair, image-centre)";
+  }
   function hoistNestedBlocks(main) {
     const tail = /* @__PURE__ */ new Map();
     [...main.querySelectorAll("table table")].forEach((nested) => {
@@ -20433,6 +20447,7 @@ var CustomImportScript = (() => {
       while (outer.parentElement.closest("table")) outer = outer.parentElement.closest("table");
       (tail.get(outer) || outer).after(nested);
       tail.set(outer, nested);
+      keepIconSize(nested);
     });
   }
   var events_default = {
