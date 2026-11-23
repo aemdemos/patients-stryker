@@ -219,6 +219,19 @@ function placeTitle(main) {
   marker.removeAttribute('data-title-before');
 }
 
+// Blocks are decorated only at the top level of a section, so a Columns row nested in a cell
+// (the related products and the video row beside a bio) would stack unstyled: each follows its
+// outer block in the same section instead.
+function hoistNestedBlocks(main) {
+  const tail = new Map();
+  [...main.querySelectorAll('table table')].forEach((nested) => {
+    let outer = nested.parentElement.closest('table');
+    while (outer.parentElement.closest('table')) outer = outer.parentElement.closest('table');
+    (tail.get(outer) || outer).after(nested);
+    tail.set(outer, nested);
+  });
+}
+
 export default {
   preprocess,
   transform: (payload) => {
@@ -231,6 +244,7 @@ export default {
     carousel(document);
     const result = transformPage(payload, 'events');
     placeTitle(result[0].element);
+    hoistNestedBlocks(result[0].element);
     return result;
   },
 };

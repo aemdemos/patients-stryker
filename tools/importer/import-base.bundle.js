@@ -20426,6 +20426,15 @@ var CustomImportScript = (() => {
     title.forEach((n) => main.insertBefore(n, start));
     marker.removeAttribute("data-title-before");
   }
+  function hoistNestedBlocks(main) {
+    const tail = /* @__PURE__ */ new Map();
+    [...main.querySelectorAll("table table")].forEach((nested) => {
+      let outer = nested.parentElement.closest("table");
+      while (outer.parentElement.closest("table")) outer = outer.parentElement.closest("table");
+      (tail.get(outer) || outer).after(nested);
+      tail.set(outer, nested);
+    });
+  }
   var events_default = {
     preprocess,
     transform: (payload) => {
@@ -20438,6 +20447,7 @@ var CustomImportScript = (() => {
       carousel(document);
       const result = transformPage(payload, "events");
       placeTitle(result[0].element);
+      hoistNestedBlocks(result[0].element);
       return result;
     }
   };
