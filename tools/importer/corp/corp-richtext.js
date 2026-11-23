@@ -280,7 +280,10 @@ function runOf(textNode, blockEl, serifDefault) {
   // headings: a plain bold in an h1–h3, or Egyptienne inside a Futura bold (the cleaner makes it
   // a <strong>, Futura on the site)
   const serifInBold = props.font === 'serif' && chain.some((e) => e.classList.contains('futura-bold'));
-  if (heading) code = (b && /^H[1-3]$/.test(blockEl.tagName)) || serifInBold ? 1 : 0;
+  // (and the Egyptienne part of a heading mixed with Futura bold: no h-serif style can carry
+  // it — rebuild-lives "Why we" in span.urw-egyptienne beside a span.futura-bold)
+  const mixedSerif = heading && props.font === 'serif' && !!blockEl.querySelector('.futura-bold');
+  if (heading) code = (b && /^H[1-3]$/.test(blockEl.tagName)) || serifInBold || mixedSerif ? 1 : 0;
   else if (font === 'serif') code = 1;
   else if (bolds.some(besideCopy)) code = 2;
   return { em: props.em, vw: props.vw, font: code };
@@ -566,6 +569,10 @@ export function mapColours(root) {
     const around = !el.closest('a[href]') && linkOnly(el);
     if (around && cls !== 'color-black') return;
     const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll('*')].some((d) => own.get(d));
+    // links in a colour set around them keep the link colour on live (teach-talks "TSA": a blue
+    // span around several standalone links, teal on live): the tag leaves them out
+    const skipLinks = !el.closest('a[href]') && cls !== 'color-black';
+    const holdsLink = (node) => skipLinks && node.nodeType === 1 && (node.matches('a[href]') || !!node.querySelector('a[href]'));
     const wrapFree = (parent) => {
       let run = [];
       const flush = () => {
@@ -574,7 +581,10 @@ export function mapColours(root) {
       };
       [...parent.childNodes].forEach((child) => {
         if (child.nodeType === 1 && own.get(child)) flush();
-        else if (hasOwn(child)) {
+        else if (holdsLink(child)) {
+          flush();
+          if (!child.matches('a[href]')) wrapFree(child);
+        } else if (hasOwn(child)) {
           flush();
           wrapFree(child);
         } else run.push(child);
@@ -603,7 +613,9 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
     // (whole paragraphs: a bold typed straight into a table cell has the cell as its line)
     const block = b.closest('p, li, h1, h2, h3, h4, h5, h6') || (wholeParagraphs && root.contains(b) ? root : null);
     if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
-    if (!wholeParagraphs && text(block) === text(b)) return;
+    // (a paragraph bold throughout gets bold-body; a list item doesn't: perioperative-care
+    // "Air-assisted lateral transfer", Humanist bold on live)
+    if (!wholeParagraphs && block.tagName === 'P' && text(block) === text(b)) return;
     b.before(doc.createTextNode('[[body-font]'));
     b.after(doc.createTextNode(']'));
   });

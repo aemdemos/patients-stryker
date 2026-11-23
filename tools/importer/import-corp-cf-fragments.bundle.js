@@ -264,6 +264,8 @@ var CustomImportScript = (() => {
       const around = !el.closest("a[href]") && linkOnly(el);
       if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
+      const skipLinks = !el.closest("a[href]") && cls !== "color-black";
+      const holdsLink = (node) => skipLinks && node.nodeType === 1 && (node.matches("a[href]") || !!node.querySelector("a[href]"));
       const wrapFree = (parent) => {
         let run = [];
         const flush = () => {
@@ -272,7 +274,10 @@ var CustomImportScript = (() => {
         };
         [...parent.childNodes].forEach((child) => {
           if (child.nodeType === 1 && own.get(child)) flush();
-          else if (hasOwn(child)) {
+          else if (holdsLink(child)) {
+            flush();
+            if (!child.matches("a[href]")) wrapFree(child);
+          } else if (hasOwn(child)) {
             flush();
             wrapFree(child);
           } else run.push(child);
@@ -289,7 +294,7 @@ var CustomImportScript = (() => {
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block = b.closest("p, li, h1, h2, h3, h4, h5, h6") || (wholeParagraphs && root.contains(b) ? root : null);
       if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
-      if (!wholeParagraphs && text(block) === text(b)) return;
+      if (!wholeParagraphs && block.tagName === "P" && text(block) === text(b)) return;
       b.before(doc.createTextNode("[[body-font]"));
       b.after(doc.createTextNode("]"));
     });

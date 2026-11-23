@@ -191,7 +191,8 @@ var CustomImportScript = (() => {
     const besideCopy = (x) => squash(x.textContent) !== squash(blockEl.textContent) && (sameLineText(x, "previousSibling") || sameLineText(x, "nextSibling"));
     let code = 0;
     const serifInBold = props.font === "serif" && chain.some((e) => e.classList.contains("futura-bold"));
-    if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) || serifInBold ? 1 : 0;
+    const mixedSerif = heading && props.font === "serif" && !!blockEl.querySelector(".futura-bold");
+    if (heading) code = b && /^H[1-3]$/.test(blockEl.tagName) || serifInBold || mixedSerif ? 1 : 0;
     else if (font === "serif") code = 1;
     else if (bolds.some(besideCopy)) code = 2;
     return { em: props.em, vw: props.vw, font: code };
@@ -388,6 +389,8 @@ var CustomImportScript = (() => {
       const around = !el.closest("a[href]") && linkOnly(el);
       if (around && cls !== "color-black") return;
       const hasOwn = (node) => node.nodeType === 1 && [...node.querySelectorAll("*")].some((d) => own.get(d));
+      const skipLinks = !el.closest("a[href]") && cls !== "color-black";
+      const holdsLink = (node) => skipLinks && node.nodeType === 1 && (node.matches("a[href]") || !!node.querySelector("a[href]"));
       const wrapFree = (parent) => {
         let run = [];
         const flush = () => {
@@ -396,7 +399,10 @@ var CustomImportScript = (() => {
         };
         [...parent.childNodes].forEach((child) => {
           if (child.nodeType === 1 && own.get(child)) flush();
-          else if (hasOwn(child)) {
+          else if (holdsLink(child)) {
+            flush();
+            if (!child.matches("a[href]")) wrapFree(child);
+          } else if (hasOwn(child)) {
             flush();
             wrapFree(child);
           } else run.push(child);
@@ -413,7 +419,7 @@ var CustomImportScript = (() => {
       if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
       const block2 = b.closest("p, li, h1, h2, h3, h4, h5, h6") || (wholeParagraphs && root.contains(b) ? root : null);
       if (!block2 || block2.matches("h1, h2, h3, h4, h5, h6")) return;
-      if (!wholeParagraphs && text(block2) === text(b)) return;
+      if (!wholeParagraphs && block2.tagName === "P" && text(block2) === text(b)) return;
       b.before(doc.createTextNode("[[body-font]"));
       b.after(doc.createTextNode("]"));
     });
