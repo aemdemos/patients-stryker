@@ -45,3 +45,10 @@ body.corp .cards.contact .cards-card-body p {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
+
+/* a field label (Phone:, Address:, the bold at the start of a line) is Humanist bold on live at
+   every width (dd.cmp-contentfragment__element-value b, /us/en/about/contact); the CTA link
+   stays Futura bold */
+body.corp .cards.contact .cards-card-body p > strong:first-child:not(:has(a)) {
+  font-family: var(--body-font-family);
+}

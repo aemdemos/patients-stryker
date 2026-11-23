@@ -76,3 +76,18 @@ body.corp .statistics.fast-facts :is(.statistics-value, .statistics-value p, .st
 body.corp .statistics .statistics-desc strong {
   font-family: var(--display-font-family);
 }
+
+/* the description copy: 14px, the paragraph line (stryker.com counters: plain p, larger lines
+   carry their own sizes as inline size tags; isuite-experience "Increased safety: …", clout,
+   save-simply); the patients block's 17.5px is its source's fontsize-1-25em span */
+body.corp .statistics .statistics-desc,
+body.corp .statistics .statistics-desc p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* citation superscripts stay at the global 75% (stryker.com 10.5px on the 14px copy,
+   isuite-experience); the patients block's 13px is its own source's size */
+body.corp .statistics .statistics-desc sup {
+  font-size: 75%;
+}

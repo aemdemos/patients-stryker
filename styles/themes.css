@@ -48,6 +48,15 @@ body.search main .section h1 {
   margin-bottom: 0;
 }
 
+/* the corp search page title stays Egyptienne Light from 600px too (stryker.com search
+   h1.component-subheading); other corp page titles turn Futura bold there (styles-corp.css) */
+@media (width >= 600px) {
+  body.corp.search main > .section > .default-content-wrapper > h1 {
+    font-family: var(--heading-font-family);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
 body.search main .section h2 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);

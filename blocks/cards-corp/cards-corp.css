@@ -51,11 +51,13 @@
   object-position: center bottom;
 }
 
+/* the product name: 14px on phones, 17.5px from 600px (stryker.com h4.component-subheading,
+   17.5px from 480px: no EDS breakpoint, phones take the smallest size; surgical-visualization) */
 .cards-corp.product-item h4 {
   margin: 0 0 var(--space-block-xxs);
   color: var(--text-color);
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-m);
+  font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height-h4);
 }
@@ -361,6 +363,10 @@
 }
 
 @media (width >= 600px) {
+  .cards-corp.product-item h4 {
+    font-size: var(--heading-font-size-m);
+  }
+
   .cards-corp.text h3 {
     font-size: var(--heading-font-size-compact);
   }

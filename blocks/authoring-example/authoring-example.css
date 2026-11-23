@@ -1,0 +1,47 @@
+/* Authoring example: the rendered example (left) next to the same document as the editor
+   shows it (right); stacked on phones, rendered first. The editor view lives in a shadow root
+   (styles: authoring-example-doc.css), so no page style reaches it. */
+.authoring-example {
+  display: grid;
+  gap: var(--space-block-l);
+  margin-block: var(--space-block) var(--space-section);
+}
+
+.authoring-example .authoring-example-pane {
+  min-width: 0;
+}
+
+.authoring-example .authoring-example-label {
+  margin: 0 0 var(--space-block-xs);
+  color: var(--color-text-muted);
+  font-family: var(--ui-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.authoring-example .authoring-example-result {
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* the example page, sized to its content by the block code */
+.authoring-example .authoring-example-frame {
+  display: block;
+  width: 100%;
+  min-height: var(--space-section-l);
+  border: 0;
+}
+
+.authoring-example .authoring-example-source {
+  border: 1px solid var(--color-border);
+  padding: var(--space-block);
+  background: var(--color-surface-alt);
+}
+
+@media (width >= 900px) {
+  .authoring-example {
+    grid-template-columns: 1fr 1fr;
+  }
+}
