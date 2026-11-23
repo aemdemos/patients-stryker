@@ -43,6 +43,7 @@ keeps the invitation, later visits need no link.
 | `threads.js` | The shared rules: page statuses, chats, Done |
 | `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
+| `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
@@ -96,6 +97,31 @@ on the status page. `editUrl(path)` (`pages.js`): `config.edit` + the base prefi
 folder's page: `…/index`). Reviewers don't see the links; editing needs DA rights anyway. A page
 whose document is no longer in DA (it is still published) opens an empty document: don't save it
 there by mistake.
+
+## Invitations (AOE team)
+
+The **Invitations** page (`invites.html`; linked from the status page's bar and the tool's
+"Open in a new tab", AOE invitations only) lets the AOE team manage the invitations of its own
+review without the developers (backend web action `invites`, `backend/lib/invites.mjs`, shared
+with `backend/admin.mjs`):
+
+- **Make** an invitation: name (or email), role (reviewer, or AOE team: the AOE team always has
+  the results page), valid for 1–365 days (default 90), the results page for a reviewer, and the
+  pages (path prefixes; default and limit: the AOE's own invitation's pages). The link points to
+  the tool on the host the page was opened on (the branch preview before the merge, then main).
+  **The link is shown once**: the backend keeps no tokens, and nobody can see or copy another
+  person's link later (a link is that person's identity in the review). Lost link: revoke it and
+  make a new one.
+- **List**: every invitation of this review (another review's never), newest first: name, role,
+  pages, made when and by whom, valid until, state (active, expired, revoked: when and by whom);
+  revoked and expired ones on request; search by name.
+- **Revoke** any invitation of this review except one's own, in two steps (Revoke → Yes, revoke):
+  the link stops working at once, for good. The invitation stays listed as revoked.
+- Every make and revoke is in the review's audit (who, when, which invitation; never a token).
+
+Developers can still use `backend/admin.mjs invite | invites | revoke` (made "by admin"). Test
+invitations (names `tool test …`, `zz-test-…`) are removed from the lists after revoking with
+`admin.mjs forget-test-invites`; nobody else's ever are.
 
 ## The review backend and its spaces
 
@@ -191,10 +217,6 @@ The source URLs come from the export file names (letter case kept), never from E
   - **Who may add a page**, and whether a page waits for its first shot before it is put in a
     batch or a group.
   - The first shot of an added page is evidence like the others: same rules, history, hashes.
-- **Invitations admin (AOE team):** a page where the AOE team creates, lists and revokes
-  invitations itself (name, role, pages, days; the link to copy), instead of `backend/admin.mjs`
-  run by the developers. Needs an `invites` right on AOE invitations in the backend's admin
-  action, limited to the invitation's space.
 - Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
   spaces yet: never deploy the backend from there before that).
 
@@ -207,6 +229,8 @@ node tools/review/backend/test/spaces-live.test.mjs   # deployed: a main invitat
 node tools/review/backend/test/backend.test.mjs       # the actions (std space, test page)
 node tools/review/backend/test/shots-live.test.mjs    # deployed: shot history and requests (test page, cleans up)
 node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page)
+node tools/review/backend/test/invites-live.test.mjs  # deployed: the AOE team's invitations (test invitations, forgotten after)
+node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitations page and its links
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its

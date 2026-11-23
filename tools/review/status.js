@@ -200,6 +200,7 @@ async function load() {
   }
   me = { name: body.reviewer, role: body.role || 'reviewer' };
   $('.st-results').hidden = !body.scope.results;
+  $('.st-invites').hidden = body.role !== 'aoe';
   const states = new Map(body.pages.map((p) => [p.page, p]));
   all = pages.filter((p) => inScope(body.scope, p.path)).map((p) => {
     const s = states.get(p.path) || { state: 'unreviewed' };

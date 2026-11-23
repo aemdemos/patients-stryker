@@ -10,6 +10,8 @@
  *                                           sendBack: also the page status "waiting for the customer"
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
+ *   forget-test-invites                     removes revoked test invitations (tool test …, zz-test-…)
+ *   (invitations: lib/invites.mjs, shared with the AOE team's web action invites)
  *   export                                  every entry, as rows (summary, apply, tests)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
  *   import { rows: [{ page, item, kind, value, reviewer, time, inv?, role? }] }  rows from elsewhere (e.g. a CSV), as they were
@@ -27,26 +29,15 @@
  */
 import crypto from 'crypto';
 import {
-  open, secretOf, sign, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, TTL, replyProblem, SPACES,
+  open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, TTL, replyProblem, SPACES,
 } from '../lib/core.mjs';
+import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
 
 const ok = (body) => ({ body });
 const bad = (message) => ({ body: { error: { code: 'bad-request', message } } });
-
-async function invites(state) {
-  const out = [];
-  const it = state.list({ match: 'i.*' });
-  for (let r = await it.next(); !r.done; r = await it.next()) {
-    const got = await Promise.all(r.value.keys.map((k) => state.get(k)));
-    got.forEach((g, i) => {
-      if (g) out.push({ id: r.value.keys[i].slice(2), ...JSON.parse(g.value) });
-    });
-  }
-  return out.sort((a, b) => (a.created < b.created ? -1 : 1));
-}
 
 export async function main(params) {
   const stores = await open();
@@ -63,43 +54,36 @@ export async function main(params) {
     }
     if (op === 'invite') {
       const name = String(params.name || '').trim().slice(0, 80);
-      const paths = (Array.isArray(params.paths) ? params.paths : [params.paths]).filter((p) => typeof p === 'string' && p.startsWith('/'));
-      const days = Math.min(Math.max(Number(params.days) || 30, 1), 365);
+      const paths = (Array.isArray(params.paths) ? params.paths : [params.paths]).filter((x) => typeof x === 'string' && x.startsWith('/'));
       if (!name || !paths.length) return bad('name and paths (one or more path prefixes, e.g. /us/en/foot-and-ankle) are needed');
-      const id = crypto.randomBytes(9).toString('base64url');
-      const exp = new Date(Date.now() + days * 86400000).toISOString();
-      const role = params.role === 'aoe' ? 'aoe' : 'reviewer';
-      const scope = {
-        paths, groups: params.groups !== false, results: params.results === true || role === 'aoe', role,
-        ...(space === 'std' ? {} : { space }),
-      };
-      const invite = {
-        name, scope, exp, created: new Date().toISOString(), revoked: false,
-      };
-      await state.put(`i.${id}`, JSON.stringify(invite), { ttl: Math.min(TTL, days * 86400 + 86400) });
-      const token = sign({ id, exp }, await secretOf(files));
-      const page = typeof params.page === 'string' ? params.page : '';
-      // the space's tool, on another preview host when asked (a branch before its merge)
-      let tool = SPACES[space].tool;
-      if (typeof params.host === 'string' && /^[a-z0-9-]+--stryker-com--strykerenterprise\.aem\.page$/.test(params.host)) {
-        tool = tool.replace(/^https:\/\/[^/]+/, `https://${params.host}`);
-      }
-      const link = `${tool}?${new URLSearchParams({ ...(page ? { page } : {}), invite: token })}`;
-      const results = scope.results ? `${tool.replace('index.html', 'results.html')}?invite=${encodeURIComponent(token)}` : undefined;
-      return ok({
-        id, name, scope, expires: exp, token, link, results,
-      });
+      return ok(await createInvite(stores, {
+        space,
+        name,
+        paths,
+        days: params.days,
+        role: params.role,
+        results: params.results,
+        groups: params.groups,
+        page: params.page,
+        host: params.host,
+        createdBy: { name: 'admin' },
+      }));
     }
     if (op === 'revoke') {
-      const stored = await state.get(`i.${params.id}`);
-      if (!stored) return bad('no such invitation');
-      const invite = { ...JSON.parse(stored.value), revoked: true, revokedAt: new Date().toISOString() };
-      await state.put(`i.${params.id}`, JSON.stringify(invite), { ttl: TTL });
+      const revoked = await revokeInvite(state, params.id, { name: 'admin' });
+      if (!revoked) return bad('no such invitation');
       return ok({ revoked: params.id });
+    }
+    if (op === 'forget-test-invites') {
+      // revoked test invitations (names "tool test …", "zz-test-…") out of the lists for good;
+      // never anyone else's
+      const test = (await listInvites(state)).filter((i) => i.revoked && /^(tool test |zz-test-)/.test(i.name || ''));
+      await Promise.all(test.map((i) => state.delete(`i.${i.id}`)));
+      return ok({ forgotten: test.length });
     }
     if (op === 'invites') {
       // (the invitations of every space, each with its space)
-      const all = (await invites(state)).map((i) => ({ ...i, space: i.scope?.space || 'std' }));
+      const all = await listInvites(state);
       return ok({ invites: params.space ? all.filter((i) => i.space === space) : all });
     }
     if (op === 'export') return ok({ at: new Date().toISOString(), space, rows: await readAll(state, space) });

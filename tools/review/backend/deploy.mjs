@@ -36,6 +36,7 @@ const ACTIONS = {
   results: { web: true, timeout: 120000 },
   overview: { web: true, timeout: 120000 },
   shots: { web: true },
+  invites: { web: true },
   admin: { web: false, timeout: 300000 },
 };
 

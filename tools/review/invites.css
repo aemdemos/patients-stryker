@@ -1,0 +1,28 @@
+/* the AOE team's invitations page (invites.html); the bar, sections and table from results.css */
+.iv-form { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: flex-end; }
+.iv-form label { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.iv-form .iv-check { flex-direction: row; align-items: center; gap: 6px; }
+.iv-name { width: 260px; }
+.iv-days { width: 70px; }
+.iv-paths-label { flex: 1 1 100%; }
+.iv-paths { width: 100%; font: 13px/1.4 ui-monospace, monospace; }
+#iv-paths-help { flex: 1 1 100%; margin: -6px 0 0; font-size: 12px; }
+.iv-made:empty { display: none; }
+.iv-made { margin-top: 14px; padding: 12px 14px; border: 1px solid #d4a72c; border-radius: 6px; background: #fff8c5; font-size: 13px; }
+.iv-made p { margin: 0 0 8px; }
+.iv-link { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+.iv-link input { flex: 1; font: 12px ui-monospace, monospace; }
+.iv-error { color: #cf222e; }
+.iv-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; font-size: 13px; }
+.iv-filters .iv-check { display: flex; gap: 6px; align-items: center; }
+.iv-table td, .iv-table th { padding: 6px 8px; border-bottom: 1px solid #eaeef2; text-align: left; vertical-align: top; }
+.iv-state { padding: 1px 6px; border-radius: 9px; font-size: 12px; white-space: nowrap; }
+.iv-state-active { background: #dafbe1; color: #116329; }
+.iv-state-expired { background: #eaeef2; color: #57606a; }
+.iv-state-revoked { background: #ffebe9; color: #a40e26; }
+.iv-role-aoe { font-weight: 600; }
+.iv-me { color: #57606a; font-size: 12px; }
+.iv-revoke { padding: 2px 8px; font-size: 12px; }
+.iv-revoke-cell { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.iv-sure { font-size: 12px; color: #a40e26; }
+.iv-revoke-yes { border-color: #cf222e; background: #cf222e; }

@@ -1299,6 +1299,7 @@ function loadPage() {
     el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
     // (the AOE team's: editing needs Document Authoring rights anyway)
     editUrl(state.page) ? el('li', { class: 'rv-aoe-only' }, el('a', { href: editUrl(state.page), target: '_blank', rel: 'noopener' }, 'Edit in Document Authoring')) : null,
+    el('li', { class: 'rv-aoe-only' }, el('a', { href: './invites.html', target: '_blank', rel: 'noopener' }, 'Invitations: make and revoke')),
   ].filter(Boolean));
   if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
   $('.rv-pagebox-body').replaceChildren(el('p', { class: 'rv-none' }, 'Loading the saved reviews…'));
