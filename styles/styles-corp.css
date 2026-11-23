@@ -1183,7 +1183,7 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   /* flex-corp: text (paragraphs, a Panel…) with an image beside it, as the source's 75/25
      text + image row (col-sm-9 + col-sm-3 from 768px, EDS 600px): the section is the row,
      the text a 75% column less a quarter of the 30px gutter, the image (corp.js
-     .flex-corp-media) the rest, level with the first paragraph and spanning the text.
+     .flex-corp-media) the rest, spanning the text with its bottom level with the text's.
      Below 600px the image follows the text */
   :where(body.corp) main > .section.flex-corp {
     display: grid;
@@ -1207,6 +1207,7 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   :where(body.corp) main > .section.flex-corp > .flex-corp-media {
     grid-row: 1 / span var(--flex-corp-rows, 1);
     grid-column: 2;
+    align-self: end;
   }
 
   :where(body.corp) main > .section.flex-corp > div:empty {
