@@ -369,6 +369,8 @@ export function createBuilder({
         if (size !== 'plain' && current.headingSize !== size) current.styles.push(size);
         current.headingSize = size;
       }
+      // a plain h1 typed in rich text adds h1-medium to its section (no new section: no gap)
+      if (node.plainH1 && !current.styles.includes('h1-medium')) current.styles.push('h1-medium');
       current.nodes.push(node);
     });
   }

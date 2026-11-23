@@ -1189,6 +1189,7 @@ var CustomImportScript = (() => {
           if (size !== "plain" && current.headingSize !== size) current.styles.push(size);
           current.headingSize = size;
         }
+        if (node.plainH1 && !current.styles.includes("h1-medium")) current.styles.push("h1-medium");
         current.nodes.push(node);
       });
     }
@@ -4027,6 +4028,11 @@ var CustomImportScript = (() => {
         node.append(doc.createTextNode("]"));
       }
       if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
+      if (node.tagName === "H1") {
+        const kids = [...node.childNodes].filter((c) => c.nodeType === 1 || c.textContent.trim());
+        const bold = kids.length === 1 && kids[0].nodeType === 1 && kids[0].tagName === "STRONG";
+        if (!bold) node.plainH1 = true;
+      }
     });
     let last = null;
     nodes.forEach((node) => {

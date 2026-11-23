@@ -287,6 +287,13 @@ export function richTextNodes(source, doc) {
       node.append(doc.createTextNode(']'));
     }
     if (headingSizes.has(node)) node.headingSize = headingSizes.get(node);
+    // a plain h1 typed in rich text (not bold throughout): Futura medium from 600px on live,
+    // the section style h1-medium (the page title component stays bold)
+    if (node.tagName === 'H1') {
+      const kids = [...node.childNodes].filter((c) => c.nodeType === 1 || c.textContent.trim());
+      const bold = kids.length === 1 && kids[0].nodeType === 1 && kids[0].tagName === 'STRONG';
+      if (!bold) node.plainH1 = true;
+    }
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
