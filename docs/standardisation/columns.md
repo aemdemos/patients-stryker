@@ -21,17 +21,46 @@ redirect, are counted.*
 
 ---
 
-## 2. The problem, in numbers
+## 2. The problem, in numbers: values today vs named choices
 
-| What authors could set freely | Different values found | Choices now | Kept within a small difference |
+Every free setting of a column row, how many different values stryker.com uses today, and the named
+choices on the new site. *Kept* is the share of instances whose look stays the same or almost the same:
+spacing within 2 points of a step (4% becomes 5%), a font size within about 10% of a size step, a colour
+that is one of the named colours.
+
+| Setting | Values today | Instances | Choices | Kept | Most used today |
+|---|---|---|---|---|---|
+| Inner spacing, top (padding %) | **23** | 483 | 4 | **89%** | 5 (104), 3 (101), 2 (62), 0 (43) |
+| Inner spacing, bottom | **15** | 330 | 4 | **98%** | 3 (99), 5 (82), 2 (59), 0 (43) |
+| Inner spacing, left | **11** | 256 | 4 | **98%** | 0 (76), 3 (55), 5 (54), 2 (40) |
+| Inner spacing, right | **10** | 249 | 4 | **100%** | 3 (83), 5 (68), 2 (43), 0 (31) |
+| Outer spacing, top (margin %) | **27** | 303 | 0 (standard) | **82%** | 3 (44), 5 (38), 1 (35), 2 (26) |
+| Outer spacing, bottom | **17** | 176 | 0 (standard) | **97%** | 2 (47), 3 (47), 5 (25), 4 (18) |
+| Outer spacing, left | **7** | 138 | 0 (standard) | **61%** | 20 (49), 0 (43), 3 (30), 5 (6) |
+| Outer spacing, right | **8** | 43 | 0 (standard) | **98%** | 4 (14), 5 (9), 2 (6), 3 (5) |
+| Font size | **39** | 8,473 | 6 + 4 | **97%** | 1.25× (4,580), 1.5× (1,432), 1.75× (489), 2× (430) |
+| Font | **6** | 4,905 | 3 | **99%** | Futura bold (3,040), Egyptienne (1,827) |
+| Text colour | **22** | 2,087 | 8 | **98%** | gold (703 + 401 written differently), black (195), white (147) |
+| Box / background colour | **6** | 74 | 10 | **100%** | light grey (52 + 8), gold (8 + 3) |
+| Image border colour | **9** | 161 | 3 | **96%** | grey (93 + 10), black (38), teal (6) |
+| Video border colour | **1** | 1 | 1 | **100%** | black (1) |
+| Text alignment | **4** | 3,379 | 2 | **99%** | left (3,264 + 54), centred (38), right (23) |
+
+Two settings have nothing to choose, because stryker.com always uses the same value:
+
+| Setting | Values today | Choices | Kept |
 |---|---|---|---|
-| Column ratio | 5 cell-width patterns | **5 layouts** | 100% |
-| Coloured or shadowed box in a cell | 25 colour and cell combinations (250 of 2,487 rows) | **9 colours + 3 cell choices** | 97% |
-| Inner spacing of the text (padding, %) | 23 top, 32 bottom, 15 left, 11 right values | **4 steps**: none, small 3%, medium 5%, large 10% | 91% top, 96% bottom, 99% left, 100% right, within 2 points |
-| Image border | 7 colours on 230 images | **3**: grey, teal, black | 96% keep their colour group |
-| Text alignment in a cell | left 3,430, centre 447, right 9 cells | **2**: left (default), centred | 100% (right: 9 cells to review) |
-| Vertical alignment of the cells | 1 (always top) | none needed | 100% |
-| Phone layout | 1 (every row stacks in source order: 4,112 of 4,112 measured) | none needed: the block does the same | 100% |
+| Column ratio | 5 cell-width patterns | 5 layouts | **100%** (2,419 rows) |
+| Vertical alignment of the cells | 1 (always top) | none needed | **100%** |
+| Phone layout | 1 (every row stacks in source order: 4,112 of 4,112 measured) | none needed | **100%** |
+
+**Where each choice lives:**
+
+| Setting | Where authors set it |
+|---|---|
+| Layout, cell box (colour and cell), inner spacing, image border, centred text | **Block options panel** (section 5) |
+| Font size, font, text colour | the site-wide **text layer**: formatting and the **Text style panel**, the same choices in every block |
+| Outer spacing (margins) | **no setting**: the block keeps its standard gap |
 
 ---
 
@@ -161,8 +190,8 @@ in the *Last cell*, `gold-first` = *Gold* in the *First cell*.
 | Medium (5%, default) | `space-m` | around 5% |
 | Large (10%) | `space-l` | 10% and more |
 
-A source value goes to the nearest step; 91% of top, 96% of bottom, 99% of left and 100% of right spacing
-values stay within 2 points.
+A source value goes to the nearest step; 89% of top, 98% of bottom, 98% of left and 100% of right spacing
+values stay within 2 points (section 2).
 
 ### 5.4 Image border
 
@@ -184,14 +213,19 @@ Left is the default (3,430 cells).
 
 ## 6. How close is it to stryker.com?
 
-| What | How close |
-|---|---|
-| Column ratios | **100%** keep their layout (rows with unusual widths, such as 58/42 or 25/75 in shared fragments, take the nearest layout) |
-| Box colours | **97%** keep their colour and cell; rows with several colours are listed below |
-| Text spacing in boxes | **91–100%** within 2 points, per side |
-| Image borders | **96%** keep their colour |
-| Text alignment | **100%** (except 9 right-aligned cells) |
-| Phone layout | **100%** (every row stacks in order, as today) |
+| Setting | On stryker.com | With named choices | How close |
+|---|---|---|---|
+| Column ratio | 5 cell-width patterns | 5 layouts | **100%** keep their layout (rows with unusual widths, such as 58/42 or 25/75 in shared fragments, take the nearest layout) |
+| Box colour | 6 values | 10 named colours | **100%** keep their colour; rows with several colours in one row are listed below |
+| Inner spacing | 10–23 values per side | 4 steps | **89%** top, **98%** bottom, **98%** left, **100%** right |
+| Outer spacing | 7–27 values per side | the block's standard gap | **82%** top, **97%** bottom, **61%** left, **98%** right |
+| Font size, font, text colour | 39 / 6 / 22 values | the text layer | **97%** / **99%** / **98%** |
+| Image border | 9 colours | 3 | **96%** |
+| Text alignment | 4 values | left, centred | **99%** |
+| Phone layout | always stacked | as today | **100%** |
+
+**What moves more:** the outer spacing on the left, where 61% are kept: most of the others are a 20% left
+margin (49 instances), which the standard gap replaces.
 
 ---
 
@@ -216,7 +250,8 @@ These rows don't fit a choice exactly. They take the nearest choice unless the b
 
 | Not carried over as a Columns option | Where it goes instead |
 |---|---|
-| Fonts and text sizes inside the cells | the site-wide **text layer** (formatting and the Text style panel). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). |
+| Font size, font and text colour inside the cells | the site-wide **text layer** (formatting and the Text style panel). Cell text on stryker.com starts with one of 6 looks: body Humanist 14px (70%), Egyptienne 21 / 24.5 / 28px (25%), Futura bold 17.5px (3%), Egyptienne 14px (2%). |
+| Outer spacing (margins) around a cell | **no setting**: the block's standard gap (section 6) |
 | Backgrounds behind a whole row (full-width panels) | a **section style** |
 | Image on the left or the right | the **order** in which the author places the cells (image first in 76% of rows) |
 | Vertical alignment and phone layout | nothing to choose: stryker.com always aligns cells at the top and stacks them in order |
