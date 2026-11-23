@@ -15,9 +15,8 @@
  * (lib/shots.mjs: never replaced, never removed).
  */
 import crypto from 'crypto';
-import { join } from 'path';
-import { rmSync } from 'fs';
 import { open, SPACES } from '../lib/core.mjs';
+import { launch, openPage, loadSource } from '../lib/browser.mjs';
 import { pageList } from '../lib/scope.mjs';
 import {
   readHistory, addVersions, listRequests, failRequest,
@@ -31,23 +30,9 @@ const TILE = 4000;
 const QUALITY = 60;
 const RUN_MS = 210000;
 const RETRY_MS = 86400000;
-const PACK = 'https://github.com/Sparticuz/chromium/releases/download/v133.0.0/chromium-v133.0.0-pack.tar';
 const HEALTH_URL = 'https://www.stryker.com/us/en/search.html';
-// blocked as in every capture: ALTCHA / captcha by path, the cookie banner and trackers by host
-const BLOCK_PATH = /altcha|captcha/i;
-const BLOCK_HOST = /altcha|captcha|cookielaw|onetrust|googletagmanager|google-analytics|doubleclick|facebook|licdn|linkedin|qualtrics|zoominfo|zi-scripts|stackadapt|demdex|omtrdc|serving-sys|tribalfusion|quantserve|mathtag|intentsify|dpmsrv|usbrowserspeed|contextweb|smtrk|domdex|quantcount/;
-const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36';
-
 const sha256 = (buf) => crypto.createHash('sha256').update(buf).digest('hex');
 const shotId = (iso) => `s-${iso.slice(0, 19).replace(/[-:]/g, '').replace('T', '-')}`;
-const sameUrl = (a, b) => {
-  const u = (x) => {
-    const p = new URL(x);
-    return `${p.host}${p.pathname}`;
-  };
-  return u(a) === u(b);
-};
-
 // the anchors: the same rules as tools/review/sync.js leaves(), on the whole page
 function anchors() {
   const TEXT = 'h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, blockquote';
@@ -71,57 +56,12 @@ function anchors() {
   return outList;
 }
 
-async function launch() {
-  // (the pack's Amazon Linux 2 libraries: unpacked only "on Lambda with Node 18"; a warm
-  // container may keep another version's browser in /tmp)
-  process.env.AWS_EXECUTION_ENV = 'AWS_Lambda_nodejs18.x';
-  rmSync('/tmp/chromium', { force: true });
-  const chromium = (await import('@sparticuz/chromium-min')).default;
-  const puppeteer = (await import('puppeteer-core')).default;
-  const exe = await chromium.executablePath(PACK);
-  // Debian 10's NSS / NSPR (shipped with the action), before Amazon Linux 2's
-  process.env.LD_LIBRARY_PATH = `${join(__dirname, 'libs')}:${process.env.LD_LIBRARY_PATH || ''}`;
-  return puppeteer.launch({
-    args: chromium.args.filter((a) => !['--single-process', '--no-zygote'].includes(a)).concat(['--disable-dev-shm-usage']),
-    executablePath: exe,
-    headless: 'shell',
-    defaultViewport: { width: 1440, height: 900 },
-  });
-}
-
 /** one width of a source page → { meta, tiles: [Buffer] }; throws with a reason for the AOE team */
 async function shootWidth(browser, url, width) {
-  const page = await browser.newPage();
+  const page = await openPage(browser, width);
   try {
-    await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
-    await page.setUserAgent(UA);
-    await page.setRequestInterception(true);
-    page.on('request', (r) => {
-      let u;
-      try {
-        u = new URL(r.url());
-      } catch (e) {
-        r.continue();
-        return;
-      }
-      if (BLOCK_PATH.test(u.pathname) || BLOCK_HOST.test(u.hostname)) r.abort();
-      else r.continue();
-    });
     const captured = new Date().toISOString();
-    const resp = await page.goto(url, { waitUntil: 'load', timeout: 90000 });
-    const status = resp ? resp.status() : 0;
-    if (status !== 200) throw Object.assign(new Error(`the source answers ${status || 'nothing'}`), { source: true });
-    if (!sameUrl(page.url(), url)) throw Object.assign(new Error(`the source redirects to ${page.url()}`), { source: true });
-    await page.addStyleTag({ content: '#onetrust-consent-sdk, #onetrust-banner-sdk { display: none !important; }' });
-    await page.evaluate(async () => {
-      const step = Math.round(window.innerHeight * 0.8);
-      for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
-        window.scrollTo(0, y);
-        await new Promise((r) => { setTimeout(r, 150); });
-      }
-      window.scrollTo(0, 0);
-    });
-    await new Promise((r) => { setTimeout(r, 2500); });
+    const status = await loadSource(page, url);
     const height = await page.evaluate(() => document.documentElement.scrollHeight);
     const leaves = await page.evaluate(anchors);
     const title = await page.title();

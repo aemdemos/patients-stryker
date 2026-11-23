@@ -17,8 +17,8 @@ export const REVIEW = {
   // /content/std)
   base: { label: 'Standard', prefix: '/std', localPrefix: '/content/std' },
   // what it is compared with, the first one by default: rs = the as-is copy under /rs, src = the
-  // source page's snapshot
-  compare: ['rs', 'src'],
+  // source page's snapshot, live = a live copy of the source page rendered now by the backend
+  compare: ['rs', 'src', 'live'],
   // the design panel (variants, widths, backgrounds, text sets, groups)
   design: true,
   // the widths offered, the first one by default (the source snapshots have these two)
