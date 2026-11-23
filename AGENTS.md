@@ -522,6 +522,9 @@ do not fix findings unless asked. They compare a source page with its EDS page:
 # One pair: source URL first, then the EDS URL (one URL alone = EDS page only)
 npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
 
+# A list of pairs from a CSV file (columns: source,eds,name)
+npm run test:a11y:keyboard -- --csv pages.csv
+
 # Configured pairs (tests/a11y/keyboard.config.mjs)
 npm run test:a11y:keyboard
 
@@ -530,16 +533,22 @@ npm run test:a11y:keyboard -- --help
 ```
 
 - Take source URLs from the migration (`.migration/`, import scripts) or the
-  user. Never guess them.
+  user. Never guess them. For more than one pair, write a CSV (outside `tests/`,
+  e.g. in `migration-work/`) and use `--csv`.
+- Use `--label` to name a run when the same pages are tested more than once
+  (e.g. `before-fix`, `after-fix`).
 - Keep `--source-concurrency` at its default (2) or lower. The source is
   usually a live production site.
 - Fit `--workers` (default 2) to the machine. Each worker starts its own
   browser: use `--workers 1` on small machines. `--viewport desktop` halves the run.
 - Use `--name` for a short pair name when the default (last part of the EDS
   path) is unclear.
-- Report per page (source and EDS) and the differences from the reporter output or
-  `test-results/keyboard/*.compare.json`: **Regression**, **Improvement**,
-  **Both fail**, and checks found on one site only. Name the URLs tested.
+- Every run is kept in `a11y-results/keyboard/<date>_<time>_<label>/` (git-ignored),
+  with `report.html`, `run.json`, `pages/` and `compare/`. All runs are listed in
+  `a11y-results/keyboard/index.json`. The format is in `tests/a11y/RESULTS.md`.
+- Report per page (source and EDS) and the differences, from the reporter output or
+  the run's `compare/*.json`: **Regression**, **Improvement**, **Both fail**, and
+  checks found on one site only. Name the URLs tested and the report path.
 - Source results are information only. An EDS page fails on a keyboard trap, no
   visible focus, a component that doesn't respond to its keys, or a missing skip
   link the source has.

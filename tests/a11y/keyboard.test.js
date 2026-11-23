@@ -10,35 +10,30 @@ import {
 } from './lib/tab-walk.js';
 import { checkObscured, checkFocusVisible } from './lib/focus-visible.js';
 import runComponentChecks from './lib/components.js';
-import { pageVerdict } from './lib/compare.js';
+import { pageVerdict } from './lib/compare.mjs';
+import { absoluteEds } from './lib/pairs.mjs';
+import { readJson, SCHEMA_VERSION } from './lib/run-store.mjs';
 
 // One test per page, site and viewport, each in its own browser context.
-// Results: one JSON file per page in the keyboard project's outputDir; the
-// keyboard reporter compares source and EDS after all tests have finished.
+//
+// run-keyboard.js creates the run folder (A11Y_KBD_RUN_DIR) and its run.json
+// with the pairs and viewports to test. Each test writes one JSON file to
+// <run folder>/pages/; the keyboard reporter compares source and EDS once all
+// tests have finished. Without a run folder (Playwright started directly), the
+// configured pairs are tested and results go to the project's outputDir.
 
-const BASE_URL = (process.env.A11Y_BASE_URL || 'http://localhost:3000').replace(/\/$/, '');
-const absolute = (u) => (/^https?:\/\//i.test(u) ? u : `${BASE_URL}${u.startsWith('/') ? '' : '/'}${u}`);
-const safeName = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-// default pair name: the last part of the EDS path ("/us/en/ivs/" → "ivs",
-// ".../neuroelite-fellows-program" → "neuroelite-fellows-program")
-const shortName = (u) => {
-  const parts = new URL(absolute(u)).pathname.replace(/\.html$/, '').split('/').filter(Boolean);
-  if (parts[parts.length - 1] === 'index') parts.pop();
-  return safeName(parts[parts.length - 1] || 'home') || 'home';
-};
+const RUN_DIR = process.env.A11Y_KBD_RUN_DIR || null;
+const run = RUN_DIR ? readJson(path.join(RUN_DIR, 'run.json')) : null;
+if (RUN_DIR && !run) throw new Error(`run.json not found in ${RUN_DIR}`);
 
-const pairs = process.env.A11Y_KBD_EDS
-  ? [{
-    name: safeName(process.env.A11Y_KBD_NAME || '') || shortName(process.env.A11Y_KBD_EDS),
-    eds: process.env.A11Y_KBD_EDS,
-    source: process.env.A11Y_KBD_SOURCE || null,
-  }]
-  : config.pairs;
-const viewportFilter = (process.env.A11Y_VIEWPORTS || '').split(',').map((v) => v.trim()).filter(Boolean);
-const viewports = viewportFilter.length
-  ? config.viewports.filter((v) => viewportFilter.includes(v.name))
+const BASE_URL = process.env.A11Y_BASE_URL || 'http://localhost:3000';
+const pairs = run
+  ? run.pairs
+  : config.pairs.map((p) => ({ ...p, eds: absoluteEds(p.eds, BASE_URL) }));
+const viewports = run
+  ? config.viewports.filter((v) => run.options.viewports.includes(v.name))
   : config.viewports;
-const sourceConcurrency = Number(process.env.A11Y_SOURCE_CONCURRENCY) || config.sourceConcurrency;
+const sourceConcurrency = (run && run.options.sourceConcurrency) || config.sourceConcurrency;
 
 const withoutHash = (u) => u.split('#')[0];
 
@@ -140,10 +135,14 @@ for (const pair of pairs) {
       for (const viewport of viewports) {
         test(`keyboard: ${pair.name} › ${site} › ${viewport.name}`, async ({ browser }, testInfo) => {
           testInfo.setTimeout(config.testTimeoutMs);
-          const url = absolute(pair[site]);
+          const url = pair[site];
+          // locks live in Playwright's own output folder (emptied at each run)
           const outDir = testInfo.project.outputDir;
-          fs.mkdirSync(outDir, { recursive: true });
+          const pagesDir = path.join(RUN_DIR || outDir, 'pages');
+          fs.mkdirSync(pagesDir, { recursive: true });
           const result = {
+            schemaVersion: SCHEMA_VERSION,
+            runId: run ? run.runId : null,
             pair: pair.name,
             site,
             viewport: viewport.name,
@@ -177,7 +176,7 @@ for (const pair of pairs) {
             if (slot) slot.release();
             result.durationMs = Date.now() - started;
             const file = `${pair.name}__${viewport.name}__${site}.json`;
-            fs.writeFileSync(path.join(outDir, file), JSON.stringify(result, null, 2));
+            fs.writeFileSync(path.join(pagesDir, file), `${JSON.stringify(result, null, 2)}\n`);
           }
 
           // source results are information only; the EDS page passes or fails

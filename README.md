@@ -91,9 +91,16 @@ are not part of the PR workflow.
 # Compare one page: source URL first, then the EDS URL
 npm run test:a11y:keyboard -- https://patients.stryker.com/us/en/ivs/index.html http://localhost:3000/us/en/ivs/
 
+# Compare a list of pages from a CSV file (columns: source,eds,name)
+npm run test:a11y:keyboard -- --csv my-pages.csv
+
 # All options, defaults and examples
 npm run test:a11y:keyboard -- --help
 ```
+
+Every run is kept in its own folder, with an HTML report:
+`a11y-results/keyboard/<date>_<time>_<label>/report.html`. The last lines of the
+terminal output show its path.
 
 Put `--` before any argument or option. Without it, npm reads them itself:
 `npm run test:a11y:keyboard --help` shows npm's own help, not the test's.
@@ -103,12 +110,15 @@ Put `--` before any argument or option. Without it, npm reads them itself:
 ```text
 npm run test:a11y:keyboard -- [options] <source-url> <eds-url>   compare one pair
 npm run test:a11y:keyboard -- [options] <eds-url>                one EDS page, no comparison
+npm run test:a11y:keyboard -- [options] --csv <file>             every pair in a CSV file
 npm run test:a11y:keyboard -- [options]                          pairs in tests/a11y/keyboard.config.mjs
 ```
 
 | Option | Environment variable | Default | What it does |
 |---|---|---|---|
-| `--name <name>` | `A11Y_KBD_NAME` | last part of the EDS path (e.g. `ivs`) | Short name for the pair in the output and result file names |
+| `--csv <file>` | `A11Y_KBD_CSV` | | Test the pairs in a CSV file (see below) |
+| `--name <name>` | `A11Y_KBD_NAME` | last part of the EDS path (e.g. `ivs`) | Short name for one pair in the output and result file names |
+| `--label <text>` | `A11Y_KBD_LABEL` | `--name`, CSV file name, pair name or `pairs` | Label of the run, used in its folder name (e.g. `before-fix`, `after-fix`) |
 | `--viewport <names>` | `A11Y_VIEWPORTS` | all (`desktop` 1280px, `mobile` 390px) | Viewports to test, comma-separated |
 | `--workers <n>` | `A11Y_WORKERS` | `2` | Pages tested in parallel. Each worker starts its own browser |
 | `--source-concurrency <n>` | `A11Y_SOURCE_CONCURRENCY` | `2` | Most pages open at once on one source host |
@@ -125,28 +135,77 @@ npm run test:a11y:keyboard -- --name neuroelite --viewport desktop --workers 1 <
 
 # Configured pairs, EDS paths on a preview host instead of the local server
 npm run test:a11y:keyboard -- --base-url https://main--patients-stryker--aemdemos.aem.page
+
+# The same pages before and after a fix, with labels to tell the runs apart
+npm run test:a11y:keyboard -- --label before-fix <source-url> <eds-url>
+npm run test:a11y:keyboard -- --label after-fix <source-url> <eds-url>
 ```
+
+#### A list of pages: CSV input
+
+```csv
+# lines starting with # and empty lines are ignored
+source,eds,name
+https://patients.stryker.com/us/en/ivs/index.html,/us/en/ivs/,ivs-home
+https://patients.stryker.com/us/en/ent/index.html,https://main--patients-stryker--aemdemos.aem.page/us/en/ent/,
+,/us/en/ivs/get-the-facts,
+```
+
+- The header row is required. Columns: `source`, `eds`, and optionally `name`.
+- `source`: the original page as a full URL. Leave it empty to test only the EDS page.
+- `eds`: a full URL, or a path joined with `--base-url`.
+- `name`: optional. Default: the last part of the EDS path, with `-2`, `-3` added if two rows end the same way.
+- Values containing commas go in double quotes.
+- Problems are listed with their line number, and nothing is tested until the file is correct.
+- Example: [`tests/a11y/keyboard-pages.example.csv`](tests/a11y/keyboard-pages.example.csv).
 
 #### Reading the results
 
-The terminal shows, in order:
+**Every run is kept**, never overwritten, in its own folder outside git:
+
+```text
+a11y-results/keyboard/
+  index.json                                 every run, newest first (label, date, URLs, totals)
+  latest.json                                the newest run
+  2026-11-24_140512_neuroelite/              <date>_<time>_<label>
+    report.html                              open in a browser: overview and details
+    run.json                                 when, options, git commit, pairs, totals, status
+    pages/<name>__<viewport>__<site>.json    one per page
+    compare/<name>__<viewport>.json          source vs EDS, one per pair and viewport
+```
+
+- **The label** is `--label` if given, otherwise the CSV file name, the pair name
+  (one pair) or `pairs` (configured pairs), so a folder name is never only a date.
+- **To find an earlier run,** search `index.json` by label, date or URL.
+- **To clean up,** delete run folders you no longer need.
+- **The format** of every file is described in
+  [`tests/a11y/RESULTS.md`](tests/a11y/RESULTS.md), for building other reports
+  or tools on top of it.
+
+**The HTML report** (`report.html`) is one file that works offline:
+- **Totals:** pairs, pages, EDS results failing, regressions, improvements, both fail.
+- **Overview:** one row per pair and viewport.
+- **Per pair:** expandable sections with each site's summary, the EDS failures,
+  the differences, checks and tab stops found on one site only, warnings, and
+  links to the JSON files.
+
+To rebuild a report from the JSON files:
+`npm run test:a11y:keyboard:report -- [run-folder]`. Without a folder, it rebuilds
+the latest run.
+
+**The terminal** shows, in order:
 
 1. One line per page test as it finishes: `✓` / `✘`, then pair, site and viewport.
 2. **Pages tested**: the source and EDS URL of each pair.
-3. Per pair and viewport: one summary line per site (tab stops, traps, stops
-   without visible focus, skip link, component key checks), the EDS failures
-   (`✘`), and the differences between the two sites.
+3. Per pair and viewport:
+   - one summary line per site: tab stops, traps, stops without visible focus, skip link, component key checks
+   - the EDS failures (`✘`)
+   - the differences between the two sites
+4. The report path and the run folder.
 
 Differences are labelled **Regression** (passes on source, fails on EDS),
 **Improvement** (fails on source, passes on EDS) and **Both fail**. Checks found on
 one site only (e.g. a menu that exists only on EDS) are counted separately.
-
-The details are in JSON files in `test-results/keyboard/` (replaced on every run):
-
-| File | Content |
-|---|---|
-| `<name>__<viewport>__source.json`, `<name>__<viewport>__eds.json` | One page: every tab stop, focus results, traps, skip link, each component and key |
-| `<name>__<viewport>.compare.json` | One pair: differences, checks on one site only, tab stops found on one site only |
 
 **Pass/fail.** Source results are information only. An EDS page fails on a keyboard
 trap, a stop without visible focus, a component that does not respond to its keys,
@@ -200,10 +259,13 @@ content (forms, embeds) is present.
 | File | Purpose |
 |---|---|
 | `tests/a11y/keyboard.config.mjs` | Pairs, viewports, defaults and limits (each setting is commented) |
-| `tests/a11y/run-keyboard.js` | Command line: options, `--help`, starts Playwright |
+| `tests/a11y/run-keyboard.js` | Command line: options, `--help`, CSV, creates the run folder, starts Playwright |
 | `tests/a11y/keyboard.test.js` | One test per page, site and viewport |
-| `tests/a11y/keyboard.reporter.js` | Terminal output and the source vs EDS comparison |
-| `tests/a11y/lib/` | The checks: `tab-walk.js`, `focus-visible.js`, `components.js`, `compare.js`, plus `page-helpers.js` (in-page helpers, read-only guard) and `host-slots.js` (per-host page limit) |
+| `tests/a11y/keyboard.reporter.js` | Terminal output; finishes the run (comparison, totals, `index.json`, report) |
+| `tests/a11y/report-keyboard.js` | `npm run test:a11y:keyboard:report`: rebuilds a run's report |
+| `tests/a11y/keyboard-pages.example.csv` | Example CSV input |
+| `tests/a11y/RESULTS.md` | Result folders and file format |
+| `tests/a11y/lib/` | The checks: `tab-walk.js`, `focus-visible.js`, `components.js`. Results: `compare.mjs` (verdicts, source vs EDS), `report.mjs` (HTML report), `run-store.mjs` (run folders, `index.json`), `pairs.mjs` (pairs and CSV). Helpers: `page-helpers.js` (in-page helpers, read-only guard), `host-slots.js` (per-host page limit) |
 
 ## Local development
 

@@ -26,7 +26,7 @@ export default defineConfig({
       testMatch: 'keyboard.test.js',
       fullyParallel: true,
       timeout: keyboard.testTimeoutMs,
-      outputDir: keyboard.resultsDir,
+      outputDir: keyboard.playwrightOutputDir,
     },
   ],
 });

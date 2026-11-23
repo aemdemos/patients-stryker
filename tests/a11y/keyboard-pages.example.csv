@@ -1,0 +1,8 @@
+# Pages for: npm run test:a11y:keyboard -- --csv <file>
+# Columns: source (original page, full URL; empty = test the EDS page only),
+#          eds (full URL, or a path joined with --base-url),
+#          name (optional short name; default: last part of the EDS path).
+# Lines starting with # and empty lines are ignored.
+source,eds,name
+https://patients.stryker.com/us/en/ivs/index.html,/us/en/ivs/,ivs-home
+https://patients.stryker.com/us/en/ent/index.html,/us/en/ent/,ent-home

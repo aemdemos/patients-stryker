@@ -59,7 +59,10 @@ export default {
   navigationTimeoutMs: 45000,
   // how long to wait for a consent banner to appear after load
   cookieBannerWaitMs: 3000,
-  resultsDir: 'test-results/keyboard',
+  // results of every run, one folder per run (git-ignored; see tests/a11y/RESULTS.md)
+  resultsRoot: 'a11y-results/keyboard',
+  // Playwright's own working folder (emptied at the start of each run)
+  playwrightOutputDir: 'test-results/keyboard',
   cookieBanner: {
     // 'patients.stryker.com': { banner: '#onetrust-banner-sdk', dismiss: '#onetrust-reject-all-handler' },
   },

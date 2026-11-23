@@ -139,6 +139,7 @@ export function comparePair(source, eds) {
     escalations.push({ check: 'Skip link', message: 'the source page has a skip link, the EDS page does not' });
   }
   return {
+    schemaVersion: 1,
     pair: eds.pair,
     viewport: eds.viewport,
     sourceUrl: source.url,
@@ -156,12 +157,44 @@ export function comparePair(source, eds) {
   };
 }
 
-/** Reads every page result in `dir`, writes one comparison file per pair and viewport. */
-export function compareResults(dir) {
-  if (!fs.existsSync(dir)) return { pages: [], comparisons: [] };
-  const pages = fs.readdirSync(dir)
-    .filter((f) => f.endsWith('.json') && !f.endsWith('.compare.json'))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+/** Counts for one page result (used by the terminal summary and the HTML report). */
+export function pageStats(p) {
+  const { failures, warnings } = pageVerdict(p);
+  if (p.error) {
+    return {
+      error: p.error, failures: failures.length, warnings: warnings.length,
+    };
+  }
+  const fv = p.focusVisible || { missing: [], checked: 0 };
+  const comps = Object.values(p.components || {}).flat();
+  const keys = comps.flatMap((c) => Object.values(c.keys));
+  return {
+    stops: p.tabOrder.count,
+    complete: p.tabOrder.completed,
+    traps: (p.traps || []).filter((t) => t.failure).length,
+    noVisibleFocus: fv.missing.length,
+    focusChecked: fv.checked,
+    skipLink: p.skipLink ? p.skipLink.status : null,
+    components: comps.length,
+    keyChecksPassed: keys.filter((k) => k.result === 'pass').length,
+    keyChecksFailed: keys.filter((k) => k.result === 'fail').length,
+    failures: failures.length,
+    warnings: warnings.length,
+  };
+}
+
+/**
+ * Reads the page results in `<runDir>/pages/` and writes one comparison per pair
+ * and viewport to `<runDir>/compare/<name>__<viewport>.json`.
+ */
+export function compareResults(runDir) {
+  const pagesDir = path.join(runDir, 'pages');
+  const compareDir = path.join(runDir, 'compare');
+  if (!fs.existsSync(pagesDir)) return { pages: [], comparisons: [] };
+  const pages = fs.readdirSync(pagesDir)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .map((f) => JSON.parse(fs.readFileSync(path.join(pagesDir, f), 'utf8')));
   const groups = new Map();
   pages.forEach((p) => {
     const k = `${p.pair}__${p.viewport}`;
@@ -169,10 +202,11 @@ export function compareResults(dir) {
     groups.get(k)[p.site] = p;
   });
   const comparisons = [];
+  fs.mkdirSync(compareDir, { recursive: true });
   groups.forEach((g, k) => {
     if (!g.source || !g.eds || g.source.error || g.eds.error) return;
     const c = comparePair(g.source, g.eds);
-    fs.writeFileSync(path.join(dir, `${k}.compare.json`), JSON.stringify(c, null, 2));
+    fs.writeFileSync(path.join(compareDir, `${k}.json`), `${JSON.stringify(c, null, 2)}\n`);
     comparisons.push(c);
   });
   return { pages, comparisons };
