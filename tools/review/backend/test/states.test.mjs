@@ -5,7 +5,9 @@
  * AOE status rows), thread counts.
  * usage: node tools/review/backend/test/states.test.mjs
  */
-import { pageState, threadState, stateAllowed } from '../../threads.js';
+import {
+  pageState, threadState, stateAllowed, batchProblem, orgProblem,
+} from '../../threads.js';
 
 let n = 0;
 const row = (item, kind, value, reviewer = 'Jane', role = 'reviewer') => {
@@ -62,5 +64,18 @@ cases.forEach(([label, rows, want]) => {
 const p = pageState([opener, msg, row(B, 'done:comment', true), row('note:n1', 'note', { id: 'n1', text: 'odd' }), aoe('page', 'state', 'waiting-customer')]);
 check('counts open / done threads; who set the status', p.threads.open === 1 && p.threads.done === 1 && p.set?.by === 'Iustin' && p.set.role === 'aoe'
   && p.reviewers.join() === 'Jane', JSON.stringify(p));
+// batches: organisation, not activity
+const onlyBatch = pageState([aoe('page', 'batch', 3)]);
+check('a batch mark alone: not reviewed yet, no activity, its batch', onlyBatch.state === 'unreviewed' && onlyBatch.last === null && onlyBatch.batch === 3, JSON.stringify(onlyBatch));
+const moved = pageState([aoe('page', 'batch', 3), row('page', 'comment', 'hi'), aoe('page', 'batch', 5)]);
+check('the newest batch wins; activity still counts', moved.batch === 5 && moved.state === 'in-review' && moved.last?.by === 'Jane', JSON.stringify(moved));
+check('unmarked (null): no batch', pageState([aoe('page', 'batch', 2), aoe('page', 'batch', null)]).batch === null);
+check('batch values: 1–999 or null', !batchProblem('1') && !batchProblem('999') && !batchProblem('null') && ['0', '1000', '2.5', '"3"', 'x'].every((v) => batchProblem(v)));
+// groups and representatives
+const g = pageState([aoe('page', 'group', 7), aoe('page', 'representative', true)]);
+check('a group and its representative: organisation, no activity', g.group === 7 && g.representative === true && g.state === 'unreviewed' && g.last === null, JSON.stringify(g));
+check('a representative only within a group', pageState([aoe('page', 'representative', true)]).representative === false);
+check('out of the group: no representative', pageState([aoe('page', 'group', 7), aoe('page', 'representative', true), aoe('page', 'group', null)]).representative === false);
+check('group / representative values', !orgProblem('group', '12') && orgProblem('group', '"a"') && !orgProblem('representative', 'false') && orgProblem('representative', '1'));
 console.log(failures ? `${failures} failures` : 'all passed');
 process.exit(failures ? 1 : 0);

@@ -1,8 +1,10 @@
 /*
- * Review tool shell: the standard page (/std) as the base, compared with its as-is version (/rs)
- * or a snapshot of the source page (www.stryker.com, capture-snapshots.mjs); desktop or phone
- * width, flip / overlay / side by side, text-matched scroll sync, the page's blocks with their
- * variants, comments, saving. Runs on preview hosts only (the branch preview, the workspace
+ * Review tool shell: the page under review as the base (config.js: the migrated page at its final
+ * path, or the standard page under /std), compared with a snapshot of the source page
+ * (www.stryker.com, capture-snapshots.mjs) or its as-is version (/rs, standard pages only); the
+ * widths of config.js, flip / overlay / side by side, text-matched scroll sync, the page status,
+ * comments, QA notes, saving; the design panel (the page's blocks with their variants) when
+ * config.js has design on. Runs on preview hosts only (the branch preview, the workspace
  * preview); the frames are on the same host, so the shell reads and scrolls them directly.
  */
 import { leaves, buildAnchors, mapY } from './sync.js';
@@ -12,6 +14,14 @@ import {
   threadState, roleOf, pageState, STATES_BY_ROLE,
 } from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
+import { REVIEW, storageKey } from './config.js';
+import loadPages, { editUrl } from './pages.js';
+import {
+  loadShots, loadVersion, requestShot, shotTag,
+} from './shots.js';
+import {
+  loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
+} from './batches.js';
 
 const { hostname } = window.location;
 // the workspace preview: the local dev server, also seen through the coder preview's address
@@ -19,20 +29,26 @@ const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcode
 const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
 // the workspace preview serves the imported documents under /content
 const CONTENT = LOCAL ? '/content' : '';
+// the page under review (config.js): its path prefix here (the migrated pages at their final
+// paths; the standard pages under /std)
+const BASE = LOCAL ? REVIEW.base.localPrefix : REVIEW.base.prefix;
+const BASE_LABEL = REVIEW.base.label;
+const BASE_WORD = BASE_LABEL.toLowerCase();
 // the snapshot tiles: on the workspace preview the local copy, else Document Authoring's copy
 // through the branch preview (upload-snapshots.sh)
-const SNAPSHOTS = LOCAL ? './snapshots' : '/review-snapshots';
+const SNAPSHOTS = LOCAL ? REVIEW.snapshots.local : REVIEW.snapshots.preview;
 const READY_TIMEOUT = 8000;
-const NAME_KEY = 'std-review-reviewer';
+const NAME_KEY = storageKey('reviewer');
 const MODES = ['flip', 'opacity', 'side'];
 const COMPARE = { rs: 'as-is', src: 'source' };
+const WIDTHS = REVIEW.widths.map((w) => w.vp);
 
 const params = new URLSearchParams(window.location.search);
 const state = {
   page: params.get('page') || '',
-  vp: params.get('vp') === '375' ? 375 : 1440,
-  mode: MODES.includes(params.get('mode')) ? params.get('mode') : 'flip',
-  cmp: params.get('cmp') === 'src' ? 'src' : 'rs',
+  vp: WIDTHS.includes(Number(params.get('vp'))) ? Number(params.get('vp')) : WIDTHS[0],
+  mode: MODES.includes(params.get('mode')) ? params.get('mode') : REVIEW.mode,
+  cmp: REVIEW.compare.includes(params.get('cmp')) ? params.get('cmp') : REVIEW.compare[0],
   show: ['rs', 'cmp'].includes(params.get('show')) ? 'cmp' : 'std',
   opacity: Number.isFinite(Number(params.get('op'))) && params.get('op') !== null ? Number(params.get('op')) : 50,
   sync: true,
@@ -48,9 +64,20 @@ const quietUntil = { std: 0, rs: 0, src: 0 };
 let anchors = [];
 // the source snapshot of the page at the current width (meta.json of capture-snapshots.mjs)
 let snapshot = null;
+// the page's source shots (shots.js): its history, the full versions read so far, the one shown
+// (null: the newest)
+const shots = {
+  page: null, data: null, full: new Map(), chosen: null,
+};
+// (the shot box reloads the snapshot, defined after it)
+const shotHooks = { reload: () => {}, wait: () => {} };
 // live source URLs of the pages with a snapshot (the meta's url)
 const SOURCE = {};
+// every page of the review, and the ones the batch / area filters let through (picker, stepping)
+let allPages = [];
 let pages = [];
+// every page's organisation: path → { batch, group, representative } (batches.js)
+let orgOf = new Map();
 let rebuildTimer;
 let noteShown = false;
 let targetShown = false;
@@ -71,7 +98,7 @@ function writeUrl() {
   if (state.page) p.set('page', state.page);
   p.set('vp', state.vp);
   p.set('mode', state.mode);
-  if (state.cmp === 'src') p.set('cmp', 'src');
+  if (state.cmp !== REVIEW.compare[0]) p.set('cmp', state.cmp);
   if (state.mode === 'flip' && state.show === 'cmp') p.set('show', 'cmp');
   if (state.mode === 'opacity') p.set('op', state.opacity);
   window.history.replaceState(null, '', `${window.location.pathname}?${p}`);
@@ -108,9 +135,9 @@ function layout() {
   $('.rv-opacity input').value = state.opacity;
   $('.rv-opacity-label').textContent = COMPARE[state.cmp];
   const other = COMPARE[state.cmp];
-  let showing = `Standard and ${other}`;
-  if (state.mode === 'flip') showing = state.show === 'std' ? `Showing: standard (Space: ${other})` : `Showing: ${other} (Space: standard)`;
-  else if (state.mode === 'opacity') showing = `${other[0].toUpperCase()}${other.slice(1)} over standard, ${state.opacity}%`;
+  let showing = `${BASE_LABEL} and ${other}`;
+  if (state.mode === 'flip') showing = state.show === 'std' ? `Showing: ${BASE_WORD} (Space: ${other})` : `Showing: ${other} (Space: ${BASE_WORD})`;
+  else if (state.mode === 'opacity') showing = `${other[0].toUpperCase()}${other.slice(1)} over ${BASE_WORD}, ${state.opacity}%`;
   $('.rv-showing').textContent = showing;
   writeUrl();
 }
@@ -212,7 +239,7 @@ let pageKeys = { byId: {}, byKey: {} };
 let savedLoad = Promise.resolve();
 // this reviewer's unsaved changes on the page: `item|kind` → value; kept in the browser until Save
 let drafts = new Map();
-const DRAFTS_KEY = 'std-review-drafts';
+const DRAFTS_KEY = storageKey('drafts');
 const reviewer = () => $('.rv-reviewer').value.trim();
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 // `item|kind`: the item may hold `|` itself (a group key), the kind never does
@@ -829,7 +856,7 @@ function blockRow(item, review) {
 
 /* ---------- QA notes: the list and the editor ---------- */
 
-const WIDTH_NAMES = { 1440: 'desktop', 375: 'phone' };
+const WIDTH_NAMES = Object.fromEntries(REVIEW.widths.map((w) => [w.vp, w.label.toLowerCase()]));
 const noteId = () => (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
 /** the page's notes from its saved state (the latest row of each note), deleted ones aside */
@@ -990,7 +1017,10 @@ function currentRows() {
 
 /** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
 function renderPageStatus() {
-  const st = pageState(currentRows());
+  const own = pageState(currentRows());
+  // approving one page of a group approves the group (threads.js withGroupApproval)
+  const g = !own.approved ? orgOf.get(state.page)?.groupApproved : null;
+  const st = g && ['unreviewed', 'in-review'].includes(own.state) ? { ...own, state: 'approved' } : own;
   const pending = drafts.has('page|state');
   const by = st.set && !pending ? `set by ${st.set.by}${st.set.role === 'aoe' ? ' (AOE)' : ''} · ${when(st.set.at)}` : '';
   $('.rv-status-banner').className = `rv-status-banner st-${st.state}`;
@@ -998,6 +1028,7 @@ function renderPageStatus() {
     el('span', { class: 'rv-status-kicker' }, 'Status of this page'),
     el('strong', {}, STATUS_LABELS[st.state]),
     el('span', { class: 'rv-status-by' }, pending ? 'unsaved: Save to apply it' : by),
+    g ? el('span', { class: 'rv-status-group' }, `Approved with its group: ${g.page} approved by ${g.by}, ${when(g.at)}`) : null,
   );
   const badge = $('.rv-page-badge');
   badge.className = `rv-page-badge st-${st.state}`;
@@ -1022,6 +1053,7 @@ function renderPageBox() {
 }
 
 function listBlocks() {
+  if (!REVIEW.design) return;
   // (a redraw keeps the panel where it was: emptying the list would scroll it to the top)
   const panel = $('.rv-panel');
   const panelTop = panel.scrollTop;
@@ -1106,6 +1138,95 @@ function whenSwitcher() {
 
 /* ---------- frames ---------- */
 
+/** the Source shot box (Feedback panel): the history, the shot's details, Refresh (AOE team) */
+function renderShotBox() {
+  const box = $('.rv-shotbox-body');
+  if (!box) return;
+  const { data } = shots;
+  if (!data) {
+    box.replaceChildren(el('p', { class: 'rv-none' }, 'The history of source shots shows with your review link.'));
+    return;
+  }
+  const n = data.versions.length;
+  const newestFirst = [...data.versions].map((v, i) => ({ v, i })).reverse();
+  const shown = data.versions.find((x) => x.id === shots.chosen) || data.versions[n - 1];
+  const pick = n ? el('select', {
+    class: 'rv-shot-pick',
+    'aria-label': 'Source shot',
+    onchange: (e) => {
+      shots.chosen = e.target.value;
+      shotHooks.reload();
+      renderShotBox();
+    },
+  }, ...newestFirst.map(({ v, i }) => el('option', { value: v.id }, `${when(v.captured)}${shotTag(i, n) ? ` (${shotTag(i, n)})` : ''}`))) : null;
+  if (pick) pick.value = shown.id;
+  const req = data.request;
+  let reqText = '';
+  if (req?.status === 'pending') reqText = `New shot asked for by ${req.by}, ${when(req.at)}: the backend is taking it, it shows here within a few minutes.`;
+  if (req?.status === 'failed') reqText = `The new shot asked for by ${req.by} could not be taken: ${req.reason}`;
+  const refresh = el('button', {
+    type: 'button',
+    class: 'rv-shot-refresh rv-aoe-only',
+    ...(req?.status === 'pending' ? { disabled: '' } : {}),
+    title: 'Take a new shot of the source page at every width; every earlier shot is kept',
+    onclick: async (e) => {
+      e.target.disabled = true;
+      const { page } = state;
+      const r = await requestShot(page);
+      if (state.page !== page) return;
+      if (r.error) {
+        e.target.disabled = false;
+        $('.rv-shot-msg').textContent = r.error;
+        return;
+      }
+      shots.data = { ...shots.data, request: r.request };
+      renderShotBox();
+      shotHooks.wait(page, shots.data.versions.length);
+    },
+  }, req?.status === 'failed' ? 'Ask again' : 'Refresh source shot');
+  box.replaceChildren(
+    n ? pick : el('p', { class: 'rv-none' }, REVIEW.pages.scope
+      ? 'No source shot of this page yet: the backend takes the first one within 15 minutes of the page being published (with its source in the migration scope table).'
+      : 'No shot history for this page yet: the source shown is the first shot kept with the tool (no Refresh until the first shots are in the history).'),
+    n ? el('p', { class: 'rv-shot-info' }, `Taken ${when(shown.captured)} of `, el('a', { href: shown.url, target: '_blank', rel: 'noopener' }, shown.url.replace(/^https:\/\//, '')), `. ${n > 1 ? `${n} shots` : 'One shot'} so far, all kept with the date taken and a fingerprint (SHA-256) of every image.`) : null,
+    reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
+    n ? refresh : null,
+    el('p', { class: 'rv-shot-msg', 'aria-live': 'polite' }),
+  );
+}
+
+/** the page's shot history (read once per page) */
+async function shotHistory() {
+  const { page } = state;
+  if (shots.page !== page) {
+    shots.page = page;
+    shots.data = null;
+    shots.full = new Map();
+    shots.chosen = null;
+    const data = await loadShots(page);
+    if (state.page !== page) return null;
+    shots.data = data;
+    renderShotBox();
+  }
+  return shots.data;
+}
+
+/** the version shown (the chosen one, else the newest) with its anchors, or null */
+async function shownVersion() {
+  const { page } = state;
+  const data = await shotHistory();
+  if (!data || !data.versions.length || state.page !== page) return null;
+  const newest = data.versions[data.versions.length - 1];
+  const v = data.versions.find((x) => x.id === shots.chosen) || newest;
+  if (!Object.values(v.widths).some((s) => typeof s.leaves === 'number')) return v;
+  if (!shots.full.has(v.id)) {
+    const full = await loadVersion(page, v.id);
+    if (!full) return v;
+    shots.full.set(v.id, full);
+  }
+  return shots.full.get(v.id);
+}
+
 /** the source snapshot of the page at the current width: its tiles and its anchors */
 async function loadSnapshot() {
   ready.src = false;
@@ -1116,12 +1237,26 @@ async function loadSnapshot() {
   pageEl.style.height = '0';
   const want = `${state.page}|${state.vp}`;
   let meta = null;
-  try {
-    // the page's snapshot facts (both widths, committed with the tool)
-    const resp = await fetch(`./snapshot-meta${state.page}.json`);
-    if (resp.ok) meta = (await resp.json())[state.vp] || null;
-  } catch (e) {
-    meta = null;
+  const version = await shownVersion();
+  if (version) {
+    // a shot of the page's history (the backend): its folder, the first shots at the old place
+    const s = version.widths[state.vp];
+    meta = s ? {
+      ...s,
+      url: version.url,
+      dir: version.dir,
+      captured: s.captured,
+      store: version.store,
+      id: version.id,
+    } : null;
+  } else if (!shots.data?.versions.length) {
+    try {
+      // no history (no backend): the first shots' facts, committed with the tool
+      const resp = await fetch(`./snapshot-meta${state.page}.json`);
+      if (resp.ok) meta = (await resp.json())[state.vp] || null;
+    } catch (e) {
+      meta = null;
+    }
   }
   if (`${state.page}|${state.vp}` !== want) return;
   none.hidden = !!meta;
@@ -1134,8 +1269,16 @@ async function loadSnapshot() {
   const live = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
   if (live) live.href = meta.url;
   pageEl.style.height = `${meta.height}px`;
+  // (newer shots only in Document Authoring: through the preview, also on the workspace)
+  const tilesAt = meta.dir ? `${REVIEW.snapshots.preview}${state.page}${meta.dir}` : `${SNAPSHOTS}${state.page}`;
+  // (shots taken by the backend: in its own storage, through its tile action)
+  const tileSrc = (file) => (meta.store === 'files'
+    ? `${REVIEW.backend}/tile?${new URLSearchParams({
+      space: REVIEW.space, page: state.page, version: meta.id, vp: String(state.vp), file,
+    })}`
+    : `${tilesAt}/${state.vp}/${file}`);
   meta.tiles.forEach((t) => pageEl.append(el('img', {
-    src: `${SNAPSHOTS}${state.page}/${state.vp}/${t.file}`,
+    src: tileSrc(t.file),
     alt: '',
     loading: 'lazy',
     width: String(meta.width),
@@ -1143,32 +1286,59 @@ async function loadSnapshot() {
     style: `top: ${t.y}px`,
   })));
   const day = new Date(meta.captured).toLocaleDateString([], { dateStyle: 'medium' });
-  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})`;
+  const older = version && shots.data.versions[shots.data.versions.length - 1].id !== version.id;
+  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})${older ? ', an earlier shot' : ''}`;
   scroller.scrollTop = 0;
   ready.src = true;
   rebuildAnchors();
   syncFrom('std');
 }
 
+shotHooks.reload = loadSnapshot;
+// after a Refresh: the backend takes the shot within minutes; look every 20 s for 8 minutes
+shotHooks.wait = (page, had) => {
+  let tries = 0;
+  const look = async () => {
+    tries += 1;
+    if (state.page !== page || tries > 24) return;
+    const data = await loadShots(page);
+    if (state.page !== page) return;
+    if (data && (data.versions.length > had || data.request?.status === 'failed')) {
+      shots.data = data;
+      shots.chosen = null;
+      renderShotBox();
+      loadSnapshot();
+      return;
+    }
+    window.setTimeout(look, 20000);
+  };
+  window.setTimeout(look, 20000);
+};
+
 function loadPage() {
   if (!state.page) return;
   ready.std = false;
   ready.rs = false;
   anchors = [];
-  frames.std.src = `${CONTENT}/std${state.page}?review=1`;
-  frames.rs.src = `${CONTENT}/rs${state.page}`;
+  // (?review loads the design switcher in the standard page)
+  frames.std.src = `${BASE}${state.page}${REVIEW.design ? '?review=1' : ''}`;
+  if (REVIEW.compare.includes('rs')) frames.rs.src = `${CONTENT}/rs${state.page}`;
   const i = pages.findIndex((p) => p.path === state.page);
   const page = pages[i];
   $('.rv-page').value = page ? `${page.title} — ${page.path}` : state.page;
-  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : '';
+  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
+  $('.rv-batch-badge').textContent = orgLabel(orgOf.get(state.page));
   document.title = `Review: ${page ? page.title : state.page}`;
-  $('.rv-links').replaceChildren(
-    el('li', {}, el('a', { href: `${CONTENT}/std${state.page}`, target: '_blank', rel: 'noopener' }, 'Standard page')),
-    el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')),
+  $('.rv-links').replaceChildren(...[
+    el('li', {}, el('a', { href: `${BASE}${state.page}`, target: '_blank', rel: 'noopener' }, `${BASE_LABEL} page`)),
+    REVIEW.compare.includes('rs') ? el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')) : null,
     el('li', {}, el('a', { href: SOURCE[state.page] || 'https://www.stryker.com/', target: '_blank', rel: 'noopener' }, 'Live stryker.com page')),
     el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
-  );
-  $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
+    // (the AOE team's: editing needs Document Authoring rights anyway)
+    editUrl(state.page) ? el('li', { class: 'rv-aoe-only' }, el('a', { href: editUrl(state.page), target: '_blank', rel: 'noopener' }, 'Edit in Document Authoring')) : null,
+    el('li', { class: 'rv-aoe-only' }, el('a', { href: './invites.html', target: '_blank', rel: 'noopener' }, 'Invitations: make and revoke')),
+  ].filter(Boolean));
+  if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
   $('.rv-pagebox-body').replaceChildren(el('p', { class: 'rv-none' }, 'Loading the saved reviews…'));
   const loading = state.page;
   saved = new Map();
@@ -1178,7 +1348,7 @@ function loadPage() {
   notes.setNotes([]);
   loadSnapshot();
   pageKeys = { byId: {}, byKey: {} };
-  const keysLoad = fetch(`${CONTENT}/std${loading}.plain.html`)
+  const keysLoad = fetch(`${BASE}${loading}.plain.html`)
     .then((r) => (r.ok ? r.text() : ''))
     .then((html) => keysOfHtml(html))
     .catch(() => ({ byId: {}, byKey: {} }));
@@ -1281,8 +1451,8 @@ async function onFrameLoad(side) {
   if (side !== 'std') return;
   notes.attach();
   setNoteMode(notes.adding);
-  $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Preparing the variants…'));
-  const review = await whenSwitcher();
+  if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Preparing the variants…'));
+  const review = REVIEW.design ? await whenSwitcher() : null;
   if (review) {
     d.addEventListener('std-review-change', () => {
       scheduleRebuild();
@@ -1328,11 +1498,128 @@ async function onFrameLoad(side) {
 
 /* ---------- start ---------- */
 
+/** the pages the filters let through, the picker's list and the filter's summary */
+function applyFilters() {
+  const f = getFilters();
+  pages = allPages.filter((p) => passes(p.path, orgOf.get(p.path), f));
+  $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
+  const parts = [
+    f.batches.length ? f.batches.map((b) => (b === 'none' ? 'no batch' : `batch ${b}`)).join(', ') : '',
+    f.group === 'none' ? 'no group' : (f.group && `group ${f.group}`) || '',
+    f.reps ? 'representatives' : '',
+    f.area ? areaLabel(f.area) : '',
+  ].filter(Boolean);
+  $('.rv-filter summary').textContent = parts.length ? `Showing: ${parts.join(' · ')}` : 'All pages';
+  const i = pages.findIndex((p) => p.path === state.page);
+  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : `– / ${pages.length}`;
+}
+
+/** the filter popover: batches (several at once, as on the status page) and an area */
+function filterPanel() {
+  const f = getFilters();
+  const numbers = [...new Set(allPages.map((p) => orgOf.get(p.path)?.batch).filter(Boolean))]
+    .sort((a, b) => a - b);
+  const count = (b) => allPages.filter((p) => (orgOf.get(p.path)?.batch || 'none') === b).length;
+  const box = (b, text) => el('label', { class: 'rv-check' }, el('input', {
+    type: 'checkbox',
+    ...(f.batches.includes(b) ? { checked: '' } : {}),
+    onchange: (e) => {
+      const now = getFilters();
+      now.batches = e.target.checked ? [...now.batches, b] : now.batches.filter((x) => x !== b);
+      setFilters(now);
+      applyFilters();
+    },
+  }), text);
+  const areas = [...new Set(allPages.map((p) => areaOf(p.path)))].sort();
+  const area = el('select', {
+    'aria-label': 'Area',
+    onchange: (e) => {
+      setFilters({ ...getFilters(), area: e.target.value });
+      applyFilters();
+    },
+  }, el('option', { value: '' }, 'All areas'), ...areas.map((a) => el('option', { value: a }, areaLabel(a))));
+  area.value = f.area;
+  // groups: one at a time, or the pages in none; representatives only
+  const groups = [...new Set(allPages.map((p) => orgOf.get(p.path)?.group).filter(Boolean))]
+    .sort((a, b) => a - b);
+  const inGroup = (g) => allPages.filter((p) => orgOf.get(p.path)?.group === g).length;
+  const group = el('select', {
+    'aria-label': 'Group',
+    onchange: (e) => {
+      const v = e.target.value;
+      setFilters({ ...getFilters(), group: v === '' || v === 'none' ? v : Number(v) });
+      applyFilters();
+    },
+  }, el('option', { value: '' }, 'All groups'), ...groups.map((g) => el('option', { value: String(g) }, `Group ${g} (${inGroup(g)})`)), el('option', { value: 'none' }, 'In no group'));
+  group.value = String(f.group);
+  const reps = el('label', { class: 'rv-check' }, el('input', {
+    type: 'checkbox',
+    ...(f.reps ? { checked: '' } : {}),
+    onchange: (e) => {
+      setFilters({ ...getFilters(), reps: e.target.checked });
+      applyFilters();
+    },
+  }), 'Representative pages only');
+  $('.rv-filter-body').replaceChildren(
+    el('p', { class: 'rv-filter-head' }, 'Batches (none ticked: all)'),
+    ...numbers.map((b) => box(b, `Batch ${b} (${count(b)})`)),
+    count('none') ? box('none', `No batch (${count('none')})`) : null,
+    numbers.length ? null : el('p', { class: 'rv-none' }, 'No batches yet.'),
+    el('p', { class: 'rv-filter-head' }, 'Group'),
+    group,
+    reps,
+    el('p', { class: 'rv-filter-head' }, 'Area'),
+    area,
+  );
+}
+
+/** the toolbar and the panels of this review (config.js) */
+function setUpShell() {
+  document.title = REVIEW.title;
+  // the batch / area filter by the page picker, the page's batch by its status badge
+  const filter = el(
+    'details',
+    { class: 'rv-filter' },
+    el('summary', {}, 'All pages'),
+    el('div', { class: 'rv-filter-body' }),
+  );
+  filter.addEventListener('toggle', () => {
+    if (filter.open) filterPanel();
+  });
+  $('.rv-count').after(filter);
+  $('.rv-page-badge').after(el('span', { class: 'rv-batch-badge', 'aria-live': 'polite' }));
+  // the widths
+  const widths = $('[aria-label="Viewport"]');
+  widths.replaceChildren(...REVIEW.widths.map((w) => el('button', {
+    type: 'button', class: 'rv-btn', 'data-vp': String(w.vp), title: `${w.label}, ${w.vp} px wide`,
+  }, w.label)));
+  // the compare options: only this review's (one alone stays, as what the page is compared with)
+  document.querySelectorAll('[data-cmp]').forEach((b) => {
+    if (!REVIEW.compare.includes(b.dataset.cmp)) b.remove();
+  });
+  if (!REVIEW.compare.includes('rs')) panes.rs.remove();
+  panes.std.querySelector('.rv-tag').textContent = BASE_LABEL;
+  panes.std.querySelector('iframe').title = `${BASE_LABEL} page`;
+  document.querySelectorAll('[data-mode]').forEach((b) => {
+    b.title = b.title.replace(/the standard page/g, `the ${BASE_WORD} page`);
+  });
+  $('[data-action="note"]').title = `Then click the spot on the ${BASE_WORD} page (N; Esc to stop)`;
+  // the source shot box (its history, Refresh), in the feedback panel
+  $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-shotbox' }, el('h3', {}, 'Source shot'), el('div', { class: 'rv-shotbox-body' })));
+  // no design panel: its links go to the feedback panel
+  if (!REVIEW.design) {
+    const links = $('.rv-links');
+    $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links));
+    $('.rv-panel-left').remove();
+  }
+}
+
 async function start() {
+  setUpShell();
   // the two panels fold to a strip (kept per browser); the page view takes the space
   document.querySelectorAll('.rv-collapse').forEach((button) => {
     const panel = button.closest('.rv-panel');
-    const key = `std-review-panel-${button.dataset.panel}`;
+    const key = storageKey(`panel-${button.dataset.panel}`);
     const fold = (folded) => {
       panel.classList.toggle('rv-collapsed', folded);
       button.setAttribute('aria-expanded', String(!folded));
@@ -1346,7 +1633,7 @@ async function start() {
   });
   // the right panel's width: drag its left edge (kept per browser)
   const rightPanel = $('.rv-panel-right');
-  const WIDTH_KEY = 'std-review-panel-right-width';
+  const WIDTH_KEY = storageKey('panel-right-width');
   const keptWidth = Number(window.localStorage.getItem(WIDTH_KEY));
   if (keptWidth) rightPanel.style.setProperty('--rv-panel-right', `${keptWidth}px`);
   $('.rv-resize').addEventListener('pointerdown', (e) => {
@@ -1386,11 +1673,17 @@ async function start() {
     $('.rv-blocked').hidden = false;
     return;
   }
-  Object.keys(frames).forEach((side) => frames[side].addEventListener('load', () => onFrameLoad(side)));
-  const [resp, groupsResp] = await Promise.all([fetch('./pages.json'), fetch('./groups.json')]);
-  pages = resp.ok ? (await resp.json()).pages : [];
-  GROUPS = groupsResp.ok ? (await groupsResp.json()).groups : {};
-  $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
+  Object.keys(frames).forEach((side) => {
+    if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
+  });
+  allPages = await loadPages();
+  // (the first page of a group without a chosen representative: among the pages shown)
+  orgOf = (await loadOrganisation(allPages.map((p) => p.path))).org;
+  applyFilters();
+  if (REVIEW.design) {
+    const groupsResp = await fetch('./groups.json');
+    GROUPS = groupsResp.ok ? (await groupsResp.json()).groups : {};
+  }
   if (!state.page && pages.length) state.page = pages[0].path;
 
   $('.rv-page').addEventListener('change', (e) => {

@@ -8,15 +8,18 @@
  * reviewer, time (ISO), rev. (The pilot's Google Sheet route was retired on 2026-11-17.)
  */
 
+import { REVIEW, storageKey } from './config.js';
+
 export const CONFIG = {
   // where the tool runs for reviewers (links in the summary, invitations)
-  toolHost: 'standardise-v3--stryker-com--strykerenterprise.aem.page',
-  // the review backend (App Builder web actions, Stage workspace)
-  backend: 'https://892544-strykerstdreview-stage.adobeioruntime.net/api/v1/web/std-review',
+  toolHost: REVIEW.toolHost,
+  // the review backend (App Builder web actions, Stage workspace); the invitation names the
+  // review's space, so this review only reads and writes its own entries
+  backend: REVIEW.backend,
 };
 const ID = '__id__';
-const INVITE_KEY = 'std-review-invite';
-const PENDING_KEY = 'std-review-pending-backend';
+const INVITE_KEY = storageKey('invite');
+const PENDING_KEY = storageKey('pending-backend');
 
 /** CSV text → rows of fields (quoted fields, doubled quotes, line breaks inside quotes) */
 export function parseCsv(text) {

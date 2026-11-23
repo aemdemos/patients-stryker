@@ -16,15 +16,19 @@
     <button type="button" class="rs-btn st-refresh">Refresh</button>
     <a class="rs-btn" href="./index.html">Open the review tool</a>
     <a class="rs-btn st-results" href="./results.html" hidden>Results</a>
+    <a class="rs-btn st-invites" href="./invites.html" hidden>Invitations</a>
   </header>
   <main class="rs-main">
     <section class="rs-section">
       <div class="st-tiles" role="group" aria-label="Pages per state (click to filter)"></div>
       <div class="st-meter" aria-hidden="true"></div>
+      <div class="st-batches" role="group" aria-label="Review batches (click to show only those)"></div>
       <div class="st-filters">
         <label>Search <input type="search" class="st-search" placeholder="Title or path"></label>
         <label>Template <select class="st-template"><option value="">All</option></select></label>
-        <label>Business unit <select class="st-unit"><option value="">All</option></select></label>
+        <label>Area <select class="st-unit"><option value="">All</option></select></label>
+        <label>Group <select class="st-group"><option value="">All</option></select></label>
+        <label class="st-check"><input type="checkbox" class="st-reps"> Representative pages only</label>
         <label>State <select class="st-state"><option value="">All</option></select></label>
         <label>Order <select class="st-order">
           <option value="waiting">What waits for me first</option>
@@ -33,6 +37,24 @@
         </select></label>
         <label class="st-check"><input type="checkbox" class="st-new"> Only new since my last visit</label>
       </div>
+      <details class="st-mark" hidden>
+        <summary>Organise pages: batches and groups</summary>
+        <p class="rs-muted">Paste the pages (client URLs such as https://www.stryker.com/us/en/….html, one per line; paths work too). A page is in one batch and one group: marking moves it. Groups are pages of exactly the same structure; each group's representative page is the one the customer reviews for the whole group.</p>
+        <textarea class="st-mark-list" rows="6" aria-label="Pages to mark"></textarea>
+        <div class="st-mark-row">
+          <label><select class="st-mark-kind" aria-label="Batch or group"><option value="batch">Batch</option><option value="group">Group</option></select>
+            <input type="number" class="st-mark-batch" min="1" max="999" step="1" aria-label="Number"></label>
+          <button type="button" class="rs-btn st-mark-go">Mark</button>
+          <button type="button" class="rs-btn st-mark-clear">Take them out</button>
+          <button type="button" class="rs-btn st-mark-rep" title="Each pasted page becomes its group's representative (one per group)">Make the representative of its group</button>
+          <button type="button" class="rs-btn st-mark-shown" title="Fill the list with the pages the filters show">Use the pages shown</button>
+        </div>
+        <p class="st-mark-result" aria-live="polite"></p>
+      </details>
+      <details class="st-scope" hidden>
+        <summary class="st-scope-sum">Migration scope</summary>
+        <div class="st-scope-body"></div>
+      </details>
       <p class="st-count rs-muted"></p>
       <div class="st-table"></div>
       <button type="button" class="rs-btn st-more" hidden>Show more</button>

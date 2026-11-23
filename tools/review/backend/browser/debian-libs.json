@@ -1,0 +1,13 @@
+{
+  "why": "The Runtime container is Debian 10 without NSS / NSPR (Amazon's Lambda image has them). Chromium needs both, from the same system: Debian 10's own (Amazon Linux 2's NSS with Debian's NSPR fails: NSS error -8023). Fetched and checked by deploy.mjs, put first in LD_LIBRARY_PATH by the capture action.",
+  "packages": [
+    {
+      "url": "http://archive.debian.org/debian/pool/main/n/nspr/libnspr4_4.20-1_amd64.deb",
+      "sha256": "e6188fdd91ec215d12d4eca5211c2406874eb17f5b1c09d6355641a349adcec0"
+    },
+    {
+      "url": "http://archive.debian.org/debian-security/pool/updates/main/n/nss/libnss3_3.42.1-1+deb10u8_amd64.deb",
+      "sha256": "bfd3a2d48fa2aecb5d115bf2aaeccccd14c567511ddd92b1dd251559a25c164e"
+    }
+  ]
+}

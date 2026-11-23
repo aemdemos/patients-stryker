@@ -56,3 +56,15 @@ restart, automatically). The invitation link opens the tool on the branch previe
 the token in the browser and removes it from the address bar. With the results right
 (`--results`) the invitation also gives a results page link. The backend is the tool's only store
 since 2026-11-17 (the pilot's Google Sheet route is retired).
+
+## Spaces (2026-11-23)
+
+The backend serves two reviews that share page paths: the standard pages (`std`) and the client
+review of the migrated pages on main (`main`). An invitation's scope names its space
+(`scope.space`; none = `std`); `state`, `save`, `results` and `overview` read and write only that
+space. Keys: `std` as before (`p.…`, `g.…`, audit files `audit/…`), other spaces prefixed
+(`main.p.…`, `main.g.…`, `main/audit/…`), so neither space's patterns match the other's keys. The
+admin action works in `params.space` (default `std`) for every op; `invite` also takes `host` (the
+tool on a branch preview before its merge); `invites` lists every space unless one is named.
+Tests: `test/spaces.test.mjs` (the key rules), `test/spaces-live.test.mjs` (deployed: a main
+invitation sees only main; test page, cleaned up).

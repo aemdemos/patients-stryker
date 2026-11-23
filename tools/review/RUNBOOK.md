@@ -38,7 +38,9 @@ conversation. Read this first, then the documents it points to. Facts here were 
 | Content | DA `strykerenterprise/stryker-com` under `/rs/…` and `/std/…`; locally `content/rs/…`, `content/std/…` (the local preview serves them at `http://localhost:3000/content/…`) |
 | Conversion rules | `tools/importer/standardise/rules/variants.js`, run by `apply-variants.mjs` |
 | Review tool | `tools/review/` (`README.md` describes every file) |
-| Review backend | App Builder project "Stryker std review", Stage workspace `892544-strykerstdreview-stage`; code `tools/review/backend/` (`README.md`, plan `../backend-plan.md`) |
+| Review backend | App Builder project "Stryker std review", Stage workspace `892544-strykerstdreview-stage`; code `tools/review/backend/` (`README.md`, plan `../backend-plan.md`). **One backend for two reviews** (spaces): `std` (this one) and `main` (the client review of the migrated pages, branch `client-review-v3`, PR #559); the code is the same on both branches since 23 Nov 2026 |
+| Client review | branch `client-review-v3` (the tool without the design panel, `config.js` space `main`); its migration scope table in DA `review/migration-scope`; the backend takes its first source shots (action `capture`, every 15 minutes) |
+| Review config | `tools/review/config.js`: the one file that differs between the two branches |
 | Shared review rules | `tools/review/threads.js` (page statuses, chats, Done), `tools/review/blockkeys.js` (block keys) |
 | DA helpers | `tools/review/da/` (upload, verify, preview) |
 
@@ -87,6 +89,10 @@ node tools/review/backend/admin.mjs invites                  # every invitation 
 node tools/review/backend/admin.mjs revoke --id <id>
 ```
 
+Add `--space main` (and `--host client-review-v3--stryker-com--strykerenterprise.aem.page` until
+its merge) for the client review. The AOE team can also make and revoke invitations itself on the
+**Invitations** page (`tools/review/invites.html`, AOE invitations only).
+
 Give the user the `link` (and `results` link): treat links like passwords. One browser holds one
 invitation at a time; opening another link replaces it. Invitations on 2026-11-17: `test_reviewer`
 and `test_reviewer2` (customer test reviewers, the user's) and `AOE_iustinp` (the user, AOE).
@@ -127,7 +133,9 @@ Then read `to-read.json`, write the readings into `migration-work/review-summary
 ## 7. Changing the tool or the backend
 
 - Lint: `npm run lint` (no `eslint-disable`, AGENTS.md hard rules).
-- Backend: edit `tools/review/backend/`, then `node tools/review/backend/deploy.mjs [--only state,save,results,overview,admin]`.
+- Backend: edit `tools/review/backend/`, then `node tools/review/backend/deploy.mjs [--only state,save,results,overview,admin,…]`.
+  The backend serves both reviews: deploy from either branch only when its `backend/` is the same
+  as the other branch's (port a change to both), and run both reviews' tests.
 - Tests (all must pass before a commit):
 
 ```

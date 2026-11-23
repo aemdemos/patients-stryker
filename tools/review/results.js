@@ -6,14 +6,28 @@
  * to their pins; CSV downloads of the to-do lists. Test entries are hidden by default.
  */
 import { readAll, merge, inviteToken } from './store.js';
-import { variantsOf, groupLabel } from './groups.js';
 import { keysOfHtml, toPosition } from './blockkeys.js';
 import { threadState, threadKindOf, roleOf } from './threads.js';
+import { REVIEW } from './config.js';
+import loadPages from './pages.js';
+
+// the designs a block's content fits and the group labels: only with the design panel
+// (standard pages); loaded on first use
+const GROUPS_MODULE = './groups.js';
+let groupsLib = null;
+const loadGroups = async () => {
+  if (!groupsLib) {
+    groupsLib = REVIEW.design ? await import(GROUPS_MODULE)
+      : { variantsOf: () => ({ list: [], widths: [] }), groupLabel: (k) => k };
+  }
+  return groupsLib;
+};
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
 const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
-const CONTENT = LOCAL ? '/content' : '';
+// the pages under review (config.js): the migrated pages at their final paths, or /std
+const BASE = LOCAL ? REVIEW.base.localPrefix : REVIEW.base.prefix;
 const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot)$/i;
 const NAMES = {
   columns: 'Columns', 'cards-corp': 'Cards', 'hero-corp': 'Hero', video: 'Video', 'page-nav': 'Page Nav',
@@ -21,7 +35,7 @@ const NAMES = {
 const CATEGORIES = {
   text: 'Text', layout: 'Layout', image: 'Image', link: 'Link', other: 'Other',
 };
-const WIDTHS = { 1440: 'desktop', 375: 'phone' };
+const WIDTHS = Object.fromEntries(REVIEW.widths.map((w) => [w.vp, w.label.toLowerCase()]));
 const TEXT_LABELS = {
   '': 'default (Humanist 14)',
   'text-large': 'large (Humanist 17.5)',
@@ -69,7 +83,7 @@ function csvLink(name, head, rows) {
 /** the switchable blocks of a standard page (id → type, standard design, group), from its source */
 const htmlCache = new Map();
 const htmlOf = (page) => {
-  if (!htmlCache.has(page)) htmlCache.set(page, fetch(`${CONTENT}/std${page}.plain.html`).then((r) => (r.ok ? r.text() : '')));
+  if (!htmlCache.has(page)) htmlCache.set(page, fetch(`${BASE}${page}.plain.html`).then((r) => (r.ok ? r.text() : '')));
   return htmlCache.get(page);
 };
 /** the page's block keys (blockkeys.js): entries are saved under them */
@@ -77,6 +91,7 @@ const keysOf = async (page) => keysOfHtml(await htmlOf(page));
 const blockCache = new Map();
 async function blocksOf(page) {
   if (!blockCache.has(page)) {
+    const { variantsOf } = await loadGroups();
     blockCache.set(page, htmlOf(page).then((html) => {
       const doc = new DOMParser().parseFromString(`<body>${html}</body>`, 'text/html');
       const out = {};
@@ -149,7 +164,8 @@ async function render(savedRows, pages) {
   });
   const state = new Map([...byPage].map(([p, list]) => [p, merge(list)]));
   const groups = merge(rows.filter((r) => r.page === '*'));
-  const groupInfo = (await (await fetch('./groups.json')).json()).groups;
+  const groupInfo = REVIEW.design ? (await (await fetch('./groups.json')).json()).groups : {};
+  const { groupLabel } = await loadGroups();
 
   /* ---------- progress ---------- */
   // approved pages: the page state `approved`, or the older reviewed mark
@@ -252,6 +268,7 @@ async function render(savedRows, pages) {
       }
     });
   });
+  $('#designs').hidden = !REVIEW.design;
   $('#designs .rs-body').replaceChildren(
     el('h3', {}, `For all blocks like this (${groupRows.length})`),
     table(['Blocks like this', 'Design chosen', 'Reach', 'By', 'When'], groupRows),
@@ -313,7 +330,9 @@ async function start() {
     $('.rs-blocked').hidden = false;
     return;
   }
-  const { pages } = await (await fetch('./pages.json')).json();
+  document.title = `${REVIEW.title}: results`;
+  $('h1').textContent = `${REVIEW.title}: results`;
+  const pages = await loadPages();
   let all = [];
   const draw = async () => {
     const hide = $('.rs-hide-tests').checked;

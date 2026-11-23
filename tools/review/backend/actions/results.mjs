@@ -5,7 +5,7 @@
  * among them; like the `state` rows.
  */
 import {
-  open, checkInvite, inScope, readAll, reply, fail, isPreflight, inviteOf,
+  open, checkInvite, inScope, readAll, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
 
 export async function main(params) {
@@ -15,7 +15,7 @@ export async function main(params) {
     const { invite, error } = await checkInvite(stores, inviteOf(params));
     if (error) return fail(params, 401, error, 'This review link is not valid (any more): ask for a new one.');
     if (!invite.scope.results) return fail(params, 403, 'no-results', 'This review link does not include the results.');
-    const rows = (await readAll(stores.state)).filter((r) => r.page === '*' || inScope(invite.scope, r.page));
+    const rows = (await readAll(stores.state, spaceOf(invite.scope))).filter((r) => r.page === '*' || inScope(invite.scope, r.page));
     return reply(params, 200, { at: new Date().toISOString(), reviewer: invite.name, rows });
   } catch (e) {
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));

@@ -18,6 +18,36 @@
 export const ROLES = ['reviewer', 'aoe'];
 export const ANSWER_STATES = ['progress', 'done', 'wontdo', 'open'];
 export const PAGE_STATES = ['in-review', 'waiting-aoe', 'waiting-customer', 'approved', 'skip'];
+// how the AOE team organises the pages (kind on item `page`): not review activity, so they never
+// change a page's state, its threads or its latest activity. batch: the review batch (a number);
+// group: the pages of exactly the same structure (a number); representative: the group's page
+// the customer reviews for the whole group (true / false)
+export const ORG_KINDS = ['batch', 'group', 'representative'];
+export const isOrg = (r) => ORG_KINDS.includes(r.kind);
+/** a batch value: a whole number 1–999, or null (no batch) */
+export const batchProblem = (value) => {
+  let v;
+  try {
+    v = JSON.parse(value);
+  } catch (e) {
+    return 'a batch is a number (or null)';
+  }
+  return v === null || (Number.isInteger(v) && v >= 1 && v <= 999) ? null : 'a batch is a whole number from 1 to 999 (or null)';
+};
+/** an organisation value: batch and group a number 1–999 or null, representative a boolean */
+export const orgProblem = (kind, value) => {
+  if (kind === 'representative') {
+    let v;
+    try {
+      v = JSON.parse(value);
+    } catch (e) {
+      v = undefined;
+    }
+    return typeof v === 'boolean' ? null : 'representative is true or false';
+  }
+  const problem = batchProblem(value);
+  return problem && problem.replace(/a batch/g, `a ${kind}`);
+};
 /** the page statuses each side may set */
 export const STATES_BY_ROLE = {
   reviewer: ['in-review', 'waiting-aoe', 'approved', 'skip'],
@@ -106,9 +136,23 @@ export function threadState(rows) {
  *   in-review         marked in review, or any activity                          (yellow)
  *   unreviewed        nothing yet                                                (gray)
  * → { state, pageState, set: { by, role, at } | null, threads: { open, done }, choices, approved,
- *     reviewers, last, lastAoe }
+ *     reviewers, last, lastAoe, batch, group, representative }
+ * (organisation rows, ORG_KINDS, only give the batch, group and representative: no activity)
  */
-export function pageState(rows) {
+export function pageState(allRows) {
+  const org = new Map();
+  [...allRows].filter(isOrg).sort((a, b) => (a.time < b.time ? -1 : 1))
+    .forEach((r) => org.set(r.kind, r));
+  const orgValue = (kind) => {
+    try {
+      return org.has(kind) ? JSON.parse(org.get(kind).value) : null;
+    } catch (e) {
+      return null;
+    }
+  };
+  const batch = orgValue('batch');
+  const group = orgValue('group');
+  const rows = allRows.filter((r) => !isOrg(r));
   const newest = new Map();
   [...rows].sort((a, b) => (a.time < b.time ? -1 : 1)).forEach((r) => newest.set(`${r.item}|${r.kind}`, r));
   const threads = { open: 0, done: 0 };
@@ -146,7 +190,38 @@ export function pageState(rows) {
     reviewers: [...new Set(rows.filter((r) => roleOf(r) === 'reviewer').map((r) => r.reviewer))],
     last: lastAny ? { by: lastAny.reviewer, role: roleOf(lastAny), at: lastAny.time } : null,
     lastAoe: lastAoe ? { by: lastAoe.reviewer, at: lastAoe.time } : null,
+    batch: Number.isInteger(batch) ? batch : null,
+    group: Number.isInteger(group) ? group : null,
+    // (a representative only of a group)
+    representative: Number.isInteger(group) && orgValue('representative') === true,
   };
+}
+
+/**
+ * Group approval (the user's rule, 23 Nov 2026: approving one page of a group approves the
+ * group): when a page of a group is approved, every other page of the group gets
+ * groupApproved { page, by, at } (the first approval); those not reviewed yet or in review count
+ * as approved. Pages in another state (sent to the AOE team, skipped, …) keep it and show the
+ * group's approval next to it. Derived: nothing is written on the other pages, so a page moved
+ * out of the group leaves the approval.
+ */
+export function withGroupApproval(states) {
+  const groups = new Map();
+  states.filter((s) => s.group).forEach((s) => {
+    if (!groups.has(s.group)) groups.set(s.group, []);
+    groups.get(s.group).push(s);
+  });
+  groups.forEach((members) => {
+    const first = members.filter((m) => m.approved)
+      .sort((a, b) => (a.approved.at < b.approved.at ? -1 : 1))[0];
+    if (!first) return;
+    members.filter((m) => m !== first && !m.approved).forEach((m) => {
+      const { by, at } = first.approved;
+      Object.assign(m, { groupApproved: { page: first.page, by, at } });
+      if (['unreviewed', 'in-review'].includes(m.state)) Object.assign(m, { state: 'approved' });
+    });
+  });
+  return states;
 }
 
 /** every page with rows → its status (group choices, page `*`, are not a page) */

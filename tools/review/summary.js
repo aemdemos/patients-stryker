@@ -12,15 +12,27 @@
  * into themes with their own kind. AOE status rows (kind `status:<kind>` on the reviewer's item)
  * show on each piece of evidence and in the tool. DOM only (DOMParser); used by summarise.mjs.
  */
-import {
-  variantsOf, groupKey, sectionGroupKey, groupLabel,
-} from './groups.js';
 import { merge, CONFIG } from './store.js';
+import { REVIEW } from './config.js';
 import { keyOf } from './sync.js';
 import { pageKeys, toPosition } from './blockkeys.js';
 import {
   threadState, roleOf, threadKindOf,
 } from './threads.js';
+
+// the designs a block's content fits and its group (groups.js): only with the design panel
+// (standard pages); else stand-ins that know no designs. loadDesign() before summarising.
+const GROUPS_MODULE = './groups.js';
+let G = {
+  variantsOf: () => ({ list: [], widths: [] }),
+  groupKey: () => '',
+  sectionGroupKey: () => '',
+  groupLabel: (key) => key,
+};
+export async function loadDesign() {
+  if (REVIEW.design) G = await import(GROUPS_MODULE);
+  return G;
+}
 
 export const TEST_REVIEWERS = /^(tool test( b)?|save-route test|browser test|screenshot|sample .*)$/i;
 export const AOE = 'AOE';
@@ -96,11 +108,11 @@ export function pageModel(html) {
   const sections = {};
   [...doc.body.children].forEach((section, si) => {
     const styles = styleOf(section);
-    const skey = sectionGroupKey(section);
+    const skey = G.sectionGroupKey(section);
     if (skey) sections[`s${si}`] = { set: skey.split('|')[1], group: skey };
     [...section.children].filter((c) => c.matches('div[class]') && !c.matches('.section-metadata, .metadata'))
       .forEach((block, bi) => {
-        const { list, widths } = variantsOf(block);
+        const { list, widths } = G.variantsOf(block);
         const name = block.classList[0];
         const variant = list.length ? list[0] : [...block.classList].slice(1).join(' ');
         blocks[`s${si}b${bi}`] = {
@@ -110,7 +122,7 @@ export function pageModel(html) {
           widths,
           width: widths.length ? ([...block.classList].find((c) => c === 'wide-first' || c === 'wide-last') || '') : null,
           background: BACKGROUNDS.find((x) => styles.includes(x)) || '',
-          group: groupKey(block),
+          group: G.groupKey(block),
         };
       });
   });
@@ -268,7 +280,7 @@ export function summarise({
       const [item, kind] = splitKey(key);
       const m = models[page];
       let where;
-      if (item.startsWith('group:')) where = groupLabel(item.slice(6));
+      if (item.startsWith('group:')) where = G.groupLabel(item.slice(6));
       else {
         const b = m?.blocks[item];
         where = `${b ? `${typeName(b.name)} ${item}` : `text section ${item}`} on ${titles[page] || page}`;
@@ -331,7 +343,7 @@ export function summarise({
       .filter(Boolean).join(', ');
     const d = itemOf(`decision:group:${key}`, () => ({
       kind: 'decision',
-      title: `${groupLabel(key)} → ${what}`,
+      title: `${G.groupLabel(key)} → ${what}`,
       target: {
         group: key, choice: main?.kind, value: main?.value, width,
       },
@@ -441,7 +453,7 @@ export function summarise({
           where: (b && `${typeName(b.name)} ${at}`) || (s && `Text ${at}`) || 'page',
           text: n.text,
           category: CATEGORIES[n.cat] || n.cat,
-          width: n.vp === 375 ? 'phone' : 'desktop',
+          width: ({ 375: 'phone', 860: 'tablet' })[n.vp] || 'desktop',
           link: link(page, { vp: n.vp, note: n.id }),
         };
         if (!b && !s) {

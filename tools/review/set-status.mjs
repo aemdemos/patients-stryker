@@ -15,6 +15,7 @@
  */
 import { readFileSync } from 'fs';
 import { execFileSync } from 'child_process';
+import { REVIEW } from './config.js';
 
 const args = process.argv.slice(2);
 const opt = (name, fallback) => {
@@ -24,7 +25,7 @@ const opt = (name, fallback) => {
 const STATES = ['done', 'progress', 'wontdo', 'open'];
 const id = opt('--item');
 const state = opt('--state');
-const work = opt('--work', 'migration-work/review-summary/work-items.json');
+const work = opt('--work', `migration-work/review-summary${REVIEW.space === 'std' ? '' : `-${REVIEW.space}`}/work-items.json`);
 const refs = opt('--refs', '') ? opt('--refs').split(',').map((r) => r.trim()) : null;
 const dry = args.includes('--dry-run');
 const ns = opt('--ns', '892544-strykerstdreview-stage');
@@ -65,7 +66,7 @@ rows.forEach((r) => console.log(`${dry ? '(dry run) ' : ''}${r.page} ${r.item} $
 if (dry || !rows.length) process.exit(0);
 
 const resp = await fetch(`https://adobeioruntime.net/api/v1/namespaces/${ns}/actions/std-review/admin?blocking=true&result=true`, {
-  method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'answer', rows }),
+  method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'answer', rows, space: REVIEW.space }),
 });
 const body = resp.ok ? (await resp.json()).body : null;
 const saved = (body?.results || []).filter((r) => r.ok).length;

@@ -20,7 +20,7 @@ import filesLib from '@adobe/aio-lib-files';
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
-export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note'];
+export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch', 'group', 'representative'];
 export const MAX_VALUE = 20000;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
@@ -64,6 +64,21 @@ export function replyProblem(value, role) {
 }
 export const MAX_CHANGES = 100;
 export const TOOL = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page/tools/review/index.html';
+// the reviews kept apart in this backend: std (the standard pages, the default and the keys of
+// before) and main (the client review of the migrated pages on main, at their final paths)
+export const SPACES = {
+  std: { tool: TOOL },
+  main: {
+    tool: 'https://main--stryker-com--strykerenterprise.aem.page/tools/review/index.html',
+    // the migration scope table (DA sheet, previewed) and the published pages (live index)
+    scope: 'https://main--stryker-com--strykerenterprise.aem.page/review/migration-scope.json',
+    live: 'https://main--stryker-com--strykerenterprise.aem.live/us/en/query-index.json',
+  },
+};
+/** an invitation scope's space (std when it names none or an unknown one) */
+export const spaceOf = (scope) => (scope && SPACES[scope.space] && scope.space) || 'std';
+// the key prefix of a space: none for std, `<space>.` for the others
+const prefixOf = (space) => (!space || space === 'std' ? '' : `${space}.`);
 const ORIGINS = [
   /^https:\/\/[a-z0-9-]+--stryker-com--strykerenterprise\.aem\.page$/,
   /^https:\/\/preview-aemcoder\.adobe\.io$/,
@@ -73,14 +88,18 @@ const ORIGINS = [
 const b64 = (s) => Buffer.from(String(s)).toString('base64url');
 const unb64 = (s) => Buffer.from(s, 'base64url').toString();
 
-export function entryKey(page, item, kind) {
-  return page === '*' ? `g.${b64(item)}.${b64(kind)}` : `p.${b64(page)}.${b64(item)}.${b64(kind)}`;
+export function entryKey(page, item, kind, space = 'std') {
+  const pre = prefixOf(space);
+  return page === '*' ? `${pre}g.${b64(item)}.${b64(kind)}` : `${pre}p.${b64(page)}.${b64(item)}.${b64(kind)}`;
 }
-export const pagePattern = (page) => `p.${b64(page)}.*`;
+export const pagePattern = (page, space = 'std') => `${prefixOf(space)}p.${b64(page)}.*`;
 export const GROUP_PATTERN = 'g.*';
+export const groupPattern = (space = 'std') => `${prefixOf(space)}g.*`;
 
+/** a key → its page, item and kind (the space prefix, if any, left out) */
 export function parseKey(key) {
-  const parts = key.split('.');
+  let parts = key.split('.');
+  if (SPACES[parts[0]] && parts[0] !== 'std') parts = parts.slice(1);
   if (parts[0] === 'g' && parts.length === 3) return { page: '*', item: unb64(parts[1]), kind: unb64(parts[2]) };
   if (parts[0] === 'p' && parts.length === 4) return { page: unb64(parts[1]), item: unb64(parts[2]), kind: unb64(parts[3]) };
   return null;
@@ -187,15 +206,16 @@ async function readKeys(state, keys) {
   return out;
 }
 
-/** a page's entries and every group choice, as rows ({ page, item, kind, value, reviewer, time, rev }) */
-export async function readPage(state, page) {
-  const [own, groups] = await Promise.all([keysOf(state, pagePattern(page)), keysOf(state, GROUP_PATTERN)]);
+/** a page's entries and every group choice of a space, as rows ({ page, item, kind, value, reviewer, time, rev }) */
+export async function readPage(state, page, space = 'std') {
+  const [own, groups] = await Promise.all([keysOf(state, pagePattern(page, space)), keysOf(state, groupPattern(space))]);
   return readKeys(state, [...own, ...groups]);
 }
 
-/** every entry (the admin export) */
-export async function readAll(state) {
-  const [pages, groups] = await Promise.all([keysOf(state, 'p.*'), keysOf(state, GROUP_PATTERN)]);
+/** every entry of a space (the admin export) */
+export async function readAll(state, space = 'std') {
+  const pre = prefixOf(space);
+  const [pages, groups] = await Promise.all([keysOf(state, `${pre}p.*`), keysOf(state, groupPattern(space))]);
   return readKeys(state, [...pages, ...groups]);
 }
 
@@ -204,18 +224,19 @@ export async function readAll(state) {
  * someone else changed it). One audit file per batch (the durable record).
  */
 export async function saveChanges({ state, files }, {
-  page, changes, by, inv, role = 'reviewer',
+  page, changes, by, inv, role = 'reviewer', space = 'std',
 }) {
   const at = new Date().toISOString();
   const results = [];
   const audit = [];
   for (const c of changes) {
     const p = c.page || page;
-    const key = entryKey(p, c.item, c.kind);
+    const key = entryKey(p, c.item, c.kind, space);
     const stored = await state.get(key);
     const current = stored ? JSON.parse(stored.value) : null;
     const rev = current ? current.rev : 0;
-    if ((c.rev ?? 0) !== rev) {
+    // (organisation entries, e.g. batches: the newest wins, no rev check)
+    if ((c.rev ?? 0) !== rev && !c.org) {
       results.push({
         page: p, item: c.item, kind: c.kind, ok: false, conflict: true, rev, by: current?.by, at: current?.at,
       });
@@ -233,7 +254,9 @@ export async function saveChanges({ state, files }, {
     }
   }
   if (audit.length) {
-    const name = `audit/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-${crypto.randomBytes(4).toString('hex')}.json`;
+    // (a space's audit files in a folder of their own: <space>/audit/…; std's in audit/)
+    const dir = space && space !== 'std' ? `${space}/audit` : 'audit';
+    const name = `${dir}/${at.slice(0, 10)}/${at.replace(/[:.]/g, '-')}-${crypto.randomBytes(4).toString('hex')}.json`;
     await files.write(name, JSON.stringify({
       at, by, inv, role, changes: audit,
     }));

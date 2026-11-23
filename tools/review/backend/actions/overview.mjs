@@ -6,9 +6,9 @@
  * status page shows them as not reviewed yet).
  */
 import {
-  open, checkInvite, inScope, readAll, reply, fail, isPreflight, inviteOf,
+  open, checkInvite, inScope, readAll, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
-import { pageStates } from '../lib/states.mjs';
+import { pageStates, withGroupApproval } from '../lib/states.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -16,9 +16,9 @@ export async function main(params) {
     const stores = await open();
     const { invite, error } = await checkInvite(stores, inviteOf(params));
     if (error) return fail(params, 401, error, 'This review link is not valid (any more): ask for a new one.');
-    const rows = (await readAll(stores.state)).filter((r) => r.page !== '*' && inScope(invite.scope, r.page));
+    const rows = (await readAll(stores.state, spaceOf(invite.scope))).filter((r) => r.page !== '*' && inScope(invite.scope, r.page));
     return reply(params, 200, {
-      at: new Date().toISOString(), reviewer: invite.name, role: invite.role, scope: invite.scope, pages: pageStates(rows),
+      at: new Date().toISOString(), reviewer: invite.name, role: invite.role, scope: invite.scope, pages: withGroupApproval(pageStates(rows)),
     });
   } catch (e) {
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));

@@ -5,12 +5,15 @@
  * adobeioruntime.net), never passed here. Each action is bundled into one file with esbuild; the
  * libraries are installed outside the project (--deps, default /tmp/run-outputs/review-backend-deps)
  * from this folder's package.json.
+ * The capture action is a zip: its bundle plus the browser (browser/package.json, installed in
+ * --browser-deps) and Debian 10's NSS / NSPR (browser/debian-libs.json, checked by SHA-256).
  * usage: node tools/review/backend/deploy.mjs [--ns 892544-strykerstdreview-stage] [--deps <dir>]
- *   [--only state,save,results,overview,admin] [--dry-run]
+ *   [--browser-deps <dir>] [--only state,save,results,overview,admin,capture] [--dry-run]
  */
 import {
-  existsSync, mkdirSync, copyFileSync, readFileSync,
+  existsSync, mkdirSync, copyFileSync, readFileSync, writeFileSync, rmSync,
 } from 'fs';
+import { createHash } from 'crypto';
 import { execFileSync } from 'child_process';
 import { createRequire } from 'module';
 import { join, dirname } from 'path';
@@ -24,6 +27,7 @@ const opt = (name, fallback) => {
 };
 const ns = opt('--ns', '892544-strykerstdreview-stage');
 const deps = opt('--deps', '/tmp/run-outputs/review-backend-deps');
+const browserDeps = opt('--browser-deps', '/tmp/run-outputs/review-capture-deps');
 const only = opt('--only', '') ? opt('--only').split(',') : null;
 const dry = args.includes('--dry-run');
 const API = `https://adobeioruntime.net/api/v1/namespaces/${ns}`;
@@ -35,7 +39,15 @@ const ACTIONS = {
   save: { web: true },
   results: { web: true, timeout: 120000 },
   overview: { web: true, timeout: 120000 },
+  shots: { web: true },
+  invites: { web: true },
+  pages: { web: true },
+  tile: { web: true },
   admin: { web: false, timeout: 300000 },
+  // the browser: 2 GB, 5 minutes (a run stops starting pages after 3.5)
+  capture: {
+    web: false, timeout: 300000, memory: 2048, browser: true,
+  },
 };
 
 if (!existsSync(join(deps, 'node_modules', '@adobe', 'aio-lib-state'))) {
@@ -57,6 +69,29 @@ async function call(method, path, body) {
   return text ? JSON.parse(text) : null;
 }
 
+/** the browser's folder for the capture zip: node_modules, libs/ (Debian 10's NSS / NSPR) */
+function browserFolder() {
+  const B = join(HERE, 'browser');
+  if (!existsSync(join(browserDeps, 'node_modules', 'puppeteer-core'))) {
+    mkdirSync(browserDeps, { recursive: true });
+    copyFileSync(join(B, 'package.json'), join(browserDeps, 'package.json'));
+    console.log(`installing the browser into ${browserDeps} …`);
+    execFileSync('npm', ['install', '--no-audit', '--no-fund', '--silent', '--omit=dev'], { cwd: browserDeps, stdio: 'inherit' });
+  }
+  const libs = join(browserDeps, 'libs');
+  if (!existsSync(join(libs, 'libnss3.so'))) {
+    mkdirSync(libs, { recursive: true });
+    JSON.parse(readFileSync(join(B, 'debian-libs.json'), 'utf8')).packages.forEach(({ url, sha256 }) => {
+      const deb = join(browserDeps, url.split('/').pop());
+      execFileSync('curl', ['-s', '-f', '-o', deb, url]);
+      const got = createHash('sha256').update(readFileSync(deb)).digest('hex');
+      if (got !== sha256) throw new Error(`${url}: SHA-256 ${got}, expected ${sha256}`);
+      execFileSync('python3', ['-I', join(B, 'extract-deb-libs.py'), deb, libs], { stdio: 'ignore' });
+    });
+  }
+  return browserDeps;
+}
+
 const names = Object.keys(ACTIONS).filter((n) => !only || only.includes(n));
 if (!dry) await call('PUT', `/packages/${PACKAGE}?overwrite=true`, { publish: false });
 for (const name of names) {
@@ -69,14 +104,29 @@ for (const name of names) {
     format: 'cjs',
     write: false,
     nodePaths: [join(deps, 'node_modules')],
+    // (the browser's libraries stay files of the zip)
+    external: a.browser ? ['@sparticuz/chromium-min', 'puppeteer-core'] : [],
     logLevel: 'warning',
   });
-  const code = out.outputFiles[0].text;
+  let code = out.outputFiles[0].text;
+  let binary = false;
+  if (a.browser) {
+    const folder = browserFolder();
+    writeFileSync(join(folder, 'index.js'), code);
+    writeFileSync(join(folder, 'package.json'), JSON.stringify({ name: name, private: true, main: 'index.js' }));
+    const zip = join(dirname(folder), `${name}.zip`);
+    rmSync(zip, { force: true });
+    execFileSync('python3', ['-I', join(HERE, 'browser', 'zip-dir.py'), folder, zip], { stdio: 'ignore' });
+    code = readFileSync(zip).toString('base64');
+    binary = true;
+  }
   const annotations = [{ key: 'web-export', value: a.web }];
   if (a.web) annotations.push({ key: 'web-custom-options', value: true }, { key: 'final', value: true });
   const body = {
-    exec: { kind: 'nodejs:20', code, main: 'main' },
-    limits: { timeout: a.timeout || 60000, memory: 256 },
+    exec: {
+      kind: 'nodejs:20', code, main: 'main', ...(binary ? { binary: true } : {}),
+    },
+    limits: { timeout: a.timeout || 60000, memory: a.memory || 256 },
     annotations,
   };
   if (dry) console.log(`(dry run) ${name}: ${(code.length / 1024).toFixed(0)} KB, ${a.web ? 'web' : 'private'}`);

@@ -5,7 +5,7 @@
  * page's own and every group choice (page `*`), AOE statuses among them (kind `status:*`).
  */
 import {
-  open, checkInvite, inScope, readPage, reply, fail, isPreflight, inviteOf,
+  open, checkInvite, inScope, readPage, reply, fail, isPreflight, inviteOf, spaceOf,
 } from '../lib/core.mjs';
 
 export async function main(params) {
@@ -17,7 +17,7 @@ export async function main(params) {
     const page = String(params.page || '');
     if (!page.startsWith('/') || page.length > 400) return fail(params, 400, 'bad-page', 'page must be a path');
     if (!inScope(invite.scope, page)) return fail(params, 403, 'out-of-scope', 'This page is not part of your review.');
-    const rows = await readPage(stores.state, page);
+    const rows = await readPage(stores.state, page, spaceOf(invite.scope));
     return reply(params, 200, {
       reviewer: invite.name, role: invite.role, scope: invite.scope, expires: invite.exp, rows,
     });

@@ -10,8 +10,9 @@
  */
 import {
   open, checkInvite, inScope, saveChanges, reply, fail, isPreflight, inviteOf,
-  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem,
+  REVIEW_KINDS, MAX_VALUE, MAX_CHANGES, REPLY_KIND, replyProblem, stateProblem, doneProblem, spaceOf,
 } from '../lib/core.mjs';
+import { ORG_KINDS, orgProblem } from '../../threads.js';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -24,10 +25,13 @@ export async function main(params) {
     const changes = Array.isArray(params.changes) ? params.changes : [];
     if (!page.startsWith('/') || page.length > 400) return fail(params, 400, 'bad-page', 'page must be a path');
     if (!changes.length || changes.length > MAX_CHANGES) return fail(params, 400, 'bad-changes', `1 to ${MAX_CHANGES} changes`);
+    // (organisation entries may name other pages: a batch marks many pages in one save)
+    const org = (c) => ORG_KINDS.includes(c.kind);
     const bad = changes.find((c) => typeof c.item !== 'string' || !c.item || c.item.length > 300
       || !(REVIEW_KINDS.includes(c.kind) || REPLY_KIND.test(c.kind || ''))
       || typeof c.value !== 'string' || c.value.length > MAX_VALUE
-      || (c.page !== undefined && c.page !== '*' && c.page !== page));
+      || (c.page !== undefined && c.page !== '*' && c.page !== page
+        && !(org(c) && typeof c.page === 'string' && c.page.startsWith('/') && c.page.length <= 400)));
     if (bad) return fail(params, 400, 'bad-change', `not allowed: ${JSON.stringify(bad).slice(0, 120)}`);
     const badReply = changes.filter((c) => REPLY_KIND.test(c.kind))
       .map((c) => ({ c, problem: (c.rev ?? 0) !== 0 ? 'a reply is written once' : replyProblem(c.value, invite.role) }))
@@ -39,11 +43,17 @@ export async function main(params) {
     if (badState) return fail(params, 400, 'bad-state', badState);
     const badDone = changes.filter((c) => c.kind.startsWith('done:')).map((c) => doneProblem(c.value)).find(Boolean);
     if (badDone) return fail(params, 400, 'bad-done', badDone);
+    // batches, groups, representatives: the AOE team's, on the page item
+    const orgChanges = changes.filter(org);
+    if (orgChanges.length && invite.role !== 'aoe') return fail(params, 403, 'aoe-only', 'Only the AOE team organises the pages.');
+    const badOrg = orgChanges.map((c) => (c.item !== 'page' ? `a ${c.kind} is on item page` : orgProblem(c.kind, c.value))).find(Boolean);
+    if (badOrg) return fail(params, 400, 'bad-org', badOrg);
+    orgChanges.forEach((c) => Object.assign(c, { org: true }));
     const pages = [...new Set(changes.map((c) => c.page || page))];
     const outside = pages.find((p) => !inScope(invite.scope, p));
     if (outside) return fail(params, 403, 'out-of-scope', outside === '*' ? 'Choices for all pages are not part of your review.' : 'This page is not part of your review.');
     const result = await saveChanges(stores, {
-      page, changes, by: invite.name, inv: invite.id, role: invite.role,
+      page, changes, by: invite.name, inv: invite.id, role: invite.role, space: spaceOf(invite.scope),
     });
     return reply(params, 200, result);
   } catch (e) {
