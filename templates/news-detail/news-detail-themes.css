@@ -1174,3 +1174,13 @@ body.news-detail.multiple-video main > .section.video-text:has(+ .section.separa
     margin-top: 0;
   }
 }
+
+/* news-xf-body (theme `news-XF-body`): an article whose body comes from an Experience
+   Fragment (e.g. "How Stryker is accelerating innovation in additive manufacturing"). Its
+   images in default content sit on the left of the text column, as on stryker.com (the
+   template centres them), e.g. the "Stryker's additive manufacturing" image at the column's
+   left edge */
+body.news-detail.news-xf-body main > .section > .default-content-wrapper picture {
+  margin-inline: 0;
+  text-align: start;
+}
