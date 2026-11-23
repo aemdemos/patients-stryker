@@ -47,3 +47,4 @@
 .st-mark-row input { width: 70px; padding: 3px 6px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; }
 .st-mark-result { margin: 8px 0 0; white-space: pre-wrap; }
 .st-batch-tag.st-rep { background: #fff8c5; box-shadow: inset 0 0 0 1px #d4a72c; }
+.st-edit { font-size: 12px; white-space: nowrap; }

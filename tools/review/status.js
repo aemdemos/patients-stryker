@@ -8,7 +8,7 @@
  */
 import { call, inviteToken } from './store.js';
 import { REVIEW, storageKey } from './config.js';
-import loadPages from './pages.js';
+import loadPages, { editUrl } from './pages.js';
 import {
   getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel, passes,
 } from './batches.js';
@@ -157,7 +157,17 @@ function draw() {
     'tr',
     { class: p.isNew ? 'st-row-new' : '' },
     el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
-    el('td', {}, el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}` }, p.title), el('br'), el('small', { class: 'rs-muted' }, p.path)),
+    el(
+      'td',
+      {},
+      el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}` }, p.title),
+      el('br'),
+      el('small', { class: 'rs-muted' }, p.path),
+      // (the AOE team's: open the page's document to edit)
+      me.role === 'aoe' && editUrl(p.path) ? [' ', el('a', {
+        class: 'st-edit', href: editUrl(p.path), target: '_blank', rel: 'noopener', title: 'Open the page in Document Authoring to edit it',
+      }, 'Edit in DA')] : null,
+    ),
     el('td', {}, orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative ? ' st-rep' : ''}`, title: p.representative ? 'The representative page of its group: the customer reviews it for the whole group' : '' }, orgLabel(p)) : ''),
     el('td', {}, areaLabel(p.unit || '')),
     templates ? el('td', {}, p.template) : null,

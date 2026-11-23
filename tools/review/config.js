@@ -34,6 +34,9 @@ export const REVIEW = {
   // the snapshot tiles of the source pages: in Document Authoring through the branch preview
   // (a folder of this review's own), locally the capture folder (a git-ignored link)
   snapshots: { preview: '/review-snapshots-main', local: './snapshots' },
+  // the pages' documents in Document Authoring, opened by the AOE team to edit (the DA editor
+  // of the site's content source; the page path is added, index pages as …/index)
+  edit: 'https://da.live/edit#/strykerenterprise/stryker-com',
   // where the tool runs for reviewers (links in the summary)
   toolHost: 'main--stryker-com--strykerenterprise.aem.page',
   // the review backend (App Builder web actions, Stage workspace), shared by both reviews

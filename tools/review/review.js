@@ -15,7 +15,7 @@ import {
 } from './threads.js';
 import { createNotes, CATEGORIES } from './notes.js';
 import { REVIEW, storageKey } from './config.js';
-import loadPages from './pages.js';
+import loadPages, { editUrl } from './pages.js';
 import {
   loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
 } from './batches.js';
@@ -1187,6 +1187,8 @@ function loadPage() {
     REVIEW.compare.includes('rs') ? el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')) : null,
     el('li', {}, el('a', { href: SOURCE[state.page] || 'https://www.stryker.com/', target: '_blank', rel: 'noopener' }, 'Live stryker.com page')),
     el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
+    // (the AOE team's: editing needs Document Authoring rights anyway)
+    editUrl(state.page) ? el('li', { class: 'rv-aoe-only' }, el('a', { href: editUrl(state.page), target: '_blank', rel: 'noopener' }, 'Edit in Document Authoring')) : null,
   ].filter(Boolean));
   if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
   $('.rv-pagebox-body').replaceChildren(el('p', { class: 'rv-none' }, 'Loading the saved reviews…'));

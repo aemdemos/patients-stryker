@@ -27,6 +27,7 @@ keeps the invitation, later visits need no link.
 | `mode` | side by side (flip and overlay stay available) |
 | `pages` | the site's query index `/us/en/query-index.json`, read on every visit: new pages appear at once; fragments left out |
 | `snapshots` | Document Authoring `/review-snapshots-main/<page>/<width>/<n>.jpg` through the branch preview; locally `./snapshots` (a git-ignored link to the capture folder) |
+| `edit` | the DA editor of the site's content source (`https://da.live/edit#/strykerenterprise/stryker-com`): the AOE team's "Edit in Document Authoring" links (below) |
 
 ## Files
 
@@ -86,6 +87,15 @@ page**: the only page the customer reviews, to approve the whole group. Set by h
   `page`, AOE only, newest wins; organisation data, no review activity. A page is only a
   representative while it is in a group. The overview action returns `group` and `representative`.
 
+## Edit in Document Authoring (AOE team)
+
+AOE invitations get a link to the page's document in the DA editor: "Edit in Document
+Authoring" in the tool's Feedback panel ("Open in a new tab") and "Edit in DA" next to each page
+on the status page. `editUrl(path)` (`pages.js`): `config.edit` + the base prefix + the path (a
+folder's page: `…/index`). Reviewers don't see the links; editing needs DA rights anyway. A page
+whose document is no longer in DA (it is still published) opens an empty document: don't save it
+there by mistake.
+
 ## The review backend and its spaces
 
 One App Builder backend (project "Stryker std review", Stage workspace
@@ -123,6 +133,16 @@ bash tools/review/upload-snapshots.sh <dir> <branch> <log> review-snapshots-main
 
 The source URLs come from the export file names (letter case kept), never from EDS paths. New
 pages in the index: capture them, pack, upload (on request).
+
+## Planned
+
+- **Refresh a source shot:** capture one page's source snapshot again from the tool.
+- **Invitations admin (AOE team):** a page where the AOE team creates, lists and revokes
+  invitations itself (name, role, pages, days; the link to copy), instead of `backend/admin.mjs`
+  run by the developers. Needs an `invites` right on AOE invitations in the backend's admin
+  action, limited to the invitation's space.
+- Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
+  spaces yet: never deploy the backend from there before that).
 
 ## Tests
 

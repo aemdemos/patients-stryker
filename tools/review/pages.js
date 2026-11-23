@@ -27,3 +27,8 @@ export default async function loadPages() {
     return [];
   }
 }
+
+/** a page's document in Document Authoring (config edit; a folder's page is its index) */
+export const editUrl = (path) => (REVIEW.edit
+  ? `${REVIEW.edit}${REVIEW.base.prefix}${path.endsWith('/') ? `${path}index` : path}`
+  : '');

@@ -334,3 +334,6 @@ body.mode-opacity .rv-rs { pointer-events: none; }
 .rv-filter-body select { padding: 4px 6px; border: 1px solid #444c56; border-radius: 4px; font: inherit; }
 .rv-batch-badge { padding: 3px 10px; border-radius: 12px; background: #eaeef2; color: #1f2328; font-weight: 700; white-space: nowrap; }
 .rv-batch-badge:empty { display: none; }
+
+/* the AOE team's links (Edit in Document Authoring) */
+body:not(.rv-role-aoe) .rv-aoe-only { display: none; }
