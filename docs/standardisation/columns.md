@@ -165,9 +165,9 @@ the panel and the cards, so authors see one colour list everywhere.
 | Blue | `box-blue` | 7 | [Latera implant](https://www.stryker.com/us/en/ent/products/latera-absorbable-nasal-implant-system.html) |
 | Purple | `box-purple` | 2 | [Giving back](https://www.stryker.com/us/en/about/corporate-responsibility/giving-back.html) |
 | Teal | `box-teal` | 2 | [Fluoro-free](https://www.stryker.com/us/en/joint-replacement/c/fluoro-free.html) |
-| Slate | `box-slate` | 1 | [Mako RPS](https://www.stryker.com/us/en/joint-replacement/systems/mako-rps.html) |
+| Dark blue gradient (stryker.com `bg-dark-blue-gradient`, the package's "slate") | `box-dark-blue-gradient` | 1 | [Mako RPS](https://www.stryker.com/us/en/joint-replacement/systems/mako-rps.html) |
 | Dark grey | `box-dark` | 1 | [Surgical Technologies education](https://www.stryker.com/us/en/training-and-education/medical-and-surgical-equipment--/surgical-technologies/surgical-technologies-medical-education.html) |
-| Plum | `box-plum` | 1 | [Trauma & Extremities TEACH](https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/teach.html) |
+| Dark purple gradient (stryker.com `bg-dark-purple-gradient`, the package's "plum") | `box-dark-purple-gradient` | 1 | [Trauma & Extremities TEACH](https://www.stryker.com/us/en/training-and-education/orthopaedics/trauma-extremities/teach.html) |
 
 ### 5.2 Cell box: which cell
 
