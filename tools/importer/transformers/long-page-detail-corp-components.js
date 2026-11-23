@@ -423,14 +423,26 @@ export function pageHeroes(main, doc, h) {
       const copy = doc.createElement(el.tagName.toLowerCase());
       const gold = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i
         .test(((el.getAttribute('style') || '').match(/color\s*:\s*([^;]+)/i) || [])[1]?.trim() || '');
+      // gold text: bold + italic (the conventions' gold), as the committed bundle (#550) does
+      const goldText = () => {
+        const strong = doc.createElement('strong');
+        const em = doc.createElement('em');
+        em.textContent = h.text(el);
+        strong.append(em);
+        return strong;
+      };
       // the hero's title is Futura bold 28px, its subhead Egyptienne light 24.5px (stryker.com)
       if (el.matches('h1')) {
-        const strong = doc.createElement('strong');
-        strong.textContent = h.text(el);
-        copy.append(doc.createTextNode(gold ? '[[text-2][[color-gold]' : '[[text-2]'), strong, doc.createTextNode(gold ? ']]' : ']'));
+        let strong = goldText();
+        if (!gold) {
+          strong = doc.createElement('strong');
+          strong.textContent = h.text(el);
+        }
+        copy.append(doc.createTextNode('[[text-2]'), strong, doc.createTextNode(']'));
       } else if (el.matches('h2')) {
         copy.textContent = `[[text-1-75,serif]${h.text(el)}]`;
-      } else copy.textContent = gold ? `[[color-gold]${h.text(el)}]` : h.text(el);
+      } else if (gold) copy.append(goldText());
+      else copy.textContent = h.text(el);
       return [copy];
     });
     const cols = [...component.querySelectorAll('.row > [class*="col-"]')].filter((col) => h.text(col) || col.querySelector('img'));

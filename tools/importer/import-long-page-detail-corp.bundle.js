@@ -2413,21 +2413,35 @@ var CustomImportScript = (() => {
     blue: "blue",
     gold: "gold",
     purple: "purple",
-    "dark-gray": "dark"
+    teal: "teal",
+    "dark-gray": "dark",
+    "dark-blue-gradient": "dark-blue-gradient",
+    "dark-purple-gradient": "dark-purple-gradient"
   };
-  var BOX_VARIANTS = /* @__PURE__ */ new Set([
-    "gray-last",
-    "gray-2",
-    "gray-all",
-    "boxed-all",
-    "blue-all",
-    "gold-lead",
-    "dark-lead",
-    "purple-last",
-    "gold-first",
-    "boxed-last",
-    "gray-lead"
-  ]);
+  var BOX_VARIANTS = /* @__PURE__ */ new Set(["gray-2", "gold-lead", "dark-lead", "gray-lead"]);
+  var SPACE_STEPS = [[0, "space-none"], [3, "space-s"], [5, ""], [10, "space-l"]];
+  function spaceStep(boxes) {
+    const values = boxes.flatMap((b) => ["top", "right", "bottom", "left"].map((side) => (b.getAttribute("style") || "").match(new RegExp(`padding-${side}\\s*:\\s*([\\d.]+)%`))).filter(Boolean).map((m) => Number(m[1])));
+    if (!values.length) return "";
+    const sorted = [...values].sort((a, b) => a - b);
+    const median = sorted[Math.floor(sorted.length / 2)];
+    return SPACE_STEPS.reduce((best, step) => Math.abs(step[0] - median) < Math.abs(best[0] - median) ? step : best)[1];
+  }
+  var IMAGE_BORDERS = {
+    gray: "image-border",
+    teal: "image-border-teal",
+    black: "image-border-black",
+    blue: "image-border-teal"
+  };
+  function imageBorder(columns) {
+    const colours = columns.flatMap((col) => [...col.querySelectorAll('.c-standalone-image img[class*="bor-"]')].map((img) => (img.className.match(/\bbor-([a-z]+)/) || [])[1]));
+    const counts = {};
+    colours.forEach((c) => {
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    const main = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+    return IMAGE_BORDERS[main] || "";
+  }
   function cellBox(col) {
     const row = col.closest(".colctrl");
     const boxes = [...col.querySelectorAll(".has-background:not(.bg-white), .dimensional-box")].filter((b) => b.closest(".colctrl") === row && text4(b)).filter((b) => !b.parentElement.closest(".has-background:not(.bg-white), .dimensional-box"));
@@ -2441,9 +2455,9 @@ var CustomImportScript = (() => {
     if (colours.length !== 1 || !colours[0]) return { colour: "", kind: "" };
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const boxed = squash(boxes.map((b) => b.textContent).join(""));
-    if (boxed === squash(col.textContent)) return { colour: colours[0], kind: "whole" };
+    if (boxed === squash(col.textContent)) return { colour: colours[0], kind: "whole", boxes };
     const first = [...col.querySelectorAll(CELL_COMPONENTS)].filter((c) => !c.parentElement.closest(CELL_COMPONENTS) && text4(c))[0];
-    if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: "lead" };
+    if (boxes.length === 1 && first && first.contains(boxes[0])) return { colour: colours[0], kind: "lead", boxes };
     return { colour: "", kind: "" };
   }
   function boxVariant(columns) {
@@ -2454,22 +2468,28 @@ var CustomImportScript = (() => {
     const kinds = [...new Set(used.map((b) => b.kind))];
     if (colours.length !== 1 || !colours[0] || kinds.length !== 1) return "";
     const textCols = columns.filter((col) => text4(col));
-    let name = "";
-    if (kinds[0] === "lead" && used.length === textCols.length) name = `${colours[0]}-lead`;
+    const colour = colours[0] === "boxed" ? ["box-white", "shadow"] : [`box-${colours[0]}`];
+    const space = spaceStep(used.flatMap((b) => b.boxes || []));
+    const standard = (cell) => [...colour, cell, space].filter(Boolean).join(", ");
+    if (kinds[0] === "lead" && used.length === textCols.length) {
+      const lead = `${colours[0]}-lead`;
+      return BOX_VARIANTS.has(lead) ? lead : "";
+    }
     const last = columns[columns.length - 1];
     if (kinds[0] === "lead" && used.length === 1 && boxes[columns.length - 1] && last.querySelector(".c-standalone-video, .c-standalone-image, [data-asset-path]")) {
-      name = `${colours[0]}-last`;
+      return standard("");
     }
     if (kinds[0] === "whole") {
-      if (used.length > 1 && used.length === textCols.length) name = `${colours[0]}-all`;
-      else if (used.length === 1) {
+      if (used.length > 1 && used.length === textCols.length) return standard("box-all");
+      if (used.length === 1) {
         const i = boxes.findIndex(Boolean);
-        if (i === columns.length - 1) name = `${colours[0]}-last`;
-        else if (i === 0) name = `${colours[0]}-first`;
-        else name = `${colours[0]}-${i + 1}`;
+        if (i === columns.length - 1) return standard("");
+        if (i === 0) return standard("box-first");
+        const middle = `${colours[0]}-${i + 1}`;
+        return BOX_VARIANTS.has(middle) ? middle : "";
       }
     }
-    return BOX_VARIANTS.has(name) ? name : "";
+    return "";
   }
   function cellNodes(col, doc) {
     const out = [];
@@ -2554,9 +2574,19 @@ var CustomImportScript = (() => {
     if (parts.includes("serif") && !parts.some((s) => sizeTag(s))) return ["p-1", ...parts].join(", ");
     return dominant;
   }
-  var COLUMN_VARIANTS = { "8,4": "columns-67-33", "4,8": "columns-33-67", "6,6": "columns-50-50" };
+  var COLUMN_VARIANTS = {
+    "8,4": "columns-67-33",
+    "4,8": "columns-33-67",
+    "6,6": "columns-50-50",
+    "4,4,4": "columns-3-cols",
+    "3,3,3,3": "columns-4-cols"
+  };
   function columnWidth(col) {
     const m = col.className.match(/\bcol-sm-(\d+)/) || col.className.match(/\bcol-md-(\d+)/);
+    return m ? Number(m[1]) : 12;
+  }
+  function desktopWidth(col) {
+    const m = col.className.match(/\bcol-md-(\d+)/) || col.className.match(/\bcol-sm-(\d+)/);
     return m ? Number(m[1]) : 12;
   }
   function markRowEnds(main) {
@@ -2627,16 +2657,19 @@ var CustomImportScript = (() => {
       }
       const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)].filter((c) => c.closest(".colctrl") === colctrl && (text4(c) || c.matches(".sectionseparator"))) : [];
       const firstRule = parts.length > 1 && parts[parts.length - 1].matches(".sectionseparator");
+      const centred = filled.every(centredColumn);
+      const layout = COLUMN_VARIANTS[key] || COLUMN_VARIANTS[columns.map(desktopWidth).join(",")];
       const variant = [
-        COLUMN_VARIANTS[key],
+        layout,
         linked ? "media-pair" : "",
         stackRow(columns) ? "stack" : "",
         boxes,
+        imageBorder(columns),
+        centred ? "text-center" : "",
         firstRule ? "left-border-bottom" : ""
       ].filter(Boolean).join(", ");
-      const centred = filled.every(centredColumn);
       const cells = columns.map((col) => cellNodes(col, doc));
-      const style = [rowCopyStyle(cells, doc), centred ? "center" : ""].filter(Boolean).join(", ");
+      const style = rowCopyStyle(cells, doc);
       const block = WebImporter.Blocks.createBlock(doc, {
         name: variant ? `Columns (${variant})` : "Columns",
         cells: [cells]
