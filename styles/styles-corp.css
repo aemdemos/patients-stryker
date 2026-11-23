@@ -808,6 +808,25 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   font-family: var(--heading-font-family);
 }
 
+/* section style `serif-futura-bold`: the section's copy in Egyptienne at 17.5px on the
+   nested serif lines (stryker.com span.urw-egyptienne > span.fontsize-1-25em), its bold in
+   Futura bold (span.futura-bold) — also on news articles, where bold in running text is
+   otherwise the body font (news-detail.css; :nth-child(n) outranks that rule) */
+:where(body.corp) main > .section.serif-futura-bold > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > div :is(p, li) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+:where(body.corp) main > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
+:where(body.corp) .tabs-panel > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n),
+:where(body.corp) .accordion-item-body > .section.serif-futura-bold > div:nth-child(n) :is(p, li):nth-child(n) :is(strong, b):nth-child(n) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
    bold news subtitle) instead of the corp Futura bold */
 :where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
@@ -1110,16 +1129,16 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   margin-bottom: var(--space-block);
 }
 
-:where(body.corp) main > .section.flex-corp.p-1-25 .panel.left.block .panel-body p {
+:where(body.corp) main > .section.flex-corp:is(.p-1-25, .serif-futura-bold) .panel.left.block .panel-body p {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
-:where(body.corp) main > .section.flex-corp.serif .panel.left.block .panel-body p {
+:where(body.corp) main > .section.flex-corp:is(.serif, .serif-futura-bold) .panel.left.block .panel-body p {
   font-family: var(--heading-font-family);
 }
 
-:where(body.corp) main > .section.flex-corp.serif.p-1-25 .panel.left.block .panel-body p {
+:where(body.corp) main > .section.flex-corp:is(.serif.p-1-25, .serif-futura-bold) .panel.left.block .panel-body p {
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
 }
 
