@@ -78,11 +78,16 @@ function decorateBoxes(block) {
     else if (variant === 'box-first') targets = cells.slice(0, 1);
     else if (variant.endsWith('-2')) targets = cells.slice(1, 2);
     targets.filter((cell) => cell.textContent.trim()).forEach((cell) => {
-      const content = [...cell.children];
-      const start = content.findIndex((el) => !el.matches(MEDIA) && el.textContent.trim());
+      // a cell's content, its loose text included: a cell with one paragraph holds its text
+      // without the <p> (EDS unwraps it), which is boxed the same way
+      const content = [...cell.childNodes]
+        .filter((n) => n.nodeType === Node.ELEMENT_NODE || n.textContent.trim());
+      const isElement = (n) => n.nodeType === Node.ELEMENT_NODE;
+      const start = content
+        .findIndex((n) => !(isElement(n) && n.matches(MEDIA)) && n.textContent.trim());
       if (start < 0) return;
       // the box ends at the next image or video (jr45: the "Watch …" box above the episode video)
-      const isMedia = (el) => el.matches(MEDIA) || !!el.querySelector(MEDIA);
+      const isMedia = (n) => isElement(n) && (n.matches(MEDIA) || !!n.querySelector(MEDIA));
       const end = content.findIndex((el, i) => i > start && isMedia(el));
       const nodes = variant.endsWith('-lead') ? [content[start]] : content.slice(start, end < 0 ? undefined : end);
       const box = document.createElement('div');
