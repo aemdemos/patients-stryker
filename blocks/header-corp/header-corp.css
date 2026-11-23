@@ -300,9 +300,12 @@ body.hcp-banner .header-corp .hcp-band {
   background: var(--color-accent);
 }
 
+/* primary list and open panel side by side; each keeps its column at any height */
 .header-corp .nav-content {
   position: relative;
   left: 0;
+  display: flex;
+  align-items: flex-start;
   width: 200%;
 }
 
@@ -321,13 +324,18 @@ body.hcp-banner .header-corp .hcp-band {
 
 .header-corp .main-nav,
 .header-corp .secondary-nav {
-  float: left;
   width: 50%;
-  height: 100%;
 }
 
 .header-corp .main-nav {
   background: var(--color-accent);
+}
+
+/* once the slide ends the drawer is as tall as the open panel (no empty grey band under
+   a short panel such as Products); back restores the primary list at once */
+.header-corp.show-secondary-nav .main-nav {
+  max-height: 0;
+  transition: max-height 0s 0.3s allow-discrete;
 }
 
 .header-corp .main-nav .container {
@@ -399,9 +407,10 @@ body.hcp-banner .header-corp .hcp-band {
   font-weight: 700;
 }
 
+/* fly-out / drawer panel links: gold hover at every width (source mobile and desktop) */
 .header-corp .secondary-nav li a:any-link:hover {
-  background: var(--color-secondary);
-  color: var(--color-white);
+  background: var(--color-accent);
+  color: var(--color-black);
 }
 
 /* main-nav hover / open item (after the fly-out link rules it outranks) */
@@ -547,6 +556,7 @@ body.hcp-banner .header-corp .hcp-band {
   .header-corp .nav-content {
     position: static;
     left: auto;
+    display: block;
     width: auto;
     min-height: 0;
     overflow: visible;
@@ -555,9 +565,7 @@ body.hcp-banner .header-corp .hcp-band {
 
   .header-corp .main-nav,
   .header-corp .secondary-nav {
-    float: none;
     width: 100%;
-    height: auto;
   }
 
   .header-corp .main-nav .container {
@@ -582,6 +590,11 @@ body.hcp-banner .header-corp .hcp-band {
 
   .header-corp .main-nav li {
     margin-right: var(--space-block-xs);
+  }
+
+  /* drawer copies of the utility links: the white row shows them from 900px */
+  .header-corp .main-nav li.utility {
+    display: none;
   }
 
   .header-corp .main-nav li a:any-link {
@@ -637,11 +650,6 @@ body.hcp-banner .header-corp .hcp-band {
     padding: var(--space-block-s) var(--space-block);
     color: var(--color-black);
     font-size: var(--body-font-size-xs);
-  }
-
-  .header-corp .secondary-nav li a:any-link:hover {
-    background: var(--color-accent);
-    color: var(--color-black);
   }
 
   /* main-nav hover / open item (after the fly-out link rules it outranks) */
