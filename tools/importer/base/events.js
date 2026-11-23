@@ -43,12 +43,16 @@ function carousel(document) {
       const first = [];
       if (image) {
         const img = image.cloneNode(true);
+        const p = document.createElement('p');
+        p.append(img);
+        first.push(p);
+        // the link alone on the line after the image makes it clickable (Columns media-pair)
         if (imageLink) {
           const a = linkOf(imageLink, document);
-          a.append(img);
-          first.push(a);
-        } else {
-          first.push(img);
+          a.textContent = (img.getAttribute('alt') || '').trim() || text(imageLink) || (title ? text(title) : '') || a.getAttribute('href');
+          const line = document.createElement('p');
+          line.append(a);
+          first.push(line);
         }
       }
       const second = [];
@@ -69,7 +73,7 @@ function carousel(document) {
         second.push(p);
       }
       const block = WebImporter.Blocks.createBlock(document, {
-        name: 'Columns (columns-50-50)',
+        name: `Columns (columns-50-50${first.length > 1 ? ', media-pair' : ''})`,
         cells: [[first, second]],
       });
       block.setAttribute('data-keep', 'section');
@@ -78,15 +82,151 @@ function carousel(document) {
       return block;
     });
     const holder = component.closest('.hero-large-carousel') || component;
+    if (slides.length) slides[0].setAttribute('data-title-before', '');
     holder.replaceWith(...slides);
   });
+}
+
+// Source typos (not names or medical terms) corrected on import.
+const TYPOS = [[/\bModerater\b/g, 'Moderator']];
+
+function fixTypos(document) {
+  const walker = document.createTreeWalker(document.body, 4);
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    TYPOS.forEach(([pattern, fix]) => {
+      node.nodeValue = node.nodeValue.replace(pattern, fix);
+    });
+  }
+}
+
+// The source alt of some images is double-escaped (`Power&amp;nbsp;Tool`): a literal "&nbsp;".
+function decodeAlts(document) {
+  document.querySelectorAll('img[alt*="&nbsp;"]').forEach((img) => {
+    img.setAttribute('alt', img.getAttribute('alt').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim());
+  });
+}
+
+const assetOf = (url) => (url || '').split('?')[0];
+
+// A full-width image whose desktop and phone versions are the same asset in two presets is one
+// image: the new pages have no rules to show one of two.
+function singleFullWidthImages(document) {
+  document.querySelectorAll('.imgBoxId.full-width-img').forEach((box) => {
+    const source = box.querySelector('source[srcset]');
+    const img = box.querySelector('img');
+    if (!source || !img || assetOf(source.getAttribute('srcset')) !== assetOf(img.getAttribute('src'))) return;
+    img.setAttribute('src', source.getAttribute('srcset'));
+    source.remove();
+  });
+}
+
+// A related-content grid (.c-customizeable: heading, then product image + title + text + link
+// per item) as the existing components: a section title, then per item a linked image (the link
+// on the line after it, Columns media-pair) and the text.
+function relatedProducts(document) {
+  document.querySelectorAll('.c-customizeable').forEach((grid) => {
+    const parts = [];
+    const heading = grid.querySelector('h2');
+    if (heading && text(heading)) {
+      const title = document.createElement('div');
+      title.className = 'c-title';
+      const h2 = document.createElement('h2');
+      h2.textContent = text(heading);
+      title.append(h2);
+      parts.push(title);
+    }
+    grid.querySelectorAll('.item').forEach((item) => {
+      const img = item.querySelector('img');
+      if (img) {
+        const media = document.createElement('div');
+        media.className = 'c-standalone-image';
+        const link = item.querySelector('.img-cont a[href]');
+        const copy = img.cloneNode(true);
+        if (link) {
+          const a = linkOf(link, document);
+          a.append(copy, text(item.querySelector('h3') || link));
+          media.append(a);
+        } else {
+          media.append(copy);
+        }
+        parts.push(media);
+      }
+      const body = document.createElement('div');
+      const h3 = item.querySelector('h3');
+      if (h3 && text(h3)) {
+        const heading3 = document.createElement('h3');
+        const target = h3.querySelector('a[href]');
+        if (target) {
+          const a = linkOf(target, document);
+          a.textContent = text(h3);
+          heading3.append(a);
+        } else {
+          heading3.textContent = text(h3);
+        }
+        body.append(heading3);
+      }
+      item.querySelectorAll('.desc-container > p').forEach((source) => {
+        if (!text(source)) return;
+        const p = document.createElement('p');
+        p.textContent = text(source);
+        body.append(p);
+      });
+      const cta = item.querySelector('a.action-link[href]');
+      if (cta && text(cta)) {
+        const a = linkOf(cta, document);
+        const u = document.createElement('u');
+        u.textContent = text(cta);
+        a.append(u);
+        const strong = document.createElement('strong');
+        strong.append(a);
+        const p = document.createElement('p');
+        p.append(strong);
+        body.append(p);
+      }
+      const wrapper = document.createElement('div');
+      wrapper.className = 'c-rich-text-editor';
+      const inner = document.createElement('div');
+      inner.append(...body.childNodes);
+      wrapper.append(inner);
+      parts.push(wrapper);
+    });
+    (grid.closest('.customizable') || grid).replaceWith(...parts);
+  });
+}
+
+// The page title stays where the source has it (before the first slide of the hero carousel),
+// not at the top the builder puts it.
+function placeTitle(main) {
+  const marker = main.querySelector('[data-title-before]');
+  if (!marker) return;
+  const title = [];
+  let node = main.firstChild;
+  while (node && node.nodeName !== 'HR') {
+    title.push(node);
+    node = node.nextSibling;
+  }
+  if (!node || !title.some((n) => n.nodeName === 'H1' || n.querySelector?.('h1'))) return;
+  title.push(node);
+  let start = marker;
+  while (start.parentElement !== main) start = start.parentElement;
+  while (start.previousSibling && start.previousSibling.nodeName !== 'HR') start = start.previousSibling;
+  if (title.includes(start)) return;
+  title.forEach((n) => main.insertBefore(n, start));
+  marker.removeAttribute('data-title-before');
 }
 
 export default {
   preprocess,
   transform: (payload) => {
-    heroTitle(payload.document);
-    carousel(payload.document);
-    return transformPage(payload, 'events');
+    const { document } = payload;
+    decodeAlts(document);
+    fixTypos(document);
+    singleFullWidthImages(document);
+    relatedProducts(document);
+    heroTitle(document);
+    carousel(document);
+    const result = transformPage(payload, 'events');
+    placeTitle(result[0].element);
+    return result;
   },
 };

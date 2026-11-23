@@ -20270,12 +20270,15 @@ var CustomImportScript = (() => {
         const first = [];
         if (image3) {
           const img = image3.cloneNode(true);
+          const p = document.createElement("p");
+          p.append(img);
+          first.push(p);
           if (imageLink) {
             const a = linkOf(imageLink, document);
-            a.append(img);
-            first.push(a);
-          } else {
-            first.push(img);
+            a.textContent = (img.getAttribute("alt") || "").trim() || text9(imageLink) || (title ? text9(title) : "") || a.getAttribute("href");
+            const line = document.createElement("p");
+            line.append(a);
+            first.push(line);
           }
         }
         const second = [];
@@ -20296,7 +20299,7 @@ var CustomImportScript = (() => {
           second.push(p);
         }
         const block = WebImporter.Blocks.createBlock(document, {
-          name: "Columns (columns-50-50)",
+          name: `Columns (columns-50-50${first.length > 1 ? ", media-pair" : ""})`,
           cells: [[first, second]]
         });
         block.setAttribute("data-keep", "section");
@@ -20305,15 +20308,135 @@ var CustomImportScript = (() => {
         return block;
       });
       const holder = component.closest(".hero-large-carousel") || component;
+      if (slides.length) slides[0].setAttribute("data-title-before", "");
       holder.replaceWith(...slides);
     });
+  }
+  var TYPOS = [[/\bModerater\b/g, "Moderator"]];
+  function fixTypos(document) {
+    const walker = document.createTreeWalker(document.body, 4);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      TYPOS.forEach(([pattern, fix]) => {
+        node.nodeValue = node.nodeValue.replace(pattern, fix);
+      });
+    }
+  }
+  function decodeAlts(document) {
+    document.querySelectorAll('img[alt*="&nbsp;"]').forEach((img) => {
+      img.setAttribute("alt", img.getAttribute("alt").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim());
+    });
+  }
+  var assetOf = (url) => (url || "").split("?")[0];
+  function singleFullWidthImages(document) {
+    document.querySelectorAll(".imgBoxId.full-width-img").forEach((box) => {
+      const source = box.querySelector("source[srcset]");
+      const img = box.querySelector("img");
+      if (!source || !img || assetOf(source.getAttribute("srcset")) !== assetOf(img.getAttribute("src"))) return;
+      img.setAttribute("src", source.getAttribute("srcset"));
+      source.remove();
+    });
+  }
+  function relatedProducts(document) {
+    document.querySelectorAll(".c-customizeable").forEach((grid) => {
+      const parts = [];
+      const heading2 = grid.querySelector("h2");
+      if (heading2 && text9(heading2)) {
+        const title = document.createElement("div");
+        title.className = "c-title";
+        const h2 = document.createElement("h2");
+        h2.textContent = text9(heading2);
+        title.append(h2);
+        parts.push(title);
+      }
+      grid.querySelectorAll(".item").forEach((item) => {
+        const img = item.querySelector("img");
+        if (img) {
+          const media = document.createElement("div");
+          media.className = "c-standalone-image";
+          const link3 = item.querySelector(".img-cont a[href]");
+          const copy = img.cloneNode(true);
+          if (link3) {
+            const a = linkOf(link3, document);
+            a.append(copy, text9(item.querySelector("h3") || link3));
+            media.append(a);
+          } else {
+            media.append(copy);
+          }
+          parts.push(media);
+        }
+        const body = document.createElement("div");
+        const h3 = item.querySelector("h3");
+        if (h3 && text9(h3)) {
+          const heading3 = document.createElement("h3");
+          const target = h3.querySelector("a[href]");
+          if (target) {
+            const a = linkOf(target, document);
+            a.textContent = text9(h3);
+            heading3.append(a);
+          } else {
+            heading3.textContent = text9(h3);
+          }
+          body.append(heading3);
+        }
+        item.querySelectorAll(".desc-container > p").forEach((source) => {
+          if (!text9(source)) return;
+          const p = document.createElement("p");
+          p.textContent = text9(source);
+          body.append(p);
+        });
+        const cta = item.querySelector("a.action-link[href]");
+        if (cta && text9(cta)) {
+          const a = linkOf(cta, document);
+          const u = document.createElement("u");
+          u.textContent = text9(cta);
+          a.append(u);
+          const strong = document.createElement("strong");
+          strong.append(a);
+          const p = document.createElement("p");
+          p.append(strong);
+          body.append(p);
+        }
+        const wrapper = document.createElement("div");
+        wrapper.className = "c-rich-text-editor";
+        const inner = document.createElement("div");
+        inner.append(...body.childNodes);
+        wrapper.append(inner);
+        parts.push(wrapper);
+      });
+      (grid.closest(".customizable") || grid).replaceWith(...parts);
+    });
+  }
+  function placeTitle(main) {
+    const marker = main.querySelector("[data-title-before]");
+    if (!marker) return;
+    const title = [];
+    let node = main.firstChild;
+    while (node && node.nodeName !== "HR") {
+      title.push(node);
+      node = node.nextSibling;
+    }
+    if (!node || !title.some((n) => n.nodeName === "H1" || n.querySelector?.("h1"))) return;
+    title.push(node);
+    let start = marker;
+    while (start.parentElement !== main) start = start.parentElement;
+    while (start.previousSibling && start.previousSibling.nodeName !== "HR") start = start.previousSibling;
+    if (title.includes(start)) return;
+    title.forEach((n) => main.insertBefore(n, start));
+    marker.removeAttribute("data-title-before");
   }
   var events_default = {
     preprocess,
     transform: (payload) => {
-      heroTitle(payload.document);
-      carousel(payload.document);
-      return transformPage(payload, "events");
+      const { document } = payload;
+      decodeAlts(document);
+      fixTypos(document);
+      singleFullWidthImages(document);
+      relatedProducts(document);
+      heroTitle(document);
+      carousel(document);
+      const result = transformPage(payload, "events");
+      placeTitle(result[0].element);
+      return result;
     }
   };
 
