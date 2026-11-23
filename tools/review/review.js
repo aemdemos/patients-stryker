@@ -1,0 +1,1528 @@
+/*
+ * Review tool shell: the page under review as the base (config.js: the migrated page at its final
+ * path, or the standard page under /std), compared with a snapshot of the source page
+ * (www.stryker.com, capture-snapshots.mjs) or its as-is version (/rs, standard pages only); the
+ * widths of config.js, flip / overlay / side by side, text-matched scroll sync, the page status,
+ * comments, QA notes, saving; the design panel (the page's blocks with their variants) when
+ * config.js has design on. Runs on preview hosts only (the branch preview, the workspace
+ * preview); the frames are on the same host, so the shell reads and scrolls them directly.
+ */
+import { leaves, buildAnchors, mapY } from './sync.js';
+import { createStore } from './store.js';
+import { keysOfHtml, toPosition, toKey } from './blockkeys.js';
+import {
+  threadState, roleOf, pageState, STATES_BY_ROLE,
+} from './threads.js';
+import { createNotes, CATEGORIES } from './notes.js';
+import { REVIEW, storageKey } from './config.js';
+import loadPages from './pages.js';
+
+const { hostname } = window.location;
+// the workspace preview: the local dev server, also seen through the coder preview's address
+const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
+const PREVIEW = LOCAL || /\.aem\.page$/.test(hostname);
+// the workspace preview serves the imported documents under /content
+const CONTENT = LOCAL ? '/content' : '';
+// the page under review (config.js): its path prefix here (the migrated pages at their final
+// paths; the standard pages under /std)
+const BASE = LOCAL ? REVIEW.base.localPrefix : REVIEW.base.prefix;
+const BASE_LABEL = REVIEW.base.label;
+const BASE_WORD = BASE_LABEL.toLowerCase();
+// the snapshot tiles: on the workspace preview the local copy, else Document Authoring's copy
+// through the branch preview (upload-snapshots.sh)
+const SNAPSHOTS = LOCAL ? REVIEW.snapshots.local : REVIEW.snapshots.preview;
+const READY_TIMEOUT = 8000;
+const NAME_KEY = storageKey('reviewer');
+const MODES = ['flip', 'opacity', 'side'];
+const COMPARE = { rs: 'as-is', src: 'source' };
+const WIDTHS = REVIEW.widths.map((w) => w.vp);
+
+const params = new URLSearchParams(window.location.search);
+const state = {
+  page: params.get('page') || '',
+  vp: WIDTHS.includes(Number(params.get('vp'))) ? Number(params.get('vp')) : WIDTHS[0],
+  mode: MODES.includes(params.get('mode')) ? params.get('mode') : REVIEW.mode,
+  cmp: REVIEW.compare.includes(params.get('cmp')) ? params.get('cmp') : REVIEW.compare[0],
+  show: ['rs', 'cmp'].includes(params.get('show')) ? 'cmp' : 'std',
+  opacity: Number.isFinite(Number(params.get('op'))) && params.get('op') !== null ? Number(params.get('op')) : 50,
+  sync: true,
+};
+
+const $ = (sel) => document.querySelector(sel);
+const stage = $('.rv-stage');
+const panes = { std: $('.rv-std'), rs: $('.rv-rs'), src: $('.rv-src') };
+const frames = { std: panes.std.querySelector('iframe'), rs: panes.rs.querySelector('iframe') };
+const scroller = panes.src.querySelector('.rv-src-scroller');
+const ready = { std: false, rs: false, src: false };
+const quietUntil = { std: 0, rs: 0, src: 0 };
+let anchors = [];
+// the source snapshot of the page at the current width (meta.json of capture-snapshots.mjs)
+let snapshot = null;
+// live source URLs of the pages with a snapshot (the meta's url)
+const SOURCE = {};
+let pages = [];
+let rebuildTimer;
+let noteShown = false;
+let targetShown = false;
+
+function el(tag, attrs = {}, ...children) {
+  const e = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => {
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  });
+  children.flat().filter((c) => c !== null && c !== undefined).forEach((c) => e.append(c));
+  return e;
+}
+
+function writeUrl() {
+  const p = new URLSearchParams();
+  if (state.page) p.set('page', state.page);
+  p.set('vp', state.vp);
+  p.set('mode', state.mode);
+  if (state.cmp !== REVIEW.compare[0]) p.set('cmp', state.cmp);
+  if (state.mode === 'flip' && state.show === 'cmp') p.set('show', 'cmp');
+  if (state.mode === 'opacity') p.set('op', state.opacity);
+  window.history.replaceState(null, '', `${window.location.pathname}?${p}`);
+}
+
+/* ---------- layout: each frame at the viewport width, scaled to fit its pane ---------- */
+
+function layout() {
+  const { width: W, height: H } = stage.getBoundingClientRect();
+  const side = state.mode === 'side';
+  const gap = side ? 12 : 0;
+  const paneW = side ? (W - gap) / 2 : W;
+  const scale = Math.min(1, paneW / state.vp);
+  const cmp = panes[state.cmp];
+  Object.entries(panes).forEach(([key, pane]) => {
+    const w = state.vp * scale;
+    let left = (paneW - w) / 2;
+    if (side && key !== 'std') left += paneW + gap;
+    Object.assign(pane.style, { left: `${left}px`, width: `${w}px`, height: `${H}px` });
+    Object.assign((frames[key] || scroller).style, {
+      width: `${state.vp}px`, height: `${H / scale}px`, transform: `scale(${scale})`,
+    });
+    pane.classList.toggle('rv-off', key !== 'std' && key !== state.cmp);
+  });
+  document.body.classList.remove(...MODES.map((m) => `mode-${m}`));
+  document.body.classList.add(`mode-${state.mode}`);
+  panes.std.classList.toggle('rv-hidden', state.mode === 'flip' && state.show === 'cmp');
+  cmp.classList.toggle('rv-hidden', state.mode === 'flip' && state.show === 'std');
+  cmp.style.opacity = state.mode === 'opacity' ? state.opacity / 100 : '';
+  cmp.style.zIndex = state.mode === 'flip' ? '' : '1';
+  document.querySelectorAll('[data-vp]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.vp) === state.vp)));
+  document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)));
+  document.querySelectorAll('[data-cmp]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cmp === state.cmp)));
+  $('.rv-opacity input').value = state.opacity;
+  $('.rv-opacity-label').textContent = COMPARE[state.cmp];
+  const other = COMPARE[state.cmp];
+  let showing = `${BASE_LABEL} and ${other}`;
+  if (state.mode === 'flip') showing = state.show === 'std' ? `Showing: ${BASE_WORD} (Space: ${other})` : `Showing: ${other} (Space: ${BASE_WORD})`;
+  else if (state.mode === 'opacity') showing = `${other[0].toUpperCase()}${other.slice(1)} over ${BASE_WORD}, ${state.opacity}%`;
+  $('.rv-showing').textContent = showing;
+  writeUrl();
+}
+
+/* ---------- sync ---------- */
+
+// the snapshot pane behaves like a window for the sync: its scroller scrolls the picture
+const snapshotWindow = {
+  get scrollY() { return scroller.scrollTop; },
+  get innerHeight() { return scroller.clientHeight; },
+  scrollTo(x, y) { scroller.scrollTop = typeof x === 'object' ? x.top : y; },
+};
+const win = (side) => (side === 'src' ? snapshotWindow : frames[side].contentWindow);
+const doc = (side) => frames[side].contentDocument;
+
+// pinned QA notes on the standard page (notes.js); the editor and the list are set up below
+const noteHooks = { place: () => {}, select: () => {}, render: () => {} };
+const notes = createNotes({
+  doc: () => (ready.std ? doc('std') : null),
+  vp: () => state.vp,
+  onPlace: (draft) => noteHooks.place(draft),
+  onSelect: (id) => noteHooks.select(id),
+});
+
+function rebuildAnchors() {
+  if (!ready.std || !ready[state.cmp]) return;
+  try {
+    const other = state.cmp === 'src' ? snapshot.leaves : leaves(doc('rs'));
+    anchors = buildAnchors(leaves(doc('std')), other);
+  } catch (e) {
+    anchors = [];
+  }
+}
+
+function scheduleRebuild() {
+  window.clearTimeout(rebuildTimer);
+  rebuildTimer = window.setTimeout(() => {
+    rebuildAnchors();
+    notes.render();
+  }, 400);
+}
+
+function syncFrom(from) {
+  if (!state.sync || !ready.std || !ready[state.cmp]) return;
+  if (from !== 'std' && from !== state.cmp) return;
+  const to = from === 'std' ? state.cmp : 'std';
+  const src = win(from);
+  const dst = win(to);
+  const mid = src.scrollY + src.innerHeight / 2;
+  const mapped = mapY(anchors, mid, from === 'std' ? 0 : 1);
+  quietUntil[to] = Date.now() + 200;
+  dst.scrollTo(0, Math.max(0, mapped - dst.innerHeight / 2));
+}
+
+/* ---------- the blocks of the standard page, and their variants ---------- */
+
+// classes the page code adds while decorating (not authored variants)
+const NOT_VARIANT = [/^block$/, /^sticky-nav/, /^columns-\d+-cols$/, /^columns-text$/, /^with-nested-blocks$/];
+const NAMES = {
+  columns: 'Columns',
+  'cards-corp': 'Cards',
+  'hero-corp': 'Hero',
+  video: 'Video',
+  'page-nav': 'Page Nav',
+  statistics: 'Statistics',
+  accordion: 'Accordion',
+  tabs: 'Tabs',
+  table: 'Table',
+  'marketo-form': 'Form',
+  'related-categories': 'Related Categories',
+  'chart-corp': 'Chart',
+  'gallery-corp': 'Gallery',
+  fragment: 'Fragment',
+};
+const TEXT_LABELS = {
+  '': 'default (Humanist 14)',
+  'text-large': 'large (Humanist 17.5)',
+  'text-x-large': 'extra large (Humanist 21)',
+  'text-serif': 'serif (Egyptienne 21)',
+  'text-serif-subtitle': 'serif subtitle (Egyptienne 24.5)',
+  'text-serif-title': 'serif title (Egyptienne 28)',
+};
+const VARIANT_LABELS = { '': 'default', autoplay: 'autoplay', sticky: 'sticky' };
+const WIDTH_LABELS = { '': 'equal widths', 'wide-first': 'wide first', 'wide-last': 'wide last' };
+const BG_LABELS = {
+  '': 'no background', 'grey-band': 'grey band', 'gold-box': 'gold box', 'purple-band': 'purple band', 'blue-band': 'blue band',
+};
+const label = (v, labels = VARIANT_LABELS) => (v in labels ? labels[v] : v.replace(/-/g, ' '));
+const api = () => (ready.std ? win('std')?.stdReview : null);
+
+/* ---------- saving (store.js: the review backend) ---------- */
+
+// the page's saved state: `item|kind` → { value, reviewer, time } (items as positions, `s14b0`)
+let saved = new Map();
+// who is reviewing: from the invitation (name, role reviewer or aoe)
+const me = { name: '', role: 'reviewer' };
+// the page's block keys (blockkeys.js): saved entries are stored under them, shown by position
+let pageKeys = { byId: {}, byKey: {} };
+let savedLoad = Promise.resolve();
+// this reviewer's unsaved changes on the page: `item|kind` → value; kept in the browser until Save
+let drafts = new Map();
+const DRAFTS_KEY = storageKey('drafts');
+const reviewer = () => $('.rv-reviewer').value.trim();
+const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+// `item|kind`: the item may hold `|` itself (a group key), the kind never does
+const splitKey = (key) => [key.slice(0, key.lastIndexOf('|')), key.slice(key.lastIndexOf('|') + 1)];
+const when = (t) => (t ? new Date(t).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) : '');
+let storeStatus = { kind: 'saved', text: 'All changes saved' };
+
+/** the current state of an item: this reviewer's unsaved change, else the saved one */
+function savedOf(item, kind) {
+  const key = `${item}|${kind}`;
+  if (drafts.has(key)) {
+    return {
+      item, kind, value: drafts.get(key), reviewer: reviewer() || 'you', time: null, unsaved: true,
+    };
+  }
+  return saved.get(key);
+}
+
+/** a group's chosen value for a kind (variant, width), undefined when it has none */
+function groupValue(group, kind) {
+  const g = savedOf(`group:${group}`, kind);
+  return g && g.value !== null && g.value !== undefined ? g.value : undefined;
+}
+
+/** what a value was before this reviewer's unsaved changes: the saved one, else the page's own */
+function baseOf(item, kind) {
+  const s = saved.get(`${item}|${kind}`);
+  if (kind === 'note' || item.startsWith('group:')) return s ? s.value : undefined;
+  if (s && s.value !== null) return s.value;
+  if (kind === 'comment') return '';
+  if (kind === 'reviewed') return false;
+  if (/^s\d+$/.test(item)) {
+    const sec = api()?.sections().find((x) => x.id === item);
+    if (!sec) return undefined;
+    const fromGroup = kind === 'text' ? groupValue(sec.group, 'text') : undefined;
+    if (fromGroup !== undefined) return fromGroup;
+    return kind === 'text' ? sec.standard : sec.standardBackground;
+  }
+  const block = api()?.list().find((i) => i.id === item);
+  if (!block) return undefined;
+  // a block without its own choice follows its group's choice, else its own design
+  const group = kind !== 'background' && block.group ? groupValue(block.group, kind) : undefined;
+  if (group !== undefined) return group;
+  const own = {
+    variant: block.standard, width: block.standardWidth, background: block.standardBackground,
+  };
+  return own[kind];
+}
+
+// the page status follows every change (drawn further down)
+const statusHooks = { render: () => {} };
+
+function renderStatus() {
+  const box = $('.rv-status');
+  const n = drafts.size;
+  let { kind, text } = storeStatus;
+  if (kind === 'saved' && n) {
+    kind = 'unsaved';
+    text = `${n} unsaved change${n > 1 ? 's' : ''}`;
+  }
+  box.className = `rv-status rv-${kind}`;
+  box.querySelector('.rv-status-text').textContent = text;
+  box.querySelector('.rv-retry').hidden = kind !== 'failed';
+  const button = $('.rv-save');
+  button.disabled = !n;
+  button.textContent = n ? `Save (${n})` : 'Saved';
+  $('.rv-undo').disabled = !n;
+  statusHooks.render();
+}
+
+const store = createStore((kind, text) => {
+  storeStatus = { kind, text };
+  renderStatus();
+});
+
+function keepDrafts() {
+  let all = {};
+  try {
+    all = JSON.parse(window.localStorage.getItem(DRAFTS_KEY)) || {};
+  } catch (e) {
+    all = {};
+  }
+  if (drafts.size) all[state.page] = Object.fromEntries(drafts);
+  else delete all[state.page];
+  window.localStorage.setItem(DRAFTS_KEY, JSON.stringify(all));
+  renderStatus();
+}
+
+function draftsOf(page) {
+  try {
+    const all = JSON.parse(window.localStorage.getItem(DRAFTS_KEY)) || {};
+    return new Map(Object.entries(all[page] || {}));
+  } catch (e) {
+    return new Map();
+  }
+}
+
+/** a change: unsaved until Save; back at the value it had before, it is no change at all */
+function saveRow(item, kind, value) {
+  const key = `${item}|${kind}`;
+  const neverSavedNote = kind === 'note' && value?.deleted && !saved.has(key);
+  if (neverSavedNote || same(value, baseOf(item, kind))) drafts.delete(key);
+  else drafts.set(key, value);
+  keepDrafts();
+}
+
+/** a block choice: one change per property */
+function keepChoice(id, patch) {
+  Object.entries(patch).forEach(([kind, value]) => saveRow(id, kind, value));
+}
+
+/** Save: one row per unsaved change (its final value) */
+function saveAll() {
+  if (!drafts.size) return true;
+  if (!reviewer()) {
+    $('.rv-name').classList.add('rv-need');
+    $('.rv-reviewer').focus();
+    storeStatus = { kind: 'failed', text: 'Enter your name, then Save' };
+    renderStatus();
+    $('.rv-retry').hidden = true;
+    return false;
+  }
+  $('.rv-name').classList.remove('rv-need');
+  drafts.forEach((value, key) => {
+    const [item, kind] = splitKey(key);
+    // (a group's choice is for every page)
+    saved.set(key, {
+      ...store.save({
+        page: item.startsWith('group:') ? '*' : state.page, item: toKey(item, pageKeys), kind, value, reviewer: reviewer(),
+      }),
+      item,
+      reviewer: me.name || reviewer(),
+      role: me.role,
+    });
+  });
+  drafts = new Map();
+  keepDrafts();
+  return true;
+}
+
+/** a small dialog: resolves with the chosen button's value */
+function ask(text, choices) {
+  return new Promise((resolve) => {
+    const dialog = el('dialog', { class: 'rv-dialog' });
+    dialog.append(
+      el('p', {}, text),
+      el('div', { class: 'rv-note-actions' }, ...choices.map(([text2, value, cls]) => el('button', {
+        type: 'button',
+        class: `rv-btn-light ${cls || ''}`,
+        onclick: () => {
+          dialog.close();
+          dialog.remove();
+          resolve(value);
+        },
+      }, text2))),
+    );
+    document.body.append(dialog);
+    dialog.showModal();
+  });
+}
+
+/** before leaving a page with unsaved changes: save them, or keep them in this browser */
+async function leavePage() {
+  if (!drafts.size) return;
+  const n = drafts.size;
+  const choice = await ask(
+    `You have ${n} unsaved change${n > 1 ? 's' : ''} on this page.`,
+    [['Save now', 'save', 'rv-primary'], ['Keep for later', 'keep']],
+  );
+  if (choice === 'save') saveAll();
+}
+
+function blockLabel(block) {
+  const name = block.dataset.blockName || block.classList[0];
+  const variant = [...block.classList]
+    .filter((c) => c !== name && !NOT_VARIANT.some((re) => re.test(c))).join(' ');
+  return { name, variant };
+}
+
+/** without the switcher (it failed to load): the rendered blocks, read only */
+function listRendered(list) {
+  const blocks = [...doc('std').querySelectorAll('main .block')].filter((b) => !b.closest('header, footer'));
+  blocks.forEach((block) => {
+    const { name, variant } = blockLabel(block);
+    list.append(el('li', {
+      onmouseenter: () => block.classList.add('rv-hl'),
+      onmouseleave: () => block.classList.remove('rv-hl'),
+    }, el('span', {}, name), el('span', { class: 'rv-variant' }, variant || 'default')));
+  });
+}
+
+/* ---------- threads: the back and forth on a comment or QA note ---------- */
+
+// the rules (thread states, handovers, page states) are shared: threads.js
+const AOE_STATES = {
+  progress: 'in progress', done: 'done', wontdo: "won't do", open: 'open again',
+};
+// the panels a new message redraws (drawn further down)
+const threadHooks = { redraw: () => {} };
+const replyId = () => {
+  const bytes = window.crypto.getRandomValues(new Uint8Array(9));
+  return btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+};
+
+/**
+ * A thread's entries: the opener (comment / note) and its messages, saved ones and this
+ * reviewer's unsaved ones (drafts), in time order (unsaved last); an older AOE status row too
+ */
+function threadEntries(item, kind) {
+  const prefix = `${item}|reply:${kind}:`;
+  const out = [];
+  const opener = savedOf(item, kind);
+  if (opener) out.push({ ...opener, item, kind });
+  saved.forEach((e, k) => {
+    if ((k.startsWith(prefix) || k === `${item}|status:${kind}`) && !drafts.has(k)) out.push(e);
+  });
+  drafts.forEach((value, k) => {
+    if (k.startsWith(prefix)) {
+      out.push({
+        item, kind: k.slice(item.length + 1), value, reviewer: me.name || 'you', role: me.role, time: null, unsaved: true,
+      });
+    }
+  });
+  return out.sort((a, b) => ((a.time || '9') < (b.time || '9') ? -1 : 1));
+}
+
+/** a message for the thread: an unsaved change, sent with Save (Undo changes takes it back) */
+function addMessage(item, kind, value) {
+  saveRow(item, `reply:${kind}:${replyId()}`, value);
+  threadHooks.redraw();
+}
+
+// the chats shown open (kept across redraws; the page's own chat is always open)
+const openChats = new Set();
+
+/** the message box of a chat, once its panel is drawn again (the block list redraws late) */
+function focusChat(key, tries = 20) {
+  const area = document.querySelector(`[data-chat="${CSS.escape(key)}"] textarea`);
+  if (area) area.focus();
+  else if (tries > 0) window.setTimeout(() => focusChat(key, tries - 1), 50);
+}
+
+/** is this entry mine (the viewer's) */
+const isMine = (e) => e.unsaved || ((e.reviewer || '') === me.name && roleOf(e) === me.role);
+
+/**
+ * A chat under a block, text section, the page or a QA note: its messages (newest at the bottom,
+ * mine on the right), the message box, a Done tick. For comments the first message is the comment
+ * itself; for QA notes the note is shown above, the chat holds the messages about it.
+ */
+function chatParts(item, kind) {
+  const key = `${item}|${kind}`;
+  const always = item === 'page';
+  const entries = threadEntries(item, kind);
+  const messages = entries.filter((e) => e.kind !== kind || (kind === 'comment' && e.value));
+  const doneMark = savedOf(item, `done:${kind}`);
+  const done = doneMark ? doneMark.value === true : threadState(entries.map((e, i) => ({ ...e, time: e.time || `9${i}` }))).done;
+  const count = messages.length;
+  const open = always || openChats.has(key);
+  const tick = el('input', { type: 'checkbox', class: 'rv-done', 'aria-label': 'Done' });
+  tick.checked = done;
+  tick.addEventListener('change', () => {
+    saveRow(item, `done:${kind}`, tick.checked);
+    threadHooks.redraw();
+  });
+  let toggleLabel = open ? 'Hide comment box' : 'Comment';
+  if (count) toggleLabel = `${open ? 'Hide' : 'Show'} comments (${count})`;
+  const head = el(
+    'div',
+    { class: 'rv-chat-head' },
+    always ? el('span', { class: 'rv-meta' }, count ? `${count} message${count > 1 ? 's' : ''}` : '') : el('button', {
+      type: 'button',
+      class: 'rv-comment-toggle',
+      'aria-expanded': String(open),
+      onclick: () => {
+        if (open) openChats.delete(key);
+        else openChats.add(key);
+        threadHooks.redraw();
+        if (!open) focusChat(key);
+      },
+    }, toggleLabel),
+    count ? el('label', { class: 'rv-done-label', title: 'This is dealt with (either side can tick it)' }, tick, ' Done') : null,
+  );
+  if (!open) return [head];
+  const list = el('div', { class: 'rv-chat' });
+  messages.forEach((r) => {
+    const v = (typeof r.value === 'object' && r.value) || {};
+    const text = r.kind === kind ? r.value : (v.text || (r.kind.startsWith('status:') ? v.reason : ''));
+    const statusOf = r.kind.startsWith('status:') ? v : v.status;
+    const status = statusOf && AOE_STATES[statusOf.state];
+    const remove = r.unsaved ? el('button', {
+      type: 'button',
+      class: 'rv-msg-remove',
+      title: 'Remove this unsaved message',
+      onclick: () => {
+        drafts.delete(`${item}|${r.kind}`);
+        keepDrafts();
+        threadHooks.redraw();
+      },
+    }, '×') : null;
+    list.append(el(
+      'div',
+      { class: `rv-bubble${isMine(r) ? ' rv-mine' : ''}${roleOf(r) === 'aoe' ? ' rv-msg-aoe' : ''}${r.unsaved ? ' rv-msg-unsaved' : ''}` },
+      el(
+        'div',
+        { class: 'rv-bubble-head' },
+        el('span', { class: 'rv-msg-who' }, r.unsaved ? (me.name || 'you') : (r.reviewer || 'someone'), roleOf(r) === 'aoe' ? el('span', { class: 'rv-badge' }, 'AOE') : null),
+        el('span', { class: 'rv-meta' }, r.unsaved ? el('span', { class: 'rv-tag-msg rv-tag-unsaved' }, 'unsaved') : when(r.time), remove),
+      ),
+      status ? el('p', { class: `rv-aoe rv-aoe-${statusOf.state}` }, el('b', {}, `AOE: ${status}`), statusOf.release ? ` in ${statusOf.release}` : '') : null,
+      text ? el('p', { class: 'rv-msg-text' }, text) : null,
+    ));
+  });
+  if (!messages.length) list.append(el('p', { class: 'rv-chat-empty' }, kind === 'note' ? 'No messages about this note yet.' : 'No comments yet: write the first one below.'));
+  // the message box: Send (Ctrl+Enter); the AOE team may add a status
+  const area = el('textarea', { class: 'rv-reply', rows: '2', placeholder: 'Write a message… (Ctrl+Enter sends)' });
+  const pick = me.role === 'aoe' ? el('select', { class: 'rv-reply-status', 'aria-label': 'Status' }, el('option', { value: '' }, 'no status'), ...Object.entries(AOE_STATES).map(([k, v]) => el('option', { value: k }, v))) : null;
+  const release = me.role === 'aoe' ? el('input', {
+    class: 'rv-reply-release', placeholder: 'release', 'aria-label': 'Release', size: '7',
+  }) : null;
+  const send = () => {
+    const words = area.value.trim();
+    if (!words && !pick?.value) return;
+    // (the first message on a block, section or the page is the comment itself)
+    if (kind === 'comment' && !savedOf(item, 'comment')?.value) saveRow(item, 'comment', words);
+    else {
+      const value = { text: words || undefined };
+      if (pick?.value) {
+        value.status = { state: pick.value, release: release.value.trim() || undefined };
+      }
+      addMessage(item, kind, value);
+    }
+    openChats.add(key);
+    threadHooks.redraw();
+    focusChat(key);
+  };
+  area.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      send();
+    }
+  });
+  const composer = el('div', { class: 'rv-composer' }, area, el('div', { class: 'rv-reply-actions' }, pick, release, el('button', { type: 'button', class: 'rv-btn-light rv-primary', onclick: send }, 'Send')));
+  return [head, el('div', { class: 'rv-chat-box', 'data-chat': key }, list, composer)];
+}
+
+/** the chat of a block, text section or the page (comments) */
+function commentParts(item) {
+  return chatParts(item, 'comment');
+}
+
+/** every chat shows its newest message (they scroll to the bottom) */
+function settleChats() {
+  window.requestAnimationFrame(() => document.querySelectorAll('.rv-chat').forEach((c) => {
+    c.scrollTop = c.scrollHeight;
+  }));
+}
+
+/* ---------- groups: "blocks like this" (groups.js, counts in groups.json) ---------- */
+
+let GROUPS = {};
+// the block list is drawn further down; the group buttons redraw it through this
+const panelHooks = { list: () => {} };
+const ownValue = (id, kind) => {
+  const own = savedOf(id, kind);
+  return own && own.value !== null && own.value !== undefined ? own.value : undefined;
+};
+
+/** a block follows its group again: its saved own choice is cleared, its draft dropped */
+function clearOwn(id, kind) {
+  const key = `${id}|${kind}`;
+  if (saved.has(key) && saved.get(key).value !== null) saveRow(id, kind, null);
+  else {
+    drafts.delete(key);
+    keepDrafts();
+  }
+}
+
+/** the group line of a block: how many are like it, its group's choice, use / stop for all */
+function groupParts(item, review, busy, li) {
+  const info = item.group && GROUPS[item.group];
+  if (!info || info.blocks < 2) return null;
+  const chosen = savedOf(`group:${item.group}`, 'variant');
+  const value = groupValue(item.group, 'variant');
+  const mine = ownValue(item.id, 'variant');
+  const others = () => review.list().filter((o) => o.group === item.group && o.id !== item.id);
+  const setOthers = async (variant, width) => {
+    await others().filter((o) => ownValue(o.id, 'variant') === undefined)
+      .reduce((chain, o) => chain.then(() => review.set(o.id, {
+        variant, width: o.widths.length ? width : undefined,
+      })), Promise.resolve());
+  };
+  let text = `${info.blocks} blocks like this on ${info.pages} pages`;
+  if (value !== undefined) {
+    const by = chosen.unsaved ? 'unsaved' : `${chosen.reviewer || 'someone'} · ${when(chosen.time)}`;
+    text = `All ${info.blocks} like this: ${label(value)} (${by})`;
+    if (mine !== undefined && mine !== value) text += ' · this block is an exception';
+  }
+  const useAll = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: `${info.label}: every block like this on every page gets this design, unless it has its own choice`,
+    onclick: async () => {
+      busy(li, true);
+      saveRow(`group:${item.group}`, 'variant', item.variant);
+      if (item.widths.length) saveRow(`group:${item.group}`, 'width', item.width);
+      clearOwn(item.id, 'variant');
+      clearOwn(item.id, 'width');
+      await setOthers(item.variant, item.width);
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Use this design for all');
+  const stop = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: 'Blocks like this go back to their own design (blocks with their own choice keep it)',
+    onclick: async () => {
+      busy(li, true);
+      saveRow(`group:${item.group}`, 'variant', null);
+      saveRow(`group:${item.group}`, 'width', null);
+      const back = [item, ...others()].filter((o) => ownValue(o.id, 'variant') === undefined);
+      await back.reduce((chain, o) => chain.then(() => review.set(o.id, {
+        variant: o.standard, width: o.widths.length ? o.standardWidth : undefined,
+      })), Promise.resolve());
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Stop');
+  const allSame = value !== undefined && value === item.variant && mine === undefined;
+  return el(
+    'div',
+    { class: 'rv-group-row', title: info.label },
+    el('span', { class: 'rv-meta' }, text),
+    el('span', {}, allSame ? null : useAll, value !== undefined ? ' ' : null, value !== undefined ? stop : null),
+  );
+}
+
+/** the group line of a text section: sections with the same standard text set */
+function sectionGroupParts(sec, review, busy, li) {
+  const info = GROUPS[sec.group];
+  if (!info || info.blocks < 2) return null;
+  const chosen = savedOf(`group:${sec.group}`, 'text');
+  const value = groupValue(sec.group, 'text');
+  const mine = ownValue(sec.id, 'text');
+  const others = () => review.sections().filter((o) => o.group === sec.group && o.id !== sec.id);
+  let text = `${info.blocks} sections like this on ${info.pages} pages`;
+  if (value !== undefined) {
+    const by = chosen.unsaved ? 'unsaved' : `${chosen.reviewer || 'someone'} · ${when(chosen.time)}`;
+    text = `All ${info.blocks} like this: ${label(value, TEXT_LABELS)} (${by})`;
+    if (mine !== undefined && mine !== value) text += ' · this section is an exception';
+  }
+  const useAll = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: `${info.label}: every section like this on every page gets this text style, unless it has its own choice`,
+    onclick: () => {
+      busy(li, true);
+      saveRow(`group:${sec.group}`, 'text', sec.set);
+      clearOwn(sec.id, 'text');
+      others().filter((o) => ownValue(o.id, 'text') === undefined).forEach((o) => review.setTextSet(o.id, sec.set));
+      busy(li, false);
+      panelHooks.list();
+    },
+  }, 'Use this text style for all');
+  const stop = el('button', {
+    type: 'button',
+    class: 'rv-comment-toggle rv-group-btn',
+    title: 'Sections like this go back to their own text style (sections with their own choice keep it)',
+    onclick: () => {
+      saveRow(`group:${sec.group}`, 'text', null);
+      [sec, ...others()].filter((o) => ownValue(o.id, 'text') === undefined)
+        .forEach((o) => review.setTextSet(o.id, o.standard));
+      panelHooks.list();
+    },
+  }, 'Stop');
+  const allSame = value !== undefined && value === sec.set && mine === undefined;
+  return el(
+    'div',
+    { class: 'rv-group-row', title: info.label },
+    el('span', { class: 'rv-meta' }, text),
+    el('span', {}, allSame ? null : useAll, value !== undefined ? ' ' : null, value !== undefined ? stop : null),
+  );
+}
+
+/** a section with text of its own: its text style (instant), background, group, comment */
+function textRow(sec, review) {
+  const changed = sec.set !== sec.standard || sec.background !== sec.standardBackground;
+  const busy = (row, on) => row.classList.toggle('rv-busy', on);
+  const li = el('li', {
+    class: `rv-item rv-text-item${changed ? ' rv-changed' : ''}`,
+    onmouseenter: () => review.highlightSection(sec.id, true),
+    onmouseleave: () => review.highlightSection(sec.id, false),
+  });
+  li.append(el(
+    'div',
+    { class: 'rv-item-head' },
+    el('button', {
+      type: 'button', class: 'rv-name', title: sec.snippet, onclick: () => review.revealSection(sec.id),
+    }, 'Text'),
+    el('span', { class: 'rv-flags' }, changed ? 'changed' : '', sec.hidden ? ' hidden' : ''),
+  ));
+  li.append(el('div', { class: 'rv-snippet' }, `“${sec.snippet}…”`));
+  const sets = review.textSets;
+  const cycle = (dir) => {
+    const i = sets.indexOf(sec.set);
+    const next = sets[(i + dir + sets.length) % sets.length];
+    if (review.setTextSet(sec.id, next)) {
+      keepChoice(sec.id, { text: next });
+      panelHooks.list();
+    }
+  };
+  const controls = el('div', { class: 'rv-controls' }, el(
+    'div',
+    { class: 'rv-cycle' },
+    el('button', {
+      type: 'button', class: 'rv-step', 'aria-label': 'Previous text style', onclick: () => cycle(-1),
+    }, '‹'),
+    el('span', { class: 'rv-current' }, label(sec.set, TEXT_LABELS), el('small', {}, ` ${sets.indexOf(sec.set) + 1}/${sets.length}`)),
+    el('button', {
+      type: 'button', class: 'rv-step', 'aria-label': 'Next text style', onclick: () => cycle(1),
+    }, '›'),
+  ));
+  if (!sec.hasBlocks) {
+    const bg = el('select', {
+      onchange: (e) => {
+        if (review.setSectionBackground(sec.id, e.target.value)) {
+          keepChoice(sec.id, { background: e.target.value });
+          panelHooks.list();
+        }
+      },
+    }, ...review.backgrounds.map((v) => el('option', { value: v }, label(v, BG_LABELS))));
+    bg.value = sec.background;
+    controls.append(bg);
+  }
+  li.append(controls);
+  const group = sectionGroupParts(sec, review, busy, li);
+  if (group) li.append(group);
+  li.append(...commentParts(sec.id, 'Comment on this text (e.g. none of the text styles fit, because …)'));
+  return li;
+}
+
+function blockRow(item, review) {
+  const changed = item.variant !== item.standard || item.width !== item.standardWidth
+    || item.background !== item.standardBackground;
+  const busy = (li, on) => li.classList.toggle('rv-busy', on);
+  const li = el('li', {
+    class: `rv-item${changed ? ' rv-changed' : ''}`,
+    onmouseenter: () => review.highlight(item.id, true),
+    onmouseleave: () => review.highlight(item.id, false),
+  });
+  const head = el(
+    'div',
+    { class: 'rv-item-head' },
+    el('button', {
+      type: 'button', class: 'rv-name', title: 'Scroll to this block', onclick: () => review.reveal(item.id),
+    }, NAMES[item.name] || item.name),
+    el('span', { class: 'rv-flags' }, changed ? 'changed' : '', item.hidden ? ' hidden' : ''),
+  );
+  li.append(head);
+  const controls = el('div', { class: 'rv-controls' });
+  if (item.list.length > 1) {
+    const cycle = async (dir) => {
+      const i = item.list.indexOf(item.variant);
+      const next = item.list[(i + dir + item.list.length) % item.list.length];
+      busy(li, true);
+      if (await review.set(item.id, { variant: next })) {
+        keepChoice(item.id, { variant: next });
+        panelHooks.list();
+      }
+      busy(li, false);
+    };
+    controls.append(el(
+      'div',
+      { class: 'rv-cycle' },
+      el('button', {
+        type: 'button', class: 'rv-step', 'aria-label': 'Previous variant', onclick: () => cycle(-1),
+      }, '‹'),
+      el('span', { class: 'rv-current' }, label(item.variant), el('small', {}, ` ${item.list.indexOf(item.variant) + 1}/${item.list.length}`)),
+      el('button', {
+        type: 'button', class: 'rv-step', 'aria-label': 'Next variant', onclick: () => cycle(1),
+      }, '›'),
+    ));
+  } else {
+    controls.append(el('span', { class: 'rv-current rv-only' }, item.list.length ? label(item.variant) : 'one design'));
+  }
+  const select = (values, current, labels, onchange) => {
+    const s = el('select', { onchange: (e) => onchange(e.target.value) }, ...values.map((v) => el('option', { value: v }, label(v, labels))));
+    s.value = current;
+    return s;
+  };
+  if (item.widths.length) {
+    controls.append(select(item.widths, item.width, WIDTH_LABELS, async (width) => {
+      busy(li, true);
+      if (await review.set(item.id, { width })) {
+        keepChoice(item.id, { width });
+        panelHooks.list();
+      }
+      busy(li, false);
+    }));
+  }
+  controls.append(select(review.backgrounds, item.background, BG_LABELS, (background) => {
+    if (review.setBackground(item.id, background)) {
+      keepChoice(item.id, { background });
+      panelHooks.list();
+    }
+  }));
+  li.append(controls);
+  const group = groupParts(item, review, busy, li);
+  if (group) li.append(group);
+  li.append(...commentParts(item.id, 'Comment on this block (e.g. none of these fit, because …)'));
+  return li;
+}
+
+/* ---------- QA notes: the list and the editor ---------- */
+
+const WIDTH_NAMES = Object.fromEntries(REVIEW.widths.map((w) => [w.vp, w.label.toLowerCase()]));
+const noteId = () => (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+/** the page's notes from its saved state (the latest row of each note), deleted ones aside */
+function savedNotes() {
+  const keys = new Set([...saved.keys(), ...drafts.keys()].filter((k) => k.endsWith('|note')));
+  return [...keys].map((k) => savedOf(...splitKey(k)))
+    .filter((e) => e && e.value && !e.value.deleted)
+    .map((e) => {
+      // (a note is resolved when its thread is ticked Done; before Done marks: its own status)
+      const mark = savedOf(`note:${e.value.id}`, 'done:note');
+      return {
+        ...e.value, status: mark ? (mark.value === true && 'resolved') || 'open' : e.value.status, reviewer: e.reviewer, time: e.time, unsaved: !!e.unsaved,
+      };
+    });
+}
+
+function saveNote(note) {
+  saveRow(`note:${note.id}`, 'note', {
+    id: note.id,
+    created: note.created,
+    vp: note.vp,
+    cat: note.cat,
+    text: note.text,
+    status: note.status,
+    anchor: note.anchor,
+    at: note.at,
+    deleted: !!note.deleted,
+  });
+  notes.setNotes(savedNotes());
+  noteHooks.render();
+}
+
+function closeEditor() {
+  const box = $('.rv-note-editor');
+  box.hidden = true;
+  box.replaceChildren();
+  notes.clearDraft();
+}
+
+function openEditor(note) {
+  const box = $('.rv-note-editor');
+  const cat = el('select', { 'aria-label': 'Category' }, ...Object.entries(CATEGORIES).map(([k, v]) => el('option', { value: k }, v)));
+  cat.value = note.cat || 'text';
+  const text = el('textarea', { rows: '4', placeholder: 'What is wrong or should change here?' });
+  text.value = note.text || '';
+  const isNew = !note.id;
+  box.replaceChildren(
+    el('div', { class: 'rv-note-editor-head' }, isNew ? 'New QA note' : `QA note ${notes.list().find((n) => n.id === note.id)?.n || ''}`, el('span', { class: 'rv-meta' }, ` ${WIDTH_NAMES[note.vp] || note.vp}`)),
+    cat,
+    text,
+    el(
+      'div',
+      { class: 'rv-note-actions' },
+      el('button', {
+        type: 'button',
+        class: 'rv-btn-light rv-primary',
+        onclick: () => {
+          if (!text.value.trim()) {
+            text.focus();
+            return;
+          }
+          saveNote({
+            ...note, id: note.id || noteId(), cat: cat.value, text: text.value.trim(),
+          });
+          closeEditor();
+        },
+      }, 'Save note'),
+      el('button', { type: 'button', class: 'rv-btn-light', onclick: closeEditor }, 'Cancel'),
+      isNew ? null : el('button', {
+        type: 'button',
+        class: 'rv-btn-light rv-danger',
+        onclick: () => {
+          saveNote({ ...note, deleted: true });
+          closeEditor();
+        },
+      }, 'Delete'),
+    ),
+  );
+  box.hidden = false;
+  text.focus();
+}
+
+function renderNotes() {
+  const list = $('.rv-notes');
+  const all = notes.list();
+  $('.rv-notes-count').textContent = all.length ? `(${all.filter((n) => n.status !== 'resolved').length} open)` : '';
+  list.replaceChildren(...all.map((n) => el(
+    'li',
+    { class: `rv-note${n.status === 'resolved' ? ' rv-note-resolved' : ''}`, 'data-note': n.id },
+    el('button', {
+      type: 'button',
+      class: 'rv-note-main',
+      title: n.vp === state.vp ? 'Show on the page' : `Found at ${WIDTH_NAMES[n.vp]} width: switches to it and shows the pin`,
+      onclick: () => {
+        if (n.vp === state.vp) {
+          notes.select(n.id);
+          return;
+        }
+        // a note from the other width: switch to it, then show the pin once the page reflowed
+        document.querySelector(`[data-vp="${n.vp}"]`)?.click();
+        window.setTimeout(() => notes.select(n.id), 900);
+      },
+    }, el('span', { class: 'rv-note-n' }, n.n), el('span', { class: 'rv-note-text' }, `${CATEGORIES[n.cat] || ''} · ${n.text}`)),
+    el(
+      'div',
+      { class: 'rv-item-foot' },
+      el('span', { class: 'rv-meta' }, `${WIDTH_NAMES[n.vp] || n.vp} · ${n.unsaved ? 'unsaved' : `${n.reviewer || 'someone'} · ${when(n.time)}`}`),
+      el('button', { type: 'button', class: 'rv-comment-toggle', onclick: () => openEditor(n) }, 'Edit'),
+    ),
+    ...(n.unsaved ? [] : chatParts(`note:${n.id}`, 'note')),
+  )));
+  settleChats();
+  if (!all.length) list.append(el('li', { class: 'rv-none' }, 'No QA notes yet. "Add QA note" (or N), then click the spot on the page.'));
+}
+
+function setNoteMode(on) {
+  notes.setAdding(on);
+  $('[data-action="note"]').setAttribute('aria-pressed', String(on));
+  $('.rv-stage').classList.toggle('rv-adding', on);
+}
+
+noteHooks.place = (draft) => openEditor(draft);
+noteHooks.render = renderNotes;
+noteHooks.select = (id) => {
+  notes.select(id);
+  document.querySelectorAll('.rv-note').forEach((li) => li.classList.toggle('rv-on', li.dataset.note === id));
+};
+
+/** this page: reviewed mark and page comment */
+const STATUS_LABELS = {
+  unreviewed: 'Not reviewed yet',
+  'in-review': 'In review',
+  'waiting-aoe': 'Waiting for the AOE team',
+  'waiting-customer': 'Waiting for the customer',
+  approved: 'Approved as is',
+  resolved: 'Resolved',
+  skipped: 'Skipped: not migrated',
+};
+const STATUS_BUTTONS = {
+  'in-review': 'In review',
+  'waiting-aoe': 'Send to the AOE team',
+  'waiting-customer': 'Send back to the customer',
+  approved: 'Approve',
+  skip: "Skip: don't migrate",
+};
+
+/** the page's entries as rows, this reviewer's unsaved changes included (threads.js reads them) */
+function currentRows() {
+  const rows = new Map(saved);
+  drafts.forEach((value, k) => {
+    const [item, kind] = splitKey(k);
+    rows.set(k, {
+      item, kind, value, reviewer: me.name || 'you', role: me.role, time: '9999', unsaved: true,
+    });
+  });
+  return [...rows.values()].filter((e) => e && e.kind);
+}
+
+/** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
+function renderPageStatus() {
+  const st = pageState(currentRows());
+  const pending = drafts.has('page|state');
+  const by = st.set && !pending ? `set by ${st.set.by}${st.set.role === 'aoe' ? ' (AOE)' : ''} · ${when(st.set.at)}` : '';
+  $('.rv-status-banner').className = `rv-status-banner st-${st.state}`;
+  $('.rv-status-banner').replaceChildren(
+    el('span', { class: 'rv-status-kicker' }, 'Status of this page'),
+    el('strong', {}, STATUS_LABELS[st.state]),
+    el('span', { class: 'rv-status-by' }, pending ? 'unsaved: Save to apply it' : by),
+  );
+  const badge = $('.rv-page-badge');
+  badge.className = `rv-page-badge st-${st.state}`;
+  badge.textContent = STATUS_LABELS[st.state];
+  badge.title = `Status of this page${by ? `, ${by}` : ''}`;
+  // the buttons: each side its own statuses (threads.js); pressing the current one clears it
+  $('.rv-status-actions').replaceChildren(...STATES_BY_ROLE[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((value) => el('button', {
+    type: 'button',
+    class: `rv-page-state rv-page-state-${value}`,
+    'aria-pressed': String(st.pageState === value),
+    onclick: () => {
+      saveRow('page', 'state', st.pageState === value ? '' : value);
+      renderPageStatus();
+    },
+  }, STATUS_BUTTONS[value])));
+}
+
+function renderPageBox() {
+  $('.rv-pagebox-body').replaceChildren(...commentParts('page'));
+  renderPageStatus();
+  settleChats();
+}
+
+function listBlocks() {
+  if (!REVIEW.design) return;
+  // (a redraw keeps the panel where it was: emptying the list would scroll it to the top)
+  const panel = $('.rv-panel');
+  const panelTop = panel.scrollTop;
+  const list = $('.rv-blocks');
+  list.style.minHeight = `${list.offsetHeight}px`;
+  list.replaceChildren();
+  window.requestAnimationFrame(() => {
+    list.style.minHeight = '';
+    panel.scrollTop = panelTop;
+  });
+  if (!ready.std) return;
+  const review = api();
+  if (!review) {
+    listRendered(list);
+    return;
+  }
+  const items = review.list();
+  const texts = review.sections ? review.sections() : [];
+  if (!items.length && !texts.length) list.append(el('li', { class: 'rv-none' }, 'No blocks on this page itself'));
+  [...texts.map((t) => ({ si: t.si, at: 0, row: () => textRow(t, review) })),
+    ...items.map((i) => ({ si: i.si, at: 1, row: () => blockRow(i, review) }))]
+    .sort((a, b) => a.si - b.si || a.at - b.at)
+    .forEach((x) => list.append(x.row()));
+  // blocks from fragments or built by the page (tabs, accordions): shown, not switchable here
+  const why = {
+    fragment: 'From a shared fragment: not switchable on this page yet',
+    built: 'Built by the page from its sections',
+  };
+  (review.others ? review.others() : []).forEach((o) => list.append(el(
+    'li',
+    { class: 'rv-other', title: why[o.where] },
+    el('span', {}, NAMES[o.name] || o.name),
+    el('span', { class: 'rv-variant rv-none' }, o.where === 'fragment' ? 'in a fragment' : 'built by the page'),
+  )));
+}
+
+panelHooks.list = listBlocks;
+
+/** the page's saved choices (everyone's, latest per block), once its switcher is ready */
+async function applySaved(review) {
+  await savedLoad;
+  // a block's own choice, else its group's (variant, width); backgrounds are the block's own
+  const pick = (item, kind) => {
+    const own = savedOf(item.id, kind);
+    if (own && own.value !== null && own.value !== undefined) return own.value;
+    return kind !== 'background' && item.group ? groupValue(item.group, kind) : undefined;
+  };
+  const todo = review.list().map((item) => ({
+    id: item.id,
+    variant: pick(item, 'variant'),
+    width: pick(item, 'width'),
+    background: pick(item, 'background'),
+  })).filter((c) => c.variant !== undefined || c.width !== undefined || c.background !== undefined);
+  await todo.reduce((chain, c) => chain.then(async () => {
+    if (c.variant !== undefined || c.width !== undefined) {
+      await review.set(c.id, { variant: c.variant, width: c.width });
+    }
+    if (c.background !== undefined) review.setBackground(c.id, c.background);
+  }), Promise.resolve());
+  // the text sections: their own text style, else their group's; their own background
+  (review.sections ? review.sections() : []).forEach((sec) => {
+    const own = ownValue(sec.id, 'text');
+    const set = own !== undefined ? own : groupValue(sec.group, 'text');
+    if (set !== undefined) review.setTextSet(sec.id, set);
+    const bg = ownValue(sec.id, 'background');
+    if (bg !== undefined) review.setSectionBackground(sec.id, bg);
+  });
+}
+
+/** the switcher in the standard frame: wait for it (it loads after the page) */
+function whenSwitcher() {
+  const started = Date.now();
+  return new Promise((resolve) => {
+    const check = () => {
+      const review = win('std')?.stdReview;
+      if (review || Date.now() - started > READY_TIMEOUT + 6000) resolve(review || null);
+      else window.setTimeout(check, 250);
+    };
+    check();
+  });
+}
+
+/* ---------- frames ---------- */
+
+/** the source snapshot of the page at the current width: its tiles and its anchors */
+async function loadSnapshot() {
+  ready.src = false;
+  snapshot = null;
+  const pageEl = panes.src.querySelector('.rv-src-page');
+  const none = panes.src.querySelector('.rv-src-none');
+  pageEl.replaceChildren();
+  pageEl.style.height = '0';
+  const want = `${state.page}|${state.vp}`;
+  let meta = null;
+  try {
+    // the page's snapshot facts (both widths, committed with the tool)
+    const resp = await fetch(`./snapshot-meta${state.page}.json`);
+    if (resp.ok) meta = (await resp.json())[state.vp] || null;
+  } catch (e) {
+    meta = null;
+  }
+  if (`${state.page}|${state.vp}` !== want) return;
+  none.hidden = !!meta;
+  if (!meta) {
+    panes.src.querySelector('.rv-tag').textContent = 'Source: no snapshot yet';
+    return;
+  }
+  snapshot = meta;
+  SOURCE[state.page] = meta.url;
+  const live = [...document.querySelectorAll('.rv-links a')].find((a) => a.textContent === 'Live stryker.com page');
+  if (live) live.href = meta.url;
+  pageEl.style.height = `${meta.height}px`;
+  meta.tiles.forEach((t) => pageEl.append(el('img', {
+    src: `${SNAPSHOTS}${state.page}/${state.vp}/${t.file}`,
+    alt: '',
+    loading: 'lazy',
+    width: String(meta.width),
+    height: String(t.h),
+    style: `top: ${t.y}px`,
+  })));
+  const day = new Date(meta.captured).toLocaleDateString([], { dateStyle: 'medium' });
+  panes.src.querySelector('.rv-tag').textContent = `Source (stryker.com, ${day})`;
+  scroller.scrollTop = 0;
+  ready.src = true;
+  rebuildAnchors();
+  syncFrom('std');
+}
+
+function loadPage() {
+  if (!state.page) return;
+  ready.std = false;
+  ready.rs = false;
+  anchors = [];
+  // (?review loads the design switcher in the standard page)
+  frames.std.src = `${BASE}${state.page}${REVIEW.design ? '?review=1' : ''}`;
+  if (REVIEW.compare.includes('rs')) frames.rs.src = `${CONTENT}/rs${state.page}`;
+  const i = pages.findIndex((p) => p.path === state.page);
+  const page = pages[i];
+  $('.rv-page').value = page ? `${page.title} — ${page.path}` : state.page;
+  $('.rv-count').textContent = i >= 0 ? `${i + 1} / ${pages.length}` : '';
+  document.title = `Review: ${page ? page.title : state.page}`;
+  $('.rv-links').replaceChildren(...[
+    el('li', {}, el('a', { href: `${BASE}${state.page}`, target: '_blank', rel: 'noopener' }, `${BASE_LABEL} page`)),
+    REVIEW.compare.includes('rs') ? el('li', {}, el('a', { href: `${CONTENT}/rs${state.page}`, target: '_blank', rel: 'noopener' }, 'As-is page')) : null,
+    el('li', {}, el('a', { href: SOURCE[state.page] || 'https://www.stryker.com/', target: '_blank', rel: 'noopener' }, 'Live stryker.com page')),
+    el('li', {}, el('a', { href: './status.html', target: '_blank', rel: 'noopener' }, 'Review status of every page')),
+  ].filter(Boolean));
+  if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Loading…'));
+  $('.rv-pagebox-body').replaceChildren(el('p', { class: 'rv-none' }, 'Loading the saved reviews…'));
+  const loading = state.page;
+  saved = new Map();
+  drafts = draftsOf(loading);
+  renderStatus();
+  closeEditor();
+  notes.setNotes([]);
+  loadSnapshot();
+  pageKeys = { byId: {}, byKey: {} };
+  const keysLoad = fetch(`${BASE}${loading}.plain.html`)
+    .then((r) => (r.ok ? r.text() : ''))
+    .then((html) => keysOfHtml(html))
+    .catch(() => ({ byId: {}, byKey: {} }));
+  savedLoad = Promise.all([store.load(loading), keysLoad]).then(([m, keys]) => {
+    if (state.page !== loading) return;
+    pageKeys = keys;
+    // entries saved under a block key → the block's position now (a key not on the page any
+    // more: its content changed; left out here, the summary lists it for a re-check)
+    saved = new Map([...m].map(([k, e]) => {
+      const at = k.lastIndexOf('|');
+      const pos = toPosition(k.slice(0, at), keys);
+      return pos ? [`${pos}|${k.slice(at + 1)}`, { ...e, item: pos }] : null;
+    }).filter(Boolean));
+    renderPageBox();
+    notes.setNotes(savedNotes());
+    renderNotes();
+  });
+  writeUrl();
+}
+
+/** Undo changes: this page's unsaved changes go, the page shows its last saved state again */
+async function undoAll() {
+  const n = drafts.size;
+  if (!n) return;
+  const sure = await ask(
+    `Undo your ${n} unsaved change${n > 1 ? 's' : ''} on this page? It goes back to its last saved state.`,
+    [['Undo changes', true, 'rv-danger'], ['Keep them', false]],
+  );
+  if (!sure) return;
+  drafts = new Map();
+  keepDrafts();
+  loadPage();
+}
+
+async function step(delta) {
+  const i = pages.findIndex((p) => p.path === state.page);
+  const next = pages[Math.min(pages.length - 1, Math.max(0, i + delta))];
+  if (next && next.path !== state.page) {
+    await leavePage();
+    state.page = next.path;
+    loadPage();
+  }
+}
+
+function frameKeys(e) {
+  const t = e.target;
+  if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+    e.preventDefault();
+    $('.rv-save').click();
+    return;
+  }
+  if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+  if (e.code === 'Space' && state.mode === 'flip') {
+    e.preventDefault();
+    state.show = state.show === 'std' ? 'cmp' : 'std';
+    layout();
+  } else if ((e.key === 'n' || e.key === 'N') && !e.altKey && !e.ctrlKey && !e.metaKey) {
+    e.preventDefault();
+    setNoteMode(!notes.adding);
+  } else if (e.key === 'Escape' && notes.adding) {
+    setNoteMode(false);
+  } else if (e.altKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    step(e.key === 'ArrowLeft' ? -1 : 1);
+  }
+}
+
+function whenReady(side) {
+  const d = doc(side);
+  const started = Date.now();
+  return new Promise((resolve) => {
+    const check = () => {
+      const sections = [...d.querySelectorAll('main .section')];
+      const loaded = sections.length && sections.every((s) => s.dataset.sectionStatus === 'loaded');
+      if (loaded || Date.now() - started > READY_TIMEOUT) resolve();
+      else window.setTimeout(check, 250);
+    };
+    check();
+  });
+}
+
+async function onFrameLoad(side) {
+  ready[side] = false;
+  const d = doc(side);
+  if (!d) return;
+  await whenReady(side);
+  const style = d.createElement('style');
+  style.textContent = '.rv-hl { outline: 3px solid #ffb500 !important; outline-offset: 2px; }';
+  d.head.append(style);
+  win(side).addEventListener('scroll', () => {
+    if (Date.now() < quietUntil[side]) return;
+    window.requestAnimationFrame(() => syncFrom(side));
+  }, { passive: true });
+  d.addEventListener('keydown', frameKeys);
+  new ResizeObserver(scheduleRebuild).observe(d.body);
+  ready[side] = true;
+  rebuildAnchors();
+  // late content (fragments, lazy images) moves things: rebuild once more
+  window.setTimeout(rebuildAnchors, 2500);
+  if (side !== 'std') return;
+  notes.attach();
+  setNoteMode(notes.adding);
+  if (REVIEW.design) $('.rv-blocks').replaceChildren(el('li', { class: 'rv-none' }, 'Preparing the variants…'));
+  const review = REVIEW.design ? await whenSwitcher() : null;
+  if (review) {
+    d.addEventListener('std-review-change', () => {
+      scheduleRebuild();
+      listBlocks();
+      notes.render();
+    });
+    await applySaved(review);
+  }
+  listBlocks();
+  // opened from the results at a note (?note=<id>): show its pin, once
+  const wanted = params.get('note');
+  if (wanted && !noteShown) {
+    noteShown = true;
+    await savedLoad;
+    window.setTimeout(() => noteHooks.select(wanted), 600);
+  }
+  // opened from the AOE summary at a block (?block=s1b0) or a text section (?section=s3): once
+  // (links from the summary may name a block or section by its key: known once the page loaded)
+  if (params.get('block') || params.get('section')) await savedLoad;
+  const block = params.get('block') && toPosition(params.get('block'), pageKeys);
+  const section = params.get('section') && toPosition(params.get('section'), pageKeys);
+  if (review && (block || section) && !targetShown) {
+    targetShown = true;
+    const on = (v) => (block ? review.highlight(block, v) : review.highlightSection(section, v));
+    // the page may still settle (late blocks, the first sync) and move back: scroll again until
+    // the target stays near the top, at most a few times
+    const show = (tries) => {
+      if (block) review.reveal(block);
+      else review.revealSection(section);
+      window.setTimeout(() => {
+        const target = d.querySelector('.rv-hl');
+        const top = target ? target.getBoundingClientRect().top : 0;
+        if ((top < 0 || top > win('std').innerHeight / 2) && tries > 1) show(tries - 1);
+        else window.setTimeout(() => on(false), 2500);
+      }, 1500);
+    };
+    window.setTimeout(() => {
+      on(true);
+      show(4);
+    }, 600);
+  }
+}
+
+/* ---------- start ---------- */
+
+/** the toolbar and the panels of this review (config.js) */
+function setUpShell() {
+  document.title = REVIEW.title;
+  // the widths
+  const widths = $('[aria-label="Viewport"]');
+  widths.replaceChildren(...REVIEW.widths.map((w) => el('button', {
+    type: 'button', class: 'rv-btn', 'data-vp': String(w.vp), title: `${w.label}, ${w.vp} px wide`,
+  }, w.label)));
+  // the compare options: only this review's (one alone stays, as what the page is compared with)
+  document.querySelectorAll('[data-cmp]').forEach((b) => {
+    if (!REVIEW.compare.includes(b.dataset.cmp)) b.remove();
+  });
+  if (!REVIEW.compare.includes('rs')) panes.rs.remove();
+  panes.std.querySelector('.rv-tag').textContent = BASE_LABEL;
+  panes.std.querySelector('iframe').title = `${BASE_LABEL} page`;
+  document.querySelectorAll('[data-mode]').forEach((b) => {
+    b.title = b.title.replace(/the standard page/g, `the ${BASE_WORD} page`);
+  });
+  $('[data-action="note"]').title = `Then click the spot on the ${BASE_WORD} page (N; Esc to stop)`;
+  // no design panel: its links go to the feedback panel
+  if (!REVIEW.design) {
+    const links = $('.rv-links');
+    $('.rv-panel-right .rv-panel-body').append(el('section', { class: 'rv-linksbox' }, el('h3', {}, 'Open in a new tab'), links));
+    $('.rv-panel-left').remove();
+  }
+}
+
+async function start() {
+  setUpShell();
+  // the two panels fold to a strip (kept per browser); the page view takes the space
+  document.querySelectorAll('.rv-collapse').forEach((button) => {
+    const panel = button.closest('.rv-panel');
+    const key = storageKey(`panel-${button.dataset.panel}`);
+    const fold = (folded) => {
+      panel.classList.toggle('rv-collapsed', folded);
+      button.setAttribute('aria-expanded', String(!folded));
+      button.textContent = (button.dataset.panel === 'left') === folded ? '›' : '‹';
+      button.title = folded ? 'Show this panel' : 'Hide this panel';
+      window.localStorage.setItem(key, folded ? '1' : '');
+      layout();
+    };
+    fold(window.localStorage.getItem(key) === '1');
+    button.addEventListener('click', () => fold(!panel.classList.contains('rv-collapsed')));
+  });
+  // the right panel's width: drag its left edge (kept per browser)
+  const rightPanel = $('.rv-panel-right');
+  const WIDTH_KEY = storageKey('panel-right-width');
+  const keptWidth = Number(window.localStorage.getItem(WIDTH_KEY));
+  if (keptWidth) rightPanel.style.setProperty('--rv-panel-right', `${keptWidth}px`);
+  $('.rv-resize').addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    document.body.classList.add('rv-resizing');
+    let { width } = rightPanel.getBoundingClientRect();
+    const move = (ev) => {
+      // (between 260 px and what leaves the page view 480 px)
+      const most = Math.max(260, window.innerWidth - 480);
+      width = Math.round(Math.min(Math.max(window.innerWidth - ev.clientX, 260), most));
+      rightPanel.style.setProperty('--rv-panel-right', `${width}px`);
+      layout();
+    };
+    const up = () => {
+      document.body.classList.remove('rv-resizing');
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+      window.localStorage.setItem(WIDTH_KEY, String(width));
+      layout();
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  });
+  // a new message redraws the panels that show chats; the panels keep their place
+  threadHooks.redraw = () => {
+    const right = $('.rv-panel-right');
+    const top = right.scrollTop;
+    listBlocks();
+    renderPageBox();
+    notes.setNotes(savedNotes());
+    renderNotes();
+    right.scrollTop = top;
+    settleChats();
+  };
+  statusHooks.render = renderPageStatus;
+  if (!PREVIEW) {
+    $('.rv-blocked').hidden = false;
+    return;
+  }
+  Object.keys(frames).forEach((side) => {
+    if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
+  });
+  pages = await loadPages();
+  if (REVIEW.design) {
+    const groupsResp = await fetch('./groups.json');
+    GROUPS = groupsResp.ok ? (await groupsResp.json()).groups : {};
+  }
+  $('#rv-page-list').replaceChildren(...pages.map((p) => el('option', { value: `${p.title} — ${p.path}` })));
+  if (!state.page && pages.length) state.page = pages[0].path;
+
+  $('.rv-page').addEventListener('change', (e) => {
+    const v = e.target.value.trim();
+    const low = v.toLowerCase();
+    const hit = pages.find((p) => v.endsWith(p.path))
+      || pages.find((p) => p.title.toLowerCase() === low)
+      || pages.find((p) => p.path.includes(v) || p.title.toLowerCase().includes(low));
+    if (hit && hit.path !== state.page) {
+      leavePage().then(() => {
+        state.page = hit.path;
+        loadPage();
+      });
+    }
+  });
+  document.querySelectorAll('[data-action="prev"], [data-action="next"]').forEach((b) => b.addEventListener('click', () => step(b.dataset.action === 'prev' ? -1 : 1)));
+  $('[data-action="note"]').addEventListener('click', () => setNoteMode(!notes.adding));
+  document.querySelectorAll('[data-vp]').forEach((b) => b.addEventListener('click', () => {
+    if (state.vp === Number(b.dataset.vp)) return;
+    state.vp = Number(b.dataset.vp);
+    layout();
+    scheduleRebuild();
+    loadSnapshot();
+  }));
+  document.querySelectorAll('[data-cmp]').forEach((b) => b.addEventListener('click', () => {
+    state.cmp = b.dataset.cmp;
+    layout();
+    rebuildAnchors();
+    syncFrom('std');
+  }));
+  scroller.addEventListener('scroll', () => {
+    if (Date.now() < quietUntil.src) return;
+    window.requestAnimationFrame(() => syncFrom('src'));
+  }, { passive: true });
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => {
+    state.mode = b.dataset.mode;
+    layout();
+    scheduleRebuild();
+  }));
+  $('.rv-opacity input').addEventListener('input', (e) => {
+    state.opacity = Number(e.target.value);
+    layout();
+  });
+  $('.rv-sync').addEventListener('change', (e) => {
+    state.sync = e.target.checked;
+    if (state.sync) syncFrom('std');
+  });
+  const name = $('.rv-reviewer');
+  name.value = window.localStorage.getItem(NAME_KEY) || '';
+  name.addEventListener('change', () => {
+    window.localStorage.setItem(NAME_KEY, name.value.trim());
+    if (name.value.trim()) $('.rv-name').classList.remove('rv-need');
+  });
+  // with the review backend the name is the one of the review link, not typed
+  store.identity?.then((who) => {
+    if (!who) return;
+    me.name = who.name;
+    me.role = who.role || 'reviewer';
+    document.body.classList.toggle('rv-role-aoe', me.role === 'aoe');
+    threadHooks.redraw();
+    name.value = me.role === 'aoe' ? `${who.name} (AOE)` : who.name;
+    name.readOnly = true;
+    name.title = `From your review link${who.expires ? `, valid until ${when(who.expires)}` : ''}`;
+    $('.rv-name').classList.remove('rv-need');
+  });
+  $('.rv-save').addEventListener('click', () => {
+    if (saveAll()) {
+      listBlocks();
+      notes.setNotes(savedNotes());
+      renderNotes();
+      renderPageBox();
+    }
+  });
+  window.addEventListener('beforeunload', (e) => {
+    // unsaved changes, or saved ones still on their way to the review service
+    if (!drafts.size && !store.busy()) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
+  $('.rv-retry').addEventListener('click', () => store.retry());
+  $('.rv-undo').addEventListener('click', undoAll);
+  document.addEventListener('keydown', frameKeys);
+  window.addEventListener('resize', () => {
+    layout();
+    scheduleRebuild();
+  });
+  layout();
+  loadPage();
+}
+
+start();

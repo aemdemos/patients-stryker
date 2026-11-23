@@ -1,0 +1,32 @@
+/* Review status of every page (not a site style: it never loads on the site itself) */
+
+/* the states: a colour and a label each (labels carry the meaning, the colour helps the eye) */
+.st-waiting-customer { --st: #0969da; --st-ink: #fff; }
+.st-waiting-aoe { --st: #cf222e; --st-ink: #fff; }
+.st-in-review { --st: #d4a72c; --st-ink: #1f2328; }
+.st-resolved { --st: #1a7f37; --st-ink: #fff; }
+.st-approved { --st: #8fd19e; --st-ink: #1f2328; }
+.st-unreviewed { --st: #afb8c1; --st-ink: #1f2328; }
+.st-skipped { --st: #1f2328; --st-ink: #fff; }
+
+.st-tiles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.st-tile { display: flex; flex-direction: column; align-items: flex-start; min-width: 150px; padding: 8px 12px; border: 2px solid transparent; border-left: 6px solid var(--st); border-radius: 6px; background: #f6f7f8; color: #1f2328; font: inherit; text-align: left; cursor: pointer; }
+.st-tile b { font-size: 22px; line-height: 1.1; }
+.st-tile span { color: #57606a; font-size: 13px; }
+.st-tile:hover { border-color: #d0d7de; border-left-color: var(--st); }
+.st-tile.st-picked { border-color: var(--st); background: #fff; }
+
+.st-meter { display: flex; height: 10px; margin: 6px 0 14px; border-radius: 5px; background: #e7e9ec; overflow: hidden; }
+.st-meter > div { background: var(--st); }
+
+.st-filters { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 8px; font-size: 13px; }
+.st-filters label { display: flex; gap: 6px; align-items: center; color: #57606a; }
+.st-filters input[type="search"], .st-filters select { padding: 3px 6px; border: 1px solid #c9ced4; border-radius: 4px; font: inherit; color: #1f2328; }
+.st-filters input[type="search"] { width: 180px; }
+
+.st-chip { display: inline-block; padding: 1px 8px; border-radius: 10px; background: var(--st); color: var(--st-ink); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.st-row-new td { background: #fffbea; }
+.st-new-badge { margin-left: 6px; padding: 0 5px; border-radius: 3px; background: #0969da; color: #fff; font-size: 11px; font-weight: 700; }
+.st-more { margin-top: 10px; border-color: #d0d7de; background: #fff; color: #1f2328; }
+.st-more:hover { border-color: #57606a; }
+.st-count { margin: 4px 0 8px; }
