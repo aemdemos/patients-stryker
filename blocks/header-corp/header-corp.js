@@ -144,6 +144,19 @@ function buildPanel(li, index) {
   return panel;
 }
 
+/**
+ * The live mobile drawer lists the utility links (Careers, Investor Relations, …) under
+ * the primary items; the desktop bar hides them (li.utility, header-corp.css). They are
+ * display copies: the authored links stay in the utility row as the editable source.
+ */
+function utilityItems(utilityNav) {
+  return [...utilityNav.querySelectorAll('li > a, li > p > a')].map((a) => {
+    const li = el('li', 'leaf utility');
+    li.append(a.cloneNode(true));
+    return li;
+  });
+}
+
 /** the item's own link (the pipeline wraps it in <p> when the item also holds a list) */
 function itemLink(li) {
   return li.querySelector(':scope > a, :scope > p > a');
@@ -360,6 +373,7 @@ export default async function decorate(block) {
   const logo = moveChildren(brand, el('div', 'logo'));
   decorateLogo(logo);
   const utilityNav = moveChildren(utility, el('nav', 'utility-links', { 'aria-label': 'Utility' }));
+  const drawerUtility = utilityItems(utilityNav); // copied before the text spans are added
   utilityNav.querySelectorAll('li > a, li > p > a').forEach((a) => wrapLinkText(a));
   const localeDiv = moveChildren(locale, el('div', 'language-country-select'));
   localeDiv.querySelectorAll('a').forEach((a) => {
@@ -396,6 +410,7 @@ export default async function decorate(block) {
         li.classList.add('leaf');
       }
     });
+    mainList.append(...drawerUtility);
     nav.append(mainList);
   }
   mainContainer.append(nav);
