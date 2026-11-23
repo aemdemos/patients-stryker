@@ -53,11 +53,43 @@ try {
   check('main export has it', main.some((r) => r.page === PAGE));
   check('std export does not', !std.some((r) => r.page === PAGE));
   check('std rows untouched', std.length === stdBefore);
+  // batches: the AOE team's only, several pages in one save, no activity
+  const notMine = await call('save', inv.token, {
+    page: PAGE, changes: [{ item: 'page', kind: 'batch', value: '3', rev: 0 }],
+  });
+  check('batch: a reviewer may not mark', notMine.status === 403 && notMine.body.error.code === 'aoe-only');
+  const aoeInv = await admin({
+    op: 'invite', name: 'tool test main aoe', paths: ['/test'], days: 1, space: 'main', role: 'aoe',
+  });
+  try {
+    const marked = await call('save', aoeInv.token, {
+      page: PAGE,
+      changes: [`${PAGE}`, `${PAGE}-2`].map((pg) => ({
+        page: pg, item: 'page', kind: 'batch', value: '3', rev: 0,
+      })),
+    });
+    check('batch: the AOE team marks two pages in one save', marked.status === 200 && marked.body.results.every((r) => r.ok));
+    const again = await call('save', aoeInv.token, {
+      page: PAGE, changes: [{ item: 'page', kind: 'batch', value: '4', rev: 0 }],
+    });
+    check('batch: newest wins (no rev check)', again.status === 200 && again.body.results[0].ok);
+    const bad = await call('save', aoeInv.token, {
+      page: PAGE, changes: [{ item: 'page', kind: 'batch', value: '"x"', rev: 0 }],
+    });
+    check('batch: only numbers', bad.status === 400);
+    const over = await call('overview', aoeInv.token);
+    const two = over.body.pages.find((x) => x.page === `${PAGE}-2`);
+    const one = over.body.pages.find((x) => x.page === PAGE);
+    check('overview: the batch per page, not activity', two?.batch === 3 && two.state === 'unreviewed' && one?.batch === 4, JSON.stringify([one, two]));
+  } finally {
+    await admin({ op: 'purge-invite', id: aoeInv.id, space: 'main' });
+    await admin({ op: 'revoke', id: aoeInv.id });
+  }
 } finally {
   const purged = await admin({ op: 'purge-invite', id: inv.id, space: 'main' });
   check('test entries purged', purged.deleted >= 1);
   await admin({ op: 'revoke', id: inv.id });
-  const left = (await admin({ op: 'export', space: 'main' })).rows.filter((r) => r.page === PAGE);
+  const left = (await admin({ op: 'export', space: 'main' })).rows.filter((r) => r.page.startsWith(PAGE));
   check('nothing left on the test page', left.length === 0);
 }
 console.log(failed ? `${failed} failed` : 'all passed');

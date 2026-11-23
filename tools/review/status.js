@@ -9,6 +9,9 @@
 import { call, inviteToken } from './store.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages from './pages.js';
+import {
+  getFilters, setFilters, pagesOf, markBatch, areaLabel,
+} from './batches.js';
 
 const { hostname } = window.location;
 const LOCAL = ['localhost', '127.0.0.1'].includes(hostname) || /^preview-aemcoder\.adobe\.io$/.test(hostname);
@@ -65,9 +68,11 @@ function filtered() {
   const unit = $('.st-unit').value;
   const state = $('.st-state').value;
   const onlyNew = $('.st-new').checked;
+  const { batches } = getFilters();
   return all.filter((p) => (!q || p.title.toLowerCase().includes(q) || p.path.includes(q))
     && (!template || p.template === template)
     && (!unit || p.unit === unit)
+    && (!batches.length || batches.includes(p.batch || 'none'))
     && (!state || p.state === state)
     && (!picked.size || picked.has(p.state))
     && (!onlyNew || p.isNew));
@@ -108,19 +113,52 @@ function threadsText(t) {
   return [t.open && `${t.open} open`, t.done && `${t.done} done`].filter(Boolean).join(' · ');
 }
 
+/** the batch chips: every batch with its page count, and the pages in no batch; several at once */
+function batchChips() {
+  const { batches: chosen } = getFilters();
+  const numbers = [...new Set(all.map((p) => p.batch).filter(Boolean))].sort((a, b) => a - b);
+  const count = (b) => all.filter((p) => (p.batch || 'none') === b).length;
+  const toggle = (b) => {
+    const f = getFilters();
+    f.batches = f.batches.includes(b) ? f.batches.filter((x) => x !== b) : [...f.batches, b];
+    setFilters(f);
+    shown = PAGE_SIZE;
+    hooks.draw();
+  };
+  const chip = (b, text) => el('button', {
+    type: 'button', class: 'st-batch', 'aria-pressed': String(chosen.includes(b)), onclick: () => toggle(b),
+  }, text);
+  $('.st-batches').replaceChildren(
+    el('span', {}, 'Batches:'),
+    el('button', {
+      type: 'button',
+      class: 'st-batch',
+      'aria-pressed': String(!chosen.length),
+      onclick: () => {
+        setFilters({ ...getFilters(), batches: [] });
+        hooks.draw();
+      },
+    }, `All (${all.length})`),
+    ...numbers.map((b) => chip(b, `Batch ${b} (${count(b)})`)),
+    count('none') ? chip('none', `No batch (${count('none')})`) : null,
+  );
+}
+
 function draw() {
+  batchChips();
   tiles();
   const list = sorted(filtered());
   $('.st-count').textContent = `${list.length} of ${all.length} pages${all.some((p) => p.isNew) ? ` · ${all.filter((p) => p.isNew).length} with news since your last visit` : ''}`;
   // (template and design choices: only where the pages have them)
   const templates = all.some((p) => p.template);
-  const head = ['State', 'Page', 'Business unit', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
+  const head = ['State', 'Page', 'Batch', 'Area', templates && 'Template', 'Threads', REVIEW.design && 'Design choices', 'Approved', 'Latest activity'].filter(Boolean);
   const rows = list.slice(0, shown).map((p) => el(
     'tr',
     { class: p.isNew ? 'st-row-new' : '' },
     el('td', {}, el('span', { class: `st-chip st-${p.state}` }, label(p.state))),
     el('td', {}, el('a', { href: `./index.html?page=${encodeURIComponent(p.path)}` }, p.title), el('br'), el('small', { class: 'rs-muted' }, p.path)),
-    el('td', {}, p.unit),
+    el('td', {}, p.batch ? el('span', { class: 'st-batch-tag' }, `Batch ${p.batch}`) : ''),
+    el('td', {}, areaLabel(p.unit || '')),
     templates ? el('td', {}, p.template) : null,
     el('td', {}, threadsText(p.threads)),
     REVIEW.design ? el('td', {}, p.choices ? String(p.choices) : '') : null,
@@ -162,7 +200,12 @@ async function load() {
   });
   options($('.st-template'), [...new Set(all.map((p) => p.template).filter(Boolean))].sort());
   $('.st-template').closest('label').hidden = !all.some((p) => p.template);
-  options($('.st-unit'), [...new Set(all.map((p) => p.unit).filter(Boolean))].sort());
+  options($('.st-unit'), [...new Set(all.map((p) => p.unit).filter(Boolean))].sort()
+    .map((u) => ({ value: u, label: areaLabel(u) })));
+  // the area kept with the tool's filters
+  $('.st-unit').value = getFilters().area;
+  // the AOE team marks pages for a batch
+  $('.st-mark').hidden = me.role !== 'aoe';
   options($('.st-state'), ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].map((s) => ({ value: s, label: label(s) })));
   $('.rs-updated').textContent = `${me.name}${me.role === 'aoe' ? ' (AOE)' : ''} · read ${when(body.at)}`;
   draw();
@@ -183,6 +226,37 @@ async function start() {
   }
   document.title = `${REVIEW.title}: status of every page`;
   previousVisit = window.localStorage.getItem(VISIT_KEY) || '';
+  $('.st-unit').addEventListener('change', () => setFilters({ ...getFilters(), area: $('.st-unit').value }));
+  const result = (text) => {
+    $('.st-mark-result').textContent = text;
+  };
+  const mark = async (batch) => {
+    const { found, missing } = pagesOf($('.st-mark-list').value, all.map((p) => p.path));
+    if (!found.length) {
+      result(missing.length ? `None of these is a page of this review:\n${missing.join('\n')}` : 'Paste the pages first.');
+      return;
+    }
+    result(`Saving ${found.length} page${found.length > 1 ? 's' : ''}…`);
+    const { done, failed } = await markBatch(found, batch);
+    result([
+      `${done} page${done === 1 ? '' : 's'} ${batch ? `marked for batch ${batch}` : 'taken out of their batch'}.`,
+      failed.length ? `Not saved (${failed.length}):\n${failed.join('\n')}` : '',
+      missing.length ? `Not pages of this review (${missing.length}), left out:\n${missing.join('\n')}` : '',
+    ].filter(Boolean).join('\n\n'));
+    await load();
+  };
+  $('.st-mark-go').addEventListener('click', () => {
+    const n = Number($('.st-mark-batch').value);
+    if (!Number.isInteger(n) || n < 1 || n > 999) {
+      result('Give the batch number (1 to 999).');
+      return;
+    }
+    mark(n);
+  });
+  $('.st-mark-clear').addEventListener('click', () => mark(null));
+  $('.st-mark-shown').addEventListener('click', () => {
+    $('.st-mark-list').value = sorted(filtered()).map((p) => `https://www.stryker.com${p.path}.html`).join('\n');
+  });
   ['.st-search', '.st-template', '.st-unit', '.st-state', '.st-order', '.st-new'].forEach((sel) => {
     $(sel).addEventListener(sel === '.st-search' ? 'input' : 'change', () => {
       shown = PAGE_SIZE;

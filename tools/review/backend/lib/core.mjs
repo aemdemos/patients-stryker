@@ -20,7 +20,7 @@ import filesLib from '@adobe/aio-lib-files';
 export const TTL = stateLib.MAX_TTL;
 export const SECRET_FILE = 'secrets/signing.json';
 // what reviewers may save; `status:*` rows are the AOE team's (admin action only)
-export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note'];
+export const REVIEW_KINDS = ['variant', 'width', 'background', 'text', 'comment', 'reviewed', 'note', 'state', 'done:comment', 'done:note', 'batch'];
 export const MAX_VALUE = 20000;
 export const REPLY_KIND = /^reply:(comment|note):[A-Za-z0-9_-]{6,40}$/;
 export const ROLES = ['reviewer', 'aoe'];
@@ -230,7 +230,8 @@ export async function saveChanges({ state, files }, {
     const stored = await state.get(key);
     const current = stored ? JSON.parse(stored.value) : null;
     const rev = current ? current.rev : 0;
-    if ((c.rev ?? 0) !== rev) {
+    // (organisation entries, e.g. batches: the newest wins, no rev check)
+    if ((c.rev ?? 0) !== rev && !c.org) {
       results.push({
         page: p, item: c.item, kind: c.kind, ok: false, conflict: true, rev, by: current?.by, at: current?.at,
       });
