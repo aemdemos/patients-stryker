@@ -29,8 +29,9 @@ export const REVIEW = {
     { vp: 375, label: 'Phone' },
   ],
   mode: 'side',
-  // the pages: the site's query index (updated as pages are published), else a pages.json
-  pages: { index: '/us/en/query-index.json' },
+  // the pages: the migration scope table and the published pages, through the backend (scope),
+  // else the site's query index, else a pages.json
+  pages: { scope: true, index: '/us/en/query-index.json' },
   // the snapshot tiles of the source pages: in Document Authoring through the branch preview
   // (a folder of this review's own), locally the capture folder (a git-ignored link)
   snapshots: { preview: '/review-snapshots-main', local: './snapshots' },

@@ -11,6 +11,8 @@
  *   revoke { id }                           the invitation stops working at once
  *   invites                                 every invitation (no tokens)
  *   forget-test-invites                     removes revoked test invitations (tool test …, zz-test-…)
+ *   schedule { cron, enabled }              the capture action every 15 minutes (cron), or off
+ *   capture-state                           the capture's record (first seen, sources to correct, runs)
  *   (invitations: lib/invites.mjs, shared with the AOE team's web action invites)
  *   export                                  every entry, as rows (summary, apply, tests)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
@@ -32,6 +34,8 @@ import {
   open, secretOf, readAll, saveChanges, entryKey, pagePattern, groupPattern, parseKey, TTL, replyProblem, SPACES,
 } from '../lib/core.mjs';
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
+import { schedule } from '../lib/runtime.mjs';
+import { readCaptureState } from '../lib/capture-state.mjs';
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
@@ -74,6 +78,10 @@ export async function main(params) {
       if (!revoked) return bad('no such invitation');
       return ok({ revoked: params.id });
     }
+    if (op === 'schedule') {
+      return ok({ steps: await schedule({ cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main' }) });
+    }
+    if (op === 'capture-state') return ok(await readCaptureState(files, space));
     if (op === 'forget-test-invites') {
       // revoked test invitations (names "tool test …", "zz-test-…") out of the lists for good;
       // never anyone else's
@@ -266,6 +274,9 @@ export async function main(params) {
       // and its source shots and request (test pages only: real pages' shots are never removed)
       const shots = [historyFile(space, page), requestFile(space, page)];
       await Promise.all(shots.map((f) => files.delete(f).catch(() => null)));
+      // and the tiles the backend took of it
+      const tiles = await files.list(`${space === 'std' ? '' : `${space}/`}shot-tiles/${Buffer.from(page).toString('base64url')}/`);
+      await Promise.all(tiles.map((f) => files.delete(f.name).catch(() => null)));
       return ok({ deleted: r.keys, groups, page });
     }
     return bad(`unknown op "${op}"`);

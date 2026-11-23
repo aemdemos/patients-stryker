@@ -21,7 +21,8 @@ async function admin(p, namespace = '892544-strykerstdreview-stage') {
   return JSON.parse(text).body;
 }
 
-const [base = 'http://localhost:3220', REAL = '/us/en/search'] = process.argv.slice(2);
+// (a page with only its first shot: /us/en/search has a refresh since 23 Nov)
+const [base = 'http://localhost:3220', REAL = '/us/en/about/news/2020/stryker-launches-ambulatory-surgery-center-focused-business'] = process.argv.slice(2);
 const TEST = '/test/client-review-shots-ui';
 const SPACE = 'main';
 let failed = 0;
@@ -78,8 +79,8 @@ try {
     await p.waitForTimeout(3000);
     const b = await box(p);
     check('real page: one shot, the first', b.options.length === 1 && /first shot/.test(b.options[0]), JSON.stringify(b.options));
-    check('real page: date and source URL', /Taken .* of www\.stryker\.com\/us\/en\/search\.html/.test(b.info) && /One shot so far/.test(b.info), b.info);
-    check('real page: tiles from the first shot\'s place, loaded', b.tiles.length > 0 && b.tiles.every((t) => /\/us\/en\/search\/1440\/0\.jpg$/.test(t.src) && t.ok), JSON.stringify(b.tiles));
+    check('real page: date and source URL', /Taken .* of www\.stryker\.com\/us\/en\/about\/news\/2020\//.test(b.info) && /One shot so far/.test(b.info), b.info);
+    check('real page: tiles from the first shot\'s place, loaded', b.tiles.length > 0 && b.tiles.every((t) => t.src.endsWith(`${REAL}/1440/0.jpg`) && t.ok), JSON.stringify(b.tiles));
     check('real page: AOE sees Refresh', b.button?.visible && !b.button.disabled && b.button.text === 'Refresh source shot', JSON.stringify(b.button));
     await ctx.close();
   }

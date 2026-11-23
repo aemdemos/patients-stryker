@@ -345,3 +345,4 @@ body:not(.rv-role-aoe) .rv-aoe-only { display: none; }
 .rv-shot-msg:empty { display: none; }
 .rv-shot-pending { color: #9a6700; }
 .rv-shot-failed { color: #cf222e; }
+.rv-status-group { display: block; margin-top: 4px; font-size: 12px; color: #116329; }

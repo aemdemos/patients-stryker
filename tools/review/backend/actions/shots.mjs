@@ -4,7 +4,8 @@
  * GET ?page=/us/en/…            → { versions (oldest first; anchors only in the newest), request }
  * GET ?page=…&version=<id>      → { version } (with its anchors)
  * POST { page }                 → { request, already } a new shot of the page, the AOE team only;
- *                                 taken by refresh-shots.mjs, which adds it to the history
+ *                                 the capture action is started at once and takes it (also every
+ *                                 15 minutes), adding it to the history
  * Any invitation reads (its space, its pages); header x-review-invite: <token>.
  */
 import {
@@ -13,6 +14,7 @@ import {
 import {
   readHistory, readRequest, requestShot, withoutLeaves,
 } from '../lib/shots.mjs';
+import { startCapture } from '../lib/runtime.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -30,10 +32,12 @@ export async function main(params) {
       if (invite.role !== 'aoe') return fail(params, 403, 'aoe-only', 'Only the AOE team asks for new source shots.');
       const history = await readHistory(files, space, page);
       if (!history.versions.length) {
-        return fail(params, 409, 'no-first-shot', 'This page has no source shot yet: new pages are added another way.');
+        return fail(params, 409, 'no-first-shot', 'This page has no source shot yet: the backend takes the first one once the page is published and in the migration scope table.');
       }
       const result = await requestShot(files, space, page, { by: invite.name, role: invite.role, inv: invite.id });
-      return reply(params, 200, result);
+      // (the capture starts now; if one is running already, the request waits for the next)
+      const started = await startCapture(space).catch(() => ({ status: 0 }));
+      return reply(params, 200, { ...result, started: started.status === 202 });
     }
     const history = await readHistory(files, space, page);
     if (params.version) {

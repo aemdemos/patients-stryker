@@ -35,7 +35,8 @@ keeps the invitation, later visits need no link.
 |---|---|
 | `config.js` | What this copy of the tool reviews (above) and the browser storage keys (`main-review-…`) |
 | `index.html`, `review.css`, `review.js` | The shell: page, widths, compare, flip / overlay / side by side, sync; the Feedback panel (page status banner and buttons, comments on this page, QA notes, links); Save / Undo changes |
-| `pages.js` | The pages of the review (the query index, else `pages.json`) for the tool, the status page and the results |
+| `pages.js` | The pages of the review for the tool, the status page and the results: the migration scope and the published pages through the backend (below), else the query index, else `pages.json` |
+| `scope-sheet.py` | The migration scope table's first content (from the migration catalog), written once to DA |
 | `batches.js` | Review batches, groups and representative pages, and the filters (batch, group, representatives, area) shared by the status page and the tool (below) |
 | `sync.js` | Text-matched scroll sync between the page and the snapshot |
 | `notes.js` | Pinned QA notes: a click on the page drops a pin tied to the nearest text run or image, so it keeps its place on reflow; category, text, width, open / resolved |
@@ -43,13 +44,60 @@ keeps the invitation, later visits need no link.
 | `threads.js` | The shared rules: page statuses, chats, Done |
 | `blockkeys.js` | Stable keys of blocks (used by the design side; harmless here) |
 | `status.html`, `status.js`, `status.css` | Status of every page: colour-coded states, batch chips, filters (area, state, search, new), "waits for me" order; the AOE team's batch and group marking |
-| `NEW-PAGES.md` | Design: the migration scope table, published pages in the review, first shots by the backend (not built yet) |
+| `NEW-PAGES.md` | The design of the migration scope, published pages and the backend's first shots (built 23 Nov 2026), with the facts and decisions behind it |
 | `invites.html`, `invites.js`, `invites.css` | The AOE team's invitations: make, list, revoke (below) |
 | `results.html`, `results.js`, `results.css` | Results for invitations with the results right: progress, comments, QA notes, CSV downloads (no design decisions here) |
 | `summary.js`, `summarise.mjs`, `set-status.mjs` | The feedback summary for the AOE team (`migration-work/review-summary-main/`) and statuses back to the reviewers |
 | `shots.js` | The page's source shots in the tool: the history, one version, the AOE team's request for a new one |
 | `shoot.mjs`, `snapshot-map.py`, `capture-snapshots.mjs`, `upload-snapshots.sh`, `record-shots.mjs`, `refresh-shots.mjs`, `pack-snapshot-meta.py`, `snapshot-meta/` | Source shots and their history (below) |
 | `backend/` | The review backend on App Builder (`backend/README.md`): invitations, state per page, audit; spaces |
+
+## Migration scope and published pages
+
+The review's pages come from the **migration scope table** in Document Authoring,
+`review/migration-scope` (a sheet: `source` = `https://www.stryker.com/….html`, `eds` = the EDS
+path, `template` = the AEM template), together with the **live query index** (the published
+pages). The backend's `pages` action reads both (the previewed sheet: edit it in DA, then
+**preview** it) and checks the table.
+
+- **Reviewers** see the pages of the scope that are **published**. A page published later joins
+  by itself, "Not reviewed yet"; the filters (batch, group, template, area) count the published
+  pages.
+- **The AOE team** sees the whole scope on the status page ("Not published yet" for the others)
+  and organises batches and groups on all of it. The **Migration scope** box lists: pages
+  published but not in the table, rows of the table to correct (a source or an EDS page in two
+  rows, an address that isn't a stryker.com page), sources to correct (a first shot failed: the
+  source answers 404 or redirects to another page), pages waiting for their first shot, the
+  capture's last run and its browser check.
+- The table started (23 Nov 2026) with all 2,553 pages of the migration catalog
+  (`scope-sheet.py`): the 568 pages with a first shot keep their known pair, the others have
+  their EDS path by the importer's rule (renamed pages: change the row). The AOE team removes
+  what is out of scope. A local copy is in the workspace (`content/review/migration-scope.json`).
+
+## Source shots taken by the backend
+
+The backend takes the source shots itself (action `capture`, a browser inside App Builder):
+
+- **First shots:** every 15 minutes (a scheduled trigger, `admin.mjs schedule`) it takes the
+  first shot of every published page of the scope without one, with the source from the table,
+  within ~15 minutes of the page being published. When the page was first seen published is
+  recorded with the shot.
+- **Refresh source shot** (AOE team): the request starts a capture at once; the new shot shows
+  in the tool within minutes (the tool looks for it by itself).
+- **Checks:** the source must answer 200 and not redirect to another page, else the page is
+  listed as a source to correct (tried again when its row changes, or after a day); a failed
+  Refresh shows its reason in the tool.
+- **Evidence** as for every shot: never replaced or removed, the date each width was taken, the
+  URL, status, final URL and title, a SHA-256 of every tile. The backend's tiles are in its own
+  storage (only the backend writes there) and reach the tool through the `tile` action (a
+  redirect to a short-lived read link); the first shots of 23 Nov stay in DA.
+- **The browser** (`backend/browser/`): the Runtime container is Debian 10 (glibc 2.28), so
+  Chromium is pinned to 133 (the last build with Amazon Linux 2 libraries), with Debian 10's own
+  NSS / NSPR shipped in the action (`debian-libs.json`, checked by SHA-256 at deploy). A daily
+  browser check reports in the Migration scope box if it stops working (e.g. after a change of
+  Adobe's container). Measured: ~15 s per page (three widths), about 14 pages per run.
+- Admin: `admin.mjs capture-state --space main`, `admin.mjs schedule --json '{"enabled":false}'`
+  (off) or `'{"cron":"*/15 * * * *"}'` (on).
 
 ## Review batches and filters (`batches.js`)
 
@@ -89,6 +137,14 @@ page**: the only page the customer reviews, to approve the whole group. Set by h
 - **Data:** kinds `group` (a number 1–999 or null) and `representative` (true / false) on item
   `page`, AOE only, newest wins; organisation data, no review activity. A page is only a
   representative while it is in a group. The overview action returns `group` and `representative`.
+- **The representative is a suggestion** (user, 23 Nov 2026): chosen or changed any time, or
+  none; a group without one has its **first published page** (path order) as representative,
+  shown ☆ ("Group 5 ☆"; ★ = chosen) and counted by "Representative pages only".
+- **Approving one page approves its group:** when a page of a group is approved, every other page
+  of the group shows "Approved with its group" (status page, tool); those not reviewed yet or in
+  review count as approved, the others keep their own state too (`withGroupApproval` in
+  `threads.js`, used by the overview). Derived, nothing written: a page moved out of the group
+  leaves the approval.
 
 ## Edit in Document Authoring (AOE team)
 
@@ -203,8 +259,6 @@ The source URLs come from the export file names (letter case kept), never from E
 
 ## Planned
 
-- **Migration scope, published pages, first shots:** designed in [`NEW-PAGES.md`](NEW-PAGES.md) (facts, design,
-  the decisions it needs); not built yet.
 - Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
   spaces yet: never deploy the backend from there before that).
 
@@ -219,6 +273,8 @@ node tools/review/backend/test/shots-live.test.mjs    # deployed: shot history a
 node tools/review/backend/test/shots-tool.test.mjs <dev server>   # the tool's Source shot box (read only on a real page; test page)
 node tools/review/backend/test/invites-live.test.mjs  # deployed: the AOE team's invitations (test invitations, forgotten after)
 node tools/review/backend/test/invites-tool.test.mjs <dev server> # the Invitations page and its links
+node tools/review/backend/test/scope-live.test.mjs    # deployed: scope pages, a capture by the backend, tiles, group approval (test pages)
+node tools/review/backend/test/scope-tool.test.mjs <dev server>   # the scope on the status page, a backend shot in the tool, ☆
 ```
 
 The standard-pages review's browser and summary tests live on `standardise-v3` (they use its

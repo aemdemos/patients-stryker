@@ -70,7 +70,7 @@ const shots = {
   page: null, data: null, full: new Map(), chosen: null,
 };
 // (the shot box reloads the snapshot, defined after it)
-const shotHooks = { reload: () => {} };
+const shotHooks = { reload: () => {}, wait: () => {} };
 // live source URLs of the pages with a snapshot (the meta's url)
 const SOURCE = {};
 // every page of the review, and the ones the batch / area filters let through (picker, stepping)
@@ -1017,7 +1017,10 @@ function currentRows() {
 
 /** the status banner (Feedback panel) and the toolbar badge: whose turn it is, prominently */
 function renderPageStatus() {
-  const st = pageState(currentRows());
+  const own = pageState(currentRows());
+  // approving one page of a group approves the group (threads.js withGroupApproval)
+  const g = !own.approved ? orgOf.get(state.page)?.groupApproved : null;
+  const st = g && ['unreviewed', 'in-review'].includes(own.state) ? { ...own, state: 'approved' } : own;
   const pending = drafts.has('page|state');
   const by = st.set && !pending ? `set by ${st.set.by}${st.set.role === 'aoe' ? ' (AOE)' : ''} · ${when(st.set.at)}` : '';
   $('.rv-status-banner').className = `rv-status-banner st-${st.state}`;
@@ -1025,6 +1028,7 @@ function renderPageStatus() {
     el('span', { class: 'rv-status-kicker' }, 'Status of this page'),
     el('strong', {}, STATUS_LABELS[st.state]),
     el('span', { class: 'rv-status-by' }, pending ? 'unsaved: Save to apply it' : by),
+    g ? el('span', { class: 'rv-status-group' }, `Approved with its group: ${g.page} approved by ${g.by}, ${when(g.at)}`) : null,
   );
   const badge = $('.rv-page-badge');
   badge.className = `rv-page-badge st-${st.state}`;
@@ -1158,7 +1162,7 @@ function renderShotBox() {
   if (pick) pick.value = shown.id;
   const req = data.request;
   let reqText = '';
-  if (req?.status === 'pending') reqText = `New shot asked for by ${req.by}, ${when(req.at)}: it shows here once it has been taken.`;
+  if (req?.status === 'pending') reqText = `New shot asked for by ${req.by}, ${when(req.at)}: the backend is taking it, it shows here within a few minutes.`;
   if (req?.status === 'failed') reqText = `The new shot asked for by ${req.by} could not be taken: ${req.reason}`;
   const refresh = el('button', {
     type: 'button',
@@ -1177,10 +1181,11 @@ function renderShotBox() {
       }
       shots.data = { ...shots.data, request: r.request };
       renderShotBox();
+      shotHooks.wait(page, shots.data.versions.length);
     },
   }, req?.status === 'failed' ? 'Ask again' : 'Refresh source shot');
   box.replaceChildren(
-    n ? pick : el('p', { class: 'rv-none' }, 'No source shot of this page yet.'),
+    n ? pick : el('p', { class: 'rv-none' }, 'No source shot of this page yet: the backend takes the first one within 15 minutes of the page being published (with its source in the migration scope table).'),
     n ? el('p', { class: 'rv-shot-info' }, `Taken ${when(shown.captured)} of `, el('a', { href: shown.url, target: '_blank', rel: 'noopener' }, shown.url.replace(/^https:\/\//, '')), `. ${n > 1 ? `${n} shots` : 'One shot'} so far, all kept with the date taken and a fingerprint (SHA-256) of every image.`) : null,
     reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
     n ? refresh : null,
@@ -1235,7 +1240,12 @@ async function loadSnapshot() {
     // a shot of the page's history (the backend): its folder, the first shots at the old place
     const s = version.widths[state.vp];
     meta = s ? {
-      ...s, url: version.url, dir: version.dir, captured: s.captured,
+      ...s,
+      url: version.url,
+      dir: version.dir,
+      captured: s.captured,
+      store: version.store,
+      id: version.id,
     } : null;
   } else if (!shots.data?.versions.length) {
     try {
@@ -1259,8 +1269,14 @@ async function loadSnapshot() {
   pageEl.style.height = `${meta.height}px`;
   // (newer shots only in Document Authoring: through the preview, also on the workspace)
   const tilesAt = meta.dir ? `${REVIEW.snapshots.preview}${state.page}${meta.dir}` : `${SNAPSHOTS}${state.page}`;
+  // (shots taken by the backend: in its own storage, through its tile action)
+  const tileSrc = (file) => (meta.store === 'files'
+    ? `${REVIEW.backend}/tile?${new URLSearchParams({
+      space: REVIEW.space, page: state.page, version: meta.id, vp: String(state.vp), file,
+    })}`
+    : `${tilesAt}/${state.vp}/${file}`);
   meta.tiles.forEach((t) => pageEl.append(el('img', {
-    src: `${tilesAt}/${state.vp}/${t.file}`,
+    src: tileSrc(t.file),
     alt: '',
     loading: 'lazy',
     width: String(meta.width),
@@ -1277,6 +1293,25 @@ async function loadSnapshot() {
 }
 
 shotHooks.reload = loadSnapshot;
+// after a Refresh: the backend takes the shot within minutes; look every 20 s for 8 minutes
+shotHooks.wait = (page, had) => {
+  let tries = 0;
+  const look = async () => {
+    tries += 1;
+    if (state.page !== page || tries > 24) return;
+    const data = await loadShots(page);
+    if (state.page !== page) return;
+    if (data && (data.versions.length > had || data.request?.status === 'failed')) {
+      shots.data = data;
+      shots.chosen = null;
+      renderShotBox();
+      loadSnapshot();
+      return;
+    }
+    window.setTimeout(look, 20000);
+  };
+  window.setTimeout(look, 20000);
+};
 
 function loadPage() {
   if (!state.page) return;
@@ -1641,7 +1676,8 @@ async function start() {
     if (side === 'std' || REVIEW.compare.includes(side)) frames[side].addEventListener('load', () => onFrameLoad(side));
   });
   allPages = await loadPages();
-  orgOf = (await loadOrganisation()).org;
+  // (the first page of a group without a chosen representative: among the pages shown)
+  orgOf = (await loadOrganisation(allPages.map((p) => p.path))).org;
   applyFilters();
   if (REVIEW.design) {
     const groupsResp = await fetch('./groups.json');

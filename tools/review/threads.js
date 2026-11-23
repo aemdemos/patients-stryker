@@ -197,6 +197,33 @@ export function pageState(allRows) {
   };
 }
 
+/**
+ * Group approval (the user's rule, 23 Nov 2026: approving one page of a group approves the
+ * group): when a page of a group is approved, every other page of the group gets
+ * groupApproved { page, by, at } (the first approval); those not reviewed yet or in review count
+ * as approved. Pages in another state (sent to the AOE team, skipped, …) keep it and show the
+ * group's approval next to it. Derived: nothing is written on the other pages, so a page moved
+ * out of the group leaves the approval.
+ */
+export function withGroupApproval(states) {
+  const groups = new Map();
+  states.filter((s) => s.group).forEach((s) => {
+    if (!groups.has(s.group)) groups.set(s.group, []);
+    groups.get(s.group).push(s);
+  });
+  groups.forEach((members) => {
+    const first = members.filter((m) => m.approved)
+      .sort((a, b) => (a.approved.at < b.approved.at ? -1 : 1))[0];
+    if (!first) return;
+    members.filter((m) => m !== first && !m.approved).forEach((m) => {
+      const { by, at } = first.approved;
+      Object.assign(m, { groupApproved: { page: first.page, by, at } });
+      if (['unreviewed', 'in-review'].includes(m.state)) Object.assign(m, { state: 'approved' });
+    });
+  });
+  return states;
+}
+
 /** every page with rows → its status (group choices, page `*`, are not a page) */
 export function pageStates(rows) {
   const byPage = new Map();

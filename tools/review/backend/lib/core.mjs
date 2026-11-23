@@ -68,7 +68,12 @@ export const TOOL = 'https://standardise-v3--stryker-com--strykerenterprise.aem.
 // before) and main (the client review of the migrated pages on main, at their final paths)
 export const SPACES = {
   std: { tool: TOOL },
-  main: { tool: 'https://main--stryker-com--strykerenterprise.aem.page/tools/review/index.html' },
+  main: {
+    tool: 'https://main--stryker-com--strykerenterprise.aem.page/tools/review/index.html',
+    // the migration scope table (DA sheet, previewed) and the published pages (live index)
+    scope: 'https://main--stryker-com--strykerenterprise.aem.page/review/migration-scope.json',
+    live: 'https://main--stryker-com--strykerenterprise.aem.live/us/en/query-index.json',
+  },
 };
 /** an invitation scope's space (std when it names none or an unknown one) */
 export const spaceOf = (scope) => (scope && SPACES[scope.space] && scope.space) || 'std';

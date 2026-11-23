@@ -1,4 +1,4 @@
-# Migration scope, published pages and first shots: design (not built yet)
+# Migration scope, published pages and first shots: design (built 23 Nov 2026)
 
 How pages come into the client review, are paired with their source page, get their first
 source shot and are organised, after the user's decisions of 23 Nov 2026. Facts first (measured
@@ -95,5 +95,8 @@ that day), then the design, then what is still to decide.
 - Tool: pages from scope ∩ live; tiles from either store; group approval shown.
 - `refresh-shots.mjs` and the DA uploads stay for the first shots of 23 Nov only.
 
-## Still to decide
-Nothing for the design. Building it is the next step: the scope table goes to DA then.
+## Built (23 Nov 2026)
+As designed, see the README ("Migration scope and published pages", "Source shots taken by the
+backend", groups). Differences from the design: a group's representative while none is chosen
+is its first **published** page (reviewers can only review those); the capture's state and the
+pages waiting are in the status page's Migration scope box.

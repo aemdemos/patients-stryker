@@ -8,9 +8,10 @@
  */
 import { call, inviteToken } from './store.js';
 import { REVIEW, storageKey } from './config.js';
-import loadPages, { editUrl } from './pages.js';
+import loadPages, { editUrl, scopeFacts } from './pages.js';
 import {
   getFilters, setFilters, pagesOf, markOrg, makeRepresentatives, areaLabel, orgLabel, passes,
+  markFirstRepresentatives,
 } from './batches.js';
 
 const { hostname } = window.location;
@@ -29,10 +30,12 @@ const STATES = {
   approved: { reviewer: 'Approved as is', aoe: 'Approved as is' },
   unreviewed: { reviewer: 'Not reviewed yet', aoe: 'Not reviewed yet' },
   skipped: { reviewer: 'Skipped: not migrated', aoe: 'Skipped: not migrated' },
+  // (in the migration scope, not published yet: the AOE team's lists only)
+  unpublished: { reviewer: 'Not published yet', aoe: 'Not published yet' },
 };
 const ORDER = {
-  reviewer: ['waiting-customer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
-  aoe: ['waiting-aoe', 'waiting-customer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped'],
+  reviewer: ['waiting-customer', 'waiting-aoe', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
+  aoe: ['waiting-aoe', 'waiting-customer', 'in-review', 'resolved', 'approved', 'unreviewed', 'skipped', 'unpublished'],
 };
 
 function el(tag, attrs = {}, ...children) {
@@ -91,8 +94,9 @@ function sorted(list) {
 }
 
 function tiles() {
-  const rank = ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'];
   const count = (s) => all.filter((p) => p.state === s).length;
+  // (Not published yet: only when there are such pages, the AOE team's lists)
+  const rank = ORDER[me.role === 'aoe' ? 'aoe' : 'reviewer'].filter((s) => s !== 'unpublished' || count(s));
   $('.st-tiles').replaceChildren(...rank.map((s) => el('button', {
     type: 'button',
     class: `st-tile st-${s}${picked.has(s) ? ' st-picked' : ''}`,
@@ -107,6 +111,48 @@ function tiles() {
   $('.st-meter').replaceChildren(...rank.filter(count).map((s) => el('div', {
     class: `st-${s}`, style: `flex-grow: ${count(s)}`, title: `${label(s)}: ${count(s)}`,
   })));
+}
+
+/** the group mark's explanation */
+function repTitle(p) {
+  if (p.representative) return 'The representative page of its group (chosen): the customer reviews it for the whole group';
+  if (p.representativeAuto) return 'The first page of its group: its representative while none is chosen';
+  return '';
+}
+
+/** approved: by whom and when, or with its group (approving one page approves the group) */
+function approvedText(p) {
+  if (p.approved) return `${p.approved.by} · ${when(p.approved.at)}`;
+  if (!p.groupApproved) return '';
+  const g = p.groupApproved;
+  return el('span', { class: 'st-group-ok', title: `Approved with its group: ${g.page} was approved` }, `With its group · ${g.by} · ${when(g.at)}`);
+}
+
+/** the migration scope's facts for the AOE team: counts and what to look at */
+function drawScope() {
+  const box = $('.st-scope');
+  const f = scopeFacts();
+  box.hidden = me.role !== 'aoe' || !f;
+  if (box.hidden) return;
+  const published = all.filter((p) => p.published).length;
+  const { waiting = [], lastRun, health } = f.capture || {};
+  const toCorrect = waiting.filter((w) => w.problem);
+  const issues = f.notInScope.length + f.problems.length + toCorrect.length
+    + (health && !health.ok ? 1 : 0);
+  box.open = box.open || issues > 0;
+  const list = (title, items, row) => (items.length ? [el('h3', {}, `${title} (${items.length})`), el('ul', { class: 'st-scope-list' }, ...items.slice(0, 200).map((i) => el('li', {}, row(i))))] : []);
+  $('.st-scope-sum').textContent = `Migration scope: ${all.length} pages, ${published} published${issues ? ` · ${issues} to look at` : ''}`;
+  $('.st-scope-body').replaceChildren(
+    el('p', { class: 'rs-muted' }, 'The scope is the table review/migration-scope in Document Authoring (source, eds, template; preview it after a change). Reviewers see the published pages of the scope; a page joins when it is published, and the backend takes its first source shot within 15 minutes.'),
+    ...list('Published, not in the scope table', f.notInScope, (i) => [el('a', { href: `./index.html?page=${encodeURIComponent(i.path)}` }, i.path), ` ${i.title}`]),
+    ...list('Rows of the scope table to correct', f.problems, (i) => `Row ${i.row}: ${i.eds || ''} ${i.source || ''}: ${i.detail}`),
+    ...list('Sources to correct (the first shot failed)', toCorrect, (i) => [el('b', {}, i.path), ` ${i.source}: ${i.problem.reason} (${when(i.problem.at)})`]),
+    ...list('Waiting for their first shot', waiting.filter((w) => !w.problem), (i) => `${i.path} (published, seen ${when(i.since)})`),
+    el('p', { class: 'rs-muted' }, [
+      lastRun ? `Last capture ${when(lastRun.at)}: ${lastRun.done.length} shot${lastRun.done.length === 1 ? '' : 's'}, ${lastRun.failed.length} failed${lastRun.waiting ? `, ${lastRun.waiting} for the next run` : ''}.` : 'No capture run yet.',
+      health ? ` Browser check ${when(health.at)}: ${health.ok ? 'working' : `NOT WORKING (${health.detail})`}.` : '',
+    ].join('')),
+  );
 }
 
 function threadsText(t) {
@@ -168,12 +214,12 @@ function draw() {
         class: 'st-edit', href: editUrl(p.path), target: '_blank', rel: 'noopener', title: 'Open the page in Document Authoring to edit it',
       }, 'Edit in DA')] : null,
     ),
-    el('td', {}, orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative ? ' st-rep' : ''}`, title: p.representative ? 'The representative page of its group: the customer reviews it for the whole group' : '' }, orgLabel(p)) : ''),
+    el('td', {}, orgLabel(p) ? el('span', { class: `st-batch-tag${p.representative || p.representativeAuto ? ' st-rep' : ''}`, title: repTitle(p) }, orgLabel(p)) : ''),
     el('td', {}, areaLabel(p.unit || '')),
     templates ? el('td', {}, p.template) : null,
     el('td', {}, threadsText(p.threads)),
     REVIEW.design ? el('td', {}, p.choices ? String(p.choices) : '') : null,
-    el('td', {}, p.approved ? `${p.approved.by} · ${when(p.approved.at)}` : ''),
+    el('td', {}, approvedText(p)),
     el('td', {}, p.last ? [`${p.last.by}${p.last.role === 'aoe' ? ' (AOE)' : ''} · ${when(p.last.at)}`, p.isNew ? el('span', { class: 'st-new-badge' }, 'new') : null] : ''),
   ));
   $('.st-table').replaceChildren(list.length
@@ -193,7 +239,8 @@ function options(select, values) {
 
 async function load() {
   $('.rs-updated').textContent = 'Loading…';
-  const [{ status, body }, pages] = await Promise.all([call('overview'), loadPages()]);
+  // (the AOE team: every page of the migration scope; reviewers: the published ones)
+  const [{ status, body }, pages] = await Promise.all([call('overview'), loadPages({ all: true })]);
   if (status !== 200) {
     $('.rs-updated').textContent = body?.error?.message || 'Could not read the review status: open this page with your review link.';
     return;
@@ -206,10 +253,15 @@ async function load() {
     const s = states.get(p.path) || { state: 'unreviewed' };
     // news: activity by someone else since this viewer's last visit
     const isNew = !!(previousVisit && s.last && s.last.at > previousVisit && s.last.by !== me.name);
+    // (a page of the scope that isn't published yet, with no review of its own)
+    const state = p.published === false && s.state === 'unreviewed' ? 'unpublished' : s.state;
     return {
-      ...p, ...s, page: undefined, isNew,
+      ...p, ...s, state, page: undefined, isNew,
     };
   });
+  // the first published page of a group without a chosen representative
+  markFirstRepresentatives(all.filter((p) => p.published !== false));
+  drawScope();
   options($('.st-template'), [...new Set(all.map((p) => p.template).filter(Boolean))].sort());
   $('.st-template').closest('label').hidden = !all.some((p) => p.template);
   options($('.st-unit'), [...new Set(all.map((p) => p.unit).filter(Boolean))].sort()

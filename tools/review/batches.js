@@ -16,14 +16,45 @@ const FILTER_KEY = storageKey('filters');
 // (a save takes at most this many changes: backend MAX_CHANGES)
 const CHUNK = 100;
 
-/** every page's organisation (path → { batch, group, representative }), from the overview */
-export async function loadOrganisation() {
+/**
+ * A group without a chosen representative has its first page (path order) as representative
+ * (representativeAuto, ☆; the user's rule: the representative is only a suggestion). items:
+ * [{ path, group, representative }], marked in place; only these pages count (the pages shown).
+ */
+export function markFirstRepresentatives(items) {
+  const groups = new Map();
+  items.filter((i) => i.group).forEach((i) => {
+    if (!groups.has(i.group)) groups.set(i.group, []);
+    groups.get(i.group).push(i);
+  });
+  groups.forEach((members) => {
+    members.forEach((m) => Object.assign(m, { representativeAuto: false }));
+    if (members.some((m) => m.representative)) return;
+    const first = [...members].sort((a, b) => (a.path < b.path ? -1 : 1))[0];
+    Object.assign(first, { representativeAuto: true });
+  });
+  return items;
+}
+
+/**
+ * every page's organisation (path → { batch, group, representative, representativeAuto,
+ * groupApproved }), from the overview; paths: the pages shown (the first page of a group is
+ * looked for among them)
+ */
+export async function loadOrganisation(paths = null) {
   const { status, body } = await call('overview');
   if (status !== 200) return { org: new Map(), body, status };
+  const shown = paths ? new Set(paths) : null;
+  const items = (body.pages || []).filter((p) => p.batch || p.group).map((p) => ({
+    path: p.page,
+    batch: p.batch || null,
+    group: p.group || null,
+    representative: !!p.representative,
+    groupApproved: p.groupApproved || null,
+  }));
+  markFirstRepresentatives(items.filter((i) => !shown || shown.has(i.path)));
   return {
-    org: new Map((body.pages || []).filter((p) => p.batch || p.group).map((p) => [p.page, {
-      batch: p.batch || null, group: p.group || null, representative: !!p.representative,
-    }])),
+    org: new Map(items.map((i) => [i.path, i])),
     body,
     status,
   };
@@ -64,15 +95,23 @@ export function passes(path, info, filters = getFilters()) {
   if (filters.area && areaOf(path) !== filters.area) return false;
   if (filters.batches.length && !filters.batches.includes(o.batch || 'none')) return false;
   if (filters.group !== '' && (o.group || 'none') !== filters.group) return false;
-  if (filters.reps && !o.representative) return false;
+  if (filters.reps && !o.representative && !o.representativeAuto) return false;
   return true;
 }
 
-/** a page's organisation as a label: "Batch 2 · Group 5 ★" (★ = the group's representative) */
-export const orgLabel = (o) => [
-  o?.batch ? `Batch ${o.batch}` : '',
-  o?.group ? `Group ${o.group}${o.representative ? ' ★' : ''}` : '',
-].filter(Boolean).join(' · ');
+/**
+ * a page's organisation as a label: "Batch 2 · Group 5 ★" (★ = the group's chosen
+ * representative, ☆ = its first page, the representative while none is chosen)
+ */
+export const orgLabel = (o) => {
+  let mark = '';
+  if (o?.representative) mark = ' ★';
+  else if (o?.representativeAuto) mark = ' ☆';
+  return [
+    o?.batch ? `Batch ${o.batch}` : '',
+    o?.group ? `Group ${o.group}${mark}` : '',
+  ].filter(Boolean).join(' · ');
+};
 
 /** a segment as the importer names it (lowercase, other characters one '-', none at the ends) */
 const clean = (seg) => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
