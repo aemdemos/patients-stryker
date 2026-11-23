@@ -484,7 +484,10 @@ npm run test:a11y -- http://localhost:3000/us/en/ivs/
 npm run test:a11y
 
 # All configured paths on a preview host
-A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y
+npm run test:a11y -- --base-url https://main--patients-stryker--aemdemos.aem.page
+
+# Usage, options and examples
+npm run test:a11y -- --help
 ```
 
 The single-URL command also accepts patients or corp feature-preview URLs. Use

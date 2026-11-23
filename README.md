@@ -43,12 +43,14 @@ As in the reference implementation, `postinstall` downloads Chromium.
 # Configured patients landing pages; requires the local AEM server
 npm run test:a11y
 
-# Same paths on a preview host
-A11Y_BASE_URL=https://main--patients-stryker--aemdemos.aem.page npm run test:a11y
+# Same paths on a preview host (or set A11Y_BASE_URL)
+npm run test:a11y -- --base-url https://main--patients-stryker--aemdemos.aem.page
 
 # One page (a corp preview URL works here too)
 npm run test:a11y -- https://main--patients-stryker--aemdemos.aem.page/us/en/ivs/
 
+# Usage, options and examples ("--" is required, or npm shows its own help)
+npm run test:a11y -- --help
 ```
 
 Set WCAG tags, blocking impacts and page paths in
