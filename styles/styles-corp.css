@@ -1090,11 +1090,17 @@ body.corp main > .section.disclaimer:has(+ .last-modified-section, + .section:em
   margin-top: var(--space-block-l);
 }
 
-/* section style `flex-corp` (layout from 600px below): a Panel (left) in its text is the
-   source's dimensional box around one paragraph — flush with the text column, 3% padding
-   (2% below, plus the paragraph's 15px), 10px above the next paragraph — and its copy takes
-   the section's copy styles (e.g. 17.5px Egyptienne with `serif, p-1-25`, as the "AM, also
-   known as 3D printing" box of the additive manufacturing feature) */
+/* section style `flex-corp` (layout from 600px below): its image is a block, so no text line
+   (the gap under an inline image's baseline) sits below it and its bottom edge is the
+   text's. A Panel (left) in its text is the source's dimensional box around one paragraph —
+   flush with the text column, 3% padding (2% below, plus the paragraph's 15px), 10px above
+   the next paragraph — and its copy takes the section's copy styles (e.g. 17.5px Egyptienne
+   with `serif, p-1-25`, as the "AM, also known as 3D printing" box of the additive
+   manufacturing feature) */
+:where(body.corp) main > .section.flex-corp > .flex-corp-media > p > picture > img {
+  display: block;
+}
+
 :where(body.corp) main > .section.flex-corp .panel.left.block .panel-body {
   margin: 0 0 var(--space-block-s);
   padding: 3% 3% 2%;
