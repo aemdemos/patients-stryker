@@ -1552,7 +1552,7 @@ body.news-detail main > .section.dark-gray-box:nth-child(n):nth-child(n) > .defa
    top, 4% sides and bottom), white light serif at 28px at every width (.fontsize-2em), its
    Bold words gold Futura bold, in a Columns cell and in the article text (the :nth-child(n)
    outrank the Columns cell Bold and the article text Bold, which keeps the body font) */
-body.news-detail main span.box-dark {
+body.news-detail main :is(span.box-dark, .text-marker-box.box-dark) {
   display: block;
   padding: 6% 4% 4%;
   background-color: var(--color-secondary);
@@ -1563,7 +1563,7 @@ body.news-detail main span.box-dark {
   line-height: var(--heading-line-height);
 }
 
-body.news-detail main span.box-dark:nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:not(span[class*="color-"] *) {
+body.news-detail main :is(span.box-dark, .text-marker-box.box-dark):nth-child(n):nth-child(n):nth-child(n):nth-child(n) strong:not(span[class*="color-"] *) {
   color: var(--color-accent);
   font-family: var(--display-font-family);
   font-size: inherit;

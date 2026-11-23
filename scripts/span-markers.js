@@ -12,8 +12,12 @@
  * Words (any order, joined by "-"):
  *   colour   blue, gold, purple, teal, navy, grey / gray, white, light-gray (the color-* classes)
  *   font     serif (Egyptienne), sans (Futura), body (Humanist), upper (capitals)
- *   size     s, l, xl, xxl: 0.8 / 1.25 / 1.5 / 1.75 times the surrounding text
- *   look     rule-gold (gold rule of an underlined heading), box-dark (dark quote box)
+ *   size     s, l, xl, xxl: 0.8 / 1.25 / 1.5 / 1.75 times the surrounding text (the sheet adds
+ *            xxxl 2×, xxxxl 2.5×, xxxxxl 3.5× and the large headline sizes hl15 … hl9)
+ *   look     rule-gold (gold rule of an underlined heading); a line box in a box colour:
+ *            box-white, box-gray, box-gold, box-blue, box-purple, box-teal, box-dark,
+ *            box-dark-blue-gradient, box-dark-purple-gradient (around the whole line, the box
+ *            is the line's: .text-marker-box)
  *   spacing  p, pt, pr, pb, pl, px, py (padding) or m, mt, mr, mb, ml, mx, my (margin),
  *            each followed by a step: xs, s, m, l, xl (the spacing tokens)
  *   added    words added in the Block Library sheet panel-options (tools/library-options.js) get
@@ -34,9 +38,12 @@ export const COLOURS = ['blue', 'gold', 'purple', 'teal', 'navy', 'grey', 'white
 const COLOUR_ALIASES = { gray: 'grey' };
 export const FONTS = ['serif', 'sans', 'body', 'upper'];
 export const SIZES = ['s', 'l', 'xl', 'xxl'];
-// looks the corp styles already define for a class of the same name (formerly bracket tags):
-// rule-gold (the gold rule of an underlined heading), box-dark (the dark quote box)
-export const DECORATIONS = ['rule-gold', 'box-dark'];
+// looks the corp styles define for a class of the same name: rule-gold (the gold rule of an
+// underlined heading) and the line boxes in the stryker.com box colours (the same names as the
+// Columns cell boxes; box-dark is also the dark quote box of news articles)
+export const BOXES = ['box-white', 'box-gray', 'box-gold', 'box-blue', 'box-purple', 'box-teal',
+  'box-dark', 'box-dark-blue-gradient', 'box-dark-purple-gradient'];
+export const DECORATIONS = ['rule-gold', ...BOXES];
 
 // spacing word → CSS properties; step → spacing token
 export const SPACING = {
@@ -79,9 +86,12 @@ export function parseMarker(name) {
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
     const pair = `${word}-${words[i + 1]}`;
-    if (DECORATIONS.includes(pair)) {
-      classes.push(pair);
-      i += 1;
+    // the longest look the words spell from here (box-dark-purple-gradient before box-dark)
+    const look = [4, 3, 2].map((n) => words.slice(i, i + n).join('-'))
+      .find((joined) => DECORATIONS.includes(joined));
+    if (look) {
+      classes.push(look);
+      i += look.split('-').length - 1;
     } else if (COLOURS.includes(pair)) {
       classes.push(`color-${pair}`);
       i += 1;
@@ -163,6 +173,12 @@ function wrapPair(start, end, container) {
   const target = wholeLine ? container : span;
   spacing.forEach(([prop, value]) => { target.style[prop] = value; });
   if (wholeLine && spacing.length) container.classList.add('text-marker-line');
+  // a line box around the whole line is the line's own box (its gap below goes inside it)
+  const box = classes.find((c) => BOXES.includes(c));
+  if (wholeLine && box) {
+    span.classList.remove(box);
+    container.classList.add('text-marker-box', box);
+  }
 }
 
 /**

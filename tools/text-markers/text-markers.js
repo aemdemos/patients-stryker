@@ -32,7 +32,15 @@ const LABELS = {
   xl: 'X-large (1.5×)',
   xxl: 'XX-large (1.75×)',
   'rule-gold': 'Gold rule (underlined heading)',
-  'box-dark': 'Dark quote box (whole paragraph)',
+  'box-white': 'Box: white',
+  'box-gray': 'Box: light grey',
+  'box-gold': 'Box: gold',
+  'box-blue': 'Box: blue',
+  'box-purple': 'Box: purple',
+  'box-teal': 'Box: teal',
+  'box-dark': 'Box: dark grey (news: dark quote box)',
+  'box-dark-blue-gradient': 'Box: dark blue gradient',
+  'box-dark-purple-gradient': 'Box: dark purple gradient',
 };
 // the choices per group: built in, or set by the library sheet (tools/library-options.js)
 const lists = {

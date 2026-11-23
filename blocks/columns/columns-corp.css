@@ -334,13 +334,6 @@ body.corp .columns.related-links :is(p, ul, li) {
   font-family: var(--body-font-family);
 }
 
-/* the linked titles keep the heading's Futura bold in black (stryker.com related products:
-   h4.text-black > a, e.g. Artelon); the patients rule sets links in the heading font */
-body.corp .columns.related-links h4 a:any-link {
-  font-family: inherit;
-  color: var(--text-color);
-}
-
 body.corp .columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only-child) {
   line-height: var(--paragraph-line-height);
 }
@@ -572,14 +565,6 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     flex: 0 0 25%;
   }
 
-  /* columns-25-75: the mirror of 75-25 (stryker.com 3 / 9 grid columns) */
-  body.corp .columns.columns-25-75 > div > div:first-child {
-    flex: 0 0 25%;
-  }
-
-  body.corp .columns.columns-25-75 > div > div:last-child {
-    flex: 0 0 75%;
-  }
 
   body.corp .columns.columns-20-80 > div > div:first-child {
     flex: 0 0 20%;
@@ -1329,7 +1314,9 @@ body.corp main .columns.quote-3vw.block > div:nth-child(n) > div:last-child:nth-
    (box-first) or every cell (box-all), its inner spacing in steps of the cell width (the
    source's padding %: none, 3%, 5% default, 10%), a soft shadow (stryker.com dimensional box:
    10px outside), a 1px image border (grey, teal, black) and centred text. The text keeps its
-   own colour (text layer); the older combined names above stay as they are ---- */
+   own colour (text layer); the older combined names above stay as they are. Rules for class
+   names real pages already carry (image-border, border-bottom, label-right, columns-25-75)
+   apply on draft pages only while in review (body.std-draft, scripts/corp.js) ---- */
 body.corp .columns:is(.box-white, .box-gray, .box-gold, .box-blue, .box-purple, .box-teal, .box-dark, .box-dark-blue-gradient, .box-dark-purple-gradient) {
   --columns-corp-box-padding: 5%;
 }
@@ -1356,7 +1343,7 @@ body.corp .columns.shadow :where(.columns-box) {
   margin: var(--space-block-s);
 }
 
-body.corp .columns:is(.image-border, .image-border-teal, .image-border-black) :where(img) {
+body.corp.std-draft .columns:is(.image-border, .image-border-teal, .image-border-black) :where(img) {
   box-sizing: border-box;
   border: 1px solid var(--columns-corp-image-border);
 }
@@ -1371,13 +1358,34 @@ body.corp .columns.text-center > div > :where(div) {
 
 /* border-bottom: a 1px grey rule under the whole row, 10px below its content (stryker.com page
    hero .border-bottom-gold: #b2b4ae, e.g. the product page intros) */
-body.corp .columns.border-bottom {
+body.corp.std-draft .columns.border-bottom {
   padding-bottom: var(--space-block-s);
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* label-right: the first cell's text is right-aligned beside the second (stryker.com interview
    rows: the question, right-aligned in its 3/12 column, beside the answer) */
-body.corp .columns.label-right > div > :where(div:first-child) {
+body.corp.std-draft .columns.label-right > div > :where(div:first-child) {
   text-align: right;
+}
+
+/* ---- in review, draft pages only (body.std-draft, scripts/corp.js): real pages use these
+   class names today, so their rules wait for approval ---- */
+
+/* related-links: the linked titles keep the heading's Futura bold in black (stryker.com related
+   products: h4.text-black > a, e.g. Artelon); the patients rule sets links in the heading font */
+body.corp.std-draft .columns.related-links h4 a:any-link {
+  font-family: inherit;
+  color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  /* columns-25-75: the mirror of 75-25 (stryker.com 3 / 9 grid columns) */
+  body.corp.std-draft .columns.columns-25-75 > div > div:first-child {
+    flex: 0 0 25%;
+  }
+
+  body.corp.std-draft .columns.columns-25-75 > div > div:last-child {
+    flex: 0 0 75%;
+  }
 }

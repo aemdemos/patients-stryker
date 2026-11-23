@@ -67,7 +67,8 @@ const MEDIA = '.columns-img-col, .columns-youtube, .dm-video-wrapper';
 function decorateBoxes(block) {
   const match = block.className.match(BOX_VARIANT);
   let variant = match && match[0];
-  if (!variant && BOX_COLOUR.test(block.className)) {
+  const standard = !variant && BOX_COLOUR.test(block.className);
+  if (standard) {
     variant = ['box-all', 'box-first'].find((c) => block.classList.contains(c)) || 'box-last';
   }
   if (!variant) return;
@@ -78,9 +79,10 @@ function decorateBoxes(block) {
     else if (variant === 'box-first') targets = cells.slice(0, 1);
     else if (variant.endsWith('-2')) targets = cells.slice(1, 2);
     targets.filter((cell) => cell.textContent.trim()).forEach((cell) => {
-      // a cell's content, its loose text included: a cell with one paragraph holds its text
-      // without the <p> (EDS unwraps it), which is boxed the same way
-      const content = [...cell.childNodes]
+      // a cell's content, with the standard choices its loose text included: a cell with one
+      // paragraph holds its text without the <p> (EDS unwraps it), which is boxed the same way
+      // (the older names keep boxing elements only, as on the pages that use them today)
+      const content = (standard ? [...cell.childNodes] : [...cell.children])
         .filter((n) => n.nodeType === Node.ELEMENT_NODE || n.textContent.trim());
       const isElement = (n) => n.nodeType === Node.ELEMENT_NODE;
       const start = content

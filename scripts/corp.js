@@ -24,6 +24,8 @@ import {
 } from './aem.js';
 import { previewDMLinkEditors } from './dm-support.js';
 import decorateMapLinks from './map-embed.js';
+import decorateSpanMarkers from './span-markers.js';
+import previewTextMarkers from './span-markers-canvas.js';
 
 /**
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
@@ -37,6 +39,10 @@ const CORP_BLOCK_STYLES = ['accordion', 'columns', 'marketo-form'];
  */
 export async function loadEager(doc) {
   doc.body.classList.add('corp');
+  // standardisation work in review (docs/standardisation): on draft pages and the authoring
+  // panels' previews only (body.std-draft), so no other page changes until it is approved —
+  // the Text style markers and the Columns rules for class names real pages already carry
+  if (/^\/(drafts|tools)\//.test(window.location.pathname)) doc.body.classList.add('std-draft');
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (styles-corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {
@@ -82,6 +88,13 @@ function decorateIconLinks(main) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
+  // Text style markers (:start-…: text :end:, the Text style panel) → styled spans; before
+  // decorateIcons, which would otherwise request /icons/start-….svg and /icons/end.svg.
+  // Draft pages only while in review (body.std-draft, loadEager)
+  if (document.body.classList.contains('std-draft')) {
+    previewTextMarkers();
+    decorateSpanMarkers(main);
+  }
   // a lone Google Maps link in default content becomes an embedded map (columns.js does cells)
   decorateMapLinks(main, ':scope > div > p');
   main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
