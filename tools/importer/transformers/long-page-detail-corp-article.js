@@ -815,6 +815,14 @@ function imageNodes(component, doc) {
       h4.textContent = text(title);
       nodes.push(h4);
     });
+    // a caption line under the image (p.u-white-space-pre, body text on the source: SKILL
+    // Assist MAX "Watch SKILL Assist MAX in action with Pr. Laurent Spelle"): its paragraph
+    component.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre').forEach((caption) => {
+      if (!text(caption)) return;
+      const p = doc.createElement('p');
+      p.textContent = text(caption);
+      nodes.push(p);
+    });
   }
   return nodes;
 }

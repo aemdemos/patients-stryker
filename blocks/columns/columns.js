@@ -32,6 +32,10 @@ function decorateYouTube(block) {
     const p = a.parentElement;
     const text = a.textContent.trim();
     if (!YOUTUBE.test(a.href) || p.textContent.trim() !== text) return;
+    // in `media-pair`, a link alone right under an image is that image's link (an image that
+    // opens the video on YouTube, stryker.com SKILL Assist MAX), not a player
+    const prev = p.previousElementSibling;
+    if (block.classList.contains('media-pair') && prev?.matches('p') && prev.querySelector(':scope > picture')) return;
     const id = youTubeId(a.href);
     if (!id) return;
 

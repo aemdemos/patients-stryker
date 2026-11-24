@@ -723,6 +723,12 @@ var CustomImportScript = (() => {
         h4.textContent = text2(title);
         nodes.push(h4);
       });
+      component.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre").forEach((caption) => {
+        if (!text2(caption)) return;
+        const p = doc.createElement("p");
+        p.textContent = text2(caption);
+        nodes.push(p);
+      });
     }
     return nodes;
   }
@@ -2589,7 +2595,6 @@ var CustomImportScript = (() => {
     ".buttonset",
     "table"
   ].join(", ");
-  var YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
   var CELL_BOXES = {
     "golden-gradient": "box-gold-gradient",
     "gray-gradient": "box-gray-gradient",
@@ -2718,8 +2723,7 @@ var CustomImportScript = (() => {
           a.textContent = link2.querySelector("img").getAttribute("alt") || text3(link2) || a.getAttribute("href");
           const p = doc.createElement("p");
           p.append(a);
-          if (YOUTUBE_LINK.test(a.getAttribute("href"))) nodes.splice(0, 1, p);
-          else nodes.splice(1, 0, p);
+          nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches(".c-standalone-video")) {
@@ -2906,7 +2910,9 @@ var CustomImportScript = (() => {
         return;
       }
       const key = columns.map(columnWidth).join(",");
-      const linked = filled.some((col) => [...col.querySelectorAll(".c-standalone-image")].some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute("href"))));
+      const linkedImages = filled.flatMap((col) => [...col.querySelectorAll(".c-standalone-image")].filter((c) => linkedImage(c)));
+      const linked = linkedImages.length > 0;
+      const captioned = linkedImages.some((c) => [...c.querySelectorAll(".c-standalone-image-content > p.u-white-space-pre")].some((caption) => text3(caption)));
       const boxes = boxVariant(columns);
       if (!boxes) markTitleBars(columns, colctrl);
       if (!boxes) {
@@ -2925,6 +2931,7 @@ var CustomImportScript = (() => {
       const variant = [
         COLUMN_VARIANTS[key],
         linked ? "media-pair" : "",
+        captioned ? "image-captions" : "",
         stackRow(columns) ? "stack" : "",
         stackRow(columns) && mediaTextRow(columns) ? "media-text" : "",
         boxes,
@@ -2932,7 +2939,7 @@ var CustomImportScript = (() => {
         filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? "right-last" : "",
         borderedImages(columns, colctrl) ? "image-border" : ""
       ].filter(Boolean).join(", ");
-      const centred = filled.every(centredColumn);
+      const centred = !captioned && filled.every(centredColumn);
       const padded = filled.every((col) => paddedColumn(col, colctrl));
       const cells = columns.map((col) => cellNodes(col, doc));
       const style = [rowCopyStyle(cells, doc), centred ? "center" : "", padded ? "cell-padding" : ""].filter(Boolean).join(", ");

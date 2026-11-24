@@ -502,6 +502,37 @@ body.corp .columns.media-pair .columns-img-col {
   margin-bottom: var(--space-block-l);
 }
 
+/* image-captions: a line right under an image is its caption, with no gap between them
+   (stryker.com standalone image caption p.u-white-space-pre: SKILL Assist MAX "Watch SKILL
+   Assist MAX in action with Pr. Laurent Spelle") */
+body.corp .columns.media-pair.image-captions .columns-img-col:has(+ p) {
+  margin-bottom: 0;
+}
+
+/* …the row keeps the source image row's own margin below it (20px, 30px from 600px) on top of
+   the section gap */
+body.corp .columns.media-pair.image-captions.block {
+  padding-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns.media-pair.image-captions.block {
+    padding-bottom: var(--space-section);
+  }
+}
+
+/* …and on phones, where the captioned images stack, 20px more between them (the source's
+   image component margin) */
+body.corp .columns:where(.media-pair.image-captions) > div > div + div {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .columns:where(.media-pair.image-captions) > div > div + div {
+    margin-top: 0;
+  }
+}
+
 body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
 }

@@ -465,8 +465,6 @@ const CELL_COMPONENTS = [
   '.c-curatedcta', '.buttonset', 'table',
 ].join(', ');
 
-const YOUTUBE_LINK = /^https?:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i;
-
 // the gradient boxes a column's Large Headline can sit in → its `[[box-<gradient>]…]` tag
 const CELL_BOXES = {
   'golden-gradient': 'box-gold-gradient',
@@ -644,10 +642,10 @@ function cellNodes(col, doc) {
           a.textContent = link.querySelector('img').getAttribute('alt') || text(link) || a.getAttribute('href');
           const p = doc.createElement('p');
           p.append(a);
-          // an image opening a YouTube video (SKILL Assist MAX): the video alone, as a player
-          // (decided 2026-11-11; Columns makes a YouTube link a player, not an image link)
-          if (YOUTUBE_LINK.test(a.getAttribute('href'))) nodes.splice(0, 1, p);
-          else nodes.splice(1, 0, p);
+          // an image that opens a video (YouTube, new tab: SKILL Assist MAX) stays that image
+          // with its link, as on the source (not a player; columns.js keeps a YouTube link
+          // under a `media-pair` image as the image's link)
+          nodes.splice(1, 0, p);
         }
         out.push(...nodes);
       } else if (c.matches('.c-standalone-video')) {
@@ -940,9 +938,13 @@ function columnRows(main, doc) {
       return;
     }
     const key = columns.map(columnWidth).join(',');
-    // linked images (the endoscopy resources specialty tiles): `media-pair`
-    const linked = filled.some((col) => [...col.querySelectorAll('.c-standalone-image')]
-      .some((c) => linkedImage(c) && !YOUTUBE_LINK.test(linkedImage(c).getAttribute('href'))));
+    // linked images (the endoscopy resources specialty tiles, SKILL Assist MAX's images that
+    // open YouTube videos): `media-pair`; with a caption line under them, `image-captions`
+    const linkedImages = filled.flatMap((col) => [...col.querySelectorAll('.c-standalone-image')]
+      .filter((c) => linkedImage(c)));
+    const linked = linkedImages.length > 0;
+    const captioned = linkedImages.some((c) => [...c.querySelectorAll('.c-standalone-image-content > p.u-white-space-pre')]
+      .some((caption) => text(caption)));
     const boxes = boxVariant(columns);
     if (!boxes) markTitleBars(columns, colctrl);
     // white text in a coloured box the row has no variant for (a colour per cell, a gradient)
@@ -965,13 +967,16 @@ function columnRows(main, doc) {
     const parts = columns.length === 2 ? [...columns[0].querySelectorAll(`${CELL_COMPONENTS}, .sectionseparator`)]
       .filter((c) => c.closest('.colctrl') === colctrl && (text(c) || c.matches('.sectionseparator'))) : [];
     const firstRule = parts.length > 1 && parts[parts.length - 1].matches('.sectionseparator');
-    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', stackRow(columns) ? 'stack' : '',
+    const variant = [COLUMN_VARIANTS[key], linked ? 'media-pair' : '', captioned ? 'image-captions' : '',
+      stackRow(columns) ? 'stack' : '',
       stackRow(columns) && mediaTextRow(columns) ? 'media-text' : '', boxes,
       firstRule ? 'left-border-bottom' : '',
       filled.length > 1 && rightColumn(columns[columns.length - 1]) && !rightColumn(columns[0]) ? 'right-last' : '',
       borderedImages(columns, colctrl) ? 'image-border' : '']
       .filter(Boolean).join(', ');
-    const centred = filled.every(centredColumn);
+    // captioned images (SKILL Assist MAX) keep their captions on the left, as on the source: the
+    // row is not centred even though the source centres the image itself
+    const centred = !captioned && filled.every(centredColumn);
     const padded = filled.every((col) => paddedColumn(col, colctrl));
     const cells = columns.map((col) => cellNodes(col, doc));
     const style = [rowCopyStyle(cells, doc), centred ? 'center' : '', padded ? 'cell-padding' : '']
