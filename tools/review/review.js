@@ -17,7 +17,7 @@ import { createNotes, CATEGORIES } from './notes.js';
 import { REVIEW, storageKey } from './config.js';
 import loadPages, { editUrl } from './pages.js';
 import {
-  loadShots, loadVersion, requestShot, shotTag,
+  loadShots, loadVersion, requestShot, shotTag, changesText,
 } from './shots.js';
 import {
   loadOrganisation, getFilters, setFilters, passes, areaOf, areaLabel, orgLabel,
@@ -1168,7 +1168,7 @@ function renderShotBox() {
       shotHooks.reload();
       renderShotBox();
     },
-  }, ...newestFirst.map(({ v, i }) => el('option', { value: v.id }, `${when(v.captured)}${shotTag(i, n) ? ` (${shotTag(i, n)})` : ''}`))) : null;
+  }, ...newestFirst.map(({ v, i }) => el('option', { value: v.id }, `${when(v.captured)}${shotTag(i, n, v) ? ` (${shotTag(i, n, v)})` : ''}`))) : null;
   if (pick) pick.value = shown.id;
   const req = data.request;
   let reqText = '';
@@ -1200,6 +1200,7 @@ function renderShotBox() {
       : 'No shot history for this page yet: the source shown is the first shot kept with the tool (no Refresh until the first shots are in the history).'),
     n ? el('p', { class: 'rv-shot-info' }, `Taken ${when(shown.captured)} of `, el('a', { href: shown.url, target: '_blank', rel: 'noopener' }, shown.url.replace(/^https:\/\//, '')), `. ${n > 1 ? `${n} shots` : 'One shot'} so far, all kept with the date taken and a fingerprint (SHA-256) of every image.`) : null,
     reqText ? el('p', { class: `rv-shot-req rv-shot-${req.status}` }, reqText) : null,
+    changesText(data.changes) ? el('p', { class: 'rv-shot-changes' }, changesText(data.changes)) : null,
     n ? refresh : null,
     el('p', { class: 'rv-shot-msg', 'aria-live': 'polite' }),
   ].filter(Boolean));

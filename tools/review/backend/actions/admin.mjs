@@ -31,6 +31,9 @@
  *   restore-check { day }                   a backup against the store: keys missing now, changed since
  *   restore { day, only: [key prefixes] }   the keys of a backup missing now put back (never over one)
  *   capture-state                           the capture's record (first seen, sources to correct, runs)
+ *   changes-scope { pages? }                the change check's pages (set them: [{ page, source, template }])
+ *   changes-page { page } / changes-site    a page's change record / the site's (code, design changes, runs)
+ *   schedule { only: ['check'], enabled }    the change check's own schedule (on or off) alone
  *   (invitations: lib/invites.mjs, shared with the AOE team's web action invites)
  *   export                                  every entry, as rows (summary, apply, tests)
  *   status { rows: [{ page, item, kind, value }] }  AOE statuses (kind status:<kind>), signed AOE
@@ -54,6 +57,9 @@ import {
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
+import {
+  readScope, readSite, readPageState, writeJson, scopeFile, pageFile as changesPageFile,
+} from '../lib/changes.mjs';
 import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
 import {
   backup, listBackups, restoreCheck, restore,
@@ -126,9 +132,24 @@ async function run(params) {
       return ok({ revoked: params.id });
     }
     if (op === 'schedule') {
-      return ok({ steps: await schedule({ cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main' }) });
+      return ok({
+        steps: await schedule({
+          cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main', only: Array.isArray(params.only) ? params.only : null,
+        }),
+      });
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
+    // the daily source change check (lib/changes.mjs)
+    if (op === 'changes-scope') {
+      if (Array.isArray(params.pages)) {
+        const pages = params.pages.filter((p) => p && typeof p.page === 'string' && /^https:\/\/www\.stryker\.com\//.test(p.source || ''))
+          .map((p) => ({ page: p.page, source: p.source, template: p.template || '' }));
+        await writeJson(files, scopeFile(space === 'std' ? 'main' : space), { at: new Date().toISOString(), pages });
+      }
+      return ok(await readScope(files, space === 'std' ? 'main' : space));
+    }
+    if (op === 'changes-page') return ok(await readPageState(files, space === 'std' ? 'main' : space, String(params.page || '')));
+    if (op === 'changes-site') return ok(await readSite(files, space === 'std' ? 'main' : space));
     if (op === 'backup') {
       return ok(await backup(stores));
     }
@@ -360,6 +381,8 @@ async function run(params) {
       // and the tiles the backend took of it
       const tiles = await files.list(`${space === 'std' ? '' : `${space}/`}shot-tiles/${Buffer.from(page).toString('base64url')}/`);
       await Promise.all(tiles.map((f) => files.delete(f.name).catch(() => null)));
+      // and its record in the daily change check
+      await files.delete(changesPageFile(space === 'std' ? 'main' : space, page)).catch(() => null);
       return ok({ deleted: r.keys, groups, page });
     }
     return bad(`unknown op "${op}"`);

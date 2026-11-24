@@ -16,6 +16,7 @@ import {
   readHistory, readRequest, requestShot, withoutLeaves,
 } from '../lib/shots.mjs';
 import { startCapture } from '../lib/runtime.mjs';
+import { readPageState, historyOf } from '../lib/changes.mjs';
 
 export async function main(params) {
   if (isPreflight(params)) return reply(params, 204, '');
@@ -51,6 +52,8 @@ export async function main(params) {
     return reply(params, 200, {
       versions: history.versions.map((v, i) => (i === last ? v : withoutLeaves(v))),
       request: await readRequest(files, space, page),
+      // the daily change check's record of the page (null: not in the check)
+      changes: historyOf(await readPageState(files, space, page)),
     });
   } catch (e) {
     return fail(params, 500, 'server', String(e.message || e).slice(0, 200));
