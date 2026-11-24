@@ -63,6 +63,10 @@ export function replyProblem(value, role) {
   return null;
 }
 export const MAX_CHANGES = 100;
+// (organisation only, e.g. a batch for many pages: more at once)
+export const MAX_ORG_CHANGES = 3000;
+// keys written at the same time by a save (the store allows a limited number of parallel requests)
+const SAVE_PARALLEL = 20;
 export const TOOL = 'https://standardise-v3--stryker-com--strykerenterprise.aem.page/tools/review/index.html';
 // the reviews kept apart in this backend: std (the standard pages, the default and the keys of
 // before) and main (the client review of the migrated pages on main, at their final paths)
@@ -184,7 +188,7 @@ const decodeEntry = (key, stored) => {
   };
 };
 
-async function keysOf(state, match) {
+export async function keysOf(state, match) {
   const keys = [];
   // (the library returns an async iterator of key batches)
   const it = state.list({ match });
@@ -192,7 +196,7 @@ async function keysOf(state, match) {
   return keys;
 }
 
-async function readKeys(state, keys) {
+export async function readKeys(state, keys) {
   const out = [];
   for (let i = 0; i < keys.length; i += 25) {
     const batch = keys.slice(i, i + 25);
@@ -224,35 +228,58 @@ export async function readAll(state, space = 'std') {
  * someone else changed it). One audit file per batch (the durable record).
  */
 export async function saveChanges({ state, files }, {
-  page, changes, by, inv, role = 'reviewer', space = 'std',
+  page, changes, by, inv, role = 'reviewer', space = 'std', orgBefore = null,
 }) {
   const at = new Date().toISOString();
-  const results = [];
-  const audit = [];
-  for (const c of changes) {
+  const results = new Array(changes.length);
+  const audits = new Array(changes.length);
+  // one change: its key read, its rev checked, written (organisation entries: the newest wins)
+  const one = async (c, i) => {
     const p = c.page || page;
     const key = entryKey(p, c.item, c.kind, space);
-    const stored = await state.get(key);
+    // (organisation, the newest wins: not read first when its value before is known otherwise,
+    // e.g. from the review's summary; the store takes ~80 operations a second)
+    const known = c.org && orgBefore ? orgBefore(p, c.kind) : undefined;
+    const stored = known === undefined ? await state.get(key) : null;
     const current = stored ? JSON.parse(stored.value) : null;
     const rev = current ? current.rev : 0;
-    // (organisation entries, e.g. batches: the newest wins, no rev check)
     if ((c.rev ?? 0) !== rev && !c.org) {
-      results.push({
+      results[i] = {
         page: p, item: c.item, kind: c.kind, ok: false, conflict: true, rev, by: current?.by, at: current?.at,
-      });
-    } else {
-      const next = {
-        v: c.value, by, at, rev: rev + 1, inv, role,
       };
-      await state.put(key, JSON.stringify(next), { ttl: TTL });
-      results.push({
-        page: p, item: c.item, kind: c.kind, ok: true, rev: next.rev,
-      });
-      audit.push({
-        page: p, item: c.item, kind: c.kind, before: current ? { v: current.v, by: current.by, at: current.at } : null, after: c.value, rev: next.rev,
-      });
+      return;
     }
-  }
+    const next = {
+      v: c.value, by, at, rev: rev + 1, inv, role,
+    };
+    await state.put(key, JSON.stringify(next), { ttl: TTL });
+    results[i] = {
+      page: p, item: c.item, kind: c.kind, ok: true, rev: next.rev,
+    };
+    let before = current ? { v: current.v, by: current.by, at: current.at } : null;
+    if (known !== undefined) before = known === null ? null : { v: JSON.stringify(known), from: 'summary' };
+    audits[i] = {
+      page: p, item: c.item, kind: c.kind, before, after: c.value, rev: next.rev,
+    };
+  };
+  // different keys at the same time, SAVE_PARALLEL at once; the changes to one key in their order
+  const byKey = new Map();
+  changes.forEach((c, i) => {
+    const key = entryKey(c.page || page, c.item, c.kind, space);
+    if (!byKey.has(key)) byKey.set(key, []);
+    byKey.get(key).push(i);
+  });
+  const queues = [...byKey.values()];
+  let next = 0;
+  const worker = async () => {
+    while (next < queues.length) {
+      const q = queues[next];
+      next += 1;
+      for (const i of q) await one(changes[i], i);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(SAVE_PARALLEL, queues.length) }, worker));
+  const audit = audits.filter(Boolean);
   if (audit.length) {
     // (a space's audit files in a folder of their own: <space>/audit/…; std's in audit/)
     const dir = space && space !== 'std' ? `${space}/audit` : 'audit';

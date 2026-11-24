@@ -3,7 +3,7 @@
  * The status page's organising for the AOE team, in the browser: a page's row editor (batch,
  * group, representative; empty takes out), the selection bar (move, take out, representatives),
  * the groups with their representative to choose (or none: the first page stands in) and their
- * pages to take out. On three pages nobody has organised (checked first), with a test AOE
+ * pages to take out (its own group 902 only: real groups may exist). On three pages nobody has organised (checked first), with a test AOE
  * invitation whose entries are all removed after (purge-invite) and which is revoked.
  * usage: node tools/review/backend/test/org-edit.test.mjs <base> [space] [path prefix of 3 pages]
  */
@@ -84,17 +84,18 @@ try {
 
   // the groups: the representative chosen, then none (the first page stands in)
   await p.click('.st-groups summary');
-  await p.selectOption('.st-rep-pick', name.three);
+  const g902 = p.locator('.st-group-row', { hasText: 'Group 902' });
+  await g902.locator('.st-rep-pick').selectOption(name.three);
   await saved('representative chosen');
   await p.waitForTimeout(800);
   check('groups: another representative chosen, the earlier one no more', await tag('three') === 'Group 902 ★' && await tag('two') === 'Group 902', `${await tag('two')} / ${await tag('three')}`);
-  await p.selectOption('.st-rep-pick', '');
+  await g902.locator('.st-rep-pick').selectOption('');
   await saved('no representative chosen');
   await p.waitForTimeout(800);
   // (path order: …-four < …-three < …-two)
   check('groups: none chosen, the first page stands in (☆)', await tag('four') === 'Group 902 ☆' && await tag('three') === 'Group 902', `${await tag('four')} / ${await tag('three')}`);
-  await p.locator('.st-group-row details summary').click();
-  await p.locator('.st-group-row li', { hasText: `(${name.four})` }).locator('.st-take-out').click();
+  await g902.locator('details summary').click();
+  await g902.locator('li', { hasText: `(${name.four})` }).locator('.st-take-out').click();
   await saved('taken out of group 902');
   await p.waitForTimeout(800);
   check('groups: a page taken out', await tag('four') === '' && await tag('three') === 'Group 902 ☆', `${await tag('four')} / ${await tag('three')}`);
@@ -106,7 +107,7 @@ try {
   await p.locator('.st-bulk button', { hasText: 'Take out of their group' }).click();
   await saved('taken out of their group');
   await p.waitForTimeout(800);
-  check('selection: taken out of their group, the group gone', await tag('two') === '' && await tag('three') === '' && /\(0\)/.test(await p.textContent('.st-groups-sum')), await p.textContent('.st-groups-sum'));
+  check('selection: taken out of their group, the group gone', await tag('two') === '' && await tag('three') === '' && await p.locator('.st-group-row', { hasText: 'Group 902' }).count() === 0, await p.textContent('.st-groups-sum'));
 } finally {
   await browser.close();
   const purged = await admin({ op: 'purge-invite', id: aoe.id, ...sp });

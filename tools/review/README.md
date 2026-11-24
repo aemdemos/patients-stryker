@@ -323,6 +323,31 @@ The source URLs come from the export file names (letter case kept), never from E
 - Port spaces, batches, groups and the edit links to `standardise-v3` (its backend code has no
   spaces yet: never deploy the backend from there before that).
 
+## Storage and speed
+
+The backend stores nothing in a database; App Builder gives it two stores:
+- **State** (Adobe I/O State, a key–value store): every saved item is one key with a small
+  JSON value (a comment, a reply, a page status, a batch number…), e.g.
+  `main.p.<page>.page.batch` = `{ v: "2", by, at, rev }`. No queries, no bulk reads or
+  writes: one call per key (~35 ms), and it takes **~80 operations a second** at most however
+  many are sent at once (measured 24 Nov 2026). Keys expire after a year at most.
+- **Files** (blob storage): what must stay or is large: the audit, the shot history and its
+  images, the capture's record, the Live copies, the signing key, and the **review's summary**.
+
+**The review's summary** (`backend/lib/summary.mjs`, `<space>/summary/overview.json`): every
+page's state in one file, so the overview (status page, the tool's batches and groups) reads one
+file (~0.1 s) instead of every entry (5 s and more, growing with the review). Saves keep it
+current (organisation directly, other changes their page computed again); built again from every
+entry when missing, after admin operations that change entries, on the status page's
+**Refresh**, and every 15 minutes by the capture's schedule. Each page's part carries the time
+it was computed; writers merge by keeping the newer part.
+
+**Saving:** changes are written 20 at a time (the changes to one key in their order);
+organisation changes are written without reading each key first (their value before, for the
+audit, comes from the summary) and go in one request (up to 3,000). Measured: 220 pages moved to
+a batch in ~3 s (was ~8.5 s plus a 5–8 s reload), a single change ~0.2 s, the status page shown
+again at once (only the review's state is read again, the page list kept).
+
 ## Tests
 
 ```

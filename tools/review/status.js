@@ -92,7 +92,7 @@ async function organise(steps, done) {
     problems.push(...(r?.refused || []), ...(r?.failed || []).map((f) => `not saved: ${f}`));
   }), Promise.resolve());
   editing = null;
-  await hooks.load();
+  await hooks.load({ quick: true });
   // (said once the page shows it)
   msg.textContent = problems.length ? `${done}, except: ${problems.join('; ')}` : done;
 }
@@ -477,10 +477,21 @@ function options(select, values) {
   select.value = keep;
 }
 
-async function load() {
+// the pages of the review, kept between loads (they change only with the scope or publishing)
+let pagesKept = null;
+
+/**
+ * reads the review's state (and the pages); quick: the pages kept (after organising);
+ * rebuild: the backend builds its summary again from every entry (Refresh)
+ */
+async function load({ quick = false, rebuild = false } = {}) {
   $('.rs-updated').textContent = 'Loading…';
   // (the AOE team: every page of the migration scope; reviewers: the published ones)
-  const [{ status, body }, pages] = await Promise.all([call('overview'), loadPages({ all: true })]);
+  const [{ status, body }, pages] = await Promise.all([
+    call(`overview${rebuild ? '?rebuild=1' : ''}`),
+    quick && pagesKept ? pagesKept : loadPages({ all: true }),
+  ]);
+  pagesKept = pages;
   if (status !== 200) {
     $('.rs-updated').textContent = body?.error?.message || 'Could not read the review status: open this page with your review link.';
     return;
@@ -634,7 +645,7 @@ async function start() {
     shown += PAGE_SIZE;
     draw();
   });
-  $('.st-refresh').addEventListener('click', load);
+  $('.st-refresh').addEventListener('click', () => load({ rebuild: true }));
   await load();
   if (view.scroll) window.scrollTo(0, view.scroll);
 }

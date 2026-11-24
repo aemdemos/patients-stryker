@@ -13,8 +13,8 @@ import { call } from './store.js';
 import { storageKey } from './config.js';
 
 const FILTER_KEY = storageKey('filters');
-// (a save takes at most this many changes: backend MAX_CHANGES)
-const CHUNK = 100;
+// (an organising save takes at most this many changes: backend MAX_ORG_CHANGES)
+const CHUNK = 3000;
 
 /**
  * A group without a chosen representative has its first page (path order) as representative

@@ -36,6 +36,10 @@ import {
 import { createInvite, listInvites, revokeInvite } from '../lib/invites.mjs';
 import { schedule } from '../lib/runtime.mjs';
 import { readCaptureState } from '../lib/capture-state.mjs';
+import { dropSummary, rebuildSummary } from '../lib/summary.mjs';
+
+// operations that change entries: the review's summary is built again after them
+const WRITES = ['status', 'import', 'answer', 'rekey', 'purge-invite', 'purge-by', 'purge-test'];
 import {
   listRequests, readHistory, addVersions, failRequest, historyFile, requestFile,
 } from '../lib/shots.mjs';
@@ -44,6 +48,17 @@ const ok = (body) => ({ body });
 const bad = (message) => ({ body: { error: { code: 'bad-request', message } } });
 
 export async function main(params) {
+  const out = await run(params);
+  // (built again now, so no reader waits for it)
+  if (WRITES.includes(params.op)) {
+    const stores = await open();
+    const space = SPACES[params.space] ? params.space : 'std';
+    await rebuildSummary(stores, space).catch(() => dropSummary(stores.files, space));
+  }
+  return out;
+}
+
+async function run(params) {
   const stores = await open();
   const { state, files } = stores;
   const op = params.op || '';
@@ -82,6 +97,10 @@ export async function main(params) {
       return ok({ steps: await schedule({ cron: params.cron, enabled: params.enabled !== false, space: params.space || 'main' }) });
     }
     if (op === 'capture-state') return ok(await readCaptureState(files, space));
+    if (op === 'rebuild-summary') {
+      const s = await rebuildSummary(stores, space);
+      return ok({ space, built: s.built, pages: Object.keys(s.pages).length });
+    }
     if (op === 'forget-test-invites') {
       // revoked test invitations (names "tool test …", "zz-test-…") out of the lists for good;
       // never anyone else's
