@@ -234,6 +234,13 @@ body.long-page-detail-corp main > .section .columns .columns-img-col img {
   width: auto;
 }
 
+/* section style `spaced-items`: a blank line after each list item but the last (stryker.com
+   line breaks at the end of the items: spine resources BioSkills "Offering six stations…";
+   line breaks at the end of a list item do not render on Edge Delivery) */
+body.long-page-detail-corp main > .section.spaced-items li:not(:last-child) {
+  margin-bottom: 1lh;
+}
+
 /* ---- downloads (Cards Corp resources) ----
    stryker.com has two downloads layouts, the same component in two wrappers:
    - in the Virtual Learning Center column (`column-10-12`, source resourcesanddownload_v1,
