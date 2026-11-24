@@ -37,7 +37,7 @@ const API = `https://${apiOf(ns)}/api/v1/namespaces/${ns}`;
 
 async function runChunk(list) {
   const resp = await fetch(`${API}/actions/std-review/capture?blocking=false`, {
-    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'bench', pages: list, mode, tabs }),
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ op: 'bench', pages: list, mode, tabs, etags: args.includes('--etags') }),
   });
   const { activationId } = await resp.json();
   for (let i = 0; i < 200; i += 1) {

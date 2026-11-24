@@ -36,7 +36,39 @@ archived in `.cbr/archives/change-pilot-2026-11-24.tar.gz`):
   CPU (~10x slower per page); the browser is unpacked once per container (several runs
   unpacking it at once: `spawn ETXTBSY`).
 - The visual fingerprint needs every image and video: at 20 pages at once stryker.com slowed
-  down (one page timed out after 90 s), and it showed 1 false difference in 40 pages.
+  down (one page timed out after 90 s), and it showed 1 false difference in 40 pages. Not used:
+  the user's idea of the files' ETags / dates covers design changes and replaced images (below).
+
+### The daily check (built 24 Nov 2026; pilot on Stage, 50 pages, from the night of 25 Nov)
+
+`lib/changes.mjs`, capture op `check`, schedule `review-check` (Stage only: every 5 minutes from
+01:00 to 03:55 UTC; `admin schedule {"only":["check"]}`). Each run checks the pages of the
+check's list (`admin changes-scope`) not checked today, one at a time, ~1 page a second:
+
+- **Three signals**, from one lite load:
+  - the page's **content fingerprint** (variants learned, a confirming load);
+  - its **images' dates**: Last-Modified, asked with HEAD (no download). Not their ETags:
+    Dynamic Media's change when it regenerates a rendition (6 of 197 between two loads, the
+    date the same);
+  - the **site's code**: the CSS / JS files on www.stryker.com (16 for the whole site), by the
+    release stamp in their address (`clientlibs-<n>`) and their size (the first part of the
+    Apache ETag "size-mtime": the mtime part differs from server to server for the same file).
+    A new version seen on two pages of a run = the site's design changed: one entry in the
+    site's log, and one page per template shot again in the next runs.
+- **Screenshots** (the usual three widths, in the page's shot history, labelled in the tool):
+  when the page's history starts and it has none yet, on a confirmed change, and for the
+  template pages after a design change. No blanket visual check.
+- **Records**: each page's `changes/pages/<b64>.json` (one log line a day: baseline, unchanged,
+  variant, changed, unreachable, gone after 3 days), the site's `changes/site.json` (code, design
+  changes, the runs with their timings). `admin changes-page {page}` / `changes-site`.
+- **Gentle with stryker.com:** after many hundreds of loads in one afternoon (up to 20 at once),
+  stryker.com answered 404 to about half of the pages on Stage, on and off (Production's loads
+  were fine). So: one page at a time with a pause; a 404 is tried again at the end of the run
+  and only then counts as unreachable; three 404s in a row stop the run (the pages stay due).
+- The tool: the Source shot box says since when the source is checked daily, what the last
+  check found and how many changes were recorded; each shot is labelled with why it was taken.
+- Test: `test/changes-live.test.mjs` (two test pages: history starts, unchanged, a real change
+  by switching one test page's source; purged after).
 
 ## Two workspaces: Production (the live review) and Stage (tests)
 

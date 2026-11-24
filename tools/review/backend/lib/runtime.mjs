@@ -57,12 +57,24 @@ async function scheduleOne({
 }
 
 /**
+ * the daily source change check (lib/changes.mjs; pilot on Stage): every 5 minutes from 01:00
+ * to 03:55 UTC, each run checking the pages not checked today, gently, until all are
+ */
+export const scheduleChanges = ({ enabled = true, space = 'main' } = {}) => scheduleOne({
+  name: 'review-check', action: 'capture', cron: '*/5 1-3 * * *', payload: { op: 'check', space }, enabled,
+});
+
+/**
  * the backend's schedules: the capture (first shots, every 15 minutes), the live copies'
  * warm-up (every 5 minutes a container of the live action keeps its browser running, so a
  * reviewer's first Live copy doesn't wait for a container and a browser to start) and the
  * daily backup of every entry
  */
-export async function schedule({ cron = '*/15 * * * *', warm = '*/5 * * * *', enabled = true, space = 'main' } = {}) {
+export async function schedule({
+  cron = '*/15 * * * *', warm = '*/5 * * * *', enabled = true, space = 'main', only = null,
+} = {}) {
+  // only: ['check'] sets up (or removes) that schedule alone, the others as they are
+  if (only) return scheduleChanges({ enabled, space });
   return [
     ...await scheduleOne({
       name: 'review-capture', action: 'capture', cron, payload: { op: 'run', space }, enabled,
