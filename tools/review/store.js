@@ -18,7 +18,9 @@ export const CONFIG = {
   backend: REVIEW.backend,
 };
 const ID = '__id__';
-const INVITE_KEY = storageKey('invite');
+// (one invitation kept per backend: a Stage link never replaces the live review's, nor the other
+// way round; the live review's keeps the name it always had)
+const INVITE_KEY = storageKey(REVIEW.backendEnv === 'production' ? 'invite' : 'invite-stage');
 const PENDING_KEY = storageKey('pending-backend');
 
 /** CSV text → rows of fields (quoted fields, doubled quotes, line breaks inside quotes) */
