@@ -10,7 +10,7 @@
 :where(body.corp) {
   /* header-corp: 90px chrome below 900px; 87px white row + 60px gold nav bar from 900px */
   --corp-chrome-height: 90px;
-  --corp-headline-unit: 2vw; /* 1 of a large headline size word (hl15 … hl9) below 600px */
+  --corp-headline-unit: 2vw; /* 1 of a large headline size word (hl15, hl2, hl3, hl45) below 600px */
   --corp-header-gap: var(--space-block-s);
   --corp-back-link-top: 2%; /* measured: stryker.com footnote Back link sits 2% of the page width (+ the header gap) below the header (15px @375, 36px @1440) */
   --corp-back-link-bottom: 44px; /* measured: stryker.com footnote Back link → page title, 66-69px */
@@ -42,7 +42,6 @@
   --corp-font-scale-1-75: 1.75em; /* source span.fontsize-1-75em */
   --corp-font-scale-2: 2em; /* source span.fontsize-2em */
   --corp-font-scale-2-5: 2.5em; /* source span.fontsize-2-5em */
-  --corp-font-scale-3-5: 3.5em; /* source span.fontsize-3-5em */
   --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
@@ -85,7 +84,6 @@
   --corp-color-navy-bright-pressed: #133b5d;
   --corp-color-slate: #425361; /* stryker.com bg-dark-blue-gradient end colour */
   --corp-color-plum: #594b61; /* stryker.com bg-dark-purple-gradient end colour */
-  --corp-color-charcoal: #323232; /* stryker.com inline text colour #323232 */
   --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-slate)); /* bg-dark-blue-gradient */
   --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-plum)); /* bg-dark-purple-gradient */
   --corp-people-image-width: 300px;
@@ -153,8 +151,8 @@ body:where(.corp):has(main .hero-carousel) header {
    stryker.com spans (span[style="color: …"], .urw-egyptienne / .futura-bold, .fontsize-*em
    relative to the text around them, .fontsize-*vw in large headlines); words added in the
    Block Library sheet panel-options get ts-<word> ---- */
-:where(body.corp) span.text-marker:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white, .color-light-gray, .ts-black, .ts-midgrey, .ts-darkgold, .ts-charcoal, .ts-palegrey),
-:where(body.corp) span.text-marker:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white, .color-light-gray, .ts-black, .ts-midgrey, .ts-darkgold, .ts-charcoal, .ts-palegrey) :is(strong, b, em, i, a:any-link) {
+:where(body.corp) span.text-marker:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white, .color-light-gray, .ts-black, .ts-midgrey, .ts-darkgold, .ts-palegrey),
+:where(body.corp) span.text-marker:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white, .color-light-gray, .ts-black, .ts-midgrey, .ts-darkgold, .ts-palegrey) :is(strong, b, em, i, a:any-link) {
   --link-color: var(--span-color);
 
   color: var(--span-color);
@@ -170,11 +168,11 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) span.text-marker.color-light-gray { --span-color: var(--color-surface); }
 :where(body.corp) span.text-marker.ts-black { --span-color: var(--color-black); }
 
-/* the other stryker.com inline text colours, at their exact source values: #b2b4ae, #af6d04,
-   #323232, #dfe1de */
+/* the other Stryker colours authors use for text, at their exact values, kept because stryker.com
+   components use them too (image borders and rules #b2b4ae, the gold gradient #af6d04, the
+   accordion background #dfe1de); black is a component text colour option (text-black) */
 :where(body.corp) span.text-marker.ts-midgrey { --span-color: var(--color-surface-muted); }
 :where(body.corp) span.text-marker.ts-darkgold { --span-color: var(--color-accent-link-hover); }
-:where(body.corp) span.text-marker.ts-charcoal { --span-color: var(--corp-color-charcoal); }
 :where(body.corp) span.text-marker.ts-palegrey { --span-color: var(--color-surface-dim); }
 
 :where(body.corp) span.text-marker.ts-serif {
@@ -205,17 +203,17 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) span.text-marker.ts-xxl { font-size: var(--corp-font-scale-1-75); }
 :where(body.corp) span.text-marker.ts-xxxl { font-size: var(--corp-font-scale-2); }
 :where(body.corp) span.text-marker.ts-xxxxl { font-size: var(--corp-font-scale-2-5); }
-:where(body.corp) span.text-marker.ts-xxxxxl { font-size: var(--corp-font-scale-3-5); }
 
 /* the large sizes set their own line spacing, 1.06x as on the source (25.97px at 24.5px,
    37.1px at 35px) */
-:where(body.corp) span.text-marker:is(.ts-xl, .ts-xxl, .ts-xxxl, .ts-xxxxl, .ts-xxxxxl) {
+:where(body.corp) span.text-marker:is(.ts-xl, .ts-xxl, .ts-xxxl, .ts-xxxxl) {
   line-height: var(--heading-line-height);
 }
 
-/* large headline sizes (stryker.com .c-largeheadline span.fontsize-Nvw): N hundredths of the
-   content width from 600px (source 840px), twice that below; lines 1.35x. hl15 = 1.5, hl2 = 2,
-   hl25 = 2.5 … hl9 = 9 (--corp-headline-unit is 2vw below 600px, :where(body.corp) above) */
+/* large headline sizes (stryker.com .c-largeheadline span.fontsize-Nvw, 17 values grouped into
+   the package's four steps, 96% of 3,584 uses within a quarter step): S hl15 = 1.5, M hl2 = 2,
+   L hl3 = 3, XL hl45 = 4.5 hundredths of the content width from 600px (source 840px), twice that
+   below (--corp-headline-unit, 2vw below 600px); lines 1.35x */
 @media (width >= 600px) {
   :where(body.corp) {
     --corp-headline-unit: calc(min(100vw, var(--container-max)) / 100);
@@ -224,18 +222,10 @@ body:where(.corp):has(main .hero-carousel) header {
 
 :where(body.corp) span.text-marker.ts-hl15 { --corp-headline-size: 1.5; }
 :where(body.corp) span.text-marker.ts-hl2 { --corp-headline-size: 2; }
-:where(body.corp) span.text-marker.ts-hl25 { --corp-headline-size: 2.5; }
 :where(body.corp) span.text-marker.ts-hl3 { --corp-headline-size: 3; }
-:where(body.corp) span.text-marker.ts-hl35 { --corp-headline-size: 3.5; }
-:where(body.corp) span.text-marker.ts-hl4 { --corp-headline-size: 4; }
 :where(body.corp) span.text-marker.ts-hl45 { --corp-headline-size: 4.5; }
-:where(body.corp) span.text-marker.ts-hl5 { --corp-headline-size: 5; }
-:where(body.corp) span.text-marker.ts-hl55 { --corp-headline-size: 5.5; }
-:where(body.corp) span.text-marker.ts-hl6 { --corp-headline-size: 6; }
-:where(body.corp) span.text-marker.ts-hl65 { --corp-headline-size: 6.5; }
-:where(body.corp) span.text-marker.ts-hl9 { --corp-headline-size: 9; }
 
-:where(body.corp) span.text-marker:is(.ts-hl15, .ts-hl2, .ts-hl25, .ts-hl3, .ts-hl35, .ts-hl4, .ts-hl45, .ts-hl5, .ts-hl55, .ts-hl6, .ts-hl65, .ts-hl9) {
+:where(body.corp) span.text-marker:is(.ts-hl15, .ts-hl2, .ts-hl3, .ts-hl45) {
   font-size: calc(var(--corp-headline-size) * var(--corp-headline-unit));
   line-height: var(--heading-line-height-hero);
 }

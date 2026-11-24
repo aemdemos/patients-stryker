@@ -14,7 +14,7 @@
  *   colour   blue, gold, purple, teal, navy, grey / gray, white, light-gray (the color-* classes)
  *   font     serif (Egyptienne), sans (Futura), body (Humanist), upper (capitals)
  *   size     s, l, xl, xxl: 0.8 / 1.25 / 1.5 / 1.75 times the surrounding text (the sheet adds
- *            xxxl 2×, xxxxl 2.5×, xxxxxl 3.5× and the large headline sizes hl15 … hl9)
+ *            xxxl 2×, xxxxl 2.5× and the large headline sizes S hl15, M hl2, L hl3, XL hl45)
  *   look     rule-gold (gold rule of an underlined heading); a line box in a box colour:
  *            box-white, box-gray, box-gold, box-blue, box-purple, box-teal, box-dark,
  *            box-dark-blue-gradient, box-dark-purple-gradient (around the whole line, the box

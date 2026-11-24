@@ -2165,8 +2165,7 @@ var CustomImportScript = (() => {
     "1-5": "xl",
     "1-75": "xxl",
     2: "xxxl",
-    "2-5": "xxxxl",
-    "3-5": "xxxxxl"
+    "2-5": "xxxxl"
   };
   var COLOURS = ["gold", "white", "blue", "purple", "teal", "navy", "grey", "light-gray"];
   var LOOKS = [
@@ -2181,14 +2180,25 @@ var CustomImportScript = (() => {
     "box-dark-blue-gradient",
     "box-dark-purple-gradient"
   ];
-  var HEADLINE_SIZES = ["1-5", "2", "2-5", "3", "3-5", "4", "4-5", "5", "5-5", "6", "6-5", "9"];
+  var HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+  var headlineWord = (n) => {
+    const off = (step2) => Math.abs(Math.log(step2 / n));
+    const step = HEADLINE_STEPS.reduce((a, b) => off(b) < off(a) ? b : a);
+    return `hl${String(step).replace(".", "")}`;
+  };
   function markerWords(raw, dropped) {
     return raw.split(",").map((c) => c.trim().toLowerCase()).flatMap((c) => {
       let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
       if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
       if (m && m[1] === "1") return [];
-      m = c.match(/^(?:headline|size)-(\d+(?:-\d+)?)(?:-?vw)?$/);
-      if (m && HEADLINE_SIZES.includes(m[1])) return [`hl${m[1].replace("-", "")}`];
+      if (m && /^\d+(-\d+)?$/.test(m[1])) {
+        const n = Number(m[1].replace("-", "."));
+        const steps = Object.keys(SIZE_WORDS).map((k) => [Number(String(k).replace("-", ".")), SIZE_WORDS[k]]);
+        const off = ([v]) => Math.abs(Math.log(v / n));
+        return [steps.reduce((a, b) => off(b) < off(a) ? b : a)[1]];
+      }
+      m = c.match(/^(?:headline-(\d+(?:-\d+)?)|size-(\d+(?:-\d+)?)-?vw)$/);
+      if (m) return [headlineWord(Number((m[1] || m[2]).replace("-", ".")))];
       m = c.match(/^color-([a-z-]+)$/);
       if (m && COLOURS.includes(m[1])) return [m[1]];
       if (c === "serif") return ["serif"];

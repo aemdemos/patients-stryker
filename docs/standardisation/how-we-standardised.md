@@ -25,9 +25,9 @@ hundreds of slightly different values for what is really the same design.
 |---|---|---|
 | Spacing inside a box, top | **31** values | **4** steps: none, small, medium, large |
 | Spacing inside a box, bottom | **44** values | the same **4** steps |
-| Font size | **49** values | normal + **5** text sizes, **4** headline sizes |
+| Font size | **49** values | normal + **6** text sizes, **4** headline sizes |
 | Font | **9** ways of writing it | **3** fonts: Futura, Egyptienne, Humanist |
-| Text colour | **27** values | **8** brand colours |
+| Text colour | **27** values | **8** brand colours + **4** more Stryker colours (black, mid grey, dark gold, pale grey) |
 | Box / background colour | **25** values | **10** named colours |
 | Image border colour | **12** values | **3**: grey, teal, black |
 | Column widths | **5** patterns | **5** layouts |
@@ -103,9 +103,22 @@ times, and so on. In Columns, the most used sizes are:
 | 2 × | 430 | **2×** |
 
 **The rule:** a size joins a step when it is **within about 10%** of it (1.3× becomes 1.25×).
-Large headlines, which on stryker.com grow with the width of the screen, have their own **headline
-sizes**; a headline joins one when it is within a quarter of a step. Sizes of 2.5 times and more are
-rare and become 2× or a headline size.
+The steps are 0.8×, 1.25×, 1.5×, 1.75×, 2× and **2.5×**: 2.5× is kept because stryker.com uses it
+753 times (more than plain 1×), mostly for big figures in boxes. Larger sizes are not used as text
+sizes and take the nearest step.
+
+**Large headlines** grow with the width of the screen on stryker.com, in **17 different sizes**
+(from 1% to 9% of the width). They are grouped the same way, into **4 headline sizes**:
+
+| Headline size today (% of the width) | Uses | Joins |
+|---|---|---|
+| 1 and 1.5 | 862 | **S (1.5)** |
+| 2 | 787 | **M (2)** |
+| 2.5, 3 and 3.5 | 1,245 | **L (3)** |
+| 4 to 9 | 690 | **XL (4.5)** |
+
+Each size joins the nearest step, by proportion. Of the sets of four we compared, this one keeps
+the most headlines: **73%** are within 12.5% of their step and **96%** within a quarter of a step.
 
 **The result:** 97% of the text sizes in Columns stay the same.
 
@@ -122,8 +135,15 @@ which a visitor cannot tell apart.
 | Real colours once duplicates are merged | 14 |
 | Named colours on the new site | **10**: white with shadow, light grey, gold, blue, purple, teal, dark grey, and three gradients |
 
-The few rare colours that remain (an orange, a pale grey, a lighter grey and a mid grey) are listed
-by page for the business to decide; nothing is blended silently.
+For **text**, the 8 brand colours (blue, gold, purple, teal, navy, grey, white, light grey) are
+joined by four more Stryker colours that authors use and that stryker.com's own components use
+too: **black** (1,678 uses; the components' *text-black* option), **mid grey** #b2b4ae (132; image
+borders and rules), **dark gold** #af6d04 (71; the start of the gold gradient, chart colours) and
+**pale grey** #dfe1de (51; the accordion background). A charcoal (#323232, 93 uses) appears only as
+a code typed by authors, not in any component, so it is not a choice; its uses are listed for review.
+
+The few rare box colours that remain (an orange, a pale grey, a lighter grey and a mid grey) are
+listed by page for the business to decide; nothing is blended silently.
 
 **The result:** 98% to 100% of boxes keep their exact colour.
 
@@ -180,7 +200,7 @@ removed.
 |---|---|---|
 | Box colours (all blocks) | 10 colours | **98%** |
 | Spacing inside boxes and cells | 4 steps | **96% to 99%** |
-| Font sizes | 5 text + 4 headline sizes | **96%** |
+| Font sizes | 6 text + 4 headline sizes | **96%** |
 | Fonts | 3 fonts | **99%** |
 | Image borders | 3 colours | **95%** |
 | Column layouts | 5 layouts | **100%** |

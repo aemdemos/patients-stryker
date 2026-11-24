@@ -20,12 +20,19 @@ export const STD_DRAFT_IMPORT = typeof STD_DRAFT !== 'undefined' && STD_DRAFT ==
 
 // bracket class → Text style word ('' = no word, the text stays plain)
 const SIZE_WORDS = {
-  '0-8': 's', '1-25': 'l', '1-5': 'xl', '1-75': 'xxl', 2: 'xxxl', '2-5': 'xxxxl', '3-5': 'xxxxxl',
+  '0-8': 's', '1-25': 'l', '1-5': 'xl', '1-75': 'xxl', 2: 'xxxl', '2-5': 'xxxxl',
 };
 const COLOURS = ['gold', 'white', 'blue', 'purple', 'teal', 'navy', 'grey', 'light-gray'];
 const LOOKS = ['rule-gold', 'box-white', 'box-gray', 'box-gold', 'box-blue', 'box-purple', 'box-teal',
   'box-dark', 'box-dark-blue-gradient', 'box-dark-purple-gradient'];
-const HEADLINE_SIZES = ['1-5', '2', '2-5', '3', '3-5', '4', '4-5', '5', '5-5', '6', '6-5', '9'];
+// the package's four headline sizes (S, M, L, XL); every stryker.com size (17 values) takes the
+// nearest, by ratio: 1 → S, 2.5 → L, 3.5 → L, 4 → XL, 5 and up → XL
+const HEADLINE_STEPS = [1.5, 2, 3, 4.5];
+const headlineWord = (n) => {
+  const off = (step) => Math.abs(Math.log(step / n));
+  const step = HEADLINE_STEPS.reduce((a, b) => (off(b) < off(a) ? b : a));
+  return `hl${String(step).replace('.', '')}`;
+};
 
 /**
  * The Text style words of a bracket tag's classes.
@@ -38,8 +45,15 @@ export function markerWords(raw, dropped) {
     let m = c.match(/^(?:text|size)-(\d+(?:-\d+)?)(?:em)?$/);
     if (m && SIZE_WORDS[m[1]]) return [SIZE_WORDS[m[1]]];
     if (m && m[1] === '1') return [];
-    m = c.match(/^(?:headline|size)-(\d+(?:-\d+)?)(?:-?vw)?$/);
-    if (m && HEADLINE_SIZES.includes(m[1])) return [`hl${m[1].replace('-', '')}`];
+    // any other text size takes the nearest of the text steps (3.5 → 2.5×)
+    if (m && /^\d+(-\d+)?$/.test(m[1])) {
+      const n = Number(m[1].replace('-', '.'));
+      const steps = Object.keys(SIZE_WORDS).map((k) => [Number(String(k).replace('-', '.')), SIZE_WORDS[k]]);
+      const off = ([v]) => Math.abs(Math.log(v / n));
+      return [steps.reduce((a, b) => (off(b) < off(a) ? b : a))[1]];
+    }
+    m = c.match(/^(?:headline-(\d+(?:-\d+)?)|size-(\d+(?:-\d+)?)-?vw)$/);
+    if (m) return [headlineWord(Number((m[1] || m[2]).replace('-', '.')))];
     m = c.match(/^color-([a-z-]+)$/);
     if (m && COLOURS.includes(m[1])) return [m[1]];
     if (c === 'serif') return ['serif'];

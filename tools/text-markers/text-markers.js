@@ -110,7 +110,7 @@ function markerWords() {
   [['p', state.padding], ['m', state.margin]].forEach(([kind, { side, step }]) => {
     if (step) words.push(`${kind}${side}`, step);
   });
-  // a word with digits (the headline sizes hl15 … hl9) goes last: EDS reads `:name:` as a
+  // a word with digits (the headline sizes hl15, hl2, hl3, hl45) goes last: EDS reads `:name:` as a
   // marker only when its digits end the name
   if (state.size && digits) words.push(state.size);
   return words;
